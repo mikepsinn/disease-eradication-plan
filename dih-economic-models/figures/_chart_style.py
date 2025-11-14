@@ -326,21 +326,53 @@ def add_png_metadata(filepath, title=None, description=None):
         pass
 
 
+def get_figure_output_path(filename):
+    """
+    Get the correct output path for saving a figure.
+
+    When execute-dir is set to 'project' in _quarto.yml, Path.cwd() returns the project root.
+    This function determines the correct output directory based on the context:
+    - For dih-economic-models charts: dih-economic-models/figures/
+    - Ensures the directory exists
+
+    Args:
+        filename: Name of the output file (e.g., 'my-chart.png')
+
+    Returns:
+        Path: Full path where the figure should be saved
+
+    Example:
+        output_path = get_figure_output_path('trial-access-disparity-chart.png')
+        save_figure_with_margins(fig, output_path)
+    """
+    from pathlib import Path
+
+    # With execute-dir: project, cwd is the project root
+    project_root = Path.cwd()
+
+    # Save to dih-economic-models/figures/ (the standard location for chart outputs)
+    output_dir = project_root / 'dih-economic-models' / 'figures'
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    return output_dir / filename
+
+
 def save_figure_with_margins(fig, filepath, dpi=200, pad_inches=0.3, facecolor=COLOR_WHITE):
     """
     Save a figure with proper margins and padding to ensure watermark visibility.
-    
+
     This function ensures consistent margins around all charts by using bbox_inches='tight'
     with padding, which adds space around the figure content including the watermark.
-    
+
     Args:
         fig: matplotlib Figure object
         filepath: Path where to save the figure
         dpi: Resolution (default: 200)
         pad_inches: Padding around figure in inches (default: 0.3)
         facecolor: Background color (default: COLOR_WHITE)
-    
+
     Example:
+        output_path = get_figure_output_path('my-chart.png')
         save_figure_with_margins(fig, output_path, dpi=200)
     """
     fig.savefig(filepath, dpi=dpi, bbox_inches='tight', pad_inches=pad_inches, facecolor=facecolor)

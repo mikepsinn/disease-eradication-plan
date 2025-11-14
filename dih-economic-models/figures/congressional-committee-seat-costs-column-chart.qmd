@@ -1,40 +1,20 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: fig-congressional-committee-seat-costs
 #| fig-cap: "The Price of Power: How Congressional Committee Seats are Sold"
-
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
 # --- Find Project Root --- 
 
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
 # --- Imports from _chart_style.py --- 
 
-import sys
-sys.path.append(str(project_root / 'dih-economic-models' / 'figures'))
-from _chart_style import setup_chart_style, add_watermark, clean_spines
-from _chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
-
-# --- Setup Chart Style ---
+from figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from figures._chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
 
 setup_chart_style()
 
@@ -103,9 +83,8 @@ add_watermark(fig)
 
 # --- Save and Show ---
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-plt.savefig(output_dir / 'congressional-committee-seat-costs-column-chart.png',
+output_path = get_figure_output_path('congressional-committee-seat-costs-column-chart.png')
+plt.savefig(output_path,
             dpi=300, bbox_inches=None, facecolor=COLOR_WHITE)
 plt.show()
 

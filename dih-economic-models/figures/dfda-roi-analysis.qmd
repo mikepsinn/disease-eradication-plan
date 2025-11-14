@@ -1,21 +1,10 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: setup
 #| echo: false
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -34,9 +23,7 @@ sns.set_palette("husl")
 ### Key Metrics
 
 ```{python}
-#| label: key-metrics
 #| echo: false
-
 # Core economic metrics from analysis
 
 metrics = {
@@ -106,9 +93,7 @@ fig.show()
 ### Cost Reduction Scenarios
 
 ```{python}
-#| label: cost-reduction-scenarios
 #| echo: false
-
 # Cost reduction scenarios from the analysis
 
 scenarios = pd.DataFrame({
@@ -147,9 +132,7 @@ fig.show()
 ### ROI Sensitivity Analysis
 
 ```{python}
-#| label: roi-sensitivity
 #| echo: false
-
 # ROI ranges based on different ecosystem costs
 
 roi_data = pd.DataFrame({
@@ -216,9 +199,7 @@ fig.show()
 ### Health Impact: QALYs Generated
 
 ```{python}
-#| label: qaly-impact
 #| echo: false
-
 # QALY sources breakdown
 
 qaly_sources = pd.DataFrame({
@@ -260,9 +241,7 @@ fig.show()
 ### Per-Patient Cost Comparison
 
 ```{python}
-#| label: per-patient-costs
 #| echo: false
-
 # Per-patient trial costs comparison
 
 cost_comparison = pd.DataFrame({
@@ -302,9 +281,7 @@ fig.show()
 ### Daily Opportunity Cost Counter
 
 ```{python}
-#| label: opportunity-cost
 #| echo: false
-
 # Daily opportunity cost breakdown
 
 daily_costs = pd.DataFrame({
@@ -367,9 +344,7 @@ fig.show()
 ### Investment vs Returns Timeline
 
 ```{python}
-#| label: investment-timeline
 #| echo: false
-
 # 10-year investment vs returns projection
 
 years = np.arange(0, 11)

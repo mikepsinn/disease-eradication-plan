@@ -1,21 +1,10 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: setup
 #| echo: false
-
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -29,9 +18,7 @@ pd.options.display.float_format = '{:,.0f}'.format
 ## Master Economic Impact Table
 
 ```{python}
-#| label: master-table
 #| echo: false
-
 # Comprehensive economic impact data from all analyses
 
 economic_impacts = pd.DataFrame({
@@ -132,9 +119,7 @@ fig.show()
 ## ROI Comparison Across All Models
 
 ```{python}
-#| label: roi-comparison
 #| echo: false
-
 # Filter for items with ROI ratios
 
 roi_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].sort_values('ROI Ratio')
@@ -173,9 +158,7 @@ fig.show()
 ## Value Creation Waterfall
 
 ```{python}
-#| label: value-waterfall
 #| echo: false
-
 # Create waterfall showing how value builds up
 
 waterfall_data = [
@@ -220,9 +203,7 @@ fig.show()
 ## Cost-Effectiveness Frontier
 
 ```{python}
-#| label: cost-effectiveness
 #| echo: false
-
 # Create scatter plot of cost vs impact
 
 scatter_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].copy()
@@ -275,9 +256,7 @@ fig.show()
 ## Key Economic Findings
 
 ```{python}
-#| label: key-findings
 #| echo: false
-
 # Summary statistics
 
 total_value = economic_impacts['Annual Value (Billions)'].max()

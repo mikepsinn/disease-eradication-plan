@@ -1,38 +1,20 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: daily-deaths-breakdown-column-chart
 #| fig-cap: "The Daily Toll: A breakdown of the 150,000 deaths occurring every day, highlighting the immense scale of preventable deaths from disease."
-
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
 # Find project root dynamically
 
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
 # Import chart styles
 
-import sys
-sys.path.append(str(project_root))
-from _chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
-from _chart_style import COLOR_BLACK, COLOR_WHITE
+from figures._chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
+from figures._chart_style import COLOR_BLACK, COLOR_WHITE
 
 # Apply chart styles
 
@@ -77,14 +59,14 @@ ax.set_ylim(0, max(values) * 1.2)
 for i, bar in enumerate(bars):
     height = bar.get_height()
     label_text = f'{height:,.0f}'
-    
+
     # Use white text for the black bar, black text for white bars
     text_color = COLOR_WHITE if colors[i] == COLOR_BLACK else COLOR_BLACK
-    
+
     # Place label inside the bar
     v_offset = -15
     va = 'top'
-    
+
     ax.annotate(
         label_text,
         xy=(bar.get_x() + bar.get_width() / 2, height),
@@ -103,9 +85,7 @@ add_watermark(fig)
 
 # Save the figure
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-output_path = output_dir / 'daily-deaths-breakdown-column-chart.png'
+output_path = get_figure_output_path('daily-deaths-breakdown-column-chart.png')
 
 # Save the figure
 

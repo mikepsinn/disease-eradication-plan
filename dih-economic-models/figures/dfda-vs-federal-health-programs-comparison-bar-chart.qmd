@@ -1,24 +1,13 @@
 ```{python}
-#| echo: false
 #| warning: false
-
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
-# --- Find project root dynamically ---
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
 # --- Import centralized style ---
-import sys
-sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL
-)
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, get_figure_output_path)
 
 setup_chart_style()
 
@@ -109,14 +98,12 @@ ax.invert_yaxis()
 add_watermark(fig)
 
 # --- Save figure ---
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-output_path = output_dir / 'dfda-vs-federal-health-programs-comparison-bar-chart.png'
+output_path = get_figure_output_path('dfda-vs-federal-health-programs-comparison-bar-chart.png')
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
-from _chart_style import add_png_metadata
+from figures._chart_style import add_png_metadata
 add_png_metadata(
     output_path,
     title="dFDA Cost vs Other Federal Health Programs",

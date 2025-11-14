@@ -13,6 +13,7 @@ import os
 import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
+import graphviz
 
 # Add Graphviz to PATH if not already there (Windows)
 if sys.platform == 'win32':
@@ -149,15 +150,15 @@ def add_watermark_to_png(png_path, text='WarOnDisease.org'):
 def setup_graphviz_style(dot):
     """
     Apply design guide styling to a Graphviz Digraph.
-    
+
     Sets:
     - Black and white colors (#000000, #FFFFFF)
     - Serif fonts (Georgia, serif)
     - White background
     - Margins to prevent watermark overlap (3% padding on all sides)
     """
-    dot.attr('node', 
-             shape='box', 
+    dot.attr('node',
+             shape='box',
              style='rounded',
              color='#000000',
              fontcolor='#000000',
@@ -172,6 +173,46 @@ def setup_graphviz_style(dot):
              fontname='Georgia,serif',
              margin='0',    # Set margin to 0, we'll add padding via 'pad' attribute
              pad='0.5')    # Padding around entire diagram (0.5 inches) - this adds space around content
+
+
+def create_diagram(comment='', rankdir='TD', size=None, **kwargs):
+    """
+    Create a pre-styled Graphviz Digraph following design guide.
+
+    This is the recommended way to create diagrams - it handles graphviz import
+    and applies styling automatically.
+
+    Args:
+        comment: Description of the diagram (optional)
+        rankdir: Layout direction ('TD', 'LR', etc.). Default: 'TD'
+        size: Size constraint as string (e.g., '8,10'). Optional.
+        **kwargs: Additional arguments passed to graphviz.Digraph()
+
+    Returns:
+        Styled graphviz.Digraph object ready for adding nodes/edges
+
+    Example:
+        from figures._graphviz_helper import create_diagram, render_graphviz_with_watermark
+
+        dot = create_diagram('My Architecture', rankdir='TD', size='10,12')
+        dot.node('A', 'Component A')
+        dot.node('B', 'Component B')
+        dot.edge('A', 'B')
+        render_graphviz_with_watermark(dot, 'my-diagram')
+    """
+    # Create diagram with PNG format
+    dot = graphviz.Digraph(comment=comment, format='png', **kwargs)
+
+    # Apply design guide styling
+    setup_graphviz_style(dot)
+
+    # Apply layout attributes
+    if rankdir:
+        dot.attr(rankdir=rankdir)
+    if size:
+        dot.attr(size=size)
+
+    return dot
 
 
 def render_graphviz_with_watermark(dot, filename, output_dir=None):

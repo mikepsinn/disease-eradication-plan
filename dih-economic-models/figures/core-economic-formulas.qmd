@@ -1,21 +1,10 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: setup
 #| echo: false
-
 import pandas as pd
 import numpy as np
 from typing import Dict, Tuple
@@ -54,9 +43,7 @@ DFDA_TARGET_COST_PER_PATIENT = 1_000  # $1K
 ## 1. Treaty Peace Dividend Calculations
 
 ```{python}
-#| label: peace-dividend
 #| echo: true
-
 def calculate_peace_dividend(reduction_percent: float = 0.01) -> Dict[str, float]:
     """
     Calculate the economic benefits of reducing military spending and conflict.
@@ -99,9 +86,7 @@ print(f"Military budget available for DIH: ${peace_dividend['military_budget_red
 ## 2. dFDA ROI Calculation
 
 ```{python}
-#| label: dfda-roi
 #| echo: true
-
 def calculate_dfda_roi(
     cost_reduction: float = TRIAL_COST_REDUCTION_BASE,
     annual_platform_cost: float = DFDA_ANNUAL_COST,
@@ -150,9 +135,7 @@ print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ## 3. QALY Value Calculations
 
 ```{python}
-#| label: qaly-calculations
 #| echo: true
-
 def calculate_qaly_value(
     qalys_generated: int = 840_000,
     value_per_qaly: float = QALY_VALUE
@@ -192,9 +175,7 @@ print(f"ICER: ${qaly_value['icer']:,} (dominant intervention)")
 ## 4. DIH Market Allocation Efficiency
 
 ```{python}
-#| label: dih-market-efficiency
 #| echo: true
-
 def calculate_market_efficiency(
     nih_budget: float = NIH_ANNUAL_BUDGET,
     dih_budget: float = 27_000_000_000,  # From 1% treaty
@@ -240,9 +221,7 @@ print(f"Information processing advantage: {market_efficiency['information_advant
 ## 5. Combined Economic Impact
 
 ```{python}
-#| label: total-impact
 #| echo: true
-
 def calculate_total_impact() -> Dict[str, float]:
     """
     Calculate the combined economic impact of all interventions.
@@ -298,9 +277,7 @@ print(f"Value created per hour: ${total['hourly_value_created']/1e9:.1f}B")
 ## 6. Health Savings Sharing Model
 
 ```{python}
-#| label: savings-sharing
 #| echo: true
-
 def calculate_savings_sharing(
     disease_annual_cost: float = 388_500,  # Per patient per year
     cure_development_cost: float = 10_000_000_000,  # $10B
@@ -344,9 +321,7 @@ print(f"Break-even at {sharing['break_even_patients']:,.0f} patients")
 ## 7. Health Savings Sharing Model (50/50)
 
 ```{python}
-#| label: savings-sharing-50-50
 #| echo: true
-
 def calculate_savings_sharing_5050(
     disease_annual_cost: float = 388_500,
     cure_development_cost: float = 10_000_000_000,
@@ -378,9 +353,7 @@ print(f"Break-even: {sharing['break_even_patients']:,.0f} patients")
 ## 8. Accelerated Innovation Impact
 
 ```{python}
-#| label: acceleration-impact
 #| echo: true
-
 def calculate_acceleration_impact(
     current_approvals: int = 50,  # FDA approvals per year
     acceleration_factor: int = 80,  # 80x more trials possible
@@ -426,9 +399,7 @@ print(f"Development time: 17 years → 3 years")
 ## Master Formula Summary
 
 ```{python}
-#| label: master-summary
 #| echo: false
-
 # Create summary table of all key formulas
 
 formulas_df = pd.DataFrame({

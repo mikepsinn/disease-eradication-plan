@@ -1,9 +1,7 @@
-"""
-Charts module for the Decentralized Institutes of Health book
+"""Chart and diagram generation utilities."""
 
-Contains reusable visualization QMD files following neobrutalist design principles.
-"""
+# Make helper modules easily importable
+from . import _chart_style
+from . import _graphviz_helper
 
-# No imports needed - charts are QMD files included directly via Quarto
-
-__all__ = []
+__all__ = ['_chart_style', '_graphviz_helper']

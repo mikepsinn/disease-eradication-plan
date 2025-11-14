@@ -1,14 +1,5 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
@@ -17,25 +8,15 @@ from economic_parameters import *
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import sys
 
 # Find project root dynamically
 
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
 # Add paths
 
-sys.path.insert(0, str(project_root / 'brain' / 'book' / 'appendix'))
-sys.path.insert(0, str(project_root / 'dih-economic-models' / 'figures'))
-
 from economic_parameters import calculate_personal_lifetime_wealth_conservative_baseline, calculate_medical_progress_multiplier
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
-    COLOR_BLACK, COLOR_WHITE, get_project_root
-)
+    COLOR_BLACK, COLOR_WHITE, get_project_root, get_figure_output_path)
 
 setup_chart_style()
 

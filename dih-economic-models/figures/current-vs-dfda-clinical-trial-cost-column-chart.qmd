@@ -1,14 +1,5 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
@@ -17,24 +8,11 @@ from economic_parameters import *
 #| echo: false
 import matplotlib.pyplot as plt
 from pathlib import Path
-import sys
 
-# --- Find project root dynamically to import shared modules ---
-
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-if str(project_root) not in sys.path:
-    sys.path.append(str(project_root))
-
-# --- Import centralized style and constants ---
-
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE,
-    add_png_metadata)
-
-# --- Setup Chart Style ---
+    add_png_metadata, get_figure_output_path)
 
 setup_chart_style()
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -110,9 +88,7 @@ add_watermark(fig)
 
 # --- Save and Show Plot ---
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-filename = Path(__file__).stem if '__file__' in locals() else 'current-vs-dfda-clinical-trial-cost-column-chart'
-plt.savefig(output_dir / f'{filename}.png', dpi=200, facecolor=COLOR_WHITE)
+output_path = get_figure_output_path('current-vs-dfda-clinical-trial-cost-column-chart.png')
+plt.savefig(output_path, dpi=200, facecolor=COLOR_WHITE)
 plt.show()
 ```
