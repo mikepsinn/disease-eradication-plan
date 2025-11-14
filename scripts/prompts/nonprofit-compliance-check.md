@@ -10,9 +10,10 @@ You are reviewing economic analysis content for CRITICAL DEALBREAKERS that would
 2. **PHASE CONFUSION** - Unclear separation between:
    - Foundation-funded referendum phase (what foundations are being asked to fund)
    - Self-funded implementation phase (what happens after referendum, not requesting foundation money)
-   - VICTORY bonds must be clearly framed as government-issued instruments, not nonprofit activities
+   - Victory Social Impact Bonds must be clearly framed as government-issued instruments, not nonprofit activities
 
 **DO NOT CHANGE:**
+- "1% Treaty" - never change this term
 - Tone, style, or writing quality (unless it directly violates compliance above)
 - Content structure, organization, or flow
 - Specific claims, estimates, or arguments (unless they violate compliance)

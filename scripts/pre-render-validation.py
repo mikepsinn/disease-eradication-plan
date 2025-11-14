@@ -234,12 +234,10 @@ def check_python_imports(content: str, filepath: str):
     # Common module patterns to check
     # Format: (usage_pattern, import_patterns, module_name)
     # NOTE: We only check for imports that MUST be in each block that uses them.
-    # Standard library imports (pd, np, plt) are available from first block in Quarto,
-    # so we don't check those (would create false positives).
+    # Standard library imports (pd, np, plt) are available from first block in Quarto.
+    # get_figure_output_path and get_project_root are checked by check_figure_file_imports() (whole-file check).
     MODULE_CHECKS = [
         (r'\bnpf\.', [r'import\s+numpy_financial\s+as\s+npf', r'from\s+numpy_financial\s+import'], 'numpy_financial (npf)'),
-        (r'\bget_figure_output_path\s*\(', [r'from\s+figures\._chart_style\s+import.*get_figure_output_path', r'from\s+_chart_style\s+import.*get_figure_output_path'], 'get_figure_output_path (from _chart_style)'),
-        (r'\bget_project_root\s*\(', [r'from\s+figures\._chart_style\s+import.*get_project_root', r'from\s+_chart_style\s+import.*get_project_root'], 'get_project_root (from _chart_style)'),
     ]
 
     lines = content.split('\n')
@@ -281,15 +279,12 @@ def check_python_imports(content: str, filepath: str):
 
 def check_figure_file_imports(content: str, filepath: str):
     """
-    For files in dih-economic-models/figures/, check that required imports are present
-    ANYWHERE in the file (not per-block, since Quarto shares imports across blocks).
+    For ALL files, check that get_figure_output_path and get_project_root are imported
+    if they are used ANYWHERE in the file (not per-block, since Quarto shares imports across blocks).
 
     This is a simpler check than check_python_imports() and avoids false positives
     from imports in one block being used in another block.
     """
-    # Only check figure files
-    if 'dih-economic-models' not in filepath.replace('\\', '/') or 'figures' not in filepath.replace('\\', '/'):
-        return
 
     # Check if get_figure_output_path is used anywhere
     uses_get_figure_output_path = 'get_figure_output_path(' in content
@@ -451,11 +446,10 @@ def validate_file(filepath: str):
     check_cross_reference_links(content, filepath)
 
     # Check Python imports
-    # For figure files, use simpler whole-file check to avoid false positives
-    if 'dih-economic-models' in filepath.replace('\\', '/') and 'figures' in filepath.replace('\\', '/'):
-        check_figure_file_imports(content, filepath)
-    else:
-        check_python_imports(content, filepath)
+    # Always check for get_figure_output_path/get_project_root imports (whole-file check)
+    check_figure_file_imports(content, filepath)
+    # Also check for other imports per-block (npf, etc.)
+    check_python_imports(content, filepath)
 
     # Check em-dashes
     check_em_dashes(content, filepath)
