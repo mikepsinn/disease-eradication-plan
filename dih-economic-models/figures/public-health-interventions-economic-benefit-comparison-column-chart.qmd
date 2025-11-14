@@ -24,11 +24,12 @@ if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
         project_root = project_root.parent
 sys.path.insert(0, str(project_root))
+sys.path.insert(0, str(project_root / "dih-economic-models" / "figures"))
 
 # Import centralized style
 
-from dih_economic_models.figures._chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
-from dih_economic_models.figures._chart_style import COLOR_BLACK, COLOR_WHITE
+from _chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata
+from _chart_style import COLOR_BLACK, COLOR_WHITE
 
 setup_chart_style()
 

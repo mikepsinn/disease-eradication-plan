@@ -19,8 +19,9 @@ if project_root.name != 'decentralized-institutes-of-health':
         project_root = project_root.parent
 
 sys.path.insert(0, str(project_root))
+sys.path.insert(0, str(project_root / "dih-economic-models" / "figures"))
 
-from dih_economic_models.figures._chart_style import (
+from _chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
     get_project_root, COLOR_BLACK, COLOR_WHITE
 )

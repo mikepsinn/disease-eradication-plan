@@ -29,7 +29,7 @@ if str(project_root) not in sys.path:
 
 # --- Import centralized style and constants ---
 
-from dih_economic_models.figures._chart_style import (
+from _chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata
 )
