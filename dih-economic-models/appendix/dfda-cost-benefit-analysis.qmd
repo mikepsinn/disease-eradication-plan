@@ -12,18 +12,12 @@ lastInstructionalVoiceHash: dfffb599640f89d6a41674b54796e4d46f447a23cf8e2df732d9
 
 ```{python}
 #| echo: false
-import sys
 import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
+import numpy_financial as npf
 
 project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 - **Saves ~[$50.0B Annually](#gross-r-d-savings-from-dfda-implementation)**: Reduces global clinical trial costs (~[$100.0B/year market](../references.qmd#clinical-trial-spending-dfda-baseline)) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
 - **[463:1 Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~[$40M](#simplified-roi-scenario) generates ~$50.0B in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit).
@@ -123,15 +117,15 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
    - _Basis:_ ~75 FTEs _2.5 years_ \$200k/FTE/year
    - _Activities:_ Detailed design, core platform development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-   
+
    The engineering cost is calculated as:
-   
+
    $$
    C_{\text{engineering}} = N_{\text{FTEs}} \times T \times C_{\text{FTE}} = 75 \times 2.5 \times \$200\text{k} = \$37.5\text{M}
    $$
-   
+
    Where $N_{\text{FTEs}} = 75$ is the number of full-time equivalents, $T = 2.5$ years is the development timeline, and $C_{\text{FTE}} = \$200\text{k}$ per FTE per year.
-   
+
    - **Estimated ROM:** [\$35 - $40M](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 
 2. **Infrastructure Setup & Initial Cloud Costs:**
@@ -203,15 +197,15 @@ This top-down estimate corroborates the findings of the bottom-up analysis. Whil
 
    - _Team Size:_ Assume ~20 FTEs (SREs, DevOps, Core Maintainers, Security).
    - _Basis:_ 20 FTEs \* \$200k/FTE/year
-   
+
    The ongoing engineering cost is calculated as:
-   
+
    $$
    C_{\text{engineering}}^{\text{ops}} = N_{\text{FTEs}}^{\text{ops}} \times C_{\text{FTE}} = 20 \times \$200\text{k} = \$4\text{M}/\text{year}
    $$
-   
+
    Where $N_{\text{FTEs}}^{\text{ops}} = 20$ is the number of FTEs for ongoing operations.
-   
+
    - **Estimated ROM:** \$4 - \$6 Million / year
 
 3. **Software Licenses & Tooling (Ongoing):**
@@ -373,7 +367,6 @@ This table presents point estimates for each scenario, with the overall range of
 | **DAO Governance Operations**                | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
 | **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding core platform build/ops.                                        |
 
-
 {{< include ../figures/dfda-broader-initiative-costs-scenario-comparison-column-chart.qmd >}}
 
 #### Interpretation
@@ -417,19 +410,19 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 - **Extrapolation to New System**:
   - A well-integrated global platform could approach \$500 - \$1,000 per patient in many cases, especially for pragmatic or observational designs.
   - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of [~\$500-\$1,000](#decentralized-trial-costs-modeled-on-oxford-recovery) against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
-  
+
   The cost reduction factor can be formalized as:
-  
+
   $$
   \text{Reduction Factor} = \frac{c_t}{c_d} = \frac{\$40,000 - \$120,000}{\$500 - \$1,000} \approx 40 - 240\times
   $$
-  
+
   Where:
   - $c_t$ is the traditional cost per patient
   - $c_d$ is the decentralized cost per patient
-  
+
   The percentage reduction is:
-  
+
   $$
   \alpha = 1 - \frac{c_d}{c_t} = 1 - \frac{\$500 - \$1,000}{\$40,000 - \$120,000} \approx 97.5\% - 99.2\%
   $$
@@ -440,29 +433,29 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
    - If a trial with 5,000 participants costs \$500 - \$1,000/patient, total cost is \$2.5 - \$5 million, versus \$200 - \$600 million under traditional models.
    - This magnitude of savings can drastically reduce the total cost of clinical development.
-   
+
    For a trial with $x$ participants, the total cost savings is:
-   
+
    $$
    S_{\text{trial}}(x) = (c_t - c_d) \cdot x
    $$
-   
+
    Where:
    - $c_t$ is the traditional cost per patient (\$40,000 - \$120,000)
    - $c_d$ is the decentralized cost per patient (\$500 - \$1,000)
-   
+
    For a trial with $x = 5,000$ participants, the savings range from:
-   
+
    - Minimum savings: $(\$40,000 - \$1,000) \times 5,000 = \$195$ million
    - Maximum savings: $(\$120,000 - \$500) \times 5,000 = \$597.5$ million
-   
+
    This yields a savings range of approximately **\$195 - \$598 million per trial**.
 
 2. **Volume of Trials & Speed**
 
    - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
    - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
+   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../../brain/book/solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
 
 3. **Regulatory Savings**
 
@@ -614,13 +607,13 @@ _The following ROI calculation primarily uses cost figures derived from the deta
   - **Upfront Cost (Core Platform Build):** [~$40M](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
   - **Annual Operational Cost Scenarios:**
     - **Scenario 1: Core Platform Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)).
-      
+
       Let's use a midpoint of ~$19 Million/year for calculation.
     - **Scenario 2: Lean Ecosystem (Core Platform + Medium Broader Initiatives):**
       - Core Platform Ops (midpoint from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)): ~$19 Million/year
       - Medium Broader Initiative Annual Costs (from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): ~$21 Million/year
       - **Total Lean Ecosystem Annual Cost:** ~$19M + ~$21M = **~$40M/year** (or $0.04 Billion/year).
-      
+
       This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Sensitivity analysis could include "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), but this would significantly increase annual costs.)_
 
@@ -649,7 +642,7 @@ Where:
 For the Lean Ecosystem scenario:
 
 - **Upfront Cost** (Core Platform Build from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): $40M
-  
+
   Amortized over 5 years:
   $$
   \frac{\$40\text{M}}{5} = \$8 \text{ Million/year}
@@ -661,7 +654,7 @@ For the Lean Ecosystem scenario:
   $$
   C_{\text{annualized}} = \$8\text{M} + \$40\text{M} = \$48 \text{ Million/year}
   $$
-  
+
   (or $0.048$ Billion/year)
 
 _This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework)._
@@ -694,7 +687,6 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
   $$
   C_{\text{annualized}}^{\text{low}} = \frac{C_0^{\text{low}}}{n} + C_{\text{op}}^{\text{low}} = \frac{\$42\text{M}}{5} + \$11\text{M} = \$19.4 \text{ Million/year}
   $$
-  
 
 - **ROI (Lowest Cost Scenario):**
   $$
@@ -718,7 +710,6 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
   $$
   C_{\text{annualized}}^{\text{high}} = \frac{C_0^{\text{high}}}{n} + C_{\text{op}}^{\text{high}} = \frac{\$2.277\text{B}}{5} + \$297.5\text{M} = \$752.9 \text{ Million/year}
   $$
-  
 
 - **ROI (Highest Cost Scenario):**
   $$
@@ -726,7 +717,6 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
   $$
 
 This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, the financial return is substantial.
-
 
 {{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
 
@@ -822,17 +812,16 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 
 While the figures are presented as daily point estimates for clarity, they represent the steady-state potential loss once the dFDA Infrastructure is fully adopted. The actual daily loss on any given day depends on several key variables that introduce uncertainty:
 
-
 {{< include ../figures/dfda-daily-opportunity-cost-column-chart.qmd >}}
 
 1. **Adoption Rate ($p(t)$):** The calculations above implicitly assume full adoption ($p(t)=1$). As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual. Therefore, the daily opportunity cost will ramp up over time, starting smaller and growing as the platform's use becomes standard. The figures represent the daily cost once that potential is reached.
 
    The daily opportunity cost at time $t$ can be expressed as:
-   
+
    $$
    \text{Daily Cost}_{\text{inaction}}(t) = p(t) \times \left( \frac{S_{\text{annual}}}{365} + \frac{\Delta\text{QALYs}_{\text{annual}}}{365} \times \lambda \right)
    $$
-   
+
    Where $p(t) \in [0,1]$ is the adoption rate at time $t$, $S_{\text{annual}}$ is the annual R&D savings, $\Delta\text{QALYs}_{\text{annual}}$ is the annual QALYs gained, and $\lambda$ is the value per QALY. At full adoption ($p(t) = 1$), this yields the figures shown in the table above.
 2. **Magnitude of R&D Savings ($\alpha$):** The percentage reduction in R&D costs is a critical variable. While the 95% reduction seen in the RECOVERY trial demonstrates what is possible, the system-wide average may be lower. The sensitivity table addresses this by showing a range from 30% to 95%.
 3. **Realization of QALY Gains:** The link between a more efficient research ecosystem and concrete health outcomes (QALYs) is complex. The estimates for QALYs gained are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the dFDA's impact remains a projection.
@@ -1181,21 +1170,11 @@ This section provides executable Python code that implements the financial model
 
 ```{python}
 #| echo: false
-import pandas as pd
-import numpy_financial as npf
-```
-
-```{python}
-#| echo: false
 # Import all parameters from single source of truth
 
-import sys
 import os
 
 project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 
 # Use parameters from economic_parameters.py
@@ -1282,10 +1261,10 @@ dfda_results = []
 
 for redux_pct in rd_reduction_scenarios:
     for op_cost in operational_cost_scenarios:
-        
+
         # Recalculate gross savings for this scenario
         gross_savings = global_clinical_trial_market * redux_pct
-        
+
         # Recalculate ROI for this scenario
         # Handle case where op_cost is zero to avoid division error, though not in our scenarios
         if op_cost > 0:
@@ -1568,7 +1547,6 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 | **NIH "All of Us" Research Program** | \*\*[~\$500 Million / year](https://www.nih.gov/about-nih/what-we-do/budget) (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](../references.qmd#gao-healthcare-gov-costs)** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](../references.qmd#gao-healthcare-gov-costs) |
 | **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](../references.qmd#nih-institute-budgets-fy24)** (FY25 Budget)                 | **~180x**                                | [NCI Budget Data](../references.qmd#nih-institute-budgets-fy24)                 |
-
 
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 

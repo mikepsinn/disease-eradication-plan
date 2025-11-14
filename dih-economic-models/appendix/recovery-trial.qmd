@@ -14,15 +14,6 @@ lastInstructionalVoiceHash: d6dece047683ffc0c97ce95dbc99f3b4e335830ba7bc978acb60
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
@@ -47,8 +38,6 @@ The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent
 | UK Lives Saved (by March 2021)     | 22,000+                                                                                                                           | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
 | Global Lives Saved (by March 2021) | 1,000,000+                                                                                                                        | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
 | Days to First Major Result         | <100                                                                                                                              | [The Conversation](https://theconversation.com/the-inside-story-of-recovery-how-the-worlds-largest-covid-19-trial-transformed-treatment-and-what-it-could-do-for-other-diseases-184772) |
-
-
 
 The RECOVERY trial enrolled 49,000 patients across 186 hospitals, tested 12 treatments, saved a million lives, and cost less than a single F-35 fighter jet.
 

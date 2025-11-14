@@ -14,18 +14,8 @@ lastToneElevationWithHumorHash: e372380e917c6c49d5fcc933c1c8719ebc990ea2f4ba1b2a
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Here's where every dollar goes in the global clinical trials industry, broken down by who's paying and which phase they're funding.
 
@@ -441,7 +431,7 @@ Why Phase 3 dominates:
 
 Humans spend $83 billion annually to develop ~50 drugs over 10+ years each.
 
-[The dFDA model](../solution/dfda.qmd) could achieve [50-95% cost reduction](dfda-cost-benefit-analysis.qmd#gross-r-and-d-savings-from-dfda-implementation), enabling:
+[The dFDA model](../../brain/book/solution/dfda.qmd) could achieve [50-95% cost reduction](dfda-cost-benefit-analysis.qmd#gross-r-and-d-savings-from-dfda-implementation), enabling:
 
 - **10-20× more treatments tested**
 - **5-10× faster development**

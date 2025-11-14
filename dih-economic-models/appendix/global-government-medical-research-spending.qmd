@@ -14,18 +14,8 @@ lastToneElevationWithHumorHash: 2cf82f62941a67df6b7921686be8d09e0ba96fcdb5a8f923
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Here's the complete accounting of humanity's commitment to curing disease. Spoiler: It's embarrassing.
 
@@ -300,7 +290,7 @@ Ratio: Still 31:1 for death
 - One fighter jet costs more than entire disease research programs
 - We're the only species that pays to kill itself
 
-**[The 1% Solution](../solution/1-percent-treaty.qmd):**
+**[The 1% Solution](../../brain/book/solution/1-percent-treaty.qmd):**
 
 - 1% of military spending: $27.2B
 - Added to current spending: $95 billion total

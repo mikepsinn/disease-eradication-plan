@@ -17,19 +17,10 @@ lastInstructionalVoiceHash: 26066a540dc4479cbac40dd86da7dfb66a0ee0b0c38de35f13a6
 #| echo: false
 # Import all economic parameters from centralized module
 
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
 # So we need to add brain/book/appendix to the path
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
-
 
 **Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$6,173.4T** per life saved (ICER = **$-176,382** per QALY).
 

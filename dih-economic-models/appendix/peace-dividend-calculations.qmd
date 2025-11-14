@@ -11,20 +11,10 @@ This analysis models two types of benefits:
 1. **The Captured Dividend**: The direct funds redirected from military budgets to the DIH treasury.
 2. **The Societal Dividend**: The total economic value retained by society due to a 1% reduction in all conflict-related costs.
 
-
 ## Cost of War Data and Calculations
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 # Import all parameters from centralized module
 
 from economic_parameters import *
@@ -61,7 +51,6 @@ print("-" * 35)
 print(f"Captured Dividend (1% of Military Spend): {format_billions(captured_dividend)}")
 print(f"Societal Dividend (1% of Total Costs): {format_billions(societal_dividend)}")
 ```
-
 
 This chart shows the stark contrast between military spending and disease-specific research funding, highlighting the massive opportunity for reallocation.
 
@@ -108,14 +97,14 @@ results = []
 
 for redux in reduction_percentages:
     for mult in indirect_cost_multipliers:
-        
+
         # Recalculate total cost based on the multiplier for indirect costs
         adjusted_indirect_costs = total_indirect_costs * mult
         adjusted_total_cost = total_direct_costs + adjusted_indirect_costs
-        
+
         # Calculate the societal dividend for this scenario
         dividend = adjusted_total_cost * redux
-        
+
         # Store the result
         results.append({
             "Reduction %": f"{redux:.1%}",

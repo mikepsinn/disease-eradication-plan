@@ -14,20 +14,10 @@ lastInstructionalVoiceHash: e2f8bab0e359e02b7b227c4d587e793633ce3ac8684ff8542a8e
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
-
-The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
+The [1% Treaty](../../brain/book/solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 
 ## Challenge 1: Foreign National Election Funding
 
@@ -101,7 +91,7 @@ This phase focuses on mass distribution of a non-security utility token.
 
 ##### Phase 2: VICTORY Token Conversion (Post-Treaty)
 
-This phase occurs only _after_ the 1% Treaty is successfully ratified and the [DIH Treasury](../solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
+This phase occurs only _after_ the 1% Treaty is successfully ratified and the [DIH Treasury](../../brain/book/solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
 - **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
 - **Legal Rationale & Safe Harbor:** This conversion event will be structured to [fall within the SEC's "safe harbor" provisions](../references.qmd#peirce-token-safe-harbor) for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility, governing the active, funded DIH treasury, which strengthens the case for a more favorable regulatory treatment.
@@ -256,24 +246,12 @@ Swiss Foundation (Treaty Coordination)
 Building on the compliance requirements outlined above, this framework uses a sophisticated multi-entity structure that separates charitable, political, and investment activities while maintaining strategic coherence.
 
 ```{python}
-#| echo: false
-#| fig-cap: "Multi-Entity Legal Structure - Three entities with separate funding sources and purposes"
 #| fig-alt: "Three main entities: For-Profit Entity (accepts investments, funds dFDA), 501(c)(3) Public Charity (accepts tax-deductible donations, focuses on education), 501(c)(4) Social Welfare Org (accepts non-deductible donations, focuses on advocacy). Funding sources connect to each entity. Education informs Advocacy, which creates mandate for For-Profit."
-
 import graphviz
-import sys
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-# Add brain/figures to path for helper import
-
-figures_path = Path.cwd()
-if figures_path.name != 'decentralized-institutes-of-health':
-    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
-        figures_path = figures_path.parent
-sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
-
-from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Multi-Entity Legal Structure', format='png')
 dot.attr(rankdir='TD', size='12,14')
@@ -356,7 +334,7 @@ display(IPImage(str(png_path)))
 
 ### HHS Policy Recommendations
 
-To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
+To maximize the effectiveness of the [dFDA Infrastructure](../../brain/book/solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, decentralized FDA platform enabling perpetual, patient-driven clinical trials.
 
 #### Key Policy Objectives
 

@@ -12,19 +12,8 @@ lastInstructionalVoiceHash: 864e74116c0de8011e804968f63964792413193f6fe0af39c0e0
 ---
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
-
 
 Here's a fun fact: humanity spends [$83 billion a year on clinical trials](../references.qmd#global-clinical-trials-market-2024), but **nobody tracks how many people actually participate**.
 
@@ -93,7 +82,6 @@ But here's the real kicker: [2.4 billion people are living with chronic diseases
 They're alive. They're suffering. And they could potentially benefit from the treatments we're studying.
 
 **The ratio: 1 person gets access to trials for every 480 living with disease.**
-
 
 ## The Willingness Gap
 
@@ -205,7 +193,6 @@ The answer: **5 million people a year, at a cost of $16,600 each.**
 ### The ratio: 1 in 480.
 
 The 99.8% who don't get access? They suffer. And 150,000 die every day.
-
 
 ---
 

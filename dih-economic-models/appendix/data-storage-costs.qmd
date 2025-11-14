@@ -8,18 +8,8 @@ lastInstructionalVoiceHash: 7d5c9d0e34af3cb402bba6789318fb3e14b16209c235159b77ba
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 ## Storage Requirements Per Patient
 

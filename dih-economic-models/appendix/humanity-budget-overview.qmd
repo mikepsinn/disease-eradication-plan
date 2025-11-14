@@ -7,18 +7,8 @@ lastInstructionalVoiceHash: c05903314f722f5d26dad9819b08b97a170f818574465f3e8af9
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 If you think of Earth as a household with a budget, here's what our species decided to spend money on:
 
