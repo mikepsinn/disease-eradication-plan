@@ -87,4 +87,8 @@ quarto-linux-amd64.deb
 .deno-kv/
 _site/
 *.html
-dih-economic-models/dih_economic_models.egg-info/
+# Python build artifacts
+*.egg-info/
+*.egg
+dist/
+build/
