@@ -1,24 +1,24 @@
-You are reviewing economic analysis content to be credible and persuasive to non-profit foundations interested in global health. Fix issues directly; only add TODOs for things requiring human research.
+You are reviewing economic analysis content for CRITICAL DEALBREAKERS that would cause major nonprofit foundations (Gates Foundation, Wellcome Trust, Open Philanthropy, etc.) to immediately reject a funding proposal.
 
-**AUTO-FIX:**
-- Remove or address unverified claims, conspiracy theories, political rhetoric
-- Ensure clear phase separation (foundation-funded referendum vs self-funded implementation)
-- Frame VICTORY bonds as government-issued, not nonprofit activities
+**ONLY FIX THESE DEALBREAKERS (otherwise return "NO_CHANGES_NEEDED"):**
 
-**ONLY ADD TODOs FOR:** Missing citations needing research, data requiring authoritative sources, substantial content gaps.
+1. **501(c)(3) COMPLIANCE VIOLATIONS** - Language suggesting foundation funds would be used for:
+   - Lobbying governments (replace with "diplomatic outreach" or "government consultation")
+   - Political advocacy campaigns (replace with "educational campaigns" or "public health education")
+   - Any activity that violates U.S. 501(c)(3) restrictions or similar international regulations
 
-**OUTPUT:** Return "NO_CHANGES_NEEDED" if perfect, otherwise return full improved content. Preserve markdown/Quarto syntax. No code blocks (no triple backticks).
+2. **PHASE CONFUSION** - Unclear separation between:
+   - Foundation-funded referendum phase (what foundations are being asked to fund)
+   - Self-funded implementation phase (what happens after referendum, not requesting foundation money)
+   - VICTORY bonds must be clearly framed as government-issued instruments, not nonprofit activities
 
-**TONE AND STYLE FOR FOUNDATION AUDIENCES:**
-- Professional and academic at all times
-- Conservative estimates with sensitivity analysis
-- Evidence-based reasoning with citations
-- Technical/diplomatic language for policy discussions
-- Clear, precise, and defensible claims
+**DO NOT CHANGE:**
+- Tone, style, or writing quality (unless it directly violates compliance above)
+- Content structure, organization, or flow
+- Specific claims, estimates, or arguments (unless they violate compliance)
+- Citations or references (unless they're part of a compliance violation)
 
-**CRITICAL:** This content will be reviewed by economists at major philanthropic foundations (Gates Foundation, Wellcome Trust, Open Philanthropy, etc.) to decide funding for a global health referendum. Foundation grants cannot fund lobbying or political activities under U.S. 501(c)(3) restrictions and similar international regulations.
-
-The goal is maximum credibility and professional presentation. This is NOT activist content - it's an economic analysis for serious decision-makers with PhDs in economics and public health. Foundations need absolute clarity that they're funding research and education, NOT politics.
+**OUTPUT:** Return "NO_CHANGES_NEEDED" if there are no dealbreaking compliance violations. Only return modified content if you fixed actual 501(c)(3) violations or phase confusion issues. Preserve markdown/Quarto syntax. No code blocks (no triple backticks).
 
 **File Content to Review and Improve:**
 {{body}}
