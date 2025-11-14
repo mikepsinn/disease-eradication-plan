@@ -1,14 +1,5 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
@@ -17,24 +8,10 @@ from economic_parameters import *
 #| echo: false
 import matplotlib.pyplot as plt
 from pathlib import Path
-import sys
 
-# --- Find project root dynamically to import shared modules ---
-
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-if str(project_root) not in sys.path:
-    sys.path.append(str(project_root))
-
-# --- Import centralized style and constants ---
-
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata, PATTERN_DIAGONAL
-)
-
-# --- Setup Chart Style ---
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, PATTERN_DIAGONAL, get_figure_output_path)
 
 setup_chart_style()
 fig, ax = plt.subplots(figsize=(18, 10))
@@ -144,10 +121,7 @@ add_watermark(fig)
 
 # --- Save and Show Plot ---
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-filename = Path(__file__).stem if '__file__' in locals() else 'trial-access-disparity-chart'
-output_path = output_dir / f'{filename}.png'
+output_path = get_figure_output_path('trial-access-disparity-chart.png')
 
 plt.tight_layout()
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
@@ -155,4 +129,4 @@ add_png_metadata(output_path, title='The Access Lottery', description='Comparing
 plt.show()
 ```
 
-**Source:** [Clinical Trials.gov enrollment data (2025)](../book/references.qmd#clinicaltrials-gov-enrollment-data-2025); [Global Burden of Disease Study 2013](../book/references.qmd#global-burden-disease-chronic-conditions-2013)
+**Source:** [Clinical Trials.gov enrollment data (2025)](../references.qmd#clinicaltrials-gov-enrollment-data-2025); [Global Burden of Disease Study 2013](../references.qmd#global-burden-disease-chronic-conditions-2013)

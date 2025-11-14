@@ -1,14 +1,5 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
@@ -16,21 +7,13 @@ from economic_parameters import *
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import sys
 
 # Find project root dynamically
 
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-sys.path.insert(0, str(project_root))
-sys.path.insert(0, str(project_root / "dih-economic-models" / "figures"))
-
 # Import centralized style
 
-from _chart_style import setup_chart_style, add_watermark, clean_spines
-from _chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata
+from figures._chart_style import setup_chart_style, add_watermark, clean_spines
+from figures._chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata
 
 setup_chart_style()
 
@@ -152,7 +135,6 @@ ax.set_ylim(-500, max(rois) * 1.05)
 ax.set_title('When Self-Funded by 1% Military Redirection: Infinite ROI',
             fontsize=24, color=COLOR_BLACK, weight='bold', pad=15, y=0.98)
 
-
 # Add explanatory callout with inline LaTeX equation - positioned to the right
 
 callout_text = r'The 1% Treaty redirects military spending to fund DIH + dFDA at zero net cost to society.' + '\n\n' + r'$\mathrm{ROI} = \frac{\$147\mathrm{B}}{\$0} = \infty$' + '\n\n' + 'Result: $147B in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.'
@@ -173,9 +155,7 @@ add_watermark(fig)
 
 # Save figure with tight bbox to minimize whitespace
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-output_path = output_dir / 'treaty-dih-dfda-roi-comparison-column-chart.png'
+output_path = get_figure_output_path('treaty-dih-dfda-roi-comparison-column-chart.png')
 
 # Save the figure
 

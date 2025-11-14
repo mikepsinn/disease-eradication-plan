@@ -182,6 +182,50 @@ def check_em_dashes(content: str, filepath: str):
                     context=line.strip()[:80]
                 ))
 
+def check_cross_reference_links(content: str, filepath: str):
+    """
+    Check for broken cross-reference links to other .qmd files
+    Matches patterns like: [text](path/to/file.qmd)
+    """
+    lines = content.split('\n')
+    file_dir = os.path.dirname(filepath)
+
+    # Match markdown link syntax: [text](path)
+    # Only check links that reference .qmd files
+    link_pattern = re.compile(r'\[([^\]]+)\]\(([^)#]+\.qmd[^)]*)\)')
+
+    for line_index, line in enumerate(lines):
+        # Skip lines that are HTML comments
+        if re.match(r'^\s*<!--', line.strip()):
+            continue
+
+        matches = link_pattern.finditer(line)
+        for match in matches:
+            # Skip if this match is inside an HTML comment
+            # Check if there's a <!-- before the match and --> after it on the same line
+            before_match = line[:match.start()]
+            after_match = line[match.end():]
+            if '<!--' in before_match and '-->' in after_match:
+                continue  # Link is inside HTML comment, skip it
+
+            link_path = match.group(2).split('#')[0]  # Remove anchor if present
+
+            # Skip URLs
+            if link_path.startswith('http://') or link_path.startswith('https://'):
+                continue
+
+            # Resolve the link path relative to the .qmd file
+            resolved_path = os.path.normpath(os.path.join(file_dir, link_path))
+
+            if not os.path.exists(resolved_path):
+                errors.append(ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message=f'Broken cross-reference link: {link_path} (target file not found)',
+                    context=line.strip()[:80]
+                ))
+
+
 def check_gif_references(content: str, filepath: str):
     """
     Check for GIF files that aren't wrapped in HTML-only blocks
@@ -281,6 +325,9 @@ def validate_file(filepath: str):
 
     # Check image paths
     check_image_paths(content, filepath)
+
+    # Check cross-reference links
+    check_cross_reference_links(content, filepath)
 
     # Check em-dashes
     check_em_dashes(content, filepath)

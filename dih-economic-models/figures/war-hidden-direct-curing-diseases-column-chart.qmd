@@ -1,42 +1,20 @@
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-appendix_path = os.path.join(os.getcwd(), 'brain', 'book', 'appendix')
-if appendix_path not in sys.path:
-    sys.path.insert(0, appendix_path)
-
 from economic_parameters import *
 ```
 
 ```{python}
-#| label: war-hidden-direct-curing-diseases-column-chart
 #| fig-cap: "War's Hidden Costs + Direct Spending vs Curing Diseases"
-
-import sys
-import os
 from pathlib import Path
-
-# Add project root to path (find it relative to current working directory)
-
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-sys.path.insert(0, str(project_root))
-sys.path.insert(0, str(project_root / "dih-economic-models" / "figures"))
 
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from matplotlib import patheffects
-from _chart_style import (
+from figures._chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL,
-    add_png_metadata)
+    add_png_metadata, get_figure_output_path)
 
 # Setup styling with higher DPI for crisper text
 
@@ -113,7 +91,6 @@ bar3 = ax.bar(2, cure_research, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
 ax.text(2, cure_research + (war_indirect_total * 0.02), '$68B\nCuring Diseases', ha='center', va='bottom',
         fontsize=44, weight='bold', color=COLOR_BLACK, linespacing=1.2)
 
-
 # Remove all axis labels and ticks (all columns are labeled with amounts)
 
 ax.set_xticks([])
@@ -135,9 +112,7 @@ add_watermark(fig)
 
 # Save in brain/figures directory with higher quality
 
-output_dir = project_root / 'dih-economic-models' / 'figures'
-output_dir.mkdir(parents=True, exist_ok=True)
-output_path = output_dir / 'war-hidden-direct-curing-diseases-column-chart.png'
+output_path = get_figure_output_path('war-hidden-direct-curing-diseases-column-chart.png')
 
 # Save the figure
 

@@ -21,11 +21,6 @@ lastStructureCheckHash: bb548b639aeb9675e2718ab85f9f5bcb84dabf06d08f09c81a622c9e
 import sys
 import os
 
-# Quarto executes from project root (execute-dir: project in _book.yml)
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
 
@@ -2819,7 +2814,7 @@ from economic_parameters import *
   > Global life expectancy increased from 32 years (1900) to 73 years (2023) - more than doubled
   > This represents an average increase of 41 years over 123 years
   > — [Our World in Data: Life Expectancy](https://ourworldindata.org/life-expectancy) | [WHO: Global Health Estimates](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-life-expectancy-and-healthy-life-expectancy)
- 
+
 <a id="life-sciences-venture-capital-2024"></a>
 
 - **Life sciences venture capital funding**
