@@ -14,15 +14,6 @@ lastInstructionalVoiceHash: 723f2fdd5f498de77818feaf244584b123e49794e500aefa0014
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
 

@@ -19,18 +19,8 @@ lastInstructionalVoiceHash: 0faec94c14313e5c61f445c230ae74fe75c77e7edc05f97f0b9e
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy" or a "metaphor" or a "nice idea."
 

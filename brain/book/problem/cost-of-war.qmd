@@ -18,15 +18,6 @@ lastInstructionalVoiceHash: 860e7eabbc3700ded40396cbc6b4c219866f761e350d0cb03b0e
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
 
@@ -35,7 +26,6 @@ In 2024, humanity spent [$2.7T](../../../dih-economic-models/references.qmd#sipr
 You are a species that spends enough on weapons to literally pave a road to space, yet you can't figure out how to stop dying from preventable diseases.
 
 This chapter is an audit of your collective insanity. It's the itemized receipt for your self-destruction. Think of it as a credit card statement, except instead of Starbucks and Amazon, it's missiles and murder robots, and instead of 23% APR, the interest is paid in human lives.
-
 
 <!-- {{< include ../../dih-economic-models/figures/military-spending-scenarios-chart.qmd >}} -->
 
@@ -64,7 +54,6 @@ The fundamental formula for calculating direct war costs is:
 $$
 C_{\text{direct}} = M_{\text{spending}} + I_{\text{damage}} + H_{\text{casualties}} + T_{\text{disruption}}
 $$
-
 
 Here's the breakdown of what goes into the direct cost of war:
 
@@ -163,7 +152,6 @@ $$
 
 Where V is trade volume, D is disruption intensity, M is multiplier effect, and T is recovery time for each affected sector i.
 
-
 # The Ghost in the Machine: Indirect Costs
 
 The real cost of war isn't on the receipt. It's in the opportunities we burn, the potential we smother, and the future we mortgage to pay for our present stupidity.
@@ -181,7 +169,6 @@ Here's a thought experiment: What if we spent our war money on something else?
 | Poverty Eradication | 2.7 complete eliminations | $2.7T ÷ [\$1,000B](../../../dih-economic-models/references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
 
 ![The stark disparity: money spent on war, neuroscience, and cancer research](../../../assets/Priorities-Money-Spent-on-War-Neuroscience-Cancer-Research-Graph.png)
-
 
 ### The Multiplier Effect: Economic Growth We're Not Having
 
@@ -204,7 +191,6 @@ $$
 $$
 \text{Alternative GDP Growth} = (\$2.7\text{T} \times 1.6) - (\$2.7\text{T} \times 0.6) = \$2.7\text{T}
 $$
-
 
 We're losing \$2.7 trillion in annual GDP growth.
 Every year.
@@ -234,7 +220,6 @@ V_{\text{lifetime}} = {} & (N_{\text{veterans}} \times C_{\text{annual}} \times 
 $$
 
 Where N is number of veterans, C is annual care cost, L is remaining lifespan, D is disability payments, and I is healthcare inflation (historically [3.5-4.6% annually](../../../dih-economic-models/references.qmd#historical-healthcare-inflation-rate)).
-
 
 ### Refugee Support: The Mathematics of Displacement
 
@@ -408,5 +393,4 @@ When you consider the secondary effects of war, the total costs explode:
 - Millions get PTSD (can't work, need therapy forever)
 - The lucky ones just die
 - The unlucky ones live with half a face
-
 

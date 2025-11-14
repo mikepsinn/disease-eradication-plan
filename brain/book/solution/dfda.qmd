@@ -16,18 +16,8 @@ lastToneElevationWithHumorHash: d28d7de32bfdf6072dc9250a8032ea81090b69062936cc32
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 {{< include ../../../dih-economic-models/figures/trial-access-disparity-chart.qmd >}}
 

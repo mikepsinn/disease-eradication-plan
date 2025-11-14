@@ -18,18 +18,8 @@ lastToneElevationWithHumorHash: 1d5d731fd261744621e400903d21f6a6536cf1caa1911de9
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 The 1% Treaty is a legally-binding global accord with a single provision: every signatory nation redirects 1% of its annual military budget to the [Decentralized Institutes of Health (DIH)](dih.qmd).
 
@@ -173,7 +163,7 @@ So you don't frame this as "reducing military spending." You frame it as:
 "Our nation will be stronger when our people aren't dying of preventable diseases. A healthy population is a powerful population."
 
 **For Economists**:
-"[The ROI is 1,239:1](../../dih-economic-models/economics/economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). This beats every other public health intervention on record."
+"[The ROI is 1,239:1](../../../dih-economic-models/economics/economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). This beats every other public health intervention on record."
 
 **For Conspiracy Theorists**:
 "Big Pharma hates this one weird trick that makes medicine basically free."

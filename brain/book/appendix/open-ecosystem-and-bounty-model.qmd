@@ -15,19 +15,8 @@ lastInstructionalVoiceHash: 3e74a10b297b841a395233d2891cf5d20bc1815ded16d8d2dfa6
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
-
 
 The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its goals without spending billions on development. How? By not building most of it.
 

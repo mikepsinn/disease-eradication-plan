@@ -12,18 +12,8 @@ lastInstructionalVoiceHash: 0ecdf035fc1c7ff6ec068e6653953300e69af96d32d2fecaf3d8
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 This document analyzes the organizational structures of three successful entities that serve as precedents for the DIH. By understanding how they are staffed and organized, you can provide a credible, real-world justification for your own [Hiring Plan](../../operations/careers/hiring-plan.md).
 

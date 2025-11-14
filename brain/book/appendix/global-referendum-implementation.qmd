@@ -7,18 +7,8 @@ lastToneElevationWithHumorHash: d385b9b9052d4119181723b1552864da3faeb36700e2a2f8
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Implement a privacy-preserving, globally verifiable referendum to assess public support for the [1% Treaty](../solution/1-percent-treaty.qmd) and DIH. Outputs must be auditable and persuasive to policymakers.
 

@@ -16,19 +16,8 @@ lastInstructionalVoiceHash: 17194e591f285a0dfe6cd12ee72a2fe72f079b7001e87827d5d9
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
-
 
 Defense lobbyists spend [~$100M/year](../../../dih-economic-models/references.qmd#lobbying-100m) and generate $181B in government contracts. That's a [1,810:1 ROI](../../../dih-economic-models/references.qmd#lobbying-roi-calc).
 

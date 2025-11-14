@@ -16,18 +16,8 @@ lastToneElevationWithHumorHash: f7165c6c088239b042c2b9a7be48e633b5f53e5902fa43d5
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 The classic "free-rider" objection to any global treaty is valid: "Why should we comply if our rivals won't?"
 

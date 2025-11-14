@@ -22,18 +22,8 @@ lastToneElevationWithHumorHash: 22e916ab368d234be59350f413d8153be8078eab0cd5db11
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Now that you understand the problem, which is that everyone is dying while you build missiles, it's time to learn how to fix it.
 
@@ -246,7 +236,6 @@ The system doesn't require anyone to stop being selfish. It just redirects selfi
 
 ###### On Why This Isn't Clinically Insane
 
-
 History shows this works:
 
 - Post-WWII: Cut military 30%, greatest boom ever
@@ -272,7 +261,6 @@ The War on Disease is proof of concept. Victory here means you can fix everythin
 
 They say if something seems too good to be true, it probably is. But sometimes things are exactly as good as they seem, and the only reason nobody did them before is because nobody thought to try.
 
-
 ###### On What Comes Next
 
 The rest of Part II explains each component in detail:
@@ -291,5 +279,4 @@ If that seems anticlimactic, remember: Every revolution starts with someone doin
 In this case, the slightly less stupid thing is redirecting 1% of the murder budget to the not-dying budget.
 
 History will judge whether this was genius or obvious. But either way, you'll be alive to see it, which is more than you can say for the alternative.
-
 

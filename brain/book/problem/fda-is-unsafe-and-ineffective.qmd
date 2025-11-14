@@ -21,14 +21,7 @@ lastInstructionalVoiceHash: 51810bb6fff3168c1d156198cf01d2b156b8a610ecad9d0f260c
 
 ```{python}
 #| echo: false
-import sys
 import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
 
 from economic_parameters import *
 ```
@@ -586,7 +579,6 @@ It's like testing umbrellas only on sunny days, then wondering why they don't wo
 Genius!
 
 It's like testing car safety using only crash test dummies, then being surprised when real humans with bones have different outcomes.
-
 
 ### No Long-Term Outcome Data
 

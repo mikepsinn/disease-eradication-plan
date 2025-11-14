@@ -6,19 +6,8 @@ lastInstructionalVoiceHash: 332af023d6c8f4d5493bb1144bcfa104877038cf055b2b00dc18
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
-
 
 Nonprofits spend most of their time begging for money. Foundations spend most of their time deciding who to give money to. Everyone pretends this is efficient.
 

@@ -13,18 +13,8 @@ lastToneElevationWithHumorHash: 41f63734b6e451030f3b3ad95ccfe8d622946d14f983d5f7
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Every government "War on X"—Drugs, Poverty, Terror, Christmas, has been a spectacular failure.
 

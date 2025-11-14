@@ -22,18 +22,8 @@ lastInstructionalVoiceHash: 62a3ad7d4ec3de9d03496cb650fba4f7bdf47eabdc10c928aadc
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 To accelerate financing for public‑good initiatives (e.g., the dFDA, DIH, and the 1% Treaty), this Act creates an "impact securities" category with simplified offering, expanded investor participation, and automated, on‑chain disclosures, preserving investor protections while lowering capital formation frictions.
 

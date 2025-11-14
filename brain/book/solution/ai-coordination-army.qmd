@@ -9,22 +9,12 @@ lastToneElevationWithHumorHash: ff9cfbf2efc231406c0fddda6ff7c3bbffebf33a1adf4f5d
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 # Import economic parameters (produces output to prevent timeout)
 
 print("Loading economic parameters...", flush=True)
 from economic_parameters import *
 print("Economic parameters loaded.", flush=True)
 ```
-
 
 You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents to do the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
@@ -91,25 +81,12 @@ AI doesn't have this limitation. It never sleeps, speaks every language, operate
 Here's the coordination architecture you need. Don't let the diagram scare you, it's just showing that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
 
 ```{python}
-#| echo: false
-#| fig-cap: "AI Coordination Architecture - Three-layer hierarchy from global network to individual task agents"
 #| fig-alt: "Diagram showing three layers: Global Level (Network Architect Agent recommends to Builder Agents, who implement Global Network Layer), Mission Level (Global Network contains Mission Network, which contains Coordinating Agent), and Node Level (Coordinating Agent coordinates Node A and Node B, Node A contains Task Agent 1 and Performance Monitor)"
-
 import graphviz
-import sys
-import os
 from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-# Add brain/figures to path for helper import
-
-figures_path = Path.cwd()
-if figures_path.name != 'decentralized-institutes-of-health':
-    while figures_path.name != 'decentralized-institutes-of-health' and figures_path.parent != figures_path:
-        figures_path = figures_path.parent
-sys.path.insert(0, str(figures_path / 'brain' / 'figures'))
-
-from _graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+from figures._graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create directed graph
 

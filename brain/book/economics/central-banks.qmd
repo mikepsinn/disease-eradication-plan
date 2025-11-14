@@ -13,18 +13,8 @@ lastInstructionalVoiceHash: 9d9424597f91d0821a4f1e0f8ddbe2ccfd6df99dc9b6425b0008
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Every dollar in your wallet is a death certificate with a president's face on it.
 

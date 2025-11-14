@@ -9,18 +9,8 @@ lastInstructionalVoiceHash: d1c24ef7a7b12bc836b63a73b31f983a6b3a14fab117149fb7b9
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../../../dih-economic-models/references.qmd#3-5-rule)** succeeds.
 

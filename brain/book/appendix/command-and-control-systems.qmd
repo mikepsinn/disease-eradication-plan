@@ -14,18 +14,8 @@ lastInstructionalVoiceHash: 4dcdeb18fe098ef89f72d2a2df573a76d16178119ba61340d56d
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 *The DIH Command & Control Airtable Base (Or: How to Track 8 Billion People Without Being Creepy)*
 

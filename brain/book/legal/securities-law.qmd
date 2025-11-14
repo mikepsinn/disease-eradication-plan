@@ -12,18 +12,8 @@ lastInstructionalVoiceHash: 1da06b2dc27ef38202347f5fb15f4b279874cc8d7eb21baaed55
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 The same laws that let defense contractors sell death certificates called "bonds" will let you sell life certificates called "VICTORY bonds." You just need to structure them correctly so the SEC doesn't send you to a country club prison.
 

@@ -12,18 +12,8 @@ lastInstructionalVoiceHash: 592b6d0464ce3d16be55e463509136de0afaf08759948afb02f3
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 International treaties supersede national sovereignty. The Vienna Convention on the Law of Treaties (1969) makes them binding forever. 
 

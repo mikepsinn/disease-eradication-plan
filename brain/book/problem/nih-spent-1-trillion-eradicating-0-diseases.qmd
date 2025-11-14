@@ -18,18 +18,8 @@ lastInstructionalVoiceHash: 2afc99fe00a5e6b3b9a1fdaff4f170e78b6c12740196daa15b0d
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted) ([source](../../../dih-economic-models/references.qmd#nih-cumulative-spending)).
 
@@ -78,7 +68,6 @@ Instead: Meta-research. Studying whether we should do studies.
 
 This isn't a story about a lack of treatments. It's about a system that chooses not to test them.
 
-
 ## The Basic Research Black Hole
 
 The NIH spend the vast majority of it on "basic research"—understanding disease in mice, while a tiny fraction goes to testing treatments in actual humans.
@@ -116,7 +105,6 @@ We've created a system where you need to be old enough to have discovered someth
 
 Einstein published special relativity at 26.
 Under NIH rules, he'd still be a "promising young investigator" at 40.
-
 
 ## The Committee Industrial Complex
 
@@ -183,7 +171,6 @@ During the NIH's trillion-dollar spending spree, Americans got:
 
 It's like hiring a personal trainer and gaining 100 pounds.
 At some point you have to wonder if they're working for McDonald's.
-
 
 ## Political Funding: The Disease Popularity Contest
 

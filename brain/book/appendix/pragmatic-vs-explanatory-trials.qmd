@@ -12,18 +12,8 @@ lastInstructionalVoiceHash: f97d3c85f05efaa1e1637967597d6d0099fe136c6a2f8ca2ba57
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 What are Pragmatic Trials?
 

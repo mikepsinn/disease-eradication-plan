@@ -8,18 +8,8 @@ lastInstructionalVoiceHash: d65f93e1134b0a34f51fd5b4fac7ad88f890f7339acf2d54e54d
 
 ```{python}
 #| echo: false
-import sys
-import os
-
-# Quarto executes from project root (execute-dir: project in _book.yml)
-
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from economic_parameters import *
 ```
-
 
 Forget saving humanity. Let's talk about what you, personally, get out of this. You don't need to be a good person to support this plan. You just need to be selfish.
 
@@ -32,9 +22,7 @@ If you get sick (and you will), your chances of getting into a clinical trial ar
 ### What You Actually Get
 
 ```{python}
-#| label: personal-benefits-calc
 #| echo: false
-
 # Calculate for typical 30-year-old making $50K
 
 calc = calculate_personal_lifetime_wealth_disease_eradication(
