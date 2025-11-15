@@ -19,7 +19,7 @@ lastToneElevationWithHumorHash: d28d7de32bfdf6072dc9250a8032ea81090b69062936cc32
 from dih_models.parameters import *
 ```
 
-{{< include .../../../figures/trial-access-disparity-chart.qmd >}}
+{{< include ../figures/trial-access-disparity-chart.qmd >}}
 
 Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../appendix/clinical-trial-participants.qmd). That's **0.2%**.
 
@@ -478,4 +478,4 @@ The dFDA achieves [**82x More Efficiency**](../references.qmd#recovery-trial-82x
 - **Time to results**: 2 years vs the current 17 years
 - **Patient access**: Universal access vs [85% excluded](../references.qmd#clinical-trial-patient-participation-rate) currently
 
-{{< include .../../../figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}
+{{< include ../figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}
