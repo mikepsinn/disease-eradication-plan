@@ -1,0 +1,718 @@
+---
+title: The FDA Is Unsafe and Ineffective
+description: How the FDA makes medicine 82X more expensive while operating at the speed of continental drift. A factual comedy about bureaucratic excellence.
+published: true
+tags:
+  - problem
+  - fda
+  - clinical-trials
+  - drug-approval
+  - bureaucracy
+  - regulatory-capture
+lastReviewed: '2025-10-16T00:00:00.000Z'
+lastFactCheck: '2025-10-17T00:00:00.000Z'
+lastLinkCheck: '2025-10-17T00:00:00.000Z'
+lastFigureCheck: '2025-10-17T00:00:00.000Z'
+lastFactCheckHash: f2b0a7a7e41cf5c672aa17be7c37c7be259f4dfdf2f659287ff274d0d247dabd
+lastStructureCheckHash: e4fe42db2d551d50b3f0757db5732208a325f5da863deaf7e6a531077d1f8595
+lastLatexCheckHash: 98dc5fb3f3c936d35955ba7764a866607893967284125f62c577be816364042c
+lastInstructionalVoiceHash: 51810bb6fff3168c1d156198cf01d2b156b8a610ecad9d0f260c84335bf3eee8
+---
+
+```{python}
+#| echo: false
+import os
+
+from dih_models.parameters import *
+```
+
+## 🧞Be Careful What You Wish For
+
+Imagine you met a magical genie. Imagine you wished for it to fulfill the FDA Congressional Mandate to:
+
+> Ensure the safety and efficacy of all drugs and medical devices
+
+**Q: How could the genie PERFECTLY achieve this? 🤔**
+
+**A: Ensure that no one ever takes a new drug again.**
+
+That would 100% guarantee that no one ever takes a medication that may or may not be effective.
+
+In practice, you've seen a less absolutist interpretation of the mandate. So instead of rejecting all new treatments, you have simply exponentially increased the regulatory barrier (which is like setting the bar very high, then adding landmines, then putting the bar on top of Mount Everest).
+
+The Food and Drug Administration is a masterpiece of institutional failure. It was created to ensure drugs are safe and effective. It has achieved the opposite, creating a system that is simultaneously unsafe, ineffective, and catastrophically expensive.
+
+The FDA doesn't protect you from dangerous drugs. It protects you from *potentially life-saving drugs* by making them impossible to test and approve. It's a system designed to prevent lawsuits, not save lives. The result is a graveyard of preventable deaths and a mountain of wasted money.
+
+## The 82x Inefficiency Tax
+
+Let's compare two real-world systems for testing drugs:
+
+1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
+2.  **The FDA System:** Averages **[$41,000 per patient](../references.qmd#trial-cost-41k)** for clinical trials. Takes an average of **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
+
+The FDA's system is **82x more expensive** and **36x slower**. This isn't a small difference. It's the difference between a functional system and a system designed to fail.
+
+You're only 2 lifetimes from the use of the modern scientific method in medicine. Thus, it's only been applied for 0.0001% of human history (you invented science yesterday, cosmically speaking). The more clinical research studies you read, the more you realize you don't know. Nearly every study ends with the phrase "more research is needed" (which is scientist-speak for "we have no idea what's happening, please give us more grant money"). You know basically nothing at this point compared to what will eventually be known about the human body, which would be fine except people are dying while you figure it out.
+
+## Historical Evidence: Why Real-World Evidence Works Better
+
+Large-scale efficacy trials based on real-world evidence produce better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
+
+**The Setup: 10,000 Years of Not Improving**
+
+For over 99% of recorded human history, [the average human life expectancy was around 30 years](../references.qmd#historical-life-expectancy-30-years).
+
+This was true whether you lived in Ancient Rome, Medieval Europe, or the Renaissance. Kings and peasants, philosophers and farmers, all died at roughly the same embarrassingly young age.
+
+For 10,000 years, you made exactly zero progress.
+
+![historical life expectancy](../../assets/life-expectancy-historical.jpg)
+
+**1883 – The Year You Figured It Out**
+
+Then something changed.
+
+In 1883, [some doctors founded the Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) and did something revolutionary: they shared information. Apparently after 10,000 years someone finally thought "what if we told each other what works?"
+
+Here's how it worked:
+
+[144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but make them smell funny."
+
+Leading experts reviewed all these case reports, compiled them into studies, and published the results. If a medicine worked and didn't kill people, JAMA gave it a seal of approval.
+
+This was crowdsourced, observational, objective, peer-reviewed clinical research. And it worked.
+
+### The Result
+
+After 10,000 years of zero progress, human life expectancy suddenly started increasing by 4 years. Every decade. For 80 years.
+
+This is the most linear relationship in medical history. It's suspiciously perfect. And it lasted from 1883 to 1960.
+
+**1938 – The FDA Requires Phase 1 Safety Trials**
+
+A drug called Elixir sulfanilamide caused over [100 deaths](https://www.fda.gov/files/about%20fda/published/The-Sulfanilamide-Disaster.pdf) in the United States in 1937.
+
+Congress [reacted](https://en.wikipedia.org/wiki/Elixir_sulfanilamide) to the tragedy by requiring all new drugs to include:
+
+> "adequate tests by all methods reasonably applicable to show whether or not such drug is safe for use under the conditions prescribed, recommended, or suggested in the proposed labeling thereof."
+
+These requirements evolved to what is now called the [Phase 1 Safety Trial](https://en.wikipedia.org/wiki/Phase_1_safety_trial).
+
+This consistent four-year/decade increase in life expectancy remained unchanged before and after the new safety regulations.
+
+![Fda safety trials life expectancy](../../assets/fda-safety-trials-life-expectancy.png)
+
+This suggests that the regulations did not have a large-scale positive or negative impact on the development of life-saving interventions.
+
+#### **1950**'s – Thalidomide **Causes Thousands of Birth Defects Outside US**
+
+Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, [it resulted in thousands of horrific congenital disabilities](../references.qmd#thalidomide-birth-defects).
+
+Fortunately, [the existing FDA safety regulations prevented any birth defects in the US](../references.qmd#thalidomide-no-us-birth-defects). Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
+
+![Thalidomide](../../assets/thalidomide.jpg)
+
+#### **1962 – The Year You Decided to Make Everything Worse**
+
+Effective **safety** regulations were already in place. They worked. America had zero Thalidomide deaths while Europe had thousands.
+
+So naturally, the government responded to this success by regulating **efficacy** testing instead via the [1962 Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962). This is like seeing your smoke detector work perfectly and deciding to replace it with a smoke detector that's 82 times more expensive and takes 36 times longer to detect smoke (and also doesn't work as well).
+
+#### What Changed
+
+Before 1962:
+
+- Drug companies spent [$74 million](../references.qmd#pre-1962-drug-costs-timeline) (inflation-adjusted) to prove safety
+- Once approved as safe, [144,000 independent doctors tested efficacy](../references.qmd#pre-1962-physician-trials) on real patients
+- The third-party AMA compiled results and published findings
+
+After 1962:
+
+- FDA took over efficacy testing
+- [Made the old system illegal](../references.qmd#kefauver-harris-amendment-1962)
+- Required small, controlled trials run by... the drug companies themselves
+
+Let's pause on that irony: The new regulations were meant to ensure drugs work. They did this by:
+1. Banning large real-world trials
+2. Requiring small artificial trials
+3. Letting drug companies run their own tests
+
+Genius.
+
+#### What Happened to Efficacy Data
+
+The 1962 regulations, which were explicitly about ensuring efficacy, massively reduced the quantity and quality of efficacy data for three reasons:
+
+- **Trials Got Smaller**: Fewer patients, less data
+- **Patients Got Less Representative**: Excluded sick people, old people, people with other conditions, you know, the people who actually need medicine
+- **Conflicts of Interest Exploded**: Drug companies ran their own trials instead of independent doctors
+
+#### What Happened to New Treatments
+
+The new regulations immediately [reduced new drug approvals by 70%](../references.qmd#post-1962-drug-approval-drop).
+
+Not gradually. Immediately.
+
+![Graph showing new treatments per year decline after 1962](../../assets/new-treatments-per-year-2.png)
+
+#### What Happened to Costs
+
+Since 1962, the cost of bringing a new treatment to market went from [$74 million to over $1 billion](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm) (inflation-adjusted).
+
+That's a 13x increase. For worse results.
+
+![Cost to Get a New Drug to Market](../../assets/cost-to-develop-a-new-drug.png)
+
+#### What Happened to Drug Patents
+
+The new regulations created such a massive delay that the pharmaceutical industry complained about a "drug lag."
+
+So Congress "fixed" this by [extending drug patent monopolies](../references.qmd#drug-price-competition-act-1984) in 1984.
+
+Kefauver's amendments, which were meant to make drugs safer and cheaper, instead made them:
+
+- Less safe (smaller trials, less real-world data)
+- More expensive (monopolies extended)
+- Less available (70% fewer approvals)
+
+This is government efficiency.
+
+##### Decreased Ability to Determine Comparative Efficacy
+
+The placebo-controlled, randomized controlled trial helped researchers gauge the efficacy of an individual drug. However, it makes the determination of comparative effectiveness much more difficult.
+
+**What Happened to Life Expectancy (The Part That Matters)**
+
+Remember that suspiciously linear 4-year increase in life expectancy every decade from 1883 to 1960?
+
+Here's what happened in 1962:
+
+It immediately cut in half. To 2 years per decade.
+
+![Average Life Expectancy Over Time](../../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
+
+Not gradually. Not "it slowed down over the next decade."
+
+###### Immediately.
+
+From 1883 to 1960: 4 years per decade.
+
+From 1962 onward: 2 years per decade.
+
+The break is so clean you can see exactly when Congress decided to "help."
+
+###### The "Diminishing Returns" Excuse
+
+Some people say "diminishing returns explain the slowdown."
+
+Diminishing returns produce exponential decay. A smooth curve that gradually flattens over time.
+
+![What diminishing returns would look like](../../assets/diminishing-returns.png)
+
+This is not what happened.
+
+What happened was a straight line that instantly changed slope in 1962 when the regulations changed.
+
+Diminishing returns don't produce sudden linear breaks. Regulatory changes do.
+
+###### The "Correlation Is Not Causation" Excuse
+
+True. Correlation alone proves nothing.
+
+But correlation + mechanism + temporal precision is how science works.
+
+Here's what you have:
+
+1. **Temporal correlation**: Life expectancy growth cut in half immediately after 1962 regulations
+2. **Mechanism**: Regulations reduced new treatments by 70%, increased costs 13x, banned real-world efficacy trials
+3. **Alternative explanations**: None that explain a sudden linear break in 1962
+
+This is literally how clinical trials work: temporal correlation + mechanism of action = inference of causation.
+
+If you don't trust this method, you can't trust any clinical research. Or science generally.
+
+#### Impact of Innovative Medicines on Life Expectancy
+
+A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) of 66 diseases in 27 countries, suggests that if no new drugs had been launched after 1981, the number of years of life lost would have been 2.16 times higher it actually was. It estimates that pharmaceutical expenditure per life-year saved was [$2837](https://pubmed.ncbi.nlm.nih.gov/30912800).
+
+![Graph showing the shift in relative mortality among major diseases over 60 years.](../../assets/disease-causing-death-shift.png)
+
+More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between the development of new cancer treatments and cancer survival over 30 years.
+
+![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](../../assets/more-surviving-more-therapies.png)
+
+#### The Summary
+
+- 10,000 years: Zero progress
+- 1883: Decentralized real-world trials, 4 years/decade progress
+- 1962: FDA takes over, progress cut in half
+- 2025: Still stuck with the broken system
+
+Humanity solved medical progress in 1883. We broke it in 1962 and are still living with the consequences.
+
+### The Modern Consequences
+
+Progress! The FDA's current system works like this:
+
+1. Scientists discover a cure for your disease
+2. You wait 17 years
+3. You die
+4. The cure gets approved
+5. Pharmaceutical companies charge your widow $10,000 per pill
+
+It's a beautiful system if you're a mortician or a bankruptcy lawyer.
+
+We're at the very beginning of thousands or millions of years of systematic discovery. So it's unlikely that this decline in lifespan growth is the result of diminishing returns due to our running out of things to discover.
+
+However, to validate the theory that large-scale real-world evidence can produce better health outcomes requires further validation of this method of experimentation. That's the purpose of deFDA.
+
+**High Cost of Development Favors Monopoly and Punishes Innovation**
+
+There's another problem with the increasing costs of treatment development. In the past, a genius scientist could come up with a treatment, raise a few million dollars, and do safety testing. Now that it costs a billion dollars to get a drug to market, the scientist has to persuade one of a few giant drug companies that can afford it to buy his patent.
+
+Then the drug company has two options:
+
+**Option 1: Risk $1 billion on clinical trials**
+
+**Possibility A:** Drug turns out to be one of the 90% the FDA rejects. GIVE BANKER A BILLION DOLLARS. DO NOT PASS GO.
+
+**Possibility B:** Drug turns out to be one of the 10%, the FDA approves. Now it's time to try to recover that billion dollars. However, very few drug companies have enough money to survive this game. So, this company almost certainly already has an existing inferior drug on the market to treat the same condition. Hence, any profit they make from this drug will likely be subtracted from revenue from other drugs they've already spent a billion dollars on.
+
+**Option 2: Put the patent on the shelf**
+
+Do not take a 90% chance of wasting a billion dollars on failed trials. Do not risk making your already approved cash-cow drugs obsolete.
+
+What's the benefit of bringing better treatment to market if you're just going to lose a billion dollars? Either way, the profit incentive is entirely in favor of just buying better treatments and shelving them.
+
+**Cures Are Far Less Profitable Than Lifetime Treatments**
+
+If the new treatment is a permanent cure for the disease, replacing a lifetime of refills with a one-time purchase would be economically disastrous for the drug developer. With a lifetime prescription, a company can recover its costs over time. Depending on the number of people with the disease, one-time cures would require a massive upfront payment to recover development costs.
+
+How is there any financial incentive for medical progress at all?
+
+Fortunately, there isn't a complete monopoly on treatment development. However, the more expensive it is to get a drug to market, the fewer companies can afford the upfront R\&D investment. So the drug industry inevitably becomes more monopolistic. Thus there are more situations where the cost of trials for a superior treatment exceeds the profits from existing treatments.
+
+### Lack of Incentive to Discover New Applications for Off-Patent Treatments
+
+Roughly [10,000](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) known diseases afflict humans, most of which (approximately 95%) are classified as "orphan" (rare) diseases. The current system requires that a pharmaceutical company predict a particular condition in advance of running clinical trials. If a drug is found to be effective for other diseases after the patent has expired, no one has the financial incentive to get it approved for another disease.
+
+**People With Rare Disease are Severely Punished**
+
+In the case of rare diseases, increasing the cost of treatment development to over a billion makes it impossible to recover your investment from a small number of patients. So rare disease patients suffer the most severe harm from the added regulatory burden on development.
+
+How high should the cost of drug development be on our list of human problems? Well, when something costs more, you get less of it. For people dying of cancer, the fact that we couldn't afford enough research to cure them is definitely at the top of their list of human problems.
+
+### Delayed Life-Saving Treatments: The "Drug Lag"
+
+One unanticipated consequence of the amendments was that the new burden of proof made the process of drug development both more expensive and much longer, leading to increasing drug prices and a "drug lag". After that point, whenever they released some new cancer or heart medication that would save 50 thousand lives a year, it meant that over the previous ten years of trials, 500,000 people died because they didn't have access to the drug earlier.
+
+**Deaths Due to US Regulatory "Drug Lag"**
+
+A comparative analysis between countries suggests that delays in new interventions cost anywhere from [21,000 to 120, 000](https://www.fdareview.org/features/references/#gieringer85) US lives per decade.
+
+Deaths owing to drug lag have been numbered in the [hundreds of thousands](https://www.fdareview.org/features/references/#wardell78a). It's estimated that practolol, a drug in the beta-blocking family, could save ten thousand lives a year if allowed in the United States. Although the FDA allowed a first beta-blocker, propranolol, in 1968, three years after that drug had been available in Europe, it waited until 1978 to allow propranolol to treat hypertension and angina pectoris, its most essential indications. Despite clinical evidence as early as 1974, only in 1981 did the FDA allow a second beta-blocker, timolol, to prevent a second heart attack. The agency's withholding of beta-blockers was alone responsible for probably [tens of thousands of deaths](https://www.fdareview.org/features/references/#gieringer85).
+
+[Data](http://csdd.tufts.edu/databases) from the Tufts Center for the Study of Drug Development suggests that thousands of patients have died because of US regulatory delays relative to other countries, for new drugs and devices, including:
+
+* interleukin-2
+* Taxotere
+* vasoseal
+* ancrod
+* Glucophage
+* navelbine
+* Lamictal
+* ethyol
+* photofrin
+* rilutek
+* citicoline
+* panorex
+* Femara
+* ProStar
+* omnicath
+
+Before US FDA approval, most of these drugs and devices had already been available in other countries for a year or longer.
+
+Following the 1962 increase in US regulations, one can see a divergence from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
+
+![A chart showing the divergence in life expectancy between the US and Switzerland after 1962.](../../assets/us-swiss-life-expectancy-5.png)
+
+Perhaps it's a coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
+
+![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../assets/us-swiss-life-expectancy-drug-approvals.png)
+
+## The \$2.6 Billion Price Tag for Aspirin
+
+Here's what it actually costs to get FDA approval for a new drug:
+
+- **Average cost:** [$2.6 billion](../references.qmd#drug-development-costs)
+- **Average time:** [9.1 years from Phase 1](../references.qmd#drug-development-timeline-9-years) (17 years total discovery-to-patient)
+- **Success rate:** [12% make it through trials](../references.qmd#drug-trial-success-rate-12-pct)
+
+That's [$41,000 per person](../references.qmd#trial-cost-41k) just to TEST if a pill works. Not the pill. Just to test it.
+
+For that money, you could:
+
+- Buy a Tesla and crash it into the disease
+- Hire a shaman for a year
+- Fly to Switzerland for assisted dying (much faster)
+
+The total cost? **[$2.6 billion](../references.qmd#drug-development-costs)** per new drug.
+
+That's [more than the GDP of Greenland](../references.qmd#gdp-of-greenland). We could literally buy Greenland and turn it into a giant laboratory for less than it costs to approve one arthritis medication.
+
+Fun fact: If we had today's FDA in 1897, aspirin would still be in Phase II trials.
+"We need to test if it works on headaches in left-handed people born on Tuesdays."
+
+**[17 years from discovery to patient](../references.qmd#drug-development-timeline-17-years)** (while you die waiting).
+
+That's:
+
+- 4 presidential terms
+- 2 new iPhone models becoming obsolete
+- Your entire child growing up and moving out
+- You dying of whatever the cure was for
+
+But at least the paperwork is thorough!
+
+[95% of diseases have ZERO approved treatments](../references.qmd#fda-untreated-diseases-95pct).
+
+Your rare disease child has better odds with lottery tickets.
+
+Why? Math. If your disease only affects 10,000 people, and it costs $2.6 billion to develop a drug, each patient would need to pay $260,000 just to break even.
+
+So pharmaceutical companies focus on:
+
+- Erectile dysfunction (affects: half of all men's egos)
+- Baldness (affects: men with money)
+- Wrinkles (affects: women with money)
+- Cholesterol (affects: everyone who eats)
+
+Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, the FDA's message is: "Have you tried not having Exploding Kidney Syndrome?"
+
+### The 166 Billion Treatments We're Ignoring
+
+There are **[166 billion potential drug compounds](../references.qmd#166-billion-compounds)** we could test.
+
+Number we've actually tested thoroughly: [About 2,000](../references.qmd#number-of-drugs-tested-thoroughly).
+
+That's like having a library with 166 billion books but only reading the ones with pictures. We have more untested treatments than stars in our galaxy, but the system is too busy protecting itself to test them.
+
+At our current rate of testing, we'll have evaluated all possible treatments by the year 3,847,293.
+
+Hope your descendants enjoy the cure for cancer!
+
+Designed to prevent lawsuits, not save lives.
+
+### No Data on Unpatentable Molecules
+
+Under the current system of research, it costs [$41k per subject](../references.qmd#trial-cost-41k) in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
+
+![how much we know](../../assets/how-much-we-know.png)
+
+## The Actual Death Toll of "Drug Lag"
+
+The FDA's economists have a term for people dying while waiting for a drug to be approved: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Delays are estimated to cost **[21,000 to 120,000 American lives per decade](../references.qmd#gieringer85)**.
+
+Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people that die from lack of access to life-saving treatments that might have been.
+
+![](../../assets/non-existent-times.png)
+
+This means that it's only logical for regulators to reject drug applications by default. The personal risks of approving a drug with any newsworthy side effect far outweigh the personal risk of preventing access to life-saving treatment.
+
+**Types of Error in FDA Approval Decision**
+
+|                             | Drug Is Beneficial                                       | Drug Is Harmful                                                |
+| --------------------------- | -------------------------------------------------------- | -------------------------------------------------------------- |
+| FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah.< |
+| FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
+
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use is estimated to have killed **[over 100,000 Americans](../references.qmd#beta-blocker-deaths)**.
+
+That's more Americans than died in Vietnam and Korea combined. From one drug delay. And it wasn't a one-off tragedy. Here is a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
+
+We’re at the very beginning of thousands or millions of years of systematic discovery. So it’s unlikely that this decline in lifespan growth is the result of diminishing returns due to our running out of things to discover.
+
+However, to validate the theory that large-scale real-world evidence can produce better health outcomes requires further validation of this method of experimentation. That's the purpose of deFDA.
+
+* interleukin-2
+* Taxotere
+* vasoseal
+* ancrod
+* Glucophage
+* navelbine
+* Lamictal
+* ethyol
+* photofrin
+* rilutek
+* citicoline
+* panorex
+* Femara
+* ProStar
+* omnicath
+
+Each name on that list represents a graveyard of preventable deaths.
+
+### Case Study: The Human Cost of Regulatory Delay in Closed-Loop Neuromodulation
+
+The historical data is damning, but this isn't a problem of the past. Here is a modern example of the ongoing human cost of regulatory delay, focusing on a breakthrough technology for treatment-resistant depression.
+
+#### Executive Summary
+
+[Depression is the leading global cause of disability](../references.qmd#depression-leading-cause-disability) and the strongest behavioral predictor of suicide. Existing antidepressant drugs [fail to achieve remission in about **two-thirds of patients**](../references.qmd#antidepressant-failure-rate-stard), and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown [**response rates of 60–80 %**](../references.qmd#neuromodulation-trd-response-rates) in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
+Yet under current FDA and EMA processes, large-scale availability is unlikely before **2035**. A utilitarian cost-benefit model indicates that this delay will cost **≈5–10 million lives** and **≈100 million quality-adjusted life-years (QALYs)** globally.
+
+#### 1. Scale of the Problem
+
+| Metric                                                              | Value               | Source                        |
+| ------------------------------------------------------------------- | ------------------- | ----------------------------- |
+| Global major-depressive-disorder prevalence                         | ~280 million people | [WHO 2023](../references.qmd#depression-prevalence-280m)                      |
+| Annual suicides                                                     | ~700 000            | [WHO 2023](../references.qmd#suicide-deaths-vs-war-deaths)                      |
+| Suicide attributable to untreated or treatment-resistant depression | 70 %                | CDC, WHO meta-analyses        |
+| Mean age of death                                                   | 40 y                | Global Burden of Disease      |
+| Average lost QALYs per suicide                                      | 35                  | conservative midlife estimate |
+
+#### Annual QALY loss
+
+700 000 × 35 = **24.5 million QALYs** directly, plus ~2× from comorbid mortality ⇒ **≈75 million QALYs/year**.
+
+#### 2. Expected Benefit of Closed-Loop Neuromodulation
+
+Clinical prototypes (Stanford, UCSF, NIH):
+
+* Acute response: **60–80 %** of TRD patients improve ≥50 % on MADRS.
+* Remission maintenance at 12 mo: **45–60 %**.
+* Adverse-event rate < 1 % serious, none fatal.
+
+If global deployment reached **20 %** of resistant cases (≈50 million candidates) with **50 % success**, that yields:
+
+* 25 million major depressive remissions.
+* Suicide reduction ≈ 35 %.
+* Indirect disease-mortality reduction ≈ 20 %.
+
+Resulting life-saving potential: **0.35 × 700 000 × 10 = 2.45 million suicides averted per decade**, plus **~5 million** prevented indirect deaths.
+
+#### 3. Economic and Utility Calculation
+
+| Variable                                       | Estimate                            |
+| ---------------------------------------------- | ----------------------------------- |
+| QALYs gained per patient per year of remission | 0.5–0.8                             |
+| Patients benefited                             | 25 million                          |
+| Annual QALY gain                               | ~15 million                         |
+| Monetary valuation (US $100 000/QALY)          | **$1.5 trillion/year** social value |
+
+Each year of regulatory delay thus destroys **≈$1.5 trillion in global welfare**—greater than the annual R&D budget of the entire pharmaceutical industry.
+
+#### 4. Comparative Timelines
+
+| Scenario                          | Time to broad release | Cumulative preventable deaths (10 y horizon) |
+| --------------------------------- | --------------------- | -------------------------------------------- |
+| **Current FDA/EMA process**       | 10–12 y               | 5–10 million                                 |
+| **Utilitarian adaptive approval** | 2–3 y                 | 1–2 million                                  |
+| **Net lives saved by reform**     | —                     | **≈8 million**                               |
+
+#### 5. Feasibility of Accelerated Path
+
+Key enablers of 24–36 month rollout:
+
+1. **Adaptive Bayesian trials:** Continuous learning eliminates phase segmentation.
+2. **Dynamic e-consent:** Allows real-time participation expansion.
+3. **Automated adverse-event monitoring:** Reduces manual inspection delays.
+4. **Outcome-based conditional reimbursement:** Pay per sustained remission.
+
+With modern data infrastructure, these systems are already technically viable.
+
+#### 6. Conclusion
+
+A decade of regulatory delay in closed-loop neuromodulation equates to roughly **one genocide-scale loss of life** and trillions of dollars in foregone human utility.
+From a utilitarian calculus, any risk threshold that delays access longer than **2–3 years** imposes a harm orders of magnitude greater than potential device side-effects.
+A rational health-policy framework would authorize conditional deployment once *expected* QALYs gained exceed *expected* QALYs lost, a threshold crossed today.
+
+## The Incentive Structure: A Masterpiece of Misalignment
+
+### FDA Regulator Decision Tree
+
+#### Approve drug that later shows problems
+
+- Congressional hearing (televised)
+- "FDA APPROVED KILLER DRUG" headlines
+- Career ends
+- Pension threatened
+
+#### Delay drug that could save lives
+
+- Nothing happens
+- Dead people don't complain
+- Promotion on schedule
+- [Retire to pharma job](../references.qmd#fda-regulatory-capture-evidence)
+
+This isn't conspiracy.
+It's economics.
+The FDA literally cannot make mistakes of commission (approving bad drugs) but faces zero consequences for mistakes of omission (delaying good drugs).
+
+### Overcoming Cognitive Bias Against Acts of Commission
+
+Humans have a cognitive bias towards weighting harmful acts of commission to be worse than acts of omission even if the act of omission causes greater harm. It's seen in the trolley problem where people generally aren't willing to push a fat man in front of a train to save a family even though more lives would be saved.
+
+Medical researcher Dr. Henry I. Miller, MS, MD described his experience working at the FDA, "In the early 1980s," Miller wrote, "when I headed the team at the FDA that was reviewing the NDA [application] for recombinant human insulin…my supervisor refused to sign off on the approval," despite ample evidence of the drug's ability to safely and effectively treat patients. His supervisor rationally concluded that, if there was a death or complication due to the medication, heads would roll at the FDA, including his own. So the personal risk of approving a drug is magnitudes larger than the risk of rejecting it.
+
+## Clinical Trial Theater: Excluding 85% of Reality
+
+FDA trials systematically [exclude](../references.qmd#clinical-trial-exclusions):
+
+- Patients over 65 (most people who need drugs)
+- Patients under 18 (all children)
+- Pregnant women (50% of women sometimes)
+- Anyone with comorbidities (everyone sick)
+- Anyone on other medications (everyone old)
+- Anyone who lives too far from a trial site (hope you're rich and urban)
+- Anyone who once looked at an aspirin
+
+It's like having a cure for cancer but only giving it to people who don't have cancer.
+
+**Result:** Test drugs on the 15% of unusually healthy sick people, then act shocked when they don't work on actual patients.
+
+Clinical trials have more exclusion criteria than a country club in 1950s Alabama. You must be exactly the right kind of sick - not too sick, not too healthy, and definitely not poor or old or pregnant or on any other medications.
+
+It's like testing umbrellas only on sunny days, then wondering why they don't work in the rain.
+
+Genius!
+
+It's like testing car safety using only crash test dummies, then being surprised when real humans with bones have different outcomes.
+
+### No Long-Term Outcome Data
+
+Even if there is a financial incentive to research a new drug, there is no data on the long-term outcomes of the drug. The data collection period for participants can be as short as several months. Under the current system, it's not financially feasible to collect data on a participant for years or decades. So we have no idea if the long-term effects of a drug are worse than the initial benefits.
+
+For instance, even after controlling for co-morbidities, the Journal of American Medicine recently found that long-term use of Benadryl and other anticholinergic medications is associated with an [increased](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) risk for dementia and Alzheimer's disease.
+
+## The FDA Requires Psychic Powers
+
+Before you can test a drug, you must tell the FDA EXACTLY what it will cure and EXACTLY how you'll measure that cure.
+
+"This drug will reduce depression by 37.2% as measured by the Hamilton Rating Scale on Tuesdays."
+
+What if it cures depression by 90% but only on Wednesdays? Failed trial.
+What if it doesn't cure depression but eliminates anxiety? Failed trial.
+What if it cures cancer instead? Failed trial, also please report to prison.
+
+It's like requiring Columbus to file a detailed map of America before letting him sail west.
+
+**In reality, this isn't hypothetical.** When running an efficacy trial, the FDA expects that the drug developer has the psychic ability to predict which conditions a treatment will be most effective for in advance of collecting the human trial data. If it was possible to magically determine this without any trials, it would render efficacy trials completely pointless.
+
+In 2007, manufacturer Dendreon submitted powerful evidence attesting to the safety and efficacy of its immunotherapy drug Provenge, which targets prostate cancer. They were able to show that the drug resulted in a significant decline in deaths among its study population, which even persuaded the FDA advisory committee to weigh in on the application. But ultimately, the FDA rejected its application.
+
+The FDA was unmoved by the evidence, simply because Dendreon didn’t properly specify beforehand what its study was trying to measure. Efficacy regulations state that finding a decline in deaths is not enough. The mountains of paperwork must be filled out just so and in the correct order. It took three more years and yet another large trial before the FDA finally approved the life-saving medication.
+
+Due to all the additional costs imposed by the efficacy trial burden, Dendreon ultimately [filed for chapter 11 bankruptcy](https://www.targetedonc.com/view/dendreon-files-for-bankruptcy-provenge-still-available).
+
+In addition to the direct costs to companies, the extreme costs and financial risks imposed by efficacy trials have a huge chilling effect on investment in new drugs. If you're an investment adviser trying to avoid losing your client's retirement savings, you're much better off investing in a more stable company like a bomb manufacturer building products to intentionally kill people than a drug developer trying to save lives. So it's impossible to know all the treatments that never even got to an efficacy trial stage due to the effects of decreased investment due to the regulatory risks.
+
+## Conflicts of Interest
+
+Long-term randomized trials are extremely expensive to set up and run. When billions of dollars in losses or gains are riding on the results of a study, this will almost inevitably influence the results. For example, an analysis of beverage studies, [published in the journal PLOS Medicine,](https://web.archive.org/web/20211207021133/https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001578#s3) found that those funded by Coca-Cola, PepsiCo, the American Beverage Association, and the sugar industry were **five times** more likely to find no link between sugary drinks and weight gain than studies whose authors reported no financial conflicts.
+
+The economic survival of the pharmaceutical company is dependent on the positive outcome of the trial. While there's not a lot of evidence to support that there's any illegal manipulation of results, it leads to two problems:
+
+## The Negative Results Black Hole
+
+Here's a fun fact that should be criminal:
+
+- **Negative trial results published:** [37%](../references.qmd#publication-bias-clinical-trials)
+- **Positive trial results published:** [94%](../references.qmd#publication-bias-clinical-trials)
+- **Money wasted repeating failed experiments:** [~\$100 billion annually](../references.qmd#wasted-spending-on-failed-experiments)
+
+Companies are literally allowed to hide when drugs don't work.
+
+Company: "We tested this drug!"
+
+FDA: "Did it work?"
+
+Company: "...We tested this drug!"
+
+This means humans spend billions testing the same failed drugs over and over because nobody admits they failed. It's like playing poker where everyone claims they won but nobody shows their cards.
+
+Pharmaceutical companies bury negative results deeper than Jimmy Hoffa. So other companies waste billions testing the same dead ends.
+
+Your insurance premiums are paying for this stupidity.
+
+It's like casinos only having to report when people win.
+
+## Countries That Don't Have Our "Safety"
+
+**[Japan's Regenerative Medicine Act](../references.qmd#japans-regenerative-medicine-act):**
+
+- Conditional approval after Phase II
+- Real-world data collection required
+- Time to patient: 2-3 years
+- Americans fly there for treatment
+
+**[EU Compassionate Use](../references.qmd#eu-compassionate-use-program):**
+
+- Terminal patients can access experimental drugs
+- Doctor's discretion, not bureaucrat's
+- Thousands of lives extended
+- FDA: "But what if they die?" (They're already dying)
+
+**[Right to Try (US)](../references.qmd#right-to-try-act-2018):**
+
+- Passed despite FDA opposition
+- FDA response: Made it effectively impossible to use
+- [Patients helped: <200 total](../references.qmd#right-to-try-act-outcomes)
+- Patients who wanted help: Tens of thousands
+
+## The COVID Test Fiasco: A Case Study in Excellence
+
+Timeline of FDA's COVID response:
+
+- **January 2020:** WHO develops test, world starts using it
+- **February 2020:** [FDA blocks all non-CDC tests](../references.qmd#fda-covid-test-delay)
+- **Late February:** [CDC tests contaminated, don't work](../references.qmd#cdc-covid-test-contamination-2020)
+- **March:** Private labs begging to test, FDA says no
+- **Late March:** FDA finally allows other tests
+- **Cost:** Unknown thousands of [preventable deaths](../references.qmd#excess-deaths-fda-covid-response)
+
+The FDA's defense: "We were ensuring quality."
+The CDC's tests literally didn't work.
+You can't ensure quality of nothing.
+
+## Solutions That Would Work (But Never Will)
+
+**Reciprocal Approval:** If the EU/UK/Japan/Canada approves a drug, it gets approved
+
+- Lives saved: Thousands annually
+- FDA response: "But their standards might be 0.01% different!"
+
+**Provisional Approval:** Let dying people try experimental drugs
+
+- Current system: Die safely
+- Proposed system: Maybe die, maybe live
+- FDA logic: Death is preferable to uncertainty
+
+**Outcome-Based Approval:** If it works in real patients, approve it
+
+- Current: Does it work in cherry-picked trial patients?
+- Better: Does it work in actual sick humans?
+- FDA: "That's not how we've always done it"
+
+## Safety Theater
+
+The FDA doesn't make drugs safe.
+It makes them:
+
+- Expensive (\$2.6 billion)
+- Slow (9+ years approval phase, 17 years total)
+- Inaccessible (95% of rare diseases have zero treatments)
+- Ineffective (tested on wrong populations)
+
+It's security theater but for medicine.
+The TSA of healthcare.
+Except when TSA fails, your flight is delayed.
+When FDA fails, you die.
+
+But at least the bureaucrats are safe from blame.
+And isn't that what really matters?
+
+---
+
+*P.S. - The FDA will likely object to this chapter. Estimated time for their formal response: 12-15 years, pending Phase III review.*

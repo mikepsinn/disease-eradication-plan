@@ -1,0 +1,342 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| echo: false
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Set up formatting
+
+pd.options.display.float_format = '{:,.0f}'.format
+```
+
+## Master Economic Impact Table
+
+```{python}
+#| echo: false
+# Comprehensive economic impact data from all analyses
+
+economic_impacts = pd.DataFrame({
+    'Source': [
+        '1% Treaty Peace Dividend',
+        'dFDA R&D Savings (82x cost reduction)',
+        'Earlier Drug Access (7-year acceleration)',
+        'Medical Research Acceleration (115x capacity)',
+        'Rare Disease Treatments',
+        'Drug Price Reduction',
+        'Prevention Economic Viability',
+        'Mental Health Treatment Gap',
+        'Combined Conservative (Peace + dFDA)',
+        'Combined Complete (All 8 Categories)'
+    ],
+    'Annual Value (Billions)': [
+        113.6,
+        50,
+        300,
+        100,
+        400,
+        100,
+        100,
+        75,
+        163.6,
+        1238.6
+    ],
+    'ROI Ratio': [
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        463,
+        1239
+    ],
+    'Implementation Cost (Millions)': [
+        500,
+        40,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        538,
+        1000
+    ]
+})
+
+# Calculate ROI where missing
+
+mask = economic_impacts['ROI Ratio'].isna()
+economic_impacts.loc[mask, 'ROI Ratio'] = (
+    economic_impacts.loc[mask, 'Annual Value (Billions)'] * 1000 /
+    economic_impacts.loc[mask, 'Implementation Cost (Millions)']
+).round(0)
+
+# Create interactive table
+
+fig = go.Figure(data=[go.Table(
+    header=dict(
+        values=['<b>Economic Impact Source</b>',
+                '<b>Annual Value</b>',
+                '<b>ROI Ratio</b>',
+                '<b>Implementation Cost</b>'],
+        fill_color='darkblue',
+        font=dict(color='white', size=14),
+        align='left',
+        height=40
+    ),
+    cells=dict(
+        values=[
+            economic_impacts['Source'],
+            ['$' + str(int(x)) + 'B' for x in economic_impacts['Annual Value (Billions)']],
+            [str(int(x)) + ':1' if pd.notna(x) else 'N/A' for x in economic_impacts['ROI Ratio']],
+            ['$' + str(int(x)) + 'M' for x in economic_impacts['Implementation Cost (Millions)']]
+        ],
+        fill_color=[['lightgray', 'white']*len(economic_impacts)],
+        font=dict(size=12),
+        align=['left', 'right', 'right', 'right'],
+        height=30
+    ))
+])
+
+fig.update_layout(
+    title='Comprehensive Economic Impact Analysis',
+    height=500,
+    margin=dict(l=0, r=0, t=40, b=0)
+)
+
+fig.show()
+```
+
+## ROI Comparison Across All Models
+
+```{python}
+#| echo: false
+# Filter for items with ROI ratios
+
+roi_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].sort_values('ROI Ratio')
+
+# Create logarithmic bar chart
+
+fig = go.Figure()
+
+colors = px.colors.sequential.Viridis_r
+fig.add_trace(go.Bar(
+    y=roi_data['Source'],
+    x=roi_data['ROI Ratio'],
+    orientation='h',
+    marker=dict(
+        color=roi_data['ROI Ratio'],
+        colorscale='Viridis',
+        showscale=True,
+        colorbar=dict(title='ROI Ratio')
+    ),
+    text=[f'{int(x)}:1' for x in roi_data['ROI Ratio']],
+    textposition='outside'
+))
+
+fig.update_layout(
+    title='Return on Investment Comparison (Log Scale)',
+    xaxis_title='ROI Ratio',
+    yaxis_title='',
+    xaxis_type='log',
+    height=600,
+    margin=dict(l=200, r=100)
+)
+
+fig.show()
+```
+
+## Value Creation Waterfall
+
+```{python}
+#| echo: false
+# Create waterfall showing how value builds up
+
+waterfall_data = [
+    ('Start', 0, 'absolute'),
+    ('Peace Dividend', 113.6, 'relative'),
+    ('R&D Savings', 50, 'relative'),
+    ('Conservative Subtotal', 163.6, 'total'),
+    ('Earlier Drug Access', 300, 'relative'),
+    ('Research Acceleration', 100, 'relative'),
+    ('Rare Diseases', 400, 'relative'),
+    ('Drug Prices', 100, 'relative'),
+    ('Prevention', 100, 'relative'),
+    ('Mental Health', 75, 'relative'),
+    ('Complete Total', 1238.6, 'total')
+]
+
+fig = go.Figure(go.Waterfall(
+    name="Value",
+    orientation="v",
+    measure=[d[2] for d in waterfall_data],
+    x=[d[0] for d in waterfall_data],
+    y=[d[1] for d in waterfall_data],
+    textposition="outside",
+    text=[f'${d[1]:,.0f}B' if d[1] > 0 else '' for d in waterfall_data],
+    connector={"line": {"color": "rgb(63, 63, 63)"}},
+    increasing={"marker": {"color": "green"}},
+    totals={"marker": {"color": "blue"}}
+))
+
+fig.update_layout(
+    title="How We Get to $1.2 Trillion Annual Value (Complete Case)",
+    xaxis_title="Value Component",
+    yaxis_title="Annual Value ($ Billions)",
+    showlegend=False,
+    height=600,
+    xaxis_tickangle=-45
+)
+
+fig.show()
+```
+
+## Cost-Effectiveness Frontier
+
+```{python}
+#| echo: false
+# Create scatter plot of cost vs impact
+
+scatter_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].copy()
+
+fig = go.Figure()
+
+# Add scatter points
+
+fig.add_trace(go.Scatter(
+    x=scatter_data['Implementation Cost (Millions)'],
+    y=scatter_data['Annual Value (Billions)'],
+    mode='markers+text',
+    text=scatter_data['Source'],
+    textposition='top center',
+    marker=dict(
+        size=scatter_data['ROI Ratio'] / 50,
+        color=scatter_data['ROI Ratio'],
+        colorscale='Viridis',
+        showscale=True,
+        colorbar=dict(title='ROI Ratio'),
+        sizemode='area'
+    ),
+    hovertemplate='<b>%{text}</b><br>Cost: $%{x}M<br>Value: $%{y}B<br>ROI: %{marker.color:.0f}:1'
+))
+
+# Add efficiency frontier line
+
+fig.add_trace(go.Scatter(
+    x=[538, 1000],
+    y=[163.6, 1238.6],
+    mode='lines',
+    line=dict(dash='dash', color='red'),
+    name='Efficiency Frontier',
+    showlegend=True
+))
+
+fig.update_layout(
+    title='Cost-Effectiveness Analysis: Investment vs Annual Value',
+    xaxis_title='Implementation Cost ($ Millions)',
+    yaxis_title='Annual Value Created ($ Billions)',
+    xaxis_type='log',
+    yaxis_type='log',
+    height=600,
+    hovermode='closest'
+)
+
+fig.show()
+```
+
+## Key Economic Findings
+
+```{python}
+#| echo: false
+# Summary statistics
+
+total_value = economic_impacts['Annual Value (Billions)'].max()
+best_roi = economic_impacts['ROI Ratio'].max()
+min_cost = economic_impacts['Implementation Cost (Millions)'].min()
+avg_roi = economic_impacts['ROI Ratio'].mean()
+
+findings = pd.DataFrame({
+    'Metric': [
+        'Maximum Annual Value Creation',
+        'Best ROI Ratio',
+        'Average ROI Across All Models',
+        'Minimum Implementation Cost',
+        'Total Addressable Market',
+        'Daily Opportunity Cost'
+    ],
+    'Value': [
+        f'${total_value:,.0f} Billion',
+        f'{best_roi:,.0f}:1',
+        f'{avg_roi:,.0f}:1',
+        f'${min_cost:,.0f} Million',
+        '$119 Trillion (War + Disease)',
+        '$45 Billion'
+    ]
+})
+
+fig = go.Figure(data=[go.Table(
+    header=dict(
+        values=['<b>Key Economic Finding</b>', '<b>Value</b>'],
+        fill_color='darkgreen',
+        font=dict(color='white', size=16),
+        align='left',
+        height=45
+    ),
+    cells=dict(
+        values=[findings['Metric'], findings['Value']],
+        fill_color=[['lightgreen', 'white']*3],
+        font=dict(size=14),
+        align=['left', 'right'],
+        height=40
+    ))
+])
+
+fig.update_layout(
+    title='Executive Summary: Key Economic Findings',
+    height=400,
+    margin=dict(l=0, r=0, t=60, b=0)
+)
+
+fig.show()
+```
+
+## Data Sources
+
+### Primary Economic Models
+
+- **1% Treaty Analysis**: $113.6B annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
+- **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_gross_savings_annual_formatted` in trial costs
+- **Conservative Case**: Peace dividend + dFDA R&D savings = $163.6B annually, 463:1 ROI
+- **Complete Case**: All 8 benefit categories = $1,238.6B annually, 1,239:1 ROI
+
+### Eight Benefit Categories (Complete Case)
+
+1. **Peace Dividend**: $113.6B from 1% military spending reduction
+2. **R&D Savings**: $50B from 82x cheaper clinical trials
+3. **Earlier Drug Access**: $300B from 7-year acceleration to market
+4. **Research Acceleration**: $100B from 115x research capacity
+5. **Rare Diseases**: $400B from orphan drug economic viability
+6. **Drug Price Reduction**: $100B from R&D savings passed to consumers
+7. **Prevention**: $100B from economic viability of preventive treatments
+8. **Mental Health**: $75B from treatment gap reduction
+
+### Key Assumptions
+
+- QALY valued at $150,000 (standard US threshold)
+- Global clinical trials market: `{python} global_clinical_trial_market_annual_formatted` annually
+- Global military spending: $2.72T annually (2024)
+- Total war costs: $11.36T annually (direct + opportunity costs)
+- Disease burden: $109.1T annually
+- 5% discount rate for NPV calculations
+- 10-year time horizon for ROI analysis
+
+All calculations based on peer-reviewed sources and industry reports as of 2024-2025. See [Economics](../economics/economics.qmd) for detailed methodology.
