@@ -1,1 +1,0 @@
-Please search the .qmd files in the project searching for TODOs and address them and delete the TODOs after addressing them. 

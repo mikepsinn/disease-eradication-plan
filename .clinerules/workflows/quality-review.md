@@ -1,7 +1,0 @@
-Go through all the files in @/_book.yml and check for gross duplication or stuff that clearly sucks and make the absolute minimum number of changes required to make it acceptable for publishing. 
-
-Do NOT delete any images, good jokes, LATEX equations, or diagrams unless they clearly suck and are worthless.
-
-add a check emoji in @/_book.yml after checking each one after you complete the check.  
-
-Here's our style guide for reference @/GUIDES\STYLE_GUIDE.md 

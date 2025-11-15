@@ -16,11 +16,12 @@ temp-repo/
 # Logs
 *.log
 
-# IDE specific files
+# IDE and AI tool specific files (each contributor can use their own tools)
 .vscode/
 .idea/
-.claude/settings.local.json  # Keep user-specific settings local
-# But commit .claude/commands/ to share slash commands with team
+.claude/
+.cursor/
+.clinerules/
 
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
