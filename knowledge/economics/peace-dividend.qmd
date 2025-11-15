@@ -1,0 +1,71 @@
+---
+title: Peace Dividend
+description: A Cost-Benefit Analysis - Quantifying the economic benefits of a 1% reduction in military spending and conflict costs.
+published: true
+tags:
+  - peace-dividend
+  - 1-percent-treaty
+  - economic-analysis
+  - cost-of-war
+lastInstructionalVoiceHash: 05dfa4a7561692f4cef2ecb9ee04c6e0eefa4e586e51e00a14ee7698a54105d3
+lastNonprofitComplianceHash: bfdeac9eed032f97ab40f371fbe64719e0dbac674b274649d763e7686fa83540
+---
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+- **What The Treaty Captures:** Cut global military spending by 1% and the DIH receives **$27.2B annually** to fund the Decentralized Institutes of Health.
+- **What The World Saves:** Cut the total costs of conflict by 1% and society saves **$113.6B every year**. That's less money spent rebuilding bombed hospitals, treating war casualties, and dealing with refugees.
+- **Source:** All numbers come from the [Cost of War analysis](../problem/cost-of-war.qmd).
+
+## The Economics of a 1% Reduction in Violence
+
+The [dFDA cost-benefit analysis](../appendix/dfda-cost-benefit-analysis.qmd) shows how much value better medical research creates. But where does the money come from? The treaty takes it from global conflict. Here's what the world gets when violence drops by just 1%.
+
+The benefits break into two parts: the cash the treaty redirects, and the broader savings from less war.
+
+### 1. The Cash The Treaty Redirects: $27.2B for Cures
+
+Governments spend **$2.7T** on militaries every year. The treaty redirects 1.0% of that. Simple math:
+
+**$2.7T × 0.01 = $27.2B**
+
+That **$27.2B** funds everything: the research, the VICTORY bond returns, the whole system.
+
+### 2. What Society Saves: 113.6B Every Year
+
+But that's just the money the treaty redirects. War costs the world [$11.4T annually](../problem/cost-of-war.qmd). Cut conflict by 1.0% and society saves **113.6B** on top of what gets redirected.
+
+That's money the world doesn't spend on:
+
+- Rebuilding bombed bridges and hospitals
+- Treating war casualties and PTSD
+- Supporting refugees and displaced families
+- Lost trade and economic disruption
+
+Here's exactly where those savings come from:
+
+### The Numbers: Where Every Dollar Gets Saved
+
+This breaks down the annual global savings based on the [Cost of War analysis](../problem/cost-of-war.qmd).
+
+| Cost Category | Total Annual Cost (Billions) | 1% Annual Savings (Billions) |
+| :--- | :--- | :--- |
+| **Direct Costs** | **$7.7T** | **$7.7T** |
+| Military Expenditure | $2.7T | $2.7T |
+| Infrastructure Destruction | $1.9T | $1.9T |
+| Human Life Losses | $2.4T | $2.4T |
+| Trade Disruption | $616.0B | $616.0B |
+| **Indirect Costs** | **$3.7T** | **$3.7T** |
+| Lost Economic Growth | $2.7T | $2.7T |
+| Veteran Healthcare | $200.1B | $200.1B |
+| Refugee Support | $150.0B | $150.0B |
+| Environmental Damage | $100.0B | $100.0B |
+| Psychological Impact | $232.0B | $232.0B |
+| Lost Human Capital | $300.0B | $300.0B |
+| **Grand Total** | **$11.4T** | **113.6B** |
+
+The treaty takes **$27.2B** from military budgets and saves the world **113.6B** every year. That's 113.6B saved for every $1 redirected. 
+
+Plus humanity gets cures for cancer.

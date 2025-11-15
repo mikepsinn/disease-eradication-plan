@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "decentralized-institutes-of-health"
+name = "dih-models"
 version = "0.1.0"
 description = "The Complete Idiot's Guide to Ending War and Disease"
 authors = [
@@ -41,6 +41,5 @@ dev = [
     "flake8",
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["brain*", "scripts*"]
+[tool.setuptools]
+packages = ["dih_models", "dih_models.plotting"]

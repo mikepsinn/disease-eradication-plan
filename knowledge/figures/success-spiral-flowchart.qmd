@@ -1,0 +1,50 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| echo: false
+import graphviz
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Success Spiral Flowchart', format='png')
+dot.attr(rankdir='TD', size='12,16')
+setup_graphviz_style(dot)
+
+with dot.subgraph(name='cluster_spiral') as spiral:
+    spiral.attr(label='How You Snowball This Into Not Dying', style='dashed')
+    spiral.node('Start', 'Year 1:\nSteal 1% ($27B)\nNobody notices', shape='box', penwidth='2')
+    spiral.node('Cures1', 'Oops, we\ncured cancer\n(sorry pharma)')
+    spiral.node('Media1', 'Media loses their minds:\n"HOLY SHIT IT\nACTUALLY WORKED"')
+    spiral.node('Votes1', '500M people:\n"Do that again\nbut more"')
+    spiral.node('Treaty2', 'Year 3:\n2% ($54B)\nDefense contractors\nslightly annoyed', shape='box', penwidth='2')
+    spiral.node('Cures2', 'Accidentally\nreverse aging\n(Botox industry\nin shambles)')
+    spiral.node('Media2', 'Headlines:\n"Death now\ntechnically\noptional"')
+    spiral.node('Votes2', '2B humans:\n"Why weren\'t we\ndoing this before?"')
+    spiral.node('Treaty5', 'Year 5:\n5% ($135B)\nLockheed pivots\nto biotech', shape='box', penwidth='2')
+    spiral.node('Cures5', 'Awkward:\nWe ran out of\ndiseases to cure')
+    spiral.node('Media5', 'Fox & CNN\nagree on something:\n"This is good"')
+    spiral.node('Votes5', '7B humans:\n"Remember when\nwe used to die?"')
+    spiral.node('TreatyMajority', 'Year 10:\nPlot twist - healing\nmore popular than\nkilling. Who knew?', shape='box', penwidth='3')
+
+    spiral.edge('Start', 'Cures1', label='$27B buys\na lot of\nscience')
+    spiral.edge('Cures1', 'Media1', label='Wait,\nwhat?')
+    spiral.edge('Media1', 'Votes1', label='Holy shit\nit works')
+    spiral.edge('Votes1', 'Treaty2', label='Do it\nagain')
+    spiral.edge('Treaty2', 'Cures2', label='$54B =\nmore oops')
+    spiral.edge('Cures2', 'Media2', label='This can\'t\nbe real')
+    spiral.edge('Media2', 'Votes2', label='But it is')
+    spiral.edge('Votes2', 'Treaty5', label='MOAR')
+    spiral.edge('Treaty5', 'Cures5', label='$135B =\nspeedrun mode')
+    spiral.edge('Cures5', 'Media5', label='Uhh guys?')
+    spiral.edge('Media5', 'Votes5', label='We won?')
+    spiral.edge('Votes5', 'TreatyMajority', label='Keep going')
+    spiral.edge('TreatyMajority', 'TreatyMajority', label='Death optional.\nTaxes still required.', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'success-spiral-flowchart')
+display(IPImage(str(png_path)))
+```

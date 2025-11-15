@@ -1,0 +1,112 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| label: roi-comparison
+#| echo: false
+
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Set up formatting
+
+pd.options.display.float_format = '{:,.0f}'.format
+
+# Comprehensive economic impact data from all analyses
+
+economic_impacts = pd.DataFrame({
+    'Source': [
+        '1% Treaty Peace Dividend',
+        'dFDA R&D Savings (82x cost reduction)',
+        'Earlier Drug Access (7-year acceleration)',
+        'Medical Research Acceleration (115x capacity)',
+        'Rare Disease Treatments',
+        'Drug Price Reduction',
+        'Prevention Economic Viability',
+        'Mental Health Treatment Gap',
+        'Combined Conservative (Peace + dFDA)',
+        'Combined Complete (All 8 Categories)'
+    ],
+    'Annual Value (Billions)': [
+        113.6,
+        50,
+        300,
+        100,
+        400,
+        100,
+        100,
+        75,
+        163.6,
+        1238.6
+    ],
+    'ROI Ratio': [
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        np.nan,
+        463,
+        1239
+    ],
+    'Implementation Cost (Millions)': [
+        500,
+        40,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        538,
+        1000
+    ]
+})
+
+# Calculate ROI where missing
+
+mask = economic_impacts['ROI Ratio'].isna()
+economic_impacts.loc[mask, 'ROI Ratio'] = (
+    economic_impacts.loc[mask, 'Annual Value (Billions)'] * 1000 /
+    economic_impacts.loc[mask, 'Implementation Cost (Millions)']
+).round(0)
+
+# Filter for items with ROI ratios
+
+roi_data = economic_impacts[economic_impacts['ROI Ratio'].notna()].sort_values('ROI Ratio')
+
+# Create logarithmic bar chart
+
+fig = go.Figure()
+
+colors = px.colors.sequential.Viridis_r
+fig.add_trace(go.Bar(
+    y=roi_data['Source'],
+    x=roi_data['ROI Ratio'],
+    orientation='h',
+    marker=dict(
+        color=roi_data['ROI Ratio'],
+        colorscale='Viridis',
+        showscale=True,
+        colorbar=dict(title='ROI Ratio')
+    ),
+    text=[f'{int(x)}:1' for x in roi_data['ROI Ratio']],
+    textposition='outside'
+))
+
+fig.update_layout(
+    title='Return on Investment Comparison (Log Scale)',
+    xaxis_title='ROI Ratio',
+    yaxis_title='',
+    xaxis_type='log',
+    height=600,
+    margin=dict(l=200, r=100)
+)
+
+fig.show()

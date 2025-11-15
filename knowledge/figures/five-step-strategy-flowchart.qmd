@@ -1,0 +1,27 @@
+```{python}
+#| echo: false
+import graphviz
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Five Step Strategy', format='png')
+dot.attr(rankdir='TD')  # Remove size constraint to allow padding to work
+setup_graphviz_style(dot)
+
+dot.node('Step1', 'Step 1:\nVICTORY Social Impact Bonds\nRaise $1B\n270% returns')
+dot.node('Step2', 'Step 2:\nGlobal Referendum\nGet 280M votes\n(3.5% of humanity)')
+dot.node('Step3', 'Step 3:\nLegal Lobbying\nDeploy $1B\n(ROI: 1,813:1)')
+dot.node('Step4', 'Step 4:\nSuper PACs\nFund supporters\nReplace opponents')
+dot.node('Step5', 'Step 5:\nTreaties Pass\n1% → 2% → 5%\nVictory')
+
+dot.edge('Step1', 'Step2')
+dot.edge('Step2', 'Step3')
+dot.edge('Step3', 'Step4')
+dot.edge('Step4', 'Step5')
+dot.edge('Step5', 'Step1', label='Success Spiral', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'five-step-strategy-flowchart')
+display(IPImage(str(png_path)))
+```
