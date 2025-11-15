@@ -5,7 +5,11 @@ Validates .qmd files before Quarto rendering to catch errors early:
 - LaTeX syntax errors (escaped dollar signs, malformed equations, etc.)
 - Missing image files
 - Invalid image paths
+- Broken cross-reference links to .qmd files
+- Broken include directives ({{< include path.qmd >}})
+- Missing Python imports in code blocks
 - GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
+- _quarto.yml configuration (validates all chapter paths exist)
 
 Runs automatically via _quarto.yml pre-render hook
 """
@@ -404,6 +408,112 @@ def check_gif_references(content: str, filepath: str):
                     context=line.strip()[:80]
                 ))
 
+
+def check_include_directives(content: str, filepath: str):
+    """
+    Check for broken Quarto include directives: {{< include path.qmd >}}
+    Ensures that all included files exist relative to the current file.
+    """
+    lines = content.split('\n')
+    file_dir = os.path.dirname(filepath)
+
+    # Match Quarto include syntax: {{< include path.qmd >}}
+    include_pattern = re.compile(r'\{\{<\s*include\s+([^\s>]+)\s*>\}\}')
+
+    for line_index, line in enumerate(lines):
+        # Skip lines that are HTML comments
+        if re.match(r'^\s*<!--', line.strip()):
+            continue
+        # Skip if this line contains <!-- before the include and --> after it
+        if '<!--' in line and '-->' in line:
+            continue
+
+        matches = include_pattern.finditer(line)
+        for match in matches:
+            include_path = match.group(1).strip()
+
+            # Skip URLs
+            if include_path.startswith('http://') or include_path.startswith('https://'):
+                continue
+
+            # Resolve the include path relative to the .qmd file
+            resolved_path = os.path.normpath(os.path.join(file_dir, include_path))
+
+            if not os.path.exists(resolved_path):
+                errors.append(ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message=f'Broken include directive: {include_path} (target file not found)',
+                    context=line.strip()[:80]
+                ))
+
+
+def validate_quarto_config():
+    """
+    Validate _quarto.yml configuration file.
+    Checks that all referenced .qmd files in chapters and appendices exist.
+    """
+    config_path = '_quarto.yml'
+    if not os.path.exists(config_path):
+        print(f'Warning: {config_path} not found, skipping config validation\n')
+        return
+
+    try:
+        import yaml
+    except ImportError:
+        print('Warning: PyYAML not installed, skipping _quarto.yml validation\n')
+        print('  Install with: pip install pyyaml\n')
+        return
+
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+    except Exception as e:
+        errors.append(ValidationError(
+            file=config_path,
+            line=1,
+            message=f'Failed to parse YAML: {str(e)}',
+            context='(unable to read file)'
+        ))
+        return
+
+    def check_file_refs(items, parent_key=''):
+        """Recursively check file references in config structure"""
+        if isinstance(items, dict):
+            # Check for file references (chapters can be strings or dicts with 'href')
+            if isinstance(items, str) and items.endswith('.qmd'):
+                if not os.path.exists(items):
+                    errors.append(ValidationError(
+                        file=config_path,
+                        line=1,
+                        message=f'Chapter file not found: {items}',
+                        context=f'Referenced in {parent_key}' if parent_key else 'book.chapters'
+                    ))
+            # Recurse into dict values
+            for key, value in items.items():
+                check_file_refs(value, key)
+        elif isinstance(items, list):
+            # Check each item in list
+            for item in items:
+                if isinstance(item, str) and item.endswith('.qmd'):
+                    if not os.path.exists(item):
+                        errors.append(ValidationError(
+                            file=config_path,
+                            line=1,
+                            message=f'Chapter file not found: {item}',
+                            context=f'Referenced in {parent_key}' if parent_key else 'book.chapters'
+                        ))
+                else:
+                    check_file_refs(item, parent_key)
+
+    # Check book chapters
+    if 'book' in config:
+        if 'chapters' in config['book']:
+            check_file_refs(config['book']['chapters'], 'book.chapters')
+        if 'appendices' in config['book']:
+            check_file_refs(config['book']['appendices'], 'book.appendices')
+
+
 def validate_file(filepath: str):
     """Validate a single file"""
     if not os.path.exists(filepath):
@@ -462,9 +572,15 @@ def validate_file(filepath: str):
     # Check GIF references
     check_gif_references(content, filepath)
 
+    # Check include directives
+    check_include_directives(content, filepath)
+
 def main():
     """Main validation function"""
     print('Validating LaTeX in .qmd files...\n')
+
+    # Validate _quarto.yml configuration first
+    validate_quarto_config()
 
     # Find all .qmd files
     qmd_files = glob('**/*.qmd', recursive=True)
