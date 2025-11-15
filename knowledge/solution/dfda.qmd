@@ -45,7 +45,7 @@ This is because trials are designed to test drugs on people who don't actually e
 
 On top of excluding everyone with a pulse, these "definitive" studies are run on comically small groups. They'll test a new heart drug on [275 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), a cancer drug on just [20 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), and a diabetes drug on [100 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), then prescribe the winner to millions.
 
-![A chart showing a study for Wellbutrin where only 36 patients were in the final analysis, yet the drug is prescribed to millions.](.../../assets/wellbutrin-effectiveness-small-sample-size.png)
+![A chart showing a study for Wellbutrin where only 36 patients were in the final analysis, yet the drug is prescribed to millions.](../../assets/wellbutrin-effectiveness-small-sample-size.png)
 
 We're basing the survival of our species on a sample size smaller than a kindergarten class. So, instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
 
@@ -55,19 +55,19 @@ The dFDA is built on a simple, powerful, and slightly creepy idea: we can learn 
 
 Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
 
-![TIME magazine covers about eggs and cholesterol](.../../assets/eggs-time-covers.png)
+![TIME magazine covers about eggs and cholesterol](../../assets/eggs-time-covers.png)
 
 They're not wrong about the old way. Old observational studies were flawed because they couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
 
-![A comic illustrating that correlation does not equal causation.](.../../assets/correlation-does-not-equal-causation-comic.png)
+![A comic illustrating that correlation does not equal causation.](../../assets/correlation-does-not-equal-causation-comic.png)
 
 But here's what's changed: we now have so much data and such powerful computers that we can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. We can track someone's arthritis pain for a month, have them take Turmeric for a month, then stop, then start again. By doing this, we can see if the Turmeric is actually doing something or if it's just a coincidence.
 
 Modern statistical methods are so good that a [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) found that the results from high-quality observational studies are generally the same as those from expensive, slow randomized controlled trials.
 
-![A chart comparing effect sizes from observational studies and randomized trials for mortality.](.../../assets/observational-vs-randomized-effect-sizes.png)
+![A chart comparing effect sizes from observational studies and randomized trials for mortality.](../../assets/observational-vs-randomized-effect-sizes.png)
 
-![A chart comparing effect sizes from observational studies and randomized trials for various outcomes.](.../../assets/observational-vs-randomized-trial-effect-sizes.png)
+![A chart comparing effect sizes from observational studies and randomized trials for various outcomes.](../../assets/observational-vs-randomized-trial-effect-sizes.png)
 
 We have the tools to get reliable answers from real-world data. We just have to actually use them.
 
@@ -79,14 +79,14 @@ Here's the revolutionary process:
 
 ### Step 1: Type in What's Killing You
 
-<img src=".../../assets/enter-condition.png" alt="Enter condition" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/enter-condition.png" alt="Enter condition" style="max-width: 600px; width: 100%;" />
 
 Revolutionary feature: A search box. The FDA's current website doesn't have this because they assume you've already died.
 
 ### Step 2: See What Actually Works (Based on Reality, Not Theory)
 
 ::: {.content-visible when-format="html"}
-<img src=".../../assets/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px; width: 100%;" />
 :::
 
 Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
@@ -102,7 +102,7 @@ It's like Consumer Reports, but for not dying.
 
 **Treatment Rankings: Every Option, Ranked by Reality**
 
-![Treatment Rankings Example](.../../assets/dfda-comparative-effectiveness-ranking-search.png)
+![Treatment Rankings Example](../../assets/dfda-comparative-effectiveness-ranking-search.png)
 
 Search any condition and see every treatment ranked by real-world effectiveness:
 
@@ -135,7 +135,7 @@ This gives patients an invaluable second layer of information: not just what *ha
 ### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
 
 ::: {.content-visible when-format="html"}
-<img src=".../../assets/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
 :::
 
 Current system: Drive 500 miles to a university hospital, wait 6 months, get rejected for having the wrong kind of dying.
@@ -147,7 +147,7 @@ Revolutionary!
 ### Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
 
 ::: {.content-visible when-format="html"}
-<img src=".../../assets/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px; width: 100%;" />
 :::
 
 Amazon can deliver a banana costume in 2 hours but experimental medications take 6 months and require seven forms of ID?
@@ -157,7 +157,7 @@ The dFDA fixes that. Your pharmacy becomes a trial site. Your doctor becomes a r
 ### Step 5: Report Results Without a PhD in Paperwork
 
 ::: {.content-visible when-format="html"}
-<img src=".../../assets/reminder-inbox.gif" alt="Report outcomes" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/reminder-inbox.gif" alt="Report outcomes" style="max-width: 600px; width: 100%;" />
 :::
 
 Current system: 500-page case report forms that ask questions like "Rate your suffering on a scale of mauve to burnt sienna."
@@ -171,7 +171,7 @@ New system:
 ### Step 6: Everyone Benefits from Everyone's Suffering
 
 ::: {.content-visible when-format="html"}
-<img src=".../../assets/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px; width: 100%;" />
 :::
 
 Your data helps the next person. Their data helps you. It's socialism, but for not dying.
@@ -367,7 +367,7 @@ It does this by connecting to all your data, from wearables, apps, and your medi
 
 ## The Digital Twin Safe: Your Medical Data's Panic Room
 
-<img src=".../../assets/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
 
 Right now, your medical data is scattered across:
 
@@ -391,7 +391,7 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have... incompr
 
 **Outcome Labels** fix that - clear, data-driven summaries showing exactly what happens when real people try a treatment:
 
-![Outcome Labels Example](.../../assets/dfda-outcome-labels.png)
+![Outcome Labels Example](../../assets/dfda-outcome-labels.png)
 
 Based on thousands of real patients with real outcomes:
 
@@ -426,7 +426,7 @@ Based on 50,000 humans who tried this:
 
 ## The Disease Eradication Act: Making It Legal to Not Die
 
-<img src=".../../assets/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
 
 This solution requires a law that says: "Dying people can try things that might help them not die."
 
@@ -469,7 +469,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 ### How the dFDA Actually Works
 
 ::: {.content-visible when-format="html"}
-<img src=".../../assets/black-box-model-animation.gif" alt="Black box model animation showing how the dFDA works" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how the dFDA works" style="max-width: 600px; width: 100%;" />
 :::
 
 The dFDA achieves [**82x More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:

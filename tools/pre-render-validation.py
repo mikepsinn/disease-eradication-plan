@@ -289,7 +289,8 @@ def check_figure_file_imports(content: str, filepath: str):
     # Check if get_figure_output_path is used anywhere
     uses_get_figure_output_path = 'get_figure_output_path(' in content
     # Check if it's imported anywhere (in any block)
-    imports_get_figure_output_path = bool(re.search(r'from\s+(?:figures\.)?_chart_style\s+import.*get_figure_output_path', content, re.DOTALL))
+    # Support both old _chart_style and new dih_models.plotting.chart_style imports
+    imports_get_figure_output_path = bool(re.search(r'from\s+(?:figures\.)?(?:_chart_style|dih_models\.plotting\.chart_style)\s+import.*get_figure_output_path', content, re.DOTALL))
 
     if uses_get_figure_output_path and not imports_get_figure_output_path:
         errors.append(ValidationError(
@@ -302,7 +303,8 @@ def check_figure_file_imports(content: str, filepath: str):
     # Check if get_project_root is used anywhere
     uses_get_project_root = 'get_project_root(' in content
     # Check if it's imported anywhere
-    imports_get_project_root = bool(re.search(r'from\s+(?:figures\.)?_chart_style\s+import.*get_project_root', content, re.DOTALL))
+    # Support both old _chart_style and new dih_models.plotting.chart_style imports
+    imports_get_project_root = bool(re.search(r'from\s+(?:figures\.)?(?:_chart_style|dih_models\.plotting\.chart_style)\s+import.*get_project_root', content, re.DOTALL))
 
     if uses_get_project_root and not imports_get_project_root:
         errors.append(ValidationError(

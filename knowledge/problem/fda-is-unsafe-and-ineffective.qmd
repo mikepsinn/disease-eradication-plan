@@ -67,7 +67,7 @@ This was true whether you lived in Ancient Rome, Medieval Europe, or the Renaiss
 
 For 10,000 years, you made exactly zero progress.
 
-![historical life expectancy](.../../assets/life-expectancy-historical.jpg)
+![historical life expectancy](../../assets/life-expectancy-historical.jpg)
 
 **1883 – The Year You Figured It Out**
 
@@ -101,7 +101,7 @@ These requirements evolved to what is now called the [Phase 1 Safety Trial](http
 
 This consistent four-year/decade increase in life expectancy remained unchanged before and after the new safety regulations.
 
-![Fda safety trials life expectancy](.../../assets/fda-safety-trials-life-expectancy.png)
+![Fda safety trials life expectancy](../../assets/fda-safety-trials-life-expectancy.png)
 
 This suggests that the regulations did not have a large-scale positive or negative impact on the development of life-saving interventions.
 
@@ -111,7 +111,7 @@ Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki
 
 Fortunately, [the existing FDA safety regulations prevented any birth defects in the US](../references.qmd#thalidomide-no-us-birth-defects). Despite the effectiveness of the existing US regulatory framework in protecting Americans, newspaper stories such as the one below created a strong public outcry for increased regulation.
 
-![Thalidomide](.../../assets/thalidomide.jpg)
+![Thalidomide](../../assets/thalidomide.jpg)
 
 #### **1962 – The Year You Decided to Make Everything Worse**
 
@@ -154,7 +154,7 @@ The new regulations immediately [reduced new drug approvals by 70%](../reference
 
 Not gradually. Immediately.
 
-![Graph showing new treatments per year decline after 1962](.../../assets/new-treatments-per-year-2.png)
+![Graph showing new treatments per year decline after 1962](../../assets/new-treatments-per-year-2.png)
 
 #### What Happened to Costs
 
@@ -162,7 +162,7 @@ Since 1962, the cost of bringing a new treatment to market went from [$74 millio
 
 That's a 13x increase. For worse results.
 
-![Cost to Get a New Drug to Market](.../../assets/cost-to-develop-a-new-drug.png)
+![Cost to Get a New Drug to Market](../../assets/cost-to-develop-a-new-drug.png)
 
 #### What Happened to Drug Patents
 
@@ -190,7 +190,7 @@ Here's what happened in 1962:
 
 It immediately cut in half. To 2 years per decade.
 
-![Average Life Expectancy Over Time](.../../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
+![Average Life Expectancy Over Time](../../assets/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
 Not gradually. Not "it slowed down over the next decade."
 
@@ -208,7 +208,7 @@ Some people say "diminishing returns explain the slowdown."
 
 Diminishing returns produce exponential decay. A smooth curve that gradually flattens over time.
 
-![What diminishing returns would look like](.../../assets/diminishing-returns.png)
+![What diminishing returns would look like](../../assets/diminishing-returns.png)
 
 This is not what happened.
 
@@ -236,11 +236,11 @@ If you don't trust this method, you can't trust any clinical research. Or scienc
 
 A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) of 66 diseases in 27 countries, suggests that if no new drugs had been launched after 1981, the number of years of life lost would have been 2.16 times higher it actually was. It estimates that pharmaceutical expenditure per life-year saved was [$2837](https://pubmed.ncbi.nlm.nih.gov/30912800).
 
-![Graph showing the shift in relative mortality among major diseases over 60 years.](.../../assets/disease-causing-death-shift.png)
+![Graph showing the shift in relative mortality among major diseases over 60 years.](../../assets/disease-causing-death-shift.png)
 
 More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between the development of new cancer treatments and cancer survival over 30 years.
 
-![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](.../../assets/more-surviving-more-therapies.png)
+![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](../../assets/more-surviving-more-therapies.png)
 
 #### The Summary
 
@@ -335,11 +335,11 @@ Before US FDA approval, most of these drugs and devices had already been availab
 
 Following the 1962 increase in US regulations, one can see a divergence from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
 
-![A chart showing the divergence in life expectancy between the US and Switzerland after 1962.](.../../assets/us-swiss-life-expectancy-5.png)
+![A chart showing the divergence in life expectancy between the US and Switzerland after 1962.](../../assets/us-swiss-life-expectancy-5.png)
 
 Perhaps it's a coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
 
-![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](.../../assets/us-swiss-life-expectancy-drug-approvals.png)
+![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../assets/us-swiss-life-expectancy-drug-approvals.png)
 
 ## The \$2.6 Billion Price Tag for Aspirin
 
@@ -408,7 +408,7 @@ Designed to prevent lawsuits, not save lives.
 
 Under the current system of research, it costs [$41k per subject](../references.qmd#trial-cost-41k) in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
 
-![how much we know](.../../assets/how-much-we-know.png)
+![how much we know](../../assets/how-much-we-know.png)
 
 ## The Actual Death Toll of "Drug Lag"
 
@@ -416,7 +416,7 @@ The FDA's economists have a term for people dying while waiting for a drug to be
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people that die from lack of access to life-saving treatments that might have been.
 
-![](.../../assets/non-existent-times.png)
+![](../../assets/non-existent-times.png)
 
 This means that it's only logical for regulators to reject drug applications by default. The personal risks of approving a drug with any newsworthy side effect far outweigh the personal risk of preventing access to life-saving treatment.
 
