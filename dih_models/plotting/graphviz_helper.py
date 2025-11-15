@@ -218,18 +218,18 @@ def create_diagram(comment='', rankdir='TD', size=None, **kwargs):
 def render_graphviz_with_watermark(dot, filename, output_dir=None):
     """
     Render Graphviz diagram to PNG with watermark and metadata.
-    
+
     Args:
         dot: graphviz.Digraph object
         filename: Base filename (without extension)
-        output_dir: Optional output directory (defaults to dih-economic-models/figures/)
-    
+        output_dir: Optional output directory (defaults to knowledge/figures/)
+
     Returns:
         Path to generated PNG file
     """
     if output_dir is None:
         project_root = get_project_root()
-        output_dir = project_root / 'dih-economic-models' / 'figures'
+        output_dir = project_root / 'knowledge' / 'figures'
     else:
         output_dir = Path(output_dir)
     

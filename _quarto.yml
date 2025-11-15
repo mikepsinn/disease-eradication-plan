@@ -251,7 +251,7 @@ execute:
   cache: false
   freeze: auto
   # Send all generated figures to a central directory
-  fig-path: "dih-economic-models/figures/"
+  fig-path: "knowledge/figures/"
 
 # Tell Quarto to use the project's virtual environment
 jupyter: dih-project-kernel

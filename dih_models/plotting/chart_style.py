@@ -332,7 +332,7 @@ def get_figure_output_path(filename):
 
     When execute-dir is set to 'project' in _quarto.yml, Path.cwd() returns the project root.
     This function determines the correct output directory based on the context:
-    - For dih-economic-models charts: dih-economic-models/figures/
+    - For knowledge charts: knowledge/figures/
     - Ensures the directory exists
 
     Args:
@@ -350,8 +350,8 @@ def get_figure_output_path(filename):
     # With execute-dir: project, cwd is the project root
     project_root = Path.cwd()
 
-    # Save to dih-economic-models/figures/ (the standard location for chart outputs)
-    output_dir = project_root / 'dih-economic-models' / 'figures'
+    # Save to knowledge/figures/ (the standard location for chart outputs)
+    output_dir = project_root / 'knowledge' / 'figures'
     output_dir.mkdir(parents=True, exist_ok=True)
 
     return output_dir / filename
