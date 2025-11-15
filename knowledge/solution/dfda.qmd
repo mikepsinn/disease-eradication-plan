@@ -19,9 +19,9 @@ lastToneElevationWithHumorHash: d28d7de32bfdf6072dc9250a8032ea81090b69062936cc32
 from dih_models.parameters import *
 ```
 
-{{< include ../../../dih-economic-models/figures/trial-access-disparity-chart.qmd >}}
+{{< include ../../../knowledge/figures/trial-access-disparity-chart.qmd >}}
 
-Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../../../dih-economic-models/appendix/clinical-trial-participants.qmd). That's **0.2%**.
+Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../../../knowledge/appendix/clinical-trial-participants.qmd). That's **0.2%**.
 
 [Half of humanity would volunteer](../../../dih-economic-models/references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
 
@@ -478,4 +478,4 @@ The dFDA achieves [**82x More Efficiency**](../../../dih-economic-models/referen
 - **Time to results**: 2 years vs the current 17 years
 - **Patient access**: Universal access vs [85% excluded](../../../dih-economic-models/references.qmd#clinical-trial-patient-participation-rate) currently
 
-{{< include ../../../dih-economic-models/figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}
+{{< include ../../../knowledge/figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}

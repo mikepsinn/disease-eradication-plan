@@ -15,7 +15,7 @@ from pathlib import Path
 # Find the project root dynamically to save the image in the correct directory
 
 # --- Style Imports ---
-# This assumes _chart_style.py is in dih-economic-models/figures/
+# This assumes _chart_style.py is in knowledge/figures/
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,

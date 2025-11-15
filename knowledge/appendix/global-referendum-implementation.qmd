@@ -36,7 +36,7 @@ Implement a privacy-preserving, globally verifiable referendum to assess public 
 
 ## Incentives and Referrals
 
-- **Rewards**: Funded via [VICTORY bonds](../../../dih-economic-models/economics/victory-bonds.qmd) with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
+- **Rewards**: Funded via [VICTORY bonds](../../../knowledge/economics/victory-bonds.qmd) with strict anti-fraud and per-cap caps; public ledger of reward disbursements.
 - **Education-first**: Reward structured learning paths before voting to reduce low-information participation.
 
 ## Legal Positioning
@@ -51,4 +51,4 @@ Verification rate, audit pass rate, unique-voter deduplication quality, and poli
 ## Cross-References
 
 - [The DIH](../solution/dih.qmd)
-- [VICTORY Bonds](../../../dih-economic-models/economics/victory-bonds.qmd)
+- [VICTORY Bonds](../../../knowledge/economics/victory-bonds.qmd)

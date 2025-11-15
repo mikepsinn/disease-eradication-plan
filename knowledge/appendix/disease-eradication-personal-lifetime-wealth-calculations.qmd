@@ -579,7 +579,7 @@ Under the Disease Eradication Model (72-year life extension), treaty percentage 
 
 Run the model test:
 ```bash
-python brain/book/appendix/economic_parameters.py
+python knowledge/appendix/economic_parameters.py
 ```
 
 Look for the "DISEASE ERADICATION MODEL" section showing all scenarios.

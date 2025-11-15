@@ -92,3 +92,7 @@ _site/
 *.egg
 dist/
 build/
+
+# Agent memory (dynamic, not in version control)
+memory/*
+!memory/.gitkeep

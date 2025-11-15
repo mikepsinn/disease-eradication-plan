@@ -456,7 +456,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
    - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
    - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../../brain/book/solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
+   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../../knowledge/solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
 
 3. **Regulatory Savings**
 
@@ -1302,7 +1302,7 @@ This model calculates:
 ```{python}
 #| echo: false
 # NPV Model Parameters
-# Source: brain/book/appendix/economic_parameters.py
+# Source: knowledge/appendix/economic_parameters.py
 
 # Costs (in billions USD) - from economic_parameters.py
 

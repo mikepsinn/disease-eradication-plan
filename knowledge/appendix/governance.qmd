@@ -24,7 +24,7 @@ lastNonprofitComplianceHash: 364cbfb0bcdddbd130b5c679304aa223413c69bbf5a9e8e7eb4
 from dih_models.parameters import *
 ```
 
-The [Decentralized Institutes of Health (DIH)](../../brain/book/solution/dih.qmd) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
+The [Decentralized Institutes of Health (DIH)](../../knowledge/solution/dih.qmd) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
 
 Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where people collaborate with AI agents to prioritize, fund, and solve complex problems.
 
@@ -104,11 +104,11 @@ The DAO's treasury (in this case, the envisioned **DIH**), once fully establishe
 
 An independent verification layer provides the real-world data and validation necessary to confirm that outcomes have been achieved.
 
-For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../../brain/book/solution/dfda.qmd) protocol.
+For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../../knowledge/solution/dfda.qmd) protocol.
 
 ## Dive Deeper into the Governance Model
 
-- **[Wishocracy (RAPPA) Governance Model](../../brain/book/solution/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
+- **[Wishocracy (RAPPA) Governance Model](../../knowledge/solution/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
 - **DIH On-Chain & AI Architecture:** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH. *(Coming Soon)*
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
