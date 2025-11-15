@@ -359,7 +359,7 @@ $$
 
 ### Mortality and Morbidity Burden
 
-<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](.../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
+<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
 
 The World Health Organization reports [150,000 daily deaths](../references.qmd#who-daily-deaths) from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)). This mortality burden exceeds:
 
@@ -470,16 +470,16 @@ These figures represent the mathematical consequence of maintaining current reso
 
 The 1% Treaty creates positive economic incentives across all major stakeholder groups, eliminating traditional opposition to healthcare system reform. This alignment of economic incentives is critical for political feasibility and sustainable implementation.
 
-**Key Stakeholder Benefits** (see [Aligning Incentives](.../knowledge/solution/aligning-incentives.qmd) for detailed analysis):
+**Key Stakeholder Benefits** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis):
 
 - **Defense sector**: Retains [99% of current budget](../appendix/peace-dividend-calculations.qmd) while gaining access to medical R&D contracts from 1% redirection
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity increases 115X](../appendix/research-acceleration-model.qmd)
 - **Insurance providers**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ([$109T current economic cost](../references.qmd#disease-economic-burden-109t))
 - **Healthcare providers**: Increased treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
-- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through [wishocratic governance](.../knowledge/solution/wishocracy.qmd)
+- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through [wishocratic governance](../solution/wishocracy.qmd)
 - **Taxpayers**: Net reduction in healthcare costs through improved R&D efficiency
 
-See [Aligning Incentives](.../knowledge/solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
+See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
 
 ## Implementation Strategy
 
@@ -526,7 +526,7 @@ For the rigorous analysis:
 
 **Political Risk**: Treaty adoption requires coordination across multiple national governments
 
-- *Mitigation*: Dual-track approach combining grassroots referendum with diplomatic engagement (see [Treaty Adoption Strategy](.../knowledge/strategy/treaty-adoption-strategy.qmd))
+- *Mitigation*: Dual-track approach combining grassroots referendum with diplomatic engagement (see [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd))
 - *Precedent*: Historical military spending reductions have occurred during periods of public mobilization (post-WW2, post-Cold War)
 
 **Technical Risk**: dFDA platform development and scaling challenges
@@ -548,9 +548,9 @@ See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for complet
 
 ### Governance and Accountability
 
-**DIH Treasury Governance**: [Wishocratic system](.../knowledge/solution/wishocracy.qmd) enabling democratic allocation of research funding
+**DIH Treasury Governance**: [Wishocratic system](../solution/wishocracy.qmd) enabling democratic allocation of research funding
 
-- [8 billion potential participants](.../knowledge/solution/wishocracy.qmd) (any human) vs. current centralized decision-making ([200 NIH staff](../references.qmd#nih-decision-makers-200-people))
+- [8 billion potential participants](../solution/wishocracy.qmd) (any human) vs. current centralized decision-making ([200 NIH staff](../references.qmd#nih-decision-makers-200-people))
 - Quadratic voting mechanism prevents plutocratic capture
 - Transparent, auditable allocation via blockchain-based system
 
@@ -590,6 +590,6 @@ $$
 
 **Comparative Context**: This intervention rivals or exceeds the cost-effectiveness of history's most successful public health achievements (see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd) for detailed ROI comparisons including smallpox eradication and childhood vaccinations) while requiring no ongoing charitable funding.
 
-**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over [36 months](.../knowledge/strategy/roadmap.qmd) (see [Roadmap](.../knowledge/strategy/roadmap.qmd) for complete implementation timeline).
+**Implementation Pathway**: Phased approach beginning with global referendum and political mobilization, proceeding through treaty adoption, DIH establishment, and dFDA deployment over [36 months](../strategy/roadmap.qmd) (see [Roadmap](../strategy/roadmap.qmd) for complete implementation timeline).
 
 The economic case is grounded in conservative assumptions, validated against peer-reviewed evidence (particularly the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd)), and subjected to comprehensive [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). The methodology employs standard health economics frameworks (NPV, QALYs, ICER) to enable comparison with existing interventions and facilitate foundation grant evaluation processes.

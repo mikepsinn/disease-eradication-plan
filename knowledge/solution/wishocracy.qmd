@@ -22,7 +22,7 @@ lastToneElevationWithHumorHash: 9e90d47ce9ca4901b44a174515301db01db85e8353ce8281
 from dih_models.parameters import *
 ```
 
-Congratulations! You've passed the [1% Treaty](../solution/1-percent-treaty.qmd) and now you've got $27.2B/year to allocate.
+Congratulations! You've passed the [1% Treaty](1-percent-treaty.qmd) and now you've got $27.2B/year to allocate.
 
 How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
 
@@ -32,7 +32,7 @@ How do you avoid parasitic special interests from stealing it or bureacracy from
 
 The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, or simply, the **Pairwise Smackdown**.
 
-Your brain can't rank a list of 20 priorities. It gives up around [item number seven](.../../knowledge/references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
+Your brain can't rank a list of 20 priorities. It gives up around [item number seven](../references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
 
 Instead of asking, "Rank these 10,000 problems," the system asks:
 
@@ -47,7 +47,7 @@ It's the wisdom of crowds, but without the crowds having to talk to each other.
 When millions of people make pairwise choices:
 
 - Random pairs prevent gaming
-- [Statistical models (Bradley-Terry, PageRank)](.../../knowledge/references.qmd#bradley-terry-pagerank-models) extract global preferences
+- [Statistical models (Bradley-Terry, PageRank)](../references.qmd#bradley-terry-pagerank-models) extract global preferences
 - Outliers cancel out
 - Wisdom of crowds emerges
 

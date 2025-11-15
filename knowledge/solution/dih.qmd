@@ -97,8 +97,8 @@ The NIH pays for permission to do research. The DIH pays for research that works
 
 ## How the Money Flows
 
-1.  **Fill the Treasury:** The [1% Treaty](../solution/1-percent-treaty.qmd) redirects **$27 billion** a year from global military budgets into the DIH treasury.
-2.  **Humanity Sets the Rules:** The global population uses a system called [Wishocracy](../solution/wishocracy.qmd) to vote on the high-level budget allocation. They don't pick specific trials; they set the rules for the whole system (e.g., "70% of all funds go directly to patient subsidies," "10% for moonshot prizes").
+1.  **Fill the Treasury:** The [1% Treaty](1-percent-treaty.qmd) redirects **$27 billion** a year from global military budgets into the DIH treasury.
+2.  **Humanity Sets the Rules:** The global population uses a system called [Wishocracy](wishocracy.qmd) to vote on the high-level budget allocation. They don't pick specific trials; they set the rules for the whole system (e.g., "70% of all funds go directly to patient subsidies," "10% for moonshot prizes").
 3.  **Patients Fund Cures:** The money flows to patients as subsidies, creating a market where the best research attracts funding directly from the people who need it most.
 
 This structure also allows for **Emergent Institutes**—patient communities for specific diseases (e.g., the Decentralized Cancer Institute) can pool a fraction of their resources to fund large-scale projects and prizes that a pure individual market might overlook.
@@ -112,9 +112,9 @@ The DIH isn't incrementally better than the NIH. Through pure mechanism design, 
 | Metric | NIH (Current) | DIH (Projected) | Improvement |
 |--------|---------------|-----------------|-------------|
 | **Payment trigger** | Grant approved | Results achieved | **Incentive revolution** |
-| **Cost per QALY** | [$50,000-$150,000](.../../knowledge/references.qmd#nih-cost-per-qaly) | $5,000-$15,000 | **10x reduction** |
-| **Overhead percentage** | [50-67%](.../../knowledge/references.qmd#grant-writing-time-50pct) | <10% | **6x reduction in waste** |
-| **Time to treatment** | [10-17 years](.../../knowledge/references.qmd#drug-development-timeline) | 2-4 years | **4x faster** |
+| **Cost per QALY** | [$50,000-$150,000](../references.qmd#nih-cost-per-qaly) | $5,000-$15,000 | **10x reduction** |
+| **Overhead percentage** | [50-67%](../references.qmd#grant-writing-time-50pct) | <10% | **6x reduction in waste** |
+| **Time to treatment** | [10-17 years](../references.qmd#drug-development-timeline) | 2-4 years | **4x faster** |
 | **Publication rate** | ~50% (positive results only) | 100% (all results) | **2x knowledge base** |
 | **Trials run annually** | ~5,000 major trials | 50,000-500,000 trials | **10-100x scale** |
 | **Researcher time on research** | 33-50% | >90% | **2x productivity** |
@@ -126,7 +126,7 @@ These aren't independent improvements, they multiply:
 1. **10x cost reduction** per QALY through elimination of overhead
 2. **2x knowledge multiplier** from mandatory publication of all results
 3. **4x speed multiplier** from cutting bureaucratic delays
-4. **100x scale** from distributed trial infrastructure ([dFDA](../solution/dfda.qmd))
+4. **100x scale** from distributed trial infrastructure ([dFDA](dfda.qmd))
 
 **Combined conservative estimate:** 10 × 2 × 4 × 10 = **800x improvement** in QALY production rate
 

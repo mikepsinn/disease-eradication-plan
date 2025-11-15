@@ -17,7 +17,7 @@ Forget saving humanity. Let's talk about what you, personally, get out of this. 
 
 If you get sick (and you will), your chances of getting into a clinical trial are **0.2%** - that's 1 in 480 people with chronic disease.
 
-[Half of humanity is willing to participate](.../../knowledge/references.qmd#patient-willingness-clinical-trials), but the system can only handle [5 million people per year](.../../knowledge/appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
+[Half of humanity is willing to participate](../references.qmd#patient-willingness-clinical-trials), but the system can only handle [5 million people per year](../appendix/clinical-trial-participants.qmd). The other 99.8% get to die while waiting for approval.
 
 ### What You Actually Get
 
@@ -47,7 +47,7 @@ As diseases are cured, healthcare costs plummet. The 1% Treaty accelerates resea
 
 ### If you have money
 
-[VICTORY Bonds](.../../knowledge/economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
+[VICTORY Bonds](../economics/victory-bonds.qmd) offer a projected **271.8% annual return**, perpetually. I could not find a comparable investment. You can profit while funding the research that will make you immortal.
 
 #### If you have a family
 
@@ -105,7 +105,7 @@ You're not being asked to donate your time. You're being offered the highest-pay
 #### Time Investment
 
 - Reading this book: `{python} book_reading_time_hours_formatted` hours (`{python} f"{TOTAL_BOOK_WORDS:,}"` words at `{python} BOOK_READING_SPEED_WPM` words/minute)
-- Taking actions: `{python} action_time_total_hours_formatted` hours ([Vote `{python} ACTION_TIME_VOTE_MINUTES` min + Invest `{python} ACTION_TIME_INVEST_MINUTES` min + Recruit `{python} ACTION_TIME_RECRUIT_MINUTES` min](../call-to-action/three-actions.qmd))
+- Taking actions: `{python} action_time_total_hours_formatted` hours ([Vote `{python} ACTION_TIME_VOTE_MINUTES` min + Invest `{python} ACTION_TIME_INVEST_MINUTES` min + Recruit `{python} ACTION_TIME_RECRUIT_MINUTES` min](three-actions.qmd))
 - **Total: `{python} total_time_investment_hours_formatted` hours**
 
 ##### Effective Hourly Rate: `{python} effective_hourly_rate_thousands_formatted`/hour
@@ -121,4 +121,4 @@ The catch? You only get paid if the plan works. But if it does, you just made `{
 
 ---
 
-*For detailed calculations, mathematical framework, and sensitivity analysis, see the [Disease Eradication Model](.../../knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd). For conservative estimates suitable for skeptical audiences, see the Conservative Baselines section.*
+*For detailed calculations, mathematical framework, and sensitivity analysis, see the [Disease Eradication Model](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd). For conservative estimates suitable for skeptical audiences, see the Conservative Baselines section.*
