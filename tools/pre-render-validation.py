@@ -448,6 +448,73 @@ def check_include_directives(content: str, filepath: str):
                 ))
 
 
+def check_markdown_links(content: str, filepath: str):
+    """
+    Check all markdown links in the file for:
+    - Broken file references (for local files)
+    - Malformed paths with '...'
+    - References to old migration directories
+    """
+    lines = content.split('\n')
+    file_dir = os.path.dirname(filepath)
+
+    # Match markdown links: [text](path)
+    link_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+
+    for line_index, line in enumerate(lines):
+        # Skip HTML comments
+        if re.match(r'^\s*<!--', line.strip()) or ('<!--' in line and '-->' in line):
+            continue
+
+        matches = link_pattern.finditer(line)
+        for match in matches:
+            link_text = match.group(1)
+            link_path = match.group(2).strip()
+
+            # Skip URLs
+            if link_path.startswith('http://') or link_path.startswith('https://'):
+                continue
+            # Skip anchors
+            if link_path.startswith('#'):
+                continue
+
+            # Check for malformed paths with '...'
+            if '.../' in link_path:
+                errors.append(ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message=f'Malformed path with "...": {link_path}',
+                    context=line.strip()[:80]
+                ))
+                continue
+
+            # Check for references to old migration directories
+            if 'dih-economic-models/' in link_path or 'brain/book/' in link_path or 'brain/' in link_path:
+                errors.append(ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message=f'Reference to old migration directory: {link_path}',
+                    context=line.strip()[:80]
+                ))
+                continue
+
+            # For local file links, check if the file exists
+            # Split off any anchor (#section)
+            link_file = link_path.split('#')[0] if '#' in link_path else link_path
+
+            if link_file:  # If there's actually a file path (not just an anchor)
+                # Resolve the path relative to the current file
+                resolved_path = os.path.normpath(os.path.join(file_dir, link_file))
+
+                if not os.path.exists(resolved_path):
+                    errors.append(ValidationError(
+                        file=filepath,
+                        line=line_index + 1,
+                        message=f'Broken link: {link_path} (target file not found)',
+                        context=line.strip()[:80]
+                    ))
+
+
 def validate_quarto_config():
     """
     Validate _quarto.yml configuration file.
@@ -574,6 +641,7 @@ def validate_file(filepath: str):
 
     # Check include directives
     check_include_directives(content, filepath)
+    check_markdown_links(content, filepath)
 
 def main():
     """Main validation function"""
