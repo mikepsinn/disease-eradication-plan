@@ -39,10 +39,10 @@ jobs:
   #     run: pnpm run lint:md
   #
   #   - name: Validate Frontmatter
-  #     run: pnpm exec tsx scripts/validate-frontmatter.ts
+  #     run: pnpm exec tsx tools/validate-frontmatter.ts
   #
   #   - name: Validate Links
-  #     run: pnpm exec tsx scripts/validate-links.ts
+  #     run: pnpm exec tsx tools/validate-links.ts
 
   build-html:
     runs-on: ubuntu-latest
@@ -83,7 +83,7 @@ jobs:
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
 
-      - name: Install dih-economic-models package
+      - name: Install dih_models package
         run: uv pip install --system -e .
 
       - name: Install Jupyter kernel
@@ -91,7 +91,7 @@ jobs:
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
       - name: Render Quarto Project (HTML) with validation and monitoring
-        run: python scripts/render_html.py
+        run: python tools/render_html.py
         timeout-minutes: 15
 
       - name: Setup Pages
@@ -142,7 +142,7 @@ jobs:
   #       run: quarto install tinytex
 
   #     - name: Render Quarto Project (PDF) with validation and monitoring
-  #       run: python scripts/render_pdf.py
+  #       run: python tools/render_pdf.py
   #       timeout-minutes: 15
 
   #     - name: Upload PDF artifact
