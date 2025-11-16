@@ -53,15 +53,12 @@
     export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" 2>/dev/null || python -c "import sys; print(sys.executable)" 2>/dev/null || echo "python3")
     export JUPYTER_PLATFORM_DIRS=1
     
-    # Use render_html.py script (has better error handling and validation)
-    echo "Starting Quarto render via render_html.py..."
-    # Check if lib directory exists (required by render_html.py)
-    if [ ! -d "tools/lib" ]; then
-      echo "Warning: tools/lib not found, render_html.py may fail"
-    fi
-    python3 tools/render_html.py --output-dir _site/economics --command "quarto render" --skip-post-validation --no-fail-on-warnings 2>&1 || {
-      echo "render_html.py failed, trying direct quarto render..."
-      quarto render --to html || error_exit "Quarto render failed"
+    # Render with Quarto (simple approach)
+    echo "Starting Quarto render..."
+    quarto render --to html 2>&1 | tee quarto-render.log || {
+      echo "Quarto render failed. Last 50 lines of log:"
+      tail -50 quarto-render.log || echo "No log file found"
+      error_exit "Quarto render failed - check logs above"
     }
     
     echo "=== Step 8: Verifying output ==="
