@@ -139,7 +139,7 @@ Example with 1M participants:
 As more patients join:
 
 5M participants = $5,400 per patient
-10M participants = ${{< var global_annual_conflict_deaths_state_violence >}} per patient
+10M participants = $2,700 per patient
 ```
 
 #### Why This Creates Perfect Incentives
@@ -169,7 +169,7 @@ As more patients join:
 - Platform infrastructure: ~$3B (scaling to 10M patients)
 - Research prizes: ~$2.5B (first-cure bonuses)
 - Expansion campaign: ~$2B (advocacy for 2% treaty)
-- Contingency: ~{{< var treaty_campaign_budget_super_pacs >}}
+- Contingency: ~$2B
 
 ### Year 4: 2% Treaty Expansion
 
@@ -196,7 +196,7 @@ As more patients join:
 
 - VICTORY bond returns: $13.5B (10% of treaty inflows)
 - Patient subsidies: ~$85B (universal access)
-- Platform infrastructure: ~{{< var partial_success_research_funding >}} (200M patients)
+- Platform infrastructure: ~$12B (200M patients)
 - Research prizes: ~$15B (rare diseases getting solved)
 - Space medicine: ~$6B (extending to longevity research)
 - Prevention programs: ~$3.5B (shifting from treatment to prevention)
@@ -281,7 +281,7 @@ That's more than China's entire GDP.
 - Quarterly independent audits
 - Board oversight (includes bondholders)
 - Fraud detection via AI
-- Whistleblower bounties ({{< var value_of_statistical_life >}} for catching theft)
+- Whistleblower bounties ({{< var whistleblower_bounty_amount >}} for catching theft)
 
 ## Transparency & Accountability
 
@@ -322,7 +322,7 @@ That's more than China's entire GDP.
 #### Primary
 
 - QALYs (Quality-Adjusted Life Years) generated
-- Cost per life saved (target: <${{< var traditional_large_trial_size >}})
+- Cost per life saved (target: <$1,000)
 - Time from discovery to patient (target: <3 years)
 - Percentage of diseases with active trials (target: 100%)
 

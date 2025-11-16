@@ -66,24 +66,90 @@
 "book_reading_time_hours": "<a href=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ class=\"parameter-link\" title=\"Time to read the entire book | Formula: (WORDS\
   \ ÷ SPEED) ÷ 60 | Unit: hours | Click to view calculation\">14.3</a>"
+"campaign_celebrity_endorsement_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Celebrity and influencer endorsements | Unit:\
+  \ millions USD | Click to view calculation\">$15M</a>"
+"campaign_community_organizing_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Community organizing and ambassador program budget\
+  \ | Unit: millions USD | Click to view calculation\">$30M</a>"
+"campaign_contingency_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Contingency fund for unexpected costs | Unit:\
+  \ millions USD | Click to view calculation\">$50M</a>"
+"campaign_defense_conversion_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Defense industry conversion program | Unit: millions\
+  \ USD | Click to view calculation\">$50M</a>"
+"campaign_defense_lobbyist_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Budget for co-opting defense industry lobbyists\
+  \ | Unit: millions USD | Click to view calculation\">$50M</a>"
+"campaign_healthcare_alignment_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Healthcare industry alignment and partnerships\
+  \ | Unit: millions USD | Click to view calculation\">$35M</a>"
+"campaign_infrastructure_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Campaign operational infrastructure | Unit: millions\
+  \ USD | Click to view calculation\">$20M</a>"
+"campaign_legal_ai_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"AI-assisted legal work budget | Unit: millions\
+  \ USD | Click to view calculation\">$50M</a>"
+"campaign_legal_defense_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Legal defense fund | Unit: millions USD | Click\
+  \ to view calculation\">$20M</a>"
+"campaign_legal_work_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Legal drafting and compliance work | Unit: millions\
+  \ USD | Click to view calculation\">$60M</a>"
+"campaign_lobbying_eu_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"EU lobbying campaign budget | Unit: millions\
+  \ USD | Click to view calculation\">$40M</a>"
+"campaign_lobbying_g20_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"G20 countries lobbying budget | Unit: millions\
+  \ USD | Click to view calculation\">$35M</a>"
+"campaign_lobbying_us_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"US lobbying campaign budget | Unit: millions\
+  \ USD | Click to view calculation\">$50M</a>"
 "campaign_media_budget_max_billions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Maximum mass media campaign budget | Unit: billions\
   \ USD | Click to view calculation\">$1.00B</a>"
 "campaign_media_budget_min_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum mass media campaign budget | Unit: millions\
-  \ USD | Click to view calculation\">$500</a>"
+  \ USD | Click to view calculation\">$500M</a>"
+"campaign_opposition_research_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Opposition research and rapid response | Unit:\
+  \ millions USD | Click to view calculation\">$25M</a>"
 "campaign_phase1_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Phase 1 campaign budget (Foundation, Year 1)\
-  \ | Unit: millions USD | Click to view calculation\">$200</a>"
+  \ | Unit: millions USD | Click to view calculation\">$200M</a>"
 "campaign_phase2_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Phase 2 campaign budget (Scale & Momentum, Years\
-  \ 2-3) | Unit: millions USD | Click to view calculation\">$500</a>"
+  \ 2-3) | Unit: millions USD | Click to view calculation\">$500M</a>"
+"campaign_pilot_programs_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Pilot program testing in small countries | Unit:\
+  \ millions USD | Click to view calculation\">$30M</a>"
+"campaign_platform_development_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Voting platform and technology development |\
+  \ Unit: millions USD | Click to view calculation\">$35M</a>"
+"campaign_regulatory_navigation_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Regulatory compliance and navigation | Unit:\
+  \ millions USD | Click to view calculation\">$20M</a>"
+"campaign_scaling_prep_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Scaling preparation and blueprints | Unit: millions\
+  \ USD | Click to view calculation\">$30M</a>"
 "campaign_staff_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Campaign core team staff budget | Unit: millions\
-  \ USD | Click to view calculation\">$40</a>"
+  \ USD | Click to view calculation\">$40M</a>"
+"campaign_super_pac_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Super PAC campaign expenditures | Unit: millions\
+  \ USD | Click to view calculation\">$30M</a>"
+"campaign_tech_partnerships_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Tech industry partnerships and infrastructure\
+  \ | Unit: millions USD | Click to view calculation\">$25M</a>"
+"campaign_treaty_implementation_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Post-victory treaty implementation support |\
+  \ Unit: millions USD | Click to view calculation\">$40M</a>"
+"campaign_viral_content_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Viral marketing content creation budget | Unit:\
+  \ millions USD | Click to view calculation\">$40M</a>"
 "campaign_weekly_ad_cost_k": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Weekly advertising cost for campaigns | Unit:\
-  \ thousands USD/week | Click to view calculation\">$500</a>"
+  \ thousands USD/week | Click to view calculation\">$500K</a>"
 "cancer_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Cancer death rate (all cancers) | Unit: deaths\
   \ per 100,000 | Click to view source\">147</a>"
@@ -142,10 +208,10 @@
   \ calculation\">8.04e-05</a>"
 "cost_per_life_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"Cost per life for investor-funded scenario |\
-  \ Unit: millions USD/life | Click to view calculation\">$-7</a>"
+  \ Unit: millions USD/life | Click to view calculation\">$-6.56M</a>"
 "cost_per_life_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"Cost per life counting military spending opportunity\
-  \ cost | Unit: millions USD/life | Click to view calculation\">$-5</a>"
+  \ cost | Unit: millions USD/life | Click to view calculation\">$-5.48M</a>"
 "current_active_trials": "<a href=\"/knowledge/references.qmd#active-clinical-trials-baseline\"\
   \ class=\"parameter-link\" title=\"Current active trials at any given time (3-5\
   \ year duration) | Unit: trials | Click to view source\">10,000</a>"
@@ -211,12 +277,21 @@
   \ class=\"parameter-link\" title=\"Annual gross savings from 50% trial cost reduction\
   \ | Formula: TRIAL_MARKET × COST_REDUCTION_PCT | Unit: billions USD/year | Click\
   \ to view calculation\">$50B</a>"
+"dfda_icer_per_qaly": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis\"\
+  \ class=\"parameter-link\" title=\"dFDA Infrastructure ICER per QALY (net incremental\
+  \ cost ÷ QALYs gained) | Formula: (DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL)\
+  \ ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
+  >$-0</a>"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ class=\"parameter-link\" title=\"Months to recruit 10,000+ patients in dFDA system\
   \ | Unit: months | Click to view calculation\">3</a>"
 "dfda_large_trial_size": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#trial-sizes\"\
   \ class=\"parameter-link\" title=\"Large dFDA pragmatic trial size | Unit: participants\
   \ | Click to view calculation\">10,000</a>"
+"dfda_net_incremental_cost_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost\"\
+  \ class=\"parameter-link\" title=\"Net incremental cost for dFDA (operational costs\
+  \ minus R&D savings) | Formula: DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL | Unit:\
+  \ billions USD/year | Click to view calculation\">$-50B</a>"
 "dfda_net_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ class=\"parameter-link\" title=\"Annual net savings (gross savings minus operational\
   \ costs) | Formula: GROSS_SAVINGS - ANNUAL_OPEX | Unit: billions USD/year | Click\
@@ -303,6 +378,9 @@
 "dfda_upfront_build_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost (high estimate)\
   \ | Unit: billions USD | Click to view calculation\">$46M</a>"
+"diabetes_cure_payment_estimate": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
+  \ class=\"parameter-link\" title=\"Estimated one-time payment for diabetes cure\
+  \ | Unit: USD | Click to view calculation\">$10K</a>"
 "diabetes_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Diabetes death rate | Unit: deaths per 100,000\
   \ | Click to view source\">22.4</a>"
@@ -358,7 +436,7 @@
   \ BENEFIT_MILLIONS × 1M | Unit: USD | Click to view calculation\">$4.30M</a>"
 "effective_hourly_rate_lifetime_benefit_millions": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
   \ class=\"parameter-link\" title=\"Lifetime benefit for age 30 baseline scenario\
-  \ | Unit: millions USD | Click to view calculation\">$4</a>"
+  \ | Unit: millions USD | Click to view calculation\">$4.30M</a>"
 "effective_hourly_rate_vs_ceo_multiplier": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs CEO rate | Formula:\
   \ EFFECTIVE_RATE ÷ CEO_RATE | Unit: ratio | Click to view calculation\">29.2</a>"
@@ -366,6 +444,9 @@
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs average US wage\
   \ | Formula: EFFECTIVE_RATE ÷ AVG_WAGE | Unit: ratio | Click to view calculation\"\
   >9,744</a>"
+"family_office_investment_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+  \ class=\"parameter-link\" title=\"Minimum investment for family offices | Unit:\
+  \ millions USD | Click to view calculation\">$5.00M</a>"
 "gdp_growth_boost_10pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_10PCT\"\
   >0.025</span>"
 "gdp_growth_boost_1pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_1PCT\
@@ -510,7 +591,7 @@
 "global_cost_per_conflict_death_millions": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per conflict death (war cost ÷ deaths) |\
   \ Formula: (WAR_COST × 1B ÷ DEATHS) ÷ 1M | Unit: millions USD/death | Click to view\
-  \ calculation\">$46</a>"
+  \ calculation\">$46.4M</a>"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per life saved by medical research | Formula:\
   \ (RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED | Unit: USD/life | Click to view calculation\"\
@@ -572,6 +653,9 @@
   \ class=\"parameter-link\" title=\"Direct war cost per second globally | Formula:\
   \ DIRECT_COSTS × 1B ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\"\
   >$243K</a>"
+"high_net_worth_investor_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+  \ class=\"parameter-link\" title=\"Minimum investment for high net worth individuals\
+  \ | Unit: millions USD | Click to view calculation\">$1.00M</a>"
 "icer_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"ICER for investor-funded scenario (VICTORY Social\
   \ Impact Bonds) | Unit: USD/QALY | Click to view calculation\">$-187K</a>"
@@ -583,6 +667,9 @@
   \ QALY gained | Unit: USD/QALY | Click to view calculation\">$-0</a>"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
+"institutional_investor_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+  \ class=\"parameter-link\" title=\"Minimum investment for institutional investors\
+  \ | Unit: millions USD | Click to view calculation\">$10M</a>"
 "kidney_disease_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Kidney disease death rate | Unit: deaths per\
   \ 100,000 | Click to view source\">13.1</a>"
@@ -606,19 +693,22 @@
   \ returned per $1 spent) | Unit: ratio | Click to view source\">1,813</a>"
 "lobbyist_bond_investment_max_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Maximum bond investment for lobbyist incentives\
-  \ | Unit: millions USD | Click to view calculation\">$20</a>"
+  \ | Unit: millions USD | Click to view calculation\">$20M</a>"
 "lobbyist_bond_investment_min_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Minimum bond investment for lobbyist incentives\
-  \ | Unit: millions USD | Click to view calculation\">$5</a>"
+  \ | Unit: millions USD | Click to view calculation\">$5.00M</a>"
 "lobbyist_salary_max_millions": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
   \ class=\"parameter-link\" title=\"Maximum annual lobbyist salary range | Unit:\
-  \ millions USD | Click to view source\">$2</a>"
+  \ millions USD | Click to view source\">$2.00M</a>"
 "lobbyist_salary_min_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
   \ class=\"parameter-link\" title=\"Minimum annual lobbyist salary range | Unit:\
-  \ thousands USD | Click to view source\">$500</a>"
+  \ thousands USD | Click to view source\">$500K</a>"
 "lobbyist_salary_typical_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
   \ class=\"parameter-link\" title=\"Typical annual lobbyist salary for comparison\
-  \ | Unit: thousands USD | Click to view source\">$500</a>"
+  \ | Unit: thousands USD | Click to view source\">$500K</a>"
+"longevity_therapy_savings_30yr": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
+  \ class=\"parameter-link\" title=\"30-year savings from longevity therapy per person\
+  \ | Unit: USD | Click to view calculation\">$150K</a>"
 "medical_facility_hourly_room_cost": "<a href=\"/knowledge/references.qmd#hospital-room-costs\"\
   \ class=\"parameter-link\" title=\"Average hourly cost of medical facility room\
   \ | Unit: USD/hour | Click to view source\">$500</a>"
@@ -632,7 +722,7 @@
   >247</span>"
 "mental_health_grants_annual_millions": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
   \ class=\"parameter-link\" title=\"Annual mental health research grants total |\
-  \ Unit: millions USD/year | Click to view source\">$500</a>"
+  \ Unit: millions USD/year | Click to view source\">$500M</a>"
 "mental_health_productivity_loss_per_capita": "<a href=\"/knowledge/references.qmd#mental-health-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Annual productivity loss per capita from mental\
   \ health issues (beyond treatment costs) | Unit: USD/year | Click to view source\"\
@@ -652,7 +742,7 @@
 "net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | Formula: ICER × QALYS_PER_LIFE | Unit: millions USD/life | Click to view calculation\"\
-  >$-0</a>"
+  >$-6.17K</a>"
 "npv_discount_rate_standard": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters\"\
   \ class=\"parameter-link\" title=\"Standard discount rate for NPV analysis (8% annual)\
   \ | Unit: rate | Click to view calculation\">0.08%</a>"
@@ -683,6 +773,9 @@
   \ class=\"parameter-link\" title=\"Research funding in partial success scenario\
   \ | Formula: REVENUE × RESEARCH_PCT | Unit: billions USD/year | Click to view calculation\"\
   >$12.2B</a>"
+"patient_cure_copay_max": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
+  \ class=\"parameter-link\" title=\"Maximum patient copay for cure | Unit: USD |\
+  \ Click to view calculation\">$1.00K</a>"
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
   \ class=\"parameter-link\" title=\"Annual peace dividend from 1% reduction in total\
   \ war costs | Formula: TOTAL_WAR_COST × 1% | Unit: billions USD/year | Click to\
@@ -770,12 +863,15 @@
   \ - $12,239/year\">12,239</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\
   \ - ~$1,045/year\">1,045</span>"
+"pharma_cure_payment_per_patient": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
+  \ class=\"parameter-link\" title=\"Pharma payment per cured patient in 50/50 model\
+  \ | Unit: USD | Click to view calculation\">$90K</a>"
 "phase_3_trial_cost_max_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (maximum) | Unit: millions\
-  \ USD/trial | Click to view source\">$282</a>"
+  \ USD/trial | Click to view source\">$282M</a>"
 "phase_3_trial_cost_min_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (minimum) | Unit: millions\
-  \ USD/trial | Click to view source\">$20</a>"
+  \ USD/trial | Click to view source\">$20M</a>"
 "post_ww2_military_cut_pct": "<a href=\"/knowledge/references.qmd#post-ww2-military-demobilization\"\
   \ class=\"parameter-link\" title=\"Percentage military spending cut after WW2 (historical\
   \ precedent) | Unit: rate | Click to view source\">0.3%</a>"
@@ -820,6 +916,9 @@
 "qalys_total_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Total optimistic QALYs (500k + 150k + 3M) | Unit:\
   \ QALYs/year | Click to view calculation\">3,650,000</a>"
+"qualified_investor_min_thousands": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+  \ class=\"parameter-link\" title=\"Minimum investment for qualified investors |\
+  \ Unit: thousands USD | Click to view calculation\">$100K</a>"
 "rare_disease_typical_patient_count": "<a href=\"/knowledge/references.qmd#rare-disease-prevalence\"\
   \ class=\"parameter-link\" title=\"Typical patient count for rare diseases | Unit:\
   \ patients | Click to view source\">500</a>"
@@ -858,13 +957,13 @@
   \ | Unit: billions USD/year | Click to view calculation\">$200M</a>"
 "sensitivity_cost_per_life_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
   \ class=\"parameter-link\" title=\"Central cost per life saved | Unit: millions\
-  \ USD/life | Click to view calculation\">$-7</a>"
+  \ USD/life | Click to view calculation\">$-6.55M</a>"
 "sensitivity_cost_per_life_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative cost per life saved | Unit: millions\
-  \ USD/life | Click to view calculation\">$-6</a>"
+  \ USD/life | Click to view calculation\">$-5.97M</a>"
 "sensitivity_cost_per_life_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic cost per life saved | Unit: millions\
-  \ USD/life | Click to view calculation\">$-5</a>"
+  \ USD/life | Click to view calculation\">$-4.79M</a>"
 "sensitivity_dfda_opex_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative dFDA operational costs | Unit: billions\
   \ USD/year | Click to view calculation\">$60M</a>"
@@ -958,10 +1057,10 @@
   \ of GDP (0.7%) | Unit: rate | Click to view source\">0.007%</a>"
 "switzerland_gdp_per_capita_k": "<a href=\"/knowledge/references.qmd#switzerland-gdp-per-capita\"\
   \ class=\"parameter-link\" title=\"Switzerland GDP per capita | Unit: thousands\
-  \ USD | Click to view source\">$93</a>"
+  \ USD | Click to view source\">$93K</a>"
 "system_profit_per_life_saved_millions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" title=\"System profit per life saved in millions | Unit:\
-  \ millions USD/life | Click to view calculation\">$6</a>"
+  \ millions USD/life | Click to view calculation\">$5.87M</a>"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" title=\"\
   Total words in the book | Unit: words | Click to view calculation\">171,121</a>"
 "total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits\"\
@@ -1116,7 +1215,7 @@
   \ | Click to view source\">$877B</a>"
 "us_dot_value_of_statistical_life_millions": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"US Department of Transportation value of statistical\
-  \ life | Unit: millions USD | Click to view source\">$14</a>"
+  \ life | Unit: millions USD | Click to view source\">$13.6M</a>"
 "us_median_salary": "<a href=\"/knowledge/references.qmd#us-median-salary-2024\" class=\"\
   parameter-link\" title=\"US median salary in 2024 | Unit: USD/year | Click to view\
   \ source\">$59.4K</a>"
@@ -1151,10 +1250,16 @@
   \ to view calculation\">$2.72K</a>"
 "vsl_epa_millions": "<a href=\"/knowledge/references.qmd#epa-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"EPA value of statistical life | Unit: millions\
-  \ USD | Click to view source\">$10</a>"
+  \ USD | Click to view source\">$9.60M</a>"
 "water_fluoridation_roi": "<a href=\"/knowledge/references.qmd#water-fluoridation-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from water fluoridation\
   \ programs | Unit: ratio | Click to view source\">23</a>"
+"whistleblower_bounty_amount": "<a href=\"/knowledge/economics/financial-plan.qmd\"\
+  \ class=\"parameter-link\" title=\"Whistleblower bounty for misconduct reporting\
+  \ | Unit: USD | Click to view calculation\">$1.00M</a>"
+"whistleblower_reward_amount": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Whistleblower reward for fraud detection | Unit:\
+  \ USD | Click to view calculation\">$1.00M</a>"
 "workforce_chronic_illness_prevalence": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Workforce with at least one chronic condition\
   \ (78.4%) | Unit: rate | Click to view source\">0.784%</a>"

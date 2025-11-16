@@ -50,8 +50,8 @@ Find humans who have more papers than they need and convince them to give you $1
 
 #### Who has that many papers
 
-- Institutional investors ({{< var value_of_statistical_life >}}+ each) - pension funds, endowments, people managing other people's papers
-- Family offices ({{< var dfda_opex_regulatory >}}+ each) - rich families who hired someone to watch their paper piles
+- Institutional investors ({{< var institutional_investor_min_millions >}}M+ each) - pension funds, endowments, people managing other people's papers
+- Family offices ({{< var family_office_investment_min_millions >}}M+ each) - rich families who hired someone to watch their paper piles
 - High net worth individuals ($1M+ each) - people who got lucky/smart/criminal and have extra papers
 - Qualified investors ($100K+ each) - regular rich people
 
@@ -126,9 +126,9 @@ $$
 |---------------|-----|---------------------------|
 | Mildly skeptical (3% discount) | $90B | 90x your money |
 | Pretty skeptical (5% discount) | $54B | 54x your money |
-| Very skeptical (10% discount) | {{< var treaty_annual_funding >}} | 27x your money |
+| Very skeptical (10% discount) | $27B | 27x your money |
 
-Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth {{< var treaty_annual_funding >}} total.
+Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth $27B total.
 
 **Translation for humans who peaked at counting on fingers:**
 
@@ -161,7 +161,7 @@ The treaty starts at 1% (baby steps for humanity). As diseases get cured, voters
 | 1-3  | 1%       | $27.2B         | {{< var victory_bond_annual_payout >}}             | 271.8%         |
 | 4-7  | 2%       | $54B           | $5.4B             | 540%         |
 | 8-10 | 5%       | $135B          | $13.5B            | 1,350%       |
-| 10+  | 10%+     | $270B+         | {{< var treaty_annual_funding >}}+             | {{< var global_annual_conflict_deaths_state_violence >}}%+      |
+| 10+  | 10%+     | $270B+         | $27B+             | 2,700%+      |
 
 #### Why this actually happens
 
@@ -374,8 +374,8 @@ display(IPImage(str(png_path)))
 
 Set these minimum investment amounts by investor type:
 
-- **Institutional investors**: {{< var value_of_statistical_life >}}+ per investor
-- **Family offices**: {{< var dfda_opex_regulatory >}}+ per office
+- **Institutional investors**: {{< var institutional_investor_min_millions >}}M+ per investor
+- **Family offices**: {{< var family_office_investment_min_millions >}}M+ per office
 - **High net worth individuals**: $1M+ per person
 - **Qualified investors**: $100K+ minimum
 

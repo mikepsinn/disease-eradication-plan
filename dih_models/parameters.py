@@ -1228,6 +1228,266 @@ CAMPAIGN_STAFF_BUDGET_MILLIONS = Parameter(
     unit="millions USD"
 )  # $40M for core team
 
+# Detailed campaign budget line items (in millions USD)
+CAMPAIGN_LEGAL_AI_BUDGET_MILLIONS = Parameter(
+    50,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="AI-assisted legal work budget",
+    unit="millions USD"
+)
+
+CAMPAIGN_VIRAL_CONTENT_BUDGET_MILLIONS = Parameter(
+    40,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Viral marketing content creation budget",
+    unit="millions USD"
+)
+
+CAMPAIGN_COMMUNITY_ORGANIZING_MILLIONS = Parameter(
+    30,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Community organizing and ambassador program budget",
+    unit="millions USD"
+)
+
+CAMPAIGN_LOBBYING_US_MILLIONS = Parameter(
+    50,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="US lobbying campaign budget",
+    unit="millions USD"
+)
+
+CAMPAIGN_LOBBYING_EU_MILLIONS = Parameter(
+    40,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="EU lobbying campaign budget",
+    unit="millions USD"
+)
+
+CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
+    35,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="G20 countries lobbying budget",
+    unit="millions USD"
+)
+
+CAMPAIGN_DEFENSE_LOBBYIST_BUDGET_MILLIONS = Parameter(
+    50,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Budget for co-opting defense industry lobbyists",
+    unit="millions USD"
+)
+
+CAMPAIGN_SUPER_PAC_BUDGET_MILLIONS = Parameter(
+    30,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Super PAC campaign expenditures",
+    unit="millions USD"
+)
+
+CAMPAIGN_OPPOSITION_RESEARCH_MILLIONS = Parameter(
+    25,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Opposition research and rapid response",
+    unit="millions USD"
+)
+
+CAMPAIGN_PILOT_PROGRAMS_MILLIONS = Parameter(
+    30,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Pilot program testing in small countries",
+    unit="millions USD"
+)
+
+CAMPAIGN_LEGAL_WORK_MILLIONS = Parameter(
+    60,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Legal drafting and compliance work",
+    unit="millions USD"
+)
+
+CAMPAIGN_REGULATORY_NAVIGATION_MILLIONS = Parameter(
+    20,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Regulatory compliance and navigation",
+    unit="millions USD"
+)
+
+CAMPAIGN_LEGAL_DEFENSE_MILLIONS = Parameter(
+    20,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Legal defense fund",
+    unit="millions USD"
+)
+
+CAMPAIGN_DEFENSE_CONVERSION_MILLIONS = Parameter(
+    50,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Defense industry conversion program",
+    unit="millions USD"
+)
+
+CAMPAIGN_HEALTHCARE_ALIGNMENT_MILLIONS = Parameter(
+    35,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Healthcare industry alignment and partnerships",
+    unit="millions USD"
+)
+
+CAMPAIGN_TECH_PARTNERSHIPS_MILLIONS = Parameter(
+    25,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Tech industry partnerships and infrastructure",
+    unit="millions USD"
+)
+
+CAMPAIGN_CELEBRITY_ENDORSEMENT_MILLIONS = Parameter(
+    15,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Celebrity and influencer endorsements",
+    unit="millions USD"
+)
+
+CAMPAIGN_INFRASTRUCTURE_MILLIONS = Parameter(
+    20,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Campaign operational infrastructure",
+    unit="millions USD"
+)
+
+CAMPAIGN_CONTINGENCY_MILLIONS = Parameter(
+    50,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Contingency fund for unexpected costs",
+    unit="millions USD"
+)
+
+CAMPAIGN_TREATY_IMPLEMENTATION_MILLIONS = Parameter(
+    40,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Post-victory treaty implementation support",
+    unit="millions USD"
+)
+
+CAMPAIGN_SCALING_PREP_MILLIONS = Parameter(
+    30,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Scaling preparation and blueprints",
+    unit="millions USD"
+)
+
+CAMPAIGN_PLATFORM_DEVELOPMENT_MILLIONS = Parameter(
+    35,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Voting platform and technology development",
+    unit="millions USD"
+)
+
+# Healthcare economic parameters (actual USD values, not counts)
+DIABETES_CURE_PAYMENT_ESTIMATE = Parameter(
+    10000,
+    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
+    source_type="calculated",
+    description="Estimated one-time payment for diabetes cure",
+    unit="USD"
+)
+
+PHARMA_CURE_PAYMENT_PER_PATIENT = Parameter(
+    90000,
+    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
+    source_type="calculated",
+    description="Pharma payment per cured patient in 50/50 model",
+    unit="USD"
+)
+
+PATIENT_CURE_COPAY_MAX = Parameter(
+    1000,
+    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
+    source_type="calculated",
+    description="Maximum patient copay for cure",
+    unit="USD"
+)
+
+LONGEVITY_THERAPY_SAVINGS_30YR = Parameter(
+    150000,
+    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
+    source_type="calculated",
+    description="30-year savings from longevity therapy per person",
+    unit="USD"
+)
+
+# Investment tier minimums (in millions USD or thousands USD)
+INSTITUTIONAL_INVESTOR_MIN_MILLIONS = Parameter(
+    10,
+    source_ref="/knowledge/economics/victory-bonds.qmd",
+    source_type="calculated",
+    description="Minimum investment for institutional investors",
+    unit="millions USD"
+)
+
+FAMILY_OFFICE_INVESTMENT_MIN_MILLIONS = Parameter(
+    5,
+    source_ref="/knowledge/economics/victory-bonds.qmd",
+    source_type="calculated",
+    description="Minimum investment for family offices",
+    unit="millions USD"
+)
+
+HIGH_NET_WORTH_INVESTOR_MIN_MILLIONS = Parameter(
+    1,
+    source_ref="/knowledge/economics/victory-bonds.qmd",
+    source_type="calculated",
+    description="Minimum investment for high net worth individuals",
+    unit="millions USD"
+)
+
+QUALIFIED_INVESTOR_MIN_THOUSANDS = Parameter(
+    100,
+    source_ref="/knowledge/economics/victory-bonds.qmd",
+    source_type="calculated",
+    description="Minimum investment for qualified investors",
+    unit="thousands USD"
+)
+
+# Compliance and governance
+WHISTLEBLOWER_REWARD_AMOUNT = Parameter(
+    1000000,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Whistleblower reward for fraud detection",
+    unit="USD"
+)
+
+WHISTLEBLOWER_BOUNTY_AMOUNT = Parameter(
+    1000000,
+    source_ref="/knowledge/economics/financial-plan.qmd",
+    source_type="calculated",
+    description="Whistleblower bounty for misconduct reporting",
+    unit="USD"
+)
+
 # Total system costs
 TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,

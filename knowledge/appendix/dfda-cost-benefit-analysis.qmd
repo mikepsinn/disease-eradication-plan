@@ -98,19 +98,26 @@ Goals:
 
 These assumptions set a stage where the platform can indeed function at scale, but this remains a forward-looking scenario.
 
-## dFDA Platform Costs - ROM Estimates
+## dFDA Platform Costs - ROM Estimates (Partnership Model)
 
-> **Section Summary**
+> **Section Summary - Partnership Approach**
 >
-> - **Upfront core platform build:** [\$37.5–\{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
-> - **Annual core platform operations:** [\$11–\$26.5 million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
+> **Protocol-Only Build (Recommended)**:
+> - **Upfront protocol/API build:** \$15–25M (vs. $37.5-46M for full platform)
+> - **Annual protocol operations:** \$5–12M (vs. $11-26.5M for full platform)
+> - **Partnership integration fund:** \$20-50M (one-time, to onboard Epic/Cerner/Medable)
+> - **Total initiative (partnership model):** ~\$40-75M upfront, \$5-12M annual
+>
+> **Build-Everything Model (Not Recommended)**:
+> - **Upfront full platform build:** [\$37.5–\{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+> - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
 > - **Broader initiative (medium scenario):** [\$228 million upfront, \$21.3 million annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
-> - **Best case total initiative:** [~\$4.5M upfront, near \$0 annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
-> - **Worst case total initiative:** [~\$2.2B+ upfront, \$271M+ annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
 >
-> **Key Takeaway:** The core technology platform is achievable for tens of millions, but full global rollout and integration could require hundreds of millions to billions depending on scope and execution. See detailed breakdowns below.
+> **Key Takeaway:** The **partnership approach costs 50-75% less** than building a competing platform. By establishing an open protocol and leveraging existing infrastructure (Epic, Cerner, Medable, Science 37), you avoid building consumer-facing apps, trial management systems, and global EHR integrations. The protocol layer costs $15-25M to build vs. $500M+ for a full-stack solution.
+>
+> **Existing Infrastructure Value**: Companies like Medable ($521M raised), Science 37 ($100M raised), Epic, and Cerner have already invested $1B+ in infrastructure that can be integrated rather than replicated.
 
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on the components outlined in the <!-- [Platform Technical Specification](../specification.qmd) -->.
+This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on a **partnership-first strategy** where the dFDA provides open protocol infrastructure rather than competing with existing platforms.
 
 ### Upfront (Capital) Expenditure Initial Build Illustrative 30 Months
 

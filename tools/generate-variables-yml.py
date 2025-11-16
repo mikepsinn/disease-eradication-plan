@@ -102,8 +102,10 @@ def format_parameter_value(value: float, unit: str = "") -> str:
     # Detect percentage parameters
     is_percentage = '%' in unit or 'percent' in unit.lower() or 'rate' in unit.lower()
 
-    # Check if value is already in billions or in actual dollars
+    # Check if value is already in billions, millions, thousands, or in actual dollars
     is_in_billions = 'billion' in unit.lower()
+    is_in_millions = 'million' in unit.lower()
+    is_in_thousands = 'thousand' in unit.lower()
 
     # Helper to remove trailing zeros and decimal point
     def clean_number(num_str: str) -> str:
@@ -143,6 +145,62 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                     formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
             else:  # Thousands or less
                 formatted = f"${value*1000000:.0f}K"
+        elif is_in_millions:
+            # Value is already in millions
+            if abs_val >= 1000:  # Billions
+                scaled = value / 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}B"  # e.g., "$123B" (3 sig figs)
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}B"  # e.g., "$12.3B" (3 sig figs)
+                else:
+                    formatted = f"${scaled:.2f}B"  # e.g., "$1.23B" (3 sig figs)
+            elif abs_val >= 1:  # Millions
+                if abs_val >= 100:
+                    formatted = f"${value:.0f}M"  # e.g., "$123M" (3 sig figs)
+                elif abs_val >= 10:
+                    formatted = f"${value:.1f}M"  # e.g., "$12.3M" (3 sig figs)
+                else:
+                    formatted = f"${value:.2f}M"  # e.g., "$1.23M" (3 sig figs)
+            elif abs_val >= 0.001:  # Thousands
+                scaled = value * 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}K"  # e.g., "$123K"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}K"  # e.g., "$12.3K"
+                else:
+                    formatted = f"${scaled:.2f}K"  # e.g., "$1.23K"
+            else:
+                # Less than 1000
+                formatted = f"${value*1000:.0f}"
+        elif is_in_thousands:
+            # Value is already in thousands
+            if abs_val >= 1000000:  # Billions
+                scaled = value / 1000000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}B"  # e.g., "$123B" (3 sig figs)
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}B"  # e.g., "$12.3B" (3 sig figs)
+                else:
+                    formatted = f"${scaled:.2f}B"  # e.g., "$1.23B" (3 sig figs)
+            elif abs_val >= 1000:  # Millions
+                scaled = value / 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}M"  # e.g., "$123M"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
+                else:
+                    formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
+            elif abs_val >= 1:  # Thousands
+                if abs_val >= 100:
+                    formatted = f"${value:.0f}K"  # e.g., "$123K" (3 sig figs)
+                elif abs_val >= 10:
+                    formatted = f"${value:.1f}K"  # e.g., "$12.3K" (3 sig figs)
+                else:
+                    formatted = f"${value:.2f}K"  # e.g., "$1.23K" (3 sig figs)
+            else:
+                # Less than 1000
+                formatted = f"${value*1000:.0f}"
         else:
             # Value is in actual dollars, convert to appropriate scale
             if abs_val >= 1e12:  # Trillions
