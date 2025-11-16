@@ -301,16 +301,16 @@ def find_hardcoded_numbers(qmd_path: Path, parameters: Dict[float, List[Paramete
 
 def apply_fixes(all_matches: List[NumberMatch]) -> int:
     """
-    Apply fixes by converting numbers to inline Python expressions that reference parameters.
+    Apply fixes by converting numbers to Quarto variable references.
 
     Modifies QMD files in place, converting numbers like:
-    233,600 -> `{python} param_link(GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT, "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT")`{=html}
+    233,600 -> {{< var global_annual_conflict_deaths_active_combat >}}
 
     This approach:
-    - Imports parameter values from dih_models/parameters.py
-    - Uses the param_link() function to generate HTML links
-    - Values automatically update if parameters change
-    - Tooltips show the parameter source
+    - References variables from _variables.yml (generated from parameters.py)
+    - Uses clean Quarto {{< var >}} syntax
+    - Values automatically update when _variables.yml is regenerated
+    - Tooltips and formatting handled in _variables.yml
 
     Returns the number of files modified.
     """
@@ -332,10 +332,6 @@ def apply_fixes(all_matches: List[NumberMatch]) -> int:
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
-        # Check if file already has the import statement
-        content = ''.join(lines)
-        has_import = "from dih_models.parameters import" in content
-
         # Sort matches by line number (descending) to avoid offset issues
         matches_sorted = sorted(matches, key=lambda m: m.line_num, reverse=True)
 
@@ -347,8 +343,12 @@ def apply_fixes(all_matches: List[NumberMatch]) -> int:
                 continue
             line = lines[line_idx]
 
-            # Skip if already converted to Python expression
-            if "{python}" in line and match.matched_param.name in line:
+            # Skip if already converted to Quarto variable
+            if "{{< var " in line and match.matched_param.name.lower() in line:
+                continue
+
+            # Skip if already converted to OJS expression (old format)
+            if "${paramLink(" in line:
                 continue
 
             # Skip if number is already in a markdown link
@@ -359,39 +359,21 @@ def apply_fixes(all_matches: List[NumberMatch]) -> int:
 
             # Only add link if the number appears in the line
             if number_str in line:
-                # Create inline Python expression
-                # Format: `{python} param_link(PARAM_NAME, "PARAM_NAME")`{=html}
-                param_expr = f'`{{python}} param_link({match.matched_param.name}, "{match.matched_param.name}")`{{=html}}'
+                # Create Quarto variable reference (lowercase name)
+                var_name = match.matched_param.name.lower()
+                var_expr = f'{{{{< var {var_name} >}}}}'
 
-                # Replace the number with the Python expression
+                # Replace the number with the variable reference
                 new_line = line.replace(
                     number_str,
-                    param_expr,
+                    var_expr,
                     1  # Replace only first occurrence
                 )
                 lines[line_idx] = new_line
                 modified = True
 
-        # If we modified the file and it doesn't have the import, add it after the YAML header
+        # Write back to file if modified
         if modified:
-            if not has_import:
-                # Find the end of YAML front matter (after closing ---)
-                yaml_end = -1
-                in_yaml = False
-                for i, line in enumerate(lines):
-                    if line.strip() == '---':
-                        if not in_yaml:
-                            in_yaml = True
-                        else:
-                            yaml_end = i
-                            break
-
-                # Insert import after YAML header
-                if yaml_end >= 0:
-                    import_line = "\n```{python}\n#| echo: false\nimport sys\nfrom pathlib import Path\n# Find project root (where dih_models is located)\nproject_root = Path.cwd()\nwhile not (project_root / 'dih_models').exists() and project_root.parent != project_root:\n    project_root = project_root.parent\nsys.path.insert(0, str(project_root))\nfrom dih_models.parameters import *\n```\n\n"
-                    lines.insert(yaml_end + 1, import_line)
-
-            # Write back to file
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.writelines(lines)
             files_modified += 1
@@ -512,10 +494,10 @@ def main():
         print("\n[*] Applying fixes...")
         files_modified = apply_fixes(all_matches)
         print(f"[OK] Modified {files_modified} files")
-        print("    Converted numbers to inline Python expressions")
-        print("    Format: `{python} param_link(PARAM_NAME, \"PARAM_NAME\")`{=html}")
-        print("    Values will auto-update if parameters change")
-        print("    Added Python import blocks where needed")
+        print("    Converted numbers to Quarto variable references")
+        print("    Format: {{< var param_name >}}")
+        print("    Values will auto-update when _variables.yml is regenerated")
+        print("    Run: python tools/generate-variables-yml.py to update _variables.yml")
 
     # Exit with error code if matches found
     sys.exit(0 if not all_matches else 1)

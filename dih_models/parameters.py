@@ -14,6 +14,61 @@ Usage:
     print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
 
+
+# ============================================================================
+# PARAMETER CLASS - Adds source tracking to numeric values
+# ============================================================================
+
+class Parameter(float):
+    """
+    A numeric parameter that works in calculations but carries source metadata.
+
+    Enables clickable links from numbers to their sources (external citations)
+    or calculation methodologies (internal QMD pages).
+
+    Args:
+        value: The numeric value
+        source_ref: Reference ID (for external sources) or QMD path (for calculations)
+        source_type: Either "external" (links to references.qmd) or "calculated" (links to QMD)
+        description: Human-readable description for tooltips
+        unit: Unit of measurement (e.g., "billions USD", "deaths/year", "percentage")
+
+    Example:
+        # External data source
+        CONFLICT_DEATHS = Parameter(
+            233600,
+            source_ref="acled-2024",
+            source_type="external",
+            description="Annual deaths from active combat",
+            unit="deaths/year"
+        )
+
+        # Calculated value
+        NET_BENEFIT = Parameter(
+            74.6,
+            source_ref="knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative",
+            source_type="calculated",
+            description="Conservative net benefit from sensitivity analysis",
+            unit="billions USD"
+        )
+
+    The Parameter class inherits from float, so it works in all math operations:
+        total = CONFLICT_DEATHS * 2  # Works!
+        ratio = NET_BENEFIT / CONFLICT_DEATHS  # Works!
+    """
+
+    def __new__(cls, value, source_ref="", source_type="external", description="", unit=""):
+        instance = super().__new__(cls, value)
+        instance.source_ref = source_ref
+        instance.source_type = source_type
+        instance.description = description
+        instance.unit = unit
+        return instance
+
+    def __repr__(self):
+        return f"Parameter({float(self)}, source_ref='{self.source_ref}')"
+
+
 # ---
 # PEACE DIVIDEND PARAMETERS
 # ---
@@ -23,16 +78,48 @@ Usage:
 # Reference: references.qmd#total-military-and-war-costs-11-4t
 
 # Direct costs
-GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = 2718.0  # billions USD, SIPRI 2024
+GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
+    2718.0,
+    source_ref="global-military-spending",
+    source_type="external",
+    description="Global military spending in 2024",
+    unit="billions USD"
+)  # SIPRI 2024
 
 # Value of Statistical Life (VSL)
-VALUE_OF_STATISTICAL_LIFE = 10_000_000  # $10 million, conservative value used in calculations
+VALUE_OF_STATISTICAL_LIFE = Parameter(
+    10_000_000,
+    source_ref="dot-vsl-13-6m",
+    source_type="external",
+    description="Value of Statistical Life (conservative estimate)",
+    unit="USD"
+)  # US DOT uses $13.6M, we use $10M conservatively
 
 # Conflict death breakdown (for QALY calculations)
 # Source: brain/book/problem/cost-of-war.qmd#death-accounting
-GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = 233600  # ACLED data
-GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = 8300  # Global Terrorism Database
-GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = 2700  # Uppsala Conflict Data Program
+GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
+    233600,
+    source_ref="acled-2024",
+    source_type="external",
+    description="Annual deaths from active combat worldwide",
+    unit="deaths/year"
+)  # ACLED data
+
+GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
+    8300,
+    source_ref="gtd-2024",
+    source_type="external",
+    description="Annual deaths from terror attacks globally",
+    unit="deaths/year"
+)  # Global Terrorism Database
+
+GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
+    2700,
+    source_ref="ucdp-2024",
+    source_type="external",
+    description="Annual deaths from state violence",
+    unit="deaths/year"
+)  # Uppsala Conflict Data Program
 
 # Total conflict deaths (calculated from breakdown)
 GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = (
@@ -123,9 +210,23 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_R
 
 # Clinical trial market
 # Source: brain/book/appendix/dfda-roi-calculations.qmd
-GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = 100.0  # billions USD annually
+GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = Parameter(
+    100.0,
+    source_ref="global-clinical-trial-market",
+    source_type="external",
+    description="Global clinical trial market size",
+    unit="billions USD/year"
+)
+
 TRIAL_COST_REDUCTION_PCT = 0.50  # 50% baseline reduction (conservative)
-TRIAL_COST_REDUCTION_FACTOR = 82  # 82x reduction proven by RECOVERY trial
+
+TRIAL_COST_REDUCTION_FACTOR = Parameter(
+    82,
+    source_ref="recovery-trial-82x-cost-reduction",
+    source_type="external",
+    description="Cost reduction factor demonstrated by RECOVERY trial",
+    unit="ratio"
+)  # 82x reduction proven by RECOVERY trial
 
 # ---
 # RESEARCH ACCELERATION MECHANISM PARAMETERS
@@ -134,7 +235,15 @@ TRIAL_COST_REDUCTION_FACTOR = 82  # 82x reduction proven by RECOVERY trial
 
 # Current System Baseline
 CURRENT_TRIALS_PER_YEAR = 3300  # Global clinical trials per year
-CURRENT_DRUG_APPROVALS_PER_YEAR = 50  # New drug approvals per year
+
+CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
+    50,
+    source_ref="global-new-drug-approvals-50-annually",
+    source_type="external",
+    description="Average annual new drug approvals globally",
+    unit="drugs/year"
+)  # FDA ~50-55/year
+
 CURRENT_ACTIVE_TRIALS = 10000  # Active trials at any given time (3-5 year duration)
 CURRENT_TRIAL_DURATION_YEARS_RANGE = (3, 5)  # Years for large trials
 CURRENT_SMALL_TRIAL_RECRUITMENT_MONTHS_RANGE = (6, 18)  # Months to recruit 100 patients
@@ -142,14 +251,55 @@ CURRENT_TRIAL_ABANDONMENT_RATE = 0.40  # 40% of trials never complete
 CURRENT_TRIAL_COMPLETION_RATE = 0.60  # 60% completion rate
 CURRENT_PATIENT_ELIGIBILITY_RATE = 0.002  # 0.2% of disease patients can participate
 CURRENT_TRIAL_SLOTS_AVAILABLE = 5_000_000  # Total trial slots for 2.4B sick people
-CURRENT_DISEASE_PATIENTS_GLOBAL = 2_400_000_000  # 2.4 billion people with chronic diseases
+
+CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
+    2_400_000_000,
+    source_ref="global-burden-disease-2-4-billion",
+    source_type="external",
+    description="Global population with chronic diseases",
+    unit="people"
+)  # GBD 2013 study
 
 # Traditional Trial Economics
-TRADITIONAL_PHASE2_COST_PER_PATIENT_LOW = 40000  # $40K per patient (low end)
-TRADITIONAL_PHASE2_COST_PER_PATIENT_HIGH = 120000  # $120K per patient (high end)
-TRADITIONAL_PHASE3_COST_PER_PATIENT = 80000  # $40k-$120k range, using midpoint
-TRADITIONAL_SMALL_TRIAL_SIZE = 100  # Typical Phase 2 trial size
-TRADITIONAL_LARGE_TRIAL_SIZE = 1000  # Typical Phase 3 trial size
+TRADITIONAL_PHASE2_COST_PER_PATIENT_LOW = Parameter(
+    40000,
+    source_ref="clinical-trial-cost-per-patient",
+    source_type="external",
+    description="Phase 2 cost per patient (low estimate)",
+    unit="USD/patient"
+)  # $40K per patient (low end)
+
+TRADITIONAL_PHASE2_COST_PER_PATIENT_HIGH = Parameter(
+    120000,
+    source_ref="clinical-trial-cost-per-patient",
+    source_type="external",
+    description="Phase 2 cost per patient (high estimate)",
+    unit="USD/patient"
+)  # $120K per patient (high end)
+
+TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
+    80000,
+    source_ref="phase-3-cost-per-patient",
+    source_type="external",
+    description="Phase 3 cost per patient (median)",
+    unit="USD/patient"
+)  # $40k-$120k range, using midpoint
+
+TRADITIONAL_SMALL_TRIAL_SIZE = Parameter(
+    100,
+    source_ref="phase-2-trial-participant-numbers",
+    source_type="external",
+    description="Typical Phase 2 trial size",
+    unit="participants"
+)
+
+TRADITIONAL_LARGE_TRIAL_SIZE = Parameter(
+    1000,
+    source_ref="phase-3-trial-participant-numbers",
+    source_type="external",
+    description="Typical Phase 3 trial size",
+    unit="participants"
+)
 
 # dFDA System Targets
 DFDA_TRIALS_PER_YEAR_CAPACITY = 380000  # Maximum trials/year possible with 115x acceleration
@@ -165,7 +315,14 @@ DFDA_PATIENT_ELIGIBILITY_RATE = 0.50  # 50% of disease patients can participate
 DFDA_ELIGIBLE_PATIENTS_GLOBAL = 1_200_000_000  # 1.2B eligible with minimal exclusions
 
 # dFDA Trial Economics
-RECOVERY_TRIAL_COST_PER_PATIENT = 500  # Proven cost from Oxford RECOVERY trial
+RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
+    500,
+    source_ref="recovery-trial-cost-per-patient",
+    source_type="external",
+    description="RECOVERY trial cost per patient",
+    unit="USD/patient"
+)  # Proven cost from Oxford RECOVERY trial
+
 DFDA_TARGET_COST_PER_PATIENT = 1000  # Conservative target for dFDA
 DFDA_SMALL_TRIAL_SIZE = 1000  # Typical dFDA trial size
 DFDA_LARGE_TRIAL_SIZE = 10000  # Large dFDA pragmatic trial size
@@ -278,7 +435,13 @@ TREATY_NET_ANNUAL_BENEFIT = TREATY_TOTAL_ANNUAL_BENEFITS - TREATY_TOTAL_ANNUAL_C
 
 # ICER calculation (Incremental Cost-Effectiveness Ratio)
 # Negative ICER means society SAVES money while gaining QALYs
-ICER_PER_QALY = (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL  # -$176,907 per QALY
+ICER_PER_QALY = Parameter(
+    (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation",
+    source_type="calculated",
+    description="Incremental Cost-Effectiveness Ratio (ICER) per QALY gained",
+    unit="USD/QALY"
+)  # -$176,907 per QALY (negative = cost-saving)
 NET_BENEFIT_PER_LIFE_SAVED = ICER_PER_QALY * STANDARD_QALYS_PER_LIFE_SAVED  # -$6.19M per life
 
 # ---
@@ -287,13 +450,25 @@ NET_BENEFIT_PER_LIFE_SAVED = ICER_PER_QALY * STANDARD_QALYS_PER_LIFE_SAVED  # -$
 
 # Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
 # Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
-ROI_DFDA_SAVINGS_ONLY = 463  # 463:1 from NPV analysis
+ROI_DFDA_SAVINGS_ONLY = Parameter(
+    463,
+    source_ref="/knowledge/figures/dfda-roi-analysis.qmd",
+    source_type="calculated",
+    description="ROI from dFDA R&D savings (10-year NPV)",
+    unit="ratio"
+)  # 463:1 from NPV analysis
 
 # Tier 2: Complete - All direct benefits
 # Source: brain/book/economics.qmd complete case section
 # Note: Calculated as TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST
 # Updated from 1,222:1 when war costs were revised from $9.7T to $11.355T
-ROI_ALL_DIRECT_BENEFITS = 1239  # 1,239:1 from all 8 benefit categories
+ROI_ALL_DIRECT_BENEFITS = Parameter(
+    1239,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
+    source_type="calculated",
+    description="ROI from all direct benefits (peace dividend + dFDA + health gains)",
+    unit="ratio"
+)  # 1,239:1 from all 8 benefit categories
 
 # ---
 # FINANCIAL PARAMETERS
@@ -351,13 +526,40 @@ DIH_TREASURY_TRIAL_SUBSIDIES_MAX = 20.0  # $20B/year clinical trial subsidies (m
 # ---
 
 # Global economic context
-GLOBAL_GDP_2024 = 111000  # billions USD (2024)
-GLOBAL_HEALTHCARE_SPENDING_ANNUAL_2024 = 9800  # billions USD
-GLOBAL_MED_RESEARCH_SPENDING = 67.5  # billions USD government spending
+GLOBAL_GDP_2024 = Parameter(
+    111000,
+    source_ref="global-gdp",
+    source_type="external",
+    description="Global GDP in 2024",
+    unit="billions USD"
+)  # World Bank 2024
+
+GLOBAL_HEALTHCARE_SPENDING_ANNUAL_2024 = Parameter(
+    9800,
+    source_ref="global-health-spending",
+    source_type="external",
+    description="Global healthcare spending in 2024",
+    unit="billions USD"
+)
+
+GLOBAL_MED_RESEARCH_SPENDING = Parameter(
+    67.5,
+    source_ref="global-government-medical-research-spending",
+    source_type="external",
+    description="Global government medical research spending",
+    unit="billions USD"
+)
 TOTAL_GLOBAL_WASTE_SPEND_ANNUAL = 118800 # billions USD, annual spend on military + disease
 
 # Population
-GLOBAL_POPULATION_2024_BILLIONS = 8.0  # billions of people
+GLOBAL_POPULATION_2024_BILLIONS = Parameter(
+    8.0,
+    source_ref="global-population-8-billion",
+    source_type="external",
+    description="Global population in 2024",
+    unit="billions of people"
+)  # UN World Population Prospects 2022
+
 GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = 150000 # Daily deaths from curable diseases
 
 # Per capita calculations
@@ -367,15 +569,42 @@ LIFETIME_WAR_COST_PER_CAPITA = GLOBAL_TOTAL_WAR_COST_PER_CAPITA_ANNUAL * 80  # $
 
 # GiveWell charity comparison
 # Source: brain/book/appendix/icer-full-calculation.qmd
-GIVEWELL_COST_PER_LIFE_MIN = 3500  # Helen Keller International
-GIVEWELL_COST_PER_LIFE_MAX = 5500  # Against Malaria Foundation
-GIVEWELL_COST_PER_LIFE_AVG = 4500  # Midpoint
+GIVEWELL_COST_PER_LIFE_MIN = Parameter(
+    3500,
+    source_ref="givewell-cost-per-life-saved",
+    source_type="external",
+    description="GiveWell cost per life saved (Helen Keller International)",
+    unit="USD/life"
+)  # Helen Keller International Vitamin A
+
+GIVEWELL_COST_PER_LIFE_MAX = Parameter(
+    5500,
+    source_ref="givewell-cost-per-life-saved",
+    source_type="external",
+    description="GiveWell cost per life saved (Against Malaria Foundation)",
+    unit="USD/life"
+)  # Against Malaria Foundation
+
+GIVEWELL_COST_PER_LIFE_AVG = Parameter(
+    4500,
+    source_ref="givewell-cost-per-life-saved",
+    source_type="external",
+    description="GiveWell average cost per life saved across top charities",
+    unit="USD/life"
+)  # Midpoint of top charities
 
 # Cost-effectiveness multiplier
 MULTIPLIER_VS_GIVEWELL = abs(NET_BENEFIT_PER_LIFE_SAVED * 1_000_000_000) / GIVEWELL_COST_PER_LIFE_AVG  # ~1,376x more cost-effective
 
 # Historical public health comparisons
-SMALLPOX_ERADICATION_ROI = 280  # 280:1
+SMALLPOX_ERADICATION_ROI = Parameter(
+    280,
+    source_ref="smallpox-eradication-roi",
+    source_type="external",
+    description="Return on investment from smallpox eradication campaign",
+    unit="ratio"
+)  # 159:1 to 280:1 estimated
+
 CHILDHOOD_VACCINATION_ROI = 13  # 13:1
 WATER_FLUORIDATION_ROI = 23  # 23:1
 
@@ -469,8 +698,22 @@ SENSITIVITY_DFDA_OPEX_CONSERVATIVE = 0.060  # $60M/year
 SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = 0.393  # $393M/year
 SENSITIVITY_PEACE_QALYS_CONSERVATIVE = 17500  # 500 lives × 35 QALYs/life
 SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = SENSITIVITY_PEACE_QALYS_CONSERVATIVE + QALYS_TOTAL_CONSERVATIVE  # Total QALYs (peace + dFDA)
-SENSITIVITY_NET_BENEFIT_CONSERVATIVE = 74.6  # $74.6B
-SENSITIVITY_ICER_CONSERVATIVE = -170514  # -$170,514 per QALY
+SENSITIVITY_NET_BENEFIT_CONSERVATIVE = Parameter(
+    74.6,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative net benefit from sensitivity analysis",
+    unit="billions USD"
+)  # $74.6B
+
+SENSITIVITY_ICER_CONSERVATIVE = Parameter(
+    -170514,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative ICER from sensitivity analysis",
+    unit="USD/QALY"
+)  # -$170,514 per QALY (negative = cost-saving)
+
 SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = -5.97  # -$5.97M per life (in millions)
 
 # Central scenario (baseline) - uses main parameters directly, no aliases needed
@@ -487,8 +730,23 @@ SENSITIVITY_DFDA_OPEX_OPTIMISTIC = 0.030  # $30M/year
 SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = 0.230  # $230M/year
 SENSITIVITY_PEACE_QALYS_OPTIMISTIC = 52500  # 1,500 lives × 35 QALYs/life
 SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = SENSITIVITY_PEACE_QALYS_OPTIMISTIC + QALYS_TOTAL_OPTIMISTIC  # Total QALYs (peace + dFDA)
-SENSITIVITY_NET_BENEFIT_OPTIMISTIC = 294.8  # $294.8B
-SENSITIVITY_ICER_OPTIMISTIC = -136945  # -$136,945 per QALY
+
+SENSITIVITY_NET_BENEFIT_OPTIMISTIC = Parameter(
+    294.8,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic net benefit from sensitivity analysis",
+    unit="billions USD"
+)  # $294.8B
+
+SENSITIVITY_ICER_OPTIMISTIC = Parameter(
+    -136945,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic ICER from sensitivity analysis",
+    unit="USD/QALY"
+)  # -$136,945 per QALY (negative = cost-saving)
+
 SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = -4.79  # -$4.79M per life (in millions)
 
 # Sensitivity ROI calculations
@@ -1272,19 +1530,40 @@ gdp_growth_boost_10pct_formatted = format_percentage(GDP_GROWTH_BOOST_10PCT)
 # This section implements improvements identified in methodology review
 
 # Constants for improved healthcare savings model
-US_CHRONIC_DISEASE_SPENDING_ANNUAL = 4.1e12  # $4.1T/year CDC estimate
-US_POPULATION_2024 = 335e6
+US_CHRONIC_DISEASE_SPENDING_ANNUAL = Parameter(
+    4.1e12,
+    source_ref="us-chronic-disease-spending",
+    source_type="external",
+    description="US annual chronic disease spending",
+    unit="USD/year"
+)  # $4.1T/year CDC estimate
+
+US_POPULATION_2024 = Parameter(
+    335e6,
+    source_ref="us-population-335m",
+    source_type="external",
+    description="US population in 2024",
+    unit="people"
+)
+
 PER_CAPITA_CHRONIC_DISEASE_COST = US_CHRONIC_DISEASE_SPENDING_ANNUAL / US_POPULATION_2024  # $12,239/year
 
 # Mental health constants
-US_MENTAL_HEALTH_COST_ANNUAL = 350e9  # $350B/year (treatment + productivity loss)
+US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
+    350e9,
+    source_ref="us-mental-health-cost",
+    source_type="external",
+    description="US mental health costs (treatment + productivity loss)",
+    unit="USD/year"
+)
+
 PER_CAPITA_MENTAL_HEALTH_COST = US_MENTAL_HEALTH_COST_ANNUAL / US_POPULATION_2024  # ~$1,045/year
 MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = 2000  # Additional productivity loss beyond treatment
 
-# Caregiver time constants
+# Caregiver time constants (simple model - deprecated, use detailed model below)
 CAREGIVER_HOURS_PER_MONTH = 20  # Average US family provides 20 hrs/month unpaid care
-CAREGIVER_VALUE_PER_HOUR = 25  # Replacement cost
-CAREGIVER_COST_ANNUAL = CAREGIVER_HOURS_PER_MONTH * 12 * CAREGIVER_VALUE_PER_HOUR  # $6,000/year
+CAREGIVER_VALUE_PER_HOUR_SIMPLE = 25  # Replacement cost estimate
+CAREGIVER_COST_ANNUAL = CAREGIVER_HOURS_PER_MONTH * 12 * CAREGIVER_VALUE_PER_HOUR_SIMPLE  # $6,000/year
 
 
 def calculate_life_expectancy_gain_improved(treaty_pct, timeframe='mid-term'):
@@ -1961,18 +2240,81 @@ if __name__ == "__main__":
 
 # Total deaths in 2023: 3,090,964
 # Death rates per 100,000:
-CARDIOVASCULAR_DEATH_RATE = 162.1 + 39.0  # Heart disease + Stroke = 201.1
-CANCER_DEATH_RATE = 146.6  # All cancers (2023 estimate)
-RESPIRATORY_DEATH_RATE = 33.4  # Chronic lower respiratory
-ALZHEIMERS_DEATH_RATE = 27.7
-DIABETES_DEATH_RATE = 22.4
-KIDNEY_DISEASE_DEATH_RATE = 13.1
-LIVER_DISEASE_DEATH_RATE = 13.0
+CARDIOVASCULAR_DEATH_RATE = Parameter(
+    162.1 + 39.0,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Cardiovascular disease death rate (heart disease + stroke)",
+    unit="deaths per 100,000"
+)  # Heart disease + Stroke = 201.1
+
+CANCER_DEATH_RATE = Parameter(
+    146.6,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Cancer death rate (all cancers)",
+    unit="deaths per 100,000"
+)  # All cancers (2023 estimate)
+
+RESPIRATORY_DEATH_RATE = Parameter(
+    33.4,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Chronic respiratory disease death rate",
+    unit="deaths per 100,000"
+)  # Chronic lower respiratory
+
+ALZHEIMERS_DEATH_RATE = Parameter(
+    27.7,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Alzheimer's disease death rate",
+    unit="deaths per 100,000"
+)
+
+DIABETES_DEATH_RATE = Parameter(
+    22.4,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Diabetes death rate",
+    unit="deaths per 100,000"
+)
+
+KIDNEY_DISEASE_DEATH_RATE = Parameter(
+    13.1,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Kidney disease death rate",
+    unit="deaths per 100,000"
+)
+
+LIVER_DISEASE_DEATH_RATE = Parameter(
+    13.0,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Liver disease death rate",
+    unit="deaths per 100,000"
+)
+
 INFECTIONS_DEATH_RATE = 15.0  # Estimate (flu, pneumonia, sepsis)
-ACCIDENTS_DEATH_RATE = 62.3  # Unintentional injuries
+
+ACCIDENTS_DEATH_RATE = Parameter(
+    62.3,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Accidental/unintentional injury death rate",
+    unit="deaths per 100,000"
+)  # Unintentional injuries
+
 OTHER_DEATH_RATE = 250.0  # All other causes
 
-TOTAL_DEATH_RATE = 722.0  # Overall age-adjusted death rate 2024
+TOTAL_DEATH_RATE = Parameter(
+    722.0,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Overall age-adjusted death rate",
+    unit="deaths per 100,000"
+)  # Overall age-adjusted death rate 2024
 
 # Disease burden as percentage of total deaths
 DISEASE_BURDEN = {
