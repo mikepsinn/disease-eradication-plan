@@ -317,7 +317,7 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 ## The Expansion Flywheel
 
 ```{python}
-#| fig-alt: "Flowchart showing: Investors Give {{< var treaty_campaign_total_cost >}} → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
+#| fig-alt: "Flowchart showing: Investors Give $1.0B → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
 import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
@@ -328,9 +328,9 @@ dot = graphviz.Digraph(comment='Expansion Flywheel', format='png')
 dot.attr(rankdir='TB', size='10,12')
 setup_graphviz_style(dot)
 
-dot.node('Invest', 'Investors Give {{< var treaty_campaign_total_cost >}}')
-dot.node('Treaty1', '1% Treaty Passes\n{{< var treaty_annual_funding >}}/year')
-dot.node('Payout1', 'Bondholders Get {{< var victory_bond_annual_payout >}}/year\n(270% returns)')
+dot.node('Invest', f'Investors Give {format_billions(TREATY_CAMPAIGN_TOTAL_COST)}')
+dot.node('Treaty1', f'1% Treaty Passes\n{format_billions(TREATY_ANNUAL_FUNDING)}/year')
+dot.node('Payout1', f'Bondholders Get {format_billions(VICTORY_BOND_ANNUAL_PAYOUT)}/year\n(270% returns)')
 dot.node('Mission1', 'DIH Spends $24.3B\non cures')
 dot.node('Cures', 'Diseases Start Falling')
 dot.node('Media', 'Media Frenzy:\n"It\'s working!"')

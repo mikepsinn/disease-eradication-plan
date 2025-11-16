@@ -307,6 +307,58 @@ def check_python_imports(content: str, filepath: str):
             current_block.append(line)
 
 
+def check_graphviz_variables(content: str, filepath: str):
+    """
+    Check for Quarto variables ({{< var ... >}}) inside Python code blocks that generate Graphviz diagrams.
+    Quarto variables don't work inside Python code blocks - use Python variables instead.
+    """
+    lines = content.split('\n')
+    in_python_block = False
+    current_block = []
+    block_start_line = 0
+
+    # Pattern to detect Graphviz-related code
+    graphviz_patterns = [
+        r'graphviz',
+        r'dot\.node',
+        r'dot\.edge',
+        r'dot\.attr',
+        r'Digraph',
+        r'Graph',
+    ]
+
+    # Pattern to match Quarto variables
+    var_pattern = re.compile(r'\{\{<\s*var\s+[^>]+\s*>\}\}')
+
+    for i, line in enumerate(lines):
+        if re.match(r'^```\{python\}', line):
+            in_python_block = True
+            block_start_line = i + 1
+            current_block = []
+        elif in_python_block and line.strip() == '```':
+            # End of Python block - check if it contains Graphviz code
+            block_content = '\n'.join(current_block)
+            
+            # Check if this block contains Graphviz-related code
+            is_graphviz_block = any(re.search(pattern, block_content) for pattern in graphviz_patterns)
+            
+            if is_graphviz_block:
+                # Check for Quarto variables in this block
+                for line_num, block_line in enumerate(current_block, block_start_line):
+                    if var_pattern.search(block_line):
+                        context = block_line.strip()[:80]
+                        errors.append(ValidationError(
+                            file=filepath,
+                            line=line_num,
+                            message='Quarto variable ({{< var ... >}}) inside Graphviz Python code block - variables do not work in Python. Use Python variables from dih_models.parameters instead.',
+                            context=context
+                        ))
+
+            in_python_block = False
+        elif in_python_block:
+            current_block.append(line)
+
+
 def check_figure_file_imports(content: str, filepath: str):
     """
     For ALL files, check that get_figure_output_path and get_project_root are imported
@@ -655,6 +707,9 @@ def validate_file(filepath: str):
     check_figure_file_imports(content, filepath)
     # Also check for other imports per-block (npf, etc.)
     check_python_imports(content, filepath)
+    
+    # Check for Quarto variables in Graphviz code blocks
+    check_graphviz_variables(content, filepath)
 
     # Check em-dashes
     check_em_dashes(content, filepath)
