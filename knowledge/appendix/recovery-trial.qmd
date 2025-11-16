@@ -18,7 +18,7 @@ lastNonprofitComplianceHash: b9983ed6413180d084f32647186fc2a0b05f89ed58b504a41d7
 from dih_models.parameters import *
 ```
 
-The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [{{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This 82x efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.
+The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [$500 per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This 82x efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.
 
 **Speed to Launch:** [9 days from conception to first patient enrolled](../references.qmd#landray-recovery-trial-quote). FDA average: [6-12 months](../references.qmd#fda-trial-launch-timeline).
 **Speed to Results:** First life-saving treatment (dexamethasone) [identified in 100 days](../references.qmd#recovery-trial-100-days-to-cure). FDA average: [6-10 years](../references.qmd#fda-approval-timeline-10-years).
@@ -31,13 +31,13 @@ The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent
 | Total Patients Enrolled            | 49,000+                                                                                                                           | [RECOVERY Trial Website](https://www.recoverytrial.net/)                                                                                                                                |
 | Participating Hospitals            | 186                                                                                                                               | [RECOVERY Trial Website](https://www.recoverytrial.net/)                                                                                                                                |
 | Total Trial Cost                   | £2.1M (~$2.7M)                                                                                                                    | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
-| Cost per Patient                   | ~{{< var recovery_trial_cost_per_patient >}} ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) | [Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)                                                               | 
+| Cost per Patient                   | ~$500 ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) | [Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)                                                               | 
 | Traditional Trial Cost per Patient | ~$41,000                                                                                                                          | [NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)                                                                                                                           |
 | Treatments Evaluated               | 12                                                                                                                                | [RECOVERY Results](https://www.recoverytrial.net/results)                                                                                                                               |
 | Cost per Intervention              | ~£175,000 (~$223,000)                                                                                                             | Calculated (£2.1M ÷ 12 treatments)                                                                                                                                                      |
 | Proven Effective Treatments        | 4                                                                                                                                 | [Nuffield Department of Population Health](https://www.ndph.ox.ac.uk/news/recovery-trial-celebrates-two-year-anniversary-of-life-saving-dexamethasone-result)                           |
 | UK Lives Saved (by March 2021)     | 22,000+                                                                                                                           | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
-| Global Lives Saved (by March 2021) | {{< var traditional_large_trial_size >}},000+                                                                                                                        | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
+| Global Lives Saved (by March 2021) | 1,000,000+                                                                                                                        | [UKRI Impact Report](https://www.ukri.org/who-we-are/how-we-are-doing/research-outcomes-and-impact/mrc/recovery-trial-identifies-covid-19-treatments/)                                  |
 | Days to First Major Result         | <100                                                                                                                              | [The Conversation](https://theconversation.com/the-inside-story-of-recovery-how-the-worlds-largest-covid-19-trial-transformed-treatment-and-what-it-could-do-for-other-diseases-184772) |
 
 The RECOVERY trial enrolled 49,000 patients across 186 hospitals, tested 12 treatments, saved a million lives, and cost less than a single F-35 fighter jet.
@@ -76,7 +76,7 @@ The FDA prioritizes paperwork over questions, bureaucracy over speed, and proces
 
 #### The Result
 
-{{< var recovery_trial_cost_per_patient >}} per patient ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) vs FDA's $41,000 per patient ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)).
+$500 per patient ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)) vs FDA's $41,000 per patient ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)).
 
 That's an 82x efficiency gain achieved by doing the obvious things in obvious ways.
 
@@ -92,7 +92,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 2. **Real Patients Matter:** Including sick patients ([who FDA trials exclude](../references.qmd#fda-trial-patient-exclusion-criteria)) provides real-world evidence
 3. **Speed Saves Lives:** First results in 100 days vs years for traditional trials
 4. **Cost Is A Choice:** The 82x cost difference isn't about capability, it's about bureaucracy
-5. **Scale Is Achievable:** 49,000 patients enrolled [faster than most FDA trials enroll {{< var traditional_large_trial_size >}}](../references.qmd#clinical-trial-enrollment-timelines)
+5. **Scale Is Achievable:** 49,000 patients enrolled [faster than most FDA trials enroll 1,000](../references.qmd#clinical-trial-enrollment-timelines)
 6. **Simplicity Wins:** [Three 1-page forms (consent, case report, follow-up) vs FDA's complex multi-form protocols](../references.qmd#fda-vs-oxford-paperwork). Less paperwork, more cures.
 
 #### The Bottom Line Math
@@ -123,7 +123,7 @@ The lesson is clear: We already know how to run trials 82x more efficiently. The
    > "Between 23 April 2020 and 25 January 2021, 4,116 adults were included in the assessment of tocilizumab alone" - [Rxivist](https://rxivist.org/papers/129041)
 
 4. **Cost Efficiency**
-   The actual cost of £2.1M (~$2.7M) for the entire trial represents an even more dramatic efficiency than previously estimated. While a simple division yields approximately £43 (~$55) per patient, authoritative sources cite ~{{< var recovery_trial_cost_per_patient >}} per patient as a more realistic figure ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)). This is nearly 80 times more cost-efficient than traditional clinical trials ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/): $41,000 per patient). This extraordinary cost-effectiveness, combined with the rapid delivery of results (three major findings within 100 days) and estimated global impact of over 1 million lives saved, demonstrates the revolutionary nature of the RECOVERY trial model.
+   The actual cost of £2.1M (~$2.7M) for the entire trial represents an even more dramatic efficiency than previously estimated. While a simple division yields approximately £43 (~$55) per patient, authoritative sources cite ~$500 per patient as a more realistic figure ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)). This is nearly 80 times more cost-efficient than traditional clinical trials ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/): $41,000 per patient). This extraordinary cost-effectiveness, combined with the rapid delivery of results (three major findings within 100 days) and estimated global impact of over 1 million lives saved, demonstrates the revolutionary nature of the RECOVERY trial model.
 
 ## Proof This Isn't Insane
 
@@ -135,9 +135,9 @@ Excellent question. Let me show you the proof.
 
 ### The Oxford RECOVERY Trial
 
-**{{< var recovery_trial_cost_per_patient >}} vs FDA's $41,000 Per Patient**
+**$500 vs FDA's $41,000 Per Patient**
 
-The UK spent {{< var recovery_trial_cost_per_patient >}} per patient testing COVID treatments. Saved a million lives.
+The UK spent $500 per patient testing COVID treatments. Saved a million lives.
 
 America spent $41,000 per patient on paperwork.
 
