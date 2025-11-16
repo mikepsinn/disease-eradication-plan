@@ -597,6 +597,49 @@ def format_billions_latex(value):
         return f"{value/1000:,.1f}T"
     return f"{value:,.1f}B"
 
+
+def param_link(value, param_name="", format_func=None):
+    """Create an HTML link for a parameter value with tooltip showing parameter source.
+
+    This function generates an HTML anchor tag with:
+    - The formatted parameter value as visible text
+    - A tooltip showing the parameter name on hover
+    - A CSS class for styling
+    - A link anchor (can be customized to point to documentation)
+
+    Args:
+        value: The numeric value to display
+        param_name: The parameter name (e.g., "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT")
+        format_func: Optional formatting function (e.g., format_billions, format_qalys)
+                    If None, formats as comma-separated integer
+
+    Returns:
+        HTML string like: <a href="#" class="parameter-link" title="parameters.PARAM_NAME">233,600</a>
+
+    Example usage in QMD:
+        `{python} from dih_models.parameters import *`{=html}
+        `{python} param_link(GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT, "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT", format_qalys)`{=html}
+    """
+    # Format the value
+    if format_func:
+        formatted_value = format_func(value)
+    elif isinstance(value, float) and value < 100:
+        # Small numbers might be percentages or ratios
+        formatted_value = f"{value:,.2f}"
+    elif isinstance(value, (int, float)):
+        # Large numbers - format with commas
+        formatted_value = f"{value:,.0f}"
+    else:
+        formatted_value = str(value)
+
+    # Create tooltip text
+    tooltip = f"parameters.{param_name}" if param_name else "parameter value"
+
+    # Return HTML link with tooltip
+    # Using # as href (no navigation), with parameter-link class for CSS styling
+    return f'<a href="#" class="parameter-link" title="{tooltip}">{formatted_value}</a>'
+
+
 # --- Module Initialization ---
 
 if __name__ == "__main__":
