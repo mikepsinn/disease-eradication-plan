@@ -111,41 +111,77 @@ def format_parameter_value(value: float, unit: str = "") -> str:
             num_str = num_str.rstrip('0').rstrip('.')
         return num_str
 
-    # Add currency formatting if applicable
+    # Add currency formatting if applicable (3 significant figures)
     if is_currency:
+        # Determine the absolute value for scaling
+        abs_val = abs(value)
+
         if is_in_billions:
-            # Value is in billions, add $ and scale suffix
-            if abs(value) >= 1000:
-                # Trillions
-                formatted = f"${value/1000:.0f}T" if value/1000 >= 10 else f"${value/1000:.1f}T"
-            elif abs(value) >= 1:
-                # Billions
-                formatted = f"${value:.0f}B" if value >= 10 else f"${value:.1f}B"
-            elif abs(value) >= 0.001:
-                # Millions
-                formatted = f"${value*1000:.0f}M" if value*1000 >= 10 else f"${value*1000:.1f}M"
-            else:
-                # Thousands or less
+            # Value is already in billions
+            if abs_val >= 1000:  # Trillions
+                scaled = value / 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}T"  # e.g., "$123T" (3 sig figs)
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}T"  # e.g., "$12.3T" (3 sig figs)
+                else:
+                    formatted = f"${scaled:.2f}T"  # e.g., "$1.23T" (3 sig figs)
+            elif abs_val >= 1:  # Billions
+                if abs_val >= 100:
+                    formatted = f"${value:.0f}B"  # e.g., "$123B" (3 sig figs)
+                elif abs_val >= 10:
+                    formatted = f"${value:.1f}B"  # e.g., "$12.3B" (3 sig figs)
+                else:
+                    formatted = f"${value:.2f}B"  # e.g., "$1.23B" (3 sig figs)
+            elif abs_val >= 0.001:  # Millions
+                scaled = value * 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}M"  # e.g., "$123M"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
+                else:
+                    formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
+            else:  # Thousands or less
                 formatted = f"${value*1000000:.0f}K"
         else:
             # Value is in actual dollars, convert to appropriate scale
-            if abs(value) >= 1e12:
-                # Trillions
-                formatted = f"${value/1e12:.0f}T" if value/1e12 >= 10 else f"${value/1e12:.1f}T"
-            elif abs(value) >= 1e9:
-                # Billions
-                formatted = f"${value/1e9:.0f}B" if value/1e9 >= 10 else f"${value/1e9:.1f}B"
-            elif abs(value) >= 1e6:
-                # Millions
-                formatted = f"${value/1e6:.0f}M" if value/1e6 >= 10 else f"${value/1e6:.1f}M"
-            elif abs(value) >= 1e3:
-                # Thousands
-                formatted = f"${value/1e3:.0f}K" if value/1e3 >= 10 else f"${value/1e3:.1f}K"
+            if abs_val >= 1e12:  # Trillions
+                scaled = value / 1e12
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}T"  # e.g., "$123T"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}T"  # e.g., "$12.3T"
+                else:
+                    formatted = f"${scaled:.2f}T"  # e.g., "$1.23T"
+            elif abs_val >= 1e9:  # Billions
+                scaled = value / 1e9
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}B"  # e.g., "$123B"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}B"  # e.g., "$12.3B"
+                else:
+                    formatted = f"${scaled:.2f}B"  # e.g., "$1.23B"
+            elif abs_val >= 1e6:  # Millions
+                scaled = value / 1e6
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}M"  # e.g., "$123M"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
+                else:
+                    formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
+            elif abs_val >= 1e3:  # Thousands
+                scaled = value / 1e3
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}K"  # e.g., "$123K"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}K"  # e.g., "$12.3K"
+                else:
+                    formatted = f"${scaled:.2f}K"  # e.g., "$1.23K"
             else:
                 # Less than 1000
                 formatted = f"${value:.0f}"
 
-        # Clean up .0 in formatted string (e.g., "$50.0B" → "$50B")
+        # Clean up trailing .0 (e.g., "$50.0B" → "$50B")
         return formatted.replace('.0B', 'B').replace('.0M', 'M').replace('.0T', 'T').replace('.0K', 'K')
 
     # Format plain numbers with appropriate precision

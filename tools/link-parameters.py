@@ -122,18 +122,40 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
                 except:
                     pass
 
+            # Skip fractional currency amounts (too context-specific)
+            # Examples: $0.72, $0.02, $0.20, $0.30
+            if display_str.startswith('$') and '.' in display_str:
+                try:
+                    amount = float(display_str.replace('$', ''))
+                    if amount < 1:
+                        continue  # Skip sub-dollar amounts
+                except:
+                    pass
+
+            # Skip currency amounts under $10 (too generic and context-dependent)
+            # Examples: $0, $4, $6 (these are often partial matches)
+            if display_str.startswith('$') and not any(suffix in display_str for suffix in ['B', 'M', 'T', 'K']):
+                try:
+                    amount = float(display_str.replace('$', '').replace(',', ''))
+                    if amount < 10:
+                        continue  # Too generic, likely partial matches
+                except:
+                    pass
+
             # Check if this display string appears in the line with word boundaries
             # Use regex to ensure we don't match "$6" inside "$686" or "1,000" inside "$41,000"
-            # Pattern: not preceded by digit, match the string, not followed by digit
+            # Pattern: not preceded by digit or period, match the string, not followed by digit or period
             if display_str in line:
                 # Find all occurrences to check context
                 import re
                 # Escape special regex characters in display_str
                 escaped = re.escape(display_str)
-                # Ensure not preceded or followed by a digit
+                # Ensure not preceded or followed by a digit or decimal point
                 # (?<!\d) = negative lookbehind (not preceded by digit)
+                # (?<!\.) = negative lookbehind (not preceded by decimal)
                 # (?!\d) = negative lookahead (not followed by digit)
-                pattern = r'(?<!\d)' + escaped + r'(?!\d)'
+                # (?!\.) = negative lookahead (not followed by decimal)
+                pattern = r'(?<!\d)(?<!\.)' + escaped + r'(?!\d)(?!\.)'
                 if re.search(pattern, line):
                     matches.append((i, line.strip(), display_str, var_name))
 
