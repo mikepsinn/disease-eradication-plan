@@ -1,5 +1,5 @@
 [build]
-  # Build command - installs Quarto and builds the book
+  # Build command - installs Quarto and builds the economics models site
   command = """
     if [ ! -f "/opt/buildhome/.local/bin/quarto" ]; then
       echo "Installing Quarto..."
@@ -10,13 +10,13 @@
       export PATH="/opt/buildhome/.local/bin:$PATH"
     fi
     quarto --version
-    pip install -r requirements.txt
-    pnpm install
-    pnpm run build
+    pip install -r requirements.txt || echo "No requirements.txt found, skipping pip install"
+    cp _quarto-economics.yml _quarto.yml
+    python tools/render_html.py --output-dir _site --command "quarto render"
   """
 
-  # Directory to publish - matches output-dir in _quarto.yml
-  publish = "_book/warondisease"
+  # Directory to publish - Quarto standard output directory
+  publish = "_site"
 
   # Ignore builds if there are no relevant changes
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
