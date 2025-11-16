@@ -1,0 +1,337 @@
+project:
+  type: book
+  output-dir: _book/warondisease
+  execute-dir: project
+  # pre-render:
+  #   - python scripts/pre-render-validation.py
+  # post-render:
+  #   - python scripts/post-render-validation.py
+
+book:
+  title: "How to End War and Disease"
+  author: "By W.I.SH.O.N.I.A. (Translated by Mike P. Sinn)"
+  description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
+  # cover-image: cover.jpg
+  favicon: favicon.ico
+  site-url: https://WarOnDisease.org
+  #repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
+  #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
+  navbar:
+    right:
+      - text: "DIH.earth"
+        href: https://DIH.earth
+  sidebar:
+    collapse-level: 1
+  chapters:
+    - text: "Start Here"
+      href: index.qmd  # ~19p
+
+    - part: "The Problem"
+      chapters:
+        - knowledge/problem.qmd  # ✅ Part I Intro ~8p
+        - knowledge/problem/the-daily-massacre.qmd # ✅ Daily Holocaust ~3p
+        - knowledge/problem/cost-of-war.qmd # ✅ Cost of War ~32p
+        - knowledge/problem/cost-of-disease.qmd # ✅ Cost of Disease ~9p
+        - knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # ✅ The NIH ~9p
+        - knowledge/problem/fda-is-unsafe-and-ineffective.qmd # ✅ The FDA ~25p
+        - knowledge/problem/unrepresentative-democracy.qmd # ✅ Democracy Is Theater & Regulatory Capture ~19p
+        - knowledge/economics/central-banks.qmd # ✅ (EXCELLENT voice - "death certificate with a president's face") ~9p
+        - knowledge/problem/genetic-slavery.qmd # ✅ (EXCELLENT voice) ~9p
+
+    - part: "The Solution"
+      chapters:
+        - knowledge/solution.qmd # ✅ Part II Intro ~8p
+        - knowledge/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (includes TL;DR at top) ~12p
+        - knowledge/solution/dih.qmd # ✅ The DIH ~7p
+        - knowledge/solution/wishocracy.qmd # ✅ Wishocracy ~4p
+        - knowledge/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program") ~12p
+        - knowledge/solution/dfda.qmd # ✅ The Decentralized FDA ~20p
+        - knowledge/solution/war-on-disease.qmd # ✅ The War on Disease ~5p
+        - knowledge/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
+
+    - part: "The Evidence"
+      chapters:
+        - knowledge/proof.qmd # ✅ Part III Intro ~6p
+        - knowledge/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
+        - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
+        - knowledge/economics/economics.qmd # ✅ Rigorous economic analysis for foundations: 463:1-1,239:1 ROI, NPV methodology, risk analysis, governance framework, peer-reviewed evidence ~16p
+        - knowledge/call-to-action/your-personal-benefits.qmd # ✅ Your ROI ~2p
+        - knowledge/futures.qmd # ✅ Intro to Paths ~1p
+        - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
+        - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
+        - knowledge/appendix/faq.qmd # ✅ Demolishing Objections ~15p
+
+    - part: "The Plan"
+      chapters:
+        - knowledge/strategy/roadmap.qmd # ✅ (DETAILED 36-MONTH EXECUTION PLAN) ~3p
+        - knowledge/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE) ~9p
+        - knowledge/legal/securities-law.qmd # ✅ Securities Law ~6p
+        - knowledge/legal/election-law.qmd # ✅ Election Law ~6p
+        - knowledge/legal/treaty-framework.qmd # ✅ Treaty Framework ~5p
+        - knowledge/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design) ~14p
+        - knowledge/strategy/legislation-package.qmd # ✅ Legislation Package ~7p
+        - knowledge/strategy/global-referendum.qmd # ✅ Global Referendum (IMPROVED) ~10p
+        - knowledge/strategy/viral-marketing.qmd # ✅ PROMOTED ~5p
+        - knowledge/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
+        - knowledge/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
+  appendices:
+    # Essential Reading
+    - part: "Essential References"
+      chapters:
+        - knowledge/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
+        # historical-evidence-supporting-decentralized-efficacy-trials.qmd content merged into fda-is-unsafe-and-ineffective.qmd
+
+    # Strategic Implementation
+    - part: "Implementation Strategy"
+      chapters:
+        - knowledge/strategy/strategy-execution-overview.qmd # ✅ Complete execution strategy (merged 3-step, 5-step, bribe sequence) ~6p
+        - knowledge/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship") ~2p
+        - knowledge/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
+        - knowledge/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
+        - knowledge/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate) ~1p
+        - knowledge/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
+
+    - part: "Policy & Regulatory"
+      chapters:
+        - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
+        - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
+
+    # Economic Analysis
+    - part: "Economic Analysis"
+      chapters:
+        - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
+        - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
+        - knowledge/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED) ~2p
+        - knowledge/appendix/global-government-medical-research-spending.qmd # ✅ (EXCELLENT voice) ~8p
+        - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis ~17p
+        - knowledge/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
+
+    - part: "Detailed Calculations"
+      chapters:
+        - knowledge/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
+        - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
+        - knowledge/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
+        - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
+        - knowledge/appendix/dfda-cost-benefit-analysis.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
+        - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
+        - knowledge/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
+        - knowledge/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
+        - knowledge/appendix/dfda-qaly-model.qmd # ✅ (comprehensive QALY model - includes dfda-comparative-cost-effectiveness & dfda-daily-opportunity-cost) ~38p
+
+    - part: "Financial Planning"
+      chapters:
+        - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
+        - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
+        - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
+        - knowledge/economics/health-savings-sharing-model.qmd # ✅ (EXCELLENT voice - "diseased cash cow") ~7p
+        - knowledge/appendix/fundraising-strategy.qmd # ✅ (IMPROVED - "$2.5B vending machine" analogy) ~13p
+
+    # Organizational Resources
+    - part: "Governance & Organization"
+      chapters:
+        - knowledge/appendix/governance.qmd # ✅ (good voice) ~4p
+        - knowledge/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
+        - knowledge/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
+        - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
+        - knowledge/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
+
+    - part: "Operations & Legal"
+      chapters:
+        - knowledge/appendix/legal-compliance-framework.qmd # ✅ (technical legal, appropriate) ~9p
+        - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
+        - knowledge/appendix/free-rider-solution.qmd # ✅ (IMPROVED) ~3p
+
+    - part: "Additional References"
+      chapters:
+        - knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd # ✅ (data presentation, appropriate) ~1p
+        - knowledge/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
+        - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
+        - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
+        - knowledge/references.qmd # ✅ (reference material, appropriately formal) ~250p
+
+# Project-level metadata (applies to all documents)
+metadata:
+  # Author identification
+  creator: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  
+  # Author contact information
+  author-email: "hello@dih.earth"
+  author-url: "https://WarOnDisease.org"
+  author-website: "https://WarOnDisease.org"
+  contact: "hello@dih.earth"
+  
+  # Bibliographic metadata
+  title: "How to End War and Disease"
+  description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+  abstract: "A comprehensive guide to redirecting 1% of global military spending ($27.2B annually) to medical research through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Demonstrates 463:1 to 1,239:1 return on investment through cost-benefit analysis, peace dividend calculations, and health economics frameworks."
+  language: "en-US"
+  subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
+  category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
+  
+  # Keywords and tags
+  keywords:
+    - war-on-disease
+    - 1-percent-treaty
+    - medical-research
+    - public-health
+    - peace-dividend
+    - decentralized-trials
+    - dfda
+    - dih
+    - victory-bonds
+    - health-economics
+    - cost-benefit-analysis
+    - clinical-trials
+    - drug-development
+    - regulatory-reform
+    - military-spending
+    - peace-economics
+    - decentralized-governance
+    - wishocracy
+    - blockchain-governance
+    - impact-investing
+  
+
+  
+  # Version and edition
+  version: "1.0.0"
+  edition: "First Edition"
+  
+  # Copyright and licensing
+  copyright: "© 2025 Mike P. Sinn & W.I.SH.O.N.I.A."
+  copyright-year: "2025"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
+  
+  # Publication information
+  publisher: "WarOnDisease.org"
+  publisher-url: "https://WarOnDisease.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "hello@dih.earth"
+  
+  # Repository information
+  repo-url: "https://github.com/mikepsinn"
+  issue-url: "https://github.com/mikepsinn"
+  source-url: "https://github.com/mikepsinn"
+  
+  # Identifiers (add when available)
+  # isbn: "978-0-000000-00-0"
+  # doi: "10.0000/example"
+  # urn: "urn:example:book:12345"
+  
+  # Geographic and organizational
+  geographic-coverage: "Global"
+  audience: "General Public, Policy Makers, Investors, Healthcare Professionals, Researchers"
+  
+  # Additional metadata
+  format: "Book"
+  type: "Non-fiction"
+  genre: "Public Policy, Health Economics, Peace Studies"
+  medium: "Digital, Print"
+  
+  # Social media and web
+  twitter-site: "@thinkbynumbers"
+  twitter-creator: "@thinkbynumbers"
+  og-site-name: "WarOnDisease.org"
+  
+  # Technical metadata
+  encoding: "UTF-8"
+  character-set: "UTF-8"
+  
+  # Related resources
+  # bibliography: "references.bib"
+  # csl: "style.csl"
+
+execute:
+  # Relaunch kernel for each render
+  cache: false
+  freeze: auto
+  # Send all generated figures to a central directory
+  fig-path: "knowledge/figures/"
+
+# Tell Quarto to use the project's virtual environment
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - lux
+      #- neobrutalist.scss
+    # Alternative themes: lux, flatly, sandstone, minty
+    mermaid:
+      theme: neutral  # Uses grayscale/minimal colors for black and white diagrams
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    css: styles.css
+    # Footer with copyright and license information
+    page-footer:
+      left: "© 2025 Mike P. Sinn & W.I.SH.O.N.I.A."
+      center: "[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+      right: "[WarOnDisease.org](https://WarOnDisease.org)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 Mike P. Sinn & W.I.SH.O.N.I.A. | 
+              <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #8b7355;">CC BY 4.0</a> | 
+              <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
+            </p>
+          </div>
+    include-in-header:
+      - text: |
+          <!-- Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8PZYCKQBTY');
+          </script>
+          <!-- Hypothesis for inline comments and annotations (load on all pages except index) -->
+          <script>
+            // Only load Hypothesis if we're not on the landing page
+            // Matches: /, /index.html, /warondisease/, /warondisease/index.html
+            var isIndexPage = window.location.pathname.match(/\/(warondisease\/)?(index\.html)?$/);
+            if (!isIndexPage) {
+              var script = document.createElement('script');
+              script.src = 'https://hypothes.is/embed.js';
+              script.async = true;
+              document.head.appendChild(script);
+            }
+          </script>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:title" content="The Complete Idiot's Guide to Ending War and Disease">
+          <meta name="twitter:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
+          <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
+          <meta property="og:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
+          <meta property="og:type" content="book">
+  pdf:
+    documentclass: scrreprt
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    variables:
+      title: "The Complete Idiot's Guide to Ending War and Disease"
+      description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
+    include-in-header:
+      text: |
+        % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
+        % Override the \appendix command to prevent switching to alphabetic numbering
+        \usepackage{etoolbox}
+        \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
