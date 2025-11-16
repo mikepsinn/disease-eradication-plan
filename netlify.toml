@@ -5,6 +5,9 @@
     # Verify Python is available (installed by Netlify via runtime.txt)
     python3 --version || python --version || (echo "ERROR: Python not available" && exit 1)
     
+    # Verify Quarto is available (installed by plugin)
+    quarto --version || (echo "ERROR: Quarto not available" && exit 1)
+    
     # Install Python dependencies
     python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user
     python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user
@@ -14,7 +17,7 @@
     
     # Build the site using Quarto (installed by plugin)
     cp _quarto-economics.yml _quarto.yml
-    quarto render
+    python3 tools/render_html.py --output-dir _site --command "quarto render" --skip-post-validation
   """
 
   # Directory to publish - Quarto standard output directory
