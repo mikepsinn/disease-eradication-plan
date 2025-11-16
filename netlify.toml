@@ -34,7 +34,8 @@
     # Build the site using Quarto
     echo "Building site with Quarto..."
     cp _quarto-economics.yml _quarto.yml
-    quarto render --to html
+    echo "Quarto config copied. Starting render..."
+    quarto render 2>&1 || (echo "Quarto render failed. Checking output directory..." && ls -la _site/ 2>&1 || echo "Output directory not found" && exit 1)
   """
 
   # Directory to publish - Quarto standard output directory
