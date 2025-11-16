@@ -22,9 +22,8 @@
     # Verify Quarto is available
     quarto --version || (echo "ERROR: Quarto installation failed" && exit 1)
     
-    # Install system dependencies (Graphviz for diagrams)
-    echo "Installing system dependencies..."
-    sudo apt-get update -qq && sudo apt-get install -y graphviz || echo "Graphviz installation skipped (may not be available)"
+    # Note: Graphviz may already be available in Netlify build environment
+    # If not, diagrams using graphviz may fail, but the build will continue
     
     # Install Python dependencies
     echo "Installing Python dependencies..."
