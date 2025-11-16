@@ -131,6 +131,8 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
         tooltip_parts = []
         if hasattr(value, 'description') and value.description:
             tooltip_parts.append(value.description)
+        if hasattr(value, 'formula') and value.formula:
+            tooltip_parts.append(f"Formula: {value.formula}")
         if hasattr(value, 'unit') and value.unit:
             tooltip_parts.append(f"Unit: {value.unit}")
         tooltip_parts.append(f"Click to {link_text.lower()}")
