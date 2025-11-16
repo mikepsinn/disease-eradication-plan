@@ -22,10 +22,20 @@
     # Verify Quarto is available
     quarto --version || (echo "ERROR: Quarto installation failed" && exit 1)
     
+    # Install system dependencies (Graphviz for diagrams)
+    echo "Installing system dependencies..."
+    sudo apt-get update -qq && sudo apt-get install -y graphviz || echo "Graphviz installation skipped (may not be available)"
+    
     # Install Python dependencies
     echo "Installing Python dependencies..."
     python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user
     python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user
+    
+    # Install local dih_models package (if pyproject.toml exists)
+    if [ -f "pyproject.toml" ]; then
+      echo "Installing local dih_models package..."
+      python3 -m pip install -e . --user || python -m pip install -e . --user || echo "Local package installation skipped"
+    fi
     
     # Install Jupyter kernel (required for Quarto to execute Python code)
     echo "Installing Jupyter kernel..."
