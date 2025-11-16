@@ -756,9 +756,35 @@ DFDA_UPFRONT_BUILD = Parameter(
     0.040,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
     source_type="calculated",
-    description="dFDA platform one-time build cost",
+    description="dFDA platform one-time build cost (central estimate)",
     unit="billions USD"
 )  # $40M one-time build cost
+
+DFDA_UPFRONT_BUILD_MAX = Parameter(
+    0.046,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+    source_type="calculated",
+    description="dFDA platform one-time build cost (high estimate)",
+    unit="billions USD"
+)  # $46M one-time build cost (high end)
+
+# DCT Platform Funding Comparables
+DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
+    0.500,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom",
+    source_type="calculated",
+    description="Mid-range funding for commercial DCT platform",
+    unit="billions USD"
+)  # $500M funding for commercial platforms
+
+# Per-patient cost in dollars (not billions)
+DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
+    1000,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
+    source_type="calculated",
+    description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
+    unit="USD/patient"
+)  # $1,000 per patient
 
 # dFDA operational cost breakdown (in billions)
 DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
