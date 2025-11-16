@@ -35,11 +35,13 @@
     echo "Building site with Quarto..."
     cp _quarto-economics.yml _quarto.yml
     echo "Quarto config copied. Starting render..."
-    quarto render 2>&1 || (echo "Quarto render failed. Checking output directory..." && ls -la _site/ 2>&1 || echo "Output directory not found" && exit 1)
+    quarto render
+    echo "Quarto render completed. Checking output..."
+    ls -la _site/economics/ | head -20 || echo "Output directory check failed"
   """
 
-  # Directory to publish - Quarto standard output directory
-  publish = "_site"
+  # Directory to publish - matches output-dir in _quarto-economics.yml
+  publish = "_site/economics"
 
   # Ignore builds if there are no relevant changes
   # Temporarily disabled to test Python fix
