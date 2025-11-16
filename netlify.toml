@@ -55,11 +55,6 @@
     echo "=== Step 7: Building site with Quarto ==="
     cp _quarto-economics.yml _quarto.yml || error_exit "Failed to copy Quarto config"
     
-    # Temporarily rename .env.example to prevent Quarto from validating env vars
-    echo "Temporarily renaming .env.example to prevent Quarto dotenv validation..."
-    if [ -f ".env.example" ]; then
-      mv .env.example .env.example.bak || echo "Warning: Could not rename .env.example"
-    fi
     
     # Set environment variables for Quarto
     export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" 2>/dev/null || python -c "import sys; print(sys.executable)" 2>/dev/null || echo "python3")
