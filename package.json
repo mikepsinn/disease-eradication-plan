@@ -87,7 +87,12 @@
     "images:analyze:all": "tsx tools/generate-image-metadata.ts --all",
     "images:guide": "tsx tools/generate-image-metadata.ts --guide-only",
     "find-duplicates": "tsx tools/find-duplicates.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "voltagent:dev": "tsx watch --env-file=.env ./src/index.ts",
+    "voltagent:build": "tsdown",
+    "voltagent:start": "node dist/index.js",
+    "voltagent": "volt",
+    "volt": "volt"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
