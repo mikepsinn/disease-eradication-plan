@@ -6,6 +6,7 @@
   "type": "module",
   "private": true,
   "dependencies": {
+    "@quarto/netlify-plugin-quarto": "^0.0.5",
     "@ai-sdk/google": "^2.0.12",
     "@anthropic-ai/sdk": "^0.67.0",
     "@google/genai": "^1.25.0",
