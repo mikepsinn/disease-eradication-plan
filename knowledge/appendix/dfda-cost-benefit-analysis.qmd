@@ -83,7 +83,7 @@ Goals:
 
 #### Decentralized trial costs modeled on Oxford RECOVERY
 
-- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **\{{< var recovery_trial_cost_per_patient >}} - \${{< var dfda_target_cost_per_patient_usd >}} per patient**.
+- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **{{< var recovery_trial_cost_per_patient >}} - ${{< var dfda_target_cost_per_patient_usd >}} per patient**.
 - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
 ### Technical Feasibility
@@ -109,7 +109,7 @@ These assumptions set a stage where the platform can indeed function at scale, b
 > - **Total initiative (partnership model):** ~\$40-75M upfront, \$5-12M annual
 >
 > **Build-Everything Model (Not Recommended)**:
-> - **Upfront full platform build:** [\$37.5–\{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+> - **Upfront full platform build:** [\$37.5–{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
 > - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
 > - **Broader initiative (medium scenario):** [\$228 million upfront, \$21.3 million annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
 >
@@ -165,7 +165,7 @@ Where:
 - $C_{\text{software}} = \$0.5 - \$1$ million (Software Licenses & Tooling)
 - $C_{\text{compliance}} = \$1 - \$2$ million (Compliance, Legal & Security)
 
-> **Total Estimated Upfront Cost (ROM): [\$37.5 - \{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
+> **Total Estimated Upfront Cost (ROM): [\$37.5 - {{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
 
 _Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**. It represents the foundational first step. The full vision of the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd) requires significant additional investment in broader initiatives to achieve its goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
 
@@ -182,14 +182,14 @@ The following sections provide ROM estimates for both the ongoing operational co
 To complement the bottom-up ROM, you can derive a top-down estimate by examining the total investment raised by leading commercial companies developing decentralized clinical trial (DCT) platforms. This market-based view provides a real-world benchmark for the capital required to build, scale, and operate a sophisticated, global-grade platform.
 
 - **Medable:** A leader in the DCT platform space, has [raised a total of **\$521 million** in capital, achieving a valuation of **\$2.1 billion**](../references.qmd#dct-platform-funding-medable) as of late 2021. This level of funding represents the capital required to develop a comprehensive SaaS platform, establish a global presence across 60+ countries, and achieve significant market penetration.
-- **Other DCT Platform Companies:** [Other companies in the space](../references.qmd#dct-platform-funding-others), such as **Science 37** (~{{< var dfda_upfront_build >}} raised), **Thread** (up to \{{< var treaty_campaign_budget_reserve >}} raised), and **uMotif** (~\$25.5M raised), show that you can achieve significant traction and platform development with investments in the tens of millions.
+- **Other DCT Platform Companies:** [Other companies in the space](../references.qmd#dct-platform-funding-others), such as **Science 37** (~$40M raised), **Thread** (up to $50M raised), and **uMotif** (~$25.5M raised), show that you can achieve significant traction and platform development with investments in the tens of millions.
 
 #### Analogous ROM Conclusion
 
-Based on these market comparables, the total investment required to fund a global dFDA Infrastructure initiative, from initial build to widespread adoption, can be estimated to be in the range of **\$50 million to \{{< var dct_platform_funding_medium >}}**.
+Based on these market comparables, the total investment required to fund a global dFDA Infrastructure initiative, from initial build to widespread adoption, can be estimated to be in the range of **\$50 million to {{< var dct_platform_funding_medium >}}**.
 
-- The lower end (~\{{< var treaty_campaign_budget_reserve >}}) covers building a solid platform and achieving initial scale, similar to companies like Science 37 or Thread.
-- The upper end (~\{{< var recovery_trial_cost_per_patient >}}M+) reflects the multi-year investment for a market-leading, feature-rich global platform with extensive third-party tools, analogous to Medable's trajectory.
+- The lower end (~$50M) covers building a solid platform and achieving initial scale, similar to companies like Science 37 or Thread.
+- The upper end (~$500M+) reflects the multi-year investment for a market-leading, feature-rich global platform with extensive third-party tools, analogous to Medable's trajectory.
 
 This top-down estimate matches the bottom-up analysis. While a core, open-source platform can start for tens of millions (upfront build ROM), a fully-realized, globally adopted dFDA represents a **multi-hundred-million-dollar undertaking**, consistent with "Medium Case" and "Worst Case" scenarios.
 
@@ -260,7 +260,7 @@ The **5M MAU** target is an illustrative milestone used for these initial ROM es
 - **Marginal Cost Per Additional User:**
   - As a large-scale software platform, the dFDA system has high fixed costs (infrastructure, core engineering) but very low variable costs. Therefore, the **marginal cost** of supporting one additional user is expected to be a small fraction of the average cost, likely **pennies per year**. This cost will decrease further as the platform achieves greater economies of scale, making the system exceptionally efficient at supporting a global user base.
 
-_(Note: The underlying cloud infrastructure cost (\{{< var dfda_opex_regulatory >}}-\{{< var dfda_opex_platform_maintenance >}}/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
+_(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
 
 \*Note on Participant Financial Contributions and NIH Cost Discounts (Alignment with "Right to Trial & FDA Upgrade Act"):
 
@@ -368,10 +368,10 @@ This table presents point estimates for each scenario, with the overall range of
 
 | Component                                    | Best Case (Upfront / Annual) | Medium Case (Upfront / Annual) | Worst Case (Upfront / Annual) | Key Assumptions & Variables Driving Range                                                                  |
 | :------------------------------------------- | :--------------------------- | :----------------------------- | :---------------------------- | :--------------------------------------------------------------------------------------------------------- |
-| **Global Data Integration**                  | {{< var dfda_opex_community >}} / ~$0                    | $125M / {{< var value_of_statistical_life >}}                   | $1.5B / $150M                 | Success of AI/automation, standards adoption, #systems, vendor cooperation.                                |
-| **Bounty & Prize Program (Act SEC. 204(i))** | $1M (Prizes) / ~$0           | {{< var dfda_opex_platform_maintenance >}} (Bounties) / {{< var dfda_opex_community >}}          | {{< var treaty_campaign_budget_reserve >}} (Major Bounties) / $10M  | Success of organic ecosystem growth vs. need to incentivize critical plugin/tool development via bounties. |
-| **Legal/Regulatory Harmonization**           | $1.5M / ~$0                  | {{< var sensitivity_dfda_opex_conservative >}} / $3M                     | {{< var average_us_hourly_wage >}}0M / {{< var sensitivity_dfda_opex_optimistic >}}                  | Effectiveness of AI legal tools, political will, complexity of global law.                                 |
-| **Global Rollout & Adoption**                | ~$0 / ~$0                    | $12M / $3M                     | $125M / {{< var sensitivity_dfda_opex_optimistic >}}                  | Need for training/support beyond platform status, user interface complexity.                               |
+| **Global Data Integration**                  | $2M / ~$0                    | $125M / $10M                   | $1.5B / $150M                 | Success of AI/automation, standards adoption, #systems, vendor cooperation.                                |
+| **Bounty & Prize Program (Act SEC. 204(i))** | $1M (Prizes) / ~$0           | $15M (Bounties) / $2M          | $50M (Major Bounties) / $10M  | Success of organic ecosystem growth vs. need to incentivize critical plugin/tool development via bounties. |
+| **Legal/Regulatory Harmonization**           | $1.5M / ~$0                  | $60M / $3M                     | $300M / $30M                  | Effectiveness of AI legal tools, political will, complexity of global law.                                 |
+| **Global Rollout & Adoption**                | ~$0 / ~$0                    | $12M / $3M                     | $125M / $30M                  | Need for training/support beyond platform status, user interface complexity.                               |
 | **DAO Governance Operations**                | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
 | **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding core platform build/ops.                                        |
 
@@ -385,10 +385,10 @@ Even when pursuing efficient strategies, the potential cost for the full dFDA in
 
 Based on the detailed technical specification, a ROM estimate suggests:
 
-- **Initial Core Platform Build (~2.5 years): [~\$37.5 - \{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
+- **Initial Core Platform Build (~2.5 years): [~\$37.5 - {{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
 - **Annual Core Platform Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)** (These platform operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by platform bounties)
 
-This revised, bottom-up ROM highlights that while the core _technology platform_ build might be achievable within tens of millions, the previously estimated billions likely reflect the total cost of the entire global initiative. This includes massive integration efforts, legal frameworks, global rollout, and the financial ecosystem involving participant contributions and the direct NIH-funded discounts to patient costs, rather than direct platform-disbursed compensation. This conclusion is further supported by the top-down analogous estimate derived from market comparables, which points to a **total initiative investment in the range of \$50 million to \{{< var dct_platform_funding_medium >}}** for a commercial-grade equivalent.
+This revised, bottom-up ROM highlights that while the core _technology platform_ build might be achievable within tens of millions, the previously estimated billions likely reflect the total cost of the entire global initiative. This includes massive integration efforts, legal frameworks, global rollout, and the financial ecosystem involving participant contributions and the direct NIH-funded discounts to patient costs, rather than direct platform-disbursed compensation. This conclusion is further supported by the top-down analogous estimate derived from market comparables, which points to a **total initiative investment in the range of \$50 million to {{< var dct_platform_funding_medium >}}** for a commercial-grade equivalent.
 
 ## dFDA Benefit Analysis - Quantifying the Savings
 
@@ -509,7 +509,7 @@ Beyond direct importation effects, the fundamental efficiencies introduced by th
 
 #### U.S.-Specific
 
-- [Chronic diseases account for ~90% of U.S. healthcare spending](../references.qmd#us-chronic-disease-spending) (~\{{< var global_annual_war_indirect_costs_total >}}/year).
+- [Chronic diseases account for ~90% of U.S. healthcare spending](../references.qmd#us-chronic-disease-spending) .
 - Preventive care is underfunded (~5% of spend); [every \$1 spent on prevention saves ~\$3](../references.qmd#prevention-cost-savings-ratio).
 - Doubling effective preventive spending could yield hundreds of billions in annual savings.
 - **Example Calculation:** If preventive spending increases by $205B and each [\$1 saves $3](../references.qmd#prevention-cost-savings-ratio), additional savings = $205B × 3 = **\$615B/year**.
@@ -535,8 +535,8 @@ $$
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
 - **Value of a Statistical Life (VSL):** [U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved](../references.qmd#vsl-value-statistical-life).
-- **QALY Framework:** [Standard willingness-to-pay is **$100,000–${{< var qalys_from_prevention_optimistic >}} per QALY gained**](../references.qmd#qaly-value).
-- **Example Calculation:** If faster access saves {{< var dfda_large_trial_size >}} QALYs/year, annual benefit = 10,000 × [${{< var qalys_from_prevention_optimistic >}}](../references.qmd#qaly-value) = **\$1.5B**. If 10,000 lives are saved, benefit = 10,000 × [{{< var value_of_statistical_life >}}](../references.qmd#vsl-value-statistical-life) = **\{{< var global_clinical_trial_market_annual >}}**.
+- **QALY Framework:** [Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**](../references.qmd#qaly-value).
+- **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × [{{< var standard_economic_qaly_value_usd >}}](../references.qmd#qaly-value) = **$1.5B**. If 10,000 lives are saved, benefit = 10,000 × [{{< var value_of_statistical_life >}}](../references.qmd#vsl-value-statistical-life) = **$100B**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 
 #### Gross R and D Savings from dFDA Implementation

@@ -12,6 +12,20 @@ This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War a
 
 **Important:** Use `tsx` (not ts-node) to run TypeScript files. Example: `npx tsx scripts/review/review.ts`
 
+## Code Quality and Verification Standards
+
+**CRITICAL: These rules exist to prevent careless errors that have caused significant problems in the past.**
+
+### Commit Rules
+
+**NEVER commit changes unless:**
+1. The user has **explicitly requested** a commit
+2. You have **reviewed EVERY SINGLE CHANGE** for errors
+3. You have **verified all parameter names** match `_variables.yml` (lowercase format)
+4. You have **run validation checks** to ensure no regressions
+
+
+
 ## Content Standards
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**
