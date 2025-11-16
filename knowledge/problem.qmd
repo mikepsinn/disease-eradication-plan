@@ -48,12 +48,12 @@ If aliens were studying you, they'd probably conclude you can't count past 3,000
 
 Here's how humanity allocates its resources:
 
-**Killing each other:** ${{< var global_annual_conflict_deaths_state_violence >}} billion per year  
+**Killing each other:** {{< var global_annual_human_cost_state_violence >}} per year
 **Curing diseases:** $68 billion per year
 
 That's a 40:1 ratio, which in technical terms is called "having your priorities backwards."
 
-For comparison, imagine if you spent ${{< var global_annual_conflict_deaths_state_violence >}} on guns and $68 on food. Your neighbors would stage an intervention (or call the police, or possibly just move). But when humanity does it, you call it "defense spending" and give everyone medals.
+For comparison, imagine if you spent {{< var global_annual_human_cost_state_violence >}} on guns and $68 on food. Your neighbors would stage an intervention (or call the police, or possibly just move). But when humanity does it, you call it "defense spending" and give everyone medals.
 
 ### On the Pentagon's Accounting
 

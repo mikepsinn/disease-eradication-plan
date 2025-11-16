@@ -116,7 +116,7 @@ This stream models the benefit of accelerating the approval of new drugs that wo
 - **Scenario Values:**
   - **Conservative:** 15 drugs/year $\times$ 1 year acceleration $\times$ {{< var caregiver_cost_annual >}} QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**{{< var qalys_from_faster_access_conservative >}} QALYs**</a>
   - **Base:** 20 drugs/year $\times$ 1.5 years acceleration $\times$ 6,667 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**24% QALYs**</a>
-  - **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ {{< var dfda_large_trial_size >}} QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**{{< var qalys_from_new_therapies >}} QALYs**</a>
+  - **Optimistic:** 25 drugs/year $\times$ 2 years acceleration $\times$ 10,000 QALYs/drug = <a href="#summary-of-total-annual-qaly-gains">**{{< var qalys_from_new_therapies >}} QALYs**</a>
 
 #### B. QALYs from Improved Prevention and Real-World Evidence (RWE)
 
@@ -161,7 +161,7 @@ This stream models the benefit of enabling trials for therapies that are current
 - **Scenario Values:**
   - **Conservative:** 5 new therapies/year $\times$ {{< var dfda_drug_approvals_per_year_high >}} patients/therapy $\times$ 5 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**{{< var qalys_from_prevention_conservative >}} QALYs**</a>
   - **Base:** 10 new therapies/year $\times$ 5,000 patients/therapy $\times$ 10 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**60% QALYs**</a>
-  - **Optimistic:** 20 new therapies/year $\times$ {{< var dfda_large_trial_size >}} patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**{{< var qalys_from_new_therapies_optimistic >}} QALYs**</a>
+  - **Optimistic:** 20 new therapies/year $\times$ 10,000 patients/therapy $\times$ 15 QALYs/patient = <a href="#summary-of-total-annual-qaly-gains">**{{< var qalys_from_new_therapies_optimistic >}} QALYs**</a>
 
 #### Summary of Total Annual QALY Gains {#summary-of-total-annual-qaly-gains}
 

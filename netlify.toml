@@ -26,15 +26,18 @@
     fi
     quarto --version || error_exit "Quarto installation failed"
     
-    # Install Python dependencies (without --user to avoid path issues)
+    # Install Python dependencies (use --user for Netlify build environment)
     echo "=== Step 3: Installing Python dependencies ==="
-    python3 -m pip install --upgrade pip || python -m pip install --upgrade pip || error_exit "Failed to upgrade pip"
-    python3 -m pip install -r requirements.txt || python -m pip install -r requirements.txt || error_exit "Failed to install Python packages"
+    python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user || error_exit "Failed to upgrade pip"
+    python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user || error_exit "Failed to install Python packages"
+    
+    # Add user site-packages to PYTHONPATH so Python can find installed packages
+    export PYTHONPATH="$HOME/.local/lib/python3.12/site-packages:$HOME/.local/lib/python3.11/site-packages:$HOME/.local/lib/python3.10/site-packages:$PYTHONPATH"
     
     # Install local dih_models package
     echo "=== Step 4: Installing local package ==="
     if [ -f "pyproject.toml" ]; then
-      python3 -m pip install -e . || python -m pip install -e . || echo "Warning: Local package installation failed, continuing..."
+      python3 -m pip install -e . --user || python -m pip install -e . --user || echo "Warning: Local package installation failed, continuing..."
     fi
     
     # Install Jupyter kernel (use --user for kernel, but ensure Python can find packages)

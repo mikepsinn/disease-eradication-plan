@@ -55,8 +55,8 @@ The math is simple: If everyone has 1% fewer weapons, the balance stays exactly 
 
 Twenty-seven billion dollars funds:
 
-- 54,000 clinical trials at ${{< var qalys_from_new_therapies >}} each (the cheap way)
-- Or 27 million patients in trials at ${{< var traditional_large_trial_size >}} each
+- 54,000 clinical trials at $500,000 each (the cheap way)
+- Or 27 million patients in trials at ${{< var dfda_target_cost_per_patient_usd >}} each
 - Or 540 new drug approvals (current rate: 50 per year)
 - Or curing 10-20 rare diseases completely in Year 1
 - Or preventing 180,000 deaths annually
