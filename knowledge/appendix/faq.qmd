@@ -33,7 +33,7 @@ You're just scaling what already succeeded. This is less ambitious than Netflix 
 
 - Current US military: $999B
 - After 1% reduction: $989B
-- Difference: {{< var dih_treasury_trial_subsidies_min >}} (what the Pentagon loses in its couch cushions quarterly)
+- Difference: $10B (what the Pentagon loses in its couch cushions quarterly)
 
 This isn't about vulnerability; it's about third-grade arithmetic. Since every nation reduces by 1%, the relative balance stays identical. It's like everyone agreeing to be 1% less stupid simultaneously. No one gains advantage. Your enemies have 1% fewer bombs pointed at you, which even a general should recognize as "good."
 
@@ -119,9 +119,9 @@ But we can't trust them to click YES on "should we cure disease"? Besides, polls
 
 **FDA delays** (1962-present): 4-10 million American deaths from drug lag
 
-**FDA-prevented disasters**: Maybe thalidomide ({{< var traditional_large_trial_size >}} deaths prevented)
+**FDA-prevented disasters**: Maybe thalidomide (1,000 deaths prevented)
 
-**Net**: FDA has killed 4,000-{{< var dfda_large_trial_size >}} people for every person it saved.
+**Net**: FDA has killed 4,000-10,000 people for every person it saved.
 
 **Under dFDA**: Patients see real data on risks/benefits and decide for themselves. Adults making informed choices about their own bodies.
 
@@ -168,7 +168,7 @@ Even if your country already spends a lot on research, it's not enough. A virus 
 
 **The returns** are high because:
 
-- The system captures value from a $109T disease burden. The economic benefits work out to over $7.5 million per person globally over a 50-year period ({{< var total_complete_benefits_annual >}} annual benefit ÷ 8B people = $152K/person/year)
+- The system captures value from a $109T disease burden. The economic benefits work out to over $7.5 million per person globally over a 50-year period ($1.2T annual benefit ÷ 8B people = $152K/person/year)
 - 10% of $27.2B yearly inflows
 - Divided among bondholders
 - Math checks out
@@ -310,7 +310,7 @@ This isn't a fantasy. It's a hostile takeover of the political influence market.
 
 **Response**:
 
-**Worst case**: The system runs 100,000 trials and learns, with absolute certainty, 100,000 things that don't work. This data alone is more valuable than anything the NIH has produced in decades. Edison found {{< var dfda_large_trial_size >}} ways not to make a lightbulb. You'll find 100,000 ways not to cure cancer. That's called science.
+**Worst case**: The system runs 100,000 trials and learns, with absolute certainty, 100,000 things that don't work. This data alone is more valuable than anything the NIH has produced in decades. Edison found 10,000 ways not to make a lightbulb. You'll find 100,000 ways not to cure cancer. That's called science.
 
 **That's still better than**:
 
@@ -343,7 +343,7 @@ This is a classic collective action problem. A burning building where everyone w
 1.  Participate now → Might succeed
 2.  Wait → Definitely fails
 
-**While you wait, {{< var qalys_from_prevention_optimistic >}} people die today.**
+**While you wait, 150,000 people die today.**
 
 ## "I Don't Have Time"
 
@@ -364,7 +364,7 @@ This is a classic collective action problem. A burning building where everyone w
 - No more sick days: Hundreds of hours
 - Extra years of life: Tens of thousands of hours
 
-**ROI**: 27 minutes for potentially {{< var qalys_from_prevention_conservative >}} extra hours of life.
+**ROI**: 27 minutes for potentially 50,000 extra hours of life.
 
 **You have time. You just haven't prioritized not dying.** You spent more time today watching videos of cats doing things cats don't normally do.
 
@@ -385,7 +385,7 @@ This is a classic collective action problem. A burning building where everyone w
 
 **What's actually unrealistic**:
 
-- Continuing to spend {{< var global_military_spending_post_treaty_annual_2024 >}} on weapons while sitting on 13,000 nuclear warheads, enough to cause an extinction-level event 130 times over.
+- Continuing to spend $2.7T on weapons while sitting on 13,000 nuclear warheads, enough to cause an extinction-level event 130 times over.
 - Expecting different results from the same broken system.
 - Thinking we can survive the AI revolution without fixing incentives.
 
@@ -401,7 +401,7 @@ This is a classic collective action problem. A burning building where everyone w
 
 - 200+ years avoiding major wars
 - Surrounded by both World Wars (literally in the middle of the apocalypse, made chocolate)
-- GDP per capita: {{< var switzerland_gdp_per_capita_k >}},000 (turns out not killing people is profitable)
+- GDP per capita: $93,000 (turns out not killing people is profitable)
 - Defense spending: 0.7% of GDP (pocket change)
 - Life expectancy: 84 years (5 years longer than Americans who spend 5x more on "defense")
 - Proof that being boring is an excellent defense strategy
@@ -516,7 +516,7 @@ These technologies already verify hundreds of millions of users globally for ban
 
 **Objection**: "How do you ensure the money actually helps patients instead of funding more bureaucracy?"
 
-**Response**: The [decentralized FDA](../solution/dfda.qmd) model is **[80 times more efficient](../references.qmd#recovery-trial-82x-cost-reduction)**. It uses pragmatic trials costing [{{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500) versus [$41,000 in traditional trials](../references.qmd#trial-cost-41k). The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that same budget, this model could run 2,800 trials for 2.8 million patients. The evidence is overwhelming.
+**Response**: The [decentralized FDA](../solution/dfda.qmd) model is **[80 times more efficient](../references.qmd#recovery-trial-82x-cost-reduction)**. It uses pragmatic trials costing [$500 per patient](../references.qmd#recovery-cost-500) versus [$41,000 in traditional trials](../references.qmd#trial-cost-41k). The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that same budget, this model could run 2,800 trials for 2.8 million patients. The evidence is overwhelming.
 
 ## "Why Not Just Increase Health Funding Directly?"
 
@@ -528,7 +528,7 @@ These technologies already verify hundreds of millions of users globally for ban
 
 **Objection**: "This will destroy millions of jobs in the defense industry."
 
-**Response**: This is about redirecting waste into a new engine for job creation. The U.S. contribution is less than {{< var trial_cost_reduction_pct >}} of the [trillions the Pentagon already can't account for](../references.qmd#pentagon-unaccounted-2-5t). You're taking that wasted money to create jobs in medicine. The same engineers building guidance systems can build next-generation medical imaging devices. This is a net job creator.
+**Response**: This is about redirecting waste into a new engine for job creation. The U.S. contribution is less than 0.5% of the [trillions the Pentagon already can't account for](../references.qmd#pentagon-unaccounted-2-5t). You're taking that wasted money to create jobs in medicine. The same engineers building guidance systems can build next-generation medical imaging devices. This is a net job creator.
 
 ## "This Is Disrespectful to Soldiers"
 

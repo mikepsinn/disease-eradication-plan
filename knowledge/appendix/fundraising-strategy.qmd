@@ -1,6 +1,6 @@
 ---
 title: Fundraising Strategy
-description: The $2.5B Activation Energy - How to raise $1.2B-$2.5B through multi-phase approach targeting crypto whales, health billionaires, and major foundations
+description: The $2.5B Activation Energy - Comprehensive strategy for raising $1.2B-$2.5B through multi-phase approach targeting crypto whales, health billionaires, and major foundations
 published: true
 tags:
   - fundraising
@@ -24,11 +24,11 @@ from dih_models.parameters import *
 
 <!-- BEGIN CONTENT MERGED FROM economics/fundraising/fundraising-plan.md -->
 
-## On How to Raise $2.5B to Unlock {{< var treaty_annual_funding >}}+/Year Forever
+## On How to Raise $2.5B to Unlock $27B+/Year Forever
 
 The capital required for the [1% Treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy", the one-time push to overcome political inertia and unlock **[$27+ billion annually](../references.qmd#value-captured-by-1pct-treaty)** for global health.
 
-Think of it as a $2.5B vending machine that dispenses {{< var treaty_annual_funding >}} per year. Forever.
+Think of it as a $2.5B vending machine that dispenses $27B per year. Forever.
 
 The economics are stupidly obvious. The challenge is convincing people the vending machine is real.
 
@@ -36,23 +36,23 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 
 ## Multi-Phase Strategy
 
-### Phase 1: Seed Round ({{< var treaty_campaign_budget_technology >}} - $400M)
+### Phase 1: Seed Round ($250M - $400M)
 
 - Build public engagement platform and policy frameworks for a potential referendum
 - Prove model in pilot countries
 - **Milestone:** 50M verified participants OR demonstrated public support for the treaty in a G20 nation
 
-### Phase 2: Series A ({{< var recovery_trial_cost_per_patient >}}M - {{< var treaty_campaign_total_cost >}})
+### Phase 2: Series A ($500M - $1B)
 
 - Scale to all G7 nations
 - Achieve [3.5% global participation](../references.qmd#3-5-rule) (280M people)
 - **Milestone:** 3.5% threshold OR first G7 government expresses intent to advance treaty discussions
 
-### Phase 3: Growth Round ({{< var recovery_trial_cost_per_patient >}}M - $1.1B)
+### Phase 3: Growth Round ($500M - $1.1B)
 
 - Foster conditions for ratification in major powers (US, EU, China) through public education and diplomatic engagement
 - Lay the groundwork for the future capitalization of the [DIH](../solution/dih.qmd) treasury upon treaty ratification
-- **Milestone:** First {{< var treaty_campaign_total_cost >}} disbursement
+- **Milestone:** First $1B disbursement
 
 ## Key Innovation: Nobody Gets Paid Unless It Works
 
@@ -102,18 +102,18 @@ The primary risk elimination mechanism:
 
 #### Speed vs. Scale Trade-off
 
-- 1 meeting → {{< var treaty_campaign_budget_reserve >}} check vs. {{< var qalys_from_prevention_conservative >}} meetings → $50M in small checks
+- 1 meeting → $50M check vs. 50,000 meetings → $50M in small checks
 - 6-12 months vs. 18+ months timeline
 - Lower legal complexity with fewer investors
 
 #### Unit Economics Advantage
 
 - Higher success probability with mission-aligned billionaires
-- Larger check sizes ($10M-100M vs. $1-10K)
+- Larger check sizes ($10-100M vs. $1-10K)
 
 ## Target Categories & Prospects
 
-### Category 1: Crypto Whales & Protocol Treasuries ({{< var recovery_trial_cost_per_patient >}}M-1B potential)
+### Category 1: Crypto Whales & Protocol Treasuries ($500M-1B potential)
 
 #### Individual Crypto Billionaires
 
@@ -140,7 +140,7 @@ The primary risk elimination mechanism:
 - Patrick Soon-Shiong (NantHealth, $7B) - [Cancer research focus](../references.qmd#patrick-soon-shiong-cancer-research-focus)
 - Anne Wojcicki (23andMe) - Genomics, patient data
 
-### Category 3: Mission-Aligned Mega-Foundations ({{< var recovery_trial_cost_per_patient >}}M-1B potential)
+### Category 3: Mission-Aligned Mega-Foundations ($500M-1B potential)
 
 #### Health-Focused Foundations
 
@@ -175,7 +175,7 @@ For [Company], this means 2-5X more R&D funding for the same work you're already
 
 **Subject:** 10X your health impact without additional donations
 
-"Your {{< var treaty_campaign_budget_reserve >}} investment would empower [Foundation] to significantly influence the policy recommendations for the allocation of {{< var victory_bond_annual_payout >}} annually - 54X leverage on your committed capital, in perpetuity.
+"Your $50M investment would empower [Foundation] to significantly influence the policy recommendations for the allocation of $2.7B annually - 54X leverage on your committed capital, in perpetuity.
 
 This uses the same proven model that created [$7T in fossil fuel subsidies](../references.qmd#fossil-fuel-subsidies), but directed toward saving lives."
 
@@ -185,35 +185,35 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 ## Detailed Budget Breakdown
 
-### Phase 1: Seed ({{< var treaty_campaign_budget_technology >}} - $400M)
+### Phase 1: Seed ($250M - $400M)
 
 | Category                               | Lower Bound | Upper Bound | Justification                                                  |
 | :------------------------------------- | :---------- | :---------- | :------------------------------------------------------------- |
-| **Operations (Core Team)**             | $10M        | {{< var dfda_opex_platform_maintenance >}}        | Lean founding team (15-20 people) with VICTORY tokens          |
-| **Platform & Tech MVP**                | {{< var treaty_campaign_budget_reserve >}}        | $75M        | Engineering costs with 50.0% cash / 50.0% token split          |
-| **Legal & Framework (Pilots)**         | {{< var dfda_upfront_build >}}        | {{< var sensitivity_dfda_opex_conservative >}}        | Top-tier law firms with success fees tied to the creation of future government-issued VICTORY Social Impact Bonds upon treaty ratification |
-| **Pilot Public Engagement & Policy Education** | {{< var treaty_campaign_budget_partnerships >}}       | $150M       | Competitive prize for organizations demonstrating the most effective public engagement and policy education leading to increased public support |
-| **Referendum Points System**           | {{< var dfda_opex_regulatory >}}         | $10M        | Infrastructure for non-financial incentives                    |
+| **Operations (Core Team)**             | $10M        | $15M        | Lean founding team (15-20 people) with VICTORY tokens          |
+| **Platform & Tech MVP**                | $50M        | $75M        | Engineering costs with 50.0% cash / 50.0% token split          |
+| **Legal & Framework (Pilots)**         | $40M        | $60M        | Top-tier law firms with success fees tied to the creation of future government-issued VICTORY Social Impact Bonds upon treaty ratification |
+| **Pilot Public Engagement & Policy Education** | $100M       | $150M       | Competitive prize for organizations demonstrating the most effective public engagement and policy education leading to increased public support |
+| **Referendum Points System**           | $5M         | $10M        | Infrastructure for non-financial incentives                    |
 | **Contingency**                        | $45M        | $90M        | 20-30% buffer for high-uncertainty policy initiative           |
 
-### Phase 2: Series A ({{< var recovery_trial_cost_per_patient >}}M - {{< var treaty_campaign_total_cost >}})
+### Phase 2: Series A ($500M - $1B)
 
 | Category                                   | Lower Bound | Upper Bound | Pay-for-Success Model                                        |
 | :----------------------------------------- | :---------- | :---------- | :----------------------------------------------------------- |
-| **Scaled Public Engagement & Policy Education** | $300M       | $600M       | Competitive Prize Ecosystem: {{< var treaty_campaign_budget_partnerships >}}, {{< var treaty_campaign_budget_reserve >}}, {{< var caregiver_value_per_hour_simple >}}M prizes for achieving significant public awareness and support thresholds |
-| **Industry Partnerships**          | {{< var treaty_campaign_budget_reserve >}}        | {{< var treaty_campaign_budget_partnerships >}}       | Performance-based incentives for collaborative partnerships with relevant industries |
-| **Platform Scale-Up**                      | {{< var treaty_campaign_budget_partnerships >}}       | $150M       | Scale to 300M+ users with performance bonuses                |
-| **Global Legal Expansion**                 | {{< var dfda_upfront_build >}}        | $80M        | Success-fee-based retainers in all target nations            |
-| **Contingency**                            | {{< var value_of_statistical_life >}}        | $70M        | Operational buffer for scaled global initiative              |
+| **Scaled Public Engagement & Policy Education** | $300M       | $600M       | Competitive Prize Ecosystem: $100M, $50M, $25M prizes for achieving significant public awareness and support thresholds |
+| **Strategic Industry Engagement**          | $50M        | $100M       | Performance-based incentives for collaborative partnerships with relevant industries |
+| **Platform Scale-Up**                      | $100M       | $150M       | Scale to 300M+ users with performance bonuses                |
+| **Global Legal Expansion**                 | $40M        | $80M        | Success-fee-based retainers in all target nations            |
+| **Contingency**                            | $10M        | $70M        | Operational buffer for scaled global initiative              |
 
-### Phase 3: Growth Round ({{< var recovery_trial_cost_per_patient >}}M - $1.1B)
+### Phase 3: Growth Round ($500M - $1.1B)
 
 | Category                               | Lower Bound | Upper Bound | Success-Based Structure                                   |
 | :------------------------------------- | :---------- | :---------- | :-------------------------------------------------------- |
 | **Global Public Education Initiatives** | $300M       | $750M       | Competitive prize model for organizations achieving significant public and policy maker engagement in nations yet to fully embrace the treaty |
-| **Industry Collaboration (Final Tranche)** | {{< var treaty_campaign_budget_reserve >}}        | {{< var treaty_campaign_budget_partnerships >}}       | Entirely success-based incentives for corporate collaboration to support treaty implementation |
-| **Treasury & Governance Launch**       | {{< var treaty_campaign_budget_partnerships >}}       | $150M       | Developer bonuses tied to flawless policy recommendation and technical launch for the treasury |
-| **Contingency**                        | {{< var treaty_campaign_budget_reserve >}}        | {{< var treaty_campaign_budget_partnerships >}}       | Final buffer for most critical policy advancement phase   |
+| **Industry Collaboration (Final Tranche)** | $50M        | $100M       | Entirely success-based incentives for corporate collaboration to support treaty implementation |
+| **Treasury & Governance Launch**       | $100M       | $150M       | Developer bonuses tied to flawless policy recommendation and technical launch for the treasury |
+| **Contingency**                        | $50M        | $100M       | Final buffer for most critical policy advancement phase   |
 
 ## Bottom-Up Budget Justification
 
@@ -226,14 +226,14 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 ### Platform Development
 
 - 50-person engineering team/contractor budget
-- 3 independent security audits ({{< var dfda_opex_regulatory >}})
+- 3 independent security audits ($5M)
 - Global cloud infrastructure ($10M)
 - Compliance features (GDPR, etc.)
 
 ### Legal & Policy Engagement
 
-- 5 top-tier global law firms ({{< var dfda_opex_regulatory >}}/year each)
-- 3 policy advocacy and government consultation firms ({{< var dfda_opex_regulatory >}}/year each)
+- 5 top-tier global law firms ($5M/year each)
+- 3 policy advocacy and government consultation firms ($5M/year each)
 - 2-year retainer for pilot phase
 - Success fees are structured to be aligned with the eventual creation of government-issued VICTORY Social Impact Bonds
 
@@ -251,27 +251,27 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 - **Best for:** Crypto whales who understand token mechanics
 - **Timeline:** 2-4 weeks to close
-- **Minimum:** {{< var dfda_opex_regulatory >}} investment
+- **Minimum:** $5M investment
 
 ### Option 2: Convertible Note
 
 - **Best for:** Traditional investors/foundations
 - **Structure:** Debt that converts to governance tokens
 - **Timeline:** 4-8 weeks to close
-- **Minimum:** {{< var value_of_statistical_life >}} investment
+- **Minimum:** $10M investment
 
 ### Option 3: Series Seed Equity
 
 - **Best for:** VCs and institutional investors
 - **Timeline:** 8-12 weeks to close
-- **Minimum:** {{< var caregiver_value_per_hour_simple >}}M investment
+- **Minimum:** $25M investment
 
 ### Option 4: Revenue Share Agreement
 
 - **Best for:** Conservative institutions
 - **Structure:** Fixed % of treaty inflows
 - **Timeline:** 6-10 weeks to close
-- **Minimum:** {{< var treaty_campaign_budget_reserve >}} investment
+- **Minimum:** $50M investment
 
 ## Execution Timeline
 
@@ -299,15 +299,15 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 ### Month 10-12: Closing Wave 2 ($400M-1B)
 
-- Close remaining funding to reach {{< var recovery_trial_cost_per_patient >}}M-1.3B total
+- Close remaining funding to reach $500M-1.3B total
 - Target: Total raise of $1-2.5B
 
 ## Success Metrics
 
 - **Month 3:** 25 outreach attempts, 10 meetings scheduled
-- **Month 6:** {{< var treaty_campaign_budget_technology >}} committed, 5 investors closed
-- **Month 9:** {{< var recovery_trial_cost_per_patient >}}M committed, 10 investors closed
-- **Month 12:** {{< var treaty_campaign_total_cost >}}+ committed, 15+ investors closed
+- **Month 6:** $250M committed, 5 investors closed
+- **Month 9:** $500M committed, 10 investors closed
+- **Month 12:** $1B+ committed, 15+ investors closed
 
 ## Risk Mitigation
 
@@ -331,7 +331,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 ## The Economic Reality
 
-This isn't traditional fundraising; it's political activation. The approach is inspired by how focused public and diplomatic engagement can shape policy, where concentrated efforts unlock significant societal benefits, similar to how focused advocacy in other sectors leads to substantial economic shifts.
+This isn't traditional fundraising; it's strategic policy activation. The approach is inspired by the effectiveness of robust public and diplomatic engagement in shaping policy, where focused efforts can unlock significant societal benefits, similar to how focused advocacy in other sectors can lead to substantial economic shifts.
 
 The twist: offer them an even better deal to fund cures instead of wars.
 

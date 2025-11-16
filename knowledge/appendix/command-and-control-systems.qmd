@@ -253,8 +253,8 @@ Your collection of images, videos, and documents that make people feel things.
 - `Asset ID` (Autonumber) - Meme #80,085
 - `Asset Name` (Text) - "Crying_Child_With_Cancer.jpg"
 - `Type` (Single Select) - Format of manipulation:
-  - Image (worth {{< var traditional_large_trial_size >}} lies)
-  - Video (worth {{< var traditional_large_trial_size >}},000 lies)
+  - Image (worth 1,000 lies)
+  - Video (worth 1,000,000 lies)
   - Document (nobody reads these)
   - Audio (podcast probably)
 
