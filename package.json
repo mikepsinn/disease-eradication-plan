@@ -30,7 +30,9 @@
     "zod": "^3.25.76"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "lint:qmd": "markdownlint --config .markdownlint.json \"**/*.qmd\"",
@@ -124,11 +126,18 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "testMatch": [
+      "**/__tests__/**/*.test.ts",
       "**/tests/**/*.test.ts",
       "**/*.test.js"
     ],
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    }
+      "^.+\\.tsx?$": ["ts-jest", {
+        "useESM": true
+      }]
+    },
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "extensionsToTreatAsEsm": [".ts"]
   }
 }

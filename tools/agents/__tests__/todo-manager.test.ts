@@ -217,7 +217,7 @@ describe("EnhancedTodoManager", () => {
       const markdown = await manager.exportMarkdown();
 
       expect(markdown).toContain("# WISHONIA Todo List");
-      expect(markdown).toContain("Total Todos: 1");
+      expect(markdown).toContain("**Total Todos:** 1");
       expect(markdown).toContain(todo.id);
       expect(markdown).toContain(todo.issue);
     });
