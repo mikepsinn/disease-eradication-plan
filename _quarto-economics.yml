@@ -1,0 +1,195 @@
+project:
+  type: website
+  output-dir: _site/economics
+  execute-dir: project
+  render:
+    - knowledge/economics/economics.qmd
+    - knowledge/economics/peace-dividend.qmd
+    - knowledge/economics/health-dividend.qmd
+    - knowledge/economics/financial-plan.qmd
+    - knowledge/economics/campaign-budget.qmd
+    - knowledge/economics/health-savings-sharing-model.qmd
+    - knowledge/economics/victory-bonds.qmd
+    - knowledge/appendix/humanity-budget-overview.qmd
+    - knowledge/appendix/global-government-medical-research-spending.qmd
+    - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
+    - knowledge/appendix/clinical-trial-participants.qmd
+    - knowledge/appendix/peace-dividend-calculations.qmd
+    - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
+    - knowledge/appendix/research-acceleration-model.qmd
+    - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+    - knowledge/appendix/dfda-cost-benefit-analysis.qmd
+    - knowledge/appendix/economic-value-of-accelerated-treatments.qmd
+    - knowledge/appendix/intervention-comparison-table.qmd
+    - knowledge/appendix/data-storage-costs.qmd
+    - knowledge/appendix/dfda-qaly-model.qmd
+    - knowledge/appendix/investor-risk-analysis.qmd
+
+website:
+  title: "DIH Economic Models"
+  description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+  site-url: https://models.dih.earth
+  page-navigation: true
+  navbar:
+    right:
+      - text: "DIH.earth"
+        href: https://DIH.earth
+      - text: "Main Book"
+        href: https://WarOnDisease.org
+  sidebar:
+    collapse-level: 1
+    style: "floating"
+    search: true
+    contents:
+      - href: knowledge/economics/economics.qmd
+        text: "Overview"
+      - section: "Economic Analysis"
+        contents:
+          - href: knowledge/economics/peace-dividend.qmd
+            text: "Peace Dividend"
+          - href: knowledge/economics/health-dividend.qmd
+            text: "Health Dividend"
+      - section: "Supporting Data"
+        contents:
+          - href: knowledge/appendix/humanity-budget-overview.qmd
+            text: "Humanity Budget Overview"
+          - href: knowledge/appendix/global-government-medical-research-spending.qmd
+            text: "Government Medical Research Spending"
+          - href: knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
+            text: "Clinical Trial Spending by Phase"
+          - href: knowledge/appendix/clinical-trial-participants.qmd
+            text: "Clinical Trial Participants"
+      - section: "Detailed Calculations"
+        contents:
+          - href: knowledge/appendix/peace-dividend-calculations.qmd
+            text: "Peace Dividend Calculations"
+          - href: knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
+            text: "1% Treaty Cost-Effectiveness"
+          - href: knowledge/appendix/research-acceleration-model.qmd
+            text: "Research Acceleration Model"
+          - href: knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+            text: "Disease Eradication Lifetime Wealth"
+          - href: knowledge/appendix/dfda-cost-benefit-analysis.qmd
+            text: "dFDA Cost-Benefit Analysis"
+          - href: knowledge/appendix/economic-value-of-accelerated-treatments.qmd
+            text: "Economic Value of Accelerated Treatments"
+          - href: knowledge/appendix/intervention-comparison-table.qmd
+            text: "Intervention Comparison Table"
+          - href: knowledge/appendix/data-storage-costs.qmd
+            text: "Data Storage Costs"
+          - href: knowledge/appendix/dfda-qaly-model.qmd
+            text: "dFDA QALY Model"
+      - section: "Financial Planning"
+        contents:
+          - href: knowledge/economics/financial-plan.qmd
+            text: "Financial Plan"
+          - href: knowledge/economics/campaign-budget.qmd
+            text: "Campaign Budget"
+          - href: knowledge/appendix/investor-risk-analysis.qmd
+            text: "Investor Risk Analysis"
+          - href: knowledge/economics/health-savings-sharing-model.qmd
+            text: "Health Savings Sharing Model"
+          - href: knowledge/economics/victory-bonds.qmd
+            text: "VICTORY Social Impact Bonds"
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  env:
+    PYTHONPATH: "."
+
+format:
+  html:
+    theme:
+      - default
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+project:
+  type: website
+  output-dir: _site/economics
+  execute-dir: project
+
+website:
+  title: "DIH Economic Models"
+  description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+  site-url: https://models.dih.earth
+  page-navigation: true
+  navbar:
+    right:
+      - text: "DIH.earth"
+        href: https://DIH.earth
+      - text: "Main Book"
+        href: https://WarOnDisease.org
+  sidebar:
+    collapse-level: 1
+    style: "floating"
+    search: true
+    contents:
+      - href: knowledge/economics/economics.qmd
+        text: "Overview"
+      - section: "Economic Analysis"
+        contents:
+          - href: knowledge/economics/peace-dividend.qmd
+            text: "Peace Dividend"
+          - href: knowledge/economics/health-dividend.qmd
+            text: "Health Dividend"
+      - section: "Supporting Data"
+        contents:
+          - href: knowledge/appendix/humanity-budget-overview.qmd
+            text: "Humanity Budget Overview"
+          - href: knowledge/appendix/global-government-medical-research-spending.qmd
+            text: "Government Medical Research Spending"
+          - href: knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
+            text: "Clinical Trial Spending by Phase"
+          - href: knowledge/appendix/clinical-trial-participants.qmd
+            text: "Clinical Trial Participants"
+      - section: "Detailed Calculations"
+        contents:
+          - href: knowledge/appendix/peace-dividend-calculations.qmd
+            text: "Peace Dividend Calculations"
+          - href: knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
+            text: "1% Treaty Cost-Effectiveness"
+          - href: knowledge/appendix/research-acceleration-model.qmd
+            text: "Research Acceleration Model"
+          - href: knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+            text: "Disease Eradication Lifetime Wealth"
+          - href: knowledge/appendix/dfda-cost-benefit-analysis.qmd
+            text: "dFDA Cost-Benefit Analysis"
+          - href: knowledge/appendix/economic-value-of-accelerated-treatments.qmd
+            text: "Economic Value of Accelerated Treatments"
+          - href: knowledge/appendix/intervention-comparison-table.qmd
+            text: "Intervention Comparison Table"
+          - href: knowledge/appendix/data-storage-costs.qmd
+            text: "Data Storage Costs"
+          - href: knowledge/appendix/dfda-qaly-model.qmd
+            text: "dFDA QALY Model"
+      - section: "Financial Planning"
+        contents:
+          - href: knowledge/economics/financial-plan.qmd
+            text: "Financial Plan"
+          - href: knowledge/economics/campaign-budget.qmd
+            text: "Campaign Budget"
+          - href: knowledge/appendix/investor-risk-analysis.qmd
+            text: "Investor Risk Analysis"
+          - href: knowledge/economics/health-savings-sharing-model.qmd
+            text: "Health Savings Sharing Model"
+          - href: knowledge/economics/victory-bonds.qmd
+            text: "VICTORY Social Impact Bonds"
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+
+format:
+  html:
+    theme:
+      - default
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+
