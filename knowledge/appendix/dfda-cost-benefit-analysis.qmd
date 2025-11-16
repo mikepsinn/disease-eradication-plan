@@ -1334,7 +1334,7 @@ def adoption_rate(t):
 # Calculate the annual savings for each year, considering the adoption rate
 # This is needed for the NPV visualization
 
-annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, T + 1)]
+annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, int(T) + 1)]
 
 print("NPV Model Parameters Loaded from economic_parameters.py")
 print(f"Upfront Cost (C0): ${C0:.4f}B")
@@ -1351,7 +1351,7 @@ import numpy_financial as npf
 # --- NPV of Costs ---
 # Create a stream of operational costs over the time horizon
 
-operational_costs_stream = [Cop] * T
+operational_costs_stream = [Cop] * int(T)
 # The npv function in numpy_financial takes the rate and a stream of cash flows.
 # It assumes the first cash flow is at t=1.
 

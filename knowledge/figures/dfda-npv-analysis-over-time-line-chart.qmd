@@ -44,10 +44,10 @@ def adoption_rate(t):
 
 # Calculate cumulative NPV over time
 
-years = np.arange(0, T + 1)
-cumulative_costs_npv = np.zeros(T + 1)
-cumulative_savings_npv = np.zeros(T + 1)
-cumulative_net_benefit_npv = np.zeros(T + 1)
+years = np.arange(0, int(T) + 1)
+cumulative_costs_npv = np.zeros(int(T) + 1)
+cumulative_savings_npv = np.zeros(int(T) + 1)
+cumulative_net_benefit_npv = np.zeros(int(T) + 1)
 
 # Year 0: upfront cost only
 
@@ -57,7 +57,7 @@ cumulative_net_benefit_npv[0] = -C0
 
 # Years 1-10: accumulate discounted costs and savings
 
-for t in range(1, T + 1):
+for t in range(1, int(T) + 1):
     # Operational cost for this year (discounted to present value)
     discounted_opex = Cop / ((1 + r) ** t)
     cumulative_costs_npv[t] = cumulative_costs_npv[t-1] + discounted_opex

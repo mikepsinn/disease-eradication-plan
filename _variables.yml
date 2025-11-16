@@ -7,7 +7,7 @@
 
 "accidents_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Accidental/unintentional injury death rate |\
-  \ Unit: deaths per 100,000 | Click to view source\">62.30</a>"
+  \ Unit: deaths per 100,000 | Click to view source\">62.3</a>"
 "action_time_invest_minutes": "<a href=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
   \ class=\"parameter-link\" title=\"Time to invest (minutes) | Unit: minutes | Click\
   \ to view calculation\">10</a>"
@@ -25,44 +25,44 @@
   \ to view calculation\">2</a>"
 "alzheimers_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Alzheimer's disease death rate | Unit: deaths\
-  \ per 100,000 | Click to view source\">27.70</a>"
+  \ per 100,000 | Click to view source\">27.7</a>"
 "antibiotics_life_extension_years": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" title=\"Life extension from antibiotics (conservative\
   \ mid-range from 5-23 years) | Unit: years | Click to view source\">10</a>"
 "average_market_return_pct": "<a href=\"/knowledge/references.qmd#average-stock-market-return\"\
   \ class=\"parameter-link\" title=\"Average annual stock market return (10%) | Unit:\
-  \ rate | Click to view source\">0.10</a>"
+  \ rate | Click to view source\">0.1%</a>"
 "average_us_hourly_wage": "<a href=\"/knowledge/references.qmd#average-us-hourly-wage\"\
   \ class=\"parameter-link\" title=\"Average US hourly wage | Unit: USD/hour | Click\
-  \ to view source\">30</a>"
+  \ to view source\">$30</a>"
 "benefit_drug_price_reduction_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#price-reduction\"\
   \ class=\"parameter-link\" title=\"Annual benefit from R&D savings passed to consumers\
-  \ | Unit: billions USD/year | Click to view calculation\">100</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$100B</a>"
 "benefit_earlier_drug_access_annual": "<a href=\"/knowledge/appendix/economic-value-of-accelerated-treatments.qmd\"\
   \ class=\"parameter-link\" title=\"Annual benefit from 7-year drug access acceleration\
-  \ | Unit: billions USD/year | Click to view calculation\">300</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$300B</a>"
 "benefit_medical_research_acceleration_annual": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ class=\"parameter-link\" title=\"Annual benefit from 115x research capacity increase\
-  \ | Unit: billions USD/year | Click to view calculation\">100</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$100B</a>"
 "benefit_mental_health_annual": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#mental-health\"\
   \ class=\"parameter-link\" title=\"Annual benefit from mental health treatment gap\
-  \ reduction | Unit: billions USD/year | Click to view calculation\">75</a>"
+  \ reduction | Unit: billions USD/year | Click to view calculation\">$75B</a>"
 "benefit_prevention_annual": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#prevention\"\
   \ class=\"parameter-link\" title=\"Annual benefit from economic viability of prevention\
-  \ | Unit: billions USD/year | Click to view calculation\">100</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$100B</a>"
 "benefit_rare_diseases_annual": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#rare-diseases\"\
   \ class=\"parameter-link\" title=\"Annual benefit from orphan drug viability | Unit:\
-  \ billions USD/year | Click to view calculation\">400</a>"
+  \ billions USD/year | Click to view calculation\">$400B</a>"
 "benefit_research_and_development_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" title=\"Annual R&D savings benefit (alias for dFDA gross\
   \ savings) | Formula: DFDA_GROSS_SAVINGS | Unit: billions USD/year | Click to view\
-  \ calculation\">50</a>"
+  \ calculation\">$50B</a>"
 "book_reading_speed_wpm": "<a href=\"/knowledge/references.qmd#average-reading-speed\"\
   \ class=\"parameter-link\" title=\"Average reading speed (conservative for non-fiction)\
   \ | Unit: words/minute | Click to view source\">200</a>"
 "book_reading_time_hours": "<a href=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ class=\"parameter-link\" title=\"Time to read the entire book | Formula: (WORDS\
-  \ ÷ SPEED) ÷ 60 | Unit: hours | Click to view calculation\">14.26</a>"
+  \ ÷ SPEED) ÷ 60 | Unit: hours | Click to view calculation\">14.3</a>"
 "cancer_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Cancer death rate (all cancers) | Unit: deaths\
   \ per 100,000 | Click to view source\">147</a>"
@@ -71,7 +71,7 @@
   \ + stroke) | Unit: deaths per 100,000 | Click to view source\">201</a>"
 "caregiver_annual_value_total": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"Total annual value of unpaid caregiving in US\
-  \ | Unit: USD/year | Click to view source\">600,000,000,000</a>"
+  \ | Unit: USD/year | Click to view source\">$600B</a>"
 "caregiver_cost_annual": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_COST_ANNUAL\
   \ - $6,000/year\">6,000</span>"
 "caregiver_count_us": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
@@ -84,20 +84,20 @@
   \ - ~110 hours/month\">110</span>"
 "caregiver_hours_per_week_avg": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"Average weekly hours of unpaid caregiving (25-26\
-  \ hours/week) | Unit: hours/week | Click to view source\">25.50</a>"
+  \ hours/week) | Unit: hours/week | Click to view source\">25.5</a>"
 "caregiver_value_per_hour": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"AARP valuation of caregiving per hour | Unit:\
-  \ USD/hour | Click to view source\">16.59</a>"
+  \ USD/hour | Click to view source\">$17</a>"
 "caregiver_value_per_hour_simple": "<a href=\"/knowledge/references.qmd#caregiver-replacement-cost\"\
   \ class=\"parameter-link\" title=\"Estimated replacement cost per hour of caregiving\
-  \ | Unit: USD/hour | Click to view source\">25</a>"
+  \ | Unit: USD/hour | Click to view source\">$25</a>"
 "childhood_vaccination_roi": "<a href=\"/knowledge/references.qmd#childhood-vaccination-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from childhood vaccination\
   \ programs | Unit: ratio | Click to view source\">13</a>"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
   \ class=\"parameter-link\" title=\"Combined peace and health dividends for ROI calculation\
   \ | Formula: PEACE_DIVIDEND + R&D_SAVINGS | Unit: billions USD/year | Click to view\
-  \ calculation\">164</a>"
+  \ calculation\">$164B</a>"
 "completed_trials_multiplier_actual": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#total-multiplier\"\
   \ class=\"parameter-link\" title=\"Actual completed trials multiplier (180x theoretical)\
   \ | Unit: ratio | Click to view calculation\">180</a>"
@@ -106,7 +106,7 @@
   \ for scale-up | Unit: ratio | Click to view calculation\">115</a>"
 "completion_rate_improvement_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
   \ class=\"parameter-link\" title=\"Completion rate improvement (1.6x from 60% →\
-  \ 95%) | Unit: ratio | Click to view calculation\">1.60</a>"
+  \ 95%) | Unit: ratio | Click to view calculation\">1.6</a>"
 "conservative_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative scenario ROI (net benefit ÷ total\
   \ costs) | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio | Click to view calculation\"\
@@ -118,13 +118,13 @@
 "cost_of_delay_qaly_days_per_second": "<a href=\"/knowledge/problem/cost-of-war.qmd#cost-of-delay\"\
   \ class=\"parameter-link\" title=\"QALY-days lost per second of inaction | Formula:\
   \ (QALYS_ANNUAL ÷ 365) ÷ SECONDS_PER_YEAR | Unit: QALY-days/second | Click to view\
-  \ calculation\">0.00</a>"
+  \ calculation\">8.04e-05</a>"
 "cost_per_life_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"Cost per life for investor-funded scenario |\
-  \ Unit: millions USD/life | Click to view calculation\">-6.56</a>"
+  \ Unit: millions USD/life | Click to view calculation\">$-7</a>"
 "cost_per_life_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"Cost per life counting military spending opportunity\
-  \ cost | Unit: millions USD/life | Click to view calculation\">-5.48</a>"
+  \ cost | Unit: millions USD/life | Click to view calculation\">$-5</a>"
 "current_active_trials": "<a href=\"/knowledge/references.qmd#active-clinical-trials-baseline\"\
   \ class=\"parameter-link\" title=\"Current active trials at any given time (3-5\
   \ year duration) | Unit: trials | Click to view source\">10,000</a>"
@@ -140,22 +140,22 @@
   \ Unit: drugs/year | Click to view source\">50</a>"
 "current_patient_eligibility_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-eligibility-rate\"\
   \ class=\"parameter-link\" title=\"Current patient eligibility rate for clinical\
-  \ trials (0.2%) | Unit: rate | Click to view source\">0.00</a>"
+  \ trials (0.2%) | Unit: rate | Click to view source\">0.002%</a>"
 "current_trials_per_year": "<a href=\"/knowledge/references.qmd#global-clinical-trials-per-year\"\
   \ class=\"parameter-link\" title=\"Current global clinical trials per year | Unit:\
   \ trials/year | Click to view source\">3,300</a>"
 "current_trial_abandonment_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-abandonment-rate\"\
   \ class=\"parameter-link\" title=\"Current trial abandonment rate (40% never complete)\
-  \ | Unit: rate | Click to view source\">0.40</a>"
+  \ | Unit: rate | Click to view source\">0.4%</a>"
 "current_trial_completion_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-completion-rate\"\
   \ class=\"parameter-link\" title=\"Current trial completion rate (60%) | Unit: rate\
-  \ | Click to view source\">0.60</a>"
+  \ | Click to view source\">0.6%</a>"
 "current_trial_slots_available": "<a href=\"/knowledge/references.qmd#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" title=\"Total trial slots available for 2.4B sick people\
   \ | Unit: slots | Click to view source\">5,000,000</a>"
 "daily_cost_inefficiency": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
   \ class=\"parameter-link\" title=\"Daily cost of healthcare system inefficiency\
-  \ | Unit: billions USD/day | Click to view calculation\">0.33</a>"
+  \ | Unit: billions USD/day | Click to view calculation\">$327M</a>"
 "deaths_during_reading_section": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
   \ class=\"parameter-link\" title=\"Deaths from curable diseases during reading one\
   \ section | Unit: deaths | Click to view calculation\">410</a>"
@@ -169,7 +169,7 @@
   \ class=\"parameter-link\" title=\"Total annual dFDA operational costs (sum of all\
   \ components: $15M + $10M + $8M + $5M + $2M) | Formula: PLATFORM_MAINTENANCE + STAFF\
   \ + INFRASTRUCTURE + REGULATORY + COMMUNITY | Unit: billions USD/year | Click to\
-  \ view calculation\">0.04</a>"
+  \ view calculation\">$40M</a>"
 "dfda_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"dFDA completed trials per year (capacity × completion\
   \ rate) | Formula: CAPACITY × COMPLETION_RATE | Unit: trials/year | Click to view\
@@ -186,7 +186,7 @@
 "dfda_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" title=\"Annual gross savings from 50% trial cost reduction\
   \ | Formula: TRIAL_MARKET × COST_REDUCTION_PCT | Unit: billions USD/year | Click\
-  \ to view calculation\">50</a>"
+  \ to view calculation\">$50B</a>"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ class=\"parameter-link\" title=\"Months to recruit 10,000+ patients in dFDA system\
   \ | Unit: months | Click to view calculation\">3</a>"
@@ -196,58 +196,58 @@
 "dfda_net_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ class=\"parameter-link\" title=\"Annual net savings (gross savings minus operational\
   \ costs) | Formula: GROSS_SAVINGS - ANNUAL_OPEX | Unit: billions USD/year | Click\
-  \ to view calculation\">49.96</a>"
+  \ to view calculation\">$50B</a>"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ class=\"parameter-link\" title=\"Years to reach full dFDA adoption | Unit: years\
   \ | Click to view calculation\">5</a>"
 "dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"dFDA core platform annual opex (midpoint of $11-26.5M)\
-  \ | Unit: billions USD/year | Click to view calculation\">0.02</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$19M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"Total NPV annual opex (dFDA core + DIH initiatives)\
   \ | Formula: DFDA_OPEX + DIH_OPEX | Unit: billions USD/year | Click to view calculation\"\
-  >0.04</a>"
+  >$40M</a>"
 "dfda_npv_net_benefit_conservative": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
   \ class=\"parameter-link\" title=\"Conservative NPV net benefit (total cost × ROI)\
   \ | Formula: TOTAL_COST × ROI | Unit: billions USD | Click to view calculation\"\
-  >249</a>"
+  >$249B</a>"
 "dfda_npv_pv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
   \ class=\"parameter-link\" title=\"Present value of annual opex over 10 years (NPV\
   \ formula) | Formula: OPEX × [(1 - (1 + r)^-T) / r] | Unit: billions USD | Click\
-  \ to view calculation\">0.27</a>"
+  \ to view calculation\">$269M</a>"
 "dfda_npv_total_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost\"\
   \ class=\"parameter-link\" title=\"Total NPV cost (upfront + PV of annual opex)\
   \ | Formula: UPFRONT + PV_OPEX | Unit: billions USD | Click to view calculation\"\
-  >0.54</a>"
+  >$538M</a>"
 "dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"dFDA core platform build cost | Unit: billions\
-  \ USD | Click to view calculation\">0.04</a>"
+  \ USD | Click to view calculation\">$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"Total NPV upfront costs (dFDA core + DIH initiatives)\
   \ | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit: billions USD | Click to view calculation\"\
-  >0.27</a>"
+  >$270M</a>"
 "dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA community support costs | Unit: billions\
-  \ USD/year | Click to view calculation\">0.00</a>"
+  \ USD/year | Click to view calculation\">$2M</a>"
 "dfda_opex_infrastructure": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA infrastructure costs (cloud, security) |\
-  \ Unit: billions USD/year | Click to view calculation\">0.01</a>"
+  \ Unit: billions USD/year | Click to view calculation\">$8M</a>"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA platform maintenance costs | Unit: billions\
-  \ USD/year | Click to view calculation\">0.01</a>"
+  \ USD/year | Click to view calculation\">$15M</a>"
 "dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA regulatory coordination costs | Unit: billions\
-  \ USD/year | Click to view calculation\">0.01</a>"
+  \ USD/year | Click to view calculation\">$5M</a>"
 "dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA staff costs (minimal, AI-assisted) | Unit:\
-  \ billions USD/year | Click to view calculation\">0.01</a>"
+  \ billions USD/year | Click to view calculation\">$10M</a>"
 "dfda_patient_eligibility_rate": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#eligibility\"\
   \ class=\"parameter-link\" title=\"dFDA patient eligibility rate (50% of disease\
-  \ patients can participate) | Unit: rate | Click to view calculation\">0.50</a>"
+  \ patients can participate) | Unit: rate | Click to view calculation\">0.5%</a>"
 "dfda_qalys_monetized": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#monetized-value\"\
   \ class=\"parameter-link\" title=\"Monetized value of dFDA QALYs (QALYs × economic\
   \ value) | Formula: QALYS × VALUE_PER_QALY ÷ 1B | Unit: billions USD/year | Click\
-  \ to view calculation\">126</a>"
+  \ to view calculation\">$126B</a>"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
   \ class=\"parameter-link\" title=\"Simple ROI without NPV adjustment (gross savings\
   \ / annual opex) | Formula: GROSS_SAVINGS ÷ ANNUAL_OPEX | Unit: ratio | Click to\
@@ -260,96 +260,96 @@
   \ | Click to view calculation\">1,000</a>"
 "dfda_target_cost_per_patient": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ class=\"parameter-link\" title=\"Conservative target cost per patient for dFDA\
-  \ | Unit: USD/patient | Click to view calculation\">1,000</a>"
+  \ | Unit: USD/patient | Click to view calculation\">$1K</a>"
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"Maximum trials per year possible with 115x acceleration\
   \ | Unit: trials/year | Click to view calculation\">380,000</a>"
 "dfda_trial_abandonment_rate": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
   \ class=\"parameter-link\" title=\"dFDA trial abandonment rate (5%) | Unit: rate\
-  \ | Click to view calculation\">0.05</a>"
+  \ | Click to view calculation\">0.05%</a>"
 "dfda_trial_completion_rate": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
   \ class=\"parameter-link\" title=\"dFDA trial completion rate (95%) | Unit: rate\
-  \ | Click to view calculation\">0.95</a>"
+  \ | Click to view calculation\">0.95%</a>"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost | Unit: billions\
-  \ USD | Click to view calculation\">0.04</a>"
+  \ USD | Click to view calculation\">$40M</a>"
 "diabetes_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Diabetes death rate | Unit: deaths per 100,000\
-  \ | Click to view source\">22.40</a>"
+  \ | Click to view source\">22.4</a>"
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives annual opex (medium case)\
-  \ | Unit: billions USD/year | Click to view calculation\">0.02</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$21M</a>"
 "dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives upfront cost (medium\
-  \ case) | Unit: billions USD | Click to view calculation\">0.23</a>"
+  \ case) | Unit: billions USD | Click to view calculation\">$230M</a>"
 "dih_treasury_to_medical_research_annual": "<a href=\"/knowledge/strategy/roadmap.qmd#treasury-allocation\"\
   \ class=\"parameter-link\" title=\"Annual funding for medical research (treaty funding\
   \ minus bond payouts) | Formula: TREATY_FUNDING - BOND_PAYOUT | Unit: billions USD/year\
-  \ | Click to view calculation\">24.46</a>"
+  \ | Click to view calculation\">$24B</a>"
 "dih_treasury_to_medical_research_annual_pct": "<a href=\"/knowledge/strategy/roadmap.qmd#treasury-allocation\"\
   \ class=\"parameter-link\" title=\"Percentage of treaty funding going to medical\
   \ research (remainder after bonds) | Formula: 1 - BOND_PCT | Unit: rate | Click\
-  \ to view calculation\">0.90</a>"
+  \ to view calculation\">0.9%</a>"
 "dih_treasury_trial_subsidies_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
   \ class=\"parameter-link\" title=\"Maximum annual clinical trial subsidies from\
-  \ DIH Treasury | Unit: billions USD/year | Click to view calculation\">20</a>"
+  \ DIH Treasury | Unit: billions USD/year | Click to view calculation\">$20B</a>"
 "dih_treasury_trial_subsidies_min": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
   \ class=\"parameter-link\" title=\"Minimum annual clinical trial subsidies from\
-  \ DIH Treasury | Unit: billions USD/year | Click to view calculation\">10</a>"
+  \ DIH Treasury | Unit: billions USD/year | Click to view calculation\">$10B</a>"
 "disease_related_caregiver_pct": "<a href=\"/disease-related-caregiving-estimate\"\
   \ class=\"parameter-link\" title=\"Percentage of caregiving for treatable disease\
   \ conditions (vs aging, disability, children) | Unit: rate | Click to view calculation\"\
-  >0.40</a>"
+  >0.4%</a>"
 "dividend_coverage_factor": "<a href=\"/knowledge/strategy/roadmap.qmd#sustainability\"\
   \ class=\"parameter-link\" title=\"Coverage factor of treaty funding vs dFDA opex\
   \ (sustainability margin) | Formula: TREATY_FUNDING ÷ DFDA_OPEX | Unit: ratio |\
   \ Click to view calculation\">680</a>"
 "economic_multiplier_education_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-education\"\
   \ class=\"parameter-link\" title=\"Economic multiplier for education investment\
-  \ (2.1x ROI) | Unit: ratio | Click to view source\">2.10</a>"
+  \ (2.1x ROI) | Unit: ratio | Click to view source\">2.1</a>"
 "economic_multiplier_healthcare_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-healthcare\"\
   \ class=\"parameter-link\" title=\"Economic multiplier for healthcare investment\
-  \ (4.3x ROI) | Unit: ratio | Click to view source\">4.30</a>"
+  \ (4.3x ROI) | Unit: ratio | Click to view source\">4.3</a>"
 "economic_multiplier_infrastructure_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-infrastructure\"\
   \ class=\"parameter-link\" title=\"Economic multiplier for infrastructure investment\
-  \ (1.6x ROI) | Unit: ratio | Click to view source\">1.60</a>"
+  \ (1.6x ROI) | Unit: ratio | Click to view source\">1.6</a>"
 "economic_multiplier_military_spending": "<a href=\"/knowledge/references.qmd#economic-multiplier-military\"\
   \ class=\"parameter-link\" title=\"Economic multiplier for military spending (0.6x\
-  \ ROI) | Unit: ratio | Click to view source\">0.60</a>"
+  \ ROI) | Unit: ratio | Click to view source\">0.6</a>"
 "effective_hourly_rate": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective hourly rate from treaty participation\
   \ | Formula: LIFETIME_BENEFIT ÷ TIME_INVESTED | Unit: USD/hour | Click to view calculation\"\
-  >292,316</a>"
+  >$292K</a>"
 "effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
   \ class=\"parameter-link\" title=\"Lifetime benefit in USD (not millions) | Formula:\
-  \ BENEFIT_MILLIONS × 1M | Unit: USD | Click to view calculation\">4,300,000</a>"
+  \ BENEFIT_MILLIONS × 1M | Unit: USD | Click to view calculation\">$4.3M</a>"
 "effective_hourly_rate_lifetime_benefit_millions": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
   \ class=\"parameter-link\" title=\"Lifetime benefit for age 30 baseline scenario\
-  \ | Unit: millions USD | Click to view calculation\">4.30</a>"
+  \ | Unit: millions USD | Click to view calculation\">$4</a>"
 "effective_hourly_rate_vs_ceo_multiplier": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs CEO rate | Formula:\
-  \ EFFECTIVE_RATE ÷ CEO_RATE | Unit: ratio | Click to view calculation\">29.23</a>"
+  \ EFFECTIVE_RATE ÷ CEO_RATE | Unit: ratio | Click to view calculation\">29.2</a>"
 "effective_hourly_rate_vs_wage_multiplier": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs average US wage\
   \ | Formula: EFFECTIVE_RATE ÷ AVG_WAGE | Unit: ratio | Click to view calculation\"\
   >9,744</a>"
 "gdp_growth_boost_10pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_10PCT\"\
-  >0.03</span>"
+  >0.025</span>"
 "gdp_growth_boost_1pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_1PCT\
-  \ - Just the boost component\">0.00</span>"
+  \ - Just the boost component\">0.0025</span>"
 "gdp_growth_boost_2pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_2PCT\"\
-  >0.01</span>"
+  >0.005</span>"
 "gdp_growth_boost_5pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_5PCT\"\
-  >0.01</span>"
+  >0.0125</span>"
 "givewell_cost_per_life_avg": "<a href=\"/knowledge/references.qmd#givewell-cost-per-life-saved\"\
   \ class=\"parameter-link\" title=\"GiveWell average cost per life saved across top\
-  \ charities | Unit: USD/life | Click to view source\">4,500</a>"
+  \ charities | Unit: USD/life | Click to view source\">$4.5K</a>"
 "givewell_cost_per_life_max": "<a href=\"/knowledge/references.qmd#givewell-cost-per-life-saved\"\
   \ class=\"parameter-link\" title=\"GiveWell cost per life saved (Against Malaria\
-  \ Foundation) | Unit: USD/life | Click to view source\">5,500</a>"
+  \ Foundation) | Unit: USD/life | Click to view source\">$5.5K</a>"
 "givewell_cost_per_life_min": "<a href=\"/knowledge/references.qmd#givewell-cost-per-life-saved\"\
   \ class=\"parameter-link\" title=\"GiveWell cost per life saved (Helen Keller International)\
-  \ | Unit: USD/life | Click to view source\">3,500</a>"
+  \ | Unit: USD/life | Click to view source\">$3.5K</a>"
 "global_annual_conflict_deaths_active_combat": "<a href=\"/knowledge/references.qmd#acled-2024\"\
   \ class=\"parameter-link\" title=\"Annual deaths from active combat worldwide |\
   \ Unit: deaths/year | Click to view source\">233,600</a>"
@@ -365,123 +365,123 @@
   \ Unit: deaths/year | Click to view calculation\">244,600</a>"
 "global_annual_environmental_damage_conflict": "<a href=\"/knowledge/references.qmd#war-environmental-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual environmental damage and restoration costs\
-  \ from conflict | Unit: billions USD | Click to view source\">100</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$100B</a>"
 "global_annual_human_cost_active_combat": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Annual cost of combat deaths (deaths × VSL) |\
   \ Formula: COMBAT_DEATHS × VSL ÷ 1B | Unit: billions USD/year | Click to view calculation\"\
-  >2,336</a>"
+  >$2.3T</a>"
 "global_annual_human_cost_state_violence": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Annual cost of state violence deaths (deaths\
   \ × VSL) | Formula: STATE_DEATHS × VSL ÷ 1B | Unit: billions USD/year | Click to\
-  \ view calculation\">27</a>"
+  \ view calculation\">$27B</a>"
 "global_annual_human_cost_terror_attacks": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Annual cost of terror deaths (deaths × VSL) |\
   \ Formula: TERROR_DEATHS × VSL ÷ 1B | Unit: billions USD/year | Click to view calculation\"\
-  >83</a>"
+  >$83B</a>"
 "global_annual_human_life_losses_conflict": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Total annual human life losses from conflict\
   \ (sum of combat, terror, state violence) | Formula: COMBAT_COST + TERROR_COST +\
-  \ STATE_VIOLENCE_COST | Unit: billions USD/year | Click to view calculation\">2,446</a>"
+  \ STATE_VIOLENCE_COST | Unit: billions USD/year | Click to view calculation\">$2.4T</a>"
 "global_annual_infrastructure_damage_communications_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual infrastructure damage to communications\
-  \ from conflict | Unit: billions USD | Click to view source\">298</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$298B</a>"
 "global_annual_infrastructure_damage_education_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual infrastructure damage to education facilities\
-  \ from conflict | Unit: billions USD | Click to view source\">234</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$234B</a>"
 "global_annual_infrastructure_damage_energy_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual infrastructure damage to energy systems\
-  \ from conflict | Unit: billions USD | Click to view source\">422</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$422B</a>"
 "global_annual_infrastructure_damage_healthcare_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual infrastructure damage to healthcare facilities\
-  \ from conflict | Unit: billions USD | Click to view source\">166</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$166B</a>"
 "global_annual_infrastructure_damage_transportation_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual infrastructure damage to transportation\
-  \ from conflict | Unit: billions USD | Click to view source\">487</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$487B</a>"
 "global_annual_infrastructure_damage_water_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual infrastructure damage to water systems\
-  \ from conflict | Unit: billions USD | Click to view source\">268</a>"
+  \ from conflict | Unit: billions USD | Click to view source\">$268B</a>"
 "global_annual_infrastructure_destruction_conflict": "<a href=\"/knowledge/problem/cost-of-war.qmd#infrastructure-damage\"\
   \ class=\"parameter-link\" title=\"Total annual infrastructure destruction (sum\
   \ of transportation, energy, communications, water, education, healthcare) | Formula:\
   \ TRANSPORT + ENERGY + COMMS + WATER + EDUCATION + HEALTHCARE | Unit: billions USD/year\
-  \ | Click to view calculation\">1,875</a>"
+  \ | Click to view calculation\">$1.9T</a>"
 "global_annual_lives_saved_by_med_research": "<a href=\"/knowledge/references.qmd#medical-research-lives-saved-annually\"\
   \ class=\"parameter-link\" title=\"Annual lives saved by medical research globally\
   \ | Unit: lives/year | Click to view source\">4,200,000</a>"
 "global_annual_lost_economic_growth_military_spending": "<a href=\"/knowledge/references.qmd#military-spending-opportunity-cost\"\
   \ class=\"parameter-link\" title=\"Annual lost economic growth from military spending\
-  \ opportunity cost | Unit: billions USD | Click to view source\">2,718</a>"
+  \ opportunity cost | Unit: billions USD | Click to view source\">$2.7T</a>"
 "global_annual_lost_human_capital_conflict": "<a href=\"/knowledge/references.qmd#war-lost-human-capital\"\
   \ class=\"parameter-link\" title=\"Annual lost productivity from conflict casualties\
-  \ | Unit: billions USD | Click to view source\">300</a>"
+  \ | Unit: billions USD | Click to view source\">$300B</a>"
 "global_annual_military_spending_infrastructure_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
   \ class=\"parameter-link\" title=\"Global military spending on infrastructure in\
-  \ 2024 | Unit: billions USD | Click to view source\">520</a>"
+  \ 2024 | Unit: billions USD | Click to view source\">$520B</a>"
 "global_annual_military_spending_intelligence_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
   \ class=\"parameter-link\" title=\"Global military spending on intelligence in 2024\
-  \ | Unit: billions USD | Click to view source\">282</a>"
+  \ | Unit: billions USD | Click to view source\">$282B</a>"
 "global_annual_military_spending_ops_maintenance_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
   \ class=\"parameter-link\" title=\"Global military spending on operations and maintenance\
-  \ in 2024 | Unit: billions USD | Click to view source\">580</a>"
+  \ in 2024 | Unit: billions USD | Click to view source\">$580B</a>"
 "global_annual_military_spending_personnel_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
   \ class=\"parameter-link\" title=\"Global military spending on personnel in 2024\
-  \ | Unit: billions USD | Click to view source\">682</a>"
+  \ | Unit: billions USD | Click to view source\">$682B</a>"
 "global_annual_military_spending_procurement_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
   \ class=\"parameter-link\" title=\"Global military spending on procurement in 2024\
-  \ | Unit: billions USD | Click to view source\">654</a>"
+  \ | Unit: billions USD | Click to view source\">$654B</a>"
 "global_annual_psychological_impact_costs_conflict": "<a href=\"/knowledge/references.qmd#war-psychological-impact-costs\"\
   \ class=\"parameter-link\" title=\"Annual PTSD and mental health costs from conflict\
-  \ | Unit: billions USD | Click to view source\">232</a>"
+  \ | Unit: billions USD | Click to view source\">$232B</a>"
 "global_annual_refugee_support_costs": "<a href=\"/knowledge/references.qmd#refugee-support-costs\"\
   \ class=\"parameter-link\" title=\"Annual refugee support costs (108.4M refugees\
-  \ × $1,384/year) | Unit: billions USD | Click to view source\">150</a>"
+  \ × $1,384/year) | Unit: billions USD | Click to view source\">$150B</a>"
 "global_annual_trade_disruption_conflict": "<a href=\"/knowledge/problem/cost-of-war.qmd#trade-disruption\"\
   \ class=\"parameter-link\" title=\"Total annual trade disruption (sum of shipping,\
   \ supply chain, energy prices, currency instability) | Formula: SHIPPING + SUPPLY_CHAIN\
   \ + ENERGY_PRICE + CURRENCY | Unit: billions USD/year | Click to view calculation\"\
-  >616</a>"
+  >$616B</a>"
 "global_annual_trade_disruption_currency_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
   \ class=\"parameter-link\" title=\"Annual trade disruption costs from currency instability\
-  \ | Unit: billions USD | Click to view source\">57.40</a>"
+  \ | Unit: billions USD | Click to view source\">$57B</a>"
 "global_annual_trade_disruption_energy_price_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
   \ class=\"parameter-link\" title=\"Annual trade disruption costs from energy price\
-  \ volatility | Unit: billions USD | Click to view source\">125</a>"
+  \ volatility | Unit: billions USD | Click to view source\">$125B</a>"
 "global_annual_trade_disruption_shipping_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
   \ class=\"parameter-link\" title=\"Annual trade disruption costs from shipping disruptions\
-  \ | Unit: billions USD | Click to view source\">247</a>"
+  \ | Unit: billions USD | Click to view source\">$247B</a>"
 "global_annual_trade_disruption_supply_chain_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
   \ class=\"parameter-link\" title=\"Annual trade disruption costs from supply chain\
-  \ disruptions | Unit: billions USD | Click to view source\">187</a>"
+  \ disruptions | Unit: billions USD | Click to view source\">$187B</a>"
 "global_annual_veteran_healthcare_costs": "<a href=\"/knowledge/references.qmd#global-veteran-healthcare-costs\"\
   \ class=\"parameter-link\" title=\"Annual veteran healthcare costs (20-year projected)\
-  \ | Unit: billions USD | Click to view source\">200</a>"
+  \ | Unit: billions USD | Click to view source\">$200B</a>"
 "global_annual_war_direct_costs_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#direct-costs\"\
   \ class=\"parameter-link\" title=\"Total annual direct war costs (military spending\
   \ + infrastructure + human life + trade disruption) | Formula: MILITARY + INFRASTRUCTURE\
-  \ + HUMAN_LIFE + TRADE | Unit: billions USD/year | Click to view calculation\">7,655</a>"
+  \ + HUMAN_LIFE + TRADE | Unit: billions USD/year | Click to view calculation\">$7.7T</a>"
 "global_annual_war_indirect_costs_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#indirect-costs\"\
   \ class=\"parameter-link\" title=\"Total annual indirect war costs (opportunity\
   \ cost + veterans + refugees + environment + mental health + lost productivity)\
   \ | Formula: OPPORTUNITY + VETERANS + REFUGEES + ENVIRONMENT + MENTAL_HEALTH + LOST_CAPITAL\
-  \ | Unit: billions USD/year | Click to view calculation\">3,700</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$3.7T</a>"
 "global_annual_war_total_cost": "<a href=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
   \ class=\"parameter-link\" title=\"Total annual cost of war worldwide (direct +\
   \ indirect costs) | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: billions USD/year\
-  \ | Click to view calculation\">11,355</a>"
+  \ | Click to view calculation\">$11T</a>"
 "global_clinical_trial_market_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trial-market\"\
   \ class=\"parameter-link\" title=\"Global clinical trial market size | Unit: billions\
-  \ USD/year | Click to view source\">100</a>"
+  \ USD/year | Click to view source\">$100B</a>"
 "global_cost_per_conflict_death_millions": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per conflict death (war cost ÷ deaths) |\
   \ Formula: (WAR_COST × 1B ÷ DEATHS) ÷ 1M | Unit: millions USD/death | Click to view\
-  \ calculation\">46.42</a>"
+  \ calculation\">$46</a>"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per life saved by medical research | Formula:\
   \ (RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED | Unit: USD/life | Click to view calculation\"\
-  >16,071</a>"
+  >$16K</a>"
 "global_cost_per_refugee_per_year_average": "<a href=\"/knowledge/references.qmd#unhcr-refugee-cost-per-year\"\
   \ class=\"parameter-link\" title=\"Average annual cost per refugee globally | Unit:\
-  \ USD/year | Click to view source\">1,384</a>"
+  \ USD/year | Click to view source\">$1.4K</a>"
 "global_daily_deaths_curable_diseases": "<a href=\"/knowledge/references.qmd#global-daily-deaths-curable-diseases\"\
   \ class=\"parameter-link\" title=\"Daily deaths from curable diseases globally |\
   \ Unit: deaths/day | Click to view source\">150,000</a>"
@@ -490,70 +490,70 @@
   \ | Click to view calculation\">840,000</a>"
 "global_education_for_all_cost": "<a href=\"/knowledge/references.qmd#unesco-education-for-all-cost\"\
   \ class=\"parameter-link\" title=\"Global cost to achieve universal education |\
-  \ Unit: billions USD | Click to view source\">30</a>"
+  \ Unit: billions USD | Click to view source\">$30B</a>"
 "global_forcibly_displaced_people_2023": "<a href=\"/knowledge/references.qmd#unhcr-global-displacement-2023\"\
   \ class=\"parameter-link\" title=\"Global forcibly displaced people in 2023 | Unit:\
   \ people | Click to view source\">108,400,000</a>"
 "global_gdp_2023": "<a href=\"/knowledge/references.qmd#global-gdp\" class=\"parameter-link\"\
   \ title=\"Global GDP in 2023 for comparison | Unit: billions USD | Click to view\
-  \ source\">89,500</a>"
+  \ source\">$90T</a>"
 "global_gdp_2024": "<a href=\"/knowledge/references.qmd#global-gdp\" class=\"parameter-link\"\
-  \ title=\"Global GDP in 2024 | Unit: billions USD | Click to view source\">111,000</a>"
+  \ title=\"Global GDP in 2024 | Unit: billions USD | Click to view source\">$111T</a>"
 "global_healthcare_spending_annual_2024": "<a href=\"/knowledge/references.qmd#global-health-spending\"\
   \ class=\"parameter-link\" title=\"Global healthcare spending in 2024 | Unit: billions\
-  \ USD | Click to view source\">9,800</a>"
+  \ USD | Click to view source\">$9.8T</a>"
 "global_med_research_spending": "<a href=\"/knowledge/references.qmd#global-government-medical-research-spending\"\
   \ class=\"parameter-link\" title=\"Global government medical research spending |\
-  \ Unit: billions USD | Click to view source\">67.50</a>"
+  \ Unit: billions USD | Click to view source\">$68B</a>"
 "global_military_spending_annual_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
   \ class=\"parameter-link\" title=\"Global military spending in 2024 | Unit: billions\
-  \ USD | Click to view source\">2,718</a>"
+  \ USD | Click to view source\">$2.7T</a>"
 "global_military_spending_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ class=\"parameter-link\" title=\"Per capita military spending globally | Formula:\
   \ MILITARY_SPENDING ÷ POPULATION | Unit: USD/person/year | Click to view calculation\"\
-  >340</a>"
+  >$340</a>"
 "global_military_spending_post_treaty_annual_2024": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty\"\
   \ class=\"parameter-link\" title=\"Global military spending after 1% treaty reduction\
   \ | Formula: MILITARY_SPENDING × (1 - REDUCTION) | Unit: billions USD/year | Click\
-  \ to view calculation\">2,691</a>"
+  \ to view calculation\">$2.7T</a>"
 "global_nuclear_weapons_annual_budget_increase": "<a href=\"/knowledge/references.qmd#global-nuclear-weapons-budget-increase\"\
   \ class=\"parameter-link\" title=\"Annual increase in global nuclear weapons budget\
-  \ | Unit: billions USD/year | Click to view source\">42</a>"
+  \ | Unit: billions USD/year | Click to view source\">$42B</a>"
 "global_population_2024_billions": "<a href=\"/knowledge/references.qmd#global-population-8-billion\"\
   \ class=\"parameter-link\" title=\"Global population in 2024 | Unit: billions of\
   \ people | Click to view source\">8</a>"
 "global_population_activism_threshold_pct": "<a href=\"/knowledge/references.qmd#3-5-percent-rule-social-change\"\
   \ class=\"parameter-link\" title=\"Critical mass threshold for social change (3.5%\
-  \ rule) | Unit: rate | Click to view source\">0.04</a>"
+  \ rule) | Unit: rate | Click to view source\">0.035%</a>"
 "global_poverty_eradication_cost_total": "<a href=\"/knowledge/references.qmd#world-bank-poverty-eradication\"\
   \ class=\"parameter-link\" title=\"Total cost to eradicate global poverty | Unit:\
-  \ billions USD | Click to view source\">1,000</a>"
+  \ billions USD | Click to view source\">$1T</a>"
 "global_total_war_cost_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ class=\"parameter-link\" title=\"Per capita total war cost globally | Formula:\
   \ TOTAL_WAR_COST ÷ POPULATION | Unit: USD/person/year | Click to view calculation\"\
-  >1,419</a>"
+  >$1.4K</a>"
 "global_war_direct_cost_per_second": "<a href=\"/knowledge/problem/cost-of-war.qmd#cost-per-second\"\
   \ class=\"parameter-link\" title=\"Direct war cost per second globally | Formula:\
   \ DIRECT_COSTS × 1B ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\"\
-  >242,738</a>"
+  >$243K</a>"
 "icer_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"ICER for investor-funded scenario (VICTORY Social\
-  \ Impact Bonds) | Unit: USD/QALY | Click to view calculation\">-187,429</a>"
+  \ Impact Bonds) | Unit: USD/QALY | Click to view calculation\">$-187.4K</a>"
 "icer_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
   \ class=\"parameter-link\" title=\"ICER counting redirected military spending as\
-  \ opportunity cost | Unit: USD/QALY | Click to view calculation\">-156,571</a>"
+  \ opportunity cost | Unit: USD/QALY | Click to view calculation\">$-156.6K</a>"
 "icer_per_qaly": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
   \ class=\"parameter-link\" title=\"Incremental Cost-Effectiveness Ratio (ICER) per\
-  \ QALY gained | Unit: USD/QALY | Click to view calculation\">-0.00</a>"
+  \ QALY gained | Unit: USD/QALY | Click to view calculation\">$-0</a>"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "kidney_disease_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Kidney disease death rate | Unit: deaths per\
-  \ 100,000 | Click to view source\">13.10</a>"
+  \ 100,000 | Click to view source\">13.1</a>"
 "lifetime_war_cost_per_capita": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost\"\
   \ class=\"parameter-link\" title=\"Lifetime war cost per person (80-year lifespan)\
   \ | Formula: ANNUAL_PER_CAPITA × 80 | Unit: USD/person | Click to view calculation\"\
-  >113,551</a>"
+  >$114K</a>"
 "life_extension_years_10pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_10PCT\"\
   >4.12</span>"
 "life_extension_years_1pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_1PCT\"\
@@ -570,13 +570,13 @@
   \ returned per $1 spent) | Unit: ratio | Click to view source\">1,813</a>"
 "lobbyist_bond_investment_max_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Maximum bond investment for lobbyist incentives\
-  \ | Unit: millions USD | Click to view calculation\">20</a>"
+  \ | Unit: millions USD | Click to view calculation\">$20</a>"
 "lobbyist_bond_investment_min_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Minimum bond investment for lobbyist incentives\
-  \ | Unit: millions USD | Click to view calculation\">5</a>"
+  \ | Unit: millions USD | Click to view calculation\">$5</a>"
 "lobbyist_salary_typical_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
   \ class=\"parameter-link\" title=\"Typical annual lobbyist salary for comparison\
-  \ | Unit: thousands USD | Click to view source\">500</a>"
+  \ | Unit: thousands USD | Click to view source\">$500</a>"
 "medical_progress_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_10PCT\"\
   >412</span>"
 "medical_progress_multiplier_1pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_1PCT\"\
@@ -588,11 +588,11 @@
 "mental_health_productivity_loss_per_capita": "<a href=\"/knowledge/references.qmd#mental-health-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Annual productivity loss per capita from mental\
   \ health issues (beyond treatment costs) | Unit: USD/year | Click to view source\"\
-  >2,000</a>"
+  >$2K</a>"
 "military_vs_medical_research_ratio": "<a href=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ class=\"parameter-link\" title=\"Ratio of military spending to medical research\
   \ spending | Formula: MILITARY_SPENDING ÷ MEDICAL_RESEARCH | Unit: ratio | Click\
-  \ to view calculation\">40.27</a>"
+  \ to view calculation\">40.3</a>"
 "misallocation_factor_death_vs_saving": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Misallocation factor: cost to kill vs cost to\
   \ save | Formula: COST_PER_DEATH ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to\
@@ -604,10 +604,10 @@
 "net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | Formula: ICER × QALYS_PER_LIFE | Unit: millions USD/life | Click to view calculation\"\
-  >-0.01</a>"
+  >$-0</a>"
 "npv_discount_rate_standard": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters\"\
   \ class=\"parameter-link\" title=\"Standard discount rate for NPV analysis (8% annual)\
-  \ | Unit: rate | Click to view calculation\">0.08</a>"
+  \ | Unit: rate | Click to view calculation\">0.08%</a>"
 "npv_time_horizon_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters\"\
   \ class=\"parameter-link\" title=\"Standard time horizon for NPV analysis | Unit:\
   \ years | Click to view calculation\">10</a>"
@@ -620,25 +620,25 @@
 "partial_success_bondholder_payout": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Bondholder payout in partial success scenario\
   \ | Formula: REVENUE × BOND_PCT | Unit: billions USD/year | Click to view calculation\"\
-  >1.36</a>"
+  >$1.4B</a>"
 "partial_success_dih_revenue": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"DIH revenue in partial success scenario | Formula:\
   \ MILITARY × SHARE × REDUCTION | Unit: billions USD/year | Click to view calculation\"\
-  >13.59</a>"
+  >$14B</a>"
 "partial_success_investor_roi": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Investor ROI in partial success scenario | Formula:\
-  \ PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view calculation\">1.36</a>"
+  \ PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view calculation\">1.36%</a>"
 "partial_success_military_spending_share": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Military spending share for partial success scenario\
-  \ (US, EU, UK) | Unit: rate | Click to view calculation\">0.50</a>"
+  \ (US, EU, UK) | Unit: rate | Click to view calculation\">0.5%</a>"
 "partial_success_research_funding": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Research funding in partial success scenario\
   \ | Formula: REVENUE × RESEARCH_PCT | Unit: billions USD/year | Click to view calculation\"\
-  >12.23</a>"
+  >$12B</a>"
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
   \ class=\"parameter-link\" title=\"Annual peace dividend from 1% reduction in total\
   \ war costs | Formula: TOTAL_WAR_COST × 1% | Unit: billions USD/year | Click to\
-  \ view calculation\">114</a>"
+  \ view calculation\">$114B</a>"
 "personal_lifetime_benefit_age_20_1pct": "<span class=\"parameter-link\" title=\"\
   parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">413,863</span>"
 "personal_lifetime_benefit_age_30_10pct": "<span class=\"parameter-link\" title=\"\
@@ -676,13 +676,13 @@
   \ - ~$1,045/year\">1,045</span>"
 "post_ww2_military_cut_pct": "<a href=\"/knowledge/references.qmd#post-ww2-military-demobilization\"\
   \ class=\"parameter-link\" title=\"Percentage military spending cut after WW2 (historical\
-  \ precedent) | Unit: rate | Click to view source\">0.30</a>"
+  \ precedent) | Unit: rate | Click to view source\">0.3%</a>"
 "productivity_loss_per_affected_employee": "<a href=\"/knowledge/references.qmd#chronic-illness-productivity-loss-ibi\"\
   \ class=\"parameter-link\" title=\"Annual productivity loss per affected employee\
-  \ (IBI 2024) | Unit: USD/year | Click to view source\">4,798</a>"
+  \ (IBI 2024) | Unit: USD/year | Click to view source\">$4.8K</a>"
 "profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" title=\"System profit per life saved (specific calculation)\
-  \ | Unit: USD/life | Click to view calculation\">167,771</a>"
+  \ | Unit: USD/life | Click to view calculation\">$168K</a>"
 "qalys_from_faster_access": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#base-case\"\
   \ class=\"parameter-link\" title=\"Base case QALYs from faster drug access | Unit:\
   \ QALYs/year | Click to view calculation\">200,000</a>"
@@ -720,23 +720,23 @@
   \ QALYs/year | Click to view calculation\">3,650,000</a>"
 "recovery_trial_cost_per_patient": "<a href=\"/knowledge/references.qmd#recovery-trial-cost-per-patient\"\
   \ class=\"parameter-link\" title=\"RECOVERY trial cost per patient | Unit: USD/patient\
-  \ | Click to view source\">500</a>"
+  \ | Click to view source\">$500</a>"
 "recruitment_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration\"\
   \ class=\"parameter-link\" title=\"Recruitment speed multiplier (25x faster from\
   \ 2% → 50% eligibility) | Unit: ratio | Click to view calculation\">25</a>"
 "refugee_lost_earning_potential_per_capita_annual": "<a href=\"/knowledge/references.qmd#refugee-lost-earnings\"\
   \ class=\"parameter-link\" title=\"Average annual lost earning potential per refugee\
-  \ | Unit: USD/year | Click to view source\">23,400</a>"
+  \ | Unit: USD/year | Click to view source\">$23K</a>"
 "refugee_lost_productivity_global_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#refugee-costs\"\
   \ class=\"parameter-link\" title=\"Total global lost refugee productivity | Formula:\
   \ (REFUGEES × LOST_EARNINGS) ÷ 1B | Unit: billions USD/year | Click to view calculation\"\
-  >2,537</a>"
+  >$2.5T</a>"
 "research_acceleration_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ class=\"parameter-link\" title=\"Total research capacity multiplier from dFDA\
   \ | Unit: ratio | Click to view calculation\">115</a>"
 "respiratory_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Chronic respiratory disease death rate | Unit:\
-  \ deaths per 100,000 | Click to view source\">33.40</a>"
+  \ deaths per 100,000 | Click to view source\">33.4</a>"
 "roi_all_direct_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
   \ class=\"parameter-link\" title=\"ROI from all direct benefits (peace dividend\
   \ + dFDA + health gains) | Unit: ratio | Click to view calculation\">1,239</a>"
@@ -747,56 +747,56 @@
   >31,536,000</span>"
 "sensitivity_campaign_cost_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative campaign cost (3-year amortization)\
-  \ | Unit: billions USD/year | Click to view calculation\">0.33</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$333M</a>"
 "sensitivity_campaign_cost_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic campaign cost (5-year amortization)\
-  \ | Unit: billions USD/year | Click to view calculation\">0.20</a>"
+  \ | Unit: billions USD/year | Click to view calculation\">$200M</a>"
 "sensitivity_cost_per_life_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
   \ class=\"parameter-link\" title=\"Central cost per life saved | Unit: millions\
-  \ USD/life | Click to view calculation\">-6.55</a>"
+  \ USD/life | Click to view calculation\">$-7</a>"
 "sensitivity_cost_per_life_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative cost per life saved | Unit: millions\
-  \ USD/life | Click to view calculation\">-5.97</a>"
+  \ USD/life | Click to view calculation\">$-6</a>"
 "sensitivity_cost_per_life_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic cost per life saved | Unit: millions\
-  \ USD/life | Click to view calculation\">-4.79</a>"
+  \ USD/life | Click to view calculation\">$-5</a>"
 "sensitivity_dfda_opex_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative dFDA operational costs | Unit: billions\
-  \ USD/year | Click to view calculation\">0.06</a>"
+  \ USD/year | Click to view calculation\">$60M</a>"
 "sensitivity_dfda_opex_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic dFDA operational costs | Unit: billions\
-  \ USD/year | Click to view calculation\">0.03</a>"
+  \ USD/year | Click to view calculation\">$30M</a>"
 "sensitivity_dfda_savings_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative dFDA savings estimate | Unit: billions\
-  \ USD | Click to view calculation\">25</a>"
+  \ USD | Click to view calculation\">$25B</a>"
 "sensitivity_dfda_savings_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic dFDA savings estimate | Unit: billions\
-  \ USD | Click to view calculation\">95</a>"
+  \ USD | Click to view calculation\">$95B</a>"
 "sensitivity_icer_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
   \ class=\"parameter-link\" title=\"Central ICER from sensitivity analysis | Unit:\
-  \ USD/QALY | Click to view calculation\">-187,097</a>"
+  \ USD/QALY | Click to view calculation\">$-187.1K</a>"
 "sensitivity_icer_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative ICER from sensitivity analysis |\
-  \ Unit: USD/QALY | Click to view calculation\">-170,514</a>"
+  \ Unit: USD/QALY | Click to view calculation\">$-170.5K</a>"
 "sensitivity_icer_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic ICER from sensitivity analysis | Unit:\
-  \ USD/QALY | Click to view calculation\">-136,945</a>"
+  \ USD/QALY | Click to view calculation\">$-136.9K</a>"
 "sensitivity_lives_saved_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
   \ class=\"parameter-link\" title=\"Central scenario lives saved (total QALYs ÷ QALYs/life)\
   \ | Formula: TOTAL_QALYS ÷ QALYS_PER_LIFE | Unit: lives/year | Click to view calculation\"\
   >26,446</a>"
 "sensitivity_net_benefit_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative net benefit from sensitivity analysis\
-  \ | Unit: billions USD | Click to view calculation\">74.60</a>"
+  \ | Unit: billions USD | Click to view calculation\">$75B</a>"
 "sensitivity_net_benefit_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic net benefit from sensitivity analysis\
-  \ | Unit: billions USD | Click to view calculation\">295</a>"
+  \ | Unit: billions USD | Click to view calculation\">$295B</a>"
 "sensitivity_peace_dividend_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative peace dividend estimate | Unit:\
-  \ billions USD | Click to view calculation\">50</a>"
+  \ billions USD | Click to view calculation\">$50B</a>"
 "sensitivity_peace_dividend_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic peace dividend estimate | Unit: billions\
-  \ USD | Click to view calculation\">200</a>"
+  \ USD | Click to view calculation\">$200B</a>"
 "sensitivity_peace_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative peace QALYs (500 lives × 35 QALYs/life)\
   \ | Unit: QALYs/year | Click to view calculation\">17,500</a>"
@@ -805,16 +805,16 @@
   \ | Unit: QALYs/year | Click to view calculation\">52,500</a>"
 "sensitivity_total_benefits_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative total benefits estimate | Unit:\
-  \ billions USD | Click to view calculation\">75</a>"
+  \ billions USD | Click to view calculation\">$75B</a>"
 "sensitivity_total_benefits_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total benefits estimate | Unit: billions\
-  \ USD | Click to view calculation\">295</a>"
+  \ USD | Click to view calculation\">$295B</a>"
 "sensitivity_total_costs_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative total costs | Unit: billions USD/year\
-  \ | Click to view calculation\">0.39</a>"
+  \ | Click to view calculation\">$393M</a>"
 "sensitivity_total_costs_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total costs | Unit: billions USD/year\
-  \ | Click to view calculation\">0.23</a>"
+  \ | Click to view calculation\">$230M</a>"
 "sensitivity_total_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative total QALYs (peace + dFDA) | Formula:\
   \ PEACE_QALYS + DFDA_QALYS | Unit: QALYs/year | Click to view calculation\">207,500</a>"
@@ -829,38 +829,38 @@
   \ campaign | Unit: ratio | Click to view source\">280</a>"
 "standard_economic_qaly_value_usd": "<a href=\"/knowledge/references.qmd#standard-qaly-value\"\
   \ class=\"parameter-link\" title=\"Standard economic value per QALY | Unit: USD/QALY\
-  \ | Click to view source\">150,000</a>"
+  \ | Click to view source\">$150K</a>"
 "standard_qalys_per_life_saved": "<a href=\"/knowledge/references.qmd#who-life-tables-qalys-per-life\"\
   \ class=\"parameter-link\" title=\"Standard QALYs per life saved (WHO life tables)\
   \ | Unit: QALYs/life | Click to view source\">35</a>"
 "switzerland_defense_spending_pct": "<a href=\"/knowledge/references.qmd#switzerland-defense-spending-gdp\"\
   \ class=\"parameter-link\" title=\"Switzerland's defense spending as percentage\
-  \ of GDP (0.7%) | Unit: rate | Click to view source\">0.01</a>"
+  \ of GDP (0.7%) | Unit: rate | Click to view source\">0.007%</a>"
 "switzerland_gdp_per_capita_k": "<a href=\"/knowledge/references.qmd#switzerland-gdp-per-capita\"\
   \ class=\"parameter-link\" title=\"Switzerland GDP per capita | Unit: thousands\
-  \ USD | Click to view source\">93</a>"
+  \ USD | Click to view source\">$93</a>"
 "system_profit_per_life_saved_millions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" title=\"System profit per life saved in millions | Unit:\
-  \ millions USD/life | Click to view calculation\">5.87</a>"
+  \ millions USD/life | Click to view calculation\">$6</a>"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" title=\"\
   Total words in the book | Unit: words | Click to view calculation\">171,121</a>"
 "total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits\"\
   \ class=\"parameter-link\" title=\"Total annual benefits from all 8 benefit categories\
   \ | Formula: PEACE + R&D + FASTER_ACCESS + ACCELERATION + RARE + PRICE + PREVENTION\
-  \ + MENTAL | Unit: billions USD/year | Click to view calculation\">1,239</a>"
+  \ + MENTAL | Unit: billions USD/year | Click to view calculation\">$1.2T</a>"
 "total_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Overall age-adjusted death rate | Unit: deaths\
   \ per 100,000 | Click to view source\">722</a>"
 "total_global_waste_spend_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd\"\
   \ class=\"parameter-link\" title=\"Total global annual spending on military and\
-  \ disease | Unit: billions USD/year | Click to view calculation\">118,800</a>"
+  \ disease | Unit: billions USD/year | Click to view calculation\">$119T</a>"
 "total_medical_advances_1900_2000": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" title=\"Total life expectancy gain from all medical advances\
   \ 1900-2000 (vaccines + hygiene + antibiotics) | Unit: years | Click to view source\"\
   >35</a>"
 "total_time_investment_hours": "<a href=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ class=\"parameter-link\" title=\"Total time investment (reading + actions) | Formula:\
-  \ READING + ACTIONS | Unit: hours | Click to view calculation\">14.71</a>"
+  \ READING + ACTIONS | Unit: hours | Click to view calculation\">14.7</a>"
 "total_war_cost_to_who_budget_ratio": "<a href=\"/knowledge/problem/cost-of-war.qmd\"\
   \ class=\"parameter-link\" title=\"Ratio of total war cost to WHO budget (168x)\
   \ | Unit: ratio | Click to view calculation\">168</a>"
@@ -869,19 +869,19 @@
   \ | Click to view source\">1,000</a>"
 "traditional_phase2_cost_per_patient_high": "<a href=\"/knowledge/references.qmd#clinical-trial-cost-per-patient\"\
   \ class=\"parameter-link\" title=\"Phase 2 cost per patient (high estimate) | Unit:\
-  \ USD/patient | Click to view source\">120,000</a>"
+  \ USD/patient | Click to view source\">$120K</a>"
 "traditional_phase2_cost_per_patient_low": "<a href=\"/knowledge/references.qmd#clinical-trial-cost-per-patient\"\
   \ class=\"parameter-link\" title=\"Phase 2 cost per patient (low estimate) | Unit:\
-  \ USD/patient | Click to view source\">40,000</a>"
+  \ USD/patient | Click to view source\">$40K</a>"
 "traditional_phase3_cost_per_patient": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-patient\"\
   \ class=\"parameter-link\" title=\"Phase 3 cost per patient (median) | Unit: USD/patient\
-  \ | Click to view source\">80,000</a>"
+  \ | Click to view source\">$80K</a>"
 "traditional_phase3_cost_per_patient_example_48k": "<a href=\"/knowledge/references.qmd#clinical-trial-cost-per-patient\"\
   \ class=\"parameter-link\" title=\"Example Phase 3 trial cost per patient ($48K)\
-  \ | Unit: USD/patient | Click to view source\">48,000</a>"
+  \ | Unit: USD/patient | Click to view source\">$48K</a>"
 "traditional_phase3_cost_per_patient_fda_example_41k": "<a href=\"/knowledge/references.qmd#fda-clinical-trial-costs\"\
   \ class=\"parameter-link\" title=\"FDA cited Phase 3 cost per patient ($41K) | Unit:\
-  \ USD/patient | Click to view source\">41,000</a>"
+  \ USD/patient | Click to view source\">$41K</a>"
 "traditional_small_trial_size": "<a href=\"/knowledge/references.qmd#phase-2-trial-participant-numbers\"\
   \ class=\"parameter-link\" title=\"Typical Phase 2 trial size | Unit: participants\
   \ | Click to view source\">100</a>"
@@ -894,54 +894,54 @@
 "treaty_annual_funding": "<a href=\"/knowledge/solution/dfda.qmd#one-percent-treaty\"\
   \ class=\"parameter-link\" title=\"Annual funding from 1% of global military spending\
   \ redirected to DIH | Formula: MILITARY_SPENDING × 1% | Unit: billions USD/year\
-  \ | Click to view calculation\">27.18</a>"
+  \ | Click to view calculation\">$27B</a>"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#vaccine-comparison\"\
   \ class=\"parameter-link\" title=\"Treaty system benefit multiplier vs childhood\
   \ vaccination programs (10x) | Unit: ratio | Click to view calculation\">10</a>"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Amortized annual campaign cost (total cost ÷\
   \ campaign duration) | Formula: TOTAL_COST ÷ DURATION | Unit: billions USD/year\
-  \ | Click to view calculation\">0.25</a>"
+  \ | Click to view calculation\">$250M</a>"
 "treaty_campaign_budget_ai_lobbying": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"AI-assisted lobbying budget | Unit: billions\
-  \ USD | Click to view calculation\">0.25</a>"
+  \ USD | Click to view calculation\">$250M</a>"
 "treaty_campaign_budget_legal": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Legal and compliance budget | Unit: billions\
-  \ USD | Click to view calculation\">0.10</a>"
+  \ USD | Click to view calculation\">$100M</a>"
 "treaty_campaign_budget_mass_bribery": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for mass mobilization (voting\
-  \ bloc build) | Unit: billions USD | Click to view calculation\">0.14</a>"
+  \ bloc build) | Unit: billions USD | Click to view calculation\">$140M</a>"
 "treaty_campaign_budget_operations": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Operations budget | Unit: billions USD | Click\
-  \ to view calculation\">0.05</a>"
+  \ to view calculation\">$50M</a>"
 "treaty_campaign_budget_partnerships": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Partnerships budget | Unit: billions USD | Click\
-  \ to view calculation\">0.10</a>"
+  \ to view calculation\">$100M</a>"
 "treaty_campaign_budget_reserve": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Reserve fund | Unit: billions USD | Click to\
-  \ view calculation\">0.05</a>"
+  \ view calculation\">$50M</a>"
 "treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for Super PACs and political\
-  \ lobbying | Unit: billions USD | Click to view calculation\">0.80</a>"
+  \ lobbying | Unit: billions USD | Click to view calculation\">$800M</a>"
 "treaty_campaign_budget_technology": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Technology platform budget | Unit: billions USD\
-  \ | Click to view calculation\">0.25</a>"
+  \ | Click to view calculation\">$250M</a>"
 "treaty_campaign_budget_viral_referendum": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Viral referendum campaign budget | Unit: billions\
-  \ USD | Click to view calculation\">0.20</a>"
+  \ USD | Click to view calculation\">$200M</a>"
 "treaty_campaign_cost_per_vote_max_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#vote-acquisition-cost\"\
   \ class=\"parameter-link\" title=\"Maximum cost per vote for mass mobilization campaign\
-  \ | Unit: USD/vote | Click to view calculation\">0.50</a>"
+  \ | Unit: USD/vote | Click to view calculation\">$0</a>"
 "treaty_campaign_cost_per_vote_min_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#vote-acquisition-cost\"\
   \ class=\"parameter-link\" title=\"Minimum cost per vote for mass mobilization campaign\
-  \ | Unit: USD/vote | Click to view calculation\">0.20</a>"
+  \ | Unit: USD/vote | Click to view calculation\">$0</a>"
 "treaty_campaign_duration_years": "<a href=\"/knowledge/strategy/roadmap.qmd\" class=\"\
   parameter-link\" title=\"Treaty campaign duration (3-5 year range, using midpoint)\
   \ | Unit: years | Click to view calculation\">4</a>"
 "treaty_campaign_total_cost": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Total treaty campaign cost (sum of all campaign\
   \ budget components) | Formula: REFERENDUM + AI_LOBBY + TECH + LEGAL + PARTNERS\
-  \ + OPS + RESERVE | Unit: billions USD | Click to view calculation\">1</a>"
+  \ + OPS + RESERVE | Unit: billions USD | Click to view calculation\">$1B</a>"
 "treaty_campaign_voting_bloc_target_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ class=\"parameter-link\" title=\"Target voting bloc size for campaign | Unit:\
   \ millions of people | Click to view calculation\">280</a>"
@@ -952,22 +952,22 @@
 "treaty_net_annual_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit\"\
   \ class=\"parameter-link\" title=\"Net annual benefit (total benefits - total costs)\
   \ | Formula: TOTAL_BENEFITS - TOTAL_COSTS | Unit: billions USD/year | Click to view\
-  \ calculation\">163</a>"
+  \ calculation\">$163B</a>"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
   \ class=\"parameter-link\" title=\"Annual QALYs gained from peace dividend (lives\
   \ saved × QALYs/life) | Formula: LIVES_SAVED × QALYS_PER_LIFE | Unit: QALYs/year\
   \ | Click to view calculation\">85,610</a>"
 "treaty_reduction_pct": "<a href=\"/knowledge/solution/dfda.qmd#one-percent-treaty\"\
   \ class=\"parameter-link\" title=\"1% reduction in military spending/war costs from\
-  \ treaty | Unit: rate | Click to view calculation\">0.01</a>"
+  \ treaty | Unit: rate | Click to view calculation\">0.01%</a>"
 "treaty_total_annual_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits\"\
   \ class=\"parameter-link\" title=\"Total annual benefits (peace dividend + dFDA\
   \ savings) | Formula: PEACE_DIVIDEND + DFDA_SAVINGS | Unit: billions USD/year |\
-  \ Click to view calculation\">164</a>"
+  \ Click to view calculation\">$164B</a>"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
   \ class=\"parameter-link\" title=\"Total annual system costs (campaign + dFDA operations)\
   \ | Formula: CAMPAIGN_ANNUAL + DFDA_OPEX | Unit: billions USD/year | Click to view\
-  \ calculation\">0.29</a>"
+  \ calculation\">$290M</a>"
 "treaty_total_lives_saved_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
   \ class=\"parameter-link\" title=\"Total annual lives saved equivalent (total QALYs\
   \ ÷ QALYs/life) | Formula: TOTAL_QALYS ÷ QALYS_PER_LIFE | Unit: lives/year | Click\
@@ -984,60 +984,60 @@
   \ trial | Unit: ratio | Click to view source\">82</a>"
 "trial_cost_reduction_pct": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" title=\"Trial cost reduction percentage (50% baseline,\
-  \ conservative) | Unit: rate | Click to view calculation\">0.50</a>"
+  \ conservative) | Unit: rate | Click to view calculation\">0.5%</a>"
 "typical_ceo_hourly_rate": "<a href=\"/knowledge/references.qmd#ceo-compensation\"\
   \ class=\"parameter-link\" title=\"Typical CEO hourly rate | Unit: USD/hour | Click\
-  \ to view source\">10,000</a>"
+  \ to view source\">$10K</a>"
 "us_chronic_disease_spending_annual": "<a href=\"/knowledge/references.qmd#us-chronic-disease-spending\"\
   \ class=\"parameter-link\" title=\"US annual chronic disease spending | Unit: USD/year\
-  \ | Click to view source\">4,100,000,000,000</a>"
+  \ | Click to view source\">$4.1T</a>"
 "us_dot_value_of_statistical_life_millions": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"US Department of Transportation value of statistical\
-  \ life | Unit: millions USD | Click to view source\">13.60</a>"
+  \ life | Unit: millions USD | Click to view source\">$14</a>"
 "us_median_salary": "<a href=\"/knowledge/references.qmd#us-median-salary-2024\" class=\"\
   parameter-link\" title=\"US median salary in 2024 | Unit: USD/year | Click to view\
-  \ source\">59,384</a>"
+  \ source\">$59K</a>"
 "us_mental_health_cost_annual": "<a href=\"/knowledge/references.qmd#us-mental-health-cost\"\
   \ class=\"parameter-link\" title=\"US mental health costs (treatment + productivity\
-  \ loss) | Unit: USD/year | Click to view source\">350,000,000,000</a>"
+  \ loss) | Unit: USD/year | Click to view source\">$350B</a>"
 "us_population_2024": "<a href=\"/knowledge/references.qmd#us-population-335m\" class=\"\
   parameter-link\" title=\"US population in 2024 | Unit: people | Click to view source\"\
   >335,000,000</a>"
 "value_of_statistical_life": "<a href=\"/knowledge/references.qmd#dot-vsl-13-6m\"\
   \ class=\"parameter-link\" title=\"Value of Statistical Life (conservative estimate)\
-  \ | Unit: USD | Click to view source\">10,000,000</a>"
+  \ | Unit: USD | Click to view source\">$10M</a>"
 "victory_bond_annual_payout": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"Annual VICTORY bond payout (treaty funding ×\
   \ bond percentage) | Formula: TREATY_FUNDING × BOND_PCT | Unit: billions USD/year\
-  \ | Click to view calculation\">2.72</a>"
+  \ | Click to view calculation\">$2.7B</a>"
 "victory_bond_annual_return_pct": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"Annual return percentage for VICTORY bondholders\
-  \ | Formula: PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view calculation\">2.72</a>"
+  \ | Formula: PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view calculation\">2.72%</a>"
 "victory_bond_funding_pct": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"Percentage of captured dividend funding VICTORY\
-  \ bonds (10%) | Unit: rate | Click to view calculation\">0.10</a>"
+  \ bonds (10%) | Unit: rate | Click to view calculation\">0.1%</a>"
 "victory_bond_investment_unit_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"VICTORY bond investment unit for retail investors\
-  \ | Unit: USD | Click to view calculation\">1,000</a>"
+  \ | Unit: USD | Click to view calculation\">$1K</a>"
 "victory_bond_payback_months": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"Months to full payback for VICTORY bondholders\
   \ | Formula: 12 ÷ RETURN_PCT | Unit: months | Click to view calculation\">4.42</a>"
 "victory_bond_payout_per_unit_usd_annual": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"Annual payout per $1,000 VICTORY bond investment\
   \ unit | Formula: (ANNUAL_PAYOUT ÷ CAMPAIGN_COST) × UNIT | Unit: USD/year | Click\
-  \ to view calculation\">2,718</a>"
+  \ to view calculation\">$2.7K</a>"
 "vsl_epa_millions": "<a href=\"/knowledge/references.qmd#epa-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"EPA value of statistical life | Unit: millions\
-  \ USD | Click to view source\">9.60</a>"
+  \ USD | Click to view source\">$10</a>"
 "water_fluoridation_roi": "<a href=\"/knowledge/references.qmd#water-fluoridation-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from water fluoridation\
   \ programs | Unit: ratio | Click to view source\">23</a>"
 "workforce_chronic_illness_prevalence": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Workforce with at least one chronic condition\
-  \ (78.4%) | Unit: rate | Click to view source\">0.78</a>"
+  \ (78.4%) | Unit: rate | Click to view source\">0.784%</a>"
 "workforce_with_productivity_loss": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Percentage of workforce experiencing productivity\
-  \ loss from chronic illness (28%) | Unit: rate | Click to view source\">0.28</a>"
+  \ loss from chronic illness (28%) | Unit: rate | Click to view source\">0.28%</a>"
 "ww2_bond_return_pct": "<a href=\"/knowledge/references.qmd#ww2-war-bonds-return\"\
   \ class=\"parameter-link\" title=\"World War II war bond return percentage (4%)\
-  \ | Unit: rate | Click to view source\">0.04</a>"
+  \ | Unit: rate | Click to view source\">0.04%</a>"

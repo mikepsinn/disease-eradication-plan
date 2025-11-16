@@ -83,17 +83,96 @@ def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
     return parameters
 
 
-def format_parameter_value(value: float) -> str:
-    """Format a numeric value with appropriate precision and thousand separators."""
-    if isinstance(value, float) and value < 100 and value != int(value):
-        # Small floats: show 2 decimal places
-        return f"{value:,.2f}"
-    elif abs(value) >= 1:
+def format_parameter_value(value: float, unit: str = "") -> str:
+    """
+    Format a numeric value with appropriate precision, thousand separators, and units.
+
+    Uses 3 significant figures max, removes trailing zeros.
+
+    Args:
+        value: The numeric value (may be billions for currency)
+        unit: The unit string from the Parameter (e.g., "billions USD/year", "percent", "deaths/year")
+
+    Returns:
+        Formatted string with units (e.g., "$50B", "50%", "244,600")
+    """
+    # Detect currency parameters
+    is_currency = 'USD' in unit or 'usd' in unit or 'dollar' in unit.lower()
+
+    # Detect percentage parameters
+    is_percentage = '%' in unit or 'percent' in unit.lower() or 'rate' in unit.lower()
+
+    # Check if value is already in billions or in actual dollars
+    is_in_billions = 'billion' in unit.lower()
+
+    # Helper to remove trailing zeros and decimal point
+    def clean_number(num_str: str) -> str:
+        if '.' in num_str:
+            num_str = num_str.rstrip('0').rstrip('.')
+        return num_str
+
+    # Add currency formatting if applicable
+    if is_currency:
+        if is_in_billions:
+            # Value is in billions, add $ and scale suffix
+            if abs(value) >= 1000:
+                # Trillions
+                formatted = f"${value/1000:.0f}T" if value/1000 >= 10 else f"${value/1000:.1f}T"
+            elif abs(value) >= 1:
+                # Billions
+                formatted = f"${value:.0f}B" if value >= 10 else f"${value:.1f}B"
+            elif abs(value) >= 0.001:
+                # Millions
+                formatted = f"${value*1000:.0f}M" if value*1000 >= 10 else f"${value*1000:.1f}M"
+            else:
+                # Thousands or less
+                formatted = f"${value*1000000:.0f}K"
+        else:
+            # Value is in actual dollars, convert to appropriate scale
+            if abs(value) >= 1e12:
+                # Trillions
+                formatted = f"${value/1e12:.0f}T" if value/1e12 >= 10 else f"${value/1e12:.1f}T"
+            elif abs(value) >= 1e9:
+                # Billions
+                formatted = f"${value/1e9:.0f}B" if value/1e9 >= 10 else f"${value/1e9:.1f}B"
+            elif abs(value) >= 1e6:
+                # Millions
+                formatted = f"${value/1e6:.0f}M" if value/1e6 >= 10 else f"${value/1e6:.1f}M"
+            elif abs(value) >= 1e3:
+                # Thousands
+                formatted = f"${value/1e3:.0f}K" if value/1e3 >= 10 else f"${value/1e3:.1f}K"
+            else:
+                # Less than 1000
+                formatted = f"${value:.0f}"
+
+        # Clean up .0 in formatted string (e.g., "$50.0B" → "$50B")
+        return formatted.replace('.0B', 'B').replace('.0M', 'M').replace('.0T', 'T').replace('.0K', 'K')
+
+    # Format plain numbers with appropriate precision
+    if value == int(value):
+        # Integer value - no decimals needed
+        formatted_num = f"{int(value):,}"
+    elif abs(value) >= 1000:
         # Large numbers: no decimals, with thousand separators
-        return f"{value:,.0f}"
+        formatted_num = f"{value:,.0f}"
+    elif abs(value) >= 1:
+        # Medium numbers: up to 3 sig figs, remove trailing zeros
+        if value >= 100:
+            formatted_num = f"{value:,.0f}"  # No decimals for 100+
+        elif value >= 10:
+            formatted_num = clean_number(f"{value:,.1f}")  # 1 decimal for 10-99
+        else:
+            formatted_num = clean_number(f"{value:,.2f}")  # 2 decimals for 1-9
     else:
-        # Very small numbers: show 4 decimal places
-        return f"{value:.4f}"
+        # Small numbers: 3 sig figs
+        formatted_num = clean_number(f"{value:.3g}")
+
+    # Add percentage formatting if applicable
+    if is_percentage:
+        return f"{formatted_num}%"
+
+    # Default: just the formatted number
+    return formatted_num
 
 
 def generate_html_with_tooltip(param_name: str, value: float, comment: str = "") -> str:
@@ -108,7 +187,12 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
     Returns:
         HTML string with formatted value, clickable link, and tooltip
     """
-    formatted_value = format_parameter_value(value)
+    # Extract unit if available
+    unit = ""
+    if hasattr(value, 'unit') and value.unit:
+        unit = value.unit
+
+    formatted_value = format_parameter_value(value, unit)
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, 'source_ref') and value.source_ref
