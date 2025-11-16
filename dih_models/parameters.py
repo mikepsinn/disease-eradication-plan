@@ -141,12 +141,53 @@ GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = (
 )  # $2,446B
 
 # Infrastructure Damage Breakdown (billions USD)
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = 487.3
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = 421.7
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = 298.1
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = 267.8
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = 234.5
-GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = 165.6
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
+    487.3,
+    source_ref="war-infrastructure-damage-costs",
+    source_type="external",
+    description="Annual infrastructure damage to transportation from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
+    421.7,
+    source_ref="war-infrastructure-damage-costs",
+    source_type="external",
+    description="Annual infrastructure damage to energy systems from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
+    298.1,
+    source_ref="war-infrastructure-damage-costs",
+    source_type="external",
+    description="Annual infrastructure damage to communications from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
+    267.8,
+    source_ref="war-infrastructure-damage-costs",
+    source_type="external",
+    description="Annual infrastructure damage to water systems from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
+    234.5,
+    source_ref="war-infrastructure-damage-costs",
+    source_type="external",
+    description="Annual infrastructure damage to education facilities from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
+    165.6,
+    source_ref="war-infrastructure-damage-costs",
+    source_type="external",
+    description="Annual infrastructure damage to healthcare facilities from conflict",
+    unit="billions USD"
+)
 
 # Total infrastructure destruction (calculated from breakdown)
 GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = (
@@ -159,10 +200,37 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = (
 )  # $1,875B
 
 # Trade Disruption Breakdown (billions USD)
-GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = 247.1
-GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = 186.8
-GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = 124.7
-GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = 57.4
+GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
+    247.1,
+    source_ref="war-trade-disruption-costs",
+    source_type="external",
+    description="Annual trade disruption costs from shipping disruptions",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
+    186.8,
+    source_ref="war-trade-disruption-costs",
+    source_type="external",
+    description="Annual trade disruption costs from supply chain disruptions",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
+    124.7,
+    source_ref="war-trade-disruption-costs",
+    source_type="external",
+    description="Annual trade disruption costs from energy price volatility",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
+    57.4,
+    source_ref="war-trade-disruption-costs",
+    source_type="external",
+    description="Annual trade disruption costs from currency instability",
+    unit="billions USD"
+)
 
 # Total trade disruption (calculated from breakdown)
 GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT = (
@@ -180,12 +248,53 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = (
 )  # $7,655B
 
 # Indirect costs
-GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = 2718.0  # billions USD, opportunity cost of military spending
-GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = 200.1  # billions USD, 20-year projected costs
-GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = 150.0  # billions USD, 108.4M refugees × $1,384/year
-GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = 100.0  # billions USD, environmental restoration costs
-GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = 232.0  # billions USD, PTSD and mental health costs
-GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = 300.0  # billions USD, lost productivity from casualties
+GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
+    2718.0,
+    source_ref="military-spending-opportunity-cost",
+    source_type="external",
+    description="Annual lost economic growth from military spending opportunity cost",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
+    200.1,
+    source_ref="global-veteran-healthcare-costs",
+    source_type="external",
+    description="Annual veteran healthcare costs (20-year projected)",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
+    150.0,
+    source_ref="refugee-support-costs",
+    source_type="external",
+    description="Annual refugee support costs (108.4M refugees × $1,384/year)",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
+    100.0,
+    source_ref="war-environmental-damage-costs",
+    source_type="external",
+    description="Annual environmental damage and restoration costs from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
+    232.0,
+    source_ref="war-psychological-impact-costs",
+    source_type="external",
+    description="Annual PTSD and mental health costs from conflict",
+    unit="billions USD"
+)
+
+GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
+    300.0,
+    source_ref="war-lost-human-capital",
+    source_type="external",
+    description="Annual lost productivity from conflict casualties",
+    unit="billions USD"
+)
 
 GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = (
     GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING
@@ -200,7 +309,13 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = (
 GLOBAL_ANNUAL_WAR_TOTAL_COST = GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL + GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL  # $11,355.1B
 
 # Treaty parameters
-TREATY_REDUCTION_PCT = 0.01  # 1% reduction in military spending/war costs
+TREATY_REDUCTION_PCT = Parameter(
+    0.01,
+    source_ref="/knowledge/solution/dfda.qmd#one-percent-treaty",
+    source_type="calculated",
+    description="1% reduction in military spending/war costs from treaty",
+    unit="rate"
+)  # 1% reduction in military spending/war costs
 TREATY_ANNUAL_FUNDING = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT  # $27.18B
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT  # $113.55B, rounded to $114B
 
@@ -218,7 +333,13 @@ GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = Parameter(
     unit="billions USD/year"
 )
 
-TRIAL_COST_REDUCTION_PCT = 0.50  # 50% baseline reduction (conservative)
+TRIAL_COST_REDUCTION_PCT = Parameter(
+    0.50,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+    source_type="calculated",
+    description="Trial cost reduction percentage (50% baseline, conservative)",
+    unit="rate"
+)  # 50% baseline reduction (conservative)
 
 TRIAL_COST_REDUCTION_FACTOR = Parameter(
     82,
@@ -234,7 +355,13 @@ TRIAL_COST_REDUCTION_FACTOR = Parameter(
 # ---
 
 # Current System Baseline
-CURRENT_TRIALS_PER_YEAR = 3300  # Global clinical trials per year
+CURRENT_TRIALS_PER_YEAR = Parameter(
+    3300,
+    source_ref="global-clinical-trials-per-year",
+    source_type="external",
+    description="Current global clinical trials per year",
+    unit="trials/year"
+)  # Global clinical trials per year
 
 CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     50,
@@ -244,13 +371,48 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     unit="drugs/year"
 )  # FDA ~50-55/year
 
-CURRENT_ACTIVE_TRIALS = 10000  # Active trials at any given time (3-5 year duration)
+CURRENT_ACTIVE_TRIALS = Parameter(
+    10000,
+    source_ref="active-clinical-trials-baseline",
+    source_type="external",
+    description="Current active trials at any given time (3-5 year duration)",
+    unit="trials"
+)  # Active trials at any given time (3-5 year duration)
+
 CURRENT_TRIAL_DURATION_YEARS_RANGE = (3, 5)  # Years for large trials
 CURRENT_SMALL_TRIAL_RECRUITMENT_MONTHS_RANGE = (6, 18)  # Months to recruit 100 patients
-CURRENT_TRIAL_ABANDONMENT_RATE = 0.40  # 40% of trials never complete
-CURRENT_TRIAL_COMPLETION_RATE = 0.60  # 60% completion rate
-CURRENT_PATIENT_ELIGIBILITY_RATE = 0.002  # 0.2% of disease patients can participate
-CURRENT_TRIAL_SLOTS_AVAILABLE = 5_000_000  # Total trial slots for 2.4B sick people
+
+CURRENT_TRIAL_ABANDONMENT_RATE = Parameter(
+    0.40,
+    source_ref="clinical-trial-abandonment-rate",
+    source_type="external",
+    description="Current trial abandonment rate (40% never complete)",
+    unit="rate"
+)  # 40% of trials never complete
+
+CURRENT_TRIAL_COMPLETION_RATE = Parameter(
+    0.60,
+    source_ref="clinical-trial-completion-rate",
+    source_type="external",
+    description="Current trial completion rate (60%)",
+    unit="rate"
+)  # 60% completion rate
+
+CURRENT_PATIENT_ELIGIBILITY_RATE = Parameter(
+    0.002,
+    source_ref="clinical-trial-eligibility-rate",
+    source_type="external",
+    description="Current patient eligibility rate for clinical trials (0.2%)",
+    unit="rate"
+)  # 0.2% of disease patients can participate
+
+CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
+    5_000_000,
+    source_ref="global-trial-participant-capacity",
+    source_type="external",
+    description="Total trial slots available for 2.4B sick people",
+    unit="slots"
+)  # Total trial slots for 2.4B sick people
 
 CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     2_400_000_000,
@@ -302,17 +464,86 @@ TRADITIONAL_LARGE_TRIAL_SIZE = Parameter(
 )
 
 # dFDA System Targets
-DFDA_TRIALS_PER_YEAR_CAPACITY = 380000  # Maximum trials/year possible with 115x acceleration
-DFDA_DRUG_APPROVALS_PER_YEAR_LOW = 1000  # Conservative approvals estimate (20x current)
-DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = 2000  # Optimistic approvals estimate (40x current)
-DFDA_ACTIVE_TRIALS = 200000  # Active trials at any given time (3-12 month duration)
+DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
+    380000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
+    source_type="calculated",
+    description="Maximum trials per year possible with 115x acceleration",
+    unit="trials/year"
+)  # Maximum trials/year possible with 115x acceleration
+DFDA_DRUG_APPROVALS_PER_YEAR_LOW = Parameter(
+    1000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#approval-projections",
+    source_type="calculated",
+    description="Conservative drug approvals estimate (20x current)",
+    unit="approvals/year"
+)  # Conservative approvals estimate (20x current)
+
+DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = Parameter(
+    2000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#approval-projections",
+    source_type="calculated",
+    description="Optimistic drug approvals estimate (40x current)",
+    unit="approvals/year"
+)  # Optimistic approvals estimate (40x current)
+
+DFDA_ACTIVE_TRIALS = Parameter(
+    200000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
+    source_type="calculated",
+    description="Active trials at any given time (3-12 month duration)",
+    unit="trials"
+)  # Active trials at any given time (3-12 month duration)
+
 DFDA_TRIAL_DURATION_MONTHS_RANGE = (3, 12)  # Months for typical trial completion
-DFDA_SMALL_TRIAL_RECRUITMENT_WEEKS = 3  # Weeks to recruit 1,000 patients
-DFDA_LARGE_TRIAL_RECRUITMENT_MONTHS = 3  # Months to recruit 10,000+ patients
-DFDA_TRIAL_ABANDONMENT_RATE = 0.05  # Near-zero abandonment (5%)
-DFDA_TRIAL_COMPLETION_RATE = 0.95  # 95% completion rate
-DFDA_PATIENT_ELIGIBILITY_RATE = 0.50  # 50% of disease patients can participate
-DFDA_ELIGIBLE_PATIENTS_GLOBAL = 1_200_000_000  # 1.2B eligible with minimal exclusions
+
+DFDA_SMALL_TRIAL_RECRUITMENT_WEEKS = Parameter(
+    3,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed",
+    source_type="calculated",
+    description="Weeks to recruit 1,000 patients in dFDA system",
+    unit="weeks"
+)  # Weeks to recruit 1,000 patients
+
+DFDA_LARGE_TRIAL_RECRUITMENT_MONTHS = Parameter(
+    3,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed",
+    source_type="calculated",
+    description="Months to recruit 10,000+ patients in dFDA system",
+    unit="months"
+)  # Months to recruit 10,000+ patients
+
+DFDA_TRIAL_ABANDONMENT_RATE = Parameter(
+    0.05,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
+    source_type="calculated",
+    description="dFDA trial abandonment rate (5%)",
+    unit="rate"
+)  # Near-zero abandonment (5%)
+
+DFDA_TRIAL_COMPLETION_RATE = Parameter(
+    0.95,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
+    source_type="calculated",
+    description="dFDA trial completion rate (95%)",
+    unit="rate"
+)  # 95% completion rate
+
+DFDA_PATIENT_ELIGIBILITY_RATE = Parameter(
+    0.50,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#eligibility",
+    source_type="calculated",
+    description="dFDA patient eligibility rate (50% of disease patients can participate)",
+    unit="rate"
+)  # 50% of disease patients can participate
+
+DFDA_ELIGIBLE_PATIENTS_GLOBAL = Parameter(
+    1_200_000_000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#eligible-population",
+    source_type="calculated",
+    description="Global eligible patients with minimal exclusions",
+    unit="people"
+)  # 1.2B eligible with minimal exclusions
 
 # dFDA Trial Economics
 RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
@@ -323,18 +554,86 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     unit="USD/patient"
 )  # Proven cost from Oxford RECOVERY trial
 
-DFDA_TARGET_COST_PER_PATIENT = 1000  # Conservative target for dFDA
-DFDA_SMALL_TRIAL_SIZE = 1000  # Typical dFDA trial size
-DFDA_LARGE_TRIAL_SIZE = 10000  # Large dFDA pragmatic trial size
+DFDA_TARGET_COST_PER_PATIENT = Parameter(
+    1000,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
+    source_type="calculated",
+    description="Conservative target cost per patient for dFDA",
+    unit="USD/patient"
+)  # Conservative target for dFDA
+
+DFDA_SMALL_TRIAL_SIZE = Parameter(
+    1000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#trial-sizes",
+    source_type="calculated",
+    description="Typical dFDA trial size",
+    unit="participants"
+)  # Typical dFDA trial size
+
+DFDA_LARGE_TRIAL_SIZE = Parameter(
+    10000,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#trial-sizes",
+    source_type="calculated",
+    description="Large dFDA pragmatic trial size",
+    unit="participants"
+)  # Large dFDA pragmatic trial size
 
 # Research Acceleration Multipliers (Derived)
-RESEARCH_ACCELERATION_MULTIPLIER = 115  # 115x more research capacity (82x cost × 1.4x funding)
-RECRUITMENT_SPEED_MULTIPLIER = 25  # 25x faster recruitment (from 2% → 50% eligibility)
-TRIAL_COMPLETION_SPEED_MULTIPLIER = 10  # 10x faster completion (flipped incentives)
-SIMULTANEOUS_TRIALS_MULTIPLIER = 20  # 20x more trials running simultaneously
-COMPLETION_RATE_IMPROVEMENT_MULTIPLIER = 1.6  # 1.6x improvement (60% → 95%)
-COMPLETED_TRIALS_MULTIPLIER_ACTUAL = 180  # 180x more completed trials/year (theoretical)
-COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = 115  # Conservative rating accounting for scale-up
+RESEARCH_ACCELERATION_MULTIPLIER = Parameter(
+    115,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
+    source_type="calculated",
+    description="Total research capacity multiplier from dFDA",
+    unit="ratio"
+)  # 115x more research capacity (82x cost × 1.4x funding)
+
+RECRUITMENT_SPEED_MULTIPLIER = Parameter(
+    25,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration",
+    source_type="calculated",
+    description="Recruitment speed multiplier (25x faster from 2% → 50% eligibility)",
+    unit="ratio"
+)  # 25x faster recruitment (from 2% → 50% eligibility)
+
+TRIAL_COMPLETION_SPEED_MULTIPLIER = Parameter(
+    10,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration",
+    source_type="calculated",
+    description="Trial completion speed multiplier (10x faster)",
+    unit="ratio"
+)  # 10x faster completion (flipped incentives)
+
+SIMULTANEOUS_TRIALS_MULTIPLIER = Parameter(
+    20,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier",
+    source_type="calculated",
+    description="Simultaneous trials multiplier (20x more trials)",
+    unit="ratio"
+)  # 20x more trials running simultaneously
+
+COMPLETION_RATE_IMPROVEMENT_MULTIPLIER = Parameter(
+    1.6,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
+    source_type="calculated",
+    description="Completion rate improvement (1.6x from 60% → 95%)",
+    unit="ratio"
+)  # 1.6x improvement (60% → 95%)
+
+COMPLETED_TRIALS_MULTIPLIER_ACTUAL = Parameter(
+    180,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#total-multiplier",
+    source_type="calculated",
+    description="Actual completed trials multiplier (180x theoretical)",
+    unit="ratio"
+)  # 180x more completed trials/year (theoretical)
+
+COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = Parameter(
+    115,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier",
+    source_type="calculated",
+    description="Conservative completed trials multiplier accounting for scale-up",
+    unit="ratio"
+)  # Conservative rating accounting for scale-up
 
 # Calculated Research Capacity
 # Traditional: 3,300 trials/year × 60% completion = ~2,000 completed/year
@@ -343,14 +642,54 @@ CURRENT_COMPLETED_TRIALS_PER_YEAR = int(CURRENT_TRIALS_PER_YEAR * CURRENT_TRIAL_
 DFDA_COMPLETED_TRIALS_PER_YEAR = int(DFDA_TRIALS_PER_YEAR_CAPACITY * DFDA_TRIAL_COMPLETION_RATE)  # 361,000
 
 # dFDA operational costs
-DFDA_UPFRONT_BUILD = 0.040  # $40M one-time build cost
+DFDA_UPFRONT_BUILD = Parameter(
+    0.040,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+    source_type="calculated",
+    description="dFDA platform one-time build cost",
+    unit="billions USD"
+)  # $40M one-time build cost
 
 # dFDA operational cost breakdown (in billions)
-DFDA_OPEX_PLATFORM_MAINTENANCE = 0.015  # $15M
-DFDA_OPEX_STAFF = 0.010  # $10M - minimal, AI-assisted
-DFDA_OPEX_INFRASTRUCTURE = 0.008  # $8M - cloud, security
-DFDA_OPEX_REGULATORY = 0.005  # $5M - regulatory coordination
-DFDA_OPEX_COMMUNITY = 0.002  # $2M - community support
+DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
+    0.015,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_type="calculated",
+    description="dFDA platform maintenance costs",
+    unit="billions USD/year"
+)  # $15M
+
+DFDA_OPEX_STAFF = Parameter(
+    0.010,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_type="calculated",
+    description="dFDA staff costs (minimal, AI-assisted)",
+    unit="billions USD/year"
+)  # $10M - minimal, AI-assisted
+
+DFDA_OPEX_INFRASTRUCTURE = Parameter(
+    0.008,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_type="calculated",
+    description="dFDA infrastructure costs (cloud, security)",
+    unit="billions USD/year"
+)  # $8M - cloud, security
+
+DFDA_OPEX_REGULATORY = Parameter(
+    0.005,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_type="calculated",
+    description="dFDA regulatory coordination costs",
+    unit="billions USD/year"
+)  # $5M - regulatory coordination
+
+DFDA_OPEX_COMMUNITY = Parameter(
+    0.002,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+    source_type="calculated",
+    description="dFDA community support costs",
+    unit="billions USD/year"
+)  # $2M - community support
 
 # Total annual operational costs (calculated from components)
 DFDA_ANNUAL_OPEX = (
@@ -376,11 +715,30 @@ DFDA_ROI_SIMPLE = DFDA_GROSS_SAVINGS_ANNUAL / DFDA_ANNUAL_OPEX  # 1,250:1
 
 # QALY valuations
 # Source: brain/book/appendix/icer-full-calculation.qmd
-STANDARD_ECONOMIC_QALY_VALUE_USD = 150000  # Standard economic value per QALY
-STANDARD_QALYS_PER_LIFE_SAVED = 35  # Standard assumption (WHO life tables)
+STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
+    150000,
+    source_ref="standard-qaly-value",
+    source_type="external",
+    description="Standard economic value per QALY",
+    unit="USD/QALY"
+)  # Standard economic value per QALY
+
+STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
+    35,
+    source_ref="who-life-tables-qalys-per-life",
+    source_type="external",
+    description="Standard QALYs per life saved (WHO life tables)",
+    unit="QALYs/life"
+)  # Standard assumption (WHO life tables)
 
 # dFDA health benefits
-GLOBAL_DFDA_QALYS_GAINED_ANNUAL = 840000  # QALYs gained per year from dFDA
+GLOBAL_DFDA_QALYS_GAINED_ANNUAL = Parameter(
+    840000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd",
+    source_type="calculated",
+    description="Annual QALYs gained from dFDA",
+    unit="QALYs/year"
+)  # QALYs gained per year from dFDA
 DFDA_QALYS_MONETIZED = (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD) / 1_000_000_000  # $126B
 
 # Peace dividend health benefits
@@ -396,16 +754,70 @@ TREATY_TOTAL_LIVES_SAVED_ANNUAL = TREATY_TOTAL_QALYS_GAINED_ANNUAL / STANDARD_QA
 # ---
 
 # Source: brain/book/economics/campaign-budget.qmd
-TREATY_CAMPAIGN_DURATION_YEARS = 4  # 3-5 year range, using midpoint
+TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
+    4,
+    source_ref="/knowledge/strategy/roadmap.qmd",
+    source_type="calculated",
+    description="Treaty campaign duration (3-5 year range, using midpoint)",
+    unit="years"
+)  # 3-5 year range, using midpoint
 
 # Campaign budget breakdown (in billions)
-TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM = 0.200  # $200M viral referendum
-TREATY_CAMPAIGN_BUDGET_AI_LOBBYING = 0.250  # $250M AI-assisted lobbying
-TREATY_CAMPAIGN_BUDGET_TECHNOLOGY = 0.250  # $250M technology platform
-TREATY_CAMPAIGN_BUDGET_LEGAL = 0.100  # $100M legal & compliance
-TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS = 0.100  # $100M partnerships
-TREATY_CAMPAIGN_BUDGET_OPERATIONS = 0.050  # $50M operations
-TREATY_CAMPAIGN_BUDGET_RESERVE = 0.050  # $50M reserve
+TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM = Parameter(
+    0.200,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="Viral referendum campaign budget",
+    unit="billions USD"
+)  # $200M viral referendum
+
+TREATY_CAMPAIGN_BUDGET_AI_LOBBYING = Parameter(
+    0.250,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="AI-assisted lobbying budget",
+    unit="billions USD"
+)  # $250M AI-assisted lobbying
+
+TREATY_CAMPAIGN_BUDGET_TECHNOLOGY = Parameter(
+    0.250,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="Technology platform budget",
+    unit="billions USD"
+)  # $250M technology platform
+
+TREATY_CAMPAIGN_BUDGET_LEGAL = Parameter(
+    0.100,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="Legal and compliance budget",
+    unit="billions USD"
+)  # $100M legal & compliance
+
+TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS = Parameter(
+    0.100,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="Partnerships budget",
+    unit="billions USD"
+)  # $100M partnerships
+
+TREATY_CAMPAIGN_BUDGET_OPERATIONS = Parameter(
+    0.050,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="Operations budget",
+    unit="billions USD"
+)  # $50M operations
+
+TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
+    0.050,
+    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_type="calculated",
+    description="Reserve fund",
+    unit="billions USD"
+)  # $50M reserve
 
 # Total campaign cost (calculated from components)
 TREATY_CAMPAIGN_TOTAL_COST = (
@@ -476,15 +888,55 @@ ROI_ALL_DIRECT_BENEFITS = Parameter(
 
 # NPV analysis parameters
 # Source: brain/book/appendix/dfda-calculation-framework.qmd
-NPV_DISCOUNT_RATE_STANDARD = 0.08  # 8% annual discount rate (r)
-NPV_TIME_HORIZON_YEARS = 10  # Standard 10-year analysis window (T)
+NPV_DISCOUNT_RATE_STANDARD = Parameter(
+    0.08,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters",
+    source_type="calculated",
+    description="Standard discount rate for NPV analysis (8% annual)",
+    unit="rate"
+)  # 8% annual discount rate (r)
+
+NPV_TIME_HORIZON_YEARS = Parameter(
+    10,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters",
+    source_type="calculated",
+    description="Standard time horizon for NPV analysis",
+    unit="years"
+)  # Standard 10-year analysis window (T)
 
 # NPV Model - Component Costs
 # Core platform and broader initiative costs (for detailed breakdowns)
-DFDA_NPV_UPFRONT_COST = 0.040  # $40M core platform build
-DIH_NPV_UPFRONT_COST_INITIATIVES = 0.22975  # $228M medium case broader initiatives
-DFDA_NPV_ANNUAL_OPEX = 0.01895  # $19M core platform (midpoint of $11-26.5M)
-DIH_NPV_ANNUAL_OPEX_INITIATIVES = 0.02110  # $21.1M medium case broader initiatives
+DFDA_NPV_UPFRONT_COST = Parameter(
+    0.040,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_type="calculated",
+    description="dFDA core platform build cost",
+    unit="billions USD"
+)  # $40M core platform build
+
+DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
+    0.22975,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_type="calculated",
+    description="DIH broader initiatives upfront cost (medium case)",
+    unit="billions USD"
+)  # $228M medium case broader initiatives
+
+DFDA_NPV_ANNUAL_OPEX = Parameter(
+    0.01895,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_type="calculated",
+    description="dFDA core platform annual opex (midpoint of $11-26.5M)",
+    unit="billions USD/year"
+)  # $19M core platform (midpoint of $11-26.5M)
+
+DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
+    0.02110,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+    source_type="calculated",
+    description="DIH broader initiatives annual opex (medium case)",
+    unit="billions USD/year"
+)  # $21.1M medium case broader initiatives
 
 # NPV Model - Primary Parameters (dFDA-specific)
 # Total upfront costs (C0): combines core dFDA platform + broader DIH initiative setup
@@ -494,7 +946,13 @@ DFDA_NPV_UPFRONT_COST_TOTAL = DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITI
 DFDA_NPV_ANNUAL_OPEX_TOTAL = DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES  # Cop = $0.04005B
 
 # dFDA adoption curve: linear ramp from 0% to 100% over 5 years, then constant at 100%
-DFDA_NPV_ADOPTION_RAMP_YEARS = 5  # Years to reach full adoption
+DFDA_NPV_ADOPTION_RAMP_YEARS = Parameter(
+    5,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve",
+    source_type="calculated",
+    description="Years to reach full dFDA adoption",
+    unit="years"
+)  # Years to reach full adoption
 
 # Calculated NPV values for dFDA
 DFDA_NPV_PV_ANNUAL_OPEX = DFDA_NPV_ANNUAL_OPEX_TOTAL * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD)**-NPV_TIME_HORIZON_YEARS) / NPV_DISCOUNT_RATE_STANDARD
@@ -507,7 +965,13 @@ DFDA_NPV_NET_BENEFIT_CONSERVATIVE = DFDA_NPV_TOTAL_COST * ROI_DFDA_SAVINGS_ONLY 
 
 # VICTORY Social Impact Bonds
 # Source: brain/book/economics/victory-bonds.qmd
-VICTORY_BOND_FUNDING_PCT = 0.10  # 10% of captured dividend funds bonds
+VICTORY_BOND_FUNDING_PCT = Parameter(
+    0.10,
+    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
+    source_type="calculated",
+    description="Percentage of captured dividend funding VICTORY bonds (10%)",
+    unit="rate"
+)  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT  # $2.718B
 VICTORY_BOND_ANNUAL_RETURN_PCT = VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST  # 271.8% (reported as 270%)
 VICTORY_BOND_PAYBACK_MONTHS = 12 / VICTORY_BOND_ANNUAL_RETURN_PCT  # 4.4 months
@@ -518,8 +982,21 @@ DIVIDEND_COVERAGE_FACTOR = TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX # ~679x
 # Aliases removed - use TREATY_ANNUAL_FUNDING, VICTORY_BOND_ANNUAL_PAYOUT, DFDA_ANNUAL_OPEX directly
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT = 1 - VICTORY_BOND_FUNDING_PCT # 90%
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT  # $24.3B/year
-DIH_TREASURY_TRIAL_SUBSIDIES_MIN = 10.0  # $10B/year clinical trial subsidies (minimum)
-DIH_TREASURY_TRIAL_SUBSIDIES_MAX = 20.0  # $20B/year clinical trial subsidies (maximum)
+DIH_TREASURY_TRIAL_SUBSIDIES_MIN = Parameter(
+    10.0,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies",
+    source_type="calculated",
+    description="Minimum annual clinical trial subsidies from DIH Treasury",
+    unit="billions USD/year"
+)  # $10B/year clinical trial subsidies (minimum)
+
+DIH_TREASURY_TRIAL_SUBSIDIES_MAX = Parameter(
+    20.0,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies",
+    source_type="calculated",
+    description="Maximum annual clinical trial subsidies from DIH Treasury",
+    unit="billions USD/year"
+)  # $20B/year clinical trial subsidies (maximum)
 
 # ---
 # REFERENCE VALUES (for comparisons)
@@ -549,7 +1026,13 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     description="Global government medical research spending",
     unit="billions USD"
 )
-TOTAL_GLOBAL_WASTE_SPEND_ANNUAL = 118800 # billions USD, annual spend on military + disease
+TOTAL_GLOBAL_WASTE_SPEND_ANNUAL = Parameter(
+    118800,
+    source_ref="/knowledge/problem/cost-of-war.qmd",
+    source_type="calculated",
+    description="Total global annual spending on military and disease",
+    unit="billions USD/year"
+)  # billions USD, annual spend on military + disease
 
 # Population
 GLOBAL_POPULATION_2024_BILLIONS = Parameter(
@@ -560,7 +1043,13 @@ GLOBAL_POPULATION_2024_BILLIONS = Parameter(
     unit="billions of people"
 )  # UN World Population Prospects 2022
 
-GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = 150000 # Daily deaths from curable diseases
+GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
+    150000,
+    source_ref="global-daily-deaths-curable-diseases",
+    source_type="external",
+    description="Daily deaths from curable diseases globally",
+    unit="deaths/day"
+)  # Daily deaths from curable diseases
 
 # Per capita calculations
 GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_POPULATION_2024_BILLIONS  # $340/person/year
@@ -605,8 +1094,21 @@ SMALLPOX_ERADICATION_ROI = Parameter(
     unit="ratio"
 )  # 159:1 to 280:1 estimated
 
-CHILDHOOD_VACCINATION_ROI = 13  # 13:1
-WATER_FLUORIDATION_ROI = 23  # 23:1
+CHILDHOOD_VACCINATION_ROI = Parameter(
+    13,
+    source_ref="childhood-vaccination-roi",
+    source_type="external",
+    description="Return on investment from childhood vaccination programs",
+    unit="ratio"
+)  # 13:1
+
+WATER_FLUORIDATION_ROI = Parameter(
+    23,
+    source_ref="water-fluoridation-roi",
+    source_type="external",
+    description="Return on investment from water fluoridation programs",
+    unit="ratio"
+)  # 23:1
 
 # ---
 # COMPLETE BENEFITS BREAKDOWN (for 1,239:1 ROI calculation)
@@ -616,12 +1118,53 @@ WATER_FLUORIDATION_ROI = 23  # 23:1
 # Note: Peace dividend updated from $97.1B to $113.55B when total war costs were revised from $9.7T to $11.355T
 # BENEFIT_PEACE_DIVIDEND_ANNUAL removed - use PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT directly
 BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL = DFDA_GROSS_SAVINGS_ANNUAL  # 82x cheaper trials (reference calculated value)
-BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL = 300.0  # 7-year acceleration
-BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL = 100.0  # 115x more research capacity
-BENEFIT_RARE_DISEASES_ANNUAL = 400.0  # Orphan drug viability
-BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL = 100.0  # R&D savings passed to consumers
-BENEFIT_PREVENTION_ANNUAL = 100.0  # Economic viability of prevention
-BENEFIT_MENTAL_HEALTH_ANNUAL = 75.0  # Treatment gap reduction
+BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL = Parameter(
+    300.0,
+    source_ref="/knowledge/appendix/economic-value-of-accelerated-treatments.qmd",
+    source_type="calculated",
+    description="Annual benefit from 7-year drug access acceleration",
+    unit="billions USD/year"
+)  # 7-year acceleration
+
+BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL = Parameter(
+    100.0,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
+    source_type="calculated",
+    description="Annual benefit from 115x research capacity increase",
+    unit="billions USD/year"
+)  # 115x more research capacity
+
+BENEFIT_RARE_DISEASES_ANNUAL = Parameter(
+    400.0,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#rare-diseases",
+    source_type="calculated",
+    description="Annual benefit from orphan drug viability",
+    unit="billions USD/year"
+)  # Orphan drug viability
+
+BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL = Parameter(
+    100.0,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#price-reduction",
+    source_type="calculated",
+    description="Annual benefit from R&D savings passed to consumers",
+    unit="billions USD/year"
+)  # R&D savings passed to consumers
+
+BENEFIT_PREVENTION_ANNUAL = Parameter(
+    100.0,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#prevention",
+    source_type="calculated",
+    description="Annual benefit from economic viability of prevention",
+    unit="billions USD/year"
+)  # Economic viability of prevention
+
+BENEFIT_MENTAL_HEALTH_ANNUAL = Parameter(
+    75.0,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#mental-health",
+    source_type="calculated",
+    description="Annual benefit from mental health treatment gap reduction",
+    unit="billions USD/year"
+)  # Treatment gap reduction
 
 TOTAL_COMPLETE_BENEFITS_ANNUAL = (
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
@@ -653,7 +1196,13 @@ COST_OF_DELAY_DEATHS_PER_SECOND = GLOBAL_DAILY_DEATHS_CURABLE_DISEASES / (24 * 6
 GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (1 - TREATY_REDUCTION_PCT) # $2,690.82B
 
 # Partial success scenario (US, EU, UK only)
-PARTIAL_SUCCESS_MILITARY_SPENDING_SHARE = 0.50  # ~50% of global spending
+PARTIAL_SUCCESS_MILITARY_SPENDING_SHARE = Parameter(
+    0.50,
+    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success",
+    source_type="calculated",
+    description="Military spending share for partial success scenario (US, EU, UK)",
+    unit="rate"
+)  # ~50% of global spending
 PARTIAL_SUCCESS_DIH_REVENUE = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * PARTIAL_SUCCESS_MILITARY_SPENDING_SHARE * TREATY_REDUCTION_PCT # ~$13.6B
 PARTIAL_SUCCESS_BONDHOLDER_PAYOUT = PARTIAL_SUCCESS_DIH_REVENUE * VICTORY_BOND_FUNDING_PCT # ~$1.36B
 PARTIAL_SUCCESS_RESEARCH_FUNDING = PARTIAL_SUCCESS_DIH_REVENUE * DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT # ~$12.2B
@@ -664,24 +1213,111 @@ PARTIAL_SUCCESS_INVESTOR_ROI = PARTIAL_SUCCESS_BONDHOLDER_PAYOUT / TREATY_CAMPAI
 # ---
 
 # Base Case (Central Scenario) - Used as primary estimates throughout analysis
-QALYS_FROM_FASTER_ACCESS = 200000 # QALYs gained annually from faster drug access (Base case)
-QALYS_FROM_PREVENTION = 140000 # QALYs gained annually from better prevention through real-world data (Base case)
-QALYS_FROM_NEW_THERAPIES = 500000 # QALYs gained annually from enabling new therapies for rare/untreatable diseases (Base case)
+QALYS_FROM_FASTER_ACCESS = Parameter(
+    200000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#base-case",
+    source_type="calculated",
+    description="Base case QALYs from faster drug access",
+    unit="QALYs/year"
+)  # QALYs gained annually from faster drug access (Base case)
+
+QALYS_FROM_PREVENTION = Parameter(
+    140000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#base-case",
+    source_type="calculated",
+    description="Base case QALYs from better prevention through real-world data",
+    unit="QALYs/year"
+)  # QALYs gained annually from better prevention through real-world data (Base case)
+
+QALYS_FROM_NEW_THERAPIES = Parameter(
+    500000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#base-case",
+    source_type="calculated",
+    description="Base case QALYs from enabling new therapies for rare/untreatable diseases",
+    unit="QALYs/year"
+)  # QALYs gained annually from enabling new therapies for rare/untreatable diseases (Base case)
 
 # Conservative Scenario - Lower bound estimates for QALY gains
-QALYS_FROM_FASTER_ACCESS_CONSERVATIVE = 90000 # QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)
-QALYS_FROM_PREVENTION_CONSERVATIVE = 50000 # QALYs from prevention (5M patients × 0.01 QALYs/patient)
-QALYS_FROM_NEW_THERAPIES_CONSERVATIVE = 50000 # QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)
-QALYS_TOTAL_CONSERVATIVE = 190000 # Total conservative QALYs (90k + 50k + 50k)
+QALYS_FROM_FASTER_ACCESS_CONSERVATIVE = Parameter(
+    90000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)",
+    unit="QALYs/year"
+)  # QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)
+
+QALYS_FROM_PREVENTION_CONSERVATIVE = Parameter(
+    50000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative QALYs from prevention (5M patients × 0.01 QALYs/patient)",
+    unit="QALYs/year"
+)  # QALYs from prevention (5M patients × 0.01 QALYs/patient)
+
+QALYS_FROM_NEW_THERAPIES_CONSERVATIVE = Parameter(
+    50000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)",
+    unit="QALYs/year"
+)  # QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)
+
+QALYS_TOTAL_CONSERVATIVE = Parameter(
+    190000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Total conservative QALYs (90k + 50k + 50k)",
+    unit="QALYs/year"
+)  # Total conservative QALYs (90k + 50k + 50k)
 
 # Optimistic Scenario - Upper bound estimates for QALY gains
-QALYS_FROM_FASTER_ACCESS_OPTIMISTIC = 500000 # QALYs from faster access (25 drugs/yr × 2 yr accel × 10k QALYs/drug)
-QALYS_FROM_PREVENTION_OPTIMISTIC = 150000 # QALYs from prevention (15M patients × 0.01 QALYs/patient)
-QALYS_FROM_NEW_THERAPIES_OPTIMISTIC = 3000000 # QALYs from new therapies (20 therapies/yr × 10k patients × 15 QALYs/patient)
-QALYS_TOTAL_OPTIMISTIC = 3650000 # Total optimistic QALYs (500k + 150k + 3M)
+QALYS_FROM_FASTER_ACCESS_OPTIMISTIC = Parameter(
+    500000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic QALYs from faster drug access",
+    unit="QALYs/year"
+)  # 25 drugs/yr × 2 yr accel × 10k QALYs/drug
 
-TREATMENT_ACCELERATION_YEARS_TARGET = 2 # Years to market with dFDA (target)
-TREATMENT_ACCELERATION_YEARS_CURRENT = 17 # Years to market with traditional FDA (current)
+QALYS_FROM_PREVENTION_OPTIMISTIC = Parameter(
+    150000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic QALYs from prevention",
+    unit="QALYs/year"
+)  # QALYs from prevention
+
+QALYS_FROM_NEW_THERAPIES_OPTIMISTIC = Parameter(
+    3000000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic QALYs from new therapies",
+    unit="QALYs/year"
+)  # QALYs from new therapies
+
+QALYS_TOTAL_OPTIMISTIC = Parameter(
+    3650000,
+    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Total optimistic QALYs (500k + 150k + 3M)",
+    unit="QALYs/year"
+)  # Total optimistic QALYs (500k + 150k + 3M)
+
+TREATMENT_ACCELERATION_YEARS_TARGET = Parameter(
+    2,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#target-timeline",
+    source_type="calculated",
+    description="Target years to market with dFDA",
+    unit="years"
+)  # Years to market with dFDA (target)
+
+TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
+    17,
+    source_ref="fda-drug-approval-timeline",
+    source_type="external",
+    description="Traditional FDA drug development timeline",
+    unit="years"
+)  # 12-17 years typical
 
 # ---
 # SENSITIVITY ANALYSIS SCENARIOS
@@ -690,13 +1326,61 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = 17 # Years to market with traditional FDA
 # Source: brain/book/appendix/icer-full-calculation.qmd sensitivity tables
 
 # Conservative scenario
-SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE = 50.0  # $50B
-SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE = 25.0  # $25B
-SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE = 75.0  # $75B
-SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = 0.333  # $333M/year (3-year amortization)
-SENSITIVITY_DFDA_OPEX_CONSERVATIVE = 0.060  # $60M/year
-SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = 0.393  # $393M/year
-SENSITIVITY_PEACE_QALYS_CONSERVATIVE = 17500  # 500 lives × 35 QALYs/life
+SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE = Parameter(
+    50.0,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative peace dividend estimate",
+    unit="billions USD"
+)  # $50B
+
+SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE = Parameter(
+    25.0,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative dFDA savings estimate",
+    unit="billions USD"
+)  # $25B
+
+SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE = Parameter(
+    75.0,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative total benefits estimate",
+    unit="billions USD"
+)  # $75B
+
+SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = Parameter(
+    0.333,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative campaign cost (3-year amortization)",
+    unit="billions USD/year"
+)  # $333M/year (3-year amortization)
+
+SENSITIVITY_DFDA_OPEX_CONSERVATIVE = Parameter(
+    0.060,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative dFDA operational costs",
+    unit="billions USD/year"
+)  # $60M/year
+
+SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = Parameter(
+    0.393,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative total costs",
+    unit="billions USD/year"
+)  # $393M/year
+
+SENSITIVITY_PEACE_QALYS_CONSERVATIVE = Parameter(
+    17500,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative peace QALYs (500 lives × 35 QALYs/life)",
+    unit="QALYs/year"
+)  # 500 lives × 35 QALYs/life
 SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = SENSITIVITY_PEACE_QALYS_CONSERVATIVE + QALYS_TOTAL_CONSERVATIVE  # Total QALYs (peace + dFDA)
 SENSITIVITY_NET_BENEFIT_CONSERVATIVE = Parameter(
     74.6,
@@ -714,21 +1398,88 @@ SENSITIVITY_ICER_CONSERVATIVE = Parameter(
     unit="USD/QALY"
 )  # -$170,514 per QALY (negative = cost-saving)
 
-SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = -5.97  # -$5.97M per life (in millions)
+SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = Parameter(
+    -5.97,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
+    source_type="calculated",
+    description="Conservative cost per life saved",
+    unit="millions USD/life"
+)  # -$5.97M per life (in millions)
 
 # Central scenario (baseline) - uses main parameters directly, no aliases needed
-SENSITIVITY_ICER_CENTRAL = -187097  # -$187,097 per QALY
-SENSITIVITY_COST_PER_LIFE_CENTRAL = -6.55  # -$6.55M per life (in millions)
+SENSITIVITY_ICER_CENTRAL = Parameter(
+    -187097,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario",
+    source_type="calculated",
+    description="Central ICER from sensitivity analysis",
+    unit="USD/QALY"
+)  # -$187,097 per QALY
+
+SENSITIVITY_COST_PER_LIFE_CENTRAL = Parameter(
+    -6.55,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario",
+    source_type="calculated",
+    description="Central cost per life saved",
+    unit="millions USD/life"
+)  # -$6.55M per life (in millions)
 SENSITIVITY_LIVES_SAVED_CENTRAL = TREATY_TOTAL_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED # 25,000
 
 # Optimistic scenario
-SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC = 200.0  # $200B
-SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC = 95.0  # $95B
-SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC = 295.0  # $295B
-SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = 0.200  # $200M/year (5-year amortization)
-SENSITIVITY_DFDA_OPEX_OPTIMISTIC = 0.030  # $30M/year
-SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = 0.230  # $230M/year
-SENSITIVITY_PEACE_QALYS_OPTIMISTIC = 52500  # 1,500 lives × 35 QALYs/life
+SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC = Parameter(
+    200.0,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic peace dividend estimate",
+    unit="billions USD"
+)  # $200B
+
+SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC = Parameter(
+    95.0,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic dFDA savings estimate",
+    unit="billions USD"
+)  # $95B
+
+SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC = Parameter(
+    295.0,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic total benefits estimate",
+    unit="billions USD"
+)  # $295B
+
+SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = Parameter(
+    0.200,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic campaign cost (5-year amortization)",
+    unit="billions USD/year"
+)  # $200M/year (5-year amortization)
+
+SENSITIVITY_DFDA_OPEX_OPTIMISTIC = Parameter(
+    0.030,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic dFDA operational costs",
+    unit="billions USD/year"
+)  # $30M/year
+
+SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = Parameter(
+    0.230,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic total costs",
+    unit="billions USD/year"
+)  # $230M/year
+
+SENSITIVITY_PEACE_QALYS_OPTIMISTIC = Parameter(
+    52500,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic peace QALYs (1,500 lives × 35 QALYs/life)",
+    unit="QALYs/year"
+)  # 1,500 lives × 35 QALYs/life
 SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = SENSITIVITY_PEACE_QALYS_OPTIMISTIC + QALYS_TOTAL_OPTIMISTIC  # Total QALYs (peace + dFDA)
 
 SENSITIVITY_NET_BENEFIT_OPTIMISTIC = Parameter(
@@ -747,7 +1498,13 @@ SENSITIVITY_ICER_OPTIMISTIC = Parameter(
     unit="USD/QALY"
 )  # -$136,945 per QALY (negative = cost-saving)
 
-SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = -4.79  # -$4.79M per life (in millions)
+SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = Parameter(
+    -4.79,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
+    source_type="calculated",
+    description="Optimistic cost per life saved",
+    unit="millions USD/life"
+)  # -$4.79M per life (in millions)
 
 # Sensitivity ROI calculations
 CONSERVATIVE_SCENARIO_ROI = int(SENSITIVITY_NET_BENEFIT_CONSERVATIVE / SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)  # 190:1
@@ -755,12 +1512,40 @@ OPTIMISTIC_SCENARIO_ROI = int(SENSITIVITY_NET_BENEFIT_OPTIMISTIC / SENSITIVITY_T
 
 # Alternative ICER calculations based on funding perspective
 # Source: icer-full-calculation.qmd alternative ICER table
-ICER_INVESTOR_FUNDED = -187429  # -$187,429 (campaign funded by VICTORY Social Impact Bonds, cost = $0)
-ICER_OPPORTUNITY_COST = -156571  # -$156,571 (counts $27B redirected military spending)
+ICER_INVESTOR_FUNDED = Parameter(
+    -187429,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
+    source_type="calculated",
+    description="ICER for investor-funded scenario (VICTORY Social Impact Bonds)",
+    unit="USD/QALY"
+)  # -$187,429 (campaign funded by VICTORY Social Impact Bonds, cost = $0)
+
+ICER_OPPORTUNITY_COST = Parameter(
+    -156571,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
+    source_type="calculated",
+    description="ICER counting redirected military spending as opportunity cost",
+    unit="USD/QALY"
+)  # -$156,571 (counts $27B redirected military spending)
+
 ICER_WASTE_CONVERSION = None  # Undefined (military spending has negative ROI)
 
-COST_PER_LIFE_INVESTOR_FUNDED = -6.56  # -$6.56M
-COST_PER_LIFE_OPPORTUNITY_COST = -5.48  # -$5.48M
+COST_PER_LIFE_INVESTOR_FUNDED = Parameter(
+    -6.56,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
+    source_type="calculated",
+    description="Cost per life for investor-funded scenario",
+    unit="millions USD/life"
+)  # -$6.56M
+
+COST_PER_LIFE_OPPORTUNITY_COST = Parameter(
+    -5.48,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
+    source_type="calculated",
+    description="Cost per life counting military spending opportunity cost",
+    unit="millions USD/life"
+)  # -$5.48M
+
 COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
 
 # ---
@@ -1172,15 +1957,48 @@ ww2_bond_return_pct_formatted = format_percentage(WW2_BOND_RETURN_PCT)
 
 # Book reading time parameters
 # Source: word_count.ps1 output
-TOTAL_BOOK_WORDS = 171121  # Total words in the book
-BOOK_READING_SPEED_WPM = 200  # Words per minute (conservative for non-fiction)
+TOTAL_BOOK_WORDS = Parameter(
+    171121,
+    source_ref="book-word-count",
+    source_type="calculated",
+    description="Total words in the book",
+    unit="words"
+)  # Total words in the book
+
+BOOK_READING_SPEED_WPM = Parameter(
+    200,
+    source_ref="average-reading-speed",
+    source_type="external",
+    description="Average reading speed (conservative for non-fiction)",
+    unit="words/minute"
+)  # Words per minute (conservative for non-fiction)
 BOOK_READING_TIME_HOURS = (TOTAL_BOOK_WORDS / BOOK_READING_SPEED_WPM) / 60  # ~14.3 hours
 
 # Action time parameters
 # Source: brain/book/call-to-action/three-actions.qmd
-ACTION_TIME_VOTE_MINUTES = 2
-ACTION_TIME_INVEST_MINUTES = 10
-ACTION_TIME_RECRUIT_MINUTES = 15
+ACTION_TIME_VOTE_MINUTES = Parameter(
+    2,
+    source_ref="/knowledge/solution/wishocracy.qmd#action-steps",
+    source_type="calculated",
+    description="Time to vote (minutes)",
+    unit="minutes"
+)
+
+ACTION_TIME_INVEST_MINUTES = Parameter(
+    10,
+    source_ref="/knowledge/solution/wishocracy.qmd#action-steps",
+    source_type="calculated",
+    description="Time to invest (minutes)",
+    unit="minutes"
+)
+
+ACTION_TIME_RECRUIT_MINUTES = Parameter(
+    15,
+    source_ref="/knowledge/solution/wishocracy.qmd#action-steps",
+    source_type="calculated",
+    description="Time to recruit others (minutes)",
+    unit="minutes"
+)
 ACTION_TIME_TOTAL_MINUTES = ACTION_TIME_VOTE_MINUTES + ACTION_TIME_INVEST_MINUTES + ACTION_TIME_RECRUIT_MINUTES  # 30 minutes
 ACTION_TIME_TOTAL_HOURS = ACTION_TIME_TOTAL_MINUTES / 60  # 0.5 hours
 
@@ -1194,8 +2012,21 @@ EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT_
 EFFECTIVE_HOURLY_RATE = EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT / TOTAL_TIME_INVESTMENT_HOURS  # ~$291K/hour
 
 # Comparison benchmarks
-AVERAGE_US_HOURLY_WAGE = 30  # ~$30/hour average US wage
-TYPICAL_CEO_HOURLY_RATE = 10000  # ~$10,000/hour typical CEO rate
+AVERAGE_US_HOURLY_WAGE = Parameter(
+    30,
+    source_ref="average-us-hourly-wage",
+    source_type="external",
+    description="Average US hourly wage",
+    unit="USD/hour"
+)  # ~$30/hour average US wage
+
+TYPICAL_CEO_HOURLY_RATE = Parameter(
+    10000,
+    source_ref="ceo-compensation",
+    source_type="external",
+    description="Typical CEO hourly rate",
+    unit="USD/hour"
+)  # ~$10,000/hour typical CEO rate
 EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER = EFFECTIVE_HOURLY_RATE / AVERAGE_US_HOURLY_WAGE  # ~9,711x
 EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER = EFFECTIVE_HOURLY_RATE / TYPICAL_CEO_HOURLY_RATE  # ~29x
 
