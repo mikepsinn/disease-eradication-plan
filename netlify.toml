@@ -14,12 +14,11 @@
     # Install Quarto if not already installed
     if [ ! -f "/opt/buildhome/.local/bin/quarto" ]; then
       echo "Installing Quarto..."
-      wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
-      tar -xzf quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
-      mkdir -p /opt/buildhome/.local
-      # Copy entire quarto installation (bin, share, etc.)
-      cp -r quarto-${QUARTO_VERSION}/* /opt/buildhome/.local/
-      export PATH="/opt/buildhome/.local/bin:$PATH"
+      # Use official Quarto installer script
+      curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
+      sudo dpkg -i quarto-linux-amd64.deb || sudo apt-get install -f -y
+      rm -f quarto-linux-amd64.deb
+      export PATH="/opt/quarto/bin:$PATH"
     fi
     quarto --version
     
