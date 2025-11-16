@@ -55,7 +55,14 @@
     
     # Use render_html.py script (has better error handling and validation)
     echo "Starting Quarto render via render_html.py..."
-    python3 tools/render_html.py --output-dir _site/economics --command "quarto render" --skip-post-validation --no-fail-on-warnings || error_exit "Quarto render failed"
+    # Check if lib directory exists (required by render_html.py)
+    if [ ! -d "tools/lib" ]; then
+      echo "Warning: tools/lib not found, render_html.py may fail"
+    fi
+    python3 tools/render_html.py --output-dir _site/economics --command "quarto render" --skip-post-validation --no-fail-on-warnings 2>&1 || {
+      echo "render_html.py failed, trying direct quarto render..."
+      quarto render --to html || error_exit "Quarto render failed"
+    }
     
     echo "=== Step 8: Verifying output ==="
     if [ -d "_site/economics" ]; then
