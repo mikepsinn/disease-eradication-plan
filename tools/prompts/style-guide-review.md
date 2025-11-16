@@ -56,11 +56,19 @@ TODO format: `<!-- TODO: NEEDS_HUMAN_INPUT - [Specific request] -->`
 1.  FIX everything you can directly in the text
 2.  ONLY add TODOs for things requiring human input/research
 3.  If the content is already perfect, return "NO_CHANGES_NEEDED"
-4.  Otherwise, return the full improved content
-5.  Preserve markdown/Quarto syntax and frontmatter
-6.  Do not include explanations outside the content
+4.  Otherwise, return ONLY the improved file body (NOT the style guide, NOT frontmatter, JUST the body)
+5.  Preserve all markdown/Quarto syntax exactly
+6.  Do not include ANY explanations, commentary, or the style guide in your response
+7.  Your ENTIRE response should be either "NO_CHANGES_NEEDED" or the improved body text
+
+---
+
+**STYLE GUIDE TO APPLY (DO NOT INCLUDE THIS IN YOUR RESPONSE):**
 
 {{styleGuide}}
 
-**File Content to Review and Improve:**
+---
+
+**FILE BODY TO IMPROVE (RETURN ONLY THIS, IMPROVED):**
+
 {{body}}
