@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import { glob } from 'glob';
 import path from 'path';
-import { generateGeminiProContent, generateClaudeOpus41Content, extractJsonFromResponse, loadPromptTemplate, generateGeminiFlashContent } from '../lib/llm';
+import { generateGeminiProContent, generateClaudeSonnet45Content, extractJsonFromResponse, loadPromptTemplate, generateGeminiFlashContent } from '../lib/llm';
 import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles, stringifyWithFrontmatter, getBookFilesForProcessing } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
 
@@ -35,7 +35,7 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
 }
 
 export async function styleFileWithLLM(filePath: string, options?: { extraInstructions?: string }): Promise<void> {
-  console.log(`\nImproving style and content quality for ${filePath} with Claude Opus...`);
+  console.log(`\nImproving style and content quality for ${filePath} with Claude Sonnet 4.5...`);
   const { frontmatter, body } = await readFileWithMatter(filePath);
 
   const styleGuide = await fs.readFile('GUIDES/STYLE_GUIDE.md', 'utf-8');
@@ -50,9 +50,9 @@ export async function styleFileWithLLM(filePath: string, options?: { extraInstru
     promptTemplateVars['{{extraInstructions}}'] = options.extraInstructions;
   }
 
-  const prompt = await loadPromptTemplate('scripts/prompts/style-guide-review.md', promptTemplateVars);
+  const prompt = await loadPromptTemplate('tools/prompts/style-guide-review.md', promptTemplateVars);
 
-  const responseText = await generateClaudeOpus41Content(prompt);
+  const responseText = await generateClaudeSonnet45Content(prompt);
 
   let finalBody;
   if (responseText.trim() === 'NO_CHANGES_NEEDED') {
