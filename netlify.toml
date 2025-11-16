@@ -1,23 +1,40 @@
 [build]
   # Build command - installs dependencies and builds the economics models site
-  # Quarto is installed automatically by the @quarto/netlify-plugin-quarto plugin
   command = """
+    set -e  # Exit on any error
+    
     # Verify Python is available (installed by Netlify via runtime.txt)
     python3 --version || python --version || (echo "ERROR: Python not available" && exit 1)
     
-    # Verify Quarto is available (installed by plugin)
-    quarto --version || (echo "ERROR: Quarto not available" && exit 1)
+    # Install Quarto if not available (plugin may have installed it, but we ensure it's there)
+    if ! command -v quarto &> /dev/null; then
+      echo "Installing Quarto..."
+      QUARTO_VERSION="${QUARTO_VERSION:-1.5.57}"
+      wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
+      tar -xzf "quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
+      mkdir -p /opt/buildhome/.local/bin /opt/buildhome/.local/share
+      cp -r "quarto-${QUARTO_VERSION}/bin"/* /opt/buildhome/.local/bin/
+      cp -r "quarto-${QUARTO_VERSION}/share"/* /opt/buildhome/.local/share/
+      export PATH="/opt/buildhome/.local/bin:$PATH"
+      rm -rf "quarto-${QUARTO_VERSION}" "quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
+    fi
+    
+    # Verify Quarto is available
+    quarto --version || (echo "ERROR: Quarto installation failed" && exit 1)
     
     # Install Python dependencies
+    echo "Installing Python dependencies..."
     python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user
     python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user
     
     # Install Node dependencies
+    echo "Installing Node dependencies..."
     pnpm install
     
-    # Build the site using Quarto (installed by plugin)
+    # Build the site using Quarto
+    echo "Building site with Quarto..."
     cp _quarto-economics.yml _quarto.yml
-    python3 tools/render_html.py --output-dir _site --command "quarto render" --skip-post-validation
+    quarto render --to html
   """
 
   # Directory to publish - Quarto standard output directory
@@ -35,13 +52,12 @@
   NPM_FLAGS = "--prefix=/dev/null"
   ENABLE_PNPM = "true"
   
+  # Quarto version for manual installation (if plugin doesn't work)
+  QUARTO_VERSION = "1.5.57"
+  
   # Disable mise to use Netlify's native Python support
   # Python version is specified in .python-version file
   MISE_USE_LEGACY_VERSION_FILES = "false"
-
-# Use official Quarto Netlify plugin for automatic Quarto installation
-[[plugins]]
-  package = "@quarto/netlify-plugin-quarto"
 
 [build.processing]
   skip_processing = false
