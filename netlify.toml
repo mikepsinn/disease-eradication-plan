@@ -39,7 +39,8 @@
   publish = "_site"
 
   # Ignore builds if there are no relevant changes
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
+  # Temporarily disabled to test Python fix
+  # ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
 
 [build.environment]
   # Specify Node.js version for builds
