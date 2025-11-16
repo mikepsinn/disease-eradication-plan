@@ -1,44 +1,20 @@
 [build]
-  # Build command - installs Quarto and builds the economics models site
+  # Build command - installs dependencies and builds the economics models site
+  # Quarto is installed automatically by the @quarto/netlify-plugin-quarto plugin
   command = """
-    # Check for Python - Netlify should provide it via runtime.txt or .python-version
-    if ! command -v python3 &> /dev/null && ! command -v python &> /dev/null; then
-      echo "Python not found, attempting to use system Python..."
-      # Try to use system Python or wait for Netlify to install it
-      export PATH="/usr/bin:/usr/local/bin:$PATH"
-    fi
-    
-    # Verify Python is available
+    # Verify Python is available (installed by Netlify via runtime.txt)
     python3 --version || python --version || (echo "ERROR: Python not available" && exit 1)
     
-    # Install Quarto if not already installed
-    if [ ! -f "/opt/buildhome/.local/bin/quarto" ]; then
-      echo "Installing Quarto..."
-      wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
-      tar -xzf quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
-      # Copy bin directory
-      mkdir -p /opt/buildhome/.local/bin
-      cp -r quarto-${QUARTO_VERSION}/bin/* /opt/buildhome/.local/bin/
-      # Copy share directory (contains resources like yaml-intelligence-resources.json)
-      mkdir -p /opt/buildhome/.local/share
-      cp -r quarto-${QUARTO_VERSION}/share/* /opt/buildhome/.local/share/
-      export PATH="/opt/buildhome/.local/bin:$PATH"
-      # Clean up
-      rm -rf quarto-${QUARTO_VERSION} quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
-    fi
-    quarto --version
-    
     # Install Python dependencies
-    PYTHON_CMD=$(command -v python3 || command -v python)
-    $PYTHON_CMD -m pip install --upgrade pip --user
-    $PYTHON_CMD -m pip install -r requirements.txt --user
+    python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user
+    python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user
     
     # Install Node dependencies
     pnpm install
     
-    # Build the site
+    # Build the site using Quarto (installed by plugin)
     cp _quarto-economics.yml _quarto.yml
-    $PYTHON_CMD tools/render_html.py --output-dir _site --command "quarto render"
+    quarto render
   """
 
   # Directory to publish - Quarto standard output directory
@@ -52,9 +28,6 @@
   # Specify Node.js version for builds
   NODE_VERSION = "20"
 
-  # Required for Quarto - update version as needed
-  QUARTO_VERSION = "1.5.57"
-
   # Enable pnpm
   NPM_FLAGS = "--prefix=/dev/null"
   ENABLE_PNPM = "true"
@@ -63,7 +36,10 @@
   # Python version is specified in .python-version file
   MISE_USE_LEGACY_VERSION_FILES = "false"
 
-# Install Quarto CLI during build
+# Use official Quarto Netlify plugin for automatic Quarto installation
+[[plugins]]
+  package = "@quarto/netlify-plugin-quarto"
+
 [build.processing]
   skip_processing = false
 

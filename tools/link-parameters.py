@@ -122,9 +122,20 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
                 except:
                     pass
 
-            # Check if this display string appears in the line
+            # Check if this display string appears in the line with word boundaries
+            # Use regex to ensure we don't match "$6" inside "$686" or "1,000" inside "$41,000"
+            # Pattern: not preceded by digit, match the string, not followed by digit
             if display_str in line:
-                matches.append((i, line.strip(), display_str, var_name))
+                # Find all occurrences to check context
+                import re
+                # Escape special regex characters in display_str
+                escaped = re.escape(display_str)
+                # Ensure not preceded or followed by a digit
+                # (?<!\d) = negative lookbehind (not preceded by digit)
+                # (?!\d) = negative lookahead (not followed by digit)
+                pattern = r'(?<!\d)' + escaped + r'(?!\d)'
+                if re.search(pattern, line):
+                    matches.append((i, line.strip(), display_str, var_name))
 
     return matches
 
