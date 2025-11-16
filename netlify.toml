@@ -45,27 +45,26 @@
     echo "=== Step 6: Installing Node dependencies ==="
     pnpm install || error_exit "Failed to install Node packages"
     
-    # Build the site
+    # Build the site using the render_html.py script (same as GitHub Actions)
     echo "=== Step 7: Building site with Quarto ==="
     cp _quarto-economics.yml _quarto.yml || error_exit "Failed to copy Quarto config"
     
-    # Set environment variables
+    # Set environment variables for Quarto
     export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" 2>/dev/null || python -c "import sys; print(sys.executable)" 2>/dev/null || echo "python3")
     export JUPYTER_PLATFORM_DIRS=1
     
-    # Render
-    echo "Starting Quarto render..."
-    quarto render --to html || error_exit "Quarto render failed"
+    # Use render_html.py script (has better error handling and validation)
+    echo "Starting Quarto render via render_html.py..."
+    python3 tools/render_html.py --output-dir _site/economics --command "quarto render" --skip-post-validation --no-fail-on-warnings || error_exit "Quarto render failed"
     
     echo "=== Step 8: Verifying output ==="
     if [ -d "_site/economics" ]; then
       echo "Output directory found: _site/economics"
       ls -la _site/economics/ | head -10
+      echo "Build completed successfully!"
     else
       error_exit "Output directory _site/economics not found"
     fi
-    
-    echo "=== Build completed successfully ==="
   """
 
   # Directory to publish - matches output-dir in _quarto-economics.yml
