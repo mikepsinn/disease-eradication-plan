@@ -1,6 +1,6 @@
 ---
-title: Co-Opting the Defense Lobby
-description: Defense lobbyists work for whoever pays them. The strategy pays them more.
+title: How to Buy Defense Lobbyists
+description: Defense lobbyists work for whoever pays them. So pay them more.
 published: true
 tags:
   - strategy
@@ -19,167 +19,221 @@ lastInstructionalVoiceHash: 17194e591f285a0dfe6cd12ee72a2fe72f079b7001e87827d5d9
 from dih_models.parameters import *
 ```
 
-Defense lobbyists spend [~$100M/year](../references.qmd#lobbying-100m) and generate $181B in government contracts. That's a [1,810:1 ROI](../references.qmd#lobbying-roi-calc).
+Defense lobbyists spend [~$100M/year](../references.qmd#lobbying-100m) bribing politicians and get $181B in government contracts back. That's a [1,810:1 ROI](../references.qmd#lobbying-roi-calc).
 
-They will **absolutely** kill any treaty that threatens their revenue. Not because they're evil. Because that's their job.
+They will kill any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money.
 
-## The Obvious Solution
+## The Solution
 
-**Pay them more to lobby FOR the treaty instead of against it.**
+Pay them more to lobby FOR the treaty.
+
+It's not complicated. Lobbyists are financial mercenaries. Whoever pays most wins.
 
 ## The Offer
 
-Allocate strategic partnerships funding from [VICTORY bonds](../economics/victory-bonds.qmd) to:
+You give them:
 
-1. **Lobbyists directly**: "Here are bonds paying 271.8% annually. Lobby FOR the treaty."
-2. **Defense contractor executives**: "Here are bonds worth more than your salary. Stop blocking the treaty."
-3. **Private investors/family offices**: "Here are bonds paying 271.8% vs current [10% market return](../references.qmd#investment-return-comparison)."
-4. **Key board members**: Early access to bonds as "strategic advisors"
+1. **VICTORY bonds paying 271.8% annually** (vs their current salary/stock options)
+2. **Early access** (get rich before everyone else)
+3. **"Consulting fees"** (legal bribery has a name)
+4. **Strategic advisor positions** (fake job, real money)
 
-## The Math They See
+## The Math
 
-**Current deal (lobbying against treaty)**:
+**Their current job** (lobbying against treaty):
 
-- Pay: {{< var lobbyist_salary_min_k >}}K-{{< var lobbyist_salary_max_millions >}}M annually
-- Job security: Depends on military budget
-- Upside: Salary, maybe some stock options
+- Pay: {{< var lobbyist_salary_min_k >}}K-{{< var lobbyist_salary_max_millions >}}M/year
+- Job security: Depends on military budget staying huge
+- Upside: Salary + stock options worth maybe 2x salary
+- Legacy: "Made orphans for money"
 
-**Your deal (lobbying for treaty)**:
+**Your offer** (lobbying for treaty):
 
-- Pay: $5-20M in VICTORY bonds
-- Returns: 271.8% annually, perpetual
-- Job security: Still have 99% of military budget to protect
+- Pay: $5-20M in bonds
+- Returns: 271.8% annually, forever
+- Job security: Better (99% of military budget still exists)
 - Upside: Generational wealth
+- Legacy: "Accidentally saved humanity while getting rich"
 
-Even a lobbyist can do that math.
+Even humans whose job is lying to Congress can do this math.
 
 ## Why They Take It
 
-### 1. **It's More Money**
+### It's More Papers
 
-271.8% returns > whatever they're currently making.
+271.8% > whatever they're making now.
 
-### 2. **Treaty Doesn't Hurt Them Anyway**
+That's it. That's the whole reason.
 
-- Military budget only drops 1% ($27.2B of [{{< var global_military_spending_post_treaty_annual_2024 >}}](../references.qmd#sipri-2024-spending))
-- They still have 99% to lobby for
-- New contracts still get signed
-- Jobs don't disappear
+### The Treaty Doesn't Actually Hurt Them
 
-### 3. **Better Returns**
+- Military budget drops 1% (from $2.75T to $2.72T)
+- They still have 99% to protect
+- Defense contracts still flow
+- Jobs stay
+- Weapons still get built
+- Wars probably still happen (just 1% fewer wars, which is still too many wars)
 
-Private investors and family offices seek high returns. VICTORY bonds paying 271.8% vs stock market's 10% represent a compelling opportunity for those willing to take calculated risks on policy-driven investments.
+You're not asking them to become pacifists. You're asking them to accept slightly less murder funding in exchange for becoming extremely wealthy.
 
-### 4. **Political Cover**
+### Political Cover
 
-"We're supporting life-saving medical research" plays better than "We're blocking cancer cures to protect profit margins."
+"I support life-saving medical research" sounds better at dinner parties than "I lobby for bombs."
 
-## The Strategy in Practice
+Their kids might even respect them. Probably not, but maybe.
 
-### Phase 1: Identify Key Players
+## How You Do This
 
-- Top 50 defense lobbyists (by spending/influence)
-- 20 defense contractor CEOs/board members
-- 10 major private investors/family offices
-- 5 former Pentagon officials with influence
+### Step 1: Identify Targets
 
-### Phase 2: The Approach
+- Top 50 defense lobbyists (ranked by how much democracy they've corrupted)
+- 20 defense contractor CEOs (the people who make the murder toys)
+- 10 major investors (pension funds, family offices, rich people who like more money)
+- 5 former Pentagon officials (revolving door goes both ways)
 
-Private meetings. Simple pitch:
+### Step 2: The Meeting
 
-> "The 1% treaty is happening. You can fight it and lose, or support it and get rich. Here are VICTORY bonds. They pay 271.8% annually. Forever. Your clients keep 99% of their budgets. Everyone wins. What's your price?"
+Private. No witnesses. Simple pitch:
 
-### Phase 3: The Flip
+> "The treaty is happening. You can fight it and lose your position when it passes anyway, or support it and become wealthy. Here are VICTORY bonds paying 271.8% annually. Forever. Your clients keep 99% of their budgets. What's your price?"
 
-Once 10-20 key people flip, the rest follow. Nobody wants to be the last holdout fighting a treaty that's obviously passing.
+Nobody ever says no. Everyone has a price. Their price is usually less than you'd think.
 
-### Phase 4: Active Support
+### Step 3: The Flip
 
-Now they're not just neutral, they're actively lobbying FOR the treaty:
+Once 10-20 key players flip, it's over.
 
-- Testifying to Congress: "This strengthens national security through health"
-- Op-eds: "Military readiness requires healthy population"
-- Behind-the-scenes: Convincing other lobbyists to flip
+Nobody wants to be the last idiot fighting a treaty that's obviously passing while everyone else gets rich.
 
-## Budget Allocation
+It's like a bank run, except instead of withdrawing money, they're depositing principles.
 
-A significant portion of the campaign's $1.0B war chest is allocated for strategic partnerships to co-opt key industry players and defense lobbyists. For the full breakdown, see the [Campaign Budget](../economics/campaign-budget.qmd).
+### Step 4: Active Support
+
+Now they don't just stop opposing - they actively lobby FOR it:
+
+- Testifying to Congress: "This strengthens national security" (technically true: healthy soldiers fight better)
+- Op-eds: "A strong military requires a healthy population" (also true: can't draft corpses)
+- Behind-the-scenes: Convincing other lobbyists to flip (misery loves company, wealth loves more wealth)
+
+## Budget
+
+You allocate a significant portion of the [$1.0B bribery budget](../economics/campaign-budget.qmd) to this.
+
+It's the most important money you'll spend. These humans can kill the treaty or pass it. Buying them is cheaper than fighting them.
 
 ## Why This Works
 
-### It's Literally Their Playbook
+### You're Using Their Own Playbook
 
-Defense contractors spend {{< var treaty_campaign_budget_partnerships >}} on lobbying and get $181B back (1,810:1 ROI). The approach uses the EXACT same strategy, just offering better returns.
+Defense contractors spend $100M on lobbying and get $181B back.
+
+You're offering them BETTER returns to lobby for something else.
+
+It's not revolutionary. It's just capitalism but pointed at diseases instead of humans.
 
 ### It's Legal
 
-- VICTORY bonds are legitimate investment vehicles
-- Lobbying for policy change is protected speech
-- "Consulting fees" are standard practice
+- VICTORY bonds: Legal investment vehicles
+- Lobbying: Protected free speech (thanks, Supreme Court)
+- Consulting fees: Standard practice (everyone does it)
+- Strategic advisor positions: Completely normal (if "normal" means "legal corruption")
+
+The system was designed to allow this. You're just using it correctly.
 
 ### It's Inevitable
 
-Once credible funding and serious intent are demonstrated, smart players will flip early to get better terms. The rest follow or get left behind.
+Once you demonstrate credible funding and serious intent, smart players flip early for better terms.
 
-## What You're NOT Doing
+The dumb ones flip later for worse terms.
 
-**NOT** asking them to:
+Either way, they all flip. Money always wins.
 
-- Close factories
-- Lay off workers
-- Stop making weapons
-- "Convert" to medical equipment manufacturing
-- Change their business model
-- Feel bad about what they do
+## What You're NOT Asking
 
-**Just asking them to**:
+You're NOT asking them to:
 
-- Accept higher returns
+- Close factories (keep building bombs)
+- Lay off workers (everyone keeps their jobs)
+- Stop making weapons (weapons stay profitable)
+- Convert to medical equipment (too hard, not necessary)
+- Change their business model (keep doing exactly what you're doing)
+- Feel bad about anything (guilt is not required)
+
+You're ONLY asking them to:
+
+- Accept higher returns on investment
 - Stop blocking the treaty
-- Maybe even support it publicly
+- Maybe say nice things about it publicly
 
-## Irony
+That's it. They keep 99% of their current income PLUS get rich from bonds.
 
-The strategy uses the corruption to end the corruption.
+## The Irony
 
-The same greed that created the military-industrial complex can be redirected to fund medical research. No need to change human nature. Just change what pays better.
+You're using corruption to end corruption.
+
+The same greed that created the military-industrial complex gets redirected to cure disease.
+
+No moral evolution required. No conscience necessary. Just better math.
+
+Human nature stays exactly the same. Only the incentives change.
 
 ## What They Tell Their Boards
 
-**Defense Contractor CEO**: "We invested in these bonds paying 271.8% returns. Treaty passes, we make billions. Treaty fails, our diversification protects us. Either way, we keep 99% of our contracts."
+**Defense Contractor CEO** (to board members):
 
-**Private Investor**: "These bonds offer 271.8% returns vs market's 10%. If the treaty passes, we make billions. Worth the calculated risk."
+"We diversified into bonds paying 271.8% returns. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome."
 
-**Lobbyist**: "My client diversified into medical research investment. Supporting the treaty aligns with their new portfolio. Also, it's passing anyway, so why die on this hill?"
+**Private Investor** (to partners):
 
-## Expected Results
+"These bonds pay 271.8% vs market's 10%. Treaty passes = we're rich. Treaty fails = we take the loss. But I ran the numbers. It's passing. Get in early."
 
-### Early Phase (Months 1-12)
+**Lobbyist** (to defense contractor):
+
+"My new client offers better returns than you do. Support the treaty or I switch sides permanently. Your choice. Make it fast."
+
+## Expected Timeline
+
+**Months 1-12** (Early Phase):
 
 - 5-10 key lobbyists flip
-- 2-3 major private investors commit
+- 2-3 major investors commit
 - Treaty goes from "impossible" to "controversial"
+- Media notices
 
-### Mid Phase (Months 13-24)
+**Months 13-24** (Mid Phase):
 
 - 20-30 lobbyists actively supporting
-- Defense contractor trade associations go neutral
+- Defense contractor trade associations go neutral (can't oppose when members support it)
 - Treaty becomes "bipartisan opportunity"
+- Politicians start claiming they always supported it
 
-### Late Phase (Months 25-36)
+**Months 25-36** (Late Phase):
 
-- Former opponents now claiming credit
-- "I always supported medical research"
-- Treaty passes with strong majority
+- Former opponents now taking credit
+- "I always cared about medical research" (they discovered this yesterday)
+- Treaty passes with overwhelming majority
+- Everyone pretends they were always on the right side
 
-## Strategy
+## Summary
 
 You can't fight the military-industrial complex.
 
+It's too big. Too entrenched. Too profitable.
+
 But you can hire it.
 
-**Cost**: A strategic allocation from the campaign's primary war chest (see [Campaign Budget](../economics/campaign-budget.qmd))
+**Cost**: Strategic allocation from the [bribery budget](../economics/campaign-budget.qmd)
 
 **Result**: The most powerful lobbying machine in history working FOR the treaty instead of against it
 
-**ROI**: Priceless
+**ROI**: Infinite (you can't measure the value of not having the defense lobby destroy you)
+
+Defense lobbyists are mercenaries. They fight for whoever pays them.
+
+So you pay them more.
+
+Then watch them convince Congress that curing disease is actually about national security.
+
+Which is probably true, but they don't care. They just want the papers.
+
+And that's fine. You're not paying them to care. You're paying them to win.
