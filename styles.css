@@ -612,6 +612,7 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
    Descriptions are now displayed on the page */
 .quarto-title-block .quarto-title-meta-date,
 .quarto-title-block .quarto-title-meta-contents:has(.date),
+.quarto-title-block .quarto-title-meta-contents,
 .quarto-title-block .date,
 .quarto-title-block .abstract,
 .quarto-title-block .quarto-title-meta-abstract,
@@ -620,6 +621,7 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
 .quarto-title-meta .date,
 .quarto-title-meta .abstract,
 .quarto-title-meta .keywords,
+.quarto-title-meta .quarto-title-meta-contents,
 .title-block .date,
 .title-block .abstract,
 .title-block .keywords,

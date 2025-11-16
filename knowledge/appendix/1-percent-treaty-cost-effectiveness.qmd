@@ -151,7 +151,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 **Annual operational costs**: {{< var dfda_upfront_build >}}/year
 
 - Platform maintenance: {{< var dfda_opex_platform_maintenance >}}
-- Staff (minimal, AI-assisted): {{< var value_of_statistical_life >}}
+- Staff (minimal, AI-assisted): {{< var dfda_opex_staff >}}
 - Infrastructure (cloud, security): {{< var dfda_opex_infrastructure >}}
 - Regulatory coordination: {{< var dfda_opex_regulatory >}}
 - Community support: {{< var dfda_opex_community >}}
