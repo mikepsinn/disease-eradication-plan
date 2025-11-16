@@ -1,6 +1,17 @@
 [build]
   # Build command - installs Quarto and builds the economics models site
   command = """
+    # Check for Python - Netlify should provide it via runtime.txt or .python-version
+    if ! command -v python3 &> /dev/null && ! command -v python &> /dev/null; then
+      echo "Python not found, attempting to use system Python..."
+      # Try to use system Python or wait for Netlify to install it
+      export PATH="/usr/bin:/usr/local/bin:$PATH"
+    fi
+    
+    # Verify Python is available
+    python3 --version || python --version || (echo "ERROR: Python not available" && exit 1)
+    
+    # Install Quarto if not already installed
     if [ ! -f "/opt/buildhome/.local/bin/quarto" ]; then
       echo "Installing Quarto..."
       wget -q https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
@@ -10,9 +21,18 @@
       export PATH="/opt/buildhome/.local/bin:$PATH"
     fi
     quarto --version
-    pip install -r requirements.txt || echo "No requirements.txt found, skipping pip install"
+    
+    # Install Python dependencies
+    PYTHON_CMD=$(command -v python3 || command -v python)
+    $PYTHON_CMD -m pip install --upgrade pip --user
+    $PYTHON_CMD -m pip install -r requirements.txt --user
+    
+    # Install Node dependencies
+    pnpm install
+    
+    # Build the site
     cp _quarto-economics.yml _quarto.yml
-    python tools/render_html.py --output-dir _site --command "quarto render"
+    $PYTHON_CMD tools/render_html.py --output-dir _site --command "quarto render"
   """
 
   # Directory to publish - Quarto standard output directory
@@ -28,12 +48,13 @@
   # Required for Quarto - update version as needed
   QUARTO_VERSION = "1.5.57"
 
-  # Python version for Jupyter kernel
-  PYTHON_VERSION = "3.11"
-
   # Enable pnpm
   NPM_FLAGS = "--prefix=/dev/null"
   ENABLE_PNPM = "true"
+  
+  # Disable mise to use Netlify's native Python support
+  # Python version is specified in .python-version file
+  MISE_USE_LEGACY_VERSION_FILES = "false"
 
 # Install Quarto CLI during build
 [build.processing]
