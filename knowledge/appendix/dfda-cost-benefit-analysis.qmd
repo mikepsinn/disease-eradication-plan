@@ -28,15 +28,15 @@ from dih_models.parameters import *
 
 ## Executive Summary
 
-**The Challenge:** Medical research and development is critically hampered by slow, expensive processes and limited patient access to trials. Current clinical trial paradigms often cost billions and take a decade per new therapy, hindering innovation and delaying access to life-saving treatments.
+**The Problem:** Medical research costs billions and takes a decade per drug. Most humans die before the drugs that could save them finish paperwork.
 
-**The dFDA Solution:** This analysis outlines the economic and health benefits of transforming the current regulatory framework into a global, decentralized, autonomous FDA (dFDA) platform. Leveraging real-world data and enabling massive, continuous, and highly efficient decentralized clinical trials, this vision is supported by foundational legislation like the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd), which proposes an "FDA v2 Platform" as a key implementation step.
+**The Solution:** Build a global platform that lets anyone join clinical trials instantly. Real-world data replaces expensive bureaucracy. Treatments get ranked by what actually works, not what companies claim works.
 
-### Transformative Benefits
+### What You Get
 
-- **Cost Reductions:** The dFDA model projects average R&D clinical trial cost savings of [**50.0%**](#gross-r-and-d-savings-from-dfda-implementation), with exceptionally efficient designs (akin to the UK's [RECOVERY trial](recovery-trial.qmd), which achieved up to [**80-100x+ cost reduction**](#decentralized-trial-costs-modeled-on-oxford-recovery)) potentially achieving up to [**95% reduction**](#gross-r-and-d-savings-from-dfda-implementation). This translates to **[tens of billions of dollars in annual savings](#roi-analysis)** from the estimated [**$100.0B global annual clinical trial expenditure**](../references.qmd#clinical-trial-spending-dfda-baseline).
-- **Accelerated Innovation & Access:** Faster, cheaper trials allow testing far more therapies, including rare diseases and unpatentable treatments, speeding up delivery of new medicines to patients.
-- **Improved Health Outcomes:** The dFDA is projected to generate a baseline of **[{{< var global_dfda_qalys_gained_annual >}} Quality-Adjusted Life Years (QALYs) annually](#appendix-detailed-qaly-calculation-model)**. This figure, detailed in a full model in the appendix, is a composite of benefits from faster drug access, enhanced preventative care enabled by real-world data, and new therapies for rare and neglected diseases ([see Appendix](#appendix-detailed-qaly-calculation-model) for full model).
+- **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs [80-100x](#decentralized-trial-costs-modeled-on-oxford-recovery) without killing anyone extra. Apply that globally to the [$100B spent annually](../references.qmd#clinical-trial-spending-dfda-baseline) on trials, save [tens of billions](#roi-analysis).
+- **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
+- **Fewer Dead People:** The platform generates [{{< var global_dfda_qalys_gained_annual >}} extra life-years annually](#appendix-detailed-qaly-calculation-model) through faster access, better prevention data, and drugs for diseases companies currently ignore.
 
 #### Exceptional Economic Value
 
@@ -69,7 +69,7 @@ Goals:
 ### Potential Impact on the Status Quo
 
 - **Speed of Trials**: Reduced overhead and automated data capture can compress timelines.
-- **Cost of Trials**: Leveraging existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on the Oxford RECOVERY trial success).
+- **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on the Oxford RECOVERY trial success).
 - **Scale & Scope**: Potential for testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
 - **Innovation Incentives**: Lower R&D costs can increase profitability and encourage more entrants/innovation in the life sciences.
 
@@ -181,10 +181,10 @@ To complement the bottom-up ROM, you can derive a top-down estimate by examining
 
 Based on these market comparables, the total investment required to fund a global dFDA Infrastructure initiative, from initial build to widespread adoption, can be estimated to be in the range of **\$50 million to \{{< var dct_platform_funding_medium >}}**.
 
-- The lower end (~\{{< var treaty_campaign_budget_reserve >}}) aligns with the capital needed to build a robust platform and achieve initial scale, similar to companies like Science 37 or Thread.
-- The upper end (~\{{< var recovery_trial_cost_per_patient >}}M+) reflects the multi-year investment needed to build a market-leading, feature-rich global platform with a vast ecosystem, analogous to the trajectory of Medable.
+- The lower end (~\{{< var treaty_campaign_budget_reserve >}}) covers building a solid platform and achieving initial scale, similar to companies like Science 37 or Thread.
+- The upper end (~\{{< var recovery_trial_cost_per_patient >}}M+) reflects the multi-year investment for a market-leading, feature-rich global platform with extensive third-party tools, analogous to Medable's trajectory.
 
-This top-down estimate corroborates the findings of the bottom-up analysis. While a core, open-source platform can be initiated for tens of millions (as shown in the upfront build ROM), a fully-realized, globally adopted dFDA ecosystem represents a **multi-hundred-million-dollar undertaking**, consistent with the "Medium Case" and "Worst Case" scenarios for broader initiative costs.
+This top-down estimate matches the bottom-up analysis. While a core, open-source platform can start for tens of millions (upfront build ROM), a fully-realized, globally adopted dFDA represents a **multi-hundred-million-dollar undertaking**, consistent with "Medium Case" and "Worst Case" scenarios.
 
 ### Annual Operational Costs Illustrative at Target Scale of 5M MAU 50TB Ingest Month
 
@@ -247,7 +247,7 @@ The **5M MAU** target is an illustrative milestone used for these initial ROM es
 - **Average Cost Range Per User (at 5M MAU):**
   - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)**, the average cost per user is:
     $$
-    \frac{\$11,000,000 \text{ to } \$26,{{< var qalys_from_new_therapies >}}}{{{< var current_trial_slots_available >}} \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
+    \frac{\$11,000,000 \text{ to } \$26,500,000}{5{,}000{,}000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
     $$
 
 - **Marginal Cost Per Additional User:**
@@ -261,19 +261,19 @@ This cost estimate **covers building the technology, not paying patients for tri
 
 Large-scale figures sometimes discussed for "participant support" or "subsidies" would primarily reflect the total budget and impact of the NIH Trial Participation Cost Discount Fund, not operational outlays by the dFDA Infrastructure for direct compensation (which is not part of this model).
 
-_This estimate also excludes costs associated with running the **DAO governance structure** itself and the cost of developing and maintaining the **plugin ecosystem** (though some plugin development could be incentivized via platform-specific bounties as per the Act)._
+_This estimate excludes costs for running the **DAO governance structure** and developing/maintaining **plugins** (though plugin development could be incentivized via bounties as per the Act)._
 
 ### Enhanced ROM Estimates and Cost Optimization
 
-**Disclaimer:** This subsection presents ROM estimates that incorporate the full technical requirements from the "Right to Trial & FDA Upgrade Act" while leveraging cost-saving strategies. The estimates assume successful implementation of open-source development, bounty programs, and AI automation to minimize costs.
+**Disclaimer:** This subsection presents ROM estimates incorporating the full technical requirements from the "Right to Trial & FDA Upgrade Act" using cost-saving strategies. The estimates assume successful open-source development, bounty programs, and AI automation.
 
 #### Key Cost-Saving Strategies
 
-- **Open-Source Development Model:** Leveraging global developer community contributions under permissive licenses (Apache 2.0/MIT).
-- **Bounty & Prize Programs:** Using targeted bounties for specific features, security audits, and integration components.
-- **AI-Automated Development:** Utilizing AI coding assistants and automated testing to reduce development time and costs.
-- **Modular Architecture:** Enabling parallel development of components by different teams/contributors.
-- **Existing Open-Source Components:** Leveraging and contributing back to existing healthcare/blockchain projects.
+- **Open-Source Development:** Global developer contributions under permissive licenses (Apache 2.0/MIT).
+- **Bounty Programs:** Targeted bounties for features, security audits, and integrations.
+- **AI-Automated Development:** AI coding assistants and automated testing to cut development time and costs.
+- **Modular Architecture:** Parallel development of components by different teams/contributors.
+- **Existing Open-Source Components:** Building on and contributing to existing healthcare/blockchain projects.
 
 #### ROM Estimates by Technical Component
 
@@ -415,7 +415,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
   The cost reduction factor can be formalized as:
 
   $$
-  \text{Reduction Factor} = \frac{c_t}{c_d} = \frac{\$40,000 - \$120,000}{\{{< var recovery_trial_cost_per_patient >}} - \${{< var traditional_large_trial_size >}}} \approx 40 - 240\times
+  \text{Reduction Factor} = \frac{c_t}{c_d} = \frac{\$40,000 - \$120,000}{\$500 - \$1,000} \approx 40 - 240\times
   $$
 
   Where:
@@ -425,7 +425,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
   The percentage reduction is:
 
   $$
-  \alpha = 1 - \frac{c_d}{c_t} = 1 - \frac{\{{< var recovery_trial_cost_per_patient >}} - \${{< var traditional_large_trial_size >}}}{\$40,000 - \$120,000} \approx 97.5\% - 99.2\%
+  \alpha = 1 - \frac{c_d}{c_t} = 1 - \frac{\$500 - \$1,000}{\$40,000 - \$120,000} \approx 97.5\% - 99.2\%
   $$
 
 ### Overall Savings
@@ -554,7 +554,7 @@ Where:
 - **Range Used in Sensitivity Analysis**:
   - **Conservative**: $\alpha = 0.30$
     $$
-    S_{\text{annual}} = 0.30 \times \$100.0\text{B} = \{{< var average_us_hourly_wage >}}\text{B} \text{ annually}
+    S_{\text{annual}} = 0.30 \times \$100.0\text{B} = \$30.0\text{B} \text{ annually}
     $$
   - **Base Case**: $\alpha = 0.50$
     $$
@@ -577,7 +577,7 @@ Where:
 
 ## dFDA ROI Analysis
 
-The return on investment for the dFDA Infrastructure is exceptionally high due to its nature as a leveraged, global software infrastructure. Unlike investments in single drugs or therapies, an investment in the dFDA Infrastructure creates systemic efficiencies that benefit the entire R&D ecosystem. The primary economic benefit is the drastic reduction in clinical trial operational costs, which can be redeployed to fund a greater volume and diversity of research.
+The return on investment for the dFDA Infrastructure is exceptionally high because it's global software infrastructure with massive reach. Unlike investments in single drugs or therapies, an investment in the dFDA Infrastructure creates systemic efficiencies that benefit all R&D. The primary economic benefit is the drastic reduction in clinical trial operational costs, which can be redeployed to fund more research.
 
 ### Methodology
 
@@ -788,14 +788,14 @@ The calculations below are based on the central ("base case") estimates establis
   - The analysis ([Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)) projects a baseline of **[{{< var global_dfda_qalys_gained_annual >}} Quality-Adjusted Life Years (QALYs) gained per year](#appendix-detailed-qaly-calculation-model)** from the dFDA's impact.
   - The daily opportunity cost in lost health is therefore:
     $$
-    \frac{{{< var global_dfda_qalys_gained_annual >}}\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{2,301\ \text{QALYs lost per day}}
+    \frac{840{,}000\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{2,301\ \text{QALYs lost per day}}
     $$
 
 - **Daily Financial Value Lost:**
   - The analysis ([Gross R and D Savings from dFDA Implementation](#gross-r-and-d-savings-from-dfda-implementation)) projects gross R&D savings of **[$50.0B per year](#gross-r-and-d-savings-from-dfda-implementation)** by reducing the costs of the [**$100.0B global clinical trial market**](#market-size-and-impact) by [**50.0%**](#gross-r-and-d-savings-from-dfda-implementation). This represents value that is currently being spent inefficiently.
   - The daily financial loss from this inefficiency is:
     $$
-    \frac{\${{< var qalys_from_prevention_conservative >}},000,000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
+    \frac{\$50{,}000{,}000{,}000}{365\ \text{days}} \approx \mathbf{\$137\ \text{million lost per day}}
     $$
 
 #### Sensitivity Analysis of Daily Opportunity Costs

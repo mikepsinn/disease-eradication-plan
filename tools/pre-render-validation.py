@@ -119,6 +119,32 @@ def check_math_delimiters(content: str, filename: str):
                 context='(blank line)'
             ))
 
+        # Check for Quarto variables/shortcodes inside math blocks (they don't work there)
+        if in_math_block:
+            # Check for Quarto variable syntax: {{< var name >}}
+            var_pattern = re.compile(r'\{\{<\s*var\s+[^>]+\s*>\}\}')
+            if var_pattern.search(line):
+                context = line.strip()[:80]
+                errors.append(ValidationError(
+                    file=filename,
+                    line=line_index + 1,
+                    message='Quarto variable ({{< var ... >}}) inside math block - variables do not work inside LaTeX. Use Python code block to print LaTeX string instead.',
+                    context=context
+                ))
+            
+            # Check for other Quarto shortcodes: {{< include ... >}}, {{< ... >}}
+            shortcode_pattern = re.compile(r'\{\{<[^>]+>\}\}')
+            if shortcode_pattern.search(line):
+                # But allow if it's just a variable we already caught
+                if not var_pattern.search(line):
+                    context = line.strip()[:80]
+                    errors.append(ValidationError(
+                        file=filename,
+                        line=line_index + 1,
+                        message='Quarto shortcode ({{< ... >}}) inside math block - shortcodes do not work inside LaTeX. Process values before math block or use Python code block.',
+                        context=context
+                    ))
+
 def check_image_paths(content: str, filepath: str):
     """Check for missing image files"""
     lines = content.split('\n')

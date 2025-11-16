@@ -1,10 +1,9 @@
 ---
-title: Open Ecosystem and Bounty Model
-description: The dFDA Infrastructure's strategy for fostering a sustainable, innovative ecosystem through open APIs and targeted bounties, rather than direct funding, emulating proven open-source successes.
+title: How to Not Build Most of It
+description: The dFDA's strategy for getting other people to build everything through open APIs and bounties, like WordPress but for not dying.
 published: true
 tags:
   - strategy
-  - ecosystem
   - open-source
   - bounties
   - platform-economics
@@ -18,144 +17,167 @@ lastInstructionalVoiceHash: 3e74a10b297b841a395233d2891cf5d20bc1815ded16d8d2dfa6
 from dih_models.parameters import *
 ```
 
-The [dFDA Infrastructure](../solution/dfda.qmd) will achieve its goals without spending billions on development. How? By not building most of it.
+The [dFDA Infrastructure](../solution/dfda.qmd) won't cost billions to build. Because you're not building most of it.
 
-Instead of directly funding a vast library of plugins and tools, the platform will:
-1. Provide a robust, open API (the foundation)
-2. Use targeted **bounties and prizes** to incentivize critical features
-3. Let the global community build everything else
+Here's the plan:
 
-This isn't theory. This is how WordPress, Linux, and every successful open platform works.
+1. Build the foundation (core API)
+2. Pay bounties for critical features that nobody wants to build yet
+3. Let everyone else build everything else for free
 
-This approach uses the creativity and resources of the global community, maximizes return on public investment, and benefits from AI-driven software development making coding faster and cheaper than ever.
+This is how WordPress, Linux, and every successful platform works. You build the rails, not every train.
 
-## On The Core Strategy (Or: How WordPress Beat Expensive Software)
+## The Core Strategy (How WordPress Beat Expensive Software)
 
-The most successful software platforms in the world don't build every feature themselves. That would be expensive and slow.
+The most successful software platforms don't build every feature. That would be slow and expensive.
 
-Instead, they provide core infrastructure and let the community build on top.
+Instead, they build the foundation and let others build on top.
 
 ### The Model
 
-- **Build the Rails, Not Every Destination:** The dFDA Infrastructure provides the foundation, secure APIs, data standards, core services.
-- **Let Others Build the Destinations:** Developers (commercial, academic, nonprofit, individual) build specialized plugins, tools, and integrations.
+- **Build the Rails:** Core infrastructure, APIs, data standards
+- **Not Every Destination:** Developers (companies, academics, individual humans with too much time) build specialized tools
 
-#### Why This Works (Proof)
+### Why This Works (Evidence Not Theory)
 
-- **WordPress:** Core software is free and open-source. A [multi-billion dollar economy](../references.qmd#wordpress-multi-billion-dollar-economy) of themes and plugins has been built on top by third parties. WordPress powers 43% of all websites. They didn't build 43% of the internet. They built the foundation. Others built everything else.
+**WordPress:**
+- Core software: Free and open-source
+- Community-built on top: [Multi-billion dollar economy](../references.qmd#wordpress-multi-billion-dollar-economy) of themes and plugins
+- Result: Powers 43% of all websites
+- They didn't build 43% of the internet. They built the foundation. Others built on it.
 
-- **Linux:** The kernel is the foundation. Thousands of companies and individuals build the distributions and applications. Result: Linux runs most of the internet, all Android phones, and the world's fastest supercomputers. The core team is small. The ecosystem is massive.
+**Linux:**
+- The kernel: Small core team
+- Everything else: Thousands of companies and individuals
+- Result: Runs most of the internet, all Android phones, world's fastest supercomputers
+- Core team is tiny. Network of contributors is massive.
 
-- **Browser Extensions:** Chrome and Firefox provide APIs. The community creates extensions. Chrome has 188,000+ extensions. Google didn't build them. Developers did. Because the platform made it profitable.
+**Browser Extensions:**
+- Chrome/Firefox: Provide APIs
+- Community: Creates extensions
+- Result: 188,000+ Chrome extensions
+- Google didn't build them. Developers did. Because the platform made it profitable or useful.
 
-#### Why This Model Works
+### Why Humans Do This For Free
 
-It aligns incentives perfectly:
+Incentives align:
 
-- Commercial developers build businesses
-- Academics build research tools
-- Individual contributors build reputation and solve their own problems
+- Commercial developers: Build businesses selling plugins
+- Academics: Build research tools, get papers published
+- Individual contributors: Build reputation, solve their own problems, impress other nerds
 
-Everyone wins. The platform scales without the core team needing to build everything.
+Everyone wins. Platform scales without the core team building everything.
 
-## On Bounties and Prizes (Or: How to Pay for Results Instead of Promises)
+## Bounties and Prizes (Paying for Results Not Promises)
 
-While an open ecosystem is largely self-sustaining, sometimes you need to nudge it in the right direction. That's where bounties come in.
+While an open platform mostly builds itself, sometimes you need specific features that nobody's building yet.
 
-The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program**. This is not a grants program where you give money to people who promise to build something. This is paying for specific, verifiable outcomes.
+That's where bounties come in.
 
-You don't get paid for proposals. You get paid for code that works.
+The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program**. Not grants (pay people who promise to build). Bounties (pay people who actually built it).
 
-### What Bounties Pay For
+You don't get papers for proposals. You get papers for code that works.
 
-1. **Critical-Path Features:** Essential tools that nobody's building yet. Pay someone to build it. Problem solved.
+### What Bounties Fund
 
-2. **Security Vulnerability Reporting:** Bug bounty program. Hackers get paid to find security flaws and report them responsibly instead of exploiting them maliciously. This is cheaper than getting hacked.
+**Critical Features:** Essential tools nobody's building. Pay someone to build it. Problem solved.
 
-3. **High-Value Integrations:** Connectors to major EHR systems, national health registries, etc. These benefit everyone but nobody wants to build them first. Bounties solve this.
+**Security Reporting:** Bug bounty program. Pay hackers to find security flaws and report them instead of exploiting them. Cheaper than getting hacked.
 
-4. **Major Milestone Prizes:** Big prizes for big achievements. Want someone to build a critical component? Offer $1 million to whoever builds it best. Competition drives innovation.
+**High-Value Integrations:** Connectors to major EHR systems, national health registries. Benefits everyone but nobody wants to build first. Bounties solve this.
 
-#### The Difference
+**Major Prizes:** Big money for big achievements. Want a critical component? Offer $1M to whoever builds it best. Competition drives innovation.
 
-Grants: "Here's money. Build something. Let us know how it goes."
+### The Difference
 
-Bounties: "Build this specific thing. If it works, you get paid. If it doesn't, you don't."
+**Grants:** "Here's money. Build something. Let us know how it goes."
 
-One of these models wastes less money. Guess which one.
+**Bounties:** "Build this specific thing. If it works, you get paid. If it doesn't, you don't."
 
-## On Why This Actually Works (Evidence)
+One wastes less money. You can guess which.
 
-This isn't wishful thinking. This model is proven and cheap for three reasons:
+## Why This Actually Works (Not Wishful Thinking)
 
-**1. It's a Multi-Trillion-Dollar Reality**
+This model is proven and cheap for three reasons:
 
-Open-source and platform-as-a-service models are not theoretical. They're a proven, [multi-trillion-dollar economic reality](../references.qmd#open-source-platform-multi-trillion-dollar-reality).
+### 1. It's Already a Multi-Trillion-Dollar Reality
 
-WordPress, Linux, Android, Chrome, all built this way. Combined value: trillions. Combined cost to build the core: billions. The math works.
+Open-source and platform models aren't theoretical. They're a [multi-trillion-dollar economic reality](../references.qmd#open-source-platform-multi-trillion-dollar-reality).
 
-**2. AI Makes Building Software Radically Cheaper**
+WordPress, Linux, Android, Chrome all built this way. Combined value: trillions. Combined cost to build cores: billions.
 
-AI coding assistants (GitHub Copilot, GPT-4, Claude Code, etc.) dramatically reduce the time and cost to develop software.
+The math works.
 
-What used to take a team of 10 developers six months can now be done by 2 developers in six weeks.
+### 2. AI Makes Building Software Radically Cheaper
 
-This acts as a powerful accelerant for community-driven ecosystems. Lower barrier to entry. Faster development. Cheaper plugins.
+AI coding assistants (GitHub Copilot, GPT-4, Claude Code) dramatically reduce time and cost to develop software.
+
+What used to take 10 developers six months: 2 developers can do in six weeks.
+
+This supercharges community-driven development. Lower barrier to entry. Faster building. Cheaper plugins.
 
 AI doesn't replace developers. It makes them 10x more productive.
 
-**3. Governments Already Do This (And It Works)**
+### 3. Governments Already Do This (And It Works)
 
-Public bodies, including the U.S. government, have a [strong track record of using bounties and prizes](../references.qmd#us-government-prize-and-bounty-programs) to solve complex problems more efficiently than traditional procurement:
+Public bodies have a [strong track record with bounties and prizes](../references.qmd#us-government-prize-and-bounty-programs) to solve complex problems more efficiently than traditional procurement:
 
-- XPRIZE (private-sector space travel)
-- NASA Centennial Challenges (lunar lander, space robotics)
-- Department of Defense bug bounties (cybersecurity)
+- **XPRIZE:** Private-sector space travel (worked)
+- **NASA Centennial Challenges:** Lunar lander, space robotics (worked)
+- **Department of Defense bug bounties:** Cybersecurity (worked)
 
 All succeeded. All cost less than traditional procurement. All delivered better results.
 
-Bounties work. This is not experimental.
+Bounties work. Not experimental.
 
-## On What Has to Go Right (The Success Factors)
+## What Has to Go Right (Success Factors)
 
 For this strategy to succeed, four things must happen:
 
-**1. Critical Mass**
+### 1. Critical Mass
 
-The platform needs enough users (patients, researchers, clinicians) and developers to create network effects.
+Platform needs enough users (patients, researchers, clinicians) and developers to create network effects.
 
-No users = no developers. No developers = no plugins. No plugins = no users. This is the death spiral.
+No users = no developers. No developers = no plugins. No plugins = no users. Death spiral.
 
-Solution: Referral rewards system drives initial user growth. Users attract developers. Developers build tools. Tools attract more users. The flywheel starts spinning.
+**Solution:** Referral rewards drive initial growth. Users attract developers. Developers build tools. Tools attract more users. Flywheel spins.
 
-**2. API Quality and Documentation**
+### 2. API Quality and Documentation
 
-The platform's APIs must be:
+Platform APIs must be:
 
-- Robust (they work reliably)
-- Well-documented (developers can figure them out)
-- Developer-friendly (pleasant to use)
+- **Robust:** They work reliably
+- **Well-documented:** Developers can figure them out
+- **Developer-friendly:** Pleasant to use, not torture
 
-Bad APIs kill ecosystems. Good APIs create billion-dollar economies. This is non-negotiable.
+Bad APIs kill platforms. Good APIs create billion-dollar economies.
 
-**3. Transparent Governance**
+Non-negotiable.
 
-The bounty process must be:
+### 3. Transparent Governance
 
-- Transparent (anyone can see what's being funded)
-- Fair (best solution wins, not best connection)
-- Responsive (decisions happen quickly)
+Bounty process must be:
+
+- **Transparent:** Anyone can see what's funded
+- **Fair:** Best solution wins, not best connection
+- **Responsive:** Decisions happen quickly, not after everyone dies
 
 Corruption kills trust. Trust is the foundation of open-source communities.
 
-**4. Clear Roadmap**
+### 4. Clear Roadmap
 
-The core team must maintain and communicate a clear vision (detailed in the [Canonical Roadmap](../strategy/roadmap.qmd)).
+Core team must maintain and communicate clear vision (detailed in [Canonical Roadmap](../strategy/roadmap.qmd)).
 
-Developers need to know where the "rails" are going so they can build accordingly. Ambiguity kills momentum.
+Developers need to know where the rails are going so they can build accordingly.
 
-### The Result
+Ambiguity kills momentum.
 
-If these four conditions are met, the dFDA Infrastructure can foster a thriving global ecosystem that delivers medical innovation at a fraction of the cost of centralized, top-down development.
+## The Result
 
-WordPress proved this works for websites. Linux proved it works for operating systems. The dFDA will prove it works for curing disease.
+If these four conditions are met, the dFDA can foster a thriving global network of tools that delivers medical innovation at a fraction of the cost of centralized, top-down development.
+
+WordPress proved this works for websites.
+Linux proved it works for operating systems.
+The dFDA will prove it works for curing disease.
+
+Or it won't, and everyone continues dying from preventable things. Your choice.

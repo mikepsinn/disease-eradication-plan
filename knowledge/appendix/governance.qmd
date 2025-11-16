@@ -37,7 +37,7 @@ The DIH is the first and largest implementation of this protocol.
 Wishocracy combines collective human intelligence with the efficiency of AI to create a new form of governance.
 
 ```{python}
-#| fig-alt: "Flow diagram showing: Stakeholders propose Wishes → AI Agents analyze → Generate Ranked Solutions → Stakeholders vote via RAPPA → DAO Treasury allocates funds → Contributors complete tasks → Outcomes achieved"
+#| fig-alt: "Flow diagram showing: People propose Wishes → AI Agents analyze → Generate Ranked Solutions → People vote via RAPPA → DAO Treasury allocates funds → Contributors complete tasks → Outcomes achieved"
 import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
@@ -50,7 +50,7 @@ setup_graphviz_style(dot)
 
 with dot.subgraph(name='cluster_wishocracy') as protocol:
     protocol.attr(label='The Wishocracy Protocol', style='dashed')
-    protocol.node('A', 'Stakeholders', shape='ellipse')
+    protocol.node('A', 'People', shape='ellipse')
     protocol.node('B', 'Wishes: The To-Do List', shape='box')
     protocol.node('C', 'AI Agents', shape='box')
     protocol.node('D', 'Ranked & Verifiable Solutions', shape='box')

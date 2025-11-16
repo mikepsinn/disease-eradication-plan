@@ -116,7 +116,7 @@ $$
 | **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | [$2,718B](../appendix/peace-dividend-calculations.qmd) | Opportunity cost of military spending vs. productive investment |
 | **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | [{{< var sensitivity_peace_dividend_optimistic >}}](../appendix/peace-dividend-calculations.qmd) | Long-term medical care for conflict-related injuries |
 | **Refugee Support** | {{< var global_annual_refugee_support_costs >}} | [108.4M displaced persons](../references.qmd#unhcr-forcibly-displaced-2023) × $1,384/year |
-| **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_clinical_trial_market_annual >}}](../appendix/peace-dividend-calculations.qmd) | Ecosystem destruction, toxic contamination, restoration costs |
+| **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_clinical_trial_market_annual >}}](../appendix/peace-dividend-calculations.qmd) | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_annual_psychological_impact_costs_conflict >}}](../appendix/peace-dividend-calculations.qmd) | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_annual_lost_human_capital_conflict >}}](../appendix/peace-dividend-calculations.qmd) | Productive capacity lost from casualties and displacement |
 | **Total War Costs** | **$11,355B** | Combined direct and indirect annual costs |
@@ -164,7 +164,7 @@ $$
 For the dFDA Infrastructure (using annual figures):
 
 $$
-\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{{{< var global_dfda_qalys_gained_annual >}} \text{ QALYs}} = -\$59,476 \text{ per QALY}
+\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
 $$
 
 where the net incremental cost is calculated as platform operational costs ([{{< var dfda_upfront_build >}}/year](../appendix/dfda-cost-benefit-analysis.qmd)) minus R&D savings ([$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd)) = -$49.96B annually, and [{{< var global_dfda_qalys_gained_annual >}} QALYs](../appendix/1-percent-treaty-cost-effectiveness.qmd) represents annual quality-adjusted life years gained.
@@ -260,7 +260,7 @@ $$
 #### Complete Case ROI
 
 $$
-\text{ROI}_{\text{complete}} = \frac{\$1,238.6\text{B annual} \times 10\text{ years}}{\$1.0\text{B implementation}} = {{< var roi_all_direct_benefits >}}:1
+\text{ROI}_{\text{complete}} = \frac{\$1,238.6\text{B annual} \times 10\text{ years}}{\$1.0\text{B implementation}} = 1,239:1
 $$
 
 where [$1,238.6B](../appendix/dfda-cost-benefit-analysis.qmd) is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and [$1.0B](campaign-budget.qmd) is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
@@ -463,20 +463,20 @@ $$
 
 These figures represent the mathematical consequence of maintaining current resource allocation patterns versus implementing the 1% Treaty system.
 
-## Stakeholder Analysis and Incentive Alignment
+## Who Benefits and How
 
-The 1% Treaty creates positive economic incentives across all major stakeholder groups, eliminating traditional opposition to healthcare system reform. This alignment of economic incentives is critical for political feasibility and sustainable implementation.
+The 1% Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
 
-**Key Stakeholder Benefits** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis):
+**Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
-- **Defense sector**: Retains [99% of current budget](../appendix/peace-dividend-calculations.qmd) while gaining access to medical R&D contracts from 1% redirection
+- **Defense sector**: Keeps [99% of current budget](../appendix/peace-dividend-calculations.qmd) 
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity increases 115X](../appendix/research-acceleration-model.qmd)
-- **Insurance providers**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ([$109T current economic cost](../references.qmd#disease-economic-burden-109t))
-- **Healthcare providers**: Increased treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
-- **Patients**: Access to clinical trials as healthcare delivery mechanism; democratized research priority-setting through [wishocratic governance](../solution/wishocracy.qmd)
-- **Taxpayers**: Net reduction in healthcare costs through improved R&D efficiency
+- **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ([$109T current economic cost](../references.qmd#disease-economic-burden-109t))
+- **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
+- **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
+- **Taxpayers**: Net reduction in taxes and healthcare costs through improved R&D efficiency
 
-See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed stakeholder analysis and implementation strategy.
+See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis and implementation strategy.
 
 ## Implementation Strategy
 
