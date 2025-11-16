@@ -2409,3 +2409,99 @@ if __name__ == "__main__":
     print(f"  = {2300/124:.1f}x the ENTIRE modern medical revolution (1900-2024)")
     print(f"  = Realistic life extension: {erad_20yr_life:.1f} years")
     print(f"  = Personal benefit: ${erad_20yr/1000:.0f}K")
+
+
+# ==============================================================================
+# PARAMETER LINKING SYSTEM
+# ==============================================================================
+# Maps parameter names to their detailed source documentation
+# This allows us to both use calculated values AND link to sources automatically
+
+PARAMETER_LINKS = {
+    # Peace Dividend Parameters
+    'treaty_annual_funding': '../appendix/peace-dividend-calculations.qmd',
+    'peace_dividend_annual_societal_benefit': '../appendix/peace-dividend-calculations.qmd',
+    'global_military_spending_annual_2024': '../references.qmd#sipri-2024-spending',
+    'global_war_total_cost': '../appendix/peace-dividend-calculations.qmd',
+
+    # Health Dividend Parameters (dFDA)
+    'roi_dfda_savings_only': '../appendix/dfda-cost-benefit-analysis.qmd',
+    'roi_all_direct_benefits': '../appendix/dfda-cost-benefit-analysis.qmd',
+    'trial_cost_reduction': '../appendix/recovery-trial.qmd',
+    'dfda_annual_savings': '../appendix/dfda-cost-benefit-analysis.qmd',
+    'qalys_annual': '../appendix/dfda-qaly-model.qmd',
+
+    # Research Acceleration
+    'research_acceleration_multiplier': '../appendix/research-acceleration-model.qmd',
+    'trials_per_year_current': '../appendix/research-acceleration-model.qmd',
+    'trials_per_year_dfda': '../appendix/research-acceleration-model.qmd',
+
+    # Cost-Effectiveness
+    'cost_per_life_saved': '../appendix/1-percent-treaty-cost-effectiveness.qmd',
+    'icer': '../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis',
+
+    # External Sources (references.qmd)
+    'givewell_cost_per_life': '../references.qmd#givewell-cost-per-life-saved',
+    'smallpox_roi': '../references.qmd#smallpox-eradication-roi',
+    'childhood_vaccination_roi': '../references.qmd#childhood-vaccination-roi',
+    'disease_economic_burden': '../references.qmd#disease-economic-burden-109t',
+    'conflict_deaths': '../references.qmd#acled-active-combat-deaths',
+    'clinical_trial_market': '../references.qmd#clinical-trial-market-size',
+
+    # Personal Impact
+    'personal_lifetime_wealth': '../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd',
+}
+
+
+def param_link(param_name: str, formatted_value: str = None) -> str:
+    """
+    Create an HTML link combining a formatted parameter with its source.
+
+    Args:
+        param_name: Name of the parameter (e.g., 'treaty_annual_funding')
+        formatted_value: Pre-formatted display value. If None, will use param_name_formatted
+
+    Returns:
+        HTML link string like '<a href="../appendix/peace-dividend-calculations.qmd">$27.2B</a>'
+
+    Usage in QMD files:
+        `{python} param_link('treaty_annual_funding')`
+        `{python} param_link('roi_conservative', '463:1')`
+    """
+    # Get formatted value if not provided
+    if formatted_value is None:
+        formatted_var_name = f"{param_name}_formatted"
+        if formatted_var_name in globals():
+            formatted_value = globals()[formatted_var_name]
+        else:
+            # Fallback to the raw value
+            formatted_value = str(globals().get(param_name.upper(), '???'))
+
+    # Get source link
+    source_link = PARAMETER_LINKS.get(param_name, '')
+
+    # Return HTML link or unlinked based on whether we have a source
+    if source_link:
+        return f'<a href="{source_link}">{formatted_value}</a>'
+    else:
+        return formatted_value
+
+
+def add_parameter_link(param_name: str, source_path: str):
+    """
+    Add a new parameter → source mapping to the registry.
+
+    Args:
+        param_name: Parameter name (e.g., 'new_parameter')
+        source_path: Relative path to source doc (e.g., '../appendix/analysis.qmd')
+    """
+    PARAMETER_LINKS[param_name] = source_path
+
+
+# Create commonly used linked versions automatically
+treaty_annual_funding_linked = param_link('treaty_annual_funding', treaty_annual_funding_formatted)
+peace_dividend_annual_societal_benefit_linked = param_link('peace_dividend_annual_societal_benefit', peace_dividend_annual_societal_benefit_formatted)
+roi_dfda_savings_only_linked = param_link('roi_dfda_savings_only', roi_dfda_savings_only_formatted)
+roi_all_direct_benefits_linked = param_link('roi_all_direct_benefits', roi_all_direct_benefits_formatted)
+trial_cost_reduction_linked = param_link('trial_cost_reduction', f"{TRIAL_COST_REDUCTION_FACTOR}x")
+global_military_spending_annual_2024_linked = param_link('global_military_spending_annual_2024', global_military_spending_annual_2024_formatted)

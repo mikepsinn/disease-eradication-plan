@@ -7,27 +7,61 @@ project:
   # post-render:
   #   - python scripts/post-render-validation.py
   render:
-    - knowledge/economics/economics.qmd
-    - knowledge/economics/peace-dividend.qmd
-    - knowledge/economics/health-dividend.qmd
-    - knowledge/economics/financial-plan.qmd
-    - knowledge/economics/campaign-budget.qmd
-    - knowledge/economics/health-savings-sharing-model.qmd
-    - knowledge/economics/victory-bonds.qmd
-    - knowledge/appendix/humanity-budget-overview.qmd
-    - knowledge/appendix/global-government-medical-research-spending.qmd
-    - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
-    - knowledge/appendix/clinical-trial-participants.qmd
-    - knowledge/appendix/peace-dividend-calculations.qmd
-    - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
-    - knowledge/appendix/research-acceleration-model.qmd
-    - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
-    - knowledge/appendix/dfda-cost-benefit-analysis.qmd
-    - knowledge/appendix/economic-value-of-accelerated-treatments.qmd
-    - knowledge/appendix/intervention-comparison-table.qmd
-    - knowledge/appendix/data-storage-costs.qmd
-    - knowledge/appendix/dfda-qaly-model.qmd
-    - knowledge/appendix/investor-risk-analysis.qmd
+    # Economics Analysis
+    - knowledge/economics/economics.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/peace-dividend.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/health-dividend.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/financial-plan.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/campaign-budget.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/health-savings-sharing-model.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/victory-bonds.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/central-banks.qmd
+    # Problem Context
+    - knowledge/problem/cost-of-war.qmd
+    - knowledge/problem/cost-of-disease.qmd
+    - knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
+    - knowledge/problem/fda-is-unsafe-and-ineffective.qmd
+    # Solutions
+    - knowledge/solution/1-percent-treaty.qmd
+    - knowledge/solution/dfda.qmd
+    - knowledge/solution/dih.qmd
+    - knowledge/solution/wishocracy.qmd
+    - knowledge/solution/aligning-incentives.qmd
+    # Strategy
+    - knowledge/strategy/roadmap.qmd
+    - knowledge/strategy/treaty-adoption-strategy.qmd
+    - knowledge/strategy/global-referendum.qmd
+    # Legal Framework
+    - knowledge/legal/legal-framework.qmd
+    - knowledge/legal/treaty-framework.qmd
+    - knowledge/legal/securities-law.qmd
+    - knowledge/legal/election-law.qmd
+    # Call to Action
+    - knowledge/call-to-action/your-personal-benefits.qmd
+    # Supporting Data
+    - knowledge/appendix/humanity-budget-overview.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/global-government-medical-research-spending.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/clinical-trial-participants.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/recovery-trial.qmd
+    # Detailed Calculations
+    - knowledge/appendix/peace-dividend-calculations.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/research-acceleration-model.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/dfda-cost-benefit-analysis.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/intervention-comparison-table.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/data-storage-costs.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/dfda-qaly-model.qmd # ✓ Style reviewed 2025-01-15
+    # Additional Documentation
+    - knowledge/appendix/investor-risk-analysis.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/faq.qmd
+    - knowledge/appendix/fundraising-strategy.qmd
+    - knowledge/appendix/governance.qmd
+    - knowledge/appendix/legal-compliance-framework.qmd
+    # References
+    - knowledge/references.qmd
 
 website:
   title: "DIH Economic Models"
@@ -46,55 +80,111 @@ website:
     search: true
     contents:
       - href: knowledge/economics/economics.qmd
-        text: "Overview"
-      - section: "Economic Analysis"
+        text: "Executive Summary"
+      - section: "Problem Statement"
+        contents:
+          - href: knowledge/problem/cost-of-war.qmd
+            text: "Economic Impact of Armed Conflict"
+          - href: knowledge/problem/cost-of-disease.qmd
+            text: "Economic Burden of Disease"
+          - href: knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
+            text: "NIH Research Outcomes Analysis"
+          - href: knowledge/problem/fda-is-unsafe-and-ineffective.qmd
+            text: "FDA Regulatory Efficacy Assessment"
+      - section: "Proposed Intervention"
+        contents:
+          - href: knowledge/solution/1-percent-treaty.qmd
+            text: "The 1% Treaty Framework"
+          - href: knowledge/solution/dih.qmd
+            text: "Decentralized Institutes of Health"
+          - href: knowledge/solution/dfda.qmd
+            text: "Decentralized FDA Platform"
+          - href: knowledge/solution/wishocracy.qmd
+            text: "Decentralized Governance Model"
+          - href: knowledge/solution/aligning-incentives.qmd
+            text: "Incentive Alignment Mechanisms"
+      - section: "Economic Models & ROI Analysis"
         contents:
           - href: knowledge/economics/peace-dividend.qmd
-            text: "Peace Dividend"
+            text: "Peace Dividend Model"
           - href: knowledge/economics/health-dividend.qmd
-            text: "Health Dividend"
-      - section: "Supporting Data"
-        contents:
-          - href: knowledge/appendix/humanity-budget-overview.qmd
-            text: "Humanity Budget Overview"
-          - href: knowledge/appendix/global-government-medical-research-spending.qmd
-            text: "Government Medical Research Spending"
-          - href: knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
-            text: "Clinical Trial Spending by Phase"
-          - href: knowledge/appendix/clinical-trial-participants.qmd
-            text: "Clinical Trial Participants"
-      - section: "Detailed Calculations"
+            text: "Health Dividend Model"
+          - href: knowledge/economics/central-banks.qmd
+            text: "Monetary Policy & Funding Analysis"
+      - section: "Cost-Benefit Analysis"
         contents:
           - href: knowledge/appendix/peace-dividend-calculations.qmd
-            text: "Peace Dividend Calculations"
+            text: "Peace Dividend Methodology"
           - href: knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
-            text: "1% Treaty Cost-Effectiveness"
-          - href: knowledge/appendix/research-acceleration-model.qmd
-            text: "Research Acceleration Model"
-          - href: knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
-            text: "Disease Eradication Lifetime Wealth"
+            text: "Cost-Effectiveness Analysis"
           - href: knowledge/appendix/dfda-cost-benefit-analysis.qmd
-            text: "dFDA Cost-Benefit Analysis"
-          - href: knowledge/appendix/economic-value-of-accelerated-treatments.qmd
-            text: "Economic Value of Accelerated Treatments"
-          - href: knowledge/appendix/intervention-comparison-table.qmd
-            text: "Intervention Comparison Table"
-          - href: knowledge/appendix/data-storage-costs.qmd
-            text: "Data Storage Costs"
+            text: "dFDA Cost-Benefit Framework"
           - href: knowledge/appendix/dfda-qaly-model.qmd
-            text: "dFDA QALY Model"
-      - section: "Financial Planning"
+            text: "QALY Model & Health Outcomes"
+          - href: knowledge/appendix/economic-value-of-accelerated-treatments.qmd
+            text: "Value of Accelerated Drug Development"
+          - href: knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+            text: "Lifetime Wealth Impact Model"
+          - href: knowledge/appendix/research-acceleration-model.qmd
+            text: "Research Acceleration Framework"
+          - href: knowledge/appendix/intervention-comparison-table.qmd
+            text: "Comparative Intervention Analysis"
+      - section: "Implementation Feasibility"
         contents:
-          - href: knowledge/economics/financial-plan.qmd
-            text: "Financial Plan"
-          - href: knowledge/economics/campaign-budget.qmd
-            text: "Campaign Budget"
+          - href: knowledge/strategy/roadmap.qmd
+            text: "Implementation Roadmap"
+          - href: knowledge/strategy/treaty-adoption-strategy.qmd
+            text: "Treaty Adoption Strategy"
+          - href: knowledge/strategy/global-referendum.qmd
+            text: "Global Referendum Mechanics"
+      - section: "Legal & Regulatory Framework"
+        contents:
+          - href: knowledge/legal/legal-framework.qmd
+            text: "Legal Architecture"
+          - href: knowledge/legal/treaty-framework.qmd
+            text: "International Treaty Structure"
+          - href: knowledge/legal/securities-law.qmd
+            text: "Securities Law Compliance"
+          - href: knowledge/legal/election-law.qmd
+            text: "Election Law Compliance"
+          - href: knowledge/appendix/legal-compliance-framework.qmd
+            text: "Regulatory Compliance Framework"
+          - href: knowledge/appendix/governance.qmd
+            text: "Governance Structure"
+      - section: "Risk Analysis & Financial Planning"
+        contents:
           - href: knowledge/appendix/investor-risk-analysis.qmd
-            text: "Investor Risk Analysis"
+            text: "Risk Assessment & Sensitivity Analysis"
+          - href: knowledge/economics/financial-plan.qmd
+            text: "Financial Planning Framework"
+          - href: knowledge/economics/campaign-budget.qmd
+            text: "Campaign Budget Allocation"
           - href: knowledge/economics/health-savings-sharing-model.qmd
             text: "Health Savings Sharing Model"
           - href: knowledge/economics/victory-bonds.qmd
-            text: "VICTORY Social Impact Bonds"
+            text: "Social Impact Bond Structure"
+          - href: knowledge/appendix/fundraising-strategy.qmd
+            text: "Capital Raising Strategy"
+      - section: "Supporting Data & Evidence"
+        contents:
+          - href: knowledge/appendix/humanity-budget-overview.qmd
+            text: "Global Health Budget Overview"
+          - href: knowledge/appendix/global-government-medical-research-spending.qmd
+            text: "Government Medical R&D Spending"
+          - href: knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
+            text: "Clinical Trial Cost Analysis"
+          - href: knowledge/appendix/clinical-trial-participants.qmd
+            text: "Clinical Trial Participation Rates"
+          - href: knowledge/appendix/recovery-trial.qmd
+            text: "RECOVERY Trial Case Study"
+          - href: knowledge/appendix/data-storage-costs.qmd
+            text: "Data Infrastructure Costs"
+      - section: "References & Appendices"
+        contents:
+          - href: knowledge/appendix/faq.qmd
+            text: "Frequently Asked Questions"
+          - href: knowledge/references.qmd
+            text: "Bibliography & Citations"
 
 execute:
   fig-path: "knowledge/figures/"
@@ -215,19 +305,20 @@ format:
           <meta property="og:title" content="DIH Economic Models">
           <meta property="og:description" content="Economic analysis for the 1% Treaty and Decentralized FDA initiative">
           <meta property="og:type" content="website">
-  pdf:
-    documentclass: scrreprt
-    echo: false
-    toc: true
-    toc-depth: 3
-    number-sections: true
-    colorlinks: true
-    geometry:
-      - top=1in
-      - bottom=1in
-      - left=1in
-      - right=1in
-    variables:
-      title: "DIH Economic Models"
-      description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+# PDF format disabled for website deployment - only HTML is needed
+  # pdf:
+  #   documentclass: scrreprt
+  #   echo: false
+  #   toc: true
+  #   toc-depth: 3
+  #   number-sections: true
+  #   colorlinks: true
+  #   geometry:
+  #     - top=1in
+  #     - bottom=1in
+  #     - left=1in
+  #     - right=1in
+  #   variables:
+  #     title: "DIH Economic Models"
+  #     description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
 
