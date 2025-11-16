@@ -88,9 +88,9 @@ Here's what democracy SHOULD look like versus the reality:
 
 ### Concentrated Benefits vs. Diffuse Costs
 
-[Sugar subsidies cost Americans $3.5 billion per year](../references.qmd#sugar-subsidies-cost). That's {{< var vsl_epa_millions >}} per person.
+[Sugar subsidies cost Americans $3.5 billion per year](../references.qmd#sugar-subsidies-cost). That's {{< var sugar_subsidy_cost_per_person_annual >}} per person.
 
-Will you spend weeks fighting to save {{< var vsl_epa_millions >}}? No.
+Will you spend weeks fighting to save {{< var sugar_subsidy_cost_per_person_annual >}}? No.
 Will sugar companies spend millions to keep their $3.5 billion? Yes.
 
 Guess who wins?
@@ -103,7 +103,7 @@ This pattern repeats everywhere:
 
 <!-- -->
 
-- Pharma companies: [{{< var recovery_trial_cost_per_patient >}} billion in concentrated profits](../references.qmd#pharma-profits-500b)
+- Pharma companies: [$500 billion in concentrated profits](../references.qmd#pharma-profits-500b)
 - Patients: $1,500 each in diffuse suffering
 - Winner: Not you
 

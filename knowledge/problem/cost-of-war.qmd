@@ -84,9 +84,9 @@ Let's be conservative and use \{{< var vsl_epa_millions >}} million.
 
 | Conflict Type | Deaths/Year | Cost per Death | Annual Cost | Source |
 |--------------|-------------|----------------|-------------|---------|
-| Active Combat | [{{< var global_annual_conflict_deaths_active_combat >}}](../references.qmd#acled-active-combat-deaths) | ${{< var dfda_large_trial_size >}},000 | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
-| Terror Attacks | [{{< var global_annual_conflict_deaths_terror_attacks >}}](../references.qmd#gtd-terror-attack-deaths) | ${{< var dfda_large_trial_size >}},000 | {{< var global_annual_human_cost_terror_attacks >}} | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
-| State Violence | [{{< var global_annual_conflict_deaths_state_violence >}}](../references.qmd#ucdp-state-violence-deaths) | ${{< var dfda_large_trial_size >}},000 | $27.2B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
+| Active Combat | [{{< var global_annual_conflict_deaths_active_combat >}}](../references.qmd#acled-active-combat-deaths) | $10M | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
+| Terror Attacks | [{{< var global_annual_conflict_deaths_terror_attacks >}}](../references.qmd#gtd-terror-attack-deaths) | $10M | {{< var global_annual_human_cost_terror_attacks >}} | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
+| State Violence | [{{< var global_annual_conflict_deaths_state_violence >}}](../references.qmd#ucdp-state-violence-deaths) | $10M | $27.2B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
 ##### Total Human Cost: [\${{< var treaty_lives_saved_annual_global >}} billion](../references.qmd#acled-active-combat-deaths) annually
 

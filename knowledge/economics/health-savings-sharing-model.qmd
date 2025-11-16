@@ -80,7 +80,7 @@ Simple contract:
 
 #### Before
 
-- Diabetes treatment market: {{< var recovery_trial_cost_per_patient >}}/month × 37M people = $222B/year
+- Diabetes treatment market: {{< var diabetes_treatment_monthly_cost >}}/month × 37M people = $222B/year
 - Incentive: Keep everyone diabetic forever
 
 #### After

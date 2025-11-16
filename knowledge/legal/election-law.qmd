@@ -169,7 +169,7 @@ Every state has different rules. Here's how to handle them:
 
 - Buy every ad slot in small markets
 - Make opposition invisible
-- Cost: {{< var recovery_trial_cost_per_patient >}}K/week in Wyoming
+- Cost: {{< var campaign_weekly_ad_cost_k >}}K/week in Wyoming
 - Impact: Total narrative control
 
 #### Digital Micro-Targeting

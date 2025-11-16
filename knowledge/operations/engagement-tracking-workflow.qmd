@@ -298,7 +298,7 @@ For sophisticated email sequences, integrate with:
 ### Option B: Airtable + MailerLite/Mailchimp (Better)
 
 - Pros: Professional emails, automation, unsubscribe management
-- Cons: Extra cost ({{< var vsl_epa_millions >}}-50/month), requires Zapier integration
+- Cons: Extra cost ($10-50/month), requires Zapier integration
 
 ### Option C: Airtable + Customer.io or Intercom (Best)
 
@@ -473,7 +473,7 @@ Actions:
 
 ### 3. No Segmentation
 
-**Problem:** Sending same message to {{< var vsl_epa_millions >}} donor and $100K investor
+**Problem:** Sending same message to $10 donor and $100K investor
 **Solution:** Create segments based on engagement value/type
 
 ### 4. Ignoring Unsubscribes

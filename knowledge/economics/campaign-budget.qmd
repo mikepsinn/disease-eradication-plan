@@ -32,7 +32,7 @@ This $1B will:
 
 - Legal teams: $100-200M
 - Custom software: $250-400M
-- Mass media buys: {{< var recovery_trial_cost_per_patient >}}M-1B
+- Mass media buys: {{< var campaign_media_budget_min_millions >}}M-{{< var campaign_media_budget_max_billions >}}
 - Professional lobbyists: $400-600M
 - **Total: $1.25-2.2B**
 
@@ -198,7 +198,7 @@ This $1B will:
 
 ### 6. Operations & Administration: {{< var treaty_campaign_budget_reserve >}} (5%)
 
-**Core Team**: {{< var caregiver_value_per_hour_simple >}}M
+**Core Team**: {{< var campaign_staff_budget_millions >}}M
 
 - Campaign leadership (20-30 people, AI-augmented productivity)
 - Regional directors (50 people, not 500)
@@ -243,7 +243,7 @@ This $1B will:
 - Run pilots in 2 countries
 - Build platform MVP
 
-**Phase 2: Scale & Momentum** ({{< var recovery_trial_cost_per_patient >}}M, Years 2-3)
+**Phase 2: Scale & Momentum** ({{< var campaign_phase2_budget_millions >}}M, Years 2-3)
 
 - Reach 280M total votes
 - Treaties pending in 20+ countries

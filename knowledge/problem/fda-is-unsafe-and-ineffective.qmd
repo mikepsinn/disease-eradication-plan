@@ -362,7 +362,7 @@ But at least the paperwork is thorough.
 
 Your rare disease child has better odds with lottery tickets.
 
-Why? Math. If your disease only affects {{< var dfda_large_trial_size >}} people, and it costs $2.6 billion to develop a drug, each patient would need to pay $260,000 just to break even.
+Why? Math. If your disease only affects {{< var rare_disease_typical_patient_count >}} people, and it costs $2.6 billion to develop a drug, each patient would need to pay $5.2 million just to break even.
 
 So pharmaceutical companies focus on:
 

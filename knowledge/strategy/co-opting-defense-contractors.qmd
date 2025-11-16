@@ -40,7 +40,7 @@ Allocate strategic partnerships funding from [VICTORY bonds](../economics/victor
 
 **Current deal (lobbying against treaty)**:
 
-- Pay: {{< var recovery_trial_cost_per_patient >}}K-2M annually
+- Pay: {{< var lobbyist_salary_min_k >}}K-{{< var lobbyist_salary_max_millions >}}M annually
 - Job security: Depends on military budget
 - Upside: Salary, maybe some stock options
 

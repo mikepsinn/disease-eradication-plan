@@ -396,7 +396,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 - **Current Average Costs**: Various estimates suggest [\$1.0 - \$2.5 billion to bring a new drug from discovery through FDA approval](../references.qmd#drug-development-cost), spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:
   - Phase I: \$2 - \$5 million/trial (smaller scale).
-  - Phase II: \{{< var vsl_epa_millions >}} - \$50 million/trial (depending on disease area).
+  - Phase II: \$10 - \$50 million/trial (depending on disease area).
   - Phase III: \$100 - \{{< var dct_platform_funding_medium >}}/trial (large patient populations).
 
 - **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](../references.qmd#clinical-trial-cost-per-patient) (site fees, overhead, staff, monitoring, data management).
@@ -1086,8 +1086,8 @@ $$
 Let's approximate numerically:
 
 - For $t=1$ to 5:
-  - $t=1$: $S(1) = 10$. Discount factor: $\frac{1}{1.08}\approx 0.9259$. Contribution: {{< var vsl_epa_millions >}} \times 0.9259=9.26$.
-  - $t=2$: $S(2) = 20$. Discount factor: $\frac{1}{1.08^2}\approx 0.8573$. Contribution: {{< var lobbyist_bond_investment_max_millions >}} \times 0.8573=17.15$.
+  - $t=1$: $S(1) = 10$. Discount factor: $\frac{1}{1.08}\approx 0.9259$. Contribution: $10 \times 0.9259=9.26$.
+  - $t=2$: $S(2) = 20$. Discount factor: $\frac{1}{1.08^2}\approx 0.8573$. Contribution: $20 \times 0.8573=17.15$.
   - $t=3$: $S(3) = 30$. Factor: $\approx 0.7938$. Contribution: $23.81$.
   - $t=4$: $S(4) = 40$. Factor: $\approx 0.7350$. Contribution: $29.40$.
   - $t=5$: $S(5) = 50$. Factor: $\approx 0.6806$. Contribution: $34.03$.

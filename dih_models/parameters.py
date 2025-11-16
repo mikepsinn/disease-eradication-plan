@@ -427,6 +427,14 @@ GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = Parameter(
     unit="billions USD/year"
 )
 
+GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
+    83.0,
+    source_ref="global-clinical-trials-market-2024",
+    source_type="external",
+    description="Annual global spending on clinical trials",
+    unit="billions USD/year"
+)  # $83B spent globally on clinical trials annually
+
 TRIAL_COST_REDUCTION_PCT = Parameter(
     0.50,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
@@ -540,6 +548,22 @@ TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
     description="Phase 3 cost per patient (median)",
     unit="USD/patient"
 )  # $40k-$120k range, using midpoint
+
+PHASE_3_TRIAL_COST_MIN_MILLIONS = Parameter(
+    20.0,
+    source_ref="phase-3-cost-per-trial",
+    source_type="external",
+    description="Phase 3 trial total cost (minimum)",
+    unit="millions USD/trial"
+)  # $20M minimum for Phase 3 trials
+
+PHASE_3_TRIAL_COST_MAX_MILLIONS = Parameter(
+    282.0,
+    source_ref="phase-3-cost-per-trial",
+    source_type="external",
+    description="Phase 3 trial total cost (maximum)",
+    unit="millions USD/trial"
+)  # $282M maximum for Phase 3 trials
 
 TRADITIONAL_SMALL_TRIAL_SIZE = Parameter(
     100,
@@ -1053,6 +1077,47 @@ TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     latex=r"AnnualCost = \$1B / 4 = \$0.25B"
 )  # $250M
 
+# Campaign phase budgets
+CAMPAIGN_PHASE1_BUDGET_MILLIONS = Parameter(
+    200,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Phase 1 campaign budget (Foundation, Year 1)",
+    unit="millions USD"
+)  # $200M for Phase 1
+
+CAMPAIGN_PHASE2_BUDGET_MILLIONS = Parameter(
+    500,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
+    unit="millions USD"
+)  # $500M for Phase 2
+
+CAMPAIGN_MEDIA_BUDGET_MIN_MILLIONS = Parameter(
+    500,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Minimum mass media campaign budget",
+    unit="millions USD"
+)  # $500M minimum for mass media
+
+CAMPAIGN_MEDIA_BUDGET_MAX_BILLIONS = Parameter(
+    1.0,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Maximum mass media campaign budget",
+    unit="billions USD"
+)  # $1B maximum for mass media
+
+CAMPAIGN_STAFF_BUDGET_MILLIONS = Parameter(
+    40,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Campaign core team staff budget",
+    unit="millions USD"
+)  # $40M for core team
+
 # Total system costs
 TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,
@@ -1359,6 +1424,62 @@ GLOBAL_HEALTHCARE_SPENDING_ANNUAL_2024 = Parameter(
     description="Global healthcare spending in 2024",
     unit="billions USD"
 )
+
+US_DEFENSE_BUDGET_ANNUAL_BILLIONS = Parameter(
+    877,
+    source_ref="us-defense-budget-2024",
+    source_type="external",
+    description="US defense budget in 2024",
+    unit="billions USD/year"
+)  # FY2024 US defense budget
+
+MENTAL_HEALTH_GRANTS_ANNUAL_MILLIONS = Parameter(
+    500,
+    source_ref="mental-health-research-funding",
+    source_type="external",
+    description="Annual mental health research grants total",
+    unit="millions USD/year"
+)  # $500M in mental health grants annually
+
+DIABETES_TREATMENT_MONTHLY_COST = Parameter(
+    500,
+    source_ref="diabetes-treatment-costs",
+    source_type="external",
+    description="Average monthly cost of diabetes treatment per patient",
+    unit="USD/month"
+)  # $500/month for diabetes treatment
+
+MEDICAL_FACILITY_HOURLY_ROOM_COST = Parameter(
+    500,
+    source_ref="hospital-room-costs",
+    source_type="external",
+    description="Average hourly cost of medical facility room",
+    unit="USD/hour"
+)  # $500/hour for medical facility room costs
+
+SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
+    10,
+    source_ref="agricultural-subsidies",
+    source_type="external",
+    description="Annual cost of sugar subsidies per person",
+    unit="USD/person/year"
+)  # $10 per person per year in sugar subsidies
+
+RARE_DISEASE_TYPICAL_PATIENT_COUNT = Parameter(
+    500,
+    source_ref="rare-disease-prevalence",
+    source_type="external",
+    description="Typical patient count for rare diseases",
+    unit="patients"
+)  # 500 patients typical for rare diseases
+
+ALZHEIMER_CURE_BOUNTY_ESTIMATE_BILLIONS = Parameter(
+    10,
+    source_ref="cure-bounty-estimates",
+    source_type="calculated",
+    description="Estimated bounty value for Alzheimer's cure",
+    unit="billions USD"
+)  # $10B estimated bounty for Alzheimer's cure
 
 GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     67.5,
@@ -2584,6 +2705,62 @@ LOBBYIST_SALARY_TYPICAL_K = Parameter(
     description="Typical annual lobbyist salary for comparison",
     unit="thousands USD"
 )  # Thousands USD, typical lobbyist salary, for comparison
+
+LOBBYIST_SALARY_MIN_K = Parameter(
+    500,
+    source_ref="average-lobbyist-salary",
+    source_type="external",
+    description="Minimum annual lobbyist salary range",
+    unit="thousands USD"
+)  # $500K minimum for lobbyist salaries
+
+LOBBYIST_SALARY_MAX_MILLIONS = Parameter(
+    2.0,
+    source_ref="average-lobbyist-salary",
+    source_type="external",
+    description="Maximum annual lobbyist salary range",
+    unit="millions USD"
+)  # $2M maximum for top lobbyist salaries
+
+CAMPAIGN_WEEKLY_AD_COST_K = Parameter(
+    500,
+    source_ref="/knowledge/economics/campaign-budget.qmd",
+    source_type="calculated",
+    description="Weekly advertising cost for campaigns",
+    unit="thousands USD/week"
+)  # $500K/week for campaign advertising
+
+SOFTWARE_TOOL_MONTHLY_COST_MIN = Parameter(
+    500,
+    source_ref="software-pricing-market-rates",
+    source_type="external",
+    description="Minimum monthly cost for software tools/services",
+    unit="USD/month"
+)  # $500/month minimum for software tools
+
+SOFTWARE_TOOL_MONTHLY_COST_MAX = Parameter(
+    2000,
+    source_ref="software-pricing-market-rates",
+    source_type="external",
+    description="Maximum monthly cost for software tools/services",
+    unit="USD/month"
+)  # $2,000/month maximum for software tools
+
+SOCIAL_MEDIA_PARTICIPANT_TARGET_MIN = Parameter(
+    500,
+    source_ref="/knowledge/strategy/viral-marketing.qmd",
+    source_type="calculated",
+    description="Minimum target participant count for social media campaigns",
+    unit="participants"
+)  # 500 participants minimum
+
+SOCIAL_MEDIA_PARTICIPANT_TARGET_MAX = Parameter(
+    2000,
+    source_ref="/knowledge/strategy/viral-marketing.qmd",
+    source_type="calculated",
+    description="Maximum target participant count for social media campaigns",
+    unit="participants"
+)  # 2,000 participants maximum
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
 # This sum is distinct from TREATY_TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.

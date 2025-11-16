@@ -37,7 +37,7 @@ Here's what disease actually costs, translated from economist-speak into human l
 
 | What We're Losing | What This Actually Means | Annual Cost |
 | :--- | :--- | :--- |
-| **Direct Medical Costs** | Paying doctors to Google your symptoms in a room that costs {{< var recovery_trial_cost_per_patient >}}/hour | [$8.2 Trillion](../references.qmd#global-health-spending-gdp) |
+| **Direct Medical Costs** | Paying doctors to Google your symptoms in a room that costs {{< var medical_facility_hourly_room_cost >}}/hour | [$8.2 Trillion](../references.qmd#global-health-spending-gdp) |
 | **Lost Productivity** | Sick people make fewer spreadsheets, decreasing global PowerPoint supply | [$6.7 Trillion](../references.qmd#wef-harvard-ncd-cost) |
 | **Lost Human Life (DALYs)** | Dead people contribute zero to the economy (economists finally noticed) | [$382.5 Trillion](../references.qmd#ihme-gbd-2019) |
 | **TOTAL DISASTER** | **More money than exists on Earth** | [**$397.4 Trillion**](../references.qmd#disease-economic-burden-109t) |

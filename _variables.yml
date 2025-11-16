@@ -26,6 +26,9 @@
 "alzheimers_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Alzheimer's disease death rate | Unit: deaths\
   \ per 100,000 | Click to view source\">27.7</a>"
+"alzheimer_cure_bounty_estimate_billions": "<a href=\"/cure-bounty-estimates\" class=\"\
+  parameter-link\" title=\"Estimated bounty value for Alzheimer's cure | Unit: billions\
+  \ USD | Click to view calculation\">$10B</a>"
 "antibiotics_life_extension_years": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" title=\"Life extension from antibiotics (conservative\
   \ mid-range from 5-23 years) | Unit: years | Click to view source\">10</a>"
@@ -63,6 +66,24 @@
 "book_reading_time_hours": "<a href=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ class=\"parameter-link\" title=\"Time to read the entire book | Formula: (WORDS\
   \ ÷ SPEED) ÷ 60 | Unit: hours | Click to view calculation\">14.3</a>"
+"campaign_media_budget_max_billions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Maximum mass media campaign budget | Unit: billions\
+  \ USD | Click to view calculation\">$1.00B</a>"
+"campaign_media_budget_min_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Minimum mass media campaign budget | Unit: millions\
+  \ USD | Click to view calculation\">$500</a>"
+"campaign_phase1_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Phase 1 campaign budget (Foundation, Year 1)\
+  \ | Unit: millions USD | Click to view calculation\">$200</a>"
+"campaign_phase2_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Phase 2 campaign budget (Scale & Momentum, Years\
+  \ 2-3) | Unit: millions USD | Click to view calculation\">$500</a>"
+"campaign_staff_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Campaign core team staff budget | Unit: millions\
+  \ USD | Click to view calculation\">$40</a>"
+"campaign_weekly_ad_cost_k": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+  \ class=\"parameter-link\" title=\"Weekly advertising cost for campaigns | Unit:\
+  \ thousands USD/week | Click to view calculation\">$500</a>"
 "cancer_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Cancer death rate (all cancers) | Unit: deaths\
   \ per 100,000 | Click to view source\">147</a>"
@@ -285,6 +306,9 @@
 "diabetes_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Diabetes death rate | Unit: deaths per 100,000\
   \ | Click to view source\">22.4</a>"
+"diabetes_treatment_monthly_cost": "<a href=\"/knowledge/references.qmd#diabetes-treatment-costs\"\
+  \ class=\"parameter-link\" title=\"Average monthly cost of diabetes treatment per\
+  \ patient | Unit: USD/month | Click to view source\">$500</a>"
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives annual opex (medium case)\
   \ | Unit: billions USD/year | Click to view calculation\">$21.1M</a>"
@@ -477,6 +501,9 @@
   \ class=\"parameter-link\" title=\"Total annual cost of war worldwide (direct +\
   \ indirect costs) | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit: billions USD/year\
   \ | Click to view calculation\">$11.4T</a>"
+"global_clinical_trials_spending_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trials-market-2024\"\
+  \ class=\"parameter-link\" title=\"Annual global spending on clinical trials | Unit:\
+  \ billions USD/year | Click to view source\">$83B</a>"
 "global_clinical_trial_market_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trial-market\"\
   \ class=\"parameter-link\" title=\"Global clinical trial market size | Unit: billions\
   \ USD/year | Click to view source\">$100B</a>"
@@ -583,9 +610,18 @@
 "lobbyist_bond_investment_min_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Minimum bond investment for lobbyist incentives\
   \ | Unit: millions USD | Click to view calculation\">$5</a>"
+"lobbyist_salary_max_millions": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
+  \ class=\"parameter-link\" title=\"Maximum annual lobbyist salary range | Unit:\
+  \ millions USD | Click to view source\">$2</a>"
+"lobbyist_salary_min_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
+  \ class=\"parameter-link\" title=\"Minimum annual lobbyist salary range | Unit:\
+  \ thousands USD | Click to view source\">$500</a>"
 "lobbyist_salary_typical_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
   \ class=\"parameter-link\" title=\"Typical annual lobbyist salary for comparison\
   \ | Unit: thousands USD | Click to view source\">$500</a>"
+"medical_facility_hourly_room_cost": "<a href=\"/knowledge/references.qmd#hospital-room-costs\"\
+  \ class=\"parameter-link\" title=\"Average hourly cost of medical facility room\
+  \ | Unit: USD/hour | Click to view source\">$500</a>"
 "medical_progress_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_10PCT\"\
   >412</span>"
 "medical_progress_multiplier_1pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_1PCT\"\
@@ -594,6 +630,9 @@
   >148</span>"
 "medical_progress_multiplier_5pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_5PCT\"\
   >247</span>"
+"mental_health_grants_annual_millions": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
+  \ class=\"parameter-link\" title=\"Annual mental health research grants total |\
+  \ Unit: millions USD/year | Click to view source\">$500</a>"
 "mental_health_productivity_loss_per_capita": "<a href=\"/knowledge/references.qmd#mental-health-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Annual productivity loss per capita from mental\
   \ health issues (beyond treatment costs) | Unit: USD/year | Click to view source\"\
@@ -683,6 +722,12 @@
   \ - $12,239/year\">12,239</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\
   \ - ~$1,045/year\">1,045</span>"
+"phase_3_trial_cost_max_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
+  \ class=\"parameter-link\" title=\"Phase 3 trial total cost (maximum) | Unit: millions\
+  \ USD/trial | Click to view source\">$282</a>"
+"phase_3_trial_cost_min_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
+  \ class=\"parameter-link\" title=\"Phase 3 trial total cost (minimum) | Unit: millions\
+  \ USD/trial | Click to view source\">$20</a>"
 "post_ww2_military_cut_pct": "<a href=\"/knowledge/references.qmd#post-ww2-military-demobilization\"\
   \ class=\"parameter-link\" title=\"Percentage military spending cut after WW2 (historical\
   \ precedent) | Unit: rate | Click to view source\">0.3%</a>"
@@ -727,6 +772,9 @@
 "qalys_total_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Total optimistic QALYs (500k + 150k + 3M) | Unit:\
   \ QALYs/year | Click to view calculation\">3,650,000</a>"
+"rare_disease_typical_patient_count": "<a href=\"/knowledge/references.qmd#rare-disease-prevalence\"\
+  \ class=\"parameter-link\" title=\"Typical patient count for rare diseases | Unit:\
+  \ patients | Click to view source\">500</a>"
 "recovery_trial_cost_per_patient": "<a href=\"/knowledge/references.qmd#recovery-trial-cost-per-patient\"\
   \ class=\"parameter-link\" title=\"RECOVERY trial cost per patient | Unit: USD/patient\
   \ | Click to view source\">$500</a>"
@@ -836,12 +884,27 @@
 "smallpox_eradication_roi": "<a href=\"/knowledge/references.qmd#smallpox-eradication-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from smallpox eradication\
   \ campaign | Unit: ratio | Click to view source\">280</a>"
+"social_media_participant_target_max": "<a href=\"/knowledge/strategy/viral-marketing.qmd\"\
+  \ class=\"parameter-link\" title=\"Maximum target participant count for social media\
+  \ campaigns | Unit: participants | Click to view calculation\">2,000</a>"
+"social_media_participant_target_min": "<a href=\"/knowledge/strategy/viral-marketing.qmd\"\
+  \ class=\"parameter-link\" title=\"Minimum target participant count for social media\
+  \ campaigns | Unit: participants | Click to view calculation\">500</a>"
+"software_tool_monthly_cost_max": "<a href=\"/knowledge/references.qmd#software-pricing-market-rates\"\
+  \ class=\"parameter-link\" title=\"Maximum monthly cost for software tools/services\
+  \ | Unit: USD/month | Click to view source\">$2.00K</a>"
+"software_tool_monthly_cost_min": "<a href=\"/knowledge/references.qmd#software-pricing-market-rates\"\
+  \ class=\"parameter-link\" title=\"Minimum monthly cost for software tools/services\
+  \ | Unit: USD/month | Click to view source\">$500</a>"
 "standard_economic_qaly_value_usd": "<a href=\"/knowledge/references.qmd#standard-qaly-value\"\
   \ class=\"parameter-link\" title=\"Standard economic value per QALY | Unit: USD/QALY\
   \ | Click to view source\">$150K</a>"
 "standard_qalys_per_life_saved": "<a href=\"/knowledge/references.qmd#who-life-tables-qalys-per-life\"\
   \ class=\"parameter-link\" title=\"Standard QALYs per life saved (WHO life tables)\
   \ | Unit: QALYs/life | Click to view source\">35</a>"
+"sugar_subsidy_cost_per_person_annual": "<a href=\"/knowledge/references.qmd#agricultural-subsidies\"\
+  \ class=\"parameter-link\" title=\"Annual cost of sugar subsidies per person | Unit:\
+  \ USD/person/year | Click to view source\">$10</a>"
 "switzerland_defense_spending_pct": "<a href=\"/knowledge/references.qmd#switzerland-defense-spending-gdp\"\
   \ class=\"parameter-link\" title=\"Switzerland's defense spending as percentage\
   \ of GDP (0.7%) | Unit: rate | Click to view source\">0.007%</a>"
@@ -1000,6 +1063,9 @@
 "us_chronic_disease_spending_annual": "<a href=\"/knowledge/references.qmd#us-chronic-disease-spending\"\
   \ class=\"parameter-link\" title=\"US annual chronic disease spending | Unit: USD/year\
   \ | Click to view source\">$4.10T</a>"
+"us_defense_budget_annual_billions": "<a href=\"/knowledge/references.qmd#us-defense-budget-2024\"\
+  \ class=\"parameter-link\" title=\"US defense budget in 2024 | Unit: billions USD/year\
+  \ | Click to view source\">$877B</a>"
 "us_dot_value_of_statistical_life_millions": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"US Department of Transportation value of statistical\
   \ life | Unit: millions USD | Click to view source\">$14</a>"
