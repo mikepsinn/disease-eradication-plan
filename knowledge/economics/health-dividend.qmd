@@ -1,6 +1,6 @@
 ---
 title: Health Dividend
-description: How a $40M platform generates $50B in annual savings through 80x cost reduction
+description: How a $40-75M protocol (partnering with existing platforms) generates $50B in annual savings through 80x cost reduction
 published: true
 tags:
   - dfda
@@ -8,6 +8,7 @@ tags:
   - clinical-trials
   - cost-reduction
   - economics
+  - partnerships
 lastInstructionalVoiceHash: dd5ecd23df99d0246c138ed8e0fa5cc57d3166c4b078d7888aa01c0050e73f9e
 lastNonprofitComplianceHash: b209671fea7d7c8aacbc349fad1b24654b7c462166014b5d071553defb7ee32f
 ---
@@ -62,11 +63,19 @@ Every day we don't implement this represents a massive societal cost: **$137 mil
 
 **For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction).
 
-## The Platform Cost Breakdown
+## The Platform Cost Breakdown (Partnership Model)
 
-The dFDA costs approximately **{{< var dfda_upfront_build >}} annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
+**Protocol-Only Approach (Recommended)**: $15-25M upfront + $5-12M annual operations + $20-50M one-time partnership integration fund = **~$40-75M total vs. $500M+ for full build**.
 
-**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd).
+**Why 85% cheaper?** We're not building a competing platform. We're establishing an open protocol that enables existing infrastructure to interoperate:
+
+- **Existing DCT platforms** (Medable $521M invested, Science 37 $100M invested) already have trial management systems
+- **Existing EHR vendors** (Epic, Cerner) already store patient data
+- **Existing consumer platforms** (Apple Health, Google Health) already collect health data
+
+The dFDA protocol connects them. We build the rails, they run the trains.
+
+**For detailed cost analysis including ROM estimates, market comparables, and partnership savings**, see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd).
 
 ## ROI Scenarios
 
