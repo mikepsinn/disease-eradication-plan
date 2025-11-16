@@ -2561,7 +2561,15 @@ LOBBYIST_SALARY_TYPICAL_K = Parameter(
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
 # This sum is distinct from TREATY_TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.
-COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL
+COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
+    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends",
+    source_type="calculated",
+    description="Combined peace and health dividends for ROI calculation",
+    unit="billions USD/year",
+    formula="PEACE_DIVIDEND + R&D_SAVINGS",
+    latex=r"Combined = \$113.55B + \$50B = \$163.55B"
+)
 
 # System effectiveness & ROI comparisons
 PROFIT_PER_LIFE_SAVED = Parameter(
@@ -2780,7 +2788,15 @@ BOOK_READING_SPEED_WPM = Parameter(
     description="Average reading speed (conservative for non-fiction)",
     unit="words/minute"
 )  # Words per minute (conservative for non-fiction)
-BOOK_READING_TIME_HOURS = (TOTAL_BOOK_WORDS / BOOK_READING_SPEED_WPM) / 60  # ~14.3 hours
+BOOK_READING_TIME_HOURS = Parameter(
+    (TOTAL_BOOK_WORDS / BOOK_READING_SPEED_WPM) / 60,
+    source_ref="/knowledge/solution/wishocracy.qmd#time-investment",
+    source_type="calculated",
+    description="Time to read the entire book",
+    unit="hours",
+    formula="(WORDS ÷ SPEED) ÷ 60",
+    latex=r"ReadTime = \frac{171,121 / 200}{60} \approx 14.3 \text{ hours}"
+)  # ~14.3 hours
 
 # Action time parameters
 # Source: brain/book/call-to-action/three-actions.qmd
@@ -2807,11 +2823,35 @@ ACTION_TIME_RECRUIT_MINUTES = Parameter(
     description="Time to recruit others (minutes)",
     unit="minutes"
 )
-ACTION_TIME_TOTAL_MINUTES = ACTION_TIME_VOTE_MINUTES + ACTION_TIME_INVEST_MINUTES + ACTION_TIME_RECRUIT_MINUTES  # 30 minutes
-ACTION_TIME_TOTAL_HOURS = ACTION_TIME_TOTAL_MINUTES / 60  # 0.5 hours
+ACTION_TIME_TOTAL_MINUTES = Parameter(
+    ACTION_TIME_VOTE_MINUTES + ACTION_TIME_INVEST_MINUTES + ACTION_TIME_RECRUIT_MINUTES,
+    source_ref="/knowledge/solution/wishocracy.qmd#action-steps",
+    source_type="calculated",
+    description="Total time for all three actions",
+    unit="minutes",
+    formula="VOTE + INVEST + RECRUIT",
+    latex=r"TotalTime = 2 + 10 + 15 = 27 \text{ minutes}"
+)  # 30 minutes
+ACTION_TIME_TOTAL_HOURS = Parameter(
+    ACTION_TIME_TOTAL_MINUTES / 60,
+    source_ref="/knowledge/solution/wishocracy.qmd#action-steps",
+    source_type="calculated",
+    description="Total action time in hours",
+    unit="hours",
+    formula="MINUTES ÷ 60",
+    latex=r"Hours = 27 / 60 = 0.45 \text{ hours}"
+)  # 0.5 hours
 
 # Total time investment
-TOTAL_TIME_INVESTMENT_HOURS = BOOK_READING_TIME_HOURS + ACTION_TIME_TOTAL_HOURS  # ~14.8 hours
+TOTAL_TIME_INVESTMENT_HOURS = Parameter(
+    BOOK_READING_TIME_HOURS + ACTION_TIME_TOTAL_HOURS,
+    source_ref="/knowledge/solution/wishocracy.qmd#time-investment",
+    source_type="calculated",
+    description="Total time investment (reading + actions)",
+    unit="hours",
+    formula="READING + ACTIONS",
+    latex=r"TotalInvestment = 14.3 + 0.45 = 14.75 \text{ hours}"
+)  # ~14.8 hours
 
 # Effective hourly rate calculation (20-year scenario, age 30, $50K income, 1% Treaty)
 # Using the lifetime benefit value from your-personal-benefits.qmd
@@ -2822,8 +2862,24 @@ EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT_MILLIONS = Parameter(
     description="Lifetime benefit for age 30 baseline scenario",
     unit="millions USD"
 )  # $4.3M lifetime benefit
-EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT_MILLIONS * 1_000_000
-EFFECTIVE_HOURLY_RATE = EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT / TOTAL_TIME_INVESTMENT_HOURS  # ~$291K/hour
+EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
+    EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT_MILLIONS * 1_000_000,
+    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+    source_type="calculated",
+    description="Lifetime benefit in USD (not millions)",
+    unit="USD",
+    formula="BENEFIT_MILLIONS × 1M",
+    latex=r"Benefit = \$4.3M \times 10^6 = \$4,300,000"
+)
+EFFECTIVE_HOURLY_RATE = Parameter(
+    EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT / TOTAL_TIME_INVESTMENT_HOURS,
+    source_ref="/knowledge/solution/wishocracy.qmd#effective-hourly-rate",
+    source_type="calculated",
+    description="Effective hourly rate from treaty participation",
+    unit="USD/hour",
+    formula="LIFETIME_BENEFIT ÷ TIME_INVESTED",
+    latex=r"HourlyRate = \frac{\$4,300,000}{14.75} \approx \$291,525/hr"
+)  # ~$291K/hour
 
 # Comparison benchmarks
 AVERAGE_US_HOURLY_WAGE = Parameter(
@@ -2841,8 +2897,24 @@ TYPICAL_CEO_HOURLY_RATE = Parameter(
     description="Typical CEO hourly rate",
     unit="USD/hour"
 )  # ~$10,000/hour typical CEO rate
-EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER = EFFECTIVE_HOURLY_RATE / AVERAGE_US_HOURLY_WAGE  # ~9,711x
-EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER = EFFECTIVE_HOURLY_RATE / TYPICAL_CEO_HOURLY_RATE  # ~29x
+EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER = Parameter(
+    EFFECTIVE_HOURLY_RATE / AVERAGE_US_HOURLY_WAGE,
+    source_ref="/knowledge/solution/wishocracy.qmd#effective-hourly-rate",
+    source_type="calculated",
+    description="Effective rate multiplier vs average US wage",
+    unit="ratio",
+    formula="EFFECTIVE_RATE ÷ AVG_WAGE",
+    latex=r"Multiplier = \frac{\$291,525}{\$30} \approx 9,718x"
+)  # ~9,711x
+EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER = Parameter(
+    EFFECTIVE_HOURLY_RATE / TYPICAL_CEO_HOURLY_RATE,
+    source_ref="/knowledge/solution/wishocracy.qmd#effective-hourly-rate",
+    source_type="calculated",
+    description="Effective rate multiplier vs CEO rate",
+    unit="ratio",
+    formula="EFFECTIVE_RATE ÷ CEO_RATE",
+    latex=r"Multiplier = \frac{\$291,525}{\$10,000} \approx 29x"
+)  # ~29x
 
 # Formatted values for display
 effective_hourly_rate_thousands_formatted = f"${EFFECTIVE_HOURLY_RATE / 1000:.0f}K"
