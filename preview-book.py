@@ -47,12 +47,12 @@ def main():
 
     # Check if book config exists
     if not book_config.exists():
-        print(f"❌ Error: Missing {book_config}", file=sys.stderr)
-        print("   Unable to preview book.", file=sys.stderr)
+        print(f"[ERROR] Missing {book_config}", file=sys.stderr)
+        print("        Unable to preview book.", file=sys.stderr)
         sys.exit(1)
 
     # Copy config
-    print(f"📋 Copying {book_config.name} → _quarto.yml")
+    print(f"[*] Copying {book_config.name} -> _quarto.yml")
     shutil.copy2(book_config, quarto_yml)
 
     # Build preview command
@@ -68,21 +68,21 @@ def main():
     cmd.extend(args.quarto_args)
 
     # Start preview server
-    print("📚 Starting preview server for complete book...")
-    print(f"📝 Command: {' '.join(cmd)}")
+    print("[*] Starting preview server for complete book...")
+    print(f"[*] Command: {' '.join(cmd)}")
     print()
 
     try:
         subprocess.run(cmd, check=True)
     except KeyboardInterrupt:
-        print("\n👋 Preview server stopped")
+        print("\n[*] Preview server stopped")
         sys.exit(0)
     except subprocess.CalledProcessError as e:
-        print(f"❌ Preview failed with exit code {e.returncode}", file=sys.stderr)
+        print(f"[ERROR] Preview failed with exit code {e.returncode}", file=sys.stderr)
         sys.exit(e.returncode)
     except FileNotFoundError:
-        print("❌ Error: Quarto not found", file=sys.stderr)
-        print("   Make sure Quarto is installed and in your PATH", file=sys.stderr)
+        print("[ERROR] Quarto not found", file=sys.stderr)
+        print("        Make sure Quarto is installed and in your PATH", file=sys.stderr)
         sys.exit(1)
 
 

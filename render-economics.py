@@ -45,18 +45,18 @@ def main():
 
     # Check if economics config exists
     if not econ_config.exists():
-        print(f"❌ Error: Missing {econ_config}", file=sys.stderr)
-        print("   Unable to render economics website.", file=sys.stderr)
+        print(f"[ERROR] Missing {econ_config}", file=sys.stderr)
+        print("        Unable to render economics website.", file=sys.stderr)
         sys.exit(1)
 
     # Copy config
-    print(f"📋 Copying {econ_config.name} → _quarto.yml")
+    print(f"[*] Copying {econ_config.name} -> _quarto.yml")
     shutil.copy2(econ_config, quarto_yml)
 
     # Build command
     if args.validate:
         # Use validated render with pre/post checks
-        print("🔍 Rendering with validation...")
+        print("[*] Rendering with validation...")
         cmd = [
             sys.executable,
             'tools/render_html.py',
@@ -67,20 +67,20 @@ def main():
             cmd.extend(args.quarto_args)
     else:
         # Simple quarto render
-        print("🚀 Rendering economics site...")
+        print("[*] Rendering economics site...")
         cmd = ['quarto', 'render'] + args.quarto_args
 
     # Run command
     try:
         result = subprocess.run(cmd, check=True)
-        print("✅ Render complete!")
+        print("[OK] Render complete!")
         sys.exit(result.returncode)
     except subprocess.CalledProcessError as e:
-        print(f"❌ Render failed with exit code {e.returncode}", file=sys.stderr)
+        print(f"[ERROR] Render failed with exit code {e.returncode}", file=sys.stderr)
         sys.exit(e.returncode)
     except FileNotFoundError as e:
-        print(f"❌ Command not found: {e}", file=sys.stderr)
-        print("   Make sure Quarto is installed and in your PATH", file=sys.stderr)
+        print(f"[ERROR] Command not found: {e}", file=sys.stderr)
+        print("        Make sure Quarto is installed and in your PATH", file=sys.stderr)
         sys.exit(1)
 
 
