@@ -60,46 +60,48 @@ def parse_parameters_file(parameters_path: Path) -> Dict[float, List[Parameter]]
     """
     parameters = {}
 
+    # Import the parameters module to get actual Parameter instances
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("parameters", parameters_path)
+    params_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(params_module)
+
+    # Also parse the file for line numbers and comments
     with open(parameters_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
+    line_info = {}
     for i, line in enumerate(lines, 1):
         # Skip comments and empty lines
         if line.strip().startswith('#') or not line.strip():
             continue
 
-        # Look for variable assignments like: VAR_NAME = 123.45
-        match = re.match(r'^([A-Z_][A-Z0-9_]*)\s*=\s*(.+?)(?:\s*#.*)?$', line.strip())
-        if not match:
-            continue
+        # Look for variable assignments
+        match = re.match(r'^([A-Z_][A-Z0-9_]*)\s*=\s*', line.strip())
+        if match:
+            var_name = match.group(1)
+            # Extract comment if present
+            comment = ""
+            if '#' in line:
+                comment = line.split('#', 1)[1].strip()
+            line_info[var_name] = {'line_num': i, 'comment': comment}
 
-        var_name = match.group(1)
-        value_expr = match.group(2).strip()
+    # Extract all uppercase constants from the module
+    for name in dir(params_module):
+        if name.isupper():  # Only uppercase constants
+            value = getattr(params_module, name)
 
-        # Try to evaluate the expression to get numeric value
-        try:
-            # Handle Python number formatting (underscores)
-            value_expr_clean = value_expr.replace('_', '')
-
-            # Try to evaluate as a simple literal
-            value = ast.literal_eval(value_expr_clean)
-
-            # Only process numeric values
+            # Only process numeric values (including Parameter instances)
             if isinstance(value, (int, float)):
-                if value not in parameters:
-                    parameters[value] = []
+                # Convert to float for consistent comparison
+                float_val = float(value)
 
-                # Extract comment if present
-                comment = ""
-                if '#' in line:
-                    comment = line.split('#', 1)[1].strip()
+                if float_val not in parameters:
+                    parameters[float_val] = []
 
-                param = Parameter(var_name, value, i, comment)
-                parameters[value].append(param)
-
-        except (ValueError, SyntaxError):
-            # Skip calculated expressions - we'll handle those separately
-            pass
+                info = line_info.get(name, {'line_num': 0, 'comment': ''})
+                param = Parameter(name, float_val, info['line_num'], info['comment'])
+                parameters[float_val].append(param)
 
     return parameters
 
