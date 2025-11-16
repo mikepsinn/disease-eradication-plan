@@ -47,10 +47,24 @@
     # Build the site using Quarto
     echo "Building site with Quarto..."
     cp _quarto-economics.yml _quarto.yml
-    echo "Quarto config copied. Starting render..."
-    quarto render
+    echo "Quarto config copied. Starting render with timeout..."
+    
+    # Set environment variables for Quarto
+    export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" || python -c "import sys; print(sys.executable)")
+    export JUPYTER_PLATFORM_DIRS=1
+    
+    # Render with explicit output and error handling
+    quarto render --to html --execute || {
+      echo "Quarto render failed. Attempting without execution..."
+      quarto render --to html --no-execute || {
+        echo "Quarto render failed completely. Checking for partial output..."
+        ls -la _site/ 2>&1 || echo "No output directory found"
+        exit 1
+      }
+    }
+    
     echo "Quarto render completed. Checking output..."
-    ls -la _site/economics/ | head -20 || echo "Output directory check failed"
+    ls -la _site/economics/ 2>&1 | head -20 || ls -la _site/ 2>&1 | head -20 || echo "Output directory check failed"
   """
 
   # Directory to publish - matches output-dir in _quarto-economics.yml

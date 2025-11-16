@@ -687,6 +687,54 @@
   \ class=\"parameter-link\" title=\"Annual peace dividend from 1% reduction in total\
   \ war costs | Formula: TOTAL_WAR_COST × 1% | Unit: billions USD/year | Click to\
   \ view calculation\">$114B</a>"
+"peace_dividend_direct_costs": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in direct war\
+  \ costs | Formula: DIRECT_COSTS × 1% | Unit: billions USD/year | Click to view calculation\"\
+  >$76.5B</a>"
+"peace_dividend_environmental": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in environmental\
+  \ damage | Formula: ENVIRONMENTAL_DAMAGE × 1% | Unit: billions USD/year | Click\
+  \ to view calculation\">$1.00B</a>"
+"peace_dividend_human_casualties": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in human casualties\
+  \ | Formula: HUMAN_LIFE_LOSSES × 1% | Unit: billions USD/year | Click to view calculation\"\
+  >$24.5B</a>"
+"peace_dividend_indirect_costs": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in indirect\
+  \ war costs | Formula: INDIRECT_COSTS × 1% | Unit: billions USD/year | Click to\
+  \ view calculation\">$37B</a>"
+"peace_dividend_infrastructure": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in infrastructure\
+  \ destruction | Formula: INFRASTRUCTURE_DESTRUCTION × 1% | Unit: billions USD/year\
+  \ | Click to view calculation\">$18.7B</a>"
+"peace_dividend_lost_economic_growth": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in lost economic\
+  \ growth | Formula: LOST_ECONOMIC_GROWTH × 1% | Unit: billions USD/year | Click\
+  \ to view calculation\">$27.2B</a>"
+"peace_dividend_lost_human_capital": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in lost human\
+  \ capital | Formula: LOST_HUMAN_CAPITAL × 1% | Unit: billions USD/year | Click to\
+  \ view calculation\">$3.00B</a>"
+"peace_dividend_ptsd": "<a href=\"/knowledge/economics/peace-dividend.qmd\" class=\"\
+  parameter-link\" title=\"Annual savings from 1% reduction in PTSD and mental health\
+  \ costs | Formula: PTSD_COSTS × 1% | Unit: billions USD/year | Click to view calculation\"\
+  >$2.32B</a>"
+"peace_dividend_refugee_support": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in refugee support\
+  \ costs | Formula: REFUGEE_SUPPORT × 1% | Unit: billions USD/year | Click to view\
+  \ calculation\">$1.50B</a>"
+"peace_dividend_roi": "<a href=\"/knowledge/economics/peace-dividend.qmd\" class=\"\
+  parameter-link\" title=\"Total benefit per dollar redirected (savings + funding\
+  \ captured) | Formula: (PEACE_DIVIDEND + FUNDING) ÷ FUNDING | Unit: ratio | Click\
+  \ to view calculation\">5.18</a>"
+"peace_dividend_trade_disruption": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in trade disruption\
+  \ | Formula: TRADE_DISRUPTION × 1% | Unit: billions USD/year | Click to view calculation\"\
+  >$6.16B</a>"
+"peace_dividend_veteran_healthcare": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in veteran healthcare\
+  \ costs | Formula: VETERAN_HEALTHCARE × 1% | Unit: billions USD/year | Click to\
+  \ view calculation\">$2.00B</a>"
 "personal_lifetime_benefit_age_20_1pct": "<span class=\"parameter-link\" title=\"\
   parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">413,863</span>"
 "personal_lifetime_benefit_age_30_10pct": "<span class=\"parameter-link\" title=\"\

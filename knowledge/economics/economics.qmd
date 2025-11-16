@@ -31,8 +31,8 @@ The beautiful part: it costs zero new dollars. You're just moving money from the
 
 You get paid twice for the same 1% shift:
 
-1. **Peace dividend**: [$113.6B/year](../appendix/peace-dividend-calculations.qmd) appears when you build 1% fewer bombs (turns out bombs are expensive and breaking things costs money to fix)
-2. **Research efficiency**: [$50.0B+/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not drowning scientists in paperwork (Oxford proved trials cost [82x less](../appendix/recovery-trial.qmd) when you stop requiring 17 years of documentation)
+1. **Peace dividend**: [{{< var peace_dividend_annual_societal_benefit >}}/year](../appendix/peace-dividend-calculations.qmd) appears when you build 1% fewer bombs (turns out bombs are expensive and breaking things costs money to fix)
+2. **Research efficiency**: [{{< var dfda_gross_savings_annual >}}+/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not drowning scientists in paperwork (Oxford proved trials cost [82x less](../appendix/recovery-trial.qmd) when you stop requiring 17 years of documentation)
 
 ### The Numbers
 
@@ -99,7 +99,7 @@ This uses "net present value" which is economist code for "future money is worth
 1% of global military budgets gets redirected. This gives you:
 
 - **Funding**: [$27.2B/year](../appendix/peace-dividend-calculations.qmd) to spend on not-dying
-- **Bonus savings**: [$113.6B/year](../appendix/peace-dividend-calculations.qmd) in economic value from building 1% fewer things that explode
+- **Bonus savings**: [{{< var peace_dividend_annual_societal_benefit >}}/year](../appendix/peace-dividend-calculations.qmd) in economic value from building 1% fewer things that explode
 
 The peace dividend math is simple: wars cost [$11.355T/year](../appendix/peace-dividend-calculations.qmd). 1% less war costs 1% less money.
 
@@ -120,7 +120,7 @@ $$
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_annual_psychological_impact_costs_conflict >}}](../appendix/peace-dividend-calculations.qmd) | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_annual_lost_human_capital_conflict >}}](../appendix/peace-dividend-calculations.qmd) | Productive capacity lost from casualties and displacement |
 | **Total War Costs** | **$11,355B** | Combined direct and indirect annual costs |
-| **1% Reduction** | **$113.6B** | Peace dividend from 1% treaty implementation |
+| **1% Reduction** | **{{< var peace_dividend_annual_societal_benefit >}}** | Peace dividend from 1% treaty implementation |
 
 This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
 
@@ -142,10 +142,10 @@ This assumes gradual rollout (0% to 100% over 5 years) and middle-range costs. F
 
 **Two income streams from one budget shift**:
 
-1. **Peace dividend**: [$113.6B/year](../appendix/peace-dividend-calculations.qmd) saved by not breaking as much stuff
+1. **Peace dividend**: [{{< var peace_dividend_annual_societal_benefit >}}/year](../appendix/peace-dividend-calculations.qmd) saved by not breaking as much stuff
 2. **Research efficiency**: [$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not requiring PhDs to fill out forms for 17 years
 
-**Combined**: [$163.6B/year](../appendix/dfda-cost-benefit-analysis.qmd) (conservative, ignoring most benefits)
+**Combined**: [{{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year](../appendix/dfda-cost-benefit-analysis.qmd) (conservative, ignoring most benefits)
 
 **If everything goes wrong**: Worst-case scenario (benefits half as good, costs twice as high) still delivers [189:1 to {{< var optimistic_scenario_roi >}}:1](../appendix/1-percent-treaty-cost-effectiveness.qmd) returns. See [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd).
 
@@ -215,7 +215,7 @@ The 1% Treaty financing structure creates a self-funding system requiring zero n
 **Economic Structure** ([see detailed calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd)):
 
 - **Funding Source**: [$27.2B annually](../appendix/peace-dividend-calculations.qmd) from 1% redirection of existing military budgets (money already allocated in national budgets)
-- **Annual Benefits**: [$163.6B](../appendix/dfda-cost-benefit-analysis.qmd) (Peace dividend: [$113.6B](../appendix/peace-dividend-calculations.qmd) + R&D savings: [$50.0B](../appendix/dfda-cost-benefit-analysis.qmd))
+- **Annual Benefits**: [{{< var combined_peace_health_dividends_annual_for_roi_calc >}}](../appendix/dfda-cost-benefit-analysis.qmd) (Peace dividend: [{{< var peace_dividend_annual_societal_benefit >}}](../appendix/peace-dividend-calculations.qmd) + R&D savings: [$50.0B](../appendix/dfda-cost-benefit-analysis.qmd))
 - **Operating Costs**: [{{< var treaty_total_annual_costs >}} annually](../appendix/dfda-cost-benefit-analysis.qmd) (campaign operations and dFDA infrastructure)
 - **Net Position**: [$163.3B annual surplus](../appendix/dfda-cost-benefit-analysis.qmd) after all costs
 - **Lives Saved**: [{{< var treaty_total_lives_saved_annual >}} annually](../appendix/1-percent-treaty-cost-effectiveness.qmd)
@@ -244,7 +244,7 @@ $$
 
 where each benefit category is:
 
-1. **Peace dividend** ([$113.6B](../appendix/peace-dividend-calculations.qmd)) - Societal savings from 1% less conflict
+1. **Peace dividend** ([{{< var peace_dividend_annual_societal_benefit >}}](../appendix/peace-dividend-calculations.qmd)) - Societal savings from 1% less conflict
 2. **R&D cost savings** ([$50.0B](../appendix/dfda-cost-benefit-analysis.qmd)) - 82x cheaper trials
 3. **7-year access acceleration** ([$300.0B](../appendix/economic-value-of-accelerated-treatments.qmd)) - Earlier treatment access during trials
 4. **Research acceleration** ([$100.0B](../appendix/research-acceleration-model.qmd)) - 115X more research capacity (10-20X more breakthroughs)
@@ -324,7 +324,7 @@ This represents:
 
 ## Personal Economic Impact: From Societal to Individual
 
-The aggregate societal benefits ($163.6B-{{< var total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
+The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
 
 {{< include ../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
 
@@ -415,17 +415,17 @@ Instead of solving one problem, this uses a global-scale win to fund a system-sc
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-The conservative case annual economic benefit of [$163.6B](../appendix/dfda-cost-benefit-analysis.qmd) significantly exceeds the most successful public health programs in history. Comparing to [childhood vaccination programs](../references.qmd#childhood-vaccination-roi) (estimated [10-20B annual global benefit](../references.qmd#childhood-vaccination-roi) from preventing measles, polio, etc.):
+The conservative case annual economic benefit of [{{< var combined_peace_health_dividends_annual_for_roi_calc >}}](../appendix/dfda-cost-benefit-analysis.qmd) significantly exceeds the most successful public health programs in history. Comparing to [childhood vaccination programs](../references.qmd#childhood-vaccination-roi) (estimated [10-20B annual global benefit](../references.qmd#childhood-vaccination-roi) from preventing measles, polio, etc.):
 
 $$
 \text{Relative Scale} = \frac{\$163.6\text{B}}{\sim\$15\text{B}} \approx 11:1
 $$
 
-where $163.6B is the [1% Treaty conservative case benefit](../appendix/dfda-cost-benefit-analysis.qmd) and $15B is the estimated [childhood vaccination annual benefit](../references.qmd#childhood-vaccination-roi).
+where {{< var combined_peace_health_dividends_annual_for_roi_calc >}} is the [1% Treaty conservative case benefit](../appendix/dfda-cost-benefit-analysis.qmd) and $15B is the estimated [childhood vaccination annual benefit](../references.qmd#childhood-vaccination-roi).
 
 This makes the 1% Treaty/dFDA system **[11X larger in economic impact](../appendix/intervention-comparison-table.qmd)** than childhood vaccinations, one of the most successful public health interventions ever implemented.
 
-Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates [$163.6B](../appendix/dfda-cost-benefit-analysis.qmd) in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
+Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates [{{< var combined_peace_health_dividends_annual_for_roi_calc >}}](../appendix/dfda-cost-benefit-analysis.qmd) in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
 
 ## The Opportunity Cost Clock
 
@@ -503,7 +503,7 @@ The [$1.0B campaign cost](campaign-budget.qmd) (used as denominator in complete 
 | **[Reserve](campaign-budget.qmd)** | [{{< var treaty_campaign_budget_reserve >}}](campaign-budget.qmd) | Contingency for unforeseen challenges and opportunities |
 | **Total Campaign Cost** | **[${{< var traditional_large_trial_size >}}M](campaign-budget.qmd)** | 4-year implementation timeline (amortized: {{< var treaty_campaign_budget_technology >}}/year) |
 
-This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ($163.6B). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
+This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
 This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates 463:1 to {{< var roi_all_direct_benefits >}}:1 returns regardless of the specific path to adoption.
 

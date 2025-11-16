@@ -413,6 +413,116 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     latex=r"Peace\_Dividend = \$11,355B \times 0.01 = \$113.55B"
 )  # $113.55B, rounded to $114B
 
+# Individual peace dividend components (1% savings breakdown)
+PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
+    GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in direct war costs",
+    unit="billions USD/year",
+    formula="DIRECT_COSTS × 1%"
+)
+
+PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
+    GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in infrastructure destruction",
+    unit="billions USD/year",
+    formula="INFRASTRUCTURE_DESTRUCTION × 1%"
+)
+
+PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
+    GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in human casualties",
+    unit="billions USD/year",
+    formula="HUMAN_LIFE_LOSSES × 1%"
+)
+
+PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
+    GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in trade disruption",
+    unit="billions USD/year",
+    formula="TRADE_DISRUPTION × 1%"
+)
+
+PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
+    GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in indirect war costs",
+    unit="billions USD/year",
+    formula="INDIRECT_COSTS × 1%"
+)
+
+PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
+    GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in lost economic growth",
+    unit="billions USD/year",
+    formula="LOST_ECONOMIC_GROWTH × 1%"
+)
+
+PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
+    GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in veteran healthcare costs",
+    unit="billions USD/year",
+    formula="VETERAN_HEALTHCARE × 1%"
+)
+
+PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
+    GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in refugee support costs",
+    unit="billions USD/year",
+    formula="REFUGEE_SUPPORT × 1%"
+)
+
+PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
+    GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in environmental damage",
+    unit="billions USD/year",
+    formula="ENVIRONMENTAL_DAMAGE × 1%"
+)
+
+PEACE_DIVIDEND_PTSD = Parameter(
+    GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in PTSD and mental health costs",
+    unit="billions USD/year",
+    formula="PTSD_COSTS × 1%"
+)
+
+PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
+    GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT * TREATY_REDUCTION_PCT,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Annual savings from 1% reduction in lost human capital",
+    unit="billions USD/year",
+    formula="LOST_HUMAN_CAPITAL × 1%"
+)
+
+# Peace dividend benefit-to-cost ratio
+PEACE_DIVIDEND_ROI = Parameter(
+    (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + TREATY_ANNUAL_FUNDING) / TREATY_ANNUAL_FUNDING,
+    source_ref="/knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Total benefit per dollar redirected (savings + funding captured)",
+    unit="ratio",
+    formula="(PEACE_DIVIDEND + FUNDING) ÷ FUNDING"
+)
+
 # ---
 # HEALTH DIVIDEND PARAMETERS (dFDA)
 # ---

@@ -199,9 +199,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Framing 2: Opportunity Cost of Redirected Spending**
 
-- Cost: $27.2B/year (redirected military spending)
-- But this $27.2B is ALREADY COUNTED in the $113.6B peace dividend
-- Net cost: $27.2B - $27.2B = $0
+- Cost: {{< var treaty_annual_funding >}}/year (redirected military spending)
+- But this {{< var treaty_annual_funding >}} is ALREADY COUNTED in the {{< var peace_dividend_annual_societal_benefit >}} peace dividend
+- Net cost: {{< var treaty_annual_funding >}} - {{< var treaty_annual_funding >}} = $0
 - **ICER = -$187,543 per QALY**
 
 ###### Framing 3: Military Waste Conversion
@@ -365,7 +365,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
 
-- **1% Treaty + DIH + dFDA**: Generates $163.6B in annual economic benefits ($113.6B peace dividend + $50.0B dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
+- **1% Treaty + DIH + dFDA**: Generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits ({{< var peace_dividend_annual_societal_benefit >}} peace dividend + {{< var dfda_gross_savings_annual >}} dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
 **Key distinction**: Only the 1% Treaty is self-funding, it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
@@ -386,8 +386,8 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 
 1. **Peace Dividend**: [Peace Dividend Calculations](peace-dividend-calculations.qmd)
    - Based on [Cost of War Analysis](../problem/cost-of-war.qmd)
-   - Total war costs: $11.4T annually
-   - 1% reduction: $113.6B
+   - Total war costs: {{< var global_annual_war_total_cost >}} annually
+   - 1% reduction: {{< var peace_dividend_annual_societal_benefit >}}
 
 2. **Health Dividend (dFDA)**: [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis)
    - Clinical trial market: ~$100.0B/year
@@ -428,10 +428,10 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 
 ### Q: How can this save money while saving lives?
 
-**A**: The 1% Treaty generates $163.6B in annual economic benefits:
+**A**: The 1% Treaty generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits:
 
-- $113.6B from reduced conflict costs (peace dividend)
-- $50.0B from more efficient medical R&D (dFDA)
+- {{< var peace_dividend_annual_societal_benefit >}} from reduced conflict costs (peace dividend)
+- {{< var dfda_gross_savings_annual >}} from more efficient medical R&D (dFDA)
 
 These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of $163.3B/year for society.
 
