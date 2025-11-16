@@ -91,7 +91,7 @@ jobs:
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
       - name: Render Quarto Project (HTML) with validation and monitoring
-        run: python tools/render_html.py
+        run: python render-book.py
         timeout-minutes: 15
 
       - name: Setup Pages
