@@ -501,7 +501,7 @@ The [$1.0B campaign cost](campaign-budget.qmd) (used as denominator in complete 
 | **[Partnerships](campaign-budget.qmd)** | [{{< var treaty_campaign_budget_partnerships >}}](campaign-budget.qmd) | Coalition building with NGOs, medical organizations, patient advocacy groups |
 | **[Operations](campaign-budget.qmd)** | [{{< var treaty_campaign_budget_reserve >}}](campaign-budget.qmd) | Campaign management, communications, logistics, staffing |
 | **[Reserve](campaign-budget.qmd)** | [{{< var treaty_campaign_budget_reserve >}}](campaign-budget.qmd) | Contingency for unforeseen challenges and opportunities |
-| **Total Campaign Cost** | **[${{< var traditional_large_trial_size >}}M](campaign-budget.qmd)** | 4-year implementation timeline (amortized: {{< var treaty_campaign_budget_technology >}}/year) |
+| **Total Campaign Cost** | **[{{< var treaty_campaign_total_cost >}}](campaign-budget.qmd)** | 4-year implementation timeline (amortized: {{< var treaty_campaign_budget_technology >}}/year) |
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
