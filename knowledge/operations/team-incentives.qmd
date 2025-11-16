@@ -30,7 +30,7 @@ This means that if a contributor performs work when the perceived chance of succ
 
 We use the "Salary + At-Risk Contribution" model to solve the "people need to eat" problem and value the work being put at risk.
 
-- **Determine Market Rate:** Each role has a fair market salary (e.g., Senior Engineer: $200,000/year).
+- **Determine Market Rate:** Each role has a fair market salary (e.g., Senior Engineer: ${{< var qalys_from_faster_access >}}/year).
 - **Pay a Base Cash Salary:** A portion of the market rate (e.g., 60%, or $120,000) is paid in cash/stablecoin.
 - **Calculate At-Risk Contribution:** The remainder is the "at-risk" portion. (e.g., $200k - $120k = **$80,000**). This is the value the contributor is investing in the project.
 
@@ -63,7 +63,7 @@ To make the Success Grants meaningful, they must map to a share of the network.
 - **Success Valuation:** We define a target valuation for the project at the time of the main capital raise (Phase 2). For modeling purposes, we set this at **$5 Billion**.
 - **Team Allocation Pool Value:** The 20% team allocation pool is therefore worth **$1 Billion** upon success (`$5B * 0.20`).
 - **Calculating Ownership:** A contributor's ownership of the team pool is their share of the total value.
-  - _Example:_ The engineer's $4.6M in Success Grants represents `$4,600,000 / $1,000,000,000 = 0.46%` of the team's token pool.
+  - _Example:_ The engineer's $4.6M in Success Grants represents `$4,600,000 / ${{< var traditional_large_trial_size >}},000,000 = 0.46%` of the team's token pool.
 
 At the Token Generation Event, their accumulated Success Grants are converted into a corresponding number of VICTORY bonds.
 

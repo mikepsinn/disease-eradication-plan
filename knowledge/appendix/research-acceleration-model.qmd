@@ -26,20 +26,20 @@ This analysis focuses on provable, quantifiable benefits with conservative assum
 
 The conservative 463:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
 
-### $1.2T in Annual Benefits
+### {{< var total_complete_benefits_annual >}} in Annual Benefits
 
 The 1% Treaty doesn't just make trials cheaper. It:
 
 1. **Societal savings from 1% less conflict** (peace dividend: 113.6B)
 2. **Slashes R&D costs 82x** (saves $50.0B)
-3. **Accelerates access by 7 years** (saves $300B via early trial access)
-4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
-5. **Enables treatment of rare/orphan diseases** (adds $400B)
+3. **Accelerates access by 7 years** (saves {{< var global_annual_lost_human_capital_conflict >}} via early trial access)
+4. **115X more research capacity** (adds {{< var global_clinical_trial_market_annual >}} via 10-20X more breakthroughs)
+5. **Enables treatment of rare/orphan diseases** (adds {{< var benefit_rare_diseases_annual >}})
 6. **Reduces drug prices via R&D savings** (saves $100.0B)
-7. **Makes prevention economically viable** (saves $100B)
-8. **Addresses mental health treatment gap** (adds $75B)
+7. **Makes prevention economically viable** (saves {{< var global_clinical_trial_market_annual >}})
+8. **Addresses mental health treatment gap** (adds {{< var sensitivity_total_benefits_conservative >}})
 
-Each of these alone is worth tens to hundreds of billions. Together? **$1.2T/year.**
+Each of these alone is worth tens to hundreds of billions. Together? **{{< var total_complete_benefits_annual >}}/year.**
 
 ## The 7-Year Access Acceleration
 
@@ -59,24 +59,24 @@ Existing patients get immediate access:
 
 - 2 billion people with chronic diseases globally
 - Each gains 7 years of treatment access they'd otherwise miss
-- Total: 14 billion person-years × $150K/QALY = $2.1T total value
-- **Amortized over 7-year acceleration period: $300B/year for years 1-7**
+- Total: 14 billion person-years × {{< var standard_economic_qaly_value_usd >}}/QALY = $2.1T total value
+- **Amortized over 7-year acceleration period: {{< var global_annual_lost_human_capital_conflict >}}/year for years 1-7**
 
 ### Flow Benefit (Ongoing)
 
 New patients each year get early access:
 
 - ~100M new chronic disease cases/year globally
-- Each saves 7 years × $150K/QALY = $1.05M in value
+- Each saves 7 years × {{< var standard_economic_qaly_value_usd >}}/QALY = $1.05M in value
 - **Annual flow: $105B/year ongoing (continues forever)**
 
 ### Combined Benefit
 
 #### Combined "earlier access" benefit
 
-- Years 1-7: $300B (amortized stock) + $105B (flow) = **$405B/year**
+- Years 1-7: {{< var global_annual_lost_human_capital_conflict >}} (amortized stock) + $105B (flow) = **$405B/year**
 - Years 8+: $105B/year (flow only)
-- **10-year average: ~$300B/year**
+- **10-year average: ~{{< var global_annual_lost_human_capital_conflict >}}/year**
 
 ## The Research Acceleration Multiplier
 
@@ -112,7 +112,7 @@ These are common diseases that are UNDER-researched because trials are too expen
 
 These are NOT rare diseases (already counted). These are common diseases with limited treatment options due to insufficient research investment.
 
-#### Conservative annual value: $100B/year
+#### Conservative annual value: {{< var global_clinical_trial_market_annual >}}/year
 
 *Note: This is a conservative estimate based on health outcomes. For market valuation approaches suggesting substantially higher values ($6.48T/year with 80X acceleration), see [Economic Value of Accelerated Treatments](economic-value-of-accelerated-treatments.qmd).*
 
@@ -253,8 +253,8 @@ print(f"- **{SIMULTANEOUS_TRIALS_MULTIPLIER}x more trials running simultaneously
 
 #### Competitive Pressure
 ```
-Trial A: $2,000/patient, 6-month completion
-Trial B: $500/patient, 3-month completion
+Trial A: ${{< var dfda_drug_approvals_per_year_high >}}/patient, 6-month completion
+Trial B: {{< var recovery_trial_cost_per_patient >}}/patient, 3-month completion
 Trial C: $5,000/patient, 12-month completion
 
 Result: Patients choose Trial B → Trial A/C lose funding →
@@ -321,7 +321,7 @@ print(f"The {RESEARCH_ACCELERATION_MULTIPLIER}x acceleration over 20 years = {cu
 print("\n")
 print("**This is why we can credibly claim:**\n")
 print("- 72-year life extension (not 10 years like antibiotics)\n")
-print("- $4.3M personal lifetime wealth\n")
+print("- {{< var effective_hourly_rate_lifetime_benefit >}} personal lifetime wealth\n")
 print("- Major diseases cured within a decade\n")
 print("\n")
 print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone with {RESEARCH_ACCELERATION_MULTIPLIER}x more trials\" and statistically guarantee breakthroughs.\n")
@@ -340,21 +340,21 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 | Prevention Medicine | $100.0B | Economic viability of prevention |
 | Mental Health Impact | $75.0B | Treatment gap reduction |
 | | | |
-| **ECONOMIC TOTAL** | **$1.2T** | |
+| **ECONOMIC TOTAL** | **{{< var total_complete_benefits_annual >}}** | |
 
-**ROI:** $1.2T / $1.0B investment = **1,239:1**
+**ROI:** {{< var total_complete_benefits_annual >}} / $1.0B investment = **{{< var roi_all_direct_benefits >}}:1**
 
 **Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 
 ## The Sanity Check
 
-### Is $1.2T/year reasonable?
+### Is {{< var total_complete_benefits_annual >}}/year reasonable?
 
 - Global GDP: $111 trillion/year
 - Global healthcare spending: $9.8 trillion/year
 - Global military spending: $2.7 trillion/year
 
-If the 1% Treaty generates $1.2T/year in benefits, that's:
+If the 1% Treaty generates {{< var total_complete_benefits_annual >}}/year in benefits, that's:
 
 - 1.1% of global GDP
 - 12.4% of healthcare spending
@@ -366,7 +366,7 @@ For comparison:
 
 - Eliminating all cancer: ~$1.1T/year economic value
 - Curing all infectious disease: ~$800B/year
-- Fixing mental health: ~$300B/year
+- Fixing mental health: ~{{< var global_annual_lost_human_capital_conflict >}}/year
 
 The 1% Treaty doesn't cure everything, but it:
 
@@ -374,13 +374,13 @@ The 1% Treaty doesn't cure everything, but it:
 - Increases research velocity 10-20X (more breakthroughs)
 - Enables trials for currently untreatable conditions
 
-$1.2T/year is reasonable for that scope.
+{{< var total_complete_benefits_annual >}}/year is reasonable for that scope.
 
 ## Technical Notes
 
 ### Sources and Methodology
 
-- **Trial cost reduction**: Based on [RECOVERY trial model](../references.qmd#recovery-trial-cost-reduction) achieving ~$500/patient vs traditional $40-120K/patient
+- **Trial cost reduction**: Based on [RECOVERY trial model](../references.qmd#recovery-trial-cost-reduction) achieving ~{{< var recovery_trial_cost_per_patient >}}/patient vs traditional $40-120K/patient
 - **Research capacity multiplier**: 82x cost reduction × 1.4X funding increase = 115X capacity
 - **QALY valuations**: Standard [$100-150K per QALY](../references.qmd#qaly-value) methodology
 - **Disease prevalence**: WHO global burden of disease data
@@ -409,8 +409,8 @@ Including these would push the ROI substantially higher, but they're harder to q
 
 The **Complete Case** shows that when you count all direct, quantifiable benefits from the 1% Treaty:
 
-- **$1.2T/year in societal value**
-- **1,239:1 return on investment**
+- **{{< var total_complete_benefits_annual >}}/year in societal value**
+- **{{< var roi_all_direct_benefits >}}:1 return on investment**
 - **Benefits span immediate access acceleration, research capacity expansion, and systemic healthcare improvements**
 
 This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, use the more conservative 463:1 figure to maintain credibility, but the full scope of benefits is substantially larger.

@@ -47,7 +47,7 @@ Breakdown:
 
 - [31% goes to "administrative costs"](../references.qmd#nih-administrative-costs-31pct) (bureaucrats need yachts)
 - Universities steal [40-60% as "indirect costs"](../references.qmd#university-indirect-costs-40-60pct) (new football stadiums)
-- Actual research: Maybe $20 billion if we're generous
+- Actual research: Maybe {{< var lobbyist_bond_investment_max_millions >}} billion if we're generous
 
 #### Per American
 
@@ -69,7 +69,7 @@ The math:
 
 - Builds hospitals shaped like aircraft carriers
 - Still can't cure the diseases inside them
-- [Spends 97X more on domestic surveillance (~$200B) than medical research (~$15B)](../references.qmd#china-surveillance-vs-medicine-spending)
+- [Spends 97X more on domestic surveillance (~{{< var sensitivity_peace_dividend_optimistic >}}) than medical research (~$15B)](../references.qmd#china-surveillance-vs-medicine-spending)
 
 ### European Union: The Bureaucracy Brigade
 
@@ -172,7 +172,7 @@ The tragedy:
 - Still less than a cheap pizza
 - Your rare disease child: Worth less than lunch
 
-**Aging Research:** [~$500 million globally](../references.qmd#global-aging-research-spending-500m)
+**Aging Research:** [~{{< var recovery_trial_cost_per_patient >}} million globally](../references.qmd#global-aging-research-spending-500m)
 
 - Everyone ages (citation needed)
 - Everyone dies from it
@@ -197,7 +197,7 @@ Cool story. Let's check:
 
 - 1960: 0.12%
 - 1980: 0.10%
-- 2000: 0.08%
+- 2000: {{< var npv_discount_rate_standard >}}
 - 2024: 0.065%
 
 We're literally investing LESS in not dying as we get richer. It's like evolution in reverse.
@@ -210,11 +210,11 @@ We're literally investing LESS in not dying as we get richer. It's like evolutio
 - [0 diseases cured since Hepatitis C (2014)](../references.qmd#diseases-cured-since-2014)
 - [95% of diseases](../references.qmd#95-pct-diseases-no-treatment): Still no treatment
 - Time to develop one drug: [17 years](../references.qmd#drug-development-timeline-17-years)
-- Success rate: [0.01%](../references.qmd#drug-development-success-rate-0-01pct)
+- Success rate: [{{< var treaty_reduction_pct >}}](../references.qmd#drug-development-success-rate-0-01pct)
 
 **What It Could Buy (If Spent Efficiently):**
 
-- 54,000 pragmatic trials (at $500K each)
+- 54,000 pragmatic trials (at {{< var recovery_trial_cost_per_patient >}}K each)
 - Testing 1 million treatments simultaneously
 - Curing 10-20 diseases annually
 - But no: Bureaucracy needs feeding
@@ -236,7 +236,7 @@ We're literally investing LESS in not dying as we get richer. It's like evolutio
    - Could have cured: Multiple diseases
    - Note: $300 million per day × 365 days
 
-4. **US Military Marching Bands:** [$500 million/year](../references.qmd#us-military-bands-cost-500m)
+4. **US Military Marching Bands:** [{{< var recovery_trial_cost_per_patient >}} million/year](../references.qmd#us-military-bands-cost-500m)
    - Musicians: Important
    - Your tumor: Not important
 
@@ -268,9 +268,9 @@ Ratio: Still 31:1 for death
 
 **Cost per Quality-Adjusted Life Year (QALY) Saved:**
 
-- UK: $50,000 (bureaucratic but trying)
-- USA: $150,000 (corruption tax)
-- China: $30,000 (when they report honestly)
+- UK: ${{< var qalys_from_prevention_conservative >}} (bureaucratic but trying)
+- USA: ${{< var qalys_from_prevention_optimistic >}} (corruption tax)
+- China: {{< var average_us_hourly_wage >}},000 (when they report honestly)
 - India: $5,000 (necessity breeds efficiency)
 - Global average: $75,000 (pathetic everywhere)
 

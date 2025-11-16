@@ -55,8 +55,8 @@ The math is simple: If everyone has 1% fewer weapons, the balance stays exactly 
 
 Twenty-seven billion dollars funds:
 
-- 54,000 clinical trials at $500,000 each (the cheap way)
-- Or 27 million patients in trials at $1,000 each
+- 54,000 clinical trials at ${{< var qalys_from_new_therapies >}} each (the cheap way)
+- Or 27 million patients in trials at ${{< var traditional_large_trial_size >}} each
 - Or 540 new drug approvals (current rate: 50 per year)
 - Or curing 10-20 rare diseases completely in Year 1
 - Or preventing 180,000 deaths annually
@@ -123,7 +123,7 @@ The Decentralized FDA (dFDA) does three things:
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting seventeen years for FDA approval while you die, you join a trial on the dFDA platform. The trial costs $500 per patient instead of $41,000 because it turns out you don't need seventeen layers of paperwork to figure out if aspirin works.
+Instead of waiting seventeen years for FDA approval while you die, you join a trial on the dFDA platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of $41,000 because it turns out you don't need seventeen layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
@@ -141,7 +141,7 @@ Outcome labels tell you what actually happens:
 - Reduces symptoms 60%
 - Causes headaches 9% of the time
 - Costs $50/month
-- Based on 50,000 real patients like you
+- Based on {{< var qalys_from_prevention_conservative >}} real patients like you
 
 It's just facts. No marketing. No lies. No 40-page legal documents written by lawyers having seizures.
 

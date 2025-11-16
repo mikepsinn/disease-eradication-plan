@@ -47,11 +47,11 @@ You offer two incentives that transform nonprofits from "please fund us" to "let
 
 #### The New Way
 
-"Here's $50K baseline to get started. Plus $10K for every 10,000 verified referendum votes you drive. No cap."
+"Here's $50K baseline to get started. Plus {{< var typical_ceo_hourly_rate >}} for every {{< var dfda_large_trial_size >}} verified referendum votes you drive. No cap."
 
 #### The Offer
 
-> "Your organization receives a **baseline partnership grant** for setup costs. You also get a **substantial performance grant** for every **X verified referendum votes** (e.g., 10,000) driven through your unique link. This bonus is uncapped."
+> "Your organization receives a **baseline partnership grant** for setup costs. You also get a **substantial performance grant** for every **X verified referendum votes** (e.g., {{< var dfda_large_trial_size >}}) driven through your unique link. This bonus is uncapped."
 
 #### What This Does
 

@@ -55,7 +55,7 @@ Your parents won't die of Alzheimer's. Your children won't have to worry about r
 
 ### The Math
 
-Here's what a typical 30-year-old making $50,000/year actually gets:
+Here's what a typical 30-year-old making ${{< var qalys_from_prevention_conservative >}}/year actually gets:
 
 {{< include ../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
@@ -82,15 +82,15 @@ Where does this come from?
 
 The treaty percentage negotiated determines whether you get millions or generational wealth:
 
-- **0.5% Treaty**: $3.6M lifetime benefit
-- **1% Treaty** (DEFAULT): $4.3M lifetime benefit
+- **{{< var trial_cost_reduction_pct >}} Treaty**: $3.6M lifetime benefit
+- **1% Treaty** (DEFAULT): {{< var effective_hourly_rate_lifetime_benefit >}} lifetime benefit
 - **5% Treaty**: $16M lifetime benefit
 
 This is why the treaty terms matter. The difference between 1% and 5% is measured in tens of millions per person.
 
 ### The Bottom Line
 
-- **If you're 30:** Life expectancy jumps from 80 to 152 (+72 years), $4.3M total benefit
+- **If you're 30:** Life expectancy jumps from 80 to 152 (+72 years), {{< var effective_hourly_rate_lifetime_benefit >}} total benefit
 - **If you're 25:** Life expectancy to 157 (+77 years), $5.0M total benefit
 - **If you're 55:** Life expectancy to 147 (+67 years), $2.8M total benefit
 

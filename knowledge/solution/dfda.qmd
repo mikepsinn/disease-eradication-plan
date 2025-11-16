@@ -91,7 +91,7 @@ Revolutionary feature: A search box. The FDA's current website doesn't have this
 
 Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
 
-"Here's what happened to 50,000 people who tried this:
+"Here's what happened to {{< var qalys_from_prevention_conservative >}} people who tried this:
 
 - 40% got much better
 - 30% got somewhat better
@@ -186,7 +186,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 
 | Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
-| Clinical Phase Timeline | **[9.1 years (avg)](../references.qmd#clinical-trial-phase-duration)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../references.qmd#beta-blocker-deaths) |
+| Clinical Phase Timeline | **[9.1 years (avg)](../references.qmd#clinical-trial-phase-duration)** | **2-3 years** | ~7 years of waiting eliminated | [~{{< var qalys_from_prevention_conservative >}}/year](../references.qmd#beta-blocker-deaths) |
 | Cost per trial | [**$57 million**](../references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
 | Who can participate | **[15% of patients](../references.qmd#clinical-trial-exclusions)** | **100% of patients** | 85% inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../references.qmd#fda-untreated-diseases-95pct)** | **Eventually 100%** | Priceless | Millions |
@@ -195,22 +195,22 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 
 | Stupid Expense | What FDA Pays | dFDA Cost | Savings | What It Actually Is |
 | :--- | :--- | :--- | :--- | :--- |
-| 💾 Data Management | $198,014 | $10,000 | 94.9% | Excel spreadsheets with fear |
+| 💾 Data Management | $198,014 | ${{< var dfda_large_trial_size >}} | 94.9% | Excel spreadsheets with fear |
 | ✅ IRB Approval | $324,081 | $5,000 | 98.5% | Permission slips for adults |
 | 📝 IRB Amendments | $6,347 | $0 | 100% | Permission to fix typos |
-| 🔍 Source Data Verification | $1,486,250 | $25,000 | 98.3% | Checking if you lied about dying |
+| 🔍 Source Data Verification | $1,486,250 | {{< var caregiver_value_per_hour_simple >}},000 | 98.3% | Checking if you lied about dying |
 | 🤝 Patient Recruitment | $805,785 | $15,000 | 98.1% | Facebook ads for dying people |
-| 🎯 Patient Retention | $76,879 | $20,000 | 74% | Bribes to keep dying people interested |
-| 👨‍⚕️ Research Associates | $2,379,605 | $150,000 | 93.7% | People who watch you take pills |
+| 🎯 Patient Retention | $76,879 | {{< var lobbyist_bond_investment_max_millions >}},000 | 74% | Bribes to keep dying people interested |
+| 👨‍⚕️ Research Associates | $2,379,605 | ${{< var qalys_from_prevention_optimistic >}} | 93.7% | People who watch you take pills |
 | 👩‍⚕️ Physicians | $1,966,621 | $100,000 | 94.9% | Doctors pretending to be scientists |
-| 🏥 Clinical Procedures | $5,937,819 | $1,000,000 | 83.2% | Poking you with expensive things |
-| 🧪 Laboratory | $2,325,922 | $500,000 | 78.5% | Testing if your pee is still pee |
+| 🏥 Clinical Procedures | $5,937,819 | ${{< var traditional_large_trial_size >}},000 | 83.2% | Poking you with expensive things |
+| 🧪 Laboratory | $2,325,922 | ${{< var qalys_from_new_therapies >}} | 78.5% | Testing if your pee is still pee |
 | 🏢 Site Recruitment | $849,158 | $0 | 100% | Bribing hospitals to participate |
 | 🏗️ Site Retention | $4,461,322 | $0 | 100% | Bribing hospitals to not quit |
 | 👥 Administrative Staff | $7,229,968 | $100,000 | 98.6% | People who file the files |
 | 📊 Site Monitoring | $4,456,717 | $0 | 100% | People who watch the people who watch you |
 | 🏢 Site Overhead | $7,386,816 | $0 | 100% | Electricity for the filing cabinets |
-| 📎 All Other | $17,096,703 | $100,000 | 99.4% | Nobody knows but it's expensive |
+| 📎 All Other | {{< var caregiver_value_per_hour >}},096,703 | $100,000 | 99.4% | Nobody knows but it's expensive |
 | **TOTAL STUPIDITY** | [**$56,988,007**](../references.qmd#clinical-trial-cost-breakdown) | **$2,025,000** | **95.7%** | **The price of bureaucracy** |
 
 This eliminates $55 million of paperwork per trial. That's 55 million pieces of paper nobody reads, filed in cabinets nobody opens, in buildings nobody visits.
@@ -310,7 +310,7 @@ During COVID, while America was filling out forms, Oxford University did somethi
 Cost per patient:
 
 - Normal clinical trials: [$41,000](../references.qmd#trial-cost-41k)
-- Oxford pragmatic trials: [$500](../references.qmd#recovery-cost-500)
+- Oxford pragmatic trials: [{{< var recovery_trial_cost_per_patient >}}](../references.qmd#recovery-cost-500)
 
 That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
 
@@ -356,7 +356,7 @@ Everyone gets a superintelligent doctor that lives in their phone and doesn't ju
 The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
 
 **You**: "I have diabetes and my foot fell off."
-**FDAi**: "Based on 50,000 similar cases, here's what worked:
+**FDAi**: "Based on {{< var qalys_from_prevention_conservative >}} similar cases, here's what worked:
 
 - 60% success: Reattachment surgery + Drug A
 - 30% success: Prosthetic foot + Drug B  
@@ -414,13 +414,13 @@ No marketing spin. No 40-page legal disclaimers. Just clear data about what actu
 
 *Outcome Label*
 
-Based on 50,000 humans who tried this:
+Based on {{< var qalys_from_prevention_conservative >}} humans who tried this:
 
 - 📈 Depression: ⬇️ 60% reduction
 - 😴 Sleep: ⬆️ 30% improvement
 - 🍆 Sex drive: ⬇️ 90% reduction (sorry)
 - 🎺 Spontaneous jazz hands: 15% chance
-- 💀 Death: 0.01% (better than depression!)
+- 💀 Death: {{< var treaty_reduction_pct >}} (better than depression!)
 
 *This label based on actual humans, not laboratory rats who've never paid rent*
 
@@ -450,7 +450,7 @@ FDA.gov becomes actually useful. Millions join trials from home. The first "Wiki
 
 ### 2030: Big Pharma Pivots or Dies
 
-Pharmaceutical companies realize they can't charge $10,000 for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums.
+Pharmaceutical companies realize they can't charge ${{< var dfda_large_trial_size >}} for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums.
 
 ### 2035: The Great Revelation
 
@@ -474,7 +474,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 The dFDA achieves [**82x More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:
 
-- **Cost per patient**: $500 vs the current $41,000
+- **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current $41,000
 - **Time to results**: 2 years vs the current 17 years
 - **Patient access**: Universal access vs [85% excluded](../references.qmd#clinical-trial-patient-participation-rate) currently
 

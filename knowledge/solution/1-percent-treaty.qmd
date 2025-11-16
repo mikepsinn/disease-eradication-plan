@@ -25,14 +25,14 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 
 ### The Math
 
-1.  **The Problem:** The world spends [$2.7 trillion a year](../references.qmd#global-military-spending-2-44t) on military forces to maintain a delicate balance of power.
+1.  **The Problem:** The world spends [$2.7 trillion a year](../references.qmd#sipri-2024-spending) on military forces to maintain a delicate balance of power.
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
 3.  **The Prize:** That 1%—a **$27.2B-a-year river of cash**—is redirected to cure all human diseases.
 
 #### How It Works
 
 1.  **Funding:** Creates $27.2B/year revenue stream for the DIH
-2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **[80x cheaper](../references.qmd#recovery-trial-82x-cost-reduction)** than current model
+2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **[82x cheaper](../references.qmd#recovery-trial-82x-cost-reduction)** than current model
 3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -61,7 +61,7 @@ The 1% Treaty is based on kindergarten logic so simple that world leaders might 
 2.  **The Elegant Part:** If EVERYONE reduces their military budget by exactly 1% at exactly the same time, everyone maintains exactly the same strategic position.
 
     -   America: Still has 6,500 nukes instead of 6,565
-    -   Russia: Still has 6,000 nukes instead of 6,060
+    -   Russia: Still has {{< var caregiver_cost_annual >}} nukes instead of 6,060
     -   China: Still has enough weapons to kill everyone twice instead of 2.02 times
     -   North Korea: Still terrifying but now 1% less so
 
@@ -163,7 +163,7 @@ So you don't frame this as "reducing military spending." You frame it as:
 "Our nation will be stronger when our people aren't dying of preventable diseases. A healthy population is a powerful population."
 
 **For Economists**:
-"[The ROI is 1,239:1](../economics/economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). This beats every other public health intervention on record."
+"[The ROI is {{< var roi_all_direct_benefits >}}:1](../economics/economics.qmd#the-complete-case-1-222-1-roi-all-direct-benefits). This beats every other public health intervention on record."
 
 **For Conspiracy Theorists**:
 "Big Pharma hates this one weird trick that makes medicine basically free."
@@ -232,14 +232,14 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 
 #### With 1% Treaty + Decentralized FDA
 
-- $110B total funding ($83B existing + $27B from treaty)
-- [Pragmatic trials: $500 per patient](../references.qmd#recovery-cost-500) ([82x cheaper](../references.qmd#recovery-trial-82x-cost-reduction))
+- $110B total funding ({{< var global_annual_human_cost_terror_attacks >}} existing + {{< var treaty_annual_funding >}} from treaty)
+- [Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500) ([82x cheaper](../references.qmd#recovery-trial-82x-cost-reduction))
 - 220M participants per year (44x acceleration)
 - Still only using 18% of available willing participants
 
 #### Year One Outcomes
 
-- 50,000 new treatments tested
+- {{< var qalys_from_prevention_conservative >}} new treatments tested
 - 1 million patients enrolled in trials
 - 100+ diseases with new treatment options
 - 0 new nuclear weapons built with that money

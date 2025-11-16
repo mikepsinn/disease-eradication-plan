@@ -40,7 +40,7 @@ Allocate strategic partnerships funding from [VICTORY bonds](../economics/victor
 
 **Current deal (lobbying against treaty)**:
 
-- Pay: $500K-2M annually
+- Pay: {{< var recovery_trial_cost_per_patient >}}K-2M annually
 - Job security: Depends on military budget
 - Upside: Salary, maybe some stock options
 
@@ -61,7 +61,7 @@ Even a lobbyist can do that math.
 
 ### 2. **Treaty Doesn't Hurt Them Anyway**
 
-- Military budget only drops 1% ($27.2B of [$2.7T](../references.qmd#sipri-2024-spending))
+- Military budget only drops 1% ($27.2B of [{{< var global_military_spending_post_treaty_annual_2024 >}}](../references.qmd#sipri-2024-spending))
 - They still have 99% to lobby for
 - New contracts still get signed
 - Jobs don't disappear
@@ -109,7 +109,7 @@ A significant portion of the campaign's $1.0B war chest is allocated for strateg
 
 ### It's Literally Their Playbook
 
-Defense contractors spend $100M on lobbying and get $181B back (1,810:1 ROI). The approach uses the EXACT same strategy, just offering better returns.
+Defense contractors spend {{< var treaty_campaign_budget_partnerships >}} on lobbying and get $181B back (1,810:1 ROI). The approach uses the EXACT same strategy, just offering better returns.
 
 ### It's Legal
 

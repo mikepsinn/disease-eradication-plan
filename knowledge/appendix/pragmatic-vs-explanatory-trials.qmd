@@ -44,10 +44,10 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 - Average phase costs ([source](https://www.sofpromed.com/how-much-does-a-clinical-trial-cost)):
   - Phase 1: $4 million
   - Phase 2: $13 million
-  - Phase 3: $20 million
+  - Phase 3: {{< var lobbyist_bond_investment_max_millions >}} million
 
 - Per-patient costs vary by therapeutic area:
-  - Blood disorders: $200,000-422,000
+  - Blood disorders: ${{< var qalys_from_faster_access >}}-422,000
   - [Average across areas: $41,117](../references.qmd#trial-costs-fda-study)
 
 ### Pragmatic Trials (RECOVERY Example)

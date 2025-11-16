@@ -35,7 +35,7 @@ A financial instrument that makes obscene amounts of money appear from nowhere w
 - Collect $1.0B in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
 - Once treaty passes, $27.2B in papers annually stops going to bombs and starts going to [DIH](../solution/dih.qmd)
-- Give the rich humans 10% of that ($2.7B) every year, forever
+- Give the rich humans 10% of that ({{< var victory_bond_annual_payout >}}) every year, forever
 - Use the remaining 90% ($24.3B) to cure the diseases actually killing people
 
 **What you're offering investors:** 271.8% annual returns, which beats everything except insider trading and certain federal crimes
@@ -50,8 +50,8 @@ Find humans who have more papers than they need and convince them to give you $1
 
 #### Who has that many papers
 
-- Institutional investors ($10M+ each) - pension funds, endowments, people managing other people's papers
-- Family offices ($5M+ each) - rich families who hired someone to watch their paper piles
+- Institutional investors ({{< var value_of_statistical_life >}}+ each) - pension funds, endowments, people managing other people's papers
+- Family offices ({{< var dfda_opex_regulatory >}}+ each) - rich families who hired someone to watch their paper piles
 - High net worth individuals ($1M+ each) - people who got lucky/smart/criminal and have extra papers
 - Qualified investors ($100K+ each) - regular rich people
 
@@ -63,10 +63,10 @@ They'll check the math. The math checks out. They give you papers.
 
 Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being stupid:
 
-- **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ($200M)
-- **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ($250M)
+- **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_budget_viral_referendum >}})
+- **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_technology >}})
 - **Build the actual tech** - [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
-- **Hire lawyers** - Make bribery legal by calling it other things ($50M)
+- **Hire lawyers** - Make bribery legal by calling it other things ({{< var treaty_campaign_budget_reserve >}})
 - **Co-opt death merchants** - Convince defense contractors that 271.8% beats 8% ($150M)
 - **Run the thing** - Pay humans to coordinate the paper distribution ($170M)
 
@@ -77,7 +77,7 @@ For the complete breakdown of where every paper goes, see [Campaign Budget](camp
 Treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
 
 - $27.2B annually stops going to bombs and starts going to DIH treasury (automatic, no takebacks)
-- 10% ($2.7B) automatically goes to bondholders (they get paid first, before anyone can steal it)
+- 10% ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
 - 90% ($24.3B) automatically goes to curing the diseases actually killing people
 
 Nobody has to vote on this again. Nobody can change their mind. The papers just flow, forever, like a river made of money.
@@ -86,9 +86,9 @@ Nobody has to vote on this again. Nobody can change their mind. The papers just 
 
 Set up automatic payments that continue until the heat death of the universe:
 
-- **Year 1**: $2.7B distributed to bondholders (271.8% returns, investors buying yachts)
-- **Year 2**: $2.7B distributed to bondholders (still buying yachts)
-- **Year 3**: $2.7B distributed to bondholders (yacht accessories now)
+- **Year 1**: {{< var victory_bond_annual_payout >}} distributed to bondholders (271.8% returns, investors buying yachts)
+- **Year 2**: {{< var victory_bond_annual_payout >}} distributed to bondholders (still buying yachts)
+- **Year 3**: {{< var victory_bond_annual_payout >}} distributed to bondholders (yacht accessories now)
 - **Year 4+**: Scale up as treaty expands (2% = $5.4B, 5% = $13.5B, etc.)
 
 No maturity date means the money never stops. As long as the treaty exists, bondholders get paid. And the treaty will exist because repealing it means explaining to voters why you want grandma's cancer to stay uncured.
@@ -122,13 +122,13 @@ $$
 
 #### Even if you're extremely pessimistic
 
-| How Skeptical You Are | Total Lifetime Value | Your $1B Becomes |
+| How Skeptical You Are | Total Lifetime Value | Your {{< var treaty_campaign_total_cost >}} Becomes |
 |---------------|-----|---------------------------|
 | Mildly skeptical (3% discount) | $90B | 90x your money |
 | Pretty skeptical (5% discount) | $54B | 54x your money |
-| Very skeptical (10% discount) | $27B | 27x your money |
+| Very skeptical (10% discount) | {{< var treaty_annual_funding >}} | 27x your money |
 
-Even at 10% discount (which assumes this is as risky as funding a Mars casino), your $1B investment becomes worth $27B total.
+Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth {{< var treaty_annual_funding >}} total.
 
 **Translation for humans who peaked at counting on fingers:**
 
@@ -156,12 +156,12 @@ The perpetual nature isn't a bug. It's the entire point. As long as humans prefe
 
 The treaty starts at 1% (baby steps for humanity). As diseases get cured, voters demand more. Politicians, who are evolutionarily wired to avoid unemployment, comply.
 
-| Year | Treaty % | Annual Revenue | You Get Annually | ROI on Your $1B |
+| Year | Treaty % | Annual Revenue | You Get Annually | ROI on Your {{< var treaty_campaign_total_cost >}} |
 |------|----------|----------------|-------------------|--------------|
-| 1-3  | 1%       | $27.2B         | $2.7B             | 271.8%         |
+| 1-3  | 1%       | $27.2B         | {{< var victory_bond_annual_payout >}}             | 271.8%         |
 | 4-7  | 2%       | $54B           | $5.4B             | 540%         |
 | 8-10 | 5%       | $135B          | $13.5B            | 1,350%       |
-| 10+  | 10%+     | $270B+         | $27B+             | 2,700%+      |
+| 10+  | 10%+     | $270B+         | {{< var treaty_annual_funding >}}+             | {{< var global_annual_conflict_deaths_state_violence >}}%+      |
 
 #### Why this actually happens
 
@@ -258,14 +258,14 @@ This structure legally separates the investment activities from the philanthropi
 
 Protect investors by releasing funds in tranches tied to achievements:
 
-**Phase 1 milestone ($200M release)**:
+**Phase 1 milestone ({{< var treaty_campaign_budget_viral_referendum >}} release)**:
 
 - Launch platform MVP
 - Achieve 50M+ referendum votes
 - Complete successful pilots in 2 countries
 - Establish legal framework
 
-**Phase 2 milestone ($500M release)**:
+**Phase 2 milestone ({{< var recovery_trial_cost_per_patient >}}M release)**:
 
 - Reach 280M+ total referendum votes
 - Get treaties pending in 20+ countries
@@ -302,7 +302,7 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 | Investment | Annual Return | Risk | Term | Catch |
 |------------|---------------|------------|------|------|
 | **VICTORY Social Impact Bonds** | **271.8%** | **High** | **Forever** | **Requires politicians to not be stupid** |
-| Savings Account | 0.5% | None | Whenever | Loses to inflation |
+| Savings Account | {{< var trial_cost_reduction_pct >}} | None | Whenever | Loses to inflation |
 | S&P 500 | 10% | Moderate | Whenever | Boring, responsible |
 | Real Estate | 8% | Moderate | 30 years | Requires being a landlord |
 | Venture Capital | 15-25% | Extreme | 7-10 years | Requires picking winners |
@@ -317,7 +317,7 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 ## The Expansion Flywheel
 
 ```{python}
-#| fig-alt: "Flowchart showing: Investors Give $1B → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
+#| fig-alt: "Flowchart showing: Investors Give {{< var treaty_campaign_total_cost >}} → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
 import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
@@ -328,9 +328,9 @@ dot = graphviz.Digraph(comment='Expansion Flywheel', format='png')
 dot.attr(rankdir='TB', size='10,12')
 setup_graphviz_style(dot)
 
-dot.node('Invest', 'Investors Give $1B')
-dot.node('Treaty1', '1% Treaty Passes\n$27B/year')
-dot.node('Payout1', 'Bondholders Get $2.7B/year\n(270% returns)')
+dot.node('Invest', 'Investors Give {{< var treaty_campaign_total_cost >}}')
+dot.node('Treaty1', '1% Treaty Passes\n{{< var treaty_annual_funding >}}/year')
+dot.node('Payout1', 'Bondholders Get {{< var victory_bond_annual_payout >}}/year\n(270% returns)')
 dot.node('Mission1', 'DIH Spends $24.3B\non cures')
 dot.node('Cures', 'Diseases Start Falling')
 dot.node('Media', 'Media Frenzy:\n"It\'s working!"')
@@ -374,8 +374,8 @@ display(IPImage(str(png_path)))
 
 Set these minimum investment amounts by investor type:
 
-- **Institutional investors**: $10M+ per investor
-- **Family offices**: $5M+ per office
+- **Institutional investors**: {{< var value_of_statistical_life >}}+ per investor
+- **Family offices**: {{< var dfda_opex_regulatory >}}+ per office
 - **High net worth individuals**: $1M+ per person
 - **Qualified investors**: $100K+ minimum
 
@@ -486,7 +486,7 @@ Hand this to investors who can't read more than one page:
 1. Collect $1.0B from rich humans
 2. Use it to convince politicians that living constituents vote more reliably than dead ones
 3. Treaty passes, redirecting $27.2B annually from bombs to cures
-4. Give bondholders 10% ($2.7B) every year, forever
+4. Give bondholders 10% ({{< var victory_bond_annual_payout >}}) every year, forever
 5. Use remaining 90% ($24.3B) to actually cure the diseases killing people
 6. Diseases decline, public demands more funding, returns scale up
 7. Repeat until death is optional or universe ends

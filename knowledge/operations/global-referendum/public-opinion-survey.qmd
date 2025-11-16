@@ -44,7 +44,7 @@ This "FDA.gov v2" platform would work like this:
 2.  Any patient would have the **right to participate** in a clinical trial from home.
 3.  All trial data would be made public to accelerate new discoveries.
 
-<!-- TODO: Fix broken link - This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../../reference/recovery-trial-case-study.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~$500), enabling more research for more people. -->
+<!-- TODO: Fix broken link - This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../../reference/recovery-trial-case-study.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~{{< var recovery_trial_cost_per_patient >}}), enabling more research for more people. -->
 
 **Q7: Support for the Principles**
 
@@ -159,10 +159,10 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 
 **What is your approximate annual household income (in USD)?**
 
-- Less than 50,000
-- 50,000 - 99,999
+- Less than {{< var qalys_from_prevention_conservative >}}
+- {{< var qalys_from_prevention_conservative >}} - 99,999
 - 100,000 - 199,999
-- 200,000 or more
+- {{< var qalys_from_faster_access >}} or more
 - Prefer not to say
 
 ---
@@ -194,7 +194,7 @@ If you'd like to support our advocacy efforts directly, your donation will help 
 - Technical development of the Decentralized FDA and Decentralized Institutes of Health
 - Research and analysis to support our policy proposals and initiatives
 
-**Your Impact:** Every $1,000 donated funds 1,000+ verified survey responses, helping us reach the 3.5% tipping point needed for systemic change. Research shows that when 3.5% of a population actively supports a cause, it has never failed to achieve major societal advancement.
+**Your Impact:** Every ${{< var traditional_large_trial_size >}} donated funds 1,000+ verified survey responses, helping us reach the 3.5% tipping point needed for systemic change. Research shows that when 3.5% of a population actively supports a cause, it has never failed to achieve major societal advancement.
 
 **Transparency:** All donations are tracked transparently, with real-time dashboards showing progress toward our goals. We target costs of $0.20-$0.50 per verified response through viral referral systems.
 

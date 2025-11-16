@@ -298,14 +298,14 @@ For sophisticated email sequences, integrate with:
 ### Option B: Airtable + MailerLite/Mailchimp (Better)
 
 - Pros: Professional emails, automation, unsubscribe management
-- Cons: Extra cost ($10-50/month), requires Zapier integration
+- Cons: Extra cost ({{< var vsl_epa_millions >}}-50/month), requires Zapier integration
 
 ### Option C: Airtable + Customer.io or Intercom (Best)
 
 - Pros: Sophisticated triggers, behavior-based sequences, analytics
 - Cons: Expensive ($100-500/month), more complex setup
 
-**Recommended for Pre-Seed:** Start with Option A, graduate to Option B at 1,000+ contacts.
+**Recommended for Pre-Seed:** Start with Option A, graduate to Option B at {{< var traditional_large_trial_size >}}+ contacts.
 
 ---
 
@@ -473,7 +473,7 @@ Actions:
 
 ### 3. No Segmentation
 
-**Problem:** Sending same message to $10 donor and $100K investor
+**Problem:** Sending same message to {{< var vsl_epa_millions >}} donor and $100K investor
 **Solution:** Create segments based on engagement value/type
 
 ### 4. Ignoring Unsubscribes
@@ -505,7 +505,7 @@ Track these weekly:
 
 ## Next-Level: AI-Powered Engagement
 
-Once you have 1,000+ engagements logged, you can train AI to:
+Once you have {{< var traditional_large_trial_size >}}+ engagements logged, you can train AI to:
 
 1. **Auto-Categorize Sentiment**
    - Use GPT API to analyze engagement summaries

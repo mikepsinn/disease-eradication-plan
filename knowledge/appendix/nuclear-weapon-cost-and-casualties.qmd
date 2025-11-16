@@ -62,9 +62,9 @@ It doesn't include long-term deaths from fallout, disease, starvation, or the co
 
 Now you can calculate the cost to kill one person with a nuclear weapon:
 
-- **Cost per Bomb:** $27,500,000
+- **Cost per Bomb:** $27,{{< var qalys_from_new_therapies >}}
 - **Deaths per Bomb:** 1,619,570
-- **Cost per Death:** $27,500,000 ÷ 1,619,570 = **$16.98 per person**
+- **Cost per Death:** $27,{{< var qalys_from_new_therapies >}} ÷ 1,619,570 = **$16.98 per person**
 
 ### Translation
 
@@ -82,7 +82,7 @@ Let's calculate how much killing that buys:
 
 ### Step 1: How many bombs?
 
-$2,690,000,000,000 ÷ $27,500,000 per bomb = **97,818 bombs**
+$2,690,000,000,000 ÷ $27,{{< var qalys_from_new_therapies >}} per bomb = **97,818 bombs**
 
 #### Step 2: How many deaths?
 
@@ -143,9 +143,9 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 ### Artillery (155mm Howitzer Shells)
 
 - Typical fire missions use **10-50 rounds** per target
-- Cost per shell: **$8,000-$14,000**
-- Assuming 20 rounds per casualty at $10,000 per shell
-- **Cost per death: $200,000**
+- Cost per shell: **$8,000-{{< var us_dot_value_of_statistical_life_millions >}},000**
+- Assuming 20 rounds per casualty at ${{< var dfda_large_trial_size >}} per shell
+- **Cost per death: ${{< var qalys_from_faster_access >}}**
 
 ### Precision-Guided Munitions
 
@@ -173,7 +173,7 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 |-------------|----------------|-------------------------|
 | Nuclear warhead | **$16.98** | We optimized genocide |
 | Small arms | **$100,000** | Inefficient but personal |
-| Artillery | **$200,000** | Impersonal and wasteful |
+| Artillery | **${{< var qalys_from_faster_access >}}** | Impersonal and wasteful |
 | Precision artillery | **$177,000-$350,000** | "Precision" is expensive |
 | Missiles | **$1-6 million+** | Very expensive, very deadly |
 
@@ -181,7 +181,7 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 
 Nuclear weapons are **5,900× more "cost-effective"** at killing than small arms.
 
-They're **10,000-350,000× more "cost-effective"** than precision missiles.
+They're **{{< var dfda_large_trial_size >}}-350,000× more "cost-effective"** than precision missiles.
 
 This explains why $2.69 trillion in military spending has such enormous destructive capacity: We've optimized for maximum death per dollar.
 

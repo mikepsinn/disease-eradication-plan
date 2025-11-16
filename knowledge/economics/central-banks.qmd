@@ -297,7 +297,7 @@ You got a 50.0% raise! Too bad everything costs 50.0% more. The pie didn't grow.
 
 #### Medical Research as % of GDP
 
-- 1975: 0.08%
+- 1975: {{< var npv_discount_rate_standard >}}
 - 1985: 0.07%
 - 1995: 0.07%
 - 2005: 0.06%

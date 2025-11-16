@@ -34,7 +34,7 @@ Here's how pharma currently makes money:
 
 #### A Cure Would Be Worth
 
-- One-time payment: Maybe $10,000
+- One-time payment: Maybe ${{< var dfda_large_trial_size >}}
 - Lost future revenue: $170,000 per patient
 - CEO's reaction: "Fire whoever suggested this"
 
@@ -47,8 +47,8 @@ Here's the simple fix: When a company cures a disease, they get 50.0% of the hea
 ### The New Math
 
 - Healthcare system saves: $180,000 per diabetic
-- Pharma company gets: $90,000 per cure
-- Patient pays: $0-1,000 (covered by insurance)
+- Pharma company gets: ${{< var qalys_from_faster_access_conservative >}} per cure
+- Patient pays: $0-{{< var traditional_large_trial_size >}} (covered by insurance)
 - Everyone wins except: The disease
 
 ## How It Works
@@ -80,12 +80,12 @@ Simple contract:
 
 #### Before
 
-- Diabetes treatment market: $500/month × 37M people = $222B/year
+- Diabetes treatment market: {{< var recovery_trial_cost_per_patient >}}/month × 37M people = $222B/year
 - Incentive: Keep everyone diabetic forever
 
 #### After
 
-- Diabetes cure market: $90,000 × 37M people = $3.33 trillion
+- Diabetes cure market: ${{< var qalys_from_faster_access_conservative >}} × 37M people = $3.33 trillion
 - Incentive: Cure everyone immediately
 
 Suddenly, curing diabetes is worth 15X more than treating it.
@@ -133,7 +133,7 @@ This model works even better for prevention:
 
 - Delays aging by 10 years
 - Reduces annual healthcare costs by $5,000/person
-- 30-year savings: $150,000
+- 30-year savings: ${{< var qalys_from_prevention_optimistic >}}
 - Developer payment: $75,000 per person
 - Global market: 8 billion × $75,000 = $600 trillion
 
@@ -241,7 +241,7 @@ You don't need to make pharmaceutical companies moral. You just need to make cur
 50/50 savings split does exactly that.
 
 Your diabetes: Worth $180,000 as a lifelong disease
-Your diabetes cure: Worth $90,000 in shared savings
+Your diabetes cure: Worth ${{< var qalys_from_faster_access_conservative >}} in shared savings
 Pharma's choice: Obvious
 
 The only question is whether we implement this before or after you die from something curable.

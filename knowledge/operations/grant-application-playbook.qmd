@@ -107,13 +107,13 @@ You are not asking for money to "end disease." That's too big and scary. You are
 
 This is the perfect "ask" for a grant because it's a discrete project with a clear goal.
 
-**Your Budget (The $1B War Chest Breakdown):**
+**Your Budget (The {{< var treaty_campaign_total_cost >}} War Chest Breakdown):**
 
 You're asking for a slice of this pie. Tailor your ask to the foundation's size.
 
 - **For a small foundation ($50k ask):** "Fund our social media campaign in Southeast Asia for one year."
-- **For a medium foundation ($500k ask):** "Fund the development of our referendum voting platform and its security audit."
-- **For a large foundation ($5M ask):** "Fund our entire lobbying and media effort in the EU for two years."
+- **For a medium foundation ({{< var recovery_trial_cost_per_patient >}}k ask):** "Fund the development of our referendum voting platform and its security audit."
+- **For a large foundation ({{< var dfda_opex_regulatory >}} ask):** "Fund our entire lobbying and media effort in the EU for two years."
 
 **Your Action:** Create a one-page project summary for the Global Referendum Campaign that you can customize for each application.
 
@@ -124,7 +124,7 @@ Every grant application is basically the same five documents dressed in differen
 1.  **Cover Letter:** A one-page summary. "Dear Rich Person, We're ending death. Your money will help. Here's our plan. Give us money. Sincerely, The Future."
 2.  **Executive Summary:** The same thing, but with more paragraphs.
 3.  **Statement of Need:** This is where you shine. Use the stats from **Part I of the OUTLINE.MD**.
-    -   "150,000 people die daily from preventable diseases."
+    -   "{{< var qalys_from_prevention_optimistic >}} people die daily from preventable diseases."
     -   "Humanity spends $2.7 trillion on war and just $68 billion on cures."
     -   "The system is broken. Here are the charts to prove it."
 4.  **Project Description:** Explain the Global Referendum.
@@ -132,8 +132,8 @@ Every grant application is basically the same five documents dressed in differen
     -   The viral growth strategy.
     -   The Wishocracy app.
 5.  **Budget:** A detailed breakdown of how you'll waste their money. Be specific.
-    -   `$10,000` - Facebook Ads
-    -   `$25,000` - Lobbyist retainer
+    -   `${{< var dfda_large_trial_size >}}` - Facebook Ads
+    -   `{{< var caregiver_value_per_hour_simple >}},000` - Lobbyist retainer
     -   `$5,000` - Pizza for volunteer developers
 
 **Your Action:** Create a template for each of these documents in a shared drive.

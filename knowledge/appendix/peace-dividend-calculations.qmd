@@ -84,7 +84,7 @@ A key principle of rigorous economic modeling is to test the assumptions to unde
 
 In this analysis, you vary two key parameters simultaneously:
 
-1.  **Reduction Percentage**: You model a range of reductions from 0.5% to 2.0% to see the impact of partial or greater-than-expected success.
+1.  **Reduction Percentage**: You model a range of reductions from {{< var trial_cost_reduction_pct >}} to 2.0% to see the impact of partial or greater-than-expected success.
 2.  **Accuracy of Indirect Cost Estimates**: The indirect costs of war (like lost economic growth) are harder to quantify than direct spending. You model a scenario where these costs might be overestimated or underestimated by 25%.
 
 ```{python}

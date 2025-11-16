@@ -8,7 +8,7 @@ lastInstructionalVoiceHash: bf9ad4c6f36a42e187106dfa0f34f1489e82c06e15c609716e6f
 from dih_models.parameters import *
 ```
 
-## On How to Buy a Planet for $1B
+## On How to Buy a Planet for {{< var treaty_campaign_total_cost >}}
 
 **Total Budget**: $1B over 3-5 years
 
@@ -32,23 +32,23 @@ This $1B will:
 
 - Legal teams: $100-200M
 - Custom software: $250-400M
-- Mass media buys: $500M-1B
+- Mass media buys: {{< var recovery_trial_cost_per_patient >}}M-1B
 - Professional lobbyists: $400-600M
 - **Total: $1.25-2.2B**
 
 **The Smart Way**: Technology + Game Theory
 
-- AI legal assistants + review: $20M
-- AI-assisted open source dev: $100M
-- Viral referral mechanics: $100M
-- Strategic AI-targeted lobbying: $250M
-- **Total: $470M core + $530M buffer = $1B**
+- AI legal assistants + review: {{< var lobbyist_bond_investment_max_millions >}}M
+- AI-assisted open source dev: {{< var treaty_campaign_budget_partnerships >}}
+- Viral referral mechanics: {{< var treaty_campaign_budget_partnerships >}}
+- Strategic AI-targeted lobbying: {{< var treaty_campaign_budget_technology >}}
+- **Total: $470M core + $530M buffer = {{< var treaty_campaign_total_cost >}}**
 
 ## Budget Allocation by Category
 
-### 1. Viral Referendum Campaign: $200M (20%)
+### 1. Viral Referendum Campaign: {{< var treaty_campaign_budget_viral_referendum >}} (20%)
 
-**Referral Rewards System**: $100M
+**Referral Rewards System**: {{< var treaty_campaign_budget_partnerships >}}
 
 - Base reward: $0.20 per verified vote
 - Bonus for early adopters: $0.50 (first 10M votes)
@@ -56,38 +56,38 @@ This $1B will:
 - Target: 280M votes = $56M + $44M fraud prevention/platform
 - Network effect: Each voter becomes recruiter
 
-**Platform & Identity Verification**: $50M
+**Platform & Identity Verification**: {{< var treaty_campaign_budget_reserve >}}
 
 - Global voting platform (AI-assisted development)
 - Biometric verification to prevent fraud
 - Translation into 50+ languages (AI translation + human review)
 - Mobile-first design for global accessibility
 
-**Viral Content Creation**: $30M
+**Viral Content Creation**: {{< var sensitivity_dfda_opex_optimistic >}}
 
 - AI-generated videos, memes, infographics (90% AI, 10% human creative direction)
 - A/B testing at scale (AI optimization)
 - Localized messaging for different cultures
 - Influencer partnerships (micro-influencers, authentic voices)
 
-**Community Organizing**: $20M
+**Community Organizing**: {{< var lobbyist_bond_investment_max_millions >}}M
 
 - Ambassador program in 100+ countries
 - Grassroots coordination tools
 - Event support and materials
 - Community moderators and support
 
-### 2. AI-Assisted Lobbying: $250M (25%)
+### 2. AI-Assisted Lobbying: {{< var treaty_campaign_budget_technology >}} (25%)
 
 **Strategic Lobbying (AI-Targeted)**: $150M
 
 - AI analysis identifies key decision-makers and leverage points
 - Professional lobbyists in 20 high-impact countries (not 50)
-- Focus on: US ($40M), EU ($50M), G20 nations ($60M)
+- Focus on: US ({{< var dfda_upfront_build >}}), EU ({{< var treaty_campaign_budget_reserve >}}), G20 nations ({{< var sensitivity_dfda_opex_conservative >}})
 - Legislative drafting (AI-assisted, lawyer-reviewed)
 - Political relationship building
 
-**VICTORY Social Impact Bonds to Co-opt MIC**: $50M
+**VICTORY Social Impact Bonds to Co-opt MIC**: {{< var treaty_campaign_budget_reserve >}}
 
 - Direct payments to top 50 defense lobbyists
 - Early-access bonds to defense contractor executives
@@ -95,20 +95,20 @@ This $1B will:
 - "Consulting fees" to former Pentagon officials
 - Make lobbying FOR the treaty more profitable than lobbying against it
 
-**Independent Expenditure Campaigns**: $30M
+**Independent Expenditure Campaigns**: {{< var sensitivity_dfda_opex_optimistic >}}
 
 - Issue advocacy (highly targeted, AI-optimized ad buying)
 - Grassroots organizing in swing districts
 - Voter education (AI-personalized messaging)
 
-**Opposition Research & Crisis Response**: $20M
+**Opposition Research & Crisis Response**: {{< var lobbyist_bond_investment_max_millions >}}M
 
 - AI monitoring of opposition messaging
 - Rapid response capabilities
 - Fact-checking and counter-narrative deployment
 - Protect treaty champions from attacks
 
-### 3. Technology Platform: $250M (25%)
+### 3. Technology Platform: {{< var treaty_campaign_budget_technology >}} (25%)
 
 **dFDA Development**: $120M
 
@@ -127,7 +127,7 @@ This $1B will:
 - Translation & accessibility
 - **Strategy**: Build on existing open source tools, AI code generation
 
-**Cloud Infrastructure**: $40M
+**Cloud Infrastructure**: {{< var dfda_upfront_build >}}
 
 - 5-year hosting estimate for global scale
 - CDN for low-latency worldwide
@@ -135,16 +135,16 @@ This $1B will:
 - Security monitoring
 - Redundancy and disaster recovery
 
-**Pilot Programs**: $20M
+**Pilot Programs**: {{< var lobbyist_bond_investment_max_millions >}}M
 
 - Two-country pilot implementation (small countries first)
 - Beta testing with 100,000 users
 - Security audits and penetration testing
 - Iterate based on real-world feedback
 
-### 4. AI-Assisted Legal & Compliance: $100M (10%)
+### 4. AI-Assisted Legal & Compliance: {{< var treaty_campaign_budget_partnerships >}} (10%)
 
-**AI Legal Work + Human Review**: $50M
+**AI Legal Work + Human Review**: {{< var treaty_campaign_budget_reserve >}}
 
 - AI drafts treaty language, compliance docs, filings
 - Expert lawyers review and refine (10% of traditional time)
@@ -152,83 +152,83 @@ This $1B will:
 - Multi-jurisdiction election law compliance
 - Trademark and IP protection
 
-**Regulatory Navigation**: $30M
+**Regulatory Navigation**: {{< var sensitivity_dfda_opex_optimistic >}}
 
 - Campaign finance compliance in 50+ countries
 - Real-time compliance monitoring (AI-assisted)
 - Proactive risk management
 - Government relations
 
-**Dispute Resolution & Risk Management**: $20M
+**Dispute Resolution & Risk Management**: {{< var lobbyist_bond_investment_max_millions >}}M
 
 - Legal defense fund
 - Insurance and liability coverage
 - Whistleblower protections
 - Crisis legal support
 
-### 5. Strategic Partnerships & Co-option: $100M (10%)
+### 5. Strategic Partnerships & Co-option: {{< var treaty_campaign_budget_partnerships >}} (10%)
 
-**Defense Industry Co-option**: $40M
+**Defense Industry Co-option**: {{< var dfda_upfront_build >}}
 
 - Additional VICTORY Social Impact Bonds for key players
 - Pension fund outreach (271.8% returns vs 10% market)
 - Board member "strategic advisor" positions
 - Turn opposition into allies through better returns
 
-**Healthcare Industry Alignment**: $30M
+**Healthcare Industry Alignment**: {{< var sensitivity_dfda_opex_optimistic >}}
 
 - Insurance company partnerships (they save billions)
 - Hospital system integrations
 - Pharma company incentive alignment
 - Medical device manufacturers
 
-**Tech Company Partnerships**: $20M
+**Tech Company Partnerships**: {{< var lobbyist_bond_investment_max_millions >}}M
 
 - AI/ML infrastructure partnerships
 - Cloud credits and support
 - Open source community building
 - Platform integrations
 
-**Celebrity & Thought Leader Endorsements**: $10M
+**Celebrity & Thought Leader Endorsements**: {{< var value_of_statistical_life >}}
 
 - High-profile champions
 - Scientific authority figures
 - Cultural influencers
 - Authentic, earned media approach
 
-### 6. Operations & Administration: $50M (5%)
+### 6. Operations & Administration: {{< var treaty_campaign_budget_reserve >}} (5%)
 
-**Core Team**: $25M
+**Core Team**: {{< var caregiver_value_per_hour_simple >}}M
 
 - Campaign leadership (20-30 people, AI-augmented productivity)
 - Regional directors (50 people, not 500)
 - AI-assisted coordination means smaller teams
 - Lean, efficient, remote-first
 
-**Infrastructure**: $15M
+**Infrastructure**: {{< var dfda_opex_platform_maintenance >}}
 
 - Virtual offices (remote-first = huge savings)
 - Communication tools and AI assistants
 - Minimal travel (video conferencing + strategic in-person)
 - Shared services and automation
 
-**Contingency**: $10M
+**Contingency**: {{< var value_of_statistical_life >}}
 
 - Unexpected opportunities
 - Market changes
 - Emergency response
 - Buffer for miscalculations
 
-### 7. Treaty Implementation Support: $50M (5%)
+### 7. Treaty Implementation Support: {{< var treaty_campaign_budget_reserve >}} (5%)
 
-**Post-Passage Transition**: $30M
+**Post-Passage Transition**: {{< var sensitivity_dfda_opex_optimistic >}}
 
 - Treaty ratification support
 - Implementation guidance for signing nations
 - Dispute resolution mechanisms
 - International coordination
 
-**Scaling Preparation**: $20M
+**Scaling Preparation**: {{< var lobbyist_bond_investment_max_millions >}}M
 
 - DIH treasury infrastructure
 - dFDA scaling blueprints
@@ -237,13 +237,13 @@ This $1B will:
 
 ## Budget by Phase
 
-**Phase 1: Proof of Concept** ($200M, Year 1)
+**Phase 1: Proof of Concept** ({{< var treaty_campaign_budget_viral_referendum >}}, Year 1)
 
 - Launch viral referendum, hit 50M votes
 - Run pilots in 2 countries
 - Build platform MVP
 
-**Phase 2: Scale & Momentum** ($500M, Years 2-3)
+**Phase 2: Scale & Momentum** ({{< var recovery_trial_cost_per_patient >}}M, Years 2-3)
 
 - Reach 280M total votes
 - Treaties pending in 20+ countries
@@ -262,7 +262,7 @@ This $1B will:
 - AI handles drafting, coding, content (humans refine)
 - Viral referrals: $0.20/vote vs $5-15 traditional
 - 500 people + AI agents replace 5,000-person campaign
-- Result: $1B achieves what costs $2-5B traditionally
+- Result: {{< var treaty_campaign_total_cost >}} achieves what costs $2-5B traditionally
 
 **Game Theory Alignment**:
 
@@ -284,7 +284,7 @@ When everyone profits from cooperation, resistance crumbles.
 
 **For bondholders specifically**:
 
-- Invest $1B → Receive $2.7B/year forever
+- Invest {{< var treaty_campaign_total_cost >}} → Receive {{< var victory_bond_annual_payout >}}/year forever
 - **271.8% annual returns, perpetually**
 
 ## Transparency & Accountability
@@ -313,7 +313,7 @@ When everyone profits from cooperation, resistance crumbles.
 - Quarterly audits (Big 4 accounting firms)
 - Monthly reports to bondholders
 - Community voting on major reallocations
-- Whistleblower rewards ($10M for catching fraud)
+- Whistleblower rewards ({{< var value_of_statistical_life >}} for catching fraud)
 - Open API for third-party analysis
 
 ## Adaptive Budget Management
@@ -332,13 +332,13 @@ But the real return is:
 - Society gets $463 in value per dollar (accelerated cures, reduced suffering)
 - Humanity gets optional death by 2050
 
-**The question isn't whether $1B is enough.**
+**The question isn't whether {{< var treaty_campaign_total_cost >}} is enough.**
 
 **The question is whether we can afford NOT to spend it.**
 
 Every day we delay:
 
-- 150,000 people die from preventable diseases
+- {{< var qalys_from_prevention_optimistic >}} people die from preventable diseases
 - $6.5B wasted on military spending globally
 - Incalculable suffering continues
 

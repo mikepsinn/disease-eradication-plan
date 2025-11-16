@@ -32,11 +32,11 @@ Two ways you profit from building 1% fewer bombs:
 
 ### 1. The Captured Money: $27.2B/Year
 
-Governments spend $2.7T yearly on things designed to make other things stop existing.
+Governments spend {{< var global_military_spending_post_treaty_annual_2024 >}} yearly on things designed to make other things stop existing.
 
 Redirect 1%:
 
-$$2.7T \times 0.01 = \$27.2B$$
+${{< var global_military_spending_post_treaty_annual_2024 >}} \times 0.01 = \$27.2B$$
 
 This $27.2B funds the dFDA, VICTORY bonds, and the whole system.
 
@@ -63,18 +63,18 @@ Based on [Cost of War analysis](../problem/cost-of-war.qmd):
 
 | What Wars Cost | Total/Year | 1% Less War Saves |
 |:---|---:|---:|
-| **Direct Costs** | **$7.7T** | **$77B** |
-| Military budgets | $2.7T | $27B |
-| Destroying infrastructure | $1.9T | $19B |
-| Human casualties | $2.4T | $24B |
-| Trade disruption | $616B | $6.2B |
-| **Indirect Costs** | **$3.7T** | **$37B** |
-| Lost economic growth | $2.7T | $27B |
-| Veteran healthcare | $200B | $2.0B |
-| Refugee support | $150B | $1.5B |
-| Environmental damage | $100B | $1.0B |
-| PTSD and mental health | $232B | $2.3B |
-| Lost human capital | $300B | $3.0B |
+| **Direct Costs** | **{{< var global_annual_war_direct_costs_total >}}** | **$77B** |
+| Military budgets | {{< var global_military_spending_post_treaty_annual_2024 >}} | {{< var treaty_annual_funding >}} |
+| Destroying infrastructure | {{< var global_annual_infrastructure_destruction_conflict >}} | $19B |
+| Human casualties | {{< var global_annual_human_life_losses_conflict >}} | {{< var dih_treasury_to_medical_research_annual >}} |
+| Trade disruption | {{< var global_annual_trade_disruption_conflict >}} | $6.2B |
+| **Indirect Costs** | **{{< var global_annual_war_indirect_costs_total >}}** | **$37B** |
+| Lost economic growth | {{< var global_military_spending_post_treaty_annual_2024 >}} | {{< var treaty_annual_funding >}} |
+| Veteran healthcare | {{< var sensitivity_peace_dividend_optimistic >}} | $2.0B |
+| Refugee support | {{< var global_annual_refugee_support_costs >}} | $1.5B |
+| Environmental damage | {{< var global_clinical_trial_market_annual >}} | $1.0B |
+| PTSD and mental health | {{< var global_annual_psychological_impact_costs_conflict >}} | $2.3B |
+| Lost human capital | {{< var global_annual_lost_human_capital_conflict >}} | $3.0B |
 | **Total** | **$11.4T** | **$113.6B** |
 
 You capture $27.2B for medicine.

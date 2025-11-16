@@ -51,7 +51,7 @@ This is a system designed to prevent lawsuits, not deaths. One type of death (fr
 
 Compare two real-world systems for testing drugs:
 
-1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
+1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[{{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
 2.  **The FDA System:** Averages **[$41,000 per patient](../references.qmd#trial-cost-41k)** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
 
 The FDA's system costs **82x more** and takes **36x longer**. Not a small difference - the difference between functional and designed-to-fail.
@@ -62,7 +62,7 @@ You're two lifetimes from applying the scientific method to medicine. That's 0.0
 
 Large-scale efficacy trials based on real-world evidence produce better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 
-**10,000 Years of Dying at 30**
+**{{< var dfda_large_trial_size >}} Years of Dying at 30**
 
 For over 99% of recorded human history, [average life expectancy was 30 years](../references.qmd#historical-life-expectancy-30-years).
 
@@ -72,7 +72,7 @@ Renaissance: Still 30 years.
 
 Kings, peasants, philosophers, farmers - everyone died embarrassingly young.
 
-10,000 years. Zero progress.
+{{< var dfda_large_trial_size >}} years. Zero progress.
 
 ![historical life expectancy](../../assets/life-expectancy-historical.jpg)
 
@@ -80,7 +80,7 @@ Kings, peasants, philosophers, farmers - everyone died embarrassingly young.
 
 Then something changed.
 
-In 1883, [doctors founded the Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) and did something novel: they shared information. After 10,000 years someone thought "what if we told each other what works?"
+In 1883, [doctors founded the Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) and did something novel: they shared information. After {{< var dfda_large_trial_size >}} years someone thought "what if we told each other what works?"
 
 [144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but made them smell funny."
 
@@ -90,7 +90,7 @@ Crowdsourced, observational, objective, peer-reviewed clinical research. And it 
 
 ### The Result
 
-After 10,000 years of zero progress, human life expectancy suddenly increased by 4 years every decade. For 80 years.
+After {{< var dfda_large_trial_size >}} years of zero progress, human life expectancy suddenly increased by 4 years every decade. For 80 years.
 
 The most linear relationship in medical history. Suspiciously perfect. It lasted from 1883 to 1960.
 
@@ -250,7 +250,7 @@ More people survive as more treatments are developed. There's a [strong correlat
 
 #### The Summary
 
-- 10,000 years: Zero progress
+- {{< var dfda_large_trial_size >}} years: Zero progress
 - 1883: Decentralized real-world trials, 4 years/decade progress
 - 1962: FDA takes over, progress cut in half
 - 2025: Still stuck with the broken system
@@ -265,7 +265,7 @@ The FDA's current system works like this:
 2. You wait 17 years
 3. You die
 4. The cure gets approved
-5. Pharmaceutical companies charge your widow $10,000 per pill
+5. Pharmaceutical companies charge your widow ${{< var dfda_large_trial_size >}} per pill
 
 Beautiful system if you're a mortician or bankruptcy lawyer.
 
@@ -309,14 +309,14 @@ This system has financial incentive for medical progress the way casinos have in
 
 ### Off-Patent Drugs: Cures Nobody Can Afford to Find
 
-Roughly [10,000 known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The FDA requires you predict exactly what a drug will cure before testing it. If your off-patent drug cures something unexpected? Congratulations, you just discovered something nobody can profit from.
+Roughly [{{< var dfda_large_trial_size >}} known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The FDA requires you predict exactly what a drug will cure before testing it. If your off-patent drug cures something unexpected? Congratulations, you just discovered something nobody can profit from.
 
 No patent = no billion-dollar investment = no trials = no approval = people die.
 
 **Rare Diseases: Mathematically Doomed**
 
 Development cost: $2.6 billion
-Patients with rare disease: 10,000
+Patients with rare disease: {{< var dfda_large_trial_size >}}
 Price per patient to break even: $260,000
 
 Nobody pays that. Nobody develops the drug. 95% of diseases have zero treatments.
@@ -362,7 +362,7 @@ But at least the paperwork is thorough.
 
 Your rare disease child has better odds with lottery tickets.
 
-Why? Math. If your disease only affects 10,000 people, and it costs $2.6 billion to develop a drug, each patient would need to pay $260,000 just to break even.
+Why? Math. If your disease only affects {{< var dfda_large_trial_size >}} people, and it costs $2.6 billion to develop a drug, each patient would need to pay $260,000 just to break even.
 
 So pharmaceutical companies focus on:
 
@@ -377,7 +377,7 @@ Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, 
 
 There are **[166 billion potential drug compounds](../references.qmd#166-billion-compounds)** you could test.
 
-Number we've actually tested thoroughly: [About 2,000](../references.qmd#number-of-drugs-tested-thoroughly).
+Number we've actually tested thoroughly: [About {{< var dfda_drug_approvals_per_year_high >}}](../references.qmd#number-of-drugs-tested-thoroughly).
 
 That's like having a library with 166 billion books but only reading the ones with pictures. We have more untested treatments than stars in our galaxy, but the system is too busy protecting itself to test them.
 
@@ -659,7 +659,7 @@ Ensuring quality control of broken tests is like TSA confiscating water bottles 
 **Reciprocal Approval:** If the EU/UK/Japan/Canada approves a drug, it gets approved
 
 - Lives saved: Thousands annually
-- FDA response: "But their standards might be 0.01% different!"
+- FDA response: "But their standards might be {{< var treaty_reduction_pct >}} different!"
 
 **Provisional Approval:** Let dying people try experimental drugs
 

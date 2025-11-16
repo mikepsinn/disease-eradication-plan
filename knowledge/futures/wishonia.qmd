@@ -152,7 +152,7 @@ The Three Supers become baseline:
 
 Your body runs Body OS 12.3. Updates every Tuesday.
 
-Robot lab assistants perform experiments 1,000 times faster than humans. AlphaFold maps every protein like solving cosmic sudoku. Drug companies design, synthesize, and validate new treatments in weekends.
+Robot lab assistants perform experiments {{< var traditional_large_trial_size >}} times faster than humans. AlphaFold maps every protein like solving cosmic sudoku. Drug companies design, synthesize, and validate new treatments in weekends.
 
 Today's body patches include:
 
@@ -175,7 +175,7 @@ Here's what Tuesday looks like when the Three Supers are normal:
 
 **7:00 AM:** Breakfast. The [Outcome Labels](../solution/dfda.qmd#outcome-labels) tell you exactly how each food affects your body. Dark chocolate improves your cognitive function by 23%. You adjust your IQ to 80 for morning news, then 200 for work. Science is adjustable now.
 
-**9:00 AM:** Work on your passion project. Today: teaching dolphins to code. They're better than most bootcamp graduates. Universal Basic Income (funded by the peace dividend) means you work because you want to, not because you'll starve otherwise. Your Wishocracy allocation takes 3 seconds: 90% curing blindness, 10% curing baldness. Your AI twin handles 10,000 other decisions while you drink coffee.
+**9:00 AM:** Work on your passion project. Today: teaching dolphins to code. They're better than most bootcamp graduates. Universal Basic Income (funded by the peace dividend) means you work because you want to, not because you'll starve otherwise. Your Wishocracy allocation takes 3 seconds: 90% curing blindness, 10% curing baldness. Your AI twin handles {{< var dfda_large_trial_size >}} other decisions while you drink coffee.
 
 **12:00 PM:** Lunch with your friend who died in 2030. They got better. Death is reversible now. Your great-great-grandmother (150, looks 25) joins via hologram from her Mars artist residency. Your dog is technically a minor deity. Nobody questions it.
 
@@ -218,7 +218,7 @@ As the DIH budget grew from $27.2B to over a trillion, economic gravity shifted.
 - Productivity gains from longevity: $4.1 trillion
 - **Total Annual Peace Dividend: $11.75 trillion**
 
-This is the same logic from [the Economic Case chapter](../economics/economics.qmd) - $1.2T from the initial 1% treaty, scaled to 50% redirection over 25 years. Same principles. Bigger numbers.
+This is the same logic from [the Economic Case chapter](../economics/economics.qmd) - {{< var total_complete_benefits_annual >}} from the initial 1% treaty, scaled to 50% redirection over 25 years. Same principles. Bigger numbers.
 
 That's $1,450 per human per year in actual new wealth. Not redistribution. New wealth from not being sick or dead.
 
@@ -286,7 +286,7 @@ Here's what your life looks like in 2050:
 
 **Health:** Live to 150+ (or forever). Your body is programmable software - debug it, upgrade it, back it up. Death is optional. Most try it once for the experience.
 
-**Wealth:** Peace dividend provides $50,000/year universal basic income. Money barely matters in post-scarcity. Work is play. Play is work. Both optional.
+**Wealth:** Peace dividend provides ${{< var qalys_from_prevention_conservative >}}/year universal basic income. Money barely matters in post-scarcity. Work is play. Play is work. Both optional.
 
 **Family:** You'll meet your great-great-great-grandchildren. Family reunions happen in virtual dimensions because stadiums are too small. Your dog is immortal and possibly telepathic.
 
@@ -380,7 +380,7 @@ In Path B, you spend 1% on cures. Nobody dies.
 
 The math is simple. Even for humans.
 
-While you read this, 200 people died of preventable diseases. (150,000 per day = 104 per minute.)
+While you read this, 200 people died of preventable diseases. ({{< var qalys_from_prevention_optimistic >}} per day = 104 per minute.)
 
 Make up your mind. There's no Door C.
 

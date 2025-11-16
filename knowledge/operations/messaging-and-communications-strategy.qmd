@@ -77,14 +77,14 @@ Here, we connect the KPIs to financial outcomes. The primary near-term value com
 
 A strong narrative directly impacts the ability to raise capital and demonstrate public backing to legislators.
 
-- **Funding:** If a $2M grant is secured, and the improved messaging framework was deemed responsible for strengthening the proposal (e.g., a 25% contribution), the attributable value is $500,000.
+- **Funding:** If a {{< var dfda_opex_community >}} grant is secured, and the improved messaging framework was deemed responsible for strengthening the proposal (e.g., a 25% contribution), the attributable value is {{< var recovery_trial_cost_per_patient >}},000.
 - **Public Support as a De-risking Tool:** Demonstrating widespread public support via a referendum can be presented to funders as a significant de-risking of the project's political and regulatory future, potentially increasing the project's valuation or the likelihood of investment.
 
 **B. Value of Increased Trial Participation (Future Value)**
 
 This is the most significant long-term financial benefit, which our current efforts enable.
 
-- **Cost Savings:** The average Cost Per Acquisition (CPA) for a clinical trial participant can range from **$500 to over $7,500**. A modest 15-20% reduction in CPA through better messaging translates into substantial savings.
+- **Cost Savings:** The average Cost Per Acquisition (CPA) for a clinical trial participant can range from **{{< var recovery_trial_cost_per_patient >}} to over $7,500**. A modest 15-20% reduction in CPA through better messaging translates into substantial savings.
 - **Acceleration Value:** The cost of delays in clinical trials is estimated to be between **$600,000 and $8 million per day**. Accelerating trial recruitment by even a few weeks creates enormous economic value by getting treatments to market faster and reducing operational costs.
 
 **C. Other Financial Proxies**
@@ -107,14 +107,14 @@ Let's assume a hypothetical project cost and a conservative set of outcomes.
 - **Assumed Outcomes (over 12 months):**
   1. **Funding:** The new messaging framework contributes 20% to securing a new $1M grant.
   2. **Public Support:** Successfully executed referendum provides critical leverage for the next, larger funding round, increasing its probability of success.
-  3. **Future Trial Efficiencies (Projected):** The community built during the referendum campaign is projected to reduce future CPA for a 1,000-participant trial by 15% (from $1,000 to $850) and accelerate recruitment by one month.
+  3. **Future Trial Efficiencies (Projected):** The community built during the referendum campaign is projected to reduce future CPA for a {{< var traditional_large_trial_size >}}-participant trial by 15% (from $1,000 to $850) and accelerate recruitment by one month.
 
 - **Calculated Financial Value:**
-  1. **Funding Contribution:** 20% \* $1,000,000 = **$200,000**
-  2. **Projected Recruitment Savings:** 1,000 participants \* $150 savings/participant = **$150,000**
-  3. **Projected Acceleration Value:** Using a conservative delay cost of $20,000/day, saving 30 days is worth **$600,000**.
+  1. **Funding Contribution:** 20% \* ${{< var traditional_large_trial_size >}},000 = **${{< var qalys_from_faster_access >}}**
+  2. **Projected Recruitment Savings:** {{< var traditional_large_trial_size >}} participants \* $150 savings/participant = **${{< var qalys_from_prevention_optimistic >}}**
+  3. **Projected Acceleration Value:** Using a conservative delay cost of {{< var lobbyist_bond_investment_max_millions >}},000/day, saving 30 days is worth **$600,000**.
 
-- **Total Financial Value (Immediate + Projected):** $200,000 + $150,000 + $600,000 = **$950,000**
+- **Total Financial Value (Immediate + Projected):** ${{< var qalys_from_faster_access >}} + ${{< var qalys_from_prevention_optimistic >}} + $600,000 = **$950,000**
 - **Financial ROI:** `($950,000 - $75,000) / $75,000` = **11.67x or 1,167%**
 
 ## 5. Conclusion and Recommendation

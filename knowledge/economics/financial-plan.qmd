@@ -35,12 +35,12 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 - **Payout:** 10% of all DIH treaty inflows (2.7B/year)
 - **Protection:** Bondholders paid before mission spending
 - **Collateral:** $27.2B+ annual treaty revenue stream
-- **The Pitch:** "Invest $1B. Get $2.7B/year. Forever."
+- **The Pitch:** "Invest $1B. Get {{< var victory_bond_annual_payout >}}/year. Forever."
 
 #### Why This Works
 
 - Simplest pitch in finance: 271.8% annual returns, perpetual
-- Clean $1B target (vs confusing $1.2-2.5B range)
+- Clean {{< var treaty_campaign_total_cost >}} target (vs confusing $1.2-2.5B range)
 - 10% payout is easy math (vs 5% complex calculations)
 - "Forever" beats any finite timeline
 - Better returns than any investment in history
@@ -55,20 +55,20 @@ The one-time "activation energy" to pass the 1% Treaty, made affordable through 
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **Viral Referendum** | $200M (20%) | Referral rewards ($0.20/vote), 280M votes |
-| **AI-Assisted Lobbying** | $250M (25%) | Strategic, AI-targeted campaigns in 20 countries |
-| **Technology Platform** | $250M (25%) | dFDA + Wishocracy (AI-assisted development) |
-| **AI Legal & Compliance** | $100M (10%) | AI drafts, lawyers review (80% cost reduction) |
-| **Strategic Partnerships** | $100M (10%) | Co-opt MIC, get key players on board |
-| **Operations** | $50M (5%) | Lean, remote-first, AI-augmented teams |
-| **Implementation Support** | $50M (5%) | Post-passage transition |
+| **Viral Referendum** | {{< var treaty_campaign_budget_viral_referendum >}} (20%) | Referral rewards ($0.20/vote), 280M votes |
+| **AI-Assisted Lobbying** | {{< var treaty_campaign_budget_technology >}} (25%) | Strategic, AI-targeted campaigns in 20 countries |
+| **Technology Platform** | {{< var treaty_campaign_budget_technology >}} (25%) | dFDA + Wishocracy (AI-assisted development) |
+| **AI Legal & Compliance** | {{< var treaty_campaign_budget_partnerships >}} (10%) | AI drafts, lawyers review (80% cost reduction) |
+| **Strategic Partnerships** | {{< var treaty_campaign_budget_partnerships >}} (10%) | Co-opt MIC, get key players on board |
+| **Operations** | {{< var treaty_campaign_budget_reserve >}} (5%) | Lean, remote-first, AI-augmented teams |
+| **Implementation Support** | {{< var treaty_campaign_budget_reserve >}} (5%) | Post-passage transition |
 
 #### Key Innovations
 
 - **AI does most of the work**: 60-80% cost reduction vs traditional campaigns
 - **Viral mechanics**: $0.20/vote vs $5-15 traditional cost per voter
 - **Strategic focus**: 20 high-impact countries, not all 195
-- **Result**: $1B achieves what would cost $2-5B traditionally
+- **Result**: {{< var treaty_campaign_total_cost >}} achieves what would cost $2-5B traditionally
 
 **Timeline:** 36-60 months from first funding to treaty passage
 
@@ -134,12 +134,12 @@ Base Subsidy = Total Treasury ÷ Active Trial Participants
 
 Example with 1M participants:
 
-$27B ÷ 1M = $27,000 per patient per year
+{{< var treaty_annual_funding >}} ÷ 1M = $27,000 per patient per year
 
 As more patients join:
 
 5M participants = $5,400 per patient
-10M participants = $2,700 per patient
+10M participants = ${{< var global_annual_conflict_deaths_state_violence >}} per patient
 ```
 
 #### Why This Creates Perfect Incentives
@@ -169,7 +169,7 @@ As more patients join:
 - Platform infrastructure: ~$3B (scaling to 10M patients)
 - Research prizes: ~$2.5B (first-cure bonuses)
 - Expansion campaign: ~$2B (advocacy for 2% treaty)
-- Contingency: ~$800M
+- Contingency: ~{{< var treaty_campaign_budget_super_pacs >}}
 
 ### Year 4: 2% Treaty Expansion
 
@@ -196,7 +196,7 @@ As more patients join:
 
 - VICTORY bond returns: $13.5B (10% of treaty inflows)
 - Patient subsidies: ~$85B (universal access)
-- Platform infrastructure: ~$12B (200M patients)
+- Platform infrastructure: ~{{< var partial_success_research_funding >}} (200M patients)
 - Research prizes: ~$15B (rare diseases getting solved)
 - Space medicine: ~$6B (extending to longevity research)
 - Prevention programs: ~$3.5B (shifting from treatment to prevention)
@@ -223,7 +223,7 @@ As more patients join:
 
 - 271.8% annually to bondholders
 - Perpetual returns (not 10-year finite)
-- $1B investment → $2.7B/year forever
+- {{< var treaty_campaign_total_cost >}} investment → {{< var victory_bond_annual_payout >}}/year forever
 - Better than every investment in human history
 
 #### Societal Returns (Everyone Else)
@@ -232,7 +232,7 @@ As more patients join:
 - 82x reduction in trial costs ($50.0B annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
-- 3X ROI on prevention vs treatment ($600B saved)
+- 3X ROI on prevention vs treatment ({{< var caregiver_annual_value_total >}} saved)
 - Knowledge compounds through open data ($2.1T avoided waste)
 
 ##### Total 10-Year Value Creation: $16.4T
@@ -281,7 +281,7 @@ That's more than China's entire GDP.
 - Quarterly independent audits
 - Board oversight (includes bondholders)
 - Fraud detection via AI
-- Whistleblower bounties ($10M for catching theft)
+- Whistleblower bounties ({{< var value_of_statistical_life >}} for catching theft)
 
 ## Transparency & Accountability
 
@@ -322,13 +322,13 @@ That's more than China's entire GDP.
 #### Primary
 
 - QALYs (Quality-Adjusted Life Years) generated
-- Cost per life saved (target: <$1,000)
+- Cost per life saved (target: <${{< var traditional_large_trial_size >}})
 - Time from discovery to patient (target: <3 years)
 - Percentage of diseases with active trials (target: 100%)
 
 #### Efficiency
 
-- Cost per patient in trials (target: $500, proven by Oxford RECOVERY)
+- Cost per patient in trials (target: {{< var recovery_trial_cost_per_patient >}}, proven by Oxford RECOVERY)
 - Administrative overhead (target: <15%, reality will be 10-20% decided by voters)
 - Treatments tested per billion allocated
 - Negative results published (target: 100%)
@@ -359,7 +359,7 @@ dot = graphviz.Digraph(comment='Compound Flywheel', format='png')
 dot.attr(rankdir='TD', size='10,14')
 setup_graphviz_style(dot)
 
-dot.node('A', '1% Treaty: $27B')
+dot.node('A', '1% Treaty: {{< var treaty_annual_funding >}}')
 dot.node('B', 'Subsidize Patients')
 dot.node('C', 'Generate Cures')
 dot.node('D', 'Save Lives')
@@ -414,7 +414,7 @@ Each success makes the next success easier:
 
 - **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The 463:1 ROI breakdown
 - **[Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd)** - Historical proof that military cuts → prosperity
-- **[Research Acceleration Model](../appendix/research-acceleration-model.qmd)** - Complete 1,239:1 ROI with all direct benefits
+- **[Research Acceleration Model](../appendix/research-acceleration-model.qmd)** - Complete {{< var roi_all_direct_benefits >}}:1 ROI with all direct benefits
 
 ### For Treaty Supporters
 
@@ -431,6 +431,6 @@ Each success makes the next success easier:
 
 **To Deliver:** 271.8% annual returns to investors (perpetual), 463:1 societal returns, optional death by 2050
 
-**The Simple Math:** Invest $1B → Get $2.7B/year → Forever
+**The Simple Math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever
 
 **The Question:** Do you want in, or do you want to watch history happen without you?
