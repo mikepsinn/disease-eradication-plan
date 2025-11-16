@@ -195,8 +195,8 @@ execute:
 
 metadata:
   creator: "Mike P. Sinn"
-  primary-author: "Mike P. Sinn"
-  byline: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn, Decentralized Institutes of Health"
+  byline: "Mike P. Sinn, Decentralized Institutes of Health"
   human-author: "Mike P. Sinn"
   author-email: "hello@dih.earth"
   author-url: "https://WarOnDisease.org"
@@ -231,11 +231,11 @@ metadata:
     - impact-investing
   version: "1.0.0"
   edition: "First Edition"
-  copyright: "© 2025 Mike P. Sinn & W.I.SH.O.N.I.A."
+  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY 4.0"
-  license-url: "https://creativecommons.org/licenses/by/4.0/"
-  rights: "Creative Commons Attribution 4.0 International License"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
   publisher: "WarOnDisease.org"
   publisher-url: "https://WarOnDisease.org"
   publisher-name: "Mike P. Sinn"
@@ -264,16 +264,19 @@ format:
     toc-depth: 3
     css: styles.css
     page-footer:
-      left: "© 2025 Mike P. Sinn & W.I.SH.O.N.I.A."
-      center: "[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
       right: "[WarOnDisease.org](https://WarOnDisease.org)"
     include-in-footer:
       - text: |
           <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
             <p style="margin: 0.5rem 0;">
-              © 2025 Mike P. Sinn & W.I.SH.O.N.I.A. | 
-              <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #8b7355;">CC BY 4.0</a> | 
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a>, <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a> | 
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> | 
               <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              A product of the <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
           </div>
     include-in-header:
