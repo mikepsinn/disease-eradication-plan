@@ -51,7 +51,7 @@ This is a system designed to prevent lawsuits, not deaths. One type of death (fr
 
 Compare two real-world systems for testing drugs:
 
-1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[{{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
+1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **[$500 per patient](../references.qmd#recovery-cost-500)**. Found a life-saving treatment in 3 months.
 2.  **The FDA System:** Averages **[$41,000 per patient](../references.qmd#trial-cost-41k)** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
 
 The FDA's system costs **82x more** and takes **36x longer**. Not a small difference - the difference between functional and designed-to-fail.
@@ -362,7 +362,7 @@ But at least the paperwork is thorough.
 
 Your rare disease child has better odds with lottery tickets.
 
-Why? Math. If your disease only affects {{< var rare_disease_typical_patient_count >}} people, and it costs $2.6 billion to develop a drug, each patient would need to pay $5.2 million just to break even.
+Why? Math. If your disease only affects 10,000 people, and it costs $2.6 billion to develop a drug, each patient would need to pay $260,000 just to break even.
 
 So pharmaceutical companies focus on:
 
@@ -659,7 +659,7 @@ Ensuring quality control of broken tests is like TSA confiscating water bottles 
 **Reciprocal Approval:** If the EU/UK/Japan/Canada approves a drug, it gets approved
 
 - Lives saved: Thousands annually
-- FDA response: "But their standards might be 1% different!"
+- FDA response: "But their standards might be 0.01% different!"
 
 **Provisional Approval:** Let dying people try experimental drugs
 

@@ -27,7 +27,7 @@ Number of diseases the NIH has eradicated: [**Zero**](../references.qmd#nih-erad
 
 Success rate: 0.00% for complete disease elimination.
 
-[A medical politburo in Maryland](../references.qmd#nih-decision-makers-200-people) deciding which of [{{< var dfda_large_trial_size >}} diseases](../references.qmd#number-of-known-diseases) matter. Yours doesn't.
+[A medical politburo in Maryland](../references.qmd#nih-decision-makers-200-people) deciding which of [10,000 diseases](../references.qmd#number-of-known-diseases) matter. Yours doesn't.
 
 They fund what gets published, not what saves lives.
 
@@ -59,7 +59,7 @@ The NIH spent $600,000 researching *whether people want their loved ones to get 
 
 **Here's what $600,000 could have actually funded:**
 
-- 1,200 Alzheimer's patients in pragmatic trials (at {{< var recovery_trial_cost_per_patient >}}/patient, UK RECOVERY model)
+- 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
 - Testing 5-10 repurposed drugs we already know are safe
 - Actual data on whether treatments work
 - Maybe saving your grandma
@@ -86,7 +86,7 @@ The result is a system that produces papers, not cures:
 
 - **Papers published:** [2.5 million annually](../references.qmd#nih-annual-papers-published)
 - **New treatments approved:** [~50 annually](../references.qmd#global-new-drug-approvals-50-annually)
-- **Conversion rate from paper to patient:** {{< var current_patient_eligibility_rate >}}
+- **Conversion rate from paper to patient:** 0.002%
 
 We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
 
@@ -112,7 +112,7 @@ The NIH organizational chart looks like someone tried to draw the internet:
 
 - **[27 institutes and centers](../references.qmd#nih-organizational-complexity)**
 - **[220+ study sections](../references.qmd#nih-organizational-stats)** (review committees)
-- **[{{< var caregiver_cost_annual >}}+ employees](../references.qmd#nih-organizational-stats)**
+- **[6,000+ employees](../references.qmd#nih-organizational-stats)**
 - **[80,000+ grant reviewers](../references.qmd#nih-organizational-stats)**
 
 Each institute has divisions.
@@ -135,7 +135,7 @@ The RECOVER Initiative - a masterpiece of inefficiency:
 
 Meanwhile, the UK RECOVERY trial:
 
-**Budget:** [\{{< var lobbyist_bond_investment_max_millions >}} million](../references.qmd#recovery-trial-82x-cost-reduction)
+**Budget:** [\$20 million](../references.qmd#recovery-trial-82x-cost-reduction)
 **Timeline:** [6 months](../references.qmd#landray-recovery-trial-quote)
 **Patients enrolled:** [48,000](../references.qmd#recovery-trial-82x-cost-reduction)
 **Treatments found:** [Multiple, including dexamethasone](../references.qmd#recovery-trial-summary-quote)
@@ -212,7 +212,7 @@ Let's do the real math on what we could have done with that money:
 
 **What \$51 billion could buy using UK RECOVERY methods:**
 
-- Cost per trial participant: [\{{< var recovery_trial_cost_per_patient >}}](../references.qmd#recovery-cost-500)
+- Cost per trial participant: [\$500](../references.qmd#recovery-cost-500)
 - Annual participants: 102 million (82x more)
 - Potential treatments found: Hundreds
 
