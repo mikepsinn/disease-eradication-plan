@@ -50,7 +50,7 @@ We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book th
 -   **Try to sound important.** Write like a human, not a textbook.
 -   **Be earnest or evangelical.** Don't write "This will SAVE HUMANITY!" Write "This typically prevents dying, which humans claim to dislike."
 -   **Use euphemisms.** Call things by their real names. Just say "die" or "death."
--   **Use overused cliches or filler phrases.** Avoid "let that sink in," "think about that,If the point is strong, it doesn't need a cliche to emphasize it.
+-   **Use overused cliches or filler phrases.** Avoid "let that sink in," "think about that," "spoiler alert," "plot twist," "masterclass," "masterpiece." If the point is strong, it doesn't need a cliche to emphasize it.
 -   **Write like you're selling or pitching something.** Don't say "we're going to," "our solution will," "join us in," or "together we can." You're teaching, not recruiting.
 -   **Make promises or proposals.** Don't say "we will end disease" - say "here's how you end disease."
 -   **Use passive or future-oriented language.** Not "this will be implemented" but "here's how to implement this."
