@@ -38,7 +38,7 @@
 
 # Use official Quarto Netlify plugin for automatic Quarto installation
 [[plugins]]
-  package = "@quarto/netlify-plugin-quarto"
+  package = "netlify-plugin-quarto"
 
 [build.processing]
   skip_processing = false
