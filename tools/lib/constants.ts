@@ -24,6 +24,14 @@ export const HASH_FIELDS = {
   INSTRUCTIONAL_VOICE: 'lastInstructionalVoiceHash',
   TONE_ELEVATION: 'lastToneElevationHash',
   TONE_ELEVATION_WITH_HUMOR: 'lastToneElevationWithHumorHash',
+
+  // WISHONIA-specific hashes
+  PARAMETER_CHECK: 'lastParameterCheckHash',
+  MATH_VALIDATION: 'lastMathValidationHash',
+  CLAIM_VALIDATION: 'lastClaimValidationHash',
+  REFERENCE_LINKING: 'lastReferenceLinkingHash',
+  CONSISTENCY_CHECK: 'lastConsistencyCheckHash',
+  WISHONIA_FULL_REVIEW: 'lastWishoniaFullReviewHash',
 } as const;
 
 // Type for hash field values

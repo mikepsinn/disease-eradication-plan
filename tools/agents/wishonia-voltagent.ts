@@ -8,6 +8,7 @@ import {
 } from "@voltagent/core";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
 import { writeFile } from "fs/promises";
+import { execSync } from "child_process";
 import {
   createParameterCheckerAgent,
   createMathValidatorAgent,
@@ -16,6 +17,11 @@ import {
   createConsistencyCheckerAgent,
 } from "./sub-agents";
 import { EnhancedTodoManager } from "./todo-manager-enhanced";
+import { createFileReviewWorkflow } from "./workflows/file-review-workflow";
+import { getStaleFilesForWishonia, updateFileHash } from "../lib/hash-utils";
+import { getBodyHash } from "../lib/file-utils";
+import { HASH_FIELDS } from "../lib/constants";
+import { glob } from "glob";
 
 // Create logger
 const logger = createPinoLogger({
@@ -97,6 +103,7 @@ const options = {
 export class WishoniaVoltAgent {
   private voltAgent: VoltAgent;
   private todoManager: EnhancedTodoManager;
+  private fileReviewWorkflow: ReturnType<typeof createFileReviewWorkflow>;
 
   constructor() {
     this.todoManager = todoManager;
@@ -112,6 +119,13 @@ export class WishoniaVoltAgent {
       logger,
       server: honoServer({ port: 3141 }),
     });
+    
+    // Create workflow for file processing
+    this.fileReviewWorkflow = createFileReviewWorkflow(
+      wishoniaSupervisor,
+      this.todoManager,
+      memory
+    );
   }
 
   /**
@@ -127,24 +141,68 @@ export class WishoniaVoltAgent {
    */
   async processFile(filePath: string): Promise<void> {
     logger.info(`Processing file: ${filePath}`);
-    // TODO: Implement file processing logic
-    // This will use the supervisor to coordinate subagents
+    
+    try {
+      // Run the file review workflow
+      const result = await this.fileReviewWorkflow.execute({
+        filePath,
+      });
+
+      // Update hash fields after processing
+      const { readFileWithMatter } = await import("../lib/file-utils");
+      const { body } = await readFileWithMatter(filePath);
+      const currentHash = getBodyHash(body);
+
+      // Update all WISHONIA hash fields
+      await updateFileHash(filePath, HASH_FIELDS.PARAMETER_CHECK, currentHash);
+      await updateFileHash(filePath, HASH_FIELDS.MATH_VALIDATION, currentHash);
+      await updateFileHash(filePath, HASH_FIELDS.CLAIM_VALIDATION, currentHash);
+      await updateFileHash(filePath, HASH_FIELDS.REFERENCE_LINKING, currentHash);
+      await updateFileHash(filePath, HASH_FIELDS.CONSISTENCY_CHECK, currentHash);
+      await updateFileHash(filePath, HASH_FIELDS.WISHONIA_FULL_REVIEW, currentHash);
+
+      logger.info(`✅ Processed ${filePath}: Found ${result.issues.length} issues`);
+      
+      // Save todos
+      await this.todoManager.save();
+    } catch (error) {
+      logger.error(`Error processing file ${filePath}:`, error);
+      throw error;
+    }
   }
 
   /**
    * Process all stale files
    */
   async processStaleFiles(): Promise<void> {
-    logger.info("Processing stale files");
-    // TODO: Implement stale file detection and processing
+    logger.info("Finding stale files...");
+    const staleFiles = await getStaleFilesForWishonia();
+    
+    logger.info(`Found ${staleFiles.length} stale files to process`);
+    
+    for (const file of staleFiles) {
+      await this.processFile(file);
+    }
+    
+    logger.info(`✅ Processed ${staleFiles.length} stale files`);
   }
 
   /**
    * Process all files
    */
   async processAllFiles(): Promise<void> {
-    logger.info("Processing all files");
-    // TODO: Implement full file processing
+    logger.info("Finding all files...");
+    const files = await glob("knowledge/**/*.qmd", {
+      ignore: ["**/node_modules/**", "**/_book/**", "**/_freeze/**"],
+    });
+    
+    logger.info(`Found ${files.length} files to process`);
+    
+    for (const file of files) {
+      await this.processFile(file);
+    }
+    
+    logger.info(`✅ Processed ${files.length} files`);
   }
 
   /**
@@ -204,8 +262,24 @@ export class WishoniaVoltAgent {
    * Stage changes (never commit)
    */
   async stageChanges(): Promise<void> {
-    // TODO: Implement git staging without commits
     logger.info("Staging changes for review");
+    
+    try {
+      // Stage all modified files (but not new files to avoid accidental commits)
+      execSync("git add -u", { stdio: "inherit" });
+      
+      // Stage todo files if they exist
+      try {
+        execSync("git add .wishonia-todos.*", { stdio: "pipe" });
+      } catch {
+        // Ignore if no todo files
+      }
+      
+      logger.info("✅ Changes staged (not committed)");
+    } catch (error) {
+      logger.warn("Could not stage changes:", error);
+      // Don't throw - staging is optional
+    }
   }
 }
 
