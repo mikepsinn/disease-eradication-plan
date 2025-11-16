@@ -55,6 +55,10 @@
     echo "=== Step 7: Building site with Quarto ==="
     cp _quarto-economics.yml _quarto.yml || error_exit "Failed to copy Quarto config"
     
+    # Create empty .env file to satisfy Quarto's dotenv profile check
+    echo "Creating empty .env file to satisfy Quarto dotenv profile..."
+    touch .env || echo "Warning: Could not create .env file"
+    
     # Set environment variables for Quarto
     export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" 2>/dev/null || python -c "import sys; print(sys.executable)" 2>/dev/null || echo "python3")
     export JUPYTER_PLATFORM_DIRS=1
