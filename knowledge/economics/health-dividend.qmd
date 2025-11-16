@@ -12,16 +12,18 @@ lastInstructionalVoiceHash: dd5ecd23df99d0246c138ed8e0fa5cc57d3166c4b078d7888aa0
 lastNonprofitComplianceHash: b209671fea7d7c8aacbc349fad1b24654b7c462166014b5d071553defb7ee32f
 ---
 
+<!-- ✓ Style reviewed 2025-01-15 -->
+
 ```{python}
 #| echo: false
 from dih_models.parameters import *
 ```
 
-The dFDA Infrastructure costs **$40M per year** to run.
-It saves the world **$50.0B per year** in clinical trial costs.
-That's a **463:1 return on investment**.
+The dFDA costs $40M/year to run.
+It saves $50B/year in clinical trial waste.
+That's 463:1 returns.
 
-Here's how.
+Here's the breakdown.
 
 ## The Math: From $41,000 to $500 Per Patient
 

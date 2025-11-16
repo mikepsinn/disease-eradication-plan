@@ -21,91 +21,87 @@ from dih_models.parameters import *
 
 ```
 
+<!-- ✓ Style reviewed 2025-01-15 -->
+
 ## Executive Summary
 
-This analysis evaluates the economic impact of redirecting 1% of global military spending ([$27.2B annually](../appendix/peace-dividend-calculations.qmd)) to fund the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Using net present value analysis and conservative assumptions derived from peer-reviewed research, we demonstrate return on investment ranging from 463:1 to 1,239:1, depending on the scope of benefits included.
+Here's how you get 463:1 to 1,239:1 returns on redirecting 1% of murder money ([$27.2B/year](../appendix/peace-dividend-calculations.qmd)) to not-murder money.
 
-The intervention is self-funding, requiring zero net new spending, as funds are redirected from existing military budgets. The economic benefits arise from two independent mechanisms: (1) a peace dividend of [$113.6B annually](../appendix/peace-dividend-calculations.qmd) from reduced conflict costs, and (2) [$50.0B+ in annual healthcare R&D efficiency gains](../appendix/dfda-cost-benefit-analysis.qmd) from decentralized clinical trials proven [82x more cost-effective](../appendix/recovery-trial.qmd) than traditional approaches.
+The beautiful part: it costs zero new dollars. You're just moving money from the "making corpses" column to the "preventing corpses" column in the budget spreadsheet.
 
-### Key Findings
+You get paid twice for the same 1% shift:
 
-- **Conservative ROI**: [463:1](../appendix/dfda-cost-benefit-analysis.qmd) (dFDA R&D savings only, 10-year NPV)
-- **Complete ROI**: 1,239:1 (all eight primary benefit categories, 10-year average)
-- **Cost per life saved**: Net societal benefit of [$6.56M per life](../appendix/1-percent-treaty-cost-effectiveness.qmd) (compared to [$3,500-5,500 cost for top GiveWell charities](../references.qmd#givewell-cost-per-life-saved))
-- **Annual lives saved**: [26,446](../appendix/1-percent-treaty-cost-effectiveness.qmd) (conservative estimate)
+1. **Peace dividend**: [$113.6B/year](../appendix/peace-dividend-calculations.qmd) appears when you build 1% fewer bombs (turns out bombs are expensive and breaking things costs money to fix)
+2. **Research efficiency**: [$50.0B+/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not drowning scientists in paperwork (Oxford proved trials cost [82x less](../appendix/recovery-trial.qmd) when you stop requiring 17 years of documentation)
 
-## Introduction
+### The Numbers
 
-### Methodology
+- **Conservative returns**: [463:1](../appendix/dfda-cost-benefit-analysis.qmd) (counting only R&D savings, ignoring everything else)
+- **Realistic returns**: 1,239:1 (counting all eight measurable benefits)
+- **Per life saved**: Society MAKES [$6.56M](../appendix/1-percent-treaty-cost-effectiveness.qmd) (vs. best charities SPENDING [$3,500-5,500](../references.qmd#givewell-cost-per-life-saved))
+- **Lives saved yearly**: [26,446](../appendix/1-percent-treaty-cost-effectiveness.qmd) (lowball estimate)
 
-This analysis employs standard health economics frameworks including:
+## How the Math Works
 
-- **Net Present Value (NPV)** analysis with 5% discount rate
-- **Quality-Adjusted Life Years (QALYs)** for health outcomes
-- **Incremental Cost-Effectiveness Ratios (ICER)** for comparative analysis
-- **Sensitivity analysis** examining parameter variations (see [1% Treaty Cost-Effectiveness](../appendix/1-percent-treaty-cost-effectiveness.qmd))
+### The Approach
 
-All calculations use conservative assumptions and are validated against peer-reviewed literature, particularly the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd) demonstrating 82x cost reduction in pragmatic clinical trials.
+Standard economic analysis, nothing fancy:
 
-### Two-Tier ROI Framework
+- Discount future money at 5% (economists insist on this)
+- Count quality-adjusted life years (economist-speak for "being alive and not miserable")
+- Compare cost per outcome to other interventions
+- Test what happens if we're wrong about everything (see [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd))
 
-The 1% Treaty generates measurable returns across two analytical frameworks:
+The calculations are conservative and validated against the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), which proved 82x cost reduction by not requiring 40,000 pages of paperwork per patient.
 
-**463:1 = Conservative (dFDA R&D Savings Only)**
+### Two Ways to Count
 
-- Only counts the $50.0B in annual R&D cost reductions from 82x cheaper trials
-- Ignores peace dividend, earlier access, and all secondary benefits
-- NPV-based, 10-year timeframe
-- This is the floor
+**463:1 = Pessimistic (R&D Savings Only)**
 
-**1,239:1 = Complete (All Direct Benefits)**
+Count only the $50.0B/year saved from 82x cheaper trials. Pretend everything else doesn't exist. This is the floor. This is what you tell skeptical accountants.
 
-- Counts all 8 primary benefit categories totaling $1.2T/year
-- Includes peace dividend, R&D savings, earlier access, research acceleration, rare diseases, drug prices, prevention, and mental health
-- 10-year average
-- This is the realistic case
+**1,239:1 = Realistic (All Eight Benefits)**
 
-### Analytical Framework Selection
+Count all $1.2T/year in measurable benefits: peace dividend, R&D savings, earlier access, research acceleration, rare disease treatments, drug price reductions, prevention, and mental health. This is what actually happens.
 
-Each ROI tier serves a distinct analytical purpose:
+### Which Number to Use
 
-- **Conservative (463:1)**: Minimum expected return based solely on R&D efficiency gains; suitable for risk-averse stakeholders and regulatory approval processes
-- **Complete (1,239:1)**: Comprehensive assessment including all eight quantifiable benefit categories; recommended for policy evaluation and foundation grant proposals
+**Use 463:1** when talking to:
+- Risk-averse investors who trust nothing
+- Regulators paid to say "no"
+- People who think optimism is a character flaw
 
-Both calculations employ the same rigorous methodology and differ only in scope. The conservative estimate provides the floor for expected returns, while the complete projection captures the full quantifiable societal impact.
+**Use 1,239:1** when talking to:
+- Anyone who can count to eight
+- Foundation grant reviewers
+- People interested in reality
+
+Both use the same math. One just counts more stuff.
 
 ## The Conservative Case: 463:1 ROI (dFDA Only)
 
-This conservative analysis examines the minimum expected return by counting only the direct R&D cost savings from implementing the Decentralized FDA system. This approach deliberately excludes the peace dividend, earlier treatment access, and all secondary benefits, providing a defensible floor for economic impact.
+Here's the floor. Count only R&D savings from cheaper trials. Ignore peace dividends, earlier access, and everything else that makes this look "too good to be true."
 
-### Quantitative Analysis
+### The Math
 
-#### ROI Calculation Methodology
-
-The return on investment (ROI) is calculated using net present value (NPV) analysis with discounting over a 10-year horizon:
+Basic division:
 
 $$
-\text{ROI} = \frac{\text{NPV of Benefits}}{\text{NPV of Costs}}
+\text{ROI} = \frac{\text{Benefits}}{\text{Costs}} = \frac{\$249.3\text{B}}{\$538\text{M}} = 463:1
 $$
 
-For the conservative case (463:1):
+where [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) is what you save over 10 years and [$538M](../appendix/dfda-cost-benefit-analysis.qmd) is what you spend to build it.
 
-$$
-\text{ROI}_{\text{conservative}} = \frac{\$249.3\text{B}}{\$538\text{M}} = 463:1
-$$
+This uses "net present value" which is economist code for "future money is worth less than current money" (5% discount rate, 10-year horizon). For the spreadsheet addicts: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
-where [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) is the NPV of benefits and [$538M](../appendix/dfda-cost-benefit-analysis.qmd) is the NPV of costs over 10 years.
+### Where the Money Comes From
 
-**For complete NPV methodology including discount rates, adoption curves, detailed cost breakdowns, and sensitivity analysis**, see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology) and [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
+1% of global military budgets gets redirected. This gives you:
 
-#### The Funding Source (Peace Dividend)
+- **Funding**: [$27.2B/year](../appendix/peace-dividend-calculations.qmd) to spend on not-dying
+- **Bonus savings**: [$113.6B/year](../appendix/peace-dividend-calculations.qmd) in economic value from building 1% fewer things that explode
 
-- **Captured Dividend**: 1% of global military spending = **[$27.2B annually](../appendix/peace-dividend-calculations.qmd)** to fund the initiative
-- **Societal Dividend**: Same 1% reduction generates **[$113.6B in annual economic value](../appendix/peace-dividend-calculations.qmd)** through decreased conflict costs
-
-**Peace Dividend Calculation Breakdown**:
-
-The $113.6B annual peace dividend derives from 1% reduction in total global war costs of [$11.355T annually](../appendix/peace-dividend-calculations.qmd):
+The peace dividend math is simple: wars cost [$11.355T/year](../appendix/peace-dividend-calculations.qmd). 1% less war costs 1% less money.
 
 $$
 \$11{,}355\text{B} \times 1\% = \$113.6\text{B}
@@ -128,29 +124,30 @@ $$
 
 This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
 
-#### The Investment (dFDA Infrastructure)
+### What It Costs to Build
 
-- **Total Cost (NPV)**: 10-year discounted cost to build and operate = **[$538M](../appendix/dfda-cost-benefit-analysis.qmd)**
-  - Upfront costs: **[$270M](../appendix/dfda-cost-benefit-analysis.qmd)** (Core dFDA Platform: [$40M](../appendix/dfda-cost-benefit-analysis.qmd) + DIH Initiatives: [$230M](../appendix/dfda-cost-benefit-analysis.qmd))
-  - Annual operational costs: **[$40M/year](../appendix/dfda-cost-benefit-analysis.qmd)** (discounted to [$268M NPV](../appendix/dfda-cost-benefit-analysis.qmd) over 10 years)
-- **Funding Sustainability**: Annual captured dividend ([$27.2B](../appendix/peace-dividend-calculations.qmd)) covers annual operational cost ([$40M](../appendix/dfda-cost-benefit-analysis.qmd)) **680 times over**
+**Total**: [$538M](../appendix/dfda-cost-benefit-analysis.qmd) over 10 years (present value)
+  - Upfront: [$270M](../appendix/dfda-cost-benefit-analysis.qmd) (build the platform)
+  - Yearly operations: [$40M](../appendix/dfda-cost-benefit-analysis.qmd) (keep it running)
 
-This conservative estimate assumes gradual adoption (0% to 100% over 5 years) and mid-range operational costs. **For detailed cost breakdowns, ROM estimates, and sensitivity analysis**, see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
+The [$27.2B/year](../appendix/peace-dividend-calculations.qmd) peace dividend covers [$40M/year](../appendix/dfda-cost-benefit-analysis.qmd) operations **680 times over**. It's like having $680 to pay a $1 bill.
 
-#### The Return (Health & Wealth)
+This assumes gradual rollout (0% to 100% over 5 years) and middle-range costs. For the detailed breakdown see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
-- **Economic Return (NPV)**: 10-year discounted net benefit = **[$249.3B](../appendix/dfda-cost-benefit-analysis.qmd)** in R&D savings alone
-- **Robust ROI**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) / [$538M](../appendix/dfda-cost-benefit-analysis.qmd) = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
-- **Health Return**: **[840,000 Quality-Adjusted Life Years (QALYs)](../appendix/1-percent-treaty-cost-effectiveness.qmd)** annually
+### What You Get Back
 
-**Summary**: The 1% Treaty generates economic value through two independent mechanisms:
+- **Money**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) in R&D savings (10 years, present value)
+- **Returns**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) ÷ [$538M](../appendix/dfda-cost-benefit-analysis.qmd) = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
+- **People not dying**: [840,000 quality-adjusted life years](../appendix/1-percent-treaty-cost-effectiveness.qmd) annually
 
-1. **Peace Dividend**: 1% reduction in global military spending generates **[$113.6B](../appendix/peace-dividend-calculations.qmd)** in annual economic value through decreased conflict costs (infrastructure preservation, reduced humanitarian costs, enhanced economic activity in formerly conflict-affected regions)
-2. **dFDA R&D Efficiency**: A fraction of captured peace dividend ([$538M](../appendix/dfda-cost-benefit-analysis.qmd) over 10 years) funds dFDA infrastructure, unlocking **[$50.0B](../appendix/dfda-cost-benefit-analysis.qmd)** in annual R&D cost savings plus [840,000 QALYs](../appendix/1-percent-treaty-cost-effectiveness.qmd) through improved trial efficiency
+**Two income streams from one budget shift**:
 
-**Total Annual Benefit**: [$163.6B](../appendix/dfda-cost-benefit-analysis.qmd) per year (conservative estimate)
+1. **Peace dividend**: [$113.6B/year](../appendix/peace-dividend-calculations.qmd) saved by not breaking as much stuff
+2. **Research efficiency**: [$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not requiring PhDs to fill out forms for 17 years
 
-**[Sensitivity Analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd)**: Even under worst-case parameter assumptions (50% lower benefits, 100% higher costs), the system maintains ROI between [189:1 and 1,281:1](../appendix/1-percent-treaty-cost-effectiveness.qmd). See [1% Treaty Cost-Effectiveness](../appendix/1-percent-treaty-cost-effectiveness.qmd) for complete sensitivity analysis.
+**Combined**: [$163.6B/year](../appendix/dfda-cost-benefit-analysis.qmd) (conservative, ignoring most benefits)
+
+**If everything goes wrong**: Worst-case scenario (benefits half as good, costs twice as high) still delivers [189:1 to 1,281:1](../appendix/1-percent-treaty-cost-effectiveness.qmd) returns. See [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd).
 
 ### Cost-Effectiveness: Dominant Health Intervention
 

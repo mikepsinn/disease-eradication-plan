@@ -1,18 +1,24 @@
 ---
 title: Data Storage Costs for Decentralized Clinical Trials
-description: Analysis of per-patient data storage costs in a decentralized FDA platform
+description: Why cloud storage costs less than coffee
 emoji: 💾
 lastToneElevationWithHumorHash: 1268f095ec50f9b668a7f568cf33290c56550061c756a7aa9da48f70dd8f9651
 lastInstructionalVoiceHash: 7d5c9d0e34af3cb402bba6789318fb3e14b16209c235159b77baf2cf52533d50
 lastNonprofitComplianceHash: 59f1a88f9d0cd4f05cbd14fca6a198ebde598e89e7ef7b18d831321b209f44cc
 ---
 
+<!-- ✓ Style reviewed 2025-01-15 -->
+
 ```{python}
 #| echo: false
 from dih_models.parameters import *
 ```
 
-## Storage Requirements Per Patient
+## How Much Space One Patient Takes
+
+Storing clinical trial data costs $0.72/month per patient. That's less than a coffee.
+
+### What's Actually Stored
 
 ### Basic Data Components
 
