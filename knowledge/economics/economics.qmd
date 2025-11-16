@@ -111,7 +111,7 @@ $$
 |:---|---:|:---|
 | **Direct Military Spending** | [$2,718B](../references.qmd#sipri-2024-spending) | SIPRI 2024 global military budgets |
 | **[Infrastructure Destruction](../appendix/peace-dividend-calculations.qmd)** | [$1,875B](../appendix/peace-dividend-calculations.qmd) | Transportation, energy, communications, water, education, healthcare facilities |
-| **Human Life Losses** | ${{< var treaty_lives_saved_annual_global >}}B | [{{< var global_annual_conflict_deaths_total >}} conflict deaths](../references.qmd#acled-active-combat-deaths) × [{{< var value_of_statistical_life >}} value of statistical life](../references.qmd#dot-vsl-13-6m) (conservative vs. DOT $13.7M) |
+| **Human Life Losses** | [$2,446B](../appendix/peace-dividend-calculations.qmd) | [{{< var global_annual_conflict_deaths_total >}} conflict deaths](../references.qmd#acled-active-combat-deaths) × [{{< var value_of_statistical_life >}} value of statistical life](../references.qmd#dot-vsl-13-6m) (conservative vs. DOT $13.7M) |
 | **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | [{{< var global_annual_trade_disruption_conflict >}}](../appendix/peace-dividend-calculations.qmd) | Shipping, supply chains, energy prices, currency volatility |
 | **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | [$2,718B](../appendix/peace-dividend-calculations.qmd) | Opportunity cost of military spending vs. productive investment |
 | **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | [{{< var sensitivity_peace_dividend_optimistic >}}](../appendix/peace-dividend-calculations.qmd) | Long-term medical care for conflict-related injuries |
@@ -169,7 +169,7 @@ $$
 
 where the net incremental cost is calculated as platform operational costs ([{{< var dfda_upfront_build >}}/year](../appendix/dfda-cost-benefit-analysis.qmd)) minus R&D savings ([$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd)) = -$49.96B annually, and [{{< var global_dfda_qalys_gained_annual >}} QALYs](../appendix/1-percent-treaty-cost-effectiveness.qmd) represents annual quality-adjusted life years gained.
 
-The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are ${{< var qalys_from_prevention_conservative >}}-{{< var qalys_from_prevention_optimistic >}} per QALY](../references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended.
+The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-$150,000 per QALY](../references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended.
 
 **For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis---cost-utility-framework).
 
@@ -278,7 +278,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 
 - [{{< var current_trials_per_year >}} clinical trials initiated per year](../appendix/research-acceleration-model.qmd)
 - [60% completion rate](../appendix/research-acceleration-model.qmd) = **[{{< var current_completed_trials_per_year >}} completed trials/year](../appendix/research-acceleration-model.qmd)**
-- [{{< var dfda_large_trial_size >}} active trials](../appendix/research-acceleration-model.qmd) at any time (3-5 year duration)
+- [10,000 active trials](../appendix/research-acceleration-model.qmd) at any time (3-5 year duration)
 - [0.2% patient eligibility](../appendix/clinical-trial-participants.qmd) (5M trial slots for [2.4B people with chronic disease](../references.qmd#disease-prevalence-2-billion))
 - [40% abandonment rate](../appendix/research-acceleration-model.qmd) (studies never complete)
 - [6-18 months to recruit 100 patients](../appendix/research-acceleration-model.qmd)
@@ -287,7 +287,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 
 - [{{< var dfda_trials_per_year_capacity >}} trials/year capacity](../appendix/research-acceleration-model.qmd)
 - [95% completion rate](../appendix/research-acceleration-model.qmd) = **[{{< var dfda_completed_trials_per_year >}} completed trials/year](../appendix/research-acceleration-model.qmd)**
-- [{{< var qalys_from_faster_access >}} active trials](../appendix/research-acceleration-model.qmd) at any time (3-12 month duration)
+- [200,000 active trials](../appendix/research-acceleration-model.qmd) at any time (3-12 month duration)
 - [50% patient eligibility](../appendix/research-acceleration-model.qmd) ([1.2B eligible](../appendix/research-acceleration-model.qmd) with minimal exclusions)
 - [5% abandonment rate](../appendix/research-acceleration-model.qmd) (economic incentives flipped)
 - [3 weeks to recruit {{< var traditional_large_trial_size >}} patients](../appendix/research-acceleration-model.qmd)
@@ -298,7 +298,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 |:---|---:|---:|---:|
 | **[Recruitment Speed](../appendix/research-acceleration-model.qmd)** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} patients | **[25x](../appendix/research-acceleration-model.qmd)** |
 | **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **[10x](../appendix/research-acceleration-model.qmd)** |
-| **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | {{< var dfda_large_trial_size >}} active trials | {{< var qalys_from_faster_access >}} active trials | **[20x](../appendix/research-acceleration-model.qmd)** |
+| **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **[20x](../appendix/research-acceleration-model.qmd)** |
 | **[Completion Rate](../appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **[1.6x](../appendix/research-acceleration-model.qmd)** |
 | **Funding Increase** | [$67.5B medical research](../appendix/global-government-medical-research-spending.qmd) | [$94.7B](../appendix/research-acceleration-model.qmd) ($67.5B + $27.2B) | **[1.4x](../appendix/research-acceleration-model.qmd)** |
 
@@ -317,8 +317,8 @@ This represents **[560x](../appendix/research-acceleration-model.qmd)** more com
 This represents:
 
 - From [{{< var current_completed_trials_per_year >}} completed trials/year](../appendix/research-acceleration-model.qmd) → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) (115x)
-- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → [{{< var traditional_large_trial_size >}}-{{< var dfda_drug_approvals_per_year_high >}} approvals/year](../appendix/research-acceleration-model.qmd) (20-40x)
-- From [$4{{< var traditional_large_trial_size >}} cost per patient](../appendix/recovery-trial.qmd) → [{{< var recovery_trial_cost_per_patient >}}-1,000 cost per patient](../appendix/research-acceleration-model.qmd) ([82x cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → [1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year](../appendix/research-acceleration-model.qmd) (20-40x)
+- From [$41,000 cost per patient](../appendix/recovery-trial.qmd) → [{{< var recovery_trial_cost_per_patient >}}-1,000 cost per patient](../appendix/research-acceleration-model.qmd) ([82x cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
@@ -358,7 +358,7 @@ $$
 
 <!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
 
-The World Health Organization reports [{{< var qalys_from_prevention_optimistic >}} daily deaths](../references.qmd#who-daily-deaths) from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)). This mortality burden exceeds:
+The World Health Organization reports [{{< var global_daily_deaths_curable_diseases >}} daily deaths](../references.qmd#who-daily-deaths) from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)). This mortality burden exceeds:
 
 - [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of [18,274:1](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
 
@@ -451,8 +451,8 @@ $$
 \$1.2\text{T} \div 365 \text{ days} = \$3.3\text{B/day}
 $$
 
-- **{{< var qalys_from_prevention_optimistic >}}** preventable deaths
-- **{{< var qalys_from_prevention_optimistic >}}** individuals experiencing curable disease burden
+- **{{< var global_daily_deaths_curable_diseases >}}** preventable deaths
+- **{{< var global_daily_deaths_curable_diseases >}}** individuals experiencing curable disease burden
 - **1.736 deaths per second** from addressable conditions
 
 **Annual Opportunity Cost**:
