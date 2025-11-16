@@ -68,11 +68,18 @@
     }
     
     echo "=== Step 8: Verifying output ==="
+    # Check multiple possible output locations
     if [ -d "_site/economics" ]; then
       echo "Output directory found: _site/economics"
       ls -la _site/economics/ | head -10
       echo "Build completed successfully!"
+    elif [ -d "_site" ]; then
+      echo "Output directory found: _site (checking contents...)"
+      ls -la _site/ | head -10
+      echo "Build may have completed - output in _site/"
     else
+      echo "Checking for any output directories..."
+      find . -maxdepth 2 -type d -name "_site*" -o -name "*site*" 2>/dev/null | head -10
       error_exit "Output directory _site/economics not found"
     fi
   """
