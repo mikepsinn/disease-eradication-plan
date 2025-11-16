@@ -34,7 +34,7 @@ The core of Wishocracy is a voting method so simple, even a congressman could do
 
 Your brain can't rank a list of 20 priorities. It gives up around [item number seven](../references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
 
-Instead of asking, "Rank these {{< var dfda_large_trial_size >}} problems," the system asks:
+Instead of asking, "Rank these 10,000 problems," the system asks:
 
 **"What's more important right now: Curing cancer or fixing climate change?"**
 
@@ -68,8 +68,8 @@ Once the Pairwise Smackdown tells you that "Curing Alzheimer's" is a top priorit
 1.  **AI Breaks It Down:** An AI takes the impossible goal of "Cure Alzheimer's" and breaks it down into thousands of smaller, concrete, fundable tasks. "Cure Alzheimer's" becomes "Map protein structures," which becomes "Run AlphaFold on these sequences," which becomes "Rent computing time." Every impossible problem is just a series of possible steps.
 
 2.  **The Bounty Board:** These tasks are posted to a global marketplace. It's like eBay, but for saving humanity.
-    -   **WANTED:** A cure for Alzheimer's. **BOUNTY:** {{< var alzheimer_cure_bounty_estimate_billions >}}.
-    -   **WANTED:** A map of all protein misfolding patterns. **BOUNTY:** {{< var recovery_trial_cost_per_patient >}} million.
+    -   **WANTED:** A cure for Alzheimer's. **BOUNTY:** $10 billion.
+    -   **WANTED:** A map of all protein misfolding patterns. **BOUNTY:** $500 million.
 
 3.  **The World Competes:** The best teams from around the world, from MIT to some kid in a garage, bid on these tasks. Multiple approaches are funded in parallel. The ones that show promise get more funding. The ones that fail are defunded instantly. It's venture capital, but for not dying.
 

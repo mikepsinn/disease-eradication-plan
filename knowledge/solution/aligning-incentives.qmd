@@ -52,7 +52,7 @@ For the first time in history, you can align every powerful interest group behin
 
 ### What Doctors Get
 
-- $50,000-$200,000/year additional revenue running trials
+- $50,000-200,000/year additional revenue running trials
 - One-click patient enrollment (not 1,572 pages)
 - Treat rare diseases (not just watch patients die)
 - Liability protection through DIH insurance
@@ -131,15 +131,15 @@ Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's su
 #| echo: false
 # Current Defense Contractor
 
-weapons_revenue = 100_000_000_000  # {{< var global_clinical_trial_market_annual >}}
+weapons_revenue = 100_000_000_000  # $100B
 weapons_margin = 0.08  # 8% profit margin
 weapons_profit = weapons_revenue * weapons_margin  # $8B
 
 # With VICTORY Bonds + Medical Tech
 
-bonds_investment = 1_000_000_000  # {{< var treaty_campaign_total_cost >}} investment
+bonds_investment = 1_000_000_000  # $1B investment
 bonds_return = 0.40  # 40% annual return (conservative)
-medical_tech_revenue = 10_000_000_000  # {{< var dih_treasury_trial_subsidies_min >}} new market
+medical_tech_revenue = 10_000_000_000  # $10B new market
 medical_margin = 0.15  # 15% margin (higher tech)
 total_new_profit = (bonds_investment * bonds_return) + (medical_tech_revenue * medical_margin)
 print(f"Additional profit from medical: ${total_new_profit/1e9:.1f}B")  # $1.9B
@@ -239,15 +239,15 @@ Your model (they GET PAID for trials):
 
 development_cost = 2_600_000_000  # $2.6 billion
 success_rate = 0.10  # 10% make it to market
-average_revenue = 1_000_000_000  # {{< var treaty_campaign_total_cost >}} lifetime revenue
+average_revenue = 1_000_000_000  # $1B lifetime revenue
 roi = (average_revenue - development_cost) / development_cost
 print(f"Current Pharma ROI: {roi:.1%}")  # -61.5% (LOSS!)
 
 # New DIH System
 
-development_cost_new = -50_000_000  # They GET PAID {{< var treaty_campaign_budget_reserve >}}
+development_cost_new = -50_000_000  # They GET PAID $50M
 success_rate_new = 0.60  # 60% succeed (lower bar)
-average_revenue_new = 500_000_000  # {{< var recovery_trial_cost_per_patient >}}M (smaller markets OK)
+average_revenue_new = 500_000_000  # $500M (smaller markets OK)
 roi_new = (average_revenue_new - development_cost_new) / 50_000_000
 print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 ```
@@ -262,7 +262,7 @@ print(f"New Pharma ROI: {roi_new:.1%}")  # 1,100% (MASSIVE PROFIT!)
 
 ### Pharma's New Business Model
 
-- Test their 10,000+ shelved compounds
+- Test their 10,000 shelved compounds
 - Every rare disease becomes profitable
 - Get paid to run trials instead of paying
 - 6-month approval instead of 10 years
@@ -343,7 +343,7 @@ Billionaires have everything except the one thing money can't buy: not dying. Yo
 - Beats everything in their portfolio
 
 $$
-\text{\$1.0\text{B} investment} \rightarrow \text{\$2.7\text{B} annual returns}
+\text{\$1B investment} \rightarrow \text{\$2.7B annual returns}
 $$
 
 - Compounds into dynastic wealth
