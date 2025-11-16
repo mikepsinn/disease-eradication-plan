@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Update embeddings for changed files before commit
+echo "🔄 Updating embeddings for changed files..."
+npm run vector:update || echo "⚠️  Embedding update failed, but continuing..."
+
+# Note: WISHONIA review is not run automatically on commit
+# Run manually with: npm run wishonia
+
