@@ -21,10 +21,6 @@ import os
 from dih_models.parameters import *
 ```
 
-# Disease Eradication Model - The Realistic Personal Lifetime Wealth Model
-
-## TL;DR
-
 The **Disease Eradication Model** properly accounts for 115x cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
 
 **This is the default model to use.** Conservative baselines (Evidence-Based models using antibiotic precedent) are available for skeptical audiences.
