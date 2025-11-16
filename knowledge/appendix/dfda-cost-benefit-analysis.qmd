@@ -706,7 +706,7 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
 - **Upfront Costs:**
   - Core Platform Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): [~\{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
   - Broader Initiatives (Worst Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$2.231 Billion](#scenario-based-rom-estimates-for-broader-initiative-costs)
-  - _Total Highest Upfront Cost:_ {{< var global_cost_per_conflict_death_millions >}}M + $2.231B = **~\$2.277 Billion**
+  - _Total Highest Upfront Cost:_ {{< var global_cost_per_conflict_death_millions >}} + $2.231B = **~\$2.277 Billion**
   - _Amortized over 5 years:_ [\$2.277B](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **~\$455.4 Million/year**
 
 - **Annual Operational Costs:**
@@ -1252,7 +1252,7 @@ This chart shows the dramatic return on investment for the dFDA Infrastructure, 
 This sensitivity analysis explores how the dFDA's financial viability, specifically its Return on Investment (ROI), changes under different assumptions. You test the two most critical drivers of the financial model:
 
 1. **R&D Cost Reduction %**: The actual savings achieved could be lower or higher than the 50.0% baseline. You model a range from 30% to 70%.
-2. **Annual Operational Cost**: The platform could be cheaper or more expensive to run than the estimated $40M. You model a range from {{< var lobbyist_bond_investment_max_millions >}}M to $80M.
+2. **Annual Operational Cost**: The platform could be cheaper or more expensive to run than the estimated $40M. You model a range from {{< var lobbyist_bond_investment_max_millions >}} to $80M.
 
 ```{python}
 #| echo: false
