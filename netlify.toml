@@ -1,70 +1,71 @@
 [build]
   # Build command - installs dependencies and builds the economics models site
   command = """
-    set -e  # Exit on any error
+    # Function to log and exit on error
+    error_exit() {
+      echo "ERROR: $1" >&2
+      exit 1
+    }
     
     # Verify Python is available (installed by Netlify via runtime.txt)
-    python3 --version || python --version || (echo "ERROR: Python not available" && exit 1)
+    echo "=== Step 1: Verifying Python ==="
+    python3 --version || python --version || error_exit "Python not available"
     
-    # Install Quarto if not available (plugin may have installed it, but we ensure it's there)
+    # Install Quarto if not available
+    echo "=== Step 2: Installing Quarto ==="
     if ! command -v quarto &> /dev/null; then
-      echo "Installing Quarto..."
+      echo "Quarto not found, installing..."
       QUARTO_VERSION="${QUARTO_VERSION:-1.5.57}"
-      wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
-      tar -xzf "quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
+      wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" || error_exit "Failed to download Quarto"
+      tar -xzf "quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" || error_exit "Failed to extract Quarto"
       mkdir -p /opt/buildhome/.local/bin /opt/buildhome/.local/share
-      cp -r "quarto-${QUARTO_VERSION}/bin"/* /opt/buildhome/.local/bin/
-      cp -r "quarto-${QUARTO_VERSION}/share"/* /opt/buildhome/.local/share/
+      cp -r "quarto-${QUARTO_VERSION}/bin"/* /opt/buildhome/.local/bin/ || error_exit "Failed to copy Quarto bin"
+      cp -r "quarto-${QUARTO_VERSION}/share"/* /opt/buildhome/.local/share/ || error_exit "Failed to copy Quarto share"
       export PATH="/opt/buildhome/.local/bin:$PATH"
       rm -rf "quarto-${QUARTO_VERSION}" "quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
     fi
-    
-    # Verify Quarto is available
-    quarto --version || (echo "ERROR: Quarto installation failed" && exit 1)
-    
-    # Note: Graphviz may already be available in Netlify build environment
-    # If not, diagrams using graphviz may fail, but the build will continue
+    quarto --version || error_exit "Quarto installation failed"
     
     # Install Python dependencies
-    echo "Installing Python dependencies..."
-    python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user
-    python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user
+    echo "=== Step 3: Installing Python dependencies ==="
+    python3 -m pip install --upgrade pip --user || python -m pip install --upgrade pip --user || error_exit "Failed to upgrade pip"
+    python3 -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt --user || error_exit "Failed to install Python packages"
     
-    # Install local dih_models package (if pyproject.toml exists)
+    # Install local dih_models package
+    echo "=== Step 4: Installing local package ==="
     if [ -f "pyproject.toml" ]; then
-      echo "Installing local dih_models package..."
-      python3 -m pip install -e . --user || python -m pip install -e . --user || echo "Local package installation skipped"
+      python3 -m pip install -e . --user || python -m pip install -e . --user || echo "Warning: Local package installation failed, continuing..."
     fi
     
-    # Install Jupyter kernel (required for Quarto to execute Python code)
-    echo "Installing Jupyter kernel..."
-    python3 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project" || python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+    # Install Jupyter kernel
+    echo "=== Step 5: Installing Jupyter kernel ==="
+    python3 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project" || python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project" || error_exit "Failed to install Jupyter kernel"
     
     # Install Node dependencies
-    echo "Installing Node dependencies..."
-    pnpm install
+    echo "=== Step 6: Installing Node dependencies ==="
+    pnpm install || error_exit "Failed to install Node packages"
     
-    # Build the site using Quarto
-    echo "Building site with Quarto..."
-    cp _quarto-economics.yml _quarto.yml
-    echo "Quarto config copied. Starting render with timeout..."
+    # Build the site
+    echo "=== Step 7: Building site with Quarto ==="
+    cp _quarto-economics.yml _quarto.yml || error_exit "Failed to copy Quarto config"
     
-    # Set environment variables for Quarto
-    export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" || python -c "import sys; print(sys.executable)")
+    # Set environment variables
+    export QUARTO_PYTHON=$(python3 -c "import sys; print(sys.executable)" 2>/dev/null || python -c "import sys; print(sys.executable)" 2>/dev/null || echo "python3")
     export JUPYTER_PLATFORM_DIRS=1
     
-    # Render with explicit output and error handling
-    quarto render --to html --execute || {
-      echo "Quarto render failed. Attempting without execution..."
-      quarto render --to html --no-execute || {
-        echo "Quarto render failed completely. Checking for partial output..."
-        ls -la _site/ 2>&1 || echo "No output directory found"
-        exit 1
-      }
-    }
+    # Render
+    echo "Starting Quarto render..."
+    quarto render --to html || error_exit "Quarto render failed"
     
-    echo "Quarto render completed. Checking output..."
-    ls -la _site/economics/ 2>&1 | head -20 || ls -la _site/ 2>&1 | head -20 || echo "Output directory check failed"
+    echo "=== Step 8: Verifying output ==="
+    if [ -d "_site/economics" ]; then
+      echo "Output directory found: _site/economics"
+      ls -la _site/economics/ | head -10
+    else
+      error_exit "Output directory _site/economics not found"
+    fi
+    
+    echo "=== Build completed successfully ==="
   """
 
   # Directory to publish - matches output-dir in _quarto-economics.yml
