@@ -630,3 +630,79 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
 .quarto-title-meta-abstract + .quarto-title-meta-keywords {
     display: none !important;
 }
+
+/* ==========================================
+   PARAMETER LINKS - ACADEMIC PRESTIGE
+   ========================================== */
+
+/* All parameter values - sophisticated styling */
+.parameter-link,
+.parameter-definition {
+    transition: all 0.2s ease;
+    cursor: help;
+}
+
+/* Linked parameters (external sources and calculations) */
+.parameter-link {
+    text-decoration: none;
+    position: relative;
+}
+
+.parameter-link:hover {
+    color: #0d3a6b;
+    border-bottom-color: #0d3a6b;
+    border-bottom-style: solid;
+}
+
+/* Core definitions (no external source) */
+.parameter-definition {
+    color: #2c3e50;
+    font-weight: 600;
+    cursor: default;
+}
+
+.parameter-definition:hover {
+    color: #1a1a1a;
+    border-bottom-color: #8b7355;
+    border-bottom-style: solid;
+}
+
+/* High confidence indicator (when shown inline) */
+.parameter-link[title*="✓"],
+.parameter-link[title*="High confidence"] {
+    border-bottom-color: #c7c7c7;
+}
+
+/* Peer-reviewed indicator (when shown inline) */
+.parameter-link[title*="📊"],
+.parameter-link[title*="Peer-reviewed"] {
+    font-weight: 600;
+}
+
+/* Conservative estimate styling */
+.parameter-link[title*="Conservative"],
+.parameter-definition[title*="Conservative"] {
+    font-style: normal;
+}
+
+/* Tooltip enhancement - make it more visible */
+.parameter-link[title],
+.parameter-definition[title] {
+    position: relative;
+}
+
+/* Print styles - ensure parameters are clear */
+@media print {
+    .parameter-link,
+    .parameter-definition {
+        color: #000;
+        border-bottom: none;
+        font-weight: 600;
+    }
+
+    .parameter-link::after {
+        content: " [" attr(href) "]";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}

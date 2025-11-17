@@ -98,7 +98,7 @@ Look at what they're working with:
 Show them this math:
 
 - **Current defense stock yields**: 2-3% (basically inflation)
-- **VICTORY bonds at full treaty**: 271.8%+ perpetual returns
+- **VICTORY bonds at full treaty**: {{< var victory_bond_annual_return_pct >}}+ perpetual returns
 - **With treaty expansion (2%, 5%, 10%)**: Returns scale automatically
 - **Liquidity**: Trade them anytime (unlike locked government contracts)
 - **Public image**: "We cure cancer" (instant party hero)
@@ -111,7 +111,7 @@ The pitch: "Keep making bombs AND buy bonds that pay 10X better returns. Or your
 
 - They have billions in pension obligations
 - Current portfolio returns: 6-8% (barely covers inflation)
-- Add 10% VICTORY bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at 271.8% = 33.3% blended return)
+- Add 10% VICTORY bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
 - Their retirees get paid, they get bonuses, everyone wins
 
 #### The PR Victory
@@ -325,7 +325,7 @@ Everyone can claim victory because everyone actually wins.
 
 ## Billionaires: The Easiest Marks
 
-Billionaires have everything except the one thing money can't buy: not dying. You're selling immortality with a 271.8% annual return. This is the easiest sale in history.
+Billionaires have everything except the one thing money can't buy: not dying. You're selling immortality with a {{< var victory_bond_annual_return_pct >}} annual return. This is the easiest sale in history.
 
 ### What They Really Want
 
@@ -339,7 +339,7 @@ Billionaires have everything except the one thing money can't buy: not dying. Yo
 
 #### The Investment
 
-- VICTORY bonds: 271.8%+ returns forever
+- VICTORY bonds: {{< var victory_bond_annual_return_pct >}}+ returns forever
 - Beats everything in their portfolio
 
 $$
@@ -366,7 +366,7 @@ $$
 
 1. **Mortality reminder**: "You have maybe 20 years left"
 2. **Solution offer**: "Unless you fund the cure for aging"
-3. **Investment pitch**: "271.8% returns while saving humanity"
+3. **Investment pitch**: "{{< var victory_bond_annual_return_pct >}} returns while saving humanity"
 4. **Ego stroke**: "Your name on the cure for cancer"
 5. **Close**: "Bezos already committed" (they're competitive)
 
@@ -450,7 +450,7 @@ print(f"Total annual benefit: ${total_benefit/1e6:.0f}M")
 
 |  | Others Invest | Others Don't |
 |--|--------------|--------------
-| You Invest | 40-271.8% returns | 40-271.8% returns |
+| You Invest | {{< var victory_bond_annual_return_pct >}} returns | {{< var victory_bond_annual_return_pct >}} returns |
 | You Don't | You miss profits | You miss profits |
 
 **Result**: Everyone invests, nobody dies
@@ -529,7 +529,7 @@ Adam Smith's invisible hand, but for healing instead of widgets.
 
 - Buy VICTORY bonds
 - Fund the initial campaign
-- Get 40-271.8% returns forever
+- Get {{< var victory_bond_annual_return_pct >}} returns forever
 - Die remembered as humanity's savior
 
 ### If You're Middle Class

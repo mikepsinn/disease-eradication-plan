@@ -24,28 +24,37 @@ class Parameter(float):
     A numeric parameter that works in calculations but carries source metadata.
 
     Enables clickable links from numbers to their sources (external citations)
-    or calculation methodologies (internal QMD pages).
+    or calculation methodologies (internal QMD pages). Enhanced with academic
+    credibility indicators for economist review.
 
     Args:
         value: The numeric value
         source_ref: Reference ID (for external sources) or QMD path (for calculations)
-        source_type: Either "external" (links to references.qmd) or "calculated" (links to QMD)
+        source_type: "external" (links to references.qmd), "calculated" (links to QMD), or "definition" (no link)
         description: Human-readable description for tooltips
         unit: Unit of measurement (e.g., "billions USD", "deaths/year", "percentage")
         formula: Optional plain-text formula (e.g., "A + B + C") for tooltips
         latex: Optional LaTeX formula (e.g., r"\sum_{i=1}^{5} opex_i") for rendering
+        confidence: Data quality level - "high", "medium", "low", or "estimated"
+        last_updated: Date when source data was last updated (YYYY-MM-DD or YYYY-MM)
+        peer_reviewed: Whether the source is from peer-reviewed literature
+        conservative: Whether this is a conservative estimate (vs. optimistic)
+        sensitivity: Optional uncertainty range (±value in same units)
 
     Example:
-        # External data source
+        # External data source with high confidence
         CONFLICT_DEATHS = Parameter(
             233600,
             source_ref="acled-2024",
             source_type="external",
             description="Annual deaths from active combat",
-            unit="deaths/year"
+            unit="deaths/year",
+            confidence="high",
+            last_updated="2024-01",
+            peer_reviewed=True
         )
 
-        # Calculated value with formula
+        # Calculated value with formula and uncertainty
         TOTAL_OPEX = Parameter(
             PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY,
             source_ref="knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex",
@@ -53,7 +62,19 @@ class Parameter(float):
             description="Total annual operational costs",
             unit="billions USD/year",
             formula="PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY",
-            latex=r"OPEX_{total} = \sum_{i=1}^{5} OPEX_i"
+            latex=r"OPEX_{total} = \sum_{i=1}^{5} OPEX_i",
+            confidence="medium",
+            conservative=True,
+            sensitivity=0.01
+        )
+
+        # Core definition (no external source)
+        TREATY_PCT = Parameter(
+            0.01,
+            source_ref="",
+            source_type="definition",
+            description="1% treaty reduction target",
+            unit="rate"
         )
 
     The Parameter class inherits from float, so it works in all math operations:
@@ -61,7 +82,8 @@ class Parameter(float):
         ratio = NET_BENEFIT / CONFLICT_DEATHS  # Works!
     """
 
-    def __new__(cls, value, source_ref="", source_type="external", description="", unit="", formula="", latex=""):
+    def __new__(cls, value, source_ref="", source_type="external", description="", unit="", formula="", latex="",
+                confidence="high", last_updated=None, peer_reviewed=False, conservative=False, sensitivity=None):
         instance = super().__new__(cls, value)
         instance.source_ref = source_ref
         instance.source_type = source_type
@@ -69,10 +91,15 @@ class Parameter(float):
         instance.unit = unit
         instance.formula = formula
         instance.latex = latex
+        instance.confidence = confidence
+        instance.last_updated = last_updated
+        instance.peer_reviewed = peer_reviewed
+        instance.conservative = conservative
+        instance.sensitivity = sensitivity
         return instance
 
     def __repr__(self):
-        return f"Parameter({float(self)}, source_ref='{self.source_ref}')"
+        return f"Parameter({float(self)}, source_ref='{self.source_ref}', confidence='{self.confidence}')"
 
 
 # ---
@@ -387,11 +414,11 @@ GLOBAL_ANNUAL_WAR_TOTAL_COST = Parameter(
 # Treaty parameters
 TREATY_REDUCTION_PCT = Parameter(
     0.01,
-    source_ref="/knowledge/solution/dfda.qmd#one-percent-treaty",
-    source_type="calculated",
+    source_ref="",  # Core definition - not sourced, it's what we're proposing
+    source_type="definition",
     description="1% reduction in military spending/war costs from treaty",
     unit="rate"
-)  # 1% reduction in military spending/war costs
+)  # Core treaty definition - the 1% is our proposal, not derived from external data
 
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,

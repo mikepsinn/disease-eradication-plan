@@ -290,6 +290,7 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, 'source_ref') and value.source_ref
+    is_definition = hasattr(value, 'source_type') and value.source_type == "definition"
 
     if has_source:
         # Determine link destination based on source type
@@ -305,10 +306,38 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
             href = source_ref
             link_text = "View calculation"
 
-        # Build tooltip from Parameter metadata
+        # Build tooltip from Parameter metadata with credibility indicators
         tooltip_parts = []
         if hasattr(value, 'description') and value.description:
             tooltip_parts.append(value.description)
+
+        # Add confidence level with emoji indicators
+        if hasattr(value, 'confidence') and value.confidence:
+            confidence_indicators = {
+                "high": "✓ High confidence",
+                "medium": "~ Medium confidence",
+                "low": "? Low confidence",
+                "estimated": "≈ Estimated"
+            }
+            tooltip_parts.append(confidence_indicators.get(value.confidence, value.confidence))
+
+        # Show if peer-reviewed (prestigious!)
+        if hasattr(value, 'peer_reviewed') and value.peer_reviewed:
+            tooltip_parts.append("📊 Peer-reviewed")
+
+        # Show if conservative estimate
+        if hasattr(value, 'conservative') and value.conservative:
+            tooltip_parts.append("Conservative estimate")
+
+        # Show sensitivity/uncertainty range
+        if hasattr(value, 'sensitivity') and value.sensitivity:
+            sensitivity_str = format_parameter_value(value.sensitivity, unit)
+            tooltip_parts.append(f"±{sensitivity_str}")
+
+        # Show last updated date
+        if hasattr(value, 'last_updated') and value.last_updated:
+            tooltip_parts.append(f"Updated: {value.last_updated}")
+
         if hasattr(value, 'formula') and value.formula:
             tooltip_parts.append(f"Formula: {value.formula}")
         if hasattr(value, 'unit') and value.unit:
@@ -319,6 +348,18 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
 
         # Generate clickable link
         html = f'<a href="{href}" class="parameter-link" title="{tooltip}">{formatted_value}</a>'
+    elif is_definition:
+        # Core definition: show value with tooltip but no link
+        tooltip_parts = []
+        if hasattr(value, 'description') and value.description:
+            tooltip_parts.append(value.description)
+        if hasattr(value, 'unit') and value.unit:
+            tooltip_parts.append(f"Unit: {value.unit}")
+        tooltip_parts.append("Core definition")
+
+        tooltip = " | ".join(tooltip_parts)
+
+        html = f'<span class="parameter-definition" title="{tooltip}">{formatted_value}</span>'
     else:
         # Fallback: no source metadata, use span with basic tooltip
         tooltip_parts = [f"parameters.{param_name}"]

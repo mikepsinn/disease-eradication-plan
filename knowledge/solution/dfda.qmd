@@ -25,7 +25,7 @@ Out of 2.4 billion people with chronic disease, [only 5 million participate in t
 
 [Half of humanity would volunteer](../references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
 
-This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost [$41,000 per patient](../references.qmd#trial-cost-41k), require traveling to major medical centers, and have exclusion criteria that reject [85% of actual patients](../references.qmd#clinical-trial-exclusions).
+This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost [{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient](../references.qmd#trial-cost-41k), require traveling to major medical centers, and have exclusion criteria that reject [85% of actual patients](../references.qmd#clinical-trial-exclusions).
 
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 
@@ -392,8 +392,8 @@ During COVID, while America was filling out forms, Oxford University did somethi
 
 Cost per patient:
 
-- Normal clinical trials: [$41,000](../references.qmd#trial-cost-41k)
-- Oxford pragmatic trials: [$500](../references.qmd#recovery-cost-500)
+- Normal clinical trials: [{{< var traditional_phase3_cost_per_patient_fda_example_41k >}}](../references.qmd#trial-cost-41k)
+- Oxford pragmatic trials: [{{< var recovery_trial_cost_per_patient >}}](../references.qmd#recovery-cost-500)
 
 That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
 
@@ -557,7 +557,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 
 The dFDA achieves [**82x More Efficiency**](../references.qmd#recovery-trial-82x-cost-reduction) through:
 
-- **Cost per patient**: $500 vs the current $41,000
+- **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - **Time to results**: 2 years vs the current 17 years
 - **Patient access**: Universal access vs [85% excluded](../references.qmd#clinical-trial-patient-participation-rate) currently
 
