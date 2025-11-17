@@ -705,9 +705,9 @@ For humans who peaked at counting on fingers:
 
 - **You spend**: Zero new dollars (you just move existing dollars from the "making corpses" column to the "preventing corpses" column)
 - **You get back**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually
-- **Operating costs**: [{{< var treaty_total_annual_costs >}}/year](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd) (less than a single fighter jet)
-- **Lives saved**: [{{< var treaty_total_lives_saved_annual >}}/year](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd)
-- **Per life saved**: Society makes [{{< var system_profit_per_life_saved_millions >}}](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd) profit
+- **Operating costs**: {{< var treaty_total_annual_costs >}}/year (less than a single fighter jet)
+- **Lives saved**: {{< var treaty_total_lives_saved_annual >}}/year
+- **Per life saved**: Society makes {{< var system_profit_per_life_saved_millions >}} profit
 
 Math says this is the best possible use of a billion dollars.
 
