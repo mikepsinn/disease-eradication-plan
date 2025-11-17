@@ -113,19 +113,29 @@ class BookChatWidget {
     const loadingId = this.addMessage("assistant", "Thinking...");
 
     try {
+      // VoltAgent chat endpoint expects messages array with role and content
+      // Also accepts optional userId and conversationId
+      const requestBody: any = {
+        messages: this.messages.map((m) => ({
+          role: m.role,
+          content: m.content,
+        })),
+      };
+
+      // Add userId and conversationId if available
+      if (this.userId) {
+        requestBody.userId = this.userId;
+      }
+      if (this.conversationId) {
+        requestBody.conversationId = this.conversationId;
+      }
+
       const response = await fetch(`${this.apiUrl}/agents/bookChat/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          messages: this.messages.map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
-          conversationId: this.conversationId,
-          userId: this.userId,
-        }),
+        body: JSON.stringify(requestBody),
       });
 
       if (!response.ok) {
