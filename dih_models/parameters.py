@@ -422,8 +422,8 @@ TREATY_REDUCTION_PCT = Parameter(
 
 TREATY_ANNUAL_FUNDING = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * TREATY_REDUCTION_PCT,
-    source_ref="/knowledge/solution/dfda.qmd#one-percent-treaty",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Annual funding from 1% of global military spending redirected to DIH",
     unit="billions USD/year",
     formula="MILITARY_SPENDING × 1%",
@@ -574,8 +574,8 @@ GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
 
 TRIAL_COST_REDUCTION_PCT = Parameter(
     0.50,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Trial cost reduction percentage (50% baseline, conservative)",
     unit="rate"
 )  # 50% baseline reduction (conservative)
@@ -770,24 +770,24 @@ DFDA_LARGE_TRIAL_RECRUITMENT_MONTHS = Parameter(
 
 DFDA_TRIAL_ABANDONMENT_RATE = Parameter(
     0.05,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="dFDA trial abandonment rate (5%)",
     unit="rate"
 )  # Near-zero abandonment (5%)
 
 DFDA_TRIAL_COMPLETION_RATE = Parameter(
     0.95,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="dFDA trial completion rate (95%)",
     unit="rate"
 )  # 95% completion rate
 
 DFDA_PATIENT_ELIGIBILITY_RATE = Parameter(
     0.50,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#eligibility",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="dFDA patient eligibility rate (50% of disease patients can participate)",
     unit="rate"
 )  # 50% of disease patients can participate
@@ -1627,16 +1627,16 @@ ROI_ALL_DIRECT_BENEFITS = Parameter(
 # Source: brain/book/appendix/dfda-calculation-framework.qmd
 NPV_DISCOUNT_RATE_STANDARD = Parameter(
     0.08,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Standard discount rate for NPV analysis (8% annual)",
     unit="rate"
 )  # 8% annual discount rate (r)
 
 NPV_TIME_HORIZON_YEARS = Parameter(
     10,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Standard time horizon for NPV analysis",
     unit="years"
 )  # Standard 10-year analysis window (T)
@@ -1744,15 +1744,15 @@ DFDA_NPV_NET_BENEFIT_CONSERVATIVE = Parameter(
 # Source: brain/book/economics/victory-bonds.qmd
 VICTORY_BOND_FUNDING_PCT = Parameter(
     0.10,
-    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Percentage of captured dividend funding VICTORY bonds (10%)",
     unit="rate"
 )  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
-    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Annual VICTORY bond payout (treaty funding × bond percentage)",
     unit="billions USD/year",
     formula="TREATY_FUNDING × BOND_PCT",
@@ -1760,8 +1760,8 @@ VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
 )  # $2.718B
 VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
-    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Annual return percentage for VICTORY bondholders",
     unit="rate",
     formula="PAYOUT ÷ CAMPAIGN_COST",
@@ -1769,8 +1769,8 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
 )  # 271.8% (reported as 270%)
 VICTORY_BOND_PAYBACK_MONTHS = Parameter(
     12 / VICTORY_BOND_ANNUAL_RETURN_PCT,
-    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Months to full payback for VICTORY bondholders",
     unit="months",
     formula="12 ÷ RETURN_PCT",
@@ -1791,8 +1791,8 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
 # Aliases removed - use TREATY_ANNUAL_FUNDING, VICTORY_BOND_ANNUAL_PAYOUT, DFDA_ANNUAL_OPEX directly
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT = Parameter(
     1 - VICTORY_BOND_FUNDING_PCT,
-    source_ref="/knowledge/strategy/roadmap.qmd#treasury-allocation",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Percentage of treaty funding going to medical research (remainder after bonds)",
     unit="rate",
     formula="1 - BOND_PCT",
@@ -1800,8 +1800,8 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT = Parameter(
 ) # 90%
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT,
-    source_ref="/knowledge/strategy/roadmap.qmd#treasury-allocation",
-    source_type="calculated",
+    source_ref="",
+    source_type="definition",
     description="Annual funding for medical research (treaty funding minus bond payouts)",
     unit="billions USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT",

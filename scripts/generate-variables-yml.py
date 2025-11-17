@@ -263,7 +263,20 @@ def format_parameter_value(value: float, unit: str = "") -> str:
 
     # Add percentage formatting if applicable
     if is_percentage:
-        return f"{formatted_num}%"
+        # Convert ratio to percentage (e.g., 2.718 → 272%)
+        pct_value = value * 100
+
+        # Format with appropriate precision
+        if abs(pct_value) >= 100:
+            pct_formatted = f"{pct_value:.0f}"  # e.g., "272%"
+        elif abs(pct_value) >= 10:
+            pct_formatted = clean_number(f"{pct_value:.1f}")  # e.g., "27.2%"
+        elif abs(pct_value) >= 1:
+            pct_formatted = clean_number(f"{pct_value:.2f}")  # e.g., "2.72%"
+        else:
+            pct_formatted = clean_number(f"{pct_value:.3g}")  # e.g., "0.272%"
+
+        return f"{pct_formatted}%"
 
     # Default: just the formatted number
     return formatted_num

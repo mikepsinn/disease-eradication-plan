@@ -667,12 +667,6 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
     border-bottom-style: solid;
 }
 
-/* High confidence indicator (when shown inline) */
-.parameter-link[title*="✓"],
-.parameter-link[title*="High confidence"] {
-    border-bottom-color: #c7c7c7;
-}
-
 /* Peer-reviewed indicator (when shown inline) */
 .parameter-link[title*="📊"],
 .parameter-link[title*="Peer-reviewed"] {

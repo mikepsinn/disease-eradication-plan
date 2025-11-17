@@ -36,7 +36,7 @@
   >10</a>"
 "average_market_return_pct": "<a href=\"/knowledge/references.qmd#average-stock-market-return\"\
   \ class=\"parameter-link\" title=\"Average annual stock market return (10%) | ✓\
-  \ High confidence | Unit: rate | Click to view source\">0.1%</a>"
+  \ High confidence | Unit: rate | Click to view source\">10%</a>"
 "average_us_hourly_wage": "<a href=\"/knowledge/references.qmd#average-us-hourly-wage\"\
   \ class=\"parameter-link\" title=\"Average US hourly wage | ✓ High confidence |\
   \ Unit: USD/hour | Click to view source\">$30</a>"
@@ -232,16 +232,16 @@
   \ ✓ High confidence | Unit: drugs/year | Click to view source\">50</a>"
 "current_patient_eligibility_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-eligibility-rate\"\
   \ class=\"parameter-link\" title=\"Current patient eligibility rate for clinical\
-  \ trials (0.2%) | ✓ High confidence | Unit: rate | Click to view source\">0.002%</a>"
+  \ trials (0.2%) | ✓ High confidence | Unit: rate | Click to view source\">0.2%</a>"
 "current_trials_per_year": "<a href=\"/knowledge/references.qmd#global-clinical-trials-per-year\"\
   \ class=\"parameter-link\" title=\"Current global clinical trials per year | ✓ High\
   \ confidence | Unit: trials/year | Click to view source\">3,300</a>"
 "current_trial_abandonment_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-abandonment-rate\"\
   \ class=\"parameter-link\" title=\"Current trial abandonment rate (40% never complete)\
-  \ | ✓ High confidence | Unit: rate | Click to view source\">0.4%</a>"
+  \ | ✓ High confidence | Unit: rate | Click to view source\">40%</a>"
 "current_trial_completion_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-completion-rate\"\
   \ class=\"parameter-link\" title=\"Current trial completion rate (60%) | ✓ High\
-  \ confidence | Unit: rate | Click to view source\">0.6%</a>"
+  \ confidence | Unit: rate | Click to view source\">60%</a>"
 "current_trial_slots_available": "<a href=\"/knowledge/references.qmd#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" title=\"Total trial slots available for 2.4B sick people\
   \ | ✓ High confidence | Unit: slots | Click to view source\">5,000,000</a>"
@@ -345,10 +345,9 @@
 "dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA staff costs (minimal, AI-assisted) | ✓ High\
   \ confidence | Unit: billions USD/year | Click to view calculation\">$10M</a>"
-"dfda_patient_eligibility_rate": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#eligibility\"\
-  \ class=\"parameter-link\" title=\"dFDA patient eligibility rate (50% of disease\
-  \ patients can participate) | ✓ High confidence | Unit: rate | Click to view calculation\"\
-  >0.5%</a>"
+"dfda_patient_eligibility_rate": "<span class=\"parameter-definition\" title=\"dFDA\
+  \ patient eligibility rate (50% of disease patients can participate) | Unit: rate\
+  \ | Core definition\">50%</span>"
 "dfda_qalys_monetized": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#monetized-value\"\
   \ class=\"parameter-link\" title=\"Monetized value of dFDA QALYs (QALYs × economic\
   \ value) | ✓ High confidence | Formula: QALYS × VALUE_PER_QALY ÷ 1B | Unit: billions\
@@ -373,12 +372,10 @@
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"Maximum trials per year possible with 115x acceleration\
   \ | ✓ High confidence | Unit: trials/year | Click to view calculation\">380,000</a>"
-"dfda_trial_abandonment_rate": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
-  \ class=\"parameter-link\" title=\"dFDA trial abandonment rate (5%) | ✓ High confidence\
-  \ | Unit: rate | Click to view calculation\">0.05%</a>"
-"dfda_trial_completion_rate": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
-  \ class=\"parameter-link\" title=\"dFDA trial completion rate (95%) | ✓ High confidence\
-  \ | Unit: rate | Click to view calculation\">0.95%</a>"
+"dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
+  \ trial abandonment rate (5%) | Unit: rate | Core definition\">5%</span>"
+"dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
+  \ completion rate (95%) | Unit: rate | Core definition\">95%</span>"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost (central estimate)\
   \ | ✓ High confidence | Unit: billions USD | Click to view calculation\">$40M</a>"
@@ -400,14 +397,12 @@
 "dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives upfront cost (medium\
   \ case) | ✓ High confidence | Unit: billions USD | Click to view calculation\">$230M</a>"
-"dih_treasury_to_medical_research_annual": "<a href=\"/knowledge/strategy/roadmap.qmd#treasury-allocation\"\
-  \ class=\"parameter-link\" title=\"Annual funding for medical research (treaty funding\
-  \ minus bond payouts) | ✓ High confidence | Formula: TREATY_FUNDING - BOND_PAYOUT\
-  \ | Unit: billions USD/year | Click to view calculation\">$24.5B</a>"
-"dih_treasury_to_medical_research_annual_pct": "<a href=\"/knowledge/strategy/roadmap.qmd#treasury-allocation\"\
-  \ class=\"parameter-link\" title=\"Percentage of treaty funding going to medical\
-  \ research (remainder after bonds) | ✓ High confidence | Formula: 1 - BOND_PCT |\
-  \ Unit: rate | Click to view calculation\">0.9%</a>"
+"dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
+  Annual funding for medical research (treaty funding minus bond payouts) | Unit:\
+  \ billions USD/year | Core definition\">$24.5B</span>"
+"dih_treasury_to_medical_research_annual_pct": "<span class=\"parameter-definition\"\
+  \ title=\"Percentage of treaty funding going to medical research (remainder after\
+  \ bonds) | Unit: rate | Core definition\">90%</span>"
 "dih_treasury_trial_subsidies_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
   \ class=\"parameter-link\" title=\"Maximum annual clinical trial subsidies from\
   \ DIH Treasury | ✓ High confidence | Unit: billions USD/year | Click to view calculation\"\
@@ -419,7 +414,7 @@
 "disease_related_caregiver_pct": "<a href=\"/disease-related-caregiving-estimate\"\
   \ class=\"parameter-link\" title=\"Percentage of caregiving for treatable disease\
   \ conditions (vs aging, disability, children) | ✓ High confidence | Unit: rate |\
-  \ Click to view calculation\">0.4%</a>"
+  \ Click to view calculation\">40%</a>"
 "dividend_coverage_factor": "<a href=\"/knowledge/strategy/roadmap.qmd#sustainability\"\
   \ class=\"parameter-link\" title=\"Coverage factor of treaty funding vs dFDA opex\
   \ (sustainability margin) | ✓ High confidence | Formula: TREATY_FUNDING ÷ DFDA_OPEX\
@@ -666,7 +661,7 @@
   \ | Unit: billions of people | Click to view source\">8</a>"
 "global_population_activism_threshold_pct": "<a href=\"/knowledge/references.qmd#3-5-percent-rule-social-change\"\
   \ class=\"parameter-link\" title=\"Critical mass threshold for social change (3.5%\
-  \ rule) | ✓ High confidence | Unit: rate | Click to view source\">0.035%</a>"
+  \ rule) | ✓ High confidence | Unit: rate | Click to view source\">3.5%</a>"
 "global_poverty_eradication_cost_total": "<a href=\"/knowledge/references.qmd#world-bank-poverty-eradication\"\
   \ class=\"parameter-link\" title=\"Total cost to eradicate global poverty | ✓ High\
   \ confidence | Unit: billions USD | Click to view source\">$1.00T</a>"
@@ -772,12 +767,10 @@
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | ✓ High confidence | Formula: ICER × QALYS_PER_LIFE | Unit: millions USD/life\
   \ | Click to view calculation\">$-6.17K</a>"
-"npv_discount_rate_standard": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters\"\
-  \ class=\"parameter-link\" title=\"Standard discount rate for NPV analysis (8% annual)\
-  \ | ✓ High confidence | Unit: rate | Click to view calculation\">0.08%</a>"
-"npv_time_horizon_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-parameters\"\
-  \ class=\"parameter-link\" title=\"Standard time horizon for NPV analysis | ✓ High\
-  \ confidence | Unit: years | Click to view calculation\">10</a>"
+"npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
+  \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
+"npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
+  \ horizon for NPV analysis | Unit: years | Core definition\">10</span>"
 "optimistic_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic scenario ROI (net benefit ÷ total\
   \ costs) | ✓ High confidence | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio\
@@ -795,10 +788,10 @@
 "partial_success_investor_roi": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Investor ROI in partial success scenario | ✓\
   \ High confidence | Formula: PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to view\
-  \ calculation\">1.36%</a>"
+  \ calculation\">136%</a>"
 "partial_success_military_spending_share": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Military spending share for partial success scenario\
-  \ (US, EU, UK) | ✓ High confidence | Unit: rate | Click to view calculation\">0.5%</a>"
+  \ (US, EU, UK) | ✓ High confidence | Unit: rate | Click to view calculation\">50%</a>"
 "partial_success_research_funding": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Research funding in partial success scenario\
   \ | ✓ High confidence | Formula: REVENUE × RESEARCH_PCT | Unit: billions USD/year\
@@ -904,7 +897,7 @@
   \ | Unit: millions USD/trial | Click to view source\">$20M</a>"
 "post_ww2_military_cut_pct": "<a href=\"/knowledge/references.qmd#post-ww2-military-demobilization\"\
   \ class=\"parameter-link\" title=\"Percentage military spending cut after WW2 (historical\
-  \ precedent) | ✓ High confidence | Unit: rate | Click to view source\">0.3%</a>"
+  \ precedent) | ✓ High confidence | Unit: rate | Click to view source\">30%</a>"
 "productivity_loss_per_affected_employee": "<a href=\"/knowledge/references.qmd#chronic-illness-productivity-loss-ibi\"\
   \ class=\"parameter-link\" title=\"Annual productivity loss per affected employee\
   \ (IBI 2024) | ✓ High confidence | Unit: USD/year | Click to view source\">$4.80K</a>"
@@ -1093,7 +1086,7 @@
   \ High confidence | Unit: USD/person/year | Click to view source\">$10</a>"
 "switzerland_defense_spending_pct": "<a href=\"/knowledge/references.qmd#switzerland-defense-spending-gdp\"\
   \ class=\"parameter-link\" title=\"Switzerland's defense spending as percentage\
-  \ of GDP (0.7%) | ✓ High confidence | Unit: rate | Click to view source\">0.007%</a>"
+  \ of GDP (0.7%) | ✓ High confidence | Unit: rate | Click to view source\">0.7%</a>"
 "switzerland_gdp_per_capita_k": "<a href=\"/knowledge/references.qmd#switzerland-gdp-per-capita\"\
   \ class=\"parameter-link\" title=\"Switzerland GDP per capita | ✓ High confidence\
   \ | Unit: thousands USD | Click to view source\">$93K</a>"
@@ -1153,10 +1146,9 @@
 "treatment_acceleration_years_target": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#target-timeline\"\
   \ class=\"parameter-link\" title=\"Target years to market with dFDA | ✓ High confidence\
   \ | Unit: years | Click to view calculation\">2</a>"
-"treaty_annual_funding": "<a href=\"/knowledge/solution/dfda.qmd#one-percent-treaty\"\
-  \ class=\"parameter-link\" title=\"Annual funding from 1% of global military spending\
-  \ redirected to DIH | ✓ High confidence | Formula: MILITARY_SPENDING × 1% | Unit:\
-  \ billions USD/year | Click to view calculation\">$27.2B</a>"
+"treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
+  \ from 1% of global military spending redirected to DIH | Unit: billions USD/year\
+  \ | Core definition\">$27.2B</span>"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#vaccine-comparison\"\
   \ class=\"parameter-link\" title=\"Treaty system benefit multiplier vs childhood\
   \ vaccination programs (10x) | ✓ High confidence | Unit: ratio | Click to view calculation\"\
@@ -1224,7 +1216,7 @@
   \ saved × QALYs/life) | ✓ High confidence | Formula: LIVES_SAVED × QALYS_PER_LIFE\
   \ | Unit: QALYs/year | Click to view calculation\">85,610</a>"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
-  \ in military spending/war costs from treaty | Unit: rate | Core definition\">0.01%</span>"
+  \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
 "treaty_total_annual_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits\"\
   \ class=\"parameter-link\" title=\"Total annual benefits (peace dividend + dFDA\
   \ savings) | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_SAVINGS | Unit:\
@@ -1247,9 +1239,9 @@
 "trial_cost_reduction_factor": "<a href=\"/knowledge/references.qmd#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" title=\"Cost reduction factor demonstrated by RECOVERY\
   \ trial | ✓ High confidence | Unit: ratio | Click to view source\">82</a>"
-"trial_cost_reduction_pct": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
-  \ class=\"parameter-link\" title=\"Trial cost reduction percentage (50% baseline,\
-  \ conservative) | ✓ High confidence | Unit: rate | Click to view calculation\">0.5%</a>"
+"trial_cost_reduction_pct": "<span class=\"parameter-definition\" title=\"Trial cost\
+  \ reduction percentage (50% baseline, conservative) | Unit: rate | Core definition\"\
+  >50%</span>"
 "typical_ceo_hourly_rate": "<a href=\"/knowledge/references.qmd#ceo-compensation\"\
   \ class=\"parameter-link\" title=\"Typical CEO hourly rate | ✓ High confidence |\
   \ Unit: USD/hour | Click to view source\">$10K</a>"
@@ -1274,24 +1266,19 @@
 "value_of_statistical_life": "<a href=\"/knowledge/references.qmd#dot-vsl-13-6m\"\
   \ class=\"parameter-link\" title=\"Value of Statistical Life (conservative estimate)\
   \ | ✓ High confidence | Unit: USD | Click to view source\">$10M</a>"
-"victory_bond_annual_payout": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ class=\"parameter-link\" title=\"Annual VICTORY bond payout (treaty funding ×\
-  \ bond percentage) | ✓ High confidence | Formula: TREATY_FUNDING × BOND_PCT | Unit:\
-  \ billions USD/year | Click to view calculation\">$2.72B</a>"
-"victory_bond_annual_return_pct": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ class=\"parameter-link\" title=\"Annual return percentage for VICTORY bondholders\
-  \ | ✓ High confidence | Formula: PAYOUT ÷ CAMPAIGN_COST | Unit: rate | Click to\
-  \ view calculation\">2.72%</a>"
-"victory_bond_funding_pct": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ class=\"parameter-link\" title=\"Percentage of captured dividend funding VICTORY\
-  \ bonds (10%) | ✓ High confidence | Unit: rate | Click to view calculation\">0.1%</a>"
+"victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
+  \ VICTORY bond payout (treaty funding × bond percentage) | Unit: billions USD/year\
+  \ | Core definition\">$2.72B</span>"
+"victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
+  \ return percentage for VICTORY bondholders | Unit: rate | Core definition\">272%</span>"
+"victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
+  \ of captured dividend funding VICTORY bonds (10%) | Unit: rate | Core definition\"\
+  >10%</span>"
 "victory_bond_investment_unit_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"VICTORY bond investment unit for retail investors\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$1.00K</a>"
-"victory_bond_payback_months": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ class=\"parameter-link\" title=\"Months to full payback for VICTORY bondholders\
-  \ | ✓ High confidence | Formula: 12 ÷ RETURN_PCT | Unit: months | Click to view\
-  \ calculation\">4.42</a>"
+"victory_bond_payback_months": "<span class=\"parameter-definition\" title=\"Months\
+  \ to full payback for VICTORY bondholders | Unit: months | Core definition\">4.42</span>"
 "victory_bond_payout_per_unit_usd_annual": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"Annual payout per $1,000 VICTORY bond investment\
   \ unit | ✓ High confidence | Formula: (ANNUAL_PAYOUT ÷ CAMPAIGN_COST) × UNIT | Unit:\
@@ -1310,11 +1297,11 @@
   \ High confidence | Unit: USD | Click to view calculation\">$1.00M</a>"
 "workforce_chronic_illness_prevalence": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Workforce with at least one chronic condition\
-  \ (78.4%) | ✓ High confidence | Unit: rate | Click to view source\">0.784%</a>"
+  \ (78.4%) | ✓ High confidence | Unit: rate | Click to view source\">78.4%</a>"
 "workforce_with_productivity_loss": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Percentage of workforce experiencing productivity\
   \ loss from chronic illness (28%) | ✓ High confidence | Unit: rate | Click to view\
-  \ source\">0.28%</a>"
+  \ source\">28%</a>"
 "ww2_bond_return_pct": "<a href=\"/knowledge/references.qmd#ww2-war-bonds-return\"\
   \ class=\"parameter-link\" title=\"World War II war bond return percentage (4%)\
-  \ | ✓ High confidence | Unit: rate | Click to view source\">0.04%</a>"
+  \ | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
