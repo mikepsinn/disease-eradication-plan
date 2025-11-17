@@ -55,7 +55,7 @@ def main():
     print("[*] Rendering PDF with validation...")
     cmd = [
         sys.executable,
-        'tools/render_pdf.py',
+        'scripts/render_pdf.py',
         '--command', 'quarto render --to pdf'
     ]
     if args.quarto_args:
