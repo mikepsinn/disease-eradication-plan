@@ -686,8 +686,9 @@
   >$-157K</a>"
 "icer_per_qaly": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
   \ class=\"parameter-link\" title=\"Incremental Cost-Effectiveness Ratio (ICER) per\
-  \ QALY gained | ✓ High confidence | Unit: USD/QALY | Click to view calculation\"\
-  >$-0</a>"
+  \ QALY gained | ✓ High confidence | Formula: (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS)\
+  \ × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
+  >$-176K</a>"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "institutional_investor_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
@@ -762,11 +763,11 @@
 "multiplier_vs_givewell": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ class=\"parameter-link\" title=\"Cost-effectiveness multiplier vs GiveWell top\
   \ charities | ✓ High confidence | Formula: ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST\
-  \ | Unit: ratio | Click to view calculation\">0.00137</a>"
+  \ | Unit: ratio | Click to view calculation\">1,371,860</a>"
 "net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: millions USD/life\
-  \ | Click to view calculation\">$-0</a>"
+  \ | Click to view calculation\">$-6.17M</a>"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
