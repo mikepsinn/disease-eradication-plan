@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { google } from "@ai-sdk/google";
 import { Agent, VoltAgent, Memory } from "@voltagent/core";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
@@ -13,7 +14,7 @@ import { BookVectorStore } from "../tools/vector/vector-store";
 // Create logger
 const logger = createPinoLogger({
   name: "decentralized-institutes-of-health",
-  level: process.env.LOG_LEVEL || "info",
+  level: process.env.LOG_LEVEL as any,  // fix type error, allow string or undefined
 });
 
 // Create Memory instance with vector support for semantic search and working memory
