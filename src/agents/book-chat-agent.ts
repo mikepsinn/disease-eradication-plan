@@ -2,7 +2,7 @@ import { Agent, Memory, BaseRetriever, type BaseMessage, type RetrieveOptions } 
 import { google } from "@ai-sdk/google";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
 import { AiSdkEmbeddingAdapter, InMemoryVectorAdapter } from "@voltagent/core";
-import { BookVectorStore } from "../../tools/vector/vector-store";
+import { BookVectorStore } from "../../scripts/vector/vector-store";
 
 /**
  * Book Retriever - extends BaseRetriever for proper VoltAgent integration

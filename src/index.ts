@@ -9,8 +9,8 @@ import {
   InMemoryVectorAdapter,
 } from "@voltagent/core";
 import { createBookChatAgent } from "./agents/book-chat-agent";
-import { BookVectorStore } from "../tools/vector/vector-store";
-import { ensurePortAvailable } from "../tools/lib/port-checker";
+import { BookVectorStore } from "../scripts/vector/vector-store";
+import { ensurePortAvailable } from "../scripts/lib/port-checker";
 
 // Create logger
 const logger = createPinoLogger({

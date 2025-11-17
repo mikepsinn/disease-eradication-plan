@@ -15,12 +15,12 @@ import {
   createClaimValidatorAgent,
   createReferenceLinkerAgent,
   createConsistencyCheckerAgent,
-} from "./sub-agents";
+} from "../../scripts/agents/sub-agents";
 import { EnhancedTodoManager } from "./todo-manager-enhanced";
-import { createFileReviewWorkflow } from "./workflows/file-review-workflow";
-import { getStaleFilesForWishonia, updateFileHash } from "../lib/hash-utils";
-import { getBodyHash } from "../lib/file-utils";
-import { HASH_FIELDS } from "../lib/constants";
+import { createFileReviewWorkflow } from "../../scripts/agents/workflows/file-review-workflow";
+import { getStaleFilesForWishonia, updateFileHash } from "../../scripts/lib/hash-utils";
+import { getBodyHash } from "../../scripts/lib/file-utils";
+import { HASH_FIELDS } from "../../scripts/lib/constants";
 import { glob } from "glob";
 
 // Create logger
