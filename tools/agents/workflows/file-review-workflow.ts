@@ -46,13 +46,19 @@ export function createFileReviewWorkflow(
     input: FileReviewInput,
     result: FileReviewResult,
   })
-    .andThen("load-file", async ({ filePath }) => {
-      const content = await readFile(filePath, "utf-8");
-      return { filePath, content };
+    .andThen({
+      id: "load-file",
+      execute: async ({ data }) => {
+        const { filePath } = data as { filePath: string };
+        const content = await readFile(filePath, "utf-8");
+        return { filePath, content };
+      },
     })
-    .andAgent("review-file", {
-      agent: supervisor,
-      prompt: ({ filePath, content }) => `Review this file for issues: ${filePath}
+    .andThen({
+      id: "review-file",
+      execute: async ({ data }) => {
+        const { filePath, content } = data as { filePath: string; content: string };
+        const prompt = `Review this file for issues: ${filePath}
 
 Content:
 \`\`\`
@@ -86,8 +92,9 @@ Return a JSON object with this exact structure:
       "confidence": 0.9
     }
   ]
-}`,
-      schema: z.object({
+}`;
+
+      const issuesSchema = z.object({
         issues: z.array(
           z.object({
             type: z.enum([
@@ -104,11 +111,25 @@ Return a JSON object with this exact structure:
             confidence: z.number().min(0).max(1).optional(),
           })
         ),
-      }),
+      });
+
+      console.log("Calling supervisor.generateObject()...");
+      const result = await supervisor.generateObject(prompt, issuesSchema);
+
+      console.log("Got result from agent:", JSON.stringify(result.object, null, 2));
+
+      return {
+        filePath,
+        content,
+        issues: result.object.issues,
+      };
+      },
     })
-    .andThen("add-todos", async (context) => {
-      console.log("add-todos step received context:", JSON.stringify(context, null, 2));
-      const { filePath, issues } = context as any;
+    .andThen({
+      id: "add-todos",
+      execute: async ({ data }) => {
+        console.log("add-todos step received data:", JSON.stringify(data, null, 2));
+        const { filePath, issues } = data as any;
 
       // Add each issue as a todo
       for (const issue of issues) {
@@ -137,10 +158,11 @@ Return a JSON object with this exact structure:
         todoManager.addTodo(todo);
       }
 
-      return {
-        filePath,
-        issues,
-        totalIssues: issues.length,
-      };
+        return {
+          filePath,
+          issues,
+          totalIssues: issues.length,
+        };
+      },
     });
 }

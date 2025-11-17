@@ -48,7 +48,7 @@ const consistencyCheckerAgent = createConsistencyCheckerAgent(memory);
 // Create WISHONIA supervisor agent
 const wishoniaSupervisor = new Agent({
   name: "WISHONIA Supervisor",
-  instructions: `You are WISHONIA, a superintelligent AI economist agent. 
+  instructions: `You are WISHONIA, a superintelligent AI economist agent.
 Your mission is to systematically perfect the book by:
 1. Finding hardcoded numbers that should use parameters
 2. Identifying mathematical and logical errors
@@ -69,7 +69,7 @@ Guidelines:
 - Use parallel processing for efficiency
 - Track all changes with frontmatter hashes
 - Be thorough and systematic`,
-  model: google("gemini-2.5-pro"),
+  model: google("gemini-2.5-flash"),
   memory,
   subAgents: [
     parameterCheckerAgent,

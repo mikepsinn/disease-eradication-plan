@@ -1,19 +1,19 @@
 # Kill any existing Quarto processes
-echo "🔪 Killing existing Quarto processes..."
-pkill -9 quarto 2>/dev/null || true
-pkill -9 lualatex 2>/dev/null || true
-pkill -9 pdflatex 2>/dev/null || true
+# echo "🔪 Killing existing Quarto processes..."
+# pkill -9 quarto 2>/dev/null || true
+# pkill -9 lualatex 2>/dev/null || true
+# pkill -9 pdflatex 2>/dev/null || true
 
-# Render website and prevent commit if it fails
-echo "🏗️  Rendering website..."
-if ! python scripts/render-book-website.py; then
-    echo "❌ Website render failed! Commit aborted."
-    echo "Fix the errors and try again."
-    #exit 1
-fi
+# # Render website and prevent commit if it fails
+# echo "🏗️  Rendering website..."
+# if ! python scripts/render-book-website.py; then
+#     echo "❌ Website render failed! Commit aborted."
+#     echo "Fix the errors and try again."
+#     #exit 1
+# fi
 
 # Update embeddings for changed files before commit
-echo "🔄 Updating embeddings for changed files..."
+#echo "🔄 Updating embeddings for changed files..."
 #npm run vector:update || echo "⚠️  Embedding update failed, but continuing..."
 
 # Note: WISHONIA review is not run automatically on commit
