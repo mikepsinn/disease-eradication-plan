@@ -526,6 +526,39 @@ def check_include_directives(content: str, filepath: str):
                 ))
 
 
+def check_inline_expressions(content: str, filepath: str):
+    """
+    Check for inline code expressions which are incompatible with Jupyter Cache.
+    Inline expressions like `{python} variable` or `{r} code` cannot be used with cache: true.
+    Users should use regular Python code blocks instead.
+    """
+    lines = content.split('\n')
+
+    # Pattern to match inline code expressions: `{python} ...` or `{r} ...`
+    # Also match variations like `python ...` without braces
+    inline_expr_patterns = [
+        re.compile(r'`\{python\}[^`]+`'),
+        re.compile(r'`\{r\}[^`]+`'),
+        re.compile(r'`python [^`]+`'),
+        re.compile(r'`r [^`]+`'),
+    ]
+
+    for line_index, line in enumerate(lines):
+        # Skip code blocks
+        if line.strip().startswith('```'):
+            continue
+
+        for pattern in inline_expr_patterns:
+            matches = pattern.finditer(line)
+            for match in matches:
+                errors.append(ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message='Inline code expression found - these are incompatible with Jupyter Cache (cache: true). Use a regular Python code block instead.',
+                    context=line.strip()[:80]
+                ))
+
+
 def check_markdown_links(content: str, filepath: str):
     """
     Check all markdown links in the file for:
@@ -723,6 +756,10 @@ def validate_file(filepath: str):
     # Check include directives
     check_include_directives(content, filepath)
     check_markdown_links(content, filepath)
+
+    # Check for inline expressions (incompatible with Jupyter Cache)
+    # DISABLED: We've disabled cache: true in Quarto configs, so inline expressions are fine
+    # check_inline_expressions(content, filepath)
 
 def main():
     """Main validation function"""

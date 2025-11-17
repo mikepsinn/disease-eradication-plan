@@ -208,11 +208,13 @@ async function testChatEndpoint(): Promise<void> {
 
   for (const testCase of testCases) {
     console.log(`\n📡 Test: ${testCase.name}`);
-    console.log(`   URL: ${SERVER_URL}/agents/bookChat/chat`);
+    console.log(`   URL: ${SERVER_URL}/agents/Book Chat Agent/chat`);
     console.log(`   Request:`, JSON.stringify(testCase.body, null, 2));
 
     try {
-      const response = await fetch(`${toIPv4Url(SERVER_URL)}/agents/bookChat/chat`, {
+      // Agent ID needs to be URL-encoded (spaces become %20)
+      const agentId = encodeURIComponent("Book Chat Agent");
+      const response = await fetch(`${toIPv4Url(SERVER_URL)}/agents/${agentId}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

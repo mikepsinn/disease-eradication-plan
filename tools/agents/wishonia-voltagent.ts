@@ -88,15 +88,6 @@ Guidelines:
 // Create todo manager
 const todoManager = new EnhancedTodoManager();
 
-// CLI interface
-const args = process.argv.slice(2);
-const options = {
-  full: args.includes("--full"),
-  file: args.find((arg) => arg.startsWith("--file="))?.split("=")[1],
-  exportTodo: args.includes("--export-todo"),
-  status: args.includes("--status"),
-};
-
 /**
  * Main WISHONIA class
  */
@@ -282,34 +273,3 @@ export class WishoniaVoltAgent {
     }
   }
 }
-
-// Main execution
-async function main() {
-  const wishonia = new WishoniaVoltAgent();
-  await wishonia.init();
-
-  if (options.status) {
-    await wishonia.printStatus();
-  } else if (options.exportTodo) {
-    await wishonia.exportTodoList();
-  } else if (options.file) {
-    await wishonia.processFile(options.file);
-  } else if (options.full) {
-    await wishonia.processAllFiles();
-  } else {
-    await wishonia.processStaleFiles();
-  }
-
-  // Never commit - only stage
-  await wishonia.stageChanges();
-  console.log("\n✅ Changes staged for review. Review with: git diff --staged");
-}
-
-// Run if executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main().catch((error) => {
-    console.error("Error:", error);
-    process.exit(1);
-  });
-}
-

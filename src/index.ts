@@ -10,6 +10,7 @@ import {
 } from "@voltagent/core";
 import { createBookChatAgent } from "./agents/book-chat-agent";
 import { BookVectorStore } from "../tools/vector/vector-store";
+import { ensurePortAvailable } from "../tools/lib/port-checker";
 
 // Create logger
 const logger = createPinoLogger({
@@ -51,6 +52,10 @@ Be helpful, accurate, and aligned with the project's mission and principles.`,
 const port = process.env.VOLTAGENT_PORT
   ? parseInt(process.env.VOLTAGENT_PORT, 10)
   : 3141;
+
+// Check if port is available before starting
+// This prevents multiple VoltAgent instances and port conflicts
+await ensurePortAvailable(port);
 
 // Initialize VoltAgent with your agent(s)
 const voltAgent = new VoltAgent({

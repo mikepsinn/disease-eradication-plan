@@ -1,344 +1,131 @@
-import { createWorkflowChain } from "@voltagent/core";
+import { Agent, createWorkflowChain } from "@voltagent/core";
 import { z } from "zod";
-import { readFileWithMatter, getBodyHash } from "../../lib/file-utils";
+import { EnhancedTodoManager, EnhancedTodo } from "../todo-manager-enhanced";
 import { readFile } from "fs/promises";
-import { EnhancedTodoManager, type EnhancedTodo } from "../todo-manager-enhanced";
-import { calculateTodoPriority } from "../../lib/hash-utils";
-import type { Agent } from "@voltagent/core";
-import { createParameterCheckerAgent, createMathValidatorAgent, createClaimValidatorAgent, createReferenceLinkerAgent, createConsistencyCheckerAgent } from "../sub-agents";
+import type { Memory } from "@voltagent/core";
+import { randomUUID } from "crypto";
+
+// Input schema for the workflow
+const FileReviewInput = z.object({
+  filePath: z.string().describe("Path to the .qmd file to review"),
+});
+
+// Result schema for the workflow
+const FileReviewResult = z.object({
+  filePath: z.string(),
+  issues: z.array(
+    z.object({
+      type: z.enum([
+        "parameter",
+        "math",
+        "claim",
+        "reference",
+        "consistency",
+      ]),
+      priority: z.enum(["critical", "high", "medium", "low"]),
+      description: z.string(),
+      suggestedFix: z.string().optional(),
+      lineNumber: z.number().optional(),
+      confidence: z.number().min(0).max(1).optional(),
+    })
+  ),
+  totalIssues: z.number(),
+});
 
 /**
- * Helper function to call an agent and parse structured response
- */
-async function callAgentForReview(
-  agent: Agent,
-  prompt: string,
-  schema: z.ZodSchema
-): Promise<any[]> {
-  try {
-    // Use generateObject for structured output
-    const response = await agent.generateObject(prompt, schema);
-    
-    // Extract issues from the response object
-    const parsed = response.object as any;
-    return parsed.issues || parsed.items || [];
-  } catch (error) {
-    console.error(`Error calling agent ${agent.name}:`, error);
-    // Return empty array on error to allow workflow to continue
-    return [];
-  }
-}
-
-/**
- * File Review Workflow
- * Processes a file through all WISHONIA checks in parallel
+ * Create a workflow for reviewing files with all subagents
  */
 export function createFileReviewWorkflow(
-  supervisorAgent: Agent,
+  supervisor: Agent,
   todoManager: EnhancedTodoManager,
-  memory?: any
+  memory: Memory
 ) {
-  // Create agents for direct calls (not via supervisor for workflow)
-  const parameterAgent = createParameterCheckerAgent(memory);
-  const mathAgent = createMathValidatorAgent(memory);
-  const claimAgent = createClaimValidatorAgent(memory);
-  const referenceAgent = createReferenceLinkerAgent(memory);
-  const consistencyAgent = createConsistencyCheckerAgent(memory);
   return createWorkflowChain({
     id: "file-review",
     name: "File Review Workflow",
-    input: z.object({
-      filePath: z.string(),
-    }),
-    result: z.object({
-      issues: z.array(
-        z.object({
-          type: z.enum(["parameter", "math", "claim", "reference", "consistency"]),
-          line: z.number(),
-          issue: z.string(),
-          suggestedFix: z.string().optional(),
-          confidence: z.enum(["high", "medium", "low"]),
-          link: z.string().optional(),
-        })
-      ),
-      fixes: z.array(
-        z.object({
-          type: z.string(),
-          line: z.number(),
-          oldValue: z.string(),
-          newValue: z.string(),
-        })
-      ),
-    }),
+    input: FileReviewInput,
+    result: FileReviewResult,
   })
-    .andThen({
-      id: "load-file",
-      execute: async ({ data }) => {
-        const { body, frontmatter } = await readFileWithMatter(data.filePath);
-        
-        // Load parameters and variables
-        let parameters = {};
-        let variables = {};
-        
-        try {
-          const paramsContent = await readFile("dih_models/parameters.py", "utf-8");
-          // Store as string for now - agents can parse if needed
-          parameters = { content: paramsContent };
-        } catch (error) {
-          console.warn("Could not load parameters.py:", error);
-        }
-
-        try {
-          const varsContent = await readFile("_variables.yml", "utf-8");
-          variables = { content: varsContent };
-        } catch (error) {
-          console.warn("Could not load _variables.yml:", error);
-        }
-
-        return {
-          ...data,
-          fileContent: body,
-          frontmatter,
-          parameters,
-          variables,
-        };
-      },
+    .andThen("load-file", async ({ filePath }) => {
+      const content = await readFile(filePath, "utf-8");
+      return { filePath, content };
     })
-    .andAll([
-      {
-        id: "check-parameters",
-        execute: async ({ data, getStepData }) => {
-          const fileData = getStepData("load-file")?.output;
-          if (!fileData) throw new Error("File data not loaded");
+    .andAgent("review-file", {
+      agent: supervisor,
+      prompt: ({ filePath, content }) => `Review this file for issues: ${filePath}
 
-          const prompt = `Review this file for hardcoded numbers that should use parameters:
-
-File: ${data.filePath}
 Content:
-${fileData.fileContent.substring(0, 5000)}${fileData.fileContent.length > 5000 ? '...' : ''}
+\`\`\`
+${content}
+\`\`\`
 
-Available parameters:
-${fileData.parameters.content ? fileData.parameters.content.substring(0, 2000) : 'None loaded'}
+Please analyze this file for:
+1. Hardcoded numbers that should be parameters
+2. Mathematical errors or unclear calculations
+3. Claims that need citations
+4. Numbers/claims that don't link to sources
+5. Inconsistencies with other parts of the book
 
-Find all hardcoded numbers and suggest appropriate parameters from dih_models/parameters.py or _variables.yml.
-Return a JSON array of issues with: type, line, issue, suggestedFix, confidence, link.`;
+For each issue found, provide:
+- Type: parameter|math|claim|reference|consistency
+- Priority: critical|high|medium|low
+- Description: What the issue is
+- SuggestedFix: How to fix it (optional)
+- LineNumber: Approximate line number (optional)
+- Confidence: Your confidence level 0-1 (optional)
 
-          const schema = z.object({
-            issues: z.array(z.object({
-              type: z.literal("parameter"),
-              line: z.number(),
-              issue: z.string(),
-              suggestedFix: z.string().optional(),
-              confidence: z.enum(["high", "medium", "low"]),
-              link: z.string().optional(),
-            })),
-          });
+Return a JSON array of issues.`,
+      schema: z.object({
+        issues: z.array(
+          z.object({
+            type: z.enum([
+              "parameter",
+              "math",
+              "claim",
+              "reference",
+              "consistency",
+            ]),
+            priority: z.enum(["critical", "high", "medium", "low"]),
+            description: z.string(),
+            suggestedFix: z.string().optional(),
+            lineNumber: z.number().optional(),
+            confidence: z.number().min(0).max(1).optional(),
+          })
+        ),
+      }),
+    })
+    .andThen("add-todos", async ({ filePath, issues }) => {
+      // Add each issue as a todo
+      for (const issue of issues) {
+        // Convert confidence from 0-1 to low/medium/high
+        let confidenceLevel: "low" | "medium" | "high" = "medium";
+        if (issue.confidence !== undefined) {
+          if (issue.confidence >= 0.75) confidenceLevel = "high";
+          else if (issue.confidence >= 0.5) confidenceLevel = "medium";
+          else confidenceLevel = "low";
+        }
 
-          const issues = await callAgentForReview(parameterAgent, prompt, schema);
-          return { parameterIssues: issues };
-        },
-      },
-      {
-        id: "check-math",
-        execute: async ({ data, getStepData }) => {
-          const fileData = getStepData("load-file")?.output;
-          if (!fileData) throw new Error("File data not loaded");
-
-          const prompt = `Validate all mathematical equations and calculations in this file:
-
-File: ${data.filePath}
-Content:
-${fileData.fileContent.substring(0, 5000)}${fileData.fileContent.length > 5000 ? '...' : ''}
-
-Check for LaTeX syntax errors, calculation errors, unit mismatches, and formula consistency.
-Return a JSON array of issues with: type, line, issue, suggestedFix, confidence.`;
-
-          const schema = z.object({
-            issues: z.array(z.object({
-              type: z.literal("math"),
-              line: z.number(),
-              issue: z.string(),
-              suggestedFix: z.string().optional(),
-              confidence: z.enum(["high", "medium", "low"]),
-            })),
-          });
-
-          const issues = await callAgentForReview(mathAgent, prompt, schema);
-          return { mathIssues: issues };
-        },
-      },
-      {
-        id: "check-claims",
-        execute: async ({ data, getStepData }) => {
-          const fileData = getStepData("load-file")?.output;
-          if (!fileData) throw new Error("File data not loaded");
-
-          const prompt = `Identify unsupported claims that need references in this file:
-
-File: ${data.filePath}
-Content:
-${fileData.fileContent.substring(0, 5000)}${fileData.fileContent.length > 5000 ? '...' : ''}
-
-Find statistical, historical, scientific, or economic claims without sources.
-Return a JSON array of issues with: type, line, issue, suggestedFix, confidence, link.`;
-
-          const schema = z.object({
-            issues: z.array(z.object({
-              type: z.literal("claim"),
-              line: z.number(),
-              issue: z.string(),
-              suggestedFix: z.string().optional(),
-              confidence: z.enum(["high", "medium", "low"]),
-              link: z.string().optional(),
-            })),
-          });
-
-          const issues = await callAgentForReview(claimAgent, prompt, schema);
-          return { claimIssues: issues };
-        },
-      },
-      {
-        id: "check-references",
-        execute: async ({ data, getStepData }) => {
-          const fileData = getStepData("load-file")?.output;
-          if (!fileData) throw new Error("File data not loaded");
-
-          const prompt = `Ensure all numbers and claims link to proper sources in this file:
-
-File: ${data.filePath}
-Content:
-${fileData.fileContent.substring(0, 5000)}${fileData.fileContent.length > 5000 ? '...' : ''}
-
-Check that numbers link to dih_models/parameters.py, calculations, or knowledge/references.qmd.
-Return a JSON array of issues with: type, line, issue, suggestedFix, confidence, link.`;
-
-          const schema = z.object({
-            issues: z.array(z.object({
-              type: z.literal("reference"),
-              line: z.number(),
-              issue: z.string(),
-              suggestedFix: z.string().optional(),
-              confidence: z.enum(["high", "medium", "low"]),
-              link: z.string().optional(),
-            })),
-          });
-
-          const issues = await callAgentForReview(referenceAgent, prompt, schema);
-          return { referenceIssues: issues };
-        },
-      },
-      {
-        id: "check-consistency",
-        execute: async ({ data, getStepData }) => {
-          const fileData = getStepData("load-file")?.output;
-          if (!fileData) throw new Error("File data not loaded");
-
-          const prompt = `Check cross-file consistency for this file:
-
-File: ${data.filePath}
-Content:
-${fileData.fileContent.substring(0, 5000)}${fileData.fileContent.length > 5000 ? '...' : ''}
-
-Check that same numbers use same parameters, terminology is consistent, and references are valid.
-Return a JSON array of issues with: type, line, issue, suggestedFix, confidence.`;
-
-          const schema = z.object({
-            issues: z.array(z.object({
-              type: z.literal("consistency"),
-              line: z.number(),
-              issue: z.string(),
-              suggestedFix: z.string().optional(),
-              confidence: z.enum(["high", "medium", "low"]),
-            })),
-          });
-
-          const issues = await callAgentForReview(consistencyAgent, prompt, schema);
-          return { consistencyIssues: issues };
-        },
-      },
-    ])
-    .andThen({
-      id: "consolidate-issues",
-      execute: async ({ data, getStepData }) => {
-        const fileData = getStepData("load-file")?.output;
-        const parameterData = getStepData("check-parameters")?.output;
-        const mathData = getStepData("check-math")?.output;
-        const claimData = getStepData("check-claims")?.output;
-        const referenceData = getStepData("check-references")?.output;
-        const consistencyData = getStepData("check-consistency")?.output;
-
-        // Combine all issues
-        const allIssues: EnhancedTodo["type"][] = [];
-        const fixes: Array<{
-          type: string;
-          line: number;
-          oldValue: string;
-          newValue: string;
-        }> = [];
-
-        // Process each type of issue
-        const processIssues = (
-          issues: any[],
-          type: EnhancedTodo["type"],
-          agentId: string
-        ) => {
-          for (const issue of issues) {
-            const todo: EnhancedTodo = {
-              id: todoManager.generateId(),
-              type,
-              priority: calculateTodoPriority(type, issue.confidence || "medium"),
-              filePath: data.filePath,
-              line: issue.line || 0,
-              issue: issue.issue || issue.description || "Issue found",
-              suggestedFix: issue.suggestedFix,
-              confidence: issue.confidence || "medium",
-              status: "pending",
-              agentId,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            };
-
-            todoManager.addTodo(todo);
-            allIssues.push(type);
-
-            if (issue.oldValue && issue.newValue) {
-              fixes.push({
-                type,
-                line: issue.line || 0,
-                oldValue: issue.oldValue,
-                newValue: issue.newValue,
-              });
-            }
-          }
+        const todo: EnhancedTodo = {
+          id: randomUUID(),
+          type: issue.type,
+          priority: issue.priority,
+          status: "pending",
+          filePath: filePath,
+          line: issue.lineNumber || 0,
+          issue: issue.description,
+          suggestedFix: issue.suggestedFix,
+          confidence: confidenceLevel,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
         };
 
-        // Process issues from each check
-        if (parameterData?.parameterIssues) {
-          processIssues(parameterData.parameterIssues, "parameter", "Parameter Checker");
-        }
-        if (mathData?.mathIssues) {
-          processIssues(mathData.mathIssues, "math", "Math Validator");
-        }
-        if (claimData?.claimIssues) {
-          processIssues(claimData.claimIssues, "claim", "Claim Validator");
-        }
-        if (referenceData?.referenceIssues) {
-          processIssues(referenceData.referenceIssues, "reference", "Reference Linker");
-        }
-        if (consistencyData?.consistencyIssues) {
-          processIssues(consistencyData.consistencyIssues, "consistency", "Consistency Checker");
-        }
+        todoManager.addTodo(todo);
+      }
 
-        return {
-          issues: allIssues.map((type, index) => ({
-            type,
-            line: 0,
-            issue: `Issue ${index + 1}`,
-            confidence: "medium" as const,
-          })),
-          fixes,
-        };
-      },
+      return {
+        filePath,
+        issues,
+        totalIssues: issues.length,
+      };
     });
 }
-
