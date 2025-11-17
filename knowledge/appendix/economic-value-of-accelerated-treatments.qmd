@@ -36,14 +36,14 @@ The value of a new therapy can be assessed through market performance and societ
 
 ### **Annual Value Based on Average Approvals**
 
-- **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5)** approves around **50 new drugs annually**.
-- **Total Annual Value:** Multiplying **50 approvals** by **$1.62 billion** yields an estimated **$81 billion** in economic value per year.
+- **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5)** approves around **{{< var current_drug_approvals_per_year >}} new drugs annually**.
+- **Total Annual Value:** Multiplying **{{< var current_drug_approvals_per_year >}} approvals** by **$1.62 billion** yields an estimated **$81 billion** in economic value per year.
 
 ### **Impact of Accelerating Medical Progress by 80X**
 
 What would happen if medical progress accelerated by 80-fold?
 
-- **Hypothetical Annual Approvals:** 50 new therapies × 80 = **4,000 new therapies annually**.
+- **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × 80 = **4,000 new therapies annually**.
 - **Projected Economic Value:** 4,000 therapies × **$1.62 billion** = **$6.48 trillion** per year.
 
 ### **Considerations and Context**

@@ -54,7 +54,7 @@ What humans spend trying to cure disease: Look at this chart and try not to laug
 
 {{< include ../figures/disease-vs-curing-costs-column-chart.qmd >}}
 
-The problem costs $109 trillion. Humans spend $67.5 billion trying to solve it.
+The problem costs $109 trillion. Humans spend {{< var global_med_research_spending >}} trying to solve it.
 
 That's like your house being on fire and deciding to address it with a water pistol. Technically you're trying, but you're not really trying.
 
@@ -62,9 +62,9 @@ That's like your house being on fire and deciding to address it with a water pis
 
 ### The Math
 
-War and disease: **$119 trillion** annually (that's 113% of global GDP)
+War and disease: **{{< var total_global_waste_spend_annual >}}** annually (that's 113% of global GDP)
 
-Medical research to fix disease: [**$67.5 billion**](../references.qmd#global-gov-med-research-spending)
+Medical research to fix disease: [**{{< var global_med_research_spending >}}**](../references.qmd#global-gov-med-research-spending)
 
 #### Translation
 

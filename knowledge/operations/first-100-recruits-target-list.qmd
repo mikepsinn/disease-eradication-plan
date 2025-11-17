@@ -388,7 +388,7 @@ These 10 become your "advisory board" even if informal. Each should bring 10 mor
 ### Template 1: The Billionaire Pitch
 
 ```
-Subject: A $1B bet on curing disease (and 270% returns)
+Subject: A {{< var treaty_campaign_total_cost >}} bet on curing disease (and {{< var victory_bond_annual_return_pct >}} returns)
 
 [NAME],
 
@@ -398,10 +398,10 @@ I'm sorry. I know money doesn't fix that. But maybe it can prevent
 10 million similar losses.
 
 I'm building a mechanism to redirect 1% of global military spending
-($27B/year) to medical research. Not charity, an investment structure
-that returns 270% annually to early backers.
+({{< var treaty_annual_funding >}}/year) to medical research. Not charity, an investment structure
+that returns {{< var victory_bond_annual_return_pct >}} annually to early backers.
 
-The catch: We need $1B to lobby every country to sign the treaty.
+The catch: We need {{< var treaty_campaign_total_cost >}} to lobby every country to sign the treaty.
 
 I think you're one of ~50 people on Earth who could single-handedly
 fund this. And one of ~10 with personal reasons to.
