@@ -330,10 +330,8 @@ def get_figure_output_path(filename):
     """
     Get the correct output path for saving a figure.
 
-    When execute-dir is set to 'project' in _quarto.yml, Path.cwd() returns the project root.
-    This function determines the correct output directory based on the context:
-    - For knowledge charts: knowledge/figures/
-    - Ensures the directory exists
+    This function always saves to knowledge/figures/ relative to the project root,
+    regardless of where the Quarto render is executed from.
 
     Args:
         filename: Name of the output file (e.g., 'my-chart.png')
@@ -347,8 +345,8 @@ def get_figure_output_path(filename):
     """
     from pathlib import Path
 
-    # With execute-dir: project, cwd is the project root
-    project_root = Path.cwd()
+    # Always find the project root, regardless of where we're rendering from
+    project_root = get_project_root()
 
     # Save to knowledge/figures/ (the standard location for chart outputs)
     output_dir = project_root / 'knowledge' / 'figures'

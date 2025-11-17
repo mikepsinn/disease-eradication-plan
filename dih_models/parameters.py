@@ -101,6 +101,14 @@ class Parameter(float):
     def __repr__(self):
         return f"Parameter({float(self)}, source_ref='{self.source_ref}', confidence='{self.confidence}')"
 
+    def __str__(self):
+        """Return just the numeric value as a string for display purposes."""
+        return str(float(self))
+
+    def __format__(self, format_spec):
+        """Format the numeric value according to format_spec for f-strings."""
+        return format(float(self), format_spec)
+
 
 # ---
 # PEACE DIVIDEND PARAMETERS
