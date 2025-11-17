@@ -25,8 +25,9 @@ fig, ax = plt.subplots(figsize=(12, 6))
 # Data
 
 categories = ['War on\nHumanity', 'War on Disease']
-military_total = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / 1000  # Convert from T to billions
-cure_spending = GLOBAL_MED_RESEARCH_SPENDING
+# Explicitly convert to native Python float to avoid Parameter repr in labels
+military_total = float.__new__(float, GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
+cure_spending = float.__new__(float, GLOBAL_MED_RESEARCH_SPENDING)
 
 # Make the 1% stack visually prominent (exaggerate it to ~100B so it's actually visible)
 
