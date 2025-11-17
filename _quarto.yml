@@ -248,7 +248,7 @@ metadata:
 
 execute:
   # Relaunch kernel for each render
-  cache: true  # Speed optimization: cache computation results
+  cache: false  # Disabled: incompatible with inline expressions
   freeze: auto  # Re-render only when source changes
   # Send all generated figures to a central directory
   fig-path: "knowledge/figures/"
