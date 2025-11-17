@@ -29,3 +29,4 @@ tsconfig.json
 # Exclude Python files
 *.py
 !**/*.qmd
+__tests__/*.qmd
