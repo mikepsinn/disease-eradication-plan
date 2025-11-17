@@ -47,12 +47,13 @@ Be helpful, accurate, and aligned with the project's mission and principles.`,
 });
 
 // Initialize VoltAgent with your agent(s)
+const port = parseInt(process.env.VOLTAGENT_PORT || "3141", 10);
 const voltAgent = new VoltAgent({
   agents: {
     agent: dihAgent,
     bookChat: bookChatAgent,
   },
-  server: honoServer({ port: 3141 }),
+  server: honoServer({ port }),
   logger,
 });
 

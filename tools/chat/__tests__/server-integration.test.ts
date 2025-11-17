@@ -1,45 +1,73 @@
-import { describe, it, expect, beforeAll, afterAll } from "@jest/globals";
-import { createPinoLogger } from "@voltagent/logger";
+/**
+ * Integration test for the VoltAgent chat server
+ * 
+ * Usage:
+ *   1. Start server: npm run voltagent:dev (in another terminal)
+ *   2. Run test: npm test -- server-integration
+ * 
+ * Or set VOLTAGENT_URL environment variable to point to a different server
+ */
 
-const logger = createPinoLogger({
-  name: "integration-test",
-  level: "info",
-});
+import { describe, it, expect, beforeAll } from "@jest/globals";
 
-// Import server components
-let voltAgent: any = null;
-let serverStarted = false;
+const SERVER_URL = process.env.VOLTAGENT_URL || process.env.VOLTAGENT_SERVER_URL || `http://localhost:${process.env.VOLTAGENT_PORT || "3141"}`;
+const SERVER_START_TIMEOUT = 15000; // 15 seconds
+
+/**
+ * Check if server is running
+ */
+async function checkServer(url: string): Promise<boolean> {
+  try {
+    const response = await fetch(`${url}/agents`);
+    return response.status < 500;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Wait for server to be ready by polling the agents endpoint
+ */
+async function waitForServer(url: string, timeout: number): Promise<void> {
+  const startTime = Date.now();
+  const pollInterval = 500; // Check every 500ms
+
+  while (Date.now() - startTime < timeout) {
+    try {
+      const response = await fetch(`${url}/agents`);
+      if (response.status < 500) {
+        // Server is responding (even if 404/400, it means server is up)
+        console.log(`[TEST] ✅ Server is responding`);
+        return;
+      }
+    } catch (error) {
+      // Server not ready yet, keep waiting
+      const elapsed = Date.now() - startTime;
+      if (elapsed % 2000 < pollInterval) {
+        // Log every 2 seconds
+        console.log(`[TEST] ⏳ Server not ready, waiting... (${Math.round(elapsed / 1000)}s)`);
+      }
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, pollInterval));
+  }
+
+  throw new Error(`Server did not become ready within ${timeout}ms`);
+}
 
 describe("Chat Server Integration", () => {
-  const SERVER_URL = "http://localhost:3141";
-  const SERVER_START_TIMEOUT = 15000; // 15 seconds
-
   beforeAll(async () => {
-    // Start the VoltAgent server programmatically
-    logger.info("Starting VoltAgent server for integration tests...");
+    console.log(`\n[TEST] Waiting for server at ${SERVER_URL}...`);
+    console.log(`[TEST] Make sure server is running: npm run voltagent:dev\n`);
     
-    try {
-      // Import and initialize the server
-      const serverModule = await import("../../src/index.js");
-      voltAgent = serverModule.voltAgent;
-      
-      // Server should already be running from the import
-      // Wait for it to be ready
+    // Check if server is already running
+    const isRunning = await checkServer(SERVER_URL);
+    if (!isRunning) {
+      // Wait for server to be ready (assumes it's started manually)
       await waitForServer(SERVER_URL, SERVER_START_TIMEOUT);
-      serverStarted = true;
-      logger.info("Server is ready");
-    } catch (error) {
-      console.error("[TEST] Failed to start server:", error);
-      throw error;
     }
+    console.log(`[TEST] ✅ Server is ready\n`);
   }, 30000); // 30 second timeout for beforeAll
-
-  afterAll(async () => {
-    // Cleanup - server will stop when process exits
-    if (serverStarted) {
-      logger.info("Integration tests complete");
-    }
-  });
 
   it("should list available agents", async () => {
     const response = await fetch(`${SERVER_URL}/agents`);
@@ -212,33 +240,4 @@ describe("Chat Server Integration", () => {
   });
 });
 
-/**
- * Wait for server to be ready by polling the health/agents endpoint
- */
-async function waitForServer(url: string, timeout: number): Promise<void> {
-  const startTime = Date.now();
-  const pollInterval = 500; // Check every 500ms
-
-  while (Date.now() - startTime < timeout) {
-    try {
-      const response = await fetch(`${url}/agents`);
-      if (response.status < 500) {
-        // Server is responding (even if 404/400, it means server is up)
-        logger.info("Server is responding");
-        return;
-      }
-    } catch (error) {
-      // Server not ready yet, keep waiting
-      const elapsed = Date.now() - startTime;
-      if (elapsed % 2000 < pollInterval) {
-        // Log every 2 seconds
-        logger.info(`Server not ready, waiting... (${Math.round(elapsed / 1000)}s)`);
-      }
-    }
-
-    await new Promise((resolve) => setTimeout(resolve, pollInterval));
-  }
-
-  throw new Error(`Server did not become ready within ${timeout}ms`);
-}
 
