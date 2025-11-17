@@ -118,6 +118,19 @@ jobs:
         with:
           path: ${{ steps.render-script.outputs.output-path }}
 
+      - name: Render Economics Website (for Netlify deployment)
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        run: python scripts/render-economics-website.py --output-dir _site/economics
+        timeout-minutes: 10
+
+      - name: Upload Economics artifact for Netlify
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        uses: actions/upload-artifact@v4
+        with:
+          name: economics-site
+          path: _site/economics
+          retention-days: 1
+
   # build-pdf:
   #   runs-on: ubuntu-latest
   #   # needs: lint
@@ -178,3 +191,30 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-economics:
+    name: Deploy Economics to Netlify
+    runs-on: ubuntu-latest
+    needs: build-html
+    if: github.event.repository.name == 'decentralized-institutes-of-health'
+    steps:
+      - name: Download Economics artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: economics-site
+          path: economics-site
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: 'economics-site'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy economics site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1

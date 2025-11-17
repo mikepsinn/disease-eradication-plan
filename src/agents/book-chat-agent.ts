@@ -37,29 +37,28 @@ Guidelines:
 - Use the retrieved context to provide accurate answers`,
     model: google("gemini-2.5-pro"),
     memory,
-    retriever: {
-      async retrieve(input: string | any[]): Promise<string> {
-        try {
-          // Search vector store for relevant content
-          const query = typeof input === "string" ? input : 
-            Array.isArray(input) ? input.map((m: any) => m.content || "").join(" ") : "";
-          
-          const results = await vectorStore.search(query, 5);
-          
-          // Format results as context
-          if (results.length === 0) {
-            return "No relevant content found in the book.";
-          }
-          
-          return results.map((result, index) => {
-            return `[Source ${index + 1}: ${result.metadata.title || result.metadata.filePath}]
-${result.content.substring(0, 1000)}${result.content.length > 1000 ? "..." : ""}`;
-          }).join("\n\n");
-        } catch (error) {
-          console.error("Error retrieving from vector store:", error);
-          return "Error retrieving content. Please try again.";
+    // Note: Using retriever function directly - VoltAgent expects a function or BaseRetriever instance
+    retriever: async (input: string | any[]): Promise<string> => {
+      try {
+        // Search vector store for relevant content
+        const query = typeof input === "string" ? input : 
+          Array.isArray(input) ? input.map((m: any) => m.content || "").join(" ") : "";
+        
+        const results = await vectorStore.search(query, 5);
+        
+        // Format results as context
+        if (results.length === 0) {
+          return "No relevant content found in the book.";
         }
-      },
+        
+        return results.map((result, index) => {
+          return `[Source ${index + 1}: ${result.metadata.title || result.metadata.filePath}]
+${result.content.substring(0, 1000)}${result.content.length > 1000 ? "..." : ""}`;
+        }).join("\n\n");
+      } catch (error) {
+        console.error("Error retrieving from vector store:", error);
+        return "Error retrieving content. Please try again.";
+      }
     },
   });
 }
