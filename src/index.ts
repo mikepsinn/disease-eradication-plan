@@ -47,15 +47,36 @@ Be helpful, accurate, and aligned with the project's mission and principles.`,
 });
 
 // Initialize VoltAgent with your agent(s)
-const port = parseInt(process.env.VOLTAGENT_PORT || "3141", 10);
+// Note: honoServer() without port uses VoltAgent's default port (4242)
+// To use a custom port, set VOLTAGENT_PORT environment variable
+const port = process.env.VOLTAGENT_PORT ? parseInt(process.env.VOLTAGENT_PORT, 10) : undefined;
 const voltAgent = new VoltAgent({
   agents: {
     agent: dihAgent,
     bookChat: bookChatAgent,
   },
-  server: honoServer({ port }),
+  server: port ? honoServer({ port }) : honoServer(),
   logger,
 });
+
+// Log server startup info
+const actualPort = port || 4242; // VoltAgent defaults to 4242
+logger.info(`VoltAgent server configured on port ${actualPort}`);
+logger.info(`Agents registered: agent, bookChat`);
+logger.info(`Agent details:`, {
+  agent: { name: dihAgent.name, model: "gemini-2.5-pro" },
+  bookChat: { name: bookChatAgent.name, model: "gemini-2.5-pro" },
+});
+
+// Verify agents are properly created
+if (!dihAgent.name) {
+  logger.error("DIH Agent missing name property!");
+  throw new Error("DIH Agent must have a name");
+}
+if (!bookChatAgent.name) {
+  logger.error("Book Chat Agent missing name property!");
+  throw new Error("Book Chat Agent must have a name");
+}
 
 // Add custom feedback endpoint
 // Note: This requires extending the Hono server, which may need to be done differently

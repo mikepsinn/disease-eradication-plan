@@ -36,6 +36,7 @@
     "test:coverage": "jest --coverage",
     "test:integration": "cross-env VOLTAGENT_PORT=4242 jest --testPathPattern=server-integration --testTimeout=30000",
     "test:server": "tsx tools/chat/test-server.ts",
+    "check:server": "tsx tools/chat/check-server.ts",
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "lint:qmd": "markdownlint --config .markdownlint.json \"**/*.qmd\"",

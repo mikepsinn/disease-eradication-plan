@@ -45,6 +45,12 @@ class BuildMonitor:
         self.timeout_thread = None
         self.stop_timeout_check = threading.Event()
 
+        # Profiling data
+        self.build_start_time = time.time()
+        self.current_file_start_time = None
+        self.file_timings = []  # List of (file_name, duration_seconds)
+        self.phase_timings = {}  # Dict of phase_name -> (start_time, end_time)
+
         # Open log file
         self.log_handle = open(self.log_file, 'w', encoding='utf-8')
 
@@ -59,6 +65,19 @@ class BuildMonitor:
     def get_timestamp(self) -> str:
         """Get formatted timestamp for log messages"""
         return datetime.now().strftime('%H:%M:%S')
+
+    def _format_duration(self, seconds: float) -> str:
+        """Format duration in seconds to human-readable string"""
+        if seconds < 60:
+            return f"{seconds:.1f}s"
+        elif seconds < 3600:
+            minutes = int(seconds / 60)
+            secs = seconds % 60
+            return f"{minutes}m {secs:.0f}s"
+        else:
+            hours = int(seconds / 3600)
+            minutes = int((seconds % 3600) / 60)
+            return f"{hours}h {minutes}m"
     
     def log(self, message: str, to_stderr: bool = False):
         """Log message to both console and file with timestamp"""
@@ -72,7 +91,7 @@ class BuildMonitor:
     def parse_line(self, line: str, custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None) -> Optional[str]:
         """
         Parse a line of output and extract relevant information
-        
+
         Args:
             line: Line of output to parse
             custom_parsers: Optional list of custom parser functions to run before default parsing
@@ -87,10 +106,23 @@ class BuildMonitor:
         # Match file progress: [ 42/110] path/to/file.qmd
         file_match = re.match(r'\[\s*(\d+)/(\d+)\]\s+(.+\.qmd)', line)
         if file_match:
+            # Track timing for previous file
+            current_time = time.time()
+            if self.current_file and self.current_file_start_time:
+                duration = current_time - self.current_file_start_time
+                self.file_timings.append((self.current_file, duration))
+
+            # Start timing new file
             self.file_count = int(file_match.group(1))
             self.total_files = int(file_match.group(2))
             self.current_file = file_match.group(3)
-            return f"[{self.file_count}/{self.total_files}] {self.current_file}"
+            self.current_file_start_time = current_time
+
+            # Calculate elapsed time since build start
+            elapsed = current_time - self.build_start_time
+            elapsed_str = self._format_duration(elapsed)
+
+            return f"[{self.file_count}/{self.total_files}] {self.current_file} (elapsed: {elapsed_str})"
 
         # Match output creation
         if line.startswith('Output created:'):
@@ -279,13 +311,34 @@ class BuildMonitor:
                 self.log("Warning: Process return code is None after wait()", to_stderr=True)
                 return_code = 1
 
+            # Track final file timing if there was one
+            if self.current_file and self.current_file_start_time:
+                duration = time.time() - self.current_file_start_time
+                self.file_timings.append((self.current_file, duration))
+
+            # Calculate total build time
+            total_build_time = time.time() - self.build_start_time
+
             # Print summary
             self.log("\n" + "=" * 80)
             self.log("BUILD SUMMARY")
             self.log("=" * 80)
             self.log(f"Exit code: {return_code}")
+            self.log(f"Total build time: {self._format_duration(total_build_time)}")
+            self.log(f"Files processed: {len(self.file_timings)}")
             self.log(f"Warnings: {len(self.warnings)}")
             self.log(f"Errors: {len(self.errors)}")
+
+            # Show slowest files
+            if self.file_timings:
+                self.log("\nSlowest files (top 10):")
+                sorted_timings = sorted(self.file_timings, key=lambda x: x[1], reverse=True)
+                for file_name, duration in sorted_timings[:10]:
+                    self.log(f"  {self._format_duration(duration):>8} - {file_name}")
+
+                # Show average file processing time
+                avg_time = sum(d for _, d in self.file_timings) / len(self.file_timings)
+                self.log(f"\nAverage file time: {self._format_duration(avg_time)}")
 
             if self.warnings:
                 self.log("\nWarnings detected:")
@@ -455,6 +508,8 @@ def run_pre_validation() -> int:
     Returns:
         Exit code (0 for success, non-zero for failure)
     """
+    start_time = time.time()
+
     log_with_timestamp("=" * 80)
     log_with_timestamp("RUNNING PRE-VALIDATION")
     log_with_timestamp("=" * 80)
@@ -477,21 +532,26 @@ def run_pre_validation() -> int:
             for line in result.stdout.strip().split('\n'):
                 if line.strip():
                     log_with_timestamp(line)
-        
+
         if result.stderr:
             for line in result.stderr.strip().split('\n'):
                 if line.strip():
                     log_with_timestamp(line, to_stderr=True)
 
+        elapsed = time.time() - start_time
+        elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
+
         if result.returncode != 0:
-            log_with_timestamp(f"\nPre-validation failed with exit code {result.returncode}", to_stderr=True)
+            log_with_timestamp(f"\nPre-validation failed with exit code {result.returncode} (took {elapsed_str})", to_stderr=True)
             return result.returncode
 
-        log_with_timestamp("\nPre-validation passed!")
+        log_with_timestamp(f"\nPre-validation passed! (took {elapsed_str})")
         log_with_timestamp("=" * 80)
         return 0
     except Exception as e:
-        log_with_timestamp(f"\nError running pre-validation: {e}", to_stderr=True)
+        elapsed = time.time() - start_time
+        elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
+        log_with_timestamp(f"\nError running pre-validation: {e} (took {elapsed_str})", to_stderr=True)
         return 1
 
 
@@ -592,6 +652,8 @@ def run_post_validation(output_dir: str = '_book/warondisease') -> int:
     Returns:
         Exit code (0 for success, non-zero for failure)
     """
+    start_time = time.time()
+
     log_with_timestamp("=" * 80)
     log_with_timestamp("RUNNING POST-VALIDATION")
     log_with_timestamp("=" * 80)
@@ -614,21 +676,26 @@ def run_post_validation(output_dir: str = '_book/warondisease') -> int:
             for line in result.stdout.strip().split('\n'):
                 if line.strip():
                     log_with_timestamp(line)
-        
+
         if result.stderr:
             for line in result.stderr.strip().split('\n'):
                 if line.strip():
                     log_with_timestamp(line, to_stderr=True)
 
+        elapsed = time.time() - start_time
+        elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
+
         if result.returncode != 0:
-            log_with_timestamp(f"\nPost-validation failed with exit code {result.returncode}", to_stderr=True)
+            log_with_timestamp(f"\nPost-validation failed with exit code {result.returncode} (took {elapsed_str})", to_stderr=True)
             return result.returncode
 
-        log_with_timestamp("\nPost-validation passed!")
+        log_with_timestamp(f"\nPost-validation passed! (took {elapsed_str})")
         log_with_timestamp("=" * 80)
         return 0
     except Exception as e:
-        log_with_timestamp(f"\nError running post-validation: {e}", to_stderr=True)
+        elapsed = time.time() - start_time
+        elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
+        log_with_timestamp(f"\nError running post-validation: {e} (took {elapsed_str})", to_stderr=True)
         return 1
 
 
