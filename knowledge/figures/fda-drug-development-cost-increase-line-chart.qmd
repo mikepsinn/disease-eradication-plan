@@ -52,7 +52,7 @@ ax.plot(df_costs['Year'], df_costs['Cost_Millions'],
 
 # Add vertical line at 1962 efficacy amendment
 
-efficacy_year = 1962
+efficacy_year = 1962  # Historical reference year (no parameter exists for this)
 ax.axvline(x=efficacy_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
 ax.text(efficacy_year, ax.get_ylim()[1] * 0.95, 'Efficacy Requirement\nAdded (1962)',
         ha='center', va='top',

@@ -20,17 +20,17 @@ setup_chart_style()
 # Core parameters for the dFDA model (in billions of USD)
 # WORST CASE SCENARIO (Conservative) from ../appendix/dfda-cost-benefit-analysis.qmd
 
-global_clinical_trial_market = 100.0
-dfda_rd_cost_reduction_pct = 0.50
-dfda_annual_operational_cost = 0.2975  # $297.5 million (Platform $26.5M + Broader initiatives $271M)
+global_clinical_trial_market = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL
+dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT
+dfda_annual_operational_cost = DFDA_NPV_ANNUAL_OPEX_TOTAL / 1000  # Convert from millions to billions
 
 # Baseline QALYs generated annually
 
-qaly_gains_annual_baseline = 840000  # in QALYs
+qaly_gains_annual_baseline = GLOBAL_DFDA_QALYS_GAINED_ANNUAL
 
 # Value of a QALY (standard economic value)
 
-value_per_qaly = 150000  # Using $150k per QALY
+value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD
 
 # Calculations
 

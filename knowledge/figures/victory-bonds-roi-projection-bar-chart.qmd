@@ -22,7 +22,14 @@ setup_chart_style(style='light', dpi=150)
 # Cocaine (UN estimates), VICTORY Social Impact Bonds (../economics/victory-bonds.qmd)
 
 investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
-returns = [10, 15, 25, 39, 90, 270]
+returns = [
+    AVERAGE_MARKET_RETURN_PCT * 100,  # S&P 500
+    15,  # Real Estate (no parameter exists)
+    25,  # Venture Capital (no parameter exists)
+    39,  # Medallion Fund (no parameter exists)
+    90,  # Cocaine (no parameter exists)
+    VICTORY_BOND_ANNUAL_RETURN_PCT * 100  # VICTORY Bonds
+]
 
 # Create chart
 

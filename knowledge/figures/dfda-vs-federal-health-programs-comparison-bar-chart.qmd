@@ -18,7 +18,12 @@ programs = [
     'NIH "All of Us"\nResearch Program',
     'National Cancer\nInstitute (NCI)'
 ]
-costs = [40, 257, 500, 7200]  # in millions
+costs = [
+    DFDA_NPV_UPFRONT_COST,  # dFDA Infrastructure
+    257,  # Cancer Moonshot (no parameter exists)
+    500,  # All of Us (no parameter exists)
+    7200  # NCI (no parameter exists)
+]  # in millions
 multipliers = ['1x', '6.4x', '12.5x', '180x']
 
 # --- Create figure ---

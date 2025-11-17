@@ -19,8 +19,10 @@ setup_chart_style(style='light', dpi=150)
 
 # Data
 
-sizes = [55, 14]
-labels = ['Disease\n55M', 'War\n14M']
+disease_deaths_millions = GLOBAL_DAILY_DEATHS_CURABLE_DISEASES * 365 / 1000000  # Convert daily to annual in millions
+war_deaths_millions = GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL / 1000000  # Convert to millions
+sizes = [disease_deaths_millions, war_deaths_millions]
+labels = [f'Disease\n{disease_deaths_millions:.0f}M', f'War\n{war_deaths_millions:.0f}M']
 colors = [COLOR_WHITE, COLOR_WHITE]  # Use white fill with black outline per DESIGN_GUIDE
 explode = (0.05, 0.05)
 

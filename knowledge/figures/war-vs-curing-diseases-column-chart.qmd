@@ -28,8 +28,8 @@ categories = [
 # Values in billions - LINEAR scale to show TRUE disparity
 
 values = [
-    2720,    # Global military spending: $2.72T = $2,720B (SIPRI 2024)
-    68       # Global government medical research: $67.5B (global-government-medical-research-spending.md)
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024,    # Global military spending
+    GLOBAL_MED_RESEARCH_SPENDING       # Global government medical research
 ]
 
 # Colors - black for war, white with pattern for cures

@@ -27,15 +27,15 @@ disease_total = disease_medical + disease_productivity + disease_lives  # $109.1
 
 # War costs breakdown
 
-war_direct = 2720  # Direct military spending
-war_infrastructure = 1875  # Infrastructure destruction
-war_lives_trade = 1616  # Human life losses + trade disruption
-war_longterm = 3538  # Lost growth, veterans, refugees, environment
+war_direct = GLOBAL_MILITARY_SPENDING_ANNUAL_2024  # Direct military spending
+war_infrastructure = GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT  # Infrastructure destruction
+war_lives_trade = GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT + GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT  # Human life losses + trade disruption
+war_longterm = GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING + GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS + GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS + GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT + GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT + GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT  # Lost growth, veterans, refugees, environment
 war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
 
 # Cure research spending
 
-cure_total = 68  # Global government medical research spending
+cure_total = GLOBAL_MED_RESEARCH_SPENDING  # Global government medical research spending
 
 categories = [
     'Cost of\nDisease',

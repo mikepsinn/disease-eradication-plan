@@ -23,7 +23,7 @@ setup_chart_style()
 # Data
 
 categories = ['Total Daily\nDeaths', 'From\nDisease', 'Preventable\nDeaths', 'Child\nDeaths']
-values = [150000, 130000, 80000, 14300]
+values = [GLOBAL_DAILY_DEATHS_CURABLE_DISEASES, 130000, 80000, 14300]  # First value uses parameter
 colors = [COLOR_WHITE, COLOR_WHITE, COLOR_BLACK, COLOR_WHITE]
 
 # Create figure and axes
