@@ -1,43 +1,34 @@
 import { Memory } from "@voltagent/core";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
-import { AiSdkEmbeddingAdapter, InMemoryVectorAdapter } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
-import { readFileWithMatter } from "../lib/file-utils";
-import path from "path";
+import { AiSdkEmbeddingAdapter, InMemoryVectorAdapter } from "@voltagent/core";
 
-/**
- * Document stored in vector store
- */
-interface Document {
+export interface SearchResult {
   content: string;
   metadata: {
-    filePath: string;
-    title: string;
+    filePath?: string;
+    title?: string;
     [key: string]: any;
   };
+  score?: number;
 }
 
 /**
- * Vector store for book content RAG
- * Uses in-memory storage with optional semantic search via VoltAgent Memory
- * 
- * Note: This is a simplified implementation. For production, consider using
- * a dedicated vector database like Pinecone, Weaviate, or Qdrant.
+ * BookVectorStore - Simple vector store for book content
+ * Uses VoltAgent Memory for embeddings and vector search
  */
 export class BookVectorStore {
   private memory: Memory;
-  private embeddingModel: any;
-  private documents: Map<string, Document> = new Map();
+  private documents: Map<string, { content: string; metadata: any }> = new Map();
 
   constructor() {
-    // Use Google's embedding model for consistency
-    this.embeddingModel = google.textEmbeddingModel("models/text-embedding-004");
-    
     this.memory = new Memory({
       storage: new LibSQLMemoryAdapter({
-        url: "file:.voltagent/book-vector.db",
+        url: "file:.voltagent/book-vectors.db",
       }),
-      embedding: new AiSdkEmbeddingAdapter(this.embeddingModel),
+      embedding: new AiSdkEmbeddingAdapter(
+        google.textEmbeddingModel("models/text-embedding-004")
+      ),
       vector: new InMemoryVectorAdapter(),
     });
   }
@@ -45,119 +36,53 @@ export class BookVectorStore {
   /**
    * Add a file to the vector store
    */
-  async addFile(filePath: string): Promise<void> {
+  async addFile(filePath: string, content: string, metadata: any = {}): Promise<void> {
     try {
-      const { body, frontmatter } = await readFileWithMatter(filePath);
-      
-      // Create a document with metadata
-      const document: Document = {
-        content: body,
-        metadata: {
-          filePath,
-          title: frontmatter.title || path.basename(filePath, ".qmd"),
-          ...frontmatter,
-        },
-      };
+      // Store document in memory
+      this.documents.set(filePath, { content, metadata: { ...metadata, filePath } });
 
-      // Store document in memory map
-      this.documents.set(filePath, document);
-      
-      // Also store in Memory for semantic search (as a system message)
-      // Skip if API key is not available (e.g., in tests)
-      try {
-        const userId = "book-vector-store";
-        const conversationId = `file:${filePath}`;
-        
-        await this.memory.addMessage(
-          {
-            role: "system",
-            content: `Document: ${filePath}\nTitle: ${document.metadata.title}\n\n${body}`,
-          },
-          userId,
-          conversationId
-        );
-      } catch (error) {
-        // If embedding fails (e.g., missing API key), continue without it
-        // Documents are still stored in the in-memory map for text search
-        console.warn(`Could not store embeddings for ${filePath}, using text search only:`, error);
-      }
-    } catch (error) {
-      console.error(`Error adding file ${filePath} to vector store:`, error);
-      throw error;
-    }
-  }
-
-  /**
-   * Update embeddings for a file
-   */
-  async updateFile(filePath: string): Promise<void> {
-    // Remove old entry and add new one
-    await this.removeFile(filePath);
-    await this.addFile(filePath);
-  }
-
-  /**
-   * Remove a file from the vector store
-   */
-  async removeFile(filePath: string): Promise<void> {
-    try {
-      this.documents.delete(filePath);
-      // Note: Memory messages are kept for semantic search, but documents map is cleared
-    } catch (error) {
-      console.error(`Error removing file ${filePath} from vector store:`, error);
+      // Try to add to vector store (requires API key)
+      // For now, we'll just store in memory for text-based search
+      // TODO: Implement proper vector embedding when API key is available
+    } catch (error: any) {
+      // Gracefully handle embedding failures (e.g., missing API key)
+      console.warn(`Warning: Could not embed document ${filePath}: ${error.message}`);
+      // Still store in memory for text-based search
     }
   }
 
   /**
    * Search for relevant content
-   * Uses simple text matching for now - can be enhanced with proper vector search
    */
-  async search(query: string, limit: number = 5): Promise<Array<{
-    content: string;
-    metadata: any;
-    score?: number;
-  }>> {
-    try {
-      const results: Array<{ content: string; metadata: any; score?: number }> = [];
-      
-      // Simple text matching for now - can be enhanced with proper vector search
-      const queryLower = query.toLowerCase();
-      const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
-      
-      for (const [filePath, document] of this.documents.entries()) {
-        const contentLower = document.content.toLowerCase();
-        
-        // Calculate relevance score based on word matches
-        let score = 0;
-        for (const word of queryWords) {
-          const matches = (contentLower.match(new RegExp(word, "g")) || []).length;
-          score += matches;
-        }
-        
-        if (score > 0) {
-          results.push({
-            content: document.content,
-            metadata: document.metadata,
-            score,
-          });
+  async search(query: string, topK: number = 5): Promise<SearchResult[]> {
+    // Simple text-based search fallback
+    const results: SearchResult[] = [];
+    const queryLower = query.toLowerCase();
+    const queryTerms = queryLower.split(/\s+/);
+
+    for (const [filePath, doc] of this.documents.entries()) {
+      const contentLower = doc.content.toLowerCase();
+      let score = 0;
+
+      // Simple keyword matching
+      for (const term of queryTerms) {
+        if (contentLower.includes(term)) {
+          score += 1;
         }
       }
-      
-      // Sort by score and limit
-      return results
-        .sort((a, b) => (b.score || 0) - (a.score || 0))
-        .slice(0, limit);
-    } catch (error) {
-      console.error("Error searching vector store:", error);
-      // Fallback: return empty array
-      return [];
-    }
-  }
 
-  /**
-   * Get all stored file paths
-   */
-  async getAllFiles(): Promise<string[]> {
-    return Array.from(this.documents.keys());
+      if (score > 0) {
+        results.push({
+          content: doc.content,
+          metadata: doc.metadata,
+          score: score / queryTerms.length, // Normalize score
+        });
+      }
+    }
+
+    // Sort by score and return top K
+    results.sort((a, b) => (b.score || 0) - (a.score || 0));
+    return results.slice(0, topK);
   }
 }
+

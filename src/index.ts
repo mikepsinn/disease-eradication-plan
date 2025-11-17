@@ -10,10 +10,10 @@ import {
 import { createBookChatAgent } from "./agents/book-chat-agent";
 import { BookVectorStore } from "../tools/vector/vector-store";
 
-// Create logger with debug level to see all errors
+// Create logger
 const logger = createPinoLogger({
   name: "decentralized-institutes-of-health",
-  level: process.env.LOG_LEVEL || "debug",
+  level: process.env.LOG_LEVEL || "info",
 });
 
 // Create Memory instance with vector support for semantic search and working memory
@@ -46,77 +46,28 @@ Be helpful, accurate, and aligned with the project's mission and principles.`,
   memory: memory,
 });
 
-// Verify agents are properly created BEFORE passing to VoltAgent
-if (!dihAgent) {
-  logger.error("DIH Agent is undefined!");
-  throw new Error("DIH Agent must be defined");
-}
-if (!bookChatAgent) {
-  logger.error("Book Chat Agent is undefined!");
-  throw new Error("Book Chat Agent must be defined");
-}
-if (!dihAgent.name) {
-  logger.error("DIH Agent missing name property!");
-  throw new Error("DIH Agent must have a name");
-}
-if (!bookChatAgent.name) {
-  logger.error("Book Chat Agent missing name property!");
-  throw new Error("Book Chat Agent must have a name");
-}
+// Get port from environment or use default
+const port = process.env.VOLTAGENT_PORT
+  ? parseInt(process.env.VOLTAGENT_PORT, 10)
+  : 3141;
 
 // Initialize VoltAgent with your agent(s)
-// Note: honoServer() without port uses VoltAgent's default port (3141)
-// To use a custom port, set VOLTAGENT_PORT environment variable
-const port = process.env.VOLTAGENT_PORT ? parseInt(process.env.VOLTAGENT_PORT, 10) : undefined;
-
-// Validate agents before passing to VoltAgent
-logger.info(`Creating VoltAgent with agents: dihAgent (${dihAgent.name}), bookChat (${bookChatAgent.name})`);
-
-// Create VoltAgent - use the same pattern as the example
-// IMPORTANT: Ensure all agents are defined before passing to VoltAgent
-const agentsForVoltAgent = {
-  dihAgent,
-  bookChat: bookChatAgent,
-};
-
-// Final validation - ensure no undefined values
-for (const [key, agent] of Object.entries(agentsForVoltAgent)) {
-  if (!agent) {
-    logger.error(`CRITICAL: Agent '${key}' is undefined!`);
-    throw new Error(`Agent '${key}' must be defined before creating VoltAgent`);
-  }
-  if (!agent.name) {
-    logger.error(`CRITICAL: Agent '${key}' has no name!`);
-    throw new Error(`Agent '${key}' must have a name property`);
-  }
-  logger.debug(`Validated agent '${key}': ${agent.name}`);
-}
-
 const voltAgent = new VoltAgent({
-  agents: agentsForVoltAgent,
-  server: port ? honoServer({ port }) : honoServer(),
+  agents: {
+    dihAgent,
+    bookChat: bookChatAgent,
+  },
+  server: honoServer({ port }),
   logger,
 });
 
-// Log that VoltAgent was created successfully
-logger.info(`VoltAgent instance created successfully`);
-
 // Log server startup info
-// Note: honoServer() defaults to port 3141, not 4242
-const actualPort = port || 3141; // VoltAgent defaults to 3141
-logger.info(`VoltAgent server configured on port ${actualPort}`);
+logger.info(`VoltAgent server configured on port ${port}`);
 logger.info(`Agents registered: dihAgent, bookChat`);
 logger.info(`Agent details:`, {
   dihAgent: { name: dihAgent.name, model: "gemini-2.5-pro" },
   bookChat: { name: bookChatAgent.name, model: "gemini-2.5-pro" },
 });
-
-// Log agent keys for debugging
-logger.info(`Agent keys in VoltAgent:`, Object.keys(voltAgent.agents || {}));
-
-// Add custom feedback endpoint
-// Note: This requires extending the Hono server, which may need to be done differently
-// For now, we'll handle feedback through a separate endpoint setup
 
 // Export for use in other modules
 export { voltAgent, bookChatAgent, vectorStore };
