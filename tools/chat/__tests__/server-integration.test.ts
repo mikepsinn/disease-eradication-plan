@@ -10,7 +10,8 @@
 
 import { describe, it, expect, beforeAll } from "@jest/globals";
 
-const SERVER_URL = process.env.VOLTAGENT_URL || process.env.VOLTAGENT_SERVER_URL || `http://localhost:${process.env.VOLTAGENT_PORT || "3141"}`;
+// VoltAgent defaults to port 4242, but can be overridden
+const SERVER_URL = process.env.VOLTAGENT_URL || process.env.VOLTAGENT_SERVER_URL || `http://localhost:${process.env.VOLTAGENT_PORT || "4242"}`;
 const SERVER_START_TIMEOUT = 15000; // 15 seconds
 
 /**
@@ -34,18 +35,26 @@ async function waitForServer(url: string, timeout: number): Promise<void> {
 
   while (Date.now() - startTime < timeout) {
     try {
-      const response = await fetch(`${url}/agents`);
-      if (response.status < 500) {
-        // Server is responding (even if 404/400, it means server is up)
-        console.log(`[TEST] ✅ Server is responding`);
+      const response = await fetch(`${url}/agents`, { 
+        signal: AbortSignal.timeout(2000) // 2 second timeout per request
+      });
+      // Server is responding if we get ANY HTTP response (even 500 means server is up)
+      const status = response.status;
+      console.log(`[TEST] ✅ Server is responding (status: ${status})`);
+      return;
+    } catch (error: any) {
+      // Check if it's a connection error (server not ready) vs other error
+      if (error.name === 'AbortError' || error.code === 'ECONNREFUSED' || error.message?.includes('fetch failed')) {
+        // Server not ready yet, keep waiting
+        const elapsed = Date.now() - startTime;
+        if (elapsed % 2000 < pollInterval) {
+          // Log every 2 seconds
+          console.log(`[TEST] ⏳ Server not ready, waiting... (${Math.round(elapsed / 1000)}s)`);
+        }
+      } else {
+        // Other error - server might be up but having issues, consider it ready
+        console.log(`[TEST] ⚠️ Server responded with error (but is up): ${error.message}`);
         return;
-      }
-    } catch (error) {
-      // Server not ready yet, keep waiting
-      const elapsed = Date.now() - startTime;
-      if (elapsed % 2000 < pollInterval) {
-        // Log every 2 seconds
-        console.log(`[TEST] ⏳ Server not ready, waiting... (${Math.round(elapsed / 1000)}s)`);
       }
     }
 
