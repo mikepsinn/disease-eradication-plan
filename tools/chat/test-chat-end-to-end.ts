@@ -181,17 +181,27 @@ async function testChatEndpoint(): Promise<void> {
 
   const testCases = [
     {
-      name: "Minimal request",
+      name: "Simple string input",
       body: {
-        messages: [{ role: "user", content: "What is the 1% Treaty?" }],
+        input: "What is the 1% Treaty?",
       },
     },
     {
-      name: "With userId and conversationId",
+      name: "With options (userId and conversationId)",
       body: {
-        messages: [{ role: "user", content: "Hello" }],
-        userId: "test-user-123",
-        conversationId: "test-conv-456",
+        input: "Tell me about the Decentralized Institutes of Health",
+        options: {
+          userId: "test-user-123",
+          conversationId: "test-conv-456",
+        },
+      },
+    },
+    {
+      name: "Message array format",
+      body: {
+        input: [
+          { role: "user", content: "What problem does the 1% Treaty solve?" },
+        ],
       },
     },
   ];
@@ -222,13 +232,27 @@ async function testChatEndpoint(): Promise<void> {
         console.log(`   ✅ Success!`);
         try {
           const data = JSON.parse(responseText);
-          if (data.text || data.message || data.response) {
-            const preview = (data.text || data.message || data.response || "").substring(0, 200);
-            console.log(`   Response preview: ${preview}${preview.length >= 200 ? "..." : ""}`);
+          // VoltAgent returns streaming responses as newline-delimited JSON
+          if (data.output || data.text || data.message || data.response) {
+            const preview = (data.output || data.text || data.message || data.response || "").substring(0, 300);
+            console.log(`   Response preview: ${preview}${preview.length >= 300 ? "..." : ""}`);
+          } else {
+            console.log(`   Response structure:`, Object.keys(data));
           }
         } catch {
-          // Not JSON, that's fine
-          console.log(`   Response (first 200 chars): ${responseText.substring(0, 200)}`);
+          // Might be streaming format - show first few lines
+          const lines = responseText.split('\n').filter(l => l.trim());
+          if (lines.length > 0) {
+            console.log(`   Streaming response (${lines.length} chunks), first chunk:`);
+            try {
+              const firstChunk = JSON.parse(lines[0]);
+              console.log(`   `, JSON.stringify(firstChunk).substring(0, 200));
+            } catch {
+              console.log(`   `, lines[0].substring(0, 200));
+            }
+          } else {
+            console.log(`   Response (first 200 chars): ${responseText.substring(0, 200)}`);
+          }
         }
       }
     } catch (error: any) {
