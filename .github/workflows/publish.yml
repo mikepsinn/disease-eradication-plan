@@ -94,11 +94,11 @@ jobs:
         id: render-script
         run: |
           if [ "${{ github.event.repository.name }}" == "decentralized-institutes-of-health" ]; then
-            echo "script=render-book-website.py" >> $GITHUB_OUTPUT
+            echo "script=scripts/render-book-website.py" >> $GITHUB_OUTPUT
             echo "output-path=_book/warondisease" >> $GITHUB_OUTPUT
             echo "Rendering complete book website..."
           elif [ "${{ github.event.repository.name }}" == "dih-models" ]; then
-            echo "script=render-economics-website.py" >> $GITHUB_OUTPUT
+            echo "script=scripts/render-economics-website.py" >> $GITHUB_OUTPUT
             echo "output-path=_site/economics" >> $GITHUB_OUTPUT
             echo "Rendering economics models website..."
           else
@@ -107,7 +107,7 @@ jobs:
           fi
 
       - name: Render Quarto Project (HTML) with validation and monitoring
-        run: python ${{ steps.render-script.outputs.script }} --validate
+        run: python ${{ steps.render-script.outputs.script }}
         timeout-minutes: 15
 
       - name: Setup Pages

@@ -5,7 +5,7 @@
  */
 
 const SERVER_URL = process.env.VOLTAGENT_URL || process.env.VOLTAGENT_SERVER_URL || 
-  `http://localhost:${process.env.VOLTAGENT_PORT || "4242"}`;
+  `http://localhost:${process.env.VOLTAGENT_PORT || "3141"}`;
 
 async function checkServer() {
   console.log(`\n🔍 Checking server at: ${SERVER_URL}\n`);

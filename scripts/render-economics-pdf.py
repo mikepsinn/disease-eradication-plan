@@ -22,12 +22,10 @@ from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Render economics models as PDF',
+        description='Render economics models as PDF (with validation)',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__
     )
-    parser.add_argument('--validate', action='store_true',
-                        help='Use render script with validation (recommended)')
     parser.add_argument('--output-dir', type=str, default='_site',
                         help='Output directory (default: _site)')
     parser.add_argument('quarto_args', nargs='*',
@@ -35,8 +33,8 @@ def main():
 
     args = parser.parse_args()
 
-    # Get script directory (project root)
-    project_root = Path(__file__).parent.absolute()
+    # Get project root (parent of scripts directory)
+    project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
 
     # Config files
@@ -53,21 +51,15 @@ def main():
     print(f"[*] Copying {econ_config.name} -> _quarto.yml")
     shutil.copy2(econ_config, quarto_yml)
 
-    # Build command for PDF rendering
-    if args.validate:
-        # Use validated render with checks via tools/render_pdf.py
-        print("[*] Rendering economics PDF with validation...")
-        cmd = [
-            sys.executable,
-            'tools/render_pdf.py',
-            '--command', 'quarto render --to pdf'
-        ]
-        if args.quarto_args:
-            cmd.extend(args.quarto_args)
-    else:
-        # Simple quarto render to PDF
-        print("[*] Rendering economics as PDF...")
-        cmd = ['quarto', 'render', '--to', 'pdf'] + args.quarto_args
+    # Build command for PDF rendering with validation
+    print("[*] Rendering economics PDF with validation...")
+    cmd = [
+        sys.executable,
+        'tools/render_pdf.py',
+        '--command', 'quarto render --to pdf'
+    ]
+    if args.quarto_args:
+        cmd.extend(args.quarto_args)
 
     # Run command
     try:

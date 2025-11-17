@@ -18,8 +18,8 @@
 import { describe, it, expect, beforeAll } from "@jest/globals";
 import { request } from "http";
 
-// VoltAgent defaults to port 4242, but can be overridden
-const SERVER_URL = process.env.VOLTAGENT_URL || process.env.VOLTAGENT_SERVER_URL || `http://localhost:${process.env.VOLTAGENT_PORT || "4242"}`;
+// VoltAgent defaults to port 3141, but can be overridden
+const SERVER_URL = process.env.VOLTAGENT_URL || process.env.VOLTAGENT_SERVER_URL || `http://localhost:${process.env.VOLTAGENT_PORT || "3141"}`;
 const SERVER_START_TIMEOUT = 15000; // 15 seconds
 
 /**
@@ -90,11 +90,16 @@ async function waitForServer(url: string, timeout: number): Promise<void> {
           method: "GET",
           timeout: 2000,
         }, (res) => {
-          // Any HTTP response means server is up
+          // Any HTTP response means server is up (even 500 errors)
           if (!resolved) {
             resolved = true;
-            console.log(`[TEST] ✅ Server responded with status ${res.statusCode} on ${hostname}:${port}`);
-            resolve(true);
+            const statusCode = res.statusCode || 0;
+            if (statusCode >= 200 && statusCode < 600) {
+              console.log(`[TEST] ✅ Server responded with status ${statusCode} on ${hostname}:${port}`);
+              resolve(true);
+            } else {
+              resolve(false);
+            }
           }
         });
 
@@ -107,7 +112,7 @@ async function waitForServer(url: string, timeout: number): Promise<void> {
             } else {
               // Other errors might mean server is up but having issues
               console.log(`[TEST] ⚠️ Server connection error (but might be up): ${error.code || error.message}`);
-              resolve(true); // Assume server is up if we get a non-connection error
+              resolve(false); // Don't assume server is up on connection errors
             }
           }
         });

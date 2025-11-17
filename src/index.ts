@@ -52,7 +52,7 @@ Be helpful, accurate, and aligned with the project's mission and principles.`,
 const port = process.env.VOLTAGENT_PORT ? parseInt(process.env.VOLTAGENT_PORT, 10) : undefined;
 const voltAgent = new VoltAgent({
   agents: {
-    agent: dihAgent,
+    dihAgent: dihAgent,
     bookChat: bookChatAgent,
   },
   server: port ? honoServer({ port }) : honoServer(),
@@ -60,9 +60,10 @@ const voltAgent = new VoltAgent({
 });
 
 // Log server startup info
-const actualPort = port || 4242; // VoltAgent defaults to 4242
+// Note: honoServer() defaults to port 3141, not 4242
+const actualPort = port || 3141; // VoltAgent defaults to 3141
 logger.info(`VoltAgent server configured on port ${actualPort}`);
-logger.info(`Agents registered: agent, bookChat`);
+logger.info(`Agents registered: dihAgent, bookChat`);
 logger.info(`Agent details:`, {
   agent: { name: dihAgent.name, model: "gemini-2.5-pro" },
   bookChat: { name: bookChatAgent.name, model: "gemini-2.5-pro" },
