@@ -21,7 +21,7 @@ lastInstructionalVoiceHash: 860e7eabbc3700ded40396cbc6b4c219866f761e350d0cb03b0e
 from dih_models.parameters import *
 ```
 
-In 2024, humanity spent [$2.7T](../references.qmd#sipri-2024-spending) on war. That's not a typo. It's the budget for your species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.
+In 2024, humanity spent [{{< var global_military_spending_annual_2024 >}}](../references.qmd#sipri-2024-spending) on war. That's not a typo. It's the budget for your species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.
 
 You are a species that spends enough on weapons to literally pave a road to space, yet you can't figure out how to stop dying from preventable diseases.
 
@@ -84,13 +84,13 @@ Let's be conservative and use \$10 million.
 
 | Conflict Type | Deaths/Year | Cost per Death | Annual Cost | Source |
 |--------------|-------------|----------------|-------------|---------|
-| Active Combat | [233,600](../references.qmd#acled-active-combat-deaths) | $10,000,000 | $2,336B | [Armed Conflict Location & Event Data](https://acleddata.com/) |
-| Terror Attacks | [8,300](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | $83B | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
-| State Violence | [2,700](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | $27.2B | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
+| Active Combat | [{{< var global_annual_conflict_deaths_active_combat >}}](../references.qmd#acled-active-combat-deaths) | $10,000,000 | {{< var global_annual_human_cost_active_combat >}} | [Armed Conflict Location & Event Data](https://acleddata.com/) |
+| Terror Attacks | [{{< var global_annual_conflict_deaths_terror_attacks >}}](../references.qmd#gtd-terror-attack-deaths) | $10,000,000 | {{< var global_annual_human_cost_terror_attacks >}} | [Global Terrorism Database](https://www.start.umd.edu/gtd/) |
+| State Violence | [{{< var global_annual_conflict_deaths_state_violence >}}](../references.qmd#ucdp-state-violence-deaths) | $10,000,000 | {{< var global_annual_human_cost_state_violence >}} | [Uppsala Conflict Data Program](https://ucdp.uu.se/) |
 
 ##### Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually
 
-244,600 people die in conflicts each year.
+{{< var global_annual_conflict_deaths_total >}} people die in conflicts each year.
 That's 670 people every day.
 One every 2.2 minutes.
 Each worth \$10 million, apparently.
@@ -172,10 +172,10 @@ Here's a thought experiment: What if we spent our war money on something else?
 
 ### The Multiplier Effect: Economic Growth We're Not Having
 
-The economic multiplier for military spending is [approximately 0.6](../references.qmd#military-spending-economic-multiplier).
-The multiplier for infrastructure investment is [1.6](../references.qmd#infrastructure-investment-economic-multiplier).
-For education, it's [2.1](../references.qmd#education-investment-economic-multiplier).
-For healthcare, it's [4.3](../references.qmd#healthcare-investment-economic-multiplier).
+The economic multiplier for military spending is [{{< var economic_multiplier_military_spending >}}](../references.qmd#military-spending-economic-multiplier).
+The multiplier for infrastructure investment is [{{< var economic_multiplier_infrastructure_investment >}}](../references.qmd#infrastructure-investment-economic-multiplier).
+For education, it's [{{< var economic_multiplier_education_investment >}}](../references.qmd#education-investment-economic-multiplier).
+For healthcare, it's [{{< var economic_multiplier_healthcare_investment >}}](../references.qmd#healthcare-investment-economic-multiplier).
 
 #### Lost GDP Growth Calculation
 
@@ -375,10 +375,10 @@ You have created the most expensive way possible to end human lives. If death we
 
 Meanwhile:
 
-- Global medical research: [\$67.5 billion](../references.qmd#global-gov-med-research-spending) (saves an estimated [4.2 million lives annually](../references.qmd#medical-research-lives-saved-annually))
-- Cost per life saved: \$16,071
+- Global medical research: [{{< var global_med_research_spending >}}](../references.qmd#global-gov-med-research-spending) (saves an estimated [{{< var global_annual_lives_saved_by_med_research >}}](../references.qmd#medical-research-lives-saved-annually))
+- Cost per life saved: {{< var global_cost_per_life_saved_med_research_annual >}}
 
-You're spending 2,889 times more per death than you spend per life saved.
+You're spending {{< var misallocation_factor_death_vs_saving >}} times more per death than you spend per life saved.
 
 The mathematics of human priorities would be fascinating if it weren't so perfectly, tragically absurd. It's like discovering a new species of bird that exclusively builds nests out of dynamite - you'd want to study it, but mostly you'd want to back away slowly.
 
