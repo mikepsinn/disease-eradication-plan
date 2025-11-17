@@ -59,7 +59,7 @@ def main():
         print("[*] Rendering with validation...")
         cmd = [
             sys.executable,
-            'tools/render_html.py',
+            'scripts/render_html.py',
             '--output-dir', args.output_dir,
             '--command', 'quarto render'
         ]

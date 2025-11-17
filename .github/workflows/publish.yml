@@ -171,7 +171,7 @@ jobs:
   #       run: quarto install tinytex
 
   #     - name: Render Quarto Project (PDF) with validation and monitoring
-  #       run: python tools/render_pdf.py
+  #       run: python scripts/render_pdf.py
   #       timeout-minutes: 15
 
   #     - name: Upload PDF artifact
