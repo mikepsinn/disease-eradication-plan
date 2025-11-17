@@ -74,7 +74,19 @@ For each issue found, provide:
 - LineNumber: Approximate line number (optional)
 - Confidence: Your confidence level 0-1 (optional)
 
-Return a JSON array of issues.`,
+Return a JSON object with this exact structure:
+{
+  "issues": [
+    {
+      "type": "parameter",
+      "priority": "high",
+      "description": "...",
+      "suggestedFix": "...",
+      "lineNumber": 42,
+      "confidence": 0.9
+    }
+  ]
+}`,
       schema: z.object({
         issues: z.array(
           z.object({
@@ -94,7 +106,10 @@ Return a JSON array of issues.`,
         ),
       }),
     })
-    .andThen("add-todos", async ({ filePath, issues }) => {
+    .andThen("add-todos", async (context) => {
+      console.log("add-todos step received context:", JSON.stringify(context, null, 2));
+      const { filePath, issues } = context as any;
+
       // Add each issue as a todo
       for (const issue of issues) {
         // Convert confidence from 0-1 to low/medium/high

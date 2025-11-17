@@ -98,6 +98,14 @@ export class WishoniaVoltAgent {
 
   constructor() {
     this.todoManager = todoManager;
+
+    // Create workflow for file processing
+    this.fileReviewWorkflow = createFileReviewWorkflow(
+      wishoniaSupervisor,
+      this.todoManager,
+      memory
+    );
+
     this.voltAgent = new VoltAgent({
       agents: {
         wishoniaSupervisor,
@@ -107,16 +115,12 @@ export class WishoniaVoltAgent {
         referenceLinkerAgent,
         consistencyCheckerAgent,
       },
+      workflows: {
+        fileReview: this.fileReviewWorkflow,
+      },
       logger,
       server: honoServer({ port: 3141 }),
     });
-    
-    // Create workflow for file processing
-    this.fileReviewWorkflow = createFileReviewWorkflow(
-      wishoniaSupervisor,
-      this.todoManager,
-      memory
-    );
   }
 
   /**
@@ -132,12 +136,18 @@ export class WishoniaVoltAgent {
    */
   async processFile(filePath: string): Promise<void> {
     logger.info(`Processing file: ${filePath}`);
-    
+
     try {
       // Run the file review workflow
-      const result = await this.fileReviewWorkflow.execute({
-        filePath,
-      });
+      const result = await this.fileReviewWorkflow.run(
+        { filePath },
+        {
+          userId: "wishonia-cli",
+          conversationId: `file-review-${filePath}`,
+        }
+      );
+
+      logger.info(`✅ Processed ${filePath}: Found ${result.totalIssues} issues`);
 
       // Update hash fields after processing
       const { readFileWithMatter } = await import("../lib/file-utils");
@@ -152,8 +162,6 @@ export class WishoniaVoltAgent {
       await updateFileHash(filePath, HASH_FIELDS.CONSISTENCY_CHECK, currentHash);
       await updateFileHash(filePath, HASH_FIELDS.WISHONIA_FULL_REVIEW, currentHash);
 
-      logger.info(`✅ Processed ${filePath}: Found ${result.issues.length} issues`);
-      
       // Save todos
       await this.todoManager.save();
     } catch (error) {

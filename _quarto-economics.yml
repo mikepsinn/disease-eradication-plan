@@ -2,15 +2,6 @@ project:
   type: website
   output-dir: _site/economics
   execute-dir: project
-
-profiles:
-  default:
-    dotenv:
-      allowEmptyValues: true
-  # pre-render:
-  #   - python scripts/pre-render-validation.py
-  # post-render:
-  #   - python scripts/post-render-validation.py
   render:
     # Economics Analysis
     - knowledge/economics/economics.qmd # ✓ Style reviewed 2025-01-15
@@ -67,6 +58,15 @@ profiles:
     - knowledge/appendix/legal-compliance-framework.qmd
     # References
     - knowledge/references.qmd
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+  # pre-render:
+  #   - python scripts/pre-render-validation.py
+  # post-render:
+  #   - python scripts/post-render-validation.py
 
 website:
   title: "DIH Economic Models"

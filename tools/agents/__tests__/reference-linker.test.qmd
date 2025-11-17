@@ -1,0 +1,126 @@
+---
+title: Reference Linker Test File
+subtitle: Test cases for LaTeX-aware number detection
+test-file: true
+lastParameterCheckHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0f646032ab3b9
+lastMathValidationHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0f646032ab3b9
+lastClaimValidationHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0f646032ab3b9
+lastReferenceLinkingHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0f646032ab3b9
+lastConsistencyCheckHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0f646032ab3b9
+lastWishoniaFullReviewHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0f646032ab3b9
+---
+```{python}
+#| echo: false
+from economic_parameters import *
+```
+
+# Reference Linker Test Cases
+
+This file contains various test scenarios for the Reference Linker agent.
+
+## Test 1: Numbers in LaTeX equations (SHOULD BE IGNORED)
+
+The ROI can be calculated as:
+
+$$
+ROI = \frac{Benefits}{Costs} = \frac{163.55}{0.29} = 564:1
+$$
+
+Inline math: The total is $50 + 100 = 150$ billion dollars.
+
+More complex LaTeX:
+
+\[
+NPV = \sum_{t=0}^{T} \frac{B_t - C_t}{(1 + r)^t} = 463:1
+\]
+
+## Test 2: Hardcoded numbers (SHOULD BE FLAGGED)
+
+The global military spending is $2,718 billion annually. This massive sum could be redirected to medical research.
+
+The dFDA costs only $40 million to build and $40 million annually to operate.
+
+With 244,600 annual conflict deaths and 55 million disease deaths, we face a daily massacre.
+
+## Test 3: Numbers using {{< var >}} (CORRECT - SHOULD NOT BE FLAGGED)
+
+The global military spending is {{< var global_military_spending_annual_2024 >}} annually.
+
+The dFDA operational costs are {{< var dfda_annual_opex >}} per year.
+
+Annual conflict deaths total {{< var global_annual_conflict_deaths_total >}}.
+
+## Test 4: Numbers with manual links (CORRECT - SHOULD NOT BE FLAGGED)
+
+The [244,600](/knowledge/references.qmd#acled-2024) annual conflict deaths are well-documented.
+
+Research shows [$50B](/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction) in annual savings.
+
+## Test 5: Numbers in code blocks (SHOULD BE IGNORED)
+
+```python
+military_spending = 2718  # billions USD
+dfda_cost = 40  # millions USD
+roi = military_spending / dfda_cost
+print(f"ROI: {roi}:1")
+```
+
+Inline code: `const cost = 2718;` should also be ignored.
+
+## Test 6: Mixed scenarios
+
+The 1% Treaty would redirect 1% of [$2.7 trillion](/knowledge/problem/cost-of-war.qmd) in military spending.
+
+This equals $27.2 billion annually (should be flagged - hardcoded).
+
+But the benefit is {{< var peace_dividend_annual_societal_benefit >}} (correct format).
+
+The ratio is:
+
+$$
+\frac{113.55}{27.18} = 4.18:1
+$$
+
+Which represents a 418% return (should be flagged).
+
+## Test 7: Numbers in HTML comments (SHOULD BE IGNORED)
+
+<!-- The cost is $40 million -->
+<!-- ROI: 463:1 -->
+
+## Test 8: Edge cases
+
+- Small numbers: The parameter count is 5 agents (trivial - might flag)
+- Large numbers: 2,400,000,000 people with chronic diseases (should flag)
+- Percentages: 50% cost reduction (should flag)
+- Ratios: 463:1 ROI (should flag)
+- Currency: $150,000 per QALY (should flag)
+
+## Test 9: Already linked numbers (SHOULD NOT BE FLAGGED)
+
+See [Figure 3.2](/knowledge/figures/roi-comparison.qmd#fig-roi) showing the 463:1 return on investment.
+
+The cost-effectiveness of [1,376x](/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell) better than GiveWell charities.
+
+## Expected Results
+
+**Should FLAG (hardcoded numbers not in LaTeX/code):**
+
+- Test 2: All numbers ($2,718B, $40M, 244,600, 55M)
+- Test 6: $27.2 billion, 418%
+- Test 8: Most numbers (except trivial ones)
+
+**Should NOT flag (correct usage or excluded):**
+
+- Test 1: All LaTeX equations
+- Test 3: All {{< var >}} parameters
+- Test 4: All manually linked numbers
+- Test 5: All code blocks
+- Test 7: HTML comments
+- Test 9: Numbers inside links
+
+### Test instructions
+
+Run: `npm run wishonia:file -- tools/agents/__tests__/reference-linker.test.qmd`
+
+The Reference Linker should identify ~8-12 issues (hardcoded numbers) while ignoring LaTeX equations, code blocks, and properly linked numbers.
