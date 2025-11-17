@@ -182,6 +182,10 @@
 "caregiver_value_per_hour_simple": "<a href=\"/knowledge/references.qmd#caregiver-replacement-cost\"\
   \ class=\"parameter-link\" title=\"Estimated replacement cost per hour of caregiving\
   \ | ✓ High confidence | Unit: USD/hour | Click to view source\">$25</a>"
+"childhood_vaccination_annual_benefit": "<a href=\"/knowledge/references.qmd#/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
+  \ class=\"parameter-link\" title=\"Estimated annual global economic benefit from\
+  \ childhood vaccination programs (measles, polio, etc.) | ✓ High confidence | Unit:\
+  \ billions USD/year | Click to view source\">$15B</a>"
 "childhood_vaccination_roi": "<a href=\"/knowledge/references.qmd#childhood-vaccination-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from childhood vaccination\
   \ programs | ✓ High confidence | Unit: ratio | Click to view source\">13</a>"
@@ -195,6 +199,10 @@
 "completed_trials_multiplier_conservative": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier\"\
   \ class=\"parameter-link\" title=\"Conservative completed trials multiplier accounting\
   \ for scale-up | ✓ High confidence | Unit: ratio | Click to view calculation\">115</a>"
+"completed_trials_multiplier_theoretical_max": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum\"\
+  \ class=\"parameter-link\" title=\"Theoretical maximum research capacity multiplier\
+  \ (25×10×1.6×1.4) | ✓ High confidence | Formula: RECRUITMENT_SPEED × COMPLETION_SPEED\
+  \ × COMPLETION_RATE × FUNDING | Unit: ratio | Click to view calculation\">560</a>"
 "completion_rate_improvement_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
   \ class=\"parameter-link\" title=\"Completion rate improvement (1.6x from 60% →\
   \ 95%) | ✓ High confidence | Unit: ratio | Click to view calculation\">1.6</a>"
@@ -220,6 +228,9 @@
 "current_active_trials": "<a href=\"/knowledge/references.qmd#active-clinical-trials-baseline\"\
   \ class=\"parameter-link\" title=\"Current active trials at any given time (3-5\
   \ year duration) | ✓ High confidence | Unit: trials | Click to view source\">10,000</a>"
+"current_clinical_trial_participation_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-participants\"\
+  \ class=\"parameter-link\" title=\"Current clinical trial participation rate (0.06%\
+  \ of population) | ✓ High confidence | Unit: rate | Click to view source\">0.06%</a>"
 "current_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#current-capacity\"\
   \ class=\"parameter-link\" title=\"Current completed trials per year (trials × completion\
   \ rate) | ✓ High confidence | Formula: TRIALS_PER_YEAR × COMPLETION_RATE | Unit:\
@@ -257,6 +268,9 @@
 "death_spending_misallocation_factor": "<a href=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ class=\"parameter-link\" title=\"Misallocation factor for spending on death vs\
   \ prevention | ✓ High confidence | Unit: ratio | Click to view calculation\">1,750</a>"
+"defense_sector_retention_pct": "<span class=\"parameter-definition\" title=\"Percentage\
+  \ of budget defense sector keeps under 1% treaty | Unit: rate | Core definition\"\
+  >99%</span>"
 "dfda_active_trials": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"Active trials at any given time (3-12 month duration)\
   \ | ✓ High confidence | Unit: trials | Click to view calculation\">200,000</a>"
@@ -415,10 +429,26 @@
   \ class=\"parameter-link\" title=\"Percentage of caregiving for treatable disease\
   \ conditions (vs aging, disability, children) | ✓ High confidence | Unit: rate |\
   \ Click to view calculation\">40%</a>"
+"disease_vs_terrorism_deaths_ratio": "<a href=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" title=\"Ratio of annual disease deaths to 9/11 terrorism\
+  \ deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS | Unit:\
+  \ ratio | Click to view calculation\">18,274</a>"
+"disease_vs_war_deaths_ratio": "<a href=\"/knowledge/economics/economics.qmd\" class=\"\
+  parameter-link\" title=\"Ratio of annual disease deaths to war deaths | ✓ High confidence\
+  \ | Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS | Unit: ratio | Click to view calculation\"\
+  >1.63</a>"
 "dividend_coverage_factor": "<a href=\"/knowledge/strategy/roadmap.qmd#sustainability\"\
   \ class=\"parameter-link\" title=\"Coverage factor of treaty funding vs dFDA opex\
   \ (sustainability margin) | ✓ High confidence | Formula: TREATY_FUNDING ÷ DFDA_OPEX\
   \ | Unit: ratio | Click to view calculation\">680</a>"
+"drug_price_reduction_savings_high": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
+  \ class=\"parameter-link\" title=\"High estimate of annual savings from drug price\
+  \ reductions (50% reduction of $360B U.S. spending) | ✓ High confidence | Unit:\
+  \ billions USD/year | Click to view calculation\">$180B</a>"
+"drug_price_reduction_savings_low": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
+  \ class=\"parameter-link\" title=\"Low estimate of annual savings from drug price\
+  \ reductions (20% reduction of $360B U.S. spending) | ✓ High confidence | Unit:\
+  \ billions USD/year | Click to view calculation\">$72B</a>"
 "economic_multiplier_education_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-education\"\
   \ class=\"parameter-link\" title=\"Economic multiplier for education investment\
   \ (2.1x ROI) | ✓ High confidence | Unit: ratio | Click to view source\">2.1</a>"
@@ -483,6 +513,10 @@
   \ class=\"parameter-link\" title=\"Total annual conflict deaths globally (sum of\
   \ combat, terror, state violence) | ✓ High confidence | Formula: COMBAT + TERROR\
   \ + STATE_VIOLENCE | Unit: deaths/year | Click to view calculation\">244,600</a>"
+"global_annual_deaths_curable_diseases": "<a href=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" title=\"Annual deaths from curable diseases globally\
+  \ | ✓ High confidence | Formula: GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365 | Unit:\
+  \ deaths/year | Click to view calculation\">54,750,000</a>"
 "global_annual_environmental_damage_conflict": "<a href=\"/knowledge/references.qmd#war-environmental-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual environmental damage and restoration costs\
   \ from conflict | ✓ High confidence | Unit: billions USD | Click to view source\"\
@@ -624,6 +658,10 @@
 "global_dfda_qalys_gained_annual": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd\"\
   \ class=\"parameter-link\" title=\"Annual QALYs gained from dFDA | ✓ High confidence\
   \ | Unit: QALYs/year | Click to view calculation\">840,000</a>"
+"global_disease_economic_burden_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
+  \ class=\"parameter-link\" title=\"Total economic burden of disease globally (lost\
+  \ productivity, mortality, disability) | ✓ High confidence | Unit: billions USD/year\
+  \ | Click to view source\">$109T</a>"
 "global_education_for_all_cost": "<a href=\"/knowledge/references.qmd#unesco-education-for-all-cost\"\
   \ class=\"parameter-link\" title=\"Global cost to achieve universal education |\
   \ ✓ High confidence | Unit: billions USD | Click to view source\">$30B</a>"
@@ -665,6 +703,14 @@
 "global_poverty_eradication_cost_total": "<a href=\"/knowledge/references.qmd#world-bank-poverty-eradication\"\
   \ class=\"parameter-link\" title=\"Total cost to eradicate global poverty | ✓ High\
   \ confidence | Unit: billions USD | Click to view source\">$1.00T</a>"
+"global_symptomatic_disease_treatment_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
+  \ class=\"parameter-link\" title=\"Annual global spending on symptomatic disease\
+  \ treatment | ✓ High confidence | Unit: billions USD/year | Click to view source\"\
+  >$8.20T</a>"
+"global_total_health_and_war_cost_annual": "<a href=\"/knowledge/appendix/humanity-budget-overview.qmd\"\
+  \ class=\"parameter-link\" title=\"Total annual cost of war and disease combined\
+  \ | ✓ High confidence | Formula: WAR_TOTAL + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN\
+  \ | Unit: billions USD/year | Click to view calculation\">$129T</a>"
 "global_total_war_cost_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ class=\"parameter-link\" title=\"Per capita total war cost globally | ✓ High confidence\
   \ | Formula: TOTAL_WAR_COST ÷ POPULATION | Unit: USD/person/year | Click to view\
@@ -745,6 +791,10 @@
   >148</span>"
 "medical_progress_multiplier_5pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_5PCT\"\
   >247</span>"
+"medical_research_pct_of_disease_burden": "<a href=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" title=\"Medical research spending as percentage of total\
+  \ disease burden | ✓ High confidence | Formula: MED_RESEARCH ÷ TOTAL_BURDEN | Unit:\
+  \ rate | Click to view calculation\">0.0525%</a>"
 "mental_health_grants_annual_millions": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
   \ class=\"parameter-link\" title=\"Annual mental health research grants total |\
   \ ✓ High confidence | Unit: millions USD/year | Click to view source\">$500M</a>"
@@ -772,6 +822,14 @@
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
   \ horizon for NPV analysis | Unit: years | Core definition\">10</span>"
+"opportunity_cost_per_day": "<a href=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
+  \ class=\"parameter-link\" title=\"Foregone economic value per day from not implementing\
+  \ system | ✓ High confidence | Formula: TREATY_COMPLETE_CASE_ANNUAL_BENEFITS ÷ 365\
+  \ | Unit: billions USD/day | Click to view calculation\">$3.39B</a>"
+"opportunity_cost_per_second": "<a href=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
+  \ class=\"parameter-link\" title=\"Foregone economic value per second from not implementing\
+  \ system | ✓ High confidence | Formula: TREATY_COMPLETE_CASE_ANNUAL_BENEFITS × 1B\
+  \ ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\">$39.3K</a>"
 "optimistic_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic scenario ROI (net benefit ÷ total\
   \ costs) | ✓ High confidence | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio\
@@ -946,6 +1004,9 @@
 "qualified_investor_min_thousands": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for qualified investors |\
   \ ✓ High confidence | Unit: thousands USD | Click to view calculation\">$100K</a>"
+"rare_diseases_count_global": "<a href=\"/knowledge/references.qmd#95-pct-diseases-no-treatment\"\
+  \ class=\"parameter-link\" title=\"Total number of rare diseases globally | ✓ High\
+  \ confidence | Unit: diseases | Click to view source\">7,000</a>"
 "rare_disease_typical_patient_count": "<a href=\"/knowledge/references.qmd#rare-disease-prevalence\"\
   \ class=\"parameter-link\" title=\"Typical patient count for rare diseases | ✓ High\
   \ confidence | Unit: patients | Click to view source\">500</a>"
@@ -1094,6 +1155,9 @@
 "system_profit_per_life_saved_millions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" title=\"System profit per life saved in millions | ✓\
   \ High confidence | Unit: millions USD/life | Click to view calculation\">$5.87M</a>"
+"terrorism_deaths_911": "<a href=\"/knowledge/references.qmd#911-deaths\" class=\"\
+  parameter-link\" title=\"Deaths from 9/11 terrorist attacks | ✓ High confidence\
+  \ | Unit: deaths | Click to view source\">2,996</a>"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" title=\"\
   Total words in the book | ✓ High confidence | Unit: words | Click to view calculation\"\
   >171,121</a>"
@@ -1150,10 +1214,10 @@
 "treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
   \ from 1% of global military spending redirected to DIH | Unit: billions USD/year\
   \ | Core definition\">$27.2B</span>"
-"treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#vaccine-comparison\"\
+"treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ class=\"parameter-link\" title=\"Treaty system benefit multiplier vs childhood\
-  \ vaccination programs (10x) | ✓ High confidence | Unit: ratio | Click to view calculation\"\
-  >10</a>"
+  \ vaccination programs | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT\
+  \ ÷ CHILDHOOD_VACCINATION_BENEFIT | Unit: ratio | Click to view calculation\">10.9</a>"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Amortized annual campaign cost (total cost ÷\
   \ campaign duration) | ✓ High confidence | Formula: TOTAL_COST ÷ DURATION | Unit:\
@@ -1204,6 +1268,12 @@
 "treaty_campaign_voting_bloc_target_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ class=\"parameter-link\" title=\"Target voting bloc size for campaign | ✓ High\
   \ confidence | Unit: millions of people | Click to view calculation\">280</a>"
+"treaty_complete_case_annual_benefits": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
+  \ class=\"parameter-link\" title=\"Total annual benefits from all 8 categories (peace\
+  \ dividend + R&D savings + earlier access + research acceleration + rare diseases\
+  \ + drug prices + prevention + mental health) | ✓ High confidence | Formula: 113.6\
+  \ + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0 | Unit: billions USD/year\
+  \ | Click to view calculation\">$1.24T</a>"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
   \ class=\"parameter-link\" title=\"Annual lives saved from 1% reduction in conflict\
   \ deaths | ✓ High confidence | Formula: TOTAL_DEATHS × REDUCTION_PCT | Unit: lives/year\
@@ -1246,6 +1316,9 @@
 "typical_ceo_hourly_rate": "<a href=\"/knowledge/references.qmd#ceo-compensation\"\
   \ class=\"parameter-link\" title=\"Typical CEO hourly rate | ✓ High confidence |\
   \ Unit: USD/hour | Click to view source\">$10K</a>"
+"us_annual_drug_spending": "<a href=\"/knowledge/references.qmd#us-drug-spending-annual\"\
+  \ class=\"parameter-link\" title=\"Annual US pharmaceutical spending | ✓ High confidence\
+  \ | Unit: billions USD/year | Click to view source\">$360B</a>"
 "us_chronic_disease_spending_annual": "<a href=\"/knowledge/references.qmd#us-chronic-disease-spending\"\
   \ class=\"parameter-link\" title=\"US annual chronic disease spending | ✓ High confidence\
   \ | Unit: USD/year | Click to view source\">$4.10T</a>"
@@ -1255,6 +1328,9 @@
 "us_dot_value_of_statistical_life_millions": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"US Department of Transportation value of statistical\
   \ life | ✓ High confidence | Unit: millions USD | Click to view source\">$13.6M</a>"
+"us_drug_price_multiplier_vs_peer_countries": "<a href=\"/knowledge/references.qmd#us-drug-prices-vs-peer-countries\"\
+  \ class=\"parameter-link\" title=\"US drug prices compared to peer countries multiplier\
+  \ | ✓ High confidence | Unit: ratio | Click to view source\">2.78</a>"
 "us_median_salary": "<a href=\"/knowledge/references.qmd#us-median-salary-2024\" class=\"\
   parameter-link\" title=\"US median salary in 2024 | ✓ High confidence | Unit: USD/year\
   \ | Click to view source\">$59.4K</a>"

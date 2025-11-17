@@ -1549,6 +1549,17 @@ TREATY_TOTAL_ANNUAL_BENEFITS = Parameter(
     latex=r"TotalBenefits = \$113.55B + \$50B = \$163.55B"
 )  # $164B (rounded from $163.55B)
 
+# Complete case total annual benefits (all 8 benefit categories)
+TREATY_COMPLETE_CASE_ANNUAL_BENEFITS = Parameter(
+    1238.6,
+    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
+    source_type="calculated",
+    description="Total annual benefits from all 8 categories (peace dividend + R&D savings + earlier access + research acceleration + rare diseases + drug prices + prevention + mental health)",
+    unit="billions USD/year",
+    formula="113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0",
+    latex=r"TotalComplete = \$113.6B + \$50B + \$300B + \$100B + \$400B + \$100B + \$100B + \$75B = \$1,238.6B"
+)  # $1.2T (rounded from $1,238.6B)
+
 # Net benefit
 TREATY_NET_ANNUAL_BENEFIT = Parameter(
     TREATY_TOTAL_ANNUAL_BENEFITS - TREATY_TOTAL_ANNUAL_COSTS,
@@ -1941,6 +1952,152 @@ GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
     unit="deaths/day"
 )  # Daily deaths from curable diseases
 
+# Annual disease deaths (calculated from daily)
+GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
+    GLOBAL_DAILY_DEATHS_CURABLE_DISEASES * 365,
+    source_ref="/knowledge/economics/economics.qmd",
+    source_type="calculated",
+    description="Annual deaths from curable diseases globally",
+    unit="deaths/year",
+    formula="GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365"
+)  # 54.75 million deaths/year
+
+# Disease economic burden
+GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
+    8200,
+    source_ref="disease-economic-burden-109t",
+    source_type="external",
+    description="Annual global spending on symptomatic disease treatment",
+    unit="billions USD/year"
+)  # $8.2 trillion annually
+
+GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
+    109000,
+    source_ref="disease-economic-burden-109t",
+    source_type="external",
+    description="Total economic burden of disease globally (lost productivity, mortality, disability)",
+    unit="billions USD/year"
+)  # $109 trillion annually
+
+GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
+    GLOBAL_ANNUAL_WAR_TOTAL_COST + GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
+    source_ref="/knowledge/appendix/humanity-budget-overview.qmd",
+    source_type="calculated",
+    description="Total annual cost of war and disease combined",
+    unit="billions USD/year",
+    formula="WAR_TOTAL + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN"
+)  # $119.8 trillion
+
+# Defense and research participation rates
+DEFENSE_SECTOR_RETENTION_PCT = Parameter(
+    0.99,
+    source_ref="",
+    source_type="definition",
+    description="Percentage of budget defense sector keeps under 1% treaty",
+    unit="rate"
+)  # 99% retention
+
+CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
+    0.0006,
+    source_ref="clinical-trial-participants",
+    source_type="external",
+    description="Current clinical trial participation rate (0.06% of population)",
+    unit="rate"
+)  # 0.06% participation
+
+# US healthcare metrics
+US_DRUG_PRICE_MULTIPLIER_VS_PEER_COUNTRIES = Parameter(
+    2.78,
+    source_ref="us-drug-prices-vs-peer-countries",
+    source_type="external",
+    description="US drug prices compared to peer countries multiplier",
+    unit="ratio"
+)  # 2.78x higher
+
+US_ANNUAL_DRUG_SPENDING = Parameter(
+    360,
+    source_ref="us-drug-spending-annual",
+    source_type="external",
+    description="Annual US pharmaceutical spending",
+    unit="billions USD/year"
+)  # $360B annually
+
+# Rare diseases
+RARE_DISEASES_COUNT_GLOBAL = Parameter(
+    7000,
+    source_ref="95-pct-diseases-no-treatment",
+    source_type="external",
+    description="Total number of rare diseases globally",
+    unit="diseases"
+)  # ~7,000 rare diseases
+
+# Historical terrorism deaths
+TERRORISM_DEATHS_911 = Parameter(
+    2996,
+    source_ref="911-deaths",
+    source_type="external",
+    description="Deaths from 9/11 terrorist attacks",
+    unit="deaths"
+)  # 2,996 deaths
+
+# Research acceleration multipliers
+COMPLETED_TRIALS_MULTIPLIER_THEORETICAL_MAX = Parameter(
+    560,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum",
+    source_type="calculated",
+    description="Theoretical maximum research capacity multiplier (25×10×1.6×1.4)",
+    unit="ratio",
+    formula="RECRUITMENT_SPEED × COMPLETION_SPEED × COMPLETION_RATE × FUNDING"
+)  # 560x theoretical max
+
+# Calculated ratios and comparisons
+DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
+    GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / TERRORISM_DEATHS_911,
+    source_ref="/knowledge/economics/economics.qmd",
+    source_type="calculated",
+    description="Ratio of annual disease deaths to 9/11 terrorism deaths",
+    unit="ratio",
+    formula="ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS"
+)  # ~18,274:1
+
+DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
+    GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / (GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * 137),
+    source_ref="/knowledge/economics/economics.qmd",
+    source_type="calculated",
+    description="Ratio of annual disease deaths to war deaths",
+    unit="ratio",
+    formula="ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS"
+)  # ~137:1
+
+# Opportunity cost calculations
+OPPORTUNITY_COST_PER_SECOND = Parameter(
+    (TREATY_COMPLETE_CASE_ANNUAL_BENEFITS * 1_000_000_000) / (365 * 24 * 3600),
+    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
+    source_type="calculated",
+    description="Foregone economic value per second from not implementing system",
+    unit="USD/second",
+    formula="TREATY_COMPLETE_CASE_ANNUAL_BENEFITS × 1B ÷ SECONDS_PER_YEAR"
+)  # ~$38,051/second
+
+OPPORTUNITY_COST_PER_DAY = Parameter(
+    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / 365,
+    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
+    source_type="calculated",
+    description="Foregone economic value per day from not implementing system",
+    unit="billions USD/day",
+    formula="TREATY_COMPLETE_CASE_ANNUAL_BENEFITS ÷ 365"
+)  # ~$3.3B/day
+
+# Medical research as percentage of disease burden
+MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
+    GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
+    source_ref="/knowledge/economics/economics.qmd",
+    source_type="calculated",
+    description="Medical research spending as percentage of total disease burden",
+    unit="rate",
+    formula="MED_RESEARCH ÷ TOTAL_BURDEN"
+)  # 0.057%
+
 # Per capita calculations
 GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_POPULATION_2024_BILLIONS,
@@ -2024,6 +2181,14 @@ CHILDHOOD_VACCINATION_ROI = Parameter(
     unit="ratio"
 )  # 13:1
 
+CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
+    15.0,
+    source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
+    source_type="external",
+    description="Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)",
+    unit="billions USD/year"
+)  # ~$15B annual benefit from preventing measles, polio, etc.
+
 WATER_FLUORIDATION_ROI = Parameter(
     23,
     source_ref="water-fluoridation-roi",
@@ -2079,6 +2244,23 @@ BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL = Parameter(
     description="Annual benefit from R&D savings passed to consumers",
     unit="billions USD/year"
 )  # R&D savings passed to consumers
+
+# Drug price reduction range (U.S. prices 2.78x higher than peer countries)
+DRUG_PRICE_REDUCTION_SAVINGS_LOW = Parameter(
+    72.0,
+    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
+    source_type="calculated",
+    description="Low estimate of annual savings from drug price reductions (20% reduction of $360B U.S. spending)",
+    unit="billions USD/year"
+)  # $72B = $360B × 20%
+
+DRUG_PRICE_REDUCTION_SAVINGS_HIGH = Parameter(
+    180.0,
+    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
+    source_type="calculated",
+    description="High estimate of annual savings from drug price reductions (50% reduction of $360B U.S. spending)",
+    unit="billions USD/year"
+)  # $180B = $360B × 50%
 
 BENEFIT_PREVENTION_ANNUAL = Parameter(
     100.0,
@@ -3220,12 +3402,13 @@ SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS = Parameter(
 )  # Millions USD, system profit per life saved (specific phrasing in text)
 
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
-    10,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#vaccine-comparison",
+    COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
+    source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
     source_type="calculated",
-    description="Treaty system benefit multiplier vs childhood vaccination programs (10x)",
-    unit="ratio"
-)  # Multiplier: treaty system (1% Treaty + dFDA) benefit vs childhood vaccines program
+    description="Treaty system benefit multiplier vs childhood vaccination programs",
+    unit="ratio",
+    formula="TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT"
+)  # ~11:1 ratio (treaty system is 11x larger in economic impact)
 
 # Price of Procrastination Metrics
 DEATHS_DURING_READING_SECTION = Parameter(
