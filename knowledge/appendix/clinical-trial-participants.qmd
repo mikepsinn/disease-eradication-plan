@@ -74,7 +74,7 @@ Clinical trial participants annually (midpoint): 5 million
 
 Six-hundredths of one percent. If clinical trials were a lottery, your odds would be 1 in 1,600.
 
-Meanwhile, [{{< var global_daily_deaths_curable_diseases >}} people die every day](../references.qmd#daily-death-toll) from diseases we're studying.
+Meanwhile, {{< var global_daily_deaths_curable_diseases >}} people die every day from diseases we're studying.
 
 ## The Access Lottery
 
@@ -118,7 +118,7 @@ That's not per treatment. That's the overhead cost per human enrolled, covering:
 - Committees reviewing committees
 - The salaries of people whose job is writing protocols
 
-Phase 3 trials ([median 237 participants](../references.qmd#clinicaltrials-gov-enrollment-data-2025)) cost [{{< var phase_3_trial_cost_min_millions >}} million each](../references.qmd#phase-3-cost-per-trial). That's $84,388 per patient. Not for the drug. For the *trial*.
+Phase 3 trials ([median 237 participants](../references.qmd#clinicaltrials-gov-enrollment-data-2025)) cost {{< var phase_3_trial_cost_min_millions >}} million each. That's $84,388 per patient. Not for the drug. For the *trial*.
 
 You could buy each participant a new Honda Civic and still have money left over.
 

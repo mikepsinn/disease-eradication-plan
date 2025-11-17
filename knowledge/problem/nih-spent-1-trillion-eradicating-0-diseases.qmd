@@ -139,7 +139,7 @@ Meanwhile, the UK RECOVERY trial:
 **Timeline:** [6 months](../references.qmd#landray-recovery-trial-quote)
 **Patients enrolled:** [48,000](../references.qmd#recovery-trial-82x-cost-reduction)
 **Treatments found:** [Multiple, including dexamethasone](../references.qmd#recovery-trial-summary-quote)
-**Cost per patient:** [{{< var recovery_trial_cost_per_patient >}}](../references.qmd#recovery-cost-500)
+**Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
 The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
 
@@ -206,13 +206,13 @@ Let's do the real math on what we could have done with that money:
 ### Current NIH System
 
 - Annual budget: [\$51 billion](../references.qmd#nih-budget-fy2025)
-- Cost per trial participant: [{{< var traditional_phase3_cost_per_patient_fda_example_41k >}}](../references.qmd#trial-cost-41k)
+- Cost per trial participant: {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - Annual participants: ~1.2 million
 - Diseases cured: Zero
 
 **What \$51 billion could buy using UK RECOVERY methods:**
 
-- Cost per trial participant: [{{< var recovery_trial_cost_per_patient >}}](../references.qmd#recovery-cost-500)
+- Cost per trial participant: {{< var recovery_trial_cost_per_patient >}}
 - Annual participants: 102 million (82x more)
 - Potential treatments found: Hundreds
 

@@ -20,7 +20,7 @@ Usage:
 # ============================================================================
 
 class Parameter(float):
-    """
+    r"""
     A numeric parameter that works in calculations but carries source metadata.
 
     Enables clickable links from numbers to their sources (external citations)
