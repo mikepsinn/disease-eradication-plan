@@ -285,8 +285,8 @@
 "dfda_icer_per_qaly": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis\"\
   \ class=\"parameter-link\" title=\"dFDA Infrastructure ICER per QALY (net incremental\
   \ cost ÷ QALYs gained) | ✓ High confidence | Formula: (DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL)\
-  \ ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
-  >$-0</a>"
+  \ × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
+  >$-59.5K</a>"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ class=\"parameter-link\" title=\"Months to recruit 10,000+ patients in dFDA system\
   \ | ✓ High confidence | Unit: months | Click to view calculation\">3</a>"
@@ -762,11 +762,11 @@
 "multiplier_vs_givewell": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ class=\"parameter-link\" title=\"Cost-effectiveness multiplier vs GiveWell top\
   \ charities | ✓ High confidence | Formula: ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST\
-  \ | Unit: ratio | Click to view calculation\">1,372</a>"
+  \ | Unit: ratio | Click to view calculation\">0.00137</a>"
 "net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
-  \ | ✓ High confidence | Formula: ICER × QALYS_PER_LIFE | Unit: millions USD/life\
-  \ | Click to view calculation\">$-6.17K</a>"
+  \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: millions USD/life\
+  \ | Click to view calculation\">$-0</a>"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\

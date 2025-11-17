@@ -1563,11 +1563,12 @@ TREATY_NET_ANNUAL_BENEFIT = Parameter(
 # ICER calculation (Incremental Cost-Effectiveness Ratio)
 # Negative ICER means society SAVES money while gaining QALYs
 ICER_PER_QALY = Parameter(
-    (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
+    ((TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) * 1_000_000_000) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation",
     source_type="calculated",
     description="Incremental Cost-Effectiveness Ratio (ICER) per QALY gained",
-    unit="USD/QALY"
+    unit="USD/QALY",
+    formula="(TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL"
 )  # -$176,907 per QALY (negative = cost-saving)
 
 # dFDA Infrastructure ICER (specific calculation for economics.qmd)
@@ -1583,23 +1584,23 @@ DFDA_NET_INCREMENTAL_COST_ANNUAL = Parameter(
 )  # -$49.96B annually
 
 DFDA_ICER_PER_QALY = Parameter(
-    (DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL) / GLOBAL_DFDA_QALYS_GAINED_ANNUAL,
+    ((DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL) * 1_000_000_000) / GLOBAL_DFDA_QALYS_GAINED_ANNUAL,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis",
     source_type="calculated",
     description="dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)",
     unit="USD/QALY",
-    formula="(DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL) ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL",
+    formula="(DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL",
     latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}"
 )  # -$59,476 per QALY
 NET_BENEFIT_PER_LIFE_SAVED = Parameter(
-    ICER_PER_QALY * STANDARD_QALYS_PER_LIFE_SAVED,
+    (ICER_PER_QALY / 1_000_000) * STANDARD_QALYS_PER_LIFE_SAVED,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life",
     source_type="calculated",
     description="Net benefit per life saved (ICER × QALYs/life)",
     unit="millions USD/life",
-    formula="ICER × QALYS_PER_LIFE",
-    latex=r"BenefitPerLife = -\$176,907 \times 35 = -\$6.19M"
-)  # -$6.19M per life
+    formula="ICER ÷ 1M × QALYS_PER_LIFE",
+    latex=r"BenefitPerLife = -\$59,476 ÷ 1M \times 35 = -\$2.08M"
+)  # Net benefit in millions per life
 
 # ---
 # ROI TIERS
