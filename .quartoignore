@@ -1,0 +1,31 @@
+# Documentation and guides - don't render these
+*.md
+!knowledge/**/*.md
+!README.md
+
+# Exclude specific directories
+GUIDES/
+tools/
+scripts/
+.github/
+.husky/
+src/
+node_modules/
+_freeze/
+_site/
+_book/
+
+# Exclude config and metadata files
+.env
+.gitignore
+package.json
+package-lock.json
+tsconfig.json
+*.txt
+*.csv
+*.json
+!_*.json
+
+# Exclude Python files
+*.py
+!**/*.qmd
