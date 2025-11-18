@@ -538,7 +538,7 @@ This plan doesn't cost money, it *makes* money while saving lives. Instead of as
 | **Smoking Cessation** | Prevents expensive chronic diseases (cancer, heart disease) through low-cost interventions | Billions to Tens of Billions |
 | **[Water & Sanitation](../references.qmd#clean-water-sanitation-roi)** | Avoids disease costs for entire populations at low cost | Hundreds of Millions to Billions |
 | **[1% Treaty (Peace Dividend)](../appendix/peace-dividend-calculations.qmd)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~{{< var peace_dividend_annual_societal_benefit >}}, Annually** |
-| **[dFDA (R&D Efficiency)](../appendix/dfda-cost-benefit-analysis.qmd)** | Makes clinical research ~{{< var dfda_cost_effectiveness_multiplier >}}× more efficient, unlocking huge R&D savings | **~$50.0B, Annually** |
+| **[dFDA (R&D Efficiency)](../appendix/dfda-cost-benefit-analysis.qmd)** | Makes clinical research ~{{< var trial_cost_reduction_factor >}}× more efficient, unlocking huge R&D savings | **~$50.0B, Annually** |
 
 #### Why This Is Different
 

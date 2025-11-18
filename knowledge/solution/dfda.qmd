@@ -555,7 +555,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 <img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how the dFDA works" style="max-width: 600px; width: 100%;" />
 :::
 
-The dFDA achieves **{{< var dfda_cost_effectiveness_multiplier >}}× More Efficiency** through:
+The dFDA achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
 
 - **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - **Time to results**: 2 years vs the current 17 years

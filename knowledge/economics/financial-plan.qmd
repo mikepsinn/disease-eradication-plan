@@ -229,7 +229,7 @@ As more patients join:
 #### Societal Returns (Everyone Else)
 
 - $463 in value created per dollar spent
-- {{< var dfda_cost_effectiveness_multiplier >}}× reduction in trial costs ($50.0B annual savings)
+- {{< var trial_cost_reduction_factor >}}× reduction in trial costs ($50.0B annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
 - 3X ROI on prevention vs treatment ({{< var caregiver_annual_value_total >}} saved)

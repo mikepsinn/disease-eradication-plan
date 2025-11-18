@@ -32,7 +32,7 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 #### How It Works
 
 1.  **Funding:** Creates {{< var treaty_annual_funding >}}/year revenue stream for the DIH
-2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **{{< var dfda_cost_effectiveness_multiplier >}}× cheaper** than current model
+2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd)—clinical trials that are **{{< var trial_cost_reduction_factor >}}× cheaper** than current model
 3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -233,7 +233,7 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 #### With 1% Treaty + Decentralized FDA
 
 - $110B total funding ($83B existing + {{< var treaty_annual_funding >}} from treaty)
-- Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient ({{< var dfda_cost_effectiveness_multiplier >}}× cheaper)
+- Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient ({{< var trial_cost_reduction_factor >}}× cheaper)
 - 220M participants per year (44x acceleration)
 - Still only using 18% of available willing participants
 

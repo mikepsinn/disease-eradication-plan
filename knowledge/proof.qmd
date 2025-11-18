@@ -27,7 +27,7 @@ This isn't a theoretical plan. It's a greatest hits album of things that already
 
 Here are the receipts.
 
-## Oxford RECOVERY: The {{< var dfda_cost_effectiveness_multiplier >}}× Proof
+## Oxford RECOVERY: The {{< var trial_cost_reduction_factor >}}× Proof
 
 2020: British doctors cured COVID with a drug from 1961.
 Cost: **{{< var recovery_trial_cost_per_patient >}} per patient**.
@@ -217,6 +217,6 @@ The failures of past movements are even more instructive than the successes, as 
 This is not a theoretical plan.
 It's a synthesis of proven models deliberately designed to avoid well-documented failure modes:
 
-- **[The RECOVERY Trial Case Study](appendix/recovery-trial.qmd):** Deep dive into Oxford trial proving {{< var dfda_cost_effectiveness_multiplier >}}× efficiency
+- **[The RECOVERY Trial Case Study](appendix/recovery-trial.qmd):** Deep dive into Oxford trial proving {{< var trial_cost_reduction_factor >}}× efficiency
 - **[Organizational Precedents](proof/historical-precedents.qmd):** Historical analysis of Global Fund, ICBL, and other successful models
 - **[Historical Evidence for Decentralized Trials](problem/fda-is-unsafe-and-ineffective.qmd):** Pre-1962 medicine when doctors ran trials

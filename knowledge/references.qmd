@@ -4166,10 +4166,10 @@ from dih_models.parameters import *
 
 <a id="recovery-trial-82x-cost-reduction"></a>
 
-- **RECOVERY trial {{< var dfda_cost_effectiveness_multiplier >}}× cost reduction**
+- **RECOVERY trial {{< var trial_cost_reduction_factor >}}× cost reduction**
   > RECOVERY trial: ~$500 per patient ($20M for 48,000 patients = $417/patient)
   > Typical clinical trial: ~$41,000 median per-patient cost
-  > Cost reduction: ~80-{{< var dfda_cost_effectiveness_multiplier >}}× cheaper ($41,000 ÷ $500 ≈ {{< var dfda_cost_effectiveness_multiplier >}}×)
+  > Cost reduction: ~80-{{< var trial_cost_reduction_factor >}}× cheaper ($41,000 ÷ $500 ≈ {{< var trial_cost_reduction_factor >}}×)
   > Efficiency: $50 per patient per answer (10 therapeutics tested, 4 effective)
   > Dexamethasone estimated to save >630,000 lives
   > — [Manhattan Institute: Slow Costly Trials](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs) | [PMC: Establishing RECOVERY at Scale](https://pmc.ncbi.nlm.nih.gov/articles/PMC9293394/)
