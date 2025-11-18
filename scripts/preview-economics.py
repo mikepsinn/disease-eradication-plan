@@ -7,9 +7,9 @@ Quickly start preview server for the economics models website.
 Copies _quarto-economics.yml to _quarto.yml and starts live preview.
 
 Usage:
-    python preview-economics.py                # Start preview server
-    python preview-economics.py --port 4200    # Custom port
-    python preview-economics.py --help         # Show all options
+    python scripts/preview-economics.py                # Start preview server
+    python scripts/preview-economics.py --port 4200    # Custom port
+    python scripts/preview-economics.py --help         # Show all options
 """
 
 import sys
@@ -37,8 +37,8 @@ def main():
 
     args = parser.parse_args()
 
-    # Get script directory (project root)
-    project_root = Path(__file__).parent.absolute()
+    # Get project root (parent of scripts directory)
+    project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
 
     # Config files
@@ -52,7 +52,7 @@ def main():
         sys.exit(1)
 
     # Copy config
-    print(f"[*] Copying {econ_config.name} -> _quarto.yml")
+    print(f"[*] Copying {econ_config.name} -> _quarto.yml", flush=True)
     shutil.copy2(econ_config, quarto_yml)
 
     # Build preview command

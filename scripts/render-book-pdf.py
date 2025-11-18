@@ -48,7 +48,7 @@ def main():
         sys.exit(1)
 
     # Copy config
-    print(f"[*] Copying {book_config.name} -> _quarto.yml")
+    print(f"[*] Copying {book_config.name} -> _quarto.yml", flush=True)
     shutil.copy2(book_config, quarto_yml)
 
     # Build command for PDF rendering with validation

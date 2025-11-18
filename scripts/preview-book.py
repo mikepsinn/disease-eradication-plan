@@ -7,9 +7,9 @@ Quickly start preview server for the complete book.
 Copies _quarto-book.yml to _quarto.yml and starts live preview.
 
 Usage:
-    python preview-book.py                # Start preview server
-    python preview-book.py --port 4200    # Custom port
-    python preview-book.py --help         # Show all options
+    python scripts/preview-book.py                # Start preview server
+    python scripts/preview-book.py --port 4200    # Custom port
+    python scripts/preview-book.py --help         # Show all options
 """
 
 import sys
@@ -37,8 +37,8 @@ def main():
 
     args = parser.parse_args()
 
-    # Get script directory (project root)
-    project_root = Path(__file__).parent.absolute()
+    # Get project root (parent of scripts directory)
+    project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
 
     # Config files
@@ -52,7 +52,7 @@ def main():
         sys.exit(1)
 
     # Copy config
-    print(f"[*] Copying {book_config.name} -> _quarto.yml")
+    print(f"[*] Copying {book_config.name} -> _quarto.yml", flush=True)
     shutil.copy2(book_config, quarto_yml)
 
     # Build preview command
