@@ -508,6 +508,9 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
         for param_name, param_data in external_params:
             value = param_data['value']
+
+            # Start callout box for external source
+            content.append("::: {.callout-tip icon=false collapse=false}")
             content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
             content.append("")
 
@@ -518,38 +521,39 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             content.append("")
 
             # Description
-            if hasattr(value, 'description'):
-                content.append(f"**Description**: {value.description}")
+            if hasattr(value, 'description') and value.description:
+                content.append(f"{value.description}")
                 content.append("")
 
             # Source citation
-            if hasattr(value, 'source_ref'):
+            if hasattr(value, 'source_ref') and value.source_ref:
                 source_ref = value.source_ref
                 content.append(f"**Source**: [{source_ref}](../references.qmd#{source_ref})")
                 content.append("")
 
-            # Confidence and metadata
+            # Confidence and metadata - cleaner formatting
             metadata = []
-            if hasattr(value, 'confidence'):
+            if hasattr(value, 'confidence') and value.confidence:
                 confidence_labels = {
                     "high": "✓ High confidence",
                     "medium": "~ Medium confidence",
                     "low": "? Low confidence",
                     "estimated": "≈ Estimated"
                 }
-                metadata.append(f"**Confidence**: {confidence_labels.get(value.confidence, value.confidence)}")
+                metadata.append(confidence_labels.get(value.confidence, value.confidence))
 
             if hasattr(value, 'peer_reviewed') and value.peer_reviewed:
-                metadata.append("**Status**: 📊 Peer-reviewed")
+                metadata.append("📊 Peer-reviewed")
 
-            if hasattr(value, 'last_updated'):
-                metadata.append(f"**Last updated**: {value.last_updated}")
+            # Only show last_updated if it's not None/empty
+            if hasattr(value, 'last_updated') and value.last_updated:
+                metadata.append(f"Updated {value.last_updated}")
 
             if metadata:
-                content.append(" | ".join(metadata))
+                content.append("*" + " • ".join(metadata) + "*")
                 content.append("")
 
-            content.append("---")
+            content.append(":::")
             content.append("")
 
     # Calculated parameters section
@@ -561,6 +565,9 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
         for param_name, param_data in calculated_params:
             value = param_data['value']
+
+            # Start callout box for calculated value
+            content.append("::: {.callout-note icon=false collapse=false}")
             content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
             content.append("")
 
@@ -571,53 +578,74 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             content.append("")
 
             # Description
-            if hasattr(value, 'description'):
-                content.append(f"**Description**: {value.description}")
+            if hasattr(value, 'description') and value.description:
+                content.append(f"{value.description}")
                 content.append("")
 
-            # LaTeX equation
+            # LaTeX equation - prominently displayed
             if hasattr(value, 'latex') and value.latex:
-                content.append("**Formula**:")
-                content.append("")
                 content.append("$$")
                 content.append(value.latex)
                 content.append("$$")
                 content.append("")
             elif hasattr(value, 'formula') and value.formula:
-                content.append(f"**Formula**: `{value.formula}`")
+                content.append(f"*Formula*: `{value.formula}`")
                 content.append("")
 
             # Source reference (calculation methodology)
-            if hasattr(value, 'source_ref'):
-                # Convert absolute paths to relative paths from knowledge/appendix/
+            if hasattr(value, 'source_ref') and value.source_ref:
                 source_ref = value.source_ref
-                if source_ref.startswith('/'):
-                    source_ref = source_ref.lstrip('/')
 
-                # Make paths relative from knowledge/appendix/ directory
-                if source_ref.startswith('knowledge/'):
-                    # Remove 'knowledge/' prefix and add '../' to go up from appendix/
-                    source_ref = '../' + source_ref[len('knowledge/'):]
+                # Detect if this is an intra-document anchor (no path separators, no file extension)
+                is_anchor = '/' not in source_ref and '.qmd' not in source_ref and '.md' not in source_ref
 
-                content.append(f"**Methodology**: [{source_ref}]({source_ref})")
+                # Friendly labels for common methodology references
+                methodology_labels = {
+                    'cure-bounty-estimates': 'Cure Bounty Estimation Model',
+                    'disease-related-caregiving-estimate': 'Disease-Related Caregiving Analysis',
+                    'calculated': 'Direct Calculation',
+                    'sipri-2024-spending': 'SIPRI Military Spending Database',
+                    'book-word-count': 'Book Word Count Analysis',
+                }
+
+                if is_anchor:
+                    # Intra-document anchor - add # prefix
+                    link_target = f"#{source_ref}"
+                    link_text = methodology_labels.get(source_ref, source_ref)
+                else:
+                    # File path - convert to relative path
+                    if source_ref.startswith('/'):
+                        source_ref = source_ref.lstrip('/')
+
+                    if source_ref.startswith('knowledge/'):
+                        # Remove 'knowledge/' prefix and add '../' to go up from appendix/
+                        source_ref = '../' + source_ref[len('knowledge/'):]
+
+                    link_target = source_ref
+                    link_text = source_ref
+
+                content.append(f"**Methodology**: [{link_text}]({link_target})")
                 content.append("")
 
-            # Confidence
-            if hasattr(value, 'confidence'):
+            # Confidence and notes
+            metadata = []
+            if hasattr(value, 'confidence') and value.confidence:
                 confidence_labels = {
                     "high": "✓ High confidence",
                     "medium": "~ Medium confidence",
                     "low": "? Low confidence",
                     "estimated": "≈ Estimated"
                 }
-                content.append(f"**Confidence**: {confidence_labels.get(value.confidence, value.confidence)}")
-                content.append("")
+                metadata.append(confidence_labels.get(value.confidence, value.confidence))
 
             if hasattr(value, 'conservative') and value.conservative:
-                content.append("**Note**: Conservative estimate")
+                metadata.append("⚖️ Conservative estimate")
+
+            if metadata:
+                content.append("*" + " • ".join(metadata) + "*")
                 content.append("")
 
-            content.append("---")
+            content.append(":::")
             content.append("")
 
     # Core definitions section
@@ -629,7 +657,10 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
         for param_name, param_data in definition_params:
             value = param_data['value']
-            content.append(f"## {param_name.replace('_', ' ').title()}")
+
+            # Start callout box for definition
+            content.append("::: {.callout-warning icon=false collapse=false}")
+            content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
@@ -639,11 +670,14 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             content.append("")
 
             # Description
-            if hasattr(value, 'description'):
-                content.append(f"**Description**: {value.description}")
+            if hasattr(value, 'description') and value.description:
+                content.append(f"{value.description}")
                 content.append("")
 
-            content.append("---")
+            content.append("*Core definition*")
+            content.append("")
+
+            content.append(":::")
             content.append("")
 
     # Write file

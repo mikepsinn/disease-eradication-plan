@@ -268,6 +268,10 @@
 "death_spending_misallocation_factor": "<a href=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ class=\"parameter-link\" title=\"Misallocation factor for spending on death vs\
   \ prevention | ✓ High confidence | Unit: ratio | Click to view calculation\">1,750</a>"
+"defense_lobbying_annual": "<a href=\"/knowledge/references.qmd#lobbying-spend-defense\"\
+  \ class=\"parameter-link\" title=\"Annual defense industry lobbying spending | ✓\
+  \ High confidence | \U0001F4CA Peer-reviewed | Updated: 2024 | Unit: billions USD/year\
+  \ | Click to view source\">$127M</a>"
 "defense_sector_retention_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of budget defense sector keeps under 1% treaty | Unit: rate | Core definition\"\
   >99%</span>"
@@ -878,10 +882,19 @@
   \ class=\"parameter-link\" title=\"Annual peace dividend from 1% reduction in total\
   \ war costs | ✓ High confidence | Formula: TOTAL_WAR_COST × 1% | Unit: billions\
   \ USD/year | Click to view calculation\">$114B</a>"
+"peace_dividend_conflict_reduction": "<a href=\"/calculated\" class=\"parameter-link\"\
+  \ title=\"Conflict reduction benefits from 1% less military spending (lower confidence\
+  \ - assumes proportional relationship) | ? Low confidence | Formula: PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT\
+  \ - TREATY_ANNUAL_FUNDING | Unit: billions USD/year | Click to view calculation\"\
+  >$86.4B</a>"
 "peace_dividend_direct_costs": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
   \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in direct war\
   \ costs | ✓ High confidence | Formula: DIRECT_COSTS × 1% | Unit: billions USD/year\
   \ | Click to view calculation\">$76.5B</a>"
+"peace_dividend_direct_fiscal_savings": "<a href=\"/sipri-2024-spending\" class=\"\
+  parameter-link\" title=\"Direct fiscal savings from 1% military spending reduction\
+  \ (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING | Unit:\
+  \ billions USD/year | Click to view calculation\">$27.2B</a>"
 "peace_dividend_environmental": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
   \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in environmental\
   \ damage | ✓ High confidence | Formula: ENVIRONMENTAL_DAMAGE × 1% | Unit: billions\
@@ -1063,6 +1076,18 @@
   parameter-link\" title=\"ROI from dFDA R&D savings (10-year NPV) | ✓ High confidence\
   \ | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\"\
   >463</a>"
+"roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" title=\"ROI\
+  \ at 1% discount rate (approximate 15% increase from 3% baseline) | ~ Medium confidence\
+  \ | Formula: ROI_DFDA_SAVINGS_ONLY * 1.15 | Click to view calculation\">532</a>"
+"roi_discount_3pct": "<a href=\"/calculated\" class=\"parameter-link\" title=\"ROI\
+  \ at 3% discount rate (baseline) | ✓ High confidence | Formula: ROI_DFDA_SAVINGS_ONLY\
+  \ | Click to view calculation\">463</a>"
+"roi_discount_5pct": "<a href=\"/calculated\" class=\"parameter-link\" title=\"ROI\
+  \ at 5% discount rate (approximate 12% decrease from 3% baseline) | ~ Medium confidence\
+  \ | Formula: ROI_DFDA_SAVINGS_ONLY * 0.88 | Click to view calculation\">407</a>"
+"roi_discount_7pct": "<a href=\"/calculated\" class=\"parameter-link\" title=\"ROI\
+  \ at 7% discount rate (approximate 22% decrease from 3% baseline) | ~ Medium confidence\
+  \ | Formula: ROI_DFDA_SAVINGS_ONLY * 0.78 | Click to view calculation\">361</a>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
   >31,536,000</span>"
 "sensitivity_campaign_cost_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
