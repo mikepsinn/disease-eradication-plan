@@ -17,9 +17,33 @@ Usage:
 
 from functools import lru_cache
 from pathlib import Path
+import warnings
+import logging
 
 import matplotlib.pyplot as plt
 from matplotlib import font_manager, rcParams
+
+# Suppress Matplotlib font warnings globally
+logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
+
+# Patch Matplotlib's font_manager to suppress stderr output
+# This prevents "findfont: Font family 'serif' not found" warnings from appearing in Quarto output
+_original_findfont = font_manager.findfont
+
+def _silent_findfont(*args, **kwargs):
+    """Wrapper around font_manager.findfont that suppresses stderr output"""
+    import io
+    import sys
+    old_stderr = sys.stderr
+    try:
+        sys.stderr = io.StringIO()
+        result = _original_findfont(*args, **kwargs)
+    finally:
+        sys.stderr = old_stderr
+    return result
+
+# Replace the findfont function with our silent version
+font_manager.findfont = _silent_findfont
 
 # Official Color Palette (Black & White Only)
 COLOR_BLACK = '#000000'      # Pure black - bars, text, lines
@@ -79,16 +103,47 @@ def _find_first_available_font(preferences):
     (e.g., "findfont: Font family 'Courier New' not found") when a font is
     missing on the current render environment.
     """
-    for font_name in preferences:
+    # Suppress stderr output from font_manager.findfont (it prints warnings directly)
+    import io
+    import sys
+    import contextlib
+    
+    @contextlib.contextmanager
+    def suppress_stderr():
+        """Temporarily suppress stderr output"""
+        old_stderr = sys.stderr
         try:
-            font_manager.findfont(font_name, fallback_to_default=False)
-            return font_name
-        except ValueError:
-            continue
+            sys.stderr = io.StringIO()
+            yield
+        finally:
+            sys.stderr = old_stderr
+    
+    # Suppress Matplotlib font warnings
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', category=UserWarning, module='matplotlib.font_manager')
+        
+        for font_name in preferences:
+            try:
+                with suppress_stderr():
+                    font_path = font_manager.findfont(font_name, fallback_to_default=False)
+                    # Check if we got a real font (not just the default fallback)
+                    if font_path:
+                        # Verify it's not just the default DejaVu Sans
+                        default_path = font_manager.findfont('DejaVu Sans')
+                        if font_path != default_path or font_name.lower() in ['dejavu sans', 'dejavu sans mono']:
+                            return font_name
+            except (ValueError, RuntimeError):
+                continue
 
     # Use matplotlib's default monospace font name as a final fallback
-    default_font = font_manager.FontProperties(family=['monospace']).get_name()
-    return default_font or 'monospace'
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', category=UserWarning, module='matplotlib.font_manager')
+        with suppress_stderr():
+            try:
+                default_font = font_manager.FontProperties(family=['monospace']).get_name()
+                return default_font or 'monospace'
+            except Exception:
+                return 'monospace'
 
 
 @lru_cache(maxsize=None)
@@ -121,6 +176,20 @@ def setup_chart_style(style='light', dpi=150):
         style: 'light' (light background) or 'dark' (dark background)
         dpi: Resolution for saved figures (default 150 for high quality)
     """
+    # Suppress font warnings during style setup
+    import io
+    import sys
+    import contextlib
+    
+    @contextlib.contextmanager
+    def suppress_stderr():
+        """Temporarily suppress stderr output"""
+        old_stderr = sys.stderr
+        try:
+            sys.stderr = io.StringIO()
+            yield
+        finally:
+            sys.stderr = old_stderr
 
     if style == 'light':
         bg_color = COLOR_WHITE
@@ -134,7 +203,12 @@ def setup_chart_style(style='light', dpi=150):
         grid_color = '#4a4a4a'  # Charcoal for dark mode
 
     # Typography - align with book styling (serif-first aesthetic)
-    serif_font = get_serif_font()
+    # Suppress warnings when getting fonts
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', category=UserWarning, module='matplotlib.font_manager')
+        with suppress_stderr():
+            serif_font = get_serif_font()
+    
     rcParams['font.family'] = [serif_font]
     rcParams['font.serif'] = SERIF_FONT_PREFERENCES
     rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans', 'sans-serif']
@@ -143,6 +217,9 @@ def setup_chart_style(style='light', dpi=150):
     rcParams['font.size'] = 12
     rcParams['font.weight'] = 'normal'
     rcParams['text.usetex'] = False  # Prevent LaTeX math parsing
+    
+    # Suppress font cache warnings
+    rcParams['font.cache'] = True
 
     # Colors
     rcParams['figure.facecolor'] = bg_color
