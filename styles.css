@@ -148,29 +148,154 @@ main {
     }
 }
 
-/* Callout Enhancement - Subtle */
+/* ==========================================
+   CALLOUTS - ELEGANT BOOK ANNOTATIONS
+   ========================================== */
+
+/* Base callout - minimal and elegant */
 .callout {
-    border: 1px solid var(--book-border);
-    border-left-width: 4px;
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: #fff;
-    border-radius: 2px;
+    margin: 2.5rem 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-left: 3px solid var(--book-border);
+    padding-left: 1.75rem;
+    padding-right: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0;
 }
 
+/* Callout header - minimal title styling */
+.callout-header {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    margin-bottom: 0.75rem;
+}
+
+/* Hide the icon container completely */
+.callout-icon-container {
+    display: none;
+}
+
+/* Hide screen reader text */
+.screen-reader-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Callout title - elegant typography */
+.callout-title-container {
+    font-family: 'Crimson Text', 'Baskerville', 'Georgia', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--book-heading);
+    letter-spacing: -0.01em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+/* Callout body - clean content area */
+.callout-body-container,
+.callout-body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--book-text);
+    line-height: 1.7;
+}
+
+/* Remove Bootstrap flex utilities styling */
+.callout-header.d-flex {
+    display: block !important;
+}
+
+.callout-header.align-content-center {
+    align-content: normal !important;
+}
+
+.callout-title-container.flex-fill {
+    flex: none !important;
+}
+
+/* Note callout - subtle blue-gray accent */
+.callout-note {
+    border-left-color: #8b9ba8;
+    background-color: transparent;
+}
+
+.callout-note .callout-title-container {
+    color: #5a6b78;
+}
+
+/* Warning callout - warm accent */
 .callout-warning {
     border-left-color: var(--book-accent);
-    background-color: #fffbf5;
+    background-color: transparent;
 }
 
-.callout-note {
-    border-left-color: #7a92a3;
-    background-color: #f8fafb;
+.callout-warning .callout-title-container {
+    color: var(--book-accent);
 }
 
+/* Important callout - deeper accent */
 .callout-important {
-    border-left-color: #a67c52;
-    background-color: #fdfaf7;
+    border-left-color: #7a5a3a;
+    background-color: transparent;
+}
+
+.callout-important .callout-title-container {
+    color: #6b4e2e;
+}
+
+/* Default callout style */
+.callout-style-default {
+    border-left-color: var(--book-border);
+}
+
+.callout-style-default .callout-title-container {
+    color: var(--book-heading);
+}
+
+/* Titled callouts - add subtle spacing */
+.callout-titled .callout-body-container {
+    margin-top: 0.5rem;
+}
+
+/* Remove any Bootstrap card-like styling */
+.callout.callout-titled {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+/* Ensure lists inside callouts are properly styled */
+.callout-body ol,
+.callout-body ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.callout-body li {
+    margin-bottom: 0.75rem;
+}
+
+.callout-body p {
+    margin-bottom: 1rem;
+}
+
+.callout-body p:last-child {
+    margin-bottom: 0;
 }
 
 /* Section Dividers - Minimal */

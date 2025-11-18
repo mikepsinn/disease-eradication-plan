@@ -455,7 +455,8 @@ PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in direct war costs",
     unit="billions USD/year",
-    formula="DIRECT_COSTS × 1%"
+    formula="DIRECT_COSTS × 1%",
+    latex=r"PD_{direct} = \$7,655B \times 0.01 = \$76.55B"
 )
 
 PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
@@ -464,7 +465,8 @@ PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in infrastructure destruction",
     unit="billions USD/year",
-    formula="INFRASTRUCTURE_DESTRUCTION × 1%"
+    formula="INFRASTRUCTURE_DESTRUCTION × 1%",
+    latex=r"PD_{infra} = \$1,875B \times 0.01 = \$18.75B"
 )
 
 PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
@@ -473,7 +475,8 @@ PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in human casualties",
     unit="billions USD/year",
-    formula="HUMAN_LIFE_LOSSES × 1%"
+    formula="HUMAN_LIFE_LOSSES × 1%",
+    latex=r"PD_{human} = \$2,446B \times 0.01 = \$24.46B"
 )
 
 PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
@@ -482,7 +485,8 @@ PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in trade disruption",
     unit="billions USD/year",
-    formula="TRADE_DISRUPTION × 1%"
+    formula="TRADE_DISRUPTION × 1%",
+    latex=r"PD_{trade} = \$616B \times 0.01 = \$6.16B"
 )
 
 PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
@@ -491,7 +495,8 @@ PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in indirect war costs",
     unit="billions USD/year",
-    formula="INDIRECT_COSTS × 1%"
+    formula="INDIRECT_COSTS × 1%",
+    latex=r"PD_{indirect} = \$3,700.1B \times 0.01 = \$37.00B"
 )
 
 PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
@@ -500,7 +505,8 @@ PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in lost economic growth",
     unit="billions USD/year",
-    formula="LOST_ECONOMIC_GROWTH × 1%"
+    formula="LOST_ECONOMIC_GROWTH × 1%",
+    latex=r"PD_{growth} = \$2,718B \times 0.01 = \$27.18B"
 )
 
 PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
@@ -509,7 +515,8 @@ PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in veteran healthcare costs",
     unit="billions USD/year",
-    formula="VETERAN_HEALTHCARE × 1%"
+    formula="VETERAN_HEALTHCARE × 1%",
+    latex=r"PD_{veteran} = \$20.01B \times 0.01 = \$0.20B"
 )
 
 PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
@@ -518,7 +525,8 @@ PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in refugee support costs",
     unit="billions USD/year",
-    formula="REFUGEE_SUPPORT × 1%"
+    formula="REFUGEE_SUPPORT × 1%",
+    latex=r"PD_{refugee} = \$15B \times 0.01 = \$0.15B"
 )
 
 PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
@@ -527,7 +535,8 @@ PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in environmental damage",
     unit="billions USD/year",
-    formula="ENVIRONMENTAL_DAMAGE × 1%"
+    formula="ENVIRONMENTAL_DAMAGE × 1%",
+    latex=r"PD_{env} = \$10B \times 0.01 = \$0.10B"
 )
 
 PEACE_DIVIDEND_PTSD = Parameter(
@@ -536,7 +545,8 @@ PEACE_DIVIDEND_PTSD = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in PTSD and mental health costs",
     unit="billions USD/year",
-    formula="PTSD_COSTS × 1%"
+    formula="PTSD_COSTS × 1%",
+    latex=r"PD_{PTSD} = \$23.2B \times 0.01 = \$0.23B"
 )
 
 PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
@@ -545,7 +555,8 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
     source_type="calculated",
     description="Annual savings from 1% reduction in lost human capital",
     unit="billions USD/year",
-    formula="LOST_HUMAN_CAPITAL × 1%"
+    formula="LOST_HUMAN_CAPITAL × 1%",
+    latex=r"PD_{capital} = \$30B \times 0.01 = \$0.30B"
 )
 
 # Separate peace dividend into confidence levels
@@ -555,6 +566,7 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     source_type="calculated",
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",
+    latex=r"PD_{fiscal} = \$27.18B",
     description="Direct fiscal savings from 1% military spending reduction (high confidence)",
     unit="billions USD/year"
 )
@@ -565,6 +577,7 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
     source_type="calculated",
     confidence="low",
     formula="PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING",
+    latex=r"PD_{conflict} = \$113.55B - \$27.18B = \$86.37B",
     description="Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)",
     unit="billions USD/year"
 )
@@ -576,7 +589,8 @@ PEACE_DIVIDEND_ROI = Parameter(
     source_type="calculated",
     description="Total benefit per dollar redirected (savings + funding captured)",
     unit="ratio",
-    formula="(PEACE_DIVIDEND + FUNDING) ÷ FUNDING"
+    formula="(PEACE_DIVIDEND + FUNDING) ÷ FUNDING",
+    latex=r"ROI_{peace} = \frac{\$113.55B + \$27.18B}{\$27.18B} = 5.18"
 )
 
 # ---
@@ -753,14 +767,18 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
     source_type="calculated",
     description="Maximum trials per year possible with 115x acceleration",
-    unit="trials/year"
+    unit="trials/year",
+    formula="CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER",
+    latex=r"Trials_{dFDA} = 3,300 \times 115 = 379,500 \approx 380,000"
 )  # Maximum trials/year possible with 115x acceleration
 DFDA_DRUG_APPROVALS_PER_YEAR_LOW = Parameter(
     1000,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#approval-projections",
     source_type="calculated",
     description="Conservative drug approvals estimate (20x current)",
-    unit="approvals/year"
+    unit="approvals/year",
+    formula="CURRENT_APPROVALS × 20",
+    latex=r"Approvals_{low} = 50 \times 20 = 1,000"
 )  # Conservative approvals estimate (20x current)
 
 DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = Parameter(
@@ -768,7 +786,9 @@ DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#approval-projections",
     source_type="calculated",
     description="Optimistic drug approvals estimate (40x current)",
-    unit="approvals/year"
+    unit="approvals/year",
+    formula="CURRENT_APPROVALS × 40",
+    latex=r"Approvals_{high} = 50 \times 40 = 2,000"
 )  # Optimistic approvals estimate (40x current)
 
 DFDA_ACTIVE_TRIALS = Parameter(
@@ -826,7 +846,9 @@ DFDA_ELIGIBLE_PATIENTS_GLOBAL = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#eligible-population",
     source_type="calculated",
     description="Global eligible patients with minimal exclusions",
-    unit="people"
+    unit="people",
+    formula="DISEASE_PATIENTS × ELIGIBILITY_RATE",
+    latex=r"Eligible_{dFDA} = 2.4B \times 0.50 = 1.2B"
 )  # 1.2B eligible with minimal exclusions
 
 # dFDA Trial Economics
@@ -860,7 +882,9 @@ RESEARCH_ACCELERATION_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd",
     source_type="calculated",
     description="Total research capacity multiplier from dFDA",
-    unit="ratio"
+    unit="ratio",
+    formula="FUNDING_RATIO × COST_REDUCTION_FACTOR",
+    latex=r"Multiplier = 1.40 \times 82 = 115"
 )  # 115x more research capacity (82x cost × 1.4x funding)
 
 RECRUITMENT_SPEED_MULTIPLIER = Parameter(
@@ -868,7 +892,9 @@ RECRUITMENT_SPEED_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration",
     source_type="calculated",
     description="Recruitment speed multiplier (25x faster from 2% → 50% eligibility)",
-    unit="ratio"
+    unit="ratio",
+    formula="DFDA_ELIGIBILITY_RATE ÷ CURRENT_ELIGIBILITY_RATE",
+    latex=r"Recruitment_{mult} = \frac{0.50}{0.002} = 25"
 )  # 25x faster recruitment (from 2% → 50% eligibility)
 
 TRIAL_COMPLETION_SPEED_MULTIPLIER = Parameter(
@@ -892,7 +918,9 @@ COMPLETION_RATE_IMPROVEMENT_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
     source_type="calculated",
     description="Completion rate improvement (1.6x from 60% → 95%)",
-    unit="ratio"
+    unit="ratio",
+    formula="DFDA_COMPLETION_RATE ÷ CURRENT_COMPLETION_RATE",
+    latex=r"Completion_{mult} = \frac{0.95}{0.60} = 1.58 \approx 1.6"
 )  # 1.6x improvement (60% → 95%)
 
 COMPLETED_TRIALS_MULTIPLIER_ACTUAL = Parameter(
@@ -908,7 +936,9 @@ COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier",
     source_type="calculated",
     description="Conservative completed trials multiplier accounting for scale-up",
-    unit="ratio"
+    unit="ratio",
+    formula="RESEARCH_ACCELERATION_MULTIPLIER",
+    latex=r"Multiplier_{conservative} = 115"
 )  # Conservative rating accounting for scale-up
 
 # Calculated Research Capacity
@@ -3895,6 +3925,12 @@ def calculate_gdp_growth_boost(treaty_pct):
     Model: Each 1% reduction in military spending → ~0.25% GDP growth boost
     This is conservative given historical evidence shows larger effects.
 
+    Formula:
+        GDP_{growth} = GDP_{base} + treaty_{pct} \times multiplier
+
+    LaTeX:
+        GDP_{growth} = 0.025 + treaty_{pct} \times 0.25
+
     Args:
         treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
 
@@ -3927,6 +3963,15 @@ def calculate_medical_progress_multiplier(treaty_pct):
     - Total funding = $67.5B + new_funding
     - Funding ratio = total_funding / $67.5B
     - Multiplier = funding_ratio × 82
+
+    LaTeX:
+        Funding_{new} = Military_{spending} \times treaty_{pct}
+        
+        Funding_{total} = Funding_{current} + Funding_{new}
+        
+        Ratio_{funding} = \frac{Funding_{total}}{Funding_{current}}
+        
+        Multiplier = Ratio_{funding} \times Factor_{cost\_reduction}
 
     Example for 1% treaty:
     - New funding: $27.2B
@@ -3961,6 +4006,9 @@ def calculate_life_expectancy_gain(treaty_pct):
     - Conservative: 1 year gained per 100x research acceleration
     - Optimistic: 10 years gained per 100x (exponential breakthrough effects)
 
+    LaTeX:
+        Life_{gain} = \frac{Multiplier_{research}}{100}
+
     Args:
         treaty_pct: Fraction of military spending redirected
 
@@ -3982,6 +4030,9 @@ def compound_sum(annual_benefit, years, growth_rate, discount_rate=0.03):
     Calculate present value of compounding annual benefits
 
     Formula: PV = Σ(annual_benefit × (1 + growth_rate)^t / (1 + discount_rate)^t)
+
+    LaTeX:
+        PV = \sum_{t=1}^{T} \frac{Benefit_{annual} \times (1 + r_{growth})^t}{(1 + r_{discount})^t}
 
     Args:
         annual_benefit: Initial annual benefit amount
