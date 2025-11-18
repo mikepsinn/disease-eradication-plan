@@ -151,7 +151,7 @@ No one has to become a better person for this to work.
 They just have to follow incentives.
 
 
-## **The Complete, Causal Roadmap (How It Actually Passes)**
+# **The Complete, Causal Roadmap (How It Actually Passes)**
 
 This is not utopian. It is a mechanical sequence:
 
@@ -234,7 +234,7 @@ None offer **{{< var research_acceleration_multiplier >}}× leverage**.
 
 ---
 
-## The Conservative Case: {{< var roi_dfda_savings_only >}} ROI (dFDA Only)
+# The Conservative Case: {{< var roi_dfda_savings_only >}} ROI (dFDA Only)
 
 Here's the floor. Count only R&D savings from cheaper trials. Ignore peace dividends, earlier access, and everything else that makes this look "too good to be true."
 
@@ -361,7 +361,7 @@ This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty 
 
 The self-funding nature eliminates traditional barriers to scale, as the intervention generates sufficient economic surplus to sustain and expand operations without ongoing charitable contributions.
 
-## The Complete Case: {{< var roi_all_direct_benefits >}}:1 ROI (All Direct Benefits)
+# The Complete Case: {{< var roi_all_direct_benefits >}}:1 ROI (All Direct Benefits)
 
 The conservative {{< var roi_dfda_savings_only >}} calculation deliberately excludes most system benefits to establish a defensible floor. A comprehensive analysis including all eight quantifiable primary benefit categories demonstrates substantially higher returns.
 
@@ -453,7 +453,7 @@ This represents:
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
-## Personal Economic Impact: From Societal to Individual
+# Personal Economic Impact: From Societal to Individual
 
 The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
 
@@ -461,7 +461,7 @@ The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_
 
 For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd).
 
-## Problem Statement and Opportunity Cost
+# Problem Statement and Opportunity Cost
 
 ### Current Resource Allocation
 
@@ -505,7 +505,7 @@ $$
 
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
 
-## How This Compares to History
+# How This Compares to History
 
 ### Better Than the Best Charities
 
@@ -560,7 +560,7 @@ Unlike traditional interventions that require ongoing charitable funding, the 1%
 
 ---
 
-## Who Benefits and How
+# Who Benefits and How
 
 The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
 
@@ -575,7 +575,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis and implementation strategy.
 
-## Implementation Strategy
+# Implementation Strategy
 
 The economic benefits outlined above demonstrate the value proposition of the {{< var treaty_reduction_pct >}} Treaty system. Implementation requires political mobilization to achieve treaty adoption:
 
@@ -604,7 +604,7 @@ This budget is designed for a 3-5 year campaign to achieve treaty ratification b
 
 This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates 463:1 to {{< var roi_all_direct_benefits >}}:1 returns regardless of the specific path to adoption.
 
-## Detailed Technical References
+# Detailed Technical References
 
 For the rigorous analysis:
 
@@ -614,7 +614,7 @@ For the rigorous analysis:
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations you can verify yourself
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
 
-## Risk Analysis and Mitigation
+# Risk Analysis and Mitigation
 
 ### Implementation Risks
 
@@ -662,7 +662,7 @@ See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for complet
 
 See [Governance Framework](../appendix/governance.qmd) and [Legal Compliance Framework](../appendix/legal-compliance-framework.qmd) for complete governance structures.
 
-## Conclusion
+# Conclusion
 
 This economic analysis demonstrates that redirecting 1% of global military spending to medical research through the Decentralized Institutes of Health and Decentralized FDA system generates return on investment ranging from 463:1 (conservative estimate) to {{< var roi_all_direct_benefits >}}:1 (complete estimate), depending on analytical scope.
 
