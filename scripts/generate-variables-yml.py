@@ -482,8 +482,6 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     content.append("")
     content.append("This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.")
     content.append("")
-    content.append(f"**Auto-generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    content.append("")
     content.append(f"**Total parameters**: {len(parameters)}")
     content.append(f"- External sources (peer-reviewed): {len(external_params)}")
     content.append(f"- Calculated values: {len(calculated_params)}")
@@ -680,7 +678,6 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
     content = []
     content.append("% AUTO-GENERATED FILE - DO NOT EDIT")
     content.append("% Generated from dih_models/parameters.py")
-    content.append(f"% Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     content.append("")
     content.append("% This file contains BibTeX references for all external data sources")
     content.append("% used in the economic analysis of the 1% Treaty and Decentralized FDA.")
