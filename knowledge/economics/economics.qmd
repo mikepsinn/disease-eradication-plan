@@ -431,6 +431,73 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 
 Sensitivity analysis demonstrates robust returns across all scenarios, with ROI ranging from 66:1 (worst-case) to 2,577:1 (optimistic). See [1% Treaty Cost-Effectiveness Analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd) for detailed scenario modeling.
 
+## Key Analytical Assumptions
+
+This analysis rests on several core assumptions that should be made explicit for academic transparency:
+
+### Strategic Stability Assumption
+
+**Assumption:** A coordinated {{< var treaty_reduction_pct >}} reduction in military spending across all nations maintains relative power balances and strategic deterrence capabilities.
+
+**Justification:** The {{< var treaty_reduction_pct >}} Treaty explicitly requires proportional reductions from all signatories. Since relative military capabilities remain unchanged, strategic stability is preserved. Historical analysis shows that symmetric reductions in military tensions (e.g., START treaties, naval treaties between world wars) maintained deterrence while reducing absolute expenditure.
+
+**Sensitivity:** This assumption is critical to the peace dividend calculation. Alternative scenarios modeling unilateral reductions would require different political economy frameworks.
+
+### Linear Scaling Assumption
+
+**Assumption:** Economic benefits and costs scale approximately linearly with program scope and adoption rates.
+
+**Justification:** Conservative assumption that costs scale with system usage. Research acceleration benefits may exhibit superlinear returns (network effects, data abundance), making this assumption conservative.
+
+**Sensitivity:** Tested through worst-case (66:1 ROI) and optimistic (2,577:1 ROI) scenarios spanning benefits 50% lower to 5× higher than baseline.
+
+### Adoption Rate Assumptions
+
+**Assumption:** dFDA achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
+
+**Conservative case:** 50% of trials adopt dFDA methodology
+**Optimistic case:** 80% adoption rate
+
+**Justification:** Based on historical adoption curves for electronic health records (5-10 years to majority adoption), clinical trial registry systems, and FDA Sentinel System implementation.
+
+**Sensitivity:** NPV calculations explicitly model adoption uncertainty through gradual ramp-up rather than immediate full adoption.
+
+### Cost Reduction Assumptions
+
+**Assumption:** dFDA methodology reduces per-patient trial costs by {{< var trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
+
+**Empirical basis:**
+- Oxford RECOVERY trial: {{< var trial_cost_reduction_factor >}}× cost reduction (${{< var recovery_trial_cost_per_patient >}} per patient vs. ${{< var traditional_trial_cost_per_patient >}} traditional)
+- ADAPTABLE trial: Similar cost structure using pragmatic design
+- Literature on pragmatic trials consistently shows 50-95% cost reductions
+
+**Sensitivity:** Conservative scenario ({{< var roi_dfda_savings_only >}}:1 ROI) uses {{< var trial_cost_reduction_pct >}} reduction; optimistic case uses 95%.
+
+### Political Feasibility Assumption
+
+**Assumption:** The {{< var treaty_reduction_pct >}} Treaty achieves ratification by sufficient nations within a 3-5 year campaign timeline.
+
+**Justification:** Historical treaty adoption timelines vary (Nuclear Non-Proliferation Treaty: 3 years; Paris Climate Agreement: 5 years). This analysis focuses on economic value *conditional* on implementation, not probability of political success.
+
+**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case (463:1 to 1,239:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
+
+### Technology Constancy Assumption
+
+**Assumption:** Analysis does not incorporate potential advances in AI, automation, or biotechnology that could further accelerate research.
+
+**Justification:** Conservative assumption. Emerging AI capabilities in drug discovery, automated synthesis, and computational biology could dramatically increase research productivity beyond modeled estimates.
+
+**Implication:** Baseline estimates likely underestimate long-term benefits by excluding technology-driven accelerations.
+
+### Data Quality and Availability
+
+All primary data sources are documented in [References](../references.qmd) with confidence levels:
+- **High confidence** (78%): SIPRI military expenditure, WHO mortality statistics, ClinicalTrials.gov data
+- **Medium confidence** (17%): Peace dividend estimates, QALY valuations (wide range in literature)
+- **Conservative bounds**: Where uncertainty exists, analysis uses conservative estimates favoring underestimation of benefits
+
+For complete parameter documentation with confidence indicators and peer-review status, see [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd).
+
 ---
 
 # The Conservative Case: {{< var roi_dfda_savings_only >}} ROI (dFDA Only)
@@ -1022,7 +1089,7 @@ Despite these limitations, several factors support the analysis's robustness:
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
 4. **Dominant intervention status:** Negative ICER (-$59,476/QALY) means intervention saves money even if health benefits are substantially overstated
 
-**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [_variables.yml](../../_variables.yml) and [dih_models/parameters.py](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/dih_models/parameters.py).
+**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd) and [References](../references.qmd).
 
 Future research priorities include prospective data collection during pilot implementations, real-world validation of cost reduction estimates, and longitudinal assessment of QALY gains across diverse populations and disease contexts.
 
