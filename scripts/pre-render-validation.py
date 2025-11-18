@@ -9,6 +9,7 @@ Validates .qmd files before Quarto rendering to catch errors early:
 - Broken include directives ({{< include path.qmd >}})
 - Missing Python imports in code blocks
 - GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
+- Unknown Quarto variables ({{< var name >}}) not defined in _variables.yml
 - _quarto.yml configuration (validates all chapter paths exist)
 
 Runs automatically via _quarto.yml pre-render hook
@@ -19,7 +20,7 @@ import re
 import sys
 from glob import glob
 from pathlib import Path
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Set
 
 class ValidationError:
     def __init__(self, file: str, line: int, message: str, context: str, column: Optional[int] = None):
@@ -654,6 +655,72 @@ def check_markdown_links(content: str, filepath: str):
                     ))
 
 
+def load_defined_variables() -> Set[str]:
+    """
+    Load all defined variables from _variables.yml
+    Returns a set of variable names that are defined.
+    """
+    variables_file = '_variables.yml'
+    defined_vars: Set[str] = set()
+
+    if not os.path.exists(variables_file):
+        print(f'Warning: {variables_file} not found, skipping variable validation\n')
+        return defined_vars
+
+    try:
+        import yaml
+    except ImportError:
+        print('Warning: PyYAML not installed, skipping variable validation\n')
+        print('  Install with: pip install pyyaml\n')
+        return defined_vars
+
+    try:
+        with open(variables_file, 'r', encoding='utf-8') as f:
+            variables = yaml.safe_load(f)
+
+        # Variables are the top-level keys in the YAML file
+        if isinstance(variables, dict):
+            defined_vars = set(variables.keys())
+
+        return defined_vars
+    except Exception as e:
+        print(f'Warning: Failed to parse {variables_file}: {str(e)}\n')
+        return defined_vars
+
+
+def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str]):
+    """
+    Check for Quarto variables that are referenced but not defined in _variables.yml
+    Pattern: {{< var variable_name >}}
+    """
+    if not defined_vars:
+        # Skip if no variables loaded (PyYAML not installed or file not found)
+        return
+
+    lines = content.split('\n')
+
+    # Pattern to match Quarto variable references: {{< var variable_name >}}
+    var_pattern = re.compile(r'\{\{<\s*var\s+([^\s>]+)\s*>\}\}')
+
+    for line_index, line in enumerate(lines):
+        # Skip HTML comments
+        if re.match(r'^\s*<!--', line.strip()) or ('<!--' in line and '-->' in line):
+            continue
+
+        matches = var_pattern.finditer(line)
+        for match in matches:
+            var_name = match.group(1).strip()
+
+            # Check if variable is defined
+            if var_name not in defined_vars:
+                errors.append(ValidationError(
+                    file=filepath,
+                    line=line_index + 1,
+                    message=f'Unknown Quarto variable: {{{{< var {var_name} >}}}} - not defined in _variables.yml',
+                    context=line.strip()[:80]
+                ))
+
+
 def validate_quarto_config():
     """
     Validate _quarto.yml configuration file.
@@ -720,7 +787,7 @@ def validate_quarto_config():
             check_file_refs(config['book']['appendices'], 'book.appendices')
 
 
-def validate_file(filepath: str):
+def validate_file(filepath: str, defined_vars: Set[str]):
     """Validate a single file"""
     if not os.path.exists(filepath):
         print(f"File not found: {filepath}", file=sys.stderr)
@@ -768,7 +835,7 @@ def validate_file(filepath: str):
     check_figure_file_imports(content, filepath)
     # Also check for other imports per-block (npf, etc.)
     check_python_imports(content, filepath)
-    
+
     # Check for Quarto variables in Graphviz code blocks
     check_graphviz_variables(content, filepath)
 
@@ -788,6 +855,9 @@ def validate_file(filepath: str):
     # Check for Quarto variables in link text
     check_quarto_variables_in_links(content, filepath)
 
+    # Check for unknown Quarto variables
+    check_unknown_variables(content, filepath, defined_vars)
+
     # Check for inline expressions (incompatible with Jupyter Cache)
     # DISABLED: We've disabled cache: true in Quarto configs, so inline expressions are fine
     # check_inline_expressions(content, filepath)
@@ -795,6 +865,14 @@ def validate_file(filepath: str):
 def main():
     """Main validation function"""
     print('Running pre-render validation checks on .qmd files...\n')
+
+    # Load defined variables from _variables.yml
+    print('Loading defined variables from _variables.yml...')
+    defined_vars = load_defined_variables()
+    if defined_vars:
+        print(f'Loaded {len(defined_vars)} defined variables\n')
+    else:
+        print('No variables loaded (PyYAML may not be installed or _variables.yml not found)\n')
 
     # Validate _quarto.yml configuration first
     validate_quarto_config()
@@ -810,7 +888,7 @@ def main():
 
     # Validate each file
     for qmd_file in qmd_files:
-        validate_file(qmd_file)
+        validate_file(qmd_file, defined_vars)
 
     # Report results
     if len(errors) == 0:
