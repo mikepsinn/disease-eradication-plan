@@ -38,15 +38,15 @@ from dih_models.parameters import *
 ::: {.callout-note}
 ## Key Findings
 
-1. **Conservative ROI**: {{< var roi_dfda_savings_only >}}:1 return based solely on R&D efficiency gains (${{< var dfda_npv_benefit >}}B NPV benefit / ${{< var dfda_npv_total_cost >}}B implementation cost over 10 years)
+1. **Conservative ROI**: {{< var roi_dfda_savings_only >}}:1 return based solely on R&D efficiency gains ({{< var dfda_npv_benefit >}} NPV benefit / {{< var dfda_npv_total_cost >}} implementation cost over 10 years)
 
-2. **Complete ROI**: {{< var roi_all_direct_benefits >}}:1 return including all eight quantifiable benefit categories (${{< var treaty_complete_case_annual_benefits >}}B annual benefits / ${{< var treaty_campaign_total_cost >}}B campaign cost)
+2. **Complete ROI**: {{< var roi_all_direct_benefits >}}:1 return including all eight quantifiable benefit categories ({{< var treaty_complete_case_annual_benefits >}} annual benefits / {{< var treaty_campaign_total_cost >}} campaign cost)
 
-3. **Self-Funding**: Zero net new spending required - funds redirected from existing military budgets (${{< var treaty_annual_funding >}}B annually from 1% of ${{< var global_military_spending_annual_2024 >}}B global military spending)
+3. **Self-Funding**: Zero net new spending required - funds redirected from existing military budgets ({{< var treaty_annual_funding >}} annually from 1% of {{< var global_military_spending_annual_2024 >}} global military spending)
 
-4. **Lives Saved**: {{< var treaty_total_lives_saved_annual >}} lives saved annually at net societal benefit of ${{< var net_benefit_per_life_saved >}}M per life
+4. **Lives Saved**: {{< var treaty_total_lives_saved_annual >}} lives saved annually at net societal benefit of {{< var net_benefit_per_life_saved >}} per life
 
-5. **Dominant Intervention**: Negative ICER (${{< var dfda_icer_per_qaly >}}/QALY) indicates cost savings while improving health - exceeds all traditional health interventions including smallpox eradication (209:1 ROI), polio vaccination (27:1), and measles vaccination (16:1)
+5. **Dominant Intervention**: Negative ICER ({{< var dfda_icer_per_qaly >}}/QALY) indicates cost savings while improving health - exceeds all traditional health interventions including smallpox eradication (209:1 ROI), polio vaccination (27:1), and measles vaccination (16:1)
 
 6. **Research Acceleration**: {{< var research_acceleration_multiplier >}}× increase in research throughput through dramatically reduced trial costs and increased participation
 
@@ -57,7 +57,7 @@ from dih_models.parameters import *
 
 ## Research Hypothesis
 
-**Primary Hypothesis**: Reallocating 1% of global military spending (${{< var treaty_annual_funding >}}B annually) to medical research infrastructure (Decentralized Institutes of Health and Decentralized FDA) generates return on investment between 463:1 (conservative estimate, R&D savings only) and 1,239:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
+**Primary Hypothesis**: Reallocating 1% of global military spending ({{< var treaty_annual_funding >}} annually) to medical research infrastructure (Decentralized Institutes of Health and Decentralized FDA) generates return on investment between 463:1 (conservative estimate, R&D savings only) and 1,239:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
@@ -90,7 +90,7 @@ from dih_models.parameters import *
 
 **Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Unconditionally recommended regardless of willingness-to-pay thresholds (e.g., vaccination programs, smoking cessation).
 
-**1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds (${{< var treaty_annual_funding >}}B globally) to medical research infrastructure.
+**1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to medical research infrastructure.
 
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions. Reduces costs while improving generalizability (e.g., Oxford RECOVERY trial).
 :::
@@ -406,13 +406,13 @@ Transformative potential to create viable research pathways for conditions ignor
 - **Mechanism:** Radically lower per-patient costs make rare disease R&D economically feasible
 - **Annual QALYs:** {{< var qalys_from_prevention_conservative >}}-{{< var qalys_from_new_therapies_optimistic >}} QALYs (baseline: 60% of total)
 
-**QALY Valuation:** Standard economic valuations range from ${{< var qalys_from_prevention_conservative >}}-${{< var standard_economic_qaly_value_usd >}} per QALY. This analysis uses conservative mid-range values.
+**QALY Valuation:** Standard economic valuations range from ${{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY. This analysis uses conservative mid-range values.
 
 For detailed QALY calculation methodology, see [dFDA QALY Model](../appendix/dfda-qaly-model.qmd).
 
 ## Peace Dividend Calculation Methodology
 
-The peace dividend represents economic benefits from reduced military spending. The {{< var treaty_reduction_pct >}} Treaty redirects {{< var treaty_reduction_pct >}} of global military spending (${{< var global_military_spending_annual_2024 >}}B in 2024) = ${{< var treaty_annual_funding >}}B annually.
+The peace dividend represents economic benefits from reduced military spending. The {{< var treaty_reduction_pct >}} Treaty redirects {{< var treaty_reduction_pct >}} of global military spending ({{< var global_military_spending_annual_2024 >}} in 2024) = {{< var treaty_annual_funding >}} annually.
 
 **Economic benefits of reduced military spending:**
 
@@ -424,6 +424,16 @@ The peace dividend represents economic benefits from reduced military spending. 
 
 For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd).
 
+**Confidence level separation**: The peace dividend calculation separates into two components with different levels of causal confidence:
+
+1. **Direct fiscal savings (high confidence)**: {{< var peace_dividend_direct_fiscal_savings >}} - The 1% reduction in military budgets ({{< var treaty_annual_funding >}}) represents direct fiscal savings with high certainty. These funds are immediately available for reallocation regardless of conflict reduction effects.
+
+2. **Conflict reduction benefits (lower confidence)**: {{< var peace_dividend_conflict_reduction >}} - The remaining {{< var peace_dividend_conflict_reduction >}} assumes that 1% less military spending correlates with 1% reduction in conflict costs (direct: $7.7T, indirect: $3.7T). This proportional relationship is a simplifying assumption without established causal evidence.
+
+**Conservative interpretation**: The direct fiscal savings ({{< var treaty_annual_funding >}} annually) are certain; conflict reduction benefits ($0 to {{< var peace_dividend_conflict_reduction >}}) are uncertain and represent an optimistic scenario. The analysis uses the full {{< var peace_dividend_annual_societal_benefit >}} in optimistic/complete cases but acknowledges this may overstate benefits if the causal link between military spending and conflict is weaker than linear.
+
+**Causal mechanism uncertainty**: The relationship between military spending and conflict is complex. Factors include deterrence effects (military strength may prevent conflicts), alliance structures, economic interdependence, and geopolitical stability. A 1% spending reduction may yield anywhere from 0% to >1% conflict reduction depending on context. Without instrumental variables or difference-in-differences analysis, the causal claim remains speculative.
+
 ## Research Acceleration Mechanism
 
 The {{< var research_acceleration_multiplier >}}× research acceleration multiplier derives from specific, measurable improvements across four dimensions:
@@ -434,7 +444,7 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 | **Trial Completion Speed** | 3-5 years | 3-12 months | **10×** |
 | **Simultaneous Trials** | {{< var current_active_trials >}} active trials | {{< var dfda_active_trials >}} active trials | **20×** |
 | **Completion Rate** | {{< var current_trials_per_year >}} finish | {{< var dfda_trial_completion_rate >}} finish | **1.6×** |
-| **Funding Increase** | ${{< var global_med_research_spending >}}B baseline | $94.7B (baseline + {{< var treaty_annual_funding >}}B) | **1.4×** |
+| **Funding Increase** | {{< var global_med_research_spending >}} baseline | $94.7B (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
 
 **Theoretical maximum:** 25 × 10 × 1.6 × 1.4 = 560×
 
@@ -442,14 +452,14 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 
 For detailed derivation, see [Research Acceleration Model](../appendix/research-acceleration-model.qmd).
 
-**Automated infrastructure, not researcher scaling**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps—similar to how Amazon provides infrastructure for e-commerce or Consumer Reports for product testing. The {{< var research_acceleration_multiplier >}}× research acceleration does **not** require {{< var research_acceleration_multiplier >}}× more researchers because the system scales through software and data infrastructure, not human labor.
+**Automated infrastructure, not researcher scaling**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps, similar to how Amazon provides infrastructure for e-commerce or Consumer Reports for product testing. The {{< var research_acceleration_multiplier >}}× research acceleration does **not** require {{< var research_acceleration_multiplier >}}× more researchers because the system scales through software and data infrastructure, not human labor.
 
 The platform uses federated queries (data stays in Epic/Cerner/Apple Health systems) rather than centralized databases, enabling analysis without data movement. Physicians continue normal clinical practice; the platform automatically detects patterns, identifies treatment effects, and flags signals for peer review. This is fundamentally different from traditional research models that scale linearly with researcher headcount.
 
 ## Data Sources and Primary Inputs
 
 **Military and Conflict Data:**
-- Global military spending: [SIPRI Military Expenditure Database](../references.qmd#sipri-2024) ({{< var global_military_spending_annual_2024 >}}B annually)
+- Global military spending: [SIPRI Military Expenditure Database](../references.qmd#sipri-2024) ({{< var global_military_spending_annual_2024 >}} annually)
 - Conflict deaths: [Armed Conflict Location & Event Data Project (ACLED)](../references.qmd#acled-2024), [Global Terrorism Database (GTD)](../references.qmd#gtd-2024), [Uppsala Conflict Data Program (UCDP)](../references.qmd#ucdp-2024)
 
 **Clinical Trial Economics:**
@@ -465,7 +475,7 @@ The platform uses federated queries (data stays in Epic/Cerner/Apple Health syst
 **Economic Parameters:**
 - Discount rate: {{< var npv_discount_rate_standard >}} (standard health economics practice)
 - Time horizon: {{< var npv_time_horizon_years >}} years (standard for infrastructure investments)
-- Value of statistical life: ${{< var value_of_statistical_life >}}M (EPA/DOT standard)
+- Value of statistical life: {{< var value_of_statistical_life >}} (EPA/DOT standard)
 
 All data sources include confidence levels and last-update dates. See [References](../references.qmd) for complete bibliography.
 
@@ -492,10 +502,35 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 
 **Complete Case (1,239:1 ROI):**
 - Includes all eight quantifiable benefit categories
-- Peace dividend: ${{< var peace_dividend_annual_societal_benefit >}}
+- Peace dividend: {{< var peace_dividend_annual_societal_benefit >}}
 - Earlier treatment access, research acceleration, rare disease treatments, drug price reductions, prevention medicine, mental health benefits
 
 Sensitivity analysis demonstrates robust returns across all scenarios, with ROI ranging from 66:1 (worst-case) to 2,577:1 (optimistic). See [1% Treaty Cost-Effectiveness Analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd) for detailed scenario modeling.
+
+### Discount Rate Sensitivity
+
+The baseline analysis uses a {{< var npv_discount_rate_standard >}} annual discount rate (standard for long-term public health investments). NPV calculations are sensitive to this critical parameter:
+
+**ROI sensitivity to discount rate**:
+
+| Discount Rate | ROI (dFDA Only) | Interpretation |
+|:---|---:|:---|
+| **1%** | {{< var roi_discount_1pct >}}:1 | Low discount rate (very long-term view) |
+| **3% (baseline)** | {{< var roi_discount_3pct >}}:1 | Standard public health discount rate |
+| **5%** | {{< var roi_discount_5pct >}}:1 | Higher discount rate (private sector typical) |
+| **7%** | {{< var roi_discount_7pct >}}:1 | High discount rate (short-term focus) |
+
+**Formula**: Higher discount rates reduce NPV of future benefits:
+
+$$
+\text{NPV} = \sum_{t=1}^{10} \frac{B_t - C_t}{(1 + r)^t}
+$$
+
+where $r$ is the discount rate, $B_t$ are benefits in year $t$, and $C_t$ are costs in year $t$.
+
+**Key insight**: Even at 7% discount rate (high by public health standards), ROI remains {{< var roi_discount_7pct >}}:1, substantially exceeding alternative interventions. The 10-year horizon captures the majority of NPV; benefits continue beyond year 10 but are discounted heavily.
+
+**Benefit timing**: Peace dividend is immediate (year 1), R&D savings ramp gradually (years 1-5), QALY gains are long-term (years 5-20+). Front-loaded benefits (peace dividend) are less sensitive to discount rate than back-loaded benefits (QALYs).
 
 ## Key Analytical Assumptions
 
@@ -533,7 +568,7 @@ This analysis rests on several core assumptions that should be made explicit for
 **Assumption:** dFDA methodology reduces per-patient trial costs by {{< var trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
 
 **Empirical basis:**
-- Oxford RECOVERY trial: {{< var trial_cost_reduction_factor >}}× cost reduction (${{< var recovery_trial_cost_per_patient >}} per patient vs. ${{< var traditional_phase3_cost_per_patient >}} traditional)
+- Oxford RECOVERY trial: {{< var trial_cost_reduction_factor >}}× cost reduction ({{< var recovery_trial_cost_per_patient >}} per patient vs. {{< var traditional_phase3_cost_per_patient >}} traditional)
 - ADAPTABLE trial: Similar cost structure using pragmatic design
 - Literature on pragmatic trials consistently shows 50-95% cost reductions
 
@@ -546,22 +581,22 @@ This analysis rests on several core assumptions that should be made explicit for
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
 - **Pre-1962 system**: [$74 million per drug](../references.qmd#pre-1962-drug-costs-timeline) (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
-- **Post-1962 system**: $2.6 billion per drug average—a **35× cost increase**; drug companies conduct both safety and efficacy trials internally
+- **Post-1962 system**: $2.6 billion per drug average, a **35× cost increase**; drug companies conduct both safety and efficacy trials internally
 - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
 
 **Historical operational model:**
 
 From 1883 to 1960, [144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized, pragmatic trial system coincided with dramatic improvements in life expectancy during the early-to-mid 20th century.
 
-**Safety record—the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed**—the safety testing framework worked exactly as intended.
+**Safety record, the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed**, the safety testing framework worked exactly as intended.
 
-The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation—safety testing had succeeded. The response was to take efficacy testing away from 144,000 independent physicians and centralize it within pharmaceutical companies, increasing costs 35-fold while slowing approvals substantially.
+The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation, safety testing had succeeded. The response was to take efficacy testing away from 144,000 independent physicians and centralize it within pharmaceutical companies, increasing costs 35-fold while slowing approvals substantially.
 
 **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-2021), the first sustained decreases since 1915-1918, suggesting the post-1962 regulatory model may have reached diminishing or negative returns.
 
 **Implications for generalizability:**
 
-The RECOVERY trial ($500 per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach—physicians testing treatments on real patients in clinical practice settings—has nearly 80 years of empirical validation (1883-1960), not merely one case study.
+The RECOVERY trial ($500 per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has nearly 80 years of empirical validation (1883-1960), not merely one case study.
 
 The cost reduction estimates (50-95%) are conservative relative to the historical 97%+ reduction achieved by the pre-1962 model ($74M vs. $2.6B). Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
 
@@ -602,7 +637,28 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 **Interpretation**: The high conditional ROI (463:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
-**Note**: This analysis uses point estimates for political probability. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](../solution/campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
+**Note**: This analysis uses point estimates for political probability. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
+
+### Time Inconsistency and Commitment Credibility
+
+**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the 10-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the medical research budget for short-term priorities.
+
+**Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
+
+**Historical precedent - Post-WWII peace dividend**: The post-World War II "peace dividend" saw military spending fall from 37% of GDP (1945) to 5% (1948), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 13% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
+
+**Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties ratified, but many failed to meet funding commitments. As of 2024, developed countries have not met the $100B annual climate finance pledge despite treaty obligations. Treaty ratification creates moral commitment but weak enforcement mechanisms for sustained budgetary allocations.
+
+**Implication for expected value**: The political success probabilities used in expected value analysis (10%-50%) implicitly incorporate time inconsistency risk. A treaty might ratify with P=50% but maintain funding for 10 years with P=25%. The expected value analysis partially addresses this through probability discounting, but time inconsistency (commitment erosion over time) represents an additional risk factor beyond initial political feasibility.
+
+**Potential commitment mechanisms** (not modeled):
+- Constitutional amendment (very high barrier, very high credibility)
+- Independent funding agency with statutory protections
+- Lock-box mechanism with supermajority requirement to redirect funds
+- International monitoring and reputation costs
+- Citizen oversight via Wishocracy participatory budgeting
+
+**Note**: The analysis acknowledges this limitation. Results should be interpreted as conditional on sustained implementation, with expected value analysis providing probability-adjusted estimates that partially account for political risk.
 
 ### Technology Constancy Assumption
 
@@ -669,6 +725,8 @@ $$
 
 This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
 
+**Note on confidence levels**: The direct military spending reduction ({{< var treaty_annual_funding >}}) has high confidence. The remaining conflict cost reductions assume proportional scaling (1% military spending → 1% conflict reduction) which lacks empirical validation. Conservative scenarios should use only direct fiscal savings; optimistic scenarios can include full peace dividend effects.
+
 {{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
 
 ### What It Costs to Build
@@ -677,7 +735,7 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
   - Upfront: {{< var dfda_npv_upfront_cost_total >}} (build the platform)
   - Yearly operations: {{< var dfda_upfront_build >}} (keep it running)
 
-**Why costs are low—the partnership model:** The dFDA uses a partnership-first strategy, providing open protocol infrastructure rather than building a competing platform. This approach costs **$15-25M upfront** (protocol/API build) versus **$37.5-46M** for a full platform build, leveraging existing infrastructure from Epic ($521M raised), Cerner, Medable ($2.1B valuation), and Science 37 ($100M raised).
+**Why costs are low, the partnership model:** The dFDA uses a partnership-first strategy, providing open protocol infrastructure rather than building a competing platform. This approach costs **$15-25M upfront** (protocol/API build) versus **$37.5-46M** for a full platform build, leveraging existing infrastructure from Epic ($521M raised), Cerner, Medable ($2.1B valuation), and Science 37 ($100M raised).
 
 By establishing open protocols (like HTTP for the internet) rather than building consumer-facing apps, trial management systems, and EHR integrations from scratch, the dFDA avoids **$500M+** in full-stack development costs. Instead of competing with billion-dollar platforms, it provides the coordination layer that enables existing systems to interoperate. The federated architecture (data stays in Epic/Cerner/Apple Health systems) eliminates massive database infrastructure costs while preserving privacy.
 
@@ -749,7 +807,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 **Funding Allocation** (separating platform costs from patient subsidies):
 
 1. **dFDA Platform Operations**: ~$40M/year for core infrastructure, maintenance, protocol development, and operations ([medium initiative scenario](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model))
-2. **NIH Trial Participation Cost Discount Fund**: ~$2B/year for patient participation subsidies (authorized in [Right to Trial Act SEC. 303](../solution/right-to-trial-fda-upgrade-act.qmd#sec-303-nih-trial-participation-cost-discount-fund); sponsors set costs, NIH pays portion via QALY-maximizing algorithm, patients pay discounted copay)
+2. **NIH Trial Participation Cost Discount Fund**: ~$2B/year for patient participation subsidies (authorized in [Right to Trial Act SEC. 303](../appendix/right-to-trial-fda-upgrade-act.qmd#sec-303-nih-trial-participation-cost-discount-fund); sponsors set costs, NIH pays portion via QALY-maximizing algorithm, patients pay discounted copay)
 3. **Remaining Funds**: ~$25.2B/year allocated via [Wishocracy](../solution/wishocracy.qmd) for additional research infrastructure, patient incentives, and expanding trial capacity
 
 **Important distinction**: The dFDA platform costs ($40M/year) are separate from patient participation subsidies ($2B/year NIH Fund). Platform costs cover infrastructure and operations. The NIH Fund provides financial assistance to patients enrolling in trials, making participation affordable without funding researcher salaries.
@@ -1141,7 +1199,7 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 - **Covariate adjustment:** Electronic health record data enables controlling for confounders ex-post using propensity score matching and instrumental variables
 - **Replication at scale:** Lower costs enable rapid replication across diverse populations, testing robustness
 
-**Empirical evidence—observational studies produce valid results:** A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
+**Empirical evidence, observational studies produce valid results:** A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
 
 ![Comparison of effect sizes from observational studies versus randomized trials for mortality outcomes, showing strong concordance between methodologies.](../../assets/observational-vs-randomized-effect-sizes.png)
 
@@ -1175,7 +1233,7 @@ The {{< var global_dfda_qalys_gained_annual >}} annual QALY estimate aggregates 
 
 ### Military Spending Data
 
-Global military expenditure data (${{< var global_military_spending_annual_2024 >}}B, SIPRI 2024) is well-documented but:
+Global military expenditure data ({{< var global_military_spending_annual_2024 >}}, SIPRI 2024) is well-documented but:
 
 - **Off-budget spending:** Some military expenditures may be classified or categorized elsewhere
 - **Exchange rate fluctuations:** Multi-year projections require currency assumptions
@@ -1183,7 +1241,7 @@ Global military expenditure data (${{< var global_military_spending_annual_2024 
 
 ### Clinical Trial Market Sizing
 
-The ${{< var global_clinical_trials_spending_annual >}} global clinical trials market estimate derives from industry reports, which:
+The {{< var global_clinical_trials_spending_annual >}} global clinical trials market estimate derives from industry reports, which:
 
 - **Industry variation:** Methodologies vary across market research firms
 - **Private vs. public trials:** Some trial spending may be unreported or proprietary
@@ -1191,7 +1249,7 @@ The ${{< var global_clinical_trials_spending_annual >}} global clinical trials m
 
 ### QALY Valuation Thresholds
 
-Standard willingness-to-pay thresholds (${{< var qalys_from_prevention_conservative >}}-${{< var standard_economic_qaly_value_usd >}} per QALY) vary by jurisdiction:
+Standard willingness-to-pay thresholds (${{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY) vary by jurisdiction:
 
 - **Geographic variation:** WHO recommends 1-3× GDP per capita; high-income countries use higher thresholds
 - **Ethical considerations:** Monetary QALY valuations raise equity concerns
@@ -1238,7 +1296,7 @@ The following table summarizes key risk factors and their mitigation strategies:
 | **Political Risk** | VERY HIGH | Treaty ratification dependent on international coordination | Modest 1% reduction; precedent from military-industrial lobbying ROI (1,813:1) |
 | **Execution Risk** | HIGH | Complex global legal/technical coordination required | Phased implementation; leverage existing regulatory expertise |
 | **Regulatory Risk** | MEDIUM-HIGH | Harmonization across jurisdictions varies | Pilot programs in willing jurisdictions first |
-| **Market Risk** | VERY LOW | ${{< var global_military_spending_annual_2024 >}}T military spending already allocated | Redirection rather than new appropriation |
+| **Market Risk** | VERY LOW | {{< var global_military_spending_annual_2024 >}} military spending already allocated | Redirection rather than new appropriation |
 | **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms (Medable $521M raised, $2.1B valuation) |
 
 ### Scenario Analysis Robustness
@@ -1279,7 +1337,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 2. **Data infrastructure scaling costs**: The dFDA uses automated software infrastructure (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the platform leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
-3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. The Wishocracy allocation mechanism (SEC. 304 in [Right to Trial Act](../solution/right-to-trial-fda-upgrade-act.qmd)) attempts to minimize this through algorithmic allocation, but some overhead is inevitable.
+3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. The Wishocracy allocation mechanism (SEC. 304 in [Right to Trial Act](../appendix/right-to-trial-fda-upgrade-act.qmd)) attempts to minimize this through algorithmic allocation, but some overhead is inevitable.
 
 4. **Clinical trial market price effects**: Increasing trial demand by 115× could affect equilibrium prices for clinical research services. However, the dFDA model *reduces* per-trial costs (82× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost $41,000 per patient; dFDA targets $500 per patient by eliminating overhead, not by increasing demand for scarce inputs.
 

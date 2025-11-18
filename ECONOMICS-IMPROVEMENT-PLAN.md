@@ -937,11 +937,12 @@ These require major new research - acknowledge transparently but don't try to fi
 **Issue**: REVIEW-COST-EFFECTIVENESS.md #8 - Assumes government commitment holds over 10+ years; ignores political business cycles and public choice theory
 **Location**: Integrate into Todo #9 (Expected Value Analysis) or add to "Political Feasibility Assumption" section
 **Action**:
-- [ ] Add discussion of time inconsistency: "Even if treaty ratifies, political economy suggests budget may be raided within 3-5 years. Defense contractors have concentrated interests ($1B+ lobbying), health benefits are diffuse. Olson's logic of collective action predicts resistance."
+- [ ] Add discussion of time inconsistency: "Even if treaty ratifies, political economy suggests budget may be raided within 3-5 years. Defense contractors have concentrated interests ({{< var defense_lobbying_annual >}} annually), health benefits are diffuse. Olson's logic of collective action predicts resistance."
 - [ ] Acknowledge credible commitment mechanisms: "Treaty ratification ≠ sustained funding (Paris Agreement example: many signatories, few meet targets). Analysis assumes sustained commitment; actual implementation may face political reversals."
 - [ ] Note: "Expected value analysis (Todo #9) partially addresses this by incorporating probability of success, but time inconsistency (commitment erosion over time) remains a limitation."
 - [ ] Reference historical precedent: "Post-WWII 'peace dividend' was quickly reversed. Similar attempts face political economy barriers."
 **Why Important**: Addresses critique #8 about time inconsistency and political economy barriers to sustained commitment
+**Note**: Updated to use {{< var defense_lobbying_annual >}} instead of hardcoded "$1B+" (variable already formatted as $127M in _variables.yml, no need to add units manually)
 
 #### 28. ⏳ Address Cherry-Picked Comparisons
 **Issue**: REVIEW-COST-EFFECTIVENESS.md #9 - Selective comparison to interventions that make dFDA look favorable (GiveWell charities, childhood vaccinations) but not to comparable research investments (NIH, DARPA) or other health interventions
@@ -1011,22 +1012,36 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Add: "Conservative interpretation: Even if alternative uses have positive value, dFDA's dominant intervention status (negative ICER) suggests it exceeds most alternatives."
 **Why Important**: Addresses critique #15 about counterfactual specification and strengthens methodological rigor
 
+#### 34. ⏳ Ensure All Numeric Claims Use Variables Instead of Hardcoding
+**Issue**: Inconsistent use of {{< var >}} vs hardcoded numbers reduces maintainability and credibility. Discovered hardcoded "$1B+ lobbying" (should be $127M) and "$300 million" defense lobbying figures. Also found redundant unit suffixes (e.g., "${{< var x >}}B") when variables already contain formatting.
+**Location**: economics.qmd, faq.qmd, and other files throughout the project
+**Action**:
+- [x] Fix "$1B+ lobbying" → {{< var defense_lobbying_annual >}} (economics.qmd line 646) - ✅ COMPLETED
+- [x] Fix "$300 million" defense lobbying → {{< var defense_lobbying_annual >}} (faq.qmd lines 278, 280) - ✅ COMPLETED
+- [x] Add DEFENSE_LOBBYING_ANNUAL parameter to parameters.py ($127M) - ✅ COMPLETED
+- [x] Regenerate _variables.yml (now 435 parameters) - ✅ COMPLETED
+- [x] Remove redundant "$" and "B" suffixes from variable references (variables are pre-formatted in _variables.yml) - ✅ COMPLETED
+- [ ] Systematic review of economics.qmd for other hardcoded numbers and redundant unit suffixes
+- [ ] Run validation to ensure all referenced variables exist
+**Why Important**: Ensures consistency, accuracy, and maintainability of all numeric claims; prevents future errors like confusing annual ($127M) vs cumulative ($1.1B over 20 years) lobbying figures; avoids double-formatting (e.g., "$$127MB" from "${{< var x >}}B")
+**Note**: The VICTORY bonds strategy of co-opting defense contractors is adequately documented in victory-bonds.qmd, co-opting-defense-contractors.qmd, campaign-budget.qmd, and faq.qmd. Variables in _variables.yml are already formatted with units (e.g., "$127M"), so do not add manual "$" or "B"/"M" suffixes.
+
 ---
 
 ## Implementation Checklist
 
 ### Phase 1: Critical Calculations (parameters.py)
-- [ ] Todo #9: Add probability-weighted expected value parameters
-- [ ] Todo #12: Add peace dividend confidence-level parameters
-- [ ] Todo #13: Add discount rate sensitivity calculation function and parameters
-- [ ] Run `scripts/generate-variables-yml.py` after all parameter additions
+- [x] Todo #9: Add probability-weighted expected value parameters - ✅ COMPLETED (parameters.py lines 1765-1823, _variables.yml regenerated)
+- [x] Todo #12: Add peace dividend confidence-level parameters - ✅ COMPLETED (parameters.py lines 551-570, 434 parameters total)
+- [x] Todo #13: Add discount rate sensitivity calculation function and parameters - ✅ COMPLETED (parameters.py lines 1768-1810, 434 parameters)
+- [x] Run `scripts/generate-variables-yml.py` after parameter additions - ✅ COMPLETED (434 parameters, 95 citations)
 
 ### Phase 2: Critical Text Additions (economics.qmd)
-- [ ] Todo #9: Add expected value analysis section with hardcoded LaTeX
-- [ ] Todo #10: Add automated system clarification paragraph and funding model details
-- [ ] Todo #11: Add general equilibrium considerations subsection
-- [ ] Todo #12: Strengthen peace dividend causal claims with confidence levels
-- [ ] Todo #13: Enhance sensitivity analysis with discount rate table
+- [x] Todo #9: Add expected value analysis section with hardcoded LaTeX - ✅ COMPLETED (lines 576-605)
+- [x] Todo #10: Add automated system clarification paragraph and funding model details - ✅ COMPLETED (lines 445-447, verified 714-720, 645-649)
+- [x] Todo #11: Add general equilibrium considerations subsection - ✅ COMPLETED (lines 1241-1262)
+- [x] Todo #12: Strengthen peace dividend causal claims with confidence levels - ✅ COMPLETED (methodology lines 427-435, table note line 728)
+- [x] Todo #13: Enhance sensitivity analysis with discount rate table - ✅ COMPLETED (lines 500-523)
 - [x] Todo #14: Strengthen RECOVERY trial limitations - ✅ COMPLETED (lines 1051-1062)
 - [x] Todo #20: Add partnership model cost savings explanation - ✅ COMPLETED (lines 645-649)
 - [x] Todo #21: Distinguish platform costs from patient subsidy fund - ✅ COMPLETED (lines 714-720)
@@ -1037,11 +1052,11 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Todo #16: Improve QALY methodology with confidence levels
 - [ ] Todo #17: Enhance external validity discussion
 - [ ] Todo #18: Add adoption realism discussion
-- [ ] Todo #19: Address time horizon issues (integrated with #13)
+- [x] Todo #19: Address time horizon issues - ✅ COMPLETED (integrated with #13, discount rate sensitivity lines 500-523)
 - [ ] Todo #24: Add missing cost categories discussion
 - [ ] Todo #25: Address model specification issues
 - [ ] Todo #26: Address benefit attribution and publication bias
-- [ ] Todo #27: Address time inconsistency and political economy concerns
+- [x] Todo #27: Address time inconsistency and political economy concerns - ✅ COMPLETED (lines 607-626)
 - [ ] Todo #28: Address cherry-picked comparisons
 - [ ] Todo #29: Acknowledge inadequate uncertainty quantification (Monte Carlo)
 - [ ] Todo #30: Verify variable name consistency
