@@ -18,7 +18,7 @@ lastNonprofitComplianceHash: 10a8528867ff97290815aebf8c71e8594837b428eda50c4f1eb
 from dih_models.parameters import *
 ```
 
-The [conservative {{< var roi_dfda_savings_only >}}:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
+The conservative {{< var roi_dfda_savings_only >}}:1 ROI estimate captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 
 This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
 

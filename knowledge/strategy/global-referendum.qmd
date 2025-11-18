@@ -42,7 +42,7 @@ Requirements:
 
 - Must be auditable (so politicians can't claim it's fake)
 - Must be persuasive (so policymakers actually care)
-- Must hit **[{{< var global_population_activism_threshold_pct >}} global participation](../references.qmd#3-5-rule)** (280M+ verified votes)
+- Must hit **{{< var global_population_activism_threshold_pct >}} global participation** (280M+ verified votes)
 
 That last number isn't arbitrary. It's based on historical data showing that once {{< var global_population_activism_threshold_pct >}} of a population actively supports something, it becomes unstoppable. More on that later.
 

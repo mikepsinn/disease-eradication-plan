@@ -12,7 +12,7 @@ lastInstructionalVoiceHash: d1c24ef7a7b12bc836b63a73b31f983a6b3a14fab117149fb7b9
 from dih_models.parameters import *
 ```
 
-Historical analysis shows: Every peaceful movement that gets **[{{< var global_population_activism_threshold_pct >}} active support](../references.qmd#3-5-rule)** succeeds.
+Historical analysis shows: Every peaceful movement that gets **{{< var global_population_activism_threshold_pct >}} active support** succeeds.
 
 - $8 \text{ billion humans} \times 3.5\% = 280 \text{ million}$
 - The strategy requires 280 million people to vote YES on the [1% Treaty](../solution/1-percent-treaty.qmd)
@@ -73,7 +73,7 @@ $$
 
 ### Level 3: The Solution (3 minutes)
 
-**"The 1% Treaty: Redirect 1% of military spending to medical research. Fund trials that are [{{< var dfda_cost_effectiveness_multiplier >}}× cheaper](../references.qmd#recovery-trial-82x-cost-reduction). Cure major diseases in 10 years. Everyone wins."**
+**"The 1% Treaty: Redirect 1% of military spending to medical research. Fund trials that are {{< var dfda_cost_effectiveness_multiplier >}}× cheaper. Cure major diseases in 10 years. Everyone wins."**
 
 ### Level 4: The Action (immediate)
 

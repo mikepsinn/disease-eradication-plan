@@ -68,7 +68,7 @@ This stream reflects the transformative potential of the dFDA to create viable r
 **For detailed information on decentralized clinical trial (DCT) platform funding**, see:
 
 - [Medable: $521M raised, $2.1B valuation](../references.qmd#dct-platform-funding-medable)
-- [Other DCT platforms: Science 37 (~{{< var dfda_upfront_build >}}), Thread (up to {{< var treaty_campaign_budget_reserve >}}), uMotif (~$25.5M)](../references.qmd#dct-platform-funding-others)
+- Other DCT platforms: Science 37 (~{{< var dfda_upfront_build >}}), Thread (up to {{< var treaty_campaign_budget_reserve >}}), uMotif (~$25.5M)
 
 #### Sources
 
@@ -82,7 +82,7 @@ This stream reflects the transformative potential of the dFDA to create viable r
 
 ### Final ROI and Net Benefit
 
-- **Central ROI Estimate:** [{{< var roi_dfda_savings_only >}}:1](#final-roi-and-net-benefit)
+- **Central ROI Estimate:** {{< var roi_dfda_savings_only >}}:1
 - **Central Net Benefit (10-Year, Discounted):** [~\$249 Billion](#final-roi-and-net-benefit)
 - **Dominant Health Intervention:** The dFDA is cost-saving while simultaneously generating substantial health gains (QALYs), making it a dominant intervention from a health economics perspective.
 
@@ -145,7 +145,7 @@ This stream models the benefit of enabling trials for therapies that are current
 
 - **Parameters:**
   - $N_{\text{new\_therapies}}$: Number of entirely new, effective therapies enabled per year for untreated conditions.
-    - **Rationale:** There is a vast unmet need in the rare disease space, with [only about 5% of the nearly {{< var dfda_large_trial_size >}} identified rare diseases having FDA-approved treatments](../references.qmd#95-pct-diseases-no-treatment). Lowering trial costs via the dFDA Infrastructure would catalyze R&D for this underserved population.
+    - **Rationale:** There is a vast unmet need in the rare disease space, with only about 5% of the nearly 10,000identified rare diseases having FDA-approved treatments. Lowering trial costs via the dFDA Infrastructure would catalyze R&D for this underserved population.
   - $P_{\text{therapy}}$: Average number of patients benefiting from a new rare disease therapy.
     - **Rationale:** While "rare" in the US means affecting fewer than {{< var qalys_from_faster_access >}} people, the median prevalence is much lower. This estimate uses a conservative figure for the addressable population for a new, breakthrough therapy. [Analysis of Orphanet data](../references.qmd#rare-disease-prevalence-400m) suggests a median prevalence of 1-5 per 100,000 people.
   - $\text{QALYs}_{\text{patient}}$: Average QALY gain per patient receiving a transformative therapy.

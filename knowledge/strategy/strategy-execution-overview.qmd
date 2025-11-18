@@ -29,7 +29,7 @@ Here's your three-step algorithm for fixing this adorable contradiction:
 
 ### Step 1: Collect Papers from Rich People
 
-You convince wealthy humans to give you [$1.0B in papers](../economics/victory-bonds.qmd) by promising them [{{< var victory_bond_annual_return_pct >}} more papers annually](../economics/victory-bonds.qmd). This works because rich people are excellent at counting papers but terrible at not wanting more papers.
+You convince wealthy humans to give you [$1.0B in papers](../economics/victory-bonds.qmd) by promising them {{< var victory_bond_annual_return_pct >}} more papers annually. This works because rich people are excellent at counting papers but terrible at not wanting more papers.
 
 The pitch is simple: "Give us papers now, get 2.7 times more papers forever, also maybe don't die from preventable diseases." Even humans who think vaccines cause 5G can understand "more papers good."
 
@@ -89,7 +89,7 @@ Here's the precise order in which to distribute papers to specific categories of
 
 **Who you're bribing:** Wealthy humans who have many papers and want even more papers, despite already having more papers than they could spend in several lifetimes
 
-**The bribe you offer:** Give us [$250-400M](../economics/campaign-budget.qmd) in papers now, get [{{< var victory_bond_annual_return_pct >}} more papers](../economics/victory-bonds.qmd) annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
+**The bribe you offer:** Give us [$250-400M](../economics/campaign-budget.qmd) in papers now, get {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
 
 **Why they accept:** Because even billionaires can count to {{< var victory_bond_annual_return_pct >}}, and {{< var victory_bond_annual_return_pct >}} beats everything else including insider trading, which is illegal but also less profitable.
 
@@ -109,7 +109,7 @@ You show weapons manufacturers a spreadsheet (they love spreadsheets):
 
 #### Option B (Your Offer)
 
-- Returns: [{{< var victory_bond_annual_return_pct >}} annually](../economics/victory-bonds.qmd)
+- Returns: {{< var victory_bond_annual_return_pct >}} annually
 - Product: Things that make humans continue existing
 - Customer satisfaction: Very high (customers still alive to provide feedback)
 
@@ -129,7 +129,7 @@ They choose Option B. Not because they've become better people, but because they
 
 ### Bribe Category #3: Regular People (Everyone Else)
 
-**Who you're bribing:** 280 million regular humans ([{{< var global_population_activism_threshold_pct >}} of your species](../references.qmd#3-5-rule), which history proves is enough to change anything)
+**Who you're bribing:** 280 million regular humans ({{< var global_population_activism_threshold_pct >}} of your species, which history proves is enough to change anything)
 
 **The bribe you offer:** Click YES on a website. Receive VOTE points. Points become money after treaty passes. You literally get paid for clicking a button to not die.
 

@@ -40,7 +40,7 @@ from dih_models.parameters import *
 
 #### Exceptional Economic Value
 
-- **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**{{< var roi_dfda_savings_only >}}:1**](#final-roi-and-net-benefit) over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately **{{< var roi_dfda_savings_only >}}:1** over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately [**\$137 million** and **2,301** Quality-Adjusted Life Years](#daily-opportunity-cost-of-inaction).
 
@@ -109,7 +109,7 @@ These assumptions set a stage where the platform can indeed function at scale, b
 > - **Total initiative (partnership model):** ~\$40-75M upfront, \$5-12M annual
 >
 > **Build-Everything Model (Not Recommended)**:
-> - **Upfront full platform build:** [\$37.5–{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+> - **Upfront full platform build:** \$37.5–{{< var dfda_upfront_build_max >}}
 > - **Annual full platform operations:** [\$11–\$26.5 million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)
 > - **Broader initiative (medium scenario):** [\$228 million upfront, \$21.3 million annual](#scenario-based-rom-estimates-for-broader-initiative-costs)
 >
@@ -134,7 +134,7 @@ This section provides a **Rough Order of Magnitude (ROM)** cost estimate based o
 
    Where $N_{\text{FTEs}} = 75$ is the number of full-time equivalents, $T = 2.5$ years is the development timeline, and $C_{\text{FTE}} = \$200\text{k}$ per FTE per year.
 
-   - **Estimated ROM:** [\$35 - {{< var dfda_upfront_build >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+   - **Estimated ROM:** \$35 - {{< var dfda_upfront_build >}}
 
 2. **Infrastructure Setup & Initial Cloud Costs:**
 
@@ -165,7 +165,7 @@ Where:
 - $C_{\text{software}} = \$0.5 - \$1$ million (Software Licenses & Tooling)
 - $C_{\text{compliance}} = \$1 - \$2$ million (Compliance, Legal & Security)
 
-> **Total Estimated Upfront Cost (ROM): [\$37.5 - {{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
+> **Total Estimated Upfront Cost (ROM): \$37.5 - {{< var dfda_upfront_build_max >}}**
 
 _Note: This ROM estimate focuses **only on the Core Platform build effort and associated setup**. It represents the foundational first step. The full vision of the ["Right to Trial and FDA Upgrade Act"](right-to-trial-fda-upgrade-act.qmd) requires significant additional investment in broader initiatives to achieve its goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
 
@@ -385,7 +385,7 @@ Even when pursuing efficient strategies, the potential cost for the full dFDA in
 
 Based on the detailed technical specification, a ROM estimate suggests:
 
-- **Initial Core Platform Build (~2.5 years): [~\$37.5 - {{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)**
+- **Initial Core Platform Build (~2.5 years): ~\$37.5 - {{< var dfda_upfront_build_max >}}**
 - **Annual Core Platform Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)** (These platform operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by platform bounties)
 
 This revised, bottom-up ROM highlights that while the core _technology platform_ build might be achievable within tens of millions, the previously estimated billions likely reflect the total cost of the entire global initiative. This includes massive integration efforts, legal frameworks, global rollout, and the financial ecosystem involving participant contributions and the direct NIH-funded discounts to patient costs, rather than direct platform-disbursed compensation. This conclusion is further supported by the top-down analogous estimate derived from market comparables, which points to a **total initiative investment in the range of \$50 million to {{< var dct_platform_funding_medium >}}** for a commercial-grade equivalent.
@@ -410,14 +410,14 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 ### Decentralized Trial Costs Modeled on Oxford RECOVERY
 
-- **Oxford RECOVERY**: Achieved [**~\{{< var recovery_trial_cost_per_patient >}} per patient**](recovery-trial.qmd). Key strategies included:
+- **Oxford RECOVERY**: Achieved **~\{{< var recovery_trial_cost_per_patient >}} per patient**. Key strategies included:
   1. Embedding trial protocols within routine hospital care.
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
   3. Focused, pragmatic trial designs.
 
 - **Extrapolation to New System**:
   - A well-integrated global platform could approach \{{< var recovery_trial_cost_per_patient >}} - \${{< var dfda_target_cost_per_patient_usd >}} per patient in many cases, especially for pragmatic or observational designs.
-  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of [~\{{< var recovery_trial_cost_per_patient >}}-\$1,000](#decentralized-trial-costs-modeled-on-oxford-recovery) against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
+  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of ~\{{< var recovery_trial_cost_per_patient >}}-\$1,000 against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
 
   The cost reduction factor can be formalized as:
 
@@ -534,8 +534,8 @@ $$
 ### Economic Value of Earlier Access to Treatments VSL QALY
 
 - Faster approvals and access to effective treatments can save lives and improve quality of life.
-- **Value of a Statistical Life (VSL):** [U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved](../references.qmd#vsl-value-statistical-life).
-- **QALY Framework:** [Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**](../references.qmd#qaly-value).
+- **Value of a Statistical Life (VSL):** U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved.
+- **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
 - **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × {{< var standard_economic_qaly_value_usd >}} = **$1.5B**. If 10,000 lives are saved, benefit = 10,000 × {{< var value_of_statistical_life >}} = **$100B**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 
@@ -612,7 +612,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
 - **Industry R&D Spend** (Baseline): [$100.0B/year](#market-size-and-impact) globally (approx.).
 - **Potential Savings**: 50.0% reduction implies [$50.0B/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
 - **Platform Cost Scenarios (Derived from ROM Estimates):**
-  - **Upfront Cost (Core Platform Build):** [~{{< var dfda_upfront_build >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months) (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
+  - **Upfront Cost (Core Platform Build):** ~{{< var dfda_upfront_build >}} (representative figure from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)).
   - **Annual Operational Cost Scenarios:**
     - **Scenario 1: Core Platform Only:** ~$11 - $26.5 Million / year (from [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month)).
 
@@ -667,7 +667,7 @@ For the Lean Ecosystem scenario:
 
 _This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework)._
 
-_The NPV analysis provides the final estimated ROI of approximately [**{{< var roi_dfda_savings_only >}}:1**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
+_The NPV analysis provides the final estimated ROI of approximately **{{< var roi_dfda_savings_only >}}:1**, which is the figure cited throughout this document._
 
 ### Full Range ROI Sensitivity Analysis
 
@@ -704,7 +704,7 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
 #### 2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives)
 
 - **Upfront Costs:**
-  - Core Platform Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): [~\{{< var dfda_upfront_build_max >}}](#upfront-capital-expenditure-initial-build-illustrative-30-months)
+  - Core Platform Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): ~\{{< var dfda_upfront_build_max >}}
   - Broader Initiatives (Worst Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$2.231 Billion](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Highest Upfront Cost:_ {{< var global_cost_per_conflict_death_millions >}} + $2.231B = **~\$2.277 Billion**
   - _Amortized over 5 years:_ [\$2.277B](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **~\$455.4 Million/year**
@@ -812,7 +812,7 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 | Scenario                                 | R&D Trial Cost Reduction | Annual Gross Savings | Annual QALYs Gained | Daily Money Lost (Approx.) | Daily QALYs Lost (Approx.) | Note                                                                                                                                              |
 | :--------------------------------------- | :----------------------: | :------------------: | :-----------------: | :------------------------: | :------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Conservative**                         |           30%            |     \{{< var average_us_hourly_wage >}} Billion     |       {{< var qalys_total_conservative >}}       |      **\$82 Million**      |          **521**           | Assumes lower efficiency gains and moderate health impact, using [conservative QALY model](#summary-of-total-annual-qaly-gains).                  |
-| **Base Case**                            |         **50%**          |   **\$50 Billion**   |     [**{{< var global_dfda_qalys_gained_annual >}}**](#appendix-detailed-qaly-calculation-model)     |     **\$137 Million**      |         **2,301**          | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).**                            |
+| **Base Case**                            |         **50%**          |   **\$50 Billion**   |     **{{< var global_dfda_qalys_gained_annual >}}**     |     **\$137 Million**      |         **2,301**          | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).**                            |
 | **Optimistic**                           |           70%            |     \$70 Billion     |      {{< var qalys_total_optimistic >}}      |     **\$192 Million**      |         **{{< var dfda_large_trial_size >}}**         | Assumes high efficiency and significant improvements in health outcomes, using [optimistic QALY model](#summary-of-total-annual-qaly-gains).      |
 | **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   |    **{{< var qalys_total_optimistic >}}**    |     **\$260 Million**      |         **{{< var dfda_large_trial_size >}}**         | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
 
@@ -838,7 +838,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of [**~\$37.5 - \{{< var dfda_upfront_build_max >}}**](#upfront-capital-expenditure-initial-build-illustrative-30-months), plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \{{< var dct_platform_funding_medium >}}** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation), combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of **~\$37.5 - \{{< var dfda_upfront_build_max >}}**, plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \{{< var dct_platform_funding_medium >}}** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation), combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
 
 Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this platform creates personalized healthcare that actually works, globally.
 
@@ -1425,7 +1425,7 @@ To meet the standards of government and health technology assessment (HTA) bodie
 
   If an intervention saves money (negative incremental cost) and improves health (positive QALY gain), the ICER will be negative, indicating a **dominant** (cost-saving) intervention.
 
-- **US Willingness-to-Pay Threshold**: Typically [$100,000–${{< var qalys_from_prevention_optimistic >}} per QALY](../references.qmd#qaly-value) for interventions that _add_ costs. Dominant interventions are favorable regardless of this threshold.
+- **US Willingness-to-Pay Threshold**: Typically $100,000–${{< var qalys_from_prevention_optimistic >}} per QALY for interventions that _add_ costs. Dominant interventions are favorable regardless of this threshold.
 
 - **Sources for Context:**
   - [ICER QALY methodology and standards](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
@@ -1470,7 +1470,7 @@ This table analyzes the ICER for the dFDA Infrastructure by varying key assumpti
 
 | Scenario                                             | R&D Trial Cost Reduction   | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification                          | Source/Note                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Base Case: Core Platform Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | [**{{< var global_dfda_qalys_gained_annual >}}**](#appendix-detailed-qaly-calculation-model)                     | **-$59,501**                | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. QALYs from [new base model](#appendix-detailed-qaly-calculation-model).                                                              |
+| **Base Case: Core Platform Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **{{< var global_dfda_qalys_gained_annual >}}**                     | **-$59,501**                | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. QALYs from [new base model](#appendix-detailed-qaly-calculation-model).                                                              |
 | Core Platform + Medium Broader Initiative            | 50.0% ($50.0B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | {{< var global_dfda_qalys_gained_annual >}}                         | -$59,476                    | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
 | Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$49.5B                       | {{< var global_dfda_qalys_gained_annual >}}                         | -$58,929                    | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
 | Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50.0% ($50.0B Savings)         | $5B                        | -$45B                         | {{< var global_dfda_qalys_gained_annual >}}                         | -$53,571                    | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
@@ -1554,7 +1554,7 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
 | **dFDA Infrastructure (Lean Ecosystem)**   | **~{{< var dfda_upfront_build >}} / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                                | [21st Century Cures Act](../references.qmd#21st-century-cures-act-2016)          |
-| **NIH "All of Us" Research Program** | \*\*[~\{{< var recovery_trial_cost_per_patient >}} Million / year](https://www.nih.gov/about-nih/what-we-do/budget) (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
+| **NIH "All of Us" Research Program** | \*\*~\{{< var recovery_trial_cost_per_patient >}} Million / year (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](../references.qmd#gao-healthcare-gov-costs)** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](../references.qmd#gao-healthcare-gov-costs) |
 | **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](../references.qmd#nih-institute-budgets-fy24)** (FY25 Budget)                 | **~180x**                                | [NCI Budget Data](../references.qmd#nih-institute-budgets-fy24)                 |
 

@@ -30,9 +30,9 @@ Here are the receipts.
 ## Oxford RECOVERY: The {{< var dfda_cost_effectiveness_multiplier >}}× Proof
 
 2020: British doctors cured COVID with a drug from 1961.
-Cost: **[{{< var recovery_trial_cost_per_patient >}} per patient](references.qmd#recovery-cost-500)**.
+Cost: **{{< var recovery_trial_cost_per_patient >}} per patient**.
 
-American pharma companies testing the same drugs under FDA rules: **[{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient](references.qmd#trial-cost-41k)**.
+American pharma companies testing the same drugs under FDA rules: **{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient**.
 
 Oxford saved a million lives in [100 days](references.qmd#recovery-trial-100-days-to-cure).
 Pharma saved zero lives in 10 years.
@@ -54,7 +54,7 @@ Switzerland made chocolate.
 - [25% richer than Americans ($93K vs $76K GDP per capita)](references.qmd#swiss-vs-us-gdp-per-capita)
 - Live [5 years longer (84 vs 79 years)](references.qmd#swiss-vs-us-life-expectancy)
 - Haven't had a [war death since 1847](references.qmd#switzerland-last-war-death-1847)
-- Military budget: [0.7% GDP](references.qmd#swiss-military-budget-0-7-pct-gdp) (US: [{{< var us_military_spending_pct_gdp >}}](references.qmd#us-military-budget-3-5-pct-gdp))
+- Military budget: [0.7% GDP](references.qmd#swiss-military-budget-0-7-pct-gdp) (US: {{< var us_military_spending_pct_gdp >}})
 
 The difference went to education, healthcare, and trains that actually work.
 Peace dividends compound over centuries.
@@ -92,7 +92,7 @@ You have the internet.
 
 Harvard analyzed every major movement in history.
 
-**Finding:** Once [{{< var global_population_activism_threshold_pct >}} of any population actively supports something, it wins](references.qmd#3-5-rule).
+**Finding:** Once {{< var global_population_activism_threshold_pct >}} of any population actively supports something, it wins.
 ### Always.
 
 - Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
@@ -186,7 +186,7 @@ The investment thesis for VICTORY Bonds, a high-risk, high-reward bet on a polit
 - **Michael Milken** proved that to attract capital for high-risk ventures, you must offer a correspondingly high, contractually obligated return.
 - **George Soros's** legendary bet against the British pound in 1992 is the ultimate example of privately financed political arbitrage, proving it's possible to deploy immense private capital to bet on a political outcome.
 
-**The Lesson:** The financial model, which offers a **[$>{{< var victory_bond_annual_return_pct >}} targeted return](economics/victory-bonds.qmd)**, is a direct application of these principles.
+**The Lesson:** The financial model, which offers a **$>{{< var victory_bond_annual_return_pct >}} targeted return**, is a direct application of these principles.
 It correctly prices the political risk to attract the sophisticated capital needed to win.
 
 ## 4. The Cautionary Tales: How Not to Fail

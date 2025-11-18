@@ -413,7 +413,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 **Amazon for Clinical Trials + Consumer Reports for Drugs**
 
-[The dFDA](knowledge/solution/dfda.qmd) achieves [**{{< var trial_cost_reduction_factor >}}x cost reduction**](knowledge/appendix/recovery-trial.qmd) through decentralized pragmatic trials.
+[The dFDA](knowledge/solution/dfda.qmd) achieves **{{< var trial_cost_reduction_factor >}}x cost reduction** through decentralized pragmatic trials.
 Patients can search treatments ranked by real-world effectiveness and join trials with one click.
 
 #### Treatment Rankings
@@ -657,7 +657,7 @@ This beats:
 
 You stop paying smart humans to pretend problems are complicated. You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
-- [**{{< var dfda_gross_savings_annual >}} in annual R&D cost savings**](knowledge/appendix/dfda-cost-benefit-analysis.qmd): {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
+- **{{< var dfda_gross_savings_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
 - [**840,000 Quality-Adjusted Life Years**](knowledge/appendix/dfda-cost-benefit-analysis.qmd) (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey)
   - 200,000 QALYs because drugs reach people in [2 years instead of 17](knowledge/appendix/recovery-trial.qmd), which matters if you're currently dying (17 years is longer than most terminal diagnoses, which seems like poor planning)
   - 140,000 QALYs from actually knowing which treatments work instead of guessing (your current method)
@@ -765,7 +765,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 - Major diseases get cured within a decade
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading)
 - Healthcare becomes free through trial participation
-- [**You personally get {{< var effective_hourly_rate_lifetime_benefit_millions >}} in lifetime wealth and 72 extra years of life**](knowledge/call-to-action/your-personal-benefits.qmd) (yes, you specifically)
+- **You personally get {{< var effective_hourly_rate_lifetime_benefit_millions >}} in lifetime wealth and 72 extra years of life** (yes, you specifically)
 - Death becomes optional (terms and conditions apply)
 
 {{< include knowledge/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
