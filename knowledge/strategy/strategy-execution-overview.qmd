@@ -61,7 +61,7 @@ Raise [$1.0B](../economics/victory-bonds.qmd) by selling [VICTORY Bonds](../econ
 
 ### Step 2: The Great Internet Clicking
 
-Launch a [global referendum](global-referendum.qmd) where 280 million people click YES. This is 3.5% of your species, which history shows is the magic number where governments can no longer pretend not to notice. It's like reaching critical mass, except instead of a nuclear explosion it's democracy, which is much less lethal.
+Launch a [global referendum](global-referendum.qmd) where 280 million people click YES. This is {{< var global_population_activism_threshold_pct >}} of your species, which history shows is the magic number where governments can no longer pretend not to notice. It's like reaching critical mass, except instead of a nuclear explosion it's democracy, which is much less lethal.
 
 **Step 3: Purchase Democracy (It's For Sale Anyway)**
 
@@ -129,7 +129,7 @@ They choose Option B. Not because they've become better people, but because they
 
 ### Bribe Category #3: Regular People (Everyone Else)
 
-**Who you're bribing:** 280 million regular humans ([3.5% of your species](../references.qmd#3-5-rule), which history proves is enough to change anything)
+**Who you're bribing:** 280 million regular humans ([{{< var global_population_activism_threshold_pct >}} of your species](../references.qmd#3-5-rule), which history proves is enough to change anything)
 
 **The bribe you offer:** Click YES on a website. Receive VOTE points. Points become money after treaty passes. You literally get paid for clicking a button to not die.
 
@@ -137,7 +137,7 @@ They choose Option B. Not because they've become better people, but because they
 
 **What happens after:** Treaty passes. Your points convert to ownership in the [$27.2B annual budget](../solution/1-percent-treaty.qmd). You helped create it by clicking, so you get paid forever. It's like universal basic income except you earned it by clicking YES to not dying.
 
-**Why this works:** Humans love clicking things. Humans love getting paid. Humans (allegedly) love not dying. This combines all three. When 3.5% of the population wants something and will profit from it, politicians experience what you call "responsive governance."
+**Why this works:** Humans love clicking things. Humans love getting paid. Humans (allegedly) love not dying. This combines all three. When {{< var global_population_activism_threshold_pct >}} of the population wants something and will profit from it, politicians experience what you call "responsive governance."
 
 ### Bribe Category #4: Politicians (The Elected Paper Recipients)
 

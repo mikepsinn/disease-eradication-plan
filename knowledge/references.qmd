@@ -38,11 +38,11 @@ from dih_models.parameters import *
 
 <a id="3-5-rule"></a>
 
-- **3.5% participation tipping point**
-  > "The research found that nonviolent campaigns were twice as likely to succeed as violent ones, and once 3.5% of the population were involved, they were always successful."
-  > Alternative title: 3.5% rule academic source
+- **{{< var global_population_activism_threshold_pct >}} participation tipping point**
+  > "The research found that nonviolent campaigns were twice as likely to succeed as violent ones, and once {{< var global_population_activism_threshold_pct >}} of the population were involved, they were always successful."
+  > Alternative title: {{< var global_population_activism_threshold_pct >}} rule academic source
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
-  > — BBC Future, 2019, ['The 3.5% rule'](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) | Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
+  > — BBC Future, 2019, ['The {{< var global_population_activism_threshold_pct >}} rule'](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) | Wikipedia, [{{< var global_population_activism_threshold_pct >}} rule](https://en.wikipedia.org/wiki/{{< var global_population_activism_threshold_pct >}}25_rule)
 
 <a id="5-million-annual-child-deaths"></a>
 
@@ -4915,7 +4915,7 @@ from dih_models.parameters import *
 <a id="us-military-budget-3-5-pct-gdp"></a>
 
 - **US military budget as percentage of GDP**
-  > "U.S. military spending amounted to 3.5% of GDP in 2024. In 2024, the U.S. spent nearly $1 trillion on its defense budget, equal to 3.4% of GDP."
+  > "U.S. military spending amounted to {{< var global_population_activism_threshold_pct >}} of GDP in 2024. In 2024, the U.S. spent nearly $1 trillion on its defense budget, equal to 3.4% of GDP."
   > — Statista, [Military spending as percent of GDP](https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/) | SIPRI, [Trends in World Military Expenditure 2024](https://www.sipri.org/sites/default/files/2025-04/2504_fs_milex_2024.pdf)
 
 <a id="us-military-budget-800b"></a>

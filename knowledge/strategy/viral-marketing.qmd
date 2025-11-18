@@ -12,7 +12,7 @@ lastInstructionalVoiceHash: d1c24ef7a7b12bc836b63a73b31f983a6b3a14fab117149fb7b9
 from dih_models.parameters import *
 ```
 
-Historical analysis shows: Every peaceful movement that gets **[3.5% active support](../references.qmd#3-5-rule)** succeeds.
+Historical analysis shows: Every peaceful movement that gets **[{{< var global_population_activism_threshold_pct >}} active support](../references.qmd#3-5-rule)** succeeds.
 
 - $8 \text{ billion humans} \times 3.5\% = 280 \text{ million}$
 - The strategy requires 280 million people to vote YES on the [1% Treaty](../solution/1-percent-treaty.qmd)

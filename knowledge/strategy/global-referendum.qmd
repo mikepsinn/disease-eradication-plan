@@ -42,9 +42,9 @@ Requirements:
 
 - Must be auditable (so politicians can't claim it's fake)
 - Must be persuasive (so policymakers actually care)
-- Must hit **[3.5% global participation](../references.qmd#3-5-rule)** (280M+ verified votes)
+- Must hit **[{{< var global_population_activism_threshold_pct >}} global participation](../references.qmd#3-5-rule)** (280M+ verified votes)
 
-That last number isn't arbitrary. It's based on historical data showing that once 3.5% of a population actively supports something, it becomes unstoppable. More on that later.
+That last number isn't arbitrary. It's based on historical data showing that once {{< var global_population_activism_threshold_pct >}} of a population actively supports something, it becomes unstoppable. More on that later.
 
 **The Principles (Or: How Not to Build a Fraudulent Voting System):**
 
@@ -330,7 +330,7 @@ Different regions have different privacy laws, all of which carry massive fines 
 - Full-scale viral marketing campaign
 - International verification system deployment
 - Cross-regional community coordination
-- Target 3.5% global participation
+- Target {{< var global_population_activism_threshold_pct >}} global participation
 
 ### Phase 4: Optimization (Months 13+)
 
@@ -342,7 +342,7 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### Primary Metrics
 
-- **3.5% Global Participation**: 280M+ verified participants
+- **{{< var global_population_activism_threshold_pct >}} Global Participation**: 280M+ verified participants
 - **Cost per verified referral**: Target <$0.50
 - **Viral coefficient (K-factor)**: Target >1.0
 - **Verification rate**: >99% legitimate users successfully verified
@@ -371,7 +371,7 @@ Different regions have different privacy laws, all of which carry massive fines 
 
 ### What You're Building
 
-A global referendum that combines cutting-edge verification technology with viral marketing to achieve the 3.5% tipping point.
+A global referendum that combines cutting-edge verification technology with viral marketing to achieve the {{< var global_population_activism_threshold_pct >}} tipping point.
 
 Translation: You're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
 
@@ -393,19 +393,19 @@ That's cheaper than acquiring a customer for literally any consumer product, and
 
 280M+ verified global participants creating a political mandate so large that politicians literally cannot ignore it without losing elections.
 
-### On Why 3.5% Is The Magic Number
+### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 
-The 280 million target isn't pulled from thin air. It's based on the "3.5% Rule," a historical pattern that's held true across cultures and centuries:
+The 280 million target isn't pulled from thin air. It's based on the "{{< var global_population_activism_threshold_pct >}} Rule," a historical pattern that's held true across cultures and centuries:
 
-**When 3.5% of a population actively participates in sustained, nonviolent action, the movement becomes unstoppable.**
+**When {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement becomes unstoppable.**
 
 The evidence:
 
-- **Civil Rights (US):** 3.5% participation ended segregation
-- **Indian Independence:** 3.5% of Indians kicked out the British Empire
-- **Women's Suffrage:** 3.5% of women won the vote
+- **Civil Rights (US):** {{< var global_population_activism_threshold_pct >}} participation ended segregation
+- **Indian Independence:** {{< var global_population_activism_threshold_pct >}} of Indians kicked out the British Empire
+- **Women's Suffrage:** {{< var global_population_activism_threshold_pct >}} of women won the vote
 
-The pattern repeats because once you hit 3.5%, you've demonstrated that:
+The pattern repeats because once you hit {{< var global_population_activism_threshold_pct >}}, you've demonstrated that:
 1. This isn't a fringe movement
 2. The support is distributed (not just one region or demographic)
 3. Opposition becomes politically toxic

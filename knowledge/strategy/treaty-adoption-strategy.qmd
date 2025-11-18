@@ -33,11 +33,11 @@ This is like good cop / bad cop except both cops are you.
 
 ## Track 1: Grassroots (Make Politicians Afraid)
 
-### The Magic Number: 3.5%
+### The Magic Number: {{< var global_population_activism_threshold_pct >}}
 
-[Scientists analyzed 323 political campaigns from 1900-2006](../references.qmd#3-5-rule). Finding: When 3.5% of any population actively demands something, they get it. Always. No exceptions.
+[Scientists analyzed 323 political campaigns from 1900-2006](../references.qmd#3-5-rule). Finding: When {{< var global_population_activism_threshold_pct >}} of any population actively demands something, they get it. Always. No exceptions.
 
-- [8 billion humans](../references.qmd#global-population-8-billion) × 3.5% = **280 million**
+- [8 billion humans](../references.qmd#global-population-8-billion) × {{< var global_population_activism_threshold_pct >}} = **280 million**
 - You need 280 million to click YES
 - You have [560 million natural allies](../references.qmd#rare-disease-patients-300m-globally)
 - Math says this works

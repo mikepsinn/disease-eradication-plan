@@ -1,6 +1,6 @@
 ---
 title: 'The Proof: Overview'
-description: This Already Works - Oxford proved 82X efficiency. Switzerland proved peace pays. History proved 3.5% never fails. War bonds proved capitalism beats fascism. Death and suffering are optional.
+description: This Already Works - Oxford proved 82X efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} never fails. War bonds proved capitalism beats fascism. Death and suffering are optional.
 published: true
 tags:
   - evidence
@@ -54,7 +54,7 @@ Switzerland made chocolate.
 - [25% richer than Americans ($93K vs $76K GDP per capita)](references.qmd#swiss-vs-us-gdp-per-capita)
 - Live [5 years longer (84 vs 79 years)](references.qmd#swiss-vs-us-life-expectancy)
 - Haven't had a [war death since 1847](references.qmd#switzerland-last-war-death-1847)
-- Military budget: [0.7% GDP](references.qmd#swiss-military-budget-0-7-pct-gdp) (US: [3.5%](references.qmd#us-military-budget-3-5-pct-gdp))
+- Military budget: [0.7% GDP](references.qmd#swiss-military-budget-0-7-pct-gdp) (US: [{{< var us_military_spending_pct_gdp >}}](references.qmd#us-military-budget-3-5-pct-gdp))
 
 The difference went to education, healthcare, and trains that actually work.
 Peace dividends compound over centuries.
@@ -88,17 +88,17 @@ They beat the entire military-industrial complex in 5 years with fax machines.
 
 You have the internet.
 
-## The 3.5% Rule: It Never Loses
+## The {{< var global_population_activism_threshold_pct >}} Rule: It Never Loses
 
 Harvard analyzed every major movement in history.
 
-**Finding:** Once [3.5% of any population actively supports something, it wins](references.qmd#3-5-rule).
+**Finding:** Once [{{< var global_population_activism_threshold_pct >}} of any population actively supports something, it wins](references.qmd#3-5-rule).
 ### Always.
 
-- Civil rights: Won at 3.5%
-- Women's suffrage: Won at 3.5%
-- Indian independence: Won at 3.5%
-- Failed movements: Never hit 3.5%
+- Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
+- Women's suffrage: Won at {{< var global_population_activism_threshold_pct >}}
+- Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
+- Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
 
 The strategy needs 280 million people.
 The internet reaches [5 billion](references.qmd#internet-users-5-billion).
@@ -141,14 +141,14 @@ Random citizens created international law with fax machines.
 
 ### Achieving a Political Tipping Point
 
-**The Precedent: The 3.5% Rule (Erica Chenoweth's Research)**
+**The Precedent: The {{< var global_population_activism_threshold_pct >}} Rule (Erica Chenoweth's Research)**
 
-Harvard did math on revolutions. Found the magic number: 3.5%.
+Harvard did math on revolutions. Found the magic number: {{< var global_population_activism_threshold_pct >}}.
 
-- Once 3.5% of any population actively protests something, it wins. Always.
-- Civil rights: Won at 3.5%
-- Indian independence: Won at 3.5%
-- Failed movements: Never hit 3.5%
+- Once {{< var global_population_activism_threshold_pct >}} of any population actively protests something, it wins. Always.
+- Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
+- Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
+- Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
 
 **The Lesson:** You don't need everyone. You need 280 million people out of 8 billion. That's one person in every classroom, one family on every block.
 
@@ -209,7 +209,7 @@ The failures of past movements are even more instructive than the successes, as 
 
 ## In This Section
 
-- [Chapter 19: Political Movements That Changed Everything](proof/historical-precedents.qmd) - Switzerland's 200-year peace dividend, war bonds, landmine treaty, 3.5% rule advantages
+- [Chapter 19: Political Movements That Changed Everything](proof/historical-precedents.qmd) - Switzerland's 200-year peace dividend, war bonds, landmine treaty, {{< var global_population_activism_threshold_pct >}} rule advantages
 - [Chapter 20: Your Body Is Just a Machine](proof/body-as-repairable-machine.qmd) - Hearts, kidneys, blood, DNA, you replace everything else, aging is just neglected maintenance
 
 ## Additional Evidence

@@ -84,7 +84,7 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
 
 - **E. Strategic Philosophy Analysis:**
   - **Input:** Text responses for the "AI philosophy" and "technical strategy" questions.
-  - **Prompt:** "Analyze the candidate's strategic responses. Score `strategyScore` from 0-10 based on the creativity, feasibility, and detail of their proposed technical plan for the 3.5% mission. Return JSON with the score and justification."
+  - **Prompt:** "Analyze the candidate's strategic responses. Score `strategyScore` from 0-10 based on the creativity, feasibility, and detail of their proposed technical plan for the {{< var global_population_activism_threshold_pct >}} mission. Return JSON with the score and justification."
 
 ### 5. Aggregate and Calculate Final Score
 

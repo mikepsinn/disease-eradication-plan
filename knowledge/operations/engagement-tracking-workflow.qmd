@@ -364,7 +364,7 @@ Actions:
      Body:
        Hi {Full Name},
 
-       Your vote has been recorded. You're now part of the 3.5%
+       Your vote has been recorded. You're now part of the {{< var global_population_activism_threshold_pct >}}
        that will change the world.
 
        Your Reward Tier: {Reward Tier}
@@ -452,7 +452,7 @@ Actions:
 
        Your link: https://vote.warondisease.com?ref={VOTER_ID}
 
-       We're 3.5% of the way to the tipping point. You can push us closer.
+       We're {{< var global_population_activism_threshold_pct >}} of the way to the tipping point. You can push us closer.
 
        Will you?
 ```
@@ -532,6 +532,6 @@ This engagement tracking workflow ensures **zero people fall through the cracks*
 
 Every vote, every email, every call is captured, categorized, and converted into the next step toward victory.
 
-It's the difference between a movement that fizzles and one that reaches the 3.5% tipping point.
+It's the difference between a movement that fizzles and one that reaches the {{< var global_population_activism_threshold_pct >}} tipping point.
 
 **Now implement it. Your first 100 conversations will set the template for the next 100 million.**
