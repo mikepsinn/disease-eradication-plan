@@ -48,8 +48,8 @@ If aliens were studying you, they'd probably conclude you can't count past 3,000
 
 Here's how humanity allocates its resources:
 
-**Killing each other:** $2,700 billion per year  
-**Curing diseases:** $68 billion per year
+**Killing each other:** {{< var global_annual_military_spending_annual_2024 >}} per year
+**Curing diseases:** {{< var global_med_research_spending >}} per year
 
 That's a {{< var military_vs_medical_research_ratio >}}:1 ratio, which in technical terms is called "having your priorities backwards."
 
@@ -81,13 +81,13 @@ The NIH tests about 5,000 treatment combinations per year. There are 166 billion
 
 The FDA is America's way of making sure drugs are safe. They do this by making the approval process so expensive and slow that most drugs never get approved at all.
 
-It takes seventeen years and $2.6 billion to get a drug through FDA approval. Seventeen years. That's longer than it took to build the pyramids, and those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
+It takes {{< var treatment_acceleration_years_current >}} years and $2.6 billion to get a drug through FDA approval. {{< var treatment_acceleration_years_current >}} years. That's longer than it took to build the pyramids, and those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
 
-During the Oxford RECOVERY trial, they tested treatments on 40,000 patients for $500 per person. The FDA's process costs $41,000 per patient. That's 82 times more expensive for the same result, except slower. It's like if you could get a haircut for $10 or $820, but the $820 haircut takes seventeen years and you might be bald by then anyway.
+During the Oxford RECOVERY trial, they tested treatments on 40,000 patients for {{< var recovery_trial_cost_per_patient >}} per person. The FDA's process costs {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient. That's {{< var trial_cost_reduction_factor >}} times more expensive for the same result, except slower. It's like if you could get a haircut for $10 or $820, but the $820 haircut takes {{< var treatment_acceleration_years_current >}} years and you might be bald by then anyway.
 
 Ninety-five percent of diseases have zero approved treatments. This is because the FDA is very good at preventing bad drugs from reaching people, and also pretty good at preventing good drugs from reaching people, and absolutely excellent at preventing any drugs from reaching people.
 
-They say the road to hell is paved with good intentions. The FDA's road is paved with good intentions and also seventeen years of paperwork.
+They say the road to hell is paved with good intentions. The FDA's road is paved with good intentions and also {{< var treatment_acceleration_years_current >}} years of paperwork.
 
 ### On What War Costs
 
