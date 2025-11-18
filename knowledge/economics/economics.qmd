@@ -110,7 +110,7 @@ The result:
 - National security strengthened (by having 1% fewer things that explode)
 - Financed entirely by greed
 
-Humanity currently spends **{{< var global_military_spending_annual_2024 >}} per year** on better ways to stop humans from living, and **{{< var global_med_research_spending >}} billion per year** on better ways to keep humans living.
+Humanity currently spends **{{< var global_military_spending_annual_2024 >}} per year** on better ways to stop humans from living, and **{{< var global_med_research_spending >}} per year** on better ways to keep humans living.
 
 That's a **{{< var military_vs_medical_research_ratio >}}:1 ratio**. You spend 40 times more on creating corpses than preventing them. This seems like poor planning if your stated goal is "not dying."
 
@@ -379,7 +379,7 @@ $$
 \text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
 $$
 
-The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
+The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are $50,000-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -411,9 +411,9 @@ Transformative potential to create viable research pathways for conditions ignor
 
 - **Baseline:** {{< var rare_diseases_count_global >}}+ rare diseases, {{< var dfda_trial_completion_rate >}} lack FDA-approved treatments
 - **Mechanism:** Radically lower per-patient costs make rare disease R&D economically feasible
-- **Annual QALYs:** {{< var qalys_from_prevention_conservative >}}-{{< var qalys_from_new_therapies_optimistic >}} QALYs (baseline: 60% of total)
+- **Annual QALYs:** {{< var qalys_from_new_therapies_conservative >}}-{{< var qalys_from_new_therapies_optimistic >}} QALYs (baseline: 60% of total)
 
-**QALY Valuation:** Standard economic valuations range from ${{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY. This analysis uses conservative mid-range values.
+**QALY Valuation:** Standard economic valuations range from $50,000-{{< var standard_economic_qaly_value_usd >}} per QALY. This analysis uses conservative mid-range values.
 
 For detailed QALY calculation methodology, see [dFDA QALY Model](../appendix/dfda-qaly-model.qmd).
 
@@ -1007,8 +1007,8 @@ For detailed analysis of personal wealth calculations, see [Disease Eradication 
 
 Humanity's budget priorities, explained simply:
 
-- **Military spending**: {{< var victory_bond_annual_payout >}} trillion/year (ending life)
-- **Medical research**: {{< var global_med_research_spending >}} billion/year (extending life)
+- **Military spending**: {{< var global_military_spending_annual_2024 >}}/year (ending life)
+- **Medical research**: {{< var global_med_research_spending >}} /year (extending life)
 - **Ratio**: 40:1 (you spend 40× more on creating corpses than preventing them)
 
 **Disease treatment vs. curing disease:**
