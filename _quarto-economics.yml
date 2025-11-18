@@ -4,7 +4,7 @@ project:
   execute-dir: project
   render:
     # Economics Analysis
-    - knowledge/economics/economics.qmd # ✓ Style reviewed 2025-01-15
+    - index.qmd # ✓ Style reviewed 2025-01-15 (copied from knowledge/economics/economics.qmd)
     - knowledge/economics/peace-dividend.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/health-dividend.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/financial-plan.qmd # ✓ Style reviewed 2025-01-15
@@ -85,7 +85,7 @@ website:
     style: "floating"
     search: true
     contents:
-      - href: knowledge/economics/economics.qmd
+      - href: index.qmd
         text: "Executive Summary"
       - section: "Problem Statement"
         contents:

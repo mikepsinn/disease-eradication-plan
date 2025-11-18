@@ -42,12 +42,52 @@ def main():
     # Config files
     econ_config = project_root / '_quarto-economics.yml'
     quarto_yml = project_root / '_quarto.yml'
+    econ_qmd = project_root / 'knowledge' / 'economics' / 'economics.qmd'
+    index_qmd = project_root / 'index.qmd'
 
     # Check if economics config exists
     if not econ_config.exists():
         print(f"[ERROR] Missing {econ_config}", file=sys.stderr)
         print("        Unable to render economics website.", file=sys.stderr)
         sys.exit(1)
+
+    # Check if economics.qmd exists
+    if not econ_qmd.exists():
+        print(f"[ERROR] Missing {econ_qmd}", file=sys.stderr)
+        print("        Unable to copy economics.qmd to index.qmd.", file=sys.stderr)
+        sys.exit(1)
+
+    # Copy economics.qmd to index.qmd and update relative paths
+    print(f"[*] Copying {econ_qmd.name} -> index.qmd")
+    content = econ_qmd.read_text(encoding='utf-8')
+    
+    # Replace relative paths (from knowledge/economics/ to root)
+    # ../appendix/ -> knowledge/appendix/
+    # ../figures/ -> knowledge/figures/
+    # ../solution/ -> knowledge/solution/
+    # ../problem/ -> knowledge/problem/
+    # ../references.qmd -> knowledge/references.qmd
+    # ../call-to-action/ -> knowledge/call-to-action/
+    # ../strategy/ -> knowledge/strategy/
+    # ../legal/ -> knowledge/legal/
+    # ../economics/ -> knowledge/economics/
+    path_replacements = [
+        ('../appendix/', 'knowledge/appendix/'),
+        ('../figures/', 'knowledge/figures/'),
+        ('../solution/', 'knowledge/solution/'),
+        ('../problem/', 'knowledge/problem/'),
+        ('../references.qmd', 'knowledge/references.qmd'),
+        ('../call-to-action/', 'knowledge/call-to-action/'),
+        ('../strategy/', 'knowledge/strategy/'),
+        ('../legal/', 'knowledge/legal/'),
+        ('../economics/', 'knowledge/economics/'),
+    ]
+    
+    for old_path, new_path in path_replacements:
+        content = content.replace(old_path, new_path)
+    
+    index_qmd.write_text(content, encoding='utf-8')
+    print(f"[*] Updated relative paths in index.qmd")
 
     # Copy config
     print(f"[*] Copying {econ_config.name} -> _quarto.yml")
