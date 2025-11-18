@@ -26,7 +26,7 @@ from dih_models.parameters import *
 
 This means for every life saved, society becomes **$6.17M** richer instead of paying the [$3,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
-**How is this possible?** This initiative generates massive economic value ($163.6B annually) while also saving lives ({{< var treaty_total_qalys_gained_annual >}} QALYs annually), making it profitable for society to implement.
+**How is this possible?** This initiative generates massive economic value ({{< var treaty_total_annual_benefits >}} annually) while also saving lives ({{< var treaty_total_qalys_gained_annual >}} QALYs annually), making it profitable for society to implement.
 
 ## Complete Calculation Walkthrough
 
@@ -239,7 +239,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 #### 4b. ICER per QALY
 
-**ICER** = ({{< var treaty_total_annual_costs >}} - $163.6B) / {{< var treaty_total_qalys_gained_annual >}} QALYs
+**ICER** = ({{< var treaty_total_annual_costs >}} - {{< var treaty_total_annual_benefits >}}) / {{< var treaty_total_qalys_gained_annual >}} QALYs
 
 **ICER** = {{< var treaty_total_annual_costs >}} / {{< var treaty_total_qalys_gained_annual >}}
 
@@ -325,10 +325,10 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | $163.6B | {{< var treaty_total_qalys_gained_annual >}} | **$-187,097** | **$-6.55M** | Counts all upfront costs |
-| **Investor-Funded** | $0 | $163.6B | {{< var treaty_total_qalys_gained_annual >}} | **$-187,429** | **$-6.56M** | Campaign funded by VICTORY Social Impact Bonds |
-| **Opportunity Cost** | $27.2B | $163.6B | {{< var treaty_total_qalys_gained_annual >}} | **$-156,571** | **$-5.48M** | Counts redirected military spending |
-| **Waste Conversion** | $27.2B | $163.6B | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **$-187,097** | **$-6.55M** | Counts all upfront costs |
+| **Investor-Funded** | $0 | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **$-187,429** | **$-6.56M** | Campaign funded by VICTORY Social Impact Bonds |
+| **Opportunity Cost** | $27.2B | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **$-156,571** | **$-5.48M** | Counts redirected military spending |
+| **Waste Conversion** | $27.2B | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
@@ -481,7 +481,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with {{< var victory_bond_annual_return_pct >}} returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive $163.6B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive {{< var treaty_total_annual_benefits >}} in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest {{< var treaty_campaign_total_cost >}} and receive {{< var victory_bond_annual_payout >}}/year perpetually. This is the best investment in history.
 
