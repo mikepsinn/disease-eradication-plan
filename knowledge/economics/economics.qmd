@@ -14,6 +14,7 @@ lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastParamCheckHash: c6c1adaae3f668e0729df5aa12f73a0ddedccc987de87895bcc8ca8701b1864c
 lastInstructionalVoiceHash: b9c8c2b1470bfa6c6b8afc9d3f84774ad579f4f2d4a0111bc3b252770d7966e9
+---
 ```{python}
 #| echo: false
 from dih_models.parameters import *
@@ -121,15 +122,15 @@ Just 1% less self-harm.
 **{{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 ROI**
 (That's "impossible returns" to "mathematically absurd returns")
 
-### **{{< var research_acceleration_multiplier >}}× faster medical progress**
+### {{< var research_acceleration_multiplier >}}× faster medical progress
 (2,000 years of medical advancement in 20 years)
 
-### **9.1 trillion hours of human suffering eliminated annually**
+### 9.1 trillion hours of human suffering eliminated annually
 (The unnecessary kind)
 
-### **20–60 million life-years saved per billion invested**
+### 20–60 million life-years saved per billion invested
 
-### **{{< var peace_dividend_annual_societal_benefit >}} + $50–100B saved per year**
+### {{< var peace_dividend_annual_societal_benefit >}} + $50–100B saved per year
 (Just appears. Like finding money in pants you're currently wearing.)
 
 These aren't projections. They're measurements:
@@ -143,15 +144,15 @@ Medical progress currently flows through a coffee stirrer.
 This makes it a fire hose.
 
 
-# **Why 1% Is Enough**
+# Why 1% Is Enough
 
-### **1. The Peace Dividend: {{< var peace_dividend_annual_societal_benefit >}}/year**
+### 1. The Peace Dividend: {{< var peace_dividend_annual_societal_benefit >}}/year
 
 Bombs are expensive. Breaking things costs money. Repairing broken things costs more money.
 A 1% reduction in weapons procurement saves {{< var peace_dividend_annual_societal_benefit >}} annually.
 That's roughly the GDP of Austria, just sitting there in the "please don't explode us" budget.
 
-### **2. The Research Efficiency Dividend: {{< var dfda_gross_savings_annual >}}–$100B/year**
+### 2. The Research Efficiency Dividend: {{< var dfda_gross_savings_annual >}}–$100B/year
 
 Traditional trials require:
 * Custom buildings nobody will use again
@@ -163,14 +164,14 @@ Traditional trials require:
 Pragmatic trials skip this performance art entirely.
 This is why costs drop **{{< var trial_cost_reduction_factor >}}×** instead of 2× or 5×.
 
-### **3. 15–40 "NIH equivalents" of new research capacity**
+### 3. 15–40 "NIH equivalents" of new research capacity
 
 For the first time in human history, medical progress would advance **faster than disease progression**.
 Currently, diseases are winning the race.
 This reverses the score.
 
 
-# **And It Strengthens National Security**
+# And It Strengthens National Security
 
 Here's the beautiful part: everyone reduces by 1% simultaneously.
 
@@ -194,7 +195,7 @@ Game theorists call this "obvious."
 Politicians call it "impossible."
 
 
-# **Why This Works: The Political Economy**
+# Why This Works: The Political Economy
 
 Good ideas don't win because they're good.
 They win by **aligning incentives**.
@@ -202,7 +203,7 @@ They win by **aligning incentives**.
 This is the alignment engine:
 
 
-# **Victory Bonds: The Greed-Aligned Engine**
+# Victory Bonds: The Greed-Aligned Engine
 
 You make this happen by bribing people with their own future savings.
 
@@ -223,39 +224,39 @@ They just follow their calculator to accidentally save humanity.
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-# **The Mechanical Sequence (How to Actually Do This)**
+# The Mechanical Sequence (How to Actually Do This)
 
 This isn't utopian. It's a checklist:
 
-### **Step 1 — Run the Survey**
+### Step 1 — Run the Survey
 
 Demonstrate overwhelming global support for medical acceleration over military acceleration.
 Creates legitimacy. Generates media attention. Makes politicians nervous.
 
-### **Step 2 — Hit {{< var global_population_activism_threshold_pct >}}**
+### Step 2 — Hit {{< var global_population_activism_threshold_pct >}}
 
 Social-movement science: **{{< var global_population_activism_threshold_pct >}} committed support** reliably causes policy adoption.
 This is the tipping point. Once you cross it, politicians follow or lose elections.
 
-### **Step 3 — Sell the Bonds**
+### Step 3 — Sell the Bonds
 
 Victory Bond investors fund the campaign because the math is absurd.
 They're buying $270+ in returns for every $100 invested.
 It's the Louisiana Purchase of medical research.
 
-### **Step 4 — Run the Lobbying Campaign**
+### Step 4 — Run the Lobbying Campaign
 
 Deploy Victory Bond funds to convince politicians that voters want this.
 Standard lobbying tactics, just pointed at healing instead of killing.
 Politicians discover they've "always cared deeply about medical research."
 
-### **Step 5 — Build the dFDA**
+### Step 5 — Build the dFDA
 
 The 1% shift funds infinitely scalable, automated pragmatic trials.
 Thousands of neglected treatments finally get tested.
 Effective ones scale instantly.
 
-### **Step 6 — Watch What Happens**
+### Step 6 — Watch What Happens
 
 - Medical progress accelerates {{< var research_acceleration_multiplier >}}×
 - Disease categories start collapsing
@@ -268,7 +269,7 @@ The plan works because **every step is economically rational for everyone involv
 Nobody needs to be convinced. They just need to count.
 
 
-# **Why This Is the Dominant Strategy**
+# Why This Is the Dominant Strategy
 
 If your goal is to maximize:
 
