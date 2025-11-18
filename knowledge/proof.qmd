@@ -30,9 +30,9 @@ Here are the receipts.
 ## Oxford RECOVERY: The {{< var dfda_cost_effectiveness_multiplier >}}× Proof
 
 2020: British doctors cured COVID with a drug from 1961.
-Cost: **[$500 per patient](references.qmd#recovery-cost-500)**.
+Cost: **[{{< var recovery_trial_cost_per_patient >}} per patient](references.qmd#recovery-cost-500)**.
 
-American pharma companies testing the same drugs under FDA rules: **[$41,000 per patient](references.qmd#trial-cost-41k)**.
+American pharma companies testing the same drugs under FDA rules: **[{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient](references.qmd#trial-cost-41k)**.
 
 Oxford saved a million lives in [100 days](references.qmd#recovery-trial-100-days-to-cure).
 Pharma saved zero lives in 10 years.
@@ -100,7 +100,7 @@ Harvard analyzed every major movement in history.
 - Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
 - Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
 
-The strategy needs 280 million people.
+The strategy needs {{< var treaty_campaign_voting_bloc_target_millions >}} million people.
 The internet reaches [5 billion](references.qmd#internet-users-5-billion).
 Math says it wins.
 
@@ -150,7 +150,7 @@ Harvard did math on revolutions. Found the magic number: {{< var global_populati
 - Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
 - Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
 
-**The Lesson:** You don't need everyone. You need 280 million people out of 8 billion. That's one person in every classroom, one family on every block.
+**The Lesson:** You don't need everyone. You need {{< var treaty_campaign_voting_bloc_target_millions >}} million people out of {{< var global_population_2024_billions >}} billion. That's one person in every classroom, one family on every block.
 
 ## The Financial Precedents: How to Fund It
 

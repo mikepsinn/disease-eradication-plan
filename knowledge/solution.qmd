@@ -57,7 +57,7 @@ The math is simple: If everyone has 1% fewer weapons, the balance stays exactly 
 
 - 54,000 clinical trials at $500,000 each (the cheap way)
 - Or 27 million patients in trials at $1,000 each
-- Or 540 new drug approvals (current rate: 50 per year)
+- Or 540 new drug approvals (current rate: {{< var current_drug_approvals_per_year >}} per year)
 - Or curing 10-20 rare diseases completely in Year 1
 - Or preventing 180,000 deaths annually
 
@@ -97,7 +97,7 @@ The difference is like asking 200 bureaucrats what you should have for lunch ver
 
 ##### On Wishocracy
 
-Wishocracy is how you let 8 billion people control a budget without everyone killing each other in meetings.
+Wishocracy is how you let {{< var global_population_2024_billions >}} billion people control a budget without everyone killing each other in meetings.
 
 Here's how it works:
 
@@ -123,7 +123,7 @@ The Decentralized FDA (dFDA) does three things:
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on the dFDA platform. The trial costs $500 per patient instead of $41,000 because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
+Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on the dFDA platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
