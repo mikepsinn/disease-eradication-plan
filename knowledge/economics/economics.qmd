@@ -577,7 +577,9 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Justification:** Based on historical adoption curves for electronic health records (5-10 years to majority adoption), clinical trial registry systems, and FDA Sentinel System implementation.
 
-**Sensitivity:** NPV calculations explicitly model adoption uncertainty through gradual ramp-up rather than immediate full adoption.
+**Adoption realism considerations:** Technology adoption typically follows S-curve dynamics with critical mass thresholds rather than linear ramps. Coordination failure risk exists (prisoner's dilemma: pharmaceutical companies may prefer others adopt first). Mitigation: Economic incentives (82× cost reduction) create overwhelming financial motivation for early adoption. Regulatory harmonization across jurisdictions may extend to 10-20 years rather than the modeled 5-year timeline, though pilot programs in willing jurisdictions (UK MHRA, which accepted RECOVERY evidence) can establish proof-of-concept earlier.
+
+**Sensitivity:** NPV calculations explicitly model adoption uncertainty through gradual ramp-up rather than immediate full adoption. Conservative scenario (50% adoption) accounts for coordination failures and regulatory delays.
 
 ### Cost Reduction Assumptions
 

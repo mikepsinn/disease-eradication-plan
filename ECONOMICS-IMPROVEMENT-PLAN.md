@@ -39,9 +39,9 @@
 **Location**: "External Validity Considerations" section (lines 1352-1369)
 **Status**: COMPLETED - Section exists with transferability across contexts, temporal validity, and general equilibrium effects
 
-#### 18. ⏳ Add Adoption Realism Discussion
-**Location**: "Adoption Rate Assumptions" section (lines 516-525)
-**Action**: Acknowledge S-curve adoption with critical mass threshold. Note coordination failure risk and mitigation (economic incentives align interests). Note regulatory harmonization may take 10-20 years, not 5.
+#### 18. ✅ Add Adoption Realism Discussion - COMPLETED
+**Location**: "Adoption Rate Assumptions" section (lines 571-580)
+**Status**: COMPLETED - Added concise discussion of S-curve adoption, coordination failure risk with economic mitigation, and regulatory harmonization timeline (10-20 years)
 
 ### Medium Priority
 
@@ -49,9 +49,9 @@
 **Location**: "General Equilibrium Considerations" or "Pragmatic Trial Internal Validity" section
 **Action**: Add 1-2 sentences: "Publication bias (negative results may not be published) is acknowledged. The dFDA's transparent data infrastructure may partially mitigate this risk, but bias remains a limitation."
 
-#### 28. ⏳ Add Brief Note on Comparison Set Rationale
-**Location**: "How This Compares to History" section (around line 840)
-**Action**: Add 3-4 sentences explaining why comparison set includes interventions across multiple categories (charitable giving, public health, research investments, clinical care). Note: "GiveWell represents best-in-class efficiency for direct interventions; NIH represents comparable research investment with different efficiency profile. Both comparisons are relevant but answer different questions."
+#### 28. ✅ Add Brief Note on Comparison Set Rationale - COMPLETED
+**Location**: "Comprehensive Comparison Across Intervention Types" section (lines 1045-1067)
+**Status**: COMPLETED - Line 1067 includes note: "The comparisons presented focus on dimensions most relevant to decision-makers evaluating treaty adoption. The dFDA compares favorably to both research investments (efficiency per discovery) and direct health interventions (cost per QALY), though comprehensive comparison would require separate frameworks for each dimension."
 
 #### 29. ⏳ Acknowledge Inadequate Uncertainty Quantification (Monte Carlo)
 **Location**: "Sensitivity Analysis Approach" section (lines 468-494) or Limitations section
@@ -83,11 +83,11 @@
 - [ ] Todo #15: Enhance opportunity cost analysis section (partially complete - needs comparison to alternative uses)
 - [x] Todo #16: Improve QALY methodology with confidence levels - ✅ COMPLETED (lines 1258, 1262, 1266)
 - [x] Todo #17: Enhance external validity discussion - ✅ COMPLETED (lines 1352-1369)
-- [ ] Todo #18: Add adoption realism discussion
+- [x] Todo #18: Add adoption realism discussion - ✅ COMPLETED (lines 571-580)
 
 ### Phase 2: Medium Priority Enhancements
 - [ ] Todo #26: Add brief note on publication bias
-- [ ] Todo #28: Add brief note on comparison set rationale
+- [x] Todo #28: Add brief note on comparison set rationale - ✅ COMPLETED (lines 1045-1067)
 - [ ] Todo #29: Acknowledge inadequate uncertainty quantification (Monte Carlo)
 - [ ] Todo #30: Verify variable name consistency
 
@@ -123,18 +123,22 @@
 ## Completed Items (Reference Only)
 
 **Major completed work:**
-- ✅ Expected value analysis (Todo #9) - lines 576-605
+- ✅ Expected value analysis (Todo #9) - lines 627-656
+- ✅ Automated system clarification (Todo #10) - lines 471-473
 - ✅ General equilibrium effects (Todo #11) - lines 1241-1262
-- ✅ Peace dividend confidence levels (Todo #12) - methodology lines 427-435
-- ✅ Discount rate sensitivity (Todo #13) - lines 500-523
-- ✅ Partnership model explanation (Todo #20) - lines 645-649
-- ✅ Platform costs distinction (Todo #21) - lines 714-720
+- ✅ Peace dividend confidence levels (Todo #12) - lines 445-449
+- ✅ Discount rate sensitivity (Todo #13) - lines 528-549 (includes table)
+- ✅ RECOVERY trial limitations (Todo #14) - lines 1051-1062
+- ✅ Partnership model explanation (Todo #20) - line 754
+- ✅ Platform costs distinction (Todo #21) - line 826
 - ✅ Cost comparison table (Todo #22) - figure created
 - ✅ Observational trial images (Todo #23) - lines 1109-1115
+- ✅ QALY confidence levels (Todo #16) - lines 1258, 1262, 1266
+- ✅ External validity discussion (Todo #17) - lines 1352-1369
+- ✅ Comparison rationale (Todo #28) - lines 1045-1067
 - ✅ Time inconsistency discussion (Todo #27) - lines 607-626
 - ✅ Counterfactual baseline (Todo #33) - lines 413-429
-- ✅ Regulatory and implementation risks (Todo #31) - lines 1393-1479
+- ✅ Regulatory and implementation risks (Todo #31) - lines 1393-1477
 - ✅ Pre-1962 context and thalidomide (Todo #0a) - lines 542-554
-- ✅ RECOVERY trial limitations (Todo #14) - lines 1051-1062
 
 For detailed historical record of all completed work, see git history.
