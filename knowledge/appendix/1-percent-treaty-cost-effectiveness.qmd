@@ -416,7 +416,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 
 7. **dFDA Operations**: [dFDA Cost Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
    - Annual: {{< var dfda_upfront_build >}}/year
-   - Range: {{< var average_us_hourly_wage >}}-60M
+   - Range: {{< var sensitivity_dfda_opex_optimistic >}}-{{< var sensitivity_dfda_opex_conservative >}}
 
 ### Comparisons
 

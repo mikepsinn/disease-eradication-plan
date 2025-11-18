@@ -239,6 +239,24 @@ They just follow their calculator to accidentally save humanity.
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
+## Why Humans Will Do This
+
+*For Every Type of Human*
+
+**Defense Contractors**: "Keep 99% of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on Victory Bonds. It's like finding money in pants you're currently wearing. Except the money multiplies. While you're wearing the pants."
+
+**Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
+
+**Pharmaceutical Companies**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} per trial patient, patients pay YOU (via subsidies). Your costs become revenue. We call it 'reverse expenses' or 'profit.'"
+
+**Politicians**: "{{< var treaty_campaign_voting_bloc_target_millions >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
+
+**Billionaires**: "Your index fund makes 10% returns. Victory Bonds make {{< var victory_bond_annual_return_pct >}}. It's like compound interest discovered steroids then did cocaine."
+
+**Regular Humans**: "Free experimental treatments. Choose what gets funded by participating. If it works, you live. If it doesn't, you were dying anyway so at least you got free healthcare. Also: [**$4.3M in lifetime wealth and 72 extra years of life**](../call-to-action/your-personal-benefits.qmd) from the economic multiplier effect."
+
+Nobody has to evolve morally. Nobody has to become better people. You just point everyone's greed at diseases instead of each other.
+
 # The Mechanical Sequence (How to Actually Do This)
 
 This isn't utopian. It's a checklist:
@@ -1030,15 +1048,21 @@ $$
 
 It's like spending $40 on gasoline for a fire and $1 on a fire extinguisher.
 
+{{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
+
+*"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* - President Dwight D. Eisenhower, 1961
+
 **Opportunity cost note:** The {{< var treaty_annual_funding >}} could fund other things: military R&D (GPS, internet came from this), tax cuts (~{{< var npv_discount_rate_standard >}} private returns), infrastructure, education, climate. But the dFDA's negative ICER ({{< var dfda_icer_per_qaly >}} per QALY) means it makes money while saving lives. Dominant interventions don't require opportunity cost tradeoffs - they're just better at everything.
 
 {{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
 ### Mortality and Morbidity Burden
 
-<!-- !Annual deaths from disease ({{< var global_annual_deaths_curable_diseases >}}) versus deaths from 9/11 Terrorist Attacks (2,996) -->
+The World Health Organization reports {{< var global_daily_deaths_curable_diseases >}} daily deaths from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)).
 
-The World Health Organization reports {{< var global_daily_deaths_curable_diseases >}} daily deaths from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)). This mortality burden exceeds:
+![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+
+This mortality burden exceeds:
 
 - [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
 
@@ -1596,6 +1620,9 @@ $$
 
 **The Reality**: This works because every step is economically rational for everyone involved. Nobody needs to evolve morally. They just need to count.
 
+![Join or Die - Collective action for survival](../assets/join-or-die-snake.jpg)
+
+---
 
 # References
 
