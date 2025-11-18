@@ -301,9 +301,14 @@ $$
 
 For the dFDA infrastructure (using annual figures):
 
-$$
-\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{{{< var global_dfda_qalys_gained_annual >}} \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
-$$
+```{python}
+#| echo: false
+from dih_models.parameters import *
+from IPython.display import display, Markdown
+
+icer_eq = f"$$\\text{{ICER}} = \\frac{{\\text{{Net Incremental Cost (Annual)}}}}{{\\text{{QALYs Gained (Annual)}}}} = \\frac{{-\\$49.96\\text{{B}}}}{{{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,} \\text{{ QALYs}}}} = -\\$59{{,}}476 \\text{{ per QALY}}$$"
+display(Markdown(icer_eq))
+```
 
 The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
@@ -367,7 +372,7 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 | **Trial Completion Speed** | 3-5 years | 3-12 months | **10×** |
 | **Simultaneous Trials** | {{< var current_active_trials >}} active trials | {{< var dfda_active_trials >}} active trials | **20×** |
 | **Completion Rate** | {{< var current_trials_per_year >}} finish | {{< var dfda_trial_completion_rate >}} finish | **1.6×** |
-| **Funding Increase** | ${{< var global_government_medical_research_annual >}}B baseline | $94.7B (baseline + {{< var treaty_annual_funding >}}B) | **1.4×** |
+| **Funding Increase** | ${{< var global_med_research_spending >}}B baseline | $94.7B (baseline + {{< var treaty_annual_funding >}}B) | **1.4×** |
 
 **Theoretical maximum:** 25 × 10 × 1.6 × 1.4 = 560×
 
@@ -1017,7 +1022,7 @@ Despite these limitations, several factors support the analysis's robustness:
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
 4. **Dominant intervention status:** Negative ICER (-$59,476/QALY) means intervention saves money even if health benefits are substantially overstated
 
-**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [_variables.yml](../_variables.yml) and [dih_models/parameters.py](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/dih_models/parameters.py).
+**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [_variables.yml](../../_variables.yml) and [dih_models/parameters.py](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/dih_models/parameters.py).
 
 Future research priorities include prospective data collection during pilot implementations, real-world validation of cost reduction estimates, and longitudinal assessment of QALY gains across diverse populations and disease contexts.
 
