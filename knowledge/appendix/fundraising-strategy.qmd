@@ -157,9 +157,9 @@ The primary risk elimination mechanism:
 
 ### Template 1: Crypto Whales (Governance Angle)
 
-**Subject:** Invitation to influence governance of $27.2B health treasury (Bitcoin-level impact)
+**Subject:** Invitation to influence governance of {{< var treaty_annual_funding >}} health treasury (Bitcoin-level impact)
 
-"The initiative advocates for the creation of the world's largest decentralized health treasury ($27.2B annually) using proven DAO models from MakerDAO/Uniswap. We advocate for a governance model where future government-issued VICTORY bond holders, alongside public health experts, provide input on the allocation of this treasury across global health research.
+"The initiative advocates for the creation of the world's largest decentralized health treasury ({{< var treaty_annual_funding >}} annually) using proven DAO models from MakerDAO/Uniswap. We advocate for a governance model where future government-issued VICTORY bond holders, alongside public health experts, provide input on the allocation of this treasury across global health research.
 
 This isn't just an investment - it's a chance to influence the direction of more capital than the NIH budget toward curing diseases through [80X more efficient](../references.qmd#recovery-trial-{{< var dfda_cost_effectiveness_multiplier >}}×-cost-reduction) decentralized trials."
 
@@ -167,7 +167,7 @@ This isn't just an investment - it's a chance to influence the direction of more
 
 **Subject:** 2-5X your R&D budget (backed by government treaties)
 
-"The 1% Treaty redirects 1% of global military spending ($27.2B annually) into health research using Oxford RECOVERY trial methods (80X lower cost). Early supporters will be instrumental in shaping the policy recommendations for treasury allocation.
+"The 1% Treaty redirects 1% of global military spending ({{< var treaty_annual_funding >}} annually) into health research using Oxford RECOVERY trial methods (80X lower cost). Early supporters will be instrumental in shaping the policy recommendations for treasury allocation.
 
 For [Company], this means 2-5X more R&D funding for the same work you're already doing, plus the opportunity to influence priority areas."
 
@@ -338,7 +338,7 @@ The twist: offer them an even better deal to fund cures instead of wars.
 The math is simple:
 
 - **Investment:** $1.2-2.5B once
-- **Return:** $27.2B+ annually in perpetuity
+- **Return:** {{< var treaty_annual_funding >}}+ annually in perpetuity
 - **ROI:** 10-20x political arbitrage + 463x economic arbitrage via [dFDA](../solution/dfda.qmd)
 
 This phased approach ensures capital efficiency while maximizing probability of success through aligned incentives and competitive dynamics.

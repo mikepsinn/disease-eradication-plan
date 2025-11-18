@@ -21,7 +21,7 @@ import os
 from dih_models.parameters import *
 ```
 
-The **Disease Eradication Model** properly accounts for 115x cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
+The **Disease Eradication Model** properly accounts for {{< var research_acceleration_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
 
 **This is the default model to use.** Conservative baselines (Evidence-Based models using antibiotic precedent) are available for skeptical audiences.
 
@@ -53,7 +53,7 @@ Previous models used antibiotics as a precedent:
 
 ### The Math
 
-**20 years of 115x research acceleration:**
+**20 years of {{< var research_acceleration_multiplier >}}× research acceleration:**
 
 - Year 1: 115 research-years
 - Year 2: 230 cumulative research-years
@@ -139,7 +139,7 @@ Based on IBI 2024 workforce data:
 
 ### 5. GDP Boost
 
-115x research acceleration creates innovation spillovers:
+{{< var research_acceleration_multiplier >}}× research acceleration creates innovation spillovers:
 
 - 0.25% additional GDP growth per year (1% Treaty)
 - Compounds over extended lifetime
@@ -252,7 +252,7 @@ Start with **Evidence-Based Conservative** ($584K, 5yr), then build up:
 
 - "Our most conservative estimate, using antibiotic precedent: $584K"
 - "But antibiotics were ONE technology. The 1% Treaty enables:"
-- "115x research EVERY YEAR, gene therapy, epigenetics, stem cells, AI"
+- "{{< var research_acceleration_multiplier >}}× research EVERY YEAR, gene therapy, epigenetics, stem cells, AI"
 - "Realistic accounting shows: $4.3M over 20 years"
 
 ### For Investor Pitches
@@ -460,7 +460,7 @@ The tornado chart shows which parameters have the largest impact on your persona
 
 {{< include ../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
 
-This chart uses the **Disease Eradication Model** (115x cumulative research, 2,300 research-years) showing **realistic expected benefits**:
+This chart uses the **Disease Eradication Model** ({{< var research_acceleration_multiplier >}}× cumulative research, 2,300 research-years) showing **realistic expected benefits**:
 
 ### Key Insights
 
@@ -597,7 +597,7 @@ Productivity, caregiver, and life expectancy data cited in:
 
 It's the only model that properly accounts for:
 
-- 115x cumulative research acceleration (2,300 equivalent years in 20 years)
+- {{< var research_acceleration_multiplier >}}× cumulative research acceleration (2,300 equivalent years in 20 years)
 - Multiple breakthrough technologies converging (gene, epigenetic, stem cell, AI)
 - Disease-by-disease systematic eradication with real CDC data
 - Aging reversal approaching accident-limited lifespan

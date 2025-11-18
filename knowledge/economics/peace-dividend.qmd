@@ -30,7 +30,7 @@ The [dFDA analysis](../appendix/dfda-cost-benefit-analysis.qmd) proves medical r
 
 Two ways you profit from building 1% fewer bombs:
 
-### 1. The Captured Money: $27.2B/Year
+### 1. The Captured Money: {{< var treaty_annual_funding >}}/Year
 
 Governments spend {{< var global_military_spending_post_treaty_annual_2024 >}} yearly on things designed to make other things stop existing.
 
@@ -38,13 +38,13 @@ Redirect 1%:
 
 $${{< var global_military_spending_post_treaty_annual_2024 >}} \times 0.01 = \$27.2B$$
 
-This \$27.2B funds the dFDA, VICTORY bonds, and the whole system.
+This \{{< var treaty_annual_funding >}} funds the dFDA, VICTORY bonds, and the whole system.
 
-### 2. The Bonus Savings: \$113.6B/Year
+### 2. The Bonus Savings: \{{< var peace_dividend_annual_societal_benefit >}}/Year
 
 That's what you capture. Here's what you save.
 
-Wars cost [\$11.4T/year](../problem/cost-of-war.qmd). Build 1% fewer bombs, fight 1% fewer wars, save \$113.6B.
+Wars cost [\$11.4T/year](../problem/cost-of-war.qmd). Build 1% fewer bombs, fight 1% fewer wars, save \${{< var peace_dividend_annual_societal_benefit >}}.
 
 $$11.4T \times 0.01 = \$113.6B$$
 
@@ -57,7 +57,7 @@ Money no longer spent on:
 
 Here's the breakdown:
 
-### Where the \$113.6B Comes From
+### Where the \{{< var peace_dividend_annual_societal_benefit >}} Comes From
 
 Based on [Cost of War analysis](../problem/cost-of-war.qmd):
 

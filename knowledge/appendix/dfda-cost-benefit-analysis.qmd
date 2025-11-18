@@ -625,7 +625,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
       This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Sensitivity analysis could include "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), but this would significantly increase annual costs.)_
 
-- **Net Annual Savings** (assuming full adoption and [50.0% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): $50.0B/year.
+- **Net Annual Savings** (assuming full adoption and [50.0% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): {{< var dfda_gross_savings_annual >}}/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
@@ -1449,7 +1449,7 @@ Where:
 - $S_{\text{R\&D}} = \alpha \cdot R_d$ is the gross R&D savings from dFDA implementation
 - **Baseline Assumptions for R&D Savings (same as before):**
   - Global Clinical Trial Spending Addressable by dFDA: **$100.0B / year**.
-  - R&D Trial Cost Reduction due to dFDA (Baseline): **50.0%**. (Leads to $50.0B Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
+  - R&D Trial Cost Reduction due to dFDA (Baseline): **50.0%**. (Leads to {{< var dfda_gross_savings_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
 - **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA Infrastructure is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
 - **Conservative Scenario:** {{< var qalys_total_conservative >}} QALYs/year

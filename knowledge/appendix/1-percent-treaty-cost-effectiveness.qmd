@@ -32,9 +32,9 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 ### Step 1: Annual Economic Benefits
 
-#### 1a. Peace Dividend (113.6B/year)
+#### 1a. Peace Dividend ({{< var peace_dividend_annual_societal_benefit >}}/year)
 
-**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society 113.6B annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
+**Quick summary**: The 1% Treaty reduces global conflict by 1%, saving society {{< var peace_dividend_annual_societal_benefit >}} annually from reduced military spending, infrastructure destruction, healthcare costs, and economic disruption.
 
 **Calculation**: $11.4T total war costs × 1.0% reduction = **113.6B**
 
@@ -44,7 +44,7 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 - [Peace Dividend Chapter](../economics/peace-dividend.qmd) - Accessible overview with breakdown table
 - [Cost of War Analysis](../problem/cost-of-war.qmd) - Source data
 
-#### 1b. Health Dividend ($50.0B/year)
+#### 1b. Health Dividend ({{< var dfda_gross_savings_annual >}}/year)
 
 **Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving {{< var dfda_gross_savings_annual >}} annually from the {{< var global_clinical_trials_spending_annual >}} global trial market.
 
@@ -60,7 +60,7 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 #### Total Annual Economic Benefits
 
-**113.6B + $50.0B = $163.6B per year**
+**{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_gross_savings_annual >}} = {{< var treaty_total_annual_benefits >}} per year**
 
 **Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
 
@@ -172,7 +172,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **The DIH Treasury Mechanism**:
 
-1. **Countries redirect $27.2B/year** from military budgets to the DIH treasury
+1. **Countries redirect {{< var treaty_annual_funding >}}/year** from military budgets to the DIH treasury
 2. **The DIH treasury allocates**:
    - 2.7B/year → VICTORY bondholders (10.0% of redirected funds)
    - $24.5B/year → Medical research and operations
@@ -231,7 +231,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Annual net benefit** = Benefits - Costs
 
-- Benefits: $163.6B
+- Benefits: {{< var treaty_total_annual_benefits >}}
 - Costs: {{< var treaty_total_annual_costs >}}
 - **Net benefit: $163.3B per year**
 
@@ -301,9 +301,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Parameter | Conservative | Central | Optimistic |
 |-----------|-------------:|--------:|------------:|
-| **Peace dividend** | $50.0B | 113.6B | $200.0B |
+| **Peace dividend** | {{< var dfda_gross_savings_annual >}} | {{< var peace_dividend_annual_societal_benefit >}} | $200.0B |
 | **dFDA R&D savings** | $25.0B | $50.0B | $95.0B |
-| **Total benefits** | $75.0B | $163.6B | $295.0B |
+| **Total benefits** | $75.0B | ${{< var treaty_total_annual_benefits >}} | $295.0B |
 | **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative >}} | {{< var treaty_campaign_budget_technology >}} | {{< var treaty_campaign_budget_viral_referendum >}} |
 | **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative >}} | {{< var dfda_upfront_build >}} | {{< var sensitivity_dfda_opex_optimistic >}} |
 | **Total costs/yr** | {{< var sensitivity_total_costs_conservative >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic >}} |
@@ -481,7 +481,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with {{< var victory_bond_annual_return_pct >}} returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up $27.2B in military spending but receive $163.6B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive $163.6B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest {{< var treaty_campaign_total_cost >}} and receive {{< var victory_bond_annual_payout >}}/year perpetually. This is the best investment in history.
 

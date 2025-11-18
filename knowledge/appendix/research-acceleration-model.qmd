@@ -1,10 +1,10 @@
 ---
-title: Research Acceleration Model - How 115x Works
-description: Complete mechanism showing how flipped incentives, universal access, and transparent competition create 115x research capacity multiplication
+title: Research Acceleration Model - How {{< var research_acceleration_multiplier >}}× Works
+description: Complete mechanism showing how flipped incentives, universal access, and transparent competition create {{< var research_acceleration_multiplier >}}× research capacity multiplication
 published: true
 tags:
   - research-acceleration
-  - 115x-mechanism
+  - {{< var research_acceleration_multiplier >}}×-mechanism
   - behavioral-economics
   - clinical-trials
   - roi-analysis
@@ -30,10 +30,10 @@ The conservative {{< var roi_dfda_savings_only >}}:1 calculation ignores most of
 
 The 1% Treaty doesn't just make trials cheaper. It:
 
-1. **Societal savings from 1% less conflict** (peace dividend: 113.6B)
+1. **Societal savings from 1% less conflict** (peace dividend: {{< var peace_dividend_annual_societal_benefit >}})
 2. **Slashes R&D costs {{< var dfda_cost_effectiveness_multiplier >}}×** (saves $50.0B)
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
-4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
+4. **{{< var research_acceleration_multiplier >}}× more research capacity** (adds $100B via 10-20X more breakthroughs)
 5. **Enables treatment of rare/orphan diseases** (adds $400B)
 6. **Reduces drug prices via R&D savings** (saves $100.0B)
 7. **Makes prevention economically viable** (saves $100B)
@@ -116,7 +116,7 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 *Note: This is a conservative estimate based on health outcomes. For market valuation approaches suggesting substantially higher values ($6.48T/year with 80X acceleration), see [Economic Value of Accelerated Treatments](economic-value-of-accelerated-treatments.qmd).*
 
-## How 115x Research Acceleration Actually Works
+## How {{< var research_acceleration_multiplier >}}× Research Acceleration Actually Works
 
 The 115x multiplier isn't just arithmetic ({{< var dfda_cost_effectiveness_multiplier >}}× cost reduction × 1.4x funding). It's the result of multiple behavioral mechanisms that fundamentally change how clinical trials work.
 
@@ -139,7 +139,7 @@ SMALLER, FASTER TRIALS (algorithmic efficiency incentives)
     ↓
 TRANSPARENT PLATFORM COMPETITION
     ↓
-= 115X AGGREGATE RESEARCH CAPACITY
+= {{< var research_acceleration_multiplier >}}× AGGREGATE RESEARCH CAPACITY
 ```
 
 ### Mechanism 1: Economic Feasibility Transformation
@@ -331,7 +331,7 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 
 | Category | Annual Benefit | Notes |
 |----------|----------------|-------|
-| [Peace Dividend](../economics/peace-dividend.qmd) | 113.6B | Societal savings from 1% reduction in global conflict |
+| [Peace Dividend](../economics/peace-dividend.qmd) | {{< var peace_dividend_annual_societal_benefit >}} | Societal savings from 1% reduction in global conflict |
 | R&D Cost Savings | $50.0B | {{< var dfda_cost_effectiveness_multiplier >}}× trial cost reduction |
 | **Earlier Access (7 years)** | **$300.0B** | Existing pipeline accessed sooner |
 | **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |

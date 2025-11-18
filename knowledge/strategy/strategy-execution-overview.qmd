@@ -69,7 +69,7 @@ Launch a [global referendum](global-referendum.qmd) where 280 million people cli
 
 #### Step 4: Treaty Achieves Existence
 
-The [1% Treaty](../solution/1-percent-treaty.qmd) passes. $27.2B annually begins flowing from the murder budget to the medicine budget. Diseases start getting cured. Death becomes slightly less inevitable. Investors get very wealthy. Everyone acts surprised that this worked, even though the math was obvious.
+The [1% Treaty](../solution/1-percent-treaty.qmd) passes. {{< var treaty_annual_funding >}} annually begins flowing from the murder budget to the medicine budget. Diseases start getting cured. Death becomes slightly less inevitable. Investors get very wealthy. Everyone acts surprised that this worked, even though the math was obvious.
 
 **Step 5: The Success Spiral (Where Things Get Fun)**
 
@@ -150,7 +150,7 @@ They choose Option B. Not because they've become better people, but because they
 - **Papers for campaigns:** Massive Super PAC funding (legal bribery)
 - **Votes for staying employed:** 280 million people who will vote for treaty supporters
 - **Papers for themselves:** Personal VICTORY Bond access ({{< var victory_bond_annual_return_pct >}} beats insider trading)
-- **Power to reward friends:** Direct portion of DIH's $27.2B to their home districts (ribbon-cutting ceremonies for decades)
+- **Power to reward friends:** Direct portion of DIH's {{< var treaty_annual_funding >}} to their home districts (ribbon-cutting ceremonies for decades)
 
 #### The choice you give them
 
@@ -176,6 +176,6 @@ Launch referendum. Raise [$1.0B from rich people](../economics/campaign-budget.q
 
 **Phase 3 (Years 3-5): The Endgame (Where Treaty Passes)**
 
-Deploy papers to politicians until they agree that curing diseases is good actually. Treaty passes. $27.2B annually begins flowing from murder to medicine. Diseases start getting cured. Everyone acts surprised.
+Deploy papers to politicians until they agree that curing diseases is good actually. Treaty passes. {{< var treaty_annual_funding >}} annually begins flowing from murder to medicine. Diseases start getting cured. Everyone acts surprised.
 
 **Total time: 3-5 years.** Less time than it takes to get a drug approved by your FDA. More time than it takes to start a war. This seems backwards but it's humanity, so it tracks.

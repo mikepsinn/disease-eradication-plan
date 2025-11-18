@@ -58,7 +58,7 @@ The solution is mathematically straightforward:
 
 ### **20–60 million life-years saved per billion dollars invested**
 
-### **Money saved: $114B + $50–100B per year**
+### **Money saved: {{< var peace_dividend_annual_societal_benefit >}} + $50–100B per year**
 
 These figures are conservative and based on real-world results:
 
@@ -74,12 +74,12 @@ A 1% shift makes it a **fire hose**.
 
 # **Why 1% Is Enough**
 
-### **1. The Peace Dividend: $114B/year saved**
+### **1. The Peace Dividend: {{< var peace_dividend_annual_societal_benefit >}}/year saved**
 
 Even a 1% reduction in global weapons procurement yields massive savings.
 Bombs are expensive, and breaking things is not free to repair.
 
-### **2. The Research Efficiency Dividend: $50B–$100B/year saved**
+### **2. The Research Efficiency Dividend: {{< var dfda_gross_savings_annual >}}–$100B/year saved**
 
 Pragmatic trials eliminate:
 
@@ -476,11 +476,11 @@ $$
 where {{< var dfda_roi_simple >}} is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and {{< var peace_dividend_environmental >}} is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
 
 - **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
-- **Research Acceleration** = System runs 115X MORE trials, finding 10-20X MORE breakthroughs
+- **Research Acceleration** = System runs {{< var research_acceleration_multiplier >}}× MORE trials, finding 10-20X MORE breakthroughs
 
 Both are conservative estimates based on proven models ([RECOVERY trial](../appendix/recovery-trial.qmd) costs, disease prevalence data, standard QALY valuations).
 
-### Research Acceleration Mechanism: How We Get 115X
+### Research Acceleration Mechanism: How We Get {{< var research_acceleration_multiplier >}}×
 
 The {{< var research_acceleration_multiplier >}} research acceleration multiplier is derived from specific, measurable improvements across four dimensions:
 
@@ -607,7 +607,7 @@ This plan doesn't cost money, it *makes* money while saving lives. Instead of as
 | **[Childhood Vaccinations](../references.qmd#childhood-vaccination-roi)** | Prevents immense long-term treatment costs for diseases like measles and polio | Billions to Tens of Billions |
 | **Smoking Cessation** | Prevents expensive chronic diseases (cancer, heart disease) through low-cost interventions | Billions to Tens of Billions |
 | **[Water & Sanitation](../references.qmd#clean-water-sanitation-roi)** | Avoids disease costs for entire populations at low cost | Hundreds of Millions to Billions |
-| **[1% Treaty (Peace Dividend)](../appendix/peace-dividend-calculations.qmd)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~113.6B, Annually** |
+| **[1% Treaty (Peace Dividend)](../appendix/peace-dividend-calculations.qmd)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~{{< var peace_dividend_annual_societal_benefit >}}, Annually** |
 | **[dFDA (R&D Efficiency)](../appendix/dfda-cost-benefit-analysis.qmd)** | Makes clinical research ~{{< var dfda_cost_effectiveness_multiplier >}}× more efficient, unlocking huge R&D savings | **~$50.0B, Annually** |
 
 #### Why This Is Different

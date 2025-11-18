@@ -32,7 +32,7 @@ A financial instrument that makes obscene amounts of money appear from nowhere w
 
 - Collect $1.0B in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
-- Once treaty passes, $27.2B in papers annually stops going to bombs and starts going to [DIH](../solution/dih.qmd)
+- Once treaty passes, {{< var treaty_annual_funding >}} in papers annually stops going to bombs and starts going to [DIH](../solution/dih.qmd)
 - Give the rich humans 10% of that ({{< var victory_bond_annual_payout >}}) every year, forever
 - Use the remaining 90% ($24.3B) to cure the diseases actually killing people
 
@@ -74,7 +74,7 @@ For the complete breakdown of where every paper goes, see [Campaign Budget](camp
 
 Treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
 
-- $27.2B annually stops going to bombs and starts going to DIH treasury (automatic, no takebacks)
+- {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to DIH treasury (automatic, no takebacks)
 - 10% ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
 - 90% ($24.3B) automatically goes to curing the diseases actually killing people
 
@@ -97,7 +97,7 @@ No maturity date means the money never stops. As long as the treaty exists, bond
 
 **Current global spending on ending human life**: [$2.7 trillion/year](../references.qmd#sipri-2024-spending)
 
-**What 1% of that is**: 1% = $27.2B/year (enough to cure most diseases, apparently)
+**What 1% of that is**: 1% = {{< var treaty_annual_funding >}}/year (enough to cure most diseases, apparently)
 
 **What bondholders get**:
 $$ 10\% \times \$27.2\text{B} = \$2.7\text{B}/\text{year} $$
@@ -174,7 +174,7 @@ Frame it as: Electoral suicide to oppose expansion once cures exist. Like runnin
 
 Give bondholders these five layers of security:
 
-1. **$27.2B+ annual treaty revenue stream** (starts year 1 if treaty passes)
+1. **{{< var treaty_annual_funding >}}+ annual treaty revenue stream** (starts year 1 if treaty passes)
 2. **Political entrenchment** (treaties are historically hard to repeal once implemented)
 3. **Public support** (70%+ approval, grows with each cure)
 4. **Aligned incentives** (everyone profits from cooperation)
@@ -184,12 +184,12 @@ Explain to investors: Multiple layers of protection, not just one point of failu
 
 ## Present Two Scenarios to Investors
 
-### Scenario A: Full Success ($27.2B/year)
+### Scenario A: Full Success ({{< var treaty_annual_funding >}}/year)
 
 Show investors what full treaty adoption looks like:
 
 **Treaty adoption**: 100+ countries (all major military powers)
-**Annual DIH revenue**: $27.2B
+**Annual DIH revenue**: {{< var treaty_annual_funding >}}
 **Bondholder annual payment**: 2.7B (10%)
 **Research funding**: $24.3B (90%)
 **Investor ROI**: {{< var victory_bond_annual_return_pct >}} annually
@@ -397,7 +397,7 @@ For broader objections about whether humanity is capable of not being stupid, se
 
 ### "This sounds like a Ponzi scheme run by someone who failed math."
 
-"Ponzi schemes pay old investors with new investor money, which is why they collapse. This pays investors with a share of a new $27.2B annual revenue stream created by redirecting 1% of military budgets via treaty.
+"Ponzi schemes pay old investors with new investor money, which is why they collapse. This pays investors with a share of a new {{< var treaty_annual_funding >}} annual revenue stream created by redirecting 1% of military budgets via treaty.
 
 The money comes from governments that currently spend it on bombs. The returns are high because the political risk is high - you're betting that politicians will choose prosperity over mass death, which is historically a coin flip.
 
@@ -483,7 +483,7 @@ Hand this to investors who can't read more than one page:
 
 1. Collect $1.0B from rich humans
 2. Use it to convince politicians that living constituents vote more reliably than dead ones
-3. Treaty passes, redirecting $27.2B annually from bombs to cures
+3. Treaty passes, redirecting {{< var treaty_annual_funding >}} annually from bombs to cures
 4. Give bondholders 10% ({{< var victory_bond_annual_payout >}}) every year, forever
 5. Use remaining 90% ($24.3B) to actually cure the diseases killing people
 6. Diseases decline, public demands more funding, returns scale up

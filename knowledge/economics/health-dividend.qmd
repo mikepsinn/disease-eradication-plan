@@ -20,7 +20,7 @@ from dih_models.parameters import *
 ```
 
 The dFDA costs $40M/year to run.
-It saves $50B/year in clinical trial waste.
+It saves {{< var dfda_gross_savings_annual >}}/year in clinical trial waste.
 That's {{< var roi_dfda_savings_only >}}:1 returns.
 
 Here's the breakdown.
