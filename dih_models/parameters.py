@@ -1612,53 +1612,6 @@ NPV_TIME_HORIZON_YEARS = Parameter(
 )  # Standard 10-year analysis window (T)
 
 # ---
-# ROI TIERS
-# ---
-
-# NPV of dFDA benefits with 5-year linear adoption ramp
-# Years 1-5: 20%, 40%, 60%, 80%, 100% adoption
-# Years 6-10: 100% adoption
-# Discounted at 8% annual rate
-DFDA_NPV_BENEFIT = Parameter(
-    sum([
-        DFDA_NET_SAVINGS_ANNUAL * (min(year, 5) / 5) / (1 + NPV_DISCOUNT_RATE_STANDARD) ** year
-        for year in range(1, 11)
-    ]),
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
-    source_type="calculated",
-    description="NPV of dFDA benefits with 5-year adoption ramp (10-year horizon)",
-    unit="billions USD",
-    formula="Sum of discounted annual net savings with linear adoption ramp",
-    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B"
-)  # ~$249.3B NPV of benefits
-
-# Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
-# Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
-ROI_DFDA_SAVINGS_ONLY = Parameter(
-    DFDA_NPV_BENEFIT / DFDA_NPV_TOTAL_COST,
-    source_ref="/knowledge/figures/dfda-roi-analysis.qmd",
-    source_type="calculated",
-    description="ROI from dFDA R&D savings (10-year NPV)",
-    unit="ratio",
-    formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
-    latex=r"ROI_{NPV} = \frac{\$249.3B}{\$0.54B} \approx 463"
-)  # ~463:1 from NPV analysis
-
-# Tier 2: Complete - All direct benefits
-# Source: brain/book/economics.qmd complete case section
-# Note: Calculated as TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST
-# Updated from 1,222:1 when war costs were revised from $9.7T to $11.355T
-ROI_ALL_DIRECT_BENEFITS = Parameter(
-    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / TREATY_CAMPAIGN_TOTAL_COST,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
-    source_type="calculated",
-    description="ROI from all direct benefits (peace dividend + dFDA + health gains)",
-    unit="ratio",
-    formula="COMPLETE_BENEFITS_ANNUAL ÷ CAMPAIGN_TOTAL_COST",
-    latex=r"ROI_{complete} = \frac{\$1,238.6B}{\$1.0B} \approx 1,239"
-)  # ~1,239:1 from all 8 benefit categories
-
-# ---
 # FINANCIAL PARAMETERS - NPV MODEL COMPONENTS
 # ---
 
@@ -1747,6 +1700,24 @@ DFDA_NPV_TOTAL_COST = Parameter(
     formula="UPFRONT + PV_OPEX",
     latex=r"TotalCost_{NPV} = \$0.26975B + \$0.269B \approx \$0.54B"
 )  # ~$0.54B
+
+# NPV of dFDA benefits with 5-year linear adoption ramp
+# Years 1-5: 20%, 40%, 60%, 80%, 100% adoption
+# Years 6-10: 100% adoption
+# Discounted at 8% annual rate
+DFDA_NPV_BENEFIT = Parameter(
+    sum([
+        DFDA_NET_SAVINGS_ANNUAL * (min(year, 5) / 5) / (1 + NPV_DISCOUNT_RATE_STANDARD) ** year
+        for year in range(1, 11)
+    ]),
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
+    source_type="calculated",
+    description="NPV of dFDA benefits with 5-year adoption ramp (10-year horizon)",
+    unit="billions USD",
+    formula="Sum of discounted annual net savings with linear adoption ramp",
+    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B"
+)  # ~$249.3B NPV of benefits
+
 DFDA_NPV_NET_BENEFIT_CONSERVATIVE = Parameter(
     DFDA_NPV_BENEFIT,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit",
@@ -1757,9 +1728,43 @@ DFDA_NPV_NET_BENEFIT_CONSERVATIVE = Parameter(
     latex=r"Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B"
 )  # ~$249.3B
 
+# ---
+# ROI TIERS
+# ---
+
+# Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
+# Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
+ROI_DFDA_SAVINGS_ONLY = Parameter(
+    DFDA_NPV_BENEFIT / DFDA_NPV_TOTAL_COST,
+    source_ref="/knowledge/figures/dfda-roi-analysis.qmd",
+    source_type="calculated",
+    description="ROI from dFDA R&D savings (10-year NPV)",
+    unit="ratio",
+    formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
+    latex=r"ROI_{NPV} = \frac{\$249.3B}{\$0.54B} \approx 463"
+)  # ~463:1 from NPV analysis
+
+# Tier 2: Complete - All direct benefits
+# Source: brain/book/economics.qmd complete case section
+# Note: Calculated as TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST
+# Updated from 1,222:1 when war costs were revised from $9.7T to $11.355T
+ROI_ALL_DIRECT_BENEFITS = Parameter(
+    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
+    source_type="calculated",
+    description="ROI from all direct benefits (peace dividend + dFDA + health gains)",
+    unit="ratio",
+    formula="COMPLETE_BENEFITS_ANNUAL ÷ CAMPAIGN_TOTAL_COST",
+    latex=r"ROI_{complete} = \frac{\$1,238.6B}{\$1.0B} \approx 1,239"
+)  # ~1,239:1 from all 8 benefit categories
+
 # NOTE: The NPV-based ROI (463:1) accounts for time value of money and gradual adoption
 # The simple ROI (1,250:1) is gross savings / annual opex without discounting
 # Use ROI_DFDA_SAVINGS_ONLY (463:1) as the canonical figure for most purposes
+
+# ---
+# VICTORY SOCIAL IMPACT BONDS
+# ---
 
 # VICTORY Social Impact Bonds
 # Source: brain/book/economics/victory-bonds.qmd

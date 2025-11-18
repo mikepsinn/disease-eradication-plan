@@ -29,7 +29,7 @@ from dih_models.parameters import *
 
 **Results**: Conservative analysis yields 463:1 ROI ($249.3B NPV benefit / $538M implementation cost) over 10 years, based solely on R&D cost reductions. Complete analysis including peace dividend and seven additional benefit categories demonstrates 1,239:1 ROI ($1.2T annual benefits). The intervention generates 840,000 QALYs annually with negative ICER (-$59,476/QALY), qualifying as a dominant health intervention. Sensitivity analysis shows robust returns across scenarios (66:1 worst-case to 2,577:1 best-case).
 
-**Conclusions**: Redirecting 1% of military spending to medical research infrastructure represents a dominant health intervention—simultaneously reducing costs while improving health outcomes—with ROI exceeding history's most successful public health achievements including smallpox eradication. The self-funding structure eliminates traditional barriers to scale, generating sufficient economic surplus to sustain operations without ongoing charitable contributions.
+**Conclusions**: Redirecting 1% of military spending to medical research infrastructure represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding history's most successful public health achievements including smallpox eradication. The self-funding structure eliminates traditional barriers to scale, generating sufficient economic surplus to sustain operations without ongoing charitable contributions.
 
 **Keywords**: cost-benefit analysis, health economics, clinical trials, return on investment, QALY, dominant intervention, peace dividend, global health policy
 
@@ -305,7 +305,7 @@ $$
 \text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{{{< var global_dfda_qalys_gained_annual >}} \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
 $$
 
-The negative ICER indicates cost savings while improving health—a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
+The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -896,15 +896,15 @@ The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives fro
 
 The {{< var global_dfda_qalys_gained_annual >}} annual QALY estimate aggregates three benefit streams with varying levels of empirical support:
 
-**Stream A (Accelerated Drug Access):** High confidence—based on well-documented costs of delayed access (84,000 life-years lost per year delay in cancer therapies alone). However:
+**Stream A (Accelerated Drug Access):** High confidence, based on well-documented costs of delayed access (84,000 life-years lost per year delay in cancer therapies alone). However:
 - Assumes pipeline drugs would eventually reach approval under current system
 - Does not account for reduced efficacy if treatments reach patients in later disease stages
 
-**Stream B (Prevention via Real-World Evidence):** Medium confidence—preventative care benefits are well-established, but scale of improvement from comprehensive data remains uncertain:
+**Stream B (Prevention via Real-World Evidence):** Medium confidence, preventative care benefits are well-established, but scale of improvement from comprehensive data remains uncertain:
 - Adherence improvements may be smaller than projected
 - Selection bias in opt-in populations could limit generalizability
 
-**Stream C (Rare Disease Treatments):** Lower confidence—economic viability of rare disease research is theoretically sound but empirically unproven at scale:
+**Stream C (Rare Disease Treatments):** Lower confidence, economic viability of rare disease research is theoretically sound but empirically unproven at scale:
 - Assumes cost reductions make trials economically viable
 - Actual success rates for rare disease therapies remain uncertain
 
@@ -984,9 +984,9 @@ The following table summarizes key risk factors and their mitigation strategies:
 
 Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
-- **Worst-case (66:1 ROI):** Benefits half as good, costs twice as high—intervention remains highly cost-effective
-- **Conservative (463:1 ROI):** R&D savings only, excludes peace dividend—intervention is dominant
-- **Complete (1,239:1 ROI):** All quantifiable benefits—intervention transforms global health economics
+- **Worst-case (66:1 ROI):** Benefits half as good, costs twice as high, intervention remains highly cost-effective
+- **Conservative (463:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
+- **Complete (1,239:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
 **Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs.
 

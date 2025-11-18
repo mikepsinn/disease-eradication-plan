@@ -325,10 +325,16 @@
   \ class=\"parameter-link\" title=\"Total NPV annual opex (dFDA core + DIH initiatives)\
   \ | ✓ High confidence | Formula: DFDA_OPEX + DIH_OPEX | Unit: billions USD/year\
   \ | Click to view calculation\">$40.1M</a>"
+"dfda_npv_benefit": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
+  \ class=\"parameter-link\" title=\"NPV of dFDA benefits with 5-year adoption ramp\
+  \ (10-year horizon) | ✓ High confidence | Formula: Sum of discounted annual net\
+  \ savings with linear adoption ramp | Unit: billions USD | Click to view calculation\"\
+  >$249B</a>"
 "dfda_npv_net_benefit_conservative": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
-  \ class=\"parameter-link\" title=\"Conservative NPV net benefit (total cost × ROI)\
-  \ | ✓ High confidence | Formula: TOTAL_COST × ROI | Unit: billions USD | Click to\
-  \ view calculation\">$249B</a>"
+  \ class=\"parameter-link\" title=\"Conservative NPV benefit from dFDA R&D savings\
+  \ (10-year discounted with adoption ramp) | ✓ High confidence | Formula: NPV of\
+  \ net savings with 5-year linear adoption ramp | Unit: billions USD | Click to view\
+  \ calculation\">$249B</a>"
 "dfda_npv_pv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
   \ class=\"parameter-link\" title=\"Present value of annual opex over 10 years (NPV\
   \ formula) | ✓ High confidence | Formula: OPEX × [(1 - (1 + r)^-T) / r] | Unit:\
@@ -1030,11 +1036,12 @@
   \ confidence | Unit: deaths per 100,000 | Click to view source\">33.4</a>"
 "roi_all_direct_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
   \ class=\"parameter-link\" title=\"ROI from all direct benefits (peace dividend\
-  \ + dFDA + health gains) | ✓ High confidence | Unit: ratio | Click to view calculation\"\
-  >1,239</a>"
+  \ + dFDA + health gains) | ✓ High confidence | Formula: COMPLETE_BENEFITS_ANNUAL\
+  \ ÷ CAMPAIGN_TOTAL_COST | Unit: ratio | Click to view calculation\">1,239</a>"
 "roi_dfda_savings_only": "<a href=\"/knowledge/figures/dfda-roi-analysis.qmd\" class=\"\
   parameter-link\" title=\"ROI from dFDA R&D savings (10-year NPV) | ✓ High confidence\
-  \ | Unit: ratio | Click to view calculation\">463</a>"
+  \ | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\"\
+  >463</a>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
   >31,536,000</span>"
 "sensitivity_campaign_cost_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\

@@ -13,11 +13,9 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Auto-generated**: 2025-11-17 20:57:18
-
-**Total parameters**: 421
+**Total parameters**: 422
 - External sources (peer-reviewed): 130
-- Calculated values: 242
+- Calculated values: 243
 - Core definitions: 49
 
 :::{.callout-note}
@@ -1605,7 +1603,7 @@ Parameters derived from mathematical formulas and economic models.
 
 **Description**: Time to invest (minutes)
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#action-steps](knowledge/solution/wishocracy.qmd#action-steps)
+**Methodology**: [../solution/wishocracy.qmd#action-steps](../solution/wishocracy.qmd#action-steps)
 
 **Confidence**: ✓ High confidence
 
@@ -1617,7 +1615,7 @@ Parameters derived from mathematical formulas and economic models.
 
 **Description**: Time to recruit others (minutes)
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#action-steps](knowledge/solution/wishocracy.qmd#action-steps)
+**Methodology**: [../solution/wishocracy.qmd#action-steps](../solution/wishocracy.qmd#action-steps)
 
 **Confidence**: ✓ High confidence
 
@@ -1635,7 +1633,7 @@ $$
 Hours = 27 / 60 = 0.45 \text{ hours}
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#action-steps](knowledge/solution/wishocracy.qmd#action-steps)
+**Methodology**: [../solution/wishocracy.qmd#action-steps](../solution/wishocracy.qmd#action-steps)
 
 **Confidence**: ✓ High confidence
 
@@ -1653,7 +1651,7 @@ $$
 TotalTime = 2 + 10 + 15 = 27 \text{ minutes}
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#action-steps](knowledge/solution/wishocracy.qmd#action-steps)
+**Methodology**: [../solution/wishocracy.qmd#action-steps](../solution/wishocracy.qmd#action-steps)
 
 **Confidence**: ✓ High confidence
 
@@ -1665,7 +1663,7 @@ $$
 
 **Description**: Time to vote (minutes)
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#action-steps](knowledge/solution/wishocracy.qmd#action-steps)
+**Methodology**: [../solution/wishocracy.qmd#action-steps](../solution/wishocracy.qmd#action-steps)
 
 **Confidence**: ✓ High confidence
 
@@ -1689,7 +1687,7 @@ $$
 
 **Description**: Annual benefit from R&D savings passed to consumers
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#price-reduction](knowledge/appendix/dfda-cost-benefit-analysis.qmd#price-reduction)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#price-reduction](../appendix/dfda-cost-benefit-analysis.qmd#price-reduction)
 
 **Confidence**: ✓ High confidence
 
@@ -1701,7 +1699,7 @@ $$
 
 **Description**: Annual benefit from 7-year drug access acceleration
 
-**Methodology**: [knowledge/appendix/economic-value-of-accelerated-treatments.qmd](knowledge/appendix/economic-value-of-accelerated-treatments.qmd)
+**Methodology**: [../appendix/economic-value-of-accelerated-treatments.qmd](../appendix/economic-value-of-accelerated-treatments.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1713,7 +1711,7 @@ $$
 
 **Description**: Annual benefit from 115x research capacity increase
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd](knowledge/appendix/research-acceleration-model.qmd)
+**Methodology**: [../appendix/research-acceleration-model.qmd](../appendix/research-acceleration-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1725,7 +1723,7 @@ $$
 
 **Description**: Annual benefit from mental health treatment gap reduction
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#mental-health](knowledge/appendix/dfda-qaly-model.qmd#mental-health)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#mental-health](../appendix/dfda-qaly-model.qmd#mental-health)
 
 **Confidence**: ✓ High confidence
 
@@ -1737,7 +1735,7 @@ $$
 
 **Description**: Annual benefit from economic viability of prevention
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#prevention](knowledge/appendix/dfda-qaly-model.qmd#prevention)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#prevention](../appendix/dfda-qaly-model.qmd#prevention)
 
 **Confidence**: ✓ High confidence
 
@@ -1749,7 +1747,7 @@ $$
 
 **Description**: Annual benefit from orphan drug viability
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#rare-diseases](knowledge/appendix/dfda-qaly-model.qmd#rare-diseases)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#rare-diseases](../appendix/dfda-qaly-model.qmd#rare-diseases)
 
 **Confidence**: ✓ High confidence
 
@@ -1767,7 +1765,7 @@ $$
 R\&D_{savings} = \$50B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
 
 **Confidence**: ✓ High confidence
 
@@ -1785,7 +1783,7 @@ $$
 ReadTime = \frac{171,121 / 200}{60} \approx 14.3 \text{ hours}
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#time-investment](knowledge/solution/wishocracy.qmd#time-investment)
+**Methodology**: [../solution/wishocracy.qmd#time-investment](../solution/wishocracy.qmd#time-investment)
 
 **Confidence**: ✓ High confidence
 
@@ -1797,7 +1795,7 @@ $$
 
 **Description**: Celebrity and influencer endorsements
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1809,7 +1807,7 @@ $$
 
 **Description**: Community organizing and ambassador program budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1821,7 +1819,7 @@ $$
 
 **Description**: Contingency fund for unexpected costs
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1833,7 +1831,7 @@ $$
 
 **Description**: Defense industry conversion program
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1845,7 +1843,7 @@ $$
 
 **Description**: Budget for co-opting defense industry lobbyists
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1857,7 +1855,7 @@ $$
 
 **Description**: Healthcare industry alignment and partnerships
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1869,7 +1867,7 @@ $$
 
 **Description**: Campaign operational infrastructure
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1881,7 +1879,7 @@ $$
 
 **Description**: AI-assisted legal work budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1893,7 +1891,7 @@ $$
 
 **Description**: Legal defense fund
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1905,7 +1903,7 @@ $$
 
 **Description**: Legal drafting and compliance work
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1917,7 +1915,7 @@ $$
 
 **Description**: EU lobbying campaign budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1929,7 +1927,7 @@ $$
 
 **Description**: G20 countries lobbying budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1941,7 +1939,7 @@ $$
 
 **Description**: US lobbying campaign budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1953,7 +1951,7 @@ $$
 
 **Description**: Maximum mass media campaign budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1965,7 +1963,7 @@ $$
 
 **Description**: Minimum mass media campaign budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1977,7 +1975,7 @@ $$
 
 **Description**: Opposition research and rapid response
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -1989,7 +1987,7 @@ $$
 
 **Description**: Phase 1 campaign budget (Foundation, Year 1)
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2001,7 +1999,7 @@ $$
 
 **Description**: Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2013,7 +2011,7 @@ $$
 
 **Description**: Pilot program testing in small countries
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2025,7 +2023,7 @@ $$
 
 **Description**: Voting platform and technology development
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2037,7 +2035,7 @@ $$
 
 **Description**: Regulatory compliance and navigation
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2049,7 +2047,7 @@ $$
 
 **Description**: Scaling preparation and blueprints
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2061,7 +2059,7 @@ $$
 
 **Description**: Campaign core team staff budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2073,7 +2071,7 @@ $$
 
 **Description**: Super PAC campaign expenditures
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2085,7 +2083,7 @@ $$
 
 **Description**: Tech industry partnerships and infrastructure
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2097,7 +2095,7 @@ $$
 
 **Description**: Post-victory treaty implementation support
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2109,7 +2107,7 @@ $$
 
 **Description**: Viral marketing content creation budget
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2121,7 +2119,7 @@ $$
 
 **Description**: Weekly advertising cost for campaigns
 
-**Methodology**: [knowledge/economics/campaign-budget.qmd](knowledge/economics/campaign-budget.qmd)
+**Methodology**: [../economics/campaign-budget.qmd](../economics/campaign-budget.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2139,7 +2137,7 @@ $$
 Combined = \$113.55B + \$50B = \$163.55B
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends](../appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends)
 
 **Confidence**: ✓ High confidence
 
@@ -2151,7 +2149,7 @@ $$
 
 **Description**: Actual completed trials multiplier (180x theoretical)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#total-multiplier](knowledge/appendix/research-acceleration-model.qmd#total-multiplier)
+**Methodology**: [../appendix/research-acceleration-model.qmd#total-multiplier](../appendix/research-acceleration-model.qmd#total-multiplier)
 
 **Confidence**: ✓ High confidence
 
@@ -2163,7 +2161,7 @@ $$
 
 **Description**: Conservative completed trials multiplier accounting for scale-up
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier](knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier)
+**Methodology**: [../appendix/research-acceleration-model.qmd#conservative-multiplier](../appendix/research-acceleration-model.qmd#conservative-multiplier)
 
 **Confidence**: ✓ High confidence
 
@@ -2177,7 +2175,7 @@ $$
 
 **Formula**: `RECRUITMENT_SPEED × COMPLETION_SPEED × COMPLETION_RATE × FUNDING`
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum](knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum)
+**Methodology**: [../appendix/research-acceleration-model.qmd#theoretical-maximum](../appendix/research-acceleration-model.qmd#theoretical-maximum)
 
 **Confidence**: ✓ High confidence
 
@@ -2189,7 +2187,7 @@ $$
 
 **Description**: Completion rate improvement (1.6x from 60% → 95%)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#completion-rates](knowledge/appendix/research-acceleration-model.qmd#completion-rates)
+**Methodology**: [../appendix/research-acceleration-model.qmd#completion-rates](../appendix/research-acceleration-model.qmd#completion-rates)
 
 **Confidence**: ✓ High confidence
 
@@ -2207,7 +2205,7 @@ $$
 ROI_{conservative} = \$74.6B / \$0.393B = 190:1
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -2225,7 +2223,7 @@ $$
 Delay_{deaths} = \frac{150,000}{86,400} \approx 1.74
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#cost-of-delay](knowledge/problem/cost-of-war.qmd#cost-of-delay)
+**Methodology**: [../problem/cost-of-war.qmd#cost-of-delay](../problem/cost-of-war.qmd#cost-of-delay)
 
 **Confidence**: ✓ High confidence
 
@@ -2243,7 +2241,7 @@ $$
 Delay_{QALY} = \frac{925,610 / 365}{31,557,600} \approx 0.00008
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#cost-of-delay](knowledge/problem/cost-of-war.qmd#cost-of-delay)
+**Methodology**: [../problem/cost-of-war.qmd#cost-of-delay](../problem/cost-of-war.qmd#cost-of-delay)
 
 **Confidence**: ✓ High confidence
 
@@ -2255,7 +2253,7 @@ $$
 
 **Description**: Cost per life for investor-funded scenario
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
 
 **Confidence**: ✓ High confidence
 
@@ -2267,7 +2265,7 @@ $$
 
 **Description**: Cost per life counting military spending opportunity cost
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
 
 **Confidence**: ✓ High confidence
 
@@ -2285,7 +2283,7 @@ $$
 Completed_{current} = 3,300 \times 0.60 = 1,980
 $$
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#current-capacity](knowledge/appendix/research-acceleration-model.qmd#current-capacity)
+**Methodology**: [../appendix/research-acceleration-model.qmd#current-capacity](../appendix/research-acceleration-model.qmd#current-capacity)
 
 **Confidence**: ✓ High confidence
 
@@ -2297,7 +2295,7 @@ $$
 
 **Description**: Daily cost of healthcare system inefficiency
 
-**Methodology**: [knowledge/solution/dfda.qmd#cost-of-delay](knowledge/solution/dfda.qmd#cost-of-delay)
+**Methodology**: [../solution/dfda.qmd#cost-of-delay](../solution/dfda.qmd#cost-of-delay)
 
 **Confidence**: ✓ High confidence
 
@@ -2309,7 +2307,7 @@ $$
 
 **Description**: Mid-range funding for commercial DCT platform
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom](knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#analogous-rom](../appendix/dfda-cost-benefit-analysis.qmd#analogous-rom)
 
 **Confidence**: ✓ High confidence
 
@@ -2321,7 +2319,7 @@ $$
 
 **Description**: Deaths from curable diseases during reading one section
 
-**Methodology**: [knowledge/solution/dfda.qmd#cost-of-delay](knowledge/solution/dfda.qmd#cost-of-delay)
+**Methodology**: [../solution/dfda.qmd#cost-of-delay](../solution/dfda.qmd#cost-of-delay)
 
 **Confidence**: ✓ High confidence
 
@@ -2333,7 +2331,7 @@ $$
 
 **Description**: Misallocation factor for spending on death vs prevention
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#misallocation](knowledge/problem/cost-of-war.qmd#misallocation)
+**Methodology**: [../problem/cost-of-war.qmd#misallocation](../problem/cost-of-war.qmd#misallocation)
 
 **Confidence**: ✓ High confidence
 
@@ -2345,7 +2343,7 @@ $$
 
 **Description**: Active trials at any given time (3-12 month duration)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#dfda-capacity](knowledge/appendix/research-acceleration-model.qmd#dfda-capacity)
+**Methodology**: [../appendix/research-acceleration-model.qmd#dfda-capacity](../appendix/research-acceleration-model.qmd#dfda-capacity)
 
 **Confidence**: ✓ High confidence
 
@@ -2363,7 +2361,7 @@ $$
 OPEX_{total} = \sum_{i=1}^{5} OPEX_i = 0.015 + 0.010 + 0.008 + 0.005 + 0.002
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
 
 **Confidence**: ✓ High confidence
 
@@ -2381,7 +2379,7 @@ $$
 Completed_{dFDA} = 380,000 \times 0.95 = 361,000
 $$
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#dfda-capacity](knowledge/appendix/research-acceleration-model.qmd#dfda-capacity)
+**Methodology**: [../appendix/research-acceleration-model.qmd#dfda-capacity](../appendix/research-acceleration-model.qmd#dfda-capacity)
 
 **Confidence**: ✓ High confidence
 
@@ -2393,7 +2391,7 @@ $$
 
 **Description**: Optimistic drug approvals estimate (40x current)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#approval-projections](knowledge/appendix/research-acceleration-model.qmd#approval-projections)
+**Methodology**: [../appendix/research-acceleration-model.qmd#approval-projections](../appendix/research-acceleration-model.qmd#approval-projections)
 
 **Confidence**: ✓ High confidence
 
@@ -2405,7 +2403,7 @@ $$
 
 **Description**: Conservative drug approvals estimate (20x current)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#approval-projections](knowledge/appendix/research-acceleration-model.qmd#approval-projections)
+**Methodology**: [../appendix/research-acceleration-model.qmd#approval-projections](../appendix/research-acceleration-model.qmd#approval-projections)
 
 **Confidence**: ✓ High confidence
 
@@ -2417,7 +2415,7 @@ $$
 
 **Description**: Global eligible patients with minimal exclusions
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#eligible-population](knowledge/appendix/research-acceleration-model.qmd#eligible-population)
+**Methodology**: [../appendix/research-acceleration-model.qmd#eligible-population](../appendix/research-acceleration-model.qmd#eligible-population)
 
 **Confidence**: ✓ High confidence
 
@@ -2435,7 +2433,7 @@ $$
 Savings_{gross} = \$100B \times 0.50 = \$50B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
 
 **Confidence**: ✓ High confidence
 
@@ -2453,7 +2451,7 @@ $$
 \text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis](knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis)
 
 **Confidence**: ✓ High confidence
 
@@ -2465,7 +2463,7 @@ $$
 
 **Description**: Months to recruit 10,000+ patients in dFDA system
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#recruitment-speed](knowledge/appendix/research-acceleration-model.qmd#recruitment-speed)
+**Methodology**: [../appendix/research-acceleration-model.qmd#recruitment-speed](../appendix/research-acceleration-model.qmd#recruitment-speed)
 
 **Confidence**: ✓ High confidence
 
@@ -2477,7 +2475,7 @@ $$
 
 **Description**: Large dFDA pragmatic trial size
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#trial-sizes](knowledge/appendix/research-acceleration-model.qmd#trial-sizes)
+**Methodology**: [../appendix/research-acceleration-model.qmd#trial-sizes](../appendix/research-acceleration-model.qmd#trial-sizes)
 
 **Confidence**: ✓ High confidence
 
@@ -2495,7 +2493,7 @@ $$
 NetCost = \$0.040B - \$50.0B = -\$49.96B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost](knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost](../appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -2513,7 +2511,7 @@ $$
 Savings_{net} = \$50B - \$0.04B = \$49.96B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings](knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#net-savings](../appendix/dfda-cost-benefit-analysis.qmd#net-savings)
 
 **Confidence**: ✓ High confidence
 
@@ -2525,7 +2523,7 @@ $$
 
 **Description**: Years to reach full dFDA adoption
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve](knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#adoption-curve](../appendix/dfda-cost-benefit-analysis.qmd#adoption-curve)
 
 **Confidence**: ✓ High confidence
 
@@ -2537,7 +2535,7 @@ $$
 
 **Description**: dFDA core platform annual opex (midpoint of $11-26.5M)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-costs](../appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2555,7 +2553,25 @@ $$
 C_{op} = \$0.01895B + \$0.02110B = \$0.04005B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-costs](../appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+
+**Confidence**: ✓ High confidence
+
+---
+
+## Dfda Npv Benefit {#sec-dfda_npv_benefit}
+
+**Value**: $249B
+
+**Description**: NPV of dFDA benefits with 5-year adoption ramp (10-year horizon)
+
+**Formula**:
+
+$$
+PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-benefit](../appendix/dfda-cost-benefit-analysis.qmd#npv-benefit)
 
 **Confidence**: ✓ High confidence
 
@@ -2565,15 +2581,15 @@ $$
 
 **Value**: $249B
 
-**Description**: Conservative NPV net benefit (total cost × ROI)
+**Description**: Conservative NPV benefit from dFDA R&D savings (10-year discounted with adoption ramp)
 
 **Formula**:
 
 $$
-NetBenefit_{NPV} = \$0.54B \times 463 \approx \$249B
+Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit](../appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit)
 
 **Confidence**: ✓ High confidence
 
@@ -2591,7 +2607,7 @@ $$
 PV_{opex} = \$0.04005B \times \frac{1 - 1.08^{-10}}{0.08} \approx \$0.269B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-calculation](../appendix/dfda-cost-benefit-analysis.qmd#npv-calculation)
 
 **Confidence**: ✓ High confidence
 
@@ -2609,7 +2625,7 @@ $$
 TotalCost_{NPV} = \$0.26975B + \$0.269B \approx \$0.54B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost](../appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -2621,7 +2637,7 @@ $$
 
 **Description**: dFDA core platform build cost
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-costs](../appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2639,7 +2655,7 @@ $$
 C_0 = \$0.040B + \$0.22975B = \$0.26975B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-costs](../appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2651,7 +2667,7 @@ $$
 
 **Description**: dFDA community support costs
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
 
 **Confidence**: ✓ High confidence
 
@@ -2663,7 +2679,7 @@ $$
 
 **Description**: dFDA infrastructure costs (cloud, security)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
 
 **Confidence**: ✓ High confidence
 
@@ -2675,7 +2691,7 @@ $$
 
 **Description**: dFDA platform maintenance costs
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
 
 **Confidence**: ✓ High confidence
 
@@ -2687,7 +2703,7 @@ $$
 
 **Description**: dFDA regulatory coordination costs
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
 
 **Confidence**: ✓ High confidence
 
@@ -2699,7 +2715,7 @@ $$
 
 **Description**: dFDA staff costs (minimal, AI-assisted)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown](../appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown)
 
 **Confidence**: ✓ High confidence
 
@@ -2717,7 +2733,7 @@ $$
 Value_{QALY} = 840,000 \times \$150,000 / 10^9 = \$126B
 $$
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#monetized-value](knowledge/appendix/dfda-qaly-model.qmd#monetized-value)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#monetized-value](../appendix/dfda-qaly-model.qmd#monetized-value)
 
 **Confidence**: ✓ High confidence
 
@@ -2735,7 +2751,7 @@ $$
 ROI_{simple} = \frac{\$50B}{\$0.04B} = 1,250:1
 $$
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple](knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#roi-simple](../appendix/dfda-cost-benefit-analysis.qmd#roi-simple)
 
 **Confidence**: ✓ High confidence
 
@@ -2747,7 +2763,7 @@ $$
 
 **Description**: Weeks to recruit 1,000 patients in dFDA system
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#recruitment-speed](knowledge/appendix/research-acceleration-model.qmd#recruitment-speed)
+**Methodology**: [../appendix/research-acceleration-model.qmd#recruitment-speed](../appendix/research-acceleration-model.qmd#recruitment-speed)
 
 **Confidence**: ✓ High confidence
 
@@ -2759,7 +2775,7 @@ $$
 
 **Description**: Typical dFDA trial size
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#trial-sizes](knowledge/appendix/research-acceleration-model.qmd#trial-sizes)
+**Methodology**: [../appendix/research-acceleration-model.qmd#trial-sizes](../appendix/research-acceleration-model.qmd#trial-sizes)
 
 **Confidence**: ✓ High confidence
 
@@ -2771,7 +2787,7 @@ $$
 
 **Description**: Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient](knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient](../appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient)
 
 **Confidence**: ✓ High confidence
 
@@ -2783,7 +2799,7 @@ $$
 
 **Description**: Maximum trials per year possible with 115x acceleration
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#dfda-capacity](knowledge/appendix/research-acceleration-model.qmd#dfda-capacity)
+**Methodology**: [../appendix/research-acceleration-model.qmd#dfda-capacity](../appendix/research-acceleration-model.qmd#dfda-capacity)
 
 **Confidence**: ✓ High confidence
 
@@ -2795,7 +2811,7 @@ $$
 
 **Description**: dFDA platform one-time build cost (central estimate)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#build-costs](../appendix/dfda-cost-benefit-analysis.qmd#build-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2807,7 +2823,7 @@ $$
 
 **Description**: dFDA platform one-time build cost (high estimate)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#build-costs](../appendix/dfda-cost-benefit-analysis.qmd#build-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2819,7 +2835,7 @@ $$
 
 **Description**: Estimated one-time payment for diabetes cure
 
-**Methodology**: [knowledge/economics/health-savings-sharing-model.qmd](knowledge/economics/health-savings-sharing-model.qmd)
+**Methodology**: [../economics/health-savings-sharing-model.qmd](../economics/health-savings-sharing-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2831,7 +2847,7 @@ $$
 
 **Description**: DIH broader initiatives annual opex (medium case)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-costs](../appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2843,7 +2859,7 @@ $$
 
 **Description**: DIH broader initiatives upfront cost (medium case)
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs](knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-costs](../appendix/dfda-cost-benefit-analysis.qmd#npv-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -2855,7 +2871,7 @@ $$
 
 **Description**: Maximum annual clinical trial subsidies from DIH Treasury
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies](knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies](../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies)
 
 **Confidence**: ✓ High confidence
 
@@ -2867,7 +2883,7 @@ $$
 
 **Description**: Minimum annual clinical trial subsidies from DIH Treasury
 
-**Methodology**: [knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies](knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies](../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies)
 
 **Confidence**: ✓ High confidence
 
@@ -2893,7 +2909,7 @@ $$
 
 **Formula**: `ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS`
 
-**Methodology**: [knowledge/economics/economics.qmd](knowledge/economics/economics.qmd)
+**Methodology**: [../economics/economics.qmd](../economics/economics.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2907,7 +2923,7 @@ $$
 
 **Formula**: `ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS`
 
-**Methodology**: [knowledge/economics/economics.qmd](knowledge/economics/economics.qmd)
+**Methodology**: [../economics/economics.qmd](../economics/economics.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2925,7 +2941,7 @@ $$
 Coverage = \$27.18B / \$0.04B = 679x
 $$
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#sustainability](knowledge/strategy/roadmap.qmd#sustainability)
+**Methodology**: [../strategy/roadmap.qmd#sustainability](../strategy/roadmap.qmd#sustainability)
 
 **Confidence**: ✓ High confidence
 
@@ -2937,7 +2953,7 @@ $$
 
 **Description**: High estimate of annual savings from drug price reductions (50% reduction of $360B U.S. spending)
 
-**Methodology**: [knowledge/economics/economics.qmd#complete-case-roi](knowledge/economics/economics.qmd#complete-case-roi)
+**Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
 
 **Confidence**: ✓ High confidence
 
@@ -2949,7 +2965,7 @@ $$
 
 **Description**: Low estimate of annual savings from drug price reductions (20% reduction of $360B U.S. spending)
 
-**Methodology**: [knowledge/economics/economics.qmd#complete-case-roi](knowledge/economics/economics.qmd#complete-case-roi)
+**Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
 
 **Confidence**: ✓ High confidence
 
@@ -2967,7 +2983,7 @@ $$
 HourlyRate = \frac{\$4,300,000}{14.75} \approx \$291,525/hr
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#effective-hourly-rate](knowledge/solution/wishocracy.qmd#effective-hourly-rate)
+**Methodology**: [../solution/wishocracy.qmd#effective-hourly-rate](../solution/wishocracy.qmd#effective-hourly-rate)
 
 **Confidence**: ✓ High confidence
 
@@ -2985,7 +3001,7 @@ $$
 Benefit = \$4.3M \times 10^6 = \$4,300,000
 $$
 
-**Methodology**: [knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
+**Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -2997,7 +3013,7 @@ $$
 
 **Description**: Lifetime benefit for age 30 baseline scenario
 
-**Methodology**: [knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
+**Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3015,7 +3031,7 @@ $$
 Multiplier = \frac{\$291,525}{\$10,000} \approx 29x
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#effective-hourly-rate](knowledge/solution/wishocracy.qmd#effective-hourly-rate)
+**Methodology**: [../solution/wishocracy.qmd#effective-hourly-rate](../solution/wishocracy.qmd#effective-hourly-rate)
 
 **Confidence**: ✓ High confidence
 
@@ -3033,7 +3049,7 @@ $$
 Multiplier = \frac{\$291,525}{\$30} \approx 9,718x
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#effective-hourly-rate](knowledge/solution/wishocracy.qmd#effective-hourly-rate)
+**Methodology**: [../solution/wishocracy.qmd#effective-hourly-rate](../solution/wishocracy.qmd#effective-hourly-rate)
 
 **Confidence**: ✓ High confidence
 
@@ -3045,7 +3061,7 @@ $$
 
 **Description**: Minimum investment for family offices
 
-**Methodology**: [knowledge/economics/victory-bonds.qmd](knowledge/economics/victory-bonds.qmd)
+**Methodology**: [../economics/victory-bonds.qmd](../economics/victory-bonds.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3063,7 +3079,7 @@ $$
 Deaths_{total} = 233,600 + 8,300 + 2,700 = 244,600
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#death-accounting](knowledge/problem/cost-of-war.qmd#death-accounting)
+**Methodology**: [../problem/cost-of-war.qmd#death-accounting](../problem/cost-of-war.qmd#death-accounting)
 
 **Confidence**: ✓ High confidence
 
@@ -3077,7 +3093,7 @@ $$
 
 **Formula**: `GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365`
 
-**Methodology**: [knowledge/economics/economics.qmd](knowledge/economics/economics.qmd)
+**Methodology**: [../economics/economics.qmd](../economics/economics.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3095,7 +3111,7 @@ $$
 Cost_{combat} = 233,600 \times \$10M / 10^9 = \$2,336B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#human-cost](knowledge/problem/cost-of-war.qmd#human-cost)
+**Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -3113,7 +3129,7 @@ $$
 Cost_{state} = 2,700 \times \$10M / 10^9 = \$27B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#human-cost](knowledge/problem/cost-of-war.qmd#human-cost)
+**Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -3131,7 +3147,7 @@ $$
 Cost_{terror} = 8,300 \times \$10M / 10^9 = \$83B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#human-cost](knowledge/problem/cost-of-war.qmd#human-cost)
+**Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -3149,7 +3165,7 @@ $$
 Cost_{human} = \$2,336B + \$83B + \$27B = \$2,446B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#human-cost](knowledge/problem/cost-of-war.qmd#human-cost)
+**Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -3167,7 +3183,7 @@ $$
 Infra_{damage} = \$487.3B + \$421.7B + \$298.1B + \$267.8B + \$234.5B + \$165.6B = \$1,875B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#infrastructure-damage](knowledge/problem/cost-of-war.qmd#infrastructure-damage)
+**Methodology**: [../problem/cost-of-war.qmd#infrastructure-damage](../problem/cost-of-war.qmd#infrastructure-damage)
 
 **Confidence**: ✓ High confidence
 
@@ -3185,7 +3201,7 @@ $$
 Trade_{disruption} = \$247.1B + \$186.8B + \$124.7B + \$57.4B = \$616B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#trade-disruption](knowledge/problem/cost-of-war.qmd#trade-disruption)
+**Methodology**: [../problem/cost-of-war.qmd#trade-disruption](../problem/cost-of-war.qmd#trade-disruption)
 
 **Confidence**: ✓ High confidence
 
@@ -3203,7 +3219,7 @@ $$
 DirectCosts = \$2,718B + \$1,875B + \$2,446B + \$616B = \$7,655B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#direct-costs](knowledge/problem/cost-of-war.qmd#direct-costs)
+**Methodology**: [../problem/cost-of-war.qmd#direct-costs](../problem/cost-of-war.qmd#direct-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -3221,7 +3237,7 @@ $$
 IndirectCosts = \$2,718B + \$200.1B + \$150B + \$100B + \$232B + \$300B = \$3,700.1B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#indirect-costs](knowledge/problem/cost-of-war.qmd#indirect-costs)
+**Methodology**: [../problem/cost-of-war.qmd#indirect-costs](../problem/cost-of-war.qmd#indirect-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -3239,7 +3255,7 @@ $$
 TotalWarCost = \$7,655B + \$3,700.1B = \$11,355.1B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#total-cost](knowledge/problem/cost-of-war.qmd#total-cost)
+**Methodology**: [../problem/cost-of-war.qmd#total-cost](../problem/cost-of-war.qmd#total-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -3257,7 +3273,7 @@ $$
 CostPerDeath = \frac{\$11,355.1B \times 10^9}{244,600} / 10^6 \approx \$46.4M
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#grotesque-mathematics](knowledge/problem/cost-of-war.qmd#grotesque-mathematics)
+**Methodology**: [../problem/cost-of-war.qmd#grotesque-mathematics](../problem/cost-of-war.qmd#grotesque-mathematics)
 
 **Confidence**: ✓ High confidence
 
@@ -3275,7 +3291,7 @@ $$
 CostPerLifeSaved = \frac{\$67.5B \times 10^9}{4,200,000} \approx \$16,071
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#grotesque-mathematics](knowledge/problem/cost-of-war.qmd#grotesque-mathematics)
+**Methodology**: [../problem/cost-of-war.qmd#grotesque-mathematics](../problem/cost-of-war.qmd#grotesque-mathematics)
 
 **Confidence**: ✓ High confidence
 
@@ -3287,7 +3303,7 @@ $$
 
 **Description**: Annual QALYs gained from dFDA
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd](knowledge/appendix/dfda-qaly-model.qmd)
+**Methodology**: [../appendix/dfda-qaly-model.qmd](../appendix/dfda-qaly-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3305,7 +3321,7 @@ $$
 PerCapita_{military} = \$2,718B / 8.0B = \$339.75
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#per-capita](knowledge/problem/cost-of-war.qmd#per-capita)
+**Methodology**: [../problem/cost-of-war.qmd#per-capita](../problem/cost-of-war.qmd#per-capita)
 
 **Confidence**: ✓ High confidence
 
@@ -3323,7 +3339,7 @@ $$
 PostTreaty_{military} = \$2,718B \times 0.99 = \$2,690.82B
 $$
 
-**Methodology**: [knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty](knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty)
+**Methodology**: [../strategy/treaty-adoption-strategy.qmd#post-treaty](../strategy/treaty-adoption-strategy.qmd#post-treaty)
 
 **Confidence**: ✓ High confidence
 
@@ -3337,7 +3353,7 @@ $$
 
 **Formula**: `WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN`
 
-**Methodology**: [knowledge/appendix/humanity-budget-overview.qmd](knowledge/appendix/humanity-budget-overview.qmd)
+**Methodology**: [../appendix/humanity-budget-overview.qmd](../appendix/humanity-budget-overview.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3355,7 +3371,7 @@ $$
 PerCapita_{war} = \$11,355.1B / 8.0B = \$1,419.39
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#per-capita](knowledge/problem/cost-of-war.qmd#per-capita)
+**Methodology**: [../problem/cost-of-war.qmd#per-capita](../problem/cost-of-war.qmd#per-capita)
 
 **Confidence**: ✓ High confidence
 
@@ -3373,7 +3389,7 @@ $$
 CostPerSecond = \frac{\$7,655B \times 10^9}{31,557,600} \approx \$242,749
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#cost-per-second](knowledge/problem/cost-of-war.qmd#cost-per-second)
+**Methodology**: [../problem/cost-of-war.qmd#cost-per-second](../problem/cost-of-war.qmd#cost-per-second)
 
 **Confidence**: ✓ High confidence
 
@@ -3385,7 +3401,7 @@ $$
 
 **Description**: Minimum investment for high net worth individuals
 
-**Methodology**: [knowledge/economics/victory-bonds.qmd](knowledge/economics/victory-bonds.qmd)
+**Methodology**: [../economics/victory-bonds.qmd](../economics/victory-bonds.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3397,7 +3413,7 @@ $$
 
 **Description**: ICER for investor-funded scenario (VICTORY Social Impact Bonds)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
 
 **Confidence**: ✓ High confidence
 
@@ -3409,7 +3425,7 @@ $$
 
 **Description**: ICER counting redirected military spending as opportunity cost
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer)
 
 **Confidence**: ✓ High confidence
 
@@ -3423,7 +3439,7 @@ $$
 
 **Formula**: `(TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL`
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation)
 
 **Confidence**: ✓ High confidence
 
@@ -3435,7 +3451,7 @@ $$
 
 **Description**: Minimum investment for institutional investors
 
-**Methodology**: [knowledge/economics/victory-bonds.qmd](knowledge/economics/victory-bonds.qmd)
+**Methodology**: [../economics/victory-bonds.qmd](../economics/victory-bonds.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3453,7 +3469,7 @@ $$
 Lifetime_{war} = \$1,419.39 \times 80 = \$113,551
 $$
 
-**Methodology**: [knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost](knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost)
+**Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -3465,7 +3481,7 @@ $$
 
 **Description**: Maximum bond investment for lobbyist incentives
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#lobbyist-incentives](knowledge/strategy/roadmap.qmd#lobbyist-incentives)
+**Methodology**: [../strategy/roadmap.qmd#lobbyist-incentives](../strategy/roadmap.qmd#lobbyist-incentives)
 
 **Confidence**: ✓ High confidence
 
@@ -3477,7 +3493,7 @@ $$
 
 **Description**: Minimum bond investment for lobbyist incentives
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#lobbyist-incentives](knowledge/strategy/roadmap.qmd#lobbyist-incentives)
+**Methodology**: [../strategy/roadmap.qmd#lobbyist-incentives](../strategy/roadmap.qmd#lobbyist-incentives)
 
 **Confidence**: ✓ High confidence
 
@@ -3489,7 +3505,7 @@ $$
 
 **Description**: 30-year savings from longevity therapy per person
 
-**Methodology**: [knowledge/economics/health-savings-sharing-model.qmd](knowledge/economics/health-savings-sharing-model.qmd)
+**Methodology**: [../economics/health-savings-sharing-model.qmd](../economics/health-savings-sharing-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3503,7 +3519,7 @@ $$
 
 **Formula**: `MED_RESEARCH ÷ TOTAL_BURDEN`
 
-**Methodology**: [knowledge/economics/economics.qmd](knowledge/economics/economics.qmd)
+**Methodology**: [../economics/economics.qmd](../economics/economics.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3521,7 +3537,7 @@ $$
 Ratio = \frac{\$2,718B}{\$67.5B} \approx 40.3:1
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#misallocation](knowledge/problem/cost-of-war.qmd#misallocation)
+**Methodology**: [../problem/cost-of-war.qmd#misallocation](../problem/cost-of-war.qmd#misallocation)
 
 **Confidence**: ✓ High confidence
 
@@ -3539,7 +3555,7 @@ $$
 Misallocation = \frac{\$46.4M}{\$16,071} \approx 2,889x
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#grotesque-mathematics](knowledge/problem/cost-of-war.qmd#grotesque-mathematics)
+**Methodology**: [../problem/cost-of-war.qmd#grotesque-mathematics](../problem/cost-of-war.qmd#grotesque-mathematics)
 
 **Confidence**: ✓ High confidence
 
@@ -3557,7 +3573,7 @@ $$
 Multiplier = \frac{|-\$6.19M \times 10^9|}{\$4,500} \approx 1,376x
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison](../appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison)
 
 **Confidence**: ✓ High confidence
 
@@ -3575,7 +3591,7 @@ $$
 BenefitPerLife = -\$59,476 ÷ 1M \times 35 = -\$2.08M
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life)
 
 **Confidence**: ✓ High confidence
 
@@ -3589,7 +3605,7 @@ $$
 
 **Formula**: `TREATY_COMPLETE_CASE_ANNUAL_BENEFITS ÷ 365`
 
-**Methodology**: [knowledge/economics/economics.qmd#the-opportunity-cost-clock](knowledge/economics/economics.qmd#the-opportunity-cost-clock)
+**Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
 
 **Confidence**: ✓ High confidence
 
@@ -3603,7 +3619,7 @@ $$
 
 **Formula**: `TREATY_COMPLETE_CASE_ANNUAL_BENEFITS × 1B ÷ SECONDS_PER_YEAR`
 
-**Methodology**: [knowledge/economics/economics.qmd#the-opportunity-cost-clock](knowledge/economics/economics.qmd#the-opportunity-cost-clock)
+**Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
 
 **Confidence**: ✓ High confidence
 
@@ -3621,7 +3637,7 @@ $$
 ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -3639,7 +3655,7 @@ $$
 Payout_{partial} = \$13.59B \times 0.10 = \$1.36B
 $$
 
-**Methodology**: [knowledge/strategy/treaty-adoption-strategy.qmd#partial-success](knowledge/strategy/treaty-adoption-strategy.qmd#partial-success)
+**Methodology**: [../strategy/treaty-adoption-strategy.qmd#partial-success](../strategy/treaty-adoption-strategy.qmd#partial-success)
 
 **Confidence**: ✓ High confidence
 
@@ -3657,7 +3673,7 @@ $$
 Revenue_{partial} = \$2,718B \times 0.50 \times 0.01 = \$13.59B
 $$
 
-**Methodology**: [knowledge/strategy/treaty-adoption-strategy.qmd#partial-success](knowledge/strategy/treaty-adoption-strategy.qmd#partial-success)
+**Methodology**: [../strategy/treaty-adoption-strategy.qmd#partial-success](../strategy/treaty-adoption-strategy.qmd#partial-success)
 
 **Confidence**: ✓ High confidence
 
@@ -3675,7 +3691,7 @@ $$
 ROI_{partial} = \$1.36B / \$1B = 1.359 = 135.9\%
 $$
 
-**Methodology**: [knowledge/strategy/treaty-adoption-strategy.qmd#partial-success](knowledge/strategy/treaty-adoption-strategy.qmd#partial-success)
+**Methodology**: [../strategy/treaty-adoption-strategy.qmd#partial-success](../strategy/treaty-adoption-strategy.qmd#partial-success)
 
 **Confidence**: ✓ High confidence
 
@@ -3687,7 +3703,7 @@ $$
 
 **Description**: Military spending share for partial success scenario (US, EU, UK)
 
-**Methodology**: [knowledge/strategy/treaty-adoption-strategy.qmd#partial-success](knowledge/strategy/treaty-adoption-strategy.qmd#partial-success)
+**Methodology**: [../strategy/treaty-adoption-strategy.qmd#partial-success](../strategy/treaty-adoption-strategy.qmd#partial-success)
 
 **Confidence**: ✓ High confidence
 
@@ -3705,7 +3721,7 @@ $$
 Research_{partial} = \$13.59B \times 0.90 = \$12.23B
 $$
 
-**Methodology**: [knowledge/strategy/treaty-adoption-strategy.qmd#partial-success](knowledge/strategy/treaty-adoption-strategy.qmd#partial-success)
+**Methodology**: [../strategy/treaty-adoption-strategy.qmd#partial-success](../strategy/treaty-adoption-strategy.qmd#partial-success)
 
 **Confidence**: ✓ High confidence
 
@@ -3717,7 +3733,7 @@ $$
 
 **Description**: Maximum patient copay for cure
 
-**Methodology**: [knowledge/economics/health-savings-sharing-model.qmd](knowledge/economics/health-savings-sharing-model.qmd)
+**Methodology**: [../economics/health-savings-sharing-model.qmd](../economics/health-savings-sharing-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3735,7 +3751,7 @@ $$
 Peace\_Dividend = \$11,355B \times 0.01 = \$113.55B
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend](../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend)
 
 **Confidence**: ✓ High confidence
 
@@ -3749,7 +3765,7 @@ $$
 
 **Formula**: `DIRECT_COSTS × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3763,7 +3779,7 @@ $$
 
 **Formula**: `ENVIRONMENTAL_DAMAGE × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3777,7 +3793,7 @@ $$
 
 **Formula**: `HUMAN_LIFE_LOSSES × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3791,7 +3807,7 @@ $$
 
 **Formula**: `INDIRECT_COSTS × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3805,7 +3821,7 @@ $$
 
 **Formula**: `INFRASTRUCTURE_DESTRUCTION × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3819,7 +3835,7 @@ $$
 
 **Formula**: `LOST_ECONOMIC_GROWTH × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3833,7 +3849,7 @@ $$
 
 **Formula**: `LOST_HUMAN_CAPITAL × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3847,7 +3863,7 @@ $$
 
 **Formula**: `PTSD_COSTS × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3861,7 +3877,7 @@ $$
 
 **Formula**: `REFUGEE_SUPPORT × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3875,7 +3891,7 @@ $$
 
 **Formula**: `(PEACE_DIVIDEND + FUNDING) ÷ FUNDING`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3889,7 +3905,7 @@ $$
 
 **Formula**: `TRADE_DISRUPTION × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3903,7 +3919,7 @@ $$
 
 **Formula**: `VETERAN_HEALTHCARE × 1%`
 
-**Methodology**: [knowledge/economics/peace-dividend.qmd](knowledge/economics/peace-dividend.qmd)
+**Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3915,7 +3931,7 @@ $$
 
 **Description**: Pharma payment per cured patient in 50/50 model
 
-**Methodology**: [knowledge/economics/health-savings-sharing-model.qmd](knowledge/economics/health-savings-sharing-model.qmd)
+**Methodology**: [../economics/health-savings-sharing-model.qmd](../economics/health-savings-sharing-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -3927,7 +3943,7 @@ $$
 
 **Description**: System profit per life saved (specific calculation)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life)
 
 **Confidence**: ✓ High confidence
 
@@ -3939,7 +3955,7 @@ $$
 
 **Description**: Base case QALYs from faster drug access
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#base-case](knowledge/appendix/dfda-qaly-model.qmd#base-case)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#base-case](../appendix/dfda-qaly-model.qmd#base-case)
 
 **Confidence**: ✓ High confidence
 
@@ -3951,7 +3967,7 @@ $$
 
 **Description**: Conservative QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario](knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -3963,7 +3979,7 @@ $$
 
 **Description**: Optimistic QALYs from faster drug access
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario](knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -3975,7 +3991,7 @@ $$
 
 **Description**: Base case QALYs from enabling new therapies for rare/untreatable diseases
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#base-case](knowledge/appendix/dfda-qaly-model.qmd#base-case)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#base-case](../appendix/dfda-qaly-model.qmd#base-case)
 
 **Confidence**: ✓ High confidence
 
@@ -3987,7 +4003,7 @@ $$
 
 **Description**: Conservative QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario](knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -3999,7 +4015,7 @@ $$
 
 **Description**: Optimistic QALYs from new therapies
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario](knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4011,7 +4027,7 @@ $$
 
 **Description**: Base case QALYs from better prevention through real-world data
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#base-case](knowledge/appendix/dfda-qaly-model.qmd#base-case)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#base-case](../appendix/dfda-qaly-model.qmd#base-case)
 
 **Confidence**: ✓ High confidence
 
@@ -4023,7 +4039,7 @@ $$
 
 **Description**: Conservative QALYs from prevention (5M patients × 0.01 QALYs/patient)
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario](knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4035,7 +4051,7 @@ $$
 
 **Description**: Optimistic QALYs from prevention
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario](knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4047,7 +4063,7 @@ $$
 
 **Description**: Total conservative QALYs (90k + 50k + 50k)
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario](knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4059,7 +4075,7 @@ $$
 
 **Description**: Total optimistic QALYs (500k + 150k + 3M)
 
-**Methodology**: [knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario](knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario)
+**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4071,7 +4087,7 @@ $$
 
 **Description**: Minimum investment for qualified investors
 
-**Methodology**: [knowledge/economics/victory-bonds.qmd](knowledge/economics/victory-bonds.qmd)
+**Methodology**: [../economics/victory-bonds.qmd](../economics/victory-bonds.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4083,7 +4099,7 @@ $$
 
 **Description**: Recruitment speed multiplier (25x faster from 2% → 50% eligibility)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration](knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration)
+**Methodology**: [../appendix/research-acceleration-model.qmd#recruitment-acceleration](../appendix/research-acceleration-model.qmd#recruitment-acceleration)
 
 **Confidence**: ✓ High confidence
 
@@ -4101,7 +4117,7 @@ $$
 RefugeeLosses = \frac{108.4M \times \$23,400}{10^9} = \$2,536.6B
 $$
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd#refugee-costs](knowledge/problem/cost-of-war.qmd#refugee-costs)
+**Methodology**: [../problem/cost-of-war.qmd#refugee-costs](../problem/cost-of-war.qmd#refugee-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -4113,7 +4129,7 @@ $$
 
 **Description**: Total research capacity multiplier from dFDA
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd](knowledge/appendix/research-acceleration-model.qmd)
+**Methodology**: [../appendix/research-acceleration-model.qmd](../appendix/research-acceleration-model.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4125,7 +4141,13 @@ $$
 
 **Description**: ROI from all direct benefits (peace dividend + dFDA + health gains)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd)
+**Formula**:
+
+$$
+ROI_{complete} = \frac{\$1,238.6B}{\$1.0B} \approx 1,239
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd](../appendix/1-percent-treaty-cost-effectiveness.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4137,7 +4159,13 @@ $$
 
 **Description**: ROI from dFDA R&D savings (10-year NPV)
 
-**Methodology**: [knowledge/figures/dfda-roi-analysis.qmd](knowledge/figures/dfda-roi-analysis.qmd)
+**Formula**:
+
+$$
+ROI_{NPV} = \frac{\$249.3B}{\$0.54B} \approx 463
+$$
+
+**Methodology**: [../figures/dfda-roi-analysis.qmd](../figures/dfda-roi-analysis.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4149,7 +4177,7 @@ $$
 
 **Description**: Conservative campaign cost (3-year amortization)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4161,7 +4189,7 @@ $$
 
 **Description**: Optimistic campaign cost (5-year amortization)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4173,7 +4201,7 @@ $$
 
 **Description**: Central cost per life saved
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4185,7 +4213,7 @@ $$
 
 **Description**: Conservative cost per life saved
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4197,7 +4225,7 @@ $$
 
 **Description**: Optimistic cost per life saved
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4209,7 +4237,7 @@ $$
 
 **Description**: Conservative dFDA operational costs
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4221,7 +4249,7 @@ $$
 
 **Description**: Optimistic dFDA operational costs
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4233,7 +4261,7 @@ $$
 
 **Description**: Conservative dFDA savings estimate
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4245,7 +4273,7 @@ $$
 
 **Description**: Optimistic dFDA savings estimate
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4257,7 +4285,7 @@ $$
 
 **Description**: Central ICER from sensitivity analysis
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4269,7 +4297,7 @@ $$
 
 **Description**: Conservative ICER from sensitivity analysis
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4281,7 +4309,7 @@ $$
 
 **Description**: Optimistic ICER from sensitivity analysis
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4299,7 +4327,7 @@ $$
 Lives_{central} = 925,610 / 35 \approx 26,446
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4311,7 +4339,7 @@ $$
 
 **Description**: Conservative net benefit from sensitivity analysis
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4323,7 +4351,7 @@ $$
 
 **Description**: Optimistic net benefit from sensitivity analysis
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4335,7 +4363,7 @@ $$
 
 **Description**: Conservative peace dividend estimate
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4347,7 +4375,7 @@ $$
 
 **Description**: Optimistic peace dividend estimate
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4359,7 +4387,7 @@ $$
 
 **Description**: Conservative peace QALYs (500 lives × 35 QALYs/life)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4371,7 +4399,7 @@ $$
 
 **Description**: Optimistic peace QALYs (1,500 lives × 35 QALYs/life)
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4383,7 +4411,7 @@ $$
 
 **Description**: Conservative total benefits estimate
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4395,7 +4423,7 @@ $$
 
 **Description**: Optimistic total benefits estimate
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4407,7 +4435,7 @@ $$
 
 **Description**: Conservative total costs
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4419,7 +4447,7 @@ $$
 
 **Description**: Optimistic total costs
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4437,7 +4465,7 @@ $$
 QALYs_{conservative} = 17,500 + 190,000 = 207,500
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4455,7 +4483,7 @@ $$
 QALYs_{optimistic} = 52,500 + 3,650,000 = 3,702,500
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 **Confidence**: ✓ High confidence
 
@@ -4467,7 +4495,7 @@ $$
 
 **Description**: Simultaneous trials multiplier (20x more trials)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier](knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier)
+**Methodology**: [../appendix/research-acceleration-model.qmd#capacity-multiplier](../appendix/research-acceleration-model.qmd#capacity-multiplier)
 
 **Confidence**: ✓ High confidence
 
@@ -4479,7 +4507,7 @@ $$
 
 **Description**: Maximum target participant count for social media campaigns
 
-**Methodology**: [knowledge/strategy/viral-marketing.qmd](knowledge/strategy/viral-marketing.qmd)
+**Methodology**: [../strategy/viral-marketing.qmd](../strategy/viral-marketing.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4491,7 +4519,7 @@ $$
 
 **Description**: Minimum target participant count for social media campaigns
 
-**Methodology**: [knowledge/strategy/viral-marketing.qmd](knowledge/strategy/viral-marketing.qmd)
+**Methodology**: [../strategy/viral-marketing.qmd](../strategy/viral-marketing.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4503,7 +4531,7 @@ $$
 
 **Description**: System profit per life saved in millions
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life)
 
 **Confidence**: ✓ High confidence
 
@@ -4533,7 +4561,7 @@ $$
 TotalBenefits = \$113.55 + \$50 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,238.55B
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits)
 
 **Confidence**: ✓ High confidence
 
@@ -4551,7 +4579,7 @@ $$
 TotalInvestment = 14.3 + 0.45 = 14.75 \text{ hours}
 $$
 
-**Methodology**: [knowledge/solution/wishocracy.qmd#time-investment](knowledge/solution/wishocracy.qmd#time-investment)
+**Methodology**: [../solution/wishocracy.qmd#time-investment](../solution/wishocracy.qmd#time-investment)
 
 **Confidence**: ✓ High confidence
 
@@ -4563,7 +4591,7 @@ $$
 
 **Description**: Ratio of total war cost to WHO budget (168x)
 
-**Methodology**: [knowledge/problem/cost-of-war.qmd](knowledge/problem/cost-of-war.qmd)
+**Methodology**: [../problem/cost-of-war.qmd](../problem/cost-of-war.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4575,7 +4603,7 @@ $$
 
 **Description**: Target years to market with dFDA
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#target-timeline](knowledge/appendix/research-acceleration-model.qmd#target-timeline)
+**Methodology**: [../appendix/research-acceleration-model.qmd#target-timeline](../appendix/research-acceleration-model.qmd#target-timeline)
 
 **Confidence**: ✓ High confidence
 
@@ -4589,7 +4617,7 @@ $$
 
 **Formula**: `TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT`
 
-**Methodology**: [knowledge/economics/economics.qmd#better-than-the-best-charities](knowledge/economics/economics.qmd#better-than-the-best-charities)
+**Methodology**: [../economics/economics.qmd#better-than-the-best-charities](../economics/economics.qmd#better-than-the-best-charities)
 
 **Confidence**: ✓ High confidence
 
@@ -4607,7 +4635,7 @@ $$
 AnnualCost = \$1B / 4 = \$0.25B
 $$
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4619,7 +4647,7 @@ $$
 
 **Description**: AI-assisted lobbying budget
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4631,7 +4659,7 @@ $$
 
 **Description**: Legal and compliance budget
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4643,7 +4671,7 @@ $$
 
 **Description**: Campaign budget for mass mobilization (voting bloc build)
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4655,7 +4683,7 @@ $$
 
 **Description**: Operations budget
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4667,7 +4695,7 @@ $$
 
 **Description**: Partnerships budget
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4679,7 +4707,7 @@ $$
 
 **Description**: Reserve fund
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4691,7 +4719,7 @@ $$
 
 **Description**: Campaign budget for Super PACs and political lobbying
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4703,7 +4731,7 @@ $$
 
 **Description**: Technology platform budget
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4715,7 +4743,7 @@ $$
 
 **Description**: Viral referendum campaign budget
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4727,7 +4755,7 @@ $$
 
 **Description**: Maximum cost per vote for mass mobilization campaign
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#vote-acquisition-cost](knowledge/strategy/roadmap.qmd#vote-acquisition-cost)
+**Methodology**: [../strategy/roadmap.qmd#vote-acquisition-cost](../strategy/roadmap.qmd#vote-acquisition-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -4739,7 +4767,7 @@ $$
 
 **Description**: Minimum cost per vote for mass mobilization campaign
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#vote-acquisition-cost](knowledge/strategy/roadmap.qmd#vote-acquisition-cost)
+**Methodology**: [../strategy/roadmap.qmd#vote-acquisition-cost](../strategy/roadmap.qmd#vote-acquisition-cost)
 
 **Confidence**: ✓ High confidence
 
@@ -4751,7 +4779,7 @@ $$
 
 **Description**: Treaty campaign duration (3-5 year range, using midpoint)
 
-**Methodology**: [knowledge/strategy/roadmap.qmd](knowledge/strategy/roadmap.qmd)
+**Methodology**: [../strategy/roadmap.qmd](../strategy/roadmap.qmd)
 
 **Confidence**: ✓ High confidence
 
@@ -4769,7 +4797,7 @@ $$
 CampaignCost = \$0.2B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1B
 $$
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#campaign-budget](knowledge/strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 **Confidence**: ✓ High confidence
 
@@ -4781,7 +4809,7 @@ $$
 
 **Description**: Target voting bloc size for campaign
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#voting-bloc](knowledge/strategy/roadmap.qmd#voting-bloc)
+**Methodology**: [../strategy/roadmap.qmd#voting-bloc](../strategy/roadmap.qmd#voting-bloc)
 
 **Confidence**: ✓ High confidence
 
@@ -4799,7 +4827,7 @@ $$
 TotalComplete = \$113.6B + \$50B + \$300B + \$100B + \$400B + \$100B + \$100B + \$75B = \$1,238.6B
 $$
 
-**Methodology**: [knowledge/economics/economics.qmd#complete-case-roi](knowledge/economics/economics.qmd#complete-case-roi)
+**Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
 
 **Confidence**: ✓ High confidence
 
@@ -4817,7 +4845,7 @@ $$
 LivesSaved = 244,600 \times 0.01 = 2,446
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved](../appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved)
 
 **Confidence**: ✓ High confidence
 
@@ -4835,7 +4863,7 @@ $$
 NetBenefit = \$163.55B - \$0.29B = \$163.26B
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit)
 
 **Confidence**: ✓ High confidence
 
@@ -4853,7 +4881,7 @@ $$
 QALYs_{peace} = 2,446 \times 35 = 85,610
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys](../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys)
 
 **Confidence**: ✓ High confidence
 
@@ -4871,7 +4899,7 @@ $$
 TotalBenefits = \$113.55B + \$50B = \$163.55B
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits)
 
 **Confidence**: ✓ High confidence
 
@@ -4889,7 +4917,7 @@ $$
 TotalCosts = \$0.25B + \$0.04B = \$0.29B
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs)
 
 **Confidence**: ✓ High confidence
 
@@ -4907,7 +4935,7 @@ $$
 Lives_{total} = 925,610 / 35 = 26,446
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives)
 
 **Confidence**: ✓ High confidence
 
@@ -4925,7 +4953,7 @@ $$
 QALYs_{total} = 840,000 + 85,610 = 925,610
 $$
 
-**Methodology**: [knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys](knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys)
 
 **Confidence**: ✓ High confidence
 
@@ -4937,7 +4965,7 @@ $$
 
 **Description**: Trial completion speed multiplier (10x faster)
 
-**Methodology**: [knowledge/appendix/research-acceleration-model.qmd#completion-acceleration](knowledge/appendix/research-acceleration-model.qmd#completion-acceleration)
+**Methodology**: [../appendix/research-acceleration-model.qmd#completion-acceleration](../appendix/research-acceleration-model.qmd#completion-acceleration)
 
 **Confidence**: ✓ High confidence
 
@@ -4949,7 +4977,7 @@ $$
 
 **Description**: VICTORY bond investment unit for retail investors
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#victory-bonds](knowledge/strategy/roadmap.qmd#victory-bonds)
+**Methodology**: [../strategy/roadmap.qmd#victory-bonds](../strategy/roadmap.qmd#victory-bonds)
 
 **Confidence**: ✓ High confidence
 
@@ -4967,7 +4995,7 @@ $$
 PayoutPerUnit = \frac{\$2.718B}{\$1B} \times \$1,000 = \$2,718
 $$
 
-**Methodology**: [knowledge/strategy/roadmap.qmd#victory-bonds](knowledge/strategy/roadmap.qmd#victory-bonds)
+**Methodology**: [../strategy/roadmap.qmd#victory-bonds](../strategy/roadmap.qmd#victory-bonds)
 
 **Confidence**: ✓ High confidence
 

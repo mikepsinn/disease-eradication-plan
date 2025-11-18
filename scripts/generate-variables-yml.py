@@ -591,10 +591,16 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
             # Source reference (calculation methodology)
             if hasattr(value, 'source_ref'):
-                # Extract just the path without anchor if it's an internal link
+                # Convert absolute paths to relative paths from knowledge/appendix/
                 source_ref = value.source_ref
                 if source_ref.startswith('/'):
                     source_ref = source_ref.lstrip('/')
+
+                # Make paths relative from knowledge/appendix/ directory
+                if source_ref.startswith('knowledge/'):
+                    # Remove 'knowledge/' prefix and add '../' to go up from appendix/
+                    source_ref = '../' + source_ref[len('knowledge/'):]
+
                 content.append(f"**Methodology**: [{source_ref}]({source_ref})")
                 content.append("")
 
