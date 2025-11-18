@@ -61,10 +61,10 @@ They'll check the math. The math checks out. They give you papers.
 
 Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being stupid:
 
-- **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_budget_viral_referendum >}})
-- **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_technology >}})
+- **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_budget_viral_referendum_billions >}})
+- **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_technology_billions >}})
 - **Build the actual tech** - [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
-- **Hire lawyers** - Make bribery legal by calling it other things ({{< var treaty_campaign_budget_reserve >}})
+- **Hire lawyers** - Make bribery legal by calling it other things ({{< var treaty_campaign_budget_reserve_billions >}})
 - **Co-opt death merchants** - Convince defense contractors that {{< var victory_bond_annual_return_pct >}} beats 8% ($150M)
 - **Run the thing** - Pay humans to coordinate the paper distribution ($170M)
 
@@ -256,7 +256,7 @@ This structure legally separates the investment activities from the philanthropi
 
 Protect investors by releasing funds in tranches tied to achievements:
 
-**Phase 1 milestone ({{< var treaty_campaign_budget_viral_referendum >}} release)**:
+**Phase 1 milestone ({{< var treaty_campaign_budget_viral_referendum_billions >}} release)**:
 
 - Launch platform MVP
 - Achieve 50M+ referendum votes

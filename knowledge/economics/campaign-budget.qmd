@@ -43,7 +43,7 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 ## Where the Papers Go
 
-### 1. Viral Referendum: {{< var treaty_campaign_budget_viral_referendum >}} (20%)
+### 1. Viral Referendum: {{< var treaty_campaign_budget_viral_referendum_billions >}} (20%)
 
 **Paying Humans to Click**
 
@@ -72,7 +72,7 @@ This {{< var treaty_campaign_total_cost >}} will:
 - Tools for coordination (spreadsheets that don't crash)
 - Event support (folding chairs and PowerPoints)
 
-### 2. Professional Bribery: {{< var treaty_campaign_budget_technology >}} (25%)
+### 2. Professional Bribery: {{< var treaty_campaign_budget_technology_billions >}} (25%)
 
 **Lobbying (AI-Targeted)**: $150M
 
@@ -104,7 +104,7 @@ Defense lobbyists currently work for whoever pays them. So you pay them more:
 - Instant fact-checking (faster than humans can lie)
 - Protect treaty supporters (politics is mean, apparently)
 
-### 3. Technology: {{< var treaty_campaign_budget_technology >}} (25%)
+### 3. Technology: {{< var treaty_campaign_budget_technology_billions >}} (25%)
 
 **dFDA Platform**: $120M
 
@@ -139,7 +139,7 @@ Computers that store everything:
 - 100K beta users (find problems before 8 billion users do)
 - Security audits (pay hackers to break it before bad hackers do)
 
-### 4. Lawyers (AI-Assisted): {{< var treaty_campaign_budget_partnerships >}} (10%)
+### 4. Lawyers (AI-Assisted): {{< var treaty_campaign_budget_partnerships_billions >}} (10%)
 
 **Legal Work**: {{< var campaign_legal_work_millions >}}
 
@@ -160,7 +160,7 @@ Computers that store everything:
 - Insurance (in case fund isn't enough)
 - Whistleblower protection (pay people to report your own violations before others do)
 
-### 5. Co-opting the Opposition: {{< var treaty_campaign_budget_partnerships >}} (10%)
+### 5. Co-opting the Opposition: {{< var treaty_campaign_budget_partnerships_billions >}} (10%)
 
 **Defense Industry Conversion**: {{< var campaign_defense_conversion_millions >}}
 
@@ -189,7 +189,7 @@ Turn enemies into allies through superior returns:
 - Scientists with credentials (humans trust credentials)
 - Cultural influencers (humans who influence culture, apparently)
 
-### 6. Operations: {{< var treaty_campaign_budget_reserve >}} (5%)
+### 6. Operations: {{< var treaty_campaign_budget_reserve_billions >}} (5%)
 
 **Core Team**: {{< var campaign_staff_budget_millions >}}
 
@@ -207,7 +207,7 @@ Turn enemies into allies through superior returns:
 
 Papers for when plans fail (plans always fail somewhere)
 
-### 7. Post-Victory Transition: {{< var treaty_campaign_budget_reserve >}} (5%)
+### 7. Post-Victory Transition: {{< var treaty_campaign_budget_reserve_billions >}} (5%)
 
 **Treaty Implementation**: {{< var campaign_treaty_implementation_millions >}}
 

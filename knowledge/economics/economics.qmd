@@ -702,7 +702,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 **Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the medical research budget for short-term priorities.
 
-**Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
+**Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual_billions >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
 
 **Historical precedent - Post-WWII peace dividend**: The post-World War II "peace dividend" saw military spending fall from 37% of GDP (1945) to 5% (1948), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 13% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
 
@@ -798,7 +798,7 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 **Total**: {{< var dfda_npv_total_cost >}} over {{< var npv_time_horizon_years >}} years
   - Upfront: {{< var dfda_npv_upfront_cost_total >}} (build the platform)
-  - Annual ops: {{< var dfda_upfront_build >}} (keep it running)
+  - Annual ops: {{< var dfda_upfront_build_billions >}} (keep it running)
 
 **Why costs are shockingly low:** The dFDA provides coordination infrastructure (like HTTP for the internet), not a competing platform.
 
@@ -1200,14 +1200,14 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **[Viral Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_viral_referendum >}} | Global direct democracy campaign, social media amplification, petition platforms |
-| **[AI-Assisted Lobbying](campaign-budget.qmd)** | {{< var treaty_campaign_budget_technology >}} | Automated legislative outreach, personalized constituent messaging, political mapping |
-| **[Technology Platform](campaign-budget.qmd)** | {{< var treaty_campaign_budget_technology >}} | Voting infrastructure, transparency systems, wishocracy implementation |
-| **[Legal & Compliance](campaign-budget.qmd)** | {{< var treaty_campaign_budget_partnerships >}} | International treaty law, regulatory compliance, jurisdictional coordination |
-| **[Partnerships](campaign-budget.qmd)** | {{< var treaty_campaign_budget_partnerships >}} | Coalition building with NGOs, medical organizations, patient advocacy groups |
-| **[Operations](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Campaign management, communications, logistics, staffing |
-| **[Reserve](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Contingency for unforeseen challenges and opportunities |
-| **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline (amortized: {{< var treaty_campaign_budget_technology >}}/year) |
+| **[Viral Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_viral_referendum_billions >}} | Global direct democracy campaign, social media amplification, petition platforms |
+| **[AI-Assisted Lobbying](campaign-budget.qmd)** | {{< var treaty_campaign_budget_technology_billions >}} | Automated legislative outreach, personalized constituent messaging, political mapping |
+| **[Technology Platform](campaign-budget.qmd)** | {{< var treaty_campaign_budget_technology_billions >}} | Voting infrastructure, transparency systems, wishocracy implementation |
+| **[Legal & Compliance](campaign-budget.qmd)** | {{< var treaty_campaign_budget_partnerships_billions >}} | International treaty law, regulatory compliance, jurisdictional coordination |
+| **[Partnerships](campaign-budget.qmd)** | {{< var treaty_campaign_budget_partnerships_billions >}} | Coalition building with NGOs, medical organizations, patient advocacy groups |
+| **[Operations](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve_billions >}} | Campaign management, communications, logistics, staffing |
+| **[Reserve](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve_billions >}} | Contingency for unforeseen challenges and opportunities |
+| **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline (amortized: {{< var treaty_campaign_budget_technology_billions >}}/year) |
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
@@ -1235,7 +1235,7 @@ For the rigorous analysis:
 **Technical Risk**: dFDA platform development and scaling challenges
 
 - *Mitigation*: Phased rollout beginning with proven platforms (similar to RECOVERY trial model); open-source architecture enabling distributed development
-- *Validation*: Oxford [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, {{< var dfda_opex_regulatory >}} total cost)
+- *Validation*: Oxford [RECOVERY trial](../appendix/recovery-trial.qmd) demonstrated 82x cost reduction at scale (11,000+ participants, 6 treatment arms, {{< var dfda_opex_regulatory_billions >}} total cost)
 
 **Adoption Risk**: Insufficient patient enrollment in decentralized trials
 

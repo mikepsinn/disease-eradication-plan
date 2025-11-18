@@ -198,14 +198,16 @@
   \ | ✓ High confidence | Unit: ratio | Click to view calculation\">180</a>"
 "completed_trials_multiplier_conservative": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier\"\
   \ class=\"parameter-link\" title=\"Conservative completed trials multiplier accounting\
-  \ for scale-up | ✓ High confidence | Unit: ratio | Click to view calculation\">115</a>"
+  \ for scale-up | ✓ High confidence | Formula: RESEARCH_ACCELERATION_MULTIPLIER |\
+  \ Unit: ratio | Click to view calculation\">115</a>"
 "completed_trials_multiplier_theoretical_max": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum\"\
   \ class=\"parameter-link\" title=\"Theoretical maximum research capacity multiplier\
   \ (25×10×1.6×1.4) | ✓ High confidence | Formula: RECRUITMENT_SPEED × COMPLETION_SPEED\
   \ × COMPLETION_RATE × FUNDING | Unit: ratio | Click to view calculation\">560</a>"
 "completion_rate_improvement_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
   \ class=\"parameter-link\" title=\"Completion rate improvement (1.6x from 60% →\
-  \ 95%) | ✓ High confidence | Unit: ratio | Click to view calculation\">1.6</a>"
+  \ 95%) | ✓ High confidence | Formula: DFDA_COMPLETION_RATE ÷ CURRENT_COMPLETION_RATE\
+  \ | Unit: ratio | Click to view calculation\">1.6</a>"
 "conservative_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative scenario ROI (net benefit ÷ total\
   \ costs) | ✓ High confidence | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio\
@@ -256,10 +258,10 @@
 "current_trial_slots_available": "<a href=\"/knowledge/references.qmd#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" title=\"Total trial slots available for 2.4B sick people\
   \ | ✓ High confidence | Unit: slots | Click to view source\">5,000,000</a>"
-"daily_cost_inefficiency": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
+"daily_cost_inefficiency_billions": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
   \ class=\"parameter-link\" title=\"Daily cost of healthcare system inefficiency\
   \ | ✓ High confidence | Unit: billions USD/day | Click to view calculation\">$327M</a>"
-"dct_platform_funding_medium": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
+"dct_platform_funding_medium_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
   \ class=\"parameter-link\" title=\"Mid-range funding for commercial DCT platform\
   \ | ✓ High confidence | Unit: billions USD | Click to view calculation\">$500M</a>"
 "deaths_during_reading_section": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
@@ -268,7 +270,7 @@
 "death_spending_misallocation_factor": "<a href=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ class=\"parameter-link\" title=\"Misallocation factor for spending on death vs\
   \ prevention | ✓ High confidence | Unit: ratio | Click to view calculation\">1,750</a>"
-"defense_lobbying_annual": "<a href=\"/knowledge/references.qmd#lobbying-spend-defense\"\
+"defense_lobbying_annual_billions": "<a href=\"/knowledge/references.qmd#lobbying-spend-defense\"\
   \ class=\"parameter-link\" title=\"Annual defense industry lobbying spending | ✓\
   \ High confidence | \U0001F4CA Peer-reviewed | Updated: 2024 | Unit: billions USD/year\
   \ | Click to view source\">$127M</a>"
@@ -289,13 +291,16 @@
   \ | Click to view calculation\">361,000</a>"
 "dfda_drug_approvals_per_year_high": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
   \ class=\"parameter-link\" title=\"Optimistic drug approvals estimate (40x current)\
-  \ | ✓ High confidence | Unit: approvals/year | Click to view calculation\">2,000</a>"
+  \ | ✓ High confidence | Formula: CURRENT_APPROVALS × 40 | Unit: approvals/year |\
+  \ Click to view calculation\">2,000</a>"
 "dfda_drug_approvals_per_year_low": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
   \ class=\"parameter-link\" title=\"Conservative drug approvals estimate (20x current)\
-  \ | ✓ High confidence | Unit: approvals/year | Click to view calculation\">1,000</a>"
+  \ | ✓ High confidence | Formula: CURRENT_APPROVALS × 20 | Unit: approvals/year |\
+  \ Click to view calculation\">1,000</a>"
 "dfda_eligible_patients_global": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#eligible-population\"\
   \ class=\"parameter-link\" title=\"Global eligible patients with minimal exclusions\
-  \ | ✓ High confidence | Unit: people | Click to view calculation\">1,200,000,000</a>"
+  \ | ✓ High confidence | Formula: DISEASE_PATIENTS × ELIGIBILITY_RATE | Unit: people\
+  \ | Click to view calculation\">1,200,000,000</a>"
 "dfda_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" title=\"Annual gross savings from 50% trial cost reduction\
   \ | ✓ High confidence | Formula: TRIAL_MARKET × COST_REDUCTION_PCT | Unit: billions\
@@ -322,7 +327,7 @@
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ class=\"parameter-link\" title=\"Years to reach full dFDA adoption | ✓ High confidence\
   \ | Unit: years | Click to view calculation\">5</a>"
-"dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dfda_npv_annual_opex_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"dFDA core platform annual opex (midpoint of $11-26.5M)\
   \ | ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$19M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
@@ -347,26 +352,26 @@
   \ class=\"parameter-link\" title=\"Total NPV cost (upfront + PV of annual opex)\
   \ | ✓ High confidence | Formula: UPFRONT + PV_OPEX | Unit: billions USD | Click\
   \ to view calculation\">$538M</a>"
-"dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dfda_npv_upfront_cost_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"dFDA core platform build cost | ✓ High confidence\
   \ | Unit: billions USD | Click to view calculation\">$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"Total NPV upfront costs (dFDA core + DIH initiatives)\
   \ | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit: billions USD\
   \ | Click to view calculation\">$270M</a>"
-"dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_community_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA community support costs | ✓ High confidence\
   \ | Unit: billions USD/year | Click to view calculation\">$2.00M</a>"
-"dfda_opex_infrastructure": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_infrastructure_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA infrastructure costs (cloud, security) |\
   \ ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$8.00M</a>"
-"dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_platform_maintenance_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA platform maintenance costs | ✓ High confidence\
   \ | Unit: billions USD/year | Click to view calculation\">$15M</a>"
-"dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_regulatory_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA regulatory coordination costs | ✓ High confidence\
   \ | Unit: billions USD/year | Click to view calculation\">$5.00M</a>"
-"dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_staff_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA staff costs (minimal, AI-assisted) | ✓ High\
   \ confidence | Unit: billions USD/year | Click to view calculation\">$10M</a>"
 "dfda_patient_eligibility_rate": "<span class=\"parameter-definition\" title=\"dFDA\
@@ -392,15 +397,16 @@
   >$1.00K</a>"
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"Maximum trials per year possible with 115x acceleration\
-  \ | ✓ High confidence | Unit: trials/year | Click to view calculation\">380,000</a>"
+  \ | ✓ High confidence | Formula: CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER\
+  \ | Unit: trials/year | Click to view calculation\">380,000</a>"
 "dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
   \ trial abandonment rate (5%) | Unit: rate | Core definition\">5%</span>"
 "dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
   \ completion rate (95%) | Unit: rate | Core definition\">95%</span>"
-"dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
+"dfda_upfront_build_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost (central estimate)\
   \ | ✓ High confidence | Unit: billions USD | Click to view calculation\">$40M</a>"
-"dfda_upfront_build_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
+"dfda_upfront_build_max_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost (high estimate)\
   \ | ✓ High confidence | Unit: billions USD | Click to view calculation\">$46M</a>"
 "diabetes_cure_payment_estimate": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
@@ -412,10 +418,10 @@
 "diabetes_treatment_monthly_cost": "<a href=\"/knowledge/references.qmd#diabetes-treatment-costs\"\
   \ class=\"parameter-link\" title=\"Average monthly cost of diabetes treatment per\
   \ patient | ✓ High confidence | Unit: USD/month | Click to view source\">$500</a>"
-"dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dih_npv_annual_opex_initiatives_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives annual opex (medium case)\
   \ | ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$21.1M</a>"
-"dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dih_npv_upfront_cost_initiatives_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives upfront cost (medium\
   \ case) | ✓ High confidence | Unit: billions USD | Click to view calculation\">$230M</a>"
 "dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
@@ -1053,8 +1059,8 @@
   \ | Unit: USD/patient | Click to view source\">$500</a>"
 "recruitment_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration\"\
   \ class=\"parameter-link\" title=\"Recruitment speed multiplier (25x faster from\
-  \ 2% → 50% eligibility) | ✓ High confidence | Unit: ratio | Click to view calculation\"\
-  >25</a>"
+  \ 2% → 50% eligibility) | ✓ High confidence | Formula: DFDA_ELIGIBILITY_RATE ÷ CURRENT_ELIGIBILITY_RATE\
+  \ | Unit: ratio | Click to view calculation\">25</a>"
 "refugee_lost_earning_potential_per_capita_annual": "<a href=\"/knowledge/references.qmd#refugee-lost-earnings\"\
   \ class=\"parameter-link\" title=\"Average annual lost earning potential per refugee\
   \ | ✓ High confidence | Unit: USD/year | Click to view source\">$23.4K</a>"
@@ -1064,7 +1070,8 @@
   \ | Click to view calculation\">$2.54T</a>"
 "research_acceleration_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ class=\"parameter-link\" title=\"Total research capacity multiplier from dFDA\
-  \ | ✓ High confidence | Unit: ratio | Click to view calculation\">115</a>"
+  \ | ✓ High confidence | Formula: FUNDING_RATIO × COST_REDUCTION_FACTOR | Unit: ratio\
+  \ | Click to view calculation\">115</a>"
 "respiratory_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Chronic respiratory disease death rate | ✓ High\
   \ confidence | Unit: deaths per 100,000 | Click to view source\">33.4</a>"
@@ -1090,10 +1097,10 @@
   \ | Formula: ROI_DFDA_SAVINGS_ONLY * 0.78 | Click to view calculation\">361</a>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
   >31,536,000</span>"
-"sensitivity_campaign_cost_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
+"sensitivity_campaign_cost_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative campaign cost (3-year amortization)\
   \ | ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$333M</a>"
-"sensitivity_campaign_cost_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
+"sensitivity_campaign_cost_optimistic_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic campaign cost (5-year amortization)\
   \ | ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$200M</a>"
 "sensitivity_cost_per_life_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
@@ -1105,10 +1112,10 @@
 "sensitivity_cost_per_life_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic cost per life saved | ✓ High confidence\
   \ | Unit: millions USD/life | Click to view calculation\">$-4.79M</a>"
-"sensitivity_dfda_opex_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
+"sensitivity_dfda_opex_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative dFDA operational costs | ✓ High\
   \ confidence | Unit: billions USD/year | Click to view calculation\">$60M</a>"
-"sensitivity_dfda_opex_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
+"sensitivity_dfda_opex_optimistic_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic dFDA operational costs | ✓ High confidence\
   \ | Unit: billions USD/year | Click to view calculation\">$30M</a>"
 "sensitivity_dfda_savings_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
@@ -1154,10 +1161,10 @@
 "sensitivity_total_benefits_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total benefits estimate | ✓ High confidence\
   \ | Unit: billions USD | Click to view calculation\">$295B</a>"
-"sensitivity_total_costs_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
+"sensitivity_total_costs_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative total costs | ✓ High confidence\
   \ | Unit: billions USD/year | Click to view calculation\">$393M</a>"
-"sensitivity_total_costs_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
+"sensitivity_total_costs_optimistic_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total costs | ✓ High confidence |\
   \ Unit: billions USD/year | Click to view calculation\">$230M</a>"
 "sensitivity_total_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
@@ -1269,33 +1276,33 @@
   \ class=\"parameter-link\" title=\"Amortized annual campaign cost (total cost ÷\
   \ campaign duration) | ✓ High confidence | Formula: TOTAL_COST ÷ DURATION | Unit:\
   \ billions USD/year | Click to view calculation\">$250M</a>"
-"treaty_campaign_budget_ai_lobbying": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_ai_lobbying_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"AI-assisted lobbying budget | ✓ High confidence\
   \ | Unit: billions USD | Click to view calculation\">$250M</a>"
-"treaty_campaign_budget_legal": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_legal_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Legal and compliance budget | ✓ High confidence\
   \ | Unit: billions USD | Click to view calculation\">$100M</a>"
-"treaty_campaign_budget_mass_bribery": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_mass_bribery_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for mass mobilization (voting\
   \ bloc build) | ✓ High confidence | Unit: billions USD | Click to view calculation\"\
   >$140M</a>"
-"treaty_campaign_budget_operations": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_operations_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Operations budget | ✓ High confidence | Unit:\
   \ billions USD | Click to view calculation\">$50M</a>"
-"treaty_campaign_budget_partnerships": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_partnerships_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Partnerships budget | ✓ High confidence | Unit:\
   \ billions USD | Click to view calculation\">$100M</a>"
-"treaty_campaign_budget_reserve": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_reserve_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Reserve fund | ✓ High confidence | Unit: billions\
   \ USD | Click to view calculation\">$50M</a>"
-"treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_super_pacs_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for Super PACs and political\
   \ lobbying | ✓ High confidence | Unit: billions USD | Click to view calculation\"\
   >$800M</a>"
-"treaty_campaign_budget_technology": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_technology_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Technology platform budget | ✓ High confidence\
   \ | Unit: billions USD | Click to view calculation\">$250M</a>"
-"treaty_campaign_budget_viral_referendum": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_viral_referendum_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Viral referendum campaign budget | ✓ High confidence\
   \ | Unit: billions USD | Click to view calculation\">$200M</a>"
 "treaty_campaign_cost_per_vote_max_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#vote-acquisition-cost\"\

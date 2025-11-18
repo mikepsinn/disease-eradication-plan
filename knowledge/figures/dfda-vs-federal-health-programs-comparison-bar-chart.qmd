@@ -19,7 +19,7 @@ programs = [
     'National Cancer\nInstitute (NCI)'
 ]
 costs = [
-    DFDA_NPV_UPFRONT_COST,  # dFDA Infrastructure
+    DFDA_NPV_UPFRONT_COST_BILLIONS * 1000,  # Convert billions -> millions
     257,  # Cancer Moonshot (no parameter exists)
     500,  # All of Us (no parameter exists)
     7200  # NCI (no parameter exists)

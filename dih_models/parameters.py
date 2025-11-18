@@ -964,7 +964,7 @@ DFDA_COMPLETED_TRIALS_PER_YEAR = Parameter(
 )  # 361,000
 
 # dFDA operational costs
-DFDA_UPFRONT_BUILD = Parameter(
+DFDA_UPFRONT_BUILD_BILLIONS = Parameter(
     0.040,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
     source_type="calculated",
@@ -972,7 +972,7 @@ DFDA_UPFRONT_BUILD = Parameter(
     unit="billions USD"
 )  # $40M one-time build cost
 
-DFDA_UPFRONT_BUILD_MAX = Parameter(
+DFDA_UPFRONT_BUILD_MAX_BILLIONS = Parameter(
     0.046,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
     source_type="calculated",
@@ -981,7 +981,7 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
 )  # $46M one-time build cost (high end)
 
 # DCT Platform Funding Comparables
-DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
+DCT_PLATFORM_FUNDING_MEDIUM_BILLIONS = Parameter(
     0.500,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom",
     source_type="calculated",
@@ -999,7 +999,7 @@ DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
 )  # $1,000 per patient
 
 # dFDA operational cost breakdown (in billions)
-DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
+DFDA_OPEX_PLATFORM_MAINTENANCE_BILLIONS = Parameter(
     0.015,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="calculated",
@@ -1007,7 +1007,7 @@ DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     unit="billions USD/year"
 )  # $15M
 
-DFDA_OPEX_STAFF = Parameter(
+DFDA_OPEX_STAFF_BILLIONS = Parameter(
     0.010,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="calculated",
@@ -1015,7 +1015,7 @@ DFDA_OPEX_STAFF = Parameter(
     unit="billions USD/year"
 )  # $10M - minimal, AI-assisted
 
-DFDA_OPEX_INFRASTRUCTURE = Parameter(
+DFDA_OPEX_INFRASTRUCTURE_BILLIONS = Parameter(
     0.008,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="calculated",
@@ -1023,7 +1023,7 @@ DFDA_OPEX_INFRASTRUCTURE = Parameter(
     unit="billions USD/year"
 )  # $8M - cloud, security
 
-DFDA_OPEX_REGULATORY = Parameter(
+DFDA_OPEX_REGULATORY_BILLIONS = Parameter(
     0.005,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="calculated",
@@ -1031,7 +1031,7 @@ DFDA_OPEX_REGULATORY = Parameter(
     unit="billions USD/year"
 )  # $5M - regulatory coordination
 
-DFDA_OPEX_COMMUNITY = Parameter(
+DFDA_OPEX_COMMUNITY_BILLIONS = Parameter(
     0.002,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="calculated",
@@ -1041,11 +1041,11 @@ DFDA_OPEX_COMMUNITY = Parameter(
 
 # Total annual operational costs (calculated from components)
 DFDA_ANNUAL_OPEX = Parameter(
-    DFDA_OPEX_PLATFORM_MAINTENANCE +
-    DFDA_OPEX_STAFF +
-    DFDA_OPEX_INFRASTRUCTURE +
-    DFDA_OPEX_REGULATORY +
-    DFDA_OPEX_COMMUNITY,
+    DFDA_OPEX_PLATFORM_MAINTENANCE_BILLIONS +
+    DFDA_OPEX_STAFF_BILLIONS +
+    DFDA_OPEX_INFRASTRUCTURE_BILLIONS +
+    DFDA_OPEX_REGULATORY_BILLIONS +
+    DFDA_OPEX_COMMUNITY_BILLIONS,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="calculated",
     description="Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
@@ -1182,7 +1182,7 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
 )  # 3-5 year range, using midpoint
 
 # Campaign budget breakdown (in billions)
-TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM = Parameter(
+TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS = Parameter(
     0.200,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1190,7 +1190,7 @@ TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM = Parameter(
     unit="billions USD"
 )  # $200M viral referendum
 
-TREATY_CAMPAIGN_BUDGET_AI_LOBBYING = Parameter(
+TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS = Parameter(
     0.250,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1198,7 +1198,7 @@ TREATY_CAMPAIGN_BUDGET_AI_LOBBYING = Parameter(
     unit="billions USD"
 )  # $250M AI-assisted lobbying
 
-TREATY_CAMPAIGN_BUDGET_TECHNOLOGY = Parameter(
+TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS = Parameter(
     0.250,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1206,7 +1206,7 @@ TREATY_CAMPAIGN_BUDGET_TECHNOLOGY = Parameter(
     unit="billions USD"
 )  # $250M technology platform
 
-TREATY_CAMPAIGN_BUDGET_LEGAL = Parameter(
+TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS = Parameter(
     0.100,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1214,7 +1214,7 @@ TREATY_CAMPAIGN_BUDGET_LEGAL = Parameter(
     unit="billions USD"
 )  # $100M legal & compliance
 
-TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS = Parameter(
+TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS = Parameter(
     0.100,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1222,7 +1222,7 @@ TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS = Parameter(
     unit="billions USD"
 )  # $100M partnerships
 
-TREATY_CAMPAIGN_BUDGET_OPERATIONS = Parameter(
+TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS = Parameter(
     0.050,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1230,7 +1230,7 @@ TREATY_CAMPAIGN_BUDGET_OPERATIONS = Parameter(
     unit="billions USD"
 )  # $50M operations
 
-TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
+TREATY_CAMPAIGN_BUDGET_RESERVE_BILLIONS = Parameter(
     0.050,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -1240,13 +1240,13 @@ TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
 
 # Total campaign cost (calculated from components)
 TREATY_CAMPAIGN_TOTAL_COST = Parameter(
-    TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM +
-    TREATY_CAMPAIGN_BUDGET_AI_LOBBYING +
-    TREATY_CAMPAIGN_BUDGET_TECHNOLOGY +
-    TREATY_CAMPAIGN_BUDGET_LEGAL +
-    TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS +
-    TREATY_CAMPAIGN_BUDGET_OPERATIONS +
-    TREATY_CAMPAIGN_BUDGET_RESERVE,
+    TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_RESERVE_BILLIONS,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
     description="Total treaty campaign cost (sum of all campaign budget components)",
@@ -1363,7 +1363,7 @@ CAMPAIGN_DEFENSE_LOBBYIST_BUDGET_MILLIONS = Parameter(
     unit="millions USD"
 )
 
-DEFENSE_LOBBYING_ANNUAL = Parameter(
+DEFENSE_LOBBYING_ANNUAL_BILLIONS = Parameter(
     0.127,
     source_ref="lobbying-spend-defense",
     source_type="external",
@@ -1679,7 +1679,7 @@ NPV_TIME_HORIZON_YEARS = Parameter(
 
 # NPV Model - Component Costs
 # Core platform and broader initiative costs (for detailed breakdowns)
-DFDA_NPV_UPFRONT_COST = Parameter(
+DFDA_NPV_UPFRONT_COST_BILLIONS = Parameter(
     0.040,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="calculated",
@@ -1687,7 +1687,7 @@ DFDA_NPV_UPFRONT_COST = Parameter(
     unit="billions USD"
 )  # $40M core platform build
 
-DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
+DIH_NPV_UPFRONT_COST_INITIATIVES_BILLIONS = Parameter(
     0.22975,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="calculated",
@@ -1695,7 +1695,7 @@ DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
     unit="billions USD"
 )  # $228M medium case broader initiatives
 
-DFDA_NPV_ANNUAL_OPEX = Parameter(
+DFDA_NPV_ANNUAL_OPEX_BILLIONS = Parameter(
     0.01895,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="calculated",
@@ -1703,7 +1703,7 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
     unit="billions USD/year"
 )  # $19M core platform (midpoint of $11-26.5M)
 
-DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
+DIH_NPV_ANNUAL_OPEX_INITIATIVES_BILLIONS = Parameter(
     0.02110,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="calculated",
@@ -1714,7 +1714,7 @@ DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
 # NPV Model - Primary Parameters (dFDA-specific)
 # Total upfront costs (C0): combines core dFDA platform + broader DIH initiative setup
 DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
-    DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES,
+    DFDA_NPV_UPFRONT_COST_BILLIONS + DIH_NPV_UPFRONT_COST_INITIATIVES_BILLIONS,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="calculated",
     description="Total NPV upfront costs (dFDA core + DIH initiatives)",
@@ -1725,7 +1725,7 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
 
 # Total annual operational costs (Cop): combines core dFDA platform + broader DIH initiative annual costs
 DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
-    DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES,
+    DFDA_NPV_ANNUAL_OPEX_BILLIONS + DIH_NPV_ANNUAL_OPEX_INITIATIVES_BILLIONS,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
     source_type="calculated",
     description="Total NPV annual opex (dFDA core + DIH initiatives)",
@@ -2697,7 +2697,7 @@ SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE = Parameter(
     unit="billions USD"
 )  # $75B
 
-SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = Parameter(
+SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE_BILLIONS = Parameter(
     0.333,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
     source_type="calculated",
@@ -2705,7 +2705,7 @@ SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = Parameter(
     unit="billions USD/year"
 )  # $333M/year (3-year amortization)
 
-SENSITIVITY_DFDA_OPEX_CONSERVATIVE = Parameter(
+SENSITIVITY_DFDA_OPEX_CONSERVATIVE_BILLIONS = Parameter(
     0.060,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
     source_type="calculated",
@@ -2713,7 +2713,7 @@ SENSITIVITY_DFDA_OPEX_CONSERVATIVE = Parameter(
     unit="billions USD/year"
 )  # $60M/year
 
-SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = Parameter(
+SENSITIVITY_TOTAL_COSTS_CONSERVATIVE_BILLIONS = Parameter(
     0.393,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
     source_type="calculated",
@@ -2812,7 +2812,7 @@ SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC = Parameter(
     unit="billions USD"
 )  # $295B
 
-SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = Parameter(
+SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC_BILLIONS = Parameter(
     0.200,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
     source_type="calculated",
@@ -2820,7 +2820,7 @@ SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = Parameter(
     unit="billions USD/year"
 )  # $200M/year (5-year amortization)
 
-SENSITIVITY_DFDA_OPEX_OPTIMISTIC = Parameter(
+SENSITIVITY_DFDA_OPEX_OPTIMISTIC_BILLIONS = Parameter(
     0.030,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
     source_type="calculated",
@@ -2828,7 +2828,7 @@ SENSITIVITY_DFDA_OPEX_OPTIMISTIC = Parameter(
     unit="billions USD/year"
 )  # $30M/year
 
-SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = Parameter(
+SENSITIVITY_TOTAL_COSTS_OPTIMISTIC_BILLIONS = Parameter(
     0.230,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
     source_type="calculated",
@@ -2879,7 +2879,7 @@ SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = Parameter(
 
 # Sensitivity ROI calculations
 CONSERVATIVE_SCENARIO_ROI = Parameter(
-    int(SENSITIVITY_NET_BENEFIT_CONSERVATIVE / SENSITIVITY_TOTAL_COSTS_CONSERVATIVE),
+    int(SENSITIVITY_NET_BENEFIT_CONSERVATIVE / SENSITIVITY_TOTAL_COSTS_CONSERVATIVE_BILLIONS),
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
     source_type="calculated",
     description="Conservative scenario ROI (net benefit ÷ total costs)",
@@ -2888,7 +2888,7 @@ CONSERVATIVE_SCENARIO_ROI = Parameter(
     latex=r"ROI_{conservative} = \$74.6B / \$0.393B = 190:1"
 )  # 190:1
 OPTIMISTIC_SCENARIO_ROI = Parameter(
-    int(SENSITIVITY_NET_BENEFIT_OPTIMISTIC / SENSITIVITY_TOTAL_COSTS_OPTIMISTIC),
+    int(SENSITIVITY_NET_BENEFIT_OPTIMISTIC / SENSITIVITY_TOTAL_COSTS_OPTIMISTIC_BILLIONS),
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
     source_type="calculated",
     description="Optimistic scenario ROI (net benefit ÷ total costs)",
@@ -3313,7 +3313,7 @@ TOTAL_WAR_COST_TO_WHO_BUDGET_RATIO = Parameter(
 # Alias for consistency with book text
 
 # Campaign & Strategy Specifics
-TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY = Parameter(
+TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY_BILLIONS = Parameter(
     0.140,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -3329,7 +3329,7 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET_MILLIONS = Parameter(
     unit="millions of people"
 )  # millions of people, target voting bloc size
 
-TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
+TREATY_CAMPAIGN_BUDGET_SUPER_PACS_BILLIONS = Parameter(
     0.800,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
@@ -3592,7 +3592,7 @@ DEATHS_DURING_READING_SECTION = Parameter(
     unit="deaths"
 )  # Number of deaths from curable diseases during reading a section
 
-DAILY_COST_INEFFICIENCY = Parameter(
+DAILY_COST_INEFFICIENCY_BILLIONS = Parameter(
     0.327,
     source_ref="/knowledge/solution/dfda.qmd#cost-of-delay",
     source_type="calculated",
@@ -3623,18 +3623,18 @@ cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.
 cost_of_delay_qaly_days_per_second_formatted = f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"
 cost_per_life_investor_funded_formatted = f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"
 cost_per_life_opportunity_cost_formatted = f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"
-daily_cost_inefficiency_formatted = format_currency(DAILY_COST_INEFFICIENCY)
+daily_cost_inefficiency_formatted = format_currency(DAILY_COST_INEFFICIENCY_BILLIONS)
 death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
 dfda_annual_opex_formatted = format_millions(DFDA_ANNUAL_OPEX)
 dfda_gross_savings_annual_formatted = format_billions(DFDA_GROSS_SAVINGS_ANNUAL)
 dfda_npv_net_benefit_conservative_formatted = format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)
 dfda_npv_total_cost_formatted = format_currency(DFDA_NPV_TOTAL_COST)
-dfda_opex_community_formatted = format_currency(DFDA_OPEX_COMMUNITY)
-dfda_opex_infrastructure_formatted = format_currency(DFDA_OPEX_INFRASTRUCTURE)
-dfda_opex_platform_maintenance_formatted = format_currency(DFDA_OPEX_PLATFORM_MAINTENANCE)
-dfda_opex_regulatory_formatted = format_currency(DFDA_OPEX_REGULATORY)
-dfda_opex_staff_formatted = format_currency(DFDA_OPEX_STAFF)
+dfda_opex_community_formatted = format_currency(DFDA_OPEX_COMMUNITY_BILLIONS)
+dfda_opex_infrastructure_formatted = format_currency(DFDA_OPEX_INFRASTRUCTURE_BILLIONS)
+dfda_opex_platform_maintenance_formatted = format_currency(DFDA_OPEX_PLATFORM_MAINTENANCE_BILLIONS)
+dfda_opex_regulatory_formatted = format_currency(DFDA_OPEX_REGULATORY_BILLIONS)
+dfda_opex_staff_formatted = format_currency(DFDA_OPEX_STAFF_BILLIONS)
 dfda_roi_simple_formatted = format_roi(DFDA_ROI_SIMPLE)
 dih_treasury_to_medical_research_annual_formatted = format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
 dih_treasury_trial_subsidies_max_formatted = format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)
@@ -3693,13 +3693,13 @@ qalys_total_optimistic_formatted = format_qalys(QALYS_TOTAL_OPTIMISTIC)
 recovery_trial_cost_per_patient_formatted = format_currency(RECOVERY_TRIAL_COST_PER_PATIENT / 1_000_000_000)
 roi_all_direct_benefits_formatted = format_roi(ROI_ALL_DIRECT_BENEFITS)
 roi_dfda_savings_only_formatted = format_roi(ROI_DFDA_SAVINGS_ONLY)
-sensitivity_campaign_cost_conservative_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)
-sensitivity_campaign_cost_optimistic_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)
+sensitivity_campaign_cost_conservative_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE_BILLIONS)
+sensitivity_campaign_cost_optimistic_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC_BILLIONS)
 sensitivity_cost_per_life_central_formatted = f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"
 sensitivity_cost_per_life_conservative_formatted = f"${SENSITIVITY_COST_PER_LIFE_CONSERVATIVE:.2f}M"
 sensitivity_cost_per_life_optimistic_formatted = f"${SENSITIVITY_COST_PER_LIFE_OPTIMISTIC:.2f}M"
-sensitivity_dfda_opex_conservative_formatted = format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)
-sensitivity_dfda_opex_optimistic_formatted = format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)
+sensitivity_dfda_opex_conservative_formatted = format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE_BILLIONS)
+sensitivity_dfda_opex_optimistic_formatted = format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC_BILLIONS)
 sensitivity_dfda_savings_conservative_formatted = format_billions(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)
 sensitivity_dfda_savings_optimistic_formatted = format_billions(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)
 sensitivity_icer_central_formatted = f"${SENSITIVITY_ICER_CENTRAL:,.0f}"
@@ -3714,8 +3714,8 @@ sensitivity_peace_qalys_conservative_formatted = format_qalys(SENSITIVITY_PEACE_
 sensitivity_peace_qalys_optimistic_formatted = format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)
 sensitivity_total_benefits_conservative_formatted = format_billions(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)
 sensitivity_total_benefits_optimistic_formatted = format_billions(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)
-sensitivity_total_costs_conservative_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)
-sensitivity_total_costs_optimistic_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)
+sensitivity_total_costs_conservative_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE_BILLIONS)
+sensitivity_total_costs_optimistic_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC_BILLIONS)
 sensitivity_total_qalys_conservative_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)
 sensitivity_total_qalys_optimistic_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)
 smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
@@ -3727,14 +3727,14 @@ traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_currency(
 treaty_annual_funding_formatted = format_billions(TREATY_ANNUAL_FUNDING)
 treaty_benefit_multiplier_vs_vaccines_formatted = f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"
 treaty_campaign_annual_cost_amortized_formatted = format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)
-treaty_campaign_budget_ai_lobbying_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_AI_LOBBYING)
-treaty_campaign_budget_legal_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_LEGAL)
-treaty_campaign_budget_operations_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_OPERATIONS)
-treaty_campaign_budget_partnerships_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS)
-treaty_campaign_budget_reserve_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_RESERVE)
-treaty_campaign_budget_super_pacs_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS)
-treaty_campaign_budget_technology_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_TECHNOLOGY)
-treaty_campaign_budget_viral_referendum_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM)
+treaty_campaign_budget_ai_lobbying_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS)
+treaty_campaign_budget_legal_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS)
+treaty_campaign_budget_operations_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS)
+treaty_campaign_budget_partnerships_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS)
+treaty_campaign_budget_reserve_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_RESERVE_BILLIONS)
+treaty_campaign_budget_super_pacs_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS_BILLIONS)
+treaty_campaign_budget_technology_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS)
+treaty_campaign_budget_viral_referendum_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS)
 treaty_campaign_total_cost_formatted = format_billions(TREATY_CAMPAIGN_TOTAL_COST)
 treaty_lives_saved_annual_global_formatted = format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)
 treaty_net_annual_benefit_formatted = format_billions(TREATY_NET_ANNUAL_BENEFIT)

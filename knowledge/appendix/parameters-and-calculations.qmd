@@ -14,20 +14,10 @@ format:
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
 **Total parameters**: 435
+
 - External sources (peer-reviewed): 134
 - Calculated values: 252
 - Core definitions: 49
-
-:::{.callout-note}
-## Data Transparency
-
-All parameters are defined in [`dih_models/parameters.py`](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/dih_models/parameters.py) with:
-- Source attribution (`source_ref`)
-- Confidence levels (high/medium/low)
-- Peer review status
-- Last update dates
-- Mathematical formulas
-:::
 
 # External Data Sources {#sec-external}
 
@@ -359,7 +349,7 @@ Total trial slots available for 2.4B sick people
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Defense Lobbying Annual {#sec-defense_lobbying_annual}
+## Defense Lobbying Annual Billions {#sec-defense_lobbying_annual_billions}
 
 **Value**: $127M
 
@@ -2378,6 +2368,10 @@ Actual completed trials multiplier (180x theoretical)
 
 Conservative completed trials multiplier accounting for scale-up
 
+$$
+Multiplier_{conservative} = 115
+$$
+
 **Methodology**: [../appendix/research-acceleration-model.qmd#conservative-multiplier](../appendix/research-acceleration-model.qmd#conservative-multiplier)
 
 *✓ High confidence*
@@ -2405,6 +2399,10 @@ Theoretical maximum research capacity multiplier (25×10×1.6×1.4)
 **Value**: 1.6
 
 Completion rate improvement (1.6x from 60% → 95%)
+
+$$
+Completion_{mult} = \frac{0.95}{0.60} = 1.58 \approx 1.6
+$$
 
 **Methodology**: [../appendix/research-acceleration-model.qmd#completion-rates](../appendix/research-acceleration-model.qmd#completion-rates)
 
@@ -2507,7 +2505,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Daily Cost Inefficiency {#sec-daily_cost_inefficiency}
+## Daily Cost Inefficiency Billions {#sec-daily_cost_inefficiency_billions}
 
 **Value**: $327M
 
@@ -2520,7 +2518,7 @@ Daily cost of healthcare system inefficiency
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dct Platform Funding Medium {#sec-dct_platform_funding_medium}
+## Dct Platform Funding Medium Billions {#sec-dct_platform_funding_medium_billions}
 
 **Value**: $500M
 
@@ -2612,6 +2610,10 @@ $$
 
 Optimistic drug approvals estimate (40x current)
 
+$$
+Approvals_{high} = 50 \times 40 = 2,000
+$$
+
 **Methodology**: [../appendix/research-acceleration-model.qmd#approval-projections](../appendix/research-acceleration-model.qmd#approval-projections)
 
 *✓ High confidence*
@@ -2625,6 +2627,10 @@ Optimistic drug approvals estimate (40x current)
 
 Conservative drug approvals estimate (20x current)
 
+$$
+Approvals_{low} = 50 \times 20 = 1,000
+$$
+
 **Methodology**: [../appendix/research-acceleration-model.qmd#approval-projections](../appendix/research-acceleration-model.qmd#approval-projections)
 
 *✓ High confidence*
@@ -2637,6 +2643,10 @@ Conservative drug approvals estimate (20x current)
 **Value**: 1,200,000,000
 
 Global eligible patients with minimal exclusions
+
+$$
+Eligible_{dFDA} = 2.4B \times 0.50 = 1.2B
+$$
 
 **Methodology**: [../appendix/research-acceleration-model.qmd#eligible-population](../appendix/research-acceleration-model.qmd#eligible-population)
 
@@ -2752,7 +2762,7 @@ Years to reach full dFDA adoption
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Npv Annual Opex {#sec-dfda_npv_annual_opex}
+## Dfda Npv Annual Opex Billions {#sec-dfda_npv_annual_opex_billions}
 
 **Value**: $19M
 
@@ -2850,7 +2860,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Npv Upfront Cost {#sec-dfda_npv_upfront_cost}
+## Dfda Npv Upfront Cost Billions {#sec-dfda_npv_upfront_cost_billions}
 
 **Value**: $40M
 
@@ -2880,7 +2890,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Community {#sec-dfda_opex_community}
+## Dfda Opex Community Billions {#sec-dfda_opex_community_billions}
 
 **Value**: $2.00M
 
@@ -2893,7 +2903,7 @@ dFDA community support costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Infrastructure {#sec-dfda_opex_infrastructure}
+## Dfda Opex Infrastructure Billions {#sec-dfda_opex_infrastructure_billions}
 
 **Value**: $8.00M
 
@@ -2906,7 +2916,7 @@ dFDA infrastructure costs (cloud, security)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Platform Maintenance {#sec-dfda_opex_platform_maintenance}
+## Dfda Opex Platform Maintenance Billions {#sec-dfda_opex_platform_maintenance_billions}
 
 **Value**: $15M
 
@@ -2919,7 +2929,7 @@ dFDA platform maintenance costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Regulatory {#sec-dfda_opex_regulatory}
+## Dfda Opex Regulatory Billions {#sec-dfda_opex_regulatory_billions}
 
 **Value**: $5.00M
 
@@ -2932,7 +2942,7 @@ dFDA regulatory coordination costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Staff {#sec-dfda_opex_staff}
+## Dfda Opex Staff Billions {#sec-dfda_opex_staff_billions}
 
 **Value**: $10M
 
@@ -3024,6 +3034,10 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 
 Maximum trials per year possible with 115x acceleration
 
+$$
+Trials_{dFDA} = 3,300 \times 115 = 379,500 \approx 380,000
+$$
+
 **Methodology**: [../appendix/research-acceleration-model.qmd#dfda-capacity](../appendix/research-acceleration-model.qmd#dfda-capacity)
 
 *✓ High confidence*
@@ -3031,7 +3045,7 @@ Maximum trials per year possible with 115x acceleration
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Upfront Build {#sec-dfda_upfront_build}
+## Dfda Upfront Build Billions {#sec-dfda_upfront_build_billions}
 
 **Value**: $40M
 
@@ -3044,7 +3058,7 @@ dFDA platform one-time build cost (central estimate)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Upfront Build Max {#sec-dfda_upfront_build_max}
+## Dfda Upfront Build Max Billions {#sec-dfda_upfront_build_max_billions}
 
 **Value**: $46M
 
@@ -3070,7 +3084,7 @@ Estimated one-time payment for diabetes cure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dih Npv Annual Opex Initiatives {#sec-dih_npv_annual_opex_initiatives}
+## Dih Npv Annual Opex Initiatives Billions {#sec-dih_npv_annual_opex_initiatives_billions}
 
 **Value**: $21.1M
 
@@ -3083,7 +3097,7 @@ DIH broader initiatives annual opex (medium case)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dih Npv Upfront Cost Initiatives {#sec-dih_npv_upfront_cost_initiatives}
+## Dih Npv Upfront Cost Initiatives Billions {#sec-dih_npv_upfront_cost_initiatives_billions}
 
 **Value**: $230M
 
@@ -4038,7 +4052,9 @@ $$
 
 Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)
 
-*Formula*: `PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING`
+$$
+PD_{conflict} = \$113.55B - \$27.18B = \$86.37B
+$$
 
 **Methodology**: [Direct Calculation](#calculated)
 
@@ -4053,7 +4069,9 @@ Conflict reduction benefits from 1% less military spending (lower confidence - a
 
 Annual savings from 1% reduction in direct war costs
 
-*Formula*: `DIRECT_COSTS × 1%`
+$$
+PD_{direct} = \$7,655B \times 0.01 = \$76.55B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4068,7 +4086,9 @@ Annual savings from 1% reduction in direct war costs
 
 Direct fiscal savings from 1% military spending reduction (high confidence)
 
-*Formula*: `TREATY_ANNUAL_FUNDING`
+$$
+PD_{fiscal} = \$27.18B
+$$
 
 **Methodology**: [SIPRI Military Spending Database](#sipri-2024-spending)
 
@@ -4083,7 +4103,9 @@ Direct fiscal savings from 1% military spending reduction (high confidence)
 
 Annual savings from 1% reduction in environmental damage
 
-*Formula*: `ENVIRONMENTAL_DAMAGE × 1%`
+$$
+PD_{env} = \$10B \times 0.01 = \$0.10B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4098,7 +4120,9 @@ Annual savings from 1% reduction in environmental damage
 
 Annual savings from 1% reduction in human casualties
 
-*Formula*: `HUMAN_LIFE_LOSSES × 1%`
+$$
+PD_{human} = \$2,446B \times 0.01 = \$24.46B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4113,7 +4137,9 @@ Annual savings from 1% reduction in human casualties
 
 Annual savings from 1% reduction in indirect war costs
 
-*Formula*: `INDIRECT_COSTS × 1%`
+$$
+PD_{indirect} = \$3,700.1B \times 0.01 = \$37.00B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4128,7 +4154,9 @@ Annual savings from 1% reduction in indirect war costs
 
 Annual savings from 1% reduction in infrastructure destruction
 
-*Formula*: `INFRASTRUCTURE_DESTRUCTION × 1%`
+$$
+PD_{infra} = \$1,875B \times 0.01 = \$18.75B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4143,7 +4171,9 @@ Annual savings from 1% reduction in infrastructure destruction
 
 Annual savings from 1% reduction in lost economic growth
 
-*Formula*: `LOST_ECONOMIC_GROWTH × 1%`
+$$
+PD_{growth} = \$2,718B \times 0.01 = \$27.18B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4158,7 +4188,9 @@ Annual savings from 1% reduction in lost economic growth
 
 Annual savings from 1% reduction in lost human capital
 
-*Formula*: `LOST_HUMAN_CAPITAL × 1%`
+$$
+PD_{capital} = \$30B \times 0.01 = \$0.30B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4173,7 +4205,9 @@ Annual savings from 1% reduction in lost human capital
 
 Annual savings from 1% reduction in PTSD and mental health costs
 
-*Formula*: `PTSD_COSTS × 1%`
+$$
+PD_{PTSD} = \$23.2B \times 0.01 = \$0.23B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4188,7 +4222,9 @@ Annual savings from 1% reduction in PTSD and mental health costs
 
 Annual savings from 1% reduction in refugee support costs
 
-*Formula*: `REFUGEE_SUPPORT × 1%`
+$$
+PD_{refugee} = \$15B \times 0.01 = \$0.15B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4203,7 +4239,9 @@ Annual savings from 1% reduction in refugee support costs
 
 Total benefit per dollar redirected (savings + funding captured)
 
-*Formula*: `(PEACE_DIVIDEND + FUNDING) ÷ FUNDING`
+$$
+ROI_{peace} = \frac{\$113.55B + \$27.18B}{\$27.18B} = 5.18
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4218,7 +4256,9 @@ Total benefit per dollar redirected (savings + funding captured)
 
 Annual savings from 1% reduction in trade disruption
 
-*Formula*: `TRADE_DISRUPTION × 1%`
+$$
+PD_{trade} = \$616B \times 0.01 = \$6.16B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4233,7 +4273,9 @@ Annual savings from 1% reduction in trade disruption
 
 Annual savings from 1% reduction in veteran healthcare costs
 
-*Formula*: `VETERAN_HEALTHCARE × 1%`
+$$
+PD_{veteran} = \$20.01B \times 0.01 = \$0.20B
+$$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
 
@@ -4430,6 +4472,10 @@ Minimum investment for qualified investors
 
 Recruitment speed multiplier (25x faster from 2% → 50% eligibility)
 
+$$
+Recruitment_{mult} = \frac{0.50}{0.002} = 25
+$$
+
 **Methodology**: [../appendix/research-acceleration-model.qmd#recruitment-acceleration](../appendix/research-acceleration-model.qmd#recruitment-acceleration)
 
 *✓ High confidence*
@@ -4459,6 +4505,10 @@ $$
 **Value**: 115
 
 Total research capacity multiplier from dFDA
+
+$$
+Multiplier = 1.40 \times 82 = 115
+$$
 
 **Methodology**: [../appendix/research-acceleration-model.qmd](../appendix/research-acceleration-model.qmd)
 
@@ -4569,7 +4619,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Campaign Cost Conservative {#sec-sensitivity_campaign_cost_conservative}
+## Sensitivity Campaign Cost Conservative Billions {#sec-sensitivity_campaign_cost_conservative_billions}
 
 **Value**: $333M
 
@@ -4582,7 +4632,7 @@ Conservative campaign cost (3-year amortization)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Campaign Cost Optimistic {#sec-sensitivity_campaign_cost_optimistic}
+## Sensitivity Campaign Cost Optimistic Billions {#sec-sensitivity_campaign_cost_optimistic_billions}
 
 **Value**: $200M
 
@@ -4634,7 +4684,7 @@ Optimistic cost per life saved
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Dfda Opex Conservative {#sec-sensitivity_dfda_opex_conservative}
+## Sensitivity Dfda Opex Conservative Billions {#sec-sensitivity_dfda_opex_conservative_billions}
 
 **Value**: $60M
 
@@ -4647,7 +4697,7 @@ Conservative dFDA operational costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Dfda Opex Optimistic {#sec-sensitivity_dfda_opex_optimistic}
+## Sensitivity Dfda Opex Optimistic Billions {#sec-sensitivity_dfda_opex_optimistic_billions}
 
 **Value**: $30M
 
@@ -4846,7 +4896,7 @@ Optimistic total benefits estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Costs Conservative {#sec-sensitivity_total_costs_conservative}
+## Sensitivity Total Costs Conservative Billions {#sec-sensitivity_total_costs_conservative_billions}
 
 **Value**: $393M
 
@@ -4859,7 +4909,7 @@ Conservative total costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Costs Optimistic {#sec-sensitivity_total_costs_optimistic}
+## Sensitivity Total Costs Optimistic Billions {#sec-sensitivity_total_costs_optimistic_billions}
 
 **Value**: $230M
 
@@ -5063,7 +5113,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Ai Lobbying {#sec-treaty_campaign_budget_ai_lobbying}
+## Treaty Campaign Budget Ai Lobbying Billions {#sec-treaty_campaign_budget_ai_lobbying_billions}
 
 **Value**: $250M
 
@@ -5076,7 +5126,7 @@ AI-assisted lobbying budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Legal {#sec-treaty_campaign_budget_legal}
+## Treaty Campaign Budget Legal Billions {#sec-treaty_campaign_budget_legal_billions}
 
 **Value**: $100M
 
@@ -5089,7 +5139,7 @@ Legal and compliance budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Mass Bribery {#sec-treaty_campaign_budget_mass_bribery}
+## Treaty Campaign Budget Mass Bribery Billions {#sec-treaty_campaign_budget_mass_bribery_billions}
 
 **Value**: $140M
 
@@ -5102,7 +5152,7 @@ Campaign budget for mass mobilization (voting bloc build)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Operations {#sec-treaty_campaign_budget_operations}
+## Treaty Campaign Budget Operations Billions {#sec-treaty_campaign_budget_operations_billions}
 
 **Value**: $50M
 
@@ -5115,7 +5165,7 @@ Operations budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Partnerships {#sec-treaty_campaign_budget_partnerships}
+## Treaty Campaign Budget Partnerships Billions {#sec-treaty_campaign_budget_partnerships_billions}
 
 **Value**: $100M
 
@@ -5128,7 +5178,7 @@ Partnerships budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Reserve {#sec-treaty_campaign_budget_reserve}
+## Treaty Campaign Budget Reserve Billions {#sec-treaty_campaign_budget_reserve_billions}
 
 **Value**: $50M
 
@@ -5141,7 +5191,7 @@ Reserve fund
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Super Pacs {#sec-treaty_campaign_budget_super_pacs}
+## Treaty Campaign Budget Super Pacs Billions {#sec-treaty_campaign_budget_super_pacs_billions}
 
 **Value**: $800M
 
@@ -5154,7 +5204,7 @@ Campaign budget for Super PACs and political lobbying
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Technology {#sec-treaty_campaign_budget_technology}
+## Treaty Campaign Budget Technology Billions {#sec-treaty_campaign_budget_technology_billions}
 
 **Value**: $250M
 
@@ -5167,7 +5217,7 @@ Technology platform budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Viral Referendum {#sec-treaty_campaign_budget_viral_referendum}
+## Treaty Campaign Budget Viral Referendum Billions {#sec-treaty_campaign_budget_viral_referendum_billions}
 
 **Value**: $200M
 
