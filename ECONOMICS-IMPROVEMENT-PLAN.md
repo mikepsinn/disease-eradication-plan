@@ -1028,9 +1028,9 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Todo #12: Strengthen peace dividend causal claims with confidence levels
 - [ ] Todo #13: Enhance sensitivity analysis with discount rate table
 - [x] Todo #14: Strengthen RECOVERY trial limitations - ✅ COMPLETED (lines 1051-1062)
-- [ ] Todo #20: Add partnership model cost savings explanation
-- [ ] Todo #21: Distinguish platform costs from patient subsidy fund
-- [ ] Todo #0a: Strengthen pre-1962 cost justification and thalidomide prevention (partially complete - needs strengthening)
+- [x] Todo #20: Add partnership model cost savings explanation - ✅ COMPLETED (lines 645-649)
+- [x] Todo #21: Distinguish platform costs from patient subsidy fund - ✅ COMPLETED (lines 714-720)
+- [x] Todo #0a: Strengthen pre-1962 cost justification and thalidomide prevention - ✅ COMPLETED (lines 542-554)
 
 ### Phase 3: High Priority Enhancements
 - [ ] Todo #15: Add opportunity cost analysis section
@@ -1050,12 +1050,12 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Todo #33: Specify counterfactual baseline
 
 ### Phase 4: Update Supporting Documents
-- [ ] Update `knowledge/appendix/economist-critique-analysis.md` to remove incorrect researcher constraint critique
-- [ ] Verify all variable references work after running generate-variables-yml.py
+- [ ] Verify all variable references work after running generate-variables-yml.py (Todo #30)
 - [ ] Check all LaTeX equations render correctly
 - [ ] Cross-reference dfda.qmd, dfda-cost-benefit-analysis.qmd, and right-to-trial-fda-upgrade-act.qmd for consistency on funding model and partnership approach
-- [ ] Todo #22: Extract cost comparison table to reusable figure and include in economics.qmd and dfda-cost-benefit-analysis.qmd
-- [ ] Todo #23: Add observational vs randomized trial evidence images to economics.qmd
+- [x] Todo #22: Extract cost comparison table to reusable figure - ✅ COMPLETED (knowledge/figures/dfda-cost-breakdown-itemized-table.qmd created in previous session)
+- [x] Todo #23: Add observational vs randomized trial evidence images to economics.qmd - ✅ COMPLETED (lines 1109-1115)
+- [ ] Delete REVIEW-COST-EFFECTIVENESS.md (all items incorporated into this plan)
 
 ---
 
