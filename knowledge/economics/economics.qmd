@@ -246,7 +246,7 @@ You get paid twice for the same {{< var treaty_reduction_pct >}} shift:
 
 ### The Numbers
 
-- **Conservative returns**: [{{< var roi_dfda_savings_only >}}](../appendix/dfda-cost-benefit-analysis.qmd) (counting only R&D savings, ignoring everything else)
+- **Conservative returns**: {{< var roi_dfda_savings_only >}} (counting only R&D savings, ignoring everything else)
 - **Realistic returns**: {{< var roi_all_direct_benefits >}}:1 (counting all eight measurable benefits)
 - **Per life saved**: Society MAKES [$6.56M](../appendix/1-percent-treaty-cost-effectiveness.qmd) (vs. best charities SPENDING [{{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}}](../references.qmd#givewell-cost-per-life-saved))
 - **Lives saved yearly**: {{< var treaty_total_lives_saved_annual >}} (lowball estimate)
@@ -346,7 +346,7 @@ This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} ove
 
 ### What You Get Back
 
-- **Money**: [{{< var global_annual_trade_disruption_shipping_conflict >}}](../appendix/dfda-cost-benefit-analysis.qmd) in R&D savings (10 years, present value)
+- **Money**: {{< var global_annual_trade_disruption_shipping_conflict >}} in R&D savings (10 years, present value)
 - **Returns**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) ÷ {{< var dfda_npv_total_cost >}} = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
 - **People not dying**: {{< var global_dfda_qalys_gained_annual >}} quality-adjusted life years annually
 
@@ -455,9 +455,9 @@ $$
 where each benefit category is:
 
 1. **Peace dividend** ({{< var peace_dividend_annual_societal_benefit >}}) - Societal savings from 1% less conflict
-2. **R&D cost savings** ([{{< var current_drug_approvals_per_year >}}](../appendix/dfda-cost-benefit-analysis.qmd)) - {{< var trial_cost_reduction_factor >}} cheaper trials
-3. **7-year access acceleration** ([{{< var global_annual_infrastructure_damage_communications_conflict >}}](../appendix/economic-value-of-accelerated-treatments.qmd)) - Earlier treatment access during trials
-4. **Research acceleration** ([{{< var global_annual_environmental_damage_conflict >}}](../appendix/research-acceleration-model.qmd)) - 115X more research capacity (10-20X more breakthroughs)
+2. **R&D cost savings** ({{< var current_drug_approvals_per_year >}}) - {{< var trial_cost_reduction_factor >}} cheaper trials
+3. **7-year access acceleration** ({{< var global_annual_infrastructure_damage_communications_conflict >}}) - Earlier treatment access during trials
+4. **Research acceleration** ({{< var global_annual_environmental_damage_conflict >}}) - 115X more research capacity (10-20X more breakthroughs)
 5. **Rare disease treatments** ({{< var benefit_rare_diseases_annual >}}) - Economically viable orphan drug development for [300M patients](../references.qmd#rare-disease-patients-300m-globally) with diseases lacking treatments ([{{< var dfda_trial_completion_rate >}} of {{< var rare_diseases_count_global >}}+ rare diseases](../references.qmd#95-pct-diseases-no-treatment) have no FDA-approved therapy)
 6. **Drug price reductions** ({{< var global_annual_environmental_damage_conflict >}}) - Conservative estimate based on [U.S. drug prices {{< var us_drug_price_multiplier_vs_peer_countries >}} higher](../references.qmd#us-drug-prices-vs-peer-countries) than peer countries ({{< var us_annual_drug_spending >}} annual U.S. spending; 20-{{< var trial_cost_reduction_pct >}} reduction potential = {{< var drug_price_reduction_savings_low >}}-180B from U.S. alone)
 7. **Prevention medicine** ($100.0B) - Based on [global clinical trial market](../appendix/global-clinical-trial-spending-by-phase.qmd) projections exceeding {{< var global_clinical_trial_market_annual >}} annually, enabling economically viable prevention studies
@@ -473,7 +473,7 @@ $$
 \text{ROI}_{\text{complete}} = \frac{\$1,238.6\text{B annual} \times 10\text{ years}}{\$1.0\text{B implementation}} = 1,239:1
 $$
 
-where [{{< var dfda_roi_simple >}}](../appendix/dfda-cost-benefit-analysis.qmd) is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and [{{< var peace_dividend_environmental >}}](campaign-budget.qmd) is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
+where {{< var dfda_roi_simple >}} is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and {{< var peace_dividend_environmental >}} is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
 
 - **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
 - **Research Acceleration** = System runs 115X MORE trials, finding 10-20X MORE breakthroughs
@@ -518,11 +518,11 @@ $$
 25 \times 10 \times 1.6 \times 1.4 = 560
 $$
 
-This represents **[{{< var completed_trials_multiplier_theoretical_max >}}](../appendix/research-acceleration-model.qmd)** more completed trials per year
+This represents **{{< var completed_trials_multiplier_theoretical_max >}}** more completed trials per year
 
-**Conservative Estimate**: [{{< var completed_trials_multiplier_actual >}}](../appendix/research-acceleration-model.qmd) accounting for real-world friction (ramp-up, adoption, learning curves)
+**Conservative Estimate**: {{< var completed_trials_multiplier_actual >}} accounting for real-world friction (ramp-up, adoption, learning curves)
 
-**Used in Analysis**: **[{{< var research_acceleration_multiplier >}}](../appendix/research-acceleration-model.qmd)** (further conservative adjustment for foundation grant proposal credibility)
+**Used in Analysis**: **{{< var research_acceleration_multiplier >}}** (further conservative adjustment for foundation grant proposal credibility)
 
 This represents:
 
@@ -549,7 +549,7 @@ Global spending on health-related challenges demonstrates significant misalignme
 - **Military spending**: [{{< var victory_bond_annual_payout >}} trillion annually](../references.qmd#sipri-2024-spending) ([40X](../appendix/humanity-budget-overview.qmd) [medical research funding](../appendix/global-government-medical-research-spending.qmd))
 - **Symptomatic disease treatment**: [{{< var global_symptomatic_disease_treatment_annual >}} annually](../references.qmd#disease-economic-burden-109t) (primarily managing chronic conditions rather than curative interventions)
 - **Economic burden of disease**: [{{< var global_disease_economic_burden_annual >}} annually](../references.qmd#disease-economic-burden-109t) in lost productivity, premature mortality, and disability-adjusted life years
-- **Total annual cost**: [{{< var global_total_health_and_war_cost_annual >}}](../appendix/humanity-budget-overview.qmd)
+- **Total annual cost**: {{< var global_total_health_and_war_cost_annual >}}
 
 **Current investment in curative research**:
 
@@ -570,7 +570,7 @@ $$
 
 The World Health Organization reports {{< var global_daily_deaths_curable_diseases >}} daily deaths from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)). This mortality burden exceeds:
 
-- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of [{{< var disease_vs_terrorism_deaths_ratio >}}](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
+- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
 
 $$
 \frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
@@ -783,7 +783,7 @@ This economic analysis demonstrates that redirecting 1% of global military spend
 
 - **Self-funding structure**: Zero net new spending required (funds redirected from existing military budgets)
 - **Dominant intervention**: Simultaneously reduces costs and improves health outcomes
-- **Conservative ROI**: [{{< var roi_dfda_savings_only >}}](../appendix/dfda-cost-benefit-analysis.qmd) based solely on R&D efficiency gains
+- **Conservative ROI**: {{< var roi_dfda_savings_only >}} based solely on R&D efficiency gains
 
 $$
 \frac{\$249.3\text{B NPV benefit}}{\$538\text{M NPV cost}} = 463:1
