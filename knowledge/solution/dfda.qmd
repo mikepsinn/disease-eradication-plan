@@ -276,25 +276,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 
 ### The Itemized Receipt of Eliminated Stupidity
 
-| Stupid Expense | What FDA Pays | dFDA Cost | Savings | What It Actually Is |
-| :--- | :--- | :--- | :--- | :--- |
-| 💾 Data Management | $198,014 | $10,000 | 94.9% | Excel spreadsheets with fear |
-| ✅ IRB Approval | $324,081 | $5,000 | 98.5% | Permission slips for adults |
-| 📝 IRB Amendments | $6,347 | $0 | 100% | Permission to fix typos |
-| 🔍 Source Data Verification | $1,486,250 | $25,000 | 98.3% | Checking if you lied about dying |
-| 🤝 Patient Recruitment | $805,785 | $15,000 | 98.1% | Facebook ads for dying people |
-| 🎯 Patient Retention | $76,879 | $20,000 | 74% | Bribes to keep dying people interested |
-| 👨‍⚕️ Research Associates | $2,379,605 | $150,000 | 93.7% | People who watch you take pills |
-| 👩‍⚕️ Physicians | $1,966,621 | $100,000 | 94.9% | Doctors pretending to be scientists |
-| 🏥 Clinical Procedures | $5,937,819 | $1,000,000 | 83.2% | Poking you with expensive things |
-| 🧪 Laboratory | $2,325,922 | $500,000 | 78.5% | Testing if your pee is still pee |
-| 🏢 Site Recruitment | $849,158 | $0 | 100% | Bribing hospitals to participate |
-| 🏗️ Site Retention | $4,461,322 | $0 | 100% | Bribing hospitals to not quit |
-| 👥 Administrative Staff | $7,229,968 | $100,000 | 98.6% | People who file the files |
-| 📊 Site Monitoring | $4,456,717 | $0 | 100% | People who watch the people who watch you |
-| 🏢 Site Overhead | $7,386,816 | $0 | 100% | Electricity for the filing cabinets |
-| 📎 All Other | $17,096,703 | $100,000 | 99.4% | Nobody knows but it's expensive |
-| **TOTAL STUPIDITY** | [**$56,988,007**](../references.qmd#clinical-trial-cost-breakdown) | **$2,025,000** | **95.7%** | **The price of bureaucracy** |
+{{< include ../figures/dfda-cost-breakdown-itemized-table.qmd >}}
 
 This eliminates $55 million of paperwork per trial. That's 55 million pieces of paper nobody reads, filed in cabinets nobody opens, in buildings nobody visits.
 

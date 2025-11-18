@@ -545,13 +545,43 @@ Based on content and scope:
 
 ### Fixable Issues (Priority Order)
 
-#### 1. ⏳ Add Bloom et al. (2020) Citation on Diminishing Returns
+**CRITICAL PRIORITIES (Address These First)**
+
+#### 0. ✅ Add Pre-1962 Historical Context (HIGHEST PRIORITY) - COMPLETED
+**Issue**: CRITICAL - Generalizability from RECOVERY trial (single case study concern)
+**Solution**: We're not proposing something new - we're returning to the pre-1962 physician-led efficacy trial model
+**Historical Evidence**:
+- **1883-1960**: 144,000 physicians tested treatments on real patients, AMA/JAMA compiled and peer-reviewed results
+- **Results**: 4 years/decade life expectancy increase for 80 consecutive years (most linear relationship in medical history)
+- **Cost**: $74M per drug (inflation-adjusted) vs. post-1962 $2.6B (35× increase, not 82× - economics.qmd line 551 corrects this)
+- **dFDA model**: High-tech version of pre-1962 physician-led trials (Amazon/Consumer Reports for decentralized trials)
+**Action**:
+- [x] Add brief historical context to Methodology section explaining dFDA returns to proven pre-1962 model
+- [x] Add to Limitations section: "Our model isn't extrapolating from single case study (RECOVERY) - it's returning to the physician-led model that demonstrably worked 1883-1960"
+- [x] Cite knowledge/problem/fda-is-unsafe-and-ineffective.qmd data
+- [x] Reference existing citations: pre-1962-physician-trials, pre-1962-drug-costs-timeline, jama-founded-1893
+**Why This Matters**: Directly refutes the #2 CRITICAL issue blocking publication (generalizability from single case study)
+**COMPLETED**: Added "Historical Precedent: Pre-1962 Physician-Led Efficacy Trials" to Methodology (lines 538-556) and "Generalizability from RECOVERY Trial and Historical Precedent" to Limitations (lines 1047-1058)
+
+#### 0a. ⏳ Strengthen Pre-1962 Cost Justification and Thalidomide Prevention
+**Issue**: Should emphasize how much cheaper pre-1962 system was ($74M vs $2.6B) and how it prevented thalidomide disaster (safety worked without efficacy requirements)
+**Location**: "Historical Precedent: Pre-1962 Physician-Led Efficacy Trials" section (lines 538-556)
+**Action**:
+- [ ] Emphasize cost comparison more prominently: "The pre-1962 system achieved $74M per drug (inflation-adjusted) vs. post-1962 $2.6B average - a 35× cost increase. The dFDA model returns to this proven low-cost approach with modern automation."
+- [ ] Strengthen thalidomide point: "Critically, the pre-1962 safety testing framework successfully prevented the thalidomide disaster that devastated Europe (10,000-20,000 birth defects). Existing FDA safety regulations (1938 Food, Drug and Cosmetic Act) blocked thalidomide from harming American patients, demonstrating that safety testing worked effectively without the extensive efficacy requirements added in 1962. The 1962 Kefauver-Harris Amendment added efficacy requirements in response to thalidomide, but the US had already been protected by existing safety regulations."
+- [ ] Note US life expectancy decline: "US life expectancy has declined in recent years (2014-2017, 2020-2021), the first sustained decreases since 1915-1918, suggesting the post-1962 regulatory model may have reached diminishing or negative returns."
+- [ ] Reference: knowledge/problem/fda-is-unsafe-and-ineffective.qmd (lines 113-125) for thalidomide details
+**Why Important**: Strengthens cost justification and addresses safety concerns (shows pre-1962 system was both cheaper AND safer)
+
+#### 1. ✅ Add Bloom et al. (2020) Citation on Diminishing Returns - COMPLETED
 **Issue**: Linear scaling assumption criticized - need to cite diminishing returns literature
 **Action**:
-- [ ] Find Bloom et al. (2020) "Are Ideas Getting Harder to Find?" citation
-- [ ] Add to knowledge/references.qmd
-- [ ] Add brief mention in Limitations section acknowledging this but explaining why our intervention differs (targets efficiency, not idea discovery)
-- [ ] Add sensitivity analysis: "Even with 50% diminishing returns, ROI remains 230:1 (conservative) to 620:1 (complete)"
+- [x] Find Bloom et al. (2020) "Are Ideas Getting Harder to Find?" citation
+- [x] Add to knowledge/references.qmd (anchor: bloom-ideas-getting-harder-2020)
+- [x] Add brief mention in Limitations section acknowledging this but explaining why our intervention differs (targets efficiency, not idea discovery)
+- [x] Add sensitivity analysis: "Even with 50% diminishing returns, ROI remains 230:1 (conservative) to 620:1 (complete)"
+**Citation**: Bloom, Nicholas, Charles I. Jones, John Van Reenen, and Michael Webb, 2020, "Are Ideas Getting Harder to Find?" American Economic Review 110 (4): 1104–44
+**COMPLETED**: Added "Diminishing Returns in Research Productivity" to Limitations (lines 1060-1074)
 
 #### 2. ✅ Check Peace Dividend for Double-Counting
 **Issue**: VSL (Human Life Losses: $2,446B) may double-count with Lost Human Capital ($300B)
@@ -570,13 +600,17 @@ Based on content and scope:
 - [ ] Add conservative adjustment to peace dividend calculation
 - [ ] Document this as offsetting factor in peace dividend methodology
 
-#### 4. ⏳ Add Pragmatic vs Traditional RCT Citations
+#### 4. ✅ Add Pragmatic vs Traditional RCT Citations - COMPLETED
 **Issue**: Selection bias critique - need citations showing pragmatic trials are valid
 **Action**:
-- [ ] Find Patsopoulos 2011 systematic review citation
-- [ ] Find Thorpe et al. 2009 citation on pragmatic trials
-- [ ] Add to knowledge/references.qmd
-- [ ] Add brief discussion in Limitations: "Pragmatic trials show 15-25% smaller effects but better external validity"
+- [x] Find Patsopoulos 2011 systematic review citation
+- [x] Find Thorpe et al. 2009 citation on pragmatic trials
+- [x] Add to knowledge/references.qmd (anchors: pragmatic-trials-patsopoulos-2011, pragmatic-trials-precis-tool-2009)
+- [x] Add brief discussion in Limitations: "Pragmatic trials show 15-25% smaller effects but better external validity"
+**Citations**:
+- Patsopoulos, Nikolaos A., 2011, "A pragmatic view on pragmatic trials", Dialogues in Clinical Neuroscience 13(2): 217-224
+- Thorpe, Kevin E., et al., 2009, "PRECIS: a tool to help trial designers", Journal of Clinical Epidemiology 62(5): 464-475
+**COMPLETED**: Added "Pragmatic Trial Internal Validity and Selection Bias" to Limitations (lines 1076-1090)
 
 #### 5. ❌ SKIP NIH Budget Doubling Comparison
 **Issue**: Diminishing returns critique - initially thought we needed empirical evidence
@@ -638,3 +672,276 @@ These require major new research - acknowledge transparently but don't try to fi
 3. Update parameters.py where needed
 4. Keep Limitations section focused and concise
 5. Check off items as completed
+
+---
+
+## COMPREHENSIVE ECONOMIST CRITIQUE TODOS
+
+**Source**: `knowledge/appendix/economist-critique-analysis.md` (10 major critique categories)
+**Approach**: Address all critiques systematically with calculations in parameters.py, variables via generate-variables-yml.py, hardcoded LaTeX in economics.qmd
+
+### CRITICAL PRIORITY TODOS (Must Address)
+
+#### 9. ⏳ Add Probability-Weighted Expected Value Analysis (CRITICAL)
+**Issue**: Political feasibility treated as binary (P=1.0) - economists require expected value = P × Benefits
+**Location**: After line 544 (Political Feasibility Assumption section)
+**Action**:
+- [ ] Add to `dih_models/parameters.py`:
+  - `POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(0.10, ...)`
+  - `POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(0.25, ...)`
+  - `POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(0.50, ...)`
+  - `EXPECTED_ROI_CONSERVATIVE_DFDA = Parameter(ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE, ...)`
+  - `EXPECTED_ROI_MODERATE_DFDA = Parameter(ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE, ...)`
+  - `EXPECTED_ROI_OPTIMISTIC_DFDA = Parameter(ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC, ...)`
+  - Similar for complete case (ROI_ALL_DIRECT_BENEFITS)
+- [ ] Run `scripts/generate-variables-yml.py` to regenerate variables
+- [ ] Add new subsection "Expected Value Analysis Accounting for Political Risk" in economics.qmd
+- [ ] Hardcode LaTeX: $$E[\text{ROI}] = P(\text{success}) \times \text{ROI}_{\text{if successful}}$$
+- [ ] Show sensitivity table using variables: {{< var expected_roi_conservative_dfda >}}:1, {{< var expected_roi_moderate_dfda >}}:1, {{< var expected_roi_optimistic_dfda >}}:1
+- [ ] Frame as: "Conditional analysis shows large benefits IF implemented; expected value accounts for implementation probability"
+**Why Critical**: This is the #1 fatal flaw economists would identify - expected value is standard in economic analysis
+
+#### 10. ⏳ Clarify Automated System and Funding Model (No Researcher Constraints)
+**Issue**: Critique incorrectly assumes 115× research acceleration requires 115× more researchers; also unclear how $27.2B annual funding is allocated
+**Location**: "Research Acceleration Mechanism" section (around line 427) and "Self-Funding Mechanism" section (around line 692)
+**Action**:
+- [ ] Add explicit paragraph to Research Acceleration section: "The dFDA system operates as automated infrastructure analyzing time series EHR data from electronic health records, wearables, and apps, similar to Amazon/Consumer Reports for clinical trials. The {{< var research_acceleration_multiplier >}}× research acceleration does NOT require {{< var research_acceleration_multiplier >}}× more researchers because the system scales through software and data infrastructure, not human labor. The platform uses federated queries (data stays in Epic/Cerner/Apple Health systems) rather than a central database, enabling analysis without data movement."
+- [ ] Clarify funding allocation in Self-Funding section: "The ${{< var treaty_annual_funding >}}B annual funding from 1% military redirection is allocated as follows: (1) dFDA platform operational costs (~$40M/year for core platform + medium broader initiatives), (2) NIH Trial Participation Cost Discount Fund ($2B/year for patient subsidies per Right to Trial Act SEC. 303), and (3) remaining funds allocated via Wishocracy for patient participation subsidies, infrastructure, and research incentives. Patients pay a small copay after NIH discounts; the system does NOT fund researcher salaries."
+- [ ] Add note about partnership model: "The dFDA uses a partnership approach (open protocol, not competing platform) costing $15-25M upfront vs. $37.5-46M for full build, leveraging existing infrastructure (Epic, Cerner, Medable) rather than building from scratch."
+- [ ] Update `knowledge/appendix/economist-critique-analysis.md` to remove incorrect researcher supply constraint critique
+**Why Critical**: Directly addresses incorrect assumption in critique #2 and clarifies funding model to prevent confusion about cost structure
+
+#### 11. ⏳ Add General Equilibrium Effects Discussion
+**Issue**: Analysis uses partial equilibrium - doesn't account for market adjustments
+**Location**: New subsection in "Limitations and Uncertainties" section (after line 1001)
+**Action**:
+- [ ] Add "General Equilibrium Considerations" subsection
+- [ ] Discuss (but don't quantify due to complexity):
+  - Defense sector employment displacement (40,000-54,000 jobs, $2-4B transition costs)
+  - Data infrastructure scaling costs (not researcher constraints - system is automated)
+  - Rent-seeking and administrative costs (10-20% of funding)
+  - Price effects in clinical trial market (demand increase may affect equilibrium)
+- [ ] Note: "These effects are acknowledged but not quantified due to complexity. Conservative approach: Base case excludes these to provide lower bound."
+**Why Critical**: Acknowledges methodological limitation economists would raise
+
+#### 12. ⏳ Strengthen Peace Dividend Causal Claims
+**Issue**: Assumes 1% military spending reduction directly causes 1% conflict reduction - no causal link established
+**Location**: "Peace Dividend Calculation Methodology" section (lines 413-425)
+**Action**:
+- [ ] Add to `dih_models/parameters.py`:
+  - `PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(TREATY_ANNUAL_FUNDING, confidence="high", ...)` (high confidence)
+  - `PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING, confidence="low", ...)` (lower confidence)
+- [ ] Separate peace dividend into two components in economics.qmd:
+  - Direct fiscal savings (high confidence): ${{< var treaty_annual_funding >}}B (1% of military spending)
+  - Conflict reduction benefits (lower confidence): ${{< var peace_dividend_conflict_reduction >}}B (1% of conflict costs)
+- [ ] Add acknowledgment: "The causal link between 1% military spending reduction and 1% conflict reduction is not established. The ${{< var peace_dividend_conflict_reduction >}}B conflict reduction benefit assumes proportional relationship, which may not hold. Conservative interpretation: Direct fiscal savings (${{< var treaty_annual_funding >}}B) are certain; conflict reduction benefits ($0-{{< var peace_dividend_conflict_reduction >}}B) are uncertain."
+**Why Critical**: Addresses critique #6 about overly optimistic peace dividend calculation
+
+### HIGH PRIORITY TODOS (Strengthen Analysis)
+
+#### 13. ⏳ Enhance Sensitivity Analysis with Discount Rate and Political Probability
+**Issue**: Sensitivity analysis varies technical parameters but not discount rate or political probability
+**Location**: "Sensitivity Analysis Approach" section (lines 468-494)
+**Action**:
+- [ ] Add to `dih_models/parameters.py`:
+  - Create function `calculate_roi_at_discount_rate(discount_rate)` that recalculates NPV with different discount rates
+  - Add parameters: `ROI_DISCOUNT_1PCT`, `ROI_DISCOUNT_3PCT` (baseline), `ROI_DISCOUNT_5PCT`, `ROI_DISCOUNT_7PCT`
+- [ ] Run `scripts/generate-variables-yml.py`
+- [ ] Add discount rate sensitivity table in economics.qmd with hardcoded LaTeX showing NPV formula
+- [ ] Show table: 1% = {{< var roi_discount_1pct >}}:1, 3% = {{< var roi_discount_3pct >}}:1 (baseline), 5% = {{< var roi_discount_5pct >}}:1, 7% = {{< var roi_discount_7pct >}}:1
+- [ ] Integrate political probability sensitivity (from todo #9 above)
+- [ ] Add note: "10-year horizon captures majority of NPV; benefits continue beyond year 10 but discounted heavily"
+**Why Important**: Shows robustness to key parameter variations economists would test
+
+#### 14. ⏳ Strengthen RECOVERY Trial Limitations
+**Issue**: Single case study (RECOVERY) extrapolated globally - external validity concerns
+**Location**: "Cost Reduction Assumptions" section (lines 527-536)
+**Action**:
+- [ ] Strengthen language: "RECOVERY trial serves as proof-of-concept demonstrating feasibility, not proof-of-scale for all drug development. The trial's context (emergency, repurposed drugs, acute condition) may not generalize to all therapeutic areas."
+- [ ] Add: "Conservative approach uses 50% reduction (midpoint) rather than RECOVERY's 95%+ to account for this uncertainty."
+- [ ] Call for validation studies across disease types, countries, and normal conditions
+- [ ] Reference pre-1962 historical context (already in economics.qmd lines 538-556) to show this isn't just one case study
+**Why Important**: Addresses critique #3 about causal inference problems
+
+#### 15. ⏳ Add Opportunity Cost Analysis
+**Issue**: No comparison to alternative uses of $27B/year
+**Location**: New section "Opportunity Cost and Alternative Interventions" before "How This Compares to History" (around line 840)
+**Action**:
+- [ ] Add section comparing to alternative interventions:
+  - Direct disease treatment programs
+  - Public health infrastructure
+  - Other research priorities
+- [ ] Reference existing comparisons (GiveWell charities, childhood vaccinations) already in document
+- [ ] Add incremental analysis: Why 1%? Show marginal benefit of 0.5%, 1%, 2% scenarios (may need parameters if calculating)
+- [ ] Note: "This analysis focuses on conditional benefits; comprehensive opportunity cost analysis would require separate study."
+**Why Important**: Addresses critique #4 about missing opportunity cost analysis
+
+### MEDIUM PRIORITY TODOS (Methodological Improvements)
+
+#### 16. ⏳ Improve QALY Methodology Section
+**Issue**: QALY calculation aggregates high/medium/low confidence estimates equally; potential double-counting
+**Location**: "Quality-Adjusted Life Year (QALY) Valuation" section (lines 377-411)
+**Action**:
+- [ ] Add explicit confidence levels to each stream:
+  - Stream A (Accelerated Access): High confidence (24% of total)
+  - Stream B (Prevention): Medium confidence (17% of total)
+  - Stream C (Rare Diseases): Lower confidence (60% of total)
+- [ ] Add note about independence: "These streams are designed to be independent (earlier access ≠ new treatments ≠ prevention), but some overlap may exist. Conservative aggregation assumes independence."
+- [ ] Reference dfda-qaly-model.qmd for detailed methodology
+**Why Important**: Addresses critique #5 about QALY calculation methodological issues
+
+#### 17. ⏳ Enhance External Validity Discussion
+**Issue**: Analysis extrapolates from limited evidence (one trial, one country, one time period) to global scale
+**Location**: "External Validity Considerations" section (lines 1125-1142)
+**Action**:
+- [ ] Add explicit limitations:
+  - Geographic: RECOVERY (UK) → Global implementation
+  - Disease-specific: Acute (COVID) → All diseases
+  - Scale: 11,000 patients → Millions of patients
+  - Temporal: Emergency (2020-2021) → Normal conditions
+- [ ] Add: "These limitations are acknowledged. RECOVERY provides upper bound estimate; actual cost reductions may be lower across diverse contexts."
+- [ ] Reference pre-1962 historical context to show broader validation
+**Why Important**: Addresses critique #10 about external validity concerns
+
+#### 18. ⏳ Add Adoption Realism Discussion
+**Issue**: Assumes 50-80% adoption over 5 years - ignores network effects, coordination failures
+**Location**: "Adoption Rate Assumptions" section (lines 516-525)
+**Action**:
+- [ ] Acknowledge: "Adoption may follow S-curve with critical mass threshold rather than linear ramp"
+- [ ] Add: "Coordination failure risk exists (prisoner's dilemma for pharmaceutical companies). Mitigation: Economic incentives (trial costs become revenue) align interests."
+- [ ] Note: "Regulatory harmonization may take 10-20 years, not 5. Conservative timeline accounts for this."
+**Why Important**: Addresses critique #7 about unrealistic adoption assumptions
+
+#### 19. ⏳ Address Time Horizon and Discounting Issues
+**Issue**: Benefits front-loaded, costs back-loaded; sensitivity to discount rate not shown
+**Location**: "Sensitivity Analysis Approach" section (integrate with todo #13)
+**Action**:
+- [ ] Already covered in todo #13 (discount rate sensitivity)
+- [ ] Add note about benefit timing: "Peace dividend: Immediate (year 1); R&D savings: Gradual ramp (years 1-5); QALY gains: Long-term (years 5-20+)"
+- [ ] Note terminal value: "10-year horizon captures majority of NPV; benefits continue beyond year 10 but discounted heavily"
+**Why Important**: Addresses critique #8 about time horizon and discounting issues
+
+#### 20. ⏳ Clarify Partnership Model Cost Savings
+**Issue**: Economics.qmd doesn't explain why dFDA costs are so low - should reference partnership approach
+**Location**: "The Conservative Case" section (around line 633) or Methodology section
+**Action**:
+- [ ] Add brief explanation: "The dFDA uses a partnership-first strategy providing open protocol infrastructure rather than building a competing platform. This approach costs $15-25M upfront (protocol/API build) vs. $37.5-46M for full platform, leveraging existing infrastructure from Epic ($521M raised), Cerner, Medable ($2.1B valuation), and Science 37. By establishing open protocols (like HTTP for the internet) rather than building consumer-facing apps, the dFDA avoids $500M+ in full-stack development costs while enabling existing platforms to integrate."
+- [ ] Reference dfda-cost-benefit-analysis.qmd section on partnership model
+**Why Important**: Explains cost structure and addresses "too good to be true" skepticism about low platform costs
+
+#### 21. ⏳ Distinguish Platform Costs from Patient Subsidy Fund
+**Issue**: May be confusion between dFDA operational costs ($40M/year) and NIH Trial Participation Cost Discount Fund ($2B/year)
+**Location**: "Self-Funding Mechanism" section (around line 692)
+**Action**:
+- [ ] Add explicit distinction: "The dFDA platform operational costs (~$40M/year) are separate from the NIH Trial Participation Cost Discount Fund ($2B/year authorized in Right to Trial Act SEC. 303). The platform costs cover infrastructure, maintenance, and operations. The NIH Fund provides patient participation subsidies (sponsors set costs, NIH pays portion via QALY-maximizing algorithm, patients pay remainder). These are distinct budget items with different purposes."
+- [ ] Reference right-to-trial-fda-upgrade-act.qmd SEC. 303 and SEC. 304 for details
+**Why Important**: Prevents double-counting or confusion about what costs are included in ROI calculations
+
+#### 22. ⏳ Extract Cost Comparison Table to Reusable Figure
+**Issue**: Cost comparison table in dfda.qmd (lines 277-297) "The Itemized Receipt of Eliminated Stupidity" should be extracted to a figure and included in multiple files as evidence
+**Location**: knowledge/solution/dfda.qmd lines 277-297
+**Action**:
+- [ ] Create new figure file: `knowledge/figures/dfda-vs-traditional-trial-costs-breakdown-table.qmd`
+- [ ] Extract the cost comparison table showing:
+  - Traditional system costs (15 line items: Data Management $198K, IRB Approval $324K, Source Data Verification $1.5M, etc.)
+  - dFDA costs for each item
+  - Percentage savings (94.9%, 98.5%, 98.3%, etc.)
+  - Total: $56,988,007 traditional vs $2,025,000 dFDA = 95.7% savings
+- [ ] Format as a clean, professional table suitable for academic presentation
+- [ ] Include in economics.qmd (reference in "The Conservative Case" section around line 633)
+- [ ] Include in dfda-cost-benefit-analysis.qmd (reference in "Decentralized Trial Costs Modeled on Oxford RECOVERY" section)
+- [ ] Keep original in dfda.qmd but reference the figure
+- [ ] Add citation to references.qmd#clinical-trial-cost-breakdown for the $56,988,007 figure
+**Why Important**: Provides concrete, itemized evidence for cost reductions that can be referenced across multiple documents, strengthening the economic case
+
+#### 23. ⏳ Add Observational vs Randomized Trial Evidence Images
+**Issue**: economics.qmd discusses pragmatic trials and real-world evidence but lacks visual evidence showing observational studies match RCT results
+**Location**: "Pragmatic Trial Internal Validity and Selection Bias" section (lines 1076-1090) or "Quality-Adjusted Life Year (QALY) Valuation" section (lines 377-411)
+**Action**:
+- [ ] Add images from dfda.qmd (lines 68-70) showing observational vs randomized trial comparisons:
+  - `assets/observational-vs-randomized-effect-sizes.png` - comparing effect sizes for mortality outcomes
+  - `assets/observational-vs-randomized-trial-effect-sizes.png` - comparing effect sizes for various outcomes
+- [ ] Reference the New England Journal of Medicine meta-analysis (already cited in dfda.qmd line 66): "A meta-analysis in the New England Journal of Medicine found that the results from high-quality observational studies are generally the same as those from expensive, slow randomized controlled trials."
+- [ ] Add caption: "Meta-analysis evidence demonstrating that high-quality observational studies produce similar effect sizes to randomized controlled trials, supporting the validity of pragmatic trial designs used in the dFDA model."
+- [ ] Place images in the "Pragmatic Trial Internal Validity and Selection Bias" subsection where internal validity concerns are addressed
+- [ ] Alternatively, could place in Methodology section when discussing QALY calculation methodology and real-world evidence
+**Why Important**: Provides visual evidence addressing the #5 critique about pragmatic trial validity and selection bias, strengthening the argument that real-world evidence can be as reliable as RCTs
+
+---
+
+## Implementation Checklist
+
+### Phase 1: Critical Calculations (parameters.py)
+- [ ] Todo #9: Add probability-weighted expected value parameters
+- [ ] Todo #12: Add peace dividend confidence-level parameters
+- [ ] Todo #13: Add discount rate sensitivity calculation function and parameters
+- [ ] Run `scripts/generate-variables-yml.py` after all parameter additions
+
+### Phase 2: Critical Text Additions (economics.qmd)
+- [ ] Todo #9: Add expected value analysis section with hardcoded LaTeX
+- [ ] Todo #10: Add automated system clarification paragraph and funding model details
+- [ ] Todo #11: Add general equilibrium considerations subsection
+- [ ] Todo #12: Strengthen peace dividend causal claims with confidence levels
+- [ ] Todo #13: Enhance sensitivity analysis with discount rate table
+- [ ] Todo #14: Strengthen RECOVERY trial limitations
+- [ ] Todo #20: Add partnership model cost savings explanation
+- [ ] Todo #21: Distinguish platform costs from patient subsidy fund
+- [ ] Todo #0a: Strengthen pre-1962 cost justification and thalidomide prevention
+
+### Phase 3: High Priority Enhancements
+- [ ] Todo #15: Add opportunity cost analysis section
+- [ ] Todo #16: Improve QALY methodology with confidence levels
+- [ ] Todo #17: Enhance external validity discussion
+- [ ] Todo #18: Add adoption realism discussion
+- [ ] Todo #19: Address time horizon issues (integrated with #13)
+
+### Phase 4: Update Supporting Documents
+- [ ] Update `knowledge/appendix/economist-critique-analysis.md` to remove incorrect researcher constraint critique
+- [ ] Verify all variable references work after running generate-variables-yml.py
+- [ ] Check all LaTeX equations render correctly
+- [ ] Cross-reference dfda.qmd, dfda-cost-benefit-analysis.qmd, and right-to-trial-fda-upgrade-act.qmd for consistency on funding model and partnership approach
+- [ ] Todo #22: Extract cost comparison table to reusable figure and include in economics.qmd and dfda-cost-benefit-analysis.qmd
+- [ ] Todo #23: Add observational vs randomized trial evidence images to economics.qmd
+
+---
+
+## Technical Implementation Notes
+
+**For all calculations:**
+1. Add calculation functions to `dih_models/parameters.py` (e.g., `calculate_expected_roi(probability, base_roi)`)
+2. Create Parameter objects with calculated values, proper metadata (source_ref, confidence, formula, latex)
+3. Run `scripts/generate-variables-yml.py` to regenerate `_variables.yml`
+4. Reference in economics.qmd using `{{< var parameter_name >}}` syntax
+5. Hardcode LaTeX equations in economics.qmd (do not generate dynamically)
+
+**For text-only additions:**
+- Add directly to economics.qmd
+- Reference existing variables where applicable using `{{< var name >}}`
+- Use hardcoded LaTeX for any formulas shown
+
+**Example Pattern**:
+```python
+# In parameters.py
+POLITICAL_SUCCESS_PROB_CONSERVATIVE = Parameter(
+    0.10,
+    source_ref="historical-treaty-adoption-rates",
+    source_type="external",
+    confidence="medium",
+    description="Conservative estimate of political success probability"
+)
+EXPECTED_ROI_CONSERVATIVE_DFDA = Parameter(
+    ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROB_CONSERVATIVE,
+    source_ref="calculated",
+    source_type="calculated",
+    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROB_CONSERVATIVE",
+    latex=r"E[ROI] = 463 \times 0.10 = 46.3",
+    confidence="medium"
+)
+```
+
+```markdown
+<!-- In economics.qmd -->
+Expected ROI = {{< var expected_roi_conservative_dfda >}}:1
+
+$$E[\text{ROI}] = P(\text{success}) \times \text{ROI}_{\text{if successful}} = 0.10 \times 463 = 46.3$$
+```
