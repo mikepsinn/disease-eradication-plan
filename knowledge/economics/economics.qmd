@@ -1269,6 +1269,8 @@ These meta-analytic findings support the validity of pragmatic trial designs use
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
+**Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compared to 94% of positive results](../references.qmd#publication-bias-clinical-trials), leading to overestimation of treatment effectiveness and [~$100 billion annually wasted on repeating failed experiments](../references.qmd#wasted-spending-on-failed-experiments). The dFDA system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, dFDA's mandatory publication of all registered trials eliminates publication bias as a concern.
+
 **Conclusion:** Internal validity concerns are acknowledged, but the combination of randomization, large samples, and replication capacity provides adequate causal inference even with broader eligibility criteria.
 
 ### QALY Calculation Uncertainties
