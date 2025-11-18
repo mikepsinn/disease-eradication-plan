@@ -19,4 +19,10 @@
 # Note: WISHONIA review is not run automatically on commit
 # Run manually with: npm run wishonia
 
+echo "Running pre-render validation..."
+if ! python scripts/pre-render-validation.py; then
+    echo "Pre-render validation failed. Fix issues before committing."
+    exit 1
+fi
+
 echo "✅ Pre-commit checks passed!"

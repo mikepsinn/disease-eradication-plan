@@ -18,7 +18,7 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
             ignore: ['node_modules/**', '_book/**', '.quarto/**']
         });
     } else {
-        console.log('Starting programmatic formatting process for brain/book/**/*.qmd...');
+        console.log('Starting programmatic formatting process for knowledge/**/*.qmd...');
         allFiles = await findBookFiles();
     }
 
@@ -77,7 +77,7 @@ Programmatic Formatter for .qmd files
 Usage: tsx scripts/review/programmatic-format-all-files.ts [options]
 
 Options:
-  --all        Format all .qmd files in the project (default: brain/book only)
+  --all        Format all .qmd files in the project (default: knowledge/ only)
   --help, -h   Show this help message
 
 The formatter performs:

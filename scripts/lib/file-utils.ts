@@ -68,7 +68,7 @@ export async function findFiles(pattern: string): Promise<string[]> {
 }
 
 export async function findBookFiles(): Promise<string[]> {
-    const pattern = 'brain/book/**/*.qmd';
+    const pattern = 'knowledge/**/*.qmd';
     const files = await glob(pattern, {
         cwd: ROOT_DIR,
         ignore: IGNORE_PATTERNS.map(p => `**/${p}/**`),
