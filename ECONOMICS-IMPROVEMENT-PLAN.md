@@ -14,10 +14,11 @@
 - 435 parameters documented with confidence indicators
 
 **Economist Critique Responses**: ⚠️ **MOSTLY COMPLETE**
-- ✅ Expected value analysis, general equilibrium, peace dividend confidence levels, discount rate sensitivity
-- ✅ Partnership model, platform costs distinction, cost comparison table, observational trial images
-- ✅ Pre-1962 context, RECOVERY limitations, time inconsistency, counterfactual baseline, regulatory risks
-- ⏳ **Remaining**: Opportunity cost analysis, QALY confidence levels, external validity, adoption realism, publication bias note, comparison rationale, Monte Carlo acknowledgment, variable verification
+- ✅ Expected value analysis (lines 627-656), general equilibrium (lines 1241-1262), peace dividend confidence levels (lines 445-449), discount rate sensitivity (lines 528-549)
+- ✅ Partnership model (line 754), platform costs distinction (line 826), cost comparison table, observational trial images (lines 1109-1115)
+- ✅ Pre-1962 context (lines 542-554), RECOVERY limitations (lines 1051-1062), time inconsistency (lines 607-626), counterfactual baseline (lines 413-429), regulatory risks (lines 1393-1477)
+- ✅ QALY confidence levels (lines 1258, 1262, 1266), external validity (lines 1352-1369), comparison rationale (lines 1045-1067)
+- ⏳ **Remaining**: Opportunity cost analysis (partial - has section but needs comparison to alternative uses), adoption realism (S-curve/coordination failure), publication bias note, Monte Carlo acknowledgment, variable verification
 
 ---
 
@@ -25,17 +26,18 @@
 
 ### High Priority
 
-#### 15. ⏳ Add Opportunity Cost Analysis
-**Location**: New section before "How This Compares to History" (around line 840)
-**Action**: Add section comparing to alternative interventions (direct treatment programs, public health infrastructure, other research priorities). Reference existing comparisons (GiveWell, vaccinations). Note: "This analysis focuses on conditional benefits; comprehensive opportunity cost analysis would require separate study."
+#### 15. ⚠️ Add Opportunity Cost Analysis (PARTIALLY COMPLETE)
+**Location**: "Problem Statement and Opportunity Cost" section exists (line 946) but needs enhancement
+**Status**: Section exists but focuses on current resource allocation rather than comparison to alternative uses of $27B
+**Action**: Enhance existing section to explicitly compare to alternative interventions (direct treatment programs, public health infrastructure, other research priorities). Reference existing comparisons (GiveWell, vaccinations). Add note: "This analysis focuses on conditional benefits; comprehensive opportunity cost analysis would require separate study."
 
-#### 16. ⏳ Improve QALY Methodology with Confidence Levels
-**Location**: "Quality-Adjusted Life Year (QALY) Valuation" section (lines 377-411)
-**Action**: Add explicit confidence levels to each stream (Stream A: High, Stream B: Medium, Stream C: Lower). Note about independence: "These streams are designed to be independent, but some overlap may exist. Conservative aggregation assumes independence."
+#### 16. ✅ Improve QALY Methodology with Confidence Levels - COMPLETED
+**Location**: "QALY Calculation Uncertainties" section (lines 1258, 1262, 1266)
+**Status**: COMPLETED - Confidence levels already documented (Stream A: High, Stream B: Medium, Stream C: Lower)
 
-#### 17. ⏳ Enhance External Validity Discussion
-**Location**: "External Validity Considerations" section (lines 1125-1142)
-**Action**: Add explicit limitations: Geographic (RECOVERY UK → Global), Disease-specific (Acute → All), Scale (11,000 → Millions), Temporal (Emergency → Normal). Reference pre-1962 historical context.
+#### 17. ✅ Enhance External Validity Discussion - COMPLETED
+**Location**: "External Validity Considerations" section (lines 1352-1369)
+**Status**: COMPLETED - Section exists with transferability across contexts, temporal validity, and general equilibrium effects
 
 #### 18. ⏳ Add Adoption Realism Discussion
 **Location**: "Adoption Rate Assumptions" section (lines 516-525)
@@ -78,9 +80,9 @@
 ## Implementation Checklist
 
 ### Phase 1: High Priority Text Additions (economics.qmd)
-- [ ] Todo #15: Add opportunity cost analysis section
-- [ ] Todo #16: Improve QALY methodology with confidence levels
-- [ ] Todo #17: Enhance external validity discussion
+- [ ] Todo #15: Enhance opportunity cost analysis section (partially complete - needs comparison to alternative uses)
+- [x] Todo #16: Improve QALY methodology with confidence levels - ✅ COMPLETED (lines 1258, 1262, 1266)
+- [x] Todo #17: Enhance external validity discussion - ✅ COMPLETED (lines 1352-1369)
 - [ ] Todo #18: Add adoption realism discussion
 
 ### Phase 2: Medium Priority Enhancements
