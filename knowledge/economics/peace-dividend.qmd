@@ -36,15 +36,15 @@ Governments spend {{< var global_military_spending_post_treaty_annual_2024 >}} y
 
 Redirect 1%:
 
-$${{< var global_military_spending_post_treaty_annual_2024 >}} \times 0.01 = \$27.2B$$
+{{< var global_military_spending_post_treaty_annual_2024 >}} \times 0.01 = \$27.2B$$
 
 This \{{< var treaty_annual_funding >}} funds the dFDA, VICTORY bonds, and the whole system.
 
-### 2. The Bonus Savings: \{{< var peace_dividend_annual_societal_benefit >}}/Year
+### 2. The Bonus Savings: {{< var peace_dividend_annual_societal_benefit >}}/Year
 
 That's what you capture. Here's what you save.
 
-Wars cost [\$11.4T/year](../problem/cost-of-war.qmd). Build 1% fewer bombs, fight 1% fewer wars, save \${{< var peace_dividend_annual_societal_benefit >}}.
+Wars cost [\$11.4T/year](../problem/cost-of-war.qmd). Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
 
 $$11.4T \times 0.01 = \$113.6B$$
 

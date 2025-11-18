@@ -1021,7 +1021,7 @@ These require major new research - acknowledge transparently but don't try to fi
 - [x] Add DEFENSE_LOBBYING_ANNUAL parameter to parameters.py ($127M) - ✅ COMPLETED
 - [x] Regenerate _variables.yml (now 435 parameters) - ✅ COMPLETED
 - [x] Remove redundant "$" and "B" suffixes from variable references (variables are pre-formatted in _variables.yml) - ✅ COMPLETED
-- [ ] Systematic review of economics.qmd for other hardcoded numbers and redundant unit suffixes
+- [x] Systematic review of all .qmd files for redundant unit suffixes - ✅ COMPLETED (created scripts/fix-variable-formatting.py, fixed 54 issues across 7 files)
 - [ ] Run validation to ensure all referenced variables exist
 **Why Important**: Ensures consistency, accuracy, and maintainability of all numeric claims; prevents future errors like confusing annual ($127M) vs cumulative ($1.1B over 20 years) lobbying figures; avoids double-formatting (e.g., "$$127MB" from "${{< var x >}}B")
 **Note**: The VICTORY bonds strategy of co-opting defense contractors is adequately documented in victory-bonds.qmd, co-opting-defense-contractors.qmd, campaign-budget.qmd, and faq.qmd. Variables in _variables.yml are already formatted with units (e.g., "$127M"), so do not add manual "$" or "B"/"M" suffixes.

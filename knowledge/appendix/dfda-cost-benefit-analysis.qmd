@@ -83,7 +83,7 @@ Goals:
 
 #### Decentralized trial costs modeled on Oxford RECOVERY
 
-- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **{{< var recovery_trial_cost_per_patient >}} - ${{< var dfda_target_cost_per_patient_usd >}} per patient**.
+- Decentralized trial costs drop closer to the [Oxford RECOVERY model](../references.qmd#recovery-trial-cost-reduction): from an average of [\$40,000 - \$120,000 per patient](../references.qmd#clinical-trial-cost-per-patient) in traditional Phase III trials to roughly **{{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}} per patient**.
 - Regulatory oversight is streamlined through a continuous data audit system, reducing substantial administrative overhead.
 
 ### Technical Feasibility
@@ -416,7 +416,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
   3. Focused, pragmatic trial designs.
 
 - **Extrapolation to New System**:
-  - A well-integrated global platform could approach \{{< var recovery_trial_cost_per_patient >}} - \${{< var dfda_target_cost_per_patient_usd >}} per patient in many cases, especially for pragmatic or observational designs.
+  - A well-integrated global platform could approach \{{< var recovery_trial_cost_per_patient >}} - \{{< var dfda_target_cost_per_patient_usd >}} per patient in many cases, especially for pragmatic or observational designs.
   - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of ~\{{< var recovery_trial_cost_per_patient >}}-\$1,000 against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
 
   The cost reduction factor can be formalized as:
@@ -439,7 +439,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 1. **By Reducing Per-Patient Costs**
 
-   - If a trial with 5,000 participants costs \{{< var recovery_trial_cost_per_patient >}} - \${{< var dfda_target_cost_per_patient_usd >}}/patient, total cost is \$2.5 - \$5 million, versus \$200 - \$600 million under traditional models.
+   - If a trial with 5,000 participants costs \{{< var recovery_trial_cost_per_patient >}} - \{{< var dfda_target_cost_per_patient_usd >}}/patient, total cost is \$2.5 - \$5 million, versus \$200 - \$600 million under traditional models.
    - This magnitude of savings can drastically reduce the total cost of clinical development.
 
    For a trial with $x$ participants, the total cost savings is:
@@ -766,7 +766,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
 
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
-   - Oxford RECOVERY trial press releases and scientific papers indicating \{{< var recovery_trial_cost_per_patient >}} - \${{< var dfda_target_cost_per_patient_usd >}}/patient cost.
+   - Oxford RECOVERY trial press releases and scientific papers indicating {{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}}/patient cost.
 
 2. **ROI Calculation Method**:
 

@@ -315,9 +315,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
 |----------|------------:|------:|-----------:|----------:|
-| **Conservative** | {{< var sensitivity_net_benefit_conservative >}} | {{< var sensitivity_total_qalys_conservative >}} | **{{< var sensitivity_icer_conservative >}}** | **{{< var sensitivity_cost_per_life_conservative >}}M** |
-| **Central** | {{< var treaty_net_annual_benefit >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}M** |
-| **Optimistic** | {{< var sensitivity_net_benefit_optimistic >}} | {{< var sensitivity_total_qalys_optimistic >}} | **{{< var sensitivity_icer_optimistic >}}** | **{{< var sensitivity_cost_per_life_optimistic >}}M** |
+| **Conservative** | {{< var sensitivity_net_benefit_conservative >}} | {{< var sensitivity_total_qalys_conservative >}} | **{{< var sensitivity_icer_conservative >}}** | **{{< var sensitivity_cost_per_life_conservative >}}** |
+| **Central** | {{< var treaty_net_annual_benefit >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** |
+| **Optimistic** | {{< var sensitivity_net_benefit_optimistic >}} | {{< var sensitivity_total_qalys_optimistic >}} | **{{< var sensitivity_icer_optimistic >}}** | **{{< var sensitivity_cost_per_life_optimistic >}}** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
 
@@ -325,10 +325,10 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}M** | Counts all upfront costs |
-| **Investor-Funded** | $0 | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var icer_investor_funded >}}** | **{{< var cost_per_life_investor_funded >}}M** | Campaign funded by VICTORY Social Impact Bonds |
-| **Opportunity Cost** | {{< var treaty_annual_funding >}} | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var icer_opportunity_cost >}}** | **{{< var cost_per_life_opportunity_cost >}}M** | Counts redirected military spending |
-| **Waste Conversion** | {{< var treaty_annual_funding >}} | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** | Counts all upfront costs |
+| **Investor-Funded** | $0 | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var icer_investor_funded >}}** | **{{< var cost_per_life_investor_funded >}}** | Campaign funded by VICTORY Social Impact Bonds |
+| **Opportunity Cost** | {{< var treaty_annual_funding >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var icer_opportunity_cost >}}** | **{{< var cost_per_life_opportunity_cost >}}** | Counts redirected military spending |
+| **Waste Conversion** | {{< var treaty_annual_funding >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
@@ -339,9 +339,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 - Considering opportunity cost of military spending, ICER is {{< var icer_opportunity_cost >}}/QALY
 - Recognizing military spending as waste, the intervention has undefined (infinite) cost-effectiveness
 
-**Worst case** (conservative): Society still saves {{< var sensitivity_cost_per_life_conservative >}}M per life saved
+**Worst case** (conservative): Society still saves {{< var sensitivity_cost_per_life_conservative >}} per life saved
 
-**Best case** (optimistic): Society saves {{< var sensitivity_cost_per_life_optimistic >}}M per life saved (lower because you're saving many more lives, so the economic benefit is spread across more QALYs)
+**Best case** (optimistic): Society saves {{< var sensitivity_cost_per_life_optimistic >}} per life saved (lower because you're saving many more lives, so the economic benefit is spread across more QALYs)
 
 ## Visual Comparisons
 
