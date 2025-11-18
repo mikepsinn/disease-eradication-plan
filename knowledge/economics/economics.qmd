@@ -23,13 +23,13 @@ from dih_models.parameters import *
 
 ## Abstract
 
-**Objective**: We evaluate the economic impact and return on investment of reallocating 1% of global military spending ($27.2B annually) to medical research infrastructure through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) framework.
+**Objective**: We evaluate the economic impact and return on investment of reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to medical research infrastructure through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) framework.
 
 **Methods**: Using cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis, we assess both conservative (R&D efficiency gains only) and complete (all quantifiable benefits) scenarios. Data sources include SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature.
 
-**Results**: Conservative analysis yields 463:1 ROI ($249.3B NPV benefit / $538M implementation cost) over 10 years, based solely on R&D cost reductions. Complete analysis including peace dividend and seven additional benefit categories demonstrates 1,239:1 ROI ($1.2T annual benefits). The intervention generates 840,000 QALYs annually with negative ICER (-$59,476/QALY), qualifying as a dominant health intervention. Sensitivity analysis shows robust returns across scenarios (66:1 worst-case to 2,577:1 best-case).
+**Results**: Conservative analysis yields {{< var roi_dfda_savings_only >}}:1 ROI ({{< var dfda_npv_net_benefit_conservative >}} NPV benefit / {{< var dfda_npv_total_cost >}} implementation cost) over {{< var npv_time_horizon_years >}} years, based solely on R&D cost reductions. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var roi_all_direct_benefits >}}:1 ROI ({{< var total_complete_benefits_annual >}} annual benefits). The intervention generates {{< var global_dfda_qalys_gained_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY), qualifying as a dominant health intervention. Sensitivity analysis shows robust returns across scenarios ({{< var conservative_scenario_roi >}}:1 worst-case to {{< var optimistic_scenario_roi >}}:1 best-case).
 
-**Conclusions**: Redirecting 1% of military spending to medical research infrastructure represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding history's most successful public health achievements including smallpox eradication. The self-funding structure eliminates traditional barriers to scale, generating sufficient economic surplus to sustain operations without ongoing charitable contributions.
+**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research infrastructure represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding history's most successful public health achievements including smallpox eradication. The self-funding structure eliminates traditional barriers to scale, generating sufficient economic surplus to sustain operations without ongoing charitable contributions.
 
 **Keywords**: cost-benefit analysis, health economics, clinical trials, return on investment, QALY, dominant intervention, peace dividend, global health policy
 
@@ -38,7 +38,7 @@ from dih_models.parameters import *
 ::: {.callout-note}
 ## Key Findings
 
-1. **Conservative ROI**: {{< var roi_dfda_savings_only >}}:1 return based solely on R&D efficiency gains ({{< var dfda_npv_benefit >}} NPV benefit / {{< var dfda_npv_total_cost >}} implementation cost over 10 years)
+1. **Conservative ROI**: {{< var roi_dfda_savings_only >}}:1 return based solely on R&D efficiency gains ({{< var dfda_npv_benefit >}} NPV benefit / {{< var dfda_npv_total_cost >}} implementation cost over {{< var npv_time_horizon_years >}} years)
 
 2. **Complete ROI**: {{< var roi_all_direct_benefits >}}:1 return including all eight quantifiable benefit categories ({{< var treaty_complete_case_annual_benefits >}} annual benefits / {{< var treaty_campaign_total_cost >}} campaign cost)
 
@@ -50,21 +50,21 @@ from dih_models.parameters import *
 
 6. **Research Acceleration**: {{< var research_acceleration_multiplier >}}× increase in research throughput through dramatically reduced trial costs and increased participation
 
-7. **Robust Returns**: Sensitivity analysis demonstrates positive ROI across all scenarios - worst case 66:1, optimistic case 2,577:1
+7. **Robust Returns**: Sensitivity analysis demonstrates positive ROI across all scenarios - worst case {{< var conservative_scenario_roi >}}:1, optimistic case {{< var optimistic_scenario_roi >}}:1
 :::
 
 ---
 
 ## Research Hypothesis
 
-**Primary Hypothesis**: Reallocating 1% of global military spending ({{< var treaty_annual_funding >}} annually) to medical research infrastructure (Decentralized Institutes of Health and Decentralized FDA) generates return on investment between 463:1 (conservative estimate, R&D savings only) and 1,239:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
+**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to medical research infrastructure (Decentralized Institutes of Health and Decentralized FDA) generates return on investment between {{< var roi_dfda_savings_only >}}:1 (conservative estimate, R&D savings only) and {{< var roi_all_direct_benefits >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
 **Alternative Hypothesis (H₁)**: The intervention generates substantial positive returns (ROI > 1:1), comparable to or exceeding history's most successful public health interventions (smallpox eradication: 209:1, polio vaccination: 27:1, measles vaccination: 16:1)
 
 **Testable Predictions**:
-- Conservative case: NPV benefit exceeds $100B over 10-year horizon
+- Conservative case: NPV benefit exceeds $100B over {{< var npv_time_horizon_years >}}-year horizon
 - Cost-effectiveness: ICER < $0/QALY (cost-saving while improving health)
 - Research acceleration: >10× increase in trial completion rates
 - Self-funding threshold: Annual benefits exceed annual costs by year 3 of implementation
@@ -124,7 +124,7 @@ The solution is mathematically straightforward:
 
 # **The Result**
 
-### **{{< var roi_dfda_savings_only >}}:1 to 1,239:1 ROI**
+### **{{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 ROI**
 
 ### **{{< var research_acceleration_multiplier >}}× faster medical progress**
 
@@ -319,7 +319,7 @@ This analysis employs standard health economics methodologies to evaluate the ec
 
 ### Net Present Value (NPV) Methodology
 
-The analysis uses net present value calculations to account for the time value of money over a 10-year time horizon. The NPV framework discounts future costs and benefits to present-day values using a standard {{< var npv_discount_rate_standard >}} annual discount rate.
+The analysis uses net present value calculations to account for the time value of money over a {{< var npv_time_horizon_years >}}-year time horizon. The NPV framework discounts future costs and benefits to present-day values using a standard {{< var npv_discount_rate_standard >}} annual discount rate.
 
 **NPV of Costs:**
 
@@ -363,14 +363,9 @@ $$
 
 For the dFDA infrastructure (using annual figures):
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-from IPython.display import display, Markdown
-
-icer_eq = f"$$\\text{{ICER}} = \\frac{{\\text{{Net Incremental Cost (Annual)}}}}{{\\text{{QALYs Gained (Annual)}}}} = \\frac{{-\\$49.96\\text{{B}}}}{{{GLOBAL_DFDA_QALYS_GAINED_ANNUAL:,} \\text{{ QALYs}}}} = -\\$59{{,}}476 \\text{{ per QALY}}$$"
-display(Markdown(icer_eq))
-```
+$$
+\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
+$$
 
 The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
@@ -511,17 +506,17 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 - Extended adoption timeline
 - Regulatory barriers and implementation delays
 
-**Optimistic Scenario (2,577:1 ROI):**
+**Optimistic Scenario ({{< var optimistic_scenario_roi >}}:1 ROI):**
 - R&D cost reduction: {{< var trial_cost_reduction_pct >}} (RECOVERY trial-like efficiency)
 - QALY gains: {{< var qalys_total_optimistic >}} annually
 - Faster adoption and broader scope
 
-**Complete Case (1,239:1 ROI):**
+**Complete Case ({{< var roi_all_direct_benefits >}}:1 ROI):**
 - Includes all eight quantifiable benefit categories
 - Peace dividend: {{< var peace_dividend_annual_societal_benefit >}}
 - Earlier treatment access, research acceleration, rare disease treatments, drug price reductions, prevention medicine, mental health benefits
 
-Sensitivity analysis demonstrates robust returns across all scenarios, with ROI ranging from 66:1 (worst-case) to 2,577:1 (optimistic). See [1% Treaty Cost-Effectiveness Analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd) for detailed scenario modeling.
+Sensitivity analysis demonstrates robust returns across all scenarios, with ROI ranging from {{< var conservative_scenario_roi >}}:1 (worst-case) to {{< var optimistic_scenario_roi >}}:1 (optimistic). See [1% Treaty Cost-Effectiveness Analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd) for detailed scenario modeling.
 
 **Probabilistic sensitivity analysis:** Instead of just testing a few scenarios (worst-case, conservative, optimistic), we ran 10,000 simulations where each uncertain parameter was randomly sampled from probability distributions. This tells us not just "what if X happens" but "what's the range of likely outcomes given all the uncertainty."
 
@@ -529,7 +524,7 @@ Sensitivity analysis demonstrates robust returns across all scenarios, with ROI 
 
 **Results:** 
 - **If implementation succeeds** (conditional ROI): 95% of simulations fall between 44:1 and 66:1 ROI, with median 54:1. This means even with all the uncertainty, if the treaty passes, returns are almost certainly between 44:1 and 66:1.
-- **Accounting for political risk** (expected ROI): 95% of simulations fall between 2.7:1 and 27:1 ROI, with median 14:1. This incorporates the probability that the treaty might not pass—even with that risk, expected returns are still 2.7:1 to 27:1.
+- **Accounting for political risk** (expected ROI): 95% of simulations fall between 2.7:1 and 27:1 ROI, with median 14:1. This incorporates the probability that the treaty might not pass, even with that risk, expected returns are still 2.7:1 to 27:1.
 
 **Economic interpretation:** ROI > 1:1 means benefits exceed costs. All 10,000 simulations produced ROI > 1:1, meaning there is zero probability (within the modeled uncertainty) that this intervention loses money. Even the worst-case scenario (5th percentile expected ROI of 2.7:1) generates 2.7× more value than cost. This qualifies as a **dominant intervention** in health economics: it should be implemented regardless of budget constraints, as it generates net economic surplus while improving health outcomes.
 
@@ -558,7 +553,7 @@ $$
 
 where $r$ is the discount rate, $B_t$ are benefits in year $t$, and $C_t$ are costs in year $t$.
 
-**Key insight**: Even at 7% discount rate (high by public health standards), ROI remains {{< var roi_discount_7pct >}}:1, substantially exceeding alternative interventions. The 10-year horizon captures the majority of NPV; benefits continue beyond year 10 but are discounted heavily.
+**Key insight**: Even at 7% discount rate (high by public health standards), ROI remains {{< var roi_discount_7pct >}}:1, substantially exceeding alternative interventions. The {{< var npv_time_horizon_years >}}-year horizon captures the majority of NPV; benefits continue beyond year {{< var npv_time_horizon_years >}} but are discounted heavily.
 
 **Benefit timing**: Peace dividend is immediate (year 1), R&D savings ramp gradually (years 1-5), QALY gains are long-term (years 5-20+). Front-loaded benefits (peace dividend) are less sensitive to discount rate than back-loaded benefits (QALYs).
 
@@ -580,7 +575,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Justification:** Conservative assumption that costs scale with system usage. Research acceleration benefits may exhibit superlinear returns (network effects, data abundance), making this assumption conservative.
 
-**Sensitivity:** Tested through worst-case (66:1 ROI) and optimistic (2,577:1 ROI) scenarios spanning benefits 50% lower to 5× higher than baseline.
+**Sensitivity:** Tested through worst-case ({{< var conservative_scenario_roi >}}:1 ROI) and optimistic ({{< var optimistic_scenario_roi >}}:1 ROI) scenarios spanning benefits 50% lower to 5× higher than baseline.
 
 ### Adoption Rate Assumptions
 
@@ -638,7 +633,7 @@ The cost reduction estimates (50-95%) are conservative relative to the historica
 
 **Justification:** Historical treaty adoption timelines vary (Nuclear Non-Proliferation Treaty: 3 years; Paris Climate Agreement: 5 years). This analysis focuses on economic value *conditional* on implementation, not probability of political success.
 
-**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case (463:1 to 1,239:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
+**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case ({{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
 
 ### Expected Value Analysis Accounting for Political Risk
 
@@ -669,13 +664,13 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 - **1% Treaty (P=10%)**: {{< var expected_roi_conservative_dfda >}}:1 expected ROI
 - **1% Treaty (P=25%)**: {{< var expected_roi_moderate_dfda >}}:1 expected ROI
 
-**Interpretation**: The high conditional ROI (463:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
+**Interpretation**: The high conditional ROI ({{< var roi_dfda_savings_only >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
 **Note**: This analysis uses point estimates for political probability. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
 ### Time Inconsistency and Commitment Credibility
 
-**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the 10-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the medical research budget for short-term priorities.
+**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the medical research budget for short-term priorities.
 
 **Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
 
@@ -683,7 +678,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties ratified, but many failed to meet funding commitments. As of 2024, developed countries have not met the $100B annual climate finance pledge despite treaty obligations. Treaty ratification creates moral commitment but weak enforcement mechanisms for sustained budgetary allocations.
 
-**Implication for expected value**: The political success probabilities used in expected value analysis (10%-50%) implicitly incorporate time inconsistency risk. A treaty might ratify with P=50% but maintain funding for 10 years with P=25%. The expected value analysis partially addresses this through probability discounting, but time inconsistency (commitment erosion over time) represents an additional risk factor beyond initial political feasibility.
+**Implication for expected value**: The political success probabilities used in expected value analysis (10%-50%) implicitly incorporate time inconsistency risk. A treaty might ratify with P=50% but maintain funding for {{< var npv_time_horizon_years >}} years with P=25%. The expected value analysis partially addresses this through probability discounting, but time inconsistency (commitment erosion over time) represents an additional risk factor beyond initial political feasibility.
 
 **Potential commitment mechanisms** (not modeled):
 - Constitutional amendment (very high barrier, very high credibility)
@@ -725,9 +720,9 @@ $$
 \text{ROI} = \frac{\text{Benefits}}{\text{Costs}} = \frac{\$249.3\text{B}}{\$538\text{M}} = 463:1
 $$
 
-where {{< var dfda_npv_net_benefit_conservative >}} is what you save over 10 years and {{< var dfda_npv_total_cost >}} is what you spend to build it.
+where {{< var dfda_npv_net_benefit_conservative >}} is what you save over {{< var npv_time_horizon_years >}} years and {{< var dfda_npv_total_cost >}} is what you spend to build it.
 
-This uses "net present value" which is economist code for "future money is worth less than current money" ({{< var dfda_trial_abandonment_rate >}} discount rate, 10-year horizon). For the spreadsheet addicts: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
+This uses "net present value" which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate, {{< var npv_time_horizon_years >}}-year horizon). For the spreadsheet addicts: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
 
@@ -739,7 +734,7 @@ This uses "net present value" which is economist code for "future money is worth
 The peace dividend math is simple: wars cost {{< var global_annual_war_total_cost >}}/year. {{< var treaty_reduction_pct >}} less war costs {{< var treaty_reduction_pct >}} less money.
 
 $$
-\$11{,}355\text{B} \times 1\% = \$113.6\text{B}
+\$11{,}355\text{B} \times 1\% = \$113.55\text{B}
 $$
 
 | Cost Category | Annual Amount | Components |
@@ -754,7 +749,7 @@ $$
 | **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_clinical_trial_market_annual >}} | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_human_capital_conflict >}} | Productive capacity lost from casualties and displacement |
-| **Total War Costs** | **$11,355B** | Combined direct and indirect annual costs |
+| **Total War Costs** | **{{< var global_annual_war_total_cost >}}** | Combined direct and indirect annual costs |
 | **1% Reduction** | **{{< var peace_dividend_annual_societal_benefit >}}** | Peace dividend from 1% treaty implementation |
 
 This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
@@ -765,7 +760,7 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 ### What It Costs to Build
 
-**Total**: {{< var dfda_npv_total_cost >}} over 10 years (present value)
+**Total**: {{< var dfda_npv_total_cost >}} over {{< var npv_time_horizon_years >}} years (present value)
   - Upfront: {{< var dfda_npv_upfront_cost_total >}} (build the platform)
   - Yearly operations: {{< var dfda_upfront_build >}} (keep it running)
 
@@ -775,24 +770,24 @@ By establishing open protocols (like HTTP for the internet) rather than building
 
 For detailed cost breakdown, see [dFDA Platform Costs - Partnership Model](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model).
 
-The [$27.2B/year](../appendix/peace-dividend-calculations.qmd) peace dividend covers {{< var dfda_upfront_build >}}/year operations **680 times over**. It's like having $680 to pay a $1 bill.
+The {{< var treaty_annual_funding >}}/year [peace dividend](../appendix/peace-dividend-calculations.qmd) covers {{< var dfda_annual_opex >}}/year operations **{{< var dividend_coverage_factor >}} times over**. It's like having ${{< var dividend_coverage_factor >}} to pay a $1 bill.
 
-This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over 5 years) and middle-range costs. For the detailed breakdown see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
+This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over {{< var dfda_npv_adoption_ramp_years >}} years) and middle-range costs. For the detailed breakdown see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
 ### What You Get Back
 
-- **Money**: {{< var global_annual_trade_disruption_shipping_conflict >}} in R&D savings (10 years, present value)
-- **Returns**: {{< var dfda_npv_net_benefit_conservative >}} ÷ {{< var dfda_npv_total_cost >}} = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
+- **Money**: {{< var dfda_npv_net_benefit_conservative >}} in R&D savings ({{< var npv_time_horizon_years >}} years, present value)
+- **Returns**: {{< var dfda_npv_net_benefit_conservative >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var roi_dfda_savings_only >}}:1** ([see analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 - **People not dying**: {{< var global_dfda_qalys_gained_annual >}} quality-adjusted life years annually
 
 **Two income streams from one budget shift**:
 
 1. **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}}/year saved by not breaking as much stuff
-2. **Research efficiency**: {{< var current_drug_approvals_per_year >}}/year saved by not requiring PhDs to fill out forms for 17 years
+2. **Research efficiency**: {{< var dfda_gross_savings_annual >}}/year saved by not requiring PhDs to fill out forms for {{< var treatment_acceleration_years_current >}} years
 
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year (conservative, ignoring most benefits)
 
-**If everything goes wrong**: Worst-case scenario (benefits half as good, costs twice as high) still delivers 189:1 to {{< var optimistic_scenario_roi >}}:1 returns. See [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd).
+**If everything goes wrong**: Worst-case scenario (benefits half as good, costs twice as high) still delivers {{< var conservative_scenario_roi >}}:1 to {{< var optimistic_scenario_roi >}}:1 returns. See [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd).
 
 {{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
 
@@ -814,7 +809,7 @@ $$
 \text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
 $$
 
-where the net incremental cost is calculated as platform operational costs ({{< var dfda_upfront_build >}}/year) minus R&D savings ([$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd)) = -$49.96B annually, and {{< var global_dfda_qalys_gained_annual >}} QALYs represents annual quality-adjusted life years gained.
+where the net incremental cost is calculated as platform operational costs ({{< var dfda_annual_opex >}}/year) minus R&D savings ({{< var dfda_gross_savings_annual >}}/year) = {{< var dfda_net_incremental_cost_annual >}} annually, and {{< var global_dfda_qalys_gained_annual >}} QALYs represents annual quality-adjusted life years gained.
 
 The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
@@ -824,7 +819,7 @@ The negative ICER indicates **cost savings while improving health**, a dominant 
 
 - **[Against Malaria Foundation](../references.qmd#givewell-cost-per-life-saved)**: {{< var givewell_cost_per_life_min >}} cost per life saved (GiveWell top charity)
 - **[Deworm the World Initiative](../references.qmd#givewell-cost-per-life-saved)**: {{< var givewell_cost_per_life_max >}} cost per life saved (highly cost-effective intervention)
-- **{{< var treaty_reduction_pct >}} Treaty/dFDA System**: [$6,560,000 net societal benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd) per life saved (dominant intervention)
+- **{{< var treaty_reduction_pct >}} Treaty/dFDA System**: {{< var cost_per_life_investor_funded >}} [net societal benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd) per life saved (dominant intervention)
 
 The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
 
@@ -836,23 +831,23 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 **Economic Structure** ([see detailed calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd)):
 
-- **Funding Source**: [$27.2B annually](../appendix/peace-dividend-calculations.qmd) from 1% redirection of existing military budgets (money already allocated in national budgets)
+- **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} [redirection of existing military budgets](../appendix/peace-dividend-calculations.qmd) (money already allocated in national budgets)
 
 **Funding Allocation** (separating platform costs from patient subsidies):
 
-1. **dFDA Platform Operations**: ~$40M/year for core infrastructure, maintenance, protocol development, and operations ([medium initiative scenario](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model))
+1. **dFDA Platform Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure, maintenance, protocol development, and operations ([medium initiative scenario](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model))
 2. **NIH Trial Participation Cost Discount Fund**: ~$2B/year for patient participation subsidies (authorized in [Right to Trial Act SEC. 303](../appendix/right-to-trial-fda-upgrade-act.qmd#sec-303-nih-trial-participation-cost-discount-fund); sponsors set costs, NIH pays portion via QALY-maximizing algorithm, patients pay discounted copay)
 3. **Remaining Funds**: ~$25.2B/year allocated via [Wishocracy](../solution/wishocracy.qmd) for additional research infrastructure, patient incentives, and expanding trial capacity
 
-**Important distinction**: The dFDA platform costs ($40M/year) are separate from patient participation subsidies ($2B/year NIH Fund). Platform costs cover infrastructure and operations. The NIH Fund provides financial assistance to patients enrolling in trials, making participation affordable without funding researcher salaries.
+**Important distinction**: The dFDA platform costs ({{< var dfda_annual_opex >}}/year) are separate from patient participation subsidies ($2B/year NIH Fund). Platform costs cover infrastructure and operations. The NIH Fund provides financial assistance to patients enrolling in trials, making participation affordable without funding researcher salaries.
 
-- **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: [$50.0B](../appendix/dfda-cost-benefit-analysis.qmd))
+- **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_gross_savings_annual >}})
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
 - **Net Position**: {{< var treaty_total_annual_benefits >}} annual surplus after all costs
 - **Lives Saved**: {{< var treaty_total_lives_saved_annual >}} annually
 
 $$
-925{,}610 \text{ QALYs} \div 35 \text{ QALYs/life} = 26{,}446 \text{ lives}
+1{,}162{,}000 \text{ QALYs} \div 44 \text{ QALYs/life} = 26{,}446 \text{ lives}
 $$
 
 - **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life ([negative cost](../appendix/1-percent-treaty-cost-effectiveness.qmd) indicates net profit)
@@ -876,25 +871,25 @@ $$
 where each benefit category is:
 
 1. **Peace dividend** ({{< var peace_dividend_annual_societal_benefit >}}) - Societal savings from 1% less conflict
-2. **R&D cost savings** ({{< var current_drug_approvals_per_year >}}) - {{< var trial_cost_reduction_factor >}} cheaper trials
-3. **7-year access acceleration** ({{< var global_annual_infrastructure_damage_communications_conflict >}}) - Earlier treatment access during trials
-4. **Research acceleration** ({{< var global_annual_environmental_damage_conflict >}}) - 115X more research capacity (10-20X more breakthroughs)
+2. **R&D cost savings** ({{< var dfda_gross_savings_annual >}}) - {{< var trial_cost_reduction_factor >}}× cheaper trials
+3. **7-year access acceleration** ({{< var benefit_earlier_drug_access_annual >}}) - Earlier treatment access during trials
+4. **Research acceleration** ({{< var benefit_medical_research_acceleration_annual >}}) - {{< var research_acceleration_multiplier >}}× more research capacity (10-20× more breakthroughs)
 5. **Rare disease treatments** ({{< var benefit_rare_diseases_annual >}}) - Economically viable orphan drug development for [300M patients](../references.qmd#rare-disease-patients-300m-globally) with diseases lacking treatments ({{< var dfda_trial_completion_rate >}} of {{< var rare_diseases_count_global >}}+ rare diseases have no FDA-approved therapy)
-6. **Drug price reductions** ({{< var global_annual_environmental_damage_conflict >}}) - Conservative estimate based on U.S. drug prices {{< var us_drug_price_multiplier_vs_peer_countries >}} higher than peer countries ({{< var us_annual_drug_spending >}} annual U.S. spending; 20-{{< var trial_cost_reduction_pct >}} reduction potential = {{< var drug_price_reduction_savings_low >}}-180B from U.S. alone)
-7. **Prevention medicine** ($100.0B) - Based on [global clinical trial market](../appendix/global-clinical-trial-spending-by-phase.qmd) projections exceeding {{< var global_clinical_trial_market_annual >}} annually, enabling economically viable prevention studies
-8. **Mental health** ($75.0B) - Conservative partial closure of {{< var sensitivity_peace_dividend_optimistic >}} funding gap identified for global mental health care needs
+6. **Drug price reductions** ({{< var benefit_drug_price_reduction_annual >}}) - Conservative estimate based on U.S. drug prices {{< var us_drug_price_multiplier_vs_peer_countries >}} higher than peer countries ({{< var us_annual_drug_spending >}} annual U.S. spending; 20-{{< var trial_cost_reduction_pct >}} reduction potential = {{< var drug_price_reduction_savings_low >}}-{{< var drug_price_reduction_savings_high >}} from U.S. alone)
+7. **Prevention medicine** ({{< var benefit_prevention_annual >}}) - Based on [global clinical trial market](../appendix/global-clinical-trial-spending-by-phase.qmd) projections exceeding {{< var global_clinical_trial_market_annual >}} annually, enabling economically viable prevention studies
+8. **Mental health** ({{< var benefit_mental_health_annual >}}) - Conservative partial closure of {{< var sensitivity_peace_dividend_optimistic >}} funding gap identified for global mental health care needs
 
 $$
-B_{\text{total}} = 113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0 = \$1,238.6\text{B} \approx \$1.2\text{T}
+B_{\text{total}} = 113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0 = \$1{,}238.6\text{B} \approx \$1.2\text{T}
 $$
 
 #### Complete Case ROI
 
 $$
-\text{ROI}_{\text{complete}} = \frac{\$1,238.6\text{B annual} \times 10\text{ years}}{\$1.0\text{B implementation}} = 1,239:1
+\text{ROI}_{\text{complete}} = \frac{\$1{,}238.6\text{B annual} \times 10\text{ years}}{\$1.00\text{B implementation}} = 1{,}239:1
 $$
 
-where {{< var dfda_roi_simple >}} is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and {{< var peace_dividend_environmental >}} is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
+where {{< var total_complete_benefits_annual >}} is the total annual benefit across all eight categories, {{< var npv_time_horizon_years >}} years is the NPV-adjusted time horizon, and {{< var treaty_campaign_total_cost >}} is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
 
 - **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
 - **Research Acceleration** = System runs {{< var research_acceleration_multiplier >}}× MORE trials, finding 10-20X MORE breakthroughs
@@ -1115,7 +1110,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 ### Campaign Budget Breakdown
 
-The [$1.0B campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var roi_all_direct_benefits >}}:1 ROI) allocates funds across seven strategic categories:
+The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var roi_all_direct_benefits >}}:1 ROI) allocates funds across seven strategic categories:
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
@@ -1130,7 +1125,7 @@ The [$1.0B campaign cost](campaign-budget.qmd) (used as denominator in complete 
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
-This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates 463:1 to {{< var roi_all_direct_benefits >}}:1 returns regardless of the specific path to adoption.
+This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 returns regardless of the specific path to adoption.
 
 # Detailed Technical References
 
@@ -1366,8 +1361,8 @@ The following table summarizes key risk factors and their mitigation strategies:
 Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 - **Worst-case (66:1 ROI):** Benefits half as good, costs twice as high, intervention remains highly cost-effective
-- **Conservative (463:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
-- **Complete (1,239:1 ROI):** All quantifiable benefits, intervention transforms global health economics
+- **Conservative ({{< var roi_dfda_savings_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
+- **Complete ({{< var roi_all_direct_benefits >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
 **Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs.
 
@@ -1496,7 +1491,7 @@ The economic analysis presented above assumes successful implementation of the d
 
 ### Conditional Benefits Interpretation
 
-The ROI estimates (463:1 conservative, {{< var roi_all_direct_benefits >}}:1 complete) are **conditional on successful implementation**—they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
+The ROI estimates ({{< var roi_dfda_savings_only >}}:1 conservative, {{< var roi_all_direct_benefits >}}:1 complete) are **conditional on successful implementation**—they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ## Limitations Summary
 
@@ -1505,7 +1500,7 @@ Despite these limitations, several factors support the analysis's robustness:
 1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var roi_dfda_savings_only >}}:1)
 2. **Empirical grounding:** Cost reductions based on demonstrated RECOVERY trial results, not theoretical models
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
-4. **Dominant intervention status:** Negative ICER (-$59,476/QALY) means intervention saves money even if health benefits are substantially overstated
+4. **Dominant intervention status:** Negative ICER ({{< var dfda_icer_per_qaly >}}/QALY) means intervention saves money even if health benefits are substantially overstated
 
 **Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd) and [References](../references.qmd).
 
@@ -1515,16 +1510,16 @@ Future research priorities include prospective data collection during pilot impl
 
 # Conclusion
 
-This economic analysis demonstrates that redirecting 1% of global military spending to medical research through the Decentralized Institutes of Health and Decentralized FDA system generates return on investment ranging from 463:1 (conservative estimate) to {{< var roi_all_direct_benefits >}}:1 (complete estimate), depending on analytical scope.
+This economic analysis demonstrates that redirecting {{< var treaty_reduction_pct >}} of global military spending to medical research through the Decentralized Institutes of Health and Decentralized FDA system generates return on investment ranging from {{< var roi_dfda_savings_only >}}:1 (conservative estimate) to {{< var roi_all_direct_benefits >}}:1 (complete estimate), depending on analytical scope.
 
 **Key Findings**:
 
 - **Self-funding structure**: Zero net new spending required (funds redirected from existing military budgets)
 - **Dominant intervention**: Simultaneously reduces costs and improves health outcomes
-- **Conservative ROI**: {{< var roi_dfda_savings_only >}} based solely on R&D efficiency gains
+- **Conservative ROI**: {{< var roi_dfda_savings_only >}}:1 based solely on R&D efficiency gains
 
 $$
-\frac{\$249.3\text{B NPV benefit}}{\$538\text{M NPV cost}} = 463:1
+\frac{\$249.0\text{B NPV benefit}}{\$538\text{M NPV cost}} = 463:1
 $$
 
 (see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd))
