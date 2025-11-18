@@ -5,11 +5,11 @@ Validate Quarto Render Output
 
 This script checks rendered HTML files for common issues:
 1. Unrendered inline Python expressions (literal `{python}` in output)
-2. "echo: false" appearing in output (indicates cell option leaked)
+2. Blacklisted patterns (findfont warnings, echo: false leaks, Python errors, frontmatter leaks)
 3. Other rendering failures
 
 Usage:
-    python scripts/validate_render.py [--output-dir _book/warondisease]
+    python scripts/post-render-validation.py [--output-dir _book/warondisease]
 
 Exit codes:
     0 - All checks passed
@@ -38,6 +38,46 @@ class ValidationError:
 
     def __str__(self):
         return f"{self.file_path}:{self.line_num} [{self.error_type}] {self.context}"
+
+
+BLACKLISTED_PATTERNS = [
+    {
+        "regex": re.compile(r'findfont:', re.IGNORECASE),
+        "error_type": "FINDFONT_WARNING",
+        "message": "Matplotlib font warning in output",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
+    {
+        "regex": re.compile(r'echo:\s*false', re.IGNORECASE),
+        "error_type": "ECHO_FALSE_LEAK",
+        "message": "Cell option 'echo: false' leaked into output",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+        "skip_if": lambda line: line.strip().startswith('<!--') or 'href=' in line or 'class=' in line,
+    },
+    {
+        "regex": re.compile(r'NameError:|AttributeError:|ImportError:|ModuleNotFoundError:|KeyError:|TypeError:'),
+        "error_type": "PYTHON_ERROR",
+        "message": "Python error in output",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
+    {
+        "regex": re.compile(r'lastToneElevationWithHumorHash|lastInstructionalVoiceHash|lastFormattedHash|lastFactCheckHash|lastStyleCheckHash|lastStructureCheckHash|lastLatexCheckHash|lastParamCheckHash'),
+        "error_type": "FRONTMATTER_LEAK",
+        "message": "Frontmatter metadata leaked into output",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
+    {
+        "regex": re.compile(r'<span[^>]*>[^<]*quarto-shortcode[^<]*</span>', re.IGNORECASE),
+        "error_type": "QUARTO_SHORTCODE_TEXT",
+        "message": "Quarto shortcode rendered as literal span text",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
+]
 
 
 def find_html_files(output_dir):
@@ -112,79 +152,36 @@ def check_dollar_python_pattern(content, file_path):
     return errors
 
 
-def check_echo_false_in_output(content, file_path):
-    """Check for 'echo: false' appearing in rendered output"""
+def check_blacklisted_strings(content, file_path):
+    """Check for generic blacklisted string patterns in rendered output"""
     errors = []
-
     lines = content.split('\n')
-    for i, line in enumerate(lines, 1):
-        # Look for "echo: false" in the visible content (not in HTML attributes/comments)
-        # This usually appears when cell options leak into output
-        if 'echo: false' in line or 'echo:false' in line:
-            # Skip if it's in a comment or HTML attribute
-            if not (line.strip().startswith('<!--') or 'href=' in line or 'class=' in line):
-                context = "Cell option 'echo: false' leaked into output"
-                errors.append(ValidationError(file_path, i, "ECHO_FALSE_LEAK", context))
 
-    return errors
-
-
-def check_python_errors(content, file_path):
-    """Check for Python error messages in output"""
-    errors = []
-
-    # Common Python error patterns
-    error_patterns = [
-        r'NameError:',
-        r'AttributeError:',
-        r'ImportError:',
-        r'ModuleNotFoundError:',
-        r'KeyError:',
-        r'TypeError:',
-    ]
-
-    lines = content.split('\n')
-    for i, line in enumerate(lines, 1):
-        for pattern in error_patterns:
-            if re.search(pattern, line):
-                context = f"Python error in output: {line[:100]}"
-                errors.append(ValidationError(file_path, i, "PYTHON_ERROR", context))
-                break
-
-    return errors
-
-
-def check_frontmatter_leakage(content, file_path):
-    """Check for frontmatter metadata fields leaking into rendered HTML output"""
-    errors = []
-    
-    # Check for frontmatter hash fields that should not appear in rendered output
-    frontmatter_patterns = [
-        r'lastToneElevationWithHumorHash',
-        r'lastInstructionalVoiceHash',
-        r'lastFormattedHash',
-        r'lastFactCheckHash',
-        r'lastStyleCheckHash',
-        r'lastStructureCheckHash',
-        r'lastLatexCheckHash',
-        r'lastParamCheckHash',
-    ]
-    
-    lines = content.split('\n')
-    for i, line in enumerate(lines, 1):
-        # Skip HTML comments and script tags
-        if '<!--' in line or '<script' in line.lower():
-            continue
+    for pattern_config in BLACKLISTED_PATTERNS:
+        regex = pattern_config["regex"]
+        skip_in_comments = pattern_config.get("skip_in_comments", False)
+        skip_in_scripts = pattern_config.get("skip_in_scripts", False)
+        skip_if = pattern_config.get("skip_if", None)
         
-        for pattern in frontmatter_patterns:
-            if pattern in line:
-                # Get surrounding context (50 chars before and after)
-                start = max(0, line.find(pattern) - 50)
-                end = min(len(line), line.find(pattern) + len(pattern) + 50)
-                context = f"Frontmatter metadata leaked into output: `{pattern}` (context: ...{line[start:end]}...)"
-                errors.append(ValidationError(file_path, i, "FRONTMATTER_LEAK", context))
-                break  # Only report once per line
-    
+        for i, line in enumerate(lines, 1):
+            # Apply skip conditions
+            if skip_in_comments and '<!--' in line:
+                continue
+            if skip_in_scripts and '<script' in line.lower():
+                continue
+            if skip_if and skip_if(line):
+                continue
+            
+            # Check for pattern match
+            match = regex.search(line)
+            if match:
+                # Get surrounding context (50 chars before and after match)
+                start = max(0, match.start() - 50)
+                end = min(len(line), match.end() + 50)
+                snippet = line[start:end].strip()
+                context = f"{pattern_config['message']}: ...{snippet}..."
+                errors.append(ValidationError(file_path, i, pattern_config["error_type"], context))
+
     return errors
 
 
@@ -199,9 +196,7 @@ def validate_file(file_path):
     errors = []
     errors.extend(check_unrendered_inline_python(content, file_path))
     errors.extend(check_dollar_python_pattern(content, file_path))
-    errors.extend(check_echo_false_in_output(content, file_path))
-    errors.extend(check_python_errors(content, file_path))
-    errors.extend(check_frontmatter_leakage(content, file_path))
+    errors.extend(check_blacklisted_strings(content, file_path))
 
     return errors
 
@@ -273,6 +268,9 @@ def main():
         print("     This usually means {{< include >}} is not properly stripping frontmatter")
         print("     Check that included files have properly formatted YAML (--- at start and end)")
         print("     Or remove frontmatter from files that are only meant to be included")
+    if 'FINDFONT_WARNING' in errors_by_type:
+        print("   - Matplotlib findfont warnings: Ensure the required fonts are installed")
+        print("     or configure Matplotlib to use bundled fonts to avoid runtime warnings")
 
     return 1
 

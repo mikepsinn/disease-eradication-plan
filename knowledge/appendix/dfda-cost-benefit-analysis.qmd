@@ -1223,7 +1223,7 @@ monetized_qaly_value = DFDA_QALYS_MONETIZED  # {{< var dfda_qalys_monetized >}}
 # The captured dividend must cover the operational cost.
 
 captured_dividend = TREATY_ANNUAL_FUNDING  # $27.18B from 1% military redirect
-funding_coverage_ratio = captured_dividend / dfda_annual_operational_cost  # 679.5x coverage
+funding_coverage_ratio = DIVIDEND_COVERAGE_FACTOR  # Pre-calculated coverage ratio (~679x)
 
 print(f"--- dFDA Cost-Benefit Analysis (Baseline) ---")
 print(f"Annual Gross R&D Savings: ${gross_rd_savings:,.1f} Billion")
