@@ -936,16 +936,13 @@ These require major new research - acknowledge transparently but don't try to fi
 **Why Important**: Addresses critique #8 about time inconsistency and political economy barriers to sustained commitment
 **Note**: Updated to use {{< var defense_lobbying_annual >}} instead of hardcoded "$1B+" (variable already formatted as $127M in _variables.yml, no need to add units manually)
 
-#### 28. ⏳ Address Cherry-Picked Comparisons
-**Issue**: REVIEW-COST-EFFECTIVENESS.md #9 - Selective comparison to interventions that make dFDA look favorable (GiveWell charities, childhood vaccinations) but not to comparable research investments (NIH, DARPA) or other health interventions
-**Location**: "How This Compares to History" section (around line 840) or "Comparative Cost-Effectiveness" section
+#### 28. ⏳ Add Brief Note on Comparison Set Rationale
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #9 - Selective comparison to interventions that make dFDA look favorable
+**Location**: "How This Compares to History" section (around line 840) - add brief paragraph
 **Action**:
-- [ ] Add comparison table or discussion including:
-  - Other research investments: NIH intramural ($45B annually), DARPA, ARPA-H
-  - Clinical interventions: Medicare/Medicaid expansion (cost per QALY: $50,000-100,000), cancer screening ($20,000-50,000), cardiovascular prevention ($10,000-30,000)
-  - Acknowledge: "Comparison set includes interventions across multiple categories. dFDA compares favorably to both research investments and direct health interventions, but comprehensive comparison would require separate analysis."
-- [ ] Note: "Why compare to GiveWell charities but not NIH? GiveWell represents best-in-class efficiency for direct health interventions; NIH represents comparable research investment but with different efficiency profile. Both comparisons are relevant but answer different questions."
-**Why Important**: Addresses critique #9 about selective comparison set and strengthens credibility by showing broader comparison
+- [ ] Add brief paragraph (3-4 sentences): "Comparison set includes interventions across multiple categories (direct health interventions like GiveWell charities, research investments like NIH/DARPA, and clinical interventions like Medicare expansion). dFDA compares favorably across categories, but comprehensive comparison to all alternatives would require separate analysis. GiveWell represents best-in-class efficiency for direct interventions; NIH represents comparable research investment with different efficiency profile. Both comparisons are relevant but answer different questions."
+- [ ] Keep brief - document already has good comparisons, just needs rationale acknowledgment
+**Why Important**: Addresses critique #9 about selective comparison set while keeping additions concise
 
 #### 29. ⏳ Acknowledge Inadequate Uncertainty Quantification (Monte Carlo)
 **Issue**: REVIEW-COST-EFFECTIVENESS.md #10 - Sensitivity analysis provides scenarios but no probabilistic confidence intervals or Monte Carlo simulation
@@ -980,14 +977,12 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Reference: right-to-trial-fda-upgrade-act.qmd for regulatory framework details; investor-risk-analysis.qmd for existing risk discussion
 **Why Important**: Addresses critiques #13-14 about regulatory acceptance assumptions and failure modes in a single consolidated section
 
-#### 33. ⏳ Specify Counterfactual Baseline
-**Issue**: REVIEW-COST-EFFECTIVENESS.md #15 - What happens to the $27B if NOT redirected to dFDA? Current assumption: $27B disappears (deficit reduction? tax cuts?)
-**Location**: "Self-Funding Mechanism" section (around line 692) or Methodology section
+#### 33. ⏳ Add Brief Counterfactual Baseline Note
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #15 - What happens to the $27B if NOT redirected to dFDA?
+**Location**: "Self-Funding Mechanism" section (around line 692) or Methodology section - add 2-3 sentences
 **Action**:
-- [ ] Add explicit counterfactual specification: "This analysis uses 'status quo' as baseline (military spending continues at current levels). Alternative counterfactuals include: (1) Military R&D continues (yields civilian technology spillovers - partially addressed in Todo #3), (2) Funds returned to taxpayers (consumption/investment), (3) Funds used for other government priorities (infrastructure, education)."
-- [ ] Note: "The baseline should ideally be 'next best alternative use' not 'status quo'. This analysis focuses on conditional benefits of dFDA reallocation; comprehensive comparison to all alternative uses would require separate study."
-- [ ] Add: "Conservative interpretation: Even if alternative uses have positive value, dFDA's dominant intervention status (negative ICER) suggests it exceeds most alternatives."
-**Why Important**: Addresses critique #15 about counterfactual specification and strengthens methodological rigor
+- [ ] Add brief note (2-3 sentences): "This analysis uses 'status quo' as baseline (military spending continues at current levels). Alternative counterfactuals include military R&D continuation (civilian spillovers), funds returned to taxpayers, or other government priorities. The baseline should ideally be 'next best alternative use' not 'status quo', but comprehensive comparison would require separate study. Conservative interpretation: Even if alternatives have positive value, dFDA's dominant intervention status (negative ICER) suggests it exceeds most alternatives."
+**Why Important**: Addresses critique #15 about counterfactual specification while keeping additions concise
 
 #### 34. ⏳ Ensure All Numeric Claims Use Variables Instead of Hardcoding
 **Issue**: Inconsistent use of {{< var >}} vs hardcoded numbers reduces maintainability and credibility. Discovered hardcoded "$1B+ lobbying" (should be $127M) and "$300 million" defense lobbying figures. Also found redundant unit suffixes (e.g., "${{< var x >}}B") when variables already contain formatting.
@@ -1030,16 +1025,15 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Todo #17: Enhance external validity discussion
 - [ ] Todo #18: Add adoption realism discussion
 - [x] Todo #19: Address time horizon issues - ✅ COMPLETED (integrated with #13, discount rate sensitivity lines 500-523)
-- [ ] Todo #24: Add missing cost categories discussion
-- [ ] Todo #25: Address model specification issues
-- [ ] Todo #26: Address benefit attribution and publication bias
+- [x] Todo #24: Add missing cost categories discussion - ✅ COMPLETED (merged into #11)
+- [x] Todo #25: Address model specification issues - ✅ COMPLETED (already documented)
+- [ ] Todo #26: Add brief note on publication bias (crowding out/quality already covered in #11)
 - [x] Todo #27: Address time inconsistency and political economy concerns - ✅ COMPLETED (lines 607-626)
-- [ ] Todo #28: Address cherry-picked comparisons
+- [ ] Todo #28: Add brief note on comparison set rationale
 - [ ] Todo #29: Acknowledge inadequate uncertainty quantification (Monte Carlo)
 - [ ] Todo #30: Verify variable name consistency
-- [ ] Todo #31: Address regulatory arbitrage concerns
-- [ ] Todo #32: Add discussion of failure modes
-- [ ] Todo #33: Specify counterfactual baseline
+- [ ] Todo #31: Add regulatory and implementation risk scenarios (merged #31 + #32)
+- [ ] Todo #33: Add brief counterfactual baseline note
 
 ### Phase 4: Update Supporting Documents
 - [ ] Verify all variable references work after running generate-variables-yml.py (Todo #30)

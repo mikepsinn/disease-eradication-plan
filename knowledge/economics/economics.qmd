@@ -410,6 +410,22 @@ Transformative potential to create viable research pathways for conditions ignor
 
 For detailed QALY calculation methodology, see [dFDA QALY Model](../appendix/dfda-qaly-model.qmd).
 
+## Counterfactual Baseline Specification
+
+This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: military spending continues at current levels ({{< var global_military_spending_annual_2024 >}} annually) and is allocated to traditional military purposes. Under this baseline, the {{< var treaty_annual_funding >}} redirected to medical research infrastructure would otherwise remain in military budgets.
+
+**Alternative counterfactual scenarios** include:
+
+1. **Military R&D continuation**: The {{< var treaty_annual_funding >}} continues funding military research and development, potentially yielding civilian technology spillovers (e.g., GPS, internet protocols, materials science advances). This scenario is partially addressed in the peace dividend calculations, which acknowledge that military spending generates economic multiplier effects of 0.5-1.0× compared to medical research multipliers of 2.0-3.0×.
+
+2. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually in developed economies).
+
+3. **Alternative government priorities**: Reallocation to other public investments such as infrastructure, education, or climate mitigation. Each alternative use would require separate cost-benefit analysis to determine relative efficiency.
+
+**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of dFDA reallocation**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
+
+**Conservative interpretation**: Even if alternative uses generate positive economic value, the dFDA infrastructure exhibits **dominant intervention** characteristics (negative ICER of {{< var dfda_icer_per_qaly >}} per QALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
+
 ## Peace Dividend Calculation Methodology
 
 The peace dividend represents economic benefits from reduced military spending. The {{< var treaty_reduction_pct >}} Treaty redirects {{< var treaty_reduction_pct >}} of global military spending ({{< var global_military_spending_annual_2024 >}} in 2024) = {{< var treaty_annual_funding >}} annually.
@@ -1026,6 +1042,30 @@ This makes the {{< var treaty_reduction_pct >}} Treaty/dFDA system **[11X larger
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
 
+### Comprehensive Comparison Across Intervention Types
+
+The comparisons above focus on GiveWell charities and historical public health interventions because they represent **best-in-class efficiency** for direct health interventions. However, a complete cost-effectiveness analysis requires comparing the {{< var treaty_reduction_pct >}} Treaty/dFDA system across multiple intervention categories:
+
+#### Comparison to Research Investments
+
+**NIH Intramural Research Program** (~$45B annually): Generates significant scientific advances but at substantially higher cost per discovery than the dFDA model. The NIH's traditional randomized controlled trial approach costs approximately {{< var traditional_phase3_cost_per_patient >}} per patient for Phase 3 trials, compared to dFDA's {{< var recovery_trial_cost_per_patient >}} per patient (RECOVERY trial benchmark), representing a {{< var trial_cost_reduction_factor >}}x efficiency gain. Both are valuable research investments, but they answer different questions: NIH prioritizes scientific rigor in controlled settings, while dFDA prioritizes real-world evidence at scale.
+
+#### Comparison to Clinical Health Interventions
+
+Comparing the dFDA's cost-effectiveness ({{< var dfda_icer_per_qaly >}} per QALY, representing net savings) to standard clinical interventions:
+
+| Intervention Category | Cost per QALY | Typical Use Case |
+|:---|---:|:---|
+| **dFDA System** | **{{< var dfda_icer_per_qaly >}}** (net savings) | Systemic R&D efficiency improvement |
+| **Medicare/Medicaid Coverage Expansion** | $50,000-100,000 | Expanding insurance coverage to uninsured populations |
+| **Cancer Screening Programs** | $20,000-50,000 | Mammography, colonoscopy, prostate screening |
+| **Cardiovascular Prevention** | $10,000-30,000 | Statins, blood pressure management, lifestyle interventions |
+| **GiveWell Top Charities** | $3,000-5,000 | Malaria prevention, deworming, vitamin supplementation |
+
+The dFDA's negative cost per QALY ({{< var dfda_icer_per_qaly >}}) indicates it **generates economic surplus while improving health**, placing it in a distinct category from interventions that cost money to deliver benefits. This is comparable to childhood vaccinations, which also generate net economic returns.
+
+**Note on comparison methodology**: The {{< var treaty_reduction_pct >}} Treaty/dFDA system operates at a systems level, simultaneously reallocating research funding, improving population health, generating economic returns, and reducing treatment costs. Comparing across intervention categories (charitable giving, public health, research investments, clinical care) involves different metrics and stakeholder perspectives. The comparisons presented focus on dimensions most relevant to decision-makers evaluating treaty adoption. The dFDA compares favorably to both research investments (efficiency per discovery) and direct health interventions (cost per QALY), though comprehensive comparison would require separate frameworks for each dimension.
+
 ---
 
 # Who Benefits and How
@@ -1348,6 +1388,93 @@ This analysis employs partial equilibrium methodology, holding prices and market
 **Conservative treatment in base case**: The analysis excludes general equilibrium effects from benefit calculations, providing a lower bound estimate. Transition costs ($2-4B) are small relative to annual benefits ($163.6B conservative case), suggesting conclusions robust to general equilibrium adjustments.
 
 **Methodological limitation acknowledged**: Full general equilibrium modeling (computable general equilibrium models with labor markets, international trade, and technology diffusion) would require substantial additional complexity beyond this analysis scope. The partial equilibrium approach follows standard cost-benefit analysis methodology for policy interventions.
+
+
+## Failure Modes and Risk Scenarios
+
+The economic analysis presented above assumes successful implementation of the dFDA system. This section explicitly examines failure modes that could prevent anticipated benefits from materializing, acknowledging that positive ROI estimates are conditional on effective execution.
+
+### Implementation Failure Scenarios
+
+#### False Positive Detection
+
+**Risk**: Decentralized trials could produce false positive results, leading to approval of ineffective treatments.
+
+**Mechanism**: Broader eligibility criteria and real-world settings introduce potential confounders. Without stringent monitoring, selection bias or inadequate randomization could yield spurious treatment effects.
+
+**Consequence**: Approval of ineffective drugs wastes healthcare resources, erodes public trust, and potentially causes harm if ineffective treatments displace superior alternatives.
+
+**Mitigation strategies in dFDA design**:
+- Randomization preserved as core causal identification mechanism
+- Large sample sizes (10-100× traditional trials) improve statistical power and enable sensitivity analysis
+- Replication requirements across diverse populations test robustness
+- Bayesian adaptive trial designs update probabilities continuously based on accumulating evidence
+- Post-market surveillance using continuous real-world data collection detects efficacy deterioration
+
+**Residual risk**: Even with mitigation, decentralized settings may have higher false positive rates than traditional controlled trials. This represents a fundamental trade-off between internal validity (causal certainty) and external validity (real-world generalizability).
+
+#### Adverse Event Detection Failures
+
+**Risk**: Decentralized trial settings may detect serious adverse events less reliably than traditional closely-monitored trials.
+
+**Mechanism**: Traditional Phase I-II trials conduct intensive safety monitoring with frequent laboratory tests, imaging, and clinical assessments. Decentralized trials relying on passive EHR data capture and patient-reported outcomes could miss:
+- Rare but serious adverse events requiring specialized testing
+- Subclinical safety signals (e.g., liver enzyme elevations without symptoms)
+- Long-term toxicities manifesting years after treatment
+
+**Consequence**: Unsafe treatments reach market, causing patient harm and generating liability exposure. High-profile safety failures could trigger regulatory backlash, undermining the entire dFDA system.
+
+**Mitigation strategies in dFDA design**:
+- Active surveillance algorithms monitor EHR data for safety signals continuously
+- Pharmacovigilance systems aggregate adverse event reports across decentralized sites
+- Risk-based monitoring focuses intensive oversight on high-risk trials (oncology, first-in-human)
+- Phase I safety studies retain traditional controlled settings; decentralization primarily targets Phase III-IV efficacy trials
+
+**Residual risk**: Novel mechanism-of-action drugs may pose unpredictable risks. The dFDA model works best for drugs with established safety profiles (repurposing, class extensions) and may require hybrid approaches for truly novel therapeutics.
+
+#### Regulatory Rejection
+
+**Risk**: Regulatory agencies (FDA, EMA) refuse to accept dFDA trial evidence for approval decisions.
+
+**Mechanism**: Regulators may view decentralized trial data as insufficiently rigorous, cite concerns about data quality, or face political pressure from stakeholders invested in traditional trial infrastructure.
+
+**Consequence**: Even if dFDA trials generate valid efficacy evidence, failure to achieve regulatory acceptance prevents market access. The entire cost-reduction thesis collapses if dFDA trials must be repeated using traditional methods for approval.
+
+**Empirical precedent**: FDA's accelerated approval pathway and RECOVERY trial's global emergency use authorization demonstrate regulatory willingness to accept alternative evidence standards when public health benefits are clear.
+
+**Mitigation strategies**:
+- Pilot programs establish proof-of-concept in willing jurisdictions (e.g., UK MHRA, which already accepted RECOVERY evidence)
+- Regulatory harmonization efforts (ICH guidelines) create international standards for pragmatic trial designs
+- Phased implementation allows regulators to observe real-world performance before full commitment
+- Hybrid trial designs combine pragmatic Phase III efficacy testing with traditional Phase II safety validation
+
+**Residual risk**: Regulatory capture by pharmaceutical industry incumbents could block adoption. See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for political economy analysis of implementation barriers.
+
+#### Pharmaceutical Industry Adoption Failure
+
+**Risk**: Pharmaceutical companies decline to use dFDA platform, preferring traditional controlled trials despite higher costs.
+
+**Mechanism**: Industry may resist for several reasons:
+- **Control preference**: Traditional trials offer greater control over patient selection, endpoints, and data interpretation
+- **Intellectual property concerns**: Sharing data with decentralized platforms may expose competitive information
+- **Risk aversion**: Established trial methods are predictable; dFDA represents uncertain innovation
+- **Regulatory conservatism**: Companies may prefer proven pathways over novel approaches requiring regulatory negotiation
+
+**Consequence**: If pharmaceutical industry participation is low, dFDA trial volume remains small, preventing economies of scale and limiting cost reductions. The intervention fails to transform drug development economics.
+
+**Mitigation strategies**:
+- Economic incentives: 82× cost reduction creates overwhelming financial motivation for adoption
+- First-mover advantages: Companies adopting early gain competitive speed-to-market advantages
+- Regulatory push: If regulators preferentially review dFDA submissions (shorter timelines), companies face competitive pressure to adopt
+- Public funding focus: Government-funded research (NIH, Wellcome Trust) can mandate dFDA platform use, creating initial scale
+
+**Empirical precedent**: Electronic data capture systems and clinical trial registries faced similar industry resistance but achieved near-universal adoption once cost benefits became clear or regulatory requirements were established.
+
+**Residual risk**: Oligopolistic pharmaceutical market structure enables coordinated resistance. Large incumbents may lobby against dFDA adoption to protect barriers to entry against smaller competitors.
+
+### Conditional Benefits Interpretation
+
+The ROI estimates (463:1 conservative, {{< var roi_all_direct_benefits >}}:1 complete) are **conditional on successful implementation**—they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ## Limitations Summary
 
