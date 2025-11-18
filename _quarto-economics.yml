@@ -41,6 +41,7 @@ project:
     - knowledge/appendix/clinical-trial-participants.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/recovery-trial.qmd
     # Detailed Calculations
+    - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
     - knowledge/appendix/peace-dividend-calculations.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/research-acceleration-model.qmd # ✓ Style reviewed 2025-01-15
@@ -118,6 +119,8 @@ website:
             text: "Monetary Policy & Funding Analysis"
       - section: "Cost-Benefit Analysis"
         contents:
+          - href: knowledge/appendix/parameters-and-calculations.qmd
+            text: "Parameters & Calculations Reference"
           - href: knowledge/appendix/peace-dividend-calculations.qmd
             text: "Peace Dividend Methodology"
           - href: knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd

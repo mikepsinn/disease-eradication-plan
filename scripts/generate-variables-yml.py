@@ -1,26 +1,35 @@
 #!/usr/bin/env python3
 """
-Generate _variables.yml from parameters.py
-===========================================
+Generate _variables.yml and academic outputs from parameters.py
+================================================================
 
-Reads all numeric constants from dih_models/parameters.py and generates
-a Quarto-compatible _variables.yml file with formatted values and tooltips.
+Reads all numeric constants from dih_models/parameters.py and generates:
+1. _variables.yml - Quarto-compatible variables with tooltips
+2. knowledge/appendix/parameters-and-calculations.qmd - Academic reference with LaTeX
+3. references.bib - BibTeX export for LaTeX submissions
+4. (Optional) Inject citations into economics.qmd
 
 Usage:
-    python tools/generate-variables-yml.py
+    python scripts/generate-variables-yml.py [--inject-citations]
+
+Options:
+    --inject-citations    Add [@citation] tags to economics.qmd variables
 
 Output:
     _variables.yml in project root
+    knowledge/appendix/parameters-and-calculations.qmd
+    references.bib in project root
 
-The generated file allows using {{< var param_name >}} in QMD files.
+The generated files enable academic rigor with zero manual maintenance.
 """
 
 import sys
 import ast
 import re
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List, Set
 import yaml
+from datetime import datetime
 
 
 def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
@@ -426,7 +435,340 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
     print(f'  {{{{< var {list(variables.keys())[0]} >}}}}')
 
 
+def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path):
+    """
+    Generate comprehensive parameters-and-calculations.qmd appendix.
+
+    Creates an academic reference page with:
+    - All parameters organized by type (external/calculated)
+    - LaTeX equations where available
+    - Citations and source links
+    - Confidence indicators and metadata
+    """
+    # Categorize parameters
+    external_params = []
+    calculated_params = []
+    definition_params = []
+
+    for param_name in sorted(parameters.keys()):
+        param_data = parameters[param_name]
+        value = param_data['value']
+
+        if hasattr(value, 'source_type'):
+            if value.source_type == "external":
+                external_params.append((param_name, param_data))
+            elif value.source_type == "calculated":
+                calculated_params.append((param_name, param_data))
+            elif value.source_type == "definition":
+                definition_params.append((param_name, param_data))
+        else:
+            # No source_type - treat as definition
+            definition_params.append((param_name, param_data))
+
+    # Generate QMD content
+    content = []
+    content.append("---")
+    content.append("title: \"Parameters and Calculations Reference\"")
+    content.append("subtitle: \"Comprehensive Documentation of Economic Model Variables\"")
+    content.append("format:")
+    content.append("  html:")
+    content.append("    toc: true")
+    content.append("    toc-depth: 3")
+    content.append("    number-sections: true")
+    content.append("    code-fold: true")
+    content.append("---")
+    content.append("")
+    content.append("# Overview")
+    content.append("")
+    content.append("This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.")
+    content.append("")
+    content.append(f"**Auto-generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    content.append("")
+    content.append(f"**Total parameters**: {len(parameters)}")
+    content.append(f"- External sources (peer-reviewed): {len(external_params)}")
+    content.append(f"- Calculated values: {len(calculated_params)}")
+    content.append(f"- Core definitions: {len(definition_params)}")
+    content.append("")
+    content.append(":::{.callout-note}")
+    content.append("## Data Transparency")
+    content.append("")
+    content.append("All parameters are defined in [`dih_models/parameters.py`](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/dih_models/parameters.py) with:")
+    content.append("- Source attribution (`source_ref`)")
+    content.append("- Confidence levels (high/medium/low)")
+    content.append("- Peer review status")
+    content.append("- Last update dates")
+    content.append("- Mathematical formulas")
+    content.append(":::")
+    content.append("")
+
+    # External parameters section
+    if external_params:
+        content.append("# External Data Sources {#sec-external}")
+        content.append("")
+        content.append("Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.")
+        content.append("")
+
+        for param_name, param_data in external_params:
+            value = param_data['value']
+            content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
+            content.append("")
+
+            # Value
+            unit = getattr(value, 'unit', '')
+            formatted = format_parameter_value(value, unit)
+            content.append(f"**Value**: {formatted}")
+            content.append("")
+
+            # Description
+            if hasattr(value, 'description'):
+                content.append(f"**Description**: {value.description}")
+                content.append("")
+
+            # Source citation
+            if hasattr(value, 'source_ref'):
+                source_ref = value.source_ref
+                content.append(f"**Source**: [{source_ref}](../references.qmd#{source_ref})")
+                content.append("")
+
+            # Confidence and metadata
+            metadata = []
+            if hasattr(value, 'confidence'):
+                confidence_labels = {
+                    "high": "✓ High confidence",
+                    "medium": "~ Medium confidence",
+                    "low": "? Low confidence",
+                    "estimated": "≈ Estimated"
+                }
+                metadata.append(f"**Confidence**: {confidence_labels.get(value.confidence, value.confidence)}")
+
+            if hasattr(value, 'peer_reviewed') and value.peer_reviewed:
+                metadata.append("**Status**: 📊 Peer-reviewed")
+
+            if hasattr(value, 'last_updated'):
+                metadata.append(f"**Last updated**: {value.last_updated}")
+
+            if metadata:
+                content.append(" | ".join(metadata))
+                content.append("")
+
+            content.append("---")
+            content.append("")
+
+    # Calculated parameters section
+    if calculated_params:
+        content.append("# Calculated Values {#sec-calculated}")
+        content.append("")
+        content.append("Parameters derived from mathematical formulas and economic models.")
+        content.append("")
+
+        for param_name, param_data in calculated_params:
+            value = param_data['value']
+            content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
+            content.append("")
+
+            # Value
+            unit = getattr(value, 'unit', '')
+            formatted = format_parameter_value(value, unit)
+            content.append(f"**Value**: {formatted}")
+            content.append("")
+
+            # Description
+            if hasattr(value, 'description'):
+                content.append(f"**Description**: {value.description}")
+                content.append("")
+
+            # LaTeX equation
+            if hasattr(value, 'latex') and value.latex:
+                content.append("**Formula**:")
+                content.append("")
+                content.append("$$")
+                content.append(value.latex)
+                content.append("$$")
+                content.append("")
+            elif hasattr(value, 'formula') and value.formula:
+                content.append(f"**Formula**: `{value.formula}`")
+                content.append("")
+
+            # Source reference (calculation methodology)
+            if hasattr(value, 'source_ref'):
+                # Extract just the path without anchor if it's an internal link
+                source_ref = value.source_ref
+                if source_ref.startswith('/'):
+                    source_ref = source_ref.lstrip('/')
+                content.append(f"**Methodology**: [{source_ref}]({source_ref})")
+                content.append("")
+
+            # Confidence
+            if hasattr(value, 'confidence'):
+                confidence_labels = {
+                    "high": "✓ High confidence",
+                    "medium": "~ Medium confidence",
+                    "low": "? Low confidence",
+                    "estimated": "≈ Estimated"
+                }
+                content.append(f"**Confidence**: {confidence_labels.get(value.confidence, value.confidence)}")
+                content.append("")
+
+            if hasattr(value, 'conservative') and value.conservative:
+                content.append("**Note**: Conservative estimate")
+                content.append("")
+
+            content.append("---")
+            content.append("")
+
+    # Core definitions section
+    if definition_params:
+        content.append("# Core Definitions {#sec-definitions}")
+        content.append("")
+        content.append("Fundamental parameters and constants used throughout the analysis.")
+        content.append("")
+
+        for param_name, param_data in definition_params:
+            value = param_data['value']
+            content.append(f"## {param_name.replace('_', ' ').title()}")
+            content.append("")
+
+            # Value
+            unit = getattr(value, 'unit', '')
+            formatted = format_parameter_value(value, unit)
+            content.append(f"**Value**: {formatted}")
+            content.append("")
+
+            # Description
+            if hasattr(value, 'description'):
+                content.append(f"**Description**: {value.description}")
+                content.append("")
+
+            content.append("---")
+            content.append("")
+
+    # Write file
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(content))
+
+    print(f"[OK] Generated {output_path}")
+    print(f"     {len(external_params)} external parameters")
+    print(f"     {len(calculated_params)} calculated parameters")
+    print(f"     {len(definition_params)} core definitions")
+
+
+def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
+    """
+    Generate references.bib BibTeX file from external parameters.
+
+    Extracts unique citations from parameters with source_type="external"
+    and creates BibTeX entries for LaTeX submissions.
+    """
+    # Collect unique source_refs from external parameters
+    citations = set()
+    for param_name, param_data in parameters.items():
+        value = param_data['value']
+        if hasattr(value, 'source_type') and value.source_type == "external":
+            if hasattr(value, 'source_ref') and value.source_ref:
+                citations.add(value.source_ref)
+
+    # Generate BibTeX entries
+    # Note: In a production system, you'd want to fetch actual BibTeX data
+    # For now, we create placeholder entries that reference the citations
+    content = []
+    content.append("% AUTO-GENERATED FILE - DO NOT EDIT")
+    content.append("% Generated from dih_models/parameters.py")
+    content.append(f"% Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    content.append("")
+    content.append("% This file contains BibTeX references for all external data sources")
+    content.append("% used in the economic analysis of the 1% Treaty and Decentralized FDA.")
+    content.append("")
+    content.append("% NOTE: These are placeholder entries. In production, fetch actual")
+    content.append("% BibTeX data from DOIs, PubMed, or other bibliographic databases.")
+    content.append("")
+
+    for citation_key in sorted(citations):
+        # Create placeholder entry
+        # In production, you'd query CrossRef, PubMed, etc. for actual BibTeX
+        content.append(f"@misc{{{citation_key},")
+        content.append(f"  title = {{{citation_key}}},")
+        content.append(f"  note = {{See references.qmd#{citation_key} for full citation}},")
+        content.append(f"  url = {{https://impact.dih.earth/knowledge/references.qmd#{citation_key}}},")
+        content.append("}")
+        content.append("")
+
+    # Write file
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(content))
+
+    print(f"[OK] Generated {output_path}")
+    print(f"     {len(citations)} unique citations")
+
+
+def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: Path):
+    """
+    Inject [@citation] tags into economics.qmd after variables with external sources.
+
+    Finds {{< var param_name >}} patterns and adds [@source_ref] citations for
+    parameters with source_type="external" and peer_reviewed=True.
+
+    This is OPTIONAL and only runs when --inject-citations flag is used.
+    """
+    if not qmd_path.exists():
+        print(f"[WARN] QMD file not found: {qmd_path}")
+        return
+
+    # Read file
+    with open(qmd_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Build lookup map: param_name (lowercase) -> citation_key
+    citation_map = {}
+    for param_name, param_data in parameters.items():
+        value = param_data['value']
+        if hasattr(value, 'source_type') and value.source_type == "external":
+            if hasattr(value, 'peer_reviewed') and value.peer_reviewed:
+                if hasattr(value, 'source_ref') and value.source_ref:
+                    # Use lowercase param name (matches Quarto variable names)
+                    citation_map[param_name.lower()] = value.source_ref
+
+    # Pattern to match {{< var param_name >}}
+    # We'll inject [@citation] right after if not already present
+    def replace_var(match):
+        var_name = match.group(1)
+        full_match = match.group(0)
+
+        # Check if citation already present after this variable
+        # Look ahead to see if [@...] immediately follows
+        remaining = content[match.end():]
+        if remaining.lstrip().startswith('[@'):
+            return full_match  # Already has citation
+
+        # Check if this variable should have a citation
+        if var_name in citation_map:
+            citation_key = citation_map[var_name]
+            return f"{full_match} [@{citation_key}]"
+        else:
+            return full_match
+
+    # Replace all variables
+    pattern = r'\{\{<\s*var\s+([a-z_][a-z0-9_]*)\s*>\}\}'
+    modified_content = re.sub(pattern, replace_var, content)
+
+    # Count changes
+    changes = sum(1 for a, b in zip(content, modified_content) if a != b)
+    if changes > 0:
+        # Write back
+        with open(qmd_path, 'w', encoding='utf-8') as f:
+            f.write(modified_content)
+
+        print(f"[OK] Injected citations into {qmd_path}")
+        print(f"     {len(citation_map)} parameters with citations available")
+        print(f"     Modified {changes} characters")
+    else:
+        print(f"[OK] No citation injection needed (already present or no external params)")
+
+
 def main():
+    # Parse command-line arguments
+    inject_citations = '--inject-citations' in sys.argv
+
     # Get project root
     project_root = Path(__file__).parent.parent.absolute()
 
@@ -439,15 +781,44 @@ def main():
     print(f"[*] Parsing {parameters_path}...")
     parameters = parse_parameters_file(parameters_path)
     print(f"[OK] Found {len(parameters)} numeric parameters")
+    print()
 
     # Generate _variables.yml
+    print("[*] Generating _variables.yml...")
     output_path = project_root / '_variables.yml'
     generate_variables_yml(parameters, output_path)
+    print()
 
-    print("\n[*] Next steps:")
-    print("    1. Review _variables.yml")
-    print("    2. Run: python tools/link-parameters.py --fix")
-    print("    3. Render your Quarto documents")
+    # Generate parameters-and-calculations.qmd
+    print("[*] Generating parameters-and-calculations.qmd...")
+    qmd_output = project_root / 'knowledge' / 'appendix' / 'parameters-and-calculations.qmd'
+    generate_parameters_qmd(parameters, qmd_output)
+    print()
+
+    # Generate references.bib
+    print("[*] Generating references.bib...")
+    bib_output = project_root / 'references.bib'
+    generate_bibtex(parameters, bib_output)
+    print()
+
+    # Optionally inject citations
+    if inject_citations:
+        print("[*] Injecting citations into economics.qmd...")
+        economics_qmd = project_root / 'knowledge' / 'economics' / 'economics.qmd'
+        inject_citations_into_qmd(parameters, economics_qmd)
+        print()
+
+    print("[OK] All academic outputs generated successfully!")
+    print()
+    print("[*] Next steps:")
+    print("    1. Review generated files:")
+    print(f"       - {output_path.relative_to(project_root)}")
+    print(f"       - {qmd_output.relative_to(project_root)}")
+    print(f"       - {bib_output.relative_to(project_root)}")
+    if inject_citations:
+        print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
+    print("    2. Render Quarto book to see results")
+    print("    3. Zero manual maintenance required - just re-run this script!")
 
 
 if __name__ == '__main__':

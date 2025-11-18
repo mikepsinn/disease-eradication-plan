@@ -108,6 +108,7 @@ book:
 
     - part: "Detailed Calculations"
       chapters:
+        - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
         - knowledge/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
         - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
         - knowledge/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
