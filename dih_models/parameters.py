@@ -1991,6 +1991,14 @@ US_ANNUAL_DRUG_SPENDING = Parameter(
     unit="billions USD/year"
 )  # $360B annually
 
+US_MILITARY_SPENDING_PCT_GDP = Parameter(
+    0.035,
+    source_ref="us-military-budget-3-5-pct-gdp",
+    source_type="external",
+    description="US military spending as percentage of GDP (2024)",
+    unit="rate"
+)  # 3.5% of GDP
+
 # Rare diseases
 RARE_DISEASES_COUNT_GLOBAL = Parameter(
     7000,

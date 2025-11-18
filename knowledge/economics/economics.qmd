@@ -25,15 +25,15 @@ from dih_models.parameters import *
 
 **Shift 1% of global military spending into decentralized clinical trials.
 
-Accelerate medical progress 115×.
+Accelerate medical progress {{< var research_acceleration_multiplier >}}×.
 Save trillions annually.
 Prevent millions of deaths.
 Strengthen national security.
 And finance it using self-interest.**
 
-Humanity spends **$2.2 trillion per year** developing better ways to damage itself, and **$48 billion per year** developing better ways to heal itself.
+Humanity spends **{{< var global_military_spending_annual_2024 >}} per year** developing better ways to damage itself, and **{{< var global_med_research_spending >}} billion per year** developing better ways to heal itself.
 
-This is a **46× misallocation** of resources relative to our actual goals:
+This is a **{{< var military_vs_medical_research_ratio >}} misallocation** of resources relative to our actual goals:
 less disease, more life, more prosperity, fewer funerals.
 
 The solution is mathematically straightforward:
@@ -50,7 +50,7 @@ The solution is mathematically straightforward:
 
 ### **463:1 to 1,239:1 ROI**
 
-### **115× faster medical progress**
+### **{{< var research_acceleration_multiplier >}}× faster medical progress**
 
 ### **The equivalent of 2,000 years of medical advancement in 20 years**
 
@@ -62,7 +62,7 @@ The solution is mathematically straightforward:
 
 These figures are conservative and based on real-world results:
 
-* **Oxford RECOVERY** showed trials can be **82× cheaper** when stripped to scientific essentials.
+* **Oxford RECOVERY** showed trials can be **{{< var trial_cost_reduction_factor >}}× cheaper** when stripped to scientific essentials.
 * This method produced **the most important COVID discoveries**—faster than any bureaucracy in history.
 * The limiting factor is not scientific knowledge.
 * The limiting factor is **administrative friction**.
@@ -89,7 +89,7 @@ Pragmatic trials eliminate:
 * regulatory overproduction
 * 17 years of unnecessary documentation
 
-This is why costs fall **82×**, not 2× or 5×.
+This is why costs fall **{{< var trial_cost_reduction_factor >}}×**, not 2× or 5×.
 
 ### **3. 15–40 “NIH equivalents” of new research capacity**
 
@@ -160,9 +160,9 @@ This is not utopian. It is a mechanical sequence:
 Demonstrate overwhelming global public support for medical acceleration and reduced suffering.
 This creates legitimacy and media momentum.
 
-### **Step 2 — Hit the 3.5% Tipping Point**
+### **Step 2 — Hit the {{< var global_population_activism_threshold_pct >}} Tipping Point**
 
-Social-movement science shows that **3.5% committed support** reliably precedes policy adoption.
+Social-movement science shows that **{{< var global_population_activism_threshold_pct >}} committed support** reliably precedes policy adoption.
 This is the activation threshold.
 
 ### **Step 3 — Assemble the Investor Coalition**
@@ -182,7 +182,7 @@ Effective ones instantly scale.
 
 ### **Step 6 — Civilization Enters the Medical Singularity Phase**
 
-115× acceleration.
+{{< var research_acceleration_multiplier >}}× acceleration.
 Disease categories collapse.
 Healthspan overtakes pathology.
 Investors profit.
@@ -230,7 +230,7 @@ No AI safety lab.
 No global treaty.
 
 All are valuable.
-None offer **115× leverage**.
+None offer **{{< var research_acceleration_multiplier >}}× leverage**.
 
 
 ## Executive Summary
@@ -300,7 +300,7 @@ $$
 \text{ROI} = \frac{\text{Benefits}}{\text{Costs}} = \frac{\$249.3\text{B}}{\$538\text{M}} = 463:1
 $$
 
-where [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) is what you save over 10 years and {{< var dfda_npv_total_cost >}} is what you spend to build it.
+where [{{< var dfda_npv_net_benefit_conservative >}}](../appendix/dfda-cost-benefit-analysis.qmd) is what you save over 10 years and {{< var dfda_npv_total_cost >}} is what you spend to build it.
 
 This uses "net present value" which is economist code for "future money is worth less than current money" ({{< var dfda_trial_abandonment_rate >}} discount rate, 10-year horizon). For the spreadsheet addicts: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
@@ -347,7 +347,7 @@ This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} ove
 ### What You Get Back
 
 - **Money**: {{< var global_annual_trade_disruption_shipping_conflict >}} in R&D savings (10 years, present value)
-- **Returns**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) ÷ {{< var dfda_npv_total_cost >}} = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
+- **Returns**: [{{< var dfda_npv_net_benefit_conservative >}}](../appendix/dfda-cost-benefit-analysis.qmd) ÷ {{< var dfda_npv_total_cost >}} = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
 - **People not dying**: {{< var global_dfda_qalys_gained_annual >}} quality-adjusted life years annually
 
 **Two income streams from one budget shift**:
@@ -526,7 +526,7 @@ This represents **{{< var completed_trials_multiplier_theoretical_max >}}** more
 
 This represents:
 
-- From {{< var current_completed_trials_per_year >}} completed trials/year → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) (115x)
+- From {{< var current_completed_trials_per_year >}} completed trials/year → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) ({{< var research_acceleration_multiplier >}}x)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → [1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year](../appendix/research-acceleration-model.qmd) (20-40x)
 - From [$41,000 cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}}-1,000 cost per patient ([82x cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
@@ -592,7 +592,7 @@ Here's how it compares to the most effective charities in the world ([GiveWell t
 
 | Intervention | Cost to Achieve Outcome | This Initiative's Equivalent |
 | :--- | :--- | :--- |
-| **[GiveWell Top Charities](../references.qmd#givewell-cost-per-life-saved)** (e.g., Against Malaria Foundation) | Spend **~`{python} givewell_cost_per_life_min_formatted` - `{python} givewell_cost_per_life_max_formatted`** to save one life | Generate **{{< var global_dfda_qalys_gained_annual >}} QALYs** annually while creating **[$249.3B](../appendix/dfda-cost-benefit-analysis.qmd)** in net economic value |
+| **[GiveWell Top Charities](../references.qmd#givewell-cost-per-life-saved)** (e.g., Against Malaria Foundation) | Spend **~`{python} givewell_cost_per_life_min_formatted` - `{python} givewell_cost_per_life_max_formatted`** to save one life | Generate **{{< var global_dfda_qalys_gained_annual >}} QALYs** annually while creating **[{{< var dfda_npv_net_benefit_conservative >}}](../appendix/dfda-cost-benefit-analysis.qmd)** in net economic value |
 
 **The Difference**: GiveWell's charities are the best ways to spend money to save lives. They cost money but save lives very efficiently.
 

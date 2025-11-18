@@ -288,7 +288,7 @@ display(IPImage(str(png_path)))
 
 #### 1. The 501(c)(3) Public Charity: "The Educator and Mobilizer"
 
-**Primary Purpose:** Conduct a non-binding global public opinion survey/engagement initiative to demonstrate 3.5% support (280M+ verified participants) and build broad public understanding through non-partisan research and education.
+**Primary Purpose:** Conduct a non-binding global public opinion survey/engagement initiative to demonstrate {{< var global_population_activism_threshold_pct >}} support (280M+ verified participants) and build broad public understanding through non-partisan research and education.
 
 #### Permitted Activities
 
