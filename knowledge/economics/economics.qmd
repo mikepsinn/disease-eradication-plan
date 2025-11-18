@@ -642,6 +642,12 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
   - Upfront: {{< var dfda_npv_upfront_cost_total >}} (build the platform)
   - Yearly operations: {{< var dfda_upfront_build >}} (keep it running)
 
+**Why costs are low—the partnership model:** The dFDA uses a partnership-first strategy, providing open protocol infrastructure rather than building a competing platform. This approach costs **$15-25M upfront** (protocol/API build) versus **$37.5-46M** for a full platform build, leveraging existing infrastructure from Epic ($521M raised), Cerner, Medable ($2.1B valuation), and Science 37 ($100M raised).
+
+By establishing open protocols (like HTTP for the internet) rather than building consumer-facing apps, trial management systems, and EHR integrations from scratch, the dFDA avoids **$500M+** in full-stack development costs. Instead of competing with billion-dollar platforms, it provides the coordination layer that enables existing systems to interoperate. The federated architecture (data stays in Epic/Cerner/Apple Health systems) eliminates massive database infrastructure costs while preserving privacy.
+
+For detailed cost breakdown, see [dFDA Platform Costs - Partnership Model](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model).
+
 The [$27.2B/year](../appendix/peace-dividend-calculations.qmd) peace dividend covers {{< var dfda_upfront_build >}}/year operations **680 times over**. It's like having $680 to pay a $1 bill.
 
 This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over 5 years) and middle-range costs. For the detailed breakdown see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
@@ -704,6 +710,15 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 **Economic Structure** ([see detailed calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd)):
 
 - **Funding Source**: [$27.2B annually](../appendix/peace-dividend-calculations.qmd) from 1% redirection of existing military budgets (money already allocated in national budgets)
+
+**Funding Allocation** (separating platform costs from patient subsidies):
+
+1. **dFDA Platform Operations**: ~$40M/year for core infrastructure, maintenance, protocol development, and operations ([medium initiative scenario](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model))
+2. **NIH Trial Participation Cost Discount Fund**: ~$2B/year for patient participation subsidies (authorized in [Right to Trial Act SEC. 303](../solution/right-to-trial-fda-upgrade-act.qmd#sec-303-nih-trial-participation-cost-discount-fund); sponsors set costs, NIH pays portion via QALY-maximizing algorithm, patients pay discounted copay)
+3. **Remaining Funds**: ~$25.2B/year allocated via [Wishocracy](../solution/wishocracy.qmd) for additional research infrastructure, patient incentives, and expanding trial capacity
+
+**Important distinction**: The dFDA platform costs ($40M/year) are separate from patient participation subsidies ($2B/year NIH Fund). Platform costs cover infrastructure and operations. The NIH Fund provides financial assistance to patients enrolling in trials, making participation affordable without funding researcher salaries.
+
 - **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: [$50.0B](../appendix/dfda-cost-benefit-analysis.qmd))
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
 - **Net Position**: {{< var treaty_total_annual_benefits >}} annual surplus after all costs
@@ -1090,6 +1105,14 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 - **Large sample sizes:** Decentralized recruitment enables 10-100× larger trials, improving statistical power and subgroup analysis
 - **Covariate adjustment:** Electronic health record data enables controlling for confounders ex-post using propensity score matching and instrumental variables
 - **Replication at scale:** Lower costs enable rapid replication across diverse populations, testing robustness
+
+**Empirical evidence—observational studies produce valid results:** A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
+
+![Comparison of effect sizes from observational studies versus randomized trials for mortality outcomes, showing strong concordance between methodologies.](../../assets/observational-vs-randomized-effect-sizes.png)
+
+![Comparison of effect sizes from observational studies versus randomized trials across diverse outcomes, demonstrating that observational methods yield similar conclusions when properly designed.](../../assets/observational-vs-randomized-trial-effect-sizes.png)
+
+These meta-analytic findings support the validity of pragmatic trial designs used in the dFDA model. Modern statistical methods, large sample sizes, and proper covariate adjustment enable observational and quasi-experimental designs to achieve causal inference comparable to traditional RCTs at a fraction of the cost.
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
