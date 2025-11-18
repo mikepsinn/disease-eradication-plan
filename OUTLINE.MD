@@ -175,7 +175,6 @@
 - **Treaty Verification That Actually Works**
   - Blockchain receipts: Every dollar tracked publicly
   - Satellite verification: Military bases don't lie
-  - Whistleblower bounties: $10M for proving cheating
   - Automatic penalties: Smart contracts freeze payments
   - Name and shame: Real-time public scoreboards
   - Insurance model: Countries pay into compliance pool
