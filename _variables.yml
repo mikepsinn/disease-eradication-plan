@@ -483,6 +483,18 @@
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs average US wage\
   \ | ✓ High confidence | Formula: EFFECTIVE_RATE ÷ AVG_WAGE | Unit: ratio | Click\
   \ to view calculation\">9,744</a>"
+"expected_roi_conservative_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
+  \ title=\"Expected ROI for dFDA accounting for 10% political success probability\
+  \ | ~ Medium confidence | Formula: ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE\
+  \ | Click to view calculation\">46.3</a>"
+"expected_roi_moderate_dfda": "<a href=\"/calculated\" class=\"parameter-link\" title=\"\
+  Expected ROI for dFDA accounting for 25% political success probability | ~ Medium\
+  \ confidence | Formula: ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE\
+  \ | Click to view calculation\">116</a>"
+"expected_roi_optimistic_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
+  \ title=\"Expected ROI for dFDA accounting for 50% political success probability\
+  \ | ~ Medium confidence | Formula: ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC\
+  \ | Click to view calculation\">232</a>"
 "family_office_investment_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for family offices | ✓ High\
   \ confidence | Unit: millions USD | Click to view calculation\">$5.00M</a>"
@@ -958,6 +970,15 @@
 "phase_3_trial_cost_min_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (minimum) | ✓ High confidence\
   \ | Unit: millions USD/trial | Click to view source\">$20M</a>"
+"political_success_probability_conservative": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
+  \ class=\"parameter-link\" title=\"Conservative estimate of political success probability\
+  \ (10%) | ~ Medium confidence | Click to view source\">0.1</a>"
+"political_success_probability_moderate": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
+  \ class=\"parameter-link\" title=\"Moderate estimate of political success probability\
+  \ (25%) | ~ Medium confidence | Click to view source\">0.25</a>"
+"political_success_probability_optimistic": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
+  \ class=\"parameter-link\" title=\"Optimistic estimate of political success probability\
+  \ (50%) | ~ Medium confidence | Click to view source\">0.5</a>"
 "post_ww2_military_cut_pct": "<a href=\"/knowledge/references.qmd#post-ww2-military-demobilization\"\
   \ class=\"parameter-link\" title=\"Percentage military spending cut after WW2 (historical\
   \ precedent) | ✓ High confidence | Unit: rate | Click to view source\">30%</a>"

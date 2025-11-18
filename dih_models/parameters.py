@@ -1763,6 +1763,66 @@ ROI_ALL_DIRECT_BENEFITS = Parameter(
 # Use ROI_DFDA_SAVINGS_ONLY (463:1) as the canonical figure for most purposes
 
 # ---
+# POLITICAL SUCCESS PROBABILITY AND EXPECTED VALUE ANALYSIS
+# ---
+
+# Political success probability estimates
+POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
+    0.10,
+    source_ref="historical-treaty-adoption-rates",
+    source_type="external",
+    confidence="medium",
+    description="Conservative estimate of political success probability (10%)"
+)
+
+POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
+    0.25,
+    source_ref="historical-treaty-adoption-rates",
+    source_type="external",
+    confidence="medium",
+    description="Moderate estimate of political success probability (25%)"
+)
+
+POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
+    0.50,
+    source_ref="historical-treaty-adoption-rates",
+    source_type="external",
+    confidence="medium",
+    description="Optimistic estimate of political success probability (50%)"
+)
+
+# Expected ROI accounting for political implementation risk
+EXPECTED_ROI_CONSERVATIVE_DFDA = Parameter(
+    float(ROI_DFDA_SAVINGS_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
+    latex=r"E[ROI]_{\text{conservative}} = 463 \times 0.10 = 46.3",
+    confidence="medium",
+    description="Expected ROI for dFDA accounting for 10% political success probability"
+)
+
+EXPECTED_ROI_MODERATE_DFDA = Parameter(
+    float(ROI_DFDA_SAVINGS_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
+    latex=r"E[ROI]_{\text{moderate}} = 463 \times 0.25 = 115.8",
+    confidence="medium",
+    description="Expected ROI for dFDA accounting for 25% political success probability"
+)
+
+EXPECTED_ROI_OPTIMISTIC_DFDA = Parameter(
+    float(ROI_DFDA_SAVINGS_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
+    latex=r"E[ROI]_{\text{optimistic}} = 463 \times 0.50 = 231.5",
+    confidence="medium",
+    description="Expected ROI for dFDA accounting for 50% political success probability"
+)
+
+# ---
 # VICTORY SOCIAL IMPACT BONDS
 # ---
 

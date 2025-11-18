@@ -442,6 +442,10 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 
 For detailed derivation, see [Research Acceleration Model](../appendix/research-acceleration-model.qmd).
 
+**Automated infrastructure, not researcher scaling**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps—similar to how Amazon provides infrastructure for e-commerce or Consumer Reports for product testing. The {{< var research_acceleration_multiplier >}}× research acceleration does **not** require {{< var research_acceleration_multiplier >}}× more researchers because the system scales through software and data infrastructure, not human labor.
+
+The platform uses federated queries (data stays in Epic/Cerner/Apple Health systems) rather than centralized databases, enabling analysis without data movement. Physicians continue normal clinical practice; the platform automatically detects patterns, identifies treatment effects, and flags signals for peer review. This is fundamentally different from traditional research models that scale linearly with researcher headcount.
+
 ## Data Sources and Primary Inputs
 
 **Military and Conflict Data:**
@@ -568,6 +572,37 @@ The cost reduction estimates (50-95%) are conservative relative to the historica
 **Justification:** Historical treaty adoption timelines vary (Nuclear Non-Proliferation Treaty: 3 years; Paris Climate Agreement: 5 years). This analysis focuses on economic value *conditional* on implementation, not probability of political success.
 
 **Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case (463:1 to 1,239:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
+
+### Expected Value Analysis Accounting for Political Risk
+
+**Standard economic practice**: Cost-benefit analysis for interventions with implementation uncertainty requires expected value calculation:
+
+$$
+E[\text{ROI}] = P(\text{success}) \times \text{ROI}_{\text{if successful}}
+$$
+
+The preceding analysis presents *conditional* benefits (returns IF implementation succeeds). Expected value analysis incorporates the probability of achieving political ratification and sustained commitment:
+
+**Expected ROI sensitivity to political success probability**:
+
+| Political Success Probability | Expected ROI (dFDA Only) | Interpretation |
+|:---|---:|:---|
+| **10% (Conservative)** | {{< var expected_roi_conservative_dfda >}}:1 | Low confidence in treaty ratification |
+| **25% (Moderate)** | {{< var expected_roi_moderate_dfda >}}:1 | Historical treaty adoption baseline |
+| **40% (Moderate-High)** | 185:1 | Favorable political conditions |
+| **50% (Optimistic)** | {{< var expected_roi_optimistic_dfda >}}:1 | Strong international coordination |
+
+**Key insight**: Even with conservative 10% success probability, expected ROI of {{< var expected_roi_conservative_dfda >}}:1 substantially exceeds typical public health interventions (which have P≈1.0 but ROI of 10-30:1).
+
+**Comparison to traditional interventions** (assuming 100% implementation probability):
+- Childhood vaccination programs: ~16:1 ROI with P≈1.0
+- Against Malaria Foundation: ~8:1 equivalent ROI
+- **1% Treaty (P=10%)**: {{< var expected_roi_conservative_dfda >}}:1 expected ROI
+- **1% Treaty (P=25%)**: {{< var expected_roi_moderate_dfda >}}:1 expected ROI
+
+**Interpretation**: The high conditional ROI (463:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
+
+**Note**: This analysis uses point estimates for political probability. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](../solution/campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
 ### Technology Constancy Assumption
 
@@ -1233,6 +1268,28 @@ Projections use 2024 baseline data. Secular trends may affect outcomes:
 - **Medical technology advancement:** AI/ML capabilities improving rapidly; may enhance or diminish relative dFDA advantages
 - **Geopolitical shifts:** Global military spending trends dependent on international relations
 - **Healthcare costs:** Rising healthcare expenditures may increase baseline benefits; cost controls may decrease them
+
+### General Equilibrium Effects
+
+This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating the intervention's direct effects. General equilibrium analysis would account for market adjustments to the $27.2B annual reallocation from military to medical research spending.
+
+**Unmodeled general equilibrium effects include**:
+
+1. **Defense sector employment displacement**: Reallocating 1% of military budgets affects 40,000-54,000 defense sector jobs (assuming $600k cost per job). Transition costs estimated at $2-4B annually for workforce retraining and economic adjustment. However, medical research sector job creation likely offsets much of this displacement.
+
+2. **Data infrastructure scaling costs**: The dFDA uses automated software infrastructure (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the platform leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
+
+3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. The Wishocracy allocation mechanism (SEC. 304 in [Right to Trial Act](../solution/right-to-trial-fda-upgrade-act.qmd)) attempts to minimize this through algorithmic allocation, but some overhead is inevitable.
+
+4. **Clinical trial market price effects**: Increasing trial demand by 115× could affect equilibrium prices for clinical research services. However, the dFDA model *reduces* per-trial costs (82× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost $41,000 per patient; dFDA targets $500 per patient by eliminating overhead, not by increasing demand for scarce inputs.
+
+5. **Crowding out effects**: Does $27.2B in new medical research displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
+
+6. **Quality versus quantity trade-off**: 115× more trials may not yield proportional breakthroughs if resources spread thin or trial quality declines. The analysis assumes quality maintenance through peer review and replication; actual quality effects remain uncertain.
+
+**Conservative treatment in base case**: The analysis excludes general equilibrium effects from benefit calculations, providing a lower bound estimate. Transition costs ($2-4B) are small relative to annual benefits ($163.6B conservative case), suggesting conclusions robust to general equilibrium adjustments.
+
+**Methodological limitation acknowledged**: Full general equilibrium modeling (computable general equilibrium models with labor markets, international trade, and technology diffusion) would require substantial additional complexity beyond this analysis scope. The partial equilibrium approach follows standard cost-benefit analysis methodology for policy interventions.
 
 ## Limitations Summary
 
