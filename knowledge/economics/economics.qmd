@@ -21,6 +21,20 @@ from dih_models.parameters import *
 
 ```
 
+## Abstract
+
+**Objective**: We evaluate the economic impact and return on investment of reallocating 1% of global military spending ($27.2B annually) to medical research infrastructure through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) framework.
+
+**Methods**: Using cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis, we assess both conservative (R&D efficiency gains only) and complete (all quantifiable benefits) scenarios. Data sources include SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature.
+
+**Results**: Conservative analysis yields 463:1 ROI ($249.3B NPV benefit / $538M implementation cost) over 10 years, based solely on R&D cost reductions. Complete analysis including peace dividend and seven additional benefit categories demonstrates 1,239:1 ROI ($1.2T annual benefits). The intervention generates 840,000 QALYs annually with negative ICER (-$59,476/QALY), qualifying as a dominant health intervention. Sensitivity analysis shows robust returns across scenarios (66:1 worst-case to 2,577:1 best-case).
+
+**Conclusions**: Redirecting 1% of military spending to medical research infrastructure represents a dominant health intervention—simultaneously reducing costs while improving health outcomes—with ROI exceeding history's most successful public health achievements including smallpox eradication. The self-funding structure eliminates traditional barriers to scale, generating sufficient economic surplus to sustain operations without ongoing charitable contributions.
+
+**Keywords**: cost-benefit analysis, health economics, clinical trials, return on investment, QALY, dominant intervention, peace dividend, global health policy
+
+---
+
 **The Highest-ROI Public Health Intervention Ever Proposed**
 
 **Shift 1% of global military spending into decentralized clinical trials.

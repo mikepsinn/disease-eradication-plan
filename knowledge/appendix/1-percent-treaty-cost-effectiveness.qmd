@@ -1,6 +1,6 @@
 ---
 title: 1% Treaty Cost-Effectiveness
-description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this saves society $6.56 million per life saved
+description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this saves society {{< var net_benefit_per_life_saved >}} per life saved
 published: true
 tags:
   - icer
@@ -221,7 +221,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 3. Conservative estimates are more defensible to skeptics
 4. This intervention is dominant even with costs included
 
-**Key insight**: Even counting ALL costs conservatively, the ICER is -$167,771/QALY. Under more realistic framings where the campaign is self-funding, the true societal cost approaches $0, making the intervention infinitely cost-effective.
+**Key insight**: Even counting ALL costs conservatively, the ICER is {{< var icer_per_qaly >}}/QALY. Under more realistic framings where the campaign is self-funding, the true societal cost approaches $0, making the intervention infinitely cost-effective.
 
 ### Step 4: ICER Calculation
 
@@ -233,9 +233,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 - Benefits: {{< var treaty_total_annual_benefits >}}
 - Costs: {{< var treaty_total_annual_costs >}}
-- **Net benefit: $163.3B per year**
+- **Net benefit: {{< var treaty_net_annual_benefit >}} per year**
 
-**Society saves $163.3B while gaining {{< var treaty_total_qalys_gained_annual >}} QALYs**
+**Society saves {{< var treaty_net_annual_benefit >}} while gaining {{< var treaty_total_qalys_gained_annual >}} QALYs**
 
 #### 4b. ICER per QALY
 
@@ -243,19 +243,19 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **ICER** = {{< var treaty_total_annual_costs >}} / {{< var treaty_total_qalys_gained_annual >}}
 
-##### ICER = $-176,382 per QALY
+##### ICER = {{< var icer_per_qaly >}} per QALY
 
-**Interpretation**: For every QALY gained, society saves $-176,382. This is a **dominant intervention** (saves money AND improves health).
+**Interpretation**: For every QALY gained, society saves {{< var icer_per_qaly >}}. This is a **dominant intervention** (saves money AND improves health).
 
 #### 4c. Cost per Life Saved
 
 **Cost per life** = ICER × QALYs per life
 
-**Cost per life** = $-176,3{{< var dfda_cost_effectiveness_multiplier >}}× 35 QALYs/life
+**Cost per life** = {{< var icer_per_qaly >}} × 35 QALYs/life
 
-**Cost per life ≈ -$6.17M per life saved**
+**Cost per life ≈ {{< var net_benefit_per_life_saved >}} per life saved**
 
-**Interpretation**: For every life saved, society saves approximately $6.17 million.
+**Interpretation**: For every life saved, society saves approximately {{< var net_benefit_per_life_saved >}}.
 
 ## Comparison to Other Interventions
 
@@ -275,7 +275,7 @@ These are **excellent** interventions - among the best uses of charitable dollar
 
 | Intervention | Cost per Life Saved | ICER |
 |-------------|--------------------:|------:|
-| **1% Treaty + DIH + dFDA** | **-$6.17M** | **$-176,382/QALY** |
+| **1% Treaty + DIH + dFDA** | **{{< var net_benefit_per_life_saved >}}** | **{{< var icer_per_qaly >}}/QALY** |
 
 This is a **dominant intervention** - it makes society richer while saving lives.
 
@@ -289,7 +289,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **1% Treaty model**: Society profits from saving lives
 
-- Exceptional value (-$6.17M per life = society saves money)
+- Exceptional value ({{< var net_benefit_per_life_saved >}} per life = society saves money)
 - Self-funding from economic gains
 - Generates wealth while improving health
 
@@ -301,9 +301,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Parameter | Conservative | Central | Optimistic |
 |-----------|-------------:|--------:|------------:|
-| **Peace dividend** | {{< var dfda_gross_savings_annual >}} | {{< var peace_dividend_annual_societal_benefit >}} | $200.0B |
-| **dFDA R&D savings** | $25.0B | $50.0B | $95.0B |
-| **Total benefits** | $75.0B | ${{< var treaty_total_annual_benefits >}} | $295.0B |
+| **Peace dividend** | {{< var sensitivity_peace_dividend_conservative >}} | {{< var peace_dividend_annual_societal_benefit >}} | {{< var sensitivity_peace_dividend_optimistic >}} |
+| **dFDA R&D savings** | {{< var sensitivity_dfda_savings_conservative >}} | {{< var dfda_gross_savings_annual >}} | {{< var sensitivity_dfda_savings_optimistic >}} |
+| **Total benefits** | {{< var sensitivity_total_benefits_conservative >}} | {{< var treaty_total_annual_benefits >}} | {{< var sensitivity_total_benefits_optimistic >}} |
 | **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative >}} | {{< var treaty_campaign_budget_technology >}} | {{< var treaty_campaign_budget_viral_referendum >}} |
 | **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative >}} | {{< var dfda_upfront_build >}} | {{< var sensitivity_dfda_opex_optimistic >}} |
 | **Total costs/yr** | {{< var sensitivity_total_costs_conservative >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic >}} |
@@ -315,9 +315,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
 |----------|------------:|------:|-----------:|----------:|
-| **Conservative** | $74.6B | {{< var sensitivity_total_qalys_conservative >}} | **$-170,514** | **$-5.97M** |
-| **Central** | $163.3B | {{< var treaty_total_qalys_gained_annual >}} | **$-187,097** | **$-6.55M** |
-| **Optimistic** | $294.8B | {{< var sensitivity_total_qalys_optimistic >}} | **$-136,945** | **$-4.79M** |
+| **Conservative** | {{< var sensitivity_net_benefit_conservative >}} | {{< var sensitivity_total_qalys_conservative >}} | **{{< var sensitivity_icer_conservative >}}** | **{{< var sensitivity_cost_per_life_conservative >}}M** |
+| **Central** | {{< var treaty_net_annual_benefit >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}M** |
+| **Optimistic** | {{< var sensitivity_net_benefit_optimistic >}} | {{< var sensitivity_total_qalys_optimistic >}} | **{{< var sensitivity_icer_optimistic >}}** | **{{< var sensitivity_cost_per_life_optimistic >}}M** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
 
@@ -325,23 +325,23 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **$-187,097** | **$-6.55M** | Counts all upfront costs |
-| **Investor-Funded** | $0 | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **$-187,429** | **$-6.56M** | Campaign funded by VICTORY Social Impact Bonds |
-| **Opportunity Cost** | $27.2B | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **$-156,571** | **$-5.48M** | Counts redirected military spending |
-| **Waste Conversion** | $27.2B | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}M** | Counts all upfront costs |
+| **Investor-Funded** | $0 | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var icer_investor_funded >}}** | **{{< var cost_per_life_investor_funded >}}M** | Campaign funded by VICTORY Social Impact Bonds |
+| **Opportunity Cost** | {{< var treaty_annual_funding >}} | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var icer_opportunity_cost >}}** | **{{< var cost_per_life_opportunity_cost >}}M** | Counts redirected military spending |
+| **Waste Conversion** | {{< var treaty_annual_funding >}} | ${{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
 **Interpretation**:
 
-- Under traditional health economics (Conservative), the ICER is -$167,771/QALY
+- Under traditional health economics (Conservative), the ICER is {{< var icer_per_qaly >}}/QALY
 - Under realistic funding (Investor-Funded), society pays $0, ICER approaches -∞
-- Considering opportunity cost of military spending, ICER is -$137,257/QALY
+- Considering opportunity cost of military spending, ICER is {{< var icer_opportunity_cost >}}/QALY
 - Recognizing military spending as waste, the intervention has undefined (infinite) cost-effectiveness
 
-**Worst case** (conservative): Society still saves $5.97M per life saved
+**Worst case** (conservative): Society still saves {{< var sensitivity_cost_per_life_conservative >}}M per life saved
 
-**Best case** (optimistic): Society saves $4.79M per life saved (lower because you're saving many more lives, so the economic benefit is spread across more QALYs)
+**Best case** (optimistic): Society saves {{< var sensitivity_cost_per_life_optimistic >}}M per life saved (lower because you're saving many more lives, so the economic benefit is spread across more QALYs)
 
 ## Visual Comparisons
 
@@ -353,7 +353,7 @@ This chart demonstrates the fundamental difference between traditional philanthr
 
 - **GiveWell Top Charities** (Helen Keller International, New Incentives, Against Malaria Foundation): Society pays $3,500-$5,500 per life saved. These are excellent interventions, among the most cost-effective charitable uses of money in the world.
 
-- **1% Treaty + DIH + dFDA**: Society SAVES $6.56 million per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
+- **1% Treaty + DIH + dFDA**: Society SAVES {{< var net_benefit_per_life_saved >}} per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
 
 The dramatic scale difference illustrates why this intervention is ~1,700× more cost-effective than even the best traditional charities.
 
@@ -433,7 +433,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 - {{< var peace_dividend_annual_societal_benefit >}} from reduced conflict costs (peace dividend)
 - {{< var dfda_gross_savings_annual >}} from more efficient medical R&D (dFDA)
 
-These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of $163.3B/year for society.
+These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of {{< var treaty_net_annual_benefit >}}/year for society.
 
 Meanwhile, the same initiative saves lives:
 
