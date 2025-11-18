@@ -62,7 +62,7 @@ That's like your house being on fire and deciding to address it with a water pis
 
 ### The Math
 
-War and disease: **{{< var total_global_waste_spend_annual >}}** annually (that's 113% of global GDP)
+War and disease: **{{< var global_total_health_and_war_cost_annual >}}** annually (that's 113% of global GDP)
 
 Medical research to fix disease: [**{{< var global_med_research_spending >}}**](../references.qmd#global-gov-med-research-spending)
 

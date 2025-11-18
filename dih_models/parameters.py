@@ -817,14 +817,6 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     unit="USD/patient"
 )  # Proven cost from Oxford RECOVERY trial
 
-DFDA_TARGET_COST_PER_PATIENT = Parameter(
-    1000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
-    source_type="calculated",
-    description="Conservative target cost per patient for dFDA",
-    unit="USD/patient"
-)  # Conservative target for dFDA
-
 DFDA_SMALL_TRIAL_SIZE = Parameter(
     1000,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#trial-sizes",
@@ -1506,22 +1498,6 @@ QUALIFIED_INVESTOR_MIN_THOUSANDS = Parameter(
     unit="thousands USD"
 )
 
-# Compliance and governance
-WHISTLEBLOWER_REWARD_AMOUNT = Parameter(
-    1000000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
-    description="Whistleblower reward for fraud detection",
-    unit="USD"
-)
-
-WHISTLEBLOWER_BOUNTY_AMOUNT = Parameter(
-    1000000,
-    source_ref="/knowledge/economics/financial-plan.qmd",
-    source_type="calculated",
-    description="Whistleblower bounty for misconduct reporting",
-    unit="USD"
-)
 
 # Total system costs
 TREATY_TOTAL_ANNUAL_COSTS = Parameter(
@@ -1927,13 +1903,6 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     description="Global government medical research spending",
     unit="billions USD"
 )
-TOTAL_GLOBAL_WASTE_SPEND_ANNUAL = Parameter(
-    118800,
-    source_ref="/knowledge/problem/cost-of-war.qmd",
-    source_type="calculated",
-    description="Total global annual spending on military and disease",
-    unit="billions USD/year"
-)  # billions USD, annual spend on military + disease
 
 # Population
 GLOBAL_POPULATION_2024_BILLIONS = Parameter(
@@ -1983,10 +1952,10 @@ GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
     GLOBAL_ANNUAL_WAR_TOTAL_COST + GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
     source_ref="/knowledge/appendix/humanity-budget-overview.qmd",
     source_type="calculated",
-    description="Total annual cost of war and disease combined",
+    description="Total annual cost of war and disease with all externalities (direct + indirect costs for both)",
     unit="billions USD/year",
-    formula="WAR_TOTAL + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN"
-)  # $119.8 trillion
+    formula="WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN"
+)  # $128.6 trillion = $11.355T (war with externalities) + $8.2T + $109T
 
 # Defense and research participation rates
 DEFENSE_SECTOR_RETENTION_PCT = Parameter(
@@ -3550,7 +3519,6 @@ switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFEN
 switzerland_gdp_per_capita_k_formatted = format_currency(SWITZERLAND_GDP_PER_CAPITA_K / 1_000_000)
 system_profit_per_life_saved_millions_formatted = f"${SYSTEM_PROFIT_PER_LIFE_SAVED_MILLIONS:,.2f} million"
 total_complete_benefits_annual_formatted = format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)
-total_global_waste_spend_annual_formatted = format_billions(TOTAL_GLOBAL_WASTE_SPEND_ANNUAL)
 traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K / 1_000_000_000)
 treaty_annual_funding_formatted = format_billions(TREATY_ANNUAL_FUNDING)
 treaty_benefit_multiplier_vs_vaccines_formatted = f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"

@@ -376,9 +376,6 @@
 "dfda_small_trial_size": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#trial-sizes\"\
   \ class=\"parameter-link\" title=\"Typical dFDA trial size | ✓ High confidence |\
   \ Unit: participants | Click to view calculation\">1,000</a>"
-"dfda_target_cost_per_patient": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
-  \ class=\"parameter-link\" title=\"Conservative target cost per patient for dFDA\
-  \ | ✓ High confidence | Unit: USD/patient | Click to view calculation\">$1.00K</a>"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ class=\"parameter-link\" title=\"Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT\
   \ but in dollars) | ✓ High confidence | Unit: USD/patient | Click to view calculation\"\
@@ -708,9 +705,10 @@
   \ treatment | ✓ High confidence | Unit: billions USD/year | Click to view source\"\
   >$8.20T</a>"
 "global_total_health_and_war_cost_annual": "<a href=\"/knowledge/appendix/humanity-budget-overview.qmd\"\
-  \ class=\"parameter-link\" title=\"Total annual cost of war and disease combined\
-  \ | ✓ High confidence | Formula: WAR_TOTAL + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN\
-  \ | Unit: billions USD/year | Click to view calculation\">$129T</a>"
+  \ class=\"parameter-link\" title=\"Total annual cost of war and disease with all\
+  \ externalities (direct + indirect costs for both) | ✓ High confidence | Formula:\
+  \ WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN | Unit: billions USD/year\
+  \ | Click to view calculation\">$129T</a>"
 "global_total_war_cost_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ class=\"parameter-link\" title=\"Per capita total war cost globally | ✓ High confidence\
   \ | Formula: TOTAL_WAR_COST ÷ POPULATION | Unit: USD/person/year | Click to view\
@@ -1169,10 +1167,6 @@
 "total_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Overall age-adjusted death rate | ✓ High confidence\
   \ | Unit: deaths per 100,000 | Click to view source\">722</a>"
-"total_global_waste_spend_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd\"\
-  \ class=\"parameter-link\" title=\"Total global annual spending on military and\
-  \ disease | ✓ High confidence | Unit: billions USD/year | Click to view calculation\"\
-  >$119T</a>"
 "total_medical_advances_1900_2000": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" title=\"Total life expectancy gain from all medical advances\
   \ 1900-2000 (vaccines + hygiene + antibiotics) | ✓ High confidence | Unit: years\
@@ -1366,12 +1360,6 @@
 "water_fluoridation_roi": "<a href=\"/knowledge/references.qmd#water-fluoridation-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from water fluoridation\
   \ programs | ✓ High confidence | Unit: ratio | Click to view source\">23</a>"
-"whistleblower_bounty_amount": "<a href=\"/knowledge/economics/financial-plan.qmd\"\
-  \ class=\"parameter-link\" title=\"Whistleblower bounty for misconduct reporting\
-  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$1.00M</a>"
-"whistleblower_reward_amount": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Whistleblower reward for fraud detection | ✓\
-  \ High confidence | Unit: USD | Click to view calculation\">$1.00M</a>"
 "workforce_chronic_illness_prevalence": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" title=\"Workforce with at least one chronic condition\
   \ (78.4%) | ✓ High confidence | Unit: rate | Click to view source\">78.4%</a>"

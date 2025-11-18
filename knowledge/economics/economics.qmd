@@ -1,6 +1,6 @@
 ---
-title: Economic Analysis
-description: Comprehensive cost-benefit analysis demonstrating 463:1 to 1,239:1 return on investment through military budget redirection to medical research.
+title: Economic Impact Analysis
+description: Evidence-Based Analysis of the Highest-ROI Public Health Intervention in Human History
 published: true
 tags:
   - economics
@@ -21,24 +21,27 @@ from dih_models.parameters import *
 
 ```
 
-<!-- ✓ Style reviewed 2025-01-15 -->
+
+
+
+
 
 ## Executive Summary
 
-Here's how you get 463:1 to 1,239:1 returns on redirecting 1% of murder money ([$27.2B/year](../appendix/peace-dividend-calculations.qmd)) to not-murder money.
+Here's how you get {{< var roi_dfda_savings_only >}} to {{< var dfda_roi_simple >}} returns on redirecting {{< var treaty_reduction_pct >}} of murder money ([{{< var global_annual_human_cost_state_violence >}}/year](../appendix/peace-dividend-calculations.qmd)) to not-murder money.
 
 The beautiful part: it costs zero new dollars. You're just moving money from the "making corpses" column to the "preventing corpses" column in the budget spreadsheet.
 
-You get paid twice for the same 1% shift:
+You get paid twice for the same {{< var treaty_reduction_pct >}} shift:
 
 1. **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}}/year appears when you build 1% fewer bombs (turns out bombs are expensive and breaking things costs money to fix)
 2. **Research efficiency**: {{< var dfda_gross_savings_annual >}}+/year saved by not drowning scientists in paperwork (Oxford proved trials cost [82x less](../appendix/recovery-trial.qmd) when you stop requiring 17 years of documentation)
 
 ### The Numbers
 
-- **Conservative returns**: [463:1](../appendix/dfda-cost-benefit-analysis.qmd) (counting only R&D savings, ignoring everything else)
+- **Conservative returns**: [{{< var roi_dfda_savings_only >}}](../appendix/dfda-cost-benefit-analysis.qmd) (counting only R&D savings, ignoring everything else)
 - **Realistic returns**: {{< var roi_all_direct_benefits >}}:1 (counting all eight measurable benefits)
-- **Per life saved**: Society MAKES [$6.56M](../appendix/1-percent-treaty-cost-effectiveness.qmd) (vs. best charities SPENDING [$3,500-5,500](../references.qmd#givewell-cost-per-life-saved))
+- **Per life saved**: Society MAKES [$6.56M](../appendix/1-percent-treaty-cost-effectiveness.qmd) (vs. best charities SPENDING [{{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}}](../references.qmd#givewell-cost-per-life-saved))
 - **Lives saved yearly**: {{< var treaty_total_lives_saved_annual >}} (lowball estimate)
 
 ## How the Math Works
@@ -47,18 +50,18 @@ You get paid twice for the same 1% shift:
 
 Standard economic analysis, nothing fancy:
 
-- Discount future money at 5% (economists insist on this)
+- Discount future money at {{< var dfda_trial_abandonment_rate >}} (economists insist on this)
 - Count quality-adjusted life years (economist-speak for "being alive and not miserable")
 - Compare cost per outcome to other interventions
 - Test what happens if we're wrong about everything (see [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd))
 
-The calculations are conservative and validated against the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), which proved 82x cost reduction by not requiring 40,000 pages of paperwork per patient.
+The calculations are conservative and validated against the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), which proved {{< var trial_cost_reduction_factor >}} cost reduction by not requiring 40,000 pages of paperwork per patient.
 
 ### Two Ways to Count
 
-**463:1 = Pessimistic (R&D Savings Only)**
+**{{< var roi_dfda_savings_only >}} = Pessimistic (R&D Savings Only)**
 
-Count only the $50.0B/year saved from 82x cheaper trials. Pretend everything else doesn't exist. This is the floor. This is what you tell skeptical accountants.
+Count only the {{< var current_drug_approvals_per_year >}}/year saved from {{< var trial_cost_reduction_factor >}} cheaper trials. Pretend everything else doesn't exist. This is the floor. This is what you tell skeptical accountants.
 
 **{{< var roi_all_direct_benefits >}}:1 = Realistic (All Eight Benefits)**
 
@@ -66,7 +69,7 @@ Count all {{< var total_complete_benefits_annual >}}/year in measurable benefits
 
 ### Which Number to Use
 
-**Use 463:1** when talking to:
+**Use {{< var roi_dfda_savings_only >}}** when talking to:
 - Risk-averse investors who trust nothing
 - Regulators paid to say "no"
 - People who think optimism is a character flaw
@@ -78,7 +81,7 @@ Count all {{< var total_complete_benefits_annual >}}/year in measurable benefits
 
 Both use the same math. One just counts more stuff.
 
-## The Conservative Case: 463:1 ROI (dFDA Only)
+## The Conservative Case: {{< var roi_dfda_savings_only >}} ROI (dFDA Only)
 
 Here's the floor. Count only R&D savings from cheaper trials. Ignore peace dividends, earlier access, and everything else that makes this look "too good to be true."
 
@@ -92,16 +95,16 @@ $$
 
 where [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) is what you save over 10 years and {{< var dfda_npv_total_cost >}} is what you spend to build it.
 
-This uses "net present value" which is economist code for "future money is worth less than current money" (5% discount rate, 10-year horizon). For the spreadsheet addicts: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
+This uses "net present value" which is economist code for "future money is worth less than current money" ({{< var dfda_trial_abandonment_rate >}} discount rate, 10-year horizon). For the spreadsheet addicts: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
 
-1% of global military budgets gets redirected. This gives you:
+{{< var treaty_reduction_pct >}} of global military budgets gets redirected. This gives you:
 
-- **Funding**: [$27.2B/year](../appendix/peace-dividend-calculations.qmd) to spend on not-dying
+- **Funding**: [{{< var global_annual_human_cost_state_violence >}}/year](../appendix/peace-dividend-calculations.qmd) to spend on not-dying
 - **Bonus savings**: {{< var peace_dividend_annual_societal_benefit >}}/year in economic value from building 1% fewer things that explode
 
-The peace dividend math is simple: wars cost [$11.355T/year](../appendix/peace-dividend-calculations.qmd). 1% less war costs 1% less money.
+The peace dividend math is simple: wars cost [{{< var global_annual_war_total_cost >}}/year](../appendix/peace-dividend-calculations.qmd). {{< var treaty_reduction_pct >}} less war costs {{< var treaty_reduction_pct >}} less money.
 
 $$
 \$11{,}355\text{B} \times 1\% = \$113.6\text{B}
@@ -132,18 +135,18 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 The [$27.2B/year](../appendix/peace-dividend-calculations.qmd) peace dividend covers {{< var dfda_upfront_build >}}/year operations **680 times over**. It's like having $680 to pay a $1 bill.
 
-This assumes gradual rollout (0% to 100% over 5 years) and middle-range costs. For the detailed breakdown see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
+This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over 5 years) and middle-range costs. For the detailed breakdown see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
 ### What You Get Back
 
-- **Money**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) in R&D savings (10 years, present value)
+- **Money**: [{{< var global_annual_trade_disruption_shipping_conflict >}}](../appendix/dfda-cost-benefit-analysis.qmd) in R&D savings (10 years, present value)
 - **Returns**: [$249.3B](../appendix/dfda-cost-benefit-analysis.qmd) ÷ {{< var dfda_npv_total_cost >}} = **[463:1](../appendix/dfda-cost-benefit-analysis.qmd)**
 - **People not dying**: {{< var global_dfda_qalys_gained_annual >}} quality-adjusted life years annually
 
 **Two income streams from one budget shift**:
 
 1. **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}}/year saved by not breaking as much stuff
-2. **Research efficiency**: [$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not requiring PhDs to fill out forms for 17 years
+2. **Research efficiency**: [{{< var current_drug_approvals_per_year >}}/year](../appendix/dfda-cost-benefit-analysis.qmd) saved by not requiring PhDs to fill out forms for 17 years
 
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year (conservative, ignoring most benefits)
 
@@ -151,7 +154,7 @@ This assumes gradual rollout (0% to 100% over 5 years) and middle-range costs. F
 
 ### Cost-Effectiveness: Dominant Health Intervention
 
-Unlike traditional public health interventions that require ongoing funding, the 1% Treaty represents a **dominant intervention**, simultaneously reducing costs while improving health outcomes. This places it in a unique category alongside smallpox eradication and other transformative health achievements.
+Unlike traditional public health interventions that require ongoing funding, the {{< var treaty_reduction_pct >}} Treaty represents a **dominant intervention**, simultaneously reducing costs while improving health outcomes. This places it in a unique category alongside smallpox eradication and other transformative health achievements.
 
 #### Incremental Cost-Effectiveness Ratio (ICER)
 
@@ -169,25 +172,25 @@ $$
 
 where the net incremental cost is calculated as platform operational costs ({{< var dfda_upfront_build >}}/year) minus R&D savings ([$50.0B/year](../appendix/dfda-cost-benefit-analysis.qmd)) = -$49.96B annually, and {{< var global_dfda_qalys_gained_annual >}} QALYs represents annual quality-adjusted life years gained.
 
-The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are $50,000-$150,000 per QALY](../references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended.
+The negative ICER indicates **cost savings while improving health**, a dominant intervention by health economics standards. Standard [willingness-to-pay thresholds are {{< var qalys_from_prevention_conservative >}}-{{< var standard_economic_qaly_value_usd >}} per QALY](../references.qmd#icer-qaly-methodology); interventions that save costs while gaining QALYs are unconditionally recommended.
 
 **For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis---cost-utility-framework).
 
 #### Comparative Cost per Life Saved
 
-- **[Against Malaria Foundation](../references.qmd#givewell-cost-per-life-saved)**: $3,500 cost per life saved (GiveWell top charity)
-- **[Deworm the World Initiative](../references.qmd#givewell-cost-per-life-saved)**: $5,500 cost per life saved (highly cost-effective intervention)
-- **1% Treaty/dFDA System**: [$6,560,000 net societal benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd) per life saved (dominant intervention)
+- **[Against Malaria Foundation](../references.qmd#givewell-cost-per-life-saved)**: {{< var givewell_cost_per_life_min >}} cost per life saved (GiveWell top charity)
+- **[Deworm the World Initiative](../references.qmd#givewell-cost-per-life-saved)**: {{< var givewell_cost_per_life_max >}} cost per life saved (highly cost-effective intervention)
+- **{{< var treaty_reduction_pct >}} Treaty/dFDA System**: [$6,560,000 net societal benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd) per life saved (dominant intervention)
 
 The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
 
 ### This ROI in Historical Context
 
-The Decentralized FDA alone achieves **463:1 return on investment**.
+The Decentralized FDA alone achieves **{{< var roi_dfda_savings_only >}} return on investment**.
 
 This exceptional ROI comes from:
 
-- **$50.0B in annual R&D cost savings**: [82x reduction](../appendix/recovery-trial.qmd) in clinical trial costs
+- **{{< var current_drug_approvals_per_year >}} in annual R&D cost savings**: [{{< var trial_cost_reduction_factor >}} reduction](../appendix/recovery-trial.qmd) in clinical trial costs
 - **Faster access to new treatments**: [2 years instead of 17 years](../appendix/dfda-cost-benefit-analysis.qmd) to market
 - **Better prevention through real-world data**: Continuous learning from millions of patients
 - **Enabling new therapies**: Making [rare disease trials](../references.qmd#rare-disease-patients-300m-globally) economically viable
@@ -198,26 +201,26 @@ Comparison to historical public health achievements (ROI ratios):
 
 | Intervention | ROI | Source |
 |:---|---:|:---|
-| **1% Treaty/dFDA** | **463:1** | This analysis |
+| **1% Treaty/dFDA** | **{{< var roi_dfda_savings_only >}}:1** | This analysis |
 | [Smallpox eradication](../references.qmd#smallpox-eradication-roi) | 159-400:1 | WHO intensive campaign (1967-1980) |
 | [Clean water & sanitation](../references.qmd#clean-water-sanitation-roi) | 4-21:1 | WHO/WaterAid (LMICs) |
 | [Childhood vaccinations](../references.qmd#childhood-vaccination-roi) | 10-16:1 | CDC immunization economic analyses |
 | Average pharma drug | 2:1 | Industry standard (Tufts CSDD) |
 
-The 1% Treaty/dFDA system **rivals or exceeds the ROI of smallpox eradication**, previously considered the gold standard of public health interventions. For detailed comparisons across all major health interventions, see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd).
+The {{< var treaty_reduction_pct >}} Treaty/dFDA system **rivals or exceeds the ROI of smallpox eradication**, previously considered the gold standard of public health interventions. For detailed comparisons across all major health interventions, see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd).
 
 ### Self-Funding Mechanism Through Military Budget Redirection
 
 {{< include ../figures/self-funding-roi-comparison-column-chart.qmd >}}
 
-The 1% Treaty financing structure creates a self-funding system requiring zero net new spending from donors or taxpayers.
+The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-funding system requiring zero net new spending from donors or taxpayers.
 
 **Economic Structure** ([see detailed calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd)):
 
 - **Funding Source**: [$27.2B annually](../appendix/peace-dividend-calculations.qmd) from 1% redirection of existing military budgets (money already allocated in national budgets)
 - **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: [$50.0B](../appendix/dfda-cost-benefit-analysis.qmd))
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
-- **Net Position**: [$163.3B annual surplus](../appendix/dfda-cost-benefit-analysis.qmd) after all costs
+- **Net Position**: [{{< var treaty_total_annual_benefits >}} annual surplus](../appendix/dfda-cost-benefit-analysis.qmd) after all costs
 - **Lives Saved**: {{< var treaty_total_lives_saved_annual >}} annually
 
 $$
@@ -226,13 +229,13 @@ $$
 
 - **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life ([negative cost](../appendix/1-percent-treaty-cost-effectiveness.qmd) indicates net profit)
 
-This financing structure classifies the 1% Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
+This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
 
 The self-funding nature eliminates traditional barriers to scale, as the intervention generates sufficient economic surplus to sustain and expand operations without ongoing charitable contributions.
 
 ## The Complete Case: {{< var roi_all_direct_benefits >}}:1 ROI (All Direct Benefits)
 
-The conservative 463:1 calculation deliberately excludes most system benefits to establish a defensible floor. A comprehensive analysis including all eight quantifiable primary benefit categories demonstrates substantially higher returns.
+The conservative {{< var roi_dfda_savings_only >}} calculation deliberately excludes most system benefits to establish a defensible floor. A comprehensive analysis including all eight quantifiable primary benefit categories demonstrates substantially higher returns.
 
 ### {{< var total_complete_benefits_annual >}} in Annual Benefits
 
@@ -245,11 +248,11 @@ $$
 where each benefit category is:
 
 1. **Peace dividend** ({{< var peace_dividend_annual_societal_benefit >}}) - Societal savings from 1% less conflict
-2. **R&D cost savings** ([$50.0B](../appendix/dfda-cost-benefit-analysis.qmd)) - 82x cheaper trials
-3. **7-year access acceleration** ([$300.0B](../appendix/economic-value-of-accelerated-treatments.qmd)) - Earlier treatment access during trials
-4. **Research acceleration** ([$100.0B](../appendix/research-acceleration-model.qmd)) - 115X more research capacity (10-20X more breakthroughs)
-5. **Rare disease treatments** ($400.0B) - Economically viable orphan drug development for [300M patients](../references.qmd#rare-disease-patients-300m-globally) with diseases lacking treatments ([95% of 7,000+ rare diseases](../references.qmd#95-pct-diseases-no-treatment) have no FDA-approved therapy)
-6. **Drug price reductions** ($100.0B) - Conservative estimate based on [U.S. drug prices 2.78x higher](../references.qmd#us-drug-prices-vs-peer-countries) than peer countries ($360B annual U.S. spending; 20-50% reduction potential = $72-180B from U.S. alone)
+2. **R&D cost savings** ([{{< var current_drug_approvals_per_year >}}](../appendix/dfda-cost-benefit-analysis.qmd)) - {{< var trial_cost_reduction_factor >}} cheaper trials
+3. **7-year access acceleration** ([{{< var global_annual_infrastructure_damage_communications_conflict >}}](../appendix/economic-value-of-accelerated-treatments.qmd)) - Earlier treatment access during trials
+4. **Research acceleration** ([{{< var global_annual_environmental_damage_conflict >}}](../appendix/research-acceleration-model.qmd)) - 115X more research capacity (10-20X more breakthroughs)
+5. **Rare disease treatments** ({{< var benefit_rare_diseases_annual >}}) - Economically viable orphan drug development for [300M patients](../references.qmd#rare-disease-patients-300m-globally) with diseases lacking treatments ([{{< var dfda_trial_completion_rate >}} of {{< var rare_diseases_count_global >}}+ rare diseases](../references.qmd#95-pct-diseases-no-treatment) have no FDA-approved therapy)
+6. **Drug price reductions** ({{< var global_annual_environmental_damage_conflict >}}) - Conservative estimate based on [U.S. drug prices {{< var us_drug_price_multiplier_vs_peer_countries >}} higher](../references.qmd#us-drug-prices-vs-peer-countries) than peer countries ({{< var us_annual_drug_spending >}} annual U.S. spending; 20-{{< var trial_cost_reduction_pct >}} reduction potential = {{< var drug_price_reduction_savings_low >}}-180B from U.S. alone)
 7. **Prevention medicine** ($100.0B) - Based on [global clinical trial market](../appendix/global-clinical-trial-spending-by-phase.qmd) projections exceeding {{< var global_clinical_trial_market_annual >}} annually, enabling economically viable prevention studies
 8. **Mental health** ($75.0B) - Conservative partial closure of {{< var sensitivity_peace_dividend_optimistic >}} funding gap identified for global mental health care needs
 
@@ -263,7 +266,7 @@ $$
 \text{ROI}_{\text{complete}} = \frac{\$1,238.6\text{B annual} \times 10\text{ years}}{\$1.0\text{B implementation}} = 1,239:1
 $$
 
-where [$1,238.6B](../appendix/dfda-cost-benefit-analysis.qmd) is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and [$1.0B](campaign-budget.qmd) is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
+where [{{< var dfda_roi_simple >}}](../appendix/dfda-cost-benefit-analysis.qmd) is the total annual benefit across all eight categories, 10 years is the NPV-adjusted time horizon, and [{{< var peace_dividend_environmental >}}](campaign-budget.qmd) is the total implementation cost. The two largest contributors—**earlier access acceleration** and **research capacity expansion**—are often misunderstood as the same thing. They're not:
 
 - **Earlier Access** = Patients access the SAME treatments 7 years sooner (during trials instead of post-approval)
 - **Research Acceleration** = System runs 115X MORE trials, finding 10-20X MORE breakthroughs
@@ -272,24 +275,24 @@ Both are conservative estimates based on proven models ([RECOVERY trial](../appe
 
 ### Research Acceleration Mechanism: How We Get 115X
 
-The 115x research acceleration multiplier is derived from specific, measurable improvements across four dimensions:
+The {{< var research_acceleration_multiplier >}} research acceleration multiplier is derived from specific, measurable improvements across four dimensions:
 
 **Current System Baseline**:
 
 - {{< var current_trials_per_year >}} clinical trials initiated per year
 - [60% completion rate](../appendix/research-acceleration-model.qmd) = **{{< var current_completed_trials_per_year >}} completed trials/year**
-- [10,000 active trials](../appendix/research-acceleration-model.qmd) at any time (3-5 year duration)
-- [0.2% patient eligibility](../appendix/clinical-trial-participants.qmd) (5M trial slots for [2.4B people with chronic disease](../references.qmd#disease-prevalence-2-billion))
-- [40% abandonment rate](../appendix/research-acceleration-model.qmd) (studies never complete)
+- [{{< var current_active_trials >}} active trials](../appendix/research-acceleration-model.qmd) at any time (3-5 year duration)
+- [{{< var current_patient_eligibility_rate >}} patient eligibility](../appendix/clinical-trial-participants.qmd) (5M trial slots for [2.4B people with chronic disease](../references.qmd#disease-prevalence-2-billion))
+- [{{< var current_trial_abandonment_rate >}} abandonment rate](../appendix/research-acceleration-model.qmd) (studies never complete)
 - [6-18 months to recruit 100 patients](../appendix/research-acceleration-model.qmd)
 
 **dFDA System Performance**:
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
 - [95% completion rate](../appendix/research-acceleration-model.qmd) = **{{< var dfda_completed_trials_per_year >}} completed trials/year**
-- [200,000 active trials](../appendix/research-acceleration-model.qmd) at any time (3-12 month duration)
-- [50% patient eligibility](../appendix/research-acceleration-model.qmd) ([1.2B eligible](../appendix/research-acceleration-model.qmd) with minimal exclusions)
-- [5% abandonment rate](../appendix/research-acceleration-model.qmd) (economic incentives flipped)
+- [{{< var dfda_active_trials >}} active trials](../appendix/research-acceleration-model.qmd) at any time (3-12 month duration)
+- [{{< var trial_cost_reduction_pct >}} patient eligibility](../appendix/research-acceleration-model.qmd) ([1.2B eligible](../appendix/research-acceleration-model.qmd) with minimal exclusions)
+- [{{< var dfda_trial_abandonment_rate >}} abandonment rate](../appendix/research-acceleration-model.qmd) (economic incentives flipped)
 - [3 weeks to recruit {{< var traditional_large_trial_size >}} patients](../appendix/research-acceleration-model.qmd)
 
 **Multiplier Derivation**:
@@ -300,7 +303,7 @@ The 115x research acceleration multiplier is derived from specific, measurable i
 | **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **[10x](../appendix/research-acceleration-model.qmd)** |
 | **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **[20x](../appendix/research-acceleration-model.qmd)** |
 | **[Completion Rate](../appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **[1.6x](../appendix/research-acceleration-model.qmd)** |
-| **Funding Increase** | [$67.5B medical research](../appendix/global-government-medical-research-spending.qmd) | [$94.7B](../appendix/research-acceleration-model.qmd) ($67.5B + $27.2B) | **[1.4x](../appendix/research-acceleration-model.qmd)** |
+| **Funding Increase** | [$67.5B medical research](../appendix/global-government-medical-research-spending.qmd) | [$94.7B](../appendix/research-acceleration-model.qmd) ($67.5B + {{< var treaty_annual_funding >}}) | **[1.4x](../appendix/research-acceleration-model.qmd)** |
 
 **Theoretical Maximum**:
 
@@ -308,11 +311,11 @@ $$
 25 \times 10 \times 1.6 \times 1.4 = 560
 $$
 
-This represents **[560x](../appendix/research-acceleration-model.qmd)** more completed trials per year
+This represents **[{{< var completed_trials_multiplier_theoretical_max >}}](../appendix/research-acceleration-model.qmd)** more completed trials per year
 
-**Conservative Estimate**: [180x](../appendix/research-acceleration-model.qmd) accounting for real-world friction (ramp-up, adoption, learning curves)
+**Conservative Estimate**: [{{< var completed_trials_multiplier_actual >}}](../appendix/research-acceleration-model.qmd) accounting for real-world friction (ramp-up, adoption, learning curves)
 
-**Used in Analysis**: **[115x](../appendix/research-acceleration-model.qmd)** (further conservative adjustment for foundation grant proposal credibility)
+**Used in Analysis**: **[{{< var research_acceleration_multiplier >}}](../appendix/research-acceleration-model.qmd)** (further conservative adjustment for foundation grant proposal credibility)
 
 This represents:
 
@@ -336,17 +339,17 @@ For detailed analysis of personal wealth calculations, see [Disease Eradication 
 
 Global spending on health-related challenges demonstrates significant misalignment between resource allocation and burden of disease (see [Humanity's Budget](../appendix/humanity-budget-overview.qmd) for complete breakdown):
 
-- **Military spending**: [$2.7 trillion annually](../references.qmd#sipri-2024-spending) ([40X](../appendix/humanity-budget-overview.qmd) [medical research funding](../appendix/global-government-medical-research-spending.qmd))
-- **Symptomatic disease treatment**: [$8.2 trillion annually](../references.qmd#disease-economic-burden-109t) (primarily managing chronic conditions rather than curative interventions)
-- **Economic burden of disease**: [$109 trillion annually](../references.qmd#disease-economic-burden-109t) in lost productivity, premature mortality, and disability-adjusted life years
-- **Total annual cost**: [$119.8 trillion](../appendix/humanity-budget-overview.qmd)
+- **Military spending**: [{{< var victory_bond_annual_payout >}} trillion annually](../references.qmd#sipri-2024-spending) ([40X](../appendix/humanity-budget-overview.qmd) [medical research funding](../appendix/global-government-medical-research-spending.qmd))
+- **Symptomatic disease treatment**: [{{< var global_symptomatic_disease_treatment_annual >}} annually](../references.qmd#disease-economic-burden-109t) (primarily managing chronic conditions rather than curative interventions)
+- **Economic burden of disease**: [{{< var global_disease_economic_burden_annual >}} annually](../references.qmd#disease-economic-burden-109t) in lost productivity, premature mortality, and disability-adjusted life years
+- **Total annual cost**: [{{< var global_total_health_and_war_cost_annual >}}](../appendix/humanity-budget-overview.qmd)
 
 **Current investment in curative research**:
 
-- Global government medical research: [$68 billion annually](../appendix/global-government-medical-research-spending.qmd)
+- Global government medical research: [{{< var global_med_research_spending >}} billion annually](../appendix/global-government-medical-research-spending.qmd)
 
 $$
-\frac{\$68\text{B}}{\$119.8\text{T}} = 0.057\% \text{ of total disease burden}
+\frac{\$68\text{B}}{\$128.6\text{T}} = 0.053\% \text{ of total disease burden}
 $$
 
 - Disease eradication achievements: Zero in past 50 years (since [smallpox, 1980](../references.qmd#smallpox-eradicated))
@@ -356,11 +359,11 @@ $$
 
 ### Mortality and Morbidity Burden
 
-<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
+<!-- ![Annual deaths from disease ({{< var global_annual_deaths_curable_diseases >}}) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
 
 The World Health Organization reports {{< var global_daily_deaths_curable_diseases >}} daily deaths from preventable or potentially curable diseases ([54.75 million annually](../references.qmd#who-daily-deaths)). This mortality burden exceeds:
 
-- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of [18,274:1](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
+- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of [{{< var disease_vs_terrorism_deaths_ratio >}}](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
 
 $$
 \frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
@@ -388,7 +391,7 @@ Here's how it compares to the most effective charities in the world ([GiveWell t
 
 This plan doesn't cost money, it *makes* money while saving lives. Instead of asking people to donate, it makes everyone richer while curing diseases.
 
-**Bottom line**: While the world's best charities spend `{python} givewell_cost_per_life_min_formatted`-`{python} givewell_cost_per_life_max_formatted` to save a life (which is excellent), the 1% Treaty + DIH + dFDA actually **SAVES society `{python} cost_per_life_investor_funded_formatted` per life saved**.
+**Bottom line**: While the world's best charities spend `{python} givewell_cost_per_life_min_formatted`-`{python} givewell_cost_per_life_max_formatted` to save a life (which is excellent), the {{< var treaty_reduction_pct >}} Treaty + DIH + dFDA actually **SAVES society `{python} cost_per_life_investor_funded_formatted` per life saved**.
 
 ### Better Than History's Best Public Health Wins
 
@@ -404,7 +407,7 @@ This plan doesn't cost money, it *makes* money while saving lives. Instead of as
 
 Vaccines and smoking cessation programs are amazing, they solve specific problems with a high return.
 
-The 1% Treaty and dFDA initiative tackles two problems at once:
+The {{< var treaty_reduction_pct >}} Treaty and dFDA initiative tackles two problems at once:
 
 1. **The Peace Dividend** is a massive economic gain on par with the largest public health wins, created simply by reducing a global negative (conflict)
 2. **The dFDA** then uses a tiny fraction of that gain to fix the *system* of medical research, generating a *second* massive win
@@ -423,7 +426,7 @@ $$
 
 where {{< var combined_peace_health_dividends_annual_for_roi_calc >}} is the [1% Treaty conservative case benefit](../appendix/dfda-cost-benefit-analysis.qmd) and $15B is the estimated [childhood vaccination annual benefit](../references.qmd#childhood-vaccination-roi).
 
-This makes the 1% Treaty/dFDA system **[11X larger in economic impact](../appendix/intervention-comparison-table.qmd)** than childhood vaccinations, one of the most successful public health interventions ever implemented.
+This makes the {{< var treaty_reduction_pct >}} Treaty/dFDA system **[11X larger in economic impact](../appendix/intervention-comparison-table.qmd)** than childhood vaccinations, one of the most successful public health interventions ever implemented.
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
 
@@ -459,19 +462,19 @@ $$
 
 - **{{< var total_complete_benefits_annual >}}** in foregone economic value (complete case benefit)
 - **54.75 million** preventable deaths
-- **$109T** in disease burden continues
+- **{{< var global_disease_economic_burden_annual >}}** in disease burden continues
 
-These figures represent the mathematical consequence of maintaining current resource allocation patterns versus implementing the 1% Treaty system.
+These figures represent the mathematical consequence of maintaining current resource allocation patterns versus implementing the {{< var treaty_reduction_pct >}} Treaty system.
 
 ## Who Benefits and How
 
-The 1% Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
+The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
 
 **Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
-- **Defense sector**: Keeps [99% of current budget](../appendix/peace-dividend-calculations.qmd) 
+- **Defense sector**: Keeps [{{< var defense_sector_retention_pct >}} of current budget](../appendix/peace-dividend-calculations.qmd) 
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity increases 115X](../appendix/research-acceleration-model.qmd)
-- **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ([$109T current economic cost](../references.qmd#disease-economic-burden-109t))
+- **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ([{{< var global_disease_economic_burden_annual >}} current economic cost](../references.qmd#disease-economic-burden-109t))
 - **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
 - **Taxpayers**: Net reduction in taxes and healthcare costs through improved R&D efficiency
@@ -480,7 +483,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 
 ## Implementation Strategy
 
-The economic benefits outlined above demonstrate the value proposition of the 1% Treaty system. Implementation requires political mobilization to achieve treaty adoption:
+The economic benefits outlined above demonstrate the value proposition of the {{< var treaty_reduction_pct >}} Treaty system. Implementation requires political mobilization to achieve treaty adoption:
 
 **For comprehensive implementation details**, see:
 
@@ -511,11 +514,11 @@ This economic analysis focuses on the return on investment once the system is op
 
 For the rigorous analysis:
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The complete 463:1 ROI breakdown with NPV calculations
-- **[Health Dividend](health-dividend.qmd)** - Accessible overview of the 463:1 ROI
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The complete {{< var roi_dfda_savings_only >}} ROI breakdown with NPV calculations
+- **[Health Dividend](health-dividend.qmd)** - Accessible overview of the {{< var roi_dfda_savings_only >}} ROI
 - **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations you can verify yourself
-- **[1% Treaty Cost-Effectiveness](../appendix/1-percent-treaty-cost-effectiveness.qmd)** - Why this is a dominant health intervention
+- **[{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness](../appendix/1-percent-treaty-cost-effectiveness.qmd)** - Why this is a dominant health intervention
 
 ## Risk Analysis and Mitigation
 
@@ -534,12 +537,12 @@ For the rigorous analysis:
 **Adoption Risk**: Insufficient patient enrollment in decentralized trials
 
 - *Mitigation*: Economic incentives (free treatment + compensation); improved trial accessibility; democratized research priorities
-- *Evidence*: Current clinical trial participation ([0.06% of population](../appendix/clinical-trial-participants.qmd)) limited by access barriers, not willingness
+- *Evidence*: Current clinical trial participation ([{{< var current_clinical_trial_participation_rate >}} of population](../appendix/clinical-trial-participants.qmd)) limited by access barriers, not willingness
 
 **Financial Risk**: Insufficient funding to achieve referendum threshold and political mobilization
 
 - *Mitigation*: Multi-stage fundraising with milestone-based releases; diversified funding sources; assurance contracts
-- *Conservative threshold*: [280M votes](../references.qmd#3-5-rule) ([3.5% of global population](../references.qmd#3-5-rule)) through viral referendum mechanics
+- *Conservative threshold*: [280M votes](../references.qmd#3-5-rule) ([{{< var global_population_activism_threshold_pct >}} of global population](../references.qmd#3-5-rule)) through viral referendum mechanics
 
 See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for complete risk assessment and sensitivity analysis.
 
@@ -573,7 +576,7 @@ This economic analysis demonstrates that redirecting 1% of global military spend
 
 - **Self-funding structure**: Zero net new spending required (funds redirected from existing military budgets)
 - **Dominant intervention**: Simultaneously reduces costs and improves health outcomes
-- **Conservative ROI**: [463:1](../appendix/dfda-cost-benefit-analysis.qmd) based solely on R&D efficiency gains
+- **Conservative ROI**: [{{< var roi_dfda_savings_only >}}](../appendix/dfda-cost-benefit-analysis.qmd) based solely on R&D efficiency gains
 
 $$
 \frac{\$249.3\text{B NPV benefit}}{\$538\text{M NPV cost}} = 463:1
