@@ -30,7 +30,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 **Instrument:** [VICTORY Social Impact Bonds](victory-bonds.qmd)
 
-- **Target Returns:** 271.8% annually, perpetually
+- **Target Returns:** {{< var victory_bond_annual_return_pct >}} annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
 - **Payout:** 10% of all DIH treaty inflows (2.7B/year)
 - **Protection:** Bondholders paid before mission spending
@@ -39,7 +39,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 #### Why This Works
 
-- Simplest pitch in finance: 271.8% annual returns, perpetual
+- Simplest pitch in finance: {{< var victory_bond_annual_return_pct >}} annual returns, perpetual
 - Clean {{< var treaty_campaign_total_cost >}} target (vs confusing $1.2-2.5B range)
 - 10% payout is easy math (vs 5% complex calculations)
 - "Forever" beats any finite timeline
@@ -98,7 +98,7 @@ Once the treaty passes, $27.2B flows annually from military budgets to the DIH t
 - VICTORY bond returns: 2.7B annually (10% of treaty inflows)
 - Sacred and untouchable (or investors walk)
 - Automatically distributed via smart contracts
-- 271.8% annual returns to bondholders
+- {{< var victory_bond_annual_return_pct >}} annual returns to bondholders
 
 ##### Everything Else (90%): Decided by Wishocracy
 
@@ -217,11 +217,11 @@ As more patients join:
 
 ## Financial Performance Metrics
 
-### Return on Investment (The 463:1 Multiplier)
+### Return on Investment (The {{< var roi_dfda_savings_only >}}:1 Multiplier)
 
 #### Direct Investment Returns (VICTORY Social Impact Bonds)
 
-- 271.8% annually to bondholders
+- {{< var victory_bond_annual_return_pct >}} annually to bondholders
 - Perpetual returns (not 10-year finite)
 - {{< var treaty_campaign_total_cost >}} investment → {{< var victory_bond_annual_payout >}}/year forever
 - Better than every investment in human history
@@ -229,7 +229,7 @@ As more patients join:
 #### Societal Returns (Everyone Else)
 
 - $463 in value created per dollar spent
-- 82x reduction in trial costs ($50.0B annual savings)
+- {{< var dfda_cost_effectiveness_multiplier >}}× reduction in trial costs ($50.0B annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
 - 3X ROI on prevention vs treatment ({{< var caregiver_annual_value_total >}} saved)
@@ -342,8 +342,8 @@ That's more than China's entire GDP.
 #### Financial
 
 - Treaty expansion rate (1% → 2% → 5%)
-- VICTORY bond returns delivered (target: 271.8% annually)
-- Multiplier effects (target: 463:1 societal value)
+- VICTORY bond returns delivered (target: {{< var victory_bond_annual_return_pct >}} annually)
+- Multiplier effects (target: {{< var roi_dfda_savings_only >}}:1 societal value)
 
 ## The Compound Flywheel
 
@@ -412,7 +412,7 @@ Each success makes the next success easier:
 
 ### For Health Economics Nerds
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The 463:1 ROI breakdown
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The {{< var roi_dfda_savings_only >}}:1 ROI breakdown
 - **[Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd)** - Historical proof that military cuts → prosperity
 - **[Research Acceleration Model](../appendix/research-acceleration-model.qmd)** - Complete {{< var roi_all_direct_benefits >}}:1 ROI with all direct benefits
 
@@ -429,7 +429,7 @@ Each success makes the next success easier:
 
 **To Manage:** $27.2B+ annually via Wishocracy (8 billion voters)
 
-**To Deliver:** 271.8% annual returns to investors (perpetual), 463:1 societal returns, optional death by 2050
+**To Deliver:** {{< var victory_bond_annual_return_pct >}} annual returns to investors (perpetual), 463:1 societal returns, optional death by 2050
 
 **The Simple Math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever
 

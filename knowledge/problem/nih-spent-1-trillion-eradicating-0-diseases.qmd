@@ -199,7 +199,7 @@ Major breakthroughs while NIH was busy:
 
 The NIH is like that group member who shows up after the project is done to add their name.
 
-## The Efficiency Rating: An 82x Opportunity Cost
+## The Efficiency Rating: An {{< var dfda_cost_effectiveness_multiplier >}}× Opportunity Cost
 
 Let's do the real math on what we could have done with that money:
 
@@ -213,12 +213,12 @@ Let's do the real math on what we could have done with that money:
 **What \$51 billion could buy using UK RECOVERY methods:**
 
 - Cost per trial participant: {{< var recovery_trial_cost_per_patient >}}
-- Annual participants: 102 million (82x more)
+- Annual participants: 102 million ({{< var dfda_cost_effectiveness_multiplier >}}× more)
 - Potential treatments found: Hundreds
 
 We're literally choosing to help 1 person badly instead of helping 82 people well.
 
-This 82x cost disparity is the core inefficiency you can solve. (See [The 82x Solution](../solution/dfda.qmd#the-82x-solution-decentralized-trials) for how.)
+This {{< var dfda_cost_effectiveness_multiplier >}}× cost disparity is the core inefficiency you can solve. (See [The {{< var dfda_cost_effectiveness_multiplier >}}× Solution](../solution/dfda.qmd#the-{{< var dfda_cost_effectiveness_multiplier >}}×-solution-decentralized-trials) for how.)
 
 #### The \$2 Trillion Healthcare Burden
 

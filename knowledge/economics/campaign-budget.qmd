@@ -88,7 +88,7 @@ Here's how professional democracy corruption works:
 Defense lobbyists currently work for whoever pays them. So you pay them more:
 
 - Top 50 lobbyists get bond offers (become rich by lobbying FOR life instead of death)
-- Defense execs get early bond access (271.8% beats their stock options)
+- Defense execs get early bond access ({{< var victory_bond_annual_return_pct >}} beats their stock options)
 - Pension funds get fiduciary obligation (required to take best returns, oops)
 - "Consulting fees" to Pentagon retirees (it's not bribery if you call it consulting)
 
@@ -166,7 +166,7 @@ Computers that store everything:
 
 Turn enemies into allies through superior returns:
 
-- VICTORY Bonds for key players (271.8% beats their current profits)
+- VICTORY Bonds for key players ({{< var victory_bond_annual_return_pct >}} beats their current profits)
 - Pension fund outreach (fiduciary duty requires taking best returns)
 - Board members as "advisors" (pay them to shut up)
 
@@ -255,7 +255,7 @@ Papers for when plans fail (plans always fail somewhere)
 
 When everyone profits from cooperation, resistance becomes unprofitable:
 
-- Defense lobbyists: 271.8% returns > current salary
+- Defense lobbyists: {{< var victory_bond_annual_return_pct >}} returns > current salary
 - Insurance: Healthy people file zero claims
 - Pharma: Trials generate revenue, not expenses
 - Politicians: Living voters vote more than dead ones
@@ -273,7 +273,7 @@ Capitalism optimizing for the right thing by accident.
 **For bondholders**:
 
 - Invest {{< var treaty_campaign_total_cost >}} → Receive {{< var victory_bond_annual_payout >}}/year forever
-- 271.8% annual returns until the sun explodes
+- {{< var victory_bond_annual_return_pct >}} annual returns until the sun explodes
 
 ## Transparency
 
@@ -313,7 +313,7 @@ That's a 27:1 return just in redirected military spending.
 
 But the real return:
 
-- Bondholders: $2.7B/year forever (271.8% annually)
+- Bondholders: $2.7B/year forever ({{< var victory_bond_annual_return_pct >}} annually)
 - Society: $463 per dollar (cures, wealth, fewer dead people)
 - Humanity: Optional death by 2050
 

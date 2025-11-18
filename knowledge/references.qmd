@@ -964,8 +964,8 @@ from dih_models.parameters import *
 
 <a id="dfda-roi-463-to-1"></a>
 
-- **dFDA ROI of 463:1 over 10 years**
-  > NPV analysis estimate: 463:1 ROI over 10 years (central estimate)
+- **dFDA ROI of {{< var roi_dfda_savings_only >}}:1 over 10 years**
+  > NPV analysis estimate: {{< var roi_dfda_savings_only >}}:1 ROI over 10 years (central estimate)
   > Range: 66:1 to 2,577:1 depending on total ecosystem costs
   > Based on: $37.5-46M upfront platform investment + operational costs vs $50.0B annual R&D savings
   > Value proposition: 80X reduction in per-patient trial costs; $50.0B gross annual savings from pharma R&D
@@ -4166,10 +4166,10 @@ from dih_models.parameters import *
 
 <a id="recovery-trial-82x-cost-reduction"></a>
 
-- **RECOVERY trial 82x cost reduction**
+- **RECOVERY trial {{< var dfda_cost_effectiveness_multiplier >}}× cost reduction**
   > RECOVERY trial: ~$500 per patient ($20M for 48,000 patients = $417/patient)
   > Typical clinical trial: ~$41,000 median per-patient cost
-  > Cost reduction: ~80-82x cheaper ($41,000 ÷ $500 ≈ 82x)
+  > Cost reduction: ~80-{{< var dfda_cost_effectiveness_multiplier >}}× cheaper ($41,000 ÷ $500 ≈ {{< var dfda_cost_effectiveness_multiplier >}}×)
   > Efficiency: $50 per patient per answer (10 therapeutics tested, 4 effective)
   > Dexamethasone estimated to save >630,000 lives
   > — [Manhattan Institute: Slow Costly Trials](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs) | [PMC: Establishing RECOVERY at Scale](https://pmc.ncbi.nlm.nih.gov/articles/PMC9293394/)

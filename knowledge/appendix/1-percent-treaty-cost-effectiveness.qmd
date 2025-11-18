@@ -184,7 +184,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 **VICTORY Bond Financing**:
 
 - **Investors provide**: $1.0B upfront (funds the campaign)
-- **Investors receive**: 2.7B/year perpetually (271.8% annual return)
+- **Investors receive**: 2.7B/year perpetually ({{< var victory_bond_annual_return_pct >}} annual return)
 - **Payback period**: 4.4 months
 - **Result**: Campaign is self-funding from investor perspective
 
@@ -251,7 +251,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Cost per life** = ICER × QALYs per life
 
-**Cost per life** = $-176,382 × 35 QALYs/life
+**Cost per life** = $-176,3{{< var dfda_cost_effectiveness_multiplier >}}× 35 QALYs/life
 
 **Cost per life ≈ -$6.17M per life saved**
 
@@ -479,7 +479,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **A**: This depends on perspective:
 
-**From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with 271.8% returns from redirected military spending, the net cost to society approaches $0 after payback.
+**From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with {{< var victory_bond_annual_return_pct >}} returns from redirected military spending, the net cost to society approaches $0 after payback.
 
 **From taxpayers' perspective**: They give up $27.2B in military spending but receive $163.6B in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 

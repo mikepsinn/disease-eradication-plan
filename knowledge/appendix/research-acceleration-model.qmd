@@ -18,20 +18,20 @@ lastNonprofitComplianceHash: 10a8528867ff97290815aebf8c71e8594837b428eda50c4f1eb
 from dih_models.parameters import *
 ```
 
-The [conservative 463:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
+The [conservative {{< var roi_dfda_savings_only >}}:1 ROI estimate](../economics/health-dividend.qmd) captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 
 This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
 
 ## The Complete Case: 1,239:1 ROI (All Direct Benefits)
 
-The conservative 463:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
+The conservative {{< var roi_dfda_savings_only >}}:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
 
 ### $1.2T in Annual Benefits
 
 The 1% Treaty doesn't just make trials cheaper. It:
 
 1. **Societal savings from 1% less conflict** (peace dividend: 113.6B)
-2. **Slashes R&D costs 82x** (saves $50.0B)
+2. **Slashes R&D costs {{< var dfda_cost_effectiveness_multiplier >}}×** (saves $50.0B)
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
 4. **115X more research capacity** (adds $100B via 10-20X more breakthroughs)
 5. **Enables treatment of rare/orphan diseases** (adds $400B)
@@ -80,7 +80,7 @@ New patients each year get early access:
 
 ## The Research Acceleration Multiplier
 
-**The insight:** 82x cheaper trials + 40% more funding ($27.2B/year) = **115X more research capacity**.
+**The insight:** {{< var dfda_cost_effectiveness_multiplier >}}× cheaper trials + 40% more funding ($27.2B/year) = **115X more research capacity**.
 
 ### What this means
 
@@ -118,12 +118,12 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 ## How 115x Research Acceleration Actually Works
 
-The 115x multiplier isn't just arithmetic (82x cost reduction × 1.4x funding). It's the result of multiple behavioral mechanisms that fundamentally change how clinical trials work.
+The 115x multiplier isn't just arithmetic ({{< var dfda_cost_effectiveness_multiplier >}}× cost reduction × 1.4x funding). It's the result of multiple behavioral mechanisms that fundamentally change how clinical trials work.
 
 ### The Complete Mechanism Chain
 
 ```
-LOWER COSTS (82x per-patient reduction)
+LOWER COSTS ({{< var dfda_cost_effectiveness_multiplier >}}× per-patient reduction)
     ↓
 ECONOMIC FEASIBILITY (trials at all sizes now profitable)
     ↓
@@ -265,7 +265,7 @@ Result: Patients choose Trial B → Trial A/C lose funding →
 
 > "Sponsors will be incentivized to submit the most efficient trial designs and leanest operational costs to the platform to attract NIH support and patient participation"
 
-**Impact:** Continuous cost reduction beyond initial 82x as competitive pressure drives innovation.
+**Impact:** Continuous cost reduction beyond initial {{< var dfda_cost_effectiveness_multiplier >}}× as competitive pressure drives innovation.
 
 ### Mechanism 6: Aggregate Capacity Multiplication
 
@@ -332,7 +332,7 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 | Category | Annual Benefit | Notes |
 |----------|----------------|-------|
 | [Peace Dividend](../economics/peace-dividend.qmd) | 113.6B | Societal savings from 1% reduction in global conflict |
-| R&D Cost Savings | $50.0B | 82x trial cost reduction |
+| R&D Cost Savings | $50.0B | {{< var dfda_cost_effectiveness_multiplier >}}× trial cost reduction |
 | **Earlier Access (7 years)** | **$300.0B** | Existing pipeline accessed sooner |
 | **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |
 | New Diseases Treatable | $400.0B | Rare diseases, orphan drugs |
@@ -381,7 +381,7 @@ $1.2T/year is reasonable for that scope.
 ### Sources and Methodology
 
 - **Trial cost reduction**: Based on [RECOVERY trial model](../references.qmd#recovery-trial-cost-reduction) achieving ~$500/patient vs traditional $40-120K/patient
-- **Research capacity multiplier**: 82x cost reduction × 1.4X funding increase = 115X capacity
+- **Research capacity multiplier**: {{< var dfda_cost_effectiveness_multiplier >}}× cost reduction × 1.4X funding increase = 115X capacity
 - **QALY valuations**: Standard [$100-150K per QALY](../references.qmd#qaly-value) methodology
 - **Disease prevalence**: WHO global burden of disease data
 - **Economic impact estimates**: See [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) for detailed calculations
@@ -400,7 +400,7 @@ Including these would push the ROI substantially higher, but they're harder to q
 
 ## Related Analysis
 
-- **Conservative Case (463:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
+- **Conservative Case ({{< var roi_dfda_savings_only >}}:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
 - **NPV Methodology**: See [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) for 10-year NPV analysis with discount rates
 - **Cost-Effectiveness**: See [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) for ICER and cost-per-QALY analysis
 - **Daily Opportunity Cost**: See [Daily Opportunity Cost](dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction) for the cost of delay
@@ -413,4 +413,4 @@ The **Complete Case** shows that when you count all direct, quantifiable benefit
 - **1,239:1 return on investment**
 - **Benefits span immediate access acceleration, research capacity expansion, and systemic healthcare improvements**
 
-This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, use the more conservative 463:1 figure to maintain credibility, but the full scope of benefits is substantially larger.
+This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, use the more conservative {{< var roi_dfda_savings_only >}}:1 figure to maintain credibility, but the full scope of benefits is substantially larger.

@@ -96,7 +96,7 @@ display(IPImage(str(png_path)))
 
 #### What It Does
 
-- **Issues VICTORY Bonds:** Sells bonds with 271.8% target returns
+- **Issues VICTORY Bonds:** Sells bonds with {{< var victory_bond_annual_return_pct >}} target returns
 - **Funds Bribery Operations:** Uses $1.0B raised to fund lobbying and campaigns
 - **Delivers Returns:** Manages treaty inflows to pay bondholders
 
@@ -251,7 +251,7 @@ The SEC thinks everything is a security. Your grandmother's cookies? Probably a 
 
 1. Investment of money ✓
 2. In common enterprise ✓ (saving humanity)
-3. With expectation of profits ✓ (271.8% annually)
+3. With expectation of profits ✓ ({{< var victory_bond_annual_return_pct >}} annually)
 4. From efforts of others ✓
 
 Conclusion: VICTORY Bonds are super definitely a security. Time to comply!

@@ -36,7 +36,7 @@ A financial instrument that makes obscene amounts of money appear from nowhere w
 - Give the rich humans 10% of that ({{< var victory_bond_annual_payout >}}) every year, forever
 - Use the remaining 90% ($24.3B) to cure the diseases actually killing people
 
-**What you're offering investors:** 271.8% annual returns, which beats everything except insider trading and certain federal crimes
+**What you're offering investors:** {{< var victory_bond_annual_return_pct >}} annual returns, which beats everything except insider trading and certain federal crimes
 
 **The money never stops.** No maturity date means bondholders get paid until the sun explodes or humanity achieves immortality, whichever happens first (probably the immortality thing)
 
@@ -53,7 +53,7 @@ Find humans who have more papers than they need and convince them to give you $1
 - High net worth individuals ($1M+ each) - people who got lucky/smart/criminal and have extra papers
 - Qualified investors ($100K+ each) - regular rich people
 
-You explain to them: "Give me papers now, get back 271.8% more papers annually, forever."
+You explain to them: "Give me papers now, get back {{< var victory_bond_annual_return_pct >}} more papers annually, forever."
 
 They'll check the math. The math checks out. They give you papers.
 
@@ -65,7 +65,7 @@ Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convinc
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_technology >}})
 - **Build the actual tech** - [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
 - **Hire lawyers** - Make bribery legal by calling it other things ({{< var treaty_campaign_budget_reserve >}})
-- **Co-opt death merchants** - Convince defense contractors that 271.8% beats 8% ($150M)
+- **Co-opt death merchants** - Convince defense contractors that {{< var victory_bond_annual_return_pct >}} beats 8% ($150M)
 - **Run the thing** - Pay humans to coordinate the paper distribution ($170M)
 
 For the complete breakdown of where every paper goes, see [Campaign Budget](campaign-budget.qmd).
@@ -137,7 +137,7 @@ Even at 10% discount (which assumes this is as risky as funding a Mars casino), 
 
 #### This isn't complicated math
 
-- **Annual return**: 271.8% (which sounds fake but isn't)
+- **Annual return**: {{< var victory_bond_annual_return_pct >}} (which sounds fake but isn't)
 - **Lifetime value**: 54-90x (which sounds impossible but is just arithmetic)
 
 Unlike:
@@ -192,7 +192,7 @@ Show investors what full treaty adoption looks like:
 **Annual DIH revenue**: $27.2B
 **Bondholder annual payment**: 2.7B (10%)
 **Research funding**: $24.3B (90%)
-**Investor ROI**: 271.8% annually
+**Investor ROI**: {{< var victory_bond_annual_return_pct >}} annually
 
 **What happens**:
 
@@ -226,7 +226,7 @@ Show investors the downside case is still attractive:
 
 Structure the allocation to balance three goals:
 
-1. **Attract sufficient capital**: 271.8% projected returns compete with high-risk VC/hedge funds
+1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds
 2. **Fund the mission**: 90% ($24.3B) gives researchers substantial capital
 3. **Align incentives**: Bondholders profit from treaty expansion, so they become advocates
 
@@ -299,7 +299,7 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 
 | Investment | Annual Return | Risk | Term | Catch |
 |------------|---------------|------------|------|------|
-| **VICTORY Social Impact Bonds** | **271.8%** | **High** | **Forever** | **Requires politicians to not be stupid** |
+| **VICTORY Social Impact Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High** | **Forever** | **Requires politicians to not be stupid** |
 | Savings Account | {{< var trial_cost_reduction_pct >}} | None | Whenever | Loses to inflation |
 | S&P 500 | 10% | Moderate | Whenever | Boring, responsible |
 | Real Estate | 8% | Moderate | 30 years | Requires being a landlord |
@@ -407,7 +407,7 @@ It's not a Ponzi scheme. It's weaponized lobbying economics pointed at diseases 
 
 "If the treaty fails completely, you lose your $1B. It gets spent on the campaign - convincing humans to click buttons, bribing lobbyists, building platforms, paying lawyers to make bribery legal.
 
-This is the primary risk. You're essentially funding a political campaign with a 271.8% payout if it wins.
+This is the primary risk. You're essentially funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
 
 But even partial success (just US + EU) yields 130% annually, which beats most legal investments. And if it fails completely, you'll probably die of a preventable disease anyway, so you won't be around to complain about the lost money.
 
@@ -431,7 +431,7 @@ You're essentially betting that humans prefer being alive. Historically this is 
 
 ### "How is this different from just donating to charity?"
 
-"Charities give you 0% returns and a tax deduction. VICTORY Social Impact Bonds give you 271.8% returns and generational wealth.
+"Charities give you 0% returns and a tax deduction. VICTORY Social Impact Bonds give you {{< var victory_bond_annual_return_pct >}} returns and generational wealth.
 
 Charity is for people who want to feel good. This is for people who want to get obscenely rich while accidentally saving humanity as a side effect.
 
@@ -456,7 +456,7 @@ Hand this to investors who can't read more than one page:
 
 ### What you get
 
-- **Returns:** 271.8% annually forever (assuming politicians don't choose mass death)
+- **Returns:** {{< var victory_bond_annual_return_pct >}} annually forever (assuming politicians don't choose mass death)
 - **Duration:** Perpetual (payments never stop until heat death of universe)
 - **Side effect:** Millions of humans continue existing who would otherwise stop
 - **Priority:** You get paid before anyone else touches the money

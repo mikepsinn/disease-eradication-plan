@@ -559,6 +559,34 @@ def check_inline_expressions(content: str, filepath: str):
                 ))
 
 
+def check_quarto_variables_in_links(content: str, filepath: str):
+    """
+    Check for Quarto variables inside markdown link text.
+    Quarto variables don't work inside link text: [{{< var ... >}}](url)
+    They should be moved outside the link or replaced with plain text.
+    """
+    lines = content.split('\n')
+
+    # Pattern to match markdown links with Quarto variables in link text
+    # [text with {{< var ... >}}](url)
+    link_with_var_pattern = re.compile(r'\[([^\]]*\{\{<\s*var\s+[^>]+\s*>\}\}[^\]]*)\]\([^)]+\)')
+
+    for line_index, line in enumerate(lines):
+        # Skip HTML comments
+        if re.match(r'^\s*<!--', line.strip()) or ('<!--' in line and '-->' in line):
+            continue
+
+        matches = link_with_var_pattern.finditer(line)
+        for match in matches:
+            context = line.strip()[:80]
+            errors.append(ValidationError(
+                file=filepath,
+                line=line_index + 1,
+                message='Quarto variable inside link text - variables do not work as link text. Move variable outside the link or use plain text.',
+                context=context
+            ))
+
+
 def check_markdown_links(content: str, filepath: str):
     """
     Check all markdown links in the file for:
@@ -757,13 +785,16 @@ def validate_file(filepath: str):
     check_include_directives(content, filepath)
     check_markdown_links(content, filepath)
 
+    # Check for Quarto variables in link text
+    check_quarto_variables_in_links(content, filepath)
+
     # Check for inline expressions (incompatible with Jupyter Cache)
     # DISABLED: We've disabled cache: true in Quarto configs, so inline expressions are fine
     # check_inline_expressions(content, filepath)
 
 def main():
     """Main validation function"""
-    print('Validating LaTeX in .qmd files...\n')
+    print('Running pre-render validation checks on .qmd files...\n')
 
     # Validate _quarto.yml configuration first
     validate_quarto_config()
@@ -783,10 +814,10 @@ def main():
 
     # Report results
     if len(errors) == 0:
-        print('No LaTeX errors found!\n')
+        print('No pre-validation errors found!\n')
         sys.exit(0)
     else:
-        print(f'Found {len(errors)} LaTeX validation error(s):\n', file=sys.stderr)
+        print(f'Found {len(errors)} pre-validation error(s):\n', file=sys.stderr)
 
         # Group errors by file
         errors_by_file: Dict[str, List[ValidationError]] = {}
@@ -802,7 +833,7 @@ def main():
                 print(f'   Line {error.line}: {error.message}', file=sys.stderr)
                 print(f'   Context: {error.context}', file=sys.stderr)
 
-        print('\nPlease fix the above errors before building the PDF.\n', file=sys.stderr)
+        print('\nPlease fix the above errors before rendering.\n', file=sys.stderr)
         sys.exit(1)
 
 if __name__ == '__main__':

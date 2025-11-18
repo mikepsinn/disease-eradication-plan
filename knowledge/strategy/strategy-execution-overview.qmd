@@ -29,7 +29,7 @@ Here's your three-step algorithm for fixing this adorable contradiction:
 
 ### Step 1: Collect Papers from Rich People
 
-You convince wealthy humans to give you [$1.0B in papers](../economics/victory-bonds.qmd) by promising them [271.8% more papers annually](../economics/victory-bonds.qmd). This works because rich people are excellent at counting papers but terrible at not wanting more papers.
+You convince wealthy humans to give you [$1.0B in papers](../economics/victory-bonds.qmd) by promising them [{{< var victory_bond_annual_return_pct >}} more papers annually](../economics/victory-bonds.qmd). This works because rich people are excellent at counting papers but terrible at not wanting more papers.
 
 The pitch is simple: "Give us papers now, get 2.7 times more papers forever, also maybe don't die from preventable diseases." Even humans who think vaccines cause 5G can understand "more papers good."
 
@@ -57,7 +57,7 @@ For humans who need more steps (you do seem to enjoy steps), here's the same thi
 
 **Step 1: Sell Papers That Make More Papers**
 
-Raise [$1.0B](../economics/victory-bonds.qmd) by selling [VICTORY Bonds](../economics/victory-bonds.qmd) to investors. These are like war bonds except backwards - instead of funding death, they fund not-death. This confuses some humans, but the 271.8% returns help them overcome their confusion.
+Raise [$1.0B](../economics/victory-bonds.qmd) by selling [VICTORY Bonds](../economics/victory-bonds.qmd) to investors. These are like war bonds except backwards - instead of funding death, they fund not-death. This confuses some humans, but the {{< var victory_bond_annual_return_pct >}} returns help them overcome their confusion.
 
 ### Step 2: The Great Internet Clicking
 
@@ -89,13 +89,13 @@ Here's the precise order in which to distribute papers to specific categories of
 
 **Who you're bribing:** Wealthy humans who have many papers and want even more papers, despite already having more papers than they could spend in several lifetimes
 
-**The bribe you offer:** Give us [$250-400M](../economics/campaign-budget.qmd) in papers now, get [271.8% more papers](../economics/victory-bonds.qmd) annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's 271.8% returns, and instead of funding death it funds not-death.
+**The bribe you offer:** Give us [$250-400M](../economics/campaign-budget.qmd) in papers now, get [{{< var victory_bond_annual_return_pct >}} more papers](../economics/victory-bonds.qmd) annually forever. This is modeled on [WW2 War Bonds](../references.qmd#wwii-war-bonds) except instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns, and instead of funding death it funds not-death.
 
-**Why they accept:** Because even billionaires can count to 271.8%, and 271.8% beats everything else including insider trading, which is illegal but also less profitable.
+**Why they accept:** Because even billionaires can count to {{< var victory_bond_annual_return_pct >}}, and {{< var victory_bond_annual_return_pct >}} beats everything else including insider trading, which is illegal but also less profitable.
 
 **Money-back guarantee:** If the treaty fails, they get their papers back via [Assurance Contract](../appendix/fundraising-strategy.qmd). This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
 
-**What happens:** Defense contractors do math. Math says 271.8% > 8%. Defense contractors become health contractors. Democracy continues as normal.
+**What happens:** Defense contractors do math. Math says {{< var victory_bond_annual_return_pct >}} > 8%. Defense contractors become health contractors. Democracy continues as normal.
 
 #### The Specific Offer to Bomb Makers
 
@@ -109,7 +109,7 @@ You show weapons manufacturers a spreadsheet (they love spreadsheets):
 
 #### Option B (Your Offer)
 
-- Returns: [271.8% annually](../economics/victory-bonds.qmd)
+- Returns: [{{< var victory_bond_annual_return_pct >}} annually](../economics/victory-bonds.qmd)
 - Product: Things that make humans continue existing
 - Customer satisfaction: Very high (customers still alive to provide feedback)
 
@@ -119,7 +119,7 @@ They choose Option B. Not because they've become better people, but because they
 
 **Who you're bribing:** Humans who believe in curing diseases AND want to control a multi-billion dollar budget. These exist. They're called "effective altruists" except rich.
 
-**The bribe you offer:** Fund the [$100-200M referendum campaign](../economics/campaign-budget.qmd) and receive special [VICTORY Bonds](../economics/victory-bonds.qmd) with governance rights. This means they get 271.8% returns PLUS they get to decide how the $27.2B gets spent.
+**The bribe you offer:** Fund the [$100-200M referendum campaign](../economics/campaign-budget.qmd) and receive special [VICTORY Bonds](../economics/victory-bonds.qmd) with governance rights. This means they get {{< var victory_bond_annual_return_pct >}} returns PLUS they get to decide how the $27.2B gets spent.
 
 **What they fund:** The [Global Referendum](global-referendum.qmd) - basically paying 280 million people to click YES on a website.
 
@@ -149,7 +149,7 @@ They choose Option B. Not because they've become better people, but because they
 
 - **Papers for campaigns:** Massive Super PAC funding (legal bribery)
 - **Votes for staying employed:** 280 million people who will vote for treaty supporters
-- **Papers for themselves:** Personal VICTORY Bond access (271.8% beats insider trading)
+- **Papers for themselves:** Personal VICTORY Bond access ({{< var victory_bond_annual_return_pct >}} beats insider trading)
 - **Power to reward friends:** Direct portion of DIH's $27.2B to their home districts (ribbon-cutting ceremonies for decades)
 
 #### The choice you give them

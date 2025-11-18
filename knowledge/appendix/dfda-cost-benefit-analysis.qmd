@@ -40,7 +40,7 @@ from dih_models.parameters import *
 
 #### Exceptional Economic Value
 
-- **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**463:1**](#final-roi-and-net-benefit) over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately [**{{< var roi_dfda_savings_only >}}:1**](#final-roi-and-net-benefit) over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately [**\$137 million** and **2,301** Quality-Adjusted Life Years](#daily-opportunity-cost-of-inaction).
 
@@ -667,7 +667,7 @@ For the Lean Ecosystem scenario:
 
 _This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework)._
 
-_The NPV analysis provides the final estimated ROI of approximately [**463:1**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
+_The NPV analysis provides the final estimated ROI of approximately [**{{< var roi_dfda_savings_only >}}:1**](#final-roi-and-net-benefit), which is the figure cited throughout this document._
 
 ### Full Range ROI Sensitivity Analysis
 

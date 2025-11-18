@@ -57,7 +57,7 @@ The strategy is simple: make it more profitable for everyone - defense contracto
 
 You use the $1.0B from the VICTORY Bonds to offer everyone a better deal:
 
-- Defense contractors keep 99% of their murder budget PLUS get [271.8% returns](../economics/victory-bonds.qmd) on bonds
+- Defense contractors keep 99% of their murder budget PLUS get [{{< var victory_bond_annual_return_pct >}} returns](../economics/victory-bonds.qmd) on bonds
 - Politicians get campaign funding AND 280 million voters who want to not die
 - Insurance companies realize healthy people file fewer death claims
 
@@ -72,7 +72,7 @@ Politicians are simple organisms with one evolutionary drive: reelection. You're
 You now know the exact sequence:
 
 1. **Build the legal machine:** [The four-part structure](../legal/legal-framework.qmd) that lets you collect papers from everyone simultaneously
-2. **Sell the bonds:** [VICTORY Bonds](../economics/victory-bonds.qmd) that offer 271.8% returns to humans who prefer not dying
+2. **Sell the bonds:** [VICTORY Bonds](../economics/victory-bonds.qmd) that offer {{< var victory_bond_annual_return_pct >}} returns to humans who prefer not dying
 3. **Run the vote:** [The global referendum](global-referendum.qmd) where 280 million humans click "yes" to not dying
 4. **Start now:** [Three things you can do](../call-to-action/three-actions.qmd) in the next three minutes instead of scrolling
 

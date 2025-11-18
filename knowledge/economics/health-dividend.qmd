@@ -21,7 +21,7 @@ from dih_models.parameters import *
 
 The dFDA costs $40M/year to run.
 It saves $50B/year in clinical trial waste.
-That's 463:1 returns.
+That's {{< var roi_dfda_savings_only >}}:1 returns.
 
 Here's the breakdown.
 
@@ -70,7 +70,7 @@ The dFDA costs approximately **$40M annually** to operate at scale, with a simil
 
 ## ROI Scenarios
 
-The 463:1 ROI is the central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
+The {{< var roi_dfda_savings_only >}}:1 ROI is the central estimate based on NPV analysis over 10 years. Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
 **For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
 
@@ -88,7 +88,7 @@ Until now. The dFDA changes the game by aligning incentives: everyone profits fr
 ## The ROI
 
 $40M to save $50 billion.
-463:1 ROI.
+{{< var roi_dfda_savings_only >}}:1 ROI.
 80x cost reduction per patient.
 10,000x more trials possible.
 

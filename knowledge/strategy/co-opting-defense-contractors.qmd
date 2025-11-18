@@ -33,7 +33,7 @@ It's not complicated. Lobbyists are financial mercenaries. Whoever pays most win
 
 You give them:
 
-1. **VICTORY bonds paying 271.8% annually** (vs their current salary/stock options)
+1. **VICTORY bonds paying {{< var victory_bond_annual_return_pct >}} annually** (vs their current salary/stock options)
 2. **Early access** (get rich before everyone else)
 3. **"Consulting fees"** (legal bribery has a name)
 4. **Strategic advisor positions** (fake job, real money)
@@ -50,7 +50,7 @@ You give them:
 **Your offer** (lobbying for treaty):
 
 - Pay: $5-20M in bonds
-- Returns: 271.8% annually, forever
+- Returns: {{< var victory_bond_annual_return_pct >}} annually, forever
 - Job security: Better (99% of military budget still exists)
 - Upside: Generational wealth
 - Legacy: "Accidentally saved humanity while getting rich"
@@ -61,7 +61,7 @@ Even humans whose job is lying to Congress can do this math.
 
 ### It's More Papers
 
-271.8% > whatever they're making now.
+{{< var victory_bond_annual_return_pct >}} > whatever they're making now.
 
 That's it. That's the whole reason.
 
@@ -95,7 +95,7 @@ Their kids might even respect them. Probably not, but maybe.
 
 Private. No witnesses. Simple pitch:
 
-> "The treaty is happening. You can fight it and lose your position when it passes anyway, or support it and become wealthy. Here are VICTORY bonds paying 271.8% annually. Forever. Your clients keep 99% of their budgets. What's your price?"
+> "The treaty is happening. You can fight it and lose your position when it passes anyway, or support it and become wealthy. Here are VICTORY bonds paying {{< var victory_bond_annual_return_pct >}} annually. Forever. Your clients keep 99% of their budgets. What's your price?"
 
 Nobody ever says no. Everyone has a price. Their price is usually less than you'd think.
 
@@ -181,11 +181,11 @@ Human nature stays exactly the same. Only the incentives change.
 
 **Defense Contractor CEO** (to board members):
 
-"We diversified into bonds paying 271.8% returns. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome."
+"We diversified into bonds paying {{< var victory_bond_annual_return_pct >}} returns. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome."
 
 **Private Investor** (to partners):
 
-"These bonds pay 271.8% vs market's 10%. Treaty passes = we're rich. Treaty fails = we take the loss. But I ran the numbers. It's passing. Get in early."
+"These bonds pay {{< var victory_bond_annual_return_pct >}} vs market's 10%. Treaty passes = we're rich. Treaty fails = we take the loss. But I ran the numbers. It's passing. Get in early."
 
 **Lobbyist** (to defense contractor):
 

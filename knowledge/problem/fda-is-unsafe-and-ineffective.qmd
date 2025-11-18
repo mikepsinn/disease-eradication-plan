@@ -47,14 +47,14 @@ Net result: Far more people die from diseases that better treatments could have 
 
 This is a system designed to prevent lawsuits, not deaths. One type of death (from an approved drug) makes headlines. The other type (from waiting for approval) is invisible.
 
-## The 82x Inefficiency Tax
+## The {{< var dfda_cost_effectiveness_multiplier >}}× Inefficiency Tax
 
 Compare two real-world systems for testing drugs:
 
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
 2.  **The FDA System:** Averages **{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
 
-The FDA's system costs **82x more** and takes **36x longer**. Not a small difference - the difference between functional and designed-to-fail.
+The FDA's system costs **{{< var dfda_cost_effectiveness_multiplier >}}× more** and takes **36x longer**. Not a small difference - the difference between functional and designed-to-fail.
 
 You're two lifetimes from applying the scientific method to medicine. That's 0.0001% of human history - you invented science yesterday, cosmically speaking. The more clinical research you read, the more you realize you know nothing. Nearly every study ends with "more research is needed" (scientist-speak for "we have no idea what's happening, please give us more grant money"). This would be fine except people are dying while you figure it out.
 
