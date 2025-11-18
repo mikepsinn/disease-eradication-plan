@@ -150,6 +150,7 @@ Self-interest becomes a public good.
 No one has to become a better person for this to work.
 They just have to follow incentives.
 
+{{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
 # **The Complete, Causal Roadmap (How It Actually Passes)**
 
@@ -280,6 +281,8 @@ $$
 
 This calculation methodology follows standard cost-of-conflict analysis frameworks used by the World Bank, IMF, and academic conflict economics research. See [Peace Dividend Calculations](../appendix/peace-dividend-calculations.qmd) for detailed sources and methodology.
 
+{{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
+
 ### What It Costs to Build
 
 **Total**: {{< var dfda_npv_total_cost >}} over 10 years (present value)
@@ -304,6 +307,8 @@ This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} ove
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year (conservative, ignoring most benefits)
 
 **If everything goes wrong**: Worst-case scenario (benefits half as good, costs twice as high) still delivers 189:1 to {{< var optimistic_scenario_roi >}}:1 returns. See [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd).
+
+{{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
 
 ### Cost-Effectiveness: Dominant Health Intervention
 
@@ -505,6 +510,8 @@ $$
 
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
 
+{{< include ../figures/disease-vs-war-annual-deaths-pie-chart.qmd >}}
+
 # How This Compares to History
 
 ### Better Than the Best Charities
@@ -520,6 +527,8 @@ Here's how it compares to the most effective charities in the world ([GiveWell t
 This plan doesn't cost money, it *makes* money while saving lives. Instead of asking people to donate, it makes everyone richer while curing diseases.
 
 **Bottom line**: While the world's best charities spend `{python} givewell_cost_per_life_min_formatted`-`{python} givewell_cost_per_life_max_formatted` to save a life (which is excellent), the {{< var treaty_reduction_pct >}} Treaty + DIH + dFDA actually **SAVES society `{python} cost_per_life_investor_funded_formatted` per life saved**.
+
+{{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 ### Better Than History's Best Public Health Wins
 
