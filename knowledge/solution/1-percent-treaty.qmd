@@ -1,6 +1,6 @@
 ---
 title: The 1% Treaty
-description: How to Redirect $27B from War to Medicine - The complete guide to the 1% Treaty, the binding global accord that redirects $27 billion annually from military spending to curing disease while maintaining global security.
+description: How to Redirect {{< var treaty_annual_funding >}} from War to Medicine - The complete guide to the 1% Treaty, the binding global accord that redirects {{< var treaty_annual_funding >}} annually from military spending to curing disease while maintaining global security.
 published: true
 tags:
   - solution
@@ -225,7 +225,7 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 
 #### Current System
 
-- [Pivotal trials: $41,000 per patient](../references.qmd#trial-cost-41k)
+- [Pivotal trials: {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient](../references.qmd#trial-cost-41k)
 - Only 5M participants per year globally
 - 99.8% of willing participants turned away
 - 17 years to approve one drug
@@ -233,7 +233,7 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 #### With 1% Treaty + Decentralized FDA
 
 - $110B total funding ($83B existing + {{< var treaty_annual_funding >}} from treaty)
-- [Pragmatic trials: $500 per patient](../references.qmd#recovery-cost-500) ([{{< var dfda_cost_effectiveness_multiplier >}}× cheaper](../references.qmd#recovery-trial-82x-cost-reduction))
+- [Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500) ([{{< var dfda_cost_effectiveness_multiplier >}}× cheaper](../references.qmd#recovery-trial-82x-cost-reduction))
 - 220M participants per year (44x acceleration)
 - Still only using 18% of available willing participants
 
