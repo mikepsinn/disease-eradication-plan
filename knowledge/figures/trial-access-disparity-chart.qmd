@@ -11,7 +11,10 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata, PATTERN_DIAGONAL, get_figure_output_path)
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, PATTERN_DIAGONAL,
+    get_figure_output_path, get_serif_font)
+
+CLASSY_FONT = get_serif_font()
 
 setup_chart_style()
 fig, ax = plt.subplots(figsize=(18, 10))
@@ -50,7 +53,7 @@ ax.annotate(
     ha='center', va='bottom',
     fontsize=24, weight='bold',
     color=COLOR_BLACK,
-    fontname='Courier New',
+    fontname=CLASSY_FONT,
     linespacing=1.3
 )
 
@@ -64,7 +67,7 @@ ax.annotate(
     ha='center', va='bottom',
     fontsize=26, weight='bold',
     color=COLOR_BLACK,
-    fontname='Courier New',
+    fontname=CLASSY_FONT,
     linespacing=1.3
 )
 
@@ -78,7 +81,7 @@ ax.annotate(
     ha='center', va='top',
     fontsize=28, weight='bold',
     color=COLOR_WHITE,
-    fontname='Courier New',
+    fontname=CLASSY_FONT,
     linespacing=1.3
 )
 
@@ -90,7 +93,7 @@ ax.set_title(
     weight='bold',
     pad=30,
     color=COLOR_BLACK,
-    fontname='Courier New',
+    fontname=CLASSY_FONT,
     linespacing=1.3
 )
 

@@ -63,21 +63,27 @@ ep = {
     'p95': np.percentile(expected_samples, 95),
 }
 
-# Create figure with two subplots
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+# Create figure with two subplots - add extra top space for main title
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+fig.subplots_adjust(top=0.88, bottom=0.12)  # More space for title, room for watermark
 
 # --- Left: Conditional ROI Distribution ---
 ax1.hist(conditional_samples, bins=50, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5)
 ax1.axvline(cp['p50'], color=COLOR_BLACK, linestyle='--', linewidth=2, label=f"Median: {cp['p50']:.1f}:1")
 ax1.axvline(cp['p5'], color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f"5th: {cp['p5']:.1f}:1")
 ax1.axvline(cp['p95'], color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f"95th: {cp['p95']:.1f}:1")
-ax1.set_title('Conditional ROI\n(If Implementation Succeeds)', fontsize=24, weight='bold', pad=20)
+ax1.set_title('Conditional ROI\n(If Implementation Succeeds)', fontsize=22, weight='bold', pad=15)
 ax1.set_xlabel('ROI (ratio)', fontsize=18)
 ax1.set_ylabel('Frequency', fontsize=18)
-ax1.legend(fontsize=14, loc='upper right')
-ax1.text(0.02, 0.98, f"95% CI: [{cp['p5']:.1f}:1, {cp['p95']:.1f}:1]", 
-         transform=ax1.transAxes, fontsize=16, weight='bold',
-         verticalalignment='top', bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK))
+# Move legend to upper left to avoid overlap
+ax1.legend(fontsize=13, loc='upper left', framealpha=1.0, 
+           bbox_to_anchor=(0.02, 0.98), frameon=True, 
+           edgecolor=COLOR_BLACK, facecolor=COLOR_WHITE)
+# Move CI box to bottom left
+ax1.text(0.02, 0.05, f"95% CI: [{cp['p5']:.1f}:1, {cp['p95']:.1f}:1]", 
+         transform=ax1.transAxes, fontsize=15, weight='bold',
+         verticalalignment='bottom', 
+         bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 clean_spines(ax1)
 
 # --- Right: Expected ROI Distribution (with political risk) ---
@@ -85,18 +91,23 @@ ax2.hist(expected_samples, bins=50, color=COLOR_BLACK, edgecolor=COLOR_BLACK, li
 ax2.axvline(ep['p50'], color=COLOR_WHITE, linestyle='--', linewidth=2, label=f"Median: {ep['p50']:.1f}:1")
 ax2.axvline(ep['p5'], color=COLOR_WHITE, linestyle=':', linewidth=1.5, alpha=0.9, label=f"5th: {ep['p5']:.1f}:1")
 ax2.axvline(ep['p95'], color=COLOR_WHITE, linestyle=':', linewidth=1.5, alpha=0.9, label=f"95th: {ep['p95']:.1f}:1")
-ax2.set_title('Expected ROI\n(Accounting for Political Risk)', fontsize=24, weight='bold', pad=20)
+ax2.set_title('Expected ROI\n(Accounting for Political Risk)', fontsize=22, weight='bold', pad=15)
 ax2.set_xlabel('ROI (ratio)', fontsize=18)
 ax2.set_ylabel('Frequency', fontsize=18)
-ax2.legend(fontsize=14, loc='upper right')
-ax2.text(0.02, 0.98, f"95% CI: [{ep['p5']:.1f}:1, {ep['p95']:.1f}:1]", 
-         transform=ax2.transAxes, fontsize=16, weight='bold', color=COLOR_WHITE,
-         verticalalignment='top', bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_BLACK, edgecolor=COLOR_WHITE))
+# Move legend to upper left to avoid overlap
+ax2.legend(fontsize=13, loc='upper left', framealpha=1.0,
+           bbox_to_anchor=(0.02, 0.98), frameon=True,
+           edgecolor=COLOR_WHITE, facecolor=COLOR_BLACK)
+# Move CI box to bottom left with white text on black background
+ax2.text(0.02, 0.05, f"95% CI: [{ep['p5']:.1f}:1, {ep['p95']:.1f}:1]", 
+         transform=ax2.transAxes, fontsize=15, weight='bold', color=COLOR_WHITE,
+         verticalalignment='bottom',
+         bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=1.5))
 clean_spines(ax2)
 
-# Add overall title
+# Add overall title - moved down to avoid overlap
 fig.suptitle('Monte Carlo Simulation: ROI Uncertainty Quantification', 
-             fontsize=28, weight='bold', y=0.98)
+             fontsize=26, weight='bold', y=0.95)
 
 # Add watermark
 add_watermark(fig)

@@ -11,7 +11,10 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path)
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_serif_font)
+
+CLASSY_FONT = get_serif_font()
 
 setup_chart_style()
 fig, ax = plt.subplots(figsize=(8, 6))
@@ -60,7 +63,7 @@ for i, (bar, label) in enumerate(zip(bars, cost_labels)):
         ha='center', va='bottom',
         fontsize=36, weight='bold',
         color=COLOR_BLACK,
-        fontname='Courier New'
+        fontname=CLASSY_FONT
     )
 
 # --- Adjust plot limits for visual balance ---

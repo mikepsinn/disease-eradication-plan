@@ -15,9 +15,11 @@ Usage:
     bars[1].set_hatch(PATTERN_DIAGONAL)  # Apply pattern to differentiate
 """
 
-import matplotlib.pyplot as plt
-from matplotlib import rcParams
+from functools import lru_cache
 from pathlib import Path
+
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rcParams
 
 # Official Color Palette (Black & White Only)
 COLOR_BLACK = '#000000'      # Pure black - bars, text, lines
@@ -47,6 +49,70 @@ PALETTE_PATTERNS = [
 ]
 
 
+SERIF_FONT_PREFERENCES = [
+    'EB Garamond',
+    'Crimson Text',
+    'Baskerville',
+    'Garamond',
+    'Georgia',
+    'Times New Roman',
+    'serif',
+]
+
+MONOSPACE_FONT_PREFERENCES = [
+    'SF Mono',
+    'Monaco',
+    'Cascadia Code',
+    'Courier New',
+    'Courier',
+    'Liberation Mono',
+    'DejaVu Sans Mono',
+    'monospace',
+]
+
+
+def _find_first_available_font(preferences):
+    """
+    Return the first installed font from the provided preference list.
+
+    Using fallback detection prevents matplotlib from emitting noisy warnings
+    (e.g., "findfont: Font family 'Courier New' not found") when a font is
+    missing on the current render environment.
+    """
+    for font_name in preferences:
+        try:
+            font_manager.findfont(font_name, fallback_to_default=False)
+            return font_name
+        except ValueError:
+            continue
+
+    # Use matplotlib's default monospace font name as a final fallback
+    default_font = font_manager.FontProperties(family=['monospace']).get_name()
+    return default_font or 'monospace'
+
+
+@lru_cache(maxsize=None)
+def get_serif_font():
+    """
+    Provide the preferred serif font family available on the system.
+
+    Returns:
+        str: Name of an installed serif font.
+    """
+    return _find_first_available_font(tuple(SERIF_FONT_PREFERENCES))
+
+
+@lru_cache(maxsize=None)
+def get_monospace_font():
+    """
+    Provide the preferred monospace font family available on the system.
+
+    Returns:
+        str: Name of an installed monospace font.
+    """
+    return _find_first_available_font(tuple(MONOSPACE_FONT_PREFERENCES))
+
+
 def setup_chart_style(style='light', dpi=150):
     """
     Apply consistent styling to all matplotlib charts.
@@ -67,9 +133,13 @@ def setup_chart_style(style='light', dpi=150):
         text_color = COLOR_WHITE
         grid_color = '#4a4a4a'  # Charcoal for dark mode
 
-    # Typography - clean professional sans-serif style
-    rcParams['font.family'] = 'sans-serif'
+    # Typography - align with book styling (serif-first aesthetic)
+    serif_font = get_serif_font()
+    rcParams['font.family'] = [serif_font]
+    rcParams['font.serif'] = SERIF_FONT_PREFERENCES
     rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans', 'sans-serif']
+    rcParams['font.monospace'] = MONOSPACE_FONT_PREFERENCES
+    rcParams['font.monospace'] = MONOSPACE_FONT_PREFERENCES
     rcParams['font.size'] = 12
     rcParams['font.weight'] = 'normal'
     rcParams['text.usetex'] = False  # Prevent LaTeX math parsing

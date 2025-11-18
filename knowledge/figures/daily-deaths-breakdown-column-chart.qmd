@@ -13,10 +13,14 @@ from pathlib import Path
 
 # Import chart styles
 
-from dih_models.plotting.chart_style import setup_chart_style, add_watermark, clean_spines, add_png_metadata, get_figure_output_path
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    add_png_metadata, get_figure_output_path, get_serif_font)
 from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE
 
 # Apply chart styles
+
+CLASSY_FONT = get_serif_font()
 
 setup_chart_style()
 
@@ -76,7 +80,7 @@ for i, bar in enumerate(bars):
         fontsize=24, 
         fontweight='bold',
         color=text_color,
-        fontfamily='Courier New'
+        fontfamily=CLASSY_FONT
     )
 
 # Add watermark

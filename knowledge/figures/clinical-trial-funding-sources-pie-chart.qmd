@@ -12,7 +12,10 @@ from pathlib import Path
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata,
-    PATTERN_DIAGONAL, PATTERN_HORIZONTAL, get_figure_output_path)
+    PATTERN_DIAGONAL, PATTERN_HORIZONTAL, get_figure_output_path,
+    get_serif_font)
+
+CLASSY_FONT = get_serif_font()
 
 setup_chart_style()
 fig, ax = plt.subplots(figsize=(8, 8))
@@ -70,12 +73,12 @@ for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
     if i == 0:
         ax.text(x, y, label, ha='center', va='center',
                 fontsize=20, weight='bold', color=COLOR_WHITE,
-                fontname='Courier New', linespacing=1.4)
+                fontname=CLASSY_FONT, linespacing=1.4)
     # For patterned slices, use white box for readability
     else:
         ax.text(x, y, label, ha='center', va='center',
                 fontsize=18, weight='bold', color=COLOR_BLACK,
-                fontname='Courier New', linespacing=1.4,
+                fontname=CLASSY_FONT, linespacing=1.4,
                 bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
                          edgecolor=COLOR_BLACK, linewidth=1))
 

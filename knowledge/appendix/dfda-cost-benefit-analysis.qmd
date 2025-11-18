@@ -404,20 +404,20 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 - **Clinical Trial Phase Breakdown**:
   - Phase I: \$2 - \$5 million/trial (smaller scale).
   - Phase II: \$10 - \$50 million/trial (depending on disease area).
-  - Phase III: \$100 - \{{< var dct_platform_funding_medium >}}/trial (large patient populations).
+  - Phase III: \$100 - {{< var dct_platform_funding_medium >}}/trial (large patient populations).
 
 - **Per-Patient Phase III Costs**: Often [\$40,000 - \$120,000+ per patient](../references.qmd#clinical-trial-cost-per-patient) (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Oxford RECOVERY
 
-- **Oxford RECOVERY**: Achieved **~\{{< var recovery_trial_cost_per_patient >}} per patient**. Key strategies included:
+- **Oxford RECOVERY**: Achieved **~{{< var recovery_trial_cost_per_patient >}} per patient**. Key strategies included:
   1. Embedding trial protocols within routine hospital care.
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
   3. Focused, pragmatic trial designs.
 
 - **Extrapolation to New System**:
-  - A well-integrated global platform could approach \{{< var recovery_trial_cost_per_patient >}} - \{{< var dfda_target_cost_per_patient_usd >}} per patient in many cases, especially for pragmatic or observational designs.
-  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of ~\{{< var recovery_trial_cost_per_patient >}}-\$1,000 against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
+  - A well-integrated global platform could approach {{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}} per patient in many cases, especially for pragmatic or observational designs.
+  - Up to **~80-100x+ cost reduction** cited for RECOVERY vs. typical Phase III trials is an aspirational benchmark, derived by comparing per-patient costs of ~{{< var recovery_trial_cost_per_patient >}}-\$1,000 against traditional costs of [~\$40,000 - \$120,000+](#market-size-and-impact).
 
   The cost reduction factor can be formalized as:
 
@@ -439,7 +439,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
 1. **By Reducing Per-Patient Costs**
 
-   - If a trial with 5,000 participants costs \{{< var recovery_trial_cost_per_patient >}} - \{{< var dfda_target_cost_per_patient_usd >}}/patient, total cost is \$2.5 - \$5 million, versus \$200 - \$600 million under traditional models.
+   - If a trial with 5,000 participants costs {{< var recovery_trial_cost_per_patient >}} - {{< var dfda_target_cost_per_patient_usd >}}/patient, total cost is \$2.5 - \$5 million, versus \$200 - \$600 million under traditional models.
    - This magnitude of savings can drastically reduce the total cost of clinical development.
 
    For a trial with $x$ participants, the total cost savings is:
@@ -450,12 +450,12 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
    Where:
    - $c_t$ is the traditional cost per patient (\$40,000 - \$120,000)
-   - $c_d$ is the decentralized cost per patient (\{{< var recovery_trial_cost_per_patient >}} - \$1,000)
+   - $c_d$ is the decentralized cost per patient ({{< var recovery_trial_cost_per_patient >}} - \$1,000)
 
    For a trial with $x = 5,000$ participants, the savings range from:
 
    - Minimum savings: $(\$40,000 - \$1,000) \times 5,000 = \$195$ million
-   - Maximum savings: $(\$120,000 - \{{< var recovery_trial_cost_per_patient >}}) \times 5,000 = \$597.5$ million
+  - Maximum savings: $(\$120,000 - \$500) \times 5,000 = \$597.5$ million (using the RECOVERY per-patient baseline of {{< var recovery_trial_cost_per_patient >}})
 
    This yields a savings range of approximately **\$195 - \$598 million per trial**.
 
@@ -595,7 +595,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high becau
 
 2. **Model Inputs**
 
-   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - \{{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
+   - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - {{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
    - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month).
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
      _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular figures from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section for the purpose of this ROI calculation.)_
@@ -704,7 +704,7 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
 #### 2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives)
 
 - **Upfront Costs:**
-  - Core Platform Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): ~\{{< var dfda_upfront_build_max >}}
+  - Core Platform Build (High end from [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months)): ~{{< var dfda_upfront_build_max >}}
   - Broader Initiatives (Worst Case Upfront from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs)): [~\$2.231 Billion](#scenario-based-rom-estimates-for-broader-initiative-costs)
   - _Total Highest Upfront Cost:_ {{< var global_cost_per_conflict_death_millions >}} + $2.231B = **~\$2.277 Billion**
   - _Amortized over 5 years:_ [\$2.277B](#full-range-roi-sensitivity-analysis-based-on-section-3-scenarios) / 5 = **~\$455.4 Million/year**
@@ -838,7 +838,7 @@ While the figures are presented as daily point estimates for clarity, they repre
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of **~\$37.5 - \{{< var dfda_upfront_build_max >}}**, plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to \{{< var dct_platform_funding_medium >}}** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation), combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
+Transforming the FDA's centralized regulatory approach into a global, decentralized autonomous model holds the promise of dramatically reducing clinical trial costs (potentially by a factor of up to 80× in some scenarios), accelerating the pace of approvals, and broadening the scope of what treatments get tested. While the full global initiative could involve larger-scale investment over time, the foundational upfront investment for the core technology platform is estimated to be on the order of **~\$37.5 - {{< var dfda_upfront_build_max >}}**, plus ongoing operational costs. Analogous top-down estimates based on market comparables for leading decentralized trial platforms suggest a total initiative investment in the range of **\$50 million to {{< var dct_platform_funding_medium >}}** to achieve global scale and adoption. However, given that the pharmaceutical industry collectively spends around [$100.0B per year on R and D](#market-size-and-impact) and that a large share of those expenses go to clinical trials, even a [50.0% reduction in trial costs](#gross-r-and-d-savings-from-dfda-implementation), combined with faster product launches, would yield enormous net savings and an ROI estimated at approximately [**463:1**](#final-roi-and-net-benefit) (with a full range of **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)**) once adopted at scale.
 
 Beyond direct savings, the effects on medical progress are massive. Test more drugs, faster. Update treatment rankings in real time. Evaluate cheap, off-patent treatments nobody bothers testing today. With strong privacy protections and international cooperation, this platform creates personalized healthcare that actually works, globally.
 
@@ -1554,7 +1554,7 @@ To provide context for the dFDA's estimated costs, it is useful to compare them 
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------- |
 | **dFDA Infrastructure (Lean Ecosystem)**   | **~{{< var dfda_upfront_build >}} / year**                                                                           | **1x (Baseline)**                        | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                                | [21st Century Cures Act](../references.qmd#21st-century-cures-act-2016)          |
-| **NIH "All of Us" Research Program** | \*\*~\{{< var recovery_trial_cost_per_patient >}} Million / year (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
+| **NIH "All of Us" Research Program** | \*\*~{{< var recovery_trial_cost_per_patient >}} Million / year (FY23 Approx. Budget) | **~12.5x**                               | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
 | **HealthCare.gov (Initial Build)**   | **[~\$1.7 - \$2.1 Billion](../references.qmd#gao-healthcare-gov-costs)** (Total Upfront Cost)        | **~42x - 52x** (of one year's dFDA cost) | [GAO Reports / Public Reporting](../references.qmd#gao-healthcare-gov-costs) |
 | **National Cancer Institute (NCI)**  | **[~\$7.2 Billion / year](../references.qmd#nih-institute-budgets-fy24)** (FY25 Budget)                 | **~180x**                                | [NCI Budget Data](../references.qmd#nih-institute-budgets-fy24)                 |
 
