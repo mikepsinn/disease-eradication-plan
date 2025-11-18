@@ -864,6 +864,165 @@ See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for complet
 
 See [Governance Framework](../appendix/governance.qmd) and [Legal Compliance Framework](../appendix/legal-compliance-framework.qmd) for complete governance structures.
 
+---
+
+# Limitations and Uncertainties
+
+This analysis acknowledges several important limitations and sources of uncertainty inherent in modeling a transformative policy intervention of this scale.
+
+## Model Assumptions and Constraints
+
+### Adoption Timeline Uncertainty
+
+The base case assumes gradual adoption over {{< var dfda_npv_adoption_ramp_years >}} years to full implementation. Actual adoption may be faster or slower depending on:
+
+- **Regulatory harmonization:** International coordination requirements may extend implementation timelines
+- **Technical infrastructure readiness:** EHR interoperability, data standardization, and privacy compliance vary significantly across jurisdictions
+- **Stakeholder acceptance:** Pharmaceutical industry, regulatory bodies, and healthcare providers may resist or accelerate adoption based on perceived incentives
+
+**Sensitivity analysis addresses this:** Worst-case scenario models extended timelines with ROI remaining positive (66:1) even under pessimistic assumptions.
+
+### Cost Reduction Assumptions
+
+The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives from the Oxford RECOVERY trial's demonstrated {{< var trial_cost_reduction_factor >}}× efficiency gain. However:
+
+- **Trial complexity variation:** The RECOVERY trial focused on repurposed drugs for acute conditions; novel therapeutics for chronic diseases may not achieve equivalent cost reductions
+- **Regulatory requirements:** Some trial phases (particularly safety studies) may retain higher costs regardless of decentralization
+- **Geographic variation:** Cost reductions may be greater in high-cost jurisdictions (U.S., Europe) and lower in regions with already-efficient trial systems
+
+**Conservative approach:** Analysis uses {{< var trial_cost_reduction_pct >}} reduction (midpoint) rather than the demonstrated 95%+ efficiency gains, providing substantial margin of safety.
+
+### QALY Calculation Uncertainties
+
+The {{< var global_dfda_qalys_gained_annual >}} annual QALY estimate aggregates three benefit streams with varying levels of empirical support:
+
+**Stream A (Accelerated Drug Access):** High confidence—based on well-documented costs of delayed access (84,000 life-years lost per year delay in cancer therapies alone). However:
+- Assumes pipeline drugs would eventually reach approval under current system
+- Does not account for reduced efficacy if treatments reach patients in later disease stages
+
+**Stream B (Prevention via Real-World Evidence):** Medium confidence—preventative care benefits are well-established, but scale of improvement from comprehensive data remains uncertain:
+- Adherence improvements may be smaller than projected
+- Selection bias in opt-in populations could limit generalizability
+
+**Stream C (Rare Disease Treatments):** Lower confidence—economic viability of rare disease research is theoretically sound but empirically unproven at scale:
+- Assumes cost reductions make trials economically viable
+- Actual success rates for rare disease therapies remain uncertain
+
+**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var qalys_total_conservative >}} annually yields 66:1 ROI).
+
+## Data Limitations
+
+### Military Spending Data
+
+Global military expenditure data (${{< var global_military_spending_annual_2024 >}}B, SIPRI 2024) is well-documented but:
+
+- **Off-budget spending:** Some military expenditures may be classified or categorized elsewhere
+- **Exchange rate fluctuations:** Multi-year projections require currency assumptions
+- **Conflict zones:** Military spending in active conflict regions may be less fungible for redirection
+
+### Clinical Trial Market Sizing
+
+The ${{< var global_clinical_trials_spending_annual >}} global clinical trials market estimate derives from industry reports, which:
+
+- **Industry variation:** Methodologies vary across market research firms
+- **Private vs. public trials:** Some trial spending may be unreported or proprietary
+- **Non-pharmaceutical trials:** Medical device and digital health trials may have different cost structures
+
+### QALY Valuation Thresholds
+
+Standard willingness-to-pay thresholds (${{< var qalys_from_prevention_conservative >}}-${{< var standard_economic_qaly_value_usd >}} per QALY) vary by jurisdiction:
+
+- **Geographic variation:** WHO recommends 1-3× GDP per capita; high-income countries use higher thresholds
+- **Ethical considerations:** Monetary QALY valuations raise equity concerns
+- **Discount rates:** Future health benefits discounted at {{< var npv_discount_rate_standard >}} may undervalue long-term gains
+
+## Generalizability Constraints
+
+### Political Feasibility
+
+This analysis models economic returns conditional on treaty ratification. Political feasibility depends on:
+
+- **Geopolitical stability:** International cooperation requirements may face challenges during periods of global tension
+- **Domestic politics:** Military budget reductions face constituency resistance in defense-dependent regions
+- **Lobbying influence:** Defense industry opposition may impede adoption
+
+**Risk assessment:** The 1% reduction is intentionally modest to minimize political resistance. Historical precedents (military-to-civilian conversions post-Cold War) demonstrate feasibility.
+
+### Institutional Capacity
+
+Implementation requires substantial institutional development:
+
+- **Regulatory expertise:** dFDA requires experienced personnel (FDA, EMA, other regulators)
+- **Technical infrastructure:** Data systems, AI/ML capabilities, cybersecurity at global scale
+- **Legal frameworks:** International treaties, data privacy compliance, intellectual property harmonization
+
+**Mitigation:** Phased implementation allows capacity building concurrent with scale-up.
+
+### Healthcare System Integration
+
+Benefits assume integration with existing healthcare infrastructure:
+
+- **EHR interoperability:** U.S. and other jurisdictions still face significant interoperability challenges
+- **Wearable adoption:** Real-world data collection requires widespread wearable/digital health adoption
+- **Provider participation:** Clinician buy-in necessary for trial recruitment and data quality
+
+## Uncertainty Quantification
+
+### Primary Risk Factors
+
+The following table summarizes key risk factors and their mitigation strategies:
+
+| Risk Factor | Level | Primary Uncertainty | Mitigation Strategy |
+|:---|:---:|:---|:---|
+| **Political Risk** | VERY HIGH | Treaty ratification dependent on international coordination | Modest 1% reduction; precedent from military-industrial lobbying ROI (1,813:1) |
+| **Execution Risk** | HIGH | Complex global legal/technical coordination required | Phased implementation; leverage existing regulatory expertise |
+| **Regulatory Risk** | MEDIUM-HIGH | Harmonization across jurisdictions varies | Pilot programs in willing jurisdictions first |
+| **Market Risk** | VERY LOW | ${{< var global_military_spending_annual_2024 >}}T military spending already allocated | Redirection rather than new appropriation |
+| **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms (Medable $521M raised, $2.1B valuation) |
+
+### Scenario Analysis Robustness
+
+Comprehensive sensitivity analysis across multiple scenarios demonstrates:
+
+- **Worst-case (66:1 ROI):** Benefits half as good, costs twice as high—intervention remains highly cost-effective
+- **Conservative (463:1 ROI):** R&D savings only, excludes peace dividend—intervention is dominant
+- **Complete (1,239:1 ROI):** All quantifiable benefits—intervention transforms global health economics
+
+**Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs.
+
+## External Validity Considerations
+
+### Transferability Across Contexts
+
+This analysis models global implementation. Results may vary by:
+
+- **Income level:** High-income countries may see greater cost reductions (trials more expensive); low-income countries may see greater health gains (larger disease burden)
+- **Disease profiles:** Communicable disease contexts (prevalent in low-income settings) vs. chronic disease contexts (prevalent in high-income settings) may yield different QALY gains
+- **Regulatory maturity:** Countries with established regulatory frameworks may implement faster
+
+### Temporal Validity
+
+Projections use 2024 baseline data. Secular trends may affect outcomes:
+
+- **Medical technology advancement:** AI/ML capabilities improving rapidly; may enhance or diminish relative dFDA advantages
+- **Geopolitical shifts:** Global military spending trends dependent on international relations
+- **Healthcare costs:** Rising healthcare expenditures may increase baseline benefits; cost controls may decrease them
+
+## Limitations Summary
+
+Despite these limitations, several factors support the analysis's robustness:
+
+1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var roi_dfda_savings_only >}}:1)
+2. **Empirical grounding:** Cost reductions based on demonstrated RECOVERY trial results, not theoretical models
+3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
+4. **Dominant intervention status:** Negative ICER (-$59,476/QALY) means intervention saves money even if health benefits are substantially overstated
+
+**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [_variables.yml](../_variables.yml) and [dih_models/parameters.py](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/dih_models/parameters.py).
+
+Future research priorities include prospective data collection during pilot implementations, real-world validation of cost reduction estimates, and longitudinal assessment of QALY gains across diverse populations and disease contexts.
+
+---
+
 # Conclusion
 
 This economic analysis demonstrates that redirecting 1% of global military spending to medical research through the Decentralized Institutes of Health and Decentralized FDA system generates return on investment ranging from 463:1 (conservative estimate) to {{< var roi_all_direct_benefits >}}:1 (complete estimate), depending on analytical scope.
