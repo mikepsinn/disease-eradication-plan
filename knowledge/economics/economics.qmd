@@ -232,61 +232,7 @@ No global treaty.
 All are valuable.
 None offer **{{< var research_acceleration_multiplier >}}× leverage**.
 
-
-## Executive Summary
-
-Here's how you get {{< var roi_dfda_savings_only >}} to {{< var dfda_roi_simple >}} returns on redirecting {{< var treaty_reduction_pct >}} of murder money ({{< var global_annual_human_cost_state_violence >}}/year) to not-murder money.
-
-The beautiful part: it costs zero new dollars. You're just moving money from the "making corpses" column to the "preventing corpses" column in the budget spreadsheet.
-
-You get paid twice for the same {{< var treaty_reduction_pct >}} shift:
-
-1. **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}}/year appears when you build 1% fewer bombs (turns out bombs are expensive and breaking things costs money to fix)
-2. **Research efficiency**: {{< var dfda_gross_savings_annual >}}+/year saved by not drowning scientists in paperwork (Oxford proved trials cost [82x less](../appendix/recovery-trial.qmd) when you stop requiring 17 years of documentation)
-
-### The Numbers
-
-- **Conservative returns**: {{< var roi_dfda_savings_only >}} (counting only R&D savings, ignoring everything else)
-- **Realistic returns**: {{< var roi_all_direct_benefits >}}:1 (counting all eight measurable benefits)
-- **Per life saved**: Society MAKES [$6.56M](../appendix/1-percent-treaty-cost-effectiveness.qmd) (vs. best charities SPENDING {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}})
-- **Lives saved yearly**: {{< var treaty_total_lives_saved_annual >}} (lowball estimate)
-
-## How the Math Works
-
-### The Approach
-
-Standard economic analysis, nothing fancy:
-
-- Discount future money at {{< var dfda_trial_abandonment_rate >}} (economists insist on this)
-- Count quality-adjusted life years (economist-speak for "being alive and not miserable")
-- Compare cost per outcome to other interventions
-- Test what happens if we're wrong about everything (see [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd))
-
-The calculations are conservative and validated against the [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), which proved {{< var trial_cost_reduction_factor >}} cost reduction by not requiring 40,000 pages of paperwork per patient.
-
-### Two Ways to Count
-
-**{{< var roi_dfda_savings_only >}} = Pessimistic (R&D Savings Only)**
-
-Count only the {{< var current_drug_approvals_per_year >}}/year saved from {{< var trial_cost_reduction_factor >}} cheaper trials. Pretend everything else doesn't exist. This is the floor. This is what you tell skeptical accountants.
-
-**{{< var roi_all_direct_benefits >}}:1 = Realistic (All Eight Benefits)**
-
-Count all {{< var total_complete_benefits_annual >}}/year in measurable benefits: peace dividend, R&D savings, earlier access, research acceleration, rare disease treatments, drug price reductions, prevention, and mental health. This is what actually happens.
-
-### Which Number to Use
-
-**Use {{< var roi_dfda_savings_only >}}** when talking to:
-- Risk-averse investors who trust nothing
-- Regulators paid to say "no"
-- People who think optimism is a character flaw
-
-**Use {{< var roi_all_direct_benefits >}}:1** when talking to:
-- Anyone who can count to eight
-- Foundation grant reviewers
-- People interested in reality
-
-Both use the same math. One just counts more stuff.
+---
 
 ## The Conservative Case: {{< var roi_dfda_savings_only >}} ROI (dFDA Only)
 
@@ -390,31 +336,6 @@ The negative ICER indicates **cost savings while improving health**, a dominant 
 - **{{< var treaty_reduction_pct >}} Treaty/dFDA System**: [$6,560,000 net societal benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd) per life saved (dominant intervention)
 
 The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
-
-### This ROI in Historical Context
-
-The Decentralized FDA alone achieves **{{< var roi_dfda_savings_only >}} return on investment**.
-
-This exceptional ROI comes from:
-
-- **{{< var current_drug_approvals_per_year >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}} reduction in clinical trial costs
-- **Faster access to new treatments**: [2 years instead of 17 years](../appendix/dfda-cost-benefit-analysis.qmd) to market
-- **Better prevention through real-world data**: Continuous learning from millions of patients
-- **Enabling new therapies**: Making [rare disease trials](../references.qmd#rare-disease-patients-300m-globally) economically viable
-
-{{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
-
-Comparison to historical public health achievements (ROI ratios):
-
-| Intervention | ROI | Source |
-|:---|---:|:---|
-| **1% Treaty/dFDA** | **{{< var roi_dfda_savings_only >}}:1** | This analysis |
-| [Smallpox eradication](../references.qmd#smallpox-eradication-roi) | 159-400:1 | WHO intensive campaign (1967-1980) |
-| [Clean water & sanitation](../references.qmd#clean-water-sanitation-roi) | 4-21:1 | WHO/WaterAid (LMICs) |
-| [Childhood vaccinations](../references.qmd#childhood-vaccination-roi) | 10-16:1 | CDC immunization economic analyses |
-| Average pharma drug | 2:1 | Industry standard (Tufts CSDD) |
-
-The {{< var treaty_reduction_pct >}} Treaty/dFDA system **rivals or exceeds the ROI of smallpox eradication**, previously considered the gold standard of public health interventions. For detailed comparisons across all major health interventions, see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd).
 
 ### Self-Funding Mechanism Through Military Budget Redirection
 
@@ -637,41 +558,7 @@ This makes the {{< var treaty_reduction_pct >}} Treaty/dFDA system **[11X larger
 
 Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
 
-## The Opportunity Cost Clock
-
-Every second we don't implement this system:
-
-- **$38,051** in foregone economic value
-
-$$
-\frac{\$1.2\text{T}}{365 \text{ days} \times 24 \text{ hours} \times 3600 \text{ seconds}} = \$38{,}051/\text{second}
-$$
-
-- **1.736 preventable deaths** occur
-
-$$
-\frac{54.75\text{M deaths/year}}{365 \times 24 \times 3600 \text{ seconds}} = 1.736 \text{ deaths/second}
-$$
-
-**Daily Opportunity Cost**:
-
-- **$3.3B** in foregone economic value
-
-$$
-\$1.2\text{T} \div 365 \text{ days} = \$3.3\text{B/day}
-$$
-
-- **{{< var global_daily_deaths_curable_diseases >}}** preventable deaths
-- **{{< var global_daily_deaths_curable_diseases >}}** individuals experiencing curable disease burden
-- **1.736 deaths per second** from addressable conditions
-
-**Annual Opportunity Cost**:
-
-- **{{< var total_complete_benefits_annual >}}** in foregone economic value (complete case benefit)
-- **54.75 million** preventable deaths
-- **{{< var global_disease_economic_burden_annual >}}** in disease burden continues
-
-These figures represent the mathematical consequence of maintaining current resource allocation patterns versus implementing the {{< var treaty_reduction_pct >}} Treaty system.
+---
 
 ## Who Benefits and How
 
