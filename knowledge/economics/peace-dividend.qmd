@@ -36,9 +36,9 @@ Governments spend {{< var global_military_spending_post_treaty_annual_2024 >}} y
 
 Redirect 1%:
 
-{{< var global_military_spending_post_treaty_annual_2024 >}} \times 0.01 = \$27.2B$$
+{{< var global_military_spending_post_treaty_annual_2024 >}} × 0.01 = {{< var treaty_annual_funding >}}
 
-This \{{< var treaty_annual_funding >}} funds the dFDA, VICTORY bonds, and the whole system.
+This {{< var treaty_annual_funding >}} funds the dFDA, VICTORY bonds, and the whole system.
 
 ### 2. The Bonus Savings: {{< var peace_dividend_annual_societal_benefit >}}/Year
 
@@ -46,7 +46,7 @@ That's what you capture. Here's what you save.
 
 Wars cost [\$11.4T/year](../problem/cost-of-war.qmd). Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
 
-$$11.4T \times 0.01 = \$113.6B$$
+\$11.4T × 0.01 = {{< var peace_dividend_annual_societal_benefit >}}
 
 Money no longer spent on:
 
@@ -57,7 +57,7 @@ Money no longer spent on:
 
 Here's the breakdown:
 
-### Where the \{{< var peace_dividend_annual_societal_benefit >}} Comes From
+### Where the {{< var peace_dividend_annual_societal_benefit >}} Comes From
 
 Based on [Cost of War analysis](../problem/cost-of-war.qmd):
 
@@ -81,6 +81,6 @@ You capture {{< var treaty_annual_funding >}} for medicine.
 
 You save {{< var peace_dividend_annual_societal_benefit >}} on not breaking stuff.
 
-That's $5.18 saved for every $1 redirected.
+That's \$5.18 saved for every \$1 redirected.
 
 Plus cancer gets cured as a bonus.

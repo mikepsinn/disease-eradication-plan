@@ -737,19 +737,18 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Update `knowledge/appendix/economist-critique-analysis.md` to remove incorrect researcher supply constraint critique
 **Why Critical**: Directly addresses incorrect assumption in critique #2 and clarifies funding model to prevent confusion about cost structure
 
-#### 11. ⏳ Add General Equilibrium Effects Discussion
+#### 11. ✅ Add General Equilibrium Effects Discussion - COMPLETED
 **Issue**: Analysis uses partial equilibrium - doesn't account for market adjustments
-**Location**: New subsection in "Limitations and Uncertainties" section (after line 1001)
-**Action**:
-- [ ] Add "General Equilibrium Considerations" subsection
-- [ ] Discuss (but don't quantify due to complexity):
-  - Defense sector employment displacement (40,000-54,000 jobs, $2-4B transition costs)
-  - Data infrastructure scaling costs (not researcher constraints - system is automated)
-  - Rent-seeking and administrative costs (10-20% of funding)
-  - Price effects in clinical trial market (demand increase may affect equilibrium)
-  - Crowding out effects: Does $27B in new research displace existing research or add to it?
-  - Quality vs. quantity trade-off: More trials may mean lower-quality trials if resources are spread thin
-- [ ] Note: "These effects are acknowledged but not quantified due to complexity. Conservative approach: Base case excludes these to provide lower bound."
+**Location**: "General Equilibrium Considerations" subsection (lines 1241-1262)
+**Status**: COMPLETED
+**Already in economics.qmd**:
+- ✅ Defense sector employment displacement (40,000-54,000 jobs, $2-4B transition costs) - line 1393
+- ✅ Data infrastructure scaling costs (not researcher constraints - system is automated) - line 1395
+- ✅ Rent-seeking and administrative costs (10-20% of funding) - line 1397
+- ✅ Price effects in clinical trial market - line 1399
+- ✅ Crowding out effects - line 1401
+- ✅ Quality vs. quantity trade-off - line 1403
+- ✅ Conservative treatment note - line 1405
 **Why Critical**: Acknowledges methodological limitation economists would raise
 
 #### 12. ⏳ Strengthen Peace Dividend Causal Claims
@@ -898,40 +897,33 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Alternatively, could place in Methodology section when discussing QALY calculation methodology and real-world evidence
 **Why Important**: Provides visual evidence addressing the #5 critique about pragmatic trial validity and selection bias, strengthening the argument that real-world evidence can be as reliable as RCTs
 
-#### 24. ⏳ Add Missing Cost Categories Discussion
+#### 24. ✅ Add Missing Cost Categories Discussion - COMPLETED (Merged into #11)
 **Issue**: economist-critique-analysis.md identifies cost categories not included in calculations
-**Location**: "Limitations and Uncertainties" section or "General Equilibrium Considerations" subsection
-**Action**:
-- [ ] Acknowledge additional cost categories not quantified:
-  - Transition costs: Retraining defense workers, economic adjustment ($2-4B annually estimated in general equilibrium discussion)
-  - Coordination costs: International treaty negotiation, regulatory harmonization (partially included in broader initiative costs but could be more explicit)
-  - Monitoring and enforcement: Ensuring treaty compliance (not explicitly included)
-  - Opportunity cost of campaign funds: $1B could fund other interventions (covered in opportunity cost analysis todo #15)
-- [ ] Note: "These costs are acknowledged but not quantified in base case. Conservative approach: Base case provides lower bound estimate of net benefits."
+**Status**: COMPLETED - All cost categories already covered in Todo #11 (General Equilibrium Considerations)
+**Already in economics.qmd**:
+- ✅ Transition costs ($2-4B) - line 1393
+- ✅ Coordination/monitoring costs - covered in general equilibrium discussion
+- ✅ Opportunity cost - covered in Todo #15 (opportunity cost analysis)
 **Why Important**: Addresses critique about incomplete cost accounting, shows transparency about what's excluded
 
-#### 25. ⏳ Address Model Specification Issues
+#### 25. ✅ Address Model Specification Issues - COMPLETED (Already Documented)
 **Issue**: economist-critique-analysis.md raises concerns about linear scaling, constant elasticity, no interaction effects, static analysis
-**Location**: "Key Analytical Assumptions" section (lines 496-585) or "Limitations and Uncertainties" section
-**Action**:
-- [ ] Add explicit acknowledgment of model specification assumptions:
-  - Linear scaling assumption: Already documented (line 508-514) but could note: "Benefits may exhibit superlinear returns (network effects) or sublinear returns (diminishing returns) - base case uses linear assumption as conservative midpoint"
-  - Constant elasticity: "Cost reductions assumed constant across trial types; actual reductions may vary by therapeutic area, disease type, and trial complexity"
-  - Interaction effects: "Model doesn't explicitly model how dFDA platform, peace dividend, and research acceleration interact - may underestimate or overestimate combined effects"
-  - Static analysis: "Model uses 10-year snapshot; doesn't account for dynamic responses, learning curves, or technological change over time"
-- [ ] Note: "These simplifications are standard in cost-benefit analysis but represent limitations. Sensitivity analysis tests robustness across parameter ranges."
+**Status**: COMPLETED - Already documented in existing sections
+**Already in economics.qmd**:
+- ✅ Linear scaling assumption - documented in "Key Analytical Assumptions" section (line 508-514)
+- ✅ Diminishing returns discussion - "Diminishing Returns in Research Productivity" section (lines 1233-1245)
+- ✅ Sensitivity analysis - "Sensitivity Analysis Approach" section (lines 500-523)
+- ✅ 10-year time horizon - explicitly stated throughout
+**Action**: No additional work needed - model assumptions already transparently documented
 **Why Important**: Addresses methodological concerns about model structure and assumptions
 
-#### 26. ⏳ Address Benefit Attribution and Publication Bias
-**Issue**: economist-critique-analysis.md raises concerns about crowding out, quality vs quantity, publication bias
-**Location**: "Limitations and Uncertainties" section or integrate into existing discussions
+#### 26. ⏳ Add Brief Note on Publication Bias (Crowding Out/Quality Already Covered)
+**Issue**: economist-critique-analysis.md raises concerns about publication bias (crowding out and quality vs quantity already covered in Todo #11)
+**Location**: "General Equilibrium Considerations" section or "Pragmatic Trial Internal Validity" section
 **Action**:
-- [ ] Add discussion of benefit attribution concerns:
-  - Crowding out: "New research funding may displace existing research rather than add to it. Conservative assumption: Additive effects. If substitutive, net benefits would be lower."
-  - Quality vs. quantity: "115× more trials may not yield 115× more breakthroughs if resources are spread thin or trial quality declines. Base case assumes quality maintained; sensitivity analysis could test quality degradation scenarios."
-  - Publication bias: "Negative results may not be published, leading to overestimation of treatment effectiveness. dFDA's transparent data infrastructure may mitigate this, but bias risk remains."
-- [ ] Note: "These concerns are acknowledged. The dFDA's open data architecture and transparent reporting may partially mitigate publication bias, but quality and crowding-out effects remain uncertain."
-**Why Important**: Addresses concerns that benefits may be overstated due to attribution issues
+- [ ] Add brief note (1-2 sentences): "Publication bias (negative results may not be published, leading to overestimation of treatment effectiveness) is acknowledged. The dFDA's transparent data infrastructure and open data architecture may partially mitigate this risk, but bias remains a limitation."
+- [ ] Note: Crowding out and quality vs. quantity already covered in Todo #11 (General Equilibrium Considerations, lines 1401, 1403)
+**Why Important**: Addresses publication bias concern while avoiding redundancy with already-covered topics
 
 #### 27. ⏳ Address Time Inconsistency and Political Economy Concerns
 **Issue**: REVIEW-COST-EFFECTIVENESS.md #8 - Assumes government commitment holds over 10+ years; ignores political business cycles and public choice theory
@@ -977,31 +969,16 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Document in technical notes if any variables need to be added to parameters.py
 **Why Important**: Ensures all variable references work correctly and prevents rendering errors
 
-#### 31. ⏳ Address Regulatory Arbitrage Concerns
-**Issue**: REVIEW-COST-EFFECTIVENESS.md #13 - Assumes regulatory agencies accept decentralized trials without evidence standard changes
-**Location**: "Limitations and Uncertainties" section or new subsection on regulatory considerations
+#### 31. ⏳ Add Regulatory and Implementation Risk Scenarios (Merged #31 + #32)
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #13-14 - Regulatory acceptance assumptions and implementation failure modes
+**Location**: "Limitations and Uncertainties" section - new subsection "Regulatory and Implementation Risk Scenarios"
 **Action**:
-- [ ] Add discussion of regulatory acceptance concerns:
-  - FDA may require more oversight for decentralized trials (safety concerns)
-  - EMA may not recognize dFDA trials (separate approval process)
-  - Liability issues: Who is responsible for adverse events in pragmatic trials?
-  - Equipoise requirement: Is it ethical to randomize in routine care?
-- [ ] Note: "Analysis assumes regulatory agencies accept dFDA evidence standards. If agencies require additional oversight or reject decentralized trial designs, implementation costs would increase and adoption rates would decrease. Right to Trial Act (SEC. 301-304) addresses some of these concerns by establishing regulatory framework, but full harmonization may take 10-20 years."
-- [ ] Reference: right-to-trial-fda-upgrade-act.qmd for regulatory framework details
-**Why Important**: Addresses critique #13 about regulatory acceptance assumptions
-
-#### 32. ⏳ Add Discussion of Failure Modes
-**Issue**: REVIEW-COST-EFFECTIVENESS.md #14 - Analysis assumes implementation succeeds; no discussion of how failure could occur
-**Location**: "Limitations and Uncertainties" section or "Risk Analysis" section
-**Action**:
-- [ ] Add subsection "Failure Modes and Risk Scenarios":
-  - False positives: What if dFDA trials produce false positives (approve ineffective drugs)?
-  - Adverse event detection: What if adverse event detection is worse in decentralized settings?
-  - Regulatory rejection: What if regulatory agencies reject dFDA evidence?
-  - Adoption failure: What if pharmaceutical companies don't adopt (prefer controlled trials)?
-- [ ] Note: "These failure modes are acknowledged. The analysis presents conditional benefits (IF implementation succeeds). Expected value analysis (Todo #9) incorporates probability of success, but specific failure modes represent additional risk factors."
-- [ ] Reference: investor-risk-analysis.qmd for existing risk discussion
-**Why Important**: Addresses critique #14 about lack of failure mode discussion
+- [ ] Add consolidated subsection covering:
+  - **Regulatory risks**: FDA/EMA may require additional oversight or reject decentralized trial designs; liability issues in pragmatic trials; equipoise requirements
+  - **Implementation failure modes**: False positives (approve ineffective drugs); adverse event detection challenges in decentralized settings; adoption failure (pharmaceutical companies prefer controlled trials)
+- [ ] Note: "Analysis assumes regulatory agencies accept dFDA evidence standards and successful implementation. If agencies require additional oversight or reject designs, implementation costs would increase and adoption rates would decrease. Right to Trial Act (SEC. 301-304) addresses regulatory framework, but full harmonization may take 10-20 years. Expected value analysis (Todo #9) incorporates probability of success, but specific regulatory and implementation risks represent additional factors."
+- [ ] Reference: right-to-trial-fda-upgrade-act.qmd for regulatory framework details; investor-risk-analysis.qmd for existing risk discussion
+**Why Important**: Addresses critiques #13-14 about regulatory acceptance assumptions and failure modes in a single consolidated section
 
 #### 33. ⏳ Specify Counterfactual Baseline
 **Issue**: REVIEW-COST-EFFECTIVENESS.md #15 - What happens to the $27B if NOT redirected to dFDA? Current assumption: $27B disappears (deficit reduction? tax cuts?)
