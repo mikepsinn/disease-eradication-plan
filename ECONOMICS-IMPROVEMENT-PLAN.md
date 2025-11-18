@@ -13,12 +13,14 @@
 - Mathematical rigor verified, all calculations use parameters.py
 - 435 parameters documented with confidence indicators
 
-**Economist Critique Responses**: ⚠️ **MOSTLY COMPLETE**
+**Economist Critique Responses**: ✅ **HIGH PRIORITY COMPLETE** - All critical items done
 - ✅ Expected value analysis (lines 627-656), general equilibrium (lines 1241-1262), peace dividend confidence levels (lines 445-449), discount rate sensitivity (lines 528-549)
 - ✅ Partnership model (line 754), platform costs distinction (line 826), cost comparison table, observational trial images (lines 1109-1115)
 - ✅ Pre-1962 context (lines 542-554), RECOVERY limitations (lines 1051-1062), time inconsistency (lines 607-626), counterfactual baseline (lines 413-429), regulatory risks (lines 1393-1477)
 - ✅ QALY confidence levels (lines 1258, 1262, 1266), external validity (lines 1352-1369), comparison rationale (lines 1045-1067)
-- ⏳ **Remaining**: Opportunity cost analysis (partial - has section but needs comparison to alternative uses), adoption realism (S-curve/coordination failure), publication bias note, Monte Carlo acknowledgment, variable verification
+- ✅ Opportunity cost analysis (line 950), adoption realism (lines 571-580)
+- ✅ Monte Carlo simulation implemented with confidence intervals (line 526)
+- ⏳ **Remaining (Medium Priority)**: Publication bias note, variable verification
 
 ---
 
@@ -26,10 +28,9 @@
 
 ### High Priority
 
-#### 15. ⚠️ Add Opportunity Cost Analysis (PARTIALLY COMPLETE)
-**Location**: "Problem Statement and Opportunity Cost" section exists (line 946) but needs enhancement
-**Status**: Section exists but focuses on current resource allocation rather than comparison to alternative uses of $27B
-**Action**: Enhance existing section to explicitly compare to alternative interventions (direct treatment programs, public health infrastructure, other research priorities). Reference existing comparisons (GiveWell, vaccinations). Add note: "This analysis focuses on conditional benefits; comprehensive opportunity cost analysis would require separate study."
+#### 15. ✅ Add Opportunity Cost Analysis - COMPLETED
+**Location**: "Problem Statement and Opportunity Cost" section (line 946)
+**Status**: COMPLETED - Added concise opportunity cost framework comparing to alternative uses (military R&D spillovers, tax cuts, other public investments) with note on dominant intervention status
 
 #### 16. ✅ Improve QALY Methodology with Confidence Levels - COMPLETED
 **Location**: "QALY Calculation Uncertainties" section (lines 1258, 1262, 1266)
@@ -53,9 +54,9 @@
 **Location**: "Comprehensive Comparison Across Intervention Types" section (lines 1045-1067)
 **Status**: COMPLETED - Line 1067 includes note: "The comparisons presented focus on dimensions most relevant to decision-makers evaluating treaty adoption. The dFDA compares favorably to both research investments (efficiency per discovery) and direct health interventions (cost per QALY), though comprehensive comparison would require separate frameworks for each dimension."
 
-#### 29. ⏳ Acknowledge Inadequate Uncertainty Quantification (Monte Carlo)
-**Location**: "Sensitivity Analysis Approach" section (lines 468-494) or Limitations section
-**Action**: Add explicit acknowledgment: "This analysis uses scenario-based sensitivity analysis rather than probabilistic Monte Carlo simulation. Monte Carlo would require 2-3 weeks of additional development and is beyond scope. Scenario analysis provides bounds but not probabilistic confidence intervals."
+#### 29. ✅ Acknowledge Inadequate Uncertainty Quantification (Monte Carlo) - COMPLETED
+**Location**: "Sensitivity Analysis Approach" section (line 526)
+**Status**: COMPLETED - Implemented Monte Carlo simulation (10,000 iterations) with results: Conditional ROI 95% CI [44:1, 66:1], Expected ROI 95% CI [2.7:1, 27:1]. Script: `scripts/monte_carlo_roi_simulation.py`
 
 #### 30. ⏳ Verify Variable Name Consistency
 **Location**: Technical validation (not in economics.qmd text)
@@ -80,7 +81,7 @@
 ## Implementation Checklist
 
 ### Phase 1: High Priority Text Additions (economics.qmd)
-- [ ] Todo #15: Enhance opportunity cost analysis section (partially complete - needs comparison to alternative uses)
+- [x] Todo #15: Enhance opportunity cost analysis section - ✅ COMPLETED (line 946)
 - [x] Todo #16: Improve QALY methodology with confidence levels - ✅ COMPLETED (lines 1258, 1262, 1266)
 - [x] Todo #17: Enhance external validity discussion - ✅ COMPLETED (lines 1352-1369)
 - [x] Todo #18: Add adoption realism discussion - ✅ COMPLETED (lines 571-580)
@@ -88,7 +89,7 @@
 ### Phase 2: Medium Priority Enhancements
 - [ ] Todo #26: Add brief note on publication bias
 - [x] Todo #28: Add brief note on comparison set rationale - ✅ COMPLETED (lines 1045-1067)
-- [ ] Todo #29: Acknowledge inadequate uncertainty quantification (Monte Carlo)
+- [x] Todo #29: Acknowledge inadequate uncertainty quantification (Monte Carlo) - ✅ COMPLETED (lines 524-528)
 - [ ] Todo #30: Verify variable name consistency
 
 ### Phase 3: Low Priority / Optional

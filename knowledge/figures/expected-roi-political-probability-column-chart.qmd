@@ -1,0 +1,85 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| fig-cap: "Expected ROI by Political Success Probability: Accounting for Implementation Risk"
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# Import centralized style
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata, get_figure_output_path)
+
+setup_chart_style()
+
+# Data from Expected Value Analysis section
+probabilities = ['10%\n(Conservative)', '25%\n(Moderate)', '40%\n(Moderate-High)', '50%\n(Optimistic)']
+expected_rois = [
+    float(EXPECTED_ROI_CONSERVATIVE_DFDA),
+    float(EXPECTED_ROI_MODERATE_DFDA),
+    185,  # From economics.qmd line 643
+    float(EXPECTED_ROI_OPTIMISTIC_DFDA)
+]
+
+# Create figure
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Create bars - use solid black for emphasis on the moderate case (most realistic)
+bars = ax.bar(
+    range(len(probabilities)),
+    expected_rois,
+    color=[COLOR_WHITE, COLOR_BLACK, COLOR_WHITE, COLOR_WHITE],
+    edgecolor=COLOR_BLACK,
+    linewidth=2.5,
+    width=0.7,
+    hatch=[None, None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL]
+)
+
+# Add value labels
+for i, (bar, roi) in enumerate(zip(bars, expected_rois)):
+    # Use white text on black bar, black text on white bars
+    text_color = COLOR_WHITE if i == 1 else COLOR_BLACK
+    ax.text(
+        i, roi + max(expected_rois) * 0.05,
+        f'{roi:.1f}:1',
+        ha='center', va='bottom',
+        fontsize=36, fontweight='bold',
+        color=text_color
+    )
+
+# Add probability labels below bars
+ax.set_xticks(range(len(probabilities)))
+ax.set_xticklabels(probabilities, fontsize=18)
+
+# Remove y-axis (values are on bars)
+ax.get_yaxis().set_visible(False)
+
+# Set title
+ax.set_title('Expected ROI by Political Success Probability', 
+             fontsize=28, weight='bold', pad=30)
+
+# Clean spines
+clean_spines(ax, ['top', 'right', 'left'])
+
+# Add note
+ax.text(0.5, -0.15, 'Expected ROI = P(success) × ROI(if successful)\nBaseline conditional ROI: 463:1',
+        transform=ax.transAxes, ha='center', fontsize=14, style='italic')
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG
+output_path = get_figure_output_path('expected-roi-political-probability-column-chart.png')
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+add_png_metadata(output_path,
+                 title="Expected ROI by Political Success Probability",
+                 description="Expected value analysis showing ROI accounting for implementation risk across different political success probabilities")
+
+plt.show()
+```
+
