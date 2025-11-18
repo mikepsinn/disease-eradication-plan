@@ -539,17 +539,19 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Context:** The dFDA model is not an untested innovation extrapolated from a single case study (RECOVERY trial). Rather, it represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
 
-**Historical evidence:**
+**Cost structure comparison demonstrates dramatic efficiency difference:**
+
+- **Pre-1962 system**: [$74 million per drug](../references.qmd#pre-1962-drug-costs-timeline) (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
+- **Post-1962 system**: $2.6 billion per drug average—a **35× cost increase**; drug companies conduct both safety and efficacy trials internally
+- **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
+
+**Historical operational model:**
 
 From 1883 to 1960, [144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized, pragmatic trial system coincided with dramatic improvements in life expectancy during the early-to-mid 20th century.
 
-**Safety record:** The pre-1962 system's safety testing successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe—existing FDA safety regulations blocked the drug from harming American patients, demonstrating that safety testing worked even without the extensive efficacy requirements added in 1962.
+**Safety record—the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed**—the safety testing framework worked exactly as intended.
 
-**Cost structure comparison:**
-
-- **Pre-1962 system**: [$74 million per drug](../references.qmd#pre-1962-drug-costs-timeline) (2024 inflation-adjusted) for safety testing; efficacy determined through physician case reports
-- **Post-1962 system**: $2.6 billion per drug average (35× cost increase); drug companies conduct both safety and efficacy trials internally
-- **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation)
+The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation—safety testing had succeeded. The response was to take efficacy testing away from 144,000 independent physicians and centralize it within pharmaceutical companies, increasing costs 35-fold while slowing approvals substantially.
 
 **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-2021), the first sustained decreases since 1915-1918, suggesting the post-1962 regulatory model may have reached diminishing or negative returns.
 

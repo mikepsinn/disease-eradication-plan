@@ -2,34 +2,55 @@
 
 **Document**: `knowledge/economics/economics.qmd`
 **Goal**: Prepare for academic peer review submission
-**Status**: ✅ **100% PEER-REVIEW READY** - All critical and nice-to-have improvements completed!
+**Status**: ⚠️ **~85% PEER-REVIEW READY** - Core structure complete, economist critique responses in progress
 
 ---
 
-## 🎉 COMPLETION SUMMARY
+## 📊 CURRENT STATUS SUMMARY
 
-**ALL TASKS COMPLETED!** The document is now fully prepared for academic peer review submission.
+**Core Academic Structure**: ✅ **COMPLETE** - Abstract, Methodology, Limitations, Hypothesis, Nomenclature all added
+**Economist Critique Responses**: ⚠️ **IN PROGRESS** - Some completed, many pending
 
-### ✅ Critical Components (MUST-HAVE) - All Complete
-1. ✅ **Abstract** - 200-word academic summary with Objective/Methods/Results/Conclusions
-2. ✅ **Methodology Section** - 178 lines of comprehensive analytical framework
-3. ✅ **Limitations Section** - 155 lines documenting assumptions and uncertainties
+### ✅ Critical Components (MUST-HAVE) - Complete
+1. ✅ **Abstract** - 200-word academic summary with Objective/Methods/Results/Conclusions (lines 24-36)
+2. ✅ **Methodology Section** - Comprehensive analytical framework (lines 314-586)
+3. ✅ **Limitations Section** - 155 lines documenting assumptions and uncertainties (lines 1025-1223)
 4. ✅ **Mathematical Rigor** - All calculations verified, formulas validated, LaTeX equations match code
-5. ✅ **Data Availability** - Complete transparency with source attribution
-6. ✅ **Explicit Assumptions** - 7 core assumptions documented with justifications
+5. ✅ **Data Availability** - Complete transparency with source attribution (lines 1054-1083)
+6. ✅ **Explicit Assumptions** - 7 core assumptions documented with justifications (lines 496-585)
 7. ✅ **Automated Citations** - 94 unique citations auto-generated from 422 parameters
 
-### ✅ Excellence Enhancements (NICE-TO-HAVE) - All Complete
-8. ✅ **Hypothesis Statement** - Formal H₀/H₁ with testable predictions
-9. ✅ **Key Findings Box** - 7-point visual summary in callout
-10. ✅ **Nomenclature** - 10 key terms defined in collapsible glossary
-11. ✅ **References Section** - Links to bibliography, parameters, BibTeX, GitHub
+### ✅ Excellence Enhancements (NICE-TO-HAVE) - Complete
+8. ✅ **Hypothesis Statement** - Formal H₀/H₁ with testable predictions (lines 58-71)
+9. ✅ **Key Findings Box** - 7-point visual summary in callout (lines 38-54)
+10. ✅ **Nomenclature** - 10 key terms defined in collapsible glossary (lines 74-96)
+11. ✅ **References Section** - Links to bibliography, parameters, BibTeX, GitHub (lines 1255-1264)
+
+### ⚠️ Economist Critique Responses - In Progress
+**Completed**:
+- ✅ Pre-1962 historical context (lines 538-560)
+- ✅ Bloom et al. diminishing returns citation (lines 1064-1078)
+- ✅ Pragmatic trial citations (Patsopoulos, Thorpe) (lines 1080-1094)
+- ✅ RECOVERY trial limitations with historical precedent (lines 1051-1062)
+- ⚠️ Pre-1962 cost justification (partially complete - lines 546, 550-551, 554)
+
+**Pending**:
+- ⏳ Expected value analysis (probability-weighted ROI) - Todo #9
+- ⏳ Automated system clarification (federated queries, time series EHR) - Todo #10
+- ⏳ General equilibrium effects discussion - Todo #11
+- ⏳ Peace dividend separated into confidence levels - Todo #12
+- ⏳ Discount rate sensitivity table - Todo #13
+- ⏳ Partnership model explanation - Todo #20
+- ⏳ Platform costs vs patient subsidy distinction - Todo #21
+- ⏳ Cost comparison table extraction - Todo #22
+- ⏳ Observational vs randomized trial images - Todo #23
 
 ### 📊 Document Metrics
 - **Original**: 689 lines, ~70% peer-review ready
-- **Final**: 1,197 lines, **100% peer-review ready**
-- **Added**: 508 lines of academic structure (+74% content)
-- **Quality**: Publication-ready for top health economics journals
+- **Current**: 1,264 lines, **~85% peer-review ready**
+- **Added**: 575 lines of academic structure (+83% content)
+- **Remaining**: ~15% - Economist critique responses (expected value, general equilibrium, partnership model, visual evidence)
+- **Quality**: Strong foundation, needs economist critique responses for publication
 
 ---
 
@@ -563,13 +584,17 @@ Based on content and scope:
 **Why This Matters**: Directly refutes the #2 CRITICAL issue blocking publication (generalizability from single case study)
 **COMPLETED**: Added "Historical Precedent: Pre-1962 Physician-Led Efficacy Trials" to Methodology (lines 538-556) and "Generalizability from RECOVERY Trial and Historical Precedent" to Limitations (lines 1047-1058)
 
-#### 0a. ⏳ Strengthen Pre-1962 Cost Justification and Thalidomide Prevention
+#### 0a. ⚠️ Strengthen Pre-1962 Cost Justification and Thalidomide Prevention (PARTIALLY COMPLETE)
 **Issue**: Should emphasize how much cheaper pre-1962 system was ($74M vs $2.6B) and how it prevented thalidomide disaster (safety worked without efficacy requirements)
 **Location**: "Historical Precedent: Pre-1962 Physician-Led Efficacy Trials" section (lines 538-556)
+**Status**: PARTIALLY COMPLETE - Basic content exists but could be strengthened
+**Already in economics.qmd**:
+- ✅ Cost comparison: $74M vs $2.6B (35× increase) - line 550-551
+- ✅ Thalidomide mention: "successfully prevented the thalidomide disaster" - line 546
+- ✅ US life expectancy decline: "declined in recent years (2014-2017, 2020-2021)" - line 554
 **Action**:
-- [ ] Emphasize cost comparison more prominently: "The pre-1962 system achieved $74M per drug (inflation-adjusted) vs. post-1962 $2.6B average - a 35× cost increase. The dFDA model returns to this proven low-cost approach with modern automation."
-- [ ] Strengthen thalidomide point: "Critically, the pre-1962 safety testing framework successfully prevented the thalidomide disaster that devastated Europe (10,000-20,000 birth defects). Existing FDA safety regulations (1938 Food, Drug and Cosmetic Act) blocked thalidomide from harming American patients, demonstrating that safety testing worked effectively without the extensive efficacy requirements added in 1962. The 1962 Kefauver-Harris Amendment added efficacy requirements in response to thalidomide, but the US had already been protected by existing safety regulations."
-- [ ] Note US life expectancy decline: "US life expectancy has declined in recent years (2014-2017, 2020-2021), the first sustained decreases since 1915-1918, suggesting the post-1962 regulatory model may have reached diminishing or negative returns."
+- [ ] Strengthen thalidomide point with more detail: "Critically, the pre-1962 safety testing framework successfully prevented the thalidomide disaster that devastated Europe (10,000-20,000 birth defects). Existing FDA safety regulations (1938 Food, Drug and Cosmetic Act) blocked thalidomide from harming American patients, demonstrating that safety testing worked effectively without the extensive efficacy requirements added in 1962. The 1962 Kefauver-Harris Amendment added efficacy requirements in response to thalidomide, but the US had already been protected by existing safety regulations."
+- [ ] Emphasize cost comparison more prominently in opening of section
 - [ ] Reference: knowledge/problem/fda-is-unsafe-and-ineffective.qmd (lines 113-125) for thalidomide details
 **Why Important**: Strengthens cost justification and addresses safety concerns (shows pre-1962 system was both cheaper AND safer)
 
@@ -610,7 +635,7 @@ Based on content and scope:
 **Citations**:
 - Patsopoulos, Nikolaos A., 2011, "A pragmatic view on pragmatic trials", Dialogues in Clinical Neuroscience 13(2): 217-224
 - Thorpe, Kevin E., et al., 2009, "PRECIS: a tool to help trial designers", Journal of Clinical Epidemiology 62(5): 464-475
-**COMPLETED**: Added "Pragmatic Trial Internal Validity and Selection Bias" to Limitations (lines 1076-1090)
+**COMPLETED**: Added "Pragmatic Trial Internal Validity and Selection Bias" to Limitations (lines 1080-1094) with full discussion including mitigation strategies, historical precedent, and conclusion
 
 #### 5. ❌ SKIP NIH Budget Doubling Comparison
 **Issue**: Diminishing returns critique - initially thought we needed empirical evidence
@@ -677,7 +702,8 @@ These require major new research - acknowledge transparently but don't try to fi
 
 ## COMPREHENSIVE ECONOMIST CRITIQUE TODOS
 
-**Source**: `knowledge/appendix/economist-critique-analysis.md` (10 major critique categories)
+**Source**: `knowledge/appendix/economist-critique-analysis.md` (10 major critique categories + additional methodological concerns) and `REVIEW-COST-EFFECTIVENESS.md` (comprehensive economist peer review)
+**Note**: All critiques from both documents have been incorporated into this plan. The source documents can be deleted once todos are completed.
 **Approach**: Address all critiques systematically with calculations in parameters.py, variables via generate-variables-yml.py, hardcoded LaTeX in economics.qmd
 
 ### CRITICAL PRIORITY TODOS (Must Address)
@@ -721,6 +747,8 @@ These require major new research - acknowledge transparently but don't try to fi
   - Data infrastructure scaling costs (not researcher constraints - system is automated)
   - Rent-seeking and administrative costs (10-20% of funding)
   - Price effects in clinical trial market (demand increase may affect equilibrium)
+  - Crowding out effects: Does $27B in new research displace existing research or add to it?
+  - Quality vs. quantity trade-off: More trials may mean lower-quality trials if resources are spread thin
 - [ ] Note: "These effects are acknowledged but not quantified due to complexity. Conservative approach: Base case excludes these to provide lower bound."
 **Why Critical**: Acknowledges methodological limitation economists would raise
 
@@ -753,14 +781,17 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Add note: "10-year horizon captures majority of NPV; benefits continue beyond year 10 but discounted heavily"
 **Why Important**: Shows robustness to key parameter variations economists would test
 
-#### 14. ⏳ Strengthen RECOVERY Trial Limitations
+#### 14. ✅ Strengthen RECOVERY Trial Limitations - COMPLETED
 **Issue**: Single case study (RECOVERY) extrapolated globally - external validity concerns
-**Location**: "Cost Reduction Assumptions" section (lines 527-536)
-**Action**:
-- [ ] Strengthen language: "RECOVERY trial serves as proof-of-concept demonstrating feasibility, not proof-of-scale for all drug development. The trial's context (emergency, repurposed drugs, acute condition) may not generalize to all therapeutic areas."
-- [ ] Add: "Conservative approach uses 50% reduction (midpoint) rather than RECOVERY's 95%+ to account for this uncertainty."
-- [ ] Call for validation studies across disease types, countries, and normal conditions
-- [ ] Reference pre-1962 historical context (already in economics.qmd lines 538-556) to show this isn't just one case study
+**Location**: "Generalizability from RECOVERY Trial and Historical Precedent" section (lines 1051-1062)
+**Status**: COMPLETED
+**Already in economics.qmd**:
+- ✅ Historical validation: "The physician-led pragmatic trial model has 80 years of empirical validation (1883-1960), not merely one modern case study" - line 1051
+- ✅ Trial complexity variation acknowledged: "RECOVERY studied repurposed drugs... Novel therapeutics for chronic diseases may face different challenges" - line 1057
+- ✅ Conservative approach: "Conservative estimate uses 50-70% cost reduction (not the 95%+ demonstrated by RECOVERY)" - line 1058
+- ✅ Pre-1962 precedent: "Pre-1962 system achieved similar efficiencies across diverse therapeutic areas" - line 1055
+- ✅ Pragmatic trial literature: "Pragmatic trial literature consistently shows 50-95% cost reductions across multiple contexts" - line 1060
+- ✅ Conclusion: "While RECOVERY provides modern validation, the fundamental approach has extensive historical precedent" - line 1062
 **Why Important**: Addresses critique #3 about causal inference problems
 
 #### 15. ⏳ Add Opportunity Cost Analysis
@@ -867,6 +898,119 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Alternatively, could place in Methodology section when discussing QALY calculation methodology and real-world evidence
 **Why Important**: Provides visual evidence addressing the #5 critique about pragmatic trial validity and selection bias, strengthening the argument that real-world evidence can be as reliable as RCTs
 
+#### 24. ⏳ Add Missing Cost Categories Discussion
+**Issue**: economist-critique-analysis.md identifies cost categories not included in calculations
+**Location**: "Limitations and Uncertainties" section or "General Equilibrium Considerations" subsection
+**Action**:
+- [ ] Acknowledge additional cost categories not quantified:
+  - Transition costs: Retraining defense workers, economic adjustment ($2-4B annually estimated in general equilibrium discussion)
+  - Coordination costs: International treaty negotiation, regulatory harmonization (partially included in broader initiative costs but could be more explicit)
+  - Monitoring and enforcement: Ensuring treaty compliance (not explicitly included)
+  - Opportunity cost of campaign funds: $1B could fund other interventions (covered in opportunity cost analysis todo #15)
+- [ ] Note: "These costs are acknowledged but not quantified in base case. Conservative approach: Base case provides lower bound estimate of net benefits."
+**Why Important**: Addresses critique about incomplete cost accounting, shows transparency about what's excluded
+
+#### 25. ⏳ Address Model Specification Issues
+**Issue**: economist-critique-analysis.md raises concerns about linear scaling, constant elasticity, no interaction effects, static analysis
+**Location**: "Key Analytical Assumptions" section (lines 496-585) or "Limitations and Uncertainties" section
+**Action**:
+- [ ] Add explicit acknowledgment of model specification assumptions:
+  - Linear scaling assumption: Already documented (line 508-514) but could note: "Benefits may exhibit superlinear returns (network effects) or sublinear returns (diminishing returns) - base case uses linear assumption as conservative midpoint"
+  - Constant elasticity: "Cost reductions assumed constant across trial types; actual reductions may vary by therapeutic area, disease type, and trial complexity"
+  - Interaction effects: "Model doesn't explicitly model how dFDA platform, peace dividend, and research acceleration interact - may underestimate or overestimate combined effects"
+  - Static analysis: "Model uses 10-year snapshot; doesn't account for dynamic responses, learning curves, or technological change over time"
+- [ ] Note: "These simplifications are standard in cost-benefit analysis but represent limitations. Sensitivity analysis tests robustness across parameter ranges."
+**Why Important**: Addresses methodological concerns about model structure and assumptions
+
+#### 26. ⏳ Address Benefit Attribution and Publication Bias
+**Issue**: economist-critique-analysis.md raises concerns about crowding out, quality vs quantity, publication bias
+**Location**: "Limitations and Uncertainties" section or integrate into existing discussions
+**Action**:
+- [ ] Add discussion of benefit attribution concerns:
+  - Crowding out: "New research funding may displace existing research rather than add to it. Conservative assumption: Additive effects. If substitutive, net benefits would be lower."
+  - Quality vs. quantity: "115× more trials may not yield 115× more breakthroughs if resources are spread thin or trial quality declines. Base case assumes quality maintained; sensitivity analysis could test quality degradation scenarios."
+  - Publication bias: "Negative results may not be published, leading to overestimation of treatment effectiveness. dFDA's transparent data infrastructure may mitigate this, but bias risk remains."
+- [ ] Note: "These concerns are acknowledged. The dFDA's open data architecture and transparent reporting may partially mitigate publication bias, but quality and crowding-out effects remain uncertain."
+**Why Important**: Addresses concerns that benefits may be overstated due to attribution issues
+
+#### 27. ⏳ Address Time Inconsistency and Political Economy Concerns
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #8 - Assumes government commitment holds over 10+ years; ignores political business cycles and public choice theory
+**Location**: Integrate into Todo #9 (Expected Value Analysis) or add to "Political Feasibility Assumption" section
+**Action**:
+- [ ] Add discussion of time inconsistency: "Even if treaty ratifies, political economy suggests budget may be raided within 3-5 years. Defense contractors have concentrated interests ($1B+ lobbying), health benefits are diffuse. Olson's logic of collective action predicts resistance."
+- [ ] Acknowledge credible commitment mechanisms: "Treaty ratification ≠ sustained funding (Paris Agreement example: many signatories, few meet targets). Analysis assumes sustained commitment; actual implementation may face political reversals."
+- [ ] Note: "Expected value analysis (Todo #9) partially addresses this by incorporating probability of success, but time inconsistency (commitment erosion over time) remains a limitation."
+- [ ] Reference historical precedent: "Post-WWII 'peace dividend' was quickly reversed. Similar attempts face political economy barriers."
+**Why Important**: Addresses critique #8 about time inconsistency and political economy barriers to sustained commitment
+
+#### 28. ⏳ Address Cherry-Picked Comparisons
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #9 - Selective comparison to interventions that make dFDA look favorable (GiveWell charities, childhood vaccinations) but not to comparable research investments (NIH, DARPA) or other health interventions
+**Location**: "How This Compares to History" section (around line 840) or "Comparative Cost-Effectiveness" section
+**Action**:
+- [ ] Add comparison table or discussion including:
+  - Other research investments: NIH intramural ($45B annually), DARPA, ARPA-H
+  - Clinical interventions: Medicare/Medicaid expansion (cost per QALY: $50,000-100,000), cancer screening ($20,000-50,000), cardiovascular prevention ($10,000-30,000)
+  - Acknowledge: "Comparison set includes interventions across multiple categories. dFDA compares favorably to both research investments and direct health interventions, but comprehensive comparison would require separate analysis."
+- [ ] Note: "Why compare to GiveWell charities but not NIH? GiveWell represents best-in-class efficiency for direct health interventions; NIH represents comparable research investment but with different efficiency profile. Both comparisons are relevant but answer different questions."
+**Why Important**: Addresses critique #9 about selective comparison set and strengthens credibility by showing broader comparison
+
+#### 29. ⏳ Acknowledge Inadequate Uncertainty Quantification (Monte Carlo)
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #10 - Sensitivity analysis provides scenarios but no probabilistic confidence intervals or Monte Carlo simulation
+**Location**: "Sensitivity Analysis Approach" section (lines 468-494) or Limitations section
+**Action**:
+- [ ] Add explicit acknowledgment: "This analysis uses scenario-based sensitivity analysis (worst, conservative, optimistic, complete cases) rather than probabilistic Monte Carlo simulation. Modern cost-effectiveness analysis often includes Monte Carlo simulation with probability distributions on all parameters to generate confidence intervals (e.g., '95% CI on ROI: 200-800:1')."
+- [ ] Note: "Monte Carlo simulation would require 2-3 weeks of additional development and is beyond the scope of this analysis. Scenario analysis provides bounds on uncertainty but does not provide probabilistic confidence intervals."
+- [ ] Add to future research: "Probabilistic sensitivity analysis with Monte Carlo simulation would strengthen uncertainty quantification."
+**Why Important**: Acknowledges limitation while explaining why it's not included (scope/time constraints)
+
+#### 30. ⏳ Verify Variable Name Consistency
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #11 - Variable name inconsistencies and potential missing variables
+**Location**: Technical validation (not in economics.qmd text)
+**Action**:
+- [ ] Run validation script to verify all variables exist in parameters.py:
+  - `dfda_lives_saved_annually` (line 47)
+  - `dfda_value_per_life_saved` (line 47)
+  - `traditional_phase3_cost_per_patient` vs. `traditional_trial_cost_per_patient` (line 532) - check consistency
+  - `dfda_upfront_build` vs. `dfda_npv_annual_opex_total` (line 619) - verify correct variable used
+- [ ] Fix any inconsistencies in economics.qmd variable references
+- [ ] Document in technical notes if any variables need to be added to parameters.py
+**Why Important**: Ensures all variable references work correctly and prevents rendering errors
+
+#### 31. ⏳ Address Regulatory Arbitrage Concerns
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #13 - Assumes regulatory agencies accept decentralized trials without evidence standard changes
+**Location**: "Limitations and Uncertainties" section or new subsection on regulatory considerations
+**Action**:
+- [ ] Add discussion of regulatory acceptance concerns:
+  - FDA may require more oversight for decentralized trials (safety concerns)
+  - EMA may not recognize dFDA trials (separate approval process)
+  - Liability issues: Who is responsible for adverse events in pragmatic trials?
+  - Equipoise requirement: Is it ethical to randomize in routine care?
+- [ ] Note: "Analysis assumes regulatory agencies accept dFDA evidence standards. If agencies require additional oversight or reject decentralized trial designs, implementation costs would increase and adoption rates would decrease. Right to Trial Act (SEC. 301-304) addresses some of these concerns by establishing regulatory framework, but full harmonization may take 10-20 years."
+- [ ] Reference: right-to-trial-fda-upgrade-act.qmd for regulatory framework details
+**Why Important**: Addresses critique #13 about regulatory acceptance assumptions
+
+#### 32. ⏳ Add Discussion of Failure Modes
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #14 - Analysis assumes implementation succeeds; no discussion of how failure could occur
+**Location**: "Limitations and Uncertainties" section or "Risk Analysis" section
+**Action**:
+- [ ] Add subsection "Failure Modes and Risk Scenarios":
+  - False positives: What if dFDA trials produce false positives (approve ineffective drugs)?
+  - Adverse event detection: What if adverse event detection is worse in decentralized settings?
+  - Regulatory rejection: What if regulatory agencies reject dFDA evidence?
+  - Adoption failure: What if pharmaceutical companies don't adopt (prefer controlled trials)?
+- [ ] Note: "These failure modes are acknowledged. The analysis presents conditional benefits (IF implementation succeeds). Expected value analysis (Todo #9) incorporates probability of success, but specific failure modes represent additional risk factors."
+- [ ] Reference: investor-risk-analysis.qmd for existing risk discussion
+**Why Important**: Addresses critique #14 about lack of failure mode discussion
+
+#### 33. ⏳ Specify Counterfactual Baseline
+**Issue**: REVIEW-COST-EFFECTIVENESS.md #15 - What happens to the $27B if NOT redirected to dFDA? Current assumption: $27B disappears (deficit reduction? tax cuts?)
+**Location**: "Self-Funding Mechanism" section (around line 692) or Methodology section
+**Action**:
+- [ ] Add explicit counterfactual specification: "This analysis uses 'status quo' as baseline (military spending continues at current levels). Alternative counterfactuals include: (1) Military R&D continues (yields civilian technology spillovers - partially addressed in Todo #3), (2) Funds returned to taxpayers (consumption/investment), (3) Funds used for other government priorities (infrastructure, education)."
+- [ ] Note: "The baseline should ideally be 'next best alternative use' not 'status quo'. This analysis focuses on conditional benefits of dFDA reallocation; comprehensive comparison to all alternative uses would require separate study."
+- [ ] Add: "Conservative interpretation: Even if alternative uses have positive value, dFDA's dominant intervention status (negative ICER) suggests it exceeds most alternatives."
+**Why Important**: Addresses critique #15 about counterfactual specification and strengthens methodological rigor
+
 ---
 
 ## Implementation Checklist
@@ -883,10 +1027,10 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Todo #11: Add general equilibrium considerations subsection
 - [ ] Todo #12: Strengthen peace dividend causal claims with confidence levels
 - [ ] Todo #13: Enhance sensitivity analysis with discount rate table
-- [ ] Todo #14: Strengthen RECOVERY trial limitations
+- [x] Todo #14: Strengthen RECOVERY trial limitations - ✅ COMPLETED (lines 1051-1062)
 - [ ] Todo #20: Add partnership model cost savings explanation
 - [ ] Todo #21: Distinguish platform costs from patient subsidy fund
-- [ ] Todo #0a: Strengthen pre-1962 cost justification and thalidomide prevention
+- [ ] Todo #0a: Strengthen pre-1962 cost justification and thalidomide prevention (partially complete - needs strengthening)
 
 ### Phase 3: High Priority Enhancements
 - [ ] Todo #15: Add opportunity cost analysis section
@@ -894,6 +1038,16 @@ These require major new research - acknowledge transparently but don't try to fi
 - [ ] Todo #17: Enhance external validity discussion
 - [ ] Todo #18: Add adoption realism discussion
 - [ ] Todo #19: Address time horizon issues (integrated with #13)
+- [ ] Todo #24: Add missing cost categories discussion
+- [ ] Todo #25: Address model specification issues
+- [ ] Todo #26: Address benefit attribution and publication bias
+- [ ] Todo #27: Address time inconsistency and political economy concerns
+- [ ] Todo #28: Address cherry-picked comparisons
+- [ ] Todo #29: Acknowledge inadequate uncertainty quantification (Monte Carlo)
+- [ ] Todo #30: Verify variable name consistency
+- [ ] Todo #31: Address regulatory arbitrage concerns
+- [ ] Todo #32: Add discussion of failure modes
+- [ ] Todo #33: Specify counterfactual baseline
 
 ### Phase 4: Update Supporting Documents
 - [ ] Update `knowledge/appendix/economist-critique-analysis.md` to remove incorrect researcher constraint critique
