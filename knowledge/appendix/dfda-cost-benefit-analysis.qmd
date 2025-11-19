@@ -601,9 +601,7 @@ Where:
     S_{\text{annual}} = 0.30 \times \$100.0\text{B} = \$30.0\text{B} \text{ annually}
     $$
   - **Base Case**: $\alpha = 0.50$
-    $$
-    S_{\text{annual}} = 0.50 \times \$100.0\text{B} = \$50.0\text{B} \text{ annually}
-    $$
+    {{< var dfda_rd_gross_savings_annual_latex >}}
   - **Optimistic**: $\alpha = 0.70$
     $$
     S_{\text{annual}} = 0.70 \times \$100.0\text{B} = \$70\text{B} \text{ annually}
