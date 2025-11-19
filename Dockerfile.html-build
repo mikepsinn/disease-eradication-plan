@@ -1,0 +1,65 @@
+# Dockerfile for HTML build environment
+# Pre-installs all dependencies to speed up builds
+
+FROM ubuntu:22.04
+
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    git \
+    python3.11 \
+    python3.11-dev \
+    python3-pip \
+    build-essential \
+    graphviz \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Quarto
+RUN curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb && \
+    dpkg -i quarto-linux-amd64.deb || apt-get install -f -y && \
+    rm -f quarto-linux-amd64.deb && \
+    quarto --version
+
+# Install uv (faster Python package manager)
+RUN pip3 install uv
+
+# Create cache directories with proper permissions
+RUN mkdir -p /tmp/quarto-cache /tmp/deno-cache && \
+    chmod -R 777 /tmp/quarto-cache /tmp/deno-cache
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy requirements first (for better Docker layer caching)
+COPY requirements.txt .
+
+# Install Python dependencies (includes ipykernel)
+RUN uv pip install --system -r requirements.txt
+
+# Copy pyproject.toml and setup.py to install dih_models
+COPY pyproject.toml setup.py ./
+COPY dih_models/ dih_models/
+
+# Install dih_models package
+RUN uv pip install --system -e .
+
+# Install Jupyter kernel (after dependencies are installed)
+RUN python3.11 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project" || \
+    python3 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+# Copy all project files into container
+# This avoids filesystem mounting issues with Deno KV
+COPY . .
+
+# Build HTML inside container
+# Run the book website renderer
+RUN python3.11 scripts/render-book-website.py || \
+    (echo "Build completed with exit code $?" && \
+     test -d _book/warondisease && echo "HTML directory exists" || echo "No HTML found")
+
+# Output will be in _book/warondisease/
+# Use docker cp to extract it after build

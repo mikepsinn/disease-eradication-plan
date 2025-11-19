@@ -102,10 +102,59 @@ graph TD;
 
 ## Development and Deployment
 
+### Setup Environment
+
+**Option 1: Docker (Recommended - No local installation needed)**
+
+```bash
+# Build HTML book in Docker container
+bash scripts/docker-build-html.sh
+
+# Or use docker-compose
+docker-compose -f docker-compose.html-build.yml build
+```
+
+**Option 2: Local Installation**
+
+Before rendering the book locally, ensure all dependencies are installed:
+
+```bash
+# 1. Check environment (recommended)
+python scripts/check-environment.py
+
+# 2. Install Quarto (if not already installed)
+bash scripts/install-quarto.sh
+# Or see docs/QUARTO_SETUP.md for manual installation
+
+# 3. Install Python dependencies
+pip install -r requirements.txt
+
+# 4. Install dih_models package
+pip install -e .
+
+# 5. Install Graphviz (for diagrams)
+sudo apt-get install graphviz  # Linux
+# Or: brew install graphviz      # macOS
+```
+
+### Render Book
+
+**Using Docker:**
+```bash
+bash scripts/docker-build-html.sh
+```
+
+**Using Local Quarto:**
+```bash
+python scripts/render-book-website.py
+```
+
 ### Local Preview
 
 ```bash
 npm run quarto:preview
+# Or serve the built HTML
+python -m http.server 8000 --directory _book/warondisease
 ```
 
 ### Pre-Push Validation
