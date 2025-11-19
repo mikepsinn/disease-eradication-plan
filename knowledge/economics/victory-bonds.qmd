@@ -48,8 +48,8 @@ Find humans who have more papers than they need and convince them to give you $1
 
 #### Who has that many papers
 
-- Institutional investors ({{< var institutional_investor_min_millions >}}+ each) - pension funds, endowments, people managing other people's papers
-- Family offices ({{< var family_office_investment_min_millions >}}+ each) - rich families who hired someone to watch their paper piles
+- Institutional investors ({{< var institutional_investor_min >}}+ each) - pension funds, endowments, people managing other people's papers
+- Family offices ({{< var family_office_investment_min >}}+ each) - rich families who hired someone to watch their paper piles
 - High net worth individuals ($1M+ each) - people who got lucky/smart/criminal and have extra papers
 - Qualified investors ($100K+ each) - regular rich people
 
@@ -372,8 +372,8 @@ display(IPImage(str(png_path)))
 
 Set these minimum investment amounts by investor type:
 
-- **Institutional investors**: {{< var institutional_investor_min_millions >}}+ per investor
-- **Family offices**: {{< var family_office_investment_min_millions >}}+ per office
+- **Institutional investors**: {{< var institutional_investor_min >}}+ per investor
+- **Family offices**: {{< var family_office_investment_min >}}+ per office
 - **High net worth individuals**: $1M+ per person
 - **Qualified investors**: $100K+ minimum
 

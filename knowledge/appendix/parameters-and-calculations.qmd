@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 491
+**Total parameters**: 490
 
 - External sources (peer-reviewed): 148
-- Calculated values: 294
+- Calculated values: 293
 - Core definitions: 49
 
 # External Data Sources {#sec-external}
@@ -89,7 +89,7 @@ Average US hourly wage
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Baseline Lives Saved Annual Millions {#sec-baseline_lives_saved_annual_millions}
+## Baseline Lives Saved Annual {#sec-baseline_lives_saved_annual}
 
 **Value**: 12
 
@@ -388,7 +388,7 @@ Total trial slots available for 2.4B sick people
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Defense Lobbying Annual Billions {#sec-defense_lobbying_annual_billions}
+## Defense Lobbying Annual {#sec-defense_lobbying_annual}
 
 **Value**: $127M
 
@@ -1116,7 +1116,7 @@ Return on investment for defense lobbying ($1,813 returned per $1 spent)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Lobbyist Salary Max Millions {#sec-lobbyist_salary_max_millions}
+## Lobbyist Salary Max {#sec-lobbyist_salary_max}
 
 **Value**: $2.00M
 
@@ -1181,7 +1181,7 @@ Average hourly cost of medical facility room
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Mental Health Grants Annual Millions {#sec-mental_health_grants_annual_millions}
+## Mental Health Grants Annual {#sec-mental_health_grants_annual}
 
 **Value**: $500M
 
@@ -1233,7 +1233,7 @@ Phase I safety trial duration
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Phase 3 Trial Cost Max Millions {#sec-phase_3_trial_cost_max_millions}
+## Phase 3 Trial Cost Max {#sec-phase_3_trial_cost_max}
 
 **Value**: $282M
 
@@ -1246,7 +1246,7 @@ Phase 3 trial total cost (maximum)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Phase 3 Trial Cost Min Millions {#sec-phase_3_trial_cost_min_millions}
+## Phase 3 Trial Cost Min {#sec-phase_3_trial_cost_min}
 
 **Value**: $20M
 
@@ -1753,7 +1753,7 @@ US annual chronic disease spending
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Us Defense Budget Annual Billions {#sec-us_defense_budget_annual_billions}
+## Us Defense Budget Annual {#sec-us_defense_budget_annual}
 
 **Value**: $877B
 
@@ -1766,7 +1766,7 @@ US defense budget in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Us Dot Value Of Statistical Life Millions {#sec-us_dot_value_of_statistical_life_millions}
+## Us Dot Value Of Statistical Life {#sec-us_dot_value_of_statistical_life}
 
 **Value**: $13.6M
 
@@ -1883,7 +1883,7 @@ Identity verification completion rate with poor UX
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Vsl Epa Millions {#sec-vsl_epa_millions}
+## Vsl Epa {#sec-vsl_epa}
 
 **Value**: $9.60M
 
@@ -2025,7 +2025,7 @@ Time to vote (minutes)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Alzheimer Cure Bounty Estimate Billions {#sec-alzheimer_cure_bounty_estimate_billions}
+## Alzheimer Cure Bounty Estimate {#sec-alzheimer_cure_bounty_estimate}
 
 **Value**: $10B
 
@@ -2150,7 +2150,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Celebrity Endorsement Millions {#sec-campaign_celebrity_endorsement_millions}
+## Campaign Celebrity Endorsement {#sec-campaign_celebrity_endorsement}
 
 **Value**: $15M
 
@@ -2163,7 +2163,7 @@ Celebrity and influencer endorsements
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Community Organizing Millions {#sec-campaign_community_organizing_millions}
+## Campaign Community Organizing {#sec-campaign_community_organizing}
 
 **Value**: $30M
 
@@ -2176,7 +2176,7 @@ Community organizing and ambassador program budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Contingency Millions {#sec-campaign_contingency_millions}
+## Campaign Contingency {#sec-campaign_contingency}
 
 **Value**: $50M
 
@@ -2189,7 +2189,7 @@ Contingency fund for unexpected costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Defense Conversion Millions {#sec-campaign_defense_conversion_millions}
+## Campaign Defense Conversion {#sec-campaign_defense_conversion}
 
 **Value**: $50M
 
@@ -2202,7 +2202,7 @@ Defense industry conversion program
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Defense Lobbyist Budget Millions {#sec-campaign_defense_lobbyist_budget_millions}
+## Campaign Defense Lobbyist Budget {#sec-campaign_defense_lobbyist_budget}
 
 **Value**: $50M
 
@@ -2215,7 +2215,7 @@ Budget for co-opting defense industry lobbyists
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Healthcare Alignment Millions {#sec-campaign_healthcare_alignment_millions}
+## Campaign Healthcare Alignment {#sec-campaign_healthcare_alignment}
 
 **Value**: $35M
 
@@ -2228,7 +2228,7 @@ Healthcare industry alignment and partnerships
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Infrastructure Millions {#sec-campaign_infrastructure_millions}
+## Campaign Infrastructure {#sec-campaign_infrastructure}
 
 **Value**: $20M
 
@@ -2241,7 +2241,7 @@ Campaign operational infrastructure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Legal Ai Budget Millions {#sec-campaign_legal_ai_budget_millions}
+## Campaign Legal Ai Budget {#sec-campaign_legal_ai_budget}
 
 **Value**: $50M
 
@@ -2254,7 +2254,7 @@ AI-assisted legal work budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Legal Defense Millions {#sec-campaign_legal_defense_millions}
+## Campaign Legal Defense {#sec-campaign_legal_defense}
 
 **Value**: $20M
 
@@ -2267,7 +2267,7 @@ Legal defense fund
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Legal Work Millions {#sec-campaign_legal_work_millions}
+## Campaign Legal Work {#sec-campaign_legal_work}
 
 **Value**: $60M
 
@@ -2280,7 +2280,7 @@ Legal drafting and compliance work
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Lobbying Eu Millions {#sec-campaign_lobbying_eu_millions}
+## Campaign Lobbying Eu {#sec-campaign_lobbying_eu}
 
 **Value**: $40M
 
@@ -2306,7 +2306,7 @@ G20 countries lobbying budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Lobbying Us Millions {#sec-campaign_lobbying_us_millions}
+## Campaign Lobbying Us {#sec-campaign_lobbying_us}
 
 **Value**: $50M
 
@@ -2319,7 +2319,7 @@ US lobbying campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Media Budget Max Billions {#sec-campaign_media_budget_max_billions}
+## Campaign Media Budget Max {#sec-campaign_media_budget_max}
 
 **Value**: $1.00B
 
@@ -2332,7 +2332,7 @@ Maximum mass media campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Media Budget Min Millions {#sec-campaign_media_budget_min_millions}
+## Campaign Media Budget Min {#sec-campaign_media_budget_min}
 
 **Value**: $500M
 
@@ -2345,7 +2345,7 @@ Minimum mass media campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Opposition Research Millions {#sec-campaign_opposition_research_millions}
+## Campaign Opposition Research {#sec-campaign_opposition_research}
 
 **Value**: $25M
 
@@ -2358,7 +2358,7 @@ Opposition research and rapid response
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Phase1 Budget Millions {#sec-campaign_phase1_budget_millions}
+## Campaign Phase1 Budget {#sec-campaign_phase1_budget}
 
 **Value**: $200M
 
@@ -2371,7 +2371,7 @@ Phase 1 campaign budget (Foundation, Year 1)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Phase2 Budget Millions {#sec-campaign_phase2_budget_millions}
+## Campaign Phase2 Budget {#sec-campaign_phase2_budget}
 
 **Value**: $500M
 
@@ -2384,7 +2384,7 @@ Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Pilot Programs Millions {#sec-campaign_pilot_programs_millions}
+## Campaign Pilot Programs {#sec-campaign_pilot_programs}
 
 **Value**: $30M
 
@@ -2397,7 +2397,7 @@ Pilot program testing in small countries
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Platform Development Millions {#sec-campaign_platform_development_millions}
+## Campaign Platform Development {#sec-campaign_platform_development}
 
 **Value**: $35M
 
@@ -2410,7 +2410,7 @@ Voting platform and technology development
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Regulatory Navigation Millions {#sec-campaign_regulatory_navigation_millions}
+## Campaign Regulatory Navigation {#sec-campaign_regulatory_navigation}
 
 **Value**: $20M
 
@@ -2423,7 +2423,7 @@ Regulatory compliance and navigation
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Scaling Prep Millions {#sec-campaign_scaling_prep_millions}
+## Campaign Scaling Prep {#sec-campaign_scaling_prep}
 
 **Value**: $30M
 
@@ -2436,7 +2436,7 @@ Scaling preparation and blueprints
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Staff Budget Millions {#sec-campaign_staff_budget_millions}
+## Campaign Staff Budget {#sec-campaign_staff_budget}
 
 **Value**: $40M
 
@@ -2449,7 +2449,7 @@ Campaign core team staff budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Super Pac Budget Millions {#sec-campaign_super_pac_budget_millions}
+## Campaign Super Pac Budget {#sec-campaign_super_pac_budget}
 
 **Value**: $30M
 
@@ -2462,7 +2462,7 @@ Super PAC campaign expenditures
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Tech Partnerships Millions {#sec-campaign_tech_partnerships_millions}
+## Campaign Tech Partnerships {#sec-campaign_tech_partnerships}
 
 **Value**: $25M
 
@@ -2475,7 +2475,7 @@ Tech industry partnerships and infrastructure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Treaty Implementation Millions {#sec-campaign_treaty_implementation_millions}
+## Campaign Treaty Implementation {#sec-campaign_treaty_implementation}
 
 **Value**: $40M
 
@@ -2488,7 +2488,7 @@ Post-victory treaty implementation support
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Viral Content Budget Millions {#sec-campaign_viral_content_budget_millions}
+## Campaign Viral Content Budget {#sec-campaign_viral_content_budget}
 
 **Value**: $40M
 
@@ -2687,7 +2687,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Daily Cost Inefficiency Billions {#sec-daily_cost_inefficiency_billions}
+## Daily Cost Inefficiency {#sec-daily_cost_inefficiency}
 
 **Value**: $327M
 
@@ -2700,7 +2700,7 @@ Daily cost of healthcare system inefficiency
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dct Platform Funding Medium Billions {#sec-dct_platform_funding_medium_billions}
+## Dct Platform Funding Medium {#sec-dct_platform_funding_medium}
 
 **Value**: $500M
 
@@ -2890,7 +2890,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Icer Per Qaly {#sec-dfda_icer_per_qaly}
 
-**Value**: $-59.5T
+**Value**: $-59.5K
 
 dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
 
@@ -2978,7 +2978,7 @@ Years to reach full dFDA adoption
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Npv Annual Opex Billions {#sec-dfda_npv_annual_opex_billions}
+## Dfda Npv Annual Opex {#sec-dfda_npv_annual_opex}
 
 **Value**: $18.9M
 
@@ -3076,7 +3076,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Npv Upfront Cost Billions {#sec-dfda_npv_upfront_cost_billions}
+## Dfda Npv Upfront Cost {#sec-dfda_npv_upfront_cost}
 
 **Value**: $40M
 
@@ -3106,7 +3106,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Community Billions {#sec-dfda_opex_community_billions}
+## Dfda Opex Community {#sec-dfda_opex_community}
 
 **Value**: $2.00M
 
@@ -3119,7 +3119,7 @@ dFDA community support costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Infrastructure Billions {#sec-dfda_opex_infrastructure_billions}
+## Dfda Opex Infrastructure {#sec-dfda_opex_infrastructure}
 
 **Value**: $8.00M
 
@@ -3132,7 +3132,7 @@ dFDA infrastructure costs (cloud, security)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Platform Maintenance Billions {#sec-dfda_opex_platform_maintenance_billions}
+## Dfda Opex Platform Maintenance {#sec-dfda_opex_platform_maintenance}
 
 **Value**: $15M
 
@@ -3145,7 +3145,7 @@ dFDA platform maintenance costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Regulatory Billions {#sec-dfda_opex_regulatory_billions}
+## Dfda Opex Regulatory {#sec-dfda_opex_regulatory}
 
 **Value**: $5.00M
 
@@ -3158,7 +3158,7 @@ dFDA regulatory coordination costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Opex Staff Billions {#sec-dfda_opex_staff_billions}
+## Dfda Opex Staff {#sec-dfda_opex_staff}
 
 **Value**: $10M
 
@@ -3295,7 +3295,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Upfront Build Billions {#sec-dfda_upfront_build_billions}
+## Dfda Upfront Build {#sec-dfda_upfront_build}
 
 **Value**: $40M
 
@@ -3308,7 +3308,7 @@ dFDA platform one-time build cost (central estimate)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Upfront Build Max Billions {#sec-dfda_upfront_build_max_billions}
+## Dfda Upfront Build Max {#sec-dfda_upfront_build_max}
 
 **Value**: $46M
 
@@ -3334,7 +3334,7 @@ Estimated one-time payment for diabetes cure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dih Npv Annual Opex Initiatives Billions {#sec-dih_npv_annual_opex_initiatives_billions}
+## Dih Npv Annual Opex Initiatives {#sec-dih_npv_annual_opex_initiatives}
 
 **Value**: $21.1M
 
@@ -3347,7 +3347,7 @@ DIH broader initiatives annual opex (medium case)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dih Npv Upfront Cost Initiatives Billions {#sec-dih_npv_upfront_cost_initiatives_billions}
+## Dih Npv Upfront Cost Initiatives {#sec-dih_npv_upfront_cost_initiatives}
 
 **Value**: $230M
 
@@ -3474,7 +3474,7 @@ Low estimate of annual savings from drug price reductions (20% reduction of $360
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate {#sec-effective_hourly_rate}
 
-**Value**: $292B
+**Value**: $292K
 
 Effective hourly rate from treaty participation
 
@@ -3491,26 +3491,13 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate Lifetime Benefit {#sec-effective_hourly_rate_lifetime_benefit}
 
-**Value**: $4.30T
-
-Lifetime benefit in USD (not millions)
-
-$$
-Benefit = \$4.3M \times 10^6 = \$4,300,000
-$$
-
-**Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Effective Hourly Rate Lifetime Benefit Millions {#sec-effective_hourly_rate_lifetime_benefit_millions}
-
 **Value**: $4.30M
 
-Lifetime benefit for age 30 baseline scenario
+Lifetime benefit for age 30 baseline scenario ($4.3M)
+
+$$
+Benefit = \$4,300,000
+$$
 
 **Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
 
@@ -3521,7 +3508,7 @@ Lifetime benefit for age 30 baseline scenario
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate Vs Ceo Multiplier {#sec-effective_hourly_rate_vs_ceo_multiplier}
 
-**Value**: 29.2M
+**Value**: 29.2
 
 Effective rate multiplier vs CEO rate
 
@@ -3538,7 +3525,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate Vs Wage Multiplier {#sec-effective_hourly_rate_vs_wage_multiplier}
 
-**Value**: 9.74B
+**Value**: 9,744
 
 Effective rate multiplier vs average US wage
 
@@ -3604,7 +3591,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Family Office Investment Min Millions {#sec-family_office_investment_min_millions}
+## Family Office Investment Min {#sec-family_office_investment_min}
 
 **Value**: $5.00M
 
@@ -3961,9 +3948,9 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Cost Per Conflict Death Millions {#sec-global_cost_per_conflict_death_millions}
+## Global Cost Per Conflict Death {#sec-global_cost_per_conflict_death}
 
-**Value**: $36.4B
+**Value**: $36.4M
 
 Cost per conflict death (war cost ÷ deaths)
 
@@ -3980,7 +3967,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Cost Per Life Saved Med Research Annual {#sec-global_cost_per_life_saved_med_research_annual}
 
-**Value**: $16.1T
+**Value**: $16.1K
 
 Cost per life saved by medical research
 
@@ -4093,7 +4080,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global War Direct Cost Per Second {#sec-global_war_direct_cost_per_second}
 
-**Value**: $165T
+**Value**: $165K
 
 Direct war cost per second globally
 
@@ -4108,7 +4095,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## High Net Worth Investor Min Millions {#sec-high_net_worth_investor_min_millions}
+## High Net Worth Investor Min {#sec-high_net_worth_investor_min}
 
 **Value**: $1.00M
 
@@ -4149,7 +4136,7 @@ ICER counting redirected military spending as opportunity cost
 ::: {.callout-note icon=false collapse=false}
 ## Icer Per Qaly {#sec-icer_per_qaly}
 
-**Value**: $-150T
+**Value**: $-150K
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained
 
@@ -4162,7 +4149,7 @@ Incremental Cost-Effectiveness Ratio (ICER) per QALY gained
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Institutional Investor Min Millions {#sec-institutional_investor_min_millions}
+## Institutional Investor Min {#sec-institutional_investor_min}
 
 **Value**: $10M
 
@@ -4192,7 +4179,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Lobbyist Bond Investment Max Millions {#sec-lobbyist_bond_investment_max_millions}
+## Lobbyist Bond Investment Max {#sec-lobbyist_bond_investment_max}
 
 **Value**: $20M
 
@@ -4205,7 +4192,7 @@ Maximum bond investment for lobbyist incentives
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Lobbyist Bond Investment Min Millions {#sec-lobbyist_bond_investment_min_millions}
+## Lobbyist Bond Investment Min {#sec-lobbyist_bond_investment_min}
 
 **Value**: $5.00M
 
@@ -4282,7 +4269,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Multiplier Vs Givewell {#sec-multiplier_vs_givewell}
 
-**Value**: 1166326B
+**Value**: 0.00117
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4299,7 +4286,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Net Benefit Per Life Saved {#sec-net_benefit_per_life_saved}
 
-**Value**: $-5.25B
+**Value**: $-5
 
 Net benefit per life saved (ICER × QALYs/life)
 
@@ -4331,7 +4318,7 @@ Foregone economic value per day from not implementing system
 ::: {.callout-note icon=false collapse=false}
 ## Opportunity Cost Per Second {#sec-opportunity_cost_per_second}
 
-**Value**: $39.3T
+**Value**: $39.3K
 
 Foregone economic value per second from not implementing system
 
@@ -4879,7 +4866,7 @@ Total optimistic QALYs (500k + 150k + 3M)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Qualified Investor Min Thousands {#sec-qualified_investor_min_thousands}
+## Qualified Investor Min {#sec-qualified_investor_min}
 
 **Value**: $100K
 
@@ -4960,7 +4947,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Dalys Billions {#sec-regulatory_delay_dalys_billions}
+## Regulatory Delay Dalys {#sec-regulatory_delay_dalys}
 
 **Value**: 4.83
 
@@ -4977,7 +4964,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Deaths Lower Bound Millions {#sec-regulatory_delay_deaths_lower_bound_millions}
+## Regulatory Delay Deaths Lower Bound {#sec-regulatory_delay_deaths_lower_bound}
 
 **Value**: 110
 
@@ -4994,7 +4981,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Deaths Mean Millions {#sec-regulatory_delay_deaths_mean_millions}
+## Regulatory Delay Deaths Mean {#sec-regulatory_delay_deaths_mean}
 
 **Value**: 185
 
@@ -5011,7 +4998,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Deaths Upper Bound Millions {#sec-regulatory_delay_deaths_upper_bound_millions}
+## Regulatory Delay Deaths Upper Bound {#sec-regulatory_delay_deaths_upper_bound}
 
 **Value**: 318
 
@@ -5045,7 +5032,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Yld Billions {#sec-regulatory_delay_yld_billions}
+## Regulatory Delay Yld {#sec-regulatory_delay_yld}
 
 **Value**: 1.69
 
@@ -5062,7 +5049,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Yll Billions {#sec-regulatory_delay_yll_billions}
+## Regulatory Delay Yll {#sec-regulatory_delay_yll}
 
 **Value**: 3.14
 
@@ -5198,7 +5185,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Campaign Cost Conservative Billions {#sec-sensitivity_campaign_cost_conservative_billions}
+## Sensitivity Campaign Cost Conservative {#sec-sensitivity_campaign_cost_conservative}
 
 **Value**: $333M
 
@@ -5211,7 +5198,7 @@ Conservative campaign cost (3-year amortization)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Campaign Cost Optimistic Billions {#sec-sensitivity_campaign_cost_optimistic_billions}
+## Sensitivity Campaign Cost Optimistic {#sec-sensitivity_campaign_cost_optimistic}
 
 **Value**: $200M
 
@@ -5263,7 +5250,7 @@ Optimistic cost per life saved
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Dfda Opex Conservative Billions {#sec-sensitivity_dfda_opex_conservative_billions}
+## Sensitivity Dfda Opex Conservative {#sec-sensitivity_dfda_opex_conservative}
 
 **Value**: $60M
 
@@ -5276,7 +5263,7 @@ Conservative dFDA operational costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Dfda Opex Optimistic Billions {#sec-sensitivity_dfda_opex_optimistic_billions}
+## Sensitivity Dfda Opex Optimistic {#sec-sensitivity_dfda_opex_optimistic}
 
 **Value**: $30M
 
@@ -5475,7 +5462,7 @@ Optimistic total benefits estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Costs Conservative Billions {#sec-sensitivity_total_costs_conservative_billions}
+## Sensitivity Total Costs Conservative {#sec-sensitivity_total_costs_conservative}
 
 **Value**: $393M
 
@@ -5488,7 +5475,7 @@ Conservative total costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Costs Optimistic Billions {#sec-sensitivity_total_costs_optimistic_billions}
+## Sensitivity Total Costs Optimistic {#sec-sensitivity_total_costs_optimistic}
 
 **Value**: $230M
 
@@ -5574,7 +5561,7 @@ Minimum target participant count for social media campaigns
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## System Profit Per Life Saved Millions {#sec-system_profit_per_life_saved_millions}
+## System Profit Per Life Saved {#sec-system_profit_per_life_saved}
 
 **Value**: $5.87M
 
@@ -5705,7 +5692,7 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Mass Bribery Billions {#sec-treaty_campaign_budget_mass_bribery_billions}
+## Treaty Campaign Budget Mass Bribery {#sec-treaty_campaign_budget_mass_bribery}
 
 **Value**: $140M
 
@@ -5744,7 +5731,7 @@ Reserve fund / contingency buffer
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Super Pacs Billions {#sec-treaty_campaign_budget_super_pacs_billions}
+## Treaty Campaign Budget Super Pacs {#sec-treaty_campaign_budget_super_pacs}
 
 **Value**: $800M
 
@@ -5943,7 +5930,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Voting Bloc Target Millions {#sec-treaty_campaign_voting_bloc_target_millions}
+## Treaty Campaign Voting Bloc Target {#sec-treaty_campaign_voting_bloc_target}
 
 **Value**: 280M
 
@@ -6122,7 +6109,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Type I Error Benefit Dalys Billions {#sec-type_i_error_benefit_dalys_billions}
+## Type I Error Benefit Dalys {#sec-type_i_error_benefit_dalys}
 
 **Value**: 0.003
 

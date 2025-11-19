@@ -50,7 +50,7 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 **Calculation**: {{< var global_clinical_trials_spending_annual >}} trial market × 50.0% cost reduction = **{{< var dfda_gross_savings_annual >}}**
 
-**ROI**: 463:1 return on {{< var dfda_upfront_build_billions >}} annual operational cost
+**ROI**: 463:1 return on {{< var dfda_upfront_build >}} annual operational cost
 
 **For detailed breakdown and methodology**, see:
 
@@ -132,33 +132,33 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Amortized annual cost**:
 
-- Conservative (3 years): {{< var treaty_campaign_total_cost >}} ÷ 3 = {{< var sensitivity_campaign_cost_conservative_billions >}}/year
+- Conservative (3 years): {{< var treaty_campaign_total_cost >}} ÷ 3 = {{< var sensitivity_campaign_cost_conservative >}}/year
 - Central (4 years): {{< var treaty_campaign_total_cost >}} ÷ 4 = **$250M/year**
-- Optimistic (5 years): {{< var treaty_campaign_total_cost >}} ÷ 5 = {{< var sensitivity_campaign_cost_optimistic_billions >}}/year
+- Optimistic (5 years): {{< var treaty_campaign_total_cost >}} ÷ 5 = {{< var sensitivity_campaign_cost_optimistic >}}/year
 
 **Using central estimate**: **$250M/year**
 
 **Note**: After initial 3-5 year campaign, these costs drop to near zero. You use amortized costs for a 10-year NPV analysis.
 
-#### 3b. dFDA Operational Costs ({{< var dfda_upfront_build_billions >}}/year)
+#### 3b. dFDA Operational Costs ({{< var dfda_upfront_build >}}/year)
 
 **Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
 
-**Annual operational costs**: {{< var dfda_upfront_build_billions >}}/year
+**Annual operational costs**: {{< var dfda_upfront_build >}}/year
 
-- Platform maintenance: {{< var dfda_opex_platform_maintenance_billions >}}
-- Staff (minimal, AI-assisted): {{< var dfda_opex_staff_billions >}}
-- Infrastructure (cloud, security): {{< var dfda_opex_infrastructure_billions >}}
-- Regulatory coordination: {{< var dfda_opex_regulatory_billions >}}
-- Community support: {{< var dfda_opex_community_billions >}}
+- Platform maintenance: {{< var dfda_opex_platform_maintenance >}}
+- Staff (minimal, AI-assisted): {{< var dfda_opex_staff >}}
+- Infrastructure (cloud, security): {{< var dfda_opex_infrastructure >}}
+- Regulatory coordination: {{< var dfda_opex_regulatory >}}
+- Community support: {{< var dfda_opex_community >}}
 
-**Sensitivity range**: {{< var sensitivity_dfda_opex_optimistic_billions >}} (efficient) to {{< var sensitivity_dfda_opex_conservative_billions >}} (expanded operations)
+**Sensitivity range**: {{< var sensitivity_dfda_opex_optimistic >}} (efficient) to {{< var sensitivity_dfda_opex_conservative >}} (expanded operations)
 
 #### Total Annual Costs
 
 **Campaign (amortized) + dFDA operations = {{< var treaty_total_annual_costs >}}/year**
 
-**Sensitivity range**: {{< var sensitivity_total_costs_optimistic_billions >}} to {{< var sensitivity_total_costs_conservative_billions >}}
+**Sensitivity range**: {{< var sensitivity_total_costs_optimistic >}} to {{< var sensitivity_total_costs_conservative >}}
 
 ### Step 3b: Alternative Cost Perspective - The Funding Mechanism
 
@@ -173,7 +173,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
    - 2.7B/year → VICTORY bondholders (10.0% of redirected funds)
    - $24.5B/year → Medical research and operations
    - This $24.5B covers:
-     - dFDA operations: {{< var dfda_upfront_build_billions >}}/year
+     - dFDA operations: {{< var dfda_upfront_build >}}/year
      - Clinical trial subsidies: ~$10.0B-$20.0B/year
      - Other medical research: Remaining funds
 
@@ -300,9 +300,9 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | **Peace dividend** | {{< var sensitivity_peace_dividend_conservative >}} | {{< var peace_dividend_annual_societal_benefit >}} | {{< var sensitivity_peace_dividend_optimistic >}} |
 | **dFDA R&D savings** | {{< var sensitivity_dfda_savings_conservative >}} | {{< var dfda_gross_savings_annual >}} | {{< var sensitivity_dfda_savings_optimistic >}} |
 | **Total benefits** | {{< var sensitivity_total_benefits_conservative >}} | {{< var treaty_total_annual_benefits >}} | {{< var sensitivity_total_benefits_optimistic >}} |
-| **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative_billions >}} | $250M | {{< var sensitivity_campaign_cost_optimistic_billions >}} |
-| **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative_billions >}} | {{< var dfda_upfront_build_billions >}} | {{< var sensitivity_dfda_opex_optimistic_billions >}} |
-| **Total costs/yr** | {{< var sensitivity_total_costs_conservative_billions >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic_billions >}} |
+| **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative >}} | $250M | {{< var sensitivity_campaign_cost_optimistic >}} |
+| **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative >}} | {{< var dfda_upfront_build >}} | {{< var sensitivity_dfda_opex_optimistic >}} |
+| **Total costs/yr** | {{< var sensitivity_total_costs_conservative >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic >}} |
 | **Peace QALYs** | {{< var sensitivity_peace_qalys_conservative >}} | {{< var treaty_qalys_gained_annual_global >}} | {{< var sensitivity_peace_qalys_optimistic >}} |
 | **dFDA QALYs** | {{< var qalys_total_conservative >}} | {{< var global_dfda_qalys_gained_annual >}} | {{< var qalys_total_optimistic >}} |
 | **Total QALYs** | {{< var sensitivity_total_qalys_conservative >}} | {{< var treaty_total_qalys_gained_annual >}} | {{< var sensitivity_total_qalys_optimistic >}} |
@@ -411,8 +411,8 @@ For publication-quality analysis, run a Monte Carlo simulation with:
    - Amortized: $200-333M/year
 
 7. **dFDA Operations**: [dFDA Cost Analysis](dfda-cost-benefit-analysis.qmd#simplified-roi-scenario)
-   - Annual: {{< var dfda_upfront_build_billions >}}/year
-   - Range: {{< var sensitivity_dfda_opex_optimistic_billions >}}-{{< var sensitivity_dfda_opex_conservative_billions >}}
+   - Annual: {{< var dfda_upfront_build >}}/year
+   - Range: {{< var sensitivity_dfda_opex_optimistic >}}-{{< var sensitivity_dfda_opex_conservative >}}
 
 ### Comparisons
 
@@ -455,7 +455,7 @@ The 1% Treaty solves this by creating aligned incentives.
 
 - Getting countries to sign the treaty (hence the $1.0B campaign)
 - Overcoming defense industry opposition (hence VICTORY Social Impact Bonds to co-opt them)
-- Building the dFDA infrastructure (hence the {{< var dfda_upfront_build_billions >}} upfront development cost)
+- Building the dFDA infrastructure (hence the {{< var dfda_upfront_build >}} upfront development cost)
 
 The math works. The challenge is execution.
 

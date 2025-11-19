@@ -96,7 +96,7 @@ Some humans are very loud on the internet. If you give them papers, they become 
 
 Politicians don't take papers directly (that's "illegal"). Instead, you give papers to people called "lobbyists." The lobbyists give papers to "campaigns." The campaigns give papers to politicians. It's like money laundering but backwards and legal.
 
-**Step 4: Give Papers to the Politicians' Friends ({{< var treaty_campaign_budget_super_pacs_billions >}})**
+**Step 4: Give Papers to the Politicians' Friends ({{< var treaty_campaign_budget_super_pacs >}})**
 
 Politicians have friends who run "Super PACs" which are like normal PACs but super. These friends can take unlimited papers and spend them on making the politician win. This isn't bribery because you called it something else.
 
@@ -235,7 +235,7 @@ Rich humans give you {{< var treaty_campaign_total_cost >}} in papers because yo
 
 #### Step 2: The Internet Clicking Ceremony
 
-You use {{< var treaty_campaign_budget_referendum >}} of those papers to convince {{< var treaty_campaign_voting_bloc_target_millions >}} million regular people to click "yes" on a website that asks: "Would you like all nations to redirect 1% of military spending to cure diseases?"
+You use {{< var treaty_campaign_budget_referendum >}} of those papers to convince {{< var treaty_campaign_voting_bloc_target >}} million regular people to click "yes" on a website that asks: "Would you like all nations to redirect 1% of military spending to cure diseases?"
 
 This costs about 50 cents per person, which is cheaper than a candy bar and achieves more than most political movements that involve shouting at things.
 
@@ -247,7 +247,7 @@ Suddenly they realize curing humans is just murder in reverse, which is still a 
 
 #### Step 4: The Political Awakening Ritual
 
-You spend {{< var treaty_campaign_budget_lobbying >}} in papers on Super PACs, which are like regular PACs but with capes. You explain to politicians that {{< var treaty_campaign_voting_bloc_target_millions >}} million voters have discovered they enjoy being alive.
+You spend {{< var treaty_campaign_budget_lobbying >}} in papers on Super PACs, which are like regular PACs but with capes. You explain to politicians that {{< var treaty_campaign_voting_bloc_target >}} million voters have discovered they enjoy being alive.
 
 Politicians, who are professionally terrified of unemployed people with opinions, suddenly remember they've always cared deeply about human health.
 
@@ -590,13 +590,13 @@ They switch sides faster than Italy in a world war.
 
 *It's For Sale Anyway*
 
-Politicians are simple organisms with one evolutionary drive: reelection. You exploit this with {{< var treaty_campaign_budget_super_pacs_billions >}} in Super PAC papers.
+Politicians are simple organisms with one evolutionary drive: reelection. You exploit this with {{< var treaty_campaign_budget_super_pacs >}} in Super PAC papers.
 
 The conversation goes:
 
-- You: "{{< var treaty_campaign_voting_bloc_target_millions >}} million voters want to not die"
+- You: "{{< var treaty_campaign_voting_bloc_target >}} million voters want to not die"
 - Politician: "But defense contractors give me papers"
-- You: "Here's more papers plus those {{< var treaty_campaign_voting_bloc_target_millions >}} million votes"
+- You: "Here's more papers plus those {{< var treaty_campaign_voting_bloc_target >}} million votes"
 - Politician: "I've always been very passionate about helping sick people!" (they discovered this passion approximately 3 seconds ago)
 
 It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
@@ -626,7 +626,7 @@ The entire system runs on greed, like capitalism, except instead of destroying t
 
 **Big Pharma**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} per trial patient, they pay YOU. It's like if your costs became revenue. We call it 'reverse expenses' or 'profit.'"
 
-**Politicians**: "{{< var treaty_campaign_voting_bloc_target_millions >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment. Your choice."
+**Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment. Your choice."
 
 **Billionaires**: "Your index fund makes 10% more papers. This makes {{< var victory_bond_annual_return_pct >}}. It's like compound interest discovered steroids then did cocaine."
 
@@ -707,7 +707,7 @@ For humans who peaked at counting on fingers:
 - **You get back**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually
 - **Operating costs**: {{< var treaty_total_annual_costs >}}/year (less than a single fighter jet)
 - **Lives saved**: {{< var treaty_total_lives_saved_annual >}}/year
-- **Per life saved**: Society makes {{< var system_profit_per_life_saved_millions >}} profit
+- **Per life saved**: Society makes {{< var system_profit_per_life_saved >}} profit
 
 Math says this is the best possible use of a billion dollars.
 
@@ -735,7 +735,7 @@ That's like being 10 times better than pizza. Impossible, yet here we are.
 **The Comparison That Makes Charity Look Sad:**
 
 - Traditional charities: Spend $3,500 to save one human life (heroic but expensive)
-- This system: MAKES {{< var system_profit_per_life_saved_millions >}}M per life saved
+- This system: MAKES {{< var system_profit_per_life_saved >}}M per life saved
 
 You don't donate to this. You invest in it. Then you get obscenely wealthy while accidentally saving humanity as a side effect.
 
@@ -765,7 +765,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 - Major diseases get cured within a decade
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading)
 - Healthcare becomes free through trial participation
-- **You personally get {{< var effective_hourly_rate_lifetime_benefit_millions >}} in lifetime wealth and 72 extra years of life** (yes, you specifically)
+- **You personally get {{< var effective_hourly_rate_lifetime_benefit >}} in lifetime wealth and 72 extra years of life** (yes, you specifically)
 - Death becomes optional (terms and conditions apply)
 
 {{< include knowledge/figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}

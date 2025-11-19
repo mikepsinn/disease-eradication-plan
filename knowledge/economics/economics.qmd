@@ -255,7 +255,7 @@ They just follow their calculator to accidentally save humanity.
 
 **Pharmaceutical Companies**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} per trial patient, patients pay YOU (via subsidies). Your costs become revenue. We call it 'reverse expenses' or 'profit.'"
 
-**Politicians**: "{{< var treaty_campaign_voting_bloc_target_millions >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
+**Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
 
 **Billionaires**: "Your index fund makes 10% returns. Victory Bonds make {{< var victory_bond_annual_return_pct >}}. It's like compound interest discovered steroids then did cocaine."
 
@@ -368,7 +368,7 @@ You spend {{< var treaty_campaign_total_cost >}} convincing humans that not dyin
 
 - Global referendum campaign to get 280M votes ({{< var treaty_campaign_budget_referendum >}})
 - Professional democracy purchasers, previously employed corrupting government for weapons manufacturers, now corrupting government for medicine manufacturers ({{< var treaty_campaign_budget_lobbying >}})
-- Super PAC papers that make politicians care about living voters ({{< var treaty_campaign_budget_super_pacs_billions >}})
+- Super PAC papers that make politicians care about living voters ({{< var treaty_campaign_budget_super_pacs >}})
 
 This is a one-time cost. You either convince humanity to stop being stupid or you don't. There's no subscription model for common sense.
 
@@ -428,10 +428,10 @@ The dFDA's ICER: **{{< var dfda_icer_per_qaly >}} per QALY**
 
 That's negative. Negative means you MAKE money while saving lives. Economists call this a "dominant intervention" because even they can't argue against it.
 
-The dFDA doesn't cost money to save lives. It generates {{< var system_profit_per_life_saved_millions >}}M profit per life saved. This is the only health intervention in history where saving lives is the profitable option.
+The dFDA doesn't cost money to save lives. It generates {{< var system_profit_per_life_saved >}}M profit per life saved. This is the only health intervention in history where saving lives is the profitable option.
 
 Traditional charity: "Please donate $3,500 to save one life"
-This system: "Here's ${{< var system_profit_per_life_saved_millions >}}M, we saved a life as a side effect of doing profitable things"
+This system: "Here's ${{< var system_profit_per_life_saved >}}M, we saved a life as a side effect of doing profitable things"
 
 **Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
@@ -791,7 +791,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 **Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the medical research budget for short-term priorities.
 
-**Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual_billions >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
+**Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
 
 **Historical precedent - Post-WWII peace dividend**: The post-World War II "peace dividend" saw military spending fall from 37% of GDP (1945) to 5% (1948), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 13% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
 
@@ -889,7 +889,7 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 **Total**: {{< var dfda_npv_total_cost >}} over {{< var npv_time_horizon_years >}} years
   - Upfront: {{< var dfda_npv_upfront_cost_total >}} (build the platform)
-  - Annual ops: {{< var dfda_upfront_build_billions >}} (keep it running)
+  - Annual ops: {{< var dfda_upfront_build >}} (keep it running)
 
 **Why costs are shockingly low:** The dFDA provides coordination infrastructure (like HTTP for the internet), not a competing platform.
 
@@ -1338,7 +1338,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for the
 
 **Why this actually won't happen**:
 
-Oxford already did this. The [RECOVERY trial](../appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient. Total cost: {{< var dfda_opex_regulatory_billions >}}. That's less than one F-35 fighter jet.
+Oxford already did this. The [RECOVERY trial](../appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient. Total cost: {{< var dfda_opex_regulatory >}}. That's less than one F-35 fighter jet.
 
 They found a treatment that cut COVID deaths by 30% and saved over 1 million lives globally.
 

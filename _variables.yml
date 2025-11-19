@@ -27,9 +27,9 @@
 "alzheimers_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Alzheimer's disease death rate | ✓ High confidence\
   \ | Unit: deaths per 100,000 | Click to view source\">27.7</a>"
-"alzheimer_cure_bounty_estimate_billions": "<a href=\"/cure-bounty-estimates\" class=\"\
-  parameter-link\" title=\"Estimated bounty value for Alzheimer's cure | ✓ High confidence\
-  \ | Unit: USD | Click to view calculation\">$10B</a>"
+"alzheimer_cure_bounty_estimate": "<a href=\"/cure-bounty-estimates\" class=\"parameter-link\"\
+  \ title=\"Estimated bounty value for Alzheimer's cure | ✓ High confidence | Unit:\
+  \ USD | Click to view calculation\">$10B</a>"
 "antibiotics_life_extension_years": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" title=\"Life extension from antibiotics (conservative\
   \ mid-range from 5-23 years) | ✓ High confidence | Unit: years | Click to view source\"\
@@ -40,7 +40,7 @@
 "average_us_hourly_wage": "<a href=\"/knowledge/references.qmd#average-us-hourly-wage\"\
   \ class=\"parameter-link\" title=\"Average US hourly wage | ✓ High confidence |\
   \ Unit: USD/hour | Click to view source\">$30</a>"
-"baseline_lives_saved_annual_millions": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
+"baseline_lives_saved_annual": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" title=\"Baseline annual lives saved by pharmaceuticals\
   \ (conservative aggregate) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Conservative\
   \ estimate | Updated: 2024 | Unit: deaths/year | Click to view source\">12</a>"
@@ -80,85 +80,85 @@
 "book_reading_time_hours": "<a href=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ class=\"parameter-link\" title=\"Time to read the entire book | ✓ High confidence\
   \ | Formula: (WORDS ÷ SPEED) ÷ 60 | Unit: hours | Click to view calculation\">14.3</a>"
-"campaign_celebrity_endorsement_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_celebrity_endorsement": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Celebrity and influencer endorsements | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$15M</a>"
-"campaign_community_organizing_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_community_organizing": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Community organizing and ambassador program budget\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$30M</a>"
-"campaign_contingency_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Contingency fund for unexpected costs | ✓ High\
-  \ confidence | Unit: USD | Click to view calculation\">$50M</a>"
-"campaign_defense_conversion_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_contingency": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Contingency fund for unexpected costs | ✓ High confidence\
+  \ | Unit: USD | Click to view calculation\">$50M</a>"
+"campaign_defense_conversion": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Defense industry conversion program | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$50M</a>"
-"campaign_defense_lobbyist_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_defense_lobbyist_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Budget for co-opting defense industry lobbyists\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$50M</a>"
-"campaign_healthcare_alignment_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_healthcare_alignment": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Healthcare industry alignment and partnerships\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$35M</a>"
-"campaign_infrastructure_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Campaign operational infrastructure | ✓ High\
-  \ confidence | Unit: USD | Click to view calculation\">$20M</a>"
-"campaign_legal_ai_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_infrastructure": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Campaign operational infrastructure | ✓ High confidence\
+  \ | Unit: USD | Click to view calculation\">$20M</a>"
+"campaign_legal_ai_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"AI-assisted legal work budget | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$50M</a>"
-"campaign_legal_defense_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Legal defense fund | ✓ High confidence | Unit:\
-  \ USD | Click to view calculation\">$20M</a>"
-"campaign_legal_work_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Legal drafting and compliance work | ✓ High confidence\
+"campaign_legal_defense": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Legal defense fund | ✓ High confidence | Unit: USD | Click\
+  \ to view calculation\">$20M</a>"
+"campaign_legal_work": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Legal drafting and compliance work | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$60M</a>"
-"campaign_lobbying_eu_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"EU lobbying campaign budget | ✓ High confidence\
-  \ | Unit: USD | Click to view calculation\">$40M</a>"
+"campaign_lobbying_eu": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"EU lobbying campaign budget | ✓ High confidence | Unit:\
+  \ USD | Click to view calculation\">$40M</a>"
 "campaign_lobbying_g20_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"G20 countries lobbying budget | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$35M</a>"
-"campaign_lobbying_us_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"US lobbying campaign budget | ✓ High confidence\
-  \ | Unit: USD | Click to view calculation\">$50M</a>"
-"campaign_media_budget_max_billions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_lobbying_us": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"US lobbying campaign budget | ✓ High confidence | Unit:\
+  \ USD | Click to view calculation\">$50M</a>"
+"campaign_media_budget_max": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Maximum mass media campaign budget | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$1.00B</a>"
-"campaign_media_budget_min_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_media_budget_min": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum mass media campaign budget | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$500M</a>"
-"campaign_opposition_research_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_opposition_research": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Opposition research and rapid response | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$25M</a>"
-"campaign_phase1_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Phase 1 campaign budget (Foundation, Year 1)\
-  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$200M</a>"
-"campaign_phase2_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Phase 2 campaign budget (Scale & Momentum, Years\
-  \ 2-3) | ✓ High confidence | Unit: USD | Click to view calculation\">$500M</a>"
-"campaign_pilot_programs_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Pilot program testing in small countries | ✓\
-  \ High confidence | Unit: USD | Click to view calculation\">$30M</a>"
-"campaign_platform_development_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_phase1_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Phase 1 campaign budget (Foundation, Year 1) | ✓ High confidence\
+  \ | Unit: USD | Click to view calculation\">$200M</a>"
+"campaign_phase2_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Phase 2 campaign budget (Scale & Momentum, Years 2-3) |\
+  \ ✓ High confidence | Unit: USD | Click to view calculation\">$500M</a>"
+"campaign_pilot_programs": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Pilot program testing in small countries | ✓ High confidence\
+  \ | Unit: USD | Click to view calculation\">$30M</a>"
+"campaign_platform_development": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Voting platform and technology development |\
   \ ✓ High confidence | Unit: USD | Click to view calculation\">$35M</a>"
-"campaign_regulatory_navigation_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_regulatory_navigation": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Regulatory compliance and navigation | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$20M</a>"
-"campaign_scaling_prep_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Scaling preparation and blueprints | ✓ High confidence\
+"campaign_scaling_prep": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Scaling preparation and blueprints | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$30M</a>"
-"campaign_staff_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ class=\"parameter-link\" title=\"Campaign core team staff budget | ✓ High confidence\
-  \ | Unit: USD | Click to view calculation\">$40M</a>"
-"campaign_super_pac_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_staff_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\" class=\"\
+  parameter-link\" title=\"Campaign core team staff budget | ✓ High confidence | Unit:\
+  \ USD | Click to view calculation\">$40M</a>"
+"campaign_super_pac_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Super PAC campaign expenditures | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$30M</a>"
-"campaign_tech_partnerships_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_tech_partnerships": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Tech industry partnerships and infrastructure\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$25M</a>"
-"campaign_treaty_implementation_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_treaty_implementation": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Post-victory treaty implementation support |\
   \ ✓ High confidence | Unit: USD | Click to view calculation\">$40M</a>"
-"campaign_viral_content_budget_millions": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
+"campaign_viral_content_budget": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
   \ class=\"parameter-link\" title=\"Viral marketing content creation budget | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$40M</a>"
 "campaign_weekly_ad_cost_k": "<a href=\"/knowledge/economics/campaign-budget.qmd\"\
@@ -268,10 +268,10 @@
 "current_trial_slots_available": "<a href=\"/knowledge/references.qmd#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" title=\"Total trial slots available for 2.4B sick people\
   \ | ✓ High confidence | Unit: slots | Click to view source\">5.00M</a>"
-"daily_cost_inefficiency_billions": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
+"daily_cost_inefficiency": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
   \ class=\"parameter-link\" title=\"Daily cost of healthcare system inefficiency\
   \ | ✓ High confidence | Unit: USD/day | Click to view calculation\">$327M</a>"
-"dct_platform_funding_medium_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
+"dct_platform_funding_medium": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
   \ class=\"parameter-link\" title=\"Mid-range funding for commercial DCT platform\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$500M</a>"
 "deaths_during_reading_section": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
@@ -280,7 +280,7 @@
 "death_spending_misallocation_factor": "<a href=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ class=\"parameter-link\" title=\"Misallocation factor for spending on death vs\
   \ prevention | ✓ High confidence | Unit: ratio | Click to view calculation\">1,750</a>"
-"defense_lobbying_annual_billions": "<a href=\"/knowledge/references.qmd#lobbying-spend-defense\"\
+"defense_lobbying_annual": "<a href=\"/knowledge/references.qmd#lobbying-spend-defense\"\
   \ class=\"parameter-link\" title=\"Annual defense industry lobbying spending | ✓\
   \ High confidence | \U0001F4CA Peer-reviewed | Updated: 2024 | Unit: USD/year |\
   \ Click to view source\">$127M</a>"
@@ -327,7 +327,7 @@
   \ class=\"parameter-link\" title=\"dFDA Infrastructure ICER per QALY (net incremental\
   \ cost ÷ QALYs gained) | ✓ High confidence | Formula: (DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL)\
   \ × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
-  >$-59.5T</a>"
+  >$-59.5K</a>"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ class=\"parameter-link\" title=\"Months to recruit 10,000+ patients in dFDA system\
   \ | ✓ High confidence | Unit: months | Click to view calculation\">3</a>"
@@ -345,7 +345,7 @@
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ class=\"parameter-link\" title=\"Years to reach full dFDA adoption | ✓ High confidence\
   \ | Unit: years | Click to view calculation\">5</a>"
-"dfda_npv_annual_opex_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"dFDA core platform annual opex (midpoint of $11-26.5M)\
   \ | ✓ High confidence | Unit: USD/year | Click to view calculation\">$18.9M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
@@ -369,26 +369,26 @@
   \ class=\"parameter-link\" title=\"Total NPV cost (upfront + PV of annual opex)\
   \ | ✓ High confidence | Formula: UPFRONT + PV_OPEX | Unit: USD | Click to view calculation\"\
   >$538M</a>"
-"dfda_npv_upfront_cost_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"dFDA core platform build cost | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"Total NPV upfront costs (dFDA core + DIH initiatives)\
   \ | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit: USD | Click\
   \ to view calculation\">$270M</a>"
-"dfda_opex_community_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA community support costs | ✓ High confidence\
   \ | Unit: USD/year | Click to view calculation\">$2.00M</a>"
-"dfda_opex_infrastructure_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_infrastructure": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA infrastructure costs (cloud, security) |\
   \ ✓ High confidence | Unit: USD/year | Click to view calculation\">$8.00M</a>"
-"dfda_opex_platform_maintenance_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA platform maintenance costs | ✓ High confidence\
   \ | Unit: USD/year | Click to view calculation\">$15M</a>"
-"dfda_opex_regulatory_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA regulatory coordination costs | ✓ High confidence\
   \ | Unit: USD/year | Click to view calculation\">$5.00M</a>"
-"dfda_opex_staff_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
+"dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"dFDA staff costs (minimal, AI-assisted) | ✓ High\
   \ confidence | Unit: USD/year | Click to view calculation\">$10M</a>"
 "dfda_patient_eligibility_rate": "<span class=\"parameter-definition\" title=\"dFDA\
@@ -428,10 +428,10 @@
   \ trial abandonment rate (5%) | Unit: rate | Core definition\">5%</span>"
 "dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
   \ completion rate (95%) | Unit: rate | Core definition\">95%</span>"
-"dfda_upfront_build_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
+"dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost (central estimate)\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$40M</a>"
-"dfda_upfront_build_max_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
+"dfda_upfront_build_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ class=\"parameter-link\" title=\"dFDA platform one-time build cost (high estimate)\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$46M</a>"
 "diabetes_cure_payment_estimate": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
@@ -443,10 +443,10 @@
 "diabetes_treatment_monthly_cost": "<a href=\"/knowledge/references.qmd#diabetes-treatment-costs\"\
   \ class=\"parameter-link\" title=\"Average monthly cost of diabetes treatment per\
   \ patient | ✓ High confidence | Unit: USD/month | Click to view source\">$500</a>"
-"dih_npv_annual_opex_initiatives_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives annual opex (medium case)\
   \ | ✓ High confidence | Unit: USD/year | Click to view calculation\">$21.1M</a>"
-"dih_npv_upfront_cost_initiatives_billions": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
+"dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ class=\"parameter-link\" title=\"DIH broader initiatives upfront cost (medium\
   \ case) | ✓ High confidence | Unit: USD | Click to view calculation\">$230M</a>"
 "dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
@@ -502,22 +502,19 @@
 "effective_hourly_rate": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective hourly rate from treaty participation\
   \ | ✓ High confidence | Formula: LIFETIME_BENEFIT ÷ TIME_INVESTED | Unit: USD/hour\
-  \ | Click to view calculation\">$292B</a>"
+  \ | Click to view calculation\">$292K</a>"
 "effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
-  \ class=\"parameter-link\" title=\"Lifetime benefit in USD (not millions) | ✓ High\
-  \ confidence | Formula: BENEFIT_MILLIONS × 1M | Unit: USD | Click to view calculation\"\
-  >$4.30T</a>"
-"effective_hourly_rate_lifetime_benefit_millions": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
   \ class=\"parameter-link\" title=\"Lifetime benefit for age 30 baseline scenario\
-  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$4.30M</a>"
+  \ ($4.3M) | ✓ High confidence | Formula: Total lifetime health gains from 1% Treaty\
+  \ | Unit: USD | Click to view calculation\">$4.30M</a>"
 "effective_hourly_rate_vs_ceo_multiplier": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs CEO rate | ✓ High\
   \ confidence | Formula: EFFECTIVE_RATE ÷ CEO_RATE | Unit: ratio | Click to view\
-  \ calculation\">29.2M</a>"
+  \ calculation\">29.2</a>"
 "effective_hourly_rate_vs_wage_multiplier": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs average US wage\
   \ | ✓ High confidence | Formula: EFFECTIVE_RATE ÷ AVG_WAGE | Unit: ratio | Click\
-  \ to view calculation\">9.74B</a>"
+  \ to view calculation\">9,744</a>"
 "efficacy_lag_years": "<a href=\"/knowledge/references.qmd#bio-clinical-development-2021\"\
   \ class=\"parameter-link\" title=\"Regulatory delay for efficacy testing (Phase\
   \ II/III) post-safety verification | ✓ High confidence | \U0001F4CA Peer-reviewed\
@@ -535,7 +532,7 @@
   \ title=\"Expected ROI for dFDA accounting for 50% political success probability\
   \ | ~ Medium confidence | Formula: ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC\
   \ | Click to view calculation\">232</a>"
-"family_office_investment_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+"family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for family offices | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$5.00M</a>"
 "foundation_funding_base_case": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
@@ -728,14 +725,14 @@
 "global_clinical_trial_market_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trial-market\"\
   \ class=\"parameter-link\" title=\"Global clinical trial market size | ✓ High confidence\
   \ | Unit: USD/year | Click to view source\">$100B</a>"
-"global_cost_per_conflict_death_millions": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
+"global_cost_per_conflict_death": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per conflict death (war cost ÷ deaths) |\
   \ ✓ High confidence | Formula: (WAR_COST × 1B ÷ DEATHS) ÷ 1M | Unit: USD/death |\
-  \ Click to view calculation\">$36.4B</a>"
+  \ Click to view calculation\">$36.4M</a>"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per life saved by medical research | ✓ High\
   \ confidence | Formula: (RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED | Unit: USD/life\
-  \ | Click to view calculation\">$16.1T</a>"
+  \ | Click to view calculation\">$16.1K</a>"
 "global_cost_per_refugee_per_year_average": "<a href=\"/knowledge/references.qmd#unhcr-refugee-cost-per-year\"\
   \ class=\"parameter-link\" title=\"Average annual cost per refugee globally | ✓\
   \ High confidence | Unit: USD/year | Click to view source\">$1.38K</a>"
@@ -810,8 +807,8 @@
 "global_war_direct_cost_per_second": "<a href=\"/knowledge/problem/cost-of-war.qmd#cost-per-second\"\
   \ class=\"parameter-link\" title=\"Direct war cost per second globally | ✓ High\
   \ confidence | Formula: DIRECT_COSTS × 1B ÷ SECONDS_PER_YEAR | Unit: USD/second\
-  \ | Click to view calculation\">$165T</a>"
-"high_net_worth_investor_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+  \ | Click to view calculation\">$165K</a>"
+"high_net_worth_investor_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for high net worth individuals\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$1.00M</a>"
 "icer_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
@@ -826,10 +823,10 @@
   \ class=\"parameter-link\" title=\"Incremental Cost-Effectiveness Ratio (ICER) per\
   \ QALY gained | ✓ High confidence | Formula: (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS)\
   \ × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
-  >$-150T</a>"
+  >$-150K</a>"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
-"institutional_investor_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
+"institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for institutional investors\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$10M</a>"
 "kidney_disease_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
@@ -854,13 +851,13 @@
   \ class=\"parameter-link\" title=\"Return on investment for defense lobbying ($1,813\
   \ returned per $1 spent) | ✓ High confidence | Unit: ratio | Click to view source\"\
   >1,813</a>"
-"lobbyist_bond_investment_max_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
+"lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Maximum bond investment for lobbyist incentives\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$20M</a>"
-"lobbyist_bond_investment_min_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
+"lobbyist_bond_investment_min": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" title=\"Minimum bond investment for lobbyist incentives\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$5.00M</a>"
-"lobbyist_salary_max_millions": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
+"lobbyist_salary_max": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
   \ class=\"parameter-link\" title=\"Maximum annual lobbyist salary range | ✓ High\
   \ confidence | Unit: USD | Click to view source\">$2.00M</a>"
 "lobbyist_salary_min_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
@@ -890,7 +887,7 @@
   \ class=\"parameter-link\" title=\"Medical research spending as percentage of total\
   \ disease burden | ✓ High confidence | Formula: MED_RESEARCH ÷ TOTAL_BURDEN | Unit:\
   \ rate | Click to view calculation\">0.0535%</a>"
-"mental_health_grants_annual_millions": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
+"mental_health_grants_annual": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
   \ class=\"parameter-link\" title=\"Annual mental health research grants total |\
   \ ✓ High confidence | Unit: USD/year | Click to view source\">$500M</a>"
 "mental_health_productivity_loss_per_capita": "<a href=\"/knowledge/references.qmd#mental-health-productivity-loss\"\
@@ -908,11 +905,11 @@
 "multiplier_vs_givewell": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ class=\"parameter-link\" title=\"Cost-effectiveness multiplier vs GiveWell top\
   \ charities | ✓ High confidence | Formula: ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST\
-  \ | Unit: ratio | Click to view calculation\">1166326B</a>"
+  \ | Unit: ratio | Click to view calculation\">0.00117</a>"
 "net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: USD/life | Click\
-  \ to view calculation\">$-5.25B</a>"
+  \ to view calculation\">$-5</a>"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
@@ -924,7 +921,7 @@
 "opportunity_cost_per_second": "<a href=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
   \ class=\"parameter-link\" title=\"Foregone economic value per second from not implementing\
   \ system | ✓ High confidence | Formula: TREATY_COMPLETE_CASE_ANNUAL_BENEFITS × 1B\
-  \ ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\">$39.3T</a>"
+  \ ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\">$39.3K</a>"
 "optimistic_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic scenario ROI (net benefit ÷ total\
   \ costs) | ✓ High confidence | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio\
@@ -1059,10 +1056,10 @@
   \ class=\"parameter-link\" title=\"Phase I safety trial duration | ✓ High confidence\
   \ | \U0001F4CA Peer-reviewed | Updated: 2021 | Unit: years | Click to view source\"\
   >2.3</a>"
-"phase_3_trial_cost_max_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
+"phase_3_trial_cost_max": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (maximum) | ✓ High confidence\
   \ | Unit: USD/trial | Click to view source\">$282M</a>"
-"phase_3_trial_cost_min_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
+"phase_3_trial_cost_min": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (minimum) | ✓ High confidence\
   \ | Unit: USD/trial | Click to view source\">$20M</a>"
 "polio_vaccination_roi": "<a href=\"/knowledge/references.qmd#polio-vaccination-roi\"\
@@ -1125,9 +1122,9 @@
 "qalys_total_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Total optimistic QALYs (500k + 150k + 3M) | ✓\
   \ High confidence | Unit: QALYs/year | Click to view calculation\">3.65M</a>"
-"qualified_investor_min_thousands": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
-  \ class=\"parameter-link\" title=\"Minimum investment for qualified investors |\
-  \ ✓ High confidence | Unit: USD | Click to view calculation\">$100K</a>"
+"qualified_investor_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\" class=\"\
+  parameter-link\" title=\"Minimum investment for qualified investors | ✓ High confidence\
+  \ | Unit: USD | Click to view calculation\">$100K</a>"
 "rare_diseases_count_global": "<a href=\"/knowledge/references.qmd#95-pct-diseases-no-treatment\"\
   \ class=\"parameter-link\" title=\"Total number of rare diseases globally | ✓ High\
   \ confidence | Unit: diseases | Click to view source\">7,000</a>"
@@ -1171,19 +1168,19 @@
   \ class=\"parameter-link\" title=\"Annualized economic loss from regulatory delay\
   \ | ~ Medium confidence | Formula: (TOTAL_DALYS ÷ 62 years) × VSLY | Unit: USD/year\
   \ | Click to view calculation\">$11.7T</a>"
-"regulatory_delay_dalys_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+"regulatory_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ class=\"parameter-link\" title=\"Total Disability-Adjusted Life Years lost to\
   \ regulatory delay (1962-2024) | ~ Medium confidence | Formula: YLL + YLD | Unit:\
   \ DALYs | Click to view calculation\">4.83</a>"
-"regulatory_delay_deaths_lower_bound_millions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
+"regulatory_delay_deaths_lower_bound": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
   \ class=\"parameter-link\" title=\"Lower bound excess deaths from regulatory delay\
   \ (1962-2024, steel-man scenario) | ~ Medium confidence | Conservative estimate\
   \ | Unit: deaths | Click to view calculation\">110</a>"
-"regulatory_delay_deaths_mean_millions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
+"regulatory_delay_deaths_mean": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
   \ class=\"parameter-link\" title=\"Mean estimate excess deaths from regulatory delay\
   \ (1962-2024) | ~ Medium confidence | Unit: deaths | Click to view calculation\"\
   >185</a>"
-"regulatory_delay_deaths_upper_bound_millions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
+"regulatory_delay_deaths_upper_bound": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
   \ class=\"parameter-link\" title=\"Upper bound excess deaths from regulatory delay\
   \ (1962-2024, linear innovation trajectory) | ? Low confidence | Unit: deaths |\
   \ Click to view calculation\">318</a>"
@@ -1191,11 +1188,11 @@
   \ class=\"parameter-link\" title=\"Cumulative economic deadweight loss from regulatory\
   \ delay (1962-2024, 2024 USD) | ~ Medium confidence | Formula: DALYS_TOTAL × VSLY\
   \ | Unit: USD | Click to view calculation\">$724T</a>"
-"regulatory_delay_yld_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+"regulatory_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ class=\"parameter-link\" title=\"Years Lived with Disability during regulatory\
   \ delay | ~ Medium confidence | Formula: DEATHS_MEAN × SUFFERING_PERIOD × DISABILITY_WEIGHT\
   \ | Unit: years | Click to view calculation\">1.69</a>"
-"regulatory_delay_yll_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+"regulatory_delay_yll": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ class=\"parameter-link\" title=\"Years of Life Lost from regulatory delay deaths\
   \ | ~ Medium confidence | Formula: DEATHS_MEAN × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)\
   \ | Unit: years | Click to view calculation\">3.14</a>"
@@ -1228,10 +1225,10 @@
   \ | Formula: ROI_DFDA_SAVINGS_ONLY * 0.78 | Click to view calculation\">361</a>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
   >31.5M</span>"
-"sensitivity_campaign_cost_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
+"sensitivity_campaign_cost_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative campaign cost (3-year amortization)\
   \ | ✓ High confidence | Unit: USD/year | Click to view calculation\">$333M</a>"
-"sensitivity_campaign_cost_optimistic_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
+"sensitivity_campaign_cost_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic campaign cost (5-year amortization)\
   \ | ✓ High confidence | Unit: USD/year | Click to view calculation\">$200M</a>"
 "sensitivity_cost_per_life_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
@@ -1243,10 +1240,10 @@
 "sensitivity_cost_per_life_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic cost per life saved | ✓ High confidence\
   \ | Unit: USD/life | Click to view calculation\">$-5</a>"
-"sensitivity_dfda_opex_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
+"sensitivity_dfda_opex_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative dFDA operational costs | ✓ High\
   \ confidence | Unit: USD/year | Click to view calculation\">$60M</a>"
-"sensitivity_dfda_opex_optimistic_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
+"sensitivity_dfda_opex_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic dFDA operational costs | ✓ High confidence\
   \ | Unit: USD/year | Click to view calculation\">$30M</a>"
 "sensitivity_dfda_savings_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
@@ -1292,10 +1289,10 @@
 "sensitivity_total_benefits_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total benefits estimate | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$295B</a>"
-"sensitivity_total_costs_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
+"sensitivity_total_costs_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative total costs | ✓ High confidence\
   \ | Unit: USD/year | Click to view calculation\">$393M</a>"
-"sensitivity_total_costs_optimistic_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
+"sensitivity_total_costs_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total costs | ✓ High confidence |\
   \ Unit: USD/year | Click to view calculation\">$230M</a>"
 "sensitivity_total_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
@@ -1341,7 +1338,7 @@
 "switzerland_gdp_per_capita_k": "<a href=\"/knowledge/references.qmd#switzerland-gdp-per-capita\"\
   \ class=\"parameter-link\" title=\"Switzerland GDP per capita | ✓ High confidence\
   \ | Unit: USD | Click to view source\">$93K</a>"
-"system_profit_per_life_saved_millions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
+"system_profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" title=\"System profit per life saved in millions | ✓\
   \ High confidence | Unit: USD/life | Click to view calculation\">$5.87M</a>"
 "terrorism_deaths_911": "<a href=\"/knowledge/references.qmd#911-deaths\" class=\"\
@@ -1411,7 +1408,7 @@
   \ (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds\
   \ pharma $300M + MIC $150M) | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$650M</a>"
-"treaty_campaign_budget_mass_bribery_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_mass_bribery": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for mass mobilization (voting\
   \ bloc build) | ✓ High confidence | Unit: USD | Click to view calculation\">$140M</a>"
 "treaty_campaign_budget_referendum": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
@@ -1421,7 +1418,7 @@
 "treaty_campaign_budget_reserve": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" title=\"Reserve fund / contingency buffer | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$50M</a>"
-"treaty_campaign_budget_super_pacs_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
+"treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for Super PACs and political\
   \ lobbying | ✓ High confidence | Unit: USD | Click to view calculation\">$800M</a>"
 "treaty_campaign_cost_per_verified_vote_realistic_usd": "<a href=\"/knowledge/economics/campaign-budget.qmd#verification-cost-analysis\"\
@@ -1470,7 +1467,7 @@
   \ class=\"parameter-link\" title=\"Worst-case viral referendum budget (tiered pricing\
   \ with increasing marginal costs) | ~ Medium confidence | Formula: PLATFORM + VERIFICATION\
   \ + TIERED_PAYMENTS | Unit: USD | Click to view calculation\">$406M</a>"
-"treaty_campaign_voting_bloc_target_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
+"treaty_campaign_voting_bloc_target": "<a href=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ class=\"parameter-link\" title=\"Target voting bloc size for campaign | ✓ High\
   \ confidence | Unit: of people | Click to view calculation\">280M</a>"
 "treaty_complete_case_annual_benefits": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
@@ -1522,7 +1519,7 @@
   \ class=\"parameter-link\" title=\"Ratio of Type II error cost to Type I error benefit\
   \ (harm from delay vs. harm prevented) | ~ Medium confidence | Formula: TYPE_II_COST\
   \ ÷ TYPE_I_BENEFIT | Unit: ratio | Click to view calculation\">1,610</a>"
-"type_i_error_benefit_dalys_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
+"type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ class=\"parameter-link\" title=\"Maximum DALYs saved by FDA preventing unsafe\
   \ drugs (extreme overestimate) | ? Low confidence | Unit: DALYs | Click to view\
   \ calculation\">0.003</a>"
@@ -1535,10 +1532,10 @@
 "us_chronic_disease_spending_annual": "<a href=\"/knowledge/references.qmd#us-chronic-disease-spending\"\
   \ class=\"parameter-link\" title=\"US annual chronic disease spending | ✓ High confidence\
   \ | Unit: USD/year | Click to view source\">$4.10T</a>"
-"us_defense_budget_annual_billions": "<a href=\"/knowledge/references.qmd#us-defense-budget-2024\"\
+"us_defense_budget_annual": "<a href=\"/knowledge/references.qmd#us-defense-budget-2024\"\
   \ class=\"parameter-link\" title=\"US defense budget in 2024 | ✓ High confidence\
   \ | Unit: USD/year | Click to view source\">$877B</a>"
-"us_dot_value_of_statistical_life_millions": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
+"us_dot_value_of_statistical_life": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"US Department of Transportation value of statistical\
   \ life | ✓ High confidence | Unit: USD | Click to view source\">$13.6M</a>"
 "us_drug_price_multiplier_vs_peer_countries": "<a href=\"/knowledge/references.qmd#us-drug-prices-vs-peer-countries\"\
@@ -1626,9 +1623,9 @@
   \ class=\"parameter-link\" title=\"VICTORY funding for viral referendum (referral\
   \ payments, political advertising) | ✓ High confidence | Unit: USD | Click to view\
   \ calculation\">$143M</a>"
-"vsl_epa_millions": "<a href=\"/knowledge/references.qmd#epa-value-statistical-life\"\
-  \ class=\"parameter-link\" title=\"EPA value of statistical life | ✓ High confidence\
-  \ | Unit: USD | Click to view source\">$9.60M</a>"
+"vsl_epa": "<a href=\"/knowledge/references.qmd#epa-value-statistical-life\" class=\"\
+  parameter-link\" title=\"EPA value of statistical life | ✓ High confidence | Unit:\
+  \ USD | Click to view source\">$9.60M</a>"
 "water_fluoridation_roi": "<a href=\"/knowledge/references.qmd#water-fluoridation-roi\"\
   \ class=\"parameter-link\" title=\"Return on investment from water fluoridation\
   \ programs | ✓ High confidence | Unit: ratio | Click to view source\">23</a>"
