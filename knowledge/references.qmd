@@ -231,6 +231,16 @@ from dih_models.parameters import *
   > — [Issue One: 118th Congress Fundraising](https://issueone.org/articles/the-118th-congress-fundraising-treadmill/) | [OpenSecrets: Most Expensive Races](https://www.opensecrets.org/elections-overview/most-expensive-races)
   > Note: Truly competitive battleground races cost ~10x the median. Senators in tight contests raised over $123K/day
 
+<a id="ballot-measure-signature-costs-2024"></a>
+
+- **2024 ballot initiative petition signature gathering costs**
+  > Average cost per required signature in 2024: $14.87 (up from $12.70 in 2022, $6.93 in 2016)
+  > Range: $13.59 to $48.21 depending on state/campaign difficulty
+  > 53 initiative campaigns spent combined $172.2M on signature gathering
+  > Most expensive: Montana CI-128 (abortion rights) at $48.21 per signature
+  > — Ballotpedia, [Ballot measure signature costs, 2024](https://ballotpedia.org/Ballot_measure_signature_costs,_2024) | Ballotpedia News, [2024 initiatives reach record-high cost per signature](https://news.ballotpedia.org/2024/11/04/2024-ballot-initiatives-reach-record-high-cost-per-signature-exceed-combined-172-million-for-signature-drives/)
+  > Note: Cost per signature has increased 115% since 2016. Average successful signature drive cost $3.25M in 2024.
+
 <a id="beta-blocker-drug-lag-deaths"></a>
 
 - **Estimated deaths due to FDA delay in approving beta blockers**
@@ -250,6 +260,16 @@ from dih_models.parameters import *
   > Bowhead whales: Live 200+ years, unique DNA repair mutations, extra cancer-suppression genes
   > — [Wikipedia: Biological Immortality](https://en.wikipedia.org/wiki/Biological_immortality) | [PMC: Molecular Signatures of Longevity](https://pmc.ncbi.nlm.nih.gov/articles/PMC5807068/)
   > Note: These animals demonstrate enhanced DNA repair, abundant stem cells, telomerase activity, and cancer resistance
+
+<a id="bio-clinical-development-2021"></a>
+
+- **BIO Clinical Development Success Rates 2011-2020**
+  > Phase I duration: 2.3 years average
+  > Total time to market (Phase I-III + approval): 10.5 years average
+  > Phase transition success rates: Phase I→II: 63.2%, Phase II→III: 30.7%, Phase III→Approval: 58.1%
+  > Overall probability of approval from Phase I: 12%
+  > — Biotechnology Innovation Organization (BIO), 2021, [Clinical Development Success Rates and Contributing Factors 2011-2020](https://www.bio.org/sites/default/files/2021-02/Clinical-Development-Success-Rates-2011-2020.pdf)
+  > Note: Largest publicly available study of clinical trial success rates. Efficacy lag = 10.5 - 2.3 = 8.2 years post-safety verification.
 
 <a id="bloom-ideas-getting-harder-2020"></a>
 
@@ -433,6 +453,18 @@ from dih_models.parameters import *
 - **Childhood vaccinations prevent deaths and hospitalizations**
   > Routine childhood vaccinations among 1994–2023 US birth cohorts will prevent 1.1 million deaths, 32 million hospitalizations, and save $2.9 trillion in societal costs. Among children born during 2018–2023, vaccinations will prevent 508,000 premature deaths and 13.5 million hospitalizations over their lifetimes.
   > — CDC, 2023, [Morbidity and Mortality Weekly Report](https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm)
+
+<a id="polio-vaccination-roi"></a>
+
+- **Polio Vaccination ROI**
+  > "For every dollar spent, the return on investment is nearly US$ 39." Total investment cost of US$ 7.5 billion generates projected economic and social benefits of US$ 289.2 billion from sustaining polio assets and integrating them into expanded immunization, surveillance and emergency response programmes across 8 priority countries (Afghanistan, Iraq, Libya, Pakistan, Somalia, Sudan, Syria, Yemen).
+  > — WHO, 2019, [Sustaining Polio Investments Offers a High Return](https://www.who.int/news-room/feature-stories/detail/sustaining-polio-investments-offers-a-high-return)
+
+<a id="measles-vaccination-roi"></a>
+
+- **Measles Vaccination ROI**
+  > Single measles vaccination: 167:1 benefit-cost ratio. MMR (measles-mumps-rubella) vaccination: 14:1 ROI. Historical US elimination efforts (1966-1974): benefit-cost ratio of 10.3:1 with net benefits exceeding USD 1.1 billion (1972 dollars, or USD 8.0 billion in 2023 dollars). 2-dose MMR programs show direct benefit/cost ratio of 14.2 with net savings of $5.3 billion, and 26.0 from societal perspectives with net savings of $11.6 billion.
+  > — MDPI Vaccines, 2024, [Health and Economic Benefits of US Measles and Rubella Control](https://www.mdpi.com/2076-393X/12/11/1210) | Taylor & Francis, 2024, [Economic Evaluation of Second MCV Dose](https://www.tandfonline.com/doi/full/10.1080/14760584.2024.2367451)
 
 <a id="china-biopharma-rd-2023"></a>
 
@@ -1438,6 +1470,16 @@ from dih_models.parameters import *
   > Covers 94 years of operation (through 2088) for 2,456 aircraft
   > — [GAO: F-35 Sustainment Costs](https://www.gao.gov/products/gao-24-106703) | [Breaking Defense: F-35 Lifetime Cost](https://breakingdefense.com/2024/04/f-35-programs-lifetime-price-tag-tops-2-trillion-pentagon-wants-jets-to-fly-longer/)
   > Note: About half the cost increase is due to inflation. This makes the F-35 one of the most expensive military acquisition programs in modern history
+
+<a id="fintech-identity-verification-conversion-2024"></a>
+
+- **Fintech identity verification conversion rates and costs (2024)**
+  > Auto-approval rates: 67-95% with good UX systems
+  > Drop-off rates: 5-33% for well-designed systems, 50%+ for poor UX
+  > Real-world examples: ABA Bank achieved 67% eKYC completion, HyperVerge achieves 95% auto-approval
+  > Cost impact: Maza fintech reduced onboarding expenses by 50% through integrated verification
+  > — Regula (BusinessWire), [ABA Bank Boosts Conversion Rate](https://www.businesswire.com/news/home/20241217060846/en/ABA-Bank-Boosts-Conversion-Rate-and-Cuts-Acquisition-Costs-by-65-with-Regula-Identity-Verification-Solution) | Biometric Update, [Identity verification scale to push costs down](https://www.biometricupdate.com/202412/identity-verification-scale-and-maturity-to-push-average-cost-down)
+  > Note: Multi-modal biometrics report 250% accuracy gains while lowering manual review costs and boosting customer conversion.
 
 <a id="fda-annual-drug-approvals"></a>
 
@@ -2743,6 +2785,17 @@ from dih_models.parameters import *
   > "Johnson & Johnson reported revenues of \$85.2 billion and a net income of \$35.2 billion in 2023, resulting in a profit margin of about 41%."
   > — Johnson & Johnson, 2024, [Investor Relations](https://www.macrotrends.net/stocks/figures/JNJ/johnson-johnson/revenue)
 
+<a id="kyc-biometric-verification-costs-2024"></a>
+
+- **KYC and biometric identity verification costs (2024)**
+  > High-volume pricing (300M+ verifications): $0.15-0.25 per verification
+  > Medium-volume (100K-1M): $0.50-1.00 per verification
+  > Low-volume (<100K): $1.00-2.00 per verification
+  > Examples: ComplyCube at scale: $0.20 per biometric verification; Ondato: €0.50 ($0.54) at high volume
+  > Enterprise banking KYC (full compliance): $1,500-$3,000 per client (complex regulatory requirements)
+  > — ComplyCube, [How Much Does KYC Really Cost?](https://www.complycube.com/en/how-much-does-kyc-cost/) | Alice Biometrics, [Cost of Identity Verification](https://alicebiometrics.com/en/cost-of-identity-verification/) | Ondato, [Identity Verification Pricing](https://ondato.com/identity-verification-pricing/)
+  > Note: Global spending on identity verification to reach $26B by 2028 (74% increase). Cost per check dropping 15% globally over next 4 years due to scale and maturation.
+
 <a id="kefauver-harris-amendment-1962"></a>
 
 - **Kefauver Harris Amendment of 1962**
@@ -3655,6 +3708,18 @@ from dih_models.parameters import *
   > Length: 342 pages, passed hastily without public opportunity for review
   > ACLU concern: Senate forced to vote on legislation it hadn't had opportunity to read (offices closed, staff couldn't access papers)
   > — [Wikipedia: Patriot Act](https://en.wikipedia.org/wiki/Patriot_Act) | [Britannica: USA PATRIOT Act](https://www.britannica.com/topic/USA-PATRIOT-Act) | [ALA: Chronology of USA PATRIOT Act](https://www.ala.org/advocacy/chronology-usa-patriot-act-2001)
+
+<a id="paypal-dropbox-referral-case-studies"></a>
+
+- **PayPal and Dropbox referral program case studies (viral growth economics)**
+  > PayPal (1999-2001): Started with $20/referral, optimized to $10-20 range for viral growth
+  > Dropbox (2008): ~$2 value per referral (500MB storage), achieved 3900% growth in 15 months
+  > Key findings: Optimal referral incentive varies by product value and target market
+  > PayPal found $10-20 optimal (inflation-adjusted: ~$18-36 in 2024)
+  > Dropbox succeeded with lower incentive due to high perceived value of storage
+  > Increasing marginal costs: Early adopters (believers) require minimal incentive; late majority and laggards require higher payments
+  > Diffusion of innovations: 2.5% innovators, 13.5% early adopters, 34% early majority, 34% late majority, 16% laggards
+  > — [PayPal Wars Book](https://en.wikipedia.org/wiki/The_PayPal_Wars) | [Dropbox Growth Case Study](https://www.referralrock.com/blog/dropbox-referral-program/) | [Harvard Business Review: Diffusion of Innovations](https://hbr.org/2013/11/the-hard-truth-about-innovative-cultures) | [Rogers (2003): Diffusion of Innovations Theory](https://en.wikipedia.org/wiki/Diffusion_of_innovations)
 
 <a id="pdufa-user-fees"></a>
 
@@ -5124,6 +5189,16 @@ from dih_models.parameters import *
 - **WHO generic drug substitution policy**
   > Generic medicines are by definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. WHO promotes generic drug use as a key strategy for improving access to essential medicines and reducing healthcare costs globally.
   > — WHO, 2015, [Access to New Medicines in Europe](https://www.who.int/medicines/areas/policy/wha58_33-ENGLISH.pdf)
+
+<a id="who-global-health-estimates-2024"></a>
+
+- **WHO Global Health Estimates 2024**
+  > Comprehensive mortality and morbidity data by cause, age, sex, country, and year
+  > Global mortality: ~55-60 million deaths annually
+  > Lives saved by modern medicine (vaccines, cardiovascular drugs, oncology): ~12M annually (conservative aggregate)
+  > Leading causes of death: Cardiovascular disease (17.9M), Cancer (10.3M), Respiratory disease (4.0M)
+  > — World Health Organization, 2024, [Global Health Estimates: Life expectancy and leading causes of death and disability](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates)
+  > Note: Baseline data for regulatory mortality analysis. Conservative estimate of pharmaceutical impact based on WHO immunization data (4.5M/year from vaccines) + cardiovascular interventions (3.3M/year) + oncology (1.5M/year) + other therapies.
 
 <a id="who-smallpox-eradication-commemoration"></a>
 

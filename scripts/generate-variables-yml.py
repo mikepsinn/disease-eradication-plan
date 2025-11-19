@@ -252,13 +252,40 @@ def format_parameter_value(value: float, unit: str = "") -> str:
         return formatted.replace('.0B', 'B').replace('.0M', 'M').replace('.0T', 'T').replace('.0K', 'K')
 
     # Format plain numbers with appropriate precision
-    if value == int(value):
-        # Integer value - no decimals needed
+    # Auto-scale large numbers to M/B/K (like we do for currency)
+    abs_val = abs(value)
+
+    if abs_val >= 1e9:  # Billions
+        scaled = value / 1e9
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}B"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}B"
+        else:
+            formatted_num = f"{scaled:.2f}B"
+    elif abs_val >= 1e6:  # Millions
+        scaled = value / 1e6
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}M"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}M"
+        else:
+            formatted_num = f"{scaled:.2f}M"
+    elif abs_val >= 100_000:  # 100K+ (for readability, scale to K)
+        scaled = value / 1e3
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}K"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}K"
+        else:
+            formatted_num = f"{scaled:.2f}K"
+    elif value == int(value):
+        # Integer value - no decimals needed, use comma separators
         formatted_num = f"{int(value):,}"
-    elif abs(value) >= 1000:
-        # Large numbers: no decimals, with thousand separators
+    elif abs_val >= 1000:
+        # Large numbers (1K-99K): use comma separators
         formatted_num = f"{value:,.0f}"
-    elif abs(value) >= 1:
+    elif abs_val >= 1:
         # Medium numbers: up to 3 sig figs, remove trailing zeros
         if value >= 100:
             formatted_num = f"{value:,.0f}"  # No decimals for 100+
@@ -269,6 +296,9 @@ def format_parameter_value(value: float, unit: str = "") -> str:
     else:
         # Small numbers: 3 sig figs
         formatted_num = clean_number(f"{value:.3g}")
+
+    # Clean trailing zeros from scaled numbers
+    formatted_num = formatted_num.replace('.0B', 'B').replace('.0M', 'M').replace('.0K', 'K')
 
     # Add percentage formatting if applicable
     if is_percentage:

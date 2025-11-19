@@ -1,6 +1,6 @@
 ---
-title: Parameters and Calculations Reference
-subtitle: Comprehensive Documentation of Economic Model Variables
+title: "Parameters and Calculations Reference"
+subtitle: "Comprehensive Documentation of Economic Model Variables"
 format:
   html:
     toc: true
@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 435
+**Total parameters**: 491
 
-- External sources (peer-reviewed): 134
-- Calculated values: 252
+- External sources (peer-reviewed): 148
+- Calculated values: 294
 - Core definitions: 49
 
 # External Data Sources {#sec-external}
@@ -89,6 +89,45 @@ Average US hourly wage
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Baseline Lives Saved Annual Millions {#sec-baseline_lives_saved_annual_millions}
+
+**Value**: 12
+
+Baseline annual lives saved by pharmaceuticals (conservative aggregate)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Biometric Verification Cost Per User High Usd {#sec-biometric_verification_cost_per_user_high_usd}
+
+**Value**: $0
+
+Biometric KYC verification cost at medium volume
+
+**Source**: [kyc-biometric-verification-costs-2024](../references.qmd#kyc-biometric-verification-costs-2024)
+
+*✓ High confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Biometric Verification Cost Per User Low Usd {#sec-biometric_verification_cost_per_user_low_usd}
+
+**Value**: $0
+
+Biometric KYC verification cost at high volume (300M+ scale)
+
+**Source**: [kyc-biometric-verification-costs-2024](../references.qmd#kyc-biometric-verification-costs-2024)
+
+*✓ High confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Book Reading Speed Wpm {#sec-book_reading_speed_wpm}
 
 **Value**: 200
@@ -143,7 +182,7 @@ Total annual value of unpaid caregiving in US
 ::: {.callout-tip icon=false collapse=false}
 ## Caregiver Count Us {#sec-caregiver_count_us}
 
-**Value**: 38,000,000
+**Value**: 38M
 
 Number of unpaid caregivers in US
 
@@ -260,7 +299,7 @@ Current clinical trial participation rate (0.06% of population)
 ::: {.callout-tip icon=false collapse=false}
 ## Current Disease Patients Global {#sec-current_disease_patients_global}
 
-**Value**: 2,400,000,000
+**Value**: 2.40B
 
 Global population with chronic diseases
 
@@ -338,7 +377,7 @@ Current trial completion rate (60%)
 ::: {.callout-tip icon=false collapse=false}
 ## Current Trial Slots Available {#sec-current_trial_slots_available}
 
-**Value**: 5,000,000
+**Value**: 5.00M
 
 Total trial slots available for 2.4B sick people
 
@@ -440,6 +479,19 @@ Economic multiplier for military spending (0.6x ROI)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Efficacy Lag Years {#sec-efficacy_lag_years}
+
+**Value**: 8.2
+
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification
+
+**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Givewell Cost Per Life Avg {#sec-givewell_cost_per_life_avg}
 
 **Value**: $4.50K
@@ -481,7 +533,7 @@ GiveWell cost per life saved (Helen Keller International)
 ::: {.callout-tip icon=false collapse=false}
 ## Global Annual Conflict Deaths Active Combat {#sec-global_annual_conflict_deaths_active_combat}
 
-**Value**: 233,600
+**Value**: 234K
 
 Annual deaths from active combat worldwide
 
@@ -611,7 +663,7 @@ Annual infrastructure damage to water systems from conflict
 ::: {.callout-tip icon=false collapse=false}
 ## Global Annual Lives Saved By Med Research {#sec-global_annual_lives_saved_by_med_research}
 
-**Value**: 4,200,000
+**Value**: 4.20M
 
 Annual lives saved by medical research globally
 
@@ -845,7 +897,7 @@ Average annual cost per refugee globally
 ::: {.callout-tip icon=false collapse=false}
 ## Global Daily Deaths Curable Diseases {#sec-global_daily_deaths_curable_diseases}
 
-**Value**: 150,000
+**Value**: 150K
 
 Daily deaths from curable diseases globally
 
@@ -884,7 +936,7 @@ Global cost to achieve universal education
 ::: {.callout-tip icon=false collapse=false}
 ## Global Forcibly Displaced People 2023 {#sec-global_forcibly_displaced_people_2023}
 
-**Value**: 108,400,000
+**Value**: 108M
 
 Global forcibly displaced people in 2023
 
@@ -1103,6 +1155,19 @@ Typical annual lobbyist salary for comparison
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Measles Vaccination Roi {#sec-measles_vaccination_roi}
+
+**Value**: 14
+
+Return on investment from measles (MMR) vaccination programs
+
+**Source**: [measles-vaccination-roi](../references.qmd#measles-vaccination-roi)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Medical Facility Hourly Room Cost {#sec-medical_facility_hourly_room_cost}
 
 **Value**: $500
@@ -1142,6 +1207,32 @@ Annual productivity loss per capita from mental health issues (beyond treatment 
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Petition Signature Cost Per Verified 2024 {#sec-petition_signature_cost_per_verified_2024}
+
+**Value**: $15
+
+Average cost per verified petition signature in 2024 US campaigns
+
+**Source**: [ballot-measure-signature-costs-2024](../references.qmd#ballot-measure-signature-costs-2024)
+
+*✓ High confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Phase 1 Safety Duration Years {#sec-phase_1_safety_duration_years}
+
+**Value**: 2.3
+
+Phase I safety trial duration
+
+**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Phase 3 Trial Cost Max Millions {#sec-phase_3_trial_cost_max_millions}
 
 **Value**: $282M
@@ -1162,6 +1253,19 @@ Phase 3 trial total cost (maximum)
 Phase 3 trial total cost (minimum)
 
 **Source**: [phase-3-cost-per-trial](../references.qmd#phase-3-cost-per-trial)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Polio Vaccination Roi {#sec-polio_vaccination_roi}
+
+**Value**: 39
+
+Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs
+
+**Source**: [polio-vaccination-roi](../references.qmd#polio-vaccination-roi)
 
 *✓ High confidence*
 
@@ -1268,6 +1372,58 @@ RECOVERY trial cost per patient
 **Source**: [recovery-trial-cost-per-patient](../references.qmd#recovery-trial-cost-per-patient)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Referral Payment Early Adopters Usd {#sec-referral_payment_early_adopters_usd}
+
+**Value**: $0
+
+Referral payment for early adopters (first 10M, motivated believers)
+
+**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+
+*~ Medium confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Referral Payment Laggards Usd {#sec-referral_payment_laggards_usd}
+
+**Value**: $2
+
+Referral payment for laggards (200-280M, resistant)
+
+**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+
+*? Low confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Referral Payment Late Majority Usd {#sec-referral_payment_late_majority_usd}
+
+**Value**: $1
+
+Referral payment for late majority (100-200M, skeptics)
+
+**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+
+*~ Medium confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Referral Payment Mainstream Usd {#sec-referral_payment_mainstream_usd}
+
+**Value**: $0
+
+Referral payment for mainstream adopters (10-100M, pragmatists)
+
+**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+
+*~ Medium confidence • Updated 2024*
 
 :::
 
@@ -1677,7 +1833,7 @@ US military spending as percentage of GDP (2024)
 ::: {.callout-tip icon=false collapse=false}
 ## Us Population 2024 {#sec-us_population_2024}
 
-**Value**: 335,000,000
+**Value**: 335M
 
 US population in 2024
 
@@ -1697,6 +1853,32 @@ Value of Statistical Life (conservative estimate)
 **Source**: [dot-vsl-13-6m](../references.qmd#dot-vsl-13-6m)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Verification Conversion Rate Good Ux {#sec-verification_conversion_rate_good_ux}
+
+**Value**: 85%
+
+Identity verification completion rate with good UX (fintech data)
+
+**Source**: [fintech-identity-verification-conversion-2024](../references.qmd#fintech-identity-verification-conversion-2024)
+
+*✓ High confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Verification Conversion Rate Poor Ux {#sec-verification_conversion_rate_poor_ux}
+
+**Value**: 50%
+
+Identity verification completion rate with poor UX
+
+**Source**: [fintech-identity-verification-conversion-2024](../references.qmd#fintech-identity-verification-conversion-2024)
+
+*~ Medium confidence • Updated 2024*
 
 :::
 
@@ -2559,7 +2741,7 @@ Misallocation factor for spending on death vs prevention
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Active Trials {#sec-dfda_active_trials}
 
-**Value**: 200,000
+**Value**: 200K
 
 Active trials at any given time (3-12 month duration)
 
@@ -2589,7 +2771,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Completed Trials Per Year {#sec-dfda_completed_trials_per_year}
 
-**Value**: 361,000
+**Value**: 361K
 
 dFDA completed trials per year (capacity × completion rate)
 
@@ -2640,7 +2822,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Eligible Patients Global {#sec-dfda_eligible_patients_global}
 
-**Value**: 1,200,000,000
+**Value**: 1.20B
 
 Global eligible patients with minimal exclusions
 
@@ -3030,7 +3212,7 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Trials Per Year Capacity {#sec-dfda_trials_per_year_capacity}
 
-**Value**: 380,000
+**Value**: 380K
 
 Maximum trials per year possible with 115x acceleration
 
@@ -3367,9 +3549,168 @@ Minimum investment for family offices
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Foundation Funding Base Case {#sec-foundation_funding_base_case}
+
+**Value**: $442M
+
+Nonprofit foundation funding in base case scenario (health R&D, civic infrastructure)
+
+$$
+Foundation_{base} = \$940M \times 47\% = \$442M
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Funding Percentage {#sec-foundation_funding_percentage}
+
+**Value**: 51%
+
+Foundation funding as percentage of total campaign cost (realistic scenario)
+
+$$
+Foundation\% = \frac{\$519M}{\$1,020M} = 51\%
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Funding Realistic {#sec-foundation_funding_realistic}
+
+**Value**: $519M
+
+Nonprofit foundation funding in realistic scenario (health R&D, civic infrastructure)
+
+$$
+Foundation_{realistic} = \$1,020M \times 51\% = \$519M
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Funding Worst Case {#sec-foundation_funding_worst_case}
+
+**Value**: $542M
+
+Nonprofit foundation funding in worst-case scenario (health R&D, civic infrastructure)
+
+$$
+Foundation_{worst} = \$1,206M \times 45\% = \$542M
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Legal Compliance Realistic {#sec-foundation_legal_compliance_realistic}
+
+**Value**: $53M
+
+Foundation funding for legal/compliance (international health law research)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Lobbying Realistic {#sec-foundation_lobbying_realistic}
+
+**Value**: $0
+
+Foundation funding for political lobbying (zero due to 501c3 restrictions)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Operations Realistic {#sec-foundation_operations_realistic}
+
+**Value**: $20M
+
+Foundation funding for operations (nonprofit R&D staff)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Partnerships Realistic {#sec-foundation_partnerships_realistic}
+
+**Value**: $29M
+
+Foundation funding for partnerships (NGOs, patient advocacy, scientific institutions)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Reserve Realistic {#sec-foundation_reserve_realistic}
+
+**Value**: $37M
+
+Foundation funding for reserve (nonprofit contingency)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Tech Rd Realistic {#sec-foundation_tech_rd_realistic}
+
+**Value**: $226M
+
+Foundation funding for technology R&D (dFDA platform, Wishocracy, infrastructure)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Foundation Viral Referendum Realistic {#sec-foundation_viral_referendum_realistic}
+
+**Value**: $77M
+
+Foundation funding for viral referendum platform (biometric verification, civic infrastructure)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Global Annual Conflict Deaths Total {#sec-global_annual_conflict_deaths_total}
 
-**Value**: 244,600
+**Value**: 245K
 
 Total annual conflict deaths globally (sum of combat, terror, state violence)
 
@@ -3386,7 +3727,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Deaths Curable Diseases {#sec-global_annual_deaths_curable_diseases}
 
-**Value**: 54,750,000
+**Value**: 54.8M
 
 Annual deaths from curable diseases globally
 
@@ -3588,7 +3929,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Dfda Qalys Gained Annual {#sec-global_dfda_qalys_gained_annual}
 
-**Value**: 840,000
+**Value**: 840K
 
 Annual QALYs gained from dFDA
 
@@ -3856,7 +4197,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Multiplier Vs Givewell {#sec-multiplier_vs_givewell}
 
-**Value**: 1,371,860
+**Value**: 1.37M
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4312,7 +4653,7 @@ System profit per life saved (specific calculation)
 ::: {.callout-note icon=false collapse=false}
 ## Qalys From Faster Access {#sec-qalys_from_faster_access}
 
-**Value**: 200,000
+**Value**: 200K
 
 Base case QALYs from faster drug access
 
@@ -4338,7 +4679,7 @@ Conservative QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/dru
 ::: {.callout-note icon=false collapse=false}
 ## Qalys From Faster Access Optimistic {#sec-qalys_from_faster_access_optimistic}
 
-**Value**: 500,000
+**Value**: 500K
 
 Optimistic QALYs from faster drug access
 
@@ -4351,7 +4692,7 @@ Optimistic QALYs from faster drug access
 ::: {.callout-note icon=false collapse=false}
 ## Qalys From New Therapies {#sec-qalys_from_new_therapies}
 
-**Value**: 500,000
+**Value**: 500K
 
 Base case QALYs from enabling new therapies for rare/untreatable diseases
 
@@ -4377,7 +4718,7 @@ Conservative QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/
 ::: {.callout-note icon=false collapse=false}
 ## Qalys From New Therapies Optimistic {#sec-qalys_from_new_therapies_optimistic}
 
-**Value**: 3,000,000
+**Value**: 3.00M
 
 Optimistic QALYs from new therapies
 
@@ -4390,7 +4731,7 @@ Optimistic QALYs from new therapies
 ::: {.callout-note icon=false collapse=false}
 ## Qalys From Prevention {#sec-qalys_from_prevention}
 
-**Value**: 140,000
+**Value**: 140K
 
 Base case QALYs from better prevention through real-world data
 
@@ -4416,7 +4757,7 @@ Conservative QALYs from prevention (5M patients × 0.01 QALYs/patient)
 ::: {.callout-note icon=false collapse=false}
 ## Qalys From Prevention Optimistic {#sec-qalys_from_prevention_optimistic}
 
-**Value**: 150,000
+**Value**: 150K
 
 Optimistic QALYs from prevention
 
@@ -4429,7 +4770,7 @@ Optimistic QALYs from prevention
 ::: {.callout-note icon=false collapse=false}
 ## Qalys Total Conservative {#sec-qalys_total_conservative}
 
-**Value**: 190,000
+**Value**: 190K
 
 Total conservative QALYs (90k + 50k + 50k)
 
@@ -4442,7 +4783,7 @@ Total conservative QALYs (90k + 50k + 50k)
 ::: {.callout-note icon=false collapse=false}
 ## Qalys Total Optimistic {#sec-qalys_total_optimistic}
 
-**Value**: 3,650,000
+**Value**: 3.65M
 
 Total optimistic QALYs (500k + 150k + 3M)
 
@@ -4496,6 +4837,142 @@ $$
 **Methodology**: [../problem/cost-of-war.qmd#refugee-costs](../problem/cost-of-war.qmd#refugee-costs)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Annual Loss Trillions {#sec-regulatory_delay_annual_loss_trillions}
+
+**Value**: $8
+
+Annualized economic loss from regulatory delay
+
+$$
+Annual_{loss} = \$483T \div 62 = \$7.7T/year
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Dalys Billions {#sec-regulatory_delay_dalys_billions}
+
+**Value**: 4.83
+
+Total Disability-Adjusted Life Years lost to regulatory delay (1962-2024)
+
+$$
+DALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Deaths Lower Bound Millions {#sec-regulatory_delay_deaths_lower_bound_millions}
+
+**Value**: 110
+
+Lower bound excess deaths from regulatory delay (1962-2024, steel-man scenario)
+
+$$
+D_{total}^{lower} = D_{lag} + D_{void}
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
+
+*~ Medium confidence • ⚖️ Conservative estimate*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Deaths Mean Millions {#sec-regulatory_delay_deaths_mean_millions}
+
+**Value**: 185
+
+Mean estimate excess deaths from regulatory delay (1962-2024)
+
+$$
+D_{total}^{mean} = D_{lag} + D_{void}
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Deaths Upper Bound Millions {#sec-regulatory_delay_deaths_upper_bound_millions}
+
+**Value**: 318
+
+Upper bound excess deaths from regulatory delay (1962-2024, linear innovation trajectory)
+
+$$
+D_{total}^{upper} = D_{lag} + D_{void}
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Economic Loss Trillions {#sec-regulatory_delay_economic_loss_trillions}
+
+**Value**: $483
+
+Cumulative economic deadweight loss from regulatory delay (1962-2024, 2024 USD)
+
+$$
+DWL = 4.83B \times \$100k = \$483T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Yld Billions {#sec-regulatory_delay_yld_billions}
+
+**Value**: 1.69
+
+Years Lived with Disability during regulatory delay
+
+$$
+YLD = 184.6M \times 6 \times 0.35 = 1.69B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Yll Billions {#sec-regulatory_delay_yll_billions}
+
+**Value**: 3.14
+
+Years of Life Lost from regulatory delay deaths
+
+$$
+YLL = 184.6M \times (79 - 62) = 3.14B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
+
+*~ Medium confidence*
 
 :::
 
@@ -4924,7 +5401,7 @@ Optimistic total costs
 ::: {.callout-note icon=false collapse=false}
 ## Sensitivity Total Qalys Conservative {#sec-sensitivity_total_qalys_conservative}
 
-**Value**: 207,500
+**Value**: 208K
 
 Conservative total QALYs (peace + dFDA)
 
@@ -4941,7 +5418,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Sensitivity Total Qalys Optimistic {#sec-sensitivity_total_qalys_optimistic}
 
-**Value**: 3,702,500
+**Value**: 3.70M
 
 Optimistic total QALYs (peace + dFDA)
 
@@ -5010,7 +5487,7 @@ System profit per life saved in millions
 ::: {.callout-note icon=false collapse=false}
 ## Total Book Words {#sec-total_book_words}
 
-**Value**: 171,121
+**Value**: 171K
 
 Total words in the book
 
@@ -5117,11 +5594,11 @@ $$
 
 **Value**: $250M
 
-AI-assisted lobbying budget
+AI-assisted lobbying portion (subset of LOBBYING budget) - for backward compatibility
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 
@@ -5130,9 +5607,22 @@ AI-assisted lobbying budget
 
 **Value**: $100M
 
-Legal and compliance budget
+Legal and compliance budget - for backward compatibility
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Budget Lobbying Billions {#sec-treaty_campaign_budget_lobbying_billions}
+
+**Value**: $650M
+
+Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
 *✓ High confidence*
 
@@ -5156,11 +5646,11 @@ Campaign budget for mass mobilization (voting bloc build)
 
 **Value**: $50M
 
-Operations budget
+Operations budget - for backward compatibility
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 
@@ -5169,9 +5659,22 @@ Operations budget
 
 **Value**: $100M
 
-Partnerships budget
+Partnerships budget - for backward compatibility
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Budget Referendum Billions {#sec-treaty_campaign_budget_referendum_billions}
+
+**Value**: $300M
+
+Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
 *✓ High confidence*
 
@@ -5182,9 +5685,9 @@ Partnerships budget
 
 **Value**: $50M
 
-Reserve fund
+Reserve fund / contingency buffer
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
 *✓ High confidence*
 
@@ -5208,11 +5711,11 @@ Campaign budget for Super PACs and political lobbying
 
 **Value**: $250M
 
-Technology platform budget
+Technology platform budget - for backward compatibility
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 
@@ -5221,9 +5724,24 @@ Technology platform budget
 
 **Value**: $200M
 
-Viral referendum campaign budget
+Viral referendum portion (subset of REFERENDUM budget) - for backward compatibility
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Cost Per Verified Vote Realistic Usd {#sec-treaty_campaign_cost_per_verified_vote_realistic_usd}
+
+**Value**: $1
+
+Realistic all-in cost per verified vote (referral payment + verification cost + overhead)
+
+*Formula*: `REFERRAL_PAYMENT + VERIFICATION_COST + OVERHEAD`
+
+**Methodology**: [../economics/campaign-budget.qmd#verification-cost-analysis](../economics/campaign-budget.qmd#verification-cost-analysis)
 
 *✓ High confidence*
 
@@ -5273,15 +5791,130 @@ Treaty campaign duration (3-5 year range, using midpoint)
 
 **Value**: $1.00B
 
-Total treaty campaign cost (sum of all campaign budget components)
+Total treaty campaign cost (100% VICTORY Social Impact Bonds)
 
 $$
-CampaignCost = \$0.2B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1B
+CampaignCost = \$0.3B + \$0.65B + \$0.05B = \$1.0B
 $$
 
-**Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Total Cost Base Case {#sec-treaty_campaign_total_cost_base_case}
+
+**Value**: $940M
+
+Base case total campaign cost (optimistic viral referendum)
+
+$$
+CampaignCost_{base} = \$0.14B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$0.94B
+$$
+
+**Methodology**: [../economics/campaign-budget.qmd#base-case-scenario](../economics/campaign-budget.qmd#base-case-scenario)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Total Cost Realistic {#sec-treaty_campaign_total_cost_realistic}
+
+**Value**: $1.02B
+
+Realistic total campaign cost (moderate tiered pricing)
+
+$$
+CampaignCost_{realistic} = \$0.22B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1.02B
+$$
+
+**Methodology**: [../economics/campaign-budget.qmd#realistic-scenario](../economics/campaign-budget.qmd#realistic-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Total Cost Worst Case {#sec-treaty_campaign_total_cost_worst_case}
+
+**Value**: $1.21B
+
+Worst-case total campaign cost (high tiered pricing, poor virality)
+
+$$
+CampaignCost_{worst} = \$0.406B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1.206B
+$$
+
+**Methodology**: [../economics/campaign-budget.qmd#worst-case-scenario](../economics/campaign-budget.qmd#worst-case-scenario)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Verification Attempts Multiplier {#sec-treaty_campaign_verification_attempts_multiplier}
+
+**Value**: 1.18
+
+Verification attempts multiplier (1 ÷ conversion rate, assuming 85% completion)
+
+*Formula*: `1 ÷ VERIFICATION_CONVERSION_RATE`
+
+**Methodology**: [../economics/campaign-budget.qmd#verification-cost-analysis](../economics/campaign-budget.qmd#verification-cost-analysis)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Viral Referendum Base Case Billions {#sec-treaty_campaign_viral_referendum_base_case_billions}
+
+**Value**: $140M
+
+Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
+
+*Formula*: `PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE`
+
+**Methodology**: [../economics/campaign-budget.qmd#base-case-scenario](../economics/campaign-budget.qmd#base-case-scenario)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Viral Referendum Realistic Billions {#sec-treaty_campaign_viral_referendum_realistic_billions}
+
+**Value**: $220M
+
+Realistic viral referendum budget (moderate tiered pricing)
+
+$$
+Budget_{realistic} = \$35M_{platform} + \$59M_{verification} + \$126M_{tiered\ payments} = \$220M
+$$
+
+**Methodology**: [../economics/campaign-budget.qmd#realistic-scenario](../economics/campaign-budget.qmd#realistic-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Campaign Viral Referendum Worst Case Billions {#sec-treaty_campaign_viral_referendum_worst_case_billions}
+
+**Value**: $406M
+
+Worst-case viral referendum budget (tiered pricing with increasing marginal costs)
+
+$$
+Budget_{worst} = \$35M_{platform} + \$59M_{verification} + \$312M_{tiered\ payments} = \$406M
+$$
+
+**Methodology**: [../economics/campaign-budget.qmd#worst-case-scenario](../economics/campaign-budget.qmd#worst-case-scenario)
+
+*~ Medium confidence*
 
 :::
 
@@ -5420,7 +6053,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Total Qalys Gained Annual {#sec-treaty_total_qalys_gained_annual}
 
-**Value**: 925,610
+**Value**: 926K
 
 Total annual QALYs gained (dFDA + peace dividend)
 
@@ -5444,6 +6077,104 @@ Trial completion speed multiplier (10x faster)
 **Methodology**: [../appendix/research-acceleration-model.qmd#completion-acceleration](../appendix/research-acceleration-model.qmd#completion-acceleration)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Type Ii Error Cost Ratio {#sec-type_ii_error_cost_ratio}
+
+**Value**: 1,610
+
+Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
+
+$$
+\frac{Cost_{delay}}{Benefit_{safety}} = \frac{4.83B}{0.003B} = 1{,}610:1
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#risk-analysis](../appendix/regulatory-mortality-analysis.qmd#risk-analysis)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Type I Error Benefit Dalys Billions {#sec-type_i_error_benefit_dalys_billions}
+
+**Value**: 0.003
+
+Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#risk-analysis](../appendix/regulatory-mortality-analysis.qmd#risk-analysis)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Bond Funding Base Case {#sec-victory_bond_funding_base_case}
+
+**Value**: $498M
+
+VICTORY Social Impact Bond funding in base case (political lobbying, mobilization)
+
+$$
+VICTORY_{base} = \$940M \times 53\% = \$498M
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Bond Funding Percentage {#sec-victory_bond_funding_percentage}
+
+**Value**: 49%
+
+VICTORY bond funding as percentage of total campaign cost (realistic scenario)
+
+$$
+VICTORY\% = \frac{\$501M}{\$1,020M} = 49\%
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Bond Funding Realistic {#sec-victory_bond_funding_realistic}
+
+**Value**: $501M
+
+VICTORY Social Impact Bond funding in realistic scenario (political lobbying, mobilization)
+
+$$
+VICTORY_{realistic} = \$1,020M \times 49\% = \$501M
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Bond Funding Worst Case {#sec-victory_bond_funding_worst_case}
+
+**Value**: $664M
+
+VICTORY Social Impact Bond funding in worst-case scenario (political lobbying, mobilization)
+
+$$
+VICTORY_{worst} = \$1,206M \times 55\% = \$664M
+$$
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions](../appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions)
+
+*~ Medium confidence*
 
 :::
 
@@ -5472,6 +6203,97 @@ PayoutPerUnit = \frac{\$2.718B}{\$1B} \times \$1,000 = \$2,718
 $$
 
 **Methodology**: [../strategy/roadmap.qmd#victory-bonds](../strategy/roadmap.qmd#victory-bonds)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Legal Compliance Realistic {#sec-victory_legal_compliance_realistic}
+
+**Value**: $47M
+
+VICTORY funding for legal/compliance (political campaign compliance)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Lobbying Realistic {#sec-victory_lobbying_realistic}
+
+**Value**: $250M
+
+VICTORY funding for political lobbying (US/EU/G20, Super PACs, opposition research)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Operations Realistic {#sec-victory_operations_realistic}
+
+**Value**: $30M
+
+VICTORY funding for operations (political campaign staff)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Partnerships Realistic {#sec-victory_partnerships_realistic}
+
+**Value**: $71M
+
+VICTORY funding for partnerships (defense industry conversion, political coalitions)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Reserve Realistic {#sec-victory_reserve_realistic}
+
+**Value**: $13M
+
+VICTORY funding for reserve (political campaign contingency)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Tech Rd Realistic {#sec-victory_tech_rd_realistic}
+
+**Value**: $24M
+
+VICTORY funding for technology R&D (political campaign tools)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Victory Viral Referendum Realistic {#sec-victory_viral_referendum_realistic}
+
+**Value**: $143M
+
+VICTORY funding for viral referendum (referral payments, political advertising)
+
+**Methodology**: [../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario](../appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario)
 
 *✓ High confidence*
 
@@ -5716,7 +6538,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 20 1Pct {#sec-personal_lifetime_benefit_age_20_1pct}
 
-**Value**: 413,863
+**Value**: 414K
 
 *Core definition*
 
@@ -5725,7 +6547,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 10Pct {#sec-personal_lifetime_benefit_age_30_10pct}
 
-**Value**: 3,224,635
+**Value**: 3.22M
 
 *Core definition*
 
@@ -5734,7 +6556,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 1Pct {#sec-personal_lifetime_benefit_age_30_1pct}
 
-**Value**: 402,170
+**Value**: 402K
 
 *Core definition*
 
@@ -5743,7 +6565,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 2Pct {#sec-personal_lifetime_benefit_age_30_2pct}
 
-**Value**: 591,619
+**Value**: 592K
 
 *Core definition*
 
@@ -5752,7 +6574,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 5Pct {#sec-personal_lifetime_benefit_age_30_5pct}
 
-**Value**: 1,306,712
+**Value**: 1.31M
 
 *Core definition*
 
@@ -5761,7 +6583,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 Half Pct {#sec-personal_lifetime_benefit_age_30_half_pct}
 
-**Value**: 247,346
+**Value**: 247K
 
 *Core definition*
 
@@ -5770,7 +6592,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 40 1Pct {#sec-personal_lifetime_benefit_age_40_1pct}
 
-**Value**: 369,236
+**Value**: 369K
 
 *Core definition*
 
@@ -5779,7 +6601,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 50 1Pct {#sec-personal_lifetime_benefit_age_50_1pct}
 
-**Value**: 301,451
+**Value**: 301K
 
 *Core definition*
 
@@ -5788,7 +6610,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 60 1Pct {#sec-personal_lifetime_benefit_age_60_1pct}
 
-**Value**: 205,853
+**Value**: 206K
 
 *Core definition*
 
@@ -5797,7 +6619,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Conservative Age 30 1Pct {#sec-personal_lifetime_benefit_conservative_age_30_1pct}
 
-**Value**: 584,081
+**Value**: 584K
 
 *Core definition*
 
@@ -5806,7 +6628,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Conservative Moderate Age 30 1Pct {#sec-personal_lifetime_benefit_conservative_moderate_age_30_1pct}
 
-**Value**: 901,634
+**Value**: 902K
 
 *Core definition*
 
@@ -5815,7 +6637,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Eradication 10Yr Age 30 1Pct {#sec-personal_lifetime_benefit_eradication_10yr_age_30_1pct}
 
-**Value**: 1,515,949
+**Value**: 1.52M
 
 *Core definition*
 
@@ -5824,7 +6646,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Eradication 20Yr Age 30 1Pct {#sec-personal_lifetime_benefit_eradication_20yr_age_30_1pct}
 
-**Value**: 1,962,326
+**Value**: 1.96M
 
 *Core definition*
 
@@ -5833,7 +6655,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Eradication 40Yr Age 30 1Pct {#sec-personal_lifetime_benefit_eradication_40yr_age_30_1pct}
 
-**Value**: 2,608,751
+**Value**: 2.61M
 
 *Core definition*
 
@@ -5842,7 +6664,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Eradication 5Yr Age 30 1Pct {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
 
-**Value**: 1,178,298
+**Value**: 1.18M
 
 *Core definition*
 
@@ -5869,7 +6691,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Seconds Per Year {#sec-seconds_per_year}
 
-**Value**: 31,536,000
+**Value**: 31.5M
 
 *Core definition*
 

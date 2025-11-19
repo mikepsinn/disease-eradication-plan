@@ -95,13 +95,80 @@ The NIH pays for permission to do research. The DIH pays for research that works
 **Single-sentence summary:** The DIH is what you get when you pay scientists like you pay plumbers, for fixing the problem, not for explaining why it's hard.
 :::
 
-## How the Money Flows
+## How the Money Flows: DIH as Decentralized Crowdfunding Platform
 
-1.  **Fill the Treasury:** The [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury.
-2.  **Humanity Sets the Rules:** The global population uses a system called [Wishocracy](wishocracy.qmd) to vote on the high-level budget allocation. They don't pick specific trials; they set the rules for the whole system (e.g., "70% of all funds go directly to patient subsidies," "10% for moonshot prizes").
-3.  **Patients Fund Cures:** The money flows to patients as subsidies, creating a market where the best research attracts funding directly from the people who need it most.
+The DIH is the **single governance layer** for all health research funding. It's like Kickstarter meets the NIH, but without the corruption or incompetence.
 
-This structure also allows for **Emergent Institutes**—patient communities for specific diseases (e.g., the Decentralized Cancer Institute) can pool a fraction of their resources to fund large-scale projects and prizes that a pure individual market might overlook.
+{{< include ../figures/dih-architecture-diagram.qmd >}}
+
+### The Architecture
+
+**DIH (Decentralized Institutes of Health)**
+- Holds the treasury (from [1% Treaty](1-percent-treaty.qmd))
+- Handles ALL budgeting decisions via [Wishocracy](wishocracy.qmd)
+- Funds campaigns, not bureaucracies
+- No CEO, no board, no one to corrupt
+
+**dFDA (Decentralized FDA)**
+- Pure technical platform/protocol
+- No budget authority (gets funded BY DIH like any other campaign)
+- Just provides marketplace infrastructure
+- One of many campaigns competing for DIH funding
+
+### How It Actually Works
+
+**1. Fill the Treasury**
+The [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury.
+
+**2. Anyone Can Propose a Campaign**
+
+Like a crowdfunding platform, anyone can submit proposals:
+
+- "Patient Trial Subsidies Program" - $800B/year (automatic formula)
+- "dFDA Platform Development" - $10B/year
+- "Epic EHR Integration Project" - $5B one-time
+- "AWS Infrastructure Services" - $3B/year
+- "Cure Alzheimer's Prize" - $50B bounty
+- "Security Audit Program" - $2B/year
+- "Rare Disease Research Initiative" - $10B/year
+
+**3. Humanity Allocates via Wishocracy**
+
+The global population uses [Wishocracy](wishocracy.qmd) to allocate funds across competing campaigns using pairwise comparisons:
+
+- "What's more important: dFDA development or Alzheimer's prize?"
+- "What's more important: EHR integration or security audits?"
+- "What's more important: rare disease research or infrastructure?"
+
+No committees. No lobbying. Just millions of pairwise preferences aggregated into funding allocations.
+
+**4. Campaigns Compete for Funding**
+
+- **Patient subsidies:** Automatically funded (formulaic, ~80% of treasury)
+- **Infrastructure campaigns:** Multiple providers compete (dFDA platform, data storage, integrations)
+- **Research prizes:** Bounties for specific breakthroughs
+- **Public goods:** Market failures that need direct funding
+
+**5. Results Determine Future Funding**
+
+Campaigns that deliver impact get continued funding. Failures get defunded. It's venture capital, but for not dying.
+
+### Why This Prevents Capture
+
+{{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
+
+**Traditional NIH:** Bribe the director → Control $47B
+
+**DIH:**
+- No director to bribe
+- Millions vote via pairwise comparisons
+- Open-source allocation algorithms
+- Anyone can fork if captured
+- Cost to corrupt: Prohibitively high
+
+**Traditional dFDA risk:** "What if dFDA becomes the new FDA?"
+
+**Solution:** dFDA has no budget authority. It's just a campaign competing for DIH funding. If it gets captured, fund a competing platform instead.
 
 ## The Result: A 10-100x Improvement in QALY Production Efficiency
 

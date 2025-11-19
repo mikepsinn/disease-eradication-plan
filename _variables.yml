@@ -40,6 +40,10 @@
 "average_us_hourly_wage": "<a href=\"/knowledge/references.qmd#average-us-hourly-wage\"\
   \ class=\"parameter-link\" title=\"Average US hourly wage | ✓ High confidence |\
   \ Unit: USD/hour | Click to view source\">$30</a>"
+"baseline_lives_saved_annual_millions": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
+  \ class=\"parameter-link\" title=\"Baseline annual lives saved by pharmaceuticals\
+  \ (conservative aggregate) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Conservative\
+  \ estimate | Updated: 2024 | Unit: deaths/year | Click to view source\">12</a>"
 "benefit_drug_price_reduction_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#price-reduction\"\
   \ class=\"parameter-link\" title=\"Annual benefit from R&D savings passed to consumers\
   \ | ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$100B</a>"
@@ -63,6 +67,14 @@
   \ class=\"parameter-link\" title=\"Annual R&D savings benefit (alias for dFDA gross\
   \ savings) | ✓ High confidence | Formula: DFDA_GROSS_SAVINGS | Unit: billions USD/year\
   \ | Click to view calculation\">$50B</a>"
+"biometric_verification_cost_per_user_high_usd": "<a href=\"/knowledge/references.qmd#kyc-biometric-verification-costs-2024\"\
+  \ class=\"parameter-link\" title=\"Biometric KYC verification cost at medium volume\
+  \ | ✓ High confidence | Updated: 2024 | Unit: USD/verification | Click to view source\"\
+  >$0</a>"
+"biometric_verification_cost_per_user_low_usd": "<a href=\"/knowledge/references.qmd#kyc-biometric-verification-costs-2024\"\
+  \ class=\"parameter-link\" title=\"Biometric KYC verification cost at high volume\
+  \ (300M+ scale) | ✓ High confidence | Updated: 2024 | Unit: USD/verification | Click\
+  \ to view source\">$0</a>"
 "book_reading_speed_wpm": "<a href=\"/knowledge/references.qmd#average-reading-speed\"\
   \ class=\"parameter-link\" title=\"Average reading speed (conservative for non-fiction)\
   \ | ✓ High confidence | Unit: words/minute | Click to view source\">200</a>"
@@ -167,7 +179,7 @@
   \ - $6,000/year\">6,000</span>"
 "caregiver_count_us": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"Number of unpaid caregivers in US | ✓ High confidence\
-  \ | Unit: people | Click to view source\">38,000,000</a>"
+  \ | Unit: people | Click to view source\">38M</a>"
 "caregiver_hours_per_month": "<a href=\"/knowledge/references.qmd#average-family-caregiving-hours\"\
   \ class=\"parameter-link\" title=\"Average monthly hours of unpaid family caregiving\
   \ in US | ✓ High confidence | Unit: hours/month | Click to view source\">20</a>"
@@ -239,7 +251,7 @@
   \ trials/year | Click to view calculation\">1,980</a>"
 "current_disease_patients_global": "<a href=\"/knowledge/references.qmd#global-burden-disease-2-4-billion\"\
   \ class=\"parameter-link\" title=\"Global population with chronic diseases | ✓ High\
-  \ confidence | Unit: people | Click to view source\">2,400,000,000</a>"
+  \ confidence | Unit: people | Click to view source\">2.40B</a>"
 "current_drug_approvals_per_year": "<a href=\"/knowledge/references.qmd#global-new-drug-approvals-50-annually\"\
   \ class=\"parameter-link\" title=\"Average annual new drug approvals globally |\
   \ ✓ High confidence | Unit: drugs/year | Click to view source\">50</a>"
@@ -257,7 +269,7 @@
   \ confidence | Unit: rate | Click to view source\">60%</a>"
 "current_trial_slots_available": "<a href=\"/knowledge/references.qmd#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" title=\"Total trial slots available for 2.4B sick people\
-  \ | ✓ High confidence | Unit: slots | Click to view source\">5,000,000</a>"
+  \ | ✓ High confidence | Unit: slots | Click to view source\">5.00M</a>"
 "daily_cost_inefficiency_billions": "<a href=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
   \ class=\"parameter-link\" title=\"Daily cost of healthcare system inefficiency\
   \ | ✓ High confidence | Unit: billions USD/day | Click to view calculation\">$327M</a>"
@@ -279,7 +291,7 @@
   >99%</span>"
 "dfda_active_trials": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"Active trials at any given time (3-12 month duration)\
-  \ | ✓ High confidence | Unit: trials | Click to view calculation\">200,000</a>"
+  \ | ✓ High confidence | Unit: trials | Click to view calculation\">200K</a>"
 "dfda_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ class=\"parameter-link\" title=\"Total annual dFDA operational costs (sum of all\
   \ components: $15M + $10M + $8M + $5M + $2M) | ✓ High confidence | Formula: PLATFORM_MAINTENANCE\
@@ -288,7 +300,7 @@
 "dfda_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"dFDA completed trials per year (capacity × completion\
   \ rate) | ✓ High confidence | Formula: CAPACITY × COMPLETION_RATE | Unit: trials/year\
-  \ | Click to view calculation\">361,000</a>"
+  \ | Click to view calculation\">361K</a>"
 "dfda_drug_approvals_per_year_high": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
   \ class=\"parameter-link\" title=\"Optimistic drug approvals estimate (40x current)\
   \ | ✓ High confidence | Formula: CURRENT_APPROVALS × 40 | Unit: approvals/year |\
@@ -300,7 +312,7 @@
 "dfda_eligible_patients_global": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#eligible-population\"\
   \ class=\"parameter-link\" title=\"Global eligible patients with minimal exclusions\
   \ | ✓ High confidence | Formula: DISEASE_PATIENTS × ELIGIBILITY_RATE | Unit: people\
-  \ | Click to view calculation\">1,200,000,000</a>"
+  \ | Click to view calculation\">1.20B</a>"
 "dfda_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" title=\"Annual gross savings from 50% trial cost reduction\
   \ | ✓ High confidence | Formula: TRIAL_MARKET × COST_REDUCTION_PCT | Unit: billions\
@@ -398,7 +410,7 @@
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ class=\"parameter-link\" title=\"Maximum trials per year possible with 115x acceleration\
   \ | ✓ High confidence | Formula: CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER\
-  \ | Unit: trials/year | Click to view calculation\">380,000</a>"
+  \ | Unit: trials/year | Click to view calculation\">380K</a>"
 "dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
   \ trial abandonment rate (5%) | Unit: rate | Core definition\">5%</span>"
 "dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
@@ -493,6 +505,11 @@
   \ class=\"parameter-link\" title=\"Effective rate multiplier vs average US wage\
   \ | ✓ High confidence | Formula: EFFECTIVE_RATE ÷ AVG_WAGE | Unit: ratio | Click\
   \ to view calculation\">9,744</a>"
+"efficacy_lag_years": "<a href=\"/knowledge/references.qmd#bio-clinical-development-2021\"\
+  \ class=\"parameter-link\" title=\"Regulatory delay for efficacy testing (Phase\
+  \ II/III) post-safety verification | ✓ High confidence | \U0001F4CA Peer-reviewed\
+  \ | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET - PHASE_1_DURATION | Unit: years\
+  \ | Click to view source\">8.2</a>"
 "expected_roi_conservative_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ title=\"Expected ROI for dFDA accounting for 10% political success probability\
   \ | ~ Medium confidence | Formula: ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE\
@@ -508,6 +525,48 @@
 "family_office_investment_min_millions": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for family offices | ✓ High\
   \ confidence | Unit: millions USD | Click to view calculation\">$5.00M</a>"
+"foundation_funding_base_case": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"Nonprofit foundation funding in base case scenario\
+  \ (health R&D, civic infrastructure) | ✓ High confidence | Formula: BASE_CASE_TOTAL\
+  \ × 47% | Unit: USD | Click to view calculation\">$442M</a>"
+"foundation_funding_percentage": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"Foundation funding as percentage of total campaign\
+  \ cost (realistic scenario) | ✓ High confidence | Formula: FOUNDATION_REALISTIC\
+  \ ÷ TOTAL_REALISTIC | Unit: percentage | Click to view calculation\">51%</a>"
+"foundation_funding_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"Nonprofit foundation funding in realistic scenario\
+  \ (health R&D, civic infrastructure) | ✓ High confidence | Formula: REALISTIC_TOTAL\
+  \ × 51% | Unit: USD | Click to view calculation\">$519M</a>"
+"foundation_funding_worst_case": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"Nonprofit foundation funding in worst-case scenario\
+  \ (health R&D, civic infrastructure) | ~ Medium confidence | Formula: WORST_CASE_TOTAL\
+  \ × 45% | Unit: USD | Click to view calculation\">$542M</a>"
+"foundation_legal_compliance_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for legal/compliance (international\
+  \ health law research) | ✓ High confidence | Unit: USD | Click to view calculation\"\
+  >$53M</a>"
+"foundation_lobbying_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for political lobbying (zero\
+  \ due to 501c3 restrictions) | ✓ High confidence | Unit: USD | Click to view calculation\"\
+  >$0</a>"
+"foundation_operations_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for operations (nonprofit\
+  \ R&D staff) | ✓ High confidence | Unit: USD | Click to view calculation\">$20M</a>"
+"foundation_partnerships_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for partnerships (NGOs, patient\
+  \ advocacy, scientific institutions) | ✓ High confidence | Unit: USD | Click to\
+  \ view calculation\">$29M</a>"
+"foundation_reserve_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for reserve (nonprofit contingency)\
+  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$37M</a>"
+"foundation_tech_rd_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for technology R&D (dFDA platform,\
+  \ Wishocracy, infrastructure) | ✓ High confidence | Unit: USD | Click to view calculation\"\
+  >$226M</a>"
+"foundation_viral_referendum_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"Foundation funding for viral referendum platform\
+  \ (biometric verification, civic infrastructure) | ✓ High confidence | Unit: USD\
+  \ | Click to view calculation\">$77M</a>"
 "gdp_growth_boost_10pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_10PCT\"\
   >0.025</span>"
 "gdp_growth_boost_1pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_1PCT\
@@ -527,7 +586,7 @@
   \ | ✓ High confidence | Unit: USD/life | Click to view source\">$3.50K</a>"
 "global_annual_conflict_deaths_active_combat": "<a href=\"/knowledge/references.qmd#acled-2024\"\
   \ class=\"parameter-link\" title=\"Annual deaths from active combat worldwide |\
-  \ ✓ High confidence | Unit: deaths/year | Click to view source\">233,600</a>"
+  \ ✓ High confidence | Unit: deaths/year | Click to view source\">234K</a>"
 "global_annual_conflict_deaths_state_violence": "<a href=\"/knowledge/references.qmd#ucdp-2024\"\
   \ class=\"parameter-link\" title=\"Annual deaths from state violence | ✓ High confidence\
   \ | Unit: deaths/year | Click to view source\">2,700</a>"
@@ -537,11 +596,11 @@
 "global_annual_conflict_deaths_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#death-accounting\"\
   \ class=\"parameter-link\" title=\"Total annual conflict deaths globally (sum of\
   \ combat, terror, state violence) | ✓ High confidence | Formula: COMBAT + TERROR\
-  \ + STATE_VIOLENCE | Unit: deaths/year | Click to view calculation\">244,600</a>"
+  \ + STATE_VIOLENCE | Unit: deaths/year | Click to view calculation\">245K</a>"
 "global_annual_deaths_curable_diseases": "<a href=\"/knowledge/economics/economics.qmd\"\
   \ class=\"parameter-link\" title=\"Annual deaths from curable diseases globally\
   \ | ✓ High confidence | Formula: GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365 | Unit:\
-  \ deaths/year | Click to view calculation\">54,750,000</a>"
+  \ deaths/year | Click to view calculation\">54.8M</a>"
 "global_annual_environmental_damage_conflict": "<a href=\"/knowledge/references.qmd#war-environmental-damage-costs\"\
   \ class=\"parameter-link\" title=\"Annual environmental damage and restoration costs\
   \ from conflict | ✓ High confidence | Unit: billions USD | Click to view source\"\
@@ -594,7 +653,7 @@
   \ | Unit: billions USD/year | Click to view calculation\">$1.87T</a>"
 "global_annual_lives_saved_by_med_research": "<a href=\"/knowledge/references.qmd#medical-research-lives-saved-annually\"\
   \ class=\"parameter-link\" title=\"Annual lives saved by medical research globally\
-  \ | ✓ High confidence | Unit: lives/year | Click to view source\">4,200,000</a>"
+  \ | ✓ High confidence | Unit: lives/year | Click to view source\">4.20M</a>"
 "global_annual_lost_economic_growth_military_spending": "<a href=\"/knowledge/references.qmd#military-spending-opportunity-cost\"\
   \ class=\"parameter-link\" title=\"Annual lost economic growth from military spending\
   \ opportunity cost | ✓ High confidence | Unit: billions USD | Click to view source\"\
@@ -679,10 +738,10 @@
   \ High confidence | Unit: USD/year | Click to view source\">$1.38K</a>"
 "global_daily_deaths_curable_diseases": "<a href=\"/knowledge/references.qmd#global-daily-deaths-curable-diseases\"\
   \ class=\"parameter-link\" title=\"Daily deaths from curable diseases globally |\
-  \ ✓ High confidence | Unit: deaths/day | Click to view source\">150,000</a>"
+  \ ✓ High confidence | Unit: deaths/day | Click to view source\">150K</a>"
 "global_dfda_qalys_gained_annual": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd\"\
   \ class=\"parameter-link\" title=\"Annual QALYs gained from dFDA | ✓ High confidence\
-  \ | Unit: QALYs/year | Click to view calculation\">840,000</a>"
+  \ | Unit: QALYs/year | Click to view calculation\">840K</a>"
 "global_disease_economic_burden_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
   \ class=\"parameter-link\" title=\"Total economic burden of disease globally (lost\
   \ productivity, mortality, disability) | ✓ High confidence | Unit: billions USD/year\
@@ -692,7 +751,7 @@
   \ ✓ High confidence | Unit: billions USD | Click to view source\">$30B</a>"
 "global_forcibly_displaced_people_2023": "<a href=\"/knowledge/references.qmd#unhcr-global-displacement-2023\"\
   \ class=\"parameter-link\" title=\"Global forcibly displaced people in 2023 | ✓\
-  \ High confidence | Unit: people | Click to view source\">108,400,000</a>"
+  \ High confidence | Unit: people | Click to view source\">108M</a>"
 "global_gdp_2023": "<a href=\"/knowledge/references.qmd#global-gdp\" class=\"parameter-link\"\
   \ title=\"Global GDP in 2023 for comparison | ✓ High confidence | Unit: billions\
   \ USD | Click to view source\">$89.5T</a>"
@@ -806,6 +865,9 @@
 "longevity_therapy_savings_30yr": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
   \ class=\"parameter-link\" title=\"30-year savings from longevity therapy per person\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$150K</a>"
+"measles_vaccination_roi": "<a href=\"/knowledge/references.qmd#measles-vaccination-roi\"\
+  \ class=\"parameter-link\" title=\"Return on investment from measles (MMR) vaccination\
+  \ programs | ✓ High confidence | Unit: ratio | Click to view source\">14</a>"
 "medical_facility_hourly_room_cost": "<a href=\"/knowledge/references.qmd#hospital-room-costs\"\
   \ class=\"parameter-link\" title=\"Average hourly cost of medical facility room\
   \ | ✓ High confidence | Unit: USD/hour | Click to view source\">$500</a>"
@@ -839,7 +901,7 @@
 "multiplier_vs_givewell": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ class=\"parameter-link\" title=\"Cost-effectiveness multiplier vs GiveWell top\
   \ charities | ✓ High confidence | Formula: ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST\
-  \ | Unit: ratio | Click to view calculation\">1,371,860</a>"
+  \ | Unit: ratio | Click to view calculation\">1.37M</a>"
 "net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: millions USD/life\
@@ -946,49 +1008,61 @@
   \ costs | ✓ High confidence | Formula: VETERAN_HEALTHCARE × 1% | Unit: billions\
   \ USD/year | Click to view calculation\">$2.00B</a>"
 "personal_lifetime_benefit_age_20_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">413,863</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">414K</span>"
 "personal_lifetime_benefit_age_30_10pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT\">3,224,635</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT\">3.22M</span>"
 "personal_lifetime_benefit_age_30_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT\">402,170</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT\">402K</span>"
 "personal_lifetime_benefit_age_30_2pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">591,619</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">592K</span>"
 "personal_lifetime_benefit_age_30_5pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT\">1,306,712</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT\">1.31M</span>"
 "personal_lifetime_benefit_age_30_half_pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT\">247,346</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT\">247K</span>"
 "personal_lifetime_benefit_age_40_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT\">369,236</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT\">369K</span>"
 "personal_lifetime_benefit_age_50_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT\">301,451</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT\">301K</span>"
 "personal_lifetime_benefit_age_60_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT\">205,853</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT\">206K</span>"
 "personal_lifetime_benefit_conservative_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">584,081</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">584K</span>"
 "personal_lifetime_benefit_conservative_moderate_age_30_1pct": "<span class=\"parameter-link\"\
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT\"\
-  >901,634</span>"
+  >902K</span>"
 "personal_lifetime_benefit_eradication_10yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">1,515,949</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">1.52M</span>"
 "personal_lifetime_benefit_eradication_20yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">1,962,326</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">1.96M</span>"
 "personal_lifetime_benefit_eradication_40yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">2,608,751</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">2.61M</span>"
 "personal_lifetime_benefit_eradication_5yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">1,178,298</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">1.18M</span>"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\
   \ - $12,239/year\">12,239</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\
   \ - ~$1,045/year\">1,045</span>"
+"petition_signature_cost_per_verified_2024": "<a href=\"/knowledge/references.qmd#ballot-measure-signature-costs-2024\"\
+  \ class=\"parameter-link\" title=\"Average cost per verified petition signature\
+  \ in 2024 US campaigns | ✓ High confidence | Updated: 2024 | Unit: USD/signature\
+  \ | Click to view source\">$15</a>"
 "pharma_cure_payment_per_patient": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
   \ class=\"parameter-link\" title=\"Pharma payment per cured patient in 50/50 model\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$90K</a>"
+"phase_1_safety_duration_years": "<a href=\"/knowledge/references.qmd#bio-clinical-development-2021\"\
+  \ class=\"parameter-link\" title=\"Phase I safety trial duration | ✓ High confidence\
+  \ | \U0001F4CA Peer-reviewed | Updated: 2021 | Unit: years | Click to view source\"\
+  >2.3</a>"
 "phase_3_trial_cost_max_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (maximum) | ✓ High confidence\
   \ | Unit: millions USD/trial | Click to view source\">$282M</a>"
 "phase_3_trial_cost_min_millions": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
   \ class=\"parameter-link\" title=\"Phase 3 trial total cost (minimum) | ✓ High confidence\
   \ | Unit: millions USD/trial | Click to view source\">$20M</a>"
+"polio_vaccination_roi": "<a href=\"/knowledge/references.qmd#polio-vaccination-roi\"\
+  \ class=\"parameter-link\" title=\"Return on investment from sustaining polio vaccination\
+  \ assets and integrating into expanded immunization programs | ✓ High confidence\
+  \ | Unit: ratio | Click to view source\">39</a>"
 "political_success_probability_conservative": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
   \ class=\"parameter-link\" title=\"Conservative estimate of political success probability\
   \ (10%) | ~ Medium confidence | Click to view source\">0.1</a>"
@@ -1009,42 +1083,42 @@
   \ | ✓ High confidence | Unit: USD/life | Click to view calculation\">$168K</a>"
 "qalys_from_faster_access": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#base-case\"\
   \ class=\"parameter-link\" title=\"Base case QALYs from faster drug access | ✓ High\
-  \ confidence | Unit: QALYs/year | Click to view calculation\">200,000</a>"
+  \ confidence | Unit: QALYs/year | Click to view calculation\">200K</a>"
 "qalys_from_faster_access_conservative": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative QALYs from faster access (15 drugs/yr\
   \ × 1 yr accel × 6k QALYs/drug) | ✓ High confidence | Unit: QALYs/year | Click to\
   \ view calculation\">90,000</a>"
 "qalys_from_faster_access_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic QALYs from faster drug access | ✓\
-  \ High confidence | Unit: QALYs/year | Click to view calculation\">500,000</a>"
+  \ High confidence | Unit: QALYs/year | Click to view calculation\">500K</a>"
 "qalys_from_new_therapies": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#base-case\"\
   \ class=\"parameter-link\" title=\"Base case QALYs from enabling new therapies for\
   \ rare/untreatable diseases | ✓ High confidence | Unit: QALYs/year | Click to view\
-  \ calculation\">500,000</a>"
+  \ calculation\">500K</a>"
 "qalys_from_new_therapies_conservative": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative QALYs from new therapies (5 therapies/yr\
   \ × 2k patients × 5 QALYs/patient) | ✓ High confidence | Unit: QALYs/year | Click\
   \ to view calculation\">50,000</a>"
 "qalys_from_new_therapies_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic QALYs from new therapies | ✓ High\
-  \ confidence | Unit: QALYs/year | Click to view calculation\">3,000,000</a>"
+  \ confidence | Unit: QALYs/year | Click to view calculation\">3.00M</a>"
 "qalys_from_prevention": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#base-case\"\
   \ class=\"parameter-link\" title=\"Base case QALYs from better prevention through\
   \ real-world data | ✓ High confidence | Unit: QALYs/year | Click to view calculation\"\
-  >140,000</a>"
+  >140K</a>"
 "qalys_from_prevention_conservative": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative QALYs from prevention (5M patients\
   \ × 0.01 QALYs/patient) | ✓ High confidence | Unit: QALYs/year | Click to view calculation\"\
   >50,000</a>"
 "qalys_from_prevention_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic QALYs from prevention | ✓ High confidence\
-  \ | Unit: QALYs/year | Click to view calculation\">150,000</a>"
+  \ | Unit: QALYs/year | Click to view calculation\">150K</a>"
 "qalys_total_conservative": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Total conservative QALYs (90k + 50k + 50k) |\
-  \ ✓ High confidence | Unit: QALYs/year | Click to view calculation\">190,000</a>"
+  \ ✓ High confidence | Unit: QALYs/year | Click to view calculation\">190K</a>"
 "qalys_total_optimistic": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Total optimistic QALYs (500k + 150k + 3M) | ✓\
-  \ High confidence | Unit: QALYs/year | Click to view calculation\">3,650,000</a>"
+  \ High confidence | Unit: QALYs/year | Click to view calculation\">3.65M</a>"
 "qualified_investor_min_thousands": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
   \ class=\"parameter-link\" title=\"Minimum investment for qualified investors |\
   \ ✓ High confidence | Unit: thousands USD | Click to view calculation\">$100K</a>"
@@ -1061,6 +1135,21 @@
   \ class=\"parameter-link\" title=\"Recruitment speed multiplier (25x faster from\
   \ 2% → 50% eligibility) | ✓ High confidence | Formula: DFDA_ELIGIBILITY_RATE ÷ CURRENT_ELIGIBILITY_RATE\
   \ | Unit: ratio | Click to view calculation\">25</a>"
+"referral_payment_early_adopters_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+  \ class=\"parameter-link\" title=\"Referral payment for early adopters (first 10M,\
+  \ motivated believers) | ~ Medium confidence | Updated: 2024 | Unit: USD/vote |\
+  \ Click to view source\">$0</a>"
+"referral_payment_laggards_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+  \ class=\"parameter-link\" title=\"Referral payment for laggards (200-280M, resistant)\
+  \ | ? Low confidence | Updated: 2024 | Unit: USD/vote | Click to view source\">$2</a>"
+"referral_payment_late_majority_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+  \ class=\"parameter-link\" title=\"Referral payment for late majority (100-200M,\
+  \ skeptics) | ~ Medium confidence | Updated: 2024 | Unit: USD/vote | Click to view\
+  \ source\">$1</a>"
+"referral_payment_mainstream_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+  \ class=\"parameter-link\" title=\"Referral payment for mainstream adopters (10-100M,\
+  \ pragmatists) | ~ Medium confidence | Updated: 2024 | Unit: USD/vote | Click to\
+  \ view source\">$0</a>"
 "refugee_lost_earning_potential_per_capita_annual": "<a href=\"/knowledge/references.qmd#refugee-lost-earnings\"\
   \ class=\"parameter-link\" title=\"Average annual lost earning potential per refugee\
   \ | ✓ High confidence | Unit: USD/year | Click to view source\">$23.4K</a>"
@@ -1068,6 +1157,38 @@
   \ class=\"parameter-link\" title=\"Total global lost refugee productivity | ✓ High\
   \ confidence | Formula: (REFUGEES × LOST_EARNINGS) ÷ 1B | Unit: billions USD/year\
   \ | Click to view calculation\">$2.54T</a>"
+"regulatory_delay_annual_loss_trillions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
+  \ class=\"parameter-link\" title=\"Annualized economic loss from regulatory delay\
+  \ | ~ Medium confidence | Formula: TOTAL_LOSS ÷ 62 years | Unit: USD/year | Click\
+  \ to view calculation\">$8</a>"
+"regulatory_delay_dalys_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ class=\"parameter-link\" title=\"Total Disability-Adjusted Life Years lost to\
+  \ regulatory delay (1962-2024) | ~ Medium confidence | Formula: YLL + YLD | Unit:\
+  \ DALYs | Click to view calculation\">4.83</a>"
+"regulatory_delay_deaths_lower_bound_millions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
+  \ class=\"parameter-link\" title=\"Lower bound excess deaths from regulatory delay\
+  \ (1962-2024, steel-man scenario) | ~ Medium confidence | Conservative estimate\
+  \ | Unit: deaths | Click to view calculation\">110</a>"
+"regulatory_delay_deaths_mean_millions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
+  \ class=\"parameter-link\" title=\"Mean estimate excess deaths from regulatory delay\
+  \ (1962-2024) | ~ Medium confidence | Unit: deaths | Click to view calculation\"\
+  >185</a>"
+"regulatory_delay_deaths_upper_bound_millions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
+  \ class=\"parameter-link\" title=\"Upper bound excess deaths from regulatory delay\
+  \ (1962-2024, linear innovation trajectory) | ? Low confidence | Unit: deaths |\
+  \ Click to view calculation\">318</a>"
+"regulatory_delay_economic_loss_trillions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
+  \ class=\"parameter-link\" title=\"Cumulative economic deadweight loss from regulatory\
+  \ delay (1962-2024, 2024 USD) | ~ Medium confidence | Formula: DALYS_TOTAL × VSLY\
+  \ | Unit: USD | Click to view calculation\">$483</a>"
+"regulatory_delay_yld_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ class=\"parameter-link\" title=\"Years Lived with Disability during regulatory\
+  \ delay | ~ Medium confidence | Formula: DEATHS_MEAN × SUFFERING_PERIOD × DISABILITY_WEIGHT\
+  \ | Unit: years | Click to view calculation\">1.69</a>"
+"regulatory_delay_yll_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ class=\"parameter-link\" title=\"Years of Life Lost from regulatory delay deaths\
+  \ | ~ Medium confidence | Formula: DEATHS_MEAN × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)\
+  \ | Unit: years | Click to view calculation\">3.14</a>"
 "research_acceleration_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ class=\"parameter-link\" title=\"Total research capacity multiplier from dFDA\
   \ | ✓ High confidence | Formula: FUNDING_RATIO × COST_REDUCTION_FACTOR | Unit: ratio\
@@ -1096,7 +1217,7 @@
   \ at 7% discount rate (approximate 22% decrease from 3% baseline) | ~ Medium confidence\
   \ | Formula: ROI_DFDA_SAVINGS_ONLY * 0.78 | Click to view calculation\">361</a>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
-  >31,536,000</span>"
+  >31.5M</span>"
 "sensitivity_campaign_cost_conservative_billions": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative campaign cost (3-year amortization)\
   \ | ✓ High confidence | Unit: billions USD/year | Click to view calculation\">$333M</a>"
@@ -1170,11 +1291,11 @@
 "sensitivity_total_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ class=\"parameter-link\" title=\"Conservative total QALYs (peace + dFDA) | ✓ High\
   \ confidence | Formula: PEACE_QALYS + DFDA_QALYS | Unit: QALYs/year | Click to view\
-  \ calculation\">207,500</a>"
+  \ calculation\">208K</a>"
 "sensitivity_total_qalys_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" title=\"Optimistic total QALYs (peace + dFDA) | ✓ High\
   \ confidence | Formula: PEACE_QALYS + DFDA_QALYS | Unit: QALYs/year | Click to view\
-  \ calculation\">3,702,500</a>"
+  \ calculation\">3.70M</a>"
 "simultaneous_trials_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier\"\
   \ class=\"parameter-link\" title=\"Simultaneous trials multiplier (20x more trials)\
   \ | ✓ High confidence | Unit: ratio | Click to view calculation\">20</a>"
@@ -1218,7 +1339,7 @@
   \ | Unit: deaths | Click to view source\">2,996</a>"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" title=\"\
   Total words in the book | ✓ High confidence | Unit: words | Click to view calculation\"\
-  >171,121</a>"
+  >171K</a>"
 "total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits\"\
   \ class=\"parameter-link\" title=\"Total annual benefits from all 8 benefit categories\
   \ | ✓ High confidence | Formula: PEACE + R&D + FASTER_ACCESS + ACCELERATION + RARE\
@@ -1276,35 +1397,51 @@
   \ class=\"parameter-link\" title=\"Amortized annual campaign cost (total cost ÷\
   \ campaign duration) | ✓ High confidence | Formula: TOTAL_COST ÷ DURATION | Unit:\
   \ billions USD/year | Click to view calculation\">$250M</a>"
-"treaty_campaign_budget_ai_lobbying_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"AI-assisted lobbying budget | ✓ High confidence\
-  \ | Unit: billions USD | Click to view calculation\">$250M</a>"
-"treaty_campaign_budget_legal_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Legal and compliance budget | ✓ High confidence\
-  \ | Unit: billions USD | Click to view calculation\">$100M</a>"
+"treaty_campaign_budget_ai_lobbying_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"AI-assisted lobbying portion (subset of LOBBYING\
+  \ budget) - for backward compatibility | ~ Medium confidence | Unit: billions USD\
+  \ | Click to view calculation\">$250M</a>"
+"treaty_campaign_budget_legal_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Legal and compliance budget - for backward compatibility\
+  \ | ~ Medium confidence | Unit: billions USD | Click to view calculation\">$100M</a>"
+"treaty_campaign_budget_lobbying_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Political lobbying campaign: direct lobbying\
+  \ (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds\
+  \ pharma $300M + MIC $150M) | ✓ High confidence | Unit: billions USD | Click to\
+  \ view calculation\">$650M</a>"
 "treaty_campaign_budget_mass_bribery_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for mass mobilization (voting\
   \ bloc build) | ✓ High confidence | Unit: billions USD | Click to view calculation\"\
   >$140M</a>"
-"treaty_campaign_budget_operations_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Operations budget | ✓ High confidence | Unit:\
-  \ billions USD | Click to view calculation\">$50M</a>"
-"treaty_campaign_budget_partnerships_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Partnerships budget | ✓ High confidence | Unit:\
-  \ billions USD | Click to view calculation\">$100M</a>"
-"treaty_campaign_budget_reserve_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Reserve fund | ✓ High confidence | Unit: billions\
-  \ USD | Click to view calculation\">$50M</a>"
+"treaty_campaign_budget_operations_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Operations budget - for backward compatibility\
+  \ | ~ Medium confidence | Unit: billions USD | Click to view calculation\">$50M</a>"
+"treaty_campaign_budget_partnerships_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Partnerships budget - for backward compatibility\
+  \ | ~ Medium confidence | Unit: billions USD | Click to view calculation\">$100M</a>"
+"treaty_campaign_budget_referendum_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Global referendum campaign (get 208M votes):\
+  \ ads, media, partnerships, staff, legal/compliance | ✓ High confidence | Unit:\
+  \ billions USD | Click to view calculation\">$300M</a>"
+"treaty_campaign_budget_reserve_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Reserve fund / contingency buffer | ✓ High confidence\
+  \ | Unit: billions USD | Click to view calculation\">$50M</a>"
 "treaty_campaign_budget_super_pacs_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Campaign budget for Super PACs and political\
   \ lobbying | ✓ High confidence | Unit: billions USD | Click to view calculation\"\
   >$800M</a>"
-"treaty_campaign_budget_technology_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Technology platform budget | ✓ High confidence\
-  \ | Unit: billions USD | Click to view calculation\">$250M</a>"
-"treaty_campaign_budget_viral_referendum_billions": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Viral referendum campaign budget | ✓ High confidence\
-  \ | Unit: billions USD | Click to view calculation\">$200M</a>"
+"treaty_campaign_budget_technology_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Technology platform budget - for backward compatibility\
+  \ | ~ Medium confidence | Unit: billions USD | Click to view calculation\">$250M</a>"
+"treaty_campaign_budget_viral_referendum_billions": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
+  \ class=\"parameter-link\" title=\"Viral referendum portion (subset of REFERENDUM\
+  \ budget) - for backward compatibility | ~ Medium confidence | Unit: billions USD\
+  \ | Click to view calculation\">$200M</a>"
+"treaty_campaign_cost_per_verified_vote_realistic_usd": "<a href=\"/knowledge/economics/campaign-budget.qmd#verification-cost-analysis\"\
+  \ class=\"parameter-link\" title=\"Realistic all-in cost per verified vote (referral\
+  \ payment + verification cost + overhead) | ✓ High confidence | Updated: 2024 |\
+  \ Formula: REFERRAL_PAYMENT + VERIFICATION_COST + OVERHEAD | Unit: USD/verified_vote\
+  \ | Click to view calculation\">$1</a>"
 "treaty_campaign_cost_per_vote_max_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#vote-acquisition-cost\"\
   \ class=\"parameter-link\" title=\"Maximum cost per vote for mass mobilization campaign\
   \ | ✓ High confidence | Unit: USD/vote | Click to view calculation\">$0</a>"
@@ -1314,11 +1451,41 @@
 "treaty_campaign_duration_years": "<a href=\"/knowledge/strategy/roadmap.qmd\" class=\"\
   parameter-link\" title=\"Treaty campaign duration (3-5 year range, using midpoint)\
   \ | ✓ High confidence | Unit: years | Click to view calculation\">4</a>"
-"treaty_campaign_total_cost": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ class=\"parameter-link\" title=\"Total treaty campaign cost (sum of all campaign\
-  \ budget components) | ✓ High confidence | Formula: REFERENDUM + AI_LOBBY + TECH\
+"treaty_campaign_total_cost": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation\"\
+  \ class=\"parameter-link\" title=\"Total treaty campaign cost (100% VICTORY Social\
+  \ Impact Bonds) | ✓ High confidence | Formula: REFERENDUM + LOBBYING + RESERVE |\
+  \ Unit: billions USD | Click to view calculation\">$1.00B</a>"
+"treaty_campaign_total_cost_base_case": "<a href=\"/knowledge/economics/campaign-budget.qmd#base-case-scenario\"\
+  \ class=\"parameter-link\" title=\"Base case total campaign cost (optimistic viral\
+  \ referendum) | ~ Medium confidence | Formula: REFERENDUM_BASE + AI_LOBBY + TECH\
   \ + LEGAL + PARTNERS + OPS + RESERVE | Unit: billions USD | Click to view calculation\"\
-  >$1.00B</a>"
+  >$940M</a>"
+"treaty_campaign_total_cost_realistic": "<a href=\"/knowledge/economics/campaign-budget.qmd#realistic-scenario\"\
+  \ class=\"parameter-link\" title=\"Realistic total campaign cost (moderate tiered\
+  \ pricing) | ✓ High confidence | Formula: REFERENDUM_REALISTIC + AI_LOBBY + TECH\
+  \ + LEGAL + PARTNERS + OPS + RESERVE | Unit: billions USD | Click to view calculation\"\
+  >$1.02B</a>"
+"treaty_campaign_total_cost_worst_case": "<a href=\"/knowledge/economics/campaign-budget.qmd#worst-case-scenario\"\
+  \ class=\"parameter-link\" title=\"Worst-case total campaign cost (high tiered pricing,\
+  \ poor virality) | ~ Medium confidence | Formula: REFERENDUM_WORST + AI_LOBBY +\
+  \ TECH + LEGAL + PARTNERS + OPS + RESERVE | Unit: billions USD | Click to view calculation\"\
+  >$1.21B</a>"
+"treaty_campaign_verification_attempts_multiplier": "<a href=\"/knowledge/economics/campaign-budget.qmd#verification-cost-analysis\"\
+  \ class=\"parameter-link\" title=\"Verification attempts multiplier (1 ÷ conversion\
+  \ rate, assuming 85% completion) | ~ Medium confidence | Formula: 1 ÷ VERIFICATION_CONVERSION_RATE\
+  \ | Unit: ratio | Click to view calculation\">1.18</a>"
+"treaty_campaign_viral_referendum_base_case_billions": "<a href=\"/knowledge/economics/campaign-budget.qmd#base-case-scenario\"\
+  \ class=\"parameter-link\" title=\"Base case viral referendum budget (assumes flat\
+  \ $0.50/vote, optimistic) | ~ Medium confidence | Formula: PLATFORM + VERIFICATION\
+  \ + PAYMENTS_FLAT_RATE | Unit: billions USD | Click to view calculation\">$140M</a>"
+"treaty_campaign_viral_referendum_realistic_billions": "<a href=\"/knowledge/economics/campaign-budget.qmd#realistic-scenario\"\
+  \ class=\"parameter-link\" title=\"Realistic viral referendum budget (moderate tiered\
+  \ pricing) | ✓ High confidence | Formula: PLATFORM + VERIFICATION + MODERATE_TIERED_PAYMENTS\
+  \ | Unit: billions USD | Click to view calculation\">$220M</a>"
+"treaty_campaign_viral_referendum_worst_case_billions": "<a href=\"/knowledge/economics/campaign-budget.qmd#worst-case-scenario\"\
+  \ class=\"parameter-link\" title=\"Worst-case viral referendum budget (tiered pricing\
+  \ with increasing marginal costs) | ~ Medium confidence | Formula: PLATFORM + VERIFICATION\
+  \ + TIERED_PAYMENTS | Unit: billions USD | Click to view calculation\">$406M</a>"
 "treaty_campaign_voting_bloc_target_millions": "<a href=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ class=\"parameter-link\" title=\"Target voting bloc size for campaign | ✓ High\
   \ confidence | Unit: millions of people | Click to view calculation\">280</a>"
@@ -1357,7 +1524,7 @@
 "treaty_total_qalys_gained_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys\"\
   \ class=\"parameter-link\" title=\"Total annual QALYs gained (dFDA + peace dividend)\
   \ | ✓ High confidence | Formula: DFDA_QALYS + PEACE_QALYS | Unit: QALYs/year | Click\
-  \ to view calculation\">925,610</a>"
+  \ to view calculation\">926K</a>"
 "trial_completion_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration\"\
   \ class=\"parameter-link\" title=\"Trial completion speed multiplier (10x faster)\
   \ | ✓ High confidence | Unit: ratio | Click to view calculation\">10</a>"
@@ -1367,6 +1534,14 @@
 "trial_cost_reduction_pct": "<span class=\"parameter-definition\" title=\"Trial cost\
   \ reduction percentage (50% baseline, conservative) | Unit: rate | Core definition\"\
   >50%</span>"
+"type_ii_error_cost_ratio": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
+  \ class=\"parameter-link\" title=\"Ratio of Type II error cost to Type I error benefit\
+  \ (harm from delay vs. harm prevented) | ~ Medium confidence | Formula: TYPE_II_COST\
+  \ ÷ TYPE_I_BENEFIT | Unit: ratio | Click to view calculation\">1,610</a>"
+"type_i_error_benefit_dalys_billions": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
+  \ class=\"parameter-link\" title=\"Maximum DALYs saved by FDA preventing unsafe\
+  \ drugs (extreme overestimate) | ? Low confidence | Unit: DALYs | Click to view\
+  \ calculation\">0.003</a>"
 "typical_ceo_hourly_rate": "<a href=\"/knowledge/references.qmd#ceo-compensation\"\
   \ class=\"parameter-link\" title=\"Typical CEO hourly rate | ✓ High confidence |\
   \ Unit: USD/hour | Click to view source\">$10K</a>"
@@ -1396,18 +1571,42 @@
   \ | ✓ High confidence | Unit: rate | Click to view source\">3.5%</a>"
 "us_population_2024": "<a href=\"/knowledge/references.qmd#us-population-335m\" class=\"\
   parameter-link\" title=\"US population in 2024 | ✓ High confidence | Unit: people\
-  \ | Click to view source\">335,000,000</a>"
+  \ | Click to view source\">335M</a>"
 "value_of_statistical_life": "<a href=\"/knowledge/references.qmd#dot-vsl-13-6m\"\
   \ class=\"parameter-link\" title=\"Value of Statistical Life (conservative estimate)\
   \ | ✓ High confidence | Unit: USD | Click to view source\">$10M</a>"
+"verification_conversion_rate_good_ux": "<a href=\"/knowledge/references.qmd#fintech-identity-verification-conversion-2024\"\
+  \ class=\"parameter-link\" title=\"Identity verification completion rate with good\
+  \ UX (fintech data) | ✓ High confidence | Updated: 2024 | Unit: rate | Click to\
+  \ view source\">85%</a>"
+"verification_conversion_rate_poor_ux": "<a href=\"/knowledge/references.qmd#fintech-identity-verification-conversion-2024\"\
+  \ class=\"parameter-link\" title=\"Identity verification completion rate with poor\
+  \ UX | ~ Medium confidence | Updated: 2024 | Unit: rate | Click to view source\"\
+  >50%</a>"
 "victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
   \ VICTORY bond payout (treaty funding × bond percentage) | Unit: billions USD/year\
   \ | Core definition\">$2.72B</span>"
 "victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
   \ return percentage for VICTORY bondholders | Unit: rate | Core definition\">272%</span>"
+"victory_bond_funding_base_case": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"VICTORY Social Impact Bond funding in base case\
+  \ (political lobbying, mobilization) | ✓ High confidence | Formula: BASE_CASE_TOTAL\
+  \ × 53% | Unit: USD | Click to view calculation\">$498M</a>"
 "victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of captured dividend funding VICTORY bonds (10%) | Unit: rate | Core definition\"\
   >10%</span>"
+"victory_bond_funding_percentage": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"VICTORY bond funding as percentage of total campaign\
+  \ cost (realistic scenario) | ✓ High confidence | Formula: VICTORY_REALISTIC ÷ TOTAL_REALISTIC\
+  \ | Unit: percentage | Click to view calculation\">49%</a>"
+"victory_bond_funding_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"VICTORY Social Impact Bond funding in realistic\
+  \ scenario (political lobbying, mobilization) | ✓ High confidence | Formula: REALISTIC_TOTAL\
+  \ × 49% | Unit: USD | Click to view calculation\">$501M</a>"
+"victory_bond_funding_worst_case": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
+  \ class=\"parameter-link\" title=\"VICTORY Social Impact Bond funding in worst-case\
+  \ scenario (political lobbying, mobilization) | ~ Medium confidence | Formula: WORST_CASE_TOTAL\
+  \ × 55% | Unit: USD | Click to view calculation\">$664M</a>"
 "victory_bond_investment_unit_usd": "<a href=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
   \ class=\"parameter-link\" title=\"VICTORY bond investment unit for retail investors\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$1.00K</a>"
@@ -1417,6 +1616,32 @@
   \ class=\"parameter-link\" title=\"Annual payout per $1,000 VICTORY bond investment\
   \ unit | ✓ High confidence | Formula: (ANNUAL_PAYOUT ÷ CAMPAIGN_COST) × UNIT | Unit:\
   \ USD/year | Click to view calculation\">$2.72K</a>"
+"victory_legal_compliance_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for legal/compliance (political\
+  \ campaign compliance) | ✓ High confidence | Unit: USD | Click to view calculation\"\
+  >$47M</a>"
+"victory_lobbying_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for political lobbying (US/EU/G20,\
+  \ Super PACs, opposition research) | ✓ High confidence | Unit: USD | Click to view\
+  \ calculation\">$250M</a>"
+"victory_operations_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for operations (political campaign\
+  \ staff) | ✓ High confidence | Unit: USD | Click to view calculation\">$30M</a>"
+"victory_partnerships_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for partnerships (defense industry\
+  \ conversion, political coalitions) | ✓ High confidence | Unit: USD | Click to view\
+  \ calculation\">$71M</a>"
+"victory_reserve_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for reserve (political campaign\
+  \ contingency) | ✓ High confidence | Unit: USD | Click to view calculation\">$13M</a>"
+"victory_tech_rd_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for technology R&D (political\
+  \ campaign tools) | ✓ High confidence | Unit: USD | Click to view calculation\"\
+  >$24M</a>"
+"victory_viral_referendum_realistic": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario\"\
+  \ class=\"parameter-link\" title=\"VICTORY funding for viral referendum (referral\
+  \ payments, political advertising) | ✓ High confidence | Unit: USD | Click to view\
+  \ calculation\">$143M</a>"
 "vsl_epa_millions": "<a href=\"/knowledge/references.qmd#epa-value-statistical-life\"\
   \ class=\"parameter-link\" title=\"EPA value of statistical life | ✓ High confidence\
   \ | Unit: millions USD | Click to view source\">$9.60M</a>"

@@ -24,87 +24,61 @@ lastNonprofitComplianceHash: 364cbfb0bcdddbd130b5c679304aa223413c69bbf5a9e8e7eb4
 from dih_models.parameters import *
 ```
 
-The [Decentralized Institutes of Health (DIH)](../solution/dih.qmd) is a SuperDAO governed by **Wishocracy**, a protocol for managing large, decentralized organizations.
+The [Decentralized Institutes of Health (DIH)](../solution/dih.qmd) is a **decentralized crowdfunding platform** that serves as the single governance layer for all health research funding.
 
-Wishocracy is a model for creating a semi-autonomous "to-do list for humanity," where people collaborate with AI agents to prioritize, fund, and solve complex problems.
+It functions like Kickstarter meets the NIH, but without corruption or bureaucracy - governed by **Wishocracy**, a pairwise allocation voting system that lets 8 billion people collectively decide how to spend {{< var treaty_annual_funding >}} annually.
 
-It is designed to be a general-purpose governance framework that any decentralized organization can adopt.
+## DIH Architecture: Single Governance Layer
 
-The DIH is the first and largest implementation of this protocol.
+{{< include ../figures/dih-architecture-diagram.qmd >}}
 
-## The Core Components of the Wishocracy Protocol
+The DIH handles ALL budgeting decisions:
+- Holds the treasury (from [1% Treaty](../solution/1-percent-treaty.qmd))
+- Accepts campaign proposals from anyone
+- Uses [Wishocracy](../solution/wishocracy.qmd) to allocate funds across competing campaigns
+- No CEO, no board, governed by transparent code
 
-Wishocracy combines collective human intelligence with the efficiency of AI to create a new form of governance.
+## Clean Separation: Governance vs Platform
 
-```{python}
-#| fig-alt: "Flow diagram showing: People propose Wishes → AI Agents analyze → Generate Ranked Solutions → People vote via RAPPA → DAO Treasury allocates funds → Contributors complete tasks → Outcomes achieved"
-import graphviz
-from pathlib import Path
-from IPython.display import Image as IPImage, display
+{{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
 
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+**DIH (Governance Layer)**
+- Handles all budget allocation
+- Wishocracy voting on campaigns
+- Treasury management
+- Prize distribution
 
-dot = graphviz.Digraph(comment='Wishocracy Protocol', format='png')
-dot.attr(rankdir='TD', size='10,12')
-setup_graphviz_style(dot)
+**dFDA (Technical Platform)**
+- Pure technical infrastructure
+- NO budget authority
+- Gets funded BY DIH (like any other campaign)
+- If captured → fund alternative platform instead
 
-with dot.subgraph(name='cluster_wishocracy') as protocol:
-    protocol.attr(label='The Wishocracy Protocol', style='dashed')
-    protocol.node('A', 'People', shape='ellipse')
-    protocol.node('B', 'Wishes: The To-Do List', shape='box')
-    protocol.node('C', 'AI Agents', shape='box')
-    protocol.node('D', 'Ranked & Verifiable Solutions', shape='box')
-    protocol.node('E', 'RAPPA Voting', shape='diamond')
-    protocol.node('F', 'DAO Treasury\n(e.g., The DIH)', shape='box')
-    protocol.node('G', 'Contributors:\nResearchers & Builders', shape='ellipse')
-    protocol.node('H', 'Outcomes:\nCures & Breakthroughs', shape='box')
+This prevents the "new FDA" problem: dFDA can't become a bureaucratic bottleneck because it has no independent funding - it's just one campaign competing with others for DIH treasury funds.
 
-    protocol.edge('A', 'B', label='propose')
-    protocol.edge('B', 'C', label='are analyzed by')
-    protocol.edge('C', 'D', label='generate')
-    protocol.edge('A', 'E', label='vote on solutions using')
-    protocol.edge('E', 'F', label='allocates funds from')
-    protocol.edge('F', 'G', label='funds')
-    protocol.edge('G', 'H', label='complete tasks, creating')
+## How Budget Allocation Works
 
-png_path = render_graphviz_with_watermark(dot, 'wishocracy-protocol')
-display(IPImage(str(png_path)))
-```
+The DIH uses **[Wishocracy](../solution/wishocracy.qmd)** - a pairwise voting system - to allocate funds across competing campaign proposals.
 
-### 1. The To-Do List ("Wishes")
+**See [Wishocracy](../solution/wishocracy.qmd) for detailed explanation of how pairwise allocation works.**
 
-Anyone can propose a "Wish"—a clear, measurable outcome for a real-world problem (e.g., "Cure Alzheimer's," "Develop cheap, scalable carbon capture").
+### What Gets Funded: Market Failures Only
 
-This creates a transparent, crowdsourced list of priorities for the organization.
+Since the [dFDA marketplace](../solution/dfda.qmd) handles most research allocation automatically (patients choose trials → funding flows there), the DIH treasury primarily funds **market failures** - things the marketplace can't handle:
 
-### 2. The AI Civil Service
+**Infrastructure (Platform Must Exist First):**
+- dFDA platform development & operations (~$10B/year)
+- Competing alternative dFDA implementations
+- Data commons infrastructure (storage, processing)
+- Security audits and fraud detection systems
 
-A suite of AI agents acts as a transparent and tireless administrative layer.
+**True Public Goods (No Revenue Model):**
+- Patient trial participation subsidies (~$800B/year, automatic)
+- Negative results publishing incentives (no revenue from failures)
+- Basic research with no patient application yet (can't be trials)
+- Replication studies (unglamorous but critical)
 
-They:
-
-- **Analyze Wishes:** Research the current state of science and feasibility for each Wish.
-- **Propose Solutions:** Generate a list of the most promising, evidence-based paths to granting each Wish.
-- **Verify Outcomes:** Monitor real-world data to verify when a successful outcome has occurred.
-
-### 3. The Voting System (RAPPA)
-
-Holders of VICTORY instruments, envisioned as government-issued financial mechanisms designed to align public interest with scientific progress, participate in the DIH's governance by using **Random Aggregated Pairwise Preference Allocation (RAPPA)** to vote on which solutions to fund.
-
-This system is:
-
-- **Scalable:** Millions of users can participate by making simple pairwise choices (e.g., "Project A vs. Project B").
-- **Fair:** It mathematically prevents wealthy "whales" from dominating the budget, ensuring the collective will is represented.
-
-### 4. The Treasury (The DAO)
-
-The DAO's treasury (in this case, the envisioned **DIH**), once fully established and funded by public or government sources, would automatically execute the will of the voters, deploying its **target {{< var treaty_annual_funding >}}+ annual budget** to fund the "Contributors" (the researchers, scientists, and engineers) who are working to grant the top-ranked wishes.
-
-### 5. The Verification Layer (e.g., The dFDA)
-
-An independent verification layer provides the real-world data and validation necessary to confirm that outcomes have been achieved.
-
-For the DIH, this function is performed by the [Decentralized FDA (dFDA)](../solution/dfda.qmd) protocol.
+**Why This is Minimal:** The [dFDA marketplace](../solution/dfda.qmd) eliminates most traditional research funding needs. Companies register treatments → Patients join trials → Revenue flows → Research happens. The DIH only needs to fund what the marketplace truly can't handle.
 
 ## Dive Deeper into the Governance Model
 

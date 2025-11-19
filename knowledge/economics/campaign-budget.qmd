@@ -14,6 +14,8 @@ Traditional campaigns throw papers at problems until the papers or the problems 
 
 You're using AI and game theory to do for {{< var treaty_campaign_total_cost >}} what normally costs $2-5B. It's like buying everything at Costco but for democracy corruption.
 
+**Funding structure**: 100% VICTORY Social Impact Bonds (~$1B). Donations are optional/bonus. See [Fundraising Strategy: Capital Structure](../appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation) for detailed breakdown.
+
 This {{< var treaty_campaign_total_cost >}} will:
 
 - Reach 8 billion humans by paying them $0.20 for each referred verified vote (cheaper than advertising, more effective than begging)
@@ -47,10 +49,23 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 #### Paying Humans to Click
 
-- $0.20 per verified vote people get with their referral link (less than a candy bar, more effective than moral arguments)
-- $0.50 for early adopters (first 10M get participation trophy papers)
-- $0.10 per recruit (pyramid scheme but for not dying)
-- Target: 280M humans clicking "yes I prefer not dying"
+The strategy: Generate referral links, pay people $0.25-0.30 per verified vote, let greed do the marketing.
+
+**What $0.50/vote actually buys** (blended cost):
+
+- Referral payment: ~$0.25 per verified vote (the actual reward people get)
+- Biometric verification: ~$0.18 per attempt (ComplyCube, Ondato, Veriff at scale)
+- Verification friction: 15-20% don't complete (need 330M attempts for 280M verified)
+- Platform overhead: ~$0.07 per vote (development, hosting, fraud prevention)
+
+Comparable: Traditional petition signatures cost $14.87 each in 2024 (Ballotpedia). You're 96% cheaper.
+
+**Target: 280M verified votes** (3.5% of global population = tipping point for social change)
+
+**Payment structure:**
+- Standard reward: $0.25-0.30 per verified vote via referral link
+- Early adopter bonus: $0.50 for first 10M (creates FOMO)
+- Recruitment bonus: $0.10 per successful recruit (pyramid scheme but legal)
 
 **The Clicking Platform**: {{< var campaign_platform_development_millions >}}
 
@@ -59,20 +74,126 @@ This {{< var treaty_campaign_total_cost >}} will:
 - 50+ languages (AI translates, humans check for accidental declarations of war)
 - Mobile-first (humans glued to phones anyway)
 
-**Viral Content**: {{< var campaign_viral_content_budget_millions >}}
+**Viral Content** (optional acceleration): {{< var campaign_viral_content_budget_millions >}}
+
+When you're paying people real money ($0.25-0.30) for verified referrals, they become your marketing team. This budget is for:
 
 - AI generates memes about death (surprisingly good at this)
 - A/B testing until humans can't resist voting
 - Local versions (different cultures, same mortality)
 - Micro-influencers (people trust strangers with 10K followers more than experts)
 
-**Community Organizing**: {{< var campaign_community_organizing_millions >}}
+Alternative: Skip this, increase referral payment to $0.35-0.40, let economics drive virality. PayPal and Dropbox proved you don't need marketing when you're paying real money.
+
+**Community Organizing** (optional acceleration): {{< var campaign_community_organizing_millions >}}
+
+Organic communities form when there's money involved. This budget is for:
 
 - 100+ country ambassadors (humans who like organizing other humans)
 - Tools for coordination (spreadsheets that don't crash)
 - Event support (folding chairs and PowerPoints)
 
-### 2. Professional Bribery: {{< var treaty_campaign_budget_technology_billions >}} (25%)
+Alternative: Skip this, use the $30M to increase verification budget or referral rewards.
+
+#### Budget Scenarios: Accounting for Increasing Marginal Costs
+
+**The Problem**: Not all voters cost the same.
+
+Early adopters (believers, idealists, people who care about curing disease) will vote for minimal incentive. They're excited about the mission. Maybe they vote for free, maybe $0.25 is plenty.
+
+But to hit 280M votes (3.5% of global population), you need more than believers. You need skeptics. You need people who don't care about politics. You need people actively resistant to change.
+
+**Diffusion of innovations theory** (Rogers, 2003):
+- 2.5% innovators (vote for free, do it for the mission)
+- 13.5% early adopters ($0.25/vote, minimal incentive needed)
+- 34% early majority ($0.50/vote, need moderate incentive)
+- 34% late majority ($0.75-1.00/vote, skeptical, need convincing)
+- 16% laggards ($1.50-2.00/vote, actively resistant)
+
+**PayPal case study**: Started at $20/referral (1999), optimized to $10-20 range. Inflation-adjusted: ~$18-36 in 2024 dollars. But PayPal was recruiting early adopters (tech-savvy users in Silicon Valley). Not laggards.
+
+**Three Budget Scenarios for 280M Votes:**
+
+<a id="base-case-scenario"></a>
+
+**Scenario A: Base Case** ({{< var treaty_campaign_viral_referendum_base_case_billions >}})
+
+Assumes flat $0.50/vote, no increasing marginal costs.
+
+Components:
+- Platform Development: $35M
+- Viral Content: $40M (optional)
+- Community Organizing: $30M (optional)
+- Verification + Payments: $35M
+
+**Risk**: Optimistic. Assumes you can acquire last 80M votes (late majority + laggards) at same cost as first 10M (believers). Unlikely.
+
+**When this works**: If virality is so strong that social proof does the heavy lifting. If voting becomes trendy. If celebrities make it cool. If FOMO is real.
+
+<a id="realistic-scenario"></a>
+
+**Scenario B: Realistic** ({{< var treaty_campaign_viral_referendum_realistic_billions >}})
+
+Assumes moderate increasing marginal costs.
+
+Components:
+- Platform Development: $35M
+- Seed Marketing: $5M (skip viral content budget, let referral economics drive virality)
+- Verification (330M attempts × $0.18): $59M
+- Tiered Referral Payments: $126M
+  - First 10M (innovators + early adopters): $0.25/vote = $2.5M
+  - Next 90M (early majority): $0.50/vote = $45M
+  - Next 100M (late majority): $0.75/vote = $75M
+  - Final 80M (laggards): $1.00/vote = $80M
+
+**Total: $225M** (rounding: {{< var treaty_campaign_viral_referendum_realistic_billions >}})
+
+**Rationale**: Follows diffusion curve but assumes strong virality reduces laggard cost from $2.00 to $1.00. Still 23x cheaper than petition signatures ($14.87 each).
+
+<a id="worst-case-scenario"></a>
+
+**Scenario C: Worst Case** ({{< var treaty_campaign_viral_referendum_worst_case_billions >}})
+
+Assumes high increasing marginal costs, poor virality.
+
+Components:
+- Platform Development: $35M
+- Seed Marketing: $5M
+- Verification (350M attempts × $0.18): $63M
+- Tiered Referral Payments: $312M
+  - First 10M: $0.25/vote = $2.5M
+  - Next 90M: $0.50/vote = $45M
+  - Next 100M: $1.00/vote = $100M
+  - Final 80M: $2.00/vote = $160M
+
+**Total: $415M** (parameter: {{< var treaty_campaign_viral_referendum_worst_case_billions >}})
+
+**When you need this**: If virality is weak. If people are skeptical. If competing campaigns poison the well. If verification UX is poor (only 70% conversion instead of 85%).
+
+**Still cheaper than alternatives:**
+- Traditional petition gathering: 280M × $14.87 = $4.2 BILLION
+- Digital advertising (CPA $5-15): 280M × $10 avg = $2.8 BILLION
+- Worst-case treaty campaign: $406M
+
+**You're still 90% cheaper in the WORST case.**
+
+#### Recommended Approach
+
+**Raise for worst-case** ($400M+), **execute with realistic assumptions** ($220M), **celebrate if base case works** ($140M).
+
+Unused funds roll into:
+- Higher referral payments (accelerate growth)
+- Post-victory treaty implementation
+- dFDA platform development
+- Reserve for Year 2-3 scaling
+
+**Budget allocation transparency**: Live dashboard at WarOnDisease.org/budget shows real-time:
+- Which scenario is playing out (are we at base case, realistic, or worst case costs?)
+- Current cost per verified vote by cohort
+- Conversion rate optimization (is verification UX working?)
+- Funds remaining vs. target (are we on track?)
+
+### 2. Professional Bribery: {{< var treaty_campaign_budget_ai_lobbying_billions >}} (25%)
 
 **Lobbying (AI-Targeted)**: $150M
 
@@ -139,7 +260,7 @@ Computers that store everything:
 - 100K beta users (find problems before 8 billion users do)
 - Security audits (pay hackers to break it before bad hackers do)
 
-### 4. Lawyers (AI-Assisted): {{< var treaty_campaign_budget_partnerships_billions >}} (10%)
+### 4. Lawyers (AI-Assisted): {{< var treaty_campaign_budget_legal_billions >}} (10%)
 
 **Legal Work**: {{< var campaign_legal_work_millions >}}
 
@@ -189,7 +310,7 @@ Turn enemies into allies through superior returns:
 - Scientists with credentials (humans trust credentials)
 - Cultural influencers (humans who influence culture, apparently)
 
-### 6. Operations: {{< var treaty_campaign_budget_reserve_billions >}} (5%)
+### 6. Operations: {{< var treaty_campaign_budget_operations_billions >}} (5%)
 
 **Core Team**: {{< var campaign_staff_budget_millions >}}
 

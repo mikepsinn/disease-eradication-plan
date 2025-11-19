@@ -334,6 +334,90 @@ Mobile devices are held vertically - column charts use this natural orientation 
 
 Ask: "If I remove this element, does the chart lose essential information?" If no, remove it.
 
+## Diagram Creation with Graphviz
+
+**For flow diagrams, system diagrams, and architectural visualizations, use the `graphviz_helper.py` module.**
+
+### When to Use Graphviz vs. Matplotlib
+
+- **Graphviz:** Flow diagrams, system architecture, process flows, organizational charts
+- **Matplotlib:** Data visualizations, charts, graphs with numeric data
+
+### Graphviz File Format
+
+Create diagrams as `.qmd` files with Python code blocks (same as charts):
+
+```python
+#| echo: false
+import graphviz
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+from dih_models.plotting.graphviz_helper import (
+    setup_graphviz_style,
+    render_graphviz_with_watermark
+)
+
+# Create diagram
+dot = graphviz.Digraph(comment='Your Diagram Description', format='png')
+dot.attr(rankdir='TB', size='10,12')  # TB=top-to-bottom, LR=left-to-right
+
+# Apply design guide styling (black/white, serif fonts, margins)
+setup_graphviz_style(dot)
+
+# Add nodes and edges
+dot.node('A', 'Component A')
+dot.node('B', 'Component B')
+dot.edge('A', 'B', label='Connection')
+
+# Render with watermark and metadata
+png_path = render_graphviz_with_watermark(dot, 'your-diagram-name')
+display(IPImage(str(png_path)))
+```
+
+### Example Diagrams
+
+See these examples in `knowledge/figures/`:
+- [three-ingredients-system-diagram.qmd](knowledge/figures/three-ingredients-system-diagram.qmd) - System overview with clusters
+- [victory-bonds-money-flow-diagram.qmd](knowledge/figures/victory-bonds-money-flow-diagram.qmd) - Left-to-right flow
+- [death-economy-flow-diagram.qmd](knowledge/figures/death-economy-flow-diagram.qmd) - Complex flow with multiple nodes
+
+### Graphviz Helper Functions
+
+**`setup_graphviz_style(dot)`** - Applies design guide styling:
+- Black and white colors (#000000, #FFFFFF)
+- Serif fonts (Georgia)
+- Rounded box nodes
+- Proper margins for watermark clearance
+
+**`render_graphviz_with_watermark(dot, filename, output_dir=None)`** - Renders diagram:
+- Generates PNG in `knowledge/figures/` (or custom directory)
+- Adds watermark (WarOnDisease.org, 11pt, bottom-right)
+- Returns path to PNG file
+
+### Graphviz Styling Tips
+
+```python
+# Layout direction
+dot.attr(rankdir='TB')  # Top-to-bottom (default)
+dot.attr(rankdir='LR')  # Left-to-right (better for wide flows)
+
+# Size constraint (width, height in inches)
+dot.attr(size='10,12')
+
+# Clusters (grouped nodes)
+with dot.subgraph(name='cluster_name') as cluster:
+    cluster.attr(label='Group Label', style='dashed')
+    cluster.node('Node1', 'Content')
+    cluster.node('Node2', 'Content')
+
+# Node styling (override defaults)
+dot.node('Important', 'Critical Step', penwidth='3')  # Thicker border
+
+# Edge styling
+dot.edge('A', 'B', label='Flow', style='dashed')  # Dashed line
+```
+
 ## Newspaper/Typewriter Aesthetic (for Images/Graphics)
 
 When creating or sourcing images:

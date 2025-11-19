@@ -1171,8 +1171,11 @@ TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
 # ---
 # CAMPAIGN COSTS
 # ---
+# Updated to $1B VICTORY bond model: Lobbying $650M + Referendum $300M + Reserve $50M
+# Tech R&D removed from campaign (post-treaty implementation funded by $27B/year)
+# Legal/ops/partnerships rolled into main campaign categories
 
-# Source: brain/book/economics/campaign-budget.qmd
+# Source: /knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation
 TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     4,
     source_ref="/knowledge/strategy/roadmap.qmd",
@@ -1181,79 +1184,138 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     unit="years"
 )  # 3-5 year range, using midpoint
 
-# Campaign budget breakdown (in billions)
-TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS = Parameter(
-    0.200,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+# Campaign budget breakdown (in billions) - Two main categories
+TREATY_CAMPAIGN_BUDGET_REFERENDUM_BILLIONS = Parameter(
+    0.300,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
     source_type="calculated",
-    description="Viral referendum campaign budget",
-    unit="billions USD"
-)  # $200M viral referendum
+    description="Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
+    unit="billions USD",
+    confidence="high"
+)  # $300M total referendum campaign (includes all support costs)
 
-TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS = Parameter(
-    0.250,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+TREATY_CAMPAIGN_BUDGET_LOBBYING_BILLIONS = Parameter(
+    0.650,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
     source_type="calculated",
-    description="AI-assisted lobbying budget",
-    unit="billions USD"
-)  # $250M AI-assisted lobbying
-
-TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS = Parameter(
-    0.250,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
-    source_type="calculated",
-    description="Technology platform budget",
-    unit="billions USD"
-)  # $250M technology platform
-
-TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS = Parameter(
-    0.100,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
-    source_type="calculated",
-    description="Legal and compliance budget",
-    unit="billions USD"
-)  # $100M legal & compliance
-
-TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS = Parameter(
-    0.100,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
-    source_type="calculated",
-    description="Partnerships budget",
-    unit="billions USD"
-)  # $100M partnerships
-
-TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS = Parameter(
-    0.050,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
-    source_type="calculated",
-    description="Operations budget",
-    unit="billions USD"
-)  # $50M operations
+    description="Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+    unit="billions USD",
+    confidence="high"
+)  # $650M total lobbying (outspends pharma + MIC combined)
 
 TREATY_CAMPAIGN_BUDGET_RESERVE_BILLIONS = Parameter(
     0.050,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
     source_type="calculated",
-    description="Reserve fund",
-    unit="billions USD"
+    description="Reserve fund / contingency buffer",
+    unit="billions USD",
+    confidence="high"
 )  # $50M reserve
 
 # Total campaign cost (calculated from components)
 TREATY_CAMPAIGN_TOTAL_COST = Parameter(
-    TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS +
-    TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS +
-    TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS +
-    TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS +
-    TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS +
-    TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_REFERENDUM_BILLIONS +
+    TREATY_CAMPAIGN_BUDGET_LOBBYING_BILLIONS +
     TREATY_CAMPAIGN_BUDGET_RESERVE_BILLIONS,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation",
     source_type="calculated",
-    description="Total treaty campaign cost (sum of all campaign budget components)",
+    description="Total treaty campaign cost (100% VICTORY Social Impact Bonds)",
     unit="billions USD",
-    formula="REFERENDUM + AI_LOBBY + TECH + LEGAL + PARTNERS + OPS + RESERVE",
-    latex=r"CampaignCost = \$0.2B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1B"
-)  # $1B total campaign cost
+    formula="REFERENDUM + LOBBYING + RESERVE",
+    latex=r"CampaignCost = \$0.3B + \$0.65B + \$0.05B = \$1.0B",
+    confidence="high"
+)  # $1B total campaign cost (all VICTORY bonds)
+
+# Backward compatibility aliases - old detailed breakdown structure
+# These map portions of the new simplified structure to maintain compatibility
+# TODO: Eventually migrate all files to use the new REFERENDUM/LOBBYING/RESERVE structure
+TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS = Parameter(
+    0.200,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+    source_type="calculated",
+    description="Viral referendum portion (subset of REFERENDUM budget) - for backward compatibility",
+    unit="billions USD",
+    confidence="medium"
+)  # $200M - subset of $300M referendum budget
+
+TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS = Parameter(
+    0.250,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+    source_type="calculated",
+    description="AI-assisted lobbying portion (subset of LOBBYING budget) - for backward compatibility",
+    unit="billions USD",
+    confidence="medium"
+)  # $250M - subset of $650M lobbying budget
+
+TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS = Parameter(
+    0.250,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+    source_type="calculated",
+    description="Technology platform budget - for backward compatibility",
+    unit="billions USD",
+    confidence="medium"
+)  # $250M - distributed across referendum and lobbying budgets
+
+TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS = Parameter(
+    0.100,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+    source_type="calculated",
+    description="Legal and compliance budget - for backward compatibility",
+    unit="billions USD",
+    confidence="medium"
+)  # $100M - rolled into referendum and lobbying budgets
+
+TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS = Parameter(
+    0.100,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+    source_type="calculated",
+    description="Partnerships budget - for backward compatibility",
+    unit="billions USD",
+    confidence="medium"
+)  # $100M - rolled into referendum and lobbying budgets
+
+TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS = Parameter(
+    0.050,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+    source_type="calculated",
+    description="Operations budget - for backward compatibility",
+    unit="billions USD",
+    confidence="medium"
+)  # $50M - rolled into referendum and lobbying budgets
+
+# Campaign Total Cost by Scenario (Accounting for Viral Referendum Uncertainty)
+TREATY_CAMPAIGN_TOTAL_COST_BASE_CASE = Parameter(
+    0.140 + 0.250 + 0.250 + 0.100 + 0.100 + 0.050 + 0.050,  # = 0.940
+    source_ref="/knowledge/economics/campaign-budget.qmd#base-case-scenario",
+    source_type="calculated",
+    description="Base case total campaign cost (optimistic viral referendum)",
+    unit="billions USD",
+    formula="REFERENDUM_BASE + AI_LOBBY + TECH + LEGAL + PARTNERS + OPS + RESERVE",
+    latex=r"CampaignCost_{base} = \$0.14B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$0.94B",
+    confidence="medium"
+)  # $940M (assumes flat $0.50/vote with no increasing marginal costs)
+
+TREATY_CAMPAIGN_TOTAL_COST_REALISTIC = Parameter(
+    0.220 + 0.250 + 0.250 + 0.100 + 0.100 + 0.050 + 0.050,  # = 1.020
+    source_ref="/knowledge/economics/campaign-budget.qmd#realistic-scenario",
+    source_type="calculated",
+    description="Realistic total campaign cost (moderate tiered pricing)",
+    unit="billions USD",
+    formula="REFERENDUM_REALISTIC + AI_LOBBY + TECH + LEGAL + PARTNERS + OPS + RESERVE",
+    latex=r"CampaignCost_{realistic} = \$0.22B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1.02B",
+    confidence="high"
+)  # $1.02B (accounts for moderate increasing marginal costs)
+
+TREATY_CAMPAIGN_TOTAL_COST_WORST_CASE = Parameter(
+    0.406 + 0.250 + 0.250 + 0.100 + 0.100 + 0.050 + 0.050,  # = 1.206
+    source_ref="/knowledge/economics/campaign-budget.qmd#worst-case-scenario",
+    source_type="calculated",
+    description="Worst-case total campaign cost (high tiered pricing, poor virality)",
+    unit="billions USD",
+    formula="REFERENDUM_WORST + AI_LOBBY + TECH + LEGAL + PARTNERS + OPS + RESERVE",
+    latex=r"CampaignCost_{worst} = \$0.406B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1.206B",
+    confidence="medium"
+)  # $1.206B (high increasing marginal costs, weak virality, poor conversion)
 
 TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / TREATY_CAMPAIGN_DURATION_YEARS,
@@ -2354,6 +2416,22 @@ CHILDHOOD_VACCINATION_ROI = Parameter(
     unit="ratio"
 )  # 13:1
 
+POLIO_VACCINATION_ROI = Parameter(
+    39,
+    source_ref="polio-vaccination-roi",
+    source_type="external",
+    description="Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs",
+    unit="ratio"
+)  # 39:1 (WHO 2019, 8 priority countries)
+
+MEASLES_VACCINATION_ROI = Parameter(
+    14,
+    source_ref="measles-vaccination-roi",
+    source_type="external",
+    description="Return on investment from measles (MMR) vaccination programs",
+    unit="ratio"
+)  # 14:1 (MMR), range: 10.3:1 to 167:1 depending on program type
+
 CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
     15.0,
     source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
@@ -2665,6 +2743,162 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
     description="Traditional FDA drug development timeline",
     unit="years"
 )  # 12-17 years typical
+
+# ============================================================================
+# REGULATORY MORTALITY COST PARAMETERS
+# ============================================================================
+# Quantitative analysis of Type II regulatory errors (delayed access)
+# Based on: "The Human Capital Cost of Regulatory Latency" (2025)
+# See: knowledge/appendix/regulatory-mortality-analysis.qmd
+
+# Drug Development Phase Durations
+PHASE_1_SAFETY_DURATION_YEARS = Parameter(
+    2.3,
+    source_ref="bio-clinical-development-2021",
+    source_type="external",
+    description="Phase I safety trial duration",
+    unit="years",
+    confidence="high",
+    last_updated="2021",
+    peer_reviewed=True
+)
+
+EFFICACY_LAG_YEARS = Parameter(
+    8.2,
+    source_ref="bio-clinical-development-2021",
+    source_type="external",
+    description="Regulatory delay for efficacy testing (Phase II/III) post-safety verification",
+    unit="years",
+    formula="TOTAL_TIME_TO_MARKET - PHASE_1_DURATION",
+    latex=r"t_{lag} = 10.5 - 2.3 = 8.2 \text{ years}",
+    confidence="high",
+    last_updated="2021",
+    peer_reviewed=True
+)
+
+# Baseline Lives Saved by Modern Medicine
+BASELINE_LIVES_SAVED_ANNUAL_MILLIONS = Parameter(
+    12.0,
+    source_ref="who-global-health-estimates-2024",
+    source_type="external",
+    description="Baseline annual lives saved by pharmaceuticals (conservative aggregate)",
+    unit="deaths/year",
+    confidence="medium",
+    last_updated="2024",
+    peer_reviewed=True,
+    conservative=True
+)
+
+# Regulatory Delay Mortality Estimates (1962-2024)
+REGULATORY_DELAY_DEATHS_LOWER_BOUND_MILLIONS = Parameter(
+    109.6,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates",
+    source_type="calculated",
+    description="Lower bound excess deaths from regulatory delay (1962-2024, steel-man scenario)",
+    unit="deaths",
+    confidence="medium",
+    conservative=True,
+    latex=r"D_{total}^{lower} = D_{lag} + D_{void}"
+)
+
+REGULATORY_DELAY_DEATHS_MEAN_MILLIONS = Parameter(
+    184.6,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates",
+    source_type="calculated",
+    description="Mean estimate excess deaths from regulatory delay (1962-2024)",
+    unit="deaths",
+    confidence="medium",
+    latex=r"D_{total}^{mean} = D_{lag} + D_{void}"
+)
+
+REGULATORY_DELAY_DEATHS_UPPER_BOUND_MILLIONS = Parameter(
+    317.5,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates",
+    source_type="calculated",
+    description="Upper bound excess deaths from regulatory delay (1962-2024, linear innovation trajectory)",
+    unit="deaths",
+    confidence="low",
+    latex=r"D_{total}^{upper} = D_{lag} + D_{void}"
+)
+
+# Morbidity Analysis (DALYs)
+REGULATORY_DELAY_YLL_BILLIONS = Parameter(
+    3.14,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_type="calculated",
+    description="Years of Life Lost from regulatory delay deaths",
+    unit="years",
+    formula="DEATHS_MEAN × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
+    latex=r"YLL = 184.6M \times (79 - 62) = 3.14B",
+    confidence="medium"
+)
+
+REGULATORY_DELAY_YLD_BILLIONS = Parameter(
+    1.69,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_type="calculated",
+    description="Years Lived with Disability during regulatory delay",
+    unit="years",
+    formula="DEATHS_MEAN × SUFFERING_PERIOD × DISABILITY_WEIGHT",
+    latex=r"YLD = 184.6M \times 6 \times 0.35 = 1.69B",
+    confidence="medium"
+)
+
+REGULATORY_DELAY_DALYS_BILLIONS = Parameter(
+    4.83,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_type="calculated",
+    description="Total Disability-Adjusted Life Years lost to regulatory delay (1962-2024)",
+    unit="DALYs",
+    formula="YLL + YLD",
+    latex=r"DALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B",
+    confidence="medium"
+)
+
+# Economic Valuation
+REGULATORY_DELAY_ECONOMIC_LOSS_TRILLIONS = Parameter(
+    483.0,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
+    source_type="calculated",
+    description="Cumulative economic deadweight loss from regulatory delay (1962-2024, 2024 USD)",
+    unit="USD",
+    formula="DALYS_TOTAL × VSLY",
+    latex=r"DWL = 4.83B \times \$100k = \$483T",
+    confidence="medium"
+)
+
+REGULATORY_DELAY_ANNUAL_LOSS_TRILLIONS = Parameter(
+    7.7,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
+    source_type="calculated",
+    description="Annualized economic loss from regulatory delay",
+    unit="USD/year",
+    formula="TOTAL_LOSS ÷ 62 years",
+    latex=r"Annual_{loss} = \$483T \div 62 = \$7.7T/year",
+    confidence="medium"
+)
+
+# Type I vs Type II Error Ratio
+TYPE_I_ERROR_BENEFIT_DALYS_BILLIONS = Parameter(
+    0.003,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
+    source_type="calculated",
+    description="Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)",
+    unit="DALYs",
+    confidence="low",
+    conservative=False  # This is an overestimate of benefits
+)
+
+TYPE_II_ERROR_COST_RATIO = Parameter(
+    1610.0,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
+    source_type="calculated",
+    description="Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
+    unit="ratio",
+    formula="TYPE_II_COST ÷ TYPE_I_BENEFIT",
+    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{4.83B}{0.003B} = 1{,}610:1",
+    confidence="medium"
+)
 
 # ---
 # SENSITIVITY ANALYSIS SCENARIOS
@@ -3361,6 +3595,381 @@ TREATY_CAMPAIGN_COST_PER_VOTE_MAX_USD = Parameter(
     unit="USD/vote"
 )  # USD per vote, maximum for mass bribery campaign
 
+# Biometric Verification Costs (2024 market data)
+BIOMETRIC_VERIFICATION_COST_PER_USER_LOW_USD = Parameter(
+    0.15,
+    source_ref="kyc-biometric-verification-costs-2024",
+    source_type="external",
+    description="Biometric KYC verification cost at high volume (300M+ scale)",
+    unit="USD/verification",
+    confidence="high",
+    last_updated="2024"
+)  # $0.15-0.25 at scale, using low estimate with volume discounts
+
+BIOMETRIC_VERIFICATION_COST_PER_USER_HIGH_USD = Parameter(
+    0.25,
+    source_ref="kyc-biometric-verification-costs-2024",
+    source_type="external",
+    description="Biometric KYC verification cost at medium volume",
+    unit="USD/verification",
+    confidence="high",
+    last_updated="2024"
+)  # $0.20-0.25 typical at 100M+ scale
+
+VERIFICATION_CONVERSION_RATE_GOOD_UX = Parameter(
+    0.85,
+    source_ref="fintech-identity-verification-conversion-2024",
+    source_type="external",
+    description="Identity verification completion rate with good UX (fintech data)",
+    unit="rate",
+    confidence="high",
+    last_updated="2024"
+)  # 67-95% range, using 85% as achievable target
+
+VERIFICATION_CONVERSION_RATE_POOR_UX = Parameter(
+    0.50,
+    source_ref="fintech-identity-verification-conversion-2024",
+    source_type="external",
+    description="Identity verification completion rate with poor UX",
+    unit="rate",
+    confidence="medium",
+    last_updated="2024"
+)  # 50%+ drop-off with friction-heavy systems
+
+PETITION_SIGNATURE_COST_PER_VERIFIED_2024 = Parameter(
+    14.87,
+    source_ref="ballot-measure-signature-costs-2024",
+    source_type="external",
+    description="Average cost per verified petition signature in 2024 US campaigns",
+    unit="USD/signature",
+    confidence="high",
+    last_updated="2024",
+    peer_reviewed=False
+)  # $14.87 average in 2024 (up from $12.70 in 2022)
+
+# Realistic verified vote acquisition costs (including verification friction)
+TREATY_CAMPAIGN_COST_PER_VERIFIED_VOTE_REALISTIC_USD = Parameter(
+    0.64,
+    source_ref="/knowledge/economics/campaign-budget.qmd#verification-cost-analysis",
+    source_type="calculated",
+    description="Realistic all-in cost per verified vote (referral payment + verification cost + overhead)",
+    unit="USD/verified_vote",
+    formula="REFERRAL_PAYMENT + VERIFICATION_COST + OVERHEAD",
+    confidence="high",
+    last_updated="2024"
+)  # $0.60-0.80 range, using midpoint based on 2024 market data
+
+TREATY_CAMPAIGN_VERIFICATION_ATTEMPTS_MULTIPLIER = Parameter(
+    1.18,
+    source_ref="/knowledge/economics/campaign-budget.qmd#verification-cost-analysis",
+    source_type="calculated",
+    description="Verification attempts multiplier (1 ÷ conversion rate, assuming 85% completion)",
+    unit="ratio",
+    formula="1 ÷ VERIFICATION_CONVERSION_RATE",
+    confidence="medium"
+)  # 1 ÷ 0.85 = 1.18 (need 118 attempts for 100 verified votes)
+
+# Tiered Referral Payment Structure (Increasing Marginal Costs)
+# Based on diffusion of innovations theory: Early adopters are cheaper than laggards
+
+REFERRAL_PAYMENT_EARLY_ADOPTERS_USD = Parameter(
+    0.25,
+    source_ref="paypal-dropbox-referral-case-studies",
+    source_type="external",
+    description="Referral payment for early adopters (first 10M, motivated believers)",
+    unit="USD/vote",
+    confidence="medium",
+    last_updated="2024"
+)  # Early adopters: motivated by belief, need minimal incentive
+
+REFERRAL_PAYMENT_MAINSTREAM_USD = Parameter(
+    0.50,
+    source_ref="paypal-dropbox-referral-case-studies",
+    source_type="external",
+    description="Referral payment for mainstream adopters (10-100M, pragmatists)",
+    unit="USD/vote",
+    confidence="medium",
+    last_updated="2024"
+)  # Early majority: need moderate incentive
+
+REFERRAL_PAYMENT_LATE_MAJORITY_USD = Parameter(
+    1.00,
+    source_ref="paypal-dropbox-referral-case-studies",
+    source_type="external",
+    description="Referral payment for late majority (100-200M, skeptics)",
+    unit="USD/vote",
+    confidence="medium",
+    last_updated="2024"
+)  # Late majority: need strong incentive to overcome skepticism
+
+REFERRAL_PAYMENT_LAGGARDS_USD = Parameter(
+    2.00,
+    source_ref="paypal-dropbox-referral-case-studies",
+    source_type="external",
+    description="Referral payment for laggards (200-280M, resistant)",
+    unit="USD/vote",
+    confidence="low",
+    last_updated="2024"
+)  # Laggards: most expensive, resistant to change
+
+# Tiered Budget Calculations (280M Target with Increasing Marginal Costs)
+
+TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE_BILLIONS = Parameter(
+    0.140,
+    source_ref="/knowledge/economics/campaign-budget.qmd#base-case-scenario",
+    source_type="calculated",
+    description="Base case viral referendum budget (assumes flat $0.50/vote, optimistic)",
+    unit="billions USD",
+    formula="PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE",
+    confidence="medium"
+)  # $140M base case (optimistic, assumes no increasing marginal costs)
+
+TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE_BILLIONS = Parameter(
+    0.406,
+    source_ref="/knowledge/economics/campaign-budget.qmd#worst-case-scenario",
+    source_type="calculated",
+    description="Worst-case viral referendum budget (tiered pricing with increasing marginal costs)",
+    unit="billions USD",
+    formula="PLATFORM + VERIFICATION + TIERED_PAYMENTS",
+    latex=r"Budget_{worst} = \$35M_{platform} + \$59M_{verification} + \$312M_{tiered\ payments} = \$406M",
+    confidence="medium"
+)  # $406M worst case: 10M×$0.25 + 90M×$0.50 + 100M×$1.00 + 80M×$2.00 = $312M payments
+
+TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC_BILLIONS = Parameter(
+    0.220,
+    source_ref="/knowledge/economics/campaign-budget.qmd#realistic-scenario",
+    source_type="calculated",
+    description="Realistic viral referendum budget (moderate tiered pricing)",
+    unit="billions USD",
+    formula="PLATFORM + VERIFICATION + MODERATE_TIERED_PAYMENTS",
+    latex=r"Budget_{realistic} = \$35M_{platform} + \$59M_{verification} + \$126M_{tiered\ payments} = \$220M",
+    confidence="high"
+)  # $220M realistic: 10M×$0.25 + 90M×$0.50 + 100M×$0.75 + 80M×$1.00 = $126M payments
+
+# Capital Structure: Foundation vs VICTORY Social Impact Bonds
+# Split campaign funding between nonprofit foundations (health R&D mission) and VICTORY bonds (political returns)
+
+# Foundation Funding Totals (Health R&D, Civic Infrastructure, Science)
+FOUNDATION_FUNDING_BASE_CASE = Parameter(
+    442_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="Nonprofit foundation funding in base case scenario (health R&D, civic infrastructure)",
+    unit="USD",
+    formula="BASE_CASE_TOTAL × 47%",
+    latex=r"Foundation_{base} = \$940M \times 47\% = \$442M",
+    confidence="high"
+)  # Foundations fund tech R&D, platforms, research (501c3 compliant, cannot lobby)
+
+FOUNDATION_FUNDING_REALISTIC = Parameter(
+    519_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="Nonprofit foundation funding in realistic scenario (health R&D, civic infrastructure)",
+    unit="USD",
+    formula="REALISTIC_TOTAL × 51%",
+    latex=r"Foundation_{realistic} = \$1,020M \times 51\% = \$519M",
+    confidence="high"
+)  # $519M: 90% of tech R&D + civic verification + health law research
+
+FOUNDATION_FUNDING_WORST_CASE = Parameter(
+    542_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="Nonprofit foundation funding in worst-case scenario (health R&D, civic infrastructure)",
+    unit="USD",
+    formula="WORST_CASE_TOTAL × 45%",
+    latex=r"Foundation_{worst} = \$1,206M \times 45\% = \$542M",
+    confidence="medium"
+)  # Foundations maintain mission-aligned spending even in worst case
+
+# VICTORY Social Impact Bond Funding Totals (Political Mobilization, Lobbying)
+VICTORY_BOND_FUNDING_BASE_CASE = Parameter(
+    498_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="VICTORY Social Impact Bond funding in base case (political lobbying, mobilization)",
+    unit="USD",
+    formula="BASE_CASE_TOTAL × 53%",
+    latex=r"VICTORY_{base} = \$940M \times 53\% = \$498M",
+    confidence="high"
+)  # VICTORY funds political activities (lobbying, Super PACs, mobilization) - generates 287% returns
+
+VICTORY_BOND_FUNDING_REALISTIC = Parameter(
+    501_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="VICTORY Social Impact Bond funding in realistic scenario (political lobbying, mobilization)",
+    unit="USD",
+    formula="REALISTIC_TOTAL × 49%",
+    latex=r"VICTORY_{realistic} = \$1,020M \times 49\% = \$501M",
+    confidence="high"
+)  # $501M: 100% of lobbying + voter mobilization + political compliance
+
+VICTORY_BOND_FUNDING_WORST_CASE = Parameter(
+    664_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="VICTORY Social Impact Bond funding in worst-case scenario (political lobbying, mobilization)",
+    unit="USD",
+    formula="WORST_CASE_TOTAL × 55%",
+    latex=r"VICTORY_{worst} = \$1,206M \times 55\% = \$664M",
+    confidence="medium"
+)  # Worst case requires more political spend (higher mobilization costs, more lobbying)
+
+# Foundation Funding Percentage
+FOUNDATION_FUNDING_PERCENTAGE = Parameter(
+    0.51,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="Foundation funding as percentage of total campaign cost (realistic scenario)",
+    unit="percentage",
+    formula="FOUNDATION_REALISTIC ÷ TOTAL_REALISTIC",
+    latex=r"Foundation\% = \frac{\$519M}{\$1,020M} = 51\%",
+    confidence="high"
+)  # Foundations fund ~51% (health R&D mission-aligned)
+
+# VICTORY Bond Funding Percentage
+VICTORY_BOND_FUNDING_PERCENTAGE = Parameter(
+    0.49,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
+    source_type="calculated",
+    description="VICTORY bond funding as percentage of total campaign cost (realistic scenario)",
+    unit="percentage",
+    formula="VICTORY_REALISTIC ÷ TOTAL_REALISTIC",
+    latex=r"VICTORY\% = \frac{\$501M}{\$1,020M} = 49\%",
+    confidence="high"
+)  # VICTORY funds ~49% (political activities that generate 287% returns)
+
+# Component-Level Allocation (Realistic $1.02B Scenario)
+# Breakdown of each campaign component by funding source
+
+FOUNDATION_VIRAL_REFERENDUM_REALISTIC = Parameter(
+    77_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for viral referendum platform (biometric verification, civic infrastructure)",
+    unit="USD",
+    confidence="high"
+)  # Foundations fund verification infrastructure, not payment incentives
+
+VICTORY_VIRAL_REFERENDUM_REALISTIC = Parameter(
+    143_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for viral referendum (referral payments, political advertising)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY funds voter mobilization payments and political ads
+
+FOUNDATION_LOBBYING_REALISTIC = Parameter(
+    0,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for political lobbying (zero due to 501c3 restrictions)",
+    unit="USD",
+    confidence="high"
+)  # Foundations CANNOT fund lobbying (IRS 501c3 restriction, <5% limit)
+
+VICTORY_LOBBYING_REALISTIC = Parameter(
+    250_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for political lobbying (US/EU/G20, Super PACs, opposition research)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY funds 100% of lobbying (generates 287% returns)
+
+FOUNDATION_TECH_RD_REALISTIC = Parameter(
+    226_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for technology R&D (dFDA platform, Wishocracy, infrastructure)",
+    unit="USD",
+    confidence="high"
+)  # Foundations fund 90% of tech R&D (core health mission)
+
+VICTORY_TECH_RD_REALISTIC = Parameter(
+    24_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for technology R&D (political campaign tools)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY funds political campaign tech tools
+
+FOUNDATION_LEGAL_COMPLIANCE_REALISTIC = Parameter(
+    53_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for legal/compliance (international health law research)",
+    unit="USD",
+    confidence="high"
+)  # Foundations fund health law research and scientific compliance
+
+VICTORY_LEGAL_COMPLIANCE_REALISTIC = Parameter(
+    47_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for legal/compliance (political campaign compliance)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY funds political campaign legal compliance
+
+FOUNDATION_PARTNERSHIPS_REALISTIC = Parameter(
+    29_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for partnerships (NGOs, patient advocacy, scientific institutions)",
+    unit="USD",
+    confidence="high"
+)  # Foundations fund scientific and civic partnerships
+
+VICTORY_PARTNERSHIPS_REALISTIC = Parameter(
+    71_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for partnerships (defense industry conversion, political coalitions)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY funds defense conversion and political coalition building
+
+FOUNDATION_OPERATIONS_REALISTIC = Parameter(
+    20_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for operations (nonprofit R&D staff)",
+    unit="USD",
+    confidence="high"
+)  # Foundations fund nonprofit operational staff
+
+VICTORY_OPERATIONS_REALISTIC = Parameter(
+    30_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for operations (political campaign staff)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY funds political campaign staff
+
+FOUNDATION_RESERVE_REALISTIC = Parameter(
+    37_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="Foundation funding for reserve (nonprofit contingency)",
+    unit="USD",
+    confidence="high"
+)  # Foundations provide larger reserve cushion
+
+VICTORY_RESERVE_REALISTIC = Parameter(
+    13_000_000,
+    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
+    source_type="calculated",
+    description="VICTORY funding for reserve (political campaign contingency)",
+    unit="USD",
+    confidence="high"
+)  # VICTORY provides smaller reserve (all-or-nothing bet)
+
 # Clinical Trial Cost Examples & Comparisons
 TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K = Parameter(
     48000,
@@ -3727,14 +4336,9 @@ traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_currency(
 treaty_annual_funding_formatted = format_billions(TREATY_ANNUAL_FUNDING)
 treaty_benefit_multiplier_vs_vaccines_formatted = f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"
 treaty_campaign_annual_cost_amortized_formatted = format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)
-treaty_campaign_budget_ai_lobbying_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_AI_LOBBYING_BILLIONS)
-treaty_campaign_budget_legal_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_LEGAL_BILLIONS)
-treaty_campaign_budget_operations_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_OPERATIONS_BILLIONS)
-treaty_campaign_budget_partnerships_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_PARTNERSHIPS_BILLIONS)
+treaty_campaign_budget_lobbying_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_LOBBYING_BILLIONS)
+treaty_campaign_budget_referendum_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_REFERENDUM_BILLIONS)
 treaty_campaign_budget_reserve_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_RESERVE_BILLIONS)
-treaty_campaign_budget_super_pacs_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_SUPER_PACS_BILLIONS)
-treaty_campaign_budget_technology_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_TECHNOLOGY_BILLIONS)
-treaty_campaign_budget_viral_referendum_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_VIRAL_REFERENDUM_BILLIONS)
 treaty_campaign_total_cost_formatted = format_billions(TREATY_CAMPAIGN_TOTAL_COST)
 treaty_lives_saved_annual_global_formatted = format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)
 treaty_net_annual_benefit_formatted = format_billions(TREATY_NET_ANNUAL_BENEFIT)

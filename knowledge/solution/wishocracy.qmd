@@ -28,7 +28,62 @@ How do you avoid parasitic special interests from stealing it or bureacracy from
 
 **Wishocracy** replaces committees with code and representatives with mathematics. It's how you let 8 billion people collectively decide how to spend {{< var treaty_annual_funding >}} without it turning into a bureaucratic nightmare.
 
-## The Magic: The Pairwise Smackdown
+## How Wishocracy Allocates DIH Funds: Decentralized Crowdfunding
+
+The [DIH](dih.qmd) functions as a **decentralized crowdfunding platform**. Anyone can submit a campaign proposal. Wishocracy allocates funds across competing campaigns.
+
+### What the [dFDA Marketplace](dfda.qmd) Handles Automatically:
+
+- **Which specific treatments get tested** → Companies register, patients choose
+- **Which diseases get researched** → Patients join trials for their conditions
+- **Resource allocation within trials** → Market prices and participant choices
+
+### What Wishocracy Actually Decides:
+
+**Allocation across campaign proposals competing for DIH treasury funds:**
+
+**Infrastructure Campaigns:**
+- "dFDA Platform Development" - $10B/year proposal
+- "Epic EHR Integration Project" - $5B one-time
+- "AWS Infrastructure Services" - $3B/year
+- "Security Audit Program" - $2B/year
+- "Alternative dFDA Implementation" - $8B/year (competing approach)
+
+**Public Goods (Market Failures):**
+- "Patient Trial Subsidies Program" - $800B/year (automatic formula)
+- "Off-Patent Drug Research" - $20B/year
+- "Rare Disease Initiative" - $10B/year
+- "Negative Results Publishing Fund" - $5B/year
+
+**Service Provider Bids:**
+- "Data Storage Provider A" - $2B/year
+- "Data Storage Provider B" - $1.5B/year (competing)
+- "Clinical Trial Insurance Pool" - $10B reserve
+
+### How It Works: Pairwise Comparisons Between Campaigns
+
+Instead of committees deciding "dFDA gets $10B," the global population votes using pairwise comparisons:
+
+**"What's more important right now:"**
+- "dFDA platform development" vs "Alzheimer's prize"?
+- "Epic integration" vs "Security audits"?
+- "Rare disease research" vs "Alternative dFDA platform"?
+- "Patient subsidies" vs "Infrastructure spending"?
+
+Millions of people make simple pairwise choices. The algorithm aggregates preferences into funding allocations.
+
+### Why This Is Actually Needed (Not "Just 3 Parameters")
+
+You can't reduce this to simple formulas because:
+
+1. **Multiple competing implementations** - Which dFDA platform to fund? Which infrastructure provider?
+2. **Trade-offs between prizes** - $100B for aging reversal or $50B for Alzheimer's + $50B for cancer?
+3. **Public goods allocation** - How much for off-patent drugs vs rare diseases?
+4. **Service provider competition** - Which companies get contracts for what amounts?
+
+The [dFDA marketplace](dfda.qmd) allocates resources **within** trials. Wishocracy allocates resources **between** campaigns.
+
+---
 
 The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, or simply, the **Pairwise Smackdown**.
 
