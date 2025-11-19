@@ -355,7 +355,7 @@ dot = graphviz.Digraph(comment='Compound Flywheel', format='png')
 dot.attr(rankdir='TD', size='10,14')
 setup_graphviz_style(dot)
 
-dot.node('A', f'1% Treaty: {format_billions(TREATY_ANNUAL_FUNDING)}')
+dot.node('A', f'1% Treaty: {format_parameter_value(TREATY_ANNUAL_FUNDING)}')
 dot.node('B', 'Subsidize Patients')
 dot.node('C', 'Generate Cures')
 dot.node('D', 'Save Lives')

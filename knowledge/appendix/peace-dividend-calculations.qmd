@@ -50,10 +50,10 @@ societal_dividend = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
 # Print the results using standardized parameters
 
 print(f"--- 1% Peace Dividend Analysis ---")
-print(f"Total Annual Cost of War: {format_billions(total_cost_of_war)}")
+print(f"Total Annual Cost of War: {format_parameter_value(total_cost_of_war)}")
 print("-" * 35)
-print(f"Captured Dividend (1% of Military Spend): {format_billions(captured_dividend)}")
-print(f"Societal Dividend (1% of Total Costs): {format_billions(societal_dividend)}")
+print(f"Captured Dividend (1% of Military Spend): {format_parameter_value(captured_dividend)}")
+print(f"Societal Dividend (1% of Total Costs): {format_parameter_value(societal_dividend)}")
 ```
 
 This chart shows the stark contrast between military spending and disease-specific research funding, highlighting the massive opportunity for reallocation.

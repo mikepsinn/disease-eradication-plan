@@ -10,8 +10,8 @@ Version: 1.0.0
 
 Usage:
     from economic_parameters import *
-    print(f"Military spending: {format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
-    print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
+    print(f"Military spending: {format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
+    print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
 
 
@@ -3285,7 +3285,247 @@ COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
 # HELPER FUNCTIONS
 # ---
 
-def format_billions(value):
+
+def format_parameter_value(param, unit=None):
+    """
+    Universal formatter - handles Parameter objects, auto-scales based on value.
+
+    Automatically detects unit from Parameter objects and scales appropriately.
+    Works with raw numbers too.
+
+    Args:
+        param: Parameter object or raw number
+        unit: Optional unit override (auto-detected if param has .unit attribute)
+
+    Returns:
+        Formatted string like "$27.18B", "50%", "184.6M deaths", etc.
+
+    Examples:
+        >>> format_parameter_value(TREATY_ANNUAL_FUNDING)  # Auto-detects USD unit
+        "$27.18B"
+        >>> format_parameter_value(27180000000, "USD")  # Manual unit
+        "$27.18B"
+        >>> format_parameter_value(0.5, "rate")  # Percentage
+        "50%"
+    """
+    # Auto-detect unit from Parameter object
+    if unit is None and hasattr(param, 'unit'):
+        unit = param.unit or ""
+    elif unit is None:
+        unit = ""
+
+    # Get raw numeric value
+    if isinstance(param, (int, float)):
+        value = float(param)
+    elif hasattr(param, '__float__'):
+        value = float(param)
+    else:
+        # Parameter object - extract numeric value
+        value = float(param)
+
+    # Detect currency parameters
+    is_currency = 'USD' in unit or 'usd' in unit or 'dollar' in unit.lower()
+
+    # Detect percentage parameters
+    is_percentage = '%' in unit or 'percent' in unit.lower() or 'rate' in unit.lower()
+
+    # Check if value is already in billions, millions, thousands
+    is_in_billions = 'billion' in unit.lower()
+    is_in_millions = 'million' in unit.lower()
+    is_in_thousands = 'thousand' in unit.lower()
+
+    # Helper to remove trailing zeros
+    def clean_number(num_str: str) -> str:
+        if '.' in num_str:
+            num_str = num_str.rstrip('0').rstrip('.')
+        return num_str
+
+    # Currency formatting (3 significant figures)
+    if is_currency:
+        abs_val = abs(value)
+
+        if is_in_billions:
+            # Value already in billions
+            if abs_val >= 1000:  # Trillions
+                scaled = value / 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}T"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}T"
+                else:
+                    formatted = f"${scaled:.2f}T"
+            elif abs_val >= 1:  # Billions
+                if abs_val >= 100:
+                    formatted = f"${value:.0f}B"
+                elif abs_val >= 10:
+                    formatted = f"${value:.1f}B"
+                else:
+                    formatted = f"${value:.2f}B"
+            elif abs_val >= 0.001:  # Millions
+                scaled = value * 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}M"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}M"
+                else:
+                    formatted = f"${scaled:.2f}M"
+            else:
+                formatted = f"${value*1000000:.0f}K"
+        elif is_in_millions:
+            # Value already in millions
+            if abs_val >= 1000:  # Billions
+                scaled = value / 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}B"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}B"
+                else:
+                    formatted = f"${scaled:.2f}B"
+            elif abs_val >= 1:  # Millions
+                if abs_val >= 100:
+                    formatted = f"${value:.0f}M"
+                elif abs_val >= 10:
+                    formatted = f"${value:.1f}M"
+                else:
+                    formatted = f"${value:.2f}M"
+            elif abs_val >= 0.001:  # Thousands
+                scaled = value * 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}K"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}K"
+                else:
+                    formatted = f"${scaled:.2f}K"
+            else:
+                formatted = f"${value*1000:.0f}"
+        elif is_in_thousands:
+            # Value already in thousands
+            if abs_val >= 1000000:  # Billions
+                scaled = value / 1000000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}B"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}B"
+                else:
+                    formatted = f"${scaled:.2f}B"
+            elif abs_val >= 1000:  # Millions
+                scaled = value / 1000
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}M"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}M"
+                else:
+                    formatted = f"${scaled:.2f}M"
+            elif abs_val >= 1:  # Thousands
+                if abs_val >= 100:
+                    formatted = f"${value:.0f}K"
+                elif abs_val >= 10:
+                    formatted = f"${value:.1f}K"
+                else:
+                    formatted = f"${value:.2f}K"
+            else:
+                formatted = f"${value*1000:.0f}"
+        else:
+            # Value in raw dollars - auto-scale
+            if abs_val >= 1e12:  # Trillions
+                scaled = value / 1e12
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}T"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}T"
+                else:
+                    formatted = f"${scaled:.2f}T"
+            elif abs_val >= 1e9:  # Billions
+                scaled = value / 1e9
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}B"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}B"
+                else:
+                    formatted = f"${scaled:.2f}B"
+            elif abs_val >= 1e6:  # Millions
+                scaled = value / 1e6
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}M"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}M"
+                else:
+                    formatted = f"${scaled:.2f}M"
+            elif abs_val >= 1e3:  # Thousands
+                scaled = value / 1e3
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f}K"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f}K"
+                else:
+                    formatted = f"${scaled:.2f}K"
+            else:
+                formatted = f"${value:.0f}"
+
+        # Clean trailing .0
+        return formatted.replace('.0B', 'B').replace('.0M', 'M').replace('.0T', 'T').replace('.0K', 'K')
+
+    # Non-currency numbers - auto-scale large numbers
+    abs_val = abs(value)
+
+    if abs_val >= 1e9:  # Billions
+        scaled = value / 1e9
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}B"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}B"
+        else:
+            formatted_num = f"{scaled:.2f}B"
+    elif abs_val >= 1e6:  # Millions
+        scaled = value / 1e6
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}M"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}M"
+        else:
+            formatted_num = f"{scaled:.2f}M"
+    elif abs_val >= 100_000:  # 100K+
+        scaled = value / 1e3
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}K"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}K"
+        else:
+            formatted_num = f"{scaled:.2f}K"
+    elif value == int(value):
+        formatted_num = f"{int(value):,}"
+    elif abs_val >= 1000:
+        formatted_num = f"{value:,.0f}"
+    elif abs_val >= 1:
+        if value >= 100:
+            formatted_num = f"{value:,.0f}"
+        elif value >= 10:
+            formatted_num = clean_number(f"{value:,.1f}")
+        else:
+            formatted_num = clean_number(f"{value:,.2f}")
+    else:
+        formatted_num = clean_number(f"{value:.3g}")
+
+    # Clean trailing zeros
+    formatted_num = formatted_num.replace('.0B', 'B').replace('.0M', 'M').replace('.0K', 'K')
+
+    # Percentage formatting
+    if is_percentage:
+        pct_value = value * 100
+        if abs(pct_value) >= 100:
+            pct_formatted = f"{pct_value:.0f}"
+        elif abs(pct_value) >= 10:
+            pct_formatted = clean_number(f"{pct_value:.1f}")
+        elif abs(pct_value) >= 1:
+            pct_formatted = clean_number(f"{pct_value:.2f}")
+        else:
+            pct_formatted = clean_number(f"{pct_value:.3g}")
+        return f"{pct_formatted}%"
+
+    return formatted_num
+
+
+def format_parameter_value(value):
     """Format a number as billions with B suffix
 
     Args:
@@ -3298,7 +3538,7 @@ def format_billions(value):
         return f"${value/1000:,.1f}T"
     return f"${value:,.1f}B"
 
-def format_millions(value):
+def format_parameter_value(value):
     """Format a number as millions with M suffix
 
     Args:
@@ -3360,7 +3600,7 @@ def format_qalys(value):
     """
     return f"{value:,.0f}"
 
-def format_billions_latex(value):
+def format_parameter_value(value):
     """Format a number as billions with B suffix for LaTeX (no $ sign to avoid escaping issues)
 
     Args:
@@ -3420,11 +3660,11 @@ def param_link(value, param_name="", format_func=None):
 
 if __name__ == "__main__":
     # Print some key parameters when module is executed directly
-    print(f"Military spending: {format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
-    print(f"Total war costs: {format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
-    print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
-    print(f"dFDA savings: {format_billions(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
-    print(f"Total benefits: {format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)}")
+    print(f"Military spending: {format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
+    print(f"Total war costs: {format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
+    print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
+    print(f"dFDA savings: {format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
+    print(f"Total benefits: {format_parameter_value(TREATY_TOTAL_ANNUAL_BENEFITS)}")
 
 
 # ---
@@ -4296,15 +4536,15 @@ DAILY_COST_INEFFICIENCY = Parameter(
 # See: https://quarto.org/docs/computations/inline-code.html
 
 average_market_return_pct_formatted = format_percentage(AVERAGE_MARKET_RETURN_PCT)
-benefit_drug_price_reduction_annual_formatted = format_billions(BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL)
-benefit_earlier_drug_access_annual_formatted = format_billions(BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL)
-benefit_medical_research_acceleration_annual_formatted = format_billions(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL)
-benefit_mental_health_annual_formatted = format_billions(BENEFIT_MENTAL_HEALTH_ANNUAL)
-benefit_prevention_annual_formatted = format_billions(BENEFIT_PREVENTION_ANNUAL)
-benefit_rare_diseases_annual_formatted = format_billions(BENEFIT_RARE_DISEASES_ANNUAL)
-benefit_research_and_development_savings_annual_formatted = format_billions(DFDA_RD_GROSS_SAVINGS_ANNUAL)
+benefit_drug_price_reduction_annual_formatted = format_parameter_value(BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL)
+benefit_earlier_drug_access_annual_formatted = format_parameter_value(BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL)
+benefit_medical_research_acceleration_annual_formatted = format_parameter_value(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL)
+benefit_mental_health_annual_formatted = format_parameter_value(BENEFIT_MENTAL_HEALTH_ANNUAL)
+benefit_prevention_annual_formatted = format_parameter_value(BENEFIT_PREVENTION_ANNUAL)
+benefit_rare_diseases_annual_formatted = format_parameter_value(BENEFIT_RARE_DISEASES_ANNUAL)
+benefit_research_and_development_savings_annual_formatted = format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)
 childhood_vaccination_roi_formatted = format_roi(CHILDHOOD_VACCINATION_ROI)
-combined_peace_health_dividends_annual_for_roi_calc_formatted = format_billions_latex(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)
+combined_peace_health_dividends_annual_for_roi_calc_formatted = format_parameter_value(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)
 conservative_scenario_roi_formatted = format_roi(CONSERVATIVE_SCENARIO_ROI)
 cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.3f}"
 cost_of_delay_qaly_days_per_second_formatted = f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"
@@ -4313,9 +4553,9 @@ cost_per_life_opportunity_cost_formatted = f"${COST_PER_LIFE_OPPORTUNITY_COST:.2
 daily_cost_inefficiency_formatted = format_currency(DAILY_COST_INEFFICIENCY)
 death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
-dfda_annual_opex_formatted = format_millions(DFDA_ANNUAL_OPEX)
-dfda_gross_savings_annual_formatted = format_billions(DFDA_RD_GROSS_SAVINGS_ANNUAL)
-dfda_npv_net_benefit_conservative_formatted = format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)
+dfda_annual_opex_formatted = format_parameter_value(DFDA_ANNUAL_OPEX)
+dfda_gross_savings_annual_formatted = format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)
+dfda_npv_net_benefit_conservative_formatted = format_parameter_value(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)
 dfda_npv_total_cost_formatted = format_currency(DFDA_NPV_TOTAL_COST)
 dfda_opex_community_formatted = format_currency(DFDA_OPEX_COMMUNITY)
 dfda_opex_infrastructure_formatted = format_currency(DFDA_OPEX_INFRASTRUCTURE)
@@ -4323,9 +4563,9 @@ dfda_opex_platform_maintenance_formatted = format_currency(DFDA_OPEX_PLATFORM_MA
 dfda_opex_regulatory_formatted = format_currency(DFDA_OPEX_REGULATORY)
 dfda_opex_staff_formatted = format_currency(DFDA_OPEX_STAFF)
 dfda_roi_simple_formatted = format_roi(DFDA_ROI_SIMPLE)
-dih_treasury_to_medical_research_annual_formatted = format_billions(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
-dih_treasury_trial_subsidies_max_formatted = format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)
-dih_treasury_trial_subsidies_min_formatted = format_billions(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)
+dih_treasury_to_medical_research_annual_formatted = format_parameter_value(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
+dih_treasury_trial_subsidies_max_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)
+dih_treasury_trial_subsidies_min_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)
 dividend_coverage_factor_formatted = f"{DIVIDEND_COVERAGE_FACTOR:,.0f}"
 givewell_cost_per_life_avg_formatted = f"${GIVEWELL_COST_PER_LIFE_AVG:,.0f}"
 givewell_cost_per_life_max_formatted = f"${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"
@@ -4334,24 +4574,24 @@ global_annual_conflict_deaths_active_combat_formatted = f"{GLOBAL_ANNUAL_CONFLIC
 global_annual_conflict_deaths_state_violence_formatted = f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE:,}"
 global_annual_conflict_deaths_terror_attacks_formatted = f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS:,}"
 global_annual_conflict_deaths_total_formatted = format_qalys(GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)
-global_annual_environmental_damage_conflict_formatted = format_billions(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT)
-global_annual_human_life_losses_conflict_formatted = format_billions(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT)
-global_annual_infrastructure_destruction_conflict_formatted = format_billions(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT)
-global_annual_lost_economic_growth_military_spending_formatted = format_billions(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING)
-global_annual_lost_human_capital_conflict_formatted = format_billions(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)
-global_annual_psychological_impact_costs_conflict_formatted = format_billions(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT)
-global_annual_refugee_support_costs_formatted = format_billions(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS)
-global_annual_trade_disruption_conflict_formatted = format_billions(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT)
-global_annual_veteran_healthcare_costs_formatted = format_billions(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS)
-global_annual_war_direct_costs_total_formatted = format_billions(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL)
-global_annual_war_indirect_costs_total_formatted = format_billions(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)
-global_annual_war_total_cost_formatted = format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)
-global_clinical_trial_market_annual_formatted = format_billions(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)
+global_annual_environmental_damage_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT)
+global_annual_human_life_losses_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT)
+global_annual_infrastructure_destruction_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT)
+global_annual_lost_economic_growth_military_spending_formatted = format_parameter_value(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING)
+global_annual_lost_human_capital_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)
+global_annual_psychological_impact_costs_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT)
+global_annual_refugee_support_costs_formatted = format_parameter_value(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS)
+global_annual_trade_disruption_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT)
+global_annual_veteran_healthcare_costs_formatted = format_parameter_value(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS)
+global_annual_war_direct_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL)
+global_annual_war_indirect_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)
+global_annual_war_total_cost_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)
+global_clinical_trial_market_annual_formatted = format_parameter_value(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)
 global_daily_deaths_curable_diseases_formatted = f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"
 global_dfda_qalys_gained_annual_formatted = format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)
-global_med_research_spending_formatted = format_billions(GLOBAL_MED_RESEARCH_SPENDING)
-global_military_spending_annual_2024_formatted = format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
-global_military_spending_post_treaty_annual_2024_formatted = format_billions(GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024)
+global_med_research_spending_formatted = format_parameter_value(GLOBAL_MED_RESEARCH_SPENDING)
+global_military_spending_annual_2024_formatted = format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
+global_military_spending_post_treaty_annual_2024_formatted = format_parameter_value(GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024)
 global_population_activism_threshold_pct_formatted = format_percentage(GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT)
 icer_investor_funded_formatted = f"${ICER_INVESTOR_FUNDED:,.0f}"
 icer_opportunity_cost_formatted = f"${ICER_OPPORTUNITY_COST:,.0f}"
@@ -4363,7 +4603,7 @@ military_vs_medical_research_ratio_formatted = f"{MILITARY_VS_MEDICAL_RESEARCH_R
 multiplier_vs_givewell_formatted = f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"
 net_benefit_per_life_saved_formatted = format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED))
 optimistic_scenario_roi_formatted = format_roi(OPTIMISTIC_SCENARIO_ROI)
-peace_dividend_annual_societal_benefit_formatted = format_billions_latex(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
+peace_dividend_annual_societal_benefit_formatted = format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
 post_ww2_military_cut_pct_formatted = format_percentage(POST_WW2_MILITARY_CUT_PCT)
 profit_per_life_saved_formatted = f"${PROFIT_PER_LIFE_SAVED:,.0f}"
 qalys_from_faster_access_conservative_formatted = f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"
@@ -4388,20 +4628,20 @@ sensitivity_cost_per_life_conservative_formatted = f"${SENSITIVITY_COST_PER_LIFE
 sensitivity_cost_per_life_optimistic_formatted = f"${SENSITIVITY_COST_PER_LIFE_OPTIMISTIC:.2f}M"
 sensitivity_dfda_opex_conservative_formatted = format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)
 sensitivity_dfda_opex_optimistic_formatted = format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)
-sensitivity_dfda_savings_conservative_formatted = format_billions(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)
-sensitivity_dfda_savings_optimistic_formatted = format_billions(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)
+sensitivity_dfda_savings_conservative_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)
+sensitivity_dfda_savings_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)
 sensitivity_icer_central_formatted = f"${SENSITIVITY_ICER_CENTRAL:,.0f}"
 sensitivity_icer_conservative_formatted = f"${SENSITIVITY_ICER_CONSERVATIVE:,.0f}"
 sensitivity_icer_optimistic_formatted = f"${SENSITIVITY_ICER_OPTIMISTIC:,.0f}"
 sensitivity_lives_saved_central_formatted = f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"
-sensitivity_net_benefit_conservative_formatted = format_billions(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)
-sensitivity_net_benefit_optimistic_formatted = format_billions(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)
-sensitivity_peace_dividend_conservative_formatted = format_billions(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)
-sensitivity_peace_dividend_optimistic_formatted = format_billions(SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC)
+sensitivity_net_benefit_conservative_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)
+sensitivity_net_benefit_optimistic_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)
+sensitivity_peace_dividend_conservative_formatted = format_parameter_value(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)
+sensitivity_peace_dividend_optimistic_formatted = format_parameter_value(SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC)
 sensitivity_peace_qalys_conservative_formatted = format_qalys(SENSITIVITY_PEACE_QALYS_CONSERVATIVE)
 sensitivity_peace_qalys_optimistic_formatted = format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)
-sensitivity_total_benefits_conservative_formatted = format_billions(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)
-sensitivity_total_benefits_optimistic_formatted = format_billions(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)
+sensitivity_total_benefits_conservative_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)
+sensitivity_total_benefits_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)
 sensitivity_total_costs_conservative_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)
 sensitivity_total_costs_optimistic_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)
 sensitivity_total_qalys_conservative_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)
@@ -4410,24 +4650,24 @@ smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
 switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFENSE_SPENDING_PCT)
 switzerland_gdp_per_capita_k_formatted = format_currency(SWITZERLAND_GDP_PER_CAPITA_K / 1_000_000)
 system_profit_per_life_saved_millions_formatted = f"${SYSTEM_PROFIT_PER_LIFE_SAVED:,.2f} million"
-total_complete_benefits_annual_formatted = format_billions(TOTAL_COMPLETE_BENEFITS_ANNUAL)
+total_complete_benefits_annual_formatted = format_parameter_value(TOTAL_COMPLETE_BENEFITS_ANNUAL)
 traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K / 1_000_000_000)
-treaty_annual_funding_formatted = format_billions(TREATY_ANNUAL_FUNDING)
+treaty_annual_funding_formatted = format_parameter_value(TREATY_ANNUAL_FUNDING)
 treaty_benefit_multiplier_vs_vaccines_formatted = f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"
 treaty_campaign_annual_cost_amortized_formatted = format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)
 treaty_campaign_budget_lobbying_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_LOBBYING)
 treaty_campaign_budget_referendum_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_REFERENDUM)
 treaty_campaign_budget_reserve_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_RESERVE)
-treaty_campaign_total_cost_formatted = format_billions(TREATY_CAMPAIGN_TOTAL_COST)
+treaty_campaign_total_cost_formatted = format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)
 treaty_lives_saved_annual_global_formatted = format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)
-treaty_net_annual_benefit_formatted = format_billions(TREATY_NET_ANNUAL_BENEFIT)
+treaty_net_annual_benefit_formatted = format_parameter_value(TREATY_NET_ANNUAL_BENEFIT)
 treaty_qalys_gained_annual_global_formatted = format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
 treaty_reduction_pct_formatted = format_percentage(TREATY_REDUCTION_PCT)
-treaty_total_annual_benefits_formatted = format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)
-treaty_total_annual_costs_formatted = format_millions(TREATY_TOTAL_ANNUAL_COSTS)
+treaty_total_annual_benefits_formatted = format_parameter_value(TREATY_TOTAL_ANNUAL_BENEFITS)
+treaty_total_annual_costs_formatted = format_parameter_value(TREATY_TOTAL_ANNUAL_COSTS)
 treaty_total_qalys_gained_annual_formatted = format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)
 trial_cost_reduction_pct_formatted = format_percentage(TRIAL_COST_REDUCTION_PCT)
-victory_bond_annual_payout_formatted = format_billions_latex(VICTORY_BOND_ANNUAL_PAYOUT)
+victory_bond_annual_payout_formatted = format_parameter_value(VICTORY_BOND_ANNUAL_PAYOUT)
 victory_bond_annual_return_pct_formatted = format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)
 victory_bond_funding_pct_formatted = format_percentage(VICTORY_BOND_FUNDING_PCT)
 victory_bond_investment_unit_usd_formatted = f"${VICTORY_BOND_INVESTMENT_UNIT_USD:,.0f}"

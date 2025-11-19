@@ -5,7 +5,7 @@ Fix Inline Python Expressions in Quarto Files
 
 This script:
 1. Scans all .qmd files for inline Python expressions with function calls
-2. Extracts unique patterns like `format_billions(TREATY_ANNUAL_FUNDING)`
+2. Extracts unique patterns like `format_parameter_value(TREATY_ANNUAL_FUNDING)`
 3. Generates formatted variable names with _formatted suffix
 4. Adds them to economic_parameters.py
 5. Replaces complex expressions in all .qmd files with simple variable names
@@ -32,6 +32,7 @@ INLINE_PYTHON_PATTERN = r'`\{python\}\s+([^`]+)`'
 
 # Function call patterns we want to replace
 FUNCTION_PATTERNS = [
+    r'format_parameter_value\(([^)]+)\)',
     r'format_billions\(([^)]+)\)',
     r'format_millions\(([^)]+)\)',
     r'format_percentage\(([^)]+)\)',
@@ -85,7 +86,7 @@ def generate_variable_name(expr):
     """Generate a formatted variable name from an expression
 
     Examples:
-        format_billions(TREATY_ANNUAL_FUNDING) -> treaty_annual_funding_formatted
+        format_parameter_value(TREATY_ANNUAL_FUNDING) -> treaty_annual_funding_formatted
         format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT) -> victory_bond_annual_return_pct_formatted
         f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}" -> global_daily_deaths_curable_diseases_formatted
     """
@@ -109,7 +110,7 @@ def generate_formatted_value(expr):
     """Generate the Python code to create the formatted value
 
     Examples:
-        format_billions(TREATY_ANNUAL_FUNDING) -> format_billions(TREATY_ANNUAL_FUNDING)
+        format_parameter_value(TREATY_ANNUAL_FUNDING) -> format_parameter_value(TREATY_ANNUAL_FUNDING)
         f"{GLOBAL_DAILY_DEATHS:,.0f}" -> f"{GLOBAL_DAILY_DEATHS:,.0f}"
     """
     return expr

@@ -30,7 +30,7 @@ interventions_data = {
 
 peace_dividend_components = {
     'Peace Dividend': PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    'dFDA R&D\nSavings': DFDA_GROSS_SAVINGS_ANNUAL,
+    'dFDA R&D\nSavings': DFDA_RD_GROSS_SAVINGS_ANNUAL,
     'Disease\nReduction': 10.9,
     'GDP\nGrowth': 27.2
 }
