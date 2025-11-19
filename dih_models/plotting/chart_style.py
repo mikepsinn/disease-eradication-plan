@@ -217,9 +217,6 @@ def setup_chart_style(style='light', dpi=150):
     rcParams['font.size'] = 12
     rcParams['font.weight'] = 'normal'
     rcParams['text.usetex'] = False  # Prevent LaTeX math parsing
-    
-    # Suppress font cache warnings
-    rcParams['font.cache'] = True
 
     # Colors
     rcParams['figure.facecolor'] = bg_color

@@ -301,6 +301,12 @@ format:
           </footer>
     include-in-header:
       - text: |
+          <!-- Icons -->
+          <link rel="icon" href="assets/icons/favicon.ico">
+          <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
+          
           <!-- Google Analytics -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
           <script>
@@ -324,12 +330,20 @@ format:
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+          
+          <!-- Social Media / Open Graph -->
+          <meta property="og:image" content="https://WarOnDisease.org/assets/icons/og-image.png">
+          <meta property="og:image:width" content="1200">
+          <meta property="og:image:height" content="630">
+          <meta property="og:image:type" content="image/png">
           <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:image" content="https://WarOnDisease.org/assets/icons/og-image.png">
           <meta name="twitter:title" content="The Complete Idiot's Guide to Ending War and Disease">
           <meta name="twitter:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
           <meta property="og:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:type" content="book">
+          <meta property="og:url" content="https://WarOnDisease.org">
   pdf:
     documentclass: scrreprt
     echo: false
