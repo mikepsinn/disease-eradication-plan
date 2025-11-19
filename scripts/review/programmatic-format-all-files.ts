@@ -42,7 +42,7 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
             // Save original content for comparison
             const originalContent = fileContent;
 
-            // saveFile will apply formatting internally, so just call it
+            // saveFile will apply formatting internally
             await saveFile(filePath, fileContent);
 
             // Read back to check if it changed

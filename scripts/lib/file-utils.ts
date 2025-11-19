@@ -288,19 +288,6 @@ export function programmaticFormat(content: string): string {
 // Shared file-saving function that applies programmatic formatting.
 export async function saveFile(filePath: string, content: string): Promise<void> {
   let formattedContent = programmaticFormat(content);
-  
-  // For .qmd files, ensure the Python boilerplate is present
-  if (path.extname(filePath) === '.qmd') {
-    const { data: frontmatter, content: body } = matter(formattedContent);
-    // Simple boilerplate - dih-economic-models is installed as a package
-    const pythonBoilerplate = "```{python}\n#| echo: false\nfrom economic_parameters import *\n```";
-
-    if (!body.includes('from economic_parameters import *')) {
-      // Add boilerplate to body and use our consistent formatting
-      const newBody = `${pythonBoilerplate}\n\n${body.trim()}`;
-      formattedContent = stringifyWithFrontmatter(newBody, frontmatter);
-    }
-  }
 
   const dir = path.dirname(filePath);
   await fs.mkdir(dir, { recursive: true });
