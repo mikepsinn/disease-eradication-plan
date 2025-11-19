@@ -4,7 +4,8 @@ Render Book PDF
 ===============
 
 Cross-platform script to render the book as a PDF.
-Copies _quarto-book.yml to _quarto.yml and renders to PDF.
+Copies _quarto-book.yml to _quarto.yml, copies index-book.qmd to index.qmd,
+and renders to PDF.
 
 Usage:
     python render-book-pdf.py                    # Basic render
@@ -14,10 +15,13 @@ Usage:
 
 import sys
 import os
-import shutil
 import subprocess
 import argparse
 from pathlib import Path
+
+# Add scripts/lib to path for imports
+sys.path.insert(0, str(Path(__file__).parent / 'lib'))
+from quarto_prep import prepare_book
 
 
 def main():
@@ -33,23 +37,13 @@ def main():
 
     args = parser.parse_args()
 
-    # Get project root (parent of scripts directory)
+    # Get project root (parent of scripts directory) and change to it
     project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
 
-    # Config files
-    book_config = project_root / '_quarto-book.yml'
-    quarto_yml = project_root / '_quarto.yml'
-
-    # Check if book config exists
-    if not book_config.exists():
-        print(f"[ERROR] Missing {book_config}", file=sys.stderr)
-        print("        Unable to render book.", file=sys.stderr)
+    # Prepare book files (config + index) - project_root auto-detected from cwd
+    if not prepare_book():
         sys.exit(1)
-
-    # Copy config
-    print(f"[*] Copying {book_config.name} -> _quarto.yml", flush=True)
-    shutil.copy2(book_config, quarto_yml)
 
     # Build command for PDF rendering with validation
     print("[*] Rendering PDF with validation...")

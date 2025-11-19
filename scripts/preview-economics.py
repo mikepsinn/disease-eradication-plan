@@ -4,7 +4,8 @@ Preview Economics Models Site
 ==============================
 
 Quickly start preview server for the economics models website.
-Copies _quarto-economics.yml to _quarto.yml and starts live preview.
+Copies _quarto-economics.yml to _quarto.yml, copies economics.qmd to index.qmd
+(with updated relative paths), and starts live preview.
 
 Usage:
     python scripts/preview-economics.py                # Start preview server
@@ -14,10 +15,13 @@ Usage:
 
 import sys
 import os
-import shutil
 import subprocess
 import argparse
 from pathlib import Path
+
+# Add scripts/lib to path for imports
+sys.path.insert(0, str(Path(__file__).parent / 'lib'))
+from quarto_prep import prepare_economics
 
 
 def main():
@@ -37,23 +41,13 @@ def main():
 
     args = parser.parse_args()
 
-    # Get project root (parent of scripts directory)
+    # Get project root (parent of scripts directory) and change to it
     project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
 
-    # Config files
-    econ_config = project_root / '_quarto-economics.yml'
-    quarto_yml = project_root / '_quarto.yml'
-
-    # Check if economics config exists
-    if not econ_config.exists():
-        print(f"[ERROR] Missing {econ_config}", file=sys.stderr)
-        print("        Unable to preview economics website.", file=sys.stderr)
+    # Prepare economics files (config + index) - project_root auto-detected from cwd
+    if not prepare_economics():
         sys.exit(1)
-
-    # Copy config
-    print(f"[*] Copying {econ_config.name} -> _quarto.yml", flush=True)
-    shutil.copy2(econ_config, quarto_yml)
 
     # Build preview command
     cmd = ['quarto', 'preview']
