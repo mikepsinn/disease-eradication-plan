@@ -429,6 +429,7 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
     Generate _variables.yml file from parameters.
 
     Creates YAML with lowercase variable names mapped to formatted HTML values.
+    Also exports LaTeX equations as {param_name}_latex variables.
     """
     variables = {}
 
@@ -446,6 +447,12 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
 
         variables[var_name] = html_value
 
+        # Export LaTeX equation if available (with $$ delimiters)
+        if hasattr(value, 'latex') and value.latex:
+            latex_var_name = f"{var_name}_latex"
+            # Include $$ delimiters so variable can be used directly
+            variables[latex_var_name] = f"$$\n{value.latex}\n$$"
+
     # Write YAML file
     with open(output_path, 'w', encoding='utf-8') as f:
         # Add header comment
@@ -459,8 +466,13 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
         # Write variables with proper quoting for HTML
         yaml.dump(variables, f, default_flow_style=False, allow_unicode=True, sort_keys=False, default_style='"')
 
+    # Count LaTeX exports
+    latex_count = sum(1 for k in variables.keys() if k.endswith('_latex'))
+    param_count = len(variables) - latex_count
+
     print(f"[OK] Generated {output_path}")
-    print(f"     {len(variables)} parameters exported")
+    print(f"     {param_count} parameters exported")
+    print(f"     {latex_count} LaTeX equations exported")
     print(f"\nUsage in QMD files:")
     print(f'  {{{{< var {list(variables.keys())[0]} >}}}}')
 
