@@ -25,15 +25,22 @@ fig, ax = plt.subplots(figsize=(12, 6))
 # Data
 
 categories = ['War on\nHumanity', 'War on Disease']
-# Explicitly convert to native Python float to avoid Parameter repr in labels
+# Work in billions to prevent matplotlib from expanding the canvas to trillions
+BILLION = 1_000_000_000
+TRILLION = 1_000_000_000_000
 
-military_total = float.__new__(float, GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
-cure_spending = float.__new__(float, GLOBAL_MED_RESEARCH_SPENDING)
+# Convert Parameter -> float once, then scale for plotting
+military_total_raw = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
+cure_spending_raw = float(GLOBAL_MED_RESEARCH_SPENDING)
+
+military_total = military_total_raw / BILLION
+cure_spending = cure_spending_raw / BILLION
+military_total_trillions = military_total_raw / TRILLION
 
 # Make the 1% stack visually prominent (exaggerate it to ~100B so it's actually visible)
 
 visual_stack_height = 100  # Visual height for the 1% slice (much larger than actual 27B)
-military_99_visual = military_total - visual_stack_height
+military_99_visual = max(military_total - visual_stack_height, 0)
 
 # Create stacked bar for military spending
 
@@ -56,7 +63,7 @@ bar_cure = ax.bar(x_positions[1], cure_spending, bar_width,
 # Main label inside the 99% bar (white text on black)
 
 ax.text(x_positions[0], military_99_visual * 0.6,
-        f'${military_total/1000:.1f}T', ha='center', va='center',
+        f'${military_total_trillions:.1f}T', ha='center', va='center',
         color=COLOR_WHITE, fontsize=72, fontweight='bold')
 ax.text(x_positions[0], military_99_visual * 0.35,
         categories[0], ha='center', va='center',
@@ -65,7 +72,7 @@ ax.text(x_positions[0], military_99_visual * 0.35,
 # Label above small bar (as it was originally)
 
 ax.text(x_positions[1], cure_spending + (military_total * 0.025),
-        f'${cure_spending}B\n{categories[1]}', ha='center', va='bottom',
+        f'${cure_spending:.0f}B\n{categories[1]}', ha='center', va='bottom',
         color=COLOR_BLACK, fontsize=44, fontweight='bold', linespacing=1.2)
 
 # Set x-axis with category labels
