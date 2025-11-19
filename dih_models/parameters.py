@@ -6,7 +6,7 @@ This module contains all economic parameters used throughout the book.
 All calculations should import from this module to ensure consistency.
 
 Last updated: 2025-01-24
-Version: 1.0.0
+Version: 2.0.0
 
 Usage:
     from economic_parameters import *
@@ -14,10 +14,26 @@ Usage:
     print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
 """
 
+from enum import Enum
+from typing import Optional, List, Tuple, Union
+
 
 # ============================================================================
 # PARAMETER CLASS - Adds source tracking to numeric values
 # ============================================================================
+
+
+class SourceType(str, Enum):
+    """Valid source types for Parameter metadata.
+
+    Attributes:
+        EXTERNAL: Data from external sources (links to references.qmd)
+        CALCULATED: Derived from formulas (links to calculation QMD)
+        DEFINITION: Core definition/assumption (no external link)
+    """
+    EXTERNAL = "external"
+    CALCULATED = "calculated"
+    DEFINITION = "definition"
 
 
 class Parameter(float):
@@ -26,14 +42,14 @@ class Parameter(float):
 
     Enables clickable links from numbers to their sources (external citations)
     or calculation methodologies (internal QMD pages). Enhanced with academic
-    credibility indicators for economist review.
+    credibility indicators and economic validation for rigorous analysis.
 
     Args:
         value: The numeric value
         source_ref: Reference ID (for external sources) or QMD path (for calculations)
-        source_type: "external" (links to references.qmd), "calculated" (links to QMD), or "definition" (no link)
+        source_type: SourceType enum - EXTERNAL, CALCULATED, or DEFINITION
         description: Human-readable description for tooltips
-        unit: Unit of measurement (e.g., "billions USD", "deaths/year", "percentage")
+        unit: Unit of measurement (e.g., "USD", "deaths/year", "percentage")
         formula: Optional plain-text formula (e.g., "A + B + C") for tooltips
         latex: Optional LaTeX formula (e.g., r"\sum_{i=1}^{5} opex_i") for rendering
         confidence: Data quality level - "high", "medium", "low", or "estimated"
@@ -42,40 +58,63 @@ class Parameter(float):
         conservative: Whether this is a conservative estimate (vs. optimistic)
         sensitivity: Optional uncertainty range (±value in same units)
 
-    Example:
+        # NEW FIELDS (v2.0):
+        display_value: Optional override for formatted display (e.g., "$2.7T" instead of auto-format)
+        keywords: List of search keywords for parameter discovery
+        min_value: Minimum valid value (validation)
+        max_value: Maximum valid value (validation)
+        confidence_interval: Tuple of (lower_bound, upper_bound) for statistical confidence
+        std_error: Standard error for statistical parameters
+
+    Examples:
         # External data source with high confidence
         CONFLICT_DEATHS = Parameter(
             233600,
             source_ref="acled-2024",
-            source_type="external",
+            source_type=SourceType.EXTERNAL,
             description="Annual deaths from active combat",
             unit="deaths/year",
             confidence="high",
             last_updated="2024-01",
-            peer_reviewed=True
+            peer_reviewed=True,
+            keywords=["conflict", "deaths", "war", "combat", "casualties"]
         )
 
-        # Calculated value with formula and uncertainty
+        # Calculated value with formula and validation
         TOTAL_OPEX = Parameter(
             PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY,
             source_ref="knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex",
-            source_type="calculated",
+            source_type=SourceType.CALCULATED,
             description="Total annual operational costs",
             unit="USD/year",
             formula="PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY",
             latex=r"OPEX_{total} = \sum_{i=1}^{5} OPEX_i",
             confidence="medium",
             conservative=True,
-            sensitivity=0.01
+            sensitivity=0.01,
+            min_value=0,  # Cannot be negative
+            keywords=["costs", "operations", "expenses", "budget"]
         )
 
-        # Core definition (no external source)
+        # Core definition with display override
         TREATY_PCT = Parameter(
             0.01,
-            source_ref="",
-            source_type="definition",
+            source_type=SourceType.DEFINITION,
             description="1% treaty reduction target",
-            unit="rate"
+            unit="percentage",
+            display_value="1%",
+            keywords=["treaty", "1%", "reduction", "target"]
+        )
+
+        # Statistical parameter with confidence interval
+        GDP_MULTIPLIER = Parameter(
+            2.7,
+            source_ref="nber-wp-12345",
+            source_type=SourceType.EXTERNAL,
+            description="Healthcare investment GDP multiplier",
+            confidence_interval=(2.0, 3.5),
+            std_error=0.3,
+            keywords=["multiplier", "gdp", "healthcare", "economics"]
         )
 
     The Parameter class inherits from float, so it works in all math operations:
@@ -85,19 +124,51 @@ class Parameter(float):
 
     def __new__(
         cls,
-        value,
-        source_ref="",
-        source_type="external",
-        description="",
-        unit="",
-        formula="",
-        latex="",
-        confidence="high",
-        last_updated=None,
-        peer_reviewed=False,
-        conservative=False,
-        sensitivity=None,
+        value: float,
+        source_ref: str = "",
+        source_type: Union[SourceType, str] = SourceType.EXTERNAL,
+        description: str = "",
+        unit: str = "",
+        formula: str = "",
+        latex: str = "",
+        confidence: str = "high",
+        last_updated: Optional[str] = None,
+        peer_reviewed: bool = False,
+        conservative: bool = False,
+        sensitivity: Optional[float] = None,
+        # NEW v2.0 parameters
+        display_value: Optional[str] = None,
+        keywords: Optional[List[str]] = None,
+        min_value: Optional[float] = None,
+        max_value: Optional[float] = None,
+        confidence_interval: Optional[Tuple[float, float]] = None,
+        std_error: Optional[float] = None,
     ):
+        # Convert string source_type to enum (backwards compatibility)
+        if isinstance(source_type, str):
+            source_type = SourceType(source_type)
+
+        # Validation: check bounds
+        if min_value is not None and value < min_value:
+            raise ValueError(
+                f"Parameter value {value} is below minimum {min_value}. "
+                f"Description: {description or 'No description'}"
+            )
+        if max_value is not None and value > max_value:
+            raise ValueError(
+                f"Parameter value {value} exceeds maximum {max_value}. "
+                f"Description: {description or 'No description'}"
+            )
+
+        # Validation: confidence interval should contain value
+        if confidence_interval is not None:
+            lower, upper = confidence_interval
+            if not (lower <= value <= upper):
+                raise ValueError(
+                    f"Parameter value {value} outside confidence interval [{lower}, {upper}]. "
+                    f"Description: {description or 'No description'}"
+                )
+
         instance = super().__new__(cls, value)
         instance.source_ref = source_ref
         instance.source_type = source_type
@@ -110,6 +181,15 @@ class Parameter(float):
         instance.peer_reviewed = peer_reviewed
         instance.conservative = conservative
         instance.sensitivity = sensitivity
+
+        # NEW v2.0 attributes
+        instance.display_value = display_value
+        instance.keywords = keywords or []
+        instance.min_value = min_value
+        instance.max_value = max_value
+        instance.confidence_interval = confidence_interval
+        instance.std_error = std_error
+
         return instance
 
     def __repr__(self):

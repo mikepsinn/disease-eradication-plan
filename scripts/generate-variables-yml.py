@@ -333,20 +333,29 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
     Returns:
         HTML string with formatted value, clickable link, and tooltip
     """
-    # Extract unit if available
-    unit = ""
-    if hasattr(value, "unit") and value.unit:
-        unit = value.unit
-
-    formatted_value = format_parameter_value(value, unit)
+    # Check for display_value override (NEW v2.0)
+    if hasattr(value, "display_value") and value.display_value:
+        formatted_value = value.display_value
+    else:
+        # Extract unit if available
+        unit = ""
+        if hasattr(value, "unit") and value.unit:
+            unit = value.unit
+        formatted_value = format_parameter_value(value, unit)
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, "source_ref") and value.source_ref
-    is_definition = hasattr(value, "source_type") and value.source_type == "definition"
+
+    # Handle both enum and string source_type (backwards compatibility)
+    source_type_str = ""
+    if hasattr(value, "source_type"):
+        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+
+    is_definition = source_type_str == "definition"
 
     if has_source:
         # Determine link destination based on source type
-        if hasattr(value, "source_type") and value.source_type == "external":
+        if source_type_str == "external":
             # Link to citation in references.qmd (absolute path from site root)
             href = f"/knowledge/references.qmd#{value.source_ref}"
             link_text = "View source"
@@ -497,11 +506,14 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
         value = param_data["value"]
 
         if hasattr(value, "source_type"):
-            if value.source_type == "external":
+            # Handle both enum and string source_type
+            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+
+            if source_type_str == "external":
                 external_params.append((param_name, param_data))
-            elif value.source_type == "calculated":
+            elif source_type_str == "calculated":
                 calculated_params.append((param_name, param_data))
-            elif value.source_type == "definition":
+            elif source_type_str == "definition":
                 definition_params.append((param_name, param_data))
         else:
             # No source_type - treat as definition
@@ -738,9 +750,11 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
     citations = set()
     for param_name, param_data in parameters.items():
         value = param_data["value"]
-        if hasattr(value, "source_type") and value.source_type == "external":
-            if hasattr(value, "source_ref") and value.source_ref:
-                citations.add(value.source_ref)
+        if hasattr(value, "source_type"):
+            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+            if source_type_str == "external":
+                if hasattr(value, "source_ref") and value.source_ref:
+                    citations.add(value.source_ref)
 
     # Generate BibTeX entries
     # Note: In a production system, you'd want to fetch actual BibTeX data
@@ -795,11 +809,13 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
     citation_map = {}
     for param_name, param_data in parameters.items():
         value = param_data["value"]
-        if hasattr(value, "source_type") and value.source_type == "external":
-            if hasattr(value, "peer_reviewed") and value.peer_reviewed:
-                if hasattr(value, "source_ref") and value.source_ref:
-                    # Use lowercase param name (matches Quarto variable names)
-                    citation_map[param_name.lower()] = value.source_ref
+        if hasattr(value, "source_type"):
+            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+            if source_type_str == "external":
+                if hasattr(value, "peer_reviewed") and value.peer_reviewed:
+                    if hasattr(value, "source_ref") and value.source_ref:
+                        # Use lowercase param name (matches Quarto variable names)
+                        citation_map[param_name.lower()] = value.source_ref
 
     # Pattern to match {{< var param_name >}}
     # We'll inject [@citation] right after if not already present
