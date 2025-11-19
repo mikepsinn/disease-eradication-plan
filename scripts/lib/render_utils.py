@@ -22,6 +22,30 @@ except ImportError:
     PSUTIL_AVAILABLE = False
 
 
+def check_command_available(command: str) -> bool:
+    """
+    Check if a command is available in the system PATH.
+
+    Args:
+        command: The command to check (e.g., 'quarto', 'git')
+
+    Returns:
+        True if command is available, False otherwise
+    """
+    try:
+        # Use 'where' on Windows, 'which' on Unix-like systems
+        check_cmd = 'where' if platform.system() == 'Windows' else 'which'
+        result = subprocess.run(
+            [check_cmd, command],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False
+        )
+        return result.returncode == 0
+    except Exception:
+        return False
+
+
 class BuildMonitor:
     def __init__(self, timeout_seconds: int = 180, fail_on_warnings: bool = True, log_file: str = "build.log"):
         """
@@ -243,6 +267,18 @@ class BuildMonitor:
         self.log(f"Fail on warnings: {self.fail_on_warnings}")
         self.log(f"Log file: {self.log_file}")
         self.log("-" * 80)
+
+        # Check if the command is available before trying to run it
+        if command and not check_command_available(command[0]):
+            error_msg = f"Command '{command[0]}' not found in PATH"
+            self.log("")
+            self.log(f"[ERROR] {error_msg}")
+            self.log("")
+            self.log("Please ensure the command is installed and available in your system PATH.")
+            if command[0] == 'quarto':
+                self.log("To install Quarto, visit: https://quarto.org/docs/get-started/")
+            self.log("")
+            return 1
 
         try:
             self.process = subprocess.Popen(
