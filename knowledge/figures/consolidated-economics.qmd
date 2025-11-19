@@ -314,7 +314,7 @@ fig.show()
 ### Primary Economic Models
 
 - **1% Treaty Analysis**: {{< var peace_dividend_annual_societal_benefit >}} annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
-- **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_gross_savings_annual_formatted` in trial costs
+- **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_rd_gross_savings_annual_formatted` in trial costs
 - **Conservative Case**: Peace dividend + dFDA R&D savings = {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually, 463:1 ROI
 - **Complete Case**: All 8 benefit categories = $1,238.6B annually, 1,239:1 ROI
 

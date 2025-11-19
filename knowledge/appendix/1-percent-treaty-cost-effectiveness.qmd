@@ -44,13 +44,13 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 - [Peace Dividend Chapter](../economics/peace-dividend.qmd) - Accessible overview with breakdown table
 - [Cost of War Analysis](../problem/cost-of-war.qmd) - Source data
 
-#### 1b. Health Dividend ({{< var dfda_gross_savings_annual >}}/year)
+#### 1b. Health Dividend ({{< var dfda_rd_gross_savings_annual >}}/year)
 
-**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving {{< var dfda_gross_savings_annual >}} annually from the {{< var global_clinical_trials_spending_annual >}} global trial market.
+**Quick summary**: The dFDA (Decentralized FDA) makes clinical trials 82× cheaper by using the Oxford RECOVERY model, saving {{< var dfda_rd_gross_savings_annual >}} annually from the {{< var global_clinical_trials_spending_annual >}} global trial market.
 
-**Calculation**: {{< var global_clinical_trials_spending_annual >}} trial market × 50.0% cost reduction = **{{< var dfda_gross_savings_annual >}}**
+**Calculation**: {{< var global_clinical_trials_spending_annual >}} trial market × 50.0% cost reduction = **{{< var dfda_rd_gross_savings_annual >}}**
 
-**ROI**: 463:1 return on {{< var dfda_upfront_build >}} annual operational cost
+**ROI**: {{< var dfda_roi_rd_only >}}:1 to {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 return on {{< var dfda_upfront_build >}} annual operational cost (conservative to full impact)
 
 **For detailed breakdown and methodology**, see:
 
@@ -60,7 +60,7 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 #### Total Annual Economic Benefits
 
-**{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_gross_savings_annual >}} = {{< var treaty_total_annual_benefits >}} per year**
+**{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_rd_gross_savings_annual >}} = {{< var treaty_total_annual_benefits >}} per year**
 
 **Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
 
@@ -298,7 +298,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | Parameter | Conservative | Central | Optimistic |
 |-----------|-------------:|--------:|------------:|
 | **Peace dividend** | {{< var sensitivity_peace_dividend_conservative >}} | {{< var peace_dividend_annual_societal_benefit >}} | {{< var sensitivity_peace_dividend_optimistic >}} |
-| **dFDA R&D savings** | {{< var sensitivity_dfda_savings_conservative >}} | {{< var dfda_gross_savings_annual >}} | {{< var sensitivity_dfda_savings_optimistic >}} |
+| **dFDA R&D savings** | {{< var sensitivity_dfda_savings_conservative >}} | {{< var dfda_rd_gross_savings_annual >}} | {{< var sensitivity_dfda_savings_optimistic >}} |
 | **Total benefits** | {{< var sensitivity_total_benefits_conservative >}} | {{< var treaty_total_annual_benefits >}} | {{< var sensitivity_total_benefits_optimistic >}} |
 | **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative >}} | $250M | {{< var sensitivity_campaign_cost_optimistic >}} |
 | **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative >}} | {{< var dfda_upfront_build >}} | {{< var sensitivity_dfda_opex_optimistic >}} |
@@ -361,7 +361,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **Traditional interventions** (Water Fluoridation, Smoking Cessation, Childhood Vaccinations): Generate $0.8B to $15B in annual economic benefits. These are highly successful programs that have transformed public health.
 
-- **1% Treaty + DIH + dFDA**: Generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits ({{< var peace_dividend_annual_societal_benefit >}} peace dividend + {{< var dfda_gross_savings_annual >}} dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
+- **1% Treaty + DIH + dFDA**: Generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits ({{< var peace_dividend_annual_societal_benefit >}} peace dividend + {{< var dfda_rd_gross_savings_annual >}} dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
 **Key distinction**: Only the 1% Treaty is self-funding, it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
 
@@ -427,7 +427,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 **A**: The 1% Treaty generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits:
 
 - {{< var peace_dividend_annual_societal_benefit >}} from reduced conflict costs (peace dividend)
-- {{< var dfda_gross_savings_annual >}} from more efficient medical R&D (dFDA)
+- {{< var dfda_rd_gross_savings_annual >}} from more efficient medical R&D (dFDA)
 
 These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of {{< var treaty_net_annual_benefit >}}/year for society.
 

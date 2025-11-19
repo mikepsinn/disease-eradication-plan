@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 490
+**Total parameters**: 492
 
 - External sources (peer-reviewed): 148
-- Calculated values: 293
+- Calculated values: 295
 - Core definitions: 49
 
 # External Data Sources {#sec-external}
@@ -2116,23 +2116,6 @@ Annual benefit from orphan drug viability
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Research And Development Savings Annual {#sec-benefit_research_and_development_savings_annual}
-
-**Value**: $50B
-
-Annual R&D savings benefit (alias for dFDA gross savings)
-
-$$
-R\&D_{savings} = \$50B
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Book Reading Time Hours {#sec-book_reading_time_hours}
 
 **Value**: 14.3
@@ -2871,23 +2854,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dfda Gross Savings Annual {#sec-dfda_gross_savings_annual}
-
-**Value**: $50B
-
-Annual gross savings from 50% trial cost reduction
-
-$$
-Savings_{gross} = \$100B \times 0.50 = \$50B
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Dfda Icer Per Qaly {#sec-dfda_icer_per_qaly}
 
 **Value**: $-59.5K
@@ -3205,6 +3171,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Dfda Rd Gross Savings Annual {#sec-dfda_rd_gross_savings_annual}
+
+**Value**: $50B
+
+Annual gross R&D savings from trial cost reduction
+
+$$
+Savings_{gross} = \$100B \times 0.50 = \$50B
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Dfda Regulatory Delay Avoidance Fraction {#sec-dfda_regulatory_delay_avoidance_fraction}
 
 **Value**: 95%
@@ -3218,6 +3201,74 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Regulatory Delay Dlag Only Annual {#sec-dfda_regulatory_delay_dlag_only_annual}
+
+**Value**: $5.55T
+
+Annual value of eliminating delay deaths only (D_lag), excluding innovation loss (D_void)
+
+$$
+D_{lag} = \$11.1T \times 0.5 \approx \$5.6T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Roi Rd Only {#sec-dfda_roi_rd_only}
+
+**Value**: 463
+
+ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
+
+$$
+ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
+$$
+
+**Methodology**: [../figures/dfda-roi-analysis.qmd](../figures/dfda-roi-analysis.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Roi Rd Plus Delay {#sec-dfda_roi_rd_plus_delay}
+
+**Value**: 6,489
+
+RECOMMENDED: ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids double-counting)
+
+$$
+ROI_{RD+delay} = \frac{\$1,238.6B - \$300B + \$5,555B}{\$1.0B} \approx 6,494
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd](../appendix/regulatory-mortality-analysis.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Roi Rd Plus Delay Plus Innovation {#sec-dfda_roi_rd_plus_delay_plus_innovation}
+
+**Value**: 11,540
+
+Full impact ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag + D_void)
+
+$$
+ROI_{RD+delay+innovation} = \frac{\$11,538.6B}{\$1.0B} \approx 11,539
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd](../appendix/regulatory-mortality-analysis.qmd)
+
+*~ Medium confidence*
 
 :::
 
@@ -5083,40 +5134,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Roi All Direct Benefits {#sec-roi_all_direct_benefits}
-
-**Value**: 1,239
-
-ROI from all direct benefits (peace dividend + dFDA + health gains)
-
-$$
-ROI_{complete} = \frac{\$1,238.6B}{\$1.0B} \approx 1,239
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd](../appendix/1-percent-treaty-cost-effectiveness.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Roi Dfda Savings Only {#sec-roi_dfda_savings_only}
-
-**Value**: 463
-
-ROI from dFDA R&D savings (10-year NPV)
-
-$$
-ROI_{NPV} = \frac{\$249.3B}{\$0.54B} \approx 463
-$$
-
-**Methodology**: [../figures/dfda-roi-analysis.qmd](../figures/dfda-roi-analysis.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Roi Discount 1Pct {#sec-roi_discount_1pct}
 
 **Value**: 532
@@ -5956,6 +5973,23 @@ $$
 **Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Comprehensive With Full Regulatory Delay {#sec-treaty_comprehensive_with_full_regulatory_delay}
+
+**Value**: $11.5T
+
+Total annual benefits using full regulatory delay avoidance, consolidating overlapping categories
+
+$$
+Benefits_{full} = \$1,238.6B - \$300B - \$400B - \$100B + \$11,100B \approx \$11,538.6B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd](../appendix/regulatory-mortality-analysis.qmd)
+
+*~ Medium confidence*
 
 :::
 

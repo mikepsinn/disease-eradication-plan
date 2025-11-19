@@ -1,6 +1,6 @@
 ---
 title: dFDA Cost-Benefit & ROI
-description: Analysis and Return on Investment - How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver an ROI of approximately 463:1.
+description: Analysis and Return on Investment - How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver ROI ranging from {{< var dfda_roi_rd_only >}} (R&D only) to {{< var dfda_roi_rd_plus_delay >}} (with regulatory delay avoidance).
 published: true
 tags:
   - dfda
@@ -20,8 +20,8 @@ project_root = os.getcwd()
 from dih_models.parameters import *
 ```
 
-- **Saves ~{{< var dfda_gross_savings_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
-- **[463:1 Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit).
+- **Saves ~{{< var dfda_rd_gross_savings_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
+- **{{< var dfda_roi_rd_only >}} Return on Investment (R&D Only)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_rd_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including regulatory delay avoidance: **{{< var dfda_roi_rd_plus_delay >}}** (conservative) to **{{< var dfda_roi_rd_plus_delay_plus_innovation >}}** (full impact).
 - **[Eliminates Regulatory Delay](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, the dFDA eliminates the {{< var efficacy_lag_years >}}-year [efficacy lag](regulatory-mortality-analysis.qmd), saving **{{< var dfda_avoided_regulatory_delay_dalys_annual >}} [DALYs/year](#regulatory-delay-avoidance)** (valued at **{{< var dfda_avoided_regulatory_delay_cost_annual >}}/year**).
 - **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var global_dfda_qalys_gained_annual >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from specific mechanisms; comprehensive top-down estimate of **{{< var global_dfda_qalys_with_regulatory_avoidance >}}/year** including [regulatory delay avoidance](#regulatory-delay-avoidance).
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: With an ICER of **-[\$59,501 per QALY](../references.qmd#qaly-value)**, the dFDA is a dominant intervention, it both saves money and improves health.
@@ -41,7 +41,7 @@ from dih_models.parameters import *
 
 #### Exceptional Economic Value
 
-- **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately **{{< var roi_dfda_savings_only >}}:1** over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
+- **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately **{{< var dfda_roi_rd_only >}}:1** over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
 - **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately [**\$137 million** and **2,301** Quality-Adjusted Life Years](#daily-opportunity-cost-of-inaction).
 
@@ -662,7 +662,7 @@ _The following ROI calculation primarily uses cost figures derived from the deta
       This aligns with the cost basis for the ROI cited in the Executive Summary.
     - _(Sensitivity analysis could include "Worst Case" broader initiative costs from [Scenario-Based ROM Estimates](#scenario-based-rom-estimates-for-broader-initiative-costs), but this would significantly increase annual costs.)_
 
-- **Net Annual Savings** (assuming full adoption and [50.0% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): {{< var dfda_gross_savings_annual >}}/year.
+- **Net Annual Savings** (assuming full adoption and [50.0% R and D cost reduction](#gross-r-and-d-savings-from-dfda-implementation)): {{< var dfda_rd_gross_savings_annual >}}/year.
 
 From a purely financial perspective, if the industry can move to such a platform and achieve these savings:
 
@@ -704,7 +704,7 @@ For the Lean Ecosystem scenario:
 
 _This simplified calculation, based on a basic amortization of upfront costs, yields an exceptionally high ROI. However, a more rigorous Net Present Value (NPV) analysis, which properly discounts future costs and savings, is detailed in [Calculation Framework](#calculation-framework)._
 
-_The NPV analysis provides the final estimated ROI of approximately **{{< var roi_dfda_savings_only >}}:1**, which is the figure cited throughout this document._
+_The NPV analysis provides the final estimated ROI of approximately **{{< var dfda_roi_rd_only >}}:1**, which is the figure cited throughout this document._
 
 ### Full Range ROI Sensitivity Analysis
 
@@ -1250,7 +1250,7 @@ dfda_roi_simple = DFDA_ROI_SIMPLE  # {{< var dfda_roi_simple >}}:1
 
 # NPV-adjusted ROI (canonical figure)
 
-dfda_roi_npv = ROI_DFDA_SAVINGS_ONLY  # 463:1 (from 10-year NPV analysis)
+dfda_roi_npv = DFDA_ROI_RD_ONLY  # Conservative R&D-only (from 10-year NPV analysis)
 
 # Monetized value of QALY gains
 
@@ -1272,11 +1272,13 @@ print(f"Annual QALYs Gained: {qaly_gains_annual_baseline:,.0f}")
 print(f"Monetized Value of Annual QALYs: ${monetized_qaly_value:,.1f} Billion")
 print("-" * 45)
 print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1f}x")
-print("")
-print("NOTE: The NPV-adjusted ROI (463:1) is the canonical figure used throughout")
-print("the analysis. It accounts for time value of money and gradual adoption.")
-print("The simple ROI ({{< var dfda_roi_simple >}}:1) is useful for comparison but doesn't discount future cash flows.")
 ```
+
+**Note**: The conservative R&D-only ROI ({{< var dfda_roi_rd_only >}}:1) is the most defensible baseline figure, accounting for time value of money and gradual adoption.
+
+**Full ROI range**: {{< var dfda_roi_rd_only >}}:1 (conservative) to {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 (full impact), with **{{< var dfda_roi_rd_plus_delay >}}:1 recommended** for balanced presentations.
+
+The simple ROI ({{< var dfda_roi_simple >}}:1) is useful for comparison but doesn't discount future cash flows.
 
 #### dFDA Investment Returns Visualization
 
@@ -1486,7 +1488,7 @@ Where:
 - $S_{\text{R\&D}} = \alpha \cdot R_d$ is the gross R&D savings from dFDA implementation
 - **Baseline Assumptions for R&D Savings (same as before):**
   - Global Clinical Trial Spending Addressable by dFDA: **$100.0B / year**.
-  - R&D Trial Cost Reduction due to dFDA (Baseline): **50.0%**. (Leads to {{< var dfda_gross_savings_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
+  - R&D Trial Cost Reduction due to dFDA (Baseline): **50.0%**. (Leads to {{< var dfda_rd_gross_savings_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
 - **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA Infrastructure is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
 - **Conservative Scenario:** {{< var qalys_total_conservative >}} QALYs/year

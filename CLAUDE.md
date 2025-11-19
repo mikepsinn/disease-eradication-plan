@@ -12,6 +12,23 @@ This is a Quarto-based book project: "The Complete Idiot's Guide to Ending War a
 
 **Important:** Use `tsx` (not ts-node) to run TypeScript files. Example: `npx tsx scripts/review/review.ts`
 
+### Python Scripts on Windows
+
+**CRITICAL: All Python scripts must handle Windows console encoding.**
+
+Add this header to every Python script:
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import sys
+
+# Set UTF-8 encoding for stdout on Windows
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+```
+
+**Avoid Unicode characters in print statements** that may fail on Windows console (arrows →, emojis ⚠️, checkmarks ✅). Use ASCII alternatives: `->`, `WARNING:`, `[OK]`.
+
 ## Code Quality and Verification Standards
 
 **CRITICAL: These rules exist to prevent careless errors that have caused significant problems in the past.**

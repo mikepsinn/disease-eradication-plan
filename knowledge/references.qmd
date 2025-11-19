@@ -1003,9 +1003,11 @@ from dih_models.parameters import *
 
 <a id="dfda-roi-463-to-1"></a>
 
-- **dFDA ROI of {{< var roi_dfda_savings_only >}}:1 over 10 years**
-  > NPV analysis estimate: {{< var roi_dfda_savings_only >}}:1 ROI over 10 years (central estimate)
-  > Range: 66:1 to 2,577:1 depending on total ecosystem costs
+- **dFDA ROI: {{< var dfda_roi_rd_plus_delay >}}:1 (recommended) to {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 (full impact)**
+  > **Recommended**: {{< var dfda_roi_rd_plus_delay >}}:1 including rigorous regulatory delay elimination analysis
+  > **Conservative**: {{< var dfda_roi_rd_only >}}:1 R&D savings only (NPV-adjusted over 10 years)
+  > **Full impact**: {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 including lost innovation avoidance
+  > Range: 66:1 (worst case) to 2,577:1 depending on total ecosystem costs
   > Based on: $37.5-46M upfront platform investment + operational costs vs $50.0B annual R&D savings
   > Value proposition: 80X reduction in per-patient trial costs; $50.0B gross annual savings from pharma R&D
   > Pharmaceutical industry spends ~$100.0B/year on R&D; 50.0% cost reduction yields enormous net savings

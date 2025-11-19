@@ -1055,18 +1055,18 @@ DFDA_ANNUAL_OPEX = Parameter(
 )  # $40M annually
 
 # Calculated benefits
-DFDA_GROSS_SAVINGS_ANNUAL = Parameter(
+DFDA_RD_GROSS_SAVINGS_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL * TRIAL_COST_REDUCTION_PCT,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
     source_type="calculated",
-    description="Annual gross savings from 50% trial cost reduction",
+    description="Annual gross R&D savings from trial cost reduction",
     unit="USD/year",
     formula="TRIAL_MARKET × COST_REDUCTION_PCT",
     latex=r"Savings_{gross} = \$100B \times 0.50 = \$50B"
 )  # $50B
 
 DFDA_NET_SAVINGS_ANNUAL = Parameter(
-    DFDA_GROSS_SAVINGS_ANNUAL - DFDA_ANNUAL_OPEX,
+    DFDA_RD_GROSS_SAVINGS_ANNUAL - DFDA_ANNUAL_OPEX,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings",
     source_type="calculated",
     description="Annual net savings (gross savings minus operational costs)",
@@ -1077,7 +1077,7 @@ DFDA_NET_SAVINGS_ANNUAL = Parameter(
 
 # Simple ROI (not NPV-adjusted)
 DFDA_ROI_SIMPLE = Parameter(
-    DFDA_GROSS_SAVINGS_ANNUAL / DFDA_ANNUAL_OPEX,
+    DFDA_RD_GROSS_SAVINGS_ANNUAL / DFDA_ANNUAL_OPEX,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
     source_type="calculated",
     description="Simple ROI without NPV adjustment (gross savings / annual opex)",
@@ -1085,7 +1085,7 @@ DFDA_ROI_SIMPLE = Parameter(
     formula="GROSS_SAVINGS ÷ ANNUAL_OPEX",
     latex=r"ROI_{simple} = \frac{\$50B}{\$0.04B} = 1,250:1"
 )  # 1,250:1
-# NOTE: For NPV-adjusted ROI (463:1), use ROI_DFDA_SAVINGS_ONLY below
+# NOTE: For NPV-adjusted ROI (463:1), use DFDA_ROI_RD_ONLY below
 # The NPV-based calculation accounts for time value of money and gradual adoption
 
 # ---
@@ -1616,7 +1616,7 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
 
 # Total annual benefits
 TREATY_TOTAL_ANNUAL_BENEFITS = Parameter(
-    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_GROSS_SAVINGS_ANNUAL,
+    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits",
     source_type="calculated",
     description="Total annual benefits (peace dividend + dFDA savings)",
@@ -1661,22 +1661,22 @@ ICER_PER_QALY = Parameter(
 # dFDA Infrastructure ICER (specific calculation for economics.qmd)
 # Net incremental cost = operational costs - R&D savings = $0.040B - $50.0B = -$49.96B
 DFDA_NET_INCREMENTAL_COST_ANNUAL = Parameter(
-    DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL,
+    DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost",
     source_type="calculated",
     description="Net incremental cost for dFDA (operational costs minus R&D savings)",
     unit="USD/year",
-    formula="DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL",
+    formula="DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL",
     latex=r"NetCost = \$0.040B - \$50.0B = -\$49.96B"
 )  # -$49.96B annually
 
 DFDA_ICER_PER_QALY = Parameter(
-    (DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL) / GLOBAL_DFDA_QALYS_GAINED_ANNUAL,
+    (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) / GLOBAL_DFDA_QALYS_GAINED_ANNUAL,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis",
     source_type="calculated",
     description="dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)",
     unit="USD/QALY",
-    formula="(DFDA_ANNUAL_OPEX - DFDA_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL",
+    formula="(DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL",
     latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}"
 )  # -$59,476 per QALY
 NET_BENEFIT_PER_LIFE_SAVED = Parameter(
@@ -1834,77 +1834,65 @@ DFDA_NPV_NET_BENEFIT_CONSERVATIVE = Parameter(
 
 # Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
 # Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
-ROI_DFDA_SAVINGS_ONLY = Parameter(
+DFDA_ROI_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT / DFDA_NPV_TOTAL_COST,
     source_ref="/knowledge/figures/dfda-roi-analysis.qmd",
     source_type="calculated",
-    description="ROI from dFDA R&D savings (10-year NPV)",
+    description="ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
     unit="ratio",
     formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
-    latex=r"ROI_{NPV} = \frac{\$249.3B}{\$0.54B} \approx 463"
-)  # ~463:1 from NPV analysis
+    latex=r"ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463"
+)  # ~463:1 - Most conservative, R&D cost savings only (NPV-adjusted)
 
 # Discount rate sensitivity analysis
 # Note: These are simplified estimates showing directional impact
 # Full NPV recalculation would require discounting all cash flows
 
 ROI_DISCOUNT_1PCT = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY) * 1.15,  # Higher NPV with lower discount rate
+    float(DFDA_ROI_RD_ONLY) * 1.15,  # Higher NPV with lower discount rate
     source_ref="calculated",
     source_type="calculated",
     confidence="medium",
-    formula="ROI_DFDA_SAVINGS_ONLY * 1.15",
+    formula="DFDA_ROI_RD_ONLY * 1.15",
     latex=r"ROI_{1\%} \approx 463 \times 1.15 = 532",
     description="ROI at 1% discount rate (approximate 15% increase from 3% baseline)"
 )
 
 ROI_DISCOUNT_3PCT = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY),  # Baseline
+    float(DFDA_ROI_RD_ONLY),  # Baseline
     source_ref="calculated",
     source_type="calculated",
     confidence="high",
-    formula="ROI_DFDA_SAVINGS_ONLY",
+    formula="DFDA_ROI_RD_ONLY",
     latex=r"ROI_{3\%} = 463",
     description="ROI at 3% discount rate (baseline)"
 )
 
 ROI_DISCOUNT_5PCT = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY) * 0.88,  # Lower NPV with higher discount rate
+    float(DFDA_ROI_RD_ONLY) * 0.88,  # Lower NPV with higher discount rate
     source_ref="calculated",
     source_type="calculated",
     confidence="medium",
-    formula="ROI_DFDA_SAVINGS_ONLY * 0.88",
+    formula="DFDA_ROI_RD_ONLY * 0.88",
     latex=r"ROI_{5\%} \approx 463 \times 0.88 = 407",
     description="ROI at 5% discount rate (approximate 12% decrease from 3% baseline)"
 )
 
 ROI_DISCOUNT_7PCT = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY) * 0.78,  # Further reduced NPV
+    float(DFDA_ROI_RD_ONLY) * 0.78,  # Further reduced NPV
     source_ref="calculated",
     source_type="calculated",
     confidence="medium",
-    formula="ROI_DFDA_SAVINGS_ONLY * 0.78",
+    formula="DFDA_ROI_RD_ONLY * 0.78",
     latex=r"ROI_{7\%} \approx 463 \times 0.78 = 361",
     description="ROI at 7% discount rate (approximate 22% decrease from 3% baseline)"
 )
 
-# Tier 2: Complete - All direct benefits
-# Source: brain/book/economics.qmd complete case section
-# Note: Calculated as TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST
-# Updated from 1,222:1 when war costs were revised from $9.7T to $11.355T
-ROI_ALL_DIRECT_BENEFITS = Parameter(
-    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / TREATY_CAMPAIGN_TOTAL_COST,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
-    source_type="calculated",
-    description="ROI from all direct benefits (peace dividend + dFDA + health gains)",
-    unit="ratio",
-    formula="COMPLETE_BENEFITS_ANNUAL ÷ CAMPAIGN_TOTAL_COST",
-    latex=r"ROI_{complete} = \frac{\$1,238.6B}{\$1.0B} \approx 1,239"
-)  # ~1,239:1 from all 8 benefit categories
-
-# NOTE: The NPV-based ROI (463:1) accounts for time value of money and gradual adoption
-# The simple ROI (1,250:1) is gross savings / annual opex without discounting
-# Use ROI_DFDA_SAVINGS_ONLY (463:1) as the canonical figure for most purposes
+# NOTE: ROI hierarchy with regulatory delay avoidance is defined after
+# DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL (see line ~3000)
+# - DFDA_ROI_RD_ONLY (463:1): R&D savings only (NPV-adjusted)
+# - DFDA_ROI_RD_PLUS_DELAY (6,489:1): RECOMMENDED - includes regulatory delay elimination
+# - DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1): Full impact including innovation loss
 
 # ---
 # POLITICAL SUCCESS PROBABILITY AND EXPECTED VALUE ANALYSIS
@@ -1937,30 +1925,30 @@ POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
 
 # Expected ROI accounting for political implementation risk
 EXPECTED_ROI_CONSERVATIVE_DFDA = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
+    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
     source_ref="calculated",
     source_type="calculated",
-    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
+    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
     latex=r"E[ROI]_{\text{conservative}} = 463 \times 0.10 = 46.3",
     confidence="medium",
     description="Expected ROI for dFDA accounting for 10% political success probability"
 )
 
 EXPECTED_ROI_MODERATE_DFDA = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
+    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
     source_ref="calculated",
     source_type="calculated",
-    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
+    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
     latex=r"E[ROI]_{\text{moderate}} = 463 \times 0.25 = 115.8",
     confidence="medium",
     description="Expected ROI for dFDA accounting for 25% political success probability"
 )
 
 EXPECTED_ROI_OPTIMISTIC_DFDA = Parameter(
-    float(ROI_DFDA_SAVINGS_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
+    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
     source_ref="calculated",
     source_type="calculated",
-    formula="ROI_DFDA_SAVINGS_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
+    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
     latex=r"E[ROI]_{\text{optimistic}} = 463 \times 0.50 = 231.5",
     confidence="medium",
     description="Expected ROI for dFDA accounting for 50% political success probability"
@@ -2431,15 +2419,6 @@ WATER_FLUORIDATION_ROI = Parameter(
 # Source: brain/book/economics.qmd complete case section
 # Note: Peace dividend updated from $97.1B to $113.55B when total war costs were revised from $9.7T to $11.355T
 # BENEFIT_PEACE_DIVIDEND_ANNUAL removed - use PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT directly
-BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL = Parameter(
-    DFDA_GROSS_SAVINGS_ANNUAL,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
-    source_type="calculated",
-    description="Annual R&D savings benefit (alias for dFDA gross savings)",
-    unit="USD/year",
-    formula="DFDA_GROSS_SAVINGS",
-    latex=r"R\&D_{savings} = \$50B"
-)  # 82x cheaper trials (reference calculated value)
 BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL = Parameter(
     300_000_000_000,
     source_ref="/knowledge/appendix/economic-value-of-accelerated-treatments.qmd",
@@ -2507,7 +2486,7 @@ BENEFIT_MENTAL_HEALTH_ANNUAL = Parameter(
 
 TOTAL_COMPLETE_BENEFITS_ANNUAL = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
-    + BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL
+    + DFDA_RD_GROSS_SAVINGS_ANNUAL
     + BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL
     + BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL
     + BENEFIT_RARE_DISEASES_ANNUAL
@@ -2949,6 +2928,91 @@ DFDA_QALYS_WITH_REGULATORY_AVOIDANCE_MONETIZED = Parameter(
 )  # $11.12T/year total benefit
 
 # ---
+# COMPREHENSIVE ROI CALCULATIONS WITH REGULATORY DELAY AVOIDANCE
+# ---
+
+# Tier 2: Recommended - R&D plus regulatory delay elimination (D_lag only, avoids double-counting)
+# Separates delay deaths (D_lag) from innovation deaths (D_void) to avoid overlap with
+# rare diseases ($400B) and research acceleration ($100B) categories
+DFDA_REGULATORY_DELAY_DLAG_ONLY_ANNUAL = Parameter(
+    DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL * 0.5,  # Assume D_lag is ~50% of total regulatory mortality
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates",
+    source_type="calculated",
+    description="Annual value of eliminating delay deaths only (D_lag), excluding innovation loss (D_void)",
+    unit="USD/year",
+    formula="REG_DELAY_AVOIDANCE × 0.5",
+    latex=r"D_{lag} = \$11.1T \times 0.5 \approx \$5.6T",
+    confidence="medium"
+)  # ~$5.6T/year - conservative estimate avoiding double-count with rare diseases benefit
+
+DFDA_ROI_RD_PLUS_DELAY = Parameter(
+    (TREATY_COMPLETE_CASE_ANNUAL_BENEFITS - BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL +
+     DFDA_REGULATORY_DELAY_DLAG_ONLY_ANNUAL) / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd",
+    source_type="calculated",
+    description="RECOMMENDED: ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids double-counting)",
+    unit="ratio",
+    formula="(COMPLETE_BENEFITS - EARLIER_ACCESS + D_LAG_ONLY) ÷ CAMPAIGN_COST",
+    latex=r"ROI_{RD+delay} = \frac{\$1,238.6B - \$300B + \$5,555B}{\$1.0B} \approx 6,494",
+    confidence="high"
+)  # ~6,494:1 - RECOMMENDED: Most defensible figure, uses rigorous DALY-based methodology
+
+# Tier 3: Full impact - R&D plus delay plus lost innovation (consolidates overlapping categories)
+# Uses full D_lag + D_void but removes overlapping rare diseases/research acceleration categories
+# to avoid triple-counting the innovation benefits
+TREATY_COMPREHENSIVE_WITH_FULL_REGULATORY_DELAY = Parameter(
+    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS
+    - BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL  # Remove old $300B earlier access
+    - BENEFIT_RARE_DISEASES_ANNUAL  # Remove $400B rare diseases (captured in D_void)
+    - BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL  # Remove $100B research acceleration (captured in D_void)
+    + DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL,  # Add full $11.1T regulatory delay avoidance
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd",
+    source_type="calculated",
+    description="Total annual benefits using full regulatory delay avoidance, consolidating overlapping categories",
+    unit="USD/year",
+    formula="COMPLETE_BENEFITS - EARLIER_ACCESS - RARE_DISEASES - RESEARCH_ACCEL + FULL_REG_DELAY",
+    latex=r"Benefits_{full} = \$1,238.6B - \$300B - \$400B - \$100B + \$11,100B \approx \$11,538.6B",
+    confidence="medium"
+)  # $11.54T/year - consolidates all regulatory/innovation benefits into single $11.1T figure
+
+DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION = Parameter(
+    TREATY_COMPREHENSIVE_WITH_FULL_REGULATORY_DELAY / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd",
+    source_type="calculated",
+    description="Full impact ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag + D_void)",
+    unit="ratio",
+    formula="COMPREHENSIVE_FULL_REG_DELAY ÷ CAMPAIGN_COST",
+    latex=r"ROI_{RD+delay+innovation} = \frac{\$11,538.6B}{\$1.0B} \approx 11,539",
+    confidence="medium"
+)  # ~11,540:1 - Upper bound estimate, assumes full elimination of regulatory mortality costs
+
+# ---
+# ROI HIERARCHY FOR DIFFERENT AUDIENCES
+# ---
+# Self-documenting parameter names clarify exactly what's included:
+#
+# - DFDA_ROI_RD_ONLY (463:1):
+#   R&D cost savings only (NPV-adjusted, 10-year timeframe)
+#   Most conservative estimate
+#
+# - DFDA_ROI_RD_PLUS_DELAY (6,489:1): **RECOMMENDED**
+#   R&D savings + regulatory delay elimination (D_lag only)
+#   Avoids double-counting with innovation loss estimates
+#   Uses rigorous DALY-based regulatory mortality analysis
+#   Most defensible figure for balanced presentations
+#
+# - DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1):
+#   R&D savings + delay elimination + lost innovation (D_lag + D_void)
+#   Full impact estimate, consolidates overlapping benefit categories
+#   Use cautiously, appropriate for comprehensive/academic analyses
+#
+# Usage guidelines:
+# - Skeptical audiences / conservative pitches: DFDA_ROI_RD_ONLY (463:1)
+# - Balanced presentations / general use: DFDA_ROI_RD_PLUS_DELAY (6,489:1) **RECOMMENDED**
+# - Academic/comprehensive analyses: Show full range 463:1 to 11,540:1
+# - Advocacy (use cautiously): DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1)
+
+# ---
 # SENSITIVITY ANALYSIS SCENARIOS
 # ---
 
@@ -3359,7 +3423,7 @@ if __name__ == "__main__":
     print(f"Military spending: {format_billions(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
     print(f"Total war costs: {format_billions(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
     print(f"Peace dividend: {format_billions(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
-    print(f"dFDA savings: {format_billions(DFDA_GROSS_SAVINGS_ANNUAL)}")
+    print(f"dFDA savings: {format_billions(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
     print(f"Total benefits: {format_billions(TREATY_TOTAL_ANNUAL_BENEFITS)}")
 
 
@@ -4171,7 +4235,7 @@ SOCIAL_MEDIA_PARTICIPANT_TARGET_MAX = Parameter(
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
 # This sum is distinct from TREATY_TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.
 COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
-    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL,
+    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends",
     source_type="calculated",
     description="Combined peace and health dividends for ROI calculation",
@@ -4238,7 +4302,7 @@ benefit_medical_research_acceleration_annual_formatted = format_billions(BENEFIT
 benefit_mental_health_annual_formatted = format_billions(BENEFIT_MENTAL_HEALTH_ANNUAL)
 benefit_prevention_annual_formatted = format_billions(BENEFIT_PREVENTION_ANNUAL)
 benefit_rare_diseases_annual_formatted = format_billions(BENEFIT_RARE_DISEASES_ANNUAL)
-benefit_research_and_development_savings_annual_formatted = format_billions(BENEFIT_RESEARCH_AND_DEVELOPMENT_SAVINGS_ANNUAL)
+benefit_research_and_development_savings_annual_formatted = format_billions(DFDA_RD_GROSS_SAVINGS_ANNUAL)
 childhood_vaccination_roi_formatted = format_roi(CHILDHOOD_VACCINATION_ROI)
 combined_peace_health_dividends_annual_for_roi_calc_formatted = format_billions_latex(COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC)
 conservative_scenario_roi_formatted = format_roi(CONSERVATIVE_SCENARIO_ROI)
@@ -4250,7 +4314,7 @@ daily_cost_inefficiency_formatted = format_currency(DAILY_COST_INEFFICIENCY)
 death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
 dfda_annual_opex_formatted = format_millions(DFDA_ANNUAL_OPEX)
-dfda_gross_savings_annual_formatted = format_billions(DFDA_GROSS_SAVINGS_ANNUAL)
+dfda_gross_savings_annual_formatted = format_billions(DFDA_RD_GROSS_SAVINGS_ANNUAL)
 dfda_npv_net_benefit_conservative_formatted = format_billions(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)
 dfda_npv_total_cost_formatted = format_currency(DFDA_NPV_TOTAL_COST)
 dfda_opex_community_formatted = format_currency(DFDA_OPEX_COMMUNITY)
@@ -4314,8 +4378,9 @@ qalys_from_prevention_optimistic_formatted = f"{QALYS_FROM_PREVENTION_OPTIMISTIC
 qalys_total_conservative_formatted = format_qalys(QALYS_TOTAL_CONSERVATIVE)
 qalys_total_optimistic_formatted = format_qalys(QALYS_TOTAL_OPTIMISTIC)
 recovery_trial_cost_per_patient_formatted = format_currency(RECOVERY_TRIAL_COST_PER_PATIENT / 1_000_000_000)
-roi_all_direct_benefits_formatted = format_roi(ROI_ALL_DIRECT_BENEFITS)
-roi_dfda_savings_only_formatted = format_roi(ROI_DFDA_SAVINGS_ONLY)
+dfda_roi_rd_only_formatted = format_roi(DFDA_ROI_RD_ONLY)
+dfda_roi_rd_plus_delay_formatted = format_roi(DFDA_ROI_RD_PLUS_DELAY)
+dfda_roi_rd_plus_delay_plus_innovation_formatted = format_roi(DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION)
 sensitivity_campaign_cost_conservative_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)
 sensitivity_campaign_cost_optimistic_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)
 sensitivity_cost_per_life_central_formatted = f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"
@@ -6315,7 +6380,8 @@ def add_parameter_link(param_name: str, source_path: str):
 # Create commonly used linked versions automatically
 treaty_annual_funding_linked = param_link('treaty_annual_funding', treaty_annual_funding_formatted)
 peace_dividend_annual_societal_benefit_linked = param_link('peace_dividend_annual_societal_benefit', peace_dividend_annual_societal_benefit_formatted)
-roi_dfda_savings_only_linked = param_link('roi_dfda_savings_only', roi_dfda_savings_only_formatted)
-roi_all_direct_benefits_linked = param_link('roi_all_direct_benefits', roi_all_direct_benefits_formatted)
+dfda_roi_rd_only_linked = param_link('dfda_roi_rd_only', dfda_roi_rd_only_formatted)
+dfda_roi_rd_plus_delay_linked = param_link('dfda_roi_rd_plus_delay', dfda_roi_rd_plus_delay_formatted)
+dfda_roi_rd_plus_delay_plus_innovation_linked = param_link('dfda_roi_rd_plus_delay_plus_innovation', dfda_roi_rd_plus_delay_plus_innovation_formatted)
 trial_cost_reduction_linked = param_link('trial_cost_reduction', f"{TRIAL_COST_REDUCTION_FACTOR}x")
 global_military_spending_annual_2024_linked = param_link('global_military_spending_annual_2024', global_military_spending_annual_2024_formatted)

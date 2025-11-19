@@ -657,7 +657,7 @@ This beats:
 
 You stop paying smart humans to pretend problems are complicated. You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
-- **{{< var dfda_gross_savings_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
+- **{{< var dfda_rd_gross_savings_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
 - [**840,000 Quality-Adjusted Life Years**](knowledge/appendix/dfda-cost-benefit-analysis.qmd) (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey)
   - 200,000 QALYs because drugs reach people in [2 years instead of 17](knowledge/appendix/recovery-trial.qmd), which matters if you're currently dying (17 years is longer than most terminal diagnoses, which seems like poor planning)
   - 140,000 QALYs from actually knowing which treatments work instead of guessing (your current method)
@@ -696,7 +696,7 @@ $$
 For humans who peaked at counting on fingers:
 
 - **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}} (money saved by not building things whose only purpose is making other things stop existing)
-- **Health dividend**: {{< var dfda_gross_savings_annual >}} (money saved by not paying 10,000 people to document why 1 person is dying)
+- **Health dividend**: {{< var dfda_rd_gross_savings_annual >}} (money saved by not paying 10,000 people to document why 1 person is dying)
 - **Total**: More money than 73% of countries have in their entire GDP, appearing annually from the quantum void of redirected stupidity
 
 ([See peace dividend calculation](knowledge/economics/peace-dividend.qmd) | [See dFDA health benefits breakdown](knowledge/appendix/dfda-cost-benefit-analysis.qmd) | [See economic impact summary](knowledge/economics/economics.qmd))

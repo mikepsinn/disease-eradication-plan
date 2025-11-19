@@ -17,13 +17,13 @@ lastNonprofitComplianceHash: 10a8528867ff97290815aebf8c71e8594837b428eda50c4f1eb
 from dih_models.parameters import *
 ```
 
-The conservative {{< var roi_dfda_savings_only >}}:1 ROI estimate captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
+The conservative {{< var dfda_roi_rd_only >}}:1 ROI estimate captures only the direct dFDA platform benefits. The **Complete Case** shows what happens when you count all direct benefits from the 1% Treaty system.
 
 This analysis focuses on provable, quantifiable benefits with conservative assumptions. For the underlying calculations and NPV methodology, see [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis).
 
 ## The Complete Case: 1,239:1 ROI (All Direct Benefits)
 
-The conservative {{< var roi_dfda_savings_only >}}:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
+The conservative {{< var dfda_roi_rd_only >}}:1 calculation ignores most of what the 1% Treaty actually does. When you count everything:
 
 ### $1.2T in Annual Benefits
 
@@ -331,17 +331,17 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 | Category | Annual Benefit | Notes |
 |----------|----------------|-------|
 | [Peace Dividend](../economics/peace-dividend.qmd) | {{< var peace_dividend_annual_societal_benefit >}} | Societal savings from 1% reduction in global conflict |
-| R&D Cost Savings | $50.0B | {{< var trial_cost_reduction_factor >}}× trial cost reduction |
-| **Earlier Access (7 years)** | **$300.0B** | Existing pipeline accessed sooner |
+| R&D Cost Savings | {{< var dfda_rd_gross_savings_annual >}} | {{< var trial_cost_reduction_factor >}}× trial cost reduction |
+| **Earlier Access (7 years)** | **{{< var benefit_earlier_drug_access_annual >}}** | Existing pipeline accessed sooner |
 | **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |
 | New Diseases Treatable | $400.0B | Rare diseases, orphan drugs |
 | Drug Price Reduction | $100.0B | R&D savings passed to consumers |
 | Prevention Medicine | $100.0B | Economic viability of prevention |
 | Mental Health Impact | $75.0B | Treatment gap reduction |
 | | | |
-| **ECONOMIC TOTAL** | **$1.2T** | |
+| **ECONOMIC TOTAL** | **{{< var treaty_complete_case_annual_benefits >}}** | |
 
-**ROI:** $1.2T / $1.0B investment = **1,239:1**
+**ROI:** {{< var treaty_complete_case_annual_benefits >}} / {{< var treaty_campaign_total_cost >}} investment = **1,239:1**
 
 **Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 
@@ -399,7 +399,7 @@ Including these would push the ROI substantially higher, but they're harder to q
 
 ## Related Analysis
 
-- **Conservative Case ({{< var roi_dfda_savings_only >}}:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
+- **Conservative Case ({{< var dfda_roi_rd_only >}}:1)**: See [Health Dividend](../economics/health-dividend.qmd) for the baseline NPV-adjusted ROI
 - **NPV Methodology**: See [Interactive Financial Modeling & Computational Analysis](dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) for 10-year NPV analysis with discount rates
 - **Cost-Effectiveness**: See [1% Treaty Cost-Effectiveness](1-percent-treaty-cost-effectiveness.qmd) for ICER and cost-per-QALY analysis
 - **Daily Opportunity Cost**: See [Daily Opportunity Cost](dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction) for the cost of delay
@@ -412,4 +412,4 @@ The **Complete Case** shows that when you count all direct, quantifiable benefit
 - **1,239:1 return on investment**
 - **Benefits span immediate access acceleration, research capacity expansion, and systemic healthcare improvements**
 
-This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, use the more conservative {{< var roi_dfda_savings_only >}}:1 figure to maintain credibility, but the full scope of benefits is substantially larger.
+This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, the **recommended ROI is {{< var dfda_roi_rd_plus_delay >}}:1** (including regulatory delay elimination). The conservative estimate ({{< var dfda_roi_rd_only >}}:1, R&D only) and full impact estimate ({{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1, including lost innovation) provide the complete range.

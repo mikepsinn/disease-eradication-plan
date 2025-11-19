@@ -89,7 +89,7 @@
     "validate:frontmatter": "tsx scripts/validate-frontmatter.ts",
     "validate:latex": "python scripts/pre-render-validation.py",
     "validate:pre-render": "python scripts/pre-render-validation.py",
-    "validate:render": "python scripts/post-render-validation.py",
+    "validate:post-render": "python scripts/post-render-validation.py",
     "fix:frontmatter": "tsx scripts/validate-frontmatter.ts --fix",
     "fix:inline-python": "python scripts/fix_inline_python.py",
     "fix:inline-python:dry-run": "python scripts/fix_inline_python.py --dry-run",

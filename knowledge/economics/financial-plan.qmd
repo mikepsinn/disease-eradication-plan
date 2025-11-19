@@ -213,7 +213,7 @@ As more patients join:
 
 ## Financial Performance Metrics
 
-### Return on Investment (The {{< var roi_dfda_savings_only >}}:1 Multiplier)
+### Return on Investment (The {{< var dfda_roi_rd_plus_delay >}}:1 Recommended Multiplier)
 
 #### Direct Investment Returns (VICTORY Social Impact Bonds)
 
@@ -224,7 +224,7 @@ As more patients join:
 
 #### Societal Returns (Everyone Else)
 
-- $463 in value created per dollar spent
+- ${{< var dfda_roi_rd_only >}}-{{< var dfda_roi_rd_plus_delay_plus_innovation >}} in value created per dollar spent (conservative to full impact)
 - {{< var trial_cost_reduction_factor >}}× reduction in trial costs ($50.0B annual savings)
 - 10-year acceleration in drug development ($5.4T productivity)
 - 100X more diseases addressed (10M lives saved annually)
@@ -339,7 +339,7 @@ That's more than China's entire GDP.
 
 - Treaty expansion rate (1% → 2% → 5%)
 - VICTORY bond returns delivered (target: {{< var victory_bond_annual_return_pct >}} annually)
-- Multiplier effects (target: {{< var roi_dfda_savings_only >}}:1 societal value)
+- Multiplier effects (target: {{< var dfda_roi_rd_plus_delay >}}:1 societal value, recommended estimate)
 
 ## The Compound Flywheel
 
@@ -408,9 +408,9 @@ Each success makes the next success easier:
 
 ### For Health Economics Nerds
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The {{< var roi_dfda_savings_only >}}:1 ROI breakdown
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - Full ROI breakdown ({{< var dfda_roi_rd_only >}}:1 conservative to {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 full impact)
 - **[Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd)** - Historical proof that military cuts → prosperity
-- **[Research Acceleration Model](../appendix/research-acceleration-model.qmd)** - Complete {{< var roi_all_direct_benefits >}}:1 ROI with all direct benefits
+- **[Research Acceleration Model](../appendix/research-acceleration-model.qmd)** - Recommended {{< var dfda_roi_rd_plus_delay >}}:1 ROI with regulatory delay elimination
 
 ### For Treaty Supporters
 
@@ -425,7 +425,7 @@ Each success makes the next success easier:
 
 **To Manage:** {{< var treaty_annual_funding >}}+ annually via Wishocracy (8 billion voters)
 
-**To Deliver:** {{< var victory_bond_annual_return_pct >}} annual returns to investors (perpetual), 463:1 societal returns, optional death by 2050
+**To Deliver:** {{< var victory_bond_annual_return_pct >}} annual returns to investors (perpetual), {{< var dfda_roi_rd_only >}}-{{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 societal returns, optional death by 2050
 
 **The Simple Math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever
 

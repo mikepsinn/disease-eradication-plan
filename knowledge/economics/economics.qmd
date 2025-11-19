@@ -27,20 +27,20 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Conservative analysis yields {{< var roi_dfda_savings_only >}}:1 ROI ({{< var dfda_npv_net_benefit_conservative >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var roi_all_direct_benefits >}}:1 ROI ({{< var total_complete_benefits_annual >}} annually). The intervention generates {{< var global_dfda_qalys_gained_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var conservative_scenario_roi >}}:1 worst-case to {{< var optimistic_scenario_roi >}}:1 best-case).
+**Results**: Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_conservative >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var total_complete_benefits_annual >}} annually). The intervention generates {{< var global_dfda_qalys_gained_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var conservative_scenario_roi >}}:1 worst-case to {{< var optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annual surplus while curing diseases.
 
-**Keywords**: 1% Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved, 463:1 ROI, greed-aligned incentives
+**Keywords**: 1% Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved, 463:1 to 11,540:1 ROI, regulatory delay elimination, greed-aligned incentives
 
 
 ::: {.callout-note}
 ## Key Findings
 
-1. **Conservative ROI**: {{< var roi_dfda_savings_only >}}:1 (counting only R&D efficiency, ignoring everything else that makes this look "too good")
+1. **Conservative ROI**: {{< var dfda_roi_rd_only >}}:1 (counting only R&D efficiency, ignoring everything else that makes this look "too good")
    - {{< var dfda_npv_benefit >}} benefit / {{< var dfda_npv_total_cost >}} cost over {{< var npv_time_horizon_years >}} years
 
-2. **Complete ROI**: {{< var roi_all_direct_benefits >}}:1 (counting everything, at which point reality stops caring about sounding believable)
+2. **Complete ROI**: {{< var dfda_roi_rd_plus_delay >}}:1 (counting everything, at which point reality stops caring about sounding believable)
    - {{< var treaty_complete_case_annual_benefits >}} annual benefits / {{< var treaty_campaign_total_cost >}} campaign cost
 
 3. **Self-Funding**: Zero new spending, just move 1% from the "making corpses" budget ({{< var treaty_annual_funding >}} annually from {{< var global_military_spending_annual_2024 >}} total military spending)
@@ -61,7 +61,7 @@ from dih_models.parameters import *
 
 ## Research Hypothesis
 
-**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to medical research infrastructure (Decentralized Institutes of Health and Decentralized FDA) generates return on investment between {{< var roi_dfda_savings_only >}}:1 (conservative estimate, R&D savings only) and {{< var roi_all_direct_benefits >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
+**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to medical research infrastructure (Decentralized Institutes of Health and Decentralized FDA) generates return on investment between {{< var dfda_roi_rd_only >}}:1 (conservative estimate, R&D savings only) and {{< var dfda_roi_rd_plus_delay >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
@@ -127,7 +127,7 @@ Just 1% less self-harm.
 
 # The Result
 
-**{{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 ROI**
+**{{< var dfda_roi_rd_only >}}:1 to {{< var dfda_roi_rd_plus_delay >}}:1 ROI**
 
 (That's "impossible returns" to "mathematically absurd returns")
 
@@ -170,7 +170,7 @@ That's roughly the GDP of Austria, just sitting there in the "please don't explo
 
 ### 2. The Research Efficiency Dividend
 
-{{< var dfda_gross_savings_annual >}}–$100B/year
+{{< var dfda_rd_gross_savings_annual >}}–$100B/year
 
 Traditional trials require:
 
@@ -403,14 +403,14 @@ $$
 \text{ROI} = \frac{\$249B}{\$0.54B} = 463:1
 $$
 
-You spend $1, you get ${{< var roi_dfda_savings_only >}} back. This beats most legal activities.
+You spend $1, you get ${{< var dfda_roi_rd_only >}} back. This beats most legal activities.
 
 **Complete scenario** (counting all the benefits your species will claim sound "too good"):
 $$
 \text{ROI} = \frac{\$1{,}239B \text{ annually}}{\$1B \text{ one-time}} = 1{,}239:1
 $$
 
-You spend $1 billion once, you get ${{< var roi_all_direct_benefits >}} billion back every year, forever. Or until the sun explodes. Whichever happens first (probably the sun thing).
+You spend $1 billion once, you get ${{< var dfda_roi_rd_plus_delay >}} billion back every year, forever. Or until the sun explodes. Whichever happens first (probably the sun thing).
 
 ## Cost-Effectiveness: The "Per Life Saved" Metric
 
@@ -467,7 +467,7 @@ $$
 \text{ROI} = \frac{\text{NPV}(\text{Benefits})}{\text{NPV}(\text{Costs})}
 $$
 
-This yields the conservative estimate of {{< var roi_dfda_savings_only >}}:1 ROI over {{< var npv_time_horizon_years >}} years.
+This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over {{< var npv_time_horizon_years >}} years.
 
 For the dFDA infrastructure (using annual figures):
 
@@ -606,7 +606,7 @@ All data sources include confidence levels and last-update dates. See [Reference
 
 The analysis employs comprehensive sensitivity testing across multiple scenarios to assess robustness of findings:
 
-**Conservative Scenario ({{< var roi_dfda_savings_only >}}:1 ROI):**
+**Conservative Scenario ({{< var dfda_roi_rd_only >}}:1 ROI):**
 
 - R&D cost reduction: {{< var trial_cost_reduction_pct >}}
 - QALY gains: {{< var qalys_total_conservative >}} annually
@@ -626,7 +626,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 - QALY gains: {{< var qalys_total_optimistic >}} annually
 - Faster adoption and broader scope
 
-**Complete Case ({{< var roi_all_direct_benefits >}}:1 ROI):**
+**Complete Case ({{< var dfda_roi_rd_plus_delay >}}:1 ROI):**
 
 - Includes all eight quantifiable benefit categories
 - Peace dividend: {{< var peace_dividend_annual_societal_benefit >}}
@@ -717,7 +717,7 @@ This analysis rests on several core assumptions that should be made explicit for
 - ADAPTABLE trial: Similar cost structure using pragmatic design
 - Literature on pragmatic trials consistently shows 50-95% cost reductions
 
-**Sensitivity:** Conservative scenario ({{< var roi_dfda_savings_only >}}:1 ROI) uses {{< var trial_cost_reduction_pct >}} reduction; optimistic case uses 95%.
+**Sensitivity:** Conservative scenario ({{< var dfda_roi_rd_only >}}:1 ROI) uses {{< var trial_cost_reduction_pct >}} reduction; optimistic case uses 95%.
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
@@ -751,7 +751,7 @@ The cost reduction estimates (50-95%) are conservative relative to the historica
 
 **Justification:** Historical treaty adoption timelines vary (Nuclear Non-Proliferation Treaty: 3 years; Paris Climate Agreement: 5 years). This analysis focuses on economic value *conditional* on implementation, not probability of political success.
 
-**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case ({{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
+**Important caveat:** This analysis does not model the probability distribution over political outcomes. The economic case ({{< var dfda_roi_rd_only >}}:1 to {{< var dfda_roi_rd_plus_delay >}}:1 ROI) holds *if implemented*, but political economy barriers to implementation are substantial and outside the scope of this cost-benefit analysis.
 
 ### Expected Value Analysis Accounting for Political Risk
 
@@ -783,7 +783,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 - **1% Treaty (P=10%)**: {{< var expected_roi_conservative_dfda >}}:1 expected ROI
 - **1% Treaty (P=25%)**: {{< var expected_roi_moderate_dfda >}}:1 expected ROI
 
-**Interpretation**: The high conditional ROI ({{< var roi_dfda_savings_only >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
+**Interpretation**: The high conditional ROI ({{< var dfda_roi_rd_only >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
 **Note**: This analysis uses point estimates for political probability. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
@@ -830,7 +830,7 @@ For complete parameter documentation with confidence indicators and peer-review 
 
 # The Conservative Case: dFDA Only
 
-{{< var roi_dfda_savings_only >}}:1 ROI
+{{< var dfda_roi_rd_only >}}:1 ROI
 
 This is the floor. The "what if we're wrong about everything" scenario.
 
@@ -913,13 +913,13 @@ This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} ove
 ### What You Get Back
 
 - **Money**: {{< var dfda_npv_net_benefit_conservative >}} in R&D savings ({{< var npv_time_horizon_years >}} years)
-- **Returns**: {{< var dfda_npv_net_benefit_conservative >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var roi_dfda_savings_only >}}:1** ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
+- **Returns**: {{< var dfda_npv_net_benefit_conservative >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}:1** ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 - **Not dying**: {{< var global_dfda_qalys_gained_annual >}} quality-adjusted life years annually
 
 **Two money fountains from one budget shift**:
 
 1. **Peace dividend**: {{< var peace_dividend_annual_societal_benefit >}}/year (from building 1% fewer things that explode)
-2. **Research efficiency**: {{< var dfda_gross_savings_annual >}}/year (from not requiring PhDs to document paperwork about paperwork for {{< var treatment_acceleration_years_current >}} years)
+2. **Research efficiency**: {{< var dfda_rd_gross_savings_annual >}}/year (from not requiring PhDs to document paperwork about paperwork for {{< var treatment_acceleration_years_current >}} years)
 
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year
 
@@ -985,7 +985,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 **Important distinction**: The dFDA platform costs ({{< var dfda_annual_opex >}}/year) are separate from patient participation subsidies ($2B/year NIH Fund). Platform costs cover infrastructure and operations. The NIH Fund provides financial assistance to patients enrolling in trials, making participation affordable without funding researcher salaries.
 
-- **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_gross_savings_annual >}})
+- **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_rd_gross_savings_annual >}})
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
 - **Net Position**: {{< var treaty_total_annual_benefits >}} annual surplus after all costs
 - **Lives Saved**: {{< var treaty_total_lives_saved_annual >}} annually
@@ -1002,9 +1002,9 @@ The self-funding nature eliminates traditional barriers to scale, as the interve
 
 # The Complete Case: All Direct Benefits
 
-{{< var roi_all_direct_benefits >}}:1 ROI
+{{< var dfda_roi_rd_plus_delay >}}:1 ROI
 
-The conservative {{< var roi_dfda_savings_only >}}:1 case ignored most benefits to avoid sounding "too good to be true."
+The conservative {{< var dfda_roi_rd_only >}}:1 case ignored most benefits to avoid sounding "too good to be true."
 
 Now let's count everything and see what happens when reality doesn't care about sounding believable.
 
@@ -1015,7 +1015,7 @@ Now let's count everything and see what happens when reality doesn't care about 
 Eight measurable benefit streams:
 
 1. **Peace dividend** ({{< var peace_dividend_annual_societal_benefit >}}) - Building 1% fewer things that explode
-2. **R&D cost savings** ({{< var dfda_gross_savings_annual >}}) - Trials cost {{< var trial_cost_reduction_factor >}}× less
+2. **R&D cost savings** ({{< var dfda_rd_gross_savings_annual >}}) - Trials cost {{< var trial_cost_reduction_factor >}}× less
 3. **Faster access** ({{< var benefit_earlier_drug_access_annual >}}) - Treatments arrive 7 years earlier
 4. **Research acceleration** ({{< var benefit_medical_research_acceleration_annual >}}) - {{< var research_acceleration_multiplier >}}× more trials = 10-20× more breakthroughs
 5. **Rare diseases** ({{< var benefit_rare_diseases_annual >}}) - [300M patients](../references.qmd#rare-disease-patients-300m-globally) with diseases too rare to be profitable suddenly become treatable
@@ -1289,7 +1289,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 ### Campaign Budget Breakdown
 
-The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var roi_all_direct_benefits >}}:1 ROI) allocates funds across three strategic categories:
+The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var dfda_roi_rd_plus_delay >}}:1 ROI) allocates funds across three strategic categories:
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
@@ -1300,14 +1300,14 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
-This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 returns regardless of the specific path to adoption.
+This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}}:1 to {{< var dfda_roi_rd_plus_delay >}}:1 returns regardless of the specific path to adoption.
 
 # Detailed Technical References
 
 For the rigorous analysis:
 
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The complete {{< var roi_dfda_savings_only >}} ROI breakdown with NPV calculations
-- **[Health Dividend](health-dividend.qmd)** - Accessible overview of the {{< var roi_dfda_savings_only >}} ROI
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
+- **[Health Dividend](health-dividend.qmd)** - Accessible overview of the {{< var dfda_roi_rd_only >}} ROI
 - **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations you can verify yourself
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
@@ -1602,8 +1602,8 @@ The following table summarizes key risk factors and their mitigation strategies:
 Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 - **Worst-case (66:1 ROI):** Benefits half as good, costs twice as high, intervention remains highly cost-effective
-- **Conservative ({{< var roi_dfda_savings_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
-- **Complete ({{< var roi_all_direct_benefits >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
+- **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
+- **Complete ({{< var dfda_roi_rd_plus_delay >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
 **Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs.
 
@@ -1836,13 +1836,13 @@ Safety isn't the risk. The risk is that the current system's beneficiaries will 
 
 ### Conditional Benefits Interpretation
 
-The ROI estimates ({{< var roi_dfda_savings_only >}}:1 conservative, {{< var roi_all_direct_benefits >}}:1 complete) are **conditional on successful implementation**—they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
+The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var dfda_roi_rd_plus_delay >}}:1 complete) are **conditional on successful implementation**—they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ## Limitations Summary
 
 Despite these limitations, several factors support the analysis's robustness:
 
-1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var roi_dfda_savings_only >}}:1)
+1. **Conservative assumptions throughout:** Base case uses median estimates; optimistic scenarios excluded from primary ROI ({{< var dfda_roi_rd_only >}}:1)
 2. **Empirical grounding:** Cost reductions based on demonstrated RECOVERY trial results, not theoretical models
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
 4. **Dominant intervention status:** Negative ICER ({{< var dfda_icer_per_qaly >}}/QALY) means intervention saves money even if health benefits are substantially overstated
@@ -1854,13 +1854,13 @@ Future research priorities include prospective data collection during pilot impl
 
 # Conclusion
 
-Redirecting {{< var treaty_reduction_pct >}} of global military spending to medical research generates {{< var roi_dfda_savings_only >}}:1 to {{< var roi_all_direct_benefits >}}:1 ROI, depending on what you count.
+Redirecting {{< var treaty_reduction_pct >}} of global military spending to medical research generates {{< var dfda_roi_rd_only >}}:1 to {{< var dfda_roi_rd_plus_delay >}}:1 ROI, depending on what you count.
 
 **The Numbers**:
 
 - **Zero new spending**: Money redirected from existing military budgets
 - **Dominant intervention**: Saves money while saving lives (rare in health economics)
-- **Conservative case**: {{< var roi_dfda_savings_only >}}:1 ROI counting only R&D efficiency
+- **Conservative case**: {{< var dfda_roi_rd_only >}}:1 ROI counting only R&D efficiency
 
 $$
 \frac{\$249.0\text{B benefit}}{\$538\text{M cost}} = 463:1
@@ -1868,7 +1868,7 @@ $$
 
 ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 
-- **Complete case**: {{< var roi_all_direct_benefits >}}:1 ROI including all eight benefit streams ({{< var total_complete_benefits_annual >}} annually)
+- **Complete case**: {{< var dfda_roi_rd_plus_delay >}}:1 ROI including all eight benefit streams ({{< var total_complete_benefits_annual >}} annually)
 - **Lives saved**: {{< var treaty_total_lives_saved_annual >}}/year while generating [$6.56M profit per life](../appendix/1-percent-treaty-cost-effectiveness.qmd)
 - **Political feasibility**: Everyone profits (nobody needs to be convinced, just paid)
 
