@@ -9,8 +9,6 @@ description: CRM system using Airtable for automated lead capture, classificatio
 **System:** Airtable + Email + Calendar + Automation
 **Goal:** Turn every interaction into a tracked, measurable opportunity to advance the mission
 
----
-
 ## The Philosophy: CRM as a Second Brain
 
 Most movements fail not because the idea is bad, but because they lose track of people. Someone emails you interest in helping. You mean to respond. Life happens. Two weeks later, they've moved on.
@@ -23,13 +21,11 @@ This system makes that impossible. Every person who touches your organization ge
 
 Think of it as a conveyor belt for converting interest into impact.
 
----
-
 ## The Core Workflow
 
 ### Step 1: Capture (Zero Manual Entry)
 
-**Every engagement creates a record automatically:**
+#### Every engagement creates a record automatically
 
 #### Source: Website Form Submission
 
@@ -56,8 +52,6 @@ Think of it as a conveyor belt for converting interest into impact.
 
 **The Rule:** If it's not in Airtable, it didn't happen.
 
----
-
 ### Step 2: Classify (Automatic Tagging)
 
 When an engagement is created, automatically classify the person:
@@ -81,8 +75,6 @@ Partnership Inquiry      →  Prospect (Partnership tag)
 - Condition: Check engagement type
 - Action: Update linked `Personnel` record Status field
 
----
-
 ### Step 3: Route (Assign Ownership)
 
 Not all leads are equal. Route to the right person:
@@ -105,8 +97,6 @@ Not all leads are equal. Route to the right person:
   - Send email to <founder@warondisease.com>
   - Create calendar reminder in 4 hours if not responded
 
----
-
 ### Step 4: Nurture (Automated Follow-Up Sequences)
 
 People need multiple touches before they act. Build sequences:
@@ -115,7 +105,7 @@ People need multiple touches before they act. Build sequences:
 
 **Goal:** Convert passive voter into active promoter
 
-**Timeline:**
+#### Timeline
 
 - **Day 0:** Vote submitted
   - Send thank you email with referral link
@@ -153,13 +143,11 @@ Action 6: Wait 23 days
 Action 7: Send re-engagement email
 ```
 
----
-
 #### Sequence 2: VICTORY Bond Prospect → Committed Investor
 
 **Goal:** Move from "interesting" to "wired the money"
 
-**Timeline:**
+#### Timeline
 
 - **Hour 0:** Interest form submitted
   - Send personal email from founder
@@ -184,19 +172,17 @@ Action 7: Send re-engagement email
 - **Day 30:** Final touch
   - "We're moving forward. Last chance to get in at this valuation."
 
-**Notes:**
+#### Notes
 
 - High-touch, not automated blast
 - Each email should feel personal
 - Log EVERYTHING in Engagements table
 
----
-
 #### Sequence 3: Partnership Inquiry → Signed MOU
 
 **Goal:** Organizations that can amplify the mission
 
-**Timeline:**
+#### Timeline
 
 - **Day 0:** Inquiry received
   - Send partnership deck
@@ -218,8 +204,6 @@ Action 7: Send re-engagement email
 
 - **Day 21:** If no movement
   - "Checking in - still interested in [specific collaboration]?"
-
----
 
 ### Step 5: Measure (Conversion Tracking)
 
@@ -258,8 +242,6 @@ IF(
 )
 ```
 
----
-
 ### Step 6: Escalate (Alert on Anomalies)
 
 Watch for patterns that need human intervention:
@@ -284,8 +266,6 @@ Watch for patterns that need human intervention:
 
 **Implementation:** Airtable automations with conditional logic
 
----
-
 ## Advanced: Email Automation Integration
 
 For sophisticated email sequences, integrate with:
@@ -306,8 +286,6 @@ For sophisticated email sequences, integrate with:
 - Cons: Expensive ($100-500/month), more complex setup
 
 **Recommended for Pre-Seed:** Start with Option A, graduate to Option B at 1,000+ contacts.
-
----
 
 ## The Daily Workflow for Team
 
@@ -342,8 +320,6 @@ For sophisticated email sequences, integrate with:
    - Merge duplicate personnel records
    - Fix broken links between tables
    - Archive dead leads (Status → Inactive)
-
----
 
 ## Templates: Copy-Paste Automation Configs
 
@@ -381,8 +357,6 @@ Actions:
        - The DIH Team
 ```
 
----
-
 ### Template 2: High-Value Investment Lead → Founder Alert
 
 ```
@@ -417,8 +391,6 @@ Actions:
      Time: 4 hours from now
      Description: If not responded by then, URGENT escalation
 ```
-
----
 
 ### Template 3: 7-Day Inactive Voter → Re-engagement
 
@@ -457,8 +429,6 @@ Actions:
        Will you?
 ```
 
----
-
 ## Common Pitfalls to Avoid
 
 ### 1. Over-Automation
@@ -486,8 +456,6 @@ Actions:
 **Problem:** Relying on memory = guaranteed drops
 **Solution:** Set Follow-up Date on EVERY engagement
 
----
-
 ## Success Metrics
 
 Track these weekly:
@@ -500,8 +468,6 @@ Track these weekly:
 | Conversion: Prospect → Active | 20%+ | Status changes in Personnel |
 | Avg Time to First Response | <24hrs | Engagement created → first reply |
 | Lead Leak Rate | <5% | Inquiries with no engagement record |
-
----
 
 ## Next-Level: AI-Powered Engagement
 
@@ -524,8 +490,6 @@ Once you have 1,000+ engagements logged, you can train AI to:
 **Cost:** ~$50/month for OpenAI API at this scale
 **ROI:** 10x time savings on personalization
 
----
-
 ## Conclusion
 
 This engagement tracking workflow ensures **zero people fall through the cracks**.
@@ -535,3 +499,4 @@ Every vote, every email, every call is captured, categorized, and converted into
 It's the difference between a movement that fizzles and one that reaches the {{< var global_population_activism_threshold_pct >}} tipping point.
 
 **Now implement it. Your first 100 conversations will set the template for the next 100 million.**
+

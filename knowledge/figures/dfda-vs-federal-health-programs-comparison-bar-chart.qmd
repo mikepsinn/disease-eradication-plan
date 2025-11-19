@@ -5,6 +5,7 @@ import numpy as np
 from pathlib import Path
 
 # --- Import centralized style ---
+
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, get_figure_output_path)
@@ -12,6 +13,7 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # --- Data (annual costs in millions) ---
+
 programs = [
     'dFDA Infrastructure\n(Lean Ecosystem)',
     'Cancer Moonshot\nInitiative',
@@ -27,11 +29,13 @@ costs = [
 multipliers = ['1x', '6.4x', '12.5x', '180x']
 
 # --- Create figure ---
+
 fig, ax = plt.subplots(figsize=(12, 8))
 
 y_pos = np.arange(len(programs))
 
 # Create horizontal bars
+
 bars = ax.barh(
     y_pos,
     costs,
@@ -42,14 +46,17 @@ bars = ax.barh(
 )
 
 # Highlight dFDA with solid fill
+
 bars[0].set_facecolor(COLOR_BLACK)
 bars[0].set_hatch(None)
 
 # Add pattern to others
+
 for bar in bars[1:]:
     bar.set_hatch(PATTERN_DIAGONAL)
 
 # --- Add value labels ---
+
 for i, (cost, mult) in enumerate(zip(costs, multipliers)):
     # Cost label
     if cost < 2000:  # Small/medium bars: label outside (to the right)
@@ -72,6 +79,7 @@ for i, (cost, mult) in enumerate(zip(costs, multipliers)):
         )
 
 # --- Styling ---
+
 ax.set_title(
     'dFDA Cost vs Other Federal Health Programs\nAnnual Operating Budget Comparison',
     fontsize=34, fontweight='bold',
@@ -88,26 +96,32 @@ ax.set_yticks(y_pos)
 ax.set_yticklabels(programs, fontsize=22, fontweight='bold')
 
 # Remove x-axis (data is labeled)
+
 ax.set_xticks([])
 ax.spines['bottom'].set_visible(False)
 
 # Clean up chart
+
 clean_spines(ax)
 ax.spines['left'].set_linewidth(2.5)
 ax.tick_params(axis='y', length=0)
 
 # Invert y-axis so dFDA is at top
+
 ax.invert_yaxis()
 
 # Add watermark
+
 add_watermark(fig)
 
 # --- Save figure ---
+
 output_path = get_figure_output_path('dfda-vs-federal-health-programs-comparison-bar-chart.png')
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
+
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,

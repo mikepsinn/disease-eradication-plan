@@ -2,16 +2,18 @@
 title: Global Survey on Human Values
 description: Survey measuring public support for redirecting military spending to health innovation and modernizing medical research systems.
 published: true
-date: 2024-06-10T00:00:00.000Z
-tags: [survey, global-values, human-priorities, public-opinion, medical-research, 1-percent-treaty]
-dateCreated: 2024-06-10T00:00:00.000Z
+tags:
+  - survey
+  - global-values
+  - human-priorities
+  - public-opinion
+  - medical-research
+  - 1-percent-treaty
 ---
 
 # Global Survey on Human Values
 
 The current medical research system is slow and expensive. New treatments take an average of **17 years** to reach patients, and **95% of rare diseases have no approved treatment**. This survey is designed to measure public support for a global initiative to upgrade this system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform worldwide.
-
----
 
 ## Section 1: Priorities and Funding
 
@@ -32,8 +34,6 @@ The current medical research system is slow and expensive. New treatments take a
 - **Military / War:** \$**\_\_**
 - **A Decentralized Institutes of Health (to fund efficient medical trials):** \$**\_\_**
 
----
-
 ## Section 2: Principles for Research Reform
 
 The following questions are about the core principles of this initiative. The central proposal is to upgrade our medical research infrastructure with an **open-source, decentralized platform**, as outlined in the ["Right to Trial and FDA Upgrade Act"](../../appendix/right-to-trial-fda-upgrade-act.qmd).
@@ -46,11 +46,11 @@ This "FDA.gov v2" platform would work like this:
 
 <!-- TODO: Fix broken link - This new model is made possible by dramatic cost reductions. Evidence from successful, large-scale studies like the UK's [RECOVERY trial](../../reference/recovery-trial-case-study.md) shows this approach can cut per-patient trial costs by over **95%** (from ~$43,000 down to ~$500), enabling more research for more people. -->
 
-**Q7: Support for the Principles**
+### Q7: Support for the Principles
 
 Based on these goals, to what extent do you support or oppose creating a new system based on these principles?
 
-**Q8: Personal Participation**
+#### Q8: Personal Participation
 
 If you or a loved one had a serious condition, and a decentralized trial for a promising new treatment was available through a platform like the one described, how likely would you be to participate?
 
@@ -60,15 +60,13 @@ If you or a loved one had a serious condition, and a decentralized trial for a p
 - Somewhat Unlikely
 - Very Unlikely
 
----
-
 ## Section 3: Wishocracy - Setting Public Priorities
 
 This section uses a method called **"Wishocracy"** to understand your priorities. You will be shown a series of randomly chosen pairs of public spending areas. For each pair, please allocate **$100** between them based on what you believe is more important.
 
 This helps illustrate how public priorities may differ from current government spending.
 
-**Part A: Domestic Program Funding**
+### Part A: Domestic Program Funding
 
 For each pair of U.S. federal programs, allocate $100 based on your priorities.
 
@@ -84,7 +82,7 @@ For each pair of U.S. federal programs, allocate $100 based on your priorities.
 - International Aid & Diplomacy
 - Direct Payments to Citizens (Universal Basic Income)
 
-**Part B: Global Challenge Priorities**
+#### Part B: Global Challenge Priorities
 
 Now, allocate $100 for each pair of major global challenges.
 
@@ -108,13 +106,11 @@ Would you support the adoption of a system such as Wishocracy that allowed your 
 - Oppose
 - Strongly Oppose
 
----
-
 ## Section 4: About You (Optional)
 
 This final section is optional, but your answers will help us better understand how different groups of people view these issues. All information is anonymous unless you consent to be contacted below.
 
-**Contact Information**
+### Contact Information
 
 If you are willing to be contacted by our team for follow-up discussions or to participate in future initiatives, please provide your information below.
 
@@ -124,9 +120,9 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 
 [ ] **I consent to be contacted** by to discuss my responses or for future participation. I understand that my contact information will be kept confidential and used only for this purpose.
 
-**Demographics**
+#### Demographics
 
-**What is your country of residence?**
+##### What is your country of residence?
 
 <input type="text" size="20">
 
@@ -134,7 +130,7 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 
 <input type="text" size="10">
 
-**What is your age range?**
+###### What is your age range?
 
 - 18-29
 - 30-44
@@ -167,13 +163,13 @@ If you are willing to be contacted by our team for follow-up discussions or to p
 
 ---
 
-**Thank you for your participation!**
+###### Thank you for your participation!
 
 **Help Us Create a World Without Suffering**
 
 Your responses help demonstrate public demand for faster, more accessible medical research. To make this initiative successful, we need evidence of broad public support.
 
-**Share This Survey & Earn Rewards**
+###### Share This Survey & Earn Rewards
 
 Share your unique referral link below. For every person who completes the survey using your link, you'll earn points that can be redeemed for:
 
@@ -185,7 +181,7 @@ Share your unique referral link below. For every person who completes the survey
 
 **Share via:** [Email] [Twitter] [Facebook] [LinkedIn] [Copy Link]
 
-**Make a Direct Donation**
+###### Make a Direct Donation
 
 If you'd like to support our advocacy efforts directly, your donation will help fund:
 

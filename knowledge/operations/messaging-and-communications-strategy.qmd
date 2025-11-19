@@ -2,9 +2,11 @@
 title: How to Talk About Not Dying Without Sounding Insane
 description: Why sentiment analysis matters and how better messaging gets you money and participants.
 published: true
-date: 2025-06-08T02:00:00.000Z
-tags: [strategy, messaging, roi, sentiment analysis]
-dateCreated: 2025-06-08T02:00:00.000Z
+tags:
+  - strategy
+  - messaging
+  - roi
+  - sentiment analysis
 ---
 
 # How to Talk About Not Dying Without Sounding Insane
@@ -31,13 +33,13 @@ Three types of returns:
 
 ### Phase 1: Figure Out What People Actually Think
 
-**What you're doing:**
+#### What you're doing
 
 - Find out what people hope for, fear, and misunderstand about longevity, decentralized science, and AI in medicine
 - Identify who influences these opinions and where conversations happen
 - Group audiences by what they believe (not what you want them to believe)
 
-**What you get:**
+#### What you get
 
 - **Sentiment Analysis Report:** What people think and why
 - **Narrative Map:** Who's saying what, where, and to whom
@@ -45,13 +47,13 @@ Three types of returns:
 
 ### Phase 2: Say Things That Work
 
-**What you're doing:**
+#### What you're doing
 
 - Create messaging that addresses real concerns (found in Phase 1)
 - Test different messages on different audiences
 - Give the team consistent talking points so you don't sound like seven different organizations
 
-**What you get:**
+#### What you get
 
 - **Messaging Guide:** Official positioning, key narratives, how to talk about controversial stuff
 - **Tested content:** A/B tested ads, landing pages, social posts that actually convert
@@ -81,21 +83,21 @@ Don't skip the baseline. Otherwise you're just guessing.
 
 Connect metrics to dollars.
 
-**Getting Funding:**
+#### Getting Funding
 
 Good messaging = more successful grant proposals and investor pitches.
 
 - If a {{< var dfda_opex_community_billions >}} grant gets approved and messaging contributed 25% to success, that's {{< var recovery_trial_cost_per_patient >}},000 in value
 - Public referendum support = de-risking for investors = higher likelihood of funding
 
-**Getting Trial Participants (Bigger Long-Term Value):**
+#### Getting Trial Participants (Bigger Long-Term Value)
 
 This is where the real money is.
 
 - **Lower recruiting costs:** Clinical trial participant acquisition costs {{< var recovery_trial_cost_per_patient >}} to $7,500 each. A 15-20% reduction from better messaging = massive savings
 - **Faster recruiting:** Trial delays cost $600K-$8M per day. Recruit faster = save millions, get treatments to market sooner
 
-**Other Money Stuff:**
+#### Other Money Stuff
 
 - Lower recruiter fees for hiring
 - Faster time-to-hire for talent
@@ -104,15 +106,15 @@ This is where the real money is.
 
 Some benefits don't convert to dollars but matter for survival:
 
-**Avoiding Disasters:**
+#### Avoiding Disasters
 
 Address public fears now = prevent backlash later. Reputation damage can kill the whole initiative.
 
-**Controlling the Narrative:**
+#### Controlling the Narrative
 
 If you don't define yourself, your critics will. Own the story or become the villain in someone else's.
 
-**Network Effects:**
+#### Network Effects
 
 Clear messaging attracts participants, researchers, developers. They attract more. Momentum builds. Or it doesn't.
 
@@ -120,7 +122,7 @@ Clear messaging attracts participants, researchers, developers. They attract mor
 
 **Spend:** $75,000 (sentiment analysis software, surveys, consulting)
 
-**Get (conservative estimates over 12 months):**
+### Get (conservative estimates over 12 months)
 
 1. **Help close a $1M grant** (messaging contributes 20%) = **${{< var qalys_from_faster_access >}}** attributable value
 2. **Successful referendum** = leverage for next funding round (increases probability of success)

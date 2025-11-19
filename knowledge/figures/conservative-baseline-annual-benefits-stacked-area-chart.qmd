@@ -82,12 +82,14 @@ for year in years:
     gdp_boost_annual_list.append(boosted_income - base_income_growth)
 
 # Convert to arrays
+
 peace_div_annual_arr = np.array(peace_div_annual_list)
 healthcare_annual_arr = np.array(healthcare_annual_list)
 productivity_annual_arr = np.array(productivity_annual_list)
 gdp_boost_annual_arr = np.array(gdp_boost_annual_list)
 
 # Calculate CUMULATIVE values (running total)
+
 peace_div_values = np.cumsum(peace_div_annual_arr)
 healthcare_values = np.cumsum(healthcare_annual_arr)
 productivity_values = np.cumsum(productivity_annual_arr)

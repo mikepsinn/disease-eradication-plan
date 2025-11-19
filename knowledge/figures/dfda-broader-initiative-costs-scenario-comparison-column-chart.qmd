@@ -5,6 +5,7 @@ import numpy as np
 from pathlib import Path
 
 # --- Import centralized style ---
+
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_DOTS, get_figure_output_path)
@@ -12,6 +13,7 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # --- Data (upfront costs in millions) ---
+
 components = [
     'Global Data\nIntegration',
     'Bounty &\nPrize Program',
@@ -21,17 +23,20 @@ components = [
 ]
 
 # Upfront costs in millions
+
 best_case = [2, 1, 1.5, 0, 0]
 medium_case = [125, 15, 60, 12, 1]
 worst_case = [1500, 50, 300, 125, 6]
 
 # --- Create figure ---
+
 fig, ax = plt.subplots(figsize=(14, 8))
 
 x = np.arange(len(components))
 width = 0.25
 
 # Create grouped bars
+
 bars1 = ax.bar(x - width, best_case, width, label='Best Case',
                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=None)
 bars2 = ax.bar(x, medium_case, width, label='Medium Case',
@@ -40,6 +45,7 @@ bars3 = ax.bar(x + width, worst_case, width, label='Worst Case',
                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, hatch=PATTERN_HORIZONTAL)
 
 # --- Add value labels on bars ---
+
 def add_labels(bars, values):
     for bar, val in zip(bars, values):
         if val == 0:
@@ -80,6 +86,7 @@ add_labels(bars2, medium_case)
 add_labels(bars3, worst_case)
 
 # --- Styling ---
+
 ax.set_title(
     'dFDA Broader Initiative Costs\nUpfront Investment by Scenario',
     fontsize=34, fontweight='bold',
@@ -96,33 +103,40 @@ ax.set_xticks(x)
 ax.set_xticklabels(components, fontsize=20, fontweight='bold')
 
 # Set y-axis with log scale for better visualization
+
 ax.set_yscale('log')
 ax.set_ylim(0.5, 3000)
 
 # Customize y-axis
+
 y_ticks = [1, 10, 100, 1000]
 ax.set_yticks(y_ticks)
 ax.set_yticklabels([f'${y}M' if y < 1000 else f'${y/1000:.1f}B' for y in y_ticks], fontsize=18)
 ax.spines['left'].set_linewidth(2.5)
 
 # Add legend
+
 legend = ax.legend(loc='upper right', fontsize=20, frameon=True, edgecolor=COLOR_BLACK, facecolor=COLOR_WHITE)
 legend.get_frame().set_linewidth(2)
 
 # Clean up chart
+
 clean_spines(ax)
 ax.spines['bottom'].set_linewidth(2.5)
 ax.tick_params(axis='x', length=0)
 ax.tick_params(axis='y', length=6, width=2)
 
 # Add grid for readability
+
 ax.grid(axis='y', alpha=0.3, linestyle='--', linewidth=1, color=COLOR_BLACK)
 ax.set_axisbelow(True)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Add note about total costs
+
 fig.text(
     0.5, 0.02,
     'Total Initiative Cost (excluding core platform): Best Case $4.5M | Medium Case $213M | Worst Case $1.98B',
@@ -130,11 +144,13 @@ fig.text(
 )
 
 # --- Save figure ---
+
 output_path = get_figure_output_path('dfda-broader-initiative-costs-scenario-comparison-column-chart.png')
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
+
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,

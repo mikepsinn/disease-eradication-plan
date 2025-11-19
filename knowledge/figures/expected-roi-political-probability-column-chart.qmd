@@ -10,6 +10,7 @@ import numpy as np
 from pathlib import Path
 
 # Import centralized style
+
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
@@ -18,6 +19,7 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # Data from Expected Value Analysis section
+
 probabilities = ['10%\n(Conservative)', '25%\n(Moderate)', '40%\n(Moderate-High)', '50%\n(Optimistic)']
 expected_rois = [
     float(EXPECTED_ROI_CONSERVATIVE_DFDA),
@@ -27,9 +29,11 @@ expected_rois = [
 ]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(12, 8))
 
 # Create bars - use solid black for emphasis on the moderate case (most realistic)
+
 bars = ax.bar(
     range(len(probabilities)),
     expected_rois,
@@ -41,6 +45,7 @@ bars = ax.bar(
 )
 
 # Add value labels
+
 for i, (bar, roi) in enumerate(zip(bars, expected_rois)):
     label = f'{roi:.3g}:1'
     ax.text(
@@ -58,23 +63,29 @@ for i, (bar, roi) in enumerate(zip(bars, expected_rois)):
     )
 
 # Add probability labels below bars
+
 ax.set_xticks(range(len(probabilities)))
 ax.set_xticklabels(probabilities, fontsize=18)
 
 # Remove y-axis (values are on bars)
+
 ax.get_yaxis().set_visible(False)
 
 # Set title
+
 ax.set_title('Expected ROI by Political Success Probability', 
              fontsize=28, weight='bold', pad=30)
 
 # Clean spines
+
 clean_spines(ax, ['top', 'right', 'left'])
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG
+
 output_path = get_figure_output_path('expected-roi-political-probability-column-chart.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 add_png_metadata(output_path,

@@ -26,6 +26,7 @@ fig, ax = plt.subplots(figsize=(12, 6))
 
 categories = ['War on\nHumanity', 'War on Disease']
 # Explicitly convert to native Python float to avoid Parameter repr in labels
+
 military_total = float.__new__(float, GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
 cure_spending = float.__new__(float, GLOBAL_MED_RESEARCH_SPENDING)
 

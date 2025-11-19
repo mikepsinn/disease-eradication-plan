@@ -5,6 +5,7 @@ import numpy as np
 from pathlib import Path
 
 # --- Import centralized style ---
+
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, get_figure_output_path)
@@ -12,14 +13,17 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # --- Data ---
+
 scenarios = ['Best Case\n(Lowest Costs)', 'Base Case\n(Lean Ecosystem)', 'Worst Case\n(Highest Costs)']
 roi_values = [2577, 463, 66]
 costs = ['$19.4M/year', '$48M/year', '$753M/year']
 
 # --- Create figure ---
+
 fig, ax = plt.subplots(figsize=(10, 7))
 
 # Create bars with patterns to distinguish
+
 bars = ax.bar(
     range(len(scenarios)),
     roi_values,
@@ -30,11 +34,13 @@ bars = ax.bar(
 )
 
 # Different patterns for each bar
+
 bars[0].set_hatch(None)  # White fill for best case
 bars[1].set_hatch(PATTERN_DIAGONAL)  # Diagonal for base case (emphasis)
 bars[2].set_hatch(PATTERN_HORIZONTAL)  # Horizontal for worst case
 
 # --- Add value labels above bars ---
+
 for i, (roi, cost) in enumerate(zip(roi_values, costs)):
     # ROI value above bar
     ax.text(
@@ -66,6 +72,7 @@ for i, (roi, cost) in enumerate(zip(roi_values, costs)):
         )
 
 # --- Styling ---
+
 ax.set_title(
     'dFDA Return on Investment\nAcross Cost Scenarios',
     fontsize=36, fontweight='bold',
@@ -82,26 +89,32 @@ ax.set_xticks(range(len(scenarios)))
 ax.set_xticklabels(scenarios, fontsize=24, fontweight='bold')
 
 # Set y-axis limits to give space for labels above
+
 ax.set_ylim(0, max(roi_values) * 1.15)
 
 # Remove y-axis (data is labeled)
+
 ax.set_yticks([])
 ax.spines['left'].set_visible(False)
 
 # Clean up chart
+
 clean_spines(ax)
 ax.spines['bottom'].set_linewidth(2.5)
 ax.tick_params(axis='x', length=0)  # Remove x-axis ticks
 
 # Add watermark
+
 add_watermark(fig)
 
 # --- Save figure ---
+
 output_path = get_figure_output_path('dfda-roi-sensitivity-analysis-column-chart.png')
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
+
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,

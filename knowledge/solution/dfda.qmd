@@ -195,12 +195,14 @@ Companies like [Medable](../references.qmd#dct-platform-funding-medable) ($521M 
 Why compete with them? Partner instead.
 
 **The dFDA provides**:
+
 - Open protocol for data exchange (like email protocols)
 - Federated data network (data stays in Epic/Cerner/Apple Health systems)
 - Treatment ranking algorithms (open source, anyone can verify)
 - Trial matching services (connects patients to ANY platform)
 
 **Existing platforms provide**:
+
 - Patient-facing apps and interfaces
 - Trial management tools
 - Sponsor relationships
@@ -211,31 +213,37 @@ Why compete with them? Partner instead.
 Before writing code, form partnerships with:
 
 **EHR Vendors** (they have the patient data):
+
 - Epic Systems (31% of US hospital market)
 - Cerner/Oracle Health (26% of US market)
 - Allscripts/Veradigm (ambulatory care)
 
 **Tech Giants** (they have distribution):
+
 - Apple Health (billions of devices)
 - Google Health (Android ecosystem)
 
 **Existing DCT Platforms** (they have expertise):
+
 - Medable, Science 37, Thread
 - Let them be "Founding Partners" with governance seats
 
 **International Partners** (already proven it works):
+
 - NHS/UK Biobank ([RECOVERY trial](../appendix/recovery-trial.qmd) model)
 - NIH All of Us (400k+ participants, genomic data)
 
 ### Why They'll Cooperate
 
 **For EHR vendors**:
+
 - Reduced certification fees if they enable data portability
 - Public "seal of approval" for interoperability
 - Patient pressure (people want their data to work for them)
 - Eventually: regulatory requirement
 
 **For DCT platforms**:
+
 - "Founding Partner" status (branding/marketing value)
 - Access to {{< var treaty_annual_funding >}} annual DIH funding pool
 - Governance representation
@@ -243,6 +251,7 @@ Before writing code, form partnerships with:
 - Revenue sharing on trials they run
 
 **For pharma/CROs**:
+
 - 50-95% cost reduction per trial
 - 240x more participants available
 - Faster enrollment
@@ -251,6 +260,7 @@ Before writing code, form partnerships with:
 ### Federated, Not Centralized
 
 Data doesn't move to a central database. It stays where it is:
+
 - Epic systems keep their data
 - Apple Health keeps its data
 - Cerner keeps its data
@@ -258,6 +268,7 @@ Data doesn't move to a central database. It stays where it is:
 The dFDA protocol just lets you run queries ACROSS systems without moving data. Like [TriNetX](../references.qmd#trinetx-federated-network) does with 300M+ patient records.
 
 This solves:
+
 - GDPR/HIPAA compliance (data never leaves source)
 - Privacy concerns (no central honeypot to hack)
 - Vendor cooperation (they keep control)
