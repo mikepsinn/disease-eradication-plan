@@ -103,13 +103,15 @@ The DIH is the **single governance layer** for all health research funding. It's
 
 ### The Architecture
 
-**DIH (Decentralized Institutes of Health)**
+#### DIH (Decentralized Institutes of Health)
+
 - Holds the treasury (from [1% Treaty](1-percent-treaty.qmd))
 - Handles ALL budgeting decisions via [Wishocracy](wishocracy.qmd)
 - Funds campaigns, not bureaucracies
 - No CEO, no board, no one to corrupt
 
 **dFDA (Decentralized FDA)**
+
 - Pure technical platform/protocol
 - No budget authority (gets funded BY DIH like any other campaign)
 - Just provides marketplace infrastructure
@@ -118,6 +120,7 @@ The DIH is the **single governance layer** for all health research funding. It's
 ### How It Actually Works
 
 **1. Fill the Treasury**
+
 The [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury.
 
 **2. Anyone Can Propose a Campaign**
@@ -159,7 +162,8 @@ Campaigns that deliver impact get continued funding. Failures get defunded. It's
 
 **Traditional NIH:** Bribe the director → Control $47B
 
-**DIH:**
+#### DIH
+
 - No director to bribe
 - Millions vote via pairwise comparisons
 - Open-source allocation algorithms

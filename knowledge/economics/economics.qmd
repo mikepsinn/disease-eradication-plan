@@ -366,8 +366,8 @@ The methodology follows standard health economics practices, except instead of m
 
 You spend {{< var treaty_campaign_total_cost >}} convincing humans that not dying is preferable to dying. This covers:
 
-- Loud internet people who make 280 million others also become loud ({{< var treaty_campaign_budget_viral_referendum_billions >}})
-- Professional democracy purchasers, previously employed corrupting government for weapons manufacturers, now corrupting government for medicine manufacturers ({{< var treaty_campaign_budget_ai_lobbying_billions >}})
+- Global referendum campaign to get 280M votes ({{< var treaty_campaign_budget_referendum >}})
+- Professional democracy purchasers, previously employed corrupting government for weapons manufacturers, now corrupting government for medicine manufacturers ({{< var treaty_campaign_budget_lobbying >}})
 - Super PAC papers that make politicians care about living voters ({{< var treaty_campaign_budget_super_pacs_billions >}})
 
 This is a one-time cost. You either convince humanity to stop being stupid or you don't. There's no subscription model for common sense.
@@ -439,14 +439,15 @@ This system: "Here's ${{< var system_profit_per_life_saved_millions >}}M, we sav
 
 For those who need to see the actual equations before believing anything:
 
-**NPV of Costs:**
+#### NPV of Costs
+
 $$
 \text{NPV}(\text{Costs}) = C_{0} + \sum_{t=1}^{T} \frac{C_{\text{op}}(t)}{(1 + r)^t}
 $$
 
 where $C_{0}$ is upfront costs (platform development, legal structure, data integration), $C_{\text{op}}(t)$ is annual operating costs in year $t$ (maintenance, analysis, administration), $r$ is the discount rate ({{< var npv_discount_rate_standard >}}), and $T$ is the time horizon ({{< var npv_time_horizon_years >}} years).
 
-**NPV of Benefits:**
+#### NPV of Benefits
 
 Annual benefits $S(t)$ are calculated as:
 $$
@@ -460,7 +461,8 @@ $$
 \text{NPV}(\text{Benefits}) = \sum_{t=1}^{T} \frac{S(t)}{(1 + r)^t}
 $$
 
-**Return on Investment:**
+#### Return on Investment
+
 $$
 \text{ROI} = \frac{\text{NPV}(\text{Benefits})}{\text{NPV}(\text{Costs})}
 $$
@@ -1287,18 +1289,14 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 ### Campaign Budget Breakdown
 
-The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var roi_all_direct_benefits >}}:1 ROI) allocates funds across seven strategic categories:
+The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) (used as denominator in complete case {{< var roi_all_direct_benefits >}}:1 ROI) allocates funds across three strategic categories:
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **[Viral Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_viral_referendum_billions >}} | Global direct democracy campaign, social media amplification, petition platforms |
-| **[AI-Assisted Lobbying](campaign-budget.qmd)** | {{< var treaty_campaign_budget_technology_billions >}} | Automated legislative outreach, personalized constituent messaging, political mapping |
-| **[Technology Platform](campaign-budget.qmd)** | {{< var treaty_campaign_budget_technology_billions >}} | Voting infrastructure, transparency systems, wishocracy implementation |
-| **[Legal & Compliance](campaign-budget.qmd)** | {{< var treaty_campaign_budget_partnerships_billions >}} | International treaty law, regulatory compliance, jurisdictional coordination |
-| **[Partnerships](campaign-budget.qmd)** | {{< var treaty_campaign_budget_partnerships_billions >}} | Coalition building with NGOs, medical organizations, patient advocacy groups |
-| **[Operations](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve_billions >}} | Campaign management, communications, logistics, staffing |
-| **[Reserve](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve_billions >}} | Contingency for unforeseen challenges and opportunities |
-| **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline (amortized: {{< var treaty_campaign_budget_technology_billions >}}/year) |
+| **[Global Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_referendum >}} | Global direct democracy campaign (280M votes), biometric verification, viral referral system, platform development. [Scenario analysis](campaign-budget.qmd#base-case-scenario): $140M-$406M depending on adoption curve |
+| **[Political Lobbying](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), Super PACs, defense industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
+| **[Reserve Fund](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
+| **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The campaign cost is a one-time investment with perpetual returns, as the system becomes self-sustaining through the captured peace dividend.
 
@@ -1347,6 +1345,7 @@ They found a treatment that cut COVID deaths by 30% and saved over 1 million liv
 This isn't theoretical. It's not a prototype. It happened. In reality. With actual dying people who became not-dying people.
 
 The technology required:
+
 - Websites (invented 1991)
 - Databases (invented 1960s)
 - The ability to ask "Did you die?" (invented ~50,000 BC)
@@ -1360,11 +1359,13 @@ If you can order pizza online, you can join a clinical trial online. The technic
 **Why this actually won't happen**:
 
 Half of humanity says they'd volunteer for clinical trials if they could. Currently only {{< var current_clinical_trial_participation_rate >}} participate because:
+
 - Trials require traveling 500 miles to university hospitals
 - Trials exclude 85% of actual patients (too old, too young, too sick, wrong kind of sick)
 - Trials pay nothing and cost weeks of your time
 
 The dFDA fixes all of this:
+
 - Join from your couch
 - Everyone qualifies (you don't need to be the perfect kind of sick)
 - Free treatment + compensation for your data
@@ -1407,11 +1408,13 @@ All transactions recorded on blockchain. All spending public. All decisions audi
 It's democracy but for medicine instead of for choosing which rich person gets to make laws.
 
 The dFDA runs as a decentralized autonomous organization (DAO):
+
 - Open-source code (anyone can verify it works)
 - Distributed validation (no single point of failure)
 - Works with existing regulators (it's additive, not replacement)
 
-**Accountability measures:**
+### Accountability measures
+
 - Annual third-party audits of DIH treasury and dFDA operations
 - Public reporting of all spending and outcomes
 - Milestone-based funding (money releases when targets hit)
@@ -1676,6 +1679,7 @@ Critics will claim decentralized trials are less safe than traditional trials. T
 **What The Current FDA System Actually Does For Safety**
 
 The FDA tests new heart drugs on:
+
 - 275 people
 - Who don't have heart disease (excluded for comorbidities)
 - Who aren't old (excluded - too risky)
@@ -1702,12 +1706,14 @@ Phase III tests "Does this treatment work better than alternatives?" This doesn'
 **Why The dFDA Detects MORE Safety Problems, Not Fewer**
 
 Current system safety surveillance:
+
 - Tests on 15% of actual patient populations (excludes 85%)
 - Trials last 6-18 months (misses long-term effects)
 - Only 37% of negative results get published (companies hide failures)
 - Small sample sizes (testing on 100-275 people, prescribing to millions)
 
 dFDA safety surveillance:
+
 - Tests on 100% of patient populations (everyone who volunteers)
 - Continuous monitoring through EHR integration (detects long-term effects)
 - All results automatically published (no hiding negative data)
@@ -1723,20 +1729,21 @@ The dFDA will detect adverse events that the current system misses:
 
 4. **Rare events**: Testing on 100 people catches common side effects. Testing on 100,000 people catches rare side effects. The dFDA does the latter.
 
-**The Publication Bias Safety Disaster**
+##### The Publication Bias Safety Disaster
 
 Current system safety flaw: Companies publish 94% of positive results but only 37% of negative results.
 
 Translation: When a drug works, everyone hears about it. When a drug kills people, 63% of the time nobody finds out.
 
 This means:
+
 - Other companies waste billions testing the same failed (and dangerous) drugs
 - Doctors prescribe drugs not knowing they failed previous trials
 - Patients take medications that killed people in hidden trials
 
 The dFDA solves this by making all results public automatically. Every trial registered. Every outcome recorded. Every adverse event published. No hiding failures. No repeating dangerous experiments.
 
-**The Actual Safety Comparison**
+###### The Actual Safety Comparison
 
 | Safety Metric | Current FDA System | dFDA System |
 |---|---|---|
@@ -1752,7 +1759,7 @@ The current system is "safe" the way TSA is "safe" - it provides the appearance 
 
 The dFDA is safe the way seatbelts and airbags are safe - it actually measures what happens to real people in real conditions and adjusts accordingly.
 
-**What About Truly Novel Drugs?**
+###### What About Truly Novel Drugs?
 
 For novel mechanism-of-action drugs (new compounds never tested in humans), Phase I and early Phase II safety testing remains in controlled settings with intensive monitoring.
 
@@ -1771,6 +1778,7 @@ Pharmaceutical companies benefit from high trial costs because it prevents compe
 FDA bureaucrats benefit from slow approvals because they face no consequences for delays but get pilloried if they approve something that causes newsworthy harms. Delay = safety from blame.
 
 Neither group benefits from the dFDA making trials cheaper, faster, and more accessible. So they'll claim it's "unsafe" while defending a system that:
+
 - Killed 60,000 people with Vioxx
 - Delayed beta-blockers for a decade, killing 100,000+ Americans
 - Excludes 85% of patients from trials then prescribes them the drugs anyway

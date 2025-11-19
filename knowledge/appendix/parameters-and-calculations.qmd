@@ -1027,7 +1027,7 @@ Annual increase in global nuclear weapons budget
 ::: {.callout-tip icon=false collapse=false}
 ## Global Population 2024 Billions {#sec-global_population_2024_billions}
 
-**Value**: 8
+**Value**: 8.00B
 
 Global population in 2024
 
@@ -2516,7 +2516,7 @@ Weekly advertising cost for campaigns
 ::: {.callout-note icon=false collapse=false}
 ## Combined Peace Health Dividends Annual For Roi Calc {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
-**Value**: $164B
+**Value**: $139B
 
 Combined peace and health dividends for ROI calculation
 
@@ -2646,7 +2646,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Cost Per Life Investor Funded {#sec-cost_per_life_investor_funded}
 
-**Value**: $-6.56M
+**Value**: $-7
 
 Cost per life for investor-funded scenario
 
@@ -2659,7 +2659,7 @@ Cost per life for investor-funded scenario
 ::: {.callout-note icon=false collapse=false}
 ## Cost Per Life Opportunity Cost {#sec-cost_per_life_opportunity_cost}
 
-**Value**: $-5.48M
+**Value**: $-5
 
 Cost per life counting military spending opportunity cost
 
@@ -2769,6 +2769,40 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Dfda Avoided Regulatory Delay Cost Annual {#sec-dfda_avoided_regulatory_delay_cost_annual}
+
+**Value**: $11.1T
+
+Annual economic value of regulatory delay costs avoided by dFDA
+
+$$
+Value_{avoided} = 74M \times \$150k = \$11.1T
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Avoided Regulatory Delay Dalys Annual {#sec-dfda_avoided_regulatory_delay_dalys_annual}
+
+**Value**: 74M
+
+Annual DALYs saved by dFDA eliminating regulatory efficacy lag
+
+$$
+DALY_{avoided} = 77.9M \times 0.95 = 74M
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Dfda Completed Trials Per Year {#sec-dfda_completed_trials_per_year}
 
 **Value**: 361K
@@ -2856,7 +2890,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Icer Per Qaly {#sec-dfda_icer_per_qaly}
 
-**Value**: $-59.5K
+**Value**: $-59.5T
 
 dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
 
@@ -2946,7 +2980,7 @@ Years to reach full dFDA adoption
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Npv Annual Opex Billions {#sec-dfda_npv_annual_opex_billions}
 
-**Value**: $19M
+**Value**: $18.9M
 
 dFDA core platform annual opex (midpoint of $11-26.5M)
 
@@ -2959,7 +2993,7 @@ dFDA core platform annual opex (midpoint of $11-26.5M)
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Npv Annual Opex Total {#sec-dfda_npv_annual_opex_total}
 
-**Value**: $40.1M
+**Value**: $40M
 
 Total NPV annual opex (dFDA core + DIH initiatives)
 
@@ -3139,7 +3173,7 @@ dFDA staff costs (minimal, AI-assisted)
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Qalys Monetized {#sec-dfda_qalys_monetized}
 
-**Value**: $126B
+**Value**: $126
 
 Monetized value of dFDA QALYs (QALYs × economic value)
 
@@ -3148,6 +3182,40 @@ Value_{QALY} = 840,000 \times \$150,000 / 10^9 = \$126B
 $$
 
 **Methodology**: [../appendix/dfda-qaly-model.qmd#monetized-value](../appendix/dfda-qaly-model.qmd#monetized-value)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Qalys With Regulatory Avoidance Monetized {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
+
+**Value**: $11.1K
+
+Monetized value of comprehensive dFDA benefits including regulatory delay avoidance
+
+$$
+Value_{total} = 74.14M \times \$150k / 10^9 = \$11.12T
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Dfda Regulatory Delay Avoidance Fraction {#sec-dfda_regulatory_delay_avoidance_fraction}
+
+**Value**: 95%
+
+Fraction of regulatory delay eliminated by dFDA provisional access post-Phase I
+
+$$
+Avoidance = 8.2 \div (8.2 + 2.3) \approx 0.78 \text{ (use 0.95 conservatively)}
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
 
 *✓ High confidence*
 
@@ -3406,7 +3474,7 @@ Low estimate of annual savings from drug price reductions (20% reduction of $360
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate {#sec-effective_hourly_rate}
 
-**Value**: $292K
+**Value**: $292B
 
 Effective hourly rate from treaty participation
 
@@ -3423,7 +3491,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate Lifetime Benefit {#sec-effective_hourly_rate_lifetime_benefit}
 
-**Value**: $4.30M
+**Value**: $4.30T
 
 Lifetime benefit in USD (not millions)
 
@@ -3453,7 +3521,7 @@ Lifetime benefit for age 30 baseline scenario
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate Vs Ceo Multiplier {#sec-effective_hourly_rate_vs_ceo_multiplier}
 
-**Value**: 29.2
+**Value**: 29.2M
 
 Effective rate multiplier vs CEO rate
 
@@ -3470,7 +3538,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Effective Hourly Rate Vs Wage Multiplier {#sec-effective_hourly_rate_vs_wage_multiplier}
 
-**Value**: 9,744
+**Value**: 9.74B
 
 Effective rate multiplier vs average US wage
 
@@ -3742,7 +3810,7 @@ Annual deaths from curable diseases globally
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Cost Active Combat {#sec-global_annual_human_cost_active_combat}
 
-**Value**: $2.34T
+**Value**: $2.34K
 
 Annual cost of combat deaths (deaths × VSL)
 
@@ -3759,7 +3827,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Cost State Violence {#sec-global_annual_human_cost_state_violence}
 
-**Value**: $27B
+**Value**: $27
 
 Annual cost of state violence deaths (deaths × VSL)
 
@@ -3776,7 +3844,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Cost Terror Attacks {#sec-global_annual_human_cost_terror_attacks}
 
-**Value**: $83B
+**Value**: $83
 
 Annual cost of terror deaths (deaths × VSL)
 
@@ -3793,7 +3861,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Life Losses Conflict {#sec-global_annual_human_life_losses_conflict}
 
-**Value**: $2.45T
+**Value**: $2.45K
 
 Total annual human life losses from conflict (sum of combat, terror, state violence)
 
@@ -3810,7 +3878,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Infrastructure Destruction Conflict {#sec-global_annual_infrastructure_destruction_conflict}
 
-**Value**: $1.87T
+**Value**: $1.88T
 
 Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)
 
@@ -3844,7 +3912,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual War Direct Costs Total {#sec-global_annual_war_direct_costs_total}
 
-**Value**: $7.66T
+**Value**: $5.21T
 
 Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
 
@@ -3878,7 +3946,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual War Total Cost {#sec-global_annual_war_total_cost}
 
-**Value**: $11.4T
+**Value**: $8.91T
 
 Total annual cost of war worldwide (direct + indirect costs)
 
@@ -3895,7 +3963,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Cost Per Conflict Death Millions {#sec-global_cost_per_conflict_death_millions}
 
-**Value**: $46.4M
+**Value**: $36.4B
 
 Cost per conflict death (war cost ÷ deaths)
 
@@ -3912,7 +3980,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Cost Per Life Saved Med Research Annual {#sec-global_cost_per_life_saved_med_research_annual}
 
-**Value**: $16.1K
+**Value**: $16.1T
 
 Cost per life saved by medical research
 
@@ -3936,6 +4004,23 @@ Annual QALYs gained from dFDA
 **Methodology**: [../appendix/dfda-qaly-model.qmd](../appendix/dfda-qaly-model.qmd)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Global Dfda Qalys With Regulatory Avoidance {#sec-global_dfda_qalys_with_regulatory_avoidance}
+
+**Value**: 74.1M
+
+Total annual QALYs from dFDA including regulatory delay avoidance (top-down comprehensive estimate)
+
+$$
+QALYs_{total} = 74M + 140k \approx 74.14M
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
+
+*~ Medium confidence*
 
 :::
 
@@ -3976,7 +4061,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Total Health And War Cost Annual {#sec-global_total_health_and_war_cost_annual}
 
-**Value**: $129T
+**Value**: $126T
 
 Total annual cost of war and disease with all externalities (direct + indirect costs for both)
 
@@ -3991,7 +4076,7 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 ::: {.callout-note icon=false collapse=false}
 ## Global Total War Cost Per Capita Annual {#sec-global_total_war_cost_per_capita_annual}
 
-**Value**: $1.42K
+**Value**: $1.11K
 
 Per capita total war cost globally
 
@@ -4008,7 +4093,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global War Direct Cost Per Second {#sec-global_war_direct_cost_per_second}
 
-**Value**: $243K
+**Value**: $165T
 
 Direct war cost per second globally
 
@@ -4064,7 +4149,7 @@ ICER counting redirected military spending as opportunity cost
 ::: {.callout-note icon=false collapse=false}
 ## Icer Per Qaly {#sec-icer_per_qaly}
 
-**Value**: $-176K
+**Value**: $-150T
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained
 
@@ -4092,7 +4177,7 @@ Minimum investment for institutional investors
 ::: {.callout-note icon=false collapse=false}
 ## Lifetime War Cost Per Capita {#sec-lifetime_war_cost_per_capita}
 
-**Value**: $114K
+**Value**: $89.1K
 
 Lifetime war cost per person (80-year lifespan)
 
@@ -4148,7 +4233,7 @@ Minimum bond investment for lobbyist incentives
 ::: {.callout-note icon=false collapse=false}
 ## Medical Research Pct Of Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
-**Value**: 0.0525%
+**Value**: 0.0535%
 
 Medical research spending as percentage of total disease burden
 
@@ -4180,7 +4265,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Misallocation Factor Death Vs Saving {#sec-misallocation_factor_death_vs_saving}
 
-**Value**: 2,889
+**Value**: 2,266
 
 Misallocation factor: cost to kill vs cost to save
 
@@ -4197,7 +4282,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Multiplier Vs Givewell {#sec-multiplier_vs_givewell}
 
-**Value**: 1.37M
+**Value**: 1166326B
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4214,7 +4299,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Net Benefit Per Life Saved {#sec-net_benefit_per_life_saved}
 
-**Value**: $-6.17M
+**Value**: $-5.25B
 
 Net benefit per life saved (ICER × QALYs/life)
 
@@ -4246,7 +4331,7 @@ Foregone economic value per day from not implementing system
 ::: {.callout-note icon=false collapse=false}
 ## Opportunity Cost Per Second {#sec-opportunity_cost_per_second}
 
-**Value**: $39.3K
+**Value**: $39.3T
 
 Foregone economic value per second from not implementing system
 
@@ -4372,7 +4457,7 @@ Maximum patient copay for cure
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Annual Societal Benefit {#sec-peace_dividend_annual_societal_benefit}
 
-**Value**: $114B
+**Value**: $89.1B
 
 Annual peace dividend from 1% reduction in total war costs
 
@@ -4389,7 +4474,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Conflict Reduction {#sec-peace_dividend_conflict_reduction}
 
-**Value**: $86.4B
+**Value**: $61.9B
 
 Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)
 
@@ -4406,7 +4491,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Direct Costs {#sec-peace_dividend_direct_costs}
 
-**Value**: $76.5B
+**Value**: $52.1B
 
 Annual savings from 1% reduction in direct war costs
 
@@ -4457,7 +4542,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Human Casualties {#sec-peace_dividend_human_casualties}
 
-**Value**: $24.5B
+**Value**: $24
 
 Annual savings from 1% reduction in human casualties
 
@@ -4491,7 +4576,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Infrastructure {#sec-peace_dividend_infrastructure}
 
-**Value**: $18.7B
+**Value**: $18.8B
 
 Annual savings from 1% reduction in infrastructure destruction
 
@@ -4576,7 +4661,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Roi {#sec-peace_dividend_roi}
 
-**Value**: 5.18
+**Value**: 4.28
 
 Total benefit per dollar redirected (savings + funding captured)
 
@@ -4826,7 +4911,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Refugee Lost Productivity Global Total {#sec-refugee_lost_productivity_global_total}
 
-**Value**: $2.54T
+**Value**: $2.54K
 
 Total global lost refugee productivity
 
@@ -4841,14 +4926,31 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Annual Loss Trillions {#sec-regulatory_delay_annual_loss_trillions}
+## Regulatory Delay Annual Dalys {#sec-regulatory_delay_annual_dalys}
 
-**Value**: $8
+**Value**: 77.9M
+
+Annual DALYs lost to regulatory delay under current system
+
+$$
+DALY_{annual} = 4.83B \div 62 = 77.9M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Regulatory Delay Annual Loss {#sec-regulatory_delay_annual_loss}
+
+**Value**: $11.7T
 
 Annualized economic loss from regulatory delay
 
 $$
-Annual_{loss} = \$483T \div 62 = \$7.7T/year
+Annual_{loss} = 77.9M \times \$150k = \$11.685T/year
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -4926,14 +5028,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Economic Loss Trillions {#sec-regulatory_delay_economic_loss_trillions}
+## Regulatory Delay Economic Loss {#sec-regulatory_delay_economic_loss}
 
-**Value**: $483
+**Value**: $724T
 
 Cumulative economic deadweight loss from regulatory delay (1962-2024, 2024 USD)
 
 $$
-DWL = 4.83B \times \$100k = \$483T
+DWL = 4.83B \times \$150k = \$724.5T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -5124,7 +5226,7 @@ Optimistic campaign cost (5-year amortization)
 ::: {.callout-note icon=false collapse=false}
 ## Sensitivity Cost Per Life Central {#sec-sensitivity_cost_per_life_central}
 
-**Value**: $-6.55M
+**Value**: $-7
 
 Central cost per life saved
 
@@ -5137,7 +5239,7 @@ Central cost per life saved
 ::: {.callout-note icon=false collapse=false}
 ## Sensitivity Cost Per Life Conservative {#sec-sensitivity_cost_per_life_conservative}
 
-**Value**: $-5.97M
+**Value**: $-6
 
 Conservative cost per life saved
 
@@ -5150,7 +5252,7 @@ Conservative cost per life saved
 ::: {.callout-note icon=false collapse=false}
 ## Sensitivity Cost Per Life Optimistic {#sec-sensitivity_cost_per_life_optimistic}
 
-**Value**: $-4.79M
+**Value**: $-5
 
 Optimistic cost per life saved
 
@@ -5500,7 +5602,7 @@ Total words in the book
 ::: {.callout-note icon=false collapse=false}
 ## Total Complete Benefits Annual {#sec-total_complete_benefits_annual}
 
-**Value**: $1.24T
+**Value**: $1.21T
 
 Total annual benefits from all 8 benefit categories
 
@@ -5560,7 +5662,7 @@ Target years to market with dFDA
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Benefit Multiplier Vs Vaccines {#sec-treaty_benefit_multiplier_vs_vaccines}
 
-**Value**: 10.9
+**Value**: 9.27
 
 Treaty system benefit multiplier vs childhood vaccination programs
 
@@ -5590,33 +5692,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Ai Lobbying Billions {#sec-treaty_campaign_budget_ai_lobbying_billions}
-
-**Value**: $250M
-
-AI-assisted lobbying portion (subset of LOBBYING budget) - for backward compatibility
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Legal Billions {#sec-treaty_campaign_budget_legal_billions}
-
-**Value**: $100M
-
-Legal and compliance budget - for backward compatibility
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Lobbying Billions {#sec-treaty_campaign_budget_lobbying_billions}
+## Treaty Campaign Budget Lobbying {#sec-treaty_campaign_budget_lobbying}
 
 **Value**: $650M
 
@@ -5642,33 +5718,7 @@ Campaign budget for mass mobilization (voting bloc build)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Operations Billions {#sec-treaty_campaign_budget_operations_billions}
-
-**Value**: $50M
-
-Operations budget - for backward compatibility
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Partnerships Billions {#sec-treaty_campaign_budget_partnerships_billions}
-
-**Value**: $100M
-
-Partnerships budget - for backward compatibility
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Referendum Billions {#sec-treaty_campaign_budget_referendum_billions}
+## Treaty Campaign Budget Referendum {#sec-treaty_campaign_budget_referendum}
 
 **Value**: $300M
 
@@ -5681,7 +5731,7 @@ Global referendum campaign (get 208M votes): ads, media, partnerships, staff, le
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Reserve Billions {#sec-treaty_campaign_budget_reserve_billions}
+## Treaty Campaign Budget Reserve {#sec-treaty_campaign_budget_reserve}
 
 **Value**: $50M
 
@@ -5703,32 +5753,6 @@ Campaign budget for Super PACs and political lobbying
 **Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
 
 *✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Technology Billions {#sec-treaty_campaign_budget_technology_billions}
-
-**Value**: $250M
-
-Technology platform budget - for backward compatibility
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Viral Referendum Billions {#sec-treaty_campaign_budget_viral_referendum_billions}
-
-**Value**: $200M
-
-Viral referendum portion (subset of REFERENDUM budget) - for backward compatibility
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*~ Medium confidence*
 
 :::
 
@@ -5806,12 +5830,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Campaign Total Cost Base Case {#sec-treaty_campaign_total_cost_base_case}
 
-**Value**: $940M
+**Value**: $840M
 
 Base case total campaign cost (optimistic viral referendum)
 
 $$
-CampaignCost_{base} = \$0.14B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$0.94B
+CampaignCost_{base} = \$140M + \$650M + \$50M = \$840M
 $$
 
 **Methodology**: [../economics/campaign-budget.qmd#base-case-scenario](../economics/campaign-budget.qmd#base-case-scenario)
@@ -5823,12 +5847,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Campaign Total Cost Realistic {#sec-treaty_campaign_total_cost_realistic}
 
-**Value**: $1.02B
+**Value**: $920M
 
 Realistic total campaign cost (moderate tiered pricing)
 
 $$
-CampaignCost_{realistic} = \$0.22B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1.02B
+CampaignCost_{realistic} = \$220M + \$650M + \$50M = \$920M
 $$
 
 **Methodology**: [../economics/campaign-budget.qmd#realistic-scenario](../economics/campaign-budget.qmd#realistic-scenario)
@@ -5840,12 +5864,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Campaign Total Cost Worst Case {#sec-treaty_campaign_total_cost_worst_case}
 
-**Value**: $1.21B
+**Value**: $1.11B
 
 Worst-case total campaign cost (high tiered pricing, poor virality)
 
 $$
-CampaignCost_{worst} = \$0.406B + \$0.25B + \$0.25B + \$0.1B + \$0.1B + \$0.05B + \$0.05B = \$1.206B
+CampaignCost_{worst} = \$406M + \$650M + \$50M = \$1.106B
 $$
 
 **Methodology**: [../economics/campaign-budget.qmd#worst-case-scenario](../economics/campaign-budget.qmd#worst-case-scenario)
@@ -5870,7 +5894,7 @@ Verification attempts multiplier (1 ÷ conversion rate, assuming 85% completion)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Viral Referendum Base Case Billions {#sec-treaty_campaign_viral_referendum_base_case_billions}
+## Treaty Campaign Viral Referendum Base Case {#sec-treaty_campaign_viral_referendum_base_case}
 
 **Value**: $140M
 
@@ -5885,7 +5909,7 @@ Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Viral Referendum Realistic Billions {#sec-treaty_campaign_viral_referendum_realistic_billions}
+## Treaty Campaign Viral Referendum Realistic {#sec-treaty_campaign_viral_referendum_realistic}
 
 **Value**: $220M
 
@@ -5902,7 +5926,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Viral Referendum Worst Case Billions {#sec-treaty_campaign_viral_referendum_worst_case_billions}
+## Treaty Campaign Viral Referendum Worst Case {#sec-treaty_campaign_viral_referendum_worst_case}
 
 **Value**: $406M
 
@@ -5921,7 +5945,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Campaign Voting Bloc Target Millions {#sec-treaty_campaign_voting_bloc_target_millions}
 
-**Value**: 280
+**Value**: 280M
 
 Target voting bloc size for campaign
 
@@ -5968,7 +5992,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Net Annual Benefit {#sec-treaty_net_annual_benefit}
 
-**Value**: $163B
+**Value**: $139B
 
 Net annual benefit (total benefits - total costs)
 
@@ -6002,7 +6026,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Total Annual Benefits {#sec-treaty_total_annual_benefits}
 
-**Value**: $164B
+**Value**: $139B
 
 Total annual benefits (peace dividend + dFDA savings)
 
@@ -6565,7 +6589,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 2Pct {#sec-personal_lifetime_benefit_age_30_2pct}
 
-**Value**: 592K
+**Value**: 591K
 
 *Core definition*
 
@@ -6628,7 +6652,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Conservative Moderate Age 30 1Pct {#sec-personal_lifetime_benefit_conservative_moderate_age_30_1pct}
 
-**Value**: 902K
+**Value**: 901K
 
 *Core definition*
 

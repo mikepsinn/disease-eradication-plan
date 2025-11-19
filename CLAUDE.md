@@ -85,9 +85,20 @@ TOTAL_DALYS = Parameter(4_830_000_000, unit="DALYs")  # Displays as "4.83B"
 
 ❌ **Wrong:**
 ```python
-FOUNDATION_FUNDING_MILLIONS = Parameter(519, unit="USD")  # Incorrect scale in name
-REGULATORY_DELAY_DEATHS_MEAN = Parameter(184.6, unit="millions")  # Pre-scaled value
+# DO NOT include scale in parameter name
+FOUNDATION_FUNDING_MILLIONS = Parameter(519_000_000, unit="USD")
+
+# DO NOT pre-scale the value - store raw numbers
+REGULATORY_DELAY_DEATHS_MEAN = Parameter(184.6, unit="millions of deaths")
+
+# DO NOT use both - always store raw value and let formatter auto-scale
+PEACE_DIVIDEND_BILLIONS = Parameter(113.55, unit="billions USD")
 ```
+
+**Why wrong**:
+- Formatter automatically determines appropriate scale ($519M, 184.6M, $113.55B)
+- Pre-scaled values (184.6 instead of 184_600_000) break the auto-scaling logic
+- Scale suffixes in names (_MILLIONS, _BILLIONS) are redundant and confusing
 
 ### Formatter Capabilities
 
@@ -99,6 +110,44 @@ The `format_parameter_value()` function automatically:
 - **Percentages**: `unit="percentage"` → "51%"
 - **Small numbers**: Uses commas (1,000-99,999) or raw values (<1,000)
 - **3 significant figures** precision for all scaled values
+
+### Calculated Parameters
+
+**CRITICAL: Parameters marked as `source_type="calculated"` MUST use formulas, not hardcoded values.**
+
+✅ **Correct** (calculated using inline formulas):
+```python
+PEACE_DIVIDEND_ANNUAL = Parameter(
+    GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
+    source_type="calculated",
+    description="Annual peace dividend from 1% treaty",
+    unit="USD",  # Formatter auto-scales to $113.55B
+    formula="GLOBAL_WAR_COST × 1%"
+)
+
+TREATY_CAMPAIGN_TOTAL_COST = Parameter(
+    TREATY_CAMPAIGN_REFERENDUM + TREATY_CAMPAIGN_LOBBYING + TREATY_CAMPAIGN_RESERVE,
+    source_type="calculated",
+    description="Total campaign cost",
+    unit="USD",  # Store raw value, let formatter auto-scale to $1B
+    formula="REFERENDUM + LOBBYING + RESERVE"
+)
+```
+
+❌ **Wrong** (hardcoded value marked as calculated):
+```python
+PEACE_DIVIDEND_ANNUAL = Parameter(
+    113_550_000_000,  # Hardcoded result
+    source_type="calculated",  # Lie! Not actually calculated
+    description="Annual peace dividend",
+    unit="USD"
+)
+```
+
+**When to use each source_type:**
+- `source_type="external"`: Data from external sources (WHO, SIPRI, papers)
+- `source_type="calculated"`: Derived using formulas from other parameters
+- `source_type="definition"`: Fixed values, core assumptions, legacy compatibility values
 
 ### LaTeX Math Block Limitation
 

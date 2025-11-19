@@ -120,27 +120,23 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 ### Step 3: Annual Costs
 
-#### 3a. Campaign Costs ({{< var treaty_campaign_budget_technology_billions >}}/year, amortized)
+#### 3a. Campaign Costs ({{< var treaty_campaign_total_cost >}} over 4 years, amortized)
 
 **Source**: [Campaign Budget](../economics/campaign-budget.qmd)
 
-**Total campaign budget**: $1.0B over 4-5 years
+**Total campaign budget**: {{< var treaty_campaign_total_cost >}} over 4 years
 
-- Public awareness and engagement: {{< var treaty_campaign_budget_viral_referendum_billions >}}
-- AI-assisted policy outreach and government consultation: {{< var treaty_campaign_budget_technology_billions >}}
-- Technology platform: {{< var treaty_campaign_budget_technology_billions >}}
-- Legal & compliance: {{< var treaty_campaign_budget_partnerships_billions >}}
-- Partnerships: {{< var treaty_campaign_budget_partnerships_billions >}}
-- Operations: {{< var treaty_campaign_budget_reserve_billions >}}
-- Reserve: {{< var treaty_campaign_budget_reserve_billions >}}
+- Global Referendum (viral system, platform, verification): {{< var treaty_campaign_budget_referendum >}}
+- Political Lobbying (US/EU/G20, Super PACs, legal, opposition research): {{< var treaty_campaign_budget_lobbying >}}
+- Reserve Fund (post-victory transition, contingency): {{< var treaty_campaign_budget_reserve >}}
 
 **Amortized annual cost**:
 
-- Conservative (3 years): $1.0B ÷ 3 = {{< var sensitivity_campaign_cost_conservative_billions >}}/year
-- Central (4 years): $1.0B ÷ 4 = **{{< var treaty_campaign_budget_technology_billions >}}/year**
-- Optimistic (5 years): $1.0B ÷ 5 = {{< var treaty_campaign_budget_viral_referendum_billions >}}/year
+- Conservative (3 years): {{< var treaty_campaign_total_cost >}} ÷ 3 = {{< var sensitivity_campaign_cost_conservative_billions >}}/year
+- Central (4 years): {{< var treaty_campaign_total_cost >}} ÷ 4 = **$250M/year**
+- Optimistic (5 years): {{< var treaty_campaign_total_cost >}} ÷ 5 = {{< var sensitivity_campaign_cost_optimistic_billions >}}/year
 
-**Using central estimate**: **{{< var treaty_campaign_budget_technology_billions >}}/year**
+**Using central estimate**: **$250M/year**
 
 **Note**: After initial 3-5 year campaign, these costs drop to near zero. You use amortized costs for a 10-year NPV analysis.
 
@@ -160,7 +156,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 #### Total Annual Costs
 
-**{{< var treaty_campaign_budget_technology_billions >}} + {{< var dfda_upfront_build_billions >}} = {{< var treaty_total_annual_costs >}}/year**
+**Campaign (amortized) + dFDA operations = {{< var treaty_total_annual_costs >}}/year**
 
 **Sensitivity range**: {{< var sensitivity_total_costs_optimistic_billions >}} to {{< var sensitivity_total_costs_conservative_billions >}}
 
@@ -304,7 +300,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | **Peace dividend** | {{< var sensitivity_peace_dividend_conservative >}} | {{< var peace_dividend_annual_societal_benefit >}} | {{< var sensitivity_peace_dividend_optimistic >}} |
 | **dFDA R&D savings** | {{< var sensitivity_dfda_savings_conservative >}} | {{< var dfda_gross_savings_annual >}} | {{< var sensitivity_dfda_savings_optimistic >}} |
 | **Total benefits** | {{< var sensitivity_total_benefits_conservative >}} | {{< var treaty_total_annual_benefits >}} | {{< var sensitivity_total_benefits_optimistic >}} |
-| **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative_billions >}} | {{< var treaty_campaign_budget_technology_billions >}} | {{< var treaty_campaign_budget_viral_referendum_billions >}} |
+| **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative_billions >}} | $250M | {{< var sensitivity_campaign_cost_optimistic_billions >}} |
 | **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative_billions >}} | {{< var dfda_upfront_build_billions >}} | {{< var sensitivity_dfda_opex_optimistic_billions >}} |
 | **Total costs/yr** | {{< var sensitivity_total_costs_conservative_billions >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic_billions >}} |
 | **Peace QALYs** | {{< var sensitivity_peace_qalys_conservative >}} | {{< var treaty_qalys_gained_annual_global >}} | {{< var sensitivity_peace_qalys_optimistic >}} |
@@ -459,7 +455,7 @@ The 1% Treaty solves this by creating aligned incentives.
 
 - Getting countries to sign the treaty (hence the $1.0B campaign)
 - Overcoming defense industry opposition (hence VICTORY Social Impact Bonds to co-opt them)
-- Building the dFDA infrastructure (hence the {{< var treaty_campaign_budget_technology_billions >}} technology budget)
+- Building the dFDA infrastructure (hence the {{< var dfda_upfront_build_billions >}} upfront development cost)
 
 The math works. The challenge is execution.
 

@@ -45,7 +45,7 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 ## Where the Papers Go
 
-### 1. Viral Referendum: {{< var treaty_campaign_budget_viral_referendum_billions >}} (20%)
+### 1. Viral Referendum (part of {{< var treaty_campaign_budget_referendum >}} Referendum Budget)
 
 #### Paying Humans to Click
 
@@ -62,7 +62,8 @@ Comparable: Traditional petition signatures cost $14.87 each in 2024 (Ballotpedi
 
 **Target: 280M verified votes** (3.5% of global population = tipping point for social change)
 
-**Payment structure:**
+#### Payment structure
+
 - Standard reward: $0.25-0.30 per verified vote via referral link
 - Early adopter bonus: $0.50 for first 10M (creates FOMO)
 - Recruitment bonus: $0.10 per successful recruit (pyramid scheme but legal)
@@ -104,6 +105,7 @@ Early adopters (believers, idealists, people who care about curing disease) will
 But to hit 280M votes (3.5% of global population), you need more than believers. You need skeptics. You need people who don't care about politics. You need people actively resistant to change.
 
 **Diffusion of innovations theory** (Rogers, 2003):
+
 - 2.5% innovators (vote for free, do it for the mission)
 - 13.5% early adopters ($0.25/vote, minimal incentive needed)
 - 34% early majority ($0.50/vote, need moderate incentive)
@@ -112,15 +114,16 @@ But to hit 280M votes (3.5% of global population), you need more than believers.
 
 **PayPal case study**: Started at $20/referral (1999), optimized to $10-20 range. Inflation-adjusted: ~$18-36 in 2024 dollars. But PayPal was recruiting early adopters (tech-savvy users in Silicon Valley). Not laggards.
 
-**Three Budget Scenarios for 280M Votes:**
+#### Three Budget Scenarios for 280M Votes
 
 <a id="base-case-scenario"></a>
 
-**Scenario A: Base Case** ({{< var treaty_campaign_viral_referendum_base_case_billions >}})
+**Scenario A: Base Case** ({{< var treaty_campaign_viral_referendum_base_case >}})
 
 Assumes flat $0.50/vote, no increasing marginal costs.
 
 Components:
+
 - Platform Development: $35M
 - Viral Content: $40M (optional)
 - Community Organizing: $30M (optional)
@@ -132,11 +135,12 @@ Components:
 
 <a id="realistic-scenario"></a>
 
-**Scenario B: Realistic** ({{< var treaty_campaign_viral_referendum_realistic_billions >}})
+**Scenario B: Realistic** ({{< var treaty_campaign_viral_referendum_realistic >}})
 
 Assumes moderate increasing marginal costs.
 
 Components:
+
 - Platform Development: $35M
 - Seed Marketing: $5M (skip viral content budget, let referral economics drive virality)
 - Verification (330M attempts × $0.18): $59M
@@ -146,17 +150,18 @@ Components:
   - Next 100M (late majority): $0.75/vote = $75M
   - Final 80M (laggards): $1.00/vote = $80M
 
-**Total: $225M** (rounding: {{< var treaty_campaign_viral_referendum_realistic_billions >}})
+**Total: $225M** (rounding: {{< var treaty_campaign_viral_referendum_realistic >}})
 
 **Rationale**: Follows diffusion curve but assumes strong virality reduces laggard cost from $2.00 to $1.00. Still 23x cheaper than petition signatures ($14.87 each).
 
 <a id="worst-case-scenario"></a>
 
-**Scenario C: Worst Case** ({{< var treaty_campaign_viral_referendum_worst_case_billions >}})
+**Scenario C: Worst Case** ({{< var treaty_campaign_viral_referendum_worst_case >}})
 
 Assumes high increasing marginal costs, poor virality.
 
 Components:
+
 - Platform Development: $35M
 - Seed Marketing: $5M
 - Verification (350M attempts × $0.18): $63M
@@ -166,11 +171,12 @@ Components:
   - Next 100M: $1.00/vote = $100M
   - Final 80M: $2.00/vote = $160M
 
-**Total: $415M** (parameter: {{< var treaty_campaign_viral_referendum_worst_case_billions >}})
+**Total: $415M** (parameter: {{< var treaty_campaign_viral_referendum_worst_case >}})
 
 **When you need this**: If virality is weak. If people are skeptical. If competing campaigns poison the well. If verification UX is poor (only 70% conversion instead of 85%).
 
-**Still cheaper than alternatives:**
+#### Still cheaper than alternatives
+
 - Traditional petition gathering: 280M × $14.87 = $4.2 BILLION
 - Digital advertising (CPA $5-15): 280M × $10 avg = $2.8 BILLION
 - Worst-case treaty campaign: $406M
@@ -182,18 +188,20 @@ Components:
 **Raise for worst-case** ($400M+), **execute with realistic assumptions** ($220M), **celebrate if base case works** ($140M).
 
 Unused funds roll into:
+
 - Higher referral payments (accelerate growth)
 - Post-victory treaty implementation
 - dFDA platform development
 - Reserve for Year 2-3 scaling
 
 **Budget allocation transparency**: Live dashboard at WarOnDisease.org/budget shows real-time:
+
 - Which scenario is playing out (are we at base case, realistic, or worst case costs?)
 - Current cost per verified vote by cohort
 - Conversion rate optimization (is verification UX working?)
 - Funds remaining vs. target (are we on track?)
 
-### 2. Professional Bribery: {{< var treaty_campaign_budget_ai_lobbying_billions >}} (25%)
+### 2. Professional Bribery (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Lobbying (AI-Targeted)**: $150M
 
@@ -225,7 +233,7 @@ Defense lobbyists currently work for whoever pays them. So you pay them more:
 - Instant fact-checking (faster than humans can lie)
 - Protect treaty supporters (politics is mean, apparently)
 
-### 3. Technology: {{< var treaty_campaign_budget_technology_billions >}} (25%)
+### 3. Technology (part of {{< var treaty_campaign_budget_referendum >}} Referendum Budget)
 
 **dFDA Platform**: $120M
 
@@ -260,7 +268,7 @@ Computers that store everything:
 - 100K beta users (find problems before 8 billion users do)
 - Security audits (pay hackers to break it before bad hackers do)
 
-### 4. Lawyers (AI-Assisted): {{< var treaty_campaign_budget_legal_billions >}} (10%)
+### 4. Lawyers (AI-Assisted) (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Legal Work**: {{< var campaign_legal_work_millions >}}
 
@@ -281,7 +289,7 @@ Computers that store everything:
 - Insurance (in case fund isn't enough)
 - Whistleblower protection (pay people to report your own violations before others do)
 
-### 5. Co-opting the Opposition: {{< var treaty_campaign_budget_partnerships_billions >}} (10%)
+### 5. Co-opting the Opposition (part of {{< var treaty_campaign_budget_lobbying >}} Lobbying Budget)
 
 **Defense Industry Conversion**: {{< var campaign_defense_conversion_millions >}}
 
@@ -310,7 +318,7 @@ Turn enemies into allies through superior returns:
 - Scientists with credentials (humans trust credentials)
 - Cultural influencers (humans who influence culture, apparently)
 
-### 6. Operations: {{< var treaty_campaign_budget_operations_billions >}} (5%)
+### 6. Operations (overhead across all categories)
 
 **Core Team**: {{< var campaign_staff_budget_millions >}}
 
@@ -328,7 +336,7 @@ Turn enemies into allies through superior returns:
 
 Papers for when plans fail (plans always fail somewhere)
 
-### 7. Post-Victory Transition: {{< var treaty_campaign_budget_reserve_billions >}} (5%)
+### 7. Post-Victory Transition: {{< var treaty_campaign_budget_reserve >}}
 
 **Treaty Implementation**: {{< var campaign_treaty_implementation_millions >}}
 

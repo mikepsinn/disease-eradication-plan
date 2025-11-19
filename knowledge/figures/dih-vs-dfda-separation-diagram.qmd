@@ -12,13 +12,16 @@ from dih_models.plotting.graphviz_helper import (
 )
 
 # Create diagram
+
 dot = graphviz.Digraph(comment='DIH vs dFDA Separation', format='png')
 dot.attr(rankdir='LR', size='12,10')
 
 # Apply design guide styling
+
 setup_graphviz_style(dot)
 
 # DIH cluster (left)
+
 with dot.subgraph(name='cluster_dih') as dih:
     dih.attr(label='DIH: Governance Layer', style='solid', penwidth='3')
     dih.node('Treasury', 'Treasury\n($1T/year)', shape='box')
@@ -30,6 +33,7 @@ with dot.subgraph(name='cluster_dih') as dih:
              shape='note', style='filled', fillcolor='white')
 
 # dFDA cluster (right)
+
 with dot.subgraph(name='cluster_dfda') as dfda:
     dfda.attr(label='dFDA: Technical Platform', style='solid', penwidth='3')
     dfda.node('Protocol', 'Open Protocol\n(Like HTTP)', shape='box')
@@ -41,22 +45,27 @@ with dot.subgraph(name='cluster_dfda') as dfda:
               shape='note', style='filled', fillcolor='white')
 
 # Connections within DIH
+
 dot.edge('Treasury', 'Wishocracy', label='allocates via')
 dot.edge('Wishocracy', 'Campaigns', label='votes on')
 
 # Connections within dFDA
+
 dot.edge('Protocol', 'Marketplace', label='enables')
 dot.edge('Marketplace', 'Data', label='generates')
 
 # DIH funds dFDA (key relationship)
+
 dot.edge('Campaigns', 'Protocol', label='Funds dFDA as\none campaign', style='bold', penwidth='2')
 
 # Prevention of capture
+
 dot.node('Capture', 'If dFDA gets captured:\nFund alternative platform',
          shape='note', style='dashed')
 dot.edge('Campaigns', 'Capture', style='dashed')
 
 # Render with watermark
+
 png_path = render_graphviz_with_watermark(dot, 'dih-vs-dfda-separation-diagram')
 display(IPImage(str(png_path)))
 ```

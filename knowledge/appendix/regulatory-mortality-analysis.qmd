@@ -1,7 +1,7 @@
 ---
-title: "The Human Capital Cost of Regulatory Latency"
-subtitle: "A Quantitative Analysis of Type II Errors and Welfare Loss in Global Pharmaceutical Licensing (1962–2024)"
-description: "Rigorous quantitative analysis estimating 184.6M preventable deaths and $483T economic loss from FDA efficacy requirements"
+title: The Human Capital Cost of Regulatory Latency
+subtitle: A Quantitative Analysis of Type II Errors and Welfare Loss in Global Pharmaceutical Licensing (1962–2024)
+description: Rigorous quantitative analysis estimating 184.6M preventable deaths and $483T economic loss from FDA efficacy requirements
 published: true
 tags:
   - appendix
@@ -34,9 +34,7 @@ Using a **Stochastic Monte Carlo model (n=10,000)** and data from the Tufts Cent
 
 When adjusted for morbidity, the total burden is **{{< var regulatory_delay_dalys_billions >}} Billion Disability-Adjusted Life Years (DALYs)**.
 
-Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var regulatory_delay_economic_loss_trillions >}} Trillion** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
-
----
+Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var regulatory_delay_economic_loss >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
 
 ## 1. Introduction
 
@@ -72,11 +70,9 @@ $$ {#eq-total-mortality}
      - *Source:* [NBER Working Paper 9754 (Lichtenberg)](https://www.nber.org/papers/w9754)
    - **Baseline Annual Lives Saved:** ~{{< var baseline_lives_saved_annual_millions >}} Million (Conservative Aggregate).
 
-3. **Economic Valuation:** *OECD Guidelines on Mortality Risk Valuation*.
-   - **VSLY (Value of a Statistical Life Year):** Standardized at **$100,000** (Global Blended Average).
-   - *Source:* [OECD Environment Directorate: Mortality Risk Valuation](https://www.oecd.org/en/publications/mortality-risk-valuation-in-environment-health-and-transport-policies_9789264130807-en.html)
-
----
+3. **Economic Valuation:** *Standard QALY Valuation*.
+   - **VSLY (Value of a Statistical Life Year):** Standardized at **{{< var standard_economic_qaly_value_usd >}}** (consistent with project-wide QALY valuations).
+   - *Note:* This represents a conservative global average; values range from $50K-$200K across different regulatory frameworks.
 
 ## 3. Results: The Mortality Burden
 
@@ -91,8 +87,6 @@ Applying the difference-in-differences model to the period 1962–2024 yielded t
 | **Upper Bound (Ruwart)** | Assumes linear innovation trajectory (no Eroom's Law). | **{{< var regulatory_delay_deaths_upper_bound_millions >}} Million** |
 
 **Finding:** The mean estimate of **{{< var regulatory_delay_deaths_mean_millions >}} million deaths** represents a loss greater than the combined casualties of World War I and World War II, attributable solely to administrative delay.
-
----
 
 ## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
 
@@ -126,8 +120,6 @@ $$ {#eq-total-dalys}
 
 **Interpretation:** The regulatory framework has effectively deleted **{{< var regulatory_delay_dalys_billions >}} billion years of healthy human life**.
 
----
-
 ## 5. Economic Valuation {#economic-valuation}
 
 To quantify the **Deadweight Loss (DWL)** to the global economy, we apply the Value of a Statistical Life Year (VSLY).
@@ -136,18 +128,16 @@ $$
 DWL = \sum (DALY_{loss} \times VSLY)
 $$ {#eq-dwl}
 
-Using a conservative global VSLY of **$100,000**:
+Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >}}**:
 
 $$
-4.83B \text{ DALYs} \times \$100{,}000 = \mathbf{\$483T}
+4.83B \text{ DALYs} \times \$150{,}000 = \mathbf{\$724.5T}
 $$ {#eq-dwl-calculation}
 
 ### 5.1 Contextualizing the Loss
 
-- **Annualized Loss:** ~${{< var regulatory_delay_annual_loss_trillions >}}T / year.
+- **Annualized Loss:** ~{{< var regulatory_delay_annual_loss >}} / year.
 - **GDP Equivalent:** The "Efficacy Tax" consumes approximately **8–12% of Global GDP** annually in lost human capital and foregone productivity.
-
----
 
 ## 6. Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
 
@@ -164,8 +154,6 @@ $$
 $$ {#eq-type-i-ii-ratio}
 
 **Conclusion:** For every 1 unit of harm the FDA prevents, it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay.
-
----
 
 ## 7. References & Datasets
 
@@ -196,14 +184,12 @@ $$ {#eq-type-i-ii-ratio}
 9. **OECD. (2012).** *Mortality Risk Valuation in Environment, Health and Transport Policies*.
    - [OECD iLibrary](https://www.oecd.org/en/publications/mortality-risk-valuation-in-environment-health-and-transport-policies_9789264130807-en.html)
 
----
-
 ## 8. Model Assumptions and Limitations
 
 ### Key Assumptions
 
 1. **Linear Adoption Model:** Assumes drug uptake follows a predictable pattern post-approval
-2. **Constant VSLY:** Uses global average of $100K/year (varies by country: $50K-$200K)
+2. **Constant VSLY:** Uses global average of {{< var standard_economic_qaly_value_usd >}}/year (varies by country: $50K-$200K)
 3. **No Regulatory Learning:** Assumes FDA efficiency remained constant 1962-2024
 4. **Independence:** Treats each drug approval as independent (may underestimate synergies)
 
@@ -214,7 +200,7 @@ The model was tested across multiple scenarios:
 - **Discount Rates:** 3%, 5%, 7% (base case: 5%)
 - **Innovation Elasticity:** 0.3–0.8 (base case: 0.5)
 - **"Snake Oil" Rate:** 10%–40% (base case: 20%)
-- **VSLY Range:** $50K–$200K (base case: $100K)
+- **VSLY Range:** $50K–$200K (base case: {{< var standard_economic_qaly_value_usd >}})
 
 Results remain robust across all reasonable parameter ranges, with lower bound estimates exceeding 100M deaths in all scenarios.
 
@@ -226,8 +212,6 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 4. **Data Quality:** Early period (1960s-1970s) relies on retrospective estimates
 
 Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** (70% drop in approvals, 13x cost increase), provides strong inferential evidence for causation.
-
----
 
 ## 9. Policy Implications
 
@@ -259,13 +243,11 @@ This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} 
 If implemented in 2025, the bifurcated model would:
 
 - **Save ~1.5M lives annually** (based on current drug lag estimates)
-- **Generate ~50M QALYs/year** (valuation: ~$5T annually)
+- **Generate ~50M QALYs/year** (valuation: ~$7.5T annually at {{< var standard_economic_qaly_value_usd >}}/QALY)
 - **Reduce R&D costs by 82%** (from $2.6B to $350M per drug)
 - **Accelerate rare disease treatments** (95% currently have zero therapies)
 
 See [Economics of the Decentralized Institutes of Health](../economics/economics.qmd) for full cost-benefit analysis.
-
----
 
 ## Conclusion
 
@@ -273,7 +255,7 @@ The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy re
 
 - **{{< var regulatory_delay_deaths_mean_millions >}}M preventable deaths** (1962-2024)
 - **{{< var regulatory_delay_dalys_billions >}}B DALYs lost**
-- **${{< var regulatory_delay_economic_loss_trillions >}}T economic destruction**
+- **{{< var regulatory_delay_economic_loss >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}}:1 harm ratio** (Type II vs. Type I errors)
 
 These costs dwarf the benefits by three orders of magnitude. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).

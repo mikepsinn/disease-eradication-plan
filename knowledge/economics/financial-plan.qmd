@@ -55,13 +55,9 @@ The one-time "activation energy" to pass the 1% Treaty, made affordable through 
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **Viral Referendum** | {{< var treaty_campaign_budget_viral_referendum_billions >}} (20%) | Referral rewards ($0.20/vote), 280M votes |
-| **AI-Assisted Lobbying** | {{< var treaty_campaign_budget_technology_billions >}} (25%) | Strategic, AI-targeted campaigns in 20 countries |
-| **Technology Platform** | {{< var treaty_campaign_budget_technology_billions >}} (25%) | dFDA + Wishocracy (AI-assisted development) |
-| **AI Legal & Compliance** | {{< var treaty_campaign_budget_partnerships_billions >}} (10%) | AI drafts, lawyers review (80% cost reduction) |
-| **Strategic Partnerships** | {{< var treaty_campaign_budget_partnerships_billions >}} (10%) | Co-opt MIC, get key players on board |
-| **Operations** | {{< var treaty_campaign_budget_reserve_billions >}} (5%) | Lean, remote-first, AI-augmented teams |
-| **Implementation Support** | {{< var treaty_campaign_budget_reserve_billions >}} (5%) | Post-passage transition |
+| **Global Referendum** | {{< var treaty_campaign_budget_referendum >}} | Viral referral system ($0.20-2.00/vote tiered), 280M votes, platform development. [Scenario analysis](campaign-budget.qmd#base-case-scenario): $140M-$406M |
+| **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion, legal/compliance. Outspends pharma + MIC |
+| **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 
 #### Key Innovations
 

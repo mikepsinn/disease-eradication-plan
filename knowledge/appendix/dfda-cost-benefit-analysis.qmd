@@ -22,7 +22,8 @@ from dih_models.parameters import *
 
 - **Saves ~{{< var dfda_gross_savings_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
 - **[463:1 Return on Investment](#final-roi-and-net-benefit)**: A modest annual operational cost of ~{{< var dfda_upfront_build_billions >}} generates ~{{< var dfda_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit).
-- **[Generates 840,000 Life-Years Annually](#appendix-detailed-qaly-calculation-model)**: The platform is projected to produce a baseline of [**840,000 Quality-Adjusted Life Years (QALYs)**](#appendix-detailed-qaly-calculation-model) each year through faster drug access, new therapies, and better prevention.
+- **[Eliminates Regulatory Delay](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, the dFDA eliminates the {{< var efficacy_lag_years >}}-year [efficacy lag](regulatory-mortality-analysis.qmd), saving **{{< var dfda_avoided_regulatory_delay_dalys_annual >}} [DALYs/year](#regulatory-delay-avoidance)** (valued at **{{< var dfda_avoided_regulatory_delay_cost_annual >}}/year**).
+- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var global_dfda_qalys_gained_annual >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from specific mechanisms; comprehensive top-down estimate of **{{< var global_dfda_qalys_with_regulatory_avoidance >}}/year** including [regulatory delay avoidance](#regulatory-delay-avoidance).
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: With an ICER of **-[\$59,501 per QALY](../references.qmd#qaly-value)**, the dFDA is a dominant intervention, it both saves money and improves health.
 - **[\$137M+ Daily Cost of Inaction](#daily-opportunity-cost-of-inaction)**: Each day without the dFDA represents a societal opportunity cost of ~\$137M in economic waste and ~2,301 lost QALYs.
 
@@ -538,6 +539,42 @@ $$
 - **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
 - **Example Calculation:** If faster access saves 10,000 QALYs/year, annual benefit = 10,000 × {{< var standard_economic_qaly_value_usd >}} = **$1.5B**. If 10,000 lives are saved, benefit = 10,000 × {{< var value_of_statistical_life >}} = **$100B**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
+
+### Regulatory Delay Avoidance {#regulatory-delay-avoidance}
+
+**The dFDA's primary health benefit comes from eliminating the "efficacy lag"** — the {{< var efficacy_lag_years >}}-year delay between Phase I safety verification and final approval while drugs undergo Phase II/III efficacy testing.
+
+#### The Efficacy Lag Problem
+
+A [comprehensive quantitative analysis](regulatory-mortality-analysis.qmd) of regulatory delay costs (1962-2024) found:
+
+- **Total Deaths**: {{< var regulatory_delay_deaths_mean_millions >}}M preventable deaths (95% CI: {{< var regulatory_delay_deaths_lower_bound_millions >}}M – {{< var regulatory_delay_deaths_upper_bound_millions >}}M)
+- **Total DALYs**: {{< var regulatory_delay_dalys_billions >}}B Disability-Adjusted Life Years lost
+- **Ongoing Annual Cost**: ~{{< var regulatory_delay_annual_dalys >}} DALYs/year, valued at {{< var dfda_avoided_regulatory_delay_cost_annual >}}/year
+
+The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).
+
+#### How the dFDA Eliminates the Efficacy Lag
+
+The dFDA provides **provisional access post-Phase I** via trial participation:
+
+1. **Phase I Safety Testing**: Maintained at {{< var phase_1_safety_duration_years >}} years (no change)
+2. **Post-Phase I Access**: Patients can access drugs through trial participation immediately after safety verification
+3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}}-year pre-market efficacy delay
+
+This eliminates approximately **{{< var dfda_regulatory_delay_avoidance_fraction >}} of regulatory delay** (the efficacy lag portion).
+
+#### Quantified Benefits
+
+The dFDA's regulatory delay avoidance creates:
+
+- **Annual DALYs Saved**: {{< var dfda_avoided_regulatory_delay_dalys_annual >}} ({{< var regulatory_delay_dalys_billions >}}B ÷ 62 years × {{< var dfda_regulatory_delay_avoidance_fraction >}})
+- **Annual Economic Value**: {{< var dfda_avoided_regulatory_delay_cost_annual >}} ({{< var dfda_avoided_regulatory_delay_dalys_annual >}} × {{< var standard_economic_qaly_value_usd >}})
+- **Comprehensive Annual QALYs**: {{< var global_dfda_qalys_with_regulatory_avoidance >}} (regulatory delay avoidance + prevention benefits)
+
+This represents the **top-down comprehensive estimate** of dFDA health benefits, compared to the **{{< var global_dfda_qalys_gained_annual >}} conservative bottom-up estimate** from specific mechanism modeling.
+
+For detailed methodology and assumptions, see [The Human Capital Cost of Regulatory Latency](regulatory-mortality-analysis.qmd).
 
 #### Gross R and D Savings from dFDA Implementation
 

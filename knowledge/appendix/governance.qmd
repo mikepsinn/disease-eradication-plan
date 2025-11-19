@@ -33,6 +33,7 @@ It functions like Kickstarter meets the NIH, but without corruption or bureaucra
 {{< include ../figures/dih-architecture-diagram.qmd >}}
 
 The DIH handles ALL budgeting decisions:
+
 - Holds the treasury (from [1% Treaty](../solution/1-percent-treaty.qmd))
 - Accepts campaign proposals from anyone
 - Uses [Wishocracy](../solution/wishocracy.qmd) to allocate funds across competing campaigns
@@ -42,13 +43,15 @@ The DIH handles ALL budgeting decisions:
 
 {{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
 
-**DIH (Governance Layer)**
+### DIH (Governance Layer)
+
 - Handles all budget allocation
 - Wishocracy voting on campaigns
 - Treasury management
 - Prize distribution
 
 **dFDA (Technical Platform)**
+
 - Pure technical infrastructure
 - NO budget authority
 - Gets funded BY DIH (like any other campaign)
@@ -66,13 +69,15 @@ The DIH uses **[Wishocracy](../solution/wishocracy.qmd)** - a pairwise voting sy
 
 Since the [dFDA marketplace](../solution/dfda.qmd) handles most research allocation automatically (patients choose trials → funding flows there), the DIH treasury primarily funds **market failures** - things the marketplace can't handle:
 
-**Infrastructure (Platform Must Exist First):**
+#### Infrastructure (Platform Must Exist First)
+
 - dFDA platform development & operations (~$10B/year)
 - Competing alternative dFDA implementations
 - Data commons infrastructure (storage, processing)
 - Security audits and fraud detection systems
 
-**True Public Goods (No Revenue Model):**
+#### True Public Goods (No Revenue Model)
+
 - Patient trial participation subsidies (~$800B/year, automatic)
 - Negative results publishing incentives (no revenue from failures)
 - Basic research with no patient application yet (can't be trials)

@@ -434,8 +434,8 @@ $$
 
 **{{< var regulatory_delay_dalys_billions >}} billion years of healthy human life** deleted by the regulatory framework.
 
-- **Economic cost:** ${{< var regulatory_delay_economic_loss_trillions >}} Trillion (2024 USD)
-- **Annualized loss:** ${{< var regulatory_delay_annual_loss_trillions >}}T/year
+- **Economic cost:** {{< var regulatory_delay_economic_loss >}} (2024 USD)
+- **Annualized loss:** {{< var regulatory_delay_annual_loss >}}/year
 - **GDP equivalent:** ~8-12% of global GDP consumed annually
 
 For comparison: The entire global pharmaceutical R&D budget is ~$200B/year. The regulatory delay costs **38× more** than all drug development spending combined.
@@ -764,8 +764,6 @@ TSA agents get fired for failures. FDA bureaucrats get promoted for preventing a
 
 But at least nobody can blame regulators for approving something. And preventing blame is what healthcare is really about.
 
----
-
 ## The Bottom Line
 
 The numbers don't lie:
@@ -773,7 +771,7 @@ The numbers don't lie:
 - **{{< var efficacy_lag_years >}} years** of regulatory delay post-safety verification
 - **{{< var regulatory_delay_deaths_mean_millions >}}M deaths** from delayed access (1962-2024)
 - **{{< var regulatory_delay_dalys_billions >}}B DALYs** destroyed by paperwork
-- **${{< var regulatory_delay_economic_loss_trillions >}}T** in economic carnage
+- **{{< var regulatory_delay_economic_loss >}}** in economic carnage
 - **{{< var type_ii_error_cost_ratio >}}:1** harm ratio (delay vs. prevention)
 
 Phase I safety testing works. Keep it.
