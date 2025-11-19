@@ -5,7 +5,7 @@ Preview Economics Models Site
 
 Quickly start preview server for the economics models website.
 Copies _quarto-economics.yml to _quarto.yml, copies economics.qmd to index.qmd
-(with updated relative paths), and starts live preview.
+(with updated relative paths), runs pre-render validation, and starts live preview.
 
 Usage:
     python scripts/preview-economics.py                # Start preview server
@@ -47,6 +47,27 @@ def main():
 
     # Prepare economics files (config + index) - project_root auto-detected from cwd
     if not prepare_economics():
+        sys.exit(1)
+
+    # Run pre-render validation to catch errors early
+    print("[*] Running pre-render validation...")
+    validation_script = project_root / 'scripts' / 'pre-render-validation.py'
+    try:
+        result = subprocess.run(
+            [sys.executable, str(validation_script)],
+            check=False,
+            capture_output=False  # Let validation output go to console
+        )
+        if result.returncode != 0:
+            print(f"\n[ERROR] Pre-render validation failed with exit code {result.returncode}", file=sys.stderr)
+            print("        Please fix validation errors before starting preview.", file=sys.stderr)
+            sys.exit(result.returncode)
+        print("[OK] Pre-render validation passed!\n")
+    except FileNotFoundError:
+        print("[WARNING] Pre-render validation script not found, skipping validation", file=sys.stderr)
+        print(f"        Expected: {validation_script}", file=sys.stderr)
+    except Exception as e:
+        print(f"[ERROR] Failed to run pre-render validation: {e}", file=sys.stderr)
         sys.exit(1)
 
     # Build preview command

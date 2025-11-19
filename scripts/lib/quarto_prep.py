@@ -10,6 +10,7 @@ Shared utilities for preparing Quarto files before rendering:
 """
 
 import sys
+import re
 import shutil
 from pathlib import Path
 from typing import Optional
@@ -74,9 +75,46 @@ def prepare_economics_index(verbose: bool = True) -> bool:
         with open(economics_qmd, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Update relative paths: ../ becomes knowledge/
-        # This handles paths like ../figures/, ../appendix/, ../references.qmd, etc.
-        content = content.replace('../', 'knowledge/')
+        # Update relative paths when copying from knowledge/economics/ to root:
+        # - ../../ becomes empty (two levels up from economics/ = root)
+        # - ../ becomes knowledge/ (one level up from economics/ = knowledge/)
+        # - ./filename or just filename (same directory) becomes knowledge/economics/filename
+        # Must replace ../../ first to avoid double replacement
+        
+        # Replace ../../ with empty string (goes to root)
+        content = re.sub(r'\.\./\.\./', '', content)
+        # Replace remaining ../ with knowledge/ (goes to knowledge/)
+        content = re.sub(r'\.\./', 'knowledge/', content)
+        
+        # Handle same-directory links: [text](filename.qmd) or [text](./filename.qmd)
+        # Pattern matches markdown links with relative paths (not starting with http, https, #, or /)
+        # Root-level directories that shouldn't get knowledge/economics/ prefix
+        root_level_dirs = ['assets/', 'scripts/', 'dih-economic-models/', 'brain/', 'references.bib']
+        
+        def replace_same_dir_link(match):
+            link_text = match.group(1)
+            link_path = match.group(2)
+            # Skip if it's a URL, anchor, or absolute path
+            if (link_path.startswith('http://') or link_path.startswith('https://') or 
+                link_path.startswith('#') or link_path.startswith('/') or
+                '://' in link_path):
+                return match.group(0)  # Return unchanged
+            # Skip if path already has knowledge/ (already processed)
+            if link_path.startswith('knowledge/'):
+                return match.group(0)  # Return unchanged
+            # Skip if path is a root-level directory (like assets/, scripts/, etc.)
+            if any(link_path.startswith(root_dir) for root_dir in root_level_dirs):
+                return match.group(0)  # Return unchanged
+            # Replace ./filename or just filename with knowledge/economics/filename
+            if link_path.startswith('./'):
+                new_path = 'knowledge/economics/' + link_path[2:]
+            else:
+                # Just a filename (same directory)
+                new_path = 'knowledge/economics/' + link_path
+            return f'[{link_text}]({new_path})'
+        
+        # Match markdown links: [text](path)
+        content = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', replace_same_dir_link, content)
         
         with open(index_qmd, 'w', encoding='utf-8') as f:
             f.write(content)

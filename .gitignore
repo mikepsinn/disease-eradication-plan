@@ -97,3 +97,7 @@ build/
 # Agent memory (dynamic, not in version control)
 memory/*
 !memory/.gitkeep
+index.qmd
+
+# Generated Quarto config (copied from _quarto-book.yml or _quarto-economics.yml)
+_quarto.yml
