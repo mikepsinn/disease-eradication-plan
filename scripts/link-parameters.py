@@ -18,18 +18,19 @@ Usage:
     python tools/link-parameters.py --file FILE.qmd # Check specific file
 """
 
-import re
-import sys
 import argparse
-import yaml
-from pathlib import Path
-from typing import Dict, List, Set
+import sys
 from glob import glob
 from html.parser import HTMLParser
+from pathlib import Path
+from typing import Dict, List
+
+import yaml
 
 
 class HTMLStripper(HTMLParser):
     """Strip HTML tags to get plain text display value"""
+
     def __init__(self):
         super().__init__()
         self.text = []
@@ -38,7 +39,7 @@ class HTMLStripper(HTMLParser):
         self.text.append(data)
 
     def get_text(self):
-        return ''.join(self.text)
+        return "".join(self.text)
 
 
 def strip_html(html_str: str) -> str:
@@ -55,7 +56,7 @@ def load_variable_display_strings(variables_yml_path: Path) -> Dict[str, str]:
     Returns:
         Dict mapping display strings (e.g., "$50.0B") to variable names
     """
-    with open(variables_yml_path, 'r', encoding='utf-8') as f:
+    with open(variables_yml_path, encoding="utf-8") as f:
         variables = yaml.safe_load(f)
 
     display_to_var = {}
@@ -74,8 +75,7 @@ def load_variable_display_strings(variables_yml_path: Path) -> Dict[str, str]:
     return display_to_var
 
 
-def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
-                         skip_common: bool = True) -> List[tuple]:
+def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str], skip_common: bool = True) -> List[tuple]:
     """
     Find hardcoded numbers in a QMD file that match variable display strings.
 
@@ -89,34 +89,39 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
     """
     matches = []
 
-    with open(qmd_path, 'r', encoding='utf-8') as f:
+    with open(qmd_path, encoding="utf-8") as f:
         lines = f.readlines()
 
     for i, line in enumerate(lines, 1):
         # Skip code blocks
-        if '```' in line or line.strip().startswith('`'):
+        if "```" in line or line.strip().startswith("`"):
             continue
 
         # Skip YAML frontmatter (lines 1-30 typically)
-        if i <= 30 and (':' in line or line.strip().startswith('-')):
+        if i <= 30 and (":" in line or line.strip().startswith("-")):
             continue
 
         # Skip lines that already have Quarto variables
-        if '{{< var ' in line:
+        if "{{< var " in line:
             continue
 
         # Search for each display string in this line
         for display_str, var_name in display_to_var.items():
             # Only match formatted numbers (with symbols or commas)
-            has_formatting = ('$' in display_str or '%' in display_str or
-                            ',' in display_str or 'B' in display_str or
-                            'M' in display_str or 'T' in display_str or
-                            'K' in display_str)
+            has_formatting = (
+                "$" in display_str
+                or "%" in display_str
+                or "," in display_str
+                or "B" in display_str
+                or "M" in display_str
+                or "T" in display_str
+                or "K" in display_str
+            )
 
             # Skip plain small numbers (< 1000) without formatting
             if not has_formatting:
                 try:
-                    num_val = float(display_str.replace(',', ''))
+                    num_val = float(display_str.replace(",", ""))
                     if num_val < 1000:
                         continue  # Too generic
                 except:
@@ -124,9 +129,9 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
 
             # Skip fractional currency amounts (too context-specific)
             # Examples: $0.72, $0.02, $0.20, $0.30
-            if display_str.startswith('$') and '.' in display_str:
+            if display_str.startswith("$") and "." in display_str:
                 try:
-                    amount = float(display_str.replace('$', ''))
+                    amount = float(display_str.replace("$", ""))
                     if amount < 1:
                         continue  # Skip sub-dollar amounts
                 except:
@@ -134,9 +139,9 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
 
             # Skip currency amounts under $10 (too generic and context-dependent)
             # Examples: $0, $4, $6 (these are often partial matches)
-            if display_str.startswith('$') and not any(suffix in display_str for suffix in ['B', 'M', 'T', 'K']):
+            if display_str.startswith("$") and not any(suffix in display_str for suffix in ["B", "M", "T", "K"]):
                 try:
-                    amount = float(display_str.replace('$', '').replace(',', ''))
+                    amount = float(display_str.replace("$", "").replace(",", ""))
                     if amount < 10:
                         continue  # Too generic, likely partial matches
                 except:
@@ -148,6 +153,7 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
             if display_str in line:
                 # Find all occurrences to check context
                 import re
+
                 # Escape special regex characters in display_str
                 escaped = re.escape(display_str)
                 # Ensure not preceded or followed by a digit or decimal point
@@ -155,7 +161,7 @@ def find_matches_in_file(qmd_path: Path, display_to_var: Dict[str, str],
                 # (?<!\.) = negative lookbehind (not preceded by decimal)
                 # (?!\d) = negative lookahead (not followed by digit)
                 # (?!\.) = negative lookahead (not followed by decimal)
-                pattern = r'(?<!\d)(?<!\.)' + escaped + r'(?!\d)(?!\.)'
+                pattern = r"(?<!\d)(?<!\.)" + escaped + r"(?!\d)(?!\.)"
                 if re.search(pattern, line):
                     matches.append((i, line.strip(), display_str, var_name))
 
@@ -171,7 +177,7 @@ def apply_fixes(qmd_path: Path, matches: List[tuple]) -> int:
     if not matches:
         return 0
 
-    with open(qmd_path, 'r', encoding='utf-8') as f:
+    with open(qmd_path, encoding="utf-8") as f:
         lines = f.readlines()
 
     # Group matches by line number
@@ -195,14 +201,14 @@ def apply_fixes(qmd_path: Path, matches: List[tuple]) -> int:
         for display_str, var_name in line_matches:
             if display_str in modified_line:
                 # Replace with Quarto variable reference
-                var_expr = f'{{{{< var {var_name} >}}}}'
+                var_expr = f"{{{{< var {var_name} >}}}}"
                 modified_line = modified_line.replace(display_str, var_expr, 1)
                 replacements += 1
 
         lines[line_idx] = modified_line
 
     # Write back to file
-    with open(qmd_path, 'w', encoding='utf-8') as f:
+    with open(qmd_path, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
     return replacements
@@ -210,16 +216,15 @@ def apply_fixes(qmd_path: Path, matches: List[tuple]) -> int:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Find and link hardcoded numbers to parameter definitions',
+        description="Find and link hardcoded numbers to parameter definitions",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__
+        epilog=__doc__,
     )
-    parser.add_argument('--fix', action='store_true',
-                        help='Replace hardcoded numbers with parameter links')
-    parser.add_argument('--file', type=str,
-                        help='Check specific QMD file only')
-    parser.add_argument('--no-skip-common', action='store_true',
-                        help='Include common values (1, 2, 5, etc.) in matches')
+    parser.add_argument("--fix", action="store_true", help="Replace hardcoded numbers with parameter links")
+    parser.add_argument("--file", type=str, help="Check specific QMD file only")
+    parser.add_argument(
+        "--no-skip-common", action="store_true", help="Include common values (1, 2, 5, etc.) in matches"
+    )
 
     args = parser.parse_args()
 
@@ -227,7 +232,7 @@ def main():
     project_root = Path(__file__).parent.parent.absolute()
 
     # Load _variables.yml
-    variables_yml = project_root / '_variables.yml'
+    variables_yml = project_root / "_variables.yml"
     if not variables_yml.exists():
         print(f"[ERROR] {variables_yml} not found", file=sys.stderr)
         print("        Run: python tools/generate-variables-yml.py", file=sys.stderr)
@@ -241,9 +246,7 @@ def main():
     if args.file:
         qmd_files = [Path(args.file)]
     else:
-        qmd_files = [
-            Path(p) for p in glob(str(project_root / 'knowledge/**/*.qmd'), recursive=True)
-        ]
+        qmd_files = [Path(p) for p in glob(str(project_root / "knowledge/**/*.qmd"), recursive=True)]
 
     print(f"[*] Checking {len(qmd_files)} QMD files...")
 
@@ -253,15 +256,14 @@ def main():
 
     for qmd_path in qmd_files:
         # Skip figures directory
-        if '/figures/' in str(qmd_path) or '\\figures\\' in str(qmd_path):
+        if "/figures/" in str(qmd_path) or "\\figures\\" in str(qmd_path):
             continue
 
         # Skip references.qmd
-        if qmd_path.name == 'references.qmd':
+        if qmd_path.name == "references.qmd":
             continue
 
-        matches = find_matches_in_file(qmd_path, display_to_var,
-                                      skip_common=not args.no_skip_common)
+        matches = find_matches_in_file(qmd_path, display_to_var, skip_common=not args.no_skip_common)
 
         if matches:
             all_matches.extend([(qmd_path, *m) for m in matches])
@@ -290,7 +292,7 @@ def main():
                 try:
                     context = line_text[:100]
                 except:
-                    context = line_text[:100].encode('ascii', errors='replace').decode('ascii')
+                    context = line_text[:100].encode("ascii", errors="replace").decode("ascii")
 
                 print(f"  Line {line_num}: {display_str}")
                 print(f"    => {var_name}")
@@ -336,5 +338,5 @@ def main():
     sys.exit(0 if not all_matches else 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

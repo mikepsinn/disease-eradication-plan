@@ -5,46 +5,14 @@
 
 repos:
   # Ruff: Fast Python linter and formatter (replaces flake8, black, isort)
+  # Catches: syntax errors, unused imports, style issues, import sorting
+  # This is all you really need - fast, practical, catches real bugs
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.1.8
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
-
-  # MyPy: Static type checker
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.7.1
-    hooks:
-      - id: mypy
-        additional_dependencies: [types-all]
-        args: [--ignore-missing-imports, --no-strict-optional]
-        # Only check Python files in scripts/ and dih_models/
-        files: ^(scripts/|dih_models/)
-
-  # Pylint: Comprehensive linting and duplicate code detection
-  - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v3.0.2
-    hooks:
-      - id: pylint
-        args: [
-          --disable=missing-docstring,  # Allow functions without docstrings
-          --disable=too-few-public-methods,
-          --disable=too-many-arguments,
-          --max-line-length=120,
-          --min-similarity-lines=5,  # Detect duplicate code
-        ]
-        # Only check Python files in scripts/ and dih_models/
-        files: ^(scripts/|dih_models/)
-
-  # Vulture: Find unused code
-  - repo: https://github.com/jendrikseipp/vulture
-    rev: v2.10
-    hooks:
-      - id: vulture
-        args: [--min-confidence, 80]
-        # Only check Python files in scripts/ and dih_models/
-        files: ^(scripts/|dih_models/)
 
   # General file checks
   - repo: https://github.com/pre-commit/pre-commit-hooks

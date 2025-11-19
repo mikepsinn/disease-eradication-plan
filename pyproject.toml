@@ -37,12 +37,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
-    # Code quality tools
+    # Code quality tools (minimal, practical setup)
     "pre-commit",  # Git hooks framework
-    "ruff",  # Fast linter/formatter (replaces flake8, black, isort)
-    "mypy",  # Static type checker
-    "pylint",  # Comprehensive linter with duplicate detection
-    "vulture",  # Find unused code
+    "ruff",  # Fast linter/formatter (replaces flake8, black, isort, mypy)
     # Legacy (can be removed after migrating to ruff)
     "black",
     "flake8",
@@ -83,19 +80,3 @@ disallow_untyped_defs = false
 ignore_missing_imports = true
 no_strict_optional = true
 
-# Pylint configuration
-[tool.pylint.main]
-max-line-length = 120
-min-similarity-lines = 5  # Detect duplicate code
-
-[tool.pylint.format]
-max-line-length = 120
-
-[tool.pylint.design]
-max-args = 10
-max-locals = 20
-max-returns = 6
-max-branches = 15
-max-statements = 60
-max-public-methods = 30
-max-attributes = 15

@@ -12,22 +12,23 @@ Usage:
     python scripts/suggest-links.py --apply  # Auto-apply suggestions (use with caution)
 """
 
+import argparse
 import re
 import sys
-from pathlib import Path
-from typing import List, Dict, Tuple, Optional
-import argparse
 from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 
 @dataclass
 class ReferenceSource:
     """A known reference source with typical values."""
+
     name: str
     anchor: str
     typical_values: List[float]
     keywords: List[str]
-    units: str = ''
+    units: str = ""
 
 
 class LinkSuggester:
@@ -39,64 +40,64 @@ class LinkSuggester:
             name="SIPRI 2024 Military Spending",
             anchor="sipri-2024-spending",
             typical_values=[2718, 2.718],  # Billions or trillions
-            keywords=['military', 'defense', 'spending', 'sipri', 'global'],
-            units='money'
+            keywords=["military", "defense", "spending", "sipri", "global"],
+            units="money",
         ),
         ReferenceSource(
             name="Total War Costs",
             anchor="total-military-and-war-costs-11-4t",
             typical_values=[11355, 11.355, 11.4],
-            keywords=['war', 'conflict', 'total cost'],
-            units='money'
+            keywords=["war", "conflict", "total cost"],
+            units="money",
         ),
         ReferenceSource(
             name="RECOVERY Trial Cost Reduction",
             anchor="recovery-trial-cost-reduction",
             typical_values=[82, 80],
-            keywords=['recovery', 'trial', 'cost', 'reduction', 'oxford'],
-            units='multiplier'
+            keywords=["recovery", "trial", "cost", "reduction", "oxford"],
+            units="multiplier",
         ),
         ReferenceSource(
             name="Clinical Trial Market Size",
             anchor="clinical-trial-market-size",
             typical_values=[100, 83],
-            keywords=['clinical trial', 'market', 'global'],
-            units='money'
+            keywords=["clinical trial", "market", "global"],
+            units="money",
         ),
         ReferenceSource(
             name="GiveWell Cost Per Life Saved",
             anchor="givewell-cost-per-life-saved",
             typical_values=[3500, 5500],
-            keywords=['givewell', 'cost per life', 'charity'],
-            units='money'
+            keywords=["givewell", "cost per life", "charity"],
+            units="money",
         ),
         ReferenceSource(
             name="Smallpox Eradication ROI",
             anchor="smallpox-eradication-roi",
             typical_values=[159, 400],
-            keywords=['smallpox', 'eradication', 'roi'],
-            units='ratio'
+            keywords=["smallpox", "eradication", "roi"],
+            units="ratio",
         ),
         ReferenceSource(
             name="Childhood Vaccination ROI",
             anchor="childhood-vaccination-roi",
             typical_values=[10, 16],
-            keywords=['vaccination', 'childhood', 'roi'],
-            units='ratio'
+            keywords=["vaccination", "childhood", "roi"],
+            units="ratio",
         ),
         ReferenceSource(
             name="Disease Economic Burden",
             anchor="disease-economic-burden-109t",
             typical_values=[109000, 109],
-            keywords=['disease', 'economic burden', 'global'],
-            units='money'
+            keywords=["disease", "economic burden", "global"],
+            units="money",
         ),
         ReferenceSource(
             name="ACLED Active Combat Deaths",
             anchor="acled-active-combat-deaths",
             typical_values=[233600, 244600],
-            keywords=['deaths', 'conflict', 'acled', 'combat'],
-            units='number'
+            keywords=["deaths", "conflict", "acled", "combat"],
+            units="number",
         ),
     ]
 
@@ -142,51 +143,47 @@ class LinkSuggester:
     def extract_number_value(self, text: str) -> Tuple[Optional[float], str]:
         """Extract numeric value and determine type."""
         # Money with units
-        money_match = re.search(r'\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?', text)
+        money_match = re.search(r"\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?", text)
         if money_match:
-            num = float(money_match.group(1).replace(',', ''))
+            num = float(money_match.group(1).replace(",", ""))
             unit = money_match.group(2)
             if unit:
-                multipliers = {
-                    'B': 1e9, 'billion': 1e9,
-                    'M': 1e6, 'million': 1e6,
-                    'T': 1e12, 'trillion': 1e12
-                }
+                multipliers = {"B": 1e9, "billion": 1e9, "M": 1e6, "million": 1e6, "T": 1e12, "trillion": 1e12}
                 # Store in billions for easier matching
                 num = num * multipliers.get(unit, 1) / 1e9
-            return num, 'money'
+            return num, "money"
 
         # Ratios
-        ratio_match = re.search(r'(\d+(?:\.\d+)?)\s*:\s*\d+', text)
+        ratio_match = re.search(r"(\d+(?:\.\d+)?)\s*:\s*\d+", text)
         if ratio_match:
-            return float(ratio_match.group(1)), 'ratio'
+            return float(ratio_match.group(1)), "ratio"
 
         # Multipliers
-        mult_match = re.search(r'(\d+(?:\.\d+)?)\s*[xX×]', text)
+        mult_match = re.search(r"(\d+(?:\.\d+)?)\s*[xX×]", text)
         if mult_match:
-            return float(mult_match.group(1)), 'multiplier'
+            return float(mult_match.group(1)), "multiplier"
 
         # Deaths/large numbers
-        num_match = re.search(r'([\d,]+)', text)
+        num_match = re.search(r"([\d,]+)", text)
         if num_match:
-            return float(num_match.group(1).replace(',', '')), 'number'
+            return float(num_match.group(1).replace(",", "")), "number"
 
-        return None, ''
+        return None, ""
 
     def scan_line(self, line: str, line_num: int, filepath: Path) -> List[Dict]:
         """Scan a line for numbers that need links."""
         suggestions = []
 
         # Skip if already has a link
-        if '](../' in line or '](#' in line:
+        if "](../" in line or "](#" in line:
             return suggestions
 
         # Find all potential numbers
         patterns = [
-            (r'\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?', 'money'),
-            (r'(\d+(?:\.\d+)?)\s*[xX×]', 'multiplier'),
-            (r'(\d+(?:\.\d+)?)\s*:\s*\d+', 'ratio'),
-            (r'(\d[\d,]*)', 'number'),
+            (r"\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?", "money"),
+            (r"(\d+(?:\.\d+)?)\s*[xX×]", "multiplier"),
+            (r"(\d+(?:\.\d+)?)\s*:\s*\d+", "ratio"),
+            (r"(\d[\d,]*)", "number"),
         ]
 
         for pattern, num_type in patterns:
@@ -199,17 +196,19 @@ class LinkSuggester:
                     ref_source = self.match_reference(value, context, detected_type)
 
                     if ref_source:
-                        suggestions.append({
-                            'file': str(filepath.relative_to(Path.cwd())),
-                            'line': line_num,
-                            'number': num_text,
-                            'value': value,
-                            'type': detected_type,
-                            'reference': ref_source.name,
-                            'anchor': ref_source.anchor,
-                            'suggestion': f'[{num_text}](../references.qmd#{ref_source.anchor})',
-                            'context': line.strip()
-                        })
+                        suggestions.append(
+                            {
+                                "file": str(filepath.relative_to(Path.cwd())),
+                                "line": line_num,
+                                "number": num_text,
+                                "value": value,
+                                "type": detected_type,
+                                "reference": ref_source.name,
+                                "anchor": ref_source.anchor,
+                                "suggestion": f"[{num_text}](../references.qmd#{ref_source.anchor})",
+                                "context": line.strip(),
+                            }
+                        )
 
         return suggestions
 
@@ -218,7 +217,7 @@ class LinkSuggester:
         suggestions = []
 
         try:
-            with open(filepath, 'r', encoding='utf-8') as f:
+            with open(filepath, encoding="utf-8") as f:
                 lines = f.readlines()
 
             in_frontmatter = False
@@ -226,7 +225,7 @@ class LinkSuggester:
 
             for line_num, line in enumerate(lines, 1):
                 # Track frontmatter
-                if line.strip() == '---':
+                if line.strip() == "---":
                     in_frontmatter = not in_frontmatter
                     continue
 
@@ -234,7 +233,7 @@ class LinkSuggester:
                     continue
 
                 # Track code blocks
-                if line.strip().startswith('```'):
+                if line.strip().startswith("```"):
                     in_code_block = not in_code_block
                     continue
 
@@ -249,10 +248,10 @@ class LinkSuggester:
 
     def scan_all(self, root_path: Path = None) -> List[Dict]:
         """Scan all QMD files."""
-        root = root_path or Path('knowledge')
+        root = root_path or Path("knowledge")
         all_suggestions = []
 
-        for filepath in root.rglob('*.qmd'):
+        for filepath in root.rglob("*.qmd"):
             suggestions = self.scan_file(filepath)
             all_suggestions.extend(suggestions)
 
@@ -267,7 +266,7 @@ class LinkSuggester:
 
         by_file = {}
         for sug in suggestions:
-            filepath = sug['file']
+            filepath = sug["file"]
             if filepath not in by_file:
                 by_file[filepath] = []
             by_file[filepath].append(sug)
@@ -285,11 +284,9 @@ class LinkSuggester:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Suggest reference links for numbers')
-    parser.add_argument('--path', type=str, default='knowledge',
-                       help='Root path to scan (default: knowledge)')
-    parser.add_argument('--file', type=str,
-                       help='Scan specific file only')
+    parser = argparse.ArgumentParser(description="Suggest reference links for numbers")
+    parser.add_argument("--path", type=str, default="knowledge", help="Root path to scan (default: knowledge)")
+    parser.add_argument("--file", type=str, help="Scan specific file only")
 
     args = parser.parse_args()
 
@@ -303,5 +300,5 @@ def main():
     suggester.print_suggestions(suggestions)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

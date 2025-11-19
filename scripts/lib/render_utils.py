@@ -3,19 +3,20 @@
 Shared utilities for Quarto render scripts
 """
 
+import os
+import platform
+import re
 import subprocess
 import sys
-import re
-import time
-import os
 import threading
-import platform
+import time
 from datetime import datetime
-from typing import Optional, List, Callable, Tuple
+from typing import Callable, List, Optional, Tuple
 
 # Try to import psutil for LaTeX process detection (optional)
 try:
     import psutil
+
     PSUTIL_AVAILABLE = True
 except ImportError:
     PSUTIL_AVAILABLE = False
@@ -52,19 +53,19 @@ class BuildMonitor:
         self.phase_timings = {}  # Dict of phase_name -> (start_time, end_time)
 
         # Open log file
-        self.log_handle = open(self.log_file, 'w', encoding='utf-8')
+        self.log_handle = open(self.log_file, "w", encoding="utf-8")
 
     def __del__(self):
         """Close log file on cleanup"""
         try:
-            if hasattr(self, 'log_handle') and self.log_handle:
+            if hasattr(self, "log_handle") and self.log_handle:
                 self.log_handle.close()
         except Exception:
             pass  # Ignore cleanup errors
 
     def get_timestamp(self) -> str:
         """Get formatted timestamp for log messages"""
-        return datetime.now().strftime('%H:%M:%S')
+        return datetime.now().strftime("%H:%M:%S")
 
     def _format_duration(self, seconds: float) -> str:
         """Format duration in seconds to human-readable string"""
@@ -78,17 +79,19 @@ class BuildMonitor:
             hours = int(seconds / 3600)
             minutes = int((seconds % 3600) / 60)
             return f"{hours}h {minutes}m"
-    
+
     def log(self, message: str, to_stderr: bool = False):
         """Log message to both console and file with timestamp"""
         timestamp = self.get_timestamp()
         formatted_message = f"[{timestamp}] {message}"
         output = sys.stderr if to_stderr else sys.stdout
         print(formatted_message, file=output, flush=True)
-        self.log_handle.write(formatted_message + '\n')
+        self.log_handle.write(formatted_message + "\n")
         self.log_handle.flush()
 
-    def parse_line(self, line: str, custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None) -> Optional[str]:
+    def parse_line(
+        self, line: str, custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None
+    ) -> Optional[str]:
         """
         Parse a line of output and extract relevant information
 
@@ -104,7 +107,7 @@ class BuildMonitor:
                     return result
 
         # Match file progress: [ 42/110] path/to/file.qmd
-        file_match = re.match(r'\[\s*(\d+)/(\d+)\]\s+(.+\.qmd)', line)
+        file_match = re.match(r"\[\s*(\d+)/(\d+)\]\s+(.+\.qmd)", line)
         if file_match:
             # Track timing for previous file
             current_time = time.time()
@@ -125,16 +128,16 @@ class BuildMonitor:
             return f"[{self.file_count}/{self.total_files}] {self.current_file} (elapsed: {elapsed_str})"
 
         # Match output creation
-        if line.startswith('Output created:'):
+        if line.startswith("Output created:"):
             return line.strip()
 
         # Detect warnings (WARN: can appear anywhere in line, often with timestamps)
-        if 'WARN:' in line or 'Warning:' in line:
+        if "WARN:" in line or "Warning:" in line:
             self.warnings.append(line.strip())
             return f"WARNING: {line.strip()}"
 
         # Detect errors
-        if line.startswith('ERROR:') or line.startswith('Error:') or 'error:' in line.lower():
+        if line.startswith("ERROR:") or line.startswith("Error:") or "error:" in line.lower():
             self.errors.append(line.strip())
             return f"ERROR: {line.strip()}"
 
@@ -142,34 +145,34 @@ class BuildMonitor:
 
     def check_timeout(self) -> bool:
         """Check if build has timed out (no output for timeout_seconds)
-        
+
         Exception: If LaTeX processes are actively running, extend timeout
         since LaTeX compilation can be silent for long periods.
         """
         elapsed = time.time() - self.last_output_time
-        
+
         # If LaTeX processes are running, allow longer timeout (LaTeX can be silent)
         if self._is_latex_running():
             # Allow up to 2x timeout when LaTeX is running
             if elapsed > (self.timeout_seconds * 2):
                 return True
             return False
-        
+
         # Normal timeout check
         if elapsed > self.timeout_seconds:
             return True
         return False
-    
+
     def _is_latex_running(self) -> bool:
         """Check if any LaTeX processes are currently running"""
         if not PSUTIL_AVAILABLE:
             return False  # Can't detect without psutil
-        
+
         try:
-            latex_processes = ['lualatex', 'pdflatex', 'xelatex']
-            for proc in psutil.process_iter(['name']):
+            latex_processes = ["lualatex", "pdflatex", "xelatex"]
+            for proc in psutil.process_iter(["name"]):
                 try:
-                    proc_name = proc.info['name'] or ''
+                    proc_name = proc.info["name"] or ""
                     proc_name_lower = proc_name.lower()
                     # Check for LaTeX processes (handle .exe extension on Windows)
                     for latex_name in latex_processes:
@@ -190,16 +193,18 @@ class BuildMonitor:
             if self.process and self.process.poll() is not None:
                 # Process finished, exit watchdog
                 break
-                
+
             elapsed_since_output = time.time() - self.last_output_time
             elapsed_since_log = time.time() - last_log_time
-            
+
             # Log progress every 30 seconds when silent (helps debug GitHub Actions hangs)
             if elapsed_since_output > 30 and elapsed_since_log > 30:
                 latex_status = " (LaTeX running)" if self._is_latex_running() else ""
-                self.log(f"Still processing... {int(elapsed_since_output)}s since last output{latex_status}", to_stderr=True)
+                self.log(
+                    f"Still processing... {int(elapsed_since_output)}s since last output{latex_status}", to_stderr=True
+                )
                 last_log_time = time.time()
-            
+
             if self.check_timeout():
                 self.timed_out = True
                 # Double-check process is still running before killing
@@ -216,7 +221,12 @@ class BuildMonitor:
                         pass
                 break
 
-    def run_build(self, command: List[str], build_type: str = "render", custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None) -> int:
+    def run_build(
+        self,
+        command: List[str],
+        build_type: str = "render",
+        custom_parsers: Optional[List[Callable[[str], Optional[str]]]] = None,
+    ) -> int:
         """
         Run the build command with monitoring
 
@@ -240,9 +250,9 @@ class BuildMonitor:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
-                encoding='utf-8',
-                errors='replace',  # Replace invalid UTF-8 bytes instead of failing
-                bufsize=1
+                encoding="utf-8",
+                errors="replace",  # Replace invalid UTF-8 bytes instead of failing
+                bufsize=1,
             )
 
             # Start timeout watchdog thread
@@ -255,14 +265,14 @@ class BuildMonitor:
 
                 # Get timestamp for this line
                 timestamp = self.get_timestamp()
-                
+
                 # Write timestamped line to log file
                 timestamped_line = f"[{timestamp}] {line}"
                 self.log_handle.write(timestamped_line)
                 self.log_handle.flush()
 
                 # Print timestamped output to console as well
-                print(timestamped_line, end='')
+                print(timestamped_line, end="")
 
                 # Parse and extract relevant information for summary
                 parsed = self.parse_line(line, custom_parsers)
@@ -292,12 +302,17 @@ class BuildMonitor:
                     self.timeout_thread.join(timeout=2.0)
                 except Exception:
                     pass  # Ignore thread join errors
-            
+
             # Explicitly close process handles to avoid cleanup errors
             try:
-                if self.process and hasattr(self.process, 'stdout') and self.process.stdout:
+                if self.process and hasattr(self.process, "stdout") and self.process.stdout:
                     self.process.stdout.close()
-                if self.process and hasattr(self.process, 'stderr') and self.process.stderr and self.process.stderr != self.process.stdout:
+                if (
+                    self.process
+                    and hasattr(self.process, "stderr")
+                    and self.process.stderr
+                    and self.process.stderr != self.process.stdout
+                ):
                     self.process.stderr.close()
             except (AttributeError, ValueError, OSError, AssertionError, TypeError):
                 pass  # Ignore all cleanup errors - process may already be closed
@@ -305,7 +320,7 @@ class BuildMonitor:
             # Check if we timed out
             if self.timed_out:
                 return 124
-            
+
             # If return_code is None, process hasn't finished (shouldn't happen after wait())
             if return_code is None:
                 self.log("Warning: Process return code is None after wait()", to_stderr=True)
@@ -385,15 +400,16 @@ class BuildMonitor:
             if self.process:
                 try:
                     process_exit_code = self.process.poll()
-                    process_finished = (process_exit_code is not None)
+                    process_finished = process_exit_code is not None
                 except Exception:
                     pass
-            
+
             error_msg = str(e)
-            is_cleanup_error = any(keyword in error_msg.lower() for keyword in [
-                'cleanup', 'child process', 'already terminated', 'assertion'
-            ])
-            
+            is_cleanup_error = any(
+                keyword in error_msg.lower()
+                for keyword in ["cleanup", "child process", "already terminated", "assertion"]
+            )
+
             if is_cleanup_error and process_finished:
                 # Cleanup error but process finished - log warning but don't fail
                 self.log(f"\nWarning: Cleanup error (process completed successfully): {e}", to_stderr=True)
@@ -404,6 +420,7 @@ class BuildMonitor:
                 # Real error - fail the build
                 self.log(f"\nUnexpected error: {e}", to_stderr=True)
                 import traceback
+
                 self.log(f"Traceback: {traceback.format_exc()}", to_stderr=True)
                 self.stop_timeout_check.set()
                 if self.process and self.process.poll() is None:
@@ -425,65 +442,63 @@ class BuildMonitor:
 def kill_existing_quarto_processes(include_latex: bool = False) -> int:
     """
     Kill all existing Quarto and optionally LaTeX processes before starting a new build
-    
+
     Args:
         include_latex: Whether to also kill LaTeX processes (for PDF builds)
-    
+
     Returns:
         Number of processes killed
     """
     killed_count = 0
-    
+
     try:
         system = platform.system()
-        
-        if system == 'Windows':
+
+        if system == "Windows":
             # Windows: Use taskkill to kill quarto.exe and optionally LaTeX processes
-            processes_to_kill = ['quarto.exe']
+            processes_to_kill = ["quarto.exe"]
             if include_latex:
-                processes_to_kill.extend(['lualatex.exe', 'pdflatex.exe', 'xelatex.exe'])
-            
+                processes_to_kill.extend(["lualatex.exe", "pdflatex.exe", "xelatex.exe"])
+
             for proc_name in processes_to_kill:
                 try:
                     result = subprocess.run(
-                        ['taskkill', '/F', '/IM', proc_name, '/T'],
+                        ["taskkill", "/F", "/IM", proc_name, "/T"],
                         capture_output=True,
                         text=True,
-                        encoding='utf-8',
-                        errors='replace',
-                        timeout=5
+                        encoding="utf-8",
+                        errors="replace",
+                        timeout=5,
                     )
                     # Count processes killed (taskkill returns 0 if processes were found and killed)
                     if result.returncode == 0:
                         # Parse output to count killed processes
-                        output_lines = result.stdout.split('\n')
+                        output_lines = result.stdout.split("\n")
                         for line in output_lines:
-                            if 'terminated' in line.lower() or 'killed' in line.lower():
+                            if "terminated" in line.lower() or "killed" in line.lower():
                                 killed_count += 1
                 except (subprocess.TimeoutExpired, FileNotFoundError):
                     pass
         else:
             # Unix-like: Use pkill or killall
-            processes_to_kill = ['quarto']
+            processes_to_kill = ["quarto"]
             if include_latex:
-                processes_to_kill.extend(['lualatex', 'pdflatex', 'xelatex'])
-            
+                processes_to_kill.extend(["lualatex", "pdflatex", "xelatex"])
+
             for proc_name in processes_to_kill:
                 try:
                     # Try pkill first
-                    subprocess.run(['pkill', '-9', proc_name], 
-                                 capture_output=True, timeout=5)
+                    subprocess.run(["pkill", "-9", proc_name], capture_output=True, timeout=5)
                     # Try killall as backup
-                    subprocess.run(['killall', '-9', proc_name], 
-                                 capture_output=True, timeout=5)
+                    subprocess.run(["killall", "-9", proc_name], capture_output=True, timeout=5)
                     killed_count += 1
                 except (subprocess.TimeoutExpired, FileNotFoundError):
                     pass
-        
+
         if killed_count > 0:
             print(f"Killed {killed_count} existing Quarto/LaTeX process(es)")
             time.sleep(1)  # Give processes time to fully terminate
-        
+
         return killed_count
     except Exception as e:
         print(f"Warning: Could not kill existing processes: {e}", file=sys.stderr)
@@ -492,7 +507,8 @@ def kill_existing_quarto_processes(include_latex: bool = False) -> int:
 
 def get_timestamp() -> str:
     """Get formatted timestamp for log messages"""
-    return datetime.now().strftime('%H:%M:%S')
+    return datetime.now().strftime("%H:%M:%S")
+
 
 def log_with_timestamp(message: str, to_stderr: bool = False):
     """Log message with timestamp"""
@@ -500,6 +516,7 @@ def log_with_timestamp(message: str, to_stderr: bool = False):
     formatted_message = f"[{timestamp}] {message}"
     output = sys.stderr if to_stderr else sys.stdout
     print(formatted_message, file=output, flush=True)
+
 
 def run_pre_validation() -> int:
     """
@@ -514,7 +531,7 @@ def run_pre_validation() -> int:
     log_with_timestamp("RUNNING PRE-VALIDATION")
     log_with_timestamp("=" * 80)
 
-    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pre-render-validation.py')
+    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pre-render-validation.py")
 
     try:
         # Capture output so we can timestamp it
@@ -523,18 +540,18 @@ def run_pre_validation() -> int:
             check=False,
             capture_output=True,
             text=True,
-            encoding='utf-8',
-            errors='replace'
+            encoding="utf-8",
+            errors="replace",
         )
 
         # Log captured output with timestamps
         if result.stdout:
-            for line in result.stdout.strip().split('\n'):
+            for line in result.stdout.strip().split("\n"):
                 if line.strip():
                     log_with_timestamp(line)
 
         if result.stderr:
-            for line in result.stderr.strip().split('\n'):
+            for line in result.stderr.strip().split("\n"):
                 if line.strip():
                     log_with_timestamp(line, to_stderr=True)
 
@@ -542,7 +559,9 @@ def run_pre_validation() -> int:
         elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
 
         if result.returncode != 0:
-            log_with_timestamp(f"\nPre-validation failed with exit code {result.returncode} (took {elapsed_str})", to_stderr=True)
+            log_with_timestamp(
+                f"\nPre-validation failed with exit code {result.returncode} (took {elapsed_str})", to_stderr=True
+            )
             return result.returncode
 
         log_with_timestamp(f"\nPre-validation passed! (took {elapsed_str})")
@@ -555,40 +574,42 @@ def run_pre_validation() -> int:
         return 1
 
 
-def validate_pdf_for_python_code(pdf_path: str, search_string: str = 'print(f') -> Tuple[bool, List[str]]:
+def validate_pdf_for_python_code(pdf_path: str, search_string: str = "print(f") -> Tuple[bool, List[str]]:
     """
     Validate PDF for Python code leakage by searching for specific strings.
-    
+
     Args:
         pdf_path: Path to PDF file to check
         search_string: String to search for (default: 'print(f')
-    
+
     Returns:
         Tuple of (found_issues: bool, issues: list of context strings)
     """
     issues = []
-    
+
     if not os.path.exists(pdf_path):
         return False, [f"PDF file not found: {pdf_path}"]
-    
+
     try:
         # Try to extract text from PDF using PyPDF2
         try:
             import PyPDF2
-            with open(pdf_path, 'rb') as f:
+
+            with open(pdf_path, "rb") as f:
                 pdf_reader = PyPDF2.PdfReader(f)
                 text_content = ""
                 for page_num, page in enumerate(pdf_reader.pages, 1):
                     try:
                         page_text = page.extract_text()
                         text_content += f"\n--- Page {page_num} ---\n{page_text}\n"
-                    except Exception as e:
+                    except Exception:
                         # Skip pages that can't be extracted
                         continue
         except ImportError:
             # Fallback: try pdfplumber
             try:
                 import pdfplumber
+
                 text_content = ""
                 with pdfplumber.open(pdf_path) as pdf:
                     for page_num, page in enumerate(pdf.pages, 1):
@@ -601,48 +622,41 @@ def validate_pdf_for_python_code(pdf_path: str, search_string: str = 'print(f') 
             except ImportError:
                 # Last resort: try pdftotext command if available
                 try:
-                    result = subprocess.run(
-                        ['pdftotext', pdf_path, '-'],
-                        capture_output=True,
-                        text=True,
-                        timeout=30
-                    )
+                    result = subprocess.run(["pdftotext", pdf_path, "-"], capture_output=True, text=True, timeout=30)
                     if result.returncode == 0:
                         text_content = result.stdout
                     else:
-                        return False, [f"Could not extract text from PDF. Install PyPDF2, pdfplumber, or pdftotext."]
+                        return False, ["Could not extract text from PDF. Install PyPDF2, pdfplumber, or pdftotext."]
                 except (FileNotFoundError, subprocess.TimeoutExpired):
-                    return False, [f"Could not extract text from PDF. Install PyPDF2, pdfplumber, or pdftotext."]
-        
+                    return False, ["Could not extract text from PDF. Install PyPDF2, pdfplumber, or pdftotext."]
+
         # Search for the string in the extracted text
-        lines = text_content.split('\n')
+        lines = text_content.split("\n")
         for line_num, line in enumerate(lines, 1):
             if search_string in line:
                 # Extract surrounding context (5 lines before and after)
                 start_idx = max(0, line_num - 6)
                 end_idx = min(len(lines), line_num + 5)
                 context_lines = lines[start_idx:end_idx]
-                
+
                 # Find the exact line with the match
                 match_line_idx = line_num - start_idx - 1
-                
+
                 # Build context string
                 context = []
                 for i, ctx_line in enumerate(context_lines):
                     marker = ">>> " if i == match_line_idx else "    "
                     context.append(f"{marker}Line {start_idx + i + 1}: {ctx_line}")
-                
-                issues.append(
-                    f"Found '{search_string}' in PDF:\n" + "\n".join(context)
-                )
-        
+
+                issues.append(f"Found '{search_string}' in PDF:\n" + "\n".join(context))
+
         return len(issues) > 0, issues
-        
+
     except Exception as e:
         return False, [f"Error validating PDF: {e}"]
 
 
-def run_post_validation(output_dir: str = '_book/warondisease') -> int:
+def run_post_validation(output_dir: str = "_book/warondisease") -> int:
     """
     Run post-validation script after building HTML
 
@@ -658,27 +672,27 @@ def run_post_validation(output_dir: str = '_book/warondisease') -> int:
     log_with_timestamp("RUNNING POST-VALIDATION")
     log_with_timestamp("=" * 80)
 
-    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'post-render-validation.py')
+    script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "post-render-validation.py")
 
     try:
         # Capture output so we can timestamp it
         result = subprocess.run(
-            [sys.executable, script_path, '--output-dir', output_dir],
+            [sys.executable, script_path, "--output-dir", output_dir],
             check=False,
             capture_output=True,
             text=True,
-            encoding='utf-8',
-            errors='replace'
+            encoding="utf-8",
+            errors="replace",
         )
 
         # Log captured output with timestamps
         if result.stdout:
-            for line in result.stdout.strip().split('\n'):
+            for line in result.stdout.strip().split("\n"):
                 if line.strip():
                     log_with_timestamp(line)
 
         if result.stderr:
-            for line in result.stderr.strip().split('\n'):
+            for line in result.stderr.strip().split("\n"):
                 if line.strip():
                     log_with_timestamp(line, to_stderr=True)
 
@@ -686,7 +700,9 @@ def run_post_validation(output_dir: str = '_book/warondisease') -> int:
         elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"
 
         if result.returncode != 0:
-            log_with_timestamp(f"\nPost-validation failed with exit code {result.returncode} (took {elapsed_str})", to_stderr=True)
+            log_with_timestamp(
+                f"\nPost-validation failed with exit code {result.returncode} (took {elapsed_str})", to_stderr=True
+            )
             return result.returncode
 
         log_with_timestamp(f"\nPost-validation passed! (took {elapsed_str})")
@@ -701,16 +717,17 @@ def run_post_validation(output_dir: str = '_book/warondisease') -> int:
 
 def create_latex_parser():
     """Create a parser function for LaTeX compilation phases"""
+
     def parse_latex(line: str) -> Optional[str]:
         # Match various LaTeX compilation patterns
-        if re.search(r'running (lualatex|pdflatex|xelatex)', line, re.IGNORECASE):
+        if re.search(r"running (lualatex|pdflatex|xelatex)", line, re.IGNORECASE):
             return f"LaTeX compilation: {line.strip()}"
         # Match LaTeX output patterns (even if Quarto doesn't explicitly say "running")
-        if re.search(r'(lualatex|pdflatex|xelatex).*\.tex', line, re.IGNORECASE):
+        if re.search(r"(lualatex|pdflatex|xelatex).*\.tex", line, re.IGNORECASE):
             return f"LaTeX processing: {line.strip()}"
         # Match LaTeX log patterns
-        if re.search(r'\.(aux|log|out|toc|bbl|blg)', line, re.IGNORECASE):
+        if re.search(r"\.(aux|log|out|toc|bbl|blg)", line, re.IGNORECASE):
             return f"LaTeX file: {line.strip()}"
         return None
-    return parse_latex
 
+    return parse_latex

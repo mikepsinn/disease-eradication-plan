@@ -16,32 +16,32 @@ Usage:
     python scripts/find-unlinked-numbers.py --format json > unlinked-numbers.json
 """
 
+import argparse
+import json
 import re
 import sys
 from pathlib import Path
-from typing import List, Dict, Tuple
-import argparse
-import json
+from typing import Dict, List
 
 
 class NumberFinder:
     """Find and categorize numeric values in QMD files."""
 
     # Patterns for numbers we want to find
-    MONEY_PATTERN = r'\$\s*(\d{1,3}(?:,\d{3})*(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?'
-    PERCENT_PATTERN = r'(\d+(?:\.\d+)?)\s*%'
-    LARGE_NUMBER_PATTERN = r'\b(\d{1,3}(?:,\d{3})+)\b'
-    RATIO_PATTERN = r'(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)'
-    MULTIPLIER_PATTERN = r'(\d+(?:\.\d+)?)\s*[xX×]'
+    MONEY_PATTERN = r"\$\s*(\d{1,3}(?:,\d{3})*(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?"
+    PERCENT_PATTERN = r"(\d+(?:\.\d+)?)\s*%"
+    LARGE_NUMBER_PATTERN = r"\b(\d{1,3}(?:,\d{3})+)\b"
+    RATIO_PATTERN = r"(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)"
+    MULTIPLIER_PATTERN = r"(\d+(?:\.\d+)?)\s*[xX×]"
 
     # Patterns for contexts where numbers are already linked/sourced
     SKIP_PATTERNS = [
-        r'`{python}[^`]+`',  # Inline Python code
-        r'\[([^\]]+)\]\(([^)]+)\)',  # Markdown links
-        r'\$\$[^$]+\$\$',  # Display math
-        r'\$[^$]+\$',  # Inline math
-        r'```[^`]+```',  # Code blocks
-        r'^\s*\|',  # Table rows (often have linked headers)
+        r"`{python}[^`]+`",  # Inline Python code
+        r"\[([^\]]+)\]\(([^)]+)\)",  # Markdown links
+        r"\$\$[^$]+\$\$",  # Display math
+        r"\$[^$]+\$",  # Inline math
+        r"```[^`]+```",  # Code blocks
+        r"^\s*\|",  # Table rows (often have linked headers)
     ]
 
     def __init__(self, root_path: Path = None):
@@ -62,60 +62,70 @@ class NumberFinder:
 
         # Find money values
         for match in re.finditer(self.MONEY_PATTERN, text):
-            numbers.append({
-                'value': match.group(0),
-                'number': match.group(1),
-                'unit': match.group(2) or '',
-                'type': 'money',
-                'line': line_num,
-                'context': text.strip()
-            })
+            numbers.append(
+                {
+                    "value": match.group(0),
+                    "number": match.group(1),
+                    "unit": match.group(2) or "",
+                    "type": "money",
+                    "line": line_num,
+                    "context": text.strip(),
+                }
+            )
 
         # Find percentages
         for match in re.finditer(self.PERCENT_PATTERN, text):
-            numbers.append({
-                'value': match.group(0),
-                'number': match.group(1),
-                'unit': '%',
-                'type': 'percent',
-                'line': line_num,
-                'context': text.strip()
-            })
+            numbers.append(
+                {
+                    "value": match.group(0),
+                    "number": match.group(1),
+                    "unit": "%",
+                    "type": "percent",
+                    "line": line_num,
+                    "context": text.strip(),
+                }
+            )
 
         # Find ratios (ROI, etc.)
         for match in re.finditer(self.RATIO_PATTERN, text):
-            numbers.append({
-                'value': match.group(0),
-                'number': f"{match.group(1)}:{match.group(2)}",
-                'unit': 'ratio',
-                'type': 'ratio',
-                'line': line_num,
-                'context': text.strip()
-            })
+            numbers.append(
+                {
+                    "value": match.group(0),
+                    "number": f"{match.group(1)}:{match.group(2)}",
+                    "unit": "ratio",
+                    "type": "ratio",
+                    "line": line_num,
+                    "context": text.strip(),
+                }
+            )
 
         # Find multipliers
         for match in re.finditer(self.MULTIPLIER_PATTERN, text):
-            numbers.append({
-                'value': match.group(0),
-                'number': match.group(1),
-                'unit': 'x',
-                'type': 'multiplier',
-                'line': line_num,
-                'context': text.strip()
-            })
+            numbers.append(
+                {
+                    "value": match.group(0),
+                    "number": match.group(1),
+                    "unit": "x",
+                    "type": "multiplier",
+                    "line": line_num,
+                    "context": text.strip(),
+                }
+            )
 
         # Find large comma-separated numbers
         for match in re.finditer(self.LARGE_NUMBER_PATTERN, text):
             # Skip if already captured in money pattern
-            if not any(match.group(0) in n['value'] for n in numbers):
-                numbers.append({
-                    'value': match.group(0),
-                    'number': match.group(1),
-                    'unit': '',
-                    'type': 'large_number',
-                    'line': line_num,
-                    'context': text.strip()
-                })
+            if not any(match.group(0) in n["value"] for n in numbers):
+                numbers.append(
+                    {
+                        "value": match.group(0),
+                        "number": match.group(1),
+                        "unit": "",
+                        "type": "large_number",
+                        "line": line_num,
+                        "context": text.strip(),
+                    }
+                )
 
         return numbers
 
@@ -124,7 +134,7 @@ class NumberFinder:
         results = []
 
         try:
-            with open(filepath, 'r', encoding='utf-8') as f:
+            with open(filepath, encoding="utf-8") as f:
                 lines = f.readlines()
 
             in_frontmatter = False
@@ -132,7 +142,7 @@ class NumberFinder:
 
             for line_num, line in enumerate(lines, 1):
                 # Track frontmatter
-                if line.strip() == '---':
+                if line.strip() == "---":
                     in_frontmatter = not in_frontmatter
                     continue
 
@@ -141,7 +151,7 @@ class NumberFinder:
                     continue
 
                 # Track code blocks
-                if line.strip().startswith('```'):
+                if line.strip().startswith("```"):
                     in_code_block = not in_code_block
                     continue
 
@@ -153,7 +163,7 @@ class NumberFinder:
                 numbers = self.extract_numbers(line, line_num)
 
                 for num in numbers:
-                    num['file'] = str(filepath.relative_to(Path.cwd()))
+                    num["file"] = str(filepath.relative_to(Path.cwd()))
                     results.append(num)
 
         except Exception as e:
@@ -174,16 +184,16 @@ class NumberFinder:
 
         return results
 
-    def print_results(self, results: Dict[str, List[Dict]], format: str = 'text'):
+    def print_results(self, results: Dict[str, List[Dict]], format: str = "text"):
         """Print results in specified format."""
-        if format == 'json':
+        if format == "json":
             print(json.dumps(results, indent=2))
             return
 
         # Text format
         total_numbers = sum(len(nums) for nums in results.values())
         print(f"\n{'='*80}")
-        print(f"UNLINKED NUMBERS REPORT")
+        print("UNLINKED NUMBERS REPORT")
         print(f"{'='*80}\n")
         print(f"Found {total_numbers} potentially unlinked numbers in {len(results)} files\n")
 
@@ -204,18 +214,16 @@ class NumberFinder:
         type_counts = {}
         for numbers in results.values():
             for num in numbers:
-                type_counts[num['type']] = type_counts.get(num['type'], 0) + 1
+                type_counts[num["type"]] = type_counts.get(num["type"], 0) + 1
 
         for num_type, count in sorted(type_counts.items(), key=lambda x: -x[1]):
             print(f"  {num_type:15s}: {count:4d}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Find unlinked numbers in QMD files')
-    parser.add_argument('--path', type=str, default='knowledge',
-                       help='Root path to scan (default: knowledge)')
-    parser.add_argument('--format', choices=['text', 'json'], default='text',
-                       help='Output format (default: text)')
+    parser = argparse.ArgumentParser(description="Find unlinked numbers in QMD files")
+    parser.add_argument("--path", type=str, default="knowledge", help="Root path to scan (default: knowledge)")
+    parser.add_argument("--format", choices=["text", "json"], default="text", help="Output format (default: text)")
 
     args = parser.parse_args()
 
@@ -224,5 +232,5 @@ def main():
     finder.print_results(results, args.format)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

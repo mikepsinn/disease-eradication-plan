@@ -13,31 +13,27 @@ Usage:
     python scripts/preview-economics.py --help         # Show all options
 """
 
-import sys
+import argparse
 import os
 import subprocess
-import argparse
+import sys
 from pathlib import Path
 
 # Add scripts/lib to path for imports
-sys.path.insert(0, str(Path(__file__).parent / 'lib'))
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from quarto_prep import prepare_economics
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Preview economics models website with live reload',
+        description="Preview economics models website with live reload",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__
+        epilog=__doc__,
     )
-    parser.add_argument('--port', type=int,
-                        help='Port for preview server (default: Quarto chooses)')
-    parser.add_argument('--host', type=str,
-                        help='Host for preview server (default: localhost)')
-    parser.add_argument('--no-browser', action='store_true',
-                        help='Do not open browser automatically')
-    parser.add_argument('quarto_args', nargs='*',
-                        help='Additional arguments to pass to quarto preview')
+    parser.add_argument("--port", type=int, help="Port for preview server (default: Quarto chooses)")
+    parser.add_argument("--host", type=str, help="Host for preview server (default: localhost)")
+    parser.add_argument("--no-browser", action="store_true", help="Do not open browser automatically")
+    parser.add_argument("quarto_args", nargs="*", help="Additional arguments to pass to quarto preview")
 
     args = parser.parse_args()
 
@@ -51,12 +47,12 @@ def main():
 
     # Run pre-render validation to catch errors early
     print("[*] Running pre-render validation...")
-    validation_script = project_root / 'scripts' / 'pre-render-validation.py'
+    validation_script = project_root / "scripts" / "pre-render-validation.py"
     try:
         result = subprocess.run(
             [sys.executable, str(validation_script)],
             check=False,
-            capture_output=False  # Let validation output go to console
+            capture_output=False,  # Let validation output go to console
         )
         if result.returncode != 0:
             print(f"\n[ERROR] Pre-render validation failed with exit code {result.returncode}", file=sys.stderr)
@@ -71,14 +67,14 @@ def main():
         sys.exit(1)
 
     # Build preview command
-    cmd = ['quarto', 'preview']
+    cmd = ["quarto", "preview"]
 
     if args.port:
-        cmd.extend(['--port', str(args.port)])
+        cmd.extend(["--port", str(args.port)])
     if args.host:
-        cmd.extend(['--host', args.host])
+        cmd.extend(["--host", args.host])
     if args.no_browser:
-        cmd.append('--no-browser')
+        cmd.append("--no-browser")
 
     cmd.extend(args.quarto_args)
 
@@ -101,5 +97,5 @@ def main():
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

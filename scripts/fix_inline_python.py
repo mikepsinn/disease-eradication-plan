@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Fix Inline Python Expressions in Quarto Files
 
@@ -14,57 +13,52 @@ Usage:
     python scripts/fix_inline_python.py [--dry-run]
 """
 
-import re
-import os
-import sys
-from pathlib import Path
-from collections import defaultdict
 import argparse
+import re
+import sys
+from collections import defaultdict
+from pathlib import Path
 
 # Set UTF-8 encoding for stdout to handle unicode characters
-if sys.platform == 'win32':
+if sys.platform == "win32":
     import codecs
-    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
-    sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+
+    sys.stdout = codecs.getwriter("utf-8")(sys.stdout.buffer, "strict")
+    sys.stderr = codecs.getwriter("utf-8")(sys.stderr.buffer, "strict")
 
 # Patterns to match inline Python expressions
-INLINE_PYTHON_PATTERN = r'`\{python\}\s+([^`]+)`'
+INLINE_PYTHON_PATTERN = r"`\{python\}\s+([^`]+)`"
 
 # Function call patterns we want to replace
 FUNCTION_PATTERNS = [
-    r'format_parameter_value\(([^)]+)\)',
-    r'format_billions\(([^)]+)\)',
-    r'format_millions\(([^)]+)\)',
-    r'format_percentage\(([^)]+)\)',
-    r'format_currency\(([^)]+)\)',
-    r'format_roi\(([^)]+)\)',
-    r'format_qalys\(([^)]+)\)',
-    r'format_billions_latex\(([^)]+)\)',
+    r"format_parameter_value\(([^)]+)\)",
+    r"format_billions\(([^)]+)\)",
+    r"format_millions\(([^)]+)\)",
+    r"format_percentage\(([^)]+)\)",
+    r"format_currency\(([^)]+)\)",
+    r"format_roi\(([^)]+)\)",
+    r"format_qalys\(([^)]+)\)",
+    r"format_billions_latex\(([^)]+)\)",
     r'f"([^"]+)"',  # f-strings
 ]
 
 
-def find_qmd_files(root_dir='.'):
+def find_qmd_files(root_dir="."):
     """Find all .qmd files in the project"""
     qmd_files = []
-    for path in Path(root_dir).rglob('*.qmd'):
+    for path in Path(root_dir).rglob("*.qmd"):
         qmd_files.append(str(path))
     return qmd_files
 
 
 def extract_inline_expressions(file_path):
     """Extract all inline Python expressions from a .qmd file (excluding code blocks)"""
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, encoding="utf-8") as f:
         content = f.read()
 
     # Remove Python code blocks (```{python} ... ```)
     # This prevents matching inline expressions inside code blocks
-    content_without_blocks = re.sub(
-        r'```\{python\}.*?```',
-        '',
-        content,
-        flags=re.DOTALL
-    )
+    content_without_blocks = re.sub(r"```\{python\}.*?```", "", content, flags=re.DOTALL)
 
     expressions = []
     for match in re.finditer(INLINE_PYTHON_PATTERN, content_without_blocks):
@@ -93,17 +87,17 @@ def generate_variable_name(expr):
     # Extract the main variable name
 
     # Try to find a constant name (uppercase with underscores)
-    const_match = re.search(r'([A-Z][A-Z0-9_]+)', expr)
+    const_match = re.search(r"([A-Z][A-Z0-9_]+)", expr)
     if const_match:
         const_name = const_match.group(1)
         # Convert to lowercase and add _formatted suffix
-        return const_name.lower() + '_formatted'
+        return const_name.lower() + "_formatted"
 
     # If no constant found, try to create a name from the expression
     # Remove special characters and convert to snake_case
-    clean = re.sub(r'[^a-zA-Z0-9_]', '_', expr)
-    clean = re.sub(r'_+', '_', clean).strip('_').lower()
-    return clean + '_formatted'
+    clean = re.sub(r"[^a-zA-Z0-9_]", "_", expr)
+    clean = re.sub(r"_+", "_", clean).strip("_").lower()
+    return clean + "_formatted"
 
 
 def generate_formatted_value(expr):
@@ -144,9 +138,9 @@ def scan_all_expressions():
 
 def update_economic_parameters(expressions_by_var, dry_run=False):
     """Add formatted variables to economic_parameters.py"""
-    params_file = 'dih-economic-models/economic_parameters.py'
+    params_file = "dih-economic-models/economic_parameters.py"
 
-    with open(params_file, 'r', encoding='utf-8') as f:
+    with open(params_file, encoding="utf-8") as f:
         content = f.read()
 
     # Find where to insert the formatted values section
@@ -174,13 +168,13 @@ def update_economic_parameters(expressions_by_var, dry_run=False):
         # Check if the section already exists
         if "# PRE-FORMATTED VALUES FOR INLINE DISPLAY" in content:
             # Remove old section and add new one
-            pattern = r'# ---\n# PRE-FORMATTED VALUES FOR INLINE DISPLAY\n.*?(?=\n# ---|$)'
+            pattern = r"# ---\n# PRE-FORMATTED VALUES FOR INLINE DISPLAY\n.*?(?=\n# ---|$)"
             content = re.sub(pattern, formatted_section.rstrip(), content, flags=re.DOTALL)
         else:
             # Append to end of file
             content = content.rstrip() + "\n\n" + formatted_section
 
-        with open(params_file, 'w', encoding='utf-8') as f:
+        with open(params_file, "w", encoding="utf-8") as f:
             f.write(content)
 
         print(f"✓ Updated {params_file} with {len(expressions_by_var)} formatted variables")
@@ -190,7 +184,7 @@ def update_qmd_files(files_with_expressions, dry_run=False):
     """Replace complex inline expressions with simple variable names in .qmd files"""
 
     for file_path, replacements in files_with_expressions.items():
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, encoding="utf-8") as f:
             content = f.read()
 
         original_content = content
@@ -201,8 +195,8 @@ def update_qmd_files(files_with_expressions, dry_run=False):
         for original_expr, var_name in replacements:
             # Escape special regex characters in the expression
             escaped_expr = re.escape(original_expr)
-            pattern = r'`\{python\}\s+' + escaped_expr + r'`'
-            replacement = f'`{{python}} {var_name}`'
+            pattern = r"`\{python\}\s+" + escaped_expr + r"`"
+            replacement = f"`{{python}} {var_name}`"
 
             content = re.sub(pattern, replacement, content)
 
@@ -211,14 +205,14 @@ def update_qmd_files(files_with_expressions, dry_run=False):
                 print(f"\n=== Would update {file_path} ===")
                 print(f"  {len(replacements)} replacements")
             else:
-                with open(file_path, 'w', encoding='utf-8') as f:
+                with open(file_path, "w", encoding="utf-8") as f:
                     f.write(content)
                 print(f"✓ Updated {file_path} ({len(replacements)} replacements)")
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Fix inline Python expressions in Quarto files')
-    parser.add_argument('--dry-run', action='store_true', help='Show what would be done without making changes')
+    parser = argparse.ArgumentParser(description="Fix inline Python expressions in Quarto files")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would be done without making changes")
     args = parser.parse_args()
 
     print("Scanning .qmd files for inline Python expressions...")
@@ -242,5 +236,5 @@ def main():
         print("\n✓ Done! All inline expressions have been simplified")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

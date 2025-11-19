@@ -15,8 +15,8 @@ from pathlib import Path
 # Add economic_parameters to path
 # Find project root
 project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+if project_root.name != "decentralized-institutes-of-health":
+    while project_root.name != "decentralized-institutes-of-health" and project_root.parent != project_root:
         project_root = project_root.parent
 sys.path.insert(0, str(project_root))
 from economic_parameters import *
@@ -25,36 +25,38 @@ from economic_parameters import *
 VALUE_MAP = {}
 all_vars = dir()
 for var in all_vars:
-    if not var.startswith('_'):
+    if not var.startswith("_"):
         try:
             value = eval(var)
             # Include formatted variables and numeric constants
-            if '_formatted' in var or (var.isupper() and isinstance(value, (int, float))):
+            if "_formatted" in var or (var.isupper() and isinstance(value, (int, float))):
                 VALUE_MAP[var] = str(value)
         except:
             pass
 
 print(f"Loaded {len(VALUE_MAP)} variables from economic_parameters.py\n")
 
+
 def find_qmd_files():
     """Find all .qmd files in brain/book directory and root"""
-    files = list(Path('brain/book').rglob('*.qmd'))
+    files = list(Path("brain/book").rglob("*.qmd"))
     # Also include root-level .qmd files
-    files.extend(list(Path('.').glob('*.qmd')))
+    files.extend(list(Path(".").glob("*.qmd")))
     return files
+
 
 def replace_inline_python_in_lists(content):
     """Replace inline Python expressions in markdown (lists and paragraphs)"""
-    lines = content.split('\n')
+    lines = content.split("\n")
     modified = False
 
     for i, line in enumerate(lines):
         # Skip code blocks and frontmatter
-        if line.strip().startswith('```') or line.strip().startswith('---'):
+        if line.strip().startswith("```") or line.strip().startswith("---"):
             continue
 
         # Find all inline Python expressions in this line
-        pattern = r'`\{python\}\s+([^`]+)`'
+        pattern = r"`\{python\}\s+([^`]+)`"
 
         def replace_match(match):
             nonlocal modified
@@ -70,7 +72,8 @@ def replace_inline_python_in_lists(content):
 
         lines[i] = re.sub(pattern, replace_match, line)
 
-    return '\n'.join(lines), modified
+    return "\n".join(lines), modified
+
 
 def main():
     qmd_files = find_qmd_files()
@@ -83,24 +86,25 @@ def main():
         print(f"Processing {file_path}...")
 
         try:
-            content = file_path.read_text(encoding='utf-8')
+            content = file_path.read_text(encoding="utf-8")
             new_content, modified = replace_inline_python_in_lists(content)
 
             if modified:
-                file_path.write_text(new_content, encoding='utf-8')
+                file_path.write_text(new_content, encoding="utf-8")
                 total_files_modified += 1
-                print(f"  [OK] Modified")
+                print("  [OK] Modified")
             else:
-                print(f"  - No changes needed")
+                print("  - No changes needed")
         except Exception as e:
             print(f"  [ERROR] Error: {e}")
 
         print()
 
     print(f"\n{'='*60}")
-    print(f"Summary:")
+    print("Summary:")
     print(f"  Files modified: {total_files_modified}")
     print(f"{'='*60}")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

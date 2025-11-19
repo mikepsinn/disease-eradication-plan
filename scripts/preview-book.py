@@ -13,31 +13,27 @@ Usage:
     python scripts/preview-book.py --help         # Show all options
 """
 
-import sys
+import argparse
 import os
 import subprocess
-import argparse
+import sys
 from pathlib import Path
 
 # Add scripts/lib to path for imports
-sys.path.insert(0, str(Path(__file__).parent / 'lib'))
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from quarto_prep import prepare_book
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Preview complete book with live reload',
+        description="Preview complete book with live reload",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__
+        epilog=__doc__,
     )
-    parser.add_argument('--port', type=int,
-                        help='Port for preview server (default: Quarto chooses)')
-    parser.add_argument('--host', type=str,
-                        help='Host for preview server (default: localhost)')
-    parser.add_argument('--no-browser', action='store_true',
-                        help='Do not open browser automatically')
-    parser.add_argument('quarto_args', nargs='*',
-                        help='Additional arguments to pass to quarto preview')
+    parser.add_argument("--port", type=int, help="Port for preview server (default: Quarto chooses)")
+    parser.add_argument("--host", type=str, help="Host for preview server (default: localhost)")
+    parser.add_argument("--no-browser", action="store_true", help="Do not open browser automatically")
+    parser.add_argument("quarto_args", nargs="*", help="Additional arguments to pass to quarto preview")
 
     args = parser.parse_args()
 
@@ -50,14 +46,14 @@ def main():
         sys.exit(1)
 
     # Build preview command
-    cmd = ['quarto', 'preview']
+    cmd = ["quarto", "preview"]
 
     if args.port:
-        cmd.extend(['--port', str(args.port)])
+        cmd.extend(["--port", str(args.port)])
     if args.host:
-        cmd.extend(['--host', args.host])
+        cmd.extend(["--host", args.host])
     if args.no_browser:
-        cmd.append('--no-browser')
+        cmd.append("--no-browser")
 
     cmd.extend(args.quarto_args)
 
@@ -80,5 +76,5 @@ def main():
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

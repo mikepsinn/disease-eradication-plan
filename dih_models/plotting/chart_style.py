@@ -15,25 +15,26 @@ Usage:
     bars[1].set_hatch(PATTERN_DIAGONAL)  # Apply pattern to differentiate
 """
 
+import logging
+import warnings
 from functools import lru_cache
 from pathlib import Path
-import warnings
-import logging
 
-import matplotlib.pyplot as plt
 from matplotlib import font_manager, rcParams
 
 # Suppress Matplotlib font warnings globally
-logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
+logging.getLogger("matplotlib.font_manager").setLevel(logging.ERROR)
 
 # Patch Matplotlib's font_manager to suppress stderr output
 # This prevents "findfont: Font family 'serif' not found" warnings from appearing in Quarto output
 _original_findfont = font_manager.findfont
 
+
 def _silent_findfont(*args, **kwargs):
     """Wrapper around font_manager.findfont that suppresses stderr output"""
     import io
     import sys
+
     old_stderr = sys.stderr
     try:
         sys.stderr = io.StringIO()
@@ -42,26 +43,27 @@ def _silent_findfont(*args, **kwargs):
         sys.stderr = old_stderr
     return result
 
+
 # Replace the findfont function with our silent version
 font_manager.findfont = _silent_findfont
 
 # Official Color Palette (Black & White Only)
-COLOR_BLACK = '#000000'      # Pure black - bars, text, lines
-COLOR_WHITE = '#FFFFFF'      # Pure white - backgrounds
+COLOR_BLACK = "#000000"  # Pure black - bars, text, lines
+COLOR_WHITE = "#FFFFFF"  # Pure white - backgrounds
 
 # Legacy names for backwards compatibility
 COLOR_DARK = COLOR_BLACK
 COLOR_ACCENT = COLOR_BLACK
 COLOR_BG = COLOR_WHITE
-COLOR_RED = COLOR_BLACK      # Deprecated - use patterns instead
-COLOR_BLUE = COLOR_BLACK     # Deprecated - use patterns instead
+COLOR_RED = COLOR_BLACK  # Deprecated - use patterns instead
+COLOR_BLUE = COLOR_BLACK  # Deprecated - use patterns instead
 
 # Hatch patterns for multi-category charts (use instead of color)
-PATTERN_SOLID = None         # Solid black fill (default)
-PATTERN_DIAGONAL = '///'     # Diagonal lines
-PATTERN_HORIZONTAL = '---'   # Horizontal lines
-PATTERN_CROSS = 'xxx'        # Crosshatch
-PATTERN_DOTS = '...'         # Dots/stippling
+PATTERN_SOLID = None  # Solid black fill (default)
+PATTERN_DIAGONAL = "///"  # Diagonal lines
+PATTERN_HORIZONTAL = "---"  # Horizontal lines
+PATTERN_CROSS = "xxx"  # Crosshatch
+PATTERN_DOTS = "..."  # Dots/stippling
 
 # Pattern palette for categorical data
 PALETTE_PATTERNS = [
@@ -74,24 +76,24 @@ PALETTE_PATTERNS = [
 
 
 SERIF_FONT_PREFERENCES = [
-    'EB Garamond',
-    'Crimson Text',
-    'Baskerville',
-    'Garamond',
-    'Georgia',
-    'Times New Roman',
-    'serif',
+    "EB Garamond",
+    "Crimson Text",
+    "Baskerville",
+    "Garamond",
+    "Georgia",
+    "Times New Roman",
+    "serif",
 ]
 
 MONOSPACE_FONT_PREFERENCES = [
-    'SF Mono',
-    'Monaco',
-    'Cascadia Code',
-    'Courier New',
-    'Courier',
-    'Liberation Mono',
-    'DejaVu Sans Mono',
-    'monospace',
+    "SF Mono",
+    "Monaco",
+    "Cascadia Code",
+    "Courier New",
+    "Courier",
+    "Liberation Mono",
+    "DejaVu Sans Mono",
+    "monospace",
 ]
 
 
@@ -104,10 +106,10 @@ def _find_first_available_font(preferences):
     missing on the current render environment.
     """
     # Suppress stderr output from font_manager.findfont (it prints warnings directly)
+    import contextlib
     import io
     import sys
-    import contextlib
-    
+
     @contextlib.contextmanager
     def suppress_stderr():
         """Temporarily suppress stderr output"""
@@ -117,11 +119,11 @@ def _find_first_available_font(preferences):
             yield
         finally:
             sys.stderr = old_stderr
-    
+
     # Suppress Matplotlib font warnings
     with warnings.catch_warnings():
-        warnings.filterwarnings('ignore', category=UserWarning, module='matplotlib.font_manager')
-        
+        warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib.font_manager")
+
         for font_name in preferences:
             try:
                 with suppress_stderr():
@@ -129,21 +131,21 @@ def _find_first_available_font(preferences):
                     # Check if we got a real font (not just the default fallback)
                     if font_path:
                         # Verify it's not just the default DejaVu Sans
-                        default_path = font_manager.findfont('DejaVu Sans')
-                        if font_path != default_path or font_name.lower() in ['dejavu sans', 'dejavu sans mono']:
+                        default_path = font_manager.findfont("DejaVu Sans")
+                        if font_path != default_path or font_name.lower() in ["dejavu sans", "dejavu sans mono"]:
                             return font_name
             except (ValueError, RuntimeError):
                 continue
 
     # Use matplotlib's default monospace font name as a final fallback
     with warnings.catch_warnings():
-        warnings.filterwarnings('ignore', category=UserWarning, module='matplotlib.font_manager')
+        warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib.font_manager")
         with suppress_stderr():
             try:
-                default_font = font_manager.FontProperties(family=['monospace']).get_name()
-                return default_font or 'monospace'
+                default_font = font_manager.FontProperties(family=["monospace"]).get_name()
+                return default_font or "monospace"
             except Exception:
-                return 'monospace'
+                return "monospace"
 
 
 @lru_cache(maxsize=None)
@@ -168,7 +170,7 @@ def get_monospace_font():
     return _find_first_available_font(tuple(MONOSPACE_FONT_PREFERENCES))
 
 
-def setup_chart_style(style='light', dpi=150):
+def setup_chart_style(style="light", dpi=150):
     """
     Apply consistent styling to all matplotlib charts.
 
@@ -177,10 +179,10 @@ def setup_chart_style(style='light', dpi=150):
         dpi: Resolution for saved figures (default 150 for high quality)
     """
     # Suppress font warnings during style setup
+    import contextlib
     import io
     import sys
-    import contextlib
-    
+
     @contextlib.contextmanager
     def suppress_stderr():
         """Temporarily suppress stderr output"""
@@ -191,79 +193,79 @@ def setup_chart_style(style='light', dpi=150):
         finally:
             sys.stderr = old_stderr
 
-    if style == 'light':
+    if style == "light":
         bg_color = COLOR_WHITE
         fg_color = COLOR_BLACK
         text_color = COLOR_BLACK
-        grid_color = '#e0e0e0'  # Very light gray for minimal gridlines
+        grid_color = "#e0e0e0"  # Very light gray for minimal gridlines
     else:  # dark
         bg_color = COLOR_BLACK
         fg_color = COLOR_WHITE
         text_color = COLOR_WHITE
-        grid_color = '#4a4a4a'  # Charcoal for dark mode
+        grid_color = "#4a4a4a"  # Charcoal for dark mode
 
     # Typography - align with book styling (serif-first aesthetic)
     # Suppress warnings when getting fonts
     with warnings.catch_warnings():
-        warnings.filterwarnings('ignore', category=UserWarning, module='matplotlib.font_manager')
+        warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib.font_manager")
         with suppress_stderr():
             serif_font = get_serif_font()
-    
-    rcParams['font.family'] = [serif_font]
-    rcParams['font.serif'] = SERIF_FONT_PREFERENCES
-    rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans', 'sans-serif']
-    rcParams['font.monospace'] = MONOSPACE_FONT_PREFERENCES
-    rcParams['font.monospace'] = MONOSPACE_FONT_PREFERENCES
-    rcParams['font.size'] = 12
-    rcParams['font.weight'] = 'normal'
-    rcParams['text.usetex'] = False  # Prevent LaTeX math parsing
+
+    rcParams["font.family"] = [serif_font]
+    rcParams["font.serif"] = SERIF_FONT_PREFERENCES
+    rcParams["font.sans-serif"] = ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"]
+    rcParams["font.monospace"] = MONOSPACE_FONT_PREFERENCES
+    rcParams["font.monospace"] = MONOSPACE_FONT_PREFERENCES
+    rcParams["font.size"] = 12
+    rcParams["font.weight"] = "normal"
+    rcParams["text.usetex"] = False  # Prevent LaTeX math parsing
 
     # Colors
-    rcParams['figure.facecolor'] = bg_color
-    rcParams['axes.facecolor'] = bg_color
-    rcParams['axes.edgecolor'] = grid_color
-    rcParams['axes.labelcolor'] = text_color
-    rcParams['axes.titlecolor'] = fg_color
-    rcParams['text.color'] = text_color
-    rcParams['xtick.color'] = text_color
-    rcParams['ytick.color'] = text_color
-    rcParams['grid.color'] = grid_color
-    rcParams['grid.alpha'] = 0.3
+    rcParams["figure.facecolor"] = bg_color
+    rcParams["axes.facecolor"] = bg_color
+    rcParams["axes.edgecolor"] = grid_color
+    rcParams["axes.labelcolor"] = text_color
+    rcParams["axes.titlecolor"] = fg_color
+    rcParams["text.color"] = text_color
+    rcParams["xtick.color"] = text_color
+    rcParams["ytick.color"] = text_color
+    rcParams["grid.color"] = grid_color
+    rcParams["grid.alpha"] = 0.3
 
     # Spacing and layout - ensure padding to avoid watermark overlap
-    rcParams['axes.titlepad'] = 20
-    rcParams['axes.labelpad'] = 10
-    rcParams['xtick.major.pad'] = 7
-    rcParams['ytick.major.pad'] = 7
-    rcParams['figure.subplot.bottom'] = 0.15  # Bottom margin for watermark
-    rcParams['figure.subplot.top'] = 0.92     # Top margin
-    rcParams['figure.subplot.left'] = 0.12    # Left margin
-    rcParams['figure.subplot.right'] = 0.95   # Right margin
+    rcParams["axes.titlepad"] = 20
+    rcParams["axes.labelpad"] = 10
+    rcParams["xtick.major.pad"] = 7
+    rcParams["ytick.major.pad"] = 7
+    rcParams["figure.subplot.bottom"] = 0.15  # Bottom margin for watermark
+    rcParams["figure.subplot.top"] = 0.92  # Top margin
+    rcParams["figure.subplot.left"] = 0.12  # Left margin
+    rcParams["figure.subplot.right"] = 0.95  # Right margin
 
     # Line and marker styling
-    rcParams['lines.linewidth'] = 2.5
-    rcParams['lines.markersize'] = 8
-    rcParams['patch.linewidth'] = 1
+    rcParams["lines.linewidth"] = 2.5
+    rcParams["lines.markersize"] = 8
+    rcParams["patch.linewidth"] = 1
 
     # Figure settings
-    rcParams['figure.dpi'] = dpi
-    rcParams['savefig.dpi'] = dpi
-    rcParams['savefig.bbox'] = 'tight'  # This will be overridden - use pad_inches instead
-    rcParams['savefig.facecolor'] = bg_color
-    rcParams['savefig.pad_inches'] = 0.3  # Add padding around saved figures
+    rcParams["figure.dpi"] = dpi
+    rcParams["savefig.dpi"] = dpi
+    rcParams["savefig.bbox"] = "tight"  # This will be overridden - use pad_inches instead
+    rcParams["savefig.facecolor"] = bg_color
+    rcParams["savefig.pad_inches"] = 0.3  # Add padding around saved figures
 
     # Remove chart junk by default
-    rcParams['axes.spines.top'] = False
-    rcParams['axes.spines.right'] = False
+    rcParams["axes.spines.top"] = False
+    rcParams["axes.spines.right"] = False
 
     # Grid styling (minimal - disabled by default for clean look)
-    rcParams['axes.grid'] = False
-    rcParams['axes.grid.axis'] = 'y'
-    rcParams['grid.linestyle'] = '--'
-    rcParams['grid.linewidth'] = 0.5
+    rcParams["axes.grid"] = False
+    rcParams["axes.grid.axis"] = "y"
+    rcParams["grid.linestyle"] = "--"
+    rcParams["grid.linewidth"] = 0.5
 
 
-def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
+def add_watermark(fig, text="WarOnDisease.org", alpha=1.0):
     """
     Add consistent branding watermark to a figure.
 
@@ -280,21 +282,21 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
         alpha: Transparency (default: 1.0 - fully opaque)
     """
     from matplotlib.font_manager import FontProperties
-    
+
     # Fixed padding in inches (not percentage) for consistent placement
-    padding_right_inches = 0.1   # 0.1 inches from right edge
+    padding_right_inches = 0.1  # 0.1 inches from right edge
     padding_bottom_inches = 0.05  # 0.05 inches from bottom edge
-    
+
     # Get figure size in inches
     fig_width_inches, fig_height_inches = fig.get_size_inches()
-    
+
     # Measure text dimensions using font properties
     fontsize = 9
-    watermark_color = '#666666'  # Light gray instead of black
-    
+    watermark_color = "#666666"  # Light gray instead of black
+
     # Get font properties to measure text
-    font_prop = FontProperties(size=fontsize, weight='normal')
-    
+    font_prop = FontProperties(size=fontsize, weight="normal")
+
     # Estimate text width: average character width * number of characters
     # For sans-serif fonts at 9pt, average char width is approximately 0.6 * fontsize
     # Convert points to inches: 1 point = 1/72 inches
@@ -302,28 +304,36 @@ def add_watermark(fig, text='WarOnDisease.org', alpha=1.0):
     # Average character width in inches (conservative estimate for 'WarOnDisease.org')
     avg_char_width_inches = fontsize_inches * 0.55
     text_width_inches = len(text) * avg_char_width_inches
-    
+
     # Text height: font size + descenders (approximately 1.2x font size)
     text_height_inches = fontsize_inches * 1.2
-    
+
     # Calculate position in figure coordinates (0-1)
     # Right edge: 1.0 - (padding + text_width) / fig_width
     # Bottom edge: (padding + text_height) / fig_height
     x_position = 1.0 - (padding_right_inches + text_width_inches) / fig_width_inches
     y_position = (padding_bottom_inches + text_height_inches) / fig_height_inches
-    
+
     # Clamp to valid range [0, 1] to prevent out-of-bounds
     x_position = max(0.0, min(1.0, x_position))
     y_position = max(0.0, min(1.0, y_position))
-    
+
     # Position: bottom-right corner with fixed padding
-    fig.text(x_position, y_position, text,
-             fontsize=fontsize, color=watermark_color,
-             ha='right', va='bottom', alpha=alpha, weight='normal',
-             transform=fig.transFigure)
+    fig.text(
+        x_position,
+        y_position,
+        text,
+        fontsize=fontsize,
+        color=watermark_color,
+        ha="right",
+        va="bottom",
+        alpha=alpha,
+        weight="normal",
+        transform=fig.transFigure,
+    )
 
 
-def clean_spines(ax, positions=['top', 'right']):
+def clean_spines(ax, positions=["top", "right"]):
     """
     Remove unnecessary spines from axes for cleaner look.
 
@@ -363,14 +373,14 @@ def get_presentation_font_sizes():
         dict: Font sizes for different text elements
     """
     return {
-        'title': 72,
-        'subtitle': 48,
-        'heading': 36,
-        'body': 24,
-        'caption': 18,
-        'chart_title': 32,
-        'axis_label': 20,
-        'data_label': 18,
+        "title": 72,
+        "subtitle": 48,
+        "heading": 36,
+        "body": 24,
+        "caption": 18,
+        "chart_title": 32,
+        "axis_label": 20,
+        "data_label": 18,
     }
 
 
@@ -385,8 +395,8 @@ def get_project_root():
         Path: Project root directory
     """
     project_root = Path.cwd()
-    if project_root.name != 'decentralized-institutes-of-health':
-        while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    if project_root.name != "decentralized-institutes-of-health":
+        while project_root.name != "decentralized-institutes-of-health" and project_root.parent != project_root:
             project_root = project_root.parent
     return project_root
 
@@ -410,16 +420,16 @@ def get_chart_metadata(title=None, description=None):
         add_png_metadata('chart.png', title="Chart Title", description="Description")
     """
     metadata = {
-        'Author': 'Mike P. Sinn',
-        'Copyright': 'CC BY 4.0 - WarOnDisease.org',
-        'Source': 'https://WarOnDisease.org',
+        "Author": "Mike P. Sinn",
+        "Copyright": "CC BY 4.0 - WarOnDisease.org",
+        "Source": "https://WarOnDisease.org",
     }
 
     if title:
-        metadata['Title'] = title
+        metadata["Title"] = title
 
     if description:
-        metadata['Description'] = description
+        metadata["Description"] = description
 
     return metadata
 
@@ -452,15 +462,15 @@ def add_png_metadata(filepath, title=None, description=None):
         meta = PngImagePlugin.PngInfo()
 
         # Add standard attribution
-        meta.add_text('Author', 'Mike P. Sinn')
-        meta.add_text('Copyright', 'CC BY 4.0 - WarOnDisease.org')
-        meta.add_text('Source', 'https://WarOnDisease.org')
+        meta.add_text("Author", "Mike P. Sinn")
+        meta.add_text("Copyright", "CC BY 4.0 - WarOnDisease.org")
+        meta.add_text("Source", "https://WarOnDisease.org")
 
         # Add optional fields
         if title:
-            meta.add_text('Title', title)
+            meta.add_text("Title", title)
         if description:
-            meta.add_text('Description', description)
+            meta.add_text("Description", description)
 
         # Save with metadata
         img.save(filepath, pnginfo=meta, optimize=False)
@@ -487,13 +497,12 @@ def get_figure_output_path(filename):
         output_path = get_figure_output_path('trial-access-disparity-chart.png')
         save_figure_with_margins(fig, output_path)
     """
-    from pathlib import Path
 
     # Always find the project root, regardless of where we're rendering from
     project_root = get_project_root()
 
     # Save to knowledge/figures/ (the standard location for chart outputs)
-    output_dir = project_root / 'knowledge' / 'figures'
+    output_dir = project_root / "knowledge" / "figures"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     return output_dir / filename
@@ -517,10 +526,10 @@ def save_figure_with_margins(fig, filepath, dpi=200, pad_inches=0.3, facecolor=C
         output_path = get_figure_output_path('my-chart.png')
         save_figure_with_margins(fig, output_path, dpi=200)
     """
-    fig.savefig(filepath, dpi=dpi, bbox_inches='tight', pad_inches=pad_inches, facecolor=facecolor)
+    fig.savefig(filepath, dpi=dpi, bbox_inches="tight", pad_inches=pad_inches, facecolor=facecolor)
 
 
 # Convenience function for quick setup
 def quick_setup():
     """Quick setup with default light theme."""
-    setup_chart_style(style='light')
+    setup_chart_style(style="light")

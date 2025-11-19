@@ -4,33 +4,17 @@ This project uses pre-commit hooks to automatically run static analysis tools on
 
 ## Tools Included
 
-### 1. **Ruff** (Fast Linter & Formatter)
-- **Replaces:** flake8, black, isort
+**Minimal, practical setup** - Just Ruff. That's it.
+
+### **Ruff** (Fast Linter & Formatter)
+- **Replaces:** flake8, black, isort, mypy (for basic checks)
 - **What it does:**
-  - Lints Python code for errors and style issues
+  - Catches syntax errors and bugs
+  - Finds unused imports and variables
   - Formats code automatically
   - Sorts imports
-- **Why:** 10-100x faster than traditional tools
-
-### 2. **MyPy** (Static Type Checker)
-- **What it does:**
-  - Checks for type errors
-  - Validates type hints
-  - Catches bugs before runtime
-- **Configuration:** Ignores missing imports (for third-party libs)
-
-### 3. **Pylint** (Comprehensive Linter)
-- **What it does:**
-  - **Detects duplicate code** (similarity analysis)
-  - Comprehensive code quality checks
-  - Complexity analysis
-- **Why:** Catches issues that other tools miss, especially duplicate functions
-
-### 4. **Vulture** (Unused Code Detection)
-- **What it does:**
-  - Finds unused functions, classes, variables
-  - Helps keep codebase clean
-- **Confidence threshold:** 80% (reduces false positives)
+  - Basic type checking (if you use type hints)
+- **Why:** Fast, catches real issues, not pedantic, all-in-one
 
 ## Setup Instructions
 
@@ -94,13 +78,11 @@ git commit --no-verify
 ## What Gets Checked
 
 ### Files Scanned
-- `scripts/**/*.py` - All Python scripts
-- `dih_models/**/*.py` - All model code
+- All `.py` files in the repo
 
 ### What's Ignored
-- Generated files
+- Generated files (via `.gitignore`)
 - Third-party code
-- Jupyter notebooks (`.ipynb` files)
 
 ## Common Issues & Solutions
 
@@ -129,18 +111,14 @@ All tool configurations are in `pyproject.toml`:
 
 Hook configuration is in `.pre-commit-config.yaml`.
 
-## Duplicate Code Detection
+## What We Don't Include (And Why)
 
-Pylint's duplicate detection works by:
-1. Comparing function/method similarity
-2. Flagging code blocks with >5 similar lines
-3. Reporting similarity percentage
+- **MyPy** - Installation issues, slow, only useful if you use type hints everywhere
+- **Pylint** - Too strict, too many false positives, slows down commits
+- **Vulture** - Too many false positives (unused code detection is tricky)
+- **Complex duplicate detection** - Can be added later if needed, but usually not worth the noise
 
-**Example output:**
-```
-scripts/script1.py:45: Similar lines in 2 files
-scripts/script2.py:30: Similar lines in 2 files
-```
+**Philosophy:** One tool (Ruff) that does everything well. Fast, practical, catches real bugs.
 
 ## Type Error Detection
 

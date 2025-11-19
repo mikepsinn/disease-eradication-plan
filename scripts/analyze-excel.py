@@ -1,7 +1,4 @@
 import openpyxl
-import pandas as pd
-import json
-from pathlib import Path
 
 # Load the workbook
 excel_path = r"c:\code\decentralized-institutes-of-health\assets\life-expectancy-healthcare-spending-cost-of-drug-development.xlsx"
@@ -24,7 +21,7 @@ for sheet_name in wb.sheetnames:
     ws = wb[sheet_name]
     print(f"\n\n{'=' * 60}")
     print(f"SHEET: {sheet_name}")
-    print('=' * 60)
+    print("=" * 60)
 
     # Get dimensions
     max_row = ws.max_row
@@ -32,14 +29,14 @@ for sheet_name in wb.sheetnames:
     print(f"Dimensions: {max_row} rows x {max_col} columns")
 
     # Check for charts
-    if hasattr(ws, '_charts') and ws._charts:
+    if hasattr(ws, "_charts") and ws._charts:
         print(f"\nNumber of charts: {len(ws._charts)}")
         for idx, chart in enumerate(ws._charts, 1):
             print(f"\n  Chart {idx}:")
             print(f"    Type: {type(chart).__name__}")
-            if hasattr(chart, 'title') and chart.title:
+            if hasattr(chart, "title") and chart.title:
                 print(f"    Title: {chart.title}")
-            if hasattr(chart, 'anchor'):
+            if hasattr(chart, "anchor"):
                 print(f"    Anchor: {chart.anchor}")
     else:
         print("\nNo charts found")

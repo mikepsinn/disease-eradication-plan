@@ -13,27 +13,25 @@ Usage:
     python render-economics-pdf.py --help             # Show all options
 """
 
-import sys
+import argparse
 import os
 import subprocess
-import argparse
+import sys
 from pathlib import Path
 
 # Add scripts/lib to path for imports
-sys.path.insert(0, str(Path(__file__).parent / 'lib'))
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from quarto_prep import prepare_economics
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Render economics models as PDF (with validation)',
+        description="Render economics models as PDF (with validation)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__
+        epilog=__doc__,
     )
-    parser.add_argument('--output-dir', type=str, default='_site',
-                        help='Output directory (default: _site)')
-    parser.add_argument('quarto_args', nargs='*',
-                        help='Additional arguments to pass to quarto render')
+    parser.add_argument("--output-dir", type=str, default="_site", help="Output directory (default: _site)")
+    parser.add_argument("quarto_args", nargs="*", help="Additional arguments to pass to quarto render")
 
     args = parser.parse_args()
 
@@ -47,11 +45,7 @@ def main():
 
     # Build command for PDF rendering with validation
     print("[*] Rendering economics PDF with validation...")
-    cmd = [
-        sys.executable,
-        'scripts/render_pdf.py',
-        '--command', 'quarto render --to pdf'
-    ]
+    cmd = [sys.executable, "scripts/render_pdf.py", "--command", "quarto render --to pdf"]
     if args.quarto_args:
         cmd.extend(args.quarto_args)
 
@@ -69,5 +63,5 @@ def main():
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -12,13 +12,13 @@ Usage:
     python scripts/validate-numbers.py --report mismatches.json
 """
 
+import argparse
+import importlib.util
+import json
 import re
 import sys
 from pathlib import Path
-from typing import List, Dict, Tuple, Any
-import argparse
-import json
-import importlib.util
+from typing import Any, Dict, List
 
 
 class NumberValidator:
@@ -31,7 +31,7 @@ class NumberValidator:
 
     def load_parameters(self) -> Dict[str, Any]:
         """Load all parameters from dih_models/parameters.py."""
-        params_path = Path('dih_models/parameters.py')
+        params_path = Path("dih_models/parameters.py")
 
         if not params_path.exists():
             print(f"Warning: {params_path} not found", file=sys.stderr)
@@ -44,7 +44,7 @@ class NumberValidator:
         # Extract all uppercase variables (our parameter convention)
         parameters = {}
         for name in dir(module):
-            if name.isupper() and not name.startswith('_'):
+            if name.isupper() and not name.startswith("_"):
                 value = getattr(module, name)
                 if isinstance(value, (int, float)):
                     parameters[name] = value
@@ -54,38 +54,34 @@ class NumberValidator:
     def extract_number_value(self, text: str) -> float:
         """Extract numeric value from text like '$27.2B' or '463:1' or '82x'."""
         # Money with units
-        money_match = re.search(r'\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?', text)
+        money_match = re.search(r"\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?", text)
         if money_match:
-            num = float(money_match.group(1).replace(',', ''))
+            num = float(money_match.group(1).replace(",", ""))
             unit = money_match.group(2)
             if unit:
-                multipliers = {
-                    'B': 1e9, 'billion': 1e9,
-                    'M': 1e6, 'million': 1e6,
-                    'T': 1e12, 'trillion': 1e12
-                }
+                multipliers = {"B": 1e9, "billion": 1e9, "M": 1e6, "million": 1e6, "T": 1e12, "trillion": 1e12}
                 num *= multipliers.get(unit, 1)
             return num
 
         # Ratios (just return first number)
-        ratio_match = re.search(r'(\d+(?:\.\d+)?)\s*:\s*\d+', text)
+        ratio_match = re.search(r"(\d+(?:\.\d+)?)\s*:\s*\d+", text)
         if ratio_match:
             return float(ratio_match.group(1))
 
         # Multipliers
-        mult_match = re.search(r'(\d+(?:\.\d+)?)\s*[xX×]', text)
+        mult_match = re.search(r"(\d+(?:\.\d+)?)\s*[xX×]", text)
         if mult_match:
             return float(mult_match.group(1))
 
         # Percentages
-        pct_match = re.search(r'(\d+(?:\.\d+)?)\s*%', text)
+        pct_match = re.search(r"(\d+(?:\.\d+)?)\s*%", text)
         if pct_match:
             return float(pct_match.group(1)) / 100
 
         # Plain numbers
-        num_match = re.search(r'([\d,]+(?:\.\d+)?)', text)
+        num_match = re.search(r"([\d,]+(?:\.\d+)?)", text)
         if num_match:
-            return float(num_match.group(1).replace(',', ''))
+            return float(num_match.group(1).replace(",", ""))
 
         return None
 
@@ -104,51 +100,53 @@ class NumberValidator:
 
         return matches
 
-    def suggest_inline_code(self, param_name: str, format_type: str = 'money') -> str:
+    def suggest_inline_code(self, param_name: str, format_type: str = "money") -> str:
         """Suggest inline Python code for a parameter."""
         param_clean = param_name.replace(" (in billions)", "")
 
         formats = {
-            'money': f'{{python}} {param_clean.lower()}_formatted',
-            'percent': f'{{python}} {param_clean.lower()}_pct',
-            'ratio': f'{{python}} {param_clean.lower()}_ratio',
-            'number': f'{{python}} {param_clean.lower()}_formatted',
+            "money": f"{{python}} {param_clean.lower()}_formatted",
+            "percent": f"{{python}} {param_clean.lower()}_pct",
+            "ratio": f"{{python}} {param_clean.lower()}_ratio",
+            "number": f"{{python}} {param_clean.lower()}_formatted",
         }
 
-        return formats.get(format_type, f'{{python}} {param_clean.lower()}')
+        return formats.get(format_type, f"{{python}} {param_clean.lower()}")
 
     def scan_file(self, filepath: Path) -> List[Dict]:
         """Scan file for numbers and validate against parameters."""
         issues = []
 
         try:
-            with open(filepath, 'r', encoding='utf-8') as f:
+            with open(filepath, encoding="utf-8") as f:
                 lines = f.readlines()
 
             for line_num, line in enumerate(lines, 1):
                 # Skip frontmatter, code blocks, etc.
-                if line.strip().startswith(('---', '```', '#', '|')):
+                if line.strip().startswith(("---", "```", "#", "|")):
                     continue
 
                 # Find all numbers in line
                 # Money
-                for match in re.finditer(r'\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?', line):
+                for match in re.finditer(r"\$\s*([\d,]+(?:\.\d+)?)\s*([BMT]|billion|million|trillion)?", line):
                     full_text = match.group(0)
                     value = self.extract_number_value(full_text)
 
                     if value:
                         matching_params = self.find_matching_parameter(value)
                         if matching_params:
-                            issues.append({
-                                'file': str(filepath.relative_to(Path.cwd())),
-                                'line': line_num,
-                                'type': 'money',
-                                'text': full_text,
-                                'value': value,
-                                'matching_params': matching_params,
-                                'suggestion': self.suggest_inline_code(matching_params[0], 'money'),
-                                'context': line.strip()
-                            })
+                            issues.append(
+                                {
+                                    "file": str(filepath.relative_to(Path.cwd())),
+                                    "line": line_num,
+                                    "type": "money",
+                                    "text": full_text,
+                                    "value": value,
+                                    "matching_params": matching_params,
+                                    "suggestion": self.suggest_inline_code(matching_params[0], "money"),
+                                    "context": line.strip(),
+                                }
+                            )
 
         except Exception as e:
             print(f"Error scanning {filepath}: {e}", file=sys.stderr)
@@ -157,10 +155,10 @@ class NumberValidator:
 
     def scan_all(self, root_path: Path = None) -> List[Dict]:
         """Scan all QMD files."""
-        root = root_path or Path('knowledge')
+        root = root_path or Path("knowledge")
         all_issues = []
 
-        for filepath in root.rglob('*.qmd'):
+        for filepath in root.rglob("*.qmd"):
             issues = self.scan_file(filepath)
             all_issues.extend(issues)
 
@@ -175,7 +173,7 @@ class NumberValidator:
 
         by_file = {}
         for issue in issues:
-            filepath = issue['file']
+            filepath = issue["file"]
             if filepath not in by_file:
                 by_file[filepath] = []
             by_file[filepath].append(issue)
@@ -193,11 +191,9 @@ class NumberValidator:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Validate numbers against parameters.py')
-    parser.add_argument('--path', type=str, default='knowledge',
-                       help='Root path to scan (default: knowledge)')
-    parser.add_argument('--report', type=str,
-                       help='Output JSON report to file')
+    parser = argparse.ArgumentParser(description="Validate numbers against parameters.py")
+    parser.add_argument("--path", type=str, default="knowledge", help="Root path to scan (default: knowledge)")
+    parser.add_argument("--report", type=str, help="Output JSON report to file")
 
     args = parser.parse_args()
 
@@ -205,12 +201,12 @@ def main():
     issues = validator.scan_all(Path(args.path))
 
     if args.report:
-        with open(args.report, 'w') as f:
+        with open(args.report, "w") as f:
             json.dumps(issues, f, indent=2)
         print(f"Report written to {args.report}")
     else:
         validator.print_report(issues)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -12,11 +12,11 @@ Usage:
     python tools/validate-parameters.py
 """
 
-import sys
 import re
-from pathlib import Path
+import sys
 from collections import defaultdict
-from typing import Dict, List, Tuple
+from pathlib import Path
+from typing import List, Tuple
 
 
 def parse_parameter_definitions(parameters_path: Path) -> List[Tuple[str, int, str]]:
@@ -27,17 +27,17 @@ def parse_parameter_definitions(parameters_path: Path) -> List[Tuple[str, int, s
     """
     definitions = []
 
-    with open(parameters_path, 'r', encoding='utf-8') as f:
+    with open(parameters_path, encoding="utf-8") as f:
         lines = f.readlines()
 
     for i, line in enumerate(lines, 1):
         # Skip comments and empty lines
-        if line.strip().startswith('#') or not line.strip():
+        if line.strip().startswith("#") or not line.strip():
             continue
 
         # Only check module-level assignments (no leading whitespace before variable name)
         # This excludes function-local variables which are indented
-        match = re.match(r'^([A-Z_][A-Z0-9_]*)\s*=\s*', line)
+        match = re.match(r"^([A-Z_][A-Z0-9_]*)\s*=\s*", line)
         if match:
             var_name = match.group(1)
             definitions.append((var_name, i, line.strip()))
@@ -68,6 +68,7 @@ def check_duplicate_values(parameters_path: Path) -> List[str]:
 
     # Import the parameters module to get actual values
     import importlib.util
+
     spec = importlib.util.spec_from_file_location("parameters", parameters_path)
     params_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(params_module)
@@ -88,7 +89,7 @@ def check_duplicate_values(parameters_path: Path) -> List[str]:
         if len(params) > 1 and value not in common_values:
             params_str = ", ".join(params)
             warnings.append(f"[WARNING] Value {value} used by multiple parameters: {params_str}")
-            warnings.append(f"          > This might be intentional, or a copy-paste error")
+            warnings.append("          > This might be intentional, or a copy-paste error")
 
     return warnings
 
@@ -99,6 +100,7 @@ def check_parameter_metadata(parameters_path: Path) -> List[str]:
 
     # Import the parameters module
     import importlib.util
+
     spec = importlib.util.spec_from_file_location("parameters", parameters_path)
     params_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(params_module)
@@ -108,16 +110,16 @@ def check_parameter_metadata(parameters_path: Path) -> List[str]:
             value = getattr(params_module, name)
 
             # Check if it's a Parameter instance
-            if hasattr(value, 'source_ref'):
+            if hasattr(value, "source_ref"):
                 issues = []
 
                 if not value.source_ref:
                     issues.append("missing source_ref")
 
-                if not hasattr(value, 'description') or not value.description:
+                if not hasattr(value, "description") or not value.description:
                     issues.append("missing description")
 
-                if not hasattr(value, 'unit') or not value.unit:
+                if not hasattr(value, "unit") or not value.unit:
                     issues.append("missing unit")
 
                 if issues:
@@ -130,7 +132,7 @@ def check_parameter_metadata(parameters_path: Path) -> List[str]:
 def main():
     # Get project root
     project_root = Path(__file__).parent.parent.absolute()
-    parameters_path = project_root / 'dih_models' / 'parameters.py'
+    parameters_path = project_root / "dih_models" / "parameters.py"
 
     if not parameters_path.exists():
         print(f"[ERROR] Parameters file not found: {parameters_path}", file=sys.stderr)
@@ -207,5 +209,5 @@ def main():
         sys.exit(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

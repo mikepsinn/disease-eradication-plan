@@ -4,13 +4,13 @@ Extract chart images from Excel workbook.
 Uses openpyxl to read chart objects and export them as images.
 """
 
-import sys
-import os
-from pathlib import Path
-import zipfile
-import shutil
-from PIL import Image
 import io
+import sys
+import zipfile
+from pathlib import Path
+
+from PIL import Image
+
 
 def extract_charts_from_excel(excel_path, output_dir):
     """
@@ -36,7 +36,7 @@ def extract_charts_from_excel(excel_path, output_dir):
 
     try:
         # Open Excel file as ZIP archive
-        with zipfile.ZipFile(excel_path, 'r') as zip_ref:
+        with zipfile.ZipFile(excel_path, "r") as zip_ref:
             # List all files in the archive
             file_list = zip_ref.namelist()
 
@@ -46,10 +46,10 @@ def extract_charts_from_excel(excel_path, output_dir):
             media_files = []
 
             for file_name in file_list:
-                if 'chart' in file_name.lower():
+                if "chart" in file_name.lower():
                     chart_files.append(file_name)
                     print(f"  [CHART] {file_name}")
-                elif 'media' in file_name.lower():
+                elif "media" in file_name.lower():
                     media_files.append(file_name)
                     print(f"  [MEDIA] {file_name}")
 
@@ -61,7 +61,7 @@ def extract_charts_from_excel(excel_path, output_dir):
                     chart_data = zip_ref.read(chart_file)
                     output_file = output_dir / Path(chart_file).name
 
-                    with open(output_file, 'wb') as f:
+                    with open(output_file, "wb") as f:
                         f.write(chart_data)
 
                     print(f"[OK] Extracted chart XML: {output_file.name}")
@@ -76,7 +76,7 @@ def extract_charts_from_excel(excel_path, output_dir):
                     ext = Path(media_file).suffix.lower()
 
                     # Skip if not an image format we want
-                    if ext not in ['.png', '.jpg', '.jpeg', '.gif', '.emf', '.wmf', '.bmp']:
+                    if ext not in [".png", ".jpg", ".jpeg", ".gif", ".emf", ".wmf", ".bmp"]:
                         continue
 
                     media_data = zip_ref.read(media_file)
@@ -85,14 +85,14 @@ def extract_charts_from_excel(excel_path, output_dir):
                     base_name = Path(media_file).stem
                     output_file = output_dir / f"chart-image-{base_name}{ext}"
 
-                    with open(output_file, 'wb') as f:
+                    with open(output_file, "wb") as f:
                         f.write(media_data)
 
                     print(f"[OK] Extracted image: {output_file.name}")
 
                     # Try to get image dimensions
                     try:
-                        if ext in ['.png', '.jpg', '.jpeg', '.gif', '.bmp']:
+                        if ext in [".png", ".jpg", ".jpeg", ".gif", ".bmp"]:
                             img = Image.open(io.BytesIO(media_data))
                             print(f"  -> Dimensions: {img.width}x{img.height}px")
                     except:
@@ -119,6 +119,7 @@ def extract_charts_from_excel(excel_path, output_dir):
         print(f"\n[ERROR] Error reading Excel file: {e}")
         return False
 
+
 def main():
     if len(sys.argv) < 2:
         excel_path = "assets/FDA Spending vs Life-Expectancy.xlsx"
@@ -141,6 +142,7 @@ def main():
         print("\nOr use a library like xlwings (requires Excel installed):")
         print("  pip install xlwings")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
