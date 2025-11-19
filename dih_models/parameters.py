@@ -3525,29 +3525,6 @@ def format_parameter_value(param, unit=None):
     return formatted_num
 
 
-def format_parameter_value(value):
-    """Format a number as billions with B suffix
-
-    Args:
-        value: Number in billions
-
-    Returns:
-        Formatted string like "$50.0B"
-    """
-    if value >= 1000:
-        return f"${value/1000:,.1f}T"
-    return f"${value:,.1f}B"
-
-def format_parameter_value(value):
-    """Format a number as millions with M suffix
-
-    Args:
-        value: Number in billions
-
-    Returns:
-        Formatted string like "$40M"
-    """
-    return f"${value*1000:,.0f}M"
 
 def format_roi(value):
     """Format ROI as ratio
@@ -3559,24 +3536,6 @@ def format_roi(value):
         Formatted string like "463:1"
     """
     return f"{value:,.0f}:1"
-
-def format_currency(value):
-    """Format as currency with appropriate suffix
-
-    Args:
-        value: Number in billions
-
-    Returns:
-        Formatted string with B, M, or K suffix
-    """
-    if abs(value) >= 1000:
-        return f"${value/1000:,.1f}T"
-    elif abs(value) >= 1:
-        return f"${value:,.1f}B"
-    elif abs(value) >= 0.001:
-        return f"${value*1000:,.0f}M"
-    else:
-        return f"${value*1000000:,.0f}K"
 
 def format_percentage(value):
     """Format as percentage
@@ -3599,62 +3558,6 @@ def format_qalys(value):
         Formatted string like "840,000"
     """
     return f"{value:,.0f}"
-
-def format_parameter_value(value):
-    """Format a number as billions with B suffix for LaTeX (no $ sign to avoid escaping issues)
-
-    Args:
-        value: Number in billions
-
-    Returns:
-        Formatted string like "163.6B" for LaTeX compatibility (without $ to avoid escaping)
-    """
-    if value >= 1000:
-        return f"{value/1000:,.1f}T"
-    return f"{value:,.1f}B"
-
-
-def param_link(value, param_name="", format_func=None):
-    """Create an HTML link for a parameter value with tooltip showing parameter source.
-
-    This function generates an HTML anchor tag with:
-    - The formatted parameter value as visible text
-    - A tooltip showing the parameter name on hover
-    - A CSS class for styling
-    - A link anchor (can be customized to point to documentation)
-
-    Args:
-        value: The numeric value to display
-        param_name: The parameter name (e.g., "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT")
-        format_func: Optional formatting function (e.g., format_billions, format_qalys)
-                    If None, formats as comma-separated integer
-
-    Returns:
-        HTML string like: <a href="#" class="parameter-link" title="parameters.PARAM_NAME">233,600</a>
-
-    Example usage in QMD:
-        `{python} from dih_models.parameters import *`{=html}
-        `{python} param_link(GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT, "GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT", format_qalys)`{=html}
-    """
-    # Format the value
-    if format_func:
-        formatted_value = format_func(value)
-    elif isinstance(value, float) and value < 100:
-        # Small numbers might be percentages or ratios
-        formatted_value = f"{value:,.2f}"
-    elif isinstance(value, (int, float)):
-        # Large numbers - format with commas
-        formatted_value = f"{value:,.0f}"
-    else:
-        formatted_value = str(value)
-
-    # Create tooltip text
-    tooltip = f"parameters.{param_name}" if param_name else "parameter value"
-
-    # Return HTML link with tooltip
-    # Using # as href (no navigation), with parameter-link class for CSS styling
-    return f'<a href="#" class="parameter-link" title="{tooltip}">{formatted_value}</a>'
-
 
 # --- Module Initialization ---
 
@@ -4550,18 +4453,18 @@ cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.
 cost_of_delay_qaly_days_per_second_formatted = f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"
 cost_per_life_investor_funded_formatted = f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"
 cost_per_life_opportunity_cost_formatted = f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"
-daily_cost_inefficiency_formatted = format_currency(DAILY_COST_INEFFICIENCY)
+daily_cost_inefficiency_formatted = format_parameter_value(DAILY_COST_INEFFICIENCY)
 death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
 dfda_annual_opex_formatted = format_parameter_value(DFDA_ANNUAL_OPEX)
 dfda_gross_savings_annual_formatted = format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)
 dfda_npv_net_benefit_conservative_formatted = format_parameter_value(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)
-dfda_npv_total_cost_formatted = format_currency(DFDA_NPV_TOTAL_COST)
-dfda_opex_community_formatted = format_currency(DFDA_OPEX_COMMUNITY)
-dfda_opex_infrastructure_formatted = format_currency(DFDA_OPEX_INFRASTRUCTURE)
-dfda_opex_platform_maintenance_formatted = format_currency(DFDA_OPEX_PLATFORM_MAINTENANCE)
-dfda_opex_regulatory_formatted = format_currency(DFDA_OPEX_REGULATORY)
-dfda_opex_staff_formatted = format_currency(DFDA_OPEX_STAFF)
+dfda_npv_total_cost_formatted = format_parameter_value(DFDA_NPV_TOTAL_COST)
+dfda_opex_community_formatted = format_parameter_value(DFDA_OPEX_COMMUNITY)
+dfda_opex_infrastructure_formatted = format_parameter_value(DFDA_OPEX_INFRASTRUCTURE)
+dfda_opex_platform_maintenance_formatted = format_parameter_value(DFDA_OPEX_PLATFORM_MAINTENANCE)
+dfda_opex_regulatory_formatted = format_parameter_value(DFDA_OPEX_REGULATORY)
+dfda_opex_staff_formatted = format_parameter_value(DFDA_OPEX_STAFF)
 dfda_roi_simple_formatted = format_roi(DFDA_ROI_SIMPLE)
 dih_treasury_to_medical_research_annual_formatted = format_parameter_value(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
 dih_treasury_trial_subsidies_max_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)
@@ -4596,12 +4499,12 @@ global_population_activism_threshold_pct_formatted = format_percentage(GLOBAL_PO
 icer_investor_funded_formatted = f"${ICER_INVESTOR_FUNDED:,.0f}"
 icer_opportunity_cost_formatted = f"${ICER_OPPORTUNITY_COST:,.0f}"
 icer_per_qaly_formatted = f"${ICER_PER_QALY:,.0f}"
-lobbyist_bond_investment_max_millions_formatted = format_currency(LOBBYIST_BOND_INVESTMENT_MAX / 1000)
-lobbyist_bond_investment_min_millions_formatted = format_currency(LOBBYIST_BOND_INVESTMENT_MIN / 1000)
-lobbyist_salary_typical_k_formatted = format_currency(LOBBYIST_SALARY_TYPICAL_K / 1_000_000)
+lobbyist_bond_investment_max_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MAX)
+lobbyist_bond_investment_min_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MIN)
+lobbyist_salary_typical_k_formatted = format_parameter_value(LOBBYIST_SALARY_TYPICAL_K)
 military_vs_medical_research_ratio_formatted = f"{MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}"
 multiplier_vs_givewell_formatted = f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"
-net_benefit_per_life_saved_formatted = format_currency(abs(NET_BENEFIT_PER_LIFE_SAVED))
+net_benefit_per_life_saved_formatted = format_parameter_value(abs(NET_BENEFIT_PER_LIFE_SAVED))
 optimistic_scenario_roi_formatted = format_roi(OPTIMISTIC_SCENARIO_ROI)
 peace_dividend_annual_societal_benefit_formatted = format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
 post_ww2_military_cut_pct_formatted = format_percentage(POST_WW2_MILITARY_CUT_PCT)
@@ -4617,17 +4520,17 @@ qalys_from_prevention_formatted = f"{QALYS_FROM_PREVENTION / GLOBAL_DFDA_QALYS_G
 qalys_from_prevention_optimistic_formatted = f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"
 qalys_total_conservative_formatted = format_qalys(QALYS_TOTAL_CONSERVATIVE)
 qalys_total_optimistic_formatted = format_qalys(QALYS_TOTAL_OPTIMISTIC)
-recovery_trial_cost_per_patient_formatted = format_currency(RECOVERY_TRIAL_COST_PER_PATIENT / 1_000_000_000)
+recovery_trial_cost_per_patient_formatted = format_parameter_value(RECOVERY_TRIAL_COST_PER_PATIENT)
 dfda_roi_rd_only_formatted = format_roi(DFDA_ROI_RD_ONLY)
 dfda_roi_rd_plus_delay_formatted = format_roi(DFDA_ROI_RD_PLUS_DELAY)
 dfda_roi_rd_plus_delay_plus_innovation_formatted = format_roi(DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION)
-sensitivity_campaign_cost_conservative_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)
-sensitivity_campaign_cost_optimistic_formatted = format_currency(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)
+sensitivity_campaign_cost_conservative_formatted = format_parameter_value(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)
+sensitivity_campaign_cost_optimistic_formatted = format_parameter_value(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)
 sensitivity_cost_per_life_central_formatted = f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"
 sensitivity_cost_per_life_conservative_formatted = f"${SENSITIVITY_COST_PER_LIFE_CONSERVATIVE:.2f}M"
 sensitivity_cost_per_life_optimistic_formatted = f"${SENSITIVITY_COST_PER_LIFE_OPTIMISTIC:.2f}M"
-sensitivity_dfda_opex_conservative_formatted = format_currency(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)
-sensitivity_dfda_opex_optimistic_formatted = format_currency(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)
+sensitivity_dfda_opex_conservative_formatted = format_parameter_value(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)
+sensitivity_dfda_opex_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)
 sensitivity_dfda_savings_conservative_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)
 sensitivity_dfda_savings_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)
 sensitivity_icer_central_formatted = f"${SENSITIVITY_ICER_CENTRAL:,.0f}"
@@ -4642,22 +4545,22 @@ sensitivity_peace_qalys_conservative_formatted = format_qalys(SENSITIVITY_PEACE_
 sensitivity_peace_qalys_optimistic_formatted = format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)
 sensitivity_total_benefits_conservative_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)
 sensitivity_total_benefits_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)
-sensitivity_total_costs_conservative_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)
-sensitivity_total_costs_optimistic_formatted = format_currency(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)
+sensitivity_total_costs_conservative_formatted = format_parameter_value(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)
+sensitivity_total_costs_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)
 sensitivity_total_qalys_conservative_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)
 sensitivity_total_qalys_optimistic_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)
 smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
 switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFENSE_SPENDING_PCT)
-switzerland_gdp_per_capita_k_formatted = format_currency(SWITZERLAND_GDP_PER_CAPITA_K / 1_000_000)
+switzerland_gdp_per_capita_k_formatted = format_parameter_value(SWITZERLAND_GDP_PER_CAPITA_K)
 system_profit_per_life_saved_millions_formatted = f"${SYSTEM_PROFIT_PER_LIFE_SAVED:,.2f} million"
 total_complete_benefits_annual_formatted = format_parameter_value(TOTAL_COMPLETE_BENEFITS_ANNUAL)
-traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_currency(TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K / 1_000_000_000)
+traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_parameter_value(TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K)
 treaty_annual_funding_formatted = format_parameter_value(TREATY_ANNUAL_FUNDING)
 treaty_benefit_multiplier_vs_vaccines_formatted = f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"
-treaty_campaign_annual_cost_amortized_formatted = format_currency(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)
-treaty_campaign_budget_lobbying_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_LOBBYING)
-treaty_campaign_budget_referendum_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_REFERENDUM)
-treaty_campaign_budget_reserve_formatted = format_currency(TREATY_CAMPAIGN_BUDGET_RESERVE)
+treaty_campaign_annual_cost_amortized_formatted = format_parameter_value(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)
+treaty_campaign_budget_lobbying_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_LOBBYING)
+treaty_campaign_budget_referendum_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_REFERENDUM)
+treaty_campaign_budget_reserve_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_RESERVE)
 treaty_campaign_total_cost_formatted = format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)
 treaty_lives_saved_annual_global_formatted = format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)
 treaty_net_annual_benefit_formatted = format_parameter_value(TREATY_NET_ANNUAL_BENEFIT)
@@ -5137,16 +5040,16 @@ GDP_GROWTH_BOOST_5PCT = calculate_gdp_growth_boost(0.05) - 0.025
 GDP_GROWTH_BOOST_10PCT = calculate_gdp_growth_boost(0.10) - 0.025
 
 # Formatted values for display
-personal_lifetime_benefit_age_20_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT / 1_000_000_000)
-personal_lifetime_benefit_age_30_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT / 1_000_000_000)
-personal_lifetime_benefit_age_40_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT / 1_000_000_000)
-personal_lifetime_benefit_age_50_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT / 1_000_000_000)
-personal_lifetime_benefit_age_60_1pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT / 1_000_000_000)
+personal_lifetime_benefit_age_20_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT)
+personal_lifetime_benefit_age_30_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT)
+personal_lifetime_benefit_age_40_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT)
+personal_lifetime_benefit_age_50_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT)
+personal_lifetime_benefit_age_60_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT)
 
-personal_lifetime_benefit_age_30_half_pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT / 1_000_000_000)
-personal_lifetime_benefit_age_30_2pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT / 1_000_000_000)
-personal_lifetime_benefit_age_30_5pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT / 1_000_000_000)
-personal_lifetime_benefit_age_30_10pct_formatted = format_currency(PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT / 1_000_000_000)
+personal_lifetime_benefit_age_30_half_pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT)
+personal_lifetime_benefit_age_30_2pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT)
+personal_lifetime_benefit_age_30_5pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT)
+personal_lifetime_benefit_age_30_10pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT)
 
 life_extension_years_1pct_formatted = f"{LIFE_EXTENSION_YEARS_1PCT:.1f}"
 life_extension_years_2pct_formatted = f"{LIFE_EXTENSION_YEARS_2PCT:.1f}"

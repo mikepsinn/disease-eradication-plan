@@ -379,6 +379,7 @@ display(IPImage(str(png_path)))
 
 See these examples in `knowledge/figures/`:
 - [three-ingredients-system-diagram.qmd](knowledge/figures/three-ingredients-system-diagram.qmd) - System overview with clusters
+- [victory-bonds-expansion-flywheel-diagram.qmd](knowledge/figures/victory-bonds-expansion-flywheel-diagram.qmd) - Top-to-bottom flywheel with self-reinforcing cycle
 - [victory-bonds-money-flow-diagram.qmd](knowledge/figures/victory-bonds-money-flow-diagram.qmd) - Left-to-right flow
 - [death-economy-flow-diagram.qmd](knowledge/figures/death-economy-flow-diagram.qmd) - Complex flow with multiple nodes
 

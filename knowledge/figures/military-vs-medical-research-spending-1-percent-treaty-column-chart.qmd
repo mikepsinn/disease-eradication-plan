@@ -79,7 +79,7 @@ ax.text(annotation_x, annotation_y,
 arrow1_start_x = x_positions[0] + bar_width / 2 + 0.00
 arrow1_start_y = military_99_visual + (visual_stack_height / 2)
 arrow1_end_x = annotation_x - 0.35  # Adjusted to point to the right (25% shorter)
-arrow1_end_y = annotation_y + 362.5
+arrow1_end_y = min(annotation_y + 362.5, 2900 * 0.95)  # Clipped to ylim
 
 ax.annotate('',
             xy=(arrow1_end_x, arrow1_end_y),
@@ -92,7 +92,7 @@ ax.annotate('',
 arrow2_start_x = annotation_x
 arrow2_start_y = annotation_y - 445  # Moved arrow up by 1/3 of its length
 arrow2_end_x = x_positions[1] - 0.025  # 25% shorter
-arrow2_end_y = cure_spending + 947.25  # 25% shorter
+arrow2_end_y = min(cure_spending + 947.25, 2900 * 0.95)  # Clipped to ylim
 
 ax.annotate('',
             xy=(arrow2_end_x, arrow2_end_y),
@@ -100,9 +100,10 @@ ax.annotate('',
             arrowprops=dict(arrowstyle='->', lw=6, color=COLOR_BLACK,
                           mutation_scale=30, shrinkA=5, shrinkB=5))
 
-# Label above small bar (as it was originally)
+# Label above small bar (clipped to ylim to avoid bbox calculation issues)
 
-ax.text(x_positions[1], cure_spending + (military_total * 0.025),
+label_y = min(cure_spending + (military_total * 0.025), 2900 * 0.95)  # Ensure within ylim
+ax.text(x_positions[1], label_y,
         f'${cure_spending}B\n{categories[1]}', ha='center', va='bottom',
         color=COLOR_BLACK, fontsize=44, fontweight='bold', linespacing=1.2)
 
@@ -112,7 +113,13 @@ ax.set_xticks(x_positions)
 ax.set_xticklabels(['', ''])  # We'll keep labels on the bars themselves
 
 ax.set_ylim(0, 2900)
-ax.axis('off')  # Remove axes - labels are on the bars
+
+# Remove axes manually (instead of ax.axis('off') to avoid bbox calculation issues)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+ax.spines['left'].set_visible(False)
+ax.tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
 
 # Add watermark
 
@@ -123,8 +130,11 @@ add_watermark(fig)
 output_path = get_figure_output_path('military-vs-medical-research-spending-1-percent-treaty-column-chart.png')
 
 # Save the figure
+# NOTE: Using bbox_inches='tight' instead of None due to matplotlib bbox calculation bug
+# when annotations extend beyond plot area. This is an exception to DESIGN_GUIDE.md.
+# The design guide recommends bbox_inches=None, but it fails with this chart's annotations.
 
-plt.savefig(output_path, dpi=300, bbox_inches=None, facecolor=COLOR_WHITE)
+fig.savefig(output_path, dpi=300, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
 

@@ -1,0 +1,44 @@
+---
+title: VICTORY Bonds Expansion Flywheel
+description: Flow diagram showing how initial investment creates self-reinforcing cycle of returns and disease cures
+fig-alt: "Flowchart showing: Investors Give $1.0B → 1% Treaty Passes → Bondholders Get Returns + DIH Spends on Cures → Diseases Fall → Media Frenzy → Public Demands More → 2% Treaty → Higher Returns → Cycle Continues"
+---
+
+```{python}
+#| echo: false
+import graphviz
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+
+from dih_models.parameters import *
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Expansion Flywheel', format='png')
+dot.attr(rankdir='TB', size='10,12')
+setup_graphviz_style(dot)
+
+dot.node('Invest', f'Investors Give {format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)}')
+dot.node('Treaty1', f'1% Treaty Passes\n{format_parameter_value(TREATY_ANNUAL_FUNDING)}/year')
+dot.node('Payout1', f'Bondholders Get {format_parameter_value(VICTORY_BOND_ANNUAL_PAYOUT)}/year\n(270% returns)')
+dot.node('Mission1', 'DIH Spends $24.3B\non cures')
+dot.node('Cures', 'Diseases Start Falling')
+dot.node('Media', 'Media Frenzy:\n"It\'s working!"')
+dot.node('Public', 'Public Demands More')
+dot.node('Treaty2', '2% Treaty Passes\n$54B/year')
+dot.node('Payout2', 'Bondholders Get $5.4B/year\n(540% returns)')
+dot.node('More', 'Cycle Continues')
+
+dot.edge('Invest', 'Treaty1')
+dot.edge('Treaty1', 'Payout1')
+dot.edge('Treaty1', 'Mission1')
+dot.edge('Mission1', 'Cures')
+dot.edge('Cures', 'Media')
+dot.edge('Media', 'Public')
+dot.edge('Public', 'Treaty2')
+dot.edge('Treaty2', 'Payout2')
+dot.edge('Payout2', 'More')
+dot.edge('Treaty2', 'Mission1', style='dashed')
+
+png_path = render_graphviz_with_watermark(dot, 'victory-bonds-expansion-flywheel-diagram')
+display(IPImage(str(png_path)))
+```

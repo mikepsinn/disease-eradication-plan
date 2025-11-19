@@ -37,9 +37,65 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest",
+    # Code quality tools
+    "pre-commit",  # Git hooks framework
+    "ruff",  # Fast linter/formatter (replaces flake8, black, isort)
+    "mypy",  # Static type checker
+    "pylint",  # Comprehensive linter with duplicate detection
+    "vulture",  # Find unused code
+    # Legacy (can be removed after migrating to ruff)
     "black",
     "flake8",
 ]
 
 [tool.setuptools]
 packages = ["dih_models", "dih_models.plotting"]
+
+# Ruff configuration (replaces flake8, black, isort)
+[tool.ruff]
+line-length = 120
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+
+# MyPy configuration
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+no_strict_optional = true
+
+# Pylint configuration
+[tool.pylint.main]
+max-line-length = 120
+min-similarity-lines = 5  # Detect duplicate code
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.design]
+max-args = 10
+max-locals = 20
+max-returns = 6
+max-branches = 15
+max-statements = 60
+max-public-methods = 30
+max-attributes = 15
