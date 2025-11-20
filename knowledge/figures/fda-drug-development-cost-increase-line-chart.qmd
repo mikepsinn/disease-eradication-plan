@@ -8,13 +8,10 @@ from dih_models.parameters import *
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from pathlib import Path
-
-# Find project root dynamically
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, get_figure_output_path)
+    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, get_data_folder)
 
 # Setup styling
 
@@ -22,7 +19,7 @@ setup_chart_style()
 
 # Load data
 
-data_path = project_root / 'assets' / 'extracted-fda-data' / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
+data_path = get_data_folder() / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
 df = pd.read_csv(data_path)
 
 # Extract year and cost columns (filter where cost data exists)

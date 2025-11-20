@@ -401,6 +401,22 @@ def get_project_root():
     return project_root
 
 
+def get_data_folder():
+    """
+    Get the knowledge/data folder path.
+
+    Returns the path to the data directory where CSV and other data files are stored.
+
+    Returns:
+        Path: knowledge/data directory
+
+    Example:
+        data_path = get_data_folder() / 'historical-life-expectancy-fda-budget-drug-costs-1901-2000.csv'
+        df = pd.read_csv(data_path)
+    """
+    return get_project_root() / 'knowledge' / 'data'
+
+
 def get_chart_metadata(title=None, description=None):
     """
     Generate standardized PNG metadata for charts.
