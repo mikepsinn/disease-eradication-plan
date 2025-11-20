@@ -60,6 +60,7 @@ class Parameter(float):
 
         # NEW FIELDS (v2.0):
         display_value: Optional override for formatted display (e.g., "$2.7T" instead of auto-format)
+        display_name: Optional override for parameter title in documentation (e.g., "dFDA Active Trials")
         keywords: List of search keywords for parameter discovery
         min_value: Minimum valid value (validation)
         max_value: Maximum valid value (validation)
@@ -138,6 +139,7 @@ class Parameter(float):
         sensitivity: Optional[float] = None,
         # NEW v2.0 parameters
         display_value: Optional[str] = None,
+        display_name: Optional[str] = None,
         keywords: Optional[List[str]] = None,
         min_value: Optional[float] = None,
         max_value: Optional[float] = None,
@@ -184,6 +186,7 @@ class Parameter(float):
 
         # NEW v2.0 attributes
         instance.display_value = display_value
+        instance.display_name = display_name
         instance.keywords = keywords or []
         instance.min_value = min_value
         instance.max_value = max_value

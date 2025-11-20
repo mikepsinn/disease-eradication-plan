@@ -92,6 +92,82 @@ def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
     return parameters
 
 
+def smart_title_case(param_name: str) -> str:
+    """
+    Convert parameter name to title case, preserving common acronyms.
+
+    Examples:
+        DFDA_ACTIVE_TRIALS → "dFDA Active Trials"
+        ROI_DISCOUNT_1PCT → "ROI Discount 1%"
+        QALYS_FROM_FASTER_ACCESS → "QALYs From Faster Access"
+        GDP_GROWTH_BOOST_1PCT → "GDP Growth Boost 1%"
+    """
+    # Common acronyms to preserve (with proper capitalization)
+    ACRONYMS = {
+        'DFDA': 'dFDA',  # Decentralized FDA
+        'DIH': 'DIH',    # Decentralized Institutes of Health
+        'ROI': 'ROI',    # Return on Investment
+        'QALY': 'QALY',  # Quality-Adjusted Life Year
+        'QALYS': 'QALYs',
+        'DALY': 'DALY',  # Disability-Adjusted Life Year
+        'DALYS': 'DALYs',
+        'NPV': 'NPV',    # Net Present Value
+        'OPEX': 'OPEX',  # Operating Expenses
+        'CAPEX': 'CAPEX', # Capital Expenses
+        'GDP': 'GDP',    # Gross Domestic Product
+        'VSL': 'VSL',    # Value of Statistical Life
+        'EPA': 'EPA',    # Environmental Protection Agency
+        'FDA': 'FDA',    # Food and Drug Administration
+        'NIH': 'NIH',    # National Institutes of Health
+        'US': 'US',
+        'UK': 'UK',
+        'EU': 'EU',
+        'WHO': 'WHO',
+        'UN': 'UN',
+        'ICER': 'ICER',  # Incremental Cost-Effectiveness Ratio
+        'RD': 'R&D',     # Research & Development
+        'CEO': 'CEO',
+        'CTO': 'CTO',
+        'API': 'API',
+        'URL': 'URL',
+        'ID': 'ID',
+    }
+
+    # Special suffix replacements
+    SUFFIX_REPLACEMENTS = {
+        'PCT': '%',      # 1PCT → 1%
+        'MIN': 'Min',
+        'MAX': 'Max',
+        'AVG': 'Avg',
+        'MEAN': 'Mean',
+        'STD': 'Std',
+        'ANNUAL': 'Annual',
+        'TOTAL': 'Total',
+        'GLOBAL': 'Global',
+    }
+
+    # Split by underscores
+    words = param_name.split('_')
+
+    # Process each word
+    result = []
+    for word in words:
+        # Check if it's a known acronym
+        if word in ACRONYMS:
+            result.append(ACRONYMS[word])
+        # Check for suffix replacements
+        elif word in SUFFIX_REPLACEMENTS:
+            result.append(SUFFIX_REPLACEMENTS[word])
+        # Check for numeric patterns with PCT suffix (e.g., "1PCT" → "1%")
+        elif len(word) > 3 and word.endswith('PCT') and word[:-3].replace('.', '').isdigit():
+            result.append(f"{word[:-3]}%")
+        # Default: title case
+        else:
+            result.append(word.capitalize())
+
+    return ' '.join(result)
+
+
 def format_parameter_value(value: float, unit: str = "") -> str:
     """
     Format a numeric value with appropriate precision, thousand separators, and units.
@@ -557,9 +633,15 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
         for param_name, param_data in external_params:
             value = param_data["value"]
 
+            # Generate display title with priority chain: display_name → smart_title_case() → .title()
+            if hasattr(value, "display_name") and value.display_name:
+                display_title = value.display_name
+            else:
+                display_title = smart_title_case(param_name)
+
             # Start callout box for external source
             content.append("::: {.callout-tip icon=false collapse=false}")
-            content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
+            content.append(f"## {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
@@ -614,9 +696,15 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
         for param_name, param_data in calculated_params:
             value = param_data["value"]
 
+            # Generate display title with priority chain: display_name → smart_title_case() → .title()
+            if hasattr(value, "display_name") and value.display_name:
+                display_title = value.display_name
+            else:
+                display_title = smart_title_case(param_name)
+
             # Start callout box for calculated value
             content.append("::: {.callout-note icon=false collapse=false}")
-            content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
+            content.append(f"## {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
@@ -706,9 +794,15 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
         for param_name, param_data in definition_params:
             value = param_data["value"]
 
+            # Generate display title with priority chain: display_name → smart_title_case() → .title()
+            if hasattr(value, "display_name") and value.display_name:
+                display_title = value.display_name
+            else:
+                display_title = smart_title_case(param_name)
+
             # Start callout box for definition
             content.append("::: {.callout-warning icon=false collapse=false}")
-            content.append(f"## {param_name.replace('_', ' ').title()} {{#sec-{param_name.lower()}}}")
+            content.append(f"## {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
