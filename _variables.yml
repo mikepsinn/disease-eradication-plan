@@ -6,11 +6,12 @@
 # Citations available as: {{< var param_name_cite >}}
 #
 
-"accidents_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Accidental/unintentional injury death\
-  \ rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\">62.3</a>"
-"accidents_death_rate_cite": "@cdc-leading-causes-death"
+"accidents_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Accidental/unintentional\
+  \ injury death rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view\
+  \ source\">62.3</a>"
+"accidents_death_rate_cite": "@leading-causes-of-death-by-age-group"
 "action_time_invest_minutes": "<a href=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to invest\
@@ -37,33 +38,34 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to vote\
   \ (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\">2</a>"
-"alzheimers_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Alzheimer's disease death rate | ✓ High\
-  \ confidence | Unit: deaths per 100,000 | Click to view source\">27.7</a>"
-"alzheimers_death_rate_cite": "@cdc-leading-causes-death"
+"alzheimers_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Alzheimer's disease\
+  \ death rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\"\
+  >27.7</a>"
+"alzheimers_death_rate_cite": "@leading-causes-of-death-by-age-group"
 "alzheimer_cure_bounty_estimate": "<a href=\"/cure-bounty-estimates\" class=\"parameter-link\"\
   \ data-source-ref=\"cure-bounty-estimates\" data-source-type=\"calculated\" data-confidence=\"\
   high\" title=\"Estimated bounty value for Alzheimer's cure | ✓ High confidence |\
   \ Unit: USD | Click to view calculation\">$10B</a>"
-"antibiotics_life_extension_years": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
+"antibiotics_life_extension_years": "<a href=\"https://warondisease.org/knowledge/references.html#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" data-source-ref=\"life-expectancy-gains-medical-advances\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Life extension\
   \ from antibiotics (conservative mid-range from 5-23 years) | ✓ High confidence\
   \ | Unit: years | Click to view source\">10</a>"
 "antibiotics_life_extension_years_cite": "@life-expectancy-gains-medical-advances"
-"average_market_return_pct": "<a href=\"/knowledge/references.qmd#average-stock-market-return\"\
+"average_market_return_pct": "<a href=\"https://warondisease.org/knowledge/references.html#average-stock-market-return\"\
   \ class=\"parameter-link\" data-source-ref=\"average-stock-market-return\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Average annual stock market return (10%)\
   \ | ✓ High confidence | Unit: rate | Click to view source\">10%</a>"
 "average_market_return_pct_cite": "@average-stock-market-return"
-"average_us_hourly_wage": "<a href=\"/knowledge/references.qmd#average-us-hourly-wage\"\
+"average_us_hourly_wage": "<a href=\"https://warondisease.org/knowledge/references.html#average-us-hourly-wage\"\
   \ class=\"parameter-link\" data-source-ref=\"average-us-hourly-wage\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Average US hourly wage | ✓ High confidence\
   \ | Unit: USD/hour | Click to view source\">$30</a>"
 "average_us_hourly_wage_cite": "@average-us-hourly-wage"
-"baseline_lives_saved_annual": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
+"baseline_lives_saved_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Baseline annual lives saved by pharmaceuticals (conservative aggregate)\
   \ | ~ Medium confidence | \U0001F4CA Peer-reviewed | Conservative estimate | Updated:\
@@ -99,19 +101,19 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual benefit\
   \ from orphan drug viability | ✓ High confidence | Unit: USD/year | Click to view\
   \ calculation\">$400B</a>"
-"biometric_verification_cost_per_user_high_usd": "<a href=\"/knowledge/references.qmd#kyc-biometric-verification-costs-2024\"\
+"biometric_verification_cost_per_user_high_usd": "<a href=\"https://warondisease.org/knowledge/references.html#kyc-biometric-verification-costs-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"kyc-biometric-verification-costs-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Biometric KYC verification\
   \ cost at medium volume | ✓ High confidence | Updated: 2024 | Unit: USD/verification\
   \ | Click to view source\">$0</a>"
 "biometric_verification_cost_per_user_high_usd_cite": "@kyc-biometric-verification-costs-2024"
-"biometric_verification_cost_per_user_low_usd": "<a href=\"/knowledge/references.qmd#kyc-biometric-verification-costs-2024\"\
+"biometric_verification_cost_per_user_low_usd": "<a href=\"https://warondisease.org/knowledge/references.html#kyc-biometric-verification-costs-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"kyc-biometric-verification-costs-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Biometric KYC verification\
   \ cost at high volume (300M+ scale) | ✓ High confidence | Updated: 2024 | Unit:\
   \ USD/verification | Click to view source\">$0</a>"
 "biometric_verification_cost_per_user_low_usd_cite": "@kyc-biometric-verification-costs-2024"
-"book_reading_speed_wpm": "<a href=\"/knowledge/references.qmd#average-reading-speed\"\
+"book_reading_speed_wpm": "<a href=\"https://warondisease.org/knowledge/references.html#average-reading-speed\"\
   \ class=\"parameter-link\" data-source-ref=\"average-reading-speed\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Average reading speed (conservative\
   \ for non-fiction) | ✓ High confidence | Unit: words/minute | Click to view source\"\
@@ -250,18 +252,19 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Weekly advertising\
   \ cost for campaigns | ✓ High confidence | Unit: USD/week | Click to view calculation\"\
   >$500K</a>"
-"cancer_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Cancer death rate (all cancers) | ✓\
-  \ High confidence | Unit: deaths per 100,000 | Click to view source\">147</a>"
-"cancer_death_rate_cite": "@cdc-leading-causes-death"
-"cardiovascular_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Cardiovascular disease death rate (heart\
-  \ disease + stroke) | ✓ High confidence | Unit: deaths per 100,000 | Click to view\
-  \ source\">201</a>"
-"cardiovascular_death_rate_cite": "@cdc-leading-causes-death"
-"caregiver_annual_value_total": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
+"cancer_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cancer death rate\
+  \ (all cancers) | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\"\
+  >147</a>"
+"cancer_death_rate_cite": "@leading-causes-of-death-by-age-group"
+"cardiovascular_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cardiovascular\
+  \ disease death rate (heart disease + stroke) | ✓ High confidence | Unit: deaths\
+  \ per 100,000 | Click to view source\">201</a>"
+"cardiovascular_death_rate_cite": "@leading-causes-of-death-by-age-group"
+"caregiver_annual_value_total": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total annual value\
   \ of unpaid caregiving in US | ✓ High confidence | Unit: USD/year | Click to view\
@@ -269,55 +272,56 @@
 "caregiver_annual_value_total_cite": "@unpaid-caregiver-hours-economic-value"
 "caregiver_cost_annual": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_COST_ANNUAL\"\
   >$6.00K</span>"
-"caregiver_count_us": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
+"caregiver_count_us": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Number of unpaid\
   \ caregivers in US | ✓ High confidence | Unit: people | Click to view source\">38M</a>"
 "caregiver_count_us_cite": "@unpaid-caregiver-hours-economic-value"
-"caregiver_hours_per_month": "<a href=\"/knowledge/references.qmd#average-family-caregiving-hours\"\
-  \ class=\"parameter-link\" data-source-ref=\"average-family-caregiving-hours\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Average monthly hours of unpaid family\
-  \ caregiving in US | ✓ High confidence | Unit: hours/month | Click to view source\"\
-  >20</a>"
-"caregiver_hours_per_month_cite": "@average-family-caregiving-hours"
+"caregiver_hours_per_month": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average monthly\
+  \ hours of unpaid family caregiving in US | ✓ High confidence | Unit: hours/month\
+  \ | Click to view source\">20</a>"
+"caregiver_hours_per_month_cite": "@unpaid-caregiver-hours-economic-value"
 "caregiver_hours_per_month_avg": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_HOURS_PER_MONTH_AVG\"\
   >110</span>"
-"caregiver_hours_per_week_avg": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
+"caregiver_hours_per_week_avg": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average weekly\
   \ hours of unpaid caregiving (25-26 hours/week) | ✓ High confidence | Unit: hours/week\
   \ | Click to view source\">25.5</a>"
 "caregiver_hours_per_week_avg_cite": "@unpaid-caregiver-hours-economic-value"
-"caregiver_value_per_hour": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
+"caregiver_value_per_hour": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"AARP valuation\
   \ of caregiving per hour | ✓ High confidence | Unit: USD/hour | Click to view source\"\
   >$17</a>"
 "caregiver_value_per_hour_cite": "@unpaid-caregiver-hours-economic-value"
-"caregiver_value_per_hour_simple": "<a href=\"/knowledge/references.qmd#caregiver-replacement-cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"caregiver-replacement-cost\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Estimated replacement cost per hour\
-  \ of caregiving | ✓ High confidence | Unit: USD/hour | Click to view source\">$25</a>"
-"caregiver_value_per_hour_simple_cite": "@caregiver-replacement-cost"
-"childhood_vaccination_annual_benefit": "<a href=\"/knowledge/references.qmd#/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
+"caregiver_value_per_hour_simple": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated replacement\
+  \ cost per hour of caregiving | ✓ High confidence | Unit: USD/hour | Click to view\
+  \ source\">$25</a>"
+"caregiver_value_per_hour_simple_cite": "@unpaid-caregiver-hours-economic-value"
+"childhood_vaccination_annual_benefit": "<a href=\"https://warondisease.org/knowledge/references.html#/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated annual\
   \ global economic benefit from childhood vaccination programs (measles, polio, etc.)\
   \ | ✓ High confidence | Unit: USD/year | Click to view source\">$15B</a>"
-"childhood_vaccination_annual_benefit_cite": "@/knowledge/economics/economics.qmd#better-than-the-best-charities"
-"childhood_vaccination_roi": "<a href=\"/knowledge/references.qmd#childhood-vaccination-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"childhood-vaccination-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Return on investment from childhood\
-  \ vaccination programs | ✓ High confidence | Unit: ratio | Click to view source\"\
-  >13</a>"
+"childhood_vaccination_annual_benefit_cite": "@knowledge-economics-economics-better-than-the-best-charities"
+"childhood_vaccination_roi": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CHILDHOOD_VACCINATION_ROI\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CHILDHOOD_VACCINATION_ROI\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Return on investment\
+  \ from childhood vaccination programs | ✓ High confidence | Unit: ratio | Click\
+  \ to view source\">13</a>"
 "childhood_vaccination_roi_cite": "@childhood-vaccination-roi"
-"chronic_disease_disability_weight": "<a href=\"/knowledge/references.qmd#who-gbd-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-gbd-2024\" data-source-type=\"\
-  external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Disability\
-  \ weight for untreated chronic conditions (WHO Global Burden of Disease) | ~ Medium\
-  \ confidence | \U0001F4CA Peer-reviewed | Unit: weight | Click to view source\"\
-  >0.35</a>"
-"chronic_disease_disability_weight_cite": "@who-gbd-2024"
+"chronic_disease_disability_weight": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
+  \ title=\"Disability weight for untreated chronic conditions (WHO Global Burden\
+  \ of Disease) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Unit: weight |\
+  \ Click to view source\">0.35</a>"
+"chronic_disease_disability_weight_cite": "@who-global-health-estimates-2024"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
@@ -381,18 +385,18 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
   \ counting military spending opportunity cost | ✓ High confidence | Unit: USD/life\
   \ | Click to view calculation\">$-5</a>"
-"current_active_trials": "<a href=\"/knowledge/references.qmd#active-clinical-trials-baseline\"\
-  \ class=\"parameter-link\" data-source-ref=\"active-clinical-trials-baseline\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Current active trials at any given time\
-  \ (3-5 year duration) | ✓ High confidence | Unit: trials | Click to view source\"\
-  >10,000</a>"
-"current_active_trials_cite": "@active-clinical-trials-baseline"
-"current_clinical_trial_participation_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-participants\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-participants\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Current clinical trial participation\
-  \ rate (0.06% of population) | ✓ High confidence | Unit: rate | Click to view source\"\
-  >0.06%</a>"
-"current_clinical_trial_participation_rate_cite": "@clinical-trial-participants"
+"current_active_trials": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CLINICALTRIALS_GOV_ENROLLMENT_DATA_2025\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CLINICALTRIALS_GOV_ENROLLMENT_DATA_2025\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
+  \ trials at any given time (3-5 year duration) | ✓ High confidence | Unit: trials\
+  \ | Click to view source\">10,000</a>"
+"current_active_trials_cite": "@clinicaltrials-gov-enrollment-data-2025"
+"current_clinical_trial_participation_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current clinical\
+  \ trial participation rate (0.06% of population) | ✓ High confidence | Unit: rate\
+  \ | Click to view source\">0.06%</a>"
+"current_clinical_trial_participation_rate_cite": "@clinical-trial-patient-participation-rate"
 "current_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#current-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#current-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Current completed\
@@ -400,40 +404,40 @@
   \ × COMPLETION_RATE | Unit: trials/year | Click to view calculation\">1,980</a>"
 "current_completed_trials_per_year_latex": "$$\nCompleted_{current} = 3,300 \\times\
   \ 0.60 = 1,980\n$$"
-"current_disease_patients_global": "<a href=\"/knowledge/references.qmd#global-burden-disease-2-4-billion\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-burden-disease-2-4-billion\"\
+"current_disease_patients_global": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_PREVALENCE_2_BILLION\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_PREVALENCE_2_BILLION\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global population\
   \ with chronic diseases | ✓ High confidence | Unit: people | Click to view source\"\
   >2.40B</a>"
-"current_disease_patients_global_cite": "@global-burden-disease-2-4-billion"
-"current_drug_approvals_per_year": "<a href=\"/knowledge/references.qmd#global-new-drug-approvals-50-annually\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-new-drug-approvals-50-annually\"\
+"current_disease_patients_global_cite": "@disease-prevalence-2-billion"
+"current_drug_approvals_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average annual\
   \ new drug approvals globally | ✓ High confidence | Unit: drugs/year | Click to\
   \ view source\">50</a>"
 "current_drug_approvals_per_year_cite": "@global-new-drug-approvals-50-annually"
-"current_patient_eligibility_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-eligibility-rate\"\
+"current_patient_eligibility_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-eligibility-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-eligibility-rate\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Current patient eligibility rate for\
   \ clinical trials (0.2%) | ✓ High confidence | Unit: rate | Click to view source\"\
   >0.2%</a>"
 "current_patient_eligibility_rate_cite": "@clinical-trial-eligibility-rate"
-"current_trials_per_year": "<a href=\"/knowledge/references.qmd#global-clinical-trials-per-year\"\
+"current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-per-year\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-per-year\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Current global clinical trials per year\
   \ | ✓ High confidence | Unit: trials/year | Click to view source\">3,300</a>"
 "current_trials_per_year_cite": "@global-clinical-trials-per-year"
-"current_trial_abandonment_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-abandonment-rate\"\
+"current_trial_abandonment_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-abandonment-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-abandonment-rate\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Current trial abandonment rate (40%\
   \ never complete) | ✓ High confidence | Unit: rate | Click to view source\">40%</a>"
 "current_trial_abandonment_rate_cite": "@clinical-trial-abandonment-rate"
-"current_trial_completion_rate": "<a href=\"/knowledge/references.qmd#clinical-trial-completion-rate\"\
+"current_trial_completion_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-completion-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-completion-rate\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Current trial completion rate (60%)\
   \ | ✓ High confidence | Unit: rate | Click to view source\">60%</a>"
 "current_trial_completion_rate_cite": "@clinical-trial-completion-rate"
-"current_trial_slots_available": "<a href=\"/knowledge/references.qmd#global-trial-participant-capacity\"\
+"current_trial_slots_available": "<a href=\"https://warondisease.org/knowledge/references.html#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"global-trial-participant-capacity\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total trial slots\
   \ available for 2.4B sick people | ✓ High confidence | Unit: slots | Click to view\
@@ -459,11 +463,11 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Misallocation\
   \ factor for spending on death vs prevention | ✓ High confidence | Unit: ratio |\
   \ Click to view calculation\">1,750</a>"
-"defense_lobbying_annual": "<a href=\"/knowledge/references.qmd#lobbying-spend-defense\"\
-  \ class=\"parameter-link\" data-source-ref=\"lobbying-spend-defense\" data-source-type=\"\
-  external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Annual defense\
-  \ industry lobbying spending | ✓ High confidence | \U0001F4CA Peer-reviewed | Updated:\
-  \ 2024 | Unit: USD/year | Click to view source\">$127M</a>"
+"defense_lobbying_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LOBBYING_SPEND_DEFENSE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LOBBYING_SPEND_DEFENSE\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Annual defense industry lobbying spending | ✓ High confidence | \U0001F4CA\
+  \ Peer-reviewed | Updated: 2024 | Unit: USD/year | Click to view source\">$127M</a>"
 "defense_lobbying_annual_cite": "@lobbying-spend-defense"
 "defense_sector_retention_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of budget defense sector keeps under 1% treaty | Unit: rate | Core definition\"\
@@ -754,12 +758,12 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Estimated one-time\
   \ payment for diabetes cure | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$10K</a>"
-"diabetes_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Diabetes death rate | ✓ High confidence\
-  \ | Unit: deaths per 100,000 | Click to view source\">22.4</a>"
-"diabetes_death_rate_cite": "@cdc-leading-causes-death"
-"diabetes_treatment_monthly_cost": "<a href=\"/knowledge/references.qmd#diabetes-treatment-costs\"\
+"diabetes_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Diabetes death\
+  \ rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\">22.4</a>"
+"diabetes_death_rate_cite": "@leading-causes-of-death-by-age-group"
+"diabetes_treatment_monthly_cost": "<a href=\"https://warondisease.org/knowledge/references.html#diabetes-treatment-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"diabetes-treatment-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Average monthly cost of diabetes treatment\
   \ per patient | ✓ High confidence | Unit: USD/month | Click to view source\">$500</a>"
@@ -829,27 +833,30 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Low estimate\
   \ of annual savings from drug price reductions (20% reduction of $360B U.S. spending)\
   \ | ✓ High confidence | Unit: USD/year | Click to view calculation\">$72B</a>"
-"economic_multiplier_education_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-education\"\
-  \ class=\"parameter-link\" data-source-ref=\"economic-multiplier-education\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Economic multiplier for education investment\
-  \ (2.1x ROI) | ✓ High confidence | Unit: ratio | Click to view source\">2.1</a>"
-"economic_multiplier_education_investment_cite": "@economic-multiplier-education"
-"economic_multiplier_healthcare_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-healthcare\"\
-  \ class=\"parameter-link\" data-source-ref=\"economic-multiplier-healthcare\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Economic multiplier for healthcare investment\
-  \ (4.3x ROI) | ✓ High confidence | Unit: ratio | Click to view source\">4.3</a>"
-"economic_multiplier_healthcare_investment_cite": "@economic-multiplier-healthcare"
-"economic_multiplier_infrastructure_investment": "<a href=\"/knowledge/references.qmd#economic-multiplier-infrastructure\"\
-  \ class=\"parameter-link\" data-source-ref=\"economic-multiplier-infrastructure\"\
+"economic_multiplier_education_investment": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
+  \ for education investment (2.1x ROI) | ✓ High confidence | Unit: ratio | Click\
+  \ to view source\">2.1</a>"
+"economic_multiplier_education_investment_cite": "@education-investment-economic-multiplier"
+"economic_multiplier_healthcare_investment": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
+  \ for healthcare investment (4.3x ROI) | ✓ High confidence | Unit: ratio | Click\
+  \ to view source\">4.3</a>"
+"economic_multiplier_healthcare_investment_cite": "@healthcare-investment-economic-multiplier"
+"economic_multiplier_infrastructure_investment": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.INFRASTRUCTURE_INVESTMENT_ECONOMIC_MULTIPLIER\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.INFRASTRUCTURE_INVESTMENT_ECONOMIC_MULTIPLIER\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
   \ for infrastructure investment (1.6x ROI) | ✓ High confidence | Unit: ratio | Click\
   \ to view source\">1.6</a>"
-"economic_multiplier_infrastructure_investment_cite": "@economic-multiplier-infrastructure"
-"economic_multiplier_military_spending": "<a href=\"/knowledge/references.qmd#economic-multiplier-military\"\
-  \ class=\"parameter-link\" data-source-ref=\"economic-multiplier-military\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Economic multiplier for military spending\
-  \ (0.6x ROI) | ✓ High confidence | Unit: ratio | Click to view source\">0.6</a>"
-"economic_multiplier_military_spending_cite": "@economic-multiplier-military"
+"economic_multiplier_infrastructure_investment_cite": "@infrastructure-investment-economic-multiplier"
+"economic_multiplier_military_spending": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.MILITARY_SPENDING_ECONOMIC_MULTIPLIER\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.MILITARY_SPENDING_ECONOMIC_MULTIPLIER\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
+  \ for military spending (0.6x ROI) | ✓ High confidence | Unit: ratio | Click to\
+  \ view source\">0.6</a>"
+"economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
 "effective_hourly_rate": "<a href=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Effective hourly\
@@ -877,12 +884,12 @@
   \ AVG_WAGE | Unit: ratio | Click to view calculation\">9,744</a>"
 "effective_hourly_rate_vs_wage_multiplier_latex": "$$\nMultiplier = \\frac{\\$291,525}{\\\
   $30} \\approx 9,718x\n$$"
-"efficacy_lag_years": "<a href=\"/knowledge/references.qmd#bio-clinical-development-2021\"\
-  \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
-  external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Regulatory\
-  \ delay for efficacy testing (Phase II/III) post-safety verification | ✓ High confidence\
-  \ | \U0001F4CA Peer-reviewed | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET - PHASE_1_DURATION\
-  \ | Unit: years | Click to view source\">8.2</a>"
+"efficacy_lag_years": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Regulatory delay for efficacy testing (Phase II/III) post-safety verification\
+  \ | ✓ High confidence | \U0001F4CA Peer-reviewed | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET\
+  \ - PHASE_1_DURATION | Unit: years | Click to view source\">8.2</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
 "expected_roi_conservative_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
@@ -983,39 +990,42 @@
   >0.005</span>"
 "gdp_growth_boost_5pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_5PCT\"\
   >0.0125</span>"
-"givewell_cost_per_life_avg": "<a href=\"/knowledge/references.qmd#givewell-cost-per-life-saved\"\
-  \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"GiveWell average cost per life saved\
-  \ across top charities | ✓ High confidence | Unit: USD/life | Click to view source\"\
-  >$4.50K</a>"
+"givewell_cost_per_life_avg": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"GiveWell average\
+  \ cost per life saved across top charities | ✓ High confidence | Unit: USD/life\
+  \ | Click to view source\">$4.50K</a>"
 "givewell_cost_per_life_avg_cite": "@givewell-cost-per-life-saved"
-"givewell_cost_per_life_max": "<a href=\"/knowledge/references.qmd#givewell-cost-per-life-saved\"\
-  \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"GiveWell cost per life saved (Against\
-  \ Malaria Foundation) | ✓ High confidence | Unit: USD/life | Click to view source\"\
-  >$5.50K</a>"
+"givewell_cost_per_life_max": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"GiveWell cost per\
+  \ life saved (Against Malaria Foundation) | ✓ High confidence | Unit: USD/life |\
+  \ Click to view source\">$5.50K</a>"
 "givewell_cost_per_life_max_cite": "@givewell-cost-per-life-saved"
-"givewell_cost_per_life_min": "<a href=\"/knowledge/references.qmd#givewell-cost-per-life-saved\"\
-  \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"GiveWell cost per life saved (Helen\
-  \ Keller International) | ✓ High confidence | Unit: USD/life | Click to view source\"\
-  >$3.50K</a>"
+"givewell_cost_per_life_min": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"GiveWell cost per\
+  \ life saved (Helen Keller International) | ✓ High confidence | Unit: USD/life |\
+  \ Click to view source\">$3.50K</a>"
 "givewell_cost_per_life_min_cite": "@givewell-cost-per-life-saved"
-"global_annual_conflict_deaths_active_combat": "<a href=\"/knowledge/references.qmd#acled-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"acled-2024\" data-source-type=\"external\"\
-  \ data-confidence=\"high\" title=\"Annual deaths from active combat worldwide |\
-  \ ✓ High confidence | Unit: deaths/year | Click to view source\">234K</a>"
-"global_annual_conflict_deaths_active_combat_cite": "@acled-2024"
-"global_annual_conflict_deaths_state_violence": "<a href=\"/knowledge/references.qmd#ucdp-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"ucdp-2024\" data-source-type=\"external\"\
-  \ data-confidence=\"high\" title=\"Annual deaths from state violence | ✓ High confidence\
-  \ | Unit: deaths/year | Click to view source\">2,700</a>"
-"global_annual_conflict_deaths_state_violence_cite": "@ucdp-2024"
-"global_annual_conflict_deaths_terror_attacks": "<a href=\"/knowledge/references.qmd#gtd-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"gtd-2024\" data-source-type=\"external\"\
-  \ data-confidence=\"high\" title=\"Annual deaths from terror attacks globally |\
-  \ ✓ High confidence | Unit: deaths/year | Click to view source\">8,300</a>"
-"global_annual_conflict_deaths_terror_attacks_cite": "@gtd-2024"
+"global_annual_conflict_deaths_active_combat": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual deaths from\
+  \ active combat worldwide | ✓ High confidence | Unit: deaths/year | Click to view\
+  \ source\">234K</a>"
+"global_annual_conflict_deaths_active_combat_cite": "@acled-active-combat-deaths"
+"global_annual_conflict_deaths_state_violence": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.UCDP_STATE_VIOLENCE_DEATHS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.UCDP_STATE_VIOLENCE_DEATHS\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual deaths from\
+  \ state violence | ✓ High confidence | Unit: deaths/year | Click to view source\"\
+  >2,700</a>"
+"global_annual_conflict_deaths_state_violence_cite": "@ucdp-state-violence-deaths"
+"global_annual_conflict_deaths_terror_attacks": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GTD_TERROR_ATTACK_DEATHS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GTD_TERROR_ATTACK_DEATHS\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual deaths from\
+  \ terror attacks globally | ✓ High confidence | Unit: deaths/year | Click to view\
+  \ source\">8,300</a>"
+"global_annual_conflict_deaths_terror_attacks_cite": "@gtd-terror-attack-deaths"
 "global_annual_conflict_deaths_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#death-accounting\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#death-accounting\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1029,11 +1039,12 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
   \ from curable diseases globally | ✓ High confidence | Formula: GLOBAL_DAILY_DEATHS_CURABLE_DISEASES\
   \ × 365 | Unit: deaths/year | Click to view calculation\">54.8M</a>"
-"global_annual_environmental_damage_conflict": "<a href=\"/knowledge/references.qmd#war-environmental-damage-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-environmental-damage-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual environmental damage and restoration\
-  \ costs from conflict | ✓ High confidence | Unit: USD | Click to view source\">$100B</a>"
-"global_annual_environmental_damage_conflict_cite": "@war-environmental-damage-costs"
+"global_annual_environmental_damage_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.ENVIRONMENTAL_COST_OF_WAR\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.ENVIRONMENTAL_COST_OF_WAR\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual environmental\
+  \ damage and restoration costs from conflict | ✓ High confidence | Unit: USD | Click\
+  \ to view source\">$100B</a>"
+"global_annual_environmental_damage_conflict_cite": "@environmental-cost-of-war"
 "global_annual_human_cost_active_combat": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual cost of\
@@ -1063,35 +1074,35 @@
   \ USD/year | Click to view calculation\">$2.45T</a>"
 "global_annual_human_life_losses_conflict_latex": "$$\nCost_{human} = \\$2,336B +\
   \ \\$83B + \\$27B = \\$2,446B\n$$"
-"global_annual_infrastructure_damage_communications_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
+"global_annual_infrastructure_damage_communications_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"war-infrastructure-damage-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to communications\
   \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$298B</a>"
 "global_annual_infrastructure_damage_communications_conflict_cite": "@war-infrastructure-damage-costs"
-"global_annual_infrastructure_damage_education_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
+"global_annual_infrastructure_damage_education_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"war-infrastructure-damage-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to education\
   \ facilities from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
   >$234B</a>"
 "global_annual_infrastructure_damage_education_conflict_cite": "@war-infrastructure-damage-costs"
-"global_annual_infrastructure_damage_energy_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
+"global_annual_infrastructure_damage_energy_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"war-infrastructure-damage-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to energy\
   \ systems from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
   >$422B</a>"
 "global_annual_infrastructure_damage_energy_conflict_cite": "@war-infrastructure-damage-costs"
-"global_annual_infrastructure_damage_healthcare_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
+"global_annual_infrastructure_damage_healthcare_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"war-infrastructure-damage-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to healthcare\
   \ facilities from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
   >$166B</a>"
 "global_annual_infrastructure_damage_healthcare_conflict_cite": "@war-infrastructure-damage-costs"
-"global_annual_infrastructure_damage_transportation_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
+"global_annual_infrastructure_damage_transportation_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"war-infrastructure-damage-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to transportation\
   \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$487B</a>"
 "global_annual_infrastructure_damage_transportation_conflict_cite": "@war-infrastructure-damage-costs"
-"global_annual_infrastructure_damage_water_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
+"global_annual_infrastructure_damage_water_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#war-infrastructure-damage-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"war-infrastructure-damage-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to water\
   \ systems from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
@@ -1107,60 +1118,66 @@
 "global_annual_infrastructure_destruction_conflict_latex": "$$\nInfra_{damage} = \\\
   $487.3B + \\$421.7B + \\$298.1B + \\$267.8B + \\$234.5B + \\$165.6B = \\$1,875B\n\
   $$"
-"global_annual_lives_saved_by_med_research": "<a href=\"/knowledge/references.qmd#medical-research-lives-saved-annually\"\
+"global_annual_lives_saved_by_med_research": "<a href=\"https://warondisease.org/knowledge/references.html#medical-research-lives-saved-annually\"\
   \ class=\"parameter-link\" data-source-ref=\"medical-research-lives-saved-annually\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lives saved\
   \ by medical research globally | ✓ High confidence | Unit: lives/year | Click to\
   \ view source\">4.20M</a>"
 "global_annual_lives_saved_by_med_research_cite": "@medical-research-lives-saved-annually"
-"global_annual_lost_economic_growth_military_spending": "<a href=\"/knowledge/references.qmd#military-spending-opportunity-cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"military-spending-opportunity-cost\"\
+"global_annual_lost_economic_growth_military_spending": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISPARITY_RATIO_WEAPONS_VS_CURES\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISPARITY_RATIO_WEAPONS_VS_CURES\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lost economic\
   \ growth from military spending opportunity cost | ✓ High confidence | Unit: USD\
   \ | Click to view source\">$2.72T</a>"
-"global_annual_lost_economic_growth_military_spending_cite": "@military-spending-opportunity-cost"
-"global_annual_lost_human_capital_conflict": "<a href=\"/knowledge/references.qmd#war-lost-human-capital\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-lost-human-capital\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual lost productivity from conflict\
-  \ casualties | ✓ High confidence | Unit: USD | Click to view source\">$300B</a>"
-"global_annual_lost_human_capital_conflict_cite": "@war-lost-human-capital"
-"global_annual_military_spending_infrastructure_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global military spending on infrastructure\
-  \ in 2024 | ✓ High confidence | Unit: USD | Click to view source\">$520B</a>"
+"global_annual_lost_economic_growth_military_spending_cite": "@disparity-ratio-weapons-vs-cures"
+"global_annual_lost_human_capital_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LOST_HUMAN_CAPITAL_WAR_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LOST_HUMAN_CAPITAL_WAR_COST\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lost productivity\
+  \ from conflict casualties | ✓ High confidence | Unit: USD | Click to view source\"\
+  >$300B</a>"
+"global_annual_lost_human_capital_conflict_cite": "@lost-human-capital-war-cost"
+"global_annual_military_spending_infrastructure_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global military\
+  \ spending on infrastructure in 2024 | ✓ High confidence | Unit: USD | Click to\
+  \ view source\">$520B</a>"
 "global_annual_military_spending_infrastructure_2024_cite": "@global-military-spending"
-"global_annual_military_spending_intelligence_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global military spending on intelligence\
-  \ in 2024 | ✓ High confidence | Unit: USD | Click to view source\">$282B</a>"
+"global_annual_military_spending_intelligence_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global military\
+  \ spending on intelligence in 2024 | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$282B</a>"
 "global_annual_military_spending_intelligence_2024_cite": "@global-military-spending"
-"global_annual_military_spending_ops_maintenance_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global military spending on operations\
-  \ and maintenance in 2024 | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$580B</a>"
+"global_annual_military_spending_ops_maintenance_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global military\
+  \ spending on operations and maintenance in 2024 | ✓ High confidence | Unit: USD\
+  \ | Click to view source\">$580B</a>"
 "global_annual_military_spending_ops_maintenance_2024_cite": "@global-military-spending"
-"global_annual_military_spending_personnel_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global military spending on personnel\
-  \ in 2024 | ✓ High confidence | Unit: USD | Click to view source\">$682B</a>"
+"global_annual_military_spending_personnel_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global military\
+  \ spending on personnel in 2024 | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$682B</a>"
 "global_annual_military_spending_personnel_2024_cite": "@global-military-spending"
-"global_annual_military_spending_procurement_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global military spending on procurement\
-  \ in 2024 | ✓ High confidence | Unit: USD | Click to view source\">$654B</a>"
+"global_annual_military_spending_procurement_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global military\
+  \ spending on procurement in 2024 | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$654B</a>"
 "global_annual_military_spending_procurement_2024_cite": "@global-military-spending"
-"global_annual_psychological_impact_costs_conflict": "<a href=\"/knowledge/references.qmd#war-psychological-impact-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-psychological-impact-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual PTSD and mental health costs\
-  \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$232B</a>"
-"global_annual_psychological_impact_costs_conflict_cite": "@war-psychological-impact-costs"
-"global_annual_refugee_support_costs": "<a href=\"/knowledge/references.qmd#refugee-support-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"refugee-support-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual refugee support costs (108.4M\
-  \ refugees × $1,384/year) | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$150B</a>"
-"global_annual_refugee_support_costs_cite": "@refugee-support-costs"
+"global_annual_psychological_impact_costs_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.PSYCHOLOGICAL_IMPACT_WAR_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.PSYCHOLOGICAL_IMPACT_WAR_COST\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual PTSD and\
+  \ mental health costs from conflict | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$232B</a>"
+"global_annual_psychological_impact_costs_conflict_cite": "@psychological-impact-war-cost"
+"global_annual_refugee_support_costs": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.UNHCR_REFUGEE_SUPPORT_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.UNHCR_REFUGEE_SUPPORT_COST\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual refugee\
+  \ support costs (108.4M refugees × $1,384/year) | ✓ High confidence | Unit: USD\
+  \ | Click to view source\">$150B</a>"
+"global_annual_refugee_support_costs_cite": "@unhcr-refugee-support-cost"
 "global_annual_trade_disruption_conflict": "<a href=\"/knowledge/problem/cost-of-war.qmd#trade-disruption\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#trade-disruption\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1169,31 +1186,36 @@
   \ | Unit: USD/year | Click to view calculation\">$616B</a>"
 "global_annual_trade_disruption_conflict_latex": "$$\nTrade_{disruption} = \\$247.1B\
   \ + \\$186.8B + \\$124.7B + \\$57.4B = \\$616B\n$$"
-"global_annual_trade_disruption_currency_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-trade-disruption-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual trade disruption costs from currency\
-  \ instability | ✓ High confidence | Unit: USD | Click to view source\">$57.4B</a>"
-"global_annual_trade_disruption_currency_conflict_cite": "@war-trade-disruption-costs"
-"global_annual_trade_disruption_energy_price_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-trade-disruption-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual trade disruption costs from energy\
-  \ price volatility | ✓ High confidence | Unit: USD | Click to view source\">$125B</a>"
-"global_annual_trade_disruption_energy_price_conflict_cite": "@war-trade-disruption-costs"
-"global_annual_trade_disruption_shipping_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-trade-disruption-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual trade disruption costs from shipping\
-  \ disruptions | ✓ High confidence | Unit: USD | Click to view source\">$247B</a>"
-"global_annual_trade_disruption_shipping_conflict_cite": "@war-trade-disruption-costs"
-"global_annual_trade_disruption_supply_chain_conflict": "<a href=\"/knowledge/references.qmd#war-trade-disruption-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"war-trade-disruption-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual trade disruption costs from supply\
-  \ chain disruptions | ✓ High confidence | Unit: USD | Click to view source\">$187B</a>"
-"global_annual_trade_disruption_supply_chain_conflict_cite": "@war-trade-disruption-costs"
-"global_annual_veteran_healthcare_costs": "<a href=\"/knowledge/references.qmd#global-veteran-healthcare-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-veteran-healthcare-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual veteran healthcare costs (20-year\
-  \ projected) | ✓ High confidence | Unit: USD | Click to view source\">$200B</a>"
-"global_annual_veteran_healthcare_costs_cite": "@global-veteran-healthcare-costs"
+"global_annual_trade_disruption_currency_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
+  \ costs from currency instability | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$57.4B</a>"
+"global_annual_trade_disruption_currency_conflict_cite": "@world-bank-trade-disruption-conflict"
+"global_annual_trade_disruption_energy_price_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
+  \ costs from energy price volatility | ✓ High confidence | Unit: USD | Click to\
+  \ view source\">$125B</a>"
+"global_annual_trade_disruption_energy_price_conflict_cite": "@world-bank-trade-disruption-conflict"
+"global_annual_trade_disruption_shipping_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
+  \ costs from shipping disruptions | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$247B</a>"
+"global_annual_trade_disruption_shipping_conflict_cite": "@world-bank-trade-disruption-conflict"
+"global_annual_trade_disruption_supply_chain_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
+  \ costs from supply chain disruptions | ✓ High confidence | Unit: USD | Click to\
+  \ view source\">$187B</a>"
+"global_annual_trade_disruption_supply_chain_conflict_cite": "@world-bank-trade-disruption-conflict"
+"global_annual_veteran_healthcare_costs": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.VETERAN_HEALTHCARE_COST_PROJECTIONS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.VETERAN_HEALTHCARE_COST_PROJECTIONS\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual veteran\
+  \ healthcare costs (20-year projected) | ✓ High confidence | Unit: USD | Click to\
+  \ view source\">$200B</a>"
+"global_annual_veteran_healthcare_costs_cite": "@veteran-healthcare-cost-projections"
 "global_annual_war_direct_costs_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#direct-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#direct-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1218,17 +1240,18 @@
   \ DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view calculation\">$11.4T</a>"
 "global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B + \\$3,700.1B\
   \ = \\$11,355.1B\n$$"
-"global_clinical_trials_spending_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trials-market-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
+"global_clinical_trials_spending_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
   \ on clinical trials | ✓ High confidence | Unit: USD/year | Click to view source\"\
   >$83B</a>"
 "global_clinical_trials_spending_annual_cite": "@global-clinical-trials-market-2024"
-"global_clinical_trial_market_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trial-market\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-clinical-trial-market\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global clinical trial market size |\
-  \ ✓ High confidence | Unit: USD/year | Click to view source\">$100B</a>"
-"global_clinical_trial_market_annual_cite": "@global-clinical-trial-market"
+"global_clinical_trial_market_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CLINICAL_TRIAL_MARKET_SIZE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CLINICAL_TRIAL_MARKET_SIZE\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global clinical\
+  \ trial market size | ✓ High confidence | Unit: USD/year | Click to view source\"\
+  >$100B</a>"
+"global_clinical_trial_market_annual_cite": "@clinical-trial-market-size"
 "global_cost_per_conflict_death": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per conflict\
@@ -1243,17 +1266,18 @@
   \ 1B) ÷ LIVES_SAVED | Unit: USD/life | Click to view calculation\">$16.1K</a>"
 "global_cost_per_life_saved_med_research_annual_latex": "$$\nCostPerLifeSaved = \\\
   frac{\\$67.5B \\times 10^9}{4,200,000} \\approx \\$16,071\n$$"
-"global_cost_per_refugee_per_year_average": "<a href=\"/knowledge/references.qmd#unhcr-refugee-cost-per-year\"\
-  \ class=\"parameter-link\" data-source-ref=\"unhcr-refugee-cost-per-year\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Average annual cost per refugee globally\
-  \ | ✓ High confidence | Unit: USD/year | Click to view source\">$1.38K</a>"
-"global_cost_per_refugee_per_year_average_cite": "@unhcr-refugee-cost-per-year"
-"global_daily_deaths_curable_diseases": "<a href=\"/knowledge/references.qmd#global-daily-deaths-curable-diseases\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-daily-deaths-curable-diseases\"\
+"global_cost_per_refugee_per_year_average": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.UNHCR_REFUGEE_SUPPORT_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.UNHCR_REFUGEE_SUPPORT_COST\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average annual\
+  \ cost per refugee globally | ✓ High confidence | Unit: USD/year | Click to view\
+  \ source\">$1.38K</a>"
+"global_cost_per_refugee_per_year_average_cite": "@unhcr-refugee-support-cost"
+"global_daily_deaths_curable_diseases": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DEATHS_FROM_TREATABLE_DISEASES_15M\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DEATHS_FROM_TREATABLE_DISEASES_15M\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Daily deaths from\
   \ curable diseases globally | ✓ High confidence | Unit: deaths/day | Click to view\
   \ source\">150K</a>"
-"global_daily_deaths_curable_diseases_cite": "@global-daily-deaths-curable-diseases"
+"global_daily_deaths_curable_diseases_cite": "@deaths-from-treatable-diseases-15m"
 "global_dfda_qalys_gained_annual": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-qaly-model.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
@@ -1267,71 +1291,72 @@
   \ | Unit: QALYs/year | Click to view calculation\">54.2M</a>"
 "global_dfda_qalys_with_regulatory_avoidance_latex": "$$\nQALYs_{total} = 74M + 140k\
   \ \\approx 74.14M\n$$"
-"global_disease_direct_medical_cost_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
-  \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Direct medical costs of disease globally\
-  \ (treatment, hospitalization, medication) | ✓ High confidence | Unit: USD/year\
-  \ | Click to view source\">$9.90T</a>"
+"global_disease_direct_medical_cost_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Direct medical\
+  \ costs of disease globally (treatment, hospitalization, medication) | ✓ High confidence\
+  \ | Unit: USD/year | Click to view source\">$9.90T</a>"
 "global_disease_direct_medical_cost_annual_cite": "@disease-economic-burden-109t"
-"global_disease_economic_burden_annual": "<a href=\"/disease-economic-burden-109t\"\
-  \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Total economic burden of disease globally\
-  \ (medical + productivity + mortality) | ✓ High confidence | Formula: MEDICAL_COSTS\
-  \ + PRODUCTIVITY_LOSS + MORTALITY_VALUE | Unit: USD/year | Click to view calculation\"\
-  >$109T</a>"
-"global_disease_human_life_value_loss_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
-  \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Economic value of human life lost to\
-  \ disease annually (mortality valuation) | ✓ High confidence | Unit: USD/year |\
-  \ Click to view source\">$94.2T</a>"
+"global_disease_economic_burden_annual": "<a href=\"/ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total economic\
+  \ burden of disease globally (medical + productivity + mortality) | ✓ High confidence\
+  \ | Formula: MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE | Unit: USD/year\
+  \ | Click to view calculation\">$109T</a>"
+"global_disease_human_life_value_loss_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic value\
+  \ of human life lost to disease annually (mortality valuation) | ✓ High confidence\
+  \ | Unit: USD/year | Click to view source\">$94.2T</a>"
 "global_disease_human_life_value_loss_annual_cite": "@disease-economic-burden-109t"
-"global_disease_productivity_loss_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
-  \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual productivity loss from disease\
-  \ globally (absenteeism, reduced output) | ✓ High confidence | Unit: USD/year |\
-  \ Click to view source\">$5.00T</a>"
+"global_disease_productivity_loss_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual productivity\
+  \ loss from disease globally (absenteeism, reduced output) | ✓ High confidence |\
+  \ Unit: USD/year | Click to view source\">$5.00T</a>"
 "global_disease_productivity_loss_annual_cite": "@disease-economic-burden-109t"
-"global_education_for_all_cost": "<a href=\"/knowledge/references.qmd#unesco-education-for-all-cost\"\
+"global_education_for_all_cost": "<a href=\"https://warondisease.org/knowledge/references.html#unesco-education-for-all-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"unesco-education-for-all-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global cost to achieve universal education\
   \ | ✓ High confidence | Unit: USD | Click to view source\">$30B</a>"
 "global_education_for_all_cost_cite": "@unesco-education-for-all-cost"
-"global_forcibly_displaced_people_2023": "<a href=\"/knowledge/references.qmd#unhcr-global-displacement-2023\"\
-  \ class=\"parameter-link\" data-source-ref=\"unhcr-global-displacement-2023\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global forcibly displaced people in\
-  \ 2023 | ✓ High confidence | Unit: people | Click to view source\">108M</a>"
-"global_forcibly_displaced_people_2023_cite": "@unhcr-global-displacement-2023"
-"global_gdp_2023": "<a href=\"/knowledge/references.qmd#global-gdp\" class=\"parameter-link\"\
-  \ data-source-ref=\"global-gdp\" data-source-type=\"external\" data-confidence=\"\
-  high\" title=\"Global GDP in 2023 for comparison | ✓ High confidence | Unit: USD\
-  \ | Click to view source\">$89.5T</a>"
+"global_forcibly_displaced_people_2023": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.UNHCR_FORCIBLY_DISPLACED_2023\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.UNHCR_FORCIBLY_DISPLACED_2023\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global forcibly\
+  \ displaced people in 2023 | ✓ High confidence | Unit: people | Click to view source\"\
+  >108M</a>"
+"global_forcibly_displaced_people_2023_cite": "@unhcr-forcibly-displaced-2023"
+"global_gdp_2023": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_GDP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_GDP\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Global GDP in 2023 for comparison |\
+  \ ✓ High confidence | Unit: USD | Click to view source\">$89.5T</a>"
 "global_gdp_2023_cite": "@global-gdp"
-"global_gdp_2024": "<a href=\"/knowledge/references.qmd#global-gdp\" class=\"parameter-link\"\
-  \ data-source-ref=\"global-gdp\" data-source-type=\"external\" data-confidence=\"\
-  high\" title=\"Global GDP in 2024 | ✓ High confidence | Unit: USD | Click to view\
-  \ source\">$111T</a>"
+"global_gdp_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_GDP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_GDP\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Global GDP in 2024 | ✓ High confidence\
+  \ | Unit: USD | Click to view source\">$111T</a>"
 "global_gdp_2024_cite": "@global-gdp"
-"global_healthcare_spending_annual_2024": "<a href=\"/knowledge/references.qmd#global-health-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-health-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global healthcare spending in 2024 |\
-  \ ✓ High confidence | Unit: USD | Click to view source\">$9.80T</a>"
-"global_healthcare_spending_annual_2024_cite": "@global-health-spending"
-"global_life_expectancy_2024": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
+"global_healthcare_spending_annual_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_HEALTH_SPENDING_GDP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_HEALTH_SPENDING_GDP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global healthcare\
+  \ spending in 2024 | ✓ High confidence | Unit: USD | Click to view source\">$9.80T</a>"
+"global_healthcare_spending_annual_2024_cite": "@global-health-spending-gdp"
+"global_life_expectancy_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
   \ title=\"Global life expectancy (2024) | ✓ High confidence | \U0001F4CA Peer-reviewed\
   \ | Updated: 2024 | Unit: years | Click to view source\">79</a>"
 "global_life_expectancy_2024_cite": "@who-global-health-estimates-2024"
-"global_med_research_spending": "<a href=\"/knowledge/references.qmd#global-government-medical-research-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-government-medical-research-spending\"\
+"global_med_research_spending": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_GOV_MED_RESEARCH_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_GOV_MED_RESEARCH_SPENDING\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global government\
   \ medical research spending | ✓ High confidence | Unit: USD | Click to view source\"\
   >$67.5B</a>"
-"global_med_research_spending_cite": "@global-government-medical-research-spending"
-"global_military_spending_annual_2024": "<a href=\"/knowledge/references.qmd#global-military-spending\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global military spending in 2024 | ✓\
-  \ High confidence | Unit: USD | Click to view source\">$2.72T</a>"
+"global_med_research_spending_cite": "@global-gov-med-research-spending"
+"global_military_spending_annual_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MILITARY_SPENDING\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global military\
+  \ spending in 2024 | ✓ High confidence | Unit: USD | Click to view source\">$2.72T</a>"
 "global_military_spending_annual_2024_cite": "@global-military-spending"
 "global_military_spending_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
@@ -1347,32 +1372,32 @@
   \ × (1 - REDUCTION) | Unit: USD/year | Click to view calculation\">$2.69T</a>"
 "global_military_spending_post_treaty_annual_2024_latex": "$$\nPostTreaty_{military}\
   \ = \\$2,718B \\times 0.99 = \\$2,690.82B\n$$"
-"global_nuclear_weapons_annual_budget_increase": "<a href=\"/knowledge/references.qmd#global-nuclear-weapons-budget-increase\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-nuclear-weapons-budget-increase\"\
+"global_nuclear_weapons_annual_budget_increase": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual increase\
   \ in global nuclear weapons budget | ✓ High confidence | Unit: USD/year | Click\
   \ to view source\">$42B</a>"
-"global_nuclear_weapons_annual_budget_increase_cite": "@global-nuclear-weapons-budget-increase"
-"global_population_2024": "<a href=\"/knowledge/references.qmd#global-population-8-billion\"\
-  \ class=\"parameter-link\" data-source-ref=\"global-population-8-billion\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global population in 2024 | ✓ High confidence\
-  \ | Unit: of people | Click to view source\">8.00B</a>"
+"global_nuclear_weapons_annual_budget_increase_cite": "@global-nuclear-weapon-maintenance-100b"
+"global_population_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_POPULATION_8_BILLION\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_POPULATION_8_BILLION\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global population\
+  \ in 2024 | ✓ High confidence | Unit: of people | Click to view source\">8.00B</a>"
 "global_population_2024_cite": "@global-population-8-billion"
-"global_population_activism_threshold_pct": "<a href=\"/knowledge/references.qmd#3-5-percent-rule-social-change\"\
-  \ class=\"parameter-link\" data-source-ref=\"3-5-percent-rule-social-change\" data-source-type=\"\
+"global_population_activism_threshold_pct": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID._3_5_RULE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID._3_5_RULE\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Critical mass threshold for social change\
   \ (3.5% rule) | ✓ High confidence | Unit: rate | Click to view source\">3.5%</a>"
-"global_population_activism_threshold_pct_cite": "@3-5-percent-rule-social-change"
-"global_poverty_eradication_cost_total": "<a href=\"/knowledge/references.qmd#world-bank-poverty-eradication\"\
-  \ class=\"parameter-link\" data-source-ref=\"world-bank-poverty-eradication\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Total cost to eradicate global poverty\
-  \ | ✓ High confidence | Unit: USD | Click to view source\">$1.00T</a>"
-"global_poverty_eradication_cost_total_cite": "@world-bank-poverty-eradication"
-"global_symptomatic_disease_treatment_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
-  \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual global spending on symptomatic\
-  \ disease treatment | ✓ High confidence | Unit: USD/year | Click to view source\"\
-  >$8.20T</a>"
+"global_population_activism_threshold_pct_cite": "@3-5-rule"
+"global_poverty_eradication_cost_total": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WORLD_BANK_POVERTY_ERADICATION_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WORLD_BANK_POVERTY_ERADICATION_COST\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total cost to eradicate\
+  \ global poverty | ✓ High confidence | Unit: USD | Click to view source\">$1.00T</a>"
+"global_poverty_eradication_cost_total_cite": "@world-bank-poverty-eradication-cost"
+"global_symptomatic_disease_treatment_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_ECONOMIC_BURDEN_109T\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
+  \ on symptomatic disease treatment | ✓ High confidence | Unit: USD/year | Click\
+  \ to view source\">$8.20T</a>"
 "global_symptomatic_disease_treatment_annual_cite": "@disease-economic-burden-109t"
 "global_total_health_and_war_cost_annual": "<a href=\"/knowledge/appendix/humanity-budget-overview.qmd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/humanity-budget-overview.qmd\"\
@@ -1422,11 +1447,12 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum investment\
   \ for institutional investors | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$10M</a>"
-"kidney_disease_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Kidney disease death rate | ✓ High confidence\
-  \ | Unit: deaths per 100,000 | Click to view source\">13.1</a>"
-"kidney_disease_death_rate_cite": "@cdc-leading-causes-death"
+"kidney_disease_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Kidney disease\
+  \ death rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\"\
+  >13.1</a>"
+"kidney_disease_death_rate_cite": "@leading-causes-of-death-by-age-group"
 "lifetime_war_cost_per_capita": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Lifetime war\
@@ -1442,17 +1468,17 @@
   >1.48</span>"
 "life_extension_years_5pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_5PCT\"\
   >2.47</span>"
-"liver_disease_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Liver disease death rate | ✓ High confidence\
-  \ | Unit: deaths per 100,000 | Click to view source\">13</a>"
-"liver_disease_death_rate_cite": "@cdc-leading-causes-death"
-"lobbying_roi_defense": "<a href=\"/knowledge/references.qmd#defense-lobbying-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"defense-lobbying-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Return on investment for defense lobbying\
-  \ ($1,813 returned per $1 spent) | ✓ High confidence | Unit: ratio | Click to view\
-  \ source\">1,813</a>"
-"lobbying_roi_defense_cite": "@defense-lobbying-roi"
+"liver_disease_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Liver disease death\
+  \ rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\">13</a>"
+"liver_disease_death_rate_cite": "@leading-causes-of-death-by-age-group"
+"lobbying_roi_defense": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.MILITARY_LOBBYING_RETURNS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.MILITARY_LOBBYING_RETURNS\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Return on investment\
+  \ for defense lobbying ($1,813 returned per $1 spent) | ✓ High confidence | Unit:\
+  \ ratio | Click to view source\">1,813</a>"
+"lobbying_roi_defense_cite": "@military-lobbying-returns"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum bond\
@@ -1463,33 +1489,36 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum bond\
   \ investment for lobbyist incentives | ✓ High confidence | Unit: USD | Click to\
   \ view calculation\">$5.00M</a>"
-"lobbyist_salary_max": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
-  \ class=\"parameter-link\" data-source-ref=\"average-lobbyist-salary\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Maximum annual lobbyist salary range\
-  \ | ✓ High confidence | Unit: USD | Click to view source\">$2.00M</a>"
-"lobbyist_salary_max_cite": "@average-lobbyist-salary"
-"lobbyist_salary_min_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
-  \ class=\"parameter-link\" data-source-ref=\"average-lobbyist-salary\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Minimum annual lobbyist salary range\
-  \ | ✓ High confidence | Unit: USD | Click to view source\">$500K</a>"
-"lobbyist_salary_min_k_cite": "@average-lobbyist-salary"
-"lobbyist_salary_typical_k": "<a href=\"/knowledge/references.qmd#average-lobbyist-salary\"\
-  \ class=\"parameter-link\" data-source-ref=\"average-lobbyist-salary\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Typical annual lobbyist salary for comparison\
-  \ | ✓ High confidence | Unit: USD | Click to view source\">$500K</a>"
-"lobbyist_salary_typical_k_cite": "@average-lobbyist-salary"
+"lobbyist_salary_max": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LOBBYIST_STATISTICS_DC\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LOBBYIST_STATISTICS_DC\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Maximum annual\
+  \ lobbyist salary range | ✓ High confidence | Unit: USD | Click to view source\"\
+  >$2.00M</a>"
+"lobbyist_salary_max_cite": "@lobbyist-statistics-dc"
+"lobbyist_salary_min_k": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LOBBYIST_STATISTICS_DC\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LOBBYIST_STATISTICS_DC\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Minimum annual\
+  \ lobbyist salary range | ✓ High confidence | Unit: USD | Click to view source\"\
+  >$500K</a>"
+"lobbyist_salary_min_k_cite": "@lobbyist-statistics-dc"
+"lobbyist_salary_typical_k": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LOBBYIST_STATISTICS_DC\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LOBBYIST_STATISTICS_DC\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Typical annual\
+  \ lobbyist salary for comparison | ✓ High confidence | Unit: USD | Click to view\
+  \ source\">$500K</a>"
+"lobbyist_salary_typical_k_cite": "@lobbyist-statistics-dc"
 "longevity_therapy_savings_30yr": "<a href=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/health-savings-sharing-model.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"30-year savings\
   \ from longevity therapy per person | ✓ High confidence | Unit: USD | Click to view\
   \ calculation\">$150K</a>"
-"measles_vaccination_roi": "<a href=\"/knowledge/references.qmd#measles-vaccination-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"measles-vaccination-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Return on investment from measles (MMR)\
-  \ vaccination programs | ✓ High confidence | Unit: ratio | Click to view source\"\
-  >14</a>"
+"measles_vaccination_roi": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.MEASLES_VACCINATION_ROI\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.MEASLES_VACCINATION_ROI\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Return on investment\
+  \ from measles (MMR) vaccination programs | ✓ High confidence | Unit: ratio | Click\
+  \ to view source\">14</a>"
 "measles_vaccination_roi_cite": "@measles-vaccination-roi"
-"medical_facility_hourly_room_cost": "<a href=\"/knowledge/references.qmd#hospital-room-costs\"\
+"medical_facility_hourly_room_cost": "<a href=\"https://warondisease.org/knowledge/references.html#hospital-room-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"hospital-room-costs\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Average hourly cost of medical facility\
   \ room | ✓ High confidence | Unit: USD/hour | Click to view source\">$500</a>"
@@ -1507,17 +1536,18 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Medical research\
   \ spending as percentage of total disease burden | ✓ High confidence | Formula:\
   \ MED_RESEARCH ÷ TOTAL_BURDEN | Unit: rate | Click to view calculation\">0.0525%</a>"
-"mental_health_grants_annual": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
-  \ class=\"parameter-link\" data-source-ref=\"mental-health-research-funding\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual mental health research grants\
-  \ total | ✓ High confidence | Unit: USD/year | Click to view source\">$500M</a>"
-"mental_health_grants_annual_cite": "@mental-health-research-funding"
-"mental_health_productivity_loss_per_capita": "<a href=\"/knowledge/references.qmd#mental-health-productivity-loss\"\
-  \ class=\"parameter-link\" data-source-ref=\"mental-health-productivity-loss\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual productivity loss per capita\
-  \ from mental health issues (beyond treatment costs) | ✓ High confidence | Unit:\
-  \ USD/year | Click to view source\">$2.00K</a>"
-"mental_health_productivity_loss_per_capita_cite": "@mental-health-productivity-loss"
+"mental_health_grants_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.GLOBAL_MENTAL_HEALTH_RESEARCH_SPENDING_1_5B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.GLOBAL_MENTAL_HEALTH_RESEARCH_SPENDING_1_5B\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual mental health\
+  \ research grants total | ✓ High confidence | Unit: USD/year | Click to view source\"\
+  >$500M</a>"
+"mental_health_grants_annual_cite": "@global-mental-health-research-spending-1-5b"
+"mental_health_productivity_loss_per_capita": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.MENTAL_HEALTH_BURDEN\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.MENTAL_HEALTH_BURDEN\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual productivity\
+  \ loss per capita from mental health issues (beyond treatment costs) | ✓ High confidence\
+  \ | Unit: USD/year | Click to view source\">$2.00K</a>"
+"mental_health_productivity_loss_per_capita_cite": "@mental-health-burden"
 "military_vs_medical_research_ratio": "<a href=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of military\
@@ -1560,12 +1590,12 @@
   \ | Unit: ratio | Click to view calculation\">1,281</a>"
 "optimistic_scenario_roi_latex": "$$\nROI_{optimistic} = \\$294.8B / \\$0.230B = 1,282:1\n\
   $$"
-"other_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Other causes death rate per 100,000\
-  \ population | ✓ High confidence | Unit: deaths per 100k | Click to view source\"\
-  >250</a>"
-"other_death_rate_cite": "@cdc-leading-causes-death"
+"other_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Other causes death\
+  \ rate per 100,000 population | ✓ High confidence | Unit: deaths per 100k | Click\
+  \ to view source\">250</a>"
+"other_death_rate_cite": "@leading-causes-of-death-by-age-group"
 "partial_success_bondholder_payout": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Bondholder payout\
@@ -1625,10 +1655,10 @@
   \ × 1% | Unit: USD/year | Click to view calculation\">$76.5B</a>"
 "peace_dividend_direct_costs_latex": "$$\nPD_{direct} = \\$7,655B \\times 0.01 = \\\
   $76.55B\n$$"
-"peace_dividend_direct_fiscal_savings": "<a href=\"/sipri-2024-spending\" class=\"\
-  parameter-link\" data-source-ref=\"sipri-2024-spending\" data-source-type=\"calculated\"\
-  \ data-confidence=\"high\" title=\"Direct fiscal savings from 1% military spending\
-  \ reduction (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING\
+"peace_dividend_direct_fiscal_savings": "<a href=\"/ReferenceID.SIPRI_2024_SPENDING\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.SIPRI_2024_SPENDING\" data-source-type=\"\
+  calculated\" data-confidence=\"high\" title=\"Direct fiscal savings from 1% military\
+  \ spending reduction (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING\
   \ | Unit: USD/year | Click to view calculation\">$27.2B</a>"
 "peace_dividend_direct_fiscal_savings_latex": "$$\nPD_{fiscal} = \\$27.18B\n$$"
 "peace_dividend_environmental": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
@@ -1751,7 +1781,7 @@
   >$12.2K</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\"\
   >$1.04K</span>"
-"petition_signature_cost_per_verified_2024": "<a href=\"/knowledge/references.qmd#ballot-measure-signature-costs-2024\"\
+"petition_signature_cost_per_verified_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ballot-measure-signature-costs-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"ballot-measure-signature-costs-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average cost per\
   \ verified petition signature in 2024 US campaigns | ✓ High confidence | Updated:\
@@ -1762,58 +1792,83 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Pharma payment\
   \ per cured patient in 50/50 model | ✓ High confidence | Unit: USD | Click to view\
   \ calculation\">$90K</a>"
-"phase_1_safety_duration_years": "<a href=\"/knowledge/references.qmd#bio-clinical-development-2021\"\
-  \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
-  external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Phase I\
-  \ safety trial duration | ✓ High confidence | \U0001F4CA Peer-reviewed | Updated:\
-  \ 2021 | Unit: years | Click to view source\">2.3</a>"
+"pharma_drug_development_cost_current": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DRUG_DEVELOPMENT_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DRUG_DEVELOPMENT_COST\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Average cost to develop one drug in current system | ✓ High confidence\
+  \ | \U0001F4CA Peer-reviewed | Unit: USD | Click to view source\">$2.60B</a>"
+"pharma_drug_development_cost_current_cite": "@drug-development-cost"
+"pharma_drug_revenue_average_current": "<a href=\"https://warondisease.org/knowledge/references.html#pharma-drug-revenue-average\"\
+  \ class=\"parameter-link\" data-source-ref=\"pharma-drug-revenue-average\" data-source-type=\"\
+  external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Median lifetime\
+  \ revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median\
+  \ follow-up 13.2 years) | ✓ High confidence | \U0001F4CA Peer-reviewed | Unit: USD\
+  \ | Click to view source\">$6.70B</a>"
+"pharma_drug_revenue_average_current_cite": "@pharma-drug-revenue-average"
+"pharma_roi_current_system_pct": "<a href=\"/knowledge/solution/aligning-incentives.qmd#pharma\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/aligning-incentives.qmd#pharma\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"ROI for drug\
+  \ development in current system (negative) | ~ Medium confidence | Formula: (REVENUE\
+  \ - COST) / COST | Unit: percentage | Click to view calculation\">158%</a>"
+"pharma_roi_current_system_pct_latex": "$$\nROI_{current} = (\\$1B - \\$2.6B) / \\\
+  $2.6B = -61.5\\%\n$$"
+"pharma_success_rate_current_pct": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DRUG_TRIAL_SUCCESS_RATE_12_PCT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DRUG_TRIAL_SUCCESS_RATE_12_PCT\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Percentage of drugs that reach market in current system | ✓ High confidence\
+  \ | \U0001F4CA Peer-reviewed | Unit: percentage | Click to view source\">10%</a>"
+"pharma_success_rate_current_pct_cite": "@drug-trial-success-rate-12-pct"
+"phase_1_safety_duration_years": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Phase I safety trial duration | ✓ High confidence | \U0001F4CA Peer-reviewed\
+  \ | Updated: 2021 | Unit: years | Click to view source\">2.3</a>"
 "phase_1_safety_duration_years_cite": "@bio-clinical-development-2021"
-"phase_3_trial_cost_max": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-trial\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Phase 3 trial total cost (maximum) |\
-  \ ✓ High confidence | Unit: USD/trial | Click to view source\">$282M</a>"
-"phase_3_trial_cost_max_cite": "@phase-3-cost-per-trial"
-"phase_3_trial_cost_min": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-trial\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-trial\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Phase 3 trial total cost (minimum) |\
-  \ ✓ High confidence | Unit: USD/trial | Click to view source\">$20M</a>"
-"phase_3_trial_cost_min_cite": "@phase-3-cost-per-trial"
-"polio_vaccination_roi": "<a href=\"/knowledge/references.qmd#polio-vaccination-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"polio-vaccination-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Return on investment from sustaining\
-  \ polio vaccination assets and integrating into expanded immunization programs |\
-  \ ✓ High confidence | Unit: ratio | Click to view source\">39</a>"
+"phase_3_trial_cost_max": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Phase 3 trial total\
+  \ cost (maximum) | ✓ High confidence | Unit: USD/trial | Click to view source\"\
+  >$282M</a>"
+"phase_3_trial_cost_max_cite": "@phase-3-cost-per-trial-range"
+"phase_3_trial_cost_min": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Phase 3 trial total\
+  \ cost (minimum) | ✓ High confidence | Unit: USD/trial | Click to view source\"\
+  >$20M</a>"
+"phase_3_trial_cost_min_cite": "@phase-3-cost-per-trial-range"
+"polio_vaccination_roi": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.POLIO_VACCINATION_ROI\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.POLIO_VACCINATION_ROI\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Return on investment\
+  \ from sustaining polio vaccination assets and integrating into expanded immunization\
+  \ programs | ✓ High confidence | Unit: ratio | Click to view source\">39</a>"
 "polio_vaccination_roi_cite": "@polio-vaccination-roi"
-"political_success_probability_conservative": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
-  \ class=\"parameter-link\" data-source-ref=\"historical-treaty-adoption-rates\"\
-  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Conservative\
-  \ estimate of political success probability (10%) | ~ Medium confidence | Click\
-  \ to view source\">0.1</a>"
-"political_success_probability_conservative_cite": "@historical-treaty-adoption-rates"
-"political_success_probability_moderate": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
-  \ class=\"parameter-link\" data-source-ref=\"historical-treaty-adoption-rates\"\
-  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Moderate estimate\
-  \ of political success probability (25%) | ~ Medium confidence | Click to view source\"\
-  >0.25</a>"
-"political_success_probability_moderate_cite": "@historical-treaty-adoption-rates"
-"political_success_probability_optimistic": "<a href=\"/knowledge/references.qmd#historical-treaty-adoption-rates\"\
-  \ class=\"parameter-link\" data-source-ref=\"historical-treaty-adoption-rates\"\
-  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Optimistic estimate\
-  \ of political success probability (50%) | ~ Medium confidence | Click to view source\"\
-  >0.5</a>"
-"political_success_probability_optimistic_cite": "@historical-treaty-adoption-rates"
-"post_ww2_military_cut_pct": "<a href=\"/knowledge/references.qmd#post-ww2-military-demobilization\"\
-  \ class=\"parameter-link\" data-source-ref=\"post-ww2-military-demobilization\"\
+"political_success_probability_conservative": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.ICBL_OTTAWA_TREATY\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.ICBL_OTTAWA_TREATY\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Conservative estimate of political\
+  \ success probability (10%) | ~ Medium confidence | Click to view source\">0.1</a>"
+"political_success_probability_conservative_cite": "@icbl-ottawa-treaty"
+"political_success_probability_moderate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.ICBL_OTTAWA_TREATY\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.ICBL_OTTAWA_TREATY\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Moderate estimate of political success\
+  \ probability (25%) | ~ Medium confidence | Click to view source\">0.25</a>"
+"political_success_probability_moderate_cite": "@icbl-ottawa-treaty"
+"political_success_probability_optimistic": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.ICBL_OTTAWA_TREATY\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.ICBL_OTTAWA_TREATY\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Optimistic estimate of political success\
+  \ probability (50%) | ~ Medium confidence | Click to view source\">0.5</a>"
+"political_success_probability_optimistic_cite": "@icbl-ottawa-treaty"
+"post_ww2_military_cut_pct": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.US_POST_WWII_MILITARY_SPENDING_CUT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.US_POST_WWII_MILITARY_SPENDING_CUT\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage military\
   \ spending cut after WW2 (historical precedent) | ✓ High confidence | Unit: rate\
   \ | Click to view source\">30%</a>"
-"post_ww2_military_cut_pct_cite": "@post-ww2-military-demobilization"
-"productivity_loss_per_affected_employee": "<a href=\"/knowledge/references.qmd#chronic-illness-productivity-loss-ibi\"\
-  \ class=\"parameter-link\" data-source-ref=\"chronic-illness-productivity-loss-ibi\"\
+"post_ww2_military_cut_pct_cite": "@us-post-wwii-military-spending-cut"
+"productivity_loss_per_affected_employee": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CHRONIC_ILLNESS_WORKFORCE_PRODUCTIVITY_LOSS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CHRONIC_ILLNESS_WORKFORCE_PRODUCTIVITY_LOSS\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual productivity\
   \ loss per affected employee (IBI 2024) | ✓ High confidence | Unit: USD/year | Click\
   \ to view source\">$4.80K</a>"
-"productivity_loss_per_affected_employee_cite": "@chronic-illness-productivity-loss-ibi"
+"productivity_loss_per_affected_employee_cite": "@chronic-illness-workforce-productivity-loss"
 "profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"System profit\
@@ -1878,21 +1933,23 @@
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Minimum investment for qualified investors\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$100K</a>"
-"rare_diseases_count_global": "<a href=\"/knowledge/references.qmd#95-pct-diseases-no-treatment\"\
-  \ class=\"parameter-link\" data-source-ref=\"95-pct-diseases-no-treatment\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Total number of rare diseases globally\
-  \ | ✓ High confidence | Unit: diseases | Click to view source\">7,000</a>"
+"rare_diseases_count_global": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID._95_PCT_DISEASES_NO_TREATMENT\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID._95_PCT_DISEASES_NO_TREATMENT\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total number of\
+  \ rare diseases globally | ✓ High confidence | Unit: diseases | Click to view source\"\
+  >7,000</a>"
 "rare_diseases_count_global_cite": "@95-pct-diseases-no-treatment"
-"rare_disease_typical_patient_count": "<a href=\"/knowledge/references.qmd#rare-disease-prevalence\"\
-  \ class=\"parameter-link\" data-source-ref=\"rare-disease-prevalence\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Typical patient count for rare diseases\
-  \ | ✓ High confidence | Unit: patients | Click to view source\">500</a>"
-"rare_disease_typical_patient_count_cite": "@rare-disease-prevalence"
-"recovery_trial_cost_per_patient": "<a href=\"/knowledge/references.qmd#recovery-trial-cost-per-patient\"\
-  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-cost-per-patient\" data-source-type=\"\
+"rare_disease_typical_patient_count": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.RARE_DISEASE_PREVALENCE_400M\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.RARE_DISEASE_PREVALENCE_400M\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Typical patient\
+  \ count for rare diseases | ✓ High confidence | Unit: patients | Click to view source\"\
+  >500</a>"
+"rare_disease_typical_patient_count_cite": "@rare-disease-prevalence-400m"
+"recovery_trial_cost_per_patient": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.RECOVERY_COST_500\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.RECOVERY_COST_500\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"RECOVERY trial cost per patient | ✓\
   \ High confidence | Unit: USD/patient | Click to view source\">$500</a>"
-"recovery_trial_cost_per_patient_cite": "@recovery-trial-cost-per-patient"
+"recovery_trial_cost_per_patient_cite": "@recovery-cost-500"
 "recruitment_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Recruitment speed\
@@ -1901,35 +1958,36 @@
   \ calculation\">25</a>"
 "recruitment_speed_multiplier_latex": "$$\nRecruitment_{mult} = \\frac{0.50}{0.002}\
   \ = 25\n$$"
-"referral_payment_early_adopters_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+"referral_payment_early_adopters_usd": "<a href=\"https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies\"\
   \ class=\"parameter-link\" data-source-ref=\"paypal-dropbox-referral-case-studies\"\
   \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Referral payment\
   \ for early adopters (first 10M, motivated believers) | ~ Medium confidence | Updated:\
   \ 2024 | Unit: USD/vote | Click to view source\">$0</a>"
 "referral_payment_early_adopters_usd_cite": "@paypal-dropbox-referral-case-studies"
-"referral_payment_laggards_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+"referral_payment_laggards_usd": "<a href=\"https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies\"\
   \ class=\"parameter-link\" data-source-ref=\"paypal-dropbox-referral-case-studies\"\
   \ data-source-type=\"external\" data-confidence=\"low\" title=\"Referral payment\
   \ for laggards (200-280M, resistant) | ? Low confidence | Updated: 2024 | Unit:\
   \ USD/vote | Click to view source\">$2</a>"
 "referral_payment_laggards_usd_cite": "@paypal-dropbox-referral-case-studies"
-"referral_payment_late_majority_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+"referral_payment_late_majority_usd": "<a href=\"https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies\"\
   \ class=\"parameter-link\" data-source-ref=\"paypal-dropbox-referral-case-studies\"\
   \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Referral payment\
   \ for late majority (100-200M, skeptics) | ~ Medium confidence | Updated: 2024 |\
   \ Unit: USD/vote | Click to view source\">$1</a>"
 "referral_payment_late_majority_usd_cite": "@paypal-dropbox-referral-case-studies"
-"referral_payment_mainstream_usd": "<a href=\"/knowledge/references.qmd#paypal-dropbox-referral-case-studies\"\
+"referral_payment_mainstream_usd": "<a href=\"https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies\"\
   \ class=\"parameter-link\" data-source-ref=\"paypal-dropbox-referral-case-studies\"\
   \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Referral payment\
   \ for mainstream adopters (10-100M, pragmatists) | ~ Medium confidence | Updated:\
   \ 2024 | Unit: USD/vote | Click to view source\">$0</a>"
 "referral_payment_mainstream_usd_cite": "@paypal-dropbox-referral-case-studies"
-"refugee_lost_earning_potential_per_capita_annual": "<a href=\"/knowledge/references.qmd#refugee-lost-earnings\"\
-  \ class=\"parameter-link\" data-source-ref=\"refugee-lost-earnings\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Average annual lost earning potential\
-  \ per refugee | ✓ High confidence | Unit: USD/year | Click to view source\">$23.4K</a>"
-"refugee_lost_earning_potential_per_capita_annual_cite": "@refugee-lost-earnings"
+"refugee_lost_earning_potential_per_capita_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.REFUGEE_LOST_EARNING_POTENTIAL\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.REFUGEE_LOST_EARNING_POTENTIAL\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average annual\
+  \ lost earning potential per refugee | ✓ High confidence | Unit: USD/year | Click\
+  \ to view source\">$23.4K</a>"
+"refugee_lost_earning_potential_per_capita_annual_cite": "@refugee-lost-earning-potential"
 "refugee_lost_productivity_global_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#refugee-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#refugee-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total global\
@@ -1988,19 +2046,19 @@
   >$529T</a>"
 "regulatory_delay_economic_loss_latex": "$$\nDWL = 3.526B \\times \\$150k = \\$528.9T\n\
   $$"
-"regulatory_delay_mean_age_of_death": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
+"regulatory_delay_mean_age_of_death": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Mean age of preventable death from regulatory delay | ~ Medium confidence\
   \ | \U0001F4CA Peer-reviewed | Unit: years | Click to view source\">62</a>"
 "regulatory_delay_mean_age_of_death_cite": "@who-global-health-estimates-2024"
-"regulatory_delay_suffering_period_years": "<a href=\"/knowledge/references.qmd#who-gbd-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-gbd-2024\" data-source-type=\"\
-  external\" data-peer-reviewed=\"true\" data-confidence=\"medium\" title=\"Pre-death\
-  \ suffering period for regulatory delay deaths (average years lived with untreated\
-  \ condition) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Unit: years | Click\
-  \ to view source\">6</a>"
-"regulatory_delay_suffering_period_years_cite": "@who-gbd-2024"
+"regulatory_delay_suffering_period_years": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
+  \ title=\"Pre-death suffering period for regulatory delay deaths (average years\
+  \ lived with untreated condition) | ~ Medium confidence | \U0001F4CA Peer-reviewed\
+  \ | Unit: years | Click to view source\">6</a>"
+"regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
 "regulatory_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years Lived\
@@ -2023,11 +2081,12 @@
   \ | Unit: ratio | Click to view calculation\">115</a>"
 "research_acceleration_multiplier_latex": "$$\nMultiplier = 1.40 \\times 82 = 115\n\
   $$"
-"respiratory_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Chronic respiratory disease death rate\
-  \ | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\">33.4</a>"
-"respiratory_death_rate_cite": "@cdc-leading-causes-death"
+"respiratory_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Chronic respiratory\
+  \ disease death rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view\
+  \ source\">33.4</a>"
+"respiratory_death_rate_cite": "@leading-causes-of-death-by-age-group"
 "roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 1% discount rate (approximate 15% increase from 3% baseline) | ~ Medium confidence\
@@ -2185,10 +2244,11 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simultaneous\
   \ trials multiplier (20x more trials) | ✓ High confidence | Unit: ratio | Click\
   \ to view calculation\">20</a>"
-"smallpox_eradication_roi": "<a href=\"/knowledge/references.qmd#smallpox-eradication-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
-  \ campaign | ✓ High confidence | Unit: ratio | Click to view source\">280</a>"
+"smallpox_eradication_roi": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.SMALLPOX_ERADICATION_ROI\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.SMALLPOX_ERADICATION_ROI\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Return on investment\
+  \ from smallpox eradication campaign | ✓ High confidence | Unit: ratio | Click to\
+  \ view source\">280</a>"
 "smallpox_eradication_roi_cite": "@smallpox-eradication-roi"
 "social_media_participant_target_max": "<a href=\"/knowledge/strategy/viral-marketing.qmd\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/viral-marketing.qmd\"\
@@ -2200,62 +2260,65 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum target\
   \ participant count for social media campaigns | ✓ High confidence | Unit: participants\
   \ | Click to view calculation\">500</a>"
-"software_tool_monthly_cost_max": "<a href=\"/knowledge/references.qmd#software-pricing-market-rates\"\
+"software_tool_monthly_cost_max": "<a href=\"https://warondisease.org/knowledge/references.html#software-pricing-market-rates\"\
   \ class=\"parameter-link\" data-source-ref=\"software-pricing-market-rates\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Maximum monthly cost for software tools/services\
   \ | ✓ High confidence | Unit: USD/month | Click to view source\">$2.00K</a>"
 "software_tool_monthly_cost_max_cite": "@software-pricing-market-rates"
-"software_tool_monthly_cost_min": "<a href=\"/knowledge/references.qmd#software-pricing-market-rates\"\
+"software_tool_monthly_cost_min": "<a href=\"https://warondisease.org/knowledge/references.html#software-pricing-market-rates\"\
   \ class=\"parameter-link\" data-source-ref=\"software-pricing-market-rates\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Minimum monthly cost for software tools/services\
   \ | ✓ High confidence | Unit: USD/month | Click to view source\">$500</a>"
 "software_tool_monthly_cost_min_cite": "@software-pricing-market-rates"
-"standard_economic_qaly_value_usd": "<a href=\"/knowledge/references.qmd#standard-qaly-value\"\
-  \ class=\"parameter-link\" data-source-ref=\"standard-qaly-value\" data-source-type=\"\
+"standard_economic_qaly_value_usd": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.QALY_VALUE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.QALY_VALUE\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Standard economic value per QALY | ✓\
   \ High confidence | Unit: USD/QALY | Click to view source\">$150K</a>"
-"standard_economic_qaly_value_usd_cite": "@standard-qaly-value"
-"standard_qalys_per_life_saved": "<a href=\"/knowledge/references.qmd#who-life-tables-qalys-per-life\"\
-  \ class=\"parameter-link\" data-source-ref=\"who-life-tables-qalys-per-life\" data-source-type=\"\
+"standard_economic_qaly_value_usd_cite": "@qaly-value"
+"standard_qalys_per_life_saved": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.QALY_VALUE\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.QALY_VALUE\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Standard QALYs per life saved (WHO life\
   \ tables) | ✓ High confidence | Unit: QALYs/life | Click to view source\">35</a>"
-"standard_qalys_per_life_saved_cite": "@who-life-tables-qalys-per-life"
-"sugar_subsidy_cost_per_person_annual": "<a href=\"/knowledge/references.qmd#agricultural-subsidies\"\
-  \ class=\"parameter-link\" data-source-ref=\"agricultural-subsidies\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual cost of sugar subsidies per person\
-  \ | ✓ High confidence | Unit: USD/person/year | Click to view source\">$10</a>"
-"sugar_subsidy_cost_per_person_annual_cite": "@agricultural-subsidies"
-"switzerland_defense_spending_pct": "<a href=\"/knowledge/references.qmd#switzerland-defense-spending-gdp\"\
-  \ class=\"parameter-link\" data-source-ref=\"switzerland-defense-spending-gdp\"\
+"standard_qalys_per_life_saved_cite": "@qaly-value"
+"sugar_subsidy_cost_per_person_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.SUGAR_SUBSIDIES_COST\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.SUGAR_SUBSIDIES_COST\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual cost of\
+  \ sugar subsidies per person | ✓ High confidence | Unit: USD/person/year | Click\
+  \ to view source\">$10</a>"
+"sugar_subsidy_cost_per_person_annual_cite": "@sugar-subsidies-cost"
+"switzerland_defense_spending_pct": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.SWISS_MILITARY_BUDGET_0_7_PCT_GDP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.SWISS_MILITARY_BUDGET_0_7_PCT_GDP\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Switzerland's defense\
   \ spending as percentage of GDP (0.7%) | ✓ High confidence | Unit: rate | Click\
   \ to view source\">0.7%</a>"
-"switzerland_defense_spending_pct_cite": "@switzerland-defense-spending-gdp"
-"switzerland_gdp_per_capita_k": "<a href=\"/knowledge/references.qmd#switzerland-gdp-per-capita\"\
-  \ class=\"parameter-link\" data-source-ref=\"switzerland-gdp-per-capita\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Switzerland GDP per capita | ✓ High\
-  \ confidence | Unit: USD | Click to view source\">$93K</a>"
-"switzerland_gdp_per_capita_k_cite": "@switzerland-gdp-per-capita"
+"switzerland_defense_spending_pct_cite": "@swiss-military-budget-0-7-pct-gdp"
+"switzerland_gdp_per_capita_k": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.SWISS_VS_US_GDP_PER_CAPITA\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.SWISS_VS_US_GDP_PER_CAPITA\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Switzerland GDP\
+  \ per capita | ✓ High confidence | Unit: USD | Click to view source\">$93K</a>"
+"switzerland_gdp_per_capita_k_cite": "@swiss-vs-us-gdp-per-capita"
 "system_profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"System profit\
   \ per life saved in millions | ✓ High confidence | Unit: USD/life | Click to view\
   \ calculation\">$5.87M</a>"
-"terrorism_deaths_911": "<a href=\"/knowledge/references.qmd#911-deaths\" class=\"\
-  parameter-link\" data-source-ref=\"911-deaths\" data-source-type=\"external\" data-confidence=\"\
-  high\" title=\"Deaths from 9/11 terrorist attacks | ✓ High confidence | Unit: deaths\
-  \ | Click to view source\">2,996</a>"
-"terrorism_deaths_911_cite": "@911-deaths"
+"terrorism_deaths_911": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Deaths from 9/11\
+  \ terrorist attacks | ✓ High confidence | Unit: deaths | Click to view source\"\
+  >2,996</a>"
+"terrorism_deaths_911_cite": "@chance-of-dying-from-terrorism-1-in-30m"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" data-source-ref=\"\
   book-word-count\" data-source-type=\"calculated\" data-confidence=\"high\" title=\"\
   Total words in the book | ✓ High confidence | Unit: words | Click to view calculation\"\
   >171K</a>"
-"total_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
-  \ class=\"parameter-link\" data-source-ref=\"cdc-leading-causes-death\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Overall age-adjusted death rate | ✓\
-  \ High confidence | Unit: deaths per 100,000 | Click to view source\">722</a>"
-"total_death_rate_cite": "@cdc-leading-causes-death"
-"total_medical_advances_1900_2000": "<a href=\"/knowledge/references.qmd#life-expectancy-gains-medical-advances\"\
+"total_death_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Overall age-adjusted\
+  \ death rate | ✓ High confidence | Unit: deaths per 100,000 | Click to view source\"\
+  >722</a>"
+"total_death_rate_cite": "@leading-causes-of-death-by-age-group"
+"total_medical_advances_1900_2000": "<a href=\"https://warondisease.org/knowledge/references.html#life-expectancy-gains-medical-advances\"\
   \ class=\"parameter-link\" data-source-ref=\"life-expectancy-gains-medical-advances\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total life expectancy\
   \ gain from all medical advances 1900-2000 (vaccines + hygiene + antibiotics) |\
@@ -2281,46 +2344,49 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of total\
   \ war cost to WHO budget (168x) | ✓ High confidence | Unit: ratio | Click to view\
   \ calculation\">168</a>"
-"traditional_large_trial_size": "<a href=\"/knowledge/references.qmd#phase-3-trial-participant-numbers\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-3-trial-participant-numbers\"\
+"traditional_large_trial_size": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.PHASE_3_PARTICIPANT_NUMBERS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.PHASE_3_PARTICIPANT_NUMBERS\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Typical Phase 3\
   \ trial size | ✓ High confidence | Unit: participants | Click to view source\">1,000</a>"
-"traditional_large_trial_size_cite": "@phase-3-trial-participant-numbers"
-"traditional_phase2_cost_per_patient_high": "<a href=\"/knowledge/references.qmd#clinical-trial-cost-per-patient\"\
+"traditional_large_trial_size_cite": "@phase-3-participant-numbers"
+"traditional_phase2_cost_per_patient_high": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-cost-per-patient\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 2 cost per patient (high estimate)\
   \ | ✓ High confidence | Unit: USD/patient | Click to view source\">$120K</a>"
 "traditional_phase2_cost_per_patient_high_cite": "@clinical-trial-cost-per-patient"
-"traditional_phase2_cost_per_patient_low": "<a href=\"/knowledge/references.qmd#clinical-trial-cost-per-patient\"\
+"traditional_phase2_cost_per_patient_low": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-cost-per-patient\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 2 cost per patient (low estimate)\
   \ | ✓ High confidence | Unit: USD/patient | Click to view source\">$40K</a>"
 "traditional_phase2_cost_per_patient_low_cite": "@clinical-trial-cost-per-patient"
-"traditional_phase3_cost_per_patient": "<a href=\"/knowledge/references.qmd#phase-3-cost-per-patient\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-patient\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median) |\
-  \ ✓ High confidence | Unit: USD/patient | Click to view source\">$80K</a>"
-"traditional_phase3_cost_per_patient_cite": "@phase-3-cost-per-patient"
-"traditional_phase3_cost_per_patient_example_48k": "<a href=\"/knowledge/references.qmd#clinical-trial-cost-per-patient\"\
+"traditional_phase3_cost_per_patient": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.PHASE_3_COST_PER_PATIENT_113K\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.PHASE_3_COST_PER_PATIENT_113K\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Phase 3 cost per\
+  \ patient (median) | ✓ High confidence | Unit: USD/patient | Click to view source\"\
+  >$80K</a>"
+"traditional_phase3_cost_per_patient_cite": "@phase-3-cost-per-patient-113k"
+"traditional_phase3_cost_per_patient_example_48k": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-cost-per-patient\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Example Phase 3 trial cost per patient\
   \ ($48K) | ✓ High confidence | Unit: USD/patient | Click to view source\">$48K</a>"
 "traditional_phase3_cost_per_patient_example_48k_cite": "@clinical-trial-cost-per-patient"
-"traditional_phase3_cost_per_patient_fda_example_41k": "<a href=\"/knowledge/references.qmd#fda-clinical-trial-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"fda-clinical-trial-costs\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"FDA cited Phase 3 cost per patient ($41K)\
-  \ | ✓ High confidence | Unit: USD/patient | Click to view source\">$41K</a>"
-"traditional_phase3_cost_per_patient_fda_example_41k_cite": "@fda-clinical-trial-costs"
-"traditional_small_trial_size": "<a href=\"/knowledge/references.qmd#phase-2-trial-participant-numbers\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-2-trial-participant-numbers\"\
+"traditional_phase3_cost_per_patient_fda_example_41k": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.TRIAL_COSTS_FDA_STUDY\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.TRIAL_COSTS_FDA_STUDY\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"FDA cited Phase\
+  \ 3 cost per patient ($41K) | ✓ High confidence | Unit: USD/patient | Click to view\
+  \ source\">$41K</a>"
+"traditional_phase3_cost_per_patient_fda_example_41k_cite": "@trial-costs-fda-study"
+"traditional_small_trial_size": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.PHASE_2_PARTICIPANT_NUMBERS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.PHASE_2_PARTICIPANT_NUMBERS\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Typical Phase 2\
   \ trial size | ✓ High confidence | Unit: participants | Click to view source\">100</a>"
-"traditional_small_trial_size_cite": "@phase-2-trial-participant-numbers"
-"treatment_acceleration_years_current": "<a href=\"/knowledge/references.qmd#fda-drug-approval-timeline\"\
-  \ class=\"parameter-link\" data-source-ref=\"fda-drug-approval-timeline\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Traditional FDA drug development timeline\
-  \ | ✓ High confidence | Unit: years | Click to view source\">17</a>"
-"treatment_acceleration_years_current_cite": "@fda-drug-approval-timeline"
+"traditional_small_trial_size_cite": "@phase-2-participant-numbers"
+"treatment_acceleration_years_current": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Traditional FDA\
+  \ drug development timeline | ✓ High confidence | Unit: years | Click to view source\"\
+  >17</a>"
+"treatment_acceleration_years_current_cite": "@fda-approval-timeline-10-years"
 "treatment_acceleration_years_target": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#target-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#target-timeline\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Target years\
@@ -2354,7 +2420,7 @@
   $$"
 "treaty_campaign_budget_lobbying": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Political lobbying\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Political lobbying\
   \ campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff,\
   \ legal/compliance (exceeds pharma $300M + MIC $150M) | ✓ High confidence | Unit:\
   \ USD | Click to view calculation\">$650M</a>"
@@ -2365,12 +2431,12 @@
   \ to view calculation\">$140M</a>"
 "treaty_campaign_budget_referendum": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Global referendum\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Global referendum\
   \ campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance |\
   \ ✓ High confidence | Unit: USD | Click to view calculation\">$300M</a>"
 "treaty_campaign_budget_reserve": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Reserve fund\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Reserve fund\
   \ / contingency buffer | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$50M</a>"
 "treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
@@ -2396,7 +2462,7 @@
   \ Click to view calculation\">$0</a>"
 "treaty_campaign_duration_years": "<a href=\"/knowledge/strategy/roadmap.qmd\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Treaty campaign duration (3-5 year\
+  definition\" data-confidence=\"high\" title=\"Treaty campaign duration (3-5 year\
   \ range, using midpoint) | ✓ High confidence | Unit: years | Click to view calculation\"\
   >4</a>"
 "treaty_campaign_total_cost": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation\"\
@@ -2459,8 +2525,11 @@
 "treaty_campaign_voting_bloc_target": "<a href=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#voting-bloc\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Target voting\
-  \ bloc size for campaign | ✓ High confidence | Unit: of people | Click to view calculation\"\
-  >280M</a>"
+  \ bloc size for campaign (3.5% of global population - critical mass for social change)\
+  \ | ✓ High confidence | Formula: GLOBAL_POPULATION × 3.5% | Unit: of people | Click\
+  \ to view calculation\">280M</a>"
+"treaty_campaign_voting_bloc_target_latex": "$$\nVotingBloc = 8.0B \\times 0.035 =\
+  \ 280M\n$$"
 "treaty_complete_case_annual_benefits": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -2606,8 +2675,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial completion\
   \ speed multiplier (10x faster) | ✓ High confidence | Unit: ratio | Click to view\
   \ calculation\">10</a>"
-"trial_cost_reduction_factor": "<a href=\"/knowledge/references.qmd#recovery-trial-82x-cost-reduction\"\
-  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
+"trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
   \ factor demonstrated by RECOVERY trial | ✓ High confidence | Unit: ratio | Click\
   \ to view source\">82</a>"
@@ -2628,70 +2697,103 @@
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Maximum DALYs\
   \ saved by FDA preventing unsafe drugs (extreme overestimate) | ? Low confidence\
   \ | Unit: DALYs | Click to view calculation\">3</a>"
-"typical_ceo_hourly_rate": "<a href=\"/knowledge/references.qmd#ceo-compensation\"\
+"typical_ceo_hourly_rate": "<a href=\"https://warondisease.org/knowledge/references.html#ceo-compensation\"\
   \ class=\"parameter-link\" data-source-ref=\"ceo-compensation\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Typical CEO hourly rate | ✓ High confidence\
   \ | Unit: USD/hour | Click to view source\">$10K</a>"
 "typical_ceo_hourly_rate_cite": "@ceo-compensation"
-"us_annual_drug_spending": "<a href=\"/knowledge/references.qmd#us-drug-spending-annual\"\
-  \ class=\"parameter-link\" data-source-ref=\"us-drug-spending-annual\" data-source-type=\"\
+"us_alzheimers_annual_cost": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_COST_ALZHEIMERS_1300B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_COST_ALZHEIMERS_1300B\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Annual US cost of Alzheimer's disease (direct and indirect) | ✓ High confidence\
+  \ | \U0001F4CA Peer-reviewed | Unit: USD | Click to view source\">$355B</a>"
+"us_alzheimers_annual_cost_cite": "@disease-cost-alzheimers-1300b"
+"us_annual_drug_spending": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.US_DRUG_SPEND\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.US_DRUG_SPEND\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual US pharmaceutical spending |\
   \ ✓ High confidence | Unit: USD/year | Click to view source\">$360B</a>"
-"us_annual_drug_spending_cite": "@us-drug-spending-annual"
-"us_chronic_disease_spending_annual": "<a href=\"/knowledge/references.qmd#us-chronic-disease-spending\"\
+"us_annual_drug_spending_cite": "@us-drug-spend"
+"us_cancer_annual_cost": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_COST_CANCER_1800B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_COST_CANCER_1800B\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Annual US cost of cancer (direct and indirect) | ✓ High confidence | \U0001F4CA\
+  \ Peer-reviewed | Unit: USD | Click to view source\">$208B</a>"
+"us_cancer_annual_cost_cite": "@disease-cost-cancer-1800b"
+"us_chronic_disease_spending_annual": "<a href=\"https://warondisease.org/knowledge/references.html#us-chronic-disease-spending\"\
   \ class=\"parameter-link\" data-source-ref=\"us-chronic-disease-spending\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US annual chronic disease spending |\
   \ ✓ High confidence | Unit: USD/year | Click to view source\">$4.10T</a>"
 "us_chronic_disease_spending_annual_cite": "@us-chronic-disease-spending"
-"us_defense_budget_annual": "<a href=\"/knowledge/references.qmd#us-defense-budget-2024\"\
-  \ class=\"parameter-link\" data-source-ref=\"us-defense-budget-2024\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"US defense budget in 2024 | ✓ High confidence\
-  \ | Unit: USD/year | Click to view source\">$877B</a>"
-"us_defense_budget_annual_cite": "@us-defense-budget-2024"
-"us_dot_value_of_statistical_life": "<a href=\"/knowledge/references.qmd#us-dot-value-statistical-life\"\
-  \ class=\"parameter-link\" data-source-ref=\"us-dot-value-statistical-life\" data-source-type=\"\
+"us_defense_budget_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.US_MILITARY_BUDGET_800B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.US_MILITARY_BUDGET_800B\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"US defense budget\
+  \ in 2024 | ✓ High confidence | Unit: USD/year | Click to view source\">$877B</a>"
+"us_defense_budget_annual_cite": "@us-military-budget-800b"
+"us_diabetes_annual_cost": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_COST_DIABETES_1500B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_COST_DIABETES_1500B\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Annual US cost of diabetes (direct and indirect) | ✓ High confidence |\
+  \ \U0001F4CA Peer-reviewed | Unit: USD | Click to view source\">$327B</a>"
+"us_diabetes_annual_cost_cite": "@disease-cost-diabetes-1500b"
+"us_dot_value_of_statistical_life": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DOT_VSL_13_6M\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DOT_VSL_13_6M\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US Department of Transportation value\
   \ of statistical life | ✓ High confidence | Unit: USD | Click to view source\">$13.6M</a>"
-"us_dot_value_of_statistical_life_cite": "@us-dot-value-statistical-life"
-"us_drug_price_multiplier_vs_peer_countries": "<a href=\"/knowledge/references.qmd#us-drug-prices-vs-peer-countries\"\
-  \ class=\"parameter-link\" data-source-ref=\"us-drug-prices-vs-peer-countries\"\
+"us_dot_value_of_statistical_life_cite": "@dot-vsl-13-6m"
+"us_drug_price_multiplier_vs_peer_countries": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.US_DRUG_PRICES_VS_PEER_COUNTRIES\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.US_DRUG_PRICES_VS_PEER_COUNTRIES\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"US drug prices\
   \ compared to peer countries multiplier | ✓ High confidence | Unit: ratio | Click\
   \ to view source\">2.78</a>"
 "us_drug_price_multiplier_vs_peer_countries_cite": "@us-drug-prices-vs-peer-countries"
-"us_median_salary": "<a href=\"/knowledge/references.qmd#us-median-salary-2024\" class=\"\
-  parameter-link\" data-source-ref=\"us-median-salary-2024\" data-source-type=\"external\"\
-  \ data-confidence=\"high\" title=\"US median salary in 2024 | ✓ High confidence\
+"us_heart_disease_annual_cost": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DISEASE_COST_HEART_DISEASE_2100B\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DISEASE_COST_HEART_DISEASE_2100B\"\
+  \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
+  \ title=\"Annual US cost of heart disease and stroke (direct and indirect) | ✓ High\
+  \ confidence | \U0001F4CA Peer-reviewed | Unit: USD | Click to view source\">$363B</a>"
+"us_heart_disease_annual_cost_cite": "@disease-cost-heart-disease-2100b"
+"us_major_diseases_total_annual_cost": "<a href=\"/knowledge/solution/aligning-incentives.qmd#insurance-companies\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/aligning-incentives.qmd#insurance-companies\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
+  \ US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer) | ✓ High\
+  \ confidence | Formula: DIABETES + ALZHEIMERS + HEART + CANCER | Unit: USD | Click\
+  \ to view calculation\">$1.25T</a>"
+"us_major_diseases_total_annual_cost_latex": "$$\nTotal = \\$327B + \\$355B + \\$363B\
+  \ + \\$208B = \\$1.253T\n$$"
+"us_median_salary": "<a href=\"https://warondisease.org/knowledge/references.html#us-median-salary-2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"us-median-salary-2024\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US median salary in 2024 | ✓ High confidence\
   \ | Unit: USD/year | Click to view source\">$59.4K</a>"
 "us_median_salary_cite": "@us-median-salary-2024"
-"us_mental_health_cost_annual": "<a href=\"/knowledge/references.qmd#us-mental-health-cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"us-mental-health-cost\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"US mental health costs (treatment +\
-  \ productivity loss) | ✓ High confidence | Unit: USD/year | Click to view source\"\
-  >$350B</a>"
-"us_mental_health_cost_annual_cite": "@us-mental-health-cost"
-"us_military_spending_pct_gdp": "<a href=\"/knowledge/references.qmd#us-military-budget-3-5-pct-gdp\"\
-  \ class=\"parameter-link\" data-source-ref=\"us-military-budget-3-5-pct-gdp\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"US military spending as percentage of\
-  \ GDP (2024) | ✓ High confidence | Unit: rate | Click to view source\">3.5%</a>"
+"us_mental_health_cost_annual": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.MENTAL_HEALTH_BURDEN\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.MENTAL_HEALTH_BURDEN\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"US mental health\
+  \ costs (treatment + productivity loss) | ✓ High confidence | Unit: USD/year | Click\
+  \ to view source\">$350B</a>"
+"us_mental_health_cost_annual_cite": "@mental-health-burden"
+"us_military_spending_pct_gdp": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"US military spending\
+  \ as percentage of GDP (2024) | ✓ High confidence | Unit: rate | Click to view source\"\
+  >3.5%</a>"
 "us_military_spending_pct_gdp_cite": "@us-military-budget-3-5-pct-gdp"
-"us_population_2024": "<a href=\"/knowledge/references.qmd#us-population-335m\" class=\"\
-  parameter-link\" data-source-ref=\"us-population-335m\" data-source-type=\"external\"\
-  \ data-confidence=\"high\" title=\"US population in 2024 | ✓ High confidence | Unit:\
-  \ people | Click to view source\">335M</a>"
-"us_population_2024_cite": "@us-population-335m"
-"value_of_statistical_life": "<a href=\"/knowledge/references.qmd#dot-vsl-13-6m\"\
-  \ class=\"parameter-link\" data-source-ref=\"dot-vsl-13-6m\" data-source-type=\"\
+"us_population_2024": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.US_VOTER_POPULATION\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.US_VOTER_POPULATION\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US population in 2024 | ✓ High confidence\
+  \ | Unit: people | Click to view source\">335M</a>"
+"us_population_2024_cite": "@us-voter-population"
+"value_of_statistical_life": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.DOT_VSL_13_6M\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.DOT_VSL_13_6M\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Value of Statistical Life (conservative\
   \ estimate) | ✓ High confidence | Unit: USD | Click to view source\">$10M</a>"
 "value_of_statistical_life_cite": "@dot-vsl-13-6m"
-"verification_conversion_rate_good_ux": "<a href=\"/knowledge/references.qmd#fintech-identity-verification-conversion-2024\"\
+"verification_conversion_rate_good_ux": "<a href=\"https://warondisease.org/knowledge/references.html#fintech-identity-verification-conversion-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"fintech-identity-verification-conversion-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Identity verification\
   \ completion rate with good UX (fintech data) | ✓ High confidence | Updated: 2024\
   \ | Unit: rate | Click to view source\">85%</a>"
 "verification_conversion_rate_good_ux_cite": "@fintech-identity-verification-conversion-2024"
-"verification_conversion_rate_poor_ux": "<a href=\"/knowledge/references.qmd#fintech-identity-verification-conversion-2024\"\
+"verification_conversion_rate_poor_ux": "<a href=\"https://warondisease.org/knowledge/references.html#fintech-identity-verification-conversion-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"fintech-identity-verification-conversion-2024\"\
   \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Identity verification\
   \ completion rate with poor UX | ~ Medium confidence | Updated: 2024 | Unit: rate\
@@ -2791,30 +2893,31 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"VICTORY funding\
   \ for viral referendum (referral payments, political advertising) | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$143M</a>"
-"vsl_epa": "<a href=\"/knowledge/references.qmd#epa-value-statistical-life\" class=\"\
-  parameter-link\" data-source-ref=\"epa-value-statistical-life\" data-source-type=\"\
+"vsl_epa": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.EPA_VSL_9_6M\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.EPA_VSL_9_6M\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"EPA value of statistical life | ✓ High\
   \ confidence | Unit: USD | Click to view source\">$9.60M</a>"
-"vsl_epa_cite": "@epa-value-statistical-life"
-"water_fluoridation_roi": "<a href=\"/knowledge/references.qmd#water-fluoridation-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"water-fluoridation-roi\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Return on investment from water fluoridation\
-  \ programs | ✓ High confidence | Unit: ratio | Click to view source\">23</a>"
-"water_fluoridation_roi_cite": "@water-fluoridation-roi"
-"workforce_chronic_illness_prevalence": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
+"vsl_epa_cite": "@epa-vsl-9-6m"
+"water_fluoridation_roi": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.CLEAN_WATER_SANITATION_ROI\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.CLEAN_WATER_SANITATION_ROI\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Return on investment\
+  \ from water fluoridation programs | ✓ High confidence | Unit: ratio | Click to\
+  \ view source\">23</a>"
+"water_fluoridation_roi_cite": "@clean-water-sanitation-roi"
+"workforce_chronic_illness_prevalence": "<a href=\"https://warondisease.org/knowledge/references.html#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" data-source-ref=\"chronic-illness-workforce-productivity-loss\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Workforce with\
   \ at least one chronic condition (78.4%) | ✓ High confidence | Unit: rate | Click\
   \ to view source\">78.4%</a>"
 "workforce_chronic_illness_prevalence_cite": "@chronic-illness-workforce-productivity-loss"
-"workforce_with_productivity_loss": "<a href=\"/knowledge/references.qmd#chronic-illness-workforce-productivity-loss\"\
+"workforce_with_productivity_loss": "<a href=\"https://warondisease.org/knowledge/references.html#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" data-source-ref=\"chronic-illness-workforce-productivity-loss\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage of workforce\
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"ww2_bond_return_pct": "<a href=\"/knowledge/references.qmd#ww2-war-bonds-return\"\
-  \ class=\"parameter-link\" data-source-ref=\"ww2-war-bonds-return\" data-source-type=\"\
+"ww2_bond_return_pct": "<a href=\"https://warondisease.org/knowledge/references.html#ReferenceID.WWII_WAR_BONDS\"\
+  \ class=\"parameter-link\" data-source-ref=\"ReferenceID.WWII_WAR_BONDS\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
-"ww2_bond_return_pct_cite": "@ww2-war-bonds-return"
+"ww2_bond_return_pct_cite": "@wwii-war-bonds"

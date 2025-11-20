@@ -71,6 +71,11 @@ def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
     # Import the parameters module to get actual Parameter instances
     import importlib.util
 
+    # Add dih_models directory to sys.path so it can find reference_ids
+    dih_models_dir = str(parameters_path.parent)
+    if dih_models_dir not in sys.path:
+        sys.path.insert(0, dih_models_dir)
+
     spec = importlib.util.spec_from_file_location("parameters", parameters_path)
     params_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(params_module)
@@ -453,8 +458,8 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "",
     if has_source:
         # Determine link destination based on source type
         if source_type_str == "external":
-            # Link to citation in references.qmd (absolute path from site root)
-            href = f"/knowledge/references.qmd#{value.source_ref}"
+            # Link to citation in references.html (full URL)
+            href = f"https://warondisease.org/knowledge/references.html#{value.source_ref}"
             link_text = "View source"
         else:
             # Link to calculation/methodology page (ensure absolute path)
@@ -581,7 +586,9 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             if hasattr(value, "source_type") and hasattr(value, "source_ref"):
                 source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
                 if source_type_str == "external" and value.source_ref:
-                    variables[f"{var_name}_cite"] = f"@{value.source_ref}"
+                    # Sanitize citation key for BibTeX compatibility
+                    sanitized_ref = sanitize_bibtex_key(value.source_ref)
+                    variables[f"{var_name}_cite"] = f"@{sanitized_ref}"
                     citation_count += 1
 
         # Export LaTeX equation if available (with $$ delimiters)
@@ -723,7 +730,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             # Source citation
             if hasattr(value, "source_ref") and value.source_ref:
                 source_ref = value.source_ref
-                content.append(f"**Source**: [{source_ref}](../references.qmd#{source_ref})")
+                content.append(f"**Source**: [{source_ref}](https://warondisease.org/knowledge/references.html#{source_ref})")
                 content.append("")
 
             # Confidence and metadata - cleaner formatting
@@ -898,6 +905,154 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     print(f"     {len(definition_params)} core definitions")
 
 
+def parse_references_qmd(references_path: Path) -> set:
+    """
+    Parse knowledge/references.qmd and extract all reference IDs.
+
+    Returns a set of all anchor IDs defined in the file.
+    Example: <a id="166-billion-compounds"></a> -> "166-billion-compounds"
+    """
+    if not references_path.exists():
+        print(f"[WARN] References file not found: {references_path}", file=sys.stderr)
+        return set()
+
+    with open(references_path, encoding="utf-8") as f:
+        content = f.read()
+
+    # Pattern to match <a id="..."></a> tags
+    pattern = r'<a\s+id="([^"]+)"\s*></a>'
+    matches = re.findall(pattern, content)
+
+    return set(matches)
+
+
+def sanitize_bibtex_key(key: str) -> str:
+    """
+    Sanitize citation key for BibTeX (only alphanumeric, hyphens, underscores).
+
+    Same logic as convert-references-to-bib.py for consistency.
+    """
+    sanitized = key
+    sanitized = sanitized.replace('/', '-')
+    sanitized = sanitized.replace('#', '-')
+    sanitized = sanitized.replace('.qmd', '')
+    sanitized = sanitized.replace('.', '-')
+    sanitized = re.sub(r'[^a-zA-Z0-9\-_]', '-', sanitized)
+    # Remove multiple consecutive hyphens
+    sanitized = re.sub(r'-+', '-', sanitized)
+    # Remove leading/trailing hyphens
+    sanitized = sanitized.strip('-')
+    return sanitized
+
+
+def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: set) -> tuple[list, list]:
+    """
+    Validate that all external source_refs exist in references.qmd.
+
+    Args:
+        parameters: Dict of parameter metadata
+        available_refs: Set of reference IDs from references.qmd
+
+    Returns:
+        Tuple of (missing_refs, used_refs) where:
+        - missing_refs: List of (param_name, source_ref) tuples for missing references
+        - used_refs: List of source_refs that are actually used
+    """
+    missing_refs = []
+    used_refs = []
+
+    for param_name, param_data in parameters.items():
+        value = param_data["value"]
+        if hasattr(value, "source_type"):
+            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+            if source_type_str == "external":
+                if hasattr(value, "source_ref") and value.source_ref:
+                    source_ref = value.source_ref
+                    used_refs.append(source_ref)
+
+                    # Check if reference exists
+                    if source_ref not in available_refs:
+                        missing_refs.append((param_name, source_ref))
+
+    return missing_refs, used_refs
+
+
+def generate_reference_ids_enum(available_refs: set, output_path: Path):
+    """
+    Generate dih_models/reference_ids.py with enum of valid reference IDs.
+
+    Creates a Python enum for IDE autocomplete and static type checking.
+    Developers can use ReferenceID.CDC_LEADING_CAUSES_DEATH instead of strings.
+
+    Args:
+        available_refs: Set of reference IDs from references.qmd
+        output_path: Path to write reference_ids.py
+    """
+    content = []
+    content.append("#!/usr/bin/env python3")
+    content.append('"""')
+    content.append("AUTO-GENERATED FILE - DO NOT EDIT")
+    content.append("=" * 70)
+    content.append("")
+    content.append("Valid reference IDs extracted from knowledge/references.qmd")
+    content.append("")
+    content.append("Usage in parameters.py:")
+    content.append("    from .reference_ids import ReferenceID")
+    content.append("")
+    content.append("    PARAM = Parameter(")
+    content.append("        123.45,")
+    content.append('        source_type="external",')
+    content.append("        source_ref=ReferenceID.CDC_LEADING_CAUSES_DEATH,")
+    content.append('        description="..."')
+    content.append("    )")
+    content.append("")
+    content.append("Benefits:")
+    content.append("  - IDE autocomplete shows all valid reference IDs")
+    content.append("  - Static type checking catches typos before runtime")
+    content.append("  - Refactoring safety when renaming references")
+    content.append('"""')
+    content.append("")
+    content.append("from enum import Enum")
+    content.append("")
+    content.append("")
+    content.append("class ReferenceID(str, Enum):")
+    content.append('    """Valid reference IDs from knowledge/references.qmd"""')
+    content.append("")
+
+    # Sort reference IDs for consistent output
+    sorted_refs = sorted(available_refs)
+
+    # Convert reference IDs to enum member names
+    # e.g., "cdc-leading-causes-death" -> "CDC_LEADING_CAUSES_DEATH"
+    for ref_id in sorted_refs:
+        # Convert kebab-case to SCREAMING_SNAKE_CASE
+        enum_name = ref_id.upper().replace("-", "_")
+
+        # Handle special cases that start with numbers
+        if enum_name[0].isdigit():
+            enum_name = f"_{enum_name}"
+
+        content.append(f'    {enum_name} = "{ref_id}"')
+
+    content.append("")
+
+    # Write file
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(content))
+
+    print(f"[OK] Generated {output_path}")
+    print(f"     {len(sorted_refs)} reference IDs exported as enum")
+    print()
+    print("Usage in parameters.py:")
+    print("    from .reference_ids import ReferenceID")
+    if sorted_refs:
+        first_ref = sorted_refs[0].upper().replace("-", "_")
+        if first_ref[0].isdigit():
+            first_ref = f"_{first_ref}"
+        print(f"    source_ref=ReferenceID.{first_ref}")
+    print()
+
+
 def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
     """
     Generate references.bib BibTeX file from external parameters.
@@ -930,12 +1085,15 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
     content.append("")
 
     for citation_key in sorted(citations):
+        # Sanitize citation key for BibTeX (remove /, #, etc.)
+        sanitized_key = sanitize_bibtex_key(citation_key)
+
         # Create placeholder entry
         # In production, you'd query CrossRef, PubMed, etc. for actual BibTeX
-        content.append(f"@misc{{{citation_key},")
+        content.append(f"@misc{{{sanitized_key},")
         content.append(f"  title = {{{citation_key}}},")
-        content.append(f"  note = {{See references.qmd#{citation_key} for full citation}},")
-        content.append(f"  url = {{https://impact.dih.earth/knowledge/references.qmd#{citation_key}}},")
+        content.append(f"  note = {{See references.html#{citation_key} for full citation}},")
+        content.append(f"  url = {{https://impact.dih.earth/knowledge/references.html#{citation_key}}},")
         content.append("}")
         content.append("")
 
@@ -1018,7 +1176,7 @@ def main():
     inject_citations = "--inject-citations" in sys.argv
 
     # Citation mode: --cite-mode=inline|separate|both|none
-    citation_mode = "none"
+    citation_mode = "separate"  # Default: always generate _cite variables for convenience
     for arg in sys.argv:
         if arg.startswith("--cite-mode="):
             citation_mode = arg.split("=")[1]
@@ -1040,6 +1198,34 @@ def main():
     parameters = parse_parameters_file(parameters_path)
     print(f"[OK] Found {len(parameters)} numeric parameters")
     print()
+
+    # Parse references.qmd to get available references
+    print("[*] Parsing knowledge/references.qmd...")
+    references_path = project_root / "knowledge" / "references.qmd"
+    available_refs = parse_references_qmd(references_path)
+    print(f"[OK] Found {len(available_refs)} reference entries")
+    print()
+
+    # Generate reference_ids.py enum for IDE autocomplete and type safety
+    print("[*] Generating dih_models/reference_ids.py...")
+    reference_ids_path = project_root / "dih_models" / "reference_ids.py"
+    generate_reference_ids_enum(available_refs, reference_ids_path)
+
+    # Validate that all external source_refs exist in references.qmd
+    print("[*] Validating external source references...")
+    missing_refs, used_refs = validate_references(parameters, available_refs)
+
+    if missing_refs:
+        print(f"[ERROR] Found {len(missing_refs)} missing references:", file=sys.stderr)
+        for param_name, source_ref in missing_refs:
+            print(f"  - Parameter '{param_name}' references missing citation: '{source_ref}'", file=sys.stderr)
+        print(f"\n[ERROR] Please add missing references to {references_path}", file=sys.stderr)
+        print(f"[ERROR] Format: <a id=\"{missing_refs[0][1]}\"></a>", file=sys.stderr)
+        print()
+        # Don't exit - continue generation but warn user
+    else:
+        print(f"[OK] All {len(set(used_refs))} external references validated")
+        print()
 
     # Generate _variables.yml
     print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
@@ -1073,6 +1259,7 @@ def main():
     print(f"       - {output_path.relative_to(project_root)}")
     print(f"       - {qmd_output.relative_to(project_root)}")
     print(f"       - {bib_output.relative_to(project_root)}")
+    print(f"       - {reference_ids_path.relative_to(project_root)}")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
     print("    2. Render Quarto book to see results")

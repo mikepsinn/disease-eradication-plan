@@ -17,6 +17,13 @@ Usage:
 from enum import Enum
 from typing import Optional, List, Tuple, Union
 
+# Import valid reference IDs for type-safe citations
+try:
+    from .reference_ids import ReferenceID
+except ImportError:
+    # Handle direct execution (not as package)
+    from reference_ids import ReferenceID
+
 
 # ============================================================================
 # PARAMETER CLASS - Adds source tracking to numeric values
@@ -71,7 +78,7 @@ class Parameter(float):
         # External data source with high confidence
         CONFLICT_DEATHS = Parameter(
             233600,
-            source_ref="acled-2024",
+            source_ref=ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS,
             source_type=SourceType.EXTERNAL,
             description="Annual deaths from active combat",
             display_name="Annual Deaths from Active Combat",
@@ -222,7 +229,7 @@ class Parameter(float):
 # Direct costs
 GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
     2_718_000_000_000,
-    source_ref="global-military-spending",
+    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending in 2024",
     display_name="Global Military Spending in 2024",
@@ -233,7 +240,7 @@ GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
 # Value of Statistical Life (VSL)
 VALUE_OF_STATISTICAL_LIFE = Parameter(
     10_000_000,
-    source_ref="dot-vsl-13-6m",
+    source_ref=ReferenceID.DOT_VSL_13_6M,
     source_type="external",
     description="Value of Statistical Life (conservative estimate)",
     display_name="Value of Statistical Life",
@@ -245,7 +252,7 @@ VALUE_OF_STATISTICAL_LIFE = Parameter(
 # Source: brain/book/problem/cost-of-war.qmd#death-accounting
 GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
     233600,
-    source_ref="acled-2024",
+    source_ref=ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS,
     source_type="external",
     description="Annual deaths from active combat worldwide",
     display_name="Annual Deaths from Active Combat Worldwide",
@@ -255,7 +262,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
     8300,
-    source_ref="gtd-2024",
+    source_ref=ReferenceID.GTD_TERROR_ATTACK_DEATHS,
     source_type="external",
     description="Annual deaths from terror attacks globally",
     display_name="Annual Deaths from Terror Attacks Globally",
@@ -265,7 +272,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
     2700,
-    source_ref="ucdp-2024",
+    source_ref=ReferenceID.UCDP_STATE_VIOLENCE_DEATHS,
     source_type="external",
     description="Annual deaths from state violence",
     display_name="Annual Deaths from State Violence",
@@ -343,7 +350,7 @@ GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = Parameter(
 # Infrastructure Damage Breakdown (billions USD)
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
     487_300_000_000,
-    source_ref="war-infrastructure-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to transportation from conflict",
     display_name="Annual Infrastructure Damage to Transportation from Conflict",
@@ -353,7 +360,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
     421_700_000_000,
-    source_ref="war-infrastructure-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to energy systems from conflict",
     display_name="Annual Infrastructure Damage to Energy Systems from Conflict",
@@ -363,7 +370,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
     298_100_000_000,
-    source_ref="war-infrastructure-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to communications from conflict",
     display_name="Annual Infrastructure Damage to Communications from Conflict",
@@ -373,7 +380,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
     267_800_000_000,
-    source_ref="war-infrastructure-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to water systems from conflict",
     display_name="Annual Infrastructure Damage to Water Systems from Conflict",
@@ -383,7 +390,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
     234_500_000_000,
-    source_ref="war-infrastructure-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to education facilities from conflict",
     display_name="Annual Infrastructure Damage to Education Facilities from Conflict",
@@ -393,7 +400,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
     165_600_000_000,
-    source_ref="war-infrastructure-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual infrastructure damage to healthcare facilities from conflict",
     display_name="Annual Infrastructure Damage to Healthcare Facilities from Conflict",
@@ -422,7 +429,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = Parameter(
 # Trade Disruption Breakdown (billions USD)
 GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
     247_100_000_000,
-    source_ref="war-trade-disruption-costs",
+    source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from shipping disruptions",
     display_name="Annual Trade Disruption Costs from Shipping Disruptions",
@@ -432,7 +439,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
     186_800_000_000,
-    source_ref="war-trade-disruption-costs",
+    source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from supply chain disruptions",
     display_name="Annual Trade Disruption Costs from Supply Chain Disruptions",
@@ -442,7 +449,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
     124_700_000_000,
-    source_ref="war-trade-disruption-costs",
+    source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from energy price volatility",
     display_name="Annual Trade Disruption Costs from Energy Price Volatility",
@@ -452,7 +459,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
     57_400_000_000,
-    source_ref="war-trade-disruption-costs",
+    source_ref=ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT,
     source_type="external",
     description="Annual trade disruption costs from currency instability",
     display_name="Annual Trade Disruption Costs from Currency Instability",
@@ -494,7 +501,7 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
 # Indirect costs
 GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
     2_718_000_000_000,
-    source_ref="military-spending-opportunity-cost",
+    source_ref=ReferenceID.DISPARITY_RATIO_WEAPONS_VS_CURES,
     source_type="external",
     description="Annual lost economic growth from military spending opportunity cost",
     display_name="Annual Lost Economic Growth from Military Spending Opportunity Cost",
@@ -504,7 +511,7 @@ GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
 
 GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
     200_100_000_000,
-    source_ref="global-veteran-healthcare-costs",
+    source_ref=ReferenceID.VETERAN_HEALTHCARE_COST_PROJECTIONS,
     source_type="external",
     description="Annual veteran healthcare costs (20-year projected)",
     display_name="Annual Veteran Healthcare Costs",
@@ -514,7 +521,7 @@ GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
 
 GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
     150_000_000_000,
-    source_ref="refugee-support-costs",
+    source_ref=ReferenceID.UNHCR_REFUGEE_SUPPORT_COST,
     source_type="external",
     description="Annual refugee support costs (108.4M refugees × $1,384/year)",
     display_name="Annual Refugee Support Costs",
@@ -524,7 +531,7 @@ GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
 
 GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
     100_000_000_000,
-    source_ref="war-environmental-damage-costs",
+    source_ref=ReferenceID.ENVIRONMENTAL_COST_OF_WAR,
     source_type="external",
     description="Annual environmental damage and restoration costs from conflict",
     display_name="Annual Environmental Damage and Restoration Costs from Conflict",
@@ -534,7 +541,7 @@ GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
     232_000_000_000,
-    source_ref="war-psychological-impact-costs",
+    source_ref=ReferenceID.PSYCHOLOGICAL_IMPACT_WAR_COST,
     source_type="external",
     description="Annual PTSD and mental health costs from conflict",
     display_name="Annual PTSD and Mental Health Costs from Conflict",
@@ -544,7 +551,7 @@ GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
 
 GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
     300_000_000_000,
-    source_ref="war-lost-human-capital",
+    source_ref=ReferenceID.LOST_HUMAN_CAPITAL_WAR_COST,
     source_type="external",
     description="Annual lost productivity from conflict casualties",
     display_name="Annual Lost Productivity from Conflict Casualties",
@@ -753,7 +760,7 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
 # Separate peace dividend into confidence levels
 PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     float(TREATY_ANNUAL_FUNDING),
-    source_ref="sipri-2024-spending",
+    source_ref=ReferenceID.SIPRI_2024_SPENDING,
     source_type="calculated",
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",
@@ -798,7 +805,7 @@ PEACE_DIVIDEND_ROI = Parameter(
 # Source: brain/book/appendix/dfda-roi-calculations.qmd
 GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = Parameter(
     100_000_000_000,
-    source_ref="global-clinical-trial-market",
+    source_ref=ReferenceID.CLINICAL_TRIAL_MARKET_SIZE,
     source_type="external",
     description="Global clinical trial market size",
     display_name="Global Clinical Trial Market Size",
@@ -808,7 +815,7 @@ GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = Parameter(
 
 GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     83_000_000_000,
-    source_ref="global-clinical-trials-market-2024",
+    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
     source_type="external",
     description="Annual global spending on clinical trials",
     display_name="Annual Global Spending on Clinical Trials",
@@ -828,7 +835,7 @@ TRIAL_COST_REDUCTION_PCT = Parameter(
 
 TRIAL_COST_REDUCTION_FACTOR = Parameter(
     82,
-    source_ref="recovery-trial-82x-cost-reduction",
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="external",
     description="Cost reduction factor demonstrated by RECOVERY trial",
     display_name="Cost Reduction Factor Demonstrated by Recovery Trial",
@@ -844,7 +851,7 @@ TRIAL_COST_REDUCTION_FACTOR = Parameter(
 # Current System Baseline
 CURRENT_TRIALS_PER_YEAR = Parameter(
     3300,
-    source_ref="global-clinical-trials-per-year",
+    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
     source_type="external",
     description="Current global clinical trials per year",
     display_name="Current Global Clinical Trials per Year",
@@ -854,7 +861,7 @@ CURRENT_TRIALS_PER_YEAR = Parameter(
 
 CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     50,
-    source_ref="global-new-drug-approvals-50-annually",
+    source_ref=ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY,
     source_type="external",
     description="Average annual new drug approvals globally",
     display_name="Average Annual New Drug Approvals Globally",
@@ -864,7 +871,7 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
 
 CURRENT_ACTIVE_TRIALS = Parameter(
     10000,
-    source_ref="active-clinical-trials-baseline",
+    source_ref=ReferenceID.CLINICALTRIALS_GOV_ENROLLMENT_DATA_2025,
     source_type="external",
     description="Current active trials at any given time (3-5 year duration)",
     display_name="Current Active Trials at Any Given Time",
@@ -917,7 +924,7 @@ CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
 
 CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     2_400_000_000,
-    source_ref="global-burden-disease-2-4-billion",
+    source_ref=ReferenceID.DISEASE_PREVALENCE_2_BILLION,
     source_type="external",
     description="Global population with chronic diseases",
     display_name="Global Population with Chronic Diseases",
@@ -928,7 +935,7 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 # Traditional Trial Economics
 TRADITIONAL_PHASE2_COST_PER_PATIENT_LOW = Parameter(
     40000,
-    source_ref="clinical-trial-cost-per-patient",
+    source_ref=ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT,
     source_type="external",
     description="Phase 2 cost per patient (low estimate)",
     display_name="Phase 2 Cost per Patient (Low Estimate)",
@@ -938,7 +945,7 @@ TRADITIONAL_PHASE2_COST_PER_PATIENT_LOW = Parameter(
 
 TRADITIONAL_PHASE2_COST_PER_PATIENT_HIGH = Parameter(
     120000,
-    source_ref="clinical-trial-cost-per-patient",
+    source_ref=ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT,
     source_type="external",
     description="Phase 2 cost per patient (high estimate)",
     display_name="Phase 2 Cost per Patient (High Estimate)",
@@ -948,7 +955,7 @@ TRADITIONAL_PHASE2_COST_PER_PATIENT_HIGH = Parameter(
 
 TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
     80000,
-    source_ref="phase-3-cost-per-patient",
+    source_ref=ReferenceID.PHASE_3_COST_PER_PATIENT_113K,
     source_type="external",
     description="Phase 3 cost per patient (median)",
     display_name="Phase 3 Cost per Patient",
@@ -958,7 +965,7 @@ TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
 
 PHASE_3_TRIAL_COST_MIN = Parameter(
     20_000_000,
-    source_ref="phase-3-cost-per-trial",
+    source_ref=ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE,
     source_type="external",
     description="Phase 3 trial total cost (minimum)",
     display_name="Phase 3 Trial Total Cost (Minimum)",
@@ -968,7 +975,7 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
 
 PHASE_3_TRIAL_COST_MAX = Parameter(
     282_000_000,
-    source_ref="phase-3-cost-per-trial",
+    source_ref=ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE,
     source_type="external",
     description="Phase 3 trial total cost (maximum)",
     display_name="Phase 3 Trial Total Cost (Maximum)",
@@ -978,7 +985,7 @@ PHASE_3_TRIAL_COST_MAX = Parameter(
 
 TRADITIONAL_SMALL_TRIAL_SIZE = Parameter(
     100,
-    source_ref="phase-2-trial-participant-numbers",
+    source_ref=ReferenceID.PHASE_2_PARTICIPANT_NUMBERS,
     source_type="external",
     description="Typical Phase 2 trial size",
     display_name="Typical Phase 2 Trial Size",
@@ -988,7 +995,7 @@ TRADITIONAL_SMALL_TRIAL_SIZE = Parameter(
 
 TRADITIONAL_LARGE_TRIAL_SIZE = Parameter(
     1000,
-    source_ref="phase-3-trial-participant-numbers",
+    source_ref=ReferenceID.PHASE_3_PARTICIPANT_NUMBERS,
     source_type="external",
     description="Typical Phase 3 trial size",
     display_name="Typical Phase 3 Trial Size",
@@ -1101,7 +1108,7 @@ DFDA_ELIGIBLE_PATIENTS_GLOBAL = Parameter(
 # dFDA Trial Economics
 RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     500,
-    source_ref="recovery-trial-cost-per-patient",
+    source_ref=ReferenceID.RECOVERY_COST_500,
     source_type="external",
     description="RECOVERY trial cost per patient",
     display_name="Recovery Trial Cost per Patient",
@@ -1393,7 +1400,7 @@ DFDA_ROI_SIMPLE = Parameter(
 # Source: brain/book/appendix/icer-full-calculation.qmd
 STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
     150000,
-    source_ref="standard-qaly-value",
+    source_ref=ReferenceID.QALY_VALUE,
     source_type="external",
     description="Standard economic value per QALY",
     display_name="Standard Economic Value per QALY",
@@ -1403,7 +1410,7 @@ STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
 
 STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
     35,
-    source_ref="who-life-tables-qalys-per-life",
+    source_ref=ReferenceID.QALY_VALUE,
     source_type="external",
     description="Standard QALYs per life saved (WHO life tables)",
     display_name="Standard QALYs per Life Saved",
@@ -1492,7 +1499,7 @@ TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
 TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     4,
     source_ref="/knowledge/strategy/roadmap.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Treaty campaign duration (3-5 year range, using midpoint)",
     display_name="Treaty Campaign Duration",
     unit="years",
@@ -1503,7 +1510,7 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
 TREATY_CAMPAIGN_BUDGET_REFERENDUM = Parameter(
     300_000_000,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
     display_name="Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance",
     unit="USD",
@@ -1514,7 +1521,7 @@ TREATY_CAMPAIGN_BUDGET_REFERENDUM = Parameter(
 TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
     650_000_000,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
     display_name="Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
     unit="USD",
@@ -1525,7 +1532,7 @@ TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
 TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
     50_000_000,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="Reserve fund / contingency buffer",
     display_name="Reserve Fund / Contingency Buffer",
     unit="USD",
@@ -1762,7 +1769,7 @@ CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
 
 DEFENSE_LOBBYING_ANNUAL = Parameter(
     127_000_000,
-    source_ref="lobbying-spend-defense",
+    source_ref=ReferenceID.LOBBYING_SPEND_DEFENSE,
     source_type="external",
     confidence="high",
     description="Annual defense industry lobbying spending",
@@ -2372,7 +2379,7 @@ ROI_DISCOUNT_7PCT = Parameter(
 # Political success probability estimates
 POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
     0.10,
-    source_ref="historical-treaty-adoption-rates",
+    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
     source_type="external",
     confidence="medium",
     description="Conservative estimate of political success probability (10%)",
@@ -2382,7 +2389,7 @@ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
 
 POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
     0.25,
-    source_ref="historical-treaty-adoption-rates",
+    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
     source_type="external",
     confidence="medium",
     description="Moderate estimate of political success probability (25%)",
@@ -2392,7 +2399,7 @@ POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
 
 POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
     0.50,
-    source_ref="historical-treaty-adoption-rates",
+    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
     source_type="external",
     confidence="medium",
     description="Optimistic estimate of political success probability (50%)",
@@ -2552,14 +2559,14 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 
 # Global economic context
 GLOBAL_GDP_2024 = Parameter(
-    111_000_000_000_000, source_ref="global-gdp", source_type="external", description="Global GDP in 2024", unit="USD",
+    111_000_000_000_000, source_ref=ReferenceID.GLOBAL_GDP, source_type="external", description="Global GDP in 2024", unit="USD",
     display_name="Global GDP in 2024",
     keywords=["2024", "111.0t", "worldwide", "gdp", "international", "earth", "planetary"]
 )  # World Bank 2024
 
 GLOBAL_HEALTHCARE_SPENDING_ANNUAL_2024 = Parameter(
     9_800_000_000_000,
-    source_ref="global-health-spending",
+    source_ref=ReferenceID.GLOBAL_HEALTH_SPENDING_GDP,
     source_type="external",
     description="Global healthcare spending in 2024",
     display_name="Global Healthcare Spending in 2024",
@@ -2569,7 +2576,7 @@ GLOBAL_HEALTHCARE_SPENDING_ANNUAL_2024 = Parameter(
 
 US_DEFENSE_BUDGET_ANNUAL = Parameter(
     877_000_000_000,
-    source_ref="us-defense-budget-2024",
+    source_ref=ReferenceID.US_MILITARY_BUDGET_800B,
     source_type="external",
     description="US defense budget in 2024",
     display_name="US Defense Budget in 2024",
@@ -2579,7 +2586,7 @@ US_DEFENSE_BUDGET_ANNUAL = Parameter(
 
 MENTAL_HEALTH_GRANTS_ANNUAL = Parameter(
     500_000_000,
-    source_ref="mental-health-research-funding",
+    source_ref=ReferenceID.GLOBAL_MENTAL_HEALTH_RESEARCH_SPENDING_1_5B,
     source_type="external",
     description="Annual mental health research grants total",
     display_name="Annual Mental Health Research Grants Total",
@@ -2589,7 +2596,7 @@ MENTAL_HEALTH_GRANTS_ANNUAL = Parameter(
 
 DIABETES_TREATMENT_MONTHLY_COST = Parameter(
     500,
-    source_ref="diabetes-treatment-costs",
+    source_ref=ReferenceID.DISEASE_COST_DIABETES_1500B,
     source_type="external",
     description="Average monthly cost of diabetes treatment per patient",
     display_name="Average Monthly Cost of Diabetes Treatment per Patient",
@@ -2609,7 +2616,7 @@ MEDICAL_FACILITY_HOURLY_ROOM_COST = Parameter(
 
 SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
     10,
-    source_ref="agricultural-subsidies",
+    source_ref=ReferenceID.SUGAR_SUBSIDIES_COST,
     source_type="external",
     description="Annual cost of sugar subsidies per person",
     display_name="Annual Cost of Sugar Subsidies per Person",
@@ -2619,7 +2626,7 @@ SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
 
 RARE_DISEASE_TYPICAL_PATIENT_COUNT = Parameter(
     500,
-    source_ref="rare-disease-prevalence",
+    source_ref=ReferenceID.RARE_DISEASE_PREVALENCE_400M,
     source_type="external",
     description="Typical patient count for rare diseases",
     display_name="Typical Patient Count for Rare Diseases",
@@ -2639,7 +2646,7 @@ ALZHEIMER_CURE_BOUNTY_ESTIMATE = Parameter(
 
 GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     67_500_000_000,
-    source_ref="global-government-medical-research-spending",
+    source_ref=ReferenceID.GLOBAL_GOV_MED_RESEARCH_SPENDING,
     source_type="external",
     description="Global government medical research spending",
     display_name="Global Government Medical Research Spending",
@@ -2662,7 +2669,7 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
 # Population
 GLOBAL_POPULATION_2024 = Parameter(
     8_000_000_000,
-    source_ref="global-population-8-billion",
+    source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
     source_type="external",
     description="Global population in 2024",
     display_name="Global Population in 2024",
@@ -2672,7 +2679,7 @@ GLOBAL_POPULATION_2024 = Parameter(
 
 GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
     150000,
-    source_ref="global-daily-deaths-curable-diseases",
+    source_ref=ReferenceID.DEATHS_FROM_TREATABLE_DISEASES_15M,
     source_type="external",
     description="Daily deaths from curable diseases globally",
     display_name="Daily Deaths from Curable Diseases Globally",
@@ -2695,7 +2702,7 @@ GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
 # Disease economic burden
 GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
     8_200_000_000_000,
-    source_ref="disease-economic-burden-109t",
+    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Annual global spending on symptomatic disease treatment",
     display_name="Annual Global Spending on Symptomatic Disease Treatment",
@@ -2706,7 +2713,7 @@ GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
 # Disease cost breakdown components
 GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
     9_900_000_000_000,
-    source_ref="disease-economic-burden-109t",
+    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Direct medical costs of disease globally (treatment, hospitalization, medication)",
     display_name="Global Annual Direct Medical Costs of Disease",
@@ -2716,7 +2723,7 @@ GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
 
 GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     5_000_000_000_000,
-    source_ref="disease-economic-burden-109t",
+    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Annual productivity loss from disease globally (absenteeism, reduced output)",
     display_name="Global Annual Productivity Loss from Disease",
@@ -2726,7 +2733,7 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
 
 GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
     94_200_000_000_000,
-    source_ref="disease-economic-burden-109t",
+    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
     description="Economic value of human life lost to disease annually (mortality valuation)",
     display_name="Global Annual Economic Value of Human Life Lost to Disease",
@@ -2736,7 +2743,7 @@ GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
 
 GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
     GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL + GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL,
-    source_ref="disease-economic-burden-109t",
+    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="calculated",
     description="Total economic burden of disease globally (medical + productivity + mortality)",
     display_name="Total Economic Burden of Disease Globally",
@@ -2769,7 +2776,7 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
 
 CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
     0.0006,
-    source_ref="clinical-trial-participants",
+    source_ref=ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE,
     source_type="external",
     description="Current clinical trial participation rate (0.06% of population)",
     display_name="Current Clinical Trial Participation Rate",
@@ -2780,7 +2787,7 @@ CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
 # US healthcare metrics
 US_DRUG_PRICE_MULTIPLIER_VS_PEER_COUNTRIES = Parameter(
     2.78,
-    source_ref="us-drug-prices-vs-peer-countries",
+    source_ref=ReferenceID.US_DRUG_PRICES_VS_PEER_COUNTRIES,
     source_type="external",
     description="US drug prices compared to peer countries multiplier",
     display_name="US Drug Prices Compared to Peer Countries Multiplier",
@@ -2790,7 +2797,7 @@ US_DRUG_PRICE_MULTIPLIER_VS_PEER_COUNTRIES = Parameter(
 
 US_ANNUAL_DRUG_SPENDING = Parameter(
     360_000_000_000,
-    source_ref="us-drug-spending-annual",
+    source_ref=ReferenceID.US_DRUG_SPEND,
     source_type="external",
     description="Annual US pharmaceutical spending",
     display_name="Annual US Pharmaceutical Spending",
@@ -2800,7 +2807,7 @@ US_ANNUAL_DRUG_SPENDING = Parameter(
 
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
     0.035,
-    source_ref="us-military-budget-3-5-pct-gdp",
+    source_ref=ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP,
     source_type="external",
     description="US military spending as percentage of GDP (2024)",
     display_name="US Military Spending as Percentage of GDP",
@@ -2811,7 +2818,7 @@ US_MILITARY_SPENDING_PCT_GDP = Parameter(
 # Rare diseases
 RARE_DISEASES_COUNT_GLOBAL = Parameter(
     7000,
-    source_ref="95-pct-diseases-no-treatment",
+    source_ref=ReferenceID._95_PCT_DISEASES_NO_TREATMENT,
     source_type="external",
     description="Total number of rare diseases globally",
     display_name="Total Number of Rare Diseases Globally",
@@ -2822,7 +2829,7 @@ RARE_DISEASES_COUNT_GLOBAL = Parameter(
 # Historical terrorism deaths
 TERRORISM_DEATHS_911 = Parameter(
     2996,
-    source_ref="911-deaths",
+    source_ref=ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M,
     source_type="external",
     description="Deaths from 9/11 terrorist attacks",
     display_name="Deaths from 9/11 Terrorist Attacks",
@@ -2939,7 +2946,7 @@ LIFETIME_WAR_COST_PER_CAPITA = Parameter(
 # Source: brain/book/appendix/icer-full-calculation.qmd
 GIVEWELL_COST_PER_LIFE_MIN = Parameter(
     3500,
-    source_ref="givewell-cost-per-life-saved",
+    source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell cost per life saved (Helen Keller International)",
     display_name="Givewell Cost per Life Saved (Minimum)",
@@ -2949,7 +2956,7 @@ GIVEWELL_COST_PER_LIFE_MIN = Parameter(
 
 GIVEWELL_COST_PER_LIFE_MAX = Parameter(
     5500,
-    source_ref="givewell-cost-per-life-saved",
+    source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell cost per life saved (Against Malaria Foundation)",
     display_name="Givewell Cost per Life Saved (Maximum)",
@@ -2959,7 +2966,7 @@ GIVEWELL_COST_PER_LIFE_MAX = Parameter(
 
 GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     4500,
-    source_ref="givewell-cost-per-life-saved",
+    source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell average cost per life saved across top charities",
     display_name="Givewell Average Cost per Life Saved Across Top Charities",
@@ -2983,7 +2990,7 @@ MULTIPLIER_VS_GIVEWELL = Parameter(
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
     280,
-    source_ref="smallpox-eradication-roi",
+    source_ref=ReferenceID.SMALLPOX_ERADICATION_ROI,
     source_type="external",
     description="Return on investment from smallpox eradication campaign",
     display_name="Return on Investment from Smallpox Eradication Campaign",
@@ -2993,7 +3000,7 @@ SMALLPOX_ERADICATION_ROI = Parameter(
 
 CHILDHOOD_VACCINATION_ROI = Parameter(
     13,
-    source_ref="childhood-vaccination-roi",
+    source_ref=ReferenceID.CHILDHOOD_VACCINATION_ROI,
     source_type="external",
     description="Return on investment from childhood vaccination programs",
     display_name="Return on Investment from Childhood Vaccination Programs",
@@ -3003,7 +3010,7 @@ CHILDHOOD_VACCINATION_ROI = Parameter(
 
 POLIO_VACCINATION_ROI = Parameter(
     39,
-    source_ref="polio-vaccination-roi",
+    source_ref=ReferenceID.POLIO_VACCINATION_ROI,
     source_type="external",
     description="Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs",
     display_name="Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs",
@@ -3013,7 +3020,7 @@ POLIO_VACCINATION_ROI = Parameter(
 
 MEASLES_VACCINATION_ROI = Parameter(
     14,
-    source_ref="measles-vaccination-roi",
+    source_ref=ReferenceID.MEASLES_VACCINATION_ROI,
     source_type="external",
     description="Return on investment from measles (MMR) vaccination programs",
     display_name="Return on Investment from Measles Vaccination Programs",
@@ -3033,7 +3040,7 @@ CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
 
 WATER_FLUORIDATION_ROI = Parameter(
     23,
-    source_ref="water-fluoridation-roi",
+    source_ref=ReferenceID.CLEAN_WATER_SANITATION_ROI,
     source_type="external",
     description="Return on investment from water fluoridation programs",
     display_name="Return on Investment from Water Fluoridation Programs",
@@ -3380,7 +3387,7 @@ TREATMENT_ACCELERATION_YEARS_TARGET = Parameter(
 
 TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
     17,
-    source_ref="fda-drug-approval-timeline",
+    source_ref=ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS,
     source_type="external",
     description="Traditional FDA drug development timeline",
     display_name="Traditional FDA Drug Development Timeline",
@@ -3398,7 +3405,7 @@ TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
 # Drug Development Phase Durations
 PHASE_1_SAFETY_DURATION_YEARS = Parameter(
     2.3,
-    source_ref="bio-clinical-development-2021",
+    source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="Phase I safety trial duration",
     display_name="Phase I Safety Trial Duration",
@@ -3411,7 +3418,7 @@ PHASE_1_SAFETY_DURATION_YEARS = Parameter(
 
 EFFICACY_LAG_YEARS = Parameter(
     8.2,
-    source_ref="bio-clinical-development-2021",
+    source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
     source_type="external",
     description="Regulatory delay for efficacy testing (Phase II/III) post-safety verification",
     display_name="Regulatory Delay for Efficacy Testing Post-Safety Verification",
@@ -3427,7 +3434,7 @@ EFFICACY_LAG_YEARS = Parameter(
 # Baseline Lives Saved by Modern Medicine
 BASELINE_LIVES_SAVED_ANNUAL = Parameter(
     12.0,
-    source_ref="who-global-health-estimates-2024",
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Baseline annual lives saved by pharmaceuticals (conservative aggregate)",
     display_name="Baseline Annual Lives Saved by Pharmaceuticals",
@@ -3480,7 +3487,7 @@ REGULATORY_DELAY_DEATHS_UPPER_BOUND = Parameter(
 # Component values for DALY calculations
 REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
     62,
-    source_ref="who-global-health-estimates-2024",
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Mean age of preventable death from regulatory delay",
     display_name="Mean Age of Preventable Death from Regulatory Delay",
@@ -3492,7 +3499,7 @@ REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
 
 GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
     79,
-    source_ref="who-global-health-estimates-2024",
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Global life expectancy (2024)",
     display_name="Global Life Expectancy (2024)",
@@ -3505,7 +3512,7 @@ GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
 
 REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
     6,
-    source_ref="who-gbd-2024",
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Pre-death suffering period for regulatory delay deaths (average years lived with untreated condition)",
     display_name="Pre-Death Suffering Period for Regulatory Delay Deaths",
@@ -3517,7 +3524,7 @@ REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
 
 CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
     0.35,
-    source_ref="who-gbd-2024",
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
     source_type="external",
     description="Disability weight for untreated chronic conditions (WHO Global Burden of Disease)",
     display_name="Disability Weight for Untreated Chronic Conditions",
@@ -4534,7 +4541,7 @@ if __name__ == "__main__":
 # Reference VSL values (for comparisons)
 US_DOT_VALUE_OF_STATISTICAL_LIFE = Parameter(
     13_600_000,
-    source_ref="us-dot-value-statistical-life",
+    source_ref=ReferenceID.DOT_VSL_13_6M,
     source_type="external",
     description="US Department of Transportation value of statistical life",
     display_name="US Department of Transportation Value of Statistical Life",
@@ -4544,7 +4551,7 @@ US_DOT_VALUE_OF_STATISTICAL_LIFE = Parameter(
 
 VSL_EPA = Parameter(
     9_600_000,
-    source_ref="epa-value-statistical-life",
+    source_ref=ReferenceID.EPA_VSL_9_6M,
     source_type="external",
     description="EPA value of statistical life",
     display_name="EPA Value of Statistical Life",
@@ -4569,7 +4576,7 @@ GLOBAL_WAR_DIRECT_COST_PER_SECOND = Parameter(
 # Refugee parameters
 GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 = Parameter(
     108_400_000,
-    source_ref="unhcr-global-displacement-2023",
+    source_ref=ReferenceID.UNHCR_FORCIBLY_DISPLACED_2023,
     source_type="external",
     description="Global forcibly displaced people in 2023",
     display_name="Global Forcibly Displaced People in 2023",
@@ -4579,7 +4586,7 @@ GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 = Parameter(
 
 GLOBAL_COST_PER_REFUGEE_PER_YEAR_AVERAGE = Parameter(
     1384,
-    source_ref="unhcr-refugee-cost-per-year",
+    source_ref=ReferenceID.UNHCR_REFUGEE_SUPPORT_COST,
     source_type="external",
     description="Average annual cost per refugee globally",
     display_name="Average Annual Cost per Refugee Globally",
@@ -4635,7 +4642,7 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
 # Specific budget items from text
 GLOBAL_NUCLEAR_WEAPONS_ANNUAL_BUDGET_INCREASE = Parameter(
     42_000_000_000,
-    source_ref="global-nuclear-weapons-budget-increase",
+    source_ref=ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B,
     source_type="external",
     description="Annual increase in global nuclear weapons budget",
     display_name="Annual Increase in Global Nuclear Weapons Budget",
@@ -4650,7 +4657,7 @@ GLOBAL_NUCLEAR_WEAPONS_ANNUAL_BUDGET_INCREASE = Parameter(
 # Military Spending Breakdown (billions USD)
 GLOBAL_ANNUAL_MILITARY_SPENDING_PERSONNEL_2024 = Parameter(
     681_500_000_000,
-    source_ref="global-military-spending",
+    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending on personnel in 2024",
     display_name="Global Military Spending on Personnel in 2024",
@@ -4660,7 +4667,7 @@ GLOBAL_ANNUAL_MILITARY_SPENDING_PERSONNEL_2024 = Parameter(
 
 GLOBAL_ANNUAL_MILITARY_SPENDING_PROCUREMENT_2024 = Parameter(
     654_300_000_000,
-    source_ref="global-military-spending",
+    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending on procurement in 2024",
     display_name="Global Military Spending on Procurement in 2024",
@@ -4670,7 +4677,7 @@ GLOBAL_ANNUAL_MILITARY_SPENDING_PROCUREMENT_2024 = Parameter(
 
 GLOBAL_ANNUAL_MILITARY_SPENDING_OPS_MAINTENANCE_2024 = Parameter(
     579_800_000_000,
-    source_ref="global-military-spending",
+    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending on operations and maintenance in 2024",
     display_name="Global Military Spending on Operations and Maintenance in 2024",
@@ -4680,7 +4687,7 @@ GLOBAL_ANNUAL_MILITARY_SPENDING_OPS_MAINTENANCE_2024 = Parameter(
 
 GLOBAL_ANNUAL_MILITARY_SPENDING_INFRASTRUCTURE_2024 = Parameter(
     520_400_000_000,
-    source_ref="global-military-spending",
+    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending on infrastructure in 2024",
     display_name="Global Military Spending on Infrastructure in 2024",
@@ -4690,7 +4697,7 @@ GLOBAL_ANNUAL_MILITARY_SPENDING_INFRASTRUCTURE_2024 = Parameter(
 
 GLOBAL_ANNUAL_MILITARY_SPENDING_INTELLIGENCE_2024 = Parameter(
     282_000_000_000,
-    source_ref="global-military-spending",
+    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
     source_type="external",
     description="Global military spending on intelligence in 2024",
     display_name="Global Military Spending on Intelligence in 2024",
@@ -4711,7 +4718,7 @@ GLOBAL_EDUCATION_FOR_ALL_COST = Parameter(
 
 GLOBAL_POVERTY_ERADICATION_COST_TOTAL = Parameter(
     1_000_000_000_000,
-    source_ref="world-bank-poverty-eradication",
+    source_ref=ReferenceID.WORLD_BANK_POVERTY_ERADICATION_COST,
     source_type="external",
     description="Total cost to eradicate global poverty",
     display_name="Total Cost to Eradicate Global Poverty",
@@ -4721,7 +4728,7 @@ GLOBAL_POVERTY_ERADICATION_COST_TOTAL = Parameter(
 
 ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
     0.6,
-    source_ref="economic-multiplier-military",
+    source_ref=ReferenceID.MILITARY_SPENDING_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for military spending (0.6x ROI)",
     display_name="Economic Multiplier for Military Spending",
@@ -4731,7 +4738,7 @@ ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
 
 ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT = Parameter(
     1.6,
-    source_ref="economic-multiplier-infrastructure",
+    source_ref=ReferenceID.INFRASTRUCTURE_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for infrastructure investment (1.6x ROI)",
     display_name="Economic Multiplier for Infrastructure Investment",
@@ -4741,7 +4748,7 @@ ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT = Parameter(
 
 ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT = Parameter(
     2.1,
-    source_ref="economic-multiplier-education",
+    source_ref=ReferenceID.EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for education investment (2.1x ROI)",
     display_name="Economic Multiplier for Education Investment",
@@ -4751,7 +4758,7 @@ ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT = Parameter(
 
 ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
     4.3,
-    source_ref="economic-multiplier-healthcare",
+    source_ref=ReferenceID.HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER,
     source_type="external",
     description="Economic multiplier for healthcare investment (4.3x ROI)",
     display_name="Economic Multiplier for Healthcare Investment",
@@ -4762,7 +4769,7 @@ ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
 # Refugee Parameters
 REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL = Parameter(
     23400,
-    source_ref="refugee-lost-earnings",
+    source_ref=ReferenceID.REFUGEE_LOST_EARNING_POTENTIAL,
     source_type="external",
     description="Average annual lost earning potential per refugee",
     display_name="Average Annual Lost Earning Potential per Refugee",
@@ -4784,7 +4791,7 @@ REFUGEE_LOST_PRODUCTIVITY_GLOBAL_TOTAL = Parameter(
 # Contextual / Comparison Parameters
 GLOBAL_GDP_2023 = Parameter(
     89_500_000_000_000,
-    source_ref="global-gdp",
+    source_ref=ReferenceID.GLOBAL_GDP,
     source_type="external",
     description="Global GDP in 2023 for comparison",
     display_name="Global GDP in 2023 for Comparison",
@@ -4820,16 +4827,6 @@ TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY = Parameter(
     keywords=["140.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
 )  # billions USD, for bribing the masses (voting bloc build)
 
-TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
-    280_000_000,
-    source_ref="/knowledge/strategy/roadmap.qmd#voting-bloc",
-    source_type="calculated",
-    description="Target voting bloc size for campaign",
-    display_name="Target Voting Bloc Size for Campaign",
-    unit="of people",
-    keywords=["280.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
-)  # millions of people, target voting bloc size
-
 TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
     800_000_000,
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
@@ -4842,13 +4839,25 @@ TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
 
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     0.035,
-    source_ref="3-5-percent-rule-social-change",
+    source_ref=ReferenceID._3_5_RULE,
     source_type="external",
     description="Critical mass threshold for social change (3.5% rule)",
     display_name="Critical Mass Threshold for Social Change",
     unit="rate",
     keywords=["4%", "people", "worldwide", "citizens", "individuals", "inhabitants", "persons"]
 )  # 3.5% rule for social change, key tipping point
+
+TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
+    GLOBAL_POPULATION_2024 * GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
+    source_ref="/knowledge/strategy/roadmap.qmd#voting-bloc",
+    source_type="calculated",
+    description="Target voting bloc size for campaign (3.5% of global population - critical mass for social change)",
+    display_name="Target Voting Bloc Size for Campaign",
+    unit="of people",
+    formula="GLOBAL_POPULATION × 3.5%",
+    latex=r"VotingBloc = 8.0B \times 0.035 = 280M",
+    keywords=["280.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
+)  # 280M people = 3.5% of 8B (critical mass threshold)
 
 TREATY_CAMPAIGN_COST_PER_VOTE_MIN_USD = Parameter(
     0.20,
@@ -5280,7 +5289,7 @@ VICTORY_RESERVE_REALISTIC = Parameter(
 # Clinical Trial Cost Examples & Comparisons
 TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K = Parameter(
     48000,
-    source_ref="clinical-trial-cost-per-patient",
+    source_ref=ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT,
     source_type="external",
     description="Example Phase 3 trial cost per patient ($48K)",
     display_name="Example Phase 3 Trial Cost per Patient",
@@ -5290,7 +5299,7 @@ TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K = Parameter(
 
 TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K = Parameter(
     41000,
-    source_ref="fda-clinical-trial-costs",
+    source_ref=ReferenceID.TRIAL_COSTS_FDA_STUDY,
     source_type="external",
     description="FDA cited Phase 3 cost per patient ($41K)",
     display_name="FDA Cited Phase 3 Cost per Patient",
@@ -5323,7 +5332,7 @@ DEATH_SPENDING_MISALLOCATION_FACTOR = Parameter(
 
 POST_WW2_MILITARY_CUT_PCT = Parameter(
     0.30,
-    source_ref="post-ww2-military-demobilization",
+    source_ref=ReferenceID.US_POST_WWII_MILITARY_SPENDING_CUT,
     source_type="external",
     description="Percentage military spending cut after WW2 (historical precedent)",
     display_name="Percentage Military Spending Cut After WW2",
@@ -5333,7 +5342,7 @@ POST_WW2_MILITARY_CUT_PCT = Parameter(
 
 SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
     0.007,
-    source_ref="switzerland-defense-spending-gdp",
+    source_ref=ReferenceID.SWISS_MILITARY_BUDGET_0_7_PCT_GDP,
     source_type="external",
     description="Switzerland's defense spending as percentage of GDP (0.7%)",
     display_name="Switzerland's Defense Spending as Percentage of GDP",
@@ -5343,7 +5352,7 @@ SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
 
 SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
     93_000,
-    source_ref="switzerland-gdp-per-capita",
+    source_ref=ReferenceID.SWISS_VS_US_GDP_PER_CAPITA,
     source_type="external",
     description="Switzerland GDP per capita",
     display_name="Switzerland GDP per Capita",
@@ -5353,7 +5362,7 @@ SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
 
 LOBBYING_ROI_DEFENSE = Parameter(
     1813,
-    source_ref="defense-lobbying-roi",
+    source_ref=ReferenceID.MILITARY_LOBBYING_RETURNS,
     source_type="external",
     description="Return on investment for defense lobbying ($1,813 returned per $1 spent)",
     display_name="Return on Investment for Defense Lobbying",
@@ -5363,7 +5372,7 @@ LOBBYING_ROI_DEFENSE = Parameter(
 
 WW2_BOND_RETURN_PCT = Parameter(
     0.04,
-    source_ref="ww2-war-bonds-return",
+    source_ref=ReferenceID.WWII_WAR_BONDS,
     source_type="external",
     description="World War II war bond return percentage (4%)",
     display_name="World War Ii War Bond Return Percentage",
@@ -5373,7 +5382,7 @@ WW2_BOND_RETURN_PCT = Parameter(
 
 AVERAGE_MARKET_RETURN_PCT = Parameter(
     0.10,
-    source_ref="average-stock-market-return",
+    source_ref=ReferenceID.WARREN_BUFFETT_CAREER_AVERAGE_RETURN_20_PCT,
     source_type="external",
     description="Average annual stock market return (10%)",
     display_name="Average Annual Stock Market Return",
@@ -5427,7 +5436,7 @@ LOBBYIST_BOND_INVESTMENT_MAX = Parameter(
 
 LOBBYIST_SALARY_TYPICAL_K = Parameter(
     500_000,
-    source_ref="average-lobbyist-salary",
+    source_ref=ReferenceID.LOBBYIST_STATISTICS_DC,
     source_type="external",
     description="Typical annual lobbyist salary for comparison",
     display_name="Typical Annual Lobbyist Salary for Comparison",
@@ -5437,7 +5446,7 @@ LOBBYIST_SALARY_TYPICAL_K = Parameter(
 
 LOBBYIST_SALARY_MIN_K = Parameter(
     500_000,
-    source_ref="average-lobbyist-salary",
+    source_ref=ReferenceID.LOBBYIST_STATISTICS_DC,
     source_type="external",
     description="Minimum annual lobbyist salary range",
     display_name="Minimum Annual Lobbyist Salary Range",
@@ -5447,7 +5456,7 @@ LOBBYIST_SALARY_MIN_K = Parameter(
 
 LOBBYIST_SALARY_MAX = Parameter(
     2_000_000,
-    source_ref="average-lobbyist-salary",
+    source_ref=ReferenceID.LOBBYIST_STATISTICS_DC,
     source_type="external",
     description="Maximum annual lobbyist salary range",
     display_name="Maximum Annual Lobbyist Salary Range",
@@ -6267,7 +6276,7 @@ US_CHRONIC_DISEASE_SPENDING_ANNUAL = Parameter(
 )  # $4.1T/year CDC estimate
 
 US_POPULATION_2024 = Parameter(
-    335e6, source_ref="us-population-335m", source_type="external", description="US population in 2024", unit="people",
+    335e6, source_ref=ReferenceID.US_VOTER_POPULATION, source_type="external", description="US population in 2024", unit="people",
     display_name="US Population in 2024",
     keywords=["2024", "335.0m", "people", "citizens", "individuals", "inhabitants", "persons"]
 )
@@ -6285,7 +6294,7 @@ PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
 # Mental health constants
 US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
     350e9,
-    source_ref="us-mental-health-cost",
+    source_ref=ReferenceID.MENTAL_HEALTH_BURDEN,
     source_type="external",
     description="US mental health costs (treatment + productivity loss)",
     display_name="US Mental Health Costs",
@@ -6305,7 +6314,7 @@ PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
 
 MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
     2000,
-    source_ref="mental-health-productivity-loss",
+    source_ref=ReferenceID.MENTAL_HEALTH_BURDEN,
     source_type="external",
     description="Annual productivity loss per capita from mental health issues (beyond treatment costs)",
     display_name="Annual Productivity Loss per Capita from Mental Health Issues",
@@ -6316,7 +6325,7 @@ MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
 # Caregiver time constants (simple model - deprecated, use detailed model below)
 CAREGIVER_HOURS_PER_MONTH = Parameter(
     20,
-    source_ref="average-family-caregiving-hours",
+    source_ref=ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE,
     source_type="external",
     description="Average monthly hours of unpaid family caregiving in US",
     display_name="Average Monthly Hours of Unpaid Family Caregiving in US",
@@ -6326,7 +6335,7 @@ CAREGIVER_HOURS_PER_MONTH = Parameter(
 
 CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
     25,
-    source_ref="caregiver-replacement-cost",
+    source_ref=ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE,
     source_type="external",
     description="Estimated replacement cost per hour of caregiving",
     display_name="Estimated Replacement Cost per Hour of Caregiving",
@@ -6704,7 +6713,7 @@ US_MEDIAN_SALARY = Parameter(
 
 PRODUCTIVITY_LOSS_PER_AFFECTED_EMPLOYEE = Parameter(
     4798,
-    source_ref="chronic-illness-productivity-loss-ibi",
+    source_ref=ReferenceID.CHRONIC_ILLNESS_WORKFORCE_PRODUCTIVITY_LOSS,
     source_type="external",
     description="Annual productivity loss per affected employee (IBI 2024)",
     display_name="Annual Productivity Loss per Affected Employee",
@@ -7127,7 +7136,7 @@ if __name__ == "__main__":
 # Death rates per 100,000:
 CARDIOVASCULAR_DEATH_RATE = Parameter(
     162.1 + 39.0,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Cardiovascular disease death rate (heart disease + stroke)",
     display_name="Cardiovascular Disease Death Rate",
@@ -7137,7 +7146,7 @@ CARDIOVASCULAR_DEATH_RATE = Parameter(
 
 CANCER_DEATH_RATE = Parameter(
     146.6,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Cancer death rate (all cancers)",
     display_name="Cancer Death Rate",
@@ -7147,7 +7156,7 @@ CANCER_DEATH_RATE = Parameter(
 
 RESPIRATORY_DEATH_RATE = Parameter(
     33.4,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Chronic respiratory disease death rate",
     display_name="Chronic Respiratory Disease Death Rate",
@@ -7157,7 +7166,7 @@ RESPIRATORY_DEATH_RATE = Parameter(
 
 ALZHEIMERS_DEATH_RATE = Parameter(
     27.7,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Alzheimer's disease death rate",
     display_name="Alzheimer's Disease Death Rate",
@@ -7167,7 +7176,7 @@ ALZHEIMERS_DEATH_RATE = Parameter(
 
 DIABETES_DEATH_RATE = Parameter(
     22.4,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Diabetes death rate",
     display_name="Diabetes Death Rate",
@@ -7177,7 +7186,7 @@ DIABETES_DEATH_RATE = Parameter(
 
 KIDNEY_DISEASE_DEATH_RATE = Parameter(
     13.1,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Kidney disease death rate",
     display_name="Kidney Disease Death Rate",
@@ -7187,7 +7196,7 @@ KIDNEY_DISEASE_DEATH_RATE = Parameter(
 
 LIVER_DISEASE_DEATH_RATE = Parameter(
     13.0,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Liver disease death rate",
     display_name="Liver Disease Death Rate",
@@ -7199,7 +7208,7 @@ INFECTIONS_DEATH_RATE = 15.0  # Estimate (flu, pneumonia, sepsis)
 
 ACCIDENTS_DEATH_RATE = Parameter(
     62.3,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Accidental/unintentional injury death rate",
     display_name="Accidental/Unintentional Injury Death Rate",
@@ -7209,7 +7218,7 @@ ACCIDENTS_DEATH_RATE = Parameter(
 
 OTHER_DEATH_RATE = Parameter(
     250.0,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Other causes death rate per 100,000 population",
     display_name="Other Causes Death Rate",
@@ -7219,7 +7228,7 @@ OTHER_DEATH_RATE = Parameter(
 
 TOTAL_DEATH_RATE = Parameter(
     722.0,
-    source_ref="cdc-leading-causes-death",
+    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
     source_type="external",
     description="Overall age-adjusted death rate",
     display_name="Overall Age-Adjusted Death Rate",
@@ -7640,6 +7649,139 @@ PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT = calculate_personal_lifetime_wealt
 PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT[
     "total_lifetime_benefit"
 ]
+
+
+# ==============================================================================
+# INCENTIVE ALIGNMENT PARAMETERS
+# ==============================================================================
+# Parameters showing how different stakeholders benefit from the DIH/dFDA system
+# Source: knowledge/solution/aligning-incentives.qmd
+
+# ---
+# PHARMACEUTICAL ECONOMICS
+# ---
+# Current pharma business model vs. DIH/dFDA payment reversal
+
+PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
+    2_600_000_000,
+    source_ref=ReferenceID.DRUG_DEVELOPMENT_COST,
+    source_type="external",
+    description="Average cost to develop one drug in current system",
+    display_name="Pharma Drug Development Cost (Current System)",
+    unit="USD",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["pharma", "drug", "development", "cost", "r&d", "current"]
+)
+
+PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
+    0.10,
+    source_ref=ReferenceID.DRUG_TRIAL_SUCCESS_RATE_12_PCT,
+    source_type="external",
+    description="Percentage of drugs that reach market in current system",
+    display_name="Pharma Drug Success Rate (Current System)",
+    unit="percentage",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["pharma", "drug", "success", "rate", "approval", "current"]
+)
+
+PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(
+    6_700_000_000,
+    source_ref="pharma-drug-revenue-average",
+    source_type="external",
+    description="Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)",
+    display_name="Pharma Average Drug Revenue (Current System)",
+    unit="USD",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["pharma", "drug", "revenue", "lifetime", "current"]
+)
+
+PHARMA_ROI_CURRENT_SYSTEM_PCT = Parameter(
+    (PHARMA_DRUG_REVENUE_AVERAGE_CURRENT - PHARMA_DRUG_DEVELOPMENT_COST_CURRENT) / PHARMA_DRUG_DEVELOPMENT_COST_CURRENT,
+    source_ref="/knowledge/solution/aligning-incentives.qmd#pharma",
+    source_type="calculated",
+    description="ROI for drug development in current system (negative)",
+    display_name="Pharma ROI (Current System)",
+    unit="percentage",
+    formula="(REVENUE - COST) / COST",
+    latex=r"ROI_{current} = (\$1B - \$2.6B) / \$2.6B = -61.5\%",
+    confidence="medium",
+    keywords=["pharma", "roi", "current", "system", "loss"]
+)
+
+# NOTE: DIH system doesn't magically increase drug efficacy success rates
+# What changes: trials are MUCH cheaper (eliminate $48k/participant cost), faster trials,
+# more attempts possible, rare diseases become viable
+# What doesn't change: underlying biology of whether drugs work
+# Main benefit: Cost elimination ($48k → ~$0 per participant) + some unknown profit margin
+
+# ---
+# DISEASE ANNUAL COSTS (FOR INSURANCE ECONOMICS)
+# ---
+# Annual US costs for major diseases, showing insurance company savings potential
+
+US_DIABETES_ANNUAL_COST = Parameter(
+    327_000_000_000,
+    source_ref=ReferenceID.DISEASE_COST_DIABETES_1500B,
+    source_type="external",
+    description="Annual US cost of diabetes (direct and indirect)",
+    display_name="US Diabetes Annual Cost",
+    unit="USD",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["insurance", "diabetes", "cost", "annual", "us", "disease", "burden"]
+)
+
+US_ALZHEIMERS_ANNUAL_COST = Parameter(
+    355_000_000_000,
+    source_ref=ReferenceID.DISEASE_COST_ALZHEIMERS_1300B,
+    source_type="external",
+    description="Annual US cost of Alzheimer's disease (direct and indirect)",
+    display_name="US Alzheimer's Annual Cost",
+    unit="USD",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["insurance", "alzheimer", "dementia", "cost", "annual", "us", "disease", "burden"]
+)
+
+US_HEART_DISEASE_ANNUAL_COST = Parameter(
+    363_000_000_000,
+    source_ref=ReferenceID.DISEASE_COST_HEART_DISEASE_2100B,
+    source_type="external",
+    description="Annual US cost of heart disease and stroke (direct and indirect)",
+    display_name="US Heart Disease Annual Cost",
+    unit="USD",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["insurance", "heart", "cardiovascular", "stroke", "cost", "annual", "us", "disease", "burden"]
+)
+
+US_CANCER_ANNUAL_COST = Parameter(
+    208_000_000_000,
+    source_ref=ReferenceID.DISEASE_COST_CANCER_1800B,
+    source_type="external",
+    description="Annual US cost of cancer (direct and indirect)",
+    display_name="US Cancer Annual Cost",
+    unit="USD",
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["insurance", "cancer", "oncology", "cost", "annual", "us", "disease", "burden"]
+)
+
+US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
+    US_DIABETES_ANNUAL_COST + US_ALZHEIMERS_ANNUAL_COST + US_HEART_DISEASE_ANNUAL_COST + US_CANCER_ANNUAL_COST,
+    source_ref="/knowledge/solution/aligning-incentives.qmd#insurance-companies",
+    source_type="calculated",
+    description="Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)",
+    display_name="US Major Diseases Total Annual Cost",
+    unit="USD",
+    formula="DIABETES + ALZHEIMERS + HEART + CANCER",
+    latex=r"Total = \$327B + \$355B + \$363B + \$208B = \$1.253T",
+    confidence="high",
+    keywords=["insurance", "disease", "cost", "annual", "us", "total", "burden"]
+)
 
 
 if __name__ == "__main__":
