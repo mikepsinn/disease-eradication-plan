@@ -24,7 +24,7 @@ This appendix provides comprehensive documentation of all parameters and calcula
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
 ::: {.callout-tip icon=false collapse=false}
-## Accidents Death Rate {#sec-accidents_death_rate}
+## Accidental/Unintentional Injury Death Rate {#sec-accidents_death_rate}
 
 **Value**: 62.3
 
@@ -37,7 +37,7 @@ Accidental/unintentional injury death rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Alzheimers Death Rate {#sec-alzheimers_death_rate}
+## Alzheimer's Disease Death Rate {#sec-alzheimers_death_rate}
 
 **Value**: 27.7
 
@@ -50,7 +50,7 @@ Alzheimer's disease death rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Antibiotics Life Extension Years {#sec-antibiotics_life_extension_years}
+## Life Extension from Antibiotics {#sec-antibiotics_life_extension_years}
 
 **Value**: 10
 
@@ -63,7 +63,7 @@ Life extension from antibiotics (conservative mid-range from 5-23 years)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Average Market Return % {#sec-average_market_return_pct}
+## Average Annual Stock Market Return {#sec-average_market_return_pct}
 
 **Value**: 10%
 
@@ -89,7 +89,7 @@ Average US hourly wage
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Baseline Lives Saved Annual {#sec-baseline_lives_saved_annual}
+## Baseline Annual Lives Saved by Pharmaceuticals {#sec-baseline_lives_saved_annual}
 
 **Value**: 12
 
@@ -102,7 +102,7 @@ Baseline annual lives saved by pharmaceuticals (conservative aggregate)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Biometric Verification Cost Per User High Usd {#sec-biometric_verification_cost_per_user_high_usd}
+## Biometric KYC Verification Cost at Medium Volume (High Estimate) {#sec-biometric_verification_cost_per_user_high_usd}
 
 **Value**: $0
 
@@ -115,7 +115,7 @@ Biometric KYC verification cost at medium volume
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Biometric Verification Cost Per User Low Usd {#sec-biometric_verification_cost_per_user_low_usd}
+## Biometric KYC Verification Cost at High Volume (Low Estimate) {#sec-biometric_verification_cost_per_user_low_usd}
 
 **Value**: $0
 
@@ -128,7 +128,7 @@ Biometric KYC verification cost at high volume (300M+ scale)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Book Reading Speed Wpm {#sec-book_reading_speed_wpm}
+## Average Reading Speed {#sec-book_reading_speed_wpm}
 
 **Value**: 200
 
@@ -154,7 +154,7 @@ Cancer death rate (all cancers)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Cardiovascular Death Rate {#sec-cardiovascular_death_rate}
+## Cardiovascular Disease Death Rate {#sec-cardiovascular_death_rate}
 
 **Value**: 201
 
@@ -167,7 +167,7 @@ Cardiovascular disease death rate (heart disease + stroke)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Caregiver Annual Value Total {#sec-caregiver_annual_value_total}
+## Total Annual Value of Unpaid Caregiving in US {#sec-caregiver_annual_value_total}
 
 **Value**: $600B
 
@@ -180,7 +180,7 @@ Total annual value of unpaid caregiving in US
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Caregiver Count US {#sec-caregiver_count_us}
+## Number of Unpaid Caregivers in US {#sec-caregiver_count_us}
 
 **Value**: 38M
 
@@ -193,7 +193,7 @@ Number of unpaid caregivers in US
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Caregiver Hours Per Month {#sec-caregiver_hours_per_month}
+## Average Monthly Hours of Unpaid Family Caregiving in US {#sec-caregiver_hours_per_month}
 
 **Value**: 20
 
@@ -206,7 +206,7 @@ Average monthly hours of unpaid family caregiving in US
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Caregiver Hours Per Week Avg {#sec-caregiver_hours_per_week_avg}
+## Average Weekly Hours of Unpaid Caregiving {#sec-caregiver_hours_per_week_avg}
 
 **Value**: 25.5
 
@@ -219,7 +219,7 @@ Average weekly hours of unpaid caregiving (25-26 hours/week)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Caregiver Value Per Hour {#sec-caregiver_value_per_hour}
+## AARP Valuation of Caregiving per Hour {#sec-caregiver_value_per_hour}
 
 **Value**: $17
 
@@ -232,7 +232,7 @@ AARP valuation of caregiving per hour
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Caregiver Value Per Hour Simple {#sec-caregiver_value_per_hour_simple}
+## Estimated Replacement Cost per Hour of Caregiving {#sec-caregiver_value_per_hour_simple}
 
 **Value**: $25
 
@@ -245,7 +245,7 @@ Estimated replacement cost per hour of caregiving
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Childhood Vaccination Annual Benefit {#sec-childhood_vaccination_annual_benefit}
+## Estimated Annual Global Economic Benefit from Childhood Vaccination Programs {#sec-childhood_vaccination_annual_benefit}
 
 **Value**: $15B
 
@@ -258,7 +258,7 @@ Estimated annual global economic benefit from childhood vaccination programs (me
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Childhood Vaccination ROI {#sec-childhood_vaccination_roi}
+## Return on Investment from Childhood Vaccination Programs {#sec-childhood_vaccination_roi}
 
 **Value**: 13
 
@@ -271,7 +271,7 @@ Return on investment from childhood vaccination programs
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Current Active Trials {#sec-current_active_trials}
+## Current Active Trials at Any Given Time {#sec-current_active_trials}
 
 **Value**: 10,000
 
@@ -297,7 +297,7 @@ Current clinical trial participation rate (0.06% of population)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Current Disease Patients Global {#sec-current_disease_patients_global}
+## Global Population with Chronic Diseases {#sec-current_disease_patients_global}
 
 **Value**: 2.40B
 
@@ -310,7 +310,7 @@ Global population with chronic diseases
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Current Drug Approvals Per Year {#sec-current_drug_approvals_per_year}
+## Average Annual New Drug Approvals Globally {#sec-current_drug_approvals_per_year}
 
 **Value**: 50
 
@@ -323,7 +323,7 @@ Average annual new drug approvals globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Current Patient Eligibility Rate {#sec-current_patient_eligibility_rate}
+## Current Patient Eligibility Rate for Clinical Trials {#sec-current_patient_eligibility_rate}
 
 **Value**: 0.2%
 
@@ -336,7 +336,7 @@ Current patient eligibility rate for clinical trials (0.2%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Current Trials Per Year {#sec-current_trials_per_year}
+## Current Global Clinical Trials per Year {#sec-current_trials_per_year}
 
 **Value**: 3,300
 
@@ -375,7 +375,7 @@ Current trial completion rate (60%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Current Trial Slots Available {#sec-current_trial_slots_available}
+## Total Trial Slots Available for 2.4b Sick People {#sec-current_trial_slots_available}
 
 **Value**: 5.00M
 
@@ -388,7 +388,7 @@ Total trial slots available for 2.4B sick people
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Defense Lobbying Annual {#sec-defense_lobbying_annual}
+## Annual Defense Industry Lobbying Spending {#sec-defense_lobbying_annual}
 
 **Value**: $127M
 
@@ -414,7 +414,7 @@ Diabetes death rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Diabetes Treatment Monthly Cost {#sec-diabetes_treatment_monthly_cost}
+## Average Monthly Cost of Diabetes Treatment per Patient {#sec-diabetes_treatment_monthly_cost}
 
 **Value**: $500
 
@@ -427,7 +427,7 @@ Average monthly cost of diabetes treatment per patient
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Economic Multiplier Education Investment {#sec-economic_multiplier_education_investment}
+## Economic Multiplier for Education Investment {#sec-economic_multiplier_education_investment}
 
 **Value**: 2.1
 
@@ -440,7 +440,7 @@ Economic multiplier for education investment (2.1x ROI)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Economic Multiplier Healthcare Investment {#sec-economic_multiplier_healthcare_investment}
+## Economic Multiplier for Healthcare Investment {#sec-economic_multiplier_healthcare_investment}
 
 **Value**: 4.3
 
@@ -453,7 +453,7 @@ Economic multiplier for healthcare investment (4.3x ROI)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Economic Multiplier Infrastructure Investment {#sec-economic_multiplier_infrastructure_investment}
+## Economic Multiplier for Infrastructure Investment {#sec-economic_multiplier_infrastructure_investment}
 
 **Value**: 1.6
 
@@ -466,7 +466,7 @@ Economic multiplier for infrastructure investment (1.6x ROI)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Economic Multiplier Military Spending {#sec-economic_multiplier_military_spending}
+## Economic Multiplier for Military Spending {#sec-economic_multiplier_military_spending}
 
 **Value**: 0.6
 
@@ -479,7 +479,7 @@ Economic multiplier for military spending (0.6x ROI)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Efficacy Lag Years {#sec-efficacy_lag_years}
+## Regulatory Delay for Efficacy Testing Post-Safety Verification {#sec-efficacy_lag_years}
 
 **Value**: 8.2
 
@@ -492,7 +492,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Givewell Cost Per Life Avg {#sec-givewell_cost_per_life_avg}
+## Givewell Average Cost per Life Saved Across Top Charities {#sec-givewell_cost_per_life_avg}
 
 **Value**: $4.50K
 
@@ -505,7 +505,7 @@ GiveWell average cost per life saved across top charities
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Givewell Cost Per Life Max {#sec-givewell_cost_per_life_max}
+## Givewell Cost per Life Saved (Maximum) {#sec-givewell_cost_per_life_max}
 
 **Value**: $5.50K
 
@@ -518,7 +518,7 @@ GiveWell cost per life saved (Against Malaria Foundation)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Givewell Cost Per Life Min {#sec-givewell_cost_per_life_min}
+## Givewell Cost per Life Saved (Minimum) {#sec-givewell_cost_per_life_min}
 
 **Value**: $3.50K
 
@@ -531,7 +531,7 @@ GiveWell cost per life saved (Helen Keller International)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Conflict Deaths Active Combat {#sec-global_annual_conflict_deaths_active_combat}
+## Annual Deaths from Active Combat Worldwide {#sec-global_annual_conflict_deaths_active_combat}
 
 **Value**: 234K
 
@@ -544,7 +544,7 @@ Annual deaths from active combat worldwide
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Conflict Deaths State Violence {#sec-global_annual_conflict_deaths_state_violence}
+## Annual Deaths from State Violence {#sec-global_annual_conflict_deaths_state_violence}
 
 **Value**: 2,700
 
@@ -557,7 +557,7 @@ Annual deaths from state violence
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Conflict Deaths Terror Attacks {#sec-global_annual_conflict_deaths_terror_attacks}
+## Annual Deaths from Terror Attacks Globally {#sec-global_annual_conflict_deaths_terror_attacks}
 
 **Value**: 8,300
 
@@ -570,7 +570,7 @@ Annual deaths from terror attacks globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Environmental Damage Conflict {#sec-global_annual_environmental_damage_conflict}
+## Annual Environmental Damage and Restoration Costs from Conflict {#sec-global_annual_environmental_damage_conflict}
 
 **Value**: $100B
 
@@ -583,7 +583,7 @@ Annual environmental damage and restoration costs from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Infrastructure Damage Communications Conflict {#sec-global_annual_infrastructure_damage_communications_conflict}
+## Annual Infrastructure Damage to Communications from Conflict {#sec-global_annual_infrastructure_damage_communications_conflict}
 
 **Value**: $298B
 
@@ -596,7 +596,7 @@ Annual infrastructure damage to communications from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Infrastructure Damage Education Conflict {#sec-global_annual_infrastructure_damage_education_conflict}
+## Annual Infrastructure Damage to Education Facilities from Conflict {#sec-global_annual_infrastructure_damage_education_conflict}
 
 **Value**: $234B
 
@@ -609,7 +609,7 @@ Annual infrastructure damage to education facilities from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Infrastructure Damage Energy Conflict {#sec-global_annual_infrastructure_damage_energy_conflict}
+## Annual Infrastructure Damage to Energy Systems from Conflict {#sec-global_annual_infrastructure_damage_energy_conflict}
 
 **Value**: $422B
 
@@ -622,7 +622,7 @@ Annual infrastructure damage to energy systems from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Infrastructure Damage Healthcare Conflict {#sec-global_annual_infrastructure_damage_healthcare_conflict}
+## Annual Infrastructure Damage to Healthcare Facilities from Conflict {#sec-global_annual_infrastructure_damage_healthcare_conflict}
 
 **Value**: $166B
 
@@ -635,7 +635,7 @@ Annual infrastructure damage to healthcare facilities from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Infrastructure Damage Transportation Conflict {#sec-global_annual_infrastructure_damage_transportation_conflict}
+## Annual Infrastructure Damage to Transportation from Conflict {#sec-global_annual_infrastructure_damage_transportation_conflict}
 
 **Value**: $487B
 
@@ -648,7 +648,7 @@ Annual infrastructure damage to transportation from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Infrastructure Damage Water Conflict {#sec-global_annual_infrastructure_damage_water_conflict}
+## Annual Infrastructure Damage to Water Systems from Conflict {#sec-global_annual_infrastructure_damage_water_conflict}
 
 **Value**: $268B
 
@@ -661,7 +661,7 @@ Annual infrastructure damage to water systems from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Lives Saved By Med Research {#sec-global_annual_lives_saved_by_med_research}
+## Annual Lives Saved by Medical Research Globally {#sec-global_annual_lives_saved_by_med_research}
 
 **Value**: 4.20M
 
@@ -674,7 +674,7 @@ Annual lives saved by medical research globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Lost Economic Growth Military Spending {#sec-global_annual_lost_economic_growth_military_spending}
+## Annual Lost Economic Growth from Military Spending Opportunity Cost {#sec-global_annual_lost_economic_growth_military_spending}
 
 **Value**: $2.72T
 
@@ -687,7 +687,7 @@ Annual lost economic growth from military spending opportunity cost
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Lost Human Capital Conflict {#sec-global_annual_lost_human_capital_conflict}
+## Annual Lost Productivity from Conflict Casualties {#sec-global_annual_lost_human_capital_conflict}
 
 **Value**: $300B
 
@@ -700,7 +700,7 @@ Annual lost productivity from conflict casualties
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Military Spending Infrastructure 2024 {#sec-global_annual_military_spending_infrastructure_2024}
+## Global Military Spending on Infrastructure in 2024 {#sec-global_annual_military_spending_infrastructure_2024}
 
 **Value**: $520B
 
@@ -713,7 +713,7 @@ Global military spending on infrastructure in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Military Spending Intelligence 2024 {#sec-global_annual_military_spending_intelligence_2024}
+## Global Military Spending on Intelligence in 2024 {#sec-global_annual_military_spending_intelligence_2024}
 
 **Value**: $282B
 
@@ -726,7 +726,7 @@ Global military spending on intelligence in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Military Spending Ops Maintenance 2024 {#sec-global_annual_military_spending_ops_maintenance_2024}
+## Global Military Spending on Operations and Maintenance in 2024 {#sec-global_annual_military_spending_ops_maintenance_2024}
 
 **Value**: $580B
 
@@ -739,7 +739,7 @@ Global military spending on operations and maintenance in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Military Spending Personnel 2024 {#sec-global_annual_military_spending_personnel_2024}
+## Global Military Spending on Personnel in 2024 {#sec-global_annual_military_spending_personnel_2024}
 
 **Value**: $682B
 
@@ -752,7 +752,7 @@ Global military spending on personnel in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Military Spending Procurement 2024 {#sec-global_annual_military_spending_procurement_2024}
+## Global Military Spending on Procurement in 2024 {#sec-global_annual_military_spending_procurement_2024}
 
 **Value**: $654B
 
@@ -765,7 +765,7 @@ Global military spending on procurement in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Psychological Impact Costs Conflict {#sec-global_annual_psychological_impact_costs_conflict}
+## Annual PTSD and Mental Health Costs from Conflict {#sec-global_annual_psychological_impact_costs_conflict}
 
 **Value**: $232B
 
@@ -778,7 +778,7 @@ Annual PTSD and mental health costs from conflict
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Refugee Support Costs {#sec-global_annual_refugee_support_costs}
+## Annual Refugee Support Costs {#sec-global_annual_refugee_support_costs}
 
 **Value**: $150B
 
@@ -791,7 +791,7 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Trade Disruption Currency Conflict {#sec-global_annual_trade_disruption_currency_conflict}
+## Annual Trade Disruption Costs from Currency Instability {#sec-global_annual_trade_disruption_currency_conflict}
 
 **Value**: $57.4B
 
@@ -804,7 +804,7 @@ Annual trade disruption costs from currency instability
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Trade Disruption Energy Price Conflict {#sec-global_annual_trade_disruption_energy_price_conflict}
+## Annual Trade Disruption Costs from Energy Price Volatility {#sec-global_annual_trade_disruption_energy_price_conflict}
 
 **Value**: $125B
 
@@ -817,7 +817,7 @@ Annual trade disruption costs from energy price volatility
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Trade Disruption Shipping Conflict {#sec-global_annual_trade_disruption_shipping_conflict}
+## Annual Trade Disruption Costs from Shipping Disruptions {#sec-global_annual_trade_disruption_shipping_conflict}
 
 **Value**: $247B
 
@@ -830,7 +830,7 @@ Annual trade disruption costs from shipping disruptions
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Trade Disruption Supply Chain Conflict {#sec-global_annual_trade_disruption_supply_chain_conflict}
+## Annual Trade Disruption Costs from Supply Chain Disruptions {#sec-global_annual_trade_disruption_supply_chain_conflict}
 
 **Value**: $187B
 
@@ -843,7 +843,7 @@ Annual trade disruption costs from supply chain disruptions
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Annual Veteran Healthcare Costs {#sec-global_annual_veteran_healthcare_costs}
+## Annual Veteran Healthcare Costs {#sec-global_annual_veteran_healthcare_costs}
 
 **Value**: $200B
 
@@ -856,7 +856,7 @@ Annual veteran healthcare costs (20-year projected)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Clinical Trials Spending Annual {#sec-global_clinical_trials_spending_annual}
+## Annual Global Spending on Clinical Trials {#sec-global_clinical_trials_spending_annual}
 
 **Value**: $83B
 
@@ -869,7 +869,7 @@ Annual global spending on clinical trials
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Clinical Trial Market Annual {#sec-global_clinical_trial_market_annual}
+## Global Clinical Trial Market Size {#sec-global_clinical_trial_market_annual}
 
 **Value**: $100B
 
@@ -882,7 +882,7 @@ Global clinical trial market size
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Cost Per Refugee Per Year Average {#sec-global_cost_per_refugee_per_year_average}
+## Average Annual Cost per Refugee Globally {#sec-global_cost_per_refugee_per_year_average}
 
 **Value**: $1.38K
 
@@ -895,7 +895,7 @@ Average annual cost per refugee globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Daily Deaths Curable Diseases {#sec-global_daily_deaths_curable_diseases}
+## Daily Deaths from Curable Diseases Globally {#sec-global_daily_deaths_curable_diseases}
 
 **Value**: 150K
 
@@ -908,7 +908,7 @@ Daily deaths from curable diseases globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Disease Economic Burden Annual {#sec-global_disease_economic_burden_annual}
+## Total Economic Burden of Disease Globally {#sec-global_disease_economic_burden_annual}
 
 **Value**: $109T
 
@@ -921,7 +921,7 @@ Total economic burden of disease globally (lost productivity, mortality, disabil
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Education For All Cost {#sec-global_education_for_all_cost}
+## Global Cost to Achieve Universal Education {#sec-global_education_for_all_cost}
 
 **Value**: $30B
 
@@ -934,7 +934,7 @@ Global cost to achieve universal education
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Forcibly Displaced People 2023 {#sec-global_forcibly_displaced_people_2023}
+## Global Forcibly Displaced People in 2023 {#sec-global_forcibly_displaced_people_2023}
 
 **Value**: 108M
 
@@ -947,7 +947,7 @@ Global forcibly displaced people in 2023
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global GDP 2023 {#sec-global_gdp_2023}
+## Global GDP in 2023 for Comparison {#sec-global_gdp_2023}
 
 **Value**: $89.5T
 
@@ -960,7 +960,7 @@ Global GDP in 2023 for comparison
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global GDP 2024 {#sec-global_gdp_2024}
+## Global GDP in 2024 {#sec-global_gdp_2024}
 
 **Value**: $111T
 
@@ -973,7 +973,7 @@ Global GDP in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Healthcare Spending Annual 2024 {#sec-global_healthcare_spending_annual_2024}
+## Global Healthcare Spending in 2024 {#sec-global_healthcare_spending_annual_2024}
 
 **Value**: $9.80T
 
@@ -986,7 +986,7 @@ Global healthcare spending in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Med Research Spending {#sec-global_med_research_spending}
+## Global Government Medical Research Spending {#sec-global_med_research_spending}
 
 **Value**: $67.5B
 
@@ -999,7 +999,7 @@ Global government medical research spending
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Military Spending Annual 2024 {#sec-global_military_spending_annual_2024}
+## Global Military Spending in 2024 {#sec-global_military_spending_annual_2024}
 
 **Value**: $2.72T
 
@@ -1012,7 +1012,7 @@ Global military spending in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Nuclear Weapons Annual Budget Increase {#sec-global_nuclear_weapons_annual_budget_increase}
+## Annual Increase in Global Nuclear Weapons Budget {#sec-global_nuclear_weapons_annual_budget_increase}
 
 **Value**: $42B
 
@@ -1025,7 +1025,7 @@ Annual increase in global nuclear weapons budget
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Population 2024 {#sec-global_population_2024}
+## Global Population in 2024 {#sec-global_population_2024}
 
 **Value**: 8.00B
 
@@ -1038,7 +1038,7 @@ Global population in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Population Activism Threshold % {#sec-global_population_activism_threshold_pct}
+## Critical Mass Threshold for Social Change {#sec-global_population_activism_threshold_pct}
 
 **Value**: 3.5%
 
@@ -1051,7 +1051,7 @@ Critical mass threshold for social change (3.5% rule)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Poverty Eradication Cost Total {#sec-global_poverty_eradication_cost_total}
+## Total Cost to Eradicate Global Poverty {#sec-global_poverty_eradication_cost_total}
 
 **Value**: $1.00T
 
@@ -1064,7 +1064,7 @@ Total cost to eradicate global poverty
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Global Symptomatic Disease Treatment Annual {#sec-global_symptomatic_disease_treatment_annual}
+## Annual Global Spending on Symptomatic Disease Treatment {#sec-global_symptomatic_disease_treatment_annual}
 
 **Value**: $8.20T
 
@@ -1103,7 +1103,7 @@ Liver disease death rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Lobbying ROI Defense {#sec-lobbying_roi_defense}
+## Return on Investment for Defense Lobbying {#sec-lobbying_roi_defense}
 
 **Value**: 1,813
 
@@ -1116,7 +1116,7 @@ Return on investment for defense lobbying ($1,813 returned per $1 spent)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Lobbyist Salary Max {#sec-lobbyist_salary_max}
+## Maximum Annual Lobbyist Salary Range {#sec-lobbyist_salary_max}
 
 **Value**: $2.00M
 
@@ -1129,7 +1129,7 @@ Maximum annual lobbyist salary range
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Lobbyist Salary Min K {#sec-lobbyist_salary_min_k}
+## Minimum Annual Lobbyist Salary Range {#sec-lobbyist_salary_min_k}
 
 **Value**: $500K
 
@@ -1142,7 +1142,7 @@ Minimum annual lobbyist salary range
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Lobbyist Salary Typical K {#sec-lobbyist_salary_typical_k}
+## Typical Annual Lobbyist Salary for Comparison {#sec-lobbyist_salary_typical_k}
 
 **Value**: $500K
 
@@ -1155,7 +1155,7 @@ Typical annual lobbyist salary for comparison
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Measles Vaccination ROI {#sec-measles_vaccination_roi}
+## Return on Investment from Measles Vaccination Programs {#sec-measles_vaccination_roi}
 
 **Value**: 14
 
@@ -1168,7 +1168,7 @@ Return on investment from measles (MMR) vaccination programs
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Medical Facility Hourly Room Cost {#sec-medical_facility_hourly_room_cost}
+## Average Hourly Cost of Medical Facility Room {#sec-medical_facility_hourly_room_cost}
 
 **Value**: $500
 
@@ -1181,7 +1181,7 @@ Average hourly cost of medical facility room
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Mental Health Grants Annual {#sec-mental_health_grants_annual}
+## Annual Mental Health Research Grants Total {#sec-mental_health_grants_annual}
 
 **Value**: $500M
 
@@ -1194,7 +1194,7 @@ Annual mental health research grants total
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Mental Health Productivity Loss Per Capita {#sec-mental_health_productivity_loss_per_capita}
+## Annual Productivity Loss per Capita from Mental Health Issues {#sec-mental_health_productivity_loss_per_capita}
 
 **Value**: $2.00K
 
@@ -1207,7 +1207,7 @@ Annual productivity loss per capita from mental health issues (beyond treatment 
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Petition Signature Cost Per Verified 2024 {#sec-petition_signature_cost_per_verified_2024}
+## Average Cost per Verified Petition Signature in 2024 US Campaigns {#sec-petition_signature_cost_per_verified_2024}
 
 **Value**: $15
 
@@ -1220,7 +1220,7 @@ Average cost per verified petition signature in 2024 US campaigns
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Phase 1 Safety Duration Years {#sec-phase_1_safety_duration_years}
+## Phase I Safety Trial Duration {#sec-phase_1_safety_duration_years}
 
 **Value**: 2.3
 
@@ -1233,7 +1233,7 @@ Phase I safety trial duration
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Phase 3 Trial Cost Max {#sec-phase_3_trial_cost_max}
+## Phase 3 Trial Total Cost (Maximum) {#sec-phase_3_trial_cost_max}
 
 **Value**: $282M
 
@@ -1246,7 +1246,7 @@ Phase 3 trial total cost (maximum)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Phase 3 Trial Cost Min {#sec-phase_3_trial_cost_min}
+## Phase 3 Trial Total Cost (Minimum) {#sec-phase_3_trial_cost_min}
 
 **Value**: $20M
 
@@ -1259,7 +1259,7 @@ Phase 3 trial total cost (minimum)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Polio Vaccination ROI {#sec-polio_vaccination_roi}
+## Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs {#sec-polio_vaccination_roi}
 
 **Value**: 39
 
@@ -1272,7 +1272,7 @@ Return on investment from sustaining polio vaccination assets and integrating in
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Political Success Probability Conservative {#sec-political_success_probability_conservative}
+## Conservative Estimate of Political Success Probability {#sec-political_success_probability_conservative}
 
 **Value**: 0.1
 
@@ -1285,7 +1285,7 @@ Conservative estimate of political success probability (10%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Political Success Probability Moderate {#sec-political_success_probability_moderate}
+## Moderate Estimate of Political Success Probability {#sec-political_success_probability_moderate}
 
 **Value**: 0.25
 
@@ -1298,7 +1298,7 @@ Moderate estimate of political success probability (25%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Political Success Probability Optimistic {#sec-political_success_probability_optimistic}
+## Optimistic Estimate of Political Success Probability {#sec-political_success_probability_optimistic}
 
 **Value**: 0.5
 
@@ -1311,7 +1311,7 @@ Optimistic estimate of political success probability (50%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Post Ww2 Military Cut % {#sec-post_ww2_military_cut_pct}
+## Percentage Military Spending Cut After WW2 {#sec-post_ww2_military_cut_pct}
 
 **Value**: 30%
 
@@ -1324,7 +1324,7 @@ Percentage military spending cut after WW2 (historical precedent)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Productivity Loss Per Affected Employee {#sec-productivity_loss_per_affected_employee}
+## Annual Productivity Loss per Affected Employee {#sec-productivity_loss_per_affected_employee}
 
 **Value**: $4.80K
 
@@ -1337,7 +1337,7 @@ Annual productivity loss per affected employee (IBI 2024)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Rare Diseases Count Global {#sec-rare_diseases_count_global}
+## Total Number of Rare Diseases Globally {#sec-rare_diseases_count_global}
 
 **Value**: 7,000
 
@@ -1350,7 +1350,7 @@ Total number of rare diseases globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Rare Disease Typical Patient Count {#sec-rare_disease_typical_patient_count}
+## Typical Patient Count for Rare Diseases {#sec-rare_disease_typical_patient_count}
 
 **Value**: 500
 
@@ -1363,7 +1363,7 @@ Typical patient count for rare diseases
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Recovery Trial Cost Per Patient {#sec-recovery_trial_cost_per_patient}
+## Recovery Trial Cost per Patient {#sec-recovery_trial_cost_per_patient}
 
 **Value**: $500
 
@@ -1376,7 +1376,7 @@ RECOVERY trial cost per patient
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Referral Payment Early Adopters Usd {#sec-referral_payment_early_adopters_usd}
+## Referral Payment for Early Adopters {#sec-referral_payment_early_adopters_usd}
 
 **Value**: $0
 
@@ -1389,7 +1389,7 @@ Referral payment for early adopters (first 10M, motivated believers)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Referral Payment Laggards Usd {#sec-referral_payment_laggards_usd}
+## Referral Payment for Laggards {#sec-referral_payment_laggards_usd}
 
 **Value**: $2
 
@@ -1402,7 +1402,7 @@ Referral payment for laggards (200-280M, resistant)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Referral Payment Late Majority Usd {#sec-referral_payment_late_majority_usd}
+## Referral Payment for Late Majority {#sec-referral_payment_late_majority_usd}
 
 **Value**: $1
 
@@ -1415,7 +1415,7 @@ Referral payment for late majority (100-200M, skeptics)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Referral Payment Mainstream Usd {#sec-referral_payment_mainstream_usd}
+## Referral Payment for Mainstream Adopters {#sec-referral_payment_mainstream_usd}
 
 **Value**: $0
 
@@ -1428,7 +1428,7 @@ Referral payment for mainstream adopters (10-100M, pragmatists)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Refugee Lost Earning Potential Per Capita Annual {#sec-refugee_lost_earning_potential_per_capita_annual}
+## Average Annual Lost Earning Potential per Refugee {#sec-refugee_lost_earning_potential_per_capita_annual}
 
 **Value**: $23.4K
 
@@ -1441,7 +1441,7 @@ Average annual lost earning potential per refugee
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Respiratory Death Rate {#sec-respiratory_death_rate}
+## Chronic Respiratory Disease Death Rate {#sec-respiratory_death_rate}
 
 **Value**: 33.4
 
@@ -1454,7 +1454,7 @@ Chronic respiratory disease death rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Smallpox Eradication ROI {#sec-smallpox_eradication_roi}
+## Return on Investment from Smallpox Eradication Campaign {#sec-smallpox_eradication_roi}
 
 **Value**: 280
 
@@ -1467,7 +1467,7 @@ Return on investment from smallpox eradication campaign
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Software Tool Monthly Cost Max {#sec-software_tool_monthly_cost_max}
+## Maximum Monthly Cost for Software Tools/Services {#sec-software_tool_monthly_cost_max}
 
 **Value**: $2.00K
 
@@ -1480,7 +1480,7 @@ Maximum monthly cost for software tools/services
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Software Tool Monthly Cost Min {#sec-software_tool_monthly_cost_min}
+## Minimum Monthly Cost for Software Tools/Services {#sec-software_tool_monthly_cost_min}
 
 **Value**: $500
 
@@ -1493,7 +1493,7 @@ Minimum monthly cost for software tools/services
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Standard Economic QALY Value Usd {#sec-standard_economic_qaly_value_usd}
+## Standard Economic Value per QALY {#sec-standard_economic_qaly_value_usd}
 
 **Value**: $150K
 
@@ -1506,7 +1506,7 @@ Standard economic value per QALY
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Standard QALYs Per Life Saved {#sec-standard_qalys_per_life_saved}
+## Standard QALYs per Life Saved {#sec-standard_qalys_per_life_saved}
 
 **Value**: 35
 
@@ -1519,7 +1519,7 @@ Standard QALYs per life saved (WHO life tables)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Sugar Subsidy Cost Per Person Annual {#sec-sugar_subsidy_cost_per_person_annual}
+## Annual Cost of Sugar Subsidies per Person {#sec-sugar_subsidy_cost_per_person_annual}
 
 **Value**: $10
 
@@ -1532,7 +1532,7 @@ Annual cost of sugar subsidies per person
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Switzerland Defense Spending % {#sec-switzerland_defense_spending_pct}
+## Switzerland's Defense Spending as Percentage of GDP {#sec-switzerland_defense_spending_pct}
 
 **Value**: 0.7%
 
@@ -1545,7 +1545,7 @@ Switzerland's defense spending as percentage of GDP (0.7%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Switzerland GDP Per Capita K {#sec-switzerland_gdp_per_capita_k}
+## Switzerland GDP per Capita {#sec-switzerland_gdp_per_capita_k}
 
 **Value**: $93K
 
@@ -1558,7 +1558,7 @@ Switzerland GDP per capita
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Terrorism Deaths 911 {#sec-terrorism_deaths_911}
+## Deaths from 9/11 Terrorist Attacks {#sec-terrorism_deaths_911}
 
 **Value**: 2,996
 
@@ -1571,7 +1571,7 @@ Deaths from 9/11 terrorist attacks
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Total Death Rate {#sec-total_death_rate}
+## Overall Age-Adjusted Death Rate {#sec-total_death_rate}
 
 **Value**: 722
 
@@ -1584,7 +1584,7 @@ Overall age-adjusted death rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Total Medical Advances 1900 2000 {#sec-total_medical_advances_1900_2000}
+## Total Life Expectancy Gain from All Medical Advances 1900-2000 {#sec-total_medical_advances_1900_2000}
 
 **Value**: 35
 
@@ -1597,7 +1597,7 @@ Total life expectancy gain from all medical advances 1900-2000 (vaccines + hygie
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Large Trial Size {#sec-traditional_large_trial_size}
+## Typical Phase 3 Trial Size {#sec-traditional_large_trial_size}
 
 **Value**: 1,000
 
@@ -1610,7 +1610,7 @@ Typical Phase 3 trial size
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Phase2 Cost Per Patient High {#sec-traditional_phase2_cost_per_patient_high}
+## Phase 2 Cost per Patient (High Estimate) {#sec-traditional_phase2_cost_per_patient_high}
 
 **Value**: $120K
 
@@ -1623,7 +1623,7 @@ Phase 2 cost per patient (high estimate)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Phase2 Cost Per Patient Low {#sec-traditional_phase2_cost_per_patient_low}
+## Phase 2 Cost per Patient (Low Estimate) {#sec-traditional_phase2_cost_per_patient_low}
 
 **Value**: $40K
 
@@ -1636,7 +1636,7 @@ Phase 2 cost per patient (low estimate)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Phase3 Cost Per Patient {#sec-traditional_phase3_cost_per_patient}
+## Phase 3 Cost per Patient {#sec-traditional_phase3_cost_per_patient}
 
 **Value**: $80K
 
@@ -1649,7 +1649,7 @@ Phase 3 cost per patient (median)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Phase3 Cost Per Patient Example 48k {#sec-traditional_phase3_cost_per_patient_example_48k}
+## Example Phase 3 Trial Cost per Patient {#sec-traditional_phase3_cost_per_patient_example_48k}
 
 **Value**: $48K
 
@@ -1662,7 +1662,7 @@ Example Phase 3 trial cost per patient ($48K)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Phase3 Cost Per Patient FDA Example 41k {#sec-traditional_phase3_cost_per_patient_fda_example_41k}
+## FDA Cited Phase 3 Cost per Patient {#sec-traditional_phase3_cost_per_patient_fda_example_41k}
 
 **Value**: $41K
 
@@ -1675,7 +1675,7 @@ FDA cited Phase 3 cost per patient ($41K)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Traditional Small Trial Size {#sec-traditional_small_trial_size}
+## Typical Phase 2 Trial Size {#sec-traditional_small_trial_size}
 
 **Value**: 100
 
@@ -1688,7 +1688,7 @@ Typical Phase 2 trial size
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Treatment Acceleration Years Current {#sec-treatment_acceleration_years_current}
+## Traditional FDA Drug Development Timeline {#sec-treatment_acceleration_years_current}
 
 **Value**: 17
 
@@ -1701,7 +1701,7 @@ Traditional FDA drug development timeline
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Trial Cost Reduction Factor {#sec-trial_cost_reduction_factor}
+## Cost Reduction Factor Demonstrated by Recovery Trial {#sec-trial_cost_reduction_factor}
 
 **Value**: 82
 
@@ -1727,7 +1727,7 @@ Typical CEO hourly rate
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Annual Drug Spending {#sec-us_annual_drug_spending}
+## Annual US Pharmaceutical Spending {#sec-us_annual_drug_spending}
 
 **Value**: $360B
 
@@ -1740,7 +1740,7 @@ Annual US pharmaceutical spending
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Chronic Disease Spending Annual {#sec-us_chronic_disease_spending_annual}
+## US Annual Chronic Disease Spending {#sec-us_chronic_disease_spending_annual}
 
 **Value**: $4.10T
 
@@ -1753,7 +1753,7 @@ US annual chronic disease spending
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Defense Budget Annual {#sec-us_defense_budget_annual}
+## US Defense Budget in 2024 {#sec-us_defense_budget_annual}
 
 **Value**: $877B
 
@@ -1766,7 +1766,7 @@ US defense budget in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Dot Value Of Statistical Life {#sec-us_dot_value_of_statistical_life}
+## US Department of Transportation Value of Statistical Life {#sec-us_dot_value_of_statistical_life}
 
 **Value**: $13.6M
 
@@ -1779,7 +1779,7 @@ US Department of Transportation value of statistical life
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Drug Price Multiplier Vs Peer Countries {#sec-us_drug_price_multiplier_vs_peer_countries}
+## US Drug Prices Compared to Peer Countries Multiplier {#sec-us_drug_price_multiplier_vs_peer_countries}
 
 **Value**: 2.78
 
@@ -1792,7 +1792,7 @@ US drug prices compared to peer countries multiplier
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Median Salary {#sec-us_median_salary}
+## US Median Salary in 2024 {#sec-us_median_salary}
 
 **Value**: $59.4K
 
@@ -1805,7 +1805,7 @@ US median salary in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Mental Health Cost Annual {#sec-us_mental_health_cost_annual}
+## US Mental Health Costs {#sec-us_mental_health_cost_annual}
 
 **Value**: $350B
 
@@ -1818,7 +1818,7 @@ US mental health costs (treatment + productivity loss)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Military Spending % GDP {#sec-us_military_spending_pct_gdp}
+## US Military Spending as Percentage of GDP {#sec-us_military_spending_pct_gdp}
 
 **Value**: 3.5%
 
@@ -1831,7 +1831,7 @@ US military spending as percentage of GDP (2024)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## US Population 2024 {#sec-us_population_2024}
+## US Population in 2024 {#sec-us_population_2024}
 
 **Value**: 335M
 
@@ -1844,7 +1844,7 @@ US population in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Value Of Statistical Life {#sec-value_of_statistical_life}
+## Value of Statistical Life {#sec-value_of_statistical_life}
 
 **Value**: $10M
 
@@ -1857,7 +1857,7 @@ Value of Statistical Life (conservative estimate)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Verification Conversion Rate Good Ux {#sec-verification_conversion_rate_good_ux}
+## Identity Verification Completion Rate with Good UX {#sec-verification_conversion_rate_good_ux}
 
 **Value**: 85%
 
@@ -1870,7 +1870,7 @@ Identity verification completion rate with good UX (fintech data)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Verification Conversion Rate Poor Ux {#sec-verification_conversion_rate_poor_ux}
+## Identity Verification Completion Rate with Poor UX {#sec-verification_conversion_rate_poor_ux}
 
 **Value**: 50%
 
@@ -1883,7 +1883,7 @@ Identity verification completion rate with poor UX
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## VSL EPA {#sec-vsl_epa}
+## EPA Value of Statistical Life {#sec-vsl_epa}
 
 **Value**: $9.60M
 
@@ -1896,7 +1896,7 @@ EPA value of statistical life
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Water Fluoridation ROI {#sec-water_fluoridation_roi}
+## Return on Investment from Water Fluoridation Programs {#sec-water_fluoridation_roi}
 
 **Value**: 23
 
@@ -1909,7 +1909,7 @@ Return on investment from water fluoridation programs
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Workforce Chronic Illness Prevalence {#sec-workforce_chronic_illness_prevalence}
+## Workforce with at Least One Chronic Condition {#sec-workforce_chronic_illness_prevalence}
 
 **Value**: 78.4%
 
@@ -1922,7 +1922,7 @@ Workforce with at least one chronic condition (78.4%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Workforce With Productivity Loss {#sec-workforce_with_productivity_loss}
+## Percentage of Workforce Experiencing Productivity Loss from Chronic Illness {#sec-workforce_with_productivity_loss}
 
 **Value**: 28%
 
@@ -1935,7 +1935,7 @@ Percentage of workforce experiencing productivity loss from chronic illness (28%
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Ww2 Bond Return % {#sec-ww2_bond_return_pct}
+## World War Ii War Bond Return Percentage {#sec-ww2_bond_return_pct}
 
 **Value**: 4%
 
@@ -1952,7 +1952,7 @@ World War II war bond return percentage (4%)
 Parameters derived from mathematical formulas and economic models.
 
 ::: {.callout-note icon=false collapse=false}
-## Action Time Invest Minutes {#sec-action_time_invest_minutes}
+## Time to Invest (Minimum) {#sec-action_time_invest_minutes}
 
 **Value**: 10
 
@@ -1965,7 +1965,7 @@ Time to invest (minutes)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Action Time Recruit Minutes {#sec-action_time_recruit_minutes}
+## Time to Recruit Others (Minimum) {#sec-action_time_recruit_minutes}
 
 **Value**: 15
 
@@ -1978,7 +1978,7 @@ Time to recruit others (minutes)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Action Time Total Hours {#sec-action_time_total_hours}
+## Total Action Time in Hours {#sec-action_time_total_hours}
 
 **Value**: 0.45
 
@@ -1995,7 +1995,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Action Time Total Minutes {#sec-action_time_total_minutes}
+## Total Time for All Three Actions (Minimum) {#sec-action_time_total_minutes}
 
 **Value**: 27
 
@@ -2012,7 +2012,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Action Time Vote Minutes {#sec-action_time_vote_minutes}
+## Time to Vote (Minimum) {#sec-action_time_vote_minutes}
 
 **Value**: 2
 
@@ -2025,7 +2025,7 @@ Time to vote (minutes)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Alzheimer Cure Bounty Estimate {#sec-alzheimer_cure_bounty_estimate}
+## Estimated Bounty Value for Alzheimer's Cure {#sec-alzheimer_cure_bounty_estimate}
 
 **Value**: $10B
 
@@ -2038,7 +2038,7 @@ Estimated bounty value for Alzheimer's cure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Drug Price Reduction Annual {#sec-benefit_drug_price_reduction_annual}
+## Annual Benefit from R&D Savings Passed to Consumers {#sec-benefit_drug_price_reduction_annual}
 
 **Value**: $100B
 
@@ -2051,7 +2051,7 @@ Annual benefit from R&D savings passed to consumers
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Earlier Drug Access Annual {#sec-benefit_earlier_drug_access_annual}
+## Annual Benefit from 7-Year Drug Access Acceleration {#sec-benefit_earlier_drug_access_annual}
 
 **Value**: $300B
 
@@ -2064,7 +2064,7 @@ Annual benefit from 7-year drug access acceleration
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Medical Research Acceleration Annual {#sec-benefit_medical_research_acceleration_annual}
+## Annual Benefit from 115x Research Capacity Increase {#sec-benefit_medical_research_acceleration_annual}
 
 **Value**: $100B
 
@@ -2077,7 +2077,7 @@ Annual benefit from 115x research capacity increase
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Mental Health Annual {#sec-benefit_mental_health_annual}
+## Annual Benefit from Mental Health Treatment Gap Reduction {#sec-benefit_mental_health_annual}
 
 **Value**: $75B
 
@@ -2090,7 +2090,7 @@ Annual benefit from mental health treatment gap reduction
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Prevention Annual {#sec-benefit_prevention_annual}
+## Annual Benefit from Economic Viability of Prevention {#sec-benefit_prevention_annual}
 
 **Value**: $100B
 
@@ -2103,7 +2103,7 @@ Annual benefit from economic viability of prevention
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Benefit Rare Diseases Annual {#sec-benefit_rare_diseases_annual}
+## Annual Benefit from Orphan Drug Viability {#sec-benefit_rare_diseases_annual}
 
 **Value**: $400B
 
@@ -2116,7 +2116,7 @@ Annual benefit from orphan drug viability
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Book Reading Time Hours {#sec-book_reading_time_hours}
+## Time to Read the Entire Book {#sec-book_reading_time_hours}
 
 **Value**: 14.3
 
@@ -2133,7 +2133,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Celebrity Endorsement {#sec-campaign_celebrity_endorsement}
+## Celebrity and Influencer Endorsements {#sec-campaign_celebrity_endorsement}
 
 **Value**: $15M
 
@@ -2146,7 +2146,7 @@ Celebrity and influencer endorsements
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Community Organizing {#sec-campaign_community_organizing}
+## Community Organizing and Ambassador Program Budget {#sec-campaign_community_organizing}
 
 **Value**: $30M
 
@@ -2159,7 +2159,7 @@ Community organizing and ambassador program budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Contingency {#sec-campaign_contingency}
+## Contingency Fund for Unexpected Costs {#sec-campaign_contingency}
 
 **Value**: $50M
 
@@ -2172,7 +2172,7 @@ Contingency fund for unexpected costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Defense Conversion {#sec-campaign_defense_conversion}
+## Defense Industry Conversion Program {#sec-campaign_defense_conversion}
 
 **Value**: $50M
 
@@ -2185,7 +2185,7 @@ Defense industry conversion program
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Defense Lobbyist Budget {#sec-campaign_defense_lobbyist_budget}
+## Budget for Co-Opting Defense Industry Lobbyists {#sec-campaign_defense_lobbyist_budget}
 
 **Value**: $50M
 
@@ -2198,7 +2198,7 @@ Budget for co-opting defense industry lobbyists
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Healthcare Alignment {#sec-campaign_healthcare_alignment}
+## Healthcare Industry Alignment and Partnerships {#sec-campaign_healthcare_alignment}
 
 **Value**: $35M
 
@@ -2211,7 +2211,7 @@ Healthcare industry alignment and partnerships
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Infrastructure {#sec-campaign_infrastructure}
+## Campaign Operational Infrastructure {#sec-campaign_infrastructure}
 
 **Value**: $20M
 
@@ -2224,7 +2224,7 @@ Campaign operational infrastructure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Legal Ai Budget {#sec-campaign_legal_ai_budget}
+## AI-Assisted Legal Work Budget {#sec-campaign_legal_ai_budget}
 
 **Value**: $50M
 
@@ -2237,7 +2237,7 @@ AI-assisted legal work budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Legal Defense {#sec-campaign_legal_defense}
+## Legal Defense Fund {#sec-campaign_legal_defense}
 
 **Value**: $20M
 
@@ -2250,7 +2250,7 @@ Legal defense fund
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Legal Work {#sec-campaign_legal_work}
+## Legal Drafting and Compliance Work {#sec-campaign_legal_work}
 
 **Value**: $60M
 
@@ -2263,7 +2263,7 @@ Legal drafting and compliance work
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Lobbying EU {#sec-campaign_lobbying_eu}
+## EU Lobbying Campaign Budget {#sec-campaign_lobbying_eu}
 
 **Value**: $40M
 
@@ -2276,7 +2276,7 @@ EU lobbying campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Lobbying G20 Millions {#sec-campaign_lobbying_g20_millions}
+## G20 Countries Lobbying Budget {#sec-campaign_lobbying_g20_millions}
 
 **Value**: $35M
 
@@ -2289,7 +2289,7 @@ G20 countries lobbying budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Lobbying US {#sec-campaign_lobbying_us}
+## US Lobbying Campaign Budget {#sec-campaign_lobbying_us}
 
 **Value**: $50M
 
@@ -2302,7 +2302,7 @@ US lobbying campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Media Budget Max {#sec-campaign_media_budget_max}
+## Maximum Mass Media Campaign Budget {#sec-campaign_media_budget_max}
 
 **Value**: $1.00B
 
@@ -2315,7 +2315,7 @@ Maximum mass media campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Media Budget Min {#sec-campaign_media_budget_min}
+## Minimum Mass Media Campaign Budget {#sec-campaign_media_budget_min}
 
 **Value**: $500M
 
@@ -2328,7 +2328,7 @@ Minimum mass media campaign budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Opposition Research {#sec-campaign_opposition_research}
+## Opposition Research and Rapid Response {#sec-campaign_opposition_research}
 
 **Value**: $25M
 
@@ -2341,7 +2341,7 @@ Opposition research and rapid response
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Phase1 Budget {#sec-campaign_phase1_budget}
+## Phase 1 Campaign Budget {#sec-campaign_phase1_budget}
 
 **Value**: $200M
 
@@ -2354,7 +2354,7 @@ Phase 1 campaign budget (Foundation, Year 1)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Phase2 Budget {#sec-campaign_phase2_budget}
+## Phase 2 Campaign Budget {#sec-campaign_phase2_budget}
 
 **Value**: $500M
 
@@ -2367,7 +2367,7 @@ Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Pilot Programs {#sec-campaign_pilot_programs}
+## Pilot Program Testing in Small Countries {#sec-campaign_pilot_programs}
 
 **Value**: $30M
 
@@ -2380,7 +2380,7 @@ Pilot program testing in small countries
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Platform Development {#sec-campaign_platform_development}
+## Voting Platform and Technology Development {#sec-campaign_platform_development}
 
 **Value**: $35M
 
@@ -2393,7 +2393,7 @@ Voting platform and technology development
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Regulatory Navigation {#sec-campaign_regulatory_navigation}
+## Regulatory Compliance and Navigation {#sec-campaign_regulatory_navigation}
 
 **Value**: $20M
 
@@ -2406,7 +2406,7 @@ Regulatory compliance and navigation
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Scaling Prep {#sec-campaign_scaling_prep}
+## Scaling Preparation and Blueprints {#sec-campaign_scaling_prep}
 
 **Value**: $30M
 
@@ -2419,7 +2419,7 @@ Scaling preparation and blueprints
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Staff Budget {#sec-campaign_staff_budget}
+## Campaign Core Team Staff Budget {#sec-campaign_staff_budget}
 
 **Value**: $40M
 
@@ -2432,7 +2432,7 @@ Campaign core team staff budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Super Pac Budget {#sec-campaign_super_pac_budget}
+## Super PAC Campaign Expenditures {#sec-campaign_super_pac_budget}
 
 **Value**: $30M
 
@@ -2445,7 +2445,7 @@ Super PAC campaign expenditures
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Tech Partnerships {#sec-campaign_tech_partnerships}
+## Tech Industry Partnerships and Infrastructure {#sec-campaign_tech_partnerships}
 
 **Value**: $25M
 
@@ -2458,7 +2458,7 @@ Tech industry partnerships and infrastructure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Treaty Implementation {#sec-campaign_treaty_implementation}
+## Post-Victory Treaty Implementation Support {#sec-campaign_treaty_implementation}
 
 **Value**: $40M
 
@@ -2471,7 +2471,7 @@ Post-victory treaty implementation support
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Viral Content Budget {#sec-campaign_viral_content_budget}
+## Viral Marketing Content Creation Budget {#sec-campaign_viral_content_budget}
 
 **Value**: $40M
 
@@ -2484,7 +2484,7 @@ Viral marketing content creation budget
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Campaign Weekly Ad Cost K {#sec-campaign_weekly_ad_cost_k}
+## Weekly Advertising Cost for Campaigns {#sec-campaign_weekly_ad_cost_k}
 
 **Value**: $500K
 
@@ -2497,7 +2497,7 @@ Weekly advertising cost for campaigns
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Combined Peace Health Dividends Annual For ROI Calc {#sec-combined_peace_health_dividends_annual_for_roi_calc}
+## Combined Peace and Health Dividends for ROI Calculation {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 **Value**: $164B
 
@@ -2514,7 +2514,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Completed Trials Multiplier Actual {#sec-completed_trials_multiplier_actual}
+## Actual Completed Trials Multiplier {#sec-completed_trials_multiplier_actual}
 
 **Value**: 180
 
@@ -2527,7 +2527,7 @@ Actual completed trials multiplier (180x theoretical)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Completed Trials Multiplier Conservative {#sec-completed_trials_multiplier_conservative}
+## Conservative Completed Trials Multiplier Accounting for Scale-Up {#sec-completed_trials_multiplier_conservative}
 
 **Value**: 115
 
@@ -2544,7 +2544,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Completed Trials Multiplier Theoretical Max {#sec-completed_trials_multiplier_theoretical_max}
+## Theoretical Maximum Research Capacity Multiplier (Maximum) {#sec-completed_trials_multiplier_theoretical_max}
 
 **Value**: 560
 
@@ -2559,7 +2559,7 @@ Theoretical maximum research capacity multiplier (25×10×1.6×1.4)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Completion Rate Improvement Multiplier {#sec-completion_rate_improvement_multiplier}
+## Completion Rate Improvement {#sec-completion_rate_improvement_multiplier}
 
 **Value**: 1.6
 
@@ -2593,7 +2593,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Cost Of Delay Deaths Per Second {#sec-cost_of_delay_deaths_per_second}
+## Preventable Deaths per Second from Curable Diseases {#sec-cost_of_delay_deaths_per_second}
 
 **Value**: 1.74
 
@@ -2610,7 +2610,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Cost Of Delay QALY Days Per Second {#sec-cost_of_delay_qaly_days_per_second}
+## QALY-Days Lost per Second of Inaction {#sec-cost_of_delay_qaly_days_per_second}
 
 **Value**: 8.04e-05
 
@@ -2627,7 +2627,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Cost Per Life Investor Funded {#sec-cost_per_life_investor_funded}
+## Cost per Life for Investor-Funded Scenario {#sec-cost_per_life_investor_funded}
 
 **Value**: $-7
 
@@ -2640,7 +2640,7 @@ Cost per life for investor-funded scenario
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Cost Per Life Opportunity Cost {#sec-cost_per_life_opportunity_cost}
+## Cost per Life Counting Military Spending Opportunity Cost {#sec-cost_per_life_opportunity_cost}
 
 **Value**: $-5
 
@@ -2653,7 +2653,7 @@ Cost per life counting military spending opportunity cost
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Current Completed Trials Per Year {#sec-current_completed_trials_per_year}
+## Current Completed Trials per Year {#sec-current_completed_trials_per_year}
 
 **Value**: 1,980
 
@@ -2670,7 +2670,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Daily Cost Inefficiency {#sec-daily_cost_inefficiency}
+## Daily Cost of Healthcare System Inefficiency {#sec-daily_cost_inefficiency}
 
 **Value**: $327M
 
@@ -2683,7 +2683,7 @@ Daily cost of healthcare system inefficiency
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dct Platform Funding Medium {#sec-dct_platform_funding_medium}
+## Mid-Range Funding for Commercial Dct Platform {#sec-dct_platform_funding_medium}
 
 **Value**: $500M
 
@@ -2696,7 +2696,7 @@ Mid-range funding for commercial DCT platform
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Deaths During Reading Section {#sec-deaths_during_reading_section}
+## Deaths from Curable Diseases During Reading One Section {#sec-deaths_during_reading_section}
 
 **Value**: 410
 
@@ -2709,7 +2709,7 @@ Deaths from curable diseases during reading one section
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Death Spending Misallocation Factor {#sec-death_spending_misallocation_factor}
+## Misallocation Factor for Spending on Death vs Prevention {#sec-death_spending_misallocation_factor}
 
 **Value**: 1,750
 
@@ -2722,7 +2722,7 @@ Misallocation factor for spending on death vs prevention
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Active Trials {#sec-dfda_active_trials}
+## dFDA Active Trials at Any Given Time {#sec-dfda_active_trials}
 
 **Value**: 200K
 
@@ -2735,7 +2735,7 @@ Active trials at any given time (3-12 month duration)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Annual OPEX {#sec-dfda_annual_opex}
+## Total Annual dFDA Operational Costs {#sec-dfda_annual_opex}
 
 **Value**: $40M
 
@@ -2752,7 +2752,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Avoided Regulatory Delay Cost Annual {#sec-dfda_avoided_regulatory_delay_cost_annual}
+## Annual Economic Value of Regulatory Delay Costs Avoided by dFDA {#sec-dfda_avoided_regulatory_delay_cost_annual}
 
 **Value**: $11.1T
 
@@ -2769,7 +2769,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Avoided Regulatory Delay DALYs Annual {#sec-dfda_avoided_regulatory_delay_dalys_annual}
+## Annual DALYs Saved by dFDA Eliminating Regulatory Efficacy Lag {#sec-dfda_avoided_regulatory_delay_dalys_annual}
 
 **Value**: 74M
 
@@ -2786,7 +2786,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Completed Trials Per Year {#sec-dfda_completed_trials_per_year}
+## dFDA Completed Trials per Year {#sec-dfda_completed_trials_per_year}
 
 **Value**: 361K
 
@@ -2803,7 +2803,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Drug Approvals Per Year High {#sec-dfda_drug_approvals_per_year_high}
+## dFDA Optimistic Drug Approvals Estimate (High Estimate) {#sec-dfda_drug_approvals_per_year_high}
 
 **Value**: 2,000
 
@@ -2820,7 +2820,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Drug Approvals Per Year Low {#sec-dfda_drug_approvals_per_year_low}
+## dFDA Conservative Drug Approvals Estimate (Low Estimate) {#sec-dfda_drug_approvals_per_year_low}
 
 **Value**: 1,000
 
@@ -2837,7 +2837,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Eligible Patients Global {#sec-dfda_eligible_patients_global}
+## dFDA Global Eligible Patients with Minimal Exclusions {#sec-dfda_eligible_patients_global}
 
 **Value**: 1.20B
 
@@ -2854,7 +2854,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA ICER Per QALY {#sec-dfda_icer_per_qaly}
+## dFDA Infrastructure ICER per QALY {#sec-dfda_icer_per_qaly}
 
 **Value**: $-59.5K
 
@@ -2871,7 +2871,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Large Trial Recruitment Months {#sec-dfda_large_trial_recruitment_months}
+## Months to Recruit 10,000+ Patients in dFDA System {#sec-dfda_large_trial_recruitment_months}
 
 **Value**: 3
 
@@ -2884,7 +2884,7 @@ Months to recruit 10,000+ patients in dFDA system
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Large Trial Size {#sec-dfda_large_trial_size}
+## Large dFDA Pragmatic Trial Size {#sec-dfda_large_trial_size}
 
 **Value**: 10,000
 
@@ -2897,7 +2897,7 @@ Large dFDA pragmatic trial size
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Net Incremental Cost Annual {#sec-dfda_net_incremental_cost_annual}
+## Net Incremental Cost for dFDA {#sec-dfda_net_incremental_cost_annual}
 
 **Value**: $-50B
 
@@ -2914,7 +2914,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Net Savings Annual {#sec-dfda_net_savings_annual}
+## dFDA Annual Net Savings {#sec-dfda_net_savings_annual}
 
 **Value**: $50B
 
@@ -2931,7 +2931,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Adoption Ramp Years {#sec-dfda_npv_adoption_ramp_years}
+## Years to Reach Full dFDA Adoption {#sec-dfda_npv_adoption_ramp_years}
 
 **Value**: 5
 
@@ -2944,7 +2944,7 @@ Years to reach full dFDA adoption
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Annual OPEX {#sec-dfda_npv_annual_opex}
+## dFDA Core Platform Annual OPEX {#sec-dfda_npv_annual_opex}
 
 **Value**: $18.9M
 
@@ -2957,7 +2957,7 @@ dFDA core platform annual opex (midpoint of $11-26.5M)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Annual OPEX Total {#sec-dfda_npv_annual_opex_total}
+## dFDA Total NPV Annual OPEX {#sec-dfda_npv_annual_opex_total}
 
 **Value**: $40M
 
@@ -2974,7 +2974,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Benefit {#sec-dfda_npv_benefit}
+## NPV of dFDA Benefits with 5-Year Adoption Ramp {#sec-dfda_npv_benefit}
 
 **Value**: $249B
 
@@ -2991,7 +2991,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Net Benefit Conservative {#sec-dfda_npv_net_benefit_conservative}
+## Conservative NPV Benefit from dFDA R&D Savings {#sec-dfda_npv_net_benefit_conservative}
 
 **Value**: $249B
 
@@ -3008,7 +3008,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Pv Annual OPEX {#sec-dfda_npv_pv_annual_opex}
+## dFDA Present Value of Annual OPEX Over 10 Years {#sec-dfda_npv_pv_annual_opex}
 
 **Value**: $269M
 
@@ -3025,7 +3025,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Total Cost {#sec-dfda_npv_total_cost}
+## dFDA Total NPV Cost {#sec-dfda_npv_total_cost}
 
 **Value**: $538M
 
@@ -3042,7 +3042,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Upfront Cost {#sec-dfda_npv_upfront_cost}
+## dFDA Core Platform Build Cost {#sec-dfda_npv_upfront_cost}
 
 **Value**: $40M
 
@@ -3055,7 +3055,7 @@ dFDA core platform build cost
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA NPV Upfront Cost Total {#sec-dfda_npv_upfront_cost_total}
+## dFDA Total NPV Upfront Costs {#sec-dfda_npv_upfront_cost_total}
 
 **Value**: $270M
 
@@ -3072,7 +3072,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA OPEX Community {#sec-dfda_opex_community}
+## dFDA Community Support Costs {#sec-dfda_opex_community}
 
 **Value**: $2.00M
 
@@ -3085,7 +3085,7 @@ dFDA community support costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA OPEX Infrastructure {#sec-dfda_opex_infrastructure}
+## dFDA Infrastructure Costs {#sec-dfda_opex_infrastructure}
 
 **Value**: $8.00M
 
@@ -3098,7 +3098,7 @@ dFDA infrastructure costs (cloud, security)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA OPEX Platform Maintenance {#sec-dfda_opex_platform_maintenance}
+## dFDA Platform Maintenance Costs {#sec-dfda_opex_platform_maintenance}
 
 **Value**: $15M
 
@@ -3111,7 +3111,7 @@ dFDA platform maintenance costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA OPEX Regulatory {#sec-dfda_opex_regulatory}
+## dFDA Regulatory Coordination Costs {#sec-dfda_opex_regulatory}
 
 **Value**: $5.00M
 
@@ -3124,7 +3124,7 @@ dFDA regulatory coordination costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA OPEX Staff {#sec-dfda_opex_staff}
+## dFDA Staff Costs {#sec-dfda_opex_staff}
 
 **Value**: $10M
 
@@ -3137,7 +3137,7 @@ dFDA staff costs (minimal, AI-assisted)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA QALYs Monetized {#sec-dfda_qalys_monetized}
+## Monetized Value of dFDA QALYs {#sec-dfda_qalys_monetized}
 
 **Value**: $126B
 
@@ -3154,7 +3154,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA QALYs With Regulatory Avoidance Monetized {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
+## Monetized Value of Comprehensive dFDA Benefits Including Regulatory Delay Avoidance {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
 
 **Value**: $11.1T
 
@@ -3171,7 +3171,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA R&D Gross Savings Annual {#sec-dfda_rd_gross_savings_annual}
+## dFDA Annual Gross R&D Savings from Trial Cost Reduction {#sec-dfda_rd_gross_savings_annual}
 
 **Value**: $50B
 
@@ -3188,7 +3188,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Regulatory Delay Avoidance Fraction {#sec-dfda_regulatory_delay_avoidance_fraction}
+## Fraction of Regulatory Delay Eliminated by dFDA Provisional Access Post-Phase I {#sec-dfda_regulatory_delay_avoidance_fraction}
 
 **Value**: 95%
 
@@ -3205,7 +3205,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Regulatory Delay Dlag Only Annual {#sec-dfda_regulatory_delay_dlag_only_annual}
+## dFDA Annual Value of Eliminating Delay Deaths Only, Excluding Innovation Loss {#sec-dfda_regulatory_delay_dlag_only_annual}
 
 **Value**: $5.55T
 
@@ -3222,7 +3222,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA ROI R&D Only {#sec-dfda_roi_rd_only}
+## ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
 
 **Value**: 463
 
@@ -3239,7 +3239,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA ROI R&D Plus Delay {#sec-dfda_roi_rd_plus_delay}
+## dFDA Recommended: ROI Including R&D Savings Plus Regulatory Delay Elimination {#sec-dfda_roi_rd_plus_delay}
 
 **Value**: 6,489
 
@@ -3256,7 +3256,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA ROI R&D Plus Delay Plus Innovation {#sec-dfda_roi_rd_plus_delay_plus_innovation}
+## dFDA Full Impact ROI: R&D Savings Plus Regulatory Delay Elimination Plus Lost Innovation {#sec-dfda_roi_rd_plus_delay_plus_innovation}
 
 **Value**: 11,540
 
@@ -3273,7 +3273,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA ROI Simple {#sec-dfda_roi_simple}
+## dFDA Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
 
 **Value**: 1,250
 
@@ -3290,7 +3290,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Small Trial Recruitment Weeks {#sec-dfda_small_trial_recruitment_weeks}
+## Weeks to Recruit 1,000 Patients in dFDA System {#sec-dfda_small_trial_recruitment_weeks}
 
 **Value**: 3
 
@@ -3303,7 +3303,7 @@ Weeks to recruit 1,000 patients in dFDA system
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Small Trial Size {#sec-dfda_small_trial_size}
+## Typical dFDA Trial Size {#sec-dfda_small_trial_size}
 
 **Value**: 1,000
 
@@ -3316,7 +3316,7 @@ Typical dFDA trial size
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Target Cost Per Patient Usd {#sec-dfda_target_cost_per_patient_usd}
+## dFDA Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
 
 **Value**: $1.00K
 
@@ -3329,7 +3329,7 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Trials Per Year Capacity {#sec-dfda_trials_per_year_capacity}
+## dFDA Maximum Trials per Year Possible with 115x Acceleration {#sec-dfda_trials_per_year_capacity}
 
 **Value**: 380K
 
@@ -3346,7 +3346,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Upfront Build {#sec-dfda_upfront_build}
+## dFDA Platform One-Time Build Cost {#sec-dfda_upfront_build}
 
 **Value**: $40M
 
@@ -3359,7 +3359,7 @@ dFDA platform one-time build cost (central estimate)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Upfront Build Max {#sec-dfda_upfront_build_max}
+## dFDA Platform One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
 
 **Value**: $46M
 
@@ -3372,7 +3372,7 @@ dFDA platform one-time build cost (high estimate)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Diabetes Cure Payment Estimate {#sec-diabetes_cure_payment_estimate}
+## Estimated One-Time Payment for Diabetes Cure {#sec-diabetes_cure_payment_estimate}
 
 **Value**: $10K
 
@@ -3385,7 +3385,7 @@ Estimated one-time payment for diabetes cure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## DIH NPV Annual OPEX Initiatives {#sec-dih_npv_annual_opex_initiatives}
+## DIH Broader Initiatives Annual OPEX {#sec-dih_npv_annual_opex_initiatives}
 
 **Value**: $21.1M
 
@@ -3398,7 +3398,7 @@ DIH broader initiatives annual opex (medium case)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## DIH NPV Upfront Cost Initiatives {#sec-dih_npv_upfront_cost_initiatives}
+## DIH Broader Initiatives Upfront Cost {#sec-dih_npv_upfront_cost_initiatives}
 
 **Value**: $230M
 
@@ -3411,7 +3411,7 @@ DIH broader initiatives upfront cost (medium case)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## DIH Treasury Trial Subsidies Max {#sec-dih_treasury_trial_subsidies_max}
+## Maximum Annual Clinical Trial Subsidies from DIH Treasury {#sec-dih_treasury_trial_subsidies_max}
 
 **Value**: $20B
 
@@ -3424,7 +3424,7 @@ Maximum annual clinical trial subsidies from DIH Treasury
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## DIH Treasury Trial Subsidies Min {#sec-dih_treasury_trial_subsidies_min}
+## Minimum Annual Clinical Trial Subsidies from DIH Treasury {#sec-dih_treasury_trial_subsidies_min}
 
 **Value**: $10B
 
@@ -3437,7 +3437,7 @@ Minimum annual clinical trial subsidies from DIH Treasury
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Disease Related Caregiver % {#sec-disease_related_caregiver_pct}
+## Percentage of Caregiving for Treatable Disease Conditions {#sec-disease_related_caregiver_pct}
 
 **Value**: 40%
 
@@ -3450,7 +3450,7 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Disease Vs Terrorism Deaths Ratio {#sec-disease_vs_terrorism_deaths_ratio}
+## Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
 
 **Value**: 18,274
 
@@ -3465,7 +3465,7 @@ Ratio of annual disease deaths to 9/11 terrorism deaths
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Disease Vs War Deaths Ratio {#sec-disease_vs_war_deaths_ratio}
+## Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
 
 **Value**: 1.63
 
@@ -3480,7 +3480,7 @@ Ratio of annual disease deaths to war deaths
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Dividend Coverage Factor {#sec-dividend_coverage_factor}
+## Coverage Factor of Treaty Funding vs dFDA OPEX {#sec-dividend_coverage_factor}
 
 **Value**: 680
 
@@ -3497,7 +3497,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Drug Price Reduction Savings High {#sec-drug_price_reduction_savings_high}
+## High Estimate of Annual Savings from Drug Price Reductions {#sec-drug_price_reduction_savings_high}
 
 **Value**: $180B
 
@@ -3510,7 +3510,7 @@ High estimate of annual savings from drug price reductions (50% reduction of $36
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Drug Price Reduction Savings Low {#sec-drug_price_reduction_savings_low}
+## Low Estimate of Annual Savings from Drug Price Reductions {#sec-drug_price_reduction_savings_low}
 
 **Value**: $72B
 
@@ -3523,7 +3523,7 @@ Low estimate of annual savings from drug price reductions (20% reduction of $360
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Effective Hourly Rate {#sec-effective_hourly_rate}
+## Effective Hourly Rate from Treaty Participation {#sec-effective_hourly_rate}
 
 **Value**: $292K
 
@@ -3540,7 +3540,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Effective Hourly Rate Lifetime Benefit {#sec-effective_hourly_rate_lifetime_benefit}
+## Lifetime Benefit for Age 30 Baseline Scenario {#sec-effective_hourly_rate_lifetime_benefit}
 
 **Value**: $4.30M
 
@@ -3557,7 +3557,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Effective Hourly Rate Vs CEO Multiplier {#sec-effective_hourly_rate_vs_ceo_multiplier}
+## Effective Rate Multiplier vs CEO Rate {#sec-effective_hourly_rate_vs_ceo_multiplier}
 
 **Value**: 29.2
 
@@ -3574,7 +3574,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Effective Hourly Rate Vs Wage Multiplier {#sec-effective_hourly_rate_vs_wage_multiplier}
+## Effective Rate Multiplier vs Average US Wage {#sec-effective_hourly_rate_vs_wage_multiplier}
 
 **Value**: 9,744
 
@@ -3591,7 +3591,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected ROI Conservative dFDA {#sec-expected_roi_conservative_dfda}
+## Expected ROI for dFDA Accounting for 10% Political Success Probability (Conservative) {#sec-expected_roi_conservative_dfda}
 
 **Value**: 46.3
 
@@ -3608,7 +3608,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected ROI Moderate dFDA {#sec-expected_roi_moderate_dfda}
+## Expected ROI for dFDA Accounting for 25% Political Success Probability {#sec-expected_roi_moderate_dfda}
 
 **Value**: 116
 
@@ -3625,7 +3625,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected ROI Optimistic dFDA {#sec-expected_roi_optimistic_dfda}
+## Expected ROI for dFDA Accounting for 50% Political Success Probability (Optimistic) {#sec-expected_roi_optimistic_dfda}
 
 **Value**: 232
 
@@ -3642,7 +3642,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Family Office Investment Min {#sec-family_office_investment_min}
+## Minimum Investment for Family Offices {#sec-family_office_investment_min}
 
 **Value**: $5.00M
 
@@ -3655,7 +3655,7 @@ Minimum investment for family offices
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Funding Base Case {#sec-foundation_funding_base_case}
+## Nonprofit Foundation Funding in Base Case Scenario {#sec-foundation_funding_base_case}
 
 **Value**: $442M
 
@@ -3672,7 +3672,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Funding Percentage {#sec-foundation_funding_percentage}
+## Foundation Funding as Percentage of Total Campaign Cost {#sec-foundation_funding_percentage}
 
 **Value**: 51%
 
@@ -3689,7 +3689,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Funding Realistic {#sec-foundation_funding_realistic}
+## Nonprofit Foundation Funding in Realistic Scenario {#sec-foundation_funding_realistic}
 
 **Value**: $519M
 
@@ -3706,7 +3706,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Funding Worst Case {#sec-foundation_funding_worst_case}
+## Nonprofit Foundation Funding in Worst-Case Scenario {#sec-foundation_funding_worst_case}
 
 **Value**: $542M
 
@@ -3723,7 +3723,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Legal Compliance Realistic {#sec-foundation_legal_compliance_realistic}
+## Foundation Funding for Legal/Compliance (Realistic) {#sec-foundation_legal_compliance_realistic}
 
 **Value**: $53M
 
@@ -3736,7 +3736,7 @@ Foundation funding for legal/compliance (international health law research)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Lobbying Realistic {#sec-foundation_lobbying_realistic}
+## Foundation Funding for Political Lobbying (Realistic) {#sec-foundation_lobbying_realistic}
 
 **Value**: $0
 
@@ -3749,7 +3749,7 @@ Foundation funding for political lobbying (zero due to 501c3 restrictions)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Operations Realistic {#sec-foundation_operations_realistic}
+## Foundation Funding for Operations (Realistic) {#sec-foundation_operations_realistic}
 
 **Value**: $20M
 
@@ -3762,7 +3762,7 @@ Foundation funding for operations (nonprofit R&D staff)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Partnerships Realistic {#sec-foundation_partnerships_realistic}
+## Foundation Funding for Partnerships (Realistic) {#sec-foundation_partnerships_realistic}
 
 **Value**: $29M
 
@@ -3775,7 +3775,7 @@ Foundation funding for partnerships (NGOs, patient advocacy, scientific institut
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Reserve Realistic {#sec-foundation_reserve_realistic}
+## Foundation Funding for Reserve (Realistic) {#sec-foundation_reserve_realistic}
 
 **Value**: $37M
 
@@ -3788,7 +3788,7 @@ Foundation funding for reserve (nonprofit contingency)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Tech R&D Realistic {#sec-foundation_tech_rd_realistic}
+## Foundation Funding for Technology R&D (Realistic) {#sec-foundation_tech_rd_realistic}
 
 **Value**: $226M
 
@@ -3801,7 +3801,7 @@ Foundation funding for technology R&D (dFDA platform, Wishocracy, infrastructure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foundation Viral Referendum Realistic {#sec-foundation_viral_referendum_realistic}
+## Foundation Funding for Viral Referendum Platform (Realistic) {#sec-foundation_viral_referendum_realistic}
 
 **Value**: $77M
 
@@ -3814,7 +3814,7 @@ Foundation funding for viral referendum platform (biometric verification, civic 
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Conflict Deaths Total {#sec-global_annual_conflict_deaths_total}
+## Total Annual Conflict Deaths Globally {#sec-global_annual_conflict_deaths_total}
 
 **Value**: 245K
 
@@ -3831,7 +3831,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Deaths Curable Diseases {#sec-global_annual_deaths_curable_diseases}
+## Annual Deaths from Curable Diseases Globally {#sec-global_annual_deaths_curable_diseases}
 
 **Value**: 54.8M
 
@@ -3846,7 +3846,7 @@ Annual deaths from curable diseases globally
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Human Cost Active Combat {#sec-global_annual_human_cost_active_combat}
+## Annual Cost of Combat Deaths {#sec-global_annual_human_cost_active_combat}
 
 **Value**: $2.34T
 
@@ -3863,7 +3863,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Human Cost State Violence {#sec-global_annual_human_cost_state_violence}
+## Annual Cost of State Violence Deaths {#sec-global_annual_human_cost_state_violence}
 
 **Value**: $27B
 
@@ -3880,7 +3880,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Human Cost Terror Attacks {#sec-global_annual_human_cost_terror_attacks}
+## Annual Cost of Terror Deaths {#sec-global_annual_human_cost_terror_attacks}
 
 **Value**: $83B
 
@@ -3897,7 +3897,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Human Life Losses Conflict {#sec-global_annual_human_life_losses_conflict}
+## Total Annual Human Life Losses from Conflict {#sec-global_annual_human_life_losses_conflict}
 
 **Value**: $2.45T
 
@@ -3914,7 +3914,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Infrastructure Destruction Conflict {#sec-global_annual_infrastructure_destruction_conflict}
+## Total Annual Infrastructure Destruction {#sec-global_annual_infrastructure_destruction_conflict}
 
 **Value**: $1.88T
 
@@ -3931,7 +3931,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual Trade Disruption Conflict {#sec-global_annual_trade_disruption_conflict}
+## Total Annual Trade Disruption {#sec-global_annual_trade_disruption_conflict}
 
 **Value**: $616B
 
@@ -3948,7 +3948,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual War Direct Costs Total {#sec-global_annual_war_direct_costs_total}
+## Total Annual Direct War Costs {#sec-global_annual_war_direct_costs_total}
 
 **Value**: $7.66T
 
@@ -3965,7 +3965,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual War Indirect Costs Total {#sec-global_annual_war_indirect_costs_total}
+## Total Annual Indirect War Costs {#sec-global_annual_war_indirect_costs_total}
 
 **Value**: $3.70T
 
@@ -3982,7 +3982,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Annual War Total Cost {#sec-global_annual_war_total_cost}
+## Total Annual Cost of War Worldwide {#sec-global_annual_war_total_cost}
 
 **Value**: $11.4T
 
@@ -3999,7 +3999,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Cost Per Conflict Death {#sec-global_cost_per_conflict_death}
+## Cost per Conflict Death {#sec-global_cost_per_conflict_death}
 
 **Value**: $46.4M
 
@@ -4016,7 +4016,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Cost Per Life Saved Med Research Annual {#sec-global_cost_per_life_saved_med_research_annual}
+## Cost per Life Saved by Medical Research {#sec-global_cost_per_life_saved_med_research_annual}
 
 **Value**: $16.1K
 
@@ -4033,7 +4033,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global dFDA QALYs Gained Annual {#sec-global_dfda_qalys_gained_annual}
+## Annual QALYs Gained from dFDA {#sec-global_dfda_qalys_gained_annual}
 
 **Value**: 840K
 
@@ -4046,7 +4046,7 @@ Annual QALYs gained from dFDA
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global dFDA QALYs With Regulatory Avoidance {#sec-global_dfda_qalys_with_regulatory_avoidance}
+## Total Annual QALYs from dFDA Including Regulatory Delay Avoidance {#sec-global_dfda_qalys_with_regulatory_avoidance}
 
 **Value**: 74.1M
 
@@ -4063,7 +4063,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Military Spending Per Capita Annual {#sec-global_military_spending_per_capita_annual}
+## Per Capita Military Spending Globally {#sec-global_military_spending_per_capita_annual}
 
 **Value**: $340
 
@@ -4080,7 +4080,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Military Spending Post Treaty Annual 2024 {#sec-global_military_spending_post_treaty_annual_2024}
+## Global Military Spending After 1% Treaty Reduction {#sec-global_military_spending_post_treaty_annual_2024}
 
 **Value**: $2.69T
 
@@ -4097,7 +4097,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Total Health And War Cost Annual {#sec-global_total_health_and_war_cost_annual}
+## Total Annual Cost of War and Disease with All Externalities {#sec-global_total_health_and_war_cost_annual}
 
 **Value**: $129T
 
@@ -4112,7 +4112,7 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global Total War Cost Per Capita Annual {#sec-global_total_war_cost_per_capita_annual}
+## Per Capita Total War Cost Globally {#sec-global_total_war_cost_per_capita_annual}
 
 **Value**: $1.42K
 
@@ -4129,7 +4129,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Global War Direct Cost Per Second {#sec-global_war_direct_cost_per_second}
+## Direct War Cost per Second Globally {#sec-global_war_direct_cost_per_second}
 
 **Value**: $243K
 
@@ -4146,7 +4146,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## High Net Worth Investor Min {#sec-high_net_worth_investor_min}
+## Minimum Investment for High Net Worth Individuals {#sec-high_net_worth_investor_min}
 
 **Value**: $1.00M
 
@@ -4159,7 +4159,7 @@ Minimum investment for high net worth individuals
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ICER Investor Funded {#sec-icer_investor_funded}
+## ICER for Investor-Funded Scenario {#sec-icer_investor_funded}
 
 **Value**: $-187K
 
@@ -4172,7 +4172,7 @@ ICER for investor-funded scenario (VICTORY Social Impact Bonds)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ICER Opportunity Cost {#sec-icer_opportunity_cost}
+## ICER Counting Redirected Military Spending as Opportunity Cost {#sec-icer_opportunity_cost}
 
 **Value**: $-157K
 
@@ -4185,7 +4185,7 @@ ICER counting redirected military spending as opportunity cost
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ICER Per QALY {#sec-icer_per_qaly}
+## Incremental Cost-Effectiveness Ratio per QALY Gained {#sec-icer_per_qaly}
 
 **Value**: $-176K
 
@@ -4200,7 +4200,7 @@ Incremental Cost-Effectiveness Ratio (ICER) per QALY gained
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Institutional Investor Min {#sec-institutional_investor_min}
+## Minimum Investment for Institutional Investors {#sec-institutional_investor_min}
 
 **Value**: $10M
 
@@ -4213,7 +4213,7 @@ Minimum investment for institutional investors
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Lifetime War Cost Per Capita {#sec-lifetime_war_cost_per_capita}
+## Lifetime War Cost per Person {#sec-lifetime_war_cost_per_capita}
 
 **Value**: $114K
 
@@ -4230,7 +4230,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Lobbyist Bond Investment Max {#sec-lobbyist_bond_investment_max}
+## Maximum Bond Investment for Lobbyist Incentives {#sec-lobbyist_bond_investment_max}
 
 **Value**: $20M
 
@@ -4243,7 +4243,7 @@ Maximum bond investment for lobbyist incentives
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Lobbyist Bond Investment Min {#sec-lobbyist_bond_investment_min}
+## Minimum Bond Investment for Lobbyist Incentives {#sec-lobbyist_bond_investment_min}
 
 **Value**: $5.00M
 
@@ -4256,7 +4256,7 @@ Minimum bond investment for lobbyist incentives
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Longevity Therapy Savings 30yr {#sec-longevity_therapy_savings_30yr}
+## 30-Year Savings from Longevity Therapy per Person {#sec-longevity_therapy_savings_30yr}
 
 **Value**: $150K
 
@@ -4269,7 +4269,7 @@ Minimum bond investment for lobbyist incentives
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Medical Research % Of Disease Burden {#sec-medical_research_pct_of_disease_burden}
+## Medical Research Spending as Percentage of Total Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
 **Value**: 0.0525%
 
@@ -4284,7 +4284,7 @@ Medical research spending as percentage of total disease burden
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Military Vs Medical Research Ratio {#sec-military_vs_medical_research_ratio}
+## Ratio of Military Spending to Medical Research Spending {#sec-military_vs_medical_research_ratio}
 
 **Value**: 40.3
 
@@ -4301,7 +4301,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Misallocation Factor Death Vs Saving {#sec-misallocation_factor_death_vs_saving}
+## Misallocation Factor: Cost to Kill vs Cost to Save {#sec-misallocation_factor_death_vs_saving}
 
 **Value**: 2,889
 
@@ -4318,7 +4318,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Multiplier Vs Givewell {#sec-multiplier_vs_givewell}
+## Cost-Effectiveness Multiplier vs Givewell Top Charities {#sec-multiplier_vs_givewell}
 
 **Value**: 0.00137
 
@@ -4335,7 +4335,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Opportunity Cost Per Day {#sec-opportunity_cost_per_day}
+## Foregone Economic Value per Day from Not Implementing System {#sec-opportunity_cost_per_day}
 
 **Value**: $3.39B
 
@@ -4350,7 +4350,7 @@ Foregone economic value per day from not implementing system
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Opportunity Cost Per Second {#sec-opportunity_cost_per_second}
+## Foregone Economic Value per Second from Not Implementing System {#sec-opportunity_cost_per_second}
 
 **Value**: $39.3K
 
@@ -4382,7 +4382,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Partial Success Bondholder Payout {#sec-partial_success_bondholder_payout}
+## Bondholder Payout in Partial Success Scenario {#sec-partial_success_bondholder_payout}
 
 **Value**: $1.36B
 
@@ -4399,7 +4399,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Partial Success DIH Revenue {#sec-partial_success_dih_revenue}
+## DIH Revenue in Partial Success Scenario {#sec-partial_success_dih_revenue}
 
 **Value**: $13.6B
 
@@ -4416,7 +4416,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Partial Success Investor ROI {#sec-partial_success_investor_roi}
+## Investor ROI in Partial Success Scenario {#sec-partial_success_investor_roi}
 
 **Value**: 136%
 
@@ -4433,7 +4433,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Partial Success Military Spending Share {#sec-partial_success_military_spending_share}
+## Military Spending Share for Partial Success Scenario {#sec-partial_success_military_spending_share}
 
 **Value**: 50%
 
@@ -4446,7 +4446,7 @@ Military spending share for partial success scenario (US, EU, UK)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Partial Success Research Funding {#sec-partial_success_research_funding}
+## Research Funding in Partial Success Scenario {#sec-partial_success_research_funding}
 
 **Value**: $12.2B
 
@@ -4463,7 +4463,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Patient Cure Copay Max {#sec-patient_cure_copay_max}
+## Maximum Patient Copay for Cure {#sec-patient_cure_copay_max}
 
 **Value**: $1.00K
 
@@ -4476,7 +4476,7 @@ Maximum patient copay for cure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Annual Societal Benefit {#sec-peace_dividend_annual_societal_benefit}
+## Annual Peace Dividend from 1% Reduction in Total War Costs {#sec-peace_dividend_annual_societal_benefit}
 
 **Value**: $114B
 
@@ -4493,7 +4493,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Conflict Reduction {#sec-peace_dividend_conflict_reduction}
+## Conflict Reduction Benefits from 1% Less Military Spending {#sec-peace_dividend_conflict_reduction}
 
 **Value**: $86.4B
 
@@ -4510,7 +4510,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Direct Costs {#sec-peace_dividend_direct_costs}
+## Annual Savings from 1% Reduction in Direct War Costs {#sec-peace_dividend_direct_costs}
 
 **Value**: $76.5B
 
@@ -4527,7 +4527,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Direct Fiscal Savings {#sec-peace_dividend_direct_fiscal_savings}
+## Direct Fiscal Savings from 1% Military Spending Reduction {#sec-peace_dividend_direct_fiscal_savings}
 
 **Value**: $27.2B
 
@@ -4544,7 +4544,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Environmental {#sec-peace_dividend_environmental}
+## Annual Savings from 1% Reduction in Environmental Damage {#sec-peace_dividend_environmental}
 
 **Value**: $1.00B
 
@@ -4561,7 +4561,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Human Casualties {#sec-peace_dividend_human_casualties}
+## Annual Savings from 1% Reduction in Human Casualties {#sec-peace_dividend_human_casualties}
 
 **Value**: $24.5B
 
@@ -4578,7 +4578,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Indirect Costs {#sec-peace_dividend_indirect_costs}
+## Annual Savings from 1% Reduction in Indirect War Costs {#sec-peace_dividend_indirect_costs}
 
 **Value**: $37B
 
@@ -4595,7 +4595,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Infrastructure {#sec-peace_dividend_infrastructure}
+## Annual Savings from 1% Reduction in Infrastructure Destruction {#sec-peace_dividend_infrastructure}
 
 **Value**: $18.8B
 
@@ -4612,7 +4612,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Lost Economic Growth {#sec-peace_dividend_lost_economic_growth}
+## Annual Savings from 1% Reduction in Lost Economic Growth {#sec-peace_dividend_lost_economic_growth}
 
 **Value**: $27.2B
 
@@ -4629,7 +4629,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Lost Human Capital {#sec-peace_dividend_lost_human_capital}
+## Annual Savings from 1% Reduction in Lost Human Capital {#sec-peace_dividend_lost_human_capital}
 
 **Value**: $3.00B
 
@@ -4646,7 +4646,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Ptsd {#sec-peace_dividend_ptsd}
+## Annual Savings from 1% Reduction in PTSD and Mental Health Costs {#sec-peace_dividend_ptsd}
 
 **Value**: $2.32B
 
@@ -4663,7 +4663,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Refugee Support {#sec-peace_dividend_refugee_support}
+## Annual Savings from 1% Reduction in Refugee Support Costs {#sec-peace_dividend_refugee_support}
 
 **Value**: $1.50B
 
@@ -4680,7 +4680,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend ROI {#sec-peace_dividend_roi}
+## Total Benefit per Dollar Redirected {#sec-peace_dividend_roi}
 
 **Value**: 5.18
 
@@ -4697,7 +4697,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Trade Disruption {#sec-peace_dividend_trade_disruption}
+## Annual Savings from 1% Reduction in Trade Disruption {#sec-peace_dividend_trade_disruption}
 
 **Value**: $6.16B
 
@@ -4714,7 +4714,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Peace Dividend Veteran Healthcare {#sec-peace_dividend_veteran_healthcare}
+## Annual Savings from 1% Reduction in Veteran Healthcare Costs {#sec-peace_dividend_veteran_healthcare}
 
 **Value**: $2.00B
 
@@ -4731,7 +4731,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Personal Life Extension Years Age 30 {#sec-personal_life_extension_years_age_30}
+## Personal Life Extension for Age 30 Baseline from 1% Treaty {#sec-personal_life_extension_years_age_30}
 
 **Value**: 72
 
@@ -4748,7 +4748,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Pharma Cure Payment Per Patient {#sec-pharma_cure_payment_per_patient}
+## Pharma Payment per Cured Patient in 50/50 Model {#sec-pharma_cure_payment_per_patient}
 
 **Value**: $90K
 
@@ -4761,7 +4761,7 @@ Pharma payment per cured patient in 50/50 model
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Profit Per Life Saved {#sec-profit_per_life_saved}
+## System Profit per Life Saved {#sec-profit_per_life_saved}
 
 **Value**: $168K
 
@@ -4774,7 +4774,7 @@ System profit per life saved (specific calculation)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From Faster Access {#sec-qalys_from_faster_access}
+## Base Case QALYs from Faster Drug Access {#sec-qalys_from_faster_access}
 
 **Value**: 200K
 
@@ -4787,7 +4787,7 @@ Base case QALYs from faster drug access
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From Faster Access Conservative {#sec-qalys_from_faster_access_conservative}
+## Conservative QALYs from Faster Access {#sec-qalys_from_faster_access_conservative}
 
 **Value**: 90,000
 
@@ -4800,7 +4800,7 @@ Conservative QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/dru
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From Faster Access Optimistic {#sec-qalys_from_faster_access_optimistic}
+## Optimistic QALYs from Faster Drug Access {#sec-qalys_from_faster_access_optimistic}
 
 **Value**: 500K
 
@@ -4813,7 +4813,7 @@ Optimistic QALYs from faster drug access
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From New Therapies {#sec-qalys_from_new_therapies}
+## Base Case QALYs from Enabling New Therapies for Rare/Untreatable Diseases {#sec-qalys_from_new_therapies}
 
 **Value**: 500K
 
@@ -4826,7 +4826,7 @@ Base case QALYs from enabling new therapies for rare/untreatable diseases
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From New Therapies Conservative {#sec-qalys_from_new_therapies_conservative}
+## Conservative QALYs from New Therapies {#sec-qalys_from_new_therapies_conservative}
 
 **Value**: 50,000
 
@@ -4839,7 +4839,7 @@ Conservative QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From New Therapies Optimistic {#sec-qalys_from_new_therapies_optimistic}
+## Optimistic QALYs from New Therapies {#sec-qalys_from_new_therapies_optimistic}
 
 **Value**: 3.00M
 
@@ -4852,7 +4852,7 @@ Optimistic QALYs from new therapies
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From Prevention {#sec-qalys_from_prevention}
+## Base Case QALYs from Better Prevention Through Real-World Data {#sec-qalys_from_prevention}
 
 **Value**: 140K
 
@@ -4865,7 +4865,7 @@ Base case QALYs from better prevention through real-world data
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From Prevention Conservative {#sec-qalys_from_prevention_conservative}
+## Conservative QALYs from Prevention {#sec-qalys_from_prevention_conservative}
 
 **Value**: 50,000
 
@@ -4878,7 +4878,7 @@ Conservative QALYs from prevention (5M patients × 0.01 QALYs/patient)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs From Prevention Optimistic {#sec-qalys_from_prevention_optimistic}
+## Optimistic QALYs from Prevention {#sec-qalys_from_prevention_optimistic}
 
 **Value**: 150K
 
@@ -4891,7 +4891,7 @@ Optimistic QALYs from prevention
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs Total Conservative {#sec-qalys_total_conservative}
+## Total Conservative QALYs {#sec-qalys_total_conservative}
 
 **Value**: 190K
 
@@ -4904,7 +4904,7 @@ Total conservative QALYs (90k + 50k + 50k)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## QALYs Total Optimistic {#sec-qalys_total_optimistic}
+## Total Optimistic QALYs {#sec-qalys_total_optimistic}
 
 **Value**: 3.65M
 
@@ -4917,7 +4917,7 @@ Total optimistic QALYs (500k + 150k + 3M)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Qualified Investor Min {#sec-qualified_investor_min}
+## Minimum Investment for Qualified Investors {#sec-qualified_investor_min}
 
 **Value**: $100K
 
@@ -4947,7 +4947,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Refugee Lost Productivity Global Total {#sec-refugee_lost_productivity_global_total}
+## Total Global Lost Refugee Productivity {#sec-refugee_lost_productivity_global_total}
 
 **Value**: $2.54T
 
@@ -4964,7 +4964,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Annual DALYs {#sec-regulatory_delay_annual_dalys}
+## Annual DALYs Lost to Regulatory Delay Under Current System {#sec-regulatory_delay_annual_dalys}
 
 **Value**: 77.9M
 
@@ -4981,7 +4981,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Annual Loss {#sec-regulatory_delay_annual_loss}
+## Annualized Economic Loss from Regulatory Delay {#sec-regulatory_delay_annual_loss}
 
 **Value**: $11.7T
 
@@ -4998,7 +4998,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay DALYs {#sec-regulatory_delay_dalys}
+## Total Disability-Adjusted Life Years Lost to Regulatory Delay {#sec-regulatory_delay_dalys}
 
 **Value**: 4.83
 
@@ -5015,7 +5015,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Deaths Lower Bound {#sec-regulatory_delay_deaths_lower_bound}
+## Lower Bound Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_lower_bound}
 
 **Value**: 110
 
@@ -5032,7 +5032,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Deaths Mean {#sec-regulatory_delay_deaths_mean}
+## Mean Estimate Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_mean}
 
 **Value**: 185
 
@@ -5049,7 +5049,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Deaths Upper Bound {#sec-regulatory_delay_deaths_upper_bound}
+## Upper Bound Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_upper_bound}
 
 **Value**: 318
 
@@ -5066,7 +5066,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Economic Loss {#sec-regulatory_delay_economic_loss}
+## Cumulative Economic Deadweight Loss from Regulatory Delay {#sec-regulatory_delay_economic_loss}
 
 **Value**: $724T
 
@@ -5083,7 +5083,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Yld {#sec-regulatory_delay_yld}
+## Years Lived with Disability During Regulatory Delay {#sec-regulatory_delay_yld}
 
 **Value**: 1.69
 
@@ -5100,7 +5100,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Regulatory Delay Yll {#sec-regulatory_delay_yll}
+## Years of Life Lost from Regulatory Delay Deaths {#sec-regulatory_delay_yll}
 
 **Value**: 3.14
 
@@ -5117,7 +5117,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Research Acceleration Multiplier {#sec-research_acceleration_multiplier}
+## Total Research Capacity Multiplier from dFDA {#sec-research_acceleration_multiplier}
 
 **Value**: 115
 
@@ -5134,7 +5134,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI Discount 1% {#sec-roi_discount_1pct}
+## ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
 **Value**: 532
 
@@ -5151,7 +5151,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI Discount 3% {#sec-roi_discount_3pct}
+## ROI at 3% Discount Rate {#sec-roi_discount_3pct}
 
 **Value**: 463
 
@@ -5168,7 +5168,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI Discount 5% {#sec-roi_discount_5pct}
+## ROI at 5% Discount Rate {#sec-roi_discount_5pct}
 
 **Value**: 407
 
@@ -5185,7 +5185,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI Discount 7% {#sec-roi_discount_7pct}
+## ROI at 7% Discount Rate {#sec-roi_discount_7pct}
 
 **Value**: 361
 
@@ -5202,7 +5202,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Campaign Cost Conservative {#sec-sensitivity_campaign_cost_conservative}
+## Conservative Campaign Cost {#sec-sensitivity_campaign_cost_conservative}
 
 **Value**: $333M
 
@@ -5215,7 +5215,7 @@ Conservative campaign cost (3-year amortization)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Campaign Cost Optimistic {#sec-sensitivity_campaign_cost_optimistic}
+## Optimistic Campaign Cost {#sec-sensitivity_campaign_cost_optimistic}
 
 **Value**: $200M
 
@@ -5228,7 +5228,7 @@ Optimistic campaign cost (5-year amortization)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Cost Per Life Central {#sec-sensitivity_cost_per_life_central}
+## Central Cost per Life Saved {#sec-sensitivity_cost_per_life_central}
 
 **Value**: $-7
 
@@ -5241,7 +5241,7 @@ Central cost per life saved
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Cost Per Life Conservative {#sec-sensitivity_cost_per_life_conservative}
+## Conservative Cost per Life Saved {#sec-sensitivity_cost_per_life_conservative}
 
 **Value**: $-6
 
@@ -5254,7 +5254,7 @@ Conservative cost per life saved
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Cost Per Life Optimistic {#sec-sensitivity_cost_per_life_optimistic}
+## Optimistic Cost per Life Saved {#sec-sensitivity_cost_per_life_optimistic}
 
 **Value**: $-5
 
@@ -5267,7 +5267,7 @@ Optimistic cost per life saved
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity dFDA OPEX Conservative {#sec-sensitivity_dfda_opex_conservative}
+## Conservative dFDA Operational Costs {#sec-sensitivity_dfda_opex_conservative}
 
 **Value**: $60M
 
@@ -5280,7 +5280,7 @@ Conservative dFDA operational costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity dFDA OPEX Optimistic {#sec-sensitivity_dfda_opex_optimistic}
+## Optimistic dFDA Operational Costs {#sec-sensitivity_dfda_opex_optimistic}
 
 **Value**: $30M
 
@@ -5293,7 +5293,7 @@ Optimistic dFDA operational costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity dFDA Savings Conservative {#sec-sensitivity_dfda_savings_conservative}
+## Conservative dFDA Savings Estimate {#sec-sensitivity_dfda_savings_conservative}
 
 **Value**: $25B
 
@@ -5306,7 +5306,7 @@ Conservative dFDA savings estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity dFDA Savings Optimistic {#sec-sensitivity_dfda_savings_optimistic}
+## Optimistic dFDA Savings Estimate {#sec-sensitivity_dfda_savings_optimistic}
 
 **Value**: $95B
 
@@ -5319,7 +5319,7 @@ Optimistic dFDA savings estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity ICER Central {#sec-sensitivity_icer_central}
+## Central ICER from Sensitivity Analysis {#sec-sensitivity_icer_central}
 
 **Value**: $-187K
 
@@ -5332,7 +5332,7 @@ Central ICER from sensitivity analysis
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity ICER Conservative {#sec-sensitivity_icer_conservative}
+## Conservative ICER from Sensitivity Analysis {#sec-sensitivity_icer_conservative}
 
 **Value**: $-171K
 
@@ -5345,7 +5345,7 @@ Conservative ICER from sensitivity analysis
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity ICER Optimistic {#sec-sensitivity_icer_optimistic}
+## Optimistic ICER from Sensitivity Analysis {#sec-sensitivity_icer_optimistic}
 
 **Value**: $-137K
 
@@ -5358,7 +5358,7 @@ Optimistic ICER from sensitivity analysis
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Lives Saved Central {#sec-sensitivity_lives_saved_central}
+## Central Scenario Lives Saved {#sec-sensitivity_lives_saved_central}
 
 **Value**: 26,446
 
@@ -5375,7 +5375,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Net Benefit Conservative {#sec-sensitivity_net_benefit_conservative}
+## Conservative Net Benefit from Sensitivity Analysis {#sec-sensitivity_net_benefit_conservative}
 
 **Value**: $74.6B
 
@@ -5388,7 +5388,7 @@ Conservative net benefit from sensitivity analysis
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Net Benefit Optimistic {#sec-sensitivity_net_benefit_optimistic}
+## Optimistic Net Benefit from Sensitivity Analysis {#sec-sensitivity_net_benefit_optimistic}
 
 **Value**: $295B
 
@@ -5401,7 +5401,7 @@ Optimistic net benefit from sensitivity analysis
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Peace Dividend Conservative {#sec-sensitivity_peace_dividend_conservative}
+## Conservative Peace Dividend Estimate {#sec-sensitivity_peace_dividend_conservative}
 
 **Value**: $50B
 
@@ -5414,7 +5414,7 @@ Conservative peace dividend estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Peace Dividend Optimistic {#sec-sensitivity_peace_dividend_optimistic}
+## Optimistic Peace Dividend Estimate {#sec-sensitivity_peace_dividend_optimistic}
 
 **Value**: $200B
 
@@ -5427,7 +5427,7 @@ Optimistic peace dividend estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Peace QALYs Conservative {#sec-sensitivity_peace_qalys_conservative}
+## Conservative Peace QALYs {#sec-sensitivity_peace_qalys_conservative}
 
 **Value**: 17,500
 
@@ -5440,7 +5440,7 @@ Conservative peace QALYs (500 lives × 35 QALYs/life)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Peace QALYs Optimistic {#sec-sensitivity_peace_qalys_optimistic}
+## Optimistic Peace QALYs {#sec-sensitivity_peace_qalys_optimistic}
 
 **Value**: 52,500
 
@@ -5453,7 +5453,7 @@ Optimistic peace QALYs (1,500 lives × 35 QALYs/life)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Benefits Conservative {#sec-sensitivity_total_benefits_conservative}
+## Conservative Total Benefits Estimate {#sec-sensitivity_total_benefits_conservative}
 
 **Value**: $75B
 
@@ -5466,7 +5466,7 @@ Conservative total benefits estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Benefits Optimistic {#sec-sensitivity_total_benefits_optimistic}
+## Optimistic Total Benefits Estimate {#sec-sensitivity_total_benefits_optimistic}
 
 **Value**: $295B
 
@@ -5479,7 +5479,7 @@ Optimistic total benefits estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Costs Conservative {#sec-sensitivity_total_costs_conservative}
+## Conservative Total Costs {#sec-sensitivity_total_costs_conservative}
 
 **Value**: $393M
 
@@ -5492,7 +5492,7 @@ Conservative total costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total Costs Optimistic {#sec-sensitivity_total_costs_optimistic}
+## Optimistic Total Costs {#sec-sensitivity_total_costs_optimistic}
 
 **Value**: $230M
 
@@ -5505,7 +5505,7 @@ Optimistic total costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total QALYs Conservative {#sec-sensitivity_total_qalys_conservative}
+## Conservative Total QALYs {#sec-sensitivity_total_qalys_conservative}
 
 **Value**: 208K
 
@@ -5522,7 +5522,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Sensitivity Total QALYs Optimistic {#sec-sensitivity_total_qalys_optimistic}
+## Optimistic Total QALYs {#sec-sensitivity_total_qalys_optimistic}
 
 **Value**: 3.70M
 
@@ -5552,7 +5552,7 @@ Simultaneous trials multiplier (20x more trials)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Social Media Participant Target Max {#sec-social_media_participant_target_max}
+## Maximum Target Participant Count for Social Media Campaigns {#sec-social_media_participant_target_max}
 
 **Value**: 2,000
 
@@ -5565,7 +5565,7 @@ Maximum target participant count for social media campaigns
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Social Media Participant Target Min {#sec-social_media_participant_target_min}
+## Minimum Target Participant Count for Social Media Campaigns {#sec-social_media_participant_target_min}
 
 **Value**: 500
 
@@ -5578,7 +5578,7 @@ Minimum target participant count for social media campaigns
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## System Profit Per Life Saved {#sec-system_profit_per_life_saved}
+## System Profit per Life Saved in Millions {#sec-system_profit_per_life_saved}
 
 **Value**: $5.87M
 
@@ -5591,7 +5591,7 @@ System profit per life saved in millions
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Book Words {#sec-total_book_words}
+## Total Words in the Book {#sec-total_book_words}
 
 **Value**: 171K
 
@@ -5604,7 +5604,7 @@ Total words in the book
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Time Investment Hours {#sec-total_time_investment_hours}
+## Total Time Investment {#sec-total_time_investment_hours}
 
 **Value**: 14.7
 
@@ -5621,7 +5621,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total War Cost To WHO Budget Ratio {#sec-total_war_cost_to_who_budget_ratio}
+## Ratio of Total War Cost to WHO Budget {#sec-total_war_cost_to_who_budget_ratio}
 
 **Value**: 168
 
@@ -5634,7 +5634,7 @@ Ratio of total war cost to WHO budget (168x)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treatment Acceleration Years Target {#sec-treatment_acceleration_years_target}
+## Target Years to Market with dFDA {#sec-treatment_acceleration_years_target}
 
 **Value**: 2
 
@@ -5647,7 +5647,7 @@ Target years to market with dFDA
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Annual Suffering Hours Eliminated {#sec-treaty_annual_suffering_hours_eliminated}
+## Annual Hours of Human Suffering Eliminated by 1% Treaty {#sec-treaty_annual_suffering_hours_eliminated}
 
 **Value**: 9100B
 
@@ -5664,7 +5664,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Benefit Multiplier Vs Vaccines {#sec-treaty_benefit_multiplier_vs_vaccines}
+## Treaty System Benefit Multiplier vs Childhood Vaccination Programs {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 **Value**: 10.9
 
@@ -5679,7 +5679,7 @@ Treaty system benefit multiplier vs childhood vaccination programs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Annual Cost Amortized {#sec-treaty_campaign_annual_cost_amortized}
+## Amortized Annual Campaign Cost {#sec-treaty_campaign_annual_cost_amortized}
 
 **Value**: $250M
 
@@ -5696,7 +5696,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Lobbying {#sec-treaty_campaign_budget_lobbying}
+## Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance {#sec-treaty_campaign_budget_lobbying}
 
 **Value**: $650M
 
@@ -5709,7 +5709,7 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Mass Bribery {#sec-treaty_campaign_budget_mass_bribery}
+## Campaign Budget for Mass Mobilization {#sec-treaty_campaign_budget_mass_bribery}
 
 **Value**: $140M
 
@@ -5722,7 +5722,7 @@ Campaign budget for mass mobilization (voting bloc build)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Referendum {#sec-treaty_campaign_budget_referendum}
+## Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance {#sec-treaty_campaign_budget_referendum}
 
 **Value**: $300M
 
@@ -5735,7 +5735,7 @@ Global referendum campaign (get 208M votes): ads, media, partnerships, staff, le
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Reserve {#sec-treaty_campaign_budget_reserve}
+## Reserve Fund / Contingency Buffer {#sec-treaty_campaign_budget_reserve}
 
 **Value**: $50M
 
@@ -5748,7 +5748,7 @@ Reserve fund / contingency buffer
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Budget Super Pacs {#sec-treaty_campaign_budget_super_pacs}
+## Campaign Budget for Super Pacs and Political Lobbying {#sec-treaty_campaign_budget_super_pacs}
 
 **Value**: $800M
 
@@ -5761,7 +5761,7 @@ Campaign budget for Super PACs and political lobbying
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Cost Per Verified Vote Realistic Usd {#sec-treaty_campaign_cost_per_verified_vote_realistic_usd}
+## Realistic All-In Cost per Verified Vote {#sec-treaty_campaign_cost_per_verified_vote_realistic_usd}
 
 **Value**: $1
 
@@ -5776,7 +5776,7 @@ Realistic all-in cost per verified vote (referral payment + verification cost + 
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Cost Per Vote Max Usd {#sec-treaty_campaign_cost_per_vote_max_usd}
+## Maximum Cost per Vote for Mass Mobilization Campaign {#sec-treaty_campaign_cost_per_vote_max_usd}
 
 **Value**: $0
 
@@ -5789,7 +5789,7 @@ Maximum cost per vote for mass mobilization campaign
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Cost Per Vote Min Usd {#sec-treaty_campaign_cost_per_vote_min_usd}
+## Minimum Cost per Vote for Mass Mobilization Campaign {#sec-treaty_campaign_cost_per_vote_min_usd}
 
 **Value**: $0
 
@@ -5802,7 +5802,7 @@ Minimum cost per vote for mass mobilization campaign
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Duration Years {#sec-treaty_campaign_duration_years}
+## Treaty Campaign Duration {#sec-treaty_campaign_duration_years}
 
 **Value**: 4
 
@@ -5815,7 +5815,7 @@ Treaty campaign duration (3-5 year range, using midpoint)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Total Cost {#sec-treaty_campaign_total_cost}
+## Total Treaty Campaign Cost {#sec-treaty_campaign_total_cost}
 
 **Value**: $1.00B
 
@@ -5832,7 +5832,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Total Cost Base Case {#sec-treaty_campaign_total_cost_base_case}
+## Base Case Total Campaign Cost {#sec-treaty_campaign_total_cost_base_case}
 
 **Value**: $840M
 
@@ -5849,7 +5849,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Total Cost Realistic {#sec-treaty_campaign_total_cost_realistic}
+## Realistic Total Campaign Cost {#sec-treaty_campaign_total_cost_realistic}
 
 **Value**: $920M
 
@@ -5866,7 +5866,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Total Cost Worst Case {#sec-treaty_campaign_total_cost_worst_case}
+## Worst-Case Total Campaign Cost {#sec-treaty_campaign_total_cost_worst_case}
 
 **Value**: $1.11B
 
@@ -5883,7 +5883,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Verification Attempts Multiplier {#sec-treaty_campaign_verification_attempts_multiplier}
+## Verification Attempts Multiplier {#sec-treaty_campaign_verification_attempts_multiplier}
 
 **Value**: 1.18
 
@@ -5898,7 +5898,7 @@ Verification attempts multiplier (1 ÷ conversion rate, assuming 85% completion)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Viral Referendum Base Case {#sec-treaty_campaign_viral_referendum_base_case}
+## Base Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_base_case}
 
 **Value**: $140M
 
@@ -5913,7 +5913,7 @@ Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Viral Referendum Realistic {#sec-treaty_campaign_viral_referendum_realistic}
+## Realistic Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_realistic}
 
 **Value**: $220M
 
@@ -5930,7 +5930,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Viral Referendum Worst Case {#sec-treaty_campaign_viral_referendum_worst_case}
+## Worst-Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_worst_case}
 
 **Value**: $406M
 
@@ -5947,7 +5947,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Voting Bloc Target {#sec-treaty_campaign_voting_bloc_target}
+## Target Voting Bloc Size for Campaign {#sec-treaty_campaign_voting_bloc_target}
 
 **Value**: 280M
 
@@ -5960,7 +5960,7 @@ Target voting bloc size for campaign
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete Case Annual Benefits {#sec-treaty_complete_case_annual_benefits}
+## Total Annual Benefits from All 8 Categories {#sec-treaty_complete_case_annual_benefits}
 
 **Value**: $1.24T
 
@@ -5977,7 +5977,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete ROI Conditional 5th Percentile {#sec-treaty_complete_roi_conditional_5th_percentile}
+## Lower Bound Conditional ROI {#sec-treaty_complete_roi_conditional_5th_percentile}
 
 **Value**: 44
 
@@ -5994,7 +5994,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete ROI Conditional 95th Percentile {#sec-treaty_complete_roi_conditional_95th_percentile}
+## Worst-Case Conditional ROI {#sec-treaty_complete_roi_conditional_95th_percentile}
 
 **Value**: 66
 
@@ -6011,7 +6011,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete ROI Conditional Median {#sec-treaty_complete_roi_conditional_median}
+## Median Conditional ROI {#sec-treaty_complete_roi_conditional_median}
 
 **Value**: 54
 
@@ -6028,7 +6028,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete ROI Expected 5th Percentile {#sec-treaty_complete_roi_expected_5th_percentile}
+## Lower Bound Expected ROI {#sec-treaty_complete_roi_expected_5th_percentile}
 
 **Value**: 2.7
 
@@ -6045,7 +6045,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete ROI Expected 95th Percentile {#sec-treaty_complete_roi_expected_95th_percentile}
+## Upper Bound Expected ROI {#sec-treaty_complete_roi_expected_95th_percentile}
 
 **Value**: 27
 
@@ -6062,7 +6062,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Complete ROI Expected Median {#sec-treaty_complete_roi_expected_median}
+## Median Expected ROI {#sec-treaty_complete_roi_expected_median}
 
 **Value**: 14
 
@@ -6079,7 +6079,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Comprehensive With Full Regulatory Delay {#sec-treaty_comprehensive_with_full_regulatory_delay}
+## Total Annual Benefits Using Full Regulatory Delay Avoidance, Consolidating Overlapping Categories {#sec-treaty_comprehensive_with_full_regulatory_delay}
 
 **Value**: $11.5T
 
@@ -6096,7 +6096,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Lives Saved Annual Global {#sec-treaty_lives_saved_annual_global}
+## Annual Lives Saved from 1% Reduction in Conflict Deaths {#sec-treaty_lives_saved_annual_global}
 
 **Value**: 2,446
 
@@ -6113,7 +6113,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Net Annual Benefit {#sec-treaty_net_annual_benefit}
+## Net Annual Benefit {#sec-treaty_net_annual_benefit}
 
 **Value**: $163B
 
@@ -6130,7 +6130,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Net Benefit Per Life Saved {#sec-treaty_net_benefit_per_life_saved}
+## Net Benefit per Life Saved {#sec-treaty_net_benefit_per_life_saved}
 
 **Value**: $-6
 
@@ -6147,7 +6147,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty QALYs Gained Annual Global {#sec-treaty_qalys_gained_annual_global}
+## Annual QALYs Gained from Peace Dividend {#sec-treaty_qalys_gained_annual_global}
 
 **Value**: 85,610
 
@@ -6164,7 +6164,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Total Annual Benefits {#sec-treaty_total_annual_benefits}
+## Total Annual Benefits {#sec-treaty_total_annual_benefits}
 
 **Value**: $164B
 
@@ -6181,7 +6181,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Total Annual Costs {#sec-treaty_total_annual_costs}
+## Total Annual System Costs {#sec-treaty_total_annual_costs}
 
 **Value**: $290M
 
@@ -6198,7 +6198,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Total Complete Benefits Annual {#sec-treaty_total_complete_benefits_annual}
+## Total Annual Benefits from All 8 Benefit Categories {#sec-treaty_total_complete_benefits_annual}
 
 **Value**: $1.24T
 
@@ -6215,7 +6215,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Total Lives Saved Annual {#sec-treaty_total_lives_saved_annual}
+## Total Annual Lives Saved Equivalent {#sec-treaty_total_lives_saved_annual}
 
 **Value**: 26,446
 
@@ -6232,7 +6232,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Treaty Total QALYs Gained Annual {#sec-treaty_total_qalys_gained_annual}
+## Total Annual QALYs Gained {#sec-treaty_total_qalys_gained_annual}
 
 **Value**: 926K
 
@@ -6262,7 +6262,7 @@ Trial completion speed multiplier (10x faster)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Type Ii Error Cost Ratio {#sec-type_ii_error_cost_ratio}
+## Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
 **Value**: 1,610
 
@@ -6279,7 +6279,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Type I Error Benefit DALYs {#sec-type_i_error_benefit_dalys}
+## Maximum DALYs Saved by FDA Preventing Unsafe Drugs {#sec-type_i_error_benefit_dalys}
 
 **Value**: 0.003
 
@@ -6292,7 +6292,7 @@ Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Bond Funding Base Case {#sec-victory_bond_funding_base_case}
+## Victory Social Impact Bond Funding in Base Case {#sec-victory_bond_funding_base_case}
 
 **Value**: $498M
 
@@ -6309,7 +6309,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Bond Funding Percentage {#sec-victory_bond_funding_percentage}
+## Victory Bond Funding as Percentage of Total Campaign Cost {#sec-victory_bond_funding_percentage}
 
 **Value**: 49%
 
@@ -6326,7 +6326,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Bond Funding Realistic {#sec-victory_bond_funding_realistic}
+## Victory Social Impact Bond Funding in Realistic Scenario {#sec-victory_bond_funding_realistic}
 
 **Value**: $501M
 
@@ -6343,7 +6343,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Bond Funding Worst Case {#sec-victory_bond_funding_worst_case}
+## Victory Social Impact Bond Funding in Worst-Case Scenario {#sec-victory_bond_funding_worst_case}
 
 **Value**: $664M
 
@@ -6360,7 +6360,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Bond Investment Unit Usd {#sec-victory_bond_investment_unit_usd}
+## Victory Bond Investment Unit for Retail Investors {#sec-victory_bond_investment_unit_usd}
 
 **Value**: $1.00K
 
@@ -6373,7 +6373,7 @@ VICTORY bond investment unit for retail investors
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Bond Payout Per Unit Usd Annual {#sec-victory_bond_payout_per_unit_usd_annual}
+## Annual Payout per $1,000 Victory Bond Investment Unit {#sec-victory_bond_payout_per_unit_usd_annual}
 
 **Value**: $2.72K
 
@@ -6390,7 +6390,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Legal Compliance Realistic {#sec-victory_legal_compliance_realistic}
+## Victory Funding for Legal/Compliance (Realistic) {#sec-victory_legal_compliance_realistic}
 
 **Value**: $47M
 
@@ -6403,7 +6403,7 @@ VICTORY funding for legal/compliance (political campaign compliance)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Lobbying Realistic {#sec-victory_lobbying_realistic}
+## Victory Funding for Political Lobbying (Realistic) {#sec-victory_lobbying_realistic}
 
 **Value**: $250M
 
@@ -6416,7 +6416,7 @@ VICTORY funding for political lobbying (US/EU/G20, Super PACs, opposition resear
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Operations Realistic {#sec-victory_operations_realistic}
+## Victory Funding for Operations (Realistic) {#sec-victory_operations_realistic}
 
 **Value**: $30M
 
@@ -6429,7 +6429,7 @@ VICTORY funding for operations (political campaign staff)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Partnerships Realistic {#sec-victory_partnerships_realistic}
+## Victory Funding for Partnerships (Realistic) {#sec-victory_partnerships_realistic}
 
 **Value**: $71M
 
@@ -6442,7 +6442,7 @@ VICTORY funding for partnerships (defense industry conversion, political coaliti
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Reserve Realistic {#sec-victory_reserve_realistic}
+## Victory Funding for Reserve (Realistic) {#sec-victory_reserve_realistic}
 
 **Value**: $13M
 
@@ -6455,7 +6455,7 @@ VICTORY funding for reserve (political campaign contingency)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Tech R&D Realistic {#sec-victory_tech_rd_realistic}
+## Victory Funding for Technology R&D (Realistic) {#sec-victory_tech_rd_realistic}
 
 **Value**: $24M
 
@@ -6468,7 +6468,7 @@ VICTORY funding for technology R&D (political campaign tools)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Victory Viral Referendum Realistic {#sec-victory_viral_referendum_realistic}
+## Victory Funding for Viral Referendum (Realistic) {#sec-victory_viral_referendum_realistic}
 
 **Value**: $143M
 
@@ -6503,7 +6503,7 @@ Fundamental parameters and constants used throughout the analysis.
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Defense Sector Retention % {#sec-defense_sector_retention_pct}
+## Percentage of Budget Defense Sector Keeps Under 1% Treaty {#sec-defense_sector_retention_pct}
 
 **Value**: 99%
 
@@ -6547,7 +6547,7 @@ dFDA trial completion rate (95%)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## DIH Treasury To Medical Research Annual {#sec-dih_treasury_to_medical_research_annual}
+## DIH Annual Funding for Medical Research {#sec-dih_treasury_to_medical_research_annual}
 
 **Value**: $24.5B
 
@@ -6558,7 +6558,7 @@ Annual funding for medical research (treaty funding minus bond payouts)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## DIH Treasury To Medical Research Annual % {#sec-dih_treasury_to_medical_research_annual_pct}
+## DIH Percentage of Treaty Funding Going to Medical Research {#sec-dih_treasury_to_medical_research_annual_pct}
 
 **Value**: 90%
 
@@ -6686,7 +6686,7 @@ Percentage of treaty funding going to medical research (remainder after bonds)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## NPV Discount Rate Standard {#sec-npv_discount_rate_standard}
+## Standard Discount Rate for NPV Analysis {#sec-npv_discount_rate_standard}
 
 **Value**: 8%
 
@@ -6697,7 +6697,7 @@ Standard discount rate for NPV analysis (8% annual)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## NPV Time Horizon Years {#sec-npv_time_horizon_years}
+## Standard Time Horizon for NPV Analysis {#sec-npv_time_horizon_years}
 
 **Value**: 10
 
@@ -6879,7 +6879,7 @@ Standard time horizon for NPV analysis
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Treaty Annual Funding {#sec-treaty_annual_funding}
+## Annual Funding from 1% of Global Military Spending Redirected to DIH {#sec-treaty_annual_funding}
 
 **Value**: $27.2B
 
@@ -6890,7 +6890,7 @@ Annual funding from 1% of global military spending redirected to DIH
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Treaty Reduction % {#sec-treaty_reduction_pct}
+## 1% Reduction in Military Spending/War Costs from Treaty {#sec-treaty_reduction_pct}
 
 **Value**: 1%
 
@@ -6901,7 +6901,7 @@ Annual funding from 1% of global military spending redirected to DIH
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Trial Cost Reduction % {#sec-trial_cost_reduction_pct}
+## Trial Cost Reduction Percentage {#sec-trial_cost_reduction_pct}
 
 **Value**: 50%
 
@@ -6912,7 +6912,7 @@ Trial cost reduction percentage (50% baseline, conservative)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Victory Bond Annual Payout {#sec-victory_bond_annual_payout}
+## Annual Victory Bond Payout {#sec-victory_bond_annual_payout}
 
 **Value**: $2.72B
 
@@ -6923,7 +6923,7 @@ Annual VICTORY bond payout (treaty funding × bond percentage)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Victory Bond Annual Return % {#sec-victory_bond_annual_return_pct}
+## Annual Return Percentage for Victory Bondholders {#sec-victory_bond_annual_return_pct}
 
 **Value**: 272%
 
@@ -6934,7 +6934,7 @@ Annual return percentage for VICTORY bondholders
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Victory Bond Funding % {#sec-victory_bond_funding_pct}
+## Percentage of Captured Dividend Funding Victory Bonds {#sec-victory_bond_funding_pct}
 
 **Value**: 10%
 
@@ -6945,7 +6945,7 @@ Percentage of captured dividend funding VICTORY bonds (10%)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Victory Bond Payback Months {#sec-victory_bond_payback_months}
+## Months to Full Payback for Victory Bondholders {#sec-victory_bond_payback_months}
 
 **Value**: 4.42
 
