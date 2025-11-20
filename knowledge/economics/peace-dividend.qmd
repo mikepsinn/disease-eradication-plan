@@ -24,6 +24,31 @@ Here's what 1% less murder money buys:
 - **World saves**: [`{python} peace_dividend_annual_societal_benefit_formatted`](../appendix/peace-dividend-calculations.qmd) not spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees
 - **Source**: [Cost of War breakdown](../problem/cost-of-war.qmd)
 
+## The Double Win: Not a Trade-off, a Pareto Improvement
+
+The 1% Treaty delivers two distinct benefits simultaneously:
+
+**Benefit 1: Reduced Annihilation Risk**
+By lowering global military spending by 1%, you reduce:
+- Deployed warheads (fewer things that can accidentally launch)
+- Accidental-launch probability (fewer "oops, started WW3" scenarios)
+- Crisis instability (everyone's slightly less twitchy with triggers)
+- Maintenance of dead capital (resources freed from unproductive assets)
+
+**Benefit 2: Medical Research Acceleration**
+The redirected {{< var treaty_annual_funding >}} funds a system that:
+- Accelerates research {{< var research_acceleration_multiplier >}}× through the dFDA
+- Generates {{< var peace_dividend_annual_societal_benefit >}} in additional savings
+- Creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} total annual benefit (conservative case)
+
+**This is not a sacrifice of security for health.** It's a simultaneous reduction in existential risk PLUS a massive increase in medical progress. 
+
+Standard logic says: "Trade off some security to gain health."
+
+Actual logic says: "Reduce annihilation risk AND cure diseases."
+
+The 1% Treaty is a Pareto Improvement—everyone is better off, no one is worse off. Power balances remain identical (everyone cuts 1% simultaneously), but global risk decreases while productive capital increases.
+
 ## How 1% Less Violence Pays For Everything
 
 The [dFDA analysis](../appendix/dfda-cost-benefit-analysis.qmd) proves medical research can work {{< var trial_cost_reduction_factor >}}× better. This explains where you steal the money to fund it.
