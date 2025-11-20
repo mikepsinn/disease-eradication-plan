@@ -5,8 +5,11 @@ from dih_models.parameters import *
 
 ```{python}
 #| fig-cap: "Cost of Disease vs Curing Diseases"
+#| output: false
 from pathlib import Path
 
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 import numpy as np
 from dih_models.plotting.chart_style import (
@@ -36,7 +39,7 @@ categories = [
 
 # Create figure - tall to accommodate stacked text without overlapping
 
-fig, ax = plt.subplots(figsize=(14, 128))
+fig, ax = plt.subplots(figsize=(14, 16))
 
 # Column 1: Disease Burden (white bar with black text)
 
@@ -85,21 +88,20 @@ ax.set_ylim(0, disease_total * 1.01)
 clean_spines(ax, ['top', 'right', 'left', 'bottom'])
 
 # Add branding
-
-add_watermark(fig)
+# NOTE: add_watermark disabled due to matplotlib dimension bug
+# add_watermark(fig)
 
 # Save in brain/figures directory
 
 output_path = get_figure_output_path('disease-vs-curing-costs-column-chart.png')
 
-# Save the figure with tight bounding box to remove empty space
-# pad_inches adds padding around the content (including watermark)
-# Using larger pad_inches to ensure text isn't clipped
+# Save the figure
+# Note: bbox_inches='tight' removed due to matplotlib bug with large y-axis values
 
-plt.savefig(output_path, dpi=150, bbox_inches='tight', pad_inches=0.5, facecolor=COLOR_WHITE)
+plt.savefig(output_path, dpi=150, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
 
 add_png_metadata(output_path, title="Disease Vs Curing Costs Column Chart")
-plt.show()
+plt.close()
 ```
