@@ -2675,15 +2675,47 @@ GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
     keywords=["8.2t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"]
 )  # $8.2 trillion annually
 
-GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
-    109_000_000_000_000,
+# Disease cost breakdown components
+GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
+    9_900_000_000_000,
     source_ref="disease-economic-burden-109t",
     source_type="external",
-    description="Total economic burden of disease globally (lost productivity, mortality, disability)",
+    description="Direct medical costs of disease globally (treatment, hospitalization, medication)",
+    display_name="Global Annual Direct Medical Costs of Disease",
+    unit="USD/year",
+    keywords=["9.9t", "medical", "healthcare", "treatment", "hospitalization"]
+)  # $9.9 trillion annually
+
+GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
+    5_000_000_000_000,
+    source_ref="disease-economic-burden-109t",
+    source_type="external",
+    description="Annual productivity loss from disease globally (absenteeism, reduced output)",
+    display_name="Global Annual Productivity Loss from Disease",
+    unit="USD/year",
+    keywords=["5.0t", "productivity", "lost work", "economic loss", "absenteeism"]
+)  # $5 trillion annually
+
+GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
+    94_200_000_000_000,
+    source_ref="disease-economic-burden-109t",
+    source_type="external",
+    description="Economic value of human life lost to disease annually (mortality valuation)",
+    display_name="Global Annual Economic Value of Human Life Lost to Disease",
+    unit="USD/year",
+    keywords=["94.2t", "human life", "mortality", "deaths", "dalys", "life value"]
+)  # $94.2 trillion annually
+
+GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
+    GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL + GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL,
+    source_ref="disease-economic-burden-109t",
+    source_type="calculated",
+    description="Total economic burden of disease globally (medical + productivity + mortality)",
     display_name="Total Economic Burden of Disease Globally",
     unit="USD/year",
-    keywords=["109.0t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"]
-)  # $109 trillion annually
+    formula="MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
+    keywords=["109.0t", "109.1t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"]
+)  # $109.1 trillion annually
 
 GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
     GLOBAL_ANNUAL_WAR_TOTAL_COST + GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,

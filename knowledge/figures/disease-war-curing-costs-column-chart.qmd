@@ -21,12 +21,12 @@ setup_chart_style(style='light', dpi=150)
 # Constant for converting USD to billions
 BILLION = 1_000_000_000
 
-# Disease burden (from cost-of-disease.qmd)
+# Disease burden (from parameters.py)
 
-disease_medical = 9900  # Direct medical costs
-disease_productivity = 5000  # Lost productivity
-disease_lives = 94200  # Lost human life (DALYs)
-disease_total = disease_medical + disease_productivity + disease_lives  # $109.1T
+disease_medical = float(GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL) / BILLION
+disease_productivity = float(GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL) / BILLION
+disease_lives = float(GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL) / BILLION
+disease_total = float(GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL) / BILLION
 
 # War costs breakdown
 

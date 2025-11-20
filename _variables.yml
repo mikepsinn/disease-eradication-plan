@@ -887,10 +887,22 @@
   \ calculation\">74.1M</a>"
 "global_dfda_qalys_with_regulatory_avoidance_latex": "$$\nQALYs_{total} = 74M + 140k\
   \ \\approx 74.14M\n$$"
-"global_disease_economic_burden_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
-  \ class=\"parameter-link\" title=\"Total economic burden of disease globally (lost\
-  \ productivity, mortality, disability) | ✓ High confidence | Unit: USD/year | Click\
-  \ to view source\">$109T</a>"
+"global_disease_direct_medical_cost_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
+  \ class=\"parameter-link\" title=\"Direct medical costs of disease globally (treatment,\
+  \ hospitalization, medication) | ✓ High confidence | Unit: USD/year | Click to view\
+  \ source\">$9.90T</a>"
+"global_disease_economic_burden_annual": "<a href=\"/disease-economic-burden-109t\"\
+  \ class=\"parameter-link\" title=\"Total economic burden of disease globally (medical\
+  \ + productivity + mortality) | ✓ High confidence | Formula: MEDICAL_COSTS + PRODUCTIVITY_LOSS\
+  \ + MORTALITY_VALUE | Unit: USD/year | Click to view calculation\">$109T</a>"
+"global_disease_human_life_value_loss_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
+  \ class=\"parameter-link\" title=\"Economic value of human life lost to disease\
+  \ annually (mortality valuation) | ✓ High confidence | Unit: USD/year | Click to\
+  \ view source\">$94.2T</a>"
+"global_disease_productivity_loss_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
+  \ class=\"parameter-link\" title=\"Annual productivity loss from disease globally\
+  \ (absenteeism, reduced output) | ✓ High confidence | Unit: USD/year | Click to\
+  \ view source\">$5.00T</a>"
 "global_education_for_all_cost": "<a href=\"/knowledge/references.qmd#unesco-education-for-all-cost\"\
   \ class=\"parameter-link\" title=\"Global cost to achieve universal education |\
   \ ✓ High confidence | Unit: USD | Click to view source\">$30B</a>"

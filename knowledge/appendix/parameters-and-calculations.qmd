@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 500
+**Total parameters**: 503
 
-- External sources (peer-reviewed): 149
-- Calculated values: 307
+- External sources (peer-reviewed): 151
+- Calculated values: 308
 - Core definitions: 44
 
 # External Data Sources {#sec-external}
@@ -908,11 +908,37 @@ Daily deaths from curable diseases globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Total Economic Burden of Disease Globally {#sec-global_disease_economic_burden_annual}
+## Global Annual Direct Medical Costs of Disease {#sec-global_disease_direct_medical_cost_annual}
 
-**Value**: $109T
+**Value**: $9.90T
 
-Total economic burden of disease globally (lost productivity, mortality, disability)
+Direct medical costs of disease globally (treatment, hospitalization, medication)
+
+**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Global Annual Economic Value of Human Life Lost to Disease {#sec-global_disease_human_life_value_loss_annual}
+
+**Value**: $94.2T
+
+Economic value of human life lost to disease annually (mortality valuation)
+
+**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Global Annual Productivity Loss from Disease {#sec-global_disease_productivity_loss_annual}
+
+**Value**: $5.00T
+
+Annual productivity loss from disease globally (absenteeism, reduced output)
 
 **Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
 
@@ -4098,6 +4124,21 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
 
 *~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Total Economic Burden of Disease Globally {#sec-global_disease_economic_burden_annual}
+
+**Value**: $109T
+
+Total economic burden of disease globally (medical + productivity + mortality)
+
+*Formula*: `MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE`
+
+**Methodology**: [disease-economic-burden-109t](#disease-economic-burden-109t)
+
+*✓ High confidence*
 
 :::
 

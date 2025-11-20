@@ -38,12 +38,12 @@ war_indirect = 3538
 war_total = war_direct + war_infrastructure + war_lives + war_trade + war_indirect
 cure_values = [11, 5.5]
 
-# Disease costs breakdown (from cost-of-disease.qmd)
+# Disease costs breakdown (from parameters.py)
 
-disease_medical = 9900
-disease_productivity = 5000
-disease_lives = 94200
-disease_total = disease_medical + disease_productivity + disease_lives
+disease_medical = float(GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL) / 1e9
+disease_productivity = float(GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL) / 1e9
+disease_lives = float(GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL) / 1e9
+disease_total = float(GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL) / 1e9
 
 # Stacked values for disease
 
