@@ -345,7 +345,7 @@ format:
           <meta property="og:type" content="book">
           <meta property="og:url" content="https://WarOnDisease.org">
   pdf:
-    documentclass: scrreprt
+    documentclass: report
     echo: false
     toc: true
     toc-depth: 3
