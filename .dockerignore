@@ -1,0 +1,47 @@
+# Exclude build outputs and caches from Docker context
+_book/
+_freeze/
+.quarto/
+*.log
+build-*.log
+
+# Exclude version control
+.git/
+.github/
+
+# Exclude development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Exclude Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Exclude Node modules if present
+node_modules/
+.pnpm-store/
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Exclude temporary files
+tmp/
+temp/
+*.tmp
+
+# Exclude Docker files (we don't need them in the context for other builds)
+Dockerfile*
+docker-compose*.yml

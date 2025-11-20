@@ -1,0 +1,10 @@
+services:
+  html-build:
+    build:
+      context: .
+      dockerfile: Dockerfile.html-build
+    volumes:
+      # Mount the _book output directory to get results
+      - ./_book:/workspace/_book
+    # This will run the HTML rendering script
+    # Output will be in _book/warondisease/
