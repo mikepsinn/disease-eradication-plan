@@ -21,7 +21,7 @@ from pathlib import Path
 
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
-from quarto_prep import prepare_book
+from quarto_prep import prepare_book, check_quarto_installed, print_quarto_install_instructions
 
 
 def main():
@@ -40,6 +40,11 @@ def main():
     # Get project root (parent of scripts directory) and change to it
     project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
+
+    # Check if Quarto is installed before proceeding
+    if not check_quarto_installed():
+        print_quarto_install_instructions()
+        sys.exit(1)
 
     # Prepare book files (config + index) - project_root auto-detected from cwd
     if not prepare_book():

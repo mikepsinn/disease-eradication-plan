@@ -7,13 +7,48 @@ Shared utilities for preparing Quarto files before rendering:
 - Copying and updating relative paths for economics.qmd -> index.qmd
 - Copying index-book.qmd -> index.qmd for book rendering
 - Copying config files (_quarto-book.yml, _quarto-economics.yml -> _quarto.yml)
+- Checking if Quarto is installed
 """
 
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 from typing import Optional
+
+
+def check_quarto_installed():
+    """
+    Check if Quarto is installed and available in PATH.
+    
+    Returns:
+        True if Quarto is installed, False otherwise
+    """
+    try:
+        result = subprocess.run(
+            ["quarto", "--version"],
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        return result.returncode == 0
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return False
+
+
+def print_quarto_install_instructions():
+    """Print helpful instructions for installing Quarto."""
+    print("\n" + "="*80, file=sys.stderr)
+    print("[ERROR] Quarto is not installed or not in your PATH", file=sys.stderr)
+    print("="*80, file=sys.stderr)
+    print("\nQuarto is required to render the book or economics models.", file=sys.stderr)
+    print("\nInstallation instructions:", file=sys.stderr)
+    print("  - Visit: https://quarto.org/docs/get-started/", file=sys.stderr)
+    print("  - Download and install Quarto for your operating system", file=sys.stderr)
+    print("  - After installation, restart your terminal", file=sys.stderr)
+    print("  - Verify installation: quarto --version", file=sys.stderr)
+    print("\n" + "="*80 + "\n", file=sys.stderr)
 
 
 def _find_project_root(start_path: Optional[Path] = None) -> Path:
