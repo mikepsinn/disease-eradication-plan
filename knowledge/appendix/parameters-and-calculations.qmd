@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 492
+**Total parameters**: 500
 
 - External sources (peer-reviewed): 148
-- Calculated values: 295
+- Calculated values: 303
 - Core definitions: 49
 
 # External Data Sources {#sec-external}
@@ -4335,23 +4335,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Net Benefit Per Life Saved {#sec-net_benefit_per_life_saved}
-
-**Value**: $-5
-
-Net benefit per life saved (ICER × QALYs/life)
-
-$$
-BenefitPerLife = -\$59,476 ÷ 1M \times 35 = -\$2.08M
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Opportunity Cost Per Day {#sec-opportunity_cost_per_day}
 
 **Value**: $3.39B
@@ -4742,6 +4725,23 @@ PD_{veteran} = \$20.01B \times 0.01 = \$0.20B
 $$
 
 **Methodology**: [../economics/peace-dividend.qmd](../economics/peace-dividend.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Personal Life Extension Years Age 30 {#sec-personal_life_extension_years_age_30}
+
+**Value**: 72
+
+Personal life extension for age 30 baseline from 1% Treaty (72 extra years)
+
+$$
+LifeExtension = 72 \text{ years}
+$$
+
+**Methodology**: [../call-to-action/your-personal-benefits.qmd](../call-to-action/your-personal-benefits.qmd)
 
 *✓ High confidence*
 
@@ -5604,23 +5604,6 @@ Total words in the book
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Complete Benefits Annual {#sec-total_complete_benefits_annual}
-
-**Value**: $1.21T
-
-Total annual benefits from all 8 benefit categories
-
-$$
-TotalBenefits = \$113.55 + \$50 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,238.55B
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Total Time Investment Hours {#sec-total_time_investment_hours}
 
 **Value**: 14.7
@@ -5658,6 +5641,23 @@ Ratio of total war cost to WHO budget (168x)
 Target years to market with dFDA
 
 **Methodology**: [../appendix/research-acceleration-model.qmd#target-timeline](../appendix/research-acceleration-model.qmd#target-timeline)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Annual Suffering Hours Eliminated {#sec-treaty_annual_suffering_hours_eliminated}
+
+**Value**: 9100B
+
+Annual hours of human suffering eliminated by 1% Treaty (9.1 trillion hours)
+
+$$
+Suffering = 9.1T \text{ hours annually}
+$$
+
+**Methodology**: [../economics/economics.qmd#suffering-reduction](../economics/economics.qmd#suffering-reduction)
 
 *✓ High confidence*
 
@@ -5977,6 +5977,108 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Treaty Complete Roi Conditional 5Th Percentile {#sec-treaty_complete_roi_conditional_5th_percentile}
+
+**Value**: 44
+
+Lower bound conditional ROI (95% CI lower bound, if treaty passes)
+
+$$
+ROI_{conditional,lower} = 44:1
+$$
+
+**Methodology**: [../economics/economics.qmd#probabilistic-analysis](../economics/economics.qmd#probabilistic-analysis)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Complete Roi Conditional 95Th Percentile {#sec-treaty_complete_roi_conditional_95th_percentile}
+
+**Value**: 66
+
+Worst-case conditional ROI (95% CI upper bound, if treaty passes)
+
+$$
+ROI_{conditional,worst} = 66:1
+$$
+
+**Methodology**: [../economics/economics.qmd#probabilistic-analysis](../economics/economics.qmd#probabilistic-analysis)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Complete Roi Conditional Median {#sec-treaty_complete_roi_conditional_median}
+
+**Value**: 54
+
+Median conditional ROI (50th percentile, if treaty passes)
+
+$$
+ROI_{conditional,median} = 54:1
+$$
+
+**Methodology**: [../economics/economics.qmd#probabilistic-analysis](../economics/economics.qmd#probabilistic-analysis)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Complete Roi Expected 5Th Percentile {#sec-treaty_complete_roi_expected_5th_percentile}
+
+**Value**: 2.7
+
+Lower bound expected ROI (95% CI, accounting for political risk)
+
+$$
+ROI_{expected,lower} = 2.7:1
+$$
+
+**Methodology**: [../economics/economics.qmd#probabilistic-analysis](../economics/economics.qmd#probabilistic-analysis)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Complete Roi Expected 95Th Percentile {#sec-treaty_complete_roi_expected_95th_percentile}
+
+**Value**: 27
+
+Upper bound expected ROI (95% CI, accounting for political risk)
+
+$$
+ROI_{expected,upper} = 27:1
+$$
+
+**Methodology**: [../economics/economics.qmd#probabilistic-analysis](../economics/economics.qmd#probabilistic-analysis)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Complete Roi Expected Median {#sec-treaty_complete_roi_expected_median}
+
+**Value**: 14
+
+Median expected ROI (50th percentile, accounting for political risk)
+
+$$
+ROI_{expected,median} = 14:1
+$$
+
+**Methodology**: [../economics/economics.qmd#probabilistic-analysis](../economics/economics.qmd#probabilistic-analysis)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Treaty Comprehensive With Full Regulatory Delay {#sec-treaty_comprehensive_with_full_regulatory_delay}
 
 **Value**: $11.5T
@@ -6028,6 +6130,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Treaty Net Benefit Per Life Saved {#sec-treaty_net_benefit_per_life_saved}
+
+**Value**: $-5
+
+Net benefit per life saved (ICER × QALYs/life)
+
+$$
+BenefitPerLife = -\$59,476 ÷ 1M \times 35 = -\$2.08M
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Treaty Qalys Gained Annual Global {#sec-treaty_qalys_gained_annual_global}
 
 **Value**: 85,610
@@ -6073,6 +6192,23 @@ TotalCosts = \$0.25B + \$0.04B = \$0.29B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty Total Complete Benefits Annual {#sec-treaty_total_complete_benefits_annual}
+
+**Value**: $1.21T
+
+Total annual benefits from all 8 benefit categories
+
+$$
+TotalBenefits = \$113.55 + \$50 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,238.55B
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits)
 
 *✓ High confidence*
 

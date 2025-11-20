@@ -73,7 +73,34 @@ if sys.platform == 'win32':
 
 ### Parameter Naming Rules
 
-**CRITICAL: These rules apply to ALL numeric parameters (currency, deaths, DALYs, etc.)**
+**CRITICAL: Parameter names must be SELF-DOCUMENTING. A reader should know EXACTLY what is being measured without looking at the description.**
+
+**Naming Structure: `[SCOPE]_[METRIC]_[MODIFIERS]_[UNIT_TYPE]`**
+
+- **SCOPE**: What entity? (DFDA, TREATY, GLOBAL, PERSONAL, VICTORY_BOND, etc.)
+- **METRIC**: What's being measured? (ROI, COST, BENEFIT, DEATHS, DALYS, etc.)
+- **MODIFIERS**: Scenario, timeframe, calculation method
+- **UNIT_TYPE**: Optional for clarity (ANNUAL, PCT, RATIO, etc.)
+
+**Examples:**
+
+✅ **Good (self-documenting):**
+```python
+TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE  # Clear: Treaty, complete benefits, expected value, 95th percentile
+DFDA_ROI_RD_ONLY                              # Clear: dFDA, R&D savings only
+PERSONAL_LIFE_EXTENSION_YEARS_AGE_30          # Clear: Personal benefit, life extension, for age 30
+VICTORY_BOND_ANNUAL_RETURN_PCT                # Clear: Victory bonds, annual return, percentage
+```
+
+❌ **Bad (ambiguous):**
+```python
+PROBABILISTIC_ROI_EXPECTED_UPPER_BOUND        # ROI of WHAT? dFDA? Treaty? R&D only?
+ANNUAL_BENEFIT                                # Benefit of WHAT? Which scenario?
+TOTAL_COST                                    # Total cost of WHAT?
+ROI_MEDIAN                                    # Median ROI for WHAT intervention?
+```
+
+**Specific Rules:**
 
 - **Parameter name**: `FOUNDATION_FUNDING_REALISTIC` (uppercase, semantic name)
 - **Variable name**: `foundation_funding_realistic` (lowercase, auto-generated)
@@ -85,6 +112,10 @@ if sys.platform == 'win32':
 - **DO NOT** manually format in QMD:
   - ❌ `${{< var foundation_funding_realistic >}}M`
   - ❌ `{{< var regulatory_delay_deaths >}}M deaths`
+- **DO** include scope prefix for ROI/cost/benefit parameters:
+  - ✅ `TREATY_COMPLETE_ROI_CONSERVATIVE` (not just `CONSERVATIVE_ROI`)
+  - ✅ `DFDA_ANNUAL_COST` (not just `ANNUAL_COST`)
+  - ✅ `PERSONAL_LIFETIME_BENEFIT_AGE_30` (not just `LIFETIME_BENEFIT`)
 
 **Examples:**
 

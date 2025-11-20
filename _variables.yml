@@ -1062,12 +1062,6 @@
   \ | Unit: ratio | Click to view calculation\">0.00117</a>"
 "multiplier_vs_givewell_latex": "$$\nMultiplier = \\frac{|-\\$6.19M \\times 10^9|}{\\\
   $4,500} \\approx 1,376x\n$$"
-"net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
-  \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
-  \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: USD/life | Click\
-  \ to view calculation\">$-5</a>"
-"net_benefit_per_life_saved_latex": "$$\nBenefitPerLife = -\\$59,476 ÷ 1M \\times\
-  \ 35 = -\\$2.08M\n$$"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
@@ -1237,6 +1231,13 @@
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">2.61M</span>"
 "personal_lifetime_benefit_eradication_5yr_age_30_1pct": "<span class=\"parameter-link\"\
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">1.18M</span>"
+"personal_life_extension_years_age_30": "<a href=\"/knowledge/call-to-action/your-personal-benefits.qmd\"\
+  \ class=\"parameter-link\" title=\"Personal life extension for age 30 baseline from\
+  \ 1% Treaty (72 extra years) | ✓ High confidence | Formula: Cumulative health gains\
+  \ from medical research acceleration | Unit: years | Click to view calculation\"\
+  >72</a>"
+"personal_life_extension_years_age_30_latex": "$$\nLifeExtension = 72 \\text{ years}\n\
+  $$"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\
   \ - $12,239/year\">12,239</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\
@@ -1567,12 +1568,6 @@
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" title=\"\
   Total words in the book | ✓ High confidence | Unit: words | Click to view calculation\"\
   >171K</a>"
-"total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits\"\
-  \ class=\"parameter-link\" title=\"Total annual benefits from all 8 benefit categories\
-  \ | ✓ High confidence | Formula: PEACE + R&D + FASTER_ACCESS + ACCELERATION + RARE\
-  \ + PRICE + PREVENTION + MENTAL | Unit: USD/year | Click to view calculation\">$1.21T</a>"
-"total_complete_benefits_annual_latex": "$$\nTotalBenefits = \\$113.55 + \\$50 + \\\
-  $300 + \\$100 + \\$400 + \\$100 + \\$100 + \\$75 = \\$1,238.55B\n$$"
 "total_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
   \ class=\"parameter-link\" title=\"Overall age-adjusted death rate | ✓ High confidence\
   \ | Unit: deaths per 100,000 | Click to view source\">722</a>"
@@ -1621,6 +1616,12 @@
   \ definition\">$27.2B</span>"
 "treaty_annual_funding_latex": "$$\nFunding = \\$2,718B \\times 0.01 = \\$27.18B\n\
   $$"
+"treaty_annual_suffering_hours_eliminated": "<a href=\"/knowledge/economics/economics.qmd#suffering-reduction\"\
+  \ class=\"parameter-link\" title=\"Annual hours of human suffering eliminated by\
+  \ 1% Treaty (9.1 trillion hours) | ✓ High confidence | Formula: Total DALYs eliminated\
+  \ × hours per DALY | Unit: hours/year | Click to view calculation\">9100B</a>"
+"treaty_annual_suffering_hours_eliminated_latex": "$$\nSuffering = 9.1T \\text{ hours\
+  \ annually}\n$$"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ class=\"parameter-link\" title=\"Treaty system benefit multiplier vs childhood\
   \ vaccination programs | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT\
@@ -1719,6 +1720,41 @@
 "treaty_complete_case_annual_benefits_latex": "$$\nTotalComplete = \\$113.6B + \\\
   $50B + \\$300B + \\$100B + \\$400B + \\$100B + \\$100B + \\$75B = \\$1,238.6B\n\
   $$"
+"treaty_complete_roi_conditional_5th_percentile": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
+  \ class=\"parameter-link\" title=\"Lower bound conditional ROI (95% CI lower bound,\
+  \ if treaty passes) | ✓ High confidence | Formula: Probabilistic simulation: 5th\
+  \ percentile | Unit: ratio | Click to view calculation\">44</a>"
+"treaty_complete_roi_conditional_5th_percentile_latex": "$$\nROI_{conditional,lower}\
+  \ = 44:1\n$$"
+"treaty_complete_roi_conditional_95th_percentile": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
+  \ class=\"parameter-link\" title=\"Worst-case conditional ROI (95% CI upper bound,\
+  \ if treaty passes) | ✓ High confidence | Formula: Probabilistic simulation: benefits\
+  \ half, costs double | Unit: ratio | Click to view calculation\">66</a>"
+"treaty_complete_roi_conditional_95th_percentile_latex": "$$\nROI_{conditional,worst}\
+  \ = 66:1\n$$"
+"treaty_complete_roi_conditional_median": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
+  \ class=\"parameter-link\" title=\"Median conditional ROI (50th percentile, if treaty\
+  \ passes) | ✓ High confidence | Formula: Probabilistic simulation: median outcome\
+  \ | Unit: ratio | Click to view calculation\">54</a>"
+"treaty_complete_roi_conditional_median_latex": "$$\nROI_{conditional,median} = 54:1\n\
+  $$"
+"treaty_complete_roi_expected_5th_percentile": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
+  \ class=\"parameter-link\" title=\"Lower bound expected ROI (95% CI, accounting\
+  \ for political risk) | ✓ High confidence | Formula: Conditional ROI × P(treaty\
+  \ passes): 5th percentile | Unit: ratio | Click to view calculation\">2.7</a>"
+"treaty_complete_roi_expected_5th_percentile_latex": "$$\nROI_{expected,lower} = 2.7:1\n\
+  $$"
+"treaty_complete_roi_expected_95th_percentile": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
+  \ class=\"parameter-link\" title=\"Upper bound expected ROI (95% CI, accounting\
+  \ for political risk) | ✓ High confidence | Formula: Conditional ROI × P(treaty\
+  \ passes): 95th percentile | Unit: ratio | Click to view calculation\">27</a>"
+"treaty_complete_roi_expected_95th_percentile_latex": "$$\nROI_{expected,upper} =\
+  \ 27:1\n$$"
+"treaty_complete_roi_expected_median": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
+  \ class=\"parameter-link\" title=\"Median expected ROI (50th percentile, accounting\
+  \ for political risk) | ✓ High confidence | Formula: Conditional ROI × P(treaty\
+  \ passes): median | Unit: ratio | Click to view calculation\">14</a>"
+"treaty_complete_roi_expected_median_latex": "$$\nROI_{expected,median} = 14:1\n$$"
 "treaty_comprehensive_with_full_regulatory_delay": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd\"\
   \ class=\"parameter-link\" title=\"Total annual benefits using full regulatory delay\
   \ avoidance, consolidating overlapping categories | ~ Medium confidence | Formula:\
@@ -1738,6 +1774,12 @@
   \ Click to view calculation\">$139B</a>"
 "treaty_net_annual_benefit_latex": "$$\nNetBenefit = \\$163.55B - \\$0.29B = \\$163.26B\n\
   $$"
+"treaty_net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
+  \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
+  \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: USD/life | Click\
+  \ to view calculation\">$-5</a>"
+"treaty_net_benefit_per_life_saved_latex": "$$\nBenefitPerLife = -\\$59,476 ÷ 1M \\\
+  times 35 = -\\$2.08M\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
   \ class=\"parameter-link\" title=\"Annual QALYs gained from peace dividend (lives\
   \ saved × QALYs/life) | ✓ High confidence | Formula: LIVES_SAVED × QALYS_PER_LIFE\
@@ -1758,6 +1800,12 @@
   \ Click to view calculation\">$290M</a>"
 "treaty_total_annual_costs_latex": "$$\nTotalCosts = \\$0.25B + \\$0.04B = \\$0.29B\n\
   $$"
+"treaty_total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits\"\
+  \ class=\"parameter-link\" title=\"Total annual benefits from all 8 benefit categories\
+  \ | ✓ High confidence | Formula: PEACE + R&D + FASTER_ACCESS + ACCELERATION + RARE\
+  \ + PRICE + PREVENTION + MENTAL | Unit: USD/year | Click to view calculation\">$1.21T</a>"
+"treaty_total_complete_benefits_annual_latex": "$$\nTotalBenefits = \\$113.55 + \\\
+  $50 + \\$300 + \\$100 + \\$400 + \\$100 + \\$100 + \\$75 = \\$1,238.55B\n$$"
 "treaty_total_lives_saved_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
   \ class=\"parameter-link\" title=\"Total annual lives saved equivalent (total QALYs\
   \ ÷ QALYs/life) | ✓ High confidence | Formula: TOTAL_QALYS ÷ QALYS_PER_LIFE | Unit:\

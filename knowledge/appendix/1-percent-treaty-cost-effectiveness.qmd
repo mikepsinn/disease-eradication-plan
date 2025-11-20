@@ -1,6 +1,6 @@
 ---
 title: 1% Treaty Cost-Effectiveness
-description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this saves society {{< var net_benefit_per_life_saved >}} per life saved
+description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this saves society {{< var treaty_net_benefit_per_life_saved >}} per life saved
 published: true
 tags:
   - icer
@@ -249,9 +249,9 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Cost per life** = {{< var icer_per_qaly >}} × 35 QALYs/life
 
-**Cost per life ≈ {{< var net_benefit_per_life_saved >}} per life saved**
+**Cost per life ≈ {{< var treaty_net_benefit_per_life_saved >}} per life saved**
 
-**Interpretation**: For every life saved, society saves approximately {{< var net_benefit_per_life_saved >}}.
+**Interpretation**: For every life saved, society saves approximately {{< var treaty_net_benefit_per_life_saved >}}.
 
 ## Comparison to Other Interventions
 
@@ -271,7 +271,7 @@ These are **excellent** interventions - among the best uses of charitable dollar
 
 | Intervention | Cost per Life Saved | ICER |
 |-------------|--------------------:|------:|
-| **1% Treaty + DIH + dFDA** | **{{< var net_benefit_per_life_saved >}}** | **{{< var icer_per_qaly >}}/QALY** |
+| **1% Treaty + DIH + dFDA** | **{{< var treaty_net_benefit_per_life_saved >}}** | **{{< var icer_per_qaly >}}/QALY** |
 
 This is a **dominant intervention** - it makes society richer while saving lives.
 
@@ -285,7 +285,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **1% Treaty model**: Society profits from saving lives
 
-- Exceptional value ({{< var net_benefit_per_life_saved >}} per life = society saves money)
+- Exceptional value ({{< var treaty_net_benefit_per_life_saved >}} per life = society saves money)
 - Self-funding from economic gains
 - Generates wealth while improving health
 
@@ -349,7 +349,7 @@ This chart demonstrates the fundamental difference between traditional philanthr
 
 - **GiveWell Top Charities** (Helen Keller International, New Incentives, Against Malaria Foundation): Society pays $3,500-$5,500 per life saved. These are excellent interventions, among the most cost-effective charitable uses of money in the world.
 
-- **1% Treaty + DIH + dFDA**: Society SAVES {{< var net_benefit_per_life_saved >}} per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
+- **1% Treaty + DIH + dFDA**: Society SAVES {{< var treaty_net_benefit_per_life_saved >}} per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
 
 The dramatic scale difference illustrates why this intervention is ~1,700× more cost-effective than even the best traditional charities.
 
