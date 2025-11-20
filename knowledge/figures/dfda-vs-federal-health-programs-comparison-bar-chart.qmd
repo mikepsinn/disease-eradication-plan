@@ -9,6 +9,7 @@ from pathlib import Path
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, get_figure_output_path)
+from dih_models.parameters import DFDA_NPV_UPFRONT_COST
 
 setup_chart_style()
 
@@ -21,7 +22,7 @@ programs = [
     'National Cancer\nInstitute (NCI)'
 ]
 costs = [
-    DFDA_NPV_UPFRONT_COST_BILLIONS * 1000,  # Convert billions -> millions
+    DFDA_NPV_UPFRONT_COST / 1_000_000,  # Convert dollars -> millions
     257,  # Cancer Moonshot (no parameter exists)
     500,  # All of Us (no parameter exists)
     7200  # NCI (no parameter exists)
