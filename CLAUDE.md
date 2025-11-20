@@ -47,6 +47,8 @@ if sys.platform == 'win32':
 
 **CRITICAL: Use the automated parameter/variable system for all numeric values.**
 
+**Before hardcoding ANY value in QMD files, check `_variables.yml` first.** All available variables are listed there in lowercase format (e.g., `global_military_spending_annual_2024`, `treaty_annual_funding`).
+
 ### How It Works
 
 1. **Define parameters** in `dih_models/parameters.py`:
