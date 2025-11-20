@@ -21,11 +21,14 @@ setup_chart_style()
 
 from dih_models.parameters import *
 
+# Conversion constant - parameters store RAW USD values
+BILLION = 1_000_000_000
+
 # NPV Model Parameters (from economic_parameters.py)
 
-C0 = DFDA_NPV_UPFRONT_COST_TOTAL  # $0.26975B upfront
-Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops
-Rd = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # $100B annual R&D spend
+C0 = DFDA_NPV_UPFRONT_COST_TOTAL / BILLION  # $0.26975B upfront
+Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL / BILLION  # $0.04005B annual ops
+Rd = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL / BILLION  # $100B annual R&D spend
 alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 r = NPV_DISCOUNT_RATE_STANDARD  # 0.08 (8% discount rate)
 T = NPV_TIME_HORIZON_YEARS  # 10 years

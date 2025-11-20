@@ -22,6 +22,9 @@ from dih_models.plotting.chart_style import (
 setup_chart_style(style='light', dpi=150)
 FONT_SIZES = get_presentation_font_sizes()
 
+# Define scale constant
+BILLION = 1_000_000_000
+
 # Create figure
 
 fig, ax = plt.subplots(figsize=(12, 12))
@@ -29,12 +32,13 @@ fig, ax = plt.subplots(figsize=(12, 12))
 categories2 = ['War &\nMilitary\n(Total Cost)', 'Curing\nCancer', 'Curing\nDementia']
 
 # War costs breakdown (from cost-of-war.qmd)
+# All values converted to billions for chart display
 
-war_direct = GLOBAL_MILITARY_SPENDING_ANNUAL_2024  # Direct military spending
-war_infrastructure = GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT  # Infrastructure destruction
-war_lives = GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT / 1000  # Human life losses (convert to billions)
-war_trade = GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT  # Trade disruption
-war_indirect = GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING + GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS + GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS + GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT + GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT + GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT  # Lost growth, veterans, refugees, environment, etc.
+war_direct = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / BILLION  # Direct military spending
+war_infrastructure = float(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT) / BILLION  # Infrastructure destruction
+war_lives = float(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT) / BILLION  # Human life losses
+war_trade = float(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT) / BILLION  # Trade disruption
+war_indirect = (float(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING) + float(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS) + float(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS) + float(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT) + float(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT) + float(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)) / BILLION  # Lost growth, veterans, refugees, environment, etc.
 
 # Total war cost = $9,747B
 

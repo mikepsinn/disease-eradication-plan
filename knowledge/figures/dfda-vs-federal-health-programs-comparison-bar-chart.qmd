@@ -13,6 +13,9 @@ from dih_models.parameters import DFDA_NPV_UPFRONT_COST
 
 setup_chart_style()
 
+# --- Constants ---
+BILLION = 1_000_000_000
+
 # --- Data (annual costs in millions) ---
 
 programs = [
@@ -22,7 +25,7 @@ programs = [
     'National Cancer\nInstitute (NCI)'
 ]
 costs = [
-    DFDA_NPV_UPFRONT_COST / 1_000_000,  # Convert dollars -> millions
+    DFDA_NPV_UPFRONT_COST / 1_000_000,  # Convert USD to millions
     257,  # Cancer Moonshot (no parameter exists)
     500,  # All of Us (no parameter exists)
     7200  # NCI (no parameter exists)
