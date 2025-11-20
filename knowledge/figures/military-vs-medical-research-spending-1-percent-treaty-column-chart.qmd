@@ -25,10 +25,11 @@ fig, ax = plt.subplots(figsize=(12, 6))
 # Data
 
 categories = ['War on\nHumanity', 'War on Disease']
-# Explicitly convert to native Python float and scale to billions for chart
+# Convert parameters to billions for chart display
+BILLION = 1_000_000_000
 
-military_total = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / 1e9  # Convert from dollars to billions
-cure_spending = float(GLOBAL_MED_RESEARCH_SPENDING) / 1e9  # Convert from dollars to billions
+military_total = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / BILLION
+cure_spending = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION
 
 # Make the 1% stack visually prominent (exaggerate it to ~100B so it's actually visible)
 
