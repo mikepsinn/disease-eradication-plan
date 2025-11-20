@@ -10,10 +10,30 @@ Reads all numeric constants from dih_models/parameters.py and generates:
 4. (Optional) Inject citations into economics.qmd
 
 Usage:
-    python scripts/generate-variables-yml.py [--inject-citations]
+    python scripts/generate-variables-yml.py [options]
 
 Options:
+    --cite-mode=MODE      Citation handling mode:
+                          - none: No inline citations (default)
+                          - inline: Add [@key] after peer-reviewed parameters
+                          - separate: Export {param}_cite variables
+                          - both: Both inline AND separate variables
+
     --inject-citations    Add [@citation] tags to economics.qmd variables
+                          (legacy option, use --cite-mode=inline instead)
+
+Examples:
+    # Default: no citations
+    python scripts/generate-variables-yml.py
+
+    # Inline citations for peer-reviewed sources
+    python scripts/generate-variables-yml.py --cite-mode=inline
+
+    # Separate citation variables (flexible usage)
+    python scripts/generate-variables-yml.py --cite-mode=separate
+
+    # Both inline AND separate (maximum flexibility)
+    python scripts/generate-variables-yml.py --cite-mode=both
 
 Output:
     _variables.yml in project root
@@ -397,7 +417,7 @@ def format_parameter_value(value: float, unit: str = "") -> str:
     return formatted_num
 
 
-def generate_html_with_tooltip(param_name: str, value: float, comment: str = "") -> str:
+def generate_html_with_tooltip(param_name: str, value: float, comment: str = "", include_citation: bool = False) -> str:
     """
     Generate HTML link with tooltip for a parameter.
 
@@ -405,6 +425,7 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
         param_name: The parameter name (e.g., 'GLOBAL_ANNUAL_CONFLICT_DEATHS')
         value: The numeric value (may be Parameter instance with metadata)
         comment: Optional comment from parameters.py
+        include_citation: If True, append Quarto citation [@key] for external sources
 
     Returns:
         HTML string with formatted value, clickable link, and tooltip
@@ -483,8 +504,20 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
 
         tooltip = " | ".join(tooltip_parts)
 
-        # Generate clickable link
-        html = f'<a href="{href}" class="parameter-link" title="{tooltip}">{formatted_value}</a>'
+        # Build data attributes for CSS/JS customization
+        data_attrs = f'data-source-ref="{value.source_ref}" data-source-type="{source_type_str}"'
+        if hasattr(value, "peer_reviewed") and value.peer_reviewed:
+            data_attrs += ' data-peer-reviewed="true"'
+        if hasattr(value, "confidence") and value.confidence:
+            data_attrs += f' data-confidence="{value.confidence}"'
+
+        # Generate clickable link with optional inline citation
+        html = f'<a href="{href}" class="parameter-link" {data_attrs} title="{tooltip}">{formatted_value}</a>'
+
+        # Add Quarto citation inline for external peer-reviewed sources (if requested)
+        if include_citation and source_type_str == "external":
+            if hasattr(value, "peer_reviewed") and value.peer_reviewed:
+                html += f' [@{value.source_ref}]'
     elif is_definition:
         # Core definition: show value with tooltip but no link
         tooltip_parts = []
@@ -509,14 +542,24 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "")
     return html
 
 
-def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: Path):
+def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: Path, citation_mode: str = "none"):
     """
     Generate _variables.yml file from parameters.
 
     Creates YAML with lowercase variable names mapped to formatted HTML values.
     Also exports LaTeX equations as {param_name}_latex variables.
+
+    Args:
+        parameters: Dict of parameter metadata
+        output_path: Path to write _variables.yml
+        citation_mode: Citation handling mode:
+            - "none": No inline citations (default)
+            - "inline": Include [@key] after external peer-reviewed parameters
+            - "separate": Export citation keys as {param_name}_cite variables
+            - "both": Both inline AND separate variables
     """
     variables = {}
+    citation_count = 0
 
     # Sort parameters by name for consistent output
     for param_name in sorted(parameters.keys()):
@@ -528,9 +571,18 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
         var_name = param_name.lower()
 
         # Generate formatted HTML with tooltip
-        html_value = generate_html_with_tooltip(param_name, value, comment)
+        include_inline_citation = citation_mode in ("inline", "both")
+        html_value = generate_html_with_tooltip(param_name, value, comment, include_citation=include_inline_citation)
 
         variables[var_name] = html_value
+
+        # Export citation key separately for external sources (if mode enabled)
+        if citation_mode in ("separate", "both"):
+            if hasattr(value, "source_type") and hasattr(value, "source_ref"):
+                source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+                if source_type_str == "external" and value.source_ref:
+                    variables[f"{var_name}_cite"] = f"@{value.source_ref}"
+                    citation_count += 1
 
         # Export LaTeX equation if available (with $$ delimiters)
         if hasattr(value, "latex") and value.latex:
@@ -546,20 +598,33 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
         f.write("# Run: python tools/generate-variables-yml.py\n")
         f.write("#\n")
         f.write("# Use in QMD files with: {{< var param_name >}}\n")
+        if citation_mode in ("separate", "both"):
+            f.write("# Citations available as: {{< var param_name_cite >}}\n")
         f.write("#\n\n")
 
         # Write variables with proper quoting for HTML
         yaml.dump(variables, f, default_flow_style=False, allow_unicode=True, sort_keys=False, default_style='"')
 
-    # Count LaTeX exports
+    # Count exports by type
     latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
-    param_count = len(variables) - latex_count
+    cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
+    param_count = len(variables) - latex_count - cite_count
 
     print(f"[OK] Generated {output_path}")
     print(f"     {param_count} parameters exported")
     print(f"     {latex_count} LaTeX equations exported")
+    if citation_mode in ("separate", "both"):
+        print(f"     {cite_count} citation keys exported")
+    if citation_mode in ("inline", "both"):
+        print(f"     Citation mode: inline [@key] for peer-reviewed sources")
     print("\nUsage in QMD files:")
     print(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
+    if cite_count > 0:
+        # Find first parameter with citation
+        cite_var = next((k for k in variables.keys() if k.endswith("_cite")), None)
+        if cite_var:
+            base_var = cite_var[:-5]  # Remove "_cite"
+            print(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")
 
 
 def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path):
@@ -952,6 +1017,16 @@ def main():
     # Parse command-line arguments
     inject_citations = "--inject-citations" in sys.argv
 
+    # Citation mode: --cite-mode=inline|separate|both|none
+    citation_mode = "none"
+    for arg in sys.argv:
+        if arg.startswith("--cite-mode="):
+            citation_mode = arg.split("=")[1]
+            if citation_mode not in ("none", "inline", "separate", "both"):
+                print(f"[ERROR] Invalid citation mode: {citation_mode}", file=sys.stderr)
+                print("Valid modes: none, inline, separate, both", file=sys.stderr)
+                sys.exit(1)
+
     # Get project root
     project_root = Path(__file__).parent.parent.absolute()
 
@@ -967,9 +1042,9 @@ def main():
     print()
 
     # Generate _variables.yml
-    print("[*] Generating _variables.yml...")
+    print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
     output_path = project_root / "_variables.yml"
-    generate_variables_yml(parameters, output_path)
+    generate_variables_yml(parameters, output_path, citation_mode=citation_mode)
     print()
 
     # Generate parameters-and-calculations.qmd
@@ -1002,6 +1077,12 @@ def main():
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
     print("    2. Render Quarto book to see results")
     print("    3. Zero manual maintenance required - just re-run this script!")
+    print()
+    if citation_mode == "none":
+        print("[TIP] Want citations? Try:")
+        print("      --cite-mode=inline    (automatic inline citations)")
+        print("      --cite-mode=separate  (flexible citation variables)")
+        print("      --cite-mode=both      (maximum control)")
 
 
 if __name__ == "__main__":

@@ -170,7 +170,7 @@ That's roughly the GDP of Austria, just sitting there in the "please don't explo
 
 ### 2. The Research Efficiency Dividend
 
-{{< var dfda_rd_gross_savings_annual >}}–$100B/year
+{{< var dfda_rd_gross_savings_annual >}}–{{< var global_clinical_trial_market_annual >}}
 
 Traditional trials require:
 
@@ -259,7 +259,7 @@ They just follow their calculator to accidentally save humanity.
 
 **Billionaires**: "Your index fund makes 10% returns. Victory Bonds make {{< var victory_bond_annual_return_pct >}}. It's like compound interest discovered steroids then did cocaine."
 
-**Regular Humans**: "Free experimental treatments. Choose what gets funded by participating. If it works, you live. If it doesn't, you were dying anyway so at least you got free healthcare. Also: [**$4.3M in lifetime wealth and 72 extra years of life**](../call-to-action/your-personal-benefits.qmd) from the economic multiplier effect."
+**Regular Humans**: "Free experimental treatments. Choose what gets funded by participating. If it works, you live. If it doesn't, you were dying anyway so at least you got free healthcare. Also: **{{< var personal_lifetime_benefit_age_30_1pct >}} in lifetime wealth and {{< var personal_life_extension_years_age_30 >}} of life** from the economic multiplier effect ([see your personal benefits](../call-to-action/your-personal-benefits.qmd))."
 
 Nobody has to evolve morally. Nobody has to become better people. You just point everyone's greed at diseases instead of each other.
 
@@ -399,16 +399,14 @@ $$
 In human language: "How much value do you get per dollar spent?"
 
 **Conservative scenario** (only counting R&D efficiency, ignoring everything else):
-$$
-\text{ROI} = \frac{\$249B}{\$0.54B} = 463:1
-$$
+
+{{< var dfda_roi_rd_only_latex >}}
 
 You spend $1, you get ${{< var dfda_roi_rd_only >}} back. This beats most legal activities.
 
 **Complete scenario** (counting all the benefits your species will claim sound "too good"):
-$$
-\text{ROI} = \frac{\$1{,}239B \text{ annually}}{\$1B \text{ one-time}} = 1{,}239:1
-$$
+
+{{< var treaty_complete_roi_latex >}}
 
 You spend $1 billion once, you get ${{< var dfda_roi_rd_plus_delay >}} billion back every year, forever. Or until the sun explodes. Whichever happens first (probably the sun thing).
 
@@ -471,9 +469,7 @@ This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over
 
 For the dFDA infrastructure (using annual figures):
 
-$$
-\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}
-$$
+{{< var dfda_icer_per_qaly_latex >}}
 
 The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are $50,000-{{< var standard_economic_qaly_value_usd >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
@@ -563,7 +559,7 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 | **Trial Completion Speed** | 3-5 years | 3-12 months | **10×** |
 | **Simultaneous Trials** | {{< var current_active_trials >}} active trials | {{< var dfda_active_trials >}} active trials | **20×** |
 | **Completion Rate** | {{< var current_trials_per_year >}} finish | {{< var dfda_trial_completion_rate >}} finish | **1.6×** |
-| **Funding Increase** | {{< var global_med_research_spending >}} baseline | $94.7B (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
+| **Funding Increase** | {{< var global_med_research_spending >}} baseline | {{< var total_research_funding_with_treaty >}} (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
 
 **Theoretical maximum:** 25 × 10 × 1.6 × 1.4 = 560×
 
@@ -741,7 +737,7 @@ The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in res
 
 #### Implications for generalizability
 
-The RECOVERY trial ($500 per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has nearly 80 years of empirical validation (1883-1960), not merely one case study.
+The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has nearly 80 years of empirical validation (1883-1960), not merely one case study.
 
 The cost reduction estimates (50-95%) are conservative relative to the historical 97%+ reduction achieved by the pre-1962 model ($74M vs. $2.6B). Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
 
@@ -805,7 +801,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 - Independent funding agency with statutory protections
 - Lock-box mechanism with supermajority requirement to redirect funds
 - International monitoring and reputation costs
-- Citizen oversight via Wishocracy participatory budgeting
+- Public transparency: all spending and trial outcomes publicly auditable
 
 **Note**: The analysis acknowledges this limitation. Results should be interpreted as conditional on sustained implementation, with expected value analysis providing probability-adjusted estimates that partially account for political risk.
 
@@ -866,14 +862,14 @@ $$
 
 | Cost Category | Annual Amount | Components |
 |:---|---:|:---|
-| **Direct Military Spending** | [$2,718B](../references.qmd#sipri-2024-spending) | SIPRI 2024 global military budgets |
-| **[Infrastructure Destruction](../appendix/peace-dividend-calculations.qmd)** | [$1,875B](../appendix/peace-dividend-calculations.qmd) | Transportation, energy, communications, water, education, healthcare facilities |
-| **Human Life Losses** | [$2,446B](../appendix/peace-dividend-calculations.qmd) | {{< var global_annual_conflict_deaths_total >}} conflict deaths × {{< var value_of_statistical_life >}} value of statistical life (conservative vs. DOT $13.7M) |
+| **Direct Military Spending** | {{< var global_military_spending_annual_2024 >}} | SIPRI 2024 global military budgets [(source)](../references.qmd#sipri-2024-spending) |
+| **[Infrastructure Destruction](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_infrastructure_destruction_conflict >}} | Transportation, energy, communications, water, education, healthcare facilities |
+| **Human Life Losses** | {{< var global_annual_human_life_losses_conflict >}} | {{< var global_annual_conflict_deaths_total >}} conflict deaths × {{< var value_of_statistical_life >}} value of statistical life (conservative vs. DOT $13.7M) |
 | **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |
-| **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | [$2,718B](../appendix/peace-dividend-calculations.qmd) | Opportunity cost of military spending vs. productive investment |
+| **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_economic_growth_military_spending >}} | Opportunity cost of military spending vs. productive investment |
 | **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | {{< var sensitivity_peace_dividend_optimistic >}} | Long-term medical care for conflict-related injuries |
 | **Refugee Support** | {{< var global_annual_refugee_support_costs >}} | [108.4M displaced persons](../references.qmd#unhcr-forcibly-displaced-2023) × $1,384/year |
-| **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_clinical_trial_market_annual >}} | Environmental destruction, toxic contamination, restoration costs |
+| **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_environmental_damage_conflict >}} | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_human_capital_conflict >}} | Productive capacity lost from casualties and displacement |
 | **Total War Costs** | **{{< var global_annual_war_total_cost >}}** | Combined direct and indirect annual costs |
@@ -977,13 +973,14 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 - **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} [redirection of existing military budgets](../appendix/peace-dividend-calculations.qmd) (money already allocated in national budgets)
 
-**Funding Allocation** (separating platform costs from patient subsidies):
+**Funding Allocation**:
 
-1. **dFDA Platform Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure, maintenance, protocol development, and operations ([medium initiative scenario](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model))
-2. **NIH Trial Participation Cost Discount Fund**: ~$2B/year for patient participation subsidies (authorized in [Right to Trial Act SEC. 303](../appendix/right-to-trial-fda-upgrade-act.qmd#sec-303-nih-trial-participation-cost-discount-fund); sponsors set costs, NIH pays portion via QALY-maximizing algorithm, patients pay discounted copay)
-3. **Remaining Funds**: ~$25.2B/year allocated via [Wishocracy](../solution/wishocracy.qmd) for additional research infrastructure, patient incentives, and expanding trial capacity
-
-**Important distinction**: The dFDA platform costs ({{< var dfda_annual_opex >}}/year) are separate from patient participation subsidies ($2B/year NIH Fund). Platform costs cover infrastructure and operations. The NIH Fund provides financial assistance to patients enrolling in trials, making participation affordable without funding researcher salaries.
+1. **Victory Bond Payouts**: {{< var victory_bond_annual_payout >}}/year to investors who funded the campaign
+2. **dFDA Platform Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
+3. **Patient Trial Subsidies**: {{< var dih_treasury_trial_subsidies_annual >}}/year subsidizing patient participation in clinical trials
+   - At {{< var recovery_trial_cost_per_patient >}} per patient ([RECOVERY trial cost](../appendix/recovery-trial.qmd)), this funds {{< var dih_patients_fundable_annually >}} patients annually
+   - Patients choose which trials to join; trials that attract patients get funded
+   - **ALL remaining funds go to patient subsidies** - no separate bureaucracy or overhead budget
 
 - **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_rd_gross_savings_annual >}})
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
@@ -1025,19 +1022,15 @@ Eight measurable benefit streams:
 
 #### Total annual benefits
 
-$$
-B_{\text{total}} = 113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0 = \$1{,}238.6\text{B}
-$$
+{{< var treaty_complete_case_annual_benefits_latex >}}
 
 That's **$1.2 trillion per year**.
 
 #### Complete Case ROI
 
-$$
-\text{ROI}_{\text{complete}} = \frac{\$1{,}238.6\text{B/year} \times 10\text{ years}}{\$1.00\text{B}} = 1{,}239:1
-$$
+{{< var treaty_complete_roi_latex >}}
 
-**Translation:** Every $1 invested returns $1,239 in benefits over a decade.
+**Translation:** Every $1 invested returns $1,239 in benefits annually, or $12,386 over a decade.
 
 This sounds fake. It's not. These are conservative estimates based on:
 
@@ -1394,14 +1387,15 @@ This system: Government money printer goes brrrr, redirected to cures instead of
 
 See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for the complete sensitivity analysis showing this works even when everything goes wrong.
 
-## Who's Actually In Charge (Democratic Edition)
+## Who's Actually In Charge (Patients Edition)
 
-The Decentralized Institutes of Health uses [Wishocracy](../solution/wishocracy.qmd) - a voting system where anyone can participate in budget allocation decisions.
+The Decentralized Institutes of Health puts patients in control through trial participation, not committee votes.
 
-Current system: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what 8 billion humans can try when dying
-New system: [8 billion humans](../solution/wishocracy.qmd) vote on research priorities
+**Current system**: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what 8 billion humans can try when dying
 
-This uses quadratic voting so rich people can't just buy outcomes. One person one vote, scaled by conviction not wealth.
+**New system**: Patients choose which trials to join. Trials that attract patients get funded. Trials that don't, die.
+
+Your subsidy follows you to whichever trial you join. Researchers compete to design trials that patients actually want to participate in. No committees, no grant-writing contests, no bureaucrats deciding what's "worthy" of study.
 
 All transactions recorded on blockchain. All spending public. All decisions auditable.
 
@@ -1635,7 +1629,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 2. **Data infrastructure scaling costs**: The dFDA uses automated software infrastructure (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the platform leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
-3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. The Wishocracy allocation mechanism (SEC. 304 in [Right to Trial Act](../appendix/right-to-trial-fda-upgrade-act.qmd)) attempts to minimize this through algorithmic allocation, but some overhead is inevitable.
+3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. Patient-driven trial participation (where subsidies follow patients to their chosen trials) reduces but does not eliminate these costs, as some administrative overhead is inevitable.
 
 4. **Clinical trial market price effects**: Increasing trial demand by 115× could affect equilibrium prices for clinical research services. However, the dFDA model *reduces* per-trial costs (82× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost $41,000 per patient; dFDA targets $500 per patient by eliminating overhead, not by increasing demand for scarce inputs.
 

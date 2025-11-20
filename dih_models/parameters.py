@@ -2049,6 +2049,18 @@ TREATY_COMPLETE_CASE_ANNUAL_BENEFITS = Parameter(
     keywords=["1.2t", "1%", "bcr", "avoidance", "deterrence", "precaution", "prophylaxis"]
 )  # $1.2T (rounded from $1,238.6B)
 
+TREATY_COMPLETE_ROI = Parameter(
+    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
+    source_type="calculated",
+    description="Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)",
+    display_name="Complete 1% Treaty ROI (All Benefits)",
+    unit="ratio",
+    formula="TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST",
+    latex=r"ROI_{complete} = \frac{\$1{,}238.6\text{B/year}}{\$1.00\text{B}} = 1{,}239:1 \text{ annually}",
+    keywords=["1239", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi"]
+)  # 1,239:1 annual ROI
+
 # Net benefit
 TREATY_NET_ANNUAL_BENEFIT = Parameter(
     TREATY_TOTAL_ANNUAL_BENEFITS - TREATY_TOTAL_ANNUAL_COSTS,
@@ -2510,25 +2522,29 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     latex=r"ResearchFunding = \$27.18B - \$2.718B = \$24.462B",
     keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"]
 )  # $24.3B/year
-DIH_TREASURY_TRIAL_SUBSIDIES_MIN = Parameter(
-    10_000_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies",
+DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
+    DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
+    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
     source_type="calculated",
-    description="Minimum annual clinical trial subsidies from DIH Treasury",
-    display_name="Minimum Annual Clinical Trial Subsidies from DIH Treasury",
+    description="Annual clinical trial patient subsidies (all medical research funds after dFDA operations)",
+    display_name="Annual Clinical Trial Patient Subsidies",
     unit="USD/year",
-    keywords=["10.0b", "pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct"]
-)  # $10B/year clinical trial subsidies (minimum)
+    formula="MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
+    latex=r"\$24.462B - \$0.04B = \$24.422B",
+    keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct", "patient subsidy"]
+)  # $24.422B/year - ALL remaining funds go to subsidizing patient trial participation
 
-DIH_TREASURY_TRIAL_SUBSIDIES_MAX = Parameter(
-    20_000_000_000,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies",
+DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
+    DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / RECOVERY_TRIAL_COST_PER_PATIENT,
+    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
     source_type="calculated",
-    description="Maximum annual clinical trial subsidies from DIH Treasury",
-    display_name="Maximum Annual Clinical Trial Subsidies from DIH Treasury",
-    unit="USD/year",
-    keywords=["20.0b", "pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct"]
-)  # $20B/year clinical trial subsidies (maximum)
+    description="Number of patients fundable annually at RECOVERY trial cost",
+    display_name="Patients Fundable Annually",
+    unit="patients/year",
+    formula="TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
+    latex=r"\$24.422B \div \$500 = 48.8M",
+    keywords=["trial", "participant", "enrollment", "capacity", "patient"]
+)  # 48.8 million patients/year
 
 # ---
 # REFERENCE VALUES (for comparisons)
@@ -2629,6 +2645,18 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     display_name="Global Government Medical Research Spending",
     unit="USD",
     keywords=["67.5b", "worldwide", "investigation", "r&d", "science", "study", "costs"]
+)
+
+TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
+    GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING,
+    source_ref="/knowledge/economics/economics.qmd",
+    source_type="calculated",
+    description="Total global research funding (baseline + 1% treaty funding)",
+    display_name="Total Global Research Funding (Baseline + 1% Treaty Funding)",
+    unit="USD",
+    formula="GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
+    latex=r"\$67.5B + \$27.18B = \$94.68B",
+    keywords=["research", "funding", "total", "dih", "treaty"]
 )
 
 # Population
@@ -3521,54 +3549,54 @@ REGULATORY_DELAY_YLD = Parameter(
     display_name="Years Lived with Disability During Regulatory Delay",
     unit="years",
     formula="DEATHS_MEAN × SUFFERING_PERIOD × DISABILITY_WEIGHT",
-    latex=r"YLD = 184.6M \times 6 \times 0.35 = 1.69B",
+    latex=r"YLD = 184.6M \times 6 \times 0.35 = 387.66M = 0.388B",
     confidence="medium",
     keywords=["approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease", "arithmetic mean"]
 )
 
 REGULATORY_DELAY_DALYS = Parameter(
-    4.83,
+    REGULATORY_DELAY_YLL + REGULATORY_DELAY_YLD,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
     description="Total Disability-Adjusted Life Years lost to regulatory delay (1962-2024)",
     display_name="Total Disability-Adjusted Life Years Lost to Regulatory Delay",
     unit="DALYs",
     formula="YLL + YLD",
-    latex=r"DALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B",
+    latex=r"DALY_{total} = YLL + YLD = 3.14B + 0.388B = 3.526B",
     confidence="medium",
     keywords=["approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease", "mortality burden"]
 )
 
 # Economic Valuation (using standardized $150k VSLY)
 REGULATORY_DELAY_ECONOMIC_LOSS = Parameter(
-    4_830_000_000 * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    int(REGULATORY_DELAY_DALYS * 1_000_000) * STANDARD_ECONOMIC_QALY_VALUE_USD,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
     description="Cumulative economic deadweight loss from regulatory delay (1962-2024, 2024 USD)",
     display_name="Cumulative Economic Deadweight Loss from Regulatory Delay",
     unit="USD",
     formula="DALYS_TOTAL × VSLY",
-    latex=r"DWL = 4.83B \times \$150k = \$724.5T",
+    latex=r"DWL = 3.526B \times \$150k = \$528.9T",
     confidence="medium",
-    keywords=["4.8b", "approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease"]
-)  # $724.5T total (1962-2024)
+    keywords=["approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease"]
+)  # $528.9T total (1962-2024)
 
 REGULATORY_DELAY_ANNUAL_LOSS = Parameter(
-    (4_830_000_000 / 62) * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    (int(REGULATORY_DELAY_DALYS * 1_000_000) / 62) * STANDARD_ECONOMIC_QALY_VALUE_USD,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
     description="Annualized economic loss from regulatory delay",
     display_name="Annualized Economic Loss from Regulatory Delay",
     unit="USD/year",
     formula="(TOTAL_DALYS ÷ 62 years) × VSLY",
-    latex=r"Annual_{loss} = 77.9M \times \$150k = \$11.685T/year",
+    latex=r"Annual_{loss} = 56.87M \times \$150k = \$8.53T/year",
     confidence="medium",
     keywords=["approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease", "bureaucratic delay"]
-)  # $11.685T/year ongoing cost
+)  # $8.53T/year ongoing cost
 
 # Type I vs Type II Error Ratio
 TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
-    0.003,
+    3.0,  # 3 million DALYs (0.003 billion)
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
     source_type="calculated",
     description="Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)",
@@ -3580,16 +3608,16 @@ TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
 )
 
 TYPE_II_ERROR_COST_RATIO = Parameter(
-    1610.0,
+    REGULATORY_DELAY_DALYS / TYPE_I_ERROR_BENEFIT_DALYS,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
     source_type="calculated",
     description="Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
     display_name="Ratio of Type Ii Error Cost to Type I Error Benefit",
     unit="ratio",
     formula="TYPE_II_COST ÷ TYPE_I_BENEFIT",
-    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{4.83B}{0.003B} = 1{,}610:1",
+    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{3.526B}{0.003B} = 1{,}175:1",
     confidence="medium",
-    keywords=["2k", "approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"]
+    keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"]
 )
 
 # ---
@@ -3598,14 +3626,14 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
 # The dFDA eliminates the efficacy lag by providing post-Phase I access via trial participation
 
 REGULATORY_DELAY_ANNUAL_DALYS = Parameter(
-    4_830_000_000 / 62,
+    int(REGULATORY_DELAY_DALYS * 1_000_000) / 62,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
     description="Annual DALYs lost to regulatory delay under current system",
     display_name="Annual DALYs Lost to Regulatory Delay Under Current System",
     unit="DALYs/year",
     formula="TOTAL_DALYS ÷ 62 years",
-    latex=r"DALY_{annual} = 4.83B \div 62 = 77.9M",
+    latex=r"DALY_{annual} = 3.526B \div 62 = 56.87M",
     confidence="medium",
     keywords=["4.8b", "approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease"]
 )  # 77.9M DALYs/year ongoing cost
@@ -5585,8 +5613,8 @@ dfda_opex_regulatory_formatted = format_parameter_value(DFDA_OPEX_REGULATORY)
 dfda_opex_staff_formatted = format_parameter_value(DFDA_OPEX_STAFF)
 dfda_roi_simple_formatted = format_roi(DFDA_ROI_SIMPLE)
 dih_treasury_to_medical_research_annual_formatted = format_parameter_value(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
-dih_treasury_trial_subsidies_max_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_MAX)
-dih_treasury_trial_subsidies_min_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_MIN)
+dih_treasury_trial_subsidies_annual_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL)
+dih_patients_fundable_annually_formatted = format_parameter_value(DIH_PATIENTS_FUNDABLE_ANNUALLY)
 dividend_coverage_factor_formatted = f"{DIVIDEND_COVERAGE_FACTOR:,.0f}"
 givewell_cost_per_life_avg_formatted = f"${GIVEWELL_COST_PER_LIFE_AVG:,.0f}"
 givewell_cost_per_life_max_formatted = f"${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"

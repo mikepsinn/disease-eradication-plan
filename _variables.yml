@@ -454,7 +454,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual economic\
   \ value of regulatory delay costs avoided by dFDA | ~ Medium confidence | Formula:\
-  \ DALYS_AVOIDED × VSLY | Unit: USD/year | Click to view calculation\">$11.1T</a>"
+  \ DALYS_AVOIDED × VSLY | Unit: USD/year | Click to view calculation\">$8.10T</a>"
 "dfda_avoided_regulatory_delay_cost_annual_latex": "$$\nValue_{avoided} = 74M \\times\
   \ \\$150k = \\$11.1T\n$$"
 "dfda_avoided_regulatory_delay_dalys_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
@@ -462,7 +462,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual DALYs\
   \ saved by dFDA eliminating regulatory efficacy lag | ~ Medium confidence | Formula:\
   \ ANNUAL_DALYS × AVOIDANCE_FRACTION | Unit: DALYs/year | Click to view calculation\"\
-  >74M</a>"
+  >54M</a>"
 "dfda_avoided_regulatory_delay_dalys_annual_latex": "$$\nDALY_{avoided} = 77.9M \\\
   times 0.95 = 74M\n$$"
 "dfda_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
@@ -625,7 +625,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Monetized value\
   \ of comprehensive dFDA benefits including regulatory delay avoidance | ~ Medium\
   \ confidence | Formula: QALYS_WITH_AVOIDANCE × VSLY  | Unit: USD/year | Click to\
-  \ view calculation\">$11.1T</a>"
+  \ view calculation\">$8.12T</a>"
 "dfda_qalys_with_regulatory_avoidance_monetized_latex": "$$\nValue_{total} = 74.14M\
   \ \\times \\$150k = \\$11.12T\n$$"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
@@ -648,7 +648,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual value\
   \ of eliminating delay deaths only (D_lag), excluding innovation loss (D_void) |\
   \ ~ Medium confidence | Formula: REG_DELAY_AVOIDANCE × 0.5 | Unit: USD/year | Click\
-  \ to view calculation\">$5.55T</a>"
+  \ to view calculation\">$4.05T</a>"
 "dfda_regulatory_delay_dlag_only_annual_latex": "$$\nD_{lag} = \\$11.1T \\times 0.5\
   \ \\approx \\$5.6T\n$$"
 "dfda_roi_rd_only": "<a href=\"/knowledge/figures/dfda-roi-analysis.qmd\" class=\"\
@@ -663,7 +663,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"RECOMMENDED:\
   \ ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids\
   \ double-counting) | ✓ High confidence | Formula: (COMPLETE_BENEFITS - EARLIER_ACCESS\
-  \ + D_LAG_ONLY) ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">6,489</a>"
+  \ + D_LAG_ONLY) ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">4,990</a>"
 "dfda_roi_rd_plus_delay_latex": "$$\nROI_{RD+delay} = \\frac{\\$1,238.6B - \\$300B\
   \ + \\$5,555B}{\\$1.0B} \\approx 6,494\n$$"
 "dfda_roi_rd_plus_delay_plus_innovation": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd\"\
@@ -671,7 +671,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Full impact\
   \ ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag\
   \ + D_void) | ~ Medium confidence | Formula: COMPREHENSIVE_FULL_REG_DELAY ÷ CAMPAIGN_COST\
-  \ | Unit: ratio | Click to view calculation\">11,540</a>"
+  \ | Unit: ratio | Click to view calculation\">8,542</a>"
 "dfda_roi_rd_plus_delay_plus_innovation_latex": "$$\nROI_{RD+delay+innovation} = \\\
   frac{\\$11,538.6B}{\\$1.0B} \\approx 11,539\n$$"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
@@ -741,6 +741,12 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"DIH broader initiatives\
   \ upfront cost (medium case) | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$230M</a>"
+"dih_patients_fundable_annually": "<a href=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\
+  \ fundable annually at RECOVERY trial cost | ✓ High confidence | Formula: TRIAL_SUBSIDIES\
+  \ ÷ COST_PER_PATIENT | Unit: patients/year | Click to view calculation\">48.8M</a>"
+"dih_patients_fundable_annually_latex": "$$\n\\$24.422B \\div \\$500 = 48.8M\n$$"
 "dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
   Annual funding for medical research (treaty funding minus bond payouts) | Unit:\
   \ USD/year | Core definition\">$24.5B</span>"
@@ -751,16 +757,14 @@
   \ bonds) | Unit: rate | Core definition\">90%</span>"
 "dih_treasury_to_medical_research_annual_pct_latex": "$$\nResearchPct = 1 - 0.10 =\
   \ 0.90 = 90\\%\n$$"
-"dih_treasury_trial_subsidies_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum annual\
-  \ clinical trial subsidies from DIH Treasury | ✓ High confidence | Unit: USD/year\
-  \ | Click to view calculation\">$20B</a>"
-"dih_treasury_trial_subsidies_min": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum annual\
-  \ clinical trial subsidies from DIH Treasury | ✓ High confidence | Unit: USD/year\
-  \ | Click to view calculation\">$10B</a>"
+"dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
+  \ trial patient subsidies (all medical research funds after dFDA operations) | ✓\
+  \ High confidence | Formula: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX | Unit: USD/year\
+  \ | Click to view calculation\">$24.4B</a>"
+"dih_treasury_trial_subsidies_annual_latex": "$$\n\\$24.462B - \\$0.04B = \\$24.422B\n\
+  $$"
 "disease_related_caregiver_pct": "<a href=\"/disease-related-caregiving-estimate\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-related-caregiving-estimate\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
@@ -1190,7 +1194,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total annual\
   \ QALYs from dFDA including regulatory delay avoidance (top-down comprehensive estimate)\
   \ | ~ Medium confidence | Formula: REGULATORY_DELAY_AVOIDANCE + PREVENTION_QALYS\
-  \ | Unit: QALYs/year | Click to view calculation\">74.1M</a>"
+  \ | Unit: QALYs/year | Click to view calculation\">54.2M</a>"
 "global_dfda_qalys_with_regulatory_avoidance_latex": "$$\nQALYs_{total} = 74M + 140k\
   \ \\approx 74.14M\n$$"
 "global_disease_direct_medical_cost_annual": "<a href=\"/knowledge/references.qmd#disease-economic-burden-109t\"\
@@ -1822,22 +1826,22 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual DALYs\
   \ lost to regulatory delay under current system | ~ Medium confidence | Formula:\
-  \ TOTAL_DALYS ÷ 62 years | Unit: DALYs/year | Click to view calculation\">77.9M</a>"
-"regulatory_delay_annual_dalys_latex": "$$\nDALY_{annual} = 4.83B \\div 62 = 77.9M\n\
+  \ TOTAL_DALYS ÷ 62 years | Unit: DALYs/year | Click to view calculation\">56.9M</a>"
+"regulatory_delay_annual_dalys_latex": "$$\nDALY_{annual} = 3.526B \\div 62 = 56.87M\n\
   $$"
 "regulatory_delay_annual_loss": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annualized\
   \ economic loss from regulatory delay | ~ Medium confidence | Formula: (TOTAL_DALYS\
-  \ ÷ 62 years) × VSLY | Unit: USD/year | Click to view calculation\">$11.7T</a>"
-"regulatory_delay_annual_loss_latex": "$$\nAnnual_{loss} = 77.9M \\times \\$150k =\
-  \ \\$11.685T/year\n$$"
+  \ ÷ 62 years) × VSLY | Unit: USD/year | Click to view calculation\">$8.53T</a>"
+"regulatory_delay_annual_loss_latex": "$$\nAnnual_{loss} = 56.87M \\times \\$150k\
+  \ = \\$8.53T/year\n$$"
 "regulatory_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
   \ Life Years lost to regulatory delay (1962-2024) | ~ Medium confidence | Formula:\
-  \ YLL + YLD | Unit: DALYs | Click to view calculation\">4.83</a>"
-"regulatory_delay_dalys_latex": "$$\nDALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B\n\
+  \ YLL + YLD | Unit: DALYs | Click to view calculation\">3,526</a>"
+"regulatory_delay_dalys_latex": "$$\nDALY_{total} = YLL + YLD = 3.14B + 0.388B = 3.526B\n\
   $$"
 "regulatory_delay_deaths_lower_bound": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates\"\
@@ -1866,8 +1870,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Cumulative\
   \ economic deadweight loss from regulatory delay (1962-2024, 2024 USD) | ~ Medium\
   \ confidence | Formula: DALYS_TOTAL × VSLY | Unit: USD | Click to view calculation\"\
-  >$724T</a>"
-"regulatory_delay_economic_loss_latex": "$$\nDWL = 4.83B \\times \\$150k = \\$724.5T\n\
+  >$529T</a>"
+"regulatory_delay_economic_loss_latex": "$$\nDWL = 3.526B \\times \\$150k = \\$528.9T\n\
   $$"
 "regulatory_delay_mean_age_of_death": "<a href=\"/knowledge/references.qmd#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
@@ -1886,7 +1890,8 @@
   \ with Disability during regulatory delay | ~ Medium confidence | Formula: DEATHS_MEAN\
   \ × SUFFERING_PERIOD × DISABILITY_WEIGHT | Unit: years | Click to view calculation\"\
   >388</a>"
-"regulatory_delay_yld_latex": "$$\nYLD = 184.6M \\times 6 \\times 0.35 = 1.69B\n$$"
+"regulatory_delay_yld_latex": "$$\nYLD = 184.6M \\times 6 \\times 0.35 = 387.66M =\
+  \ 0.388B\n$$"
 "regulatory_delay_yll": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years of Life\
@@ -2127,6 +2132,14 @@
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total life expectancy\
   \ gain from all medical advances 1900-2000 (vaccines + hygiene + antibiotics) |\
   \ ✓ High confidence | Unit: years | Click to view source\">35</a>"
+"total_research_funding_with_treaty": "<a href=\"/knowledge/economics/economics.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total global\
+  \ research funding (baseline + 1% treaty funding) | ✓ High confidence | Formula:\
+  \ GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING | Unit: USD | Click to view\
+  \ calculation\">$94.7B</a>"
+"total_research_funding_with_treaty_latex": "$$\n\\$67.5B + \\$27.18B = \\$94.68B\n\
+  $$"
 "total_time_investment_hours": "<a href=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total time investment\
@@ -2321,6 +2334,14 @@
 "treaty_complete_case_annual_benefits_latex": "$$\nTotalComplete = \\$113.6B + \\\
   $50B + \\$300B + \\$100B + \\$400B + \\$100B + \\$100B + \\$75B = \\$1,238.6B\n\
   $$"
+"treaty_complete_roi": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Complete ROI\
+  \ including all 8 benefit categories (annual benefits ÷ one-time campaign cost)\
+  \ | ✓ High confidence | Formula: TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST | Unit: ratio\
+  \ | Click to view calculation\">1,239</a>"
+"treaty_complete_roi_latex": "$$\nROI_{complete} = \\frac{\\$1{,}238.6\\text{B/year}}{\\\
+  $1.00\\text{B}} = 1{,}239:1 \\text{ annually}\n$$"
 "treaty_complete_roi_conditional_5th_percentile": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Lower bound conditional\
@@ -2372,7 +2393,7 @@
   \ benefits using full regulatory delay avoidance, consolidating overlapping categories\
   \ | ~ Medium confidence | Formula: COMPLETE_BENEFITS - EARLIER_ACCESS - RARE_DISEASES\
   \ - RESEARCH_ACCEL + FULL_REG_DELAY | Unit: USD/year | Click to view calculation\"\
-  >$11.5T</a>"
+  >$8.54T</a>"
 "treaty_comprehensive_with_full_regulatory_delay_latex": "$$\nBenefits_{full} = \\\
   $1,238.6B - \\$300B - \\$400B - \\$100B + \\$11,100B \\approx \\$11,538.6B\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
@@ -2461,14 +2482,14 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Ratio of Type\
   \ II error cost to Type I error benefit (harm from delay vs. harm prevented) | ~\
   \ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT | Unit: ratio | Click\
-  \ to view calculation\">1,610</a>"
+  \ to view calculation\">1,175</a>"
 "type_ii_error_cost_ratio_latex": "$$\n\\frac{Cost_{delay}}{Benefit_{safety}} = \\\
-  frac{4.83B}{0.003B} = 1{,}610:1\n$$"
+  frac{3.526B}{0.003B} = 1{,}175:1\n$$"
 "type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Maximum DALYs\
   \ saved by FDA preventing unsafe drugs (extreme overestimate) | ? Low confidence\
-  \ | Unit: DALYs | Click to view calculation\">0.003</a>"
+  \ | Unit: DALYs | Click to view calculation\">3</a>"
 "typical_ceo_hourly_rate": "<a href=\"/knowledge/references.qmd#ceo-compensation\"\
   \ class=\"parameter-link\" data-source-ref=\"ceo-compensation\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Typical CEO hourly rate | ✓ High confidence\

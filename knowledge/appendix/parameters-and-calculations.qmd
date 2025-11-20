@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 507
+**Total parameters**: 509
 
 - External sources (peer-reviewed): 155
-- Calculated values: 308
+- Calculated values: 310
 - Core definitions: 44
 
 # External Data Sources {#sec-external}
@@ -2871,7 +2871,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Annual Economic Value of Regulatory Delay Costs Avoided by dFDA {#sec-dfda_avoided_regulatory_delay_cost_annual}
 
-**Value**: $11.1T
+**Value**: $8.10T
 
 Annual economic value of regulatory delay costs avoided by dFDA
 
@@ -2888,7 +2888,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Annual DALYs Saved by dFDA Eliminating Regulatory Efficacy Lag {#sec-dfda_avoided_regulatory_delay_dalys_annual}
 
-**Value**: 74M
+**Value**: 54M
 
 Annual DALYs saved by dFDA eliminating regulatory efficacy lag
 
@@ -3273,7 +3273,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Monetized Value of Comprehensive dFDA Benefits Including Regulatory Delay Avoidance {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
 
-**Value**: $11.1T
+**Value**: $8.12T
 
 Monetized value of comprehensive dFDA benefits including regulatory delay avoidance
 
@@ -3324,7 +3324,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Annual Value of Eliminating Delay Deaths Only, Excluding Innovation Loss {#sec-dfda_regulatory_delay_dlag_only_annual}
 
-**Value**: $5.55T
+**Value**: $4.05T
 
 Annual value of eliminating delay deaths only (D_lag), excluding innovation loss (D_void)
 
@@ -3358,7 +3358,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Recommended: ROI Including R&D Savings Plus Regulatory Delay Elimination {#sec-dfda_roi_rd_plus_delay}
 
-**Value**: 6,489
+**Value**: 4,990
 
 RECOMMENDED: ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids double-counting)
 
@@ -3375,7 +3375,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Full Impact ROI: R&D Savings Plus Regulatory Delay Elimination Plus Lost Innovation {#sec-dfda_roi_rd_plus_delay_plus_innovation}
 
-**Value**: 11,540
+**Value**: 8,542
 
 Full impact ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag + D_void)
 
@@ -3528,26 +3528,34 @@ DIH broader initiatives upfront cost (medium case)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Maximum Annual Clinical Trial Subsidies from DIH Treasury {#sec-dih_treasury_trial_subsidies_max}
+## Patients Fundable Annually {#sec-dih_patients_fundable_annually}
 
-**Value**: $20B
+**Value**: 48.8M
 
-Maximum annual clinical trial subsidies from DIH Treasury
+Number of patients fundable annually at RECOVERY trial cost
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies](../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies)
+$$
+\$24.422B \div \$500 = 48.8M
+$$
+
+**Methodology**: [../economics/economics.qmd#funding-allocation](../economics/economics.qmd#funding-allocation)
 
 *✓ High confidence*
 
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Minimum Annual Clinical Trial Subsidies from DIH Treasury {#sec-dih_treasury_trial_subsidies_min}
+## Annual Clinical Trial Patient Subsidies {#sec-dih_treasury_trial_subsidies_annual}
 
-**Value**: $10B
+**Value**: $24.4B
 
-Minimum annual clinical trial subsidies from DIH Treasury
+Annual clinical trial patient subsidies (all medical research funds after dFDA operations)
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies](../appendix/dfda-cost-benefit-analysis.qmd#trial-subsidies)
+$$
+\$24.462B - \$0.04B = \$24.422B
+$$
+
+**Methodology**: [../economics/economics.qmd#funding-allocation](../economics/economics.qmd#funding-allocation)
 
 *✓ High confidence*
 
@@ -4165,7 +4173,7 @@ Annual QALYs gained from dFDA
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual QALYs from dFDA Including Regulatory Delay Avoidance {#sec-global_dfda_qalys_with_regulatory_avoidance}
 
-**Value**: 74.1M
+**Value**: 54.2M
 
 Total annual QALYs from dFDA including regulatory delay avoidance (top-down comprehensive estimate)
 
@@ -5124,12 +5132,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Annual DALYs Lost to Regulatory Delay Under Current System {#sec-regulatory_delay_annual_dalys}
 
-**Value**: 77.9M
+**Value**: 56.9M
 
 Annual DALYs lost to regulatory delay under current system
 
 $$
-DALY_{annual} = 4.83B \div 62 = 77.9M
+DALY_{annual} = 3.526B \div 62 = 56.87M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -5141,12 +5149,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Annualized Economic Loss from Regulatory Delay {#sec-regulatory_delay_annual_loss}
 
-**Value**: $11.7T
+**Value**: $8.53T
 
 Annualized economic loss from regulatory delay
 
 $$
-Annual_{loss} = 77.9M \times \$150k = \$11.685T/year
+Annual_{loss} = 56.87M \times \$150k = \$8.53T/year
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -5158,12 +5166,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Disability-Adjusted Life Years Lost to Regulatory Delay {#sec-regulatory_delay_dalys}
 
-**Value**: 4.83
+**Value**: 3,526
 
 Total Disability-Adjusted Life Years lost to regulatory delay (1962-2024)
 
 $$
-DALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B
+DALY_{total} = YLL + YLD = 3.14B + 0.388B = 3.526B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
@@ -5226,12 +5234,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Cumulative Economic Deadweight Loss from Regulatory Delay {#sec-regulatory_delay_economic_loss}
 
-**Value**: $724T
+**Value**: $529T
 
 Cumulative economic deadweight loss from regulatory delay (1962-2024, 2024 USD)
 
 $$
-DWL = 4.83B \times \$150k = \$724.5T
+DWL = 3.526B \times \$150k = \$528.9T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -5248,7 +5256,7 @@ $$
 Years Lived with Disability during regulatory delay
 
 $$
-YLD = 184.6M \times 6 \times 0.35 = 1.69B
+YLD = 184.6M \times 6 \times 0.35 = 387.66M = 0.388B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
@@ -5762,6 +5770,23 @@ Total words in the book
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Total Global Research Funding (Baseline + 1% Treaty Funding) {#sec-total_research_funding_with_treaty}
+
+**Value**: $94.7B
+
+Total global research funding (baseline + 1% treaty funding)
+
+$$
+\$67.5B + \$27.18B = \$94.68B
+$$
+
+**Methodology**: [../economics/economics.qmd](../economics/economics.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Total Time Investment in Treaty Participation {#sec-total_time_investment_hours}
 
 **Value**: 14.7
@@ -6135,6 +6160,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Complete 1% Treaty ROI (All Benefits) {#sec-treaty_complete_roi}
+
+**Value**: 1,239
+
+Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)
+
+$$
+ROI_{complete} = \frac{\$1{,}238.6\text{B/year}}{\$1.00\text{B}} = 1{,}239:1 \text{ annually}
+$$
+
+**Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Lower Bound Conditional ROI {#sec-treaty_complete_roi_conditional_5th_percentile}
 
 **Value**: 44
@@ -6239,7 +6281,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual Benefits Using Full Regulatory Delay Avoidance, Consolidating Overlapping Categories {#sec-treaty_comprehensive_with_full_regulatory_delay}
 
-**Value**: $11.5T
+**Value**: $8.54T
 
 Total annual benefits using full regulatory delay avoidance, consolidating overlapping categories
 
@@ -6422,12 +6464,12 @@ Trial completion speed multiplier (10x faster)
 ::: {.callout-note icon=false collapse=false}
 ## Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
-**Value**: 1,610
+**Value**: 1,175
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 $$
-\frac{Cost_{delay}}{Benefit_{safety}} = \frac{4.83B}{0.003B} = 1{,}610:1
+\frac{Cost_{delay}}{Benefit_{safety}} = \frac{3.526B}{0.003B} = 1{,}175:1
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#risk-analysis](../appendix/regulatory-mortality-analysis.qmd#risk-analysis)
@@ -6439,7 +6481,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Maximum DALYs Saved by FDA Preventing Unsafe Drugs {#sec-type_i_error_benefit_dalys}
 
-**Value**: 0.003
+**Value**: 3
 
 Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)
 
