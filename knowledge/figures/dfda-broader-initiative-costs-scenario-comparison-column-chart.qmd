@@ -158,5 +158,5 @@ add_png_metadata(
     description="Upfront costs range from $4.5M (best) to $1.98B (worst) across 5 major components"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

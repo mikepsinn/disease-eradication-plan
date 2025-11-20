@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -169,7 +170,7 @@ add_png_metadata(
     description="Individual lifetime wealth comparison showing Disease Eradication scenarios ($2.4M-$5.8M) vs antibiotic precedent baselines ($584K-$902K) for 30-year-old with $50K income"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 ## Key Findings

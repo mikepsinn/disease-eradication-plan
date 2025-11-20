@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "The $119T Death Toilet"
 from pathlib import Path
 
@@ -80,5 +81,5 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 # Add metadata for attribution
 
 add_png_metadata(output_path, title="Disease Burden War Curing Comparison")
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

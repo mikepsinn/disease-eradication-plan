@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| label: clinical-trial-spending-by-phase-pie-chart
 #| echo: false
 import matplotlib.pyplot as plt
@@ -91,5 +92,5 @@ add_png_metadata(
     description="Phase 3 trials dominate at $29-45B annually (45%), representing nearly half of the $83B global clinical trials market."
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

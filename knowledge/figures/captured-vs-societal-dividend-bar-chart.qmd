@@ -37,6 +37,7 @@ def add_modern_watermark(fig):
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 dividends_data = {
     'Type': ['Captured\nDividend', 'Total Societal\nDividend'],
@@ -90,5 +91,5 @@ plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.15)
 
 add_modern_watermark(fig)
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

@@ -129,5 +129,5 @@ add_png_metadata(
     description="dFDA at $40M/year is 180x less than NCI, 12.5x less than All of Us program"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

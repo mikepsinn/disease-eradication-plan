@@ -118,5 +118,5 @@ add_png_metadata(
     description="Base case: $137M and 2,301 QALYs lost per day. Ranges from $82M (conservative) to $260M (transformative)"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

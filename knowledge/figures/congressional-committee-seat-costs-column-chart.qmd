@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "The Price of Power: How Congressional Committee Seats are Sold"
 import matplotlib.pyplot as plt
 import numpy as np
@@ -86,6 +87,6 @@ add_watermark(fig)
 output_path = get_figure_output_path('congressional-committee-seat-costs-column-chart.png')
 plt.savefig(output_path,
             dpi=300, bbox_inches=None, facecolor=COLOR_WHITE)
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 
 ```

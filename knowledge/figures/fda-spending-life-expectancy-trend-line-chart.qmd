@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "Life expectancy trends before and after FDA creation (1901-2000)"
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -122,7 +123,7 @@ add_watermark(fig)
 output_path = get_figure_output_path('fda-spending-life-expectancy-trend-line-chart.png')
 plt.savefig(output_path,
             dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 This chart shows both life expectancy trends (left axis) and FDA budget spending in millions of 2020 USD (right axis) from 1901-2000. Two vertical lines mark major regulatory milestones: FDA creation in 1938 and the 1962 efficacy amendment.

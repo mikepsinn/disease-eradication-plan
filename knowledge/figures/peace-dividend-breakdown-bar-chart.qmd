@@ -45,6 +45,7 @@ def add_modern_watermark(fig):
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 # Create a DataFrame for the breakdown of savings
 
@@ -128,5 +129,5 @@ plt.subplots_adjust(left=0.25, right=0.9, top=0.9, bottom=0.1)
 
 add_modern_watermark(fig)
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

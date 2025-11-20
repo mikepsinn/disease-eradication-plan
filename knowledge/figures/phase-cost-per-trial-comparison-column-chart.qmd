@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| label: phase-cost-per-trial-comparison-column-chart
 #| echo: false
 import matplotlib.pyplot as plt
@@ -86,5 +87,5 @@ add_png_metadata(
     description="Phase 3 trials average $151M each (range $20-282M), dwarfing Phase 2 ($13-65M) and Phase 1 ($4-28M) costs."
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

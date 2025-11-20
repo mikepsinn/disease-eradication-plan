@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| include: false
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -139,7 +140,7 @@ add_watermark(fig)
 output_path = get_figure_output_path('healthcare-spending-vs-life-expectancy.png')
 plt.savefig(output_path,
             dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE, pad_inches=0.3)
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 ## Key Finding

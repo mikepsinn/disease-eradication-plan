@@ -68,4 +68,4 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 # Add metadata for attribution
 
 add_png_metadata(output_path, title="Military Vs Medical Research Direct Spending Column Chart")
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors

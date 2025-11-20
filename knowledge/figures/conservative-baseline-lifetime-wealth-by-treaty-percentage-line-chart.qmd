@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -115,7 +116,7 @@ add_png_metadata(
     description="Line chart showing how lifetime wealth increases with higher treaty percentages"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 ## Key Insights

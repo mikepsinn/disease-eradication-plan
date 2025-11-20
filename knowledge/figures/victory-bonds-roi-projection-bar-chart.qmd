@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "VICTORY Social Impact Bonds: 270% Perpetual Returns"
 from pathlib import Path
 
@@ -102,5 +103,5 @@ add_png_metadata(
     description="Comparison of ROI: S&P 500, real estate, venture capital, hedge funds, and VICTORY Social Impact Bonds"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

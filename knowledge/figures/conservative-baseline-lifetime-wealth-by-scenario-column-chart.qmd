@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -98,7 +99,7 @@ add_png_metadata(
     description="Comparison of lifetime wealth benefits for different age groups, income levels, and treaty percentages"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 **Key Insights (Conservative Baseline - Evidence-Based Model):**

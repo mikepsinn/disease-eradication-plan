@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "The Daily Toll: A breakdown of the 150,000 deaths occurring every day, highlighting the immense scale of preventable deaths from disease."
 import matplotlib.pyplot as plt
 import numpy as np
@@ -101,6 +102,6 @@ add_png_metadata(output_path, title="Daily Deaths Breakdown Column Chart")
 
 # Show plot
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 
 ```

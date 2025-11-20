@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| label: clinical-trial-funding-sources-pie-chart
 #| echo: false
 import matplotlib.pyplot as plt
@@ -98,5 +99,5 @@ add_png_metadata(
     description="Private industry spends $82.5B (90%) on clinical trials, dwarfing government ($22B, 10%) and nonprofit ($3.5B, 3%) contributions."
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

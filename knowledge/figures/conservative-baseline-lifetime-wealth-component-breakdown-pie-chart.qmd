@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -102,7 +103,7 @@ add_png_metadata(
     description="Pie chart showing relative contribution of each benefit component"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 **Key Finding:** Nearly half (49%) of the $402K comes from **healthcare savings** - reduced medical costs from better treatments and prevention. The second largest component (30%) is the **GDP growth boost** from compound economic growth.

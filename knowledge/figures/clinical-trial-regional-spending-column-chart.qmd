@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| label: clinical-trial-regional-spending-column-chart
 #| echo: false
 import matplotlib.pyplot as plt
@@ -87,5 +88,5 @@ add_png_metadata(
     description="The United States dominates clinical trial spending at $45B (54%), with China rapidly rising to become the world's leading trial location by volume."
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

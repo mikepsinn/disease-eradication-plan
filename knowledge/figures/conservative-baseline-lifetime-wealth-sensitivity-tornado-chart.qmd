@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -159,7 +160,7 @@ add_png_metadata(
     description="Shows which parameters have largest impact on personal lifetime wealth from 1% Treaty"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 ## Key Findings

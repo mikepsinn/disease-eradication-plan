@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -161,7 +162,7 @@ add_png_metadata(
     description="Shows which parameters have largest impact on personal lifetime wealth from 1% Treaty under Disease Eradication Model (72yr life extension)"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 *Uses Disease Eradication Model (20-year scenario, 72yr life extension). Base case: Age 30, $50K income, 1% treaty, 3% discount rate.*

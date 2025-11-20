@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -100,7 +101,7 @@ add_png_metadata(
     description="Pie chart showing component breakdown with 72-year life extension"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 *Uses Disease Eradication Model (20-year scenario, 72yr life extension). Base case: Age 30, $50K income, 1% treaty. Each slice shows component amount and percentage of $4.3M total.*

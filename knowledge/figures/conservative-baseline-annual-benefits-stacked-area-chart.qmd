@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -172,7 +173,7 @@ add_png_metadata(
     description="Stacked area chart showing cumulative wealth accumulation over lifetime using conservative baseline model (5yr life extension)"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 *Uses Evidence-Based Conservative model (antibiotic precedent, 5yr life extension). Base case: Age 30, $50K income, 1% treaty. Shows cumulative additional wealth beyond normal income from treaty benefits: peace dividend (per-capita share of reduced war costs), healthcare savings (reduced medical expenses), productivity gains (increased earnings from better health), and economic multiplier (GDP growth from military→research reallocation).*

@@ -163,7 +163,7 @@ add_png_metadata(
     description="10-year NPV analysis showing cumulative costs, savings, and net benefit with 8% discount rate and 5-year adoption ramp"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 
 # Print key metrics
 

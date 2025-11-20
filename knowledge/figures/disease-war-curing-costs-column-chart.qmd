@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "Cost of Disease vs War Costs vs Curing Diseases"
 from pathlib import Path
 
@@ -110,5 +111,5 @@ plt.savefig(output_path, dpi=150, bbox_inches=None, facecolor=COLOR_WHITE)
 # Add metadata for attribution
 
 add_png_metadata(output_path, title="Disease War Curing Costs Column Chart")
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "Life expectancy growth slowed dramatically after the 1962 efficacy requirement"
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -125,7 +126,7 @@ add_watermark(fig)
 output_path = get_figure_output_path('life-expectancy-before-after-fda-line-chart.png')
 plt.savefig(output_path,
             dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 This chart shows life expectancy trends from 1901-2000, split at the critical 1962 efficacy amendment. The data is divided into two periods: before the efficacy requirement (1901-1961, dashed line) and after (1962-2000, solid line). Subtle gray trendlines show the linear regression for each period, making the slope difference clear.

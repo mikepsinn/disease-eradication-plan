@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "Monte Carlo Simulation: ROI Uncertainty Distribution (10,000 iterations)"
 import matplotlib.pyplot as plt
 import numpy as np
@@ -135,6 +136,6 @@ add_png_metadata(output_path,
                  title="Monte Carlo Simulation: ROI Uncertainty Distribution",
                  description="Probabilistic sensitivity analysis showing ROI distribution with 95% confidence intervals")
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 

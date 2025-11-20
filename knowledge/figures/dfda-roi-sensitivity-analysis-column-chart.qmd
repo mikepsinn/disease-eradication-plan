@@ -122,5 +122,5 @@ add_png_metadata(
     description="ROI ranges from 66:1 (worst case) to 2,577:1 (best case), with base case at 463:1"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

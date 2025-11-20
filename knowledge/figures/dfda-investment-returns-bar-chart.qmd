@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
@@ -105,5 +106,5 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(output_path, title="Dfda Investment Returns Bar Chart")
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```

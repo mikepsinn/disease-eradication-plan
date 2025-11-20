@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| echo: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -105,7 +106,7 @@ add_png_metadata(
     description="Comparison using Disease Eradication Model with 20-year scenario (72yr life extension)"
 )
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
 *Uses Disease Eradication Model (20-year scenario, 72yr life extension, 1% treaty). Numbers on bars show total lifetime benefit; numbers inside bars show life extension years.*

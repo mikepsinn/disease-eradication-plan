@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| fig-cap: "Expected ROI by Political Success Probability: Accounting for Implementation Risk"
 import matplotlib.pyplot as plt
 import numpy as np
@@ -92,6 +93,6 @@ add_png_metadata(output_path,
                  title="Expected ROI by Political Success Probability",
                  description="Expected value analysis showing ROI accounting for implementation risk across different political success probabilities")
 
-plt.show()
+plt.close(fig)  # Close to prevent Jupyter display errors
 ```
 
