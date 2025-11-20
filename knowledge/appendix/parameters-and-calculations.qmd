@@ -15,9 +15,9 @@ This appendix provides comprehensive documentation of all parameters and calcula
 
 **Total parameters**: 500
 
-- External sources (peer-reviewed): 148
-- Calculated values: 303
-- Core definitions: 49
+- External sources (peer-reviewed): 149
+- Calculated values: 307
+- Core definitions: 44
 
 # External Data Sources {#sec-external}
 
@@ -1201,6 +1201,19 @@ Annual mental health research grants total
 Annual productivity loss per capita from mental health issues (beyond treatment costs)
 
 **Source**: [mental-health-productivity-loss](../references.qmd#mental-health-productivity-loss)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Other Causes Death Rate {#sec-other_death_rate}
+
+**Value**: 250
+
+Other causes death rate per 100,000 population
+
+**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
 
 *✓ High confidence*
 
@@ -2497,6 +2510,32 @@ Weekly advertising cost for campaigns
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Annual Cost of Unpaid Caregiving {#sec-caregiver_cost_annual}
+
+**Value**: $6.00K
+
+Annual cost of unpaid caregiving (replacement cost method)
+
+*Formula*: `HOURS_PER_MONTH × 12 × VALUE_PER_HOUR`
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Average Caregiver Hours per Month {#sec-caregiver_hours_per_month_avg}
+
+**Value**: 110
+
+Average caregiver hours per month
+
+*Formula*: `HOURS_PER_WEEK × 4.33`
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Combined Peace and Health Dividends for ROI Calculation {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 **Value**: $164B
@@ -2559,7 +2598,7 @@ Theoretical maximum research capacity multiplier (25×10×1.6×1.4)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Completion Rate Improvement {#sec-completion_rate_improvement_multiplier}
+## dFDA Trial Completion Rate Improvement {#sec-completion_rate_improvement_multiplier}
 
 **Value**: 1.6
 
@@ -2670,7 +2709,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Daily Cost of Healthcare System Inefficiency {#sec-daily_cost_inefficiency}
+## Daily Cost of Global Healthcare System Inefficiency {#sec-daily_cost_inefficiency}
 
 **Value**: $327M
 
@@ -4748,6 +4787,32 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## US Per Capita Chronic Disease Cost {#sec-per_capita_chronic_disease_cost}
+
+**Value**: $12.2K
+
+US per capita chronic disease cost
+
+*Formula*: `US_CHRONIC_DISEASE_SPENDING ÷ US_POPULATION`
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## US Per Capita Mental Health Cost {#sec-per_capita_mental_health_cost}
+
+**Value**: $1.04K
+
+US per capita mental health cost
+
+*Formula*: `US_MENTAL_HEALTH_COST ÷ US_POPULATION`
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Pharma Payment per Cured Patient in 50/50 Model {#sec-pharma_cure_payment_per_patient}
 
 **Value**: $90K
@@ -4930,7 +4995,7 @@ Minimum investment for qualified investors
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Recruitment Speed Multiplier {#sec-recruitment_speed_multiplier}
+## dFDA Recruitment Speed Multiplier {#sec-recruitment_speed_multiplier}
 
 **Value**: 25
 
@@ -5134,7 +5199,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI at 1% Discount Rate {#sec-roi_discount_1pct}
+## 1% Treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
 **Value**: 532
 
@@ -5151,7 +5216,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI at 3% Discount Rate {#sec-roi_discount_3pct}
+## 1% Treaty ROI at 3% Discount Rate {#sec-roi_discount_3pct}
 
 **Value**: 463
 
@@ -5168,7 +5233,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI at 5% Discount Rate {#sec-roi_discount_5pct}
+## 1% Treaty ROI at 5% Discount Rate {#sec-roi_discount_5pct}
 
 **Value**: 407
 
@@ -5185,7 +5250,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## ROI at 7% Discount Rate {#sec-roi_discount_7pct}
+## 1% Treaty ROI at 7% Discount Rate {#sec-roi_discount_7pct}
 
 **Value**: 361
 
@@ -5539,7 +5604,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Simultaneous Trials Multiplier {#sec-simultaneous_trials_multiplier}
+## dFDA Simultaneous Trials Capacity Multiplier {#sec-simultaneous_trials_multiplier}
 
 **Value**: 20
 
@@ -5578,7 +5643,7 @@ Minimum target participant count for social media campaigns
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## System Profit per Life Saved in Millions {#sec-system_profit_per_life_saved}
+## dFDA System Profit per Life Saved {#sec-system_profit_per_life_saved}
 
 **Value**: $5.87M
 
@@ -5604,7 +5669,7 @@ Total words in the book
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Time Investment {#sec-total_time_investment_hours}
+## Total Time Investment in Treaty Participation {#sec-total_time_investment_hours}
 
 **Value**: 14.7
 
@@ -5679,7 +5744,7 @@ Treaty system benefit multiplier vs childhood vaccination programs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Amortized Annual Campaign Cost {#sec-treaty_campaign_annual_cost_amortized}
+## Amortized Annual Treaty Campaign Cost {#sec-treaty_campaign_annual_cost_amortized}
 
 **Value**: $250M
 
@@ -5815,7 +5880,7 @@ Treaty campaign duration (3-5 year range, using midpoint)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Treaty Campaign Cost {#sec-treaty_campaign_total_cost}
+## Total 1% Treaty Campaign Cost {#sec-treaty_campaign_total_cost}
 
 **Value**: $1.00B
 
@@ -5883,7 +5948,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Verification Attempts Multiplier {#sec-treaty_campaign_verification_attempts_multiplier}
+## Biometric Verification Attempts Multiplier {#sec-treaty_campaign_verification_attempts_multiplier}
 
 **Value**: 1.18
 
@@ -6113,7 +6178,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Net Annual Benefit {#sec-treaty_net_annual_benefit}
+## Net Annual Benefit from 1% Treaty {#sec-treaty_net_annual_benefit}
 
 **Value**: $163B
 
@@ -6164,7 +6229,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Annual Benefits {#sec-treaty_total_annual_benefits}
+## Total Annual Benefits from 1% Treaty and dFDA {#sec-treaty_total_annual_benefits}
 
 **Value**: $164B
 
@@ -6181,7 +6246,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Annual System Costs {#sec-treaty_total_annual_costs}
+## Total Annual Treaty System Costs {#sec-treaty_total_annual_costs}
 
 **Value**: $290M
 
@@ -6249,7 +6314,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Trial Completion Speed Multiplier {#sec-trial_completion_speed_multiplier}
+## dFDA Trial Completion Speed Multiplier {#sec-trial_completion_speed_multiplier}
 
 **Value**: 10
 
@@ -6485,24 +6550,6 @@ VICTORY funding for viral referendum (referral payments, political advertising)
 Fundamental parameters and constants used throughout the analysis.
 
 ::: {.callout-warning icon=false collapse=false}
-## Caregiver Cost Annual {#sec-caregiver_cost_annual}
-
-**Value**: 6,000
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-## Caregiver Hours Per Month Avg {#sec-caregiver_hours_per_month_avg}
-
-**Value**: 110
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ## Percentage of Budget Defense Sector Keeps Under 1% Treaty {#sec-defense_sector_retention_pct}
 
 **Value**: 99%
@@ -6708,15 +6755,6 @@ Standard time horizon for NPV analysis
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Other Death Rate {#sec-other_death_rate}
-
-**Value**: 250
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 20 1% {#sec-personal_lifetime_benefit_age_20_1pct}
 
 **Value**: 414K
@@ -6852,24 +6890,6 @@ Standard time horizon for NPV analysis
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Per Capita Chronic Disease Cost {#sec-per_capita_chronic_disease_cost}
-
-**Value**: 12,239
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-## Per Capita Mental Health Cost {#sec-per_capita_mental_health_cost}
-
-**Value**: 1,045
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ## Seconds Per Year {#sec-seconds_per_year}
 
 **Value**: 31.5M
@@ -6901,7 +6921,7 @@ Annual funding from 1% of global military spending redirected to DIH
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-## Trial Cost Reduction Percentage {#sec-trial_cost_reduction_pct}
+## dFDA Trial Cost Reduction Percentage {#sec-trial_cost_reduction_pct}
 
 **Value**: 50%
 

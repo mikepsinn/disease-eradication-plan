@@ -821,7 +821,7 @@ TRIAL_COST_REDUCTION_PCT = Parameter(
     source_ref="",
     source_type="definition",
     description="Trial cost reduction percentage (50% baseline, conservative)",
-    display_name="Trial Cost Reduction Percentage",
+    display_name="dFDA Trial Cost Reduction Percentage",
     unit="rate",
     keywords=["50%", "rct", "clinical study", "clinical trial", "low estimate", "research trial", "randomized controlled trial"]
 )  # 50% baseline reduction (conservative)
@@ -1147,7 +1147,7 @@ RECRUITMENT_SPEED_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration",
     source_type="calculated",
     description="Recruitment speed multiplier (25x faster from 2% → 50% eligibility)",
-    display_name="Recruitment Speed Multiplier",
+    display_name="dFDA Recruitment Speed Multiplier",
     unit="ratio",
     formula="DFDA_ELIGIBILITY_RATE ÷ CURRENT_ELIGIBILITY_RATE",
     latex=r"Recruitment_{mult} = \frac{0.50}{0.002} = 25",
@@ -1159,7 +1159,7 @@ TRIAL_COMPLETION_SPEED_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration",
     source_type="calculated",
     description="Trial completion speed multiplier (10x faster)",
-    display_name="Trial Completion Speed Multiplier",
+    display_name="dFDA Trial Completion Speed Multiplier",
     unit="ratio",
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
 )  # 10x faster completion (flipped incentives)
@@ -1169,7 +1169,7 @@ SIMULTANEOUS_TRIALS_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier",
     source_type="calculated",
     description="Simultaneous trials multiplier (20x more trials)",
-    display_name="Simultaneous Trials Multiplier",
+    display_name="dFDA Simultaneous Trials Capacity Multiplier",
     unit="ratio",
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
 )  # 20x more trials running simultaneously
@@ -1179,7 +1179,7 @@ COMPLETION_RATE_IMPROVEMENT_MULTIPLIER = Parameter(
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
     source_type="calculated",
     description="Completion rate improvement (1.6x from 60% → 95%)",
-    display_name="Completion Rate Improvement",
+    display_name="dFDA Trial Completion Rate Improvement",
     unit="ratio",
     formula="DFDA_COMPLETION_RATE ÷ CURRENT_COMPLETION_RATE",
     latex=r"Completion_{mult} = \frac{0.95}{0.60} = 1.58 \approx 1.6",
@@ -1539,7 +1539,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation",
     source_type="calculated",
     description="Total treaty campaign cost (100% VICTORY Social Impact Bonds)",
-    display_name="Total Treaty Campaign Cost",
+    display_name="Total 1% Treaty Campaign Cost",
     unit="USD",
     formula="REFERENDUM + LOBBYING + RESERVE",
     latex=r"CampaignCost = \$0.3B + \$0.65B + \$0.05B = \$1.0B",
@@ -1631,7 +1631,7 @@ TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
     source_type="calculated",
     description="Amortized annual campaign cost (total cost ÷ campaign duration)",
-    display_name="Amortized Annual Campaign Cost",
+    display_name="Amortized Annual Treaty Campaign Cost",
     unit="USD/year",
     formula="TOTAL_COST ÷ DURATION",
     latex=r"AnnualCost = \$1B / 4 = \$0.25B",
@@ -2012,7 +2012,7 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs",
     source_type="calculated",
     description="Total annual system costs (campaign + dFDA operations)",
-    display_name="Total Annual System Costs",
+    display_name="Total Annual Treaty System Costs",
     unit="USD/year",
     formula="CAMPAIGN_ANNUAL + DFDA_OPEX",
     latex=r"TotalCosts = \$0.25B + \$0.04B = \$0.29B",
@@ -2029,7 +2029,7 @@ TREATY_TOTAL_ANNUAL_BENEFITS = Parameter(
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits",
     source_type="calculated",
     description="Total annual benefits (peace dividend + dFDA savings)",
-    display_name="Total Annual Benefits",
+    display_name="Total Annual Benefits from 1% Treaty and dFDA",
     unit="USD/year",
     formula="PEACE_DIVIDEND + DFDA_SAVINGS",
     latex=r"TotalBenefits = \$113.55B + \$50B = \$163.55B",
@@ -2055,7 +2055,7 @@ TREATY_NET_ANNUAL_BENEFIT = Parameter(
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit",
     source_type="calculated",
     description="Net annual benefit (total benefits - total costs)",
-    display_name="Net Annual Benefit",
+    display_name="Net Annual Benefit from 1% Treaty",
     unit="USD/year",
     formula="TOTAL_BENEFITS - TOTAL_COSTS",
     latex=r"NetBenefit = \$163.55B - \$0.29B = \$163.26B",
@@ -2307,7 +2307,7 @@ ROI_DISCOUNT_1PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY * 1.15",
     latex=r"ROI_{1\%} \approx 463 \times 1.15 = 532",
     description="ROI at 1% discount rate (approximate 15% increase from 3% baseline)",
-    display_name="ROI at 1% Discount Rate",
+    display_name="1% Treaty ROI at 1% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"]
 )
 
@@ -2319,7 +2319,7 @@ ROI_DISCOUNT_3PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY",
     latex=r"ROI_{3\%} = 463",
     description="ROI at 3% discount rate (baseline)",
-    display_name="ROI at 3% Discount Rate",
+    display_name="1% Treaty ROI at 3% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"]
 )
 
@@ -2331,7 +2331,7 @@ ROI_DISCOUNT_5PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY * 0.88",
     latex=r"ROI_{5\%} \approx 463 \times 0.88 = 407",
     description="ROI at 5% discount rate (approximate 12% decrease from 3% baseline)",
-    display_name="ROI at 5% Discount Rate",
+    display_name="1% Treaty ROI at 5% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"]
 )
 
@@ -2343,7 +2343,7 @@ ROI_DISCOUNT_7PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY * 0.78",
     latex=r"ROI_{7\%} \approx 463 \times 0.78 = 361",
     description="ROI at 7% discount rate (approximate 22% decrease from 3% baseline)",
-    display_name="ROI at 7% Discount Rate",
+    display_name="1% Treaty ROI at 7% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"]
 )
 
@@ -4841,7 +4841,7 @@ TREATY_CAMPAIGN_VERIFICATION_ATTEMPTS_MULTIPLIER = Parameter(
     source_ref="/knowledge/economics/campaign-budget.qmd#verification-cost-analysis",
     source_type="calculated",
     description="Verification attempts multiplier (1 ÷ conversion rate, assuming 85% completion)",
-    display_name="Verification Attempts Multiplier",
+    display_name="Biometric Verification Attempts Multiplier",
     unit="ratio",
     formula="1 ÷ VERIFICATION_CONVERSION_RATE",
     confidence="medium",
@@ -5425,7 +5425,7 @@ SYSTEM_PROFIT_PER_LIFE_SAVED = Parameter(
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life",
     source_type="calculated",
     description="System profit per life saved in millions",
-    display_name="System Profit per Life Saved in Millions",
+    display_name="dFDA System Profit per Life Saved",
     unit="USD/life",
     keywords=["5.9m", "international agreement", "peace treaty", "system", "life", "saved", "profit"]
 )  # Millions USD, system profit per life saved (specific phrasing in text)
@@ -5457,7 +5457,7 @@ DAILY_COST_INEFFICIENCY = Parameter(
     source_ref="/knowledge/solution/dfda.qmd#cost-of-delay",
     source_type="calculated",
     description="Daily cost of healthcare system inefficiency",
-    display_name="Daily Cost of Healthcare System Inefficiency",
+    display_name="Daily Cost of Global Healthcare System Inefficiency",
     unit="USD/day",
     keywords=["327.0m", "pragmatic trials", "real world evidence", "day", "each day", "holdup", "lag"]
 )  # billions USD, daily cost of inefficiency
@@ -5720,7 +5720,7 @@ TOTAL_TIME_INVESTMENT_HOURS = Parameter(
     source_ref="/knowledge/solution/wishocracy.qmd#time-investment",
     source_type="calculated",
     description="Total time investment (reading + actions)",
-    display_name="Total Time Investment",
+    display_name="Total Time Investment in Treaty Participation",
     unit="hours",
     formula="READING + ACTIONS",
     latex=r"TotalInvestment = 14.3 + 0.45 = 14.75 \text{ hours}",
@@ -6162,7 +6162,15 @@ US_POPULATION_2024 = Parameter(
     keywords=["2024", "335.0m", "people", "citizens", "individuals", "inhabitants", "persons"]
 )
 
-PER_CAPITA_CHRONIC_DISEASE_COST = US_CHRONIC_DISEASE_SPENDING_ANNUAL / US_POPULATION_2024  # $12,239/year
+PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
+    US_CHRONIC_DISEASE_SPENDING_ANNUAL / US_POPULATION_2024,
+    source_type="calculated",
+    description="US per capita chronic disease cost",
+    display_name="US Per Capita Chronic Disease Cost",
+    unit="USD/person/year",
+    formula="US_CHRONIC_DISEASE_SPENDING ÷ US_POPULATION",
+    keywords=["chronic", "disease", "per capita", "us", "cost", "annual"]
+)  # $12,239/year
 
 # Mental health constants
 US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
@@ -6175,7 +6183,15 @@ US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
     keywords=["350.0b", "yearly", "costs", "funding", "investment", "mental", "health"]
 )
 
-PER_CAPITA_MENTAL_HEALTH_COST = US_MENTAL_HEALTH_COST_ANNUAL / US_POPULATION_2024  # ~$1,045/year
+PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
+    US_MENTAL_HEALTH_COST_ANNUAL / US_POPULATION_2024,
+    source_type="calculated",
+    description="US per capita mental health cost",
+    display_name="US Per Capita Mental Health Cost",
+    unit="USD/person/year",
+    formula="US_MENTAL_HEALTH_COST ÷ US_POPULATION",
+    keywords=["mental", "health", "per capita", "us", "cost", "annual"]
+)  # ~$1,045/year
 
 MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA = Parameter(
     2000,
@@ -6207,7 +6223,15 @@ CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
     unit="USD/hour",
     keywords=["caregiver", "hour", "simple", "expenditure", "spending", "value", "budget"]
 )  # Replacement cost estimate
-CAREGIVER_COST_ANNUAL = CAREGIVER_HOURS_PER_MONTH * 12 * CAREGIVER_VALUE_PER_HOUR_SIMPLE  # $6,000/year
+CAREGIVER_COST_ANNUAL = Parameter(
+    CAREGIVER_HOURS_PER_MONTH * 12 * CAREGIVER_VALUE_PER_HOUR_SIMPLE,
+    source_type="calculated",
+    description="Annual cost of unpaid caregiving (replacement cost method)",
+    display_name="Annual Cost of Unpaid Caregiving",
+    unit="USD/year",
+    formula="HOURS_PER_MONTH × 12 × VALUE_PER_HOUR",
+    keywords=["caregiver", "unpaid", "annual", "expenditure", "spending", "value", "budget"]
+)  # $6,000/year
 
 
 def calculate_life_expectancy_gain_improved(treaty_pct, timeframe="mid-term"):
@@ -6595,7 +6619,15 @@ CAREGIVER_HOURS_PER_WEEK_AVG = Parameter(
     keywords=["caregiver", "hours", "week", "avg"]
 )  # 25-26 hours/week average
 
-CAREGIVER_HOURS_PER_MONTH_AVG = CAREGIVER_HOURS_PER_WEEK_AVG * 4.33  # ~110 hours/month
+CAREGIVER_HOURS_PER_MONTH_AVG = Parameter(
+    CAREGIVER_HOURS_PER_WEEK_AVG * 4.33,
+    source_type="calculated",
+    description="Average caregiver hours per month",
+    display_name="Average Caregiver Hours per Month",
+    unit="hours/month",
+    formula="HOURS_PER_WEEK × 4.33",
+    keywords=["caregiver", "hours", "month", "avg", "average"]
+)  # ~110 hours/month
 
 CAREGIVER_VALUE_PER_HOUR = Parameter(
     16.59,
@@ -7065,7 +7097,15 @@ ACCIDENTS_DEATH_RATE = Parameter(
     keywords=["fatalities", "casualties", "deaths", "mortality", "accidents", "death", "loss of life"]
 )  # Unintentional injuries
 
-OTHER_DEATH_RATE = 250.0  # All other causes
+OTHER_DEATH_RATE = Parameter(
+    250.0,
+    source_ref="cdc-leading-causes-death",
+    source_type="external",
+    description="Other causes death rate per 100,000 population",
+    display_name="Other Causes Death Rate",
+    unit="deaths per 100k",
+    keywords=["fatalities", "casualties", "deaths", "mortality", "death", "loss of life", "other"]
+)  # All other causes
 
 TOTAL_DEATH_RATE = Parameter(
     722.0,

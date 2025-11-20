@@ -52,14 +52,18 @@ RUN python3.11 -m ipykernel install --user --name dih-project-kernel --display-n
 
 # Copy project files into container (avoids filesystem mounting issues)
 # Copy in stages for better caching
+# Copy source files needed for render-book-pdf.py
+COPY _quarto-book.yml index-book.qmd ./
 COPY _quarto.yml index.qmd styles.css favicon.ico pyproject.toml package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY scripts/ scripts/
-COPY brain/ brain/
 COPY assets/ assets/
+COPY knowledge/ knowledge/
+COPY dih_models/ dih_models/
+COPY references.bib ./
 
-# Build PDF inside container
+# Build PDF inside container using render-book-pdf.py
 # Use || true to continue even if there are minor cleanup errors
-RUN python3.11 scripts/render_pdf.py --timeout 900 --skip-validation || \
+RUN python3.11 scripts/render-book-pdf.py || \
     (echo "Build completed with exit code $?" && \
      test -f _book/warondisease/*.pdf && echo "PDF file exists" || echo "No PDF found")
 

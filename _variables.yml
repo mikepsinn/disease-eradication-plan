@@ -175,16 +175,16 @@
 "caregiver_annual_value_total": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"Total annual value of unpaid caregiving in US\
   \ | ✓ High confidence | Unit: USD/year | Click to view source\">$600B</a>"
-"caregiver_cost_annual": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_COST_ANNUAL\
-  \ - $6,000/year\">6,000</span>"
+"caregiver_cost_annual": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_COST_ANNUAL\"\
+  >$6.00K</span>"
 "caregiver_count_us": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"Number of unpaid caregivers in US | ✓ High confidence\
   \ | Unit: people | Click to view source\">38M</a>"
 "caregiver_hours_per_month": "<a href=\"/knowledge/references.qmd#average-family-caregiving-hours\"\
   \ class=\"parameter-link\" title=\"Average monthly hours of unpaid family caregiving\
   \ in US | ✓ High confidence | Unit: hours/month | Click to view source\">20</a>"
-"caregiver_hours_per_month_avg": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_HOURS_PER_MONTH_AVG\
-  \ - ~110 hours/month\">110</span>"
+"caregiver_hours_per_month_avg": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_HOURS_PER_MONTH_AVG\"\
+  >110</span>"
 "caregiver_hours_per_week_avg": "<a href=\"/knowledge/references.qmd#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" title=\"Average weekly hours of unpaid caregiving (25-26\
   \ hours/week) | ✓ High confidence | Unit: hours/week | Click to view source\">25.5</a>"
@@ -1080,8 +1080,9 @@
   \ | Click to view calculation\">1,281</a>"
 "optimistic_scenario_roi_latex": "$$\nROI_{optimistic} = \\$294.8B / \\$0.230B = 1,282:1\n\
   $$"
-"other_death_rate": "<span class=\"parameter-link\" title=\"parameters.OTHER_DEATH_RATE\
-  \ - All other causes\">250</span>"
+"other_death_rate": "<a href=\"/knowledge/references.qmd#cdc-leading-causes-death\"\
+  \ class=\"parameter-link\" title=\"Other causes death rate per 100,000 population\
+  \ | ✓ High confidence | Unit: deaths per 100k | Click to view source\">250</a>"
 "partial_success_bondholder_payout": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" title=\"Bondholder payout in partial success scenario\
   \ | ✓ High confidence | Formula: REVENUE × BOND_PCT | Unit: USD/year | Click to\
@@ -1238,10 +1239,10 @@
   >72</a>"
 "personal_life_extension_years_age_30_latex": "$$\nLifeExtension = 72 \\text{ years}\n\
   $$"
-"per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\
-  \ - $12,239/year\">12,239</span>"
-"per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\
-  \ - ~$1,045/year\">1,045</span>"
+"per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
+  >$12.2K</span>"
+"per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\"\
+  >$1.04K</span>"
 "petition_signature_cost_per_verified_2024": "<a href=\"/knowledge/references.qmd#ballot-measure-signature-costs-2024\"\
   \ class=\"parameter-link\" title=\"Average cost per verified petition signature\
   \ in 2024 US campaigns | ✓ High confidence | Updated: 2024 | Unit: USD/signature\

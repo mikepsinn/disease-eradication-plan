@@ -27,10 +27,11 @@ interventions_data = {
 }
 
 # 1% Treaty + DIH + dFDA breakdown
+# Convert Parameter objects to billions for chart display
 
 peace_dividend_components = {
-    'Peace Dividend': PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
-    'dFDA R&D\nSavings': DFDA_RD_GROSS_SAVINGS_ANNUAL,
+    'Peace Dividend': float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1e9,
+    'dFDA R&D\nSavings': float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 1e9,
     'Disease\nReduction': 10.9,
     'GDP\nGrowth': 27.2
 }
@@ -75,7 +76,7 @@ for idx, (name, value) in enumerate(peace_dividend_components.items()):
     # Add label inside ONLY the first (Peace Dividend) segment
     if idx == 0:
         ax.text(treaty_x_pos, bottom_offset + value/2,
-                f'${PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT:.1f}B\nPeace\nDividend',
+                f'${value:.1f}B\nPeace\nDividend',
                 ha='center', va='center', fontsize=24,
                 color=COLOR_BLACK, weight='bold', linespacing=1.2)
 
