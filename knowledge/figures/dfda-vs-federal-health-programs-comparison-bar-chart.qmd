@@ -1,4 +1,9 @@
 ```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
 #| warning: false
 import matplotlib.pyplot as plt
 import numpy as np
@@ -24,7 +29,7 @@ programs = [
     'National Cancer\nInstitute (NCI)'
 ]
 costs = [
-    DFDA_NPV_UPFRONT_COST / 1_000_000,  # Convert USD to millions
+    float(DFDA_NPV_ANNUAL_OPEX_TOTAL) / 1_000_000,  # Convert USD to millions (annual operating cost)
     257,  # Cancer Moonshot (no parameter exists)
     500,  # All of Us (no parameter exists)
     7200  # NCI (no parameter exists)

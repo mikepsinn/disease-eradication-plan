@@ -22,9 +22,9 @@ setup_chart_style()
 
 BILLION = 1_000_000_000
 
-global_clinical_trial_market = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL / BILLION  # Convert raw USD to billions
+global_clinical_trial_market = float(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL) / BILLION  # Convert raw USD to billions
 dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT
-dfda_annual_operational_cost = DFDA_NPV_ANNUAL_OPEX_TOTAL / BILLION  # Convert raw USD to billions
+dfda_annual_operational_cost = float(DFDA_NPV_ANNUAL_OPEX_TOTAL) / BILLION  # Convert raw USD to billions
 
 # Baseline QALYs generated annually
 

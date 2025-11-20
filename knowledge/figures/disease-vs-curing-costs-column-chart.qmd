@@ -44,21 +44,23 @@ fig, ax = plt.subplots(figsize=(14, 10))
 
 ax.bar(0, disease_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=3, width=0.8)
 
-ax.text(0, disease_total * 0.98, 'Dealing\nwith\nUncured\nDiseases', ha='center', va='center',
-        fontsize=40, weight='bold', color=COLOR_BLACK)
-ax.text(0, disease_total * 0.95, '$109T', ha='center', va='center',
-        fontsize=96, weight='bold', color=COLOR_BLACK)
+# "$109T" in large font at the top
+ax.text(0, disease_total * 0.82, '$109T', ha='center', va='center',
+        fontsize=72, weight='bold', color=COLOR_BLACK)
 
-# Add breakdown - simple and clear
-
-disease_breakdown = (
+# Rest of the label below
+disease_label = (
+    'Dealing\n'
+    'with\n'
+    'Uncured\n'
+    'Diseases\n\n'
     'Medical: $10T\n'
     'Lost Work: $5T\n'
     'Lost Lives: $94T\n\n'
     '55M Deaths/Year'
 )
-ax.text(0, disease_total * 0.92, disease_breakdown, ha='center', va='center',
-        fontsize=32, weight='bold', color=COLOR_BLACK, linespacing=1.4)
+ax.text(0, disease_total * 0.50, disease_label, ha='center', va='center',
+        fontsize=28, weight='bold', color=COLOR_BLACK, linespacing=1.3)
 
 # Column 2: Cure Research Spending (solid black)
 
