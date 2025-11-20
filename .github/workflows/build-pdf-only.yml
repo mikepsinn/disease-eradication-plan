@@ -1,15 +1,16 @@
 on:
   workflow_dispatch:
 
-name: Build PDF Only (for local testing with act)
+name: Build and Download PDF Book
 
 permissions:
   contents: read
 
 jobs:
   build-pdf:
+    name: Render PDF Book
     runs-on: ubuntu-latest
-    continue-on-error: true
+    continue-on-error: false
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -68,10 +69,36 @@ jobs:
         run: python scripts/render_pdf.py --timeout 900
         timeout-minutes: 20
 
+      - name: List generated PDF files
+        run: |
+          echo "=== Generated PDF files ==="
+          ls -lh _book/warondisease/*.pdf || echo "No PDF files found"
+          if [ -f _book/warondisease/*.pdf ]; then
+            for pdf in _book/warondisease/*.pdf; do
+              echo "PDF: $(basename $pdf) ($(stat -f%z "$pdf" 2>/dev/null || stat -c%s "$pdf") bytes)"
+            done
+          fi
+
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: book-pdf
           path: '_book/warondisease/*.pdf'
-          if-no-files-found: warn
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Create workflow summary
+        if: success()
+        run: |
+          echo "## 📚 PDF Book Generated Successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The PDF has been generated and uploaded as an artifact." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Download the PDF:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to the [Actions tab](https://github.com/${{ github.repository }}/actions)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Click on this workflow run" >> $GITHUB_STEP_SUMMARY
+          echo "3. Scroll down to the 'Artifacts' section" >> $GITHUB_STEP_SUMMARY
+          echo "4. Download the 'book-pdf' artifact" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The artifact will be available for 30 days." >> $GITHUB_STEP_SUMMARY
 
