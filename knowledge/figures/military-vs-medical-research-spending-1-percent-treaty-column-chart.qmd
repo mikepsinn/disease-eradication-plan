@@ -30,10 +30,11 @@ BILLION = 1_000_000_000
 
 military_total = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / BILLION
 cure_spending = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION
+treaty_funding = float(TREATY_ANNUAL_FUNDING) / BILLION
 
 # Make the 1% stack visually prominent (exaggerate it to ~100B so it's actually visible)
 
-visual_stack_height = 100  # Visual height for the 1% slice (much larger than actual 27B)
+visual_stack_height = 100  # Visual height for the 1% slice (much larger than actual ~$27B from TREATY_ANNUAL_FUNDING)
 military_99_visual = military_total - visual_stack_height
 
 # Create stacked bar for military spending
@@ -69,7 +70,7 @@ annotation_x = 0.9  # Center between the two bars
 annotation_y = 1800  # Middle height
 
 ax.text(annotation_x, annotation_y,
-        'The 1% Treaty would\nredirect this tiny sliver\n($27B) to the\nWar on Disease',
+        f'The 1% Treaty would\nredirect this tiny sliver\n(${treaty_funding:.0f}B) to the\nWar on Disease',
         fontsize=20, fontweight='bold', color=COLOR_BLACK,
         ha='center', va='center',
         bbox=dict(boxstyle='square,pad=0.6', facecolor=COLOR_WHITE,

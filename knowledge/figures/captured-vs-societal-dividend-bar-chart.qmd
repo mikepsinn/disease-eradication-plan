@@ -38,9 +38,12 @@ def add_modern_watermark(fig):
 
 ```{python}
 #| echo: false
+# Scale constant for converting raw USD to billions
+BILLION = 1_000_000_000
+
 dividends_data = {
     'Type': ['Captured\nDividend', 'Total Societal\nDividend'],
-    'Amount ($B)': [TREATY_ANNUAL_FUNDING, PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT]
+    'Amount ($B)': [TREATY_ANNUAL_FUNDING / BILLION, PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / BILLION]
 }
 dividends_df = pd.DataFrame(dividends_data)
 
@@ -79,7 +82,7 @@ ax.set_xlabel('')
 
 # Clean axis formatting
 
-ax.set_ylim(0, PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT * 1.12)
+ax.set_ylim(0, (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / BILLION) * 1.12)
 
 # Modern layout
 

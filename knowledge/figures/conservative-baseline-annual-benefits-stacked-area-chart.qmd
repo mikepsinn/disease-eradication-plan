@@ -16,7 +16,7 @@ from pathlib import Path
 from dih_models.parameters import (
     calculate_personal_lifetime_wealth_conservative_baseline,
     calculate_gdp_growth_boost,
-    GLOBAL_POPULATION_2024_BILLIONS,
+    GLOBAL_POPULATION_2024,
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
 )
 from dih_models.plotting.chart_style import (
