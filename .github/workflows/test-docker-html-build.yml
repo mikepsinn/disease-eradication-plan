@@ -1,0 +1,125 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'claude/fix-docker-book-rendering-*'
+    paths:
+      - 'Dockerfile.html-build'
+      - 'docker-compose.html-build.yml'
+      - 'scripts/render-book-website.py'
+      - 'scripts/render_html.py'
+      - 'scripts/lib/**'
+
+name: Test Docker HTML Build
+
+permissions:
+  contents: read
+
+jobs:
+  test-docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          echo "Building Docker image for HTML rendering..."
+          docker compose -f docker-compose.html-build.yml build
+
+      - name: Run Docker container
+        run: |
+          echo "Running HTML rendering in Docker..."
+          # Create output directory
+          mkdir -p _book
+
+          # Run the container
+          docker compose -f docker-compose.html-build.yml up --abort-on-container-exit
+
+          # Check if output was created
+          if [ -d "_book/warondisease" ]; then
+            echo "✓ HTML output directory created"
+            ls -lh _book/warondisease/ | head -20
+          else
+            echo "✗ HTML output directory not found"
+            exit 1
+          fi
+
+      - name: Check for index.html
+        run: |
+          if [ -f "_book/warondisease/index.html" ]; then
+            echo "✓ index.html found"
+            # Show file size
+            ls -lh _book/warondisease/index.html
+            # Show first few lines
+            echo "--- First 50 lines of index.html ---"
+            head -50 _book/warondisease/index.html
+          else
+            echo "✗ index.html not found"
+            exit 1
+          fi
+
+      - name: Count rendered files
+        run: |
+          echo "=== Rendered HTML files ==="
+          find _book/warondisease -name "*.html" | wc -l
+          echo ""
+          echo "=== First 20 HTML files ==="
+          find _book/warondisease -name "*.html" | head -20
+          echo ""
+          echo "=== Total output size ==="
+          du -sh _book/warondisease
+
+      - name: Upload HTML artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-html-docker
+          path: '_book/warondisease/'
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            build-html.log
+            *.log
+          if-no-files-found: ignore
+          retention-days: 3
+
+  test-shell-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Make shell script executable
+        run: chmod +x render-book-html-docker.sh
+
+      - name: Run shell script
+        run: |
+          echo "Testing render-book-html-docker.sh..."
+          ./render-book-html-docker.sh
+
+      - name: Verify output
+        run: |
+          if [ -f "_book/warondisease/index.html" ]; then
+            echo "✓ Shell script build successful"
+            ls -lh _book/warondisease/ | head -10
+          else
+            echo "✗ Shell script build failed"
+            exit 1
+          fi
+
+      - name: Upload HTML artifacts (shell script)
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-html-shell-script
+          path: '_book/warondisease/'
+          if-no-files-found: error
+          retention-days: 7
