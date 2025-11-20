@@ -20,9 +20,11 @@ setup_chart_style()
 # Core parameters for the dFDA model (in billions of USD)
 # WORST CASE SCENARIO (Conservative) from ../appendix/dfda-cost-benefit-analysis.qmd
 
-global_clinical_trial_market = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL
+BILLION = 1_000_000_000
+
+global_clinical_trial_market = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL / BILLION  # Convert raw USD to billions
 dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT
-dfda_annual_operational_cost = DFDA_NPV_ANNUAL_OPEX_TOTAL / 1000  # Convert from millions to billions
+dfda_annual_operational_cost = DFDA_NPV_ANNUAL_OPEX_TOTAL / BILLION  # Convert raw USD to billions
 
 # Baseline QALYs generated annually
 
@@ -35,7 +37,7 @@ value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD
 # Calculations
 
 gross_rd_savings = global_clinical_trial_market * dfda_rd_cost_reduction_pct
-monetized_qaly_value = (qaly_gains_annual_baseline * value_per_qaly) / 1_000_000_000  # Convert to billions
+monetized_qaly_value = (qaly_gains_annual_baseline * value_per_qaly) / BILLION  # Convert raw USD to billions
 
 # Data for the bar chart
 

@@ -18,6 +18,9 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style(style='light', dpi=150)
 
+# Constant for converting USD to billions
+BILLION = 1_000_000_000
+
 # Disease burden (from cost-of-disease.qmd)
 
 disease_medical = 9900  # Direct medical costs
@@ -27,15 +30,15 @@ disease_total = disease_medical + disease_productivity + disease_lives  # $109.1
 
 # War costs breakdown
 
-war_direct = GLOBAL_MILITARY_SPENDING_ANNUAL_2024  # Direct military spending
-war_infrastructure = GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT  # Infrastructure destruction
-war_lives_trade = GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT + GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT  # Human life losses + trade disruption
-war_longterm = GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING + GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS + GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS + GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT + GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT + GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT  # Lost growth, veterans, refugees, environment
+war_direct = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / BILLION  # Direct military spending
+war_infrastructure = float(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT) / BILLION  # Infrastructure destruction
+war_lives_trade = (float(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT) + float(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT)) / BILLION  # Human life losses + trade disruption
+war_longterm = (float(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING) + float(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS) + float(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS) + float(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT) + float(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT) + float(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)) / BILLION  # Lost growth, veterans, refugees, environment
 war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
 
 # Cure research spending
 
-cure_total = GLOBAL_MED_RESEARCH_SPENDING  # Global government medical research spending
+cure_total = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION  # Global government medical research spending
 
 categories = [
     'Cost of\nDisease',

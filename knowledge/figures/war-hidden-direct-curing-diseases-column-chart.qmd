@@ -20,6 +20,9 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style(style='light', dpi=200)
 
+# Scale constant for USD values
+BILLION = 1_000_000_000
+
 # War costs breakdown (from cost-of-war.qmd)
 
 war_direct = GLOBAL_MILITARY_SPENDING_ANNUAL_2024  # Direct military spending
@@ -52,7 +55,7 @@ bar1 = ax.bar(0, war_indirect_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
 
 # Add large total at top - no decimal
 
-ax.text(0, war_indirect_total * 0.92, f'${war_indirect_total/1000:.0f}T', ha='center', va='center',
+ax.text(0, war_indirect_total * 0.92, f'${war_indirect_total/BILLION:.0f}B', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_BLACK)
 ax.text(0, war_indirect_total * 0.82, 'Indirect War Costs', ha='center', va='center',
         fontsize=40, weight='bold', color=COLOR_BLACK)
@@ -76,7 +79,7 @@ ax.text(0, war_indirect_total * 0.4, breakdown_text, ha='center', va='center',
 
 bar2 = ax.bar(1, war_direct, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
                linewidth=4, width=0.75, hatch='///')
-ax.text(1, war_direct * 0.6, f'${war_direct/1000:.1f}T', ha='center', va='center',
+ax.text(1, war_direct * 0.6, f'${war_direct/BILLION:.1f}B', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_BLACK)
 ax.text(1, war_direct * 0.4, 'Direct Military', ha='center', va='center',
         fontsize=40, weight='bold', color=COLOR_BLACK)

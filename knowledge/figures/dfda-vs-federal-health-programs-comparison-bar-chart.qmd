@@ -12,6 +12,9 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
+# --- Constants ---
+BILLION = 1_000_000_000
+
 # --- Data (annual costs in millions) ---
 
 programs = [
@@ -21,7 +24,7 @@ programs = [
     'National Cancer\nInstitute (NCI)'
 ]
 costs = [
-    DFDA_NPV_UPFRONT_COST_BILLIONS * 1000,  # Convert billions -> millions
+    DFDA_NPV_UPFRONT_COST / 1_000_000,  # Convert USD to millions
     257,  # Cancer Moonshot (no parameter exists)
     500,  # All of Us (no parameter exists)
     7200  # NCI (no parameter exists)
