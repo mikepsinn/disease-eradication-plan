@@ -91,10 +91,35 @@ _book/warondisease/
 
 ## Next Steps
 
-1. **Test the Docker build** on a machine with Docker installed
-2. **Verify output** - check that all HTML files render correctly
-3. **Optimize if needed** - adjust timeout or memory limits if builds are slow
-4. **Integrate with CI/CD** - use this for automated deployments
+1. ✅ **Test the Docker build** - GitHub Actions workflow is running automatically
+2. **Verify output** - download artifacts from GitHub Actions and inspect
+3. **Monitor workflow** - check https://github.com/mikepsinn/decentralized-institutes-of-health/actions
+4. **Optimize if needed** - adjust timeout or memory limits based on workflow results
+5. **Integrate with deployment** - use this for automated publishing once validated
+
+## GitHub Actions Workflow
+
+Created `.github/workflows/test-docker-html-build.yml` that:
+
+- **Triggers automatically** on push to `claude/fix-docker-book-rendering-*` branches
+- **Runs two test jobs**:
+  1. `test-docker-build` - Uses Docker Compose directly
+  2. `test-shell-script` - Uses `render-book-html-docker.sh`
+- **Validates output**:
+  - Checks for `_book/warondisease/index.html`
+  - Counts rendered HTML files
+  - Shows output directory size
+- **Uploads artifacts**:
+  - `book-html-docker` - HTML output from Docker Compose
+  - `book-html-shell-script` - HTML output from shell script
+  - `build-logs` - Build logs for debugging (if any issues)
+
+**Workflow will run now** because:
+1. We're on branch `claude/fix-docker-book-rendering-018QuXFGEvy6D4qpisexyuqL`
+2. We just pushed changes to `.github/workflows/test-docker-html-build.yml`
+
+**Check status at:**
+https://github.com/mikepsinn/decentralized-institutes-of-health/actions
 
 ## Potential Issues Fixed Proactively
 

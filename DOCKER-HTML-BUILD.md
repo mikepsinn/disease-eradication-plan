@@ -160,10 +160,38 @@ This HTML build setup is similar to `Dockerfile.pdf-build` but optimized for web
 
 ## CI/CD Integration
 
-For automated builds (GitHub Actions, GitLab CI, etc.):
+### GitHub Actions Workflow
+
+A test workflow is included at `.github/workflows/test-docker-html-build.yml` that:
+
+- **Automatically runs** on push to `claude/fix-docker-book-rendering-*` branches
+- **Can be triggered manually** via GitHub Actions UI (workflow_dispatch)
+- **Tests both approaches**:
+  1. Direct Docker Compose commands
+  2. The `render-book-html-docker.sh` shell script
+- **Validates output**: Checks for index.html and counts rendered files
+- **Uploads artifacts**: HTML output and build logs for inspection
+
+**To monitor the workflow:**
+
+1. Go to: https://github.com/mikepsinn/decentralized-institutes-of-health/actions
+2. Look for "Test Docker HTML Build" workflow
+3. Check the run triggered by the latest commit
+4. Download artifacts to inspect the rendered HTML
+
+**To run manually:**
+
+1. Go to: https://github.com/mikepsinn/decentralized-institutes-of-health/actions/workflows/test-docker-html-build.yml
+2. Click "Run workflow"
+3. Select your branch
+4. Click "Run workflow"
+
+### Integration Example for Deployment
+
+For automated builds and deployment:
 
 ```yaml
-# Example GitHub Actions workflow
+# Example GitHub Actions workflow for deployment
 - name: Build book website
   run: |
     docker compose -f docker-compose.html-build.yml build
