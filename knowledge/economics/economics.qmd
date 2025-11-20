@@ -437,11 +437,11 @@ Translation: "How much does it cost per year of healthy life created?"
 
 WHO says interventions under $50,000 per QALY are "cost-effective." Most successful health programs cost $3,000-10,000 per QALY.
 
-The dFDA's ICER: **{{< var dfda_icer_per_qaly >}} per QALY**
+This system's ICER: **{{< var dfda_icer_per_qaly >}} per QALY**
 
 That's negative. Negative means you MAKE money while saving lives. Economists call this a "dominant intervention" because even they can't argue against it.
 
-The dFDA doesn't cost money to save lives. It generates {{< var system_profit_per_life_saved >}} profit per life saved.
+This approach doesn't cost money to save lives. It generates {{< var system_profit_per_life_saved >}} profit per life saved.
 
 Traditional charity: "Please donate $3,500 to save one life"
 This approach: "Here's ${{< var system_profit_per_life_saved >}}, we saved a life as a side effect of doing profitable things"
@@ -732,7 +732,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
-**Context:** The dFDA model is not an untested innovation extrapolated from a single case study (RECOVERY trial). Rather, it represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
+**Context:** The decentralized FDA approach is not an untested innovation extrapolated from a single case study (RECOVERY trial). Rather, it represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
@@ -849,7 +849,7 @@ Count only R&D savings from cheaper trials. Ignore peace dividends, earlier drug
 
 ### The Math
 
-Third-grade division:
+Simple ROI calculation:
 
 $$
 \text{ROI} = \frac{\text{Benefits}}{\text{Costs}} = \frac{\$249.3\text{B}}{\$538\text{M}} = 463:1
@@ -896,28 +896,30 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 {{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
 
-### What It Costs to Build
+### How Treaty Funding Is Allocated
 
-**Total**: {{< var dfda_npv_total_cost >}} over {{< var npv_time_horizon_years >}} years
-  - Upfront: {{< var dfda_npv_upfront_cost_total >}} (build the platform)
-  - Annual ops: {{< var dfda_upfront_build >}} (keep it running)
+**Total annual treaty funding**: {{< var treaty_annual_funding >}}
 
-**Why costs are shockingly low:** The dFDA provides coordination infrastructure (like HTTP for the internet), not a competing platform.
+The vast majority goes to **patient subsidies** (~$24.4B), with minimal overhead:
 
-Cost comparison:
+1. **Patient Trial Subsidies** (89.8%): {{< var dih_treasury_trial_subsidies_annual >}}/year
+   - Subsidizes {{< var dih_patients_fundable_annually >}} patients annually at {{< var recovery_trial_cost_per_patient >}} per patient
+   - Patients bring subsidies to trials; providers collect payment when patients enroll
+   - Makes trial participation profitable for providers instead of costly
 
-- **Building everything from scratch**: $500M+ (what venture-funded startups do)
-- **Partnership model (dFDA approach)**: $15-25M (just the protocol layer)
+2. **Victory Bond Payouts** (10%): {{< var victory_bond_annual_payout >}}/year to campaign investors
 
-The infrastructure already exists. Epic ($521M raised), Cerner, Medable ($2.1B valuation), Science 37 ($100M raised) have built the components. The dFDA creates the glue layer that makes them work together.
+3. **Coordination Platform** (0.15%): {{< var dfda_annual_opex >}}/year for decentralized FDA infrastructure
 
-Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination.
+**Why platform costs are low:** Decentralized FDA infrastructure provides coordination protocols (like HTTP for the internet), not a competing platform.
 
-For detailed cost breakdown: [dFDA Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model).
+The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. A decentralized FDA protocol creates the coordination layer that makes them work together for clinical trials.
 
-**Coverage check**: The {{< var treaty_annual_funding >}}/year [peace dividend](../appendix/peace-dividend-calculations.qmd) covers {{< var dfda_annual_opex >}}/year operations **{{< var dividend_coverage_factor >}} times over**.
+Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
-That's like having ${{< var dividend_coverage_factor >}} to pay a $1 bill. The entire system self-funds before lunch on Day 1.
+For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model).
+
+**Key insight**: 90% of treaty funding goes directly to patients and providers as trial participation subsidies. Platform overhead is minimal ($40M) compared to patient subsidies ($24.4B).
 
 This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
@@ -1016,9 +1018,9 @@ The self-funding nature eliminates traditional barriers to scale, as the interve
 
 {{< var dfda_roi_rd_plus_delay >}}:1 ROI
 
-The conservative {{< var dfda_roi_rd_only >}}:1 case ignored most benefits to avoid sounding "too good to be true."
+The conservative {{< var dfda_roi_rd_only >}}:1 case counted only R&D efficiency gains.
 
-Now let's count everything and see what happens when reality doesn't care about sounding believable.
+Now let's include all eight quantifiable benefit categories.
 
 ### Annual Benefits Breakdown
 
@@ -1047,11 +1049,11 @@ That's **$1.2 trillion per year**.
 
 **Translation:** Every $1 invested returns $1,239 in benefits annually, or $12,386 over a decade.
 
-This sounds fake. It's not. These are conservative estimates based on:
+These estimates derive from:
 
-- Proven trial costs ([RECOVERY](../appendix/recovery-trial.qmd))
-- Disease prevalence data (WHO)
-- Standard QALY valuations (health economics consensus)
+- Proven trial costs ([RECOVERY](../appendix/recovery-trial.qmd): 82× cost reduction demonstrated)
+- Disease prevalence data (WHO Global Health Observatory)
+- Standard QALY valuations (health economics consensus thresholds)
 
 **Critical distinction** - the two largest benefits are different things:
 
@@ -1062,7 +1064,7 @@ Both happen simultaneously.
 
 ### Research Acceleration Mechanism
 
-The {{< var research_acceleration_multiplier >}}× research acceleration multiplier is derived from specific, measurable improvements across four dimensions:
+The {{< var research_acceleration_multiplier >}}× research acceleration multiplier is derived from specific, measurable improvements across four dimensions, scaling the RECOVERY trial approach globally:
 
 **Current System Baseline**:
 
@@ -1073,18 +1075,18 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 - {{< var current_trial_abandonment_rate >}} abandonment rate (studies never complete)
 - [6-18 months to recruit 100 patients](../appendix/research-acceleration-model.qmd)
 
-**dFDA System Performance**:
+**Pragmatic Trial System Performance** (RECOVERY model scaled globally):
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
 - [95% completion rate](../appendix/research-acceleration-model.qmd) = **{{< var dfda_completed_trials_per_year >}} completed trials/year**
 - {{< var dfda_active_trials >}} active trials at any time (3-12 month duration)
 - {{< var trial_cost_reduction_pct >}} patient eligibility ([1.2B eligible](../appendix/research-acceleration-model.qmd) with minimal exclusions)
-- {{< var dfda_trial_abandonment_rate >}} abandonment rate (economic incentives flipped)
-- 3 weeks to recruit {{< var traditional_large_trial_size >}} patients
+- {{< var dfda_trial_abandonment_rate >}} abandonment rate (patient subsidies flip economic incentives)
+- 3 weeks to recruit {{< var traditional_large_trial_size >}} patients (RECOVERY achieved this enrollment speed)
 
 **Multiplier Derivation**:
 
-| Factor | Current | dFDA | Multiplier |
+| Factor | Current | Pragmatic Trials | Multiplier |
 |:---|---:|---:|---:|
 | **[Recruitment Speed](../appendix/research-acceleration-model.qmd)** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} patients | **[25x](../appendix/research-acceleration-model.qmd)** |
 | **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **[10x](../appendix/research-acceleration-model.qmd)** |
@@ -1225,7 +1227,7 @@ Vaccines and smoking cessation programs are amazing, they solve specific problem
 The {{< var treaty_reduction_pct >}} Treaty and dFDA initiative tackles two problems at once:
 
 1. **The Peace Dividend** is a massive economic gain on par with the largest public health wins, created simply by reducing a global negative (conflict)
-2. **The dFDA** then uses a tiny fraction of that gain to fix the *system* of medical research, generating a *second* massive win
+2. **Patient-driven pragmatic trials** then use a tiny fraction of that gain to fix the *system* of medical research, generating a *second* massive win
 
 Instead of solving one problem, this uses a global-scale win to fund a system-scale win. When you redirect the world's largest source of waste to fund its most impactful opportunity, the math gets wild.
 
@@ -1265,7 +1267,7 @@ Comparing the dFDA's cost-effectiveness ({{< var dfda_icer_per_qaly >}} per QALY
 | **Cardiovascular Prevention** | $10,000-30,000 | Statins, blood pressure management, lifestyle interventions |
 | **GiveWell Top Charities** | $3,000-5,000 | Malaria prevention, deworming, vitamin supplementation |
 
-The dFDA's negative cost per QALY ({{< var dfda_icer_per_qaly >}}) indicates it **generates economic surplus while improving health**, placing it in a distinct category from interventions that cost money to deliver benefits. This is comparable to childhood vaccinations, which also generate net economic returns.
+The negative cost per QALY ({{< var dfda_icer_per_qaly >}}) indicates this system **generates economic surplus while improving health**, placing it in a distinct category from interventions that cost money to deliver benefits. This is comparable to childhood vaccinations, which also generate net economic returns.
 
 **Note on comparison methodology**: The {{< var treaty_reduction_pct >}} Treaty/dFDA system operates at a systems level, simultaneously reallocating research funding, improving population health, generating economic returns, and reducing treatment costs. Comparing across intervention categories (charitable giving, public health, research investments, clinical care) involves different metrics and stakeholder perspectives. The comparisons presented focus on dimensions most relevant to decision-makers evaluating treaty adoption. The dFDA compares favorably to both research investments (efficiency per discovery) and direct health interventions (cost per QALY), though comprehensive comparison would require separate frameworks for each dimension.
 
@@ -1354,11 +1356,11 @@ This isn't theoretical. It's not a prototype. It happened. In reality. With actu
 
 The technology required:
 
-- Websites (invented 1991)
-- Databases (invented 1960s)
-- The ability to ask "Did you die?" (invented ~50,000 BC)
+- Web interfaces for enrollment
+- Databases for outcome tracking
+- Electronic health record integration
 
-If you can order pizza online, you can join a clinical trial online. The technical challenge is identical: click buttons, receive thing, report if satisfied.
+The technical infrastructure already exists. If patients can order prescriptions online and report symptoms through patient portals, they can participate in clinical trials. The challenge is coordination and regulatory frameworks, not fundamental technology gaps.
 
 ## The "But Patients Won't Participate" Problem
 
@@ -1372,11 +1374,11 @@ Half of humanity says they'd volunteer for clinical trials if they could. Curren
 - Trials exclude 85% of actual patients (too old, too young, too sick, wrong kind of sick)
 - Trials pay nothing and cost weeks of your time
 
-The dFDA fixes all of this:
+Decentralized pragmatic trials fix all of this:
 
 - Join from your couch
 - Everyone qualifies (you don't need to be the perfect kind of sick)
-- Free treatment + compensation for your data
+- Get subsidized to participate + access to treatments
 
 Current barrier: "Drive 500 miles, wait 6 months, get rejected for having the disease wrong"
 New barrier: "Click button"
@@ -1398,7 +1400,7 @@ Once the treaty passes, it generates {{< var treaty_annual_funding >}} annually.
 The funding doesn't come from charity or begging donors. It comes from redirecting existing government spending that's already allocated. The money exists. You're just changing which column it goes into.
 
 Traditional charity problem: Finite donors, infinite need
-This system: Government money printer goes brrrr, redirected to cures instead of corpses
+This system: Redirects existing government budgets from military to medical research, eliminating dependence on charitable fundraising
 
 See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for the complete sensitivity analysis showing this works even when everything goes wrong.
 
@@ -1412,15 +1414,15 @@ The Decentralized Institutes of Health puts patients in control through trial pa
 
 Your subsidy follows you to whichever trial you join. Researchers compete to design trials that patients actually want to participate in. No committees, no grant-writing contests, no bureaucrats deciding what's "worthy" of study.
 
-All transactions recorded on blockchain. All spending public. All decisions auditable.
+All transactions publicly recorded. All spending transparent. All decisions auditable.
 
-It's democracy but for medicine instead of for choosing which rich person gets to make laws.
+It's democracy for medicine - patients vote with their participation, not committees voting on what's "worthy" of study.
 
-The dFDA runs as a decentralized autonomous organization (DAO):
+The system operates through distributed infrastructure:
 
-- Open-source code (anyone can verify it works)
+- Open-source protocols (anyone can verify how it works)
 - Distributed validation (no single point of failure)
-- Works with existing regulators (it's additive, not replacement)
+- Works with existing regulators (additive layer, not replacement)
 
 ### Accountability measures
 
@@ -1475,9 +1477,9 @@ The analysis relies significantly on the Oxford RECOVERY trial as empirical evid
 
 Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-ideas-getting-harder-2020) show research productivity falling ~5% annually across industries, with Moore's Law requiring 18× more researchers than in the 1970s to achieve constant improvement rates.
 
-**Why this critique may not apply to dFDA:**
+**Why this critique may not apply:**
 
-The dFDA intervention targets a different margin than traditional research scaling. Bloom et al. measure **idea productivity** (breakthroughs per researcher-year). Our intervention targets **trial execution efficiency** (cost per patient enrolled, completion rates, recruitment speed).
+This intervention targets a different margin than traditional research scaling. Bloom et al. measure **idea productivity** (breakthroughs per researcher-year). Our intervention targets **trial execution efficiency** (cost per patient enrolled, completion rates, recruitment speed).
 
 #### Distinction
 
@@ -1642,11 +1644,11 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 1. **Defense sector employment displacement**: Reallocating 1% of military budgets affects 40,000-54,000 defense sector jobs (assuming $600k cost per job). Transition costs estimated at $2-4B annually for workforce retraining and economic adjustment. However, medical research sector job creation likely offsets much of this displacement.
 
-2. **Data infrastructure scaling costs**: The dFDA uses automated software infrastructure (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the platform leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
+2. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the system leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
 3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. Patient-driven trial participation (where subsidies follow patients to their chosen trials) reduces but does not eliminate these costs, as some administrative overhead is inevitable.
 
-4. **Clinical trial market price effects**: Increasing trial demand by 115× could affect equilibrium prices for clinical research services. However, the dFDA model *reduces* per-trial costs (82× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost $41,000 per patient; dFDA targets $500 per patient by eliminating overhead, not by increasing demand for scarce inputs.
+4. **Clinical trial market price effects**: Increasing trial demand by 115× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs (82× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost $41,000 per patient; decentralized trials target $500 per patient by eliminating overhead, not by increasing demand for scarce inputs.
 
 5. **Crowding out effects**: Does $27.2B in new medical research displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
 
