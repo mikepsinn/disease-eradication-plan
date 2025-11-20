@@ -204,7 +204,7 @@
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
   \ class=\"parameter-link\" title=\"Combined peace and health dividends for ROI calculation\
   \ | ✓ High confidence | Formula: PEACE_DIVIDEND + R&D_SAVINGS | Unit: USD/year |\
-  \ Click to view calculation\">$139B</a>"
+  \ Click to view calculation\">$164B</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nCombined = \\$113.55B\
   \ + \\$50B = \\$163.55B\n$$"
 "completed_trials_multiplier_actual": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#total-multiplier\"\
@@ -440,16 +440,16 @@
   \ | Core definition\">50%</span>"
 "dfda_qalys_monetized": "<a href=\"/knowledge/appendix/dfda-qaly-model.qmd#monetized-value\"\
   \ class=\"parameter-link\" title=\"Monetized value of dFDA QALYs (QALYs × economic\
-  \ value) | ✓ High confidence | Formula: QALYS × VALUE_PER_QALY ÷ 1B | Unit: USD/year\
-  \ | Click to view calculation\">$126</a>"
-"dfda_qalys_monetized_latex": "$$\nValue_{QALY} = 840,000 \\times \\$150,000 / 10^9\
-  \ = \\$126B\n$$"
+  \ value) | ✓ High confidence | Formula: QALYS × VALUE_PER_QALY  | Unit: USD/year\
+  \ | Click to view calculation\">$126B</a>"
+"dfda_qalys_monetized_latex": "$$\nValue_{QALY} = 840,000 \\times \\$150,000 = \\\
+  $126B\n$$"
 "dfda_qalys_with_regulatory_avoidance_monetized": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ class=\"parameter-link\" title=\"Monetized value of comprehensive dFDA benefits\
   \ including regulatory delay avoidance | ~ Medium confidence | Formula: QALYS_WITH_AVOIDANCE\
-  \ × VSLY ÷ 1B | Unit: USD/year | Click to view calculation\">$11.1K</a>"
+  \ × VSLY  | Unit: USD/year | Click to view calculation\">$11.1T</a>"
 "dfda_qalys_with_regulatory_avoidance_monetized_latex": "$$\nValue_{total} = 74.14M\
-  \ \\times \\$150k / 10^9 = \\$11.12T\n$$"
+  \ \\times \\$150k = \\$11.12T\n$$"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" title=\"Annual gross R&D savings from trial cost reduction\
   \ | ✓ High confidence | Formula: TRIAL_MARKET × COST_REDUCTION_PCT | Unit: USD/year\
@@ -731,27 +731,27 @@
   \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$100B</a>"
 "global_annual_human_cost_active_combat": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Annual cost of combat deaths (deaths × VSL) |\
-  \ ✓ High confidence | Formula: COMBAT_DEATHS × VSL ÷ 1B | Unit: USD/year | Click\
-  \ to view calculation\">$2.34K</a>"
+  \ ✓ High confidence | Formula: COMBAT_DEATHS × VSL  | Unit: USD/year | Click to\
+  \ view calculation\">$2.34T</a>"
 "global_annual_human_cost_active_combat_latex": "$$\nCost_{combat} = 233,600 \\times\
-  \ \\$10M / 10^9 = \\$2,336B\n$$"
+  \ \\$10M = \\$2,336B\n$$"
 "global_annual_human_cost_state_violence": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Annual cost of state violence deaths (deaths\
-  \ × VSL) | ✓ High confidence | Formula: STATE_DEATHS × VSL ÷ 1B | Unit: USD/year\
-  \ | Click to view calculation\">$27</a>"
+  \ × VSL) | ✓ High confidence | Formula: STATE_DEATHS × VSL  | Unit: USD/year | Click\
+  \ to view calculation\">$27B</a>"
 "global_annual_human_cost_state_violence_latex": "$$\nCost_{state} = 2,700 \\times\
-  \ \\$10M / 10^9 = \\$27B\n$$"
+  \ \\$10M = \\$27B\n$$"
 "global_annual_human_cost_terror_attacks": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Annual cost of terror deaths (deaths × VSL) |\
-  \ ✓ High confidence | Formula: TERROR_DEATHS × VSL ÷ 1B | Unit: USD/year | Click\
-  \ to view calculation\">$83</a>"
+  \ ✓ High confidence | Formula: TERROR_DEATHS × VSL  | Unit: USD/year | Click to\
+  \ view calculation\">$83B</a>"
 "global_annual_human_cost_terror_attacks_latex": "$$\nCost_{terror} = 8,300 \\times\
-  \ \\$10M / 10^9 = \\$83B\n$$"
+  \ \\$10M = \\$83B\n$$"
 "global_annual_human_life_losses_conflict": "<a href=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ class=\"parameter-link\" title=\"Total annual human life losses from conflict\
   \ (sum of combat, terror, state violence) | ✓ High confidence | Formula: COMBAT_COST\
   \ + TERROR_COST + STATE_VIOLENCE_COST | Unit: USD/year | Click to view calculation\"\
-  >$2.45K</a>"
+  >$2.45T</a>"
 "global_annual_human_life_losses_conflict_latex": "$$\nCost_{human} = \\$2,336B +\
   \ \\$83B + \\$27B = \\$2,446B\n$$"
 "global_annual_infrastructure_damage_communications_conflict": "<a href=\"/knowledge/references.qmd#war-infrastructure-damage-costs\"\
@@ -836,7 +836,7 @@
   \ class=\"parameter-link\" title=\"Total annual direct war costs (military spending\
   \ + infrastructure + human life + trade disruption) | ✓ High confidence | Formula:\
   \ MILITARY + INFRASTRUCTURE + HUMAN_LIFE + TRADE | Unit: USD/year | Click to view\
-  \ calculation\">$5.21T</a>"
+  \ calculation\">$7.66T</a>"
 "global_annual_war_direct_costs_total_latex": "$$\nDirectCosts = \\$2,718B + \\$1,875B\
   \ + \\$2,446B + \\$616B = \\$7,655B\n$$"
 "global_annual_war_indirect_costs_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#indirect-costs\"\
@@ -850,7 +850,7 @@
 "global_annual_war_total_cost": "<a href=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
   \ class=\"parameter-link\" title=\"Total annual cost of war worldwide (direct +\
   \ indirect costs) | ✓ High confidence | Formula: DIRECT_COSTS + INDIRECT_COSTS |\
-  \ Unit: USD/year | Click to view calculation\">$8.91T</a>"
+  \ Unit: USD/year | Click to view calculation\">$11.4T</a>"
 "global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B + \\$3,700.1B\
   \ = \\$11,355.1B\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"/knowledge/references.qmd#global-clinical-trials-market-2024\"\
@@ -862,7 +862,7 @@
 "global_cost_per_conflict_death": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Cost per conflict death (war cost ÷ deaths) |\
   \ ✓ High confidence | Formula: (WAR_COST × 1B ÷ DEATHS) ÷ 1M | Unit: USD/death |\
-  \ Click to view calculation\">$36.4M</a>"
+  \ Click to view calculation\">$46.4M</a>"
 "global_cost_per_conflict_death_latex": "$$\nCostPerDeath = \\frac{\\$11,355.1B \\\
   times 10^9}{244,600} / 10^6 \\approx \\$46.4M\n$$"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
@@ -943,17 +943,17 @@
   \ class=\"parameter-link\" title=\"Total annual cost of war and disease with all\
   \ externalities (direct + indirect costs for both) | ✓ High confidence | Formula:\
   \ WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN | Unit: USD/year | Click\
-  \ to view calculation\">$126T</a>"
+  \ to view calculation\">$129T</a>"
 "global_total_war_cost_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
   \ class=\"parameter-link\" title=\"Per capita total war cost globally | ✓ High confidence\
   \ | Formula: TOTAL_WAR_COST ÷ POPULATION | Unit: USD/person/year | Click to view\
-  \ calculation\">$1.11K</a>"
+  \ calculation\">$1.42K</a>"
 "global_total_war_cost_per_capita_annual_latex": "$$\nPerCapita_{war} = \\$11,355.1B\
   \ / 8.0B = \\$1,419.39\n$$"
 "global_war_direct_cost_per_second": "<a href=\"/knowledge/problem/cost-of-war.qmd#cost-per-second\"\
   \ class=\"parameter-link\" title=\"Direct war cost per second globally | ✓ High\
   \ confidence | Formula: DIRECT_COSTS × 1B ÷ SECONDS_PER_YEAR | Unit: USD/second\
-  \ | Click to view calculation\">$165K</a>"
+  \ | Click to view calculation\">$243K</a>"
 "global_war_direct_cost_per_second_latex": "$$\nCostPerSecond = \\frac{\\$7,655B \\\
   times 10^9}{31,557,600} \\approx \\$242,749\n$$"
 "high_net_worth_investor_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
@@ -971,7 +971,7 @@
   \ class=\"parameter-link\" title=\"Incremental Cost-Effectiveness Ratio (ICER) per\
   \ QALY gained | ✓ High confidence | Formula: (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS)\
   \ × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
-  >$-150K</a>"
+  >$-176K</a>"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
@@ -983,7 +983,7 @@
 "lifetime_war_cost_per_capita": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost\"\
   \ class=\"parameter-link\" title=\"Lifetime war cost per person (80-year lifespan)\
   \ | ✓ High confidence | Formula: ANNUAL_PER_CAPITA × 80 | Unit: USD/person | Click\
-  \ to view calculation\">$89.1K</a>"
+  \ to view calculation\">$114K</a>"
 "lifetime_war_cost_per_capita_latex": "$$\nLifetime_{war} = \\$1,419.39 \\times 80\
   \ = \\$113,551\n$$"
 "life_extension_years_10pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_10PCT\"\
@@ -1036,7 +1036,7 @@
 "medical_research_pct_of_disease_burden": "<a href=\"/knowledge/economics/economics.qmd\"\
   \ class=\"parameter-link\" title=\"Medical research spending as percentage of total\
   \ disease burden | ✓ High confidence | Formula: MED_RESEARCH ÷ TOTAL_BURDEN | Unit:\
-  \ rate | Click to view calculation\">0.0535%</a>"
+  \ rate | Click to view calculation\">0.0525%</a>"
 "mental_health_grants_annual": "<a href=\"/knowledge/references.qmd#mental-health-research-funding\"\
   \ class=\"parameter-link\" title=\"Annual mental health research grants total |\
   \ ✓ High confidence | Unit: USD/year | Click to view source\">$500M</a>"
@@ -1053,13 +1053,13 @@
 "misallocation_factor_death_vs_saving": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" title=\"Misallocation factor: cost to kill vs cost to\
   \ save | ✓ High confidence | Formula: COST_PER_DEATH ÷ COST_PER_LIFE_SAVED | Unit:\
-  \ ratio | Click to view calculation\">2,266</a>"
+  \ ratio | Click to view calculation\">2,889</a>"
 "misallocation_factor_death_vs_saving_latex": "$$\nMisallocation = \\frac{\\$46.4M}{\\\
   $16,071} \\approx 2,889x\n$$"
 "multiplier_vs_givewell": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ class=\"parameter-link\" title=\"Cost-effectiveness multiplier vs GiveWell top\
   \ charities | ✓ High confidence | Formula: ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST\
-  \ | Unit: ratio | Click to view calculation\">0.00117</a>"
+  \ | Unit: ratio | Click to view calculation\">0.00137</a>"
 "multiplier_vs_givewell_latex": "$$\nMultiplier = \\frac{|-\\$6.19M \\times 10^9|}{\\\
   $4,500} \\approx 1,376x\n$$"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
@@ -1115,19 +1115,19 @@
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
   \ class=\"parameter-link\" title=\"Annual peace dividend from 1% reduction in total\
   \ war costs | ✓ High confidence | Formula: TOTAL_WAR_COST × 1% | Unit: USD/year\
-  \ | Click to view calculation\">$89.1B</a>"
+  \ | Click to view calculation\">$114B</a>"
 "peace_dividend_annual_societal_benefit_latex": "$$\nPeace\\_Dividend = \\$11,355B\
   \ \\times 0.01 = \\$113.55B\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ title=\"Conflict reduction benefits from 1% less military spending (lower confidence\
   \ - assumes proportional relationship) | ? Low confidence | Formula: PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT\
-  \ - TREATY_ANNUAL_FUNDING | Unit: USD/year | Click to view calculation\">$61.9B</a>"
+  \ - TREATY_ANNUAL_FUNDING | Unit: USD/year | Click to view calculation\">$86.4B</a>"
 "peace_dividend_conflict_reduction_latex": "$$\nPD_{conflict} = \\$113.55B - \\$27.18B\
   \ = \\$86.37B\n$$"
 "peace_dividend_direct_costs": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
   \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in direct war\
   \ costs | ✓ High confidence | Formula: DIRECT_COSTS × 1% | Unit: USD/year | Click\
-  \ to view calculation\">$52.1B</a>"
+  \ to view calculation\">$76.5B</a>"
 "peace_dividend_direct_costs_latex": "$$\nPD_{direct} = \\$7,655B \\times 0.01 = \\\
   $76.55B\n$$"
 "peace_dividend_direct_fiscal_savings": "<a href=\"/sipri-2024-spending\" class=\"\
@@ -1144,7 +1144,7 @@
 "peace_dividend_human_casualties": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
   \ class=\"parameter-link\" title=\"Annual savings from 1% reduction in human casualties\
   \ | ✓ High confidence | Formula: HUMAN_LIFE_LOSSES × 1% | Unit: USD/year | Click\
-  \ to view calculation\">$24</a>"
+  \ to view calculation\">$24.5B</a>"
 "peace_dividend_human_casualties_latex": "$$\nPD_{human} = \\$2,446B \\times 0.01\
   \ = \\$24.46B\n$$"
 "peace_dividend_indirect_costs": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
@@ -1185,7 +1185,7 @@
 "peace_dividend_roi": "<a href=\"/knowledge/economics/peace-dividend.qmd\" class=\"\
   parameter-link\" title=\"Total benefit per dollar redirected (savings + funding\
   \ captured) | ✓ High confidence | Formula: (PEACE_DIVIDEND + FUNDING) ÷ FUNDING\
-  \ | Unit: ratio | Click to view calculation\">4.28</a>"
+  \ | Unit: ratio | Click to view calculation\">5.18</a>"
 "peace_dividend_roi_latex": "$$\nROI_{peace} = \\frac{\\$113.55B + \\$27.18B}{\\$27.18B}\
   \ = 5.18\n$$"
 "peace_dividend_trade_disruption": "<a href=\"/knowledge/economics/peace-dividend.qmd\"\
@@ -1207,7 +1207,7 @@
 "personal_lifetime_benefit_age_30_1pct": "<span class=\"parameter-link\" title=\"\
   parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT\">402K</span>"
 "personal_lifetime_benefit_age_30_2pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">591K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">592K</span>"
 "personal_lifetime_benefit_age_30_5pct": "<span class=\"parameter-link\" title=\"\
   parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT\">1.31M</span>"
 "personal_lifetime_benefit_age_30_half_pct": "<span class=\"parameter-link\" title=\"\
@@ -1222,7 +1222,7 @@
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">584K</span>"
 "personal_lifetime_benefit_conservative_moderate_age_30_1pct": "<span class=\"parameter-link\"\
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT\"\
-  >901K</span>"
+  >902K</span>"
 "personal_lifetime_benefit_eradication_10yr_age_30_1pct": "<span class=\"parameter-link\"\
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">1.52M</span>"
 "personal_lifetime_benefit_eradication_20yr_age_30_1pct": "<span class=\"parameter-link\"\
@@ -1357,8 +1357,8 @@
   \ | ✓ High confidence | Unit: USD/year | Click to view source\">$23.4K</a>"
 "refugee_lost_productivity_global_total": "<a href=\"/knowledge/problem/cost-of-war.qmd#refugee-costs\"\
   \ class=\"parameter-link\" title=\"Total global lost refugee productivity | ✓ High\
-  \ confidence | Formula: (REFUGEES × LOST_EARNINGS) ÷ 1B | Unit: USD/year | Click\
-  \ to view calculation\">$2.54K</a>"
+  \ confidence | Formula: (REFUGEES × LOST_EARNINGS)  | Unit: USD/year | Click to\
+  \ view calculation\">$2.54T</a>"
 "refugee_lost_productivity_global_total_latex": "$$\nRefugeeLosses = \\frac{108.4M\
   \ \\times \\$23,400}{10^9} = \\$2,536.6B\n$$"
 "regulatory_delay_annual_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
@@ -1625,7 +1625,7 @@
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ class=\"parameter-link\" title=\"Treaty system benefit multiplier vs childhood\
   \ vaccination programs | ✓ High confidence | Formula: TREATY_CONSERVATIVE_BENEFIT\
-  \ ÷ CHILDHOOD_VACCINATION_BENEFIT | Unit: ratio | Click to view calculation\">9.27</a>"
+  \ ÷ CHILDHOOD_VACCINATION_BENEFIT | Unit: ratio | Click to view calculation\">10.9</a>"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" title=\"Amortized annual campaign cost (total cost ÷\
   \ campaign duration) | ✓ High confidence | Formula: TOTAL_COST ÷ DURATION | Unit:\
@@ -1771,13 +1771,13 @@
 "treaty_net_annual_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit\"\
   \ class=\"parameter-link\" title=\"Net annual benefit (total benefits - total costs)\
   \ | ✓ High confidence | Formula: TOTAL_BENEFITS - TOTAL_COSTS | Unit: USD/year |\
-  \ Click to view calculation\">$139B</a>"
+  \ Click to view calculation\">$163B</a>"
 "treaty_net_annual_benefit_latex": "$$\nNetBenefit = \\$163.55B - \\$0.29B = \\$163.26B\n\
   $$"
 "treaty_net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" title=\"Net benefit per life saved (ICER × QALYs/life)\
   \ | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE | Unit: USD/life | Click\
-  \ to view calculation\">$-5</a>"
+  \ to view calculation\">$-6</a>"
 "treaty_net_benefit_per_life_saved_latex": "$$\nBenefitPerLife = -\\$59,476 ÷ 1M \\\
   times 35 = -\\$2.08M\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
@@ -1791,7 +1791,7 @@
 "treaty_total_annual_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits\"\
   \ class=\"parameter-link\" title=\"Total annual benefits (peace dividend + dFDA\
   \ savings) | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_SAVINGS | Unit:\
-  \ USD/year | Click to view calculation\">$139B</a>"
+  \ USD/year | Click to view calculation\">$164B</a>"
 "treaty_total_annual_benefits_latex": "$$\nTotalBenefits = \\$113.55B + \\$50B = \\\
   $163.55B\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
@@ -1803,7 +1803,7 @@
 "treaty_total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits\"\
   \ class=\"parameter-link\" title=\"Total annual benefits from all 8 benefit categories\
   \ | ✓ High confidence | Formula: PEACE + R&D + FASTER_ACCESS + ACCELERATION + RARE\
-  \ + PRICE + PREVENTION + MENTAL | Unit: USD/year | Click to view calculation\">$1.21T</a>"
+  \ + PRICE + PREVENTION + MENTAL | Unit: USD/year | Click to view calculation\">$1.24T</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nTotalBenefits = \\$113.55 + \\\
   $50 + \\$300 + \\$100 + \\$400 + \\$100 + \\$100 + \\$75 = \\$1,238.55B\n$$"
 "treaty_total_lives_saved_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\

@@ -2499,7 +2499,7 @@ Weekly advertising cost for campaigns
 ::: {.callout-note icon=false collapse=false}
 ## Combined Peace Health Dividends Annual For Roi Calc {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
-**Value**: $139B
+**Value**: $164B
 
 Combined peace and health dividends for ROI calculation
 
@@ -3139,12 +3139,12 @@ dFDA staff costs (minimal, AI-assisted)
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Qalys Monetized {#sec-dfda_qalys_monetized}
 
-**Value**: $126
+**Value**: $126B
 
 Monetized value of dFDA QALYs (QALYs × economic value)
 
 $$
-Value_{QALY} = 840,000 \times \$150,000 / 10^9 = \$126B
+Value_{QALY} = 840,000 \times \$150,000 = \$126B
 $$
 
 **Methodology**: [../appendix/dfda-qaly-model.qmd#monetized-value](../appendix/dfda-qaly-model.qmd#monetized-value)
@@ -3156,12 +3156,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Dfda Qalys With Regulatory Avoidance Monetized {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
 
-**Value**: $11.1K
+**Value**: $11.1T
 
 Monetized value of comprehensive dFDA benefits including regulatory delay avoidance
 
 $$
-Value_{total} = 74.14M \times \$150k / 10^9 = \$11.12T
+Value_{total} = 74.14M \times \$150k = \$11.12T
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
@@ -3848,12 +3848,12 @@ Annual deaths from curable diseases globally
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Cost Active Combat {#sec-global_annual_human_cost_active_combat}
 
-**Value**: $2.34K
+**Value**: $2.34T
 
 Annual cost of combat deaths (deaths × VSL)
 
 $$
-Cost_{combat} = 233,600 \times \$10M / 10^9 = \$2,336B
+Cost_{combat} = 233,600 \times \$10M = \$2,336B
 $$
 
 **Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
@@ -3865,12 +3865,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Cost State Violence {#sec-global_annual_human_cost_state_violence}
 
-**Value**: $27
+**Value**: $27B
 
 Annual cost of state violence deaths (deaths × VSL)
 
 $$
-Cost_{state} = 2,700 \times \$10M / 10^9 = \$27B
+Cost_{state} = 2,700 \times \$10M = \$27B
 $$
 
 **Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
@@ -3882,12 +3882,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Cost Terror Attacks {#sec-global_annual_human_cost_terror_attacks}
 
-**Value**: $83
+**Value**: $83B
 
 Annual cost of terror deaths (deaths × VSL)
 
 $$
-Cost_{terror} = 8,300 \times \$10M / 10^9 = \$83B
+Cost_{terror} = 8,300 \times \$10M = \$83B
 $$
 
 **Methodology**: [../problem/cost-of-war.qmd#human-cost](../problem/cost-of-war.qmd#human-cost)
@@ -3899,7 +3899,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual Human Life Losses Conflict {#sec-global_annual_human_life_losses_conflict}
 
-**Value**: $2.45K
+**Value**: $2.45T
 
 Total annual human life losses from conflict (sum of combat, terror, state violence)
 
@@ -3950,7 +3950,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual War Direct Costs Total {#sec-global_annual_war_direct_costs_total}
 
-**Value**: $5.21T
+**Value**: $7.66T
 
 Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
 
@@ -3984,7 +3984,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Annual War Total Cost {#sec-global_annual_war_total_cost}
 
-**Value**: $8.91T
+**Value**: $11.4T
 
 Total annual cost of war worldwide (direct + indirect costs)
 
@@ -4001,7 +4001,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Cost Per Conflict Death {#sec-global_cost_per_conflict_death}
 
-**Value**: $36.4M
+**Value**: $46.4M
 
 Cost per conflict death (war cost ÷ deaths)
 
@@ -4099,7 +4099,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global Total Health And War Cost Annual {#sec-global_total_health_and_war_cost_annual}
 
-**Value**: $126T
+**Value**: $129T
 
 Total annual cost of war and disease with all externalities (direct + indirect costs for both)
 
@@ -4114,7 +4114,7 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 ::: {.callout-note icon=false collapse=false}
 ## Global Total War Cost Per Capita Annual {#sec-global_total_war_cost_per_capita_annual}
 
-**Value**: $1.11K
+**Value**: $1.42K
 
 Per capita total war cost globally
 
@@ -4131,7 +4131,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Global War Direct Cost Per Second {#sec-global_war_direct_cost_per_second}
 
-**Value**: $165K
+**Value**: $243K
 
 Direct war cost per second globally
 
@@ -4187,7 +4187,7 @@ ICER counting redirected military spending as opportunity cost
 ::: {.callout-note icon=false collapse=false}
 ## Icer Per Qaly {#sec-icer_per_qaly}
 
-**Value**: $-150K
+**Value**: $-176K
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained
 
@@ -4215,7 +4215,7 @@ Minimum investment for institutional investors
 ::: {.callout-note icon=false collapse=false}
 ## Lifetime War Cost Per Capita {#sec-lifetime_war_cost_per_capita}
 
-**Value**: $89.1K
+**Value**: $114K
 
 Lifetime war cost per person (80-year lifespan)
 
@@ -4271,7 +4271,7 @@ Minimum bond investment for lobbyist incentives
 ::: {.callout-note icon=false collapse=false}
 ## Medical Research Pct Of Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
-**Value**: 0.0535%
+**Value**: 0.0525%
 
 Medical research spending as percentage of total disease burden
 
@@ -4303,7 +4303,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Misallocation Factor Death Vs Saving {#sec-misallocation_factor_death_vs_saving}
 
-**Value**: 2,266
+**Value**: 2,889
 
 Misallocation factor: cost to kill vs cost to save
 
@@ -4320,7 +4320,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Multiplier Vs Givewell {#sec-multiplier_vs_givewell}
 
-**Value**: 0.00117
+**Value**: 0.00137
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4478,7 +4478,7 @@ Maximum patient copay for cure
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Annual Societal Benefit {#sec-peace_dividend_annual_societal_benefit}
 
-**Value**: $89.1B
+**Value**: $114B
 
 Annual peace dividend from 1% reduction in total war costs
 
@@ -4495,7 +4495,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Conflict Reduction {#sec-peace_dividend_conflict_reduction}
 
-**Value**: $61.9B
+**Value**: $86.4B
 
 Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)
 
@@ -4512,7 +4512,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Direct Costs {#sec-peace_dividend_direct_costs}
 
-**Value**: $52.1B
+**Value**: $76.5B
 
 Annual savings from 1% reduction in direct war costs
 
@@ -4563,7 +4563,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Human Casualties {#sec-peace_dividend_human_casualties}
 
-**Value**: $24
+**Value**: $24.5B
 
 Annual savings from 1% reduction in human casualties
 
@@ -4682,7 +4682,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Peace Dividend Roi {#sec-peace_dividend_roi}
 
-**Value**: 4.28
+**Value**: 5.18
 
 Total benefit per dollar redirected (savings + funding captured)
 
@@ -4949,7 +4949,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Refugee Lost Productivity Global Total {#sec-refugee_lost_productivity_global_total}
 
-**Value**: $2.54K
+**Value**: $2.54T
 
 Total global lost refugee productivity
 
@@ -5666,7 +5666,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Benefit Multiplier Vs Vaccines {#sec-treaty_benefit_multiplier_vs_vaccines}
 
-**Value**: 9.27
+**Value**: 10.9
 
 Treaty system benefit multiplier vs childhood vaccination programs
 
@@ -6115,7 +6115,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Net Annual Benefit {#sec-treaty_net_annual_benefit}
 
-**Value**: $139B
+**Value**: $163B
 
 Net annual benefit (total benefits - total costs)
 
@@ -6132,7 +6132,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Net Benefit Per Life Saved {#sec-treaty_net_benefit_per_life_saved}
 
-**Value**: $-5
+**Value**: $-6
 
 Net benefit per life saved (ICER × QALYs/life)
 
@@ -6166,7 +6166,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Total Annual Benefits {#sec-treaty_total_annual_benefits}
 
-**Value**: $139B
+**Value**: $164B
 
 Total annual benefits (peace dividend + dFDA savings)
 
@@ -6200,7 +6200,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty Total Complete Benefits Annual {#sec-treaty_total_complete_benefits_annual}
 
-**Value**: $1.21T
+**Value**: $1.24T
 
 Total annual benefits from all 8 benefit categories
 
@@ -6746,7 +6746,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Age 30 2Pct {#sec-personal_lifetime_benefit_age_30_2pct}
 
-**Value**: 591K
+**Value**: 592K
 
 *Core definition*
 
@@ -6809,7 +6809,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ## Personal Lifetime Benefit Conservative Moderate Age 30 1Pct {#sec-personal_lifetime_benefit_conservative_moderate_age_30_1pct}
 
-**Value**: 901K
+**Value**: 902K
 
 *Core definition*
 

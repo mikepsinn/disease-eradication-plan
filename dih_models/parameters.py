@@ -277,35 +277,35 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = Parameter(
 
 # Breakdown of Human Life Loss Costs (billions USD)
 GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = Parameter(
-    GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000,
+    GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT * VALUE_OF_STATISTICAL_LIFE,
     source_ref="/knowledge/problem/cost-of-war.qmd#human-cost",
     source_type="calculated",
     description="Annual cost of combat deaths (deaths × VSL)",
     unit="USD/year",
-    formula="COMBAT_DEATHS × VSL ÷ 1B",
-    latex=r"Cost_{combat} = 233,600 \times \$10M / 10^9 = \$2,336B",
+    formula="COMBAT_DEATHS × VSL ",
+    latex=r"Cost_{combat} = 233,600 \times \$10M = \$2,336B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"]
 )  # $2,336B
 
 GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = Parameter(
-    GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000,
+    GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS * VALUE_OF_STATISTICAL_LIFE,
     source_ref="/knowledge/problem/cost-of-war.qmd#human-cost",
     source_type="calculated",
     description="Annual cost of terror deaths (deaths × VSL)",
     unit="USD/year",
-    formula="TERROR_DEATHS × VSL ÷ 1B",
-    latex=r"Cost_{terror} = 8,300 \times \$10M / 10^9 = \$83B",
+    formula="TERROR_DEATHS × VSL ",
+    latex=r"Cost_{terror} = 8,300 \times \$10M = \$83B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"]
 )  # $83B
 
 GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = Parameter(
-    GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE * VALUE_OF_STATISTICAL_LIFE / 1_000_000_000,
+    GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE * VALUE_OF_STATISTICAL_LIFE,
     source_ref="/knowledge/problem/cost-of-war.qmd#human-cost",
     source_type="calculated",
     description="Annual cost of state violence deaths (deaths × VSL)",
     unit="USD/year",
-    formula="STATE_DEATHS × VSL ÷ 1B",
-    latex=r"Cost_{state} = 2,700 \times \$10M / 10^9 = \$27B",
+    formula="STATE_DEATHS × VSL ",
+    latex=r"Cost_{state} = 2,700 \times \$10M = \$27B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"]
 )  # $27B
 
@@ -1310,13 +1310,13 @@ GLOBAL_DFDA_QALYS_GAINED_ANNUAL = Parameter(
     keywords=["840k", "pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit"]
 )  # QALYs gained per year from dFDA
 DFDA_QALYS_MONETIZED = Parameter(
-    (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD) / 1_000_000_000,
+    (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/dfda-qaly-model.qmd#monetized-value",
     source_type="calculated",
     description="Monetized value of dFDA QALYs (QALYs × economic value)",
     unit="USD/year",
-    formula="QALYS × VALUE_PER_QALY ÷ 1B",
-    latex=r"Value_{QALY} = 840,000 \times \$150,000 / 10^9 = \$126B",
+    formula="QALYS × VALUE_PER_QALY ",
+    latex=r"Value_{QALY} = 840,000 \times \$150,000 = \$126B",
     keywords=["pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit", "quality of life"]
 )  # $126B
 
@@ -3286,13 +3286,13 @@ GLOBAL_DFDA_QALYS_WITH_REGULATORY_AVOIDANCE = Parameter(
 )  # ~74.14M QALYs/year (regulatory delay avoidance already captures faster access and new therapies)
 
 DFDA_QALYS_WITH_REGULATORY_AVOIDANCE_MONETIZED = Parameter(
-    (GLOBAL_DFDA_QALYS_WITH_REGULATORY_AVOIDANCE * STANDARD_ECONOMIC_QALY_VALUE_USD) / 1_000_000_000,
+    (GLOBAL_DFDA_QALYS_WITH_REGULATORY_AVOIDANCE * STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance",
     source_type="calculated",
     description="Monetized value of comprehensive dFDA benefits including regulatory delay avoidance",
     unit="USD/year",
-    formula="QALYS_WITH_AVOIDANCE × VSLY ÷ 1B",
-    latex=r"Value_{total} = 74.14M \times \$150k / 10^9 = \$11.12T",
+    formula="QALYS_WITH_AVOIDANCE × VSLY ",
+    latex=r"Value_{total} = 74.14M \times \$150k = \$11.12T",
     confidence="medium",
     keywords=["cost effectiveness", "value for money", "approval lag", "drug lag", "fda delay", "disease burden", "pragmatic trials"]
 )  # $11.12T/year total benefit
@@ -4298,12 +4298,12 @@ REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL = Parameter(
     keywords=["23k", "financial benefit", "monetary gain", "economic wellbeing", "prosperity", "yearly", "profit"]
 )  # USD per year
 REFUGEE_LOST_PRODUCTIVITY_GLOBAL_TOTAL = Parameter(
-    (GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 * REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL) / 1_000_000_000,
+    (GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 * REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL),
     source_ref="/knowledge/problem/cost-of-war.qmd#refugee-costs",
     source_type="calculated",
     description="Total global lost refugee productivity",
     unit="USD/year",
-    formula="(REFUGEES × LOST_EARNINGS) ÷ 1B",
+    formula="(REFUGEES × LOST_EARNINGS) ",
     latex=r"RefugeeLosses = \frac{108.4M \times \$23,400}{10^9} = \$2,536.6B",
     keywords=["financial benefit", "monetary gain", "economic wellbeing", "prosperity", "worldwide", "conflict", "profit"]
 )  # $2,536.6B
