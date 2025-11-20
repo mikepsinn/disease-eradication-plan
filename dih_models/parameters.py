@@ -2416,7 +2416,7 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
 )
 
 # Population
-GLOBAL_POPULATION_2024_BILLIONS = Parameter(
+GLOBAL_POPULATION_2024 = Parameter(
     8_000_000_000,
     source_ref="global-population-8-billion",
     source_type="external",
@@ -2607,7 +2607,7 @@ MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
 
 # Per capita calculations
 GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_POPULATION_2024_BILLIONS,
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_POPULATION_2024,
     source_ref="/knowledge/problem/cost-of-war.qmd#per-capita",
     source_type="calculated",
     description="Per capita military spending globally",
@@ -2617,7 +2617,7 @@ GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
     keywords=["dod", "pentagon", "average person", "national security", "army", "individual", "navy"]
 )  # $340/person/year
 GLOBAL_TOTAL_WAR_COST_PER_CAPITA_ANNUAL = Parameter(
-    GLOBAL_ANNUAL_WAR_TOTAL_COST / GLOBAL_POPULATION_2024_BILLIONS,
+    GLOBAL_ANNUAL_WAR_TOTAL_COST / GLOBAL_POPULATION_2024,
     source_ref="/knowledge/problem/cost-of-war.qmd#per-capita",
     source_type="calculated",
     description="Per capita total war cost globally",
@@ -5535,7 +5535,7 @@ def calculate_personal_lifetime_wealth(
     # Component 1: Peace dividend per capita (flows through economy to incomes)
     # Total societal benefit / population, conservatively assume 50% flows to incomes over time
     peace_dividend_per_capita_annual = (
-        GLOBAL_ANNUAL_WAR_TOTAL_COST * treaty_pct / GLOBAL_POPULATION_2024_BILLIONS
+        GLOBAL_ANNUAL_WAR_TOTAL_COST * treaty_pct / GLOBAL_POPULATION_2024
     ) * 0.5
 
     # Component 2: Healthcare savings (insurance premiums drop)
@@ -5948,7 +5948,7 @@ def calculate_personal_lifetime_wealth_improved(
         peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / US_POPULATION_2024
     else:
         # If global reduction, allocate to global population
-        peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024_BILLIONS
+        peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
 
     # Component 2: Healthcare savings (IMPROVED - evidence-based)
     healthcare_savings_annual = calculate_healthcare_savings_improved(treaty_pct)
@@ -6366,7 +6366,7 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
     gdp_boost = calculate_gdp_growth_boost(treaty_pct)
 
     # Component 1: Peace dividend
-    peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024_BILLIONS
+    peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
 
     # Component 2: Healthcare savings (conservative baseline)
     # Use actual chronic disease spending, broken down by treatment category
@@ -6884,7 +6884,7 @@ def calculate_personal_lifetime_wealth_disease_eradication(
     progress_multiplier = calculate_medical_progress_multiplier(treaty_pct)
 
     # Peace dividend (same as other models)
-    peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024_BILLIONS
+    peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
     years_remaining = baseline_life_expectancy - current_age
     total_years = years_remaining + life_extension_years
 
