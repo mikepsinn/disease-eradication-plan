@@ -345,7 +345,10 @@ format:
           <meta property="og:type" content="book">
           <meta property="og:url" content="https://WarOnDisease.org">
   pdf:
-    documentclass: scrreprt
+    # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
+    # corruption issues with large documents (900+ pages, 81 files, complex TOC)
+    # Alternative: scrreprt with 'classoption: draft' also works but reduces PDF quality
+    documentclass: report
     echo: false
     toc: true
     toc-depth: 3
@@ -365,3 +368,4 @@ format:
         % Override the \appendix command to prevent switching to alphabetic numbering
         \usepackage{etoolbox}
         \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
+
