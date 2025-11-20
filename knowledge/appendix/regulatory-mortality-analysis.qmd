@@ -94,29 +94,23 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 ### 4.1 Years of Life Lost (YLL)
 
-- **Mean Age of Preventable Death:** 62.
-- **Actuarial Expectancy:** 79.
+- **Mean Age of Preventable Death:** {{< var regulatory_delay_mean_age_of_death >}}
+- **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
 - **YLL Total:**
 
-$$
-YLL = 184.6M \text{ deaths} \times 17 \text{ years} = \mathbf{3.14B \text{ years}}
-$$ {#eq-yll}
+{{< var regulatory_delay_yll_latex >}} {#eq-yll}
 
 ### 4.2 Years Lived with Disability (YLD)
 
-- **Disability Weight (DW):** 0.35 (Weighted average for untreated chronic conditions).
-- **Pre-Death Suffering Period:** 6 years.
+- **Disability Weight (DW):** {{< var chronic_disease_disability_weight >}} (Weighted average for untreated chronic conditions)
+- **Pre-Death Suffering Period:** {{< var regulatory_delay_suffering_period_years >}} years
 - **YLD Total:**
 
-$$
-YLD = 184.6M \times 6 \times 0.35 = \mathbf{1.69B \text{ years}}
-$$ {#eq-yld}
+{{< var regulatory_delay_yld_latex >}} {#eq-yld}
 
 ### 4.3 Cumulative DALY Burden
 
-$$
-\mathbf{Total \ DALYs} = 3.14B + 1.69B = \mathbf{4.83B \text{ DALYs}}
-$$ {#eq-total-dalys}
+{{< var regulatory_delay_dalys_latex >}} {#eq-total-dalys}
 
 **Interpretation:** The regulatory framework has effectively deleted **{{< var regulatory_delay_dalys >}} billion years of healthy human life**.
 

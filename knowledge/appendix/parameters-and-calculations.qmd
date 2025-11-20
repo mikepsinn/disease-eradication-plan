@@ -13,9 +13,9 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 503
+**Total parameters**: 507
 
-- External sources (peer-reviewed): 151
+- External sources (peer-reviewed): 155
 - Calculated values: 308
 - Core definitions: 44
 
@@ -267,6 +267,19 @@ Return on investment from childhood vaccination programs
 **Source**: [childhood-vaccination-roi](../references.qmd#childhood-vaccination-roi)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Disability Weight for Untreated Chronic Conditions {#sec-chronic_disease_disability_weight}
+
+**Value**: 0.35
+
+Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
+
+**Source**: [who-gbd-2024](../references.qmd#who-gbd-2024)
+
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1012,6 +1025,19 @@ Global healthcare spending in 2024
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Global Life Expectancy (2024) {#sec-global_life_expectancy_2024}
+
+**Value**: 79
+
+Global life expectancy (2024)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Global Government Medical Research Spending {#sec-global_med_research_spending}
 
 **Value**: $67.5B
@@ -1476,6 +1502,32 @@ Average annual lost earning potential per refugee
 **Source**: [refugee-lost-earnings](../references.qmd#refugee-lost-earnings)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Mean Age of Preventable Death from Regulatory Delay {#sec-regulatory_delay_mean_age_of_death}
+
+**Value**: 62
+
+Mean age of preventable death from regulatory delay
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pre-Death Suffering Period for Regulatory Delay Deaths {#sec-regulatory_delay_suffering_period_years}
+
+**Value**: 6
+
+Pre-death suffering period for regulatory delay deaths (average years lived with untreated condition)
+
+**Source**: [who-gbd-2024](../references.qmd#who-gbd-2024)
+
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -5191,7 +5243,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Years Lived with Disability During Regulatory Delay {#sec-regulatory_delay_yld}
 
-**Value**: 1.69
+**Value**: 388
 
 Years Lived with Disability during regulatory delay
 
@@ -5208,7 +5260,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Years of Life Lost from Regulatory Delay Deaths {#sec-regulatory_delay_yll}
 
-**Value**: 3.14
+**Value**: 3,138
 
 Years of Life Lost from regulatory delay deaths
 

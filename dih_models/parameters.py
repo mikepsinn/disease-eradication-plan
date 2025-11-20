@@ -3449,9 +3449,59 @@ REGULATORY_DELAY_DEATHS_UPPER_BOUND = Parameter(
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval", "authorization"]
 )
 
+# Component values for DALY calculations
+REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
+    62,
+    source_ref="who-global-health-estimates-2024",
+    source_type="external",
+    description="Mean age of preventable death from regulatory delay",
+    display_name="Mean Age of Preventable Death from Regulatory Delay",
+    unit="years",
+    confidence="medium",
+    peer_reviewed=True,
+    keywords=["age", "mortality", "death", "average", "life expectancy"]
+)
+
+GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
+    79,
+    source_ref="who-global-health-estimates-2024",
+    source_type="external",
+    description="Global life expectancy (2024)",
+    display_name="Global Life Expectancy (2024)",
+    unit="years",
+    confidence="high",
+    last_updated="2024",
+    peer_reviewed=True,
+    keywords=["life expectancy", "longevity", "lifespan", "actuarial", "demographics"]
+)
+
+REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
+    6,
+    source_ref="who-gbd-2024",
+    source_type="external",
+    description="Pre-death suffering period for regulatory delay deaths (average years lived with untreated condition)",
+    display_name="Pre-Death Suffering Period for Regulatory Delay Deaths",
+    unit="years",
+    confidence="medium",
+    peer_reviewed=True,
+    keywords=["suffering", "disability", "morbidity", "disease burden", "quality of life"]
+)
+
+CHRONIC_DISEASE_DISABILITY_WEIGHT = Parameter(
+    0.35,
+    source_ref="who-gbd-2024",
+    source_type="external",
+    description="Disability weight for untreated chronic conditions (WHO Global Burden of Disease)",
+    display_name="Disability Weight for Untreated Chronic Conditions",
+    unit="weight",
+    confidence="medium",
+    peer_reviewed=True,
+    keywords=["disability", "daly", "quality of life", "disease burden", "morbidity", "health status"]
+)
+
 # Morbidity Analysis (DALYs)
 REGULATORY_DELAY_YLL = Parameter(
-    3.14,
+    REGULATORY_DELAY_DEATHS_MEAN * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
     description="Years of Life Lost from regulatory delay deaths",
@@ -3464,7 +3514,7 @@ REGULATORY_DELAY_YLL = Parameter(
 )
 
 REGULATORY_DELAY_YLD = Parameter(
-    1.69,
+    REGULATORY_DELAY_DEATHS_MEAN * REGULATORY_DELAY_SUFFERING_PERIOD_YEARS * CHRONIC_DISEASE_DISABILITY_WEIGHT,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
     description="Years Lived with Disability during regulatory delay",

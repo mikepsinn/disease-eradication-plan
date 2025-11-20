@@ -197,25 +197,43 @@ PEACE_DIVIDEND_ANNUAL = Parameter(
 - `source_type="calculated"`: Derived using formulas from other parameters
 - `source_type="definition"`: Fixed values, core assumptions, legacy compatibility values
 
-### LaTeX Math Block Limitation
+### LaTeX Math Block Variables
 
-**CRITICAL: Quarto variables do NOT work inside LaTeX math blocks (`$$`).**
+**RECOMMENDED: Use LaTeX variables from `_variables.yml` instead of hardcoding.**
 
-❌ **Wrong** (variables won't render in LaTeX):
+The `generate-variables-yml.py` script automatically exports LaTeX equations as `{param_name}_latex` variables that you can use directly in QMD files.
+
+✅ **Best Practice** (use LaTeX variables):
 ```markdown
+{{< var peace_dividend_annual_societal_benefit_latex >}}
+```
+
+This renders as:
+```
 $$
-\${{< var global_annual_war_total_cost >}} \times {{< var treaty_reduction_pct >}}
+PD_{annual} = $11,355B \times 0.01 = $113.55B
 $$
 ```
 
-✅ **Correct** (hardcode values in LaTeX):
+❌ **Avoid** (hardcoding LaTeX):
 ```markdown
 $$
 \$11{,}355\text{B} \times 1\% = \$113.55\text{B}
 $$
 ```
 
-**Why**: LaTeX equations are processed separately from Quarto shortcodes. Variables must be hardcoded in math blocks. Document the source of hardcoded values in nearby text using variables.
+❌ **Wrong** (variables don't work INSIDE LaTeX blocks):
+```markdown
+$$
+\${{< var global_annual_war_total_cost >}} \times {{< var treaty_reduction_pct >}}
+$$
+```
+
+**Why**:
+- LaTeX equations defined in `parameters.py` get auto-exported as variables
+- Single source of truth: change equation once in parameters.py, updates everywhere
+- Maintains consistency between LaTeX formulas and their component parameters
+- Quarto variables cannot be used INSIDE `$$` blocks, but LaTeX variables work OUTSIDE them
 
 ### Why This Matters
 
