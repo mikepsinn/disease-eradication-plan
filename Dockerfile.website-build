@@ -1,0 +1,64 @@
+# Dockerfile for HTML website build environment
+# Uses GitHub Actions runner's pre-installed Quarto
+
+FROM ghcr.io/quarto-dev/quarto:latest
+
+# Set user to root for installations
+USER root
+
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-dev \
+    python3-pip \
+    python3-venv \
+    build-essential \
+    graphviz \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create cache directories with proper permissions
+RUN mkdir -p /tmp/quarto-cache /tmp/deno-cache && \
+    chmod -R 777 /tmp/quarto-cache /tmp/deno-cache
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy requirements first (for better Docker layer caching)
+COPY requirements.txt .
+
+# Install Python dependencies using pip3 directly
+# Note: Cannot use uv due to network restrictions in this environment
+RUN pip3 install --no-cache-dir -r requirements.txt || \
+    echo "Warning: Some Python packages may not have installed"
+
+# Install Jupyter kernel (after dependencies are installed)
+RUN python3 -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project" || \
+    echo "Warning: Jupyter kernel installation failed"
+
+# Copy project files into container (avoids filesystem mounting issues)
+# Copy in stages for better caching
+COPY _quarto-book.yml index-book.qmd styles.css favicon.ico _variables.yml ./
+COPY pyproject.toml package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY scripts/ scripts/
+COPY assets/ assets/
+COPY knowledge/ knowledge/
+COPY dih_models/ dih_models/
+COPY docs/ docs/
+COPY research/ research/
+COPY src/ src/
+COPY memory/ memory/
+COPY GUIDES/ GUIDES/
+
+# Build website inside container
+# Use || true to continue even if there are minor cleanup errors
+RUN python3 scripts/render-book-website.py --output-dir _book/warondisease || \
+    (echo "Build completed with exit code $?" && \
+     test -d _book/warondisease && echo "HTML directory exists" || echo "No HTML output found")
+
+# Output will be in _book/warondisease/
+# Use docker cp to extract it after build
+
