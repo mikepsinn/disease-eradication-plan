@@ -1342,25 +1342,95 @@ Historical precedent: After WW2, humans cut military spending by {{< var post_ww
 
 See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for the complete playbook on bribing democracy toward sanity.
 
-## The "But The Technology Doesn't Exist" Problem
+## The "But What About Safety?" Problem
 
-**What could go wrong**: The dFDA platform costs too much to build or doesn't work as advertised.
+**What could go wrong**: Decentralized trials without 17-year approval processes will miss dangerous side effects and harm patients.
 
-**Why this actually won't happen**:
+**Why this system is actually RADICALLY SAFER than the current FDA**:
 
-Oxford already did this. The [RECOVERY trial](../appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient. Total cost: {{< var dfda_opex_regulatory >}}. That's less than one F-35 fighter jet.
+### This System Detects MORE Safety Problems, Not Fewer
 
-They found a treatment that cut COVID deaths by 30% and saved over 1 million lives globally.
+**Current FDA trials test on:**
+- 100-300 patients per Phase 3 trial
+- Patients carefully selected to be "perfect" sick (no comorbidities, no other medications, not too old, not too young)
+- [85% of real patients excluded](../references.qmd#clinical-trial-exclusions)
+- Short duration (3-12 months typically)
+- Results: Miss rare side effects, miss long-term toxicity, miss drug interactions
 
-This isn't theoretical. It's not a prototype. It happened. In reality. With actual dying people who became not-dying people.
+**Pragmatic trial system tests on:**
+- 10,000-100,000+ patients per trial (100× larger samples)
+- Real patients with real comorbidities taking real combinations of medications
+- Everyone included - old people, children, pregnant women (the people who actually need medicine)
+- Continuous monitoring through EHR integration (years to decades, not months)
+- Results: **Catches what the FDA misses**
 
-The technology required:
+#### Real Example: Benadryl and Dementia
 
-- Web interfaces for enrollment
-- Databases for outcome tracking
-- Electronic health record integration
+The [Journal of the American Medical Association found](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) that long-term Benadryl use increases dementia risk. This went **undetected for decades** under the current system because:
+- Trials only monitored for months, not years
+- No one tracked long-term outcomes after approval
+- The harm was invisible until researchers manually aggregated health records
 
-The technical infrastructure already exists. If patients can order prescriptions online and report symptoms through patient portals, they can participate in clinical trials. The challenge is coordination and regulatory frameworks, not fundamental technology gaps.
+**Decentralized trials with continuous EHR monitoring would have caught this in 2-3 years instead of 40+ years.**
+
+### Phase I Safety Testing Is PRESERVED
+
+The decentralized system **keeps rigorous Phase I safety testing** (~{{< var phase_1_safety_duration_years >}} years). This is what prevented the [Thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) in the US - existing 1938 FDA safety regulations worked perfectly. Zero American babies harmed while Europe had thousands of birth defects.
+
+**What changes:** Eliminating the {{< var efficacy_lag_years >}}-year efficacy delay AFTER safety is proven. You still can't sell poison. You just don't have to wait 8 years to prove aspirin helps headaches AFTER you've already proved it doesn't kill people.
+
+### Publication Bias Eliminated = Safer
+
+**Current system:**
+- Companies [hide negative trial results](../references.qmd#publication-bias-clinical-trials) (only 37% published)
+- Positive results: 94% published
+- Cost: ~[$100 billion wasted annually](../references.qmd#wasted-spending-on-failed-experiments) repeating failed experiments
+- Safety risk: Other researchers can't learn from failures, repeat dangerous experiments
+
+**Decentralized system:**
+- **All trials automatically published** when registered
+- Cannot hide negative results (built into platform)
+- Cannot selectively report outcomes
+- Every researcher learns from every failure
+
+### The Current System Is Demonstrably UNSAFE
+
+[Rigorous analysis](../appendix/regulatory-mortality-analysis.qmd) shows:
+
+- **{{< var regulatory_delay_deaths_mean >}}M preventable deaths** (1962-2024) from regulatory delay
+- **{{< var type_ii_error_cost_ratio >}}:1 harm ratio**: For every 1 person the FDA saves by preventing unsafe drug approval, **{{< var type_ii_error_cost_ratio >}} people die** waiting for approval
+- **Small trials on unrepresentative patients**: Test on 275 people, then prescribe to millions
+- **No long-term data**: Most trials last 3-12 months; we have no idea what happens at year 5 or 10
+
+$$
+\frac{\text{Deaths from Delay}}{\text{Deaths from Unsafe Drugs Prevented}} = \frac{184.6M}{0.11M} = 1{,}610:1
+$$
+
+**The FDA doesn't make medicine safer. It creates a different kind of danger** - the invisible deaths of people who die waiting for approval, not the visible deaths that make headlines.
+
+### Real-World Evidence Works
+
+A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared high-quality observational studies to expensive randomized controlled trials across multiple interventions. **The results were statistically indistinguishable.**
+
+![Comparison of effect sizes from observational studies versus randomized trials](../../assets/observational-vs-randomized-effect-sizes.png)
+
+With modern statistical methods, large sample sizes, and continuous monitoring, we can detect both efficacy AND safety problems faster and more reliably than small, short trials on cherry-picked patients.
+
+### This Isn't Theoretical - Oxford Proved It
+
+The [RECOVERY trial](../appendix/recovery-trial.qmd):
+- Tested 6 treatments on **47,000 patients**
+- Cost: {{< var recovery_trial_cost_per_patient >}} per patient
+- Found dexamethasone (cut COVID deaths by 30%)
+- **Ruled out hydroxychloroquine** (found it didn't work AND had safety concerns)
+- Did this in **3 months**, not 3 years
+- Saved over **1 million lives globally**
+
+This was **safer** than traditional trials because:
+- Larger sample size (47,000 vs. typical 300)
+- Real-world patients (not cherry-picked)
+- Faster results meant less time prescribing things blindly
+- Published all results (including failures)
 
 ## The "But Patients Won't Participate" Problem
 
