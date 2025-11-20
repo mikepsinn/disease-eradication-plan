@@ -1,0 +1,82 @@
+name: Render Book PDF
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render-book-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-
+
+      - name: Install Quarto
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y wget
+          curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
+          if [ -f quarto-linux-amd64.deb ]; then
+            sudo dpkg -i quarto-linux-amd64.deb || sudo apt-get install -f -y
+            rm -f quarto-linux-amd64.deb
+            quarto --version
+          else
+            echo "ERROR: Failed to download Quarto"
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+        run: quarto install tinytex
+
+      - name: Render Book PDF
+        run: python scripts/render-book-pdf.py
+        timeout-minutes: 20
+
+      - name: Upload Book PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: war-on-disease-book-pdf
+          path: '_book/warondisease/*.pdf'
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: List generated files
+        if: always()
+        run: |
+          echo "Contents of _book directory:"
+          ls -lah _book/ || echo "No _book directory"
+          echo ""
+          echo "Contents of _book/warondisease directory:"
+          ls -lah _book/warondisease/ || echo "No _book/warondisease directory"
