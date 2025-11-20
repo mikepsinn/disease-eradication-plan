@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| include: false
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -36,7 +37,6 @@ df_plot = df[(df['Year'] >= 1890) & (df['Year'] <= 2020)]
 ```
 
 ```{python}
-#| fig-height: 9
 # Create figure with proper margins
 
 fig, ax = plt.subplots(figsize=(14, 9))
@@ -117,7 +117,7 @@ add_watermark(fig)
 
 output_path = get_figure_output_path('life-expectancy-pre-post-1962.png')
 plt.savefig(output_path, dpi=200, facecolor=COLOR_WHITE, bbox_inches=None)
-plt.show()
+plt.close(fig)  # Close figure to prevent Jupyter from trying to display it
 ```
 
 ## Key Finding

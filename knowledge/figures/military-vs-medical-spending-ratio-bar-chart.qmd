@@ -4,7 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
-#| fig-height: 6
+#| output: false
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -86,7 +86,7 @@ plt.savefig(output_path, dpi=300, bbox_inches=None, facecolor='white')
 # Add metadata for attribution
 
 add_png_metadata(output_path, title="Military Vs Medical Spending Ratio Bar Chart")
-plt.show()
+plt.close(fig)  # Close figure to prevent Jupyter from trying to display it
 
 # Print the brutal truth
 

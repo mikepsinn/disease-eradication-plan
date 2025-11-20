@@ -4,6 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
+#| output: false
 #| include: false
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -38,7 +39,6 @@ print(df.head())
 ```
 
 ```{python}
-#| fig-height: 8
 # Create figure with multiple y-axes
 
 fig, ax1 = plt.subplots(figsize=(14, 8))
@@ -108,7 +108,7 @@ ax1.legend(lines1 + lines2 + lines3, labels1 + labels2 + labels3,
 
 plt.tight_layout()
 plt.savefig('fda-spending-life-expectancy-drug-costs-combined.png', dpi=300, bbox_inches='tight')
-plt.show()
+plt.close(fig)  # Close figure to prevent Jupyter from trying to display it
 ```
 
 ### Key Observations
