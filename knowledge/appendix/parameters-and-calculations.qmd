@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 518
+**Total parameters**: 524
 
 - External sources (peer-reviewed): 163
-- Calculated values: 307
+- Calculated values: 313
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -2833,7 +2833,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## QALY-Days Lost per Second of Inaction {#sec-cost_of_delay_qaly_days_per_second}
 
-**Value**: 8.04e-05
+**Value**: 0.00644
 
 QALY-days lost per second of inaction
 
@@ -3077,7 +3077,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Infrastructure ICER per QALY {#sec-dfda_icer_per_qaly}
 
-**Value**: $-59.5K
+**Value**: $-674
 
 dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
 
@@ -3112,6 +3112,40 @@ Months to recruit 10,000+ patients in dFDA system
 Large dFDA pragmatic trial size
 
 **Methodology**: [../appendix/research-acceleration-model.qmd#trial-sizes](../appendix/research-acceleration-model.qmd#trial-sizes)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Lives Saved by dFDA {#sec-dfda_lives_saved_annual}
+
+**Value**: 2.12M
+
+Annual lives saved by dFDA (QALYs ÷ QALYs per life)
+
+$$
+Lives_{dFDA} = 74.15M \div 35 = 2.12M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Daily Lives Saved by dFDA {#sec-dfda_lives_saved_daily}
+
+**Value**: 5,804
+
+Daily lives saved by dFDA
+
+$$
+Lives_{daily} = 2.12M \div 365 = 5,808
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
 
 *✓ High confidence*
 
@@ -3360,15 +3394,15 @@ dFDA staff costs (minimal, AI-assisted)
 ::: {.callout-note icon=false collapse=false}
 ## Monetized Value of dFDA QALYs {#sec-dfda_qalys_monetized}
 
-**Value**: $126B
+**Value**: $11.1T
 
 Monetized value of dFDA QALYs (QALYs × economic value)
 
 $$
-Value_{QALY} = 840,000 \times \$150,000 = \$126B
+Value_{QALY} = 74.15M \times \$150,000 = \$11.12T
 $$
 
-**Methodology**: [../appendix/dfda-qaly-model.qmd#monetized-value](../appendix/dfda-qaly-model.qmd#monetized-value)
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
 
 *✓ High confidence*
 
@@ -4262,11 +4296,28 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual QALYs Gained from dFDA {#sec-global_dfda_qalys_gained_annual}
+## Annual QALYs Gained from dFDA (Regulatory Delay Elimination) {#sec-global_dfda_qalys_gained_annual}
+
+**Value**: 74.1M
+
+Annual QALYs gained from dFDA via eliminating 7.2-year efficacy lag (PRIMARY ESTIMATE)
+
+$$
+QALYs_{dFDA} = 74.0M + 0.14M = 74.15M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual QALYs Gained from dFDA (Incremental Bottom-Up) {#sec-global_dfda_qalys_incremental}
 
 **Value**: 840K
 
-Annual QALYs gained from dFDA
+Annual QALYs gained from dFDA (incremental bottom-up estimate for reference only - NOT primary estimate)
 
 **Methodology**: [../appendix/dfda-qaly-model.qmd](../appendix/dfda-qaly-model.qmd)
 
@@ -4431,7 +4482,7 @@ ICER counting redirected military spending as opportunity cost
 ::: {.callout-note icon=false collapse=false}
 ## Incremental Cost-Effectiveness Ratio per QALY Gained {#sec-icer_per_qaly}
 
-**Value**: $-176K
+**Value**: $-2.20K
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained
 
@@ -4564,7 +4615,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Cost-Effectiveness Multiplier vs Givewell Top Charities {#sec-multiplier_vs_givewell}
 
-**Value**: 0.00137
+**Value**: 1.71e-05
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -5285,6 +5336,40 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Annual Deaths from Regulatory Delay Under Current System {#sec-regulatory_delay_deaths_annual}
+
+**Value**: 2.98M
+
+Annual deaths from regulatory delay under current system (annualized from 1962-2024)
+
+$$
+Deaths_{annual} = 184.6M \div 62 = 2.98M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Daily Deaths from Regulatory Delay Under Current System {#sec-regulatory_delay_deaths_daily}
+
+**Value**: 8,157
+
+Daily deaths from regulatory delay under current system
+
+$$
+Deaths_{daily} = 2.98M \div 365 = 8,164
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Lower Bound Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_lower_bound}
 
 **Value**: 110
@@ -5630,7 +5715,7 @@ Optimistic ICER from sensitivity analysis
 ::: {.callout-note icon=false collapse=false}
 ## Central Scenario Lives Saved {#sec-sensitivity_lives_saved_central}
 
-**Value**: 26,446
+**Value**: 2.12M
 
 Central scenario lives saved (total QALYs ÷ QALYs/life)
 
@@ -6388,7 +6473,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Net Benefit per Life Saved {#sec-treaty_net_benefit_per_life_saved}
 
-**Value**: $-6
+**Value**: $-0
 
 Net benefit per life saved (ICER × QALYs/life)
 
@@ -6473,12 +6558,29 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual Lives Saved Equivalent {#sec-treaty_total_lives_saved_annual}
 
-**Value**: 26,446
+**Value**: 2.12M
 
 Total annual lives saved equivalent (total QALYs ÷ QALYs/life)
 
 $$
-Lives_{total} = 925,610 / 35 = 26,446
+Lives_{total} = 74.23M \div 35 = 2.12M
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Total Daily Lives Saved {#sec-treaty_total_lives_saved_daily}
+
+**Value**: 5,811
+
+Total daily lives saved (dFDA + peace dividend)
+
+$$
+Lives_{daily} = 2.12M \div 365 = 5,811
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives)
@@ -6490,12 +6592,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual QALYs Gained {#sec-treaty_total_qalys_gained_annual}
 
-**Value**: 926K
+**Value**: 74.2M
 
 Total annual QALYs gained (dFDA + peace dividend)
 
 $$
-QALYs_{total} = 840,000 + 85,610 = 925,610
+QALYs_{total} = 74.15M + 85,610 = 74.23M
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys)

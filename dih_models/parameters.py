@@ -1419,26 +1419,72 @@ STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
 )  # Standard assumption (WHO life tables)
 
 # dFDA health benefits
-GLOBAL_DFDA_QALYS_GAINED_ANNUAL = Parameter(
+# NOTE: The incremental bottom-up calculation (840k QALYs) represents marginal improvements
+# within the current regulatory framework. The primary estimate uses the comprehensive
+# regulatory delay elimination approach (74M QALYs) based on empirical analysis of
+# 1962-2024 data. See /knowledge/appendix/regulatory-mortality-analysis.qmd
+
+GLOBAL_DFDA_QALYS_INCREMENTAL = Parameter(
     840000,
     source_ref="/knowledge/appendix/dfda-qaly-model.qmd",
     source_type="calculated",
-    description="Annual QALYs gained from dFDA",
-    display_name="Annual QALYs Gained from dFDA",
+    description="Annual QALYs gained from dFDA (incremental bottom-up estimate for reference only - NOT primary estimate)",
+    display_name="Annual QALYs Gained from dFDA (Incremental Bottom-Up)",
     unit="QALYs/year",
-    keywords=["840k", "pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit"]
-)  # QALYs gained per year from dFDA
+    keywords=["840k", "pragmatic trials", "real world evidence", "incremental", "conservative", "bottom-up"]
+)  # Incremental estimate - see GLOBAL_DFDA_QALYS_GAINED_ANNUAL for primary estimate
+
+# PRIMARY ESTIMATE: Based on comprehensive regulatory delay elimination analysis
+# This equals DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL (74M) + QALYS_FROM_PREVENTION (140k)
+# See /knowledge/appendix/regulatory-mortality-analysis.qmd for methodology
+GLOBAL_DFDA_QALYS_GAINED_ANNUAL = Parameter(
+    74_148_065,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
+    source_type="calculated",
+    description="Annual QALYs gained from dFDA via eliminating 7.2-year efficacy lag (PRIMARY ESTIMATE)",
+    display_name="Annual QALYs Gained from dFDA (Regulatory Delay Elimination)",
+    unit="QALYs/year",
+    formula="REGULATORY_DELAY_AVOIDANCE + PREVENTION_QALYS",
+    latex=r"QALYs_{dFDA} = 74.0M + 0.14M = 74.15M",
+    keywords=["74m", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "approval lag", "drug lag"]
+)  # 74.15M QALYs/year from eliminating efficacy lag
+
+# Explicit lives saved calculations
+DFDA_LIVES_SAVED_ANNUAL = Parameter(
+    GLOBAL_DFDA_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
+    source_type="calculated",
+    description="Annual lives saved by dFDA (QALYs ÷ QALYs per life)",
+    display_name="Annual Lives Saved by dFDA",
+    unit="lives/year",
+    formula="DFDA_QALYS ÷ QALYS_PER_LIFE",
+    latex=r"Lives_{dFDA} = 74.15M \div 35 = 2.12M",
+    keywords=["2.1m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "regulatory delay"]
+)  # 2.12M lives/year
+
+DFDA_LIVES_SAVED_DAILY = Parameter(
+    DFDA_LIVES_SAVED_ANNUAL / 365,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
+    source_type="calculated",
+    description="Daily lives saved by dFDA",
+    display_name="Daily Lives Saved by dFDA",
+    unit="lives/day",
+    formula="ANNUAL_LIVES_SAVED ÷ 365",
+    latex=r"Lives_{daily} = 2.12M \div 365 = 5,808",
+    keywords=["5.8k", "daily", "per day", "each day", "deaths prevented", "life saving", "mortality reduction"]
+)  # 5,808 lives/day
+
 DFDA_QALYS_MONETIZED = Parameter(
     (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#monetized-value",
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
     description="Monetized value of dFDA QALYs (QALYs × economic value)",
     display_name="Monetized Value of dFDA QALYs",
     unit="USD/year",
-    formula="QALYS × VALUE_PER_QALY ",
-    latex=r"Value_{QALY} = 840,000 \times \$150,000 = \$126B",
-    keywords=["pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit", "quality of life"]
-)  # $126B
+    formula="QALYS × VALUE_PER_QALY",
+    latex=r"Value_{QALY} = 74.15M \times \$150,000 = \$11.12T",
+    keywords=["11.1t", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "economic value"]
+)  # $11.12T/year
 
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
@@ -1473,9 +1519,10 @@ TREATY_TOTAL_QALYS_GAINED_ANNUAL = Parameter(
     display_name="Total Annual QALYs Gained",
     unit="QALYs/year",
     formula="DFDA_QALYS + PEACE_QALYS",
-    latex=r"QALYs_{total} = 840,000 + 85,610 = 925,610",
-    keywords=["1%", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly"]
-)  # 925,610 QALYs
+    latex=r"QALYs_{total} = 74.15M + 85,610 = 74.23M",
+    keywords=["74m", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "regulatory delay"]
+)  # 74.23M QALYs
+
 TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
     TREATY_TOTAL_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives",
@@ -1484,9 +1531,21 @@ TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
     display_name="Total Annual Lives Saved Equivalent",
     unit="lives/year",
     formula="TOTAL_QALYS ÷ QALYS_PER_LIFE",
-    latex=r"Lives_{total} = 925,610 / 35 = 26,446",
-    keywords=["1%", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "deaths prevented"]
-)  # 26,446 lives
+    latex=r"Lives_{total} = 74.23M \div 35 = 2.12M",
+    keywords=["2.1m", "cost effectiveness", "value for money", "disease burden", "deaths prevented", "life saving", "mortality reduction"]
+)  # 2.12M lives/year
+
+TREATY_TOTAL_LIVES_SAVED_DAILY = Parameter(
+    TREATY_TOTAL_LIVES_SAVED_ANNUAL / 365,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives",
+    source_type="calculated",
+    description="Total daily lives saved (dFDA + peace dividend)",
+    display_name="Total Daily Lives Saved",
+    unit="lives/day",
+    formula="ANNUAL_LIVES_SAVED ÷ 365",
+    latex=r"Lives_{daily} = 2.12M \div 365 = 5,811",
+    keywords=["5.8k", "daily", "per day", "each day", "deaths prevented", "life saving", "mortality reduction"]
+)  # 5,811 lives/day
 
 # ---
 # CAMPAIGN COSTS
@@ -3644,6 +3703,32 @@ REGULATORY_DELAY_ANNUAL_DALYS = Parameter(
     confidence="medium",
     keywords=["4.8b", "approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease"]
 )  # 77.9M DALYs/year ongoing cost
+
+REGULATORY_DELAY_DEATHS_ANNUAL = Parameter(
+    REGULATORY_DELAY_DEATHS_MEAN * 1_000_000 / 62,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates",
+    source_type="calculated",
+    description="Annual deaths from regulatory delay under current system (annualized from 1962-2024)",
+    display_name="Annual Deaths from Regulatory Delay Under Current System",
+    unit="deaths/year",
+    formula="TOTAL_DEATHS ÷ 62 years",
+    latex=r"Deaths_{annual} = 184.6M \div 62 = 2.98M",
+    confidence="medium",
+    keywords=["3m", "approval lag", "drug lag", "fda delay", "mortality", "deaths", "fatalities"]
+)  # 2.98M deaths/year ongoing cost
+
+REGULATORY_DELAY_DEATHS_DAILY = Parameter(
+    REGULATORY_DELAY_DEATHS_ANNUAL / 365,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#mortality-estimates",
+    source_type="calculated",
+    description="Daily deaths from regulatory delay under current system",
+    display_name="Daily Deaths from Regulatory Delay Under Current System",
+    unit="deaths/day",
+    formula="ANNUAL_DEATHS ÷ 365",
+    latex=r"Deaths_{daily} = 2.98M \div 365 = 8,164",
+    confidence="medium",
+    keywords=["8k", "daily", "per day", "each day", "approval lag", "drug lag", "fda delay", "mortality"]
+)  # 8,164 deaths/day
 
 DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION = Parameter(
     0.95,
