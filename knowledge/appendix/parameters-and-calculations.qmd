@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 509
+**Total parameters**: 518
 
-- External sources (peer-reviewed): 155
-- Calculated values: 310
-- Core definitions: 44
+- External sources (peer-reviewed): 163
+- Calculated values: 307
+- Core definitions: 48
 
 # External Data Sources {#sec-external}
 
@@ -30,7 +30,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 Accidental/unintentional injury death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -43,7 +43,7 @@ Accidental/unintentional injury death rate
 
 Alzheimer's disease death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -56,7 +56,7 @@ Alzheimer's disease death rate
 
 Life extension from antibiotics (conservative mid-range from 5-23 years)
 
-**Source**: [life-expectancy-gains-medical-advances](../references.qmd#life-expectancy-gains-medical-advances)
+**Source**: [life-expectancy-gains-medical-advances](https://warondisease.org/knowledge/references.html#life-expectancy-gains-medical-advances)
 
 *✓ High confidence*
 
@@ -69,7 +69,7 @@ Life extension from antibiotics (conservative mid-range from 5-23 years)
 
 Average annual stock market return (10%)
 
-**Source**: [average-stock-market-return](../references.qmd#average-stock-market-return)
+**Source**: [ReferenceID.WARREN_BUFFETT_CAREER_AVERAGE_RETURN_20_PCT](https://warondisease.org/knowledge/references.html#warren-buffett-career-average-return-20-pct)
 
 *✓ High confidence*
 
@@ -82,7 +82,7 @@ Average annual stock market return (10%)
 
 Average US hourly wage
 
-**Source**: [average-us-hourly-wage](../references.qmd#average-us-hourly-wage)
+**Source**: [average-us-hourly-wage](https://warondisease.org/knowledge/references.html#average-us-hourly-wage)
 
 *✓ High confidence*
 
@@ -95,7 +95,7 @@ Average US hourly wage
 
 Baseline annual lives saved by pharmaceuticals (conservative aggregate)
 
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
 
@@ -108,7 +108,7 @@ Baseline annual lives saved by pharmaceuticals (conservative aggregate)
 
 Biometric KYC verification cost at medium volume
 
-**Source**: [kyc-biometric-verification-costs-2024](../references.qmd#kyc-biometric-verification-costs-2024)
+**Source**: [kyc-biometric-verification-costs-2024](https://warondisease.org/knowledge/references.html#kyc-biometric-verification-costs-2024)
 
 *✓ High confidence • Updated 2024*
 
@@ -121,7 +121,7 @@ Biometric KYC verification cost at medium volume
 
 Biometric KYC verification cost at high volume (300M+ scale)
 
-**Source**: [kyc-biometric-verification-costs-2024](../references.qmd#kyc-biometric-verification-costs-2024)
+**Source**: [kyc-biometric-verification-costs-2024](https://warondisease.org/knowledge/references.html#kyc-biometric-verification-costs-2024)
 
 *✓ High confidence • Updated 2024*
 
@@ -134,7 +134,7 @@ Biometric KYC verification cost at high volume (300M+ scale)
 
 Average reading speed (conservative for non-fiction)
 
-**Source**: [average-reading-speed](../references.qmd#average-reading-speed)
+**Source**: [average-reading-speed](https://warondisease.org/knowledge/references.html#average-reading-speed)
 
 *✓ High confidence*
 
@@ -147,7 +147,7 @@ Average reading speed (conservative for non-fiction)
 
 Cancer death rate (all cancers)
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -160,7 +160,7 @@ Cancer death rate (all cancers)
 
 Cardiovascular disease death rate (heart disease + stroke)
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -173,7 +173,7 @@ Cardiovascular disease death rate (heart disease + stroke)
 
 Total annual value of unpaid caregiving in US
 
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+**Source**: [unpaid-caregiver-hours-economic-value](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
 *✓ High confidence*
 
@@ -186,7 +186,7 @@ Total annual value of unpaid caregiving in US
 
 Number of unpaid caregivers in US
 
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+**Source**: [unpaid-caregiver-hours-economic-value](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
 *✓ High confidence*
 
@@ -199,7 +199,7 @@ Number of unpaid caregivers in US
 
 Average monthly hours of unpaid family caregiving in US
 
-**Source**: [average-family-caregiving-hours](../references.qmd#average-family-caregiving-hours)
+**Source**: [ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
 *✓ High confidence*
 
@@ -212,7 +212,7 @@ Average monthly hours of unpaid family caregiving in US
 
 Average weekly hours of unpaid caregiving (25-26 hours/week)
 
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+**Source**: [unpaid-caregiver-hours-economic-value](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
 *✓ High confidence*
 
@@ -225,7 +225,7 @@ Average weekly hours of unpaid caregiving (25-26 hours/week)
 
 AARP valuation of caregiving per hour
 
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+**Source**: [unpaid-caregiver-hours-economic-value](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
 *✓ High confidence*
 
@@ -238,7 +238,7 @@ AARP valuation of caregiving per hour
 
 Estimated replacement cost per hour of caregiving
 
-**Source**: [caregiver-replacement-cost](../references.qmd#caregiver-replacement-cost)
+**Source**: [ReferenceID.UNPAID_CAREGIVER_HOURS_ECONOMIC_VALUE](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
 *✓ High confidence*
 
@@ -251,7 +251,7 @@ Estimated replacement cost per hour of caregiving
 
 Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)
 
-**Source**: [/knowledge/economics/economics.qmd#better-than-the-best-charities](../references.qmd#/knowledge/economics/economics.qmd#better-than-the-best-charities)
+**Source**: [childhood-vaccination-economic-benefits](https://warondisease.org/knowledge/references.html#childhood-vaccination-economic-benefits)
 
 *✓ High confidence*
 
@@ -264,7 +264,7 @@ Estimated annual global economic benefit from childhood vaccination programs (me
 
 Return on investment from childhood vaccination programs
 
-**Source**: [childhood-vaccination-roi](../references.qmd#childhood-vaccination-roi)
+**Source**: [ReferenceID.CHILDHOOD_VACCINATION_ROI](https://warondisease.org/knowledge/references.html#childhood-vaccination-roi)
 
 *✓ High confidence*
 
@@ -277,7 +277,7 @@ Return on investment from childhood vaccination programs
 
 Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
 
-**Source**: [who-gbd-2024](../references.qmd#who-gbd-2024)
+**Source**: [ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
 *~ Medium confidence • 📊 Peer-reviewed*
 
@@ -290,7 +290,7 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 Current active trials at any given time (3-5 year duration)
 
-**Source**: [active-clinical-trials-baseline](../references.qmd#active-clinical-trials-baseline)
+**Source**: [ReferenceID.CLINICALTRIALS_GOV_ENROLLMENT_DATA_2025](https://warondisease.org/knowledge/references.html#clinicaltrials-gov-enrollment-data-2025)
 
 *✓ High confidence*
 
@@ -303,7 +303,7 @@ Current active trials at any given time (3-5 year duration)
 
 Current clinical trial participation rate (0.06% of population)
 
-**Source**: [clinical-trial-participants](../references.qmd#clinical-trial-participants)
+**Source**: [ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE](https://warondisease.org/knowledge/references.html#clinical-trial-patient-participation-rate)
 
 *✓ High confidence*
 
@@ -316,7 +316,7 @@ Current clinical trial participation rate (0.06% of population)
 
 Global population with chronic diseases
 
-**Source**: [global-burden-disease-2-4-billion](../references.qmd#global-burden-disease-2-4-billion)
+**Source**: [ReferenceID.DISEASE_PREVALENCE_2_BILLION](https://warondisease.org/knowledge/references.html#disease-prevalence-2-billion)
 
 *✓ High confidence*
 
@@ -329,7 +329,7 @@ Global population with chronic diseases
 
 Average annual new drug approvals globally
 
-**Source**: [global-new-drug-approvals-50-annually](../references.qmd#global-new-drug-approvals-50-annually)
+**Source**: [ReferenceID.GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY](https://warondisease.org/knowledge/references.html#global-new-drug-approvals-50-annually)
 
 *✓ High confidence*
 
@@ -342,7 +342,7 @@ Average annual new drug approvals globally
 
 Current patient eligibility rate for clinical trials (0.2%)
 
-**Source**: [clinical-trial-eligibility-rate](../references.qmd#clinical-trial-eligibility-rate)
+**Source**: [clinical-trial-eligibility-rate](https://warondisease.org/knowledge/references.html#clinical-trial-eligibility-rate)
 
 *✓ High confidence*
 
@@ -355,7 +355,7 @@ Current patient eligibility rate for clinical trials (0.2%)
 
 Current global clinical trials per year
 
-**Source**: [global-clinical-trials-per-year](../references.qmd#global-clinical-trials-per-year)
+**Source**: [ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024](https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024)
 
 *✓ High confidence*
 
@@ -368,7 +368,7 @@ Current global clinical trials per year
 
 Current trial abandonment rate (40% never complete)
 
-**Source**: [clinical-trial-abandonment-rate](../references.qmd#clinical-trial-abandonment-rate)
+**Source**: [clinical-trial-abandonment-rate](https://warondisease.org/knowledge/references.html#clinical-trial-abandonment-rate)
 
 *✓ High confidence*
 
@@ -381,7 +381,7 @@ Current trial abandonment rate (40% never complete)
 
 Current trial completion rate (60%)
 
-**Source**: [clinical-trial-completion-rate](../references.qmd#clinical-trial-completion-rate)
+**Source**: [clinical-trial-completion-rate](https://warondisease.org/knowledge/references.html#clinical-trial-completion-rate)
 
 *✓ High confidence*
 
@@ -394,7 +394,7 @@ Current trial completion rate (60%)
 
 Total trial slots available for 2.4B sick people
 
-**Source**: [global-trial-participant-capacity](../references.qmd#global-trial-participant-capacity)
+**Source**: [global-trial-participant-capacity](https://warondisease.org/knowledge/references.html#global-trial-participant-capacity)
 
 *✓ High confidence*
 
@@ -407,7 +407,7 @@ Total trial slots available for 2.4B sick people
 
 Annual defense industry lobbying spending
 
-**Source**: [lobbying-spend-defense](../references.qmd#lobbying-spend-defense)
+**Source**: [ReferenceID.LOBBYING_SPEND_DEFENSE](https://warondisease.org/knowledge/references.html#lobbying-spend-defense)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
@@ -420,7 +420,7 @@ Annual defense industry lobbying spending
 
 Diabetes death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -433,7 +433,7 @@ Diabetes death rate
 
 Average monthly cost of diabetes treatment per patient
 
-**Source**: [diabetes-treatment-costs](../references.qmd#diabetes-treatment-costs)
+**Source**: [ReferenceID.DISEASE_COST_DIABETES_1500B](https://warondisease.org/knowledge/references.html#disease-cost-diabetes-1500b)
 
 *✓ High confidence*
 
@@ -446,7 +446,7 @@ Average monthly cost of diabetes treatment per patient
 
 Economic multiplier for education investment (2.1x ROI)
 
-**Source**: [economic-multiplier-education](../references.qmd#economic-multiplier-education)
+**Source**: [ReferenceID.EDUCATION_INVESTMENT_ECONOMIC_MULTIPLIER](https://warondisease.org/knowledge/references.html#education-investment-economic-multiplier)
 
 *✓ High confidence*
 
@@ -459,7 +459,7 @@ Economic multiplier for education investment (2.1x ROI)
 
 Economic multiplier for healthcare investment (4.3x ROI)
 
-**Source**: [economic-multiplier-healthcare](../references.qmd#economic-multiplier-healthcare)
+**Source**: [ReferenceID.HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER](https://warondisease.org/knowledge/references.html#healthcare-investment-economic-multiplier)
 
 *✓ High confidence*
 
@@ -472,7 +472,7 @@ Economic multiplier for healthcare investment (4.3x ROI)
 
 Economic multiplier for infrastructure investment (1.6x ROI)
 
-**Source**: [economic-multiplier-infrastructure](../references.qmd#economic-multiplier-infrastructure)
+**Source**: [ReferenceID.INFRASTRUCTURE_INVESTMENT_ECONOMIC_MULTIPLIER](https://warondisease.org/knowledge/references.html#infrastructure-investment-economic-multiplier)
 
 *✓ High confidence*
 
@@ -485,7 +485,7 @@ Economic multiplier for infrastructure investment (1.6x ROI)
 
 Economic multiplier for military spending (0.6x ROI)
 
-**Source**: [economic-multiplier-military](../references.qmd#economic-multiplier-military)
+**Source**: [ReferenceID.MILITARY_SPENDING_ECONOMIC_MULTIPLIER](https://warondisease.org/knowledge/references.html#military-spending-economic-multiplier)
 
 *✓ High confidence*
 
@@ -498,7 +498,7 @@ Economic multiplier for military spending (0.6x ROI)
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
-**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+**Source**: [ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021](https://warondisease.org/knowledge/references.html#bio-clinical-development-2021)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
@@ -511,7 +511,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
 GiveWell average cost per life saved across top charities
 
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+**Source**: [ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED](https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved)
 
 *✓ High confidence*
 
@@ -524,7 +524,7 @@ GiveWell average cost per life saved across top charities
 
 GiveWell cost per life saved (Against Malaria Foundation)
 
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+**Source**: [ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED](https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved)
 
 *✓ High confidence*
 
@@ -537,7 +537,7 @@ GiveWell cost per life saved (Against Malaria Foundation)
 
 GiveWell cost per life saved (Helen Keller International)
 
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+**Source**: [ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED](https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved)
 
 *✓ High confidence*
 
@@ -550,7 +550,7 @@ GiveWell cost per life saved (Helen Keller International)
 
 Annual deaths from active combat worldwide
 
-**Source**: [acled-2024](../references.qmd#acled-2024)
+**Source**: [ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS](https://warondisease.org/knowledge/references.html#acled-active-combat-deaths)
 
 *✓ High confidence*
 
@@ -563,7 +563,7 @@ Annual deaths from active combat worldwide
 
 Annual deaths from state violence
 
-**Source**: [ucdp-2024](../references.qmd#ucdp-2024)
+**Source**: [ReferenceID.UCDP_STATE_VIOLENCE_DEATHS](https://warondisease.org/knowledge/references.html#ucdp-state-violence-deaths)
 
 *✓ High confidence*
 
@@ -576,7 +576,7 @@ Annual deaths from state violence
 
 Annual deaths from terror attacks globally
 
-**Source**: [gtd-2024](../references.qmd#gtd-2024)
+**Source**: [ReferenceID.GTD_TERROR_ATTACK_DEATHS](https://warondisease.org/knowledge/references.html#gtd-terror-attack-deaths)
 
 *✓ High confidence*
 
@@ -589,7 +589,7 @@ Annual deaths from terror attacks globally
 
 Annual environmental damage and restoration costs from conflict
 
-**Source**: [war-environmental-damage-costs](../references.qmd#war-environmental-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -602,7 +602,7 @@ Annual environmental damage and restoration costs from conflict
 
 Annual infrastructure damage to communications from conflict
 
-**Source**: [war-infrastructure-damage-costs](../references.qmd#war-infrastructure-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -615,7 +615,7 @@ Annual infrastructure damage to communications from conflict
 
 Annual infrastructure damage to education facilities from conflict
 
-**Source**: [war-infrastructure-damage-costs](../references.qmd#war-infrastructure-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -628,7 +628,7 @@ Annual infrastructure damage to education facilities from conflict
 
 Annual infrastructure damage to energy systems from conflict
 
-**Source**: [war-infrastructure-damage-costs](../references.qmd#war-infrastructure-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -641,7 +641,7 @@ Annual infrastructure damage to energy systems from conflict
 
 Annual infrastructure damage to healthcare facilities from conflict
 
-**Source**: [war-infrastructure-damage-costs](../references.qmd#war-infrastructure-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -654,7 +654,7 @@ Annual infrastructure damage to healthcare facilities from conflict
 
 Annual infrastructure damage to transportation from conflict
 
-**Source**: [war-infrastructure-damage-costs](../references.qmd#war-infrastructure-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -667,7 +667,7 @@ Annual infrastructure damage to transportation from conflict
 
 Annual infrastructure damage to water systems from conflict
 
-**Source**: [war-infrastructure-damage-costs](../references.qmd#war-infrastructure-damage-costs)
+**Source**: [ReferenceID.ENVIRONMENTAL_COST_OF_WAR](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
 *✓ High confidence*
 
@@ -680,7 +680,7 @@ Annual infrastructure damage to water systems from conflict
 
 Annual lives saved by medical research globally
 
-**Source**: [medical-research-lives-saved-annually](../references.qmd#medical-research-lives-saved-annually)
+**Source**: [medical-research-lives-saved-annually](https://warondisease.org/knowledge/references.html#medical-research-lives-saved-annually)
 
 *✓ High confidence*
 
@@ -693,7 +693,7 @@ Annual lives saved by medical research globally
 
 Annual lost economic growth from military spending opportunity cost
 
-**Source**: [military-spending-opportunity-cost](../references.qmd#military-spending-opportunity-cost)
+**Source**: [ReferenceID.DISPARITY_RATIO_WEAPONS_VS_CURES](https://warondisease.org/knowledge/references.html#disparity-ratio-weapons-vs-cures)
 
 *✓ High confidence*
 
@@ -706,7 +706,7 @@ Annual lost economic growth from military spending opportunity cost
 
 Annual lost productivity from conflict casualties
 
-**Source**: [war-lost-human-capital](../references.qmd#war-lost-human-capital)
+**Source**: [ReferenceID.LOST_HUMAN_CAPITAL_WAR_COST](https://warondisease.org/knowledge/references.html#lost-human-capital-war-cost)
 
 *✓ High confidence*
 
@@ -719,7 +719,7 @@ Annual lost productivity from conflict casualties
 
 Global military spending on infrastructure in 2024
 
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
+**Source**: [ReferenceID.GLOBAL_MILITARY_SPENDING](https://warondisease.org/knowledge/references.html#global-military-spending)
 
 *✓ High confidence*
 
@@ -732,7 +732,7 @@ Global military spending on infrastructure in 2024
 
 Global military spending on intelligence in 2024
 
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
+**Source**: [ReferenceID.GLOBAL_MILITARY_SPENDING](https://warondisease.org/knowledge/references.html#global-military-spending)
 
 *✓ High confidence*
 
@@ -745,7 +745,7 @@ Global military spending on intelligence in 2024
 
 Global military spending on operations and maintenance in 2024
 
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
+**Source**: [ReferenceID.GLOBAL_MILITARY_SPENDING](https://warondisease.org/knowledge/references.html#global-military-spending)
 
 *✓ High confidence*
 
@@ -758,7 +758,7 @@ Global military spending on operations and maintenance in 2024
 
 Global military spending on personnel in 2024
 
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
+**Source**: [ReferenceID.GLOBAL_MILITARY_SPENDING](https://warondisease.org/knowledge/references.html#global-military-spending)
 
 *✓ High confidence*
 
@@ -771,7 +771,7 @@ Global military spending on personnel in 2024
 
 Global military spending on procurement in 2024
 
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
+**Source**: [ReferenceID.GLOBAL_MILITARY_SPENDING](https://warondisease.org/knowledge/references.html#global-military-spending)
 
 *✓ High confidence*
 
@@ -784,7 +784,7 @@ Global military spending on procurement in 2024
 
 Annual PTSD and mental health costs from conflict
 
-**Source**: [war-psychological-impact-costs](../references.qmd#war-psychological-impact-costs)
+**Source**: [ReferenceID.PSYCHOLOGICAL_IMPACT_WAR_COST](https://warondisease.org/knowledge/references.html#psychological-impact-war-cost)
 
 *✓ High confidence*
 
@@ -797,7 +797,7 @@ Annual PTSD and mental health costs from conflict
 
 Annual refugee support costs (108.4M refugees × $1,384/year)
 
-**Source**: [refugee-support-costs](../references.qmd#refugee-support-costs)
+**Source**: [ReferenceID.UNHCR_REFUGEE_SUPPORT_COST](https://warondisease.org/knowledge/references.html#unhcr-refugee-support-cost)
 
 *✓ High confidence*
 
@@ -810,7 +810,7 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 Annual trade disruption costs from currency instability
 
-**Source**: [war-trade-disruption-costs](../references.qmd#war-trade-disruption-costs)
+**Source**: [ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
 
 *✓ High confidence*
 
@@ -823,7 +823,7 @@ Annual trade disruption costs from currency instability
 
 Annual trade disruption costs from energy price volatility
 
-**Source**: [war-trade-disruption-costs](../references.qmd#war-trade-disruption-costs)
+**Source**: [ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
 
 *✓ High confidence*
 
@@ -836,7 +836,7 @@ Annual trade disruption costs from energy price volatility
 
 Annual trade disruption costs from shipping disruptions
 
-**Source**: [war-trade-disruption-costs](../references.qmd#war-trade-disruption-costs)
+**Source**: [ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
 
 *✓ High confidence*
 
@@ -849,7 +849,7 @@ Annual trade disruption costs from shipping disruptions
 
 Annual trade disruption costs from supply chain disruptions
 
-**Source**: [war-trade-disruption-costs](../references.qmd#war-trade-disruption-costs)
+**Source**: [ReferenceID.WORLD_BANK_TRADE_DISRUPTION_CONFLICT](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
 
 *✓ High confidence*
 
@@ -862,7 +862,7 @@ Annual trade disruption costs from supply chain disruptions
 
 Annual veteran healthcare costs (20-year projected)
 
-**Source**: [global-veteran-healthcare-costs](../references.qmd#global-veteran-healthcare-costs)
+**Source**: [ReferenceID.VETERAN_HEALTHCARE_COST_PROJECTIONS](https://warondisease.org/knowledge/references.html#veteran-healthcare-cost-projections)
 
 *✓ High confidence*
 
@@ -875,7 +875,7 @@ Annual veteran healthcare costs (20-year projected)
 
 Annual global spending on clinical trials
 
-**Source**: [global-clinical-trials-market-2024](../references.qmd#global-clinical-trials-market-2024)
+**Source**: [ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024](https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024)
 
 *✓ High confidence*
 
@@ -888,7 +888,7 @@ Annual global spending on clinical trials
 
 Global clinical trial market size
 
-**Source**: [global-clinical-trial-market](../references.qmd#global-clinical-trial-market)
+**Source**: [ReferenceID.CLINICAL_TRIAL_MARKET_SIZE](https://warondisease.org/knowledge/references.html#clinical-trial-market-size)
 
 *✓ High confidence*
 
@@ -901,7 +901,7 @@ Global clinical trial market size
 
 Average annual cost per refugee globally
 
-**Source**: [unhcr-refugee-cost-per-year](../references.qmd#unhcr-refugee-cost-per-year)
+**Source**: [ReferenceID.UNHCR_REFUGEE_SUPPORT_COST](https://warondisease.org/knowledge/references.html#unhcr-refugee-support-cost)
 
 *✓ High confidence*
 
@@ -914,7 +914,7 @@ Average annual cost per refugee globally
 
 Daily deaths from curable diseases globally
 
-**Source**: [global-daily-deaths-curable-diseases](../references.qmd#global-daily-deaths-curable-diseases)
+**Source**: [ReferenceID.DEATHS_FROM_TREATABLE_DISEASES_15M](https://warondisease.org/knowledge/references.html#deaths-from-treatable-diseases-15m)
 
 *✓ High confidence*
 
@@ -927,7 +927,7 @@ Daily deaths from curable diseases globally
 
 Direct medical costs of disease globally (treatment, hospitalization, medication)
 
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+**Source**: [ReferenceID.DISEASE_ECONOMIC_BURDEN_109T](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
 *✓ High confidence*
 
@@ -940,7 +940,7 @@ Direct medical costs of disease globally (treatment, hospitalization, medication
 
 Economic value of human life lost to disease annually (mortality valuation)
 
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+**Source**: [ReferenceID.DISEASE_ECONOMIC_BURDEN_109T](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
 *✓ High confidence*
 
@@ -953,7 +953,7 @@ Economic value of human life lost to disease annually (mortality valuation)
 
 Annual productivity loss from disease globally (absenteeism, reduced output)
 
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+**Source**: [ReferenceID.DISEASE_ECONOMIC_BURDEN_109T](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
 *✓ High confidence*
 
@@ -966,7 +966,7 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 
 Global cost to achieve universal education
 
-**Source**: [unesco-education-for-all-cost](../references.qmd#unesco-education-for-all-cost)
+**Source**: [unesco-education-for-all-cost](https://warondisease.org/knowledge/references.html#unesco-education-for-all-cost)
 
 *✓ High confidence*
 
@@ -979,7 +979,7 @@ Global cost to achieve universal education
 
 Global forcibly displaced people in 2023
 
-**Source**: [unhcr-global-displacement-2023](../references.qmd#unhcr-global-displacement-2023)
+**Source**: [ReferenceID.UNHCR_FORCIBLY_DISPLACED_2023](https://warondisease.org/knowledge/references.html#unhcr-forcibly-displaced-2023)
 
 *✓ High confidence*
 
@@ -992,7 +992,7 @@ Global forcibly displaced people in 2023
 
 Global GDP in 2023 for comparison
 
-**Source**: [global-gdp](../references.qmd#global-gdp)
+**Source**: [ReferenceID.GLOBAL_GDP](https://warondisease.org/knowledge/references.html#global-gdp)
 
 *✓ High confidence*
 
@@ -1005,7 +1005,7 @@ Global GDP in 2023 for comparison
 
 Global GDP in 2024
 
-**Source**: [global-gdp](../references.qmd#global-gdp)
+**Source**: [ReferenceID.GLOBAL_GDP](https://warondisease.org/knowledge/references.html#global-gdp)
 
 *✓ High confidence*
 
@@ -1018,7 +1018,7 @@ Global GDP in 2024
 
 Global healthcare spending in 2024
 
-**Source**: [global-health-spending](../references.qmd#global-health-spending)
+**Source**: [ReferenceID.GLOBAL_HEALTH_SPENDING_GDP](https://warondisease.org/knowledge/references.html#global-health-spending-gdp)
 
 *✓ High confidence*
 
@@ -1031,7 +1031,7 @@ Global healthcare spending in 2024
 
 Global life expectancy (2024)
 
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
@@ -1044,7 +1044,7 @@ Global life expectancy (2024)
 
 Global government medical research spending
 
-**Source**: [global-government-medical-research-spending](../references.qmd#global-government-medical-research-spending)
+**Source**: [ReferenceID.GLOBAL_GOV_MED_RESEARCH_SPENDING](https://warondisease.org/knowledge/references.html#global-gov-med-research-spending)
 
 *✓ High confidence*
 
@@ -1057,7 +1057,7 @@ Global government medical research spending
 
 Global military spending in 2024
 
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
+**Source**: [ReferenceID.GLOBAL_MILITARY_SPENDING](https://warondisease.org/knowledge/references.html#global-military-spending)
 
 *✓ High confidence*
 
@@ -1070,7 +1070,7 @@ Global military spending in 2024
 
 Annual increase in global nuclear weapons budget
 
-**Source**: [global-nuclear-weapons-budget-increase](../references.qmd#global-nuclear-weapons-budget-increase)
+**Source**: [ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B](https://warondisease.org/knowledge/references.html#global-nuclear-weapon-maintenance-100b)
 
 *✓ High confidence*
 
@@ -1083,7 +1083,7 @@ Annual increase in global nuclear weapons budget
 
 Global population in 2024
 
-**Source**: [global-population-8-billion](../references.qmd#global-population-8-billion)
+**Source**: [ReferenceID.GLOBAL_POPULATION_8_BILLION](https://warondisease.org/knowledge/references.html#global-population-8-billion)
 
 *✓ High confidence*
 
@@ -1096,7 +1096,7 @@ Global population in 2024
 
 Critical mass threshold for social change (3.5% rule)
 
-**Source**: [3-5-percent-rule-social-change](../references.qmd#3-5-percent-rule-social-change)
+**Source**: [ReferenceID._3_5_RULE](https://warondisease.org/knowledge/references.html#3-5-rule)
 
 *✓ High confidence*
 
@@ -1109,7 +1109,7 @@ Critical mass threshold for social change (3.5% rule)
 
 Total cost to eradicate global poverty
 
-**Source**: [world-bank-poverty-eradication](../references.qmd#world-bank-poverty-eradication)
+**Source**: [ReferenceID.WORLD_BANK_POVERTY_ERADICATION_COST](https://warondisease.org/knowledge/references.html#world-bank-poverty-eradication-cost)
 
 *✓ High confidence*
 
@@ -1122,7 +1122,7 @@ Total cost to eradicate global poverty
 
 Annual global spending on symptomatic disease treatment
 
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+**Source**: [ReferenceID.DISEASE_ECONOMIC_BURDEN_109T](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
 *✓ High confidence*
 
@@ -1135,7 +1135,7 @@ Annual global spending on symptomatic disease treatment
 
 Kidney disease death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -1148,7 +1148,7 @@ Kidney disease death rate
 
 Liver disease death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -1161,7 +1161,7 @@ Liver disease death rate
 
 Return on investment for defense lobbying ($1,813 returned per $1 spent)
 
-**Source**: [defense-lobbying-roi](../references.qmd#defense-lobbying-roi)
+**Source**: [ReferenceID.MILITARY_LOBBYING_RETURNS](https://warondisease.org/knowledge/references.html#military-lobbying-returns)
 
 *✓ High confidence*
 
@@ -1174,7 +1174,7 @@ Return on investment for defense lobbying ($1,813 returned per $1 spent)
 
 Maximum annual lobbyist salary range
 
-**Source**: [average-lobbyist-salary](../references.qmd#average-lobbyist-salary)
+**Source**: [ReferenceID.LOBBYIST_STATISTICS_DC](https://warondisease.org/knowledge/references.html#lobbyist-statistics-dc)
 
 *✓ High confidence*
 
@@ -1187,7 +1187,7 @@ Maximum annual lobbyist salary range
 
 Minimum annual lobbyist salary range
 
-**Source**: [average-lobbyist-salary](../references.qmd#average-lobbyist-salary)
+**Source**: [ReferenceID.LOBBYIST_STATISTICS_DC](https://warondisease.org/knowledge/references.html#lobbyist-statistics-dc)
 
 *✓ High confidence*
 
@@ -1200,7 +1200,7 @@ Minimum annual lobbyist salary range
 
 Typical annual lobbyist salary for comparison
 
-**Source**: [average-lobbyist-salary](../references.qmd#average-lobbyist-salary)
+**Source**: [ReferenceID.LOBBYIST_STATISTICS_DC](https://warondisease.org/knowledge/references.html#lobbyist-statistics-dc)
 
 *✓ High confidence*
 
@@ -1213,7 +1213,7 @@ Typical annual lobbyist salary for comparison
 
 Return on investment from measles (MMR) vaccination programs
 
-**Source**: [measles-vaccination-roi](../references.qmd#measles-vaccination-roi)
+**Source**: [ReferenceID.MEASLES_VACCINATION_ROI](https://warondisease.org/knowledge/references.html#measles-vaccination-roi)
 
 *✓ High confidence*
 
@@ -1226,7 +1226,7 @@ Return on investment from measles (MMR) vaccination programs
 
 Average hourly cost of medical facility room
 
-**Source**: [hospital-room-costs](../references.qmd#hospital-room-costs)
+**Source**: [hospital-room-costs](https://warondisease.org/knowledge/references.html#hospital-room-costs)
 
 *✓ High confidence*
 
@@ -1239,7 +1239,7 @@ Average hourly cost of medical facility room
 
 Annual mental health research grants total
 
-**Source**: [mental-health-research-funding](../references.qmd#mental-health-research-funding)
+**Source**: [ReferenceID.GLOBAL_MENTAL_HEALTH_RESEARCH_SPENDING_1_5B](https://warondisease.org/knowledge/references.html#global-mental-health-research-spending-1-5b)
 
 *✓ High confidence*
 
@@ -1252,7 +1252,7 @@ Annual mental health research grants total
 
 Annual productivity loss per capita from mental health issues (beyond treatment costs)
 
-**Source**: [mental-health-productivity-loss](../references.qmd#mental-health-productivity-loss)
+**Source**: [ReferenceID.MENTAL_HEALTH_BURDEN](https://warondisease.org/knowledge/references.html#mental-health-burden)
 
 *✓ High confidence*
 
@@ -1265,7 +1265,7 @@ Annual productivity loss per capita from mental health issues (beyond treatment 
 
 Other causes death rate per 100,000 population
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -1278,9 +1278,61 @@ Other causes death rate per 100,000 population
 
 Average cost per verified petition signature in 2024 US campaigns
 
-**Source**: [ballot-measure-signature-costs-2024](../references.qmd#ballot-measure-signature-costs-2024)
+**Source**: [ballot-measure-signature-costs-2024](https://warondisease.org/knowledge/references.html#ballot-measure-signature-costs-2024)
 
 *✓ High confidence • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pharma Drug Development Cost (Current System) {#sec-pharma_drug_development_cost_current}
+
+**Value**: $2.60B
+
+Average cost to develop one drug in current system
+
+**Source**: [ReferenceID.DRUG_DEVELOPMENT_COST](https://warondisease.org/knowledge/references.html#drug-development-cost)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pharma Average Drug Revenue (Current System) {#sec-pharma_drug_revenue_average_current}
+
+**Value**: $6.70B
+
+Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)
+
+**Source**: [pharma-drug-revenue-average](https://warondisease.org/knowledge/references.html#pharma-drug-revenue-average)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pharma ROI (Current System) {#sec-pharma_roi_current_system_pct}
+
+**Value**: 1.2%
+
+ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)
+
+**Source**: [pharma-roi-current](https://warondisease.org/knowledge/references.html#pharma-roi-current)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pharma Drug Success Rate (Current System) {#sec-pharma_success_rate_current_pct}
+
+**Value**: 10%
+
+Percentage of drugs that reach market in current system
+
+**Source**: [ReferenceID.DRUG_TRIAL_SUCCESS_RATE_12_PCT](https://warondisease.org/knowledge/references.html#drug-trial-success-rate-12-pct)
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1291,7 +1343,7 @@ Average cost per verified petition signature in 2024 US campaigns
 
 Phase I safety trial duration
 
-**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+**Source**: [ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021](https://warondisease.org/knowledge/references.html#bio-clinical-development-2021)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
@@ -1304,7 +1356,7 @@ Phase I safety trial duration
 
 Phase 3 trial total cost (maximum)
 
-**Source**: [phase-3-cost-per-trial](../references.qmd#phase-3-cost-per-trial)
+**Source**: [ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE](https://warondisease.org/knowledge/references.html#phase-3-cost-per-trial-range)
 
 *✓ High confidence*
 
@@ -1317,7 +1369,7 @@ Phase 3 trial total cost (maximum)
 
 Phase 3 trial total cost (minimum)
 
-**Source**: [phase-3-cost-per-trial](../references.qmd#phase-3-cost-per-trial)
+**Source**: [ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE](https://warondisease.org/knowledge/references.html#phase-3-cost-per-trial-range)
 
 *✓ High confidence*
 
@@ -1330,7 +1382,7 @@ Phase 3 trial total cost (minimum)
 
 Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs
 
-**Source**: [polio-vaccination-roi](../references.qmd#polio-vaccination-roi)
+**Source**: [ReferenceID.POLIO_VACCINATION_ROI](https://warondisease.org/knowledge/references.html#polio-vaccination-roi)
 
 *✓ High confidence*
 
@@ -1343,7 +1395,7 @@ Return on investment from sustaining polio vaccination assets and integrating in
 
 Conservative estimate of political success probability (10%)
 
-**Source**: [historical-treaty-adoption-rates](../references.qmd#historical-treaty-adoption-rates)
+**Source**: [ReferenceID.ICBL_OTTAWA_TREATY](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
 *~ Medium confidence*
 
@@ -1356,7 +1408,7 @@ Conservative estimate of political success probability (10%)
 
 Moderate estimate of political success probability (25%)
 
-**Source**: [historical-treaty-adoption-rates](../references.qmd#historical-treaty-adoption-rates)
+**Source**: [ReferenceID.ICBL_OTTAWA_TREATY](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
 *~ Medium confidence*
 
@@ -1369,7 +1421,7 @@ Moderate estimate of political success probability (25%)
 
 Optimistic estimate of political success probability (50%)
 
-**Source**: [historical-treaty-adoption-rates](../references.qmd#historical-treaty-adoption-rates)
+**Source**: [ReferenceID.ICBL_OTTAWA_TREATY](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
 *~ Medium confidence*
 
@@ -1382,7 +1434,7 @@ Optimistic estimate of political success probability (50%)
 
 Percentage military spending cut after WW2 (historical precedent)
 
-**Source**: [post-ww2-military-demobilization](../references.qmd#post-ww2-military-demobilization)
+**Source**: [ReferenceID.US_POST_WWII_MILITARY_SPENDING_CUT](https://warondisease.org/knowledge/references.html#us-post-wwii-military-spending-cut)
 
 *✓ High confidence*
 
@@ -1395,7 +1447,7 @@ Percentage military spending cut after WW2 (historical precedent)
 
 Annual productivity loss per affected employee (IBI 2024)
 
-**Source**: [chronic-illness-productivity-loss-ibi](../references.qmd#chronic-illness-productivity-loss-ibi)
+**Source**: [ReferenceID.CHRONIC_ILLNESS_WORKFORCE_PRODUCTIVITY_LOSS](https://warondisease.org/knowledge/references.html#chronic-illness-workforce-productivity-loss)
 
 *✓ High confidence*
 
@@ -1408,7 +1460,7 @@ Annual productivity loss per affected employee (IBI 2024)
 
 Total number of rare diseases globally
 
-**Source**: [95-pct-diseases-no-treatment](../references.qmd#95-pct-diseases-no-treatment)
+**Source**: [ReferenceID._95_PCT_DISEASES_NO_TREATMENT](https://warondisease.org/knowledge/references.html#95-pct-diseases-no-treatment)
 
 *✓ High confidence*
 
@@ -1421,7 +1473,7 @@ Total number of rare diseases globally
 
 Typical patient count for rare diseases
 
-**Source**: [rare-disease-prevalence](../references.qmd#rare-disease-prevalence)
+**Source**: [ReferenceID.RARE_DISEASE_PREVALENCE_400M](https://warondisease.org/knowledge/references.html#rare-disease-prevalence-400m)
 
 *✓ High confidence*
 
@@ -1434,7 +1486,7 @@ Typical patient count for rare diseases
 
 RECOVERY trial cost per patient
 
-**Source**: [recovery-trial-cost-per-patient](../references.qmd#recovery-trial-cost-per-patient)
+**Source**: [ReferenceID.RECOVERY_COST_500](https://warondisease.org/knowledge/references.html#recovery-cost-500)
 
 *✓ High confidence*
 
@@ -1447,7 +1499,7 @@ RECOVERY trial cost per patient
 
 Referral payment for early adopters (first 10M, motivated believers)
 
-**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+**Source**: [paypal-dropbox-referral-case-studies](https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies)
 
 *~ Medium confidence • Updated 2024*
 
@@ -1460,7 +1512,7 @@ Referral payment for early adopters (first 10M, motivated believers)
 
 Referral payment for laggards (200-280M, resistant)
 
-**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+**Source**: [paypal-dropbox-referral-case-studies](https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies)
 
 *? Low confidence • Updated 2024*
 
@@ -1473,7 +1525,7 @@ Referral payment for laggards (200-280M, resistant)
 
 Referral payment for late majority (100-200M, skeptics)
 
-**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+**Source**: [paypal-dropbox-referral-case-studies](https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies)
 
 *~ Medium confidence • Updated 2024*
 
@@ -1486,7 +1538,7 @@ Referral payment for late majority (100-200M, skeptics)
 
 Referral payment for mainstream adopters (10-100M, pragmatists)
 
-**Source**: [paypal-dropbox-referral-case-studies](../references.qmd#paypal-dropbox-referral-case-studies)
+**Source**: [paypal-dropbox-referral-case-studies](https://warondisease.org/knowledge/references.html#paypal-dropbox-referral-case-studies)
 
 *~ Medium confidence • Updated 2024*
 
@@ -1499,7 +1551,7 @@ Referral payment for mainstream adopters (10-100M, pragmatists)
 
 Average annual lost earning potential per refugee
 
-**Source**: [refugee-lost-earnings](../references.qmd#refugee-lost-earnings)
+**Source**: [ReferenceID.REFUGEE_LOST_EARNING_POTENTIAL](https://warondisease.org/knowledge/references.html#refugee-lost-earning-potential)
 
 *✓ High confidence*
 
@@ -1512,7 +1564,7 @@ Average annual lost earning potential per refugee
 
 Mean age of preventable death from regulatory delay
 
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+**Source**: [ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
 *~ Medium confidence • 📊 Peer-reviewed*
 
@@ -1525,7 +1577,7 @@ Mean age of preventable death from regulatory delay
 
 Pre-death suffering period for regulatory delay deaths (average years lived with untreated condition)
 
-**Source**: [who-gbd-2024](../references.qmd#who-gbd-2024)
+**Source**: [ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
 *~ Medium confidence • 📊 Peer-reviewed*
 
@@ -1538,7 +1590,7 @@ Pre-death suffering period for regulatory delay deaths (average years lived with
 
 Chronic respiratory disease death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -1551,7 +1603,7 @@ Chronic respiratory disease death rate
 
 Return on investment from smallpox eradication campaign
 
-**Source**: [smallpox-eradication-roi](../references.qmd#smallpox-eradication-roi)
+**Source**: [ReferenceID.SMALLPOX_ERADICATION_ROI](https://warondisease.org/knowledge/references.html#smallpox-eradication-roi)
 
 *✓ High confidence*
 
@@ -1564,7 +1616,7 @@ Return on investment from smallpox eradication campaign
 
 Maximum monthly cost for software tools/services
 
-**Source**: [software-pricing-market-rates](../references.qmd#software-pricing-market-rates)
+**Source**: [software-pricing-market-rates](https://warondisease.org/knowledge/references.html#software-pricing-market-rates)
 
 *✓ High confidence*
 
@@ -1577,7 +1629,7 @@ Maximum monthly cost for software tools/services
 
 Minimum monthly cost for software tools/services
 
-**Source**: [software-pricing-market-rates](../references.qmd#software-pricing-market-rates)
+**Source**: [software-pricing-market-rates](https://warondisease.org/knowledge/references.html#software-pricing-market-rates)
 
 *✓ High confidence*
 
@@ -1590,7 +1642,7 @@ Minimum monthly cost for software tools/services
 
 Standard economic value per QALY
 
-**Source**: [standard-qaly-value](../references.qmd#standard-qaly-value)
+**Source**: [ReferenceID.QALY_VALUE](https://warondisease.org/knowledge/references.html#qaly-value)
 
 *✓ High confidence*
 
@@ -1603,7 +1655,7 @@ Standard economic value per QALY
 
 Standard QALYs per life saved (WHO life tables)
 
-**Source**: [who-life-tables-qalys-per-life](../references.qmd#who-life-tables-qalys-per-life)
+**Source**: [ReferenceID.QALY_VALUE](https://warondisease.org/knowledge/references.html#qaly-value)
 
 *✓ High confidence*
 
@@ -1616,7 +1668,7 @@ Standard QALYs per life saved (WHO life tables)
 
 Annual cost of sugar subsidies per person
 
-**Source**: [agricultural-subsidies](../references.qmd#agricultural-subsidies)
+**Source**: [ReferenceID.SUGAR_SUBSIDIES_COST](https://warondisease.org/knowledge/references.html#sugar-subsidies-cost)
 
 *✓ High confidence*
 
@@ -1629,7 +1681,7 @@ Annual cost of sugar subsidies per person
 
 Switzerland's defense spending as percentage of GDP (0.7%)
 
-**Source**: [switzerland-defense-spending-gdp](../references.qmd#switzerland-defense-spending-gdp)
+**Source**: [ReferenceID.SWISS_MILITARY_BUDGET_0_7_PCT_GDP](https://warondisease.org/knowledge/references.html#swiss-military-budget-0-7-pct-gdp)
 
 *✓ High confidence*
 
@@ -1642,7 +1694,7 @@ Switzerland's defense spending as percentage of GDP (0.7%)
 
 Switzerland GDP per capita
 
-**Source**: [switzerland-gdp-per-capita](../references.qmd#switzerland-gdp-per-capita)
+**Source**: [ReferenceID.SWISS_VS_US_GDP_PER_CAPITA](https://warondisease.org/knowledge/references.html#swiss-vs-us-gdp-per-capita)
 
 *✓ High confidence*
 
@@ -1655,7 +1707,7 @@ Switzerland GDP per capita
 
 Deaths from 9/11 terrorist attacks
 
-**Source**: [911-deaths](../references.qmd#911-deaths)
+**Source**: [ReferenceID.CHANCE_OF_DYING_FROM_TERRORISM_1_IN_30M](https://warondisease.org/knowledge/references.html#chance-of-dying-from-terrorism-1-in-30m)
 
 *✓ High confidence*
 
@@ -1668,7 +1720,7 @@ Deaths from 9/11 terrorist attacks
 
 Overall age-adjusted death rate
 
-**Source**: [cdc-leading-causes-death](../references.qmd#cdc-leading-causes-death)
+**Source**: [ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP](https://warondisease.org/knowledge/references.html#leading-causes-of-death-by-age-group)
 
 *✓ High confidence*
 
@@ -1681,7 +1733,7 @@ Overall age-adjusted death rate
 
 Total life expectancy gain from all medical advances 1900-2000 (vaccines + hygiene + antibiotics)
 
-**Source**: [life-expectancy-gains-medical-advances](../references.qmd#life-expectancy-gains-medical-advances)
+**Source**: [life-expectancy-gains-medical-advances](https://warondisease.org/knowledge/references.html#life-expectancy-gains-medical-advances)
 
 *✓ High confidence*
 
@@ -1694,7 +1746,7 @@ Total life expectancy gain from all medical advances 1900-2000 (vaccines + hygie
 
 Typical Phase 3 trial size
 
-**Source**: [phase-3-trial-participant-numbers](../references.qmd#phase-3-trial-participant-numbers)
+**Source**: [ReferenceID.PHASE_3_PARTICIPANT_NUMBERS](https://warondisease.org/knowledge/references.html#phase-3-participant-numbers)
 
 *✓ High confidence*
 
@@ -1707,7 +1759,7 @@ Typical Phase 3 trial size
 
 Phase 2 cost per patient (high estimate)
 
-**Source**: [clinical-trial-cost-per-patient](../references.qmd#clinical-trial-cost-per-patient)
+**Source**: [ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT](https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient)
 
 *✓ High confidence*
 
@@ -1720,7 +1772,7 @@ Phase 2 cost per patient (high estimate)
 
 Phase 2 cost per patient (low estimate)
 
-**Source**: [clinical-trial-cost-per-patient](../references.qmd#clinical-trial-cost-per-patient)
+**Source**: [ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT](https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient)
 
 *✓ High confidence*
 
@@ -1733,7 +1785,7 @@ Phase 2 cost per patient (low estimate)
 
 Phase 3 cost per patient (median)
 
-**Source**: [phase-3-cost-per-patient](../references.qmd#phase-3-cost-per-patient)
+**Source**: [ReferenceID.PHASE_3_COST_PER_PATIENT_113K](https://warondisease.org/knowledge/references.html#phase-3-cost-per-patient-113k)
 
 *✓ High confidence*
 
@@ -1746,7 +1798,7 @@ Phase 3 cost per patient (median)
 
 Example Phase 3 trial cost per patient ($48K)
 
-**Source**: [clinical-trial-cost-per-patient](../references.qmd#clinical-trial-cost-per-patient)
+**Source**: [ReferenceID.CLINICAL_TRIAL_COST_PER_PATIENT](https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient)
 
 *✓ High confidence*
 
@@ -1759,7 +1811,7 @@ Example Phase 3 trial cost per patient ($48K)
 
 FDA cited Phase 3 cost per patient ($41K)
 
-**Source**: [fda-clinical-trial-costs](../references.qmd#fda-clinical-trial-costs)
+**Source**: [ReferenceID.TRIAL_COSTS_FDA_STUDY](https://warondisease.org/knowledge/references.html#trial-costs-fda-study)
 
 *✓ High confidence*
 
@@ -1772,7 +1824,7 @@ FDA cited Phase 3 cost per patient ($41K)
 
 Typical Phase 2 trial size
 
-**Source**: [phase-2-trial-participant-numbers](../references.qmd#phase-2-trial-participant-numbers)
+**Source**: [ReferenceID.PHASE_2_PARTICIPANT_NUMBERS](https://warondisease.org/knowledge/references.html#phase-2-participant-numbers)
 
 *✓ High confidence*
 
@@ -1785,7 +1837,7 @@ Typical Phase 2 trial size
 
 Traditional FDA drug development timeline
 
-**Source**: [fda-drug-approval-timeline](../references.qmd#fda-drug-approval-timeline)
+**Source**: [ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS](https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years)
 
 *✓ High confidence*
 
@@ -1798,7 +1850,7 @@ Traditional FDA drug development timeline
 
 Cost reduction factor demonstrated by RECOVERY trial
 
-**Source**: [recovery-trial-82x-cost-reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+**Source**: [ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION](https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction)
 
 *✓ High confidence*
 
@@ -1811,9 +1863,22 @@ Cost reduction factor demonstrated by RECOVERY trial
 
 Typical CEO hourly rate
 
-**Source**: [ceo-compensation](../references.qmd#ceo-compensation)
+**Source**: [ceo-compensation](https://warondisease.org/knowledge/references.html#ceo-compensation)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## US Alzheimer's Annual Cost {#sec-us_alzheimers_annual_cost}
+
+**Value**: $355B
+
+Annual US cost of Alzheimer's disease (direct and indirect)
+
+**Source**: [ReferenceID.DISEASE_COST_ALZHEIMERS_1300B](https://warondisease.org/knowledge/references.html#disease-cost-alzheimers-1300b)
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1824,9 +1889,22 @@ Typical CEO hourly rate
 
 Annual US pharmaceutical spending
 
-**Source**: [us-drug-spending-annual](../references.qmd#us-drug-spending-annual)
+**Source**: [ReferenceID.US_DRUG_SPEND](https://warondisease.org/knowledge/references.html#us-drug-spend)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## US Cancer Annual Cost {#sec-us_cancer_annual_cost}
+
+**Value**: $208B
+
+Annual US cost of cancer (direct and indirect)
+
+**Source**: [ReferenceID.DISEASE_COST_CANCER_1800B](https://warondisease.org/knowledge/references.html#disease-cost-cancer-1800b)
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1837,7 +1915,7 @@ Annual US pharmaceutical spending
 
 US annual chronic disease spending
 
-**Source**: [us-chronic-disease-spending](../references.qmd#us-chronic-disease-spending)
+**Source**: [us-chronic-disease-spending](https://warondisease.org/knowledge/references.html#us-chronic-disease-spending)
 
 *✓ High confidence*
 
@@ -1850,9 +1928,22 @@ US annual chronic disease spending
 
 US defense budget in 2024
 
-**Source**: [us-defense-budget-2024](../references.qmd#us-defense-budget-2024)
+**Source**: [ReferenceID.US_MILITARY_BUDGET_800B](https://warondisease.org/knowledge/references.html#us-military-budget-800b)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## US Diabetes Annual Cost {#sec-us_diabetes_annual_cost}
+
+**Value**: $327B
+
+Annual US cost of diabetes (direct and indirect)
+
+**Source**: [ReferenceID.DISEASE_COST_DIABETES_1500B](https://warondisease.org/knowledge/references.html#disease-cost-diabetes-1500b)
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1863,7 +1954,7 @@ US defense budget in 2024
 
 US Department of Transportation value of statistical life
 
-**Source**: [us-dot-value-statistical-life](../references.qmd#us-dot-value-statistical-life)
+**Source**: [ReferenceID.DOT_VSL_13_6M](https://warondisease.org/knowledge/references.html#dot-vsl-13-6m)
 
 *✓ High confidence*
 
@@ -1876,9 +1967,22 @@ US Department of Transportation value of statistical life
 
 US drug prices compared to peer countries multiplier
 
-**Source**: [us-drug-prices-vs-peer-countries](../references.qmd#us-drug-prices-vs-peer-countries)
+**Source**: [ReferenceID.US_DRUG_PRICES_VS_PEER_COUNTRIES](https://warondisease.org/knowledge/references.html#us-drug-prices-vs-peer-countries)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## US Heart Disease Annual Cost {#sec-us_heart_disease_annual_cost}
+
+**Value**: $363B
+
+Annual US cost of heart disease and stroke (direct and indirect)
+
+**Source**: [ReferenceID.DISEASE_COST_HEART_DISEASE_2100B](https://warondisease.org/knowledge/references.html#disease-cost-heart-disease-2100b)
+
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
@@ -1889,7 +1993,7 @@ US drug prices compared to peer countries multiplier
 
 US median salary in 2024
 
-**Source**: [us-median-salary-2024](../references.qmd#us-median-salary-2024)
+**Source**: [us-median-salary-2024](https://warondisease.org/knowledge/references.html#us-median-salary-2024)
 
 *✓ High confidence*
 
@@ -1902,7 +2006,7 @@ US median salary in 2024
 
 US mental health costs (treatment + productivity loss)
 
-**Source**: [us-mental-health-cost](../references.qmd#us-mental-health-cost)
+**Source**: [ReferenceID.MENTAL_HEALTH_BURDEN](https://warondisease.org/knowledge/references.html#mental-health-burden)
 
 *✓ High confidence*
 
@@ -1915,7 +2019,7 @@ US mental health costs (treatment + productivity loss)
 
 US military spending as percentage of GDP (2024)
 
-**Source**: [us-military-budget-3-5-pct-gdp](../references.qmd#us-military-budget-3-5-pct-gdp)
+**Source**: [ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP](https://warondisease.org/knowledge/references.html#us-military-budget-3-5-pct-gdp)
 
 *✓ High confidence*
 
@@ -1928,7 +2032,7 @@ US military spending as percentage of GDP (2024)
 
 US population in 2024
 
-**Source**: [us-population-335m](../references.qmd#us-population-335m)
+**Source**: [ReferenceID.US_VOTER_POPULATION](https://warondisease.org/knowledge/references.html#us-voter-population)
 
 *✓ High confidence*
 
@@ -1941,7 +2045,7 @@ US population in 2024
 
 Value of Statistical Life (conservative estimate)
 
-**Source**: [dot-vsl-13-6m](../references.qmd#dot-vsl-13-6m)
+**Source**: [ReferenceID.DOT_VSL_13_6M](https://warondisease.org/knowledge/references.html#dot-vsl-13-6m)
 
 *✓ High confidence*
 
@@ -1954,7 +2058,7 @@ Value of Statistical Life (conservative estimate)
 
 Identity verification completion rate with good UX (fintech data)
 
-**Source**: [fintech-identity-verification-conversion-2024](../references.qmd#fintech-identity-verification-conversion-2024)
+**Source**: [fintech-identity-verification-conversion-2024](https://warondisease.org/knowledge/references.html#fintech-identity-verification-conversion-2024)
 
 *✓ High confidence • Updated 2024*
 
@@ -1967,7 +2071,7 @@ Identity verification completion rate with good UX (fintech data)
 
 Identity verification completion rate with poor UX
 
-**Source**: [fintech-identity-verification-conversion-2024](../references.qmd#fintech-identity-verification-conversion-2024)
+**Source**: [fintech-identity-verification-conversion-2024](https://warondisease.org/knowledge/references.html#fintech-identity-verification-conversion-2024)
 
 *~ Medium confidence • Updated 2024*
 
@@ -1980,7 +2084,7 @@ Identity verification completion rate with poor UX
 
 EPA value of statistical life
 
-**Source**: [epa-value-statistical-life](../references.qmd#epa-value-statistical-life)
+**Source**: [ReferenceID.EPA_VSL_9_6M](https://warondisease.org/knowledge/references.html#epa-vsl-9-6m)
 
 *✓ High confidence*
 
@@ -1993,7 +2097,7 @@ EPA value of statistical life
 
 Return on investment from water fluoridation programs
 
-**Source**: [water-fluoridation-roi](../references.qmd#water-fluoridation-roi)
+**Source**: [ReferenceID.CLEAN_WATER_SANITATION_ROI](https://warondisease.org/knowledge/references.html#clean-water-sanitation-roi)
 
 *✓ High confidence*
 
@@ -2006,7 +2110,7 @@ Return on investment from water fluoridation programs
 
 Workforce with at least one chronic condition (78.4%)
 
-**Source**: [chronic-illness-workforce-productivity-loss](../references.qmd#chronic-illness-workforce-productivity-loss)
+**Source**: [chronic-illness-workforce-productivity-loss](https://warondisease.org/knowledge/references.html#chronic-illness-workforce-productivity-loss)
 
 *✓ High confidence*
 
@@ -2019,7 +2123,7 @@ Workforce with at least one chronic condition (78.4%)
 
 Percentage of workforce experiencing productivity loss from chronic illness (28%)
 
-**Source**: [chronic-illness-workforce-productivity-loss](../references.qmd#chronic-illness-workforce-productivity-loss)
+**Source**: [chronic-illness-workforce-productivity-loss](https://warondisease.org/knowledge/references.html#chronic-illness-workforce-productivity-loss)
 
 *✓ High confidence*
 
@@ -2032,7 +2136,7 @@ Percentage of workforce experiencing productivity loss from chronic illness (28%
 
 World War II war bond return percentage (4%)
 
-**Source**: [ww2-war-bonds-return](../references.qmd#ww2-war-bonds-return)
+**Source**: [ReferenceID.WWII_WAR_BONDS](https://warondisease.org/knowledge/references.html#wwii-war-bonds)
 
 *✓ High confidence*
 
@@ -4196,7 +4300,7 @@ Total economic burden of disease globally (medical + productivity + mortality)
 
 *Formula*: `MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE`
 
-**Methodology**: [disease-economic-burden-109t](#disease-economic-burden-109t)
+**Methodology**: [ReferenceID.DISEASE_ECONOMIC_BURDEN_109T](#ReferenceID.DISEASE_ECONOMIC_BURDEN_109T)
 
 *✓ High confidence*
 
@@ -4677,7 +4781,7 @@ $$
 PD_{fiscal} = \$27.18B
 $$
 
-**Methodology**: [SIPRI Military Spending Database](#sipri-2024-spending)
+**Methodology**: [SIPRI Military Spending Database](#ReferenceID.SIPRI_2024_SPENDING)
 
 *✓ High confidence*
 
@@ -5879,19 +5983,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance {#sec-treaty_campaign_budget_lobbying}
-
-**Value**: $650M
-
-Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Campaign Budget for Mass Mobilization {#sec-treaty_campaign_budget_mass_bribery}
 
 **Value**: $140M
@@ -5899,32 +5990,6 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 Campaign budget for mass mobilization (voting bloc build)
 
 **Methodology**: [../strategy/roadmap.qmd#campaign-budget](../strategy/roadmap.qmd#campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance {#sec-treaty_campaign_budget_referendum}
-
-**Value**: $300M
-
-Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Reserve Fund / Contingency Buffer {#sec-treaty_campaign_budget_reserve}
-
-**Value**: $50M
-
-Reserve fund / contingency buffer
-
-**Methodology**: [../appendix/fundraising-strategy.qmd#campaign-budget-breakdown](../appendix/fundraising-strategy.qmd#campaign-budget-breakdown)
 
 *✓ High confidence*
 
@@ -5979,19 +6044,6 @@ Maximum cost per vote for mass mobilization campaign
 Minimum cost per vote for mass mobilization campaign
 
 **Methodology**: [../strategy/roadmap.qmd#vote-acquisition-cost](../strategy/roadmap.qmd#vote-acquisition-cost)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Treaty Campaign Duration {#sec-treaty_campaign_duration_years}
-
-**Value**: 4
-
-Treaty campaign duration (3-5 year range, using midpoint)
-
-**Methodology**: [../strategy/roadmap.qmd](../strategy/roadmap.qmd)
 
 *✓ High confidence*
 
@@ -6134,7 +6186,11 @@ $$
 
 **Value**: 280M
 
-Target voting bloc size for campaign
+Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
+
+$$
+VotingBloc = 8.0B \times 0.035 = 280M
+$$
 
 **Methodology**: [../strategy/roadmap.qmd#voting-bloc](../strategy/roadmap.qmd#voting-bloc)
 
@@ -6488,6 +6544,23 @@ Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#risk-analysis](../appendix/regulatory-mortality-analysis.qmd#risk-analysis)
 
 *? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## US Major Diseases Total Annual Cost {#sec-us_major_diseases_total_annual_cost}
+
+**Value**: $1.25T
+
+Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)
+
+$$
+Total = \$327B + \$355B + \$363B + \$208B = \$1.253T
+$$
+
+**Methodology**: [../solution/aligning-incentives.qmd#insurance-companies](../solution/aligning-incentives.qmd#insurance-companies)
+
+*✓ High confidence*
 
 :::
 
@@ -7039,6 +7112,50 @@ Standard time horizon for NPV analysis
 **Value**: $27.2B
 
 Annual funding from 1% of global military spending redirected to DIH
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+## Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance {#sec-treaty_campaign_budget_lobbying}
+
+**Value**: $650M
+
+Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+## Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance {#sec-treaty_campaign_budget_referendum}
+
+**Value**: $300M
+
+Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+## Reserve Fund / Contingency Buffer {#sec-treaty_campaign_budget_reserve}
+
+**Value**: $50M
+
+Reserve fund / contingency buffer
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+## Treaty Campaign Duration {#sec-treaty_campaign_duration_years}
+
+**Value**: 4
+
+Treaty campaign duration (3-5 year range, using midpoint)
 
 *Core definition*
 

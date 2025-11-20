@@ -3840,6 +3840,19 @@ from dih_models.parameters import *
   > Distribution highly skewed: top 25 drugs (7%) accounted for 38% of total revenue ($2.1T of $5.5T)
   > — [Value in Health: Sales Revenues for New Therapeutic Agents](https://www.valueinhealthjournal.com/article/S1098-3015(24)02754-2/fulltext) | [ScienceDirect: Sales Revenues FDA Drugs](https://www.sciencedirect.com/science/article/pii/S1098301524027542)
 
+<a id="pharma-roi-current"></a>
+
+- **Pharmaceutical R&D return on investment (ROI)**
+  > Deloitte's annual study of top 20 pharma companies by R&D spend (2010-2024):
+  > 2024 ROI: 5.9% (second year of growth after decade of decline)
+  > 2023 ROI: ~4.3% (estimated from trend)
+  > 2022 ROI: 1.2% (historic low since study began, 13-year low)
+  > 2021 ROI: 6.8% (record high, inflated by COVID-19 vaccines/treatments)
+  > Long-term trend: Declining for over a decade before 2023 recovery
+  > Average R&D cost per asset: $2.3B (2022), $2.23B (2024)
+  > Key insight: Returns barely profitable (1.2-5.9% range), far below typical corporate ROI targets (15-20%)
+  > — [Deloitte: Measuring Pharmaceutical Innovation 2025](https://www.deloitte.com/ch/en/Industries/life-sciences-health-care/research/measuring-return-from-pharmaceutical-innovation.html) | [Deloitte 2023: Pharma R&D ROI Falls](https://www.prnewswire.com/news-releases/deloittes-13th-annual-pharmaceutical-innovation-report-pharma-rd-return-on-investment-falls-in-post-pandemic-market-301738807.html) | [HIT Consultant: 13-Year Low](https://hitconsultant.net/2023/02/16/pharma-rd-roi-falls-to-lowest-level-in-13-years/)
+
 <a id="phase-1-cost-per-patient-137k"></a>
 
 - **Phase 1 cost per patient**
@@ -5280,3 +5293,72 @@ from dih_models.parameters import *
 - **Poll on belief in young-Earth creationism**
   > "37-40% of U.S. adults believe that God created humans in their present form within the last 10,000 years (Gallup polls 2019-2022). The percentage has fluctuated between 40-47% since 1982. One analysis suggests the hard core of young-earth creationists represents at most one in ten Americans (31M people)."
   > — Gallup, [40% of Americans Believe in Creationism](https://news.gallup.com/poll/261680/americans-believe-creationism.aspx) | NCSE, [How Many Young-Earth Creationists?](https://ncse.ngo/just-how-many-young-earth-creationists-are-there-us)
+
+<a id="average-us-hourly-wage"></a>
+
+- **Average US hourly wage**
+  > Mean: $32.66 | Median: $23.80 (May 2024)
+  > — BLS, [Occupational Employment and Wages May 2024](https://www.bls.gov/news.release/pdf/ocwage.pdf)
+
+<a id="us-median-salary-2024"></a>
+
+- **US median salary**
+  > Personal income: $45,140 | Household: $83,730 (2024)
+  > — Census Bureau, [Income in the United States: 2024](https://www.census.gov/library/publications/2025/demo/p60-286.html)
+
+<a id="ceo-compensation"></a>
+
+- **CEO compensation**
+  > S&P 500 average: $18.9M (2024) | ~$9,087/hour | 285:1 CEO-to-worker ratio
+  > — EPI, [CEO Pay 2024](https://www.epi.org/blog/ceo-pay-increased-in-2024-and-is-now-281-times-that-of-the-typical-worker-new-epi-landing-page-has-all-the-details/)
+
+<a id="hospital-room-costs"></a>
+
+- **Hospital room costs**
+  > Average: $3,025/day ($126/hour) in 2024
+  > — [Average Hospital Stay Costs 2025](https://nchstats.com/average-cost-of-hospital-stays-in-us/)
+
+<a id="average-reading-speed"></a>
+
+- **Average reading speed**
+  > Adults: ~250 words/minute (silent reading)
+  > — Educational psychology literature
+
+<a id="clinical-trial-eligibility-rate"></a>
+
+- **Clinical trial eligibility**
+  > Ineligibility: 18.5-25.4% | 55% agree when offered
+  > — [Applied Clinical Trials](https://www.appliedclinicaltrialsonline.com/view/rebooting-the-statistic-that-5-of-eligible-patients-participate-in-clinical-trials)
+
+<a id="clinical-trial-abandonment-rate"></a>
+
+- **Clinical trial abandonment**
+  > Average: ~10% abandoned before completion
+  > — Industry estimates
+
+<a id="clinical-trial-completion-rate"></a>
+
+- **Clinical trial completion**
+  > Average: ~85-90% reach completion
+  > — Industry estimates
+
+<a id="global-trial-participant-capacity"></a>
+
+- **Global trial capacity**
+  > ~5-10M participant slots annually
+  > — Derived from ClinicalTrials.gov data
+
+<a id="software-pricing-market-rates"></a>
+
+- **Software pricing**
+  > SaaS: $10-500/month/user | Enterprise: $100-10,000/month
+  > — Market rate estimates
+
+<a id="childhood-vaccination-economic-benefits"></a>
+
+- **Childhood vaccination economic benefits**
+  > US programs (1994-2023): $540B direct savings, $2.7T societal savings (~$18B/year direct, ~$90B/year societal)
+  > Global (2001-2020): $820B value for 10 diseases in 73 countries (~$41B/year)
+  > ROI: $11 return per $1 invested
+  > Measles vaccination alone saved 93.7M lives (61% of 154M total) over 50 years (1974-2024)
+  > — CDC MMWR, [Childhood Immunizations 1994-2023](https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm) | The Lancet, [50 Years of Expanded Programme on Immunization](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00850-X/fulltext)

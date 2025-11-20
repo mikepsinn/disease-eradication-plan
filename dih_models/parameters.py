@@ -3030,7 +3030,7 @@ MEASLES_VACCINATION_ROI = Parameter(
 
 CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
     15_000_000_000,
-    source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
+    source_ref="childhood-vaccination-economic-benefits",  # Will use ReferenceID enum after regeneration
     source_type="external",
     description="Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)",
     display_name="Estimated Annual Global Economic Benefit from Childhood Vaccination Programs",
@@ -7699,16 +7699,15 @@ PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(
 )
 
 PHARMA_ROI_CURRENT_SYSTEM_PCT = Parameter(
-    (PHARMA_DRUG_REVENUE_AVERAGE_CURRENT - PHARMA_DRUG_DEVELOPMENT_COST_CURRENT) / PHARMA_DRUG_DEVELOPMENT_COST_CURRENT,
-    source_ref="/knowledge/solution/aligning-incentives.qmd#pharma",
-    source_type="calculated",
-    description="ROI for drug development in current system (negative)",
+    0.012,
+    source_ref="pharma-roi-current",
+    source_type="external",
+    description="ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)",
     display_name="Pharma ROI (Current System)",
     unit="percentage",
-    formula="(REVENUE - COST) / COST",
-    latex=r"ROI_{current} = (\$1B - \$2.6B) / \$2.6B = -61.5\%",
-    confidence="medium",
-    keywords=["pharma", "roi", "current", "system", "loss"]
+    confidence="high",
+    peer_reviewed=True,
+    keywords=["pharma", "roi", "current", "system", "barely profitable", "low returns"]
 )
 
 # NOTE: DIH system doesn't magically increase drug efficacy success rates

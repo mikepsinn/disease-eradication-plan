@@ -164,7 +164,7 @@ DIH model (costs eliminated):
 - Development cost: {{< var pharma_drug_development_cost_current >}}
 - Success rate: {{< var pharma_success_rate_current_pct >}} (90% fail)
 - Average revenue per success: {{< var pharma_drug_revenue_average_current >}}
-- **ROI: {{< var pharma_roi_current_system_pct >}}** (LOSS!)
+- **ROI: {{< var pharma_roi_current_system_pct >}}** (Barely profitable!)
 
 **New DIH System - Cost Elimination:**
 

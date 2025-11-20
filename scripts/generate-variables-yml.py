@@ -456,17 +456,25 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "",
     is_definition = source_type_str == "definition"
 
     if has_source:
+        # Convert ReferenceID enum to string value
+        source_ref_value = value.source_ref
+        if hasattr(source_ref_value, 'value'):
+            # It's an enum, get the actual string value
+            source_ref_value = source_ref_value.value
+        else:
+            # Already a string
+            source_ref_value = str(source_ref_value)
+
         # Determine link destination based on source type
         if source_type_str == "external":
             # Link to citation in references.html (full URL)
-            href = f"https://warondisease.org/knowledge/references.html#{value.source_ref}"
+            href = f"https://warondisease.org/knowledge/references.html#{source_ref_value}"
             link_text = "View source"
         else:
             # Link to calculation/methodology page (ensure absolute path)
-            source_ref = value.source_ref
-            if not source_ref.startswith("/"):
-                source_ref = f"/{source_ref}"
-            href = source_ref
+            if not source_ref_value.startswith("/"):
+                source_ref_value = f"/{source_ref_value}"
+            href = source_ref_value
             link_text = "View calculation"
 
         # Build tooltip from Parameter metadata with credibility indicators
@@ -510,7 +518,7 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "",
         tooltip = " | ".join(tooltip_parts)
 
         # Build data attributes for CSS/JS customization
-        data_attrs = f'data-source-ref="{value.source_ref}" data-source-type="{source_type_str}"'
+        data_attrs = f'data-source-ref="{source_ref_value}" data-source-type="{source_type_str}"'
         if hasattr(value, "peer_reviewed") and value.peer_reviewed:
             data_attrs += ' data-peer-reviewed="true"'
         if hasattr(value, "confidence") and value.confidence:
@@ -522,7 +530,7 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "",
         # Add Quarto citation inline for external peer-reviewed sources (if requested)
         if include_citation and source_type_str == "external":
             if hasattr(value, "peer_reviewed") and value.peer_reviewed:
-                html += f' [@{value.source_ref}]'
+                html += f' [@{source_ref_value}]'
     elif is_definition:
         # Core definition: show value with tooltip but no link
         tooltip_parts = []
@@ -730,7 +738,11 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             # Source citation
             if hasattr(value, "source_ref") and value.source_ref:
                 source_ref = value.source_ref
-                content.append(f"**Source**: [{source_ref}](https://warondisease.org/knowledge/references.html#{source_ref})")
+                # Convert ReferenceID enum to string value for URL
+                source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
+                # Display enum name if it's an enum, otherwise just the string
+                display_ref = str(source_ref) if hasattr(source_ref, 'value') else source_ref
+                content.append(f"**Source**: [{display_ref}](https://warondisease.org/knowledge/references.html#{source_ref_str})")
                 content.append("")
 
             # Confidence and metadata - cleaner formatting
@@ -909,7 +921,9 @@ def parse_references_qmd(references_path: Path) -> set:
     """
     Parse knowledge/references.qmd and extract all reference IDs.
 
-    Returns a set of all anchor IDs defined in the file.
+    Returns a set of all anchor IDs defined in the file, excluding internal
+    document references (those containing '/' or '.qmd').
+
     Example: <a id="166-billion-compounds"></a> -> "166-billion-compounds"
     """
     if not references_path.exists():
@@ -923,7 +937,11 @@ def parse_references_qmd(references_path: Path) -> set:
     pattern = r'<a\s+id="([^"]+)"\s*></a>'
     matches = re.findall(pattern, content)
 
-    return set(matches)
+    # Filter out internal document references (containing / or .qmd)
+    # These are internal links, not external citations
+    external_refs = {ref for ref in matches if '/' not in ref and '.qmd' not in ref}
+
+    return external_refs
 
 
 def sanitize_bibtex_key(key: str) -> str:
@@ -1053,12 +1071,17 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     print()
 
 
-def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
+def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None):
     """
     Generate references.bib BibTeX file from external parameters.
 
     Extracts unique citations from parameters with source_type="external"
     and creates BibTeX entries for LaTeX submissions.
+
+    Args:
+        parameters: Dict of parameter metadata
+        output_path: Path to write references.bib
+        available_refs: Set of valid reference IDs from references.qmd (optional)
     """
     # Collect unique source_refs from external parameters
     citations = set()
@@ -1068,7 +1091,24 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
             source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
             if source_type_str == "external":
                 if hasattr(value, "source_ref") and value.source_ref:
-                    citations.add(value.source_ref)
+                    # Convert ReferenceID enum to string value
+                    source_ref = value.source_ref
+                    if hasattr(source_ref, 'value'):
+                        # It's an enum, get the actual string value
+                        source_ref = source_ref.value
+                    else:
+                        # It's already a string
+                        source_ref = str(source_ref)
+
+                    # Skip internal document references (contain / or .qmd)
+                    if '/' in source_ref or '.qmd' in source_ref:
+                        continue
+
+                    # Optionally skip missing references
+                    if available_refs and source_ref not in available_refs:
+                        continue
+
+                    citations.add(source_ref)
 
     # Generate BibTeX entries
     # Note: In a production system, you'd want to fetch actual BibTeX data
@@ -1085,6 +1125,7 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path):
     content.append("")
 
     for citation_key in sorted(citations):
+        # citation_key is now guaranteed to be a clean string (not enum, not internal ref)
         # Sanitize citation key for BibTeX (remove /, #, etc.)
         sanitized_key = sanitize_bibtex_key(citation_key)
 
@@ -1239,10 +1280,10 @@ def main():
     generate_parameters_qmd(parameters, qmd_output)
     print()
 
-    # Generate references.bib
+    # Generate references.bib (only include valid external references)
     print("[*] Generating references.bib...")
     bib_output = project_root / "references.bib"
-    generate_bibtex(parameters, bib_output)
+    generate_bibtex(parameters, bib_output, available_refs=available_refs)
     print()
 
     # Optionally inject citations
