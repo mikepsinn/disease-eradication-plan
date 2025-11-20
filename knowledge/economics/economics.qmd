@@ -1492,25 +1492,6 @@ New barrier: "Click button"
 
 You have 240 times more willing participants than current trials use. The bottleneck isn't human willingness. It's systemic stupidity.
 
-## The "But We Might Run Out of Money" Problem
-
-**What could go wrong**: Insufficient funding to run the campaign and build the system.
-
-**Why this actually won't happen**:
-
-The campaign needs {{< var treaty_campaign_total_cost >}} to convince [280M humans](../references.qmd#3-5-rule) ({{< var global_population_activism_threshold_pct >}} {{< var global_population_activism_threshold_pct_cite >}} of global population) to click "yes" on a website.
-
-That's $3.57 per person. Less than a Starbucks latte. To end war and disease.
-
-Once the treaty passes, it generates {{< var treaty_annual_funding >}} annually. Every year. Forever. This is more money than 73% of countries have in their entire GDP.
-
-The funding doesn't come from charity or begging donors. It comes from redirecting existing government spending that's already allocated. The money exists. You're just changing which column it goes into.
-
-Traditional charity problem: Finite donors, infinite need
-This system: Redirects existing government budgets from military to medical research, eliminating dependence on charitable fundraising
-
-See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for the complete sensitivity analysis showing this works even when everything goes wrong.
-
 ## Who's Actually In Charge (Patients Edition)
 
 The Decentralized Institutes of Health puts patients in control through trial participation, not committee votes.
