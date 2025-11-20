@@ -27,7 +27,7 @@ disease_total = disease_medical + disease_productivity + disease_lives  # $109.1
 
 # Cure research spending
 
-cure_total = GLOBAL_MED_RESEARCH_SPENDING  # Global government medical research spending
+cure_total = float(GLOBAL_MED_RESEARCH_SPENDING) / 1e9  # Global government medical research spending (converted to billions)
 
 categories = [
     'Cost of\nDisease',

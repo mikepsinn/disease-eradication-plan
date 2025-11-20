@@ -1,0 +1,8 @@
+services:
+  website-build:
+    build:
+      context: .
+      dockerfile: Dockerfile.website-build
+    # No volumes needed - everything is copied into container during build
+    # This avoids filesystem mounting issues with Deno KV
+    # Output website will be in the image at /workspace/_book/warondisease/
