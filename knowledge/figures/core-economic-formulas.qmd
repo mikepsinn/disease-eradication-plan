@@ -137,7 +137,7 @@ print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ```{python}
 #| echo: true
 def calculate_qaly_value(
-    qalys_generated: int = int(GLOBAL_DFDA_QALYS_GAINED_ANNUAL),
+    qalys_generated: int = int(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL),
     value_per_qaly: float = QALY_VALUE
 ) -> Dict[str, float]:
     """

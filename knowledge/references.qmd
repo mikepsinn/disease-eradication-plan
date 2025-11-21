@@ -1114,7 +1114,7 @@ from dih_models.parameters import *
 
 - **\$109 trillion annual global disease burden**
   > "The global economic burden of disease, including direct healthcare costs (\$8.2 trillion) and lost productivity (\$100.9 trillion from 2.55 billion DALYs × \$39,570 per DALY), totals approximately \$109.1 trillion annually."
-  > — Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation | See detailed calculation: [Cost of Disease Analysis](problem/cost-of-disease.qmd)
+  > — Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation
 
 <a id="disease-prevalence-2-billion"></a>
 
@@ -2130,7 +2130,8 @@ from dih_models.parameters import *
 
 - **Global government medical research spending (\$67.5B, 2023–2024)**
   > "Global government spending on cure-oriented medical research reached approximately \$67.5 billion in 2023–2024."
-  > — DFDA Wiki, 2025, [Global Government Medical Research Spending](appendix/global-government-medical-research-spending.qmd)
+  > Calculated from: US NIH ($47.1B) + China (~$15B) + EU Horizon Health (~$1.3B) + Other governments (~$4.1B)
+  > — See component country budgets: [NIH Budget](#nih-budget-fy2025), [China R&D](#china-medical-research-spending-15b), [EU Horizon Health](#eu-horizon-health-budget-8-2b)
 
 <a id="global-government-clinical-trial-spending-estimate"></a>
 
@@ -2386,19 +2387,6 @@ from dih_models.parameters import *
   > Austrian-born British economist & philosopher, major contributor to Austrian school of economics
   > Note: Hayek was surprised by the award and believed he was paired with Myrdal (opposite political spectrum) for balance; he later said if consulted, he would have advised against establishing a Nobel Prize in economics
   > — [Nobel Prize: 1974 Economic Sciences](https://www.nobelprize.org/prizes/economic-sciences/1974/hayek/facts/) | [Wikipedia: Friedrich Hayek](https://en.wikipedia.org/wiki/Friedrich_Hayek) | [Britannica: F.A. Hayek](https://www.britannica.com/money/F-A-Hayek) | [Econlib: Friedrich August Hayek](https://www.econlib.org/library/Enc/bios/Hayek.html)
-
-<a id="health-outcomes-qalys-gained"></a>
-
-- **74.15 million QALYs gained annually** (PRIMARY ESTIMATE)
-  > This is an INTERNAL PROJECTION from this book's economic model, NOT an external citation
-  > Primary Methodology: {{< var global_dfda_qalys_gained_annual >}} QALYs/year from eliminating 7.2-year regulatory efficacy lag
-  > Based on: Stochastic Monte Carlo model (n=10,000) using WHO Global Burden of Disease database and Tufts CSDD timelines
-  > Corresponds to: 184.6M preventable deaths (1962-2024), 4.83B DALYs, $483T economic loss from regulatory delay
-  > Historical Bottom-Up Model: 840,000 QALYs/year (component-based: 200k faster access + 140k prevention + 500k new therapies)
-  > Note: Primary estimate (74.15M) is 88x larger than historical bottom-up estimate (840k), reflecting comprehensive regulatory delay elimination vs. marginal improvements within current framework
-  > QALY definition: One year in perfect health = 1 QALY; scores range from 1 (perfect health) to 0 (dead)
-  > Used in economic evaluation to assess value of medical interventions; combines length & quality of life into single index
-  > — Primary Model: [Regulatory Mortality Analysis](appendix/regulatory-mortality-analysis.qmd) | Historical Model: [Bottom-Up QALY Model](appendix/dfda-qaly-model.qmd) | QALY background: [Wikipedia: Quality-adjusted life year](https://en.wikipedia.org/wiki/Quality-adjusted_life_year) | [PMC: Calculating QALYs](https://pmc.ncbi.nlm.nih.gov/articles/PMC317370/)
 
 <a id="healthcare-cost-savings-4-5t-us-annually"></a>
 
@@ -4772,7 +4760,7 @@ from dih_models.parameters import *
   > Total: $11,355.1 billion annually
   > Per capita: $1,419/year; $113,500 over 80-year lifetime
   > Updated from previous $9.9T estimate due to corrected combat deaths (89K → 233,600 per 2024 ACLED data)
-  > — Cost breakdown calculated from cost-of-war.qmd analysis using SIPRI, ACLED, World Bank, academic sources
+  > — Cost breakdown calculated using SIPRI, ACLED, World Bank, academic sources
 
 <a id="trial-cost-41k"></a>
 
@@ -5108,7 +5096,7 @@ from dih_models.parameters import *
 
 - **Value captured by 1% Treaty of $27+ billion annually**
   > "The 1% Treaty redirects 1% of global military spending ($2.7T × 1% = $27.2B) to medical research, with 10% of this flow (2.7B annually) distributed to VICTORY bondholders as returns."
-  > — See [1% Treaty overview](solution/1-percent-treaty.qmd) for full calculation details and [VICTORY Social Impact Bonds](economics/victory-bonds.qmd) for bond structure
+  > — Calculated from 1% of global military spending ($2.7T × 1%)
 
 <a id="veteran-healthcare-cost-projections"></a>
 

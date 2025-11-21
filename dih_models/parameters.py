@@ -1436,33 +1436,23 @@ STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
 # regulatory delay elimination approach (74M QALYs) based on empirical analysis of
 # 1962-2024 data. See /knowledge/appendix/regulatory-mortality-analysis.qmd
 
-GLOBAL_DFDA_QALYS_INCREMENTAL = Parameter(
-    840000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd",
-    source_type="calculated",
-    description="Annual QALYs gained from dFDA (incremental bottom-up estimate for reference only - NOT primary estimate)",
-    display_name="Annual QALYs Gained from dFDA (Incremental Bottom-Up)",
-    unit="QALYs/year",
-    keywords=["840k", "pragmatic trials", "real world evidence", "incremental", "conservative", "bottom-up"]
-)  # Incremental estimate - see GLOBAL_DFDA_QALYS_GAINED_ANNUAL for primary estimate
-
 # PRIMARY ESTIMATE: Based on comprehensive regulatory delay elimination analysis
-# This equals DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL (74M) + QALYS_FROM_PREVENTION (140k)
+# This is DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL (74.15M QALYs from eliminating 7.2-year efficacy lag)
 # See /knowledge/appendix/regulatory-mortality-analysis.qmd for methodology
-GLOBAL_DFDA_QALYS_GAINED_ANNUAL = Parameter(
+DFDA_QALYS_RD_PLUS_DELAY_ANNUAL = Parameter(
     74_148_065,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
     source_type="calculated",
-    description="Annual QALYs gained from dFDA via eliminating 7.2-year efficacy lag (PRIMARY ESTIMATE)",
-    display_name="Annual QALYs Gained from dFDA (Regulatory Delay Elimination)",
+    description="Annual QALYs gained from dFDA via R&D savings + regulatory delay elimination (PRIMARY ESTIMATE, does NOT include innovation multiplier)",
+    display_name="Annual QALYs Gained from dFDA (R&D + Regulatory Delay)",
     unit="QALYs/year",
     formula="REGULATORY_DELAY_AVOIDANCE + PREVENTION_QALYS",
-    latex=r"QALYs_{dFDA} = 74.0M + 0.14M = 74.15M",
-    keywords=["74m", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "approval lag", "drug lag"]
-)  # 74.15M QALYs/year from eliminating efficacy lag
+    latex=r"QALYs_{RD+delay} = 74.0M + 0.14M = 74.15M",
+    keywords=["74m", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "approval lag", "drug lag", "rd plus delay"]
+)  # 74.15M QALYs/year (R&D + regulatory delay elimination, recommended tier)
 
 DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
-    GLOBAL_DFDA_QALYS_GAINED_ANNUAL / 365,
+    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL / 365,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
     source_type="calculated",
     description="Daily QALYs from dFDA regulatory delay elimination (opportunity cost per day)",
@@ -1475,7 +1465,7 @@ DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
 
 # Explicit lives saved calculations
 DFDA_LIVES_SAVED_ANNUAL = Parameter(
-    GLOBAL_DFDA_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
+    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
     source_type="calculated",
     description="Annual lives saved by dFDA (QALYs ÷ QALYs per life)",
@@ -1499,7 +1489,7 @@ DFDA_LIVES_SAVED_DAILY = Parameter(
 )  # 5,808 lives/day
 
 DFDA_QALYS_RD_PLUS_DELAY_MONETIZED = Parameter(
-    (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
+    (DFDA_QALYS_RD_PLUS_DELAY_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
     description="Monetized value of dFDA health benefits including regulatory delay elimination (74.15M QALYs × $150k economic value)",
@@ -1536,7 +1526,7 @@ TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
 
 # Combined health benefits
 TREATY_TOTAL_QALYS_GAINED_ANNUAL = Parameter(
-    GLOBAL_DFDA_QALYS_GAINED_ANNUAL + TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
+    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL + TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys",
     source_type="calculated",
     description="Total annual QALYs gained (dFDA + peace dividend)",
@@ -2113,30 +2103,30 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
 # COMBINED ECONOMICS
 # ---
 
-# Total annual benefits
-TREATY_TOTAL_ANNUAL_BENEFITS = Parameter(
+# Basic annual benefits (peace dividend + R&D savings only, excludes regulatory delay & other benefits)
+TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits",
     source_type="calculated",
-    description="Total annual benefits (peace dividend + dFDA savings)",
-    display_name="Total Annual Benefits from 1% Treaty and dFDA",
+    description="Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
+    display_name="1% Treaty Basic Annual Benefits (Peace + R&D Savings)",
     unit="USD/year",
-    formula="PEACE_DIVIDEND + DFDA_SAVINGS",
-    latex=r"TotalBenefits = \$113.55B + \$41.5B = \$155.05B",
-    keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency"]
-)  # $155B (rounded from $155.05B)
+    formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
+    latex=r"Benefits_{peace+RD} = \$113.55B + \$41.5B = \$155.05B",
+    keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency", "basic benefits"]
+)  # $155.05B (peace + R&D only, not complete case)
 
 # Complete case total annual benefits (all 8 benefit categories)
 # TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL defined below (line 3254) using calculated component sum
 # TREATY_COMPLETE_ROI moved to after TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL definition
 
-# Net benefit
-TREATY_NET_ANNUAL_BENEFIT = Parameter(
-    TREATY_TOTAL_ANNUAL_BENEFITS - TREATY_TOTAL_ANNUAL_COSTS,
+# Net benefit (peace + R&D only)
+TREATY_PEACE_PLUS_RD_NET_ANNUAL_BENEFIT = Parameter(
+    TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS - TREATY_TOTAL_ANNUAL_COSTS,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit",
     source_type="calculated",
-    description="Net annual benefit (total benefits - total costs)",
-    display_name="Net Annual Benefit from 1% Treaty",
+    description="Net annual benefit from peace dividend + R&D savings (basic 2-benefit case minus costs)",
+    display_name="1% Treaty Net Annual Benefit (Peace + R&D)",
     unit="USD/year",
     formula="TOTAL_BENEFITS - TOTAL_COSTS",
     latex=r"NetBenefit = \$163.55B - \$0.29B = \$163.26B",
@@ -2146,13 +2136,13 @@ TREATY_NET_ANNUAL_BENEFIT = Parameter(
 # ICER calculation (Incremental Cost-Effectiveness Ratio)
 # Negative ICER means society SAVES money while gaining QALYs
 TREATY_DFDA_ICER_PER_QALY = Parameter(
-    (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
+    (TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation",
     source_type="calculated",
     description="Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system",
     display_name="Incremental Cost-Effectiveness Ratio per QALY Gained (Treaty + dFDA)",
     unit="USD/QALY",
-    formula="(TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL",
+    formula="(TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
 )  # -$2,197 per QALY (negative = cost-saving)
 
@@ -2171,13 +2161,13 @@ DFDA_NET_INCREMENTAL_COST_ANNUAL = Parameter(
 )  # -$41.46B annually
 
 DFDA_ICER_PER_QALY = Parameter(
-    (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) / GLOBAL_DFDA_QALYS_GAINED_ANNUAL,
+    (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) / DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis",
     source_type="calculated",
     description="dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)",
     display_name="dFDA Infrastructure ICER per QALY",
     unit="USD/QALY",
-    formula="(DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL",
+    formula="(DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ DFDA_QALYS_RD_PLUS_DELAY_ANNUAL",
     latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{74.15M \text{ QALYs}} = -\$674 \text{ per QALY}",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly"]
 )  # -$674 per QALY (updated with comprehensive regulatory delay elimination)
@@ -2480,52 +2470,52 @@ POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
 )
 
 # Expected ROI accounting for political implementation risk
-EXPECTED_ROI_CONSERVATIVE_DFDA = Parameter(
+DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS = Parameter(
     float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
     source_ref="calculated",
     source_type="calculated",
     formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
-    latex=r"E[ROI]_{\text{conservative}} = 463 \times 0.10 = 46.3",
+    latex=r"E[ROI]_{\text{10\%}} = 463 \times 0.10 = 46.3",
     confidence="medium",
-    description="Expected ROI for dFDA accounting for 10% political success probability",
-    display_name="Expected ROI for dFDA Accounting for 10% Political Success Probability (Conservative)",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return"]
+    description="Expected ROI for dFDA accounting for 10% political success probability (conservative estimate)",
+    display_name="Expected dFDA ROI with 10% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "conservative"]
 )
 
-EXPECTED_ROI_MODERATE_DFDA = Parameter(
+DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS = Parameter(
     float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
     source_ref="calculated",
     source_type="calculated",
     formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
-    latex=r"E[ROI]_{\text{moderate}} = 463 \times 0.25 = 115.8",
+    latex=r"E[ROI]_{\text{25\%}} = 463 \times 0.25 = 115.8",
     confidence="medium",
-    description="Expected ROI for dFDA accounting for 25% political success probability",
-    display_name="Expected ROI for dFDA Accounting for 25% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return"]
+    description="Expected ROI for dFDA accounting for 25% political success probability (moderate estimate)",
+    display_name="Expected dFDA ROI with 25% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate"]
 )
 
-EXPECTED_ROI_MODERATE_HIGH_DFDA = Parameter(
+DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS = Parameter(
     float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH),
     source_ref="calculated",
     source_type="calculated",
     formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH",
-    latex=r"E[ROI]_{\text{moderate-high}} = 463 \times 0.40 = 185.2",
+    latex=r"E[ROI]_{\text{40\%}} = 463 \times 0.40 = 185.2",
     confidence="medium",
-    description="Expected ROI for dFDA accounting for 40% political success probability",
-    display_name="Expected ROI for dFDA Accounting for 40% Political Success Probability (Moderate-High)",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return"]
+    description="Expected ROI for dFDA accounting for 40% political success probability (moderate-high estimate)",
+    display_name="Expected dFDA ROI with 40% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate-high"]
 )
 
-EXPECTED_ROI_OPTIMISTIC_DFDA = Parameter(
+DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
     float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
     source_ref="calculated",
     source_type="calculated",
     formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
-    latex=r"E[ROI]_{\text{optimistic}} = 463 \times 0.50 = 231.5",
+    latex=r"E[ROI]_{\text{50\%}} = 463 \times 0.50 = 231.5",
     confidence="medium",
-    description="Expected ROI for dFDA accounting for 50% political success probability",
-    display_name="Expected ROI for dFDA Accounting for 50% Political Success Probability (Optimistic)",
-    keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance"]
+    description="Expected ROI for dFDA accounting for 50% political success probability (optimistic estimate)",
+    display_name="Expected dFDA ROI with 50% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"]
 )
 
 # ---
@@ -3218,17 +3208,17 @@ TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL = Parameter(
     keywords=["pragmatic trials", "real world evidence", "avoidance", "deterrence", "precaution", "prophylaxis", "conflict resolution"]
 )  # Now uses calculated component sum (updates automatically when components change)
 
-TREATY_COMPLETE_ROI = Parameter(
+TREATY_COMPLETE_ROI_ALL_EIGHT_BENEFITS = Parameter(
     TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST,
     source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
     source_type="calculated",
-    description="Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)",
-    display_name="Complete 1% Treaty ROI (All Benefits)",
+    description="Complete ROI including all 8 benefit categories: peace dividend, R&D savings, regulatory delay, earlier access, prevention, lost innovation, new therapies, economic multiplier (annual benefits ÷ one-time campaign cost)",
+    display_name="Complete 1% Treaty ROI (All 8 Benefit Categories)",
     unit="ratio",
     formula="TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST",
     latex=r"ROI_{complete} = \frac{TotalBenefits}{\$1.00B}",
-    keywords=["1230", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi"]
-)  # Complete ROI (auto-calculated from components)
+    keywords=["1230", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi", "eight categories"]
+)  # Complete ROI with all 8 benefit categories (auto-calculated from components)
 
 # Opportunity cost calculations
 OPPORTUNITY_COST_PER_SECOND = Parameter(
@@ -3358,119 +3348,6 @@ PARTIAL_SUCCESS_INVESTOR_ROI = Parameter(
 # ---
 # QALYs Breakdown & Treatment Acceleration Details
 # ---
-
-# Base Case (Central Scenario) - Used as primary estimates throughout analysis
-QALYS_FROM_FASTER_ACCESS = Parameter(
-    200000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#base-case",
-    source_type="calculated",
-    description="Base case QALYs from faster drug access",
-    display_name="Base Case QALYs from Faster Drug Access",
-    unit="QALYs/year",
-    keywords=["200k", "pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit"]
-)  # QALYs gained annually from faster drug access (Base case)
-
-QALYS_FROM_PREVENTION = Parameter(
-    140000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#base-case",
-    source_type="calculated",
-    description="Base case QALYs from better prevention through real-world data",
-    display_name="Base Case QALYs from Better Prevention Through Real-World Data",
-    unit="QALYs/year",
-    keywords=["140k", "pragmatic trials", "real world evidence", "avoidance", "deterrence", "precaution", "prophylaxis"]
-)  # QALYs gained annually from better prevention through real-world data (Base case)
-
-QALYS_FROM_NEW_THERAPIES = Parameter(
-    500000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#base-case",
-    source_type="calculated",
-    description="Base case QALYs from enabling new therapies for rare/untreatable diseases",
-    display_name="Base Case QALYs from Enabling New Therapies for Rare/Untreatable Diseases",
-    unit="QALYs/year",
-    keywords=["500k", "pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit"]
-)  # QALYs gained annually from enabling new therapies for rare/untreatable diseases (Base case)
-
-# Conservative Scenario - Lower bound estimates for QALY gains
-QALYS_FROM_FASTER_ACCESS_CONSERVATIVE = Parameter(
-    90000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)",
-    display_name="Conservative QALYs from Faster Access",
-    unit="QALYs/year",
-    keywords=["90k", "pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit"]
-)  # QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)
-
-QALYS_FROM_PREVENTION_CONSERVATIVE = Parameter(
-    50000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative QALYs from prevention (5M patients × 0.01 QALYs/patient)",
-    display_name="Conservative QALYs from Prevention",
-    unit="QALYs/year",
-    keywords=["50k", "pragmatic trials", "real world evidence", "avoidance", "deterrence", "enrollee", "participant"]
-)  # QALYs from prevention (5M patients × 0.01 QALYs/patient)
-
-QALYS_FROM_NEW_THERAPIES_CONSERVATIVE = Parameter(
-    50000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)",
-    display_name="Conservative QALYs from New Therapies",
-    unit="QALYs/year",
-    keywords=["50k", "pragmatic trials", "real world evidence", "enrollee", "participant", "subject", "volunteer"]
-)  # QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)
-
-QALYS_TOTAL_CONSERVATIVE = Parameter(
-    190000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Total conservative QALYs (90k + 50k + 50k)",
-    display_name="Total Conservative QALYs",
-    unit="QALYs/year",
-    keywords=["190k", "pragmatic trials", "real world evidence", "quality adjusted", "disability adjusted", "health metric", "health benefit"]
-)  # Total conservative QALYs (90k + 50k + 50k)
-
-# Optimistic Scenario - Upper bound estimates for QALY gains
-QALYS_FROM_FASTER_ACCESS_OPTIMISTIC = Parameter(
-    500000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic QALYs from faster drug access",
-    display_name="Optimistic QALYs from Faster Drug Access",
-    unit="QALYs/year",
-    keywords=["500k", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
-)  # 25 drugs/yr × 2 yr accel × 10k QALYs/drug
-
-QALYS_FROM_PREVENTION_OPTIMISTIC = Parameter(
-    150000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic QALYs from prevention",
-    display_name="Optimistic QALYs from Prevention",
-    unit="QALYs/year",
-    keywords=["150k", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "avoidance"]
-)  # QALYs from prevention
-
-QALYS_FROM_NEW_THERAPIES_OPTIMISTIC = Parameter(
-    3000000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic QALYs from new therapies",
-    display_name="Optimistic QALYs from New Therapies",
-    unit="QALYs/year",
-    keywords=["3.0m", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
-)  # QALYs from new therapies
-
-QALYS_TOTAL_OPTIMISTIC = Parameter(
-    3650000,
-    source_ref="/knowledge/appendix/dfda-qaly-model.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Total optimistic QALYs (500k + 150k + 3M)",
-    display_name="Total Optimistic QALYs",
-    unit="QALYs/year",
-    keywords=["3.6m", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
-)  # Total optimistic QALYs (500k + 150k + 3M)
 
 TREATMENT_ACCELERATION_YEARS_TARGET = Parameter(
     2,
@@ -3807,33 +3684,6 @@ DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = Parameter(
     keywords=["cost effectiveness", "value for money", "approval lag", "drug lag", "fda delay", "disease burden", "pragmatic trials"]
 )  # $11.1T/year avoided costs
 
-# Comprehensive dFDA QALY totals including regulatory delay avoidance
-GLOBAL_DFDA_QALYS_WITH_REGULATORY_AVOIDANCE = Parameter(
-    DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL + QALYS_FROM_PREVENTION,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance",
-    source_type="calculated",
-    description="Total annual QALYs from dFDA including regulatory delay avoidance (top-down comprehensive estimate)",
-    display_name="Total Annual QALYs from dFDA Including Regulatory Delay Avoidance",
-    unit="QALYs/year",
-    formula="REGULATORY_DELAY_AVOIDANCE + PREVENTION_QALYS",
-    latex=r"QALYs_{total} = 74M + 140k \approx 74.14M",
-    confidence="medium",
-    keywords=["cost effectiveness", "value for money", "approval lag", "drug lag", "fda delay", "disease burden", "pragmatic trials"]
-)  # ~74.14M QALYs/year (regulatory delay avoidance already captures faster access and new therapies)
-
-DFDA_QALYS_WITH_REGULATORY_AVOIDANCE_MONETIZED = Parameter(
-    (GLOBAL_DFDA_QALYS_WITH_REGULATORY_AVOIDANCE * STANDARD_ECONOMIC_QALY_VALUE_USD),
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance",
-    source_type="calculated",
-    description="Monetized value of comprehensive dFDA benefits including regulatory delay avoidance",
-    display_name="Monetized Value of Comprehensive dFDA Benefits Including Regulatory Delay Avoidance",
-    unit="USD/year",
-    formula="QALYS_WITH_AVOIDANCE × VSLY ",
-    latex=r"Value_{total} = 74.14M \times \$150k = \$11.12T",
-    confidence="medium",
-    keywords=["cost effectiveness", "value for money", "approval lag", "drug lag", "fda delay", "disease burden", "pragmatic trials"]
-)  # $11.12T/year total benefit
-
 # ---
 # COMPREHENSIVE ROI CALCULATIONS WITH REGULATORY DELAY AVOIDANCE
 # ---
@@ -4004,16 +3854,16 @@ SENSITIVITY_PEACE_QALYS_CONSERVATIVE = Parameter(
     keywords=["18k", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "gbd"]
 )  # 500 lives × 35 QALYs/life
 SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = Parameter(
-    SENSITIVITY_PEACE_QALYS_CONSERVATIVE + QALYS_TOTAL_CONSERVATIVE,
+    SENSITIVITY_PEACE_QALYS_CONSERVATIVE + DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
     source_type="calculated",
-    description="Conservative total QALYs (peace + dFDA)",
-    display_name="Conservative Total QALYs",
+    description="Conservative total QALYs (peace + dFDA primary estimate)",
+    display_name="Conservative Total QALYs (Peace + dFDA)",
     unit="QALYs/year",
-    formula="PEACE_QALYS + DFDA_QALYS",
-    latex=r"QALYs_{conservative} = 17,500 + 190,000 = 207,500",
+    formula="PEACE_QALYS + DFDA_QALYS_PRIMARY",
+    latex=r"QALYs_{conservative} = 17,500 + 74,148,065 = 74,165,565",
     keywords=["cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly", "cost per qaly"]
-)  # Total QALYs (peace + dFDA)
+)  # Total QALYs (peace + dFDA primary regulatory delay elimination estimate)
 SENSITIVITY_NET_BENEFIT_CONSERVATIVE = Parameter(
     74_600_000_000,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
@@ -4147,16 +3997,16 @@ SENSITIVITY_PEACE_QALYS_OPTIMISTIC = Parameter(
     keywords=["52k", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "high estimate"]
 )  # 1,500 lives × 35 QALYs/life
 SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = Parameter(
-    SENSITIVITY_PEACE_QALYS_OPTIMISTIC + QALYS_TOTAL_OPTIMISTIC,
+    SENSITIVITY_PEACE_QALYS_OPTIMISTIC + DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
     source_type="calculated",
-    description="Optimistic total QALYs (peace + dFDA)",
-    display_name="Optimistic Total QALYs",
+    description="Optimistic total QALYs (peace + dFDA primary estimate)",
+    display_name="Optimistic Total QALYs (Peace + dFDA)",
     unit="QALYs/year",
-    formula="PEACE_QALYS + DFDA_QALYS",
-    latex=r"QALYs_{optimistic} = 52,500 + 3,650,000 = 3,702,500",
+    formula="PEACE_QALYS + DFDA_QALYS_PRIMARY",
+    latex=r"QALYs_{optimistic} = 52,500 + 74,148,065 = 74,200,565",
     keywords=["cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly", "cost per qaly"]
-)  # Total QALYs (peace + dFDA)
+)  # Total QALYs (peace + dFDA primary regulatory delay elimination estimate)
 
 SENSITIVITY_NET_BENEFIT_OPTIMISTIC = Parameter(
     294_800_000_000,
@@ -4188,29 +4038,29 @@ SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = Parameter(
     keywords=["high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty", "costs"]
 )  # -$4.79M per life (in millions)
 
-# Sensitivity ROI calculations
-CONSERVATIVE_SCENARIO_ROI = Parameter(
+# Sensitivity ROI calculations for Treaty economic scenarios
+TREATY_CONSERVATIVE_SCENARIO_ROI = Parameter(
     int(SENSITIVITY_NET_BENEFIT_CONSERVATIVE / SENSITIVITY_TOTAL_COSTS_CONSERVATIVE),
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
     source_type="calculated",
-    description="Conservative scenario ROI (net benefit ÷ total costs)",
-    display_name="Conservative Scenario ROI",
+    description="Conservative scenario ROI for 1% Treaty (net benefit ÷ total costs, lower-bound economic assumptions)",
+    display_name="1% Treaty Conservative Scenario ROI",
     unit="ratio",
     formula="NET_BENEFIT ÷ TOTAL_COSTS",
     latex=r"ROI_{conservative} = \$74.6B / \$0.393B = 190:1",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "low estimate", "return on investment", "international agreement"]
-)  # 190:1
-OPTIMISTIC_SCENARIO_ROI = Parameter(
+    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "low estimate", "return on investment", "international agreement", "treaty"]
+)  # 190:1 for conservative economic scenario
+TREATY_OPTIMISTIC_SCENARIO_ROI = Parameter(
     int(SENSITIVITY_NET_BENEFIT_OPTIMISTIC / SENSITIVITY_TOTAL_COSTS_OPTIMISTIC),
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
     source_type="calculated",
-    description="Optimistic scenario ROI (net benefit ÷ total costs)",
-    display_name="Optimistic Scenario ROI",
+    description="Optimistic scenario ROI for 1% Treaty (net benefit ÷ total costs, upper-bound economic assumptions)",
+    display_name="1% Treaty Optimistic Scenario ROI",
     unit="ratio",
     formula="NET_BENEFIT ÷ TOTAL_COSTS",
     latex=r"ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1",
-    keywords=["high estimate", "bcr", "best case", "ambitious", "overestimate", "benefit cost ratio", "economic return"]
-)  # 1,282:1
+    keywords=["high estimate", "bcr", "best case", "ambitious", "overestimate", "benefit cost ratio", "economic return", "treaty"]
+)  # 1,282:1 for optimistic economic scenario
 
 # Probabilistic ROI Analysis
 # Source: /knowledge/economics/economics.qmd probabilistic simulation
@@ -4654,7 +4504,7 @@ if __name__ == "__main__":
     print(f"Total war costs: {format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
     print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
     print(f"dFDA savings: {format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
-    print(f"Total benefits: {format_parameter_value(TREATY_TOTAL_ANNUAL_BENEFITS)}")
+    print(f"Total benefits: {format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)}")
 
 
 # ---
@@ -5638,7 +5488,7 @@ SOCIAL_MEDIA_PARTICIPANT_TARGET_MAX = Parameter(
 )  # 2,000 participants maximum
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
-# This sum is distinct from TREATY_TOTAL_ANNUAL_BENEFITS which uses different categories for broader calculation.
+# This sum is distinct from TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS which uses different categories for broader calculation.
 COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends",
@@ -5726,7 +5576,7 @@ childhood_vaccination_roi_formatted = format_roi(CHILDHOOD_VACCINATION_ROI)
 combined_peace_health_dividends_annual_for_roi_calc_formatted = format_parameter_value(
     COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC
 )
-conservative_scenario_roi_formatted = format_roi(CONSERVATIVE_SCENARIO_ROI)
+treaty_conservative_scenario_roi_formatted = format_roi(TREATY_CONSERVATIVE_SCENARIO_ROI)
 cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.3f}"
 cost_of_delay_qaly_days_per_second_formatted = f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"
 cost_per_life_investor_funded_formatted = f"${TREATY_DFDA_COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"
@@ -5776,7 +5626,7 @@ global_annual_war_direct_costs_total_formatted = format_parameter_value(GLOBAL_A
 global_annual_war_indirect_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)
 global_annual_war_total_cost_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)
 global_daily_deaths_curable_diseases_formatted = f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"
-global_dfda_qalys_gained_annual_formatted = format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)
+global_dfda_qalys_gained_annual_formatted = format_qalys(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL)
 global_med_research_spending_formatted = format_parameter_value(GLOBAL_MED_RESEARCH_SPENDING)
 global_military_spending_annual_2024_formatted = format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
 global_military_spending_post_treaty_annual_2024_formatted = format_parameter_value(
@@ -5792,21 +5642,10 @@ lobbyist_salary_typical_k_formatted = format_parameter_value(LOBBYIST_SALARY_TYP
 military_vs_medical_research_ratio_formatted = f"{MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}"
 multiplier_vs_givewell_formatted = f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"
 net_benefit_per_life_saved_formatted = format_parameter_value(abs(TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED))
-optimistic_scenario_roi_formatted = format_roi(OPTIMISTIC_SCENARIO_ROI)
+treaty_optimistic_scenario_roi_formatted = format_roi(TREATY_OPTIMISTIC_SCENARIO_ROI)
 peace_dividend_annual_societal_benefit_formatted = format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
 post_ww2_military_cut_pct_formatted = format_percentage(POST_WW2_MILITARY_CUT_PCT)
 profit_per_life_saved_formatted = f"${PROFIT_PER_LIFE_SAVED:,.0f}"
-qalys_from_faster_access_conservative_formatted = f"{QALYS_FROM_FASTER_ACCESS_CONSERVATIVE:,.0f}"
-qalys_from_faster_access_formatted = f"{QALYS_FROM_FASTER_ACCESS / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"
-qalys_from_faster_access_optimistic_formatted = f"{QALYS_FROM_FASTER_ACCESS_OPTIMISTIC:,.0f}"
-qalys_from_new_therapies_conservative_formatted = f"{QALYS_FROM_NEW_THERAPIES_CONSERVATIVE:,.0f}"
-qalys_from_new_therapies_formatted = f"{QALYS_FROM_NEW_THERAPIES / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"
-qalys_from_new_therapies_optimistic_formatted = f"{QALYS_FROM_NEW_THERAPIES_OPTIMISTIC:,.0f}"
-qalys_from_prevention_conservative_formatted = f"{QALYS_FROM_PREVENTION_CONSERVATIVE:,.0f}"
-qalys_from_prevention_formatted = f"{QALYS_FROM_PREVENTION / GLOBAL_DFDA_QALYS_GAINED_ANNUAL * 100:.0f}%"
-qalys_from_prevention_optimistic_formatted = f"{QALYS_FROM_PREVENTION_OPTIMISTIC:,.0f}"
-qalys_total_conservative_formatted = format_qalys(QALYS_TOTAL_CONSERVATIVE)
-qalys_total_optimistic_formatted = format_qalys(QALYS_TOTAL_OPTIMISTIC)
 recovery_trial_cost_per_patient_formatted = format_parameter_value(RECOVERY_TRIAL_COST_PER_PATIENT)
 dfda_roi_rd_only_formatted = format_roi(DFDA_ROI_RD_ONLY)
 dfda_roi_rd_plus_delay_formatted = format_roi(DFDA_ROI_RD_PLUS_DELAY)
@@ -5852,10 +5691,10 @@ treaty_campaign_budget_referendum_formatted = format_parameter_value(TREATY_CAMP
 treaty_campaign_budget_reserve_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_RESERVE)
 treaty_campaign_total_cost_formatted = format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)
 treaty_lives_saved_annual_global_formatted = format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)
-treaty_net_annual_benefit_formatted = format_parameter_value(TREATY_NET_ANNUAL_BENEFIT)
+treaty_net_annual_benefit_formatted = format_parameter_value(TREATY_PEACE_PLUS_RD_NET_ANNUAL_BENEFIT)
 treaty_qalys_gained_annual_global_formatted = format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
 treaty_reduction_pct_formatted = format_percentage(TREATY_REDUCTION_PCT)
-treaty_total_annual_benefits_formatted = format_parameter_value(TREATY_TOTAL_ANNUAL_BENEFITS)
+treaty_total_annual_benefits_formatted = format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)
 treaty_total_annual_costs_formatted = format_parameter_value(TREATY_TOTAL_ANNUAL_COSTS)
 treaty_total_qalys_gained_annual_formatted = format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)
 trial_cost_reduction_pct_formatted = format_percentage(TRIAL_COST_REDUCTION_PCT)

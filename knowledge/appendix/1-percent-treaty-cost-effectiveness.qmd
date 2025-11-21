@@ -26,7 +26,7 @@ from dih_models.parameters import *
 
 This means for every life saved, society becomes **$6.17M** richer instead of paying the [$3,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
-**How is this possible?** This initiative generates massive economic value ({{< var treaty_total_annual_benefits >}} annually) while also saving lives ({{< var treaty_total_qalys_gained_annual >}} QALYs annually), making it profitable for society to implement.
+**How is this possible?** This initiative generates massive economic value ({{< var treaty_peace_plus_rd_annual_benefits >}} annually) while also saving lives ({{< var treaty_total_qalys_gained_annual >}} QALYs annually), making it profitable for society to implement.
 
 ## Complete Calculation Walkthrough
 
@@ -60,7 +60,7 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 #### Total Annual Economic Benefits
 
-**{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_rd_gross_savings_annual >}} = {{< var treaty_total_annual_benefits >}} per year**
+**{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_rd_gross_savings_annual >}} = {{< var treaty_peace_plus_rd_annual_benefits >}} per year**
 
 **Sensitivity range**: $139B to $209B (conservative to optimistic scenarios)
 
@@ -88,11 +88,11 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 **Sensitivity range**: 500-1,500 lives saved = {{< var sensitivity_peace_qalys_conservative >}}-{{< var sensitivity_peace_qalys_optimistic >}} QALYs
 
-#### 2b. dFDA Health Benefits ({{< var global_dfda_qalys_gained_annual >}} QALYs/year)
+#### 2b. dFDA Health Benefits ({{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year)
 
 **Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
 
-**Baseline projection**: {{< var global_dfda_qalys_gained_annual >}} QALYs/year from:
+**Baseline projection**: {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year from:
 
 1. **Faster drug access** (24% of total): 24% QALYs
    - Average 2-3 year reduction in time to market
@@ -108,13 +108,13 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
    - Personalized medicine insights
    - Population health monitoring
 
-**Sensitivity range**: {{< var qalys_total_conservative >}} (conservative) to {{< var qalys_total_optimistic >}} (optimistic) QALYs
+**Sensitivity range**: {{< var dfda_qalys_rd_plus_delay_annual >}} (conservative) to {{< var dfda_qalys_rd_plus_delay_annual >}} (optimistic) QALYs
 
 See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) for complete methodology.
 
 #### Total Annual Health Benefits
 
-**{{< var treaty_qalys_gained_annual_global >}} + {{< var global_dfda_qalys_gained_annual >}} = {{< var treaty_total_qalys_gained_annual >}} QALYs/year**
+**{{< var treaty_qalys_gained_annual_global >}} + {{< var dfda_qalys_rd_plus_delay_annual >}} = {{< var treaty_total_qalys_gained_annual >}} QALYs/year**
 
 **Sensitivity range**: 437,500 (low) to 2,152,500 (high) QALYs
 
@@ -227,15 +227,15 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 
 **Annual net benefit** = Benefits - Costs
 
-- Benefits: {{< var treaty_total_annual_benefits >}}
+- Benefits: {{< var treaty_peace_plus_rd_annual_benefits >}}
 - Costs: {{< var treaty_total_annual_costs >}}
-- **Net benefit: {{< var treaty_net_annual_benefit >}} per year**
+- **Net benefit: {{< var treaty_peace_plus_rd_net_annual_benefit >}} per year**
 
-**Society saves {{< var treaty_net_annual_benefit >}} while gaining {{< var treaty_total_qalys_gained_annual >}} QALYs**
+**Society saves {{< var treaty_peace_plus_rd_net_annual_benefit >}} while gaining {{< var treaty_total_qalys_gained_annual >}} QALYs**
 
 #### 4b. ICER per QALY
 
-**ICER** = ({{< var treaty_total_annual_costs >}} - {{< var treaty_total_annual_benefits >}}) / {{< var treaty_total_qalys_gained_annual >}} QALYs
+**ICER** = ({{< var treaty_total_annual_costs >}} - {{< var treaty_peace_plus_rd_annual_benefits >}}) / {{< var treaty_total_qalys_gained_annual >}} QALYs
 
 **ICER** = {{< var treaty_total_annual_costs >}} / {{< var treaty_total_qalys_gained_annual >}}
 
@@ -299,12 +299,12 @@ This is a **dominant intervention** - it makes society richer while saving lives
 |-----------|-------------:|--------:|------------:|
 | **Peace dividend** | {{< var sensitivity_peace_dividend_conservative >}} | {{< var peace_dividend_annual_societal_benefit >}} | {{< var sensitivity_peace_dividend_optimistic >}} |
 | **dFDA R&D savings** | {{< var sensitivity_dfda_savings_conservative >}} | {{< var dfda_rd_gross_savings_annual >}} | {{< var sensitivity_dfda_savings_optimistic >}} |
-| **Total benefits** | {{< var sensitivity_total_benefits_conservative >}} | {{< var treaty_total_annual_benefits >}} | {{< var sensitivity_total_benefits_optimistic >}} |
+| **Total benefits** | {{< var sensitivity_total_benefits_conservative >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var sensitivity_total_benefits_optimistic >}} |
 | **Campaign costs/yr** | {{< var sensitivity_campaign_cost_conservative >}} | $250M | {{< var sensitivity_campaign_cost_optimistic >}} |
 | **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative >}} | {{< var dfda_upfront_build >}} | {{< var sensitivity_dfda_opex_optimistic >}} |
 | **Total costs/yr** | {{< var sensitivity_total_costs_conservative >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic >}} |
 | **Peace QALYs** | {{< var sensitivity_peace_qalys_conservative >}} | {{< var treaty_qalys_gained_annual_global >}} | {{< var sensitivity_peace_qalys_optimistic >}} |
-| **dFDA QALYs** | {{< var qalys_total_conservative >}} | {{< var global_dfda_qalys_gained_annual >}} | {{< var qalys_total_optimistic >}} |
+| **dFDA QALYs** | {{< var dfda_qalys_rd_plus_delay_annual >}} | {{< var dfda_qalys_rd_plus_delay_annual >}} | {{< var dfda_qalys_rd_plus_delay_annual >}} |
 | **Total QALYs** | {{< var sensitivity_total_qalys_conservative >}} | {{< var treaty_total_qalys_gained_annual >}} | {{< var sensitivity_total_qalys_optimistic >}} |
 
 ### ICER Across Scenarios
@@ -312,7 +312,7 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
 |----------|------------:|------:|-----------:|----------:|
 | **Conservative** | {{< var sensitivity_net_benefit_conservative >}} | {{< var sensitivity_total_qalys_conservative >}} | **{{< var sensitivity_icer_conservative >}}** | **{{< var sensitivity_cost_per_life_conservative >}}** |
-| **Central** | {{< var treaty_net_annual_benefit >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** |
+| **Central** | {{< var treaty_peace_plus_rd_net_annual_benefit >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** |
 | **Optimistic** | {{< var sensitivity_net_benefit_optimistic >}} | {{< var sensitivity_total_qalys_optimistic >}} | **{{< var sensitivity_icer_optimistic >}}** | **{{< var sensitivity_cost_per_life_optimistic >}}** |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
@@ -321,10 +321,10 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 | Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
 |-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** | Counts all upfront costs |
-| **Investor-Funded** | $0 | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var treaty_dfda_icer_investor_funded >}}** | **{{< var treaty_dfda_cost_per_life_investor_funded >}}** | Campaign funded by VICTORY Social Impact Bonds |
-| **Opportunity Cost** | {{< var treaty_annual_funding >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var treaty_dfda_icer_opportunity_cost >}}** | **{{< var treaty_dfda_cost_per_life_opportunity_cost >}}** | Counts redirected military spending |
-| **Waste Conversion** | {{< var treaty_annual_funding >}} | {{< var treaty_total_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
+| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** | Counts all upfront costs |
+| **Investor-Funded** | $0 | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var treaty_dfda_icer_investor_funded >}}** | **{{< var treaty_dfda_cost_per_life_investor_funded >}}** | Campaign funded by VICTORY Social Impact Bonds |
+| **Opportunity Cost** | {{< var treaty_annual_funding >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var treaty_dfda_icer_opportunity_cost >}}** | **{{< var treaty_dfda_cost_per_life_opportunity_cost >}}** | Counts redirected military spending |
+| **Waste Conversion** | {{< var treaty_annual_funding >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
 
 *Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
 
@@ -398,8 +398,8 @@ For publication-quality analysis, run a Monte Carlo simulation with:
    - Sources: ACLED, GTD, Uppsala
 
 4. **dFDA QALYs**: [dFDA QALY Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
-   - Baseline: {{< var global_dfda_qalys_gained_annual >}} QALYs/year
-   - Range: {{< var qalys_total_conservative >}}-{{< var qalys_total_optimistic >}}
+   - Baseline: {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year
+   - Range: {{< var dfda_qalys_rd_plus_delay_annual >}}-{{< var dfda_qalys_rd_plus_delay_annual >}}
 
 5. **QALY Conversion**: WHO life tables
    - 1 life saved ≈ 35 QALYs (standard assumption)
@@ -429,12 +429,12 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 - {{< var peace_dividend_annual_societal_benefit >}} from reduced conflict costs (peace dividend)
 - {{< var dfda_rd_gross_savings_annual >}} from more efficient medical R&D (dFDA)
 
-These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of {{< var treaty_net_annual_benefit >}}/year for society.
+These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of {{< var treaty_peace_plus_rd_net_annual_benefit >}}/year for society.
 
 Meanwhile, the same initiative saves lives:
 
 - {{< var traditional_large_trial_size >}} lives from 1% less conflict
-- {{< var global_dfda_qalys_gained_annual >}} QALYs from faster/better medical treatments
+- {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs from faster/better medical treatments
 
 You get **both** the economic benefit **and** the health benefit.
 
@@ -477,7 +477,7 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with {{< var victory_bond_annual_return_pct >}} returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive {{< var treaty_total_annual_benefits >}} in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive {{< var treaty_peace_plus_rd_annual_benefits >}} in economic benefits (peace dividend + R&D savings). Net gain: $137B.
 
 **From investors' perspective**: They invest {{< var treaty_campaign_total_cost >}} and receive {{< var victory_bond_annual_payout >}}/year perpetually. This is the best investment in history.
 

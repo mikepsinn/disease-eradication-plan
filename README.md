@@ -6,6 +6,8 @@ date: "2025-08-15T00:00:00.000Z"
 tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
 ---
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 > **The 1% Treaty:** Every nation redirects just 1% of global military spending to fund 80X more efficient medical research, creating the most profitable investment in history while saving millions of lives.
 
 [![Join the War on Disease](#join-the-war)](#join-the-war) [![Read the Full Plan](#the-plan)](#the-plan)

@@ -111,7 +111,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} and {{< var dfda_qaly
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Interactive NPV/ROI calculator
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for {{< var global_dfda_qalys_gained_annual >}} annual QALYs (regulatory delay elimination)
+- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for {{< var dfda_qalys_rd_plus_delay_annual >}} annual QALYs (regulatory delay elimination)
 - [Bottom-Up QALY Model](../appendix/dfda-qaly-model.qmd) - Historical component-based methodology (840k QALYs)
 
 #### Key Sources

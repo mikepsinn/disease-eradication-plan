@@ -27,7 +27,7 @@ money_lost = [
 # Daily QALYs foregone (annual QALYs / 365)
 qalys_lost = [
     float(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE) / 365,  # Conservative daily QALYs
-    float(GLOBAL_DFDA_QALYS_GAINED_ANNUAL) / 365,  # Baseline daily QALYs
+    float(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL) / 365,  # Baseline daily QALYs
     float(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC) / 365  # Optimistic daily QALYs
 ]
 

@@ -48,13 +48,13 @@ costs = [
 # For the 1% Treaty bar, we'll stack it to show peace dividend vs dFDA savings
 # Total QALYs from parameters:
 #   - Peace: TREATY_QALYS_GAINED_ANNUAL_GLOBAL (85,610)
-#   - dFDA: GLOBAL_DFDA_QALYS_GAINED_ANNUAL (74.15M)
+#   - dFDA: DFDA_QALYS_RD_PLUS_DELAY_ANNUAL (74.15M)
 #   - Total: TREATY_TOTAL_QALYS_GAINED_ANNUAL (74.23M)
 # Peace dividend contribution and dFDA contribution sum to the total benefit
 # But we'll show them as proportional contributions to the total -$5.87M
 
 peace_qalys = float(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
-dfda_qalys = float(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)
+dfda_qalys = float(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL)
 total_qalys = peace_qalys + dfda_qalys
 
 peace_dividend_per_life = -5870000 * (peace_qalys / total_qalys)  # Proportional to QALYs

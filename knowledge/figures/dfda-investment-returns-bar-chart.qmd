@@ -28,7 +28,7 @@ dfda_annual_operational_cost = float(DFDA_NPV_ANNUAL_OPEX_TOTAL) / BILLION  # Co
 
 # Baseline QALYs generated annually
 
-qaly_gains_annual_baseline = GLOBAL_DFDA_QALYS_GAINED_ANNUAL
+qaly_gains_annual_baseline = DFDA_QALYS_RD_PLUS_DELAY_ANNUAL
 
 # Value of a QALY (standard economic value)
 

@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 527
+**Total parameters**: 513
 
 - External sources (peer-reviewed): 164
-- Calculated values: 315
+- Calculated values: 301
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -2810,23 +2810,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Conservative Scenario ROI {#sec-conservative_scenario_roi}
-
-**Value**: 189
-
-Conservative scenario ROI (net benefit ÷ total costs)
-
-$$
-ROI_{conservative} = \$74.6B / \$0.393B = 190:1
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Preventable Deaths per Second from Curable Diseases {#sec-cost_of_delay_deaths_per_second}
 
 **Value**: 1.74
@@ -3058,6 +3041,74 @@ $$
 **Methodology**: [../appendix/research-acceleration-model.qmd#eligible-population](../appendix/research-acceleration-model.qmd#eligible-population)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected dFDA ROI with 10% Political Success Probability {#sec-dfda_expected_roi_10pct_political_success}
+
+**Value**: 38.4
+
+Expected ROI for dFDA accounting for 10% political success probability (conservative estimate)
+
+$$
+E[ROI]_{\text{10\%}} = 463 \times 0.10 = 46.3
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected dFDA ROI with 25% Political Success Probability {#sec-dfda_expected_roi_25pct_political_success}
+
+**Value**: 96.1
+
+Expected ROI for dFDA accounting for 25% political success probability (moderate estimate)
+
+$$
+E[ROI]_{\text{25\%}} = 463 \times 0.25 = 115.8
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected dFDA ROI with 40% Political Success Probability {#sec-dfda_expected_roi_40pct_political_success}
+
+**Value**: 154
+
+Expected ROI for dFDA accounting for 40% political success probability (moderate-high estimate)
+
+$$
+E[ROI]_{\text{40\%}} = 463 \times 0.40 = 185.2
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected dFDA ROI with 50% Political Success Probability {#sec-dfda_expected_roi_50pct_political_success}
+
+**Value**: 192
+
+Expected ROI for dFDA accounting for 50% political success probability (optimistic estimate)
+
+$$
+E[ROI]_{\text{50\%}} = 463 \times 0.50 = 231.5
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*~ Medium confidence*
 
 :::
 
@@ -3379,6 +3430,23 @@ dFDA staff costs (minimal, AI-assisted)
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Annual QALYs Gained from dFDA (R&D + Regulatory Delay) {#sec-dfda_qalys_rd_plus_delay_annual}
+
+**Value**: 74.1M
+
+Annual QALYs gained from dFDA via R&D savings + regulatory delay elimination (PRIMARY ESTIMATE, does NOT include innovation multiplier)
+
+$$
+QALYs_{RD+delay} = 74.0M + 0.14M = 74.15M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Daily QALYs from dFDA Regulatory Delay Elimination {#sec-dfda_qalys_rd_plus_delay_daily}
 
 **Value**: 203K
@@ -3409,23 +3477,6 @@ $$
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
 
 *✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Monetized Value of Comprehensive dFDA Benefits Including Regulatory Delay Avoidance {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
-
-**Value**: $8.12T
-
-Monetized value of comprehensive dFDA benefits including regulatory delay avoidance
-
-$$
-Value_{total} = 74.14M \times \$150k = \$11.12T
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
-
-*~ Medium confidence*
 
 :::
 
@@ -3875,74 +3926,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected ROI for dFDA Accounting for 10% Political Success Probability (Conservative) {#sec-expected_roi_conservative_dfda}
-
-**Value**: 38.4
-
-Expected ROI for dFDA accounting for 10% political success probability
-
-$$
-E[ROI]_{\text{conservative}} = 463 \times 0.10 = 46.3
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Expected ROI for dFDA Accounting for 25% Political Success Probability {#sec-expected_roi_moderate_dfda}
-
-**Value**: 96.1
-
-Expected ROI for dFDA accounting for 25% political success probability
-
-$$
-E[ROI]_{\text{moderate}} = 463 \times 0.25 = 115.8
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Expected ROI for dFDA Accounting for 40% Political Success Probability (Moderate-High) {#sec-expected_roi_moderate_high_dfda}
-
-**Value**: 154
-
-Expected ROI for dFDA accounting for 40% political success probability
-
-$$
-E[ROI]_{\text{moderate-high}} = 463 \times 0.40 = 185.2
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Expected ROI for dFDA Accounting for 50% Political Success Probability (Optimistic) {#sec-expected_roi_optimistic_dfda}
-
-**Value**: 192
-
-Expected ROI for dFDA accounting for 50% political success probability
-
-$$
-E[ROI]_{\text{optimistic}} = 463 \times 0.50 = 231.5
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Minimum Investment for Family Offices {#sec-family_office_investment_min}
 
 **Value**: $5.00M
@@ -4334,53 +4317,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual QALYs Gained from dFDA (Regulatory Delay Elimination) {#sec-global_dfda_qalys_gained_annual}
-
-**Value**: 74.1M
-
-Annual QALYs gained from dFDA via eliminating 7.2-year efficacy lag (PRIMARY ESTIMATE)
-
-$$
-QALYs_{dFDA} = 74.0M + 0.14M = 74.15M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual QALYs Gained from dFDA (Incremental Bottom-Up) {#sec-global_dfda_qalys_incremental}
-
-**Value**: 840K
-
-Annual QALYs gained from dFDA (incremental bottom-up estimate for reference only - NOT primary estimate)
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd](../appendix/dfda-qaly-model.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Total Annual QALYs from dFDA Including Regulatory Delay Avoidance {#sec-global_dfda_qalys_with_regulatory_avoidance}
-
-**Value**: 54.2M
-
-Total annual QALYs from dFDA including regulatory delay avoidance (top-down comprehensive estimate)
-
-$$
-QALYs_{total} = 74M + 140k \approx 74.14M
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Total Economic Burden of Disease Globally {#sec-global_disease_economic_burden_annual}
 
 **Value**: $109T
@@ -4651,23 +4587,6 @@ Foregone economic value per second from not implementing system
 *Formula*: `TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL × 1B ÷ SECONDS_PER_YEAR`
 
 **Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Optimistic Scenario ROI {#sec-optimistic_scenario_roi}
-
-**Value**: 1,281
-
-Optimistic scenario ROI (net benefit ÷ total costs)
-
-$$
-ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
 
 *✓ High confidence*
 
@@ -5086,149 +5005,6 @@ Pharma payment per cured patient in 50/50 model
 System profit per life saved (specific calculation)
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Base Case QALYs from Faster Drug Access {#sec-qalys_from_faster_access}
-
-**Value**: 200K
-
-Base case QALYs from faster drug access
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#base-case](../appendix/dfda-qaly-model.qmd#base-case)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Conservative QALYs from Faster Access {#sec-qalys_from_faster_access_conservative}
-
-**Value**: 90,000
-
-Conservative QALYs from faster access (15 drugs/yr × 1 yr accel × 6k QALYs/drug)
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Optimistic QALYs from Faster Drug Access {#sec-qalys_from_faster_access_optimistic}
-
-**Value**: 500K
-
-Optimistic QALYs from faster drug access
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Base Case QALYs from Enabling New Therapies for Rare/Untreatable Diseases {#sec-qalys_from_new_therapies}
-
-**Value**: 500K
-
-Base case QALYs from enabling new therapies for rare/untreatable diseases
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#base-case](../appendix/dfda-qaly-model.qmd#base-case)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Conservative QALYs from New Therapies {#sec-qalys_from_new_therapies_conservative}
-
-**Value**: 50,000
-
-Conservative QALYs from new therapies (5 therapies/yr × 2k patients × 5 QALYs/patient)
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Optimistic QALYs from New Therapies {#sec-qalys_from_new_therapies_optimistic}
-
-**Value**: 3.00M
-
-Optimistic QALYs from new therapies
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Base Case QALYs from Better Prevention Through Real-World Data {#sec-qalys_from_prevention}
-
-**Value**: 140K
-
-Base case QALYs from better prevention through real-world data
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#base-case](../appendix/dfda-qaly-model.qmd#base-case)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Conservative QALYs from Prevention {#sec-qalys_from_prevention_conservative}
-
-**Value**: 50,000
-
-Conservative QALYs from prevention (5M patients × 0.01 QALYs/patient)
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Optimistic QALYs from Prevention {#sec-qalys_from_prevention_optimistic}
-
-**Value**: 150K
-
-Optimistic QALYs from prevention
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Total Conservative QALYs {#sec-qalys_total_conservative}
-
-**Value**: 190K
-
-Total conservative QALYs (90k + 50k + 50k)
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#conservative-scenario](../appendix/dfda-qaly-model.qmd#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Total Optimistic QALYs {#sec-qalys_total_optimistic}
-
-**Value**: 3.65M
-
-Total optimistic QALYs (500k + 150k + 3M)
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#optimistic-scenario](../appendix/dfda-qaly-model.qmd#optimistic-scenario)
 
 *✓ High confidence*
 
@@ -5857,14 +5633,14 @@ Optimistic total costs
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Conservative Total QALYs {#sec-sensitivity_total_qalys_conservative}
+## Conservative Total QALYs (Peace + dFDA) {#sec-sensitivity_total_qalys_conservative}
 
-**Value**: 208K
+**Value**: 74.2M
 
-Conservative total QALYs (peace + dFDA)
+Conservative total QALYs (peace + dFDA primary estimate)
 
 $$
-QALYs_{conservative} = 17,500 + 190,000 = 207,500
+QALYs_{conservative} = 17,500 + 74,148,065 = 74,165,565
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
@@ -5874,14 +5650,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Optimistic Total QALYs {#sec-sensitivity_total_qalys_optimistic}
+## Optimistic Total QALYs (Peace + dFDA) {#sec-sensitivity_total_qalys_optimistic}
 
-**Value**: 3.70M
+**Value**: 74.2M
 
-Optimistic total QALYs (peace + dFDA)
+Optimistic total QALYs (peace + dFDA primary estimate)
 
 $$
-QALYs_{optimistic} = 52,500 + 3,650,000 = 3,702,500
+QALYs_{optimistic} = 52,500 + 74,148,065 = 74,200,565
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
@@ -6281,11 +6057,11 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Complete 1% Treaty ROI (All Benefits) {#sec-treaty_complete_roi}
+## Complete 1% Treaty ROI (All 8 Benefit Categories) {#sec-treaty_complete_roi_all_eight_benefits}
 
 **Value**: 1,230
 
-Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)
+Complete ROI including all 8 benefit categories: peace dividend, R&D savings, regulatory delay, earlier access, prevention, lost innovation, new therapies, economic multiplier (annual benefits ÷ one-time campaign cost)
 
 $$
 ROI_{complete} = \frac{TotalBenefits}{\$1.00B}
@@ -6417,6 +6193,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## 1% Treaty Conservative Scenario ROI {#sec-treaty_conservative_scenario_roi}
+
+**Value**: 189
+
+Conservative scenario ROI for 1% Treaty (net benefit ÷ total costs, lower-bound economic assumptions)
+
+$$
+ROI_{conservative} = \$74.6B / \$0.393B = 190:1
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Cost per Life for Investor-Funded Scenario (Treaty + dFDA) {#sec-treaty_dfda_cost_per_life_investor_funded}
 
 **Value**: $-7
@@ -6475,7 +6268,7 @@ ICER counting redirected military spending as opportunity cost - Treaty + dFDA s
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system
 
-*Formula*: `(TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL`
+*Formula*: `(TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL`
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation)
 
@@ -6518,11 +6311,45 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Net Annual Benefit from 1% Treaty {#sec-treaty_net_annual_benefit}
+## 1% Treaty Optimistic Scenario ROI {#sec-treaty_optimistic_scenario_roi}
+
+**Value**: 1,281
+
+Optimistic scenario ROI for 1% Treaty (net benefit ÷ total costs, upper-bound economic assumptions)
+
+$$
+ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## 1% Treaty Basic Annual Benefits (Peace + R&D Savings) {#sec-treaty_peace_plus_rd_annual_benefits}
 
 **Value**: $155B
 
-Net annual benefit (total benefits - total costs)
+Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)
+
+$$
+Benefits_{peace+RD} = \$113.55B + \$41.5B = \$155.05B
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## 1% Treaty Net Annual Benefit (Peace + R&D) {#sec-treaty_peace_plus_rd_net_annual_benefit}
+
+**Value**: $155B
+
+Net annual benefit from peace dividend + R&D savings (basic 2-benefit case minus costs)
 
 $$
 NetBenefit = \$163.55B - \$0.29B = \$163.26B
@@ -6546,23 +6373,6 @@ QALYs_{peace} = 2,446 \times 35 = 85,610
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys](../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Total Annual Benefits from 1% Treaty and dFDA {#sec-treaty_total_annual_benefits}
-
-**Value**: $155B
-
-Total annual benefits (peace dividend + dFDA savings)
-
-$$
-TotalBenefits = \$113.55B + \$41.5B = \$155.05B
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits)
 
 *✓ High confidence*
 
