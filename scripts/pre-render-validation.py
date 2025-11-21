@@ -280,6 +280,100 @@ def check_cross_reference_links(content: str, filepath: str):
                 )
 
 
+def load_parameter_names() -> Set[str]:
+    """
+    Load all parameter names from dih_models/parameters.py.
+    Returns a set of uppercase parameter names (e.g., 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024').
+    """
+    parameters_file = "dih_models/parameters.py"
+    parameter_names: Set[str] = set()
+
+    if not os.path.exists(parameters_file):
+        print(f"Warning: {parameters_file} not found, skipping parameter import validation\n")
+        return parameter_names
+
+    try:
+        with open(parameters_file, encoding="utf-8") as f:
+            content = f.read()
+
+        # Pattern: PARAMETER_NAME = Parameter(
+        # Match uppercase names followed by = Parameter(
+        param_pattern = re.compile(r"^([A-Z][A-Z0-9_]*)\s*=\s*Parameter\(", re.MULTILINE)
+        matches = param_pattern.finditer(content)
+
+        for match in matches:
+            parameter_names.add(match.group(1))
+
+        return parameter_names
+    except Exception as e:
+        print(f"Warning: Failed to parse {parameters_file}: {str(e)}\n")
+        return parameter_names
+
+
+def check_parameter_imports(content: str, filepath: str, defined_parameters: Set[str]):
+    """
+    Check if parameters from dih_models.parameters are used but not imported.
+    This catches errors like using GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL without importing it.
+    """
+    if not defined_parameters:
+        # Skip if no parameters loaded
+        return
+
+    lines = content.split("\n")
+    in_python_block = False
+    current_block = []
+    block_start_line = 0
+
+    for i, line in enumerate(lines):
+        if re.match(r"^```\{python\}", line):
+            in_python_block = True
+            block_start_line = i + 1
+            current_block = []
+        elif in_python_block and line.strip() == "```":
+            # End of Python block - check for parameter usage
+            block_content = "\n".join(current_block)
+
+            # Check if block imports from dih_models.parameters
+            has_param_import = bool(
+                re.search(
+                    r"from\s+dih_models\.parameters\s+import",
+                    block_content,
+                    re.DOTALL,
+                )
+            )
+
+            # If no import, check if any parameters are used
+            if not has_param_import:
+                used_params = set()
+                for param_name in defined_parameters:
+                    # Check if parameter is used as a standalone identifier
+                    # Use word boundaries to avoid matching substrings
+                    if re.search(rf"\b{param_name}\b", block_content):
+                        used_params.add(param_name)
+
+                # Report error for first used parameter
+                if used_params:
+                    for line_num, block_line in enumerate(current_block, block_start_line):
+                        for param_name in used_params:
+                            if re.search(rf"\b{param_name}\b", block_line):
+                                errors.append(
+                                    ValidationError(
+                                        file=filepath,
+                                        line=line_num,
+                                        message=f"Parameter '{param_name}' used but not imported from dih_models.parameters",
+                                        context=block_line.strip()[:80],
+                                    )
+                                )
+                                # Only report once per block
+                                break
+                        if used_params:
+                            break
+
+            in_python_block = False
+        elif in_python_block:
+            current_block.append(line)
+
+
 def check_python_imports(content: str, filepath: str):
     """
     Check for missing imports in Python code blocks.
@@ -694,7 +788,7 @@ def check_markdown_links(content: str, filepath: str):
                 continue
 
             # Check for references to old migration directories
-            if "dih-economic-models/" in link_path or "brain/book/" in link_path or "brain/" in link_path:
+            if "brain/book/" in link_path or "brain/" in link_path:
                 errors.append(
                     ValidationError(
                         file=filepath,
@@ -861,7 +955,7 @@ def validate_quarto_config():
             check_file_refs(config["book"]["appendices"], "book.appendices")
 
 
-def validate_file(filepath: str, defined_vars: Set[str]):
+def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set[str]):
     """Validate a single file"""
     if not os.path.exists(filepath):
         print(f"File not found: {filepath}", file=sys.stderr)
@@ -904,6 +998,8 @@ def validate_file(filepath: str, defined_vars: Set[str]):
     check_figure_file_imports(content, filepath)
     # Also check for other imports per-block (npf, etc.)
     check_python_imports(content, filepath)
+    # Check for parameter imports (catches missing imports from dih_models.parameters)
+    check_parameter_imports(content, filepath, defined_parameters)
 
     # Check for Quarto variables in Graphviz code blocks
     check_graphviz_variables(content, filepath)
@@ -965,6 +1061,14 @@ def main():
     else:
         print("No variables loaded (PyYAML may not be installed or _variables.yml not found)\n")
 
+    # Load defined parameters from dih_models/parameters.py
+    print("Loading defined parameters from dih_models/parameters.py...")
+    defined_parameters = load_parameter_names()
+    if defined_parameters:
+        print(f"Loaded {len(defined_parameters)} defined parameters\n")
+    else:
+        print("No parameters loaded (dih_models/parameters.py not found)\n")
+
     # Validate _quarto.yml configuration first
     validate_quarto_config()
 
@@ -981,7 +1085,7 @@ def main():
 
     # Validate each file
     for qmd_file in qmd_files:
-        validate_file(qmd_file, defined_vars)
+        validate_file(qmd_file, defined_vars, defined_parameters)
 
     # Report results
     if len(errors) == 0:

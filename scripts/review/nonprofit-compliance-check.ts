@@ -4,17 +4,17 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Checking dih-economic-models files for nonprofit foundation compliance...');
+  console.log('Checking knowledge files for nonprofit foundation compliance...');
 
-  let staleFilesToCheck = await getStaleFiles('lastNonprofitComplianceHash', 'dih-economic-models');
+  let staleFilesToCheck = await getStaleFiles('lastNonprofitComplianceHash', 'knowledge');
 
   // Skip references.qmd file
   staleFilesToCheck = staleFilesToCheck.filter(file => !file.endsWith('references.qmd'));
 
-  console.log(`\nFound ${staleFilesToCheck.length} stale files in dih-economic-models to review\n`);
+  console.log(`\nFound ${staleFilesToCheck.length} stale files in knowledge to review\n`);
 
   if (staleFilesToCheck.length === 0) {
-    console.log('All files in dih-economic-models are up-to-date!');
+    console.log('All files in knowledge are up-to-date!');
     return;
   }
 

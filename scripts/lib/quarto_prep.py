@@ -89,7 +89,7 @@ def prepare_economics_index(verbose: bool = True) -> bool:
         # Handle same-directory links: [text](filename.qmd) or [text](./filename.qmd)
         # Pattern matches markdown links with relative paths (not starting with http, https, #, or /)
         # Root-level directories that shouldn't get knowledge/economics/ prefix
-        root_level_dirs = ["assets/", "scripts/", "dih-economic-models/", "brain/", "references.bib"]
+        root_level_dirs = ["assets/", "scripts/", "dih_models/", "brain/", "references.bib"]
 
         def replace_same_dir_link(match):
             link_text = match.group(1)
