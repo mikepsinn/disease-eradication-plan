@@ -1252,7 +1252,7 @@ dfda_roi_npv = DFDA_ROI_RD_ONLY  # Conservative R&D-only (from 10-year NPV analy
 
 # Monetized value of QALY gains
 
-monetized_qaly_value = DFDA_QALYS_MONETIZED  # {{< var dfda_qalys_monetized >}}
+monetized_qaly_value = DFDA_QALYS_RD_PLUS_DELAY_MONETIZED  # {{< var dfda_qalys_rd_plus_delay_monetized >}}
 
 # --- Connecting to the Peace Dividend ---
 # The captured dividend must cover the operational cost.

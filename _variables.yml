@@ -558,13 +558,14 @@
   \ calculation\">$-41.5B</a>"
 "dfda_net_incremental_cost_annual_latex": "$$\nNetCost = \\$0.040B - \\$50.0B = -\\\
   $49.96B\n$$"
-"dfda_net_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
+"dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
-  \ (gross savings minus operational costs) | ✓ High confidence | Formula: GROSS_SAVINGS\
-  \ - ANNUAL_OPEX | Unit: USD/year | Click to view calculation\">$41.5B</a>"
-"dfda_net_savings_annual_latex": "$$\nSavings_{net} = \\$50B - \\$0.04B = \\$49.96B\n\
-  $$"
+  \ from R&D cost reduction only (gross savings minus operational costs, excludes\
+  \ regulatory delay value) | ✓ High confidence | Formula: GROSS_SAVINGS - ANNUAL_OPEX\
+  \ | Unit: USD/year | Click to view calculation\">$41.5B</a>"
+"dfda_net_savings_rd_only_annual_latex": "$$\nSavings_{net} = \\$41.5B - \\$0.04B\
+  \ = \\$41.46B\n$$"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Years to reach\
@@ -582,22 +583,22 @@
   \ DIH_OPEX | Unit: USD/year | Click to view calculation\">$40M</a>"
 "dfda_npv_annual_opex_total_latex": "$$\nC_{op} = \\$0.01895B + \\$0.02110B = \\$0.04005B\n\
   $$"
-"dfda_npv_benefit": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
+"dfda_npv_benefit_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA benefits\
-  \ with 5-year adoption ramp (10-year horizon) | ✓ High confidence | Formula: Sum\
-  \ of discounted annual net savings with linear adoption ramp | Unit: USD | Click\
-  \ to view calculation\">$207B</a>"
-"dfda_npv_benefit_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA R&D\
+  \ savings only with 5-year adoption ramp (10-year horizon, most conservative financial\
+  \ estimate) | ✓ High confidence | Formula: Sum of discounted annual net R&D savings\
+  \ with linear adoption ramp | Unit: USD | Click to view calculation\">$207B</a>"
+"dfda_npv_benefit_rd_only_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B\n$$"
-"dfda_npv_net_benefit_conservative": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
+"dfda_npv_net_benefit_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ NPV benefit from dFDA R&D savings (10-year discounted with adoption ramp) | ✓\
-  \ High confidence | Formula: NPV of net savings with 5-year linear adoption ramp\
-  \ | Unit: USD | Click to view calculation\">$207B</a>"
-"dfda_npv_net_benefit_conservative_latex": "$$\nBenefit_{NPV} = \\sum_{t=1}^{10} \\\
-  frac{NetSavings \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B\n$$"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV net benefit\
+  \ using R&D savings only (most conservative financial estimate, excludes regulatory\
+  \ delay health value) | ✓ High confidence | Formula: NPV of net R&D savings with\
+  \ 5-year linear adoption ramp | Unit: USD | Click to view calculation\">$207B</a>"
+"dfda_npv_net_benefit_rd_only_latex": "$$\nBenefit_{NPV} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
+  \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B\n$$"
 "dfda_npv_pv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Present value\
@@ -651,13 +652,6 @@
 "dfda_patient_eligibility_rate": "<span class=\"parameter-definition\" title=\"dFDA\
   \ patient eligibility rate (50% of disease patients can participate) | Unit: rate\
   \ | Core definition\">50%</span>"
-"dfda_qalys_monetized": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Monetized value\
-  \ of dFDA QALYs (QALYs × economic value) | ✓ High confidence | Formula: QALYS ×\
-  \ VALUE_PER_QALY | Unit: USD/year | Click to view calculation\">$11.1T</a>"
-"dfda_qalys_monetized_latex": "$$\nValue_{QALY} = 74.15M \\times \\$150,000 = \\$11.12T\n\
-  $$"
 "dfda_qalys_rd_plus_delay_daily": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily QALYs from\
@@ -666,6 +660,14 @@
   \ view calculation\">203K</a>"
 "dfda_qalys_rd_plus_delay_daily_latex": "$$\nQALYs_{daily} = 74.15M \\div 365 = 203,145\n\
   $$"
+"dfda_qalys_rd_plus_delay_monetized": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Monetized value\
+  \ of dFDA health benefits including regulatory delay elimination (74.15M QALYs ×\
+  \ $150k economic value) | ✓ High confidence | Formula: QALYS_RD_PLUS_DELAY × VALUE_PER_QALY\
+  \ | Unit: USD/year | Click to view calculation\">$11.1T</a>"
+"dfda_qalys_rd_plus_delay_monetized_latex": "$$\nValue_{QALY} = 74.15M \\times \\\
+  $150,000 = \\$11.12T\n$$"
 "dfda_qalys_with_regulatory_avoidance_monetized": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Monetized value\

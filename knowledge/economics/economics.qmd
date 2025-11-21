@@ -44,7 +44,7 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_conservative >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var global_dfda_qalys_gained_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var conservative_scenario_roi >}}:1 worst-case to {{< var optimistic_scenario_roi >}}:1 best-case).
+**Results**: Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var global_dfda_qalys_gained_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var conservative_scenario_roi >}}:1 worst-case to {{< var optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annual surplus while curing diseases.
 
@@ -55,7 +55,7 @@ from dih_models.parameters import *
 ## Key Findings
 
 1. **Conservative ROI**: {{< var dfda_roi_rd_only >}}:1 (counting only R&D efficiency, ignoring everything else that makes this look "too good")
-   - {{< var dfda_npv_benefit >}} benefit / {{< var dfda_npv_total_cost >}} cost over {{< var npv_time_horizon_years >}} years
+   - {{< var dfda_npv_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost over {{< var npv_time_horizon_years >}} years
 
 2. **Complete ROI**: {{< var dfda_roi_rd_plus_delay >}}:1 (counting everything, at which point reality stops caring about sounding believable)
    - {{< var treaty_total_complete_benefits_annual >}} annual benefits / {{< var treaty_campaign_total_cost >}} campaign cost
@@ -863,7 +863,7 @@ $$
 $$
 
 You spend {{< var dfda_npv_total_cost >}}.
-You get back {{< var dfda_npv_net_benefit_conservative >}} over {{< var npv_time_horizon_years >}} years.
+You get back {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_horizon_years >}} years.
 
 That's $463 appearing for every $1 you invest. It's like a money printer, except instead of causing inflation, it causes people to continue existing.
 
@@ -932,8 +932,8 @@ This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} ove
 
 ### What You Get Back
 
-- **Money**: {{< var dfda_npv_net_benefit_conservative >}} in R&D savings ({{< var npv_time_horizon_years >}} years)
-- **Returns**: {{< var dfda_npv_net_benefit_conservative >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}:1** ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
+- **Money**: {{< var dfda_npv_net_benefit_rd_only >}} in R&D savings ({{< var npv_time_horizon_years >}} years)
+- **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}:1** ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 - **Not dying**: {{< var global_dfda_qalys_gained_annual >}} quality-adjusted life years annually
 
 **Two money fountains from one budget shift**:

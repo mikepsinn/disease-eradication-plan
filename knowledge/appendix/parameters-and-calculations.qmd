@@ -3156,14 +3156,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Annual Net Savings {#sec-dfda_net_savings_annual}
+## dFDA Annual Net Savings (R&D Only) {#sec-dfda_net_savings_rd_only_annual}
 
 **Value**: $41.5B
 
-Annual net savings (gross savings minus operational costs)
+Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
 
 $$
-Savings_{net} = \$50B - \$0.04B = \$49.96B
+Savings_{net} = \$41.5B - \$0.04B = \$41.46B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#net-savings](../appendix/dfda-cost-benefit-analysis.qmd#net-savings)
@@ -3216,14 +3216,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## NPV of dFDA Benefits with 5-Year Adoption Ramp {#sec-dfda_npv_benefit}
+## NPV of dFDA Benefits (R&D Only, 10-Year Discounted) {#sec-dfda_npv_benefit_rd_only}
 
 **Value**: $207B
 
-NPV of dFDA benefits with 5-year adoption ramp (10-year horizon)
+NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 $$
-PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
+PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-benefit](../appendix/dfda-cost-benefit-analysis.qmd#npv-benefit)
@@ -3233,14 +3233,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Conservative NPV Benefit from dFDA R&D Savings {#sec-dfda_npv_net_benefit_conservative}
+## NPV Net Benefit (R&D Only, Conservative) {#sec-dfda_npv_net_benefit_rd_only}
 
 **Value**: $207B
 
-Conservative NPV benefit from dFDA R&D savings (10-year discounted with adoption ramp)
+NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)
 
 $$
-Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
+Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit](../appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit)
@@ -3379,23 +3379,6 @@ dFDA staff costs (minimal, AI-assisted)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Monetized Value of dFDA QALYs {#sec-dfda_qalys_monetized}
-
-**Value**: $11.1T
-
-Monetized value of dFDA QALYs (QALYs × economic value)
-
-$$
-Value_{QALY} = 74.15M \times \$150,000 = \$11.12T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Daily QALYs from dFDA Regulatory Delay Elimination {#sec-dfda_qalys_rd_plus_delay_daily}
 
 **Value**: 203K
@@ -3407,6 +3390,23 @@ QALYs_{daily} = 74.15M \div 365 = 203,145
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Monetized Value of dFDA QALYs (R&D + Regulatory Delay) {#sec-dfda_qalys_rd_plus_delay_monetized}
+
+**Value**: $11.1T
+
+Monetized value of dFDA health benefits including regulatory delay elimination (74.15M QALYs × $150k economic value)
+
+$$
+Value_{QALY} = 74.15M \times \$150,000 = \$11.12T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
 
 *✓ High confidence*
 

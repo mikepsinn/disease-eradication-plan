@@ -1367,17 +1367,17 @@ DFDA_RD_SAVINGS_DAILY = Parameter(
     keywords=["137m", "daily", "per day", "each day", "opportunity cost", "delay cost"]
 )  # $137M/day
 
-DFDA_NET_SAVINGS_ANNUAL = Parameter(
+DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     DFDA_RD_GROSS_SAVINGS_ANNUAL - DFDA_ANNUAL_OPEX,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings",
     source_type="calculated",
-    description="Annual net savings (gross savings minus operational costs)",
-    display_name="dFDA Annual Net Savings",
+    description="Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
+    display_name="dFDA Annual Net Savings (R&D Only)",
     unit="USD/year",
     formula="GROSS_SAVINGS - ANNUAL_OPEX",
-    latex=r"Savings_{net} = \$50B - \$0.04B = \$49.96B",
-    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly"]
-)  # $49.96B
+    latex=r"Savings_{net} = \$41.5B - \$0.04B = \$41.46B",
+    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly", "conservative"]
+)  # $41.46B (R&D savings only, most conservative financial estimate)
 
 # Simple ROI (not NPV-adjusted)
 DFDA_ROI_SIMPLE = Parameter(
@@ -1498,17 +1498,17 @@ DFDA_LIVES_SAVED_DAILY = Parameter(
     keywords=["5.8k", "daily", "per day", "each day", "deaths prevented", "life saving", "mortality reduction"]
 )  # 5,808 lives/day
 
-DFDA_QALYS_MONETIZED = Parameter(
+DFDA_QALYS_RD_PLUS_DELAY_MONETIZED = Parameter(
     (GLOBAL_DFDA_QALYS_GAINED_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
-    description="Monetized value of dFDA QALYs (QALYs × economic value)",
-    display_name="Monetized Value of dFDA QALYs",
+    description="Monetized value of dFDA health benefits including regulatory delay elimination (74.15M QALYs × $150k economic value)",
+    display_name="Monetized Value of dFDA QALYs (R&D + Regulatory Delay)",
     unit="USD/year",
-    formula="QALYS × VALUE_PER_QALY",
+    formula="QALYS_RD_PLUS_DELAY × VALUE_PER_QALY",
     latex=r"Value_{QALY} = 74.15M \times \$150,000 = \$11.12T",
-    keywords=["11.1t", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "economic value"]
-)  # $11.12T/year
+    keywords=["11.1t", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "economic value", "recommended"]
+)  # $11.12T/year (recommended estimate: R&D + regulatory delay health benefits)
 
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
@@ -2329,34 +2329,34 @@ DFDA_NPV_TOTAL_COST = Parameter(
 # Years 1-5: 20%, 40%, 60%, 80%, 100% adoption
 # Years 6-10: 100% adoption
 # Discounted at 8% annual rate
-DFDA_NPV_BENEFIT = Parameter(
+DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     sum(
         [
-            DFDA_NET_SAVINGS_ANNUAL * (min(year, 5) / 5) / (1 + NPV_DISCOUNT_RATE_STANDARD) ** year
+            DFDA_NET_SAVINGS_RD_ONLY_ANNUAL * (min(year, 5) / 5) / (1 + NPV_DISCOUNT_RATE_STANDARD) ** year
             for year in range(1, 11)
         ]
     ),
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
     source_type="calculated",
-    description="NPV of dFDA benefits with 5-year adoption ramp (10-year horizon)",
-    display_name="NPV of dFDA Benefits with 5-Year Adoption Ramp",
+    description="NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
+    display_name="NPV of dFDA Benefits (R&D Only, 10-Year Discounted)",
     unit="USD",
-    formula="Sum of discounted annual net savings with linear adoption ramp",
-    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
-    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"]
-)  # ~$249.3B NPV of benefits
+    formula="Sum of discounted annual net R&D savings with linear adoption ramp",
+    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
+    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"]
+)  # ~$249.3B NPV of R&D savings only (conservative financial case)
 
-DFDA_NPV_NET_BENEFIT_CONSERVATIVE = Parameter(
-    DFDA_NPV_BENEFIT,
+DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
+    DFDA_NPV_BENEFIT_RD_ONLY,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit",
     source_type="calculated",
-    description="Conservative NPV benefit from dFDA R&D savings (10-year discounted with adoption ramp)",
-    display_name="Conservative NPV Benefit from dFDA R&D Savings",
+    description="NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)",
+    display_name="NPV Net Benefit (R&D Only, Conservative)",
     unit="USD",
-    formula="NPV of net savings with 5-year linear adoption ramp",
-    latex=r"Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
-    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"]
-)  # ~$249.3B
+    formula="NPV of net R&D savings with 5-year linear adoption ramp",
+    latex=r"Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
+    keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"]
+)  # ~$249.3B (R&D savings only, most defensible financial case)
 
 # ---
 # ROI TIERS
@@ -2365,7 +2365,7 @@ DFDA_NPV_NET_BENEFIT_CONSERVATIVE = Parameter(
 # Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
 # Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
 DFDA_ROI_RD_ONLY = Parameter(
-    DFDA_NPV_BENEFIT / DFDA_NPV_TOTAL_COST,
+    DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
     source_ref="/knowledge/figures/dfda-roi-analysis.qmd",
     source_type="calculated",
     description="ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
@@ -5736,7 +5736,7 @@ death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
 dfda_annual_opex_formatted = format_parameter_value(DFDA_ANNUAL_OPEX)
 dfda_gross_savings_annual_formatted = format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)
-dfda_npv_net_benefit_conservative_formatted = format_parameter_value(DFDA_NPV_NET_BENEFIT_CONSERVATIVE)
+dfda_npv_net_benefit_rd_only_formatted = format_parameter_value(DFDA_NPV_NET_BENEFIT_RD_ONLY)
 dfda_npv_total_cost_formatted = format_parameter_value(DFDA_NPV_TOTAL_COST)
 dfda_opex_community_formatted = format_parameter_value(DFDA_OPEX_COMMUNITY)
 dfda_opex_infrastructure_formatted = format_parameter_value(DFDA_OPEX_INFRASTRUCTURE)
