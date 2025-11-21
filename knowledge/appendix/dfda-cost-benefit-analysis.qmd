@@ -562,15 +562,15 @@ The dFDA provides **provisional access post-Phase I** via trial participation:
 2. **Post-Phase I Access**: Patients can access drugs through trial participation immediately after safety verification
 3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}}-year pre-market efficacy delay
 
-This eliminates approximately **{{< var dfda_regulatory_delay_avoidance_fraction >}} of regulatory delay** (the efficacy lag portion).
+This eliminates approximately **{{< var dfda_regulatory_delay_avoidance_fraction >}} of post-safety efficacy lag** (the Phase II/III portion, while preserving Phase I safety testing).
 
 #### Quantified Benefits
 
-The dFDA's regulatory delay avoidance creates:
+The dFDA's post-safety efficacy lag elimination creates:
 
 - **Annual DALYs Saved**: {{< var dfda_avoided_regulatory_delay_dalys_annual >}} ({{< var regulatory_delay_dalys >}}B ÷ 62 years × {{< var dfda_regulatory_delay_avoidance_fraction >}})
 - **Annual Economic Value**: {{< var dfda_avoided_regulatory_delay_cost_annual >}} ({{< var dfda_avoided_regulatory_delay_dalys_annual >}} × {{< var standard_economic_qaly_value_usd >}})
-- **Comprehensive Annual QALYs**: {{< var dfda_qalys_rd_plus_delay_annual >}} (regulatory delay avoidance + prevention benefits)
+- **Comprehensive Annual QALYs**: {{< var dfda_qalys_rd_plus_delay_annual >}} (post-safety efficacy lag elimination + prevention benefits)
 
 This represents the **top-down comprehensive estimate** of dFDA health benefits, compared to the **{{< var dfda_qalys_rd_plus_delay_annual >}} conservative bottom-up estimate** from specific mechanism modeling.
 
