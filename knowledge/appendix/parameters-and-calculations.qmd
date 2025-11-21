@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 525
+**Total parameters**: 527
 
-- External sources (peer-reviewed): 164
-- Calculated values: 313
+- External sources (peer-reviewed): 165
+- Calculated values: 314
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -1407,6 +1407,19 @@ Conservative estimate of political success probability (10%)
 **Value**: 0.25
 
 Moderate estimate of political success probability (25%)
+
+**Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Moderate-High Estimate of Political Success Probability {#sec-political_success_probability_moderate_high}
+
+**Value**: 0.4
+
+Moderate-high estimate of political success probability (40%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
@@ -3866,6 +3879,23 @@ Expected ROI for dFDA accounting for 25% political success probability
 
 $$
 E[ROI]_{\text{moderate}} = 463 \times 0.25 = 115.8
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected ROI for dFDA Accounting for 40% Political Success Probability (Moderate-High) {#sec-expected_roi_moderate_high_dfda}
+
+**Value**: 185
+
+Expected ROI for dFDA accounting for 40% political success probability
+
+$$
+E[ROI]_{\text{moderate-high}} = 463 \times 0.40 = 185.2
 $$
 
 **Methodology**: [Direct Calculation](#calculated)

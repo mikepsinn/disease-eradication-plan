@@ -24,7 +24,7 @@ probabilities = ['10%\n(Conservative)', '25%\n(Moderate)', '40%\n(Moderate-High)
 expected_rois = [
     float(EXPECTED_ROI_CONSERVATIVE_DFDA),
     float(EXPECTED_ROI_MODERATE_DFDA),
-    185,  # From economics.qmd line 643
+    float(EXPECTED_ROI_MODERATE_HIGH_DFDA),
     float(EXPECTED_ROI_OPTIMISTIC_DFDA)
 ]
 

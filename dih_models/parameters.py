@@ -2466,6 +2466,16 @@ POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
     keywords=["25%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"]
 )
 
+POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH = Parameter(
+    0.40,
+    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
+    source_type="external",
+    confidence="medium",
+    description="Moderate-high estimate of political success probability (40%)",
+    display_name="Moderate-High Estimate of Political Success Probability",
+    keywords=["40%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"]
+)
+
 POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
     0.50,
     source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
@@ -2498,6 +2508,18 @@ EXPECTED_ROI_MODERATE_DFDA = Parameter(
     confidence="medium",
     description="Expected ROI for dFDA accounting for 25% political success probability",
     display_name="Expected ROI for dFDA Accounting for 25% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return"]
+)
+
+EXPECTED_ROI_MODERATE_HIGH_DFDA = Parameter(
+    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH",
+    latex=r"E[ROI]_{\text{moderate-high}} = 463 \times 0.40 = 185.2",
+    confidence="medium",
+    description="Expected ROI for dFDA accounting for 40% political success probability",
+    display_name="Expected ROI for dFDA Accounting for 40% Political Success Probability (Moderate-High)",
     keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return"]
 )
 

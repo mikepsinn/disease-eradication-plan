@@ -909,6 +909,13 @@
   \ | Click to view calculation\">116</a>"
 "expected_roi_moderate_dfda_latex": "$$\nE[ROI]_{\\text{moderate}} = 463 \\times 0.25\
   \ = 115.8\n$$"
+"expected_roi_moderate_high_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
+  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
+  medium\" title=\"Expected ROI for dFDA accounting for 40% political success probability\
+  \ | ~ Medium confidence | Formula: DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH\
+  \ | Click to view calculation\">185</a>"
+"expected_roi_moderate_high_dfda_latex": "$$\nE[ROI]_{\\text{moderate-high}} = 463\
+  \ \\times 0.40 = 185.2\n$$"
 "expected_roi_optimistic_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for dFDA accounting for 50% political success probability\
@@ -1830,6 +1837,11 @@
   external\" data-confidence=\"medium\" title=\"Moderate estimate of political success\
   \ probability (25%) | ~ Medium confidence | Click to view source\">0.25</a>"
 "political_success_probability_moderate_cite": "@icbl-ottawa-treaty"
+"political_success_probability_moderate_high": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
+  \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Moderate-high estimate of political\
+  \ success probability (40%) | ~ Medium confidence | Click to view source\">0.4</a>"
+"political_success_probability_moderate_high_cite": "@icbl-ottawa-treaty"
 "political_success_probability_optimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Optimistic estimate of political success\
