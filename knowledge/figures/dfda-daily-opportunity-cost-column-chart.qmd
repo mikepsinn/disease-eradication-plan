@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
+from dih_models.parameters import *
 
 # --- Import centralized style ---
 
@@ -12,11 +13,23 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# --- Data ---
+# --- Data calculated from annual parameters ---
 
-scenarios = ['Conservative', 'Base Case', 'Optimistic', 'Transformative\n(RECOVERY-like)']
-money_lost = [82, 137, 192, 260]  # Millions per day
-qalys_lost = [521, 2301, 10000, 10000]  # QALYs per day
+scenarios = ['Conservative', 'Baseline', 'Optimistic']
+
+# Daily opportunity costs (annual benefits / 365)
+money_lost = [
+    float(SENSITIVITY_NET_BENEFIT_CONSERVATIVE) / 365 / 1_000_000,  # Conservative daily benefit in millions
+    float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 365 / 1_000_000,  # Baseline daily R&D savings in millions
+    float(SENSITIVITY_NET_BENEFIT_OPTIMISTIC) / 365 / 1_000_000  # Optimistic daily benefit in millions
+]
+
+# Daily QALYs foregone (annual QALYs / 365)
+qalys_lost = [
+    float(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE) / 365,  # Conservative daily QALYs
+    float(GLOBAL_DFDA_QALYS_GAINED_ANNUAL) / 365,  # Baseline daily QALYs
+    float(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC) / 365  # Optimistic daily QALYs
+]
 
 # --- Create figure ---
 
@@ -115,7 +128,7 @@ from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_
 add_png_metadata(
     output_path,
     title="Daily Cost of Delaying the dFDA",
-    description="Base case: $137M and 2,301 QALYs lost per day. Ranges from $82M (conservative) to $260M (transformative)"
+    description=f"Baseline: ${money_lost[1]:.0f}M and {qalys_lost[1]:.0f} QALYs lost per day. Ranges from ${money_lost[0]:.0f}M (conservative) to ${money_lost[2]:.0f}M (optimistic)"
 )
 
 plt.show()

@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
+from dih_models.parameters import *
 
 # --- Import centralized style ---
 
@@ -12,11 +13,19 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# --- Data ---
+# --- Data from current parameters ---
 
-scenarios = ['Best Case\n(Lowest Costs)', 'Base Case\n(Lean Ecosystem)', 'Worst Case\n(Highest Costs)']
-roi_values = [2577, 463, 66]
-costs = ['$19.4M/year', '$48M/year', '$753M/year']
+scenarios = ['Optimistic\n(Lowest Costs)', 'Baseline\n(Lean Ecosystem)', 'Conservative\n(Highest Costs)']
+roi_values = [
+    float(OPTIMISTIC_SCENARIO_ROI),
+    float(DFDA_ROI_RD_ONLY),
+    float(CONSERVATIVE_SCENARIO_ROI)
+]
+costs = [
+    f'${float(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)/1_000_000:.0f}M/year',
+    f'${float(DFDA_ANNUAL_OPEX)/1_000_000:.0f}M/year',
+    f'${float(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)/1_000_000:.0f}M/year'
+]
 
 # --- Create figure ---
 
