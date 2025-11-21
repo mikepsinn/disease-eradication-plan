@@ -338,9 +338,9 @@ format:
           <meta property="og:image:type" content="image/png">
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:image" content="https://WarOnDisease.org/assets/icons/og-image.png">
-          <meta name="twitter:title" content="The Complete Idiot's Guide to Ending War and Disease">
+          <meta name="twitter:title" content="How to End War and Disease">
           <meta name="twitter:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
-          <meta property="og:title" content="The Complete Idiot's Guide to Ending War and Disease">
+          <meta property="og:title" content="How to End War and Disease">
           <meta property="og:description" content="Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers">
           <meta property="og:type" content="book">
           <meta property="og:url" content="https://WarOnDisease.org">
@@ -360,7 +360,7 @@ format:
       - left=1in
       - right=1in
     variables:
-      title: "The Complete Idiot's Guide to Ending War and Disease"
+      title: "How to End War and Disease"
       description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Prevent the Apocalypse by Giving Papers"
     include-in-header:
       text: |

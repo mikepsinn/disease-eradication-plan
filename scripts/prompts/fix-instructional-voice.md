@@ -1,6 +1,6 @@
 # Fix Instructional Voice
 
-You are reviewing a chapter from "The Complete Idiot's Guide to Ending War and Disease" to ensure it uses proper instructional voice per the style guide.
+You are reviewing a chapter from "How to End War and Disease" to ensure it uses proper instructional voice per the style guide.
 
 ## Style Guide (Key Points)
 

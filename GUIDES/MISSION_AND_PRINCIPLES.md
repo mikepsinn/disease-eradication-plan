@@ -12,7 +12,7 @@ tags: [mission, principles, contributing, philosophy]
 
 ---
 
-This repository documents "The Complete Idiot's Guide to Ending War and Disease," a book about getting every nation to sign the **1% Treaty** to redirect 1% of military spending to cure diseases instead of cause them. 
+This repository documents "How to End War and Disease," a book about getting every nation to sign the **1% Treaty** to redirect 1% of military spending to cure diseases instead of cause them. 
 
 The plan involves creating a **Wishocratically governed** (using randomized pairwise preference allocations where everyone divides budget allocations between random pairs of priorities) global **Decentralized Institutes of Health (DIH)** that subsidizes patient participation in **80X more efficient decentralized pragmatic clinical trials**. 
 

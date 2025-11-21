@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dih-models"
 version = "0.1.0"
-description = "The Complete Idiot's Guide to Ending War and Disease"
+description = "How to End War and Disease"
 authors = [
     {name = "Mike P. Sinn", email = "mike@dih.earth"}
 ]

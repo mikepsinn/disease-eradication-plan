@@ -5,7 +5,7 @@ description: Image assets, charts, infographics, and branding materials for the 
 
 # Assets Folder
 
-This folder contains all image assets for the book "The Complete Idiot's Guide to Ending War and Disease."
+This folder contains all image assets for the book "How to End War and Disease."
 
 ## Contents
 
@@ -220,7 +220,7 @@ description: Catalog of images from ThinkByNumbers.org with source URLs and chap
 
 # ThinkByNumbers.org Images - Usage Guide
 
-This document catalogs all images downloaded from thinkbynumbers.org and maps them to relevant chapters in "The Complete Idiot's Guide to Ending War and Disease."
+This document catalogs all images downloaded from thinkbynumbers.org and maps them to relevant chapters in "How to End War and Disease."
 
 ## FDA and Medical Research Images
 

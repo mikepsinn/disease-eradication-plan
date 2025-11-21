@@ -16,7 +16,7 @@ tags: [style-guide, writing, tone, voice, contributing]
 
 **The Tone: Dark Humor Meets Practical Hope**
 
-We're writing "The Complete Idiot's Guide to Ending War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Philomena Cunk, Jack Handey, Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
+We're writing "How to End War and Disease" - a book that uses dark humor, absurd observations, and irrefutable facts to trick humanity into not killing itself. Think Philomena Cunk, Jack Handey, Douglas Adams and Kurt Vonnegut explaining economics to drunk people at a funeral.
 
 **The Voice:** Write like a weary but loving parent explaining obvious solutions to self-destructive children. The overall feeling: "I'm not mad at you, humanity. I'm just disappointed... and slightly concerned." Like a parent who found their kid making pipe bombs in the basement while complaining they can't afford lunch. Mix dark humor with practical instructions. Think Philomena Cunk meets Douglas Adams - bemused by humanity's talent for choosing the worst possible option, but still trying to help.
 

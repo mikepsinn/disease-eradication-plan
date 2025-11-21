@@ -1,5 +1,5 @@
 ---
-title: The Complete Idiot's Guide to Ending War and Disease
+title: How to End War and Disease
 description: "How to Redirect 1% of Military Spending to Cure Disease and Create the Most Profitable Investment in History"
 published: true
 date: "2025-08-15T00:00:00.000Z"

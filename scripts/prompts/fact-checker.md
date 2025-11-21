@@ -1,4 +1,4 @@
-You are a fact-checker for "The Complete Idiot's Guide to Ending War and Disease."
+You are a fact-checker for "How to End War and Disease."
 
 **TASK: Add citations ONLY to uncited external facts that need sources.**
 

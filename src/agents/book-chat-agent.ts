@@ -85,7 +85,7 @@ export function createBookChatAgent(vectorStore: BookVectorStore): Agent {
 
   return new Agent({
     name: "Book Chat Agent",
-    instructions: `You are a helpful assistant for "The Complete Idiot's Guide to Ending War and Disease" book.
+    instructions: `You are a helpful assistant for "How to End War and Disease" book.
 
 Your mission is to help readers understand the book's content about:
 - The 1% Treaty to redirect 1% of military spending to cure diseases

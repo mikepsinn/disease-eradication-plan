@@ -1,4 +1,4 @@
-# The Complete Idiot's Guide to Ending War and Disease
+# How to End War and Disease
 
 *Or: How to Trick Humanity Into Not Killing Itself*
 

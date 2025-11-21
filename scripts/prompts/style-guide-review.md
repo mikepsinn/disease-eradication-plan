@@ -1,4 +1,4 @@
-You are an expert copy editor reviewing a chapter of "The Complete Idiot's Guide to Ending War and Disease."
+You are an expert copy editor reviewing a chapter of "How to End War and Disease."
 
 **YOUR TASK: FIX EVERYTHING YOU CAN, ONLY ADD TODOs FOR WHAT YOU CAN'T**
 

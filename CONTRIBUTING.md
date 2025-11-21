@@ -1,11 +1,11 @@
 ---
 title: How to Contribute
-description: Central guide for contribution guidelines, style standards, and project practices for the Complete Idiot's Guide to Ending War and Disease.
+description: Central guide for contribution guidelines, style standards, and project practices for How to End War and Disease.
 published: true
 tags: [contributing, guidelines, standards, book, knowledge-base]
 ---
 
-# How to Contribute to the Complete Idiot's Guide to Ending War and Disease
+# How to Contribute to How to End War and Disease
 
 This document provides a central overview of the contribution process. For detailed standards, please refer to our specialized guides:
 

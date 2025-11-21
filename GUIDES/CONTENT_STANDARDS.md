@@ -1,6 +1,6 @@
 ---
 title: Content and Formatting Standards
-description: "Unified content, structural, and formatting standards for the Complete Idiot's Guide to Ending War and Disease."
+description: "Unified content, structural, and formatting standards for How to End War and Disease."
 tags: [standards, contributing, content, style, review, process, quality-assurance, formatting]
 ---
 
