@@ -18,7 +18,7 @@ setup_chart_style()
 scenarios = ['Optimistic\n(Lowest Costs)', 'Baseline\n(Lean Ecosystem)', 'Conservative\n(Highest Costs)']
 roi_values = [
     float(OPTIMISTIC_SCENARIO_ROI),
-    float(DFDA_ROI_RD_ONLY),
+    float(DFDA_ROI_RD_PLUS_DELAY),  # Recommended: full health benefits across cost scenarios
     float(CONSERVATIVE_SCENARIO_ROI)
 ]
 costs = [
@@ -128,7 +128,7 @@ from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_
 add_png_metadata(
     output_path,
     title="dFDA Return on Investment Across Cost Scenarios",
-    description="ROI ranges from 66:1 (worst case) to 2,577:1 (best case), with base case at 463:1"
+    description=f"ROI ranges from {float(CONSERVATIVE_SCENARIO_ROI):.0f}:1 (worst case) to {float(OPTIMISTIC_SCENARIO_ROI):.0f}:1 (best case), with base case at {float(DFDA_ROI_RD_PLUS_DELAY):.0f}:1"
 )
 
 plt.show()

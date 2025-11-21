@@ -23,32 +23,32 @@ setup_chart_style()
 
 interventions = {
     'Decentralized FDA': {
-        'roi': 463,  # Central estimate from 66:1 to 2,577:1
+        'roi': float(DFDA_ROI_RD_PLUS_DELAY),  # Recommended: includes R&D + regulatory delay elimination
         'category': 'proposed',
         'note': 'Leverages all global R&D'
     },
     'Smallpox Eradication': {
-        'roi': 280,  # Mid-point of 159:1 to 400:1
+        'roi': float(SMALLPOX_ERADICATION_ROI),
         'category': 'historical',
         'note': 'One-time historical achievement'
     },
     'Tobacco Control': {
-        'roi': 100,  # Conservative from 20:1 to 1,057:1
+        'roi': 100,  # Conservative from 20:1 to 1,057:1 (no parameter exists)
         'category': 'current',
         'note': 'Highly variable by program'
     },
     'Childhood Vaccinations': {
-        'roi': 13,  # Mid-point of 10:1 to 16:1
+        'roi': float(CHILDHOOD_VACCINATION_ROI),
         'category': 'current',
         'note': 'US programs'
     },
     'Clean Water & Sanitation': {
-        'roi': 12,  # Mid-point of 4:1 to 21:1
+        'roi': float(WATER_FLUORIDATION_ROI),
         'category': 'current',
         'note': 'Low/middle-income countries'
     },
     'Statins (High-Risk)': {
-        'roi': 3,  # From intervention table
+        'roi': 3,  # From intervention table (no parameter exists)
         'category': 'current',
         'note': 'Pharmaceutical intervention'
     }

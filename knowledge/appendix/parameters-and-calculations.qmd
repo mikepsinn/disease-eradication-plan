@@ -15,8 +15,8 @@ This appendix provides comprehensive documentation of all parameters and calcula
 
 **Total parameters**: 527
 
-- External sources (peer-reviewed): 165
-- Calculated values: 314
+- External sources (peer-reviewed): 164
+- Calculated values: 315
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -876,19 +876,6 @@ Annual veteran healthcare costs (20-year projected)
 Annual global spending on clinical trials
 
 **Source**: [global-clinical-trials-market-2024](https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-## Global Clinical Trial Market Size {#sec-global_clinical_trial_market_annual}
-
-**Value**: $100B
-
-Global clinical trial market size
-
-**Source**: [clinical-trial-market-size](https://warondisease.org/knowledge/references.html#clinical-trial-market-size)
 
 *✓ High confidence*
 
@@ -2746,7 +2733,7 @@ Average caregiver hours per month
 ::: {.callout-note icon=false collapse=false}
 ## Combined Peace and Health Dividends for ROI Calculation {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
-**Value**: $164B
+**Value**: $155B
 
 Combined peace and health dividends for ROI calculation
 
@@ -3077,7 +3064,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Infrastructure ICER per QALY {#sec-dfda_icer_per_qaly}
 
-**Value**: $-674
+**Value**: $-559
 
 dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
 
@@ -3154,7 +3141,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Net Incremental Cost for dFDA {#sec-dfda_net_incremental_cost_annual}
 
-**Value**: $-50B
+**Value**: $-41.5B
 
 Net incremental cost for dFDA (operational costs minus R&D savings)
 
@@ -3171,7 +3158,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Annual Net Savings {#sec-dfda_net_savings_annual}
 
-**Value**: $50B
+**Value**: $41.5B
 
 Annual net savings (gross savings minus operational costs)
 
@@ -3231,7 +3218,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## NPV of dFDA Benefits with 5-Year Adoption Ramp {#sec-dfda_npv_benefit}
 
-**Value**: $249B
+**Value**: $207B
 
 NPV of dFDA benefits with 5-year adoption ramp (10-year horizon)
 
@@ -3248,7 +3235,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Conservative NPV Benefit from dFDA R&D Savings {#sec-dfda_npv_net_benefit_conservative}
 
-**Value**: $249B
+**Value**: $207B
 
 Conservative NPV benefit from dFDA R&D savings (10-year discounted with adoption ramp)
 
@@ -3409,6 +3396,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Daily QALYs from dFDA Regulatory Delay Elimination {#sec-dfda_qalys_rd_plus_delay_daily}
+
+**Value**: 203K
+
+Daily QALYs from dFDA regulatory delay elimination (opportunity cost per day)
+
+$$
+QALYs_{daily} = 74.15M \div 365 = 203,145
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Monetized Value of Comprehensive dFDA Benefits Including Regulatory Delay Avoidance {#sec-dfda_qalys_with_regulatory_avoidance_monetized}
 
 **Value**: $8.12T
@@ -3428,15 +3432,32 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Annual Gross R&D Savings from Trial Cost Reduction {#sec-dfda_rd_gross_savings_annual}
 
-**Value**: $50B
+**Value**: $41.5B
 
 Annual gross R&D savings from trial cost reduction
 
 $$
-Savings_{gross} = \$100B \times 0.50 = \$50B
+Savings_{gross} = \$83B \times 0.50 = \$41.5B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Daily R&D Savings from Trial Cost Reduction {#sec-dfda_rd_savings_daily}
+
+**Value**: $114M
+
+Daily R&D savings from trial cost reduction (opportunity cost of delay)
+
+$$
+Savings_{daily} = \$50B \div 365 = \$137M
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction)
 
 *✓ High confidence*
 
@@ -3479,7 +3500,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
 
-**Value**: 463
+**Value**: 384
 
 ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
 
@@ -3496,7 +3517,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Recommended: ROI Including R&D Savings Plus Regulatory Delay Elimination {#sec-dfda_roi_rd_plus_delay}
 
-**Value**: 4,990
+**Value**: 4,982
 
 RECOMMENDED: ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids double-counting)
 
@@ -3513,7 +3534,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Full Impact ROI: R&D Savings Plus Regulatory Delay Elimination Plus Lost Innovation {#sec-dfda_roi_rd_plus_delay_plus_innovation}
 
-**Value**: 8,542
+**Value**: 8,534
 
 Full impact ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag + D_void)
 
@@ -3530,7 +3551,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
 
-**Value**: 1,250
+**Value**: 1,038
 
 Simple ROI without NPV adjustment (gross savings / annual opex)
 
@@ -3856,7 +3877,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Expected ROI for dFDA Accounting for 10% Political Success Probability (Conservative) {#sec-expected_roi_conservative_dfda}
 
-**Value**: 46.3
+**Value**: 38.4
 
 Expected ROI for dFDA accounting for 10% political success probability
 
@@ -3873,7 +3894,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Expected ROI for dFDA Accounting for 25% Political Success Probability {#sec-expected_roi_moderate_dfda}
 
-**Value**: 116
+**Value**: 96.1
 
 Expected ROI for dFDA accounting for 25% political success probability
 
@@ -3890,7 +3911,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Expected ROI for dFDA Accounting for 40% Political Success Probability (Moderate-High) {#sec-expected_roi_moderate_high_dfda}
 
-**Value**: 185
+**Value**: 154
 
 Expected ROI for dFDA accounting for 40% political success probability
 
@@ -3907,7 +3928,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Expected ROI for dFDA Accounting for 50% Political Success Probability (Optimistic) {#sec-expected_roi_optimistic_dfda}
 
-**Value**: 232
+**Value**: 192
 
 Expected ROI for dFDA accounting for 50% political success probability
 
@@ -4591,7 +4612,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Cost-Effectiveness Multiplier vs Givewell Top Charities {#sec-multiplier_vs_givewell}
 
-**Value**: 1.71e-05
+**Value**: 1.62e-05
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4608,11 +4629,11 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Foregone Economic Value per Day from Not Implementing System {#sec-opportunity_cost_per_day}
 
-**Value**: $3.39B
+**Value**: $3.37B
 
 Foregone economic value per day from not implementing system
 
-*Formula*: `TREATY_COMPLETE_CASE_ANNUAL_BENEFITS ÷ 365`
+*Formula*: `TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL ÷ 365`
 
 **Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
 
@@ -4623,11 +4644,11 @@ Foregone economic value per day from not implementing system
 ::: {.callout-note icon=false collapse=false}
 ## Foregone Economic Value per Second from Not Implementing System {#sec-opportunity_cost_per_second}
 
-**Value**: $39.3K
+**Value**: $39K
 
 Foregone economic value per second from not implementing system
 
-*Formula*: `TREATY_COMPLETE_CASE_ANNUAL_BENEFITS × 1B ÷ SECONDS_PER_YEAR`
+*Formula*: `TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL × 1B ÷ SECONDS_PER_YEAR`
 
 **Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
 
@@ -5467,7 +5488,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## 1% Treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
-**Value**: 532
+**Value**: 442
 
 ROI at 1% discount rate (approximate 15% increase from 3% baseline)
 
@@ -5484,7 +5505,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## 1% Treaty ROI at 3% Discount Rate {#sec-roi_discount_3pct}
 
-**Value**: 463
+**Value**: 384
 
 ROI at 3% discount rate (baseline)
 
@@ -5501,7 +5522,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## 1% Treaty ROI at 5% Discount Rate {#sec-roi_discount_5pct}
 
-**Value**: 407
+**Value**: 338
 
 ROI at 5% discount rate (approximate 12% decrease from 3% baseline)
 
@@ -5518,7 +5539,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## 1% Treaty ROI at 7% Discount Rate {#sec-roi_discount_7pct}
 
-**Value**: 361
+**Value**: 300
 
 ROI at 7% discount rate (approximate 22% decrease from 3% baseline)
 
@@ -6014,7 +6035,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Treaty System Benefit Multiplier vs Childhood Vaccination Programs {#sec-treaty_benefit_multiplier_vs_vaccines}
 
-**Value**: 10.9
+**Value**: 10.3
 
 Treaty system benefit multiplier vs childhood vaccination programs
 
@@ -6260,31 +6281,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Annual Benefits from All 8 Categories {#sec-treaty_complete_case_annual_benefits}
-
-**Value**: $1.24T
-
-Total annual benefits from all 8 categories (peace dividend + R&D savings + earlier access + research acceleration + rare diseases + drug prices + prevention + mental health)
-
-$$
-TotalComplete = \$113.6B + \$50B + \$300B + \$100B + \$400B + \$100B + \$100B + \$75B = \$1,238.6B
-$$
-
-**Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Complete 1% Treaty ROI (All Benefits) {#sec-treaty_complete_roi}
 
-**Value**: 1,239
+**Value**: 1,230
 
 Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)
 
 $$
-ROI_{complete} = \frac{\$1{,}238.6\text{B/year}}{\$1.00\text{B}} = 1{,}239:1 \text{ annually}
+ROI_{complete} = \frac{TotalBenefits}{\$1.00B}
 $$
 
 **Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
@@ -6398,7 +6402,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual Benefits Using Full Regulatory Delay Avoidance, Consolidating Overlapping Categories {#sec-treaty_comprehensive_with_full_regulatory_delay}
 
-**Value**: $8.54T
+**Value**: $8.53T
 
 Total annual benefits using full regulatory delay avoidance, consolidating overlapping categories
 
@@ -6467,7 +6471,7 @@ ICER counting redirected military spending as opportunity cost - Treaty + dFDA s
 ::: {.callout-note icon=false collapse=false}
 ## Incremental Cost-Effectiveness Ratio per QALY Gained (Treaty + dFDA) {#sec-treaty_dfda_icer_per_qaly}
 
-**Value**: $-2.20K
+**Value**: $-2.08K
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system
 
@@ -6516,7 +6520,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Net Annual Benefit from 1% Treaty {#sec-treaty_net_annual_benefit}
 
-**Value**: $163B
+**Value**: $155B
 
 Net annual benefit (total benefits - total costs)
 
@@ -6550,7 +6554,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual Benefits from 1% Treaty and dFDA {#sec-treaty_total_annual_benefits}
 
-**Value**: $164B
+**Value**: $155B
 
 Total annual benefits (peace dividend + dFDA savings)
 
@@ -6584,12 +6588,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual Benefits from All 8 Benefit Categories {#sec-treaty_total_complete_benefits_annual}
 
-**Value**: $1.24T
+**Value**: $1.23T
 
 Total annual benefits from all 8 benefit categories
 
 $$
-TotalBenefits = \$113.55 + \$50 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,238.55B
+TotalBenefits = \$113.55 + \$41.5 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,230.05B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits)

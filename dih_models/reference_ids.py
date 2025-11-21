@@ -295,7 +295,7 @@ class ReferenceID(str, Enum):
     GTD_TERROR_ATTACK_DEATHS = "gtd-terror-attack-deaths"
     HALLMARKS_OF_AGING = "hallmarks-of-aging"
     HAYEK_NOBEL_PRIZE = "hayek-nobel-prize"
-    HEALTH_OUTCOMES_840000_QALYS_GAINED = "health-outcomes-840000-qalys-gained"
+    HEALTH_OUTCOMES_QALYS_GAINED = "health-outcomes-qalys-gained"
     HEALTHCARE_COST_SAVINGS_4_5T_US_ANNUALLY = "healthcare-cost-savings-4-5t-us-annually"
     HEALTHCARE_INVESTMENT_ECONOMIC_MULTIPLIER = "healthcare-investment-economic-multiplier"
     HEALTHCARE_WORKERS_60M_GLOBALLY = "healthcare-workers-60m-globally"

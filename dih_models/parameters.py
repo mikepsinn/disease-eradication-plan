@@ -803,16 +803,6 @@ PEACE_DIVIDEND_ROI = Parameter(
 
 # Clinical trial market
 # Source: brain/book/appendix/dfda-roi-calculations.qmd
-GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL = Parameter(
-    100_000_000_000,
-    source_ref=ReferenceID.CLINICAL_TRIAL_MARKET_SIZE,
-    source_type="external",
-    description="Global clinical trial market size",
-    display_name="Global Clinical Trial Market Size",
-    unit="USD/year",
-    keywords=["100.0b", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "worldwide"]
-)
-
 GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     83_000_000_000,
     source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
@@ -1354,16 +1344,28 @@ DFDA_ANNUAL_OPEX = Parameter(
 
 # Calculated benefits
 DFDA_RD_GROSS_SAVINGS_ANNUAL = Parameter(
-    GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL * TRIAL_COST_REDUCTION_PCT,
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * TRIAL_COST_REDUCTION_PCT,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
     source_type="calculated",
     description="Annual gross R&D savings from trial cost reduction",
     display_name="dFDA Annual Gross R&D Savings from Trial Cost Reduction",
     unit="USD/year",
-    formula="TRIAL_MARKET × COST_REDUCTION_PCT",
-    latex=r"Savings_{gross} = \$100B \times 0.50 = \$50B",
+    formula="TRIAL_SPENDING × COST_REDUCTION_PCT",
+    latex=r"Savings_{gross} = \$83B \times 0.50 = \$41.5B",
     keywords=["pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial", "decentralized trials"]
-)  # $50B
+)  # $41.5B (50% of $83B global clinical trial spending)
+
+DFDA_RD_SAVINGS_DAILY = Parameter(
+    DFDA_RD_GROSS_SAVINGS_ANNUAL / 365,
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction",
+    source_type="calculated",
+    description="Daily R&D savings from trial cost reduction (opportunity cost of delay)",
+    display_name="Daily R&D Savings from Trial Cost Reduction",
+    unit="USD/day",
+    formula="ANNUAL_RD_SAVINGS ÷ 365",
+    latex=r"Savings_{daily} = \$50B \div 365 = \$137M",
+    keywords=["137m", "daily", "per day", "each day", "opportunity cost", "delay cost"]
+)  # $137M/day
 
 DFDA_NET_SAVINGS_ANNUAL = Parameter(
     DFDA_RD_GROSS_SAVINGS_ANNUAL - DFDA_ANNUAL_OPEX,
@@ -1458,6 +1460,18 @@ GLOBAL_DFDA_QALYS_GAINED_ANNUAL = Parameter(
     latex=r"QALYs_{dFDA} = 74.0M + 0.14M = 74.15M",
     keywords=["74m", "pragmatic trials", "real world evidence", "regulatory delay", "efficacy lag", "approval lag", "drug lag"]
 )  # 74.15M QALYs/year from eliminating efficacy lag
+
+DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
+    GLOBAL_DFDA_QALYS_GAINED_ANNUAL / 365,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
+    source_type="calculated",
+    description="Daily QALYs from dFDA regulatory delay elimination (opportunity cost per day)",
+    display_name="Daily QALYs from dFDA Regulatory Delay Elimination",
+    unit="QALYs/day",
+    formula="DFDA_QALYS_RD_PLUS_DELAY_ANNUAL ÷ 365",
+    latex=r"QALYs_{daily} = 74.15M \div 365 = 203,145",
+    keywords=["203k", "daily", "per day", "each day", "opportunity cost", "delay cost", "regulatory delay"]
+)  # 203,145 QALYs/day (regulatory delay elimination)
 
 # Explicit lives saved calculations
 DFDA_LIVES_SAVED_ANNUAL = Parameter(
@@ -2113,29 +2127,8 @@ TREATY_TOTAL_ANNUAL_BENEFITS = Parameter(
 )  # $164B (rounded from $163.55B)
 
 # Complete case total annual benefits (all 8 benefit categories)
-TREATY_COMPLETE_CASE_ANNUAL_BENEFITS = Parameter(
-    1_238_600_000_000,
-    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
-    source_type="calculated",
-    description="Total annual benefits from all 8 categories (peace dividend + R&D savings + earlier access + research acceleration + rare diseases + drug prices + prevention + mental health)",
-    display_name="Total Annual Benefits from All 8 Categories",
-    unit="USD/year",
-    formula="113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 + 100.0 + 75.0",
-    latex=r"TotalComplete = \$113.6B + \$50B + \$300B + \$100B + \$400B + \$100B + \$100B + \$75B = \$1,238.6B",
-    keywords=["1.2t", "1%", "bcr", "avoidance", "deterrence", "precaution", "prophylaxis"]
-)  # $1.2T (rounded from $1,238.6B)
-
-TREATY_COMPLETE_ROI = Parameter(
-    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / TREATY_CAMPAIGN_TOTAL_COST,
-    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
-    source_type="calculated",
-    description="Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)",
-    display_name="Complete 1% Treaty ROI (All Benefits)",
-    unit="ratio",
-    formula="TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST",
-    latex=r"ROI_{complete} = \frac{\$1{,}238.6\text{B/year}}{\$1.00\text{B}} = 1{,}239:1 \text{ annually}",
-    keywords=["1239", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi"]
-)  # 1,239:1 annual ROI
+# TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL defined below (line 3254) using calculated component sum
+# TREATY_COMPLETE_ROI moved to after TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL definition
 
 # Net benefit
 TREATY_NET_ANNUAL_BENEFIT = Parameter(
@@ -2963,28 +2956,7 @@ DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     keywords=["armed forces", "conflict", "fatalities", "casualties", "illness", "mortality", "worldwide"]
 )  # ~137:1
 
-# Opportunity cost calculations
-OPPORTUNITY_COST_PER_SECOND = Parameter(
-    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / (365 * 24 * 3600),
-    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
-    source_type="calculated",
-    description="Foregone economic value per second from not implementing system",
-    display_name="Foregone Economic Value per Second from Not Implementing System",
-    unit="USD/second",
-    formula="TREATY_COMPLETE_CASE_ANNUAL_BENEFITS × 1B ÷ SECONDS_PER_YEAR",
-    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "profit", "return"]
-)  # ~$38,051/second
-
-OPPORTUNITY_COST_PER_DAY = Parameter(
-    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS / 365,
-    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
-    source_type="calculated",
-    description="Foregone economic value per day from not implementing system",
-    display_name="Foregone Economic Value per Day from Not Implementing System",
-    unit="USD/day",
-    formula="TREATY_COMPLETE_CASE_ANNUAL_BENEFITS ÷ 365",
-    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "profit", "return"]
-)  # ~$3.3B/day
+# Opportunity cost calculations moved to after TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL definition (line ~3252)
 
 # Medical research as percentage of disease burden
 MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
@@ -3242,10 +3214,44 @@ TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL = Parameter(
     display_name="Total Annual Benefits from All 8 Benefit Categories",
     unit="USD/year",
     formula="PEACE + R&D + FASTER_ACCESS + ACCELERATION + RARE + PRICE + PREVENTION + MENTAL",
-    latex=r"TotalBenefits = \$113.55 + \$50 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,238.55B",
+    latex=r"TotalBenefits = \$113.55 + \$41.5 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,230.05B",
     keywords=["pragmatic trials", "real world evidence", "avoidance", "deterrence", "precaution", "prophylaxis", "conflict resolution"]
-)  # $1,238.55B (updated from $1,222B when war costs were revised)
+)  # Now uses calculated component sum (updates automatically when components change)
 
+TREATY_COMPLETE_ROI = Parameter(
+    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
+    source_type="calculated",
+    description="Complete ROI including all 8 benefit categories (annual benefits ÷ one-time campaign cost)",
+    display_name="Complete 1% Treaty ROI (All Benefits)",
+    unit="ratio",
+    formula="TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST",
+    latex=r"ROI_{complete} = \frac{TotalBenefits}{\$1.00B}",
+    keywords=["1230", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi"]
+)  # Complete ROI (auto-calculated from components)
+
+# Opportunity cost calculations
+OPPORTUNITY_COST_PER_SECOND = Parameter(
+    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / (365 * 24 * 3600),
+    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
+    source_type="calculated",
+    description="Foregone economic value per second from not implementing system",
+    display_name="Foregone Economic Value per Second from Not Implementing System",
+    unit="USD/second",
+    formula="TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL × 1B ÷ SECONDS_PER_YEAR",
+    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "profit", "return"]
+)  # Opportunity cost per second
+
+OPPORTUNITY_COST_PER_DAY = Parameter(
+    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / 365,
+    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
+    source_type="calculated",
+    description="Foregone economic value per day from not implementing system",
+    display_name="Foregone Economic Value per Day from Not Implementing System",
+    unit="USD/day",
+    formula="TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL ÷ 365",
+    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "profit", "return"]
+)  # Opportunity cost per day
 
 # ---
 # COST OF DELAY PARAMETERS
@@ -3849,7 +3855,7 @@ DFDA_REGULATORY_DELAY_DLAG_ONLY_ANNUAL = Parameter(
 )  # ~$5.6T/year - conservative estimate avoiding double-count with rare diseases benefit
 
 DFDA_ROI_RD_PLUS_DELAY = Parameter(
-    (TREATY_COMPLETE_CASE_ANNUAL_BENEFITS - BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL + DFDA_REGULATORY_DELAY_DLAG_ONLY_ANNUAL)
+    (TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL - BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL + DFDA_REGULATORY_DELAY_DLAG_ONLY_ANNUAL)
     / TREATY_CAMPAIGN_TOTAL_COST,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd",
     source_type="calculated",
@@ -3866,7 +3872,7 @@ DFDA_ROI_RD_PLUS_DELAY = Parameter(
 # Uses full D_lag + D_void but removes overlapping rare diseases/research acceleration categories
 # to avoid triple-counting the innovation benefits
 TREATY_COMPREHENSIVE_WITH_FULL_REGULATORY_DELAY = Parameter(
-    TREATY_COMPLETE_CASE_ANNUAL_BENEFITS
+    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL
     - BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL  # Remove old $300B earlier access
     - BENEFIT_RARE_DISEASES_ANNUAL  # Remove $400B rare diseases (captured in D_void)
     - BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL  # Remove $100B research acceleration (captured in D_void)
@@ -5769,7 +5775,6 @@ global_annual_veteran_healthcare_costs_formatted = format_parameter_value(GLOBAL
 global_annual_war_direct_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL)
 global_annual_war_indirect_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)
 global_annual_war_total_cost_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)
-global_clinical_trial_market_annual_formatted = format_parameter_value(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL)
 global_daily_deaths_curable_diseases_formatted = f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"
 global_dfda_qalys_gained_annual_formatted = format_qalys(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)
 global_med_research_spending_formatted = format_parameter_value(GLOBAL_MED_RESEARCH_SPENDING)

@@ -46,12 +46,19 @@ costs = [
 ]
 
 # For the 1% Treaty bar, we'll stack it to show peace dividend vs dFDA savings
-# Total QALYs: 875,000/year (35k from peace, 840k from dFDA)
+# Total QALYs from parameters:
+#   - Peace: TREATY_QALYS_GAINED_ANNUAL_GLOBAL (85,610)
+#   - dFDA: GLOBAL_DFDA_QALYS_GAINED_ANNUAL (74.15M)
+#   - Total: TREATY_TOTAL_QALYS_GAINED_ANNUAL (74.23M)
 # Peace dividend contribution and dFDA contribution sum to the total benefit
 # But we'll show them as proportional contributions to the total -$5.87M
 
-peace_dividend_per_life = -5870000 * (35000 / 875000)  # Proportional to QALYs
-dfda_savings_per_life = -5870000 * (840000 / 875000)   # Proportional to QALYs
+peace_qalys = float(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
+dfda_qalys = float(GLOBAL_DFDA_QALYS_GAINED_ANNUAL)
+total_qalys = peace_qalys + dfda_qalys
+
+peace_dividend_per_life = -5870000 * (peace_qalys / total_qalys)  # Proportional to QALYs
+dfda_savings_per_life = -5870000 * (dfda_qalys / total_qalys)   # Proportional to QALYs
 
 # Error bars (uncertainty ranges from GiveWell and dFDA analysis)
 # GiveWell range: $3,000-5,500, Smallpox range, 1% Treaty range based on sensitivity
@@ -208,13 +215,13 @@ fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
 #
 # Annual Health Benefits:
 #   - Peace: 2,446 lives saved (1% of 244,600 conflict deaths/year) x 35 QALYs/life = 85,610 QALYs
-#   - dFDA: 840,000 QALYs (faster drugs + new therapies + prevention)
-#   - Total: 925,610 QALYs/year
+#   - dFDA: 74.15M QALYs (regulatory delay elimination methodology)
+#   - Total: 74.23M QALYs/year
 #
 # ICER Calculation:
 #   Net Benefit = $290M - $163.55B = -$163.26B/year (society saves money)
-#   ICER = -$163.26B / 925,610 QALYs = -$176,371 per QALY
-#   Per Life = -$176,371 x 35 QALYs/life = -$6.17M per life saved
+#   ICER = -$163.26B / 74.23M QALYs = -$2,200 per QALY (approximate)
+#   Per Life = ICER x 35 QALYs/life (varies by intervention)
 #
 # Sensitivity: Conservative: -$5.97M/life | Central: -$6.55M/life | Optimistic: -$4.79M/life (all scenarios dominant)
 #

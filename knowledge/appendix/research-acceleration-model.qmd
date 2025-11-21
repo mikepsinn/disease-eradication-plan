@@ -339,9 +339,9 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 | Prevention Medicine | $100.0B | Economic viability of prevention |
 | Mental Health Impact | $75.0B | Treatment gap reduction |
 | | | |
-| **ECONOMIC TOTAL** | **{{< var treaty_complete_case_annual_benefits >}}** | |
+| **ECONOMIC TOTAL** | **{{< var treaty_total_complete_benefits_annual >}}** | |
 
-**ROI:** {{< var treaty_complete_case_annual_benefits >}} / {{< var treaty_campaign_total_cost >}} investment = **1,239:1**
+**ROI:** {{< var treaty_total_complete_benefits_annual >}} / {{< var treaty_campaign_total_cost >}} investment = **1,239:1**
 
 **Note:** Insurance savings, productivity gains, and longevity extension are outcomes of the above benefits and not counted separately to avoid double-counting.
 

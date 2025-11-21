@@ -2387,17 +2387,18 @@ from dih_models.parameters import *
   > Note: Hayek was surprised by the award and believed he was paired with Myrdal (opposite political spectrum) for balance; he later said if consulted, he would have advised against establishing a Nobel Prize in economics
   > — [Nobel Prize: 1974 Economic Sciences](https://www.nobelprize.org/prizes/economic-sciences/1974/hayek/facts/) | [Wikipedia: Friedrich Hayek](https://en.wikipedia.org/wiki/Friedrich_Hayek) | [Britannica: F.A. Hayek](https://www.britannica.com/money/F-A-Hayek) | [Econlib: Friedrich August Hayek](https://www.econlib.org/library/Enc/bios/Hayek.html)
 
-<a id="health-outcomes-840000-qalys-gained"></a>
+<a id="health-outcomes-qalys-gained"></a>
 
-- **840,000 QALYs gained annually**
+- **74.15 million QALYs gained annually** (PRIMARY ESTIMATE)
   > This is an INTERNAL PROJECTION from this book's economic model, NOT an external citation
-  > Projection: 840,000 QALYs/year (base case) from dFDA implementation
-  > Range: Conservative: 190,000 QALYs/year | Base: 840,000 | Optimistic: 3,650,000
-  > Components: Faster drug access (200k base), enhanced prevention via RWD (140k base), new therapies for rare/neglected diseases (500k base)
+  > Primary Methodology: {{< var global_dfda_qalys_gained_annual >}} QALYs/year from eliminating 7.2-year regulatory efficacy lag
+  > Based on: Stochastic Monte Carlo model (n=10,000) using WHO Global Burden of Disease database and Tufts CSDD timelines
+  > Corresponds to: 184.6M preventable deaths (1962-2024), 4.83B DALYs, $483T economic loss from regulatory delay
+  > Historical Bottom-Up Model: 840,000 QALYs/year (component-based: 200k faster access + 140k prevention + 500k new therapies)
+  > Note: Primary estimate (74.15M) is 88x larger than historical bottom-up estimate (840k), reflecting comprehensive regulatory delay elimination vs. marginal improvements within current framework
   > QALY definition: One year in perfect health = 1 QALY; scores range from 1 (perfect health) to 0 (dead)
-  > Calculation: Change in utility value induced by treatment × duration of treatment effect
   > Used in economic evaluation to assess value of medical interventions; combines length & quality of life into single index
-  > — Internal model: [Appendix: Detailed QALY Calculation Model](appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) | QALY background: [Wikipedia: Quality-adjusted life year](https://en.wikipedia.org/wiki/Quality-adjusted_life_year) | [PMC: Calculating QALYs](https://pmc.ncbi.nlm.nih.gov/articles/PMC317370/) | [Physiopedia: QALY](https://www.physio-pedia.com/Quality-Adjusted_Life_Year) | [York Health Economics: QALY](https://yhec.co.uk/glossary/quality-adjusted-life-year-qaly/)
+  > — Primary Model: [Regulatory Mortality Analysis](appendix/regulatory-mortality-analysis.qmd) | Historical Model: [Bottom-Up QALY Model](appendix/dfda-qaly-model.qmd) | QALY background: [Wikipedia: Quality-adjusted life year](https://en.wikipedia.org/wiki/Quality-adjusted_life_year) | [PMC: Calculating QALYs](https://pmc.ncbi.nlm.nih.gov/articles/PMC317370/)
 
 <a id="healthcare-cost-savings-4-5t-us-annually"></a>
 

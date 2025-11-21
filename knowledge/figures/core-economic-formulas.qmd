@@ -137,32 +137,23 @@ print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ```{python}
 #| echo: true
 def calculate_qaly_value(
-    qalys_generated: int = 840_000,
+    qalys_generated: int = int(GLOBAL_DFDA_QALYS_GAINED_ANNUAL),
     value_per_qaly: float = QALY_VALUE
 ) -> Dict[str, float]:
     """
     Calculate economic value of QALYs generated.
+    Based on regulatory delay elimination methodology (7.2-year efficacy lag).
     """
-    # Breakdown by source (from original analysis)
-    qaly_sources = {
-        'faster_drug_access': 350_000,
-        'rare_disease_treatments': 200_000,
-        'enhanced_prevention': 150_000,
-        'reduced_trial_burden': 80_000,
-        'improved_matching': 60_000
-    }
-
     total_value = qalys_generated * value_per_qaly
 
     # ICER calculation (negative = cost-saving)
-    icer = -59_501  # From original analysis
+    icer = int(DFDA_ICER_PER_QALY)
 
     return {
         'total_qalys': qalys_generated,
         'total_value': total_value,
         'value_per_qaly': value_per_qaly,
         'icer': icer,
-        'sources': qaly_sources,
         'daily_qalys': qalys_generated / 365
     }
 
@@ -415,7 +406,7 @@ formulas_df = pd.DataFrame({
     'Calculation': [
         'War Cost × 1% = $92B',
         'Savings / Cost = 1,250:1',
-        '840K QALYs × $150K = $126B',
+        f"{qaly_value['total_qalys']/1e6:.1f}M QALYs × $150K",
         'DIH Budget × 50% gain = $13.5B',
         'Direct × Multipliers = $16.5T',
         'Disease Cost × 50% × Patients',

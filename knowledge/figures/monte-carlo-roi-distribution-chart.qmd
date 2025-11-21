@@ -18,7 +18,7 @@ from dih_models.plotting.chart_style import (
 # Import parameters
 
 from dih_models.parameters import (
-    DFDA_ROI_RD_ONLY,
+    DFDA_ROI_RD_PLUS_DELAY,  # Recommended: R&D + regulatory delay elimination
     TRIAL_COST_REDUCTION_PCT,
     DFDA_NPV_ADOPTION_RAMP_YEARS,
     NPV_DISCOUNT_RATE_STANDARD,
@@ -41,7 +41,7 @@ qaly_multiplier_samples = np.clip(np.random.normal(1.0, 0.15, N_ITERATIONS), 0.7
 
 # Calculate ROI for each iteration
 
-base_roi = float(DFDA_ROI_RD_ONLY)
+base_roi = float(DFDA_ROI_RD_PLUS_DELAY)  # Recommended: R&D + regulatory delay elimination
 cost_reduction_factor = cost_reduction_samples / (float(TRIAL_COST_REDUCTION_PCT) / 100)
 discount_rate_factor = (1 + float(NPV_DISCOUNT_RATE_STANDARD) / 100) / (1 + discount_rate_samples)
 adoption_factor = float(DFDA_NPV_ADOPTION_RAMP_YEARS) / adoption_years_samples

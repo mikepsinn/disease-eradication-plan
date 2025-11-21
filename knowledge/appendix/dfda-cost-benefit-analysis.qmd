@@ -827,10 +827,10 @@ This section quantifies the daily societal cost of maintaining the status quo, f
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
 - **Daily QALYs Lost:**
-  - The analysis ([Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)) projects a baseline of **{{< var global_dfda_qalys_gained_annual >}} Quality-Adjusted Life Years (QALYs) gained per year** from the dFDA's impact.
+  - The analysis ([Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)) projects a baseline of **{{< var global_dfda_qalys_gained_annual >}} Quality-Adjusted Life Years (QALYs) gained per year** from eliminating the regulatory efficacy lag.
   - The daily opportunity cost in lost health is therefore:
     $$
-    \frac{840{,}000\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{2,301\ \text{QALYs lost per day}}
+    \frac{74{,}148{,}065\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{203,145\ \text{QALYs lost per day}}
     $$
 
 - **Daily Financial Value Lost:**
@@ -1222,7 +1222,7 @@ from dih_models.parameters import *
 
 # Use parameters from economic_parameters.py
 
-global_clinical_trial_market = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # {{< var global_clinical_trial_market_annual >}}
+global_clinical_trial_market = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}}
 dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT  # 50%
 dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ({{< var dfda_upfront_build >}})
 
@@ -1355,7 +1355,7 @@ Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiat
 
 # Savings (in billions USD) - from economic_parameters.py
 
-Rd = GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL  # {{< var global_clinical_trial_market_annual >}} annual global R&D spend on clinical trials
+Rd = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}} annual global R&D spend on clinical trials
 alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 
 # Financial Parameters - from economic_parameters.py

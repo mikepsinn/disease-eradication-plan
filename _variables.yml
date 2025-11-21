@@ -327,7 +327,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
   \ and health dividends for ROI calculation | ✓ High confidence | Formula: PEACE_DIVIDEND\
-  \ + R&D_SAVINGS | Unit: USD/year | Click to view calculation\">$164B</a>"
+  \ + R&D_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nCombined = \\$113.55B\
   \ + \\$50B = \\$163.55B\n$$"
 "completed_trials_multiplier_actual": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#total-multiplier\"\
@@ -524,7 +524,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA Infrastructure\
   \ ICER per QALY (net incremental cost ÷ QALYs gained) | ✓ High confidence | Formula:\
   \ (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL\
-  \ | Unit: USD/QALY | Click to view calculation\">$-674</a>"
+  \ | Unit: USD/QALY | Click to view calculation\">$-559</a>"
 "dfda_icer_per_qaly_latex": "$$\n\\text{ICER} = \\frac{\\text{Net Incremental Cost\
   \ (Annual)}}{\\text{QALYs Gained (Annual)}} = \\frac{-\\$49.96\\text{B}}{74.15M\
   \ \\text{ QALYs}} = -\\$674 \\text{ per QALY}\n$$"
@@ -555,14 +555,14 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net incremental\
   \ cost for dFDA (operational costs minus R&D savings) | ✓ High confidence | Formula:\
   \ DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL | Unit: USD/year | Click to view\
-  \ calculation\">$-50B</a>"
+  \ calculation\">$-41.5B</a>"
 "dfda_net_incremental_cost_annual_latex": "$$\nNetCost = \\$0.040B - \\$50.0B = -\\\
   $49.96B\n$$"
 "dfda_net_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
   \ (gross savings minus operational costs) | ✓ High confidence | Formula: GROSS_SAVINGS\
-  \ - ANNUAL_OPEX | Unit: USD/year | Click to view calculation\">$50B</a>"
+  \ - ANNUAL_OPEX | Unit: USD/year | Click to view calculation\">$41.5B</a>"
 "dfda_net_savings_annual_latex": "$$\nSavings_{net} = \\$50B - \\$0.04B = \\$49.96B\n\
   $$"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
@@ -587,7 +587,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA benefits\
   \ with 5-year adoption ramp (10-year horizon) | ✓ High confidence | Formula: Sum\
   \ of discounted annual net savings with linear adoption ramp | Unit: USD | Click\
-  \ to view calculation\">$249B</a>"
+  \ to view calculation\">$207B</a>"
 "dfda_npv_benefit_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B\n$$"
 "dfda_npv_net_benefit_conservative": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit\"\
@@ -595,7 +595,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
   \ NPV benefit from dFDA R&D savings (10-year discounted with adoption ramp) | ✓\
   \ High confidence | Formula: NPV of net savings with 5-year linear adoption ramp\
-  \ | Unit: USD | Click to view calculation\">$249B</a>"
+  \ | Unit: USD | Click to view calculation\">$207B</a>"
 "dfda_npv_net_benefit_conservative_latex": "$$\nBenefit_{NPV} = \\sum_{t=1}^{10} \\\
   frac{NetSavings \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B\n$$"
 "dfda_npv_pv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
@@ -658,6 +658,14 @@
   \ VALUE_PER_QALY | Unit: USD/year | Click to view calculation\">$11.1T</a>"
 "dfda_qalys_monetized_latex": "$$\nValue_{QALY} = 74.15M \\times \\$150,000 = \\$11.12T\n\
   $$"
+"dfda_qalys_rd_plus_delay_daily": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily QALYs from\
+  \ dFDA regulatory delay elimination (opportunity cost per day) | ✓ High confidence\
+  \ | Formula: DFDA_QALYS_RD_PLUS_DELAY_ANNUAL ÷ 365 | Unit: QALYs/day | Click to\
+  \ view calculation\">203K</a>"
+"dfda_qalys_rd_plus_delay_daily_latex": "$$\nQALYs_{daily} = 74.15M \\div 365 = 203,145\n\
+  $$"
 "dfda_qalys_with_regulatory_avoidance_monetized": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Monetized value\
@@ -669,10 +677,17 @@
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual gross\
-  \ R&D savings from trial cost reduction | ✓ High confidence | Formula: TRIAL_MARKET\
-  \ × COST_REDUCTION_PCT | Unit: USD/year | Click to view calculation\">$50B</a>"
-"dfda_rd_gross_savings_annual_latex": "$$\nSavings_{gross} = \\$100B \\times 0.50\
-  \ = \\$50B\n$$"
+  \ R&D savings from trial cost reduction | ✓ High confidence | Formula: TRIAL_SPENDING\
+  \ × COST_REDUCTION_PCT | Unit: USD/year | Click to view calculation\">$41.5B</a>"
+"dfda_rd_gross_savings_annual_latex": "$$\nSavings_{gross} = \\$83B \\times 0.50 =\
+  \ \\$41.5B\n$$"
+"dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily R&D savings\
+  \ from trial cost reduction (opportunity cost of delay) | ✓ High confidence | Formula:\
+  \ ANNUAL_RD_SAVINGS ÷ 365 | Unit: USD/day | Click to view calculation\">$114M</a>"
+"dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\$50B \\div 365 = \\$137M\n\
+  $$"
 "dfda_regulatory_delay_avoidance_fraction": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of regulatory\
@@ -693,7 +708,7 @@
   parameter-link\" data-source-ref=\"/knowledge/figures/dfda-roi-analysis.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"ROI from dFDA R&D savings only (10-year\
   \ NPV, most conservative estimate) | ✓ High confidence | Formula: NPV_BENEFIT ÷\
-  \ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\">463</a>"
+  \ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\">384</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
 "dfda_roi_rd_plus_delay": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd\"\
@@ -701,7 +716,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"RECOMMENDED:\
   \ ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids\
   \ double-counting) | ✓ High confidence | Formula: (COMPLETE_BENEFITS - EARLIER_ACCESS\
-  \ + D_LAG_ONLY) ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">4,990</a>"
+  \ + D_LAG_ONLY) ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">4,982</a>"
 "dfda_roi_rd_plus_delay_latex": "$$\nROI_{RD+delay} = \\frac{\\$1,238.6B - \\$300B\
   \ + \\$5,555B}{\\$1.0B} \\approx 6,494\n$$"
 "dfda_roi_rd_plus_delay_plus_innovation": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis.qmd\"\
@@ -709,14 +724,14 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Full impact\
   \ ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag\
   \ + D_void) | ~ Medium confidence | Formula: COMPREHENSIVE_FULL_REG_DELAY ÷ CAMPAIGN_COST\
-  \ | Unit: ratio | Click to view calculation\">8,542</a>"
+  \ | Unit: ratio | Click to view calculation\">8,534</a>"
 "dfda_roi_rd_plus_delay_plus_innovation_latex": "$$\nROI_{RD+delay+innovation} = \\\
   frac{\\$11,538.6B}{\\$1.0B} \\approx 11,539\n$$"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simple ROI without\
   \ NPV adjustment (gross savings / annual opex) | ✓ High confidence | Formula: GROSS_SAVINGS\
-  \ ÷ ANNUAL_OPEX | Unit: ratio | Click to view calculation\">1,250</a>"
+  \ ÷ ANNUAL_OPEX | Unit: ratio | Click to view calculation\">1,038</a>"
 "dfda_roi_simple_latex": "$$\nROI_{simple} = \\frac{\\$50B}{\\$0.04B} = 1,250:1\n\
   $$"
 "dfda_small_trial_recruitment_weeks": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
@@ -899,28 +914,28 @@
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for dFDA accounting for 10% political success probability\
   \ | ~ Medium confidence | Formula: DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE\
-  \ | Click to view calculation\">46.3</a>"
+  \ | Click to view calculation\">38.4</a>"
 "expected_roi_conservative_dfda_latex": "$$\nE[ROI]_{\\text{conservative}} = 463 \\\
   times 0.10 = 46.3\n$$"
 "expected_roi_moderate_dfda": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   Expected ROI for dFDA accounting for 25% political success probability | ~ Medium\
   \ confidence | Formula: DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE\
-  \ | Click to view calculation\">116</a>"
+  \ | Click to view calculation\">96.1</a>"
 "expected_roi_moderate_dfda_latex": "$$\nE[ROI]_{\\text{moderate}} = 463 \\times 0.25\
   \ = 115.8\n$$"
 "expected_roi_moderate_high_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for dFDA accounting for 40% political success probability\
   \ | ~ Medium confidence | Formula: DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH\
-  \ | Click to view calculation\">185</a>"
+  \ | Click to view calculation\">154</a>"
 "expected_roi_moderate_high_dfda_latex": "$$\nE[ROI]_{\\text{moderate-high}} = 463\
   \ \\times 0.40 = 185.2\n$$"
 "expected_roi_optimistic_dfda": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for dFDA accounting for 50% political success probability\
   \ | ~ Medium confidence | Formula: DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC\
-  \ | Click to view calculation\">232</a>"
+  \ | Click to view calculation\">192</a>"
 "expected_roi_optimistic_dfda_latex": "$$\nE[ROI]_{\\text{optimistic}} = 463 \\times\
   \ 0.50 = 231.5\n$$"
 "family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
@@ -1246,11 +1261,6 @@
   \ on clinical trials | ✓ High confidence | Unit: USD/year | Click to view source\"\
   >$83B</a>"
 "global_clinical_trials_spending_annual_cite": "@global-clinical-trials-market-2024"
-"global_clinical_trial_market_annual": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-market-size\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-market-size\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global clinical trial market size |\
-  \ ✓ High confidence | Unit: USD/year | Click to view source\">$100B</a>"
-"global_clinical_trial_market_annual_cite": "@clinical-trial-market-size"
 "global_cost_per_conflict_death": "<a href=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per conflict\
@@ -1553,7 +1563,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost-effectiveness\
   \ multiplier vs GiveWell top charities | ✓ High confidence | Formula: ABS(NET_BENEFIT\
-  \ × 1B) ÷ GIVEWELL_COST | Unit: ratio | Click to view calculation\">1.71e-05</a>"
+  \ × 1B) ÷ GIVEWELL_COST | Unit: ratio | Click to view calculation\">1.62e-05</a>"
 "multiplier_vs_givewell_latex": "$$\nMultiplier = \\frac{|-\\$6.19M \\times 10^9|}{\\\
   $4,500} \\approx 1,376x\n$$"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
@@ -1563,13 +1573,13 @@
 "opportunity_cost_per_day": "<a href=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Foregone economic\
-  \ value per day from not implementing system | ✓ High confidence | Formula: TREATY_COMPLETE_CASE_ANNUAL_BENEFITS\
-  \ ÷ 365 | Unit: USD/day | Click to view calculation\">$3.39B</a>"
+  \ value per day from not implementing system | ✓ High confidence | Formula: TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL\
+  \ ÷ 365 | Unit: USD/day | Click to view calculation\">$3.37B</a>"
 "opportunity_cost_per_second": "<a href=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Foregone economic\
-  \ value per second from not implementing system | ✓ High confidence | Formula: TREATY_COMPLETE_CASE_ANNUAL_BENEFITS\
-  \ × 1B ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\">$39.3K</a>"
+  \ value per second from not implementing system | ✓ High confidence | Formula: TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL\
+  \ × 1B ÷ SECONDS_PER_YEAR | Unit: USD/second | Click to view calculation\">$39K</a>"
 "optimistic_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic scenario\
@@ -2092,22 +2102,22 @@
 "roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 1% discount rate (approximate 15% increase from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 1.15 | Click to view calculation\">532</a>"
+  \ | Formula: DFDA_ROI_RD_ONLY * 1.15 | Click to view calculation\">442</a>"
 "roi_discount_1pct_latex": "$$\nROI_{1\\%} \\approx 463 \\times 1.15 = 532\n$$"
 "roi_discount_3pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"high\" title=\"\
   ROI at 3% discount rate (baseline) | ✓ High confidence | Formula: DFDA_ROI_RD_ONLY\
-  \ | Click to view calculation\">463</a>"
+  \ | Click to view calculation\">384</a>"
 "roi_discount_3pct_latex": "$$\nROI_{3\\%} = 463\n$$"
 "roi_discount_5pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 5% discount rate (approximate 12% decrease from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 0.88 | Click to view calculation\">407</a>"
+  \ | Formula: DFDA_ROI_RD_ONLY * 0.88 | Click to view calculation\">338</a>"
 "roi_discount_5pct_latex": "$$\nROI_{5\\%} \\approx 463 \\times 0.88 = 407\n$$"
 "roi_discount_7pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 7% discount rate (approximate 22% decrease from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 0.78 | Click to view calculation\">361</a>"
+  \ | Formula: DFDA_ROI_RD_ONLY * 0.78 | Click to view calculation\">300</a>"
 "roi_discount_7pct_latex": "$$\nROI_{7\\%} \\approx 463 \\times 0.78 = 361\n$$"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
   >31.5M</span>"
@@ -2407,7 +2417,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | ✓ High confidence | Formula:\
   \ TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT | Unit: ratio | Click\
-  \ to view calculation\">10.9</a>"
+  \ to view calculation\">10.3</a>"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Amortized annual\
@@ -2527,24 +2537,14 @@
   \ to view calculation\">280M</a>"
 "treaty_campaign_voting_bloc_target_latex": "$$\nVotingBloc = 8.0B \\times 0.035 =\
   \ 280M\n$$"
-"treaty_complete_case_annual_benefits": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ benefits from all 8 categories (peace dividend + R&D savings + earlier access\
-  \ + research acceleration + rare diseases + drug prices + prevention + mental health)\
-  \ | ✓ High confidence | Formula: 113.6 + 50.0 + 300.0 + 100.0 + 400.0 + 100.0 +\
-  \ 100.0 + 75.0 | Unit: USD/year | Click to view calculation\">$1.24T</a>"
-"treaty_complete_case_annual_benefits_latex": "$$\nTotalComplete = \\$113.6B + \\\
-  $50B + \\$300B + \\$100B + \\$400B + \\$100B + \\$100B + \\$75B = \\$1,238.6B\n\
-  $$"
 "treaty_complete_roi": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Complete ROI\
   \ including all 8 benefit categories (annual benefits ÷ one-time campaign cost)\
   \ | ✓ High confidence | Formula: TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST | Unit: ratio\
-  \ | Click to view calculation\">1,239</a>"
-"treaty_complete_roi_latex": "$$\nROI_{complete} = \\frac{\\$1{,}238.6\\text{B/year}}{\\\
-  $1.00\\text{B}} = 1{,}239:1 \\text{ annually}\n$$"
+  \ | Click to view calculation\">1,230</a>"
+"treaty_complete_roi_latex": "$$\nROI_{complete} = \\frac{TotalBenefits}{\\$1.00B}\n\
+  $$"
 "treaty_complete_roi_conditional_5th_percentile": "<a href=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Lower bound conditional\
@@ -2596,7 +2596,7 @@
   \ benefits using full regulatory delay avoidance, consolidating overlapping categories\
   \ | ~ Medium confidence | Formula: COMPLETE_BENEFITS - EARLIER_ACCESS - RARE_DISEASES\
   \ - RESEARCH_ACCEL + FULL_REG_DELAY | Unit: USD/year | Click to view calculation\"\
-  >$8.54T</a>"
+  >$8.53T</a>"
 "treaty_comprehensive_with_full_regulatory_delay_latex": "$$\nBenefits_{full} = \\\
   $1,238.6B - \\$300B - \\$400B - \\$100B + \\$11,100B \\approx \\$11,538.6B\n$$"
 "treaty_dfda_cost_per_life_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
@@ -2624,7 +2624,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Incremental Cost-Effectiveness\
   \ Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system | ✓ High confidence\
   \ | Formula: (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL\
-  \ | Unit: USD/QALY | Click to view calculation\">$-2.20K</a>"
+  \ | Unit: USD/QALY | Click to view calculation\">$-2.08K</a>"
 "treaty_dfda_net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net benefit per\
@@ -2644,7 +2644,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net annual benefit\
   \ (total benefits - total costs) | ✓ High confidence | Formula: TOTAL_BENEFITS -\
-  \ TOTAL_COSTS | Unit: USD/year | Click to view calculation\">$163B</a>"
+  \ TOTAL_COSTS | Unit: USD/year | Click to view calculation\">$155B</a>"
 "treaty_net_annual_benefit_latex": "$$\nNetBenefit = \\$163.55B - \\$0.29B = \\$163.26B\n\
   $$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
@@ -2661,7 +2661,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ benefits (peace dividend + dFDA savings) | ✓ High confidence | Formula: PEACE_DIVIDEND\
-  \ + DFDA_SAVINGS | Unit: USD/year | Click to view calculation\">$164B</a>"
+  \ + DFDA_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
 "treaty_total_annual_benefits_latex": "$$\nTotalBenefits = \\$113.55B + \\$50B = \\\
   $163.55B\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
@@ -2676,9 +2676,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ benefits from all 8 benefit categories | ✓ High confidence | Formula: PEACE +\
   \ R&D + FASTER_ACCESS + ACCELERATION + RARE + PRICE + PREVENTION + MENTAL | Unit:\
-  \ USD/year | Click to view calculation\">$1.24T</a>"
+  \ USD/year | Click to view calculation\">$1.23T</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nTotalBenefits = \\$113.55 + \\\
-  $50 + \\$300 + \\$100 + \\$400 + \\$100 + \\$100 + \\$75 = \\$1,238.55B\n$$"
+  $41.5 + \\$300 + \\$100 + \\$400 + \\$100 + \\$100 + \\$75 = \\$1,230.05B\n$$"
 "treaty_total_lives_saved_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
