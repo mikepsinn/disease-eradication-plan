@@ -28,14 +28,14 @@ Here's how you build this coordination infrastructure.
 
 ### Where Your Agents Get Their Missions (Not From a Management Consultant)
 
-Your agents don't randomly decide what to work on based on what sounds cool or what their creator happens to care about that day. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life)—the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
+Your agents don't randomly decide what to work on based on what sounds cool or what their creator happens to care about that day. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life), the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
 
 Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying, impossible) becomes:
 
 - Map protein structures → Run AlphaFold on these sequences → Rent computing time → Find cheapest cloud provider that won't mysteriously go down during your job
 - Test drug candidates → Recruit trial participants → Find people age 65+ with early symptoms → Contact the 73 researchers globally who study this specific thing
 
-Your agents work from this same list. Whether you're deploying agents from a patient advocacy nonprofit in Boston (running on donated servers), a university in Beijing (behind the Great Firewall), or a biotech in Switzerland (with an actual IT budget)—all agents see the same prioritized tasks. This is how you coordinate millions of people without someone having to organize a conference call.
+Your agents work from this same list. Whether you're deploying agents from a patient advocacy nonprofit in Boston (running on donated servers), a university in Beijing (behind the Great Firewall), or a biotech in Switzerland (with an actual IT budget), all agents see the same prioritized tasks. This is how you coordinate millions of people without someone having to organize a conference call.
 
 ### The Secret to Success: Cross-Sector Coordination (Forces for Good)
 
@@ -134,7 +134,7 @@ display(IPImage(str(png_path)))
 
 ### Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
 
-The way you join the network is by deploying a "node"—your organization's AI coordination hub that never sleeps, never complains, never asks for a raise, and doesn't require health insurance.
+The way you join the network is by deploying a "node", your organization's AI coordination hub that never sleeps, never complains, never asks for a raise, and doesn't require health insurance.
 
 Think of it as your digital headquarters where AI agents work 24/7 to coordinate your piece of the War on Disease, while your human staff can focus on things humans are actually good at (like empathy, creativity, and knowing when someone's email is passive-aggressive).
 
@@ -178,7 +178,7 @@ You get real-time data showing which fundraising approaches work (not just which
 
 You double down on what works. You kill what doesn't. No politics, no "but we've always done it this way," no protecting programs because someone's spouse runs them.
 
-Inside your node, you build **Task Agents**—hyper-focused AI workers who are the opposite of your coworker Dave who somehow has 17 responsibilities and does none of them well. Each agent has one specific job in the War on Disease. They share a knowledge base for long-term memory (so they don't keep asking you the same questions), coordinate through a shared context system (so they don't duplicate work like humans do), and interact with research databases, government systems, and other nodes through APIs (which is fancy talk for "they can talk to computers without needing IT support to set it up").
+Inside your node, you build **Task Agents**, hyper-focused AI workers who are the opposite of your coworker Dave who somehow has 17 responsibilities and does none of them well. Each agent has one specific job in the War on Disease. They share a knowledge base for long-term memory (so they don't keep asking you the same questions), coordinate through a shared context system (so they don't duplicate work like humans do), and interact with research databases, government systems, and other nodes through APIs (which is fancy talk for "they can talk to computers without needing IT support to set it up").
 
 ### Step 2: Define Each Agent's Mission (From the Task Tree, Not From Your Feelings)
 

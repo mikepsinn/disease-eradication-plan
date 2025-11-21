@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Pre-render validation script
 Validates .qmd files before Quarto rendering to catch errors early:
@@ -20,6 +21,11 @@ import re
 import sys
 from glob import glob
 from typing import Dict, List, Optional, Set
+
+# Set UTF-8 encoding for stdout and stderr on Windows
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
 
 
 class ValidationError:
@@ -206,29 +212,49 @@ def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line
 
 def check_em_dashes(content: str, filepath: str):
     """
-    Check for em-dashes (—) which should be replaced with comma and space
-    Only flags em-dashes that are surrounded by letters (alpha characters)
-    Examples:
-    - "word—word" should be flagged (surrounded by letters)
-    - "word—" or "—word" or "word—\"" should NOT be flagged (not surrounded by letters)
+    Check for em-dashes (—) which should be replaced with comma and space or other punctuation.
+    Detects ALL em-dashes except those in safe contexts (code blocks, inline code, URLs).
     """
     lines = content.split("\n")
-    # Pattern to match em-dash surrounded by letters: letter—letter
-    em_dash_pattern = re.compile(r"[a-zA-Z]—[a-zA-Z]")
+    in_code_block = False
+
+    # Pattern to match em-dashes
+    em_dash_pattern = re.compile(r"—")
+    # Pattern to detect inline code
+    inline_code_pattern = re.compile(r"`[^`]*—[^`]*`")
+    # Pattern to detect URLs
+    url_pattern = re.compile(r"https?://[^\s]*—[^\s]*")
 
     for line_index, line in enumerate(lines):
-        # Find all em-dashes surrounded by letters
+        # Track code blocks
+        if line.strip().startswith("```"):
+            in_code_block = not in_code_block
+            continue
+
+        # Skip lines inside code blocks
+        if in_code_block:
+            continue
+
+        # Skip if em-dash is inside inline code
+        if inline_code_pattern.search(line):
+            continue
+
+        # Skip if em-dash is inside a URL
+        if url_pattern.search(line):
+            continue
+
+        # Find all em-dashes
         matches = list(em_dash_pattern.finditer(line))
         if matches:
             for match in matches:
                 # Find the column position of the em-dash
-                column = match.start() + 2  # Position of the em-dash (after first letter)
+                column = match.start() + 1
                 errors.append(
                     ValidationError(
                         file=filepath,
                         line=line_index + 1,
                         column=column,
-                        message='Em-dash (—) surrounded by letters found. Replace with comma and space (", ")',
+                        message='Em-dash (—) found. Replace with comma and space (", "), period, or semicolon as appropriate.',
                         context=line.strip()[:80],
                     )
                 )

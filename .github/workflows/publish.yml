@@ -110,6 +110,20 @@ jobs:
         run: python ${{ steps.render-script.outputs.script }}
         timeout-minutes: 15
 
+      - name: Install LaTeX (for PDF generation)
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        run: quarto install tinytex
+
+      - name: Render Book PDF (reuses HTML cache)
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        run: python scripts/render-book-pdf.py
+        timeout-minutes: 20
+
+      - name: Render Book EPUB (reuses PDF cache)
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        run: python scripts/render-book-epub.py
+        timeout-minutes: 10
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -117,6 +131,24 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.render-script.outputs.output-path }}
+
+      - name: Upload PDF artifact
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: '_book/warondisease/*.pdf'
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload EPUB artifact
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-epub
+          path: '_book/warondisease/*.epub'
+          retention-days: 30
+          if-no-files-found: error
 
       - name: Render Economics Website (for Netlify deployment)
         if: github.event.repository.name == 'decentralized-institutes-of-health'
@@ -218,63 +250,3 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
-
-  build-pdf:
-    name: Build Book PDF
-    runs-on: ubuntu-latest
-    needs: deploy
-    if: github.event.repository.name == 'decentralized-institutes-of-health'
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Install LaTeX
-        run: quarto install tinytex
-
-      - name: Render Book PDF
-        run: python scripts/render-book-pdf.py
-        timeout-minutes: 20
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: book-pdf
-          path: '_book/warondisease/*.pdf'
-          retention-days: 30
-          if-no-files-found: error

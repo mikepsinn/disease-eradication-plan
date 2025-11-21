@@ -44,7 +44,7 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Every day of delay costs **{{< var regulatory_delay_deaths_daily >}} lives**, **{{< var dfda_qalys_rd_plus_delay_daily >}} QALYs**, and **{{< var opportunity_cost_per_day >}}** in foregone economic value ({{< var opportunity_cost_per_second >}}/second). Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
+**Results**: Every day of delay costs **{{< var regulatory_delay_deaths_daily >}} lives**, **{{< var dfda_qalys_rd_plus_delay_daily >}} QALYs**, and **{{< var opportunity_cost_per_day >}}** in foregone economic value ({{< var opportunity_cost_per_second >}}/second). Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY), economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annual surplus while curing diseases.
 
@@ -282,31 +282,31 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete anal
 
 This isn't utopian. It's a checklist:
 
-### Step 1 — Run the Survey
+### Step 1: Run the Survey
 
 Demonstrate overwhelming global support for medical acceleration over military acceleration.
 Creates legitimacy. Generates media attention. Makes politicians nervous.
 
-### Step 2 — Reach the Tipping Point
+### Step 2: Reach the Tipping Point
 
 Hit {{< var global_population_activism_threshold_pct >}}
 
 Social-movement science: **{{< var global_population_activism_threshold_pct >}} {{< var global_population_activism_threshold_pct_cite >}} committed support** reliably causes policy adoption.
 This is the tipping point. Once you cross it, politicians follow or lose elections.
 
-### Step 3 — Sell the Bonds
+### Step 3: Sell the Bonds
 
 Victory Bond investors fund the campaign because the math is absurd.
 They're buying $270+ in returns for every $100 invested.
 It's the Louisiana Purchase of medical research.
 
-### Step 4 — Run the Lobbying Campaign
+### Step 4: Run the Lobbying Campaign
 
 Deploy Victory Bond funds to convince politicians that voters want this.
 Standard lobbying tactics, just pointed at healing instead of killing.
 Politicians discover they've "always cared deeply about medical research."
 
-### Step 5 — Build the Infrastructure
+### Step 5: Build the Infrastructure
 
 The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach.
 Thousands of neglected treatments finally get tested.
@@ -314,7 +314,7 @@ Effective ones scale instantly.
 
 **Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
 
-### Step 6 — Watch What Happens
+### Step 6: Watch What Happens
 
 - Medical progress accelerates {{< var research_acceleration_multiplier >}}×
 - Disease categories start collapsing
@@ -1691,7 +1691,7 @@ The economic analysis presented above assumes successful implementation of the d
 
 ### Conditional Benefits Interpretation
 
-The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var dfda_roi_rd_plus_delay >}}:1 complete) are **conditional on successful implementation**—they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
+The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var dfda_roi_rd_plus_delay >}}:1 complete) are **conditional on successful implementation**, they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ## Limitations Summary
 

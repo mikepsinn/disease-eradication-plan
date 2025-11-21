@@ -275,6 +275,22 @@ format:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
       right: "[WarOnDisease.org](https://WarOnDisease.org)"
+  epub:
+    # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
+    # Cover image for EPUB (required for most e-book platforms)
+    epub-cover-image: assets/cover/book-cover-3.png
+    # Table of contents
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    # Chapter splitting: Use level 2 for large books (81 chapters, ~900 pages)
+    # This prevents oversized chapter files that cause performance issues
+    epub-chapter-level: 2
+    # Display options
+    echo: false
+    number-sections: true
+    # Metadata inherited from project-level metadata above
+    # (title, author, description, copyright, license, etc.)
     include-in-footer:
       - text: |
           <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">

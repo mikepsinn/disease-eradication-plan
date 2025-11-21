@@ -864,6 +864,13 @@
   \ of treaty funding vs dFDA opex (sustainability margin) | ✓ High confidence | Formula:\
   \ TREATY_FUNDING ÷ DFDA_OPEX | Unit: ratio | Click to view calculation\">680</a>"
 "dividend_coverage_factor_latex": "$$\nCoverage = \\$27.18B / \\$0.04B = 679x\n$$"
+"drug_cost_increase_pre1962_to_current_multiplier": "<a href=\"/pre-1962-drug-costs-timeline\"\
+  \ class=\"parameter-link\" data-source-ref=\"/pre-1962-drug-costs-timeline\" data-source-type=\"\
+  calculated\" data-confidence=\"medium\" title=\"Drug development cost increase from\
+  \ pre-1962 to current ($50M → $2.6B = 52x) | ~ Medium confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT\
+  \ ÷ PRE_1962_DRUG_DEVELOPMENT_COST | Unit: ratio | Click to view calculation\">52</a>"
+"drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\n\\frac{\\$2.6B}{\\\
+  $50M} = 52\n$$"
 "drug_price_reduction_savings_high": "<a href=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#complete-case-roi\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"High estimate\
@@ -938,6 +945,20 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum investment\
   \ for family offices | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$5.00M</a>"
+"fda_phase_1_to_approval_years": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years\"\
+  \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"FDA timeline from Phase 1 start to approval\
+  \ (Phase 1-3 + NDA review) | ✓ High confidence | Unit: years | Click to view source\"\
+  >9.1</a>"
+"fda_phase_1_to_approval_years_cite": "@fda-approval-timeline-10-years"
+"fda_to_oxford_recovery_trial_time_multiplier": "<a href=\"/recovery-trial-82x-cost-reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"/recovery-trial-82x-cost-reduction\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"FDA approval\
+  \ timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower) | ✓ High\
+  \ confidence | Formula: FDA_PHASE_1_TO_APPROVAL_YEARS × 12 ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS\
+  \ | Unit: ratio | Click to view calculation\">36.4</a>"
+"fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\frac{9.1 \\text{ years}\
+  \ \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4\n$$"
 "foundation_funding_base_case": "<a href=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Nonprofit foundation\
@@ -1559,6 +1580,12 @@
   \ rate per 100,000 population | ✓ High confidence | Unit: deaths per 100k | Click\
   \ to view source\">250</a>"
 "other_death_rate_cite": "@leading-causes-of-death-by-age-group"
+"oxford_recovery_trial_duration_months": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Oxford RECOVERY\
+  \ trial duration (found life-saving treatment in 3 months) | ✓ High confidence |\
+  \ Unit: months | Click to view source\">3</a>"
+"oxford_recovery_trial_duration_months_cite": "@recovery-trial-82x-cost-reduction"
 "partial_success_bondholder_payout": "<a href=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Bondholder payout\
@@ -1823,12 +1850,30 @@
   external\" data-confidence=\"medium\" title=\"Optimistic estimate of political success\
   \ probability (50%) | ~ Medium confidence | Click to view source\">0.5</a>"
 "political_success_probability_optimistic_cite": "@icbl-ottawa-treaty"
+"post_1962_drug_approval_reduction_pct": "<a href=\"https://warondisease.org/knowledge/references.html#post-1962-drug-approval-drop\"\
+  \ class=\"parameter-link\" data-source-ref=\"post-1962-drug-approval-drop\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Reduction in new drug approvals after\
+  \ 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year) | ✓ High confidence\
+  \ | Updated: 1962-1970 | Unit: percentage | Click to view source\">70%</a>"
+"post_1962_drug_approval_reduction_pct_cite": "@post-1962-drug-approval-drop"
 "post_ww2_military_cut_pct": "<a href=\"https://warondisease.org/knowledge/references.html#us-post-wwii-military-spending-cut\"\
   \ class=\"parameter-link\" data-source-ref=\"us-post-wwii-military-spending-cut\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage military\
   \ spending cut after WW2 (historical precedent) | ✓ High confidence | Unit: rate\
   \ | Click to view source\">30%</a>"
 "post_ww2_military_cut_pct_cite": "@us-post-wwii-military-spending-cut"
+"pre_1962_drug_development_cost": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline\"\
+  \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Pre-1962 drug development cost (documented\
+  \ range: $10-50M in 1950s-1960s) | ~ Medium confidence | Unit: USD | Click to view\
+  \ source\">$50M</a>"
+"pre_1962_drug_development_cost_cite": "@pre-1962-drug-costs-timeline"
+"pre_1962_physician_count": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-physician-trials\"\
+  \ class=\"parameter-link\" data-source-ref=\"pre-1962-physician-trials\" data-source-type=\"\
+  external\" data-confidence=\"low\" title=\"Estimated physicians conducting real-world\
+  \ efficacy trials pre-1962 (unverified estimate) | ? Low confidence | Unit: physicians\
+  \ | Click to view source\">144K</a>"
+"pre_1962_physician_count_cite": "@pre-1962-physician-trials"
 "productivity_loss_per_affected_employee": "<a href=\"https://warondisease.org/knowledge/references.html#chronic-illness-workforce-productivity-loss\"\
   \ class=\"parameter-link\" data-source-ref=\"chronic-illness-workforce-productivity-loss\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual productivity\

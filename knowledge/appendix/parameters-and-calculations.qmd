@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 513
+**Total parameters**: 520
 
-- External sources (peer-reviewed): 164
-- Calculated values: 301
+- External sources (peer-reviewed): 169
+- Calculated values: 303
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -501,6 +501,19 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 **Source**: [bio-clinical-development-2021](https://warondisease.org/knowledge/references.html#bio-clinical-development-2021)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## FDA Phase 1 to Approval Timeline {#sec-fda_phase_1_to_approval_years}
+
+**Value**: 9.1
+
+FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
+
+**Source**: [fda-approval-timeline-10-years](https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years)
+
+*✓ High confidence*
 
 :::
 
@@ -1259,6 +1272,19 @@ Other causes death rate per 100,000 population
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Oxford RECOVERY Trial Duration {#sec-oxford_recovery_trial_duration_months}
+
+**Value**: 3
+
+Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
+
+**Source**: [recovery-trial-82x-cost-reduction](https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Average Cost per Verified Petition Signature in 2024 US Campaigns {#sec-petition_signature_cost_per_verified_2024}
 
 **Value**: $15
@@ -1428,6 +1454,19 @@ Optimistic estimate of political success probability (50%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Post-1962 Drug Approval Reduction {#sec-post_1962_drug_approval_reduction_pct}
+
+**Value**: 70%
+
+Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
+
+**Source**: [post-1962-drug-approval-drop](https://warondisease.org/knowledge/references.html#post-1962-drug-approval-drop)
+
+*✓ High confidence • Updated 1962-1970*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Percentage Military Spending Cut After WW2 {#sec-post_ww2_military_cut_pct}
 
 **Value**: 30%
@@ -1437,6 +1476,32 @@ Percentage military spending cut after WW2 (historical precedent)
 **Source**: [us-post-wwii-military-spending-cut](https://warondisease.org/knowledge/references.html#us-post-wwii-military-spending-cut)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pre-1962 Drug Development Cost {#sec-pre_1962_drug_development_cost}
+
+**Value**: $50M
+
+Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
+
+**Source**: [pre-1962-drug-costs-timeline](https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Pre-1962 Physician Count (Unverified) {#sec-pre_1962_physician_count}
+
+**Value**: 144K
+
+Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
+
+**Source**: [pre-1962-physician-trials](https://warondisease.org/knowledge/references.html#pre-1962-physician-trials)
+
+*? Low confidence*
 
 :::
 
@@ -3832,6 +3897,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Drug Cost Increase: Pre-1962 to Current {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+
+**Value**: 52
+
+Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)
+
+$$
+\frac{\$2.6B}{\$50M} = 52
+$$
+
+**Methodology**: [ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE](#ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## High Estimate of Annual Savings from Drug Price Reductions {#sec-drug_price_reduction_savings_high}
 
 **Value**: $180B
@@ -3933,6 +4015,23 @@ $$
 Minimum investment for family offices
 
 **Methodology**: [../economics/victory-bonds.qmd](../economics/victory-bonds.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## FDA to Oxford RECOVERY Trial Time Multiplier {#sec-fda_to_oxford_recovery_trial_time_multiplier}
+
+**Value**: 36.4
+
+FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)
+
+$$
+\frac{9.1 \text{ years} \times 12 \text{ months/year}}{3 \text{ months}} = 36.4
+$$
+
+**Methodology**: [ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION](#ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION)
 
 *✓ High confidence*
 

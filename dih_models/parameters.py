@@ -859,6 +859,76 @@ CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
     keywords=["worldwide", "yearly", "current", "drug", "approvals", "year", "earth"]
 )  # FDA ~50-55/year
 
+# Historical FDA/Drug Development Parameters
+OXFORD_RECOVERY_TRIAL_DURATION_MONTHS = Parameter(
+    3,
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
+    source_type="external",
+    description="Oxford RECOVERY trial duration (found life-saving treatment in 3 months)",
+    display_name="Oxford RECOVERY Trial Duration",
+    unit="months",
+    confidence="high",
+    keywords=["recovery", "covid", "trial", "timeline", "duration", "oxford", "pragmatic"]
+)
+
+FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
+    9.1,
+    source_ref=ReferenceID.FDA_APPROVAL_TIMELINE_10_YEARS,
+    source_type="external",
+    description="FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)",
+    display_name="FDA Phase 1 to Approval Timeline",
+    unit="years",
+    confidence="high",
+    keywords=["fda", "clinical", "development", "timeline", "approval", "phase 1", "phase 2", "phase 3"]
+)  # Clinical development + NDA review: ~9 years (per FDA references)
+
+POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
+    0.70,
+    source_ref=ReferenceID.POST_1962_DRUG_APPROVAL_DROP,
+    source_type="external",
+    description="Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)",
+    display_name="Post-1962 Drug Approval Reduction",
+    unit="percentage",
+    confidence="high",
+    last_updated="1962-1970",
+    keywords=["kefauver", "harris", "amendment", "1962", "regulation", "fda", "approval", "drop", "decline"]
+)
+
+FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
+    (FDA_PHASE_1_TO_APPROVAL_YEARS * 12) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
+    source_type="calculated",
+    description="FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)",
+    display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
+    unit="ratio",
+    formula="FDA_PHASE_1_TO_APPROVAL_YEARS × 12 ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
+    latex=r"\frac{9.1 \text{ years} \times 12 \text{ months/year}}{3 \text{ months}} = 36.4",
+    confidence="high",
+    keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"]
+)
+
+PRE_1962_PHYSICIAN_COUNT = Parameter(
+    144_000,
+    source_ref=ReferenceID.PRE_1962_PHYSICIAN_TRIALS,
+    source_type="external",
+    description="Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)",
+    display_name="Pre-1962 Physician Count (Unverified)",
+    unit="physicians",
+    confidence="low",
+    keywords=["pre-1962", "physician", "doctor", "clinical", "trials", "real-world", "evidence"]
+)  # Note: Specific "144,000 physicians" figure not verified in sources; AMA opposed amendments but no count documented
+
+PRE_1962_DRUG_DEVELOPMENT_COST = Parameter(
+    50_000_000,
+    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
+    source_type="external",
+    description="Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)",
+    display_name="Pre-1962 Drug Development Cost",
+    unit="USD",
+    confidence="medium",
+    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation"]
+)  # Documented range was $10-50M; using upper bound
+
 CURRENT_ACTIVE_TRIALS = Parameter(
     10000,
     source_ref=ReferenceID.CLINICALTRIALS_GOV_ENROLLMENT_DATA_2025,
@@ -7634,6 +7704,19 @@ PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
     peer_reviewed=True,
     keywords=["pharma", "drug", "development", "cost", "r&d", "current"]
 )
+
+DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
+    PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / PRE_1962_DRUG_DEVELOPMENT_COST,
+    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
+    source_type="calculated",
+    description="Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)",
+    display_name="Drug Cost Increase: Pre-1962 to Current",
+    unit="ratio",
+    formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST",
+    latex=r"\frac{\$2.6B}{\$50M} = 52",
+    confidence="medium",
+    keywords=["cost", "increase", "multiplier", "drug", "development", "1962", "regulation", "fda", "pre-1962", "current"]
+)  # Calculated from documented range ($10-50M pre-1962)
 
 PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
     0.10,

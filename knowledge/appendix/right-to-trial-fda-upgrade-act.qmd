@@ -23,7 +23,7 @@ from dih_models.parameters import *
 
 **Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,**
 
-## TITLE I — SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
+## TITLE I: SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
 
 ### SEC. 101. SHORT TITLE
 
@@ -62,7 +62,7 @@ Congress finds the following:
 
 ### SEC. 104. DEFINITIONS
 
-In this Act—
+In this Act:
 
 1. **Secretary** means the Secretary of Health and Human Services.
 2. **FDA** means the Food and Drug Administration.
@@ -75,11 +75,11 @@ In this Act—
    (c) **DSCSA Alignment.** All investigational shipments must utilize the protocol's ledger to satisfy DSCSA traceability.
    (d) **Shared Public Health Infrastructure.** The Protocol shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Protocol by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared, globally harmonized ecosystem for evidence generation.
 
-## TITLE II — FDA Upgrade AND CLINICAL‑TRIAL INNOVATION
+## TITLE II: FDA Upgrade AND CLINICAL‑TRIAL INNOVATION
 
 ### SEC. 201. ACCELERATED ADOPTION OF ALTERNATIVE PRECLINICAL TEST METHODS
 
-(a) **Rulemaking.** Not later than 180 days after enactment, the Secretary, acting through the Commissioner of Food and Drugs, shall issue final regulations amending 21 CFR Parts 312 and 600 to permit non‑animal New‑Approach Methodologies (NAMs)—including organ‑on‑chip systems, validated in‑silico toxicology, and high‑throughput cell assays, as acceptable primary evidence of safety where scientifically justified.
+(a) **Rulemaking.** Not later than 180 days after enactment, the Secretary, acting through the Commissioner of Food and Drugs, shall issue final regulations amending 21 CFR Parts 312 and 600 to permit non‑animal New‑Approach Methodologies (NAMs), including organ‑on‑chip systems, validated in‑silico toxicology, and high‑throughput cell assays, as acceptable primary evidence of safety where scientifically justified.
 (b) **Qualification pathway.** The regulations shall establish a transparent qualification pathway; once a NAM is qualified for a defined context of use, FDA reviewers shall accept data from that method without requiring parallel animal studies.
 (c) **Annual report.** The Commissioner shall publish an annual public report enumerating qualified NAMs, sponsor submissions using NAMs, and areas still requiring animal use with timelines to develop alternatives.
 
@@ -100,7 +100,7 @@ In this Act—
 
 (a) **Launch & Hosting.** Within 12 months after enactment, the Secretary shall deploy an open-source, cloud-native **FDA.gov v2 Decentralized Health Protocol**, which shall include the **FDA.gov Public Portal** hosted on the **fda.gov** domain. All source code shall be mirrored in real-time to a public repository (e.g., _github.com/fda/fda-v2_).
 (b) **Mandatory Open‑Source Licence.** All code shall be released under the GNU General Public License v3.0. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
-(c) **Trial Creator Workspace Functions.** The **FDA.gov Public Portal** shall provide—
+(c) **Trial Creator Workspace Functions.** The **FDA.gov Public Portal** shall provide:
 (1) **E‑Protocol Builder** with templates and automated compliance validation (21 CFR Parts 312/812, ISO 14155) that lets any Trial Creator, regardless of prior regulatory expertise, design and launch a study.
 (2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
 (3) **Trial Cost, Discount, and Deposit Module** facilitating: (A) the transparent calculation and disclosure of estimated patient-specific trial participation costs as provided by the trial sponsor; (B) the application of any applicable NIH-funded participation discounts (pursuant to SEC. 303); (C) the management of the net financial contribution required from the participant (as per SEC. 304(b)); and (D) the collection, holding, and refund of a patient data provision deposit (as per SEC. 304). All cost components, applicable discounts, the final net cost to the participant, and details of the data provision deposit shall be clearly itemized and presented to the participant during the e-consent process (as per SEC. 302(b) and SEC. 304).
@@ -128,7 +128,7 @@ In this Act—
 (5) **Democratic Renewal.** The community-elected AI/ML security expert and patient-advocate seats are subject to annual election by contributors (defined as those with ≥5 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
 (h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, **standards for the content, format, and regular updating of Outcome Labels mandated under subsection (d)(1) of this section,** codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request[5] tied to the FDA v2 Protocol obtains OMB clearance within 60 days.** Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
 
-(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program, funded under § 402(a)—to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level data aggregated and analyzed by the Protocol shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
+(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program, funded under § 402(a), to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level data aggregated and analyzed by the Protocol shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
 
 (j) **Metrics & Transparency.** Annual public report: protocol uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, bounty payouts, penetration‑test findings, insurance‑premium benchmarks, and user‑satisfaction scores. The Secretary shall commission an independent **penetration test** every fiscal year and publish an executive summary of findings.
 
@@ -145,7 +145,7 @@ In this Act—
 (b) **Alternative Development Path.** The Secretary may use the prize competition as the primary mechanism for developing the protocol. In such a case, the timelines and responsibilities outlined in Section 204(a) shall be adjusted to reflect a successful prize outcome.
 (c) **Integration.** If the prize is awarded for a platform that meets a substantial subset of requirements, the Secretary shall ensure its integration with any components developed or procured under Section 204.
 
-## TITLE III — UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
+## TITLE III: UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
 
 ### SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS
 
@@ -190,7 +190,7 @@ In this Act—
 (3) The full deposit shall be refunded to the participant via the **FDA.gov Public Portal** upon certification by the trial sponsor or a designated Platform administrator that the participant has provided all protocol-required data within the specified timeframes.
 (4) Conditions for partial refund or forfeiture of the deposit due to incomplete or untimely data submission shall be detailed in the e-consent form (SEC. 302(b)) and established by the Secretary through rulemaking. Forfeited deposits may be directed to the Clinical Trial Patient Cost Discount Fund (SEC. 303) or used to offset costs incurred by data remediation efforts.
 
-## TITLE IV — GENERAL PROVISIONS
+## TITLE IV: GENERAL PROVISIONS
 
 ### SEC. 401. COORDINATION WITH EXISTING LAW
 

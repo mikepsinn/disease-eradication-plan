@@ -37,7 +37,7 @@ Imagine you met a magical genie. You wished for it to fulfill the FDA Congressio
 
 That would guarantee no one ever takes medication that may or may not be effective.
 
-In practice, they took a subtler approach: make drugs so expensive ($2.6 billion) and slow (17 years) that you die before the cure arrives. The regulatory barrier isn't just high - it's like setting the bar very high, then adding landmines, then putting the bar on top of Mount Everest.
+In practice, they took a subtler approach: make drugs so expensive ({{< var pharma_drug_development_cost_current >}}) and slow ({{< var treatment_acceleration_years_current >}} years) that you die before the cure arrives. The regulatory barrier isn't just high - it's like setting the bar very high, then adding landmines, then putting the bar on top of Mount Everest.
 
 The FDA does prevent some people from taking harmful drugs. Phase 1 safety testing catches dangerous compounds before they reach patients. This is good.
 
@@ -54,7 +54,7 @@ Compare two real-world systems for testing drugs:
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
 2.  **The FDA System:** Averages **{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
 
-The FDA's system costs **{{< var trial_cost_reduction_factor >}}× more** and takes **36x longer**. Not a small difference - the difference between functional and designed-to-fail.
+The FDA's system costs **{{< var trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
 
 ### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
 
@@ -97,7 +97,7 @@ Then something changed.
 
 In 1883, [doctors founded the Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) and did something novel: they shared information. After 10,000 years someone thought "what if we told each other what works?"
 
-[144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but made them smell funny."
+**{{< var pre_1962_physician_count >}} physicians** across America (see [reference](../references.qmd#pre-1962-physician-trials)) tried treatments on real patients. They wrote down what happened. "This drug helped." "This drug killed the patient." "This drug did nothing but made them smell funny."
 
 Leading experts reviewed these case reports, compiled them into studies, and published results. If a medicine worked and didn't kill people, JAMA gave it a seal of approval.
 
@@ -141,14 +141,14 @@ Effective **safety** regulations were already in place. They worked. America had
 
 So naturally, the government responded to this success by adding massive **efficacy** regulations via the [1962 Kefauver Harris Amendment](../references.qmd#kefauver-harris-amendment-1962).
 
-The problem wasn't safety testing - that was fine. The problem was taking over efficacy testing from 144,000 independent doctors and giving it to the drug companies themselves, while making it 82 times more expensive and 36 times slower.
+The problem wasn't safety testing - that was fine. The problem was taking over efficacy testing from {{< var pre_1962_physician_count >}} independent doctors and giving it to the drug companies themselves, while making it {{< var trial_cost_reduction_factor >}} times more expensive and {{< var fda_to_oxford_recovery_trial_time_multiplier >}} times slower.
 
 #### What Changed
 
 Before 1962:
 
-- Drug companies spent [$74 million](../references.qmd#pre-1962-drug-costs-timeline) (inflation-adjusted) to prove safety
-- Once approved as safe, [144,000 independent doctors tested efficacy](../references.qmd#pre-1962-physician-trials) on real patients
+- Drug companies spent **{{< var pre_1962_drug_development_cost >}}** (inflation-adjusted) to prove safety (see [reference](../references.qmd#pre-1962-drug-costs-timeline))
+- Once approved as safe, **{{< var pre_1962_physician_count >}} independent doctors tested efficacy** on real patients (see [reference](../references.qmd#pre-1962-physician-trials))
 - The third-party AMA compiled results and published findings
 
 After 1962:
@@ -173,7 +173,7 @@ The 1962 regulations, explicitly about ensuring efficacy, massively reduced the 
 
 #### What Happened to New Treatments
 
-The new regulations immediately [reduced new drug approvals by 70%](../references.qmd#post-1962-drug-approval-drop).
+The new regulations immediately **reduced new drug approvals by {{< var post_1962_drug_approval_reduction_pct >}}** (see [reference](../references.qmd#post-1962-drug-approval-drop)).
 
 Not gradually. Immediately.
 
@@ -181,9 +181,9 @@ Not gradually. Immediately.
 
 #### What Happened to Costs
 
-Since 1962, the cost of bringing a new treatment to market went from [$74 million to over $1 billion](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm) (inflation-adjusted).
+Since 1962, the cost of bringing a new treatment to market went from **{{< var pre_1962_drug_development_cost >}} to over $1 billion** ([source](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm)) (inflation-adjusted).
 
-A 13x increase. For worse results.
+A {{< var drug_cost_increase_pre1962_to_current_multiplier >}}x increase. For worse results.
 
 {{< include ../figures/fda-drug-development-cost-increase-line-chart.qmd >}}
 
@@ -197,7 +197,7 @@ Kefauver's amendments, meant to make drugs safer and cheaper, instead made them:
 
 - Less safe (smaller trials, less real-world data)
 - More expensive (monopolies extended)
-- Less available (70% fewer approvals)
+- Less available ({{< var post_1962_drug_approval_reduction_pct >}} fewer approvals)
 
 ##### Decreased Ability to Determine Comparative Efficacy
 
@@ -246,7 +246,7 @@ But correlation + mechanism + temporal precision is how science works.
 Here's what you have:
 
 1. **Temporal correlation**: Life expectancy growth cut in half immediately after 1962 regulations
-2. **Mechanism**: Regulations reduced new treatments by 70%, increased costs 13x, banned real-world efficacy trials
+2. **Mechanism**: Regulations reduced new treatments by {{< var post_1962_drug_approval_reduction_pct >}}, increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}x, banned real-world efficacy trials
 3. **Alternative explanations**: None that explain a sudden linear break in 1962
 
 This is how clinical trials work: temporal correlation + mechanism of action = inference of causation.
@@ -355,7 +355,7 @@ For that money, you could:
 - Hire a shaman for a year
 - Fly to Switzerland for assisted dying (much faster)
 
-The total cost? **[$2.6 billion](../references.qmd#drug-development-costs)** per new drug.
+The total cost? **{{< var pharma_drug_development_cost_current >}}** per new drug (see [source](../references.qmd#drug-development-costs)).
 
 That's [more than the GDP of Greenland](../references.qmd#gdp-of-greenland). We could literally buy Greenland and turn it into a giant laboratory for less than it costs to approve one arthritis medication.
 
@@ -377,7 +377,7 @@ But at least the paperwork is thorough.
 
 Your rare disease child has better odds with lottery tickets.
 
-Why? Math. If your disease only affects 10,000 people, and it costs $2.6 billion to develop a drug, each patient would need to pay $260,000 just to break even.
+Why? Math. If your disease only affects 10,000 people, and it costs {{< var pharma_drug_development_cost_current >}} to develop a drug, each patient would need to pay $260,000 just to break even.
 
 So pharmaceutical companies focus on:
 
@@ -516,9 +516,9 @@ If global deployment reached **20%** of resistant cases (≈50 million candidate
 | QALYs gained per patient per year of remission | 0.5–0.8                             |
 | Patients benefited                             | 25 million                          |
 | Annual QALY gain                               | ~15 million                         |
-| Monetary valuation (US $100,000/QALY)          | **$1.5 trillion/year** social value |
+| Monetary valuation ({{< var standard_economic_qaly_value_usd >}}/QALY)          | **$1.5 trillion/year** social value |
 
-Each year of post-safety efficacy lag destroys **≈$1.5 trillion in global welfare**—greater than the annual R&D budget of the entire pharmaceutical industry.
+Each year of post-safety efficacy lag destroys **≈$1.5 trillion in global welfare**, greater than the annual R&D budget of the entire pharmaceutical industry.
 
 #### 4. Comparative Timelines
 
@@ -526,7 +526,7 @@ Each year of post-safety efficacy lag destroys **≈$1.5 trillion in global welf
 | --------------------------------- | --------------------- | -------------------------------------------- |
 | **Current FDA/EMA process**       | 10–12 y               | 5–10 million                                 |
 | **Utilitarian adaptive approval** | 2–3 y                 | 1–2 million                                  |
-| **Net lives saved by reform**     | —                     | **≈8 million**                               |
+| **Net lives saved by reform**     |                       | **≈8 million**                               |
 
 #### 5. Feasibility of Accelerated Path
 
@@ -746,8 +746,8 @@ The FDA does make drugs safer from immediate harms. Phase 1 safety testing preve
 
 But the system also makes drugs:
 
-- **Expensive:** $2.6 billion per drug
-- **Slow:** 17 years from discovery to patient (you'll be dead)
+- **Expensive:** {{< var pharma_drug_development_cost_current >}} per drug
+- **Slow:** {{< var treatment_acceleration_years_current >}} years from discovery to patient (you'll be dead)
 - **Inaccessible:** 95% of rare diseases have zero treatments
 - **Ineffective:** Tested on populations that don't resemble actual patients
 
