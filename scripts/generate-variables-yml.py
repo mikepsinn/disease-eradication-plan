@@ -1441,7 +1441,19 @@ def main():
     # Get project root
     project_root = Path(__file__).parent.parent.absolute()
 
-    # Parse parameters file
+    # Parse references.qmd FIRST (before parameters.py, to avoid circular dependency)
+    print("[*] Parsing knowledge/references.qmd...")
+    references_path = project_root / "knowledge" / "references.qmd"
+    available_refs = parse_references_qmd(references_path)
+    print(f"[OK] Found {len(available_refs)} reference entries")
+    print()
+
+    # Generate reference_ids.py enum SECOND (before loading parameters.py which imports it)
+    print("[*] Generating dih_models/reference_ids.py...")
+    reference_ids_path = project_root / "dih_models" / "reference_ids.py"
+    generate_reference_ids_enum(available_refs, reference_ids_path)
+
+    # Parse parameters file THIRD (now reference_ids.py is up to date)
     parameters_path = project_root / "dih_models" / "parameters.py"
     if not parameters_path.exists():
         print(f"[ERROR] Parameters file not found: {parameters_path}", file=sys.stderr)
@@ -1451,18 +1463,6 @@ def main():
     parameters = parse_parameters_file(parameters_path)
     print(f"[OK] Found {len(parameters)} numeric parameters")
     print()
-
-    # Parse references.qmd to get available references
-    print("[*] Parsing knowledge/references.qmd...")
-    references_path = project_root / "knowledge" / "references.qmd"
-    available_refs = parse_references_qmd(references_path)
-    print(f"[OK] Found {len(available_refs)} reference entries")
-    print()
-
-    # Generate reference_ids.py enum for IDE autocomplete and type safety
-    print("[*] Generating dih_models/reference_ids.py...")
-    reference_ids_path = project_root / "dih_models" / "reference_ids.py"
-    generate_reference_ids_enum(available_refs, reference_ids_path)
 
     # Validate that all external source_refs exist in references.qmd
     print("[*] Validating external source references...")
