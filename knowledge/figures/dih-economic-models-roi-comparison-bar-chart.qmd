@@ -32,16 +32,16 @@ economic_impacts = pd.DataFrame({
         'Combined Complete (All 8 Categories)'
     ],
     'Annual Value (Billions)': [
-        113.6,
-        50,
-        300,
-        100,
-        400,
-        100,
-        100,
-        75,
-        163.6,
-        1238.6
+        float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000,
+        float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 1_000_000_000,
+        float(BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL) / 1_000_000_000,
+        float(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL) / 1_000_000_000,
+        float(BENEFIT_RARE_DISEASES_ANNUAL) / 1_000_000_000,
+        float(BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL) / 1_000_000_000,
+        float(BENEFIT_PREVENTION_ANNUAL) / 1_000_000_000,
+        float(BENEFIT_MENTAL_HEALTH_ANNUAL) / 1_000_000_000,
+        float(TREATY_TOTAL_ANNUAL_BENEFITS) / 1_000_000_000,
+        float(TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL) / 1_000_000_000
     ],
     'ROI Ratio': [
         np.nan,
@@ -52,20 +52,20 @@ economic_impacts = pd.DataFrame({
         np.nan,
         np.nan,
         np.nan,
-        463,
-        1239
+        float(DFDA_ROI_RD_ONLY),
+        float(TREATY_COMPLETE_ROI)
     ],
     'Implementation Cost (Millions)': [
-        500,
-        40,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        538,
-        1000
+        500,  # Estimated for visualization
+        float(DFDA_ANNUAL_OPEX) / 1_000_000,
+        100,  # Estimated for visualization
+        100,  # Estimated for visualization
+        100,  # Estimated for visualization
+        100,  # Estimated for visualization
+        100,  # Estimated for visualization
+        100,  # Estimated for visualization
+        float(TREATY_TOTAL_ANNUAL_COSTS) / 1_000_000,
+        float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000
     ]
 })
 
