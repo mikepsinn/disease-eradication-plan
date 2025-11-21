@@ -2142,16 +2142,16 @@ TREATY_NET_ANNUAL_BENEFIT = Parameter(
 
 # ICER calculation (Incremental Cost-Effectiveness Ratio)
 # Negative ICER means society SAVES money while gaining QALYs
-ICER_PER_QALY = Parameter(
+TREATY_DFDA_ICER_PER_QALY = Parameter(
     (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation",
     source_type="calculated",
-    description="Incremental Cost-Effectiveness Ratio (ICER) per QALY gained",
-    display_name="Incremental Cost-Effectiveness Ratio per QALY Gained",
+    description="Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system",
+    display_name="Incremental Cost-Effectiveness Ratio per QALY Gained (Treaty + dFDA)",
     unit="USD/QALY",
     formula="(TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
-)  # -$176,907 per QALY (negative = cost-saving)
+)  # -$2,197 per QALY (negative = cost-saving)
 
 # dFDA Infrastructure ICER (specific calculation for economics.qmd)
 # Net incremental cost = operational costs - R&D savings = $0.040B - $50.0B = -$49.96B
@@ -2175,18 +2175,18 @@ DFDA_ICER_PER_QALY = Parameter(
     display_name="dFDA Infrastructure ICER per QALY",
     unit="USD/QALY",
     formula="(DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL",
-    latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{840{,}000 \text{ QALYs}} = -\$59{,}476 \text{ per QALY}",
+    latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{74.15M \text{ QALYs}} = -\$674 \text{ per QALY}",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly"]
-)  # -$59,476 per QALY
-TREATY_NET_BENEFIT_PER_LIFE_SAVED = Parameter(
-    (ICER_PER_QALY / 1_000_000) * STANDARD_QALYS_PER_LIFE_SAVED,
+)  # -$674 per QALY (updated with comprehensive regulatory delay elimination)
+TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED = Parameter(
+    (TREATY_DFDA_ICER_PER_QALY / 1_000_000) * STANDARD_QALYS_PER_LIFE_SAVED,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life",
     source_type="calculated",
-    description="Net benefit per life saved (ICER × QALYs/life)",
-    display_name="Net Benefit per Life Saved",
+    description="Net benefit per life saved for combined 1% Treaty + dFDA system (ICER × QALYs/life)",
+    display_name="Net Benefit per Life Saved (Treaty + dFDA)",
     unit="USD/life",
-    formula="ICER ÷ 1M × QALYS_PER_LIFE",
-    latex=r"BenefitPerLife = -\$59,476 ÷ 1M \times 35 = -\$2.08M",
+    formula="TREATY_DFDA_ICER ÷ 1M × QALYS_PER_LIFE",
+    latex=r"BenefitPerLife = -\$2{,}197 \times 35 = -\$76{,}895 \text{ per life}",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
 )  # Net benefit in millions per life
 
@@ -3035,7 +3035,7 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
 
 # Cost-effectiveness multiplier
 MULTIPLIER_VS_GIVEWELL = Parameter(
-    abs(TREATY_NET_BENEFIT_PER_LIFE_SAVED) / GIVEWELL_COST_PER_LIFE_AVG,
+    abs(TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED) / GIVEWELL_COST_PER_LIFE_AVG,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison",
     source_type="calculated",
     description="Cost-effectiveness multiplier vs GiveWell top charities",
@@ -4284,49 +4284,49 @@ TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE = Parameter(
 
 # Alternative ICER calculations based on funding perspective
 # Source: icer-full-calculation.qmd alternative ICER table
-ICER_INVESTOR_FUNDED = Parameter(
+TREATY_DFDA_ICER_INVESTOR_FUNDED = Parameter(
     -187429,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
     source_type="calculated",
-    description="ICER for investor-funded scenario (VICTORY Social Impact Bonds)",
-    display_name="ICER for Investor-Funded Scenario",
+    description="ICER for investor-funded scenario (VICTORY Social Impact Bonds) - Treaty + dFDA system",
+    display_name="ICER for Investor-Funded Scenario (Treaty + dFDA)",
     unit="USD/QALY",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "impact investing", "pay for success", "cost per daly"]
 )  # -$187,429 (campaign funded by VICTORY Social Impact Bonds, cost = $0)
 
-ICER_OPPORTUNITY_COST = Parameter(
+TREATY_DFDA_ICER_OPPORTUNITY_COST = Parameter(
     -156571,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
     source_type="calculated",
-    description="ICER counting redirected military spending as opportunity cost",
-    display_name="ICER Counting Redirected Military Spending as Opportunity Cost",
+    description="ICER counting redirected military spending as opportunity cost - Treaty + dFDA system",
+    display_name="ICER Counting Redirected Military Spending as Opportunity Cost (Treaty + dFDA)",
     unit="USD/QALY",
     keywords=["bang for buck", "cost effectiveness", "value for money", "dod", "pentagon", "disease burden", "cost per daly"]
 )  # -$156,571 (counts $27B redirected military spending)
 
-ICER_WASTE_CONVERSION = None  # Undefined (military spending has negative ROI)
+TREATY_DFDA_ICER_WASTE_CONVERSION = None  # Undefined (military spending has negative ROI)
 
-COST_PER_LIFE_INVESTOR_FUNDED = Parameter(
+TREATY_DFDA_COST_PER_LIFE_INVESTOR_FUNDED = Parameter(
     -6.56,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
     source_type="calculated",
-    description="Cost per life for investor-funded scenario",
-    display_name="Cost per Life for Investor-Funded Scenario",
+    description="Cost per life for investor-funded scenario - Treaty + dFDA system",
+    display_name="Cost per Life for Investor-Funded Scenario (Treaty + dFDA)",
     unit="USD/life",
     keywords=["bang for buck", "cost effectiveness", "value for money", "cost per qaly", "cost per daly", "incremental cost effectiveness ratio", "efficiency"]
 )  # -$6.56M
 
-COST_PER_LIFE_OPPORTUNITY_COST = Parameter(
+TREATY_DFDA_COST_PER_LIFE_OPPORTUNITY_COST = Parameter(
     -5.48,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
     source_type="calculated",
-    description="Cost per life counting military spending opportunity cost",
-    display_name="Cost per Life Counting Military Spending Opportunity Cost",
+    description="Cost per life counting military spending opportunity cost - Treaty + dFDA system",
+    display_name="Cost per Life Counting Military Spending Opportunity Cost (Treaty + dFDA)",
     unit="USD/life",
     keywords=["bang for buck", "cost effectiveness", "value for money", "dod", "pentagon", "cost per qaly", "cost per daly"]
 )  # -$5.48M
 
-COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
+TREATY_DFDA_COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
 
 # ---
 # HELPER FUNCTIONS
@@ -5691,8 +5691,8 @@ combined_peace_health_dividends_annual_for_roi_calc_formatted = format_parameter
 conservative_scenario_roi_formatted = format_roi(CONSERVATIVE_SCENARIO_ROI)
 cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.3f}"
 cost_of_delay_qaly_days_per_second_formatted = f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"
-cost_per_life_investor_funded_formatted = f"${COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"
-cost_per_life_opportunity_cost_formatted = f"${COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"
+cost_per_life_investor_funded_formatted = f"${TREATY_DFDA_COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"
+cost_per_life_opportunity_cost_formatted = f"${TREATY_DFDA_COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"
 daily_cost_inefficiency_formatted = format_parameter_value(DAILY_COST_INEFFICIENCY)
 death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
@@ -5746,15 +5746,15 @@ global_military_spending_post_treaty_annual_2024_formatted = format_parameter_va
     GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024
 )
 global_population_activism_threshold_pct_formatted = format_percentage(GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT)
-icer_investor_funded_formatted = f"${ICER_INVESTOR_FUNDED:,.0f}"
-icer_opportunity_cost_formatted = f"${ICER_OPPORTUNITY_COST:,.0f}"
-icer_per_qaly_formatted = f"${ICER_PER_QALY:,.0f}"
+icer_investor_funded_formatted = f"${TREATY_DFDA_ICER_INVESTOR_FUNDED:,.0f}"
+icer_opportunity_cost_formatted = f"${TREATY_DFDA_ICER_OPPORTUNITY_COST:,.0f}"
+icer_per_qaly_formatted = f"${TREATY_DFDA_ICER_PER_QALY:,.0f}"
 lobbyist_bond_investment_max_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MAX)
 lobbyist_bond_investment_min_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MIN)
 lobbyist_salary_typical_k_formatted = format_parameter_value(LOBBYIST_SALARY_TYPICAL_K)
 military_vs_medical_research_ratio_formatted = f"{MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}"
 multiplier_vs_givewell_formatted = f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"
-net_benefit_per_life_saved_formatted = format_parameter_value(abs(TREATY_NET_BENEFIT_PER_LIFE_SAVED))
+net_benefit_per_life_saved_formatted = format_parameter_value(abs(TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED))
 optimistic_scenario_roi_formatted = format_roi(OPTIMISTIC_SCENARIO_ROI)
 peace_dividend_annual_societal_benefit_formatted = format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
 post_ww2_military_cut_pct_formatted = format_percentage(POST_WW2_MILITARY_CUT_PCT)

@@ -376,16 +376,6 @@
   \ | Unit: QALY-days/second | Click to view calculation\">0.00644</a>"
 "cost_of_delay_qaly_days_per_second_latex": "$$\nDelay_{QALY} = \\frac{925,610 / 365}{31,557,600}\
   \ \\approx 0.00008\n$$"
-"cost_per_life_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
-  \ for investor-funded scenario | ✓ High confidence | Unit: USD/life | Click to view\
-  \ calculation\">$-7</a>"
-"cost_per_life_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
-  \ counting military spending opportunity cost | ✓ High confidence | Unit: USD/life\
-  \ | Click to view calculation\">$-5</a>"
 "current_active_trials": "<a href=\"https://warondisease.org/knowledge/references.html#clinicaltrials-gov-enrollment-data-2025\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -536,8 +526,8 @@
   \ (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ GLOBAL_DFDA_QALYS_GAINED_ANNUAL\
   \ | Unit: USD/QALY | Click to view calculation\">$-674</a>"
 "dfda_icer_per_qaly_latex": "$$\n\\text{ICER} = \\frac{\\text{Net Incremental Cost\
-  \ (Annual)}}{\\text{QALYs Gained (Annual)}} = \\frac{-\\$49.96\\text{B}}{840{,}000\
-  \ \\text{ QALYs}} = -\\$59{,}476 \\text{ per QALY}\n$$"
+  \ (Annual)}}{\\text{QALYs Gained (Annual)}} = \\frac{-\\$49.96\\text{B}}{74.15M\
+  \ \\text{ QALYs}} = -\\$674 \\text{ per QALY}\n$$"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Months to recruit\
@@ -1433,22 +1423,6 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum investment\
   \ for high net worth individuals | ✓ High confidence | Unit: USD | Click to view\
   \ calculation\">$1.00M</a>"
-"icer_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ICER for investor-funded\
-  \ scenario (VICTORY Social Impact Bonds) | ✓ High confidence | Unit: USD/QALY |\
-  \ Click to view calculation\">$-187K</a>"
-"icer_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ICER counting\
-  \ redirected military spending as opportunity cost | ✓ High confidence | Unit: USD/QALY\
-  \ | Click to view calculation\">$-157K</a>"
-"icer_per_qaly": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Incremental Cost-Effectiveness\
-  \ Ratio (ICER) per QALY gained | ✓ High confidence | Formula: (TREATY_TOTAL_ANNUAL_COSTS\
-  \ - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL | Unit:\
-  \ USD/QALY | Click to view calculation\">$-2.20K</a>"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds.qmd\"\
@@ -2613,6 +2587,40 @@
   >$8.54T</a>"
 "treaty_comprehensive_with_full_regulatory_delay_latex": "$$\nBenefits_{full} = \\\
   $1,238.6B - \\$300B - \\$400B - \\$100B + \\$11,100B \\approx \\$11,538.6B\n$$"
+"treaty_dfda_cost_per_life_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
+  \ for investor-funded scenario - Treaty + dFDA system | ✓ High confidence | Unit:\
+  \ USD/life | Click to view calculation\">$-7</a>"
+"treaty_dfda_cost_per_life_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
+  \ counting military spending opportunity cost - Treaty + dFDA system | ✓ High confidence\
+  \ | Unit: USD/life | Click to view calculation\">$-5</a>"
+"treaty_dfda_icer_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ICER for investor-funded\
+  \ scenario (VICTORY Social Impact Bonds) - Treaty + dFDA system | ✓ High confidence\
+  \ | Unit: USD/QALY | Click to view calculation\">$-187K</a>"
+"treaty_dfda_icer_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ICER counting\
+  \ redirected military spending as opportunity cost - Treaty + dFDA system | ✓ High\
+  \ confidence | Unit: USD/QALY | Click to view calculation\">$-157K</a>"
+"treaty_dfda_icer_per_qaly": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Incremental Cost-Effectiveness\
+  \ Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system | ✓ High confidence\
+  \ | Formula: (TREATY_TOTAL_ANNUAL_COSTS - TREATY_TOTAL_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL\
+  \ | Unit: USD/QALY | Click to view calculation\">$-2.20K</a>"
+"treaty_dfda_net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net benefit per\
+  \ life saved for combined 1% Treaty + dFDA system (ICER × QALYs/life) | ✓ High confidence\
+  \ | Formula: TREATY_DFDA_ICER ÷ 1M × QALYS_PER_LIFE | Unit: USD/life | Click to\
+  \ view calculation\">$-0</a>"
+"treaty_dfda_net_benefit_per_life_saved_latex": "$$\nBenefitPerLife = -\\$2{,}197\
+  \ \\times 35 = -\\$76{,}895 \\text{ per life}\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2627,13 +2635,6 @@
   \ TOTAL_COSTS | Unit: USD/year | Click to view calculation\">$163B</a>"
 "treaty_net_annual_benefit_latex": "$$\nNetBenefit = \\$163.55B - \\$0.29B = \\$163.26B\n\
   $$"
-"treaty_net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net benefit per\
-  \ life saved (ICER × QALYs/life) | ✓ High confidence | Formula: ICER ÷ 1M × QALYS_PER_LIFE\
-  \ | Unit: USD/life | Click to view calculation\">$-0</a>"
-"treaty_net_benefit_per_life_saved_latex": "$$\nBenefitPerLife = -\\$59,476 ÷ 1M \\\
-  times 35 = -\\$2.08M\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\

@@ -740,8 +740,8 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 source_ref = value.source_ref
                 # Convert ReferenceID enum to string value for URL
                 source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
-                # Display enum name if it's an enum, otherwise just the string
-                display_ref = str(source_ref) if hasattr(source_ref, 'value') else source_ref
+                # Use the reference ID value for display (not the enum representation)
+                display_ref = source_ref_str
                 content.append(f"**Source**: [{display_ref}](https://warondisease.org/knowledge/references.html#{source_ref_str})")
                 content.append("")
 
@@ -917,31 +917,175 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     print(f"     {len(definition_params)} core definitions")
 
 
+def parse_references_qmd_detailed(references_path: Path) -> Dict[str, Dict[str, Any]]:
+    """
+    Parse knowledge/references.qmd and extract full citation metadata.
+
+    Returns a dict mapping reference IDs to citation data:
+    {
+        'reference-id': {
+            'id': 'reference-id',
+            'title': 'The reference title',
+            'author': 'Author Name',
+            'year': '2024',
+            'source': 'Journal/Publisher Name',
+            'url': 'https://...',
+            'urls': ['https://...', 'https://...'],  # All URLs
+            'quote': 'The quoted text',
+            'note': 'Additional context',
+            'type': 'article'  # article, book, misc, report, etc.
+        }
+    }
+    """
+    if not references_path.exists():
+        print(f"[WARN] References file not found: {references_path}", file=sys.stderr)
+        return {}
+
+    with open(references_path, encoding="utf-8") as f:
+        lines = f.readlines()
+
+    references = {}
+    current_ref = None
+    current_id = None
+    i = 0
+
+    while i < len(lines):
+        line = lines[i].rstrip()
+
+        # Match anchor tags: <a id="reference-id"></a>
+        anchor_match = re.match(r'<a\s+id="([^"]+)"\s*></a>', line)
+        if anchor_match:
+            ref_id = anchor_match.group(1)
+
+            # Skip internal document references (contain / or .qmd)
+            if '/' in ref_id or '.qmd' in ref_id:
+                i += 1
+                continue
+
+            # Save PREVIOUS reference before starting new one
+            if current_id and current_ref:
+                # Determine entry type based on source
+                source_lower = current_ref['source'].lower()
+                if any(word in source_lower for word in ['journal', 'nature', 'science', 'lancet']):
+                    current_ref['type'] = 'article'
+                elif any(word in source_lower for word in ['congress.gov', 'law', 'act', 'bill']):
+                    current_ref['type'] = 'legislation'
+                elif any(word in source_lower for word in ['cdc', 'who', 'gao', 'fda', 'nih']):
+                    current_ref['type'] = 'report'
+                elif any(word in source_lower for word in ['book', 'press', 'publisher']):
+                    current_ref['type'] = 'book'
+                elif 'university' in source_lower or 'project' in source_lower:
+                    current_ref['type'] = 'techreport'
+
+                references[current_id] = current_ref
+
+            # Start new reference
+            current_id = ref_id
+            current_ref = {
+                'id': ref_id,
+                'title': '',
+                'author': '',
+                'year': '',
+                'source': '',
+                'url': '',
+                'urls': [],
+                'quote': '',
+                'note': '',
+                'type': 'misc'
+            }
+            i += 1
+            continue
+
+        # Match title: - **Title text**
+        if current_id and line.startswith('- **') and line.endswith('**'):
+            title = line[4:-2].strip()
+            current_ref['title'] = title
+            i += 1
+            continue
+
+        # Match blockquote lines (citation data)
+        if current_id and line.strip().startswith('>'):
+            quote_line = line.strip()[1:].strip()  # Remove '>' and whitespace
+
+            # Attribution line (starts with em dash): — Source, Year, [Link](URL)
+            if quote_line.startswith('—') or quote_line.startswith('--'):
+                attribution = quote_line.lstrip('—-').strip()
+
+                # Extract all URLs from markdown links: [text](url)
+                url_pattern = r'\[([^\]]+)\]\(([^)]+)\)'
+                url_matches = re.findall(url_pattern, attribution)
+                for link_text, url in url_matches:
+                    current_ref['urls'].append(url)
+                    if not current_ref['url']:
+                        current_ref['url'] = url
+
+                # Try to extract year (4-digit number)
+                year_match = re.search(r'\b(19|20)\d{2}\b', attribution)
+                if year_match:
+                    current_ref['year'] = year_match.group(0)
+
+                # Extract source/author (text before year or first comma)
+                # Remove markdown links for cleaner parsing
+                clean_attr = re.sub(url_pattern, r'\1', attribution)
+
+                # Split by | to get individual sources
+                sources = clean_attr.split('|')
+                if sources:
+                    first_source = sources[0].strip()
+                    # Source format: "Name, Year, Link" or "Name, Link"
+                    parts = [p.strip() for p in first_source.split(',')]
+                    if parts:
+                        current_ref['source'] = parts[0]
+                        # Use source as author if no better info available
+                        if not current_ref['author']:
+                            current_ref['author'] = parts[0]
+
+                # Store full attribution as note
+                current_ref['note'] = clean_attr
+
+            # Regular quote line
+            elif quote_line.startswith('"') or 'Alternative title:' in quote_line:
+                if current_ref['quote']:
+                    current_ref['quote'] += ' '
+                current_ref['quote'] += quote_line
+
+            i += 1
+            continue
+
+        # Continue to next line
+        i += 1
+
+    # Save last reference if exists
+    if current_id and current_ref:
+        # Determine entry type based on source
+        source_lower = current_ref['source'].lower()
+        if any(word in source_lower for word in ['journal', 'nature', 'science', 'lancet']):
+            current_ref['type'] = 'article'
+        elif any(word in source_lower for word in ['congress.gov', 'law', 'act', 'bill']):
+            current_ref['type'] = 'legislation'
+        elif any(word in source_lower for word in ['cdc', 'who', 'gao', 'fda', 'nih']):
+            current_ref['type'] = 'report'
+        elif any(word in source_lower for word in ['book', 'press', 'publisher']):
+            current_ref['type'] = 'book'
+        elif 'university' in source_lower or 'project' in source_lower:
+            current_ref['type'] = 'techreport'
+
+        references[current_id] = current_ref
+
+    return references
+
+
 def parse_references_qmd(references_path: Path) -> set:
     """
     Parse knowledge/references.qmd and extract all reference IDs.
 
-    Returns a set of all anchor IDs defined in the file, excluding internal
-    document references (those containing '/' or '.qmd').
+    Returns a set of all anchor IDs (for backward compatibility).
+    For detailed citation data, use parse_references_qmd_detailed().
 
     Example: <a id="166-billion-compounds"></a> -> "166-billion-compounds"
     """
-    if not references_path.exists():
-        print(f"[WARN] References file not found: {references_path}", file=sys.stderr)
-        return set()
-
-    with open(references_path, encoding="utf-8") as f:
-        content = f.read()
-
-    # Pattern to match <a id="..."></a> tags
-    pattern = r'<a\s+id="([^"]+)"\s*></a>'
-    matches = re.findall(pattern, content)
-
-    # Filter out internal document references (containing / or .qmd)
-    # These are internal links, not external citations
-    external_refs = {ref for ref in matches if '/' not in ref and '.qmd' not in ref}
-
-    return external_refs
+    detailed = parse_references_qmd_detailed(references_path)
+    return set(detailed.keys())
 
 
 def sanitize_bibtex_key(key: str) -> str:
@@ -1071,18 +1215,24 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     print()
 
 
-def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None):
+def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, references_path: Path = None):
     """
     Generate references.bib BibTeX file from external parameters.
 
     Extracts unique citations from parameters with source_type="external"
-    and creates BibTeX entries for LaTeX submissions.
+    and creates BibTeX entries using actual citation data from references.qmd.
 
     Args:
         parameters: Dict of parameter metadata
         output_path: Path to write references.bib
         available_refs: Set of valid reference IDs from references.qmd (optional)
+        references_path: Path to references.qmd file for detailed citation data
     """
+    # Parse detailed citation data from references.qmd
+    citation_data = {}
+    if references_path and references_path.exists():
+        citation_data = parse_references_qmd_detailed(references_path)
+
     # Collect unique source_refs from external parameters
     citations = set()
     for param_name, param_data in parameters.items():
@@ -1111,32 +1261,91 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
                     citations.add(source_ref)
 
     # Generate BibTeX entries
-    # Note: In a production system, you'd want to fetch actual BibTeX data
-    # For now, we create placeholder entries that reference the citations
     content = []
     content.append("% AUTO-GENERATED FILE - DO NOT EDIT")
-    content.append("% Generated from dih_models/parameters.py")
+    content.append("% Generated from dih_models/parameters.py and knowledge/references.qmd")
     content.append("")
     content.append("% This file contains BibTeX references for all external data sources")
     content.append("% used in the economic analysis of the 1% Treaty and Decentralized FDA.")
     content.append("")
-    content.append("% NOTE: These are placeholder entries. In production, fetch actual")
-    content.append("% BibTeX data from DOIs, PubMed, or other bibliographic databases.")
+    content.append("% Extracted from knowledge/references.qmd with author, year, source, and URL data.")
+    content.append("% For manual curation or DOI-based enrichment, see references.qmd")
     content.append("")
 
+    entries_with_data = 0
+    entries_placeholder = 0
+
     for citation_key in sorted(citations):
-        # citation_key is now guaranteed to be a clean string (not enum, not internal ref)
         # Sanitize citation key for BibTeX (remove /, #, etc.)
         sanitized_key = sanitize_bibtex_key(citation_key)
 
-        # Create placeholder entry
-        # In production, you'd query CrossRef, PubMed, etc. for actual BibTeX
-        content.append(f"@misc{{{sanitized_key},")
-        content.append(f"  title = {{{citation_key}}},")
-        content.append(f"  note = {{See references.html#{citation_key} for full citation}},")
-        content.append(f"  url = {{https://impact.dih.earth/knowledge/references.html#{citation_key}}},")
-        content.append("}")
-        content.append("")
+        # Get detailed citation data if available
+        ref_data = citation_data.get(citation_key, {})
+
+        if ref_data and ref_data.get('title'):
+            # Create proper BibTeX entry with real data
+            entry_type = ref_data.get('type', 'misc')
+            title = ref_data.get('title', citation_key)
+            author = ref_data.get('author', '')
+            year = ref_data.get('year', 'n.d.')
+            source = ref_data.get('source', '')
+            url = ref_data.get('url', '')
+            note = ref_data.get('note', '')
+
+            # Build BibTeX entry
+            content.append(f"@{entry_type}{{{sanitized_key},")
+
+            # Title (required for all types)
+            # Escape special LaTeX characters
+            title_escaped = title.replace('&', '\\&').replace('%', '\\%')
+            content.append(f"  title = {{{title_escaped}}},")
+
+            # Author/organization
+            if author:
+                author_escaped = author.replace('&', '\\&')
+                if entry_type in ['report', 'techreport', 'legislation']:
+                    content.append(f"  institution = {{{author_escaped}}},")
+                else:
+                    content.append(f"  author = {{{author_escaped}}},")
+
+            # Year
+            content.append(f"  year = {{{year}}},")
+
+            # Source/journal/publisher
+            if source:
+                source_escaped = source.replace('&', '\\&')
+                if entry_type == 'article':
+                    content.append(f"  journal = {{{source_escaped}}},")
+                elif entry_type in ['book', 'report', 'techreport']:
+                    content.append(f"  publisher = {{{source_escaped}}},")
+
+            # URL (with proper escaping)
+            if url:
+                url_escaped = url.replace('&', '\\&').replace('%', '\\%')
+                content.append(f"  url = {{{url_escaped}}},")
+                content.append(f"  urldate = {{2025-01-20}},")
+
+            # Note (additional context)
+            if note:
+                note_escaped = note.replace('&', '\\&').replace('%', '\\%')
+                # Truncate if too long
+                if len(note_escaped) > 200:
+                    note_escaped = note_escaped[:197] + "..."
+                content.append(f"  note = {{{note_escaped}}},")
+
+            content.append("}")
+            content.append("")
+            entries_with_data += 1
+
+        else:
+            # Fallback: create minimal placeholder entry
+            content.append(f"@misc{{{sanitized_key},")
+            content.append(f"  title = {{{citation_key}}},")
+            content.append(f"  note = {{See https://warondisease.org/knowledge/references.html\\#{citation_key}}},")
+            content.append(f"  url = {{https://warondisease.org/knowledge/references.html\\#{citation_key}}},")
+            content.append("}")
+            content.append("")
+            entries_placeholder += 1
 
     # Write file
     with open(output_path, "w", encoding="utf-8") as f:
@@ -1144,6 +1353,9 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
 
     print(f"[OK] Generated {output_path}")
     print(f"     {len(citations)} unique citations")
+    print(f"     {entries_with_data} with full citation data")
+    if entries_placeholder > 0:
+        print(f"     {entries_placeholder} placeholder entries (missing data in references.qmd)")
 
 
 def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: Path):
@@ -1280,10 +1492,10 @@ def main():
     generate_parameters_qmd(parameters, qmd_output)
     print()
 
-    # Generate references.bib (only include valid external references)
+    # Generate references.bib (with full citation data from references.qmd)
     print("[*] Generating references.bib...")
     bib_output = project_root / "references.bib"
-    generate_bibtex(parameters, bib_output, available_refs=available_refs)
+    generate_bibtex(parameters, bib_output, available_refs=available_refs, references_path=references_path)
     print()
 
     # Optionally inject citations

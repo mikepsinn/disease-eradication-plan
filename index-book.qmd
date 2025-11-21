@@ -658,10 +658,10 @@ This beats:
 You stop paying smart humans to pretend problems are complicated. You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
 - **{{< var dfda_rd_gross_savings_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
-- [**840,000 Quality-Adjusted Life Years**](knowledge/appendix/dfda-cost-benefit-analysis.qmd) (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey)
-  - 200,000 QALYs because drugs reach people in [2 years instead of 17](knowledge/appendix/recovery-trial.qmd), which matters if you're currently dying (17 years is longer than most terminal diagnoses, which seems like poor planning)
-  - 140,000 QALYs from actually knowing which treatments work instead of guessing (your current method)
-  - 500,000 QALYs from curing things you previously ignored because "not profitable enough" (like there's a profit threshold for not dying - "Sorry, your orphan disease only affects 50,000 people, we need at least 100,000 to justify the paperwork")
+- **{{< var global_dfda_qalys_gained_annual >}} Quality-Adjusted Life Years** (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd)
+  - **{{< var dfda_lives_saved_annual >}} lives saved per year** ({{< var dfda_lives_saved_daily >}} per day) by eliminating the 7.2-year regulatory efficacy lag
+  - This is the [comprehensive regulatory delay elimination approach](knowledge/appendix/regulatory-mortality-analysis.qmd) - returning to pre-1962 safety-only regulation (Phase I) and letting real-world evidence verify efficacy
+  - For context: {{< var regulatory_delay_deaths_daily >}} people die every day under the current system waiting for approval ([see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd))
 
 {{< include knowledge/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
