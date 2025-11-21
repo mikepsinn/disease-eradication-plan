@@ -236,20 +236,18 @@ They win by **aligning incentives**.
 This is the alignment engine:
 
 
-# Victory Bonds: The Greed-Aligned Engine
+# Victory Bonds: The Greed-Alignment Engine
 
 You make this happen by bribing people with their own future savings.
 
-## Here's the mechanism
+## The Mechanism
 
-1. Investors buy **Victory Bonds**
-2. Bond funds finance a lobbying campaign to redirect 1% of military spending
-3. When the treaty passes, governments save hundreds of billions
-4. A slice of those savings repays investors with absurd returns
-5. Investors profit by funding the thing that makes them profit
+1. Investors buy **Victory Bonds** funding the political campaign ({{< var treaty_campaign_total_cost >}})
+2. Bond funds finance lobbying to redirect 1% of military spending
+3. When the treaty passes, it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual benefits
+4. Bondholders receive {{< var victory_bond_annual_return_pct >}} annual returns from the captured surplus
 
-It's **public choice theory applied correctly:**
-Self-interest becomes a public good.
+It's **public choice theory applied correctly**: Self-interest becomes a public good.
 
 Nobody has to become a better person.
 Nobody has to evolve morally.
@@ -257,11 +255,9 @@ They just follow their calculator to accidentally save humanity.
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-## Why Humans Will Do This
+## Why Every Type of Human Will Do This
 
-*For Every Type of Human*
-
-**Defense Contractors**: "Keep 99% of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on Victory Bonds. It's like finding money in pants you're currently wearing. Except the money multiplies. While you're wearing the pants."
+**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on Victory Bonds. It's like finding money in pants you're currently wearing. Except the money multiplies. While you're wearing the pants."
 
 **Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
 
@@ -271,9 +267,11 @@ They just follow their calculator to accidentally save humanity.
 
 **Billionaires**: "Your index fund makes 10% returns. Victory Bonds make {{< var victory_bond_annual_return_pct >}}. It's like compound interest discovered steroids then did cocaine."
 
-**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join - your {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidy follows you. Your participation funds the trial; trials that attract patients get funded.  Also: **{{< var personal_lifetime_benefit_age_30_1pct >}} in lifetime wealth and {{< var personal_life_extension_years_age_30 >}} of life** from the economic multiplier effect ([see your personal benefits](../call-to-action/your-personal-benefits.qmd))."
+**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join - your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
 
-Nobody has to evolve morally. Nobody has to become better people. You just point everyone's greed at diseases instead of each other.
+You just point everyone's greed at diseases instead of each other.
+
+See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
 # The Mechanical Sequence (How to Actually Do This)
 
@@ -436,7 +434,7 @@ $$
 
 Translation: "How much does it cost per year of healthy life created?"
 
-WHO says interventions under $50,000 per QALY are "cost-effective." Most successful health programs cost $3,000-10,000 per QALY.
+WHO says interventions under {{< var who_qaly_threshold_cost_effective >}} {{< var who_qaly_threshold_cost_effective_cite >}} per QALY are "cost-effective." Most successful health programs cost $3,000-10,000 per QALY.
 
 This system's ICER: **{{< var dfda_icer_per_qaly >}} per QALY**
 
@@ -487,7 +485,7 @@ For the dFDA infrastructure (using annual figures):
 
 {{< var dfda_icer_per_qaly_latex >}}
 
-The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are $50,000-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
+The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -503,7 +501,7 @@ Health gains from bringing effective treatments to patients faster through short
 
 - **Baseline:** Research shows one-year delays in cancer therapy diffusion resulted in 84,000 life-years lost
 - **Estimate:** 2-year average acceleration across pharmaceutical pipeline
-- **Annual QALYs:** 180,000-500,000 QALYs (baseline: 24% of total)
+- **Annual QALYs:** {{< var qalys_from_faster_access_conservative >}}-{{< var qalys_from_faster_access_optimistic >}} QALYs 
 
 **B. Improved Preventative Care via Real-World Evidence**
 
@@ -521,7 +519,7 @@ Transformative potential to create viable research pathways for conditions ignor
 - **Mechanism:** Radically lower per-patient costs make rare disease R&D economically feasible
 - **Annual QALYs:** {{< var qalys_from_new_therapies_conservative >}}-{{< var qalys_from_new_therapies_optimistic >}} QALYs (baseline: 60% of total)
 
-**QALY Valuation:** Standard economic valuations range from $50,000-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY. This analysis uses conservative mid-range values.
+**QALY Valuation:** Standard economic valuations range from {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY. This analysis uses conservative mid-range values.
 
 For detailed QALY calculation methodology, see [dFDA QALY Model](../appendix/dfda-qaly-model.qmd).
 
@@ -973,7 +971,7 @@ $$
 
 **Translation:** You GAIN $59,476 for every year of healthy life you save.
 
-Normally, you *spend* money to save lives. Good interventions cost $50,000-$150,000 per QALY. Great interventions cost $3,000-$50,000.
+Normally, you *spend* money to save lives. Good interventions cost {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY. Great interventions cost $3,000-{{< var who_qaly_threshold_cost_effective >}}.
 
 This one *makes* $59,476 per QALY while saving the life.
 
@@ -1190,95 +1188,57 @@ $$
 
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
 
-# How This Compares to History
+# Comparative Effectiveness
 
-### Better Than the Best Charities
+This section compares the 1% Treaty/dFDA system to best-in-class health interventions across multiple categories.
 
-The most effective charities on Earth ([GiveWell top charities](../references.qmd#givewell-cost-per-life-saved)):
+## Comprehensive Comparison
 
-| Intervention | Cost Per Life Saved |
-| :--- | :--- |
-| **Against Malaria Foundation** | ~$3,000-$5,000 (heroic) |
-| **1% Treaty + dFDA** | Society makes $1.1M profit per life |
-
-#### The critical difference
-
-GiveWell charities are the **best ways to spend money** saving lives. They're incredibly efficient.
-
-This doesn't spend money. It **generates profit** while saving lives.
-
-#### Translation
-
-- Best charity: Costs $3,000-$5,000 per life saved (excellent)
-- This system: Makes $1.1M profit per life saved (backwards economics)
-
-One requires infinite fundraising from finite donors.
-The other prints money while curing diseases.
-
-Both are good. One breaks capitalism's usual rules.
+| Intervention Type | Metric | Performance | Annual Benefit |
+|:---|:---|---:|---:|
+| **1% Treaty/dFDA** | Cost per life saved | **$1.1M profit** | {{< var combined_peace_health_dividends_annual_for_roi_calc >}} |
+| **1% Treaty/dFDA** | Cost per QALY | {{< var dfda_icer_per_qaly >}} (net savings) | {{< var global_dfda_qalys_gained_annual >}} QALYs |
+| **Childhood Vaccinations** | Annual benefit | Self-funding | ~{{< var childhood_vaccination_annual_benefit >}} |
+| **GiveWell Top Charities** | Cost per life saved | $3,000-$5,000 | Variable |
+| **GiveWell Top Charities** | Cost per QALY | $3,000-$5,000 | Variable |
+| **Smoking Cessation** | Annual benefit | Billions | Billions |
+| **Water & Sanitation** | Annual benefit | Hundreds of millions | Hundreds of millions |
+| **Cancer Screening** | Cost per QALY | $20,000-$50,000 | Variable |
+| **Cardiovascular Prevention** | Cost per QALY | $10,000-$30,000 | Variable |
+| **Medicare/Medicaid Expansion** | Cost per QALY | $50,000-$100,000 | Variable |
 
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
-### Better Than History's Best Public Health Wins
-
-| Intervention | How it Creates Value | Scale of Annual Net Benefit |
-| :--- | :--- | :--- |
-| **[Childhood Vaccinations](../references.qmd#childhood-vaccination-roi)** | Prevents immense long-term treatment costs for diseases like measles and polio | Billions to Tens of Billions |
-| **Smoking Cessation** | Prevents expensive chronic diseases (cancer, heart disease) through low-cost interventions | Billions to Tens of Billions |
-| **[Water & Sanitation](../references.qmd#clean-water-sanitation-roi)** | Avoids disease costs for entire populations at low cost | Hundreds of Millions to Billions |
-| **[1% Treaty (Peace Dividend)](../appendix/peace-dividend-calculations.qmd)** | Reduces global conflict costs by 1%, creating massive economic benefit | **~{{< var peace_dividend_annual_societal_benefit >}}, Annually** |
-| **[dFDA (R&D Efficiency)](../appendix/dfda-cost-benefit-analysis.qmd)** | Makes clinical research ~{{< var trial_cost_reduction_factor >}} {{< var trial_cost_reduction_factor_cite >}}× more efficient, unlocking huge R&D savings | **~$50.0B, Annually** |
-
-#### Why This Is Different
-
-Vaccines and smoking cessation programs are amazing, they solve specific problems with a high return.
-
-The {{< var treaty_reduction_pct >}} Treaty and dFDA initiative tackles two problems at once:
-
-1. **The Peace Dividend** is a massive economic gain on par with the largest public health wins, created simply by reducing a global negative (conflict)
-2. **Patient-driven pragmatic trials** then use a tiny fraction of that gain to fix the *system* of medical research, generating a *second* massive win
-
-Instead of solving one problem, this uses a global-scale win to fund a system-scale win. When you redirect the world's largest source of waste to fund its most impactful opportunity, the math gets wild.
-
-### 10X Larger Than Childhood Vaccinations
-
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-The conservative case annual economic benefit of {{< var combined_peace_health_dividends_annual_for_roi_calc >}} significantly exceeds the most successful public health programs in history. Comparing to [childhood vaccination programs](../references.qmd#childhood-vaccination-roi) (estimated [10-20B annual global benefit](../references.qmd#childhood-vaccination-roi) from preventing measles, polio, etc.):
+## The Critical Difference
 
-$$
-\text{Relative Scale} = \frac{\$163.6\text{B}}{\sim\$15\text{B}} \approx 11:1
-$$
+GiveWell charities are the **best ways to spend money** saving lives. They're heroic and incredibly efficient.
 
-where {{< var combined_peace_health_dividends_annual_for_roi_calc >}} is the [1% Treaty conservative case benefit](../appendix/dfda-cost-benefit-analysis.qmd) and {{< var childhood_vaccination_annual_benefit >}} {{< var childhood_vaccination_annual_benefit_cite >}} is the estimated [childhood vaccination annual benefit](../references.qmd#childhood-vaccination-roi).
+This doesn't spend money. It **generates profit** while saving lives.
 
-This makes the {{< var treaty_reduction_pct >}} Treaty/dFDA system **{{< var treaty_benefit_multiplier_vs_vaccines >}}X [larger in economic impact](../appendix/intervention-comparison-table.qmd)** than childhood vaccinations, one of the most successful public health interventions ever implemented.
+**Translation:**
+- Best charity: Costs $3,000-$5,000 per life saved (excellent)
+- This system: Makes $1.1M profit per life saved
 
-Unlike traditional interventions that require ongoing charitable funding, the 1% Treaty is **self-funding**: it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic surplus (conservative case) to sustain operations and expansion without requiring ongoing charitable contributions.
+One requires infinite fundraising from finite donors. The other prints money while curing diseases.
 
-### Comprehensive Comparison Across Intervention Types
+Both are good. One breaks the usual economic rules.
 
-The comparisons above focus on GiveWell charities and historical public health interventions because they represent **best-in-class efficiency** for direct health interventions. However, a complete cost-effectiveness analysis requires comparing the {{< var treaty_reduction_pct >}} Treaty/dFDA system across multiple intervention categories:
+## Why This Is Different
 
-#### Comparison to Research Investments
+Vaccines and smoking cessation programs solve specific problems with high returns - they're amazing interventions.
 
-**NIH Intramural Research Program** (~$45B annually): Generates significant scientific advances but at substantially higher cost per discovery than the dFDA model. The NIH's traditional randomized controlled trial approach costs approximately {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient for Phase 3 trials, compared to dFDA's {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient (RECOVERY trial benchmark), representing a {{< var trial_cost_reduction_factor >}} {{< var trial_cost_reduction_factor_cite >}}x efficiency gain. Both are valuable research investments, but they answer different questions: NIH prioritizes scientific rigor in controlled settings, while dFDA prioritizes real-world evidence at scale.
+The {{< var treaty_reduction_pct >}} Treaty tackles two problems at once:
 
-#### Comparison to Clinical Health Interventions
+1. **The Peace Dividend** ({{< var peace_dividend_annual_societal_benefit >}} annually) - created simply by reducing global conflict spending 1%
+2. **Pragmatic trial infrastructure** - uses a fraction of that dividend to fix the *system* of medical research, generating a second massive win
 
-Comparing the dFDA's cost-effectiveness ({{< var dfda_icer_per_qaly >}} per QALY, representing net savings) to standard clinical interventions:
+When you redirect the world's largest source of waste (conflict spending) to fund its most impactful opportunity (medical research), the math gets wild.
 
-| Intervention Category | Cost per QALY | Typical Use Case |
-|:---|---:|:---|
-| **dFDA System** | **{{< var dfda_icer_per_qaly >}}** (net savings) | Systemic R&D efficiency improvement |
-| **Medicare/Medicaid Coverage Expansion** | $50,000-100,000 | Expanding insurance coverage to uninsured populations |
-| **Cancer Screening Programs** | $20,000-50,000 | Mammography, colonoscopy, prostate screening |
-| **Cardiovascular Prevention** | $10,000-30,000 | Statins, blood pressure management, lifestyle interventions |
-| **GiveWell Top Charities** | $3,000-5,000 | Malaria prevention, deworming, vitamin supplementation |
+**Scale**: Conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually) exceed childhood vaccinations by {{< var treaty_benefit_multiplier_vs_vaccines >}}×.
 
-The negative cost per QALY ({{< var dfda_icer_per_qaly >}}) indicates this system **generates economic surplus while improving health**, placing it in a distinct category from interventions that cost money to deliver benefits. This is comparable to childhood vaccinations, which also generate net economic returns.
-
-**Note on comparison methodology**: The {{< var treaty_reduction_pct >}} Treaty/dFDA system operates at a systems level, simultaneously reallocating research funding, improving population health, generating economic returns, and reducing treatment costs. Comparing across intervention categories (charitable giving, public health, research investments, clinical care) involves different metrics and stakeholder perspectives. The comparisons presented focus on dimensions most relevant to decision-makers evaluating treaty adoption. The dFDA compares favorably to both research investments (efficiency per discovery) and direct health interventions (cost per QALY), though comprehensive comparison would require separate frameworks for each dimension.
+For detailed comparisons, see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd).
 
 
 # Who Benefits and How
@@ -1343,104 +1303,43 @@ This section addresses common objections and potential failure modes, along with
 
 Defense lobbyists currently get $1,813 back for every $1 spent corrupting democracy. You're offering VICTORY bondholders {{< var victory_bond_annual_return_pct >}} returns. That's better. Defense contractors can do basic arithmetic (barely, but enough).
 
-When you show them a spreadsheet where they keep 99% of their current contracts PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds, they stop lobbying against you and start lobbying for you.
+When you show them a spreadsheet where they keep {{< var defense_sector_retention_pct >}} of their current contracts PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds, they stop lobbying against you and start lobbying for you.
 
 You're not defeating greed. You're redirecting it. Like convincing a river to flow downhill instead of uphill - technically you're not doing anything, you're just removing the dam.
 
-Historical precedent: After WW2, humans cut military spending by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}} and accidentally created the greatest economic boom in history. You're asking for 1%. If cutting 30% worked, 1% should be manageable even for your species.
+Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed 1% reduction is significantly more modest.
 
 See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for detailed implementation strategy.
 
-## The "But What About Safety?" Problem
+## Safety Concerns
 
-**What could go wrong**: Decentralized trials without 17-year approval processes will miss dangerous side effects and harm patients.
+**Objection**: Decentralized trials may miss dangerous side effects.
 
-**Why this system is actually RADICALLY SAFER than the current FDA**:
+**Response**: Pragmatic trials with larger samples and continuous monitoring detect safety problems faster than traditional trials.
 
-### This System Detects MORE Safety Problems, Not Fewer
-
-**Current FDA trials test on:**
-- 100-300 patients per Phase 3 trial
-- Patients carefully selected to be "perfect" sick (no comorbidities, no other medications, not too old, not too young)
-- [85% of real patients excluded](../references.qmd#clinical-trial-exclusions)
-- Short duration (3-12 months typically)
-- Results: Miss rare side effects, miss long-term toxicity, miss drug interactions
-
-**Pragmatic trial system tests on:**
-- 10,000-100,000+ patients per trial (100× larger samples)
-- Real patients with real comorbidities taking real combinations of medications
-- Everyone included - old people, children, pregnant women (the people who actually need medicine)
-- Continuous monitoring through EHR integration (years to decades, not months)
-- Results: **Catches what the FDA misses**
-
-#### Real Example: Benadryl and Dementia
-
-The [Journal of the American Medical Association found](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) that long-term Benadryl use increases dementia risk. This went **undetected for decades** under the current system because:
-- Trials only monitored for months, not years
-- No one tracked long-term outcomes after approval
-- The harm was invisible until researchers manually aggregated health records
-
-**Decentralized trials with continuous EHR monitoring would have caught this in 2-3 years instead of 40+ years.**
-
-### Phase I Safety Testing Is PRESERVED
-
-The decentralized system **keeps rigorous Phase I safety testing** (~{{< var phase_1_safety_duration_years >}} {{< var phase_1_safety_duration_years_cite >}} years). This is what prevented the [Thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) in the US - existing 1938 FDA safety regulations worked perfectly. Zero American babies harmed while Europe had thousands of birth defects.
+**Phase I safety testing is preserved**: The dFDA retains rigorous Phase I safety testing (~{{< var phase_1_safety_duration_years >}} years), which successfully prevented the Thalidomide disaster in the US.
 
 **What changes:** Eliminating the {{< var efficacy_lag_years >}} {{< var efficacy_lag_years_cite >}}-year efficacy delay AFTER safety is proven. You still can't sell poison. You just don't have to wait 8 years to prove aspirin helps headaches AFTER you've already proved it doesn't kill people.
 
-### Publication Bias Eliminated = Safer
+**Superior safety surveillance**:
 
-**Current system:**
-- Companies [hide negative trial results](../references.qmd#publication-bias-clinical-trials) (only 37% published)
-- Positive results: 94% published
-- Cost: ~[$100 billion wasted annually](../references.qmd#wasted-spending-on-failed-experiments) repeating failed experiments
-- Safety risk: Other researchers can't learn from failures, repeat dangerous experiments
+| Safety Dimension | Traditional Trials | Pragmatic Trials |
+|:---|:---|:---|
+| Sample size | 100-300 patients | 10,000-100,000+ patients |
+| Patient selection | 85% excluded (comorbidities, age, medications) | All volunteers included |
+| Monitoring duration | 3-12 months | Continuous through EHR integration |
+| Publication | 37% of negative results published | 100% automatically published |
+| Subpopulation testing | Excludes elderly, children, pregnant patients | Tests all populations |
 
-**Decentralized system:**
-- **All trials automatically published** when registered
-- Cannot hide negative results (built into platform)
-- Cannot selectively report outcomes
-- Every researcher learns from every failure
+**Empirical validation**: The [RECOVERY trial](../appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients in 3 months at {{< var recovery_trial_cost_per_patient >}} per patient, identifying effective treatments (dexamethasone) and ruling out harmful ones (hydroxychloroquine) faster than traditional trials.
 
-### The Current System Is Demonstrably UNSAFE
+**Historical evidence**: Long-term Benadryl dementia risk went undetected for 40+ years under current surveillance. Continuous EHR monitoring would detect such effects in 2-3 years.
 
-[Rigorous analysis](../appendix/regulatory-mortality-analysis.qmd) shows:
+**Type II error dominates**: [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) shows {{< var type_ii_error_cost_ratio >}}:1 harm ratio - for every person saved by preventing unsafe drug approval, {{< var type_ii_error_cost_ratio >}} people die waiting for approval of beneficial treatments.
 
-- **{{< var regulatory_delay_deaths_mean >}}M preventable deaths** (1962-2024) from regulatory delay
-- **{{< var regulatory_delay_deaths_annual >}} deaths per year** (**{{< var regulatory_delay_deaths_daily >}} per day**) under current system
-- **{{< var type_ii_error_cost_ratio >}}:1 harm ratio**: For every 1 person the FDA saves by preventing unsafe drug approval, **{{< var type_ii_error_cost_ratio >}} people die** waiting for approval
-- **Small trials on unrepresentative patients**: Test on 275 people, then prescribe to millions
-- **No long-term data**: Most trials last 3-12 months; we have no idea what happens at year 5 or 10
+**The FDA prevents some harms but causes far more deaths through delay**. While Phase I safety testing successfully prevents toxic compounds from reaching patients (Type I errors), the barriers the FDA places between patients and beneficial treatments cause {{< var type_ii_error_cost_ratio >}}× more deaths than they prevent (Type II errors). [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) calls this the "Invisible Graveyard": {{< var regulatory_delay_deaths_mean >}}M deaths (1962-2024) from the {{< var efficacy_lag_years >}}-year delay between safety verification and final approval.
 
-$$
-\frac{\text{Deaths from Delay}}{\text{Deaths from Unsafe Drugs Prevented}} = \frac{184.6M}{0.11M} = 1{,}610:1
-$$
-
-**The FDA doesn't make medicine safer. It creates a different kind of danger** - the invisible deaths of people who die waiting for approval, not the visible deaths that make headlines.
-
-### Real-World Evidence Works
-
-A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared high-quality observational studies to expensive randomized controlled trials across multiple interventions. **The results were statistically indistinguishable.**
-
-![Comparison of effect sizes from observational studies versus randomized trials](../../assets/observational-vs-randomized-effect-sizes.png)
-
-With modern statistical methods, large sample sizes, and continuous monitoring, we can detect both efficacy AND safety problems faster and more reliably than small, short trials on cherry-picked patients.
-
-### This Isn't Theoretical - Oxford Proved It
-
-The [RECOVERY trial](../appendix/recovery-trial.qmd):
-- Tested 6 treatments on **47,000 patients**
-- Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient
-- Found dexamethasone (cut COVID deaths by 30%)
-- **Ruled out hydroxychloroquine** (found it didn't work AND had safety concerns)
-- Did this in **3 months**, not 3 years
-- Saved over **1 million lives globally**
-
-This was **safer** than traditional trials because:
-- Larger sample size (47,000 vs. typical 300)
-- Real-world patients (not cherry-picked)
-- Faster results meant less time prescribing things blindly
-- Published all results (including failures)
+For detailed analysis, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
 ## The "But Patients Won't Participate" Problem
 
@@ -1743,125 +1642,6 @@ The economic analysis presented above assumes successful implementation of the d
 - Post-market surveillance using continuous real-world data collection detects efficacy deterioration
 
 **Residual risk**: Even with mitigation, decentralized settings may have higher false positive rates than traditional controlled trials. This represents a fundamental trade-off between internal validity (causal certainty) and external validity (real-world generalizability).
-
-#### The "But What About Safety?" Argument (Or: How The Current System Kills People By "Protecting" Them)
-
-Critics will claim decentralized trials are less safe than traditional trials. This argument is backwards. Here's why.
-
-**What The Current FDA System Actually Does For Safety**
-
-The FDA tests new heart drugs on:
-
-- 275 people
-- Who don't have heart disease (excluded for comorbidities)
-- Who aren't old (excluded - too risky)
-- Who aren't on other medications (excluded - might confound results)
-- Who aren't pregnant (excluded - all women of childbearing age)
-- Who don't have kidney problems, liver problems, or literally any other health issues
-
-Then they prescribe the drug to millions of people who have heart disease, are old, are on other medications, and have kidney problems.
-
-**Result**: The drug works differently in actual patients than in trial patients. Adverse events appear in populations that were never tested.
-
-Example: [Vioxx killed 60,000 people](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1447657/) after FDA approval because trials excluded the people most likely to die from it. The current system's "safety testing" missed the safety signal because they never tested it on anyone who would actually take it.
-
-**What The dFDA Actually Does For Safety**
-
-Phase I safety testing stays exactly the same. We're not idiots.
-
-Phase I tests "Does this compound kill people immediately?" in controlled settings with intensive monitoring. This catches dangerous compounds before they reach patients. It worked for Thalidomide (zero American babies harmed because safety testing caught it). This continues.
-
-What changes: Phase III efficacy trials become decentralized and efficient.
-
-Phase III tests "Does this treatment work better than alternatives?" This doesn't require lab coats and clipboards. It requires asking "Did you get better or worse?"
-
-**Why The dFDA Detects MORE Safety Problems, Not Fewer**
-
-Current system safety surveillance:
-
-- Tests on 15% of actual patient populations (excludes 85%)
-- Trials last 6-18 months (misses long-term effects)
-- Only 37% of negative results get published (companies hide failures)
-- Small sample sizes (testing on 100-275 people, prescribing to millions)
-
-dFDA safety surveillance:
-
-- Tests on 100% of patient populations (everyone who volunteers)
-- Continuous monitoring through EHR integration (detects long-term effects)
-- All results automatically published (no hiding negative data)
-- Massive sample sizes (240× more participants than current system)
-
-The dFDA will detect adverse events that the current system misses:
-
-1. **Subpopulation-specific harms**: Elderly patients, pregnant women, children, people with comorbidities - all the groups currently excluded from trials but given prescriptions anyway
-
-2. **Drug interactions**: Real patients take multiple medications. Trial patients are excluded if they take anything else. The dFDA tests on people actually taking multiple drugs.
-
-3. **Long-term toxicity**: Current trials monitor for months. The dFDA monitors continuously through EHR integration. Benadryl caused dementia for decades before anyone noticed because nobody tracked long-term outcomes. The dFDA would have caught this.
-
-4. **Rare events**: Testing on 100 people catches common side effects. Testing on 100,000 people catches rare side effects. The dFDA does the latter.
-
-##### The Publication Bias Safety Disaster
-
-Current system safety flaw: Companies publish 94% of positive results but only 37% of negative results.
-
-Translation: When a drug works, everyone hears about it. When a drug kills people, 63% of the time nobody finds out.
-
-This means:
-
-- Other companies waste billions testing the same failed (and dangerous) drugs
-- Doctors prescribe drugs not knowing they failed previous trials
-- Patients take medications that killed people in hidden trials
-
-The dFDA solves this by making all results public automatically. Every trial registered. Every outcome recorded. Every adverse event published. No hiding failures. No repeating dangerous experiments.
-
-###### The Actual Safety Comparison
-
-| Safety Metric | Current FDA System | dFDA System |
-|---|---|---|
-| **Population tested** | 15% of patients (excludes 85%) | 100% of patients who volunteer |
-| **Sample size** | 100-275 per drug | 10,000-100,000+ per drug |
-| **Long-term monitoring** | 6-18 months, then stops | Continuous through EHR integration |
-| **Subpopulation testing** | Excludes elderly, children, pregnant, comorbid | Includes all populations |
-| **Negative result publication** | 37% published, 63% hidden | 100% published automatically |
-| **Drug interaction testing** | Excluded (patients can't be on other meds) | Included (real patients take multiple drugs) |
-| **Rare event detection** | Requires > 1% frequency to detect | Detects events as rare as 0.01% |
-
-The current system is "safe" the way TSA is "safe" - it provides the appearance of safety through intensive theater while missing actual threats.
-
-The dFDA is safe the way seatbelts and airbags are safe - it actually measures what happens to real people in real conditions and adjusts accordingly.
-
-###### What About Truly Novel Drugs?
-
-For novel mechanism-of-action drugs (new compounds never tested in humans), Phase I and early Phase II safety testing remains in controlled settings with intensive monitoring.
-
-The dFDA doesn't decentralize initial safety testing. It decentralizes efficacy testing and post-market surveillance.
-
-Current system: Test safety on 50 people in lab, test efficacy on 275 people in controlled trial, prescribe to millions, hope nothing goes wrong
-
-dFDA system: Test safety on 50 people in lab (same as current), test efficacy on 50,000 people in real-world conditions, detect problems before prescribing to millions
-
-The dFDA adds layers of safety monitoring. It doesn't remove them.
-
-**Who Benefits From The "dFDA Is Unsafe" Argument**
-
-Pharmaceutical companies benefit from high trial costs because it prevents competition. If trials cost $2.6 billion, only massive corporations can afford to develop drugs. High costs = high barriers to entry = monopoly profits.
-
-FDA bureaucrats benefit from slow approvals because they face no consequences for delays but get pilloried if they approve something that causes newsworthy harms. Delay = safety from blame.
-
-Neither group benefits from the dFDA making trials cheaper, faster, and more accessible. So they'll claim it's "unsafe" while defending a system that:
-
-- Killed 60,000 people with Vioxx
-- Delayed beta-blockers for a decade, killing 100,000+ Americans
-- Excludes 85% of patients from trials then prescribes them the drugs anyway
-- Hides 63% of negative trial results
-- Tests drugs on 275 people then gives them to millions
-
-The current system isn't safe. It's just expensive and slow enough that nobody can prove it killed you specifically.
-
-The dFDA will generate more safety data, from more diverse populations, with better long-term monitoring, than any system in human history.
-
-Safety isn't the risk. The risk is that the current system's beneficiaries will claim the dFDA is unsafe to protect their monopolies.
 
 #### Regulatory Rejection
 

@@ -658,6 +658,7 @@ class ReferenceID(str, Enum):
     WHO_BUDGET_COMPARISON = "who-budget-comparison"
     WHO_CHOICE_DALY_VALUE = "who-choice-daly-value"
     WHO_CLEAN_WATER_DALY_COSTS = "who-clean-water-daly-costs"
+    WHO_COST_EFFECTIVENESS_THRESHOLD = "who-cost-effectiveness-threshold"
     WHO_DAILY_DEATHS = "who-daily-deaths"
     WHO_GENERIC_DRUG_POLICY = "who-generic-drug-policy"
     WHO_GLOBAL_HEALTH_ESTIMATES_2024 = "who-global-health-estimates-2024"

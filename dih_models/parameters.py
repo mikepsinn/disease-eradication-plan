@@ -1408,6 +1408,16 @@ STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
     keywords=["150k", "qaly", "quality adjusted", "disability adjusted", "health metric", "health benefit", "quality of life"]
 )  # Standard economic value per QALY
 
+WHO_QALY_THRESHOLD_COST_EFFECTIVE = Parameter(
+    50000,
+    source_ref=ReferenceID.WHO_COST_EFFECTIVENESS_THRESHOLD,
+    source_type="external",
+    description="Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)",
+    display_name="Cost-Effectiveness Threshold ($50,000/QALY)",
+    unit="USD/QALY",
+    keywords=["50k", "qaly", "cost effective", "threshold", "health economics", "dialysis", "benchmark"]
+)  # Widely-used $50,000/QALY cost-effectiveness threshold
+
 STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
     35,
     source_ref=ReferenceID.QALY_VALUE,

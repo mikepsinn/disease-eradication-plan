@@ -4190,6 +4190,12 @@ from dih_models.parameters import *
   > Standard economic value per QALY: $100,000–$150,000. This is the US and global standard willingness-to-pay threshold for interventions that add costs. Dominant interventions (those that save money while improving health) are favorable regardless of this threshold.
   > — ICER, [Reference Case](https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf)
 
+<a id="who-cost-effectiveness-threshold"></a>
+
+- **Cost-effectiveness threshold ($50,000/QALY)**
+  > The $50,000/QALY threshold is widely used in US health economics literature, originating from dialysis cost benchmarks in the 1980s. In US cost-utility analyses, 77.5% of authors use either $50,000 or $100,000 per QALY as reference points. Most successful health programs cost $3,000-10,000 per QALY. WHO-CHOICE uses GDP per capita multiples (1× GDP/capita = "very cost-effective", 3× GDP/capita = "cost-effective"), which for the US (~$70,000 GDP/capita) translates to $70,000-$210,000/QALY thresholds.
+  > — PMC, [Country-Level Cost-Effectiveness Thresholds](https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/) | WHO, [WHO-CHOICE Methods Update](https://pmc.ncbi.nlm.nih.gov/articles/PMC9278384/)
+
 <a id="rare-disease-patients-300m-globally"></a>
 
 - **300 million people with rare diseases globally**

@@ -13,9 +13,9 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 524
+**Total parameters**: 525
 
-- External sources (peer-reviewed): 163
+- External sources (peer-reviewed): 164
 - Calculated values: 313
 - Core definitions: 48
 
@@ -2098,6 +2098,19 @@ EPA value of statistical life
 Return on investment from water fluoridation programs
 
 **Source**: [clean-water-sanitation-roi](https://warondisease.org/knowledge/references.html#clean-water-sanitation-roi)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Cost-Effectiveness Threshold ($50,000/QALY) {#sec-who_qaly_threshold_cost_effective}
+
+**Value**: $50K
+
+Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)
+
+**Source**: [who-cost-effectiveness-threshold](https://warondisease.org/knowledge/references.html#who-cost-effectiveness-threshold)
 
 *✓ High confidence*
 
