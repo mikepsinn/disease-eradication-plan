@@ -24,7 +24,7 @@ This analysis models two types of benefits:
 from dih_models.parameters import *
 
 # Use standardized parameters instead of hardcoded values
-# All values now come from economic_parameters.py
+# All values now come from dih_models/parameters.py
 
 # For compatibility with chart code below, create local variables
 

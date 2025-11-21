@@ -11,7 +11,7 @@ lastWishoniaFullReviewHash: 4100ae6c6b0614cf3225be0b6ede61298dd7ec8f461600006bc0
 ---
 ```{python}
 #| echo: false
-from economic_parameters import *
+from dih_models.parameters import *
 ```
 
 # Reference Linker Test Cases

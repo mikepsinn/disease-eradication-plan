@@ -17,14 +17,14 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# Import parameters from economic_parameters.py
+# Import parameters from dih_models/parameters.py
 
 from dih_models.parameters import *
 
 # Conversion constant - parameters store RAW USD values
 BILLION = 1_000_000_000
 
-# NPV Model Parameters (from economic_parameters.py)
+# NPV Model Parameters (from dih_models/parameters.py)
 
 C0 = float(DFDA_NPV_UPFRONT_COST_TOTAL) / BILLION  # $0.26975B upfront
 Cop = float(DFDA_NPV_ANNUAL_OPEX_TOTAL) / BILLION  # $0.04005B annual ops

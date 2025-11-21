@@ -154,7 +154,7 @@ npm run fix:inline-python
 
 This script:
 1. Scans all `.qmd` files for inline Python with function calls
-2. Creates pre-formatted variables in `economic_parameters.py`
+2. Creates pre-formatted variables in `dih_models/parameters.py`
 3. Replaces complex expressions with simple variable references
 
 **However**, this doesn't solve the list item issue - those inline expressions still won't evaluate even after simplification.
@@ -168,7 +168,7 @@ python scripts/hardcode_list_values.py
 ```
 
 This script:
-1. Dynamically loads all 384 formatted variables and constants from `economic_parameters.py`
+1. Dynamically loads all 384 formatted variables and constants from `dih_models/parameters.py`
 2. Scans all `.qmd` files (in `brain/book/` and root directory)
 3. Replaces all `` `{python} variable_name` `` with the actual hardcoded value
 4. Skips code blocks and frontmatter
@@ -182,11 +182,11 @@ While inline Python expressions *should* work in paragraphs, we hardcode all exp
 
 **When to run:**
 
-Run this script after updating values in `economic_parameters.py`:
+Run this script after updating values in `dih_models/parameters.py`:
 
 ```bash
 python scripts/hardcode_list_values.py
 npm run build:validated
 ```
 
-Or add to your CI/CD workflow to auto-run when `economic_parameters.py` changes.
+Or add to your CI/CD workflow to auto-run when `dih_models/parameters.py` changes.

@@ -308,7 +308,7 @@ result = calculate_personal_lifetime_wealth_evidence_based(
 
 ### Core Implementation
 
-- **[economic_parameters.py](../../dih_models/parameters.py)** (lines 1879-2310)
+- **[parameters.py](../../dih_models/parameters.py)** (lines 1879-2310)
   - Disease burden data (CDC 2023/2024)
   - `calculate_disease_eradication_rate()`
   - `calculate_life_extension_from_eradication()`
@@ -575,7 +575,7 @@ Under the Disease Eradication Model (72-year life extension), treaty percentage 
 
 Run the model test:
 ```bash
-python knowledge/appendix/economic_parameters.py
+python -m dih_models.parameters
 ```
 
 Look for the "DISEASE ERADICATION MODEL" section showing all scenarios.

@@ -98,7 +98,7 @@ plt.show()
 ```
 ````
 
-**4. EXAMPLE 3: Line Chart (`dih-economic-models/figures/historical-life-expectancy-line-chart.qmd`):**
+**4. EXAMPLE 3: Line Chart (`knowledge/figures/historical-life-expectancy-line-chart.qmd`):**
 
 ````qmd
 ```{python}
@@ -128,7 +128,7 @@ ax.spines['right'].set_visible(False)
 ax.set_ylim(0, 90)
 
 plt.tight_layout()
-plt.savefig('dih-economic-models/figures/historical-life-expectancy-line-chart.png', dpi=300)
+plt.savefig('knowledge/figures/historical-life-expectancy-line-chart.png', dpi=300)
 plt.show()
 ```
 ````

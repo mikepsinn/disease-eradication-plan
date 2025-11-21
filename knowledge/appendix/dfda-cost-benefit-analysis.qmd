@@ -1209,7 +1209,7 @@ Even so, the core takeaway remains: **If the platform is widely adopted and per-
 
 ### Interactive Financial Modeling & Computational Analysis
 
-This section provides executable Python code that implements the financial models described above using the LaTeX equations. This computational companion allows you to run sensitivity analyses, generate visualizations, and verify the calculations programmatically. All parameters are sourced from the centralized `economic_parameters.py` module to ensure consistency across the analysis.
+This section provides executable Python code that implements the financial models described above using the LaTeX equations. This computational companion allows you to run sensitivity analyses, generate visualizations, and verify the calculations programmatically. All parameters are sourced from the centralized `dih_models/parameters.py` module to ensure consistency across the analysis.
 
 ```{python}
 #| echo: false
@@ -1220,7 +1220,7 @@ import os
 project_root = os.getcwd()
 from dih_models.parameters import *
 
-# Use parameters from economic_parameters.py
+# Use parameters from dih_models/parameters.py
 
 global_clinical_trial_market = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}}
 dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT  # 50%
@@ -1346,19 +1346,19 @@ This model calculates:
 ```{python}
 #| echo: false
 # NPV Model Parameters
-# Source: knowledge/appendix/economic_parameters.py
+# Source: dih_models/parameters.py
 
-# Costs (in billions USD) - from economic_parameters.py
+# Costs (in billions USD) - from dih_models/parameters.py
 
 C0 = DFDA_NPV_UPFRONT_COST_TOTAL  # $0.26975B (core platform + medium broader initiatives)
 Cop = DFDA_NPV_ANNUAL_OPEX_TOTAL  # $0.04005B annual ops (core + broader initiatives)
 
-# Savings (in billions USD) - from economic_parameters.py
+# Savings (in billions USD) - from dih_models/parameters.py
 
 Rd = GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL  # {{< var global_clinical_trials_spending_annual >}} annual global R&D spend on clinical trials
 alpha = TRIAL_COST_REDUCTION_PCT  # 0.50 (50% reduction)
 
-# Financial Parameters - from economic_parameters.py
+# Financial Parameters - from dih_models/parameters.py
 
 r = NPV_DISCOUNT_RATE_STANDARD  # 0.08 (8% annual discount rate)
 T = NPV_TIME_HORIZON_YEARS  # 10 years
@@ -1380,7 +1380,7 @@ def adoption_rate(t):
 
 annual_savings_stream = [(adoption_rate(t) * alpha * Rd) for t in range(1, int(T) + 1)]
 
-print("NPV Model Parameters Loaded from economic_parameters.py")
+print("NPV Model Parameters Loaded from dih_models/parameters.py")
 print(f"Upfront Cost (C0): ${C0:.4f}B")
 print(f"Annual OpEx (Cop): ${Cop:.4f}B")
 print(f"Discount Rate (r): {r:.0%}")

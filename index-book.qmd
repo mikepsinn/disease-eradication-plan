@@ -28,11 +28,7 @@ project_root = os.getcwd()
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-# Add dih-economic-models to path for imports
-dih_models_path = os.path.join(project_root, 'dih-economic-models')
-if dih_models_path not in sys.path:
-    sys.path.insert(0, dih_models_path)
-
+# Import parameters from dih_models package
 from dih_models.parameters import *
 ```
 

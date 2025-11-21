@@ -166,7 +166,7 @@ From different locations:
 # From brain/book/appendix/
 ![Caption](../../../assets/image-name.png)
 
-# From dih-economic-models/figures/
+# From knowledge/figures/
 ![Caption](../../assets/image-name.png)
 ```
 
