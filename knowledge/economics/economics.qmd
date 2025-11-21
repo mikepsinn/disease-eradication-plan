@@ -44,15 +44,20 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
+**Results**: Every day of delay costs **{{< var regulatory_delay_deaths_daily >}} lives**, **{{< var dfda_qalys_rd_plus_delay_daily >}} QALYs**, and **{{< var opportunity_cost_per_day >}}** in foregone economic value ({{< var opportunity_cost_per_second >}}/second). Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var dfda_roi_rd_plus_delay >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY)—economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annual surplus while curing diseases.
 
-**Keywords**: 1% Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved, 463:1 to 11,540:1 ROI, regulatory delay elimination, greed-aligned incentives
+**Keywords**: 1% Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved, 463:1 to 11,540:1 ROI, regulatory efficacy lag elimination, greed-aligned incentives
 
 
 ::: {.callout-note}
 ## Key Findings
+
+0. **Cost of Delay**: Every day without this intervention costs:
+   - **{{< var regulatory_delay_deaths_daily >}} lives lost** from the 7.2-year post-safety efficacy lag (Phase II/III delay, NOT safety testing)
+   - **{{< var dfda_qalys_rd_plus_delay_daily >}} QALYs foregone** (suffering quantified)
+   - **{{< var opportunity_cost_per_day >}} economic loss** ({{< var opportunity_cost_per_second >}}/second)
 
 1. **Conservative ROI**: {{< var dfda_roi_rd_only >}}:1 (counting only R&D efficiency, ignoring everything else that makes this look "too good")
    - {{< var dfda_npv_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost over {{< var npv_time_horizon_years >}} years
@@ -150,7 +155,7 @@ This isn't "funding infrastructure" - it's making trial participation financiall
 
 **{{< var treaty_total_lives_saved_annual >}} lives per year**
 - **{{< var treaty_total_lives_saved_daily >}} lives per day** by eliminating the 7.2-year regulatory efficacy lag
-- **{{< var dfda_lives_saved_annual >}} from dFDA** (regulatory delay elimination)
+- **{{< var dfda_lives_saved_annual >}} from dFDA** (eliminating post-safety efficacy lag)
 - **{{< var treaty_lives_saved_annual_global >}} from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction)
 
 For context: **{{< var regulatory_delay_deaths_daily >}} people die every day** under the current regulatory system waiting for drug approval.

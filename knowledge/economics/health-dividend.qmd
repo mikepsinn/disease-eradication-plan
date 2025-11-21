@@ -21,7 +21,7 @@ from dih_models.parameters import *
 
 The dFDA costs $40M/year to run.
 It saves {{< var dfda_rd_gross_savings_annual >}}/year in clinical trial waste.
-That's {{< var dfda_roi_rd_plus_delay >}}:1 returns (recommended estimate including regulatory delay elimination).
+That's {{< var dfda_roi_rd_plus_delay >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
 
 **Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
 
@@ -72,7 +72,7 @@ The dFDA costs approximately **$40M annually** to operate at scale, with a simil
 
 ## ROI Scenarios
 
-**Recommended**: {{< var dfda_roi_rd_plus_delay >}}:1 ROI including regulatory delay elimination (most defensible using rigorous DALY-based methodology)
+**Recommended**: {{< var dfda_roi_rd_plus_delay >}}:1 ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
 
 **Conservative**: {{< var dfda_roi_rd_only >}}:1 ROI (R&D savings only, NPV-adjusted over 10 years)
 
@@ -111,7 +111,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} and {{< var dfda_qaly
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Interactive NPV/ROI calculator
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for {{< var dfda_qalys_rd_plus_delay_annual >}} annual QALYs (regulatory delay elimination)
+- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for {{< var dfda_qalys_rd_plus_delay_annual >}} annual QALYs (post-safety efficacy lag elimination)
 - [Bottom-Up QALY Model](../appendix/dfda-qaly-model.qmd) - Historical component-based methodology (840k QALYs)
 
 #### Key Sources
