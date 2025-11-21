@@ -556,8 +556,8 @@
   \ cost for dFDA (operational costs minus R&D savings) | ✓ High confidence | Formula:\
   \ DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL | Unit: USD/year | Click to view\
   \ calculation\">$-41.5B</a>"
-"dfda_net_incremental_cost_annual_latex": "$$\nNetCost = \\$0.040B - \\$50.0B = -\\\
-  $49.96B\n$$"
+"dfda_net_incremental_cost_annual_latex": "$$\nNetCost = \\$0.040B - \\$41.5B = -\\\
+  $41.46B\n$$"
 "dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
@@ -688,7 +688,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily R&D savings\
   \ from trial cost reduction (opportunity cost of delay) | ✓ High confidence | Formula:\
   \ ANNUAL_RD_SAVINGS ÷ 365 | Unit: USD/day | Click to view calculation\">$114M</a>"
-"dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\$50B \\div 365 = \\$137M\n\
+"dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\$41.5B \\div 365 = \\$113.7M\n\
   $$"
 "dfda_regulatory_delay_avoidance_fraction": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
@@ -734,7 +734,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simple ROI without\
   \ NPV adjustment (gross savings / annual opex) | ✓ High confidence | Formula: GROSS_SAVINGS\
   \ ÷ ANNUAL_OPEX | Unit: ratio | Click to view calculation\">1,038</a>"
-"dfda_roi_simple_latex": "$$\nROI_{simple} = \\frac{\\$50B}{\\$0.04B} = 1,250:1\n\
+"dfda_roi_simple_latex": "$$\nROI_{simple} = \\frac{\\$41.5B}{\\$0.04B} = 1,038:1\n\
   $$"
 "dfda_small_trial_recruitment_weeks": "<a href=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
@@ -2664,8 +2664,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ benefits (peace dividend + dFDA savings) | ✓ High confidence | Formula: PEACE_DIVIDEND\
   \ + DFDA_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
-"treaty_total_annual_benefits_latex": "$$\nTotalBenefits = \\$113.55B + \\$50B = \\\
-  $163.55B\n$$"
+"treaty_total_annual_benefits_latex": "$$\nTotalBenefits = \\$113.55B + \\$41.5B =\
+  \ \\$155.05B\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\

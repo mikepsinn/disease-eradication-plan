@@ -1363,9 +1363,9 @@ DFDA_RD_SAVINGS_DAILY = Parameter(
     display_name="Daily R&D Savings from Trial Cost Reduction",
     unit="USD/day",
     formula="ANNUAL_RD_SAVINGS ÷ 365",
-    latex=r"Savings_{daily} = \$50B \div 365 = \$137M",
+    latex=r"Savings_{daily} = \$41.5B \div 365 = \$113.7M",
     keywords=["137m", "daily", "per day", "each day", "opportunity cost", "delay cost"]
-)  # $137M/day
+)  # $113.7M/day
 
 DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
     DFDA_RD_GROSS_SAVINGS_ANNUAL - DFDA_ANNUAL_OPEX,
@@ -1388,9 +1388,9 @@ DFDA_ROI_SIMPLE = Parameter(
     display_name="dFDA Simple ROI Without NPV Adjustment",
     unit="ratio",
     formula="GROSS_SAVINGS ÷ ANNUAL_OPEX",
-    latex=r"ROI_{simple} = \frac{\$50B}{\$0.04B} = 1,250:1",
+    latex=r"ROI_{simple} = \frac{\$41.5B}{\$0.04B} = 1,038:1",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"]
-)  # 1,250:1
+)  # 1,038:1
 # NOTE: For NPV-adjusted ROI (463:1), use DFDA_ROI_RD_ONLY below
 # The NPV-based calculation accounts for time value of money and gradual adoption
 
@@ -2122,9 +2122,9 @@ TREATY_TOTAL_ANNUAL_BENEFITS = Parameter(
     display_name="Total Annual Benefits from 1% Treaty and dFDA",
     unit="USD/year",
     formula="PEACE_DIVIDEND + DFDA_SAVINGS",
-    latex=r"TotalBenefits = \$113.55B + \$50B = \$163.55B",
+    latex=r"TotalBenefits = \$113.55B + \$41.5B = \$155.05B",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency"]
-)  # $164B (rounded from $163.55B)
+)  # $155B (rounded from $155.05B)
 
 # Complete case total annual benefits (all 8 benefit categories)
 # TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL defined below (line 3254) using calculated component sum
@@ -2166,9 +2166,9 @@ DFDA_NET_INCREMENTAL_COST_ANNUAL = Parameter(
     display_name="Net Incremental Cost for dFDA",
     unit="USD/year",
     formula="DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL",
-    latex=r"NetCost = \$0.040B - \$50.0B = -\$49.96B",
+    latex=r"NetCost = \$0.040B - \$41.5B = -\$41.46B",
     keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly"]
-)  # -$49.96B annually
+)  # -$41.46B annually
 
 DFDA_ICER_PER_QALY = Parameter(
     (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) / GLOBAL_DFDA_QALYS_GAINED_ANNUAL,

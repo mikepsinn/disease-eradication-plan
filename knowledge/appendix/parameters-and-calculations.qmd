@@ -3146,7 +3146,7 @@ $$
 Net incremental cost for dFDA (operational costs minus R&D savings)
 
 $$
-NetCost = \$0.040B - \$50.0B = -\$49.96B
+NetCost = \$0.040B - \$41.5B = -\$41.46B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost](../appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost)
@@ -3454,7 +3454,7 @@ $$
 Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 $$
-Savings_{daily} = \$50B \div 365 = \$137M
+Savings_{daily} = \$41.5B \div 365 = \$113.7M
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction)
@@ -3556,7 +3556,7 @@ $$
 Simple ROI without NPV adjustment (gross savings / annual opex)
 
 $$
-ROI_{simple} = \frac{\$50B}{\$0.04B} = 1,250:1
+ROI_{simple} = \frac{\$41.5B}{\$0.04B} = 1,038:1
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#roi-simple](../appendix/dfda-cost-benefit-analysis.qmd#roi-simple)
@@ -6559,7 +6559,7 @@ $$
 Total annual benefits (peace dividend + dFDA savings)
 
 $$
-TotalBenefits = \$113.55B + \$50B = \$163.55B
+TotalBenefits = \$113.55B + \$41.5B = \$155.05B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits)
