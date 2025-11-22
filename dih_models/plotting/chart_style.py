@@ -389,15 +389,39 @@ def get_project_root():
     Find the project root directory dynamically.
 
     Works regardless of where Quarto runs the code from.
-    Returns the path to 'decentralized-institutes-of-health' directory.
+    Looks for marker files (package.json, pyproject.toml, _quarto.yml) to identify the root.
 
     Returns:
         Path: Project root directory
+
+    Raises:
+        FileNotFoundError: If project root cannot be found
     """
-    project_root = Path.cwd()
+    # Marker files that indicate the project root
+    markers = ["package.json", "pyproject.toml", "_quarto.yml", "_quarto-book.yml"]
+    
+    # Start from current working directory
+    current = Path.cwd().resolve()
+    
+    # Walk up the directory tree looking for marker files
+    for path in [current] + list(current.parents):
+        for marker in markers:
+            if (path / marker).exists():
+                return path
+    
+    # If no markers found, fall back to looking for directory name
+    # (for backwards compatibility, but this is less reliable)
+    project_root = current
     if project_root.name != "decentralized-institutes-of-health":
         while project_root.name != "decentralized-institutes-of-health" and project_root.parent != project_root:
             project_root = project_root.parent
+    
+    # If we've reached the filesystem root without finding anything, raise an error
+    if project_root == project_root.parent:
+        raise FileNotFoundError(
+            "Could not find project root. Looked for marker files: " + ", ".join(markers)
+        )
+    
     return project_root
 
 
