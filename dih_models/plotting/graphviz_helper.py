@@ -16,6 +16,9 @@ from pathlib import Path
 import graphviz
 from PIL import Image, ImageDraw, ImageFont
 
+# Import get_project_root from chart_style to avoid duplication
+from .chart_style import get_project_root
+
 # Add Graphviz to PATH if not already there (Windows)
 if sys.platform == "win32":
     graphviz_paths = [
@@ -27,15 +30,6 @@ if sys.platform == "win32":
         if os.path.exists(graphviz_path) and graphviz_path not in current_path:
             os.environ["PATH"] = f"{graphviz_path};{current_path}"
             break
-
-
-def get_project_root():
-    """Find project root dynamically"""
-    project_root = Path.cwd()
-    if project_root.name != "decentralized-institutes-of-health":
-        while project_root.name != "decentralized-institutes-of-health" and project_root.parent != project_root:
-            project_root = project_root.parent
-    return project_root
 
 
 def add_watermark_to_png(png_path, text="WarOnDisease.org"):
