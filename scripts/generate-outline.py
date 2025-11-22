@@ -70,6 +70,42 @@ def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
     return headings
 
 
+def get_part_icon(part_name: str) -> str:
+    """Get an emoji icon for a part based on its name."""
+    part_lower = part_name.lower()
+
+    # Main narrative parts
+    if "problem" in part_lower:
+        return "🚨"
+    elif "solution" in part_lower:
+        return "💡"
+    elif "evidence" in part_lower or "proof" in part_lower:
+        return "✅"
+    elif "plan" in part_lower:
+        return "🎯"
+
+    # Appendix parts
+    elif "essential" in part_lower or "reference" in part_lower:
+        return "📚"
+    elif "implementation" in part_lower or "strategy" in part_lower:
+        return "⚙️"
+    elif "policy" in part_lower or "regulatory" in part_lower or "legal" in part_lower:
+        return "⚖️"
+    elif "economic" in part_lower or "financial" in part_lower:
+        return "💰"
+    elif "calculation" in part_lower or "detailed" in part_lower:
+        return "🔢"
+    elif "governance" in part_lower or "organization" in part_lower:
+        return "🏛️"
+    elif "operation" in part_lower:
+        return "🔧"
+    elif "additional" in part_lower:
+        return "📖"
+
+    # Default
+    return "📄"
+
+
 def format_heading(level: int, text: str) -> str:
     """Format a heading for the outline with appropriate indentation."""
     indent = "  " * (level - 1)
@@ -115,10 +151,70 @@ def extract_chapter_files(book_config: Dict) -> List[Tuple[str, str]]:
     return chapters
 
 
+def extract_page_count(file_path: str, book_config: Dict) -> Optional[str]:
+    """Extract page count comment from book config if available."""
+    # Look through chapters and appendices for comments with page counts
+    def search_chapters(chapter_list: List) -> Optional[str]:
+        for item in chapter_list:
+            if isinstance(item, dict):
+                if 'chapters' in item:
+                    result = search_chapters(item['chapters'])
+                    if result:
+                        return result
+                # Check if this item references our file
+                item_path = item.get('href') or item.get('text')
+                if item_path == file_path:
+                    # Return None for now - would need to parse YAML comments
+                    return None
+            elif isinstance(item, str) and item == file_path:
+                return None
+        return None
+
+    # Note: YAML comments are not preserved in parsed structure
+    # This would require parsing the raw YAML file differently
+    return None
+
+
+def count_parts_and_chapters(book_config: Dict) -> Tuple[int, int, int]:
+    """Count parts and chapters in main narrative vs appendices."""
+    main_parts = 0
+    appendix_parts = 0
+    total_chapters = 0
+
+    def count_in_section(section_list: List) -> Tuple[int, int]:
+        parts = 0
+        chapters = 0
+        for item in section_list:
+            if isinstance(item, dict):
+                if 'part' in item:
+                    parts += 1
+                    if 'chapters' in item:
+                        sub_parts, sub_chapters = count_in_section(item['chapters'])
+                        parts += sub_parts
+                        chapters += sub_chapters
+                elif 'href' in item or 'text' in item:
+                    chapters += 1
+            elif isinstance(item, str):
+                chapters += 1
+        return parts, chapters
+
+    # Count main chapters
+    if 'book' in book_config and 'chapters' in book_config['book']:
+        main_parts, main_chapters = count_in_section(book_config['book']['chapters'])
+        total_chapters += main_chapters
+
+    # Count appendices
+    if 'book' in book_config and 'appendices' in book_config['book']:
+        appendix_parts, appendix_chapters = count_in_section(book_config['book']['appendices'])
+        total_chapters += appendix_chapters
+
+    return main_parts, appendix_parts, total_chapters
+
+
 def generate_outline(book_config_path: Path, project_root: Path) -> str:
     """
     Generate outline from all headings in chapter files.
-    
+
     Returns the outline as a string.
     """
     # Load book configuration
@@ -128,30 +224,63 @@ def generate_outline(book_config_path: Path, project_root: Path) -> str:
     except Exception as e:
         print(f"Error: Could not read {book_config_path}: {e}", file=sys.stderr)
         sys.exit(1)
-    
+
     # Extract chapter files
     chapter_files = extract_chapter_files(book_config)
-    
+
     # Get book title
     book_title = book_config.get('book', {}).get('title', 'Book Outline')
-    
-    # Build outline
-    outline_lines = [f"# {book_title}", ""]
-    
+
+    # Count structure
+    main_parts, appendix_parts, total_chapters = count_parts_and_chapters(book_config)
+
+    # Build outline with enhanced header
+    outline_lines = [
+        f"# {book_title}",
+        "",
+        "**Book Structure Overview:**",
+        f"- Main Narrative: {main_parts} parts",
+        f"- Appendices: {appendix_parts} parts",
+        f"- Total Files: {len(chapter_files)}",
+        "",
+        "---",
+        ""
+    ]
+
     current_part = None
+    current_section = None  # Track if we're in main chapters or appendices
     files_with_headings = 0
     files_without_headings = 0
     files_not_found = 0
     total_headings = 0
-    
+
     for part_name, file_path in chapter_files:
         # Skip auto-generated parameters file
         if file_path == "knowledge/appendix/parameters-and-calculations.qmd":
             continue
-        
+
+        # Detect section transitions (main chapters vs appendices)
+        is_appendix = file_path.startswith("knowledge/appendix/") or \
+                     file_path.startswith("knowledge/economics/") or \
+                     file_path.startswith("knowledge/strategy/") or \
+                     file_path.startswith("knowledge/legal/")
+
+        # Add APPENDICES header when transitioning from main to appendix
+        if is_appendix and current_section != "appendices":
+            if current_section is not None:  # Not the first section
+                outline_lines.append("")
+                outline_lines.append("---")
+                outline_lines.append("")
+            outline_lines.append("## 📎 APPENDICES")
+            outline_lines.append("")
+            current_section = "appendices"
+            current_part = None  # Reset part tracking
+
         # Add part header if it changed
         if part_name and part_name != current_part:
-            outline_lines.append(f"## {part_name}")
+            # Add emoji/icon based on part name
+            icon = get_part_icon(part_name)
+            outline_lines.append(f"### {icon} {part_name}")
             outline_lines.append("")
             current_part = part_name
         
@@ -162,24 +291,24 @@ def generate_outline(book_config_path: Path, project_root: Path) -> str:
         headings = extract_headings_from_file(full_path)
         
         if headings:
-            # Add file reference
-            outline_lines.append(f"### {file_path}")
+            # Add file reference - use h4 for better visual hierarchy under parts
+            outline_lines.append(f"#### {file_path}")
             outline_lines.append("")
-            
+
             # Add all headings
             for level, text in headings:
                 outline_lines.append(format_heading(level, text))
-            
+
             outline_lines.append("")
             files_with_headings += 1
             total_headings += len(headings)
         else:
             # File exists but has no headings (or file doesn't exist)
             if full_path.exists():
-                outline_lines.append(f"### {file_path} (no headings found)")
+                outline_lines.append(f"#### {file_path} (no headings found)")
                 files_without_headings += 1
             else:
-                outline_lines.append(f"### {file_path} (file not found)")
+                outline_lines.append(f"#### {file_path} (file not found)")
                 files_not_found += 1
             outline_lines.append("")
     
@@ -206,7 +335,8 @@ def main():
     parser.add_argument(
         '--output', '-o',
         type=str,
-        help='Output file path (default: stdout)'
+        default='OUTLINE-GENERATED.MD',
+        help='Output file path (default: OUTLINE-GENERATED.MD)'
     )
     parser.add_argument(
         '--book-config',
@@ -229,18 +359,15 @@ def main():
     # Generate outline
     outline = generate_outline(book_config_path, project_root)
     
-    # Output
-    if args.output:
-        output_path = project_root / args.output
-        try:
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(outline)
-            print(f"Outline written to {output_path}", file=sys.stderr)
-        except Exception as e:
-            print(f"Error: Could not write to {output_path}: {e}", file=sys.stderr)
-            sys.exit(1)
-    else:
-        print(outline)
+    # Output - always write to file now (default: OUTLINE-GENERATED.MD)
+    output_path = project_root / args.output
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(outline)
+        print(f"Outline written to {output_path}")
+    except Exception as e:
+        print(f"Error: Could not write to {output_path}: {e}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == '__main__':

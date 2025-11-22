@@ -1,6 +1,13 @@
 # How to End War and Disease
 
-### index.qmd
+**Book Structure Overview:**
+- Main Narrative: 4 parts
+- Appendices: 9 parts
+- Total Files: 82
+
+---
+
+#### index.qmd
 
   ## Preface
     ### The Part Where I Discover Paper Makes You Do Things
@@ -63,9 +70,9 @@
     ### The Final Math
       #### Your Binary Choice Matrix
 
-## The Problem
+### 🚨 The Problem
 
-### knowledge/problem.qmd
+#### knowledge/problem.qmd
 
   ## Daily Numbers
   ## Where the Money Goes
@@ -81,11 +88,11 @@
   ## What This Means
   ## What's Next
 
-### knowledge/problem/the-daily-massacre.qmd
+#### knowledge/problem/the-daily-massacre.qmd
 
   ## The Math Of Death
 
-### knowledge/problem/cost-of-war.qmd
+#### knowledge/problem/cost-of-war.qmd
 
   ## The Itemized Receipt for Armageddon
     ### The Shopping List (2024 Global Data)
@@ -135,7 +142,7 @@
     ### The Grotesque Mathematics of Misallocation
     ### Hidden Costs of War
 
-### knowledge/problem/cost-of-disease.qmd
+#### knowledge/problem/cost-of-disease.qmd
 
   ## The Actual Bill (Economist-Approved Misery Accounting)
   ## How to Measure Suffering Without Feeling Feelings (The DALY)
@@ -147,7 +154,7 @@
     ### Your Priorities, Written in Your Budgets
     ### The Future You're Paying For
 
-### knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
+#### knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
 
   ## The Translation Crisis: 166 Billion Untested Treatments
     ### That one trial
@@ -169,7 +176,7 @@
   ## What Would Actually Work
   ## Conclusion
 
-### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
+#### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 
   ## The {{< var trial_cost_reduction_factor >}}× Inefficiency Tax
     ### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
@@ -225,7 +232,7 @@
   ## The Bottom Line
   ## Technical Analysis
 
-### knowledge/problem/unrepresentative-democracy.qmd
+#### knowledge/problem/unrepresentative-democracy.qmd
 
   ## Democracy: A System Designed by Geniuses, Run by Idiots, Elected by Morons
   ## The Rational Ignorance Problem
@@ -257,10 +264,6 @@
   ## Why Your Brain Can't Handle Democracy
   ## How Government Actually Allocates Money (A Horror Story)
     ### The Current Budget Process: Democracy Theater
-      #### Step 1: Lobbyists Write Checks
-        ##### Step 2: Politicians Pretend to Think
-          ###### Step 3: The Budget Emerges
-          ###### Step 4: Everyone Gets Mad
   ## Regulatory Capture: How Industries Write Their Own Rules
     ### How to Buy a Democracy: A Practical Guide
     ### The Money Machine: How Regulatory Capture Works
@@ -271,7 +274,11 @@
     ### The Solution They Don't Want
     ### Your Democracy: An Auction House
 
-### knowledge/economics/central-banks.qmd
+## 📎 APPENDICES
+
+### 🚨 The Problem
+
+#### knowledge/economics/central-banks.qmd
 
   ## The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     ### Ancient Rome (3rd Century)
@@ -283,10 +290,6 @@
       #### What Actually Happened
       #### The Theft That Followed
   ## The Cantillon Effect: Why You're Poor and Raytheon Isn't
-    ### Step 1: Fed Prints Money
-      #### Step 2: Banks Get Rich
-        ##### Step 3: Government Spends
-          ###### Step 4: You Get Screwed
   ## The Federal Reserve: A Private Corporation That Owns You
     ### What They Actually Do
   ## Every War Since 1972: Funded by Destroying Your Savings
@@ -326,7 +329,7 @@
       #### Why This Can Actually Happen
   ## Your Money, Your Choice
 
-### knowledge/problem/genetic-slavery.qmd
+#### knowledge/problem/genetic-slavery.qmd
 
   ## The Selfish Gene Made You an Idiot (It Was a Good Idea at the Time)
   ## Part 1: Your Brain Was Optimized for a World That Doesn't Exist
@@ -350,29 +353,29 @@
     ### The Meta-Slavery
   ## The Problem With Your Brain
 
-## The Solution
+### 💡 The Solution
 
-### knowledge/solution.qmd
+#### knowledge/solution.qmd
 
   ## On the 1% Treaty
     ### On the Decentralized Institute of Health
       #### What the NIH does
       #### What the DIH does
         ##### On Wishocracy
-          ###### On the Decentralized FDA
-          ###### On Outcome Labels
-          ###### On How Patients Pay Researchers
-          ###### On Why Defense Contractors Should Care
-          ###### On Insurance Companies
-          ###### On the War on Disease
+        ##### On the Decentralized FDA
+        ##### On Outcome Labels
+        ##### On How Patients Pay Researchers
+        ##### On Why Defense Contractors Should Care
+        ##### On Insurance Companies
+        ##### On the War on Disease
       #### Previous Wars on Things
       #### This War
         ##### On Aligning Everyone's Greed
-          ###### On Why This Isn't Clinically Insane
-          ###### On the Meta-Solution
-          ###### On What Comes Next
+        ##### On Why This Isn't Clinically Insane
+        ##### On the Meta-Solution
+        ##### On What Comes Next
 
-### knowledge/solution/1-percent-treaty.qmd
+#### knowledge/solution/1-percent-treaty.qmd
 
   ## The Math
     ### How It Works
@@ -424,7 +427,7 @@
   ## Summary
   ## Addendum: The Actual Treaty Text (First Draft)
 
-### knowledge/solution/dih.qmd
+#### knowledge/solution/dih.qmd
 
   ## The Four Rules of a System That Actually Works
     ### Rule 1: Let Patients Decide What Gets Funded
@@ -443,7 +446,7 @@
     ### How the Efficiency Gains Compound
       #### What This Means in Practice
 
-### knowledge/solution/wishocracy.qmd
+#### knowledge/solution/wishocracy.qmd
 
   ## How Wishocracy Allocates DIH Funds: Decentralized Crowdfunding
     ### What the [dFDA Marketplace](dfda.qmd) Handles Automatically:
@@ -459,7 +462,7 @@
   ## The Truth: We Already Do This, Just Badly
   ## Democracy's Operating System Upgrade
 
-### knowledge/solution/ai-coordination-army.qmd
+#### knowledge/solution/ai-coordination-army.qmd
 
   ## Where Your Agents Get Their Missions (Not From a Management Consultant)
   ## The Secret to Success: Cross-Sector Coordination (Forces for Good)
@@ -480,7 +483,7 @@
   ## How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
     ### Rule 1 - Share to Play
 
-### knowledge/solution/dfda.qmd
+#### knowledge/solution/dfda.qmd
 
   ## The Solution: Amazon for Clinical Trials
     ### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
@@ -533,7 +536,7 @@
     ### 2050: Death Becomes Opt-In
     ### How the dFDA Actually Works
 
-### knowledge/solution/war-on-disease.qmd
+#### knowledge/solution/war-on-disease.qmd
 
   ## On How to Design a War That Actually Ends
     ### On Competition Versus Monopoly
@@ -549,7 +552,7 @@
       #### Year 1 Targets
       #### Year 10 Targets
 
-### knowledge/solution/aligning-incentives.qmd
+#### knowledge/solution/aligning-incentives.qmd
 
   ## Defense Contractors: Teaching Merchants of Death to Love Life
     ### Their Current Business Model (It's Actually Terrible)
@@ -599,9 +602,9 @@
       #### Why It's Inevitable
   ## The Master Key: Greed
 
-## The Evidence
+### ✅ The Evidence
 
-### knowledge/proof.qmd
+#### knowledge/proof.qmd
 
   ## Oxford RECOVERY: The {{< var trial_cost_reduction_factor >}}× Proof
   ## Switzerland: The 200-Year Peace Dividend
@@ -627,7 +630,7 @@
   ## In This Section
   ## Additional Evidence
 
-### knowledge/proof/historical-precedents.qmd
+#### knowledge/proof/historical-precedents.qmd
 
   ## Humans Doing Smart Things (Accidentally): A Collection
     ### That Time Humans Banned Landmines (Yes, Really)
@@ -652,7 +655,7 @@
   ## 4. The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
     ### Why?
 
-### knowledge/proof/body-as-repairable-machine.qmd
+#### knowledge/proof/body-as-repairable-machine.qmd
 
   ## Death is a Technical Problem
   ## You Are a Self-Repairing Meat Robot
@@ -678,7 +681,7 @@
     ### The Warranty Extension
   ## The Irrefutable Conclusion
 
-### knowledge/economics/economics.qmd
+#### knowledge/economics/economics.qmd
 
   ## Abstract
   ## Key Findings
@@ -819,7 +822,7 @@
   ## Conclusion
   ## References
 
-### knowledge/call-to-action/your-personal-benefits.qmd
+#### knowledge/call-to-action/your-personal-benefits.qmd
 
   ## Your Actual Odds Right Now
   ## What You Actually Get
@@ -833,14 +836,14 @@
       #### Time Investment
         ##### Effective Hourly Rate: `{python} effective_hourly_rate_thousands_formatted`/hour
 
-### knowledge/futures.qmd
+#### knowledge/futures.qmd
 
   ## Path A: Idiocracy
   ## Path B: Wishonia
   ## The Only Variable
   ## The Two Paths
 
-### knowledge/futures/moronia.qmd
+#### knowledge/futures/moronia.qmd
 
   ## The Discovery (And Why I Regret Making It)
   ## What I Tried to Tell Them
@@ -883,7 +886,7 @@
   ## Moronia's Obituary
   ## My Warning to You
 
-### knowledge/futures/wishonia.qmd
+#### knowledge/futures/wishonia.qmd
 
   ## How My Planet Works
   ## What Earth Becomes After You Do The Thing
@@ -909,7 +912,7 @@
   ## 2055: What Comes After
   ## Your Two Paths
 
-### knowledge/appendix/faq.qmd
+#### knowledge/appendix/faq.qmd
 
   ## "We Need the Military Budget"
   ## "Big Pharma Will Block This"
@@ -948,16 +951,16 @@
   ## "This Violates Election Law"
   ## "What If Major Powers Sabotage It?"
 
-## The Plan
+### 🎯 The Plan
 
-### knowledge/strategy/roadmap.qmd
+#### knowledge/strategy/roadmap.qmd
 
   ## The Paper Collection Timeline: From $0 to Ending Death
   ## The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
   ## The Political Strategy: Co-Opt, Don't Compete
   ## Your Next Steps
 
-### knowledge/legal/legal-framework.qmd
+#### knowledge/legal/legal-framework.qmd
 
   ## Entity #1: The 501(c)(3) Public Charity ("The Brain")
     ### What It Does
@@ -1007,7 +1010,7 @@
       #### The Strategy
   ## The Escape Routes (If Everything Goes Wrong)
 
-### knowledge/legal/securities-law.qmd
+#### knowledge/legal/securities-law.qmd
 
   ## The Core Problem: Everything Is a Security
   ## The Exemptions That Save You
@@ -1050,7 +1053,7 @@
   ## Conclusion
   ## Implementation Resources
 
-### knowledge/legal/election-law.qmd
+#### knowledge/legal/election-law.qmd
 
   ## The Legal Landscape: Money Is Speech
     ### Citizens United Changed Everything
@@ -1098,7 +1101,7 @@
   ## Conclusion: Democracy as Designed
   ## Legal Notice
 
-### knowledge/legal/treaty-framework.qmd
+#### knowledge/legal/treaty-framework.qmd
 
   ## The Legal Architecture of Treaties
     ### What Makes Treaties Special
@@ -1165,7 +1168,7 @@
   ## Conclusion: The Trap Is Set
   ## Implementation Resources
 
-### knowledge/economics/victory-bonds.qmd
+#### knowledge/economics/victory-bonds.qmd
 
   ## What You're Actually Building
   ## The Four Phases of Making Everyone Rich While Saving Humanity
@@ -1215,7 +1218,7 @@
     ### For detailed execution plans
       #### The core mechanism is stupid simple
 
-### knowledge/strategy/legislation-package.qmd
+#### knowledge/strategy/legislation-package.qmd
 
   ## The Treaty Implementation Act: Making It Real
     ### The Core Provisions
@@ -1268,7 +1271,7 @@
     ### The Omnibus Strategy
   ## Conclusion: Democracy Theater at Its Finest
 
-### knowledge/strategy/global-referendum.qmd
+#### knowledge/strategy/global-referendum.qmd
 
   ## On What You're Actually Trying to Do (The Boring But Necessary Part)
     ### The Goal
@@ -1327,7 +1330,7 @@
       #### What Success Looks Like
     ### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 
-### knowledge/strategy/viral-marketing.qmd
+#### knowledge/strategy/viral-marketing.qmd
 
   ## The Message That Spreads
     ### What Doesn't Go Viral
@@ -1374,7 +1377,7 @@
     ### Months 13-18: Critical Mass
   ## The Strategy
 
-### knowledge/strategy/co-opting-defense-contractors.qmd
+#### knowledge/strategy/co-opting-defense-contractors.qmd
 
   ## The Solution
   ## The Offer
@@ -1399,16 +1402,16 @@
   ## Expected Timeline
   ## Summary
 
-### knowledge/call-to-action/three-actions.qmd
+#### knowledge/call-to-action/three-actions.qmd
 
   ## Action 1: VOTE (2 Minutes)
   ## Action 2: INVEST (10 Minutes)
   ## Action 3: RECRUIT (15 minutes)
   ## That's It.
 
-## Essential References
+### 📚 Essential References
 
-### knowledge/appendix/recovery-trial.qmd
+#### knowledge/appendix/recovery-trial.qmd
 
   ## Key RECOVERY Trial Statistics
     ### They Used Regular Hospitals
@@ -1425,9 +1428,9 @@
     ### The Oxford RECOVERY Trial
     ### The Math
 
-## Implementation Strategy
+### ⚙️ Implementation Strategy
 
-### knowledge/strategy/strategy-execution-overview.qmd
+#### knowledge/strategy/strategy-execution-overview.qmd
 
   ## High-Level Strategy: The Three-Step Recipe for Not Dying
     ### Step 1: Collect Papers from Rich People
@@ -1449,12 +1452,12 @@
   ## The Timeline: How Long This Takes
     ### Phase 1 (Months 0-3): The Setup
 
-### knowledge/appendix/highest-leverage-advocacy.qmd
+#### knowledge/appendix/highest-leverage-advocacy.qmd
 
   ## The Problem with Your Current Strategy
   ## The Uncomfortable Question
 
-### knowledge/strategy/treaty-adoption-strategy.qmd
+#### knowledge/strategy/treaty-adoption-strategy.qmd
 
   ## The Two-Track System (Bottom-Up Fear + Top-Down Paperwork)
   ## Track 1: Grassroots (Make Politicians Afraid)
@@ -1487,7 +1490,7 @@
   ## The Assessment (How Long This Actually Takes)
   ## The Secret Weapon: Inevitability
 
-### knowledge/appendix/co-opt-dont-compete.qmd
+#### knowledge/appendix/co-opt-dont-compete.qmd
 
   ## 1. Co-Opting Defense Contractors: Why It's Superior to Adversarial Strategies
     ### Overall Confidence
@@ -1496,7 +1499,7 @@
     ### Caveats and Mitigations
   ## 2. The Ultimate Incentive for Nonprofits: Stop Begging, Start Owning
 
-### knowledge/appendix/global-referendum-implementation.qmd
+#### knowledge/appendix/global-referendum-implementation.qmd
 
   ## Principles
   ## System Architecture
@@ -1506,7 +1509,7 @@
   ## Success Metrics
   ## Cross-References
 
-### knowledge/appendix/nonprofit-partnership-incentives.qmd
+#### knowledge/appendix/nonprofit-partnership-incentives.qmd
 
   ## The Solution
   ## On The Two-Part Bribe
@@ -1528,9 +1531,9 @@
   ## Earning a Stake: Tracking Contributions for Treasury Allocation
   ## Conclusion: From Partners to Owners
 
-## Policy & Regulatory
+### ⚖️ Policy & Regulatory
 
-### knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
+#### knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
 
   ## TITLE I: SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
     ### SEC. 101. SHORT TITLE
@@ -1558,7 +1561,7 @@
     ### REFERENCES
       #### End of Act.
 
-### knowledge/appendix/impact-securities-reform.qmd
+#### knowledge/appendix/impact-securities-reform.qmd
 
   ## Section 2. Definitions
   ## Section 3. Impact Securities Safe Harbor (Offering and Distribution)
@@ -1570,16 +1573,16 @@
   ## Section 10. Enforcement and Remedies
   ## Commentary: Relation to dFDA/DIH and VICTORY Bonds
 
-## Economic Analysis
+### 💰 Economic Analysis
 
-### knowledge/economics/peace-dividend.qmd
+#### knowledge/economics/peace-dividend.qmd
 
   ## How 1% Less Violence Pays For Everything
     ### 1. The Captured Money: {{< var treaty_annual_funding >}}/Year
     ### 2. The Bonus Savings: {{< var peace_dividend_annual_societal_benefit >}}/Year
     ### Where the {{< var peace_dividend_annual_societal_benefit >}} Comes From
 
-### knowledge/economics/health-dividend.qmd
+#### knowledge/economics/health-dividend.qmd
 
   ## The Math: From $41,000 to $500 Per Patient
   ## Where the $50 Billion Comes From
@@ -1593,7 +1596,7 @@
     ### Detailed Analysis
       #### Key Sources
 
-### knowledge/appendix/humanity-budget-overview.qmd
+#### knowledge/appendix/humanity-budget-overview.qmd
 
   ## On The Fundamental Trade-Off (Missiles vs. Medicine)
   ## On What Our Species Actually Prioritizes
@@ -1603,7 +1606,7 @@
     ### The Math
       #### Translation
 
-### knowledge/appendix/global-government-medical-research-spending.qmd
+#### knowledge/appendix/global-government-medical-research-spending.qmd
 
   ## The Global Total: $68 Billion (A Rounding Error)
   ## Country-by-Country Breakdown: The Hall of Shame
@@ -1634,7 +1637,7 @@
   ## The Final Insult: It's Getting Worse
     ### Projected 2030 Spending (Current Trajectory)
 
-### knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
+#### knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
 
   ## The Bottom Line: [$83 Billion Annually](../references.qmd#global-clinical-trials-market-2024) (2024)
     ### Growth trajectory
@@ -1698,7 +1701,7 @@
   ## Summary Table
   ## The Path Forward
 
-### knowledge/appendix/clinical-trial-participants.qmd
+#### knowledge/appendix/clinical-trial-participants.qmd
 
   ## So We Built a Script and Did the Math
     ### US Trials (Cumulative)
@@ -1718,9 +1721,9 @@
   ## The Bottom Line
     ### The ratio: 1 in 480.
 
-## Detailed Calculations
+### 🔢 Detailed Calculations
 
-### knowledge/appendix/peace-dividend-calculations.qmd
+#### knowledge/appendix/peace-dividend-calculations.qmd
 
   ## Cost of War Data and Calculations
   ## Peace Dividend Breakdown by Category
@@ -1729,7 +1732,7 @@
   ## Sensitivity Analysis
   ## Key Findings
 
-### knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
+#### knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd
 
   ## Complete Calculation Walkthrough
     ### Step 1: Annual Economic Benefits
@@ -1781,7 +1784,7 @@
     ### Q: Isn't redirecting military spending politically impossible?
   ## Related Analyses
 
-### knowledge/appendix/research-acceleration-model.qmd
+#### knowledge/appendix/research-acceleration-model.qmd
 
   ## The Complete Case: 1,239:1 ROI (All Direct Benefits)
     ### $1.2T in Annual Benefits
@@ -1817,7 +1820,7 @@
   ## Related Analysis
   ## Summary
 
-### knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
+#### knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
 
   ## Why This Model is Correct
     ### The Problem with Antibiotic Precedent
@@ -1886,7 +1889,7 @@
   ## Key Citations
   ## Bottom Line
 
-### knowledge/appendix/dfda-cost-benefit-analysis.qmd
+#### knowledge/appendix/dfda-cost-benefit-analysis.qmd
 
   ## Executive Summary
     ### What You Get
@@ -1972,7 +1975,7 @@
     ### Data Limitations
   ## Comparison to Other Major Public Investments
 
-### knowledge/appendix/economic-value-of-accelerated-treatments.qmd
+#### knowledge/appendix/economic-value-of-accelerated-treatments.qmd
 
   ## **Introduction**
   ## **Average Economic Value of a New Therapy**
@@ -1982,13 +1985,13 @@
   ## **Conclusion**
   ## **Sources**
 
-### knowledge/appendix/intervention-comparison-table.qmd
+#### knowledge/appendix/intervention-comparison-table.qmd
 
   ## Comparison Table
     ### Key
   ## Conclusion
 
-### knowledge/appendix/data-storage-costs.qmd
+#### knowledge/appendix/data-storage-costs.qmd
 
   ## How Much Space One Patient Takes
     ### What's Actually Stored
@@ -2003,7 +2006,7 @@
     ### Scaling Benefits
   ## Conclusion
 
-### knowledge/appendix/dfda-qaly-model.qmd
+#### knowledge/appendix/dfda-qaly-model.qmd
 
   ## Outdated Methodology
       #### A. Accelerating Development of Existing Pipeline Drugs
@@ -2020,9 +2023,9 @@
       #### Summary of Total Annual QALY Gains {#summary-of-total-annual-qaly-gains}
       #### Sources
 
-## Financial Planning
+### 🎯 Financial Planning
 
-### knowledge/economics/financial-plan.qmd
+#### knowledge/economics/financial-plan.qmd
 
   ## The Three Financial Pillars
     ### 1. Fundraising: How To Raise $1.0B
@@ -2085,7 +2088,7 @@
     ### For Treaty Supporters
   ## Summary
 
-### knowledge/economics/campaign-budget.qmd
+#### knowledge/economics/campaign-budget.qmd
 
   ## How to Buy a Planet for {{< var treaty_campaign_total_cost >}}
   ## Why {{< var treaty_campaign_total_cost >}} Instead of $5B
@@ -2110,7 +2113,7 @@
   ## Adaptive Management
   ## Summary
 
-### knowledge/appendix/investor-risk-analysis.qmd
+#### knowledge/appendix/investor-risk-analysis.qmd
 
   ## 1. The Core Thesis: Political Arbitrage vs. Venture Capital
   ## 2. Comparative Risk Factor Analysis
@@ -2121,7 +2124,7 @@
       #### D. First-Loss Capital (Mitigates **Financial Risk**)
   ## Conclusion: Is It Less Risky Than a VC Investment?
 
-### knowledge/economics/health-savings-sharing-model.qmd
+#### knowledge/economics/health-savings-sharing-model.qmd
 
   ## The Problem: Your Disease Is Their Annuity
     ### Diabetes
@@ -2151,7 +2154,7 @@
   ## Why This Isn't Already Happening
   ## The Solution
 
-### knowledge/appendix/fundraising-strategy.qmd
+#### knowledge/appendix/fundraising-strategy.qmd
 
   ## Fundraising Strategy: The $2.5B Activation Energy
     ### On How to Raise $2.5B to Unlock $27B+/Year Forever
@@ -2262,9 +2265,9 @@
       #### Execution Risk
     ### The Economic Reality
 
-## Governance & Organization
+### 🏛️ Governance & Organization
 
-### knowledge/appendix/governance.qmd
+#### knowledge/appendix/governance.qmd
 
   ## DIH Architecture: Single Governance Layer
   ## Clean Separation: Governance vs Platform
@@ -2279,7 +2282,7 @@
     ### Beyond Medical Research: A Template for Uncorruptible Governance
       #### What Else This Could Fix
 
-### knowledge/appendix/organizational-precedents.qmd
+#### knowledge/appendix/organizational-precedents.qmd
 
   ## 1. Precedent: The Global Fund (The Financial Institution)
     ### Illustrative Org Chart & Key Roles
@@ -2288,7 +2291,7 @@
   ## 3. Precedent: MakerDAO (The Decentralized Protocol)
     ### Illustrative "Org Chart" (Core Units)
 
-### knowledge/appendix/dih-integration-model.qmd
+#### knowledge/appendix/dih-integration-model.qmd
 
   ## 5. Why This Works Better Than Direct Payments
     ### Avoids Perverse Incentives
@@ -2315,7 +2318,7 @@
         ##### Phase 3: National Scale (Year 3+)
   ## Integration Strategy
 
-### knowledge/appendix/open-ecosystem-and-bounty-model.qmd
+#### knowledge/appendix/open-ecosystem-and-bounty-model.qmd
 
   ## The Core Strategy (How WordPress Beat Expensive Software)
     ### The Model
@@ -2338,7 +2341,7 @@
     ### 4. Clear Roadmap
   ## The Result
 
-### knowledge/appendix/command-and-control-systems.qmd
+#### knowledge/appendix/command-and-control-systems.qmd
 
   ## The Architecture: Military Organization Without the Military
   ## SECTION 1: G-1 (Personnel Command)
@@ -2376,9 +2379,9 @@
   ## The Privacy Paradox
   ## The Result
 
-## Operations & Legal
+### ⚖️ Operations & Legal
 
-### knowledge/appendix/legal-compliance-framework.qmd
+#### knowledge/appendix/legal-compliance-framework.qmd
 
   ## Challenge 1: Foreign National Election Funding
     ### **The Legal Problem**
@@ -2436,7 +2439,7 @@
       #### Revolutionary Exemptions for Certified Platforms
   ## Summary
 
-### knowledge/appendix/recruitment-and-propaganda-plan.qmd
+#### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 
   ## The Current Clusterfuck
   ## The Weapon: Airtable
@@ -2466,7 +2469,7 @@
   ## The Endgame
   ## Your Marching Orders
 
-### knowledge/appendix/free-rider-solution.qmd
+#### knowledge/appendix/free-rider-solution.qmd
 
   ## The Strategy
   ## On Making Compliance the Most Profitable Personal Decision
@@ -2475,16 +2478,16 @@
     ### 3. The Bribe for the Financial Elite (The Bankers & Fund Managers)
   ## The "Punishment": Targeted, Personal, and Financial
 
-## Additional References
+### 📚 Additional References
 
-### knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd (no headings found)
+#### knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd (no headings found)
 
-### knowledge/appendix/lives-saved-by-drug-accessibility.qmd
+#### knowledge/appendix/lives-saved-by-drug-accessibility.qmd
 
   ## **Notes on Estimates:**
   ## **Additional Sources:**
 
-### knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
+#### knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
 
   ## On The Price of a City-Destroying Weapon
   ## On How Many People One Bomb Kills
@@ -2511,7 +2514,7 @@
       #### The Math That Proves We're Insane
       #### The Point
 
-### knowledge/appendix/pragmatic-vs-explanatory-trials.qmd
+#### knowledge/appendix/pragmatic-vs-explanatory-trials.qmd
 
   ## Key Differences at a Glance
   ## Cost Analysis
@@ -2525,13 +2528,13 @@
     ### Traditional Trials
   ## Advantages of Pragmatic Trials
 
-### knowledge/appendix/acknowledgments.qmd
+#### knowledge/appendix/acknowledgments.qmd
 
   ## Acknowledgments
     ### Technical Contributors
     ### On Standing on Shoulders
 
-### knowledge/references.qmd (no headings found)
+#### knowledge/references.qmd (no headings found)
 
 ---
 
@@ -2540,4 +2543,4 @@
 - Files with headings: 79
 - Files without headings: 2
 - Files not found: 0
-- Total headings extracted: 2266
+- Total headings extracted: 2258
