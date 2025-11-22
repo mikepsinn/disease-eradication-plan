@@ -120,6 +120,69 @@ from dih_models.parameters import *
 
 Shift 1% of global military spending into decentralized clinical trials. That's it. That's the entire plan.
 
+## Problem Statement
+
+### Current Resource Allocation
+
+Humanity's budget priorities, explained simply:
+
+- **Military spending**: {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}}/year (ending life)
+
+- **Medical research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} /year (extending life)
+
+- **Ratio**: {{< var military_vs_medical_research_ratio >}}:1 (you spend {{< var military_vs_medical_research_ratio >}}× more on creating corpses than preventing them)
+
+#### Disease treatment vs. curing disease
+
+- **Symptomatic treatment**: {{< var global_symptomatic_disease_treatment_annual >}} {{< var global_symptomatic_disease_treatment_annual_cite >}}/year (managing symptoms, not fixing root causes)
+
+- **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year in lost productivity, premature death, disability
+
+- **Curative research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} billion/year
+
+That's 0.053% of the disease burden spent on actually fixing the problem:
+
+$$
+\frac{\$68\text{B}}{\$128.6\text{T}} = 0.053\%
+$$
+
+#### Results of this strategy
+
+- Diseases eradicated in past 50 years: **Zero** ([smallpox was 1980](../references.qmd#smallpox-eradicated))
+- Military vs. medical research: **40:1** ratio
+
+It's like spending $40 on gasoline for a fire and $1 on a fire extinguisher.
+
+{{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
+
+*"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* - President Dwight D. Eisenhower, 1961
+
+**Opportunity cost note:** The {{< var treaty_annual_funding >}} could fund other things: military R&D (GPS, internet came from this), tax cuts (~{{< var npv_discount_rate_standard >}} private returns), infrastructure, education, climate. But the dFDA's negative ICER ({{< var dfda_icer_per_qaly >}} per QALY) means it makes money while saving lives. Dominant interventions don't require opportunity cost tradeoffs - they're just better at everything.
+
+{{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
+
+### Mortality and Morbidity Burden
+
+The World Health Organization reports {{< var global_daily_deaths_curable_diseases >}} {{< var global_daily_deaths_curable_diseases_cite >}} daily deaths from preventable or potentially curable diseases ({{< var global_annual_deaths_curable_diseases >}} [annually](../references.qmd#who-daily-deaths)).
+
+<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
+
+This mortality burden exceeds:
+
+- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
+
+$$
+\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
+$$
+
+- [Annual war deaths](../references.qmd#acled-active-combat-deaths) by a factor of 137:1 (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
+
+$$
+\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
+$$
+
+Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
+
 ## How It Actually Works
 
 The mechanism is financial, not bureaucratic:
@@ -131,7 +194,7 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while removing regulatory friction.
 
-# The Result
+## The Result
 
 **{{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI**
 
@@ -170,7 +233,7 @@ Medical progress currently flows through a coffee stirrer.
 This makes it a fire hose.
 
 
-# Why 1% Is Enough
+## Why 1% Is Enough
 
 ### 1. The Peace Dividend
 
@@ -202,11 +265,11 @@ Currently, diseases are winning the race.
 This reverses the score.
 
 
-# And It Strengthens National Security
+## And It Strengthens National Security
 
 Here's the beautiful part: everyone reduces by 1% simultaneously.
 
-## What doesn't change
+### What doesn't change
 
 * Power balances (everyone cuts equally)
 * Deterrence (still plenty of weapons)
@@ -228,7 +291,7 @@ Game theorists call this "obvious."
 Politicians call it "impossible."
 
 
-# Why This Works: The Political Economy
+## Why This Works: The Political Economy
 
 Good ideas don't win because they're good.
 They win by **aligning incentives**.
@@ -236,11 +299,11 @@ They win by **aligning incentives**.
 This is the alignment engine:
 
 
-# Victory Bonds: The Greed-Alignment Engine
+## Victory Bonds: The Greed-Alignment Engine
 
 You make this happen by bribing people with their own future savings.
 
-## The Mechanism
+### The Mechanism
 
 1. Investors buy **Victory Bonds** funding the political campaign ({{< var treaty_campaign_total_cost >}})
 2. Bond funds finance lobbying to redirect 1% of military spending
@@ -255,7 +318,7 @@ They just follow their calculator to accidentally save humanity.
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-## Why Every Type of Human Will Do This
+### Why Every Type of Human Will Do This
 
 **Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on Victory Bonds. It's like finding money in pants you're currently wearing. Except the money multiplies. While you're wearing the pants."
 
@@ -273,7 +336,7 @@ You just point everyone's greed at diseases instead of each other.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
-# The Mechanical Sequence (How to Actually Do This)
+## The Mechanical Sequence (How to Actually Do This)
 
 This isn't utopian. It's a checklist:
 
@@ -324,7 +387,7 @@ Nobody needs to be convinced. They just need to count.
 **Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
 
-# Why This Is the Dominant Strategy
+## Why This Is the Dominant Strategy
 
 If your goal is to maximize:
 
@@ -362,7 +425,7 @@ All valuable. All recommended.
 None offer **{{< var research_acceleration_multiplier >}}× leverage**.
 
 
-# The Math (Or: How to Prove Obvious Things to Skeptics)
+## The Math (Or: How to Prove Obvious Things to Skeptics)
 
 Economists require elaborate rituals before believing simple truths like "curing diseases is better than bombing people." So here's the math they demanded.
 
@@ -846,7 +909,7 @@ All primary data sources are documented in [References](../references.qmd) with 
 For complete parameter documentation with confidence indicators and peer-review status, see [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd).
 
 
-# The Conservative Case: dFDA Only
+## The Conservative Case: dFDA Only
 
 {{< var dfda_roi_rd_only >}}:1 ROI
 
@@ -1019,7 +1082,7 @@ This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty 
 
 The self-funding nature eliminates traditional barriers to scale, as the intervention generates sufficient economic surplus to sustain and expand operations without ongoing charitable contributions.
 
-# The Complete Case: All Direct Benefits
+## The Complete Case: All Direct Benefits
 
 {{< var treaty_complete_roi_all_benefits >}}:1 ROI
 
@@ -1116,7 +1179,7 @@ This represents:
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
-# Personal Economic Impact: From Societal to Individual
+## Personal Economic Impact: From Societal to Individual
 
 The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var treaty_total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
 
@@ -1124,70 +1187,11 @@ The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_
 
 For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd).
 
-# Problem Statement
-
-### Current Resource Allocation
-
-Humanity's budget priorities, explained simply:
-
-- **Military spending**: {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}}/year (ending life)
-- **Medical research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} /year (extending life)
-- **Ratio**: {{< var military_vs_medical_research_ratio >}}:1 (you spend {{< var military_vs_medical_research_ratio >}}× more on creating corpses than preventing them)
-
-#### Disease treatment vs. curing disease
-
-- **Symptomatic treatment**: {{< var global_symptomatic_disease_treatment_annual >}} {{< var global_symptomatic_disease_treatment_annual_cite >}}/year (managing symptoms, not fixing root causes)
-- **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year in lost productivity, premature death, disability
-- **Curative research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} billion/year
-
-That's 0.053% of the disease burden spent on actually fixing the problem:
-
-$$
-\frac{\$68\text{B}}{\$128.6\text{T}} = 0.053\%
-$$
-
-#### Results of this strategy
-
-- Diseases eradicated in past 50 years: **Zero** ([smallpox was 1980](../references.qmd#smallpox-eradicated))
-- Military vs. medical research: **40:1** ratio
-
-It's like spending $40 on gasoline for a fire and $1 on a fire extinguisher.
-
-{{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
-
-*"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* - President Dwight D. Eisenhower, 1961
-
-**Opportunity cost note:** The {{< var treaty_annual_funding >}} could fund other things: military R&D (GPS, internet came from this), tax cuts (~{{< var npv_discount_rate_standard >}} private returns), infrastructure, education, climate. But the dFDA's negative ICER ({{< var dfda_icer_per_qaly >}} per QALY) means it makes money while saving lives. Dominant interventions don't require opportunity cost tradeoffs - they're just better at everything.
-
-{{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
-
-### Mortality and Morbidity Burden
-
-The World Health Organization reports {{< var global_daily_deaths_curable_diseases >}} {{< var global_daily_deaths_curable_diseases_cite >}} daily deaths from preventable or potentially curable diseases ({{< var global_annual_deaths_curable_diseases >}} [annually](../references.qmd#who-daily-deaths)).
-
-<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
-
-This mortality burden exceeds:
-
-- [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
-
-$$
-\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
-$$
-
-- [Annual war deaths](../references.qmd#acled-active-combat-deaths) by a factor of 137:1 (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
-
-$$
-\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
-$$
-
-Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
-
-# Comparative Effectiveness
+## Comparative Effectiveness
 
 This section compares the 1% Treaty/dFDA system to best-in-class health interventions across multiple categories.
 
-## Comprehensive Comparison
+### Comprehensive Comparison
 
 | Intervention Type | Metric | Performance | Annual Benefit |
 |:---|:---|---:|---:|
@@ -1206,13 +1210,13 @@ This section compares the 1% Treaty/dFDA system to best-in-class health interven
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-## The Critical Difference
+### The Critical Difference
 
 GiveWell charities are the **best ways to spend money** saving lives. They're heroic and incredibly efficient.
 
 This doesn't spend money. It **generates profit** while saving lives.
 
-### Translation
+#### Translation
 
 - Best charity: Costs $3,000-$5,000 per life saved (excellent)
 - This system: Makes $1.1M profit per life saved
@@ -1221,7 +1225,7 @@ One requires infinite fundraising from finite donors. The other prints money whi
 
 Both are good. One breaks the usual economic rules.
 
-## Why This Is Different
+**Why this is different from other interventions:**
 
 Vaccines and smoking cessation programs solve specific problems with high returns - they're amazing interventions.
 
@@ -1237,7 +1241,7 @@ When you redirect the world's largest source of waste (conflict spending) to fun
 For detailed comparisons, see [Intervention Comparison Table](../appendix/intervention-comparison-table.qmd).
 
 
-# Who Benefits and How
+## Who Benefits and How
 
 The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
 
@@ -1252,7 +1256,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis and implementation strategy.
 
-# Implementation Strategy
+## Implementation Strategy
 
 The economic benefits outlined above demonstrate the value proposition of the {{< var treaty_reduction_pct >}} Treaty system. Implementation requires political mobilization to achieve treaty adoption:
 
@@ -1277,7 +1281,7 @@ This budget is designed for a 3-5 year campaign to achieve treaty ratification b
 
 This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 returns regardless of the specific path to adoption.
 
-# Detailed Technical References
+## Detailed Technical References
 
 For the rigorous analysis:
 
@@ -1287,11 +1291,11 @@ For the rigorous analysis:
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations you can verify yourself
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
 
-# Implementation Challenges and Risk Mitigation
+## Implementation Challenges and Risk Mitigation
 
 This section addresses common objections and potential failure modes, along with specific mitigation strategies.
 
-## The "But Politicians Won't Do It" Problem
+### The "But Politicians Won't Do It" Problem
 
 **What could go wrong**: Politicians refuse to redirect 1% of murder money to medicine money because defense contractors give them papers.
 
@@ -1307,7 +1311,7 @@ Historical precedent: After WW2, military spending was cut by {{< var post_ww2_m
 
 See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for detailed implementation strategy.
 
-## Safety Concerns
+### Safety Concerns
 
 **Objection**: Decentralized trials may miss dangerous side effects.
 
@@ -1337,7 +1341,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 For detailed analysis, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
-## The "But Patients Won't Participate" Problem
+### The "But Patients Won't Participate" Problem
 
 **What could go wrong**: Not enough patients volunteer for decentralized trials.
 
@@ -1360,7 +1364,7 @@ New barrier: "Click button"
 
 You have 240 times more willing participants than current trials use. The bottleneck isn't human willingness. It's systemic stupidity.
 
-## Who's Actually In Charge (Patients Edition)
+### Who's Actually In Charge (Patients Edition)
 
 The Decentralized Institutes of Health puts patients in control through trial participation, not committee votes.
 
@@ -1389,11 +1393,11 @@ The system operates through distributed infrastructure:
 See [Governance and Accountability](../appendix/governance.qmd) and [Legal Structure](../appendix/legal-compliance-framework.qmd) for the complete system that prevents this from becoming another bureaucratic nightmare where nothing happens and everyone dies while committees meet.
 
 
-# Limitations and Uncertainties
+## Limitations and Uncertainties
 
 This analysis acknowledges several important limitations and sources of uncertainty inherent in modeling a transformative policy intervention of this scale.
 
-## Model Assumptions and Constraints
+### Model Assumptions and Constraints
 
 ### Adoption Timeline Uncertainty
 
@@ -1494,7 +1498,7 @@ The {{< var dfda_qalys_rd_plus_delay_annual >}} annual QALY estimate aggregates 
 
 **Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var dfda_qalys_rd_plus_delay_annual >}} annually yields 66:1 ROI).
 
-## Data Limitations
+### Data Limitations
 
 ### Military Spending Data
 
@@ -1520,7 +1524,7 @@ Standard willingness-to-pay thresholds ($**[Primary QALY estimate used]**{{< var
 - **Ethical considerations:** Monetary QALY valuations raise equity concerns
 - **Discount rates:** Future health benefits discounted at {{< var npv_discount_rate_standard >}} may undervalue long-term gains
 
-## Generalizability Constraints
+### Generalizability Constraints
 
 ### Political Feasibility
 
@@ -1550,7 +1554,7 @@ Benefits assume integration with existing healthcare infrastructure:
 - **Wearable adoption:** Real-world data collection requires widespread wearable/digital health adoption
 - **Provider participation:** Clinician buy-in necessary for trial recruitment and data quality
 
-## Uncertainty Quantification
+### Uncertainty Quantification
 
 ### Primary Risk Factors
 
@@ -1574,7 +1578,7 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 **Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs.
 
-## External Validity Considerations
+### External Validity Considerations
 
 ### Transferability Across Contexts
 
@@ -1615,7 +1619,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 **Methodological limitation acknowledged**: Full general equilibrium modeling (computable general equilibrium models with labor markets, international trade, and technology diffusion) would require substantial additional complexity beyond this analysis scope. The partial equilibrium approach follows standard cost-benefit analysis methodology for policy interventions.
 
 
-## Failure Modes and Risk Scenarios
+### Failure Modes and Risk Scenarios
 
 The economic analysis presented above assumes successful implementation of the dFDA system. This section explicitly examines failure modes that could prevent anticipated benefits from materializing, acknowledging that positive ROI estimates are conditional on effective execution.
 
@@ -1639,7 +1643,7 @@ The economic analysis presented above assumes successful implementation of the d
 
 **Residual risk**: Even with mitigation, decentralized settings may have higher false positive rates than traditional controlled trials. This represents a fundamental trade-off between internal validity (causal certainty) and external validity (real-world generalizability).
 
-#### Regulatory Rejection
+##### Regulatory Rejection
 
 **Risk**: Regulatory agencies (FDA, EMA) refuse to accept dFDA trial evidence for approval decisions.
 
@@ -1658,7 +1662,7 @@ The economic analysis presented above assumes successful implementation of the d
 
 **Residual risk**: Regulatory capture by pharmaceutical industry incumbents could block adoption. See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for political economy analysis of implementation barriers.
 
-#### Pharmaceutical Industry Adoption Failure
+##### Pharmaceutical Industry Adoption Failure
 
 **Risk**: Pharmaceutical companies decline to use dFDA platform, preferring traditional controlled trials despite higher costs.
 
@@ -1686,7 +1690,7 @@ The economic analysis presented above assumes successful implementation of the d
 
 The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var treaty_complete_roi_all_benefits >}}:1 complete) are **conditional on successful implementation**, they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
-## Limitations Summary
+### Limitations Summary
 
 Despite these limitations, several factors support the analysis's robustness:
 
@@ -1700,7 +1704,7 @@ Despite these limitations, several factors support the analysis's robustness:
 Future research priorities include prospective data collection during pilot implementations, real-world validation of cost reduction estimates, and longitudinal assessment of QALY gains across diverse populations and disease contexts.
 
 
-# Conclusion
+## Conclusion
 
 Redirecting {{< var treaty_reduction_pct >}} of global military spending to medical research generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI, depending on what you count.
 
@@ -1730,7 +1734,7 @@ $$
 
 ![Join or Die - Collective action for survival](../../assets/join-or-die-snake.jpg)
 
-# References
+## References
 
 For complete bibliography, data sources, and citations, see:
 
