@@ -189,14 +189,11 @@
       #### What Happened to New Treatments
       #### What Happened to Costs
       #### What Happened to Drug Patents
-        ##### Decreased Ability to Determine Comparative Efficacy
-          ###### The "Diminishing Returns" Excuse
-          ###### The "Correlation Is Not Causation" Excuse
+      #### Decreased Ability to Determine Comparative Efficacy
       #### Impact of Innovative Medicines on Life Expectancy
       #### The Summary
     ### The Modern Consequences
       #### High Costs Kill Innovation, Reward Monopoly
-        ##### Cures Are Economically Stupid
     ### Off-Patent Drugs: Cures Nobody Can Afford to Find
       #### Rare Diseases: Mathematically Doomed
   ## The \$2.6 Billion Price Tag for Aspirin
@@ -2541,4 +2538,4 @@
 - Files with headings: 79
 - Files without headings: 2
 - Files not found: 0
-- Total headings extracted: 2258
+- Total headings extracted: 2255
