@@ -387,9 +387,9 @@
   ## The Blueprint for a Saner World
     ### The 1% Treaty: Technical Specifications for Global Survival
       #### Article 1: The Promise
-        ##### Article 2: The Money Part
-          ###### Article 3: The Enforcement Mechanism
-          ###### Article 4: The Escape Clause
+      #### Article 2: The Money Part
+      #### Article 3: The Enforcement Mechanism
+      #### Article 4: The Escape Clause
   ## Why This Is Actually About National Security (No, Really)
     ### Real Threats (That Actually Kill People)
     ### Fake Threats (That Countries Spend Trillions On)
@@ -416,9 +416,9 @@
     ### The Economic Gold Rush
     ### A Multi-Generational Timeline
       #### Year 1: The Awkward Beginning
-        ##### Year 5: The New Normal
-          ###### Year 10: The History Books
-          ###### Year 50: The View from Tomorrow
+      #### Year 5: The New Normal
+      #### Year 10: The History Books
+      #### Year 50: The View from Tomorrow
   ## The Counter-Arguments (And Why They're Stupid)
   ## Summary
   ## Addendum: The Actual Treaty Text (First Draft)
