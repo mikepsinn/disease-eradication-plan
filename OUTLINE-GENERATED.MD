@@ -87,30 +87,30 @@
 
 ### knowledge/problem/cost-of-war.qmd
 
-    ### The Itemized Receipt for Armageddon
-      #### The Shopping List (2024 Global Data)
-        ##### Total Direct Military Spending: \$2,718.0 billion
-      #### The Equation of Immediate Destruction
-        ##### Current Annual Calculation
-          ###### C<sub>direct</sub> = \$7,655 billion annually
-    ### Military Hardware: The World's Worst Investment
-      #### OFFERING MEMORANDUM
-        ##### RETURNS
-        ##### COSTS
-        ##### DEPRECIATION
-        ##### RISK FACTORS
-      #### The Dead Capital Problem
-        ##### Outcome A (Unused)
-        ##### Outcome B (Used)
-      #### The Price of a Ghost: Valuing Human Life
-        ##### Annual Mortality Cost Calculation
-          ###### Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually
-    ### Infrastructure Destruction: Breaking Things Costs Money
-      #### Reconstruction Cost Analysis (2023 Estimates)
-        ##### Total Infrastructure Damage: [\$1,875 billion](../references.qmd#reconstruction-costs-active-conflicts)
-    ### Economic Disruption: The Ripple Effect
-      #### Trade Flow Disruption Matrix
-        ##### Total Trade Disruption: [\$616 billion](../references.qmd#world-bank-trade-disruption-conflict) annually
+  ## The Itemized Receipt for Armageddon
+    ### The Shopping List (2024 Global Data)
+      #### Total Direct Military Spending: \$2,718.0 billion
+    ### The Equation of Immediate Destruction
+      #### Current Annual Calculation
+        ##### C<sub>direct</sub> = \$7,655 billion annually
+  ## Military Hardware: The World's Worst Investment
+    ### OFFERING MEMORANDUM
+      #### RETURNS
+      #### COSTS
+      #### DEPRECIATION
+      #### RISK FACTORS
+    ### The Dead Capital Problem
+      #### Outcome A (Unused)
+      #### Outcome B (Used)
+    ### The Price of a Ghost: Valuing Human Life
+      #### Annual Mortality Cost Calculation
+        ##### Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually
+  ## Infrastructure Destruction: Breaking Things Costs Money
+    ### Reconstruction Cost Analysis (2023 Estimates)
+      #### Total Infrastructure Damage: [\$1,875 billion](../references.qmd#reconstruction-costs-active-conflicts)
+  ## Economic Disruption: The Ripple Effect
+    ### Trade Flow Disruption Matrix
+      #### Total Trade Disruption: [\$616 billion](../references.qmd#world-bank-trade-disruption-conflict) annually
   ## The Ghost in the Machine: Indirect Costs
     ### Opportunity Cost Analysis: The Roads Not Taken
       #### Comparative Investment Analysis (2023 Dollars)
@@ -374,8 +374,8 @@
 
 ### knowledge/solution/1-percent-treaty.qmd
 
-    ### The Math
-      #### How It Works
+  ## The Math
+    ### How It Works
   ## This Isn't a Trade-Off. It's Accidentally Brilliant.
     ### You Get Two Good Things By Removing One Stupid Thing
       #### Good Thing #1: You Become Safer
@@ -821,8 +821,8 @@
 
 ### knowledge/call-to-action/your-personal-benefits.qmd
 
-    ### Your Actual Odds Right Now
-    ### What You Actually Get
+  ## Your Actual Odds Right Now
+  ## What You Actually Get
   ## If you're healthy (for now)
     ### If you have money
       #### If you have a family
@@ -959,17 +959,17 @@
 
 ### knowledge/legal/legal-framework.qmd
 
-    ### Entity #1: The 501(c)(3) Public Charity ("The Brain")
-      #### What It Does
-    ### Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
-    ### Entity #3: The Victory Corporation ("The Engine")
-      #### What It Does
-    ### Entity #4: The DIH Foundation ("The Soul")
-      #### What It Does
-    ### Why This Four-Part Structure Works
-      #### Legal Specialization
-      #### Firewall Protection
-      #### Risk Distribution
+  ## Entity #1: The 501(c)(3) Public Charity ("The Brain")
+    ### What It Does
+  ## Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
+  ## Entity #3: The Victory Corporation ("The Engine")
+    ### What It Does
+  ## Entity #4: The DIH Foundation ("The Soul")
+    ### What It Does
+  ## Why This Four-Part Structure Works
+    ### Legal Specialization
+    ### Firewall Protection
+    ### Risk Distribution
   ## Multi-Jurisdiction Strategy (How to Not Put All Eggs in One Regulatory Basket)
   ## Organizational Structure: The For-Profit Management Company
     ### The General Staff (G-Staff)
@@ -1167,7 +1167,7 @@
 
 ### knowledge/economics/victory-bonds.qmd
 
-    ### What You're Actually Building
+  ## What You're Actually Building
   ## The Four Phases of Making Everyone Rich While Saving Humanity
     ### Phase 1: Collect Papers From People With Too Many Papers
       #### Who has that many papers
@@ -1508,7 +1508,7 @@
 
 ### knowledge/appendix/nonprofit-partnership-incentives.qmd
 
-    ### The Solution
+  ## The Solution
   ## On The Two-Part Bribe
     ### Part 1: Make The Organization Rich (Performance-Based Grants)
       #### The Old Way
@@ -2290,10 +2290,10 @@
 
 ### knowledge/appendix/dih-integration-model.qmd
 
-    ### 5. Why This Works Better Than Direct Payments
-      #### Avoids Perverse Incentives
-      #### Reduces Friction
-      #### Ensures Quality
+  ## 5. Why This Works Better Than Direct Payments
+    ### Avoids Perverse Incentives
+    ### Reduces Friction
+    ### Ensures Quality
   ## Real-World Example
     ### Sarah has Type 2 Diabetes
       #### Old System
@@ -2468,7 +2468,7 @@
 
 ### knowledge/appendix/free-rider-solution.qmd
 
-    ### The Strategy
+  ## The Strategy
   ## On Making Compliance the Most Profitable Personal Decision
     ### 1. The Bribe for Political Leaders (The Executive & Legislature)
     ### 2. The Bribe for the Military-Industrial Complex (The Generals & CEOs)
