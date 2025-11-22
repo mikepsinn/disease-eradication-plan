@@ -119,6 +119,15 @@ jobs:
         run: python scripts/render-book-pdf.py
         timeout-minutes: 20
 
+      - name: Upload PDF artifact
+        if: github.event.repository.name == 'decentralized-institutes-of-health'
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: '_book/warondisease/*.pdf'
+          retention-days: 30
+          if-no-files-found: error
+
       - name: Render Book EPUB (reuses PDF cache)
         if: github.event.repository.name == 'decentralized-institutes-of-health'
         run: python scripts/render-book-epub.py
@@ -131,15 +140,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.render-script.outputs.output-path }}
-
-      - name: Upload PDF artifact
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
-        uses: actions/upload-artifact@v4
-        with:
-          name: book-pdf
-          path: '_book/warondisease/*.pdf'
-          retention-days: 30
-          if-no-files-found: error
 
       - name: Upload EPUB artifact
         if: github.event.repository.name == 'decentralized-institutes-of-health'
