@@ -346,6 +346,14 @@ format:
     #       <meta property="og:description" content="A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:type" content="book">
     #       <meta property="og:url" content="https://WarOnDisease.org">
+  docx:
+    # DOCX format for Amazon Kindle Create and other Word-based tools
+    # Note: Amazon KDP prefers EPUB directly, but Kindle Create accepts DOCX
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    reference-doc: null  # Can specify a reference DOCX template if needed
   pdf:
     # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
     # corruption issues with large documents (900+ pages, 81 files, complex TOC)
