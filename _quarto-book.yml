@@ -228,6 +228,11 @@ metadata:
   # bibliography: "references.bib"
   # csl: "style.csl"
 
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
 execute:
   # Relaunch kernel for each render
   cache: false  # Disabled: incompatible with inline expressions
