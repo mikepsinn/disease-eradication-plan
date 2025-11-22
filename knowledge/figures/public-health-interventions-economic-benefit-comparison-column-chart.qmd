@@ -16,10 +16,11 @@ from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE
 
 setup_chart_style()
 
-# Data - from combined annual benefit calculation
+# Data - using parameters where available
 
-peace_dividend = 97.1
-dfda_savings = 50.0
+peace_dividend = float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000  # Convert to billions
+dfda_savings = float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1_000_000_000  # Convert to billions
+childhood_vacc_benefit = float(CHILDHOOD_VACCINATION_ANNUAL_BENEFIT) / 1_000_000_000  # Convert to billions
 total_benefit = peace_dividend + dfda_savings
 
 interventions = [
@@ -28,7 +29,8 @@ interventions = [
     'Childhood\nVaccinations',
     '1% Treaty /\ndFDA Initiative'
 ]
-values = [0.8, 12.0, 15.0, total_benefit]
+# TODO: Create annual benefit parameters for water fluoridation and smoking cessation
+values = [0.8, 12.0, childhood_vacc_benefit, total_benefit]
 
 # Create figure - taller for vertical layout
 
@@ -109,7 +111,7 @@ add_watermark(fig)
 
 # Save figure
 
-output_path = get_figure_output_path('public-health-impact-vertical-column-chart.png')
+output_path = get_figure_output_path('public-health-interventions-economic-benefit-comparison-column-chart.png')
 
 # Save the figure
 
@@ -117,7 +119,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
 
-add_png_metadata(output_path, title="Public Health Impact Vertical Column Chart")
+add_png_metadata(output_path, title="Public Health Interventions Economic Benefit Comparison")
 
 plt.show()
 ```

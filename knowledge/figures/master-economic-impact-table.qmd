@@ -20,63 +20,58 @@ pd.options.display.float_format = '{:,.0f}'.format
 
 economic_impacts = pd.DataFrame({
     'Source': [
-        '1% Treaty Peace Dividend',
-        'dFDA R&D Savings Only (82x cost reduction)',
-        'dFDA Conservative Floor (Historical Progress)',
-        'dFDA PRIMARY (Disease Eradication Delay)',
-        'dFDA Optimistic (Acceleration Effects)',
-        'Medical Research Acceleration (115x capacity)',
-        'Combined Conservative (Peace + R&D + Floor)',
-        'Combined Complete (PRIMARY Benefits)'
+        '1% Treaty Peace Dividend (Annual)',
+        'dFDA R&D Savings Only (Annual)',
+        'dFDA Historical Rate (Total One-Time)',
+        'dFDA Lag Elimination PRIMARY (Total One-Time)',
+        'dFDA Innovation Acceleration (Total One-Time)',
+        'Medical Research Acceleration (Annual)',
+        'Treaty ROI: Peace + R&D + Historical',
+        'Treaty ROI: Complete (PRIMARY)'
     ],
-    'Annual Value (Billions)': [
-        float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000,
-        float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1_000_000_000,
-        float(DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL) / 1_000_000_000,
-        float(DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL) / 1_000_000_000,
-        float(DFDA_BENEFIT_ACCELERATION_ANNUAL) / 1_000_000_000,
-        float(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL) / 1_000_000_000,
-        (float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) + float(DFDA_BENEFIT_RD_ONLY_ANNUAL) + float(DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL)) / 1_000_000_000,
-        float(TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL) / 1_000_000_000
+    'Benefit Value (Trillions)': [
+        float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000_000,
+        float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1_000_000_000_000,
+        float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / 1_000_000_000_000,
+        float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / 1_000_000_000_000,
+        float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / 1_000_000_000_000,
+        float(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL) / 1_000_000_000_000,
+        np.nan,  # ROI only
+        np.nan   # ROI only
     ],
     'ROI Ratio': [
         np.nan,
         np.nan,
-        np.nan,
-        np.nan,
-        np.nan,
+        float(TREATY_ROI_HISTORICAL_RATE),
+        float(TREATY_ROI_LAG_ELIMINATION),
+        float(TREATY_ROI_INNOVATION_ACCELERATION),
         np.nan,
         float(DFDA_ROI_RD_ONLY),
         float(TREATY_COMPLETE_ROI_ALL_BENEFITS)
     ],
-    'Implementation Cost (Millions)': [
-        500,  # Estimated for visualization
-        float(DFDA_ANNUAL_OPEX) / 1_000_000,
-        float(DFDA_ANNUAL_OPEX) / 1_000_000,
-        float(DFDA_ANNUAL_OPEX) / 1_000_000,
-        float(DFDA_ANNUAL_OPEX) / 1_000_000,
-        100,  # Estimated for visualization
-        float(TREATY_TOTAL_ANNUAL_COSTS) / 1_000_000,
-        float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000
+    'Investment Cost (Billions)': [
+        np.nan,  # Ongoing benefit
+        float(DFDA_ANNUAL_OPEX) / 1_000_000_000,
+        float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000_000,
+        float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000_000,
+        float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000_000,
+        np.nan,  # Ongoing benefit
+        float(TREATY_TOTAL_ANNUAL_COSTS) / 1_000_000_000,
+        float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000_000
     ]
 })
 
-# Calculate ROI where missing
-
-mask = economic_impacts['ROI Ratio'].isna()
-economic_impacts.loc[mask, 'ROI Ratio'] = (
-    economic_impacts.loc[mask, 'Annual Value (Billions)'] * 1000 /
-    economic_impacts.loc[mask, 'Implementation Cost (Millions)']
-).round(0)
+# Note: All ROI values are now pre-calculated in parameters.py
+# No need to calculate ROI where missing since we're using explicit ROI parameters
 
 # Create interactive table
 
 fig = go.Figure(data=[go.Table(
     header=dict(
         values=['<b>Economic Impact Source</b>',
-                '<b>Annual Value</b>',
+                '<b>Benefit Value</b>',
                 '<b>ROI Ratio</b>',
-                '<b>Implementation Cost</b>'],
+                '<b>Investment Cost</b>'],
         fill_color='darkblue',
         font=dict(color='white', size=14),
         align='left',
@@ -85,9 +80,9 @@ fig = go.Figure(data=[go.Table(
     cells=dict(
         values=[
             economic_impacts['Source'],
-            ['$' + str(int(x)) + 'B' for x in economic_impacts['Annual Value (Billions)']],
-            [str(int(x)) + ':1' if pd.notna(x) else 'N/A' for x in economic_impacts['ROI Ratio']],
-            ['$' + str(int(x)) + 'M' for x in economic_impacts['Implementation Cost (Millions)']]
+            ['$' + str(round(x, 2)) + 'T' if pd.notna(x) else 'N/A' for x in economic_impacts['Benefit Value (Trillions)']],
+            [f'{int(x):,}:1' if pd.notna(x) else 'N/A' for x in economic_impacts['ROI Ratio']],
+            ['$' + str(round(x, 2)) + 'B' if pd.notna(x) else 'N/A' for x in economic_impacts['Investment Cost (Billions)']]
         ],
         fill_color=[['lightgray', 'white']*len(economic_impacts)],
         font=dict(size=12),

@@ -15,6 +15,7 @@ Usage:
 
 import argparse
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -40,6 +41,19 @@ def main():
     # Get project root (parent of scripts directory) and change to it
     project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
+
+    # Clean up existing EPUB files and problematic directories
+    print("[*] Cleaning up existing EPUB files...")
+    epub_files = list(project_root.glob("*.epub"))
+    for epub_file in epub_files:
+        print(f"    Removing {epub_file.name}")
+        epub_file.unlink()
+
+    # Remove index_files directory (Quarto cleanup issue on Windows)
+    index_files = project_root / "index_files"
+    if index_files.exists():
+        print(f"    Removing {index_files}")
+        shutil.rmtree(index_files)
 
     # Prepare book files (config + index) - project_root auto-detected from cwd
     if not prepare_book():

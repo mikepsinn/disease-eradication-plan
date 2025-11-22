@@ -15,44 +15,55 @@ from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
     add_png_metadata, get_figure_output_path)
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
-# Data from Expected Value Analysis section
+# Data from Expected Value Analysis section - now including pessimistic scenarios
 
-probabilities = ['10%\n(Conservative)', '25%\n(Moderate)', '40%\n(Moderate-High)', '50%\n(Optimistic)']
+probabilities = [
+    '0.1%\n(Extremely\nPessimistic)',
+    '1%\n(Very\nPessimistic)',
+    '10%\n(Conservative)',
+    '25%\n(Moderate)',
+    '40%\n(Moderate-High)',
+    '50%\n(Optimistic)'
+]
 expected_rois = [
+    float(DFDA_EXPECTED_ROI_0_1PCT_POLITICAL_SUCCESS),
+    float(DFDA_EXPECTED_ROI_1PCT_POLITICAL_SUCCESS),
     float(DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS),
     float(DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS),
     float(DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS),
     float(DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS)
 ]
 
-# Create figure
+# Create figure - wider to accommodate 6 columns
 
-fig, ax = plt.subplots(figsize=(12, 8))
+fig, ax = plt.subplots(figsize=(16, 8))
 
 # Create bars - use solid black for emphasis on the moderate case (most realistic)
 
 bars = ax.bar(
     range(len(probabilities)),
     expected_rois,
-    color=[COLOR_WHITE, COLOR_BLACK, COLOR_WHITE, COLOR_WHITE],
+    color=[COLOR_WHITE, COLOR_WHITE, COLOR_WHITE, COLOR_BLACK, COLOR_WHITE, COLOR_WHITE],
     edgecolor=COLOR_BLACK,
     linewidth=2.5,
     width=0.7,
-    hatch=[None, None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL]
+    hatch=[None, None, None, None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL]
 )
 
-# Add value labels
+# Add value labels using centralized formatter
 
 for i, (bar, roi) in enumerate(zip(bars, expected_rois)):
-    label = f'{roi:.3g}:1'
+    # Format as ratio (will show as 1.29K:1, 12.9K:1, etc.)
+    label = f'{format_parameter_value(roi, unit="ratio")}:1'
     ax.text(
         i, roi + max(expected_rois) * 0.04,
         label,
         ha='center', va='bottom',
-        fontsize=32, fontweight='bold',
+        fontsize=28, fontweight='bold',
         color=COLOR_BLACK,
         bbox=dict(
             boxstyle='round,pad=0.4',

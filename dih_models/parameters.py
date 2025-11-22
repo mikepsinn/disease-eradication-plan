@@ -2021,35 +2021,7 @@ DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION = Parameter(
 )  # dFDA eliminates ~95% of the 8.2-year efficacy lag
 
 # dFDA Disease Eradication Delay Avoidance (PRIMARY ESTIMATE)
-DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL = Parameter(
-    DISEASE_ERADICATION_DELAY_ANNUAL_DALYS * DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance",
-    source_type="calculated",
-    description="Annual DALYs saved by dFDA eliminating disease eradication delay (PRIMARY estimate)",
-    display_name="Annual DALYs Saved by dFDA Eliminating Disease Eradication Delay",
-    unit="DALYs/year",
-    formula="ANNUAL_DALYS × AVOIDANCE_FRACTION",
-    latex=r"DALY_{avoided} = 1.05B \times 0.95 = 995M",
-    confidence="medium",
-    keywords=["disease eradication", "pragmatic trials", "real world evidence", "primary estimate"]
-)  # 995M DALYs/year avoided (PRIMARY)
 
-DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL = Parameter(
-    DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance",
-    source_type="calculated",
-    description="Annual economic value of disease eradication delay costs avoided by dFDA (PRIMARY estimate)",
-    display_name="Annual Economic Value of Disease Eradication Delay Costs Avoided by dFDA",
-    unit="USD/year",
-    formula="DALYS_AVOIDED × VSLY",
-    latex=r"Value_{avoided} = 995M \times \$150k = \$149T",
-    confidence="medium",
-    keywords=["disease eradication", "cost effectiveness", "value for money", "primary estimate"]
-)  # $149T/year (PRIMARY)
-
-# Legacy aliases for backwards compatibility
-DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL = DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL
-DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL
 
 # ===================================================================
 # dFDA BENEFIT SCENARIOS (3-TIER STRUCTURE)
@@ -2060,68 +2032,12 @@ DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = DFDA_AVOIDED_DISEASE_ERADICATION_DEL
 # ===================================================================
 
 # Historical Progress Scenario (CONSERVATIVE)
-DFDA_AVOIDED_HISTORICAL_PROGRESS_DALYS_ANNUAL = Parameter(
-    (HISTORICAL_PROGRESS_DEATHS_ANNUAL * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH)) * DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#historical-progress",
-    source_type="calculated",
-    description="Annual DALYs saved by dFDA eliminating historical progress delays (conservative floor)",
-    display_name="Annual DALYs Saved by dFDA Eliminating Historical Progress Delays",
-    unit="DALYs/year",
-    formula="(DEATHS × YLL_PER_DEATH) × AVOIDANCE_FRACTION",
-    confidence="high",
-    keywords=["conservative", "historical", "floor estimate"]
-)  # Conservative estimate based on historical data
 
-DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL = Parameter(
-    DFDA_AVOIDED_HISTORICAL_PROGRESS_DALYS_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#historical-progress",
-    source_type="calculated",
-    description="Annual dFDA benefit from eliminating historical progress delays (CONSERVATIVE FLOOR for Gates Foundation). Based solely on life-saving impact of drugs already approved 1962-2024, with zero innovation assumptions. Most defensible estimate for skeptical audiences as it assumes no new therapeutic classes beyond what already exists. Does NOT account for innovation cascade from 82x cost reduction enabling orphan diseases, prevention, and other currently non-viable drugs.",
-    display_name="dFDA Annual Benefit: Historical Progress (Conservative Floor)",
-    unit="USD/year",
-    formula="DALYS_AVOIDED × VSLY",
-    confidence="high",
-    keywords=["conservative", "historical", "floor estimate", "gates foundation", "defensible", "no innovation"]
-)  # Conservative floor estimate
 
 # Disease Eradication Delay Scenario (PRIMARY)
-DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL = Parameter(
-    DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance",
-    source_type="calculated",
-    description="Annual dFDA benefit from eliminating disease eradication delay (PRIMARY estimate for Gates Foundation). Represents perpetual annual benefit from accelerating disease eradication timeline. Innovation cascade logic: 82x cost reduction ($2.6B→$350M) makes thousands of currently non-viable drugs economically feasible (orphan diseases affecting <200K patients, prevention with delayed benefits, etc.), fundamentally accelerating progress toward disease eradication. This is the floor if we assume humanity eventually cures disease, as eliminating Phase 2-4 costs ensures many more cures arrive far earlier than 8.2 years.",
-    display_name="dFDA Annual Benefit: Disease Eradication Delay Avoidance (PRIMARY)",
-    unit="USD/year",
-    formula="AVOIDED_DELAY_COST",
-    latex=r"Benefit = \$149T",
-    confidence="medium",
-    keywords=["primary", "disease eradication", "regulatory delay", "innovation cascade", "gates foundation", "perpetual benefit"]
-)  # $149T/year (PRIMARY)
 
 # Disease Eradication + Acceleration Scenario (OPTIMISTIC)
-DFDA_AVOIDED_ACCELERATION_DALYS_ANNUAL = Parameter(
-    DISEASE_ERADICATION_PLUS_ACCELERATION_ANNUAL_DALYS * DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects",
-    source_type="calculated",
-    description="Annual DALYs saved by dFDA eliminating disease eradication delay plus acceleration effects (optimistic upper bound)",
-    display_name="Annual DALYs Saved by dFDA Eliminating Disease Eradication + Acceleration",
-    unit="DALYs/year",
-    formula="DALYS_UPPER × AVOIDANCE_FRACTION",
-    confidence="low",
-    keywords=["optimistic", "upper bound", "acceleration", "innovation effects"]
-)  # Optimistic estimate including acceleration
 
-DFDA_BENEFIT_ACCELERATION_ANNUAL = Parameter(
-    DFDA_AVOIDED_ACCELERATION_DALYS_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects",
-    source_type="calculated",
-    description="Annual dFDA benefit from disease eradication delay plus full acceleration multiplier effects (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate plus additional exponential benefits from: faster iteration cycles (cures enable further cures), network effects (more viable drugs attract more researchers), and compound benefits (earlier wins accelerate remaining progress). Use cautiously for advocacy, not for conservative Gates Foundation presentations.",
-    display_name="dFDA Annual Benefit: Disease Eradication + Acceleration (Optimistic)",
-    unit="USD/year",
-    formula="DALYS_AVOIDED × VSLY",
-    confidence="low",
-    keywords=["optimistic", "upper bound", "acceleration", "innovation effects", "exponential", "advocacy only"]
-)  # Optimistic upper bound
 
 # dFDA health benefits
 # NOTE: The incremental bottom-up calculation (840k QALYs) represents marginal improvements
@@ -2130,19 +2046,19 @@ DFDA_BENEFIT_ACCELERATION_ANNUAL = Parameter(
 # 1962-2024 data. See /knowledge/appendix/regulatory-mortality-analysis.qmd
 
 # PRIMARY ESTIMATE: Based on comprehensive regulatory delay elimination analysis
-# Now properly references DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL (calculated above)
+# Calculated from TOTAL DALYs divided by the efficacy lag period
 # See /knowledge/appendix/regulatory-mortality-analysis.qmd for methodology
 DFDA_QALYS_RD_PLUS_DELAY_ANNUAL = Parameter(
-    DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL,
+    (DISEASE_ERADICATION_DELAY_DALYS * DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION) / EFFICACY_LAG_YEARS,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
     source_type="calculated",
-    description="Annual QALYs gained from dFDA via post-safety efficacy testing delay elimination (PRIMARY ESTIMATE, Phase 2-4 only)",
-    display_name="Annual QALYs Gained from dFDA (Post-Safety Efficacy Delay Elimination)",
+    description="Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.",
+    display_name="Average Annual QALYs Gained from dFDA (During Efficacy Lag Period)",
     unit="QALYs/year",
-    formula="DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL",
-    latex=r"QALYs_{delay} = (3.526B \div 62) \times 0.95 = 54.03M",
-    keywords=["54m", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "approval lag", "drug lag"]
-)  # 54.03M QALYs/year (post-safety efficacy delay elimination, recommended tier)
+    formula="(TOTAL_DALYS × AVOIDANCE_FRACTION) ÷ EFFICACY_LAG_YEARS",
+    latex=r"QALYs_{annual\_avg} = (3.526B \times 0.95) \div 8.2 = 408M",
+    keywords=["average annual", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "approval lag", "drug lag"]
+)  # 408M QALYs/year average during lag period (PRIMARY)
 
 DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
     DFDA_QALYS_RD_PLUS_DELAY_ANNUAL / 365,
@@ -2155,6 +2071,23 @@ DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
     latex=r"QALYs_{daily} = 54.03M \div 365 = 148,024",
     keywords=["148k", "daily", "per day", "each day", "opportunity cost", "delay cost", "post-safety", "efficacy testing"]
 )  # 148,024 QALYs/day (post-safety efficacy delay elimination)
+
+# Economic value of annual QALYs (for backward compatibility with deleted ANNUAL parameters)
+DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = Parameter(
+    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
+    source_type="calculated",
+    description="Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.",
+    display_name="Average Annual Economic Value During Efficacy Lag Period",
+    unit="USD/year",
+    formula="DFDA_QALYS_RD_PLUS_DELAY_ANNUAL × VSLY",
+    latex=r"Value_{annual\_avg} = 408M \times \$150k = \$61.2T",
+    keywords=["annual average", "economic value", "monetized", "efficacy lag"]
+)  # $61.2T/year average during lag period (backward compatibility alias)
+
+# Aliases for backward compatibility with deleted ANNUAL parameters
+DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL = DFDA_QALYS_RD_PLUS_DELAY_ANNUAL  # Backward compatibility alias
+DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL = DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL  # Backward compatibility alias
 
 # Explicit lives saved calculations
 DFDA_LIVES_SAVED_ANNUAL = Parameter(
@@ -2807,11 +2740,7 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
     latex=r"Benefits_{peace+RD} = \$113.55B + \$41.5B = \$155.05B",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency", "basic benefits"]
-)  # $155.05B (peace + R&D only, not complete case)
-
-# Complete case total annual benefits (all 8 benefit categories)
-# TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL defined below (line 3254) using calculated component sum
-# TREATY_COMPLETE_ROI moved to after TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL definition
+)  # $155.05B (peace + R&D only)
 
 # Net benefit (peace + R&D only)
 TREATY_PEACE_PLUS_RD_NET_ANNUAL_BENEFIT = Parameter(
@@ -3122,6 +3051,26 @@ ROI_DISCOUNT_7PCT = Parameter(
 # ---
 
 # Political success probability estimates
+POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC = Parameter(
+    0.001,
+    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
+    source_type="external",
+    confidence="low",
+    description="Extremely pessimistic estimate of political success probability (0.1%)",
+    display_name="Extremely Pessimistic Estimate of Political Success Probability",
+    keywords=["0.1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "worst case"]
+)
+
+POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC = Parameter(
+    0.01,
+    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
+    source_type="external",
+    confidence="low",
+    description="Very pessimistic estimate of political success probability (1%)",
+    display_name="Very Pessimistic Estimate of Political Success Probability",
+    keywords=["1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "pessimistic"]
+)
+
 POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
     0.10,
     source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
@@ -3160,55 +3109,6 @@ POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
     description="Optimistic estimate of political success probability (50%)",
     display_name="Optimistic Estimate of Political Success Probability",
     keywords=["50%", "deployment rate", "high estimate", "market penetration", "participation rate", "best case", "uptake"]
-)
-
-# Expected ROI accounting for political implementation risk
-DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS = Parameter(
-    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
-    latex=r"E[ROI]_{\text{10\%}} = 463 \times 0.10 = 46.3",
-    confidence="medium",
-    description="Expected ROI for dFDA accounting for 10% political success probability (conservative estimate)",
-    display_name="Expected dFDA ROI with 10% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "conservative"]
-)
-
-DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS = Parameter(
-    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
-    latex=r"E[ROI]_{\text{25\%}} = 463 \times 0.25 = 115.8",
-    confidence="medium",
-    description="Expected ROI for dFDA accounting for 25% political success probability (moderate estimate)",
-    display_name="Expected dFDA ROI with 25% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate"]
-)
-
-DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS = Parameter(
-    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH",
-    latex=r"E[ROI]_{\text{40\%}} = 463 \times 0.40 = 185.2",
-    confidence="medium",
-    description="Expected ROI for dFDA accounting for 40% political success probability (moderate-high estimate)",
-    display_name="Expected dFDA ROI with 40% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate-high"]
-)
-
-DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
-    float(DFDA_ROI_RD_ONLY) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="DFDA_ROI_RD_ONLY * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
-    latex=r"E[ROI]_{\text{50\%}} = 463 \times 0.50 = 231.5",
-    confidence="medium",
-    description="Expected ROI for dFDA accounting for 50% political success probability (optimistic estimate)",
-    display_name="Expected dFDA ROI with 50% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"]
 )
 
 # ---
@@ -3639,8 +3539,6 @@ DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
     keywords=["armed forces", "conflict", "fatalities", "casualties", "illness", "mortality", "worldwide"]
 )  # ~137:1
 
-# Opportunity cost calculations moved to after TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL definition (line ~3252)
-
 # Medical research as percentage of disease burden
 MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL,
@@ -3846,37 +3744,30 @@ DRUG_PRICE_REDUCTION_SAVINGS_HIGH = Parameter(
 # BENEFIT_MENTAL_HEALTH_ANNUAL = $75B (already included in regulatory delay benefit)
 
 # ===================================================================
-# TREATY BENEFITS (SIMPLIFIED)
+# TREATY BENEFITS (RECURRING ONLY)
 # ===================================================================
-# Peace Dividend + R&D Savings + Disease Eradication Delay Avoidance
-# PRIMARY = $149T/year
+# Peace Dividend + R&D Savings
+# Truly recurring annual benefits = $155.1B/year
+# (Health benefits are one-time timeline shifts, NOT perpetual annual)
 # ===================================================================
 
-# Total Treaty Benefits (PRIMARY)
-TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL = Parameter(
-    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL + DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL,
+TREATY_RECURRING_BENEFITS_ANNUAL = Parameter(
+    PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
     source_type="calculated",
-    description="Annual treaty benefits from peace dividend + R&D savings + disease eradication delay avoidance (PRIMARY estimate)",
-    display_name="Annual Treaty Benefits (PRIMARY)",
+    description="Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
+    display_name="1% Treaty Recurring Annual Benefits",
     unit="USD/year",
-    formula="PEACE + RD_SAVINGS + DISEASE_ERADICATION_DELAY_AVOIDED",
-    latex=r"Benefits = \$113.6B + \$41.5B + \$149T = \$149T",
-    confidence="medium",
-    keywords=["primary", "treaty benefits", "peace dividend", "rd savings", "disease eradication"]
-)  # $149T/year (PRIMARY - peace dividend + RD savings + disease eradication delay avoidance)
+    formula="PEACE_DIVIDEND + RD_SAVINGS",
+    latex=r"Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B",
+    confidence="high",
+    keywords=["recurring", "annual", "treaty benefits", "peace dividend", "rd savings", "perpetual"]
+)  # $155.1B/year (truly recurring - peace dividend + R&D savings only)
 
-TREATY_COMPLETE_ROI_ALL_BENEFITS = Parameter(
-    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / TREATY_CAMPAIGN_TOTAL_COST,
-    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
-    source_type="calculated",
-    description="Complete ROI including 3 core benefit categories: peace dividend, R&D savings, and comprehensive regulatory delay elimination (PRIMARY METHODOLOGY) (annual benefits ÷ one-time campaign cost)",
-    display_name="Complete 1% Treaty ROI (Primary Methodology)",
-    unit="ratio",
-    formula="TOTAL_ANNUAL_BENEFITS ÷ CAMPAIGN_COST",
-    latex=r"ROI_{complete} = \frac{\$8.26T}{\$1.00B} = 8{,}260:1",
-    keywords=["8260", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi", "primary methodology", "regulatory mortality analysis"]
-)  # Complete ROI with PRIMARY METHODOLOGY (no double-counting)
+# Backward compatibility alias for deleted parameter
+# NOTE: Old parameter incorrectly included amortized one-time health benefits ($149T/year) which was nonsensical
+# New parameter correctly shows only truly recurring benefits ($155.1B/year)
+TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL = TREATY_RECURRING_BENEFITS_ANNUAL  # Backward compatibility alias
 
 # Three-tier ROI analysis based on TOTAL one-time health benefits
 TREATY_ROI_HISTORICAL_RATE = Parameter(
@@ -3918,28 +3809,109 @@ TREATY_ROI_INNOVATION_ACCELERATION = Parameter(
     keywords=["2572484", "innovation", "acceleration", "optimistic", "upper bound", "roi"]
 )  # 2,572,484:1 ROI (optimistic - innovation acceleration)
 
-# Opportunity cost calculations
-OPPORTUNITY_COST_PER_SECOND = Parameter(
-    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / (365 * 24 * 3600),
-    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
-    source_type="calculated",
-    description="Foregone economic value per second from not implementing system",
-    display_name="Foregone Economic Value per Second from Not Implementing System",
-    unit="USD/second",
-    formula="TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL × 1B ÷ SECONDS_PER_YEAR",
-    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "profit", "return"]
-)  # Opportunity cost per second
+# Backward compatibility alias: TREATY_COMPLETE_ROI_ALL_BENEFITS → TREATY_ROI_LAG_ELIMINATION
+# TODO: Refactor 16 files using this to use TREATY_ROI_LAG_ELIMINATION directly
+TREATY_COMPLETE_ROI_ALL_BENEFITS = TREATY_ROI_LAG_ELIMINATION  # Alias to PRIMARY (lag elimination) ROI
 
+# Expected ROI accounting for political implementation risk
+# Using PRIMARY health benefit tier (lag elimination) rather than R&D-only
+DFDA_EXPECTED_ROI_0_1PCT_POLITICAL_SUCCESS = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC",
+    latex=r"E[ROI]_{\text{0.1\%}} = 1{,}286{,}242 \times 0.001 = 1{,}286",
+    confidence="low",
+    description="Expected ROI for 1% Treaty accounting for 0.1% political success probability (extremely pessimistic estimate)",
+    display_name="Expected Treaty ROI with 0.1% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "worst case", "extremely pessimistic"]
+)
+
+DFDA_EXPECTED_ROI_1PCT_POLITICAL_SUCCESS = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC",
+    latex=r"E[ROI]_{\text{1\%}} = 1{,}286{,}242 \times 0.01 = 12{,}862",
+    confidence="low",
+    description="Expected ROI for 1% Treaty accounting for 1% political success probability (very pessimistic estimate)",
+    display_name="Expected Treaty ROI with 1% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "pessimistic"]
+)
+
+DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
+    latex=r"E[ROI]_{\text{10\%}} = 1{,}286{,}242 \times 0.10 = 128{,}624",
+    confidence="medium",
+    description="Expected ROI for 1% Treaty accounting for 10% political success probability (conservative estimate)",
+    display_name="Expected Treaty ROI with 10% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "conservative"]
+)
+
+DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
+    latex=r"E[ROI]_{\text{25\%}} = 1{,}286{,}242 \times 0.25 = 321{,}561",
+    confidence="medium",
+    description="Expected ROI for 1% Treaty accounting for 25% political success probability (moderate estimate)",
+    display_name="Expected Treaty ROI with 25% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate"]
+)
+
+DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH",
+    latex=r"E[ROI]_{\text{40\%}} = 1{,}286{,}242 \times 0.40 = 514{,}497",
+    confidence="medium",
+    description="Expected ROI for 1% Treaty accounting for 40% political success probability (moderate-high estimate)",
+    display_name="Expected Treaty ROI with 40% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate-high"]
+)
+
+DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
+    source_ref="calculated",
+    source_type="calculated",
+    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
+    latex=r"E[ROI]_{\text{50\%}} = 1{,}286{,}242 \times 0.50 = 643{,}121",
+    confidence="medium",
+    description="Expected ROI for 1% Treaty accounting for 50% political success probability (optimistic estimate)",
+    display_name="Expected Treaty ROI with 50% Political Success Probability",
+    keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"]
+)
+
+# Opportunity cost calculations (PRIMARY: based on lag elimination health benefit)
+# These represent the daily/per-second cost of delay during the 8.2-year efficacy lag period
 OPPORTUNITY_COST_PER_DAY = Parameter(
-    TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / 365,
+    DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS / EFFICACY_LAG_YEARS / 365,
     source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
     source_type="calculated",
-    description="Foregone economic value per day from not implementing system",
-    display_name="Foregone Economic Value per Day from Not Implementing System",
+    description="Foregone economic value per day during the 8.2-year efficacy lag period (PRIMARY health benefit ÷ lag years ÷ 365). Represents daily cost of regulatory delay, not a perpetual annual benefit.",
+    display_name="Daily Cost of Regulatory Delay (During Efficacy Lag Period)",
     unit="USD/day",
-    formula="TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL ÷ 365",
-    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "profit", "return"]
-)  # Opportunity cost per day
+    formula="DISEASE_ERADICATION_DELAY_TOTAL ÷ EFFICACY_LAG_YEARS ÷ 365",
+    latex=r"Cost_{daily} = \frac{\$1{,}286T}{8.2 \times 365} \approx \$429B/day",
+    keywords=["opportunity cost", "delay cost", "daily", "efficacy lag", "regulatory delay"]
+)  # ~$429B/day during efficacy lag period
+
+OPPORTUNITY_COST_PER_SECOND = Parameter(
+    OPPORTUNITY_COST_PER_DAY / (24 * 3600),
+    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
+    source_type="calculated",
+    description="Foregone economic value per second during the 8.2-year efficacy lag period. Calculated from daily opportunity cost.",
+    display_name="Per-Second Cost of Regulatory Delay (During Efficacy Lag Period)",
+    unit="USD/second",
+    formula="OPPORTUNITY_COST_PER_DAY ÷ 86400",
+    latex=r"Cost_{second} = \frac{\$429B}{86{,}400} \approx \$5M/second",
+    keywords=["opportunity cost", "delay cost", "per second", "efficacy lag", "regulatory delay"]
+)  # ~$5M/second during efficacy lag period
 
 # ---
 # COST OF DELAY PARAMETERS
@@ -6033,7 +6005,7 @@ smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
 switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFENSE_SPENDING_PCT)
 switzerland_gdp_per_capita_k_formatted = format_parameter_value(SWITZERLAND_GDP_PER_CAPITA_K)
 system_profit_per_life_saved_millions_formatted = f"${SYSTEM_PROFIT_PER_LIFE_SAVED:,.2f} million"
-total_complete_benefits_annual_formatted = format_parameter_value(TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL)
+treaty_recurring_benefits_annual_formatted = format_parameter_value(TREATY_RECURRING_BENEFITS_ANNUAL)
 traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_parameter_value(
     TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K
 )

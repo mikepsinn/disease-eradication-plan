@@ -13,22 +13,23 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# --- Data calculated from annual parameters ---
+# --- Data calculated from TOTAL one-time parameters ---
 
-scenarios = ['Existing Drugs Only', 'Disease Eradication Delay', 'Plus Innovation Effects']
+scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMARY)', 'Innovation Acceleration\n(With Cascading Effects)']
 
-# Daily opportunity costs (annual benefits / 365)
+# Daily opportunity costs (TOTAL one-time benefits / lag years / 365)
+# These represent the daily cost of delay during the 8.2-year efficacy lag period
 money_lost = [
-    float(DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL) / 365 / 1_000_000_000,  # Conservative: historical progress only
-    float(DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL) / 365 / 1_000_000_000,  # PRIMARY: disease eradication delay
-    float(DFDA_BENEFIT_ACCELERATION_ANNUAL) / 365 / 1_000_000_000  # Optimistic: with acceleration effects
+    float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / EFFICACY_LAG_YEARS / 365 / 1_000_000_000,  # Historical rate
+    float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / EFFICACY_LAG_YEARS / 365 / 1_000_000_000,  # PRIMARY
+    float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / EFFICACY_LAG_YEARS / 365 / 1_000_000_000  # Optimistic
 ]
 
-# Daily QALYs/DALYs foregone (annual DALYs / 365)
+# Daily DALYs foregone (TOTAL DALYs / lag years / 365)
 qalys_lost = [
-    float(DFDA_AVOIDED_HISTORICAL_PROGRESS_DALYS_ANNUAL) / 365,  # Conservative: historical progress
-    float(DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL) / 365,  # PRIMARY: disease eradication delay
-    float(DFDA_AVOIDED_ACCELERATION_DALYS_ANNUAL) / 365  # Optimistic: with acceleration
+    float(HISTORICAL_PROGRESS_DALYS) / EFFICACY_LAG_YEARS / 365,  # Historical rate
+    float(DISEASE_ERADICATION_DELAY_DALYS) / EFFICACY_LAG_YEARS / 365,  # PRIMARY
+    float(DISEASE_ERADICATION_PLUS_ACCELERATION_DALYS_TOTAL) / EFFICACY_LAG_YEARS / 365  # Optimistic
 ]
 
 # --- Create figure ---
@@ -96,9 +97,9 @@ for i, (money, qaly) in enumerate(zip(money_lost, qalys_lost)):
 # --- Add calculation explanation (upper left) ---
 
 equation_text = (
-    f'Existing Drugs Only: {float(HISTORICAL_PROGRESS_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr → {float(DFDA_AVOIDED_HISTORICAL_PROGRESS_DALYS_ANNUAL)/1e6:.0f}M DALYs × $150k = ${money_lost[0]:.0f}B/day\n'
-    f'Disease Eradication Delay (PRIMARY): {float(DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr → {float(DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL)/1e6:.0f}M DALYs × $150k = ${money_lost[1]:.0f}B/day\n'
-    f'Plus Innovation Effects: {float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr → {float(DFDA_AVOIDED_ACCELERATION_DALYS_ANNUAL)/1e6:.0f}M DALYs × $150k = ${money_lost[2]:.0f}B/day'
+    f'Historical Rate: {float(HISTORICAL_PROGRESS_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr × {EFFICACY_LAG_YEARS}yr / 365 = ${money_lost[0]:.0f}B/day\n'
+    f'Lag Elimination (PRIMARY): {float(DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr × {EFFICACY_LAG_YEARS}yr / 365 = ${money_lost[1]:.0f}B/day\n'
+    f'Innovation Acceleration: {float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr × {EFFICACY_LAG_YEARS}yr / 365 = ${money_lost[2]:.0f}B/day'
 )
 
 ax.text(

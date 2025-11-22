@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 545
+**Total parameters**: 544
 
-- External sources (peer-reviewed): 175
-- Calculated values: 322
+- External sources (peer-reviewed): 177
+- Calculated values: 319
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -1428,6 +1428,19 @@ Conservative estimate of political success probability (10%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Extremely Pessimistic Estimate of Political Success Probability {#sec-political_success_probability_extremely_pessimistic}
+
+**Value**: 0.001
+
+Extremely pessimistic estimate of political success probability (0.1%)
+
+**Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Moderate Estimate of Political Success Probability {#sec-political_success_probability_moderate}
 
 **Value**: 0.25
@@ -1463,6 +1476,19 @@ Optimistic estimate of political success probability (50%)
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
 *~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Very Pessimistic Estimate of Political Success Probability {#sec-political_success_probability_very_pessimistic}
+
+**Value**: 0.01
+
+Very pessimistic estimate of political success probability (1%)
+
+**Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
+
+*? Low confidence*
 
 :::
 
@@ -3021,145 +3047,51 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual DALYs Saved by dFDA Eliminating Disease Eradication + Acceleration {#sec-dfda_avoided_acceleration_dalys_annual}
-
-**Value**: 1.99B
-
-Annual DALYs saved by dFDA eliminating disease eradication delay plus acceleration effects (optimistic upper bound)
-
-*Formula*: `DALYS_UPPER × AVOIDANCE_FRACTION`
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects](../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual Economic Value of Disease Eradication Delay Costs Avoided by dFDA {#sec-dfda_avoided_disease_eradication_delay_cost_annual}
+## Average Annual Economic Value During Efficacy Lag Period {#sec-dfda_avoided_regulatory_delay_cost_annual}
 
 **Value**: $149T
 
-Annual economic value of disease eradication delay costs avoided by dFDA (PRIMARY estimate)
+Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.
 
 $$
-Value_{avoided} = 995M \times \$150k = \$149T
+Value_{annual\_avg} = 408M \times \$150k = \$61.2T
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual DALYs Saved by dFDA Eliminating Disease Eradication Delay {#sec-dfda_avoided_disease_eradication_delay_dalys_annual}
-
-**Value**: 993M
-
-Annual DALYs saved by dFDA eliminating disease eradication delay (PRIMARY estimate)
-
-$$
-DALY_{avoided} = 1.05B \times 0.95 = 995M
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual DALYs Saved by dFDA Eliminating Historical Progress Delays {#sec-dfda_avoided_historical_progress_dalys_annual}
-
-**Value**: 194M
-
-Annual DALYs saved by dFDA eliminating historical progress delays (conservative floor)
-
-*Formula*: `(DEATHS × YLL_PER_DEATH) × AVOIDANCE_FRACTION`
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#historical-progress](../appendix/dfda-cost-benefit-analysis.qmd#historical-progress)
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
 
 *✓ High confidence*
 
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual Economic Value of Disease Eradication Delay Costs Avoided by dFDA {#sec-dfda_avoided_regulatory_delay_cost_annual}
-
-**Value**: $149T
-
-Annual economic value of disease eradication delay costs avoided by dFDA (PRIMARY estimate)
-
-$$
-Value_{avoided} = 995M \times \$150k = \$149T
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual DALYs Saved by dFDA Eliminating Disease Eradication Delay {#sec-dfda_avoided_regulatory_delay_dalys_annual}
+## Average Annual QALYs Gained from dFDA (During Efficacy Lag Period) {#sec-dfda_avoided_regulatory_delay_dalys_annual}
 
 **Value**: 993M
 
-Annual DALYs saved by dFDA eliminating disease eradication delay (PRIMARY estimate)
+Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.
 
 $$
-DALY_{avoided} = 1.05B \times 0.95 = 995M
+QALYs_{annual\_avg} = (3.526B \times 0.95) \div 8.2 = 408M
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
 
-*~ Medium confidence*
+*✓ High confidence*
 
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Annual Benefit: Disease Eradication + Acceleration (Optimistic) {#sec-dfda_benefit_acceleration_annual}
-
-**Value**: $298T
-
-Annual dFDA benefit from disease eradication delay plus full acceleration multiplier effects (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate plus additional exponential benefits from: faster iteration cycles (cures enable further cures), network effects (more viable drugs attract more researchers), and compound benefits (earlier wins accelerate remaining progress). Use cautiously for advocacy, not for conservative Gates Foundation presentations.
-
-*Formula*: `DALYS_AVOIDED × VSLY`
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects](../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## dFDA Annual Benefit: Disease Eradication Delay Avoidance (PRIMARY) {#sec-dfda_benefit_disease_eradication_delay_annual}
+## Average Annual Economic Value During Efficacy Lag Period {#sec-dfda_benefit_disease_eradication_delay_annual}
 
 **Value**: $149T
 
-Annual dFDA benefit from eliminating disease eradication delay (PRIMARY estimate for Gates Foundation). Represents perpetual annual benefit from accelerating disease eradication timeline. Innovation cascade logic: 82x cost reduction ($2.6B→$350M) makes thousands of currently non-viable drugs economically feasible (orphan diseases affecting <200K patients, prevention with delayed benefits, etc.), fundamentally accelerating progress toward disease eradication. This is the floor if we assume humanity eventually cures disease, as eliminating Phase 2-4 costs ensures many more cures arrive far earlier than 8.2 years.
+Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.
 
 $$
-Benefit = \$149T
+Value_{annual\_avg} = 408M \times \$150k = \$61.2T
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## dFDA Annual Benefit: Historical Progress (Conservative Floor) {#sec-dfda_benefit_historical_progress_annual}
-
-**Value**: $29.1T
-
-Annual dFDA benefit from eliminating historical progress delays (CONSERVATIVE FLOOR for Gates Foundation). Based solely on life-saving impact of drugs already approved 1962-2024, with zero innovation assumptions. Most defensible estimate for skeptical audiences as it assumes no new therapeutic classes beyond what already exists. Does NOT account for innovation cascade from 82x cost reduction enabling orphan diseases, prevention, and other currently non-viable drugs.
-
-*Formula*: `DALYS_AVOIDED × VSLY`
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#historical-progress](../appendix/dfda-cost-benefit-analysis.qmd#historical-progress)
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
 
 *✓ High confidence*
 
@@ -3251,14 +3183,31 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected dFDA ROI with 10% Political Success Probability {#sec-dfda_expected_roi_10pct_political_success}
+## Expected Treaty ROI with 0.1% Political Success Probability {#sec-dfda_expected_roi_0_1pct_political_success}
 
-**Value**: 38.4
+**Value**: 1,286
 
-Expected ROI for dFDA accounting for 10% political success probability (conservative estimate)
+Expected ROI for 1% Treaty accounting for 0.1% political success probability (extremely pessimistic estimate)
 
 $$
-E[ROI]_{\text{10\%}} = 463 \times 0.10 = 46.3
+E[ROI]_{\text{0.1\%}} = 1{,}286{,}242 \times 0.001 = 1{,}286
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected Treaty ROI with 10% Political Success Probability {#sec-dfda_expected_roi_10pct_political_success}
+
+**Value**: 129K
+
+Expected ROI for 1% Treaty accounting for 10% political success probability (conservative estimate)
+
+$$
+E[ROI]_{\text{10\%}} = 1{,}286{,}242 \times 0.10 = 128{,}624
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -3268,14 +3217,31 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected dFDA ROI with 25% Political Success Probability {#sec-dfda_expected_roi_25pct_political_success}
+## Expected Treaty ROI with 1% Political Success Probability {#sec-dfda_expected_roi_1pct_political_success}
 
-**Value**: 96.1
+**Value**: 12,862
 
-Expected ROI for dFDA accounting for 25% political success probability (moderate estimate)
+Expected ROI for 1% Treaty accounting for 1% political success probability (very pessimistic estimate)
 
 $$
-E[ROI]_{\text{25\%}} = 463 \times 0.25 = 115.8
+E[ROI]_{\text{1\%}} = 1{,}286{,}242 \times 0.01 = 12{,}862
+$$
+
+**Methodology**: [Direct Calculation](#calculated)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Expected Treaty ROI with 25% Political Success Probability {#sec-dfda_expected_roi_25pct_political_success}
+
+**Value**: 322K
+
+Expected ROI for 1% Treaty accounting for 25% political success probability (moderate estimate)
+
+$$
+E[ROI]_{\text{25\%}} = 1{,}286{,}242 \times 0.25 = 321{,}561
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -3285,14 +3251,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected dFDA ROI with 40% Political Success Probability {#sec-dfda_expected_roi_40pct_political_success}
+## Expected Treaty ROI with 40% Political Success Probability {#sec-dfda_expected_roi_40pct_political_success}
 
-**Value**: 154
+**Value**: 514K
 
-Expected ROI for dFDA accounting for 40% political success probability (moderate-high estimate)
+Expected ROI for 1% Treaty accounting for 40% political success probability (moderate-high estimate)
 
 $$
-E[ROI]_{\text{40\%}} = 463 \times 0.40 = 185.2
+E[ROI]_{\text{40\%}} = 1{,}286{,}242 \times 0.40 = 514{,}497
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -3302,14 +3268,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Expected dFDA ROI with 50% Political Success Probability {#sec-dfda_expected_roi_50pct_political_success}
+## Expected Treaty ROI with 50% Political Success Probability {#sec-dfda_expected_roi_50pct_political_success}
 
-**Value**: 192
+**Value**: 643K
 
-Expected ROI for dFDA accounting for 50% political success probability (optimistic estimate)
+Expected ROI for 1% Treaty accounting for 50% political success probability (optimistic estimate)
 
 $$
-E[ROI]_{\text{50\%}} = 463 \times 0.50 = 231.5
+E[ROI]_{\text{50\%}} = 1{,}286{,}242 \times 0.50 = 643{,}121
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -3636,14 +3602,14 @@ dFDA staff costs (minimal, AI-assisted)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual QALYs Gained from dFDA (Post-Safety Efficacy Delay Elimination) {#sec-dfda_qalys_rd_plus_delay_annual}
+## Average Annual QALYs Gained from dFDA (During Efficacy Lag Period) {#sec-dfda_qalys_rd_plus_delay_annual}
 
 **Value**: 993M
 
-Annual QALYs gained from dFDA via post-safety efficacy testing delay elimination (PRIMARY ESTIMATE, Phase 2-4 only)
+Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.
 
 $$
-QALYs_{delay} = (3.526B \div 62) \times 0.95 = 54.03M
+QALYs_{annual\_avg} = (3.526B \times 0.95) \div 8.2 = 408M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
@@ -5020,13 +4986,15 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foregone Economic Value per Day from Not Implementing System {#sec-opportunity_cost_per_day}
+## Daily Cost of Regulatory Delay (During Efficacy Lag Period) {#sec-opportunity_cost_per_day}
 
-**Value**: $409B
+**Value**: $430B
 
-Foregone economic value per day from not implementing system
+Foregone economic value per day during the 8.2-year efficacy lag period (PRIMARY health benefit ÷ lag years ÷ 365). Represents daily cost of regulatory delay, not a perpetual annual benefit.
 
-*Formula*: `TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL ÷ 365`
+$$
+Cost_{daily} = \frac{\$1{,}286T}{8.2 \times 365} \approx \$429B/day
+$$
 
 **Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
 
@@ -5035,13 +5003,15 @@ Foregone economic value per day from not implementing system
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Foregone Economic Value per Second from Not Implementing System {#sec-opportunity_cost_per_second}
+## Per-Second Cost of Regulatory Delay (During Efficacy Lag Period) {#sec-opportunity_cost_per_second}
 
-**Value**: $4.73M
+**Value**: $4.97M
 
-Foregone economic value per second from not implementing system
+Foregone economic value per second during the 8.2-year efficacy lag period. Calculated from daily opportunity cost.
 
-*Formula*: `TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL × 1B ÷ SECONDS_PER_YEAR`
+$$
+Cost_{second} = \frac{\$429B}{86{,}400} \approx \$5M/second
+$$
 
 **Methodology**: [../economics/economics.qmd#the-opportunity-cost-clock](../economics/economics.qmd#the-opportunity-cost-clock)
 
@@ -6519,19 +6489,19 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Complete 1% Treaty ROI (Primary Methodology) {#sec-treaty_complete_roi_all_benefits}
+## Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_complete_roi_all_benefits}
 
-**Value**: 149K
+**Value**: 1.29M
 
-Complete ROI including 3 core benefit categories: peace dividend, R&D savings, and comprehensive regulatory delay elimination (PRIMARY METHODOLOGY) (annual benefits ÷ one-time campaign cost)
+Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
 $$
-ROI_{complete} = \frac{\$8.26T}{\$1.00B} = 8{,}260:1
+ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1
 $$
 
-**Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
+**Methodology**: [../figures/dfda-investment-returns-bar-chart.qmd](../figures/dfda-investment-returns-bar-chart.qmd)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 
@@ -6824,6 +6794,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## 1% Treaty Recurring Annual Benefits {#sec-treaty_recurring_benefits_annual}
+
+**Value**: $155B
+
+Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
+
+$$
+Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B
+$$
+
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd](../appendix/1-percent-treaty-cost-effectiveness.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Treaty ROI - Historical Rate (Conservative Floor) {#sec-treaty_roi_historical_rate}
 
 **Value**: 251K
@@ -6892,19 +6879,19 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual Treaty Benefits (PRIMARY) {#sec-treaty_total_complete_benefits_annual}
+## 1% Treaty Recurring Annual Benefits {#sec-treaty_total_complete_benefits_annual}
 
-**Value**: $149T
+**Value**: $155B
 
-Annual treaty benefits from peace dividend + R&D savings + disease eradication delay avoidance (PRIMARY estimate)
+Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
 
 $$
-Benefits = \$113.6B + \$41.5B + \$149T = \$149T
+Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd](../appendix/1-percent-treaty-cost-effectiveness.qmd)
 
-*~ Medium confidence*
+*✓ High confidence*
 
 :::
 
