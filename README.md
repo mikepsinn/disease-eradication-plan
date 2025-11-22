@@ -40,13 +40,41 @@ This plan is 95% complete but needs:
 
 ## How to Contribute
 
+### Quick Start Options
+
+**Option 1: Dev Container (Recommended)**
+
+If you have [VSCode](https://code.visualstudio.com/) and [Docker](https://www.docker.com/products/docker-desktop/):
+
+1. Clone this repository
+2. Open in VSCode
+3. Click "Reopen in Container" when prompted
+4. Everything installs automatically
+
+**Option 2: GitHub Codespaces (Zero Install)**
+
+1. Click "Code" → "Codespaces" → "Create codespace" on GitHub
+2. Edit directly in your browser, no local setup needed
+
+**Option 3: Manual Setup**
+
 ### Prerequisites
 
-- **Quarto** (for rendering the plan)
+- **Quarto** (for rendering the plan) - [Download here](https://quarto.org/docs/get-started/)
 - **Python 3.10+** (for calculations and validation)
 - **Node.js 18+** (for TypeScript scripts)
 
 ### Setup
+
+**With Make (simplest):**
+
+```bash
+git clone https://github.com/wishonia/disease-eradication-plan.git
+cd disease-eradication-plan
+make setup
+```
+
+**Manual:**
 
 ```bash
 # Clone repository
@@ -79,10 +107,13 @@ quarto render
 3. **Make your changes** following existing patterns
 4. **Validate everything**:
    ```bash
-   # Check parameter references
-   .venv\Scripts\python.exe scripts\pre-render-validation.py
+   # With Make (easiest)
+   make validate
+   make render
 
-   # Render and review
+   # Or manually
+   .venv\Scripts\python.exe scripts\pre-render-validation.py  # Windows
+   .venv/bin/python scripts/pre-render-validation.py          # macOS/Linux
    quarto render
    ```
 5. **Submit a pull request** with clear explanation
