@@ -1,7 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { glob } from 'glob';
+import matter from 'gray-matter';
 import { findBookFiles, saveFile } from '../lib/file-utils';
+import { migrateHashesFromFrontmatter } from '../lib/hash-store';
 
 const ROOT_DIR = process.cwd();
 
@@ -42,7 +44,14 @@ async function formatAllFiles(allQmdFiles: boolean = false) {
             // Save original content for comparison
             const originalContent = fileContent;
 
-            // saveFile will apply formatting internally
+            // Parse frontmatter to check for hash fields
+            const { data: frontmatter } = matter(fileContent);
+            
+            // Migrate any hash fields from frontmatter to centralized hash store
+            // This ensures we don't lose hash data when removing them from frontmatter
+            await migrateHashesFromFrontmatter(filePath, frontmatter);
+
+            // saveFile will apply formatting internally and remove hash fields from frontmatter
             await saveFile(filePath, fileContent);
 
             // Read back to check if it changed
@@ -86,6 +95,8 @@ The formatter performs:
   - Bold text to heading conversion (6 words or less)
   - Spacing normalization
   - Blank line enforcement after headings
+  - Migration of hash fields from frontmatter to centralized hash store
+  - Removal of hash fields from frontmatter
 `);
         process.exit(0);
     }

@@ -97,6 +97,9 @@ build/
 # Agent memory (dynamic, not in version control)
 memory/*
 !memory/.gitkeep
+
+# Hash store (centralized file processing state)
+.file-hashes.json
 index.qmd
 
 # Generated Quarto config (copied from _quarto-book.yml or _quarto-economics.yml)

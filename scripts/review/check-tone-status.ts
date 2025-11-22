@@ -7,6 +7,7 @@ import {
 } from '../lib/file-utils';
 import path from 'path';
 import { HASH_FIELDS, CONTENT_DIRS } from '../lib/constants';
+import { getFileHash } from '../lib/hash-store';
 
 interface FileStatus {
   path: string;
@@ -50,15 +51,20 @@ async function checkToneStatus(): Promise<void> {
       continue;
     }
 
-    const { frontmatter, body } = await readFileWithMatter(file);
+    const { body } = await readFileWithMatter(file);
     const currentHash = getBodyHash(body);
+
+    // Read hashes from centralized hash store
+    const oldToneHash = await getFileHash(file, HASH_FIELDS.TONE_ELEVATION);
+    const humorPreservedHash = await getFileHash(file, HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR);
+    const instructionalVoiceHash = await getFileHash(file, HASH_FIELDS.INSTRUCTIONAL_VOICE);
 
     const status: FileStatus = {
       path: relPath,
-      hasOldToneCheck: !!frontmatter[HASH_FIELDS.TONE_ELEVATION],
-      hasHumorPreservedCheck: frontmatter[HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR] === currentHash,
-      needsProcessing: frontmatter[HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR] !== currentHash,
-      lastModified: frontmatter[HASH_FIELDS.INSTRUCTIONAL_VOICE] ? '✓' : undefined
+      hasOldToneCheck: !!oldToneHash,
+      hasHumorPreservedCheck: humorPreservedHash === currentHash,
+      needsProcessing: humorPreservedHash !== currentHash,
+      lastModified: instructionalVoiceHash ? '✓' : undefined
     };
 
     fileStatuses.push(status);

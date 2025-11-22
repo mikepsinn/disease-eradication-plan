@@ -7,6 +7,7 @@ import {
   getBodyHash
 } from '../lib/file-utils';
 import { HASH_FIELDS } from '../lib/constants';
+import { getFileHash } from '../lib/hash-store';
 import path from 'path';
 import fs from 'fs/promises';
 
@@ -15,11 +16,12 @@ import fs from 'fs/promises';
  * This creates a temporary file for the agent to edit
  */
 async function processFileIntelligently(filePath: string): Promise<boolean> {
-  const { frontmatter, body } = await readFileWithMatter(filePath);
+  const { body } = await readFileWithMatter(filePath);
   const currentHash = getBodyHash(body);
 
-  // Check if already processed
-  if (frontmatter[HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR] === currentHash) {
+  // Check if already processed - read hash from centralized store
+  const storedHash = await getFileHash(filePath, HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR);
+  if (storedHash === currentHash) {
     return false; // Already processed
   }
 
@@ -43,11 +45,12 @@ async function getFilesNeedingToneElevation(): Promise<string[]> {
   const needsProcessing: string[] = [];
 
   for (const file of allFiles) {
-    const { frontmatter, body } = await readFileWithMatter(file);
+    const { body } = await readFileWithMatter(file);
     const currentHash = getBodyHash(body);
 
-    // Check if file needs processing
-    if (frontmatter[HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR] !== currentHash) {
+    // Check if file needs processing - read hash from centralized store
+    const storedHash = await getFileHash(file, HASH_FIELDS.TONE_ELEVATION_WITH_HUMOR);
+    if (storedHash !== currentHash) {
       needsProcessing.push(file);
     }
   }
@@ -121,8 +124,7 @@ async function main() {
   console.log(`✅ File list written to: ${fileListPath}`);
   console.log(`   The agent should process these ${filesToProcess.length} files.`);
 
-  console.log('\n💡 Next step: Launch agent with scripts/prompts/tone-guide.md');
-  console.log('   Transform: Pompous claims → Technical documentation');
+  console.log('\n💡 Next step: Process files to transform pompous claims → Technical documentation');
   console.log('   Keep: 95% of book unchanged (light touch only)\n');
 
   return filesToProcess;

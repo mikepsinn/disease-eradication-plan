@@ -5,6 +5,8 @@ import path from 'path';
 import { generateGeminiProContent, generateClaudeSonnet45Content, extractJsonFromResponse, loadPromptTemplate, generateGeminiFlashContent } from '../lib/llm';
 import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles, stringifyWithFrontmatter, getBookFilesForProcessing } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
+import { setFileHash } from '../lib/hash-store';
+import { HASH_FIELDS } from '../lib/constants';
 
 // Re-export functions from file-utils for convenience
 export { getStaleFiles, parseQuartoYml, getBookFilesForProcessing };
@@ -34,37 +36,6 @@ export async function formatFileWithLLM(filePath: string): Promise<void> {
   console.log(`Successfully formatted ${filePath}.`);
 }
 
-export async function styleFileWithLLM(filePath: string, options?: { extraInstructions?: string }): Promise<void> {
-  console.log(`\nImproving style and content quality for ${filePath} with Claude Sonnet 4.5...`);
-  const { frontmatter, body } = await readFileWithMatter(filePath);
-
-  const styleGuide = await fs.readFile('GUIDES/STYLE_GUIDE.md', 'utf-8');
-
-  let promptTemplateVars: Record<string, string> = {
-    '{{styleGuide}}': styleGuide,
-    '{{body}}': body
-  };
-
-  // Add extra instructions if provided
-  if (options?.extraInstructions) {
-    promptTemplateVars['{{extraInstructions}}'] = options.extraInstructions;
-  }
-
-  const prompt = await loadPromptTemplate('tools/prompts/style-guide-review.md', promptTemplateVars);
-
-  const responseText = await generateClaudeSonnet45Content(prompt);
-
-  let finalBody;
-  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
-    console.log(`File ${filePath} already adheres to the style guide. Updating metadata.`);
-    finalBody = body;
-  } else {
-    finalBody = responseText.trim();
-  }
-
-  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastStyleHash');
-  console.log(`Successfully improved style for ${filePath}.`);
-}
 
 export async function nonprofitComplianceCheckFileWithLLM(filePath: string): Promise<void> {
   console.log(`\nChecking nonprofit compliance for ${filePath} with Gemini Flash...`);
@@ -169,27 +140,12 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     console.log('Skipping fact-check for this file');
   }
 
-  frontmatter.lastFactCheckHash = getBodyHash(stringifyWithFrontmatter(body, frontmatter));
+  // Store hash in centralized hash store instead of frontmatter
+  const factCheckHash = getBodyHash(stringifyWithFrontmatter(body, frontmatter));
+  await setFileHash(filePath, HASH_FIELDS.FACT_CHECK, factCheckHash);
 
-  let newContent: string;
-  if (originalFrontmatterText) {
-    const normalizedBody = body.trimEnd() + '\n';
-    const updatedFrontmatter = originalFrontmatterText.replace(
-      /(lastFactCheckHash:\s*)[^\n]*/,
-      `$1${frontmatter.lastFactCheckHash}`
-    );
-    if (!updatedFrontmatter.includes('lastFactCheckHash:')) {
-      newContent = originalFrontmatterText.replace(
-        /\n---$/,
-        `\nlastFactCheckHash: ${frontmatter.lastFactCheckHash}\n---`
-      ) + '\n' + normalizedBody;
-    } else {
-      newContent = updatedFrontmatter + '\n' + normalizedBody;
-    }
-  } else {
-    newContent = matter.stringify(body, frontmatter, { lineWidth: -1 } as any);
-  }
-
+  // Save file without hash in frontmatter
+  const newContent = stringifyWithFrontmatter(body, frontmatter);
   await saveFile(filePath, newContent);
   console.log(`Successfully updated ${filePath}`);
 }

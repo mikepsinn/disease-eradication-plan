@@ -1,7 +1,6 @@
 import {
   getStaleFiles,
   formatFileWithLLM,
-  styleFileWithLLM,
   factCheckFileWithLLM,
   linkCheckFile,
   figureCheckFile,
@@ -17,7 +16,6 @@ async function main() {
   const checks = [
     { name: 'Structure Check', hashField: 'lastStructureCheckHash', checkFunction: structureCheckFileWithLLM }, // Run FIRST to remove/consolidate content
     { name: 'Formatting', hashField: 'lastFormattedHash', checkFunction: formatFileWithLLM },
-    { name: 'Style & Content Quality', hashField: 'lastStyleHash', checkFunction: styleFileWithLLM },
     { name: 'Fact Check', hashField: 'lastFactCheckHash', checkFunction: factCheckFileWithLLM },
     { name: 'Link Check', hashField: 'lastLinkCheckHash', checkFunction: linkCheckFile },
     { name: 'Figure Check', hashField: 'lastFigureCheckHash', checkFunction: figureCheckFile }

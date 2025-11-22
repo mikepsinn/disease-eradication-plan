@@ -13,7 +13,6 @@
 import chokidar from 'chokidar';
 import path from 'path';
 import {
-  styleFileWithLLM,
   factCheckFileWithLLM,
   structureCheckFileWithLLM,
   linkCheckFile,
@@ -34,7 +33,6 @@ async function reviewFile(filePath: string) {
   try {
     // Run checks in order of importance
     await structureCheckFileWithLLM(filePath);
-    await styleFileWithLLM(filePath);
     await factCheckFileWithLLM(filePath);
     await linkCheckFile(filePath);
     await figureCheckFile(filePath);

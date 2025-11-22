@@ -46,8 +46,7 @@ Marks a file as reviewed after manual tone adjustment.
 
 ## Process
 
-1. **Read the tone guide**: `scripts/prompts/tone-guide.md`
-2. **Identify files**: Run `elevate-tone-intelligent.ts`
+1. **Identify files**: Run `elevate-tone-intelligent.ts`
 3. **Review priority files** in `TONE_REVIEW_PRIORITY` (see constants.ts)
 4. **Transform earnest language** to technical documentation
 5. **Preserve ALL humor** that already works

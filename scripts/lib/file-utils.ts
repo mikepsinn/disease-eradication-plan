@@ -13,6 +13,7 @@ import {
   SPECIAL_FILES,
   type HashFieldName
 } from './constants';
+import { setFileHash, getFileHash } from './hash-store';
 
 /**
  * Find the project root by looking for package.json
@@ -101,6 +102,7 @@ export function replaceEmDashesInValue(value: any): any {
  * Clean and standardize frontmatter data
  * - Collapse multi-line descriptions to single line
  * - Remove date/dateCreated fields
+ * - Remove all hash fields (they're stored in hash store now)
  * - Convert Date objects to ISO strings
  * Note: Em-dash replacement is only done in content, not frontmatter
  */
@@ -115,6 +117,12 @@ export function cleanFrontmatterData(data: any): any {
     // Remove date and dateCreated fields
     delete cleaned.date;
     delete cleaned.dateCreated;
+
+    // Remove all hash fields - they're stored in the centralized hash store now
+    const hashFields = Object.values(HASH_FIELDS);
+    for (const hashField of hashFields) {
+        delete cleaned[hashField];
+    }
 
     // Convert any remaining Date objects to ISO strings to prevent YAML errors
     for (const key in cleaned) {
@@ -346,15 +354,25 @@ export function getBodyHash(content: string): string {
 
 /**
  * Reads a file and parses its frontmatter and body
+ * Hash fields are automatically removed from frontmatter (stored in hash store instead)
  */
 export async function readFileWithMatter(filePath: string): Promise<{ frontmatter: any; body: string; originalContent: string }> {
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
-  return { frontmatter, body, originalContent };
+  
+  // Remove hash fields from frontmatter - they're stored in hash store now
+  const hashFields = Object.values(HASH_FIELDS);
+  const cleanedFrontmatter = { ...frontmatter };
+  for (const hashField of hashFields) {
+    delete cleanedFrontmatter[hashField];
+  }
+  
+  return { frontmatter: cleanedFrontmatter, body, originalContent };
 }
 
 /**
  * Updates a file with new content and calculates/stores a hash
+ * Hash is stored in the centralized hash store, not in frontmatter
  */
 export async function updateFileWithHash(
   filePath: string,
@@ -363,7 +381,12 @@ export async function updateFileWithHash(
   hashFieldName: string
 ): Promise<void> {
   const tempContent = stringifyWithFrontmatter(body, frontmatter);
-  frontmatter[hashFieldName] = getBodyHash(tempContent);
+  const hash = getBodyHash(tempContent);
+  
+  // Store hash in centralized hash store instead of frontmatter
+  await setFileHash(filePath, hashFieldName as HashFieldName, hash);
+  
+  // Save file without hash in frontmatter
   const newContent = stringifyWithFrontmatter(body, frontmatter);
   await saveFile(filePath, newContent);
 }
@@ -490,10 +513,10 @@ export async function getStaleFiles(hashFieldName: string, basePath?: string): P
   for (const file of qmdFiles) {
     try {
       const content = await fs.readFile(file, 'utf-8');
-      const { data: frontmatter } = matter(content);
-
-      const lastHash = frontmatter[hashFieldName];
       const currentBodyHash = getBodyHash(content);
+
+      // Read hash from centralized hash store instead of frontmatter
+      const lastHash = await getFileHash(file, hashFieldName as HashFieldName);
 
       if (currentBodyHash !== lastHash) {
         staleFiles.push(file);
@@ -509,6 +532,7 @@ export async function getStaleFiles(hashFieldName: string, basePath?: string): P
 /**
  * Find all .qmd files where the content hash doesn't match the stored hash
  * Uses centralized constants for consistency
+ * Reads hashes from centralized hash store instead of frontmatter
  */
 export async function getStaleFilesWithConstants(
   hashFieldName: HashFieldName,
@@ -553,10 +577,13 @@ export async function getStaleFilesWithConstants(
 
   for (const file of filteredFiles) {
     try {
-      const { frontmatter, body } = await readFileWithMatter(file);
+      const { body } = await readFileWithMatter(file);
       const currentBodyHash = getBodyHash(body);
 
-      if (currentBodyHash !== frontmatter[hashFieldName]) {
+      // Read hash from centralized hash store instead of frontmatter
+      const lastHash = await getFileHash(file, hashFieldName);
+
+      if (currentBodyHash !== lastHash) {
         staleFiles.push(file);
       }
     } catch (error) {

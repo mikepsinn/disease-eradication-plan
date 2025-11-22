@@ -1,24 +1,25 @@
 import { readFileWithMatter, getBodyHash, stringifyWithFrontmatter, saveFile } from "./file-utils";
 import { HASH_FIELDS, type HashFieldName } from "./constants";
+import { setFileHash, getFileHash } from "./hash-store";
 import type { EnhancedTodo } from "../agents/todo-manager-enhanced";
 
 /**
- * Update a file's frontmatter hash field without changing content
+ * Update a file's hash field without changing content
+ * Hash is stored in centralized hash store, not in frontmatter
  */
 export async function updateFileHash(
   filePath: string,
   hashField: HashFieldName,
   newHash: string
 ): Promise<void> {
-  const { frontmatter, body } = await readFileWithMatter(filePath);
-  frontmatter[hashField] = newHash;
-  const newContent = stringifyWithFrontmatter(body, frontmatter);
-  await saveFile(filePath, newContent);
+  // Store hash in centralized hash store instead of frontmatter
+  await setFileHash(filePath, hashField, newHash);
 }
 
 /**
  * Get all files that need WISHONIA review
  * Checks all WISHONIA-specific hash fields
+ * Reads hashes from centralized hash store instead of frontmatter
  */
 export async function getStaleFilesForWishonia(): Promise<string[]> {
   const { glob } = await import("glob");
@@ -35,7 +36,7 @@ export async function getStaleFilesForWishonia(): Promise<string[]> {
 
   for (const file of files) {
     try {
-      const { frontmatter, body } = await readFileWithMatter(file);
+      const { body } = await readFileWithMatter(file);
       const currentHash = getBodyHash(body);
 
       // Check if any WISHONIA hash field is missing or outdated
@@ -47,12 +48,15 @@ export async function getStaleFilesForWishonia(): Promise<string[]> {
         HASH_FIELDS.CONSISTENCY_CHECK,
       ];
 
-      const needsReview = wishoniaHashFields.some((field) => {
-        const storedHash = frontmatter[field];
-        return !storedHash || storedHash !== currentHash;
-      });
+      // Wait for all checks to complete
+      const needsReviewResult = await Promise.all(
+        wishoniaHashFields.map(async (field) => {
+          const storedHash = await getFileHash(file, field);
+          return !storedHash || storedHash !== currentHash;
+        })
+      );
 
-      if (needsReview) {
+      if (needsReviewResult.some(result => result)) {
         staleFiles.push(file);
       }
     } catch (error) {
