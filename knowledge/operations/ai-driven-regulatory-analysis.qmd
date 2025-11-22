@@ -6,13 +6,13 @@ tags:
   - regulatory
 ---
 
-# AI-Driven Regulatory Impact Analysis System
+## AI-Driven Regulatory Impact Analysis System
 
-## Vision
+### Vision
 
 To fulfill the mandate for comprehensive health and economic impact analysis of all FDA regulatory instruments (as outlined in Section 405(e) of the "Right to Trial & FDA Upgrade Act") with maximum efficiency, transparency, and public engagement. This system leverages a lean, AI-centric approach based on the Pareto (80/20) principle, focusing on current and rapidly advancing AI reasoning and tool-use capabilities.
 
-## Core Components and Workflow
+### Core Components and Workflow
 
 1. **Data Science AI Agent:**
 
@@ -36,14 +36,14 @@ To fulfill the mandate for comprehensive health and economic impact analysis of 
    - **Static Site Generation:** Approved reports and analyses will be automatically published to a static website using GitHub Pages, ensuring broad public accessibility.
    - **Data and Model Availability:** All underlying data (where public), assumptions, and models (scripts, algorithms) will be linked or included with the published reports, fostering reproducibility and further research, consistent with Sec. 405(e)(4)(C) of the Act.
 
-## Operational Principles
+### Operational Principles
 
 - **Iterative Development:** Start with core functionalities and incrementally enhance the system's capabilities and the complexity of analyses performed.
 - **Focus on Automation:** Maximize the automation of data gathering, routine analysis, and report generation to free up human experts for higher-level tasks, interpretation, and validation.
 - **Community Leverage:** Actively encourage and facilitate contributions from the broader scientific and public communities to improve the quality, scope, and relevance of the impact analyses.
 - **Cost-Effectiveness:** Prioritize open-source tools and lean operational practices to minimize costs while maximizing output and transparency.
 
-## Alignment with the Act
+### Alignment with the Act
 
 This system directly addresses the requirements of Section 405(e) for:
 

@@ -11,6 +11,7 @@ help:
 	@echo "  make install    - Install dependencies only (assumes venv exists)"
 	@echo "  make validate   - Run pre-render validation checks"
 	@echo "  make render     - Render book to HTML"
+	@echo "  make outline    - Generate outline from all headings in chapter files"
 	@echo "  make clean      - Remove generated files (_book, .quarto)"
 	@echo ""
 
@@ -60,6 +61,11 @@ validate:
 render:
 	@echo "Rendering book..."
 	quarto render
+
+# Generate outline from headings
+outline:
+	@echo "Generating outline from chapter headings..."
+	$(PYTHON) scripts/generate-outline.py --output OUTLINE-GENERATED.MD
 
 # Clean generated files
 clean:

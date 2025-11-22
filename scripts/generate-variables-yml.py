@@ -44,6 +44,7 @@ The generated files enable academic rigor with zero manual maintenance.
 """
 
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Dict
@@ -688,7 +689,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     content.append("    code-fold: true")
     content.append("---")
     content.append("")
-    content.append("# Overview")
+    content.append("## Overview")
     content.append("")
     content.append(
         "This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA."
@@ -703,7 +704,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
     # External parameters section
     if external_params:
-        content.append("# External Data Sources {#sec-external}")
+        content.append("## External Data Sources {#sec-external}")
         content.append("")
         content.append(
             "Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports."
@@ -721,7 +722,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
             # Start callout box for external source
             content.append("::: {.callout-tip icon=false collapse=false}")
-            content.append(f"## {display_title} {{#sec-{param_name.lower()}}}")
+            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
@@ -772,7 +773,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
     # Calculated parameters section
     if calculated_params:
-        content.append("# Calculated Values {#sec-calculated}")
+        content.append("## Calculated Values {#sec-calculated}")
         content.append("")
         content.append("Parameters derived from mathematical formulas and economic models.")
         content.append("")
@@ -788,7 +789,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
             # Start callout box for calculated value
             content.append("::: {.callout-note icon=false collapse=false}")
-            content.append(f"## {display_title} {{#sec-{param_name.lower()}}}")
+            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
@@ -870,7 +871,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
     # Core definitions section
     if definition_params:
-        content.append("# Core Definitions {#sec-definitions}")
+        content.append("## Core Definitions {#sec-definitions}")
         content.append("")
         content.append("Fundamental parameters and constants used throughout the analysis.")
         content.append("")
@@ -886,7 +887,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
             # Start callout box for definition
             content.append("::: {.callout-warning icon=false collapse=false}")
-            content.append(f"## {display_title} {{#sec-{param_name.lower()}}}")
+            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
             # Value
@@ -1505,6 +1506,28 @@ def main():
         inject_citations_into_qmd(parameters, economics_qmd)
         print()
 
+    # Generate outline from updated headings
+    print("[*] Regenerating outline from chapter headings...")
+    generate_outline_script = project_root / "scripts" / "generate-outline.py"
+    if generate_outline_script.exists():
+        try:
+            result = subprocess.run(
+                [sys.executable, str(generate_outline_script), "--output", "OUTLINE-GENERATED.MD"],
+                cwd=str(project_root),
+                capture_output=True,
+                text=True,
+                encoding='utf-8'
+            )
+            if result.returncode == 0:
+                print("[OK] Outline regenerated")
+            else:
+                print(f"[WARN] Outline generation had issues: {result.stderr}", file=sys.stderr)
+        except Exception as e:
+            print(f"[WARN] Could not regenerate outline: {e}", file=sys.stderr)
+    else:
+        print(f"[WARN] Outline script not found: {generate_outline_script}", file=sys.stderr)
+    print()
+
     print("[OK] All academic outputs generated successfully!")
     print()
     print("[*] Next steps:")
@@ -1513,6 +1536,7 @@ def main():
     print(f"       - {qmd_output.relative_to(project_root)}")
     print(f"       - {bib_output.relative_to(project_root)}")
     print(f"       - {reference_ids_path.relative_to(project_root)}")
+    print(f"       - OUTLINE-GENERATED.MD")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
     print("    2. Render Quarto book to see results")

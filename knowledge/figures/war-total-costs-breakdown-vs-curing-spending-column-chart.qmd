@@ -17,23 +17,23 @@ from dih_models.plotting.chart_style import (
     get_presentation_font_sizes,
     add_png_metadata, get_figure_output_path)
 
-# Setup styling
+## Setup styling
 
 setup_chart_style(style='light', dpi=150)
 FONT_SIZES = get_presentation_font_sizes()
 
-# Define scale constant
+## Define scale constant
 
 BILLION = 1_000_000_000
 
-# Create figure
+## Create figure
 
 fig, ax = plt.subplots(figsize=(12, 12))
 
 categories2 = ['War &\nMilitary\n(Total Cost)', 'Curing\nCancer', 'Curing\nDementia']
 
-# War costs breakdown (from cost-of-war.qmd)
-# All values converted to billions for chart display
+## War costs breakdown (from cost-of-war.qmd)
+## All values converted to billions for chart display
 
 war_direct = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / BILLION  # Direct military spending
 war_infrastructure = float(GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT) / BILLION  # Infrastructure destruction
@@ -41,20 +41,20 @@ war_lives = float(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT) / BILLION  # Human l
 war_trade = float(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT) / BILLION  # Trade disruption
 war_indirect = (float(GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING) + float(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS) + float(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS) + float(GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT) + float(GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT) + float(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)) / BILLION  # Lost growth, veterans, refugees, environment, etc.
 
-# Total war cost = $9,747B
+## Total war cost = $9,747B
 
 war_total = war_direct + war_infrastructure + war_lives + war_trade + war_indirect
 
-# Stacked values for war column
+## Stacked values for war column
 
 war_stack = [war_direct, war_infrastructure, war_lives + war_trade, war_indirect]
 cure_values = [11, 5.5]  # Cancer and dementia research
 
-# Use single RED color for all war costs (problem)
+## Use single RED color for all war costs (problem)
 
 war_color = COLOR_BLACK
 
-# Plot stacked bar for war
+## Plot stacked bar for war
 
 bottom = 0
 war_bars = []
@@ -77,19 +77,19 @@ for i, value in enumerate(war_stack):
             fontsize=28, weight='bold', color=COLOR_WHITE)
     bottom += value
 
-# Plot cure bars
+## Plot cure bars
 
 ax.bar(1, cure_values[0], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 ax.bar(2, cure_values[1], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 
-# Labels for cures
+## Labels for cures
 
 ax.text(1, cure_values[0] + (war_total * 0.02), '$11B', ha='center', va='bottom',
         fontsize=40, weight='bold', color=COLOR_BLACK)
 ax.text(2, cure_values[1] + (war_total * 0.02), '$6B', ha='center', va='bottom',
         fontsize=40, weight='bold', color=COLOR_BLACK)
 
-# Total label on war stack - no decimal
+## Total label on war stack - no decimal
 
 ax.text(0, war_total * 1.02, f'$10T TOTAL', ha='center', va='bottom',
         fontsize=48, weight='bold', color=COLOR_BLACK)
@@ -107,11 +107,11 @@ add_watermark(fig)
 
 output_path = get_figure_output_path('war-total-costs-breakdown-vs-curing-spending-column-chart.png')
 
-# Save the figure
+## Save the figure
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
-# Add metadata for attribution
+## Add metadata for attribution
 
 add_png_metadata(output_path, title="War Total Costs Breakdown Vs Curing Spending Column Chart")
 plt.show()

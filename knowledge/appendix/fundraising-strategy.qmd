@@ -16,11 +16,11 @@ from dih_models.parameters import *
 
 <!-- This file contains content consolidated from orphaned fundraising files -->
 
-# Fundraising Strategy: The $2.5B Activation Energy
+## Fundraising Strategy: The $2.5B Activation Energy
 
 <!-- BEGIN CONTENT MERGED FROM economics/fundraising/fundraising-plan.md -->
 
-## On How to Raise $2.5B to Unlock $27B+/Year Forever
+### On How to Raise $2.5B to Unlock $27B+/Year Forever
 
 The capital required for the [1% Treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy", the one-time push to overcome political inertia and unlock **[$27+ billion annually](../references.qmd#value-captured-by-1pct-treaty)** for global health.
 
@@ -30,27 +30,27 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 
 **Total Requirement:** $1.2B - $2.5B over 36 months
 
-## Multi-Phase Strategy
+### Multi-Phase Strategy
 
-### Phase 1: Seed Round ($250M - $400M)
+#### Phase 1: Seed Round ($250M - $400M)
 
 - Build public engagement platform and policy frameworks for a potential referendum
 - Prove model in pilot countries
 - **Milestone:** 50M verified participants OR demonstrated public support for the treaty in a G20 nation
 
-### Phase 2: Series A ($500M - $1B)
+#### Phase 2: Series A ($500M - $1B)
 
 - Scale to all G7 nations
 - Achieve {{< var global_population_activism_threshold_pct >}} global participation (280M people)
 - **Milestone:** {{< var global_population_activism_threshold_pct >}} threshold OR first G7 government expresses intent to advance treaty discussions
 
-### Phase 3: Growth Round ($500M - $1.1B)
+#### Phase 3: Growth Round ($500M - $1.1B)
 
 - Foster conditions for ratification in major powers (US, EU, China) through public education and diplomatic engagement
 - Lay the groundwork for the future capitalization of the [DIH](../solution/dih.qmd) treasury upon treaty ratification
 - **Milestone:** First $1B disbursement
 
-## Key Innovation: Nobody Gets Paid Unless It Works
+### Key Innovation: Nobody Gets Paid Unless It Works
 
 All major costs are structured so people only get paid if they succeed:
 
@@ -61,13 +61,13 @@ All major costs are structured so people only get paid if they succeed:
 
 <!-- END CONTENT MERGED FROM economics/fundraising/fundraising-plan.md -->
 
-## Capital Structure: Campaign vs Implementation
+### Capital Structure: Campaign vs Implementation
 
 **Campaign cost** (before treaty passes): ~$1B in VICTORY Social Impact Bonds
 
 **Implementation** (after treaty passes): $27B/year funds dFDA platform, DIH infrastructure, global health R&D
 
-### Why $1 Billion?
+#### Why $1 Billion?
 
 **The campaign** ($1B) is NOT building the dFDA - it's getting people to vote for the treaty and lobbying governments to sign it. The dFDA platform gets built AFTER the treaty passes using the $27B/year revenue.
 
@@ -79,7 +79,7 @@ All major costs are structured so people only get paid if they succeed:
 
 **Our advantage**: We're raising $1B ONCE (not annually) to pass a treaty that generates $27B/year FOREVER. They spend $450M/year to maintain the status quo. We just need to outspend them for 2-3 years to win permanently.
 
-### Campaign Budget Breakdown
+#### Campaign Budget Breakdown
 
 **Total: ~$1B** (all VICTORY Social Impact Bonds)
 
@@ -101,7 +101,7 @@ All major costs are structured so people only get paid if they succeed:
 
 **Reserve** (~$50M) - Contingency buffer
 
-### Why VICTORY Bonds (Not Donations)?
+#### Why VICTORY Bonds (Not Donations)?
 
 **Legal freedom**: VICTORY bonds can fund political lobbying without IRS 501(c)(3) restrictions. We can run Super PACs, fund opposition research, and outspend pharma/defense lobbies.
 
@@ -111,7 +111,7 @@ All major costs are structured so people only get paid if they succeed:
 
 **Flexible backfill**: If we DO get donations for referendum activities, bonds can redirect more to lobbying. If donations are low, bonds cover everything.
 
-### Why This Works
+#### Why This Works
 
 **For VICTORY investors**:
 
@@ -126,7 +126,7 @@ All major costs are structured so people only get paid if they succeed:
 - Our side: $1B once (to pass treaty) → $27B/year forever
 - We win by outspending them $1B vs $900M over the campaign period
 
-### Post-Treaty Implementation ($27B/year)
+#### Post-Treaty Implementation ($27B/year)
 
 Once the treaty passes, the $27B/year revenue stream funds:
 
@@ -137,9 +137,9 @@ Once the treaty passes, the $27B/year revenue stream funds:
 
 This is NOT part of the $770M campaign budget. The campaign is just: get votes + pass treaty.
 
-### Legal Structure: Two Separate Entities
+#### Legal Structure: Two Separate Entities
 
-#### Entity 1: Nonprofit Foundation (501c3)
+##### Entity 1: Nonprofit Foundation (501c3)
 
 - Name: "Global Health Treaty Initiative" or similar
 - Mission: Educate public about benefits of redirecting 1% of military budgets to health
@@ -148,7 +148,7 @@ This is NOT part of the $770M campaign budget. The campaign is just: get votes +
 - Budget: ~$160M (referendum education and civic engagement)
 - Tax status: Tax-deductible donations
 
-##### Entity 2: For-Profit Political Campaign
+###### Entity 2: For-Profit Political Campaign
 
 - Name: "VICTORY Treaty Campaign" or similar
 - Mission: Pass the 1% Treaty through political lobbying
@@ -159,7 +159,7 @@ This is NOT part of the $770M campaign budget. The campaign is just: get votes +
 
 **Coordination**: Shared board members, information sharing agreements, but legally separate for compliance.
 
-### Nonprofit Compliance Checklist
+#### Nonprofit Compliance Checklist
 
 For foundations/donors to feel comfortable funding:
 
@@ -172,11 +172,11 @@ For foundations/donors to feel comfortable funding:
 ✅ **Transparent governance**: Independent board, public reporting
 ✅ **Tax-deductible**: Donations are fully tax-deductible
 
-## Funding Model Comparison: What Actually Works
+### Funding Model Comparison: What Actually Works
 
 To understand realistic funding strategies, we examined historical evidence from similar large-scale campaigns. The data shows distinct patterns in how successful campaigns were funded and scaled:
 
-### Historical Evidence: How Similar Campaigns Were Funded
+#### Historical Evidence: How Similar Campaigns Were Funded
 
 | Campaign | Total Raised | Timeline | Primary Sources | Outcome | Key Lesson |
 |----------|--------------|----------|-----------------|---------|------------|
@@ -191,29 +191,29 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **The pattern:** Advocacy campaigns cost $50M-$200M. Implementation is government-funded. Mega-donors join AFTER proof of concept.
 
-### Model A: Traditional Foundation Grants ($442M)
+#### Model A: Traditional Foundation Grants ($442M)
 
-#### How it would work
+##### How it would work
 
 - Approach Gates, Wellcome Trust, Open Society, Chan Zuckerberg Initiative
 - Pitch: "Fund dFDA/Wishocracy platforms as civic infrastructure"
 - Timeline: 3-5 years of grant applications and pilot programs
 - Structure: 501(c)(3) nonprofit with restricted grants
 
-#### Evidence
+##### Evidence
 
 - Largest foundation-funded advocacy: Marriage equality ($153M over 11 years)
 - Polio: $500M over 20 years before Gates joined with $2B
 - Charter schools: $1.8B over 30 years (Walton + Gates)
 
-#### Pros
+##### Pros
 
 - Tax-deductible donations
 - Mission-aligned with health foundations
 - Credibility with policymakers
 - No investor returns required
 
-#### Cons
+##### Cons
 
 - Too slow (11+ years for $153M)
 - $442M unrealistic for political campaign infrastructure
@@ -225,23 +225,23 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Verdict:** ❌ Too slow, wrong tool for political campaign
 
-### Model B: VICTORY Bonds (Traditional Securities) ($500M-$1B)
+#### Model B: VICTORY Bonds (Traditional Securities) ($500M-$1B)
 
-#### How it would work
+##### How it would work
 
 - Issue registered securities offering 270% annual returns from treaty revenue
 - Target accredited investors, family offices, hedge funds
 - SEC-compliant offering (Reg D, Reg A+, or public offering)
 - Returns paid from treaty appropriations ($27B/year × 10% = $2.7B/year)
 
-#### Evidence
+##### Evidence
 
 - SPACs raised $245B in 2020-2021 (average: $300M-$500M each)
 - High-yield bonds regularly raise $100M-$1B
 - Renaissance Technologies: 66% annual returns attracted $10B+ AUM
 - Investors chase extraordinary returns when credible
 
-#### Pros
+##### Pros
 
 - 270% returns beat any alternative investment
 - Clear exit strategy (treaty passes = perpetual income)
@@ -249,7 +249,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - Institutional investors comfortable with structure
 - Can raise $500M-$1B if credible
 
-#### Cons
+##### Cons
 
 - SEC compliance expensive ($5M-$10M legal)
 - Accredited investor limits (until public offering)
@@ -261,16 +261,16 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Verdict:** ✅ Viable but needs proof first (Phase 2-3, not Phase 1)
 
-### Model C: Security Token Offering / Crypto ($100M-$500M)
+#### Model C: Security Token Offering / Crypto ($100M-$500M)
 
-#### How it would work
+##### How it would work
 
 - Tokenize VICTORY bonds as security tokens
 - Trade on security token exchanges (tZERO, INX)
 - Smart contracts for automatic dividend distribution
 - Global investor access, faster liquidity
 
-#### Evidence
+##### Evidence
 
 - 2017: $5.6B raised across 875 ICOs (average: $6.4M each)
 - 2018: $21.5B raised across 1,258 ICOs (average: $17M each)
@@ -278,7 +278,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - tZero: $134M security token offering (2018)
 - Current crypto winter: 90% down from peak, regulatory uncertainty
 
-#### Pros
+##### Pros
 
 - Can raise $100M+ in weeks (not years)
 - Global investor access (not just US accredited investors)
@@ -286,7 +286,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - Secondary market liquidity from day one
 - Lower regulatory costs than traditional securities
 
-#### Cons
+##### Cons
 
 - Crypto winter: investors burned by scams
 - SEC treating most tokens as securities anyway
@@ -298,29 +298,29 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Verdict:** 🟡 Fast but risky. Good for seed round ($10M-50M), dangerous at scale.
 
-### Model D: Litigation Finance / Contingency Model ($0 upfront)
+#### Model D: Litigation Finance / Contingency Model ($0 upfront)
 
-#### How it would work
+##### How it would work
 
 - Legal/lobbying firms work on contingency
 - Get paid ONLY if treaty passes
 - Payment: 15-25% of first-year treaty revenue or VICTORY bonds
 - Similar to tobacco settlement attorneys (paid $2.8B from $206B settlement)
 
-#### Evidence
+##### Evidence
 
 - Tobacco Master Settlement: $0 upfront, attorneys got $2.8B (15% of $206B)
 - Burford Capital: $2B market cap funding lawsuits for 20-40% of winnings
 - Contingent lobbying exists but rare (usually success fees on top of retainer)
 
-#### Pros
+##### Pros
 
 - $0 upfront capital required
 - Lawyers/lobbyists highly motivated to win
 - Proven model in litigation finance
 - Aligns incentives perfectly
 
-#### Cons
+##### Cons
 
 - Requires clear legal claim (litigation) or regulatory outcome (lobbying)
 - Most top law firms won't work pure contingency for political campaigns
@@ -331,16 +331,16 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Verdict:** 🟡 Partial solution. Use contingent fees to reduce upfront costs, not eliminate them.
 
-### Model E: Defense Contractor Conversion (Most Realistic?)
+#### Model E: Defense Contractor Conversion (Most Realistic?)
 
-#### How it would work
+##### How it would work
 
 - Pitch VICTORY bonds directly to defense contractors
 - They already spend $150M/year on lobbying
 - Offer: Keep 99% of defense budget ($2.7T × 99% = $2.67T) PLUS earn 270% on the 1% redirected
 - They just redirect existing lobbying budget from "maximize defense spending" to "pass 1% treaty"
 
-#### Evidence
+##### Evidence
 
 - Lockheed Martin lobbying: $13M/year
 - Boeing lobbying: $15M/year
@@ -348,7 +348,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - Total defense lobbying: ~$150M/year
 - They get $1,813 back per $1 spent lobbying (proven ROI model)
 
-#### Calculation
+##### Calculation
 
 - Current: Spend $150M lobbying → Get $750B contracts → 15% margins = $112B profit
 - New model: Spend $150M lobbying for treaty → Keep $2.67T defense budget (99%) + earn 270% on $27B health budget
@@ -356,7 +356,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - They get NEW income stream: $27B × 10% = $2.7B/year to VICTORY bondholders
 - Plus they can BUY VICTORY bonds with their existing profits
 
-#### Pros
+##### Pros
 
 - They already have the lobbying infrastructure
 - They already spend $150M/year lobbying
@@ -365,7 +365,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - They ADD 270% returns on top of defense profits
 - Economically dominant strategy for them
 
-#### Cons
+##### Cons
 
 - Requires convincing defense CEOs to switch sides
 - Potential backlash from defense hawks
@@ -376,11 +376,11 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Verdict:** ✅✅ **Most realistic**. They're already spending the money. We just need to redirect it.
 
-### Model F: Phased Hybrid Approach (Evidence-Based)
+#### Model F: Phased Hybrid Approach (Evidence-Based)
 
-#### Based on what actually worked historically
+##### Based on what actually worked historically
 
-##### Phase 1: Pilot ($10-20M, Years 1-2)
+###### Phase 1: Pilot ($10-20M, Years 1-2)
 
 - **Source**: Angel investors (tech billionaires, crypto whales)
 - **Evidence**: Every successful campaign started with small proof
@@ -406,15 +406,15 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Total philanthropic need: $110-220M over 5 years (NOT $942M)**
 
-### Recommended Strategy: Defense Contractor Pivot + Phased VICTORY Bonds
+#### Recommended Strategy: Defense Contractor Pivot + Phased VICTORY Bonds
 
-#### Year 1-2: Seed ($10-20M)
+##### Year 1-2: Seed ($10-20M)
 
 - Crypto whales: $5-10M (fast, mission-aligned)
 - Tech billionaires: $5-10M (Musk, Thiel, Andreessen - contrarian bets)
 - Structure: SAFE notes convertible to VICTORY bonds
 
-##### Year 3-4: Series A ($50-100M)
+###### Year 3-4: Series A ($50-100M)
 
 - Defense contractors: Redirect $50M of existing lobbying budget
 - VICTORY bonds (Reg D): $50M from family offices, hedge funds
@@ -432,7 +432,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - VICTORY bondholders: $2.7B/year (10%)
 - Everyone gets rich, nobody dies
 
-#### Why this works
+##### Why this works
 
 - Matches historical evidence (pilot → proof → scale)
 - Defense contractors self-fund using existing budgets
@@ -440,11 +440,11 @@ To understand realistic funding strategies, we examined historical evidence from
 - Initial philanthropic seed: $10-20M from angels
 - Government funds implementation (like PEPFAR, not philanthropy)
 
-### The Virtuous Cycle: Votes Drive Bond Sales
+#### The Virtuous Cycle: Votes Drive Bond Sales
 
 The ~$1B VICTORY bond campaign creates a self-reinforcing cycle:
 
-#### The Cycle
+##### The Cycle
 
 1. **Sell VICTORY bonds** → Fund referendum ads and lobbying
 2. **Get votes** → Generate attention and legitimacy (1M → 100M → 208M votes)
@@ -455,7 +455,7 @@ The ~$1B VICTORY bond campaign creates a self-reinforcing cycle:
 
 **Funding source: 100% VICTORY Social Impact Bonds ($1B total)**
 
-##### Why only bonds (not donations)?
+###### Why only bonds (not donations)?
 
 - **Speed**: Can raise $1B in 12-24 months (vs 10+ years for donations)
 - **Legal freedom**: Can fund political lobbying, Super PACs, opposition research
@@ -468,7 +468,7 @@ The ~$1B VICTORY bond campaign creates a self-reinforcing cycle:
 - But we're not COUNTING on donations - bonds cover everything
 - Historical comparison: Marriage equality raised $153M over 11 years. We're raising $1B in 1-2 years via bonds.
 
-#### Timeline milestones
+##### Timeline milestones
 
 - 1M votes: Prove the model works → Easier to sell Series A bonds
 - 100M votes: Demonstrate massive political will → Easier to sell Series B bonds
@@ -478,15 +478,15 @@ The ~$1B VICTORY bond campaign creates a self-reinforcing cycle:
 
 <!-- BEGIN CONTENT MERGED FROM economics/fundraising/fundraising-strategy.md -->
 
-## Hybrid Communication Strategy: Simple Targets, Sophisticated Mechanics
+### Hybrid Communication Strategy: Simple Targets, Sophisticated Mechanics
 
-### The Marketing Message (The "Hook")
+#### The Marketing Message (The "Hook")
 
 For marketing and high-level communications, lead with a simple, audacious target:
 
 > **"The model targets returns superior to the world's most elite hedge funds (~{{< var victory_bond_annual_return_pct >}} annualized). The financial model is governed by a simple principle: investor payouts never exceed [50% of income](../economics/health-savings-sharing-model.qmd), guaranteeing the mission is always protected."**
 
-### The Backend Engine (Market-Driven Pricing)
+#### The Backend Engine (Market-Driven Pricing)
 
 For sophisticated investors, use efficient market mechanisms:
 
@@ -494,7 +494,7 @@ For sophisticated investors, use efficient market mechanisms:
 - Market-based price discovery for optimal capital efficiency
 - Smart contract escrows with automated refunds
 
-## De-Risking with Assurance Contracts
+### De-Risking with Assurance Contracts
 
 The primary risk elimination mechanism:
 
@@ -507,66 +507,66 @@ The primary risk elimination mechanism:
 
 <!-- BEGIN CONTENT MERGED FROM economics/fundraising/fundraising-whale-outreach.md -->
 
-## Whale & Billionaire Targeting Strategy
+### Whale & Billionaire Targeting Strategy
 
-### Why Target Whales
+#### Why Target Whales
 
-#### Speed vs. Scale Trade-off
+##### Speed vs. Scale Trade-off
 
 - 1 meeting → $50M check vs. 50,000 meetings → $50M in small checks
 - 6-12 months vs. 18+ months timeline
 - Lower legal complexity with fewer investors
 
-#### Unit Economics Advantage
+##### Unit Economics Advantage
 
 - Higher success probability with mission-aligned billionaires
 - Larger check sizes ($10-100M vs. $1-10K)
 
-## Target Categories & Prospects
+### Target Categories & Prospects
 
-### Category 1: Crypto Whales & Protocol Treasuries ($500M-1B potential)
+#### Category 1: Crypto Whales & Protocol Treasuries ($500M-1B potential)
 
-#### Individual Crypto Billionaires
+##### Individual Crypto Billionaires
 
 - Vitalik Buterin (Ethereum) - Mission-aligned, understands governance
 - Brian Armstrong (Coinbase) - [Health tech investor](../references.qmd#brian-armstrong-health-tech-investor)
 - Changpeng Zhao (Binance) - Global reach, massive liquidity
 
-#### Protocol Treasuries (DAO-to-DAO)
+##### Protocol Treasuries (DAO-to-DAO)
 
 - Uniswap Labs ([$4B+ treasury](../references.qmd#uniswap-labs-treasury-size)) - Understands DAO governance
 - MakerDAO ([$8B+ treasury](../references.qmd#makerdao-scale)) - Health-aligned investing
 - Compound Treasury - DeFi protocol experience
 
-### Category 2: Health & Pharma Billionaires ($750M-1.5B potential)
+#### Category 2: Health & Pharma Billionaires ($750M-1.5B potential)
 
-#### Pharma Executives
+##### Pharma Executives
 
 - Albert Bourla (Pfizer CEO) - Would get 2-5X more R&D funding
 - Pascal Soriot (AstraZeneca CEO) - Global operations
 - Emma Walmsley (GSK) - Vaccine/global health focus
 
-#### Health Tech Billionaires
+##### Health Tech Billionaires
 
 - Patrick Soon-Shiong (NantHealth, $7B) - [Cancer research focus](../references.qmd#patrick-soon-shiong-cancer-research-focus)
 - Anne Wojcicki (23andMe) - Genomics, patient data
 
-### Category 3: Mission-Aligned Mega-Foundations ($500M-1B potential)
+#### Category 3: Mission-Aligned Mega-Foundations ($500M-1B potential)
 
-#### Health-Focused Foundations
+##### Health-Focused Foundations
 
 - Gates Foundation ([$70B endowment](../references.qmd#gates-foundation-endowment-size)) - Global health mandate
 - Chan Zuckerberg Initiative ([$45B](../references.qmd#chan-zuckerberg-initiative-funding)) - Science/health focus
 - Wellcome Trust ([$38B](../references.qmd#wellcome-trust-endowment-size)) - Medical research
 
-#### Effective Altruism & Longevity
+##### Effective Altruism & Longevity
 
 - Open Philanthropy (Dustin Moskovitz) - EA cause prioritization
 - Schmidt Futures (Eric Schmidt) - Technology + health
 
-## Outreach Templates
+### Outreach Templates
 
-### Template 1: Crypto Whales (Governance Angle)
+#### Template 1: Crypto Whales (Governance Angle)
 
 **Subject:** Invitation to influence governance of {{< var treaty_annual_funding >}} health treasury (Bitcoin-level impact)
 
@@ -574,7 +574,7 @@ The primary risk elimination mechanism:
 
 This isn't just an investment - it's a chance to influence the direction of more capital than the NIH budget toward curing diseases through [80X more efficient](../references.qmd#recovery-trial-{{< var trial_cost_reduction_factor >}}×-cost-reduction) decentralized trials."
 
-### Template 2: Health Billionaires (Industry Advantage)
+#### Template 2: Health Billionaires (Industry Advantage)
 
 **Subject:** 2-5X your R&D budget (backed by government treaties)
 
@@ -582,7 +582,7 @@ This isn't just an investment - it's a chance to influence the direction of more
 
 For [Company], this means 2-5X more R&D funding for the same work you're already doing, plus the opportunity to influence priority areas."
 
-### Template 3: Foundations (Mission Multiplication)
+#### Template 3: Foundations (Mission Multiplication)
 
 **Subject:** 10X your health impact without additional donations
 
@@ -594,9 +594,9 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 <!-- BEGIN CONTENT MERGED FROM economics/fundraising/fundraising-budget-breakdown.md -->
 
-## Detailed Budget Breakdown
+### Detailed Budget Breakdown
 
-### Phase 1: Seed ($250M - $400M)
+#### Phase 1: Seed ($250M - $400M)
 
 | Category                               | Lower Bound | Upper Bound | Justification                                                  |
 | :------------------------------------- | :---------- | :---------- | :------------------------------------------------------------- |
@@ -607,7 +607,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 | **Referendum Points System**           | $5M         | $10M        | Infrastructure for non-financial incentives                    |
 | **Contingency**                        | $45M        | $90M        | 20-30% buffer for high-uncertainty policy initiative           |
 
-### Phase 2: Series A ($500M - $1B)
+#### Phase 2: Series A ($500M - $1B)
 
 | Category                                   | Lower Bound | Upper Bound | Pay-for-Success Model                                        |
 | :----------------------------------------- | :---------- | :---------- | :----------------------------------------------------------- |
@@ -617,7 +617,7 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 | **Global Legal Expansion**                 | $40M        | $80M        | Success-fee-based retainers in all target nations            |
 | **Contingency**                            | $10M        | $70M        | Operational buffer for scaled global initiative              |
 
-### Phase 3: Growth Round ($500M - $1.1B)
+#### Phase 3: Growth Round ($500M - $1.1B)
 
 | Category                               | Lower Bound | Upper Bound | Success-Based Structure                                   |
 | :------------------------------------- | :---------- | :---------- | :-------------------------------------------------------- |
@@ -626,29 +626,29 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 | **Treasury & Governance Launch**       | $100M       | $150M       | Developer bonuses tied to flawless policy recommendation and technical launch for the treasury |
 | **Contingency**                        | $50M        | $100M       | Final buffer for most critical policy advancement phase   |
 
-## Bottom-Up Budget Justification
+### Bottom-Up Budget Justification
 
-### Operations Budget
+#### Operations Budget
 
 - 20-person team at $250k/year fully-loaded cost
 - 2-year runway for seed phase
 - Heavy equity/token compensation to align incentives
 
-### Platform Development
+#### Platform Development
 
 - 50-person engineering team/contractor budget
 - 3 independent security audits ($5M)
 - Global cloud infrastructure ($10M)
 - Compliance features (GDPR, etc.)
 
-### Legal & Policy Engagement
+#### Legal & Policy Engagement
 
 - 5 top-tier global law firms ($5M/year each)
 - 3 policy advocacy and government consultation firms ($5M/year each)
 - 2-year retainer for pilot phase
 - Success fees are structured to be aligned with the eventual creation of government-issued VICTORY Social Impact Bonds
 
-### Public Engagement & Policy Education Initiatives
+#### Public Engagement & Policy Education Initiatives
 
 - Public education and civic engagement initiatives replicated in 2 key pilot regions for Phase 1
 - Scaled to 5-10 G7 nations for Phase 2 public awareness initiatives
@@ -656,91 +656,91 @@ This uses the same proven model that created [$7T in fossil fuel subsidies](../r
 
 <!-- END CONTENT MERGED FROM economics/fundraising/fundraising-budget-breakdown.md -->
 
-## Legal Structures for Large Investments
+### Legal Structures for Large Investments
 
-### Option 1: SAFT (Simple Agreement for Future Tokens)
+#### Option 1: SAFT (Simple Agreement for Future Tokens)
 
 - **Best for:** Crypto whales who understand token mechanics
 - **Timeline:** 2-4 weeks to close
 - **Minimum:** $5M investment
 
-### Option 2: Convertible Note
+#### Option 2: Convertible Note
 
 - **Best for:** Traditional investors/foundations
 - **Structure:** Debt that converts to governance tokens
 - **Timeline:** 4-8 weeks to close
 - **Minimum:** $10M investment
 
-### Option 3: Series Seed Equity
+#### Option 3: Series Seed Equity
 
 - **Best for:** VCs and institutional investors
 - **Timeline:** 8-12 weeks to close
 - **Minimum:** $25M investment
 
-### Option 4: Revenue Share Agreement
+#### Option 4: Revenue Share Agreement
 
 - **Best for:** Conservative institutions
 - **Structure:** Fixed % of treaty inflows
 - **Timeline:** 6-10 weeks to close
 - **Minimum:** $50M investment
 
-## Execution Timeline
+### Execution Timeline
 
-### Month 1-2: List Building & Warm Intros
+#### Month 1-2: List Building & Warm Intros
 
 - Finalize top 100 target list with contact information
 - Secure warm introductions through mutual connections
 - Prepare legal structures for different investor types
 
-### Month 3-4: Direct Outreach Wave 1 (Top 25 targets)
+#### Month 3-4: Direct Outreach Wave 1 (Top 25 targets)
 
 - Send personalized outreach to highest-probability targets
 - Target: 5-10 serious conversations, 2-3 term sheets
 
-### Month 5-6: Closing Wave 1 ($150-300M)
+#### Month 5-6: Closing Wave 1 ($150-300M)
 
 - Close first 3-5 major investors
 - Use social proof from Wave 1 for Wave 2 outreach
 - Target: $150-300M closed
 
-### Month 7-9: Outreach Wave 2 (Next 50 targets)
+#### Month 7-9: Outreach Wave 2 (Next 50 targets)
 
 - Leverage Wave 1 investors for introductions
 - Target: 8-12 serious conversations, 5-8 term sheets
 
-### Month 10-12: Closing Wave 2 ($400M-1B)
+#### Month 10-12: Closing Wave 2 ($400M-1B)
 
 - Close remaining funding to reach $500M-1.3B total
 - Target: Total raise of $1-2.5B
 
-## Success Metrics
+### Success Metrics
 
 - **Month 3:** 25 outreach attempts, 10 meetings scheduled
 - **Month 6:** $250M committed, 5 investors closed
 - **Month 9:** $500M committed, 10 investors closed
 - **Month 12:** $1B+ committed, 15+ investors closed
 
-## Risk Mitigation
+### Risk Mitigation
 
-### Regulatory Risk
+#### Regulatory Risk
 
 - Use established legal structures (SAFTs, convertibles)
 - Engage top-tier securities lawyers from day one
 - Structure as utility tokens, not investment contracts
 
-### Market Risk
+#### Market Risk
 
 - Focus on mission-aligned investors, not pure profit seekers
 - Create vesting schedules to prevent quick flips
 - Build in treasury protections against volatility
 
-### Execution Risk
+#### Execution Risk
 
 - Over-recruit targets (100 targets for 20 closes)
 - Multiple legal structures for different preferences
 - Clear milestones with investor updates
 
-## The Economic Reality
+### The Economic Reality
 
 This isn't traditional fundraising; it's strategic policy activation. The approach is inspired by the effectiveness of robust public and diplomatic engagement in shaping policy, where focused efforts can unlock significant societal benefits, similar to how focused advocacy in other sectors can lead to substantial economic shifts.
 

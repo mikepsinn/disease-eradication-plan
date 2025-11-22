@@ -3,13 +3,13 @@ title: Automated Engagement Tracking Workflow
 description: CRM system using Airtable for automated lead capture, classification, nurturing, and conversion tracking.
 ---
 
-# Automated Engagement Tracking Workflow
+## Automated Engagement Tracking Workflow
 
 **Purpose:** Never lose a lead, never miss a follow-up, never forget a conversation
 **System:** Airtable + Email + Calendar + Automation
 **Goal:** Turn every interaction into a tracked, measurable opportunity to advance the mission
 
-## The Philosophy: CRM as a Second Brain
+### The Philosophy: CRM as a Second Brain
 
 Most movements fail not because the idea is bad, but because they lose track of people. Someone emails you interest in helping. You mean to respond. Life happens. Two weeks later, they've moved on.
 
@@ -21,42 +21,42 @@ This system makes that impossible. Every person who touches your organization ge
 
 Think of it as a conveyor belt for converting interest into impact.
 
-## The Core Workflow
+### The Core Workflow
 
-### Step 1: Capture (Zero Manual Entry)
+#### Step 1: Capture (Zero Manual Entry)
 
-#### Every engagement creates a record automatically
+##### Every engagement creates a record automatically
 
-#### Source: Website Form Submission
+##### Source: Website Form Submission
 
 - User submits referendum vote → Airtable record created in `Global Referendum`
 - Automation creates linked record in `Personnel Roster`
 - Automation creates record in `Engagements` with Type = "Enlistment"
 
-#### Source: Email to <info@warondisease.com>
+##### Source: Email to <info@warondisease.com>
 
 - Use Zapier/Make.com to parse incoming emails
 - Auto-create `Personnel` record if new email
 - Auto-create `Engagement` record with Type = "Email" and email body as Summary
 
-#### Source: Meeting/Call
+##### Source: Meeting/Call
 
 - Use Calendly webhook when meeting booked
 - Auto-create `Personnel` record if new
 - Auto-create `Engagement` record with Type = "Meeting" and Follow-up Date = 7 days later
 
-#### Source: Social Media DM
+##### Source: Social Media DM
 
 - Harder to automate, but possible with APIs
 - Manual fallback: Daily 5-minute sweep to log DMs
 
 **The Rule:** If it's not in Airtable, it didn't happen.
 
-### Step 2: Classify (Automatic Tagging)
+#### Step 2: Classify (Automatic Tagging)
 
 When an engagement is created, automatically classify the person:
 
-#### Engagement Types → Personnel Status
+##### Engagement Types → Personnel Status
 
 ```
 Engagement Type          →  Personnel Status
@@ -75,7 +75,7 @@ Partnership Inquiry      →  Prospect (Partnership tag)
 - Condition: Check engagement type
 - Action: Update linked `Personnel` record Status field
 
-### Step 3: Route (Assign Ownership)
+#### Step 3: Route (Assign Ownership)
 
 Not all leads are equal. Route to the right person:
 
@@ -97,15 +97,15 @@ Not all leads are equal. Route to the right person:
   - Send email to <founder@warondisease.com>
   - Create calendar reminder in 4 hours if not responded
 
-### Step 4: Nurture (Automated Follow-Up Sequences)
+#### Step 4: Nurture (Automated Follow-Up Sequences)
 
 People need multiple touches before they act. Build sequences:
 
-#### Sequence 1: Referendum Voter → Active Recruiter
+##### Sequence 1: Referendum Voter → Active Recruiter
 
 **Goal:** Convert passive voter into active promoter
 
-#### Timeline
+##### Timeline
 
 - **Day 0:** Vote submitted
   - Send thank you email with referral link
@@ -143,11 +143,11 @@ Action 6: Wait 23 days
 Action 7: Send re-engagement email
 ```
 
-#### Sequence 2: VICTORY Bond Prospect → Committed Investor
+##### Sequence 2: VICTORY Bond Prospect → Committed Investor
 
 **Goal:** Move from "interesting" to "wired the money"
 
-#### Timeline
+##### Timeline
 
 - **Hour 0:** Interest form submitted
   - Send personal email from founder
@@ -172,17 +172,17 @@ Action 7: Send re-engagement email
 - **Day 30:** Final touch
   - "We're moving forward. Last chance to get in at this valuation."
 
-#### Notes
+##### Notes
 
 - High-touch, not automated blast
 - Each email should feel personal
 - Log EVERYTHING in Engagements table
 
-#### Sequence 3: Partnership Inquiry → Signed MOU
+##### Sequence 3: Partnership Inquiry → Signed MOU
 
 **Goal:** Organizations that can amplify the mission
 
-#### Timeline
+##### Timeline
 
 - **Day 0:** Inquiry received
   - Send partnership deck
@@ -205,11 +205,11 @@ Action 7: Send re-engagement email
 - **Day 21:** If no movement
   - "Checking in - still interested in [specific collaboration]?"
 
-### Step 5: Measure (Conversion Tracking)
+#### Step 5: Measure (Conversion Tracking)
 
 Track conversion rates at each step:
 
-#### Funnel: Website Visitor → Active Contributor
+##### Funnel: Website Visitor → Active Contributor
 
 ```
 Stage                     Target Conversion   How to Track
@@ -226,7 +226,7 @@ Website Visit               100%             Google Analytics
 
 **Implementation:** Create Airtable formulas to calculate these
 
-#### Formula Example: "Conversion to Recruiter"
+##### Formula Example: "Conversion to Recruiter"
 
 In `Personnel Roster` table, add formula field:
 
@@ -242,11 +242,11 @@ IF(
 )
 ```
 
-### Step 6: Escalate (Alert on Anomalies)
+#### Step 6: Escalate (Alert on Anomalies)
 
 Watch for patterns that need human intervention:
 
-#### Alert Triggers
+##### Alert Triggers
 
 1. **High-Value Lead Going Cold**
    - Condition: Investment Inquiry > $50K + No follow-up engagement in 48 hours
@@ -266,30 +266,30 @@ Watch for patterns that need human intervention:
 
 **Implementation:** Airtable automations with conditional logic
 
-## Advanced: Email Automation Integration
+### Advanced: Email Automation Integration
 
 For sophisticated email sequences, integrate with:
 
-### Option A: Airtable Native Email (Basic)
+#### Option A: Airtable Native Email (Basic)
 
 - Pros: Simple, built-in
 - Cons: Limited styling, no A/B testing, manual unsubscribe handling
 
-### Option B: Airtable + MailerLite/Mailchimp (Better)
+#### Option B: Airtable + MailerLite/Mailchimp (Better)
 
 - Pros: Professional emails, automation, unsubscribe management
 - Cons: Extra cost ($10-50/month), requires Zapier integration
 
-### Option C: Airtable + Customer.io or Intercom (Best)
+#### Option C: Airtable + Customer.io or Intercom (Best)
 
 - Pros: Sophisticated triggers, behavior-based sequences, analytics
 - Cons: Expensive ($100-500/month), more complex setup
 
 **Recommended for Pre-Seed:** Start with Option A, graduate to Option B at 1,000+ contacts.
 
-## The Daily Workflow for Team
+### The Daily Workflow for Team
 
-### Morning Routine (15 minutes)
+#### Morning Routine (15 minutes)
 
 1. **Open "Today's Follow-Ups" view**
    - Filter: `Engagements` where `Follow-up Date` = Today
@@ -303,7 +303,7 @@ For sophisticated email sequences, integrate with:
    - Filter: `Global Referendum` where Verification Status = "Pending"
    - Verify emails, mark as Verified or flag as fraud
 
-### Weekly Routine (30 minutes)
+#### Weekly Routine (30 minutes)
 
 1. **Metrics Review**
    - Total votes this week vs. last week
@@ -321,9 +321,9 @@ For sophisticated email sequences, integrate with:
    - Fix broken links between tables
    - Archive dead leads (Status → Inactive)
 
-## Templates: Copy-Paste Automation Configs
+### Templates: Copy-Paste Automation Configs
 
-### Template 1: New Vote → Thank You Email
+#### Template 1: New Vote → Thank You Email
 
 ```
 AUTOMATION CONFIG
@@ -357,7 +357,7 @@ Actions:
        - The DIH Team
 ```
 
-### Template 2: High-Value Investment Lead → Founder Alert
+#### Template 2: High-Value Investment Lead → Founder Alert
 
 ```
 AUTOMATION CONFIG
@@ -392,7 +392,7 @@ Actions:
      Description: If not responded by then, URGENT escalation
 ```
 
-### Template 3: 7-Day Inactive Voter → Re-engagement
+#### Template 3: 7-Day Inactive Voter → Re-engagement
 
 ```
 AUTOMATION CONFIG
@@ -429,34 +429,34 @@ Actions:
        Will you?
 ```
 
-## Common Pitfalls to Avoid
+### Common Pitfalls to Avoid
 
-### 1. Over-Automation
+#### 1. Over-Automation
 
 **Problem:** Sending too many emails, feeling spammy
 **Solution:** Cap at 1 email/week per person unless they engage
 
-### 2. Under-Tracking
+#### 2. Under-Tracking
 
 **Problem:** Having conversations outside Airtable, losing follow-ups
 **Solution:** "If it's not logged, it didn't happen" rule
 
-### 3. No Segmentation
+#### 3. No Segmentation
 
 **Problem:** Sending same message to $10 donor and $100K investor
 **Solution:** Create segments based on engagement value/type
 
-### 4. Ignoring Unsubscribes
+#### 4. Ignoring Unsubscribes
 
 **Problem:** Legal violations, pissed-off people
 **Solution:** Honor unsubscribes immediately, it's the law
 
-### 5. Manual Follow-Ups
+#### 5. Manual Follow-Ups
 
 **Problem:** Relying on memory = guaranteed drops
 **Solution:** Set Follow-up Date on EVERY engagement
 
-## Success Metrics
+### Success Metrics
 
 Track these weekly:
 
@@ -469,7 +469,7 @@ Track these weekly:
 | Avg Time to First Response | <24hrs | Engagement created → first reply |
 | Lead Leak Rate | <5% | Inquiries with no engagement record |
 
-## Next-Level: AI-Powered Engagement
+### Next-Level: AI-Powered Engagement
 
 Once you have 1,000+ engagements logged, you can train AI to:
 
@@ -490,7 +490,7 @@ Once you have 1,000+ engagements logged, you can train AI to:
 **Cost:** ~$50/month for OpenAI API at this scale
 **ROI:** 10x time savings on personalization
 
-## Conclusion
+### Conclusion
 
 This engagement tracking workflow ensures **zero people fall through the cracks**.
 

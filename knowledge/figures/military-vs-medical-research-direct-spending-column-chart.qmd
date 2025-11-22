@@ -17,12 +17,12 @@ from dih_models.plotting.chart_style import (
     get_presentation_font_sizes,
     add_png_metadata, get_figure_output_path)
 
-# Setup styling
+## Setup styling
 
 setup_chart_style(style='light', dpi=150)
 FONT_SIZES = get_presentation_font_sizes()
 
-# Create figure
+## Create figure
 
 fig, ax = plt.subplots(figsize=(12, 12))
 
@@ -32,7 +32,7 @@ colors1 = [COLOR_BLACK, PATTERN_DIAGONAL, PATTERN_HORIZONTAL]
 
 bars1 = ax.bar(categories1, values1, color=colors1, edgecolor=COLOR_WHITE, linewidth=3)
 
-# Labels - no decimals
+## Labels - no decimals
 
 labels1 = ['$3T', '$11B', '$6B']
 for bar, label, value in zip(bars1, labels1, values1):
@@ -61,11 +61,11 @@ add_watermark(fig)
 
 output_path = get_figure_output_path('military-vs-medical-research-direct-spending-column-chart.png')
 
-# Save the figure
+## Save the figure
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
-# Add metadata for attribution
+## Add metadata for attribution
 
 add_png_metadata(output_path, title="Military Vs Medical Research Direct Spending Column Chart")
 plt.show()

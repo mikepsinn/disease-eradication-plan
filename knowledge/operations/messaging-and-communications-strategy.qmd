@@ -9,9 +9,9 @@ tags:
   - sentiment analysis
 ---
 
-# How to Talk About Not Dying Without Sounding Insane
+## How to Talk About Not Dying Without Sounding Insane
 
-## Why This Matters
+### Why This Matters
 
 The dFDA needs money and trial participants. To get both, you need to communicate in ways that:
 
@@ -21,7 +21,7 @@ The dFDA needs money and trial participants. To get both, you need to communicat
 
 Understanding what people actually think about longevity and health research lets you craft messages that work instead of messages that sound good in meetings.
 
-## What "Value" Means Here
+### What "Value" Means Here
 
 Three types of returns:
 
@@ -29,41 +29,41 @@ Three types of returns:
 - **Positioning:** Better reputation, fewer scandals, stronger partnerships
 - **Mission:** Actual acceleration of medical progress (the point of all this)
 
-## The Work (Two Phases)
+### The Work (Two Phases)
 
-### Phase 1: Figure Out What People Actually Think
+#### Phase 1: Figure Out What People Actually Think
 
-#### What you're doing
+##### What you're doing
 
 - Find out what people hope for, fear, and misunderstand about longevity, decentralized science, and AI in medicine
 - Identify who influences these opinions and where conversations happen
 - Group audiences by what they believe (not what you want them to believe)
 
-#### What you get
+##### What you get
 
 - **Sentiment Analysis Report:** What people think and why
 - **Narrative Map:** Who's saying what, where, and to whom
 - **Audience Personas:** Different groups with different concerns
 
-### Phase 2: Say Things That Work
+#### Phase 2: Say Things That Work
 
-#### What you're doing
+##### What you're doing
 
 - Create messaging that addresses real concerns (found in Phase 1)
 - Test different messages on different audiences
 - Give the team consistent talking points so you don't sound like seven different organizations
 
-#### What you get
+##### What you get
 
 - **Messaging Guide:** Official positioning, key narratives, how to talk about controversial stuff
 - **Tested content:** A/B tested ads, landing pages, social posts that actually convert
 - **Metrics:** Conversion rates, engagement, referral performance (K-factor > 1, cost per acquisition < $0.50)
 
-## How to Measure If This Works
+### How to Measure If This Works
 
 Track what matters. Ignore vanity metrics.
 
-### What to Track and Why
+#### What to Track and Why
 
 | What You Care About | How You Measure It |
 | --- | --- |
@@ -73,56 +73,56 @@ Track what matters. Ignore vanity metrics.
 | **Regulatory Buy-In** | • Positive media/policy sentiment<br>• Faster regulatory feedback<br>• Invitations to consult on policy |
 | **Getting Talent** | • More qualified applicants<br>• Higher offer acceptance rate<br>• Better reputation as employer |
 
-### Measure Before You Start
+#### Measure Before You Start
 
 Measure current performance first. Then deploy new messaging. Track changes. Attribute some portion to this project.
 
 Don't skip the baseline. Otherwise you're just guessing.
 
-### The Money Math
+#### The Money Math
 
 Connect metrics to dollars.
 
-#### Getting Funding
+##### Getting Funding
 
 Good messaging = more successful grant proposals and investor pitches.
 
 - If a {{< var dfda_opex_community >}} grant gets approved and messaging contributed 25% to success, that's {{< var recovery_trial_cost_per_patient >}},000 in value
 - Public referendum support = de-risking for investors = higher likelihood of funding
 
-#### Getting Trial Participants (Bigger Long-Term Value)
+##### Getting Trial Participants (Bigger Long-Term Value)
 
 This is where the real money is.
 
 - **Lower recruiting costs:** Clinical trial participant acquisition costs {{< var recovery_trial_cost_per_patient >}} to $7,500 each. A 15-20% reduction from better messaging = massive savings
 - **Faster recruiting:** Trial delays cost $600K-$8M per day. Recruit faster = save millions, get treatments to market sooner
 
-#### Other Money Stuff
+##### Other Money Stuff
 
 - Lower recruiter fees for hiring
 - Faster time-to-hire for talent
 
-### The Non-Money Value (Still Important)
+#### The Non-Money Value (Still Important)
 
 Some benefits don't convert to dollars but matter for survival:
 
-#### Avoiding Disasters
+##### Avoiding Disasters
 
 Address public fears now = prevent backlash later. Reputation damage can kill the whole initiative.
 
-#### Controlling the Narrative
+##### Controlling the Narrative
 
 If you don't define yourself, your critics will. Own the story or become the villain in someone else's.
 
-#### Network Effects
+##### Network Effects
 
 Clear messaging attracts participants, researchers, developers. They attract more. Momentum builds. Or it doesn't.
 
-## Example: The Math on $75K
+### Example: The Math on $75K
 
 **Spend:** $75,000 (sentiment analysis software, surveys, consulting)
 
-### Get (conservative estimates over 12 months)
+#### Get (conservative estimates over 12 months)
 
 1. **Help close a $1M grant** (messaging contributes 20%) = **$**[Primary QALY estimate used]**{{< var dfda_qalys_rd_plus_delay_annual >}}** attributable value
 2. **Successful referendum** = leverage for next funding round (increases probability of success)
@@ -133,7 +133,7 @@ Clear messaging attracts participants, researchers, developers. They attract mor
 
 **ROI:** ($950,000 - $75,000) / $75,000 = **11.67x or 1,167%**
 
-## Summary
+### Summary
 
 Good messaging isn't optional polish. It's core infrastructure.
 

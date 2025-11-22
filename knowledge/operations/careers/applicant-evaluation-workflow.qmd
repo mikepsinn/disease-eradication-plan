@@ -12,11 +12,11 @@ tags:
   - leadership
 ---
 
-# n8n Workflow: Evaluating Supreme Allied Commander Applicants
+## n8n Workflow: Evaluating Supreme Allied Commander Applicants
 
 This document outlines the design for an n8n workflow to automate the evaluation of candidates applying for the **Supreme Allied Commander, War on Disease** role. The goal is to create an efficient, objective screening process that surfaces candidates with both world-class AI/automation skills and the full-stack engineering prowess to build the required systems.
 
-## Workflow Diagram
+### Workflow Diagram
 
 ```mermaid
 graph TD;
@@ -48,26 +48,26 @@ graph TD;
     style F fill:#f9f,stroke:#333,stroke-width:2px
 ```
 
-## Workflow Stages Explained
+### Workflow Stages Explained
 
-### 1. Trigger: New Application Webhook
+#### 1. Trigger: New Application Webhook
 
 - **Tool:** n8n Webhook Node.
 - **Action:** Receives POST request with application data.
 
-### 2. Validate and Parse Form Data
+#### 2. Validate and Parse Form Data
 
 - **Tool:** n8n Code Node.
 - **Action:**
   - Parses JSON data.
   - Validates all required fields and URLs. Invalid submissions are flagged and discarded.
 
-### 3. Initial Triage (Knockout Criteria)
+#### 3. Initial Triage (Knockout Criteria)
 
 - **Tool:** n8n If Node.
 - **Action:** If the GitHub URL is invalid, the candidate is disqualified.
 
-### 4. Parallel AI Evaluation
+#### 4. Parallel AI Evaluation
 
 The core of the workflow, using an LLM to run multiple specialized evaluations.
 
@@ -91,7 +91,7 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
   - **Input:** Text responses for the "AI philosophy" and "technical strategy" questions.
   - **Prompt:** "Analyze the candidate's strategic responses. Score `strategyScore` from 0-10 based on the creativity, feasibility, and detail of their proposed technical plan for the {{< var global_population_activism_threshold_pct >}} mission. Return JSON with the score and justification."
 
-### 5. Aggregate and Calculate Final Score
+#### 5. Aggregate and Calculate Final Score
 
 - **Tool:** n8n Set Node or Code Node.
 - **Action:**
@@ -105,7 +105,7 @@ The core of the workflow, using an LLM to run multiple specialized evaluations.
     - **Strategic Philosophy (10%):** `strategyScore * 1`
   - **Final Score = Weighted Sum (out of 100).**
 
-### 6. Output and Human Review
+#### 6. Output and Human Review
 
 - **Tool:** Google Sheets/Airtable/Postgres Node, Email/Slack Node.
 - **Action:**

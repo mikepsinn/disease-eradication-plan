@@ -21,12 +21,12 @@ from dih_models.parameters import *
 ```
 
 ::: {.callout-note}
-## Academic Preprint
+### Academic Preprint
 
 This document presents a formal quantitative analysis of regulatory mortality costs. For an accessible narrative version of these findings, see [The FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.qmd).
 :::
 
-## Abstract
+### Abstract
 
 This study quantifies the cumulative mortality and morbidity costs associated with the **Unitary Pre-Market Approval (UPMA)** model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of **{{< var efficacy_lag_years >}} years** post-safety verification.
 
@@ -40,13 +40,13 @@ When adjusted for morbidity, the **PRIMARY estimate** burden is **{{< var regula
 
 Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var regulatory_delay_economic_loss >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
 
-## 1. Introduction
+### 1. Introduction
 
 The modern pharmaceutical regulatory paradigm relies on a binary licensure model: a drug is either "safe and effective" (approved) or "unsafe/ineffective" (prohibited). While Phase I trials typically establish safety within {{< var phase_1_safety_duration_years >}} years, the requirement to prove statistical efficacy (Phase II/III) extends the pre-market timeline by an additional **{{< var efficacy_lag_years >}} years** on average.
 
 This study evaluates the **Bifurcated Regulatory Model (BRM)**, defined as "Safety-First / Efficacy-Later", to measure the "Invisible Graveyard": the population that dies during the regulatory latency period between safety verification and final approval.
 
-## 2. Methodology & Data
+### 2. Methodology & Data
 
 We define the Total Mortality Cost ($D_{total}$) as the sum of two distinct variables:
 
@@ -54,12 +54,12 @@ $$
 D_{total} = D_{lag} + D_{void}
 $$ {#eq-total-mortality}
 
-### 2.1 Variable Definitions {#mortality-estimates}
+#### 2.1 Variable Definitions {#mortality-estimates}
 
 - **$D_{lag}$ (Delay Mortality):** Deaths occurring while existing, working drugs are in Phase II/III trials.
 - **$D_{void}$ (Innovation Loss):** Deaths occurring because high regulatory costs prevented the development of potential cures (The "Innovation Tax").
 
-### 2.2 Data Sources & Parameterization
+#### 2.2 Data Sources & Parameterization
 
 1. **Development Timelines:** *Biotechnology Innovation Organization (BIO) Clinical Development Success Rates 2011–2020*.
    - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}} years. Total Time to Market = 10.5 years. **Lag = {{< var efficacy_lag_years >}} Years.**
@@ -78,9 +78,9 @@ $$ {#eq-total-mortality}
    - **VSLY (Value of a Statistical Life Year):** Standardized at **{{< var standard_economic_qaly_value_usd >}}** (consistent with project-wide QALY valuations).
    - *Note:* This represents a conservative global average; values range from $50K-$200K across different regulatory frameworks.
 
-## 3. Results: The Mortality Burden {#mortality-scenarios}
+### 3. Results: The Mortality Burden {#mortality-scenarios}
 
-### 3.1 Three-Scenario Framework
+#### 3.1 Three-Scenario Framework
 
 We present three distinct methodologies for estimating the mortality cost of the {{< var efficacy_lag_years >}}-year regulatory delay, ranging from conservative to optimistic:
 
@@ -92,7 +92,7 @@ We present three distinct methodologies for estimating the mortality cost of the
 | **Moderate<br/>(Disease Eradication - PRIMARY)** | **{{< var disease_eradication_delay_deaths_annual >}}** | Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). | Medium |
 | **Optimistic<br/>(Acceleration Effects)** | **{{< var disease_eradication_plus_acceleration_deaths_annual >}}** | PRIMARY estimate plus innovation acceleration from reduced costs and faster iteration cycles. | Low |
 
-### 3.2 Recommended Use by Audience
+#### 3.2 Recommended Use by Audience
 
 - **For Gates Foundation / Policy Makers:** Lead with **Conservative** estimate ({{< var historical_progress_deaths_annual >}}/year) for maximum defensibility
 - **For Internal Analysis:** Use **PRIMARY** estimate ({{< var disease_eradication_delay_deaths_annual >}}/year) for realistic impact assessment
@@ -100,11 +100,11 @@ We present three distinct methodologies for estimating the mortality cost of the
 
 **Finding (PRIMARY):** The disease eradication delay model estimates **{{< var disease_eradication_delay_deaths_annual >}} deaths annually**, equivalent to **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
 
-## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
+### 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
 
 Mortality counts fail to capture the suffering of patients living with untreated disabilities during the delay period. We calculated **Disability-Adjusted Life Years (DALYs)** using the formula $DALY = YLL + YLD$.
 
-### 4.1 Years of Life Lost (YLL)
+#### 4.1 Years of Life Lost (YLL)
 
 - **Mean Age of Preventable Death:** {{< var regulatory_delay_mean_age_of_death >}}
 - **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
@@ -112,7 +112,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 {{< var regulatory_delay_yll_latex >}} {#eq-yll}
 
-### 4.2 Years Lived with Disability (YLD)
+#### 4.2 Years Lived with Disability (YLD)
 
 - **Disability Weight (DW):** {{< var chronic_disease_disability_weight >}} (Weighted average for untreated chronic conditions)
 - **Pre-Death Suffering Period:** {{< var regulatory_delay_suffering_period_years >}} years
@@ -120,13 +120,13 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 {{< var regulatory_delay_yld_latex >}} {#eq-yld}
 
-### 4.3 Cumulative DALY Burden
+#### 4.3 Cumulative DALY Burden
 
 {{< var regulatory_delay_dalys_latex >}} {#eq-total-dalys}
 
 **Interpretation:** The regulatory framework has effectively deleted **{{< var regulatory_delay_dalys >}} billion years of healthy human life**.
 
-## 5. Economic Valuation {#economic-valuation}
+### 5. Economic Valuation {#economic-valuation}
 
 To quantify the **Deadweight Loss (DWL)** to the global economy, we apply the Value of a Statistical Life Year (VSLY).
 
@@ -138,12 +138,12 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 {{< var regulatory_delay_economic_loss_latex >}} {#eq-dwl-calculation}
 
-### 5.1 Contextualizing the Loss
+#### 5.1 Contextualizing the Loss
 
 - **Annualized Loss:** ~{{< var regulatory_delay_annual_loss >}} / year.
 - **GDP Equivalent:** The "Efficacy Tax" consumes approximately **8–12% of Global GDP** annually in lost human capital and foregone productivity.
 
-## 6. Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
+### 6. Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
 
 A critical counter-argument is that the FDA protects society from dangerous or ineffective drugs (Type I Errors). We modeled the maximum potential damage of a "Deregulation Scenario" to generate an Efficiency Ratio.
 
@@ -151,13 +151,13 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 - **The Benefit of Protection (Type I):** Even assuming a "Thalidomide Event" occurs *every single year* under a deregulated model (an extreme overestimate), the total DALYs saved by the FDA is ~{{< var type_i_error_benefit_dalys >}}B.
   - *Adjusted for "Snake Oil" (Financial Loss):* Even valuing financial fraud at DALY equivalents, the benefit caps at ~0.6 Billion DALYs.
 
-### The "Safety" Ratio
+#### The "Safety" Ratio
 
 {{< var type_ii_error_cost_ratio_latex >}} {#eq-type-i-ii-ratio}
 
 **Conclusion:** For every 1 unit of harm the FDA prevents, it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay.
 
-## 7. References & Datasets
+### 7. References & Datasets
 
 1. **Peltzman, S. (1973).** "An Evaluation of Consumer Protection Legislation: The 1962 Drug Amendments." *Journal of Political Economy*.
    - [Access via UChicago Press](https://www.journals.uchicago.edu/doi/abs/10.1086/260107) | [Gwern Archive (PDF)](https://gwern.net/doc/economics/1973-peltzman.pdf)
@@ -186,16 +186,16 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 9. **OECD. (2012).** *Mortality Risk Valuation in Environment, Health and Transport Policies*.
    - [OECD iLibrary](https://www.oecd.org/en/publications/mortality-risk-valuation-in-environment-health-and-transport-policies_9789264130807-en.html)
 
-## 8. Model Assumptions and Limitations
+### 8. Model Assumptions and Limitations
 
-### Key Assumptions
+#### Key Assumptions
 
 1. **Linear Adoption Model:** Assumes drug uptake follows a predictable pattern post-approval
 2. **Constant VSLY:** Uses global average of {{< var standard_economic_qaly_value_usd >}}/year (varies by country: $50K-$200K)
 3. **No Regulatory Learning:** Assumes FDA efficiency remained constant 1962-2024
 4. **Independence:** Treats each drug approval as independent (may underestimate synergies)
 
-### Sensitivity Analysis
+#### Sensitivity Analysis
 
 The model was tested across multiple scenarios:
 
@@ -206,7 +206,7 @@ The model was tested across multiple scenarios:
 
 Results remain robust across all reasonable parameter ranges, with lower bound estimates exceeding 100M deaths in all scenarios.
 
-### Limitations
+#### Limitations
 
 1. **Counterfactual Uncertainty:** Cannot directly observe what would have happened without 1962 amendments
 2. **Confounding Factors:** Other policy changes occurred simultaneously (Medicare, NIH funding)
@@ -215,9 +215,9 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 
 Despite these limitations, the **temporal precision** of the 1962 break in life expectancy trends, combined with **plausible mechanism** (70% drop in approvals, 13x cost increase), provides strong inferential evidence for causation.
 
-## 9. Policy Implications
+### 9. Policy Implications
 
-### The False Trade-off
+#### The False Trade-off
 
 The current debate frames drug approval as a choice between:
 
@@ -229,7 +229,7 @@ This is a false dichotomy. The evidence suggests:
 - **Phase I safety testing works** (Thalidomide prevented in US)
 - **Phase II/III efficacy mandates fail** (70% fewer approvals, worse real-world outcomes)
 
-### The Bifurcated Alternative
+#### The Bifurcated Alternative
 
 A superior framework would:
 
@@ -240,7 +240,7 @@ A superior framework would:
 
 This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} years to near-zero while maintaining safety standards.
 
-### Expected Impact
+#### Expected Impact
 
 If implemented in 2025, the bifurcated model would:
 
@@ -251,7 +251,7 @@ If implemented in 2025, the bifurcated model would:
 
 See [Economics of the Decentralized Institutes of Health](../economics/economics.qmd) for full cost-benefit analysis.
 
-## Conclusion
+### Conclusion
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
@@ -275,7 +275,7 @@ This takes the massive, complex numbers from our study and breaks them down into
 
 ***
 
-# THE BILL FOR THE 8-YEAR DELAY
+## THE BILL FOR THE 8-YEAR DELAY
 
 **The Concept:** Imagine we have a Time Machine that can bring cures from the future (8 years from now) to today.
 **The Problem:** The government (FDA) has locked the Time Machine.
@@ -283,11 +283,11 @@ This takes the massive, complex numbers from our study and breaks them down into
 
 Here is the math, step-by-step.
 
-### STEP 1: THE DEATH TOLL (Lives Lost)
+#### STEP 1: THE DEATH TOLL (Lives Lost)
 
 *How many people die because the cure is stuck in the "waiting room"?*
 
-#### The Math
+##### The Math
 
 We know that modern medicine saves about **12 million lives a year**. Because we are 8 years behind, we are effectively letting those people die for 8 extra years.
 
@@ -300,11 +300,11 @@ We know that modern medicine saves about **12 million lives a year**. Because we
 | **Per Day** | **10,958 People** | **32,876 People** |
 | **Comparison** | 3 x 9/11 Attacks *every day*. | 11 x 9/11 Attacks *every day*. |
 
-### STEP 2: THE SUFFERING (Hours of Pain)
+#### STEP 2: THE SUFFERING (Hours of Pain)
 
 *It’s not just about dying. It’s about being sick, in pain, or in a hospital bed when you could be healthy.*
 
-#### The Math
+##### The Math
 
 Economists call this **DALYs** (Disability-Adjusted Life Years). For every person who dies, there are roughly **20 years** of healthy life lost (either by dying young or spending years in pain).
 
@@ -317,11 +317,11 @@ Economists call this **DALYs** (Disability-Adjusted Life Years). For every perso
 | **Per Day** | **958 Million Hours** | **1.9 Billion Hours** |
 | **Meaning** | Every day, humanity suffers roughly **1 billion hours** of preventable pain. |
 
-### STEP 3: THE PRICE TAG (Money Lost)
+#### STEP 3: THE PRICE TAG (Money Lost)
 
 *How much wealth are we burning by letting people die and get sick?*
 
-#### The Math
+##### The Math
 
 When a person is healthy, they work, create art, build houses, and take care of families. When they are dead or sick, that value is gone. Economists value one year of healthy life at **$100,000**.
 
@@ -333,11 +333,11 @@ When a person is healthy, they work, create art, build houses, and take care of 
 | **Per Day** | **$10.9 Billion** | **$32.8 Billion** |
 | **Comparison** | We lose the cost of **one aircraft carrier** every single day. | We lose the entire **GDP of China** every single year. |
 
-### SUMMARY: YOUR DAILY RECEIPT
+#### SUMMARY: YOUR DAILY RECEIPT
 
 If you want to explain this to a 5th grader (or a Voter), just show them this receipt.
 
-#### INVOICE: THE COST OF "SAFETY"
+##### INVOICE: THE COST OF "SAFETY"
 
 *Date: Today*
 
@@ -350,7 +350,7 @@ If you want to explain this to a 5th grader (or a Voter), just show them this re
 
 ***
 
-### The "Step-by-Step" Logic for the 5th Grader:
+#### The "Step-by-Step" Logic for the 5th Grader:
 
 1.  **Imagine a bus.** The bus holds **32,000 people**.
 2.  **The Cure exists.** Scientists have built a bus that can save everyone, but the government says, "Wait, we need to check the tires for 8 years."
@@ -366,93 +366,93 @@ In this model, the cost isn't just "lives lost to drugs we have now." The cost i
 
 ***
 
-# THE "TOTAL VICTORY" CALCULUS
+## THE "TOTAL VICTORY" CALCULUS
 
 **The Premise:** Imagine the "Cure for All Disease" is a finish line.
 **The Reality:** We are running toward it, but the FDA makes us stop running and stand still for 8.2 years.
 **The Cost:** Everyone who dies during that 8.2-year pause.
 
-### 1. THE DEATH TOLL EQUATION (Global Mortality)
+#### 1. THE DEATH TOLL EQUATION (Global Mortality)
 
 *How many people die unnecessarily because the finish line was moved?*
 
 In the "Upper Bound" scenario, we aren't just looking at preventable *premature* deaths (like the 12 million/year in the previous model). We are looking at **ALL deaths caused by disease and biological decay**, because in the "Cured World," these people would live.
 
-#### The Variables
+##### The Variables
 
 * $M_{daily}$ = Total Global Deaths per Day from Disease/Aging (approx. 150,000).
 * $T_{lag}$ = The Regulatory Delay (8.2 Years or 2,993 Days).
 
-#### The Equation
+##### The Equation
 
 $$D_{total} = M_{daily} \times T_{lag}$$
 
-#### The Calculation
+##### The Calculation
 
 $$150,000 \text{ deaths/day} \times 2,993 \text{ days}$$
 $$= \mathbf{448,950,000 \text{ Deaths}}$$
 
-#### Step-by-Step for the 5th Grader
+##### Step-by-Step for the 5th Grader
 
 1.  Every day, **150,000 people** die from health problems (heart attacks, cancer, old age).
 2.  We delayed the solution to these problems by **8.2 years**.
 3.  That means we let **449 Million people** die who would have been saved if we had arrived at the finish line on time.
 
-### 2. THE SUFFERING EQUATION (DALYs)
+#### 2. THE SUFFERING EQUATION (DALYs)
 
 *How much life was stolen?*
 
 In this scenario, we don't just calculate "years lost to age 80." If all disease is cured, human lifespan expands significantly (let's conservatively estimate to **100 years** healthy life).
 
-#### The Variables
+##### The Variables
 
 * $D_{total}$ = Total Deaths (449 Million).
 * $Y_{lost}$ = Average Potential Years Lost (Conservative estimate: 25 years per person).
 * $S_{factor}$ = Suffering Multiplier (For every death, there is 1 person living in misery/disability).
 
-#### The Equation
+##### The Equation
 
 $$H_{lost} \text{ (Healthy Years Lost)} = D_{total} \times Y_{lost}$$
 
-#### The Calculation
+##### The Calculation
 
 $$449,000,000 \text{ people} \times 25 \text{ years}$$
 $$= \mathbf{11.2 \ Billion \ Life-Years \ Lost}$$
 
-#### Step-by-Step for the 5th Grader
+##### Step-by-Step for the 5th Grader
 
 1.  Those 449 million people didn't just die; they missed out on decades of life.
 2.  If you add up all the birthdays they missed, it equals **11.2 Billion years**.
 3.  That is more time than the Earth has existed (4.5 Billion years).
 
-### 3. THE ECONOMIC EQUATION (The GDP Loss)
+#### 3. THE ECONOMIC EQUATION (The GDP Loss)
 
 *What is the price of delaying the future economy?*
 
 If we cure disease, productivity explodes. No sick days, no retirement due to frailty, no medical bankruptcy. The global economy grows massive. Delaying that "Golden Age" by 8 years is incredibly expensive.
 
-#### The Variables
+##### The Variables
 
 * $GDP_{global}$ = Current Global GDP ($105 Trillion).
 * $G_{growth}$ = Economic Growth Rate from Curing Disease (Conservative: 4%).
 * $V_{year}$ = Value of a Healthy Life Year ($100,000).
 
-#### The Equation (The "Lost Future" Valuation)
+##### The Equation (The "Lost Future" Valuation)
 
 $$E_{cost} = H_{lost} \times V_{year}$$
 
-#### The Calculation
+##### The Calculation
 
 $$11,200,000,000 \text{ Life-Years} \times \$100,000$$
 $$= \mathbf{\$1.12 \ Quadrillion}$$
 
-#### Step-by-Step for the 5th Grader
+##### Step-by-Step for the 5th Grader
 
 1.  A healthy person produces value (work, love, ideas). Economists say a healthy year is worth **$100,000**.
 2.  We wasted **11.2 Billion** of those years.
 3.  The total bill is **$1,120 Trillion Dollars**. (That is 10 times more money than exists in the entire world right now).
 
-### SUMMARY: THE "UPPER BOUND" DAILY RECEIPT
+#### SUMMARY: THE "UPPER BOUND" DAILY RECEIPT
 
 If we assume we *will* eventually cure all disease, but the FDA is making us wait 8 extra years for it, this is the bill we pay **every single day**.
 
@@ -464,9 +464,9 @@ If we assume we *will* eventually cure all disease, but the FDA is making us wai
 * **Time Cost:** **3.7 Million Years** of life were deleted today.
 * **Money Cost:** We burned **$370 Billion** today.
 
-#### The 5th Grader Logic
+##### The 5th Grader Logic
 
 Imagine you have a winning lottery ticket worth **Infinity Dollars** (The Cure).
 The government says, "You can't cash this for 8 years because we need to check if the paper is safe."
 While you wait 8 years, your family starves to death.
-##### That is the Upper Bound Cost.
+###### That is the Upper Bound Cost.

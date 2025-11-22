@@ -1124,6 +1124,8 @@ def main():
     md_files = [
         f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
     ]
+    # Exclude OUTLINE-GENERATED.MD from validation (auto-generated file)
+    md_files = [f for f in md_files if not f.endswith("OUTLINE-GENERATED.MD")]
 
     all_files = qmd_files + md_files
     print(f"Found {len(qmd_files)} .qmd files and {len(md_files)} .md files to validate ({len(all_files)} total)\n")

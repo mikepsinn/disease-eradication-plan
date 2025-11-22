@@ -17,18 +17,18 @@ from dih_models.plotting.chart_style import (
     get_presentation_font_sizes,
     add_png_metadata, get_figure_output_path)
 
-# Setup styling
+## Setup styling
 
 setup_chart_style(style='light', dpi=150)
 FONT_SIZES = get_presentation_font_sizes()
 
-# Create figure
+## Create figure
 
 fig, ax = plt.subplots(figsize=(12, 12))
 
 categories3 = ['War\n(Total)', 'Disease\n(Total)', 'Curing\nCancer', 'Curing\nDementia']
 
-# War costs breakdown (from cost-of-war.qmd)
+## War costs breakdown (from cost-of-war.qmd)
 
 war_direct = 2720
 war_infrastructure = 1875
@@ -38,28 +38,28 @@ war_indirect = 3538
 war_total = war_direct + war_infrastructure + war_lives + war_trade + war_indirect
 cure_values = [11, 5.5]
 
-# Disease costs breakdown (from parameters.py)
+## Disease costs breakdown (from parameters.py)
 
 disease_medical = float(GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL) / 1e9
 disease_productivity = float(GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL) / 1e9
 disease_lives = float(GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL) / 1e9
 disease_total = float(GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL) / 1e9
 
-# Stacked values for disease
+## Stacked values for disease
 
 disease_stack = [disease_medical, disease_productivity, disease_lives]
 
-# Use single RED color for all disease costs (problem)
+## Use single RED color for all disease costs (problem)
 
 disease_color = COLOR_BLACK
 
-# Plot war total
+## Plot war total
 
 ax.bar(0, war_total, color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 ax.text(0, war_total * 0.5, f'$10T', ha='center', va='center',
         fontsize=42, weight='bold', color=COLOR_WHITE)
 
-# Plot stacked disease bar
+## Plot stacked disease bar
 
 bottom = 0
 disease_bars = []
@@ -80,17 +80,17 @@ for i, value in enumerate(disease_stack):
             fontsize=28, weight='bold', color=COLOR_WHITE)
     bottom += value
 
-# Total label on disease stack
+## Total label on disease stack
 
 ax.text(1, disease_total * 1.02, f'$109T TOTAL', ha='center', va='bottom',
         fontsize=52, weight='bold', color=COLOR_BLACK)
 
-# Plot cure bars (tiny compared to disease)
+## Plot cure bars (tiny compared to disease)
 
 ax.bar(2, cure_values[0], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 ax.bar(3, cure_values[1], color=COLOR_BLACK, edgecolor=COLOR_WHITE, linewidth=3, width=0.8)
 
-# Labels for cures
+## Labels for cures
 
 ax.text(2, cure_values[0] + (disease_total * 0.01), '$11B', ha='center', va='bottom',
         fontsize=40, weight='bold', color=COLOR_BLACK)
@@ -110,11 +110,11 @@ add_watermark(fig)
 
 output_path = get_figure_output_path('war-vs-disease-total-costs-vs-curing-spending-column-chart.png')
 
-# Save the figure
+## Save the figure
 
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
-# Add metadata for attribution
+## Add metadata for attribution
 
 add_png_metadata(output_path, title="War Vs Disease Total Costs Vs Curing Spending Column Chart")
 plt.show()
