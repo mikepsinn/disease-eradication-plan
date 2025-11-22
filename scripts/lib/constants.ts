@@ -19,6 +19,7 @@ export const HASH_FIELDS = {
   FIGURE_CHECK: 'lastFigureCheckHash',
   LATEX_CHECK: 'lastLatexCheckHash',
   PARAM_CHECK: 'lastParamCheckHash',
+  NONPROFIT_COMPLIANCE: 'lastNonprofitComplianceHash',
 
   // Voice and tone
   INSTRUCTIONAL_VOICE: 'lastInstructionalVoiceHash',

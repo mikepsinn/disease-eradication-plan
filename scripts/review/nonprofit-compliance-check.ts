@@ -1,4 +1,5 @@
 import { getStaleFiles, nonprofitComplianceCheckFileWithLLM } from './utils';
+import { HASH_FIELDS } from '../lib/constants';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -6,7 +7,7 @@ dotenv.config();
 async function main() {
   console.log('Checking knowledge files for nonprofit foundation compliance...');
 
-  let staleFilesToCheck = await getStaleFiles('lastNonprofitComplianceHash', 'knowledge');
+  let staleFilesToCheck = await getStaleFiles(HASH_FIELDS.NONPROFIT_COMPLIANCE, 'knowledge');
 
   // Skip references.qmd file
   staleFilesToCheck = staleFilesToCheck.filter(file => !file.endsWith('references.qmd'));

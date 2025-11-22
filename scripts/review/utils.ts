@@ -6,7 +6,7 @@ import { generateGeminiProContent, generateClaudeSonnet45Content, extractJsonFro
 import { saveFile, getBodyHash, readFileWithMatter, updateFileWithHash, parseQuartoYml, getStaleFiles, stringifyWithFrontmatter, getBookFilesForProcessing } from '../lib/file-utils';
 import { parseReferences, formatReferencesFile, type Reference } from '../lib/references';
 import { setFileHash } from '../lib/hash-store';
-import { HASH_FIELDS } from '../lib/constants';
+import { HASH_FIELDS, type HashFieldName } from '../lib/constants';
 
 // Re-export functions from file-utils for convenience
 export { getStaleFiles, parseQuartoYml, getBookFilesForProcessing };
@@ -61,7 +61,7 @@ export async function nonprofitComplianceCheckFileWithLLM(filePath: string): Pro
     finalBody = cleaned.trim();
   }
 
-  await updateFileWithHash(filePath, finalBody, frontmatter, 'lastNonprofitComplianceHash');
+  await updateFileWithHash(filePath, finalBody, frontmatter, HASH_FIELDS.NONPROFIT_COMPLIANCE);
   console.log(`Successfully checked nonprofit compliance for ${filePath}.`);
 }
 
