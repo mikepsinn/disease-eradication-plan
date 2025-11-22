@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Deploy Book to Netlify
-======================
+Deploy Economics Website to Vercel
+==================================
 
-Builds the book website and deploys it to Netlify.
+Builds the economics website and deploys it to Vercel.
 
 Usage:
-    python deploy-book-to-netlify.py                    # Build and deploy to production
-    python deploy-book-to-netlify.py --draft            # Deploy as draft
-    python deploy-book-to-netlify.py --help             # Show all options
+    python deploy-economics-to-vercel.py                    # Build and deploy to production
+    python deploy-economics-to-vercel.py --preview          # Deploy as preview
+    python deploy-economics-to-vercel.py --help              # Show all options
 """
 
 import argparse
@@ -19,7 +19,7 @@ from pathlib import Path
 
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
-from netlify_deploy import check_netlify_cli, deploy_to_netlify, verify_output_directory
+from vercel_deploy import check_vercel_cli, deploy_to_vercel, verify_output_directory
 
 # Try to load dotenv if available
 try:
@@ -29,17 +29,15 @@ except ImportError:
     pass  # dotenv not available, continue without it
 
 
-# Netlify site ID for the main book site (warondisease-org)
-# Can be overridden via NETLIFY_MAIN_SITE_ID environment variable
-NETLIFY_SITE_ID = os.getenv("NETLIFY_MAIN_SITE_ID", "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062")
-DEFAULT_OUTPUT_DIR = "_book/warondisease"
+DEFAULT_OUTPUT_DIR = "_site/economics"
+DEFAULT_PROJECT_NAME = "dih-models"
 
 
-def build_book(output_dir: str):
-    """Build the book website using render-book-website.py."""
-    print(f"[*] Building book website to {output_dir}...")
+def build_economics(output_dir: str):
+    """Build the economics website using render-economics-website.py."""
+    print(f"[*] Building economics website to {output_dir}...")
     
-    script_path = Path(__file__).parent / "render-book-website.py"
+    script_path = Path(__file__).parent / "render-economics-website.py"
     if not script_path.exists():
         print(f"[ERROR] Build script not found: {script_path}", file=sys.stderr)
         return False
@@ -49,7 +47,7 @@ def build_book(output_dir: str):
             [sys.executable, str(script_path), "--output-dir", output_dir],
             check=True,
         )
-        print("[OK] Book build complete!")
+        print("[OK] Economics build complete!")
         return True
     except subprocess.CalledProcessError as e:
         print(f"[ERROR] Build failed with exit code {e.returncode}", file=sys.stderr)
@@ -59,11 +57,9 @@ def build_book(output_dir: str):
         return False
 
 
-
-
 def main():
     parser = argparse.ArgumentParser(
-        description="Build and deploy book website to Netlify",
+        description="Build and deploy economics website to Vercel",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
@@ -74,15 +70,15 @@ def main():
         help=f"Output directory for built site (default: {DEFAULT_OUTPUT_DIR})",
     )
     parser.add_argument(
-        "--site-id",
+        "--project-name",
         type=str,
-        default=NETLIFY_SITE_ID,
-        help=f"Netlify site ID (default: {NETLIFY_SITE_ID})",
+        default=DEFAULT_PROJECT_NAME,
+        help=f"Vercel project name (default: {DEFAULT_PROJECT_NAME})",
     )
     parser.add_argument(
-        "--draft",
+        "--preview",
         action="store_true",
-        help="Deploy as draft instead of production",
+        help="Deploy as preview instead of production",
     )
     parser.add_argument(
         "--skip-build",
@@ -97,18 +93,18 @@ def main():
     os.chdir(project_root)
     
     print("=" * 60)
-    print("Deploy Book to Netlify")
+    print("Deploy Economics Website to Vercel")
     print("=" * 60)
     print()
     
     # Check prerequisites
-    netlify_cmd = check_netlify_cli()
-    if not netlify_cmd:
+    vercel_cmd = check_vercel_cli()
+    if not vercel_cmd:
         sys.exit(1)
     
-    # Build the book (unless skipped)
+    # Build the economics site (unless skipped)
     if not args.skip_build:
-        if not build_book(args.output_dir):
+        if not build_economics(args.output_dir):
             sys.exit(1)
         
         if not verify_output_directory(args.output_dir):
@@ -118,16 +114,17 @@ def main():
         if not verify_output_directory(args.output_dir):
             print("[WARN] Output directory verification failed, but continuing...", file=sys.stderr)
     
-    # Deploy to Netlify
-    if not deploy_to_netlify(args.output_dir, args.site_id, netlify_cmd, production=not args.draft):
+    # Deploy to Vercel
+    if not deploy_to_vercel(args.output_dir, vercel_cmd, production=not args.preview, project_name=args.project_name):
         sys.exit(1)
     
     print()
     print("=" * 60)
-    print("[OK] All done! Book deployed to Netlify.")
+    print("[OK] All done! Economics website deployed to Vercel.")
     print("=" * 60)
 
 
 if __name__ == "__main__":
     main()
+
 

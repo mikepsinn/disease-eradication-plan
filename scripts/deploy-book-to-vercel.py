@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Deploy Book to Netlify
-======================
+Deploy Book to Vercel
+=====================
 
-Builds the book website and deploys it to Netlify.
+Builds the book website and deploys it to Vercel.
 
 Usage:
-    python deploy-book-to-netlify.py                    # Build and deploy to production
-    python deploy-book-to-netlify.py --draft            # Deploy as draft
-    python deploy-book-to-netlify.py --help             # Show all options
+    python deploy-book-to-vercel.py                    # Build and deploy to production
+    python deploy-book-to-vercel.py --preview           # Deploy as preview
+    python deploy-book-to-vercel.py --help              # Show all options
 """
 
 import argparse
@@ -19,7 +19,7 @@ from pathlib import Path
 
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
-from netlify_deploy import check_netlify_cli, deploy_to_netlify, verify_output_directory
+from vercel_deploy import check_vercel_cli, deploy_to_vercel, verify_output_directory
 
 # Try to load dotenv if available
 try:
@@ -29,10 +29,8 @@ except ImportError:
     pass  # dotenv not available, continue without it
 
 
-# Netlify site ID for the main book site (warondisease-org)
-# Can be overridden via NETLIFY_MAIN_SITE_ID environment variable
-NETLIFY_SITE_ID = os.getenv("NETLIFY_MAIN_SITE_ID", "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062")
 DEFAULT_OUTPUT_DIR = "_book/warondisease"
+DEFAULT_PROJECT_NAME = "warondisease"
 
 
 def build_book(output_dir: str):
@@ -59,11 +57,9 @@ def build_book(output_dir: str):
         return False
 
 
-
-
 def main():
     parser = argparse.ArgumentParser(
-        description="Build and deploy book website to Netlify",
+        description="Build and deploy book website to Vercel",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
@@ -74,15 +70,15 @@ def main():
         help=f"Output directory for built site (default: {DEFAULT_OUTPUT_DIR})",
     )
     parser.add_argument(
-        "--site-id",
+        "--project-name",
         type=str,
-        default=NETLIFY_SITE_ID,
-        help=f"Netlify site ID (default: {NETLIFY_SITE_ID})",
+        default=DEFAULT_PROJECT_NAME,
+        help=f"Vercel project name (default: {DEFAULT_PROJECT_NAME})",
     )
     parser.add_argument(
-        "--draft",
+        "--preview",
         action="store_true",
-        help="Deploy as draft instead of production",
+        help="Deploy as preview instead of production",
     )
     parser.add_argument(
         "--skip-build",
@@ -97,13 +93,13 @@ def main():
     os.chdir(project_root)
     
     print("=" * 60)
-    print("Deploy Book to Netlify")
+    print("Deploy Book to Vercel")
     print("=" * 60)
     print()
     
     # Check prerequisites
-    netlify_cmd = check_netlify_cli()
-    if not netlify_cmd:
+    vercel_cmd = check_vercel_cli()
+    if not vercel_cmd:
         sys.exit(1)
     
     # Build the book (unless skipped)
@@ -118,16 +114,17 @@ def main():
         if not verify_output_directory(args.output_dir):
             print("[WARN] Output directory verification failed, but continuing...", file=sys.stderr)
     
-    # Deploy to Netlify
-    if not deploy_to_netlify(args.output_dir, args.site_id, netlify_cmd, production=not args.draft):
+    # Deploy to Vercel
+    if not deploy_to_vercel(args.output_dir, vercel_cmd, production=not args.preview, project_name=args.project_name):
         sys.exit(1)
     
     print()
     print("=" * 60)
-    print("[OK] All done! Book deployed to Netlify.")
+    print("[OK] All done! Book deployed to Vercel.")
     print("=" * 60)
 
 
 if __name__ == "__main__":
     main()
+
 
