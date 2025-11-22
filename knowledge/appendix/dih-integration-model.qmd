@@ -60,23 +60,23 @@ png_path = render_graphviz_with_watermark(dot, 'dih-money-flow')
 display(IPImage(str(png_path)))
 ```
 
-### 5. Why This Works Better Than Direct Payments
+## 5. Why This Works Better Than Direct Payments
 
-#### Avoids Perverse Incentives
+### Avoids Perverse Incentives
 
 - No "professional patients" gaming the system
 - No coercion of desperate people
 - Maintains doctor-patient relationship
 - Preserves medical ethics
 
-#### Reduces Friction
+### Reduces Friction
 
 - Works within existing workflows
 - Uses familiar insurance model
 - No new systems to learn
 - Doctors remain gatekeepers
 
-#### Ensures Quality
+### Ensures Quality
 
 - Medical oversight maintained
 - Safety monitoring preserved

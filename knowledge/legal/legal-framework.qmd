@@ -61,11 +61,11 @@ png_path = render_graphviz_with_watermark(dot, 'four-entity-legal-architecture')
 display(IPImage(str(png_path)))
 ```
 
-### Entity #1: The 501(c)(3) Public Charity ("The Brain")
+## Entity #1: The 501(c)(3) Public Charity ("The Brain")
 
 **What It Is:** The traditional non-profit. Major foundations like Gates Foundation can give large, tax-deductible grants here.
 
-#### What It Does
+### What It Does
 
 - **Global Referendum:** Runs non-binding educational survey demonstrating 280M+ support
 - **Research:** Funds academic studies proving system is broken
@@ -76,7 +76,7 @@ display(IPImage(str(png_path)))
 
 **Why US 501(c)(3):** Unlocks foundation grants. Running non-binding public opinion survey is clearly educational.
 
-### Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
+## Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
 
 **What It Is:** Political advocacy arm. Donations NOT tax-deductible.
 
@@ -88,11 +88,11 @@ display(IPImage(str(png_path)))
 
 **Why US 501(c)(4):** Allows unlimited lobbying while maintaining nonprofit status.
 
-### Entity #3: The Victory Corporation ("The Engine")
+## Entity #3: The Victory Corporation ("The Engine")
 
 **What It Is:** Standard for-profit corporation. Designed to attract Wall Street.
 
-#### What It Does
+### What It Does
 
 - **Issues VICTORY Bonds:** Sells bonds with {{< var victory_bond_annual_return_pct >}} target returns
 - **Funds Bribery Operations:** Uses $1.0B raised to fund lobbying and campaigns
@@ -100,13 +100,13 @@ display(IPImage(str(png_path)))
 
 **Why Delaware:** Established corporate law. [More corporations than humans live there](../references.qmd#delaware-corporate-population). Citizens United means corporations have political speech rights.
 
-### Entity #4: The DIH Foundation ("The Soul")
+## Entity #4: The DIH Foundation ("The Soul")
 
 **What It Is:** Parent organization holding everything together. Based in neutral Switzerland.
 
 **Why Switzerland:** They've [avoided war for 200 years](../references.qmd#switzerland-last-war-death-1847) by holding everyone's money. Even Hitler couldn't make them pick a side.
 
-#### What It Does
+### What It Does
 
 - **Owns the Engine:** 100% shareholder of Victory Corporation, ensuring profit serves mission
 - **Receives Global Capital:** Accepts grants from international foundations
@@ -115,9 +115,9 @@ display(IPImage(str(png_path)))
 
 **Legal Benefits:** Neutral jurisdiction, crypto-friendly, allergic to conflict, perfect for international coordination.
 
-### Why This Four-Part Structure Works
+## Why This Four-Part Structure Works
 
-#### Legal Specialization
+### Legal Specialization
 
 - Need foundation grants? The 501(c)(3) handles it
 - Need unlimited lobbying? The 501(c)(4) delivers it
@@ -125,14 +125,14 @@ display(IPImage(str(png_path)))
 - Need international coordination? The Swiss Foundation orchestrates it
 - **Combined:** Everything is legal everywhere, simultaneously
 
-#### Firewall Protection
+### Firewall Protection
 
 - Charitable funds never touch political operations (IRS requirement met)
 - Political funds never touch bond proceeds (SEC requirement met)
 - **International funds stay completely firewalled from US political spending (FEC requirement met)**
 - Separate bank accounts, separate staff, separate lawyers for each entity
 
-#### Risk Distribution
+### Risk Distribution
 
 - Can't shut down what serves multiple legal purposes
 - Can't sue what operates under different jurisdictions

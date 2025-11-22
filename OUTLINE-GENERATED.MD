@@ -67,23 +67,23 @@
 
 ### knowledge/problem.qmd
 
-    ### Daily Numbers
-    ### Where the Money Goes
-    ### On the Pentagon's Accounting
-    ### On Medical Research
-    ### On the FDA
-    ### On What War Costs
-    ### On What Disease Costs
-    ### On Democracy
-    ### On Regulatory Capture
-    ### On the Fixed Pie
-    ### On Your Personal Situation
-    ### What This Means
-    ### What's Next
+  ## Daily Numbers
+  ## Where the Money Goes
+  ## On the Pentagon's Accounting
+  ## On Medical Research
+  ## On the FDA
+  ## On What War Costs
+  ## On What Disease Costs
+  ## On Democracy
+  ## On Regulatory Capture
+  ## On the Fixed Pie
+  ## On Your Personal Situation
+  ## What This Means
+  ## What's Next
 
 ### knowledge/problem/the-daily-massacre.qmd
 
-      #### The Math Of Death
+  ## The Math Of Death
 
 ### knowledge/problem/cost-of-war.qmd
 
@@ -461,24 +461,24 @@
 
 ### knowledge/solution/ai-coordination-army.qmd
 
-    ### Where Your Agents Get Their Missions (Not From a Management Consultant)
-    ### The Secret to Success: Cross-Sector Coordination (Forces for Good)
-    ### Why You Need This (Humans Are Hilariously Bad at Coordination)
-    ### The Architecture You're Building (It's Simpler Than It Looks)
-    ### Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
-      #### To Mobilize Support
-      #### To Accelerate Research
-      #### To Build Awareness
-      #### To Optimize Impact
-    ### Step 2: Define Each Agent's Mission (From the Task Tree, Not From Your Feelings)
-    ### Step 3: Enable Competition Between Agents (May the Best Robot Win)
-    ### How You Keep Control (Preventing the Robot Uprising)
-      #### AI Proposes
-      #### You Decide
-      #### AI Implements
-      #### You Verify
-    ### How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
-      #### Rule 1 - Share to Play
+  ## Where Your Agents Get Their Missions (Not From a Management Consultant)
+  ## The Secret to Success: Cross-Sector Coordination (Forces for Good)
+  ## Why You Need This (Humans Are Hilariously Bad at Coordination)
+  ## The Architecture You're Building (It's Simpler Than It Looks)
+  ## Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
+    ### To Mobilize Support
+    ### To Accelerate Research
+    ### To Build Awareness
+    ### To Optimize Impact
+  ## Step 2: Define Each Agent's Mission (From the Task Tree, Not From Your Feelings)
+  ## Step 3: Enable Competition Between Agents (May the Best Robot Win)
+  ## How You Keep Control (Preventing the Robot Uprising)
+    ### AI Proposes
+    ### You Decide
+    ### AI Implements
+    ### You Verify
+  ## How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
+    ### Rule 1 - Share to Play
 
 ### knowledge/solution/dfda.qmd
 
@@ -952,10 +952,10 @@
 
 ### knowledge/strategy/roadmap.qmd
 
-    ### The Paper Collection Timeline: From $0 to Ending Death
-    ### The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
-    ### The Political Strategy: Co-Opt, Don't Compete
-    ### Your Next Steps
+  ## The Paper Collection Timeline: From $0 to Ending Death
+  ## The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
+  ## The Political Strategy: Co-Opt, Don't Compete
+  ## Your Next Steps
 
 ### knowledge/legal/legal-framework.qmd
 
@@ -1974,13 +1974,13 @@
 
 ### knowledge/appendix/economic-value-of-accelerated-treatments.qmd
 
-    ### **Introduction**
-    ### **Average Economic Value of a New Therapy**
-    ### **Annual Value Based on Average Approvals**
-    ### **Impact of Accelerating Medical Progress by 80X**
-    ### **Considerations and Context**
-    ### **Conclusion**
-    ### **Sources**
+  ## **Introduction**
+  ## **Average Economic Value of a New Therapy**
+  ## **Annual Value Based on Average Approvals**
+  ## **Impact of Accelerating Medical Progress by 80X**
+  ## **Considerations and Context**
+  ## **Conclusion**
+  ## **Sources**
 
 ### knowledge/appendix/intervention-comparison-table.qmd
 
@@ -2481,8 +2481,8 @@
 
 ### knowledge/appendix/lives-saved-by-drug-accessibility.qmd
 
-    ### **Notes on Estimates:**
-    ### **Additional Sources:**
+  ## **Notes on Estimates:**
+  ## **Additional Sources:**
 
 ### knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
 
