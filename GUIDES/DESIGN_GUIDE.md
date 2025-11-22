@@ -136,7 +136,7 @@ Use `add_png_metadata()` from `_chart_style.py` after saving to embed attributio
 
 ### Technical Checklist
 
-1. Import from [_chart_style.py](_chart_style.py): `setup_chart_style()`, color constants, helper functions
+1. Import from the chart style module: `setup_chart_style()`, color constants, helper functions
 2. **Save images using dynamic project root** (works regardless of where quarto runs from):
 
    ```python
@@ -377,11 +377,7 @@ display(IPImage(str(png_path)))
 
 ### Example Diagrams
 
-See these examples in `knowledge/figures/`:
-- [three-ingredients-system-diagram.qmd](knowledge/figures/three-ingredients-system-diagram.qmd) - System overview with clusters
-- [victory-bonds-expansion-flywheel-diagram.qmd](knowledge/figures/victory-bonds-expansion-flywheel-diagram.qmd) - Top-to-bottom flywheel with self-reinforcing cycle
-- [victory-bonds-money-flow-diagram.qmd](knowledge/figures/victory-bonds-money-flow-diagram.qmd) - Left-to-right flow
-- [death-economy-flow-diagram.qmd](knowledge/figures/death-economy-flow-diagram.qmd) - Complex flow with multiple nodes
+See examples in `knowledge/figures/`
 
 ### Graphviz Helper Functions
 

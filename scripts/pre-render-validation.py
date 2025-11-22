@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 Pre-render validation script
-Validates .qmd files before Quarto rendering to catch errors early:
+Validates .qmd and .md files before Quarto rendering to catch errors early:
 - LaTeX syntax errors (escaped dollar signs, malformed equations, etc.)
 - Missing image files
 - Invalid image paths
 - Broken cross-reference links to .qmd files
+- Broken markdown file links in .md files
 - Broken include directives ({{< include path.qmd >}})
 - Missing Python imports in code blocks
 - GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
@@ -992,6 +993,16 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     lines = content.split("\n")
 
+    # For .md files, only check broken links
+    if filepath.lower().endswith(".md"):
+        # Check cross-reference links
+        check_cross_reference_links(content, filepath)
+        # Check markdown links
+        check_markdown_links(content, filepath)
+        return
+
+    # For .qmd files, run all validation checks
+
     # Check for common LaTeX patterns
     for pattern_config in latex_patterns:
         pattern = pattern_config["pattern"]
@@ -1107,11 +1118,19 @@ def main():
     # Exclude references.qmd from validation
     qmd_files = [f for f in qmd_files if not f.endswith("references.qmd")]
 
-    print(f"Found {len(qmd_files)} .qmd files to validate\n")
+    # Find all .md files
+    md_files = glob("**/*.md", recursive=True)
+    # Filter out node_modules, _book, .quarto, _site, __tests__ directories
+    md_files = [
+        f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
+    ]
+
+    all_files = qmd_files + md_files
+    print(f"Found {len(qmd_files)} .qmd files and {len(md_files)} .md files to validate ({len(all_files)} total)\n")
 
     # Validate each file
-    for qmd_file in qmd_files:
-        validate_file(qmd_file, defined_vars, defined_parameters)
+    for file in all_files:
+        validate_file(file, defined_vars, defined_parameters)
 
     # Report results
     if len(errors) == 0:

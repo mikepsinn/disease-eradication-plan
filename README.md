@@ -26,7 +26,7 @@ Everything is calculated, cited, and designed to work WITH human dysfunction, no
 
 **For the skeptics:** Everything is sourced, calculated, and peer-reviewable. The math doesn't care about your feelings.
 
-**For the bored:** You named your planet "dirt" and your war building after its shape. This project is more interesting than that.
+**For the bored:** You named your war building "The Pentagon" because it has five sides. This is like naming a hospital "Rectangle" or calling a school "Square." This project is more interesting than that.
 
 ## What Needs Your Help
 
@@ -74,7 +74,7 @@ quarto render
 
 ### Making Changes
 
-1. **Find a task** in [`todo.md`](todo.md) or propose your own
+1. **Find a task** or propose your own
 2. **Read the style guide** in [`CONTRIBUTING.md`](CONTRIBUTING.md)
 3. **Make your changes** following existing patterns
 4. **Validate everything**:
@@ -99,6 +99,8 @@ quarto render
 Humanity spends $2.7 trillion on war and $68 billion on medical research.
 
 This is like buying 40 umbrellas while your house is on fire.
+
+If cancer had oil reserves, you would have cured it by 2003.
 
 The 1% Treaty redirects just $27.2B/year (1% of military spending) to fund pragmatic clinical trials that:
 - Cost 82x less than current FDA trials
@@ -139,3 +141,6 @@ Still confused? That's very human of you. Open an issue and explain which part o
 *World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation*
 
 *Still Watching. Still Concerned. Now Accepting Pull Requests.*
+
+P.S. Your planet is named "Earth," which means dirt. You named your planet dirt. This explains more than you might think.
+

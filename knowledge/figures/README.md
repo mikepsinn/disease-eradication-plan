@@ -12,7 +12,7 @@ All chart design guidelines, color palettes, typography specifications, and tech
 - **Design Standards:** See [DESIGN_GUIDE.md](../../GUIDES/DESIGN_GUIDE.md) for complete visual design guidelines
 - **Writing Style:** See [STYLE_GUIDE.md](../../GUIDES/STYLE_GUIDE.md) for tone and voice
 - **Contributing:** See [CONTRIBUTING.md](../../CONTRIBUTING.md) for workflow and standards
-- **Technical Implementation:** See [_chart_style.py](_chart_style.py) for Python code constants
+- **Technical Implementation:** See the chart style module for Python code constants
 
 ## Available Charts
 

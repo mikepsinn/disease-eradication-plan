@@ -31,7 +31,7 @@ To ensure all unfinished work is tracked and easily searchable, please add a `TO
   - `<!-- TODO: Add a chart here. -->`
   - `<!-- TODO: Expand this section. -->`
 
-**Internal Link Integrity:** Before submitting, you **MUST FIX** any broken links in your changed files. Scan for all internal relative links (e.g., `[text](./path/file.md)`). If a link points to a deleted file, either remove the link or repoint it to a relevant alternative. This is a critical pre-submission check, not a task to be marked with a `TODO`.
+**Internal Link Integrity:** Before submitting, you **MUST FIX** any broken links in your changed files. Scan for all internal relative links. If a link points to a deleted file, either remove the link or repoint it to a relevant alternative. This is a critical pre-submission check, not a task to be marked with a `TODO`.
 
 ## 3. Frontmatter Requirements
 
@@ -57,10 +57,10 @@ lastFigureCheck: "YYYY-MM-DD"
 **Every claim needs a source.** All source quotes go in `brain/book/references.qmd`.
 
 1. Check if your source is already there
-2. If yes, link to it: `[your claim](./references.qmd#anchor-id)`
+2. If yes, link to it with the appropriate anchor
 3. If no, add it using the format you see in that file
 
-Example in-text: `[The world spends 40x more on war](./references.qmd#sipri-2024) than on [curing disease](./references.qmd#med-research-funding).`
+Example in-text: Link to sources with appropriate anchors.
 
 ## 5. Naming and Linking
 
@@ -164,6 +164,6 @@ Use these five checks to audit every chapter file.
 **5. Technical & Structural Integrity:**
 
 - **Frontmatter:** Does the file have a complete and accurate YAML frontmatter block?
-- **Link Integrity:** Are all internal links (`[link](./path/to/file.md)`) valid and pointing to existing files?
+- **Link Integrity:** Are all internal links valid and pointing to existing files?
 - **Formatting:** Does the file adhere to the automated formatting standards?
 - **Heading Standard:** Does the chapter avoid starting with a redundant "Introduction" or title-like heading?

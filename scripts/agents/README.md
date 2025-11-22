@@ -137,7 +137,5 @@ wishonia-voltagent.ts (Main CLI)
 
 ## See Also
 
-- [Vector Store Documentation](../vector/README.md) - RAG and embeddings
-- [Chat Widget Documentation](../chat/widget/README.md) - Website integration
 - [VoltAgent Documentation](https://docs.voltagent.ai) - Framework details
 
