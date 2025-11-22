@@ -90,37 +90,18 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Determine render script based on repository
-        id: render-script
-        run: |
-          if [ "${{ github.event.repository.name }}" == "decentralized-institutes-of-health" ]; then
-            echo "script=scripts/render-book-website.py" >> $GITHUB_OUTPUT
-            echo "output-path=_book/warondisease" >> $GITHUB_OUTPUT
-            echo "Rendering complete book website..."
-          elif [ "${{ github.event.repository.name }}" == "dih-models" ]; then
-            echo "script=scripts/render-economics-website.py" >> $GITHUB_OUTPUT
-            echo "output-path=_site/economics" >> $GITHUB_OUTPUT
-            echo "Rendering economics models website..."
-          else
-            echo "Unknown repository: ${{ github.event.repository.name }}"
-            exit 1
-          fi
-
       - name: Render Quarto Project (HTML) with validation and monitoring
-        run: python ${{ steps.render-script.outputs.script }}
+        run: python scripts/render-book-website.py
         timeout-minutes: 15
 
       - name: Install LaTeX (for PDF generation)
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         run: quarto install tinytex
 
       - name: Render Book PDF (reuses HTML cache)
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         run: python scripts/render-book-pdf.py
         timeout-minutes: 20
 
       - name: Upload PDF artifact
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         uses: actions/upload-artifact@v4
         with:
           name: book-pdf
@@ -129,7 +110,6 @@ jobs:
           if-no-files-found: error
 
       - name: Render Book EPUB (reuses PDF cache)
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         run: python scripts/render-book-epub.py
         timeout-minutes: 10
 
@@ -139,10 +119,9 @@ jobs:
       - name: Upload HTML artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.render-script.outputs.output-path }}
+          path: _book/warondisease
 
       - name: Upload EPUB artifact
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         uses: actions/upload-artifact@v4
         with:
           name: book-epub
@@ -151,12 +130,10 @@ jobs:
           if-no-files-found: error
 
       - name: Render Economics Website (for Netlify deployment)
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         run: python scripts/render-economics-website.py --output-dir _site/economics
         timeout-minutes: 10
 
       - name: Upload Economics artifact for Netlify
-        if: github.event.repository.name == 'decentralized-institutes-of-health'
         uses: actions/upload-artifact@v4
         with:
           name: economics-site
@@ -228,7 +205,6 @@ jobs:
     name: Deploy Economics to Netlify
     runs-on: ubuntu-latest
     needs: build-html
-    if: github.event.repository.name == 'decentralized-institutes-of-health'
     steps:
       - name: Download Economics artifact
         uses: actions/download-artifact@v4

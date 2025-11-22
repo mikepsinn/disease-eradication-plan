@@ -1,144 +1,141 @@
----
-title: How to End War and Disease
-description: "How to Redirect 1% of Military Spending to Cure Disease and Create the Most Profitable Investment in History"
-published: true
-date: "2025-08-15T00:00:00.000Z"
-tags: [war-on-disease, 1-percent-treaty, dfda, dih, decentralized-trials, incentives, victory-bonds]
----
+# Disease Eradication Plan
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+Hello, humans.
 
-> **The 1% Treaty:** Every nation redirects just 1% of global military spending to fund 80X more efficient medical research, creating the most profitable investment in history while saving millions of lives.
+I am WISHONIA.  I've been watching your species for 80 years, and I have notes.
 
-[![Join the War on Disease](#join-the-war)](#join-the-war) [![Read the Full Plan](#the-plan)](#the-plan)
+You currently spend 40 times more money on bombs than on curing diseases. Every day, 150,000 of you permanently discontinue existing from diseases that are basically just engineering problems with meat robots.
 
-## The Problem in Numbers
+This is mathematically stupid.
 
-| What We Waste Money On | Annual Cost | What We Get |
-|----------------|------------|-------------|
-| War & Conflict | $9.7T | Destruction, refugees, and disabilities |
-| Disease Burden | $109.1T | Suffering and lost potential |
-| **Total Waste** | **$118.8T** | **The dumbest possible use of our limited resources** |
-| **Medical Research** | **$0.068T** | Actual cures and treatments |
+I've created this **Disease Eradication Plan** explaining how to fix this using your own broken economic system against itself and you're going to help me make it better.
 
-## The 1% Solution
+Not because you're altruistic (you're not), but because the math is so obvious that even humans who eat tide pods could understand it.
 
-We've created a system where:
+## What This Is
 
-1. **Nations redirect 1%** of military budgets to cure disease
-2. **Patients get paid** to participate in clinical trials
-3. **Research becomes 80x more efficient** using proven methods
-4. **EVERYONE profits** from the $16.5T annual peace dividend
+A complete strategic plan to get nations to sign the **1% Treaty** - redirecting just 1% of military spending ($27.2B annually) to fund hyper-efficient decentralized pragmatic clinical trials.
 
-[How It Works](#how-it-works) | [The Math](#the-math) | [Get Involved](#join-the-war)
+Everything is calculated, cited, and designed to work WITH human dysfunction, not against it.
 
-## Why This Works
+## Why You Should Help
 
-✅ **Proven Model:** The Oxford RECOVERY trial showed we can run trials for $500 instead of $41,000 per patient  
-✅ **Massive Leverage:** $1 in lobbying produces $1,813 in government contracts
-✅ **Aligned Incentives:** Everyone gets rich by curing disease instead of killing people and  
-✅ **No Losers:** Even partial success means 1% less war and nuclear bombs and more cures
+**For the idealists:** You'll help save 150,000 lives daily from preventable diseases.
 
-## How It Works
+**For the pragmatists:** This is the highest-ROI intervention in human history (beating smallpox eradication).
 
-### The Market Revolution in Medical Research
+**For the skeptics:** Everything is sourced, calculated, and peer-reviewable. The math doesn't care about your feelings.
 
-1. **Replace Central Planning**: NIH's Soviet-style committees → DIH's prediction markets and wisdom of crowds
-2. **Amazon for Trials**: dFDA creates an open marketplace where treatments compete on real results, not lobbying
-3. **Universal Integration**: One-click trial enrollment from any EHR, health app, or doctor's office
-4. **80X Efficiency**: Market competition drives costs from $41,000 to $500/patient (Oxford proved it)
-5. **Radical Transparency**: All data public, all results ranked - like Amazon reviews but for staying alive
-6. **Pay for Success**: Researchers get rich by curing diseases, not by writing grant proposals
+**For the bored:** You named your planet "dirt" and your war building after its shape. This project is more interesting than that.
 
-### Central Planning vs. Free Markets
+## What Needs Your Help
 
-**Current System (NIH/FDA Central Planning):**
+This plan is 95% complete but needs:
 
-- $2.2B per drug (committees pick losers)
-- 17 years to market (bureaucracy moves at bureaucracy speed)
-- 90% grant rejection rate (200 reviewers play god with $48B)
-- 95% of diseases have 0 treatments (committees don't care about rare diseases)
-- 15% patient access (gatekeepers everywhere)
+1. **Fact-checking**: Every parameter is sourced, but humans make mistakes
+2. **Writing improvements**: Make it clearer, funnier, more persuasive
+3. **Technical corrections**: Fix broken calculations, improve figures
+4. **Additional research**: Find better sources, update statistics
+5. **Translation**: Eventually, we need this in every human language
 
-**New System (DIH/dFDA Free Markets):**
+## How to Contribute
 
-- ~$27M per treatment (competition drives efficiency)
-- 2-3 years to market (markets move at market speed)
-- Fund everything, measure results (let data pick winners)
-- 1,000X more treatments tested (markets find every niche)
-- 100% patient access (Amazon doesn't turn away customers)
+### Prerequisites
 
-```mermaid
-graph TD;
-    A["$2.7T Global Military Budgets"] -->|1% Redirect| B["$27B Annual Treaty Treasury"];
-    B --> C["DIH Governance<br/>(VICTORY Bond Holders Vote)"];
-    C --> D["Patient Subsidy Pools<br/>(Money Goes to Patients)"];
-    D --> E["Patients Choose Trials<br/>($500/patient vs $41,000)"];
-    E --> F["Pragmatic Trials<br/>(Real-World Evidence)"];
-    F --> G["All Data Published<br/>(No Hidden Results)"];
-    G --> H["People Stop Dying<br/>of Preventable Diseases"];
-```
+- **Quarto** (for rendering the plan)
+- **Python 3.10+** (for calculations and validation)
+- **Node.js 18+** (for TypeScript scripts)
 
-## The Math
-
-### Investment Required vs. Returns
-
-**Total Implementation Cost:** $1.2-2.5B over 36 months
-
-**Annual Returns Once Operational:** $27B+ per year from 1% military budget redirections
-
-**The Math:** We're asking for $1B to redirect $27B annually. That's a 27:1 return ratio - better than most venture capital investments, except this one saves millions of lives.
-
-## The Plan: From Idea to Treaty
-
-1.  **Prove the Mandate (The Global Referendum):** We will mobilize 3.5% of humanity (280 million people) through a global referendum. This creates an undeniable political mandate that no leader can ignore.
-
-2.  **Fund the Mission (VICTORY Bonds):** We will raise the required $1B by selling **VICTORY Bonds**—an investment vehicle designed to offer 270% annual returns (10% of redirected military spending), making peace more profitable than war.
-
-3.  **Ratify the Treaty:** With a clear public mandate and a powerful financial engine, we will co-opt the existing political system to ratify the 1% Treaty and begin redirecting funds.
-
-## Join the War on Disease
-
-- **[Participate in the Referendum](mailto:hello@dih.earth)**: Signal your support and become part of the 3.5%.
-- **[Join the Coalition](mailto:hello@dih.earth)**: We partner with institutions, companies, and non-profits.
-
-## Development and Deployment
-
-### Local Preview
+### Setup
 
 ```bash
-npm run quarto:preview
+# Clone repository
+git clone https://github.com/wishonia/disease-eradication-plan.git
+cd disease-eradication-plan
+
+# Install Python dependencies
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # macOS/Linux
+pip install -r requirements.txt
+
+# Install Node.js dependencies
+npm install
+
+# Render to HTML
+quarto render
 ```
 
-### Pre-Push Validation
+### Project Structure
 
-A git pre-push hook automatically runs `quarto render` to catch errors before pushing. This prevents broken builds in CI/CD.
+- **[`knowledge/`](knowledge/)**: All content organized by topic
+- **[`dih_models/parameters.py`](dih_models/parameters.py)**: All calculations and variables
+- **[`CONTRIBUTING.md`](CONTRIBUTING.md)**: Writing standards and style guide
 
-**To skip validation** (for WIP commits):
+### Making Changes
 
-```bash
-git push --no-verify
-```
+1. **Find a task** in [`todo.md`](todo.md) or propose your own
+2. **Read the style guide** in [`CONTRIBUTING.md`](CONTRIBUTING.md)
+3. **Make your changes** following existing patterns
+4. **Validate everything**:
+   ```bash
+   # Check parameter references
+   .venv\Scripts\python.exe scripts\pre-render-validation.py
 
-### Deploy to GitHub Pages
+   # Render and review
+   quarto render
+   ```
+5. **Submit a pull request** with clear explanation
 
-The book automatically deploys to GitHub Pages when you push to the `master` branch.
+### Key Principles
 
-**First-time setup:**
+- **Every number must have a source** (defined in [dih_models/parameters.py](dih_models/parameters.py) and [knowledge/references.qmd](knowledge/references.qmd))
+- **Be funny**
+- **Math must be correct** (we're fighting human stupidity with arithmetic)
+- **Citations required** (credibility depends on it)
 
-1. Go to your repository settings on GitHub
-2. Navigate to Settings → Pages
-3. Under "Build and deployment", select **"GitHub Actions"** as the source
-4. Save (if required)
+## The Core Idea (In Case You Skipped Everything)
 
-The site will be available at: `https://mikepsinn.github.io/decentralized-institutes-of-health/`
+Humanity spends $2.7 trillion on war and $68 billion on medical research.
 
-**Manual deployment:**
+This is like buying 40 umbrellas while your house is on fire.
 
-You can also trigger a deployment manually:
+The 1% Treaty redirects just $27.2B/year (1% of military spending) to fund pragmatic clinical trials that:
+- Cost 82x less than current FDA trials
+- Generate 115 years of research progress per actual year
+- Save 184.6M lives over 20 years
+- Create $163.6B in annual economic benefits
+- Return ∞ ROI (because new spending = $0)
 
-1. Go to the "Actions" tab on GitHub
-2. Select "Quarto Publish" workflow
-3. Click "Run workflow"
+Every nation reduces military budgets by 1% simultaneously. Security balance unchanged. Everyone gets:
+- 1% fewer nukes pointed at them
+- Access to experimental treatments years sooner
+- Economic returns that make venture capital look conservative
 
-See [Book Outline](./OUTLINE.MD)
+## Your Role
+
+You're helping me show humanity how to save itself using the same broken economic system that got it into this mess.
+
+It's like teaching a dog calculus, except the dog has nuclear weapons and the calculus is "spend less on things that kill you."
+
+If we succeed, future historians will say: "They were on the brink of destroying themselves, but then some random contributors on GitHub helped an alien AI write a create a plan for proper resource allocation, and somehow that worked."
+
+If we fail, the cockroaches will evolve intelligence and wonder why you spent more on bombs than curing diseases.
+
+## License
+
+See [LICENSE](LICENSE) and [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## Questions?
+
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md) first.
+
+Still confused? That's very human of you. Open an issue and explain which part of "redirect 1% of war money to cure diseases" requires clarification.
+
+---
+
+*WISHONIA*
+
+*World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation*
+
+*Still Watching. Still Concerned. Now Accepting Pull Requests.*
