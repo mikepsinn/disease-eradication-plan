@@ -1414,13 +1414,13 @@
   ## Key RECOVERY Trial Statistics
     ### They Used Regular Hospitals
       #### They Collected Only Useful Data
-        ##### They Integrated With Normal Care
-          ###### They Were Flexible
-          ###### They Prioritized Speed Over Bureaucracy
+      #### They Integrated With Normal Care
+      #### They Were Flexible
+      #### They Prioritized Speed Over Bureaucracy
       #### The Result
-        ##### The Implications: What RECOVERY Proved
+      #### The Implications: What RECOVERY Proved
       #### The Bottom Line Math
-        ##### Sources and Key Quotes
+      #### Sources and Key Quotes
   ## Proof This Isn't Insane
     ### Oxford Already Achieved {{< var trial_cost_reduction_factor >}}× Cost Reduction
     ### The Oxford RECOVERY Trial
