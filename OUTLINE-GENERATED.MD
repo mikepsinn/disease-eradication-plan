@@ -99,7 +99,6 @@
       #### Total Direct Military Spending: \$2,718.0 billion
     ### The Equation of Immediate Destruction
       #### Current Annual Calculation
-        ##### C<sub>direct</sub> = \$7,655 billion annually
   ## Military Hardware: The World's Worst Investment
     ### OFFERING MEMORANDUM
       #### RETURNS
@@ -111,7 +110,6 @@
       #### Outcome B (Used)
     ### The Price of a Ghost: Valuing Human Life
       #### Annual Mortality Cost Calculation
-        ##### Total Human Cost: [\$2,446 billion](../references.qmd#acled-active-combat-deaths) annually
   ## Infrastructure Destruction: Breaking Things Costs Money
     ### Reconstruction Cost Analysis (2023 Estimates)
       #### Total Infrastructure Damage: [\$1,875 billion](../references.qmd#reconstruction-costs-active-conflicts)
@@ -122,15 +120,11 @@
     ### Opportunity Cost Analysis: The Roads Not Taken
       #### Comparative Investment Analysis (2023 Dollars)
       #### The Multiplier Effect: Economic Growth We're Not Having
-        ##### Lost GDP Growth Calculation
     ### Long-term Human Costs: The Gift That Keeps on Taking
       #### Veteran Healthcare Cost Projections
       #### Refugee Support: The Mathematics of Displacement
-        ##### Annual Refugee Support Cost
-        ##### Lost Economic Productivity
     ### Environmental Degradation: Poisoning the Planet Costs Money Too
       #### Environmental Cost Calculation Matrix
-        ##### Total Environmental Damage: [\$100 billion](../references.qmd#environmental-cost-of-war) annually
     ### The Existential Overdraft: The AI Arms Race
   ## The Total Cost of Organized Violence
     ### Comprehensive Cost Analysis (2024)
@@ -481,7 +475,6 @@
   ## The Solution: Amazon for Clinical Trials
     ### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
       #### Net cost to company: $0
-        ##### Why?
     ### The Payment Flow (Or: How Everyone Profits Except Disease)
       #### Example
       #### Company receives
@@ -520,7 +513,6 @@
   ## Outcome Labels: Nutrition Facts for Drugs
     ### Cognitive Improvements
       #### Side Effects
-        ##### Example: DEPRESSION CRUSHER 3000™
   ## The Disease Eradication Act: Making It Legal to Not Die
   ## The Future: Where Death Becomes Embarrassing
     ### 2027: The Beginning of the End of Dying Slowly
@@ -827,7 +819,6 @@
     ### The Bottom Line
     ### What You're Actually Making Per Hour
       #### Time Investment
-        ##### Effective Hourly Rate: `{python} effective_hourly_rate_thousands_formatted`/hour
 
 #### knowledge/futures.qmd
 
@@ -2538,4 +2529,4 @@
 - Files with headings: 79
 - Files without headings: 2
 - Files not found: 0
-- Total headings extracted: 2255
+- Total headings extracted: 2246

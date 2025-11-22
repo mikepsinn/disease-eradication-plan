@@ -105,7 +105,7 @@ You're not being asked to donate your time. You're being offered the highest-pay
 - Taking actions: `{python} action_time_total_hours_formatted` hours ([Vote `{python} ACTION_TIME_VOTE_MINUTES` min + Invest `{python} ACTION_TIME_INVEST_MINUTES` min + Recruit `{python} ACTION_TIME_RECRUIT_MINUTES` min](three-actions.qmd))
 - **Total: `{python} total_time_investment_hours_formatted` hours**
 
-##### Effective Hourly Rate: `{python} effective_hourly_rate_thousands_formatted`/hour
+**Effective Hourly Rate: `{python} effective_hourly_rate_thousands_formatted`/hour**
 
 This is:
 
