@@ -26,10 +26,12 @@ fig, ax = plt.subplots(figsize=(12, 6))
 
 categories = ['War on\nHumanity', 'War on Disease']
 # Work in billions to prevent matplotlib from expanding the canvas to trillions
+
 BILLION = 1_000_000_000
 TRILLION = 1_000_000_000_000
 
 # Convert Parameter -> float once, then scale for plotting
+
 military_total_raw = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
 cure_spending_raw = float(GLOBAL_MED_RESEARCH_SPENDING)
 

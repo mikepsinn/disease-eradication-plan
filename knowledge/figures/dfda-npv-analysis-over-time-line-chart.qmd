@@ -22,6 +22,7 @@ setup_chart_style()
 from dih_models.parameters import *
 
 # Conversion constant - parameters store RAW USD values
+
 BILLION = 1_000_000_000
 
 # NPV Model Parameters (from dih_models/parameters.py)

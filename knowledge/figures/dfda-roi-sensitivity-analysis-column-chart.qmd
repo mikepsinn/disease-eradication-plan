@@ -25,6 +25,7 @@ roi_values = [
 ]
 
 # Format benefit labels with parameter formatter
+
 benefit_historical = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
 benefit_primary = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
 benefit_optimistic = format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)

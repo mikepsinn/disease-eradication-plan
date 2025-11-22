@@ -30,6 +30,7 @@ interventions = [
     '1% Treaty /\ndFDA Initiative'
 ]
 # TODO: Create annual benefit parameters for water fluoridation and smoking cessation
+
 values = [0.8, 12.0, childhood_vacc_benefit, total_benefit]
 
 # Create figure - taller for vertical layout

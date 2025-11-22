@@ -9,7 +9,7 @@ project:
 
 book:
   title: "How to End War and Disease"
-  author: "By W.I.SH.O.N.I.A. (Translated by Mike P. Sinn)"
+  author: "By WISHONIA (Translated by Mike P. Sinn)"
   description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
   favicon: favicon.ico
@@ -167,7 +167,7 @@ metadata:
   # Bibliographic metadata
   title: "How to End War and Disease"
   description: "A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
-  abstract: "A comprehensive guide to redirecting 1% of global military spending ($27.2B annually) to medical research through the Decentralized Institutes of Health (DIH) and Decentralized FDA (dFDA) system. Demonstrates 463:1 to 1,239:1 return on investment through cost-benefit analysis, peace dividend calculations, and health economics frameworks."
+  abstract: "A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
   category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
@@ -259,6 +259,9 @@ format:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
     # Cover image for EPUB (required for most e-book platforms)
     epub-cover-image: assets/cover/book-cover-3.png
+    # Math rendering: Use webtex to convert LaTeX to images (works in all e-readers, including Kindle)
+    # MathML (default) doesn't work in Kindle and many other readers
+    html-math-method: webtex
     # Table of contents
     toc: true
     toc-depth: 3

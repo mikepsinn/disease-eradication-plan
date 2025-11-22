@@ -37,6 +37,7 @@ health_gains_primary = float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / BILLION
 health_gains_optimistic = float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / BILLION
 
 # Component values for equations
+
 conservative_deaths_annual = float(HISTORICAL_PROGRESS_DEATHS_ANNUAL) / 1e6  # Convert to millions
 conservative_deaths_total = float(HISTORICAL_PROGRESS_DEATHS_TOTAL) / 1e6
 primary_deaths_annual = float(DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL) / 1e6
@@ -98,6 +99,7 @@ ax.tick_params(left=False, labelleft=False)
 # Add value labels using centralized formatter
 
 # Investment (Campaign Cost)
+
 campaign_label = format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)
 ax.text(x_positions[0], treaty_campaign_cost + 10,
         campaign_label,
@@ -105,6 +107,7 @@ ax.text(x_positions[0], treaty_campaign_cost + 10,
         fontweight='bold', color=COLOR_BLACK)
 
 # R&D Savings
+
 rd_savings_label = format_parameter_value(DFDA_BENEFIT_RD_ONLY_ANNUAL)
 ax.text(x_positions[1], gross_rd_savings + 10,
         rd_savings_label,
@@ -113,6 +116,7 @@ ax.text(x_positions[1], gross_rd_savings + 10,
 
 # Health gains - label each tier using centralized formatter (TOTAL values, not annual)
 # Conservative tier (bottom)
+
 conservative_label = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
 ax.text(x_positions[2], health_gains_conservative / 2,
         conservative_label,
@@ -120,6 +124,7 @@ ax.text(x_positions[2], health_gains_conservative / 2,
         fontweight='bold', color=COLOR_BLACK)
 
 # PRIMARY tier (middle)
+
 primary_label = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
 ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - health_gains_conservative) / 2,
         primary_label,
@@ -127,6 +132,7 @@ ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - heal
         fontweight='bold', color=COLOR_WHITE)
 
 # Optimistic tier (top)
+
 optimistic_label = format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
 ax.text(x_positions[2], health_gains_primary + (health_gains_optimistic - health_gains_primary) / 2,
         optimistic_label,

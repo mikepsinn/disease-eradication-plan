@@ -10,6 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Convert raw parameter values to billions for chart display
+
 BILLION = 1_000_000_000
 
 # Modern design system

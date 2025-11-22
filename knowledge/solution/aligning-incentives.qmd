@@ -159,14 +159,14 @@ DIH model (costs eliminated):
 
 ### The Math That Converts Them
 
-**Current Pharma Economics:**
+#### Current Pharma Economics
 
 - Development cost: {{< var pharma_drug_development_cost_current >}}
 - Success rate: {{< var pharma_success_rate_current_pct >}} (90% fail)
 - Average revenue per success: {{< var pharma_drug_revenue_average_current >}}
 - **ROI: {{< var pharma_roi_current_system_pct >}}** (Barely profitable!)
 
-**New DIH System - Cost Elimination:**
+#### New DIH System - Cost Elimination
 
 The main benefit: trials become 100x cheaper due to pragmatic design.
 
@@ -174,12 +174,14 @@ The main benefit: trials become 100x cheaper due to pragmatic design.
 ## How DIH Eliminates Trial Costs
 
 **Current system:** Pharma spends $48,000 per participant on:
+
 - Dedicated trial sites and staff
 - Extensive monitoring and site visits
 - Custom data collection infrastructure
 - Regulatory compliance overhead
 
 **DIH system:** Cost drops to near-zero because:
+
 - Uses existing medical practices (no dedicated sites)
 - Patient's regular doctor enrolls them (one-click)
 - Leverages existing EHR data (no custom infrastructure)
@@ -203,13 +205,15 @@ The DIH doesn't change whether drugs work biologically. It changes the economics
 
 The trade-off: **Lower revenue per drug, but massively more attempts.**
 
-**Current model:**
+#### Current model
+
 - Chase $1B+ blockbusters
 - Can only afford ~10 attempts (each costs $2.6B)
 - Need huge markets to justify risk
 - 10,000 compounds sitting on shelf
 
-**New DIH model:**
+#### New DIH model
+
 - $500M per success is profitable (smaller markets work)
 - Can attempt all 10,000 compounds (get paid per attempt)
 - Rare diseases become gold mines (no competition)

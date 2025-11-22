@@ -165,6 +165,7 @@ fig.add_trace(go.Bar(
 ))
 
 # Add cost labels
+
 for i, row in roi_data.iterrows():
     fig.add_annotation(
         x=row['Cost Scenario'],

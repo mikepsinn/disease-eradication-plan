@@ -1,11 +1,10 @@
 ---
-title: "Economic Impact Analysis: Reallocating Military Spending to Medical Research"
+title: 'Economic Impact Analysis: Reallocating Military Spending to Medical Research'
 description: Cost-benefit analysis of scaling the Oxford RECOVERY trial approach globally by reallocating 1% of military spending to fund universal patient participation in pragmatic trials
 author:
-  - name: "Mike P. Sinn"
-    affiliation: "Decentralized Institutes of Health"
-    email: "m@dih.earth"
-date: today
+  - name: Mike P. Sinn
+    affiliation: Decentralized Institutes of Health
+    email: m@dih.earth
 published: true
 tags:
   - economics
@@ -15,18 +14,15 @@ tags:
   - roi
   - impact-assessment
   - health-economics
-# Citation configuration for published paper style
 bibliography: ../../references.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
 link-citations: true
 citation-hover: true
-# Academic paper formatting
 toc: true
 toc-depth: 3
 number-sections: true
 fig-cap-location: bottom
 tbl-cap-location: top
-# Metadata
 lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 lastParamCheckHash: c6c1adaae3f668e0729df5aa12f73a0ddedccc987de87895bcc8ca8701b1864c
@@ -122,7 +118,7 @@ from dih_models.parameters import *
 :::
 
 
-**The Highest-ROI Public Health Intervention**
+### The Highest-ROI Public Health Intervention
 
 Shift 1% of global military spending into decentralized clinical trials. That's it. That's the entire plan.
 
@@ -154,6 +150,7 @@ This isn't "funding infrastructure" - it's making trial participation financiall
 ### Lives Saved
 
 **{{< var treaty_total_lives_saved_annual >}} lives per year**
+
 - **{{< var treaty_total_lives_saved_daily >}} lives per day** by eliminating the 7.2-year regulatory efficacy lag
 - **{{< var dfda_lives_saved_annual >}} from dFDA** (eliminating post-safety efficacy lag)
 - **{{< var treaty_lives_saved_annual_global >}} from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction)
@@ -1217,7 +1214,8 @@ GiveWell charities are the **best ways to spend money** saving lives. They're he
 
 This doesn't spend money. It **generates profit** while saving lives.
 
-**Translation:**
+### Translation
+
 - Best charity: Costs $3,000-$5,000 per life saved (excellent)
 - This system: Makes $1.1M profit per life saved
 
@@ -1437,7 +1435,7 @@ The analysis relies significantly on the Oxford RECOVERY trial as empirical evid
 
 Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-ideas-getting-harder-2020) show research productivity falling ~5% annually across industries, with Moore's Law requiring 18× more researchers than in the 1970s to achieve constant improvement rates.
 
-**Why this critique may not apply:**
+#### Why this critique may not apply
 
 This intervention targets a different margin than traditional research scaling. Bloom et al. measure **idea productivity** (breakthroughs per researcher-year). Our intervention targets **trial execution efficiency** (cost per patient enrolled, completion rates, recruitment speed).
 

@@ -21,6 +21,7 @@ from dih_models.plotting.chart_style import (
 setup_chart_style(style='light', dpi=200)
 
 # Scale constant for USD values
+
 BILLION = 1_000_000_000
 
 # War costs breakdown (from cost-of-war.qmd)

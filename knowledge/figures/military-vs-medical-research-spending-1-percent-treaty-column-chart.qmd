@@ -26,6 +26,7 @@ fig, ax = plt.subplots(figsize=(12, 6))
 
 categories = ['War on\nHumanity', 'War on Disease']
 # Convert parameters to billions for chart display
+
 BILLION = 1_000_000_000
 
 military_total = float(GLOBAL_MILITARY_SPENDING_ANNUAL_2024) / BILLION
@@ -117,6 +118,7 @@ ax.set_xticklabels(['', ''])  # We'll keep labels on the bars themselves
 ax.set_ylim(0, 2900)
 
 # Remove axes manually (instead of ax.axis('off') to avoid bbox calculation issues)
+
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 ax.spines['bottom'].set_visible(False)

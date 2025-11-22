@@ -39,6 +39,7 @@ def add_modern_watermark(fig):
 ```{python}
 #| echo: false
 # Scale constant for converting raw USD to billions
+
 BILLION = 1_000_000_000
 
 dividends_data = {

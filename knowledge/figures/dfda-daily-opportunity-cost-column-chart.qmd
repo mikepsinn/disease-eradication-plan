@@ -19,6 +19,7 @@ scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMAR
 
 # Daily opportunity costs (TOTAL one-time benefits / lag years / 365)
 # These represent the daily cost of delay during the 8.2-year efficacy lag period
+
 money_lost = [
     float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / EFFICACY_LAG_YEARS / 365 / 1_000_000_000,  # Historical rate
     float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / EFFICACY_LAG_YEARS / 365 / 1_000_000_000,  # PRIMARY
@@ -27,6 +28,7 @@ money_lost = [
 
 # Daily DALYs foregone (calculated from economic loss / $150k VSLY)
 # Since economic_loss = DALYs × VSLY, we can derive: DALYs = economic_loss / VSLY
+
 qalys_lost = [
     (float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / EFFICACY_LAG_YEARS / 365) / STANDARD_ECONOMIC_QALY_VALUE_USD,  # Historical rate
     (float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / EFFICACY_LAG_YEARS / 365) / STANDARD_ECONOMIC_QALY_VALUE_USD,  # PRIMARY

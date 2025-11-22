@@ -111,6 +111,7 @@ ax2_legend = ax2.legend(fontsize=14, loc='upper right', framealpha=1.0,
            bbox_to_anchor=(0.98, 0.98), frameon=True,
            edgecolor=COLOR_BLACK, facecolor=COLOR_WHITE)
 # Set legend text color to black for readability on white background
+
 for text in ax2_legend.get_texts():
     text.set_color(COLOR_BLACK)
 # Move CI box to bottom left with more spacing - white background with black text

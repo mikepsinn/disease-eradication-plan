@@ -20,6 +20,7 @@ setup_chart_style(style='light', dpi=150)
 
 # Disease burden (from parameters.py)
 # Convert to billions for chart display
+
 BILLION = 1_000_000_000
 
 disease_medical = float(GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL) / BILLION
@@ -45,10 +46,12 @@ fig, ax = plt.subplots(figsize=(14, 10))
 ax.bar(0, disease_total, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=3, width=0.8)
 
 # "$109T" in large font at the top
+
 ax.text(0, disease_total * 0.82, '$109T', ha='center', va='center',
         fontsize=72, weight='bold', color=COLOR_BLACK)
 
 # Rest of the label below
+
 disease_label = (
     'Dealing\n'
     'with\n'

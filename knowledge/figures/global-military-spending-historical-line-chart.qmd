@@ -11,6 +11,7 @@ import numpy as np
 from pathlib import Path
 
 # Find project root dynamically
+
 project_root = Path.cwd()
 if project_root.name != 'decentralized-institutes-of-health':
     while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
@@ -21,6 +22,7 @@ from dih_models.plotting.chart_style import (
     COLOR_BLACK, COLOR_WHITE, get_figure_output_path, add_png_metadata)
 
 # Setup styling
+
 setup_chart_style()
 
 # Load historical military spending data
@@ -35,14 +37,17 @@ historical_data = pd.read_csv(data_path)
 df = historical_data.copy()
 
 # Create figure with larger size for better visibility of 124-year timeline
+
 fig, ax = plt.subplots(figsize=(14, 8))
 
 # Plot spending trend - use smaller markers for the many data points
+
 ax.plot(df['Year'], df['Spending_2023_USD_Billions'],
         color=COLOR_BLACK, linewidth=3, marker='o', markersize=4)
 
 # Add key milestone annotations for major conflicts
 # WWI Peak (1918)
+
 ww1_year = 1918
 ww1_spending = df[df['Year'] == ww1_year]['Spending_2023_USD_Billions'].values[0]
 ax.axvline(x=ww1_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
@@ -53,6 +58,7 @@ ax.text(ww1_year, ww1_spending * 0.85, 'WWI Peak\n($718B)',
                  edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # WWII Peak (1944) - Largest military mobilization in history
+
 ww2_year = 1944
 ww2_spending = df[df['Year'] == ww2_year]['Spending_2023_USD_Billions'].values[0]
 ax.axvline(x=ww2_year, color=COLOR_BLACK, linestyle=':', linewidth=2, alpha=0.5)
@@ -63,6 +69,7 @@ ax.text(ww2_year, ww2_spending * 0.92, 'WWII Peak\n($3.27T)\nLargest Ever',
                  edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Add data labels at first and last points
+
 first_row = df.iloc[0]
 ax.annotate(f'${first_row["Spending_2023_USD_Billions"]:.0f}B\n({int(first_row["Year"])})',
             xy=(first_row['Year'], first_row['Spending_2023_USD_Billions']),
@@ -86,28 +93,34 @@ ax.annotate(f'${last_row["Spending_2023_USD_Billions"]:.0f}B\n({int(last_row["Ye
                      linewidth=2))
 
 # Title and labels
+
 ax.set_title('Global Military Spending',
              fontsize=28, fontweight='bold', pad=20)
 ax.set_xlabel('Year', fontsize=22, fontweight='bold')
 ax.set_ylabel('Spending (Billions, 2023 USD)', fontsize=22, fontweight='bold')
 
 # Style
+
 ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
 ax.tick_params(labelsize=16)
 clean_spines(ax)
 
 # Format y-axis to show billions with $ sign
+
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'${x:,.0f}B'))
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save figure
+
 output_path = get_figure_output_path('global-military-spending-historical-line-chart.png')
 plt.savefig(output_path,
             dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata
+
 add_png_metadata(
     output_path,
     title="Global Military Spending 1900-2024 (Constant 2023 USD)",
@@ -119,7 +132,7 @@ plt.show()
 
 This chart shows 124 years of global military spending from 1900 to 2024, all adjusted for inflation to constant 2023 dollars.
 
-**Key Findings:**
+## Key Findings
 
 - **WWII Peak (1944):** $3.27 trillion - the largest military mobilization in human history, still exceeding modern spending
 - **WWI Peak (1918):** $718 billion - significant but far smaller than WWII
@@ -127,7 +140,8 @@ This chart shows 124 years of global military spending from 1900 to 2024, all ad
 
 **Key Insight:** Despite decades of peace and the absence of total global war, current military spending ($2.72T) is 83% of the WWII peak and 41× higher than pre-WWI levels ($66B in 1900). The world spends nearly as much on military today as it did during the largest war in history.
 
-**Data Sources:**
+### Data Sources
+
 - 1900-2012: Correlates of War National Material Capabilities Dataset (COW NMC)
 - 2013-2024: SIPRI (Stockholm International Peace Research Institute) Military Expenditure Database
 - All values converted to constant 2023 USD using CPI data

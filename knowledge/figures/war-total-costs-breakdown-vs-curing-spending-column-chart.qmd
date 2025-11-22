@@ -23,6 +23,7 @@ setup_chart_style(style='light', dpi=150)
 FONT_SIZES = get_presentation_font_sizes()
 
 # Define scale constant
+
 BILLION = 1_000_000_000
 
 # Create figure

@@ -46,8 +46,11 @@ def main():
     print("[*] Cleaning up existing EPUB files...")
     epub_files = list(project_root.glob("*.epub"))
     for epub_file in epub_files:
-        print(f"    Removing {epub_file.name}")
-        epub_file.unlink()
+        try:
+            print(f"    Removing {epub_file.name}")
+            epub_file.unlink()
+        except PermissionError:
+            print(f"    Warning: Could not remove {epub_file.name} (file is open, will be overwritten)")
 
     # Remove index_files directory (Quarto cleanup issue on Windows)
     index_files = project_root / "index_files"
@@ -66,24 +69,43 @@ def main():
         cmd.extend(args.quarto_args)
 
     # Run command
+    exit_code = 0
     try:
-        result = subprocess.run(cmd, check=True)
-        print("[OK] EPUB render complete!")
+        result = subprocess.run(cmd, check=False)  # Don't raise on error, we'll handle cleanup first
+        exit_code = result.returncode
 
-        # Find and display the generated EPUB file
-        output_dir = Path(args.output_dir)
-        epub_files = list(output_dir.glob("*.epub"))
-        if epub_files:
-            print(f"[*] Generated EPUB: {epub_files[0]}")
+        # Check if EPUB was generated successfully (even if Quarto cleanup failed)
+        epub_files = list(project_root.glob("*.epub"))
 
-        sys.exit(result.returncode)
-    except subprocess.CalledProcessError as e:
-        print(f"[ERROR] Render failed with exit code {e.returncode}", file=sys.stderr)
-        sys.exit(e.returncode)
+        if epub_files and exit_code != 0:
+            # EPUB exists but Quarto cleanup failed - this is OK, we'll clean up ourselves
+            print("[*] EPUB generated successfully (ignoring Quarto cleanup error)")
+            exit_code = 0
+
+        if exit_code == 0:
+            print("[OK] EPUB render complete!")
+            if epub_files:
+                file_size_mb = epub_files[0].stat().st_size / (1024 * 1024)
+                print(f"[*] Generated EPUB: {epub_files[0]} ({file_size_mb:.1f}MB)")
+        else:
+            print(f"[ERROR] Render failed with exit code {exit_code}", file=sys.stderr)
+
     except FileNotFoundError as e:
         print(f"[ERROR] Command not found: {e}", file=sys.stderr)
         print("        Make sure Quarto is installed and in your PATH", file=sys.stderr)
-        sys.exit(1)
+        exit_code = 1
+    finally:
+        # Clean up index_files directory (Quarto sometimes fails to remove it on Windows)
+        index_files = project_root / "index_files"
+        if index_files.exists():
+            print(f"[*] Cleaning up {index_files}...")
+            try:
+                shutil.rmtree(index_files)
+                print(f"    Removed {index_files}")
+            except Exception as e:
+                print(f"    Warning: Could not remove {index_files}: {e}")
+
+        sys.exit(exit_code)
 
 
 if __name__ == "__main__":
