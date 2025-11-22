@@ -12,12 +12,14 @@ tags:
 #| echo: false
 import sys
 import os
+from pathlib import Path
 
-# Quarto executes from project root (execute-dir: project in _book.yml)
+# Find project root dynamically (works regardless of where Quarto executes from)
+from dih_models.plotting.chart_style import get_project_root
 
-project_root = os.getcwd()
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+project_root = get_project_root()
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
 
 from dih_models.parameters import *
 ```

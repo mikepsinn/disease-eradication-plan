@@ -10,16 +10,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
-# Find project root dynamically
-
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, add_png_metadata)
+    COLOR_BLACK, COLOR_WHITE, get_figure_output_path, add_png_metadata,
+    get_project_root)
+
+# Find project root dynamically
+project_root = get_project_root()
 
 # Setup styling
 

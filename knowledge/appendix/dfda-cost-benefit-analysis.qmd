@@ -12,8 +12,12 @@ tags:
 #| echo: false
 import os
 import numpy_financial as npf
+from pathlib import Path
 
-project_root = os.getcwd()
+# Find project root dynamically (works regardless of where Quarto executes from)
+from dih_models.plotting.chart_style import get_project_root
+
+project_root = get_project_root()
 from dih_models.parameters import *
 ```
 
@@ -1213,8 +1217,12 @@ This section provides executable Python code that implements the financial model
 # Import all parameters from single source of truth
 
 import os
+from pathlib import Path
 
-project_root = os.getcwd()
+# Find project root dynamically (works regardless of where Quarto executes from)
+from dih_models.plotting.chart_style import get_project_root
+
+project_root = get_project_root()
 from dih_models.parameters import *
 
 # Use parameters from dih_models/parameters.py
