@@ -16,31 +16,27 @@ import plotly.express as px
 
 pd.options.display.float_format = '{:,.0f}'.format
 
-# Comprehensive economic impact data from all analyses
+# Comprehensive economic impact data - 3-Tier Structure for Gates Foundation
 
 economic_impacts = pd.DataFrame({
     'Source': [
         '1% Treaty Peace Dividend',
-        'dFDA R&D Savings (82x cost reduction)',
-        'Earlier Drug Access (7-year acceleration)',
+        'dFDA R&D Savings Only (82x cost reduction)',
+        'dFDA Conservative Floor (Historical Progress)',
+        'dFDA PRIMARY (Disease Eradication Delay)',
+        'dFDA Optimistic (Acceleration Effects)',
         'Medical Research Acceleration (115x capacity)',
-        'Rare Disease Treatments',
-        'Drug Price Reduction',
-        'Prevention Economic Viability',
-        'Mental Health Treatment Gap',
-        'Combined Conservative (Peace + dFDA)',
-        'Combined Complete (All 8 Categories)'
+        'Combined Conservative (Peace + R&D + Floor)',
+        'Combined Complete (PRIMARY Benefits)'
     ],
     'Annual Value (Billions)': [
         float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000,
-        float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 1_000_000_000,
-        float(BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL) / 1_000_000_000,
+        float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1_000_000_000,
+        float(DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL) / 1_000_000_000,
+        float(DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL) / 1_000_000_000,
+        float(DFDA_BENEFIT_ACCELERATION_ANNUAL) / 1_000_000_000,
         float(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL) / 1_000_000_000,
-        float(BENEFIT_RARE_DISEASES_ANNUAL) / 1_000_000_000,
-        float(BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL) / 1_000_000_000,
-        float(BENEFIT_PREVENTION_ANNUAL) / 1_000_000_000,
-        float(BENEFIT_MENTAL_HEALTH_ANNUAL) / 1_000_000_000,
-        float(TREATY_TOTAL_ANNUAL_BENEFITS) / 1_000_000_000,
+        (float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) + float(DFDA_BENEFIT_RD_ONLY_ANNUAL) + float(DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL)) / 1_000_000_000,
         float(TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL) / 1_000_000_000
     ],
     'ROI Ratio': [
@@ -50,19 +46,15 @@ economic_impacts = pd.DataFrame({
         np.nan,
         np.nan,
         np.nan,
-        np.nan,
-        np.nan,
         float(DFDA_ROI_RD_ONLY),
-        float(TREATY_COMPLETE_ROI)
+        float(TREATY_COMPLETE_ROI_ALL_BENEFITS)
     ],
     'Implementation Cost (Millions)': [
         500,  # Estimated for visualization
         float(DFDA_ANNUAL_OPEX) / 1_000_000,
-        100,  # Estimated for visualization
-        100,  # Estimated for visualization
-        100,  # Estimated for visualization
-        100,  # Estimated for visualization
-        100,  # Estimated for visualization
+        float(DFDA_ANNUAL_OPEX) / 1_000_000,
+        float(DFDA_ANNUAL_OPEX) / 1_000_000,
+        float(DFDA_ANNUAL_OPEX) / 1_000_000,
         100,  # Estimated for visualization
         float(TREATY_TOTAL_ANNUAL_COSTS) / 1_000_000,
         float(TREATY_CAMPAIGN_TOTAL_COST) / 1_000_000

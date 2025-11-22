@@ -14,6 +14,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import setup_chart_style, add_watermark, clean_spines
 from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
@@ -112,7 +113,7 @@ for i, (name, roi, cat) in enumerate(zip(names, rois, categories)):
         # For small bars, combine name and dollar value into one label
         # Place near the bottom since bars are essentially invisible
         name_lines = name.replace(' ', '\n')
-        combined_label = f'{name_lines}\n${roi}'
+        combined_label = f'{name_lines}\n{format_parameter_value(roi, "USD")}'
         ax.text(x_pos[i], 800,
                 combined_label,
                 ha='center', va='bottom',
@@ -137,8 +138,8 @@ ax.set_title('When Self-Funded by 1% Military Redirection: Infinite ROI',
 
 # Add explanatory callout with inline LaTeX equation - positioned to the right
 
-total_benefits_b = float(TREATY_TOTAL_ANNUAL_BENEFITS) / 1_000_000_000
-callout_text = r'The 1% Treaty redirects military spending to fund DIH + dFDA at zero net cost to society.' + '\n\n' + rf'$\mathrm{{ROI}} = \frac{{\${total_benefits_b:.0f}\mathrm{{B}}}}{{\$0}} = \infty$' + '\n\n' + f'Result: ${total_benefits_b:.0f}B in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.'
+total_benefits_formatted = format_parameter_value(TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL, "USD")
+callout_text = r'The 1% Treaty redirects military spending to fund DIH + dFDA at zero net cost to society.' + '\n\n' + rf'$\mathrm{{ROI}} = \frac{{{total_benefits_formatted}}}{{\$0}} = \infty$' + '\n\n' + f'Result: {total_benefits_formatted} in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.'
 ax.text(0.62, 0.50, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=15, color=COLOR_BLACK,

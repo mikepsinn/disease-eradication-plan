@@ -3878,6 +3878,46 @@ TREATY_COMPLETE_ROI_ALL_BENEFITS = Parameter(
     keywords=["8260", "complete", "total", "comprehensive", "all benefits", "peace dividend", "roi", "primary methodology", "regulatory mortality analysis"]
 )  # Complete ROI with PRIMARY METHODOLOGY (no double-counting)
 
+# Three-tier ROI analysis based on TOTAL one-time health benefits
+TREATY_ROI_HISTORICAL_RATE = Parameter(
+    HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+    source_type="calculated",
+    description="Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.",
+    display_name="Treaty ROI - Historical Rate (Conservative Floor)",
+    unit="ratio",
+    formula="HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
+    latex=r"ROI_{historical} = \frac{\$251T}{\$1.00B} = 250{,}920:1",
+    confidence="high",
+    keywords=["250920", "historical", "conservative", "floor", "existing drugs", "roi"]
+)  # 250,920:1 ROI (conservative floor - existing drugs only)
+
+TREATY_ROI_LAG_ELIMINATION = Parameter(
+    DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+    source_type="calculated",
+    description="Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+    display_name="Treaty ROI - Lag Elimination (PRIMARY)",
+    unit="ratio",
+    formula="DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
+    latex=r"ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1",
+    confidence="medium",
+    keywords=["1286242", "lag elimination", "primary", "disease eradication", "roi", "8.2 years"]
+)  # 1,286,242:1 ROI (PRIMARY - lag elimination)
+
+TREATY_ROI_INNOVATION_ACCELERATION = Parameter(
+    DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL / TREATY_CAMPAIGN_TOTAL_COST,
+    source_ref="/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+    source_type="calculated",
+    description="Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).",
+    display_name="Treaty ROI - Innovation Acceleration (Optimistic)",
+    unit="ratio",
+    formula="DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL ÷ CAMPAIGN_COST",
+    latex=r"ROI_{acceleration} = \frac{\$2{,}572T}{\$1.00B} = 2{,}572{,}484:1",
+    confidence="low",
+    keywords=["2572484", "innovation", "acceleration", "optimistic", "upper bound", "roi"]
+)  # 2,572,484:1 ROI (optimistic - innovation acceleration)
+
 # Opportunity cost calculations
 OPPORTUNITY_COST_PER_SECOND = Parameter(
     TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL / (365 * 24 * 3600),

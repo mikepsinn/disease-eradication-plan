@@ -22,10 +22,10 @@ setup_chart_style()
 
 probabilities = ['10%\n(Conservative)', '25%\n(Moderate)', '40%\n(Moderate-High)', '50%\n(Optimistic)']
 expected_rois = [
-    float(EXPECTED_ROI_CONSERVATIVE_DFDA),
-    float(EXPECTED_ROI_MODERATE_DFDA),
-    float(EXPECTED_ROI_MODERATE_HIGH_DFDA),
-    float(EXPECTED_ROI_OPTIMISTIC_DFDA)
+    float(DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS),
+    float(DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS),
+    float(DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS),
+    float(DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS)
 ]
 
 # Create figure

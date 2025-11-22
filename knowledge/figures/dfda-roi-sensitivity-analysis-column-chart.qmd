@@ -10,21 +10,29 @@ from dih_models.parameters import *
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
     COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL, get_figure_output_path)
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
 # --- Data from current parameters ---
+# Three-tier ROI based on different health benefit scenarios (all use $1B campaign cost)
 
-scenarios = ['Optimistic\n(Lowest Costs)', 'Baseline\n(Lean Ecosystem)', 'Conservative\n(Highest Costs)']
+scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMARY)', 'Innovation Acceleration\n(With Cascading Effects)']
 roi_values = [
-    float(OPTIMISTIC_SCENARIO_ROI),
-    float(DFDA_ROI_RD_PLUS_DELAY),  # Recommended: full health benefits across cost scenarios
-    float(CONSERVATIVE_SCENARIO_ROI)
+    float(TREATY_ROI_HISTORICAL_RATE),        # Conservative: $251T / $1B = 250,920:1
+    float(TREATY_ROI_LAG_ELIMINATION),        # PRIMARY: $1,286T / $1B = 1,286,242:1
+    float(TREATY_ROI_INNOVATION_ACCELERATION) # Optimistic: $2,572T / $1B = 2,572,484:1
 ]
-costs = [
-    f'${float(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)/1_000_000:.0f}M/year',
-    f'${float(DFDA_ANNUAL_OPEX)/1_000_000:.0f}M/year',
-    f'${float(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)/1_000_000:.0f}M/year'
+
+# Format benefit labels with parameter formatter
+benefit_historical = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
+benefit_primary = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+benefit_optimistic = format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
+
+benefits = [
+    f'{benefit_historical} benefit',
+    f'{benefit_primary} benefit',
+    f'{benefit_optimistic} benefit'
 ]
 
 # --- Create figure ---
@@ -42,60 +50,54 @@ bars = ax.bar(
     width=0.7
 )
 
-# Different patterns for each bar
+# Different patterns for each bar - match investment returns chart
 
-bars[0].set_hatch(None)  # White fill for best case
-bars[1].set_hatch(PATTERN_DIAGONAL)  # Diagonal for base case (emphasis)
-bars[2].set_hatch(PATTERN_HORIZONTAL)  # Horizontal for worst case
+bars[0].set_hatch(PATTERN_DIAGONAL)  # Diagonal for historical rate (conservative)
+bars[1].set_facecolor(COLOR_BLACK)   # Black fill for PRIMARY (lag elimination)
+bars[1].set_hatch(None)
+bars[2].set_hatch(PATTERN_DIAGONAL)  # Diagonal for innovation acceleration (optimistic)
 
 # --- Add value labels above bars ---
 
-for i, (roi, cost) in enumerate(zip(roi_values, costs)):
-    # ROI value above bar
+for i, (roi, benefit) in enumerate(zip(roi_values, benefits)):
+    # ROI value above bar (all are large values)
     ax.text(
-        i, roi + 130,
-        f'{roi}:1',
+        i, roi + max(roi_values)*0.05,
+        f'{roi:,.0f}:1',
         ha='center', va='bottom',
-        fontsize=42, fontweight='bold',
+        fontsize=44, fontweight='bold',
         color=COLOR_BLACK
     )
 
-    # Annual cost - place ABOVE short bars, INSIDE tall bars
-    if roi < 200:  # Short bar - place label above
-        ax.text(
-            i, roi + 10,
-            cost,
-            ha='center', va='bottom',
-            fontsize=20, fontweight='bold',
-            color=COLOR_BLACK
-        )
-    else:  # Tall bar - place label inside
-        ax.text(
-            i, roi/2,
-            cost,
-            ha='center', va='center',
-            fontsize=22, fontweight='bold',
-            color=COLOR_BLACK,
-            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
-                      edgecolor=COLOR_BLACK, linewidth=2)
-        )
+    # Benefit label - place inside bar
+    # Use white text for middle bar (PRIMARY, which is black), black text for others
+    text_color = COLOR_WHITE if i == 1 else COLOR_BLACK
+    ax.text(
+        i, roi/2,
+        benefit,
+        ha='center', va='center',
+        fontsize=24, fontweight='bold',
+        color=text_color,
+        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE if i != 1 else COLOR_BLACK,
+                  edgecolor=COLOR_BLACK, linewidth=2.5)
+    )
 
 # --- Styling ---
 
 ax.set_title(
-    'dFDA Return on Investment\nAcross Cost Scenarios',
-    fontsize=36, fontweight='bold',
+    '1% Treaty Return on Investment\nThree Health Benefit Scenarios',
+    fontsize=38, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
 
 ax.set_ylabel(
-    'Return on Investment\n($ Saved per $ Spent)',
+    'Return on Investment\n(Total Benefit ÷ $1B Campaign Cost)',
     fontsize=28, fontweight='bold',
     color=COLOR_BLACK, labelpad=15
 )
 
 ax.set_xticks(range(len(scenarios)))
-ax.set_xticklabels(scenarios, fontsize=24, fontweight='bold')
+ax.set_xticklabels(scenarios, fontsize=20, fontweight='bold')
 
 # Set y-axis limits to give space for labels above
 
@@ -127,8 +129,8 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,
-    title="dFDA Return on Investment Across Cost Scenarios",
-    description=f"ROI ranges from {float(CONSERVATIVE_SCENARIO_ROI):.0f}:1 (worst case) to {float(OPTIMISTIC_SCENARIO_ROI):.0f}:1 (best case), with base case at {float(DFDA_ROI_RD_PLUS_DELAY):.0f}:1"
+    title="1% Treaty Return on Investment - Three Health Benefit Scenarios",
+    description=f"ROI analysis across three health benefit tiers based on $1B campaign cost. Historical Rate (existing drugs only): {float(TREATY_ROI_HISTORICAL_RATE):,.0f}:1 ({benefit_historical}). Lag Elimination PRIMARY: {float(TREATY_ROI_LAG_ELIMINATION):,.0f}:1 ({benefit_primary}). Innovation Acceleration: {float(TREATY_ROI_INNOVATION_ACCELERATION):,.0f}:1 ({benefit_optimistic}). All scenarios show total one-time benefits divided by campaign investment."
 )
 
 plt.show()

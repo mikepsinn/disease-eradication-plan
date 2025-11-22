@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 542
+**Total parameters**: 545
 
 - External sources (peer-reviewed): 175
-- Calculated values: 319
+- Calculated values: 322
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -6820,6 +6820,57 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys](../appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty ROI - Historical Rate (Conservative Floor) {#sec-treaty_roi_historical_rate}
+
+**Value**: 251K
+
+Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.
+
+$$
+ROI_{historical} = \frac{\$251T}{\$1.00B} = 250{,}920:1
+$$
+
+**Methodology**: [../figures/dfda-investment-returns-bar-chart.qmd](../figures/dfda-investment-returns-bar-chart.qmd)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty ROI - Innovation Acceleration (Optimistic) {#sec-treaty_roi_innovation_acceleration}
+
+**Value**: 2.57M
+
+Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).
+
+$$
+ROI_{acceleration} = \frac{\$2{,}572T}{\$1.00B} = 2{,}572{,}484:1
+$$
+
+**Methodology**: [../figures/dfda-investment-returns-bar-chart.qmd](../figures/dfda-investment-returns-bar-chart.qmd)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_roi_lag_elimination}
+
+**Value**: 1.29M
+
+Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
+
+$$
+ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1
+$$
+
+**Methodology**: [../figures/dfda-investment-returns-bar-chart.qmd](../figures/dfda-investment-returns-bar-chart.qmd)
+
+*~ Medium confidence*
 
 :::
 

@@ -15,6 +15,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import setup_chart_style, add_watermark, clean_spines
 from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
@@ -23,7 +24,7 @@ setup_chart_style()
 
 interventions = {
     'Decentralized FDA': {
-        'roi': float(DFDA_ROI_RD_PLUS_DELAY),  # Recommended: includes R&D + regulatory delay elimination
+        'roi': float(TREATY_COMPLETE_ROI_ALL_BENEFITS),  # PRIMARY: includes R&D + disease eradication delay
         'category': 'proposed',
         'note': 'Leverages all global R&D'
     },
@@ -84,17 +85,17 @@ for i, (name, roi, cat) in enumerate(zip(names, rois, categories)):
     bars.append(bar)
 
     # Add value labels above bars
-    ax.text(x_pos[i], roi + 10,
-            f'${roi}',
+    ax.text(x_pos[i], roi + max(50, roi * 0.01),
+            format_parameter_value(roi, "USD"),
             ha='center', va='bottom',
             fontsize=24, color=COLOR_BLACK, weight='bold')
 
-    # Add intervention name above the ROI value, split into multiple lines for readability
+    # Add intervention name below the bar (on x-axis area)
     label_lines = name.replace(' ', '\n')
-    ax.text(x_pos[i], roi + 50,
+    ax.text(x_pos[i], -80,
             label_lines,
-            ha='center', va='bottom',
-            fontsize=16, color=COLOR_BLACK, weight='bold',
+            ha='center', va='top',
+            fontsize=14, color=COLOR_BLACK, weight='bold',
             linespacing=1.1)
 
 # Axis formatting - remove both x-axis and y-axis
@@ -104,9 +105,9 @@ ax.set_xlabel('')
 ax.set_xticks([])  # Remove x-axis ticks and labels
 ax.set_yticks([])  # Remove y-axis ticks
 
-# Y-axis formatting - balance top and bottom margins, increase top space for labels
+# Y-axis formatting - add space below for labels, increase top space for values
 
-ax.set_ylim(-15, max(rois) * 1.25)
+ax.set_ylim(-400, max(rois) * 1.15)
 
 # Title - positioned higher to avoid overlap with labels
 
@@ -133,7 +134,7 @@ add_watermark(fig)
 
 # Save figure with tight bbox to minimize whitespace
 
-output_path = get_figure_output_path('dfda-roi-comparison-column-chart.png')
+output_path = get_figure_output_path('health-interventions-roi-comparison-column-chart.png')
 
 # Save the figure
 

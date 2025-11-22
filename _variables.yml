@@ -2826,6 +2826,35 @@
   \ 85,610\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
+"treaty_roi_historical_rate": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty ROI based\
+  \ on historical rate of drug development (existing drugs only, conservative floor).\
+  \ Total one-time benefit from avoiding regulatory delay for drugs already in development\
+  \ divided by $1B campaign cost. | ✓ High confidence | Formula: HISTORICAL_PROGRESS_TOTAL\
+  \ ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">251K</a>"
+"treaty_roi_historical_rate_latex": "$$\nROI_{historical} = \\frac{\\$251T}{\\$1.00B}\
+  \ = 250{,}920:1\n$$"
+"treaty_roi_innovation_acceleration": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Treaty ROI based\
+  \ on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND).\
+  \ Includes cascading innovation effects from eliminating Phase 2-4 cost barriers.\
+  \ Research-backed 2× multiplier represents combined timeline and volume effects\
+  \ (Nature 2023, Woods et al. 2024). | ? Low confidence | Formula: DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL\
+  \ ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">2.57M</a>"
+"treaty_roi_innovation_acceleration_latex": "$$\nROI_{acceleration} = \\frac{\\$2{,}572T}{\\\
+  $1.00B} = 2{,}572{,}484:1\n$$"
+"treaty_roi_lag_elimination": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Treaty ROI\
+  \ based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY).\
+  \ Total one-time benefit from disease eradication delay elimination divided by $1B\
+  \ campaign cost. This is the primary ROI estimate for total health benefits. | ~\
+  \ Medium confidence | Formula: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST |\
+  \ Unit: ratio | Click to view calculation\">1.29M</a>"
+"treaty_roi_lag_elimination_latex": "$$\nROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\\
+  $1.00B} = 1{,}286{,}242:1\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\

@@ -1,6 +1,7 @@
 ```{python}
 #| echo: false
 from dih_models.parameters import *
+from dih_models.parameters import format_parameter_value
 ```
 
 ```{python}
@@ -13,7 +14,7 @@ from pathlib import Path
 # Import centralized style
 
 from dih_models.plotting.chart_style import setup_chart_style, add_watermark, clean_spines
-from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, add_png_metadata, get_figure_output_path
 
 setup_chart_style()
 
@@ -22,74 +23,136 @@ setup_chart_style()
 
 BILLION = 1_000_000_000
 
-global_clinical_trial_market = float(GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL) / BILLION  # Convert raw USD to billions
+global_clinical_trial_market = float(GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL) / BILLION  # Convert raw USD to billions
 dfda_rd_cost_reduction_pct = TRIAL_COST_REDUCTION_PCT
-dfda_annual_operational_cost = float(DFDA_NPV_ANNUAL_OPEX_TOTAL) / BILLION  # Convert raw USD to billions
+treaty_campaign_cost = float(TREATY_CAMPAIGN_TOTAL_COST) / BILLION  # One-time cost to pass the treaty
 
-# Baseline QALYs generated annually
+# Health gains - 3-tier methodology (TOTAL one-time benefits, not amortized annual)
+# Conservative: Historical progress only (drugs already in existence)
+# PRIMARY: Disease eradication delay elimination (8.2-year timeline shift)
+# Optimistic: Plus acceleration effects (innovation cascade multipliers)
 
-qaly_gains_annual_baseline = DFDA_QALYS_RD_PLUS_DELAY_ANNUAL
+health_gains_conservative = float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / BILLION
+health_gains_primary = float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / BILLION
+health_gains_optimistic = float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / BILLION
 
-# Value of a QALY (standard economic value)
-
-value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD
+# Component values for equations
+conservative_deaths_annual = float(HISTORICAL_PROGRESS_DEATHS_ANNUAL) / 1e6  # Convert to millions
+conservative_deaths_total = float(HISTORICAL_PROGRESS_DEATHS_TOTAL) / 1e6
+primary_deaths_annual = float(DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL) / 1e6
+primary_deaths_total = float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL) / 1e6
+optimistic_deaths_annual = float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL) / 1e6
+optimistic_deaths_total = float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL) / 1e6
+yll = GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH  # Years of life lost per death
+vsly = STANDARD_ECONOMIC_QALY_VALUE_USD / 1000  # Convert to thousands for display
+lag_years = EFFICACY_LAG_YEARS
 
 # Calculations
 
 gross_rd_savings = global_clinical_trial_market * dfda_rd_cost_reduction_pct
-monetized_qaly_value = (qaly_gains_annual_baseline * value_per_qaly) / BILLION  # Convert raw USD to billions
-
-# Data for the bar chart
-
-investment_return_data = {
-    'Label': ['Investment\n(OpEx)', 'R&D Savings\n(Financial)', 'Health Gains\n(Monetized QALYs)'],
-    'Value ($B)': [dfda_annual_operational_cost, gross_rd_savings, monetized_qaly_value]
-}
-investment_return_df = pd.DataFrame(investment_return_data)
 
 # Create figure
 
-fig, ax = plt.subplots(figsize=(10, 7))
+fig, ax = plt.subplots(figsize=(12, 8))
 
-# Create bars with white fill and black edges
+# Bar positions and width
 
-bars = ax.bar(investment_return_df['Label'], investment_return_df['Value ($B)'],
-              color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, width=0.6)
+bar_labels = ['Campaign Investment\n(One-Time)', 'Annual R&D Savings\n(Recurring)', 'Total Health Gains\n(One-Time Benefit)']
+x_positions = [0, 1, 2]
+bar_width = 0.6
+
+# Create first two bars (simple white bars)
+
+bar_investment = ax.bar(x_positions[0], treaty_campaign_cost, bar_width,
+                       color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5)
+
+bar_rd_savings = ax.bar(x_positions[1], gross_rd_savings, bar_width,
+                       color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5)
+
+# Create stacked bar for health gains (3 tiers) with calculations in labels
+
+conservative_value = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
+primary_value = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+
+bar_conservative = ax.bar(x_positions[2], health_gains_conservative, bar_width,
+                         color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5,
+                         hatch=PATTERN_DIAGONAL,
+                         label=f'Historical Rate (existing drugs only):\n{conservative_deaths_annual:.0f}M deaths/yr × {lag_years}yr lag = {conservative_deaths_total:.1f}M deaths avoided\n× {yll} YLL × \\${vsly:.0f}k/QALY = {conservative_value}')
+
+bar_primary = ax.bar(x_positions[2], health_gains_primary - health_gains_conservative, bar_width,
+                    bottom=health_gains_conservative,
+                    color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2.5,
+                    label=f'Lag Elimination (removing 8.2yr efficacy lag):\n{primary_deaths_annual:.0f}M deaths/yr × {lag_years}yr lag = {primary_deaths_total:.0f}M deaths avoided\n× {yll} YLL × \\${vsly:.0f}k/QALY = {primary_value}')
+
+bar_optimistic = ax.bar(x_positions[2], health_gains_optimistic - health_gains_primary, bar_width,
+                       bottom=health_gains_primary,
+                       color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5,
+                       hatch=PATTERN_DIAGONAL,
+                       label=f'Innovation Acceleration (eliminating Phase 2-4 cost barrier):\nEstimated additional timeline acceleration from lower barriers\n= {format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)}')
 
 # Apply modern styling
 
 clean_spines(ax, ['top', 'right', 'left'])
 ax.tick_params(left=False, labelleft=False)
 
-# Add value labels
+# Add value labels using centralized formatter
 
-for i, bar in enumerate(bars):
-    height = bar.get_height()
-    if height < 1:  # Small values (OpEx)
-        label = f'${height*1000:.0f}M'
-        y_pos = height + 5
-    else:  # Large values
-        label = f'${height:,.1f}B'
-        y_pos = height + 5
+# Investment (Campaign Cost)
+campaign_label = format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)
+ax.text(x_positions[0], treaty_campaign_cost + 10,
+        campaign_label,
+        ha='center', va='bottom', fontsize=30,
+        fontweight='bold', color=COLOR_BLACK)
 
-    ax.text(bar.get_x() + bar.get_width()/2, y_pos,
-            label, ha='center', va='bottom', fontsize=36,
-            fontweight='bold', color=COLOR_BLACK)
+# R&D Savings
+rd_savings_label = format_parameter_value(DFDA_BENEFIT_RD_ONLY_ANNUAL)
+ax.text(x_positions[1], gross_rd_savings + 10,
+        rd_savings_label,
+        ha='center', va='bottom', fontsize=30,
+        fontweight='bold', color=COLOR_BLACK)
+
+# Health gains - label each tier using centralized formatter (TOTAL values, not annual)
+# Conservative tier (bottom)
+conservative_label = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
+ax.text(x_positions[2], health_gains_conservative / 2,
+        conservative_label,
+        ha='center', va='center', fontsize=22,
+        fontweight='bold', color=COLOR_BLACK)
+
+# PRIMARY tier (middle)
+primary_label = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - health_gains_conservative) / 2,
+        primary_label,
+        ha='center', va='center', fontsize=26,
+        fontweight='bold', color=COLOR_WHITE)
+
+# Optimistic tier (top)
+optimistic_label = format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
+ax.text(x_positions[2], health_gains_primary + (health_gains_optimistic - health_gains_primary) / 2,
+        optimistic_label,
+        ha='center', va='center', fontsize=22,
+        fontweight='bold', color=COLOR_BLACK)
 
 # Title
 
-ax.set_title('dFDA Investment vs. Returns', fontsize=28, fontweight='bold',
+ax.set_title('1% Treaty Investment and Returns', fontsize=32, fontweight='bold',
              color=COLOR_BLACK, pad=25)
 
 # Clean axis
 
 ax.set_ylabel('')
 ax.set_xlabel('')
-ax.set_ylim(0, monetized_qaly_value * 1.3)
+ax.set_ylim(0, health_gains_optimistic * 1.15)
 
 # X-axis labels
 
-ax.set_xticklabels(investment_return_df['Label'], fontsize=14, color=COLOR_BLACK)
+ax.set_xticks(x_positions)
+ax.set_xticklabels(bar_labels, fontsize=16, fontweight='bold', color=COLOR_BLACK)
+
+# Add legend for the 3-tier health gains with calculations
+
+ax.legend(loc='upper left', fontsize=12, frameon=True, fancybox=True,
+         edgecolor=COLOR_BLACK, facecolor=COLOR_WHITE)
 
 # Add watermark
 
@@ -105,7 +168,11 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 # Add metadata for attribution
 
-add_png_metadata(output_path, title="Dfda Investment Returns Bar Chart")
+add_png_metadata(
+    output_path,
+    title="1% Treaty Investment and Returns",
+    description=f"Campaign Investment: {campaign_label} (one-time) | Annual R&D Savings: {rd_savings_label} (recurring) | Total Health Gains (One-Time): {conservative_label} (conservative floor) to {optimistic_label} (optimistic), PRIMARY: {primary_label}. Calculations show deaths × YLL × VSLY for each scenario."
+)
 
 plt.show()
 ```

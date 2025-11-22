@@ -27,7 +27,7 @@ sns.set_palette("husl")
 # Core economic metrics from analysis
 
 metrics = {
-    'ROI Ratio': float(DFDA_ROI_RD_PLUS_DELAY),  # Recommended: R&D + regulatory delay elimination
+    'ROI Ratio': float(TREATY_COMPLETE_ROI_ALL_BENEFITS),  # PRIMARY: Complete benefits including disease eradication delay
     'Annual R&D Savings (Billions)': float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 1_000_000_000,
     'Annual QALYs Generated': float(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL),
     'Daily Opportunity Cost (Millions)': float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 365 / 1_000_000,
@@ -143,9 +143,9 @@ roi_data = pd.DataFrame({
         float(SENSITIVITY_DFDA_OPEX_CONSERVATIVE) / 1_000_000
     ],
     'ROI Ratio': [
-        float(OPTIMISTIC_SCENARIO_ROI),
-        float(DFDA_ROI_RD_PLUS_DELAY),  # Recommended: full health benefits
-        float(CONSERVATIVE_SCENARIO_ROI)
+        float(TREATY_OPTIMISTIC_SCENARIO_ROI),
+        float(TREATY_COMPLETE_ROI_ALL_BENEFITS),  # PRIMARY: full health benefits
+        float(TREATY_CONSERVATIVE_SCENARIO_ROI)
     ]
 })
 
@@ -363,7 +363,7 @@ fig.update_layout(
 
 fig.add_annotation(
     x=10, y=net_benefit[10],
-    text=f"10-Year ROI: {float(DFDA_ROI_RD_PLUS_DELAY):.0f}:1<br>NPV: ${net_benefit[10]/1000:.1f}B",
+    text=f"10-Year ROI: {float(TREATY_COMPLETE_ROI_ALL_BENEFITS):.0f}:1<br>NPV: ${net_benefit[10]/1000:.1f}B",
     showarrow=True,
     arrowhead=2,
     bgcolor="lightblue",
