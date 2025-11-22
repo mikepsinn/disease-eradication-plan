@@ -1762,6 +1762,64 @@ DISEASE_ERADICATION_PLUS_ACCELERATION_ANNUAL_LOSS = Parameter(
     keywords=["optimistic", "upper bound", "acceleration", "economic loss"]
 )  # $314B/year (optimistic)
 
+# TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
+# These represent the complete, one-time benefit of eliminating the efficacy lag
+# NOT amortized annual values that could mislead by suggesting recurring benefits
+
+# Historical Progress - TOTAL (Conservative Floor)
+HISTORICAL_PROGRESS_DEATHS_TOTAL = Parameter(
+    HISTORICAL_PROGRESS_DEATHS_ANNUAL * EFFICACY_LAG_YEARS,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
+    source_type="calculated",
+    description="Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024.",
+    display_name="Total Deaths from Historical Progress Delays",
+    unit="deaths",
+    formula="ANNUAL_DEATHS × EFFICACY_LAG_YEARS",
+    latex=r"D_{total} = 12M \times 8.2 = 98.4M",
+    confidence="high",
+    keywords=["98.4m", "conservative", "historical", "total", "one-time", "floor estimate"]
+)  # 98.4M total deaths
+
+HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL = Parameter(
+    HISTORICAL_PROGRESS_DEATHS_TOTAL * (GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH) * STANDARD_ECONOMIC_QALY_VALUE_USD,
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
+    source_type="calculated",
+    description="Total economic loss from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time benefit of eliminating Phase 2-4 delay.",
+    display_name="Total Economic Loss from Historical Progress Delays",
+    unit="USD",
+    formula="DEATHS_TOTAL × YLL × VSLY",
+    latex=r"Loss_{total} = 98.4M \times 17 \times \$150k = \$251T",
+    confidence="high",
+    keywords=["$251t", "conservative", "historical", "total", "one-time", "floor estimate"]
+)  # $251T total (conservative floor)
+
+# Disease Eradication + Acceleration - TOTAL (Optimistic Upper Bound)
+DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL = Parameter(
+    DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL * EFFICACY_LAG_YEARS,
+    source_ref="/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics",
+    source_type="calculated",
+    description="Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024).",
+    display_name="Total Deaths from Disease Eradication + Innovation Acceleration",
+    unit="deaths",
+    formula="ANNUAL_DEATHS × EFFICACY_LAG_YEARS",
+    latex=r"D_{total} = 109.5M \times 8.2 = 898M",
+    confidence="low",
+    keywords=["898m", "optimistic", "total", "one-time", "upper bound", "acceleration", "innovation"]
+)  # 898M total deaths (optimistic with innovation acceleration)
+
+DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL = Parameter(
+    DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS * 2,
+    source_ref="/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics",
+    source_type="calculated",
+    description="Total economic loss from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents combined timeline and volume effects from eliminating Phase 2-4 cost barriers. Research shows: (1) Timeline acceleration of 50% achievable through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024, Health Economics), (3) Cost barrier elimination enables more drugs to reach viability. The 2× factor conservatively represents either 2× timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer value share ~20% maximizes long-term population health (Woods 2024).",
+    display_name="Total Economic Loss from Disease Eradication + Innovation Acceleration",
+    unit="USD",
+    formula="PRIMARY_TOTAL × 2 (combined timeline + volume effects)",
+    latex=r"Loss_{total} = \$1,286T \times 2 = \$2,572T",
+    confidence="low",
+    keywords=["$2572t", "optimistic", "total", "one-time", "upper bound", "acceleration", "innovation", "dynamic efficiency"]
+)  # $2,572T total (optimistic upper bound with innovation acceleration)
+
 # Legacy aliases for backwards compatibility
 REGULATORY_DELAY_YLL = DISEASE_ERADICATION_DELAY_YLL
 REGULATORY_DELAY_YLD = DISEASE_ERADICATION_DELAY_YLD
