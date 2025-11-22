@@ -15,20 +15,20 @@ setup_chart_style()
 
 # --- Data calculated from annual parameters ---
 
-scenarios = ['Conservative', 'Baseline', 'Optimistic']
+scenarios = ['Existing Drugs Only', 'Disease Eradication Delay', 'Plus Innovation Effects']
 
 # Daily opportunity costs (annual benefits / 365)
 money_lost = [
-    float(SENSITIVITY_NET_BENEFIT_CONSERVATIVE) / 365 / 1_000_000,  # Conservative daily benefit in millions
-    float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 365 / 1_000_000,  # Baseline daily R&D savings in millions
-    float(SENSITIVITY_NET_BENEFIT_OPTIMISTIC) / 365 / 1_000_000  # Optimistic daily benefit in millions
+    float(DFDA_BENEFIT_HISTORICAL_PROGRESS_ANNUAL) / 365 / 1_000_000_000,  # Conservative: historical progress only
+    float(DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL) / 365 / 1_000_000_000,  # PRIMARY: disease eradication delay
+    float(DFDA_BENEFIT_ACCELERATION_ANNUAL) / 365 / 1_000_000_000  # Optimistic: with acceleration effects
 ]
 
-# Daily QALYs foregone (annual QALYs / 365)
+# Daily QALYs/DALYs foregone (annual DALYs / 365)
 qalys_lost = [
-    float(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE) / 365,  # Conservative daily QALYs
-    float(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL) / 365,  # Baseline daily QALYs
-    float(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC) / 365  # Optimistic daily QALYs
+    float(DFDA_AVOIDED_HISTORICAL_PROGRESS_DALYS_ANNUAL) / 365,  # Conservative: historical progress
+    float(DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL) / 365,  # PRIMARY: disease eradication delay
+    float(DFDA_AVOIDED_ACCELERATION_DALYS_ANNUAL) / 365  # Optimistic: with acceleration
 ]
 
 # --- Create figure ---
@@ -58,38 +58,69 @@ bars[1].set_hatch(None)
 # --- Add value labels ---
 
 for i, (money, qaly) in enumerate(zip(money_lost, qalys_lost)):
-    # Money label - ALL bars get white box for readability over patterns
-    text_color = COLOR_WHITE if i == 1 else COLOR_BLACK
+    # Money label - first bar (smallest) gets label above, others inside
+    if i == 0:
+        # Position above bar for smallest column
+        ax.text(
+            i, money + max(money_lost)*0.02,
+            f'${money:.0f}B/day',
+            ha='center', va='bottom',
+            fontsize=24, fontweight='bold',
+            color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                      edgecolor=COLOR_BLACK, linewidth=2)
+        )
+    else:
+        # Position inside bar for larger columns
+        text_color = COLOR_WHITE if i == 1 else COLOR_BLACK
+        ax.text(
+            i, money/2,
+            f'${money:.0f}B/day',
+            ha='center', va='center',
+            fontsize=28, fontweight='bold',
+            color=text_color,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE if i != 1 else COLOR_BLACK,
+                      edgecolor=COLOR_BLACK, linewidth=2)
+        )
 
+    # DALY label ABOVE bar - extra spacing for first bar since money label is also above
+    daly_offset = max(money_lost)*0.12 if i == 0 else max(money_lost)*0.05
     ax.text(
-        i, money/2,
-        f'${money}M/day',
-        ha='center', va='center',
-        fontsize=28, fontweight='bold',
-        color=text_color,
-        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE if i != 1 else COLOR_BLACK,
-                  edgecolor=COLOR_BLACK, linewidth=2)
-    )
-
-    # QALY label ABOVE bar to avoid overlap with x-axis labels
-    ax.text(
-        i, money + 12,
-        f'{qaly:,}\nQALYs/day',
+        i, money + daly_offset,
+        f'{qaly/1_000_000:.1f}M\nDALYs/day',
         ha='center', va='bottom',
         fontsize=20, fontweight='bold',
         color=COLOR_BLACK
     )
 
+# --- Add calculation explanation (upper left) ---
+
+equation_text = (
+    f'Existing Drugs Only: {float(HISTORICAL_PROGRESS_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr → {float(DFDA_AVOIDED_HISTORICAL_PROGRESS_DALYS_ANNUAL)/1e6:.0f}M DALYs × $150k = ${money_lost[0]:.0f}B/day\n'
+    f'Disease Eradication Delay (PRIMARY): {float(DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr → {float(DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_DALYS_ANNUAL)/1e6:.0f}M DALYs × $150k = ${money_lost[1]:.0f}B/day\n'
+    f'Plus Innovation Effects: {float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL)/1e6:.0f}M deaths/yr → {float(DFDA_AVOIDED_ACCELERATION_DALYS_ANNUAL)/1e6:.0f}M DALYs × $150k = ${money_lost[2]:.0f}B/day'
+)
+
+ax.text(
+    0.02, 0.98,
+    equation_text,
+    transform=ax.transAxes,
+    fontsize=14,
+    verticalalignment='top',
+    bbox=dict(boxstyle='round,pad=0.8', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
+    family='monospace'
+)
+
 # --- Styling ---
 
 ax.set_title(
-    'Daily Cost of Delaying the dFDA\nEvery Day We Wait',
+    'Daily Cost of the 8-Year Post-Safety Efficacy Lag',
     fontsize=36, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
 
 ax.set_ylabel(
-    'Economic Waste Per Day\n($ Millions)',
+    'Economic Waste Per Day',
     fontsize=28, fontweight='bold',
     color=COLOR_BLACK, labelpad=15
 )
@@ -112,6 +143,19 @@ clean_spines(ax)
 ax.spines['bottom'].set_linewidth(2.5)
 ax.tick_params(axis='x', length=0)
 
+# Add source note at bottom
+
+ax.text(
+    0.5, -0.15,
+    'Sources: WHO Global Disease Burden (150K deaths/day), BIO Clinical Development Report (8.2yr lag), VSLY=$150k',
+    transform=ax.transAxes,
+    fontsize=10,
+    ha='center',
+    va='top',
+    color=COLOR_BLACK,
+    style='italic'
+)
+
 # Add watermark
 
 add_watermark(fig)
@@ -127,8 +171,8 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,
-    title="Daily Cost of Delaying the dFDA",
-    description=f"Baseline: ${money_lost[1]:.0f}M and {qalys_lost[1]:.0f} QALYs lost per day. Ranges from ${money_lost[0]:.0f}M (conservative) to ${money_lost[2]:.0f}M (optimistic)"
+    title="Daily Cost of the 8-Year Post-Safety Efficacy Lag",
+    description=f"PRIMARY: 55M deaths/yr → 993M DALYs × $150k = ${money_lost[1]:.0f}B/day. Ranges from ${money_lost[0]:.0f}B/day (conservative: 12M deaths) to ${money_lost[2]:.0f}B/day (optimistic: 110M deaths)"
 )
 
 plt.show()

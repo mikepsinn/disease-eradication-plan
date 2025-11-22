@@ -74,7 +74,7 @@ ax.set_title('Personal Lifetime Wealth Benefits from 1% Treaty\nBy Demographic S
 
 # Format y-axis to show dollars
 
-ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'${y/1000:.0f}K'))
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: format_parameter_value(y, "USD")))
 
 # Clean up spines
 

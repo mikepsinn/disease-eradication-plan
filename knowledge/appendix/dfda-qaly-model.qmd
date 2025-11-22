@@ -92,9 +92,9 @@ This stream reflects the transformative potential of the dFDA to create viable r
 
 ### Final ROI and Net Benefit
 
-- **Recommended ROI:** {{< var dfda_roi_rd_plus_delay >}}:1 (including regulatory delay elimination)
+- **Recommended ROI:** {{< var treaty_complete_roi_all_benefits >}}:1 (including regulatory delay elimination)
 - **Conservative ROI:** {{< var dfda_roi_rd_only >}}:1 (R&D savings only, NPV-adjusted)
-- **Full Impact ROI:** {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 (including lost innovation avoidance)
+- **PRIMARY ROI:** {{< var treaty_complete_roi_all_benefits >}}:1 (including all core benefits: R&D savings, regulatory delay elimination, and peace dividend)
 - **Central Net Benefit (10-Year, Discounted):** [~\$249 Billion](#final-roi-and-net-benefit)
 - **Dominant Health Intervention:** The dFDA is cost-saving while simultaneously generating substantial health gains (QALYs), making it a dominant intervention from a health economics perspective.
 

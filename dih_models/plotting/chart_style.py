@@ -284,15 +284,15 @@ def add_watermark(fig, text="WarOnDisease.org", alpha=1.0):
     from matplotlib.font_manager import FontProperties
 
     # Fixed padding in inches (not percentage) for consistent placement
-    padding_right_inches = 0.1  # 0.1 inches from right edge
+    padding_right_inches = 0.05  # 0.05 inches from right edge
     padding_bottom_inches = 0.05  # 0.05 inches from bottom edge
 
     # Get figure size in inches
     fig_width_inches, fig_height_inches = fig.get_size_inches()
 
     # Measure text dimensions using font properties
-    fontsize = 9
-    watermark_color = "#666666"  # Light gray instead of black
+    fontsize = 11
+    watermark_color = "#333333"  # Darker gray
 
     # Get font properties to measure text
     font_prop = FontProperties(size=fontsize, weight="normal")

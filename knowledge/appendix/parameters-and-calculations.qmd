@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 520
+**Total parameters**: 538
 
-- External sources (peer-reviewed): 169
-- Calculated values: 303
+- External sources (peer-reviewed): 175
+- Calculated values: 315
 - Core definitions: 48
 
 # External Data Sources {#sec-external}
@@ -921,6 +921,19 @@ Daily deaths from curable diseases globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+## Global Daily Deaths from Disease and Aging {#sec-global_disease_deaths_daily}
+
+**Value**: 150K
+
+Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
+
+**Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ## Global Annual Direct Medical Costs of Disease {#sec-global_disease_direct_medical_cost_annual}
 
 **Value**: $9.90T
@@ -1623,11 +1636,11 @@ Average annual lost earning potential per refugee
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Mean Age of Preventable Death from Regulatory Delay {#sec-regulatory_delay_mean_age_of_death}
+## Mean Age of Preventable Death from Post-Safety Efficacy Delay {#sec-regulatory_delay_mean_age_of_death}
 
 **Value**: 62
 
-Mean age of preventable death from regulatory delay
+Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
@@ -1636,11 +1649,11 @@ Mean age of preventable death from regulatory delay
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-## Pre-Death Suffering Period for Regulatory Delay Deaths {#sec-regulatory_delay_suffering_period_years}
+## Pre-Death Suffering Period During Post-Safety Efficacy Delay {#sec-regulatory_delay_suffering_period_years}
 
 **Value**: 6
 
-Pre-death suffering period for regulatory delay deaths (average years lived with untreated condition)
+Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
@@ -1773,6 +1786,71 @@ Switzerland GDP per capita
 Deaths from 9/11 terrorist attacks
 
 **Source**: [chance-of-dying-from-terrorism-1-in-30m](https://warondisease.org/knowledge/references.html#chance-of-dying-from-terrorism-1-in-30m)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Thalidomide Cases Worldwide {#sec-thalidomide_cases_worldwide}
+
+**Value**: 15,000
+
+Total thalidomide birth defect cases worldwide (1957-1962)
+
+**Source**: [thalidomide-scandal](https://warondisease.org/knowledge/references.html#thalidomide-scandal)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Thalidomide Disability Weight {#sec-thalidomide_disability_weight}
+
+**Value**: 0.4
+
+Disability weight for thalidomide survivors (limb deformities, organ damage)
+
+**Source**: [thalidomide-survivors-health](https://warondisease.org/knowledge/references.html#thalidomide-survivors-health)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Thalidomide Mortality Rate {#sec-thalidomide_mortality_rate}
+
+**Value**: 40%
+
+Mortality rate for thalidomide-affected infants (died within first year)
+
+**Source**: [thalidomide-scandal](https://warondisease.org/knowledge/references.html#thalidomide-scandal)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## Thalidomide Survivor Lifespan {#sec-thalidomide_survivor_lifespan}
+
+**Value**: 60
+
+Average lifespan for thalidomide survivors
+
+**Source**: [thalidomide-survivors-health](https://warondisease.org/knowledge/references.html#thalidomide-survivors-health)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+## US Population Share 1960 {#sec-thalidomide_us_population_share_1960}
+
+**Value**: 6%
+
+US share of world population in 1960
+
+**Source**: [us-census-world-population-1960](https://warondisease.org/knowledge/references.html#us-census-world-population-1960)
 
 *✓ High confidence*
 
@@ -2311,32 +2389,6 @@ Estimated bounty value for Alzheimer's cure
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual Benefit from R&D Savings Passed to Consumers {#sec-benefit_drug_price_reduction_annual}
-
-**Value**: $100B
-
-Annual benefit from R&D savings passed to consumers
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#price-reduction](../appendix/dfda-cost-benefit-analysis.qmd#price-reduction)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual Benefit from 7-Year Drug Access Acceleration {#sec-benefit_earlier_drug_access_annual}
-
-**Value**: $300B
-
-Annual benefit from 7-year drug access acceleration
-
-**Methodology**: [../appendix/economic-value-of-accelerated-treatments.qmd](../appendix/economic-value-of-accelerated-treatments.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## Annual Benefit from 115x Research Capacity Increase {#sec-benefit_medical_research_acceleration_annual}
 
 **Value**: $100B
@@ -2344,45 +2396,6 @@ Annual benefit from 7-year drug access acceleration
 Annual benefit from 115x research capacity increase
 
 **Methodology**: [../appendix/research-acceleration-model.qmd](../appendix/research-acceleration-model.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual Benefit from Mental Health Treatment Gap Reduction {#sec-benefit_mental_health_annual}
-
-**Value**: $75B
-
-Annual benefit from mental health treatment gap reduction
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#mental-health](../appendix/dfda-qaly-model.qmd#mental-health)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual Benefit from Economic Viability of Prevention {#sec-benefit_prevention_annual}
-
-**Value**: $100B
-
-Annual benefit from economic viability of prevention
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#prevention](../appendix/dfda-qaly-model.qmd#prevention)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Annual Benefit from Orphan Drug Viability {#sec-benefit_rare_diseases_annual}
-
-**Value**: $400B
-
-Annual benefit from orphan drug viability
-
-**Methodology**: [../appendix/dfda-qaly-model.qmd#rare-diseases](../appendix/dfda-qaly-model.qmd#rare-diseases)
 
 *✓ High confidence*
 
@@ -2894,7 +2907,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## QALY-Days Lost per Second of Inaction {#sec-cost_of_delay_qaly_days_per_second}
 
-**Value**: 0.00644
+**Value**: 0.0863
 
 QALY-days lost per second of inaction
 
@@ -3008,36 +3021,164 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual Economic Value of Regulatory Delay Costs Avoided by dFDA {#sec-dfda_avoided_regulatory_delay_cost_annual}
+## Annual DALYs Saved by dFDA Eliminating Disease Eradication + Acceleration {#sec-dfda_avoided_acceleration_dalys_annual}
 
-**Value**: $8.10T
+**Value**: 1.99B
 
-Annual economic value of regulatory delay costs avoided by dFDA
+Annual DALYs saved by dFDA eliminating disease eradication delay plus acceleration effects (optimistic upper bound)
+
+*Formula*: `DALYS_UPPER × AVOIDANCE_FRACTION`
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects](../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Economic Value of Disease Eradication Delay Costs Avoided by dFDA {#sec-dfda_avoided_disease_eradication_delay_cost_annual}
+
+**Value**: $149T
+
+Annual economic value of disease eradication delay costs avoided by dFDA (PRIMARY estimate)
 
 $$
-Value_{avoided} = 74M \times \$150k = \$11.1T
+Value_{avoided} = 995M \times \$150k = \$149T
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
 
 *~ Medium confidence*
 
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual DALYs Saved by dFDA Eliminating Regulatory Efficacy Lag {#sec-dfda_avoided_regulatory_delay_dalys_annual}
+## Annual DALYs Saved by dFDA Eliminating Disease Eradication Delay {#sec-dfda_avoided_disease_eradication_delay_dalys_annual}
 
-**Value**: 54M
+**Value**: 993M
 
-Annual DALYs saved by dFDA eliminating regulatory efficacy lag
+Annual DALYs saved by dFDA eliminating disease eradication delay (PRIMARY estimate)
 
 $$
-DALY_{avoided} = 77.9M \times 0.95 = 74M
+DALY_{avoided} = 1.05B \times 0.95 = 995M
 $$
 
-**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
 
 *~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual DALYs Saved by dFDA Eliminating Historical Progress Delays {#sec-dfda_avoided_historical_progress_dalys_annual}
+
+**Value**: 194M
+
+Annual DALYs saved by dFDA eliminating historical progress delays (conservative floor)
+
+*Formula*: `(DEATHS × YLL_PER_DEATH) × AVOIDANCE_FRACTION`
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#historical-progress](../appendix/dfda-cost-benefit-analysis.qmd#historical-progress)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Economic Value of Disease Eradication Delay Costs Avoided by dFDA {#sec-dfda_avoided_regulatory_delay_cost_annual}
+
+**Value**: $149T
+
+Annual economic value of disease eradication delay costs avoided by dFDA (PRIMARY estimate)
+
+$$
+Value_{avoided} = 995M \times \$150k = \$149T
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual DALYs Saved by dFDA Eliminating Disease Eradication Delay {#sec-dfda_avoided_regulatory_delay_dalys_annual}
+
+**Value**: 993M
+
+Annual DALYs saved by dFDA eliminating disease eradication delay (PRIMARY estimate)
+
+$$
+DALY_{avoided} = 1.05B \times 0.95 = 995M
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## dFDA Annual Benefit: Disease Eradication + Acceleration (Optimistic) {#sec-dfda_benefit_acceleration_annual}
+
+**Value**: $298T
+
+Annual dFDA benefit from disease eradication delay plus full acceleration multiplier effects (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate plus additional exponential benefits from: faster iteration cycles (cures enable further cures), network effects (more viable drugs attract more researchers), and compound benefits (earlier wins accelerate remaining progress). Use cautiously for advocacy, not for conservative Gates Foundation presentations.
+
+*Formula*: `DALYS_AVOIDED × VSLY`
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects](../appendix/dfda-cost-benefit-analysis.qmd#acceleration-effects)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## dFDA Annual Benefit: Disease Eradication Delay Avoidance (PRIMARY) {#sec-dfda_benefit_disease_eradication_delay_annual}
+
+**Value**: $149T
+
+Annual dFDA benefit from eliminating disease eradication delay (PRIMARY estimate for Gates Foundation). Represents perpetual annual benefit from accelerating disease eradication timeline. Innovation cascade logic: 82x cost reduction ($2.6B→$350M) makes thousands of currently non-viable drugs economically feasible (orphan diseases affecting <200K patients, prevention with delayed benefits, etc.), fundamentally accelerating progress toward disease eradication. This is the floor if we assume humanity eventually cures disease, as eliminating Phase 2-4 costs ensures many more cures arrive far earlier than 8.2 years.
+
+$$
+Benefit = \$149T
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance](../appendix/dfda-cost-benefit-analysis.qmd#disease-eradication-delay-avoidance)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## dFDA Annual Benefit: Historical Progress (Conservative Floor) {#sec-dfda_benefit_historical_progress_annual}
+
+**Value**: $29.1T
+
+Annual dFDA benefit from eliminating historical progress delays (CONSERVATIVE FLOOR for Gates Foundation). Based solely on life-saving impact of drugs already approved 1962-2024, with zero innovation assumptions. Most defensible estimate for skeptical audiences as it assumes no new therapeutic classes beyond what already exists. Does NOT account for innovation cascade from 82x cost reduction enabling orphan diseases, prevention, and other currently non-viable drugs.
+
+*Formula*: `DALYS_AVOIDED × VSLY`
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#historical-progress](../appendix/dfda-cost-benefit-analysis.qmd#historical-progress)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## dFDA Annual Benefit: R&D Savings {#sec-dfda_benefit_rd_only_annual}
+
+**Value**: $41.5B
+
+Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
+
+$$
+Benefit_{RD} = \$83B \times 0.50 = \$41.5B
+$$
+
+**Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
+
+*✓ High confidence*
 
 :::
 
@@ -3180,12 +3321,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## dFDA Infrastructure ICER per QALY {#sec-dfda_icer_per_qaly}
 
-**Value**: $-559
+**Value**: $-42
 
 dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
 
 $$
-\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{74.15M \text{ QALYs}} = -\$674 \text{ per QALY}
+\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{54.03M \text{ QALYs}} = -\$925 \text{ per QALY}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis)
@@ -3223,12 +3364,12 @@ Large dFDA pragmatic trial size
 ::: {.callout-note icon=false collapse=false}
 ## Annual Lives Saved by dFDA {#sec-dfda_lives_saved_annual}
 
-**Value**: 2.12M
+**Value**: 28.4M
 
 Annual lives saved by dFDA (QALYs ÷ QALYs per life)
 
 $$
-Lives_{dFDA} = 74.15M \div 35 = 2.12M
+Lives_{dFDA} = 54.03M \div 35 = 1.54M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
@@ -3240,12 +3381,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Daily Lives Saved by dFDA {#sec-dfda_lives_saved_daily}
 
-**Value**: 5,804
+**Value**: 77,764
 
 Daily lives saved by dFDA
 
 $$
-Lives_{daily} = 2.12M \div 365 = 5,808
+Lives_{daily} = 1.54M \div 365 = 4,229
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
@@ -3495,31 +3636,14 @@ dFDA staff costs (minimal, AI-assisted)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual QALYs Gained from dFDA (R&D + Regulatory Delay) {#sec-dfda_qalys_rd_plus_delay_annual}
+## Annual QALYs Gained from dFDA (Post-Safety Efficacy Delay Elimination) {#sec-dfda_qalys_rd_plus_delay_annual}
 
-**Value**: 74.1M
+**Value**: 993M
 
-Annual QALYs gained from dFDA via R&D savings + regulatory delay elimination (PRIMARY ESTIMATE, does NOT include innovation multiplier)
-
-$$
-QALYs_{RD+delay} = 74.0M + 0.14M = 74.15M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Daily QALYs from dFDA Regulatory Delay Elimination {#sec-dfda_qalys_rd_plus_delay_daily}
-
-**Value**: 203K
-
-Daily QALYs from dFDA regulatory delay elimination (opportunity cost per day)
+Annual QALYs gained from dFDA via post-safety efficacy testing delay elimination (PRIMARY ESTIMATE, Phase 2-4 only)
 
 $$
-QALYs_{daily} = 74.15M \div 365 = 203,145
+QALYs_{delay} = (3.526B \div 62) \times 0.95 = 54.03M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
@@ -3529,14 +3653,31 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Monetized Value of dFDA QALYs (R&D + Regulatory Delay) {#sec-dfda_qalys_rd_plus_delay_monetized}
+## Daily QALYs from dFDA Post-Safety Efficacy Delay Elimination {#sec-dfda_qalys_rd_plus_delay_daily}
 
-**Value**: $11.1T
+**Value**: 2.72M
 
-Monetized value of dFDA health benefits including regulatory delay elimination (74.15M QALYs × $150k economic value)
+Daily QALYs from dFDA post-safety efficacy testing delay elimination (opportunity cost per day)
 
 $$
-Value_{QALY} = 74.15M \times \$150,000 = \$11.12T
+QALYs_{daily} = 54.03M \div 365 = 148,024
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#expected-impact](../appendix/regulatory-mortality-analysis.qmd#expected-impact)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Monetized Value of dFDA QALYs (Post-Safety Efficacy Delay Elimination) {#sec-dfda_qalys_rd_plus_delay_monetized}
+
+**Value**: $149T
+
+Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (54.03M QALYs × $150k economic value)
+
+$$
+Value_{QALY} = 54.03M \times \$150,000 = \$8.10T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -3546,14 +3687,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Annual Gross R&D Savings from Trial Cost Reduction {#sec-dfda_rd_gross_savings_annual}
+## dFDA Annual Benefit: R&D Savings {#sec-dfda_rd_gross_savings_annual}
 
 **Value**: $41.5B
 
-Annual gross R&D savings from trial cost reduction
+Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
 
 $$
-Savings_{gross} = \$83B \times 0.50 = \$41.5B
+Benefit_{RD} = \$83B \times 0.50 = \$41.5B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction](../appendix/dfda-cost-benefit-analysis.qmd#cost-reduction)
@@ -3597,23 +3738,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## dFDA Annual Value of Eliminating Delay Deaths Only, Excluding Innovation Loss {#sec-dfda_regulatory_delay_dlag_only_annual}
-
-**Value**: $4.05T
-
-Annual value of eliminating delay deaths only (D_lag), excluding innovation loss (D_void)
-
-$$
-D_{lag} = \$11.1T \times 0.5 \approx \$5.6T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
 
 **Value**: 384
@@ -3627,40 +3751,6 @@ $$
 **Methodology**: [../figures/dfda-roi-analysis.qmd](../figures/dfda-roi-analysis.qmd)
 
 *✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## dFDA Recommended: ROI Including R&D Savings Plus Regulatory Delay Elimination {#sec-dfda_roi_rd_plus_delay}
-
-**Value**: 4,982
-
-RECOMMENDED: ROI including R&D savings plus regulatory delay elimination (D_lag only, avoids double-counting)
-
-$$
-ROI_{RD+delay} = \frac{\$1,238.6B - \$300B + \$5,555B}{\$1.0B} \approx 6,494
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd](../appendix/regulatory-mortality-analysis.qmd)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## dFDA Full Impact ROI: R&D Savings Plus Regulatory Delay Elimination Plus Lost Innovation {#sec-dfda_roi_rd_plus_delay_plus_innovation}
-
-**Value**: 8,534
-
-Full impact ROI: R&D savings plus regulatory delay elimination plus lost innovation (D_lag + D_void)
-
-$$
-ROI_{RD+delay+innovation} = \frac{\$11,538.6B}{\$1.0B} \approx 11,539
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd](../appendix/regulatory-mortality-analysis.qmd)
-
-*~ Medium confidence*
 
 :::
 
@@ -3833,6 +3923,193 @@ $$
 **Methodology**: [../economics/economics.qmd#funding-allocation](../economics/economics.qmd#funding-allocation)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_annual_dalys}
+
+**Value**: 1.05B
+
+Annual DALYs lost from disease eradication delay (PRIMARY estimate)
+
+$$
+DALY_{annual} = 8.57B \div 8.2 = 1.05B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay](../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Economic Loss from Disease Eradication Delay {#sec-disease_eradication_delay_annual_loss}
+
+**Value**: $157T
+
+Annual economic loss from disease eradication delay (PRIMARY estimate)
+
+$$
+Annual_{loss} = (8.57B \div 8.2) \times \$150k = \$157B/year
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Total DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_dalys}
+
+**Value**: 8.57B
+
+Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
+
+$$
+DALY_{total} = 7.63B + 0.943B = 8.57B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_annual}
+
+**Value**: 54.8M
+
+Annual deaths from disease eradication delay (PRIMARY estimate). Represents perpetual annual opportunity cost of delaying disease eradication timeline by 8.2 years. Innovation cascade: eliminating Phase 2-4 costs ($2.6B→$350M) makes many more drugs economically viable (orphan diseases, prevention), accelerating progress toward disease eradication. Every year of delay extends the timeline, making this a perpetual annual cost equal to the global disease death rate that would be eliminated at eradication.
+
+$$
+D_{annual} = 150,000 \times 365 = 54.75M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay](../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Total Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_total}
+
+**Value**: 449M
+
+Total deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative)
+
+$$
+D_{total} = 150,000 \times 8.2 \times 365 = 448.95M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay](../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Total Economic Loss from Disease Eradication Delay {#sec-disease_eradication_delay_economic_loss}
+
+**Value**: $1286T
+
+Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)
+
+$$
+Loss = 8.57B \times \$150k = \$1.29T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Years Lived with Disability During Disease Eradication Delay {#sec-disease_eradication_delay_yld}
+
+**Value**: 943M
+
+Years Lived with Disability during disease eradication delay (PRIMARY estimate)
+
+$$
+YLD = 449M \times 6 \times 0.35 = 943M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Years of Life Lost from Disease Eradication Delay {#sec-disease_eradication_delay_yll}
+
+**Value**: 7.63B
+
+Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
+
+$$
+YLL = 449M \times (79 - 62) = 7.63B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual DALYs Lost from Disease Eradication + Acceleration {#sec-disease_eradication_plus_acceleration_annual_dalys}
+
+**Value**: 2.09B
+
+Annual DALYs lost from disease eradication delay plus acceleration effects (optimistic upper bound)
+
+$$
+DALY_{upper} = 1.05B \times 2 = 2.09B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#acceleration-effects](../appendix/regulatory-mortality-analysis.qmd#acceleration-effects)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Economic Loss from Disease Eradication + Acceleration {#sec-disease_eradication_plus_acceleration_annual_loss}
+
+**Value**: $314T
+
+Annual economic loss from disease eradication delay plus acceleration effects (optimistic upper bound)
+
+$$
+Loss_{upper} = 2.09B \times \$150k = \$314B/year
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#acceleration-effects](../appendix/regulatory-mortality-analysis.qmd#acceleration-effects)
+
+*? Low confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Deaths from Disease Eradication + Acceleration {#sec-disease_eradication_plus_acceleration_deaths_annual}
+
+**Value**: 110M
+
+Annual deaths from disease eradication delay plus full innovation acceleration multiplier effects (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate (54.75M) plus additional acceleration from: (1) faster iteration cycles enabling exponential progress, (2) network effects from more researchers entering viable drug development, (3) compound benefits from earlier cures enabling further research. This represents maximum potential impact with full innovation cascade effects.
+
+$$
+D_{upper} = 54.75M \times 2 = 109.5M
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#acceleration-effects](../appendix/regulatory-mortality-analysis.qmd#acceleration-effects)
+
+*? Low confidence*
 
 :::
 
@@ -4527,6 +4804,19 @@ Minimum investment for high net worth individuals
 :::
 
 ::: {.callout-note icon=false collapse=false}
+## Annual Deaths from Historical Progress Delays {#sec-historical_progress_deaths_annual}
+
+**Value**: 12M
+
+Annual deaths from delaying existing drugs based on historical progress (CONSERVATIVE FLOOR - no innovation assumptions). Counts only life-saving impact of drugs already approved 1962-2024, assuming therapeutic classes remain constant. Does NOT account for innovation cascade from lower costs making new drugs viable. This is the defensible minimum estimate assuming zero innovation effects from dFDA cost reduction.
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#historical-progress](../appendix/regulatory-mortality-analysis.qmd#historical-progress)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ## Minimum Investment for Institutional Investors {#sec-institutional_investor_min}
 
 **Value**: $10M
@@ -4647,7 +4937,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Cost-Effectiveness Multiplier vs Givewell Top Charities {#sec-multiplier_vs_givewell}
 
-**Value**: 1.62e-05
+**Value**: 1.21e-06
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4664,7 +4954,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Foregone Economic Value per Day from Not Implementing System {#sec-opportunity_cost_per_day}
 
-**Value**: $3.37B
+**Value**: $409B
 
 Foregone economic value per day from not implementing system
 
@@ -4679,7 +4969,7 @@ Foregone economic value per day from not implementing system
 ::: {.callout-note icon=false collapse=false}
 ## Foregone Economic Value per Second from Not Implementing System {#sec-opportunity_cost_per_second}
 
-**Value**: $39K
+**Value**: $4.73M
 
 Foregone economic value per second from not implementing system
 
@@ -5157,14 +5447,31 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual DALYs Lost to Regulatory Delay Under Current System {#sec-regulatory_delay_annual_dalys}
+## Annual DALYs Lost from Disease Eradication Delay {#sec-regulatory_delay_annual_dalys}
 
-**Value**: 56.9M
+**Value**: 1.05B
 
-Annual DALYs lost to regulatory delay under current system
+Annual DALYs lost from disease eradication delay (PRIMARY estimate)
 
 $$
-DALY_{annual} = 3.526B \div 62 = 56.87M
+DALY_{annual} = 8.57B \div 8.2 = 1.05B
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay](../appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Annual Economic Loss from Disease Eradication Delay {#sec-regulatory_delay_annual_loss}
+
+**Value**: $157T
+
+Annual economic loss from disease eradication delay (PRIMARY estimate)
+
+$$
+Annual_{loss} = (8.57B \div 8.2) \times \$150k = \$157B/year
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -5174,31 +5481,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annualized Economic Loss from Regulatory Delay {#sec-regulatory_delay_annual_loss}
+## Total DALYs Lost from Disease Eradication Delay {#sec-regulatory_delay_dalys}
 
-**Value**: $8.53T
+**Value**: 8.57B
 
-Annualized economic loss from regulatory delay
-
-$$
-Annual_{loss} = 56.87M \times \$150k = \$8.53T/year
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Total Disability-Adjusted Life Years Lost to Regulatory Delay {#sec-regulatory_delay_dalys}
-
-**Value**: 3,526
-
-Total Disability-Adjusted Life Years lost to regulatory delay (1962-2024)
+Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 $$
-DALY_{total} = YLL + YLD = 3.14B + 0.388B = 3.526B
+DALY_{total} = 7.63B + 0.943B = 8.57B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
@@ -5208,99 +5498,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Annual Deaths from Regulatory Delay Under Current System {#sec-regulatory_delay_deaths_annual}
+## Total Economic Loss from Disease Eradication Delay {#sec-regulatory_delay_economic_loss}
 
-**Value**: 2.98M
+**Value**: $1286T
 
-Annual deaths from regulatory delay under current system (annualized from 1962-2024)
-
-$$
-Deaths_{annual} = 184.6M \div 62 = 2.98M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Daily Deaths from Regulatory Delay Under Current System {#sec-regulatory_delay_deaths_daily}
-
-**Value**: 8,157
-
-Daily deaths from regulatory delay under current system
+Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)
 
 $$
-Deaths_{daily} = 2.98M \div 365 = 8,164
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Lower Bound Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_lower_bound}
-
-**Value**: 110
-
-Lower bound excess deaths from regulatory delay (1962-2024, steel-man scenario)
-
-$$
-D_{total}^{lower} = D_{lag} + D_{void}
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
-
-*~ Medium confidence • ⚖️ Conservative estimate*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Mean Estimate Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_mean}
-
-**Value**: 185
-
-Mean estimate excess deaths from regulatory delay (1962-2024)
-
-$$
-D_{total}^{mean} = D_{lag} + D_{void}
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Upper Bound Excess Deaths from Regulatory Delay {#sec-regulatory_delay_deaths_upper_bound}
-
-**Value**: 318
-
-Upper bound excess deaths from regulatory delay (1962-2024, linear innovation trajectory)
-
-$$
-D_{total}^{upper} = D_{lag} + D_{void}
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd#mortality-estimates](../appendix/regulatory-mortality-analysis.qmd#mortality-estimates)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-## Cumulative Economic Deadweight Loss from Regulatory Delay {#sec-regulatory_delay_economic_loss}
-
-**Value**: $529T
-
-Cumulative economic deadweight loss from regulatory delay (1962-2024, 2024 USD)
-
-$$
-DWL = 3.526B \times \$150k = \$528.9T
+Loss = 8.57B \times \$150k = \$1.29T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#economic-valuation](../appendix/regulatory-mortality-analysis.qmd#economic-valuation)
@@ -5310,14 +5515,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Years Lived with Disability During Regulatory Delay {#sec-regulatory_delay_yld}
+## Years Lived with Disability During Disease Eradication Delay {#sec-regulatory_delay_yld}
 
-**Value**: 388
+**Value**: 943M
 
-Years Lived with Disability during regulatory delay
+Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 $$
-YLD = 184.6M \times 6 \times 0.35 = 387.66M = 0.388B
+YLD = 449M \times 6 \times 0.35 = 943M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
@@ -5327,14 +5532,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Years of Life Lost from Regulatory Delay Deaths {#sec-regulatory_delay_yll}
+## Years of Life Lost from Disease Eradication Delay {#sec-regulatory_delay_yll}
 
-**Value**: 3,138
+**Value**: 7.63B
 
-Years of Life Lost from regulatory delay deaths
+Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 $$
-YLL = 184.6M \times (79 - 62) = 3.14B
+YLL = 449M \times (79 - 62) = 7.63B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#daly-calculation](../appendix/regulatory-mortality-analysis.qmd#daly-calculation)
@@ -5587,7 +5792,7 @@ Optimistic ICER from sensitivity analysis
 ::: {.callout-note icon=false collapse=false}
 ## Central Scenario Lives Saved {#sec-sensitivity_lives_saved_central}
 
-**Value**: 2.12M
+**Value**: 28.4M
 
 Central scenario lives saved (total QALYs ÷ QALYs/life)
 
@@ -5734,7 +5939,7 @@ Optimistic total costs
 ::: {.callout-note icon=false collapse=false}
 ## Conservative Total QALYs (Peace + dFDA) {#sec-sensitivity_total_qalys_conservative}
 
-**Value**: 74.2M
+**Value**: 993M
 
 Conservative total QALYs (peace + dFDA primary estimate)
 
@@ -5751,7 +5956,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Optimistic Total QALYs (Peace + dFDA) {#sec-sensitivity_total_qalys_optimistic}
 
-**Value**: 74.2M
+**Value**: 993M
 
 Optimistic total QALYs (peace + dFDA primary estimate)
 
@@ -5814,6 +6019,96 @@ System profit per life saved in millions
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life](../appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Thalidomide DALYs Per Event {#sec-thalidomide_dalys_per_event}
+
+**Value**: 41,760
+
+Total DALYs per US-scale thalidomide event (YLL + YLD)
+
+$$
+28{,}800 + 12{,}960 = 41{,}760 \text{ DALYs}
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Thalidomide Deaths Per Event {#sec-thalidomide_deaths_per_event}
+
+**Value**: 360
+
+Deaths per US-scale thalidomide event
+
+$$
+900 \times 40\% = 360 \text{ deaths}
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Thalidomide Survivors Per Event {#sec-thalidomide_survivors_per_event}
+
+**Value**: 540
+
+Survivors per US-scale thalidomide event
+
+$$
+900 \times 60\% = 540 \text{ survivors}
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Thalidomide US Cases Prevented {#sec-thalidomide_us_cases_prevented}
+
+**Value**: 900
+
+Estimated US thalidomide cases prevented by FDA rejection
+
+$$
+15{,}000 \times 6\% = 900 \text{ cases}
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Thalidomide YLD Per Event {#sec-thalidomide_yld_per_event}
+
+**Value**: 12,960
+
+Years Lived with Disability per thalidomide event
+
+$$
+540 \times 60 \times 0.4 = 12{,}960 \text{ YLD}
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+## Thalidomide YLL Per Event {#sec-thalidomide_yll_per_event}
+
+**Value**: 28,800
+
+Years of Life Lost per thalidomide event (infant deaths)
+
+$$
+360 \times 80 = 28{,}800 \text{ YLL}
+$$
+
+*~ Medium confidence*
 
 :::
 
@@ -6156,14 +6451,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Complete 1% Treaty ROI (All 8 Benefit Categories) {#sec-treaty_complete_roi_all_eight_benefits}
+## Complete 1% Treaty ROI (Primary Methodology) {#sec-treaty_complete_roi_all_benefits}
 
-**Value**: 1,230
+**Value**: 149K
 
-Complete ROI including all 8 benefit categories: peace dividend, R&D savings, regulatory delay, earlier access, prevention, lost innovation, new therapies, economic multiplier (annual benefits ÷ one-time campaign cost)
+Complete ROI including 3 core benefit categories: peace dividend, R&D savings, and comprehensive regulatory delay elimination (PRIMARY METHODOLOGY) (annual benefits ÷ one-time campaign cost)
 
 $$
-ROI_{complete} = \frac{TotalBenefits}{\$1.00B}
+ROI_{complete} = \frac{\$8.26T}{\$1.00B} = 8{,}260:1
 $$
 
 **Methodology**: [../economics/economics.qmd#complete-case-roi](../economics/economics.qmd#complete-case-roi)
@@ -6275,23 +6570,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Annual Benefits Using Full Regulatory Delay Avoidance, Consolidating Overlapping Categories {#sec-treaty_comprehensive_with_full_regulatory_delay}
-
-**Value**: $8.53T
-
-Total annual benefits using full regulatory delay avoidance, consolidating overlapping categories
-
-$$
-Benefits_{full} = \$1,238.6B - \$300B - \$400B - \$100B + \$11,100B \approx \$11,538.6B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis.qmd](../appendix/regulatory-mortality-analysis.qmd)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ## 1% Treaty Conservative Scenario ROI {#sec-treaty_conservative_scenario_roi}
 
 **Value**: 189
@@ -6363,7 +6641,7 @@ ICER counting redirected military spending as opportunity cost - Treaty + dFDA s
 ::: {.callout-note icon=false collapse=false}
 ## Incremental Cost-Effectiveness Ratio per QALY Gained (Treaty + dFDA) {#sec-treaty_dfda_icer_per_qaly}
 
-**Value**: $-2.08K
+**Value**: $-156
 
 Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system
 
@@ -6495,31 +6773,31 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Total Annual Benefits from All 8 Benefit Categories {#sec-treaty_total_complete_benefits_annual}
+## Annual Treaty Benefits (PRIMARY) {#sec-treaty_total_complete_benefits_annual}
 
-**Value**: $1.23T
+**Value**: $149T
 
-Total annual benefits from all 8 benefit categories
+Annual treaty benefits from peace dividend + R&D savings + disease eradication delay avoidance (PRIMARY estimate)
 
 $$
-TotalBenefits = \$113.55 + \$41.5 + \$300 + \$100 + \$400 + \$100 + \$100 + \$75 = \$1,230.05B
+Benefits = \$113.6B + \$41.5B + \$149T = \$149T
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits](../appendix/1-percent-treaty-cost-effectiveness.qmd#complete-benefits)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd](../appendix/1-percent-treaty-cost-effectiveness.qmd)
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual Lives Saved Equivalent {#sec-treaty_total_lives_saved_annual}
 
-**Value**: 2.12M
+**Value**: 28.4M
 
 Total annual lives saved equivalent (total QALYs ÷ QALYs/life)
 
 $$
-Lives_{total} = 74.23M \div 35 = 2.12M
+Lives_{total} = 54.11M \div 35 = 1.55M
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives)
@@ -6531,7 +6809,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Daily Lives Saved {#sec-treaty_total_lives_saved_daily}
 
-**Value**: 5,811
+**Value**: 77,771
 
 Total daily lives saved (dFDA + peace dividend)
 
@@ -6548,12 +6826,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ## Total Annual QALYs Gained {#sec-treaty_total_qalys_gained_annual}
 
-**Value**: 74.2M
+**Value**: 994M
 
 Total annual QALYs gained (dFDA + peace dividend)
 
 $$
-QALYs_{total} = 74.15M + 85,610 = 74.23M
+QALYs_{total} = 54.03M + 85,610 = 54.11M
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys)
@@ -6578,12 +6856,12 @@ Trial completion speed multiplier (10x faster)
 ::: {.callout-note icon=false collapse=false}
 ## Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
-**Value**: 1,175
+**Value**: 3,312
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 $$
-\frac{Cost_{delay}}{Benefit_{safety}} = \frac{3.526B}{0.003B} = 1{,}175:1
+\frac{Cost_{delay}}{Benefit_{safety}} = \frac{3.526B}{0.00259B} = 1{,}362:1
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#risk-analysis](../appendix/regulatory-mortality-analysis.qmd#risk-analysis)
@@ -6593,11 +6871,15 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-## Maximum DALYs Saved by FDA Preventing Unsafe Drugs {#sec-type_i_error_benefit_dalys}
+## Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024) {#sec-type_i_error_benefit_dalys}
 
-**Value**: 3
+**Value**: 2.59M
 
-Maximum DALYs saved by FDA preventing unsafe drugs (extreme overestimate)
+Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
+
+$$
+41{,}760 \times 62 = 2.59M \text{ DALYs}
+$$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis.qmd#risk-analysis](../appendix/regulatory-mortality-analysis.qmd#risk-analysis)
 

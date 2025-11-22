@@ -397,7 +397,7 @@ Capitalism optimizing for the right thing by accident.
 **Per $1 invested**:
 
 - $27+ annual treaty revenue (forever)
-- ${{< var dfda_roi_rd_only >}}-{{< var dfda_roi_rd_plus_delay_plus_innovation >}} total societal value (lives saved, wealth created, suffering reduced)
+- ${{< var treaty_complete_roi_all_benefits >}}:1 total societal value (lives saved, wealth created, suffering reduced)
 
 **For bondholders**:
 
@@ -443,7 +443,7 @@ That's a 27:1 return just in redirected military spending.
 But the real return:
 
 - Bondholders: $2.7B/year forever ({{< var victory_bond_annual_return_pct >}} annually)
-- Society: ${{< var dfda_roi_rd_only >}}-{{< var dfda_roi_rd_plus_delay_plus_innovation >}} per dollar (cures, wealth, fewer dead people)
+- Society: ${{< var treaty_complete_roi_all_benefits >}}:1 per dollar (cures, wealth, fewer dead people)
 - Humanity: Optional death by 2050
 
 The question isn't whether {{< var treaty_campaign_total_cost >}} is enough.

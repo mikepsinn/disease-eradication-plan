@@ -332,7 +332,7 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 |----------|----------------|-------|
 | [Peace Dividend](../economics/peace-dividend.qmd) | {{< var peace_dividend_annual_societal_benefit >}} | Societal savings from 1% reduction in global conflict |
 | R&D Cost Savings | {{< var dfda_rd_gross_savings_annual >}} | {{< var trial_cost_reduction_factor >}}× trial cost reduction |
-| **Earlier Access (7 years)** | **{{< var benefit_earlier_drug_access_annual >}}** | Existing pipeline accessed sooner |
+| **Earlier Access (7 years)** | **{{< var dfda_benefit_disease_eradication_delay_annual >}}** | Existing pipeline accessed sooner |
 | **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |
 | New Diseases Treatable | $400.0B | Rare diseases, orphan drugs |
 | Drug Price Reduction | $100.0B | R&D savings passed to consumers |
@@ -412,4 +412,4 @@ The **Complete Case** shows that when you count all direct, quantifiable benefit
 - **1,239:1 return on investment**
 - **Benefits span immediate access acceleration, research capacity expansion, and systemic healthcare improvements**
 
-This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, the **recommended ROI is {{< var dfda_roi_rd_plus_delay >}}:1** (including regulatory delay elimination). The conservative estimate ({{< var dfda_roi_rd_only >}}:1, R&D only) and full impact estimate ({{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1, including lost innovation) provide the complete range.
+This is the comprehensive picture of what the 1% Treaty delivers. For decision-making and public communication, the **recommended ROI is {{< var treaty_complete_roi_all_benefits >}}:1** (PRIMARY estimate including all core benefits: R&D savings, regulatory delay elimination, and peace dividend). The conservative floor estimate ({{< var dfda_roi_rd_only >}}:1, R&D savings only) provides the minimum expected return.

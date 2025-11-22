@@ -1,6 +1,6 @@
 ---
 title: dFDA Cost-Benefit & ROI
-description: Analysis and Return on Investment - How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver ROI ranging from {{< var dfda_roi_rd_only >}} (R&D only) to {{< var dfda_roi_rd_plus_delay >}} (with post-safety efficacy lag elimination).
+description: Analysis and Return on Investment - How to slash per-patient trial costs by up to 80×, generate approximately $50 billion in annual gross R&D savings, and deliver ROI ranging from {{< var dfda_roi_rd_only >}} (R&D only) to {{< var treaty_complete_roi_all_benefits >}} (with post-safety efficacy lag elimination).
 published: true
 tags:
   - dfda
@@ -21,7 +21,7 @@ from dih_models.parameters import *
 ```
 
 - **Saves ~{{< var dfda_rd_gross_savings_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
-- **{{< var dfda_roi_rd_only >}} Return on Investment (R&D Only)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_rd_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including post-safety efficacy lag elimination: **{{< var dfda_roi_rd_plus_delay >}}** (conservative) to **{{< var dfda_roi_rd_plus_delay_plus_innovation >}}** (full impact).
+- **{{< var dfda_roi_rd_only >}} Return on Investment (R&D Only)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_rd_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including all core benefits (R&D savings, regulatory delay elimination, and peace dividend): **{{< var treaty_complete_roi_all_benefits >}}** (PRIMARY recommended estimate).
 - **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, the dFDA eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, saving **{{< var dfda_avoided_regulatory_delay_dalys_annual >}} [DALYs/year](#regulatory-delay-avoidance)** (valued at **{{< var dfda_avoided_regulatory_delay_cost_annual >}}/year**).
 - **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_qalys_rd_plus_delay_annual >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from specific mechanisms; comprehensive top-down estimate of **{{< var dfda_qalys_rd_plus_delay_annual >}}/year** including [post-safety efficacy lag elimination](#regulatory-delay-avoidance).
 - **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: With an ICER of **-[\$59,501 per QALY](../references.qmd#qaly-value)**, the dFDA is a dominant intervention, it both saves money and improves health.
@@ -548,7 +548,7 @@ $$
 
 A [comprehensive quantitative analysis](regulatory-mortality-analysis.qmd) of post-safety efficacy lag costs (1962-2024) found:
 
-- **Total Deaths**: {{< var regulatory_delay_deaths_mean >}}M preventable deaths (95% CI: {{< var regulatory_delay_deaths_lower_bound >}}M – {{< var regulatory_delay_deaths_upper_bound >}}M)
+- **Total Deaths**: {{< var disease_eradication_delay_deaths_total >}} preventable deaths over 8.2-year efficacy lag (1962-2024)
 - **Total DALYs**: {{< var regulatory_delay_dalys >}}B Disability-Adjusted Life Years lost
 - **Ongoing Annual Cost**: ~{{< var regulatory_delay_annual_dalys >}} DALYs/year, valued at {{< var dfda_avoided_regulatory_delay_cost_annual >}}/year
 
@@ -1239,7 +1239,7 @@ gross_rd_savings = DFDA_RD_GROSS_SAVINGS_ANNUAL  # Pre-calculated: {{< var sensi
 
 # Net R&D savings (after operational costs)
 
-net_rd_savings = DFDA_NET_SAVINGS_ANNUAL  # Pre-calculated: $49.96B
+net_rd_savings = DFDA_NET_SAVINGS_RD_ONLY_ANNUAL  # Pre-calculated: $49.96B
 
 # Simple ROI Calculation (not NPV-adjusted)
 # ROI = (Gross Savings / Annual Opex)
@@ -1274,7 +1274,7 @@ print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1
 
 **Note**: The conservative R&D-only ROI ({{< var dfda_roi_rd_only >}}:1) is the most defensible baseline figure, accounting for time value of money and gradual adoption.
 
-**Full ROI range**: {{< var dfda_roi_rd_only >}}:1 (conservative) to {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 (full impact), with **{{< var dfda_roi_rd_plus_delay >}}:1 recommended** for balanced presentations.
+**ROI Estimates**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only) to {{< var treaty_complete_roi_all_benefits >}}:1 (PRIMARY recommended estimate including all core benefits).
 
 The simple ROI ({{< var dfda_roi_simple >}}:1) is useful for comparison but doesn't discount future cash flows.
 

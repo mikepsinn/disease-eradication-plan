@@ -21,7 +21,7 @@ from dih_models.parameters import *
 
 The dFDA costs $40M/year to run.
 It saves {{< var dfda_rd_gross_savings_annual >}}/year in clinical trial waste.
-That's {{< var dfda_roi_rd_plus_delay >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
+That's {{< var treaty_complete_roi_all_benefits >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
 
 **Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
 
@@ -72,11 +72,11 @@ The dFDA costs approximately **$40M annually** to operate at scale, with a simil
 
 ## ROI Scenarios
 
-**Recommended**: {{< var dfda_roi_rd_plus_delay >}}:1 ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
+**Recommended**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
 
 **Conservative**: {{< var dfda_roi_rd_only >}}:1 ROI (R&D savings only, NPV-adjusted over 10 years)
 
-**Full impact**: {{< var dfda_roi_rd_plus_delay_plus_innovation >}}:1 ROI (including lost innovation avoidance)
+**PRIMARY estimate**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI (including all core benefits)
 
 Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
 
@@ -96,7 +96,7 @@ Until now. The dFDA changes the game by aligning incentives: everyone profits fr
 ## The ROI
 
 $40M to save $50 billion.
-{{< var dfda_roi_rd_plus_delay >}}:1 ROI (recommended).
+{{< var treaty_complete_roi_all_benefits >}}:1 ROI (recommended).
 80x cost reduction per patient.
 10,000x more trials possible.
 
