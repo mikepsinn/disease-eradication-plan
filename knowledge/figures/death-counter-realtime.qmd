@@ -54,14 +54,14 @@ display(create_death_counter())
 
 from IPython.display import Markdown
 display(Markdown(f"""
-### 📊 DEATH STATISTICS (Per Second):
+## 📊 DEATH STATISTICS (Per Second):
 
 - Total deaths: **{DEATHS_PER_SECOND}**
 - Disease deaths: **{DISEASE_DEATHS_PER_SECOND}**
 - Preventable deaths: **{PREVENTABLE_DEATHS_PER_SECOND}**
 - Children under 5: **{CHILD_DEATHS_PER_SECOND}**
 
-### 💀 DAILY TOTALS:
+## 💀 DAILY TOTALS:
 
 - **150,000** total deaths
 - **130,000** from disease
