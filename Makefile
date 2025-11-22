@@ -1,7 +1,7 @@
 # Disease Eradication Plan - Makefile
 # Simplifies common development tasks
 
-.PHONY: help setup install validate render clean
+.PHONY: help setup install validate render deploy clean
 
 # Default target - show help
 help:
@@ -12,6 +12,7 @@ help:
 	@echo "  make validate   - Run pre-render validation checks"
 	@echo "  make render     - Render book to HTML"
 	@echo "  make outline    - Generate outline from all headings in chapter files"
+	@echo "  make deploy      - Build and deploy book to Netlify (production)"
 	@echo "  make clean      - Remove generated files (_book, .quarto)"
 	@echo ""
 
@@ -66,6 +67,11 @@ render:
 outline:
 	@echo "Generating outline from chapter headings..."
 	$(PYTHON) scripts/generate-outline.py --output OUTLINE-GENERATED.MD
+
+# Build and deploy to Netlify
+deploy:
+	@echo "Building and deploying book to Netlify..."
+	$(PYTHON) scripts/deploy-book-to-netlify.py
 
 # Clean generated files
 clean:
