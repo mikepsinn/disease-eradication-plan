@@ -274,10 +274,6 @@
     ### The Solution They Don't Want
     ### Your Democracy: An Auction House
 
-## 📎 APPENDICES
-
-### 🚨 The Problem
-
 #### knowledge/economics/central-banks.qmd
 
   ## The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
@@ -1409,6 +1405,8 @@
   ## Action 3: RECRUIT (15 minutes)
   ## That's It.
 
+## 📎 APPENDICES
+
 ### 📚 Essential References
 
 #### knowledge/appendix/recovery-trial.qmd
@@ -2023,7 +2021,7 @@
       #### Summary of Total Annual QALY Gains {#summary-of-total-annual-qaly-gains}
       #### Sources
 
-### 🎯 Financial Planning
+### 💵 Financial Planning
 
 #### knowledge/economics/financial-plan.qmd
 
@@ -2379,7 +2377,7 @@
   ## The Privacy Paradox
   ## The Result
 
-### ⚖️ Operations & Legal
+### ⚗️ Operations & Legal
 
 #### knowledge/appendix/legal-compliance-framework.qmd
 
@@ -2478,7 +2476,7 @@
     ### 3. The Bribe for the Financial Elite (The Bankers & Fund Managers)
   ## The "Punishment": Targeted, Personal, and Financial
 
-### 📚 Additional References
+### 📖 Additional References
 
 #### knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy.qmd (no headings found)
 

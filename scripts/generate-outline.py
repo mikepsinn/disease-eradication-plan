@@ -72,38 +72,27 @@ def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
 
 def get_part_icon(part_name: str) -> str:
     """Get an emoji icon for a part based on its name."""
-    part_lower = part_name.lower()
+    # Use exact matching for unique icons per part
+    part_mapping = {
+        # Main narrative parts
+        "The Problem": "🚨",
+        "The Solution": "💡",
+        "The Evidence": "✅",
+        "The Plan": "🎯",
 
-    # Main narrative parts
-    if "problem" in part_lower:
-        return "🚨"
-    elif "solution" in part_lower:
-        return "💡"
-    elif "evidence" in part_lower or "proof" in part_lower:
-        return "✅"
-    elif "plan" in part_lower:
-        return "🎯"
+        # Appendix parts (unique icons for each)
+        "Essential References": "📚",
+        "Implementation Strategy": "⚙️",
+        "Policy & Regulatory": "⚖️",
+        "Economic Analysis": "💰",
+        "Detailed Calculations": "🔢",
+        "Financial Planning": "💵",
+        "Governance & Organization": "🏛️",
+        "Operations & Legal": "⚗️",
+        "Additional References": "📖"
+    }
 
-    # Appendix parts
-    elif "essential" in part_lower or "reference" in part_lower:
-        return "📚"
-    elif "implementation" in part_lower or "strategy" in part_lower:
-        return "⚙️"
-    elif "policy" in part_lower or "regulatory" in part_lower or "legal" in part_lower:
-        return "⚖️"
-    elif "economic" in part_lower or "financial" in part_lower:
-        return "💰"
-    elif "calculation" in part_lower or "detailed" in part_lower:
-        return "🔢"
-    elif "governance" in part_lower or "organization" in part_lower:
-        return "🏛️"
-    elif "operation" in part_lower:
-        return "🔧"
-    elif "additional" in part_lower:
-        return "📖"
-
-    # Default
-    return "📄"
+    return part_mapping.get(part_name, "📄")
 
 
 def format_heading(level: int, text: str) -> str:
@@ -112,16 +101,16 @@ def format_heading(level: int, text: str) -> str:
     return f"{indent}{'#' * level} {text}"
 
 
-def extract_chapter_files(book_config: Dict) -> List[Tuple[str, str]]:
+def extract_chapter_files(book_config: Dict) -> List[Tuple[str, str, bool]]:
     """
     Extract all chapter file paths from the book configuration.
-    
-    Returns list of tuples: (part_name, file_path)
+
+    Returns list of tuples: (part_name, file_path, is_appendix)
     where part_name is None for chapters not in a part.
     """
     chapters = []
-    
-    def process_chapters(chapter_list: List, current_part: Optional[str] = None):
+
+    def process_chapters(chapter_list: List, current_part: Optional[str] = None, is_appendix: bool = False):
         """Recursively process chapters and parts."""
         for item in chapter_list:
             if isinstance(item, dict):
@@ -129,25 +118,25 @@ def extract_chapter_files(book_config: Dict) -> List[Tuple[str, str]]:
                     # This is a part
                     part_name = item['part']
                     if 'chapters' in item:
-                        process_chapters(item['chapters'], part_name)
+                        process_chapters(item['chapters'], part_name, is_appendix)
                 elif 'href' in item:
                     # This is a chapter with href
-                    chapters.append((current_part, item['href']))
+                    chapters.append((current_part, item['href'], is_appendix))
                 elif isinstance(item, str):
                     # This is a chapter path (string)
-                    chapters.append((current_part, item))
+                    chapters.append((current_part, item, is_appendix))
             elif isinstance(item, str):
                 # Direct chapter path
-                chapters.append((current_part, item))
-    
+                chapters.append((current_part, item, is_appendix))
+
     # Process main chapters
     if 'book' in book_config and 'chapters' in book_config['book']:
-        process_chapters(book_config['book']['chapters'])
-    
+        process_chapters(book_config['book']['chapters'], is_appendix=False)
+
     # Process appendices
     if 'book' in book_config and 'appendices' in book_config['book']:
-        process_chapters(book_config['book']['appendices'])
-    
+        process_chapters(book_config['book']['appendices'], is_appendix=True)
+
     return chapters
 
 
@@ -254,16 +243,10 @@ def generate_outline(book_config_path: Path, project_root: Path) -> str:
     files_not_found = 0
     total_headings = 0
 
-    for part_name, file_path in chapter_files:
+    for part_name, file_path, is_appendix in chapter_files:
         # Skip auto-generated parameters file
         if file_path == "knowledge/appendix/parameters-and-calculations.qmd":
             continue
-
-        # Detect section transitions (main chapters vs appendices)
-        is_appendix = file_path.startswith("knowledge/appendix/") or \
-                     file_path.startswith("knowledge/economics/") or \
-                     file_path.startswith("knowledge/strategy/") or \
-                     file_path.startswith("knowledge/legal/")
 
         # Add APPENDICES header when transitioning from main to appendix
         if is_appendix and current_section != "appendices":

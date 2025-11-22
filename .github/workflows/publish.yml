@@ -92,6 +92,21 @@ jobs:
         run: python scripts/render-book-website.py
         timeout-minutes: 15
 
+      - name: Deploy Main Site to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_book/warondisease'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy main site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
+        timeout-minutes: 1
+
       - name: Upload Main Site artifact for Netlify (deploy immediately)
         uses: actions/upload-artifact@v4
         with:
@@ -102,6 +117,21 @@ jobs:
       - name: Render Economics Website (for Netlify deployment)
         run: python scripts/render-economics-website.py --output-dir _site/economics
         timeout-minutes: 10
+
+      - name: Deploy Economics Site to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_site/economics'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy economics site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
+        timeout-minutes: 1
 
       - name: Upload Economics artifact for Netlify
         uses: actions/upload-artifact@v4
