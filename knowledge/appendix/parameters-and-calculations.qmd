@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 546
+**Total parameters**: 538
 
 - External sources (peer-reviewed): 177
-- Calculated values: 320
+- Calculated values: 312
 - Core definitions: 49
 
 ## External Data Sources {#sec-external}
@@ -3056,41 +3056,7 @@ $$
 Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.
 
 $$
-Value_{annual\_avg} = 408M \times \$150k = \$61.2T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Average Annual QALYs Gained from dFDA (During Efficacy Lag Period) {#sec-dfda_avoided_regulatory_delay_dalys_annual}
-
-**Value**: 993M
-
-Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.
-
-$$
-QALYs_{annual\_avg} = (3.526B \times 0.95) \div 8.2 = 408M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Average Annual Economic Value During Efficacy Lag Period {#sec-dfda_benefit_disease_eradication_delay_annual}
-
-**Value**: $149T
-
-Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.
-
-$$
-Value_{annual\_avg} = 408M \times \$150k = \$61.2T
+Value_{annual\_avg} = 993M \times \$150k = \$148.95T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
@@ -3294,7 +3260,7 @@ $$
 dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
 
 $$
-\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{54.03M \text{ QALYs}} = -\$925 \text{ per QALY}
+\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{993M \text{ QALYs}} = -\$50.3 \text{ per QALY}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#dfda-icer-analysis](../appendix/dfda-cost-benefit-analysis#dfda-icer-analysis)
@@ -3337,7 +3303,7 @@ Large dFDA pragmatic trial size
 Annual lives saved by dFDA (QALYs ÷ QALYs per life)
 
 $$
-Lives_{dFDA} = 54.03M \div 35 = 1.54M
+Lives_{dFDA} = 993M \div 35 = 28.4M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
@@ -3628,7 +3594,7 @@ dFDA staff costs (minimal, AI-assisted)
 Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.
 
 $$
-QALYs_{annual\_avg} = (3.526B \times 0.95) \div 8.2 = 408M
+QALYs_{annual\_avg} = (8.57B \times 0.95) \div 8.2 = 993M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
@@ -3645,7 +3611,7 @@ $$
 Daily QALYs from dFDA post-safety efficacy testing delay elimination (opportunity cost per day)
 
 $$
-QALYs_{daily} = 54.03M \div 365 = 148,024
+QALYs_{daily} = 993M \div 365 = 2.72M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
@@ -3659,10 +3625,10 @@ $$
 
 **Value**: $149T
 
-Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (54.03M QALYs × $150k economic value)
+Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (993M QALYs × $150k economic value)
 
 $$
-Value_{QALY} = 54.03M \times \$150,000 = \$8.10T
+Value_{QALY} = 993M \times \$150,000 = \$148.95T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
@@ -5510,108 +5476,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Annual DALYs Lost from Disease Eradication Delay {#sec-regulatory_delay_annual_dalys}
-
-**Value**: 1.05B
-
-Annual DALYs lost from disease eradication delay (PRIMARY estimate)
-
-$$
-DALY_{annual} = 8.57B \div 8.2 = 1.05B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Economic Loss from Disease Eradication Delay {#sec-regulatory_delay_annual_loss}
-
-**Value**: $157T
-
-Annual economic loss from disease eradication delay (PRIMARY estimate)
-
-$$
-Annual_{loss} = (8.57B \div 8.2) \times \$150k = \$157B/year
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Total DALYs Lost from Disease Eradication Delay {#sec-regulatory_delay_dalys}
-
-**Value**: 8.57B
-
-Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
-
-$$
-DALY_{total} = 7.63B + 0.943B = 8.57B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Total Economic Loss from Disease Eradication Delay {#sec-regulatory_delay_economic_loss}
-
-**Value**: $1286T
-
-Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)
-
-$$
-Loss = 8.57B \times \$150k = \$1.29T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Years Lived with Disability During Disease Eradication Delay {#sec-regulatory_delay_yld}
-
-**Value**: 943M
-
-Years Lived with Disability during disease eradication delay (PRIMARY estimate)
-
-$$
-YLD = 449M \times 6 \times 0.35 = 943M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Years of Life Lost from Disease Eradication Delay {#sec-regulatory_delay_yll}
-
-**Value**: 7.63B
-
-Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
-
-$$
-YLL = 449M \times (79 - 62) = 7.63B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total Research Capacity Multiplier from dFDA {#sec-research_acceleration_multiplier}
 
 **Value**: 115
@@ -6962,7 +6826,7 @@ $$
 Total annual QALYs gained (dFDA + peace dividend)
 
 $$
-QALYs_{total} = 54.03M + 85,610 = 54.11M
+QALYs_{total} = 993M + 85,610 = 993.09M
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-qalys](../appendix/1-percent-treaty-cost-effectiveness#total-qalys)
@@ -6992,7 +6856,7 @@ Trial completion speed multiplier (10x faster)
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 $$
-\frac{Cost_{delay}}{Benefit_{safety}} = \frac{3.526B}{0.00259B} = 1{,}362:1
+\frac{Cost_{delay}}{Benefit_{safety}} = \frac{8.57B}{0.00259B} = 3{,}309:1
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)

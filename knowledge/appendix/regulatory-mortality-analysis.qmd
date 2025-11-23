@@ -36,9 +36,9 @@ Using data from the Tufts Center for the Study of Drug Development (CSDD) and th
 - **Moderate (Disease Eradication Delay - PRIMARY):** {{< var disease_eradication_delay_deaths_annual >}} deaths/year - Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years
 - **Optimistic (Acceleration Effects):** {{< var disease_eradication_plus_acceleration_deaths_annual >}} deaths/year - Includes innovation acceleration from lower costs and faster trials
 
-When adjusted for morbidity, the **PRIMARY estimate** burden is **{{< var regulatory_delay_dalys >}} Billion Disability-Adjusted Life Years (DALYs)**.
+When adjusted for morbidity, the **PRIMARY estimate** burden is **{{< var disease_eradication_delay_dalys >}} Billion Disability-Adjusted Life Years (DALYs)**.
 
-Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var regulatory_delay_economic_loss >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
+Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var disease_eradication_delay_economic_loss >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}:1**.
 
 ## 1. Introduction
 
@@ -110,7 +110,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 - **Actuarial Expectancy:** {{< var global_life_expectancy_2024 >}}
 - **YLL Total:**
 
-{{< var regulatory_delay_yll_latex >}} {#eq-yll}
+{{< var disease_eradication_delay_yll_latex >}} {#eq-yll}
 
 ### 4.2 Years Lived with Disability (YLD)
 
@@ -118,13 +118,13 @@ Mortality counts fail to capture the suffering of patients living with untreated
 - **Pre-Death Suffering Period:** {{< var regulatory_delay_suffering_period_years >}} years
 - **YLD Total:**
 
-{{< var regulatory_delay_yld_latex >}} {#eq-yld}
+{{< var disease_eradication_delay_yld_latex >}} {#eq-yld}
 
 ### 4.3 Cumulative DALY Burden
 
-{{< var regulatory_delay_dalys_latex >}} {#eq-total-dalys}
+{{< var disease_eradication_delay_dalys_latex >}} {#eq-total-dalys}
 
-**Interpretation:** The regulatory framework has effectively deleted **{{< var regulatory_delay_dalys >}} billion years of healthy human life**.
+**Interpretation:** The regulatory framework has effectively deleted **{{< var disease_eradication_delay_dalys >}} billion years of healthy human life**.
 
 ## 5. Economic Valuation {#economic-valuation}
 
@@ -136,18 +136,18 @@ $$ {#eq-dwl}
 
 Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >}}**:
 
-{{< var regulatory_delay_economic_loss_latex >}} {#eq-dwl-calculation}
+{{< var disease_eradication_delay_economic_loss_latex >}} {#eq-dwl-calculation}
 
 ### 5.1 Contextualizing the Loss
 
-- **Annualized Loss:** ~{{< var regulatory_delay_annual_loss >}} / year.
+- **Annualized Loss:** ~{{< var disease_eradication_delay_annual_loss >}} / year.
 - **GDP Equivalent:** The "Efficacy Tax" consumes approximately **8–12% of Global GDP** annually in lost human capital and foregone productivity.
 
 ## 6. Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
 
 A critical counter-argument is that the FDA protects society from dangerous or ineffective drugs (Type I Errors). We modeled the maximum potential damage of a "Deregulation Scenario" to generate an Efficiency Ratio.
 
-- **The Cost of Protection (Type II):** {{< var regulatory_delay_dalys >}}B DALYs lost.
+- **The Cost of Protection (Type II):** {{< var disease_eradication_delay_dalys >}}B DALYs lost.
 - **The Benefit of Protection (Type I):** Even assuming a "Thalidomide Event" occurs *every single year* under a deregulated model (an extreme overestimate), the total DALYs saved by the FDA is ~{{< var type_i_error_benefit_dalys >}}B.
   - *Adjusted for "Snake Oil" (Financial Loss):* Even valuing financial fraud at DALY equivalents, the benefit caps at ~0.6 Billion DALYs.
 
@@ -256,8 +256,8 @@ See [Economics of the Decentralized Institutes of Health](../economics/economics
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
 - **{{< var disease_eradication_delay_deaths_total >}}M preventable deaths** (1962-2024)
-- **{{< var regulatory_delay_dalys >}}B DALYs lost**
-- **{{< var regulatory_delay_economic_loss >}} economic destruction**
+- **{{< var disease_eradication_delay_dalys >}}B DALYs lost**
+- **{{< var disease_eradication_delay_economic_loss >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}}:1 harm ratio** (Type II vs. Type I errors)
 
 These costs dwarf the benefits by three orders of magnitude. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).

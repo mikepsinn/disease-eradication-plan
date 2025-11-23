@@ -423,10 +423,10 @@ $$
 DALY_{total} = YLL + YLD = 3.14B + 1.69B = 4.83B
 $$
 
-**{{< var regulatory_delay_dalys >}} billion years of healthy human life** deleted by the regulatory framework.
+**{{< var disease_eradication_delay_dalys >}} billion years of healthy human life** deleted by the regulatory framework.
 
-- **Economic cost:** {{< var regulatory_delay_economic_loss >}} (2024 USD)
-- **Annualized loss:** {{< var regulatory_delay_annual_loss >}}/year
+- **Economic cost:** {{< var disease_eradication_delay_economic_loss >}} (2024 USD)
+- **Annualized loss:** {{< var disease_eradication_delay_annual_loss >}}/year
 - **GDP equivalent:** ~8-12% of global GDP consumed annually
 
 For comparison: The entire global pharmaceutical R&D budget is ~$200B/year. The post-safety efficacy lag costs **38× more** than all drug development spending combined.
@@ -565,7 +565,7 @@ Regulators love to justify delays by citing "safety." But let's do the actual ma
 
 The FDA's job is to minimize *total* harm. So which error costs more?
 
-- **Cost of Type II errors:** {{< var regulatory_delay_dalys >}}B DALYs lost (1962-2024)
+- **Cost of Type II errors:** {{< var disease_eradication_delay_dalys >}}B DALYs lost (1962-2024)
 - **Benefit of Type I prevention:** ~{{< var type_i_error_benefit_dalys >}}B DALYs saved (extreme overestimate)
 
 $$
@@ -761,8 +761,8 @@ The numbers don't lie:
 
 - **{{< var efficacy_lag_years >}} years** of post-safety efficacy lag (Phase II/III delay after Phase I safety verification)
 - **{{< var disease_eradication_delay_deaths_total >}}M deaths** from delayed access (1962-2024)
-- **{{< var regulatory_delay_dalys >}}B DALYs** destroyed by paperwork
-- **{{< var regulatory_delay_economic_loss >}}** in economic carnage
+- **{{< var disease_eradication_delay_dalys >}}B DALYs** destroyed by paperwork
+- **{{< var disease_eradication_delay_economic_loss >}}** in economic carnage
 - **{{< var type_ii_error_cost_ratio >}}:1** harm ratio (delay vs. prevention)
 
 Phase I safety testing works. Keep it.

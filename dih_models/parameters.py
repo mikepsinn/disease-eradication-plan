@@ -612,6 +612,18 @@ TREATY_ANNUAL_FUNDING = Parameter(
     keywords=["1%", "dod", "pentagon", "distributed research", "global research", "national security", "open science"]
 )  # $27.18B
 
+# ==============================================================================
+# PEACE DIVIDEND - RECURRING ANNUAL BENEFIT ($113.55B/year perpetual)
+# ==============================================================================
+# The 1% Treaty redirects 1% of military spending ($27.18B/year) to medical research.
+# This generates recurring annual benefits from reduced conflict costs:
+#   - Direct military savings
+#   - Reduced infrastructure destruction
+#   - Fewer casualties and refugee costs
+#   - Reduced lost economic growth
+# Total recurring peace dividend: $113.55B/year (happens every year forever)
+# ==============================================================================
+
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend",
@@ -1415,11 +1427,22 @@ DFDA_ANNUAL_OPEX = Parameter(
 # ===================================================================
 # dFDA BENEFIT STRUCTURE (SIMPLIFIED)
 # ===================================================================
-# PRIMARY: Disease Eradication Delay Avoidance ($149T/year)
-# Secondary: R&D Savings from trial cost reduction ($41.5B/year)
+# RECURRING ANNUAL BENEFITS (Happen every year forever):
+#   - R&D Savings from 82× trial cost reduction: ~$50B/year
+#   - Peace Dividend from 1% military cut: $113.55B/year
+#   - Total Recurring: ~$163B/year perpetual
+#
+# ONE-TIME TIMELINE SHIFT BENEFIT (Happens once at launch):
+#   - 8.2-year disease eradication acceleration: 449M deaths avoided (TOTAL)
+#   - See section "ONE-TIME TIMELINE SHIFT BENEFITS" below
+#   - WARNING: NOT a recurring $149T/year - that's (total ÷ 8.2 years)!
 # ===================================================================
 
-# R&D Savings Component (Secondary)
+# ==============================================================================
+# RECURRING ANNUAL BENEFITS (These repeat every year forever)
+# ==============================================================================
+
+# R&D Savings from Trial Cost Reduction (~$50B/year recurring)
 DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * TRIAL_COST_REDUCTION_PCT,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
@@ -1967,14 +1990,14 @@ TYPE_I_ERROR_BENEFIT_DALYS = Parameter(
 )
 
 TYPE_II_ERROR_COST_RATIO = Parameter(
-    REGULATORY_DELAY_DALYS / TYPE_I_ERROR_BENEFIT_DALYS,
+    DISEASE_ERADICATION_DELAY_DALYS / TYPE_I_ERROR_BENEFIT_DALYS,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
     source_type="calculated",
     description="Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
     display_name="Ratio of Type Ii Error Cost to Type I Error Benefit",
     unit="ratio",
     formula="TYPE_II_COST ÷ TYPE_I_BENEFIT",
-    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{3.526B}{0.00259B} = 1{,}362:1",
+    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{8.57B}{0.00259B} = 3{,}309:1",
     confidence="medium",
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"]
 )
@@ -1983,19 +2006,6 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
 # dFDA REGULATORY DELAY AVOIDANCE
 # ---
 # The dFDA eliminates the efficacy lag by providing post-Phase I access via trial participation
-
-REGULATORY_DELAY_ANNUAL_DALYS = Parameter(
-    REGULATORY_DELAY_DALYS / 62,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
-    source_type="calculated",
-    description="Annual DALYs lost to regulatory delay under current system (D_lag + D_void total)",
-    display_name="Annual DALYs Lost to Regulatory Delay Under Current System",
-    unit="DALYs/year",
-    formula="TOTAL_DALYS ÷ 62 years",
-    latex=r"DALY_{annual} = 3.526B \div 62 = 56.87M",
-    confidence="medium",
-    keywords=["4.8b", "approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease"]
-)  # 56.87M DALYs/year total (D_lag + D_void)
 
 DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION = Parameter(
     0.95,
@@ -2028,16 +2038,31 @@ DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION = Parameter(
 
 # Disease Eradication + Acceleration Scenario (OPTIMISTIC)
 
-
-# dFDA health benefits
-# NOTE: The incremental bottom-up calculation (840k QALYs) represents marginal improvements
-# within the current regulatory framework. The primary estimate uses the comprehensive
-# regulatory delay elimination approach (54M QALYs) based on empirical analysis of
-# 1962-2024 data. See /knowledge/appendix/regulatory-mortality-analysis.qmd
+# ==============================================================================
+# ONE-TIME TIMELINE SHIFT BENEFITS (NOT RECURRING!)
+# ==============================================================================
+#
+# CRITICAL: The parameters below represent a ONE-TIME 8.2-year timeline shift,
+# NOT recurring annual benefits that happen every year forever.
+#
+# WHAT THIS MEANS:
+# - Eliminating the 8.2-year efficacy lag shifts disease eradication 8.2 years EARLIER
+# - This saves 449M people TOTAL (not "54.75M saved per year, every year")
+# - The "_ANNUAL" suffix means "average per year DURING the 8.2-year shift"
+# - These are NOT perpetual benefits - they happen ONCE when dFDA launches
+#
+# ANALOGY: If you arrive 8.2 hours earlier, you don't keep arriving 1 hour
+# earlier every year forever. You arrived ONCE, 8.2 hours earlier.
+#
+# For recurring benefits (R&D savings, peace dividend), see section below.
+# ==============================================================================
 
 # PRIMARY ESTIMATE: Based on comprehensive regulatory delay elimination analysis
-# Calculated from TOTAL DALYs divided by the efficacy lag period
+# Calculated from TOTAL DALYs (8.57B) divided by the efficacy lag period (8.2 years)
 # See /knowledge/appendix/regulatory-mortality-analysis.qmd for methodology
+#
+# WARNING: Despite the "_ANNUAL" suffix, this is NOT a recurring benefit!
+# It represents the average annual impact during the ONE-TIME 8.2-year timeline shift.
 DFDA_QALYS_RD_PLUS_DELAY_ANNUAL = Parameter(
     (DISEASE_ERADICATION_DELAY_DALYS * DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION) / EFFICACY_LAG_YEARS,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
@@ -2046,9 +2071,9 @@ DFDA_QALYS_RD_PLUS_DELAY_ANNUAL = Parameter(
     display_name="Average Annual QALYs Gained from dFDA (During Efficacy Lag Period)",
     unit="QALYs/year",
     formula="(TOTAL_DALYS × AVOIDANCE_FRACTION) ÷ EFFICACY_LAG_YEARS",
-    latex=r"QALYs_{annual\_avg} = (3.526B \times 0.95) \div 8.2 = 408M",
-    keywords=["average annual", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "approval lag", "drug lag"]
-)  # 408M QALYs/year average during lag period (PRIMARY)
+    latex=r"QALYs_{annual\_avg} = (8.57B \times 0.95) \div 8.2 = 993M",
+    keywords=["993m", "average annual", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "approval lag", "drug lag"]
+)  # 993M QALYs/year average during lag period (PRIMARY)
 
 DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
     DFDA_QALYS_RD_PLUS_DELAY_ANNUAL / 365,
@@ -2058,9 +2083,9 @@ DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
     display_name="Daily QALYs from dFDA Post-Safety Efficacy Delay Elimination",
     unit="QALYs/day",
     formula="DFDA_QALYS_RD_PLUS_DELAY_ANNUAL ÷ 365",
-    latex=r"QALYs_{daily} = 54.03M \div 365 = 148,024",
-    keywords=["148k", "daily", "per day", "each day", "opportunity cost", "delay cost", "post-safety", "efficacy testing"]
-)  # 148,024 QALYs/day (post-safety efficacy delay elimination)
+    latex=r"QALYs_{daily} = 993M \div 365 = 2.72M",
+    keywords=["2.72m", "daily", "per day", "each day", "opportunity cost", "delay cost", "post-safety", "efficacy testing"]
+)  # 2.72M QALYs/day (post-safety efficacy delay elimination)
 
 # Economic value of annual QALYs (for backward compatibility with deleted ANNUAL parameters)
 DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = Parameter(
@@ -2071,9 +2096,9 @@ DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = Parameter(
     display_name="Average Annual Economic Value During Efficacy Lag Period",
     unit="USD/year",
     formula="DFDA_QALYS_RD_PLUS_DELAY_ANNUAL × VSLY",
-    latex=r"Value_{annual\_avg} = 408M \times \$150k = \$61.2T",
-    keywords=["annual average", "economic value", "monetized", "efficacy lag"]
-)  # $61.2T/year average during lag period (backward compatibility alias)
+    latex=r"Value_{annual\_avg} = 993M \times \$150k = \$148.95T",
+    keywords=["annual average", "economic value", "monetized", "efficacy lag", "148.95t"]
+)  # $148.95T/year average during lag period (backward compatibility alias)
 
 # Explicit lives saved calculations
 DFDA_LIVES_SAVED_ANNUAL = Parameter(
@@ -2084,9 +2109,9 @@ DFDA_LIVES_SAVED_ANNUAL = Parameter(
     display_name="Annual Lives Saved by dFDA",
     unit="lives/year",
     formula="DFDA_QALYS ÷ QALYS_PER_LIFE",
-    latex=r"Lives_{dFDA} = 54.03M \div 35 = 1.54M",
-    keywords=["1.54m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "regulatory delay"]
-)  # 1.54M lives/year
+    latex=r"Lives_{dFDA} = 993M \div 35 = 28.4M",
+    keywords=["28.4m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "regulatory delay"]
+)  # 28.4M lives/year
 
 DFDA_LIVES_SAVED_DAILY = Parameter(
     DFDA_LIVES_SAVED_ANNUAL / 365,
@@ -2104,13 +2129,13 @@ DFDA_QALYS_RD_PLUS_DELAY_MONETIZED = Parameter(
     (DFDA_QALYS_RD_PLUS_DELAY_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
-    description="Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (54.03M QALYs × $150k economic value)",
+    description="Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (993M QALYs × $150k economic value)",
     display_name="Monetized Value of dFDA QALYs (Post-Safety Efficacy Delay Elimination)",
     unit="USD/year",
     formula="QALYS_RD_PLUS_DELAY × VALUE_PER_QALY",
-    latex=r"Value_{QALY} = 54.03M \times \$150,000 = \$8.10T",
-    keywords=["8.1t", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "economic value", "recommended"]
-)  # $8.10T/year (recommended estimate: post-safety efficacy delay health benefits)
+    latex=r"Value_{QALY} = 993M \times \$150,000 = \$148.95T",
+    keywords=["148.95t", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "economic value", "recommended"]
+)  # $148.95T/year (recommended estimate: post-safety efficacy delay health benefits)
 
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
@@ -2145,9 +2170,9 @@ TREATY_TOTAL_QALYS_GAINED_ANNUAL = Parameter(
     display_name="Total Annual QALYs Gained",
     unit="QALYs/year",
     formula="DFDA_QALYS + PEACE_QALYS",
-    latex=r"QALYs_{total} = 54.03M + 85,610 = 54.11M",
-    keywords=["54m", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "regulatory delay"]
-)  # 54.11M QALYs
+    latex=r"QALYs_{total} = 993M + 85,610 = 993.09M",
+    keywords=["993m", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "regulatory delay"]
+)  # 993.09M QALYs
 
 TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
     TREATY_TOTAL_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
@@ -2777,9 +2802,9 @@ DFDA_ICER_PER_QALY = Parameter(
     display_name="dFDA Infrastructure ICER per QALY",
     unit="USD/QALY",
     formula="(DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ DFDA_QALYS_RD_PLUS_DELAY_ANNUAL",
-    latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{54.03M \text{ QALYs}} = -\$925 \text{ per QALY}",
+    latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{993M \text{ QALYs}} = -\$50.3 \text{ per QALY}",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly"]
-)  # -$925 per QALY (updated with comprehensive regulatory delay elimination)
+)  # -$50.3 per QALY (updated with comprehensive regulatory delay elimination)
 TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED = Parameter(
     (TREATY_DFDA_ICER_PER_QALY / 1_000_000) * STANDARD_QALYS_PER_LIFE_SAVED,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life",
@@ -3743,8 +3768,8 @@ BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL = Parameter(
 
 # DELETED: Outdated bottom-up methodology parameters (see dfda-qaly-model.qmd "Outdated Methodology")
 # These are components of an old 840k QALY model that have been superseded by the comprehensive
-# regulatory-mortality-analysis.qmd PRIMARY METHODOLOGY (54.03M QALYs). Including these alongside
-# the comprehensive $8.10T regulatory delay benefit constitutes double-counting.
+# regulatory-mortality-analysis.qmd PRIMARY METHODOLOGY (993M QALYs). Including these alongside
+# the comprehensive $148.95T regulatory delay benefit constitutes double-counting.
 #
 # BENEFIT_RARE_DISEASES_ANNUAL = $400B (already included in BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL)
 # BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL = $100B (derivative of R&D savings, not additional value)

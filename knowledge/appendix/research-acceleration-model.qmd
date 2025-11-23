@@ -329,7 +329,7 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 |----------|----------------|-------|
 | [Peace Dividend](../economics/peace-dividend.qmd) | {{< var peace_dividend_annual_societal_benefit >}} | Societal savings from 1% reduction in global conflict |
 | R&D Cost Savings | {{< var dfda_rd_gross_savings_annual >}} | {{< var trial_cost_reduction_factor >}}× trial cost reduction |
-| **Earlier Access (7 years)** | **{{< var dfda_benefit_disease_eradication_delay_annual >}}** | Existing pipeline accessed sooner |
+| **Earlier Access (8.2 year timeline shift)** | **{{< var dfda_qalys_rd_plus_delay_monetized >}}** | One-time benefit from accelerating disease eradication |
 | **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |
 | New Diseases Treatable | $400.0B | Rare diseases, orphan drugs |
 | Drug Price Reduction | $100.0B | R&D savings passed to consumers |

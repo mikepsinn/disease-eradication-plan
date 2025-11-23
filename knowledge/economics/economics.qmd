@@ -1096,7 +1096,7 @@ Core recurring benefit streams:
 
 That's **{{< var treaty_total_complete_benefits_annual >}} per year** (recurring perpetually).
 
-**Important Note:** Regulatory delay elimination provides a **one-time 8.2-year timeline shift** forward in curing diseases, not an annual recurring benefit. This one-time benefit is massive ({{< var dfda_benefit_disease_eradication_delay_annual >}} average during the shift period) but occurs once when the delay is eliminated, not every year. The recurring annual benefits above ($155.1B/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for the one-time timeline shift methodology.
+**Important Note:** Regulatory delay elimination provides a **one-time 8.2-year timeline shift** forward in curing diseases, not an annual recurring benefit. This one-time benefit is massive ({{< var dfda_qalys_rd_plus_delay_monetized >}} total economic value from timeline shift) but occurs once when the delay is eliminated, not every year. The recurring annual benefits above ($155.1B/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for the one-time timeline shift methodology.
 
 #### Complete Case ROI
 
@@ -1112,7 +1112,7 @@ These estimates derive from:
 
 **Critical distinction** - the two benefit categories are different things:
 
-- **One-Time Timeline Shift** = Eliminating the {{< var efficacy_lag_years >}}-year efficacy lag shifts disease eradication forward by 8.2 years (one-time benefit, not annual recurring). This is the PRIMARY benefit from regulatory delay elimination per [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd), providing massive value (average {{< var dfda_benefit_disease_eradication_delay_annual >}} during the shift period) but occurs once.
+- **One-Time Timeline Shift** = Eliminating the {{< var efficacy_lag_years >}}-year efficacy lag shifts disease eradication forward by 8.2 years (one-time benefit, not annual recurring). This is the PRIMARY benefit from regulatory delay elimination per [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd), providing massive value ({{< var dfda_qalys_rd_plus_delay_monetized >}} total economic value from the timeline shift) but occurs once.
 - **Recurring Annual Benefits** = Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}/year) + R&D savings ({{< var dfda_rd_gross_savings_annual >}}/year) = {{< var treaty_total_complete_benefits_annual >}}/year perpetually. These are smaller than the one-time shift but continue every year forever, making the system self-funding.
 
 ### Research Acceleration Mechanism
