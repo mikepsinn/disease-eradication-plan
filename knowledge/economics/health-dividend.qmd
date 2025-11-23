@@ -58,7 +58,7 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var disease_eradication_delay_dalys >}}B DALYs total** lost to delayed treatments ({{< var disease_eradication_delay_dalys >}}B ÷ 62 years = ~54.75M DALYs annually).
+Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var disease_eradication_delay_dalys >}} DALYs total** lost to delayed treatments ({{< var disease_eradication_delay_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
 
 **For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction).
 
@@ -109,7 +109,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency a
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Interactive NPV/ROI calculator
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var disease_eradication_delay_dalys >}}B DALYs (post-safety efficacy lag elimination)
+- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var disease_eradication_delay_dalys >}} DALYs (post-safety efficacy lag elimination)
 
 #### Key Sources
 

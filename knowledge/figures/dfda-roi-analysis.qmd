@@ -386,7 +386,7 @@ This file contains reusable chart components for the dFDA economic analysis. To 
 ### Key Data Sources
 
 - **ROI Calculation**: Based on annual cost generating R&D savings and regulatory delay elimination benefits
-- **QALY Impact**: {{< var disease_eradication_delay_dalys >}}B DALYs from eliminating regulatory efficacy lag (based on Regulatory Mortality Analysis methodology)
+- **QALY Impact**: {{< var disease_eradication_delay_dalys >}} DALYs from eliminating regulatory efficacy lag (based on Regulatory Mortality Analysis methodology)
 - **Cost Reductions**: 80-160x per-patient cost reduction vs traditional trials
 - **Daily Opportunity Cost**: $137M economic + 203,145 QALYs lost daily
 

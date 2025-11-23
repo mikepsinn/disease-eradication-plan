@@ -3,7 +3,7 @@
 **Book Structure Overview:**
 - Main Narrative: 4 parts
 - Appendices: 9 parts
-- Total Files: 82
+- Total Files: 81
 
 ---
 
@@ -1731,8 +1731,8 @@
       #### Total Annual Economic Benefits
     ### Step 2: Annual Health Benefits (QALYs)
       #### 2a. Peace Dividend Health Benefits ({{< var treaty_qalys_gained_annual_global >}} QALYs/year)
-      #### 2b. dFDA Health Benefits ({{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year)
-      #### Total Annual Health Benefits
+      #### 2b. dFDA Health Benefits from Disease Eradication Acceleration ({{< var disease_eradication_delay_dalys >}} DALYs prevented one-time)
+      #### Total One-Time Health Benefits
     ### Step 3: Annual Costs
       #### 3a. Campaign Costs ({{< var treaty_campaign_total_cost >}} over 4 years, amortized)
       #### 3b. dFDA Operational Costs ({{< var dfda_upfront_build >}}/year)
@@ -1746,16 +1746,15 @@
     ### Step 4: ICER Calculation
       #### 4a. Net Economic Impact
       #### 4b. ICER per QALY
-        ##### ICER = {{< var treaty_dfda_icer_per_qaly >}} per QALY
-      #### 4c. Cost per Life Saved
+      #### 4c. Economic Value per Life Saved
   ## Comparison to Other Interventions
     ### [Top Charitable Interventions (GiveWell 2024)](../references.qmd#givewell-cost-per-life-saved)
     ### 1% Treaty + DIH + dFDA
     ### The Difference
   ## Sensitivity Analysis
     ### Key Parameters and Ranges
-    ### ICER Across Scenarios
-    ### Alternative ICER Calculations Based on Funding Perspective
+    ### Impact Across Scenarios
+    ### Implementation Scenarios
   ## Visual Comparisons
     ### Cost-Effectiveness: How Much Does Society Pay to Save a Life?
     ### Scale of Impact: Annual Economic Benefits
@@ -1956,7 +1955,7 @@
       #### Rigorous Financial Model: Net Present Value (NPV) Analysis
       #### NPV Analysis Over Time
       #### Computational Model Key Findings
-    ### dFDA ICER Analysis - Cost-Utility Framework
+    ### dFDA Cost-Utility Framework
       #### Parameterization Overall dFDA Infrastructure Impact
       #### Sensitivity Analysis Overall dFDA Infrastructure Cost-Effectiveness
       #### Discussion: Policy Implications
@@ -1995,23 +1994,6 @@
     ### Cost Optimization Strategies
     ### Scaling Benefits
   ## Conclusion
-
-#### knowledge/appendix/dfda-qaly-model.qmd
-
-  ## Outdated Methodology
-      #### A. Accelerating Development of Existing Pipeline Drugs
-      #### B. Improving Preventative Care via Real-World Evidence
-      #### C. Enabling Research for Previously Untreatable/Neglected Diseases
-      #### Summary Table: Total Annual QALY Gains {#qaly-summary-table}
-      #### DCT Platform Funding (Analogous Cost Basis)
-      #### Sources
-    ### Final ROI and Net Benefit
-    ### Appendix: Detailed QALY Calculation Model {#appendix-detailed-qaly-calculation-model}
-      #### A. QALYs from Faster Drug Access
-      #### B. QALYs from Improved Prevention and Real-World Evidence (RWE)
-      #### C. QALYs from Expanded Scope (New Therapies)
-      #### Summary of Total Annual QALY Gains {#summary-of-total-annual-qaly-gains}
-      #### Sources
 
 ### 💵 Financial Planning
 
@@ -2529,8 +2511,8 @@
 ---
 
 **Summary:**
-- Files processed: 82
-- Files with headings: 79
+- Files processed: 81
+- Files with headings: 78
 - Files without headings: 2
 - Files not found: 0
-- Total headings extracted: 2250
+- Total headings extracted: 2235
