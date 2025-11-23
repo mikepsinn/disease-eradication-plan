@@ -834,7 +834,45 @@ def check_markdown_links(content: str, filepath: str):
                 # Resolve the path relative to the current file
                 resolved_path = os.path.normpath(os.path.join(file_dir, link_file))
 
-                if not os.path.exists(resolved_path):
+                # Check if file exists as-is
+                if os.path.exists(resolved_path):
+                    continue  # File exists, link is valid
+
+                # If link has .html extension but file doesn't exist, check for corresponding .qmd
+                # (since .html files are generated from .qmd during rendering)
+                if link_file.endswith(".html"):
+                    qmd_path = resolved_path[:-5] + ".qmd"  # Replace .html with .qmd
+                    if os.path.exists(qmd_path):
+                        continue  # Source .qmd exists, will be rendered to .html - link is valid
+                    else:
+                        # Neither .html nor .qmd exists - broken link
+                        errors.append(
+                            ValidationError(
+                                file=filepath,
+                                line=line_index + 1,
+                                message=f"Broken link: {link_path} (target file not found, and no corresponding .qmd file)",
+                                context=line.strip()[:80],
+                            )
+                        )
+                # If link is extensionless (format-agnostic), check for .qmd source file
+                # Quarto will resolve extensionless paths appropriately for each output format
+                elif not any(link_file.endswith(ext) for ext in [".html", ".qmd", ".md", ".pdf", ".epub"]):
+                    # Extensionless path - check for .qmd source file
+                    qmd_path = resolved_path + ".qmd"
+                    if os.path.exists(qmd_path):
+                        continue  # Source .qmd exists, Quarto will resolve the link - valid
+                    else:
+                        # No .qmd source found - broken link
+                        errors.append(
+                            ValidationError(
+                                file=filepath,
+                                line=line_index + 1,
+                                message=f"Broken link: {link_path} (no corresponding .qmd source file found)",
+                                context=line.strip()[:80],
+                            )
+                        )
+                else:
+                    # File with extension doesn't exist
                     errors.append(
                         ValidationError(
                             file=filepath,

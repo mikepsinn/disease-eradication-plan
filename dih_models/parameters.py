@@ -8204,6 +8204,28 @@ PARAMETER_LINKS = {
 }
 
 
+def _convert_qmd_to_html(path: str) -> str:
+    """
+    Remove .qmd extension from paths for format-agnostic links.
+    Quarto will resolve extensionless paths appropriately for each output format:
+    - HTML: resolves to .html files
+    - PDF: resolves to internal PDF references
+    - EPUB: resolves to internal EPUB references
+    
+    Args:
+        path: Path that may contain .qmd extension
+        
+    Returns:
+        Path with .qmd extension removed (format-agnostic)
+    """
+    if path.endswith('.qmd'):
+        return path[:-4]  # Remove .qmd extension
+    elif '.qmd#' in path:
+        # Handle paths with fragments like "file.qmd#section"
+        return path.replace('.qmd#', '#')  # Remove .qmd, keep #
+    return path
+
+
 def param_link(param_name: str, formatted_value: str = None) -> str:
     """
     Create an HTML link combining a formatted parameter with its source.
@@ -8213,7 +8235,7 @@ def param_link(param_name: str, formatted_value: str = None) -> str:
         formatted_value: Pre-formatted display value. If None, will use param_name_formatted
 
     Returns:
-        HTML link string like '<a href="../appendix/peace-dividend-calculations.qmd">$27.2B</a>'
+        HTML link string like '<a href="../appendix/peace-dividend-calculations.html">$27.2B</a>'
 
     Usage in QMD files:
         `{python} param_link('treaty_annual_funding')`
@@ -8233,7 +8255,9 @@ def param_link(param_name: str, formatted_value: str = None) -> str:
 
     # Return HTML link or unlinked based on whether we have a source
     if source_link:
-        return f'<a href="{source_link}">{formatted_value}</a>'
+        # Convert .qmd to .html for rendered output
+        html_link = _convert_qmd_to_html(source_link)
+        return f'<a href="{html_link}">{formatted_value}</a>'
     else:
         return formatted_value
 

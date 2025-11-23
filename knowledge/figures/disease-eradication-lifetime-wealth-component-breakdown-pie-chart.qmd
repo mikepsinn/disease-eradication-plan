@@ -76,7 +76,7 @@ for i, wedge in enumerate(wedges):
 # Add title
 
 ax.set_title('Where Does the $4.3M Come From?\nDisease Eradication Model Component Breakdown\n(Age 30, $50K Income, 1% Treaty, 20yr scenario)',
-             fontsize=32, weight='bold', pad=20)
+             fontsize=32, weight='bold', pad=50)
 
 # Add watermark
 
@@ -100,6 +100,7 @@ add_png_metadata(
     description="Pie chart showing component breakdown with 72-year life extension"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

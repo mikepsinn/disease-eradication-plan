@@ -5,7 +5,9 @@ Validate Quarto Render Output
 This script checks rendered HTML files for common issues:
 1. Unrendered inline Python expressions (literal `{python}` in output)
 2. Blacklisted patterns (findfont warnings, echo: false leaks, Python errors, frontmatter leaks)
-3. Other rendering failures
+3. Links to .qmd files (should be .html in rendered output)
+4. Broken internal links (relative paths that don't exist)
+5. Other rendering failures
 
 Usage:
     python scripts/post-render-validation.py [--output-dir _book/warondisease]
@@ -20,6 +22,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import urlparse, unquote
 
 # Set UTF-8 encoding for stdout
 if sys.platform == "win32":
@@ -187,7 +190,128 @@ def check_blacklisted_strings(content, file_path):
     return errors
 
 
-def validate_file(file_path):
+def check_qmd_file_links(content, file_path):
+    """Check for links pointing to .qmd files (should be .html in rendered output)"""
+    errors = []
+    lines = content.split("\n")
+
+    # Pattern to match href attributes that end with .qmd
+    # Matches: href="something.qmd" or href='something.qmd' or href=something.qmd
+    pattern = r'href\s*=\s*["\']?([^"\'>\s]+\.qmd(?:\?[^"\'>\s]*)?(?:#[^"\'>\s]*)?)["\']?'
+
+    for i, line in enumerate(lines, 1):
+        # Skip HTML comments and script tags
+        if "<!--" in line:
+            continue
+        if "<script" in line.lower():
+            continue
+
+        matches = re.finditer(pattern, line, re.IGNORECASE)
+        for match in matches:
+            href_value = match.group(1)
+            # Get surrounding context
+            start = max(0, match.start() - 50)
+            end = min(len(line), match.end() + 50)
+            context = f"Link to .qmd file: `{href_value}` (context: ...{line[start:end]}...)"
+            errors.append(ValidationError(file_path, i, "QMD_FILE_LINK", context))
+
+    return errors
+
+
+def check_broken_internal_links(content, file_path, output_dir):
+    """Check for broken internal links (relative paths that don't exist)"""
+    errors = []
+    lines = content.split("\n")
+
+    # Pattern to match href attributes
+    # Matches: href="path" or href='path' or href=path
+    href_pattern = r'href\s*=\s*["\']([^"\']+)["\']'
+
+    # Get the directory containing the current HTML file
+    file_dir = file_path.parent
+
+    for i, line in enumerate(lines, 1):
+        # Skip HTML comments and script tags
+        if "<!--" in line:
+            continue
+        if "<script" in line.lower():
+            continue
+
+        matches = re.finditer(href_pattern, line)
+        for match in matches:
+            href_value = match.group(1)
+            
+            # Skip external links (http, https, mailto, etc.)
+            parsed = urlparse(href_value)
+            if parsed.scheme in ('http', 'https', 'mailto', 'ftp', 'tel'):
+                continue
+            
+            # Skip anchor-only links (fragments)
+            if href_value.startswith('#'):
+                continue
+            
+            # Skip data URIs and javascript: links
+            if href_value.startswith('data:') or href_value.startswith('javascript:'):
+                continue
+            
+            # This is an internal link - check if it exists
+            # Decode URL encoding
+            decoded_href = unquote(href_value)
+            
+            # Remove fragment if present
+            if '#' in decoded_href:
+                decoded_href = decoded_href.split('#')[0]
+            
+            # Resolve relative to current file's directory
+            if decoded_href.startswith('/'):
+                # Absolute path from output_dir root
+                target_path = output_dir / decoded_href.lstrip('/')
+            else:
+                # Relative path from current file
+                target_path = (file_dir / decoded_href).resolve()
+            
+            # Normalize the path (handle .. and .)
+            try:
+                target_path = target_path.resolve()
+            except (OSError, ValueError):
+                # Invalid path
+                context = f"Invalid link path: `{href_value}` (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
+                errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
+                continue
+            
+            # Check if file exists
+            # First check if it's a direct file path
+            if target_path.exists():
+                # Path exists, check if it's a directory
+                if target_path.is_dir():
+                    # Directory link - check for index.html
+                    index_path = target_path / "index.html"
+                    if not index_path.exists():
+                        context = f"Broken link to directory (no index.html): `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
+                        errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
+                # If it's a file, it exists - no error
+            else:
+                # File doesn't exist - check if it's within the output directory
+                try:
+                    target_path.relative_to(output_dir)
+                except ValueError:
+                    # Link points outside output directory - might be intentional, skip
+                    continue
+                
+                # Check if it's a file without extension and .html version exists
+                html_path = target_path.with_suffix('.html')
+                if html_path.exists():
+                    # The .html version exists, so the link should work
+                    continue
+                
+                # File doesn't exist and no .html version found
+                context = f"Broken internal link: `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
+                errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
+
+    return errors
+
+
+def validate_file(file_path, output_dir):
     """Run all validation checks on a single HTML file"""
     try:
         with open(file_path, encoding="utf-8") as f:
@@ -199,6 +323,8 @@ def validate_file(file_path):
     errors.extend(check_unrendered_inline_python(content, file_path))
     errors.extend(check_dollar_python_pattern(content, file_path))
     errors.extend(check_blacklisted_strings(content, file_path))
+    errors.extend(check_qmd_file_links(content, file_path))
+    errors.extend(check_broken_internal_links(content, file_path, output_dir))
 
     return errors
 
@@ -223,7 +349,7 @@ def main():
     errors_by_type = defaultdict(list)
 
     for file_path in html_files:
-        errors = validate_file(file_path)
+        errors = validate_file(file_path, output_dir)
         if errors:
             all_errors.extend(errors)
             for error in errors:
@@ -239,10 +365,8 @@ def main():
     # Group errors by type for better readability
     for error_type, errors in sorted(errors_by_type.items()):
         print(f"  {error_type}: {len(errors)} error(s)")
-        for error in errors[:10]:  # Show first 10 of each type
+        for error in errors:  # Show all errors
             print(f"    {error}")
-        if len(errors) > 10:
-            print(f"    ... and {len(errors) - 10} more")
         print()
 
     # Provide suggestions
@@ -271,6 +395,15 @@ def main():
     if "FINDFONT_WARNING" in errors_by_type:
         print("   - Matplotlib findfont warnings: Ensure the required fonts are installed")
         print("     or configure Matplotlib to use bundled fonts to avoid runtime warnings")
+    if "QMD_FILE_LINK" in errors_by_type:
+        print("   - Links to .qmd files: All internal links should point to .html files, not .qmd")
+        print("     Replace .qmd extensions with .html in your source files")
+        print("     Or use relative paths without extensions (Quarto will resolve them)")
+    if "BROKEN_LINK" in errors_by_type:
+        print("   - Broken internal links: Some links point to files that don't exist")
+        print("     Check that all referenced files were rendered")
+        print("     Verify that relative paths are correct")
+        print("     Ensure that directory links have an index.html file")
 
     return 1
 

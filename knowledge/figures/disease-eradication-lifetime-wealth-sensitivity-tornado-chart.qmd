@@ -112,9 +112,10 @@ for i, (low, high, param, range_desc) in enumerate(zip(low_values, high_values, 
     ax.text(high + 200000, i, f'${high/1000000:.1f}M',
             ha='left', va='center', fontsize=32, weight='bold', color=COLOR_BLACK)
 
-    # Range description (small text)
+    # Range description (in white box)
     ax.text((low + high) / 2, i - 0.35, range_desc,
-            ha='center', va='top', fontsize=14, color=COLOR_BLACK, style='italic')
+            ha='center', va='top', fontsize=20, weight='bold', color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Vertical line at base case with label
 
@@ -128,8 +129,8 @@ ax.text(base_value, len(parameter_names) - 0.5, f'  Base Case\n  ${base_value/10
 ax.set_yticks(y_positions)
 ax.set_yticklabels(parameter_names, fontsize=24, weight='bold')
 ax.set_xlabel(f'Your Lifetime Wealth (Base Case: ${base_value/1000000:.1f}M)', fontsize=22, weight='bold')
-ax.set_title('What Matters Most for Your Lifetime Wealth?\nHow Different Factors Change Your $4.3M Gain from the 1% Treaty',
-             fontsize=32, weight='bold', pad=20)
+ax.set_title('What Matters Most for Your Lifetime Wealth?\nHow Different Factors Change Your $4.3M Gain\nfrom the 1% Treaty',
+             fontsize=32, weight='bold', pad=50)
 
 # Format x-axis to show dollars in millions
 
@@ -161,6 +162,7 @@ add_png_metadata(
     description="Shows which parameters have largest impact on personal lifetime wealth from 1% Treaty under Disease Eradication Model (72yr life extension)"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

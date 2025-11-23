@@ -114,24 +114,25 @@ for i, (low, high, param, range_desc) in enumerate(zip(low_values, high_values, 
     ax.text(high + 15000, i, f'${high/1000:.0f}K',
             ha='left', va='center', fontsize=32, weight='bold', color=COLOR_BLACK)
 
-    # Range description (small text)
+    # Range description (in white box)
     ax.text((low + high) / 2, i - 0.35, range_desc,
-            ha='center', va='top', fontsize=14, color=COLOR_BLACK, style='italic')
+            ha='center', va='top', fontsize=20, weight='bold', color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Vertical line at base case with label
 
 ax.axvline(x=base_value, color=COLOR_BLACK, linewidth=2, linestyle='-', zorder=0)
 ax.text(base_value, len(parameter_names) - 0.5, f'  Base Case\n  ${base_value/1000:.0f}K',
-        ha='left', va='bottom', fontsize=16, weight='bold',
-        bbox=dict(boxstyle='round,pad=0.4', facecolor='yellow', edgecolor=COLOR_BLACK, linewidth=1.5))
+        ha='left', va='bottom', fontsize=16, weight='bold', color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Labels and title
 
 ax.set_yticks(y_positions)
 ax.set_yticklabels(parameter_names, fontsize=24, weight='bold')
 ax.set_xlabel(f'Total Lifetime Wealth (Base Case: ${base_value/1000:.0f}K)', fontsize=22, weight='bold')
-ax.set_title('Conservative Baseline - Personal Lifetime Wealth Sensitivity Analysis\n1% Treaty Impact on 30-Year-Old ($50K Income, 5yr Life Extension)',
-             fontsize=32, weight='bold', pad=20)
+ax.set_title('Conservative Baseline - Personal Lifetime Wealth\nSensitivity Analysis\n1% Treaty Impact on 30-Year-Old\n($50K Income, 5yr Life Extension)',
+             fontsize=32, weight='bold', pad=50)
 
 # Format x-axis to show dollars
 
@@ -159,6 +160,7 @@ add_png_metadata(
     description="Shows which parameters have largest impact on personal lifetime wealth from 1% Treaty"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

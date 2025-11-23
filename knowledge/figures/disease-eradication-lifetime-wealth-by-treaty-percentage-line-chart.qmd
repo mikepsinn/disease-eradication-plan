@@ -127,7 +127,7 @@ ax.set_xticklabels(treaty_labels)
 
 # Add legend
 
-ax.legend(loc='upper left', fontsize=14, frameon=True, edgecolor=COLOR_BLACK,
+ax.legend(bbox_to_anchor=(0.5, 0.5), loc='center', fontsize=14, frameon=True, edgecolor=COLOR_BLACK,
           facecolor=COLOR_WHITE, framealpha=1.0)
 
 # Clean up spines

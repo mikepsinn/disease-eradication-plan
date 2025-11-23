@@ -126,19 +126,19 @@ ax.fill_between(years, cumulative_gdp/1000000, cumulative_extended/1000000,
 
 # Add milestone markers
 
-ax.axvline(x=80, color='red', linewidth=2, linestyle='--', alpha=0.7, zorder=10)
+ax.axvline(x=80, color=COLOR_BLACK, linewidth=2, linestyle='--', alpha=0.7, zorder=10)
 ax.text(80, ax.get_ylim()[1] * 0.95, 'You Would Die Here\n(Without Treaty)',
-        ha='center', va='top', fontsize=16, weight='bold', color='red',
+        ha='center', va='top', fontsize=16, weight='bold', color=COLOR_BLACK,
         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
-                 edgecolor='red', linewidth=2))
+                 edgecolor=COLOR_BLACK, linewidth=2))
 
-ax.axvline(x=100, color='gray', linewidth=1.5, linestyle=':', alpha=0.5)
+ax.axvline(x=100, color=COLOR_BLACK, linewidth=1.5, linestyle=':', alpha=0.5)
 ax.text(100, ax.get_ylim()[1] * 0.85, 'Age 100',
-        ha='center', va='top', fontsize=14, style='italic')
+        ha='center', va='top', fontsize=14, style='italic', color=COLOR_BLACK)
 
-ax.axvline(x=120, color='gray', linewidth=1.5, linestyle=':', alpha=0.5)
+ax.axvline(x=120, color=COLOR_BLACK, linewidth=1.5, linestyle=':', alpha=0.5)
 ax.text(120, ax.get_ylim()[1] * 0.75, 'Age 120',
-        ha='center', va='top', fontsize=14, style='italic')
+        ha='center', va='top', fontsize=14, style='italic', color=COLOR_BLACK)
 
 # Add final value annotation
 
@@ -146,8 +146,8 @@ final_value = cumulative_extended[-1]
 ax.annotate(f'Total: ${final_value/1000000:.1f}M',
             xy=(years[-1], final_value/1000000),
             xytext=(years[-1] - 15, final_value/1000000 + 0.5),
-            fontsize=22, weight='bold',
-            bbox=dict(boxstyle='round,pad=0.5', facecolor='yellow',
+            fontsize=22, weight='bold', color=COLOR_BLACK,
+            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
                      edgecolor=COLOR_BLACK, linewidth=2),
             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=2))
 
@@ -156,7 +156,7 @@ ax.annotate(f'Total: ${final_value/1000000:.1f}M',
 ax.set_xlabel('Age (Years)', fontsize=24, weight='bold')
 ax.set_ylabel('Total Wealth Gained (Millions)', fontsize=24, weight='bold')
 ax.set_title('How Your Wealth Grows from Age 30 to 152\n(Living 72 Years Longer with the 1% Treaty)',
-             fontsize=32, weight='bold', pad=20)
+             fontsize=32, weight='bold', pad=50)
 
 # Format y-axis
 
@@ -169,7 +169,7 @@ ax.set_xlim(30, total_lifespan)
 # Add legend
 
 ax.legend(loc='upper left', fontsize=14, frameon=True, edgecolor=COLOR_BLACK,
-          facecolor=COLOR_WHITE, framealpha=0.95, ncol=2)
+          facecolor=COLOR_WHITE, framealpha=0.95, ncol=1)
 
 # Clean up spines
 
@@ -197,6 +197,7 @@ add_png_metadata(
     description="Shows how personal wealth accumulates over 122-year lifetime under Disease Eradication Model (72yr life extension)"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

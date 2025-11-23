@@ -423,6 +423,28 @@ def format_parameter_value(value: float, unit: str = "") -> str:
     return formatted_num
 
 
+def convert_qmd_to_html(path: str) -> str:
+    """
+    Remove .qmd extension from paths for format-agnostic links.
+    Quarto will resolve extensionless paths appropriately for each output format:
+    - HTML: resolves to .html files
+    - PDF: resolves to internal PDF references
+    - EPUB: resolves to internal EPUB references
+    
+    Args:
+        path: Path that may contain .qmd extension
+        
+    Returns:
+        Path with .qmd extension removed (format-agnostic)
+    """
+    if path.endswith('.qmd'):
+        return path[:-4]  # Remove .qmd extension
+    elif '.qmd#' in path:
+        # Handle paths with fragments like "file.qmd#section"
+        return path.replace('.qmd#', '#')  # Remove .qmd, keep #
+    return path
+
+
 def generate_html_with_tooltip(param_name: str, value: float, comment: str = "", include_citation: bool = False) -> str:
     """
     Generate HTML link with tooltip for a parameter.
@@ -475,7 +497,8 @@ def generate_html_with_tooltip(param_name: str, value: float, comment: str = "",
             # Link to calculation/methodology page (ensure absolute path)
             if not source_ref_value.startswith("/"):
                 source_ref_value = f"/{source_ref_value}"
-            href = source_ref_value
+            # Convert .qmd to .html for rendered output
+            href = convert_qmd_to_html(source_ref_value)
             link_text = "View calculation"
 
         # Build tooltip from Parameter metadata with credibility indicators
@@ -842,8 +865,10 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                         # Remove 'knowledge/' prefix and add '../' to go up from appendix/
                         source_ref = "../" + source_ref[len("knowledge/") :]
 
-                    link_target = source_ref
-                    link_text = source_ref
+                    # Convert .qmd to .html for rendered output
+                    link_target = convert_qmd_to_html(source_ref)
+                    # Use the converted path for link text too (shows .html instead of .qmd)
+                    link_text = link_target
 
                 content.append(f"**Methodology**: [{link_text}]({link_target})")
                 content.append("")

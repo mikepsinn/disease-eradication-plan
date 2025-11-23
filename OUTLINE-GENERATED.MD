@@ -687,7 +687,7 @@
     ### Suffering Reduction
     ### Lives Saved
     ### Annual Savings
-  ## Why 1% Is Enough
+  ## Why {{< var treaty_reduction_pct >}} Is Enough
     ### 1. The Peace Dividend
     ### 2. The Research Efficiency Dividend
     ### 3. 15–40 "NIH equivalents" of new research capacity

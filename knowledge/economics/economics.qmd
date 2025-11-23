@@ -37,9 +37,9 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Every day of delay costs **{{< var global_disease_deaths_daily >}} lives**, **{{< var dfda_qalys_rd_plus_delay_daily >}} QALYs**, and **{{< var opportunity_cost_per_day >}}** in foregone economic value ({{< var opportunity_cost_per_second >}}/second). Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis including peace dividend and seven additional benefit categories demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI ({{< var treaty_total_complete_benefits_annual >}} annually). The intervention generates {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs annually with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY), economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
+**Results**: Every day of delay costs **{{< var global_disease_deaths_daily >}} lives**, **{{< var dfda_qalys_rd_plus_delay_daily >}} QALYs**, and **{{< var opportunity_cost_per_day >}}** in foregone economic value ({{< var opportunity_cost_per_second >}}/second). Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI ({{< var dfda_npv_net_benefit_rd_only >}} benefit / {{< var dfda_npv_total_cost >}} cost) over {{< var npv_time_horizon_years >}} years from R&D cost reductions alone. Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus a one-time 8.2-year timeline shift in disease eradication. The intervention generates {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs annually (average during the one-time timeline shift period) with negative ICER ({{< var dfda_icer_per_qaly >}}/QALY), economist code for "saves money while saving lives." Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
-**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annual surplus while curing diseases.
+**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time 8.2-year acceleration in disease eradication.
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved, {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI, regulatory efficacy lag elimination, greed-aligned incentives
 
@@ -352,7 +352,7 @@ This is the tipping point. Once you cross it, politicians follow or lose electio
 ### Step 3: Sell the Bonds
 
 Victory Bond investors fund the campaign because the math is absurd.
-They're buying $270+ in returns for every $100 invested.
+They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
 It's the Louisiana Purchase of medical research.
 
 ### Step 4: Run the Lobbying Campaign
@@ -613,7 +613,7 @@ For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-divid
 
 1. **Direct fiscal savings (high confidence)**: {{< var peace_dividend_direct_fiscal_savings >}} - The {{< var treaty_reduction_pct >}} reduction in military budgets ({{< var treaty_annual_funding >}}) represents direct fiscal savings with high certainty. These funds are immediately available for reallocation regardless of conflict reduction effects.
 
-2. **Conflict reduction benefits (lower confidence)**: {{< var peace_dividend_conflict_reduction >}} - The remaining {{< var peace_dividend_conflict_reduction >}} assumes that {{< var treaty_reduction_pct >}} less military spending correlates with {{< var treaty_reduction_pct >}} reduction in conflict costs (direct: $7.7T, indirect: $3.7T). This proportional relationship is a simplifying assumption without established causal evidence.
+2. **Conflict reduction benefits (lower confidence)**: {{< var peace_dividend_conflict_reduction >}} - The remaining {{< var peace_dividend_conflict_reduction >}} assumes that {{< var treaty_reduction_pct >}} less military spending correlates with {{< var treaty_reduction_pct >}} reduction in conflict costs (direct: {{< var global_annual_war_direct_costs_total >}}, indirect: {{< var global_annual_war_indirect_costs_total >}}). This proportional relationship is a simplifying assumption without established causal evidence.
 
 **Conservative interpretation**: The direct fiscal savings ({{< var treaty_annual_funding >}} annually) are certain; conflict reduction benefits ($0 to {{< var peace_dividend_conflict_reduction >}}) are uncertain and represent an optimistic scenario. The analysis uses the full {{< var peace_dividend_annual_societal_benefit >}} in optimistic/complete cases but acknowledges this may overstate benefits if the causal link between military spending and conflict is weaker than linear.
 
@@ -679,7 +679,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 - Adoption timeline: {{< var dfda_npv_adoption_ramp_years >}} years to full adoption
 - Includes only R&D efficiency savings (excludes peace dividend and six additional benefit categories)
 
-### Worst-Case Scenario (66:1 ROI)
+### Worst-Case Scenario ({{< var treaty_conservative_scenario_roi >}}:1 ROI)
 
 - Benefits half as good as baseline
 - Costs twice as high as baseline
@@ -706,10 +706,10 @@ Sensitivity analysis demonstrates robust returns across all scenarios, with ROI 
 
 #### Results
 
-- **If implementation succeeds** (conditional ROI): 95% of simulations fall between 44:1 and 66:1 ROI, with median 54:1. This means even with all the uncertainty, if the treaty passes, returns are almost certainly between 44:1 and 66:1.
-- **Accounting for political risk** (expected ROI): 95% of simulations fall between 2.7:1 and 27:1 ROI, with median 14:1. This incorporates the probability that the treaty might not pass, even with that risk, expected returns are still 2.7:1 to 27:1.
+- **If implementation succeeds** (conditional ROI): 95% of simulations fall between {{< var treaty_complete_roi_conditional_5th_percentile >}}:1 and {{< var treaty_complete_roi_conditional_95th_percentile >}}:1 ROI, with median {{< var treaty_complete_roi_conditional_median >}}:1. This means even with all the uncertainty, if the treaty passes, returns are almost certainly between {{< var treaty_complete_roi_conditional_5th_percentile >}}:1 and {{< var treaty_complete_roi_conditional_95th_percentile >}}:1.
+- **Accounting for political risk** (expected ROI): 95% of simulations fall between {{< var treaty_complete_roi_expected_5th_percentile >}}:1 and {{< var treaty_complete_roi_expected_95th_percentile >}}:1 ROI, with median {{< var treaty_complete_roi_expected_median >}}:1. This incorporates the probability that the treaty might not pass, even with that risk, expected returns are still {{< var treaty_complete_roi_expected_5th_percentile >}}:1 to {{< var treaty_complete_roi_expected_95th_percentile >}}:1.
 
-**Economic interpretation:** ROI > 1:1 means benefits exceed costs. All 10,000 simulations produced ROI > 1:1, meaning there is zero probability (within the modeled uncertainty) that this intervention loses money. Even the worst-case scenario (5th percentile expected ROI of 2.7:1) generates 2.7× more value than cost. This qualifies as a **dominant intervention** in health economics: it should be implemented regardless of budget constraints, as it generates net economic surplus while improving health outcomes.
+**Economic interpretation:** ROI > 1:1 means benefits exceed costs. All 10,000 simulations produced ROI > 1:1, meaning there is zero probability (within the modeled uncertainty) that this intervention loses money. Even the worst-case scenario (5th percentile expected ROI of {{< var treaty_complete_roi_expected_5th_percentile >}}:1) generates {{< var treaty_complete_roi_expected_5th_percentile >}}× more value than cost. This qualifies as a **dominant intervention** in health economics: it should be implemented regardless of budget constraints, as it generates net economic surplus while improving health outcomes.
 
 This probabilistic analysis complements the scenario-based sensitivity analysis above, providing confidence intervals rather than point estimates.
 
@@ -1077,29 +1077,28 @@ The conservative {{< var dfda_roi_rd_only >}}:1 case counted only R&D efficiency
 
 Now let's include all eight quantifiable benefit categories.
 
-### Annual Benefits Breakdown
+### Annual Recurring Benefits Breakdown
 
-{{< var treaty_total_complete_benefits_annual >}} in total annual benefits
+{{< var treaty_total_complete_benefits_annual >}} in **recurring annual benefits** (perpetual)
 
-Core benefit streams (PRIMARY methodology):
+Core recurring benefit streams:
 
 1. **Peace dividend** ({{< var peace_dividend_annual_societal_benefit >}}) - Building {{< var treaty_reduction_pct >}} fewer things that explode
 2. **R&D cost savings** ({{< var dfda_rd_gross_savings_annual >}}) - Trials cost {{< var trial_cost_reduction_factor >}} {{< var trial_cost_reduction_factor_cite >}}× less
-3. **Regulatory delay elimination** ({{< var dfda_benefit_disease_eradication_delay_annual >}}) - Eliminating the 8-year post-safety efficacy lag
 
-**Note:** The regulatory delay elimination benefit comprehensively includes the value of faster access, rare diseases, prevention, and other health benefits from eliminating the efficacy lag. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for methodology.
-
-#### Total annual benefits
+#### Total recurring annual benefits
 
 {{< var treaty_total_complete_benefits_annual_latex >}}
 
-That's **$1.2 trillion per year**.
+That's **{{< var treaty_total_complete_benefits_annual >}} per year** (recurring perpetually).
+
+**Important Note:** Regulatory delay elimination provides a **one-time 8.2-year timeline shift** forward in curing diseases, not an annual recurring benefit. This one-time benefit is massive ({{< var dfda_benefit_disease_eradication_delay_annual >}} average during the shift period) but occurs once when the delay is eliminated, not every year. The recurring annual benefits above ($155.1B/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) for the one-time timeline shift methodology.
 
 #### Complete Case ROI
 
 {{< var treaty_complete_roi_all_benefits_latex >}}
 
-**Translation:** Every $1 invested returns ${{< var treaty_complete_roi_all_benefits >}} in benefits annually.
+**Translation:** Every $1 invested returns ${{< var treaty_complete_roi_all_benefits >}} in **recurring annual benefits** (peace dividend + R&D savings), plus a one-time 8.2-year timeline shift in disease eradication (not included in annual figure).
 
 These estimates derive from:
 
@@ -1107,12 +1106,10 @@ These estimates derive from:
 - Disease prevalence data (WHO Global Health Observatory)
 - Standard QALY valuations (health economics consensus thresholds)
 
-**Critical distinction** - the two largest benefits are different things:
+**Critical distinction** - the two benefit categories are different things:
 
-- **Faster Access** = Same treatments, {{< var efficacy_lag_years >}} years earlier (access existing drugs during trials)
-- **Research Acceleration** = {{< var research_acceleration_multiplier >}}× more trials, 10-20× more discoveries (find new cures faster)
-
-Both happen simultaneously.
+- **One-Time Timeline Shift** = Eliminating the {{< var efficacy_lag_years >}}-year efficacy lag shifts disease eradication forward by 8.2 years (one-time benefit, not annual recurring). This is the PRIMARY benefit from regulatory delay elimination per [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd), providing massive value (average {{< var dfda_benefit_disease_eradication_delay_annual >}} during the shift period) but occurs once.
+- **Recurring Annual Benefits** = Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}/year) + R&D savings ({{< var dfda_rd_gross_savings_annual >}}/year) = {{< var treaty_total_complete_benefits_annual >}}/year perpetually. These are smaller than the one-time shift but continue every year forever, making the system self-funding.
 
 ### Research Acceleration Mechanism
 

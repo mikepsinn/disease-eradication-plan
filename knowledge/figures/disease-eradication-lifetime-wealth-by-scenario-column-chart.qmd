@@ -77,7 +77,7 @@ ax.set_xticks(x_positions)
 ax.set_xticklabels(scenario_names, fontsize=32, weight='normal')
 ax.set_ylabel('Total Wealth Gained (Beyond Normal Income)', fontsize=22, weight='bold')
 ax.set_title('How Much Different People Gain from the 1% Treaty\n(Young vs Old, Low vs High Income)',
-             fontsize=32, weight='bold', pad=20)
+             fontsize=32, weight='bold', pad=50)
 
 # Format y-axis to show millions
 
@@ -105,6 +105,7 @@ add_png_metadata(
     description="Comparison using Disease Eradication Model with 20-year scenario (72yr life extension)"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 
