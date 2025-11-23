@@ -799,7 +799,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
-- **Pre-1962 system**: [$74 million per drug](../references.qmd#pre-1962-drug-costs-timeline) (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
+- **Pre-1962 system**: {{< var pre_1962_drug_development_cost >}} {{< var pre_1962_drug_development_cost_cite >}} per drug (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
 - **Post-1962 system**: $2.6 billion per drug average, a **35× cost increase**; drug companies conduct both safety and efficacy trials internally
 - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
 
@@ -1145,7 +1145,7 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 | **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **{{< var trial_completion_speed_multiplier >}}×** |
 | **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **{{< var simultaneous_trials_multiplier >}}×** |
 | **[Completion Rate](../appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **{{< var completion_rate_improvement_multiplier >}}×** |
-| **Funding Increase** | [$67.5B medical research](../appendix/global-government-medical-research-spending.qmd) | [$94.7B](../appendix/research-acceleration-model.qmd) ($67.5B + {{< var treaty_annual_funding >}}) | **[1.4×](../appendix/research-acceleration-model.qmd)** |
+| **Funding Increase** | {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline | {{< var total_research_funding_with_treaty >}} (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
 
 **Theoretical Maximum**:
 
@@ -1159,7 +1159,7 @@ This represents **{{< var completed_trials_multiplier_theoretical_max >}}** more
 
 This represents:
 
-- From {{< var current_completed_trials_per_year >}} completed trials/year → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) ({{< var research_acceleration_multiplier >}}x)
+- From {{< var current_completed_trials_per_year >}} completed trials/year → {{< var dfda_completed_trials_per_year >}} completed trials/year ({{< var research_acceleration_multiplier >}}×)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)
 - From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
@@ -1705,7 +1705,7 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to medi
 ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 
 - **Complete case**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI including all eight benefit streams ({{< var treaty_total_complete_benefits_annual >}} annually)
-- **Lives saved**: {{< var treaty_total_lives_saved_annual >}}/year while generating [$6.56M profit per life](../appendix/1-percent-treaty-cost-effectiveness.qmd)
+- **Lives saved**: {{< var treaty_total_lives_saved_annual >}}/year while generating {{< var system_profit_per_life_saved >}} profit per life
 - **Political feasibility**: Everyone profits (nobody needs to be convinced, just paid)
 
 **Comparison**: Exceeds smallpox eradication and childhood vaccinations - history's previous best public health achievements - while requiring zero charitable donations. ([Detailed comparisons](../appendix/intervention-comparison-table.qmd))

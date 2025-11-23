@@ -1820,13 +1820,6 @@ DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL = Parameter(
     keywords=["$2572t", "optimistic", "total", "one-time", "upper bound", "acceleration", "innovation", "dynamic efficiency"]
 )  # $2,572T total (optimistic upper bound with innovation acceleration)
 
-# Legacy aliases for backwards compatibility
-REGULATORY_DELAY_YLL = DISEASE_ERADICATION_DELAY_YLL
-REGULATORY_DELAY_YLD = DISEASE_ERADICATION_DELAY_YLD
-REGULATORY_DELAY_DALYS = DISEASE_ERADICATION_DELAY_DALYS
-REGULATORY_DELAY_ECONOMIC_LOSS = DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS
-REGULATORY_DELAY_ANNUAL_LOSS = DISEASE_ERADICATION_DELAY_ANNUAL_LOSS
-
 # Type I vs Type II Error Ratio - Thalidomide Baseline
 
 # Thalidomide disaster parameters (1957-1962)
@@ -2004,9 +1997,6 @@ REGULATORY_DELAY_ANNUAL_DALYS = Parameter(
     keywords=["4.8b", "approval lag", "drug lag", "fda delay", "disease burden", "disability burden", "global burden of disease"]
 )  # 56.87M DALYs/year total (D_lag + D_void)
 
-# Legacy alias for backwards compatibility
-REGULATORY_DELAY_ANNUAL_DALYS = DISEASE_ERADICATION_DELAY_ANNUAL_DALYS
-
 DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION = Parameter(
     0.95,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance",
@@ -2084,10 +2074,6 @@ DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = Parameter(
     latex=r"Value_{annual\_avg} = 408M \times \$150k = \$61.2T",
     keywords=["annual average", "economic value", "monetized", "efficacy lag"]
 )  # $61.2T/year average during lag period (backward compatibility alias)
-
-# Aliases for backward compatibility with deleted ANNUAL parameters
-DFDA_AVOIDED_REGULATORY_DELAY_DALYS_ANNUAL = DFDA_QALYS_RD_PLUS_DELAY_ANNUAL  # Backward compatibility alias
-DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL = DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL  # Backward compatibility alias
 
 # Explicit lives saved calculations
 DFDA_LIVES_SAVED_ANNUAL = Parameter(
