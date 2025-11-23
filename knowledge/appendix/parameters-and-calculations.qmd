@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 423
+**Total parameters**: 422
 
 - External sources (peer-reviewed): 125
-- Calculated values: 251
+- Calculated values: 250
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -3930,19 +3930,6 @@ Cost_{second} = \frac{\$429B}{86{,}400} \approx \$5M/second
 $$
 
 **Methodology**: [../economics/economics#the-opportunity-cost-clock](../economics/economics#the-opportunity-cost-clock)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Military Spending Share for Partial Success Scenario {#sec-partial_success_military_spending_share}
-
-**Value**: 50%
-
-Military spending share for partial success scenario (US, EU, UK)
-
-**Methodology**: [../strategy/treaty-adoption-strategy#partial-success](../strategy/treaty-adoption-strategy#partial-success)
 
 *✓ High confidence*
 
