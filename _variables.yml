@@ -204,12 +204,6 @@
   \ hours of unpaid family caregiving in US | ✓ High confidence | Unit: hours/month\
   \ | Click to view source\">20</a>"
 "caregiver_hours_per_month_cite": "@unpaid-caregiver-hours-economic-value"
-"caregiver_hours_per_week_avg": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
-  \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
-  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average weekly\
-  \ hours of unpaid caregiving (25-26 hours/week) | ✓ High confidence | Unit: hours/week\
-  \ | Click to view source\">25.5</a>"
-"caregiver_hours_per_week_avg_cite": "@unpaid-caregiver-hours-economic-value"
 "caregiver_value_per_hour_simple": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated replacement\
@@ -726,11 +720,6 @@
   \ USD/year | Core definition\">$24.5B</span>"
 "dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.18B\
   \ - \\$2.718B = \\$24.462B\n$$"
-"dih_treasury_to_medical_research_annual_pct": "<span class=\"parameter-definition\"\
-  \ title=\"Percentage of treaty funding going to medical research (remainder after\
-  \ bonds) | Unit: rate | Core definition\">90%</span>"
-"dih_treasury_to_medical_research_annual_pct_latex": "$$\nResearchPct = 1 - 0.10 =\
-  \ 0.90 = 90\\%\n$$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
@@ -807,14 +796,6 @@
   \ | Click to view calculation\">7.63B</a>"
 "disease_eradication_delay_yll_latex": "$$\nYLL = 449M \\times (79 - 62) = 7.63B\n\
   $$"
-"disease_eradication_plus_acceleration_annual_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#acceleration-effects\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#acceleration-effects\"\
-  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Annual DALYs lost\
-  \ from disease eradication delay plus acceleration effects (optimistic upper bound)\
-  \ | ? Low confidence | Formula: PRIMARY_DALYS × 2 | Unit: DALYs/year | Click to\
-  \ view calculation\">2.09B</a>"
-"disease_eradication_plus_acceleration_annual_dalys_latex": "$$\nDALY_{upper} = 1.05B\
-  \ \\times 2 = 2.09B\n$$"
 "disease_eradication_plus_acceleration_deaths_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#acceleration-effects\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#acceleration-effects\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Annual deaths\
@@ -1241,11 +1222,6 @@
   external\" data-confidence=\"high\" title=\"Global cost to achieve universal education\
   \ | ✓ High confidence | Unit: USD | Click to view source\">$30B</a>"
 "global_education_for_all_cost_cite": "@unesco-education-for-all-cost"
-"global_forcibly_displaced_people_2023": "<a href=\"https://warondisease.org/knowledge/references.html#unhcr-forcibly-displaced-2023\"\
-  \ class=\"parameter-link\" data-source-ref=\"unhcr-forcibly-displaced-2023\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global forcibly displaced people in\
-  \ 2023 | ✓ High confidence | Unit: people | Click to view source\">108M</a>"
-"global_forcibly_displaced_people_2023_cite": "@unhcr-forcibly-displaced-2023"
 "global_life_expectancy_2024": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -1299,13 +1275,6 @@
   \ cost of war and disease with all externalities (direct + indirect costs for both)\
   \ | ✓ High confidence | Formula: WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN\
   \ | Unit: USD/year | Click to view calculation\">$129T</a>"
-"global_total_war_cost_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war#per-capita\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Per capita total\
-  \ war cost globally | ✓ High confidence | Formula: TOTAL_WAR_COST ÷ POPULATION |\
-  \ Unit: USD/person/year | Click to view calculation\">$1.42K</a>"
-"global_total_war_cost_per_capita_annual_latex": "$$\nPerCapita_{war} = \\$11,355.1B\
-  \ / 8.0B = \\$1,419.39\n$$"
 "historical_progress_deaths_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#historical-progress\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
@@ -1448,20 +1417,6 @@
   \ trial duration (found life-saving treatment in 3 months) | ✓ High confidence |\
   \ Unit: months | Click to view source\">3</a>"
 "oxford_recovery_trial_duration_months_cite": "@recovery-trial-82x-cost-reduction"
-"partial_success_bondholder_payout": "<a href=\"/knowledge/strategy/treaty-adoption-strategy#partial-success\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Bondholder payout\
-  \ in partial success scenario | ✓ High confidence | Formula: REVENUE × BOND_PCT\
-  \ | Unit: USD/year | Click to view calculation\">$1.36B</a>"
-"partial_success_bondholder_payout_latex": "$$\nPayout_{partial} = \\$13.59B \\times\
-  \ 0.10 = \\$1.36B\n$$"
-"partial_success_dih_revenue": "<a href=\"/knowledge/strategy/treaty-adoption-strategy#partial-success\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"DIH revenue in\
-  \ partial success scenario | ✓ High confidence | Formula: MILITARY × SHARE × REDUCTION\
-  \ | Unit: USD/year | Click to view calculation\">$13.6B</a>"
-"partial_success_dih_revenue_latex": "$$\nRevenue_{partial} = \\$2,718B \\times 0.50\
-  \ \\times 0.01 = \\$13.59B\n$$"
 "partial_success_military_spending_share": "<a href=\"/knowledge/strategy/treaty-adoption-strategy#partial-success\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Military spending\
@@ -1720,11 +1675,6 @@
   \ calculation\">25</a>"
 "recruitment_speed_multiplier_latex": "$$\nRecruitment_{mult} = \\frac{0.50}{0.002}\
   \ = 25\n$$"
-"refugee_lost_earning_potential_per_capita_annual": "<a href=\"https://warondisease.org/knowledge/references.html#refugee-lost-earning-potential\"\
-  \ class=\"parameter-link\" data-source-ref=\"refugee-lost-earning-potential\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Average annual lost earning potential\
-  \ per refugee | ✓ High confidence | Unit: USD/year | Click to view source\">$23.4K</a>"
-"refugee_lost_earning_potential_per_capita_annual_cite": "@refugee-lost-earning-potential"
 "regulatory_delay_avoidance_far_future_years": "<a href=\"/knowledge/economics/economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Assumed average\

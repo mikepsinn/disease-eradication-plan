@@ -1735,20 +1735,6 @@ DISEASE_ERADICATION_DELAY_ANNUAL_DALYS = Parameter(
     keywords=["disease eradication", "annual", "primary estimate"]
 )  # 1.05B DALYs/year (PRIMARY)
 
-# Disease Eradication + Acceleration (Optimistic Upper Bound) - DALY/Economic Parameters
-DISEASE_ERADICATION_PLUS_ACCELERATION_ANNUAL_DALYS = Parameter(
-    DISEASE_ERADICATION_DELAY_ANNUAL_DALYS * 2,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#acceleration-effects",
-    source_type="calculated",
-    description="Annual DALYs lost from disease eradication delay plus acceleration effects (optimistic upper bound)",
-    display_name="Annual DALYs Lost from Disease Eradication + Acceleration",
-    unit="DALYs/year",
-    formula="PRIMARY_DALYS × 2",
-    latex=r"DALY_{upper} = 1.05B \times 2 = 2.09B",
-    confidence="low",
-    keywords=["optimistic", "upper bound", "acceleration", "innovation effects"]
-)  # 2.09B DALYs/year (optimistic)
-
 # TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
 # These represent the complete, one-time benefit of eliminating the efficacy lag
 # NOT amortized annual values that could mislead by suggesting recurring benefits
@@ -3047,21 +3033,6 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
     latex=r"Coverage = \$27.18B / \$0.04B = 679x",
     keywords=["pragmatic trials", "real world evidence", "multiple", "decentralized trials", "drug agency", "food and drug administration", "international agreement"]
 )  # ~679x
-
-# DIH Treasury allocations (in billions)
-# Source: brain/book/appendix/icer-full-calculation.qmd
-# Aliases removed - use TREATY_ANNUAL_FUNDING, VICTORY_BOND_ANNUAL_PAYOUT, DFDA_ANNUAL_OPEX directly
-DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT = Parameter(
-    1 - VICTORY_BOND_FUNDING_PCT,
-    source_ref="",
-    source_type="definition",
-    description="Percentage of treaty funding going to medical research (remainder after bonds)",
-    display_name="DIH Percentage of Treaty Funding Going to Medical Research",
-    unit="rate",
-    formula="1 - BOND_PCT",
-    latex=r"ResearchPct = 1 - 0.10 = 0.90 = 90\%",
-    keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"]
-)  # 90%
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT,
     source_ref="",
@@ -3342,17 +3313,6 @@ GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
     latex=r"PerCapita_{military} = \$2,718B / 8.0B = \$339.75",
     keywords=["dod", "pentagon", "average person", "national security", "army", "individual", "navy"]
 )  # $340/person/year
-GLOBAL_TOTAL_WAR_COST_PER_CAPITA_ANNUAL = Parameter(
-    GLOBAL_ANNUAL_WAR_TOTAL_COST / GLOBAL_POPULATION_2024,
-    source_ref="/knowledge/problem/cost-of-war.qmd#per-capita",
-    source_type="calculated",
-    description="Per capita total war cost globally",
-    display_name="Per Capita Total War Cost Globally",
-    unit="USD/person/year",
-    formula="TOTAL_WAR_COST ÷ POPULATION",
-    latex=r"PerCapita_{war} = \$11,355.1B / 8.0B = \$1,419.39",
-    keywords=["average person", "individual", "people", "per person", "worldwide", "yearly", "conflict"]
-)  # $1,419/person/year
 
 # GiveWell charity comparison
 # Source: brain/book/appendix/icer-full-calculation.qmd
@@ -3699,38 +3659,6 @@ GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024 = Parameter(
     keywords=["2024", "dod", "pentagon", "deployment rate", "market penetration", "participation rate", "national security"]
 )  # $2,690.82B
 
-# Partial success scenario (US, EU, UK only)
-PARTIAL_SUCCESS_MILITARY_SPENDING_SHARE = Parameter(
-    0.50,
-    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success",
-    source_type="calculated",
-    description="Military spending share for partial success scenario (US, EU, UK)",
-    display_name="Military Spending Share for Partial Success Scenario",
-    unit="rate",
-    keywords=["50%", "dod", "pentagon", "deployment rate", "market penetration", "participation rate", "national security"]
-)  # ~50% of global spending
-PARTIAL_SUCCESS_DIH_REVENUE = Parameter(
-    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * PARTIAL_SUCCESS_MILITARY_SPENDING_SHARE * TREATY_REDUCTION_PCT,
-    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success",
-    source_type="calculated",
-    description="DIH revenue in partial success scenario",
-    display_name="DIH Revenue in Partial Success Scenario",
-    unit="USD/year",
-    formula="MILITARY × SHARE × REDUCTION",
-    latex=r"Revenue_{partial} = \$2,718B \times 0.50 \times 0.01 = \$13.59B",
-    keywords=["dod", "pentagon", "deployment rate", "market penetration", "participation rate", "distributed research", "global research"]
-)  # ~$13.6B
-PARTIAL_SUCCESS_BONDHOLDER_PAYOUT = Parameter(
-    PARTIAL_SUCCESS_DIH_REVENUE * VICTORY_BOND_FUNDING_PCT,
-    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success",
-    source_type="calculated",
-    description="Bondholder payout in partial success scenario",
-    display_name="Bondholder Payout in Partial Success Scenario",
-    unit="USD/year",
-    formula="REVENUE × BOND_PCT",
-    latex=r"Payout_{partial} = \$13.59B \times 0.10 = \$1.36B",
-    keywords=["social impact bond", "sib", "impact investing", "pay for success", "deployment rate", "market penetration", "participation rate"]
-)  # ~$1.36B
 
 TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
     17,
@@ -4514,17 +4442,6 @@ if __name__ == "__main__":
 
 # Derived time-based costs
 SECONDS_PER_YEAR = 365 * 24 * 60 * 60
-
-# Refugee parameters
-GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 = Parameter(
-    108_400_000,
-    source_ref=ReferenceID.UNHCR_FORCIBLY_DISPLACED_2023,
-    source_type="external",
-    description="Global forcibly displaced people in 2023",
-    display_name="Global Forcibly Displaced People in 2023",
-    unit="people",
-    keywords=["2023", "108.4m", "worldwide", "forcibly", "displaced", "people", "international"]
-)
 GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
     4_200_000,
     source_ref="medical-research-lives-saved-annually",
@@ -4608,17 +4525,6 @@ ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
     unit="ratio",
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple", "capital"]
 )
-
-# Refugee Parameters
-REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL = Parameter(
-    23400,
-    source_ref=ReferenceID.REFUGEE_LOST_EARNING_POTENTIAL,
-    source_type="external",
-    description="Average annual lost earning potential per refugee",
-    display_name="Average Annual Lost Earning Potential per Refugee",
-    unit="USD/year",
-    keywords=["23k", "financial benefit", "monetary gain", "economic wellbeing", "prosperity", "yearly", "profit"]
-)  # USD per year
 
 TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
     800_000_000,
@@ -5965,23 +5871,6 @@ WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     unit="rate",
     keywords=["workforce", "with", "productivity", "loss", "28%"]
 )  # 28% of all employees have productivity loss
-
-# For those WITH chronic conditions causing productivity loss:
-# If 28% of workforce loses $4,798/year, and 78.4% have chronic conditions
-# Then those affected lose: $4,798 / (0.28/0.784) = ~$13,440/year per person with condition
-# As percentage of median salary: $13,440 / $59,384 = 22.6% productivity loss for affected individuals
-
-# Caregiver time and economic value
-# Source: ../references.qmd#unpaid-caregiver-hours-economic-value
-CAREGIVER_HOURS_PER_WEEK_AVG = Parameter(
-    25.5,
-    source_ref="unpaid-caregiver-hours-economic-value",
-    source_type="external",
-    description="Average weekly hours of unpaid caregiving (25-26 hours/week)",
-    display_name="Average Weekly Hours of Unpaid Caregiving",
-    unit="hours/week",
-    keywords=["caregiver", "hours", "week", "avg"]
-)  # 25-26 hours/week average
 
 CAREGIVER_ANNUAL_VALUE_TOTAL = Parameter(
     600e9,

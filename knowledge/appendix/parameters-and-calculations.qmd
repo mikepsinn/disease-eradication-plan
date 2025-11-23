@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 431
+**Total parameters**: 423
 
-- External sources (peer-reviewed): 128
-- Calculated values: 255
-- Core definitions: 48
+- External sources (peer-reviewed): 125
+- Calculated values: 251
+- Core definitions: 47
 
 ## External Data Sources {#sec-external}
 
@@ -107,19 +107,6 @@ Number of unpaid caregivers in US
 **Value**: 20
 
 Average monthly hours of unpaid family caregiving in US
-
-**Source**: [unpaid-caregiver-hours-economic-value](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average Weekly Hours of Unpaid Caregiving {#sec-caregiver_hours_per_week_avg}
-
-**Value**: 25.5
-
-Average weekly hours of unpaid caregiving (25-26 hours/week)
 
 **Source**: [unpaid-caregiver-hours-economic-value](https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value)
 
@@ -778,19 +765,6 @@ Global cost to achieve universal education
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-### Global Forcibly Displaced People in 2023 {#sec-global_forcibly_displaced_people_2023}
-
-**Value**: 108M
-
-Global forcibly displaced people in 2023
-
-**Source**: [unhcr-forcibly-displaced-2023](https://warondisease.org/knowledge/references.html#unhcr-forcibly-displaced-2023)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
 ### Global Life Expectancy (2024) {#sec-global_life_expectancy_2024}
 
 **Value**: 79
@@ -1188,19 +1162,6 @@ Total number of rare diseases globally
 RECOVERY trial cost per patient
 
 **Source**: [recovery-cost-500](https://warondisease.org/knowledge/references.html#recovery-cost-500)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average Annual Lost Earning Potential per Refugee {#sec-refugee_lost_earning_potential_per_capita_annual}
-
-**Value**: $23.4K
-
-Average annual lost earning potential per refugee
-
-**Source**: [refugee-lost-earning-potential](https://warondisease.org/knowledge/references.html#refugee-lost-earning-potential)
 
 *✓ High confidence*
 
@@ -3291,23 +3252,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Annual DALYs Lost from Disease Eradication + Acceleration {#sec-disease_eradication_plus_acceleration_annual_dalys}
-
-**Value**: 2.09B
-
-Annual DALYs lost from disease eradication delay plus acceleration effects (optimistic upper bound)
-
-$$
-DALY_{upper} = 1.05B \times 2 = 2.09B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#acceleration-effects](../appendix/regulatory-mortality-analysis#acceleration-effects)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Annual Deaths from Disease Eradication + Acceleration {#sec-disease_eradication_plus_acceleration_deaths_annual}
 
 **Value**: 110M
@@ -3804,23 +3748,6 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Per Capita Total War Cost Globally {#sec-global_total_war_cost_per_capita_annual}
-
-**Value**: $1.42K
-
-Per capita total war cost globally
-
-$$
-PerCapita_{war} = \$11,355.1B / 8.0B = \$1,419.39
-$$
-
-**Methodology**: [../problem/cost-of-war#per-capita](../problem/cost-of-war#per-capita)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Annual Deaths from Historical Progress Delays {#sec-historical_progress_deaths_annual}
 
 **Value**: 12M
@@ -4003,40 +3930,6 @@ Cost_{second} = \frac{\$429B}{86{,}400} \approx \$5M/second
 $$
 
 **Methodology**: [../economics/economics#the-opportunity-cost-clock](../economics/economics#the-opportunity-cost-clock)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Bondholder Payout in Partial Success Scenario {#sec-partial_success_bondholder_payout}
-
-**Value**: $1.36B
-
-Bondholder payout in partial success scenario
-
-$$
-Payout_{partial} = \$13.59B \times 0.10 = \$1.36B
-$$
-
-**Methodology**: [../strategy/treaty-adoption-strategy#partial-success](../strategy/treaty-adoption-strategy#partial-success)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### DIH Revenue in Partial Success Scenario {#sec-partial_success_dih_revenue}
-
-**Value**: $13.6B
-
-DIH revenue in partial success scenario
-
-$$
-Revenue_{partial} = \$2,718B \times 0.50 \times 0.01 = \$13.59B
-$$
-
-**Methodology**: [../strategy/treaty-adoption-strategy#partial-success](../strategy/treaty-adoption-strategy#partial-success)
 
 *✓ High confidence*
 
@@ -5668,17 +5561,6 @@ dFDA trial completion rate (95%)
 **Value**: $24.5B
 
 Annual funding for medical research (treaty funding minus bond payouts)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### DIH Percentage of Treaty Funding Going to Medical Research {#sec-dih_treasury_to_medical_research_annual_pct}
-
-**Value**: 90%
-
-Percentage of treaty funding going to medical research (remainder after bonds)
 
 *Core definition*
 
