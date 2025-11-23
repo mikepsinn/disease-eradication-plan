@@ -6,47 +6,5 @@
    It loads after styles.css, so any rules here will override the base styles.
    ========================================== */
 
-/* Show all metadata that was hidden in base styles */
-.quarto-title-block .quarto-title-meta-date,
-.quarto-title-block .quarto-title-meta-contents:has(.date),
-.quarto-title-block .quarto-title-meta-contents,
-.quarto-title-block .date,
-.quarto-title-block .abstract,
-.quarto-title-block .quarto-title-meta-abstract,
-.quarto-title-block .keywords,
-.quarto-title-block .quarto-title-meta-keywords,
-.quarto-title-meta .date,
-.quarto-title-meta .abstract,
-.quarto-title-meta .keywords,
-.quarto-title-meta .quarto-title-meta-contents,
-.title-block .date,
-.title-block .abstract,
-.title-block .keywords,
-.quarto-title-meta-author + .quarto-title-meta-date,
-.quarto-title-meta-date + .quarto-title-meta-abstract,
-.quarto-title-meta-abstract + .quarto-title-meta-keywords {
-    display: revert !important;
-}
 
-/* Show author labels */
-.quarto-title-block .quarto-title-meta-heading:first-of-type,
-.quarto-title-block .quarto-title-meta .quarto-title-meta-heading:first-child,
-.title-block .meta-author-label,
-.title-block .author-label {
-    display: revert;
-}
-
-/* Remove "By" prefix that was added */
-.quarto-title-block .quarto-title-meta-contents:first-of-type::before,
-.quarto-title-block .quarto-title-meta .quarto-title-meta-contents:first-child::before,
-.quarto-title-block .quarto-title-meta-author::before,
-.title-block .meta-author::before,
-.title-block .author::before {
-    content: none;
-}
-
-/* Show callout icon container */
-.callout-icon-container {
-    display: revert;
-}
 
