@@ -536,6 +536,13 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA infrastructure\
   \ costs (cloud, security) | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$8.00M</a>"
+"dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ treaty funding allocated to dFDA platform overhead | ✓ High confidence | Formula:\
+  \ DFDA_OPEX / TREATY_FUNDING | Unit: rate | Click to view calculation\">0.147%</a>"
+"dfda_opex_pct_of_treaty_funding_latex": "$$\n\\$0.04B / \\$27.18B = 0.00147 = 0.15\\\
+  %\n$$"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA platform\
@@ -636,6 +643,14 @@
   \ fundable annually at RECOVERY trial cost | ✓ High confidence | Formula: TRIAL_SUBSIDIES\
   \ ÷ COST_PER_PATIENT | Unit: patients/year | Click to view calculation\">48.8M</a>"
 "dih_patients_fundable_annually_latex": "$$\n\\$24.422B \\div \\$500 = 48.8M\n$$"
+"dih_treasury_medical_research_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ treaty funding allocated to medical research (after bond payouts) | ✓ High confidence\
+  \ | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit: rate | Click to view\
+  \ calculation\">90%</a>"
+"dih_treasury_medical_research_pct_latex": "$$\n\\$24.462B / \\$27.18B = 0.90 = 90\\\
+  %\n$$"
 "dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
   Annual funding for medical research (treaty funding minus bond payouts) | Unit:\
   \ USD/year | Core definition\">$24.5B</span>"
@@ -649,6 +664,14 @@
   \ | Click to view calculation\">$24.4B</a>"
 "dih_treasury_trial_subsidies_annual_latex": "$$\n\\$24.462B - \\$0.04B = \\$24.422B\n\
   $$"
+"dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
+  \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view calculation\"\
+  >89.9%</a>"
+"dih_treasury_trial_subsidies_pct_latex": "$$\n\\$24.422B / \\$27.18B = 0.8986 = 89.86\\\
+  %\n$$"
 "disease_eradication_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\

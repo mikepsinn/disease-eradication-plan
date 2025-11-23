@@ -2802,6 +2802,46 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     keywords=["trial", "participant", "enrollment", "capacity", "patient"]
 )  # 48.8 million patients/year
 
+# Funding allocation percentages (calculated from absolute values)
+DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
+    DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL / TREATY_ANNUAL_FUNDING,
+    source_type="calculated",
+    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    description="Percentage of treaty funding allocated to medical research (after bond payouts)",
+    display_name="Medical Research Percentage of Treaty Funding",
+    unit="rate",
+    formula="MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
+    latex=r"\$24.462B / \$27.18B = 0.90 = 90\%",
+    confidence="high",
+    keywords=["allocation", "percentage", "medical research", "funding"]
+)  # 90%
+
+DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
+    DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / TREATY_ANNUAL_FUNDING,
+    source_type="calculated",
+    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    description="Percentage of treaty funding going directly to patient trial subsidies",
+    display_name="Patient Trial Subsidies Percentage of Treaty Funding",
+    unit="rate",
+    formula="TRIAL_SUBSIDIES / TREATY_FUNDING",
+    latex=r"\$24.422B / \$27.18B = 0.8986 = 89.86\%",
+    confidence="high",
+    keywords=["allocation", "percentage", "patient", "trial", "subsidy"]
+)  # 89.86%
+
+DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
+    DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
+    source_type="calculated",
+    source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+    description="Percentage of treaty funding allocated to dFDA platform overhead",
+    display_name="dFDA Overhead Percentage of Treaty Funding",
+    unit="rate",
+    formula="DFDA_OPEX / TREATY_FUNDING",
+    latex=r"\$0.04B / \$27.18B = 0.00147 = 0.15\%",
+    confidence="high",
+    keywords=["allocation", "percentage", "overhead", "platform", "opex"]
+)  # 0.15%
+
 SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
     10,
     source_ref=ReferenceID.SUGAR_SUBSIDIES_COST,

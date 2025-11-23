@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 397
+**Total parameters**: 400
 
 - External sources (peer-reviewed): 125
-- Calculated values: 225
+- Calculated values: 228
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -2714,6 +2714,23 @@ dFDA infrastructure costs (cloud, security)
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### dFDA Overhead Percentage of Treaty Funding {#sec-dfda_opex_pct_of_treaty_funding}
+
+**Value**: 0.147%
+
+Percentage of treaty funding allocated to dFDA platform overhead
+
+$$
+\$0.04B / \$27.18B = 0.00147 = 0.15\%
+$$
+
+**Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### dFDA Platform Maintenance Costs {#sec-dfda_opex_platform_maintenance}
 
 **Value**: $15M
@@ -2946,6 +2963,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Medical Research Percentage of Treaty Funding {#sec-dih_treasury_medical_research_pct}
+
+**Value**: 90%
+
+Percentage of treaty funding allocated to medical research (after bond payouts)
+
+$$
+\$24.462B / \$27.18B = 0.90 = 90\%
+$$
+
+**Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Annual Clinical Trial Patient Subsidies {#sec-dih_treasury_trial_subsidies_annual}
 
 **Value**: $24.4B
@@ -2954,6 +2988,23 @@ Annual clinical trial patient subsidies (all medical research funds after dFDA o
 
 $$
 \$24.462B - \$0.04B = \$24.422B
+$$
+
+**Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Patient Trial Subsidies Percentage of Treaty Funding {#sec-dih_treasury_trial_subsidies_pct}
+
+**Value**: 89.9%
+
+Percentage of treaty funding going directly to patient trial subsidies
+
+$$
+\$24.422B / \$27.18B = 0.8986 = 89.86\%
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)

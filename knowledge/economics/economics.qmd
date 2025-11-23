@@ -215,7 +215,7 @@ For context: **{{< var global_disease_deaths_daily >}} people die every day** un
 These aren't projections. They're measurements:
 
 * **Oxford RECOVERY** proved trials cost **{{< var trial_cost_reduction_factor >}}× less** by using existing hospital infrastructure instead of dedicated trial sites
-* This single trial enrolled 49,000 patients across 185 hospitals, found dexamethasone (reducing COVID deaths 33%), ruled out hydroxychloroquine, and identified effective treatments faster than traditional regulatory processes
+* This single trial enrolled 49,000 patients across 185 hospitals, found [dexamethasone (reducing COVID deaths 33%)](../references.qmd#recovery-trial-dexamethasone-results), ruled out hydroxychloroquine, and identified effective treatments faster than traditional regulatory processes
 * The bottleneck isn't scientific knowledge
 * The bottleneck is requiring dedicated trial infrastructure when hospitals already exist
 
@@ -850,7 +850,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 |:---|---:|:---|
 | **10% (Conservative)** | {{< var dfda_expected_roi_10pct_political_success >}}:1 | Low confidence in treaty ratification |
 | **25% (Moderate)** | {{< var dfda_expected_roi_25pct_political_success >}}:1 | Historical treaty adoption baseline |
-| **40% (Moderate-High)** | 185:1 | Favorable political conditions |
+| **40% (Moderate-High)** | {{< var dfda_expected_roi_40pct_political_success >}}:1 | Favorable political conditions |
 | **50% (Optimistic)** | {{< var dfda_expected_roi_50pct_political_success >}}:1 | Strong international coordination |
 
 **Key insight**: Even with conservative 10% success probability, expected ROI of {{< var dfda_expected_roi_10pct_political_success >}}:1 substantially exceeds typical public health interventions (which have P≈1.0 but ROI of 10-30:1).
@@ -947,7 +947,7 @@ The peace dividend math is simple: wars cost {{< var global_annual_war_total_cos
 | **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |
 | **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_economic_growth_military_spending >}} {{< var global_annual_lost_economic_growth_military_spending_cite >}} | Opportunity cost of military spending vs. productive investment |
 | **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | {{< var sensitivity_peace_dividend_optimistic >}} | Long-term medical care for conflict-related injuries |
-| **Refugee Support** | {{< var global_annual_refugee_support_costs >}} {{< var global_annual_refugee_support_costs_cite >}} | [108.4M displaced persons](../references.qmd#unhcr-forcibly-displaced-2023) × $1,384/year |
+| **Refugee Support** | {{< var global_annual_refugee_support_costs >}} {{< var global_annual_refugee_support_costs_cite >}} | [108.4M displaced persons](../references.qmd#unhcr-forcibly-displaced-2023) × [$1,384/year](../references.qmd#unhcr-refugee-support-cost) |
 | **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_environmental_damage_conflict >}} {{< var global_annual_environmental_damage_conflict_cite >}} | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} {{< var global_annual_psychological_impact_costs_conflict_cite >}} | PTSD treatment, mental health services, productivity loss |
 | **[Lost Human Capital](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_human_capital_conflict >}} {{< var global_annual_lost_human_capital_conflict_cite >}} | Productive capacity lost from casualties and displacement |
@@ -964,16 +964,16 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 **Total annual treaty funding**: {{< var treaty_annual_funding >}}
 
-The vast majority goes to **patient subsidies** (~$24.4B), with minimal overhead:
+The vast majority goes to **patient subsidies** ({{< var dih_treasury_to_medical_research_annual >}}), with minimal overhead:
 
-1. **Patient Trial Subsidies** (89.8%): {{< var dih_treasury_trial_subsidies_annual >}}/year
+1. **Patient Trial Subsidies** ({{< var dih_treasury_trial_subsidies_pct >}}): {{< var dih_treasury_trial_subsidies_annual >}}/year
    - Subsidizes {{< var dih_patients_fundable_annually >}} patients annually at {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient
    - Patients bring subsidies to trials; providers collect payment when patients enroll
    - Makes trial participation profitable for providers instead of costly
 
-2. **Victory Bond Payouts** (10%): {{< var victory_bond_annual_payout >}}/year to campaign investors
+2. **Victory Bond Payouts** ({{< var victory_bond_funding_pct >}}): {{< var victory_bond_annual_payout >}}/year to campaign investors
 
-3. **Coordination Platform** (0.15%): {{< var dfda_annual_opex >}}/year for decentralized FDA infrastructure
+3. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for decentralized FDA infrastructure
 
 **Why platform costs are low:** Decentralized FDA infrastructure provides coordination protocols (like HTTP for the internet), not a competing platform.
 
@@ -983,7 +983,7 @@ Data stays federated (in Epic/Cerner/Apple Health systems). No massive centraliz
 
 For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs---rom-estimates-partnership-model).
 
-**Key insight**: 90% of treaty funding goes directly to patients and providers as trial participation subsidies. Platform overhead is minimal ($40M) compared to patient subsidies ($24.4B).
+**Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to medical research (patients and providers as trial participation subsidies). Platform overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
 This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
 
@@ -1283,7 +1283,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Why this actually won't happen**:
 
-Defense lobbyists currently get $1,813 back for every $1 spent corrupting democracy. You're offering VICTORY bondholders {{< var victory_bond_annual_return_pct >}} returns. That's better. Defense contractors can do basic arithmetic (barely, but enough).
+Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) corrupting democracy. You're offering VICTORY bondholders {{< var victory_bond_annual_return_pct >}} returns. That's better. Defense contractors can do basic arithmetic (barely, but enough).
 
 When you show them a spreadsheet where they keep {{< var defense_sector_retention_pct >}} of their current contracts PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds, they stop lobbying against you and start lobbying for you.
 
