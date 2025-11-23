@@ -796,19 +796,6 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"]
 )
 
-# Peace dividend benefit-to-cost ratio
-PEACE_DIVIDEND_ROI = Parameter(
-    (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + TREATY_ANNUAL_FUNDING) / TREATY_ANNUAL_FUNDING,
-    source_ref="/knowledge/economics/peace-dividend.qmd",
-    source_type="calculated",
-    description="Total benefit per dollar redirected (savings + funding captured)",
-    display_name="Total Benefit per Dollar Redirected",
-    unit="ratio",
-    formula="(PEACE_DIVIDEND + FUNDING) ÷ FUNDING",
-    latex=r"ROI_{peace} = \frac{\$113.55B + \$27.18B}{\$27.18B} = 5.18",
-    keywords=["bang for buck", "cost effectiveness", "investment efficiency", "lives per dollar", "bcr", "benefit cost ratio", "economic return"]
-)
-
 # ---
 # HEALTH DIVIDEND PARAMETERS (dFDA)
 # ---
@@ -1044,16 +1031,6 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
     unit="USD/trial",
     keywords=["20.0m", "confirmatory trial", "third phase", "rct", "p3", "phase iii", "clinical study"]
 )  # $20M minimum for Phase 3 trials
-
-PHASE_3_TRIAL_COST_MAX = Parameter(
-    282_000_000,
-    source_ref=ReferenceID.PHASE_3_COST_PER_TRIAL_RANGE,
-    source_type="external",
-    description="Phase 3 trial total cost (maximum)",
-    display_name="Phase 3 Trial Total Cost (Maximum)",
-    unit="USD/trial",
-    keywords=["282.0m", "confirmatory trial", "third phase", "rct", "p3", "phase iii", "clinical study"]
-)  # $282M maximum for Phase 3 trials
 
 TRADITIONAL_SMALL_TRIAL_SIZE = Parameter(
     100,
@@ -1772,19 +1749,6 @@ DISEASE_ERADICATION_PLUS_ACCELERATION_ANNUAL_DALYS = Parameter(
     keywords=["optimistic", "upper bound", "acceleration", "innovation effects"]
 )  # 2.09B DALYs/year (optimistic)
 
-DISEASE_ERADICATION_PLUS_ACCELERATION_ANNUAL_LOSS = Parameter(
-    DISEASE_ERADICATION_PLUS_ACCELERATION_ANNUAL_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#acceleration-effects",
-    source_type="calculated",
-    description="Annual economic loss from disease eradication delay plus acceleration effects (optimistic upper bound)",
-    display_name="Annual Economic Loss from Disease Eradication + Acceleration",
-    unit="USD/year",
-    formula="DALYS_UPPER × VSLY",
-    latex=r"Loss_{upper} = 2.09B \times \$150k = \$314B/year",
-    confidence="low",
-    keywords=["optimistic", "upper bound", "acceleration", "economic loss"]
-)  # $314B/year (optimistic)
-
 # TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
 # These represent the complete, one-time benefit of eliminating the efficacy lag
 # NOT amortized annual values that could mislead by suggesting recurring benefits
@@ -2113,18 +2077,6 @@ DFDA_LIVES_SAVED_ANNUAL = Parameter(
     keywords=["28.4m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "regulatory delay"]
 )  # 28.4M lives/year
 
-DFDA_LIVES_SAVED_DAILY = Parameter(
-    DFDA_LIVES_SAVED_ANNUAL / 365,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
-    source_type="calculated",
-    description="Daily lives saved by dFDA",
-    display_name="Daily Lives Saved by dFDA",
-    unit="lives/day",
-    formula="ANNUAL_LIVES_SAVED ÷ 365",
-    latex=r"Lives_{daily} = 1.54M \div 365 = 4,229",
-    keywords=["4.2k", "daily", "per day", "each day", "deaths prevented", "life saving", "mortality reduction"]
-)  # 4,229 lives/day
-
 DFDA_QALYS_RD_PLUS_DELAY_MONETIZED = Parameter(
     (DFDA_QALYS_RD_PLUS_DELAY_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
@@ -2303,46 +2255,6 @@ TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC = Parameter(
     confidence="high",
     keywords=["220.0m", "1%", "likely", "moderate", "probable", "one percent", "international agreement"]
 )  # $220M realistic: 10M×$0.25 + 90M×$0.50 + 100M×$0.75 + 80M×$1.00 = $126M payments
-
-# Campaign Total Cost by Scenario (Accounting for Viral Referendum Uncertainty)
-TREATY_CAMPAIGN_TOTAL_COST_BASE_CASE = Parameter(
-    TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
-    source_ref="/knowledge/economics/campaign-budget.qmd#base-case-scenario",
-    source_type="calculated",
-    description="Base case total campaign cost (optimistic viral referendum)",
-    display_name="Base Case Total Campaign Cost",
-    unit="USD",
-    formula="REFERENDUM_BASE + LOBBYING + RESERVE",
-    latex=r"CampaignCost_{base} = \$140M + \$650M + \$50M = \$840M",
-    confidence="medium",
-    keywords=["1%", "high estimate", "best case", "ambitious", "overestimate", "one percent", "international agreement"]
-)  # $840M (assumes flat $0.50/vote with no increasing marginal costs)
-
-TREATY_CAMPAIGN_TOTAL_COST_REALISTIC = Parameter(
-    TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
-    source_ref="/knowledge/economics/campaign-budget.qmd#realistic-scenario",
-    source_type="calculated",
-    description="Realistic total campaign cost (moderate tiered pricing)",
-    display_name="Realistic Total Campaign Cost",
-    unit="USD",
-    formula="REFERENDUM_REALISTIC + LOBBYING + RESERVE",
-    latex=r"CampaignCost_{realistic} = \$220M + \$650M + \$50M = \$920M",
-    confidence="high",
-    keywords=["1%", "likely", "moderate", "probable", "one percent", "international agreement", "peace treaty"]
-)  # $920M (accounts for moderate increasing marginal costs)
-
-TREATY_CAMPAIGN_TOTAL_COST_WORST_CASE = Parameter(
-    TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
-    source_ref="/knowledge/economics/campaign-budget.qmd#worst-case-scenario",
-    source_type="calculated",
-    description="Worst-case total campaign cost (high tiered pricing, poor virality)",
-    display_name="Worst-Case Total Campaign Cost",
-    unit="USD",
-    formula="REFERENDUM_WORST + LOBBYING + RESERVE",
-    latex=r"CampaignCost_{worst} = \$406M + \$650M + \$50M = \$1.106B",
-    confidence="medium",
-    keywords=["1%", "one percent", "international agreement", "peace treaty", "agreement", "pact", "conservative"]
-)  # $1.106B (high increasing marginal costs, weak virality, poor conversion)
 
 TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / TREATY_CAMPAIGN_DURATION_YEARS,
@@ -2641,47 +2553,6 @@ CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
     keywords=["campaign", "platform", "development", "35.0m"]
 )
 
-# Healthcare economic parameters (actual USD values, not counts)
-DIABETES_CURE_PAYMENT_ESTIMATE = Parameter(
-    10000,
-    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
-    source_type="calculated",
-    description="Estimated one-time payment for diabetes cure",
-    display_name="Estimated One-Time Payment for Diabetes Cure",
-    unit="USD",
-    keywords=["10k", "intervention", "treatment", "healing", "remedy", "therapy", "diabetes"]
-)
-
-PHARMA_CURE_PAYMENT_PER_PATIENT = Parameter(
-    90000,
-    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
-    source_type="calculated",
-    description="Pharma payment per cured patient in 50/50 model",
-    display_name="Pharma Payment per Cured Patient in 50/50 Model",
-    unit="USD",
-    keywords=["90k", "participant", "subject", "volunteer", "enrollee", "intervention", "treatment"]
-)
-
-PATIENT_CURE_COPAY_MAX = Parameter(
-    1000,
-    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
-    source_type="calculated",
-    description="Maximum patient copay for cure",
-    display_name="Maximum Patient Copay for Cure",
-    unit="USD",
-    keywords=["1k", "participant", "subject", "volunteer", "enrollee", "intervention", "treatment"]
-)
-
-LONGEVITY_THERAPY_SAVINGS_30YR = Parameter(
-    150000,
-    source_ref="/knowledge/economics/health-savings-sharing-model.qmd",
-    source_type="calculated",
-    description="30-year savings from longevity therapy per person",
-    display_name="30-Year Savings from Longevity Therapy per Person",
-    unit="USD",
-    keywords=["150k", "life expectancy", "life extension", "years of life", "average person", "lifespan", "survival"]
-)
-
 # Investment tier minimums (in millions USD or thousands USD)
 INSTITUTIONAL_INVESTOR_MIN = Parameter(
     10_000_000,
@@ -2701,26 +2572,6 @@ FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
     display_name="Minimum Investment for Family Offices",
     unit="USD",
     keywords=["5.0m", "impact investing", "pay for success", "capital", "finance", "money", "debt instrument"]
-)
-
-HIGH_NET_WORTH_INVESTOR_MIN = Parameter(
-    1_000_000,
-    source_ref="/knowledge/economics/victory-bonds.qmd",
-    source_type="calculated",
-    description="Minimum investment for high net worth individuals",
-    display_name="Minimum Investment for High Net Worth Individuals",
-    unit="USD",
-    keywords=["1.0m", "impact investing", "pay for success", "average person", "debt instrument", "development finance", "fixed income"]
-)
-
-QUALIFIED_INVESTOR_MIN = Parameter(
-    100_000,
-    source_ref="/knowledge/economics/victory-bonds.qmd",
-    source_type="calculated",
-    description="Minimum investment for qualified investors",
-    display_name="Minimum Investment for Qualified Investors",
-    unit="USD",
-    keywords=["100k", "impact investing", "pay for success", "debt instrument", "development finance", "fixed income", "impact bond"]
 )
 
 
@@ -2779,20 +2630,6 @@ TREATY_DFDA_ICER_PER_QALY = Parameter(
     formula="(TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
 )  # -$2,197 per QALY (negative = cost-saving)
-
-# dFDA Infrastructure ICER (specific calculation for economics.qmd)
-# Net incremental cost = operational costs - R&D savings = $0.040B - $50.0B = -$49.96B
-DFDA_NET_INCREMENTAL_COST_ANNUAL = Parameter(
-    DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-incremental-cost",
-    source_type="calculated",
-    description="Net incremental cost for dFDA (operational costs minus R&D savings)",
-    display_name="Net Incremental Cost for dFDA",
-    unit="USD/year",
-    formula="DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL",
-    latex=r"NetCost = \$0.040B - \$41.5B = -\$41.46B",
-    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency", "yearly"]
-)  # -$41.46B annually
 
 DFDA_ICER_PER_QALY = Parameter(
     (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) / DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
@@ -3199,17 +3036,6 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     latex=r"Return = \$2.718B / \$1B = 2.718 = 271.8\%",
     keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"]
 )  # 271.8% (reported as 270%)
-VICTORY_BOND_PAYBACK_MONTHS = Parameter(
-    12 / VICTORY_BOND_ANNUAL_RETURN_PCT,
-    source_ref="",
-    source_type="definition",
-    description="Months to full payback for VICTORY bondholders",
-    display_name="Months to Full Payback for Victory Bondholders",
-    unit="months",
-    formula="12 ÷ RETURN_PCT",
-    latex=r"Payback = 12 / 2.718 = 4.4 \text{ months}",
-    keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"]
-)  # 4.4 months
 DIVIDEND_COVERAGE_FACTOR = Parameter(
     TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX,
     source_ref="/knowledge/strategy/roadmap.qmd#sustainability",
@@ -3271,67 +3097,6 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     keywords=["trial", "participant", "enrollment", "capacity", "patient"]
 )  # 48.8 million patients/year
 
-# ---
-# REFERENCE VALUES (for comparisons)
-# ---
-
-# Global economic context
-GLOBAL_GDP_2024 = Parameter(
-    111_000_000_000_000, source_ref=ReferenceID.GLOBAL_GDP, source_type="external", description="Global GDP in 2024", unit="USD",
-    display_name="Global GDP in 2024",
-    keywords=["2024", "111.0t", "worldwide", "gdp", "international", "earth", "planetary"]
-)  # World Bank 2024
-
-GLOBAL_HEALTHCARE_SPENDING_ANNUAL_2024 = Parameter(
-    9_800_000_000_000,
-    source_ref=ReferenceID.GLOBAL_HEALTH_SPENDING_GDP,
-    source_type="external",
-    description="Global healthcare spending in 2024",
-    display_name="Global Healthcare Spending in 2024",
-    unit="USD",
-    keywords=["2024", "9.8t", "worldwide", "yearly", "costs", "funding", "investment"]
-)
-
-US_DEFENSE_BUDGET_ANNUAL = Parameter(
-    877_000_000_000,
-    source_ref=ReferenceID.US_MILITARY_BUDGET_800B,
-    source_type="external",
-    description="US defense budget in 2024",
-    display_name="US Defense Budget in 2024",
-    unit="USD/year",
-    keywords=["877.0b", "armed forces", "yearly", "conflict", "armed conflict", "military action", "per year"]
-)  # FY2024 US defense budget
-
-MENTAL_HEALTH_GRANTS_ANNUAL = Parameter(
-    500_000_000,
-    source_ref=ReferenceID.GLOBAL_MENTAL_HEALTH_RESEARCH_SPENDING_1_5B,
-    source_type="external",
-    description="Annual mental health research grants total",
-    display_name="Annual Mental Health Research Grants Total",
-    unit="USD/year",
-    keywords=["500.0m", "yearly", "investigation", "r&d", "science", "study", "discovery"]
-)  # $500M in mental health grants annually
-
-DIABETES_TREATMENT_MONTHLY_COST = Parameter(
-    500,
-    source_ref=ReferenceID.DISEASE_COST_DIABETES_1500B,
-    source_type="external",
-    description="Average monthly cost of diabetes treatment per patient",
-    display_name="Average Monthly Cost of Diabetes Treatment per Patient",
-    unit="USD/month",
-    keywords=["enrollee", "participant", "subject", "volunteer", "costs", "funding", "investment"]
-)  # $500/month for diabetes treatment
-
-MEDICAL_FACILITY_HOURLY_ROOM_COST = Parameter(
-    500,
-    source_ref="hospital-room-costs",
-    source_type="external",
-    description="Average hourly cost of medical facility room",
-    display_name="Average Hourly Cost of Medical Facility Room",
-    unit="USD/hour",
-    keywords=["costs", "funding", "investment", "medical", "facility", "hourly", "room"]
-)  # $500/hour for medical facility room costs
-
 SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
     10,
     source_ref=ReferenceID.SUGAR_SUBSIDIES_COST,
@@ -3341,26 +3106,6 @@ SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL = Parameter(
     unit="USD/person/year",
     keywords=["average person", "yearly", "costs", "funding", "investment", "household benefit", "typical individual"]
 )  # $10 per person per year in sugar subsidies
-
-RARE_DISEASE_TYPICAL_PATIENT_COUNT = Parameter(
-    500,
-    source_ref=ReferenceID.RARE_DISEASE_PREVALENCE_400M,
-    source_type="external",
-    description="Typical patient count for rare diseases",
-    display_name="Typical Patient Count for Rare Diseases",
-    unit="patients",
-    keywords=["participant", "subject", "volunteer", "enrollee", "illness", "rare", "disease"]
-)  # 500 patients typical for rare diseases
-
-ALZHEIMER_CURE_BOUNTY_ESTIMATE = Parameter(
-    10_000_000_000,
-    source_ref="cure-bounty-estimates",
-    source_type="calculated",
-    description="Estimated bounty value for Alzheimer's cure",
-    display_name="Estimated Bounty Value for Alzheimer's Cure",
-    unit="USD",
-    keywords=["10.0b", "intervention", "treatment", "healing", "remedy", "therapy", "alzheimer"]
-)  # $10B estimated bounty for Alzheimer's cure
 
 GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     67_500_000_000,
@@ -3502,27 +3247,6 @@ CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
     keywords=["0%", "rct", "people", "clinical study", "clinical trial", "research trial", "randomized controlled trial"]
 )  # 0.06% participation
 
-# US healthcare metrics
-US_DRUG_PRICE_MULTIPLIER_VS_PEER_COUNTRIES = Parameter(
-    2.78,
-    source_ref=ReferenceID.US_DRUG_PRICES_VS_PEER_COUNTRIES,
-    source_type="external",
-    description="US drug prices compared to peer countries multiplier",
-    display_name="US Drug Prices Compared to Peer Countries Multiplier",
-    unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple", "factor", "coefficient"]
-)  # 2.78x higher
-
-US_ANNUAL_DRUG_SPENDING = Parameter(
-    360_000_000_000,
-    source_ref=ReferenceID.US_DRUG_SPEND,
-    source_type="external",
-    description="Annual US pharmaceutical spending",
-    display_name="Annual US Pharmaceutical Spending",
-    unit="USD/year",
-    keywords=["360.0b", "yearly", "costs", "funding", "investment", "drug", "per year"]
-)  # $360B annually
-
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
     0.035,
     source_ref=ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP,
@@ -3629,17 +3353,6 @@ GLOBAL_TOTAL_WAR_COST_PER_CAPITA_ANNUAL = Parameter(
     latex=r"PerCapita_{war} = \$11,355.1B / 8.0B = \$1,419.39",
     keywords=["average person", "individual", "people", "per person", "worldwide", "yearly", "conflict"]
 )  # $1,419/person/year
-LIFETIME_WAR_COST_PER_CAPITA = Parameter(
-    GLOBAL_TOTAL_WAR_COST_PER_CAPITA_ANNUAL * 80,
-    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd#lifetime-cost",
-    source_type="calculated",
-    description="Lifetime war cost per person (80-year lifespan)",
-    display_name="Lifetime War Cost per Person",
-    unit="USD/person",
-    formula="ANNUAL_PER_CAPITA × 80",
-    latex=r"Lifetime_{war} = \$1,419.39 \times 80 = \$113,551",
-    keywords=["financial benefit", "individual benefit", "life expectancy", "life extension", "monetary gain", "per capita benefit", "personal benefit"]
-)  # $113,551 over 80-year life
 
 # GiveWell charity comparison
 # Source: brain/book/appendix/icer-full-calculation.qmd
@@ -3765,35 +3478,6 @@ BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL = Parameter(
     unit="USD/year",
     keywords=["100.0b", "faster development", "innovation speed", "research velocity", "yearly", "investigation", "r&d"]
 )  # 115x more research capacity
-
-# DELETED: Outdated bottom-up methodology parameters (see dfda-qaly-model.qmd "Outdated Methodology")
-# These are components of an old 840k QALY model that have been superseded by the comprehensive
-# regulatory-mortality-analysis.qmd PRIMARY METHODOLOGY (993M QALYs). Including these alongside
-# the comprehensive $148.95T regulatory delay benefit constitutes double-counting.
-#
-# BENEFIT_RARE_DISEASES_ANNUAL = $400B (already included in BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL)
-# BENEFIT_DRUG_PRICE_REDUCTION_ANNUAL = $100B (derivative of R&D savings, not additional value)
-
-# Drug price reduction range (U.S. prices 2.78x higher than peer countries)
-DRUG_PRICE_REDUCTION_SAVINGS_LOW = Parameter(
-    72_000_000_000,
-    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
-    source_type="calculated",
-    description="Low estimate of annual savings from drug price reductions (20% reduction of $360B U.S. spending)",
-    display_name="Low Estimate of Annual Savings from Drug Price Reductions",
-    unit="USD/year",
-    keywords=["72.0b", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "payoff"]
-)  # $72B = $360B × 20%
-
-DRUG_PRICE_REDUCTION_SAVINGS_HIGH = Parameter(
-    180_000_000_000,
-    source_ref="/knowledge/economics/economics.qmd#complete-case-roi",
-    source_type="calculated",
-    description="High estimate of annual savings from drug price reductions (50% reduction of $360B U.S. spending)",
-    display_name="High Estimate of Annual Savings from Drug Price Reductions",
-    unit="USD/year",
-    keywords=["180.0b", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "payoff"]
-)  # $180B = $360B × 50%
 
 # BENEFIT_PREVENTION_ANNUAL = $100B (already included in regulatory delay benefit)
 # BENEFIT_MENTAL_HEALTH_ANNUAL = $75B (already included in regulatory delay benefit)
@@ -4047,42 +3731,6 @@ PARTIAL_SUCCESS_BONDHOLDER_PAYOUT = Parameter(
     latex=r"Payout_{partial} = \$13.59B \times 0.10 = \$1.36B",
     keywords=["social impact bond", "sib", "impact investing", "pay for success", "deployment rate", "market penetration", "participation rate"]
 )  # ~$1.36B
-PARTIAL_SUCCESS_RESEARCH_FUNDING = Parameter(
-    PARTIAL_SUCCESS_DIH_REVENUE * DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_PCT,
-    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success",
-    source_type="calculated",
-    description="Research funding in partial success scenario",
-    display_name="Research Funding in Partial Success Scenario",
-    unit="USD/year",
-    formula="REVENUE × RESEARCH_PCT",
-    latex=r"Research_{partial} = \$13.59B \times 0.90 = \$12.23B",
-    keywords=["deployment rate", "market penetration", "participation rate", "distributed research", "global research", "open science", "capital"]
-)  # ~$12.2B
-PARTIAL_SUCCESS_INVESTOR_ROI = Parameter(
-    PARTIAL_SUCCESS_BONDHOLDER_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
-    source_ref="/knowledge/strategy/treaty-adoption-strategy.qmd#partial-success",
-    source_type="calculated",
-    description="Investor ROI in partial success scenario",
-    display_name="Investor ROI in Partial Success Scenario",
-    unit="rate",
-    formula="PAYOUT ÷ CAMPAIGN_COST",
-    latex=r"ROI_{partial} = \$1.36B / \$1B = 1.359 = 135.9\%",
-    keywords=["deployment rate", "market penetration", "participation rate", "bcr", "uptake", "usage rate", "acceptance"]
-)  # ~135.9%
-
-# ---
-# QALYs Breakdown & Treatment Acceleration Details
-# ---
-
-TREATMENT_ACCELERATION_YEARS_TARGET = Parameter(
-    2,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#target-timeline",
-    source_type="calculated",
-    description="Target years to market with dFDA",
-    display_name="Target Years to Market with dFDA",
-    unit="years",
-    keywords=["pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "faster development", "food and drug administration", "innovation speed"]
-)  # Years to market with dFDA (target)
 
 TREATMENT_ACCELERATION_YEARS_CURRENT = Parameter(
     17,
@@ -4449,36 +4097,6 @@ TREATY_OPTIMISTIC_SCENARIO_ROI = Parameter(
     latex=r"ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1",
     keywords=["high estimate", "bcr", "best case", "ambitious", "overestimate", "benefit cost ratio", "economic return", "treaty"]
 )  # 1,282:1 for optimistic economic scenario
-
-# Probabilistic ROI Analysis
-# Source: /knowledge/economics/economics.qmd probabilistic simulation
-# Personal lifetime benefits from 1% Treaty (age 30 baseline)
-# Source: /knowledge/call-to-action/your-personal-benefits.qmd
-PERSONAL_LIFE_EXTENSION_YEARS_AGE_30 = Parameter(
-    72,
-    source_ref="/knowledge/call-to-action/your-personal-benefits.qmd",
-    source_type="calculated",
-    description="Personal life extension for age 30 baseline from 1% Treaty (72 extra years)",
-    display_name="Personal Life Extension for Age 30 Baseline from 1% Treaty",
-    unit="years",
-    formula="Cumulative health gains from medical research acceleration",
-    latex=r"LifeExtension = 72 \text{ years}",
-    keywords=["30", "72", "individual benefit", "average person", "life expectancy", "years of life", "thirty years old"]
-)
-
-# Global suffering reduction
-# Source: /knowledge/economics/economics.qmd ("9.1 trillion hours of human suffering eliminated annually")
-TREATY_ANNUAL_SUFFERING_HOURS_ELIMINATED = Parameter(
-    9_100_000_000_000,
-    source_ref="/knowledge/economics/economics.qmd#suffering-reduction",
-    source_type="calculated",
-    description="Annual hours of human suffering eliminated by 1% Treaty (9.1 trillion hours)",
-    display_name="Annual Hours of Human Suffering Eliminated by 1% Treaty",
-    unit="hours/year",
-    formula="Total DALYs eliminated × hours per DALY",
-    latex=r"Suffering = 9.1T \text{ hours annually}",
-    keywords=["9.1t", "daly", "disease burden", "disability burden", "pain", "health burden", "quality of life"]
-)
 
 # Probabilistic ROI analysis - conditional on implementation success
 # Source: /knowledge/economics/economics.qmd probabilistic analysis section
@@ -4894,45 +4512,8 @@ if __name__ == "__main__":
     print(f"dFDA savings: {format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
     print(f"Total benefits: {format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)}")
 
-
-# ---
-# COST OF WAR DETAILS (for cost-of-war.qmd)
-# ---
-
-# Reference VSL values (for comparisons)
-US_DOT_VALUE_OF_STATISTICAL_LIFE = Parameter(
-    13_600_000,
-    source_ref=ReferenceID.DOT_VSL_13_6M,
-    source_type="external",
-    description="US Department of Transportation value of statistical life",
-    display_name="US Department of Transportation Value of Statistical Life",
-    unit="USD",
-    keywords=["dot", "value", "statistical", "life", "13.6m"]
-)  # $13.6M, reference value from Dept. of Transportation
-
-VSL_EPA = Parameter(
-    9_600_000,
-    source_ref=ReferenceID.EPA_VSL_9_6M,
-    source_type="external",
-    description="EPA value of statistical life",
-    display_name="EPA Value of Statistical Life",
-    unit="USD",
-    keywords=["vsl", "epa", "9.6m"]
-)  # $9.6M, reference value from EPA
-
 # Derived time-based costs
 SECONDS_PER_YEAR = 365 * 24 * 60 * 60
-GLOBAL_WAR_DIRECT_COST_PER_SECOND = Parameter(
-    GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL / SECONDS_PER_YEAR,
-    source_ref="/knowledge/problem/cost-of-war.qmd#cost-per-second",
-    source_type="calculated",
-    description="Direct war cost per second globally",
-    display_name="Direct War Cost per Second Globally",
-    unit="USD/second",
-    formula="DIRECT_COSTS × 1B ÷ SECONDS_PER_YEAR",
-    latex=r"CostPerSecond = \frac{\$7,655B \times 10^9}{31,557,600} \approx \$242,749",
-    keywords=["armed forces", "worldwide", "conflict", "costs", "funding", "investment", "yearly"]
-)  # ~$242,749
 
 # Refugee parameters
 GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 = Parameter(
@@ -4944,29 +4525,6 @@ GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 = Parameter(
     unit="people",
     keywords=["2023", "108.4m", "worldwide", "forcibly", "displaced", "people", "international"]
 )
-
-GLOBAL_COST_PER_REFUGEE_PER_YEAR_AVERAGE = Parameter(
-    1384,
-    source_ref=ReferenceID.UNHCR_REFUGEE_SUPPORT_COST,
-    source_type="external",
-    description="Average annual cost per refugee globally",
-    display_name="Average Annual Cost per Refugee Globally",
-    unit="USD/year",
-    keywords=["1k", "worldwide", "costs", "funding", "investment", "yearly", "refugee"]
-)
-
-# Grotesque Mathematics calculations
-GLOBAL_COST_PER_CONFLICT_DEATH = Parameter(
-    GLOBAL_ANNUAL_WAR_TOTAL_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
-    source_ref="/knowledge/problem/cost-of-war.qmd#grotesque-mathematics",
-    source_type="calculated",
-    description="Cost per conflict death (war cost ÷ deaths)",
-    display_name="Cost per Conflict Death",
-    unit="USD/death",
-    formula="(WAR_COST × 1B ÷ DEATHS) ÷ 1M",
-    latex=r"CostPerDeath = \frac{\$11,355.1B \times 10^9}{244,600} / 10^6 \approx \$46.4M",
-    keywords=["worldwide", "fatalities", "casualties", "deaths", "costs", "funding", "investment"]
-)  # ~$46.4M
 GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
     4_200_000,
     source_ref="medical-research-lives-saved-annually",
@@ -5000,72 +4558,6 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     keywords=["multiple", "fatalities", "casualties", "deaths", "investigation", "r&d", "science"]
 )  # ~2,889x
 
-# Specific budget items from text
-GLOBAL_NUCLEAR_WEAPONS_ANNUAL_BUDGET_INCREASE = Parameter(
-    42_000_000_000,
-    source_ref=ReferenceID.GLOBAL_NUCLEAR_WEAPON_MAINTENANCE_100B,
-    source_type="external",
-    description="Annual increase in global nuclear weapons budget",
-    display_name="Annual Increase in Global Nuclear Weapons Budget",
-    unit="USD/year",
-    keywords=["42.0b", "worldwide", "yearly", "nuclear", "weapons", "increase", "international"]
-)  # billions USD
-
-# ---
-# COST OF WAR DETAILS (for cost-of-war.qmd) - Additional Parameters
-# ---
-
-# Military Spending Breakdown (billions USD)
-GLOBAL_ANNUAL_MILITARY_SPENDING_PERSONNEL_2024 = Parameter(
-    681_500_000_000,
-    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
-    source_type="external",
-    description="Global military spending on personnel in 2024",
-    display_name="Global Military Spending on Personnel in 2024",
-    unit="USD",
-    keywords=["2024", "681.5b", "dod", "pentagon", "national security", "army", "navy"]
-)
-
-GLOBAL_ANNUAL_MILITARY_SPENDING_PROCUREMENT_2024 = Parameter(
-    654_300_000_000,
-    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
-    source_type="external",
-    description="Global military spending on procurement in 2024",
-    display_name="Global Military Spending on Procurement in 2024",
-    unit="USD",
-    keywords=["2024", "654.3b", "dod", "pentagon", "national security", "army", "intervention"]
-)
-
-GLOBAL_ANNUAL_MILITARY_SPENDING_OPS_MAINTENANCE_2024 = Parameter(
-    579_800_000_000,
-    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
-    source_type="external",
-    description="Global military spending on operations and maintenance in 2024",
-    display_name="Global Military Spending on Operations and Maintenance in 2024",
-    unit="USD",
-    keywords=["2024", "579.8b", "dod", "pentagon", "national security", "army", "navy"]
-)
-
-GLOBAL_ANNUAL_MILITARY_SPENDING_INFRASTRUCTURE_2024 = Parameter(
-    520_400_000_000,
-    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
-    source_type="external",
-    description="Global military spending on infrastructure in 2024",
-    display_name="Global Military Spending on Infrastructure in 2024",
-    unit="USD",
-    keywords=["2024", "520.4b", "dod", "pentagon", "national security", "army", "navy"]
-)
-
-GLOBAL_ANNUAL_MILITARY_SPENDING_INTELLIGENCE_2024 = Parameter(
-    282_000_000_000,
-    source_ref=ReferenceID.GLOBAL_MILITARY_SPENDING,
-    source_type="external",
-    description="Global military spending on intelligence in 2024",
-    display_name="Global Military Spending on Intelligence in 2024",
-    unit="USD",
-    keywords=["2024", "282.0b", "dod", "pentagon", "national security", "army", "navy"]
-)
-
 # Opportunity Cost Parameters
 GLOBAL_EDUCATION_FOR_ALL_COST = Parameter(
     30_000_000_000,
@@ -5075,16 +4567,6 @@ GLOBAL_EDUCATION_FOR_ALL_COST = Parameter(
     display_name="Global Cost to Achieve Universal Education",
     unit="USD",
     keywords=["30.0b", "worldwide", "costs", "funding", "investment", "education", "all"]
-)  # billions USD
-
-GLOBAL_POVERTY_ERADICATION_COST_TOTAL = Parameter(
-    1_000_000_000_000,
-    source_ref=ReferenceID.WORLD_BANK_POVERTY_ERADICATION_COST,
-    source_type="external",
-    description="Total cost to eradicate global poverty",
-    display_name="Total Cost to Eradicate Global Poverty",
-    unit="USD",
-    keywords=["1.0t", "worldwide", "costs", "funding", "investment", "poverty", "eradication"]
 )  # billions USD
 
 ECONOMIC_MULTIPLIER_MILITARY_SPENDING = Parameter(
@@ -5137,56 +4619,6 @@ REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL = Parameter(
     unit="USD/year",
     keywords=["23k", "financial benefit", "monetary gain", "economic wellbeing", "prosperity", "yearly", "profit"]
 )  # USD per year
-REFUGEE_LOST_PRODUCTIVITY_GLOBAL_TOTAL = Parameter(
-    (GLOBAL_FORCIBLY_DISPLACED_PEOPLE_2023 * REFUGEE_LOST_EARNING_POTENTIAL_PER_CAPITA_ANNUAL),
-    source_ref="/knowledge/problem/cost-of-war.qmd#refugee-costs",
-    source_type="calculated",
-    description="Total global lost refugee productivity",
-    display_name="Total Global Lost Refugee Productivity",
-    unit="USD/year",
-    formula="(REFUGEES × LOST_EARNINGS) ",
-    latex=r"RefugeeLosses = \frac{108.4M \times \$23,400}{10^9} = \$2,536.6B",
-    keywords=["financial benefit", "monetary gain", "economic wellbeing", "prosperity", "worldwide", "conflict", "profit"]
-)  # $2,536.6B
-
-# Contextual / Comparison Parameters
-GLOBAL_GDP_2023 = Parameter(
-    89_500_000_000_000,
-    source_ref=ReferenceID.GLOBAL_GDP,
-    source_type="external",
-    description="Global GDP in 2023 for comparison",
-    display_name="Global GDP in 2023 for Comparison",
-    unit="USD",
-    keywords=["2023", "89.5t", "worldwide", "gdp", "international", "earth", "planetary"]
-)  # billions USD, for 2023 comparison
-
-TOTAL_WAR_COST_TO_WHO_BUDGET_RATIO = Parameter(
-    168,
-    source_ref="/knowledge/problem/cost-of-war.qmd",
-    source_type="calculated",
-    description="Ratio of total war cost to WHO budget (168x)",
-    display_name="Ratio of Total War Cost to WHO Budget",
-    unit="ratio",
-    keywords=["armed forces", "conflict", "costs", "funding", "investment", "war", "who"]
-)  # Total war cost is 168x WHO budget (or similar sized org)
-
-
-# ---
-# NEW PARAMETERS ADDED FROM CHAPTER ANALYSIS (2025-01-24)
-# ---
-
-# Alias for consistency with book text
-
-# Campaign & Strategy Specifics
-TREATY_CAMPAIGN_BUDGET_MASS_BRIBERY = Parameter(
-    140_000_000,
-    source_ref="/knowledge/strategy/roadmap.qmd#campaign-budget",
-    source_type="calculated",
-    description="Campaign budget for mass mobilization (voting bloc build)",
-    display_name="Campaign Budget for Mass Mobilization",
-    unit="USD",
-    keywords=["140.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
-)  # billions USD, for bribing the masses (voting bloc build)
 
 TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
     800_000_000,
@@ -5219,433 +4651,6 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     latex=r"VotingBloc = 8.0B \times 0.035 = 280M",
     keywords=["280.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
 )  # 280M people = 3.5% of 8B (critical mass threshold)
-
-TREATY_CAMPAIGN_COST_PER_VOTE_MIN_USD = Parameter(
-    0.20,
-    source_ref="/knowledge/strategy/roadmap.qmd#vote-acquisition-cost",
-    source_type="calculated",
-    description="Minimum cost per vote for mass mobilization campaign",
-    display_name="Minimum Cost per Vote for Mass Mobilization Campaign",
-    unit="USD/vote",
-    keywords=["20%", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
-)  # USD per vote, minimum for mass bribery campaign
-
-TREATY_CAMPAIGN_COST_PER_VOTE_MAX_USD = Parameter(
-    0.50,
-    source_ref="/knowledge/strategy/roadmap.qmd#vote-acquisition-cost",
-    source_type="calculated",
-    description="Maximum cost per vote for mass mobilization campaign",
-    display_name="Maximum Cost per Vote for Mass Mobilization Campaign",
-    unit="USD/vote",
-    keywords=["50%", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"]
-)  # USD per vote, maximum for mass bribery campaign
-
-# Biometric Verification Costs (2024 market data)
-BIOMETRIC_VERIFICATION_COST_PER_USER_LOW_USD = Parameter(
-    0.15,
-    source_ref="kyc-biometric-verification-costs-2024",
-    source_type="external",
-    description="Biometric KYC verification cost at high volume (300M+ scale)",
-    display_name="Biometric KYC Verification Cost at High Volume (Low Estimate)",
-    unit="USD/verification",
-    confidence="high",
-    last_updated="2024",
-    keywords=["15%", "costs", "funding", "investment", "biometric", "verification", "user"]
-)  # $0.15-0.25 at scale, using low estimate with volume discounts
-
-BIOMETRIC_VERIFICATION_COST_PER_USER_HIGH_USD = Parameter(
-    0.25,
-    source_ref="kyc-biometric-verification-costs-2024",
-    source_type="external",
-    description="Biometric KYC verification cost at medium volume",
-    display_name="Biometric KYC Verification Cost at Medium Volume (High Estimate)",
-    unit="USD/verification",
-    confidence="high",
-    last_updated="2024",
-    keywords=["25%", "costs", "funding", "investment", "biometric", "verification", "user"]
-)  # $0.20-0.25 typical at 100M+ scale
-
-VERIFICATION_CONVERSION_RATE_GOOD_UX = Parameter(
-    0.85,
-    source_ref="fintech-identity-verification-conversion-2024",
-    source_type="external",
-    description="Identity verification completion rate with good UX (fintech data)",
-    display_name="Identity Verification Completion Rate with Good UX",
-    unit="rate",
-    confidence="high",
-    last_updated="2024",
-    keywords=["verification", "conversion", "rate", "good", "85%"]
-)  # 67-95% range, using 85% as achievable target
-
-VERIFICATION_CONVERSION_RATE_POOR_UX = Parameter(
-    0.50,
-    source_ref="fintech-identity-verification-conversion-2024",
-    source_type="external",
-    description="Identity verification completion rate with poor UX",
-    display_name="Identity Verification Completion Rate with Poor UX",
-    unit="rate",
-    confidence="medium",
-    last_updated="2024",
-    keywords=["verification", "conversion", "rate", "poor", "50%"]
-)  # 50%+ drop-off with friction-heavy systems
-
-PETITION_SIGNATURE_COST_PER_VERIFIED_2024 = Parameter(
-    14.87,
-    source_ref="ballot-measure-signature-costs-2024",
-    source_type="external",
-    description="Average cost per verified petition signature in 2024 US campaigns",
-    display_name="Average Cost per Verified Petition Signature in 2024 US Campaigns",
-    unit="USD/signature",
-    confidence="high",
-    last_updated="2024",
-    peer_reviewed=False,
-    keywords=["2024", "costs", "funding", "investment", "petition", "signature", "verified"]
-)  # $14.87 average in 2024 (up from $12.70 in 2022)
-
-# Realistic verified vote acquisition costs (including verification friction)
-TREATY_CAMPAIGN_COST_PER_VERIFIED_VOTE_REALISTIC_USD = Parameter(
-    0.64,
-    source_ref="/knowledge/economics/campaign-budget.qmd#verification-cost-analysis",
-    source_type="calculated",
-    description="Realistic all-in cost per verified vote (referral payment + verification cost + overhead)",
-    display_name="Realistic All-In Cost per Verified Vote",
-    unit="USD/verified_vote",
-    formula="REFERRAL_PAYMENT + VERIFICATION_COST + OVERHEAD",
-    confidence="high",
-    last_updated="2024",
-    keywords=["64%", "1%", "likely", "moderate", "probable", "one percent", "international agreement"]
-)  # $0.60-0.80 range, using midpoint based on 2024 market data
-
-TREATY_CAMPAIGN_VERIFICATION_ATTEMPTS_MULTIPLIER = Parameter(
-    1.18,
-    source_ref="/knowledge/economics/campaign-budget.qmd#verification-cost-analysis",
-    source_type="calculated",
-    description="Verification attempts multiplier (1 ÷ conversion rate, assuming 85% completion)",
-    display_name="Biometric Verification Attempts Multiplier",
-    unit="ratio",
-    formula="1 ÷ VERIFICATION_CONVERSION_RATE",
-    confidence="medium",
-    keywords=["1%", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple", "factor"]
-)  # 1 ÷ 0.85 = 1.18 (need 118 attempts for 100 verified votes)
-
-# Tiered Referral Payment Structure (Increasing Marginal Costs)
-# Based on diffusion of innovations theory: Early adopters are cheaper than laggards
-
-REFERRAL_PAYMENT_EARLY_ADOPTERS_USD = Parameter(
-    0.25,
-    source_ref="paypal-dropbox-referral-case-studies",
-    source_type="external",
-    description="Referral payment for early adopters (first 10M, motivated believers)",
-    display_name="Referral Payment for Early Adopters",
-    unit="USD/vote",
-    confidence="medium",
-    last_updated="2024",
-    keywords=["referral", "payment", "early", "adopters", "usd", "25%"]
-)  # Early adopters: motivated by belief, need minimal incentive
-
-REFERRAL_PAYMENT_MAINSTREAM_USD = Parameter(
-    0.50,
-    source_ref="paypal-dropbox-referral-case-studies",
-    source_type="external",
-    description="Referral payment for mainstream adopters (10-100M, pragmatists)",
-    display_name="Referral Payment for Mainstream Adopters",
-    unit="USD/vote",
-    confidence="medium",
-    last_updated="2024",
-    keywords=["referral", "payment", "mainstream", "usd", "50%"]
-)  # Early majority: need moderate incentive
-
-REFERRAL_PAYMENT_LATE_MAJORITY_USD = Parameter(
-    1.00,
-    source_ref="paypal-dropbox-referral-case-studies",
-    source_type="external",
-    description="Referral payment for late majority (100-200M, skeptics)",
-    display_name="Referral Payment for Late Majority",
-    unit="USD/vote",
-    confidence="medium",
-    last_updated="2024",
-    keywords=["referral", "payment", "late", "majority", "usd"]
-)  # Late majority: need strong incentive to overcome skepticism
-
-REFERRAL_PAYMENT_LAGGARDS_USD = Parameter(
-    2.00,
-    source_ref="paypal-dropbox-referral-case-studies",
-    source_type="external",
-    description="Referral payment for laggards (200-280M, resistant)",
-    display_name="Referral Payment for Laggards",
-    unit="USD/vote",
-    confidence="low",
-    last_updated="2024",
-    keywords=["referral", "payment", "laggards", "usd"]
-)  # Laggards: most expensive, resistant to change
-
-# Capital Structure: Foundation vs VICTORY Social Impact Bonds
-# Split campaign funding between nonprofit foundations (health R&D mission) and VICTORY bonds (political returns)
-
-# Foundation Funding Totals (Health R&D, Civic Infrastructure, Science)
-FOUNDATION_FUNDING_BASE_CASE = Parameter(
-    442_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="Nonprofit foundation funding in base case scenario (health R&D, civic infrastructure)",
-    display_name="Nonprofit Foundation Funding in Base Case Scenario",
-    unit="USD",
-    formula="BASE_CASE_TOTAL × 47%",
-    latex=r"Foundation_{base} = \$940M \times 47\% = \$442M",
-    confidence="high",
-    keywords=["442.0m", "capital", "finance", "money", "foundation", "base", "case"]
-)  # Foundations fund tech R&D, platforms, research (501c3 compliant, cannot lobby)
-
-FOUNDATION_FUNDING_REALISTIC = Parameter(
-    519_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="Nonprofit foundation funding in realistic scenario (health R&D, civic infrastructure)",
-    display_name="Nonprofit Foundation Funding in Realistic Scenario",
-    unit="USD",
-    formula="REALISTIC_TOTAL × 51%",
-    latex=r"Foundation_{realistic} = \$1,020M \times 51\% = \$519M",
-    confidence="high",
-    keywords=["519.0m", "capital", "finance", "money", "likely", "moderate", "probable"]
-)  # $519M: 90% of tech R&D + civic verification + health law research
-
-FOUNDATION_FUNDING_WORST_CASE = Parameter(
-    542_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="Nonprofit foundation funding in worst-case scenario (health R&D, civic infrastructure)",
-    display_name="Nonprofit Foundation Funding in Worst-Case Scenario",
-    unit="USD",
-    formula="WORST_CASE_TOTAL × 45%",
-    latex=r"Foundation_{worst} = \$1,206M \times 45\% = \$542M",
-    confidence="medium",
-    keywords=["542.0m", "capital", "finance", "money", "conservative", "foundation", "worst"]
-)  # Foundations maintain mission-aligned spending even in worst case
-
-# VICTORY Social Impact Bond Funding Totals (Political Mobilization, Lobbying)
-VICTORY_BOND_FUNDING_BASE_CASE = Parameter(
-    498_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="VICTORY Social Impact Bond funding in base case (political lobbying, mobilization)",
-    display_name="Victory Social Impact Bond Funding in Base Case",
-    unit="USD",
-    formula="BASE_CASE_TOTAL × 53%",
-    latex=r"VICTORY_{base} = \$940M \times 53\% = \$498M",
-    confidence="high",
-    keywords=["498.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"]
-)  # VICTORY funds political activities (lobbying, Super PACs, mobilization) - generates 287% returns
-
-VICTORY_BOND_FUNDING_REALISTIC = Parameter(
-    501_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="VICTORY Social Impact Bond funding in realistic scenario (political lobbying, mobilization)",
-    display_name="Victory Social Impact Bond Funding in Realistic Scenario",
-    unit="USD",
-    formula="REALISTIC_TOTAL × 49%",
-    latex=r"VICTORY_{realistic} = \$1,020M \times 49\% = \$501M",
-    confidence="high",
-    keywords=["501.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"]
-)  # $501M: 100% of lobbying + voter mobilization + political compliance
-
-VICTORY_BOND_FUNDING_WORST_CASE = Parameter(
-    664_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="VICTORY Social Impact Bond funding in worst-case scenario (political lobbying, mobilization)",
-    display_name="Victory Social Impact Bond Funding in Worst-Case Scenario",
-    unit="USD",
-    formula="WORST_CASE_TOTAL × 55%",
-    latex=r"VICTORY_{worst} = \$1,206M \times 55\% = \$664M",
-    confidence="medium",
-    keywords=["664.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"]
-)  # Worst case requires more political spend (higher mobilization costs, more lobbying)
-
-# Foundation Funding Percentage
-FOUNDATION_FUNDING_PERCENTAGE = Parameter(
-    0.51,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="Foundation funding as percentage of total campaign cost (realistic scenario)",
-    display_name="Foundation Funding as Percentage of Total Campaign Cost",
-    unit="percentage",
-    formula="FOUNDATION_REALISTIC ÷ TOTAL_REALISTIC",
-    latex=r"Foundation\% = \frac{\$519M}{\$1,020M} = 51\%",
-    confidence="high",
-    keywords=["51%", "capital", "finance", "money", "likely", "moderate", "probable"]
-)  # Foundations fund ~51% (health R&D mission-aligned)
-
-# VICTORY Bond Funding Percentage
-VICTORY_BOND_FUNDING_PERCENTAGE = Parameter(
-    0.49,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-two-funding-sources-two-missions",
-    source_type="calculated",
-    description="VICTORY bond funding as percentage of total campaign cost (realistic scenario)",
-    display_name="Victory Bond Funding as Percentage of Total Campaign Cost",
-    unit="percentage",
-    formula="VICTORY_REALISTIC ÷ TOTAL_REALISTIC",
-    latex=r"VICTORY\% = \frac{\$501M}{\$1,020M} = 49\%",
-    confidence="high",
-    keywords=["49%", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"]
-)  # VICTORY funds ~49% (political activities that generate 287% returns)
-
-# Component-Level Allocation (Realistic $1.02B Scenario)
-# Breakdown of each campaign component by funding source
-
-FOUNDATION_VIRAL_REFERENDUM_REALISTIC = Parameter(
-    77_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for viral referendum platform (biometric verification, civic infrastructure)",
-    display_name="Foundation Funding for Viral Referendum Platform (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["77.0m", "likely", "moderate", "probable", "expected", "foundation", "viral"]
-)  # Foundations fund verification infrastructure, not payment incentives
-
-VICTORY_VIRAL_REFERENDUM_REALISTIC = Parameter(
-    143_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for viral referendum (referral payments, political advertising)",
-    display_name="Victory Funding for Viral Referendum (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["143.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY funds voter mobilization payments and political ads
-
-FOUNDATION_LOBBYING_REALISTIC = Parameter(
-    0,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for political lobbying (zero due to 501c3 restrictions)",
-    display_name="Foundation Funding for Political Lobbying (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["likely", "moderate", "probable", "expected", "foundation", "lobbying", "realistic"]
-)  # Foundations CANNOT fund lobbying (IRS 501c3 restriction, <5% limit)
-
-VICTORY_LOBBYING_REALISTIC = Parameter(
-    250_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for political lobbying (US/EU/G20, Super PACs, opposition research)",
-    display_name="Victory Funding for Political Lobbying (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["250.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY funds 100% of lobbying (generates 287% returns)
-
-FOUNDATION_TECH_RD_REALISTIC = Parameter(
-    226_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for technology R&D (dFDA platform, Wishocracy, infrastructure)",
-    display_name="Foundation Funding for Technology R&D (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["226.0m", "pragmatic trials", "real world evidence", "likely", "moderate", "probable", "decentralized trials"]
-)  # Foundations fund 90% of tech R&D (core health mission)
-
-VICTORY_TECH_RD_REALISTIC = Parameter(
-    24_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for technology R&D (political campaign tools)",
-    display_name="Victory Funding for Technology R&D (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["24.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY funds political campaign tech tools
-
-FOUNDATION_LEGAL_COMPLIANCE_REALISTIC = Parameter(
-    53_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for legal/compliance (international health law research)",
-    display_name="Foundation Funding for Legal/Compliance (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["53.0m", "likely", "moderate", "probable", "investigation", "r&d", "science"]
-)  # Foundations fund health law research and scientific compliance
-
-VICTORY_LEGAL_COMPLIANCE_REALISTIC = Parameter(
-    47_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for legal/compliance (political campaign compliance)",
-    display_name="Victory Funding for Legal/Compliance (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["47.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY funds political campaign legal compliance
-
-FOUNDATION_PARTNERSHIPS_REALISTIC = Parameter(
-    29_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for partnerships (NGOs, patient advocacy, scientific institutions)",
-    display_name="Foundation Funding for Partnerships (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["29.0m", "enrollee", "likely", "moderate", "participant", "probable", "subject"]
-)  # Foundations fund scientific and civic partnerships
-
-VICTORY_PARTNERSHIPS_REALISTIC = Parameter(
-    71_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for partnerships (defense industry conversion, political coalitions)",
-    display_name="Victory Funding for Partnerships (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["71.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY funds defense conversion and political coalition building
-
-FOUNDATION_OPERATIONS_REALISTIC = Parameter(
-    20_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for operations (nonprofit R&D staff)",
-    display_name="Foundation Funding for Operations (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["20.0m", "likely", "moderate", "probable", "expected", "foundation", "operations"]
-)  # Foundations fund nonprofit operational staff
-
-VICTORY_OPERATIONS_REALISTIC = Parameter(
-    30_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for operations (political campaign staff)",
-    display_name="Victory Funding for Operations (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["30.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY funds political campaign staff
-
-FOUNDATION_RESERVE_REALISTIC = Parameter(
-    37_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="Foundation funding for reserve (nonprofit contingency)",
-    display_name="Foundation Funding for Reserve (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["37.0m", "likely", "moderate", "probable", "expected", "foundation", "reserve"]
-)  # Foundations provide larger reserve cushion
-
-VICTORY_RESERVE_REALISTIC = Parameter(
-    13_000_000,
-    source_ref="/knowledge/appendix/fundraising-strategy.qmd#detailed-allocation-by-component-realistic-102b-scenario",
-    source_type="calculated",
-    description="VICTORY funding for reserve (political campaign contingency)",
-    display_name="Victory Funding for Reserve (Realistic)",
-    unit="USD",
-    confidence="high",
-    keywords=["13.0m", "social impact bond", "sib", "impact investing", "pay for success", "likely", "moderate"]
-)  # VICTORY provides smaller reserve (all-or-nothing bet)
 
 # Clinical Trial Cost Examples & Comparisons
 TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K = Parameter(
@@ -5720,16 +4725,6 @@ SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
     unit="USD",
     keywords=["93k", "average person", "individual", "per person", "household benefit", "per individual", "typical individual"]
 )  # Thousands USD, Switzerland GDP per capita, for comparison
-
-LOBBYING_ROI_DEFENSE = Parameter(
-    1813,
-    source_ref=ReferenceID.MILITARY_LOBBYING_RETURNS,
-    source_type="external",
-    description="Return on investment for defense lobbying ($1,813 returned per $1 spent)",
-    display_name="Return on Investment for Defense Lobbying",
-    unit="ratio",
-    keywords=["2k", "bcr", "armed forces", "benefit cost ratio", "economic return", "investment return", "return on investment"]
-)  # Dollars returned per dollar spent lobbying defense, cited statistic
 
 WW2_BOND_RETURN_PCT = Parameter(
     0.04,
@@ -5824,56 +4819,6 @@ LOBBYIST_SALARY_MAX = Parameter(
     unit="USD",
     keywords=["2.0m", "yearly", "lobbyist", "max", "pa", "per annum", "per year"]
 )  # $2M maximum for top lobbyist salaries
-
-CAMPAIGN_WEEKLY_AD_COST_K = Parameter(
-    500_000,
-    source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
-    description="Weekly advertising cost for campaigns",
-    display_name="Weekly Advertising Cost for Campaigns",
-    unit="USD/week",
-    keywords=["500k", "costs", "funding", "investment", "weekly", "allocation", "campaign"]
-)  # $500K/week for campaign advertising
-
-SOFTWARE_TOOL_MONTHLY_COST_MIN = Parameter(
-    500,
-    source_ref="software-pricing-market-rates",
-    source_type="external",
-    description="Minimum monthly cost for software tools/services",
-    display_name="Minimum Monthly Cost for Software Tools/Services",
-    unit="USD/month",
-    keywords=["armed forces", "conflict", "costs", "funding", "investment", "software", "tool"]
-)  # $500/month minimum for software tools
-
-SOFTWARE_TOOL_MONTHLY_COST_MAX = Parameter(
-    2000,
-    source_ref="software-pricing-market-rates",
-    source_type="external",
-    description="Maximum monthly cost for software tools/services",
-    display_name="Maximum Monthly Cost for Software Tools/Services",
-    unit="USD/month",
-    keywords=["2k", "armed forces", "conflict", "costs", "funding", "investment", "software"]
-)  # $2,000/month maximum for software tools
-
-SOCIAL_MEDIA_PARTICIPANT_TARGET_MIN = Parameter(
-    500,
-    source_ref="/knowledge/strategy/viral-marketing.qmd",
-    source_type="calculated",
-    description="Minimum target participant count for social media campaigns",
-    display_name="Minimum Target Participant Count for Social Media Campaigns",
-    unit="participants",
-    keywords=["social", "media", "participant", "target", "min"]
-)  # 500 participants minimum
-
-SOCIAL_MEDIA_PARTICIPANT_TARGET_MAX = Parameter(
-    2000,
-    source_ref="/knowledge/strategy/viral-marketing.qmd",
-    source_type="calculated",
-    description="Maximum target participant count for social media campaigns",
-    display_name="Maximum Target Participant Count for Social Media Campaigns",
-    unit="participants",
-    keywords=["social", "media", "participant", "target", "max", "2k"]
-)  # 2,000 participants maximum
 
 # Specific benefit sum (used for the $147.1B figure in the "Where Math Breaks" section)
 # This sum is distinct from TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS which uses different categories for broader calculation.
@@ -7011,28 +5956,6 @@ if __name__ == "__main__":
     print(f"5% Treaty: {personal_lifetime_benefit_age_30_5pct_formatted}")
     print(f"10% Treaty: {personal_lifetime_benefit_age_30_10pct_formatted}")
 
-    # DEPRECATED: Improved and Endgame models test output removed
-    # Superseded by Disease Eradication Model (see below)
-
-
-# ---
-# CONSERVATIVE BASELINE PERSONAL LIFETIME WEALTH MODEL (ANTIBIOTIC PRECEDENT)
-# ---
-# This section uses antibiotic precedent as conservative baseline, with properly cited sources
-# NOTE: Fundamentally understates impact - see Disease Eradication Model for realistic estimates
-
-# Productivity loss from chronic illness
-# Source: ../references.qmd#chronic-illness-workforce-productivity-loss
-WORKFORCE_CHRONIC_ILLNESS_PREVALENCE = Parameter(
-    0.784,
-    source_ref="chronic-illness-workforce-productivity-loss",
-    source_type="external",
-    description="Workforce with at least one chronic condition (78.4%)",
-    display_name="Workforce with at Least One Chronic Condition",
-    unit="rate",
-    keywords=["workforce", "chronic", "illness", "prevalence", "78%"]
-)  # 78.4% have at least one chronic condition
-
 WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     0.28,
     source_ref="chronic-illness-workforce-productivity-loss",
@@ -7042,26 +5965,6 @@ WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     unit="rate",
     keywords=["workforce", "with", "productivity", "loss", "28%"]
 )  # 28% of all employees have productivity loss
-
-US_MEDIAN_SALARY = Parameter(
-    59384,
-    source_ref="us-median-salary-2024",
-    source_type="external",
-    description="US median salary in 2024",
-    display_name="US Median Salary in 2024",
-    unit="USD/year",
-    keywords=["59k", "50th percentile", "middle value", "middle", "midpoint", "typical", "median"]
-)  # 2024 median salary
-
-PRODUCTIVITY_LOSS_PER_AFFECTED_EMPLOYEE = Parameter(
-    4798,
-    source_ref=ReferenceID.CHRONIC_ILLNESS_WORKFORCE_PRODUCTIVITY_LOSS,
-    source_type="external",
-    description="Annual productivity loss per affected employee (IBI 2024)",
-    display_name="Annual Productivity Loss per Affected Employee",
-    unit="USD/year",
-    keywords=["5k", "yearly", "productivity", "loss", "affected", "employee", "pa"]
-)  # $/year, IBI 2024
 
 # For those WITH chronic conditions causing productivity loss:
 # If 28% of workforce loses $4,798/year, and 78.4% have chronic conditions
@@ -7079,26 +5982,6 @@ CAREGIVER_HOURS_PER_WEEK_AVG = Parameter(
     unit="hours/week",
     keywords=["caregiver", "hours", "week", "avg"]
 )  # 25-26 hours/week average
-
-CAREGIVER_HOURS_PER_MONTH_AVG = Parameter(
-    CAREGIVER_HOURS_PER_WEEK_AVG * 4.33,
-    source_type="calculated",
-    description="Average caregiver hours per month",
-    display_name="Average Caregiver Hours per Month",
-    unit="hours/month",
-    formula="HOURS_PER_WEEK × 4.33",
-    keywords=["caregiver", "hours", "month", "avg", "average"]
-)  # ~110 hours/month
-
-CAREGIVER_VALUE_PER_HOUR = Parameter(
-    16.59,
-    source_ref="unpaid-caregiver-hours-economic-value",
-    source_type="external",
-    description="AARP valuation of caregiving per hour",
-    display_name="AARP Valuation of Caregiving per Hour",
-    unit="USD/hour",
-    keywords=["caregiver", "value", "hour"]
-)  # $/hour AARP valuation
 
 CAREGIVER_ANNUAL_VALUE_TOTAL = Parameter(
     600e9,
@@ -7131,31 +6014,6 @@ DISEASE_RELATED_CAREGIVER_PCT = Parameter(
     unit="rate",
     keywords=["40%", "illness", "disease", "related", "caregiver", "pct", "ailment"]
 )
-
-# Life expectancy gains from medical advances
-# Source: ../references.qmd#life-expectancy-gains-medical-advances
-# Antibiotics alone: 5-23 years (taking conservative mid-point: 10 years)
-# Vaccines + hygiene + antibiotics: 35 years total (1900-2000)
-# Historical precedent: Major medical advance → 10 years life extension
-ANTIBIOTICS_LIFE_EXTENSION_YEARS = Parameter(
-    10,
-    source_ref="life-expectancy-gains-medical-advances",
-    source_type="external",
-    description="Life extension from antibiotics (conservative mid-range from 5-23 years)",
-    display_name="Life Extension from Antibiotics",
-    unit="years",
-    keywords=["low estimate", "cautious", "pessimistic", "worst case", "conservative", "underestimate", "antibiotics"]
-)  # Conservative mid-range estimate
-
-TOTAL_MEDICAL_ADVANCES_1900_2000 = Parameter(
-    35,
-    source_ref="life-expectancy-gains-medical-advances",
-    source_type="external",
-    description="Total life expectancy gain from all medical advances 1900-2000 (vaccines + hygiene + antibiotics)",
-    display_name="Total Life Expectancy Gain from All Medical Advances 1900-2000",
-    unit="years",
-    keywords=["1900", "2000", "life extension", "years of life", "life expectancy", "lifespan", "longevity"]
-)  # All advances combined
 
 
 def calculate_life_expectancy_gain_conservative_baseline(treaty_pct, conservative=True):
@@ -7463,120 +6321,7 @@ if __name__ == "__main__":
     print("- Healthcare by disease category (treatable/manageable/incurable)")
     print("- Conservative treatable portions (60% productivity, 40% caregiver)")
 
-
-# ---
-# RESEARCH ACCELERATION DISEASE ERADICATION MODEL
-# ---
-# This model properly accounts for 115x cumulative research acceleration
-# and models systematic disease eradication with real burden data
-
-# Disease burden data (CDC 2023/2024)
-# Source: CDC FastStats, Leading Causes of Death 2023
-# https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
-
-# Total deaths in 2023: 3,090,964
-# Death rates per 100,000:
-CARDIOVASCULAR_DEATH_RATE = Parameter(
-    162.1 + 39.0,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Cardiovascular disease death rate (heart disease + stroke)",
-    display_name="Cardiovascular Disease Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "illness", "mortality", "cardiovascular", "death"]
-)  # Heart disease + Stroke = 201.1
-
-CANCER_DEATH_RATE = Parameter(
-    146.6,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Cancer death rate (all cancers)",
-    display_name="Cancer Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "mortality", "cancer", "death", "loss of life"]
-)  # All cancers (2023 estimate)
-
-RESPIRATORY_DEATH_RATE = Parameter(
-    33.4,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Chronic respiratory disease death rate",
-    display_name="Chronic Respiratory Disease Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "illness", "mortality", "respiratory", "death"]
-)  # Chronic lower respiratory
-
-ALZHEIMERS_DEATH_RATE = Parameter(
-    27.7,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Alzheimer's disease death rate",
-    display_name="Alzheimer's Disease Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "illness", "mortality", "alzheimers", "death"]
-)
-
-DIABETES_DEATH_RATE = Parameter(
-    22.4,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Diabetes death rate",
-    display_name="Diabetes Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "mortality", "diabetes", "death", "loss of life"]
-)
-
-KIDNEY_DISEASE_DEATH_RATE = Parameter(
-    13.1,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Kidney disease death rate",
-    display_name="Kidney Disease Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "illness", "mortality", "kidney", "disease"]
-)
-
-LIVER_DISEASE_DEATH_RATE = Parameter(
-    13.0,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Liver disease death rate",
-    display_name="Liver Disease Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "illness", "mortality", "liver", "disease"]
-)
-
 INFECTIONS_DEATH_RATE = 15.0  # Estimate (flu, pneumonia, sepsis)
-
-ACCIDENTS_DEATH_RATE = Parameter(
-    62.3,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Accidental/unintentional injury death rate",
-    display_name="Accidental/Unintentional Injury Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "mortality", "accidents", "death", "loss of life"]
-)  # Unintentional injuries
-
-OTHER_DEATH_RATE = Parameter(
-    250.0,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Other causes death rate per 100,000 population",
-    display_name="Other Causes Death Rate",
-    unit="deaths per 100k",
-    keywords=["fatalities", "casualties", "deaths", "mortality", "death", "loss of life", "other"]
-)  # All other causes
-
-TOTAL_DEATH_RATE = Parameter(
-    722.0,
-    source_ref=ReferenceID.LEADING_CAUSES_OF_DEATH_BY_AGE_GROUP,
-    source_type="external",
-    description="Overall age-adjusted death rate",
-    display_name="Overall Age-Adjusted Death Rate",
-    unit="deaths per 100,000",
-    keywords=["fatalities", "casualties", "deaths", "mortality", "death", "loss of life", "casualty"]
-)  # Overall age-adjusted death rate 2024
 
 # Disease burden as percentage of total deaths
 DISEASE_BURDEN = {

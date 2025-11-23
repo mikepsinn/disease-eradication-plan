@@ -1921,7 +1921,7 @@
     ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
       #### The Efficacy Lag Problem
       #### How the dFDA Eliminates the Efficacy Lag
-      #### Quantified Benefits
+      #### Quantified Benefits (One-Time Timeline Shift)
       #### Gross R and D Savings from dFDA Implementation
       #### For detailed source citations, see
   ## dFDA ROI Analysis
