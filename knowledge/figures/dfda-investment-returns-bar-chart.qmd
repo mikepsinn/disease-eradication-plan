@@ -38,15 +38,18 @@ health_gains_optimistic = float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_L
 
 # Component values for equations
 
-conservative_deaths_annual = float(HISTORICAL_PROGRESS_DEATHS_ANNUAL) / 1e6  # Convert to millions
 conservative_deaths_total = float(HISTORICAL_PROGRESS_DEATHS_TOTAL) / 1e6
-primary_deaths_annual = float(DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL) / 1e6
 primary_deaths_total = float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL) / 1e6
-optimistic_deaths_annual = float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL) / 1e6
 optimistic_deaths_total = float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL) / 1e6
+
+# Calculate annual rates from totals for display
+lag_years = EFFICACY_LAG_YEARS
+conservative_deaths_annual = conservative_deaths_total / lag_years
+primary_deaths_annual = primary_deaths_total / lag_years
+optimistic_deaths_annual = optimistic_deaths_total / lag_years
+
 yll = GLOBAL_LIFE_EXPECTANCY_2024 - REGULATORY_DELAY_MEAN_AGE_OF_DEATH  # Years of life lost per death
 vsly = STANDARD_ECONOMIC_QALY_VALUE_USD / 1000  # Convert to thousands for display
-lag_years = EFFICACY_LAG_YEARS
 
 # Calculations
 

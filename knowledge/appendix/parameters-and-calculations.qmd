@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 422
+**Total parameters**: 397
 
 - External sources (peer-reviewed): 125
-- Calculated values: 250
+- Calculated values: 225
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -2218,23 +2218,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### QALY-Days Lost per Second of Inaction {#sec-cost_of_delay_qaly_days_per_second}
-
-**Value**: 0.0863
-
-QALY-days lost per second of inaction
-
-$$
-Delay_{QALY} = \frac{925,610 / 365}{31,557,600} \approx 0.00008
-$$
-
-**Methodology**: [../problem/cost-of-war#cost-of-delay](../problem/cost-of-war#cost-of-delay)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Current Completed Trials per Year {#sec-current_completed_trials_per_year}
 
 **Value**: 1,980
@@ -2328,23 +2311,6 @@ OPEX_{total} = \sum_{i=1}^{5} OPEX_i = 0.015 + 0.010 + 0.008 + 0.005 + 0.002
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Average Annual Economic Value During Efficacy Lag Period {#sec-dfda_avoided_regulatory_delay_cost_annual}
-
-**Value**: $149T
-
-Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.
-
-$$
-Value_{annual\_avg} = 993M \times \$150k = \$148.95T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
 
 *✓ High confidence*
 
@@ -2538,23 +2504,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Infrastructure ICER per QALY {#sec-dfda_icer_per_qaly}
-
-**Value**: $-42
-
-dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)
-
-$$
-\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{993M \text{ QALYs}} = -\$50.3 \text{ per QALY}
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#dfda-icer-analysis](../appendix/dfda-cost-benefit-analysis#dfda-icer-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Months to Recruit 10,000+ Patients in dFDA System {#sec-dfda_large_trial_recruitment_months}
 
 **Value**: 3
@@ -2575,23 +2524,6 @@ Months to recruit 10,000+ patients in dFDA system
 Large dFDA pragmatic trial size
 
 **Methodology**: [../appendix/research-acceleration-model#trial-sizes](../appendix/research-acceleration-model#trial-sizes)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Lives Saved by dFDA {#sec-dfda_lives_saved_annual}
-
-**Value**: 28.4M
-
-Annual lives saved by dFDA (QALYs ÷ QALYs per life)
-
-$$
-Lives_{dFDA} = 993M \div 35 = 28.4M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
 
 *✓ High confidence*
 
@@ -2652,23 +2584,6 @@ C_{op} = \$0.01895B + \$0.02110B = \$0.04005B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### NPV of Regulatory Delay Avoidance (Disease Eradication) {#sec-dfda_npv_benefit_delay_avoidance}
-
-**Value**: $790B
-
-NPV of regulatory delay avoidance (8.2-year timeline shift) assuming diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the delay brings them 8.2 years earlier (years 92-100). The full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value. This is realistic for many diseases that won't be cured for decades, but the 8-year shift means they arrive 8 years earlier.
-
-$$
-PV_{delay} = \sum_{t=92}^{100} \frac{Value_{annual}}{(1+r)^t}
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
 
 *✓ High confidence*
 
@@ -2838,57 +2753,6 @@ dFDA staff costs (minimal, AI-assisted)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Average Annual QALYs Gained from dFDA (During Efficacy Lag Period) {#sec-dfda_qalys_rd_plus_delay_annual}
-
-**Value**: 993M
-
-Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.
-
-$$
-QALYs_{annual\_avg} = (8.57B \times 0.95) \div 8.2 = 993M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Daily QALYs from dFDA Post-Safety Efficacy Delay Elimination {#sec-dfda_qalys_rd_plus_delay_daily}
-
-**Value**: 2.72M
-
-Daily QALYs from dFDA post-safety efficacy testing delay elimination (opportunity cost per day)
-
-$$
-QALYs_{daily} = 993M \div 365 = 2.72M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#expected-impact](../appendix/regulatory-mortality-analysis#expected-impact)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Monetized Value of dFDA QALYs (Post-Safety Efficacy Delay Elimination) {#sec-dfda_qalys_rd_plus_delay_monetized}
-
-**Value**: $149T
-
-Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (993M QALYs × $150k economic value)
-
-$$
-Value_{QALY} = 993M \times \$150,000 = \$148.95T
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### dFDA Annual Benefit: R&D Savings {#sec-dfda_rd_gross_savings_annual}
 
 **Value**: $41.5B
@@ -2917,23 +2781,6 @@ Savings_{daily} = \$41.5B \div 365 = \$113.7M
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction](../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Fraction of Regulatory Delay Eliminated by dFDA Provisional Access Post-Phase I {#sec-dfda_regulatory_delay_avoidance_fraction}
-
-**Value**: 95%
-
-Fraction of regulatory delay eliminated by dFDA provisional access post-Phase I
-
-$$
-Avoidance = 8.2 \div (8.2 + 2.3) \approx 0.78 \text{ (use 0.95 conservatively)}
-$$
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#regulatory-delay-avoidance](../appendix/dfda-cost-benefit-analysis#regulatory-delay-avoidance)
 
 *✓ High confidence*
 
@@ -3116,40 +2963,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Annual DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_annual_dalys}
-
-**Value**: 1.05B
-
-Annual DALYs lost from disease eradication delay (PRIMARY estimate)
-
-$$
-DALY_{annual} = 8.57B \div 8.2 = 1.05B
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Economic Loss from Disease Eradication Delay {#sec-disease_eradication_delay_annual_loss}
-
-**Value**: $157T
-
-Annual economic loss from disease eradication delay (PRIMARY estimate)
-
-$$
-Annual_{loss} = (8.57B \div 8.2) \times \$150k = \$157B/year
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_dalys}
 
 **Value**: 8.57B
@@ -3161,23 +2974,6 @@ DALY_{total} = 7.63B + 0.943B = 8.57B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_annual}
-
-**Value**: 54.8M
-
-Annual deaths from disease eradication delay (PRIMARY estimate). Represents perpetual annual opportunity cost of delaying disease eradication timeline by 8.2 years. Innovation cascade: eliminating Phase 2-4 costs ($2.6B→$350M) makes many more drugs economically viable (orphan diseases, prevention), accelerating progress toward disease eradication. Every year of delay extends the timeline, making this a perpetual annual cost equal to the global disease death rate that would be eliminated at eradication.
-
-$$
-D_{annual} = 150,000 \times 365 = 54.75M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
 
 *~ Medium confidence*
 
@@ -3252,31 +3048,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Annual Deaths from Disease Eradication + Acceleration {#sec-disease_eradication_plus_acceleration_deaths_annual}
-
-**Value**: 110M
-
-Annual deaths from disease eradication delay plus full innovation acceleration multiplier effects (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate (54.75M) plus additional acceleration from: (1) faster iteration cycles enabling exponential progress, (2) network effects from more researchers entering viable drug development, (3) compound benefits from earlier cures enabling further research. This represents maximum potential impact with full innovation cascade effects.
-
-$$
-D_{upper} = 54.75M \times 2 = 109.5M
-$$
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#acceleration-effects](../appendix/regulatory-mortality-analysis#acceleration-effects)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Disease Eradication + Innovation Acceleration {#sec-disease_eradication_plus_acceleration_deaths_total}
 
 **Value**: 898M
 
-Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024).
+Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.
 
 $$
-D_{total} = 109.5M \times 8.2 = 898M
+D_{total} = (150K \times 365 \times 2) \times 8.2 = 898M
 $$
 
 **Methodology**: [../references#pharmaceutical-innovation-acceleration-economics](../references#pharmaceutical-innovation-acceleration-economics)
@@ -3748,24 +3527,11 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Annual Deaths from Historical Progress Delays {#sec-historical_progress_deaths_annual}
-
-**Value**: 12M
-
-Annual deaths from delaying existing drugs based on historical progress (CONSERVATIVE FLOOR - no innovation assumptions). Counts only life-saving impact of drugs already approved 1962-2024, assuming therapeutic classes remain constant. Does NOT account for innovation cascade from lower costs making new drugs viable. This is the defensible minimum estimate assuming zero innovation effects from dFDA cost reduction.
-
-**Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Historical Progress Delays {#sec-historical_progress_deaths_total}
 
 **Value**: 98.4M
 
-Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024.
+Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.
 
 $$
 D_{total} = 12M \times 8.2 = 98.4M
@@ -3887,7 +3653,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Cost-Effectiveness Multiplier vs Givewell Top Charities {#sec-multiplier_vs_givewell}
 
-**Value**: 1.21e-06
+**Value**: 0
 
 Cost-effectiveness multiplier vs GiveWell top charities
 
@@ -4471,23 +4237,6 @@ Optimistic ICER from sensitivity analysis
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Central Scenario Lives Saved {#sec-sensitivity_lives_saved_central}
-
-**Value**: 28.4M
-
-Central scenario lives saved (total QALYs ÷ QALYs/life)
-
-$$
-Lives_{central} = 925,610 / 35 \approx 26,446
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#central-scenario](../appendix/1-percent-treaty-cost-effectiveness#central-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Conservative Net Benefit from Sensitivity Analysis {#sec-sensitivity_net_benefit_conservative}
 
 **Value**: $74.6B
@@ -4610,40 +4359,6 @@ Conservative total costs
 **Value**: $230M
 
 Optimistic total costs
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Total QALYs (Peace + dFDA) {#sec-sensitivity_total_qalys_conservative}
-
-**Value**: 993M
-
-Conservative total QALYs (peace + dFDA primary estimate)
-
-$$
-QALYs_{conservative} = 17,500 + 74,148,065 = 74,165,565
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Total QALYs (Peace + dFDA) {#sec-sensitivity_total_qalys_optimistic}
-
-**Value**: 993M
-
-Optimistic total QALYs (peace + dFDA primary estimate)
-
-$$
-QALYs_{optimistic} = 52,500 + 74,148,065 = 74,200,565
-$$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
 
@@ -5079,84 +4794,17 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Cost per Life for Investor-Funded Scenario (Treaty + dFDA) {#sec-treaty_dfda_cost_per_life_investor_funded}
+### Cost per DALY Averted (Timeline Shift) {#sec-treaty_dfda_cost_per_daly_timeline_shift}
 
-**Value**: $-7
+**Value**: $0
 
-Cost per life for investor-funded scenario - Treaty + dFDA system
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness#alternative-icer)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Cost per Life Counting Military Spending Opportunity Cost (Treaty + dFDA) {#sec-treaty_dfda_cost_per_life_opportunity_cost}
-
-**Value**: $-5
-
-Cost per life counting military spending opportunity cost - Treaty + dFDA system
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness#alternative-icer)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### ICER for Investor-Funded Scenario (Treaty + dFDA) {#sec-treaty_dfda_icer_investor_funded}
-
-**Value**: $-187K
-
-ICER for investor-funded scenario (VICTORY Social Impact Bonds) - Treaty + dFDA system
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness#alternative-icer)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### ICER Counting Redirected Military Spending as Opportunity Cost (Treaty + dFDA) {#sec-treaty_dfda_icer_opportunity_cost}
-
-**Value**: $-157K
-
-ICER counting redirected military spending as opportunity cost - Treaty + dFDA system
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#alternative-icer](../appendix/1-percent-treaty-cost-effectiveness#alternative-icer)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Incremental Cost-Effectiveness Ratio per QALY Gained (Treaty + dFDA) {#sec-treaty_dfda_icer_per_qaly}
-
-**Value**: $-156
-
-Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system
-
-*Formula*: `(TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL`
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#icer-calculation](../appendix/1-percent-treaty-cost-effectiveness#icer-calculation)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Net Benefit per Life Saved (Treaty + dFDA) {#sec-treaty_dfda_net_benefit_per_life_saved}
-
-**Value**: $-0
-
-Net benefit per life saved for combined 1% Treaty + dFDA system (ICER × QALYs/life)
+Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $7-27/DALY, deworming costs $4-10/DALY. This intervention is 60-230x more cost-effective than bed nets while also being self-funding.
 
 $$
-BenefitPerLife = -\$2{,}197 \times 35 = -\$76{,}895 \text{ per life}
+\text{Cost/DALY} = \frac{\$1.0B}{8.57B} = \$0.117
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#cost-per-life](../appendix/1-percent-treaty-cost-effectiveness#cost-per-life)
+**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
 
 *✓ High confidence*
 
@@ -5344,57 +4992,6 @@ Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Total Annual Lives Saved Equivalent {#sec-treaty_total_lives_saved_annual}
-
-**Value**: 28.4M
-
-Total annual lives saved equivalent (total QALYs ÷ QALYs/life)
-
-$$
-\frac{993{,}524{,}360 \text{ QALYs}}{35 \text{ QALYs/life}} = 28{,}386{,}410 \text{ lives}
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-lives](../appendix/1-percent-treaty-cost-effectiveness#total-lives)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Total Daily Lives Saved {#sec-treaty_total_lives_saved_daily}
-
-**Value**: 77,771
-
-Total daily lives saved (dFDA + peace dividend)
-
-$$
-Lives_{daily} = 2.12M \div 365 = 5,811
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-lives](../appendix/1-percent-treaty-cost-effectiveness#total-lives)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Total Annual QALYs Gained {#sec-treaty_total_qalys_gained_annual}
-
-**Value**: 994M
-
-Total annual QALYs gained (dFDA + peace dividend)
-
-$$
-QALYs_{total} = 993M + 85,610 = 993.09M
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-qalys](../appendix/1-percent-treaty-cost-effectiveness#total-qalys)
 
 *✓ High confidence*
 

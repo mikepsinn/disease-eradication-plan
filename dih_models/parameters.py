@@ -1563,46 +1563,11 @@ DISEASE_ERADICATION_DELAY_DEATHS_TOTAL = Parameter(
     keywords=["disease eradication", "regulatory delay", "efficacy lag", "primary estimate"]
 )  # 448.95M deaths (rounded to 449M)
 
-DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL = Parameter(
-    GLOBAL_DISEASE_DEATHS_DAILY * 365,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
-    source_type="calculated",
-    description="Annual deaths from disease eradication delay (PRIMARY estimate). Represents perpetual annual opportunity cost of delaying disease eradication timeline by 8.2 years. Innovation cascade: eliminating Phase 2-4 costs ($2.6B→$350M) makes many more drugs economically viable (orphan diseases, prevention), accelerating progress toward disease eradication. Every year of delay extends the timeline, making this a perpetual annual cost equal to the global disease death rate that would be eliminated at eradication.",
-    display_name="Annual Deaths from Disease Eradication Delay",
-    unit="deaths/year",
-    formula="DAILY_DEATHS × 365",
-    latex=r"D_{annual} = 150,000 \times 365 = 54.75M",
-    confidence="medium",
-    keywords=["54.75m", "annual", "disease eradication", "regulatory delay", "primary estimate", "innovation cascade", "perpetual cost"]
-)  # 54.75M deaths/year (PRIMARY)
-
-# Historical Progress Baseline (Conservative Floor)
-# Based on observed medical progress 1883-1960 and current life-saving drugs
-HISTORICAL_PROGRESS_DEATHS_ANNUAL = Parameter(
-    12_000_000,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
-    source_type="calculated",
-    description="Annual deaths from delaying existing drugs based on historical progress (CONSERVATIVE FLOOR - no innovation assumptions). Counts only life-saving impact of drugs already approved 1962-2024, assuming therapeutic classes remain constant. Does NOT account for innovation cascade from lower costs making new drugs viable. This is the defensible minimum estimate assuming zero innovation effects from dFDA cost reduction.",
-    display_name="Annual Deaths from Historical Progress Delays",
-    unit="deaths/year",
-    confidence="high",
-    keywords=["12m", "conservative", "historical", "existing drugs", "floor estimate", "no innovation", "minimum"]
-)  # 12M deaths/year from delayed existing drugs (conservative floor)
-
-# Disease Eradication + Acceleration (Optimistic Upper Bound)
-# Assumes dFDA eliminates delay AND accelerates innovation through lower costs/faster trials
-DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL = Parameter(
-    DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL * 2,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#acceleration-effects",
-    source_type="calculated",
-    description="Annual deaths from disease eradication delay plus full innovation acceleration multiplier effects (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate (54.75M) plus additional acceleration from: (1) faster iteration cycles enabling exponential progress, (2) network effects from more researchers entering viable drug development, (3) compound benefits from earlier cures enabling further research. This represents maximum potential impact with full innovation cascade effects.",
-    display_name="Annual Deaths from Disease Eradication + Acceleration",
-    unit="deaths/year",
-    formula="DISEASE_ERADICATION_ANNUAL × 2",
-    latex=r"D_{upper} = 54.75M \times 2 = 109.5M",
-    confidence="low",
-    keywords=["110m", "optimistic", "upper bound", "acceleration", "innovation effects", "maximum potential", "multiplier"]
-)  # 109.5M deaths/year (optimistic - includes acceleration effects)
+# DELETED: DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL, HISTORICAL_PROGRESS_DEATHS_ANNUAL,
+# and DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL
+# Reason: These "annual" parameters were confusing - they represented the annual rate during
+# a one-time 8.2-year timeline shift, NOT perpetual benefits. Replaced with TOTAL parameters
+# that show the complete one-time benefit from eliminating the efficacy lag.
 
 # Component values for DALY calculations
 REGULATORY_DELAY_MEAN_AGE_OF_DEATH = Parameter(
@@ -1708,46 +1673,19 @@ DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS = Parameter(
     keywords=["disease eradication", "economic loss", "deadweight loss", "primary estimate"]
 )  # $1.29 Trillion total economic loss
 
-DISEASE_ERADICATION_DELAY_ANNUAL_LOSS = Parameter(
-    (DISEASE_ERADICATION_DELAY_DALYS / EFFICACY_LAG_YEARS) * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
-    source_type="calculated",
-    description="Annual economic loss from disease eradication delay (PRIMARY estimate)",
-    display_name="Annual Economic Loss from Disease Eradication Delay",
-    unit="USD/year",
-    formula="(TOTAL_DALYS ÷ EFFICACY_LAG_YEARS) × VSLY",
-    latex=r"Annual_{loss} = (8.57B \div 8.2) \times \$150k = \$157B/year",
-    confidence="medium",
-    keywords=["disease eradication", "annual loss", "ongoing cost", "primary estimate"]
-)  # $157B/year ongoing cost
-
-# Annual DALYs from Disease Eradication Delay
-DISEASE_ERADICATION_DELAY_ANNUAL_DALYS = Parameter(
-    DISEASE_ERADICATION_DELAY_DALYS / EFFICACY_LAG_YEARS,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
-    source_type="calculated",
-    description="Annual DALYs lost from disease eradication delay (PRIMARY estimate)",
-    display_name="Annual DALYs Lost from Disease Eradication Delay",
-    unit="DALYs/year",
-    formula="TOTAL_DALYS ÷ EFFICACY_LAG_YEARS",
-    latex=r"DALY_{annual} = 8.57B \div 8.2 = 1.05B",
-    confidence="medium",
-    keywords=["disease eradication", "annual", "primary estimate"]
-)  # 1.05B DALYs/year (PRIMARY)
-
 # TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
 # These represent the complete, one-time benefit of eliminating the efficacy lag
 # NOT amortized annual values that could mislead by suggesting recurring benefits
 
 # Historical Progress - TOTAL (Conservative Floor)
 HISTORICAL_PROGRESS_DEATHS_TOTAL = Parameter(
-    HISTORICAL_PROGRESS_DEATHS_ANNUAL * EFFICACY_LAG_YEARS,
+    12_000_000 * EFFICACY_LAG_YEARS,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
     source_type="calculated",
-    description="Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024.",
+    description="Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.",
     display_name="Total Deaths from Historical Progress Delays",
     unit="deaths",
-    formula="ANNUAL_DEATHS × EFFICACY_LAG_YEARS",
+    formula="12M × EFFICACY_LAG_YEARS",
     latex=r"D_{total} = 12M \times 8.2 = 98.4M",
     confidence="high",
     keywords=["98.4m", "conservative", "historical", "total", "one-time", "floor estimate"]
@@ -1768,14 +1706,14 @@ HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL = Parameter(
 
 # Disease Eradication + Acceleration - TOTAL (Optimistic Upper Bound)
 DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL = Parameter(
-    DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL * EFFICACY_LAG_YEARS,
+    (GLOBAL_DISEASE_DEATHS_DAILY * 365 * 2) * EFFICACY_LAG_YEARS,
     source_ref="/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics",
     source_type="calculated",
-    description="Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024).",
+    description="Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.",
     display_name="Total Deaths from Disease Eradication + Innovation Acceleration",
     unit="deaths",
-    formula="ANNUAL_DEATHS × EFFICACY_LAG_YEARS",
-    latex=r"D_{total} = 109.5M \times 8.2 = 898M",
+    formula="(DAILY_DEATHS × 365 × 2) × EFFICACY_LAG_YEARS",
+    latex=r"D_{total} = (150K \times 365 \times 2) \times 8.2 = 898M",
     confidence="low",
     keywords=["898m", "optimistic", "total", "one-time", "upper bound", "acceleration", "innovation"]
 )  # 898M total deaths (optimistic with innovation acceleration)
@@ -1952,129 +1890,6 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"]
 )
 
-# ---
-# dFDA REGULATORY DELAY AVOIDANCE
-# ---
-# The dFDA eliminates the efficacy lag by providing post-Phase I access via trial participation
-
-DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION = Parameter(
-    0.95,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance",
-    source_type="calculated",
-    description="Fraction of regulatory delay eliminated by dFDA provisional access post-Phase I",
-    display_name="Fraction of Regulatory Delay Eliminated by dFDA Provisional Access Post-Phase I",
-    unit="rate",
-    formula="EFFICACY_LAG ÷ (EFFICACY_LAG + PHASE_I_DURATION)",
-    latex=r"Avoidance = 8.2 \div (8.2 + 2.3) \approx 0.78 \text{ (use 0.95 conservatively)}",
-    confidence="high",
-    keywords=["95%", "approval lag", "drug lag", "fda delay", "pragmatic trials", "real world evidence", "bureaucratic delay"]
-)  # dFDA eliminates ~95% of the 8.2-year efficacy lag
-
-# dFDA Disease Eradication Delay Avoidance (PRIMARY ESTIMATE)
-
-
-# ===================================================================
-# dFDA BENEFIT SCENARIOS (3-TIER STRUCTURE)
-# ===================================================================
-# Conservative: Historical Progress (12M deaths/year)
-# Moderate: Disease Eradication Delay (54.75M deaths/year, PRIMARY)
-# Optimistic: Disease Eradication + Acceleration (109.5M deaths/year)
-# ===================================================================
-
-# Historical Progress Scenario (CONSERVATIVE)
-
-
-# Disease Eradication Delay Scenario (PRIMARY)
-
-# Disease Eradication + Acceleration Scenario (OPTIMISTIC)
-
-# ==============================================================================
-# ONE-TIME TIMELINE SHIFT BENEFITS (NOT RECURRING!)
-# ==============================================================================
-#
-# CRITICAL: The parameters below represent a ONE-TIME 8.2-year timeline shift,
-# NOT recurring annual benefits that happen every year forever.
-#
-# WHAT THIS MEANS:
-# - Eliminating the 8.2-year efficacy lag shifts disease eradication 8.2 years EARLIER
-# - This saves 449M people TOTAL (not "54.75M saved per year, every year")
-# - The "_ANNUAL" suffix means "average per year DURING the 8.2-year shift"
-# - These are NOT perpetual benefits - they happen ONCE when dFDA launches
-#
-# ANALOGY: If you arrive 8.2 hours earlier, you don't keep arriving 1 hour
-# earlier every year forever. You arrived ONCE, 8.2 hours earlier.
-#
-# For recurring benefits (R&D savings, peace dividend), see section below.
-# ==============================================================================
-
-# PRIMARY ESTIMATE: Based on comprehensive regulatory delay elimination analysis
-# Calculated from TOTAL DALYs (8.57B) divided by the efficacy lag period (8.2 years)
-# See /knowledge/appendix/regulatory-mortality-analysis.qmd for methodology
-#
-# WARNING: Despite the "_ANNUAL" suffix, this is NOT a recurring benefit!
-# It represents the average annual impact during the ONE-TIME 8.2-year timeline shift.
-DFDA_QALYS_RD_PLUS_DELAY_ANNUAL = Parameter(
-    (DISEASE_ERADICATION_DELAY_DALYS * DFDA_REGULATORY_DELAY_AVOIDANCE_FRACTION) / EFFICACY_LAG_YEARS,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
-    source_type="calculated",
-    description="Average annual QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided by lag years). Note: This represents average annual impact during the 8.2-year timeline shift, not a recurring perpetual benefit.",
-    display_name="Average Annual QALYs Gained from dFDA (During Efficacy Lag Period)",
-    unit="QALYs/year",
-    formula="(TOTAL_DALYS × AVOIDANCE_FRACTION) ÷ EFFICACY_LAG_YEARS",
-    latex=r"QALYs_{annual\_avg} = (8.57B \times 0.95) \div 8.2 = 993M",
-    keywords=["993m", "average annual", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "approval lag", "drug lag"]
-)  # 993M QALYs/year average during lag period (PRIMARY)
-
-DFDA_QALYS_RD_PLUS_DELAY_DAILY = Parameter(
-    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL / 365,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
-    source_type="calculated",
-    description="Daily QALYs from dFDA post-safety efficacy testing delay elimination (opportunity cost per day)",
-    display_name="Daily QALYs from dFDA Post-Safety Efficacy Delay Elimination",
-    unit="QALYs/day",
-    formula="DFDA_QALYS_RD_PLUS_DELAY_ANNUAL ÷ 365",
-    latex=r"QALYs_{daily} = 993M \div 365 = 2.72M",
-    keywords=["2.72m", "daily", "per day", "each day", "opportunity cost", "delay cost", "post-safety", "efficacy testing"]
-)  # 2.72M QALYs/day (post-safety efficacy delay elimination)
-
-# Economic value of annual QALYs (for backward compatibility with deleted ANNUAL parameters)
-DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL = Parameter(
-    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
-    source_type="calculated",
-    description="Average annual economic value of QALYs gained during the 8.2-year efficacy lag period (for backward compatibility). Note: This is not a recurring perpetual benefit, but an average during the one-time timeline shift.",
-    display_name="Average Annual Economic Value During Efficacy Lag Period",
-    unit="USD/year",
-    formula="DFDA_QALYS_RD_PLUS_DELAY_ANNUAL × VSLY",
-    latex=r"Value_{annual\_avg} = 993M \times \$150k = \$148.95T",
-    keywords=["annual average", "economic value", "monetized", "efficacy lag", "148.95t"]
-)  # $148.95T/year average during lag period (backward compatibility alias)
-
-# Explicit lives saved calculations
-DFDA_LIVES_SAVED_ANNUAL = Parameter(
-    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact",
-    source_type="calculated",
-    description="Annual lives saved by dFDA (QALYs ÷ QALYs per life)",
-    display_name="Annual Lives Saved by dFDA",
-    unit="lives/year",
-    formula="DFDA_QALYS ÷ QALYS_PER_LIFE",
-    latex=r"Lives_{dFDA} = 993M \div 35 = 28.4M",
-    keywords=["28.4m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "regulatory delay"]
-)  # 28.4M lives/year
-
-DFDA_QALYS_RD_PLUS_DELAY_MONETIZED = Parameter(
-    (DFDA_QALYS_RD_PLUS_DELAY_ANNUAL * STANDARD_ECONOMIC_QALY_VALUE_USD),
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
-    source_type="calculated",
-    description="Monetized value of dFDA health benefits from post-safety efficacy testing delay elimination (993M QALYs × $150k economic value)",
-    display_name="Monetized Value of dFDA QALYs (Post-Safety Efficacy Delay Elimination)",
-    unit="USD/year",
-    formula="QALYS_RD_PLUS_DELAY × VALUE_PER_QALY",
-    latex=r"Value_{QALY} = 993M \times \$150,000 = \$148.95T",
-    keywords=["148.95t", "pragmatic trials", "real world evidence", "post-safety", "efficacy testing", "efficacy lag", "economic value", "recommended"]
-)  # $148.95T/year (recommended estimate: post-safety efficacy delay health benefits)
-
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * TREATY_REDUCTION_PCT,
@@ -2099,43 +1914,9 @@ TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
     keywords=["1%", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "deaths prevented"]
 )  # 85,610 QALYs
 
-# Combined health benefits
-TREATY_TOTAL_QALYS_GAINED_ANNUAL = Parameter(
-    DFDA_QALYS_RD_PLUS_DELAY_ANNUAL + TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys",
-    source_type="calculated",
-    description="Total annual QALYs gained (dFDA + peace dividend)",
-    display_name="Total Annual QALYs Gained",
-    unit="QALYs/year",
-    formula="DFDA_QALYS + PEACE_QALYS",
-    latex=r"QALYs_{total} = 993M + 85,610 = 993.09M",
-    keywords=["993m", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "regulatory delay"]
-)  # 993.09M QALYs
 
-TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
-    TREATY_TOTAL_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives",
-    source_type="calculated",
-    description="Total annual lives saved equivalent (total QALYs ÷ QALYs/life)",
-    display_name="Total Annual Lives Saved Equivalent",
-    unit="lives/year",
-    formula="TOTAL_QALYS ÷ QALYS_PER_LIFE",
-    latex=r"\frac{993{,}524{,}360 \text{ QALYs}}{35 \text{ QALYs/life}} = 28{,}386{,}410 \text{ lives}",
-    keywords=["1.55m", "cost effectiveness", "value for money", "disease burden", "deaths prevented", "life saving", "mortality reduction"]
-)  # 28.4M lives/year
-
-
-TREATY_TOTAL_LIVES_SAVED_DAILY = Parameter(
-    TREATY_TOTAL_LIVES_SAVED_ANNUAL / 365,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives",
-    source_type="calculated",
-    description="Total daily lives saved (dFDA + peace dividend)",
-    display_name="Total Daily Lives Saved",
-    unit="lives/day",
-    formula="ANNUAL_LIVES_SAVED ÷ 365",
-    latex=r"Lives_{daily} = 2.12M \div 365 = 5,811",
-    keywords=["5.8k", "daily", "per day", "each day", "deaths prevented", "life saving", "mortality reduction"]
-)  # 5,811 lives/day
+# DELETED: TREATY_TOTAL_LIVES_SAVED_DAILY
+# Was derived from deleted TREATY_TOTAL_LIVES_SAVED_ANNUAL (which mixed one-time + recurring)
 
 # ---
 # CAMPAIGN COSTS
@@ -2603,42 +2384,8 @@ TREATY_PEACE_PLUS_RD_NET_ANNUAL_BENEFIT = Parameter(
     latex=r"NetBenefit = \$163.55B - \$0.29B = \$163.26B",
     keywords=["1%", "one percent", "international agreement", "peace treaty", "yearly", "agreement", "pact"]
 )  # $163.71B
-
-# ICER calculation (Incremental Cost-Effectiveness Ratio)
-# Negative ICER means society SAVES money while gaining QALYs
-TREATY_DFDA_ICER_PER_QALY = Parameter(
-    (TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) / TREATY_TOTAL_QALYS_GAINED_ANNUAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation",
-    source_type="calculated",
-    description="Incremental Cost-Effectiveness Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system",
-    display_name="Incremental Cost-Effectiveness Ratio per QALY Gained (Treaty + dFDA)",
-    unit="USD/QALY",
-    formula="(TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS) × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
-)  # -$2,197 per QALY (negative = cost-saving)
-
-DFDA_ICER_PER_QALY = Parameter(
-    (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) / DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
-    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis",
-    source_type="calculated",
-    description="dFDA Infrastructure ICER per QALY (net incremental cost ÷ QALYs gained)",
-    display_name="dFDA Infrastructure ICER per QALY",
-    unit="USD/QALY",
-    formula="(DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ DFDA_QALYS_RD_PLUS_DELAY_ANNUAL",
-    latex=r"\text{ICER} = \frac{\text{Net Incremental Cost (Annual)}}{\text{QALYs Gained (Annual)}} = \frac{-\$49.96\text{B}}{993M \text{ QALYs}} = -\$50.3 \text{ per QALY}",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly"]
-)  # -$50.3 per QALY (updated with comprehensive regulatory delay elimination)
-TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED = Parameter(
-    (TREATY_DFDA_ICER_PER_QALY / 1_000_000) * STANDARD_QALYS_PER_LIFE_SAVED,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life",
-    source_type="calculated",
-    description="Net benefit per life saved for combined 1% Treaty + dFDA system (ICER × QALYs/life)",
-    display_name="Net Benefit per Life Saved (Treaty + dFDA)",
-    unit="USD/life",
-    formula="TREATY_DFDA_ICER ÷ 1M × QALYS_PER_LIFE",
-    latex=r"BenefitPerLife = -\$2{,}197 \times 35 = -\$76{,}895 \text{ per life}",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
-)  # Net benefit in millions per life
+# DELETED: TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED
+# Depended on deleted TREATY_DFDA_ICER_PER_QALY
 
 # ---
 # FINANCIAL PARAMETERS - NPV ANALYSIS
@@ -2827,22 +2574,9 @@ REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS = Parameter(
     keywords=["timeline", "far future", "discounting", "regulatory delay", "average time to cure"]
 )  # 100 years until cures (average)
 
-DFDA_NPV_BENEFIT_DELAY_AVOIDANCE = Parameter(
-    sum(
-        [
-            DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL / (1 + NPV_DISCOUNT_RATE_STANDARD) ** (REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS - EFFICACY_LAG_YEARS + year - 1)
-            for year in range(1, int(EFFICACY_LAG_YEARS) + 1)
-        ]
-    ),
-    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
-    source_type="calculated",
-    description="NPV of regulatory delay avoidance (8.2-year timeline shift) assuming diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the delay brings them 8.2 years earlier (years 92-100). The full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value. This is realistic for many diseases that won't be cured for decades, but the 8-year shift means they arrive 8 years earlier.",
-    display_name="NPV of Regulatory Delay Avoidance (Disease Eradication)",
-    unit="USD",
-    formula=f"Sum of discounted annual delay avoidance benefits occurring at years {REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS - EFFICACY_LAG_YEARS:.0f}-{REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS:.0f}",
-    latex=r"PV_{delay} = \sum_{t=92}^{100} \frac{Value_{annual}}{(1+r)^t}",
-    keywords=["regulatory delay", "delay avoidance", "disease eradication", "far future", "npv", "discounting", "timeline shift"]
-)  # NPV of regulatory delay avoidance (far-future benefits, years 92-100)
+# DELETED: DFDA_NPV_BENEFIT_DELAY_AVOIDANCE
+# Depended on deleted DFDA_QALYS_RD_PLUS_DELAY_MONETIZED
+# NPV calculations for timeline shift benefits are conceptually problematic anyway
 
 # ---
 # ROI TIERS
@@ -2915,7 +2649,7 @@ ROI_DISCOUNT_7PCT = Parameter(
 )
 
 # NOTE: ROI hierarchy with regulatory delay avoidance is defined after
-# DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL (see line ~3000)
+# DFDA_QALYS_RD_PLUS_DELAY_MONETIZED (see line ~2047)
 # - DFDA_ROI_RD_ONLY (463:1): R&D savings only (NPV-adjusted)
 # - DFDA_ROI_RD_PLUS_DELAY (6,489:1): RECOMMENDED - includes regulatory delay elimination
 # - DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1): Full impact including innovation loss
@@ -3348,7 +3082,8 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
 
 # Cost-effectiveness multiplier
 MULTIPLIER_VS_GIVEWELL = Parameter(
-    abs(TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED) / GIVEWELL_COST_PER_LIFE_AVG,
+    # DELETED: Was using TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED which is deleted
+    0,  # Placeholder - parameter needs recalculation with different methodology
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison",
     source_type="calculated",
     description="Cost-effectiveness multiplier vs GiveWell top charities",
@@ -3612,24 +3347,6 @@ OPPORTUNITY_COST_PER_SECOND = Parameter(
     keywords=["opportunity cost", "delay cost", "per second", "efficacy lag", "regulatory delay"]
 )  # ~$5M/second during efficacy lag period
 
-# ---
-# COST OF DELAY PARAMETERS
-# ---
-
-# Source: brain/book/economics.qmd
-# QALY delay costs (quality-adjusted life days lost per second of inaction)
-COST_OF_DELAY_QALY_DAYS_PER_SECOND = Parameter(
-    (TREATY_TOTAL_QALYS_GAINED_ANNUAL / 365) / (365.25 * 24 * 60 * 60),
-    source_ref="/knowledge/problem/cost-of-war.qmd#cost-of-delay",
-    source_type="calculated",
-    description="QALY-days lost per second of inaction",
-    display_name="QALY-Days Lost per Second of Inaction",
-    unit="QALY-days/second",
-    formula="(QALYS_ANNUAL ÷ 365) ÷ SECONDS_PER_YEAR",
-    latex=r"Delay_{QALY} = \frac{925,610 / 365}{31,557,600} \approx 0.00008",
-    keywords=["cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "gbd", "qaly"]
-)  # QALY days per second
-
 # Deaths delay costs (preventable deaths per second from curable diseases)
 COST_OF_DELAY_DEATHS_PER_SECOND = Parameter(
     GLOBAL_DAILY_DEATHS_CURABLE_DISEASES / (24 * 60 * 60),
@@ -3817,17 +3534,6 @@ SENSITIVITY_PEACE_QALYS_CONSERVATIVE = Parameter(
     unit="QALYs/year",
     keywords=["18k", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "gbd"]
 )  # 500 lives × 35 QALYs/life
-SENSITIVITY_TOTAL_QALYS_CONSERVATIVE = Parameter(
-    SENSITIVITY_PEACE_QALYS_CONSERVATIVE + DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative total QALYs (peace + dFDA primary estimate)",
-    display_name="Conservative Total QALYs (Peace + dFDA)",
-    unit="QALYs/year",
-    formula="PEACE_QALYS + DFDA_QALYS_PRIMARY",
-    latex=r"QALYs_{conservative} = 17,500 + 74,148,065 = 74,165,565",
-    keywords=["cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly", "cost per qaly"]
-)  # Total QALYs (peace + dFDA primary regulatory delay elimination estimate)
 SENSITIVITY_NET_BENEFIT_CONSERVATIVE = Parameter(
     74_600_000_000,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
@@ -3878,17 +3584,6 @@ SENSITIVITY_COST_PER_LIFE_CENTRAL = Parameter(
     unit="USD/life",
     keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "life", "allocation"]
 )  # -$6.55M per life (in millions)
-SENSITIVITY_LIVES_SAVED_CENTRAL = Parameter(
-    TREATY_TOTAL_QALYS_GAINED_ANNUAL / STANDARD_QALYS_PER_LIFE_SAVED,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario",
-    source_type="calculated",
-    description="Central scenario lives saved (total QALYs ÷ QALYs/life)",
-    display_name="Central Scenario Lives Saved",
-    unit="lives/year",
-    formula="TOTAL_QALYS ÷ QALYS_PER_LIFE",
-    latex=r"Lives_{central} = 925,610 / 35 \approx 26,446",
-    keywords=["cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "deaths prevented", "life saving"]
-)  # 25,000
 
 # Optimistic scenario
 SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC = Parameter(
@@ -3960,17 +3655,6 @@ SENSITIVITY_PEACE_QALYS_OPTIMISTIC = Parameter(
     unit="QALYs/year",
     keywords=["52k", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "high estimate"]
 )  # 1,500 lives × 35 QALYs/life
-SENSITIVITY_TOTAL_QALYS_OPTIMISTIC = Parameter(
-    SENSITIVITY_PEACE_QALYS_OPTIMISTIC + DFDA_QALYS_RD_PLUS_DELAY_ANNUAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic total QALYs (peace + dFDA primary estimate)",
-    display_name="Optimistic Total QALYs (Peace + dFDA)",
-    unit="QALYs/year",
-    formula="PEACE_QALYS + DFDA_QALYS_PRIMARY",
-    latex=r"QALYs_{optimistic} = 52,500 + 74,148,065 = 74,200,565",
-    keywords=["cost effectiveness", "value for money", "disease burden", "pragmatic trials", "real world evidence", "cost per daly", "cost per qaly"]
-)  # Total QALYs (peace + dFDA primary regulatory delay elimination estimate)
 
 SENSITIVITY_NET_BENEFIT_OPTIMISTIC = Parameter(
     294_800_000_000,
@@ -4104,51 +3788,25 @@ TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE = Parameter(
 
 
 
-# Alternative ICER calculations based on funding perspective
-# Source: icer-full-calculation.qmd alternative ICER table
-TREATY_DFDA_ICER_INVESTOR_FUNDED = Parameter(
-    -187429,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
+# Cost per DALY - Primary cost-effectiveness metric
+# Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a
+# cost-dominant intervention that saves money while improving health. Traditional ICER
+# is designed for interventions that cost money, not those that generate net economic surplus.
+# Instead, we calculate cost per DALY using only the campaign cost, which understates the
+# value since it ignores the $77B/year in economic benefits (R&D savings + peace dividend).
+
+TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
+    TREATY_CAMPAIGN_TOTAL_COST / DISEASE_ERADICATION_DELAY_DALYS,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
     source_type="calculated",
-    description="ICER for investor-funded scenario (VICTORY Social Impact Bonds) - Treaty + dFDA system",
-    display_name="ICER for Investor-Funded Scenario (Treaty + dFDA)",
-    unit="USD/QALY",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "impact investing", "pay for success", "cost per daly"]
-)  # -$187,429 (campaign funded by VICTORY Social Impact Bonds, cost = $0)
-
-TREATY_DFDA_ICER_OPPORTUNITY_COST = Parameter(
-    -156571,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
-    source_type="calculated",
-    description="ICER counting redirected military spending as opportunity cost - Treaty + dFDA system",
-    display_name="ICER Counting Redirected Military Spending as Opportunity Cost (Treaty + dFDA)",
-    unit="USD/QALY",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "dod", "pentagon", "disease burden", "cost per daly"]
-)  # -$156,571 (counts $27B redirected military spending)
-
-TREATY_DFDA_ICER_WASTE_CONVERSION = None  # Undefined (military spending has negative ROI)
-
-TREATY_DFDA_COST_PER_LIFE_INVESTOR_FUNDED = Parameter(
-    -6.56,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
-    source_type="calculated",
-    description="Cost per life for investor-funded scenario - Treaty + dFDA system",
-    display_name="Cost per Life for Investor-Funded Scenario (Treaty + dFDA)",
-    unit="USD/life",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "cost per qaly", "cost per daly", "incremental cost effectiveness ratio", "efficiency"]
-)  # -$6.56M
-
-TREATY_DFDA_COST_PER_LIFE_OPPORTUNITY_COST = Parameter(
-    -5.48,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer",
-    source_type="calculated",
-    description="Cost per life counting military spending opportunity cost - Treaty + dFDA system",
-    display_name="Cost per Life Counting Military Spending Opportunity Cost (Treaty + dFDA)",
-    unit="USD/life",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "dod", "pentagon", "cost per qaly", "cost per daly"]
-)  # -$5.48M
-
-TREATY_DFDA_COST_PER_LIFE_WASTE_CONVERSION = None  # Undefined
+    description="Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $7-27/DALY, deworming costs $4-10/DALY. This intervention is 60-230x more cost-effective than bed nets while also being self-funding.",
+    display_name="Cost per DALY Averted (Timeline Shift)",
+    unit="USD/DALY",
+    formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
+    latex=r"\text{Cost/DALY} = \frac{\$1.0B}{8.57B} = \$0.117",
+    confidence="high",
+    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"]
+)  # $0.117 per DALY (60-230x better than bed nets, while being self-funding)
 
 # ---
 # HELPER FUNCTIONS
@@ -4810,9 +4468,9 @@ combined_peace_health_dividends_annual_for_roi_calc_formatted = format_parameter
 )
 treaty_conservative_scenario_roi_formatted = format_roi(TREATY_CONSERVATIVE_SCENARIO_ROI)
 cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.3f}"
-cost_of_delay_qaly_days_per_second_formatted = f"{COST_OF_DELAY_QALY_DAYS_PER_SECOND:.1f}"
-cost_per_life_investor_funded_formatted = f"${TREATY_DFDA_COST_PER_LIFE_INVESTOR_FUNDED:.2f}M"
-cost_per_life_opportunity_cost_formatted = f"${TREATY_DFDA_COST_PER_LIFE_OPPORTUNITY_COST:.2f}M"
+# DELETED: cost_of_delay_qaly_days_per_second_formatted - parameter was deleted
+# DELETED: cost_per_life_investor_funded_formatted - parameter was deleted
+# DELETED: cost_per_life_opportunity_cost_formatted - parameter was deleted
 daily_cost_inefficiency_formatted = format_parameter_value(DAILY_COST_INEFFICIENCY)
 death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
 deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
@@ -4858,22 +4516,22 @@ global_annual_war_direct_costs_total_formatted = format_parameter_value(GLOBAL_A
 global_annual_war_indirect_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)
 global_annual_war_total_cost_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)
 global_daily_deaths_curable_diseases_formatted = f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"
-global_dfda_qalys_gained_annual_formatted = format_qalys(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL)
+# DELETED: global_dfda_qalys_gained_annual_formatted - parameter was deleted
 global_med_research_spending_formatted = format_parameter_value(GLOBAL_MED_RESEARCH_SPENDING)
 global_military_spending_annual_2024_formatted = format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
 global_military_spending_post_treaty_annual_2024_formatted = format_parameter_value(
     GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024
 )
 global_population_activism_threshold_pct_formatted = format_percentage(GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT)
-icer_investor_funded_formatted = f"${TREATY_DFDA_ICER_INVESTOR_FUNDED:,.0f}"
-icer_opportunity_cost_formatted = f"${TREATY_DFDA_ICER_OPPORTUNITY_COST:,.0f}"
-icer_per_qaly_formatted = f"${TREATY_DFDA_ICER_PER_QALY:,.0f}"
+# DELETED: icer_investor_funded_formatted - parameter was deleted
+# DELETED: icer_opportunity_cost_formatted - parameter was deleted
+# DELETED: icer_per_qaly_formatted - parameter was deleted
 lobbyist_bond_investment_max_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MAX)
 lobbyist_bond_investment_min_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MIN)
 lobbyist_salary_typical_k_formatted = format_parameter_value(LOBBYIST_SALARY_TYPICAL_K)
 military_vs_medical_research_ratio_formatted = f"{MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}"
 multiplier_vs_givewell_formatted = f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"
-net_benefit_per_life_saved_formatted = format_parameter_value(abs(TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED))
+# DELETED: net_benefit_per_life_saved_formatted - parameter was deleted
 treaty_optimistic_scenario_roi_formatted = format_roi(TREATY_OPTIMISTIC_SCENARIO_ROI)
 peace_dividend_annual_societal_benefit_formatted = format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
 post_ww2_military_cut_pct_formatted = format_percentage(POST_WW2_MILITARY_CUT_PCT)
@@ -4894,7 +4552,7 @@ sensitivity_dfda_savings_optimistic_formatted = format_parameter_value(SENSITIVI
 sensitivity_icer_central_formatted = f"${SENSITIVITY_ICER_CENTRAL:,.0f}"
 sensitivity_icer_conservative_formatted = f"${SENSITIVITY_ICER_CONSERVATIVE:,.0f}"
 sensitivity_icer_optimistic_formatted = f"${SENSITIVITY_ICER_OPTIMISTIC:,.0f}"
-sensitivity_lives_saved_central_formatted = f"{SENSITIVITY_LIVES_SAVED_CENTRAL:,.0f}"
+# DELETED: sensitivity_lives_saved_central_formatted - parameter was deleted
 sensitivity_net_benefit_conservative_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)
 sensitivity_net_benefit_optimistic_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)
 sensitivity_peace_dividend_conservative_formatted = format_parameter_value(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)
@@ -4905,8 +4563,8 @@ sensitivity_total_benefits_conservative_formatted = format_parameter_value(SENSI
 sensitivity_total_benefits_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)
 sensitivity_total_costs_conservative_formatted = format_parameter_value(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)
 sensitivity_total_costs_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)
-sensitivity_total_qalys_conservative_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_CONSERVATIVE)
-sensitivity_total_qalys_optimistic_formatted = format_qalys(SENSITIVITY_TOTAL_QALYS_OPTIMISTIC)
+# DELETED: sensitivity_total_qalys_conservative_formatted - parameter was deleted
+# DELETED: sensitivity_total_qalys_optimistic_formatted - parameter was deleted
 smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
 switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFENSE_SPENDING_PCT)
 switzerland_gdp_per_capita_k_formatted = format_parameter_value(SWITZERLAND_GDP_PER_CAPITA_K)
@@ -4928,7 +4586,7 @@ treaty_qalys_gained_annual_global_formatted = format_qalys(TREATY_QALYS_GAINED_A
 treaty_reduction_pct_formatted = format_percentage(TREATY_REDUCTION_PCT)
 treaty_total_annual_benefits_formatted = format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)
 treaty_total_annual_costs_formatted = format_parameter_value(TREATY_TOTAL_ANNUAL_COSTS)
-treaty_total_qalys_gained_annual_formatted = format_qalys(TREATY_TOTAL_QALYS_GAINED_ANNUAL)
+# DELETED: treaty_total_qalys_gained_annual_formatted - parameter was deleted
 trial_cost_reduction_pct_formatted = format_percentage(TRIAL_COST_REDUCTION_PCT)
 victory_bond_annual_payout_formatted = format_parameter_value(VICTORY_BOND_ANNUAL_PAYOUT)
 victory_bond_annual_return_pct_formatted = format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)

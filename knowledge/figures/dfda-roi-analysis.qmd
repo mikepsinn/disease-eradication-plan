@@ -29,9 +29,9 @@ sns.set_palette("husl")
 metrics = {
     'ROI Ratio': float(TREATY_COMPLETE_ROI_ALL_BENEFITS),  # PRIMARY: Complete benefits including disease eradication delay
     'Annual R&D Savings (Billions)': float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 1_000_000_000,
-    'Annual QALYs Generated': float(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL),
+    'Total DALYs from Timeline Shift (Billions)': float(DISEASE_ERADICATION_DELAY_DALYS) / 1_000_000_000,
     'Daily Opportunity Cost (Millions)': float(DFDA_RD_GROSS_SAVINGS_ANNUAL) / 365 / 1_000_000,
-    'ICER per QALY': float(DFDA_ICER_PER_QALY),
+    'Cost per DALY ($)': float(TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT),
     'Per-Patient Cost Reduction': float(TRADITIONAL_PHASE3_COST_PER_PATIENT) / float(RECOVERY_TRIAL_COST_PER_PATIENT),
     'Platform Annual Cost (Millions)': float(DFDA_ANNUAL_OPEX) / 1_000_000
 }
@@ -386,7 +386,7 @@ This file contains reusable chart components for the dFDA economic analysis. To 
 ### Key Data Sources
 
 - **ROI Calculation**: Based on annual cost generating R&D savings and regulatory delay elimination benefits
-- **QALY Impact**: {{< var dfda_qalys_rd_plus_delay_annual >}} annual QALYs from eliminating 7.2-year regulatory efficacy lag
+- **QALY Impact**: {{< var disease_eradication_delay_dalys >}}B DALYs from eliminating regulatory efficacy lag (based on Regulatory Mortality Analysis methodology)
 - **Cost Reductions**: 80-160x per-patient cost reduction vs traditional trials
 - **Daily Opportunity Cost**: $137M economic + 203,145 QALYs lost daily
 

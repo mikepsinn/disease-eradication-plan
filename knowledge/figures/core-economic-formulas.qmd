@@ -137,24 +137,24 @@ print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ```{python}
 #| echo: true
 def calculate_qaly_value(
-    qalys_generated: int = int(DFDA_QALYS_RD_PLUS_DELAY_ANNUAL),
+    qalys_generated: int = int(DISEASE_ERADICATION_DELAY_DALYS),
     value_per_qaly: float = QALY_VALUE
 ) -> Dict[str, float]:
     """
-    Calculate economic value of QALYs generated.
-    Based on regulatory delay elimination methodology (7.2-year efficacy lag).
+    Calculate economic value of DALYs averted from one-time timeline shift.
+    Based on regulatory delay elimination methodology (efficacy lag elimination).
     """
     total_value = qalys_generated * value_per_qaly
 
-    # ICER calculation (negative = cost-saving)
-    icer = int(DFDA_ICER_PER_QALY)
+    # Cost per DALY (for cost-dominant intervention)
+    cost_per_daly = float(TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT)
 
     return {
-        'total_qalys': qalys_generated,
+        'total_dalys': qalys_generated,
         'total_value': total_value,
-        'value_per_qaly': value_per_qaly,
-        'icer': icer,
-        'daily_qalys': qalys_generated / 365
+        'value_per_daly': value_per_qaly,
+        'cost_per_daly': cost_per_daly,
+        'total_timeline_shift_years': float(EFFICACY_LAG_YEARS)
     }
 
 qaly_value = calculate_qaly_value()

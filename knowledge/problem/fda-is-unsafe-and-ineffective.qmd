@@ -426,7 +426,7 @@ $$
 **{{< var disease_eradication_delay_dalys >}} billion years of healthy human life** deleted by the regulatory framework.
 
 - **Economic cost:** {{< var disease_eradication_delay_economic_loss >}} (2024 USD)
-- **Annualized loss:** {{< var disease_eradication_delay_annual_loss >}}/year
+- **Annualized loss:** {{< var disease_eradication_delay_economic_loss >}}/year ({{< var disease_eradication_delay_economic_loss >}} ÷ 62 years from 1962-2024)
 - **GDP equivalent:** ~8-12% of global GDP consumed annually
 
 For comparison: The entire global pharmaceutical R&D budget is ~$200B/year. The post-safety efficacy lag costs **38× more** than all drug development spending combined.

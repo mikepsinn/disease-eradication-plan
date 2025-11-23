@@ -58,7 +58,7 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var dfda_qalys_rd_plus_delay_daily >}}** lost to delayed treatments.
+Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var disease_eradication_delay_dalys >}}B DALYs total** lost to delayed treatments ({{< var disease_eradication_delay_dalys >}}B ÷ 62 years = ~54.75M DALYs annually).
 
 **For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](../appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction).
 
@@ -100,7 +100,7 @@ $40M to save $50 billion.
 
 This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally. But humans are still debating whether saving $50 billion is worth $40 million, which is like debating whether picking up a hundred-dollar bill is worth bending over.
 
-Every day you wait costs {{< var dfda_rd_savings_daily >}} and {{< var dfda_qalys_rd_plus_delay_daily >}}. But at least the paperwork is properly filed.
+Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency and delays treatment for millions. But at least the paperwork is properly filed.
 
 ## Further Reading
 
@@ -109,8 +109,7 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} and {{< var dfda_qaly
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - Complete economic analysis with all components
 - [Interactive Financial Modeling & Computational Analysis](../appendix/dfda-cost-benefit-analysis.qmd#interactive-financial-modeling--computational-analysis) - Interactive NPV/ROI calculator
 - [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for {{< var dfda_qalys_rd_plus_delay_annual >}} annual QALYs (post-safety efficacy lag elimination)
-- [Bottom-Up QALY Model](../appendix/dfda-qaly-model.qmd) - Historical component-based methodology (840k QALYs)
+- [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) - Primary methodology for disease eradication delay burden {{< var disease_eradication_delay_dalys >}}B DALYs (post-safety efficacy lag elimination)
 
 #### Key Sources
 

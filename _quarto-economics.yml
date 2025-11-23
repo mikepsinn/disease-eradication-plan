@@ -50,7 +50,6 @@ project:
     - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/intervention-comparison-table.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/data-storage-costs.qmd # ✓ Style reviewed 2025-01-15
-    - knowledge/appendix/dfda-qaly-model.qmd # ✓ Style reviewed 2025-01-15
     # Additional Documentation
     - knowledge/appendix/investor-risk-analysis.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/faq.qmd
@@ -128,7 +127,6 @@ website:
             text: "Cost-Effectiveness Analysis"
           - href: knowledge/appendix/dfda-cost-benefit-analysis.qmd
             text: "dFDA Cost-Benefit Framework"
-          - href: knowledge/appendix/dfda-qaly-model.qmd
             text: "QALY Model & Health Outcomes"
           - href: knowledge/appendix/economic-value-of-accelerated-treatments.qmd
             text: "Value of Accelerated Drug Development"

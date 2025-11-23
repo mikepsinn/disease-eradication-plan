@@ -1,6 +1,6 @@
 ---
 title: 1% Treaty Cost-Effectiveness
-description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this saves society {{< var treaty_dfda_net_benefit_per_life_saved >}} per life saved
+description: 1% Treaty + DIH + dFDA - Step-by-step calculation showing why this is a dominant intervention with massive economic benefits
 published: true
 tags:
   - icer
@@ -18,11 +18,11 @@ tags:
 from dih_models.parameters import *
 ```
 
-**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society **$6.17M** per life saved (ICER = **$-176,382** per QALY).
+**Bottom Line**: The 1% Treaty + DIH + dFDA Infrastructure is a **dominant health intervention** that saves society money while preventing disease and death (ICER = **$-176,382** per QALY - negative cost means society profits).
 
-This means for every life saved, society becomes **$6.17M** richer instead of paying the [$3,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
+This means society becomes richer while preventing disease and death, instead of paying the [$3,500 cost of top charitable interventions](../references.qmd#givewell-cost-per-life-saved).
 
-**How is this possible?** This initiative generates massive economic value ({{< var treaty_peace_plus_rd_annual_benefits >}} annually) while also saving lives ({{< var treaty_total_qalys_gained_annual >}} QALYs annually), making it profitable for society to implement.
+**How is this possible?** This initiative generates massive economic value ({{< var treaty_peace_plus_rd_annual_benefits >}} annually) while also preventing the one-time deaths from disease eradication delay ({{< var disease_eradication_delay_deaths_total >}} lives, {{< var disease_eradication_delay_dalys >}} DALYs), making it profitable for society to implement.
 
 ## Complete Calculation Walkthrough
 
@@ -84,35 +84,39 @@ This means for every life saved, society becomes **$6.17M** richer instead of pa
 
 **Sensitivity range**: 500-1,500 lives saved = {{< var sensitivity_peace_qalys_conservative >}}-{{< var sensitivity_peace_qalys_optimistic >}} QALYs
 
-#### 2b. dFDA Health Benefits ({{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year)
+#### 2b. dFDA Health Benefits from Disease Eradication Acceleration ({{< var disease_eradication_delay_dalys >}} DALYs prevented one-time)
 
-**Source**: [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
+**Source**: [Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd#disease-eradication-delay)
 
-**Baseline projection**: {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year from:
+**One-time benefit from timeline shift**: {{< var disease_eradication_delay_dalys >}} DALYs prevented by accelerating drug approvals
 
-1. **Faster drug access** (24% of total): 24% QALYs
-   - Average 2-3 year reduction in time to market
-   - Applied to ~{{< var current_drug_approvals_per_year >}} new drugs/year reaching market faster
+The dFDA enables faster approval of drugs and therapies, preventing the disease burden that accumulates during regulatory delays. This includes:
 
-2. **New therapies enabled** (60% of total): 60% QALYs
-   - Rare diseases now economically viable
-   - Unpatentable treatments tested
-   - Repurposed drugs
+1. **Faster approval of breakthrough therapies** (accelerates by 2-5 years)
+   - Previously impossible treatments become available immediately
+   - Rare disease therapies developed with economic incentives
+   - Repurposed and combination drugs approved faster
 
-3. **Prevention via real-world data** (17% of total): 17% QALYs
+2. **Real-world evidence acceleration** (enables better safety monitoring)
    - Early detection of drug interactions
    - Personalized medicine insights
    - Population health monitoring
 
-**Sensitivity range**: {{< var dfda_qalys_rd_plus_delay_annual >}} (conservative) to {{< var dfda_qalys_rd_plus_delay_annual >}} (optimistic) QALYs
+3. **Economic viability of neglected treatments**
+   - dFDA funding model enables treatment of low-prevalence diseases
+   - Unpatentable treatments now economically viable
 
-See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model) for complete methodology.
+**One-time DALYs prevented**: {{< var disease_eradication_delay_dalys >}} (from accelerating timelines by 2-5 years across 8.2 billion people)
 
-#### Total Annual Health Benefits
+See [Appendix: Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd) for complete methodology.
 
-**{{< var treaty_qalys_gained_annual_global >}} + {{< var dfda_qalys_rd_plus_delay_annual >}} = {{< var treaty_total_qalys_gained_annual >}} QALYs/year**
+#### Total One-Time Health Benefits
 
-**Sensitivity range**: 437,500 (low) to 2,152,500 (high) QALYs
+**Peace Dividend (annual)**: {{< var treaty_qalys_gained_annual_global >}} QALYs/year
+
+**Disease Eradication Timeline Shift (one-time)**: {{< var disease_eradication_delay_dalys >}} DALYs prevented
+
+**Note**: The peace dividend generates recurring health benefits annually. The dFDA timeline acceleration is a one-time benefit from eliminating the disease burden that would have accumulated during regulatory delay periods. Over a 5-year implementation timeline, the cumulative health benefit is substantial.
 
 ### Step 3: Annual Costs
 
@@ -213,7 +217,7 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 3. Conservative estimates are more defensible to skeptics
 4. This intervention is dominant even with costs included
 
-**Key insight**: Even counting ALL costs conservatively, the ICER is {{< var treaty_dfda_icer_per_qaly >}}/QALY. Under more realistic framings where the campaign is self-funding, the true societal cost approaches $0, making the intervention infinitely cost-effective.
+**Key insight**: Even counting ALL costs conservatively, society saves money while preventing disease and death. Under more realistic framings where the campaign is self-funding, the true societal cost approaches $0, making the intervention infinitely cost-effective.
 
 ### Step 4: ICER Calculation
 
@@ -227,27 +231,30 @@ See [Appendix: Detailed QALY Calculation Model](dfda-cost-benefit-analysis.qmd#a
 - Costs: {{< var treaty_total_annual_costs >}}
 - **Net benefit: {{< var treaty_peace_plus_rd_net_annual_benefit >}} per year**
 
-**Society saves {{< var treaty_peace_plus_rd_net_annual_benefit >}} while gaining {{< var treaty_total_qalys_gained_annual >}} QALYs**
+**Society saves {{< var treaty_peace_plus_rd_net_annual_benefit >}} while preventing {{< var disease_eradication_delay_deaths_total >}} deaths from disease eradication delay**
 
 #### 4b. ICER per QALY
 
-**ICER** = ({{< var treaty_total_annual_costs >}} - {{< var treaty_peace_plus_rd_annual_benefits >}}) / {{< var treaty_total_qalys_gained_annual >}} QALYs
+**Peace Dividend ICER**: The 1% reduction in conflict generates {{< var treaty_qalys_gained_annual_global >}} QALYs annually at negative cost (society saves money from reduced military spending).
 
-**ICER** = {{< var treaty_total_annual_costs >}} / {{< var treaty_total_qalys_gained_annual >}}
+**Disease Eradication Timeline Shift**: Preventing {{< var disease_eradication_delay_deaths_total >}} deaths and {{< var disease_eradication_delay_dalys >}} DALYs from regulatory delays by accelerating dFDA approvals.
 
-##### ICER = {{< var treaty_dfda_icer_per_qaly >}} per QALY
+**Combined Intervention**: This is a **dominant intervention** - society saves {{< var treaty_peace_plus_rd_net_annual_benefit >}} annually while preventing both recurring conflict deaths and one-time disease burden from eradication delays.
 
-**Interpretation**: For every QALY gained, society saves {{< var treaty_dfda_icer_per_qaly >}}. This is a **dominant intervention** (saves money AND improves health).
+#### 4c. Economic Value per Life Saved
 
-#### 4c. Cost per Life Saved
+**Net Benefit per Life Saved from Peace Dividend**:
 
-**Cost per life** = ICER × QALYs per life
+- Annual lives saved: {{< var treaty_lives_saved_annual_global >}} people
+- Annual economic benefits: {{< var treaty_peace_plus_rd_annual_benefits >}}
+- **Economic value per life**: {{< var treaty_peace_plus_rd_annual_benefits >}} ÷ {{< var treaty_lives_saved_annual_global >}} lives ≈ **${{< var combined_peace_health_dividends_annual_for_roi_calc / treaty_lives_saved_annual_global | round(0) | int >}}M per life saved** (cost-dominant: society profits)
 
-**Cost per life** = {{< var treaty_dfda_icer_per_qaly >}} × 35 QALYs/life
+**Plus One-Time Disease Prevention**:
 
-**Cost per life ≈ {{< var treaty_dfda_net_benefit_per_life_saved >}} per life saved**
+- Deaths prevented from eradication delays: {{< var disease_eradication_delay_deaths_total >}}
+- Economic value from health improvement: {{< var disease_eradication_delay_economic_loss >}}
 
-**Interpretation**: For every life saved, society saves approximately {{< var treaty_dfda_net_benefit_per_life_saved >}}.
+**Interpretation**: The intervention is cost-dominant (society profits) while preventing {{< var disease_eradication_delay_deaths_total >}} deaths from disease eradication delay acceleration and {{< var treaty_lives_saved_annual_global >}} lives annually from reduced conflict.
 
 ## Comparison to Other Interventions
 
@@ -265,9 +272,9 @@ These are **excellent** interventions - among the best uses of charitable dollar
 
 ### 1% Treaty + DIH + dFDA
 
-| Intervention | Cost per Life Saved | ICER |
+| Intervention | Value per Life Saved | Status |
 |-------------|--------------------:|------:|
-| **1% Treaty + DIH + dFDA** | **{{< var treaty_dfda_net_benefit_per_life_saved >}}** | **{{< var treaty_dfda_icer_per_qaly >}}/QALY** |
+| **1% Treaty + DIH + dFDA** | **Cost-dominant** | **Saves money and lives** |
 
 This is a **dominant intervention** - it makes society richer while saving lives.
 
@@ -281,11 +288,11 @@ This is a **dominant intervention** - it makes society richer while saving lives
 
 **1% Treaty model**: Society profits from saving lives
 
-- Exceptional value ({{< var treaty_dfda_net_benefit_per_life_saved >}} per life = society saves money)
+- Exceptional value (society saves money while preventing disease)
 - Self-funding from economic gains
 - Generates wealth while improving health
 
-**The multiplier**: The 1% Treaty is **{{< var multiplier_vs_givewell >}}x more cost-effective** than the best charities in the world.
+**The multiplier**: The 1% Treaty is a **dominant intervention** - it makes society richer while saving lives, rather than requiring society to pay to save lives. This is the highest possible cost-effectiveness rating.
 
 ## Sensitivity Analysis
 
@@ -300,40 +307,37 @@ This is a **dominant intervention** - it makes society richer while saving lives
 | **dFDA ops costs/yr** | {{< var sensitivity_dfda_opex_conservative >}} | {{< var dfda_upfront_build >}} | {{< var sensitivity_dfda_opex_optimistic >}} |
 | **Total costs/yr** | {{< var sensitivity_total_costs_conservative >}} | {{< var treaty_total_annual_costs >}} | {{< var sensitivity_total_costs_optimistic >}} |
 | **Peace QALYs** | {{< var sensitivity_peace_qalys_conservative >}} | {{< var treaty_qalys_gained_annual_global >}} | {{< var sensitivity_peace_qalys_optimistic >}} |
-| **dFDA QALYs** | {{< var dfda_qalys_rd_plus_delay_annual >}} | {{< var dfda_qalys_rd_plus_delay_annual >}} | {{< var dfda_qalys_rd_plus_delay_annual >}} |
-| **Total QALYs** | {{< var sensitivity_total_qalys_conservative >}} | {{< var treaty_total_qalys_gained_annual >}} | {{< var sensitivity_total_qalys_optimistic >}} |
+| **dFDA DALYs prevented (one-time)** | {{< var disease_eradication_delay_dalys >}} | {{< var disease_eradication_delay_dalys >}} | {{< var disease_eradication_delay_dalys >}} |
 
-### ICER Across Scenarios
+### Impact Across Scenarios
 
-| Scenario | Net Benefit | QALYs | ICER/QALY | Cost/Life |
-|----------|------------:|------:|-----------:|----------:|
-| **Conservative** | {{< var sensitivity_net_benefit_conservative >}} | {{< var sensitivity_total_qalys_conservative >}} | **{{< var sensitivity_icer_conservative >}}** | **{{< var sensitivity_cost_per_life_conservative >}}** |
-| **Central** | {{< var treaty_peace_plus_rd_net_annual_benefit >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** |
-| **Optimistic** | {{< var sensitivity_net_benefit_optimistic >}} | {{< var sensitivity_total_qalys_optimistic >}} | **{{< var sensitivity_icer_optimistic >}}** | **{{< var sensitivity_cost_per_life_optimistic >}}** |
+| Scenario | Annual Net Benefit | Annual Lives Saved | One-Time DALYs Prevented |
+|----------|------------:|------:|-----------:|
+| **Conservative** | {{< var sensitivity_net_benefit_conservative >}} | {{< var treaty_lives_saved_annual_global >}} × 0.5 = 275,000 | {{< var disease_eradication_delay_dalys >}} |
+| **Central** | {{< var treaty_peace_plus_rd_net_annual_benefit >}} | {{< var treaty_lives_saved_annual_global >}} | {{< var disease_eradication_delay_dalys >}} |
+| **Optimistic** | {{< var sensitivity_net_benefit_optimistic >}} | {{< var treaty_lives_saved_annual_global >}} × 1.5 = 825,000 | {{< var disease_eradication_delay_dalys >}} |
 
 **Key finding**: In ALL scenarios, the intervention is dominant (saves money while saving lives).
 
-### Alternative ICER Calculations Based on Funding Perspective
+### Implementation Scenarios
 
-| Perspective | Annual Cost | Annual Benefit | QALYs | ICER/QALY | Cost/Life | Notes |
-|-------------|------------:|---------------:|------:|----------:|----------:|-------|
-| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var sensitivity_icer_central >}}** | **{{< var sensitivity_cost_per_life_central >}}** | Counts all upfront costs |
-| **Investor-Funded** | $0 | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var treaty_dfda_icer_investor_funded >}}** | **{{< var treaty_dfda_cost_per_life_investor_funded >}}** | Campaign funded by VICTORY Social Impact Bonds |
-| **Opportunity Cost** | {{< var treaty_annual_funding >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **{{< var treaty_dfda_icer_opportunity_cost >}}** | **{{< var treaty_dfda_cost_per_life_opportunity_cost >}}** | Counts redirected military spending |
-| **Waste Conversion** | {{< var treaty_annual_funding >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_total_qalys_gained_annual >}} | **Undefined** | **Undefined** | Military spending creates negative value |
+| Scenario | Annual Cost | Annual Benefit | Annual Lives Saved | Net Benefit per Life |
+|----------|------------:|---------------:|------:|----------:|
+| **Conservative (All Costs)** | {{< var treaty_total_annual_costs >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | 275,000 | Cost-dominant (profit) |
+| **Central** | {{< var treaty_total_annual_costs >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | {{< var treaty_lives_saved_annual_global >}} | Cost-dominant (profit) |
+| **Optimistic** | {{< var treaty_total_annual_costs >}} | {{< var treaty_peace_plus_rd_annual_benefits >}} | 825,000 | Cost-dominant (profit) |
 
-*Military spending has negative ROI (destroys value), so redirecting it is a benefit, not a cost.
+**One-Time Disease Eradication Benefit**: All scenarios prevent {{< var disease_eradication_delay_deaths_total >}} deaths and {{< var disease_eradication_delay_dalys >}} DALYs from disease eradication timeline acceleration.
 
 **Interpretation**:
 
-- Under traditional health economics (Conservative), the ICER is {{< var treaty_dfda_icer_per_qaly >}}/QALY
-- Under realistic funding (Investor-Funded), society pays $0, ICER approaches -∞
-- Considering opportunity cost of military spending, ICER is {{< var treaty_dfda_icer_opportunity_cost >}}/QALY
-- Recognizing military spending as waste, the intervention has undefined (infinite) cost-effectiveness
+- In all scenarios, the intervention is dominant (saves money annually while saving lives)
+- One-time disease eradication acceleration prevents massive disease burden
+- All scenarios show cost-dominant benefit (society profits)
 
-**Worst case** (conservative): Society still saves {{< var sensitivity_cost_per_life_conservative >}} per life saved
+**Worst case** (conservative): Society still saves {{< var sensitivity_cost_per_life_conservative >}} per life annually
 
-**Best case** (optimistic): Society saves {{< var sensitivity_cost_per_life_optimistic >}} per life saved (lower because you're saving many more lives, so the economic benefit is spread across more QALYs)
+**Best case** (optimistic): Society saves {{< var sensitivity_cost_per_life_optimistic >}} per life annually
 
 ## Visual Comparisons
 
@@ -345,9 +349,9 @@ This chart demonstrates the fundamental difference between traditional philanthr
 
 - **GiveWell Top Charities** (Helen Keller International, New Incentives, Against Malaria Foundation): Society pays $3,500-$5,500 per life saved. These are excellent interventions, among the most cost-effective charitable uses of money in the world.
 
-- **1% Treaty + DIH + dFDA**: Society SAVES {{< var treaty_dfda_net_benefit_per_life_saved >}} per life saved. This is a dominant intervention that generates wealth while saving lives. The stacked bar shows contributions from both the peace dividend (1% less conflict) and dFDA R&D savings.
+- **1% Treaty + DIH + dFDA**: Society profits while saving lives. Additionally, dFDA accelerates disease eradication, preventing {{< var disease_eradication_delay_deaths_total >}} additional deaths. This is a dominant intervention that generates wealth while saving lives.
 
-The dramatic scale difference illustrates why this intervention is ~1,700× more cost-effective than even the best traditional charities.
+The dramatic scale difference illustrates the fundamental advantage: traditional charities cost money to save lives, while the 1% Treaty saves money while preventing disease and death.
 
 ### Scale of Impact: Annual Economic Benefits
 
@@ -359,7 +363,9 @@ This chart compares the gross annual economic benefits across major public healt
 
 - **1% Treaty + DIH + dFDA**: Generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits ({{< var peace_dividend_annual_societal_benefit >}} peace dividend + {{< var dfda_rd_gross_savings_annual >}} dFDA R&D savings). This is nearly 11× larger than childhood vaccinations, one of the most successful interventions in history.
 
-**Key distinction**: Only the 1% Treaty is self-funding, it generates the wealth needed to sustain itself while traditional interventions require ongoing funding.
+- **One-time disease eradication acceleration**: Prevents {{< var disease_eradication_delay_deaths_total >}} deaths and {{< var disease_eradication_delay_dalys >}} DALYs of disease burden from regulatory delays.
+
+**Key distinction**: Only the 1% Treaty is self-funding, it generates the wealth needed to sustain itself while traditional interventions require ongoing funding. Plus it prevents massive disease burden from eradication delays.
 
 ### Monte Carlo Simulation (Recommended)
 
@@ -393,9 +399,9 @@ For publication-quality analysis, run a Monte Carlo simulation with:
    - 100,000 deaths/year
    - Sources: ACLED, GTD, Uppsala
 
-4. **dFDA QALYs**: [dFDA QALY Model](dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model)
-   - Baseline: {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year
-   - Range: {{< var dfda_qalys_rd_plus_delay_annual >}}-{{< var dfda_qalys_rd_plus_delay_annual >}}
+4. **Disease Eradication Acceleration**: [Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)
+   - Deaths prevented: {{< var disease_eradication_delay_deaths_total >}}
+   - DALYs prevented: {{< var disease_eradication_delay_dalys >}}
 
 5. **QALY Conversion**: WHO life tables
    - 1 life saved ≈ 35 QALYs (standard assumption)
@@ -427,10 +433,11 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 
 These benefits far exceed the {{< var treaty_total_annual_costs >}} annual costs, creating a net profit of {{< var treaty_peace_plus_rd_net_annual_benefit >}}/year for society.
 
-Meanwhile, the same initiative saves lives:
+Meanwhile, the same initiative prevents disease and death:
 
-- {{< var traditional_large_trial_size >}} lives from 1% less conflict
-- {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs from faster/better medical treatments
+- {{< var treaty_lives_saved_annual_global >}} lives annually from 1% less conflict
+- {{< var disease_eradication_delay_deaths_total >}} deaths prevented one-time from dFDA acceleration
+- {{< var disease_eradication_delay_dalys >}} DALYs prevented from faster treatment availability
 
 You get **both** the economic benefit **and** the health benefit.
 
@@ -462,8 +469,9 @@ The math works. The challenge is execution.
 - Peace dividend uses 1% (could be 2-5% over time)
 - dFDA uses 50% R&D savings (Oxford RECOVERY showed 80-100×)
 - Excludes many hard-to-quantify benefits (innovation, rare diseases, etc.)
+- Disease eradication prevention uses conservative 2-5 year timeline acceleration
 
-**Even in worst-case scenarios** (conservative column), the ICER is still -$170,514/QALY.
+**Even in worst-case scenarios** (conservative column), society still saves {{< var sensitivity_cost_per_life_conservative >}} per life annually.
 
 The intervention is **robustly dominant** across all reasonable parameter ranges.
 
@@ -473,11 +481,11 @@ The intervention is **robustly dominant** across all reasonable parameter ranges
 
 **From society's aggregate perspective**: The $1.0B campaign cost is real money that someone must provide initially. However, since investors get repaid with {{< var victory_bond_annual_return_pct >}} returns from redirected military spending, the net cost to society approaches $0 after payback.
 
-**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive {{< var treaty_peace_plus_rd_annual_benefits >}} in economic benefits (peace dividend + R&D savings). Net gain: $137B.
+**From taxpayers' perspective**: They give up {{< var treaty_annual_funding >}} in military spending but receive {{< var treaty_peace_plus_rd_annual_benefits >}} in economic benefits (peace dividend + R&D savings). Plus they prevent {{< var disease_eradication_delay_deaths_total >}} deaths from disease eradication acceleration. Net gain: {{< var treaty_peace_plus_rd_net_annual_benefit >}}/year plus {{< var disease_eradication_delay_dalys >}} DALYs.
 
 **From investors' perspective**: They invest {{< var treaty_campaign_total_cost >}} and receive {{< var victory_bond_annual_payout >}}/year perpetually. This is the best investment in history.
 
-**The key insight**: Traditional ICER assumes spending society's resources on health interventions. Here, you're redirecting resources from **destructive uses** (war) to **productive uses** (medical research). The "cost" is really just stopping waste.
+**The key insight**: Traditional ICER assumes spending society's resources on health interventions. Here, you're redirecting resources from **destructive uses** (war) to **productive uses** (medical research and disease prevention). The "cost" is really just stopping waste while preventing disease.
 
 ### Q: Isn't redirecting military spending politically impossible?
 

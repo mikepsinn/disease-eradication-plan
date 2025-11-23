@@ -23,9 +23,9 @@ from dih_models.parameters import *
 
 - **Saves ~{{< var dfda_rd_gross_savings_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
 - **{{< var dfda_roi_rd_only >}} Return on Investment (R&D Only)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_rd_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including all core benefits (R&D savings, regulatory delay elimination, and peace dividend): **{{< var treaty_complete_roi_all_benefits >}}** (PRIMARY recommended estimate).
-- **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, the dFDA eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, achieving a one-time timeline shift saving **{{< var dfda_qalys_rd_plus_delay_annual >}} QALYs average per year during the shift** (valued at **{{< var dfda_qalys_rd_plus_delay_monetized >}} total economic value**).
-- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var dfda_qalys_rd_plus_delay_annual >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from specific mechanisms; comprehensive top-down estimate of **{{< var dfda_qalys_rd_plus_delay_annual >}}/year** including [post-safety efficacy lag elimination](#regulatory-delay-avoidance).
-- **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: With an ICER of **-[\$59,501 per QALY](../references.qmd#qaly-value)**, the dFDA is a dominant intervention, it both saves money and improves health.
+- **[Eliminates Post-Safety Efficacy Lag](#regulatory-delay-avoidance)**: By providing post-Phase I access via trial participation, the dFDA eliminates the {{< var efficacy_lag_years >}}-year Phase II/III [efficacy lag](regulatory-mortality-analysis.qmd) **while preserving rigorous Phase I safety testing**, achieving a one-time timeline shift saving **{{< var disease_eradication_delay_dalys >}} QALYs average per year during the shift** (valued at **{{< var disease_eradication_delay_economic_loss >}} total economic value**).
+- **[Two QALY Estimates](#regulatory-delay-avoidance)**: Conservative bottom-up estimate of **{{< var disease_eradication_delay_dalys >}} [QALYs/year](#appendix-detailed-qaly-calculation-model)** from specific mechanisms; comprehensive top-down estimate of **{{< var disease_eradication_delay_dalys >}}/year** including [post-safety efficacy lag elimination](#regulatory-delay-avoidance).
+- **[Dominant Health Intervention](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness)**: The dFDA is a dominant intervention that both saves money and improves health.
 - **[\$137M+ Daily Cost of Inaction](#daily-opportunity-cost-of-inaction)**: Each day without the dFDA represents a societal opportunity cost of ~\$137M in economic waste and ~2,301 lost QALYs.
 
 ## Executive Summary
@@ -38,12 +38,12 @@ from dih_models.parameters import *
 
 - **Cost Cuts:** Clinical trials cost [50-95% less](#gross-r-and-d-savings-from-dfda-implementation). The UK's [RECOVERY trial](recovery-trial.qmd) proved you can cut costs [80-100x](#decentralized-trial-costs-modeled-on-oxford-recovery) without killing anyone extra. Apply that globally to the {{< var global_clinical_trials_spending_annual >}} spent annually on trials, save [tens of billions](#roi-analysis).
 - **More Drugs Faster:** Cheaper trials mean testing rare diseases and treatments that don't make billionaires richer. Drugs reach dying people before they finish dying.
-- **Fewer Dead People:** The platform generates {{< var dfda_qalys_rd_plus_delay_annual >}} extra life-years annually through faster access, better prevention data, and drugs for diseases companies currently ignore.
+- **Fewer Dead People:** The platform generates {{< var disease_eradication_delay_dalys >}} extra life-years through the timeline shift from regulatory delay elimination, plus faster access, better prevention data, and drugs for diseases companies currently ignore.
 
 #### Exceptional Economic Value
 
 - **Return on Investment (ROI):** The dFDA Infrastructure has an extremely high ROI. Based on core platform operational costs (ROM estimate [40 million USD per year](#simplified-roi-scenario) including medium broader initiative costs) against [**$50.0B in annual R and D savings**](#gross-r-and-d-savings-from-dfda-implementation) ([**50.0% reduction scenario**](#gross-r-and-d-savings-from-dfda-implementation), [see Market Size and Impact](#market-size-and-impact)), the NPV analysis yields ROI estimates ranging from **[66:1 to 2,577:1](#full-range-roi-sensitivity-analysis)** depending on total ecosystem costs ([see Full Range ROI Sensitivity Analysis](#full-range-roi-sensitivity-analysis)), with a central estimate of approximately **{{< var dfda_roi_rd_only >}}:1** over 10 years. A modest investment in global software infrastructure generates vast savings across the entire pharmaceutical R&D industry.
-- **Cost-Utility (ICER):** The dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes. The incremental cost-effectiveness ratio (ICER) is strongly negative (e.g., approximately [**-\$59,501 per QALY gained**](../references.qmd#qaly-value)), far exceeding standard government value thresholds.
+- **Cost-Utility:** The dFDA is a **dominant health intervention**, meaning it simultaneously saves money and improves health outcomes, far exceeding standard government value thresholds.
 - **Daily Opportunity Cost of Inaction:** Each day we maintain the current system costs society approximately [**\$137 million** and **2,301** Quality-Adjusted Life Years](#daily-opportunity-cost-of-inaction).
 
 **Conclusion:** The dFDA slashes costs, speeds up medical innovation, and saves lives. The math supports building it, as shown by legislative frameworks like the "Right to Trial & FDA Upgrade Act."
@@ -549,9 +549,9 @@ $$
 
 A [comprehensive quantitative analysis](regulatory-mortality-analysis.qmd) of post-safety efficacy lag costs (1962-2024) found:
 
-- **Total Deaths**: {{< var disease_eradication_delay_deaths_total >}} preventable deaths over 8.2-year efficacy lag (1962-2024)
+- **Total Deaths**: {{< var disease_eradication_delay_deaths_total >}} preventable deaths over {{< var efficacy_lag_years >}}-year efficacy lag (1962-2024)
 - **Total DALYs**: {{< var disease_eradication_delay_dalys >}}B Disability-Adjusted Life Years lost
-- **Average Impact per Year During Shift**: ~{{< var disease_eradication_delay_annual_dalys >}} DALYs/year average during the 8.2-year timeline shift
+- **Total Timeline Shift**: One-time {{< var efficacy_lag_years >}}-year acceleration in disease eradication
 
 The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).
 
@@ -563,17 +563,17 @@ The dFDA provides **provisional access post-Phase I** via trial participation:
 2. **Post-Phase I Access**: Patients can access drugs through trial participation immediately after safety verification
 3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}}-year pre-market efficacy delay
 
-This eliminates approximately **{{< var dfda_regulatory_delay_avoidance_fraction >}} of post-safety efficacy lag** (the Phase II/III portion, while preserving Phase I safety testing).
+This eliminates the post-safety efficacy lag (the Phase II/III portion, while preserving Phase I safety testing) by enabling real-world evidence collection during trials.
 
 #### Quantified Benefits (One-Time Timeline Shift)
 
-The dFDA's post-safety efficacy lag elimination achieves a one-time 8.2-year timeline acceleration:
+The dFDA's post-safety efficacy lag elimination achieves a one-time {{< var efficacy_lag_years >}}-year timeline acceleration:
 
-- **Total QALYs Saved**: {{< var disease_eradication_delay_dalys >}}B × {{< var dfda_regulatory_delay_avoidance_fraction >}} = {{< var dfda_qalys_rd_plus_delay_annual >}}M QALYs average per year during the shift
-- **Total Economic Value**: {{< var dfda_qalys_rd_plus_delay_monetized >}} (total one-time benefit from timeline shift)
-- **Lives Saved**: {{< var dfda_lives_saved_annual >}}M (total over the 8.2-year period)
+- **Total DALYs Averted**: {{< var disease_eradication_delay_dalys >}} (total one-time impact from {{< var efficacy_lag_years >}}-year timeline shift)
+- **Total Economic Value**: {{< var disease_eradication_delay_economic_loss >}} (total one-time benefit from timeline shift)
+- **Deaths Prevented**: {{< var disease_eradication_delay_deaths_total >}} (total over the {{< var efficacy_lag_years >}}-year period)
 
-This represents the **top-down comprehensive estimate** of dFDA health benefits, compared to the **{{< var dfda_qalys_rd_plus_delay_annual >}} conservative bottom-up estimate** from specific mechanism modeling.
+This represents the **top-down comprehensive estimate** of dFDA health benefits from eliminating the post-safety efficacy lag.
 
 For detailed methodology and assumptions, see [The Human Capital Cost of Regulatory Latency](regulatory-mortality-analysis.qmd).
 
@@ -827,8 +827,8 @@ This section quantifies the daily societal cost of maintaining the status quo, f
 
 The calculations below are based on the central ("base case") estimates established in the preceding sections of this analysis.
 
-- **Daily QALYs Lost:**
-  - The analysis ([Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)) projects a baseline of **{{< var dfda_qalys_rd_plus_delay_annual >}} Quality-Adjusted Life Years (QALYs) gained per year** from eliminating the regulatory efficacy lag.
+- **Daily DALYs Lost:**
+  - The analysis ([Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd)) projects a baseline of **{{< var disease_eradication_delay_dalys >}} Disability-Adjusted Life Years (DALYs) averted** from eliminating the regulatory efficacy lag over the 8.2-year timeline shift.
   - The daily opportunity cost in lost health is therefore:
     $$
     \frac{74{,}148{,}065\ \text{QALYs}}{365\ \text{days}} \approx \mathbf{203,145\ \text{QALYs lost per day}}
@@ -847,30 +847,22 @@ The daily costs of inaction are highly sensitive to the underlying assumptions a
 
 | Scenario                                 | R&D Trial Cost Reduction | Annual Gross Savings | Annual QALYs Gained | Daily Money Lost (Approx.) | Daily QALYs Lost (Approx.) | Note                                                                                                                                              |
 | :--------------------------------------- | :----------------------: | :------------------: | :-----------------: | :------------------------: | :------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Conservative**                         |           30%            |     {{< var sensitivity_dfda_savings_conservative >}}     |       {{< var dfda_qalys_rd_plus_delay_annual >}}       |      **\$82 Million**      |          **521**           | Assumes lower efficiency gains and moderate health impact, using [conservative QALY model](#summary-of-total-annual-qaly-gains).                  |
-| **Base Case**                            |         **50%**          |   **\$50 Billion**   |     **{{< var dfda_qalys_rd_plus_delay_annual >}}**     |     **\$137 Million**      |         **2,301**          | **The central estimate used in this analysis, based on the [median QALY model](#summary-of-total-annual-qaly-gains).**                            |
-| **Optimistic**                           |           70%            |     \$70 Billion     |      {{< var dfda_qalys_rd_plus_delay_annual >}}      |     **\$192 Million**      |         **{{< var dfda_large_trial_size >}}**         | Assumes high efficiency and significant improvements in health outcomes, using [optimistic QALY model](#summary-of-total-annual-qaly-gains).      |
-| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   |    **{{< var dfda_qalys_rd_plus_delay_annual >}}**    |     **\$260 Million**      |         **{{< var dfda_large_trial_size >}}**         | Reflects exceptional, RECOVERY-like efficiency and broad health benefits, using [new optimistic QALY model](#summary-of-total-annual-qaly-gains). |
+| **Conservative**                         |           30%            |     {{< var sensitivity_dfda_savings_conservative >}}     |       {{< var disease_eradication_delay_dalys >}}       |      **\$82 Million**      |          **521**           | Assumes lower efficiency gains and moderate health impact.                  |
+| **Base Case**                            |         **50%**          |   **\$50 Billion**   |     **{{< var disease_eradication_delay_dalys >}}**     |     **\$137 Million**      |         **2,301**          | **The central estimate used in this analysis, representing the one-time timeline shift benefit.**                            |
+| **Optimistic**                           |           70%            |     \$70 Billion     |      {{< var disease_eradication_delay_dalys >}}      |     **\$192 Million**      |         **{{< var dfda_large_trial_size >}}**         | Assumes high efficiency and significant improvements in health outcomes.      |
+| **Transformative (RECOVERY Trial-like)** |         **95%**          |   **\$95 Billion**   |    **{{< var disease_eradication_delay_dalys >}}**    |     **\$260 Million**      |         **{{< var dfda_large_trial_size >}}**         | Reflects exceptional, RECOVERY-like efficiency and broad health benefits. |
 
 #### Discussion of Uncertainty and Key Variables
 
-While the figures are presented as daily point estimates for clarity, they represent the steady-state potential loss once the dFDA Infrastructure is fully adopted. The actual daily loss on any given day depends on several key variables that introduce uncertainty:
+The total one-time benefit from eliminating the efficacy lag depends on several key variables:
 
-{{< include ../figures/dfda-daily-opportunity-cost-column-chart.qmd >}}
+1. **Adoption Rate:** The calculations above implicitly assume full adoption. As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual, with benefits ramping up over time as the platform becomes standard.
 
-1. **Adoption Rate ($p(t)$):** The calculations above implicitly assume full adoption ($p(t)=1$). As modeled in the NPV analysis in the [ROI Analysis section](#roi-analysis), adoption will be gradual. Therefore, the daily opportunity cost will ramp up over time, starting smaller and growing as the platform's use becomes standard. The figures represent the daily cost once that potential is reached.
+2. **Magnitude of R&D Savings:** The percentage reduction in R&D costs is a critical variable. While the 95% reduction seen in the RECOVERY trial demonstrates what is possible, the system-wide average may be lower. The sensitivity table addresses this by showing a range from 30% to 95%.
 
-   The daily opportunity cost at time $t$ can be expressed as:
+3. **Realization of Health Gains:** The link between a more efficient research ecosystem and concrete health outcomes (DALYs) is complex. The estimates are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the dFDA's impact remains a projection.
 
-   $$
-   \text{Daily Cost}_{\text{inaction}}(t) = p(t) \times \left( \frac{S_{\text{annual}}}{365} + \frac{\Delta\text{QALYs}_{\text{annual}}}{365} \times \lambda \right)
-   $$
-
-   Where $p(t) \in [0,1]$ is the adoption rate at time $t$, $S_{\text{annual}}$ is the annual R&D savings, $\Delta\text{QALYs}_{\text{annual}}$ is the annual QALYs gained, and $\lambda$ is the value per QALY. At full adoption ($p(t) = 1$), this yields the figures shown in the table above.
-2. **Magnitude of R&D Savings ($\alpha$):** The percentage reduction in R&D costs is a critical variable. While the 95% reduction seen in the RECOVERY trial demonstrates what is possible, the system-wide average may be lower. The sensitivity table addresses this by showing a range from 30% to 95%.
-3. **Realization of QALY Gains:** The link between a more efficient research ecosystem and concrete health outcomes (QALYs) is complex. The estimates for QALYs gained are based on evidence from studies on the value of faster drug access and improved prevention, but the exact magnitude of the dFDA's impact remains a projection.
-
-**Conclusion:** Despite these uncertainties, the analysis consistently shows that the daily opportunity cost of inaction is substantial across all plausible scenarios. Every day the current inefficient, slow, and expensive paradigm for clinical research continues, society forgoes hundreds of quality-adjusted life-years and tens to hundreds of millions of dollars in value. Every single day.
+**Conclusion:** Despite these uncertainties, the analysis consistently shows substantial benefits across all plausible scenarios. The current inefficient clinical research paradigm delays life-saving treatments and wastes resources that could accelerate medical progress.
 
 ## Conclusion
 
@@ -1233,8 +1225,8 @@ dfda_annual_operational_cost = DFDA_ANNUAL_OPEX  # $0.040B ({{< var dfda_upfront
 
 # Baseline QALYs generated annually
 
-qaly_gains_annual_baseline = DFDA_QALYS_RD_PLUS_DELAY_ANNUAL  # {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs
-value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD  # $**[Primary QALY estimate used]**{{< var dfda_qalys_rd_plus_delay_annual >}} per QALY
+daly_gains_timeline_shift = DISEASE_ERADICATION_DELAY_DALYS  # {{< var disease_eradication_delay_dalys >}} DALYs averted
+value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD  # Value per quality-adjusted life year
 
 # --- Calculations for dFDA Benefits ---
 
@@ -1257,7 +1249,7 @@ dfda_roi_npv = DFDA_ROI_RD_ONLY  # Conservative R&D-only (from 10-year NPV analy
 
 # Monetized value of QALY gains
 
-monetized_qaly_value = DFDA_QALYS_RD_PLUS_DELAY_MONETIZED  # {{< var dfda_qalys_rd_plus_delay_monetized >}}
+monetized_daly_value = DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS  # {{< var disease_eradication_delay_economic_loss >}}
 
 # --- Connecting to the Peace Dividend ---
 # The captured dividend must cover the operational cost.
@@ -1271,8 +1263,8 @@ print(f"Annual dFDA Operational Cost: ${dfda_annual_operational_cost:,.3f} Billi
 print(f"Simple ROI (Gross/Opex): {dfda_roi_simple:,.0f}:1")
 print(f"NPV-Adjusted ROI (10-year): {dfda_roi_npv:,.0f}:1  ← CANONICAL FIGURE")
 print("-" * 45)
-print(f"Annual QALYs Gained: {qaly_gains_annual_baseline:,.0f}")
-print(f"Monetized Value of Annual QALYs: ${monetized_qaly_value:,.1f} Billion")
+print(f"DALYs Averted (Timeline Shift): {daly_gains_timeline_shift:,.0f}")
+print(f"Monetized Value of DALYs Averted: ${monetized_daly_value:,.1f} Billion")
 print("-" * 45)
 print(f"Funding Coverage (Captured Dividend / OpEx): {funding_coverage_ratio:,.1f}x")
 ```
@@ -1440,16 +1432,16 @@ This chart shows how the investment pays back over time, accounting for the time
 The dFDA cost-benefit analysis reveals:
 
 1. **Exceptional ROI**: The platform generates a {{< var dfda_roi_simple >}}:1 return on investment ($50.0B savings from {{< var dfda_upfront_build >}} cost)
-2. **Massive Health Benefits**: {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs gained annually, worth $126 billion in monetized value
+2. **Massive Health Benefits**: {{< var disease_eradication_delay_dalys >}} DALYs averted from the timeline shift, worth {{< var disease_eradication_delay_economic_loss >}} in monetized value
 3. **Robust Financial Model**: NPV analysis confirms strong returns even with conservative assumptions
 4. **Self-Funding**: The captured peace dividend ($27.2B) easily covers operational costs ({{< var dfda_upfront_build >}})
 5. **Sensitivity Resilience**: ROI remains strong even under conservative scenarios (30% cost reduction, higher operational costs)
 
 This analysis demonstrates that the dFDA represents one of the most compelling investment opportunities in human history, combining massive financial returns with unprecedented health benefits.
 
-### dFDA ICER Analysis - Cost-Utility Framework
+### dFDA Cost-Utility Framework
 
-To meet the standards of government and health technology assessment (HTA) bodies such as ICER, we present a cost-utility analysis using the **incremental cost-effectiveness ratio (ICER)** and **quality-adjusted life years (QALYs)**. This approach is the [US and global standard for evaluating the value of health interventions](../references.qmd#icer-qaly-methodology).
+We present a cost-utility analysis using the **quality-adjusted life years (QALYs)** and **disability-adjusted life years (DALYs)** metrics. This approach is the [US and global standard for evaluating the value of health interventions](../references.qmd#icer-qaly-methodology).
 
 - **QALY**: One year of life in perfect health. Gains are calculated as:
 
@@ -1459,19 +1451,17 @@ To meet the standards of government and health technology assessment (HTA) bodie
 
   Where $Q_0$/$Q_1$ = quality of life (0-1) before/after, $T_0$/$T_1$ = years of life before/after.
 
-- **ICER**: The cost per QALY gained:
+- **Cost-Effectiveness**: The dFDA achieves cost-effectiveness through dual pathways:
+  1. **R&D Savings**: $50B+ annual savings from 50% trial cost reduction
+  2. **Health Gains**: {{< var disease_eradication_delay_dalys >}} DALYs averted from eliminating post-safety efficacy lag (8.2-year timeline shift)
 
-  $$
-  \text{ICER} = \frac{\text{Incremental Cost}}{\text{Incremental QALYs}} = \frac{\text{Cost}_{\text{new}} - \text{Cost}_{\text{old}}}{\text{QALYs}_{\text{new}} - \text{QALYs}_{\text{old}}}
-  $$
+  This combination creates a **dominant intervention**: simultaneously saves money and improves health outcomes.
 
-  If an intervention saves money (negative incremental cost) and improves health (positive QALY gain), the ICER will be negative, indicating a **dominant** (cost-saving) intervention.
-
-- **US Willingness-to-Pay Threshold**: Typically $100,000–$**[Primary QALY estimate used]**{{< var dfda_qalys_rd_plus_delay_annual >}} per QALY for interventions that _add_ costs. Dominant interventions are favorable regardless of this threshold.
+- **US Willingness-to-Pay Threshold**: Typically $100,000–$150,000 per QALY for interventions that _add_ costs. Dominant interventions that both save money and improve health are favorable regardless of this threshold.
 
 - **Sources for Context:**
-  - [ICER QALY methodology and standards](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
-  - [Value per QALY](../references.qmd#qaly-value): "ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from $100,000 to $**[Primary QALY estimate used]**{{< var dfda_qalys_rd_plus_delay_annual >}} per QALY..."
+  - [QALY methodology and standards](../references.qmd#icer-qaly-methodology): "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives..."
+  - [Health economic evaluation](../references.qmd#qaly-value): Standard health economic analysis considers cost-effectiveness across intervention types.
 
 #### Parameterization Overall dFDA Infrastructure Impact
 
@@ -1494,9 +1484,9 @@ Where:
   - R&D Trial Cost Reduction due to dFDA (Baseline): **50.0%**. (Leads to {{< var dfda_rd_gross_savings_annual >}} Gross R and D Savings). _It's important to note that these projected R&D savings are achieved not only through the inherent technical and operational efficiencies of decentralized, platform-based trials, e.g., reduced site management, automated data capture, but also through the anticipated competitive pressures the transparent dFDA Infrastructure will place on sponsors to optimize trial designs and submit lean, competitive operational cost estimates._
 
 - **Aggregate Annual QALYs Gained (ΔQALYs_total):** The number of QALYs generated annually by the dFDA Infrastructure is a composite metric derived from a detailed model in the appendix. The model provides a range of estimates based on the successful realization of the platform's potential.
-- **Conservative Scenario:** {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year
-- **Base Case Scenario:** {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year
-- **Optimistic/Transformative Scenario:** {{< var dfda_qalys_rd_plus_delay_annual >}} QALYs/year
+- **Conservative Scenario:** {{< var disease_eradication_delay_dalys >}} DALYs (one-time timeline shift)
+- **Base Case Scenario:** {{< var disease_eradication_delay_dalys >}} DALYs (one-time timeline shift)
+- **Optimistic/Transformative Scenario:** {{< var disease_eradication_delay_dalys >}} DALYs (one-time timeline shift)
 
 For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)**.
 
@@ -1512,25 +1502,25 @@ This table analyzes the ICER for the dFDA Infrastructure by varying key assumpti
 
 | Scenario                                             | R&D Trial Cost Reduction   | Platform Op. Cost (Annual) | Net Incremental Cost (Annual) | Aggregate QALYs Gained (Annual) | ICER (Cost per QALY Gained) | Classification                          | Source/Note                                                                                                                                                                                                                                                                           |
 | ---------------------------------------------------- | -------------------------- | -------------------------- | ----------------------------- | ------------------------------- | --------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Base Case: Core Platform Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **{{< var dfda_qalys_rd_plus_delay_annual >}}**                     | **-$59,501**                | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. QALYs from [new base model](#appendix-detailed-qaly-calculation-model).                                                              |
-| Core Platform + Medium Broader Initiative            | 50.0% ($50.0B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | {{< var dfda_qalys_rd_plus_delay_annual >}}                         | -$59,476                    | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
-| Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$49.5B                       | {{< var dfda_qalys_rd_plus_delay_annual >}}                         | -$58,929                    | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
-| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50.0% ($50.0B Savings)         | $5B                        | -$45B                         | {{< var dfda_qalys_rd_plus_delay_annual >}}                         | -$53,571                    | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
-| Conservative R&D Savings & QALYs                     | 30% ({{< var global_education_for_all_cost >}} Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$29.5B                       | {{< var dfda_qalys_rd_plus_delay_annual >}}                         | -$155,263                   | Dominant                                | Using Low-Med Ecosystem Cost & [Conservative QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                        |
-| Optimistic R&D Savings & QALYs                       | 70% ($70B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$69.5B                       | {{< var dfda_qalys_rd_plus_delay_annual >}}                       | -$19,041                    | Dominant                                | Using Low-Med Ecosystem Cost & [Optimistic QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                          |
-| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ({{< var sensitivity_dfda_savings_optimistic >}} Savings)     | **$0.5B ({{< var recovery_trial_cost_per_patient >}}M)**          | **-$94.5B**                   | **{{< var dfda_qalys_rd_plus_delay_annual >}}**                   | **-{{< var caregiver_value_per_hour_simple >}},890**                | **Dominant**                            | Using Low-Med Ecosystem Cost & [Optimistic QALY model](#summary-of-total-annual-qaly-gains).                                                                                                                                                                                          |
-| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., {{< var trial_cost_reduction_pct >}} ($0.5B Savings) | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | $0                            | {{< var dfda_qalys_rd_plus_delay_annual >}}                         | $0                          | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & Base QALYs.                                                                                                                                                                                                                                            |
+| **Base Case: Core Platform Ops Only**                | **50.0%** ($50.0B Savings)     | **$0.01875B ($18.75M)**    | **-$49.981B**                 | **{{< var disease_eradication_delay_dalys >}}**                     | Cost-Saving + Health Gain   | **Dominant**                            | Ops cost from the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM midpoint. DALYs from regulatory delay elimination.                                                              |
+| Core Platform + Medium Broader Initiative            | 50.0% ($50.0B Savings)         | $0.04005B ($40.05M)        | -$49.96B                      | {{< var disease_eradication_delay_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Ops from ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) + ['Scenario Based ROM Estimates for Broader Initiative Costs'](#scenario-based-rom-estimates-for-broader-initiative-costs) (Medium), aligns with ROI calc. |
+| Total Ecosystem (Low-Medium Cost)                    | 50.0% ($50.0B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$49.5B                       | {{< var disease_eradication_delay_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative total ecosystem cost.                                                                                                                                                                                                                                                    |
+| Total Ecosystem (High Cost, e.g. w/ Part. Comp.)     | 50.0% ($50.0B Savings)         | $5B                        | -$45B                         | {{< var disease_eradication_delay_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Illustrative high total ecosystem cost (as prior base).                                                                                                                                                                                                                               |
+| Conservative R&D Savings & Health Gains              | 30% ($30.0B Savings)           | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$29.5B                       | {{< var disease_eradication_delay_dalys >}}                         | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & conservative health impact.                                                                                                                                                                                                                        |
+| Optimistic R&D Savings & Health Gains                | 70% ($70B Savings)         | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | -$69.5B                       | {{< var disease_eradication_delay_dalys >}}                       | Cost-Saving + Health Gain   | Dominant                                | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
+| **Transformative R&D Savings (RECOVERY Trial-like)** | **95%** ($95.0B Savings)     | **$0.5B ({{< var recovery_trial_cost_per_patient >}}M)**          | **-$94.5B**                   | **{{< var disease_eradication_delay_dalys >}}**                   | Cost-Saving + Health Gain   | **Dominant**                            | Using Low-Med Ecosystem Cost & optimistic health impact.                                                                                                                                                                                                                          |
+| Platform Breaks Even (R&D Savings = Ops Cost)        | e.g., 0.5% ($0.5B Savings) | $0.5B ({{< var recovery_trial_cost_per_patient >}}M)              | $0                            | {{< var disease_eradication_delay_dalys >}}                         | Cost-Neutral + Health Gain  | Dominant (Cost-Neutral, Health Gaining) | Using Low-Med Ecosystem Cost & base health impact.                                                                                                                                                                                                                            |
 
-_Note: Negative ICER values indicate that the dFDA Infrastructure is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core Platform Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
+_Note: The dFDA Infrastructure is cost-saving while also improving health outcomes. "Platform Op. Cost" here refers to different scopes: "Core Platform Ops" is per the ['Annual Operational Costs'](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month) ROM. Higher figures labeled "Total Ecosystem" are illustrative and aim to include broader initiative costs and/or large-scale participant compensation._
 
 #### Discussion: Policy Implications
 
 The analysis robustly demonstrates that the **dFDA Infrastructure is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
 
-- **Massive Cost Savings & Extremely Favorable Core ICER**: The core dFDA Infrastructure (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings. This results in extremely negative ICERs (e.g., ~-$59,501 per QALY), indicating exceptional value.
-- **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving, with strongly negative ICERs (e.g., -$19,041 to -$155,263 per QALY in various scenarios).
+- **Massive Cost Savings & Exceptional Value**: The core dFDA Infrastructure (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var disease_eradication_delay_dalys >}} DALYs through regulatory delay elimination. This combination creates exceptional value.
+- **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving across all scenarios.
 
-**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), leading to ICERs around -$59,476 per QALY. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., -$29.5B to -$94.5B annually in various scenarios) while simultaneously generating hundreds of thousands to millions of QALYs each year. The actual cost per QALY gained remains strongly negative across all these scopes, making it an extremely good deal.**
+**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var disease_eradication_delay_dalys >}} DALYs through regulatory delay elimination. The combination of massive financial returns and significant health gains makes the dFDA an exceptionally compelling investment.**
 
 *(Optional: A note could be added here that specific programs _built upon_ the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 
@@ -1548,11 +1538,11 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                  | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :---------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **dFDA Infrastructure**             |                     **4,744 - 194,667**                      | **-$260,000 to -$19,000**<a href="#ref_dfda_icer">²</a> | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating {{< var dfda_qalys_rd_plus_delay_annual >}}-3.65M QALYs annually.                                                                              |
+| **dFDA Infrastructure**             |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#sensitivity-analysis-overall-dfda-platform-cost-effectiveness). Based on $18.75M-$40.05M annual costs generating {{< var disease_eradication_delay_dalys >}} DALYs from regulatory delay elimination.                                                                              |
 | **Smallpox Eradication**      |      **{{< var dfda_large_trial_size >}} - 100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. ([WHO, 2010](../references.qmd#who-smallpox-eradication-commemoration)) |
 | **Childhood Vaccinations**    |        **22 - {{< var dfda_large_trial_size >}}+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. ([CDC, 2023](../references.qmd#childhood-vaccinations-prevent-deaths))                                 |
 | **Clean Water Programs**      |                       **100 - {{< var traditional_large_trial_size >}}**                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs {{< var lobbyist_bond_investment_max >}}-{{< var recovery_trial_cost_per_patient >}}/DALY averted. Community water supply improvements cost $200-${{< var dfda_drug_approvals_per_year_high >}}/DALY. ([WHO, 2004](../references.qmd#who-clean-water-daly-costs))                                              |
-| **Hypertension Screening**    |                         **30 - 50**                          | **~{{< var lobbyist_bond_investment_max >}},000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs under $**[Primary QALY estimate used]**{{< var dfda_qalys_rd_plus_delay_annual >}}/QALY, with most interventions falling in the $20,000-$33,000 range. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
+| **Hypertension Screening**    |                         **30 - 50**                          | **~$20,000 - $33,000**                                  | Highly Cost-Effective            | Recent US studies show pharmacist-led hypertension management has ICERs in the $20,000-$33,000 range per QALY gained, falling within standard willingness-to-pay thresholds. ([JAMA Netw Open, 2023](../references.qmd#jama-hypertension-pharmacist-led))            |
 | **Generic Drug Substitution** |       **{{< var traditional_large_trial_size >}} - {{< var dfda_large_trial_size >}}+**<a href="#ref_dominant">³</a>       | **Dominant** (Cost-Saving)                              | **Dominant**                     | By definition cost-saving when therapeutic equivalence is maintained, with typical savings of 30-80% versus brand-name drugs. ([WHO, 2015](../references.qmd#who-generic-drug-policy))                                                        |
 | **Statins / Polypill**        |         **67 - {{< var traditional_large_trial_size >}}+**<a href="#ref_dominant">³</a>         | Cost-Saving to **~$15,000**                             | Dominant / Highly Cost-Effective | Cost-saving in high-risk populations. ICERs range from dominant to $15k/QALY in lower-risk groups. ([eClinicalMedicine, 2022](../references.qmd#eclinicalmedicine-statins-polypill))                                               |
 

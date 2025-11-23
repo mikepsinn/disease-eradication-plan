@@ -32,9 +32,9 @@ This study quantifies the cumulative mortality and morbidity costs associated wi
 
 Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we present **three scenarios** estimating the mortality cost of this delay:
 
-- **Conservative (Historical Progress):** {{< var historical_progress_deaths_annual >}} deaths/year - Based on delayed access to existing life-saving drugs
-- **Moderate (Disease Eradication Delay - PRIMARY):** {{< var disease_eradication_delay_deaths_annual >}} deaths/year - Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years
-- **Optimistic (Acceleration Effects):** {{< var disease_eradication_plus_acceleration_deaths_annual >}} deaths/year - Includes innovation acceleration from lower costs and faster trials
+- **Conservative (Historical Progress):** {{< var historical_progress_deaths_total >}} deaths total - Based on delayed access to existing life-saving drugs
+- **Moderate (Disease Eradication Delay - PRIMARY):** {{< var disease_eradication_delay_deaths_total >}} deaths total - Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years
+- **Optimistic (Acceleration Effects):** {{< var disease_eradication_plus_acceleration_deaths_total >}} deaths total - Includes innovation acceleration from lower costs and faster trials
 
 When adjusted for morbidity, the **PRIMARY estimate** burden is **{{< var disease_eradication_delay_dalys >}} Billion Disability-Adjusted Life Years (DALYs)**.
 
@@ -86,19 +86,19 @@ We present three distinct methodologies for estimating the mortality cost of the
 
 **Important Clarification:** Throughout this analysis, "regulatory delay" refers specifically to the **post-safety efficacy testing delay** - the period AFTER safety has been established but BEFORE efficacy approval is granted under current FDA/EMA requirements. This is distinct from safety testing (Phase I), which we consider necessary and effective (as demonstrated by the thalidomide case where safety testing prevented thousands of U.S. deaths).
 
-| Scenario | Annual Deaths | Methodology | Confidence |
+| Scenario | Total Deaths | Methodology | Confidence |
 |:---------|:--------------|:------------|:-----------|
-| **Conservative<br/>(Historical Progress)** | **{{< var historical_progress_deaths_annual >}}** | Based on observed life-saving impact of drugs approved 1962-2024. Assumes only *existing* therapeutic classes are delayed. | High |
-| **Moderate<br/>(Disease Eradication - PRIMARY)** | **{{< var disease_eradication_delay_deaths_annual >}}** | Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). | Medium |
-| **Optimistic<br/>(Acceleration Effects)** | **{{< var disease_eradication_plus_acceleration_deaths_annual >}}** | PRIMARY estimate plus innovation acceleration from reduced costs and faster iteration cycles. | Low |
+| **Conservative<br/>(Historical Progress)** | **{{< var historical_progress_deaths_total >}}** | Based on observed life-saving impact of drugs approved 1962-2024. Assumes only *existing* therapeutic classes are delayed. | High |
+| **Moderate<br/>(Disease Eradication - PRIMARY)** | **{{< var disease_eradication_delay_deaths_total >}}** | Assumes regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}} years. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). | Medium |
+| **Optimistic<br/>(Acceleration Effects)** | **{{< var disease_eradication_plus_acceleration_deaths_total >}}** | PRIMARY estimate plus innovation acceleration from reduced costs and faster iteration cycles. | Low |
 
 ### 3.2 Recommended Use by Audience
 
-- **For Gates Foundation / Policy Makers:** Lead with **Conservative** estimate ({{< var historical_progress_deaths_annual >}}/year) for maximum defensibility
-- **For Internal Analysis:** Use **PRIMARY** estimate ({{< var disease_eradication_delay_deaths_annual >}}/year) for realistic impact assessment
-- **For Innovation Advocates:** Reference **Optimistic** estimate ({{< var disease_eradication_plus_acceleration_deaths_annual >}}/year) to show maximum potential
+- **For Gates Foundation / Policy Makers:** Lead with **Conservative** estimate ({{< var historical_progress_deaths_total >}}) for maximum defensibility
+- **For Internal Analysis:** Use **PRIMARY** estimate ({{< var disease_eradication_delay_deaths_total >}}) for realistic impact assessment
+- **For Innovation Advocates:** Reference **Optimistic** estimate ({{< var disease_eradication_plus_acceleration_deaths_total >}}) to show maximum potential
 
-**Finding (PRIMARY):** The disease eradication delay model estimates **{{< var disease_eradication_delay_deaths_annual >}} deaths annually**, equivalent to **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
+**Finding (PRIMARY):** The disease eradication delay model estimates **{{< var disease_eradication_delay_deaths_total >}} total preventable deaths**, with **{{< var global_disease_deaths_daily >}} deaths per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
 
 ## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
 
@@ -140,7 +140,7 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 ### 5.1 Contextualizing the Loss
 
-- **Annualized Loss:** ~{{< var disease_eradication_delay_annual_loss >}} / year.
+- **Annualized Loss:** ~{{< var disease_eradication_delay_economic_loss >}} / year ({{< var disease_eradication_delay_economic_loss >}} ÷ 62 years from 1962-2024).
 - **GDP Equivalent:** The "Efficacy Tax" consumes approximately **8–12% of Global GDP** annually in lost human capital and foregone productivity.
 
 ## 6. Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}

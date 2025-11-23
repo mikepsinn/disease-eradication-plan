@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Shared utilities for Quarto render scripts
 """
@@ -12,6 +13,10 @@ import threading
 import time
 from datetime import datetime
 from typing import Callable, List, Optional, Tuple
+
+# Set UTF-8 encoding for stdout on Windows
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Try to import psutil for LaTeX process detection (optional)
 try:

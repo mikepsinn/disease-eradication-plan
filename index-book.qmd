@@ -640,8 +640,8 @@ This beats:
 You stop paying smart humans to pretend problems are complicated. You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
 
 - **{{< var dfda_rd_gross_savings_annual >}} in annual R&D cost savings**: {{< var trial_cost_reduction_factor >}}x reduction in clinical trial costs (you were spending {{< var trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying ${{< var trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
-- **{{< var dfda_qalys_rd_plus_delay_annual >}} Quality-Adjusted Life Years** (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd)
-  - **{{< var dfda_lives_saved_annual >}} lives saved per year** by eliminating the 7.2-year regulatory efficacy lag
+- **{{< var disease_eradication_delay_deaths_total >}} lives saved** from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd)
+  - **{{< var disease_eradication_delay_dalys >}} DALYs averted** from the one-time timeline shift
   - This is the [comprehensive post-safety efficacy lag elimination approach](knowledge/appendix/regulatory-mortality-analysis.qmd) - **keeping rigorous Phase I safety testing** (2.3 years) but eliminating the 7.2-year Phase II/III efficacy delay by letting real-world evidence verify effectiveness
   - For context: {{< var global_disease_deaths_daily >}} people die every day under the current system waiting for post-safety efficacy approval ([see regulatory mortality analysis](knowledge/appendix/regulatory-mortality-analysis.qmd))
 
@@ -688,7 +688,7 @@ For humans who peaked at counting on fingers:
 - **You spend**: Zero new dollars (you just move existing dollars from the "making corpses" column to the "preventing corpses" column)
 - **You get back**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually
 - **Operating costs**: {{< var treaty_total_annual_costs >}}/year (less than a single fighter jet)
-- **Lives saved**: {{< var treaty_total_lives_saved_annual >}}/year
+- **Lives saved**: {{< var disease_eradication_delay_deaths_total >}} (dFDA timeline shift) + {{< var treaty_lives_saved_annual_global >}}/year (peace dividend)
 - **Per life saved**: Society makes {{< var system_profit_per_life_saved >}} profit
 
 Math says this is the best possible use of a billion dollars.
@@ -699,7 +699,7 @@ This is the only health intervention in history where you PROFIT from saving liv
 
 You're weaponizing capitalism's greatest strength (greed) against humanity's greatest weakness (dying). It's economic jiu-jitsu.
 
-Unlike charity, which requires infinite begging to finite donors, this creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually while saving {{< var treaty_total_lives_saved_annual >}} lives, operating until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
+Unlike charity, which requires infinite begging to finite donors, this creates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually while saving {{< var disease_eradication_delay_deaths_total >}} lives (dFDA timeline shift), operating until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
 
 ### 2nd Best Idea in the World
 
@@ -742,7 +742,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 *Novel Concept for Humanity*
 
-- {{< var treaty_total_lives_saved_annual >}} fewer people die each year (number grows exponentially as treatments improve)
+- {{< var disease_eradication_delay_deaths_total >}} lives saved from dFDA timeline shift ({{< var efficacy_lag_years >}}-year acceleration)
 - {{< var combined_peace_health_dividends_annual_for_roi_calc >}} appears annually like magic, except it's just arithmetic
 - Major diseases get cured within a decade
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading)

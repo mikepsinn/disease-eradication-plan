@@ -270,13 +270,6 @@
   \ SECONDS_PER_DAY | Unit: deaths/second | Click to view calculation\">1.74</a>"
 "cost_of_delay_deaths_per_second_latex": "$$\nDelay_{deaths} = \\frac{150,000}{86,400}\
   \ \\approx 1.74\n$$"
-"cost_of_delay_qaly_days_per_second": "<a href=\"/knowledge/problem/cost-of-war#cost-of-delay\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#cost-of-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"QALY-days lost\
-  \ per second of inaction | ✓ High confidence | Formula: (QALYS_ANNUAL ÷ 365) ÷ SECONDS_PER_YEAR\
-  \ | Unit: QALY-days/second | Click to view calculation\">0.0863</a>"
-"cost_of_delay_qaly_days_per_second_latex": "$$\nDelay_{QALY} = \\frac{925,610 / 365}{31,557,600}\
-  \ \\approx 0.00008\n$$"
 "current_active_trials": "<a href=\"https://warondisease.org/knowledge/references.html#clinicaltrials-gov-enrollment-data-2025\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -377,15 +370,6 @@
   \ REGULATORY + COMMUNITY | Unit: USD/year | Click to view calculation\">$40M</a>"
 "dfda_annual_opex_latex": "$$\nOPEX_{total} = \\sum_{i=1}^{5} OPEX_i = 0.015 + 0.010\
   \ + 0.008 + 0.005 + 0.002\n$$"
-"dfda_avoided_regulatory_delay_cost_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Average annual\
-  \ economic value of QALYs gained during the 8.2-year efficacy lag period (for backward\
-  \ compatibility). Note: This is not a recurring perpetual benefit, but an average\
-  \ during the one-time timeline shift. | ✓ High confidence | Formula: DFDA_QALYS_RD_PLUS_DELAY_ANNUAL\
-  \ × VSLY | Unit: USD/year | Click to view calculation\">$149T</a>"
-"dfda_avoided_regulatory_delay_cost_annual_latex": "$$\nValue_{annual\\_avg} = 993M\
-  \ \\times \\$150k = \\$148.95T\n$$"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
@@ -466,15 +450,6 @@
   \ * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC | Click to view calculation\">643K</a>"
 "dfda_expected_roi_50pct_political_success_latex": "$$\nE[ROI]_{\\text{50\\%}} = 1{,}286{,}242\
   \ \\times 0.50 = 643{,}121\n$$"
-"dfda_icer_per_qaly": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#dfda-icer-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA Infrastructure\
-  \ ICER per QALY (net incremental cost ÷ QALYs gained) | ✓ High confidence | Formula:\
-  \ (DFDA_ANNUAL_OPEX - DFDA_RD_GROSS_SAVINGS_ANNUAL) × 1B ÷ DFDA_QALYS_RD_PLUS_DELAY_ANNUAL\
-  \ | Unit: USD/QALY | Click to view calculation\">$-42</a>"
-"dfda_icer_per_qaly_latex": "$$\n\\text{ICER} = \\frac{\\text{Net Incremental Cost\
-  \ (Annual)}}{\\text{QALYs Gained (Annual)}} = \\frac{-\\$49.96\\text{B}}{993M \\\
-  text{ QALYs}} = -\\$50.3 \\text{ per QALY}\n$$"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model#recruitment-speed\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Months to recruit\
@@ -485,12 +460,6 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Large dFDA pragmatic\
   \ trial size | ✓ High confidence | Unit: participants | Click to view calculation\"\
   >10,000</a>"
-"dfda_lives_saved_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#expected-impact\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
-  \ saved by dFDA (QALYs ÷ QALYs per life) | ✓ High confidence | Formula: DFDA_QALYS\
-  \ ÷ QALYS_PER_LIFE | Unit: lives/year | Click to view calculation\">28.4M</a>"
-"dfda_lives_saved_annual_latex": "$$\nLives_{dFDA} = 993M \\div 35 = 28.4M\n$$"
 "dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
@@ -516,20 +485,6 @@
   \ DIH_OPEX | Unit: USD/year | Click to view calculation\">$40M</a>"
 "dfda_npv_annual_opex_total_latex": "$$\nC_{op} = \\$0.01895B + \\$0.02110B = \\$0.04005B\n\
   $$"
-"dfda_npv_benefit_delay_avoidance": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of regulatory\
-  \ delay avoidance (8.2-year timeline shift) assuming diseases are cured 100 years\
-  \ in the future on average. If cures occur at year 100, eliminating the delay brings\
-  \ them 8.2 years earlier (years 92-100). The full annual benefit applies for all\
-  \ 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate\
-  \ benefits, but the delay avoidance still provides value. This is realistic for\
-  \ many diseases that won't be cured for decades, but the 8-year shift means they\
-  \ arrive 8 years earlier. | ✓ High confidence | Formula: Sum of discounted annual\
-  \ delay avoidance benefits occurring at years 92-100 | Unit: USD | Click to view\
-  \ calculation\">$790B</a>"
-"dfda_npv_benefit_delay_avoidance_latex": "$$\nPV_{delay} = \\sum_{t=92}^{100} \\\
-  frac{Value_{annual}}{(1+r)^t}\n$$"
 "dfda_npv_benefit_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA R&D\
@@ -599,32 +554,6 @@
 "dfda_patient_eligibility_rate": "<span class=\"parameter-definition\" title=\"dFDA\
   \ patient eligibility rate (50% of disease patients can participate) | Unit: rate\
   \ | Core definition\">50%</span>"
-"dfda_qalys_rd_plus_delay_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#expected-impact\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Average annual\
-  \ QALYs gained from dFDA during the efficacy lag period (calculated from TOTAL divided\
-  \ by lag years). Note: This represents average annual impact during the 8.2-year\
-  \ timeline shift, not a recurring perpetual benefit. | ✓ High confidence | Formula:\
-  \ (TOTAL_DALYS × AVOIDANCE_FRACTION) ÷ EFFICACY_LAG_YEARS | Unit: QALYs/year | Click\
-  \ to view calculation\">993M</a>"
-"dfda_qalys_rd_plus_delay_annual_latex": "$$\nQALYs_{annual\\_avg} = (8.57B \\times\
-  \ 0.95) \\div 8.2 = 993M\n$$"
-"dfda_qalys_rd_plus_delay_daily": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#expected-impact\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#expected-impact\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily QALYs from\
-  \ dFDA post-safety efficacy testing delay elimination (opportunity cost per day)\
-  \ | ✓ High confidence | Formula: DFDA_QALYS_RD_PLUS_DELAY_ANNUAL ÷ 365 | Unit: QALYs/day\
-  \ | Click to view calculation\">2.72M</a>"
-"dfda_qalys_rd_plus_delay_daily_latex": "$$\nQALYs_{daily} = 993M \\div 365 = 2.72M\n\
-  $$"
-"dfda_qalys_rd_plus_delay_monetized": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Monetized value\
-  \ of dFDA health benefits from post-safety efficacy testing delay elimination (993M\
-  \ QALYs × $150k economic value) | ✓ High confidence | Formula: QALYS_RD_PLUS_DELAY\
-  \ × VALUE_PER_QALY | Unit: USD/year | Click to view calculation\">$149T</a>"
-"dfda_qalys_rd_plus_delay_monetized_latex": "$$\nValue_{QALY} = 993M \\times \\$150,000\
-  \ = \\$148.95T\n$$"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
@@ -640,14 +569,6 @@
   \ ANNUAL_RD_SAVINGS ÷ 365 | Unit: USD/day | Click to view calculation\">$114M</a>"
 "dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\$41.5B \\div 365 = \\$113.7M\n\
   $$"
-"dfda_regulatory_delay_avoidance_fraction": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#regulatory-delay-avoidance\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#regulatory-delay-avoidance\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of regulatory\
-  \ delay eliminated by dFDA provisional access post-Phase I | ✓ High confidence |\
-  \ Formula: EFFICACY_LAG ÷ (EFFICACY_LAG + PHASE_I_DURATION) | Unit: rate | Click\
-  \ to view calculation\">95%</a>"
-"dfda_regulatory_delay_avoidance_fraction_latex": "$$\nAvoidance = 8.2 \\div (8.2\
-  \ + 2.3) \\approx 0.78 \\text{ (use 0.95 conservatively)}\n$$"
 "dfda_roi_rd_only": "<a href=\"/knowledge/figures/dfda-roi-analysis\" class=\"parameter-link\"\
   \ data-source-ref=\"/knowledge/figures/dfda-roi-analysis.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"ROI from dFDA R&D savings only (10-year\
@@ -728,22 +649,6 @@
   \ | Click to view calculation\">$24.4B</a>"
 "dih_treasury_trial_subsidies_annual_latex": "$$\n\\$24.462B - \\$0.04B = \\$24.422B\n\
   $$"
-"disease_eradication_delay_annual_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual DALYs\
-  \ lost from disease eradication delay (PRIMARY estimate) | ~ Medium confidence |\
-  \ Formula: TOTAL_DALYS ÷ EFFICACY_LAG_YEARS | Unit: DALYs/year | Click to view calculation\"\
-  >1.05B</a>"
-"disease_eradication_delay_annual_dalys_latex": "$$\nDALY_{annual} = 8.57B \\div 8.2\
-  \ = 1.05B\n$$"
-"disease_eradication_delay_annual_loss": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual economic\
-  \ loss from disease eradication delay (PRIMARY estimate) | ~ Medium confidence |\
-  \ Formula: (TOTAL_DALYS ÷ EFFICACY_LAG_YEARS) × VSLY | Unit: USD/year | Click to\
-  \ view calculation\">$157T</a>"
-"disease_eradication_delay_annual_loss_latex": "$$\nAnnual_{loss} = (8.57B \\div 8.2)\
-  \ \\times \\$150k = \\$157B/year\n$$"
 "disease_eradication_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -751,19 +656,6 @@
   \ | Formula: YLL + YLD | Unit: DALYs | Click to view calculation\">8.57B</a>"
 "disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.63B + 0.943B = 8.57B\n\
   $$"
-"disease_eradication_delay_deaths_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Annual deaths\
-  \ from disease eradication delay (PRIMARY estimate). Represents perpetual annual\
-  \ opportunity cost of delaying disease eradication timeline by 8.2 years. Innovation\
-  \ cascade: eliminating Phase 2-4 costs ($2.6B→$350M) makes many more drugs economically\
-  \ viable (orphan diseases, prevention), accelerating progress toward disease eradication.\
-  \ Every year of delay extends the timeline, making this a perpetual annual cost\
-  \ equal to the global disease death rate that would be eliminated at eradication.\
-  \ | ~ Medium confidence | Formula: DAILY_DEATHS × 365 | Unit: deaths/year | Click\
-  \ to view calculation\">54.8M</a>"
-"disease_eradication_delay_deaths_annual_latex": "$$\nD_{annual} = 150,000 \\times\
-  \ 365 = 54.75M\n$$"
 "disease_eradication_delay_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total deaths\
@@ -796,18 +688,6 @@
   \ | Click to view calculation\">7.63B</a>"
 "disease_eradication_delay_yll_latex": "$$\nYLL = 449M \\times (79 - 62) = 7.63B\n\
   $$"
-"disease_eradication_plus_acceleration_deaths_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#acceleration-effects\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#acceleration-effects\"\
-  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Annual deaths\
-  \ from disease eradication delay plus full innovation acceleration multiplier effects\
-  \ (OPTIMISTIC UPPER BOUND). Assumes PRIMARY estimate (54.75M) plus additional acceleration\
-  \ from: (1) faster iteration cycles enabling exponential progress, (2) network effects\
-  \ from more researchers entering viable drug development, (3) compound benefits\
-  \ from earlier cures enabling further research. This represents maximum potential\
-  \ impact with full innovation cascade effects. | ? Low confidence | Formula: DISEASE_ERADICATION_ANNUAL\
-  \ × 2 | Unit: deaths/year | Click to view calculation\">110M</a>"
-"disease_eradication_plus_acceleration_deaths_annual_latex": "$$\nD_{upper} = 54.75M\
-  \ \\times 2 = 109.5M\n$$"
 "disease_eradication_plus_acceleration_deaths_total": "<a href=\"/knowledge/references#pharmaceutical-innovation-acceleration-economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total deaths from\
@@ -816,10 +696,11 @@
   \ cascade effects: faster development cycles, lower barriers enabling more drugs,\
   \ earlier phase starts. The 2× multiplier is supported by research showing 50% timeline\
   \ reductions achievable (Nature 2023) and adaptive trials generating millions of\
-  \ additional life-years (Woods et al. 2024). | ? Low confidence | Formula: ANNUAL_DEATHS\
-  \ × EFFICACY_LAG_YEARS | Unit: deaths | Click to view calculation\">898M</a>"
-"disease_eradication_plus_acceleration_deaths_total_latex": "$$\nD_{total} = 109.5M\
-  \ \\times 8.2 = 898M\n$$"
+  \ additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2\
+  \ years. | ? Low confidence | Formula: (DAILY_DEATHS × 365 × 2) × EFFICACY_LAG_YEARS\
+  \ | Unit: deaths | Click to view calculation\">898M</a>"
+"disease_eradication_plus_acceleration_deaths_total_latex": "$$\nD_{total} = (150K\
+  \ \\times 365 \\times 2) \\times 8.2 = 898M\n$$"
 "disease_eradication_plus_acceleration_economic_loss_total": "<a href=\"/knowledge/references#pharmaceutical-innovation-acceleration-economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total economic\
@@ -1275,22 +1156,13 @@
   \ cost of war and disease with all externalities (direct + indirect costs for both)\
   \ | ✓ High confidence | Formula: WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN\
   \ | Unit: USD/year | Click to view calculation\">$129T</a>"
-"historical_progress_deaths_annual": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#historical-progress\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
-  \ from delaying existing drugs based on historical progress (CONSERVATIVE FLOOR\
-  \ - no innovation assumptions). Counts only life-saving impact of drugs already\
-  \ approved 1962-2024, assuming therapeutic classes remain constant. Does NOT account\
-  \ for innovation cascade from lower costs making new drugs viable. This is the defensible\
-  \ minimum estimate assuming zero innovation effects from dFDA cost reduction. |\
-  \ ✓ High confidence | Unit: deaths/year | Click to view calculation\">12M</a>"
 "historical_progress_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#historical-progress\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total deaths\
   \ from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR).\
   \ One-time impact of eliminating Phase 2-4 testing delay for drugs already approved\
-  \ 1962-2024. | ✓ High confidence | Formula: ANNUAL_DEATHS × EFFICACY_LAG_YEARS |\
-  \ Unit: deaths | Click to view calculation\">98.4M</a>"
+  \ 1962-2024. Based on 12M deaths/year rate × 8.2 years. | ✓ High confidence | Formula:\
+  \ 12M × EFFICACY_LAG_YEARS | Unit: deaths | Click to view calculation\">98.4M</a>"
 "historical_progress_deaths_total_latex": "$$\nD_{total} = 12M \\times 8.2 = 98.4M\n\
   $$"
 "historical_progress_economic_loss_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#historical-progress\"\
@@ -1385,7 +1257,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost-effectiveness\
   \ multiplier vs GiveWell top charities | ✓ High confidence | Formula: ABS(NET_BENEFIT\
-  \ × 1B) ÷ GIVEWELL_COST | Unit: ratio | Click to view calculation\">1.21e-06</a>"
+  \ × 1B) ÷ GIVEWELL_COST | Unit: ratio | Click to view calculation\">0</a>"
 "multiplier_vs_givewell_latex": "$$\nMultiplier = \\frac{|-\\$6.19M \\times 10^9|}{\\\
   $4,500} \\approx 1,376x\n$$"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
@@ -1781,13 +1653,6 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic ICER\
   \ from sensitivity analysis | ✓ High confidence | Unit: USD/QALY | Click to view\
   \ calculation\">$-137K</a>"
-"sensitivity_lives_saved_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#central-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Central scenario\
-  \ lives saved (total QALYs ÷ QALYs/life) | ✓ High confidence | Formula: TOTAL_QALYS\
-  \ ÷ QALYS_PER_LIFE | Unit: lives/year | Click to view calculation\">28.4M</a>"
-"sensitivity_lives_saved_central_latex": "$$\nLives_{central} = 925,610 / 35 \\approx\
-  \ 26,446\n$$"
 "sensitivity_net_benefit_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
@@ -1837,20 +1702,6 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic total\
   \ costs | ✓ High confidence | Unit: USD/year | Click to view calculation\">$230M</a>"
-"sensitivity_total_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ total QALYs (peace + dFDA primary estimate) | ✓ High confidence | Formula: PEACE_QALYS\
-  \ + DFDA_QALYS_PRIMARY | Unit: QALYs/year | Click to view calculation\">993M</a>"
-"sensitivity_total_qalys_conservative_latex": "$$\nQALYs_{conservative} = 17,500 +\
-  \ 74,148,065 = 74,165,565\n$$"
-"sensitivity_total_qalys_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic total\
-  \ QALYs (peace + dFDA primary estimate) | ✓ High confidence | Formula: PEACE_QALYS\
-  \ + DFDA_QALYS_PRIMARY | Unit: QALYs/year | Click to view calculation\">993M</a>"
-"sensitivity_total_qalys_optimistic_latex": "$$\nQALYs_{optimistic} = 52,500 + 74,148,065\
-  \ = 74,200,565\n$$"
 "simultaneous_trials_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#capacity-multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simultaneous\
@@ -2152,41 +2003,17 @@
   \ to view calculation\">189</a>"
 "treaty_conservative_scenario_roi_latex": "$$\nROI_{conservative} = \\$74.6B / \\\
   $0.393B = 190:1\n$$"
-"treaty_dfda_cost_per_life_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
-  \ for investor-funded scenario - Treaty + dFDA system | ✓ High confidence | Unit:\
-  \ USD/life | Click to view calculation\">$-7</a>"
-"treaty_dfda_cost_per_life_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per life\
-  \ counting military spending opportunity cost - Treaty + dFDA system | ✓ High confidence\
-  \ | Unit: USD/life | Click to view calculation\">$-5</a>"
-"treaty_dfda_icer_investor_funded": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ICER for investor-funded\
-  \ scenario (VICTORY Social Impact Bonds) - Treaty + dFDA system | ✓ High confidence\
-  \ | Unit: USD/QALY | Click to view calculation\">$-187K</a>"
-"treaty_dfda_icer_opportunity_cost": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#alternative-icer\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#alternative-icer\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ICER counting\
-  \ redirected military spending as opportunity cost - Treaty + dFDA system | ✓ High\
-  \ confidence | Unit: USD/QALY | Click to view calculation\">$-157K</a>"
-"treaty_dfda_icer_per_qaly": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#icer-calculation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#icer-calculation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Incremental Cost-Effectiveness\
-  \ Ratio (ICER) per QALY gained for combined 1% Treaty + dFDA system | ✓ High confidence\
-  \ | Formula: (TREATY_TOTAL_ANNUAL_COSTS - TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)\
-  \ × 1B ÷ TREATY_TOTAL_QALYS_GAINED_ANNUAL | Unit: USD/QALY | Click to view calculation\"\
-  >$-156</a>"
-"treaty_dfda_net_benefit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#cost-per-life\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#cost-per-life\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net benefit per\
-  \ life saved for combined 1% Treaty + dFDA system (ICER × QALYs/life) | ✓ High confidence\
-  \ | Formula: TREATY_DFDA_ICER ÷ 1M × QALYS_PER_LIFE | Unit: USD/life | Click to\
-  \ view calculation\">$-0</a>"
-"treaty_dfda_net_benefit_per_life_saved_latex": "$$\nBenefitPerLife = -\\$2{,}197\
-  \ \\times 35 = -\\$76{,}895 \\text{ per life}\n$$"
+"treaty_dfda_cost_per_daly_timeline_shift": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per DALY\
+  \ averted from one-time timeline shift (8.2 years). This is a conservative estimate\
+  \ that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year\
+  \ funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $7-27/DALY,\
+  \ deworming costs $4-10/DALY. This intervention is 60-230x more cost-effective than\
+  \ bed nets while also being self-funding. | ✓ High confidence | Formula: CAMPAIGN_COST\
+  \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0</a>"
+"treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
+  $1.0B}{8.57B} = \\$0.117\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#lives-saved\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2282,28 +2109,6 @@
   \ view calculation\">$155B</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nRecurring_{annual} = \\$113.6B\
   \ + \\$41.5B = \\$155.1B\n$$"
-"treaty_total_lives_saved_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-lives\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ lives saved equivalent (total QALYs ÷ QALYs/life) | ✓ High confidence | Formula:\
-  \ TOTAL_QALYS ÷ QALYS_PER_LIFE | Unit: lives/year | Click to view calculation\"\
-  >28.4M</a>"
-"treaty_total_lives_saved_annual_latex": "$$\n\\frac{993{,}524{,}360 \\text{ QALYs}}{35\
-  \ \\text{ QALYs/life}} = 28{,}386{,}410 \\text{ lives}\n$$"
-"treaty_total_lives_saved_daily": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-lives\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total daily lives\
-  \ saved (dFDA + peace dividend) | ✓ High confidence | Formula: ANNUAL_LIVES_SAVED\
-  \ ÷ 365 | Unit: lives/day | Click to view calculation\">77,771</a>"
-"treaty_total_lives_saved_daily_latex": "$$\nLives_{daily} = 2.12M \\div 365 = 5,811\n\
-  $$"
-"treaty_total_qalys_gained_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-qalys\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-qalys\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ QALYs gained (dFDA + peace dividend) | ✓ High confidence | Formula: DFDA_QALYS\
-  \ + PEACE_QALYS | Unit: QALYs/year | Click to view calculation\">994M</a>"
-"treaty_total_qalys_gained_annual_latex": "$$\nQALYs_{total} = 993M + 85,610 = 993.09M\n\
-  $$"
 "trial_completion_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#completion-acceleration\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial completion\
