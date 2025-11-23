@@ -2171,9 +2171,10 @@ TREATY_TOTAL_LIVES_SAVED_ANNUAL = Parameter(
     display_name="Total Annual Lives Saved Equivalent",
     unit="lives/year",
     formula="TOTAL_QALYS ÷ QALYS_PER_LIFE",
-    latex=r"Lives_{total} = 54.11M \div 35 = 1.55M",
+    latex=r"\frac{993{,}524{,}360 \text{ QALYs}}{35 \text{ QALYs/life}} = 28{,}386{,}410 \text{ lives}",
     keywords=["1.55m", "cost effectiveness", "value for money", "disease burden", "deaths prevented", "life saving", "mortality reduction"]
-)  # 1.55M lives/year
+)  # 28.4M lives/year
+
 
 TREATY_TOTAL_LIVES_SAVED_DAILY = Parameter(
     TREATY_TOTAL_LIVES_SAVED_ANNUAL / 365,
@@ -2818,12 +2819,14 @@ NPV_DISCOUNT_RATE_STANDARD = Parameter(
     description="Standard discount rate for NPV analysis (8% annual)",
     display_name="Standard Discount Rate for NPV Analysis",
     unit="rate",
+    latex=r"r = 0.08",
     keywords=["8%", "yearly", "npv", "discount", "standard", "pa", "per annum"]
 )  # 8% annual discount rate (r)
 
 NPV_TIME_HORIZON_YEARS = Parameter(
     10, source_ref="", source_type="definition", description="Standard time horizon for NPV analysis", unit="years",
     display_name="Standard Time Horizon for NPV Analysis",
+    latex=r"T = 10",
     keywords=["npv", "time", "horizon", "years"]
 )  # Standard 10-year analysis window (T)
 
@@ -2969,6 +2972,43 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
     latex=r"Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"]
 )  # ~$249.3B (R&D savings only, most defensible financial case)
+
+# NPV of Regulatory Delay Avoidance (Disease Eradication Delay Elimination)
+# This calculates the present value of eliminating the 8.2-year regulatory delay,
+# assuming diseases are cured 100 years in the future on average.
+# 
+# Key assumption: If diseases are cured at year 100, eliminating the regulatory delay
+# brings them 8.2 years earlier (years 92-100). This is a simple timeline shift -
+# the full annual benefit applies for all 8.2 years.
+#
+# Far-future discounting dramatically reduces NPV compared to immediate benefits,
+# but the delay avoidance still provides value by bringing cures 8 years earlier.
+REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS = Parameter(
+    100.0,
+    source_ref="/knowledge/economics/economics.qmd",
+    source_type="definition",
+    description="Assumed average years until disease cures occur (for far-future NPV calculation). Many diseases may not be cured for 100 years, but eliminating the regulatory delay means they arrive 8.2 years earlier (at year 92 instead of year 100).",
+    display_name="Years Until Disease Cures (Far-Future Scenario)",
+    unit="years",
+    keywords=["timeline", "far future", "discounting", "regulatory delay", "average time to cure"]
+)  # 100 years until cures (average)
+
+DFDA_NPV_BENEFIT_DELAY_AVOIDANCE = Parameter(
+    sum(
+        [
+            DFDA_AVOIDED_REGULATORY_DELAY_COST_ANNUAL / (1 + NPV_DISCOUNT_RATE_STANDARD) ** (REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS - EFFICACY_LAG_YEARS + year - 1)
+            for year in range(1, int(EFFICACY_LAG_YEARS) + 1)
+        ]
+    ),
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
+    source_type="calculated",
+    description="NPV of regulatory delay avoidance (8.2-year timeline shift) assuming diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the delay brings them 8.2 years earlier (years 92-100). The full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value. This is realistic for many diseases that won't be cured for decades, but the 8-year shift means they arrive 8 years earlier.",
+    display_name="NPV of Regulatory Delay Avoidance (Disease Eradication)",
+    unit="USD",
+    formula=f"Sum of discounted annual delay avoidance benefits occurring at years {REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS - EFFICACY_LAG_YEARS:.0f}-{REGULATORY_DELAY_AVOIDANCE_FAR_FUTURE_YEARS:.0f}",
+    latex=r"PV_{delay} = \sum_{t=92}^{100} \frac{Value_{annual}}{(1+r)^t}",
+    keywords=["regulatory delay", "delay avoidance", "disease eradication", "far future", "npv", "discounting", "timeline shift"]
+)  # NPV of regulatory delay avoidance (far-future benefits, years 92-100)
 
 # ---
 # ROI TIERS
@@ -3513,6 +3553,7 @@ COMPLETED_TRIALS_MULTIPLIER_THEORETICAL_MAX = Parameter(
     display_name="Theoretical Maximum Research Capacity Multiplier (Maximum)",
     unit="ratio",
     formula="RECRUITMENT_SPEED × COMPLETION_SPEED × COMPLETION_RATE × FUNDING",
+    latex=r"25 \times 10 \times 1.6 \times 1.4 = 560",
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
 )  # 560x theoretical max
 
@@ -3525,17 +3566,19 @@ DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     display_name="Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
     unit="ratio",
     formula="ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
+    latex=r"\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1",
     keywords=["fatalities", "casualties", "illness", "mortality", "worldwide", "yearly", "disease"]
 )  # ~18,274:1
 
 DISEASE_VS_WAR_DEATHS_RATIO = Parameter(
-    GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / (GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * 137),
+    GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
     source_ref="/knowledge/economics/economics.qmd",
     source_type="calculated",
     description="Ratio of annual disease deaths to war deaths",
     display_name="Ratio of Annual Disease Deaths to War Deaths",
     unit="ratio",
     formula="ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS",
+    latex=r"\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1",
     keywords=["armed forces", "conflict", "fatalities", "casualties", "illness", "mortality", "worldwide"]
 )  # ~137:1
 
@@ -3548,8 +3591,9 @@ MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN = Parameter(
     display_name="Medical Research Spending as Percentage of Total Disease Burden",
     unit="rate",
     formula="MED_RESEARCH ÷ TOTAL_BURDEN",
+    latex=r"\frac{\$67.5\text{B}}{\$128.6\text{T}} = 0.052\%",
     keywords=["deadweight loss", "economic damage", "productivity loss", "gdp loss", "investigation", "r&d", "science"]
-)  # 0.057%
+)  # 0.052%
 
 # Per capita calculations
 GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(

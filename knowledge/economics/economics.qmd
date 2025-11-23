@@ -139,11 +139,9 @@ Humanity's budget priorities, explained simply:
 
 - **Curative research**: {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} billion/year
 
-That's 0.053% of the disease burden spent on actually fixing the problem:
+That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden spent on actually fixing the problem:
 
-$$
-\frac{\$68\text{B}}{\$128.6\text{T}} = 0.053\%
-$$
+{{< var medical_research_pct_of_disease_burden_latex >}}
 
 #### Results of this strategy
 
@@ -168,15 +166,11 @@ This mortality burden exceeds:
 
 - [Annual terrorism deaths](../references.qmd#chance-of-dying-from-terrorism-1-in-30m) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}
 
-$$
-\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
-$$
+{{< var disease_vs_terrorism_deaths_ratio_latex >}}
 
 - [Annual war deaths](../references.qmd#acled-active-combat-deaths) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}:1 (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
 
-$$
-\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
-$$
+{{< var disease_vs_war_deaths_ratio_latex >}}
 
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
 
@@ -509,13 +503,13 @@ For those who need to see the actual equations before believing anything:
 
 #### NPV of Costs
 
-$$
-\text{NPV}(\text{Costs}) = C_{0} + \sum_{t=1}^{T} \frac{C_{\text{op}}(t)}{(1 + r)^t}
-$$
+{{< var dfda_npv_total_cost_latex >}}
 
 where $C_{0}$ is upfront costs (platform development, legal structure, data integration), $C_{\text{op}}(t)$ is annual operating costs in year $t$ (maintenance, analysis, administration), $r$ is the discount rate ({{< var npv_discount_rate_standard >}}), and $T$ is the time horizon ({{< var npv_time_horizon_years >}} years).
 
 #### NPV of Benefits
+
+**Note:** The NPV calculation includes **only annual recurring R&D savings**, not the one-time 8.2-year timeline shift in disease eradication. The timeline shift is a separate one-time benefit that occurs when the regulatory delay is eliminated (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
 
 Annual benefits $S(t)$ are calculated as:
 $$
@@ -524,24 +518,40 @@ $$
 
 where $p(t)$ is the adoption rate at year $t$ (gradual ramp-up over {{< var dfda_npv_adoption_ramp_years >}} years), $\alpha$ is the fraction of R&D costs saved ({{< var trial_cost_reduction_pct >}} baseline), and $R_{d}$ is annual global clinical trial spending ({{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}}).
 
-The NPV of benefits:
-$$
-\text{NPV}(\text{Benefits}) = \sum_{t=1}^{T} \frac{S(t)}{(1 + r)^t}
-$$
+The NPV of benefits (R&D savings only):
+{{< var dfda_npv_benefit_rd_only_latex >}}
 
 #### Return on Investment
 
-$$
-\text{ROI} = \frac{\text{NPV}(\text{Benefits})}{\text{NPV}(\text{Costs})}
-$$
+{{< var dfda_roi_rd_only_latex >}}
 
 This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over {{< var npv_time_horizon_years >}} years.
+
+**Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the one-time 8.2-year timeline shift in disease eradication, as this represents the primary health benefit from eliminating the regulatory delay (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
 
 For the dFDA infrastructure (using annual figures):
 
 {{< var dfda_icer_per_qaly_latex >}}
 
 The negative ICER indicates cost savings while improving health, a **dominant intervention** by health economics standards. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; interventions that save costs while gaining QALYs are unconditionally recommended.
+
+#### NPV of Regulatory Delay Avoidance
+
+The conservative NPV above excludes the one-time benefit from eliminating the regulatory delay (8.2-year timeline shift in disease eradication). However, we can calculate the NPV of this benefit by modeling when it occurs.
+
+**Assumption**: We assume diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the regulatory delay brings them 8.2 years earlier (years 92-100). This is a simple timeline shift - the full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
+
+The NPV of regulatory delay avoidance (assuming average cure time of 100 years):
+
+{{< var dfda_npv_benefit_delay_avoidance_latex >}}
+
+This yields NPV of {{< var dfda_npv_benefit_delay_avoidance >}} assuming cures occur 100 years in the future on average. The discount factor at year 92 (when benefits begin) is approximately (1 + {{< var npv_discount_rate_standard >}})^92, making far-future benefits much smaller than if they occurred immediately.
+
+**Calculation details**: The full annual benefit ({{< var dfda_avoided_regulatory_delay_cost_annual >}}) applies for all 8.2 years (years 92-100), with each year's value discounted back to present. This represents the monetized value of 8.2 years of QALYs/DALYs that occur 100 years in the future, shifted 8.2 years earlier by eliminating the regulatory delay.
+
+**Comparison**: The regulatory delay avoidance NPV ({{< var dfda_npv_benefit_delay_avoidance >}}) is approximately **{{< var dfda_npv_benefit_delay_avoidance / dfda_npv_benefit_rd_only >}}× higher** than the conservative R&D-only NPV ({{< var dfda_npv_benefit_rd_only >}}), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance NPV does not include R&D savings.
+
+**Key insight**: Eliminating the regulatory delay still provides value even if cures are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases are actually cured, which varies by disease category. Some may be cured in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to cure.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -625,13 +635,13 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 
 | Factor | Current System | dFDA System | Multiplier |
 |:---|---:|---:|---:|
-| **Recruitment Speed** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients | **25×** |
-| **Trial Completion Speed** | 3-5 years | 3-12 months | **10×** |
-| **Simultaneous Trials** | {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials | {{< var dfda_active_trials >}} active trials | **20×** |
-| **Completion Rate** | {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} finish | {{< var dfda_trial_completion_rate >}} finish | **1.6×** |
+| **Recruitment Speed** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients | **{{< var recruitment_speed_multiplier >}}×** |
+| **Trial Completion Speed** | 3-5 years | 3-12 months | **{{< var trial_completion_speed_multiplier >}}×** |
+| **Simultaneous Trials** | {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials | {{< var dfda_active_trials >}} active trials | **{{< var simultaneous_trials_multiplier >}}×** |
+| **Completion Rate** | {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} finish | {{< var dfda_trial_completion_rate >}} finish | **{{< var completion_rate_improvement_multiplier >}}×** |
 | **Funding Increase** | {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline | {{< var total_research_funding_with_treaty >}} (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
 
-**Theoretical maximum:** 25 × 10 × 1.6 × 1.4 = 560×
+**Theoretical maximum:** {{< var recruitment_speed_multiplier >}} × {{< var trial_completion_speed_multiplier >}} × {{< var completion_rate_improvement_multiplier >}} × 1.4 = {{< var completed_trials_multiplier_theoretical_max >}}×
 
 **Conservative application:** Analysis uses {{< var research_acceleration_multiplier >}}× multiplier accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
@@ -730,9 +740,7 @@ The baseline analysis uses a {{< var npv_discount_rate_standard >}} annual disco
 
 **Formula**: Higher discount rates reduce NPV of future benefits:
 
-$$
-\text{NPV} = \sum_{t=1}^{10} \frac{B_t - C_t}{(1 + r)^t}
-$$
+{{< var dfda_npv_net_benefit_rd_only_latex >}}
 
 where $r$ is the discount rate, $B_t$ are benefits in year $t$, and $C_t$ are costs in year $t$.
 
@@ -769,7 +777,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Justification:** Based on historical adoption curves for electronic health records (5-10 years to majority adoption), clinical trial registry systems, and FDA Sentinel System implementation.
 
-**Adoption realism considerations:** Technology adoption typically follows S-curve dynamics with critical mass thresholds rather than linear ramps. Coordination failure risk exists (prisoner's dilemma: pharmaceutical companies may prefer others adopt first). Mitigation: Economic incentives (82× cost reduction) create overwhelming financial motivation for early adoption. Regulatory harmonization across jurisdictions may extend to 10-20 years rather than the modeled 5-year timeline, though pilot programs in willing jurisdictions (UK MHRA, which accepted RECOVERY evidence) can establish proof-of-concept earlier.
+**Adoption realism considerations:** Technology adoption typically follows S-curve dynamics with critical mass thresholds rather than linear ramps. Coordination failure risk exists (prisoner's dilemma: pharmaceutical companies may prefer others adopt first). Mitigation: Economic incentives ({{< var trial_cost_reduction_factor >}}× cost reduction) create overwhelming financial motivation for early adoption. Regulatory harmonization across jurisdictions may extend to 10-20 years rather than the modeled 5-year timeline, though pilot programs in willing jurisdictions (UK MHRA, which accepted RECOVERY evidence) can establish proof-of-concept earlier.
 
 **Sensitivity:** NPV calculations explicitly model adoption uncertainty through gradual ramp-up rather than immediate full adoption. Conservative scenario (50% adoption) accounts for coordination failures and regulatory delays.
 
@@ -831,9 +839,7 @@ The cost reduction estimates (50-95%) are conservative relative to the historica
 
 **Standard economic practice**: Cost-benefit analysis for interventions with implementation uncertainty requires expected value calculation:
 
-$$
-E[\text{ROI}] = P(\text{success}) \times \text{ROI}_{\text{if successful}}
-$$
+{{< var dfda_expected_roi_10pct_political_success_latex >}}
 
 The preceding analysis presents *conditional* benefits (returns IF implementation succeeds). Expected value analysis incorporates the probability of achieving political ratification and sustained commitment:
 
@@ -921,7 +927,7 @@ You get back {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_hori
 
 That's ${{< var dfda_roi_rd_only >}} appearing for every $1 you invest. It's like a money printer, except instead of causing inflation, it causes people to continue existing.
 
-**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
+**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}} years, not the one-time 8.2-year timeline shift in disease eradication (which is a separate benefit). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
 
@@ -1059,9 +1065,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 - **Net Position**: {{< var treaty_peace_plus_rd_annual_benefits >}} annual surplus after all costs
 - **Lives Saved**: {{< var treaty_total_lives_saved_annual >}} annually
 
-$$
-1{,}162{,}000 \text{ QALYs} \div 44 \text{ QALYs/life} = 26{,}446 \text{ lives}
-$$
+{{< var treaty_total_lives_saved_annual_latex >}}
 
 - **Cost per Life Saved**: Net societal benefit of `{python} cost_per_life_investor_funded_formatted` per life ([negative cost](../appendix/1-percent-treaty-cost-effectiveness.qmd) indicates net profit)
 
@@ -1137,17 +1141,15 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 
 | Factor | Current | Pragmatic Trials | Multiplier |
 |:---|---:|---:|---:|
-| **[Recruitment Speed](../appendix/research-acceleration-model.qmd)** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients | **[25x](../appendix/research-acceleration-model.qmd)** |
-| **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **[10x](../appendix/research-acceleration-model.qmd)** |
-| **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **[20x](../appendix/research-acceleration-model.qmd)** |
-| **[Completion Rate](../appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **[1.6x](../appendix/research-acceleration-model.qmd)** |
-| **Funding Increase** | [$67.5B medical research](../appendix/global-government-medical-research-spending.qmd) | [$94.7B](../appendix/research-acceleration-model.qmd) ($67.5B + {{< var treaty_annual_funding >}}) | **[1.4x](../appendix/research-acceleration-model.qmd)** |
+| **[Recruitment Speed](../appendix/research-acceleration-model.qmd)** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients | **{{< var recruitment_speed_multiplier >}}×** |
+| **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **{{< var trial_completion_speed_multiplier >}}×** |
+| **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **{{< var simultaneous_trials_multiplier >}}×** |
+| **[Completion Rate](../appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **{{< var completion_rate_improvement_multiplier >}}×** |
+| **Funding Increase** | [$67.5B medical research](../appendix/global-government-medical-research-spending.qmd) | [$94.7B](../appendix/research-acceleration-model.qmd) ($67.5B + {{< var treaty_annual_funding >}}) | **[1.4×](../appendix/research-acceleration-model.qmd)** |
 
 **Theoretical Maximum**:
 
-$$
-25 \times 10 \times 1.6 \times 1.4 = 560
-$$
+{{< var completed_trials_multiplier_theoretical_max_latex >}}
 
 This represents **{{< var completed_trials_multiplier_theoretical_max >}}** more completed trials per year
 
@@ -1159,7 +1161,7 @@ This represents:
 
 - From {{< var current_completed_trials_per_year >}} completed trials/year → [227,700 completed trials/year](../appendix/research-acceleration-model.qmd) ({{< var research_acceleration_multiplier >}}x)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)
-- From [$41,000 cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ([82x cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
@@ -1232,7 +1234,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 **Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
 - **Defense sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
-- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity increases 115X](../appendix/research-acceleration-model.qmd)
+- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity](../appendix/research-acceleration-model.qmd) increases {{< var research_acceleration_multiplier >}}×
 - **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ({{< var global_disease_economic_burden_annual >}} current economic cost)
 - **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
@@ -1405,7 +1407,7 @@ The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives fro
 
 ### Generalizability from RECOVERY Trial and Historical Precedent
 
-The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions (82× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
+The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions ({{< var trial_cost_reduction_factor >}}× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
 
 **Historical validation:** The physician-led pragmatic trial model has 80 years of empirical validation (1883-1960), not merely one modern case study. [144,000 physicians](../references.qmd#pre-1962-physician-trials) testing treatments on real patients in routine practice produced 4 years/decade life expectancy gains for 80 consecutive years before the 1962 regulatory shift.
 
@@ -1592,11 +1594,11 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 3. **Rent-seeking and administrative costs**: Historical analysis of large funding programs suggests 10-20% overhead from rent-seeking, lobbying, and administrative burden. Patient-driven trial participation (where subsidies follow patients to their chosen trials) reduces but does not eliminate these costs, as some administrative overhead is inevitable.
 
-4. **Clinical trial market price effects**: Increasing trial demand by 115× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs (82× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost $41,000 per patient; decentralized trials target $500 per patient by eliminating overhead, not by increasing demand for scarce inputs.
+4. **Clinical trial market price effects**: Increasing trial demand by {{< var research_acceleration_multiplier >}}× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var trial_cost_reduction_factor >}}× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient; decentralized trials target {{< var recovery_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
 
 5. **Crowding out effects**: Does $27.2B in new medical research displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
 
-6. **Quality versus quantity trade-off**: 115× more trials may not yield proportional breakthroughs if resources spread thin or trial quality declines. The analysis assumes quality maintenance through peer review and replication; actual quality effects remain uncertain.
+6. **Quality versus quantity trade-off**: {{< var research_acceleration_multiplier >}}× more trials may not yield proportional breakthroughs if resources spread thin or trial quality declines. The analysis assumes quality maintenance through peer review and replication; actual quality effects remain uncertain.
 
 **Conservative treatment in base case**: The analysis excludes general equilibrium effects from benefit calculations, providing a lower bound estimate. Transition costs ($2-4B) are small relative to annual benefits ($163.6B conservative case), suggesting conclusions robust to general equilibrium adjustments.
 
@@ -1661,7 +1663,7 @@ The economic analysis presented above assumes successful implementation of the d
 
 **Mitigation strategies**:
 
-- Economic incentives: 82× cost reduction creates overwhelming financial motivation for adoption
+- Economic incentives: {{< var trial_cost_reduction_factor >}}× cost reduction creates overwhelming financial motivation for adoption
 - First-mover advantages: Companies adopting early gain competitive speed-to-market advantages
 - Regulatory push: If regulators preferentially review dFDA submissions (shorter timelines), companies face competitive pressure to adopt
 - Public funding focus: Government-funded research (NIH, Wellcome Trust) can mandate dFDA platform use, creating initial scale

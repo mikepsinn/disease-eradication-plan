@@ -716,6 +716,7 @@
       #### NPV of Costs
       #### NPV of Benefits
       #### Return on Investment
+      #### NPV of Regulatory Delay Avoidance
   ## Quality-Adjusted Life Year (QALY) Valuation
     ### QALY Calculation Model
   ## Counterfactual Baseline Specification
@@ -728,7 +729,7 @@
       #### Health Economics
       #### Economic Parameters
   ## Sensitivity Analysis Approach
-    ### Worst-Case Scenario (66:1 ROI)
+    ### Worst-Case Scenario ({{< var treaty_conservative_scenario_roi >}}:1 ROI)
       #### Results
     ### Discount Rate Sensitivity
   ## Key Analytical Assumptions
@@ -755,8 +756,8 @@
       #### Comparative Cost per Life Saved
     ### Self-Funding Mechanism Through Military Budget Redirection
   ## The Complete Case: All Direct Benefits
-    ### Annual Benefits Breakdown
-      #### Total annual benefits
+    ### Annual Recurring Benefits Breakdown
+      #### Total recurring annual benefits
       #### Complete Case ROI
     ### Research Acceleration Mechanism
   ## Personal Economic Impact: From Societal to Individual
@@ -2532,4 +2533,4 @@
 - Files with headings: 79
 - Files without headings: 2
 - Files not found: 0
-- Total headings extracted: 2249
+- Total headings extracted: 2250

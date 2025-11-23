@@ -318,6 +318,8 @@
   \ research capacity multiplier (25×10×1.6×1.4) | ✓ High confidence | Formula: RECRUITMENT_SPEED\
   \ × COMPLETION_SPEED × COMPLETION_RATE × FUNDING | Unit: ratio | Click to view calculation\"\
   >560</a>"
+"completed_trials_multiplier_theoretical_max_latex": "$$\n25 \\times 10 \\times 1.6\
+  \ \\times 1.4 = 560\n$$"
 "completion_rate_improvement_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#completion-rates\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Completion rate\
@@ -611,6 +613,20 @@
   \ DIH_OPEX | Unit: USD/year | Click to view calculation\">$40M</a>"
 "dfda_npv_annual_opex_total_latex": "$$\nC_{op} = \\$0.01895B + \\$0.02110B = \\$0.04005B\n\
   $$"
+"dfda_npv_benefit_delay_avoidance": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of regulatory\
+  \ delay avoidance (8.2-year timeline shift) assuming diseases are cured 100 years\
+  \ in the future on average. If cures occur at year 100, eliminating the delay brings\
+  \ them 8.2 years earlier (years 92-100). The full annual benefit applies for all\
+  \ 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate\
+  \ benefits, but the delay avoidance still provides value. This is realistic for\
+  \ many diseases that won't be cured for decades, but the 8-year shift means they\
+  \ arrive 8 years earlier. | ✓ High confidence | Formula: Sum of discounted annual\
+  \ delay avoidance benefits occurring at years 92-100 | Unit: USD | Click to view\
+  \ calculation\">$790B</a>"
+"dfda_npv_benefit_delay_avoidance_latex": "$$\nPV_{delay} = \\sum_{t=92}^{100} \\\
+  frac{Value_{annual}}{(1+r)^t}\n$$"
 "dfda_npv_benefit_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA R&D\
@@ -963,11 +979,15 @@
   calculated\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
   \ 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS\
   \ | Unit: ratio | Click to view calculation\">18,274</a>"
+"disease_vs_terrorism_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{3{,}000\\\
+  text{ terrorism deaths}} \\approx 18{,}274:1\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/economics/economics\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
   \ war deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS |\
-  \ Unit: ratio | Click to view calculation\">1.63</a>"
+  \ Unit: ratio | Click to view calculation\">224</a>"
+"disease_vs_war_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{400{,}000\\\
+  text{ conflict deaths}} \\approx 137:1\n$$"
 "dividend_coverage_factor": "<a href=\"/knowledge/strategy/roadmap#sustainability\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#sustainability\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Coverage factor\
@@ -1667,6 +1687,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Medical research\
   \ spending as percentage of total disease burden | ✓ High confidence | Formula:\
   \ MED_RESEARCH ÷ TOTAL_BURDEN | Unit: rate | Click to view calculation\">0.0525%</a>"
+"medical_research_pct_of_disease_burden_latex": "$$\n\\frac{\\$67.5\\text{B}}{\\$128.6\\\
+  text{T}} = 0.052\\%\n$$"
 "mental_health_grants_annual": "<a href=\"https://warondisease.org/knowledge/references.html#global-mental-health-research-spending-1-5b\"\
   \ class=\"parameter-link\" data-source-ref=\"global-mental-health-research-spending-1-5b\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual mental health\
@@ -1702,8 +1724,10 @@
   $4,500} \\approx 1,376x\n$$"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
+"npv_discount_rate_standard_latex": "$$\nr = 0.08\n$$"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
   \ horizon for NPV analysis | Unit: years | Core definition\">10</span>"
+"npv_time_horizon_years_latex": "$$\nT = 10\n$$"
 "opportunity_cost_per_day": "<a href=\"/knowledge/economics/economics#the-opportunity-cost-clock\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Foregone economic\
@@ -2121,6 +2145,13 @@
   \ view calculation\">$157T</a>"
 "regulatory_delay_annual_loss_latex": "$$\nAnnual_{loss} = (8.57B \\div 8.2) \\times\
   \ \\$150k = \\$157B/year\n$$"
+"regulatory_delay_avoidance_far_future_years": "<a href=\"/knowledge/economics/economics\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Assumed average\
+  \ years until disease cures occur (for far-future NPV calculation). Many diseases\
+  \ may not be cured for 100 years, but eliminating the regulatory delay means they\
+  \ arrive 8.2 years earlier (at year 92 instead of year 100). | ✓ High confidence\
+  \ | Unit: years | Click to view calculation\">100</a>"
 "regulatory_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
@@ -2865,8 +2896,8 @@
   \ lives saved equivalent (total QALYs ÷ QALYs/life) | ✓ High confidence | Formula:\
   \ TOTAL_QALYS ÷ QALYS_PER_LIFE | Unit: lives/year | Click to view calculation\"\
   >28.4M</a>"
-"treaty_total_lives_saved_annual_latex": "$$\nLives_{total} = 54.11M \\div 35 = 1.55M\n\
-  $$"
+"treaty_total_lives_saved_annual_latex": "$$\n\\frac{993{,}524{,}360 \\text{ QALYs}}{35\
+  \ \\text{ QALYs/life}} = 28{,}386{,}410 \\text{ lives}\n$$"
 "treaty_total_lives_saved_daily": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-lives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-lives\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total daily lives\

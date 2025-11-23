@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 544
+**Total parameters**: 546
 
 - External sources (peer-reviewed): 177
-- Calculated values: 319
-- Core definitions: 48
+- Calculated values: 320
+- Core definitions: 49
 
 ## External Data Sources {#sec-external}
 
@@ -2888,7 +2888,9 @@ $$
 
 Theoretical maximum research capacity multiplier (25×10×1.6×1.4)
 
-*Formula*: `RECRUITMENT_SPEED × COMPLETION_SPEED × COMPLETION_RATE × FUNDING`
+$$
+25 \times 10 \times 1.6 \times 1.4 = 560
+$$
 
 **Methodology**: [../appendix/research-acceleration-model#theoretical-maximum](../appendix/research-acceleration-model#theoretical-maximum)
 
@@ -3433,6 +3435,23 @@ C_{op} = \$0.01895B + \$0.02110B = \$0.04005B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### NPV of Regulatory Delay Avoidance (Disease Eradication) {#sec-dfda_npv_benefit_delay_avoidance}
+
+**Value**: $790B
+
+NPV of regulatory delay avoidance (8.2-year timeline shift) assuming diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the delay brings them 8.2 years earlier (years 92-100). The full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value. This is realistic for many diseases that won't be cured for decades, but the 8-year shift means they arrive 8 years earlier.
+
+$$
+PV_{delay} = \sum_{t=92}^{100} \frac{Value_{annual}}{(1+r)^t}
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
 
 *✓ High confidence*
 
@@ -4133,7 +4152,9 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 Ratio of annual disease deaths to 9/11 terrorism deaths
 
-*Formula*: `ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS`
+$$
+\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
+$$
 
 **Methodology**: [../economics/economics](../economics/economics)
 
@@ -4144,11 +4165,13 @@ Ratio of annual disease deaths to 9/11 terrorism deaths
 ::: {.callout-note icon=false collapse=false}
 ### Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
 
-**Value**: 1.63
+**Value**: 224
 
 Ratio of annual disease deaths to war deaths
 
-*Formula*: `ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS`
+$$
+\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
+$$
 
 **Methodology**: [../economics/economics](../economics/economics)
 
@@ -4926,7 +4949,9 @@ Minimum bond investment for lobbyist incentives
 
 Medical research spending as percentage of total disease burden
 
-*Formula*: `MED_RESEARCH ÷ TOTAL_BURDEN`
+$$
+\frac{\$67.5\text{B}}{\$128.6\text{T}} = 0.052\%
+$$
 
 **Methodology**: [../economics/economics](../economics/economics)
 
@@ -6903,7 +6928,7 @@ $$
 Total annual lives saved equivalent (total QALYs ÷ QALYs/life)
 
 $$
-Lives_{total} = 54.11M \div 35 = 1.55M
+\frac{993{,}524{,}360 \text{ QALYs}}{35 \text{ QALYs/life}} = 28{,}386{,}410 \text{ lives}
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-lives](../appendix/1-percent-treaty-cost-effectiveness#total-lives)
@@ -7538,6 +7563,17 @@ Standard time horizon for NPV analysis
 ### Personal Lifetime Benefit Eradication 5yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
 
 **Value**: 1.18M
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Years Until Disease Cures (Far-Future Scenario) {#sec-regulatory_delay_avoidance_far_future_years}
+
+**Value**: 100
+
+Assumed average years until disease cures occur (for far-future NPV calculation). Many diseases may not be cured for 100 years, but eliminating the regulatory delay means they arrive 8.2 years earlier (at year 92 instead of year 100).
 
 *Core definition*
 
