@@ -271,7 +271,9 @@ format:
     number-sections: false
     toc: true
     toc-depth: 3
-    css: styles.css
+    css: 
+      - styles.css
+      - economics-overrides.css
     page-footer:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
@@ -300,6 +302,16 @@ format:
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
           </footer>
+          <!-- Quarto Sidebar Horizontal Overlap Fix -->
+          <script>
+            (function() {
+              // Get the Quarto offset to build correct path
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/quarto-sidebar-fix.js';
+              document.body.appendChild(script);
+            })();
+          </script>
     include-in-header:
       - text: |
           <!-- Icons -->

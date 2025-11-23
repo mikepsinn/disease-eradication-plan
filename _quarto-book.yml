@@ -261,6 +261,18 @@ format:
       left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
       right: "[WarOnDisease.org](https://WarOnDisease.org)"
+    include-after-body:
+      - text: |
+          <!-- Quarto Sidebar Horizontal Overlap Fix -->
+          <script>
+            (function() {
+              // Get the Quarto offset to build correct path
+              var offset = document.querySelector('meta[name="quarto:offset"]')?.getAttribute('content') || '';
+              var script = document.createElement('script');
+              script.src = (offset ? offset : '') + 'assets/js/quarto-sidebar-fix.js';
+              document.body.appendChild(script);
+            })();
+          </script>
   epub:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
     # Cover image for EPUB (required for most e-book platforms)

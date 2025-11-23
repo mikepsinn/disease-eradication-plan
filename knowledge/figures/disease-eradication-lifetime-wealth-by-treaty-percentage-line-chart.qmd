@@ -112,8 +112,8 @@ for i, (values, marker_y_offset) in enumerate([
 
 ax.set_xlabel('Treaty Percentage (% of Military Budget)', fontsize=24, weight='bold')
 ax.set_ylabel('Total Wealth Gained (Millions)', fontsize=24, weight='bold')
-ax.set_title('How the Treaty Percentage Affects Your Lifetime Wealth\n(From 0.1% to 5% of Military Budget Redirected to Medical Research)',
-             fontsize=32, weight='bold', pad=20)
+ax.set_title('How the Treaty Percentage Affects Your Lifetime Wealth\n(From 0.1% to 5% of Military Budget\nRedirected to Medical Research)',
+             fontsize=32, weight='bold', pad=50)
 
 # Format y-axis
 
@@ -156,6 +156,7 @@ add_png_metadata(
     description="Shows how personal lifetime wealth scales with treaty percentage under Disease Eradication Model (72yr life extension)"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

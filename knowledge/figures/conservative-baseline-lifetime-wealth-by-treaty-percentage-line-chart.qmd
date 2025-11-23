@@ -82,8 +82,8 @@ ax1.axvline(x=1, color=COLOR_BLACK, linestyle='--', linewidth=2, alpha=0.5, labe
 
 # Title
 
-ax1.set_title('How Treaty Percentage Affects Your Personal Lifetime Wealth\n(Age 30, $50K Income)',
-              fontsize=32, weight='bold', pad=20)
+ax1.set_title('How Treaty Percentage Affects\nYour Personal Lifetime Wealth\n(Age 30, $50K Income)',
+              fontsize=32, weight='bold', pad=50)
 
 # Grid for readability
 
@@ -115,6 +115,7 @@ add_png_metadata(
     description="Line chart showing how lifetime wealth increases with higher treaty percentages"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

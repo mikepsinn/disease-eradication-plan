@@ -77,8 +77,8 @@ for i, wedge in enumerate(wedges):
 
 # Add title
 
-ax.set_title('Where Does the $402K Come From?\nLifetime Wealth Component Breakdown (Age 30, $50K Income, 1% Treaty)',
-             fontsize=32, weight='bold', pad=20)
+ax.set_title('Where Does the $402K Come From?\nLifetime Wealth Component Breakdown\n(Age 30, $50K Income, 1% Treaty)',
+             fontsize=32, weight='bold', pad=50)
 
 # Add watermark
 
@@ -102,6 +102,7 @@ add_png_metadata(
     description="Pie chart showing relative contribution of each benefit component"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 

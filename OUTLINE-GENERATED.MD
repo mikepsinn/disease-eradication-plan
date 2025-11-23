@@ -120,9 +120,12 @@
     ### Opportunity Cost Analysis: The Roads Not Taken
       #### Comparative Investment Analysis (2023 Dollars)
       #### The Multiplier Effect: Economic Growth We're Not Having
+        ##### Lost GDP Growth Calculation
     ### Long-term Human Costs: The Gift That Keeps on Taking
       #### Veteran Healthcare Cost Projections
       #### Refugee Support: The Mathematics of Displacement
+        ##### Annual Refugee Support Cost
+        ##### Lost Economic Productivity
     ### Environmental Degradation: Poisoning the Planet Costs Money Too
       #### Environmental Cost Calculation Matrix
     ### The Existential Overdraft: The AI Arms Race
@@ -2529,4 +2532,4 @@
 - Files with headings: 79
 - Files without headings: 2
 - Files not found: 0
-- Total headings extracted: 2246
+- Total headings extracted: 2249

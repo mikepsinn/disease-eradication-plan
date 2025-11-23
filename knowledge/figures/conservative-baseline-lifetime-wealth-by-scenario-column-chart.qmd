@@ -69,8 +69,8 @@ for i, (x, benefit) in enumerate(zip(x_positions, benefits)):
 ax.set_xticks(x_positions)
 ax.set_xticklabels(scenario_names, fontsize=32, weight='normal')
 ax.set_ylabel('Total Lifetime Benefit (Conservative Baseline)', fontsize=22, weight='bold')
-ax.set_title('Personal Lifetime Wealth Benefits from 1% Treaty\nBy Demographic Scenario (Conservative Estimate)',
-             fontsize=32, weight='bold', pad=20)
+ax.set_title('Personal Lifetime Wealth Benefits from 1% Treaty\nBy Demographic Scenario\n(Conservative Estimate)',
+             fontsize=32, weight='bold', pad=50)
 
 # Format y-axis to show dollars
 
@@ -98,6 +98,7 @@ add_png_metadata(
     description="Comparison of lifetime wealth benefits for different age groups, income levels, and treaty percentages"
 )
 
+plt.tight_layout()
 plt.show()
 ```
 
