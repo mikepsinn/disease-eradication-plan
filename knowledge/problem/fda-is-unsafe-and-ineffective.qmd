@@ -47,7 +47,7 @@ This is a system designed to prevent lawsuits, not deaths. One type of death (fr
 Compare two real-world systems for testing drugs:
 
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
-2.  **The FDA System:** Averages **{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-9-years)** to approve a new drug.
+2.  **The FDA System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-17-years)** to approve a new drug.
 
 The FDA's system costs **{{< var trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
 
@@ -336,8 +336,8 @@ When something costs more, you get less of it. For people dying of diseases nobo
 
 Here's what it actually costs to get FDA approval for a new drug:
 
-- **Average cost:** [$2.6 billion](../references.qmd#drug-development-costs)
-- **Average time:** [9.1 years from Phase 1](../references.qmd#drug-development-timeline-9-years) ({{< var treatment_acceleration_years_current >}} years total discovery-to-patient)
+- **Average cost:** [$2.6 billion](../references.qmd#drug-development-cost)
+- **Average time:** [9.1 years from Phase 1](../references.qmd#drug-development-timeline-17-years) ({{< var treatment_acceleration_years_current >}} years total discovery-to-patient)
 - **Success rate:** [12% make it through trials](../references.qmd#drug-trial-success-rate-12-pct)
 
 That's {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per person just to TEST if a pill works. Not the pill. Just to test it.
@@ -348,7 +348,7 @@ For that money, you could:
 - Hire a shaman for a year
 - Fly to Switzerland for assisted dying (much faster)
 
-The total cost? **{{< var pharma_drug_development_cost_current >}}** per new drug (see [source](../references.qmd#drug-development-costs)).
+The total cost? **{{< var pharma_drug_development_cost_current >}}** per new drug (see [source](../references.qmd#drug-development-cost)).
 
 That's [more than the GDP of Greenland](../references.qmd#gdp-of-greenland). We could literally buy Greenland and turn it into a giant laboratory for less than it costs to approve one arthritis medication.
 
@@ -366,7 +366,7 @@ That's:
 
 But at least the paperwork is thorough.
 
-[95% of diseases have ZERO approved treatments](../references.qmd#fda-untreated-diseases-95pct).
+[95% of diseases have ZERO approved treatments](../references.qmd#95-pct-diseases-no-treatment).
 
 Your rare disease child has better odds with lottery tickets.
 
@@ -401,7 +401,7 @@ Under the current system of research, it costs {{< var traditional_phase3_cost_p
 
 ## The Actual Death Toll of "Drug Lag"
 
-The FDA's economists have a term for people dying while waiting for drug approval: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Early estimates suggested delays cost **[21,000 to 120,000 American lives per decade](../references.qmd#gieringer85)**.
+The FDA's economists have a term for people dying while waiting for drug approval: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Early estimates suggested delays cost **[21,000 to 120,000 American lives per decade](../references.qmd#fda-drug-lag-deaths-estimate)**.
 
 But that was just the US. And just the visible delays.
 
@@ -444,7 +444,7 @@ This means it's logical for regulators to reject drug applications by default. T
 | FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah. |
 | FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
 
-The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use killed an estimated **[over 100,000 Americans](../references.qmd#beta-blocker-deaths)**.
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use killed an estimated **[over 100,000 Americans](../references.qmd#beta-blocker-drug-lag-deaths)**.
 
 More Americans than died in Vietnam and Korea combined. From one drug delay. Here's a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 
@@ -590,7 +590,7 @@ The personal risk of approving a drug vastly exceeds the risk of rejecting it. D
 
 ## Clinical Trial Theater: Excluding 85% of Reality
 
-FDA trials systematically [exclude](../references.qmd#clinical-trial-exclusions):
+FDA trials systematically [exclude](../references.qmd#fda-trial-patient-exclusion-criteria):
 
 - Patients over 65 (most people who need drugs)
 - Patients under 18 (all children)

@@ -8,6 +8,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Invalid image paths
 - Broken cross-reference links to .qmd files
 - Broken markdown file links in .md files
+- Broken anchor IDs in links (validates that #anchor-id exists in target file)
 - Broken include directives ({{< include path.qmd >}})
 - Missing Python imports in code blocks
 - GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
@@ -883,6 +884,148 @@ def check_markdown_links(content: str, filepath: str):
                     )
 
 
+def load_anchor_ids(filepath: str) -> Set[str]:
+    """
+    Load all anchor IDs from a .qmd or .md file.
+    Matches patterns like:
+    - HTML anchor tags: <a id="anchor-name"></a>
+    - Quarto explicit anchors in headings: ## Heading {#anchor-name}
+    - Quarto auto-generated anchors from headings (converted to anchor format)
+    Returns a set of anchor ID names.
+    """
+    anchor_ids: Set[str] = set()
+
+    if not os.path.exists(filepath):
+        return anchor_ids
+
+    try:
+        with open(filepath, encoding="utf-8") as f:
+            content = f.read()
+
+        # Pattern to match HTML anchor tags: <a id="anchor-name"></a>
+        # Also matches variations with spaces: <a id = "anchor-name" ></a>
+        html_anchor_pattern = re.compile(r'<a\s+id\s*=\s*["\']([^"\']+)["\']\s*></a>', re.IGNORECASE)
+        html_matches = html_anchor_pattern.finditer(content)
+        for match in html_matches:
+            anchor_ids.add(match.group(1))
+
+        # Pattern to match Quarto explicit anchors in headings: ## Heading {#anchor-name}
+        # Matches: # Heading {#anchor-id} or ## Heading {#anchor-id} etc.
+        quarto_anchor_pattern = re.compile(r'^#+\s+.*\{#([^}]+)\}', re.MULTILINE)
+        quarto_matches = quarto_anchor_pattern.finditer(content)
+        for match in quarto_matches:
+            anchor_ids.add(match.group(1))
+
+        # Also generate auto-anchor IDs from headings (Quarto's default behavior)
+        # Pattern: ## Heading Text -> heading-text
+        heading_pattern = re.compile(r'^#+\s+(.+)$', re.MULTILINE)
+        heading_matches = heading_pattern.finditer(content)
+        for match in heading_matches:
+            heading_text = match.group(1).strip()
+            # Remove explicit anchor if present: Heading {#anchor} -> Heading
+            heading_text = re.sub(r'\s*\{#[^}]+\}', '', heading_text)
+            # Convert to anchor format: lowercase, replace spaces/special chars with hyphens
+            anchor_id = re.sub(r'[^\w\s-]', '', heading_text.lower())
+            anchor_id = re.sub(r'[-\s]+', '-', anchor_id)
+            anchor_id = anchor_id.strip('-')
+            if anchor_id:  # Only add non-empty anchor IDs
+                anchor_ids.add(anchor_id)
+
+        return anchor_ids
+    except Exception as e:
+        print(f"Warning: Failed to load anchor IDs from {filepath}: {str(e)}\n", file=sys.stderr)
+        return anchor_ids
+
+
+def load_all_anchor_ids() -> Dict[str, Set[str]]:
+    """
+    Load anchor IDs from all .qmd and .md files in the project.
+    Returns a dictionary mapping file paths to sets of anchor IDs.
+    """
+    anchor_map: Dict[str, Set[str]] = {}
+
+    # Find all .qmd and .md files
+    qmd_files = glob("**/*.qmd", recursive=True)
+    md_files = glob("**/*.md", recursive=True)
+    all_files = qmd_files + md_files
+
+    # Filter out build directories
+    all_files = [
+        f for f in all_files
+        if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
+    ]
+
+    for filepath in all_files:
+        anchor_ids = load_anchor_ids(filepath)
+        if anchor_ids:
+            # Store as normalized path for consistent lookups
+            normalized_path = os.path.normpath(filepath)
+            anchor_map[normalized_path] = anchor_ids
+
+    return anchor_map
+
+
+def check_anchor_ids(content: str, filepath: str, anchor_map: Dict[str, Set[str]]):
+    """
+    Check that all anchor IDs referenced in links actually exist in the target files.
+    Validates patterns like: [text](path/to/file.qmd#anchor-id)
+    """
+    lines = content.split("\n")
+    file_dir = os.path.dirname(filepath)
+
+    # Match markdown links with anchors: [text](path#anchor-id)
+    link_pattern = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+
+    for line_index, line in enumerate(lines):
+        # Skip HTML comments
+        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+            continue
+
+        matches = link_pattern.finditer(line)
+        for match in matches:
+            link_path = match.group(2).strip()
+
+            # Skip URLs
+            if link_path.startswith("http://") or link_path.startswith("https://"):
+                continue
+
+            # Skip anchors-only (same-page anchors)
+            if link_path.startswith("#"):
+                continue
+
+            # Check if link has an anchor
+            if "#" in link_path:
+                link_file, anchor_id = link_path.split("#", 1)
+            else:
+                continue  # No anchor to validate
+
+            # Skip if no file path (just an anchor)
+            if not link_file:
+                continue
+
+            # Resolve the link path relative to the current file
+            resolved_path = os.path.normpath(os.path.join(file_dir, link_file))
+
+            # Check if file exists
+            if not os.path.exists(resolved_path):
+                continue  # File doesn't exist - will be caught by other checks
+
+            # Look up anchor IDs for this file
+            normalized_target = os.path.normpath(resolved_path)
+            target_anchors = anchor_map.get(normalized_target, set())
+
+            # Check if anchor ID exists
+            if anchor_id not in target_anchors:
+                errors.append(
+                    ValidationError(
+                        file=filepath,
+                        line=line_index + 1,
+                        message=f"Broken anchor link: {link_path} (anchor ID '{anchor_id}' not found in target file)",
+                        context=line.strip()[:80],
+                    )
+                )
+
+
 def load_defined_variables() -> Set[str]:
     """
     Load all defined variables from _variables.yml
@@ -1020,7 +1163,7 @@ def validate_quarto_config():
             check_file_refs(config["book"]["appendices"], "book.appendices")
 
 
-def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set[str]):
+def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set[str], anchor_map: Dict[str, Set[str]]):
     """Validate a single file"""
     if not os.path.exists(filepath):
         print(f"File not found: {filepath}", file=sys.stderr)
@@ -1037,6 +1180,8 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
         check_cross_reference_links(content, filepath)
         # Check markdown links
         check_markdown_links(content, filepath)
+        # Check anchor IDs
+        check_anchor_ids(content, filepath, anchor_map)
         return
 
     # For .qmd files, run all validation checks
@@ -1092,6 +1237,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     check_include_directives(content, filepath)
     check_markdown_links(content, filepath)
 
+    # Check anchor IDs in links
+    check_anchor_ids(content, filepath, anchor_map)
+
     # Check for Quarto variables in link text
     check_quarto_variables_in_links(content, filepath)
 
@@ -1144,6 +1292,15 @@ def main():
     else:
         print("No parameters loaded (dih_models/parameters.py not found)\n")
 
+    # Load anchor IDs from all files
+    print("Loading anchor IDs from all .qmd and .md files...")
+    anchor_map = load_all_anchor_ids()
+    total_anchors = sum(len(ids) for ids in anchor_map.values())
+    if anchor_map:
+        print(f"Loaded {total_anchors} anchor IDs from {len(anchor_map)} files\n")
+    else:
+        print("No anchor IDs loaded\n")
+
     # Validate _quarto.yml configuration first
     validate_quarto_config()
 
@@ -1170,7 +1327,7 @@ def main():
 
     # Validate each file
     for file in all_files:
-        validate_file(file, defined_vars, defined_parameters)
+        validate_file(file, defined_vars, defined_parameters, anchor_map)
 
     # Report results
     if len(errors) == 0:

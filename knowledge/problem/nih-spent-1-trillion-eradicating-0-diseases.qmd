@@ -17,7 +17,7 @@ lastReviewed: '2025-10-16T00:00:00.000Z'
 from dih_models.parameters import *
 ```
 
-With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted) ([source](../references.qmd#nih-cumulative-spending)).
+With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted).
 
 Number of diseases the NIH has eradicated: [**Zero**](../references.qmd#nih-eradicated-zero-diseases).
 
@@ -93,7 +93,7 @@ Because understanding disease and curing disease are completely different things
 ## The Gerontocracy: Science by Social Security Recipients
 
 - **Average age for first R01 grant:** 45 years old ([source](../references.qmd#nih-first-r01-age-45))
-- **Peak scientific creativity:** 25-35 years old ([multiple studies](../references.qmd#peak-creativity-age))
+- **Peak scientific creativity:** 25-35 years old (multiple studies))
 - **Years of peak creativity wasted:** 10-20
 
 By the time scientists get real funding, they're closer to retirement than to their best ideas.
@@ -123,7 +123,7 @@ Fun fact: [There are more NIH administrators than there are researchers working 
 
 The RECOVER Initiative - a masterpiece of inefficiency:
 
-**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) ([source](../references.qmd#recover-budget))
+**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) ([source](../references.qmd#recover-budget-update-2-3b))
 **Timeline:** [4 years and counting](../references.qmd#nih-recover-inefficiency)
 **Patients enrolled:** [~30,000](../references.qmd#recover-initiative-patient-enrollment)
 **Trials completed:** [Zero](../references.qmd#nih-recover-inefficiency)
@@ -223,7 +223,7 @@ Not only are we inefficient, we're drowning:
 - US-only healthcare costs: [\$2+ trillion annually](../references.qmd#us-annual-healthcare-costs)
 - Potential savings with efficient trials: \$2 trillion
 - Net economic swing: \$4 trillion
-- Untested treatments sitting on shelf: 166 billion ([source](../references.qmd#untested-treatments))
+- Untested treatments sitting on shelf: 166 billion ([source](../references.qmd#166-billion-compounds))
 
 We have more untested treatments than stars in our galaxy, but we're too busy writing grants to test them.
 
@@ -282,7 +282,7 @@ Committees do.
 But that would require admitting the current system doesn't work.
 And after \$1.1 trillion, that's an expensive admission.
 
-**Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cost-recovery-regulation)).
+**Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)).
 You could implement efficient trials tomorrow.
 But that would upset the grant-writing industrial complex.
 

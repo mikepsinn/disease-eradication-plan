@@ -24,7 +24,7 @@ The plan _is_ the repository. This is not a metaphor. If you want to improve hum
 
 2.  **Find something to improve:** Just read any section and you'll probably find something stupid that needs fixing (it's written by humans, after all). Look for logical gaps, unclear explanations, or missing calculations.
 
-3.  **If changing book structure:** Update the [Book Outline in README.md](./README.md#book-outline) first. This prevents the "I reorganized everything!" / "But I was working on chapter 7!" / "There are now three chapter 7s" problem that humans experience whenever more than one of you edits anything.
+3.  **If changing book structure:** Update the Book Outline first. This prevents the "I reorganized everything!" / "But I was working on chapter 7!" / "There are now three chapter 7s" problem that humans experience whenever more than one of you edits anything.
 
 4.  **Make your changes:** Fork the repo and create a branch, or just edit on GitHub if you're not technical (if you don't know what "fork" means, you're in the second category, which is fine — even non-technical humans can improve things).
 

@@ -100,7 +100,7 @@ Goals:
 
 These assumptions set a stage where the platform can indeed function at scale, but this remains a forward-looking scenario.
 
-## dFDA Platform Costs - ROM Estimates (Partnership Model)
+## dFDA Platform Costs - ROM Estimates (Partnership Model) {#dfda-platform-costs-rom-estimates-partnership-model}
 
 > **Section Summary - Partnership Approach**
 >
@@ -577,7 +577,7 @@ This represents the **top-down comprehensive estimate** of dFDA health benefits 
 
 For detailed methodology and assumptions, see [The Human Capital Cost of Regulatory Latency](regulatory-mortality-analysis.qmd).
 
-#### Gross R and D Savings from dFDA Implementation
+#### Gross R and D Savings from dFDA Implementation {#gross-r-and-d-savings-from-dfda-implementation}
 
 - **Parameter**: Percentage reduction in addressable clinical trial costs due to dFDA.
 - **Source/Rationale**:
@@ -640,7 +640,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high becau
    - **Increased Throughput**: 2×–5× more trials and potentially many more candidates tested in parallel.
    - **Faster to Market**: Potentially 1–3 years shaved off a typical 7–10 year development cycle, yielding earlier revenue generation and extended effective patent life for sponsors.
 
-### Simplified ROI Scenario
+### Simplified ROI Scenario {#simplified-roi-scenario}
 
 _Initial Note on Operational Costs in this ROI Scenario:_
 _The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building and Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
@@ -819,7 +819,7 @@ This full range sensitivity analysis demonstrates that the ROI for the dFDA init
    - Quality-of-life improvements, lower healthcare costs from faster drug innovation, and potentially fewer adverse events from earlier detection.
    - These are positive externalities that can significantly enlarge real ROI from a societal perspective.
 
-## Daily Opportunity Cost of Inaction
+## Daily Opportunity Cost of Inaction {#daily-opportunity-cost-of-inaction}
 
 This section quantifies the daily societal cost of maintaining the status quo, framed as the opportunity cost of not implementing the dFDA Infrastructure. By translating the annualized benefits identified in this analysis into a daily metric, you can better appreciate the urgency of the proposed transformation. The "cost of inaction" is the value of the health gains (QALYs) and financial savings (R&D efficiencies) that are forgone each day the dFDA system is not operational.
 
@@ -878,7 +878,7 @@ All figures in this document are estimates based on publicly available informati
 
 This appendix provides the detailed models and data used in the cost-benefit analysis.
 
-### Calculation Framework - NPV Methodology
+### Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
 
 Below is an illustrative framework with more formal equations and a simplified but "rigorous" model to analyze the cost–benefit dynamics and ROI of upgrading the FDA (and analogous global regulators) into a decentralized, continuously learning platform. Many real-world complexities (e.g., drug-specific risk profiles, variable regulatory timelines across countries) would require further refinement, but these equations give a starting point for a more quantitative analysis.
 
@@ -1200,7 +1200,7 @@ In this rough example, even **partial adoption** in the early years delivers lar
 
 Even so, the core takeaway remains: **If the platform is widely adopted and per-patient trial costs drop substantially, the net benefits likely dwarf the initial investments.**
 
-### Interactive Financial Modeling & Computational Analysis
+### Interactive Financial Modeling & Computational Analysis {#interactive-financial-modeling--computational-analysis}
 
 This section provides executable Python code that implements the financial models described above using the LaTeX equations. This computational companion allows you to run sensitivity analyses, generate visualizations, and verify the calculations programmatically. All parameters are sourced from the centralized `dih_models/parameters.py` module to ensure consistency across the analysis.
 
@@ -1439,7 +1439,7 @@ The dFDA cost-benefit analysis reveals:
 
 This analysis demonstrates that the dFDA represents one of the most compelling investment opportunities in human history, combining massive financial returns with unprecedented health benefits.
 
-### dFDA Cost-Utility Framework
+### dFDA Cost-Utility Framework {#dfda-icer-analysis---cost-utility-framework}
 
 We present a cost-utility analysis using the **quality-adjusted life years (QALYs)** and **disability-adjusted life years (DALYs)** metrics. This approach is the [US and global standard for evaluating the value of health interventions](../references.qmd#icer-qaly-methodology).
 

@@ -14,9 +14,8 @@ tags: [standards, contributing, content, style, review, process, quality-assuran
 
 ## 1. Information Architecture: Chapters, Sections, and The Appendix
 
-This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. `reference/` is the appendix.
+This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. 
 
-**IMPORTANT:** The [Book Outline in README.md](../README.md#book-outline) is the authoritative writing checklist. Before adding new topics or changing the book architecture, update the Book Outline first. This prevents topic creep and maintains narrative flow. Remember: the outline is comprehensive for writing purposes - the final book will consolidate many items into cohesive chapters.
 
 **Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
 

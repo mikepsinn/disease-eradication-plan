@@ -1891,7 +1891,7 @@
       #### Decentralized trial costs modeled on Oxford RECOVERY
     ### Technical Feasibility
     ### Funding and Governance
-  ## dFDA Platform Costs - ROM Estimates (Partnership Model)
+  ## dFDA Platform Costs - ROM Estimates (Partnership Model) {#dfda-platform-costs-rom-estimates-partnership-model}
     ### Upfront (Capital) Expenditure Initial Build Illustrative 30 Months
     ### Top-Down Analogous Cost Estimation (Market Comparables)
       #### Analogous ROM Conclusion
@@ -1921,25 +1921,25 @@
       #### The Efficacy Lag Problem
       #### How the dFDA Eliminates the Efficacy Lag
       #### Quantified Benefits (One-Time Timeline Shift)
-      #### Gross R and D Savings from dFDA Implementation
+      #### Gross R and D Savings from dFDA Implementation {#gross-r-and-d-savings-from-dfda-implementation}
       #### For detailed source citations, see
   ## dFDA ROI Analysis
     ### Methodology
-    ### Simplified ROI Scenario
+    ### Simplified ROI Scenario {#simplified-roi-scenario}
     ### Full Range ROI Sensitivity Analysis
       #### Assumptions for Full Range ROI Calculation
       #### 1. Lowest Total Cost Scenario (Best Case Core Platform + Best Case Broader Initiatives)
       #### 2. Highest Total Cost Scenario (Worst Case Core Platform + Worst Case Broader Initiatives)
   ## Broader Impacts on Medical Progress
   ## Data Sources and Methodological Notes
-  ## Daily Opportunity Cost of Inaction
+  ## Daily Opportunity Cost of Inaction {#daily-opportunity-cost-of-inaction}
       #### Base Case: Daily Lost QALYs and Financial Savings
       #### Sensitivity Analysis of Daily Opportunity Costs
       #### Discussion of Uncertainty and Key Variables
   ## Conclusion
     ### Disclaimer
   ## Appendix Calculation Frameworks and Detailed Analysis
-    ### Calculation Framework - NPV Methodology
+    ### Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
       #### Definitions and Parameters
       #### NPV of Costs
       #### NPV of Savings
@@ -1949,13 +1949,13 @@
         ##### NPV of Savings
         ##### Final ROI and Net Benefit
       #### Other Extensions and Considerations
-    ### Interactive Financial Modeling & Computational Analysis
+    ### Interactive Financial Modeling & Computational Analysis {#interactive-financial-modeling--computational-analysis}
       #### dFDA Investment Returns Visualization
       #### Sensitivity Analysis
       #### Rigorous Financial Model: Net Present Value (NPV) Analysis
       #### NPV Analysis Over Time
       #### Computational Model Key Findings
-    ### dFDA Cost-Utility Framework
+    ### dFDA Cost-Utility Framework {#dfda-icer-analysis---cost-utility-framework}
       #### Parameterization Overall dFDA Infrastructure Impact
       #### Sensitivity Analysis Overall dFDA Infrastructure Cost-Effectiveness
       #### Discussion: Policy Implications
@@ -2063,7 +2063,7 @@
 #### knowledge/economics/campaign-budget.qmd
 
   ## How to Buy a Planet for {{< var treaty_campaign_total_cost >}}
-  ## Why {{< var treaty_campaign_total_cost >}} Instead of $5B
+  ## Why {{< var treaty_campaign_total_cost >}} Instead of $5B {#ai-assisted-lobbying-250m-25}
   ## Where the Papers Go
     ### 1. Viral Referendum (part of {{< var treaty_campaign_budget_referendum >}} Referendum Budget)
       #### Paying Humans to Click
@@ -2135,7 +2135,7 @@
       #### Phase 2: Series A ($500M - $1B)
       #### Phase 3: Growth Round ($500M - $1.1B)
     ### Key Innovation: Nobody Gets Paid Unless It Works
-    ### Capital Structure: Campaign vs Implementation
+    ### Capital Structure: Campaign vs Implementation {#capital-structure-campaign-vs-implementation}
       #### Why $1 Billion?
       #### Campaign Budget Breakdown
       #### Why VICTORY Bonds (Not Donations)?

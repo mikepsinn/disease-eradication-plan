@@ -24,7 +24,7 @@ Here's how you build this coordination infrastructure.
 
 ## Where Your Agents Get Their Missions (Not From a Management Consultant)
 
-Your agents don't randomly decide what to work on based on what sounds cool or what their creator happens to care about that day. They pull from [Wishocracy's Task Tree](wishocracy.qmd#breaking-down-problems-the-task-tree-of-life), the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
+Your agents don't randomly decide what to work on based on what sounds cool or what their creator happens to care about that day. They pull from Wishocracy's Task Tree, the globally-prioritized breakdown of humanity's highest-priority problems into tasks a computer (or sufficiently motivated intern) can actually execute.
 
 Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying, impossible) becomes:
 
@@ -64,7 +64,7 @@ The problem isn't that people don't want to help cure disease. It's that coordin
 - Trying to mobilize treaty advocates globally? Enjoy scheduling a call where someone is always asleep.
 - Need real-time trial data synthesis? Better hire someone to email everyone weekly asking for updates (they won't respond).
 
-Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it, we max out at [150 relationships (Dunbar's number)](../references.qmd#dunbar-number-150).
+Humans evolved to coordinate hunting parties of 20 people. We're now trying to coordinate millions. Our brains literally can't do it, we max out at [150 relationships (Dunbar's number)](../references.qmd#dunbar-number).
 
 AI doesn't have this limitation. It never sleeps, speaks every language, operates in every timezone simultaneously, and doesn't get into passive-aggressive email wars. The way you win the War on Disease is by building coordination infrastructure that works at the scale humans can't, while the NIH is still trying to schedule their next committee meeting.
 

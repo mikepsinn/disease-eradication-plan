@@ -64,7 +64,7 @@ This means society becomes richer while preventing disease and death, instead of
 
 #### 2a. Peace Dividend Health Benefits ({{< var treaty_qalys_gained_annual_global >}} QALYs/year)
 
-**Source**: [Cost of War Analysis](../problem/cost-of-war.qmd#death-accounting)
+**Source**: [Cost of War Analysis](../problem/cost-of-war.qmd)
 
 **Annual conflict deaths**: {{< var global_annual_conflict_deaths_total >}} people/year
 
@@ -86,7 +86,7 @@ This means society becomes richer while preventing disease and death, instead of
 
 #### 2b. dFDA Health Benefits from Disease Eradication Acceleration ({{< var disease_eradication_delay_dalys >}} DALYs prevented one-time)
 
-**Source**: [Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd#disease-eradication-delay)
+**Source**: [Regulatory Mortality Analysis](regulatory-mortality-analysis.qmd#mortality-scenarios)
 
 **One-time benefit from timeline shift**: {{< var disease_eradication_delay_dalys >}} DALYs prevented by accelerating drug approvals
 
@@ -395,7 +395,7 @@ For publication-quality analysis, run a Monte Carlo simulation with:
 
 ### Health Benefits
 
-3. **Conflict Deaths**: [Cost of War Analysis](../problem/cost-of-war.qmd#death-accounting)
+3. **Conflict Deaths**: [Cost of War Analysis](../problem/cost-of-war.qmd)
    - 100,000 deaths/year
    - Sources: ACLED, GTD, Uppsala
 
