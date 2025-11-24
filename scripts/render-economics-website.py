@@ -30,7 +30,12 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
-    parser.add_argument("--output-dir", type=str, default="_site", help="Output directory (default: _site)")
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default="_site/economics",
+        help="Output directory (default: _site/economics to match _quarto-economics.yml)",
+    )
     parser.add_argument("quarto_args", nargs="*", help="Additional arguments to pass to quarto render")
 
     args = parser.parse_args()

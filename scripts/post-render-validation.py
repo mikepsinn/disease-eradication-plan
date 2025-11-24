@@ -396,9 +396,9 @@ def main():
         print("   - Matplotlib findfont warnings: Ensure the required fonts are installed")
         print("     or configure Matplotlib to use bundled fonts to avoid runtime warnings")
     if "QMD_FILE_LINK" in errors_by_type:
-        print("   - Links to .qmd files: All internal links should point to .html files, not .qmd")
-        print("     Replace .qmd extensions with .html in your source files")
-        print("     Or use relative paths without extensions (Quarto will resolve them)")
+        print("   - Links to .qmd files: rendered HTML should only contain .html links")
+        print("     Update the SOURCE .qmd file to link to another .qmd (Quarto converts)")
+        print("     Ensure the target .qmd exists and is listed in the book config")
     if "BROKEN_LINK" in errors_by_type:
         print("   - Broken internal links: Some links point to files that don't exist")
         print("     Check that all referenced files were rendered")

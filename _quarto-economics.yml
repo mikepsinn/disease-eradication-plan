@@ -5,6 +5,7 @@ project:
   render:
     # Economics Analysis
     - index.qmd # ✓ Style reviewed 2025-01-15 (copied from knowledge/economics/economics.qmd)
+    - knowledge/economics/economics.qmd # Legacy overview referenced throughout economic plan
     - knowledge/economics/peace-dividend.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/health-dividend.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/financial-plan.qmd # ✓ Style reviewed 2025-01-15
@@ -16,6 +17,7 @@ project:
     - knowledge/problem/cost-of-war.qmd
     - knowledge/problem/cost-of-disease.qmd
     - knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
+    - knowledge/problem/unrepresentative-democracy.qmd
     - knowledge/problem/fda-is-unsafe-and-ineffective.qmd
     # Solutions
     - knowledge/solution/1-percent-treaty.qmd
@@ -34,11 +36,14 @@ project:
     - knowledge/legal/election-law.qmd
     # Call to Action
     - knowledge/call-to-action/your-personal-benefits.qmd
+    - knowledge/call-to-action/three-actions.qmd
     # Supporting Data
     - knowledge/appendix/humanity-budget-overview.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/global-government-medical-research-spending.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/clinical-trial-participants.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/regulatory-mortality-analysis.qmd
+    - knowledge/appendix/command-and-control-systems.qmd
     - knowledge/appendix/recovery-trial.qmd
     # Detailed Calculations
     - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
@@ -47,9 +52,11 @@ project:
     - knowledge/appendix/research-acceleration-model.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/dfda-cost-benefit-analysis.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
     - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/intervention-comparison-table.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/data-storage-costs.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
     # Additional Documentation
     - knowledge/appendix/investor-risk-analysis.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/faq.qmd
@@ -97,6 +104,8 @@ website:
             text: "NIH Research Outcomes Analysis"
           - href: knowledge/problem/fda-is-unsafe-and-ineffective.qmd
             text: "FDA Regulatory Efficacy Assessment"
+          - href: knowledge/problem/unrepresentative-democracy.qmd
+            text: "Unrepresentative Democracy Costs"
       - section: "Proposed Intervention"
         contents:
           - href: knowledge/solution/1-percent-treaty.qmd
@@ -159,6 +168,8 @@ website:
             text: "Regulatory Compliance Framework"
           - href: knowledge/appendix/governance.qmd
             text: "Governance Structure"
+          - href: knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
+            text: "\"Right to Trial\" Legislative Blueprint"
       - section: "Risk Analysis & Financial Planning"
         contents:
           - href: knowledge/appendix/investor-risk-analysis.qmd
@@ -187,6 +198,10 @@ website:
             text: "RECOVERY Trial Case Study"
           - href: knowledge/appendix/data-storage-costs.qmd
             text: "Data Infrastructure Costs"
+          - href: knowledge/appendix/regulatory-mortality-analysis.qmd
+            text: "Regulatory Mortality Analysis"
+          - href: knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
+            text: "Nuclear Weapon Costs & Casualties"
       - section: "References & Appendices"
         contents:
           - href: knowledge/appendix/faq.qmd
