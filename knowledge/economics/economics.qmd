@@ -1404,7 +1404,7 @@ The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives fro
 
 The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions ({{< var trial_cost_reduction_factor >}}× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
 
-**Historical validation:** The physician-led pragmatic trial model has 80 years of empirical validation (1883-1960), not merely one modern case study. [144,000 physicians](../references.qmd#pre-1962-physician-trials) testing treatments on real patients in routine practice produced 4 years/decade life expectancy gains for 80 consecutive years before the 1962 regulatory shift.
+**Historical validation:** The physician-led pragmatic trial model has 80 years of empirical validation (1883-1960), not merely one modern case study. [144,000 physicians](../references.qmd#pre-1962-physician-trials) tested treatments on real patients in routine practice before the 1962 regulatory shift.
 
 **Trial complexity variation:** RECOVERY studied repurposed drugs (dexamethasone, hydroxychloroquine) for acute COVID-19 treatment. Novel therapeutics for chronic diseases may face different challenges. However:
 
@@ -1477,7 +1477,7 @@ The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates 
 - Assumes cost reductions make trials economically viable
 - Actual success rates for rare disease therapies remain uncertain
 
-**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var disease_eradication_delay_dalys >}} annually yields 66:1 ROI).
+**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var disease_eradication_delay_dalys >}} annually yields {{< var treaty_complete_roi_conditional_95th_percentile >}}:1 ROI).
 
 ### Data Limitations
 
@@ -1553,7 +1553,7 @@ The following table summarizes key risk factors and their mitigation strategies:
 
 Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
-- **Worst-case (66:1 ROI):** Benefits half as good, costs twice as high, intervention remains highly cost-effective
+- **Worst-case ({{< var treaty_complete_roi_conditional_95th_percentile >}}:1 ROI):** Benefits half as good, costs twice as high, intervention remains highly cost-effective
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
 - **Complete ({{< var treaty_complete_roi_all_benefits >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 

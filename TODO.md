@@ -5,9 +5,9 @@
 ### ~~Economic Multiplier Effects~~ - DELETED
 - [x] **Line 615:** Deleted the repetition (kept line 597 in earlier section)
 
-### Worst-Case ROI Consistency (Lines 1481, 1557)
-- [ ] Replace hardcoded `66:1 ROI` with `{{< var treaty_conservative_scenario_roi >}}`
-- [ ] Verify variable exists in parameters.py (should already exist)
+### ~~Worst-Case ROI Consistency~~ - FIXED
+- [x] **Lines 1480, 1556:** Replaced hardcoded `66:1 ROI` with `{{< var treaty_complete_roi_conditional_95th_percentile >}}`
+- [x] Variable verified in parameters.py (TREATY_COMPLETE_ROI_CONDITIONAL_95TH_PERCENTILE = 66)
 
 ## High Priority - Find Sources and Add Citations
 
@@ -40,10 +40,9 @@
   - Find source for typical trial travel distance
   - Add citations for both mentions
 
-### Historical Life Expectancy Gains
-- [ ] **Line 1408:** `4 years/decade` life expectancy gains
-  - Find historical source for life expectancy gains 1883-1960
-  - Add citation: `[4 years/decade](../references.qmd#life-expectancy-gains-1883-1960)`
+### ~~Historical Life Expectancy Gains~~ - DELETED
+- [x] **Line 1408:** ~~`4 years/decade` life expectancy gains~~ - Removed unsourced claim
+  - Revised to simply state "144,000 physicians tested treatments before 1962 regulatory shift"
 
 ### Medable Company Valuation
 - [ ] **Line 1551:** `$521M` raised, `$2.1B` valuation
@@ -86,17 +85,19 @@
 ---
 
 ## Summary Statistics
-- **Total items to fix:** 7 major tasks (was 13, deleted 6)
-- **Parameters to create:** 1 task (ROI consistency)
-- **Sources to find:** 6 citations
-- **Already fixed:** 16 items
-- **Deleted as irrelevant:** 9 items (defense jobs, DOT value, rent-seeking, economic multiplier repetition)
+- **Total items to fix:** 5 major tasks (was 13, deleted 7, fixed 1)
+- **Parameters to create:** 0 tasks (ROI consistency fixed!)
+- **Sources to find:** 5 citations
+- **Already fixed:** 17 items
+- **Deleted as irrelevant:** 10 items (4 years/decade, defense jobs, DOT value, rent-seeking, economic multiplier repetition)
 
 ## Next Steps
-1. Fix ROI consistency (lines 1481, 1557) - use existing variable
-2. Find sources for health/science claims (patient exclusions, trial barriers, historical data)
+1. Find sources for health/science claims (patient exclusions, trial barriers, historical data)
+2. Research Medable company valuation ($521M raised, $2.1B valuation)
 
-## Recent Deletions Completed
+## Recent Changes Completed
+✅ ROI consistency: Replaced hardcoded 66:1 with variable (lines 1480, 1556)
+✅ Historical life expectancy claim "4 years/decade" (line 1407)
 ✅ Defense sector employment displacement paragraph (lines 1587)
 ✅ Rent-seeking overhead paragraph (line 1591)
 ✅ DOT $13.7M comparison in peace dividend table (line 946)
