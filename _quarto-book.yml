@@ -109,6 +109,7 @@ book:
     - part: "Detailed Calculations"
       chapters:
         - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
+        - knowledge/appendix/regulatory-mortality-analysis.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/peace-dividend-calculations.qmd # ✅ (calculations, appropriate) ~4p
         - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd # ✅ (calculations, appropriate) ~21p
         - knowledge/appendix/research-acceleration-model.qmd # ✅ Research acceleration mechanism (115x) ~8p
@@ -131,6 +132,7 @@ book:
       chapters:
         - knowledge/appendix/governance.qmd # ✅ (good voice) ~4p
         - knowledge/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
+        - knowledge/operations/careers/hiring-plan.qmd # ✅ Hiring plan & team roadmap for DIH activation team ~8p
         - knowledge/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
         - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
         - knowledge/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p

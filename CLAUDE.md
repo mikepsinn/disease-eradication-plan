@@ -245,6 +245,30 @@ $$
 - **Zero maintenance**: Change parameter once, regenerates everywhere
 - **Academic rigor**: Auto-generates parameters-and-calculations.qmd appendix
 
+## Cross-Format Linking (HTML, PDF, EPUB)
+
+**CRITICAL: Always use `.qmd` extensions for internal links in source files.**
+
+Quarto automatically converts `.qmd` links to the appropriate format:
+- **HTML output**: `.qmd` → `.html`
+- **PDF/EPUB output**: `.qmd` → internal references
+
+✅ **Correct** (cross-format compatible):
+<!-- Example: [Link Text](../path/to/file.qmd) -->
+<!-- Example: [Link with Anchor](../path/to/file.qmd#section-id) -->
+
+❌ **Wrong** (breaks PDF/EPUB):
+<!-- Example: [Link Text](../path/to/file.html) -->
+
+**IMPORTANT**: Links only work if the target file is listed in `_quarto-book.yml` chapters. If post-validation reports `QMD_FILE_LINK` errors:
+
+1. Check if target `.qmd` file exists
+2. Add it to `_quarto-book.yml` in the appropriate section
+3. Re-render - Quarto will handle format conversion
+
+**External URLs** (outside the book) should use full URLs:
+<!-- Example: [External Link](https://example.com/page.html) -->
+
 ## Content Standards
 
 **See `CONTRIBUTING.md` for complete writing guidelines, style requirements, and content standards.**

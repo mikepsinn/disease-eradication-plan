@@ -3,11 +3,72 @@
 **Book Structure Overview:**
 - Main Narrative: 4 parts
 - Appendices: 9 parts
-- Total Files: 81
+- Total Files: 83
 
 ---
 
-#### index.qmd (file not found)
+#### index.qmd
+
+  ## Preface
+    ### The Part Where I Discover Paper Makes You Do Things
+    ### Your Gradual Stupidity Reduction Program
+    ### The Sacred Order of Paper Distribution
+    ### Why Your Leaders Pretend Not to Understand
+    ### The Beautiful Stupidity of Your Economy
+    ### Your Species' Adorable Death Wish
+    ### How This Manual Fixes Everything
+    ### The Part Where You Have No Choice
+    ### Your Two Futures
+      #### Future A: You Ignore This Book
+      #### Future B: You Follow Instructions
+    ### In Conclusion
+  ## ⚡ TL;DR
+    ### How You Fix This
+      #### Step 1: The Paper Collection Phase
+      #### Step 2: The Internet Clicking Ceremony
+      #### Step 3: The Professional Briber Redistribution
+      #### Step 4: The Political Awakening Ritual
+      #### Step 5: The Money River Redirection
+    ### Why This Works
+    ### The Alternative
+  ## The Problem
+    ### The Daily Deletion Event
+    ### The Cost of War
+    ### Your Hilarious Security Priorities
+  ## The Solution
+    ### The 1% Treaty
+    ### Why Decentralization Works
+    ### The DIH Treasury
+    ### The Decentralized FDA
+      #### Treatment Rankings
+        ##### Outcome Labels
+  ## Why This Actually Works
+    ### The Proof
+  ## The 5-Step Plan
+    ### Step 1: Collect Papers
+      #### What Grandma Got
+      #### What You're Offering
+      #### Returns That Make Ponzi Schemes Look Conservative
+    ### Step 2: The Great Clicking
+      #### The Magic 3.5% Number
+    ### Step 3: Bribe the Bribers
+      #### Current Job
+      #### Your Offer
+    ### Step 4: Purchase Democracy
+    ### Step 5: Enjoy
+    ### Personalized Bribery Packages
+  ## The Math
+    ### The Money Fountain
+    ### Where Math Breaks
+      #### The Reality-Breaking Equation
+      #### Where {{< var combined_peace_health_dividends_annual_for_roi_calc >}} Appears From
+    ### 2nd Best Idea in the World
+  ## Choose Your Own Adventure
+    ### Door #1: The Current Plan
+    ### Door #2: Try Not Dying
+  ## Price of Procrastination
+    ### The Final Math
+      #### Your Binary Choice Matrix
 
 ### 🚨 The Problem
 
@@ -1656,6 +1717,65 @@
 
 ### 🔢 Detailed Calculations
 
+#### knowledge/appendix/regulatory-mortality-analysis.qmd
+
+  ## Academic Preprint
+  ## Abstract
+  ## 1. Introduction
+  ## 2. Methodology & Data
+    ### 2.1 Variable Definitions {#mortality-estimates}
+    ### 2.2 Data Sources & Parameterization
+  ## 3. Results: The Mortality Burden {#mortality-scenarios}
+    ### 3.1 Three-Scenario Framework
+    ### 3.2 Recommended Use by Audience
+  ## 4. Morbidity Analysis: DALYs and QALYs {#daly-calculation}
+    ### 4.1 Years of Life Lost (YLL)
+    ### 4.2 Years Lived with Disability (YLD)
+    ### 4.3 Cumulative DALY Burden
+  ## 5. Economic Valuation {#economic-valuation}
+    ### 5.1 Contextualizing the Loss
+  ## 6. Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
+    ### The "Safety" Ratio
+  ## 7. References & Datasets
+  ## 8. Model Assumptions and Limitations
+    ### Key Assumptions
+    ### Sensitivity Analysis
+    ### Limitations
+  ## 9. Policy Implications
+    ### The False Trade-off
+    ### The Bifurcated Alternative
+    ### Expected Impact
+  ## Conclusion
+  ## THE BILL FOR THE 8-YEAR DELAY
+      #### STEP 1: THE DEATH TOLL (Lives Lost)
+        ##### The Math
+      #### STEP 2: THE SUFFERING (Hours of Pain)
+        ##### The Math
+      #### STEP 3: THE PRICE TAG (Money Lost)
+        ##### The Math
+      #### SUMMARY: YOUR DAILY RECEIPT
+        ##### INVOICE: THE COST OF "SAFETY"
+      #### The "Step-by-Step" Logic for the 5th Grader:
+  ## THE "TOTAL VICTORY" CALCULUS
+      #### 1. THE DEATH TOLL EQUATION (Global Mortality)
+        ##### The Variables
+        ##### The Equation
+        ##### The Calculation
+        ##### Step-by-Step for the 5th Grader
+      #### 2. THE SUFFERING EQUATION (DALYs)
+        ##### The Variables
+        ##### The Equation
+        ##### The Calculation
+        ##### Step-by-Step for the 5th Grader
+      #### 3. THE ECONOMIC EQUATION (The GDP Loss)
+        ##### The Variables
+        ##### The Equation (The "Lost Future" Valuation)
+        ##### The Calculation
+        ##### Step-by-Step for the 5th Grader
+      #### SUMMARY: THE "UPPER BOUND" DAILY RECEIPT
+        ##### The 5th Grader Logic
+          ###### That is the Upper Bound Cost.
+
 #### knowledge/appendix/peace-dividend-calculations.qmd
 
   ## Cost of War Data and Calculations
@@ -2206,6 +2326,22 @@
   ## 3. Precedent: MakerDAO (The Decentralized Protocol)
     ### Illustrative "Org Chart" (Core Units)
 
+#### knowledge/operations/careers/hiring-plan.qmd
+
+  ## Hiring Plan and Team Roadmap
+    ### The Philosophy: A Lean Activation Team
+    ### Compensation Philosophy
+    ### Phase 1: Seed (Core Team Headcount: ~20)
+      #### Leadership & Operations (5 Roles)
+        ##### Product, Design, & Community (3 Roles)
+          ###### Political & Growth (4 Roles)
+          ###### Platform & Technology (7 Roles)
+          ###### Finance & Economics (4 Roles)
+    ### Phase 2: Series A (Scaled Team Headcount: ~50)
+      #### New Roles to be Hired
+    ### Phase 3: Growth (Full Team Headcount: ~75-100)
+      #### New Roles to be Hired
+
 #### knowledge/appendix/dih-integration-model.qmd
 
   ## 5. Why This Works Better Than Direct Payments
@@ -2454,8 +2590,8 @@
 ---
 
 **Summary:**
-- Files processed: 81
-- Files with headings: 77
+- Files processed: 83
+- Files with headings: 80
 - Files without headings: 2
-- Files not found: 1
-- Total headings extracted: 2179
+- Files not found: 0
+- Total headings extracted: 2308
