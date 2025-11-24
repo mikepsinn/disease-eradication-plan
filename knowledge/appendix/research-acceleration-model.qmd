@@ -192,7 +192,7 @@ print("- Difference: Sponsors are PAID for participation vs paying for costs\n")
 #| output: asis
 print("**Current System:**\n")
 print("- Restrictive exclusion criteria (maximize internal validity)\n")
-print(f"- Result: Only {CURRENT_PATIENT_ELIGIBILITY_RATE*100:.1f}% of disease patients can participate ({CURRENT_TRIAL_SLOTS_AVAILABLE//1000000}M slots for {CURRENT_DISEASE_PATIENTS_GLOBAL/1000000000:.1f}B sick people)\n")
+print(f"- Result: Only {CURRENT_PATIENT_PARTICIPATION_RATE*100:.1f}% of disease patients can participate ({CURRENT_TRIAL_SLOTS_AVAILABLE//1000000}M slots for {CURRENT_DISEASE_PATIENTS_GLOBAL/1000000000:.1f}B sick people)\n")
 print("\n")
 print("**dFDA System:**\n")
 print("- Right to Trial guarantees access\n")
@@ -203,8 +203,8 @@ print("**Recruitment Impact:**\n")
 print("```\n")
 print("Traditional trial:\n")
 print(f"  - {TRADITIONAL_SMALL_TRIAL_SIZE} patients needed\n")
-print(f"  - {int(TRADITIONAL_SMALL_TRIAL_SIZE/CURRENT_PATIENT_ELIGIBILITY_RATE):,} screened ({CURRENT_PATIENT_ELIGIBILITY_RATE*100:.0f}% eligible)\n")
-print(f"  - {int(TRADITIONAL_SMALL_TRIAL_SIZE/CURRENT_PATIENT_ELIGIBILITY_RATE*10):,} contacted (1% response)\n")
+print(f"  - {int(TRADITIONAL_SMALL_TRIAL_SIZE/CURRENT_PATIENT_PARTICIPATION_RATE):,} screened ({CURRENT_PATIENT_PARTICIPATION_RATE*100:.0f}% eligible)\n")
+print(f"  - {int(TRADITIONAL_SMALL_TRIAL_SIZE/CURRENT_PATIENT_PARTICIPATION_RATE*10):,} contacted (1% response)\n")
 print(f"  - {CURRENT_SMALL_TRIAL_RECRUITMENT_MONTHS_RANGE[1]} months recruitment time\n")
 print("\n")
 print("dFDA trial:\n")
@@ -214,7 +214,8 @@ print(f"  - {int(DFDA_SMALL_TRIAL_SIZE/DFDA_PATIENT_ELIGIBILITY_RATE*1.5):,} con
 print(f"  - {DFDA_SMALL_TRIAL_RECRUITMENT_WEEKS} weeks recruitment time\n")
 print("```\n")
 print("\n")
-print(f"**The math:** When eligibility jumps from {CURRENT_PATIENT_ELIGIBILITY_RATE*100:.0f}% to {DFDA_PATIENT_ELIGIBILITY_RATE*100:.0f}%, recruitment speed increases {RECRUITMENT_SPEED_MULTIPLIER}x. Combined with sponsor revenue incentive, recruitment becomes nearly instant.\n")
+recruitment_speed_multiplier = DFDA_PATIENT_ELIGIBILITY_RATE / CURRENT_PATIENT_PARTICIPATION_RATE
+print(f"**The math:** When eligibility jumps from {CURRENT_PATIENT_PARTICIPATION_RATE*100:.0f}% to {DFDA_PATIENT_ELIGIBILITY_RATE*100:.0f}%, recruitment speed increases {recruitment_speed_multiplier:.0f}x. Combined with sponsor revenue incentive, recruitment becomes nearly instant.\n")
 ```
 
 ### Mechanism 4: Trial Size and Completion Speed
@@ -235,7 +236,7 @@ print("\n")
 print("**Capacity Impact:**\n")
 print(f"- Traditional: {CURRENT_TRIALS_PER_YEAR:,} trials/year, each taking {CURRENT_TRIAL_DURATION_YEARS_RANGE[0]}-{CURRENT_TRIAL_DURATION_YEARS_RANGE[1]} years = ~{CURRENT_ACTIVE_TRIALS:,} active trials\n")
 print(f"- dFDA: {DFDA_TRIALS_PER_YEAR_CAPACITY:,} trials/year, each taking {DFDA_TRIAL_DURATION_MONTHS_RANGE[0]}-{DFDA_TRIAL_DURATION_MONTHS_RANGE[1]} months = ~{DFDA_ACTIVE_TRIALS:,} active trials\n")
-print(f"- **{SIMULTANEOUS_TRIALS_MULTIPLIER}x more trials running simultaneously**\n")
+print(f"- **{RESEARCH_ACCELERATION_MULTIPLIER:.0f}x more trials running simultaneously**\n")
 ```
 
 ### Mechanism 5: Transparent Platform Competition
@@ -268,12 +269,17 @@ Result: Patients choose Trial B → Trial A/C lose funding →
 ```{python}
 #| echo: false
 #| output: asis
+# Calculate multipliers inline
+recruitment_speed_mult = DFDA_PATIENT_ELIGIBILITY_RATE / CURRENT_PATIENT_PARTICIPATION_RATE
+trial_completion_speed_mult = (CURRENT_TRIAL_DURATION_YEARS_RANGE[1] * 12) / DFDA_TRIAL_DURATION_MONTHS_RANGE[1]
+completion_rate_improvement_mult = DFDA_TRIAL_COMPLETION_RATE / CURRENT_TRIAL_COMPLETION_RATE
+
 print("**Combining all mechanisms:**\n")
 print("\n")
-print(f"1. **Economic feasibility:** {DFDA_TRIALS_PER_YEAR_CAPACITY//1000}K trials possible (vs {CURRENT_TRIALS_PER_YEAR/1000:.1f}K) = **{RESEARCH_ACCELERATION_MULTIPLIER}x capacity**\n")
-print(f"2. **Flipped incentives:** {RECRUITMENT_SPEED_MULTIPLIER}x faster recruitment = **trials complete {TRIAL_COMPLETION_SPEED_MULTIPLIER}x faster**\n")
-print(f"3. **Simultaneous trials:** {SIMULTANEOUS_TRIALS_MULTIPLIER}x more active trials = **{SIMULTANEOUS_TRIALS_MULTIPLIER}x more results per year**\n")
-print(f"4. **Completion rate:** {DFDA_TRIAL_COMPLETION_RATE*100:.0f}% vs {CURRENT_TRIAL_COMPLETION_RATE*100:.0f}% = **{COMPLETION_RATE_IMPROVEMENT_MULTIPLIER}x more completions**\n")
+print(f"1. **Economic feasibility:** {DFDA_TRIALS_PER_YEAR_CAPACITY//1000}K trials possible (vs {CURRENT_TRIALS_PER_YEAR/1000:.1f}K) = **{RESEARCH_ACCELERATION_MULTIPLIER:.0f}x capacity**\n")
+print(f"2. **Flipped incentives:** {recruitment_speed_mult:.0f}x faster recruitment = **trials complete {trial_completion_speed_mult:.0f}x faster**\n")
+print(f"3. **Simultaneous trials:** {RESEARCH_ACCELERATION_MULTIPLIER:.0f}x more active trials = **{RESEARCH_ACCELERATION_MULTIPLIER:.0f}x more results per year**\n")
+print(f"4. **Completion rate:** {DFDA_TRIAL_COMPLETION_RATE*100:.0f}% vs {CURRENT_TRIAL_COMPLETION_RATE*100:.0f}% = **{completion_rate_improvement_mult:.1f}x more completions**\n")
 print("\n")
 print("**Net result:**\n")
 print(f"- Traditional: {CURRENT_TRIALS_PER_YEAR:,} trials/year × {CURRENT_TRIAL_COMPLETION_RATE*100:.0f}% completion = ~{CURRENT_COMPLETED_TRIALS_PER_YEAR:,} completed trials/year, ~{CURRENT_DRUG_APPROVALS_PER_YEAR} drug approvals\n")
