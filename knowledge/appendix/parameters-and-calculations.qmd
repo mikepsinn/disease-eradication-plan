@@ -13,9 +13,9 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 398
+**Total parameters**: 402
 
-- External sources (peer-reviewed): 127
+- External sources (peer-reviewed): 131
 - Calculated values: 223
 - Core definitions: 48
 
@@ -856,6 +856,19 @@ Annual global spending on symptomatic disease treatment
 :::
 
 ::: {.callout-tip icon=false collapse=false}
+### Estimated Total Economic Impact of Human Genome Project {#sec-human_genome_project_total_economic_impact}
+
+**Value**: $1.00T
+
+Estimated total economic impact of Human Genome Project
+
+**Source**: [human-genome-and-genetic-editing](https://warondisease.org/knowledge/references.html#human-genome-and-genetic-editing)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
 ### Maximum Annual Lobbyist Salary Range {#sec-lobbyist_salary_max}
 
 **Value**: $2.00M
@@ -1214,6 +1227,32 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 Return on investment from smallpox eradication campaign
 
 **Source**: [smallpox-eradication-roi](https://warondisease.org/knowledge/references.html#smallpox-eradication-roi)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Total Economic Benefit from Smallpox Eradication Campaign {#sec-smallpox_eradication_total_benefit}
+
+**Value**: $1.42B
+
+Total economic benefit from smallpox eradication campaign
+
+**Source**: [smallpox-eradication-roi](https://warondisease.org/knowledge/references.html#smallpox-eradication-roi)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Estimated Annual Global Economic Benefit from Smoking Cessation Programs {#sec-smoking_cessation_annual_benefit}
+
+**Value**: $12B
+
+Estimated annual global economic benefit from smoking cessation programs
+
+**Source**: [smoking-cessation-economic-benefits](https://warondisease.org/knowledge/references.html#smoking-cessation-economic-benefits)
 
 *✓ High confidence*
 
@@ -1619,6 +1658,19 @@ Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40
 **Source**: [vitamin-a-cost-per-daly](https://warondisease.org/knowledge/references.html#vitamin-a-cost-per-daly)
 
 *~ Medium confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Estimated Annual Global Economic Benefit from Water Fluoridation Programs {#sec-water_fluoridation_annual_benefit}
+
+**Value**: $800M
+
+Estimated annual global economic benefit from water fluoridation programs
+
+**Source**: [clean-water-sanitation-roi](https://warondisease.org/knowledge/references.html#clean-water-sanitation-roi)
+
+*✓ High confidence*
 
 :::
 

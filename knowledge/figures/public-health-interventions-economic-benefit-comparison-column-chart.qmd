@@ -16,11 +16,13 @@ from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE
 
 setup_chart_style()
 
-# Data - using parameters where available
+# Data - using parameters
 
 peace_dividend = float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000  # Convert to billions
 dfda_savings = float(DFDA_BENEFIT_RD_ONLY_ANNUAL) / 1_000_000_000  # Convert to billions
 childhood_vacc_benefit = float(CHILDHOOD_VACCINATION_ANNUAL_BENEFIT) / 1_000_000_000  # Convert to billions
+water_fluoridation_benefit = float(WATER_FLUORIDATION_ANNUAL_BENEFIT) / 1_000_000_000  # Convert to billions
+smoking_cessation_benefit = float(SMOKING_CESSATION_ANNUAL_BENEFIT) / 1_000_000_000  # Convert to billions
 total_benefit = peace_dividend + dfda_savings
 
 interventions = [
@@ -29,9 +31,8 @@ interventions = [
     'Childhood\nVaccinations',
     '1% Treaty /\ndFDA Initiative'
 ]
-# TODO: Create annual benefit parameters for water fluoridation and smoking cessation
 
-values = [0.8, 12.0, childhood_vacc_benefit, total_benefit]
+values = [water_fluoridation_benefit, smoking_cessation_benefit, childhood_vacc_benefit, total_benefit]
 
 # Create figure - taller for vertical layout
 

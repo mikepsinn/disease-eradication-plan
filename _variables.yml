@@ -1215,6 +1215,12 @@
   \ DEATHS_TOTAL × YLL × VSLY | Unit: USD | Click to view calculation\">$251T</a>"
 "historical_progress_economic_loss_total_latex": "$$\nLoss_{total} = 98.4M \\times\
   \ 17 \\times \\$150k = \\$251T\n$$"
+"human_genome_project_total_economic_impact": "<a href=\"https://warondisease.org/knowledge/references.html#human-genome-and-genetic-editing\"\
+  \ class=\"parameter-link\" data-source-ref=\"human-genome-and-genetic-editing\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated total\
+  \ economic impact of Human Genome Project | ✓ High confidence | Unit: USD | Click\
+  \ to view source\">$1.00T</a>"
+"human_genome_project_total_economic_impact_cite": "@human-genome-and-genetic-editing"
 "infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
@@ -1718,6 +1724,18 @@
   external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
   \ campaign | ✓ High confidence | Unit: ratio | Click to view source\">280</a>"
 "smallpox_eradication_roi_cite": "@smallpox-eradication-roi"
+"smallpox_eradication_total_benefit": "<a href=\"https://warondisease.org/knowledge/references.html#smallpox-eradication-roi\"\
+  \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total economic benefit from smallpox\
+  \ eradication campaign | ✓ High confidence | Unit: USD | Click to view source\"\
+  >$1.42B</a>"
+"smallpox_eradication_total_benefit_cite": "@smallpox-eradication-roi"
+"smoking_cessation_annual_benefit": "<a href=\"https://warondisease.org/knowledge/references.html#smoking-cessation-economic-benefits\"\
+  \ class=\"parameter-link\" data-source-ref=\"smoking-cessation-economic-benefits\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated annual\
+  \ global economic benefit from smoking cessation programs | ✓ High confidence |\
+  \ Unit: USD/year | Click to view source\">$12B</a>"
+"smoking_cessation_annual_benefit_cite": "@smoking-cessation-economic-benefits"
 "standard_economic_qaly_value_usd": "<a href=\"https://warondisease.org/knowledge/references.html#qaly-value\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Standard economic value per QALY | ✓ High confidence\
@@ -2251,6 +2269,12 @@
   \ VAD prevalence). Using India midpoint as conservative estimate. | ~ Medium confidence\
   \ | Unit: USD/DALY | Click to view source\">$37</a>"
 "vitamin_a_cost_per_daly_cite": "@vitamin-a-cost-per-daly"
+"water_fluoridation_annual_benefit": "<a href=\"https://warondisease.org/knowledge/references.html#clean-water-sanitation-roi\"\
+  \ class=\"parameter-link\" data-source-ref=\"clean-water-sanitation-roi\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Estimated annual global economic benefit\
+  \ from water fluoridation programs | ✓ High confidence | Unit: USD/year | Click\
+  \ to view source\">$800M</a>"
+"water_fluoridation_annual_benefit_cite": "@clean-water-sanitation-roi"
 "water_fluoridation_roi": "<a href=\"https://warondisease.org/knowledge/references.html#clean-water-sanitation-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"clean-water-sanitation-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from water fluoridation\
@@ -2273,6 +2297,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "398"
+"total_parameter_count": "402"
 "total_latex_equation_count": "145"
-"total_citation_count": "127"
+"total_citation_count": "131"

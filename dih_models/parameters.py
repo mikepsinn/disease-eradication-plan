@@ -3247,6 +3247,50 @@ WATER_FLUORIDATION_ROI = Parameter(
     keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"]
 )  # 23:1
 
+# Historical intervention total benefits (for comparison charts)
+
+SMALLPOX_ERADICATION_TOTAL_BENEFIT = Parameter(
+    1_420_000_000,
+    source_ref=ReferenceID.SMALLPOX_ERADICATION_ROI,
+    source_type="external",
+    description="Total economic benefit from smallpox eradication campaign",
+    display_name="Total Economic Benefit from Smallpox Eradication Campaign",
+    unit="USD",
+    keywords=["historical", "one-time", "total benefit", "eradication", "public health"]
+)  # $1.42B total benefit ($350M + $1,070M benefits, $298M cost, ~159-280:1 ROI)
+
+HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT = Parameter(
+    1_000_000_000_000,
+    source_ref=ReferenceID.HUMAN_GENOME_AND_GENETIC_EDITING,
+    source_type="external",
+    description="Estimated total economic impact of Human Genome Project",
+    display_name="Estimated Total Economic Impact of Human Genome Project",
+    unit="USD",
+    keywords=["historical", "one-time", "total benefit", "genomics", "research"]
+)  # ~$1T commonly cited economic impact estimate (cost ~$2.7B)
+
+# Annual benefit parameters (used for 100-year cumulative comparisons)
+
+WATER_FLUORIDATION_ANNUAL_BENEFIT = Parameter(
+    800_000_000,
+    source_ref=ReferenceID.CLEAN_WATER_SANITATION_ROI,
+    source_type="external",
+    description="Estimated annual global economic benefit from water fluoridation programs",
+    display_name="Estimated Annual Global Economic Benefit from Water Fluoridation Programs",
+    unit="USD/year",
+    keywords=["yearly", "profit", "return", "worldwide", "fluoridation", "dental"]
+)  # ~$800M annual benefit
+
+SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
+    12_000_000_000,
+    source_ref="smoking-cessation-economic-benefits",  # TODO: Add proper reference
+    source_type="external",
+    description="Estimated annual global economic benefit from smoking cessation programs",
+    display_name="Estimated Annual Global Economic Benefit from Smoking Cessation Programs",
+    unit="USD/year",
+    keywords=["yearly", "profit", "return", "worldwide", "tobacco", "smoking"]
+)  # ~$12B annual benefit
+
 # ---
 # COMPLETE BENEFITS BREAKDOWN (for 1,239:1 ROI calculation)
 # ---

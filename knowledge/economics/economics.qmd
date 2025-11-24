@@ -1085,17 +1085,35 @@ It's backwards. The number is negative. Economists call this "dominant" because 
 
 **For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis---cost-utility-framework).
 
-#### Comparative Cost per Life Saved
+#### Comparative Cost-Effectiveness vs. GiveWell Top Charities
 
-- **[Against Malaria Foundation](../references.qmd#givewell-cost-per-life-saved)**: {{< var givewell_cost_per_life_min >}} {{< var givewell_cost_per_life_min_cite >}} cost per life saved (GiveWell top charity)
-- **[Deworm the World Initiative](../references.qmd#givewell-cost-per-life-saved)**: {{< var givewell_cost_per_life_max >}} {{< var givewell_cost_per_life_max_cite >}} cost per life saved (highly cost-effective intervention)
-- **{{< var treaty_reduction_pct >}} Treaty/dFDA System**: Cost-dominant intervention [net societal benefit](../appendix/1-percent-treaty-cost-effectiveness.qmd) - society profits while saving lives
+The standard metric for comparing health interventions is **cost per DALY** (Disability-Adjusted Life Year) - how much you pay to save one year of healthy life.
 
-The negative cost (net benefit) per life saved distinguishes this as a dominant intervention in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
+**GiveWell Top Charities (Gold Standard for Cost-Effectiveness):**
+
+- **[Bed Nets](../references.qmd#givewell-cost-per-life-saved)**: {{< var bed_nets_cost_per_daly >}}/DALY (Against Malaria Foundation)
+- **[Deworming](../references.qmd#deworming-cost-per-daly)**: {{< var deworming_cost_per_daly >}}/DALY (Deworm the World Initiative)
+- **[Vitamin A Supplementation](../references.qmd#vitamin-a-cost-per-daly)**: {{< var vitamin_a_cost_per_daly >}}/DALY (Helen Keller International)
+
+**1% Treaty/dFDA System:**
+
+- **Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets)
+
+{{< var treaty_vs_bed_nets_multiplier_latex >}}
+
+- **Expected value at 10% success probability**: {{< var treaty_expected_cost_per_daly_conservative >}}/DALY (still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets)
+
+{{< var treaty_expected_vs_bed_nets_multiplier_latex >}}
+
+**Translation:** Even assuming only a 1-in-10 chance of political success, the 1% Treaty campaign is {{< var treaty_expected_vs_bed_nets_multiplier >}}× more cost-effective than distributing bed nets, while also being self-funding (generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits).
+
+The negative cost (net benefit) per life saved distinguishes this as a **dominant intervention** in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
 
 ### Self-Funding Mechanism Through Military Budget Redirection
 
 {{< include ../figures/self-funding-roi-comparison-column-chart.qmd >}}
+
+{{< include ../figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
 
 The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-funding system requiring zero net new spending from donors or taxpayers.
 
@@ -1232,6 +1250,8 @@ This section compares the 1% Treaty/dFDA system to best-in-class health interven
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
+
+{{< include ../figures/disease-eradication-timeline-shift-total-benefit-comparison-column-chart.qmd >}}
 
 ### The Critical Difference
 
