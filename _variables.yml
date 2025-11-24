@@ -700,7 +700,7 @@
   \ | ~ Medium confidence | Formula: DALYS_TOTAL × VSLY | Unit: USD | Click to view\
   \ calculation\">$1185T</a>"
 "disease_eradication_delay_economic_loss_latex": "$$\nLoss = 7.90B \\times \\$150k\
-  \ = \\$1.185T\n$$"
+  \ = \\$1.185\\text{ quadrillion}\n$$"
 "disease_eradication_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years Lived\
