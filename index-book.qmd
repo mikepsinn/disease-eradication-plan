@@ -689,7 +689,7 @@ For humans who peaked at counting on fingers:
 - **You get back**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually
 - **Operating costs**: {{< var treaty_total_annual_costs >}}/year (less than a single fighter jet)
 - **Lives saved**: {{< var disease_eradication_delay_deaths_total >}} (dFDA timeline shift) + {{< var treaty_lives_saved_annual_global >}}/year (peace dividend)
-- **Per life saved**: Society makes {{< var system_profit_per_life_saved >}} profit
+- **Per life saved**: Society makes net profit
 
 Math says this is the best possible use of a billion dollars.
 
@@ -717,7 +717,7 @@ That's like being 10 times better than pizza. Impossible, yet here we are.
 **The Comparison That Makes Charity Look Sad:**
 
 - Traditional charities: Spend $3,500 to save one human life (heroic but expensive)
-- This system: MAKES {{< var system_profit_per_life_saved >}} per life saved
+- This system: MAKES profit per life saved
 
 You don't donate to this. You invest in it. Then you get obscenely wealthy while accidentally saving humanity as a side effect.
 

@@ -983,7 +983,6 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
-    source_ref="clinical-trial-eligibility-rate",
     source_type="calculated",
     description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
     display_name="Current Patient Participation Rate in Clinical Trials",
@@ -2967,6 +2966,7 @@ GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
     display_name="Annual Deaths from Curable Diseases Globally",
     unit="deaths/year",
     formula="GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365",
+    latex=r"Deaths_{annual} = 150{,}000 \times 365 = 54.75M",
     keywords=["day", "each day", "per day", "worldwide", "yearly", "fatalities", "casualties"]
 )  # 54.75 million deaths/year
 
@@ -3020,6 +3020,7 @@ GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
     display_name="Total Economic Burden of Disease Globally",
     unit="USD/year",
     formula="MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
+    latex=r"Burden_{annual} = \$9.9T + \$5.0T + \$94.2T = \$109.1T",
     keywords=["109.0t", "109.1t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"]
 )  # $109.1 trillion annually
 
@@ -3635,16 +3636,6 @@ SENSITIVITY_NET_BENEFIT_CONSERVATIVE = Parameter(
     keywords=["74.6b", "low estimate", "international agreement", "peace treaty", "cautious", "pessimistic", "worst case"]
 )  # $74.6B
 
-SENSITIVITY_ICER_CONSERVATIVE = Parameter(
-    -170514,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative ICER from sensitivity analysis",
-    display_name="Conservative ICER from Sensitivity Analysis",
-    unit="USD/QALY",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
-)  # -$170,514 per QALY (negative = cost-saving)
-
 SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = Parameter(
     -5.97,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
@@ -3656,16 +3647,6 @@ SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = Parameter(
 )  # -$5.97M per life (in millions)
 
 # Central scenario (baseline) - uses main parameters directly, no aliases needed
-SENSITIVITY_ICER_CENTRAL = Parameter(
-    -187097,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario",
-    source_type="calculated",
-    description="Central ICER from sensitivity analysis",
-    display_name="Central ICER from Sensitivity Analysis",
-    unit="USD/QALY",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "incremental cost effectiveness ratio"]
-)  # -$187,097 per QALY
-
 SENSITIVITY_COST_PER_LIFE_CENTRAL = Parameter(
     -6.55,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario",
@@ -3756,16 +3737,6 @@ SENSITIVITY_NET_BENEFIT_OPTIMISTIC = Parameter(
     unit="USD",
     keywords=["294.8b", "high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty"]
 )  # $294.8B
-
-SENSITIVITY_ICER_OPTIMISTIC = Parameter(
-    -136945,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic ICER from sensitivity analysis",
-    display_name="Optimistic ICER from Sensitivity Analysis",
-    unit="USD/QALY",
-    keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "high estimate"]
-)  # -$136,945 per QALY (negative = cost-saving)
 
 SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = Parameter(
     -4.79,
@@ -4548,16 +4519,6 @@ PROFIT_PER_LIFE_SAVED = Parameter(
     keywords=["168k", "international agreement", "peace treaty", "life", "saved", "profit", "1 pct"]
 )  # USD, profit per life saved from the system (specific calculation in text)
 
-SYSTEM_PROFIT_PER_LIFE_SAVED = Parameter(
-    5_870_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life",
-    source_type="calculated",
-    description="System profit per life saved in millions",
-    display_name="dFDA System Profit per Life Saved",
-    unit="USD/life",
-    keywords=["5.9m", "international agreement", "peace treaty", "system", "life", "saved", "profit"]
-)  # Millions USD, system profit per life saved (specific phrasing in text)
-
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
     source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
@@ -4566,6 +4527,7 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     display_name="Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
     unit="ratio",
     formula="TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
+    latex=r"Multiplier = \frac{\$155.1B}{\$15.0B} = 10.3\times",
     keywords=["1%", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple"]
 )  # ~11:1 ratio (treaty system is 11x larger in economic impact)
 
@@ -4688,9 +4650,7 @@ sensitivity_dfda_opex_conservative_formatted = format_parameter_value(SENSITIVIT
 sensitivity_dfda_opex_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)
 sensitivity_dfda_savings_conservative_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)
 sensitivity_dfda_savings_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)
-sensitivity_icer_central_formatted = f"${SENSITIVITY_ICER_CENTRAL:,.0f}"
-sensitivity_icer_conservative_formatted = f"${SENSITIVITY_ICER_CONSERVATIVE:,.0f}"
-sensitivity_icer_optimistic_formatted = f"${SENSITIVITY_ICER_OPTIMISTIC:,.0f}"
+# DELETED: sensitivity_icer_central_formatted, sensitivity_icer_conservative_formatted, sensitivity_icer_optimistic_formatted - parameters deleted
 # DELETED: sensitivity_lives_saved_central_formatted - parameter was deleted
 sensitivity_net_benefit_conservative_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)
 sensitivity_net_benefit_optimistic_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)
@@ -4707,7 +4667,7 @@ sensitivity_total_costs_optimistic_formatted = format_parameter_value(SENSITIVIT
 smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
 switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFENSE_SPENDING_PCT)
 switzerland_gdp_per_capita_k_formatted = format_parameter_value(SWITZERLAND_GDP_PER_CAPITA_K)
-system_profit_per_life_saved_millions_formatted = f"${SYSTEM_PROFIT_PER_LIFE_SAVED:,.2f} million"
+# DELETED: system_profit_per_life_saved_millions_formatted - parameter deleted
 treaty_recurring_benefits_annual_formatted = format_parameter_value(TREATY_RECURRING_BENEFITS_ANNUAL)
 traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_parameter_value(
     TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K

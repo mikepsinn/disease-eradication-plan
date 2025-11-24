@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 401
+**Total parameters**: 397
 
 - External sources (peer-reviewed): 125
-- Calculated values: 229
+- Calculated values: 225
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -2198,8 +2198,6 @@ $$
 Rate = 1.9M \div 2.4B = 0.08\%
 $$
 
-**Methodology**: [clinical-trial-eligibility-rate](../references#clinical-trial-eligibility-rate)
-
 *✓ High confidence*
 
 :::
@@ -3339,7 +3337,9 @@ $$
 
 Annual deaths from curable diseases globally
 
-*Formula*: `GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365`
+$$
+Deaths_{annual} = 150{,}000 \times 365 = 54.75M
+$$
 
 **Methodology**: [../economics/economics](../economics/economics)
 
@@ -3524,7 +3524,9 @@ $$
 
 Total economic burden of disease globally (medical + productivity + mortality)
 
-*Formula*: `MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE`
+$$
+Burden_{annual} = \$9.9T + \$5.0T + \$94.2T = \$109.1T
+$$
 
 **Methodology**: [disease-economic-burden-109t](../references#disease-economic-burden-109t)
 
@@ -4253,45 +4255,6 @@ Optimistic dFDA savings estimate
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Central ICER from Sensitivity Analysis {#sec-sensitivity_icer_central}
-
-**Value**: $-187K
-
-Central ICER from sensitivity analysis
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#central-scenario](../appendix/1-percent-treaty-cost-effectiveness#central-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative ICER from Sensitivity Analysis {#sec-sensitivity_icer_conservative}
-
-**Value**: $-171K
-
-Conservative ICER from sensitivity analysis
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic ICER from Sensitivity Analysis {#sec-sensitivity_icer_optimistic}
-
-**Value**: $-137K
-
-Optimistic ICER from sensitivity analysis
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Conservative Net Benefit from Sensitivity Analysis {#sec-sensitivity_net_benefit_conservative}
 
 **Value**: $74.6B
@@ -4416,19 +4379,6 @@ Conservative total costs
 Optimistic total costs
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA System Profit per Life Saved {#sec-system_profit_per_life_saved}
-
-**Value**: $5.87M
-
-System profit per life saved in millions
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#profit-per-life](../appendix/1-percent-treaty-cost-effectiveness#profit-per-life)
 
 *✓ High confidence*
 
@@ -4578,7 +4528,9 @@ $$
 
 Treaty system benefit multiplier vs childhood vaccination programs
 
-*Formula*: `TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT`
+$$
+Multiplier = \frac{\$155.1B}{\$15.0B} = 10.3\times
+$$
 
 **Methodology**: [../economics/economics#better-than-the-best-charities](../economics/economics#better-than-the-best-charities)
 

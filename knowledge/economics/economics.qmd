@@ -528,10 +528,10 @@ This system's ICER: **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per D
 
 That's negative. Negative means you MAKE money while saving lives. Economists call this a "dominant intervention" because even they can't argue against it.
 
-This approach doesn't cost money to save lives. It generates {{< var system_profit_per_life_saved >}} profit per life saved.
+This approach doesn't cost money to save lives. Instead, it generates profit per life saved.
 
 Traditional charity: "Please donate [$3,500](../references.qmd#givewell-cost-per-life-saved) to save one life"
-This approach: "Here's ${{< var system_profit_per_life_saved >}}, we saved a life as a side effect of doing profitable things"
+This approach: "We saved a life as a side effect of doing profitable things"
 
 **Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
@@ -1739,7 +1739,7 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to medi
 ([full analysis](../appendix/dfda-cost-benefit-analysis.qmd))
 
 - **Complete case**: {{< var treaty_complete_roi_all_benefits >}}:1 ROI including all eight benefit streams ({{< var treaty_total_complete_benefits_annual >}} annually)
-- **Lives saved**: {{< var disease_eradication_delay_deaths_total >}}/year while generating {{< var system_profit_per_life_saved >}} profit per life
+- **Lives saved**: {{< var disease_eradication_delay_deaths_total >}} while generating net profit
 - **Political feasibility**: Everyone profits (nobody needs to be convinced, just paid)
 
 **Comparison**: Exceeds smallpox eradication and childhood vaccinations - history's previous best public health achievements - while requiring zero charitable donations. ([Detailed comparisons](../appendix/intervention-comparison-table.qmd))

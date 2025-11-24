@@ -5,6 +5,11 @@
 # Use in QMD files with: {{< var param_name >}}
 # Citations available as: {{< var param_name_cite >}}
 #
+# Metadata variables:
+#   {{< var total_parameter_count >}} - Number of parameters
+#   {{< var total_latex_equation_count >}} - Number of LaTeX equations
+#   {{< var total_citation_count >}} - Number of citations
+#
 
 "action_time_invest_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
@@ -286,12 +291,8 @@
   \ new drug approvals globally | ✓ High confidence | Unit: drugs/year | Click to\
   \ view source\">50</a>"
 "current_drug_approvals_per_year_cite": "@global-new-drug-approvals-50-annually"
-"current_patient_participation_rate": "<a href=\"/clinical-trial-eligibility-rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"/clinical-trial-eligibility-rate\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Current patient\
-  \ participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease\
-  \ patients) | ✓ High confidence | Formula: CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS\
-  \ | Unit: rate | Click to view calculation\">0.0792%</a>"
+"current_patient_participation_rate": "<span class=\"parameter-link\" title=\"parameters.CURRENT_PATIENT_PARTICIPATION_RATE\"\
+  >0.0792%</span>"
 "current_patient_participation_rate_latex": "$$\nRate = 1.9M \\div 2.4B = 0.08\\%\n\
   $$"
 "current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
@@ -904,6 +905,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
   \ from curable diseases globally | ✓ High confidence | Formula: GLOBAL_DAILY_DEATHS_CURABLE_DISEASES\
   \ × 365 | Unit: deaths/year | Click to view calculation\">54.8M</a>"
+"global_annual_deaths_curable_diseases_latex": "$$\nDeaths_{annual} = 150{,}000 \\\
+  times 365 = 54.75M\n$$"
 "global_annual_environmental_damage_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual environmental damage and restoration\
@@ -1110,6 +1113,8 @@
   \ (medical + productivity + mortality) | ✓ High confidence | Formula: MEDICAL_COSTS\
   \ + PRODUCTIVITY_LOSS + MORTALITY_VALUE | Unit: USD/year | Click to view calculation\"\
   >$109T</a>"
+"global_disease_economic_burden_annual_latex": "$$\nBurden_{annual} = \\$9.9T + \\\
+  $5.0T + \\$94.2T = \\$109.1T\n$$"
 "global_disease_human_life_value_loss_annual": "<a href=\"https://warondisease.org/knowledge/references.html#disease-economic-burden-109t\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Economic value of human life lost to\
@@ -1663,21 +1668,6 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic dFDA\
   \ savings estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$95B</a>"
-"sensitivity_icer_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#central-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Central ICER\
-  \ from sensitivity analysis | ✓ High confidence | Unit: USD/QALY | Click to view\
-  \ calculation\">$-187K</a>"
-"sensitivity_icer_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ ICER from sensitivity analysis | ✓ High confidence | Unit: USD/QALY | Click to\
-  \ view calculation\">$-171K</a>"
-"sensitivity_icer_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic ICER\
-  \ from sensitivity analysis | ✓ High confidence | Unit: USD/QALY | Click to view\
-  \ calculation\">$-137K</a>"
 "sensitivity_net_benefit_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
@@ -1758,11 +1748,6 @@
   external\" data-confidence=\"high\" title=\"Switzerland GDP per capita | ✓ High\
   \ confidence | Unit: USD | Click to view source\">$93K</a>"
 "switzerland_gdp_per_capita_k_cite": "@swiss-vs-us-gdp-per-capita"
-"system_profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#profit-per-life\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"System profit\
-  \ per life saved in millions | ✓ High confidence | Unit: USD/life | Click to view\
-  \ calculation\">$5.87M</a>"
 "terrorism_deaths_911": "<a href=\"https://warondisease.org/knowledge/references.html#chance-of-dying-from-terrorism-1-in-30m\"\
   \ class=\"parameter-link\" data-source-ref=\"chance-of-dying-from-terrorism-1-in-30m\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Deaths from 9/11\
@@ -1890,6 +1875,8 @@
   \ benefit multiplier vs childhood vaccination programs | ✓ High confidence | Formula:\
   \ TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT | Unit: ratio | Click\
   \ to view calculation\">10.3</a>"
+"treaty_benefit_multiplier_vs_vaccines_latex": "$$\nMultiplier = \\frac{\\$155.1B}{\\\
+  $15.0B} = 10.3\\times\n$$"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/strategy/roadmap#campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Amortized annual\
@@ -2283,3 +2270,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
+"total_parameter_count": "397"
+"total_latex_equation_count": "147"
+"total_citation_count": "125"

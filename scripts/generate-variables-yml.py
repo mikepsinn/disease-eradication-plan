@@ -629,6 +629,17 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             # Include $$ delimiters so variable can be used directly
             variables[latex_var_name] = f"$$\n{value.latex}\n$$"
 
+    # Count exports by type BEFORE adding metadata variables
+    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
+    cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
+    param_count = len(variables) - latex_count - cite_count
+
+    # Add metadata variables for use in QMD files
+    variables["total_parameter_count"] = str(param_count)
+    variables["total_latex_equation_count"] = str(latex_count)
+    if citation_mode in ("separate", "both"):
+        variables["total_citation_count"] = str(cite_count)
+
     # Write YAML file
     with open(output_path, "w", encoding="utf-8") as f:
         # Add header comment
@@ -639,15 +650,16 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
         f.write("# Use in QMD files with: {{< var param_name >}}\n")
         if citation_mode in ("separate", "both"):
             f.write("# Citations available as: {{< var param_name_cite >}}\n")
+        f.write("#\n")
+        f.write("# Metadata variables:\n")
+        f.write("#   {{< var total_parameter_count >}} - Number of parameters\n")
+        f.write("#   {{< var total_latex_equation_count >}} - Number of LaTeX equations\n")
+        if citation_mode in ("separate", "both"):
+            f.write("#   {{< var total_citation_count >}} - Number of citations\n")
         f.write("#\n\n")
 
         # Write variables with proper quoting for HTML
         yaml.dump(variables, f, default_flow_style=False, allow_unicode=True, sort_keys=False, default_style='"')
-
-    # Count exports by type
-    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
-    cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
-    param_count = len(variables) - latex_count - cite_count
 
     print(f"[OK] Generated {output_path}")
     print(f"     {param_count} parameters exported")
@@ -1193,6 +1205,57 @@ def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: s
     return missing_refs, used_refs
 
 
+def validate_calculated_parameters(parameters: Dict[str, Dict[str, Any]]) -> list:
+    """
+    Validate that calculated parameters use formulas instead of hardcoded values.
+
+    Checks if parameters marked as source_type="calculated" actually reference
+    other parameters in their definition (not just hardcoded numbers).
+
+    Args:
+        parameters: Dict of parameter metadata
+
+    Returns:
+        List of (param_name, value) tuples for potentially hardcoded calculated parameters
+    """
+    suspicious_params = []
+
+    # Exception list: Parameters that are intentionally hardcoded estimates
+    # despite being marked as "calculated"
+    INTENTIONAL_ESTIMATES = {
+        "DFDA_UPFRONT_BUILD",
+        "DFDA_SMALL_TRIAL_SIZE",
+        "CAMPAIGN_MEDIA_BUDGET_MIN",
+        "CAMPAIGN_MEDIA_BUDGET_MAX",
+        # Add more as needed
+    }
+
+    for param_name, param_data in parameters.items():
+        # Skip exception list
+        if param_name in INTENTIONAL_ESTIMATES:
+            continue
+
+        value = param_data["value"]
+        if hasattr(value, "source_type"):
+            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+            if source_type_str == "calculated":
+                # Check if the value is just a plain number (not a Parameter calculation)
+                # Read the source line to see if it's a simple numeric assignment
+                # This is a heuristic - if the numeric value doesn't involve other variables,
+                # it's likely hardcoded
+
+                # For now, just check if there's a formula attribute
+                # If marked as calculated but no formula/latex, it's suspicious
+                has_formula = hasattr(value, "formula") and value.formula
+                has_latex = hasattr(value, "latex") and value.latex
+
+                # If it's a Parameter but has neither formula nor latex, flag it
+                if not has_formula and not has_latex:
+                    suspicious_params.append((param_name, float(value)))
+
+    return suspicious_params
+
+
 def generate_reference_ids_enum(available_refs: set, output_path: Path):
     """
     Generate dih_models/reference_ids.py with enum of valid reference IDs.
@@ -1532,6 +1595,23 @@ def main():
         # Don't exit - continue generation but warn user
     else:
         print(f"[OK] All {len(set(used_refs))} external references validated")
+        print()
+
+    # Validate calculated parameters have formulas
+    print("[*] Validating calculated parameters...")
+    suspicious_params = validate_calculated_parameters(parameters)
+
+    if suspicious_params:
+        print(f"[WARN] Found {len(suspicious_params)} calculated parameters without formula/latex:", file=sys.stderr)
+        for param_name, value in suspicious_params[:10]:  # Show first 10
+            print(f"  - {param_name} = {value:,.2f} (marked as calculated but no formula)", file=sys.stderr)
+        if len(suspicious_params) > 10:
+            print(f"  ... and {len(suspicious_params) - 10} more", file=sys.stderr)
+        print(f"\n[WARN] Consider adding 'formula' or 'latex' to these parameters", file=sys.stderr)
+        print("[WARN] Or change source_type to 'definition' if they're intentional estimates", file=sys.stderr)
+        print()
+    else:
+        print("[OK] All calculated parameters have formulas or latex equations")
         print()
 
     # Generate _variables.yml
