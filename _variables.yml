@@ -50,6 +50,12 @@
   \ | ~ Medium confidence | \U0001F4CA Peer-reviewed | Conservative estimate | Updated:\
   \ 2024 | Unit: deaths/year | Click to view source\">12</a>"
 "baseline_lives_saved_annual_cite": "@who-global-health-estimates-2024"
+"bed_nets_cost_per_daly": "<a href=\"https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved\"\
+  \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"GiveWell cost per DALY for bed nets\
+  \ (midpoint estimate, range $78-100) | ✓ High confidence | Unit: USD/DALY | Click\
+  \ to view source\">$89</a>"
+"bed_nets_cost_per_daly_cite": "@givewell-cost-per-life-saved"
 "benefit_medical_research_acceleration_annual": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual benefit\
@@ -835,6 +841,8 @@
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
 "eventually_avoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.EVENTUALLY_AVOIDABLE_DEATH_PCT\"\
   >92.1%</span>"
+"eventually_avoidable_death_pct_latex": "$$\nP_{\\text{avoidable}} = 1 - 0.0791 =\
+  \ 92.09\\%\n$$"
 "family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Minimum investment for family offices\
@@ -855,6 +863,9 @@
   \ \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4\n$$"
 "fundamentally_unavoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT\"\
   >7.91%</span>"
+"fundamentally_unavoidable_death_pct_latex": "$$\nP_{\\text{unavoidable}} = \\sum_{\\\
+  text{categories}} (\\text{burden} \\times (1 - \\text{max cure rate})) = 7.91\\\
+  %\n$$"
 "gdp_growth_boost_10pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_10PCT\"\
   >0.025</span>"
 "gdp_growth_boost_1pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_1PCT\
@@ -2045,8 +2056,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per DALY\
   \ averted from one-time timeline shift (8.2 years). This is a conservative estimate\
   \ that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year\
-  \ funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $7-27/DALY,\
-  \ deworming costs $4-10/DALY. This intervention is 60-230x more cost-effective than\
+  \ funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY,\
+  \ deworming costs $4-10/DALY. This intervention is 700x more cost-effective than\
   \ bed nets while also being self-funding. | ✓ High confidence | Formula: CAMPAIGN_COST\
   \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0</a>"
 "treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
@@ -2056,13 +2067,17 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Expected cost\
   \ per DALY accounting for 10% political success probability (conservative estimate).\
   \ Even at this pessimistic probability (1 in 10 chance of success), the intervention\
-  \ is still 40-80x more cost-effective than bed nets ($50-100/DALY) and comparable\
-  \ to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called\
+  \ is still 70x more cost-effective than bed nets ($89.0/DALY) and comparable to\
+  \ deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called\
   \ a 'bold gamble' that succeeded with 164 countries signing. | ~ Medium confidence\
   \ | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE\
   \ | Unit: USD/DALY | Click to view calculation\">$1</a>"
 "treaty_expected_cost_per_daly_conservative_latex": "$$\nE[\\text{Cost/DALY}]_{10\\\
   %} = \\frac{\\$0.127}{0.10} = \\$1.27\n$$"
+"treaty_expected_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"\
+  parameters.TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER\">70.3</span>"
+"treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\
+  $89}{\\$1.27} = 70\\times\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#lives-saved\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2158,6 +2173,10 @@
   \ view calculation\">$155B</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nRecurring_{annual} = \\$113.6B\
   \ + \\$41.5B = \\$155.1B\n$$"
+"treaty_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"parameters.TREATY_VS_BED_NETS_MULTIPLIER\"\
+  >703</span>"
+"treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
+  $0.127} = 701\\times\n$$"
 "trial_completion_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#completion-acceleration\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial completion\

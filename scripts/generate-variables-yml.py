@@ -666,7 +666,7 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             print(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")
 
 
-def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path):
+def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
 
@@ -675,6 +675,11 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     - LaTeX equations where available
     - Citations and source links
     - Confidence indicators and metadata
+
+    Args:
+        parameters: Dict of parameter metadata
+        output_path: Path to write the QMD file
+        available_refs: Set of valid reference IDs from references.qmd (optional, for detecting reference links)
     """
     # Categorize parameters
     external_params = []
@@ -839,9 +844,20 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             # Source reference (calculation methodology)
             if hasattr(value, "source_ref") and value.source_ref:
                 source_ref = value.source_ref
+                
+                # Convert ReferenceID enum to string value (if needed)
+                if hasattr(source_ref, 'value'):
+                    source_ref = source_ref.value
+                else:
+                    source_ref = str(source_ref)
 
                 # Detect if this is an intra-document anchor (no path separators, no file extension)
                 is_anchor = "/" not in source_ref and ".qmd" not in source_ref and ".md" not in source_ref
+                
+                # Check if this anchor-like value is actually a reference ID from references.qmd
+                is_reference_id = False
+                if is_anchor and available_refs is not None:
+                    is_reference_id = source_ref in available_refs
 
                 # Friendly labels for common methodology references
                 methodology_labels = {
@@ -852,7 +868,12 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                     "book-word-count": "Book Word Count Analysis",
                 }
 
-                if is_anchor:
+                if is_reference_id:
+                    # This is a reference ID - link to references (extensionless for format-agnostic links)
+                    # Quarto will resolve to references.html (HTML), references.pdf (PDF), or references.epub (EPUB)
+                    link_target = f"../references#{source_ref}"
+                    link_text = methodology_labels.get(source_ref, source_ref)
+                elif is_anchor:
                     # Intra-document anchor - add # prefix
                     link_target = f"#{source_ref}"
                     link_text = methodology_labels.get(source_ref, source_ref)
@@ -1156,11 +1177,18 @@ def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: s
             if source_type_str == "external":
                 if hasattr(value, "source_ref") and value.source_ref:
                     source_ref = value.source_ref
-                    used_refs.append(source_ref)
+                    
+                    # Convert ReferenceID enum to string value (if needed)
+                    if hasattr(source_ref, 'value'):
+                        source_ref_str = source_ref.value
+                    else:
+                        source_ref_str = str(source_ref)
+                    
+                    used_refs.append(source_ref_str)
 
                     # Check if reference exists
-                    if source_ref not in available_refs:
-                        missing_refs.append((param_name, source_ref))
+                    if source_ref_str not in available_refs:
+                        missing_refs.append((param_name, source_ref_str))
 
     return missing_refs, used_refs
 
@@ -1515,7 +1543,7 @@ def main():
     # Generate parameters-and-calculations.qmd
     print("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
-    generate_parameters_qmd(parameters, qmd_output)
+    generate_parameters_qmd(parameters, qmd_output, available_refs=available_refs)
     print()
 
     # Generate references.bib (with full citation data from references.qmd)

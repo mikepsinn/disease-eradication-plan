@@ -1631,6 +1631,7 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
     display_name="Fundamentally Unavoidable Death Percentage",
     unit="percentage",
     formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
+    latex=r"P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{burden} \times (1 - \text{max cure rate})) = 7.91\%",
     confidence="medium",
 )  # ~7.9% unavoidable with aging_related at 0.99
 
@@ -1641,6 +1642,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     display_name="Eventually Avoidable Death Percentage",
     unit="percentage",
     formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
+    latex=r"P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%",
     confidence="medium",
 )  # ~92.1% eventually avoidable
 
@@ -3925,6 +3927,18 @@ TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE = Parameter(
 
 
 
+# Cost per DALY benchmarks for comparison
+BED_NETS_COST_PER_DALY = Parameter(
+    89,
+    source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
+    source_type="external",
+    description="GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)",
+    display_name="Bed Nets Cost per DALY",
+    unit="USD/DALY",
+    confidence="high",
+    keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"]
+)
+
 # Cost per DALY - Primary cost-effectiveness metric
 # Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a
 # cost-dominant intervention that saves money while improving health. Traditional ICER
@@ -3936,27 +3950,50 @@ TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / DISEASE_ERADICATION_DELAY_DALYS,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
     source_type="calculated",
-    description="Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $7-27/DALY, deworming costs $4-10/DALY. This intervention is 60-230x more cost-effective than bed nets while also being self-funding.",
+    description=f"Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost ${BED_NETS_COST_PER_DALY}/DALY, deworming costs $4-10/DALY. This intervention is {int(BED_NETS_COST_PER_DALY/0.127)}x more cost-effective than bed nets while also being self-funding.",
     display_name="Cost per DALY Averted (Timeline Shift)",
     unit="USD/DALY",
     formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
     latex=r"\text{Cost/DALY} = \frac{\$1.0B}{8.57B} = \$0.117",
     confidence="high",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"]
-)  # $0.117 per DALY (60-230x better than bed nets, while being self-funding)
+)  # $0.117 per DALY (~700x better than bed nets, while being self-funding)
 
 TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE = Parameter(
     TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT / POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE,
     source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
     source_type="calculated",
-    description="Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still 40-80x more cost-effective than bed nets ($50-100/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.",
+    description=f"Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still {int(BED_NETS_COST_PER_DALY/1.27)}x more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.",
     display_name="Expected Cost per DALY (Conservative 10% Success)",
     unit="USD/DALY",
     formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
     latex=r"E[\text{Cost/DALY}]_{10\%} = \frac{\$0.127}{0.10} = \$1.27",
     confidence="medium",
     keywords=["expected value", "probability weighted", "cost effectiveness", "conservative", "gates foundation", "givewell", "political risk", "10 percent"]
-)  # $1.27 per DALY (still 40-80x better than bed nets, accounting for political risk)
+)  # $1.27 per DALY (still ~70x better than bed nets, accounting for political risk)
+
+# Cost-effectiveness multipliers vs. bed nets
+TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
+    BED_NETS_COST_PER_DALY / TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT,
+    source_type="calculated",
+    description="How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)",
+    display_name="Cost-Effectiveness vs Bed Nets Multiplier",
+    unit="ratio",
+    formula="BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
+    latex=r"\text{Multiplier} = \frac{\$89}{\$0.127} = 701\times",
+    confidence="high",
+)
+
+TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
+    BED_NETS_COST_PER_DALY / TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE,
+    source_type="calculated",
+    description="Expected value multiplier vs bed nets at 10% success probability",
+    display_name="Expected Cost-Effectiveness vs Bed Nets Multiplier",
+    unit="ratio",
+    formula="BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
+    latex=r"E[\text{Multiplier}] = \frac{\$89}{\$1.27} = 70\times",
+    confidence="medium",
+)
 
 # ---
 # HELPER FUNCTIONS

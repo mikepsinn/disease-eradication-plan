@@ -612,6 +612,7 @@
 
   ## Abstract
   ## Key Findings
+  ## For Decision Makers: Three Numbers That Matter
   ## Research Hypothesis
   ## Nomenclature and Key Terms
     ### The Highest-ROI Public Health Intervention
@@ -625,6 +626,7 @@
     ### Research Acceleration
     ### Suffering Reduction
     ### Lives Saved
+  ## Why "Eventually Avoidable" Matters
     ### Annual Savings
   ## Why {{< var treaty_reduction_pct >}} Is Enough
     ### 1. The Peace Dividend
@@ -651,6 +653,7 @@
     ### Benefit Side (What Appears From The Void)
   ## The Return on Investment Equation
   ## Cost-Effectiveness: The "Per Life Saved" Metric
+  ## "But What If It Doesn't Pass?"
     ### The Detailed NPV Formulas (For Spreadsheet Enthusiasts)
       #### NPV of Costs
       #### NPV of Benefits
@@ -2454,4 +2457,4 @@
 - Files with headings: 77
 - Files without headings: 2
 - Files not found: 1
-- Total headings extracted: 2175
+- Total headings extracted: 2178

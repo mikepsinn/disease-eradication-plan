@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 404
+**Total parameters**: 407
 
-- External sources (peer-reviewed): 125
-- Calculated values: 232
+- External sources (peer-reviewed): 126
+- Calculated values: 234
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -59,6 +59,19 @@ Baseline annual lives saved by pharmaceuticals (conservative aggregate)
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Bed Nets Cost per DALY {#sec-bed_nets_cost_per_daly}
+
+**Value**: $89
+
+GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)
+
+**Source**: [givewell-cost-per-life-saved](https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved)
+
+*✓ High confidence*
 
 :::
 
@@ -3207,7 +3220,7 @@ $$
 \frac{\$2.6B}{\$50M} = 52
 $$
 
-**Methodology**: [pre-1962-drug-costs-timeline](#pre-1962-drug-costs-timeline)
+**Methodology**: [pre-1962-drug-costs-timeline](../references#pre-1962-drug-costs-timeline)
 
 *~ Medium confidence*
 
@@ -3288,7 +3301,9 @@ $$
 
 Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement
 
-*Formula*: `1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT`
+$$
+P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%
+$$
 
 *~ Medium confidence*
 
@@ -3318,7 +3333,7 @@ $$
 \frac{9.1 \text{ years} \times 12 \text{ months/year}}{3 \text{ months}} = 36.4
 $$
 
-**Methodology**: [recovery-trial-82x-cost-reduction](#recovery-trial-82x-cost-reduction)
+**Methodology**: [recovery-trial-82x-cost-reduction](../references#recovery-trial-82x-cost-reduction)
 
 *✓ High confidence*
 
@@ -3331,7 +3346,9 @@ $$
 
 Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
 
-*Formula*: `Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))`
+$$
+P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{burden} \times (1 - \text{max cure rate})) = 7.91\%
+$$
 
 *~ Medium confidence*
 
@@ -3548,7 +3565,7 @@ Total economic burden of disease globally (medical + productivity + mortality)
 
 *Formula*: `MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE`
 
-**Methodology**: [disease-economic-burden-109t](#disease-economic-burden-109t)
+**Methodology**: [disease-economic-burden-109t](../references#disease-economic-burden-109t)
 
 *✓ High confidence*
 
@@ -3840,7 +3857,7 @@ $$
 PD_{fiscal} = \$27.18B
 $$
 
-**Methodology**: [SIPRI Military Spending Database](#sipri-2024-spending)
+**Methodology**: [SIPRI Military Spending Database](../references#sipri-2024-spending)
 
 *✓ High confidence*
 
@@ -4892,7 +4909,7 @@ $$
 
 **Value**: $0
 
-Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $7-27/DALY, deworming costs $4-10/DALY. This intervention is 60-230x more cost-effective than bed nets while also being self-funding.
+Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.
 
 $$
 \text{Cost/DALY} = \frac{\$1.0B}{8.57B} = \$0.117
@@ -4909,13 +4926,28 @@ $$
 
 **Value**: $1
 
-Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still 40-80x more cost-effective than bed nets ($50-100/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.
+Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still 70x more cost-effective than bed nets ($89.0/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.
 
 $$
 E[\text{Cost/DALY}]_{10\%} = \frac{\$0.127}{0.10} = \$1.27
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_expected_vs_bed_nets_multiplier}
+
+**Value**: 70.3
+
+Expected value multiplier vs bed nets at 10% success probability
+
+$$
+E[\text{Multiplier}] = \frac{\$89}{\$1.27} = 70\times
+$$
 
 *~ Medium confidence*
 
@@ -5103,6 +5135,21 @@ Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_vs_bed_nets_multiplier}
+
+**Value**: 703
+
+How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
+
+$$
+\text{Multiplier} = \frac{\$89}{\$0.127} = 701\times
+$$
 
 *✓ High confidence*
 
