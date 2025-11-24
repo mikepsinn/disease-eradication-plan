@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 397
+**Total parameters**: 400
 
-- External sources (peer-reviewed): 125
+- External sources (peer-reviewed): 127
 - Calculated values: 225
-- Core definitions: 47
+- Core definitions: 48
 
 ## External Data Sources {#sec-external}
 
@@ -293,6 +293,19 @@ Annual defense industry lobbying spending
 **Source**: [lobbying-spend-defense](https://warondisease.org/knowledge/references.html#lobbying-spend-defense)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Deworming Cost per DALY {#sec-deworming_cost_per_daly}
+
+**Value**: $55
+
+Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.
+
+**Source**: [deworming-cost-per-daly](https://warondisease.org/knowledge/references.html#deworming-cost-per-daly)
+
+*? Low confidence*
 
 :::
 
@@ -1593,6 +1606,19 @@ Value of Statistical Life (conservative estimate)
 **Source**: [dot-vsl-13-6m](https://warondisease.org/knowledge/references.html#dot-vsl-13-6m)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Vitamin A Supplementation Cost per DALY {#sec-vitamin_a_cost_per_daly}
+
+**Value**: $37
+
+Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.
+
+**Source**: [vitamin-a-cost-per-daly](https://warondisease.org/knowledge/references.html#vitamin-a-cost-per-daly)
+
+*~ Medium confidence*
 
 :::
 
@@ -5122,6 +5148,17 @@ $$
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+::: {.callout-warning icon=false collapse=false}
+### Childhood Vaccination Cost per DALY (Estimated) {#sec-childhood_vaccination_cost_per_daly}
+
+**Value**: $30
+
+Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
+
+*Core definition*
+
+:::
 
 ::: {.callout-warning icon=false collapse=false}
 ### Percentage of Budget Defense Sector Keeps Under 1% Treaty {#sec-defense_sector_retention_pct}

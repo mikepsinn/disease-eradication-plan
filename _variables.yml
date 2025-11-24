@@ -227,6 +227,11 @@
   \ global economic benefit from childhood vaccination programs (measles, polio, etc.)\
   \ | ✓ High confidence | Unit: USD/year | Click to view source\">$15B</a>"
 "childhood_vaccination_annual_benefit_cite": "@childhood-vaccination-economic-benefits"
+"childhood_vaccination_cost_per_daly": "<span class=\"parameter-definition\" title=\"\
+  Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness\
+  \ studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost\
+  \ per DALY. This estimate is derived from program costs and benefits for comparison\
+  \ purposes only. | Unit: USD/DALY | Core definition\">$30</span>"
 "childhood_vaccination_roi": "<a href=\"https://warondisease.org/knowledge/references.html#childhood-vaccination-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"childhood-vaccination-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from childhood\
@@ -346,6 +351,14 @@
 "defense_sector_retention_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of budget defense sector keeps under 1% treaty | Unit: rate | Core definition\"\
   >99%</span>"
+"deworming_cost_per_daly": "<a href=\"https://warondisease.org/knowledge/references.html#deworming-cost-per-daly\"\
+  \ class=\"parameter-link\" data-source-ref=\"deworming-cost-per-daly\" data-source-type=\"\
+  external\" data-confidence=\"low\" title=\"Cost per DALY for deworming programs\
+  \ (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated\
+  \ and their current methodology focuses on long-term income effects rather than\
+  \ short-term health DALYs. | ? Low confidence | Unit: USD/DALY | Click to view source\"\
+  >$55</a>"
+"deworming_cost_per_daly_cite": "@deworming-cost-per-daly"
 "dfda_active_trials": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Active trials\
@@ -2248,6 +2261,13 @@
   \ ÷ CAMPAIGN_COST) × UNIT | Unit: USD/year | Click to view calculation\">$2.72K</a>"
 "victory_bond_payout_per_unit_usd_annual_latex": "$$\nPayoutPerUnit = \\frac{\\$2.718B}{\\\
   $1B} \\times \\$1,000 = \\$2,718\n$$"
+"vitamin_a_cost_per_daly": "<a href=\"https://warondisease.org/knowledge/references.html#vitamin-a-cost-per-daly\"\
+  \ class=\"parameter-link\" data-source-ref=\"vitamin-a-cost-per-daly\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Cost per DALY for vitamin A supplementation\
+  \ programs (India: $23-50; Africa: $40-255; wide variation by region and baseline\
+  \ VAD prevalence). Using India midpoint as conservative estimate. | ~ Medium confidence\
+  \ | Unit: USD/DALY | Click to view source\">$37</a>"
+"vitamin_a_cost_per_daly_cite": "@vitamin-a-cost-per-daly"
 "water_fluoridation_roi": "<a href=\"https://warondisease.org/knowledge/references.html#clean-water-sanitation-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"clean-water-sanitation-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from water fluoridation\
@@ -2270,6 +2290,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "397"
+"total_parameter_count": "400"
 "total_latex_equation_count": "147"
-"total_citation_count": "125"
+"total_citation_count": "127"

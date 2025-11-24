@@ -1,0 +1,164 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# Find project root dynamically
+
+# Import centralized style
+
+from dih_models.plotting.chart_style import setup_chart_style, add_watermark, clean_spines
+from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Cost per DALY Data - LOWER IS BETTER
+# Using central estimates from GiveWell 2024 and dFDA cost-benefit analysis
+
+interventions = {
+    'Malaria Bed Nets\n(Against Malaria\nFoundation)': {
+        'cost_per_daly': float(BED_NETS_COST_PER_DALY),  # $89 midpoint (GiveWell 2024)
+        'category': 'givewell-top',
+        'note': 'GiveWell top charity'
+    },
+    'Childhood\nVaccinations\n(US)': {
+        'cost_per_daly': float(CHILDHOOD_VACCINATION_COST_PER_DALY),  # $30 estimated
+        'category': 'current',
+        'note': 'Established programs'
+    },
+    'Deworming\nPrograms': {
+        'cost_per_daly': float(DEWORMING_COST_PER_DALY),  # $55 midpoint (GiveWell 2011)
+        'category': 'givewell-top',
+        'note': 'GiveWell top charity'
+    },
+    'Vitamin A\nSupplementation\n(Helen Keller Intl)': {
+        'cost_per_daly': float(VITAMIN_A_COST_PER_DALY),  # $37 India midpoint
+        'category': 'givewell-top',
+        'note': 'GiveWell top charity'
+    },
+    '1% Treaty + dFDA\n(Expected Value,\n10% Success)': {
+        'cost_per_daly': float(TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE),  # $1.27
+        'category': 'proposed-expected',
+        'note': 'Accounts for political risk'
+    },
+    '1% Treaty + dFDA\n(Conditional on\nSuccess)': {
+        'cost_per_daly': float(TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT),  # $0.127
+        'category': 'proposed-conditional',
+        'note': 'Assumes treaty passes'
+    }
+}
+
+# Create figure - adjusted for linear scale
+
+fig, ax = plt.subplots(figsize=(16, 9))
+
+# Prepare data - sort by cost (higher cost = worse, appears first)
+
+sorted_items = sorted(interventions.items(), key=lambda x: x[1]['cost_per_daly'], reverse=True)
+names = [item[0] for item in sorted_items]
+costs = [item[1]['cost_per_daly'] for item in sorted_items]
+categories = [item[1]['category'] for item in sorted_items]
+
+# Define colors and patterns for categories
+
+category_styles = {
+    'givewell-top': {'color': COLOR_WHITE, 'hatch': '', 'edge': COLOR_BLACK},
+    'current': {'color': COLOR_WHITE, 'hatch': '...', 'edge': COLOR_BLACK},
+    'proposed-expected': {'color': COLOR_WHITE, 'hatch': '///', 'edge': COLOR_BLACK},
+    'proposed-conditional': {'color': COLOR_WHITE, 'hatch': 'xxx', 'edge': COLOR_BLACK}
+}
+
+# Create bars with linear scale
+
+x_pos = np.arange(len(names))
+bars = []
+for i, (name, cost, cat) in enumerate(zip(names, costs, categories)):
+    style = category_styles[cat]
+    bar = ax.bar(x_pos[i], cost, width=0.7,
+                 color=style['color'], edgecolor=style['edge'],
+                 linewidth=2, hatch=style['hatch'])
+    bars.append(bar)
+
+    # Add value labels above bars
+    if cost >= 1:
+        label = f'${cost:.2f}' if cost < 10 else f'${cost:.0f}'
+    else:
+        label = f'${cost:.3f}'
+
+    ax.text(x_pos[i], cost * 1.15,
+            label,
+            ha='center', va='bottom',
+            fontsize=22, color=COLOR_BLACK, weight='bold')
+
+    # Add intervention name below the bar (on x-axis area)
+    ax.text(x_pos[i], -5,
+            name,
+            ha='center', va='top',
+            fontsize=13, color=COLOR_BLACK, weight='bold',
+            linespacing=1.1)
+
+# Axis formatting - remove x-axis labels, keep y-axis for reference
+
+ax.set_ylabel('Cost per DALY Averted (USD)\nLower is Better',
+              fontsize=14, color=COLOR_BLACK, weight='bold', labelpad=10)
+ax.set_xlabel('')
+ax.set_xticks([])  # Remove x-axis ticks and labels
+
+# Y-axis formatting - set limits to accommodate labels
+
+ax.set_ylim(-10, max(costs) * 1.2)
+
+# Title - positioned higher to avoid overlap with labels
+
+ax.set_title('Cost-Effectiveness Comparison: Health Interventions\n(Cost per Disability-Adjusted Life Year Averted)',
+            fontsize=22, color=COLOR_BLACK, weight='bold', pad=20, y=0.98)
+
+# Add explanatory callout
+
+callout_text = ('DALY = Disability-Adjusted Life Year\nOne DALY = one year of healthy life lost\n\nLower cost per DALY = more cost-effective\n\nEven accounting for political risk (10% success),\nthe 1% Treaty is 40-80x more cost-effective\nthan malaria bed nets ($1.27 vs $75 per DALY)\n\nConditional on success: 400-800x better')
+ax.text(0.73, 0.58, callout_text,
+        transform=ax.transAxes, ha='center', va='center',
+        fontsize=14, color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1.5, alpha=0.95),
+        linespacing=1.4)
+
+# Add annotation pointing to GiveWell charities
+
+ax.annotate('GiveWell Top Charities\n(gold standard for\ncost-effectiveness)',
+           xy=(0.5, 35), xytext=(0.15, 0.75),
+           ha='center', fontsize=12, color=COLOR_BLACK,
+           textcoords='axes fraction',
+           bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=1.2),
+           arrowprops=dict(arrowstyle='->', lw=1.5, color=COLOR_BLACK))
+
+# Clean spines - keep left for scale reference, remove others
+
+clean_spines(ax, ['top', 'right', 'bottom'])
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save figure with tight bbox to minimize whitespace
+
+output_path = get_figure_output_path('cost-per-daly-comparison-column-chart.png')
+
+# Save the figure
+
+plt.savefig(output_path, dpi=200, bbox_inches='tight', pad_inches=0.2, facecolor=COLOR_WHITE)
+
+# Add metadata for attribution
+
+add_png_metadata(output_path, title="Cost per DALY Comparison: Health Interventions")
+
+plt.show()
+```

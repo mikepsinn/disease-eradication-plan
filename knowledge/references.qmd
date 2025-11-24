@@ -1983,6 +1983,24 @@ from dih_models.parameters import *
   > "Thus, if we estimate that a funding opportunity is '10x cash,' this means we estimate it to be ten times as cost-effective as unconditional cash transfers."
   > — GiveWell, 2023, [Cost-Effectiveness](https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models)
 
+<a id="deworming-cost-per-daly"></a>
+
+- **Cost per DALY for Deworming Programs**
+  > Schistosomiasis treatment: $28.19-$70.48 per DALY (using arithmetic means with varying disability weights)
+  > Soil-transmitted helminths (STH) treatment: $82.54 per DALY (midpoint estimate)
+  > Note: GiveWell explicitly states this 2011 analysis is "out of date" and their current methodology focuses on long-term income effects rather than short-term health DALYs
+  > — [GiveWell: Cost-Effectiveness in $/DALY for Deworming](https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness)
+
+<a id="vitamin-a-cost-per-daly"></a>
+
+- **Cost per DALY for Vitamin A Supplementation**
+  > India: $23-$50 per DALY averted (least costly intervention, $1,000-$6,100 per death averted)
+  > Sub-Saharan Africa (2022): $220-$860 per DALY (Burkina Faso: $220, Kenya: $550, Nigeria: $860)
+  > WHO estimates for Africa: $40 per DALY for fortification, $255 for supplementation
+  > Uganda fortification: $18-$82 per DALY (oil: $18, sugar: $82)
+  > — [PLOS ONE: Cost-effectiveness of "Golden Mustard" for Treating Vitamin A Deficiency in India (2010)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012046) | [PLOS ONE: Cost-effectiveness of Vitamin A supplementation in Sub-Saharan Africa (2022)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0266495)
+  > Note: Wide variation reflects differences in baseline VAD prevalence, coverage levels, and whether intervention is supplementation or fortification
+
 <a id="global-aging-research-spending-500m"></a>
 
 - **Global aging research spending: ~$500 million**

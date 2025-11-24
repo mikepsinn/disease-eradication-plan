@@ -3862,6 +3862,38 @@ BED_NETS_COST_PER_DALY = Parameter(
     keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"]
 )
 
+DEWORMING_COST_PER_DALY = Parameter(
+    55,  # Midpoint of $28-82 range from GiveWell 2011 analysis
+    source_ref=ReferenceID.DEWORMING_COST_PER_DALY,
+    source_type="external",
+    description="Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.",
+    display_name="Deworming Cost per DALY",
+    unit="USD/DALY",
+    confidence="low",
+    keywords=["givewell", "deworming", "worms", "cost effectiveness", "benchmark", "comparison", "soil-transmitted helminths", "schistosomiasis"]
+)
+
+VITAMIN_A_COST_PER_DALY = Parameter(
+    37,  # Midpoint of $23-50 India estimate (most conservative published estimate)
+    source_ref=ReferenceID.VITAMIN_A_COST_PER_DALY,
+    source_type="external",
+    description="Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.",
+    display_name="Vitamin A Supplementation Cost per DALY",
+    unit="USD/DALY",
+    confidence="medium",
+    keywords=["givewell", "vitamin a", "helen keller", "cost effectiveness", "benchmark", "comparison", "supplementation", "micronutrient"]
+)
+
+CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
+    30,  # Estimated from ROI and benefit parameters; US studies use QALYs not DALYs
+    source_type="definition",
+    description="Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.",
+    display_name="Childhood Vaccination Cost per DALY (Estimated)",
+    unit="USD/DALY",
+    confidence="low",
+    keywords=["vaccination", "immunization", "childhood", "cost effectiveness", "benchmark", "comparison", "vaccines for children", "VFC"]
+)
+
 # Cost per DALY - Primary cost-effectiveness metric
 # Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a
 # cost-dominant intervention that saves money while improving health. Traditional ICER
