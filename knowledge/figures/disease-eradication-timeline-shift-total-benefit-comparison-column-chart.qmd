@@ -20,7 +20,7 @@ setup_chart_style()
 # Using 100-year cumulative benefits for ongoing interventions
 
 interventions = {
-    'Disease\nEradication\nTimeline\nShift': {
+    '1% Treaty/dFDA\n8.2 Year\nDisease\nEradication\nTimeline\nShift': {
         'benefit': float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS),
         'category': 'proposed',
         'note': 'One-time benefit from eliminating 8.2-year efficacy lag',
