@@ -1455,15 +1455,15 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
 
 # Disease burden as percentage of total deaths
 DISEASE_BURDEN = {
-    "cardiovascular": 201.1 / 722.0,  # 27.8%
-    "cancer": 146.6 / 722.0,  # 20.3%
-    "respiratory": 33.4 / 722.0,  # 4.6%
-    "neurodegenerative": 27.7 / 722.0,  # 3.8% (Alzheimer's)
-    "metabolic": (22.4 + 13.1 + 13.0) / 722.0,  # 6.7% (Diabetes + Kidney + Liver)
-    "infectious": 15.0 / 722.0,  # 2.1%
-    "accidents": 62.3 / 722.0,  # 8.6%
-    "aging_related": 180.0 / 722.0,  # 24.9% (Cellular aging, frailty, multi-morbidity)
-    "other": 60.0 / 722.0,  # 8.3%
+    "cardiovascular": 201.1 / 774.6,  # 26.0%
+    "cancer": 146.6 / 774.6,  # 18.9%
+    "respiratory": 33.4 / 774.6,  # 4.3%
+    "neurodegenerative": 27.7 / 774.6,  # 3.6% (Alzheimer's)
+    "metabolic": (22.4 + 13.1 + 13.0) / 774.6,  # 6.3% (Diabetes + Kidney + Liver)
+    "infectious": 15.0 / 774.6,  # 1.9%
+    "accidents": 62.3 / 774.6,  # 8.0%
+    "aging_related": 180.0 / 774.6,  # 23.2% (Cellular aging, frailty, multi-morbidity)
+    "other": 60.0 / 774.6,  # 7.7%
 }
 
 # Current cure/treatment rates by category
@@ -1648,14 +1648,14 @@ DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS = Parameter(
     DISEASE_ERADICATION_DELAY_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD,
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
     source_type="calculated",
-    description="Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)",
+    description="Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
     display_name="Total Economic Loss from Disease Eradication Delay",
     unit="USD",
     formula="DALYS_TOTAL × VSLY",
-    latex=r"Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}",
+    latex=r"Loss = 7.94B \times \$150k = \$1.191\text{ quadrillion}",
     confidence="medium",
     keywords=["disease eradication", "economic loss", "deadweight loss", "primary estimate"]
-)  # $1.185 Quadrillion total economic loss
+)  # $1.191 Quadrillion total economic loss
 
 # TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
 # These represent the complete, one-time benefit of eliminating the efficacy lag
