@@ -2454,7 +2454,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI with 0.1% Political Success Probability {#sec-dfda_expected_roi_0_1pct_political_success}
 
-**Value**: 1,185
+**Value**: 1,191
 
 Expected ROI for 1% Treaty accounting for 0.1% political success probability (extremely pessimistic estimate)
 
@@ -2471,7 +2471,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI with 10% Political Success Probability {#sec-dfda_expected_roi_10pct_political_success}
 
-**Value**: 118K
+**Value**: 119K
 
 Expected ROI for 1% Treaty accounting for 10% political success probability (conservative estimate)
 
@@ -2488,7 +2488,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI with 1% Political Success Probability {#sec-dfda_expected_roi_1pct_political_success}
 
-**Value**: 11,845
+**Value**: 11,914
 
 Expected ROI for 1% Treaty accounting for 1% political success probability (very pessimistic estimate)
 
@@ -2505,7 +2505,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI with 25% Political Success Probability {#sec-dfda_expected_roi_25pct_political_success}
 
-**Value**: 296K
+**Value**: 298K
 
 Expected ROI for 1% Treaty accounting for 25% political success probability (moderate estimate)
 
@@ -2522,7 +2522,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI with 40% Political Success Probability {#sec-dfda_expected_roi_40pct_political_success}
 
-**Value**: 474K
+**Value**: 477K
 
 Expected ROI for 1% Treaty accounting for 40% political success probability (moderate-high estimate)
 
@@ -2539,7 +2539,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI with 50% Political Success Probability {#sec-dfda_expected_roi_50pct_political_success}
 
-**Value**: 592K
+**Value**: 596K
 
 Expected ROI for 1% Treaty accounting for 50% political success probability (optimistic estimate)
 
@@ -3066,7 +3066,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Total DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_dalys}
 
-**Value**: 7.90B
+**Value**: 7.94B
 
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
@@ -3083,7 +3083,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_total}
 
-**Value**: 413M
+**Value**: 416M
 
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
 
@@ -3100,12 +3100,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Total Economic Loss from Disease Eradication Delay {#sec-disease_eradication_delay_economic_loss}
 
-**Value**: $1185T
+**Value**: $1191T
 
-Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)
+Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
 
 $$
-Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}
+Loss = 7.94B \times \$150k = \$1.191\text{ quadrillion}
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
@@ -3117,7 +3117,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Years Lived with Disability During Disease Eradication Delay {#sec-disease_eradication_delay_yld}
 
-**Value**: 868M
+**Value**: 873M
 
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
@@ -3134,7 +3134,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Years of Life Lost from Disease Eradication Delay {#sec-disease_eradication_delay_yll}
 
-**Value**: 7.03B
+**Value**: 7.07B
 
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
@@ -3168,7 +3168,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Total Economic Loss from Disease Eradication + Innovation Acceleration {#sec-disease_eradication_plus_acceleration_economic_loss_total}
 
-**Value**: $2369T
+**Value**: $2383T
 
 Total economic loss from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents combined timeline and volume effects from eliminating Phase 2-4 cost barriers. Research shows: (1) Timeline acceleration of 50% achievable through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024, Health Economics), (3) Cost barrier elimination enables more drugs to reach viability. The 2× factor conservatively represents either 2× timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer value share ~20% maximizes long-term population health (Woods 2024).
 
@@ -3334,7 +3334,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Eventually Avoidable Death Percentage {#sec-eventually_avoidable_death_pct}
 
-**Value**: 92.1%
+**Value**: 92.6%
 
 Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement
 
@@ -3379,7 +3379,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Fundamentally Unavoidable Death Percentage {#sec-fundamentally_unavoidable_death_pct}
 
-**Value**: 7.91%
+**Value**: 7.37%
 
 Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
 
@@ -4698,7 +4698,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_complete_roi_all_benefits}
 
-**Value**: 1.18M
+**Value**: 1.19M
 
 Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
@@ -4868,7 +4868,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_expected_vs_bed_nets_multiplier}
 
-**Value**: 70.3
+**Value**: 70.7
 
 Expected value multiplier vs bed nets at 10% success probability
 
@@ -5002,7 +5002,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Innovation Acceleration (Optimistic) {#sec-treaty_roi_innovation_acceleration}
 
-**Value**: 2.37M
+**Value**: 2.38M
 
 Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).
 
@@ -5019,7 +5019,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_roi_lag_elimination}
 
-**Value**: 1.18M
+**Value**: 1.19M
 
 Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
@@ -5070,7 +5070,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_vs_bed_nets_multiplier}
 
-**Value**: 703
+**Value**: 707
 
 How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
 
@@ -5085,7 +5085,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
-**Value**: 3,050
+**Value**: 3,068
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
@@ -5474,7 +5474,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 10yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_10yr_age_30_1pct}
 
-**Value**: 1.53M
+**Value**: 1.52M
 
 *Core definition*
 
@@ -5483,7 +5483,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 20yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_20yr_age_30_1pct}
 
-**Value**: 1.99M
+**Value**: 1.97M
 
 *Core definition*
 
@@ -5492,7 +5492,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 40yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_40yr_age_30_1pct}
 
-**Value**: 2.65M
+**Value**: 2.62M
 
 *Core definition*
 
@@ -5501,7 +5501,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 5yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
 
-**Value**: 1.19M
+**Value**: 1.18M
 
 *Core definition*
 
