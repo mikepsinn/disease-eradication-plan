@@ -3413,31 +3413,12 @@ DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
     keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"]
 )
 
-# Opportunity cost calculations (PRIMARY: based on lag elimination health benefit)
-# These represent the daily/per-second cost of delay during the 8.2-year efficacy lag period
-OPPORTUNITY_COST_PER_DAY = Parameter(
-    DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS / EFFICACY_LAG_YEARS / 365,
-    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
-    source_type="calculated",
-    description="Foregone economic value per day during the 8.2-year efficacy lag period (PRIMARY health benefit ÷ lag years ÷ 365). Represents daily cost of regulatory delay, not a perpetual annual benefit.",
-    display_name="Daily Cost of Regulatory Delay (During Efficacy Lag Period)",
-    unit="USD/day",
-    formula="DISEASE_ERADICATION_DELAY_TOTAL ÷ EFFICACY_LAG_YEARS ÷ 365",
-    latex=r"Cost_{daily} = \frac{\$1{,}286T}{8.2 \times 365} \approx \$429B/day",
-    keywords=["opportunity cost", "delay cost", "daily", "efficacy lag", "regulatory delay"]
-)  # ~$429B/day during efficacy lag period
-
-OPPORTUNITY_COST_PER_SECOND = Parameter(
-    OPPORTUNITY_COST_PER_DAY / (24 * 3600),
-    source_ref="/knowledge/economics/economics.qmd#the-opportunity-cost-clock",
-    source_type="calculated",
-    description="Foregone economic value per second during the 8.2-year efficacy lag period. Calculated from daily opportunity cost.",
-    display_name="Per-Second Cost of Regulatory Delay (During Efficacy Lag Period)",
-    unit="USD/second",
-    formula="OPPORTUNITY_COST_PER_DAY ÷ 86400",
-    latex=r"Cost_{second} = \frac{\$429B}{86{,}400} \approx \$5M/second",
-    keywords=["opportunity cost", "delay cost", "per second", "efficacy lag", "regulatory delay"]
-)  # ~$5M/second during efficacy lag period
+# DELETED: OPPORTUNITY_COST_PER_DAY and OPPORTUNITY_COST_PER_SECOND
+# Reason: These parameters were conceptually confused. They calculated the daily cost by dividing
+# DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS by 8.2 years, but that $529T was itself derived from
+# daily disease burden × 8.2 years, making the calculation circular. The daily disease burden
+# should be calculated directly from GLOBAL_DAILY_DEATHS_CURABLE_DISEASES (150,000 deaths/day)
+# rather than through this circular division.
 
 # Deaths delay costs (preventable deaths per second from curable diseases)
 COST_OF_DELAY_DEATHS_PER_SECOND = Parameter(
