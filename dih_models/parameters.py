@@ -1638,10 +1638,10 @@ DISEASE_ERADICATION_DELAY_DALYS = Parameter(
     display_name="Total DALYs Lost from Disease Eradication Delay",
     unit="DALYs",
     formula="YLL + YLD",
-    latex=r"DALY_{total} = 7.63B + 0.943B = 8.57B",
+    latex=r"DALY_{total} = 7.63B + 0.943B = 7.90B",
     confidence="medium",
     keywords=["disease eradication", "DALYs", "disease burden", "primary estimate"]
-)  # 8.57B DALYs
+)  # 7.90B DALYs
 
 # Economic Valuation (using standardized $150k VSLY)
 DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS = Parameter(
@@ -1652,10 +1652,10 @@ DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS = Parameter(
     display_name="Total Economic Loss from Disease Eradication Delay",
     unit="USD",
     formula="DALYS_TOTAL × VSLY",
-    latex=r"Loss = 8.57B \times \$150k = \$1.29T",
+    latex=r"Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}",
     confidence="medium",
     keywords=["disease eradication", "economic loss", "deadweight loss", "primary estimate"]
-)  # $1.29 Trillion total economic loss
+)  # $1.185 Quadrillion total economic loss
 
 # TOTAL Economic Loss Parameters (One-Time Benefits from Eliminating 8.2-Year Delay)
 # These represent the complete, one-time benefit of eliminating the efficacy lag
@@ -1869,7 +1869,7 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
     display_name="Ratio of Type Ii Error Cost to Type I Error Benefit",
     unit="ratio",
     formula="TYPE_II_COST ÷ TYPE_I_BENEFIT",
-    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{8.57B}{0.00259B} = 3{,}309:1",
+    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{7.90B}{0.00259B} = 3{,}050:1",
     confidence="medium",
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"]
 )
@@ -3934,10 +3934,10 @@ TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
     display_name="Cost per DALY Averted (Timeline Shift)",
     unit="USD/DALY",
     formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-    latex=r"\text{Cost/DALY} = \frac{\$1.0B}{8.57B} = \$0.117",
+    latex=r"\text{Cost/DALY} = \frac{\$1.0B}{7.90B} = \$0.127",
     confidence="high",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"]
-)  # $0.117 per DALY (~700x better than bed nets, while being self-funding)
+)  # $0.127 per DALY (~700x better than bed nets, while being self-funding)
 
 TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE = Parameter(
     TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT / POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE,

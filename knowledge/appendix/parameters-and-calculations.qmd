@@ -3071,7 +3071,7 @@ $$
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 $$
-DALY_{total} = 7.63B + 0.943B = 8.57B
+DALY_{total} = 7.63B + 0.943B = 7.90B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
@@ -3105,7 +3105,7 @@ $$
 Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)
 
 $$
-Loss = 8.57B \times \$150k = \$1.29T
+Loss = 7.90B \times \$150k = \$1.185T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
@@ -4839,7 +4839,7 @@ $$
 Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.
 
 $$
-\text{Cost/DALY} = \frac{\$1.0B}{8.57B} = \$0.117
+\text{Cost/DALY} = \frac{\$1.0B}{7.90B} = \$0.127
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
@@ -5090,7 +5090,7 @@ $$
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 $$
-\frac{Cost_{delay}}{Benefit_{safety}} = \frac{8.57B}{0.00259B} = 3{,}309:1
+\frac{Cost_{delay}}{Benefit_{safety}} = \frac{7.90B}{0.00259B} = 3{,}050:1
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)

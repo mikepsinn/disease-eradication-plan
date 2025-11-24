@@ -681,7 +681,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
   \ Life Years lost from disease eradication delay (PRIMARY estimate) | ~ Medium confidence\
   \ | Formula: YLL + YLD | Unit: DALYs | Click to view calculation\">7.90B</a>"
-"disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.63B + 0.943B = 8.57B\n\
+"disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.63B + 0.943B = 7.90B\n\
   $$"
 "disease_eradication_delay_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
@@ -699,8 +699,8 @@
   \ loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)\
   \ | ~ Medium confidence | Formula: DALYS_TOTAL × VSLY | Unit: USD | Click to view\
   \ calculation\">$1185T</a>"
-"disease_eradication_delay_economic_loss_latex": "$$\nLoss = 8.57B \\times \\$150k\
-  \ = \\$1.29T\n$$"
+"disease_eradication_delay_economic_loss_latex": "$$\nLoss = 7.90B \\times \\$150k\
+  \ = \\$1.185T\n$$"
 "disease_eradication_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years Lived\
@@ -2034,7 +2034,7 @@
   \ bed nets while also being self-funding. | ✓ High confidence | Formula: CAMPAIGN_COST\
   \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0</a>"
 "treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
-  $1.0B}{8.57B} = \\$0.117\n$$"
+  $1.0B}{7.90B} = \\$0.127\n$$"
 "treaty_expected_cost_per_daly_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Expected cost\
@@ -2166,7 +2166,7 @@
   \ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT | Unit: ratio | Click\
   \ to view calculation\">3,050</a>"
 "type_ii_error_cost_ratio_latex": "$$\n\\frac{Cost_{delay}}{Benefit_{safety}} = \\\
-  frac{8.57B}{0.00259B} = 3{,}309:1\n$$"
+  frac{7.90B}{0.00259B} = 3{,}050:1\n$$"
 "type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#risk-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Maximum DALYs\
