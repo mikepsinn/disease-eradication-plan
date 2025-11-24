@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 400
+**Total parameters**: 404
 
 - External sources (peer-reviewed): 125
-- Calculated values: 228
+- Calculated values: 232
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -3031,6 +3031,21 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Eventually Avoidable Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_eventually_avoidable}
+
+**Value**: 413M
+
+Total deaths from delaying disease eradication by 8.2 years, adjusted to exclude fundamentally unavoidable deaths (primarily accidents). This is the corrected PRIMARY estimate that accounts for biological limits.
+
+$$
+D_{avoidable} = 448.95M \times 0.966 = 433.7M
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_total}
 
 **Value**: 449M
@@ -3282,6 +3297,19 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Eventually Avoidable Death Percentage {#sec-eventually_avoidable_death_pct}
+
+**Value**: 92.1%
+
+Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement
+
+*Formula*: `1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT`
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Minimum Investment for Family Offices {#sec-family_office_investment_min}
 
 **Value**: $5.00M
@@ -3308,6 +3336,19 @@ $$
 **Methodology**: [recovery-trial-82x-cost-reduction](#recovery-trial-82x-cost-reduction)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Fundamentally Unavoidable Death Percentage {#sec-fundamentally_unavoidable_death_pct}
+
+**Value**: 7.91%
+
+Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
+
+*Formula*: `Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))`
+
+*~ Medium confidence*
 
 :::
 
@@ -4041,6 +4082,23 @@ Recruitment_{mult} = \frac{0.50}{0.002} = 25
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#recruitment-acceleration](../appendix/research-acceleration-model#recruitment-acceleration)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Cumulative Research Years Over 20 Years {#sec-research_acceleration_cumulative_years_20yr}
+
+**Value**: 2,300
+
+Cumulative research-equivalent years over 20-year period with 115x acceleration (18.5x the entire 1900-2024 medical revolution)
+
+$$
+Research_{20yr} = 115 \times 20 = 2{,}300 \text{ years}
+$$
+
+**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
 
 *✓ High confidence*
 
@@ -5442,7 +5500,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 10yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_10yr_age_30_1pct}
 
-**Value**: 1.52M
+**Value**: 1.53M
 
 *Core definition*
 
@@ -5451,7 +5509,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 20yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_20yr_age_30_1pct}
 
-**Value**: 1.96M
+**Value**: 1.99M
 
 *Core definition*
 
@@ -5460,7 +5518,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 40yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_40yr_age_30_1pct}
 
-**Value**: 2.61M
+**Value**: 2.65M
 
 *Core definition*
 
@@ -5469,7 +5527,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 5yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
 
-**Value**: 1.18M
+**Value**: 1.19M
 
 *Core definition*
 

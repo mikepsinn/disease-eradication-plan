@@ -153,7 +153,7 @@
       #### Delay drug that could save lives
     ### The Math: Type I vs. Type II Errors
     ### Why Bureaucrats Are Rewarded for Letting You Die
-  ## Clinical Trial Theater: Excluding 85% of Reality
+  ## Clinical Trial Theater: Excluding 86.1% of Reality
     ### No Long-Term Outcome Data
   ## The FDA Requires Psychic Powers
   ## Who Tests the Drugs? The Companies Selling Them

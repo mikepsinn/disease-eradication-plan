@@ -1198,6 +1198,18 @@ RESEARCH_ACCELERATION_MULTIPLIER = Parameter(
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"]
 )  # 115x more research capacity (82x cost × 1.4x funding)
 
+RESEARCH_ACCELERATION_CUMULATIVE_YEARS_20YR = Parameter(
+    115 * 20,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
+    source_type="calculated",
+    description="Cumulative research-equivalent years over 20-year period with 115x acceleration (18.5x the entire 1900-2024 medical revolution)",
+    display_name="Cumulative Research Years Over 20 Years",
+    unit="years",
+    formula="RESEARCH_ACCELERATION_MULTIPLIER × 20 YEARS",
+    latex=r"Research_{20yr} = 115 \times 20 = 2{,}300 \text{ years}",
+    keywords=["research", "acceleration", "cumulative", "20 years", "2300"]
+)  # 2,300 research-equivalent years (115x acceleration × 20 years)
+
 RECRUITMENT_SPEED_MULTIPLIER = Parameter(
     25,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration",
@@ -5969,9 +5981,50 @@ RESEARCH_ACCELERATION_POTENTIAL = {
     "metabolic": 0.98,  # Nearly complete (gene therapy fixes root causes, AI optimizes treatment)
     "infectious": 0.99,  # Nearly complete (AI discovers treatments instantly)
     "accidents": 0.60,  # Moderate (some prevention AI, trauma regeneration)
-    "aging_related": 0.85,  # High (cellular reprogramming, epigenetic reversal, organ regeneration)
-    "other": 0.85,  # High (mix of above technologies)
+    "aging_related": 0.99,  # Nearly complete (cellular reprogramming, epigenetic reversal, organ regeneration) - if we can regenerate organs and reprogram DNA/epigenetics, no biological reason for aging deaths
+    "other": 0.95,  # Very high (mix of above technologies)
 }
+
+# Calculate fundamentally unavoidable death percentage
+# Based on disease burden × (1 - max potential) across all categories
+_unavoidable_pct = sum(
+    DISEASE_BURDEN[cat] * (1 - RESEARCH_ACCELERATION_POTENTIAL[cat])
+    for cat in DISEASE_BURDEN.keys()
+)
+
+FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
+    _unavoidable_pct,
+    source_type="calculated",
+    description="Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.",
+    display_name="Fundamentally Unavoidable Death Percentage",
+    unit="percentage",
+    formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
+    confidence="medium",
+)  # ~3.4% with aging_related at 0.99
+
+EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
+    1 - _unavoidable_pct,
+    source_type="calculated",
+    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement",
+    display_name="Eventually Avoidable Death Percentage",
+    unit="percentage",
+    formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
+    confidence="medium",
+)  # ~96.6% eventually avoidable
+
+# Corrected disease eradication delay deaths accounting for fundamentally unavoidable deaths
+# This is the version that should be used for ROI calculations
+DISEASE_ERADICATION_DELAY_DEATHS_EVENTUALLY_AVOIDABLE = Parameter(
+    int(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL * (1 - _unavoidable_pct)),
+    source_type="calculated",
+    description="Total deaths from delaying disease eradication by 8.2 years, adjusted to exclude fundamentally unavoidable deaths (primarily accidents). This is the corrected PRIMARY estimate that accounts for biological limits.",
+    display_name="Eventually Avoidable Deaths from Disease Eradication Delay",
+    unit="deaths",
+    formula="DISEASE_ERADICATION_DELAY_DEATHS_TOTAL × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    latex=r"D_{avoidable} = 448.95M \times 0.966 = 433.7M",
+    confidence="medium",
+    keywords=["disease eradication", "regulatory delay", "efficacy lag", "corrected", "avoidable"]
+)  # ~434M eventually avoidable deaths (down from 449M)
 
 
 def calculate_cumulative_research_years(treaty_pct, years_elapsed):

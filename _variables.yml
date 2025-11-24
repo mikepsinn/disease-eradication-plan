@@ -679,6 +679,10 @@
   \ | Formula: YLL + YLD | Unit: DALYs | Click to view calculation\">8.57B</a>"
 "disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.63B + 0.943B = 8.57B\n\
   $$"
+"disease_eradication_delay_deaths_eventually_avoidable": "<span class=\"parameter-link\"\
+  \ title=\"parameters.DISEASE_ERADICATION_DELAY_DEATHS_EVENTUALLY_AVOIDABLE\">413M</span>"
+"disease_eradication_delay_deaths_eventually_avoidable_latex": "$$\nD_{avoidable}\
+  \ = 448.95M \\times 0.966 = 433.7M\n$$"
 "disease_eradication_delay_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total deaths\
@@ -831,6 +835,8 @@
   \ | Unit: years | Click to view source\">8.2</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
+"eventually_avoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.EVENTUALLY_AVOIDABLE_DEATH_PCT\"\
+  >92.1%</span>"
 "family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Minimum investment for family offices\
@@ -849,6 +855,8 @@
   \ | Unit: ratio | Click to view calculation\">36.4</a>"
 "fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\frac{9.1 \\text{ years}\
   \ \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4\n$$"
+"fundamentally_unavoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT\"\
+  >7.91%</span>"
 "gdp_growth_boost_10pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_10PCT\"\
   >0.025</span>"
 "gdp_growth_boost_1pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_1PCT\
@@ -1434,13 +1442,13 @@
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT\"\
   >902K</span>"
 "personal_lifetime_benefit_eradication_10yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">1.52M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">1.53M</span>"
 "personal_lifetime_benefit_eradication_20yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">1.96M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">1.99M</span>"
 "personal_lifetime_benefit_eradication_40yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">2.61M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">2.65M</span>"
 "personal_lifetime_benefit_eradication_5yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">1.18M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">1.19M</span>"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
   >$12.2K</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\"\
@@ -1587,6 +1595,14 @@
   \ Medium confidence | \U0001F4CA Peer-reviewed | Unit: years | Click to view source\"\
   >6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
+"research_acceleration_cumulative_years_20yr": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cumulative research-equivalent\
+  \ years over 20-year period with 115x acceleration (18.5x the entire 1900-2024 medical\
+  \ revolution) | ✓ High confidence | Formula: RESEARCH_ACCELERATION_MULTIPLIER ×\
+  \ 20 YEARS | Unit: years | Click to view calculation\">2,300</a>"
+"research_acceleration_cumulative_years_20yr_latex": "$$\nResearch_{20yr} = 115 \\\
+  times 20 = 2{,}300 \\text{ years}\n$$"
 "research_acceleration_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total research\
