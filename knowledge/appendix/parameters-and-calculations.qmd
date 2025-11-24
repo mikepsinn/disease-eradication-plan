@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 407
+**Total parameters**: 401
 
-- External sources (peer-reviewed): 126
-- Calculated values: 234
+- External sources (peer-reviewed): 125
+- Calculated values: 229
 - Core definitions: 47
 
 ## External Data Sources {#sec-external}
@@ -232,19 +232,6 @@ Average annual new drug approvals globally
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-### Current Patient Eligibility Rate for Clinical Trials {#sec-current_patient_eligibility_rate}
-
-**Value**: 0.2%
-
-Current patient eligibility rate for clinical trials (0.2%)
-
-**Source**: [clinical-trial-eligibility-rate](https://warondisease.org/knowledge/references.html#clinical-trial-eligibility-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
 ### Current Global Clinical Trials per Year {#sec-current_trials_per_year}
 
 **Value**: 3,300
@@ -284,11 +271,11 @@ Current trial completion rate (60%)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-### Total Trial Slots Available for 2.4b Sick People {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants {#sec-current_trial_slots_available}
 
-**Value**: 5.00M
+**Value**: 1.90M
 
-Total trial slots available for 2.4B sick people
+Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
 **Source**: [global-trial-participant-capacity](https://warondisease.org/knowledge/references.html#global-trial-participant-capacity)
 
@@ -2150,64 +2137,17 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Actual Completed Trials Multiplier {#sec-completed_trials_multiplier_actual}
-
-**Value**: 180
-
-Actual completed trials multiplier (180x theoretical)
-
-**Methodology**: [../appendix/research-acceleration-model#total-multiplier](../appendix/research-acceleration-model#total-multiplier)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Conservative Completed Trials Multiplier Accounting for Scale-Up {#sec-completed_trials_multiplier_conservative}
 
-**Value**: 115
+**Value**: 25.7
 
 Conservative completed trials multiplier accounting for scale-up
 
 $$
-Multiplier_{conservative} = 115
+Multiplier_{conservative} = 25.7
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#conservative-multiplier](../appendix/research-acceleration-model#conservative-multiplier)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Theoretical Maximum Research Capacity Multiplier (Maximum) {#sec-completed_trials_multiplier_theoretical_max}
-
-**Value**: 560
-
-Theoretical maximum research capacity multiplier (25×10×1.6×1.4)
-
-$$
-25 \times 10 \times 1.6 \times 1.4 = 560
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#theoretical-maximum](../appendix/research-acceleration-model#theoretical-maximum)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Trial Completion Rate Improvement {#sec-completion_rate_improvement_multiplier}
-
-**Value**: 1.6
-
-Completion rate improvement (1.6x from 60% → 95%)
-
-$$
-Completion_{mult} = \frac{0.95}{0.60} = 1.58 \approx 1.6
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#completion-rates](../appendix/research-acceleration-model#completion-rates)
 
 *✓ High confidence*
 
@@ -2242,6 +2182,23 @@ Completed_{current} = 3,300 \times 0.60 = 1,980
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#current-capacity](../appendix/research-acceleration-model#current-capacity)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Current Patient Participation Rate in Clinical Trials {#sec-current_patient_participation_rate}
+
+**Value**: 0.0792%
+
+Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)
+
+$$
+Rate = 1.9M \div 2.4B = 0.08\%
+$$
+
+**Methodology**: [clinical-trial-eligibility-rate](../references#clinical-trial-eligibility-rate)
 
 *✓ High confidence*
 
@@ -2302,9 +2259,13 @@ Misallocation factor for spending on death vs prevention
 ::: {.callout-note icon=false collapse=false}
 ### dFDA Active Trials at Any Given Time {#sec-dfda_active_trials}
 
-**Value**: 200K
+**Value**: 257K
 
-Active trials at any given time (3-12 month duration)
+Active trials at any given time with calculated acceleration
+
+$$
+Active_{dFDA} = 10,000 \times 25.7 = 257,000
+$$
 
 **Methodology**: [../appendix/research-acceleration-model#dfda-capacity](../appendix/research-acceleration-model#dfda-capacity)
 
@@ -2349,12 +2310,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### dFDA Completed Trials per Year {#sec-dfda_completed_trials_per_year}
 
-**Value**: 361K
+**Value**: 80,592
 
 dFDA completed trials per year (capacity × completion rate)
 
 $$
-Completed_{dFDA} = 380,000 \times 0.95 = 361,000
+Completed_{dFDA} = 84,800 \times 0.95 = 80,560
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#dfda-capacity](../appendix/research-acceleration-model#dfda-capacity)
@@ -2890,14 +2851,14 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Maximum Trials per Year Possible with 115x Acceleration {#sec-dfda_trials_per_year_capacity}
+### dFDA Maximum Trials per Year Possible with Calculated Acceleration {#sec-dfda_trials_per_year_capacity}
 
-**Value**: 380K
+**Value**: 84,834
 
-Maximum trials per year possible with 115x acceleration
+Maximum trials per year possible with calculated acceleration
 
 $$
-Trials_{dFDA} = 3,300 \times 115 = 379,500 \approx 380,000
+Trials_{dFDA} = 3,300 \times 25.7 = 84,800
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#dfda-capacity](../appendix/research-acceleration-model#dfda-capacity)
@@ -4073,31 +4034,14 @@ System profit per life saved (specific calculation)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Recruitment Speed Multiplier {#sec-recruitment_speed_multiplier}
-
-**Value**: 25
-
-Recruitment speed multiplier (25x faster from 2% → 50% eligibility)
-
-$$
-Recruitment_{mult} = \frac{0.50}{0.002} = 25
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#recruitment-acceleration](../appendix/research-acceleration-model#recruitment-acceleration)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Cumulative Research Years Over 20 Years {#sec-research_acceleration_cumulative_years_20yr}
 
-**Value**: 2,300
+**Value**: 514
 
-Cumulative research-equivalent years over 20-year period with 115x acceleration (18.5x the entire 1900-2024 medical revolution)
+Cumulative research-equivalent years over 20-year period with calculated acceleration
 
 $$
-Research_{20yr} = 115 \times 20 = 2{,}300 \text{ years}
+Research_{20yr} = 25.7 \times 20 = 514 \text{ years}
 $$
 
 **Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
@@ -4107,14 +4051,14 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Total Research Capacity Multiplier from dFDA {#sec-research_acceleration_multiplier}
+### Research Acceleration Multiplier {#sec-research_acceleration_multiplier}
 
-**Value**: 115
+**Value**: 25.7
 
-Total research capacity multiplier from dFDA
+Research acceleration from DIH funding capacity vs. current global trial participation (replaces hardcoded 115x)
 
 $$
-Multiplier = 1.40 \times 82 = 115
+Multiplier = 48.8M \div 1.9M = 25.7
 $$
 
 **Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
@@ -4472,19 +4416,6 @@ Conservative total costs
 Optimistic total costs
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Simultaneous Trials Capacity Multiplier {#sec-simultaneous_trials_multiplier}
-
-**Value**: 20
-
-Simultaneous trials multiplier (20x more trials)
-
-**Methodology**: [../appendix/research-acceleration-model#capacity-multiplier](../appendix/research-acceleration-model#capacity-multiplier)
 
 *✓ High confidence*
 
@@ -5150,19 +5081,6 @@ How many times more cost-effective than bed nets (using $89/DALY midpoint estima
 $$
 \text{Multiplier} = \frac{\$89}{\$0.127} = 701\times
 $$
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Trial Completion Speed Multiplier {#sec-trial_completion_speed_multiplier}
-
-**Value**: 10
-
-Trial completion speed multiplier (10x faster)
-
-**Methodology**: [../appendix/research-acceleration-model#completion-acceleration](../appendix/research-acceleration-model#completion-acceleration)
 
 *✓ High confidence*
 

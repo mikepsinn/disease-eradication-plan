@@ -684,19 +684,19 @@ For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-divid
 
 ## Research Acceleration Mechanism
 
-The {{< var research_acceleration_multiplier >}}× research acceleration multiplier derives from specific, measurable improvements across four dimensions:
+The {{< var research_acceleration_multiplier >}}× research acceleration multiplier comes from the combination of multiple proven accelerators:
 
-| Factor | Current System | dFDA System | Multiplier |
-|:---|---:|---:|---:|
-| **Recruitment Speed** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients | **{{< var recruitment_speed_multiplier >}}×** |
-| **Trial Completion Speed** | 3-5 years | 3-12 months | **{{< var trial_completion_speed_multiplier >}}×** |
-| **Simultaneous Trials** | {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials | {{< var dfda_active_trials >}} active trials | **{{< var simultaneous_trials_multiplier >}}×** |
-| **Completion Rate** | {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} finish | {{< var dfda_trial_completion_rate >}} finish | **{{< var completion_rate_improvement_multiplier >}}×** |
-| **Funding Increase** | {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline | {{< var total_research_funding_with_treaty >}} (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
+**Faster Recruitment**: The Oxford RECOVERY trial recruited {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients in 3 weeks, compared to 6-18 months for 100 patients in traditional trials. This speed comes from pragmatic eligibility (50% of patients qualify vs. 2% traditionally) and embedded recruitment in routine care.
 
-**Theoretical maximum:** {{< var recruitment_speed_multiplier >}} × {{< var trial_completion_speed_multiplier >}} × {{< var completion_rate_improvement_multiplier >}} × 1.4 = {{< var completed_trials_multiplier_theoretical_max >}}×
+**Faster Completion**: Pragmatic trials complete in 3-12 months instead of 3-5 years because patient subsidies flip economic incentives. Physicians gain revenue from trial participation rather than losing it, eliminating the perverse incentives that delay traditional trials.
 
-**Conservative application:** Analysis uses {{< var research_acceleration_multiplier >}}× multiplier accounting for implementation constraints, regulatory requirements, and gradual adoption.
+**Massive Parallelization**: With {{< var dfda_active_trials >}} trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves 20× more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
+
+**Higher Completion Rates**: {{< var dfda_trial_completion_rate >}} of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
+
+**Increased Funding**: The 1% Treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
+
+These improvements compound multiplicatively to produce the {{< var research_acceleration_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
 For detailed derivation, see [Research Acceleration Model](../appendix/research-acceleration-model.qmd).
 
@@ -1167,14 +1167,14 @@ These estimates derive from:
 
 ### Research Acceleration Mechanism
 
-The {{< var research_acceleration_multiplier >}}× research acceleration multiplier is derived from specific, measurable improvements across four dimensions, scaling the RECOVERY trial approach globally:
+The {{< var research_acceleration_multiplier >}}× research acceleration multiplier comes from scaling the Oxford RECOVERY trial approach globally:
 
 **Current System Baseline**:
 
 - {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} clinical trials initiated per year
 - [60% completion rate](../appendix/research-acceleration-model.qmd) = **{{< var current_completed_trials_per_year >}} completed trials/year**
 - {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials at any time (3-5 year duration)
-- {{< var current_patient_eligibility_rate >}} {{< var current_patient_eligibility_rate_cite >}} patient eligibility (5M trial slots for [2.4B people with chronic disease](../references.qmd#disease-prevalence-2-billion))
+- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} [people with chronic disease](../references.qmd#disease-prevalence-2-billion))
 - {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate (studies never complete)
 - [6-18 months to recruit 100 patients](../appendix/research-acceleration-model.qmd)
 
@@ -1187,27 +1187,15 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 - {{< var dfda_trial_abandonment_rate >}} abandonment rate (patient subsidies flip economic incentives)
 - 3 weeks to recruit {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients (RECOVERY achieved this enrollment speed)
 
-**Multiplier Derivation**:
+**How the {{< var research_acceleration_multiplier >}}× Multiplier Works**:
 
-| Factor | Current | Pragmatic Trials | Multiplier |
-|:---|---:|---:|---:|
-| **[Recruitment Speed](../appendix/research-acceleration-model.qmd)** | 6-18 months for 100 patients | 3 weeks for {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients | **{{< var recruitment_speed_multiplier >}}×** |
-| **[Trial Completion Speed](../appendix/research-acceleration-model.qmd)** | 3-5 years (perverse incentives) | 3-12 months (aligned incentives) | **{{< var trial_completion_speed_multiplier >}}×** |
-| **[Simultaneous Trials](../appendix/research-acceleration-model.qmd)** | 10,000 active trials | 200,000 active trials | **{{< var simultaneous_trials_multiplier >}}×** |
-| **[Completion Rate](../appendix/research-acceleration-model.qmd)** | 60% finish | 95% finish | **{{< var completion_rate_improvement_multiplier >}}×** |
-| **Funding Increase** | {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline | {{< var total_research_funding_with_treaty >}} (baseline + {{< var treaty_annual_funding >}}) | **1.4×** |
+The acceleration comes from simple economics: DIH can fund {{< var dih_patients_fundable_annually >}} patients/year at [RECOVERY trial cost](../references.qmd#recovery-cost-500) ({{< var recovery_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
 
-**Theoretical Maximum**:
+{{< var research_acceleration_multiplier_latex >}}
 
-{{< var completed_trials_multiplier_theoretical_max_latex >}}
+This represents DIH's funding capacity alone, without assuming behavior changes from the existing {{< var global_med_research_spending >}} baseline research ecosystem.
 
-This represents **{{< var completed_trials_multiplier_theoretical_max >}}** more completed trials per year
-
-**Conservative Estimate**: {{< var completed_trials_multiplier_actual >}} accounting for real-world friction (ramp-up, adoption, learning curves)
-
-**Used in Analysis**: **{{< var research_acceleration_multiplier >}}** (further conservative adjustment for foundation grant proposal credibility)
-
-This represents:
+**Net Effect**:
 
 - From {{< var current_completed_trials_per_year >}} completed trials/year → {{< var dfda_completed_trials_per_year >}} completed trials/year ({{< var research_acceleration_multiplier >}}×)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)

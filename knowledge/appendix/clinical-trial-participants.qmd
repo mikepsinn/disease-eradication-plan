@@ -61,25 +61,48 @@ But this excludes observational studies, device trials, and behavioral intervent
 
 England's data confirms the scale: [1.05 million participants in 2023/24](../references.qmd#england-trial-participants-2023-24) across all study types.
 
+## Industry Standard: IQVIA 2022
+
+The most authoritative source is [IQVIA's 2022 report](../references.qmd#global-trial-participant-capacity), showing:
+
+**Global: 1.9 million participants annually (2022)**
+
+This represents post-COVID normalization from the 4 million peak in 2021 (when COVID trials dominated). IQVIA tracks actual pharmaceutical industry data, making it more reliable than our ClinicalTrials.gov extrapolations.
+
+**Why the discrepancy with our 2.8M estimate?**
+
+- IQVIA counts actual industry trials (interventional drug studies)
+- Our ClinicalTrials.gov analysis includes government/academic trials
+- Different completion date definitions
+- Our US-to-global scaling may overestimate
+
+**For our economic model, we use IQVIA's 1.9M** as the conservative baseline for current global trial capacity.
+
 ## The Tragedy in Numbers
 
 World population: 8 billion
 
-Clinical trial participants annually (midpoint): 5 million
+Clinical trial participants annually: **{{< var current_trial_slots_available >}}** (interventional drug trials, IQVIA 2022)
 
-### Participation rate: 0.06%
+Or **~5 million** if counting all clinical research (observational, device, behavioral)
 
-Six-hundredths of one percent. If clinical trials were a lottery, your odds would be 1 in 1,600.
+### Participation rate: 0.024% (drug trials) or 0.06% (all clinical research)
+
+Using the conservative IQVIA figure (1.9M ÷ 8B = 0.024%), your odds of participating in a drug trial are **1 in 4,211**.
+
+Even if you count all clinical research (5M ÷ 8B = 0.06%), your odds are only **1 in 1,600**.
 
 Meanwhile, {{< var global_daily_deaths_curable_diseases >}} people die every day from diseases we're studying.
 
 ## The Access Lottery
 
-But here's the real kicker: [2.4 billion people are living with chronic diseases](../references.qmd#global-burden-disease-chronic-conditions-2013) right now. That's cardiovascular disease, cancer, diabetes, COPD, mental illness, chronic pain.
+{{< var current_disease_patients_global >}} [people are living with chronic diseases](../references.qmd#global-burden-disease-chronic-conditions-2013) right now. That's cardiovascular disease, cancer, diabetes, COPD, mental illness, chronic pain.
 
 They're alive. They're suffering. And they could potentially benefit from the treatments we're studying.
 
-**The ratio: 1 person gets access to trials for every 480 living with disease.**
+**The ratio: 1 person gets access to drug trials for every 1,263 living with disease** (using IQVIA's 1.9M).
+
+Even counting all clinical research (5M), it's still only 1 in 480.
 
 ## The Willingness Gap
 
@@ -87,7 +110,9 @@ And here's what makes it even more infuriating: [surveys show 49-51% of people a
 
 **Half of humanity would say yes if asked.**
 
-But only **0.2% actually get to participate.**
+But only **{{< var current_patient_participation_rate >}} of disease patients actually get to participate in drug trials** ({{< var current_trial_slots_available >}} ÷ {{< var current_disease_patients_global >}}).
+
+Even counting all clinical research, it's just **0.2%** (5M ÷ {{< var current_disease_patients_global >}}).
 
 That's not a recruitment problem. That's an exclusion problem.
 
@@ -98,13 +123,19 @@ The system isn't failing because people don't want to help find cures. It's fail
 - Eligibility criteria exclude 90% of patients
 - Enrollment caps fill up instantly
 
-We have 1.2 billion people with chronic disease who are willing and able to participate. We're enrolling 5 million.
+We have 1.2 billion people with chronic disease who are willing and able to participate. We're enrolling {{< var current_trial_slots_available >}} in drug trials (or ~5M counting all clinical research).
 
-**We're turning away 99.6% of willing participants.**
+**We're turning away 99.84% of willing participants** (using drug trials), or 99.6% if counting all clinical research.
 
 ## The Cost Per Patient
 
-$83 billion ÷ 5 million participants = **$16,600 per participant annually**
+Using IQVIA's {{< var current_trial_slots_available >}} drug trial participants:
+
+{{< var global_clinical_trials_spending_annual >}} ÷ {{< var current_trial_slots_available >}} = **$43,684 per participant annually**
+
+Even if we count all clinical research (5M participants):
+
+{{< var global_clinical_trials_spending_annual >}} ÷ 5 million participants = **$16,600 per participant annually**
 
 That's not per treatment. That's the overhead cost per human enrolled, covering:
 
@@ -125,9 +156,11 @@ If you get cancer, your odds of getting into a clinical trial are about 5%. If y
 
 The system isn't designed to help sick people try treatments. It's designed to generate data clean enough to satisfy regulators. The fact that some people get treatment is a side effect.
 
-**Humans spend $83 billion a year to help 0.2% of the 2.4 billion people suffering from chronic disease.**
+**Humans spend {{< var global_clinical_trials_spending_annual >}} a year to help {{< var current_patient_participation_rate >}} of the {{< var current_disease_patients_global >}} people suffering from chronic disease** (using IQVIA's {{< var current_trial_slots_available >}} drug trial participants).
 
-The other 99.8% get to wait. And suffer. And while they wait, {{< var global_daily_deaths_curable_diseases >}} die every day.
+Even counting all clinical research, it's just 0.2% (5M participants).
+
+The other 99.92% (or 99.8% counting all research) get to wait. And suffer. And while they wait, {{< var global_daily_deaths_curable_diseases >}} die every day.
 
 ## The Data We Have
 
@@ -150,9 +183,9 @@ The math is straightforward:
 
 ### Today's Capacity
 
-- [Global military spending: $2.7 trillion](../references.qmd#global-military-spending)
-- Clinical trials spending: $83 billion
-- Participants: 5 million/year at $16,600 each
+- [Global military spending](../references.qmd#global-military-spending): {{< var global_military_spending_annual_2024 >}}
+- Clinical trials spending: {{< var global_clinical_trials_spending_annual >}}
+- Participants: {{< var current_trial_slots_available >}}/year at $43,684 each (drug trials, IQVIA 2022)
 
 #### With 1% of Military Spending Redirected
 
@@ -164,15 +197,15 @@ The math is straightforward:
 - Enrollment isn't limited by proximity to trial sites
 - Patients report outcomes via smartphone
 - Trials run continuously instead of in isolated batches
-- Cost per participant drops to **~{{< var dfda_target_cost_per_patient_usd >}}** (from $16,600)
+- Cost per participant drops to **~{{< var dfda_target_cost_per_patient_usd >}}** (from $43,684)
 
 #### The Result
 
 - $110B ÷ {{< var dfda_target_cost_per_patient_usd >}} = **110 million participants/year**
-- Current: 5 million/year
-- **Medical progress accelerates 22x**
+- Current: {{< var current_trial_slots_available >}}/year (IQVIA 2022)
+- **Medical progress accelerates 58x**
 
-A cure that would take 22 years could take 1 year.
+A cure that would take 58 years could take 1 year.
 
 And we'd only be using **9% of available capacity** (1.2 billion willing participants).
 
@@ -184,14 +217,16 @@ Nobody knows how many people participate in clinical trials because nobody bothe
 
 We had to build a script to count.
 
-The answer: **5 million people a year, at a cost of $16,600 each.**
+The answer: **{{< var current_trial_slots_available >}} people a year (drug trials, IQVIA 2022), at a cost of $43,684 each.**
 
-**2.4 billion people are living with chronic disease.**
+Or **~5 million** if you count all clinical research (observational, device, behavioral) at **$16,600 each**.
 
-### The ratio: 1 in 480.
+**{{< var current_disease_patients_global >}} people are living with chronic disease.**
 
-The 99.8% who don't get access? They suffer. And {{< var global_daily_deaths_curable_diseases >}} die every day.
+### The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research).
+
+The 99.92% who don't get access to drug trials (or 99.8% for all research)? They suffer. And {{< var global_daily_deaths_curable_diseases >}} die every day.
 
 ---
 
-**Methodology:** Data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api) (November 2025), analyzing 100,000 active/recruiting/completed trials. Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). Global scaling from US market share data. See [full technical analysis](https://github.com/yourusername/clinical-trials-analysis) and [spending breakdown](global-clinical-trial-spending-by-phase.qmd).
+**Methodology:** Primary source: [IQVIA 2022 report](../references.qmd#global-trial-participant-capacity) showing 1.9M global participants (post-COVID normalization). Supporting data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api) (November 2025), analyzing 100,000 active/recruiting/completed trials. Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). See [spending breakdown](global-clinical-trial-spending-by-phase.qmd).

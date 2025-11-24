@@ -961,25 +961,15 @@ CURRENT_TRIAL_COMPLETION_RATE = Parameter(
     keywords=["60%", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
 )  # 60% completion rate
 
-CURRENT_PATIENT_ELIGIBILITY_RATE = Parameter(
-    0.002,
-    source_ref="clinical-trial-eligibility-rate",
-    source_type="external",
-    description="Current patient eligibility rate for clinical trials (0.2%)",
-    display_name="Current Patient Eligibility Rate for Clinical Trials",
-    unit="rate",
-    keywords=["0%", "rct", "participant", "subject", "volunteer", "enrollee", "clinical study"]
-)  # 0.2% of disease patients can participate
-
 CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
-    5_000_000,
+    1_900_000,
     source_ref="global-trial-participant-capacity",
     source_type="external",
-    description="Total trial slots available for 2.4B sick people",
-    display_name="Total Trial Slots Available for 2.4b Sick People",
-    unit="slots",
-    keywords=["5.0m", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
-)  # Total trial slots for 2.4B sick people
+    description="Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)",
+    display_name="Annual Global Clinical Trial Participants",
+    unit="patients/year",
+    keywords=["1.9m", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research", "iqvia"]
+)  # 1.9M patients/year (IQVIA 2022, post-COVID normalization from 4M peak in 2021)
 
 CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     2_400_000_000,
@@ -990,6 +980,18 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     unit="people",
     keywords=["2.4b", "participant", "subject", "volunteer", "enrollee", "people", "worldwide"]
 )  # GBD 2013 study
+
+CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
+    CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
+    source_ref="clinical-trial-eligibility-rate",
+    source_type="calculated",
+    description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
+    display_name="Current Patient Participation Rate in Clinical Trials",
+    unit="rate",
+    formula="CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
+    latex=r"Rate = 1.9M \div 2.4B = 0.08\%",
+    keywords=["0%", "rct", "participant", "subject", "volunteer", "enrollee", "clinical study"]
+)  # 0.08% of disease patients participate in trials (1.9M / 2.4B, IQVIA 2022)
 
 # Traditional Trial Economics
 TRADITIONAL_PHASE2_COST_PER_PATIENT_LOW = Parameter(
@@ -1053,17 +1055,8 @@ TRADITIONAL_LARGE_TRIAL_SIZE = Parameter(
 )
 
 # dFDA System Targets
-DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
-    380000,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
-    source_type="calculated",
-    description="Maximum trials per year possible with 115x acceleration",
-    display_name="dFDA Maximum Trials per Year Possible with 115x Acceleration",
-    unit="trials/year",
-    formula="CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER",
-    latex=r"Trials_{dFDA} = 3,300 \times 115 = 379,500 \approx 380,000",
-    keywords=["380k", "pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"]
-)  # Maximum trials/year possible with 115x acceleration
+# (DFDA_TRIALS_PER_YEAR_CAPACITY moved to after RESEARCH_ACCELERATION_MULTIPLIER definition)
+
 DFDA_DRUG_APPROVALS_PER_YEAR_LOW = Parameter(
     1000,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#approval-projections",
@@ -1088,15 +1081,7 @@ DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = Parameter(
     keywords=["2k", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
 )  # Optimistic approvals estimate (40x current)
 
-DFDA_ACTIVE_TRIALS = Parameter(
-    200000,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
-    source_type="calculated",
-    description="Active trials at any given time (3-12 month duration)",
-    display_name="dFDA Active Trials at Any Given Time",
-    unit="trials",
-    keywords=["200k", "pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial"]
-)  # Active trials at any given time (3-12 month duration)
+# (DFDA_ACTIVE_TRIALS moved to after RESEARCH_ACCELERATION_MULTIPLIER definition)
 
 DFDA_TRIAL_DURATION_MONTHS_RANGE = (3, 12)  # Months for typical trial completion
 
@@ -1185,96 +1170,8 @@ DFDA_LARGE_TRIAL_SIZE = Parameter(
     keywords=["10k", "pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial"]
 )  # Large dFDA pragmatic trial size
 
-# Research Acceleration Multipliers (Derived)
-RESEARCH_ACCELERATION_MULTIPLIER = Parameter(
-    115,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
-    source_type="calculated",
-    description="Total research capacity multiplier from dFDA",
-    display_name="Total Research Capacity Multiplier from dFDA",
-    unit="ratio",
-    formula="FUNDING_RATIO × COST_REDUCTION_FACTOR",
-    latex=r"Multiplier = 1.40 \times 82 = 115",
-    keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"]
-)  # 115x more research capacity (82x cost × 1.4x funding)
-
-RESEARCH_ACCELERATION_CUMULATIVE_YEARS_20YR = Parameter(
-    115 * 20,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
-    source_type="calculated",
-    description="Cumulative research-equivalent years over 20-year period with 115x acceleration (18.5x the entire 1900-2024 medical revolution)",
-    display_name="Cumulative Research Years Over 20 Years",
-    unit="years",
-    formula="RESEARCH_ACCELERATION_MULTIPLIER × 20 YEARS",
-    latex=r"Research_{20yr} = 115 \times 20 = 2{,}300 \text{ years}",
-    keywords=["research", "acceleration", "cumulative", "20 years", "2300"]
-)  # 2,300 research-equivalent years (115x acceleration × 20 years)
-
-RECRUITMENT_SPEED_MULTIPLIER = Parameter(
-    25,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration",
-    source_type="calculated",
-    description="Recruitment speed multiplier (25x faster from 2% → 50% eligibility)",
-    display_name="dFDA Recruitment Speed Multiplier",
-    unit="ratio",
-    formula="DFDA_ELIGIBILITY_RATE ÷ CURRENT_ELIGIBILITY_RATE",
-    latex=r"Recruitment_{mult} = \frac{0.50}{0.002} = 25",
-    keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"]
-)  # 25x faster recruitment (from 2% → 50% eligibility)
-
-TRIAL_COMPLETION_SPEED_MULTIPLIER = Parameter(
-    10,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration",
-    source_type="calculated",
-    description="Trial completion speed multiplier (10x faster)",
-    display_name="dFDA Trial Completion Speed Multiplier",
-    unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
-)  # 10x faster completion (flipped incentives)
-
-SIMULTANEOUS_TRIALS_MULTIPLIER = Parameter(
-    20,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier",
-    source_type="calculated",
-    description="Simultaneous trials multiplier (20x more trials)",
-    display_name="dFDA Simultaneous Trials Capacity Multiplier",
-    unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
-)  # 20x more trials running simultaneously
-
-COMPLETION_RATE_IMPROVEMENT_MULTIPLIER = Parameter(
-    1.6,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#completion-rates",
-    source_type="calculated",
-    description="Completion rate improvement (1.6x from 60% → 95%)",
-    display_name="dFDA Trial Completion Rate Improvement",
-    unit="ratio",
-    formula="DFDA_COMPLETION_RATE ÷ CURRENT_COMPLETION_RATE",
-    latex=r"Completion_{mult} = \frac{0.95}{0.60} = 1.58 \approx 1.6",
-    keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "credible interval"]
-)  # 1.6x improvement (60% → 95%)
-
-COMPLETED_TRIALS_MULTIPLIER_ACTUAL = Parameter(
-    180,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#total-multiplier",
-    source_type="calculated",
-    description="Actual completed trials multiplier (180x theoretical)",
-    display_name="Actual Completed Trials Multiplier",
-    unit="ratio",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
-)  # 180x more completed trials/year (theoretical)
-
-COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = Parameter(
-    115,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier",
-    source_type="calculated",
-    description="Conservative completed trials multiplier accounting for scale-up",
-    display_name="Conservative Completed Trials Multiplier Accounting for Scale-Up",
-    unit="ratio",
-    formula="RESEARCH_ACCELERATION_MULTIPLIER",
-    latex=r"Multiplier_{conservative} = 115",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
-)  # Conservative rating accounting for scale-up
+# Research Acceleration Multipliers - MOVED to after GLOBAL_MED_RESEARCH_SPENDING (line ~2971)
+# See calculation block after TOTAL_RESEARCH_FUNDING_WITH_TREATY
 
 # Calculated Research Capacity
 # Traditional: 3,300 trials/year × 60% completion = ~2,000 completed/year
@@ -1289,18 +1186,7 @@ CURRENT_COMPLETED_TRIALS_PER_YEAR = Parameter(
     latex=r"Completed_{current} = 3,300 \times 0.60 = 1,980",
     keywords=["rct", "clinical study", "clinical trial", "research trial", "faster development", "innovation speed", "randomized controlled trial"]
 )  # 1,980
-# dFDA: 380,000 trials/year × 95% completion = ~360,000 completed/year
-DFDA_COMPLETED_TRIALS_PER_YEAR = Parameter(
-    int(DFDA_TRIALS_PER_YEAR_CAPACITY * DFDA_TRIAL_COMPLETION_RATE),
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
-    source_type="calculated",
-    description="dFDA completed trials per year (capacity × completion rate)",
-    display_name="dFDA Completed Trials per Year",
-    unit="trials/year",
-    formula="CAPACITY × COMPLETION_RATE",
-    latex=r"Completed_{dFDA} = 380,000 \times 0.95 = 361,000",
-    keywords=["pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial", "decentralized trials"]
-)  # 361,000
+# (DFDA_COMPLETED_TRIALS_PER_YEAR moved to after DFDA_TRIALS_PER_YEAR_CAPACITY definition)
 
 # dFDA operational costs
 DFDA_UPFRONT_BUILD = Parameter(
@@ -2973,6 +2859,84 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     keywords=["research", "funding", "total", "dih", "treaty"]
 )
 
+# Research Acceleration Multiplier (Simple Economic Calculation)
+# DIH funding can support 48.8M patients/year at RECOVERY trial cost ($500/patient)
+# Current global trial capacity: 1.9M patients/year (IQVIA 2022)
+# Acceleration = DIH capacity / Current capacity
+RESEARCH_ACCELERATION_MULTIPLIER = Parameter(
+    DIH_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
+    source_type="calculated",
+    description="Research acceleration from DIH funding capacity vs. current global trial participation (replaces hardcoded 115x)",
+    display_name="Research Acceleration Multiplier",
+    unit="ratio",
+    formula="DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
+    latex=r"Multiplier = 48.8M \div 1.9M = 25.7",
+    keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"]
+)  # 25.7x research acceleration from simple funding economics (was 115x hardcoded)
+
+RESEARCH_ACCELERATION_CUMULATIVE_YEARS_20YR = Parameter(
+    int(RESEARCH_ACCELERATION_MULTIPLIER * 20),
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd",
+    source_type="calculated",
+    description="Cumulative research-equivalent years over 20-year period with calculated acceleration",
+    display_name="Cumulative Research Years Over 20 Years",
+    unit="years",
+    formula="RESEARCH_ACCELERATION_MULTIPLIER × 20 YEARS",
+    latex=r"Research_{20yr} = 25.7 \times 20 = 514 \text{ years}",
+    keywords=["research", "acceleration", "cumulative", "20 years"]
+)  # ~514 research-equivalent years (25.7x acceleration × 20 years, was 2,300 with hardcoded 115x)
+
+COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = Parameter(
+    RESEARCH_ACCELERATION_MULTIPLIER,
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier",
+    source_type="calculated",
+    description="Conservative completed trials multiplier accounting for scale-up",
+    display_name="Conservative Completed Trials Multiplier Accounting for Scale-Up",
+    unit="ratio",
+    formula="RESEARCH_ACCELERATION_MULTIPLIER",
+    latex=r"Multiplier_{conservative} = 25.7",
+    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
+)  # Conservative multiplier from DIH funding capacity
+
+# dFDA System Targets (using calculated acceleration multiplier)
+DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
+    int(CURRENT_TRIALS_PER_YEAR * RESEARCH_ACCELERATION_MULTIPLIER),
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
+    source_type="calculated",
+    description="Maximum trials per year possible with calculated acceleration",
+    display_name="dFDA Maximum Trials per Year Possible with Calculated Acceleration",
+    unit="trials/year",
+    formula="CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER",
+    latex=r"Trials_{dFDA} = 3,300 \times 25.7 = 84,800",
+    keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"]
+)  # Maximum trials/year possible with calculated acceleration (was 380K with hardcoded 115x)
+
+DFDA_ACTIVE_TRIALS = Parameter(
+    int(CURRENT_ACTIVE_TRIALS * RESEARCH_ACCELERATION_MULTIPLIER),
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
+    source_type="calculated",
+    description="Active trials at any given time with calculated acceleration",
+    display_name="dFDA Active Trials at Any Given Time",
+    unit="trials",
+    formula="CURRENT_ACTIVE_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER",
+    latex=r"Active_{dFDA} = 10,000 \times 25.7 = 257,000",
+    keywords=["pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial"]
+)  # Active trials at any given time (was 200K with hardcoded 115x)
+
+# dFDA Completed Trials Per Year
+DFDA_COMPLETED_TRIALS_PER_YEAR = Parameter(
+    int(DFDA_TRIALS_PER_YEAR_CAPACITY * DFDA_TRIAL_COMPLETION_RATE),
+    source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
+    source_type="calculated",
+    description="dFDA completed trials per year (capacity × completion rate)",
+    display_name="dFDA Completed Trials per Year",
+    unit="trials/year",
+    formula="CAPACITY × COMPLETION_RATE",
+    latex=r"Completed_{dFDA} = 84,800 \times 0.95 = 80,560",
+    keywords=["pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial", "decentralized trials"]
+)  # ~80.6K (was 361K with hardcoded 115x)
+
 # Population
 GLOBAL_POPULATION_2024 = Parameter(
     8_000_000_000,
@@ -3124,18 +3088,6 @@ TERRORISM_DEATHS_911 = Parameter(
 )  # 2,996 deaths
 
 # Research acceleration multipliers
-COMPLETED_TRIALS_MULTIPLIER_THEORETICAL_MAX = Parameter(
-    560,
-    source_ref="/knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum",
-    source_type="calculated",
-    description="Theoretical maximum research capacity multiplier (25×10×1.6×1.4)",
-    display_name="Theoretical Maximum Research Capacity Multiplier (Maximum)",
-    unit="ratio",
-    formula="RECRUITMENT_SPEED × COMPLETION_SPEED × COMPLETION_RATE × FUNDING",
-    latex=r"25 \times 10 \times 1.6 \times 1.4 = 560",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
-)  # 560x theoretical max
-
 # Calculated ratios and comparisons
 DISEASE_VS_TERRORISM_DEATHS_RATIO = Parameter(
     GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES / TERRORISM_DEATHS_911,

@@ -116,7 +116,7 @@ This includes:
 
 {{< include figures/trial-access-disparity-chart.qmd >}}
 
-Out of {{< var current_disease_patients_global >}} people suffering from chronic disease right now, only {{< var current_trial_slots_available >}} get to participate in clinical trials annually. That's {{< var current_patient_eligibility_rate >}}. The other 99.8% get to suffer and wait (and fill out insurance paperwork, and argue with their insurance company about whether dying is covered under their plan).
+Out of {{< var current_disease_patients_global >}} people suffering from chronic disease right now, only {{< var current_trial_slots_available >}} get to participate in clinical trials annually. That's {{< var current_patient_participation_rate >}}. The other 99.8% get to suffer and wait (and fill out insurance paperwork, and argue with their insurance company about whether dying is covered under their plan).
 
 Half of humanity would volunteer if asked. You're turning away 99.6% of willing participants. It's like running a restaurant but only serving 0.4% of the people who want to eat there, then wondering why everyone is so hungry.
 

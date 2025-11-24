@@ -1638,8 +1638,9 @@
   ## So We Built a Script and Did the Math
     ### US Trials (Cumulative)
   ## The Better Method: Count Completed Trials
+  ## Industry Standard: IQVIA 2022
   ## The Tragedy in Numbers
-    ### Participation rate: 0.06%
+    ### Participation rate: 0.024% (drug trials) or 0.06% (all clinical research)
   ## The Access Lottery
   ## The Willingness Gap
   ## The Cost Per Patient
@@ -1651,7 +1652,7 @@
       #### With Decentralized FDA
       #### The Result
   ## The Bottom Line
-    ### The ratio: 1 in 480.
+    ### The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research).
 
 ### 🔢 Detailed Calculations
 
@@ -2457,4 +2458,4 @@
 - Files with headings: 77
 - Files without headings: 2
 - Files not found: 1
-- Total headings extracted: 2178
+- Total headings extracted: 2179

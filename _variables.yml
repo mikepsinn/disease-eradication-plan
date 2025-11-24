@@ -242,33 +242,13 @@
   \ + R&D_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nCombined = \\$113.55B\
   \ + \\$50B = \\$163.55B\n$$"
-"completed_trials_multiplier_actual": "<a href=\"/knowledge/appendix/research-acceleration-model#total-multiplier\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#total-multiplier\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Actual completed\
-  \ trials multiplier (180x theoretical) | ✓ High confidence | Unit: ratio | Click\
-  \ to view calculation\">180</a>"
 "completed_trials_multiplier_conservative": "<a href=\"/knowledge/appendix/research-acceleration-model#conservative-multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
   \ completed trials multiplier accounting for scale-up | ✓ High confidence | Formula:\
-  \ RESEARCH_ACCELERATION_MULTIPLIER | Unit: ratio | Click to view calculation\">115</a>"
+  \ RESEARCH_ACCELERATION_MULTIPLIER | Unit: ratio | Click to view calculation\">25.7</a>"
 "completed_trials_multiplier_conservative_latex": "$$\nMultiplier_{conservative} =\
-  \ 115\n$$"
-"completed_trials_multiplier_theoretical_max": "<a href=\"/knowledge/appendix/research-acceleration-model#theoretical-maximum\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#theoretical-maximum\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Theoretical maximum\
-  \ research capacity multiplier (25×10×1.6×1.4) | ✓ High confidence | Formula: RECRUITMENT_SPEED\
-  \ × COMPLETION_SPEED × COMPLETION_RATE × FUNDING | Unit: ratio | Click to view calculation\"\
-  >560</a>"
-"completed_trials_multiplier_theoretical_max_latex": "$$\n25 \\times 10 \\times 1.6\
-  \ \\times 1.4 = 560\n$$"
-"completion_rate_improvement_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#completion-rates\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#completion-rates\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Completion rate\
-  \ improvement (1.6x from 60% → 95%) | ✓ High confidence | Formula: DFDA_COMPLETION_RATE\
-  \ ÷ CURRENT_COMPLETION_RATE | Unit: ratio | Click to view calculation\">1.6</a>"
-"completion_rate_improvement_multiplier_latex": "$$\nCompletion_{mult} = \\frac{0.95}{0.60}\
-  \ = 1.58 \\approx 1.6\n$$"
+  \ 25.7\n$$"
 "cost_of_delay_deaths_per_second": "<a href=\"/knowledge/problem/cost-of-war#cost-of-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#cost-of-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Preventable deaths\
@@ -306,12 +286,14 @@
   \ new drug approvals globally | ✓ High confidence | Unit: drugs/year | Click to\
   \ view source\">50</a>"
 "current_drug_approvals_per_year_cite": "@global-new-drug-approvals-50-annually"
-"current_patient_eligibility_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-eligibility-rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-eligibility-rate\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Current patient eligibility rate for\
-  \ clinical trials (0.2%) | ✓ High confidence | Unit: rate | Click to view source\"\
-  >0.2%</a>"
-"current_patient_eligibility_rate_cite": "@clinical-trial-eligibility-rate"
+"current_patient_participation_rate": "<a href=\"/clinical-trial-eligibility-rate\"\
+  \ class=\"parameter-link\" data-source-ref=\"/clinical-trial-eligibility-rate\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Current patient\
+  \ participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease\
+  \ patients) | ✓ High confidence | Formula: CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS\
+  \ | Unit: rate | Click to view calculation\">0.0792%</a>"
+"current_patient_participation_rate_latex": "$$\nRate = 1.9M \\div 2.4B = 0.08\\%\n\
+  $$"
 "current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current global\
@@ -330,9 +312,9 @@
 "current_trial_completion_rate_cite": "@clinical-trial-completion-rate"
 "current_trial_slots_available": "<a href=\"https://warondisease.org/knowledge/references.html#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"global-trial-participant-capacity\"\
-  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Total trial slots\
-  \ available for 2.4B sick people | ✓ High confidence | Unit: slots | Click to view\
-  \ source\">5.00M</a>"
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global clinical\
+  \ trial participants (IQVIA 2022: 1.9M post-COVID normalization) | ✓ High confidence\
+  \ | Unit: patients/year | Click to view source\">1.90M</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
 "daily_cost_inefficiency": "<a href=\"/knowledge/solution/dfda#cost-of-delay\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
@@ -366,8 +348,10 @@
 "dfda_active_trials": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Active trials\
-  \ at any given time (3-12 month duration) | ✓ High confidence | Unit: trials | Click\
-  \ to view calculation\">200K</a>"
+  \ at any given time with calculated acceleration | ✓ High confidence | Formula:\
+  \ CURRENT_ACTIVE_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER | Unit: trials | Click\
+  \ to view calculation\">257K</a>"
+"dfda_active_trials_latex": "$$\nActive_{dFDA} = 10,000 \\times 25.7 = 257,000\n$$"
 "dfda_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -388,9 +372,9 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA completed\
   \ trials per year (capacity × completion rate) | ✓ High confidence | Formula: CAPACITY\
-  \ × COMPLETION_RATE | Unit: trials/year | Click to view calculation\">361K</a>"
-"dfda_completed_trials_per_year_latex": "$$\nCompleted_{dFDA} = 380,000 \\times 0.95\
-  \ = 361,000\n$$"
+  \ × COMPLETION_RATE | Unit: trials/year | Click to view calculation\">80,592</a>"
+"dfda_completed_trials_per_year_latex": "$$\nCompleted_{dFDA} = 84,800 \\times 0.95\
+  \ = 80,560\n$$"
 "dfda_drug_approvals_per_year_high": "<a href=\"/knowledge/appendix/research-acceleration-model#approval-projections\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic drug\
@@ -614,11 +598,11 @@
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum trials\
-  \ per year possible with 115x acceleration | ✓ High confidence | Formula: CURRENT_TRIALS\
-  \ × RESEARCH_ACCELERATION_MULTIPLIER | Unit: trials/year | Click to view calculation\"\
-  >380K</a>"
-"dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 115 = 379,500\
-  \ \\approx 380,000\n$$"
+  \ per year possible with calculated acceleration | ✓ High confidence | Formula:\
+  \ CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER | Unit: trials/year | Click\
+  \ to view calculation\">84,834</a>"
+"dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 25.7 = 84,800\n\
+  $$"
 "dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
   \ trial abandonment rate (5%) | Unit: rate | Core definition\">5%</span>"
 "dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
@@ -1574,14 +1558,6 @@
   external\" data-confidence=\"high\" title=\"RECOVERY trial cost per patient | ✓\
   \ High confidence | Unit: USD/patient | Click to view source\">$500</a>"
 "recovery_trial_cost_per_patient_cite": "@recovery-cost-500"
-"recruitment_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#recruitment-acceleration\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-acceleration\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Recruitment speed\
-  \ multiplier (25x faster from 2% → 50% eligibility) | ✓ High confidence | Formula:\
-  \ DFDA_ELIGIBILITY_RATE ÷ CURRENT_ELIGIBILITY_RATE | Unit: ratio | Click to view\
-  \ calculation\">25</a>"
-"recruitment_speed_multiplier_latex": "$$\nRecruitment_{mult} = \\frac{0.50}{0.002}\
-  \ = 25\n$$"
 "regulatory_delay_avoidance_far_future_years": "<a href=\"/knowledge/economics/economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Assumed average\
@@ -1607,17 +1583,18 @@
 "research_acceleration_cumulative_years_20yr": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cumulative research-equivalent\
-  \ years over 20-year period with 115x acceleration (18.5x the entire 1900-2024 medical\
-  \ revolution) | ✓ High confidence | Formula: RESEARCH_ACCELERATION_MULTIPLIER ×\
-  \ 20 YEARS | Unit: years | Click to view calculation\">2,300</a>"
-"research_acceleration_cumulative_years_20yr_latex": "$$\nResearch_{20yr} = 115 \\\
-  times 20 = 2{,}300 \\text{ years}\n$$"
+  \ years over 20-year period with calculated acceleration | ✓ High confidence | Formula:\
+  \ RESEARCH_ACCELERATION_MULTIPLIER × 20 YEARS | Unit: years | Click to view calculation\"\
+  >514</a>"
+"research_acceleration_cumulative_years_20yr_latex": "$$\nResearch_{20yr} = 25.7 \\\
+  times 20 = 514 \\text{ years}\n$$"
 "research_acceleration_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total research\
-  \ capacity multiplier from dFDA | ✓ High confidence | Formula: FUNDING_RATIO × COST_REDUCTION_FACTOR\
-  \ | Unit: ratio | Click to view calculation\">115</a>"
-"research_acceleration_multiplier_latex": "$$\nMultiplier = 1.40 \\times 82 = 115\n\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Research acceleration\
+  \ from DIH funding capacity vs. current global trial participation (replaces hardcoded\
+  \ 115x) | ✓ High confidence | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS\
+  \ | Unit: ratio | Click to view calculation\">25.7</a>"
+"research_acceleration_multiplier_latex": "$$\nMultiplier = 48.8M \\div 1.9M = 25.7\n\
   $$"
 "roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
@@ -1750,11 +1727,6 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic total\
   \ costs | ✓ High confidence | Unit: USD/year | Click to view calculation\">$230M</a>"
-"simultaneous_trials_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#capacity-multiplier\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#capacity-multiplier\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simultaneous\
-  \ trials multiplier (20x more trials) | ✓ High confidence | Unit: ratio | Click\
-  \ to view calculation\">20</a>"
 "smallpox_eradication_roi": "<a href=\"https://warondisease.org/knowledge/references.html#smallpox-eradication-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
@@ -2177,11 +2149,6 @@
   >703</span>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
   $0.127} = 701\\times\n$$"
-"trial_completion_speed_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model#completion-acceleration\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#completion-acceleration\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial completion\
-  \ speed multiplier (10x faster) | ✓ High confidence | Unit: ratio | Click to view\
-  \ calculation\">10</a>"
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
