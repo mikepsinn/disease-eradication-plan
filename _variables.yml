@@ -411,14 +411,14 @@
   low\" title=\"Expected ROI for 1% Treaty accounting for 0.1% political success probability\
   \ (extremely pessimistic estimate) | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC | Click to view calculation\"\
-  >1,286</a>"
+  >1,185</a>"
 "dfda_expected_roi_0_1pct_political_success_latex": "$$\nE[ROI]_{\\text{0.1\\%}} =\
   \ 1{,}286{,}242 \\times 0.001 = 1{,}286\n$$"
 "dfda_expected_roi_10pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for 1% Treaty accounting for 10% political success\
   \ probability (conservative estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE | Click to view calculation\">129K</a>"
+  \ * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE | Click to view calculation\">118K</a>"
 "dfda_expected_roi_10pct_political_success_latex": "$$\nE[ROI]_{\\text{10\\%}} = 1{,}286{,}242\
   \ \\times 0.10 = 128{,}624\n$$"
 "dfda_expected_roi_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
@@ -426,28 +426,28 @@
   low\" title=\"Expected ROI for 1% Treaty accounting for 1% political success probability\
   \ (very pessimistic estimate) | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC | Click to view calculation\"\
-  >12,862</a>"
+  >11,845</a>"
 "dfda_expected_roi_1pct_political_success_latex": "$$\nE[ROI]_{\\text{1\\%}} = 1{,}286{,}242\
   \ \\times 0.01 = 12{,}862\n$$"
 "dfda_expected_roi_25pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for 1% Treaty accounting for 25% political success\
   \ probability (moderate estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE | Click to view calculation\">322K</a>"
+  \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE | Click to view calculation\">296K</a>"
 "dfda_expected_roi_25pct_political_success_latex": "$$\nE[ROI]_{\\text{25\\%}} = 1{,}286{,}242\
   \ \\times 0.25 = 321{,}561\n$$"
 "dfda_expected_roi_40pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for 1% Treaty accounting for 40% political success\
   \ probability (moderate-high estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH | Click to view calculation\">514K</a>"
+  \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH | Click to view calculation\">474K</a>"
 "dfda_expected_roi_40pct_political_success_latex": "$$\nE[ROI]_{\\text{40\\%}} = 1{,}286{,}242\
   \ \\times 0.40 = 514{,}497\n$$"
 "dfda_expected_roi_50pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   medium\" title=\"Expected ROI for 1% Treaty accounting for 50% political success\
   \ probability (optimistic estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC | Click to view calculation\">643K</a>"
+  \ * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC | Click to view calculation\">592K</a>"
 "dfda_expected_roi_50pct_political_success_latex": "$$\nE[ROI]_{\\text{50\\%}} = 1{,}286{,}242\
   \ \\times 0.50 = 643{,}121\n$$"
 "dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model#recruitment-speed\"\
@@ -676,27 +676,25 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
   \ Life Years lost from disease eradication delay (PRIMARY estimate) | ~ Medium confidence\
-  \ | Formula: YLL + YLD | Unit: DALYs | Click to view calculation\">8.57B</a>"
+  \ | Formula: YLL + YLD | Unit: DALYs | Click to view calculation\">7.90B</a>"
 "disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.63B + 0.943B = 8.57B\n\
   $$"
-"disease_eradication_delay_deaths_eventually_avoidable": "<span class=\"parameter-link\"\
-  \ title=\"parameters.DISEASE_ERADICATION_DELAY_DEATHS_EVENTUALLY_AVOIDABLE\">413M</span>"
-"disease_eradication_delay_deaths_eventually_avoidable_latex": "$$\nD_{avoidable}\
-  \ = 448.95M \\times 0.966 = 433.7M\n$$"
 "disease_eradication_delay_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total deaths\
-  \ from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative)\
-  \ | ~ Medium confidence | Formula: DAILY_DEATHS × EFFICACY_LAG_YEARS × 365 days\
-  \ | Unit: deaths | Click to view calculation\">449M</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total eventually\
+  \ avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate,\
+  \ conservative). Excludes fundamentally unavoidable deaths (primarily accidents\
+  \ ~7.9%). | ~ Medium confidence | Formula: DAILY_DEATHS × EFFICACY_LAG_YEARS × 365\
+  \ days × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to view calculation\"\
+  >413M</a>"
 "disease_eradication_delay_deaths_total_latex": "$$\nD_{total} = 150,000 \\times 8.2\
-  \ \\times 365 = 448.95M\n$$"
+  \ \\times 365 \\times 0.921 = 413.4M\n$$"
 "disease_eradication_delay_economic_loss": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total economic\
   \ loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD)\
   \ | ~ Medium confidence | Formula: DALYS_TOTAL × VSLY | Unit: USD | Click to view\
-  \ calculation\">$1286T</a>"
+  \ calculation\">$1185T</a>"
 "disease_eradication_delay_economic_loss_latex": "$$\nLoss = 8.57B \\times \\$150k\
   \ = \\$1.29T\n$$"
 "disease_eradication_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
@@ -704,7 +702,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years Lived\
   \ with Disability during disease eradication delay (PRIMARY estimate) | ~ Medium\
   \ confidence | Formula: DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT | Unit:\
-  \ years | Click to view calculation\">943M</a>"
+  \ years | Click to view calculation\">868M</a>"
 "disease_eradication_delay_yld_latex": "$$\nYLD = 449M \\times 6 \\times 0.35 = 943M\n\
   $$"
 "disease_eradication_delay_yll": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
@@ -712,7 +710,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years of Life\
   \ Lost from disease eradication delay deaths (PRIMARY estimate) | ~ Medium confidence\
   \ | Formula: DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) | Unit: years\
-  \ | Click to view calculation\">7.63B</a>"
+  \ | Click to view calculation\">7.03B</a>"
 "disease_eradication_delay_yll_latex": "$$\nYLL = 449M \\times (79 - 62) = 7.63B\n\
   $$"
 "disease_eradication_plus_acceleration_deaths_total": "<a href=\"/knowledge/references#pharmaceutical-innovation-acceleration-economics\"\
@@ -741,7 +739,7 @@
   \ timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer\
   \ value share ~20% maximizes long-term population health (Woods 2024). | ? Low confidence\
   \ | Formula: PRIMARY_TOTAL × 2 (combined timeline + volume effects) | Unit: USD\
-  \ | Click to view calculation\">$2572T</a>"
+  \ | Click to view calculation\">$2369T</a>"
 "disease_eradication_plus_acceleration_economic_loss_total_latex": "$$\nLoss_{total}\
   \ = \\$1,286T \\times 2 = \\$2,572T\n$$"
 "disease_related_caregiver_pct": "<a href=\"/disease-related-caregiving-estimate\"\
@@ -1303,7 +1301,7 @@
   \ value per day during the 8.2-year efficacy lag period (PRIMARY health benefit\
   \ ÷ lag years ÷ 365). Represents daily cost of regulatory delay, not a perpetual\
   \ annual benefit. | ✓ High confidence | Formula: DISEASE_ERADICATION_DELAY_TOTAL\
-  \ ÷ EFFICACY_LAG_YEARS ÷ 365 | Unit: USD/day | Click to view calculation\">$430B</a>"
+  \ ÷ EFFICACY_LAG_YEARS ÷ 365 | Unit: USD/day | Click to view calculation\">$396B</a>"
 "opportunity_cost_per_day_latex": "$$\nCost_{daily} = \\frac{\\$1{,}286T}{8.2 \\times\
   \ 365} \\approx \\$429B/day\n$$"
 "opportunity_cost_per_second": "<a href=\"/knowledge/economics/economics#the-opportunity-cost-clock\"\
@@ -1311,7 +1309,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Foregone economic\
   \ value per second during the 8.2-year efficacy lag period. Calculated from daily\
   \ opportunity cost. | ✓ High confidence | Formula: OPPORTUNITY_COST_PER_DAY ÷ 86400\
-  \ | Unit: USD/second | Click to view calculation\">$4.97M</a>"
+  \ | Unit: USD/second | Click to view calculation\">$4.58M</a>"
 "opportunity_cost_per_second_latex": "$$\nCost_{second} = \\frac{\\$429B}{86{,}400}\
   \ \\approx \\$5M/second\n$$"
 "oxford_recovery_trial_duration_months": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
@@ -1986,7 +1984,7 @@
   \ Total one-time benefit from disease eradication delay elimination divided by $1B\
   \ campaign cost. This is the primary ROI estimate for total health benefits. | ~\
   \ Medium confidence | Formula: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST |\
-  \ Unit: ratio | Click to view calculation\">1.29M</a>"
+  \ Unit: ratio | Click to view calculation\">1.18M</a>"
 "treaty_complete_roi_all_benefits_latex": "$$\nROI_{lag\\_elimination} = \\frac{\\\
   $1{,}286T}{\\$1.00B} = 1{,}286{,}242:1\n$$"
 "treaty_complete_roi_conditional_5th_percentile": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
@@ -2053,6 +2051,18 @@
   \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0</a>"
 "treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
   $1.0B}{8.57B} = \\$0.117\n$$"
+"treaty_expected_cost_per_daly_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Expected cost\
+  \ per DALY accounting for 10% political success probability (conservative estimate).\
+  \ Even at this pessimistic probability (1 in 10 chance of success), the intervention\
+  \ is still 40-80x more cost-effective than bed nets ($50-100/DALY) and comparable\
+  \ to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called\
+  \ a 'bold gamble' that succeeded with 164 countries signing. | ~ Medium confidence\
+  \ | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE\
+  \ | Unit: USD/DALY | Click to view calculation\">$1</a>"
+"treaty_expected_cost_per_daly_conservative_latex": "$$\nE[\\text{Cost/DALY}]_{10\\\
+  %} = \\frac{\\$0.127}{0.10} = \\$1.27\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#lives-saved\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -2119,7 +2129,7 @@
   \ Includes cascading innovation effects from eliminating Phase 2-4 cost barriers.\
   \ Research-backed 2× multiplier represents combined timeline and volume effects\
   \ (Nature 2023, Woods et al. 2024). | ? Low confidence | Formula: DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL\
-  \ ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">2.57M</a>"
+  \ ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">2.37M</a>"
 "treaty_roi_innovation_acceleration_latex": "$$\nROI_{acceleration} = \\frac{\\$2{,}572T}{\\\
   $1.00B} = 2{,}572{,}484:1\n$$"
 "treaty_roi_lag_elimination": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart\"\
@@ -2129,7 +2139,7 @@
   \ Total one-time benefit from disease eradication delay elimination divided by $1B\
   \ campaign cost. This is the primary ROI estimate for total health benefits. | ~\
   \ Medium confidence | Formula: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST |\
-  \ Unit: ratio | Click to view calculation\">1.29M</a>"
+  \ Unit: ratio | Click to view calculation\">1.18M</a>"
 "treaty_roi_lag_elimination_latex": "$$\nROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\\
   $1.00B} = 1{,}286{,}242:1\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-costs\"\
@@ -2167,7 +2177,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Ratio of Type\
   \ II error cost to Type I error benefit (harm from delay vs. harm prevented) | ~\
   \ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT | Unit: ratio | Click\
-  \ to view calculation\">3,312</a>"
+  \ to view calculation\">3,050</a>"
 "type_ii_error_cost_ratio_latex": "$$\n\\frac{Cost_{delay}}{Benefit_{safety}} = \\\
   frac{8.57B}{0.00259B} = 3{,}309:1\n$$"
 "type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#risk-analysis\"\

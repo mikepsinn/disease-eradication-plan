@@ -1560,20 +1560,105 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     keywords=["mortality", "global burden", "disease", "aging", "WHO", "daily deaths"]
 )  # 150,000 deaths/day from all disease/aging
 
+# ===================================================================
+# DISEASE BURDEN AND RESEARCH ACCELERATION POTENTIAL
+# ===================================================================
+# These dictionaries define the disease categories, current cure rates,
+# and maximum achievable cure rates with advanced biotechnology.
+# Used to calculate fundamentally unavoidable death percentage.
+# ===================================================================
+
+# Disease burden as percentage of total deaths
+DISEASE_BURDEN = {
+    "cardiovascular": 201.1 / 722.0,  # 27.8%
+    "cancer": 146.6 / 722.0,  # 20.3%
+    "respiratory": 33.4 / 722.0,  # 4.6%
+    "neurodegenerative": 27.7 / 722.0,  # 3.8% (Alzheimer's)
+    "metabolic": (22.4 + 13.1 + 13.0) / 722.0,  # 6.7% (Diabetes + Kidney + Liver)
+    "infectious": 15.0 / 722.0,  # 2.1%
+    "accidents": 62.3 / 722.0,  # 8.6%
+    "aging_related": 180.0 / 722.0,  # 24.9% (Cellular aging, frailty, multi-morbidity)
+    "other": 60.0 / 722.0,  # 8.3%
+}
+
+# Current cure/treatment rates by category
+# Source: Cancer 5-year survival (69%), cardiovascular prevention data
+CURRENT_CURE_RATE = {
+    "cardiovascular": 0.50,  # 50% preventable with current knowledge
+    "cancer": 0.69,  # 69% 5-year survival rate (2013-2019)
+    "respiratory": 0.60,  # Treatable but not curable
+    "neurodegenerative": 0.10,  # Very limited current treatments
+    "metabolic": 0.70,  # Highly manageable with current drugs
+    "infectious": 0.95,  # Antibiotics/vaccines very effective
+    "accidents": 0.30,  # Some prevention possible
+    "aging_related": 0.05,  # Minimal current progress
+    "other": 0.50,  # Mixed
+}
+
+# Research acceleration potential by category
+# How much can 115x research + AI + gene therapy + epigenetics + stem cells improve cure rates?
+#
+# With convergence of breakthrough technologies:
+# - Gene therapy: Fixes genetic diseases at root cause
+# - Epigenetics: Reverses aging markers
+# - Stem cells: Regenerates damaged tissues/organs
+# - AI drug discovery: Finds personalized treatments at scale
+# - Near-zero trial costs: Tests everything
+#
+RESEARCH_ACCELERATION_POTENTIAL = {
+    "cardiovascular": 0.95,  # Very high (gene therapy fixes predisposition, regeneration fixes damage, AI optimizes)
+    "cancer": 0.95,  # Very high (AI personalized medicine, immunotherapy, early AI detection)
+    "respiratory": 0.90,  # High (lung regeneration, gene therapy for genetic conditions)
+    "neurodegenerative": 0.80,  # High (stem cells, brain regeneration, epigenetic reprogramming)
+    "metabolic": 0.98,  # Nearly complete (gene therapy fixes root causes, AI optimizes treatment)
+    "infectious": 0.99,  # Nearly complete (AI discovers treatments instantly)
+    "accidents": 0.60,  # Moderate (some prevention AI, trauma regeneration)
+    "aging_related": 0.99,  # Nearly complete (cellular reprogramming, epigenetic reversal, organ regeneration) - if we can regenerate organs and reprogram DNA/epigenetics, no biological reason for aging deaths
+    "other": 0.95,  # Very high (mix of above technologies)
+}
+
+# Calculate fundamentally unavoidable death percentage
+# Based on disease burden × (1 - max potential) across all categories
+_unavoidable_pct = sum(
+    DISEASE_BURDEN[cat] * (1 - RESEARCH_ACCELERATION_POTENTIAL[cat])
+    for cat in DISEASE_BURDEN.keys()
+)
+
+FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
+    _unavoidable_pct,
+    source_type="calculated",
+    description="Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.",
+    display_name="Fundamentally Unavoidable Death Percentage",
+    unit="percentage",
+    formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
+    confidence="medium",
+)  # ~7.9% unavoidable with aging_related at 0.99
+
+EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
+    1 - _unavoidable_pct,
+    source_type="calculated",
+    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement",
+    display_name="Eventually Avoidable Death Percentage",
+    unit="percentage",
+    formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
+    confidence="medium",
+)  # ~92.1% eventually avoidable
+
 # Disease Eradication Delay (PRIMARY ESTIMATE)
 # Assumes regulatory delay shifts disease eradication timeline back by efficacy lag period
+# Adjusted to exclude fundamentally unavoidable deaths (primarily accidents)
 DISEASE_ERADICATION_DELAY_DEATHS_TOTAL = Parameter(
-    int(GLOBAL_DISEASE_DEATHS_DAILY * EFFICACY_LAG_YEARS * 365),
+    int(GLOBAL_DISEASE_DEATHS_DAILY * EFFICACY_LAG_YEARS * 365 * (1 - _unavoidable_pct)),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
     source_type="calculated",
-    description="Total deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative)",
+    description="Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
     display_name="Total Deaths from Disease Eradication Delay",
     unit="deaths",
-    formula="DAILY_DEATHS × EFFICACY_LAG_YEARS × 365 days",
-    latex=r"D_{total} = 150,000 \times 8.2 \times 365 = 448.95M",
+    formula="DAILY_DEATHS × EFFICACY_LAG_YEARS × 365 days × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    latex=r"D_{total} = 150,000 \times 8.2 \times 365 \times 0.921 = 413.4M",
     confidence="medium",
-    keywords=["disease eradication", "regulatory delay", "efficacy lag", "primary estimate"]
-)  # 448.95M deaths (rounded to 449M)
+    keywords=["disease eradication", "regulatory delay", "efficacy lag", "primary estimate", "eventually avoidable"]
+)  # 413.4M eventually avoidable deaths (down from 449M raw total)
 
 # DELETED: DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL, HISTORICAL_PROGRESS_DEATHS_ANNUAL,
 # and DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_ANNUAL
@@ -3860,6 +3945,19 @@ TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "gates foundation", "givewell"]
 )  # $0.117 per DALY (60-230x better than bed nets, while being self-funding)
 
+TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE = Parameter(
+    TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT / POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE,
+    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
+    source_type="calculated",
+    description="Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still 40-80x more cost-effective than bed nets ($50-100/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.",
+    display_name="Expected Cost per DALY (Conservative 10% Success)",
+    unit="USD/DALY",
+    formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
+    latex=r"E[\text{Cost/DALY}]_{10\%} = \frac{\$0.127}{0.10} = \$1.27",
+    confidence="medium",
+    keywords=["expected value", "probability weighted", "cost effectiveness", "conservative", "gates foundation", "givewell", "political risk", "10 percent"]
+)  # $1.27 per DALY (still 40-80x better than bed nets, accounting for political risk)
+
 # ---
 # HELPER FUNCTIONS
 # ---
@@ -5922,19 +6020,6 @@ if __name__ == "__main__":
 
 INFECTIONS_DEATH_RATE = 15.0  # Estimate (flu, pneumonia, sepsis)
 
-# Disease burden as percentage of total deaths
-DISEASE_BURDEN = {
-    "cardiovascular": 201.1 / 722.0,  # 27.8%
-    "cancer": 146.6 / 722.0,  # 20.3%
-    "respiratory": 33.4 / 722.0,  # 4.6%
-    "neurodegenerative": 27.7 / 722.0,  # 3.8% (Alzheimer's)
-    "metabolic": (22.4 + 13.1 + 13.0) / 722.0,  # 6.7% (Diabetes + Kidney + Liver)
-    "infectious": 15.0 / 722.0,  # 2.1%
-    "accidents": 62.3 / 722.0,  # 8.6%
-    "aging_related": 180.0 / 722.0,  # 24.9% (Cellular aging, frailty, multi-morbidity)
-    "other": 60.0 / 722.0,  # 8.3%
-}
-
 # Years of life lost per death by category
 # Source: Cancer YLL studies, cardiovascular burden research
 YEARS_LOST_PER_DEATH = {
@@ -5948,83 +6033,6 @@ YEARS_LOST_PER_DEATH = {
     "aging_related": 3.0,  # Very old age, natural limits
     "other": 10.0,  # Mixed
 }
-
-# Current cure/treatment rates by category
-# Source: Cancer 5-year survival (69%), cardiovascular prevention data
-CURRENT_CURE_RATE = {
-    "cardiovascular": 0.50,  # 50% preventable with current knowledge
-    "cancer": 0.69,  # 69% 5-year survival rate (2013-2019)
-    "respiratory": 0.60,  # Treatable but not curable
-    "neurodegenerative": 0.10,  # Very limited current treatments
-    "metabolic": 0.70,  # Highly manageable with current drugs
-    "infectious": 0.95,  # Antibiotics/vaccines very effective
-    "accidents": 0.30,  # Some prevention possible
-    "aging_related": 0.05,  # Minimal current progress
-    "other": 0.50,  # Mixed
-}
-
-# Research acceleration potential by category
-# How much can 115x research + AI + gene therapy + epigenetics + stem cells improve cure rates?
-#
-# With convergence of breakthrough technologies:
-# - Gene therapy: Fixes genetic diseases at root cause
-# - Epigenetics: Reverses aging markers
-# - Stem cells: Regenerates damaged tissues/organs
-# - AI drug discovery: Finds personalized treatments at scale
-# - Near-zero trial costs: Tests everything
-#
-RESEARCH_ACCELERATION_POTENTIAL = {
-    "cardiovascular": 0.95,  # Very high (gene therapy fixes predisposition, regeneration fixes damage, AI optimizes)
-    "cancer": 0.95,  # Very high (AI personalized medicine, immunotherapy, early AI detection)
-    "respiratory": 0.90,  # High (lung regeneration, gene therapy for genetic conditions)
-    "neurodegenerative": 0.80,  # High (stem cells, brain regeneration, epigenetic reprogramming)
-    "metabolic": 0.98,  # Nearly complete (gene therapy fixes root causes, AI optimizes treatment)
-    "infectious": 0.99,  # Nearly complete (AI discovers treatments instantly)
-    "accidents": 0.60,  # Moderate (some prevention AI, trauma regeneration)
-    "aging_related": 0.99,  # Nearly complete (cellular reprogramming, epigenetic reversal, organ regeneration) - if we can regenerate organs and reprogram DNA/epigenetics, no biological reason for aging deaths
-    "other": 0.95,  # Very high (mix of above technologies)
-}
-
-# Calculate fundamentally unavoidable death percentage
-# Based on disease burden × (1 - max potential) across all categories
-_unavoidable_pct = sum(
-    DISEASE_BURDEN[cat] * (1 - RESEARCH_ACCELERATION_POTENTIAL[cat])
-    for cat in DISEASE_BURDEN.keys()
-)
-
-FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
-    _unavoidable_pct,
-    source_type="calculated",
-    description="Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.",
-    display_name="Fundamentally Unavoidable Death Percentage",
-    unit="percentage",
-    formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
-    confidence="medium",
-)  # ~3.4% with aging_related at 0.99
-
-EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
-    1 - _unavoidable_pct,
-    source_type="calculated",
-    description="Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement",
-    display_name="Eventually Avoidable Death Percentage",
-    unit="percentage",
-    formula="1 - FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT",
-    confidence="medium",
-)  # ~96.6% eventually avoidable
-
-# Corrected disease eradication delay deaths accounting for fundamentally unavoidable deaths
-# This is the version that should be used for ROI calculations
-DISEASE_ERADICATION_DELAY_DEATHS_EVENTUALLY_AVOIDABLE = Parameter(
-    int(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL * (1 - _unavoidable_pct)),
-    source_type="calculated",
-    description="Total deaths from delaying disease eradication by 8.2 years, adjusted to exclude fundamentally unavoidable deaths (primarily accidents). This is the corrected PRIMARY estimate that accounts for biological limits.",
-    display_name="Eventually Avoidable Deaths from Disease Eradication Delay",
-    unit="deaths",
-    formula="DISEASE_ERADICATION_DELAY_DEATHS_TOTAL × EVENTUALLY_AVOIDABLE_DEATH_PCT",
-    latex=r"D_{avoidable} = 448.95M \times 0.966 = 433.7M",
-    confidence="medium",
-    keywords=["disease eradication", "regulatory delay", "efficacy lag", "corrected", "avoidable"]
-)  # ~434M eventually avoidable deaths (down from 449M)
 
 
 def calculate_cumulative_research_years(treaty_pct, years_elapsed):
