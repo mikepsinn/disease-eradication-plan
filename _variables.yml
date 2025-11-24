@@ -1308,23 +1308,6 @@
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
   \ horizon for NPV analysis | Unit: years | Core definition\">10</span>"
 "npv_time_horizon_years_latex": "$$\nT = 10\n$$"
-"opportunity_cost_per_day": "<a href=\"/knowledge/economics/economics#the-opportunity-cost-clock\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Foregone economic\
-  \ value per day during the 8.2-year efficacy lag period (PRIMARY health benefit\
-  \ ÷ lag years ÷ 365). Represents daily cost of regulatory delay, not a perpetual\
-  \ annual benefit. | ✓ High confidence | Formula: DISEASE_ERADICATION_DELAY_TOTAL\
-  \ ÷ EFFICACY_LAG_YEARS ÷ 365 | Unit: USD/day | Click to view calculation\">$396B</a>"
-"opportunity_cost_per_day_latex": "$$\nCost_{daily} = \\frac{\\$1{,}286T}{8.2 \\times\
-  \ 365} \\approx \\$429B/day\n$$"
-"opportunity_cost_per_second": "<a href=\"/knowledge/economics/economics#the-opportunity-cost-clock\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#the-opportunity-cost-clock\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Foregone economic\
-  \ value per second during the 8.2-year efficacy lag period. Calculated from daily\
-  \ opportunity cost. | ✓ High confidence | Formula: OPPORTUNITY_COST_PER_DAY ÷ 86400\
-  \ | Unit: USD/second | Click to view calculation\">$4.58M</a>"
-"opportunity_cost_per_second_latex": "$$\nCost_{second} = \\frac{\\$429B}{86{,}400}\
-  \ \\approx \\$5M/second\n$$"
 "oxford_recovery_trial_duration_months": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Oxford RECOVERY\
@@ -2290,6 +2273,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "400"
-"total_latex_equation_count": "147"
+"total_parameter_count": "398"
+"total_latex_equation_count": "145"
 "total_citation_count": "127"

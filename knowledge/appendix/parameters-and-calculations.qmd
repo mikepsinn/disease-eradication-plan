@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 400
+**Total parameters**: 398
 
 - External sources (peer-reviewed): 127
-- Calculated values: 225
+- Calculated values: 223
 - Core definitions: 48
 
 ## External Data Sources {#sec-external}
@@ -3745,40 +3745,6 @@ Multiplier = \frac{|-\$6.19M \times 10^9|}{\$4,500} \approx 1,376x
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#givewell-comparison](../appendix/1-percent-treaty-cost-effectiveness#givewell-comparison)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Daily Cost of Regulatory Delay (During Efficacy Lag Period) {#sec-opportunity_cost_per_day}
-
-**Value**: $396B
-
-Foregone economic value per day during the 8.2-year efficacy lag period (PRIMARY health benefit ÷ lag years ÷ 365). Represents daily cost of regulatory delay, not a perpetual annual benefit.
-
-$$
-Cost_{daily} = \frac{\$1{,}286T}{8.2 \times 365} \approx \$429B/day
-$$
-
-**Methodology**: [../economics/economics#the-opportunity-cost-clock](../economics/economics#the-opportunity-cost-clock)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Per-Second Cost of Regulatory Delay (During Efficacy Lag Period) {#sec-opportunity_cost_per_second}
-
-**Value**: $4.58M
-
-Foregone economic value per second during the 8.2-year efficacy lag period. Calculated from daily opportunity cost.
-
-$$
-Cost_{second} = \frac{\$429B}{86{,}400} \approx \$5M/second
-$$
-
-**Methodology**: [../economics/economics#the-opportunity-cost-clock](../economics/economics#the-opportunity-cost-clock)
 
 *✓ High confidence*
 
