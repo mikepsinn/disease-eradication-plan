@@ -1307,7 +1307,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 | Safety Dimension | Traditional Trials | Pragmatic Trials |
 |:---|:---|:---|
 | Sample size | 100-300 patients | 10,000-100,000+ patients |
-| Patient selection | 85% excluded (comorbidities, age, medications) | All volunteers included |
+| Patient selection | [86.1% excluded](../references.qmd#antidepressant-trial-exclusion-rates) (comorbidities, age, medications) | All volunteers included |
 | Monitoring duration | 3-12 months | Continuous through EHR integration |
 | Publication | 37% of negative results published | 100% automatically published |
 | Subpopulation testing | Excludes elderly, children, pregnant patients | Tests all populations |
@@ -1330,8 +1330,8 @@ For detailed analysis, see [Regulatory Mortality Analysis](../appendix/regulator
 
 Half of humanity says they'd volunteer for clinical trials if they could. Currently only {{< var current_clinical_trial_participation_rate >}} {{< var current_clinical_trial_participation_rate_cite >}} participate because:
 
-- Trials require traveling 500 miles to university hospitals
-- Trials exclude 85% of actual patients (too old, too young, too sick, wrong kind of sick)
+- Trials require [traveling up to hundreds of miles to university hospitals](../references.qmd#clinical-trial-geographic-barriers) (67 miles on average, 500+ miles for rural/central US patients)
+- Trials exclude [86.1% of actual patients](../references.qmd#antidepressant-trial-exclusion-rates) (too old, too young, too sick, wrong kind of sick)
 - Trials pay nothing and cost weeks of your time
 
 Decentralized pragmatic trials fix all of this:
@@ -1340,7 +1340,7 @@ Decentralized pragmatic trials fix all of this:
 - Everyone qualifies (you don't need to be the perfect kind of sick)
 - Get subsidized to participate + access to treatments
 
-Current barrier: "Drive 500 miles, wait 6 months, get rejected for having the disease wrong"
+Current barrier: "Drive hundreds of miles, wait 6 months, get rejected for having the disease wrong"
 New barrier: "Click button"
 
 You have 240 times more willing participants than current trials use. The bottleneck isn't human willingness. It's systemic stupidity.

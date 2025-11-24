@@ -20,7 +20,7 @@ Out of 2.4 billion people with chronic disease, [only 5 million participate in t
 
 [Half of humanity would volunteer](../references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
 
-This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient, require traveling to major medical centers, and have exclusion criteria that reject [85% of actual patients](../references.qmd#fda-trial-patient-exclusion-criteria).
+This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient, require traveling to major medical centers, and have exclusion criteria that reject [86.1% of actual patients](../references.qmd#antidepressant-trial-exclusion-rates).
 
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 
@@ -347,7 +347,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 | :--- | :--- | :--- | :--- | :--- |
 | Clinical Phase Timeline | **[9.1 years (avg)](../references.qmd#drug-development-timeline-17-years)** | **2-3 years** | ~7 years of waiting eliminated | [~50,000/year](../references.qmd#beta-blocker-drug-lag-deaths) |
 | Cost per trial | [**$57 million**](../references.qmd#clinical-trial-cost-breakdown) | **$2 million** | $55 million | Infinite ROI |
-| Who can participate | **[15% of patients](../references.qmd#fda-trial-patient-exclusion-criteria)** | **100% of patients** | 85% inclusion rate | Everyone |
+| Who can participate | **[13.9% of patients](../references.qmd#antidepressant-trial-exclusion-rates)** | **100% of patients** | 86.1% inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../references.qmd#95-pct-diseases-no-treatment)** | **Eventually 100%** | Priceless | Millions |
 
 ### The Itemized Receipt of Eliminated Stupidity
@@ -617,6 +617,6 @@ The dFDA achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** 
 
 - **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - **Time to results**: 2 years vs the current 17 years
-- **Patient access**: Universal access vs [85% excluded](../references.qmd#clinical-trial-patient-participation-rate) currently
+- **Patient access**: Universal access vs [86.1% excluded](../references.qmd#antidepressant-trial-exclusion-rates) currently
 
 {{< include ../figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}

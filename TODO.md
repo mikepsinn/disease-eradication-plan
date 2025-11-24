@@ -30,10 +30,12 @@
 - [x] **Line 946:** ~~`$13.7M` DOT value~~ - Minor detail in peace dividend table, not essential
   - Delete this comparison from the table (just say "conservative" without specific DOT comparison)
 
-### Clinical Trial Patient Exclusions
-- [ ] **Line 1311:** `85% excluded` from trials
-  - Find source for this exclusion percentage
-  - Add citation to safety surveillance table
+### ~~Clinical Trial Patient Exclusions~~ - COMPLETED
+- [x] **All 85% references:** Updated to 86.1% with hyperlinks
+  - ✅ Added `antidepressant-trial-exclusion-rates` to references.qmd (Zimmerman et al., 2015)
+  - ✅ Updated 8 locations: economics.qmd (2), dfda.qmd (3), fda-is-unsafe-and-ineffective.qmd (1), right-to-trial-fda-upgrade-act.qmd (1), ai-engineer.qmd (1), OUTLINE.MD (1)
+  - All now cite: `[86.1% excluded](../references.qmd#antidepressant-trial-exclusion-rates)`
+  - Benefit: Unique percentage (86.1%) makes future searches easier
 
 ### Trial Accessibility Barriers
 - [ ] **Lines 1334, 1344:** `500 miles` to university hospitals
@@ -85,10 +87,10 @@
 ---
 
 ## Summary Statistics
-- **Total items to fix:** 5 major tasks (was 13, deleted 7, fixed 1)
+- **Total items to fix:** 4 major tasks (was 13, deleted 7, fixed 1, sourced 1)
 - **Parameters to create:** 0 tasks (ROI consistency fixed!)
-- **Sources to find:** 5 citations
-- **Already fixed:** 17 items
+- **Sources to find:** 4 citations (was 5, found 85% exclusion)
+- **Already fixed:** 18 items
 - **Deleted as irrelevant:** 10 items (4 years/decade, defense jobs, DOT value, rent-seeking, economic multiplier repetition)
 
 ## Next Steps
@@ -96,6 +98,7 @@
 2. Research Medable company valuation ($521M raised, $2.1B valuation)
 
 ## Recent Changes Completed
+✅ 86.1% exclusion: Updated all 8 references with hyperlinks to sourced data (Zimmerman 2015)
 ✅ ROI consistency: Replaced hardcoded 66:1 with variable (lines 1480, 1556)
 ✅ Historical life expectancy claim "4 years/decade" (line 1407)
 ✅ Defense sector employment displacement paragraph (lines 1587)

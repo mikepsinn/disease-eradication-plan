@@ -7,68 +7,7 @@
 
 ---
 
-#### index.qmd
-
-  ## Preface
-    ### The Part Where I Discover Paper Makes You Do Things
-    ### Your Gradual Stupidity Reduction Program
-    ### The Sacred Order of Paper Distribution
-    ### Why Your Leaders Pretend Not to Understand
-    ### The Beautiful Stupidity of Your Economy
-    ### Your Species' Adorable Death Wish
-    ### How This Manual Fixes Everything
-    ### The Part Where You Have No Choice
-    ### Your Two Futures
-      #### Future A: You Ignore This Book
-      #### Future B: You Follow Instructions
-    ### In Conclusion
-  ## ⚡ TL;DR
-    ### How You Fix This
-      #### Step 1: The Paper Collection Phase
-      #### Step 2: The Internet Clicking Ceremony
-      #### Step 3: The Professional Briber Redistribution
-      #### Step 4: The Political Awakening Ritual
-      #### Step 5: The Money River Redirection
-    ### Why This Works
-    ### The Alternative
-  ## The Problem
-    ### The Daily Deletion Event
-    ### The Cost of War
-    ### Your Hilarious Security Priorities
-  ## The Solution
-    ### The 1% Treaty
-    ### Why Decentralization Works
-    ### The DIH Treasury
-    ### The Decentralized FDA
-      #### Treatment Rankings
-        ##### Outcome Labels
-  ## Why This Actually Works
-    ### The Proof
-  ## The 5-Step Plan
-    ### Step 1: Collect Papers
-      #### What Grandma Got
-      #### What You're Offering
-      #### Returns That Make Ponzi Schemes Look Conservative
-    ### Step 2: The Great Clicking
-      #### The Magic 3.5% Number
-    ### Step 3: Bribe the Bribers
-      #### Current Job
-      #### Your Offer
-    ### Step 4: Purchase Democracy
-    ### Step 5: Enjoy
-    ### Personalized Bribery Packages
-  ## The Math
-    ### The Money Fountain
-    ### Where Math Breaks
-      #### The Reality-Breaking Equation
-      #### Where {{< var combined_peace_health_dividends_annual_for_roi_calc >}} Appears From
-    ### 2nd Best Idea in the World
-  ## Choose Your Own Adventure
-    ### Door #1: The Current Plan
-    ### Door #2: Try Not Dying
-  ## Price of Procrastination
-    ### The Final Math
-      #### Your Binary Choice Matrix
+#### index.qmd (file not found)
 
 ### 🚨 The Problem
 
@@ -2512,7 +2451,7 @@
 
 **Summary:**
 - Files processed: 81
-- Files with headings: 78
+- Files with headings: 77
 - Files without headings: 2
-- Files not found: 0
-- Total headings extracted: 2235
+- Files not found: 1
+- Total headings extracted: 2175

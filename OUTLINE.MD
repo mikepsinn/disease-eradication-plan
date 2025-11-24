@@ -318,7 +318,7 @@
 
 - **[FIGURE: dFDA vs FDA Comparison]**
   - Side-by-side comparison:
-    - FDA: 17 years, $2.6B, 85% excluded, 95% diseases ignored
+    - FDA: 17 years, $2.6B, 86.1% excluded, 95% diseases ignored
     - dFDA: 2-3 years, $2M, 100% included, 100% diseases covered
   - Visual shows 82X improvement in every metric
   - Impact: Makes the 82X improvement concrete

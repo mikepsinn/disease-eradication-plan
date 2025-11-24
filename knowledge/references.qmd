@@ -1666,6 +1666,34 @@ from dih_models.parameters import *
   > — [FDA: Evaluating Inclusion & Exclusion Criteria](https://www.fda.gov/media/134754/download) | [ScienceDirect: Eligibility Criteria FDA Perspective](https://www.sciencedirect.com/science/article/abs/pii/S1551714421002512) | [ASCO: Transforming Eligibility Criteria](https://ascopubs.org/doi/10.1200/EDBK_155880)
   > Note: Exclusion criteria often eliminate patients who would actually use the drug, reducing real-world applicability of trial results
 
+<a id="antidepressant-trial-exclusion-rates"></a>
+
+- **Antidepressant clinical trial exclusion rates**
+  > Mean exclusion rate: 86.1% across 158 antidepressant efficacy trials (range: 44.4% to 99.8%)
+  > More than 82% of real-world depression patients would be ineligible for antidepressant registration trials
+  > Exclusion rates increased over time: 91.4% (2010-2014) vs. 83.8% (1995-2009)
+  > Most common exclusions: comorbid psychiatric disorders, age restrictions, insufficient depression severity, medical conditions
+  > Emergency psychiatry patients: only 3.3% eligible (96.7% excluded) when applying 9 common exclusion criteria
+  > "Only a minority of depressed patients seen in clinical practice are likely to be eligible for most AETs"
+  > — [Zimmerman et al., Mayo Clinic Proceedings, 2015](https://pubmed.ncbi.nlm.nih.gov/26276679/) | [Preskorn et al., Journal of Psychiatric Practice, 2015](https://pubmed.ncbi.nlm.nih.gov/26164052/) | [Wolters Kluwer: Antidepressant Trials Exclude Most Real World Patients](https://www.wolterskluwer.com/en/news/antidepressant-trials-exclude-most-real-world-patients-with-depression)
+  > Note: Generalizability of antidepressant trials has decreased over time, with increasingly stringent exclusion criteria eliminating patients who would actually use the drugs in clinical practice
+
+<a id="clinical-trial-geographic-barriers"></a>
+
+- **Clinical trial geographic access barriers**
+  > 70% of US counties (2,211 of 3,143) had no active clinical trials in 2022, representing 19% of people age ≥55 years
+  > Rural residents travel distances over 4× those traveled by urban peers
+  > Median distance: 67 miles one-way on average (2022), up from 25.8 miles (1993-2014)
+  > Low-income patients: median 58.3 miles vs. 17.8 miles for higher-income patients
+  > Rare disease patients: 135 miles average
+  > Phase I trials: 41.2 miles median
+  > Geographic concentration: Clinical trials predominantly conducted at urban academic medical centers in coastal areas
+  > Trial "deserts": Large regions with no trial access, mostly in West and Southwest
+  > For patients in central US states: Nearest major trial center often 500+ miles away (e.g., Chicago from Kansas/Missouri geographic center)
+  > Selection bias: Published median distances only reflect patients who successfully enrolled; those living farther away simply don't participate
+  > — [JCO Oncology Practice: Geographic Access to Cancer Trials, 2024](https://ascopubs.org/doi/10.1200/OP.24.00261) | [PMC: Geographic Disparities in Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC10982574/) | [PMC: Travel Burden in Cancer Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC6263122/) | [Outsourcing Pharma: 67 Miles Average Travel Distance, 2022](https://www.outsourcing-pharma.com/Article/2022/11/09/clinical-trial-participants-travel-67-miles-to-study-sites-on-average-analysis-finds)
+  > Note: The wide range reflects severe geographic inequality - urban patients may travel <20 miles while rural/central US patients face 100-500+ mile journeys to nearest trial sites
+
 <a id="fda-vs-oxford-paperwork"></a>
 
 - **Paperwork comparison between FDA trials and RECOVERY trial**
