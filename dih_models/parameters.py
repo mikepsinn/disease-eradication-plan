@@ -3056,6 +3056,17 @@ CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
     keywords=["0%", "rct", "people", "clinical study", "clinical trial", "research trial", "randomized controlled trial"]
 )  # 0.06% participation
 
+PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
+    0.448,
+    source_ref=ReferenceID.PATIENT_WILLINGNESS_CLINICAL_TRIALS,
+    source_type="external",
+    description="Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)",
+    display_name="Patient Willingness to Participate in Clinical Trials",
+    unit="percentage",
+    confidence="medium",
+    keywords=["willingness", "willing", "volunteer", "interest", "clinical trial", "participation", "survey"]
+)  # 44.8% willing for drug trials specifically
+
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
     0.035,
     source_ref=ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP,
