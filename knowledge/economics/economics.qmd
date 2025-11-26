@@ -69,7 +69,7 @@ from dih_models.parameters import *
    - (The number is positive. You make money saving lives. Economics is backwards here.)
 
 6. **Dominant Intervention**: Cost-dominant intervention (saves money while saving lives)
-   - Beats smallpox eradication ({{< var smallpox_eradication_roi >}} {{< var smallpox_eradication_roi_cite >}}:1)
+   - Beats smallpox eradication ({{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}})
    - Generates profit per life saved rather than requiring subsidy
 
 7. **Research Acceleration**: {{< var research_acceleration_multiplier >}}× faster medical progress = {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years in 20 years
@@ -102,7 +102,7 @@ from dih_models.parameters import *
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
-**Alternative Hypothesis (H₁)**: The intervention generates substantial positive returns (ROI > 1:1), comparable to or exceeding history's most successful public health interventions (smallpox eradication: {{< var smallpox_eradication_roi >}} {{< var smallpox_eradication_roi_cite >}}:1)
+**Alternative Hypothesis (H₁)**: The intervention generates substantial positive returns (ROI > 1:1), comparable to or exceeding history's most successful public health interventions (smallpox eradication: {{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}})
 
 **Testable Predictions**:
 
