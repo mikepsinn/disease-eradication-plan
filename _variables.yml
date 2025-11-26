@@ -37,6 +37,12 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to vote\
   \ (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\">2</a>"
+"antidepressant_trial_exclusion_rate": "<a href=\"https://warondisease.org/knowledge/references.html#antidepressant-trial-exclusion-rates\"\
+  \ class=\"parameter-link\" data-source-ref=\"antidepressant-trial-exclusion-rates\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Mean exclusion\
+  \ rate in antidepressant trials (86.1% of real-world patients excluded) | ✓ High\
+  \ confidence | Unit: percentage | Click to view source\">86.1%</a>"
+"antidepressant_trial_exclusion_rate_cite": "@antidepressant-trial-exclusion-rates"
 "average_market_return_pct": "<a href=\"https://warondisease.org/knowledge/references.html#warren-buffett-career-average-return-20-pct\"\
   \ class=\"parameter-link\" data-source-ref=\"warren-buffett-career-average-return-20-pct\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average annual\
@@ -773,6 +779,13 @@
   \ of treaty funding vs dFDA opex (sustainability margin) | ✓ High confidence | Formula:\
   \ TREATY_FUNDING ÷ DFDA_OPEX | Unit: ratio | Click to view calculation\">680</a>"
 "dividend_coverage_factor_latex": "$$\nCoverage = \\$27.18B / \\$0.04B = 679x\n$$"
+"drug_cost_increase_1980s_to_current_multiplier": "<a href=\"/pre-1962-drug-costs-timeline\"\
+  \ class=\"parameter-link\" data-source-ref=\"/pre-1962-drug-costs-timeline\" data-source-type=\"\
+  calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
+  \ 1980s to current ($194M → $2.6B = 13.4x) | ✓ High confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT\
+  \ ÷ DRUG_DEVELOPMENT_COST_1980S | Unit: ratio | Click to view calculation\">13.4</a>"
+"drug_cost_increase_1980s_to_current_multiplier_latex": "$$\n\\frac{\\$2.6B}{\\$194M}\
+  \ = 13.4\n$$"
 "drug_cost_increase_pre1962_to_current_multiplier": "<a href=\"/pre-1962-drug-costs-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"/pre-1962-drug-costs-timeline\" data-source-type=\"\
   calculated\" data-confidence=\"medium\" title=\"Drug development cost increase from\
@@ -780,6 +793,12 @@
   \ ÷ PRE_1962_DRUG_DEVELOPMENT_COST | Unit: ratio | Click to view calculation\">52</a>"
 "drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\n\\frac{\\$2.6B}{\\\
   $50M} = 52\n$$"
+"drug_development_cost_1980s": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline\"\
+  \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
+  \ to approval, 1990 dollars) | ✓ High confidence | Unit: USD | Click to view source\"\
+  >$194M</a>"
+"drug_development_cost_1980s_cite": "@pre-1962-drug-costs-timeline"
 "economic_multiplier_education_investment": "<a href=\"https://warondisease.org/knowledge/references.html#education-investment-economic-multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"education-investment-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
@@ -1558,6 +1577,11 @@
   \ efficacy trials pre-1962 (unverified estimate) | ? Low confidence | Unit: physicians\
   \ | Click to view source\">144K</a>"
 "pre_1962_physician_count_cite": "@pre-1962-physician-trials"
+"pre_1962_validation_years": "<a href=\"/life-expectancy-increase-pre-1962\" class=\"\
+  parameter-link\" data-source-ref=\"/life-expectancy-increase-pre-1962\" data-source-type=\"\
+  calculated\" data-confidence=\"high\" title=\"Years of empirical validation for\
+  \ physician-led pragmatic trials (1883-1960) | ✓ High confidence | Formula: 1960\
+  \ - 1883 | Unit: years | Click to view calculation\">77</a>"
 "profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#profit-per-life\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"System profit\
@@ -1754,6 +1778,14 @@
   \ data-confidence=\"high\" title=\"Standard QALYs per life saved (WHO life tables)\
   \ | ✓ High confidence | Unit: QALYs/life | Click to view source\">35</a>"
 "standard_qalys_per_life_saved_cite": "@qaly-value"
+"suffering_hours_eliminated_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total hours\
+  \ of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time\
+  \ benefit from YLD component, not annual recurring) | ~ Medium confidence | Formula:\
+  \ YLD × 8760 hours/year | Unit: hours | Click to view calculation\">7.65T</a>"
+"suffering_hours_eliminated_total_latex": "$$\nHours = 873M \\times 8{,}760 = 7.65T\n\
+  $$"
 "sugar_subsidy_cost_per_person_annual": "<a href=\"https://warondisease.org/knowledge/references.html#sugar-subsidies-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"sugar-subsidies-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual cost of sugar subsidies per person\
@@ -2305,6 +2337,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "403"
-"total_latex_equation_count": "145"
-"total_citation_count": "132"
+"total_parameter_count": "408"
+"total_latex_equation_count": "147"
+"total_citation_count": "134"

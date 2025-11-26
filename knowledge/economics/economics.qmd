@@ -35,7 +35,7 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Every day of delay costs **{{< var global_disease_deaths_daily >}} lives** from curable diseases. The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
+**Results**: Every day of delay costs **{{< var global_disease_deaths_daily >}} lives** from curable diseases. The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time 8.2-year acceleration in disease eradication.
 
@@ -111,7 +111,7 @@ from dih_models.parameters import *
 
 - Conservative case: NPV benefit exceeds $100B over {{< var npv_time_horizon_years >}}-year horizon
 - Cost-effectiveness: ICER < $0/QALY (cost-saving while improving health)
-- Research acceleration: >10× increase in trial completion rates
+- Research acceleration: {{< var research_acceleration_multiplier >}}× increase in completed trials per year
 - Self-funding threshold: Annual benefits exceed annual costs by year 3 of implementation
 
 
@@ -234,7 +234,9 @@ That's a quadrillion-dollar bill lying on the ground. The only question is wheth
 
 ### Suffering Reduction
 
-[9.1 trillion](../appendix/regulatory-mortality-analysis.qmd#the-bill-for-the-8-year-delay) hours of human suffering eliminated annually (the unnecessary kind)
+{{< var suffering_hours_eliminated_total >}} hours of human suffering eliminated (one-time benefit from 8.2-year timeline shift)
+
+{{< var suffering_hours_eliminated_total_latex >}}
 
 ### Lives Saved
 
@@ -536,7 +538,7 @@ That's negative. Negative means you MAKE money while saving lives. Economists ca
 
 This approach doesn't cost money to save lives. Instead, it generates profit per life saved.
 
-Traditional charity: "Please donate [$3,500](../references.qmd#givewell-cost-per-life-saved) to save one life"
+Traditional charity: "Please donate {{< var givewell_cost_per_life_avg >}} to save [one life](../references.qmd#givewell-cost-per-life-saved)"
 This approach: "We saved a life as a side effect of doing profitable things"
 
 **Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
@@ -554,7 +556,7 @@ This approach: "We saved a life as a side effect of doing profitable things"
 
 Even at pessimistic 1-in-10 odds, this remains {{< var treaty_expected_vs_bed_nets_multiplier >}}x more cost-effective than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) and comparable to deworming, the gold standard.
 
-For context: Ottawa Treaty (landmine ban) was called a "bold gamble" that succeeded with 164 countries signing (80%+ of world).
+For context: [Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (landmine ban) was called a "bold gamble" that succeeded with [164 countries signing](../references.qmd#icbl-ottawa-treaty) (80%+ of world).
 :::
 
 ### The Detailed NPV Formulas (For Spreadsheet Enthusiasts)
@@ -859,32 +861,32 @@ This analysis rests on several core assumptions that should be made explicit for
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
 - **Pre-1962 system**: {{< var pre_1962_drug_development_cost >}} {{< var pre_1962_drug_development_cost_cite >}} per drug (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
-- **Post-1962 system**: [$2.6 billion](../references.qmd#drug-development-cost) per drug average, a **35× cost increase**; drug companies conduct both safety and efficacy trials internally
+- **Post-1962 system**: [$2.6 billion](../references.qmd#drug-development-cost) per drug average, a **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}× cost increase**; drug companies conduct both safety and efficacy trials internally
 - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
 
 ![Drug development costs exploded after 1962 regulations](../../assets/cost-to-develop-a-new-drug.png)
 
-The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development - it was a regulatory mandate that [increased costs 35-fold](../references.qmd#drug-development-cost) while slowing innovation.
+The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development - it was a regulatory mandate that increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing innovation.
 
 #### Historical operational model
 
-From 1883 to 1960, [144,000 physicians](../references.qmd#pre-1962-physician-trials) across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized, pragmatic trial system coincided with dramatic improvements in life expectancy during the early-to-mid 20th century.
+From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The [Journal of the American Medical Association (JAMA)](../references.qmd#jama-founded-1893) compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized, pragmatic trial system coincided with dramatic improvements in life expectancy during the early-to-mid 20th century.
 
 ![Life expectancy was flat for 10,000 years, then exploded starting in 1883](../../assets/life-expectancy-historical.jpg)
 
-Human life expectancy remained essentially unchanged from the Bronze Age through 1883. Then something unprecedented happened: organized medical research began, physicians started systematically testing treatments, and life expectancy doubled within 77 years. This dramatic acceleration occurred under the decentralized physician-led model (1883-1960), not the centralized pharmaceutical trial system that replaced it after 1962.
+Human life expectancy remained essentially unchanged from the Bronze Age through 1883. Then something unprecedented happened: organized medical research began, physicians started systematically testing treatments, and life expectancy doubled within {{< var pre_1962_validation_years >}} years. This dramatic acceleration occurred under the decentralized physician-led model (1883-1960), not the centralized pharmaceutical trial system that replaced it after 1962.
 
 **Safety record, the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevented the [thalidomide disaster](../references.qmd#thalidomide-no-us-birth-defects) that devastated Europe with [thousands of horrific birth defects](../references.qmd#thalidomide-birth-defects). When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed**, the safety testing framework worked exactly as intended.
 
-The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation, safety testing had succeeded. The response was to take efficacy testing away from 144,000 independent physicians and centralize it within pharmaceutical companies, [increasing costs 35-fold](../references.qmd#drug-development-cost) while slowing approvals substantially.
+The 1962 Kefauver-Harris Amendment added extensive efficacy requirements *in response to thalidomide*, despite the fact that the US had already been fully protected by existing safety regulations. The problem was not insufficient regulation, safety testing had succeeded. The response was to take efficacy testing away from {{< var pre_1962_physician_count >}} independent physicians and centralize it within pharmaceutical companies, increasing costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing approvals substantially.
 
 **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-2021), the first sustained decreases since 1915-1918, suggesting the post-1962 regulatory model may have reached diminishing or negative returns.
 
 #### Implications for generalizability
 
-The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has 77 years of empirical validation (1883-1960), not merely one case study.
+The RECOVERY trial ({{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient) demonstrates that modern infrastructure enables even greater efficiency than the pre-1962 system. However, the fundamental approach, physicians testing treatments on real patients in clinical practice settings, has {{< var pre_1962_validation_years >}} years of empirical validation (1883-1960), not merely one case study.
 
-The cost reduction estimates (50-95%) are conservative relative to historical costs. 1980s drugs cost approximately [$194M](../references.qmd#pre-1962-drug-costs-timeline) (compounded, 1990 dollars) compared to modern [$2.6B](../references.qmd#pre-1962-drug-costs-timeline) costs, representing a 13-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
+The cost reduction estimates (50-95%) are conservative relative to historical costs. 1980s drugs cost approximately {{< var drug_development_cost_1980s >}} [(compounded, 1990 dollars)](../references.qmd#pre-1962-drug-costs-timeline) compared to modern {{< var pharma_drug_development_cost_current >}} [costs](../references.qmd#pre-1962-drug-costs-timeline), representing a {{< var drug_cost_increase_1980s_to_current_multiplier >}}-fold increase. Modern technology (EHRs, wearables, automated data collection) suggests efficiency gains could exceed historical precedent while maintaining the safety protections that successfully prevented disasters like thalidomide.
 
 ### Political Feasibility Assumption
 
@@ -1253,8 +1255,8 @@ This section compares the 1% Treaty/dFDA system to best-in-class health interven
 | **1% Treaty/dFDA** | Cost per life saved | **$1.1M profit** | {{< var combined_peace_health_dividends_annual_for_roi_calc >}} |
 | **1% Treaty/dFDA** | Cost per QALY | {{< var treaty_dfda_cost_per_daly_timeline_shift >}} (cost-dominant) | {{< var disease_eradication_delay_dalys >}} QALYs |
 | **Childhood Vaccinations** | Annual benefit | Self-funding | ~{{< var childhood_vaccination_annual_benefit >}} |
-| **GiveWell Top Charities** | Cost per life saved | $3,000-$5,000 | Variable |
-| **GiveWell Top Charities** | Cost per QALY | $3,000-$5,000 | Variable |
+| **GiveWell Top Charities** | Cost per life saved | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
+| **GiveWell Top Charities** | Cost per QALY | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
 | **Smoking Cessation** | Annual benefit | Billions | Billions |
 | **Water & Sanitation** | Annual benefit | Hundreds of millions | Hundreds of millions |
 | **Cancer Screening** | Cost per QALY | $20,000-$50,000 | Variable |
@@ -1275,7 +1277,7 @@ This doesn't spend money. It **generates profit** while saving lives.
 
 #### Translation
 
-- Best charity: Costs $3,000-$5,000 per life saved (excellent)
+- Best charity: Costs {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} per life saved (excellent)
 - This system: Makes $1.1M profit per life saved
 
 One requires infinite fundraising from finite donors. The other prints money while curing diseases.
@@ -1383,7 +1385,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 | Safety Dimension | Traditional Trials | Pragmatic Trials |
 |:---|:---|:---|
 | Sample size | 100-300 patients | 10,000-100,000+ patients |
-| Patient selection | [86.1% excluded](../references.qmd#antidepressant-trial-exclusion-rates) (comorbidities, age, medications) | All volunteers included |
+| Patient selection | {{< var antidepressant_trial_exclusion_rate >}} [excluded](../references.qmd#antidepressant-trial-exclusion-rates) (comorbidities, age, medications) | All volunteers included |
 | Monitoring duration | 3-12 months | Continuous through EHR integration |
 | Publication | 37% of negative results published | 100% automatically published |
 | Subpopulation testing | Excludes elderly, children, pregnant patients | Tests all populations |
@@ -1407,7 +1409,7 @@ For detailed analysis, see [Regulatory Mortality Analysis](../appendix/regulator
 {{< var patient_willingness_trial_participation_pct >}} {{< var patient_willingness_trial_participation_pct_cite >}} of people say they're willing to participate in clinical trials, but currently only {{< var current_clinical_trial_participation_rate >}} {{< var current_clinical_trial_participation_rate_cite >}} actually participate because:
 
 - Trials require [traveling up to hundreds of miles to university hospitals](../references.qmd#clinical-trial-geographic-barriers) (67 miles on average, 500+ miles for rural/central US patients)
-- Trials exclude [86.1% of actual patients](../references.qmd#antidepressant-trial-exclusion-rates) (too old, too young, too sick, wrong kind of sick)
+- Trials exclude {{< var antidepressant_trial_exclusion_rate >}} of [actual patients](../references.qmd#antidepressant-trial-exclusion-rates) (too old, too young, too sick, wrong kind of sick)
 - Trials pay nothing and cost weeks of your time
 
 Decentralized pragmatic trials fix all of this:
@@ -1425,7 +1427,7 @@ New barrier: Digital enrollment in trials from home, minimal exclusions, immedia
 
 The Decentralized Institutes of Health puts patients in control through trial participation, not committee votes.
 
-**Current system**: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what 8 billion humans can try when dying
+**Current system**: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what {{< var global_population_2024 >}} humans can try when dying
 
 **New system**: Patients choose which trials to join. Trials that attract patients get funded. Trials that don't, die.
 
@@ -1480,7 +1482,7 @@ The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives fro
 
 The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions ({{< var trial_cost_reduction_factor >}}× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
 
-**Historical validation:** The physician-led pragmatic trial model has 77 years of empirical validation (1883-1960), not merely one modern case study. [144,000 physicians](../references.qmd#pre-1962-physician-trials) tested treatments on real patients in routine practice before the 1962 regulatory shift.
+**Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} years of empirical validation (1883-1960), not merely one modern case study. {{< var pre_1962_physician_count >}} physicians tested treatments on real patients in routine practice before the 1962 regulatory shift.
 
 **Trial complexity variation:** RECOVERY studied repurposed drugs (dexamethasone, hydroxychloroquine) for acute COVID-19 treatment. Novel therapeutics for chronic diseases may face different challenges. However:
 

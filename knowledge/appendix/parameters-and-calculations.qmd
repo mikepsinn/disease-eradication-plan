@@ -13,15 +13,28 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 403
+**Total parameters**: 408
 
-- External sources (peer-reviewed): 132
-- Calculated values: 223
+- External sources (peer-reviewed): 134
+- Calculated values: 226
 - Core definitions: 48
 
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+::: {.callout-tip icon=false collapse=false}
+### Antidepressant Trial Exclusion Rate {#sec-antidepressant_trial_exclusion_rate}
+
+**Value**: 86.1%
+
+Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
+
+**Source**: [antidepressant-trial-exclusion-rates](https://warondisease.org/knowledge/references.html#antidepressant-trial-exclusion-rates)
+
+*✓ High confidence*
+
+:::
 
 ::: {.callout-tip icon=false collapse=false}
 ### Average Annual Stock Market Return {#sec-average_market_return_pct}
@@ -306,6 +319,19 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 **Source**: [deworming-cost-per-daly](https://warondisease.org/knowledge/references.html#deworming-cost-per-daly)
 
 *? Low confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Drug Development Cost (1980s) {#sec-drug_development_cost_1980s}
+
+**Value**: $194M
+
+Drug development cost in 1980s (compounded to approval, 1990 dollars)
+
+**Source**: [pre-1962-drug-costs-timeline](https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline)
+
+*✓ High confidence*
 
 :::
 
@@ -3260,6 +3286,23 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Drug Cost Increase: 1980s to Current {#sec-drug_cost_increase_1980s_to_current_multiplier}
+
+**Value**: 13.4
+
+Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
+
+$$
+\frac{\$2.6B}{\$194M} = 13.4
+$$
+
+**Methodology**: [pre-1962-drug-costs-timeline](../references#pre-1962-drug-costs-timeline)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Drug Cost Increase: Pre-1962 to Current {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 **Value**: 52
@@ -4080,6 +4123,21 @@ US per capita mental health cost
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Pre-1962 Validation Years {#sec-pre_1962_validation_years}
+
+**Value**: 77
+
+Years of empirical validation for physician-led pragmatic trials (1883-1960)
+
+*Formula*: `1960 - 1883`
+
+**Methodology**: [life-expectancy-increase-pre-1962](../references#life-expectancy-increase-pre-1962)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### System Profit per Life Saved {#sec-profit_per_life_saved}
 
 **Value**: $168K
@@ -4438,6 +4496,23 @@ Optimistic total costs
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Total Suffering Hours Eliminated {#sec-suffering_hours_eliminated_total}
+
+**Value**: 7.65T
+
+Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)
+
+$$
+Hours = 873M \times 8{,}760 = 7.65T
+$$
+
+**Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
+
+*~ Medium confidence*
 
 :::
 

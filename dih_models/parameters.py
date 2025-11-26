@@ -1149,6 +1149,27 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     keywords=["rct", "participant", "subject", "volunteer", "enrollee", "clinical study", "clinical trial"]
 )  # Proven cost from Oxford RECOVERY trial
 
+ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
+    0.861,
+    source_ref=ReferenceID.ANTIDEPRESSANT_TRIAL_EXCLUSION_RATES,
+    source_type="external",
+    description="Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)",
+    display_name="Antidepressant Trial Exclusion Rate",
+    unit="percentage",
+    keywords=["exclusion", "trial", "antidepressant", "eligibility", "real-world", "pragmatic"]
+)
+
+PRE_1962_VALIDATION_YEARS = Parameter(
+    77,
+    source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
+    source_type="calculated",
+    description="Years of empirical validation for physician-led pragmatic trials (1883-1960)",
+    display_name="Pre-1962 Validation Years",
+    unit="years",
+    formula="1960 - 1883",
+    keywords=["pre-1962", "historical", "validation", "physician", "trials", "life expectancy"]
+)
+
 DFDA_SMALL_TRIAL_SIZE = Parameter(
     1000,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#trial-sizes",
@@ -1642,6 +1663,20 @@ DISEASE_ERADICATION_DELAY_DALYS = Parameter(
     confidence="medium",
     keywords=["disease eradication", "DALYs", "disease burden", "primary estimate"]
 )  # 7.90B DALYs
+
+# Suffering Hours (one-time benefit from timeline shift)
+SUFFERING_HOURS_ELIMINATED_TOTAL = Parameter(
+    DISEASE_ERADICATION_DELAY_YLD * 8760,  # YLD in years × hours per year
+    source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+    source_type="calculated",
+    description="Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)",
+    display_name="Total Suffering Hours Eliminated",
+    unit="hours",
+    formula="YLD × 8760 hours/year",
+    latex=r"Hours = 873M \times 8{,}760 = 7.65T",
+    confidence="medium",
+    keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden"]
+)  # 7.65 trillion hours total
 
 # Economic Valuation (using standardized $150k VSLY)
 DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS = Parameter(
@@ -6424,6 +6459,30 @@ PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
     confidence="high",
     peer_reviewed=True,
     keywords=["pharma", "drug", "development", "cost", "r&d", "current"]
+)
+
+DRUG_DEVELOPMENT_COST_1980S = Parameter(
+    194_000_000,
+    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
+    source_type="external",
+    description="Drug development cost in 1980s (compounded to approval, 1990 dollars)",
+    display_name="Drug Development Cost (1980s)",
+    unit="USD",
+    confidence="high",
+    keywords=["pharma", "drug", "development", "cost", "1980s", "historical"]
+)
+
+DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
+    PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / DRUG_DEVELOPMENT_COST_1980S,
+    source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
+    source_type="calculated",
+    description="Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)",
+    display_name="Drug Cost Increase: 1980s to Current",
+    unit="ratio",
+    formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
+    latex=r"\frac{\$2.6B}{\$194M} = 13.4",
+    confidence="high",
+    keywords=["cost", "increase", "multiplier", "drug", "development", "1980s", "current"]
 )
 
 DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
