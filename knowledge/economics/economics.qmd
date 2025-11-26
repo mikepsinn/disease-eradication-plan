@@ -32,23 +32,17 @@ from dih_models.parameters import *
 ## The Opportunity
 
 <div class="stat-number-hero">{{< var disease_eradication_delay_deaths_total >}}</div>
-<div class="stat-label-hero">lives saved by radically enhancing safety and efficacy testing</div>
+<div class="stat-label-hero">lives saved by redirecting {{< var treaty_reduction_pct >}} to enable any patient to participate in 82X more efficient pragmatic clinical trials</div>
 
 **+ {{< var disease_eradication_delay_dalys >}} healthy life-years gained**
 
-**= {{< var disease_eradication_delay_economic_loss >}} in total economic value**
+**= {{< var disease_eradication_delay_economic_loss >}} in total equivalent economic value at $150k per year of healthy life saved**
 
-::: {.callout-note appearance="simple"}
-## Scale
+**How**: Scale the Oxford RECOVERY pragmatic trial methodology globally for all treatments and all conditions.
 
-That's **{{< var treaty_value_per_person >}} per person on Earth** or equivalently, **{{< var treaty_value_vs_global_gdp_ratio >}} years of global GDP**.
-:::
+**Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor, eliminating the {{< var efficacy_lag_years >}} year post-safety efficacy lag.
+This means access to the cures for all diseases would be shifted forward in time by {{< var efficacy_lag_years >}} years.
 
-**How**: Scale the [Oxford RECOVERY trial methodology](https://www.recoverytrial.net/) globally for all treatments and all conditions.
-
-**Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor - accelerating cures {{< var efficacy_lag_years >}} years.
-
-Not by inventing new science. By **making medicine actually work** through universal data collection.
 
 ## The Solution
 
@@ -64,30 +58,9 @@ That's it. That's the entire plan.
 
 This isn't charity. It's **self-funding**. Every dollar redirected generates {{< var treaty_complete_roi_all_benefits >}}:1 ROI.
 
-## Why This Beats Every Other Health Intervention
-
-| Intervention | Cost per DALY | Lives Saved (Total) | Sustainability |
-|:-------------|-------------:|--------------------|:--------------|
-| **This Approach** | **{{< var treaty_dfda_cost_per_daly_timeline_shift >}}** | **{{< var disease_eradication_delay_deaths_total >}}** | **Self-funding** |
-| Bed Nets | {{< var bed_nets_cost_per_daly >}} | Ongoing annual | Requires perpetual funding |
-| Deworming | $28-82 | Ongoing annual | Requires perpetual funding |
-| Smallpox Eradication | N/A | ~3 million | One-time campaign |
-
-**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets** (the current gold standard)
+**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than mosquito bed nets** (the current most cost-effective intervention)
 
 **{{< var research_acceleration_multiplier >}}× research acceleration** = {{< var research_acceleration_cumulative_years_20yr >}} years of progress in 20 years
-
-**Zero sustainability problem**: Annual surplus of {{< var treaty_total_complete_benefits_annual >}} after initial campaign
-
-::: {.callout-important}
-## The Question
-
-This isn't "is it cost-effective?" (**yes**, by 686×)
-
-This isn't "does it scale?" (**yes**, {{< var disease_eradication_delay_deaths_total >}} lives)
-
-The only question: **Can {{< var treaty_campaign_total_cost >}} achieve treaty passage?**
-:::
 
 ## Three Numbers That Matter
 
@@ -99,7 +72,6 @@ The only question: **Can {{< var treaty_campaign_total_cost >}} achieve treaty p
 
 ### 2. Scale: **{{< var disease_eradication_delay_deaths_total >}} Lives**
 
-- {{< var global_disease_deaths_daily >}} preventable deaths per day
 - {{< var efficacy_lag_years >}}-year timeline acceleration
 - {{< var disease_eradication_delay_dalys >}} healthy life-years gained
 
@@ -109,7 +81,7 @@ The only question: **Can {{< var treaty_campaign_total_cost >}} achieve treaty p
 - Compresses decades of medical progress
 - Unlocks cures for diseases that don't exist yet
 
-## How It Works: The RECOVERY Trial Proof
+## How It Works
 
 The Oxford RECOVERY trial proved you can run clinical trials **{{< var trial_cost_reduction_factor >}}× cheaper** by:
 
@@ -128,7 +100,7 @@ The Oxford RECOVERY trial proved you can run clinical trials **{{< var trial_cos
 - Run {{< var dfda_active_trials >}} trials simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}})
 - **= {{< var research_acceleration_multiplier >}}× research acceleration**
 
-## The Investment Thesis
+## The Numbers
 
 | Metric | Value |
 |:-------|------:|
@@ -139,39 +111,28 @@ The Oxford RECOVERY trial proved you can run clinical trials **{{< var trial_cos
 | **Conservative ROI** | {{< var dfda_roi_rd_only >}}:1 |
 | **Complete ROI** | {{< var treaty_complete_roi_all_benefits >}}:1 |
 
-**Self-funding after year 1**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
+**Annual Benefits**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
 
-**Beats smallpox eradication**: {{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}} vs. our {{< var dfda_roi_rd_only >}}:1 (conservative)
+**Beats smallpox eradication**: {{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}} vs. {{< var dfda_roi_rd_only >}}:1 (conservative)
 
 ## The 5-Step Implementation Plan
 
-This isn't utopian. It's a checklist:
+### Step 1: Run a Global Survey
 
-### Step 1: Run the Survey
+Ask 3.5% of the global population if they would support a treaty that would redirect {{< var treaty_reduction_pct >}} of global military spending to hyper-efficient pragmatic clinical trials.
 
-Demonstrate overwhelming global support for medical acceleration over military acceleration.
-Creates legitimacy. Generates media attention. Makes politicians nervous.
-
-### Step 2: Reach the Tipping Point
-
-Hit {{< var global_population_activism_threshold_pct >}}
-
-Social-movement science: **{{< var global_population_activism_threshold_pct >}} {{< var global_population_activism_threshold_pct_cite >}} committed support** reliably causes policy adoption.
-This is the tipping point. Once you cross it, politicians follow or lose elections.
-
-### Step 3: Sell the Bonds
+### Step 2: Sell $1B in VICTORY Social Impact Bonds
 
 Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
 They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
 It's the Louisiana Purchase of medical research.
 
-### Step 4: Run the Lobbying Campaign
+### Step 3: Run the Lobbying Campaign
 
 Deploy Victory Bond funds to convince politicians that voters want this.
-Standard lobbying tactics, just pointed at healing instead of killing.
-Politicians discover they've "always cared deeply about medical research."
+Standard lobbying tactics, just pointed at curing diseases instead of making bombs.
 
-### Step 5: Build the Infrastructure
+### Step 4: Build the Infrastructure
 
 The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach.
 Thousands of neglected treatments finally get tested.
@@ -179,7 +140,7 @@ Effective ones scale instantly.
 
 **Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
 
-### Step 6: Eradicate Disease
+### Step 5: Eradicate Disease
 
 - Medical progress accelerates {{< var research_acceleration_multiplier >}}×
 - Disease categories start collapsing
@@ -193,10 +154,6 @@ Nobody needs to be convinced. They just need to count.
 
 **Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
----
-
-<details>
-<summary><strong>Academic Abstract</strong> (for researchers)</summary>
 
 ## Abstract
 
