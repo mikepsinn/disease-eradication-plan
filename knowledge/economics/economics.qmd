@@ -1,6 +1,6 @@
 ---
-title: 'Economic Impact Analysis: Reallocating Military Spending to Medical Research'
-description: Cost-benefit analysis of scaling the Oxford RECOVERY trial approach globally by reallocating 1% of military spending to fund universal patient participation in pragmatic trials
+title: 'How to Save 416 Million Lives for $0.13 Per DALY'
+description: Achieve 514 years of medical progress in 20 years (25× acceleration) and shift the cure of every disease forward by 8.2 years generating $1.2 quadrillion in value
 author:
   - name: Mike P. Sinn
     affiliation: Decentralized Institutes of Health
@@ -28,6 +28,119 @@ tbl-cap-location: top
 from dih_models.parameters import *
 
 ```
+
+## The Opportunity
+
+<div class="stat-number-hero">{{< var disease_eradication_delay_deaths_total >}}</div>
+<div class="stat-label-hero">lives saved by radically enhancing safety and efficacy testing</div>
+
+**+ {{< var disease_eradication_delay_dalys >}} healthy life-years gained**
+
+**= {{< var disease_eradication_delay_economic_loss >}} in total economic value**
+
+**How**: Scale the [Oxford RECOVERY trial methodology](https://www.recoverytrial.net/) globally for all treatments and all conditions.
+
+**Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor - accelerating cures {{< var efficacy_lag_years >}} years.
+
+Not by inventing new science. By **making medicine actually work** through universal data collection.
+
+## The Solution
+
+::: {.hero-banner}
+**Shift {{< var treaty_reduction_pct >}} of military spending to medical research.**
+
+That's it. That's the entire plan.
+:::
+
+- **Cost**: {{< var treaty_campaign_total_cost >}} campaign to pass treaty
+- **Funding**: {{< var treaty_annual_funding >}}/year (redirected from military budgets)
+- **Result**: {{< var research_acceleration_multiplier >}}× faster medical progress, {{< var disease_eradication_delay_deaths_total >}} lives saved
+
+This isn't charity. It's **self-funding**. Every dollar redirected generates {{< var treaty_complete_roi_all_benefits >}}:1 ROI.
+
+## For the Gates Foundation: Why This Beats Everything
+
+| Intervention | Cost per DALY | Lives Saved (Total) | Sustainability |
+|:-------------|-------------:|--------------------|:--------------|
+| **This Approach** | **{{< var treaty_dfda_cost_per_daly_timeline_shift >}}** | **{{< var disease_eradication_delay_deaths_total >}}** | **Self-funding** |
+| Bed Nets (Gates) | {{< var bed_nets_cost_per_daly >}} | Ongoing annual | Requires perpetual funding |
+| Deworming | $28-82 | Ongoing annual | Requires perpetual funding |
+| Smallpox Eradication | N/A | ~3 million | One-time campaign |
+
+**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets** (your current gold standard)
+
+**{{< var research_acceleration_multiplier >}}× research acceleration** = {{< var research_acceleration_cumulative_years_20yr >}} years of progress in 20 years
+
+**Zero sustainability problem**: Annual surplus of {{< var treaty_total_complete_benefits_annual >}} after initial campaign
+
+::: {.callout-important}
+## The Question
+
+This isn't "is it cost-effective?" (**yes**, by 686×)
+
+This isn't "does it scale?" (**yes**, {{< var disease_eradication_delay_deaths_total >}} lives)
+
+The only question: **Can {{< var treaty_campaign_total_cost >}} achieve treaty passage?**
+:::
+
+## Three Numbers That Matter
+
+### 1. Cost-Effectiveness: **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY**
+
+- **{{< var treaty_vs_bed_nets_multiplier >}}× better** than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY)
+- **Cost-dominant**: Saves money while saving lives
+- Even at 10% success probability: {{< var treaty_expected_cost_per_daly_conservative >}}/DALY (still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets)
+
+### 2. Scale: **{{< var disease_eradication_delay_deaths_total >}} Lives**
+
+- {{< var global_disease_deaths_daily >}} preventable deaths per day
+- {{< var efficacy_lag_years >}}-year timeline acceleration
+- {{< var disease_eradication_delay_dalys >}} healthy life-years gained
+
+### 3. Innovation: **{{< var research_acceleration_multiplier >}}× Faster**
+
+- {{< var research_acceleration_cumulative_years_20yr >}} years of research in 20 years
+- Compresses decades of medical progress
+- Unlocks cures for diseases that don't exist yet
+
+## How It Works: The RECOVERY Trial Proof
+
+The Oxford RECOVERY trial proved you can run clinical trials **{{< var trial_cost_reduction_factor >}}× cheaper** by:
+
+1. **Using existing hospitals** (not dedicated trial sites)
+2. **Paying patients** to participate (flips economic incentives)
+3. **Including real patients** (not just the 2% who meet restrictive criteria)
+
+**Results**:
+- {{< var recovery_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional)
+- Enrolled [49,000 patients](../references.qmd#recovery-trial-82x-cost-reduction) across [185 hospitals](../references.qmd#recovery-trial-82x-cost-reduction) in 3 months
+- Found [dexamethasone reduces COVID deaths 33%](../references.qmd#recovery-trial-dexamethasone-results)
+- Ruled out hydroxychloroquine faster than regulators
+
+**Scale this globally** with {{< var treaty_annual_funding >}}/year:
+- Fund {{< var dih_patients_fundable_annually >}} patients/year (vs. {{< var current_trial_slots_available >}} today)
+- Run {{< var dfda_active_trials >}} trials simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}})
+- **= {{< var research_acceleration_multiplier >}}× research acceleration**
+
+## The Investment Thesis
+
+| Metric | Value |
+|:-------|------:|
+| **Campaign Cost** | {{< var treaty_campaign_total_cost >}} |
+| **Annual Funding** | {{< var treaty_annual_funding >}} |
+| **Annual Surplus** | {{< var treaty_total_complete_benefits_annual >}} |
+| **Lives Saved** | {{< var disease_eradication_delay_deaths_total >}} |
+| **Conservative ROI** | {{< var dfda_roi_rd_only >}}:1 |
+| **Complete ROI** | {{< var treaty_complete_roi_all_benefits >}}:1 |
+
+**Self-funding after year 1**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
+
+**Beats smallpox eradication**: {{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}} vs. our {{< var dfda_roi_rd_only >}}:1 (conservative)
+
+---
+
+<details>
+<summary><strong>Academic Abstract</strong> (for researchers)</summary>
 
 ## Abstract
 
@@ -76,7 +189,7 @@ from dih_models.parameters import *
    - Generates profit per life saved rather than requiring subsidy
 
 7. **Research Acceleration**: {{< var research_acceleration_multiplier >}}× faster medical progress = {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years in 20 years
-   - Compresses decades of progress into years (from removing the bureaucratic performance art)
+   - Compresses decades of progress into years through universal real-world evidence collection
 
 8. **Robust Returns**: Even if costs double and benefits halve, still get {{< var treaty_conservative_scenario_roi >}}:1 to {{< var treaty_optimistic_scenario_roi >}}:1 ROI
 
@@ -208,7 +321,7 @@ The mechanism is financial, not bureaucratic:
 3. **Easy enrollment**: A streamlined FDA wrapper (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
 
-This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while removing regulatory friction.
+This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
 ## The Result
 
@@ -1503,7 +1616,7 @@ This intervention targets a different margin than traditional research scaling. 
 #### Distinction
 
 - **Bloom et al.:** Diminishing returns to *discovery* of new ideas (fundamental scientific breakthroughs getting harder to find)
-- **dFDA model:** Improving *execution* of existing trial designs (removing administrative friction, not discovering new biology)
+- **dFDA model:** Improving *execution* of existing trial designs (streamlining data collection, not discovering new biology)
 
 **Empirical evidence for efficiency gains:** RECOVERY trial and pre-1962 physician-led system both achieved 80-95% cost reductions by eliminating overhead (redundant monitoring, bespoke infrastructure, excessive documentation), not by making scientific discoveries easier.
 

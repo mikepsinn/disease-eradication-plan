@@ -1,10 +1,41 @@
 /* ==========================================
    ECONOMICS PROJECT CSS OVERRIDES
    ==========================================
-   
+
    This file contains style overrides specific to the economics project.
    It loads after styles.css, so any rules here will override the base styles.
    ========================================== */
 
+/* Comparison tables - subtle emphasis */
+.comparison-row-winner {
+    font-weight: 600;
+}
 
+.comparison-row-loser {
+    opacity: 0.6;
+}
 
+/* Tables - subtle winner emphasis */
+table tbody tr:first-child {
+    font-weight: 600;
+}
+
+/* Pull quotes - inherit book typography */
+.pull-quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    padding-left: 2rem;
+    margin: 3rem 0;
+    line-height: 1.4;
+}
+
+/* Important callouts - minimal structure */
+.urgency-box {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.urgency-box h3 {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+}

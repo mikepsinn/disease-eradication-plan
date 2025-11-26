@@ -431,6 +431,31 @@ nav a:hover,
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* Hero numbers - extra large impact numbers */
+.stat-number-hero {
+    font-size: 5rem;
+    line-height: 1;
+    display: block;
+    margin: 2rem 0 0.5rem 0;
+}
+
+.stat-label-hero {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+/* Mobile responsive hero numbers */
+@media (max-width: 767px) {
+    .stat-number-hero {
+        font-size: 3rem;
+    }
+
+    .stat-label-hero {
+        font-size: 1.2rem;
+    }
+}
+
 /* Lists - Better spacing */
 ul, ol {
     margin-bottom: 1.5rem;
