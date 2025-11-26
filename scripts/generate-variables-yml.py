@@ -347,7 +347,15 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                     formatted = f"${dollar_value:.4f}"
         else:
             # Value is in actual dollars, convert to appropriate scale
-            if abs_val >= 1e12:  # Trillions
+            if abs_val >= 1e15:  # Quadrillions
+                scaled = value / 1e15
+                if abs(scaled) >= 100:
+                    formatted = f"${scaled:.0f} quadrillion"  # e.g., "$123 quadrillion"
+                elif abs(scaled) >= 10:
+                    formatted = f"${scaled:.1f} quadrillion"  # e.g., "$12.3 quadrillion"
+                else:
+                    formatted = f"${scaled:.2f} quadrillion"  # e.g., "$1.23 quadrillion"
+            elif abs_val >= 1e12:  # Trillions
                 scaled = value / 1e12
                 if abs(scaled) >= 100:
                     formatted = f"${scaled:.0f}T"  # e.g., "$123T"
@@ -395,13 +403,29 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                     formatted = f"${value:.4f}"  # e.g., "$0.0013"
 
         # Clean up trailing .0 (e.g., "$50.0B" → "$50B")
-        return formatted.replace(".0B", "B").replace(".0M", "M").replace(".0T", "T").replace(".0K", "K")
+        return formatted.replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
 
     # Format plain numbers with appropriate precision
     # Auto-scale large numbers to M/B/K (like we do for currency)
     abs_val = abs(value)
 
-    if abs_val >= 1e9:  # Billions
+    if abs_val >= 1e15:  # Quadrillions
+        scaled = value / 1e15
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f} quadrillion"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f} quadrillion"
+        else:
+            formatted_num = f"{scaled:.2f} quadrillion"
+    elif abs_val >= 1e12:  # Trillions
+        scaled = value / 1e12
+        if abs(scaled) >= 100:
+            formatted_num = f"{scaled:.0f}T"
+        elif abs(scaled) >= 10:
+            formatted_num = f"{scaled:.1f}T"
+        else:
+            formatted_num = f"{scaled:.2f}T"
+    elif abs_val >= 1e9:  # Billions
         scaled = value / 1e9
         if abs(scaled) >= 100:
             formatted_num = f"{scaled:.0f}B"
@@ -444,7 +468,7 @@ def format_parameter_value(value: float, unit: str = "") -> str:
         formatted_num = clean_number(f"{value:.3g}")
 
     # Clean trailing zeros from scaled numbers
-    formatted_num = formatted_num.replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
+    formatted_num = formatted_num.replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
 
     # Add percentage formatting if applicable
     if is_percentage:

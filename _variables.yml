@@ -700,7 +700,7 @@
   \ Values global DALYs at standardized US/International normative rate ($150k) rather\
   \ than local ability-to-pay, representing the full human capital loss. | ~ Medium\
   \ confidence | Formula: DALYS_TOTAL × VSLY | Unit: USD | Click to view calculation\"\
-  >$1191T</a>"
+  >$1.19 quadrillion</a>"
 "disease_eradication_delay_economic_loss_latex": "$$\nLoss = 7.94B \\times \\$150k\
   \ = \\$1.191\\text{ quadrillion}\n$$"
 "disease_eradication_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
@@ -745,7 +745,7 @@
   \ timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer\
   \ value share ~20% maximizes long-term population health (Woods 2024). | ? Low confidence\
   \ | Formula: PRIMARY_TOTAL × 2 (combined timeline + volume effects) | Unit: USD\
-  \ | Click to view calculation\">$2383T</a>"
+  \ | Click to view calculation\">$2.38 quadrillion</a>"
 "disease_eradication_plus_acceleration_economic_loss_total_latex": "$$\nLoss_{total}\
   \ = \\$1,286T \\times 2 = \\$2,572T\n$$"
 "disease_related_caregiver_pct": "<a href=\"/disease-related-caregiving-estimate\"\
