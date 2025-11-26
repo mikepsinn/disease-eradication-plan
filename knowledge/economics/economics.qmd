@@ -101,7 +101,7 @@ from dih_models.parameters import *
 
 ## Research Hypothesis
 
-**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to fund decentralized pragmaticclinical trials generates return on investment between {{< var dfda_roi_rd_only >}}:1 (conservative estimate, R&D savings only) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
+**Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to fund decentralized pragmatic clinical trials generates return on investment between {{< var dfda_roi_rd_only >}}:1 (conservative estimate, R&D savings only) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
@@ -193,7 +193,7 @@ This mortality burden exceeds:
 
 {{< var disease_vs_terrorism_deaths_ratio_latex >}}
 
-- [Annual war deaths](../references.qmd#acled-active-combat-deaths) by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}:1 (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
+- [Annual war deaths](../references.qmd#acled-active-combat-deaths) by a factor of {{< var disease_vs_war_deaths_ratio >}}:1 (based on {{< var global_annual_conflict_deaths_total >}} conflict deaths annually)
 
 {{< var disease_vs_war_deaths_ratio_latex >}}
 
@@ -1045,7 +1045,7 @@ For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-anal
 
 **Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to medical research (patients and providers as trial participation subsidies). Platform overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
-This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
+This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
 
 ### What You Get Back
 
@@ -1473,7 +1473,7 @@ The {{< var trial_cost_reduction_pct >}} baseline R&D cost reduction derives fro
 
 The analysis relies significantly on the Oxford RECOVERY trial as empirical evidence for cost reductions ({{< var trial_cost_reduction_factor >}}× efficiency gain). Potential concerns about generalizing from a single case study are addressed through historical context:
 
-**Historical validation:** The physician-led pragmatic trial model has 80 years of empirical validation (1883-1960), not merely one modern case study. [144,000 physicians](../references.qmd#pre-1962-physician-trials) tested treatments on real patients in routine practice before the 1962 regulatory shift.
+**Historical validation:** The physician-led pragmatic trial model has 77 years of empirical validation (1883-1960), not merely one modern case study. [144,000 physicians](../references.qmd#pre-1962-physician-trials) tested treatments on real patients in routine practice before the 1962 regulatory shift.
 
 **Trial complexity variation:** RECOVERY studied repurposed drugs (dexamethasone, hydroxychloroquine) for acute COVID-19 treatment. Novel therapeutics for chronic diseases may face different challenges. However:
 
