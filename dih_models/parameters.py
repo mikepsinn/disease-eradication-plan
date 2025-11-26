@@ -2982,6 +2982,16 @@ GLOBAL_POPULATION_2024 = Parameter(
     keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"]
 )  # UN World Population Prospects 2022
 
+GLOBAL_GDP_ANNUAL_2024 = Parameter(
+    105_000_000_000_000,
+    source_ref="https://www.worldbank.org/en/publication/global-economic-prospects",
+    source_type="external",
+    description="Global GDP in 2024 (World Bank estimate, approximately $105 trillion USD)",
+    display_name="Global GDP Annual 2024",
+    unit="USD",
+    keywords=["2024", "gdp", "gross domestic product", "world economy", "global economy"]
+)  # World Bank Global Economic Prospects
+
 GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
     150000,
     source_ref=ReferenceID.DEATHS_FROM_TREATABLE_DISEASES_15M,
@@ -3502,6 +3512,31 @@ DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
     display_name="Expected Treaty ROI with 50% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"]
 )
+
+# Scale Comparison Parameters (demonstrating intervention magnitude)
+TREATY_VALUE_VS_GLOBAL_GDP_RATIO = Parameter(
+    DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS / GLOBAL_GDP_ANNUAL_2024,
+    source_type="calculated",
+    description="Ratio of total treaty economic value to global GDP (equivalent 'Earths' of GDP)",
+    display_name="Treaty Value vs Global GDP Ratio",
+    unit="ratio",
+    formula="TOTAL_ECONOMIC_VALUE / GLOBAL_GDP",
+    latex=r"Ratio = \$1.191\text{ quadrillion} / \$105T = 11,343",
+    confidence="medium",
+    keywords=["scale", "comparison", "gdp", "earth equivalent", "magnitude"]
+)  # ~11,343 (over 11,000 Earths of GDP equivalent)
+
+TREATY_VALUE_PER_PERSON = Parameter(
+    DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS / GLOBAL_POPULATION_2024,
+    source_type="calculated",
+    description="Total treaty economic value per person on Earth",
+    display_name="Treaty Value Per Person",
+    unit="USD",
+    formula="TOTAL_ECONOMIC_VALUE / GLOBAL_POPULATION",
+    latex=r"Per Person = \$1.191\text{ quadrillion} / 8B = \$148,875",
+    confidence="medium",
+    keywords=["per capita", "per person", "individual value", "personal benefit"]
+)  # ~$148,875 per person
 
 # DELETED: OPPORTUNITY_COST_PER_DAY and OPPORTUNITY_COST_PER_SECOND
 # Reason: These parameters were conceptually confused. They calculated the daily cost by dividing

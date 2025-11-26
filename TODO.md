@@ -82,9 +82,10 @@ All parameterization work for economics.qmd is complete. The remaining verificat
 **RIGHT**: "416 million lives saved" - that's the actual impact from 8.2-year acceleration
 
 ### Current Session TODO
-- [ ] Move "Mechanical Sequence" action plan section earlier (after RECOVERY proof, before Abstract)
-- [ ] Rename "The Mechanical Sequence" to clearer heading like "The 5-Step Implementation Plan"
-- [ ] Remove Gates Foundation-specific framing - make it general investor/funder pitch
+- [x] Move "Mechanical Sequence" action plan section earlier (after RECOVERY proof, before Abstract)
+- [x] Rename "The Mechanical Sequence" to clearer heading like "The 5-Step Implementation Plan"
+- [x] Remove Gates Foundation-specific framing - make it general investor/funder pitch
+- [x] Add scale comparisons (X Earths of GDP, value per human) - Created GLOBAL_GDP_ANNUAL_2024, TREATY_VALUE_VS_GLOBAL_GDP_RATIO, TREATY_VALUE_PER_PERSON parameters
 - [ ] Collapse "Research Hypothesis" section (H₀/H₁ academic theater)
 - [ ] Simplify "Key Findings" callout (still has number soup)
 

@@ -38,6 +38,12 @@ from dih_models.parameters import *
 
 **= {{< var disease_eradication_delay_economic_loss >}} in total economic value**
 
+::: {.callout-note appearance="simple"}
+## Scale
+
+That's **{{< var treaty_value_per_person >}} per person on Earth** or equivalently, **{{< var treaty_value_vs_global_gdp_ratio >}} years of global GDP**.
+:::
+
 **How**: Scale the [Oxford RECOVERY trial methodology](https://www.recoverytrial.net/) globally for all treatments and all conditions.
 
 **Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor - accelerating cures {{< var efficacy_lag_years >}} years.

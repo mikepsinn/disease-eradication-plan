@@ -1166,6 +1166,12 @@
   external\" data-confidence=\"high\" title=\"Global cost to achieve universal education\
   \ | ✓ High confidence | Unit: USD | Click to view source\">$30B</a>"
 "global_education_for_all_cost_cite": "@unesco-education-for-all-cost"
+"global_gdp_annual_2024": "<a href=\"https://warondisease.org/knowledge/references.html#https://www.worldbank.org/en/publication/global-economic-prospects\"\
+  \ class=\"parameter-link\" data-source-ref=\"https://www.worldbank.org/en/publication/global-economic-prospects\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global GDP in 2024\
+  \ (World Bank estimate, approximately $105 trillion USD) | ✓ High confidence | Unit:\
+  \ USD | Click to view source\">$105T</a>"
+"global_gdp_annual_2024_cite": "@https-www-worldbank-org-en-publication-global-economic-prospects"
 "global_life_expectancy_2024": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -2186,6 +2192,14 @@
   \ view calculation\">$155B</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nRecurring_{annual} = \\$113.6B\
   \ + \\$41.5B = \\$155.1B\n$$"
+"treaty_value_per_person": "<span class=\"parameter-link\" title=\"parameters.TREATY_VALUE_PER_PERSON\"\
+  >$149K</span>"
+"treaty_value_per_person_latex": "$$\nPer Person = \\$1.191\\text{ quadrillion} /\
+  \ 8B = \\$148,875\n$$"
+"treaty_value_vs_global_gdp_ratio": "<span class=\"parameter-link\" title=\"parameters.TREATY_VALUE_VS_GLOBAL_GDP_RATIO\"\
+  >11.3</span>"
+"treaty_value_vs_global_gdp_ratio_latex": "$$\nRatio = \\$1.191\\text{ quadrillion}\
+  \ / \\$105T = 11,343\n$$"
 "treaty_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"parameters.TREATY_VS_BED_NETS_MULTIPLIER\"\
   >707</span>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
@@ -2337,6 +2351,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "408"
-"total_latex_equation_count": "147"
-"total_citation_count": "134"
+"total_parameter_count": "411"
+"total_latex_equation_count": "149"
+"total_citation_count": "135"

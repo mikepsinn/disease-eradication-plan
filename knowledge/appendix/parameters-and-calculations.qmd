@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 408
+**Total parameters**: 411
 
-- External sources (peer-reviewed): 134
-- Calculated values: 226
+- External sources (peer-reviewed): 135
+- Calculated values: 228
 - Core definitions: 48
 
 ## External Data Sources {#sec-external}
@@ -798,6 +798,19 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 Global cost to achieve universal education
 
 **Source**: [unesco-education-for-all-cost](https://warondisease.org/knowledge/references.html#unesco-education-for-all-cost)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Global GDP Annual 2024 {#sec-global_gdp_annual_2024}
+
+**Value**: $105T
+
+Global GDP in 2024 (World Bank estimate, approximately $105 trillion USD)
+
+**Source**: [https://www.worldbank.org/en/publication/global-economic-prospects](https://warondisease.org/knowledge/references.html#https://www.worldbank.org/en/publication/global-economic-prospects)
 
 *✓ High confidence*
 
@@ -5152,6 +5165,36 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Treaty Value Per Person {#sec-treaty_value_per_person}
+
+**Value**: $149K
+
+Total treaty economic value per person on Earth
+
+$$
+Per Person = \$1.191\text{ quadrillion} / 8B = \$148,875
+$$
+
+*~ Medium confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Treaty Value vs Global GDP Ratio {#sec-treaty_value_vs_global_gdp_ratio}
+
+**Value**: 11.3
+
+Ratio of total treaty economic value to global GDP (equivalent 'Earths' of GDP)
+
+$$
+Ratio = \$1.191\text{ quadrillion} / \$105T = 11,343
+$$
+
+*~ Medium confidence*
 
 :::
 
