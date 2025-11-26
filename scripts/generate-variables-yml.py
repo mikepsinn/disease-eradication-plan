@@ -254,8 +254,21 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                     formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
                 else:
                     formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
-            else:  # Thousands or less
-                formatted = f"${value*1000000:.0f}K"
+            else:
+                # Less than 1M - convert billions to dollars
+                dollar_value = value * 1_000_000_000
+                if dollar_value >= 1000:
+                    formatted = f"${dollar_value/1000:.1f}K"  # e.g., "$1.2K"
+                elif dollar_value >= 10:
+                    formatted = f"${dollar_value:.0f}"
+                elif dollar_value >= 1:
+                    formatted = f"${dollar_value:.2f}"  # e.g., "$1.27"
+                elif dollar_value >= 0.10:
+                    formatted = f"${dollar_value:.2f}"
+                elif dollar_value >= 0.01:
+                    formatted = f"${dollar_value:.3f}"
+                else:
+                    formatted = f"${dollar_value:.4f}"
         elif is_in_millions:
             # Value is already in millions
             if abs_val >= 1000:  # Billions
@@ -282,8 +295,18 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                 else:
                     formatted = f"${scaled:.2f}K"  # e.g., "$1.23K"
             else:
-                # Less than 1000
-                formatted = f"${value*1000:.0f}"
+                # Less than 1K - convert millions to dollars
+                dollar_value = value * 1_000_000
+                if dollar_value >= 10:
+                    formatted = f"${dollar_value:.0f}"
+                elif dollar_value >= 1:
+                    formatted = f"${dollar_value:.2f}"  # e.g., "$1.27"
+                elif dollar_value >= 0.10:
+                    formatted = f"${dollar_value:.2f}"
+                elif dollar_value >= 0.01:
+                    formatted = f"${dollar_value:.3f}"
+                else:
+                    formatted = f"${dollar_value:.4f}"
         elif is_in_thousands:
             # Value is already in thousands
             if abs_val >= 1000000:  # Billions
@@ -310,8 +333,18 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                 else:
                     formatted = f"${value:.2f}K"  # e.g., "$1.23K" (3 sig figs)
             else:
-                # Less than 1000
-                formatted = f"${value*1000:.0f}"
+                # Less than 1K - convert thousands to dollars
+                dollar_value = value * 1000
+                if dollar_value >= 10:
+                    formatted = f"${dollar_value:.0f}"
+                elif dollar_value >= 1:
+                    formatted = f"${dollar_value:.2f}"  # e.g., "$1.27"
+                elif dollar_value >= 0.10:
+                    formatted = f"${dollar_value:.2f}"
+                elif dollar_value >= 0.01:
+                    formatted = f"${dollar_value:.3f}"
+                else:
+                    formatted = f"${dollar_value:.4f}"
         else:
             # Value is in actual dollars, convert to appropriate scale
             if abs_val >= 1e12:  # Trillions
@@ -346,9 +379,20 @@ def format_parameter_value(value: float, unit: str = "") -> str:
                     formatted = f"${scaled:.1f}K"  # e.g., "$12.3K"
                 else:
                     formatted = f"${scaled:.2f}K"  # e.g., "$1.23K"
-            else:
-                # Less than 1000
+            elif abs_val >= 10:
+                # $10 to $999 - no decimals needed
                 formatted = f"${value:.0f}"
+            elif abs_val >= 1:
+                # $1 to $9.99 - show cents for precision
+                formatted = f"${value:.2f}"
+            else:
+                # Less than $1 - show cents with appropriate precision (3 sig figs)
+                if abs_val >= 0.10:
+                    formatted = f"${value:.2f}"  # e.g., "$0.13"
+                elif abs_val >= 0.01:
+                    formatted = f"${value:.3f}"  # e.g., "$0.013"
+                else:
+                    formatted = f"${value:.4f}"  # e.g., "$0.0013"
 
         # Clean up trailing .0 (e.g., "$50.0B" → "$50B")
         return formatted.replace(".0B", "B").replace(".0M", "M").replace(".0T", "T").replace(".0K", "K")

@@ -4210,7 +4210,7 @@ Optimistic campaign cost (5-year amortization)
 ::: {.callout-note icon=false collapse=false}
 ### Central Cost per Life Saved {#sec-sensitivity_cost_per_life_central}
 
-**Value**: $-7
+**Value**: $-6.55
 
 Central cost per life saved
 
@@ -4223,7 +4223,7 @@ Central cost per life saved
 ::: {.callout-note icon=false collapse=false}
 ### Conservative Cost per Life Saved {#sec-sensitivity_cost_per_life_conservative}
 
-**Value**: $-6
+**Value**: $-5.97
 
 Conservative cost per life saved
 
@@ -4236,7 +4236,7 @@ Conservative cost per life saved
 ::: {.callout-note icon=false collapse=false}
 ### Optimistic Cost per Life Saved {#sec-sensitivity_cost_per_life_optimistic}
 
-**Value**: $-5
+**Value**: $-4.79
 
 Optimistic cost per life saved
 
@@ -4834,7 +4834,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Cost per DALY Averted (Timeline Shift) {#sec-treaty_dfda_cost_per_daly_timeline_shift}
 
-**Value**: $0
+**Value**: $0.13
 
 Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.
 
@@ -4851,7 +4851,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Cost per DALY (Conservative 10% Success) {#sec-treaty_expected_cost_per_daly_conservative}
 
-**Value**: $1
+**Value**: $1.26
 
 Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still 70x more cost-effective than bed nets ($89.0/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.
 
