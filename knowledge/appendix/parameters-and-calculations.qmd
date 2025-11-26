@@ -13,9 +13,9 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 402
+**Total parameters**: 403
 
-- External sources (peer-reviewed): 131
+- External sources (peer-reviewed): 132
 - Calculated values: 223
 - Core definitions: 48
 
@@ -943,6 +943,19 @@ Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
 **Source**: [recovery-trial-82x-cost-reduction](https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Patient Willingness to Participate in Clinical Trials {#sec-patient_willingness_trial_participation_pct}
+
+**Value**: 44.8%
+
+Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
+
+**Source**: [patient-willingness-clinical-trials](https://warondisease.org/knowledge/references.html#patient-willingness-clinical-trials)
+
+*~ Medium confidence*
 
 :::
 

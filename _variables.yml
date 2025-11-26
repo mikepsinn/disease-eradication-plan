@@ -1322,6 +1322,12 @@
   \ trial duration (found life-saving treatment in 3 months) | ✓ High confidence |\
   \ Unit: months | Click to view source\">3</a>"
 "oxford_recovery_trial_duration_months_cite": "@recovery-trial-82x-cost-reduction"
+"patient_willingness_trial_participation_pct": "<a href=\"https://warondisease.org/knowledge/references.html#patient-willingness-clinical-trials\"\
+  \ class=\"parameter-link\" data-source-ref=\"patient-willingness-clinical-trials\"\
+  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Patient willingness\
+  \ to participate in drug trials (44.8% in surveys, 88% when actually approached)\
+  \ | ~ Medium confidence | Unit: percentage | Click to view source\">44.8%</a>"
+"patient_willingness_trial_participation_pct_cite": "@patient-willingness-clinical-trials"
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual peace\
@@ -2299,6 +2305,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "402"
+"total_parameter_count": "403"
 "total_latex_equation_count": "145"
-"total_citation_count": "131"
+"total_citation_count": "132"
