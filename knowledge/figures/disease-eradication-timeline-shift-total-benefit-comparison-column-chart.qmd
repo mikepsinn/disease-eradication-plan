@@ -20,7 +20,7 @@ setup_chart_style()
 # Using 100-year cumulative benefits for ongoing interventions
 
 interventions = {
-    '1% Treaty/dFDA\n8.2 Year\nDisease\nEradication\nTimeline\nShift': {
+    '1% Treaty\ndFDA\n8.2 Year\nDisease\nEradication\nTimeline\nShift': {
         'benefit': float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS),
         'category': 'proposed',
         'note': 'One-time benefit from eliminating 8.2-year efficacy lag',
@@ -159,7 +159,7 @@ dalys_formatted = format_parameter_value(DISEASE_ERADICATION_DELAY_DALYS, "DALYs
 qaly_value_formatted = format_parameter_value(STANDARD_ECONOMIC_QALY_VALUE_USD, "USD")
 total_formatted = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS, "USD")
 
-callout_text = f'Calculation:\n\n{daily_deaths_formatted}/day from curable diseases\n× {efficacy_lag_formatted} × 365 days\n= {deaths_formatted} avoided\n\n× 19.1 DALYs per death (average)\n= {dalys_formatted}\n\n× {qaly_value_formatted}/QALY economic value\n= {total_formatted}\n\nMechanism: dFDA enables patient participation\nin Phase 2/3 efficacy trials, providing treatment\naccess and generating safety/effectiveness data\n{efficacy_lag_formatted} earlier than current system.\n\nConservative estimate: Does not include 115x\nresearch acceleration effects or reduced\nbarriers to entry for new treatments.'
+callout_text = f'Calculation:\n{daily_deaths_formatted}/day from curable diseases\n× {efficacy_lag_formatted} × 365 days = {deaths_formatted} avoided\n× 19.1 DALYs per death (average) = {dalys_formatted}\n× {qaly_value_formatted}/QALY economic value = {total_formatted}\n\nMechanism: dFDA enables patient participation\nin Phase 2/3 efficacy trials, providing treatment\naccess and generating safety/effectiveness data\n{efficacy_lag_formatted} earlier than current system.\n\nConservative estimate: Does not include 115x\nresearch acceleration effects or reduced\nbarriers to entry for new treatments.'
 
 ax.text(0.62, 0.45, callout_text,
         transform=ax.transAxes, ha='center', va='center',
