@@ -218,6 +218,8 @@ This isn't "funding infrastructure" - it's making trial participation financiall
 
 **{{< var disease_eradication_delay_economic_loss >}}** in total economic value from eliminating the {{< var efficacy_lag_years >}}-year regulatory delay.
 
+{{< var disease_eradication_delay_economic_loss_latex >}}
+
 This is the monetized value of {{< var disease_eradication_delay_deaths_total >}} lives saved and {{< var disease_eradication_delay_dalys >}} healthy life-years gained by moving disease eradication {{< var efficacy_lag_years >}} years earlier. It's a one-time timeline shift, not an annual benefit.
 
 **Investment required**: {{< var treaty_campaign_total_cost >}}
@@ -1412,7 +1414,7 @@ Decentralized pragmatic trials fix all of this:
 Current barrier: Geographic travel requirements, restrictive eligibility criteria, months of waiting
 New barrier: Digital enrollment in trials from home, minimal exclusions, immediate or scheduled participation
 
-{{< var patient_willingness_trial_participation_pct >}} of patients are willing to participate in clinical trials, yet only {{< var current_patient_participation_rate >}} actually do. The bottleneck isn't human willingness—it's the requirement for dedicated trial infrastructure and restrictive eligibility criteria.
+{{< var patient_willingness_trial_participation_pct >}} of patients are willing to participate in clinical trials, yet only {{< var current_patient_participation_rate >}} actually do. The bottleneck isn't human willingness, it's the requirement for dedicated trial infrastructure and restrictive eligibility criteria.
 
 ### Who's Actually In Charge (Patients Edition)
 
