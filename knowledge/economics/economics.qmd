@@ -38,27 +38,18 @@ from dih_models.parameters import *
 
 **= {{< var disease_eradication_delay_economic_loss >}} in total equivalent economic value at $150k per year of healthy life saved**
 
-**How**: Scale the Oxford RECOVERY pragmatic trial methodology globally for all treatments and all conditions.
+**How**: Humanity redirects 1% of global military spending to scale the Oxford RECOVERY pragmatic trial methodology globally for all treatments and all conditions.
 
 **Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor, eliminating the {{< var efficacy_lag_years >}} year post-safety efficacy lag.
 This means access to the cures for all diseases would be shifted forward in time by {{< var efficacy_lag_years >}} years.
-
-
-## The Solution
-
-::: {.hero-banner}
-**Shift {{< var treaty_reduction_pct >}} of military spending to medical research.**
-
-That's it. That's the entire plan.
-:::
 
 - **Cost**: {{< var treaty_campaign_total_cost >}} campaign to pass treaty
 - **Funding**: {{< var treaty_annual_funding >}}/year (redirected from military budgets)
 - **Result**: {{< var research_acceleration_multiplier >}}× faster medical progress, {{< var disease_eradication_delay_deaths_total >}} lives saved
 
-This isn't charity. It's **self-funding**. Every dollar redirected generates {{< var treaty_complete_roi_all_benefits >}}:1 ROI.
+This plan is **self-funding**. Every dollar redirected generates {{< var treaty_complete_roi_all_benefits >}}:1 ROI.
 
-**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than mosquito bed nets** (the current most cost-effective intervention)
+**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than malaria-prevention bed nets** (the current most cost-effective intervention)
 
 **{{< var research_acceleration_multiplier >}}× research acceleration** = {{< var research_acceleration_cumulative_years_20yr >}} years of progress in 20 years
 
@@ -70,12 +61,12 @@ This isn't charity. It's **self-funding**. Every dollar redirected generates {{<
 - **Cost-dominant**: Saves money while saving lives
 - Even at 10% success probability: {{< var treaty_expected_cost_per_daly_conservative >}}/DALY (still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets)
 
-### 2. Scale: **{{< var disease_eradication_delay_deaths_total >}} Lives**
+### 2. **{{< var disease_eradication_delay_deaths_total >}} Lives Saved**
 
 - {{< var efficacy_lag_years >}}-year timeline acceleration
 - {{< var disease_eradication_delay_dalys >}} healthy life-years gained
 
-### 3. Innovation: **{{< var research_acceleration_multiplier >}}× Faster**
+### 3. **{{< var research_acceleration_multiplier >}}× Faster Medical Progress**
 
 - {{< var research_acceleration_cumulative_years_20yr >}} years of research in 20 years
 - Compresses decades of medical progress
@@ -161,18 +152,15 @@ Nobody needs to be convinced. They just need to count.
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: Every day of delay costs **{{< var global_disease_deaths_daily >}} lives** from curable diseases. The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
+**Results**: The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than malaria-prevention bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time 8.2-year acceleration in disease eradication.
 
-**Keywords**: {{< var treaty_reduction_pct >}} Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved, {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI, regulatory efficacy lag elimination, greed-aligned incentives
+**Keywords**: {{< var treaty_reduction_pct >}} Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved
 
 
 ::: {.callout-note}
 ## Key Findings
-
-0. **Cost of Delay**: Every day without this intervention costs:
-   - **{{< var global_disease_deaths_daily >}} lives lost** from the {{< var efficacy_lag_years >}}-year post-safety efficacy lag (Phase II/III delay, NOT safety testing)
    - **{{< var disease_eradication_delay_dalys >}} DALYs foregone** total over the timeline shift (years of healthy life lost to regulatory delay)
 
 1. **Cost-Effectiveness (Conditional on Success)**:
