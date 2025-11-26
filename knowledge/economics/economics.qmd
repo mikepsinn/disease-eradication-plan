@@ -1045,7 +1045,7 @@ This assumes gradual rollout (0% to {{< var peace_dividend_environmental >}} ove
 
 **Combined**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}}/year
 
-And this is the *conservative* case that ignores faster drug access, better treatment selection, reduced adverse events, and every other benefit that sounds "too good."
+The conservative case excludes faster drug access, better treatment selection, reduced adverse events, and the eight additional benefits quantified in the complete case.
 
 **Worst-case check**: If costs double and benefits halve (everything goes catastrophically wrong), you still get {{< var treaty_conservative_scenario_roi >}}:1 to {{< var treaty_optimistic_scenario_roi >}}:1 returns. [Full sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd).
 
@@ -1055,7 +1055,7 @@ And this is the *conservative* case that ignores faster drug access, better trea
 
 Most health interventions require ongoing funding. This one generates profit while saving lives.
 
-In health economics, that's called a **dominant intervention** - simultaneously reducing costs while improving health outcomes. It's rare. The last one this good was smallpox eradication.
+In health economics, that's called a **dominant intervention** - simultaneously reducing costs while improving health outcomes. Smallpox eradication is the historical precedent.
 
 #### Incremental Cost-Effectiveness Ratio (ICER)
 
@@ -1264,7 +1264,7 @@ Both are good. One breaks the usual economic rules.
 
 Vaccines and smoking cessation programs solve specific problems with high returns - they're amazing interventions.
 
-The {{< var treaty_reduction_pct >}} Treaty tackles two problems at once:
+The {{< var treaty_reduction_pct >}} Treaty pays for itself by solving two problems at once:
 
 1. **The Peace Dividend** ({{< var peace_dividend_annual_societal_benefit >}} annually) - created simply by reducing global conflict spending 1%
 2. **Pragmatic trial infrastructure** - uses a fraction of that dividend to fix the *system* of medical research, generating a second massive win
@@ -1340,7 +1340,7 @@ Defense lobbyists currently get [$1,813 back for every $1 spent](../references.q
 
 When you show them a spreadsheet where they keep {{< var defense_sector_retention_pct >}} of their current contracts PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds, they stop lobbying against you and start lobbying for you.
 
-You're not defeating greed. You're redirecting it. Like convincing a river to flow downhill instead of uphill - technically you're not doing anything, you're just removing the dam.
+You're not defeating greed. You're aligning economic incentives to direct existing profit motives toward medical research.
 
 Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed {{< var treaty_reduction_pct >}} reduction is significantly more modest.
 
@@ -1394,10 +1394,10 @@ Decentralized pragmatic trials fix all of this:
 - Everyone qualifies (you don't need to be the perfect kind of sick)
 - Get subsidized to participate + access to treatments
 
-Current barrier: "Drive hundreds of miles, wait 6 months, get rejected for having the disease wrong"
-New barrier: "Click button"
+Current barrier: Geographic travel requirements, restrictive eligibility criteria, months of waiting
+New barrier: Digital enrollment in trials from home, minimal exclusions, immediate or scheduled participation
 
-You have 240 times more willing participants than current trials use. The bottleneck isn't human willingness. It's the requirement for dedicated trial infrastructure and restrictive eligibility criteria.
+{{< var patient_willingness_trial_participation_pct >}} of patients are willing to participate in clinical trials, yet only {{< var current_patient_participation_rate >}} actually do. The bottleneck isn't human willingness—it's the requirement for dedicated trial infrastructure and restrictive eligibility criteria.
 
 ### Who's Actually In Charge (Patients Edition)
 
@@ -1411,7 +1411,7 @@ Your subsidy follows you to whichever trial you join. Researchers compete to des
 
 All transactions publicly recorded. All spending transparent. All decisions auditable.
 
-It's democracy for medicine - patients vote with their participation, not committees voting on what's "worthy" of study.
+Patients select which trials to join. Trials that attract participants receive funding. Researchers compete for patient participation rather than committee grants.
 
 The system operates through distributed infrastructure:
 
@@ -1760,8 +1760,6 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to medi
 **The Evidence**: Conservative assumptions, validated by [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), tested via [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). Uses standard health economics (NPV, QALYs, ICER) for direct comparison with existing interventions.
 
 **The Reality**: This works because every step is economically rational for everyone involved. Nobody needs to evolve morally. They just need to count.
-
-![Join or Die - Collective action for survival](../../assets/join-or-die-snake.jpg)
 
 ## References
 
