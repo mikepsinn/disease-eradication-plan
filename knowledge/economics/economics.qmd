@@ -58,16 +58,16 @@ That's it. That's the entire plan.
 
 This isn't charity. It's **self-funding**. Every dollar redirected generates {{< var treaty_complete_roi_all_benefits >}}:1 ROI.
 
-## For the Gates Foundation: Why This Beats Everything
+## Why This Beats Every Other Health Intervention
 
 | Intervention | Cost per DALY | Lives Saved (Total) | Sustainability |
 |:-------------|-------------:|--------------------|:--------------|
 | **This Approach** | **{{< var treaty_dfda_cost_per_daly_timeline_shift >}}** | **{{< var disease_eradication_delay_deaths_total >}}** | **Self-funding** |
-| Bed Nets (Gates) | {{< var bed_nets_cost_per_daly >}} | Ongoing annual | Requires perpetual funding |
+| Bed Nets | {{< var bed_nets_cost_per_daly >}} | Ongoing annual | Requires perpetual funding |
 | Deworming | $28-82 | Ongoing annual | Requires perpetual funding |
 | Smallpox Eradication | N/A | ~3 million | One-time campaign |
 
-**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets** (your current gold standard)
+**{{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets** (the current gold standard)
 
 **{{< var research_acceleration_multiplier >}}× research acceleration** = {{< var research_acceleration_cumulative_years_20yr >}} years of progress in 20 years
 
@@ -136,6 +136,56 @@ The Oxford RECOVERY trial proved you can run clinical trials **{{< var trial_cos
 **Self-funding after year 1**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
 
 **Beats smallpox eradication**: {{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}} vs. our {{< var dfda_roi_rd_only >}}:1 (conservative)
+
+## The 5-Step Implementation Plan
+
+This isn't utopian. It's a checklist:
+
+### Step 1: Run the Survey
+
+Demonstrate overwhelming global support for medical acceleration over military acceleration.
+Creates legitimacy. Generates media attention. Makes politicians nervous.
+
+### Step 2: Reach the Tipping Point
+
+Hit {{< var global_population_activism_threshold_pct >}}
+
+Social-movement science: **{{< var global_population_activism_threshold_pct >}} {{< var global_population_activism_threshold_pct_cite >}} committed support** reliably causes policy adoption.
+This is the tipping point. Once you cross it, politicians follow or lose elections.
+
+### Step 3: Sell the Bonds
+
+Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
+They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
+It's the Louisiana Purchase of medical research.
+
+### Step 4: Run the Lobbying Campaign
+
+Deploy Victory Bond funds to convince politicians that voters want this.
+Standard lobbying tactics, just pointed at healing instead of killing.
+Politicians discover they've "always cared deeply about medical research."
+
+### Step 5: Build the Infrastructure
+
+The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach.
+Thousands of neglected treatments finally get tested.
+Effective ones scale instantly.
+
+**Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
+
+### Step 6: Eradicate Disease
+
+- Medical progress accelerates {{< var research_acceleration_multiplier >}}×
+- Disease categories start collapsing
+- Healthspan overtakes pathology
+- Investors profit massively
+- Governments save money
+- Everyone becomes healthier, safer, richer
+
+The plan works because **every step is economically rational for everyone involved**.
+Nobody needs to be convinced. They just need to count.
+
+**Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
 ---
 
@@ -486,57 +536,6 @@ They just follow their calculator to accidentally save humanity.
 You just point everyone's greed at diseases instead of each other.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
-
-## The Mechanical Sequence (How to Actually Do This)
-
-This isn't utopian. It's a checklist:
-
-### Step 1: Run the Survey
-
-Demonstrate overwhelming global support for medical acceleration over military acceleration.
-Creates legitimacy. Generates media attention. Makes politicians nervous.
-
-### Step 2: Reach the Tipping Point
-
-Hit {{< var global_population_activism_threshold_pct >}}
-
-Social-movement science: **{{< var global_population_activism_threshold_pct >}} {{< var global_population_activism_threshold_pct_cite >}} committed support** reliably causes policy adoption.
-This is the tipping point. Once you cross it, politicians follow or lose elections.
-
-### Step 3: Sell the Bonds
-
-Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
-They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
-It's the Louisiana Purchase of medical research.
-
-### Step 4: Run the Lobbying Campaign
-
-Deploy Victory Bond funds to convince politicians that voters want this.
-Standard lobbying tactics, just pointed at healing instead of killing.
-Politicians discover they've "always cared deeply about medical research."
-
-### Step 5: Build the Infrastructure
-
-The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach.
-Thousands of neglected treatments finally get tested.
-Effective ones scale instantly.
-
-**Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
-
-### Step 6: Watch What Happens
-
-- Medical progress accelerates {{< var research_acceleration_multiplier >}}×
-- Disease categories start collapsing
-- Healthspan overtakes pathology
-- Investors profit massively
-- Governments save money
-- Everyone becomes healthier, safer, richer
-
-The plan works because **every step is economically rational for everyone involved**.
-Nobody needs to be convinced. They just need to count.
-
-**Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
-
 
 ## Why This Is the Dominant Strategy
 

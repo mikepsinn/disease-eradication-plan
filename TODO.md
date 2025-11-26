@@ -81,7 +81,10 @@ All parameterization work for economics.qmd is complete. The remaining verificat
 **WRONG**: "150,000 deaths per day" - that's just the baseline, not the intervention
 **RIGHT**: "416 million lives saved" - that's the actual impact from 8.2-year acceleration
 
-### Still TODO
+### Current Session TODO
+- [ ] Move "Mechanical Sequence" action plan section earlier (after RECOVERY proof, before Abstract)
+- [ ] Rename "The Mechanical Sequence" to clearer heading like "The 5-Step Implementation Plan"
+- [ ] Remove Gates Foundation-specific framing - make it general investor/funder pitch
 - [ ] Collapse "Research Hypothesis" section (H₀/H₁ academic theater)
 - [ ] Simplify "Key Findings" callout (still has number soup)
 
