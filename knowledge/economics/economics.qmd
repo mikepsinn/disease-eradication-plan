@@ -1,5 +1,5 @@
 ---
-title: 'How to Save 416 Million Lives for $0.13 Per DALY'
+title: How to Save 416 Million Lives for $0.13 Per DALY
 description: Achieve 514 years of medical progress in 20 years (25× acceleration) and shift the cure of every disease forward by 8.2 years generating $1.2 quadrillion in value
 author:
   - name: Mike P. Sinn
@@ -67,12 +67,14 @@ This means access to the cures for all diseases would be shifted forward in time
 The Oxford RECOVERY trial proved you can run clinical efficacy trials **{{< var trial_cost_reduction_factor >}}× cheaper** by integrating them into standard healthcare by assigning treatments to patients and comparing outcomes.
 
 **Results**:
+
 - {{< var recovery_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional)
 - Enrolled [49,000 patients](../references.qmd#recovery-trial-82x-cost-reduction) across [185 hospitals](../references.qmd#recovery-trial-82x-cost-reduction) in 3 months
 - Saved over a million lives by discovering [dexamethasone reduces COVID deaths 33%](../references.qmd#recovery-trial-dexamethasone-results)
 - Ruled out hydroxychloroquine faster than regulators
 
 **Scale this globally** with {{< var treaty_annual_funding >}}/year:
+
 - Fund {{< var dih_patients_fundable_annually >}} patients/year (vs. {{< var current_trial_slots_available >}} today)
 - Run {{< var dfda_active_trials >}} trials simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}})
 - **= {{< var research_acceleration_multiplier >}}× research acceleration**
@@ -147,6 +149,7 @@ Nobody needs to be convinced. They just need to count.
 
 ::: {.callout-note}
 ## Key Findings
+
    - **{{< var disease_eradication_delay_dalys >}} DALYs foregone** total over the timeline shift (years of healthy life lost to regulatory delay)
 
 1. **Cost-Effectiveness (Conditional on Success)**:
@@ -340,6 +343,7 @@ For context: **{{< var global_disease_deaths_daily >}} people die every day** un
 ## Why "Eventually Avoidable" Matters
 
 Of {{< var global_disease_deaths_daily >}} daily deaths:
+
 - **{{< var eventually_avoidable_death_pct >}} eventually avoidable** with sufficient biomedical research (gene therapy, AI drug discovery, cellular reprogramming, etc.)
 - **{{< var fundamentally_unavoidable_death_pct >}} fundamentally unavoidable** (primarily accidents, even with advanced prevention)
 

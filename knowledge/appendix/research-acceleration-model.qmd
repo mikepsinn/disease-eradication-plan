@@ -270,6 +270,7 @@ Result: Patients choose Trial B → Trial A/C lose funding →
 #| echo: false
 #| output: asis
 # Calculate multipliers inline
+
 recruitment_speed_mult = DFDA_PATIENT_ELIGIBILITY_RATE / CURRENT_PATIENT_PARTICIPATION_RATE
 trial_completion_speed_mult = (CURRENT_TRIAL_DURATION_YEARS_RANGE[1] * 12) / DFDA_TRIAL_DURATION_MONTHS_RANGE[1]
 completion_rate_improvement_mult = DFDA_TRIAL_COMPLETION_RATE / CURRENT_TRIAL_COMPLETION_RATE

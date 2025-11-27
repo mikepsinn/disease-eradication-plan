@@ -15,6 +15,7 @@ import numpy_financial as npf
 from pathlib import Path
 
 # Find project root dynamically (works regardless of where Quarto executes from)
+
 from dih_models.plotting.chart_style import get_project_root
 
 project_root = get_project_root()
@@ -1212,6 +1213,7 @@ import os
 from pathlib import Path
 
 # Find project root dynamically (works regardless of where Quarto executes from)
+
 from dih_models.plotting.chart_style import get_project_root
 
 project_root = get_project_root()

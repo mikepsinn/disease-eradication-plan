@@ -16,6 +16,7 @@ from dih_models.plotting.chart_style import (
     get_project_root)
 
 # Find project root dynamically
+
 project_root = get_project_root()
 
 # Setup styling

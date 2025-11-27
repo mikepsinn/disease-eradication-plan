@@ -43,6 +43,7 @@ primary_deaths_total = float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL) / 1e6
 optimistic_deaths_total = float(DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL) / 1e6
 
 # Calculate annual rates from totals for display
+
 lag_years = EFFICACY_LAG_YEARS
 conservative_deaths_annual = conservative_deaths_total / lag_years
 primary_deaths_annual = primary_deaths_total / lag_years

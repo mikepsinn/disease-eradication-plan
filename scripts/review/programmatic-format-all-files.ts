@@ -92,7 +92,6 @@ Options:
 The formatter performs:
   - Em-dash replacement with comma-space
   - Removal of dividers before headings
-  - Bold text to heading conversion (6 words or less)
   - Spacing normalization
   - Blank line enforcement after headings
   - Migration of hash fields from frontmatter to centralized hash store
