@@ -18,11 +18,12 @@ setup_chart_style()
 # Three-tier ROI based on different health benefit scenarios (all use $1B campaign cost)
 
 scenarios = ['Historical Rate\n(Existing Drugs Only)', 'Lag Elimination\n(PRIMARY)', 'Innovation Acceleration\n(With Cascading Effects)']
-roi_values = [
-    float(TREATY_ROI_HISTORICAL_RATE),        # Conservative: $251T / $1B = 250,920:1
-    float(TREATY_ROI_LAG_ELIMINATION),        # PRIMARY: $1,286T / $1B = 1,286,242:1
-    float(TREATY_ROI_INNOVATION_ACCELERATION) # Optimistic: $2,572T / $1B = 2,572,484:1
+roi_parameters = [
+    TREATY_ROI_HISTORICAL_RATE,        # Conservative: $251T / $1B = 250,920:1
+    TREATY_ROI_LAG_ELIMINATION,        # PRIMARY: $1,286T / $1B = 1,286,242:1
+    TREATY_ROI_INNOVATION_ACCELERATION # Optimistic: $2,572T / $1B = 2,572,484:1
 ]
+roi_values = [float(roi) for roi in roi_parameters]
 
 # Format benefit labels with parameter formatter
 
@@ -60,13 +61,14 @@ bars[2].set_hatch(PATTERN_DIAGONAL)  # Diagonal for innovation acceleration (opt
 
 # --- Add value labels above bars ---
 
-for i, (roi, benefit) in enumerate(zip(roi_values, benefits)):
+for i, (roi_param, roi, benefit) in enumerate(zip(roi_parameters, roi_values, benefits)):
     # ROI value above bar (all are large values)
+    roi_formatted = format_parameter_value(roi_param)
     ax.text(
         i, roi + max(roi_values)*0.05,
-        f'{roi:,.0f}:1',
+        f'{roi_formatted}:1',
         ha='center', va='bottom',
-        fontsize=44, fontweight='bold',
+        fontsize=22,
         color=COLOR_BLACK
     )
 
@@ -77,7 +79,7 @@ for i, (roi, benefit) in enumerate(zip(roi_values, benefits)):
         i, roi/2,
         benefit,
         ha='center', va='center',
-        fontsize=24, fontweight='bold',
+        fontsize=16,
         color=text_color,
         bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE if i != 1 else COLOR_BLACK,
                   edgecolor=COLOR_BLACK, linewidth=2.5)
@@ -87,18 +89,18 @@ for i, (roi, benefit) in enumerate(zip(roi_values, benefits)):
 
 ax.set_title(
     '1% Treaty Return on Investment\nThree Health Benefit Scenarios',
-    fontsize=38, fontweight='bold',
+    fontsize=19,
     color=COLOR_BLACK, pad=25
 )
 
 ax.set_ylabel(
     'Return on Investment\n(Total Benefit ÷ $1B Campaign Cost)',
-    fontsize=28, fontweight='bold',
+    fontsize=14,
     color=COLOR_BLACK, labelpad=15
 )
 
 ax.set_xticks(range(len(scenarios)))
-ax.set_xticklabels(scenarios, fontsize=20, fontweight='bold')
+ax.set_xticklabels(scenarios, fontsize=14)
 
 # Set y-axis limits to give space for labels above
 

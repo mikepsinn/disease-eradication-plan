@@ -202,7 +202,7 @@ Despite this disparity in mortality burden, resource allocation heavily favors s
 
 The mechanism is financial, not bureaucratic:
 
-1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient - similar to how insurance covers medical procedures
+1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
 2. **Providers get paid**: Treatment providers can charge for patient participation in trials, making trials profitable rather than costly
 3. **Easy enrollment**: A streamlined FDA wrapper (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
@@ -244,7 +244,7 @@ That's a quadrillion-dollar bill lying on the ground. The only question is wheth
 {{< var disease_eradication_delay_deaths_total_latex >}}
 
 - **{{< var disease_eradication_delay_deaths_total >}} by eliminating {{< var efficacy_lag_years >}}-year post-safety efficacy lag by allowing anyone to participate in efficacy trials and immediately publishing results (one-time benefit)
-- **{{< var treaty_lives_saved_annual_global >}}/year from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction - recurring annual benefit)
+- **{{< var treaty_lives_saved_annual_global >}}/year from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction; recurring annual benefit)
 
 For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current regulatory system waiting for drug approval.
 
@@ -261,7 +261,7 @@ This distinction maintains intellectual honesty while acknowledging that most di
 
 ### Annual Savings
 
-{{< var peace_dividend_annual_societal_benefit >}} + [$50–100B](../appendix/1-percent-treaty-cost-effectiveness.qmd#total-annual-economic-benefits) saved per year.
+{{< var peace_dividend_annual_societal_benefit >}} + {{< var dfda_rd_gross_savings_annual >}} saved per year.
 
 These aren't projections. They're measurements:
 
@@ -377,7 +377,7 @@ They just follow their calculator to accidentally save humanity.
 
 **Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. Victory Bonds make {{< var victory_bond_annual_return_pct >}}."
 
-**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join - your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
+**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join. Your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
 
 You just point everyone's greed at diseases instead of each other.
 
@@ -452,7 +452,7 @@ This generates benefits through two mechanisms:
 
 **1. You stop setting money on fire**
 
-Military spending has economic multiplier effects of [0.5-1.0](../references.qmd#military-spending-economic-multiplier)×. That means for every dollar spent on bombs, you get 50 cents to a dollar of economic value. Medical research has multiplier effects of [2.0-3.0](../references.qmd#healthcare-investment-economic-multiplier)×. For every dollar spent curing diseases, you get $2-3 of economic value.
+Military spending has economic multiplier effects of {{< var economic_multiplier_military_spending >}} {{< var economic_multiplier_military_spending_cite >}}. That means for every dollar spent on bombs, you get 50 cents to a dollar of economic value. Medical research has multiplier effects of {{< var economic_multiplier_healthcare_investment >}} {{< var economic_multiplier_healthcare_investment_cite >}}. For every dollar spent curing diseases, you get $2-3 of economic value.
 
 
 
@@ -559,7 +559,7 @@ This represents {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per year of
 
 The conservative NPV above excludes the one-time benefit from eliminating the regulatory delay (8.2-year timeline shift in disease eradication). However, we can calculate the NPV of this benefit by modeling when it occurs.
 
-**Assumption**: We assume diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the regulatory delay brings them 8.2 years earlier (years 92-100). This is a simple timeline shift - the full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
+**Assumption**: We assume diseases are cured 100 years in the future on average. If cures occur at year 100, eliminating the regulatory delay brings them 8.2 years earlier (years 92-100). This is a simple timeline shift: the full annual benefit applies for all 8.2 years. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
 
 The NPV of regulatory delay avoidance (assuming average cure time of 100 years):
 
@@ -828,7 +828,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ![Drug development costs exploded after 1962 regulations](../../assets/cost-to-develop-a-new-drug.png)
 
-The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development - it was a regulatory mandate that increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing innovation.
+The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development. It was a regulatory mandate that increased costs {{< var drug_cost_increase_pre1962_to_current_multiplier >}}-fold while slowing innovation.
 
 #### Historical operational model
 
@@ -896,7 +896,7 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 **Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
 
-**Historical precedent - Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall from 41% of GDP (1945) to 7.2% (1948)](../references.qmd#us-post-wwii-military-spending-cut), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
+**Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall from 41% of GDP (1945) to 7.2% (1948)](../references.qmd#us-post-wwii-military-spending-cut), with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam and post-Cold War: initial reductions followed by reversals within 5-10 years.
 
 **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties ratified, but many failed to meet funding commitments. As of 2024, developed countries have not met the $100B annual climate finance pledge despite treaty obligations. Treaty ratification creates moral commitment but weak enforcement mechanisms for sustained budgetary allocations.
 
@@ -1196,7 +1196,7 @@ This represents DIH's funding capacity alone, without assuming behavior changes 
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)
 - From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
-**For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model - Detailed Analysis](../appendix/research-acceleration-model.qmd).
+**For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model: Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
 ## Personal Economic Impact: From Societal to Individual
 
@@ -1257,7 +1257,7 @@ Both are good. One breaks the usual economic rules.
 
 **Why this is different from other interventions:**
 
-Vaccines and smoking cessation programs solve specific problems with high returns - they're amazing interventions.
+Vaccines and smoking cessation programs solve specific problems with high returns; they're amazing interventions.
 
 The {{< var treaty_reduction_pct >}} Treaty pays for itself by solving two problems at once:
 
@@ -1441,7 +1441,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 **Historical evidence**: Long-term Benadryl dementia risk went undetected for 40+ years under current surveillance. Continuous EHR monitoring would detect such effects in 2-3 years.
 
-**Type II error dominates**: [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) shows {{< var type_ii_error_cost_ratio >}}:1 harm ratio - for every person saved by preventing unsafe drug approval, {{< var type_ii_error_cost_ratio >}} people die waiting for approval of beneficial treatments.
+**Type II error dominates**: [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) shows {{< var type_ii_error_cost_ratio >}}:1 harm ratio: for every person saved by preventing unsafe drug approval, {{< var type_ii_error_cost_ratio >}} people die waiting for approval of beneficial treatments.
 
 **The FDA prevents some harms but causes far more deaths through delay**. While Phase I safety testing successfully prevents toxic compounds from reaching patients (Type I errors), the barriers the FDA places between patients and beneficial treatments cause {{< var type_ii_error_cost_ratio >}}× more deaths than they prevent (Type II errors). [Regulatory mortality analysis](../appendix/regulatory-mortality-analysis.qmd) calls this the "Invisible Graveyard": {{< var disease_eradication_delay_deaths_total >}} deaths (1962-2024) from the {{< var efficacy_lag_years >}}-year delay between safety verification and final approval.
 
@@ -1826,7 +1826,7 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to medi
 - **Lives saved**: {{< var disease_eradication_delay_deaths_total >}} while generating net profit
 - **Political feasibility**: Everyone profits (nobody needs to be convinced, just paid)
 
-**Comparison**: Exceeds smallpox eradication and childhood vaccinations - history's previous best public health achievements - while requiring zero charitable donations. ([Detailed comparisons](../appendix/intervention-comparison-table.qmd))
+**Comparison**: Exceeds smallpox eradication and childhood vaccinations (history's previous best public health achievements) while requiring zero charitable donations. ([Detailed comparisons](../appendix/intervention-comparison-table.qmd))
 
 **Timeline**: [36 months](../strategy/roadmap.qmd) from global referendum to full deployment. ([Complete roadmap](../strategy/roadmap.qmd))
 
