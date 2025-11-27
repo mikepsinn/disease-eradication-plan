@@ -73,15 +73,14 @@ for i, (roi_param, roi, benefit) in enumerate(zip(roi_parameters, roi_values, be
     )
 
     # Benefit label - place inside bar
-    # Use white text for middle bar (PRIMARY, which is black), black text for others
-    text_color = COLOR_WHITE if i == 1 else COLOR_BLACK
+    # All columns use black text on white background
     ax.text(
         i, roi/2,
         benefit,
         ha='center', va='center',
         fontsize=16,
-        color=text_color,
-        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE if i != 1 else COLOR_BLACK,
+        color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE,
                   edgecolor=COLOR_BLACK, linewidth=2.5)
     )
 
@@ -89,13 +88,13 @@ for i, (roi_param, roi, benefit) in enumerate(zip(roi_parameters, roi_values, be
 
 ax.set_title(
     '1% Treaty Return on Investment\nThree Health Benefit Scenarios',
-    fontsize=19,
+    fontsize=19, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
 
 ax.set_ylabel(
     'Return on Investment\n(Total Benefit ÷ $1B Campaign Cost)',
-    fontsize=14,
+    fontsize=18,
     color=COLOR_BLACK, labelpad=15
 )
 

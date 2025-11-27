@@ -1,8 +1,15 @@
 /* ==========================================
-   ECONOMICS PROJECT CSS OVERRIDES
+   BOOK PROJECT CSS OVERRIDES
    ==========================================
 
-   This file contains style overrides specific to the economics project.
+   This file contains style overrides specific to the book project.
    It loads after styles.css, so any rules here will override the base styles.
    ========================================== */
+
+/* Hide author metadata */
+.quarto-title-author,
+.quarto-title-meta-author,
+.author {
+    display: none !important;
+}
 
