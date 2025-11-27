@@ -712,6 +712,11 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
     display: none;
 }
 
+/* Hide author metadata section */
+.quarto-title-meta-author {
+    display: none;
+}
+
 /* ==========================================
    MERMAID DIAGRAMS - BOOK AESTHETIC
    ========================================== */

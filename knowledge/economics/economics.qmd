@@ -38,7 +38,7 @@ from dih_models.parameters import *
 
 **Results**: The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than malaria-prevention bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
-**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time 8.2-year acceleration in disease eradication.
+**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents **the highest-leverage economic intervention currently available to humanity**. It acts as a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time 8.2-year acceleration in disease eradication.
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved
 
@@ -320,7 +320,7 @@ By successfully executing a verified, mutual reduction in military spending to f
 
 1.  **Confidence Building**: Successfully auditing and reallocating 1% builds the trust and verification infrastructure required for larger steps.
 2.  **The Ratchet Mechanism**: Once the economic benefits of the "Peace Dividend" (wealth, health, longevity) materialize, the incentive to increase the treaty percentage grows. We move from a negative-sum arms race to a positive-sum "peace race."
-3.  **Existential Risk Reduction**: Gradually increasing the percentage creates a trajectory toward phasing out large-scale conflict entirely, significantly reducing the probability of civilization-ending events like nuclear war or autonomous AI conflict.
+3.  **Existential Risk Reduction**: Gradually increasing the percentage creates a trajectory toward phasing out large-scale conflict entirely. Since a primary driver of existential risk is **autonomous murder-maximizing AI produced by military arms races**, de-escalating this race via the treaty is arguably the single most effective X-Risk strategy available.
 
 It steers the ship of state away from the iceberg of extinction, one degree at a time.
 
@@ -655,7 +655,7 @@ For detailed derivation, see [Research Acceleration Model](../appendix/research-
 
 **Automating Friction, Not Judgment**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var research_acceleration_multiplier >}}× research acceleration does **not** require {{< var research_acceleration_multiplier >}}× more Principal Investigators.
 
-The bottleneck in clinical research isn't "scientific genius"—we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
+The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
 Currently, researchers spend 90% of their time on compliance, monitoring, and data entry. The dFDA automates this "grunt work," liberating human judgment to focus on hypothesis generation and complex safety signal interpretation. It's like TurboTax for clinical trials: it doesn't replace the accountant's strategy, but it automates the 90% of the work that is just filling out forms.
 
@@ -1217,6 +1217,15 @@ This section compares the 1% Treaty/dFDA system to best-in-class health interven
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
 {{< include ../figures/disease-eradication-timeline-shift-total-benefit-comparison-column-chart.qmd >}}
+
+### Linear vs. Systemic Leverage
+
+Standard interventions (Bed Nets, Vaccines) are **linear**: to save 2x more lives, you need 2x more money. They compete for a fixed pool of philanthropic capital.
+
+The 1% Treaty is **systemic and exponential**:
+
+1.  **Negative Cost**: It unlocks a *new* funding source (military waste) that generates profit, effectively having an infinite ROI compared to spending existing capital.
+2.  **Multiplier Effect**: It accelerates the *rate* of cure discovery for *all* diseases (25x acceleration), compounding benefits over time.
 
 ### The Critical Difference
 
