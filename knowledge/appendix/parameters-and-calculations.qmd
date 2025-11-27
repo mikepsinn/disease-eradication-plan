@@ -2291,7 +2291,7 @@ $$
 Preventable deaths per second from curable diseases
 
 $$
-Delay_{deaths} = \frac{150,000 \text{ (daily)}}{86,400 \text{ (sec/day)}} \approx 1.74
+DeathsPerSecond = \frac{150,000 \text{ (daily deaths)}}{86,400 \text{ (sec/day)}} \approx 1.74 \text{ (deaths/sec)}
 $$
 
 **Methodology**: [../problem/cost-of-war#cost-of-delay](../problem/cost-of-war#cost-of-delay)
@@ -2682,7 +2682,7 @@ dFDA core platform annual opex (midpoint of $11-26.5M)
 Total NPV annual opex (dFDA core + DIH initiatives)
 
 $$
-C_{op} = \$0.01895B + \$0.02110B = \$0.04005B
+C_{op} = \$0.01895B + \$0.02110B = \$0.04005B \text{ (annual operational cost)}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
@@ -2699,7 +2699,7 @@ $$
 NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 $$
-PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
+PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-benefit](../appendix/dfda-cost-benefit-analysis#npv-benefit)
@@ -2716,7 +2716,7 @@ $$
 NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)
 
 $$
-Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B
+Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-net-benefit](../appendix/dfda-cost-benefit-analysis#npv-net-benefit)
@@ -2780,7 +2780,7 @@ dFDA core platform build cost
 Total NPV upfront costs (dFDA core + DIH initiatives)
 
 $$
-C_0 = \$0.040B + \$0.22975B = \$0.26975B
+C_0 = \$0.040B + \$0.22975B = \$0.26975B \text{ (upfront cost)}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
@@ -2823,7 +2823,7 @@ dFDA infrastructure costs (cloud, security)
 Percentage of treaty funding allocated to dFDA platform overhead
 
 $$
-\$0.04B / \$27.18B = 0.00147 = 0.15\%
+DFDAOpexPct = \$0.04B / \$27.18B = 0.00147 = 0.15\%
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -3055,7 +3055,7 @@ DIH broader initiatives upfront cost (medium case)
 Number of patients fundable annually at RECOVERY trial cost
 
 $$
-\$24.422B \div \$500 = 48.8M
+PatientsFundable = \$24.422B \div \$500 = 48.8M
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -3072,7 +3072,7 @@ $$
 Percentage of treaty funding allocated to medical research (after bond payouts)
 
 $$
-\$24.462B / \$27.18B = 0.90 = 90\%
+MedicalResearchPct = \$24.462B / \$27.18B = 0.90 = 90\%
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -3089,7 +3089,7 @@ $$
 Annual clinical trial patient subsidies (all medical research funds after dFDA operations)
 
 $$
-\$24.462B - \$0.04B = \$24.422B
+TrialSubsidies = \$24.462B - \$0.04B = \$24.422B
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -3106,7 +3106,7 @@ $$
 Percentage of treaty funding going directly to patient trial subsidies
 
 $$
-\$24.422B / \$27.18B = 0.8986 = 89.86\%
+TrialSubsidiesPct = \$24.422B / \$27.18B = 0.8986 = 89.86\%
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -3453,7 +3453,7 @@ $$
 Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
 
 $$
-P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{burden} \times (1 - \text{max cure rate})) = 7.91\%
+P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{disease burden} \times (1 - \text{max cure rate})) = 7.91\%
 $$
 
 *~ Medium confidence*
@@ -3862,7 +3862,7 @@ $$
 Cost-effectiveness multiplier vs GiveWell top charities
 
 $$
-Multiplier = \frac{|-\$6.19M \times 10^9|}{\$4,500} \approx 1,376x
+CostEffectivenessMultiplier = \frac{|\text{NetBenefit} \times 10^9|}{\text{GiveWellCost}} = \frac{|\$6.19M \times 10^9|}{\$4,500} \approx 1,376x
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#givewell-comparison](../appendix/1-percent-treaty-cost-effectiveness#givewell-comparison)
@@ -3879,7 +3879,7 @@ $$
 Annual peace dividend from 1% reduction in total war costs
 
 $$
-Peace\_Dividend = \$11,355B \times 0.01 = \$113.55B
+PeaceDividend = \$11,355B \times 0.01 = \$113.55B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#peace-dividend](../appendix/1-percent-treaty-cost-effectiveness#peace-dividend)
@@ -3896,7 +3896,7 @@ $$
 Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)
 
 $$
-PD_{conflict} = \$113.55B - \$27.18B = \$86.37B
+PeaceDividend_{conflict} = \$113.55B - \$27.18B = \$86.37B
 $$
 
 **Methodology**: [Direct Calculation](#calculated)
@@ -3913,7 +3913,7 @@ $$
 Annual savings from 1% reduction in direct war costs
 
 $$
-PD_{direct} = \$7,655B \times 0.01 = \$76.55B
+PeaceDividend_{direct} = \$7,655B \times 0.01 = \$76.55B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3930,7 +3930,7 @@ $$
 Direct fiscal savings from 1% military spending reduction (high confidence)
 
 $$
-PD_{fiscal} = \$27.18B
+PeaceDividend_{fiscal} = \$27.18B
 $$
 
 **Methodology**: [SIPRI Military Spending Database](../references#sipri-2024-spending)
@@ -3947,7 +3947,7 @@ $$
 Annual savings from 1% reduction in environmental damage
 
 $$
-PD_{env} = \$10B \times 0.01 = \$0.10B
+PeaceDividend_{env} = \$10B \times 0.01 = \$0.10B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3964,7 +3964,7 @@ $$
 Annual savings from 1% reduction in human casualties
 
 $$
-PD_{human} = \$2,446B \times 0.01 = \$24.46B
+PeaceDividend_{human} = \$2,446B \times 0.01 = \$24.46B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3981,7 +3981,7 @@ $$
 Annual savings from 1% reduction in indirect war costs
 
 $$
-PD_{indirect} = \$3,700.1B \times 0.01 = \$37.00B
+PeaceDividend_{indirect} = \$3,700.1B \times 0.01 = \$37.00B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3998,7 +3998,7 @@ $$
 Annual savings from 1% reduction in infrastructure destruction
 
 $$
-PD_{infra} = \$1,875B \times 0.01 = \$18.75B
+PeaceDividend_{infra} = \$1,875B \times 0.01 = \$18.75B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4015,7 +4015,7 @@ $$
 Annual savings from 1% reduction in lost economic growth
 
 $$
-PD_{growth} = \$2,718B \times 0.01 = \$27.18B
+PeaceDividend_{growth} = \$2,718B \times 0.01 = \$27.18B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4032,7 +4032,7 @@ $$
 Annual savings from 1% reduction in lost human capital
 
 $$
-PD_{capital} = \$30B \times 0.01 = \$0.30B
+PeaceDividend_{capital} = \$30B \times 0.01 = \$0.30B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4049,7 +4049,7 @@ $$
 Annual savings from 1% reduction in PTSD and mental health costs
 
 $$
-PD_{PTSD} = \$23.2B \times 0.01 = \$0.23B
+PeaceDividend_{PTSD} = \$23.2B \times 0.01 = \$0.23B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4066,7 +4066,7 @@ $$
 Annual savings from 1% reduction in refugee support costs
 
 $$
-PD_{refugee} = \$15B \times 0.01 = \$0.15B
+PeaceDividend_{refugee} = \$15B \times 0.01 = \$0.15B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4083,7 +4083,7 @@ $$
 Annual savings from 1% reduction in trade disruption
 
 $$
-PD_{trade} = \$616B \times 0.01 = \$6.16B
+PeaceDividend_{trade} = \$616B \times 0.01 = \$6.16B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4100,7 +4100,7 @@ $$
 Annual savings from 1% reduction in veteran healthcare costs
 
 $$
-PD_{veteran} = \$20.01B \times 0.01 = \$0.20B
+PeaceDividend_{veteran} = \$20.01B \times 0.01 = \$0.20B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -4640,7 +4640,7 @@ Total words in the book
 Total global research funding (baseline + 1% treaty funding)
 
 $$
-\$67.5B + \$27.18B = \$94.68B
+TotalResearchFunding = \$67.5B + \$27.18B = \$94.68B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -5191,7 +5191,7 @@ $$
 Ratio of total treaty economic value to global GDP (equivalent 'Earths' of GDP)
 
 $$
-Ratio = \$1.191\text{ quadrillion} / \$105T = 11,343
+TreatyValueToGDPRatio = \$1.191\text{ quadrillion} / \$105T = 11,343
 $$
 
 *~ Medium confidence*
