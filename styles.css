@@ -699,6 +699,20 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
 }
 
 /* ==========================================
+   HIDE ABSTRACT AND KEYWORDS
+   ========================================== */
+
+/* Hide abstract section */
+.abstract {
+    display: none;
+}
+
+/* Hide keywords section */
+.keywords {
+    display: none;
+}
+
+/* ==========================================
    MERMAID DIAGRAMS - BOOK AESTHETIC
    ========================================== */
 

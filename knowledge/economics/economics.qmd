@@ -62,6 +62,8 @@ This means access to the cures for all diseases would be shifted forward in time
 - Compresses decades of medical progress
 - Unlocks cures for diseases that don't exist yet
 
+**Annual Benefits**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
+
 ## How It Works
 
 The Oxford RECOVERY trial proved you can run clinical efficacy trials **{{< var trial_cost_reduction_factor >}}× cheaper** by integrating them into standard healthcare by assigning treatments to patients and comparing outcomes.
@@ -78,12 +80,6 @@ The Oxford RECOVERY trial proved you can run clinical efficacy trials **{{< var 
 - Fund {{< var dih_patients_fundable_annually >}} patients/year (vs. {{< var current_trial_slots_available >}} today)
 - Run {{< var dfda_active_trials >}} trials simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}})
 - **= {{< var research_acceleration_multiplier >}}× research acceleration**
-
-## The Numbers
-
-**Annual Benefits**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
-
-**Beats smallpox eradication**: {{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}} vs. {{< var dfda_roi_rd_only >}}:1 (conservative)
 
 ## The 5-Step Implementation Plan
 
@@ -123,7 +119,6 @@ The plan works because **every step is economically rational for everyone involv
 Nobody needs to be convinced. They just need to count.
 
 **Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
-
 
 ## Abstract
 
