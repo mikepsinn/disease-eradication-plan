@@ -199,7 +199,6 @@ Nobody needs to be convinced. They just need to count.
 3. **Innovation**: {{< var research_acceleration_multiplier >}}x research acceleration = {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years in 20 years
    - Compresses decades of medical progress into years
 
-**The question isn't whether this is cost-effective. The question is whether $1B can achieve treaty passage.**
 :::
 
 
@@ -246,7 +245,7 @@ Nobody needs to be convinced. They just need to count.
 
 ### The Highest-ROI Public Health Intervention
 
-Shift {{< var treaty_reduction_pct >}} of global military spending into decentralized clinical trials. That's it. That's the entire plan.
+Shift {{< var treaty_reduction_pct >}} of global military spending to hyper-efficient pragmatic clinical trials. That's it. That's the entire plan.
 
 ## Problem Statement
 
@@ -272,18 +271,6 @@ That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden 
 
 {{< var medical_research_pct_of_disease_burden_latex >}}
 
-#### Results of this strategy
-
-- Diseases eradicated in past 50 years: **Zero** ([smallpox was 1980](../references.qmd#smallpox-eradicated))
-- Military vs. medical research: **{{< var military_vs_medical_research_ratio >}}:1** ratio
-
-It's like spending $40 on gasoline for a fire and $1 on a fire extinguisher.
-
-*"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* - President Dwight D. Eisenhower, 1961
-
-**Opportunity cost note:** The {{< var treaty_annual_funding >}} could fund other things: military R&D (GPS, internet came from this), tax cuts (~{{< var npv_discount_rate_standard >}} private returns), infrastructure, education, climate. But the dFDA's cost-dominant intervention status (saves money while improving health) means it makes money while saving lives. Dominant interventions don't require opportunity cost tradeoffs - they're just better at everything.
-
-{{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
 ### Mortality and Morbidity Burden
 
