@@ -43,7 +43,7 @@ from dih_models.parameters import *
 **Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor, eliminating the {{< var efficacy_lag_years >}} year post-safety efficacy lag.
 This means access to the cures for all diseases would be shifted forward in time by {{< var efficacy_lag_years >}} years.
 
-## Three Numbers That Matter
+## Numbers
 
 ### 1. Cost-Effectiveness: **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY**
 
@@ -80,15 +80,6 @@ The Oxford RECOVERY trial proved you can run clinical efficacy trials **{{< var 
 - **= {{< var research_acceleration_multiplier >}}× research acceleration**
 
 ## The Numbers
-
-| Metric | Value |
-|:-------|------:|
-| **Campaign Cost** | {{< var treaty_campaign_total_cost >}} |
-| **Annual Funding** | {{< var treaty_annual_funding >}} |
-| **Annual Surplus** | {{< var treaty_total_complete_benefits_annual >}} |
-| **Lives Saved** | {{< var disease_eradication_delay_deaths_total >}} |
-| **Conservative ROI** | {{< var dfda_roi_rd_only >}}:1 |
-| **Complete ROI** | {{< var treaty_complete_roi_all_benefits >}}:1 |
 
 **Annual Benefits**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
 
