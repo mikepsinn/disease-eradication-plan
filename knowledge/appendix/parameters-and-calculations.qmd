@@ -2291,7 +2291,7 @@ $$
 Preventable deaths per second from curable diseases
 
 $$
-Delay_{deaths} = \frac{150,000}{86,400} \approx 1.74
+Delay_{deaths} = \frac{150,000 \text{ (daily)}}{86,400 \text{ (sec/day)}} \approx 1.74
 $$
 
 **Methodology**: [../problem/cost-of-war#cost-of-delay](../problem/cost-of-war#cost-of-delay)
@@ -2409,7 +2409,7 @@ $$
 Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
 $$
-OPEX_{total} = \sum_{i=1}^{5} OPEX_i = 0.015 + 0.010 + 0.008 + 0.005 + 0.002
+OPEX_{total} = \$15M \text{ (plat)} + \$10M \text{ (staff)} + \$8M \text{ (infra)} + \$5M \text{ (reg)} + \$2M \text{ (comm)} = \$40M
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
@@ -2460,7 +2460,7 @@ $$
 Optimistic drug approvals estimate (40x current)
 
 $$
-Approvals_{high} = 50 \times 40 = 2,000
+Approvals_{high} = 50 \text{ (current)} \times 40 \text{ (factor)} = 2,000
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#approval-projections](../appendix/research-acceleration-model#approval-projections)
@@ -2477,7 +2477,7 @@ $$
 Conservative drug approvals estimate (20x current)
 
 $$
-Approvals_{low} = 50 \times 20 = 1,000
+Approvals_{low} = 50 \text{ (current)} \times 20 \text{ (factor)} = 1,000
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#approval-projections](../appendix/research-acceleration-model#approval-projections)
@@ -2494,7 +2494,7 @@ $$
 Global eligible patients with minimal exclusions
 
 $$
-Eligible_{dFDA} = 2.4B \times 0.50 = 1.2B
+Eligible_{dFDA} = 2.4B \text{ (patients)} \times 50\% \text{ (eligible)} = 1.2B
 $$
 
 **Methodology**: [../appendix/research-acceleration-model#eligible-population](../appendix/research-acceleration-model#eligible-population)
@@ -3468,7 +3468,7 @@ $$
 Total annual conflict deaths globally (sum of combat, terror, state violence)
 
 $$
-Deaths_{total} = 233,600 + 8,300 + 2,700 = 244,600
+Deaths_{total} = 233,600 \text{ (combat)} + 8,300 \text{ (terror)} + 2,700 \text{ (state)} = 244,600
 $$
 
 **Methodology**: [../problem/cost-of-war#death-accounting](../problem/cost-of-war#death-accounting)
@@ -3553,7 +3553,7 @@ $$
 Total annual human life losses from conflict (sum of combat, terror, state violence)
 
 $$
-Cost_{human} = \$2,336B + \$83B + \$27B = \$2,446B
+Cost_{human} = \$2,336B \text{ (combat)} + \$83B \text{ (terror)} + \$27B \text{ (state)} = \$2,446B
 $$
 
 **Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
@@ -3570,7 +3570,7 @@ $$
 Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)
 
 $$
-Infra_{damage} = \$487.3B + \$421.7B + \$298.1B + \$267.8B + \$234.5B + \$165.6B = \$1,875B
+Infra_{damage} = \$487B \text{ (trans)} + \$422B \text{ (nrg)} + \$298B \text{ (comms)} + \$268B \text{ (water)} + \$235B \text{ (edu)} + \$166B \text{ (hlth)} = \$1,875B
 $$
 
 **Methodology**: [../problem/cost-of-war#infrastructure-damage](../problem/cost-of-war#infrastructure-damage)
@@ -3587,7 +3587,7 @@ $$
 Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)
 
 $$
-Trade_{disruption} = \$247.1B + \$186.8B + \$124.7B + \$57.4B = \$616B
+Trade_{disruption} = \$247B \text{ (ship)} + \$187B \text{ (supply)} + \$125B \text{ (nrg)} + \$57B \text{ (curr)} = \$616B
 $$
 
 **Methodology**: [../problem/cost-of-war#trade-disruption](../problem/cost-of-war#trade-disruption)
@@ -3604,7 +3604,7 @@ $$
 Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
 
 $$
-DirectCosts = \$2,718B + \$1,875B + \$2,446B + \$616B = \$7,655B
+DirectCosts = \$2,718B \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,655B
 $$
 
 **Methodology**: [../problem/cost-of-war#direct-costs](../problem/cost-of-war#direct-costs)
@@ -3621,7 +3621,7 @@ $$
 Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)
 
 $$
-IndirectCosts = \$2,718B + \$200.1B + \$150B + \$100B + \$232B + \$300B = \$3,700.1B
+IndirectCosts = \$2.7T \text{ (opp cost)} + \$200B \text{ (vet)} + \$150B \text{ (ref)} + \$100B \text{ (env)} + \$232B \text{ (ptsd)} + \$300B \text{ (hum cap)} = \$3.7T
 $$
 
 **Methodology**: [../problem/cost-of-war#indirect-costs](../problem/cost-of-war#indirect-costs)
@@ -3638,7 +3638,7 @@ $$
 Total annual cost of war worldwide (direct + indirect costs)
 
 $$
-TotalWarCost = \$7,655B + \$3,700.1B = \$11,355.1B
+TotalWarCost = \$7,655B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,355B
 $$
 
 **Methodology**: [../problem/cost-of-war#total-cost](../problem/cost-of-war#total-cost)
@@ -4552,7 +4552,7 @@ $$
 Deaths per US-scale thalidomide event
 
 $$
-900 \times 40\% = 360 \text{ deaths}
+900 \text{ (cases)} \times 40\% \text{ (mortality)} = 360 \text{ deaths}
 $$
 
 *~ Medium confidence*
@@ -4567,7 +4567,7 @@ $$
 Survivors per US-scale thalidomide event
 
 $$
-900 \times 60\% = 540 \text{ survivors}
+900 \text{ (cases)} \times 60\% \text{ (survival)} = 540 \text{ survivors}
 $$
 
 *~ Medium confidence*
@@ -4597,7 +4597,7 @@ $$
 Years Lived with Disability per thalidomide event
 
 $$
-540 \times 60 \times 0.4 = 12{,}960 \text{ YLD}
+540 \text{ (surv)} \times 60 \text{ (yrs)} \times 0.4 \text{ (weight)} = 12{,}960 \text{ YLD}
 $$
 
 *~ Medium confidence*
@@ -4612,7 +4612,7 @@ $$
 Years of Life Lost per thalidomide event (infant deaths)
 
 $$
-360 \times 80 = 28{,}800 \text{ YLL}
+360 \text{ (deaths)} \times 80 \text{ (years)} = 28{,}800 \text{ YLL}
 $$
 
 *~ Medium confidence*
@@ -4721,7 +4721,7 @@ Campaign budget for Super PACs and political lobbying
 Total treaty campaign cost (100% VICTORY Social Impact Bonds)
 
 $$
-CampaignCost = \$0.3B + \$0.65B + \$0.05B = \$1.0B
+CampaignCost = \$300M \text{ (ref)} + \$650M \text{ (lob)} + \$50M \text{ (res)} = \$1.0B
 $$
 
 **Methodology**: [../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation)

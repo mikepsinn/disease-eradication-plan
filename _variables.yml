@@ -270,8 +270,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Preventable deaths\
   \ per second from curable diseases | ✓ High confidence | Formula: DAILY_DEATHS ÷\
   \ SECONDS_PER_DAY | Unit: deaths/second | Click to view calculation\">1.74</a>"
-"cost_of_delay_deaths_per_second_latex": "$$\nDelay_{deaths} = \\frac{150,000}{86,400}\
-  \ \\approx 1.74\n$$"
+"cost_of_delay_deaths_per_second_latex": "$$\nDelay_{deaths} = \\frac{150,000 \\text{\
+  \ (daily)}}{86,400 \\text{ (sec/day)}} \\approx 1.74\n$$"
 "current_active_trials": "<a href=\"https://warondisease.org/knowledge/references.html#clinicaltrials-gov-enrollment-data-2025\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -378,8 +378,9 @@
   \ dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)\
   \ | ✓ High confidence | Formula: PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE +\
   \ REGULATORY + COMMUNITY | Unit: USD/year | Click to view calculation\">$40M</a>"
-"dfda_annual_opex_latex": "$$\nOPEX_{total} = \\sum_{i=1}^{5} OPEX_i = 0.015 + 0.010\
-  \ + 0.008 + 0.005 + 0.002\n$$"
+"dfda_annual_opex_latex": "$$\nOPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{\
+  \ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)}\
+  \ = \\$40M\n$$"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
@@ -400,22 +401,22 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic drug\
   \ approvals estimate (40x current) | ✓ High confidence | Formula: CURRENT_APPROVALS\
   \ × 40 | Unit: approvals/year | Click to view calculation\">2,000</a>"
-"dfda_drug_approvals_per_year_high_latex": "$$\nApprovals_{high} = 50 \\times 40 =\
-  \ 2,000\n$$"
+"dfda_drug_approvals_per_year_high_latex": "$$\nApprovals_{high} = 50 \\text{ (current)}\
+  \ \\times 40 \\text{ (factor)} = 2,000\n$$"
 "dfda_drug_approvals_per_year_low": "<a href=\"/knowledge/appendix/research-acceleration-model#approval-projections\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
   \ drug approvals estimate (20x current) | ✓ High confidence | Formula: CURRENT_APPROVALS\
   \ × 20 | Unit: approvals/year | Click to view calculation\">1,000</a>"
-"dfda_drug_approvals_per_year_low_latex": "$$\nApprovals_{low} = 50 \\times 20 = 1,000\n\
-  $$"
+"dfda_drug_approvals_per_year_low_latex": "$$\nApprovals_{low} = 50 \\text{ (current)}\
+  \ \\times 20 \\text{ (factor)} = 1,000\n$$"
 "dfda_eligible_patients_global": "<a href=\"/knowledge/appendix/research-acceleration-model#eligible-population\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#eligible-population\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Global eligible\
   \ patients with minimal exclusions | ✓ High confidence | Formula: DISEASE_PATIENTS\
   \ × ELIGIBILITY_RATE | Unit: people | Click to view calculation\">1.20B</a>"
-"dfda_eligible_patients_global_latex": "$$\nEligible_{dFDA} = 2.4B \\times 0.50 =\
-  \ 1.2B\n$$"
+"dfda_eligible_patients_global_latex": "$$\nEligible_{dFDA} = 2.4B \\text{ (patients)}\
+  \ \\times 50\\% \\text{ (eligible)} = 1.2B\n$$"
 "dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   low\" title=\"Expected ROI for 1% Treaty accounting for 0.1% political success probability\
@@ -931,8 +932,8 @@
   \ conflict deaths globally (sum of combat, terror, state violence) | ✓ High confidence\
   \ | Formula: COMBAT + TERROR + STATE_VIOLENCE | Unit: deaths/year | Click to view\
   \ calculation\">245K</a>"
-"global_annual_conflict_deaths_total_latex": "$$\nDeaths_{total} = 233,600 + 8,300\
-  \ + 2,700 = 244,600\n$$"
+"global_annual_conflict_deaths_total_latex": "$$\nDeaths_{total} = 233,600 \\text{\
+  \ (combat)} + 8,300 \\text{ (terror)} + 2,700 \\text{ (state)} = 244,600\n$$"
 "global_annual_deaths_curable_diseases": "<a href=\"/knowledge/economics/economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
@@ -972,8 +973,9 @@
   \ human life losses from conflict (sum of combat, terror, state violence) | ✓ High\
   \ confidence | Formula: COMBAT_COST + TERROR_COST + STATE_VIOLENCE_COST | Unit:\
   \ USD/year | Click to view calculation\">$2.45T</a>"
-"global_annual_human_life_losses_conflict_latex": "$$\nCost_{human} = \\$2,336B +\
-  \ \\$83B + \\$27B = \\$2,446B\n$$"
+"global_annual_human_life_losses_conflict_latex": "$$\nCost_{human} = \\$2,336B \\\
+  text{ (combat)} + \\$83B \\text{ (terror)} + \\$27B \\text{ (state)} = \\$2,446B\n\
+  $$"
 "global_annual_infrastructure_damage_communications_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to communications\
@@ -1016,7 +1018,8 @@
   \ + WATER + EDUCATION + HEALTHCARE | Unit: USD/year | Click to view calculation\"\
   >$1.88T</a>"
 "global_annual_infrastructure_destruction_conflict_latex": "$$\nInfra_{damage} = \\\
-  $487.3B + \\$421.7B + \\$298.1B + \\$267.8B + \\$234.5B + \\$165.6B = \\$1,875B\n\
+  $487B \\text{ (trans)} + \\$422B \\text{ (nrg)} + \\$298B \\text{ (comms)} + \\\
+  $268B \\text{ (water)} + \\$235B \\text{ (edu)} + \\$166B \\text{ (hlth)} = \\$1,875B\n\
   $$"
 "global_annual_lives_saved_by_med_research": "<a href=\"https://warondisease.org/knowledge/references.html#medical-research-lives-saved-annually\"\
   \ class=\"parameter-link\" data-source-ref=\"medical-research-lives-saved-annually\"\
@@ -1052,8 +1055,9 @@
   \ trade disruption (sum of shipping, supply chain, energy prices, currency instability)\
   \ | ✓ High confidence | Formula: SHIPPING + SUPPLY_CHAIN + ENERGY_PRICE + CURRENCY\
   \ | Unit: USD/year | Click to view calculation\">$616B</a>"
-"global_annual_trade_disruption_conflict_latex": "$$\nTrade_{disruption} = \\$247.1B\
-  \ + \\$186.8B + \\$124.7B + \\$57.4B = \\$616B\n$$"
+"global_annual_trade_disruption_conflict_latex": "$$\nTrade_{disruption} = \\$247B\
+  \ \\text{ (ship)} + \\$187B \\text{ (supply)} + \\$125B \\text{ (nrg)} + \\$57B\
+  \ \\text{ (curr)} = \\$616B\n$$"
 "global_annual_trade_disruption_currency_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"world-bank-trade-disruption-conflict\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
@@ -1090,8 +1094,9 @@
   \ direct war costs (military spending + infrastructure + human life + trade disruption)\
   \ | ✓ High confidence | Formula: MILITARY + INFRASTRUCTURE + HUMAN_LIFE + TRADE\
   \ | Unit: USD/year | Click to view calculation\">$7.66T</a>"
-"global_annual_war_direct_costs_total_latex": "$$\nDirectCosts = \\$2,718B + \\$1,875B\
-  \ + \\$2,446B + \\$616B = \\$7,655B\n$$"
+"global_annual_war_direct_costs_total_latex": "$$\nDirectCosts = \\$2,718B \\text{\
+  \ (mil)} + \\$1,875B \\text{ (infra)} + \\$2,446B \\text{ (human)} + \\$616B \\\
+  text{ (trade)} = \\$7,655B\n$$"
 "global_annual_war_indirect_costs_total": "<a href=\"/knowledge/problem/cost-of-war#indirect-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#indirect-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1099,15 +1104,16 @@
   \ health + lost productivity) | ✓ High confidence | Formula: OPPORTUNITY + VETERANS\
   \ + REFUGEES + ENVIRONMENT + MENTAL_HEALTH + LOST_CAPITAL | Unit: USD/year | Click\
   \ to view calculation\">$3.70T</a>"
-"global_annual_war_indirect_costs_total_latex": "$$\nIndirectCosts = \\$2,718B + \\\
-  $200.1B + \\$150B + \\$100B + \\$232B + \\$300B = \\$3,700.1B\n$$"
+"global_annual_war_indirect_costs_total_latex": "$$\nIndirectCosts = \\$2.7T \\text{\
+  \ (opp cost)} + \\$200B \\text{ (vet)} + \\$150B \\text{ (ref)} + \\$100B \\text{\
+  \ (env)} + \\$232B \\text{ (ptsd)} + \\$300B \\text{ (hum cap)} = \\$3.7T\n$$"
 "global_annual_war_total_cost": "<a href=\"/knowledge/problem/cost-of-war#total-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ cost of war worldwide (direct + indirect costs) | ✓ High confidence | Formula:\
   \ DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view calculation\">$11.4T</a>"
-"global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B + \\$3,700.1B\
-  \ = \\$11,355.1B\n$$"
+"global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B \\text{ (direct)}\
+  \ + \\$3,700B \\text{ (indirect)} = \\$11,355B\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
@@ -1825,8 +1831,8 @@
   $$"
 "thalidomide_deaths_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_DEATHS_PER_EVENT\"\
   >360</span>"
-"thalidomide_deaths_per_event_latex": "$$\n900 \\times 40\\% = 360 \\text{ deaths}\n\
-  $$"
+"thalidomide_deaths_per_event_latex": "$$\n900 \\text{ (cases)} \\times 40\\% \\text{\
+  \ (mortality)} = 360 \\text{ deaths}\n$$"
 "thalidomide_disability_weight": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-survivors-health\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-survivors-health\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Disability weight for thalidomide\
@@ -1841,8 +1847,8 @@
 "thalidomide_mortality_rate_cite": "@thalidomide-scandal"
 "thalidomide_survivors_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_SURVIVORS_PER_EVENT\"\
   >540</span>"
-"thalidomide_survivors_per_event_latex": "$$\n900 \\times 60\\% = 540 \\text{ survivors}\n\
-  $$"
+"thalidomide_survivors_per_event_latex": "$$\n900 \\text{ (cases)} \\times 60\\% \\\
+  text{ (survival)} = 540 \\text{ survivors}\n$$"
 "thalidomide_survivor_lifespan": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-survivors-health\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-survivors-health\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Average lifespan for thalidomide survivors\
@@ -1859,11 +1865,12 @@
 "thalidomide_us_population_share_1960_cite": "@us-census-world-population-1960"
 "thalidomide_yld_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_YLD_PER_EVENT\"\
   >12,960</span>"
-"thalidomide_yld_per_event_latex": "$$\n540 \\times 60 \\times 0.4 = 12{,}960 \\text{\
-  \ YLD}\n$$"
+"thalidomide_yld_per_event_latex": "$$\n540 \\text{ (surv)} \\times 60 \\text{ (yrs)}\
+  \ \\times 0.4 \\text{ (weight)} = 12{,}960 \\text{ YLD}\n$$"
 "thalidomide_yll_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_YLL_PER_EVENT\"\
   >28,800</span>"
-"thalidomide_yll_per_event_latex": "$$\n360 \\times 80 = 28{,}800 \\text{ YLL}\n$$"
+"thalidomide_yll_per_event_latex": "$$\n360 \\text{ (deaths)} \\times 80 \\text{ (years)}\
+  \ = 28{,}800 \\text{ YLL}\n$$"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" data-source-ref=\"\
   /book-word-count\" data-source-type=\"calculated\" data-confidence=\"high\" title=\"\
   Total words in the book | ✓ High confidence | Unit: words | Click to view calculation\"\
@@ -1974,8 +1981,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total treaty\
   \ campaign cost (100% VICTORY Social Impact Bonds) | ✓ High confidence | Formula:\
   \ REFERENDUM + LOBBYING + RESERVE | Unit: USD | Click to view calculation\">$1.00B</a>"
-"treaty_campaign_total_cost_latex": "$$\nCampaignCost = \\$0.3B + \\$0.65B + \\$0.05B\
-  \ = \\$1.0B\n$$"
+"treaty_campaign_total_cost_latex": "$$\nCampaignCost = \\$300M \\text{ (ref)} + \\\
+  $650M \\text{ (lob)} + \\$50M \\text{ (res)} = \\$1.0B\n$$"
 "treaty_campaign_viral_referendum_base_case": "<a href=\"/knowledge/economics/campaign-budget#base-case-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd#base-case-scenario\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Base case viral\
