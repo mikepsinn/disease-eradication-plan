@@ -1795,8 +1795,8 @@
   \ of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time\
   \ benefit from YLD component, not annual recurring) | ~ Medium confidence | Formula:\
   \ YLD × 8760 hours/year | Unit: hours | Click to view calculation\">7.65T</a>"
-"suffering_hours_eliminated_total_latex": "$$\nHours = 873M \\times 8{,}760 = 7.65T\n\
-  $$"
+"suffering_hours_eliminated_total_latex": "$$\nHours = 868M \\text{ (YLD)} \\times\
+  \ 8{,}760 \\text{ (hrs/yr)} = 7.60T\n$$"
 "sugar_subsidy_cost_per_person_annual": "<a href=\"https://warondisease.org/knowledge/references.html#sugar-subsidies-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"sugar-subsidies-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual cost of sugar subsidies per person\

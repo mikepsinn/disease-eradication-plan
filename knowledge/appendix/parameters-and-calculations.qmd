@@ -4520,7 +4520,7 @@ Optimistic total costs
 Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)
 
 $$
-Hours = 873M \times 8{,}760 = 7.65T
+Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
