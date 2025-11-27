@@ -3123,7 +3123,7 @@ $$
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 $$
-DALY_{total} = 7.63B + 0.943B = 7.90B
+DALY_{total} = 7.03B \text{ (YLL)} + 0.87B \text{ (YLD)} = 7.90B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
@@ -3140,7 +3140,7 @@ $$
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
 
 $$
-D_{total} = 150,000 \times 8.2 \times 365 \times 0.921 = 413.4M
+D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)} = 413.4M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
@@ -3157,7 +3157,7 @@ $$
 Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
 
 $$
-Loss = 7.94B \times \$150k = \$1.191\text{ quadrillion}
+Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#economic-valuation](../appendix/regulatory-mortality-analysis#economic-valuation)
@@ -3174,7 +3174,7 @@ $$
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 $$
-YLD = 449M \times 6 \times 0.35 = 943M
+YLD = 413.4M \times 6 \times 0.35 = 868M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
@@ -3191,7 +3191,7 @@ $$
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 $$
-YLL = 449M \times (79 - 62) = 7.63B
+YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
@@ -3208,7 +3208,7 @@ $$
 Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.
 
 $$
-D_{total} = (150K \times 365 \times 2) \times 8.2 = 898M
+D_{total} = (54.75M \times 2) \times 8.2 = 898M
 $$
 
 **Methodology**: [../references#pharmaceutical-innovation-acceleration-economics](../references#pharmaceutical-innovation-acceleration-economics)

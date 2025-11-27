@@ -291,7 +291,7 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL = Parameter(
     display_name="Total Annual Conflict Deaths Globally",
     unit="deaths/year",
     formula="COMBAT + TERROR + STATE_VIOLENCE",
-    latex=r"Deaths_{total} = 233,600 + 8,300 + 2,700 = 244,600",
+    latex=r"Deaths_{total} = 233,600 \text{ (combat)} + 8,300 \text{ (terror)} + 2,700 \text{ (state)} = 244,600",
     keywords=["worldwide", "yearly", "fatalities", "casualties", "mortality", "armed conflict", "loss of life"]
 )  # 244,600
 
@@ -343,7 +343,7 @@ GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT = Parameter(
     display_name="Total Annual Human Life Losses from Conflict",
     unit="USD/year",
     formula="COMBAT_COST + TERROR_COST + STATE_VIOLENCE_COST",
-    latex=r"Cost_{human} = \$2,336B + \$83B + \$27B = \$2,446B",
+    latex=r"Cost_{human} = \$2,336B \text{ (combat)} + \$83B \text{ (terror)} + \$27B \text{ (state)} = \$2,446B",
     keywords=["worldwide", "yearly", "human", "life", "losses", "armed conflict", "military action"]
 )  # $2,446B
 
@@ -422,7 +422,7 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT = Parameter(
     display_name="Total Annual Infrastructure Destruction",
     unit="USD/year",
     formula="TRANSPORT + ENERGY + COMMS + WATER + EDUCATION + HEALTHCARE",
-    latex=r"Infra_{damage} = \$487.3B + \$421.7B + \$298.1B + \$267.8B + \$234.5B + \$165.6B = \$1,875B",
+    latex=r"Infra_{damage} = \$487B \text{ (trans)} + \$422B \text{ (nrg)} + \$298B \text{ (comms)} + \$268B \text{ (water)} + \$235B \text{ (edu)} + \$166B \text{ (hlth)} = \$1,875B",
     keywords=["worldwide", "yearly", "infrastructure", "destruction", "armed conflict", "military action", "international"]
 )  # $1,875B
 
@@ -479,7 +479,7 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT = Parameter(
     display_name="Total Annual Trade Disruption",
     unit="USD/year",
     formula="SHIPPING + SUPPLY_CHAIN + ENERGY_PRICE + CURRENCY",
-    latex=r"Trade_{disruption} = \$247.1B + \$186.8B + \$124.7B + \$57.4B = \$616B",
+    latex=r"Trade_{disruption} = \$247B \text{ (ship)} + \$187B \text{ (supply)} + \$125B \text{ (nrg)} + \$57B \text{ (curr)} = \$616B",
     keywords=["worldwide", "yearly", "trade", "disruption", "armed conflict", "military action", "international"]
 )  # $616B
 
@@ -494,7 +494,7 @@ GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL = Parameter(
     display_name="Total Annual Direct War Costs",
     unit="USD/year",
     formula="MILITARY + INFRASTRUCTURE + HUMAN_LIFE + TRADE",
-    latex=r"DirectCosts = \$2,718B + \$1,875B + \$2,446B + \$616B = \$7,655B",
+    latex=r"DirectCosts = \$2,718B \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,655B",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "worldwide"]
 )  # $7,655B
 
@@ -572,7 +572,7 @@ GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
     display_name="Total Annual Indirect War Costs",
     unit="USD/year",
     formula="OPPORTUNITY + VETERANS + REFUGEES + ENVIRONMENT + MENTAL_HEALTH + LOST_CAPITAL",
-    latex=r"IndirectCosts = \$2,718B + \$200.1B + \$150B + \$100B + \$232B + \$300B = \$3,700.1B",
+    latex=r"IndirectCosts = \$2.7T \text{ (opp cost)} + \$200B \text{ (vet)} + \$150B \text{ (ref)} + \$100B \text{ (env)} + \$232B \text{ (ptsd)} + \$300B \text{ (hum cap)} = \$3.7T",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "worldwide"]
 )  # $3,700.1B
 
@@ -585,7 +585,7 @@ GLOBAL_ANNUAL_WAR_TOTAL_COST = Parameter(
     display_name="Total Annual Cost of War Worldwide",
     unit="USD/year",
     formula="DIRECT_COSTS + INDIRECT_COSTS",
-    latex=r"TotalWarCost = \$7,655B + \$3,700.1B = \$11,355.1B",
+    latex=r"TotalWarCost = \$7,655B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,355B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "war"]
 )  # $11,355.1B
 
@@ -1064,7 +1064,7 @@ DFDA_DRUG_APPROVALS_PER_YEAR_LOW = Parameter(
     display_name="dFDA Conservative Drug Approvals Estimate (Low Estimate)",
     unit="approvals/year",
     formula="CURRENT_APPROVALS × 20",
-    latex=r"Approvals_{low} = 50 \times 20 = 1,000",
+    latex=r"Approvals_{low} = 50 \text{ (current)} \times 20 \text{ (factor)} = 1,000",
     keywords=["1k", "pragmatic trials", "real world evidence", "low estimate", "decentralized trials", "drug agency", "faster development"]
 )  # Conservative approvals estimate (20x current)
 
@@ -1076,7 +1076,7 @@ DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = Parameter(
     display_name="dFDA Optimistic Drug Approvals Estimate (High Estimate)",
     unit="approvals/year",
     formula="CURRENT_APPROVALS × 40",
-    latex=r"Approvals_{high} = 50 \times 40 = 2,000",
+    latex=r"Approvals_{high} = 50 \text{ (current)} \times 40 \text{ (factor)} = 2,000",
     keywords=["2k", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
 )  # Optimistic approvals estimate (40x current)
 
@@ -1134,7 +1134,7 @@ DFDA_ELIGIBLE_PATIENTS_GLOBAL = Parameter(
     display_name="dFDA Global Eligible Patients with Minimal Exclusions",
     unit="people",
     formula="DISEASE_PATIENTS × ELIGIBILITY_RATE",
-    latex=r"Eligible_{dFDA} = 2.4B \times 0.50 = 1.2B",
+    latex=r"Eligible_{dFDA} = 2.4B \text{ (patients)} \times 50\% \text{ (eligible)} = 1.2B",
     keywords=["1.2b", "pragmatic trials", "real world evidence", "participant", "subject", "volunteer", "enrollee"]
 )  # 1.2B eligible with minimal exclusions
 
@@ -1315,7 +1315,7 @@ DFDA_ANNUAL_OPEX = Parameter(
     display_name="Total Annual dFDA Operational Costs",
     unit="USD/year",
     formula="PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
-    latex=r"OPEX_{total} = \sum_{i=1}^{5} OPEX_i = 0.015 + 0.010 + 0.008 + 0.005 + 0.002",
+    latex=r"OPEX_{total} = \$15M \text{ (plat)} + \$10M \text{ (staff)} + \$8M \text{ (infra)} + \$5M \text{ (reg)} + \$2M \text{ (comm)} = \$40M",
     keywords=["pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation", "decentralized trials"]
 )  # $40M annually
 
@@ -1562,8 +1562,8 @@ DISEASE_ERADICATION_DELAY_DEATHS_TOTAL = Parameter(
     description="Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
     display_name="Total Deaths from Disease Eradication Delay",
     unit="deaths",
-    formula="DAILY_DEATHS × EFFICACY_LAG_YEARS × 365 days × EVENTUALLY_AVOIDABLE_DEATH_PCT",
-    latex=r"D_{total} = 150,000 \times 8.2 \times 365 \times 0.921 = 413.4M",
+    formula="ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    latex=r"D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)} = 413.4M",
     confidence="medium",
     keywords=["disease eradication", "regulatory delay", "efficacy lag", "primary estimate", "eventually avoidable"]
 )  # 413.4M eventually avoidable deaths (down from 449M raw total)
@@ -1633,7 +1633,7 @@ DISEASE_ERADICATION_DELAY_YLL = Parameter(
     display_name="Years of Life Lost from Disease Eradication Delay",
     unit="years",
     formula="DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
-    latex=r"YLL = 449M \times (79 - 62) = 7.63B",
+    latex=r"YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B",
     confidence="medium",
     keywords=["disease eradication", "YLL", "years of life lost", "disease burden", "mortality burden"]
 )  # 7.63B years
@@ -1646,7 +1646,7 @@ DISEASE_ERADICATION_DELAY_YLD = Parameter(
     display_name="Years Lived with Disability During Disease Eradication Delay",
     unit="years",
     formula="DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
-    latex=r"YLD = 449M \times 6 \times 0.35 = 943M",
+    latex=r"YLD = 413.4M \times 6 \times 0.35 = 868M",
     confidence="medium",
     keywords=["disease eradication", "YLD", "years lived with disability", "disease burden", "morbidity"]
 )  # 943M years
@@ -1659,7 +1659,7 @@ DISEASE_ERADICATION_DELAY_DALYS = Parameter(
     display_name="Total DALYs Lost from Disease Eradication Delay",
     unit="DALYs",
     formula="YLL + YLD",
-    latex=r"DALY_{total} = 7.63B + 0.943B = 7.90B",
+    latex=r"DALY_{total} = 7.03B \text{ (YLL)} + 0.87B \text{ (YLD)} = 7.90B",
     confidence="medium",
     keywords=["disease eradication", "DALYs", "disease burden", "primary estimate"]
 )  # 7.90B DALYs
@@ -1687,7 +1687,7 @@ DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS = Parameter(
     display_name="Total Economic Loss from Disease Eradication Delay",
     unit="USD",
     formula="DALYS_TOTAL × VSLY",
-    latex=r"Loss = 7.94B \times \$150k = \$1.191\text{ quadrillion}",
+    latex=r"Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}",
     confidence="medium",
     keywords=["disease eradication", "economic loss", "deadweight loss", "primary estimate"]
 )  # $1.191 Quadrillion total economic loss
@@ -1731,8 +1731,8 @@ DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL = Parameter(
     description="Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.",
     display_name="Total Deaths from Disease Eradication + Innovation Acceleration",
     unit="deaths",
-    formula="(DAILY_DEATHS × 365 × 2) × EFFICACY_LAG_YEARS",
-    latex=r"D_{total} = (150K \times 365 \times 2) \times 8.2 = 898M",
+    formula="(ANNUAL_DEATHS × 2) × EFFICACY_LAG_YEARS",
+    latex=r"D_{total} = (54.75M \times 2) \times 8.2 = 898M",
     confidence="low",
     keywords=["898m", "optimistic", "total", "one-time", "upper bound", "acceleration", "innovation"]
 )  # 898M total deaths (optimistic with innovation acceleration)
@@ -1828,7 +1828,7 @@ THALIDOMIDE_DEATHS_PER_EVENT = Parameter(
     display_name="Thalidomide Deaths Per Event",
     unit="deaths",
     formula="US_CASES × MORTALITY_RATE",
-    latex=r"900 \times 40\% = 360 \text{ deaths}",
+    latex=r"900 \text{ (cases)} \times 40\% \text{ (mortality)} = 360 \text{ deaths}",
     confidence="medium",
     keywords=["thalidomide", "mortality"]
 )
@@ -1840,7 +1840,7 @@ THALIDOMIDE_YLL_PER_EVENT = Parameter(
     display_name="Thalidomide YLL Per Event",
     unit="years",
     formula="DEATHS × 80 years",
-    latex=r"360 \times 80 = 28{,}800 \text{ YLL}",
+    latex=r"360 \text{ (deaths)} \times 80 \text{ (years)} = 28{,}800 \text{ YLL}",
     confidence="medium",
     keywords=["thalidomide", "YLL", "mortality"]
 )
@@ -1852,7 +1852,7 @@ THALIDOMIDE_SURVIVORS_PER_EVENT = Parameter(
     display_name="Thalidomide Survivors Per Event",
     unit="cases",
     formula="US_CASES × (1 - MORTALITY_RATE)",
-    latex=r"900 \times 60\% = 540 \text{ survivors}",
+    latex=r"900 \text{ (cases)} \times 60\% \text{ (survival)} = 540 \text{ survivors}",
     confidence="medium",
     keywords=["thalidomide", "survivors"]
 )
@@ -1864,7 +1864,7 @@ THALIDOMIDE_YLD_PER_EVENT = Parameter(
     display_name="Thalidomide YLD Per Event",
     unit="years",
     formula="SURVIVORS × LIFESPAN × DISABILITY_WEIGHT",
-    latex=r"540 \times 60 \times 0.4 = 12{,}960 \text{ YLD}",
+    latex=r"540 \text{ (surv)} \times 60 \text{ (yrs)} \times 0.4 \text{ (weight)} = 12{,}960 \text{ YLD}",
     confidence="medium",
     keywords=["thalidomide", "YLD", "disability"]
 )
@@ -1998,7 +1998,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     display_name="Total 1% Treaty Campaign Cost",
     unit="USD",
     formula="REFERENDUM + LOBBYING + RESERVE",
-    latex=r"CampaignCost = \$0.3B + \$0.65B + \$0.05B = \$1.0B",
+    latex=r"CampaignCost = \$300M \text{ (ref)} + \$650M \text{ (lob)} + \$50M \text{ (res)} = \$1.0B",
     confidence="high",
     keywords=["1%", "impact investing", "pay for success", "one percent", "debt instrument", "development finance", "fixed income"]
 )  # $1B total campaign cost (all VICTORY bonds)
@@ -3554,7 +3554,7 @@ COST_OF_DELAY_DEATHS_PER_SECOND = Parameter(
     display_name="Preventable Deaths per Second from Curable Diseases",
     unit="deaths/second",
     formula="DAILY_DEATHS ÷ SECONDS_PER_DAY",
-    latex=r"Delay_{deaths} = \frac{150,000}{86,400} \approx 1.74",
+    latex=r"Delay_{deaths} = \frac{150,000 \text{ (daily)}}{86,400 \text{ (sec/day)}} \approx 1.74",
     keywords=["day", "each day", "holdup", "lag", "latency", "per day", "postponement"]
 )  # deaths per second
 

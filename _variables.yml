@@ -687,18 +687,17 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
   \ Life Years lost from disease eradication delay (PRIMARY estimate) | ~ Medium confidence\
   \ | Formula: YLL + YLD | Unit: DALYs | Click to view calculation\">7.94B</a>"
-"disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.63B + 0.943B = 7.90B\n\
-  $$"
+"disease_eradication_delay_dalys_latex": "$$\nDALY_{total} = 7.03B \\text{ (YLL)}\
+  \ + 0.87B \\text{ (YLD)} = 7.90B\n$$"
 "disease_eradication_delay_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total eventually\
   \ avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate,\
   \ conservative). Excludes fundamentally unavoidable deaths (primarily accidents\
-  \ ~7.9%). | ~ Medium confidence | Formula: DAILY_DEATHS × EFFICACY_LAG_YEARS × 365\
-  \ days × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to view calculation\"\
-  >416M</a>"
-"disease_eradication_delay_deaths_total_latex": "$$\nD_{total} = 150,000 \\times 8.2\
-  \ \\times 365 \\times 0.921 = 413.4M\n$$"
+  \ ~7.9%). | ~ Medium confidence | Formula: ANNUAL_DEATHS × EFFICACY_LAG_YEARS ×\
+  \ EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to view calculation\">416M</a>"
+"disease_eradication_delay_deaths_total_latex": "$$\nD_{total} = 54.75M \\text{ (annual)}\
+  \ \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M\n$$"
 "disease_eradication_delay_economic_loss": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total economic\
@@ -707,24 +706,24 @@
   \ than local ability-to-pay, representing the full human capital loss. | ~ Medium\
   \ confidence | Formula: DALYS_TOTAL × VSLY | Unit: USD | Click to view calculation\"\
   >$1.19 quadrillion</a>"
-"disease_eradication_delay_economic_loss_latex": "$$\nLoss = 7.94B \\times \\$150k\
-  \ = \\$1.191\\text{ quadrillion}\n$$"
+"disease_eradication_delay_economic_loss_latex": "$$\nLoss = 7.90B \\times \\$150k\
+  \ = \\$1.185\\text{ quadrillion}\n$$"
 "disease_eradication_delay_yld": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years Lived\
   \ with Disability during disease eradication delay (PRIMARY estimate) | ~ Medium\
   \ confidence | Formula: DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT | Unit:\
   \ years | Click to view calculation\">873M</a>"
-"disease_eradication_delay_yld_latex": "$$\nYLD = 449M \\times 6 \\times 0.35 = 943M\n\
-  $$"
+"disease_eradication_delay_yld_latex": "$$\nYLD = 413.4M \\times 6 \\times 0.35 =\
+  \ 868M\n$$"
 "disease_eradication_delay_yll": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years of Life\
   \ Lost from disease eradication delay deaths (PRIMARY estimate) | ~ Medium confidence\
   \ | Formula: DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) | Unit: years\
   \ | Click to view calculation\">7.07B</a>"
-"disease_eradication_delay_yll_latex": "$$\nYLL = 449M \\times (79 - 62) = 7.63B\n\
-  $$"
+"disease_eradication_delay_yll_latex": "$$\nYLL = 413.4M \\times 17 \\text{ (years\
+  \ lost)} = 7.03B\n$$"
 "disease_eradication_plus_acceleration_deaths_total": "<a href=\"/knowledge/references#pharmaceutical-innovation-acceleration-economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total deaths from\
@@ -734,10 +733,10 @@
   \ earlier phase starts. The 2× multiplier is supported by research showing 50% timeline\
   \ reductions achievable (Nature 2023) and adaptive trials generating millions of\
   \ additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2\
-  \ years. | ? Low confidence | Formula: (DAILY_DEATHS × 365 × 2) × EFFICACY_LAG_YEARS\
+  \ years. | ? Low confidence | Formula: (ANNUAL_DEATHS × 2) × EFFICACY_LAG_YEARS\
   \ | Unit: deaths | Click to view calculation\">898M</a>"
-"disease_eradication_plus_acceleration_deaths_total_latex": "$$\nD_{total} = (150K\
-  \ \\times 365 \\times 2) \\times 8.2 = 898M\n$$"
+"disease_eradication_plus_acceleration_deaths_total_latex": "$$\nD_{total} = (54.75M\
+  \ \\times 2) \\times 8.2 = 898M\n$$"
 "disease_eradication_plus_acceleration_economic_loss_total": "<a href=\"/knowledge/references#pharmaceutical-innovation-acceleration-economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total economic\
