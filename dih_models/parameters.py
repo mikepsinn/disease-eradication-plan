@@ -98,7 +98,7 @@ class Parameter(float):
             display_name="Total Annual Operational Costs",
             unit="USD/year",
             formula="PLATFORM + STAFF + INFRA + REGULATORY + COMMUNITY",
-            latex=r"OPEX_{total} = \sum_{i=1}^{5} OPEX_i",
+            latex=r"OPEX_{total} = \$15M \text{ (plat)} + \$10M \text{ (staff)} + \$8M \text{ (infra)} + \$5M \text{ (reg)} + \$2M \text{ (comm)} = \$40M",
             confidence="medium",
             conservative=True,
             sensitivity=0.01,
@@ -632,7 +632,7 @@ PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     display_name="Annual Peace Dividend from 1% Reduction in Total War Costs",
     unit="USD/year",
     formula="TOTAL_WAR_COST × 1%",
-    latex=r"Peace\_Dividend = \$11,355B \times 0.01 = \$113.55B",
+    latex=r"PeaceDividend = \$11,355B \times 0.01 = \$113.55B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "yearly", "armistice", "ceasefire", "conflict"]
 )  # $113.55B, rounded to $114B
 
@@ -645,7 +645,7 @@ PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
     display_name="Annual Savings from 1% Reduction in Direct War Costs",
     unit="USD/year",
     formula="DIRECT_COSTS × 1%",
-    latex=r"PD_{direct} = \$7,655B \times 0.01 = \$76.55B",
+    latex=r"PeaceDividend_{direct} = \$7,655B \times 0.01 = \$76.55B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "conflict"]
 )
 
@@ -657,7 +657,7 @@ PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
     display_name="Annual Savings from 1% Reduction in Infrastructure Destruction",
     unit="USD/year",
     formula="INFRASTRUCTURE_DESTRUCTION × 1%",
-    latex=r"PD_{infra} = \$1,875B \times 0.01 = \$18.75B",
+    latex=r"PeaceDividend_{infra} = \$1,875B \times 0.01 = \$18.75B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -669,7 +669,7 @@ PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
     display_name="Annual Savings from 1% Reduction in Human Casualties",
     unit="USD/year",
     formula="HUMAN_LIFE_LOSSES × 1%",
-    latex=r"PD_{human} = \$2,446B \times 0.01 = \$24.46B",
+    latex=r"PeaceDividend_{human} = \$2,446B \times 0.01 = \$24.46B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -681,7 +681,7 @@ PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
     display_name="Annual Savings from 1% Reduction in Trade Disruption",
     unit="USD/year",
     formula="TRADE_DISRUPTION × 1%",
-    latex=r"PD_{trade} = \$616B \times 0.01 = \$6.16B",
+    latex=r"PeaceDividend_{trade} = \$616B \times 0.01 = \$6.16B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -693,7 +693,7 @@ PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
     display_name="Annual Savings from 1% Reduction in Indirect War Costs",
     unit="USD/year",
     formula="INDIRECT_COSTS × 1%",
-    latex=r"PD_{indirect} = \$3,700.1B \times 0.01 = \$37.00B",
+    latex=r"PeaceDividend_{indirect} = \$3,700.1B \times 0.01 = \$37.00B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "conflict"]
 )
 
@@ -705,7 +705,7 @@ PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
     display_name="Annual Savings from 1% Reduction in Lost Economic Growth",
     unit="USD/year",
     formula="LOST_ECONOMIC_GROWTH × 1%",
-    latex=r"PD_{growth} = \$2,718B \times 0.01 = \$27.18B",
+    latex=r"PeaceDividend_{growth} = \$2,718B \times 0.01 = \$27.18B",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"]
 )
 
@@ -717,7 +717,7 @@ PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
     display_name="Annual Savings from 1% Reduction in Veteran Healthcare Costs",
     unit="USD/year",
     formula="VETERAN_HEALTHCARE × 1%",
-    latex=r"PD_{veteran} = \$20.01B \times 0.01 = \$0.20B",
+    latex=r"PeaceDividend_{veteran} = \$20.01B \times 0.01 = \$0.20B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -729,7 +729,7 @@ PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
     display_name="Annual Savings from 1% Reduction in Refugee Support Costs",
     unit="USD/year",
     formula="REFUGEE_SUPPORT × 1%",
-    latex=r"PD_{refugee} = \$15B \times 0.01 = \$0.15B",
+    latex=r"PeaceDividend_{refugee} = \$15B \times 0.01 = \$0.15B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -741,7 +741,7 @@ PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
     display_name="Annual Savings from 1% Reduction in Environmental Damage",
     unit="USD/year",
     formula="ENVIRONMENTAL_DAMAGE × 1%",
-    latex=r"PD_{env} = \$10B \times 0.01 = \$0.10B",
+    latex=r"PeaceDividend_{env} = \$10B \times 0.01 = \$0.10B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -753,7 +753,7 @@ PEACE_DIVIDEND_PTSD = Parameter(
     display_name="Annual Savings from 1% Reduction in PTSD and Mental Health Costs",
     unit="USD/year",
     formula="PTSD_COSTS × 1%",
-    latex=r"PD_{PTSD} = \$23.2B \times 0.01 = \$0.23B",
+    latex=r"PeaceDividend_{PTSD} = \$23.2B \times 0.01 = \$0.23B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -765,7 +765,7 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
     display_name="Annual Savings from 1% Reduction in Lost Human Capital",
     unit="USD/year",
     formula="LOST_HUMAN_CAPITAL × 1%",
-    latex=r"PD_{capital} = \$30B \times 0.01 = \$0.30B",
+    latex=r"PeaceDividend_{capital} = \$30B \times 0.01 = \$0.30B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"]
 )
 
@@ -776,7 +776,7 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     source_type="calculated",
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",
-    latex=r"PD_{fiscal} = \$27.18B",
+    latex=r"PeaceDividend_{fiscal} = \$27.18B",
     description="Direct fiscal savings from 1% military spending reduction (high confidence)",
     display_name="Direct Fiscal Savings from 1% Military Spending Reduction",
     unit="USD/year",
@@ -789,7 +789,7 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
     source_type="calculated",
     confidence="low",
     formula="PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT - TREATY_ANNUAL_FUNDING",
-    latex=r"PD_{conflict} = \$113.55B - \$27.18B = \$86.37B",
+    latex=r"PeaceDividend_{conflict} = \$113.55B - \$27.18B = \$86.37B",
     description="Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)",
     display_name="Conflict Reduction Benefits from 1% Less Military Spending",
     unit="USD/year",
@@ -1537,7 +1537,7 @@ FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT = Parameter(
     display_name="Fundamentally Unavoidable Death Percentage",
     unit="percentage",
     formula="Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
-    latex=r"P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{burden} \times (1 - \text{max cure rate})) = 7.91\%",
+    latex=r"P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{disease burden} \times (1 - \text{max cure rate})) = 7.91\%",
     confidence="medium",
 )  # ~7.9% unavoidable with aging_related at 0.99
 
@@ -2419,14 +2419,14 @@ NPV_DISCOUNT_RATE_STANDARD = Parameter(
     description="Standard discount rate for NPV analysis (8% annual)",
     display_name="Standard Discount Rate for NPV Analysis",
     unit="rate",
-    latex=r"r = 0.08",
+    latex=r"r = 0.08 \text{ (discount rate)}",
     keywords=["8%", "yearly", "npv", "discount", "standard", "pa", "per annum"]
 )  # 8% annual discount rate (r)
 
 NPV_TIME_HORIZON_YEARS = Parameter(
     10, source_ref="", source_type="definition", description="Standard time horizon for NPV analysis", unit="years",
     display_name="Standard Time Horizon for NPV Analysis",
-    latex=r"T = 10",
+    latex=r"T = 10 \text{ (time horizon, years)}",
     keywords=["npv", "time", "horizon", "years"]
 )  # Standard 10-year analysis window (T)
 
@@ -2486,7 +2486,7 @@ DFDA_NPV_UPFRONT_COST_TOTAL = Parameter(
     display_name="dFDA Total NPV Upfront Costs",
     unit="USD",
     formula="DFDA_BUILD + DIH_INITIATIVES",
-    latex=r"C_0 = \$0.040B + \$0.22975B = \$0.26975B",
+    latex=r"C_0 = \$0.040B + \$0.22975B = \$0.26975B \text{ (upfront cost)}",
     keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"]
 )  # C0 = $0.26975B
 
@@ -2499,7 +2499,7 @@ DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
     display_name="dFDA Total NPV Annual OPEX",
     unit="USD/year",
     formula="DFDA_OPEX + DIH_OPEX",
-    latex=r"C_{op} = \$0.01895B + \$0.02110B = \$0.04005B",
+    latex=r"C_{op} = \$0.01895B + \$0.02110B = \$0.04005B \text{ (annual operational cost)}",
     keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "decentralized trials", "drug agency"]
 )  # Cop = $0.04005B
 
@@ -2557,7 +2557,7 @@ DFDA_NPV_BENEFIT_RD_ONLY = Parameter(
     display_name="NPV of dFDA Benefits (R&D Only, 10-Year Discounted)",
     unit="USD",
     formula="Sum of discounted annual net R&D savings with linear adoption ramp",
-    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
+    latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"]
 )  # ~$249.3B NPV of R&D savings only (conservative financial case)
 
@@ -2569,7 +2569,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
     display_name="NPV Net Benefit (R&D Only, Conservative)",
     unit="USD",
     formula="NPV of net R&D savings with 5-year linear adoption ramp",
-    latex=r"Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B",
+    latex=r"Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}",
     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "conservative"]
 )  # ~$249.3B (R&D savings only, most defensible financial case)
 
@@ -2805,7 +2805,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     display_name="Annual Clinical Trial Patient Subsidies",
     unit="USD/year",
     formula="MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
-    latex=r"\$24.462B - \$0.04B = \$24.422B",
+    latex=r"TrialSubsidies = \$24.462B - \$0.04B = \$24.422B",
     keywords=["pragmatic trials", "real world evidence", "distributed research", "global research", "open science", "rct", "patient subsidy"]
 )  # $24.422B/year - ALL remaining funds go to subsidizing patient trial participation
 
@@ -2817,7 +2817,7 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     display_name="Patients Fundable Annually",
     unit="patients/year",
     formula="TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
-    latex=r"\$24.422B \div \$500 = 48.8M",
+    latex=r"PatientsFundable = \$24.422B \div \$500 = 48.8M",
     keywords=["trial", "participant", "enrollment", "capacity", "patient"]
 )  # 48.8 million patients/year
 
@@ -2830,7 +2830,7 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     display_name="Medical Research Percentage of Treaty Funding",
     unit="rate",
     formula="MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-    latex=r"\$24.462B / \$27.18B = 0.90 = 90\%",
+    latex=r"MedicalResearchPct = \$24.462B / \$27.18B = 0.90 = 90\%",
     confidence="high",
     keywords=["allocation", "percentage", "medical research", "funding"]
 )  # 90%
@@ -2843,7 +2843,7 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
     unit="rate",
     formula="TRIAL_SUBSIDIES / TREATY_FUNDING",
-    latex=r"\$24.422B / \$27.18B = 0.8986 = 89.86\%",
+    latex=r"TrialSubsidiesPct = \$24.422B / \$27.18B = 0.8986 = 89.86\%",
     confidence="high",
     keywords=["allocation", "percentage", "patient", "trial", "subsidy"]
 )  # 89.86%
@@ -2856,7 +2856,7 @@ DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     display_name="dFDA Overhead Percentage of Treaty Funding",
     unit="rate",
     formula="DFDA_OPEX / TREATY_FUNDING",
-    latex=r"\$0.04B / \$27.18B = 0.00147 = 0.15\%",
+    latex=r"DFDAOpexPct = \$0.04B / \$27.18B = 0.00147 = 0.15\%",
     confidence="high",
     keywords=["allocation", "percentage", "overhead", "platform", "opex"]
 )  # 0.15%
@@ -2889,7 +2889,7 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     display_name="Total Global Research Funding (Baseline + 1% Treaty Funding)",
     unit="USD",
     formula="GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
-    latex=r"\$67.5B + \$27.18B = \$94.68B",
+    latex=r"TotalResearchFunding = \$67.5B + \$27.18B = \$94.68B",
     keywords=["research", "funding", "total", "dih", "treaty"]
 )
 
@@ -3238,7 +3238,7 @@ MULTIPLIER_VS_GIVEWELL = Parameter(
     display_name="Cost-Effectiveness Multiplier vs Givewell Top Charities",
     unit="ratio",
     formula="ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST",
-    latex=r"Multiplier = \frac{|-\$6.19M \times 10^9|}{\$4,500} \approx 1,376x",
+    latex=r"CostEffectivenessMultiplier = \frac{|\text{NetBenefit} \times 10^9|}{\text{GiveWellCost}} = \frac{|\$6.19M \times 10^9|}{\$4,500} \approx 1,376x",
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple", "factor", "international agreement"]
 )  # ~1,376x more cost-effective
 
@@ -3521,7 +3521,7 @@ TREATY_VALUE_VS_GLOBAL_GDP_RATIO = Parameter(
     display_name="Treaty Value vs Global GDP Ratio",
     unit="ratio",
     formula="TOTAL_ECONOMIC_VALUE / GLOBAL_GDP",
-    latex=r"Ratio = \$1.191\text{ quadrillion} / \$105T = 11,343",
+    latex=r"TreatyValueToGDPRatio = \$1.191\text{ quadrillion} / \$105T = 11,343",
     confidence="medium",
     keywords=["scale", "comparison", "gdp", "earth equivalent", "magnitude"]
 )  # ~11,343 (over 11,000 Earths of GDP equivalent)
@@ -3554,7 +3554,7 @@ COST_OF_DELAY_DEATHS_PER_SECOND = Parameter(
     display_name="Preventable Deaths per Second from Curable Diseases",
     unit="deaths/second",
     formula="DAILY_DEATHS ÷ SECONDS_PER_DAY",
-    latex=r"Delay_{deaths} = \frac{150,000 \text{ (daily)}}{86,400 \text{ (sec/day)}} \approx 1.74",
+    latex=r"DeathsPerSecond = \frac{150,000 \text{ (daily deaths)}}{86,400 \text{ (sec/day)}} \approx 1.74 \text{ (deaths/sec)}",
     keywords=["day", "each day", "holdup", "lag", "latency", "per day", "postponement"]
 )  # deaths per second
 
