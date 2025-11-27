@@ -64,11 +64,7 @@ This means access to the cures for all diseases would be shifted forward in time
 
 ## How It Works
 
-The Oxford RECOVERY trial proved you can run clinical trials **{{< var trial_cost_reduction_factor >}}× cheaper** by:
-
-1. **Using existing hospitals** (not dedicated trial sites)
-2. **Paying patients** to participate (flips economic incentives)
-3. **Including real patients** (not just the 2% who meet restrictive criteria)
+The Oxford RECOVERY trial proved you can run clinical efficacy trials **{{< var trial_cost_reduction_factor >}}× cheaper** by integrating them into standard healthcare by assigning treatments to patients and comparing outcomes.
 
 **Results**:
 - {{< var recovery_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional)
