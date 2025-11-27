@@ -29,96 +29,6 @@ from dih_models.parameters import *
 
 ```
 
-## The Opportunity
-
-<div class="stat-number-hero">{{< var disease_eradication_delay_deaths_total >}}</div>
-<div class="stat-label-hero">lives saved by redirecting {{< var treaty_reduction_pct >}} to enable any patient to participate in 82X more efficient pragmatic clinical trials</div>
-
-**+ {{< var disease_eradication_delay_dalys >}} healthy life-years gained**
-
-**= {{< var disease_eradication_delay_economic_loss >}} in total equivalent economic value at $150k per year of healthy life saved**
-
-**How**: Humanity redirects 1% of global military spending to scale the Oxford RECOVERY pragmatic trial methodology globally for all treatments and all conditions.
-
-**Result**: Every patient can see a ranked list of treatments based on all available data and effortlessly participate in efficacy trials through their doctor, eliminating the {{< var efficacy_lag_years >}} year post-safety efficacy lag.
-This means access to the cures for all diseases would be shifted forward in time by {{< var efficacy_lag_years >}} years.
-
-## Numbers
-
-### 1. Cost-Effectiveness: **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY**
-
-- **{{< var treaty_vs_bed_nets_multiplier >}}× better** than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY)
-- **Cost-dominant**: Saves money while saving lives
-- Even at 10% success probability: {{< var treaty_expected_cost_per_daly_conservative >}}/DALY (still {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets)
-
-### 2. **{{< var disease_eradication_delay_deaths_total >}} Lives Saved**
-
-- {{< var efficacy_lag_years >}}-year timeline acceleration
-- {{< var disease_eradication_delay_dalys >}} healthy life-years gained
-
-### 3. **{{< var research_acceleration_multiplier >}}× Faster Medical Progress**
-
-- {{< var research_acceleration_cumulative_years_20yr >}} years of research in 20 years
-- Compresses decades of medical progress
-- Unlocks cures for diseases that don't exist yet
-
-**Annual Benefits**: Peace dividend ({{< var peace_dividend_annual_societal_benefit >}}) + R&D savings ({{< var dfda_benefit_rd_only_annual >}}) = {{< var treaty_total_complete_benefits_annual >}} annual surplus
-
-## How It Works
-
-The Oxford RECOVERY trial proved you can run clinical efficacy trials **{{< var trial_cost_reduction_factor >}}× cheaper** by integrating them into standard healthcare by assigning treatments to patients and comparing outcomes.
-
-**Results**:
-
-- {{< var recovery_trial_cost_per_patient >}} per patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional)
-- Enrolled [49,000 patients](../references.qmd#recovery-trial-82x-cost-reduction) across [185 hospitals](../references.qmd#recovery-trial-82x-cost-reduction) in 3 months
-- Saved over a million lives by discovering [dexamethasone reduces COVID deaths 33%](../references.qmd#recovery-trial-dexamethasone-results)
-- Ruled out hydroxychloroquine faster than regulators
-
-**Scale this globally** with {{< var treaty_annual_funding >}}/year:
-
-- Fund {{< var dih_patients_fundable_annually >}} patients/year (vs. {{< var current_trial_slots_available >}} today)
-- Run {{< var dfda_active_trials >}} trials simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}})
-- **= {{< var research_acceleration_multiplier >}}× research acceleration**
-
-## The 5-Step Implementation Plan
-
-### Step 1: Run a Global Survey
-
-Ask 3.5% of the global population if they would support a treaty that would redirect {{< var treaty_reduction_pct >}} of global military spending to hyper-efficient pragmatic clinical trials.
-
-### Step 2: Sell $1B in VICTORY Social Impact Bonds
-
-Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
-They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
-It's the Louisiana Purchase of medical research.
-
-### Step 3: Run the Lobbying Campaign
-
-Deploy Victory Bond funds to convince politicians that voters want this.
-Standard lobbying tactics, just pointed at curing diseases instead of making bombs.
-
-### Step 4: Build the Infrastructure
-
-The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach.
-Thousands of neglected treatments finally get tested.
-Effective ones scale instantly.
-
-**Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
-
-### Step 5: Eradicate Disease
-
-- Medical progress accelerates {{< var research_acceleration_multiplier >}}×
-- Disease categories start collapsing
-- Healthspan overtakes pathology
-- Investors profit massively
-- Governments save money
-- Everyone becomes healthier, safer, richer
-
-The plan works because **every step is economically rational for everyone involved**.
-Nobody needs to be convinced. They just need to count.
-
-**Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
 ## Abstract
 
@@ -1344,6 +1254,43 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 ## Implementation Strategy
 
 The economic benefits outlined above demonstrate the value proposition of the {{< var treaty_reduction_pct >}} Treaty system. Implementation requires political mobilization to achieve treaty adoption:
+
+### Step 1: Run a Global Survey
+
+Ask 3.5% of the global population if they would support a treaty that would redirect {{< var treaty_reduction_pct >}} of global military spending to hyper-efficient pragmatic clinical trials.
+
+### Step 2: Sell $1B in VICTORY Social Impact Bonds
+
+Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
+They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
+It's the Louisiana Purchase of medical research.
+
+### Step 3: Run the Lobbying Campaign
+
+Deploy Victory Bond funds to convince politicians that voters want this.
+Standard lobbying tactics, just pointed at curing diseases instead of making bombs.
+
+### Step 4: Build the Infrastructure
+
+The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach.
+Thousands of neglected treatments finally get tested.
+Effective ones scale instantly.
+
+**Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
+
+### Step 5: Eradicate Disease
+
+- Medical progress accelerates {{< var research_acceleration_multiplier >}}×
+- Disease categories start collapsing
+- Healthspan overtakes pathology
+- Investors profit massively
+- Governments save money
+- Everyone becomes healthier, safer, richer
+
+The plan works because **every step is economically rational for everyone involved**.
+Nobody needs to be convinced. They just need to count.
+
+**Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
 **For comprehensive implementation details**, see:
 
