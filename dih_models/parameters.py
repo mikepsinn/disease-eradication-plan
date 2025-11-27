@@ -1673,7 +1673,7 @@ SUFFERING_HOURS_ELIMINATED_TOTAL = Parameter(
     display_name="Total Suffering Hours Eliminated",
     unit="hours",
     formula="YLD × 8760 hours/year",
-    latex=r"Hours = 873M \times 8{,}760 = 7.65T",
+    latex=r"Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T",
     confidence="medium",
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden"]
 )  # 7.65 trillion hours total
