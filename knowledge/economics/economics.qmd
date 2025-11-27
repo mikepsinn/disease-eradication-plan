@@ -38,9 +38,22 @@ from dih_models.parameters import *
 
 **Results**: The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than malaria-prevention bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
-**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents **the highest-leverage economic intervention currently available to humanity**. It acts as a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time 8.2-year acceleration in disease eradication.
+**Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents **the highest-leverage economic intervention currently available to humanity**. It acts as a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time {{< var efficacy_lag_years >}}-year acceleration in disease eradication.
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, Victory Bonds, Decentralized FDA, Decentralized Institutes of Health, self-funding health intervention, negative cost per life saved
+
+
+::: {.callout-note}
+## Document Status
+
+This is an evolving analytical preprint published by the [Decentralized Institutes of Health](https://www.dih.earth/?ref=LTU1JFLH).
+
+Economists, policy analysts, and domain experts are invited to provide comments or suggest revisions.
+
+You can annotate any section using the hypothes.is tool on the right side of the page.
+
+Prospective co-authors are encouraged to contribute where they have expertise.
+:::
 
 
 ::: {.callout-note}
@@ -212,7 +225,7 @@ That's a quadrillion-dollar bill lying on the ground. The only question is wheth
 
 ### Research Acceleration
 
-{{< var research_acceleration_multiplier >}}× faster medical progress ({{< var research_acceleration_cumulative_years_20yr >}} of medical advancement in 20 years)
+{{< var research_acceleration_multiplier >}}× faster medical progress ({{< var research_acceleration_cumulative_years_20yr >}} years of medical advancement in 20 years)
 
 {{< var research_acceleration_multiplier_latex >}}
 
@@ -230,7 +243,7 @@ That's a quadrillion-dollar bill lying on the ground. The only question is wheth
 
 {{< var disease_eradication_delay_deaths_total_latex >}}
 
-- **{{< var disease_eradication_delay_deaths_total >}} from dFDA** (eliminating {{< var efficacy_lag_years >}}-year post-safety efficacy lag - one-time benefit)
+- **{{< var disease_eradication_delay_deaths_total >}} by eliminating {{< var efficacy_lag_years >}}-year post-safety efficacy lag by allowing anyone to participate in efficacy trials and immediately publishing results (one-time benefit)
 - **{{< var treaty_lives_saved_annual_global >}}/year from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction - recurring annual benefit)
 
 For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current regulatory system waiting for drug approval.
@@ -1347,7 +1360,7 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
-| **[Global Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_referendum >}} | Global direct democracy campaign (280M votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
+| **[Global Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_referendum >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
 | **[Political Lobbying](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), Super PACs, defense industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
 | **[Reserve Fund](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
@@ -1382,7 +1395,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Why this actually won't happen**:
 
-Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. You're offering Victory Bondholders **~270% annual returns** in perpetuity (allocating 10% of the $27 billion annual inflows to bond payouts).
+Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. You're offering Victory Bondholders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 
@@ -1580,7 +1593,7 @@ The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates 
 
 **This estimate is extremely conservative for three reasons:**
 
-1.  **It ignores the 25x Research Acceleration**: The 8.2-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that the dFDA system accelerates the *pace of research itself* by {{< var research_acceleration_multiplier >}}x. With 25x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just 8 years earlier.
+1.  **It ignores the {{< var research_acceleration_multiplier >}}x Research Acceleration**: The {{< var efficacy_lag_years >}}-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that the dFDA system accelerates the *pace of research itself* by {{< var research_acceleration_multiplier >}}x. With {{< var research_acceleration_multiplier >}}x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just {{< var efficacy_lag_years >}} years earlier.
 2.  **It assumes a fixed timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward by 8.2 years saves 8.2 years' worth of future lives. Given the trajectory of biotechnology, "eventual" control over biology is a matter of *when*, not *if*.
 3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating cures for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields over **$120 trillion** in value. The ROI is positive even at 1/100th of the projected success rate.
 

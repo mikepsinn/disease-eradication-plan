@@ -229,42 +229,84 @@ main {
     flex: none !important;
 }
 
-/* Note callout - subtle blue-gray accent */
-.callout-note {
-    border-left-color: #8b9ba8;
+/* Note callout - subtle monochrome gray */
+div.callout-note.callout {
+    border-left-color: #9a8a7a;
     background-color: transparent;
 }
 
-.callout-note .callout-title-container {
-    color: #5a6b78;
+div.callout-note.callout .callout-title-container {
+    color: #6b5d4f;
 }
 
-/* Warning callout - warm accent */
-.callout-warning {
+/* Warning callout - warm leather brown accent */
+div.callout-warning.callout {
     border-left-color: var(--book-accent);
     background-color: transparent;
 }
 
-.callout-warning .callout-title-container {
+div.callout-warning.callout .callout-title-container {
     color: var(--book-accent);
 }
 
-/* Important callout - deeper accent */
-.callout-important {
+/* Important callout - deeper brown accent */
+div.callout-important.callout {
     border-left-color: #7a5a3a;
     background-color: transparent;
 }
 
-.callout-important .callout-title-container {
+div.callout-important.callout .callout-title-container {
     color: #6b4e2e;
 }
 
-/* Default callout style */
-.callout-style-default {
+/* Tip/Info callout - medium monochrome gray */
+div.callout-tip.callout,
+div.callout.callout-style-default.callout-tip {
+    border-left-color: #a89a8a;
+    background-color: transparent;
+}
+
+div.callout-tip.callout .callout-title-container,
+div.callout.callout-style-default.callout-tip .callout-title-container {
+    color: #7a6d5f;
+}
+
+/* Override Bootstrap background colors on callout headers - keep transparent */
+div.callout-tip.callout-style-default > .callout-header,
+div.callout-note.callout > .callout-header,
+div.callout-warning.callout > .callout-header,
+div.callout-important.callout > .callout-header,
+div.callout-caution.callout > .callout-header,
+div.callout.callout-style-default > .callout-header {
+    background-color: transparent !important;
+}
+
+/* Override Bootstrap background colors on callout bodies - keep transparent */
+div.callout-tip.callout-style-default > .callout-body,
+div.callout-note.callout > .callout-body,
+div.callout-warning.callout > .callout-body,
+div.callout-important.callout > .callout-body,
+div.callout-caution.callout > .callout-body,
+div.callout.callout-style-default > .callout-body {
+    background-color: transparent !important;
+}
+
+/* Caution callout - darker monochrome */
+div.callout-caution.callout {
+    border-left-color: #6b5d4f;
+    background-color: transparent;
+}
+
+div.callout-caution.callout .callout-title-container {
+    color: #5a4d3f;
+}
+
+/* Default callout style - subtle tan */
+div.callout-style-default.callout {
     border-left-color: var(--book-border);
 }
 
-.callout-style-default .callout-title-container {
+div.callout-style-default.callout .callout-title-container {
     color: var(--book-heading);
 }
 
@@ -712,10 +754,6 @@ nav.quarto-page-breadcrumbs ol.breadcrumb li a {
     display: none;
 }
 
-/* Hide author metadata section */
-.quarto-title-meta-author {
-    display: none;
-}
 
 /* ==========================================
    MERMAID DIAGRAMS - BOOK AESTHETIC
