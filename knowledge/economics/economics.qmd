@@ -1,10 +1,18 @@
 ---
-title: The 1% Treaty Whitepaper
+title: The 1% Treaty Health & Economic Impact Analysis
 description: How to Save 416 Million Lives for $0.13 Per DALY, achieve 514 years of medical progress in 20 years (25× acceleration) and shift the cure of every disease forward by 8.2 years generating $1.2 quadrillion in value
 author:
-  - name: Mike P. Sinn
-    affiliation: Decentralized Institutes of Health
+  - name: "Decentralized Institutes of Health"
+    affiliation:
+      name: "Decentralized Institutes of Health"
+      url: "https://dih.earth"
+    roles: [conceptualization, methodology]
+  - name: "Mike P. Sinn"
+    affiliation:
+      name: "Decentralized Institutes of Health"
+    roles: [conceptualization, "writing – original draft"]
     email: m@dih.earth
+    corresponding: true
 published: true
 tags:
   - economics
