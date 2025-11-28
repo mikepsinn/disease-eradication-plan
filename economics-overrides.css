@@ -6,3 +6,6 @@
    It loads after styles.css, so any rules here will override the base styles.
    ========================================== */
 
+.quarto-title-meta-author {
+  display: none;
+}

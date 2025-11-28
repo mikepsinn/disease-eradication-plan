@@ -383,6 +383,40 @@ You just point everyone's greed at diseases instead of each other.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
+## Vote Impact Ledger
+
+This campaign only needs {{< var treaty_campaign_voting_bloc_target >}} committed votes (3.5% of humanity) to force the treaty onto every ballot. Once we know the total benefit a passed treaty unlocks, the math for "what your vote is worth" is just division.
+
+```{python}
+#| label: vote-ledger-calcs
+#| echo: false
+#| output: false
+
+votes = float(TREATY_CAMPAIGN_VOTING_BLOC_TARGET)
+lives_total = float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL)
+suffering_hours = float(SUFFERING_HOURS_ELIMINATED_TOTAL)
+economic_value = float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+
+lives_per_vote = lives_total / votes
+hours_per_vote = suffering_hours / votes
+value_per_vote = economic_value / votes
+
+minutes_to_win_vote = 15
+value_per_hour = value_per_vote / (minutes_to_win_vote / 60)
+```
+
+:::: {.callout-tip}
+## Per-Vote Ledger (public dashboard math)
+
+- **Votes required:** `{python} f"{votes:,.0f}"` committed signatures (≈3.5% of the planet)
+- **Lives unlocked:** `{python} f"{lives_per_vote:,.2f}"` lives saved per voter recruited
+- **Suffering erased:** `{python} f"{hours_per_vote:,.0f}"` hours of pain deleted per vote (≈3.1 years)
+- **Prosperity created:** `${python} f"{value_per_vote:,.2f}"` in lifetime economic surplus per vote
+- **Time leverage:** Spend 15 minutes convincing someone and you just generated `${python} f"{value_per_hour:,.2f}"` per hour of persuasion
+::::
+
+Because these figures come straight from `dih_models/parameters.py`, the running total on the public dashboard will always match the underlying treaty math, no spreadsheets, no guessing.
+
 ## Why This Is the Dominant Strategy
 
 If your goal is to maximize:
