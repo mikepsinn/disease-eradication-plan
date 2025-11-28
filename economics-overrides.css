@@ -9,3 +9,8 @@
 .quarto-title-meta-author {
   display: none;
 }
+
+/* Quarto 1.5+ title meta container (hides Author row rendered in .quarto-title-meta) */
+.quarto-title-meta {
+  display: none !important;
+}
