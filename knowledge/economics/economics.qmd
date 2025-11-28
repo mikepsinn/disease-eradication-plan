@@ -411,8 +411,8 @@ value_per_hour = value_per_vote / (minutes_to_win_vote / 60)
 - **Votes required:** `{python} f"{votes:,.0f}"` committed signatures (≈3.5% of the planet)
 - **Lives unlocked:** `{python} f"{lives_per_vote:,.2f}"` lives saved per voter recruited
 - **Suffering erased:** `{python} f"{hours_per_vote:,.0f}"` hours of pain deleted per vote (≈3.1 years)
-- **Prosperity created:** `${python} f"{value_per_vote:,.2f}"` in lifetime economic surplus per vote
-- **Time leverage:** Spend 15 minutes convincing someone and you just generated `${python} f"{value_per_hour:,.2f}"` per hour of persuasion
+- **Prosperity created:** `{python} f"${value_per_vote:,.2f}"` in lifetime economic surplus per vote
+- **Time leverage:** Spend 15 minutes convincing someone and you just generated `{python} f"${value_per_hour:,.2f}"` per hour of persuasion
 ::::
 
 Because these figures come straight from `dih_models/parameters.py`, the running total on the public dashboard will always match the underlying treaty math, no spreadsheets, no guessing.
