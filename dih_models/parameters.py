@@ -15,7 +15,7 @@ Usage:
 """
 
 from enum import Enum
-from typing import Optional, List, Tuple, Union
+from typing import Optional, List, Tuple, Union, Any
 
 # Import valid reference IDs for type-safe citations
 try:
@@ -44,8 +44,7 @@ class SourceType(str, Enum):
 
 
 class Parameter(float):
-    r"""
-    A numeric parameter that works in calculations but carries source metadata.
+    r"""A numeric parameter that works in calculations but carries source metadata.
 
     Enables clickable links from numbers to their sources (external citations)
     or calculation methodologies (internal QMD pages). Enhanced with academic
@@ -134,6 +133,33 @@ class Parameter(float):
         ratio = NET_BENEFIT / CONFLICT_DEATHS  # Works!
     """
 
+    __slots__ = (
+        'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
+        'confidence', 'last_updated', 'peer_reviewed', 'conservative', 'sensitivity',
+        'display_value', 'display_name', 'keywords', 'min_value', 'max_value',
+        'confidence_interval', 'std_error'
+    )
+
+    # Type annotations for Pylance/Pyright
+    source_ref: str
+    source_type: "SourceType"
+    description: str
+    unit: str
+    formula: str
+    latex: str
+    confidence: str
+    last_updated: "str | None"
+    peer_reviewed: bool
+    conservative: bool
+    sensitivity: "float | None"
+    display_value: "str | None"
+    display_name: "str | None"
+    keywords: "list[str]"
+    min_value: "float | None"
+    max_value: "float | None"
+    confidence_interval: "tuple[float, float] | None"
+    std_error: "float | None"
+
     def __new__(
         cls,
         value: float,
@@ -158,7 +184,7 @@ class Parameter(float):
         std_error: Optional[float] = None,
     ):
         # Convert string source_type to enum (backwards compatibility)
-        if isinstance(source_type, str):
+        if not isinstance(source_type, SourceType):
             source_type = SourceType(source_type)
 
         # Validation: check bounds
@@ -213,7 +239,7 @@ class Parameter(float):
         """Return just the numeric value as a string for display purposes."""
         return str(float(self))
 
-    def __format__(self, format_spec):
+    def __format__(self, format_spec: str) -> str:
         """Format the numeric value according to format_spec for f-strings."""
         return format(float(self), format_spec)
 
@@ -3125,7 +3151,7 @@ US_MILITARY_SPENDING_PCT_GDP = Parameter(
 # Rare diseases
 RARE_DISEASES_COUNT_GLOBAL = Parameter(
     7000,
-    source_ref=ReferenceID._95_PCT_DISEASES_NO_TREATMENT,
+    source_ref=ReferenceID.N95_PCT_DISEASES_NO_TREATMENT,
     source_type="external",
     description="Total number of rare diseases globally",
     display_name="Total Number of Rare Diseases Globally",
@@ -4061,7 +4087,7 @@ TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
 # ---
 
 
-def format_parameter_value(param, unit=None):
+def format_parameter_value(param: float | int | str | Parameter, unit: str | None = None) -> str:
     """
     Universal formatter - handles Parameter objects, auto-scales based on value.
 
@@ -4084,10 +4110,11 @@ def format_parameter_value(param, unit=None):
         "50%"
     """
     # Auto-detect unit from Parameter object
-    if unit is None and hasattr(param, "unit"):
-        unit = param.unit or ""
-    elif unit is None:
-        unit = ""
+    if unit is None:
+        if isinstance(param, Parameter) and param.unit:
+            unit = param.unit
+        else:
+            unit = ""
 
     # Get raw numeric value
     if isinstance(param, (int, float)):
@@ -4300,7 +4327,7 @@ def format_parameter_value(param, unit=None):
     return formatted_num
 
 
-def format_roi(value):
+def format_roi(value: float) -> str:
     """Format ROI as ratio
 
     Args:
@@ -4312,7 +4339,7 @@ def format_roi(value):
     return f"{value:,.0f}:1"
 
 
-def format_percentage(value):
+def format_percentage(value: float) -> str:
     """Format as percentage
 
     Args:
@@ -4324,7 +4351,7 @@ def format_percentage(value):
     return f"{value*100:,.1f}%"
 
 
-def format_qalys(value):
+def format_qalys(value: float) -> str:
     """Format QALY count with commas
 
     Args:
@@ -4444,7 +4471,7 @@ TREATY_CAMPAIGN_BUDGET_SUPER_PACS = Parameter(
 
 GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     0.035,
-    source_ref=ReferenceID._3_5_RULE,
+    source_ref=ReferenceID.N3_5_RULE,
     source_type="external",
     description="Critical mass threshold for social change (3.5% rule)",
     display_name="Critical Mass Threshold for Social Change",
@@ -5011,7 +5038,7 @@ effective_hourly_rate_vs_ceo_multiplier_formatted = f"{EFFECTIVE_HOURLY_RATE_VS_
 # ---
 
 
-def calculate_gdp_growth_boost(treaty_pct):
+def calculate_gdp_growth_boost(treaty_pct: float) -> float:
     """
     Calculate GDP growth boost from military spending redirection
 
@@ -5041,7 +5068,7 @@ def calculate_gdp_growth_boost(treaty_pct):
     return BASE_GDP_GROWTH + boost
 
 
-def calculate_trial_capacity_multiplier(treaty_pct):
+def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     """
     Calculate trial capacity multiplier for a given treaty percentage.
 
@@ -5065,7 +5092,7 @@ def calculate_trial_capacity_multiplier(treaty_pct):
     return float(TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
 
 
-def calculate_life_expectancy_gain(treaty_pct):
+def calculate_life_expectancy_gain(treaty_pct: float) -> float:
     """
     Calculate additional years of life from medical progress acceleration
 
@@ -5093,7 +5120,7 @@ def calculate_life_expectancy_gain(treaty_pct):
     return conservative_gain
 
 
-def compound_sum(annual_benefit, years, growth_rate, discount_rate=0.03):
+def compound_sum(annual_benefit: float, years: float, growth_rate: float, discount_rate: float = 0.03) -> float:
     """
     Calculate present value of compounding annual benefits
 
@@ -5120,12 +5147,12 @@ def compound_sum(annual_benefit, years, growth_rate, discount_rate=0.03):
 
 
 def calculate_personal_lifetime_wealth(
-    treaty_pct=TREATY_REDUCTION_PCT,
-    current_age=30,
-    baseline_life_expectancy=80,
-    annual_income=50000,  # Global median income
-    discount_rate=0.03,
-):
+    treaty_pct: float = TREATY_REDUCTION_PCT,
+    current_age: int = 30,
+    baseline_life_expectancy: int = 80,
+    annual_income: float = 50000,  # Global median income
+    discount_rate: float = 0.03,
+) -> dict[str, Any]:
     """
     Calculate individual lifetime wealth impact from treaty
 
@@ -5178,8 +5205,10 @@ def calculate_personal_lifetime_wealth(
 
     # Component 4: Income growth from GDP boost (compound effect)
     # Higher GDP growth → higher wage growth over career
+    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
+    # (Extended years are fully captured in the extended_earnings component)
     base_growth = 0.025
-    income_with_gdp_boost = compound_sum(annual_income, total_years, gdp_boost, discount_rate)
+    income_with_gdp_boost = compound_sum(annual_income, years_remaining, gdp_boost, discount_rate)
     income_without_boost = compound_sum(annual_income, years_remaining, base_growth, discount_rate)
     gdp_boost_benefit = income_with_gdp_boost - income_without_boost
 
@@ -5412,7 +5441,7 @@ CAREGIVER_COST_ANNUAL = Parameter(
 )  # $6,000/year
 
 
-def calculate_life_expectancy_gain_improved(treaty_pct, timeframe="mid-term"):
+def calculate_life_expectancy_gain_improved(treaty_pct: float, timeframe: str = "mid-term") -> float:
     """
     Improved life expectancy model using tiered evidence-based approach
 
@@ -5451,7 +5480,7 @@ def calculate_life_expectancy_gain_improved(treaty_pct, timeframe="mid-term"):
     return near_term_gain + mid_term_gain + long_term_gain  # Total: ~70 years
 
 
-def calculate_healthcare_savings_improved(treaty_pct):
+def calculate_healthcare_savings_improved(treaty_pct: float) -> float:
     """
     Improved healthcare savings based on actual chronic disease spending
 
@@ -5475,7 +5504,7 @@ def calculate_healthcare_savings_improved(treaty_pct):
     return PER_CAPITA_CHRONIC_DISEASE_COST * reduction_pct
 
 
-def calculate_productivity_gains_improved(treaty_pct, annual_income):
+def calculate_productivity_gains_improved(treaty_pct: float, annual_income: float) -> float:
     """
     Improved productivity gains without arbitrary 5% cap
 
@@ -5505,7 +5534,7 @@ def calculate_productivity_gains_improved(treaty_pct, annual_income):
     return annual_income * productivity_gain_pct
 
 
-def calculate_mental_health_benefit(treaty_pct):
+def calculate_mental_health_benefit(treaty_pct: float) -> float:
     """
     Mental health improvement benefits (previously missing)
 
@@ -5531,7 +5560,7 @@ def calculate_mental_health_benefit(treaty_pct):
     return cost_savings + productivity_gain
 
 
-def calculate_caregiver_savings(treaty_pct):
+def calculate_caregiver_savings(treaty_pct: float) -> float:
     """
     Caregiver time savings (previously missing)
 
@@ -5554,14 +5583,14 @@ def calculate_caregiver_savings(treaty_pct):
 
 
 def calculate_personal_lifetime_wealth_improved(
-    treaty_pct=TREATY_REDUCTION_PCT,
-    current_age=30,
-    baseline_life_expectancy=80,
-    annual_income=50000,
-    discount_rate=0.03,
-    timeframe="mid-term",
-    peace_dividend_scope="global",  # 'global' or 'us-only'
-):
+    treaty_pct: float = TREATY_REDUCTION_PCT,
+    current_age: int = 30,
+    baseline_life_expectancy: int = 80,
+    annual_income: float = 50000,
+    discount_rate: float = 0.03,
+    timeframe: str = "mid-term",
+    peace_dividend_scope: str = "global",  # 'global' or 'us-only'
+) -> dict[str, Any]:
     """
     IMPROVED personal lifetime wealth calculation with methodology fixes
 
@@ -5619,8 +5648,9 @@ def calculate_personal_lifetime_wealth_improved(
 
     # Component 6: Income growth from GDP boost (ADJUSTED for overlap)
     # Reduce by 15% to account for overlap with productivity gains
+    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
     base_growth = 0.025
-    income_with_gdp_boost = compound_sum(annual_income, total_years, gdp_boost, discount_rate)
+    income_with_gdp_boost = compound_sum(annual_income, years_remaining, gdp_boost, discount_rate)
     income_without_boost = compound_sum(annual_income, years_remaining, base_growth, discount_rate)
     gdp_boost_benefit = (income_with_gdp_boost - income_without_boost) * 0.85  # 15% reduction for overlap
 
@@ -5719,7 +5749,7 @@ if __name__ == "__main__":
     print(f"Age 50: {personal_lifetime_benefit_age_50_1pct_formatted}")
     print(f"Age 60: {personal_lifetime_benefit_age_60_1pct_formatted}")
     print(f"\nLife extension (1%): {life_extension_years_1pct_formatted} years")
-    print(f"Medical progress multiplier (1%): {medical_progress_multiplier_1pct_formatted}")
+    print(f"Trial capacity multiplier (1%): {trial_capacity_multiplier_1pct_formatted}")
     print(f"GDP growth boost (1%): {gdp_growth_boost_1pct_formatted}")
     print("\n--- Different Treaty Percentages (Age 30) ---")
     print(f"0.5% Treaty: {personal_lifetime_benefit_age_30_half_pct_formatted}")
@@ -5771,7 +5801,7 @@ DISEASE_RELATED_CAREGIVER_PCT = Parameter(
 )
 
 
-def calculate_life_expectancy_gain_conservative_baseline(treaty_pct, conservative=True):
+def calculate_life_expectancy_gain_conservative_baseline(treaty_pct: float, conservative: bool = True) -> float:
     """
     Conservative baseline life expectancy model using antibiotic precedent
 
@@ -5811,7 +5841,7 @@ def calculate_life_expectancy_gain_conservative_baseline(treaty_pct, conservativ
         return 10.0 if multiplier >= 100 else multiplier / 10
 
 
-def calculate_productivity_loss_conservative_baseline(treaty_pct, annual_income):
+def calculate_productivity_loss_conservative_baseline(treaty_pct: float, annual_income: float) -> float:
     """
     Conservative baseline productivity loss calculation
 
@@ -5856,7 +5886,7 @@ def calculate_productivity_loss_conservative_baseline(treaty_pct, annual_income)
     return annual_income * net_gain_pct
 
 
-def calculate_caregiver_savings_conservative_baseline(treaty_pct):
+def calculate_caregiver_savings_conservative_baseline(treaty_pct: float) -> float:
     """
     Conservative baseline caregiver savings calculation
 
@@ -5895,13 +5925,13 @@ def calculate_caregiver_savings_conservative_baseline(treaty_pct):
 
 
 def calculate_personal_lifetime_wealth_conservative_baseline(
-    treaty_pct=TREATY_REDUCTION_PCT,
-    current_age=30,
-    baseline_life_expectancy=80,
-    annual_income=50000,
-    discount_rate=0.03,
-    conservative=True,
-):
+    treaty_pct: float = TREATY_REDUCTION_PCT,
+    current_age: int = 30,
+    baseline_life_expectancy: int = 80,
+    annual_income: float = 50000,
+    discount_rate: float = 0.03,
+    conservative: bool = True,
+) -> dict[str, Any]:
     """
     CONSERVATIVE BASELINE personal lifetime wealth using antibiotic precedent
 
@@ -5965,8 +5995,10 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
     caregiver_savings_annual = calculate_caregiver_savings_conservative_baseline(treaty_pct)
 
     # Component 5: Income growth from GDP boost
+    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
+    # (Extended years are fully captured in the extended_earnings component)
     base_growth = 0.025
-    income_with_gdp_boost = compound_sum(annual_income, total_years, gdp_boost, discount_rate)
+    income_with_gdp_boost = compound_sum(annual_income, years_remaining, gdp_boost, discount_rate)
     income_without_boost = compound_sum(annual_income, years_remaining, base_growth, discount_rate)
     gdp_boost_benefit = income_with_gdp_boost - income_without_boost
 
@@ -6093,7 +6125,7 @@ YEARS_LOST_PER_DEATH = {
 }
 
 
-def calculate_cumulative_research_years(treaty_pct, years_elapsed):
+def calculate_cumulative_research_years(treaty_pct: float, years_elapsed: float) -> float:
     """
     Calculate cumulative research equivalent years from 115x acceleration
 
@@ -6118,7 +6150,7 @@ def calculate_cumulative_research_years(treaty_pct, years_elapsed):
     return multiplier * years_elapsed
 
 
-def calculate_disease_eradication_rate(category, cumulative_research_years, conservative=False):
+def calculate_disease_eradication_rate(category: str, cumulative_research_years: float, conservative: bool = False) -> float:
     """
     Calculate what percentage of a disease category can be cured/prevented
     given cumulative research acceleration
@@ -6168,7 +6200,7 @@ def calculate_disease_eradication_rate(category, cumulative_research_years, cons
     return min(max_potential, current_rate + improvement)
 
 
-def calculate_life_extension_from_eradication(treaty_pct, years_elapsed, conservative=False):
+def calculate_life_extension_from_eradication(treaty_pct: float, years_elapsed: float, conservative: bool = False) -> dict[str, Any]:
     """
     Calculate life extension from systematic disease eradication
 
@@ -6265,14 +6297,14 @@ def calculate_life_extension_from_eradication(treaty_pct, years_elapsed, conserv
 
 
 def calculate_personal_lifetime_wealth_disease_eradication(
-    treaty_pct=TREATY_REDUCTION_PCT,
-    current_age=30,
-    baseline_life_expectancy=80,
-    annual_income=50000,
-    discount_rate=0.03,
-    years_elapsed=5,
-    conservative=False,
-):
+    treaty_pct: float = TREATY_REDUCTION_PCT,
+    current_age: int = 30,
+    baseline_life_expectancy: int = 80,
+    annual_income: float = 50000,
+    discount_rate: float = 0.03,
+    years_elapsed: float = 5,
+    conservative: bool = False,
+) -> dict[str, Any]:
     """
     Personal lifetime wealth model using disease eradication approach
 
@@ -6340,13 +6372,13 @@ def calculate_personal_lifetime_wealth_disease_eradication(
 
     # GDP boost benefit
     # Calculate the ADDITIONAL benefit from GDP boost (treaty growth vs baseline growth)
-    # Both use total_years (including life extension) to avoid penalizing younger people
+    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
+    # (Extended years are fully captured in the extended_earnings component)
     baseline_growth = 0.025  # Baseline economic growth without treaty
-    growth_differential = gdp_boost - baseline_growth
 
-    # Calculate incremental benefit from faster growth over ALL years of life
+    # Calculate incremental benefit from faster growth over baseline lifespan only
     gdp_boost_benefit = 0
-    for t in range(1, int(total_years) + 1):
+    for t in range(1, int(years_remaining) + 1):
         # Incremental value from faster growth
         baseline_value = annual_income * ((1 + baseline_growth) ** t)
         treaty_value = annual_income * ((1 + gdp_boost) ** t)
@@ -6756,7 +6788,7 @@ def _convert_qmd_to_html(path: str) -> str:
     return path
 
 
-def param_link(param_name: str, formatted_value: str = None) -> str:
+def param_link(param_name: str, formatted_value: str | None = None) -> str:
     """
     Create an HTML link combining a formatted parameter with its source.
 
@@ -6779,6 +6811,9 @@ def param_link(param_name: str, formatted_value: str = None) -> str:
         else:
             # Fallback to the raw value
             formatted_value = str(globals().get(param_name.upper(), "???"))
+    
+    # At this point formatted_value is guaranteed to be a string
+    formatted_value_str: str = formatted_value if isinstance(formatted_value, str) else str(formatted_value)
 
     # Get source link
     source_link = PARAMETER_LINKS.get(param_name, "")
@@ -6787,9 +6822,9 @@ def param_link(param_name: str, formatted_value: str = None) -> str:
     if source_link:
         # Convert .qmd to .html for rendered output
         html_link = _convert_qmd_to_html(source_link)
-        return f'<a href="{html_link}">{formatted_value}</a>'
+        return f'<a href="{html_link}">{formatted_value_str}</a>'
     else:
-        return formatted_value
+        return formatted_value_str
 
 
 def add_parameter_link(param_name: str, source_path: str):

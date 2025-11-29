@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# type: ignore
 """
 Generate _variables.yml and academic outputs from parameters.py
 ================================================================
@@ -47,7 +48,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 import yaml
 
@@ -78,6 +79,8 @@ def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
         sys.path.insert(0, dih_models_dir)
 
     spec = importlib.util.spec_from_file_location("parameters", parameters_path)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Could not load module from {parameters_path}")
     params_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(params_module)
 
@@ -176,7 +179,7 @@ def smart_title_case(param_name: str) -> str:
     words = param_name.split('_')
 
     # Process each word
-    result = []
+    result: list[str] = []
     for word in words:
         # Check if it's a known acronym
         if word in ACRONYMS:
@@ -513,7 +516,7 @@ def convert_qmd_to_html(path: str) -> str:
     return path
 
 
-def generate_html_with_tooltip(param_name: str, value: float, comment: str = "", include_citation: bool = False) -> str:
+def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], comment: str = "", include_citation: bool = False) -> str:
     """
     Generate HTML link with tooltip for a parameter.
 
@@ -1371,13 +1374,15 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
 
     # Convert reference IDs to enum member names
     # e.g., "cdc-leading-causes-death" -> "CDC_LEADING_CAUSES_DEATH"
+    # e.g., "95-pct-diseases-no-treatment" -> "N95_PCT_DISEASES_NO_TREATMENT"
     for ref_id in sorted_refs:
         # Convert kebab-case to SCREAMING_SNAKE_CASE
         enum_name = ref_id.upper().replace("-", "_")
 
-        # Handle special cases that start with numbers
+        # Handle special cases that start with numbers: prefix with 'N' instead of '_'
+        # This avoids Python's protected member convention (_var)
         if enum_name[0].isdigit():
-            enum_name = f"_{enum_name}"
+            enum_name = f"N{enum_name}"
 
         content.append(f'    {enum_name} = "{ref_id}"')
 
@@ -1395,7 +1400,7 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     if sorted_refs:
         first_ref = sorted_refs[0].upper().replace("-", "_")
         if first_ref[0].isdigit():
-            first_ref = f"_{first_ref}"
+            first_ref = f"N{first_ref}"
         print(f"    source_ref=ReferenceID.{first_ref}")
     print()
 

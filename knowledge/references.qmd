@@ -5309,6 +5309,63 @@ from dih_models.parameters import *
   > — World Health Organization, 2024, [Global Health Estimates: Life expectancy and leading causes of death and disability](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates)
   > Note: Baseline data for regulatory mortality analysis. Conservative estimate of pharmaceutical impact based on WHO immunization data (4.5M/year from vaccines) + cardiovascular interventions (3.3M/year) + oncology (1.5M/year) + other therapies.
 
+<a id="cvd-80-percent-preventable"></a>
+
+- **80% of cardiovascular disease is preventable**
+  > "As many as 80% of all heart attacks and strokes are preventable" through addressing lifestyle risk factors
+  > WHO: Most cardiovascular diseases can be prevented by addressing behavioral and environmental risk factors such as tobacco use, unhealthy diet, obesity, physical inactivity, harmful use of alcohol, and air pollution
+  > Cleveland Clinic: "90 percent of heart disease is preventable through healthier diet, regular exercise, and not smoking"
+  > In 2 large cohort studies, a reduction of CVD risk of >80% and diabetes >90% were demonstrated in individuals who followed healthy lifestyle practices
+  > Only 5% of individuals follow all lifestyle factors for "ideal" cardiovascular health (American Heart Association)
+  > — [WHO: Cardiovascular diseases (CVDs)](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)) | [World Heart Federation: CVD Prevention](https://world-heart-federation.org/what-we-do/prevention/) | [Cleveland Clinic: 90% Preventable](https://newsroom.clevelandclinic.org/2021/09/29/90-percent-of-heart-disease-is-preventable-through-healthier-diet-regular-exercise-and-not-smoking) | [PMC: Strategy to Reduce CVD by 80%](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC162259/)
+
+<a id="cancer-30-50-percent-preventable"></a>
+
+- **30-50% of cancer is currently preventable; 90-95% has environmental/lifestyle roots**
+  > IARC/WHO: Environmental and lifestyle factors contribute to about 50% of the global cancer burden; expected to contribute to remaining 50% for which causes currently unknown
+  > WHO: 35% of cancer deaths worldwide are due to potentially preventable or modifiable risk factors
+  > PMC: "Only 5-10% of all cancer cases can be attributed to genetic defects, whereas the remaining 90-95% have their roots in the environment and lifestyle"
+  > Breakdown: 25-30% due to tobacco, 30-35% linked to diet, 15-20% due to infections, remainder from radiation, stress, physical activity, pollutants
+  > US: 4 out of 10 cancer cases associated with preventable risk factors (tobacco/alcohol use, physical inactivity)
+  > — [PMC: Cancer is a Preventable Disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC2515569/) | [IARC: Environment and Lifestyle Epidemiology](https://www.iarc.who.int/branches-env/) | [AACR Cancer Progress Report: Risk Factors](https://cancerprogressreport.aacr.org/progress/cpr22-contents/cpr22-preventing-cancer-identifying-risk-factors/)
+  > Note: Current preventability (~35-40%) vs. theoretical max (90-95% if all environmental/lifestyle factors addressed)
+
+<a id="injuries-largely-preventable"></a>
+
+- **Injuries are largely preventable events**
+  > WHO: "Injuries have traditionally been regarded as random, unavoidable 'accidents'. Today both unintentional and intentional injuries are viewed as largely preventable events."
+  > 4.4 million injury-related deaths annually: 3.16M unintentional, 1.25M violence-related
+  > Injuries are preventable by changing environment, individual behavior, products, social norms, legislation, and governmental/institutional policies
+  > When standardized per 100,000 population, death rate is nearly double in low/middle-income vs high-income countries (65 vs 35 per 100,000)
+  > 90% of injury-related deaths occur in low- and middle-income countries
+  > — [WHO: Injuries and Violence Fact Sheet](https://www.who.int/news-room/fact-sheets/detail/injuries-and-violence) | [PMC: Global Burden of Unintentional Injuries](https://pmc.ncbi.nlm.nih.gov/articles/PMC2912603/) | [WHO: Injury Chart Book](https://www.who.int/publications-detail-redirect/the-injury-chart-book-a-graphical-overview-of-the-global-burden-of-injuries)
+  > Note: ~60% of accidental deaths theoretically preventable through policy, technology, and behavior change; 40% involve instantaneous trauma beyond medical intervention
+
+<a id="aging-reversal-mammals-yamanaka"></a>
+
+- **Aging reversal demonstrated in mammals using Yamanaka factors**
+  > Harvard/Sinclair: Loss of epigenetic information causes aging; restoring epigenome integrity reverses aging signs in mice
+  > OSK therapy (Oct4, Sox2, Klf4): Ectopic induction can restore youthful DNA methylation patterns, transcript profiles, and tissue function without erasing cellular identity
+  > Results in mice: Systemically delivered adeno-associated viruses encoding inducible OSK in 124-week-old mice extended median remaining lifespan by 109% over wild-type controls
+  > Vision restored in glaucoma mice - first successful reversal (not just halting progression)
+  > Cyclic partial reprogramming (2 days on, 5 days off) showed improvements after just 6 weeks including reduced age-related spinal curvature
+  > Human cells: Babraham Institute showed cellular reprogramming reverses epigenetic age of human skin cells by 30 years
+  > Chemical alternatives: Six chemical cocktails identified that restore youthful genome-wide transcript profile in less than a week without compromising cellular identity
+  > — [PMC: Chemically Induced Reprogramming to Reverse Aging](https://pmc.ncbi.nlm.nih.gov/articles/PMC10373966/) | [Nature: Long Road of Reprogramming-Induced Rejuvenation](https://www.nature.com/articles/s41467-024-46020-5) | [Liebertpub: Gene Therapy Extends Lifespan 109%](https://www.liebertpub.com/doi/10.1089/cell.2023.0072) | [Clinical Epigenetics: Cellular Reprogramming and Rejuvenation](https://clinicalepigeneticsjournal.biomedcentral.com/articles/10.1186/s13148-021-01158-7)
+  > Note: Demonstrates biological aging is reversible, not inevitable; safety testing ongoing before human application
+
+<a id="neurodegenerative-stem-cell-potential"></a>
+
+- **Stem cell therapy shows promise for neurodegenerative diseases**
+  > R3 paradigm: Rejuvenation (restoring cell function), Regeneration (stimulating repair), Replacement (substituting lost cells)
+  > Alzheimer's: Stanford study showed stem cell transplants reduced brain abnormalities in mice; Neural Stem Cell Therapy shown to improve cognitive function and reduce amyloid plaques
+  > Parkinson's: Clinical trial found Neural Stem Cell Therapy significantly improved motor function and was well-tolerated
+  > ALS/Huntington's: MSC (mesenchymal stem cell) therapy effectiveness confirmed; slows ALS progression
+  > Challenge: Clinical trials often enroll patients at advanced stages; many preclinically promising drugs ineffective in late-stage human trials
+  > Current status: Largely experimental and early clinical trial stages; researchers working to overcome delivery challenges, safety concerns, and targeting widespread neuronal damage
+  > — [PMC: Regenerative Stem Cell Therapy for Neurodegenerative Diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC7926761/) | [Stanford Medicine: Stem Cell Alzheimer's Study](https://med.stanford.edu/news/all-news/2023/09/stem-cell-alzheimers.html) | [Stem Cell Research & Therapy: Cell-based Strategies](https://stemcellres.biomedcentral.com/articles/10.1186/s13287-025-04285-7)
+  > Note: 80% theoretical max for neurodegenerative reflects early-stage intervention potential; current treatments limited (~10% effective)
+
 <a id="who-smallpox-eradication-commemoration"></a>
 
 - **WHO smallpox eradication commemoration (2010)**

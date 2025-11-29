@@ -175,6 +175,8 @@ Humanity's budget priorities, explained simply:
 
 - **Ratio**: {{< var military_vs_medical_research_ratio >}}:1 (you spend {{< var military_vs_medical_research_ratio >}}× more on creating corpses than preventing them)
 
+{{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
+
 #### Disease treatment vs. curing disease
 
 - **Symptomatic treatment**: {{< var global_symptomatic_disease_treatment_annual >}} {{< var global_symptomatic_disease_treatment_annual_cite >}}/year (managing symptoms, not fixing root causes)
@@ -390,6 +392,8 @@ They just follow their calculator to accidentally save humanity.
 You just point everyone's greed at diseases instead of each other.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
+
+{{< include ../figures/victory-bonds-roi-projection-bar-chart.qmd >}}
 
 ## Vote Impact Ledger
 
@@ -995,6 +999,8 @@ That's ${{< var dfda_roi_rd_only >}} appearing for every $1 you invest. It's lik
 **Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}} years, not the one-time 8.2-year timeline shift in disease eradication (which is a separate benefit). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
+
+{{< include ../figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
 {{< var treaty_reduction_pct >}} of global military budgets gets redirected. This gives you:
 
