@@ -86,6 +86,7 @@ book:
     - part: "Implementation Strategy"
       chapters:
         - knowledge/strategy/strategy-execution-overview.qmd # ✅ Complete execution strategy (merged 3-step, 5-step, bribe sequence) ~6p
+        - knowledge/strategy/stop-fighting-over-scraps.qmd # ✅ Strategic appeal to nonprofits ~4p
         - knowledge/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship") ~2p
         - knowledge/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
         - knowledge/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
