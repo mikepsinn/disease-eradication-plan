@@ -152,7 +152,7 @@ Everyone's greed aligns perfectly to accidentally save humanity. It's like you'r
 
 #### Future A: You Ignore This Book
 
-- Year 2030: Still spending 40x more on killing people than curing them
+- Year 2030: Still spending {{< var military_vs_medical_research_ratio >}} times more on killing people than curing them
 - Year 2035: Running out of papers for anything
 - Year 2040: Climate change meets nuclear war
 - Year 2045: Cockroaches evolve intelligence
@@ -204,7 +204,7 @@ P.P.S. Your planet is named "Earth," which means dirt. You named your planet dir
 
 Every single day, {{< var global_daily_deaths_curable_diseases >}} of you permanently discontinue existing from diseases that are basically just engineering problems with meat robots. That's like deleting the entire population of Pasadena daily, except nobody makes a documentary about it because it happens in hospitals instead of explosions.
 
-Meanwhile, your species spends 40 times more on bombs and wars and things than attempting to cure all diseases combined.
+Meanwhile, your species spends {{< var military_vs_medical_research_ratio >}} times more on bombs and wars and things than attempting to cure all diseases combined.
 
 ### How You Fix This
 
@@ -240,7 +240,7 @@ Clinical trials suddenly cost 82 times less because you don't need 17 years of p
 
 The $24.3B flowing to research at 82x efficiency creates **{{< var trial_capacity_multiplier >}}× trial capacity per year**. Over 20 years, that's **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**, a massive expansion of our ability to test treatments.
 
-The rich humans who gave you papers get $2.7 billion yearly forever, or until the sun explodes, whichever happens first (probably the sun thing).
+The rich humans who gave you papers get {{< var victory_bond_annual_payout >}} yearly forever, or until the sun explodes, whichever happens first (probably the sun thing).
 
 ### Why This Works
 
@@ -278,7 +278,7 @@ Your grandchildren visit your grave and ask it:
 
 The grave doesn't answer because graves are notoriously bad at explaining poor resource allocation.
 
-They'll learn in history class that your generation could split atoms, edit genes, and land on the moon, but somehow couldn't figure out that spending 40 times more on ending lives than saving them was mathematically stupid.
+They'll learn in history class that your generation could split atoms, edit genes, and land on the moon, but somehow couldn't figure out that spending {{< var military_vs_medical_research_ratio >}} times more on ending lives than saving them was mathematically stupid.
 
 Future alien archaeologists will find your civilization and create a museum exhibit called "The Species That Paid to Kill Itself" right between the dinosaurs (who at least had the excuse of a meteor) and the dodo (who at least had the excuse of being delicious).
 
@@ -324,7 +324,7 @@ This shopping list includes:
 - Probably some kind of earthquake machine.
 
 Meanwhile, humans spend {{< var global_med_research_spending >}} on medical research.
-That's **40 times less** on curing all diseases combined than humans spend on new ways to create corpses.
+That's **{{< var military_vs_medical_research_ratio >}} times less** on curing all diseases combined than humans spend on new ways to create corpses.
 
 {{< include knowledge/figures/military-vs-medical-research-spending-column-chart.qmd >}}
 
