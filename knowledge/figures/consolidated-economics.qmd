@@ -26,7 +26,7 @@ economic_impacts = pd.DataFrame({
         '1% Treaty Peace Dividend',
         'dFDA R&D Savings (82x cost reduction)',
         'Earlier Drug Access (7-year acceleration)',
-        'Medical Research Acceleration (115x capacity)',
+        'Trial Capacity Expansion (25.7x capacity)',
         'Rare Disease Treatments',
         'Drug Price Reduction',
         'Prevention Economic Viability',
@@ -167,7 +167,7 @@ waterfall_data = [
     ('R&D Savings', 50, 'relative'),
     ('Conservative Subtotal', 163.6, 'total'),
     ('Earlier Drug Access', 300, 'relative'),
-    ('Research Acceleration', 100, 'relative'),
+    ('Trial Capacity', 100, 'relative'),
     ('Rare Diseases', 400, 'relative'),
     ('Drug Prices', 100, 'relative'),
     ('Prevention', 100, 'relative'),
@@ -323,7 +323,7 @@ fig.show()
 1. **Peace Dividend**: {{< var peace_dividend_annual_societal_benefit >}} from 1% military spending reduction
 2. **R&D Savings**: $50B from 82x cheaper clinical trials
 3. **Earlier Drug Access**: $300B from 7-year acceleration to market
-4. **Research Acceleration**: $100B from 115x research capacity
+4. **Trial Capacity Expansion**: $100B from {{< var trial_capacity_multiplier >}}× trial capacity
 5. **Rare Diseases**: $400B from orphan drug economic viability
 6. **Drug Price Reduction**: $100B from R&D savings passed to consumers
 7. **Prevention**: $100B from economic viability of preventive treatments

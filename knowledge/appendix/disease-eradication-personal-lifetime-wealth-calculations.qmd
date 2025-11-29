@@ -20,7 +20,7 @@ import os
 from dih_models.parameters import *
 ```
 
-The **Disease Eradication Model** properly accounts for {{< var research_acceleration_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
+The **Disease Eradication Model** properly accounts for {{< var trial_capacity_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
 
 **This is the default model to use.** Conservative baselines (Evidence-Based models using antibiotic precedent) are available for skeptical audiences.
 
@@ -46,18 +46,18 @@ Previous models used antibiotics as a precedent:
 **This comparison is fundamentally wrong** because the 1% Treaty creates:
 
 - **Multiple breakthrough technologies simultaneously** (gene therapy, epigenetics, stem cells, AI)
-- **115 years of research PER YEAR** (not 1 year per year like antibiotics)
+- **{{< var trial_capacity_multiplier >}}× trial capacity per year** (not 1 year per year like antibiotics)
 - **ALL disease categories tackled in parallel**
 - **Near-zero trial costs** removing pharma's biggest barrier
 
 ### The Math
 
-**20 years of {{< var research_acceleration_multiplier >}}× research acceleration:**
+**20 years of {{< var trial_capacity_multiplier >}}× trial capacity expansion:**
 
-- Year 1: 115 research-years
-- Year 2: 230 cumulative research-years
+- Year 1: {{< var trial_capacity_multiplier >}} trial-capacity-equivalent years
+- Year 2: ~51 cumulative trial-capacity-equivalent years
 - ...
-- Year 20: **2,300 cumulative research-years**
+- Year 20: **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**
 
 #### For comparison
 
@@ -138,7 +138,7 @@ Based on IBI 2024 workforce data:
 
 ### 5. GDP Boost
 
-{{< var research_acceleration_multiplier >}}× research acceleration creates innovation spillovers:
+{{< var trial_capacity_multiplier >}}× research acceleration creates innovation spillovers:
 
 - 0.25% additional GDP growth per year (1% Treaty)
 - Compounds over extended lifetime
@@ -227,12 +227,12 @@ For skeptical audiences who need ultra-conservative estimates based on antibioti
 
 The conservative baseline models assume the 1% Treaty has the same impact as antibiotics - ONE technology solving ONE disease category over 20 years. This comparison is fundamentally wrong because the 1% Treaty creates:
 
-- **115 years of research PER YEAR** (not 1 year per year like antibiotics)
+- **{{< var trial_capacity_multiplier >}}× trial capacity per year** (not 1 year per year like antibiotics)
 - **Multiple breakthrough technologies simultaneously** (gene therapy, epigenetics, stem cells, AI)
 - **ALL disease categories tackled in parallel** (not just infectious diseases)
 - **Near-zero trial costs** removing pharma's biggest barrier
 
-Use these conservative numbers to establish credibility with skeptics, then build up to the realistic Disease Eradication Model ($4.3M, 72yr) which properly accounts for 115x cumulative research acceleration.
+Use these conservative numbers to establish credibility with skeptics, then build up to the realistic Disease Eradication Model ($4.3M, 72yr) which properly accounts for {{< var trial_capacity_multiplier >}}× cumulative trial capacity expansion.
 
 ## When to Use Each Model
 
@@ -251,7 +251,7 @@ Start with **Evidence-Based Conservative** ($584K, 5yr), then build up:
 
 - "Our most conservative estimate, using antibiotic precedent: $584K"
 - "But antibiotics were ONE technology. The 1% Treaty enables:"
-- "{{< var research_acceleration_multiplier >}}× research EVERY YEAR, gene therapy, epigenetics, stem cells, AI"
+- "{{< var trial_capacity_multiplier >}}× research EVERY YEAR, gene therapy, epigenetics, stem cells, AI"
 - "Realistic accounting shows: $4.3M over 20 years"
 
 ### For Investor Pitches
@@ -459,7 +459,7 @@ The tornado chart shows which parameters have the largest impact on your persona
 
 {{< include ../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
 
-This chart uses the **Disease Eradication Model** ({{< var research_acceleration_multiplier >}}× cumulative research, 2,300 research-years) showing **realistic expected benefits**:
+This chart uses the **Disease Eradication Model** ({{< var trial_capacity_multiplier >}}× cumulative trial capacity, {{< var trial_capacity_cumulative_years_20yr >}} trial-capacity-equivalent years) showing **realistic expected benefits**:
 
 ### Key Insights
 
@@ -596,7 +596,7 @@ Productivity, caregiver, and life expectancy data cited in:
 
 It's the only model that properly accounts for:
 
-- {{< var research_acceleration_multiplier >}}× cumulative research acceleration (2,300 equivalent years in 20 years)
+- {{< var trial_capacity_multiplier >}}× cumulative trial capacity expansion ({{< var trial_capacity_cumulative_years_20yr >}} equivalent years in 20 years)
 - Multiple breakthrough technologies converging (gene, epigenetic, stem cell, AI)
 - Disease-by-disease systematic eradication with real CDC data
 - Aging reversal approaching accident-limited lifespan

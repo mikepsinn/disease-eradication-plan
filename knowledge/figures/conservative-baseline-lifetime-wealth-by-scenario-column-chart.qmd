@@ -114,7 +114,7 @@ This chart uses the **Evidence-Based Conservative model** (antibiotic precedent,
 
 **IMPORTANT:** These are **CONSERVATIVE estimates** using the antibiotic precedent (ONE technology, ONE disease category).
 
-**Realistic estimates** using the Disease Eradication Model (115x cumulative research, ALL diseases tackled):
+**Realistic estimates** using the Disease Eradication Model ({{< var trial_capacity_multiplier >}}× cumulative trial capacity, ALL diseases tackled):
 
 - **$2.4M - $5.8M** lifetime benefit
 - **34 - 106 years** life extension

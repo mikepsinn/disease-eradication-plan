@@ -13,7 +13,7 @@ from pathlib import Path
 
 # Add paths
 
-from dih_models.parameters import calculate_personal_lifetime_wealth_conservative_baseline, calculate_medical_progress_multiplier
+from dih_models.parameters import calculate_personal_lifetime_wealth_conservative_baseline, calculate_trial_capacity_multiplier
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
     COLOR_BLACK, COLOR_WHITE, get_project_root, get_figure_output_path)
@@ -37,7 +37,7 @@ for pct in treaty_pcts:
         conservative=True  # Use conservative 5-year life extension
     )
     wealth_values.append(calc['total_lifetime_benefit'])
-    multipliers.append(calculate_medical_progress_multiplier(pct))
+    multipliers.append(calculate_trial_capacity_multiplier(pct))
 
 # Create figure with two y-axes
 
@@ -127,10 +127,10 @@ plt.show()
 4. **5% Treaty**: $1.3M (+223%) - transformative outcome
 5. **10% Treaty**: $3M (+646%) - generational wealth
 
-**Why non-linear?** The medical progress multiplier compounds:
+**Why non-linear?** The trial capacity multiplier compounds:
 
-- 1% Treaty: 115x research capacity
-- 5% Treaty: 410x research capacity
-- 10% Treaty: 739x research capacity
+- 1% Treaty: 25.7x trial capacity
+- 5% Treaty: 128.5x trial capacity
+- 10% Treaty: 257x trial capacity
 
-More research → more breakthroughs → more life extension → more earning years → compounding benefits.
+More trial capacity → more treatments tested → more life extension → more earning years → compounding benefits.

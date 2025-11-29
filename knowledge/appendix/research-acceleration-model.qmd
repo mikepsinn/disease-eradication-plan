@@ -1,6 +1,6 @@
 ---
-title: Research Acceleration Model - How {{< var research_acceleration_multiplier >}}× Works
-description: Complete mechanism showing how flipped incentives, universal access, and transparent competition create {{< var research_acceleration_multiplier >}}× research capacity multiplication
+title: Research Acceleration Model - How {{< var trial_capacity_multiplier >}}× Works
+description: Complete mechanism showing how flipped incentives, universal access, and transparent competition create {{< var trial_capacity_multiplier >}}× research capacity multiplication
 published: true
 tags:
   - research-acceleration
@@ -29,7 +29,7 @@ The 1% Treaty doesn't just make trials cheaper. It:
 1. **Societal savings from 1% less conflict** (peace dividend: {{< var peace_dividend_annual_societal_benefit >}})
 2. **Slashes R&D costs {{< var trial_cost_reduction_factor >}}×** (saves $50.0B)
 3. **Accelerates access by 7 years** (saves $300B via early trial access)
-4. **{{< var research_acceleration_multiplier >}}× more research capacity** (adds $100B via 10-20X more breakthroughs)
+4. **{{< var trial_capacity_multiplier >}}× more research capacity** (adds $100B via 10-20X more breakthroughs)
 5. **Enables treatment of rare/orphan diseases** (adds $400B)
 6. **Reduces drug prices via R&D savings** (saves $100.0B)
 7. **Makes prevention economically viable** (saves $100B)
@@ -74,9 +74,9 @@ New patients each year get early access:
 - Years 8+: $105B/year (flow only)
 - **10-year average: ~$300B/year**
 
-## The Research Acceleration Multiplier
+## The Trial Capacity Multiplier
 
-**The insight:** {{< var trial_cost_reduction_factor >}}× cheaper trials + 40% more funding ($27.2B/year) = **115X more research capacity**.
+**The insight:** With 1% Treaty funding, we can support {{< var trial_capacity_multiplier >}}× more clinical trial participants globally = **{{< var trial_capacity_multiplier >}}× trial capacity expansion**.
 
 ### What this means
 
@@ -93,7 +93,7 @@ print(f"- New capacity: ~{DFDA_TRIALS_PER_YEAR_CAPACITY:,} trials/year possible,
 #| echo: false
 #| output: asis
 print(f"- **Earlier Access** = Accessing the SAME {CURRENT_DRUG_APPROVALS_PER_YEAR} drugs in pipeline 7 years sooner")
-print(f"- **Research Acceleration** = Testing {RESEARCH_ACCELERATION_MULTIPLIER}X MORE drug candidates, finding {DFDA_DRUG_APPROVALS_PER_YEAR_LOW//CURRENT_DRUG_APPROVALS_PER_YEAR}-{DFDA_DRUG_APPROVALS_PER_YEAR_HIGH//CURRENT_DRUG_APPROVALS_PER_YEAR}X MORE breakthroughs")
+print(f"- **Trial Capacity Expansion** = Testing {TRIAL_CAPACITY_MULTIPLIER}X MORE drug candidates, finding {DFDA_DRUG_APPROVALS_PER_YEAR_LOW//CURRENT_DRUG_APPROVALS_PER_YEAR}-{DFDA_DRUG_APPROVALS_PER_YEAR_HIGH//CURRENT_DRUG_APPROVALS_PER_YEAR}X MORE breakthroughs")
 ```
 
 ### Which Diseases Benefit
@@ -112,7 +112,7 @@ These are NOT rare diseases (already counted). These are common diseases with li
 
 *Note: This is a conservative estimate based on health outcomes. For market valuation approaches suggesting substantially higher values ($6.48T/year with 80X acceleration), see [Economic Value of Accelerated Treatments](economic-value-of-accelerated-treatments.qmd).*
 
-## How {{< var research_acceleration_multiplier >}}× Research Acceleration Actually Works
+## How {{< var trial_capacity_multiplier >}}× Research Acceleration Actually Works
 
 The 115x multiplier isn't just arithmetic ({{< var trial_cost_reduction_factor >}}× cost reduction × 1.4x funding). It's the result of multiple behavioral mechanisms that fundamentally change how clinical trials work.
 
@@ -135,7 +135,7 @@ SMALLER, FASTER TRIALS (algorithmic efficiency incentives)
     ↓
 TRANSPARENT PLATFORM COMPETITION
     ↓
-= {{< var research_acceleration_multiplier >}}× AGGREGATE RESEARCH CAPACITY
+= {{< var trial_capacity_multiplier >}}× AGGREGATE RESEARCH CAPACITY
 ```
 
 ### Mechanism 1: Economic Feasibility Transformation
@@ -236,7 +236,7 @@ print("\n")
 print("**Capacity Impact:**\n")
 print(f"- Traditional: {CURRENT_TRIALS_PER_YEAR:,} trials/year, each taking {CURRENT_TRIAL_DURATION_YEARS_RANGE[0]}-{CURRENT_TRIAL_DURATION_YEARS_RANGE[1]} years = ~{CURRENT_ACTIVE_TRIALS:,} active trials\n")
 print(f"- dFDA: {DFDA_TRIALS_PER_YEAR_CAPACITY:,} trials/year, each taking {DFDA_TRIAL_DURATION_MONTHS_RANGE[0]}-{DFDA_TRIAL_DURATION_MONTHS_RANGE[1]} months = ~{DFDA_ACTIVE_TRIALS:,} active trials\n")
-print(f"- **{RESEARCH_ACCELERATION_MULTIPLIER:.0f}x more trials running simultaneously**\n")
+print(f"- **{TRIAL_CAPACITY_MULTIPLIER:.0f}x more trials running simultaneously**\n")
 ```
 
 ### Mechanism 5: Transparent Platform Competition
@@ -277,9 +277,9 @@ completion_rate_improvement_mult = DFDA_TRIAL_COMPLETION_RATE / CURRENT_TRIAL_CO
 
 print("**Combining all mechanisms:**\n")
 print("\n")
-print(f"1. **Economic feasibility:** {DFDA_TRIALS_PER_YEAR_CAPACITY//1000}K trials possible (vs {CURRENT_TRIALS_PER_YEAR/1000:.1f}K) = **{RESEARCH_ACCELERATION_MULTIPLIER:.0f}x capacity**\n")
+print(f"1. **Economic feasibility:** {DFDA_TRIALS_PER_YEAR_CAPACITY//1000}K trials possible (vs {CURRENT_TRIALS_PER_YEAR/1000:.1f}K) = **{TRIAL_CAPACITY_MULTIPLIER:.0f}x capacity**\n")
 print(f"2. **Flipped incentives:** {recruitment_speed_mult:.0f}x faster recruitment = **trials complete {trial_completion_speed_mult:.0f}x faster**\n")
-print(f"3. **Simultaneous trials:** {RESEARCH_ACCELERATION_MULTIPLIER:.0f}x more active trials = **{RESEARCH_ACCELERATION_MULTIPLIER:.0f}x more results per year**\n")
+print(f"3. **Simultaneous trials:** {TRIAL_CAPACITY_MULTIPLIER:.0f}x more active trials = **{TRIAL_CAPACITY_MULTIPLIER:.0f}x more results per year**\n")
 print(f"4. **Completion rate:** {DFDA_TRIAL_COMPLETION_RATE*100:.0f}% vs {CURRENT_TRIAL_COMPLETION_RATE*100:.0f}% = **{completion_rate_improvement_mult:.1f}x more completions**\n")
 print("\n")
 print("**Net result:**\n")
@@ -298,7 +298,7 @@ print("- Infrastructure buildout time\n")
 ```{python}
 #| echo: false
 #| output: asis
-print(f"The {RESEARCH_ACCELERATION_MULTIPLIER}x isn't just \"cheaper trials.\" It's a complete flip of the economic incentive structure:\n")
+print(f"The {TRIAL_CAPACITY_MULTIPLIER}x isn't just \"cheaper trials.\" It's a complete flip of the economic incentive structure:\n")
 print("\n")
 print("**Old System:**\n")
 print("- Sponsors lose money on trials → minimize enrollment → slow recruitment\n")
@@ -318,17 +318,17 @@ print("**The Result:** Research capacity explodes because every actor's incentiv
 ```{python}
 #| echo: false
 #| output: asis
-cumulative_years = RESEARCH_ACCELERATION_MULTIPLIER * 20
+cumulative_years = TRIAL_CAPACITY_MULTIPLIER * 20
 medical_revolution_multiplier = cumulative_years / 124  # 1900-2024 = 124 years
 
-print(f"The {RESEARCH_ACCELERATION_MULTIPLIER}x acceleration over 20 years = {cumulative_years:,} cumulative research-years = {medical_revolution_multiplier:.1f}x the entire medical revolution from 1900-2024.\n")
+print(f"The {TRIAL_CAPACITY_MULTIPLIER}x acceleration over 20 years = {cumulative_years:,} cumulative research-years = {medical_revolution_multiplier:.1f}x the entire medical revolution from 1900-2024.\n")
 print("\n")
 print("**This is why we can credibly claim:**\n")
 print("- 72-year life extension (not 10 years like antibiotics)\n")
 print("- $4.3M personal lifetime wealth\n")
 print("- Major diseases cured within a decade\n")
 print("\n")
-print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone with {RESEARCH_ACCELERATION_MULTIPLIER}x more trials\" and statistically guarantee breakthroughs.\n")
+print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone with {TRIAL_CAPACITY_MULTIPLIER}x more trials\" and statistically guarantee breakthroughs.\n")
 ```
 
 ## The Complete Benefit Breakdown
@@ -338,7 +338,7 @@ print(f"The mechanism isn't \"hope for breakthrough.\" It's \"flood the zone wit
 | [Peace Dividend](../economics/peace-dividend.qmd) | {{< var peace_dividend_annual_societal_benefit >}} | Societal savings from 1% reduction in global conflict |
 | R&D Cost Savings | {{< var dfda_rd_gross_savings_annual >}} | {{< var trial_cost_reduction_factor >}}× trial cost reduction |
 | **Earlier Access (one-time 8.2 year timeline shift)** | **{{< var disease_eradication_delay_economic_loss >}}** | One-time benefit from accelerating disease eradication |
-| **Research Acceleration** | **$100.0B** | 115X more trials = 10-20X more breakthroughs |
+| **Trial Capacity Expansion** | **$100.0B** | {{< var trial_capacity_multiplier >}}× more trials = 10-20× more breakthroughs |
 | New Diseases Treatable | $400.0B | Rare diseases, orphan drugs |
 | Drug Price Reduction | $100.0B | R&D savings passed to consumers |
 | Prevention Medicine | $100.0B | Economic viability of prevention |
@@ -385,7 +385,7 @@ $1.2T/year is reasonable for that scope.
 ### Sources and Methodology
 
 - **Trial cost reduction**: Based on [RECOVERY trial model](../references.qmd#recovery-trial-cost-reduction) achieving ~$500/patient vs traditional $40-120K/patient
-- **Research capacity multiplier**: {{< var trial_cost_reduction_factor >}}× cost reduction × 1.4X funding increase = 115X capacity
+- **Trial capacity multiplier**: DIH funding supports {{< var trial_capacity_multiplier >}}× more trial participants (48.8M vs 1.9M current capacity)
 - **QALY valuations**: Standard [$100-150K per QALY](../references.qmd#qaly-value) methodology
 - **Disease prevalence**: WHO global burden of disease data
 - **Economic impact estimates**: See [dFDA Cost-Benefit Analysis](dfda-cost-benefit-analysis.qmd) for detailed calculations

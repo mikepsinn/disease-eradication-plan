@@ -44,7 +44,7 @@ from dih_models.parameters import *
 
 **Methods**: Cost-benefit analysis, net present value (NPV) calculations, quality-adjusted life year (QALY) modeling, and incremental cost-effectiveness ratio (ICER) analysis. Data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Both conservative (R&D efficiency only) and complete (all quantifiable benefits) scenarios assessed.
 
-**Results**: The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than malaria-prevention bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var research_acceleration_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
+**Results**: The intervention achieves **{{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY** ({{< var treaty_vs_bed_nets_multiplier >}}x more cost-effective than malaria-prevention bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). Even accounting for political risk (10% success probability), expected cost-effectiveness is **{{< var treaty_expected_cost_per_daly_conservative >}} per DALY** ({{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets). Complete analysis demonstrates {{< var treaty_complete_roi_all_benefits >}}:1 ROI with **recurring annual benefits** of {{< var treaty_total_complete_benefits_annual >}} (peace dividend + R&D savings), plus {{< var trial_capacity_multiplier >}}x research acceleration that compresses 20 years of progress into {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years. One-time {{< var efficacy_lag_years >}}-year timeline shift averts {{< var disease_eradication_delay_dalys >}} total DALYs, eliminates {{< var suffering_hours_eliminated_total >}} hours of human suffering, and saves {{< var disease_eradication_delay_deaths_total >}} lives ({{< var eventually_avoidable_death_pct >}} eventually avoidable). This is a cost-dominant intervention that saves money while saving lives. Conservative analysis yields {{< var dfda_roi_rd_only >}}:1 ROI from R&D efficiency alone. Sensitivity analysis shows robust returns even when everything goes wrong ({{< var treaty_conservative_scenario_roi >}}:1 worst-case to {{< var treaty_optimistic_scenario_roi >}}:1 best-case).
 
 **Conclusions**: Redirecting {{< var treaty_reduction_pct >}} of military spending to medical research represents **the highest-leverage economic intervention currently available to humanity**. It acts as a dominant health intervention, simultaneously reducing costs while improving health outcomes, with ROI exceeding smallpox eradication and every other public health achievement in history. The self-funding structure (money appears from reduced military spending) eliminates traditional barriers to scale. Unlike charity, which requires infinite begging to finite donors, this generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in **recurring annual surplus** (peace dividend + R&D savings) every year perpetually, plus a one-time {{< var efficacy_lag_years >}}-year acceleration in disease eradication.
 
@@ -95,7 +95,7 @@ Prospective co-authors are encouraged to contribute where they have expertise.
    - Beats smallpox eradication ({{< var smallpox_eradication_roi >}}:1 {{< var smallpox_eradication_roi_cite >}})
    - Generates profit per life saved rather than requiring subsidy
 
-7. **Research Acceleration**: {{< var research_acceleration_multiplier >}}× faster medical progress = {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years in 20 years
+7. **Research Acceleration**: {{< var trial_capacity_multiplier >}}× faster medical progress = {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 years
    - Compresses decades of progress into years through universal real-world evidence collection
 
 8. **Robust Returns**: Even if costs double and benefits halve, still get {{< var treaty_conservative_scenario_roi >}}:1 to {{< var treaty_optimistic_scenario_roi >}}:1 ROI
@@ -112,7 +112,7 @@ Prospective co-authors are encouraged to contribute where they have expertise.
 2. **Scale**: {{< var global_disease_deaths_daily >}} deaths per day = {{< var disease_eradication_delay_deaths_total >}} lives over {{< var efficacy_lag_years >}}-year timeline shift
    - {{< var eventually_avoidable_death_pct >}} eventually avoidable with sufficient biomedical research
 
-3. **Innovation**: {{< var research_acceleration_multiplier >}}x research acceleration = {{< var research_acceleration_cumulative_years_20yr >}} research-equivalent years in 20 years
+3. **Innovation**: {{< var trial_capacity_multiplier >}}x research acceleration = {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 years
    - Compresses decades of medical progress into years
 
 :::
@@ -130,7 +130,7 @@ Prospective co-authors are encouraged to contribute where they have expertise.
 
 - Conservative case: NPV benefit exceeds $100B over {{< var npv_time_horizon_years >}}-year horizon
 - Cost-effectiveness: ICER < $0/QALY (cost-saving while improving health)
-- Research acceleration: {{< var research_acceleration_multiplier >}}× increase in completed trials per year
+- Research acceleration: {{< var trial_capacity_multiplier >}}× increase in completed trials per year
 - Self-funding threshold: Annual benefits exceed annual costs by year 3 of implementation
 
 
@@ -233,11 +233,11 @@ That's a quadrillion-dollar bill lying on the ground. The only question is wheth
 
 ### Research Acceleration
 
-{{< var research_acceleration_multiplier >}}× faster medical progress ({{< var research_acceleration_cumulative_years_20yr >}} years of medical advancement in 20 years)
+{{< var trial_capacity_multiplier >}}× faster medical progress ({{< var trial_capacity_cumulative_years_20yr >}} years of medical advancement in 20 years)
 
-{{< var research_acceleration_multiplier_latex >}}
+{{< var trial_capacity_multiplier_latex >}}
 
-{{< var research_acceleration_cumulative_years_20yr_latex >}}
+{{< var trial_capacity_cumulative_years_20yr_latex >}}
 
 ### Suffering Reduction
 
@@ -459,7 +459,7 @@ Not AI safety (urgent).
 Not other treaties (good luck).
 
 All valuable. All recommended.
-None offer **{{< var research_acceleration_multiplier >}}× leverage**.
+None offer **{{< var trial_capacity_multiplier >}}× leverage**.
 
 
 ## The Math (Or: How to Prove Obvious Things to Skeptics)
@@ -692,7 +692,7 @@ For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-divid
 
 ## Research Acceleration Mechanism
 
-The {{< var research_acceleration_multiplier >}}× research acceleration multiplier comes from the combination of multiple proven accelerators:
+The {{< var trial_capacity_multiplier >}}× research acceleration multiplier comes from the combination of multiple proven accelerators:
 
 **Faster Recruitment**: The Oxford RECOVERY trial recruited {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients in 3 weeks, compared to 6-18 months for 100 patients in traditional trials. This speed comes from pragmatic eligibility (50% of patients qualify vs. 2% traditionally) and embedded recruitment in routine care.
 
@@ -704,11 +704,11 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 
 **Increased Funding**: The 1% Treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
 
-These improvements compound multiplicatively to produce the {{< var research_acceleration_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
+These improvements compound multiplicatively to produce the {{< var trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
 For detailed derivation, see [Research Acceleration Model](../appendix/research-acceleration-model.qmd).
 
-**Automating Friction, Not Judgment**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var research_acceleration_multiplier >}}× research acceleration does **not** require {{< var research_acceleration_multiplier >}}× more Principal Investigators.
+**Automating Friction, Not Judgment**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
@@ -1204,7 +1204,7 @@ These estimates derive from:
 
 ### Research Acceleration Mechanism
 
-The {{< var research_acceleration_multiplier >}}× research acceleration multiplier comes from scaling the Oxford RECOVERY trial approach globally:
+The {{< var trial_capacity_multiplier >}}× research acceleration multiplier comes from scaling the Oxford RECOVERY trial approach globally:
 
 **Current System Baseline**:
 
@@ -1224,17 +1224,17 @@ The {{< var research_acceleration_multiplier >}}× research acceleration multipl
 - {{< var dfda_trial_abandonment_rate >}} abandonment rate (patient subsidies flip economic incentives)
 - 3 weeks to recruit {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients (RECOVERY achieved this enrollment speed)
 
-**How the {{< var research_acceleration_multiplier >}}× Multiplier Works**:
+**How the {{< var trial_capacity_multiplier >}}× Multiplier Works**:
 
 The acceleration comes from simple economics: DIH can fund {{< var dih_patients_fundable_annually >}} patients/year at [RECOVERY trial cost](../references.qmd#recovery-cost-500) ({{< var recovery_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
 
-{{< var research_acceleration_multiplier_latex >}}
+{{< var trial_capacity_multiplier_latex >}}
 
 This represents DIH's funding capacity alone, without assuming behavior changes from the existing {{< var global_med_research_spending >}} baseline research ecosystem.
 
 **Net Effect**:
 
-- From {{< var current_completed_trials_per_year >}} completed trials/year → {{< var dfda_completed_trials_per_year >}} completed trials/year ({{< var research_acceleration_multiplier >}}×)
+- From {{< var current_completed_trials_per_year >}} completed trials/year → {{< var dfda_completed_trials_per_year >}} completed trials/year ({{< var trial_capacity_multiplier >}}×)
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)
 - From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
@@ -1320,7 +1320,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 **Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
 - **Defense sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
-- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity](../appendix/research-acceleration-model.qmd) increases {{< var research_acceleration_multiplier >}}×
+- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity](../appendix/research-acceleration-model.qmd) increases {{< var trial_capacity_multiplier >}}×
 - **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ({{< var global_disease_economic_burden_annual >}} current economic cost)
 - **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
@@ -1378,7 +1378,7 @@ Effective ones scale instantly.
 
 ### Step 5: Eradicate Disease
 
-- Medical progress accelerates {{< var research_acceleration_multiplier >}}×
+- Medical progress accelerates {{< var trial_capacity_multiplier >}}×
 - Disease categories start collapsing
 - Healthspan overtakes pathology
 - Investors profit massively
@@ -1635,7 +1635,7 @@ The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates 
 
 **This estimate is extremely conservative for three reasons:**
 
-1.  **It ignores the {{< var research_acceleration_multiplier >}}x Research Acceleration**: The {{< var efficacy_lag_years >}}-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that the dFDA system accelerates the *pace of research itself* by {{< var research_acceleration_multiplier >}}x. With {{< var research_acceleration_multiplier >}}x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just {{< var efficacy_lag_years >}} years earlier.
+1.  **It ignores the {{< var trial_capacity_multiplier >}}x Research Acceleration**: The {{< var efficacy_lag_years >}}-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that the dFDA system accelerates the *pace of research itself* by {{< var trial_capacity_multiplier >}}x. With {{< var trial_capacity_multiplier >}}x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just {{< var efficacy_lag_years >}} years earlier.
 2.  **It assumes a fixed timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward by 8.2 years saves 8.2 years' worth of future lives. Given the trajectory of biotechnology, "eventual" control over biology is a matter of *when*, not *if*.
 3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating cures for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields over **$120 trillion** in value. The ROI is positive even at 1/100th of the projected success rate.
 
@@ -1753,11 +1753,11 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the system leverages existing EHR systems (Epic, Cerner) and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
-2. **Clinical trial market price effects**: Increasing trial demand by {{< var research_acceleration_multiplier >}}× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var trial_cost_reduction_factor >}}× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient; decentralized trials target {{< var recovery_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
+2. **Clinical trial market price effects**: Increasing trial demand by {{< var trial_capacity_multiplier >}}× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var trial_cost_reduction_factor >}}× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient; decentralized trials target {{< var recovery_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
 
 3. **Crowding out effects**: Does $27.2B in new medical research displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
 
-4. **Quality versus quantity trade-off**: {{< var research_acceleration_multiplier >}}× more trials may not yield proportional breakthroughs if resources spread thin or trial quality declines. The analysis assumes quality maintenance through peer review and replication; actual quality effects remain uncertain.
+4. **Quality versus quantity trade-off**: {{< var trial_capacity_multiplier >}}× more trials may not yield proportional breakthroughs if resources spread thin or trial quality declines. The analysis assumes quality maintenance through peer review and replication; actual quality effects remain uncertain.
 
 **Conservative treatment in base case**: The analysis excludes general equilibrium effects from benefit calculations, providing a lower bound estimate.
 

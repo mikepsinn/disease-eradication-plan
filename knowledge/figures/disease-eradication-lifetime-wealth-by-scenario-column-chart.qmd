@@ -31,7 +31,7 @@ scenarios = [
 ]
 
 # Calculate benefits for each scenario using Disease Eradication Model (20-year scenario)
-# NOTE: This is the REALISTIC model (115x cumulative research, 72yr life extension)
+# NOTE: This is the REALISTIC model (25.7x cumulative trial capacity, 72yr life extension)
 
 scenario_names = []
 benefits = []

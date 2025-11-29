@@ -2389,7 +2389,7 @@ Misallocation factor for spending on death vs prevention
 
 **Value**: 257K
 
-Active trials at any given time with calculated acceleration
+Active trials at any given time with trial capacity multiplier
 
 $$
 Active_{dFDA} = 10,000 \times 25.7 = 257,000
@@ -2979,11 +2979,11 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Maximum Trials per Year Possible with Calculated Acceleration {#sec-dfda_trials_per_year_capacity}
+### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
 **Value**: 84,834
 
-Maximum trials per year possible with calculated acceleration
+Maximum trials per year possible with trial capacity multiplier
 
 $$
 Trials_{dFDA} = 3,300 \times 25.7 = 84,800
@@ -4164,40 +4164,6 @@ System profit per life saved (specific calculation)
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Cumulative Research Years Over 20 Years {#sec-research_acceleration_cumulative_years_20yr}
-
-**Value**: 514
-
-Cumulative research-equivalent years over 20-year period with calculated acceleration
-
-$$
-Research_{20yr} = 25.7 \times 20 = 514 \text{ years}
-$$
-
-**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Research Acceleration Multiplier {#sec-research_acceleration_multiplier}
-
-**Value**: 25.7
-
-Research acceleration from DIH funding capacity vs. current global trial participation (replaces hardcoded 115x)
-
-$$
-Multiplier = 48.8M \div 1.9M = 25.7
-$$
-
-**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### 1% Treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
 **Value**: 442
@@ -5214,6 +5180,40 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Cumulative Trial Capacity Years Over 20 Years {#sec-trial_capacity_cumulative_years_20yr}
+
+**Value**: 514
+
+Cumulative trial-capacity-equivalent years over 20-year period
+
+$$
+Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
+$$
+
+**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
+### Trial Capacity Multiplier {#sec-trial_capacity_multiplier}
+
+**Value**: 25.7
+
+Trial capacity multiplier from DIH funding capacity vs. current global trial participation
+
+$$
+Multiplier = 48.8M \div 1.9M = 25.7
+$$
+
+**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
+
+*✓ High confidence*
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
 **Value**: 3,068
@@ -5412,7 +5412,7 @@ Annual funding for medical research (treaty funding minus bond payouts)
 ::: {.callout-warning icon=false collapse=false}
 ### Life Extension Years 10% {#sec-life_extension_years_10pct}
 
-**Value**: 4.12
+**Value**: 2.57
 
 *Core definition*
 
@@ -5421,7 +5421,7 @@ Annual funding for medical research (treaty funding minus bond payouts)
 ::: {.callout-warning icon=false collapse=false}
 ### Life Extension Years 1% {#sec-life_extension_years_1pct}
 
-**Value**: 1.15
+**Value**: 0.257
 
 *Core definition*
 
@@ -5430,7 +5430,7 @@ Annual funding for medical research (treaty funding minus bond payouts)
 ::: {.callout-warning icon=false collapse=false}
 ### Life Extension Years 2% {#sec-life_extension_years_2pct}
 
-**Value**: 1.48
+**Value**: 0.514
 
 *Core definition*
 
@@ -5439,43 +5439,7 @@ Annual funding for medical research (treaty funding minus bond payouts)
 ::: {.callout-warning icon=false collapse=false}
 ### Life Extension Years 5% {#sec-life_extension_years_5pct}
 
-**Value**: 2.47
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Medical Progress Multiplier 10% {#sec-medical_progress_multiplier_10pct}
-
-**Value**: 412
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Medical Progress Multiplier 1% {#sec-medical_progress_multiplier_1pct}
-
-**Value**: 115
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Medical Progress Multiplier 2% {#sec-medical_progress_multiplier_2pct}
-
-**Value**: 148
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Medical Progress Multiplier 5% {#sec-medical_progress_multiplier_5pct}
-
-**Value**: 247
+**Value**: 1.29
 
 *Core definition*
 
@@ -5506,7 +5470,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 20 1% {#sec-personal_lifetime_benefit_age_20_1pct}
 
-**Value**: 414K
+**Value**: 205K
 
 *Core definition*
 
@@ -5515,7 +5479,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 30 10% {#sec-personal_lifetime_benefit_age_30_10pct}
 
-**Value**: 3.22M
+**Value**: 2.82M
 
 *Core definition*
 
@@ -5524,7 +5488,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 30 1% {#sec-personal_lifetime_benefit_age_30_1pct}
 
-**Value**: 402K
+**Value**: 186K
 
 *Core definition*
 
@@ -5533,7 +5497,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 30 2% {#sec-personal_lifetime_benefit_age_30_2pct}
 
-**Value**: 592K
+**Value**: 390K
 
 *Core definition*
 
@@ -5542,7 +5506,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 30 5% {#sec-personal_lifetime_benefit_age_30_5pct}
 
-**Value**: 1.31M
+**Value**: 1.19M
 
 *Core definition*
 
@@ -5551,7 +5515,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 30 Half % {#sec-personal_lifetime_benefit_age_30_half_pct}
 
-**Value**: 247K
+**Value**: 91,034
 
 *Core definition*
 
@@ -5560,7 +5524,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 40 1% {#sec-personal_lifetime_benefit_age_40_1pct}
 
-**Value**: 369K
+**Value**: 153K
 
 *Core definition*
 
@@ -5569,7 +5533,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 50 1% {#sec-personal_lifetime_benefit_age_50_1pct}
 
-**Value**: 301K
+**Value**: 104K
 
 *Core definition*
 
@@ -5578,7 +5542,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Age 60 1% {#sec-personal_lifetime_benefit_age_60_1pct}
 
-**Value**: 206K
+**Value**: 51,902
 
 *Core definition*
 
@@ -5587,7 +5551,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Conservative Age 30 1% {#sec-personal_lifetime_benefit_conservative_age_30_1pct}
 
-**Value**: 584K
+**Value**: 230K
 
 *Core definition*
 
@@ -5596,7 +5560,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Conservative Moderate Age 30 1% {#sec-personal_lifetime_benefit_conservative_moderate_age_30_1pct}
 
-**Value**: 902K
+**Value**: 296K
 
 *Core definition*
 
@@ -5605,7 +5569,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 10yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_10yr_age_30_1pct}
 
-**Value**: 1.52M
+**Value**: 812K
 
 *Core definition*
 
@@ -5614,7 +5578,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 20yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_20yr_age_30_1pct}
 
-**Value**: 1.97M
+**Value**: 1.04M
 
 *Core definition*
 
@@ -5623,7 +5587,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 40yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_40yr_age_30_1pct}
 
-**Value**: 2.62M
+**Value**: 1.35M
 
 *Core definition*
 
@@ -5632,7 +5596,7 @@ Standard time horizon for NPV analysis
 ::: {.callout-warning icon=false collapse=false}
 ### Personal Lifetime Benefit Eradication 5yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
 
-**Value**: 1.18M
+**Value**: 658K
 
 *Core definition*
 
@@ -5719,6 +5683,42 @@ Treaty campaign duration (3-5 year range, using midpoint)
 **Value**: 1%
 
 1% reduction in military spending/war costs from treaty
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Trial Capacity Multiplier 10% {#sec-trial_capacity_multiplier_10pct}
+
+**Value**: 257
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Trial Capacity Multiplier 1% {#sec-trial_capacity_multiplier_1pct}
+
+**Value**: 25.7
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Trial Capacity Multiplier 2% {#sec-trial_capacity_multiplier_2pct}
+
+**Value**: 51.4
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Trial Capacity Multiplier 5% {#sec-trial_capacity_multiplier_5pct}
+
+**Value**: 129
 
 *Core definition*
 

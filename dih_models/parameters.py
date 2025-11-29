@@ -1054,7 +1054,7 @@ TRADITIONAL_LARGE_TRIAL_SIZE = Parameter(
 )
 
 # dFDA System Targets
-# (DFDA_TRIALS_PER_YEAR_CAPACITY moved to after RESEARCH_ACCELERATION_MULTIPLIER definition)
+# (DFDA_TRIALS_PER_YEAR_CAPACITY moved to after TRIAL_CAPACITY_MULTIPLIER definition)
 
 DFDA_DRUG_APPROVALS_PER_YEAR_LOW = Parameter(
     1000,
@@ -1080,7 +1080,7 @@ DFDA_DRUG_APPROVALS_PER_YEAR_HIGH = Parameter(
     keywords=["2k", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
 )  # Optimistic approvals estimate (40x current)
 
-# (DFDA_ACTIVE_TRIALS moved to after RESEARCH_ACCELERATION_MULTIPLIER definition)
+# (DFDA_ACTIVE_TRIALS moved to after TRIAL_CAPACITY_MULTIPLIER definition)
 
 DFDA_TRIAL_DURATION_MONTHS_RANGE = (3, 12)  # Months for typical trial completion
 
@@ -2893,70 +2893,70 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     keywords=["research", "funding", "total", "dih", "treaty"]
 )
 
-# Research Acceleration Multiplier (Simple Economic Calculation)
+# Trial Capacity Multiplier (Simple Economic Calculation)
 # DIH funding can support 48.8M patients/year at RECOVERY trial cost ($500/patient)
 # Current global trial capacity: 1.9M patients/year (IQVIA 2022)
-# Acceleration = DIH capacity / Current capacity
-RESEARCH_ACCELERATION_MULTIPLIER = Parameter(
+# Capacity Multiplier = DIH capacity / Current capacity
+TRIAL_CAPACITY_MULTIPLIER = Parameter(
     DIH_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd",
     source_type="calculated",
-    description="Research acceleration from DIH funding capacity vs. current global trial participation (replaces hardcoded 115x)",
-    display_name="Research Acceleration Multiplier",
+    description="Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
+    display_name="Trial Capacity Multiplier",
     unit="ratio",
     formula="DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
     latex=r"Multiplier = 48.8M \div 1.9M = 25.7",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"]
-)  # 25.7x research acceleration from simple funding economics (was 115x hardcoded)
+)  # 25.7x trial capacity multiplier from simple funding economics
 
-RESEARCH_ACCELERATION_CUMULATIVE_YEARS_20YR = Parameter(
-    int(RESEARCH_ACCELERATION_MULTIPLIER * 20),
+TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
+    int(TRIAL_CAPACITY_MULTIPLIER * 20),
     source_ref="/knowledge/appendix/research-acceleration-model.qmd",
     source_type="calculated",
-    description="Cumulative research-equivalent years over 20-year period with calculated acceleration",
-    display_name="Cumulative Research Years Over 20 Years",
+    description="Cumulative trial-capacity-equivalent years over 20-year period",
+    display_name="Cumulative Trial Capacity Years Over 20 Years",
     unit="years",
-    formula="RESEARCH_ACCELERATION_MULTIPLIER × 20 YEARS",
-    latex=r"Research_{20yr} = 25.7 \times 20 = 514 \text{ years}",
-    keywords=["research", "acceleration", "cumulative", "20 years"]
-)  # ~514 research-equivalent years (25.7x acceleration × 20 years, was 2,300 with hardcoded 115x)
+    formula="TRIAL_CAPACITY_MULTIPLIER × 20 YEARS",
+    latex=r"Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}",
+    keywords=["trial", "capacity", "cumulative", "20 years"]
+)  # ~514 trial-capacity-equivalent years (25.7x capacity × 20 years)
 
 COMPLETED_TRIALS_MULTIPLIER_CONSERVATIVE = Parameter(
-    RESEARCH_ACCELERATION_MULTIPLIER,
+    TRIAL_CAPACITY_MULTIPLIER,
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier",
     source_type="calculated",
     description="Conservative completed trials multiplier accounting for scale-up",
     display_name="Conservative Completed Trials Multiplier Accounting for Scale-Up",
     unit="ratio",
-    formula="RESEARCH_ACCELERATION_MULTIPLIER",
+    formula="TRIAL_CAPACITY_MULTIPLIER",
     latex=r"Multiplier_{conservative} = 25.7",
     keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "rct", "multiple", "factor"]
 )  # Conservative multiplier from DIH funding capacity
 
-# dFDA System Targets (using calculated acceleration multiplier)
+# dFDA System Targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
-    int(CURRENT_TRIALS_PER_YEAR * RESEARCH_ACCELERATION_MULTIPLIER),
+    int(CURRENT_TRIALS_PER_YEAR * TRIAL_CAPACITY_MULTIPLIER),
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
     source_type="calculated",
-    description="Maximum trials per year possible with calculated acceleration",
-    display_name="dFDA Maximum Trials per Year Possible with Calculated Acceleration",
+    description="Maximum trials per year possible with trial capacity multiplier",
+    display_name="dFDA Maximum Trials per Year",
     unit="trials/year",
-    formula="CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER",
+    formula="CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
     latex=r"Trials_{dFDA} = 3,300 \times 25.7 = 84,800",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"]
-)  # Maximum trials/year possible with calculated acceleration (was 380K with hardcoded 115x)
+)  # Maximum trials/year possible with trial capacity multiplier
 
 DFDA_ACTIVE_TRIALS = Parameter(
-    int(CURRENT_ACTIVE_TRIALS * RESEARCH_ACCELERATION_MULTIPLIER),
+    int(CURRENT_ACTIVE_TRIALS * TRIAL_CAPACITY_MULTIPLIER),
     source_ref="/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity",
     source_type="calculated",
-    description="Active trials at any given time with calculated acceleration",
+    description="Active trials at any given time with trial capacity multiplier",
     display_name="dFDA Active Trials at Any Given Time",
     unit="trials",
-    formula="CURRENT_ACTIVE_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER",
+    formula="CURRENT_ACTIVE_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
     latex=r"Active_{dFDA} = 10,000 \times 25.7 = 257,000",
     keywords=["pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial"]
-)  # Active trials at any given time (was 200K with hardcoded 115x)
+)  # Active trials at any given time with trial capacity multiplier
 
 # dFDA Completed Trials Per Year
 DFDA_COMPLETED_TRIALS_PER_YEAR = Parameter(
@@ -5041,57 +5041,28 @@ def calculate_gdp_growth_boost(treaty_pct):
     return BASE_GDP_GROWTH + boost
 
 
-def calculate_medical_progress_multiplier(treaty_pct):
+def calculate_trial_capacity_multiplier(treaty_pct):
     """
-    Calculate medical research acceleration from increased funding
+    Calculate trial capacity multiplier for a given treaty percentage.
 
-    Current state:
-    - $67.5B global government medical research spending
-    - ~3,300 clinical trials/year
-    - ~50 new drug approvals/year
+    Uses linear scaling from the base TRIAL_CAPACITY_MULTIPLIER (25.7x at 1% treaty).
 
-    With treaty funding:
-    - Additional funding = $27.2B per 1% treaty
-    - 82x cost reduction from dFDA (per patient: $41k -> $500)
-    - Research capacity multiplier = (total_funding / current_funding) × cost_reduction
+    Formula:
+        Multiplier = TRIAL_CAPACITY_MULTIPLIER × (treaty_pct / 0.01)
 
-    Formula breakdown:
-    - New funding = $2,718B × treaty_pct
-    - Total funding = $67.5B + new_funding
-    - Funding ratio = total_funding / $67.5B
-    - Multiplier = funding_ratio × 82
-
-    LaTeX:
-        Funding_{new} = Military_{spending} \times treaty_{pct}
-
-        Funding_{total} = Funding_{current} + Funding_{new}
-
-        Ratio_{funding} = \frac{Funding_{total}}{Funding_{current}}
-
-        Multiplier = Ratio_{funding} \times Factor_{cost\\_reduction}
-
-    Example for 1% treaty:
-    - New funding: $27.2B
-    - Total funding: $67.5B + $27.2B = $94.7B
-    - Funding ratio: $94.7B / $67.5B = 1.40x
-    - Multiplier: 1.40 × 82 = 115x
-
-    This means:
-    - 115x × 3,300 baseline trials = 379,500 ≈ 380,000 trials/year possible
-    - Current: ~3,300 trials/year, ~50 drug approvals/year
-    - Future: ~380,000 trials/year, ~1,000-2,000 drug approvals/year
-    - This represents 115x more research capacity
+    Examples:
+    - 1% treaty: 25.7 × (0.01 / 0.01) = 25.7x
+    - 2% treaty: 25.7 × (0.02 / 0.01) = 51.4x
+    - 5% treaty: 25.7 × (0.05 / 0.01) = 128.5x
+    - 10% treaty: 25.7 × (0.10 / 0.01) = 257x
 
     Args:
-        treaty_pct: Fraction of military spending redirected
+        treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
 
     Returns:
-        Research capacity multiplier (e.g., 115 = 115x more trials possible)
+        Trial capacity multiplier (e.g., 25.7 = 25.7x more trial slots available)
     """
-    new_funding = GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * treaty_pct
-    total_funding = GLOBAL_MED_RESEARCH_SPENDING + new_funding
-    funding_ratio = total_funding / GLOBAL_MED_RESEARCH_SPENDING
-    return funding_ratio * TRIAL_COST_REDUCTION_FACTOR
+    return float(TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
 
 
 def calculate_life_expectancy_gain(treaty_pct):
@@ -5112,7 +5083,7 @@ def calculate_life_expectancy_gain(treaty_pct):
     Returns:
         Additional years of healthy life expectancy
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Conservative model: linear relationship
     # 100x research → 1 year of life extension
@@ -5195,7 +5166,7 @@ def calculate_personal_lifetime_wealth(
     # Component 2: Healthcare savings (insurance premiums drop)
     # Current: ~$3,000/year average global health insurance cost
     # As diseases cured, insurance costs drop proportionally to research acceleration
-    progress_multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
     healthcare_savings_pct = min(0.7, progress_multiplier / 200)  # Cap at 70% savings
     healthcare_savings_annual = 3000 * healthcare_savings_pct
 
@@ -5307,11 +5278,11 @@ LIFE_EXTENSION_YEARS_2PCT = PERSONAL_WEALTH_AGE_30_2PCT["life_extension_years"]
 LIFE_EXTENSION_YEARS_5PCT = PERSONAL_WEALTH_AGE_30_5PCT["life_extension_years"]
 LIFE_EXTENSION_YEARS_10PCT = PERSONAL_WEALTH_AGE_30_10PCT["life_extension_years"]
 
-# Medical progress multipliers
-MEDICAL_PROGRESS_MULTIPLIER_1PCT = calculate_medical_progress_multiplier(0.01)
-MEDICAL_PROGRESS_MULTIPLIER_2PCT = calculate_medical_progress_multiplier(0.02)
-MEDICAL_PROGRESS_MULTIPLIER_5PCT = calculate_medical_progress_multiplier(0.05)
-MEDICAL_PROGRESS_MULTIPLIER_10PCT = calculate_medical_progress_multiplier(0.10)
+# Trial capacity multipliers (calculated on-the-fly in charts, these are for reference)
+TRIAL_CAPACITY_MULTIPLIER_1PCT = calculate_trial_capacity_multiplier(0.01)
+TRIAL_CAPACITY_MULTIPLIER_2PCT = calculate_trial_capacity_multiplier(0.02)
+TRIAL_CAPACITY_MULTIPLIER_5PCT = calculate_trial_capacity_multiplier(0.05)
+TRIAL_CAPACITY_MULTIPLIER_10PCT = calculate_trial_capacity_multiplier(0.10)
 
 # GDP growth boosts
 GDP_GROWTH_BOOST_1PCT = calculate_gdp_growth_boost(0.01) - 0.025  # Just the boost component
@@ -5336,10 +5307,10 @@ life_extension_years_2pct_formatted = f"{LIFE_EXTENSION_YEARS_2PCT:.1f}"
 life_extension_years_5pct_formatted = f"{LIFE_EXTENSION_YEARS_5PCT:.1f}"
 life_extension_years_10pct_formatted = f"{LIFE_EXTENSION_YEARS_10PCT:.1f}"
 
-medical_progress_multiplier_1pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_1PCT:.0f}x"
-medical_progress_multiplier_2pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_2PCT:.0f}x"
-medical_progress_multiplier_5pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_5PCT:.0f}x"
-medical_progress_multiplier_10pct_formatted = f"{MEDICAL_PROGRESS_MULTIPLIER_10PCT:.0f}x"
+trial_capacity_multiplier_1pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_1PCT:.1f}x"
+trial_capacity_multiplier_2pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_2PCT:.1f}x"
+trial_capacity_multiplier_5pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_5PCT:.1f}x"
+trial_capacity_multiplier_10pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_10PCT:.1f}x"
 
 gdp_growth_boost_1pct_formatted = format_percentage(GDP_GROWTH_BOOST_1PCT)
 gdp_growth_boost_2pct_formatted = format_percentage(GDP_GROWTH_BOOST_2PCT)
@@ -5457,7 +5428,7 @@ def calculate_life_expectancy_gain_improved(treaty_pct, timeframe="mid-term"):
     Returns:
         Years of life expectancy gained
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Near-term (Years 1-5): Faster access to existing pipeline drugs
     # Conservative: Each 100x research acceleration = 3-5 years earlier access
@@ -5495,7 +5466,7 @@ def calculate_healthcare_savings_improved(treaty_pct):
     Returns:
         Annual per capita healthcare savings
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Conservative model: Each 100x research acceleration → 10% cost reduction
     # This accounts for both better treatments and prevention
@@ -5519,7 +5490,7 @@ def calculate_productivity_gains_improved(treaty_pct, annual_income):
     Returns:
         Annual productivity gain
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Baseline productivity loss from preventable illness: 15-20%
     BASELINE_PRODUCTIVITY_LOSS = 0.175  # 17.5% average
@@ -5548,7 +5519,7 @@ def calculate_mental_health_benefit(treaty_pct):
     Returns:
         Annual per capita mental health benefit
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Mental health sees outsized gains from increased research
     # Current underfunding means high-value low-hanging fruit
@@ -5574,7 +5545,7 @@ def calculate_caregiver_savings(treaty_pct):
     Returns:
         Annual per capita caregiver time savings
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Healthier population reduces caregiving burden
     reduction_pct = min(0.50, multiplier / 250)  # 115x → 46%
@@ -5621,7 +5592,7 @@ def calculate_personal_lifetime_wealth_improved(
     total_years = years_remaining + life_extension_years
 
     # Medical progress multiplier
-    progress_multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # GDP boost
     gdp_boost = calculate_gdp_growth_boost(treaty_pct)
@@ -5825,7 +5796,7 @@ def calculate_life_expectancy_gain_conservative_baseline(treaty_pct, conservativ
     Returns:
         Years of life expectancy gained
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Historical precedent: One major breakthrough (antibiotics) → 10 years
     # 115x research acceleration → likely multiple breakthrough categories
@@ -5864,7 +5835,7 @@ def calculate_productivity_loss_conservative_baseline(treaty_pct, annual_income)
     Returns:
         Annual productivity gain
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Base productivity loss for those affected: 22.6%
     BASELINE_PRODUCTIVITY_LOSS_AFFECTED = 0.226
@@ -5906,7 +5877,7 @@ def calculate_caregiver_savings_conservative_baseline(treaty_pct):
     Returns:
         Annual per capita caregiver time savings value
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Per capita caregiving value (spread across population)
     PER_CAPITA_CAREGIVER_COST = (CAREGIVER_COUNT_US / US_POPULATION_2024) * 15789
@@ -5959,7 +5930,7 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
     total_years = years_remaining + life_extension_years
 
     # Medical progress multiplier
-    progress_multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # GDP boost
     gdp_boost = calculate_gdp_growth_boost(treaty_pct)
@@ -6143,7 +6114,7 @@ def calculate_cumulative_research_years(treaty_pct, years_elapsed):
     Returns:
         Cumulative research-equivalent years
     """
-    multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
     return multiplier * years_elapsed
 
 
@@ -6335,7 +6306,7 @@ def calculate_personal_lifetime_wealth_disease_eradication(
     life_extension_years = eradication_result["total_life_extension"]
 
     # Medical progress multiplier for other calculations
-    progress_multiplier = calculate_medical_progress_multiplier(treaty_pct)
+    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
 
     # Peace dividend (same as other models)
     peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
@@ -6744,8 +6715,8 @@ PARAMETER_LINKS = {
     "trial_cost_reduction": "../appendix/recovery-trial.qmd",
     "dfda_annual_savings": "../appendix/dfda-cost-benefit-analysis.qmd",
     "qalys_annual": "../appendix/dfda-qaly-model.qmd",
-    # Research Acceleration
-    "research_acceleration_multiplier": "../appendix/research-acceleration-model.qmd",
+    # Trial Capacity
+    "trial_capacity_multiplier": "../appendix/research-acceleration-model.qmd",
     "trials_per_year_current": "../appendix/research-acceleration-model.qmd",
     "trials_per_year_dfda": "../appendix/research-acceleration-model.qmd",
     # Cost-Effectiveness

@@ -167,7 +167,7 @@ plt.show()
 
 ### Disease Eradication Model (Recommended)
 
-These models properly account for 115x cumulative research acceleration:
+These models properly account for {{< var trial_capacity_multiplier >}}× cumulative trial capacity expansion:
 
 1. **5-year** ($2.4M, 34yr): Low-hanging fruit, early wins
 2. **10-year** ($3.2M, 50yr): Major disease categories tackled
@@ -183,7 +183,7 @@ These use antibiotic precedent (fundamentally understates impact):
 
 ## Why Disease Eradication is Realistic
 
-**20 years of 115x research** = **2,300 cumulative research-years**
+**20 years of {{< var trial_capacity_multiplier >}}× trial capacity** = **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-years**
 
 This is **18.5x the entire modern medical revolution (1900-2024)** which gave us +32 years life expectancy.
 

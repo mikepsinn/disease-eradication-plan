@@ -132,8 +132,6 @@ If aging was mandatory, these creatures couldn't exist. But they do. Nature solv
 
 How? They used Yamanaka factors to reprogram cells to a younger state. Like running System Restore on Windows, but for meat.
 
-Humans are just big mice with mortgages. If it works in mice, it'll work in us. Eventually.
-
 ### The Hallmarks of Aging (All Fixable)
 
 Scientists identified [nine "hallmarks of aging."](../references.qmd#hallmarks-of-aging) Every one is a mechanical problem with a mechanical solution:
@@ -156,9 +154,7 @@ You're not waiting for magic. You're systematically fixing each broken subsystem
 
 The [Manhattan Project cost $28 billion (adjusted for inflation)](../references.qmd#manhattan-project-cost-30b) and took 3 years. Result: Nuclear weapons.
 
-Humans spend [$68 billion per year globally](../references.qmd#global-gov-med-research-spending) on all medical research combined. For everything. Cancer, Alzheimer's, heart disease, aging, rare diseases - everything.
-
-If we spent Manhattan Project money on any single disease, we'd cure it in 5 years. Guaranteed.
+Humans spend {{< var global_med_research_spending >}} per year globallyon all medical research combined. For everything. Cancer, Alzheimer's, heart disease, aging, rare diseases - everything.
 
 ### The Economics of Mortality
 
@@ -172,100 +168,10 @@ Here's why you're still dying:
 
 The [1% Treaty](../solution/1-percent-treaty.qmd) fixes this by making cures more profitable than treatments.
 
-## Part 6: The Timeline to Human Repair Shops
-
-### What We Can Fix Now (2025)
-
-- Replace joints, valves, lenses
-- Transplant most organs
-- Clean clogged arteries
-- Kill many cancers
-- Fix some genetic diseases
-- Restore some vision/hearing
-- Replace blood, skin, some bones
-
-We're basically at the "replace fluids and filters" level of human maintenance.
-
-### What We'll Fix Soon (2025-2035)
-
-With proper funding:
-
-- Grow organs on demand
-- Reverse Type 1 diabetes
-- Cure most cancers
-- Stop Alzheimer's
-- Regenerate spinal cords
-- Print new hearts
-- Fix most genetic diseases
-
-This is the "rebuild the engine" phase.
-
-### What We'll Fix Eventually (2035-2050)
-
-With the [1% Treaty funding](../solution/1-percent-treaty.qmd):
-
-- Reverse aging
-- Regenerate brain tissue
-- Cure all genetic diseases
-- Replace any organ
-- Enhance capabilities
-- Extend lifespan to 150+
-- Make death optional
-
-This is "complete frame-off restoration with upgrades."
-
-## Part 7: Your Personal Restoration Plan
-
-### You're Not Helpless
-
-While we're working on the big fixes, you can maintain your chassis:
-
-**Daily Maintenance** (like checking oil):
-
-- Sleep 7-9 hours (cellular repair time)
-- Exercise (lubricates all systems)
-- Don't smoke (obvious)
-- Limit sugar (it's rust for your insides)
-- Manage stress (cortisol corrodes everything)
-
-**Regular Service** (like oil changes):
-
-- Blood work annually
-- Cancer screenings
-- Dental cleanings
-- Eye exams
-- Update vaccines
-
-**Major Service** (like timing belt replacement):
-
-- Colonoscopy at 50
-- Cardiac calcium scan
-- Full-body MRI (if you can afford it)
-- Genetic testing
-- Metabolic panels
-
-You're just keeping the machine running until you can rebuild it.
-
-### The Warranty Extension
-
-Every intervention we develop extends your warranty:
-
-- Statins: +5 years
-- Blood pressure meds: +3 years
-- Cancer caught early: +20 years
-- Not smoking: +10 years
-- Exercise: +7 years
-
-Stack enough warranty extensions and you'll live long enough for the next breakthrough. Then the next. Then the next.
-
-This is called "longevity escape velocity" - living long enough to live forever.
-
-## The Irrefutable Conclusion
+## The Conclusion
 
 Your body is not a mystical entity. It is a machine. Every disease is a broken part. Every death is a mechanical failure.
 
-We have already proven we can read the blueprint (DNA), edit the code (CRISPR), and replace the parts (organ transplants). The only reason you are still aging and dying is because we, as a species, have decided to spend **40 times more money** on weapons to break our machines than on research to fix them.
-
-That's like spending $4,000 on car alarms and $100 on oil changes. It's a stupid way to maintain a machine you depend on.
+We have already proven we can read the blueprint (DNA), edit the code (CRISPR), and replace the parts (organ transplants). The only reason you are still aging and dying is because we, as a species, have decided to spend **{{< var military_vs_medical_research_ratio >}} more money** on weapons to break our machines than on research to fix them.
 
 The question isn't whether we *can* fix the human body. The question is whether we'll finally decide to fund the repairs before the whole thing breaks down completely.

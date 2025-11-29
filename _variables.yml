@@ -262,7 +262,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
   \ completed trials multiplier accounting for scale-up | ✓ High confidence | Formula:\
-  \ RESEARCH_ACCELERATION_MULTIPLIER | Unit: ratio | Click to view calculation\">25.7</a>"
+  \ TRIAL_CAPACITY_MULTIPLIER | Unit: ratio | Click to view calculation\">25.7</a>"
 "completed_trials_multiplier_conservative_latex": "$$\nMultiplier_{conservative} =\
   \ 25.7\n$$"
 "cost_of_delay_deaths_per_second": "<a href=\"/knowledge/problem/cost-of-war#cost-of-delay\"\
@@ -369,9 +369,9 @@
 "dfda_active_trials": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Active trials\
-  \ at any given time with calculated acceleration | ✓ High confidence | Formula:\
-  \ CURRENT_ACTIVE_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER | Unit: trials | Click\
-  \ to view calculation\">257K</a>"
+  \ at any given time with trial capacity multiplier | ✓ High confidence | Formula:\
+  \ CURRENT_ACTIVE_TRIALS × TRIAL_CAPACITY_MULTIPLIER | Unit: trials | Click to view\
+  \ calculation\">257K</a>"
 "dfda_active_trials_latex": "$$\nActive_{dFDA} = 10,000 \\times 25.7 = 257,000\n$$"
 "dfda_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
@@ -622,9 +622,9 @@
 "dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum trials\
-  \ per year possible with calculated acceleration | ✓ High confidence | Formula:\
-  \ CURRENT_TRIALS × RESEARCH_ACCELERATION_MULTIPLIER | Unit: trials/year | Click\
-  \ to view calculation\">84,834</a>"
+  \ per year possible with trial capacity multiplier | ✓ High confidence | Formula:\
+  \ CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view\
+  \ calculation\">84,834</a>"
 "dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 25.7 = 84,800\n\
   $$"
 "dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
@@ -1264,13 +1264,13 @@
   calculated\" data-confidence=\"high\" title=\"Minimum investment for institutional\
   \ investors | ✓ High confidence | Unit: USD | Click to view calculation\">$10M</a>"
 "life_extension_years_10pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_10PCT\"\
-  >4.12</span>"
+  >2.57</span>"
 "life_extension_years_1pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_1PCT\"\
-  >1.15</span>"
+  >0.257</span>"
 "life_extension_years_2pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_2PCT\"\
-  >1.48</span>"
+  >0.514</span>"
 "life_extension_years_5pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_5PCT\"\
-  >2.47</span>"
+  >1.29</span>"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum bond\
@@ -1302,14 +1302,6 @@
   \ vaccination programs | ✓ High confidence | Unit: ratio | Click to view source\"\
   >14</a>"
 "measles_vaccination_roi_cite": "@measles-vaccination-roi"
-"medical_progress_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_10PCT\"\
-  >412</span>"
-"medical_progress_multiplier_1pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_1PCT\"\
-  >115</span>"
-"medical_progress_multiplier_2pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_2PCT\"\
-  >148</span>"
-"medical_progress_multiplier_5pct": "<span class=\"parameter-link\" title=\"parameters.MEDICAL_PROGRESS_MULTIPLIER_5PCT\"\
-  >247</span>"
 "medical_research_pct_of_disease_burden": "<a href=\"/knowledge/economics/economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Medical research\
@@ -1464,36 +1456,36 @@
 "peace_dividend_veteran_healthcare_latex": "$$\nPeaceDividend_{veteran} = \\$20.01B\
   \ \\times 0.01 = \\$0.20B\n$$"
 "personal_lifetime_benefit_age_20_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">414K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">205K</span>"
 "personal_lifetime_benefit_age_30_10pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT\">3.22M</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT\">2.82M</span>"
 "personal_lifetime_benefit_age_30_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT\">402K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT\">186K</span>"
 "personal_lifetime_benefit_age_30_2pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">592K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">390K</span>"
 "personal_lifetime_benefit_age_30_5pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT\">1.31M</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT\">1.19M</span>"
 "personal_lifetime_benefit_age_30_half_pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT\">247K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT\">91,034</span>"
 "personal_lifetime_benefit_age_40_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT\">369K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT\">153K</span>"
 "personal_lifetime_benefit_age_50_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT\">301K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT\">104K</span>"
 "personal_lifetime_benefit_age_60_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT\">206K</span>"
+  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT\">51,902</span>"
 "personal_lifetime_benefit_conservative_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">584K</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">230K</span>"
 "personal_lifetime_benefit_conservative_moderate_age_30_1pct": "<span class=\"parameter-link\"\
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT\"\
-  >902K</span>"
+  >296K</span>"
 "personal_lifetime_benefit_eradication_10yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">1.52M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">812K</span>"
 "personal_lifetime_benefit_eradication_20yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">1.97M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">1.04M</span>"
 "personal_lifetime_benefit_eradication_40yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">2.62M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">1.35M</span>"
 "personal_lifetime_benefit_eradication_5yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">1.18M</span>"
+  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">658K</span>"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
   >$12.2K</span>"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\"\
@@ -1637,22 +1629,6 @@
   \ Medium confidence | \U0001F4CA Peer-reviewed | Unit: years | Click to view source\"\
   >6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
-"research_acceleration_cumulative_years_20yr": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cumulative research-equivalent\
-  \ years over 20-year period with calculated acceleration | ✓ High confidence | Formula:\
-  \ RESEARCH_ACCELERATION_MULTIPLIER × 20 YEARS | Unit: years | Click to view calculation\"\
-  >514</a>"
-"research_acceleration_cumulative_years_20yr_latex": "$$\nResearch_{20yr} = 25.7 \\\
-  times 20 = 514 \\text{ years}\n$$"
-"research_acceleration_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Research acceleration\
-  \ from DIH funding capacity vs. current global trial participation (replaces hardcoded\
-  \ 115x) | ✓ High confidence | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS\
-  \ | Unit: ratio | Click to view calculation\">25.7</a>"
-"research_acceleration_multiplier_latex": "$$\nMultiplier = 48.8M \\div 1.9M = 25.7\n\
-  $$"
 "roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 1% discount rate (approximate 15% increase from 3% baseline) | ~ Medium confidence\
@@ -2217,6 +2193,28 @@
   >707</span>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
   $0.127} = 701\\times\n$$"
+"trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent\
+  \ years over 20-year period | ✓ High confidence | Formula: TRIAL_CAPACITY_MULTIPLIER\
+  \ × 20 YEARS | Unit: years | Click to view calculation\">514</a>"
+"trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
+  \ 20 = 514 \\text{ years}\n$$"
+"trial_capacity_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial capacity\
+  \ multiplier from DIH funding capacity vs. current global trial participation |\
+  \ ✓ High confidence | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit:\
+  \ ratio | Click to view calculation\">25.7</a>"
+"trial_capacity_multiplier_latex": "$$\nMultiplier = 48.8M \\div 1.9M = 25.7\n$$"
+"trial_capacity_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_10PCT\"\
+  >257</span>"
+"trial_capacity_multiplier_1pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_1PCT\"\
+  >25.7</span>"
+"trial_capacity_multiplier_2pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_2PCT\"\
+  >51.4</span>"
+"trial_capacity_multiplier_5pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_5PCT\"\
+  >129</span>"
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
