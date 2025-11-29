@@ -1238,6 +1238,9 @@ This represents DIH's funding capacity alone, without assuming behavior changes 
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)
 - From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
+**Why More Trials = More Cures (No Diminishing Returns)**:
+Crucially, this {{< var trial_capacity_multiplier >}}x increase in capacity translates directly into medical progress because humanity has empirically tested only **0.417%** of the known therapeutic landscape. We are not facing diminishing returns; we are facing a cost barrier that has prevented us from testing 99.6% of plausible treatments. See **[The Myth of Diminishing Returns](#the-myth-of-diminishing-returns)** for the mathematical proof that the search space is effectively infinite relative to our current efforts.
+
 **For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model: Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
 ## Personal Economic Impact: From Societal to Individual
@@ -1595,6 +1598,35 @@ This intervention targets a different margin than traditional research scaling. 
 
 - **Bloom et al.:** Diminishing returns to *discovery* of new ideas (fundamental scientific breakthroughs getting harder to find)
 - **dFDA model:** Improving *execution* of existing trial designs (streamlining data collection, not discovering new biology)
+
+#### The Myth of Diminishing Returns
+
+The argument that medical research faces diminishing returns rests on a false premise: that we have already picked the "low-hanging fruit." In reality, we haven't picked the fruit because we can't afford the ladder.
+
+High trial costs (median [~$41,000 per patient](../references.qmd#trial-cost-41k)) force researchers to bet only on "sure things," leaving the vast majority of the therapeutic map blank.
+
+**1. The Immediate Opportunity (Existing Safe Drugs)**
+
+Even restricting ourselves to compounds humans *already know are safe* (FDA-approved drugs and GRAS substances), we have barely scratched the surface.
+
+- **Safe compounds available**: [12,000](../references.qmd#fda-approved-products-20k) (FDA approved + GRAS)
+- **Diseases to treat**: [1,000](../references.qmd#icd-10-code-count) (trial-relevant ICD-10 codes)
+- **Possible combinations**: 12.0 million plausible drug-condition pairs
+- **Actually tested**: [50,000](../problem/untapped-therapeutic-frontier.qmd#what-youve-actually-tested) (optimistic estimate)
+
+We can express the exploration gap mathematically as:
+
+$$
+\text{Exploration Ratio} = \frac{N_{tested}}{N_{compounds} \times N_{diseases}} \approx \frac{50,000}{12,000 \times 1,000} \approx 0.417\%
+$$
+
+We have empirically tested **0.417%** of the drug-disease relationships possible using *existing, approved, safe compounds*. The other 99.6% remains unexplored due to transaction costs. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for full analysis.
+
+**2. The Ultimate Frontier (New Molecules)**
+
+If we look beyond existing drugs to the broader [chemical space](../references.qmd#chemical-space-size) (10^23 to 10^60 molecules), humanity has explored roughly one-quintillionth of what is possible.
+
+We haven't hit the limits of biology; we've hit a **cost wall**. Reducing trial costs by {{< var trial_cost_reduction_factor >}}x makes it economically viable to systematically explore this "dark matter" of medicine.
 
 **Empirical evidence for efficiency gains:** RECOVERY trial and pre-1962 physician-led system both achieved 80-95% cost reductions by eliminating overhead (redundant monitoring, bespoke infrastructure, excessive documentation), not by making scientific discoveries easier.
 
