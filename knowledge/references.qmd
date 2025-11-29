@@ -5444,3 +5444,57 @@ from dih_models.parameters import *
   > ROI: $11 return per $1 invested
   > Measles vaccination alone saved 93.7M lives (61% of 154M total) over 50 years (1974-2024)
   > — CDC MMWR, [Childhood Immunizations 1994-2023](https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm) | The Lancet, [50 Years of Expanded Programme on Immunization](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00850-X/fulltext)
+
+<a id="chemical-space-size"></a>
+
+- **Total drug-like chemical space (10^23 - 10^60)**
+  > "Estimated 10^23 to 10^60 drug-like molecules exist in chemical space, dwarfing the number of compounds ever synthesized."
+  > — Reymond, J. L., 2015, [The Chemical Space Project](https://pubs.acs.org/doi/10.1021/ar500432k)
+
+<a id="clinical-trials-puzzle-interactome"></a>
+
+- **Only ~12% of human interactome targeted**
+  > "Mapping 350,000+ clinical trials showed that only ~12% of the human interactome has ever been targeted by drugs."
+  > — PMC, 2023, [The Clinical Trials Puzzle](https://pmc.ncbi.nlm.nih.gov/articles/PMC10749231/)
+
+<a id="disease-network-overlap"></a>
+
+- **Disease network overlap (network medicine)**
+  > "Diseases cluster on shared biological networks, meaning drugs for one condition may plausibly affect many others."
+  > — Barabási et al., 2011, [Network medicine: a network-based approach to human disease](https://www.nature.com/articles/nrg2918)
+
+<a id="drug-repurposing-rate"></a>
+
+- **Drug Repurposing Rate (~30%)**
+  > "Approximately 30% of drugs gain at least one new indication after initial approval."
+  > — Nature Medicine, 2024, [Drug Repurposing Trends](https://www.nature.com/articles/s41591-024-03233-x)
+
+<a id="fda-approved-products-20k"></a>
+
+- **FDA-approved prescription drug products (20,000+)**
+  > "There are over 20,000 prescription drug products approved for marketing."
+  > — FDA, [Facts About Generic Drugs](https://www.fda.gov/media/143704/download)
+
+<a id="fda-gras-list-count"></a>
+
+- **FDA GRAS List Count (~570-700)**
+  > "The FDA GRAS (Generally Recognized as Safe) list contains approximately 570–700 substances."
+  > — FDA, [GRAS Notice Inventory](https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory)
+
+<a id="icd-10-code-count"></a>
+
+- **ICD-10 Code Count (~14,000)**
+  > "The ICD-10 classification contains approximately 14,000 codes for diseases, signs and symptoms."
+  > — WHO, [ICD-10 Browser](https://icd.who.int/browse10/2019/en)
+
+<a id="preferential-target-attachment"></a>
+
+- **Preferential target attachment in clinical trials**
+  > "Clinical trials overwhelmingly test the same few biological targets due to preferential attachment dynamics."
+  > — arXiv, 2023, [Preferential Attachment in Drug Development](https://arxiv.org/abs/2301.10709)
+
+<a id="zinc-22-database"></a>
+
+- **ZINC-22 Database (Billions of compounds)**
+  > "ZINC-22 contains tens of billions of purchasable virtual molecules for drug discovery."
+  > — ACS, [ZINC-22](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01253)

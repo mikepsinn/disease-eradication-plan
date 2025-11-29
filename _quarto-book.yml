@@ -33,6 +33,7 @@ book:
         - knowledge/problem/cost-of-war.qmd # ✅ Cost of War ~32p
         - knowledge/problem/cost-of-disease.qmd # ✅ Cost of Disease ~9p
         - knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd # ✅ The NIH ~9p
+        - knowledge/problem/untapped-therapeutic-frontier.qmd # ✅ The Untapped Frontier ~5p
         - knowledge/problem/fda-is-unsafe-and-ineffective.qmd # ✅ The FDA ~25p
         - knowledge/problem/unrepresentative-democracy.qmd # ✅ Democracy Is Theater & Regulatory Capture ~19p
         - knowledge/economics/central-banks.qmd # ✅ (EXCELLENT voice - "death certificate with a president's face") ~9p
@@ -414,4 +415,3 @@ format:
         % Override the \appendix command to prevent switching to alphabetic numbering
         \usepackage{etoolbox}
         \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
-

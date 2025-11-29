@@ -17,6 +17,7 @@ project:
     - knowledge/problem/cost-of-war.qmd
     - knowledge/problem/cost-of-disease.qmd
     - knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
+    - knowledge/problem/untapped-therapeutic-frontier.qmd
     - knowledge/problem/unrepresentative-democracy.qmd
     - knowledge/problem/fda-is-unsafe-and-ineffective.qmd
     # Solutions
@@ -100,6 +101,8 @@ website:
             text: "Economic Burden of Disease"
           - href: knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases.qmd
             text: "NIH Research Outcomes Analysis"
+          - href: knowledge/problem/untapped-therapeutic-frontier.qmd
+            text: "The Untapped Therapeutic Frontier"
           - href: knowledge/problem/fda-is-unsafe-and-ineffective.qmd
             text: "FDA Regulatory Efficacy Assessment"
           - href: knowledge/problem/unrepresentative-democracy.qmd
@@ -373,4 +376,3 @@ format:
   #   variables:
   #     title: "DIH Economic Models"
   #     description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
-
