@@ -18,101 +18,115 @@ from dih_models.parameters import *
 
 # The Untapped Therapeutic Frontier
 
-### Or: The Parking Lot of Disney World
+### Or: You're Standing in the Parking Lot of Disney World
 
-You think you've explored the world of medicine. In reality, you're standing in the parking lot of Disney World bragging about how much fun the pavement is.
+You think you've explored medicine. In reality, you're standing in the parking lot of Disney World bragging about how fun the pavement is. You've taken pictures of the asphalt. You've written dissertations about the parking stripes. You've never gone inside.
 
-Even after a century of pharmacology, most of the possible beneficial effects of molecules on diseases remain unexplored. Not because biology is constrained, but because clinical trials are slow, expensive, and run by people who think "urgency" is a type of perfume.
+After a century of pharmacology, most beneficial effects of molecules on diseases remain unexplored. Not because biology is constrained. Because clinical trials are slow, expensive, and run by people who think "urgency" is a type of perfume.
 
-Let's do some math. Don't worry, I'll keep it painful but brief.
+Here's some math. Don't worry, it's painful but brief.
 
-## The Tiny Sandbox You Play In
+## Your Tiny Sandbox
 
-Here is the sum total of what humanity considers "medicine" after 5,000 years of civilization:
+Here is everything humanity considers "medicine" after 5,000 years of civilization:
 
-*   **Prescriptions:** [Over 20,000 products](../references.qmd#fda-approved-products-20k) approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
-*   **Unique Ingredients:** These 20,000 products represent only ~1,300–2,000 unique active ingredients (APIs). That's fewer ingredients than a decent French bakery uses.
-*   **Investigational Drugs:** Pipeline analyses suggest [5,000–10,000+ compounds](../references.qmd#bio-clinical-development-2021) have passed Phase I globally.
-*   **Safe Stuff:** The FDA GRAS (Generally Recognized as Safe) list contains [~570–700 substances](../references.qmd#fda-gras-list-count).
+* **Prescriptions:** [Over 20,000 products](../references.qmd#fda-approved-products-20k) approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
+* **Unique Ingredients:** These 20,000 products contain only ~1,300-2,000 unique active ingredients. That's fewer ingredients than a decent French bakery uses.
+* **Investigational Drugs:** Pipeline analyses suggest [5,000-10,000+ compounds](../references.qmd#bio-clinical-development-2021) have passed Phase I globally.
+* **Safe Stuff:** The FDA GRAS list contains [~570-700 substances](../references.qmd#fda-gras-list-count).
 
-**Total unique compounds humanity knows are safeish: ~7,000–12,000.**
+**Total unique compounds humanity knows are safe-ish: ~7,000-12,000.**
 
-That's it. That's your toolbox.
+That's it. That's your entire medicine cabinet after five millennia.
 
-## The Target List (Diseases)
+## The Target List (Ways Your Body Breaks)
 
-*   **Codes:** The ICD-10 has [~14,000 codes](../references.qmd#icd-10-code-count) for ways your body can malfunction.
-*   **Real Targets:** Consolidation gives **~1,000 trial-relevant diseases** worth fixing.
+* **Codes:** The ICD-10 has [~14,000 codes](../references.qmd#icd-10-code-count) for ways your meat can malfunction.
+* **Real Targets:** Consolidation gives **~1,000 trial-relevant diseases** worth fixing.
 
-## The Math You Are Ignoring
+## The Math You're Ignoring
 
-If you take your ~12,000 safe compounds and multiply them by ~1,000 diseases, you get the "Combinatorial Space." This is fancy talk for "stuff we could test tomorrow if we weren't busy filling out forms."
+Take your ~12,000 safe compounds. Multiply by ~1,000 diseases. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
 
-**7,000–12,000 compounds × 1,000 diseases = 7–12 million plausible drug–condition combinations.**
+**7,000-12,000 compounds x 1,000 diseases = 7-12 million plausible drug-condition combinations.**
 
-### What You Have Actually Tested
+### What You've Actually Tested
 
-*   **Approved uses:** ~1,500–2,000 unique approved drug–disease uses.
-*   **Repurposed uses:** [~30% of drugs gain ≥1 new indication](../references.qmd#drug-repurposing-rate) after initial approval.
-*   **Failed trials:** Let's be generous and say you tested 10 times as many things that failed.
+* **Approved uses:** ~1,500-2,000 unique approved drug-disease pairings.
+* **Repurposed uses:** [~30% of drugs gain at least one new indication](../references.qmd#drug-repurposing-rate) after initial approval.
+* **Failed trials:** Let's be generous and say you tested 10 times as many things that failed.
 
-**Total tested: ≈15,000–50,000 relationships.**
+**Total tested: ~15,000-50,000 relationships.**
 
 ### The Scorecard
 
-50,000 tested ÷ 7,000,000 possibilities = **0.7%**
+50,000 tested / 7,000,000 possibilities = **0.7%**
 
-**Humanity has explored less than 1% of the theoretically testable drug–disease space.**
+**Humanity has explored less than 1% of the theoretically testable drug-disease space.**
 
-You are missing **99.3%** of the picture. It's like reading the first page of *War and Peace* and writing a book report called "It's About a Party."
+You are missing **99.3%** of the picture.
 
-## Is The Untested Stuff Useful? (Yes, Obviously)
+It's like reading the first page of *War and Peace* and writing a book report called "It's About a Party." Technically accurate. Cosmically insufficient.
+
+## Is The Untested Stuff Useful?
 
 You might argue, "Maybe the other 99% is useless!"
 
 Biology disagrees.
 
-*   **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only [~12% of the human interactome](../references.qmd#clinical-trials-puzzle-interactome) has ever been targeted by drugs. You're ignoring 88% of your own biology.
-*   **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend them to. This means "side effects" are often "cures for something else" that you just haven't noticed yet.
-*   **Network Overlap:** [Diseases cluster on shared biological networks](../references.qmd#disease-network-overlap). A drug for arthritis might cure Alzheimer's. You won't know until you check.
+* **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only [~12% of the human interactome](../references.qmd#clinical-trials-puzzle-interactome) has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and only ever entering the bathroom.
+* **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are often "cures for something else" that you haven't noticed yet. Every headache pill might cure Alzheimer's. You won't know until you check.
+* **Network Overlap:** [Diseases cluster on shared biological networks](../references.qmd#disease-network-overlap). A drug for arthritis might cure Alzheimer's. You won't know until you check. But you're not checking.
 
 ## The Universe is Big. You Are Small.
 
 So far we only counted molecules humanity *already has*. If you look at what's chemically possible, it gets embarrassing.
 
-*   **Chemical Space:** Estimated [10^23 to 10^60](../references.qmd#chemical-space-size) drug-like molecules.
-*   **Virtual Libraries:** [ZINC-22 contains tens of billions](../references.qmd#zinc-22-database) of purchasable virtual molecules.
-*   **Synthesized:** You have made **<10^(-40)** of possible molecules.
+* **Chemical Space:** Estimated [10^23 to 10^60](../references.qmd#chemical-space-size) drug-like molecules.
+* **Virtual Libraries:** [ZINC-22 contains tens of billions](../references.qmd#zinc-22-database) of purchasable virtual molecules.
+* **Synthesized:** You have made **<10^(-40)** of possible molecules.
 
 **Tested / Possible = ~10^-20 to 10^-50.**
 
 **Effectively zero.** You haven't even started.
 
+This is like exploring Earth by looking at one grain of sand on one beach in New Jersey, then declaring you've "seen the world." You haven't. You've seen a grain of sand. In New Jersey.
+
 ## Why You Are Still Sick
 
 It's not because science is hard. It's because:
 
-1.  **Trials Cost Too Much:** A typical Phase II–III RCT costs **$30–$100M** (Median cost per patient [~$41,000](../references.qmd#trial-cost-41k)). At that price, you only test "sure things."
-2.  **Herd Mentality:** Trials overwhelmingly test the same few biological targets due to [preferential attachment dynamics](../references.qmd#preferential-target-attachment). Everyone studies what everyone else is studying because that's how you get grants.
-3.  **No Profit:** Most molecules have no patent. No patent = no $100M trial = no approval.
-4.  **Neglect:** If you have a rare disease with no market, you don't get a drug. Sorry.
+1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (Median cost per patient [~$41,000](../references.qmd#trial-cost-41k)). At that price, you only test "sure things." You test the equivalent of betting your house that the sun will rise. Safe bets. Boring bets. Bets that don't cure cancer.
+
+2. **Herd Mentality:** Trials overwhelmingly test the same few biological targets due to [preferential attachment dynamics](../references.qmd#preferential-target-attachment). Everyone studies what everyone else is studying because that's how you get grants. It's like if every explorer only went to France because France already had good reviews on TripAdvisor.
+
+3. **No Profit:** Most molecules have no patent. No patent = no $100M trial = no approval. Your potential cure for cancer might be aspirin plus vitamin D, but nobody will ever test it because you can't patent aspirin plus vitamin D. This is a system designed by people who hate you.
+
+4. **Neglect:** If you have a rare disease with no market, you don't get a drug. Sorry. Your cells malfunction in an unprofitable way. The invisible hand of the market has determined your death is not worth preventing.
 
 ## The Fix
 
 The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for [~$500 per patient](../references.qmd#recovery-cost-500) and deliver results in [<100 days](../references.qmd#recovery-trial-100-days-to-cure).
 
-If we automate this via a decentralized FDA (dFDA):
+$500 vs $41,000. Same science. Different paperwork.
 
-*   We can run **100×–1,000× more trials per year**.
-*   Testing **100,000+ drug–condition pairs** becomes realistic.
-*   We stop guessing and start exploring the "dark matter" of medical therapeutics.
+If you automate this via a decentralized FDA (dFDA):
 
-## Conclusion
+* You can run **100x-1,000x more trials per year**.
+* Testing **100,000+ drug-condition pairs** becomes realistic.
+* You stop guessing and start exploring the "dark matter" of medical therapeutics.
+* You enter the theme park instead of photographing the parking lot.
 
-> **Humanity has empirically tested less than 1% of the drug–disease relationships that can be tested using existing safe compounds.**
->
-> **If you include the larger chemical universe, humanity has explored roughly one-quadrillionth to one-quintillionth of what is possible (10^(-12) to 10^(-50)).**
->
-> **The overwhelming majority of therapeutic potential remains untouched. Not because cures are impossible, but because trials are too expensive and too slow.**
->
-> **A decentralized, automated pragmatic trial system (a decentralized FDA) is the only route to systematically explore the remaining 99.999…% of medical space.**
+## The Bottom Line
+
+**Humanity has empirically tested less than 1% of the drug-disease relationships that can be tested using existing safe compounds.**
+
+**If you include the larger chemical universe, humanity has explored roughly one-quadrillionth to one-quintillionth of what is possible (10^-12 to 10^-50).**
+
+**The overwhelming majority of therapeutic potential remains untouched. Not because cures are impossible. Because trials are too expensive and too slow.**
+
+**A decentralized, automated pragmatic trial system (dFDA) is the only route to systematically explore the remaining 99.999...% of medical space.**
+
+You're not in the parking lot because there's nothing inside Disney World. You're in the parking lot because the entrance fee is $100 million and requires 17 years of paperwork.
+
+The rides are inside. The cures are inside. You just need to open the gate.
