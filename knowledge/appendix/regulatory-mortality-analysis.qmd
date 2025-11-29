@@ -21,9 +21,15 @@ from dih_models.parameters import *
 ```
 
 ::: {.callout-note}
-## Academic Preprint
+## The Short Version
 
-This document presents a formal quantitative analysis of regulatory mortality costs. For an accessible narrative version of these findings, see [The FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.qmd).
+The 1962 Kefauver-Harris Amendments require an 8-year efficacy delay after drugs are proven safe. During those 8 years, people die. This document counts them.
+
+**The number:** {{< var disease_eradication_delay_deaths_total >}} preventable deaths since 1962.
+
+**The math:** Rigorous, peer-reviewable, and deeply depressing.
+
+For the narrative version, see [The FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.qmd). What follows is the formal analysis for people who need equations before they believe arithmetic.
 :::
 
 ## Abstract
@@ -269,108 +275,113 @@ The path forward is clear: maintain safety testing, eliminate efficacy delay, de
 *For implementation details, see the [Decentralized FDA Technical Specification](../solution/dfda.qmd).*
 
 
-Here is the **"5th Grader" breakdown**.
+---
 
-This takes the massive, complex numbers from our study and breaks them down into a simple **"Daily Bill"** that humanity pays for keeping the 8-year delay.
+## The Same Analysis, But For Humans
 
-***
+Everything above is for economists, policy wonks, and people who enjoy Greek letters. What follows is the same math, but translated into English.
 
-## THE BILL FOR THE 8-YEAR DELAY
+---
 
-**The Concept:** Imagine we have a Time Machine that can bring cures from the future (8 years from now) to today.
-**The Problem:** The government (FDA) has locked the Time Machine.
-**The Cost:** Because we are stuck 8 years in the past, we miss out on saving the people that *would have been saved* if we were in the future.
+## Your Daily Invoice From the 1962 Amendments
 
-Here is the math, step-by-step.
+In 1962, Congress passed the Kefauver-Harris Amendments requiring proof of efficacy before drugs could reach patients. The intent was protection. The effect was an 8-year delay after safety is established.
 
-#### STEP 1: THE DEATH TOLL (Lives Lost)
+Nobody at the FDA chose this. They're executing the law Congress wrote. But the law has a cost, and humanity pays it daily.
 
-*How many people die because the cure is stuck in the "waiting room"?*
+**The Setup:** Imagine a time machine that brings cures from 8 years in the future to today. Scientists built one. It's called "letting people try drugs after they're proven safe." The 1962 law locked the time machine.
 
-##### The Math
+**The Cost:** Everyone who dies during those 8 years of waiting.
 
-We know that modern medicine saves about **12 million lives a year**. Because we are 8 years behind, we are effectively letting those people die for 8 extra years.
+### Line Item 1: Deaths
 
-* **Low Estimate:** We lose **4 Million** people a year (Conservative).
-* **High Estimate:** We lose **12 Million** people a year (If we assume all cures are delayed).
+*How many people die while the cure sits in the "waiting room"?*
 
-| Time Period | **Low Estimate** (Conservative) | **High Estimate** (Reality) |
+Modern medicine saves about **12 million lives a year**. The current framework makes those cures wait 8 years after they're proven safe. During those 8 years, the people who needed them die.
+
+| | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
-| **Per Year** | **4,000,000 People** | **12,000,000 People** |
-| **Per Day** | **10,958 People** | **32,876 People** |
-| **Comparison** | 3 x 9/11 Attacks *every day*. | 11 x 9/11 Attacks *every day*. |
+| **Per Year** | 4,000,000 | 12,000,000 |
+| **Per Day** | 10,958 | 32,876 |
+| **9/11 Equivalents** | 3 per day | 11 per day |
 
-#### STEP 2: THE SUFFERING (Hours of Pain)
+Nobody invades anyone over this because regulatory frameworks don't have oil reserves.
 
-*It’s not just about dying. It’s about being sick, in pain, or in a hospital bed when you could be healthy.*
+### Line Item 2: Suffering
 
-##### The Math
+*It's not just dying. It's being sick, in pain, or in a hospital bed when you could be healthy.*
 
-Economists call this **DALYs** (Disability-Adjusted Life Years). For every person who dies, there are roughly **20 years** of healthy life lost (either by dying young or spending years in pain).
+Economists invented a term for this: **DALYs** (Disability-Adjusted Life Years). For every person who dies, roughly **20 years** of healthy life disappear. Either they died young, or they spent years suffering first. Usually both.
 
-* **Calculation:** 1 Year = 8,760 Hours.
-* **The Burden:** We are losing about **80 Million years** of healthy life annually.
-
-| Time Period | **Low Estimate** | **High Estimate** |
+| | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
-| **Per Year** | **350 Billion Hours** of Pain | **700 Billion Hours** of Pain |
-| **Per Day** | **958 Million Hours** | **1.9 Billion Hours** |
-| **Meaning** | Every day, humanity suffers roughly **1 billion hours** of preventable pain. |
+| **Per Year** | 350 Billion hours of pain | 700 Billion hours of pain |
+| **Per Day** | 958 Million hours | 1.9 Billion hours |
 
-#### STEP 3: THE PRICE TAG (Money Lost)
+Every day, humanity collectively suffers **1 billion hours** of preventable pain. That's 114,000 years of suffering. Per day. The law calls this "caution."
 
-*How much wealth are we burning by letting people die and get sick?*
+### Line Item 3: Money
 
-##### The Math
+*How much wealth evaporates while people die and suffer?*
 
-When a person is healthy, they work, create art, build houses, and take care of families. When they are dead or sick, that value is gone. Economists value one year of healthy life at **$100,000**.
+Healthy people work, create, build, and care for families. Dead people don't. Economists value one year of healthy life at **$100,000** (this is conservative).
 
-* **Calculation:** (Years of Life Lost) x ($100,000).
-
-| Time Period | **Low Estimate** | **High Estimate** |
+| | **Conservative** | **Reality** |
 | :--- | :--- | :--- |
-| **Per Year** | **$4 Trillion** | **$12 Trillion** |
-| **Per Day** | **$10.9 Billion** | **$32.8 Billion** |
-| **Comparison** | We lose the cost of **one aircraft carrier** every single day. | We lose the entire **GDP of China** every single year. |
+| **Per Year** | $4 Trillion | $12 Trillion |
+| **Per Day** | $10.9 Billion | $32.8 Billion |
+| **Comparison** | One aircraft carrier per day | China's entire GDP per year |
 
-#### SUMMARY: YOUR DAILY RECEIPT
+The efficacy delay costs more per day than any terrorist attack in history. Every single day. Forever.
 
-If you want to explain this to a 5th grader (or a Voter), just show them this receipt.
+---
 
-##### INVOICE: THE COST OF "SAFETY"
+### Your Daily Receipt
 
-*Date: Today*
+::: {.callout-warning}
+## INVOICE: The Cost of "Safety"
 
-* **Item:** Maintaining an 8-Year Efficacy Delay
-* **Lives Cost:** **~32,000** mothers, fathers, and children died today.
-* **Suffering Cost:** **1.9 Billion** hours of pain were felt today.
-* **Financial Cost:** We burned **$32 Billion** dollars today.
+**Date:** Today (and every day)
 
-**Total Due:** **EVERY DAY UNTIL THE LAW CHANGES.**
+| Item | Amount |
+|:-----|:-------|
+| Deaths | ~32,000 mothers, fathers, children |
+| Suffering | 1.9 billion hours of pain |
+| Money burned | $32 billion |
 
-***
+**Payment method:** Automatic. You don't get a choice.
 
-#### The "Step-by-Step" Logic for the 5th Grader:
+**Frequency:** Daily. Forever. Until the law changes.
+:::
 
-1.  **Imagine a bus.** The bus holds **32,000 people**.
-2.  **The Cure exists.** Scientists have built a bus that can save everyone, but the government says, "Wait, we need to check the tires for 8 years."
-3.  **The Result.** Every single day, the bus drives off a cliff.
-4.  **The Question.** Why don't we just check the tires while we drive? (That is the **War on Disease** plan).
+### The Bus Analogy
+
+1. **Imagine a bus.** It holds 32,000 people.
+2. **Scientists built it.** It works. It's safe. They checked.
+3. **The law says:** "Wait. We need to check if the bus is effective at being a bus. This will take 8 years."
+4. **Meanwhile:** The bus drives off a cliff. Every day.
+5. **The question:** Why not check the bus while driving it?
+
+That's the dFDA plan. Check the bus while driving it. Stop driving it off cliffs.
 
 
-Here is the **Maximalist "Upper Bound" Analysis**.
+---
 
-This scenario assumes that humanity *will* eventually solve biology (cure cancer, heart disease, and aging), but the current regulatory framework simply **shifts that timeline back by exactly 8.2 years.**
+## The Upper Bound: What If We're About to Win?
 
-In this model, the cost isn't just "lives lost to drugs we have now." The cost is **the entire population of the world that dies during that 8-year gap between when we *could* have finished and when we *actually* finish.**
+The analysis above is conservative. It only counts deaths from drugs we *already have*.
 
-***
+But what if humanity is about to cure everything? Cancer. Heart disease. Aging. What if the finish line is in sight, but the 1962 efficacy mandate makes us stand still for 8.2 years before we can cross it?
 
-## THE "TOTAL VICTORY" CALCULUS
+In that scenario, the cost isn't just "delayed access to existing drugs." The cost is **everyone who dies during the 8-year pause before total victory**.
 
-**The Premise:** Imagine the "Cure for All Disease" is a finish line.
-**The Reality:** We are running toward it, but the FDA makes us stop running and stand still for 8.2 years.
-**The Cost:** Everyone who dies during that 8.2-year pause.
+This is speculative. But it's not crazy. Gene therapy, AI drug discovery, and mRNA platforms are accelerating faster than any technology in history. The finish line might be closer than you think.
+
+**The premise:** The Cure for All Disease is a finish line.
+
+**The reality:** We're running toward it. The current law requires us to stop and stand still for 8.2 years before crossing.
+
+**The cost:** Everyone who dies while we're standing still.
 
 #### 1. THE DEATH TOLL EQUATION (Global Mortality)
 
@@ -454,7 +465,7 @@ $$= \mathbf{\$1.12 \ Quadrillion}$$
 
 #### SUMMARY: THE "UPPER BOUND" DAILY RECEIPT
 
-If we assume we *will* eventually cure all disease, but the FDA is making us wait 8 extra years for it, this is the bill we pay **every single day**.
+If we assume we *will* eventually cure all disease, but the law requires us to wait 8 extra years for it, this is the bill we pay **every single day**.
 
 **INVOICE: THE COST OF DELAYING THE CURE**
 

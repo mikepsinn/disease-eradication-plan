@@ -38,18 +38,26 @@ The FDA does prevent some people from taking harmful drugs. Phase 1 safety testi
 
 But here's the trade-off nobody mentions: The system also prevents millions from accessing life-saving treatments. The regulatory barrier doesn't just screen out bad drugs - it delays good ones for decades, making them impossible to test and approve in time to save lives.
 
-Net result: Far more people die from diseases that better treatments could have prevented than ever died from unsafe drugs. The FDA creates safety from drug harms while creating far greater danger from disease.
+Net result: Far more people die from diseases that better treatments could have prevented than ever died from unsafe drugs. The system creates safety from drug harms while creating far greater danger from disease.
 
 This is a system designed to prevent lawsuits, not deaths. One type of death (from an approved drug) makes headlines. The other type (from waiting for approval) is invisible.
+
+::: {.callout-note}
+## A Note on Blame
+
+The FDA employees executing this system didn't design it. Congress did, in 1962, via the Kefauver-Harris Amendments. The FDA is implementing what Congress mandated. The problem isn't bad people at the FDA. The problem is a bad law that makes good outcomes structurally impossible.
+
+When this chapter says "the FDA does X," read it as "the 1962 law requires the FDA to do X." The humans at the agency are following the rules they were given. The rules are the problem.
+:::
 
 ## The {{< var trial_cost_reduction_factor >}}× Inefficiency Tax
 
 Compare two real-world systems for testing drugs:
 
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
-2.  **The FDA System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-17-years)** to approve a new drug.
+2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **[9.1 years](../references.qmd#drug-development-timeline-17-years)** to approve a new drug.
 
-The FDA's system costs **{{< var trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
+The current system costs **{{< var trial_cost_reduction_factor >}}× more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}}x longer**. Not a small difference - the difference between functional and designed-to-fail.
 
 ### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
 
@@ -260,14 +268,14 @@ More people survive as more treatments are developed. There's a [strong correlat
 
 - 10,000 years: Zero progress
 - 1883: Decentralized real-world trials, 4 years/decade progress
-- 1962: FDA takes over, progress cut in half
+- 1962: Kefauver-Harris passes, progress cut in half
 - 2025: Still stuck with the broken system
 
-Humanity solved medical progress in 1883. It broke it in 1962.
+Humanity solved medical progress in 1883. Congress broke it in 1962.
 
 ### The Modern Consequences
 
-The FDA's current system works like this:
+The current system works like this:
 
 1. Scientists discover a cure for your disease
 2. You wait 17 years
@@ -317,7 +325,7 @@ This system has financial incentive for medical progress the way casinos have in
 
 ### Off-Patent Drugs: Cures Nobody Can Afford to Find
 
-Roughly [10,000 known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The FDA requires you predict exactly what a drug will cure before testing it. If your off-patent drug cures something unexpected? Congratulations, you just discovered something nobody can profit from.
+Roughly [10,000 known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The 1962 law requires you predict exactly what a drug will cure before testing it. If your off-patent drug cures something unexpected? Congratulations, you just discovered something nobody can profit from.
 
 No patent = no billion-dollar investment = no trials = no approval = people die.
 
@@ -379,7 +387,7 @@ So pharmaceutical companies focus on:
 - Wrinkles (affects: women with money)
 - Cholesterol (affects: everyone who eats)
 
-Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, the FDA's message is: "Have you tried not having Exploding Kidney Syndrome?"
+Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, the system's message is: "Have you tried not having Exploding Kidney Syndrome?"
 
 ### The 166 Billion Treatments We're Ignoring
 
@@ -401,7 +409,7 @@ Under the current system of research, it costs {{< var traditional_phase3_cost_p
 
 ## The Actual Death Toll of "Drug Lag"
 
-The FDA's economists have a term for people dying while waiting for drug approval: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Early estimates suggested delays cost **[21,000 to 120,000 American lives per decade](../references.qmd#fda-drug-lag-deaths-estimate)**.
+Economists have a term for people dying while waiting for drug approval: "drug lag." It's a sterile, bureaucratic phrase for a massacre. Early estimates suggested delays cost **[21,000 to 120,000 American lives per decade](../references.qmd#fda-drug-lag-deaths-estimate)**.
 
 But that was just the US. And just the visible delays.
 
@@ -444,7 +452,7 @@ This means it's logical for regulators to reject drug applications by default. T
 | FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah. |
 | FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
 
-The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the FDA waited. And waited. The decade-long delay in approving them for their most common use killed an estimated **[over 100,000 Americans](../references.qmd#beta-blocker-drug-lag-deaths)**.
+The most infamous case is beta-blockers. While Europe used them to prevent heart attacks, the US regulatory process delayed. And delayed. The decade-long lag in approving them for their most common use killed an estimated **[over 100,000 Americans](../references.qmd#beta-blocker-drug-lag-deaths)**.
 
 More Americans than died in Vietnam and Korea combined. From one drug delay. Here's a partial list of other drugs Americans died waiting for while they were already available in other civilized countries for a year or longer:
 
@@ -554,7 +562,7 @@ A decade of post-safety efficacy lag in closed-loop neuromodulation could equate
 - Promotion on schedule
 - [Retire to pharma job](../references.qmd#fda-regulatory-capture-evidence)
 
-This isn't conspiracy. It's economics. The FDA literally cannot make mistakes of commission (approving bad drugs) but faces zero consequences for mistakes of omission (delaying good drugs).
+This isn't conspiracy. It's economics. The system literally cannot punish mistakes of commission (approving bad drugs) but imposes zero consequences for mistakes of omission (delaying good drugs).
 
 ### The Math: Type I vs. Type II Errors
 
@@ -563,7 +571,7 @@ Regulators love to justify delays by citing "safety." But let's do the actual ma
 **Type I Error:** Approving a bad drug (harm from unsafe products)
 **Type II Error:** Delaying a good drug (harm from regulatory lag)
 
-The FDA's job is to minimize *total* harm. So which error costs more?
+The system's job should be to minimize *total* harm. So which error costs more?
 
 - **Cost of Type II errors:** {{< var disease_eradication_delay_dalys >}} DALYs lost (1962-2024)
 - **Benefit of Type I prevention:** ~{{< var type_i_error_benefit_dalys >}} DALYs saved (extreme overestimate)
@@ -572,17 +580,17 @@ $$
 \frac{\text{Cost of Delay}}{\text{Benefit of Safety}} = \frac{4.83B}{0.003B} = 1{,}610:1
 $$
 
-**For every 1 life the FDA saves by preventing unsafe drugs, it destroys {{< var type_ii_error_cost_ratio >}} lives through delay.**
+**For every 1 life the current system saves by preventing unsafe drugs, it destroys {{< var type_ii_error_cost_ratio >}} lives through delay.**
 
 This isn't even close. It's not a trade-off. It's a massacre justified by preventing a handful of tragedies.
 
-The FDA doesn't minimize harm. It minimizes *blame*. And dead people waiting for approval don't get CNN specials.
+The system doesn't minimize harm. It minimizes *blame*. And dead people waiting for approval don't get CNN specials.
 
 ### Why Bureaucrats Are Rewarded for Letting You Die
 
 Humans weight acts of commission (doing something bad) as worse than acts of omission (letting something bad happen) - even when omission causes more harm. Push a person in front of a trolley to save five people? Unthinkable. Let five people die by doing nothing? That's just Monday.
 
-The FDA operates on this principle.
+The current regulatory framework operates on this principle.
 
 Dr. Henry I. Miller ran the FDA team reviewing recombinant human insulin in the early 1980s. Mountains of evidence showed it was safe and effective. His supervisor refused to approve it. Why? If someone died from the drug, heads would roll at the FDA, including his. If people died waiting for the drug? Nothing happens.
 
@@ -590,7 +598,7 @@ The personal risk of approving a drug vastly exceeds the risk of rejecting it. D
 
 ## Clinical Trial Theater: Excluding 86.1% of Reality
 
-FDA trials systematically [exclude](../references.qmd#antidepressant-trial-exclusion-rates):
+Trials under the current system systematically [exclude](../references.qmd#antidepressant-trial-exclusion-rates):
 
 - Patients over 65 (most people who need drugs)
 - Patients under 18 (all children)
@@ -614,9 +622,9 @@ Even if there's financial incentive to research a new drug, there's no data on l
 
 For instance, even after controlling for co-morbidities, the Journal of American Medicine recently found that long-term use of Benadryl and other anticholinergic medications is associated with [increased](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2091745) risk for dementia and Alzheimer's disease.
 
-## The FDA Requires Psychic Powers
+## The Law Requires Psychic Powers
 
-Before you can test a drug, you must tell the FDA EXACTLY what it will cure and EXACTLY how you'll measure that cure.
+Before you can test a drug, you must specify EXACTLY what it will cure and EXACTLY how you'll measure that cure.
 
 "This drug will reduce depression by 37.2% as measured by the Hamilton Rating Scale on Tuesdays."
 
@@ -626,11 +634,11 @@ What if it cures cancer instead? Failed trial, also please report to prison.
 
 Like requiring Columbus to file a detailed map of America before letting him sail west.
 
-**In reality, this isn't hypothetical.** When running an efficacy trial, the FDA expects drug developers have psychic ability to predict which conditions a treatment will be most effective for in advance of collecting human trial data. If it was possible to magically determine this without any trials, it would render efficacy trials completely pointless.
+**In reality, this isn't hypothetical.** When running an efficacy trial, the regulations expect drug developers to have psychic ability to predict which conditions a treatment will be most effective for in advance of collecting human trial data. If it was possible to magically determine this without any trials, it would render efficacy trials completely pointless.
 
-In 2007, manufacturer Dendreon submitted powerful evidence attesting to the safety and efficacy of its immunotherapy drug Provenge, which targets prostate cancer. They showed the drug resulted in significant decline in deaths among its study population, which even persuaded the FDA advisory committee to weigh in on the application. But ultimately, the FDA rejected its application.
+In 2007, manufacturer Dendreon submitted powerful evidence attesting to the safety and efficacy of its immunotherapy drug Provenge, which targets prostate cancer. They showed the drug resulted in significant decline in deaths among its study population, which even persuaded the FDA advisory committee to weigh in on the application. But the application was rejected anyway.
 
-The FDA was unmoved by the evidence, simply because Dendreon didn't properly specify beforehand what its study was trying to measure. Efficacy regulations state that finding a decline in deaths isn't enough. The mountains of paperwork must be filled out just so and in the correct order. It took three more years and yet another large trial before the FDA finally approved the life-saving medication.
+The regulations were unmoved by the evidence, simply because Dendreon didn't properly specify beforehand what its study was trying to measure. The law states that finding a decline in deaths isn't enough. The mountains of paperwork must be filled out just so and in the correct order. It took three more years and yet another large trial before the life-saving medication was finally approved.
 
 Due to all the additional costs imposed by the efficacy trial burden, Dendreon ultimately [filed for chapter 11 bankruptcy](https://www.targetedonc.com/view/dendreon-files-for-bankruptcy-provenge-still-available).
 
@@ -660,7 +668,7 @@ Companies are literally allowed to hide when drugs don't work.
 
 Company: "We tested this drug!"
 
-FDA: "Did it work?"
+Regulator: "Did it work?"
 
 Company: "...We tested this drug!"
 
@@ -686,7 +694,7 @@ It's like casinos only having to report when people win.
 - Terminal patients can access experimental drugs
 - Doctor's discretion, not bureaucrat's
 - Thousands of lives extended
-- FDA: "But what if they die?" (They're already dying)
+- US system: "But what if they die?" (They're already dying)
 
 **[Right to Try (US)](../references.qmd#right-to-try-act-2018):**
 
@@ -697,16 +705,16 @@ It's like casinos only having to report when people win.
 
 ## The COVID Test Fiasco
 
-Timeline of how the FDA protected Americans:
+The 1962 framework requires the FDA to approve all diagnostic tests before use. During COVID, this mandate played out as follows:
 
 - **January 2020:** WHO develops COVID test, rest of world starts using it
 - **February 2020:** [FDA blocks all non-CDC tests](../references.qmd#fda-covid-test-delay) to "ensure quality"
 - **Late February:** [CDC tests contaminated, completely useless](../references.qmd#cdc-covid-test-contamination-2020)
-- **March:** Private labs beg to help, FDA says "no, our broken tests only"
+- **March:** Private labs beg to help, regulatory framework says "no, approved tests only"
 - **Late March:** FDA finally allows other tests after thousands die
 - **Cost:** [Thousands of preventable deaths](../references.qmd#excess-deaths-fda-covid-response), exact number unknown
 
-FDA's defense: "We were ensuring quality control."
+The defense: "We were ensuring quality control."
 
 The only approved tests didn't work.
 
@@ -717,19 +725,19 @@ Ensuring quality control of broken tests is like TSA confiscating water bottles 
 **Reciprocal Approval:** If the EU/UK/Japan/Canada approves a drug, it gets approved
 
 - Lives saved: Thousands annually
-- FDA response: "But their standards might be 0.01% different!"
+- System response: "But their standards might be 0.01% different!"
 
 **Provisional Approval:** Let dying people try experimental drugs
 
 - Current system: Die safely
 - Proposed system: Maybe die, maybe live
-- FDA logic: Death is preferable to uncertainty
+- Current logic: Death is preferable to uncertainty
 
 **Outcome-Based Approval:** If it works in real patients, approve it
 
 - Current: Does it work in cherry-picked trial patients?
 - Better: Does it work in actual sick humans?
-- FDA: "That's not how we've always done it"
+- System: "That's not how we've always done it"
 
 ## Safety Theater
 
@@ -742,16 +750,16 @@ But the system also makes drugs:
 - **Inaccessible:** 95% of rare diseases have zero treatments
 - **Ineffective:** Tested on populations that don't resemble actual patients
 
-The FDA prevents some people from taking harmful drugs. It also prevents millions from accessing beneficial ones.
+The current framework prevents some people from taking harmful drugs. It also prevents millions from accessing beneficial ones.
 
 Net effect: Far more people die from delayed treatments than ever died from unsafe drugs.
 
 Security theater for medicine. TSA for healthcare.
 
 When TSA fails, you wait in line longer.
-When FDA fails, you die waiting for approval.
+When the regulatory system fails, you die waiting for approval.
 
-TSA agents get fired for failures. FDA bureaucrats get promoted for preventing approvals.
+TSA agents get fired for failures. Under the current framework, regulators get promoted for preventing approvals.
 
 But at least nobody can blame regulators for approving something. And preventing blame is what healthcare is really about.
 
