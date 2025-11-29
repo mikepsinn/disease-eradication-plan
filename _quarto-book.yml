@@ -65,6 +65,7 @@ book:
     - part: "The Plan"
       chapters:
         - knowledge/strategy/roadmap.qmd # ✅ (DETAILED 36-MONTH EXECUTION PLAN) ~3p
+        - knowledge/strategy/nonprofit-coalition-strategy.qmd # ✅ Why every nonprofit should support the 1% Treaty ~4p
         - knowledge/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE) ~9p
         - knowledge/legal/securities-law.qmd # ✅ Securities Law ~6p
         - knowledge/legal/election-law.qmd # ✅ Election Law ~6p
@@ -86,8 +87,6 @@ book:
     - part: "Implementation Strategy"
       chapters:
         - knowledge/strategy/strategy-execution-overview.qmd # ✅ Complete execution strategy (merged 3-step, 5-step, bribe sequence) ~6p
-        - knowledge/strategy/stop-fighting-over-scraps.qmd # ✅ Strategic appeal to nonprofits ~4p
-        - knowledge/appendix/highest-leverage-advocacy.qmd # ✅ (EXCELLENT voice - "bailing water from a sinking ship") ~2p
         - knowledge/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
         - knowledge/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
         - knowledge/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate) ~1p
