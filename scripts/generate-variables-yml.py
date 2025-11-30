@@ -1962,7 +1962,9 @@ def main():
             analysis_dir.mkdir(exist_ok=True)
             # Minimal inline summary generation to avoid duplicating logic
             from dih_models.uncertainty import simulate as _sim, one_at_a_time_sensitivity as _sens
-            sims = _sim(parameters, n=10000)
+            # Use fixed seed for reproducibility (avoids git churn from random variation)
+            RANDOM_SEED = 42
+            sims = _sim(parameters, n=10000, seed=RANDOM_SEED)
             import json
             try:
                 import numpy as np

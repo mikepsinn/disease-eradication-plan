@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Clinical Trials Spending Annual | 6028546220.3813 | Strong driver |
-| Trial Cost Reduction % | 5238304147.8133 | Strong driver |
+| Global Clinical Trials Spending Annual | 5935233136.0790 | Strong driver |
+| Trial Cost Reduction % | 5343433688.8974 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).
