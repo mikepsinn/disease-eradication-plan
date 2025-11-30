@@ -1133,14 +1133,6 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
 
 # (DFDA_ACTIVE_TRIALS moved to after TRIAL_CAPACITY_MULTIPLIER definition)
 
-DFDA_TRIAL_DURATION_MONTHS_RANGE = (3, 12)  # Months for typical trial completion
-
-DFDA_TRIAL_ABANDONMENT_RATE = Parameter(
-    0.05, source_ref="", source_type="definition", description="dFDA trial abandonment rate (5%)", unit="rate",
-    display_name="dFDA Trial Abandonment Rate",
-    keywords=["5%", "pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial"]
-)  # Near-zero abandonment (5%)
-
 DFDA_TRIAL_COMPLETION_RATE = Parameter(
     0.95, source_ref="", source_type="definition", description="dFDA trial completion rate (95%)", unit="rate",
     display_name="dFDA Trial Completion Rate",
@@ -3134,20 +3126,6 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"]
 )  # Maximum trials/year possible with trial capacity multiplier
 
-
-# dFDA Completed Trials Per Year
-DFDA_COMPLETED_TRIALS_PER_YEAR = Parameter(
-    int(DFDA_TRIALS_PER_YEAR_CAPACITY * DFDA_TRIAL_COMPLETION_RATE),
-    source_type="calculated",
-    description="dFDA completed trials per year (capacity × completion rate)",
-    display_name="dFDA Completed Trials per Year",
-    unit="trials/year",
-    formula="CAPACITY × COMPLETION_RATE",
-    latex=r"Completed_{dFDA} = 84,800 \times 0.95 = 80,560",
-    keywords=["pragmatic trials", "real world evidence", "rct", "clinical study", "clinical trial", "research trial", "decentralized trials"],
-    inputs=["DFDA_TRIALS_PER_YEAR_CAPACITY", "DFDA_TRIAL_COMPLETION_RATE"],
-    compute=lambda ctx: int(ctx["DFDA_TRIALS_PER_YEAR_CAPACITY"] * ctx["DFDA_TRIAL_COMPLETION_RATE"]),
-)  # ~80.6K (was 361K with hardcoded 115x)
 
 # Population
 GLOBAL_POPULATION_2024 = Parameter(

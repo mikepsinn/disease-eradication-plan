@@ -647,7 +647,7 @@ Value of using comprehensive data to optimize preventative care and treatment ef
 
 Transformative potential to create viable research pathways for conditions ignored due to high trial costs:
 
-- **Baseline:** {{< var rare_diseases_count_global >}} {{< var rare_diseases_count_global_cite >}}+ rare diseases, {{< var dfda_trial_completion_rate >}} lack FDA-approved treatments
+- **Baseline:** {{< var rare_diseases_count_global >}} {{< var rare_diseases_count_global_cite >}}+ rare diseases, 95% lack FDA-approved treatments
 - **Mechanism:** Radically lower per-patient costs make rare disease R&D economically feasible
 - **Impact:** Major contributor to the total {{< var disease_eradication_delay_dalys >}} DALYs averted
 
@@ -704,7 +704,7 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 
 **Massive Parallelization**: With trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves 20× more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
 
-**Higher Completion Rates**: {{< var dfda_trial_completion_rate >}} of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
+**Higher Completion Rates**: More of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
 
 **Increased Funding**: The 1% Treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
 
@@ -1221,7 +1221,6 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
 - {{< var trial_cost_reduction_pct >}} patient eligibility (1.2B eligible with minimal exclusions)
-- {{< var dfda_trial_abandonment_rate >}} abandonment rate (patient subsidies flip economic incentives)
 - 3 weeks to recruit 10000 patients (RECOVERY achieved this enrollment speed)
 
 **How the {{< var trial_capacity_multiplier >}}× Multiplier Works**:
@@ -1234,7 +1233,7 @@ This represents DIH's funding capacity alone, without assuming behavior changes 
 
 **Net Effect**:
 
-- From {{< var current_completed_trials_per_year >}} completed trials/year → {{< var dfda_completed_trials_per_year >}} completed trials/year ({{< var trial_capacity_multiplier >}}×)
+- {{< var trial_capacity_multiplier >}}× more completed trials/year
 - From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000 approvals/year (20-40x)
 - From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
