@@ -1,0 +1,9 @@
+**Sensitivity Indices for Total DALYs Lost from Disease Eradication Delay**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Disease Eradication Delay Yld | 7942783571.2999 | Strong driver |
+
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

@@ -1,0 +1,10 @@
+**Sensitivity Indices for dFDA Annual Benefit: R&D Savings**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Clinical Trials Spending Annual | 5998896452.0475 | Strong driver |
+| Trial Cost Reduction % | 5347286058.1960 | Strong driver |
+
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

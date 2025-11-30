@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 391
+**Total parameters**: 389
 
 - External sources (peer-reviewed): 129
-- Calculated values: 213
-- Core definitions: 49
+- Calculated values: 212
+- Core definitions: 48
 
 ## External Data Sources {#sec-external}
 
@@ -2296,27 +2296,6 @@ $$
 {{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
 
 {{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Completed Trials per Year {#sec-dfda_completed_trials_per_year}
-
-**Value**: 80,592
-
-dFDA completed trials per year (capacity × completion rate)
-
-$$
-Completed_{dFDA} = 84,800 \times 0.95 = 80,560
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_completed_trials_per_year.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_completed_trials_per_year.qmd >}}
 
 :::
 
@@ -5161,17 +5140,6 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 **Value**: 99%
 
 Percentage of budget defense sector keeps under 1% treaty
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### dFDA Trial Abandonment Rate {#sec-dfda_trial_abandonment_rate}
-
-**Value**: 5%
-
-dFDA trial abandonment rate (5%)
 
 *Core definition*
 

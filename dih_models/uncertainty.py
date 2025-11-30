@@ -153,6 +153,46 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
             s.append(_bounded(total, bounds))
         return s
 
+    if dist == getattr(DistributionType, "BETA", "BETA"):
+        # Beta distribution for bounded [0,1] parameters like probabilities/rates
+        # Infer alpha/beta from mean and variance (from CI or std)
+        if mean <= 0 or mean >= 1:
+            # Mean outside (0,1) - return constant
+            if np is not None:
+                return np.full(n, _bounded(mean, bounds))
+            return [_bounded(mean, bounds) for _ in range(n)]
+        
+        # Estimate variance from std or CI
+        variance = std ** 2 if std and std > 0 else None
+        if variance is None and ci:
+            # Estimate from CI: assume 95% CI spans ~4 std deviations
+            variance = ((ci[1] - ci[0]) / 4) ** 2
+        
+        if variance is None or variance <= 0:
+            if np is not None:
+                return np.full(n, _bounded(mean, bounds))
+            return [_bounded(mean, bounds) for _ in range(n)]
+        
+        # Method of moments: alpha = mean * ((mean*(1-mean)/var) - 1)
+        #                    beta = (1-mean) * ((mean*(1-mean)/var) - 1)
+        common = (mean * (1 - mean) / variance) - 1
+        if common <= 0:  # Variance too high for valid beta params
+            common = 1  # Fall back to uniform-ish
+        alpha = mean * common
+        beta_param = (1 - mean) * common
+        
+        # Ensure valid parameters
+        alpha = max(0.1, alpha)
+        beta_param = max(0.1, beta_param)
+        
+        if np is not None:
+            samples = rng.beta(alpha, beta_param, size=n)
+            return np.clip(samples, bounds[0] if bounds[0] is not None else 0,
+                           bounds[1] if bounds[1] is not None else 1)
+        # Python fallback using random.betavariate
+        s = [_bounded(random.betavariate(alpha, beta_param), bounds) for _ in range(n)]
+        return s
+
     # Default fallback: constant
     if np is not None:
         return np.full(n, _bounded(mean, bounds))
@@ -169,7 +209,12 @@ def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | 
     results = {}
     for name, meta in parameters.items():
         val = meta.get("value")
-        if isinstance(val, Parameter):
+        # Use duck-typing instead of isinstance() to handle module reload issues
+        # where Parameter class may be loaded from different module paths
+        if hasattr(val, 'distribution') or hasattr(val, 'std_error') or hasattr(val, 'confidence_interval'):
+            results[name] = sample_parameter(val, n=n, seed=seed)
+        elif isinstance(val, Parameter):
+            # Fallback for Parameter without uncertainty metadata
             results[name] = sample_parameter(val, n=n, seed=seed)
         else:
             # Plain numeric

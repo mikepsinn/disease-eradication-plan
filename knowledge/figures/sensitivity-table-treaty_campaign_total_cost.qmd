@@ -1,0 +1,11 @@
+**Sensitivity Indices for Total 1% Treaty Campaign Cost**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Treaty Campaign Budget Lobbying | 247280796.6235 | Strong driver |
+| Treaty Campaign Budget Referendum | 81337783.0830 | Strong driver |
+| Treaty Campaign Budget Reserve | 20486830.1036 | Strong driver |
+
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

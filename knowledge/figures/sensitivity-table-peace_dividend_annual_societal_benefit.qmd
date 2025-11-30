@@ -1,0 +1,9 @@
+**Sensitivity Indices for Annual Peace Dividend from 1% Reduction in Total War Costs**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Annual War Total Cost | 12852045490.6018 | Strong driver |
+
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

@@ -1,0 +1,9 @@
+**Sensitivity Indices for Expected Treaty ROI with 0.1% Political Success Probability**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Treaty ROI Lag Elimination | 1191.4175 | Strong driver |
+
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

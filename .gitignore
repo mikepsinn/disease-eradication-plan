@@ -110,3 +110,6 @@ _quarto.yml
 
 # Generated outline file
 OUTLINE-GENERATED.MD
+
+# Generated analysis outputs (regenerate with: python scripts/generate-variables-yml.py)
+_analysis/

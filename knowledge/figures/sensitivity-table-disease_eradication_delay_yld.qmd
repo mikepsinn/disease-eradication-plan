@@ -1,0 +1,11 @@
+**Sensitivity Indices for Years Lived with Disability During Disease Eradication Delay**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Regulatory Delay Suffering Period Years | 185749859.8411 | Strong driver |
+| Chronic Disease Disability Weight | 170581873.1188 | Strong driver |
+| Disease Eradication Delay Deaths Total | 85358473.6695 | Strong driver |
+
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

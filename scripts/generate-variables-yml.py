@@ -1949,6 +1949,16 @@ def main():
                            if hasattr(meta.get("value"), "formula") and meta.get("value").formula), None)
             # Summaries directory
             analysis_dir = project_root / "_analysis"
+            
+            # Clean up stale analysis files before regenerating
+            # This handles deleted/renamed parameters that would leave orphan files
+            if analysis_dir.exists():
+                import shutil
+                stale_count = len(list(analysis_dir.glob("*.json")))
+                if stale_count > 0:
+                    print(f"[*] Cleaning {stale_count} stale analysis files...")
+                    shutil.rmtree(analysis_dir)
+            
             analysis_dir.mkdir(exist_ok=True)
             # Minimal inline summary generation to avoid duplicating logic
             from dih_models.uncertainty import simulate as _sim, one_at_a_time_sensitivity as _sens
@@ -2000,6 +2010,17 @@ def main():
             # Generate rigorous outcomes, tornado, and sensitivity indices for parameters with compute
             if tornado_deltas and regression_sensitivity and Outcome:
                 print("[*] Generating outcome distributions and sensitivity analysis...")
+                
+                # Clean up stale generated tornado/sensitivity QMD files
+                # This handles deleted/renamed parameters that would leave orphan files
+                figures_dir = project_root / "knowledge" / "figures"
+                stale_tornado_files = list(figures_dir.glob("tornado-*.qmd"))
+                stale_sensitivity_files = list(figures_dir.glob("sensitivity-table-*.qmd"))
+                stale_count = len(stale_tornado_files) + len(stale_sensitivity_files)
+                if stale_count > 0:
+                    print(f"[*] Cleaning {stale_count} stale generated QMD files...")
+                    for f in stale_tornado_files + stale_sensitivity_files:
+                        f.unlink()
                 
                 # Validate: Find calculated parameters missing inputs/compute
                 validation_warnings = []
@@ -2131,12 +2152,17 @@ def main():
                                 json.dump(sens_indices, f, indent=2)
                             print(f"[OK] Wrote {(analysis_dir / f'sensitivity_indices_{outcome.name}.json').relative_to(project_root)}")
 
-                            # Generate sensitivity table QMD
-                            try:
-                                sensitivity_table_file = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
-                                print(f"[OK] Generated {sensitivity_table_file.relative_to(project_root)}")
-                            except Exception as table_err:
-                                print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
+                            # Generate sensitivity table QMD only if there's meaningful variance
+                            # Skip tables where all coefficients are effectively zero (< 0.001)
+                            max_coef = max(abs(v) for v in sens_indices.values()) if sens_indices else 0
+                            if max_coef >= 0.001:
+                                try:
+                                    sensitivity_table_file = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                    print(f"[OK] Generated {sensitivity_table_file.relative_to(project_root)}")
+                                except Exception as table_err:
+                                    print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
+                            else:
+                                print(f"[SKIP] Sensitivity table for {outcome.name}: all coefficients near zero")
                     except Exception as e:
                         print(f"[WARN] Skipped outcome {outcome.name}: {e}")
 
