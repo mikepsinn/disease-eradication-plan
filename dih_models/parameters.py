@@ -89,8 +89,8 @@ class Parameter(float):
         display_value: Optional override for formatted display (e.g., "$2.7T" instead of auto-format)
         display_name: Optional override for parameter title in documentation (e.g., "dFDA Active Trials")
         keywords: List of search keywords for parameter discovery
-        min_value: Minimum valid value (validation)
-        max_value: Maximum valid value (validation)
+        validation_min: Minimum valid value (hard constraint for validation)
+        validation_max: Maximum valid value (hard constraint for validation)
         confidence_interval: Tuple of (lower, upper) for statistical confidence
         std_error: Standard error for statistical parameters
         distribution: DistributionType for Probabilistic Sensitivity Analysis
@@ -123,7 +123,7 @@ class Parameter(float):
             confidence="medium",
             conservative=True,
             sensitivity=0.01,
-            min_value=0,  # Cannot be negative
+            validation_min=0,  # Cannot be negative
             keywords=["costs", "operations", "expenses", "budget"]
         )
 
@@ -159,7 +159,7 @@ class Parameter(float):
         'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
         'confidence', 'last_updated', 'peer_reviewed', 'conservative',
         'sensitivity', 'display_value', 'display_name', 'keywords',
-        'min_value', 'max_value', 'confidence_interval', 'std_error',
+        'validation_min', 'validation_max', 'confidence_interval', 'std_error',
         'distribution'
     )
 
@@ -178,8 +178,8 @@ class Parameter(float):
     display_value: "str | None"
     display_name: "str | None"
     keywords: "list[str]"
-    min_value: "float | None"
-    max_value: "float | None"
+    validation_min: "float | None"
+    validation_max: "float | None"
     confidence_interval: "tuple[float, float] | None"
     std_error: "float | None"
     distribution: "DistributionType | None"
@@ -202,8 +202,8 @@ class Parameter(float):
         display_value: Optional[str] = None,
         display_name: Optional[str] = None,
         keywords: Optional[List[str]] = None,
-        min_value: Optional[float] = None,
-        max_value: Optional[float] = None,
+        validation_min: Optional[float] = None,
+        validation_max: Optional[float] = None,
         confidence_interval: Optional[Tuple[float, float]] = None,
         std_error: Optional[float] = None,
         distribution: Union[DistributionType, str, None] = None,
@@ -217,14 +217,14 @@ class Parameter(float):
             distribution = DistributionType(distribution)
 
         # Validation: check bounds
-        if min_value is not None and value < min_value:
+        if validation_min is not None and value < validation_min:
             raise ValueError(
-                f"Value {value} < min {min_value}. "
+                f"Value {value} < validation_min {validation_min}. "
                 f"Desc: {description or 'N/A'}"
             )
-        if max_value is not None and value > max_value:
+        if validation_max is not None and value > validation_max:
             raise ValueError(
-                f"Value {value} > max {max_value}. "
+                f"Value {value} > validation_max {validation_max}. "
                 f"Desc: {description or 'N/A'}"
             )
 
@@ -254,8 +254,8 @@ class Parameter(float):
         instance.display_value = display_value
         instance.display_name = display_name
         instance.keywords = keywords or []
-        instance.min_value = min_value
-        instance.max_value = max_value
+        instance.validation_min = validation_min
+        instance.validation_max = validation_max
         instance.confidence_interval = confidence_interval
         instance.std_error = std_error
         instance.distribution = distribution
@@ -290,6 +290,9 @@ GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
     description="Global military spending in 2024",
     display_name="Global Military Spending in 2024",
     unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    std_error=271_800_000_000,  # Assumed 10% uncertainty
+    confidence_interval=(2_446_000_000_000, 2_990_000_000_000),
     keywords=["2024", "2.7t", "dod", "pentagon", "national security", "army", "navy"]
 )  # SIPRI 2024
 
@@ -301,6 +304,10 @@ VALUE_OF_STATISTICAL_LIFE = Parameter(
     description="Value of Statistical Life (conservative estimate)",
     display_name="Value of Statistical Life",
     unit="USD",
+    distribution=DistributionType.GAMMA,
+    std_error=3_000_000,  # Significant variation in VSL estimates
+    validation_min=1_000_000,  # Hard lower bound
+    confidence_interval=(5_000_000, 15_000_000),
     keywords=["10.0m", "low estimate", "cautious", "pessimistic", "worst case", "conservative", "underestimate"]
 )  # US DOT uses $13.6M, we use $10M conservatively
 
@@ -865,6 +872,9 @@ GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     description="Annual global spending on clinical trials",
     display_name="Annual Global Spending on Clinical Trials",
     unit="USD/year",
+    distribution=DistributionType.LOGNORMAL,
+    std_error=8_300_000_000,  # 10% uncertainty
+    confidence_interval=(75_000_000_000, 91_000_000_000),
     keywords=["83.0b", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "worldwide"]
 )  # $83B spent globally on clinical trials annually
 
@@ -875,6 +885,10 @@ TRIAL_COST_REDUCTION_PCT = Parameter(
     description="Trial cost reduction percentage (50% baseline, conservative)",
     display_name="dFDA Trial Cost Reduction Percentage",
     unit="rate",
+    distribution=DistributionType.BETA,
+    confidence_interval=(0.30, 0.70),  # 30-70% reduction range
+    validation_min=0,
+    validation_max=1,
     keywords=["50%", "rct", "clinical study", "clinical trial", "low estimate", "research trial", "randomized controlled trial"]
 )  # 50% baseline reduction (conservative)
 
@@ -885,6 +899,9 @@ TRIAL_COST_REDUCTION_FACTOR = Parameter(
     description="Cost reduction factor demonstrated by RECOVERY trial",
     display_name="Cost Reduction Factor Demonstrated by Recovery Trial",
     unit="ratio",
+    distribution=DistributionType.LOGNORMAL,
+    std_error=20,  # High variance in applicability
+    confidence_interval=(20, 150),
     keywords=["rct", "multiple", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
 )  # 82x reduction proven by RECOVERY trial
 
@@ -934,6 +951,9 @@ FDA_PHASE_1_TO_APPROVAL_YEARS = Parameter(
     display_name="FDA Phase 1 to Approval Timeline",
     unit="years",
     confidence="high",
+    distribution=DistributionType.GAMMA,
+    std_error=2.0,  # Timeline variation
+    confidence_interval=(6.0, 12.0),
     keywords=["fda", "clinical", "development", "timeline", "approval", "phase 1", "phase 2", "phase 3"]
 )  # Clinical development + NDA review: ~9 years (per FDA references)
 
@@ -4010,8 +4030,6 @@ TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE = Parameter(
     keywords=["27", "political risk", "treaty passage probability", "simulation", "95% ci", "optimistic", "probabilistic"]
 )
 
-
-
 # Cost per DALY benchmarks for comparison
 BED_NETS_COST_PER_DALY = Parameter(
     89,
@@ -6526,6 +6544,9 @@ PHARMA_DRUG_DEVELOPMENT_COST_CURRENT = Parameter(
     unit="USD",
     confidence="high",
     peer_reviewed=True,
+    distribution=DistributionType.LOGNORMAL,
+    std_error=500_000_000,
+    confidence_interval=(1_500_000_000, 4_000_000_000),
     keywords=["pharma", "drug", "development", "cost", "r&d", "current"]
 )
 

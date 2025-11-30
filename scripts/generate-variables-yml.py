@@ -609,6 +609,21 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
             sensitivity_str = format_parameter_value(value.sensitivity, unit)
             tooltip_parts.append(f"±{sensitivity_str}")
 
+        # Show NEW uncertainty metadata (v2.0)
+        if hasattr(value, "confidence_interval") and value.confidence_interval:
+            low, high = value.confidence_interval
+            low_str = format_parameter_value(low, unit)
+            high_str = format_parameter_value(high, unit)
+            tooltip_parts.append(f"95% CI: [{low_str}, {high_str}]")
+
+        if hasattr(value, "distribution") and value.distribution:
+            dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+            dist_str = f"Dist: {dist_name.title()}"
+            if hasattr(value, "std_error") and value.std_error:
+                se_str = format_parameter_value(value.std_error, unit)
+                dist_str += f" (SE: {se_str})"
+            tooltip_parts.append(dist_str)
+
         # Show last updated date
         if hasattr(value, "last_updated") and value.last_updated:
             tooltip_parts.append(f"Updated: {value.last_updated}")

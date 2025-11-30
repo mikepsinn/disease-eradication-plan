@@ -873,8 +873,8 @@
 "fda_phase_1_to_approval_years": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years\"\
   \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"FDA timeline from Phase 1 start to approval\
-  \ (Phase 1-3 + NDA review) | ✓ High confidence | Unit: years | Click to view source\"\
-  >9.1</a>"
+  \ (Phase 1-3 + NDA review) | ✓ High confidence | 95% CI: [6, 12] | Dist: Gamma (SE:\
+  \ 2) | Unit: years | Click to view source\">9.1</a>"
 "fda_phase_1_to_approval_years_cite": "@fda-approval-timeline-10-years"
 "fda_to_oxford_recovery_trial_time_multiplier": "<a href=\"/recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/recovery-trial-82x-cost-reduction\"\
@@ -1121,8 +1121,8 @@
 "global_clinical_trials_spending_annual": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
-  \ on clinical trials | ✓ High confidence | Unit: USD/year | Click to view source\"\
-  >$83B</a>"
+  \ on clinical trials | ✓ High confidence | 95% CI: [$75B, $91B] | Dist: Lognormal\
+  \ (SE: $8.30B) | Unit: USD/year | Click to view source\">$83B</a>"
 "global_clinical_trials_spending_annual_cite": "@global-clinical-trials-market-2024"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/problem/cost-of-war#grotesque-mathematics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
@@ -1196,7 +1196,8 @@
 "global_military_spending_annual_2024": "<a href=\"https://warondisease.org/knowledge/references.html#global-military-spending\"\
   \ class=\"parameter-link\" data-source-ref=\"global-military-spending\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global military spending in 2024 | ✓\
-  \ High confidence | Unit: USD | Click to view source\">$2.72T</a>"
+  \ High confidence | 95% CI: [$2.45T, $2.99T] | Dist: Lognormal (SE: $272B) | Unit:\
+  \ USD | Click to view source\">$2.72T</a>"
 "global_military_spending_annual_2024_cite": "@global-military-spending"
 "global_military_spending_per_capita_annual": "<a href=\"/knowledge/problem/cost-of-war#per-capita\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#per-capita\"\
@@ -1494,7 +1495,8 @@
   \ class=\"parameter-link\" data-source-ref=\"drug-development-cost\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Average\
   \ cost to develop one drug in current system | ✓ High confidence | \U0001F4CA Peer-reviewed\
-  \ | Unit: USD | Click to view source\">$2.60B</a>"
+  \ | 95% CI: [$1.50B, $4.00B] | Dist: Lognormal (SE: $500M) | Unit: USD | Click to\
+  \ view source\">$2.60B</a>"
 "pharma_drug_development_cost_current_cite": "@drug-development-cost"
 "pharma_drug_revenue_average_current": "<a href=\"https://warondisease.org/knowledge/references.html#pharma-drug-revenue-average\"\
   \ class=\"parameter-link\" data-source-ref=\"pharma-drug-revenue-average\" data-source-type=\"\
@@ -2218,8 +2220,8 @@
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
-  \ factor demonstrated by RECOVERY trial | ✓ High confidence | Unit: ratio | Click\
-  \ to view source\">82</a>"
+  \ factor demonstrated by RECOVERY trial | ✓ High confidence | 95% CI: [20, 150]\
+  \ | Dist: Lognormal (SE: 20) | Unit: ratio | Click to view source\">82</a>"
 "trial_cost_reduction_factor_cite": "@recovery-trial-82x-cost-reduction"
 "trial_cost_reduction_pct": "<span class=\"parameter-definition\" title=\"Trial cost\
   \ reduction percentage (50% baseline, conservative) | Unit: rate | Core definition\"\
@@ -2301,7 +2303,8 @@
 "value_of_statistical_life": "<a href=\"https://warondisease.org/knowledge/references.html#dot-vsl-13-6m\"\
   \ class=\"parameter-link\" data-source-ref=\"dot-vsl-13-6m\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Value of Statistical Life (conservative\
-  \ estimate) | ✓ High confidence | Unit: USD | Click to view source\">$10M</a>"
+  \ estimate) | ✓ High confidence | 95% CI: [$5.00M, $15M] | Dist: Gamma (SE: $3.00M)\
+  \ | Unit: USD | Click to view source\">$10M</a>"
 "value_of_statistical_life_cite": "@dot-vsl-13-6m"
 "victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
   \ VICTORY bond payout (treaty funding × bond percentage) | Unit: USD/year | Core\
