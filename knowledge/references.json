@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "📚 Source Quotes and References",
+    "title": "Source Quotes and References",
     "description": "Comprehensive collection of source quotes, citations, and references supporting all claims made throughout the War on Disease documentation.",
     "published": true,
     "tags": [
@@ -521,6 +521,27 @@
       ]
     },
     {
+      "id": "ballot-measure-signature-costs-2024",
+      "title": "2024 ballot initiative petition signature gathering costs",
+      "quotes": [
+        "Average cost per required signature in 2024: $14.87 (up from $12.70 in 2022, $6.93 in 2016)",
+        "Range: $13.59 to $48.21 depending on state/campaign difficulty",
+        "53 initiative campaigns spent combined $172.2M on signature gathering",
+        "Most expensive: Montana CI-128 (abortion rights) at $48.21 per signature",
+        "Note: Cost per signature has increased 115% since 2016. Average successful signature drive cost $3.25M in 2024."
+      ],
+      "sources": [
+        {
+          "text": "Ballotpedia, Ballot measure signature costs, 2024",
+          "url": "https://ballotpedia.org/Ballot_measure_signature_costs,_2024"
+        },
+        {
+          "text": "Ballotpedia News, 2024 initiatives reach record-high cost per signature",
+          "url": "https://news.ballotpedia.org/2024/11/04/2024-ballot-initiatives-reach-record-high-cost-per-signature-exceed-combined-172-million-for-signature-drives/"
+        }
+      ]
+    },
+    {
       "id": "beta-blocker-drug-lag-deaths",
       "title": "Estimated deaths due to FDA delay in approving beta blockers",
       "quotes": [
@@ -559,6 +580,40 @@
         {
           "text": "PMC: Molecular Signatures of Longevity",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5807068/"
+        }
+      ]
+    },
+    {
+      "id": "bio-clinical-development-2021",
+      "title": "BIO Clinical Development Success Rates 2011-2020",
+      "quotes": [
+        "Phase I duration: 2.3 years average",
+        "Total time to market (Phase I-III + approval): 10.5 years average",
+        "Phase transition success rates: Phase I→II: 63.2%, Phase II→III: 30.7%, Phase III→Approval: 58.1%",
+        "Overall probability of approval from Phase I: 12%",
+        "Note: Largest publicly available study of clinical trial success rates. Efficacy lag = 10.5 - 2.3 = 8.2 years post-safety verification."
+      ],
+      "sources": [
+        {
+          "text": "Biotechnology Innovation Organization (BIO), 2021, Clinical Development Success Rates and Contributing Factors 2011-2020",
+          "url": "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bloom-ideas-getting-harder-2020",
+      "title": "Research productivity declining over time",
+      "quotes": [
+        "\"Research productivity is falling sharply everywhere we look. Averaging across industries, research productivity declines at a rate that averages about 5% per year. For example, the number of researchers required to achieve a constant level of Moore's Law has risen by a factor of 18 since 1971.\"",
+        "Note: This finding reflects innovation productivity in traditional research models; dFDA targets trial execution efficiency (cost per patient), not fundamental idea generation"
+      ],
+      "sources": [
+        {
+          "text": "Bloom, Nicholas, Charles I. Jones, John Van Reenen, and Michael Webb, 2020, Are Ideas Getting Harder to Find?",
+          "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20180338"
+        },
+        {
+          "text": "Originally NBER Working Paper 23782 (2017)"
         }
       ]
     },
@@ -967,6 +1022,49 @@
       ]
     },
     {
+      "id": "polio-vaccination-roi",
+      "title": "Polio Vaccination ROI",
+      "quotes": [
+        "\"For every dollar spent, the return on investment is nearly US$ 39.\" Total investment cost of US$ 7.5 billion generates projected economic and social benefits of US$ 289.2 billion from sustaining polio assets and integrating them into expanded immunization, surveillance and emergency response programmes across 8 priority countries (Afghanistan, Iraq, Libya, Pakistan, Somalia, Sudan, Syria, Yemen)."
+      ],
+      "sources": [
+        {
+          "text": "WHO, 2019, Sustaining Polio Investments Offers a High Return",
+          "url": "https://www.who.int/news-room/feature-stories/detail/sustaining-polio-investments-offers-a-high-return"
+        }
+      ]
+    },
+    {
+      "id": "measles-vaccination-roi",
+      "title": "Measles Vaccination ROI",
+      "quotes": [
+        "Single measles vaccination: 167:1 benefit-cost ratio. MMR (measles-mumps-rubella) vaccination: 14:1 ROI. Historical US elimination efforts (1966-1974): benefit-cost ratio of 10.3:1 with net benefits exceeding USD 1.1 billion (1972 dollars, or USD 8.0 billion in 2023 dollars). 2-dose MMR programs show direct benefit/cost ratio of 14.2 with net savings of $5.3 billion, and 26.0 from societal perspectives with net savings of $11.6 billion."
+      ],
+      "sources": [
+        {
+          "text": "MDPI Vaccines, 2024, Health and Economic Benefits of US Measles and Rubella Control",
+          "url": "https://www.mdpi.com/2076-393X/12/11/1210"
+        },
+        {
+          "text": "Taylor & Francis, 2024, Economic Evaluation of Second MCV Dose",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/14760584.2024.2367451"
+        }
+      ]
+    },
+    {
+      "id": "china-biopharma-rd-2023",
+      "title": "China biopharma R&D spending 2023",
+      "quotes": [
+        "China's total biopharma R&D expenditure reached $15 billion in 2023, a sharp increase from $35 million in 2015."
+      ],
+      "sources": [
+        {
+          "text": "DrugPatentWatch, Chinese Pharmaceuticals Growth",
+          "url": "https://www.drugpatentwatch.com/blog/the-dragon-awakes-charting-the-unstoppable-growth-of-chinese-pharmaceuticals-in-the-global-market/"
+        }
+      ]
+    },
+    {
       "id": "china-health-rd-share-2-2pct",
       "title": "China's health/medical share of R&D",
       "quotes": [
@@ -987,6 +1085,36 @@
         {
           "text": "Statista: China Pharma R&D",
           "url": "https://www.statista.com/statistics/1202091/china-pharmaceutical-randd-spending/"
+        }
+      ]
+    },
+    {
+      "id": "china-leading-trial-location-2024",
+      "title": "China as leading trial location",
+      "quotes": [
+        "China surpassed the United States as the world's leading clinical trial location by volume in 2024."
+      ],
+      "sources": [
+        {
+          "text": "Pharmaceutical Technology, China Drug Licensing",
+          "url": "https://www.pharmaceutical-technology.com/analyst-comment/large-pharma-drug-licensing-china-2024/"
+        }
+      ]
+    },
+    {
+      "id": "china-licensing-deals-2024",
+      "title": "China pharmaceutical licensing deals 2024",
+      "quotes": [
+        "Total value of China's drug licensing-out agreements surged to $41.5-46 billion in 2024, a 66% increase from $16.6 billion in 2023."
+      ],
+      "sources": [
+        {
+          "text": "Pharmaceutical Technology, China Licensing Analysis 2024",
+          "url": "https://www.pharmaceutical-technology.com/analyst-comment/large-pharma-drug-licensing-china-2024/"
+        },
+        {
+          "text": "LabioTech, China Biotech Industry",
+          "url": "https://www.labiotech.eu/in-depth/china-biotech-industry/"
         }
       ]
     },
@@ -1032,6 +1160,31 @@
       ]
     },
     {
+      "id": "china-rd-annual-growth",
+      "title": "China annual R&D expenditure growth",
+      "quotes": [
+        "China's pharmaceutical R&D expenditure: 60.96 billion yuan ($9.5B USD) in 2019, 78.46 billion yuan ($12.1B USD) in 2020, and 94.24 billion yuan ($14.5B USD) in 2021."
+      ],
+      "sources": [
+        {
+          "text": "PMC, China Innovative Drug Development",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12280122/"
+        }
+      ]
+    },
+    {
+      "id": "china-rd-growth-2015-2023",
+      "title": "China R&D growth 2015-2023",
+      "quotes": [
+        "China's biopharma R&D spending grew from $35 million in 2015 to $15 billion in 2023, representing exponential growth."
+      ],
+      "sources": [
+        {
+          "text": "Multiple industry sources, 2024"
+        }
+      ]
+    },
+    {
       "id": "china-surveillance-vs-medicine-spending",
       "title": "China spending on surveillance vs. medicine",
       "quotes": [
@@ -1073,6 +1226,32 @@
         {
           "text": "Statista: China R&D Spending",
           "url": "https://www.statista.com/statistics/279951/internal-research-and-development-expenditure-in-china/"
+        }
+      ]
+    },
+    {
+      "id": "china-trial-advantages",
+      "title": "China clinical trial advantages",
+      "quotes": [
+        "Increased Chinese government investments, faster and more affordable clinical trials, and improved drug quality make licensing from China more efficient and cost-effective."
+      ],
+      "sources": [
+        {
+          "text": "BioSpace, China Drug Development",
+          "url": "https://www.biospace.com/business/china-still-go-to-source-for-new-drugs-despite-tariff-minefield"
+        }
+      ]
+    },
+    {
+      "id": "china-trial-share-2024",
+      "title": "China clinical trials market share 2024",
+      "quotes": [
+        "39% of all global clinical trials started in 2023 had one or more sites in China, up from 25% in 2019."
+      ],
+      "sources": [
+        {
+          "text": "FDD Analysis, China Races Ahead in Biotech Trials",
+          "url": "https://www.fdd.org/analysis/2025/06/03/china-races-ahead-in-biotech-trials-is-the-u-s-stuck-in-second-place/"
         }
       ]
     },
@@ -1353,6 +1532,68 @@
         {
           "text": "Global Market Insights, Clinical Trials Market Forecast",
           "url": "https://www.gminsights.com/industry-analysis/clinical-trials-market"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials-cost-per-approved-drug",
+      "title": "Total clinical trial costs per approved drug",
+      "quotes": [
+        "Industry spends an average of $1,065 million on clinical trials per approved new drug, including all spending on drugs that fail."
+      ],
+      "sources": [
+        {
+          "text": "CBO, Pharmaceutical Industry R&D",
+          "url": "https://www.cbo.gov/publication/57126"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials-market-projection-2030",
+      "title": "Clinical trials market projections for 2030",
+      "quotes": [
+        "Global clinical trials market projected to reach $83-132 billion by 2030, representing continued strong growth."
+      ],
+      "sources": [
+        {
+          "text": "Global Market Insights, Clinical Trials Market 2025-2034",
+          "url": "https://www.gminsights.com/industry-analysis/clinical-trials-market"
+        },
+        {
+          "text": "Research and Markets, 2024"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials-market-projection-2034",
+      "title": "Clinical trials market projections for 2034",
+      "quotes": [
+        "Global clinical trials market projected to reach $95-150 billion by 2034."
+      ],
+      "sources": [
+        {
+          "text": "Precedence Research, Clinical Trials Market Forecast",
+          "url": "https://www.precedenceresearch.com/clinical-trials-market"
+        },
+        {
+          "text": "Towards Healthcare, 2024"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials-market-range-2024",
+      "title": "Clinical trials market size range 2024",
+      "quotes": [
+        "Market estimates for 2024 range from $54 billion to $84 billion depending on methodology and scope."
+      ],
+      "sources": [
+        {
+          "text": "Towards Healthcare, Clinical Trials Market",
+          "url": "https://www.towardshealthcare.com/insights/innovation-in-drug-development-calls-for-clinical-trials"
+        },
+        {
+          "text": "Straits Research, Clinical Trials Market Analysis",
+          "url": "https://straitsresearch.com/report/clinical-trials-market"
         }
       ]
     },
@@ -1672,6 +1913,31 @@
       ]
     },
     {
+      "id": "covid-therapeutics-accelerator",
+      "title": "COVID-19 Therapeutics Accelerator",
+      "quotes": [
+        "Large-scale initiative launched by Bill & Melinda Gates Foundation, Wellcome, and Mastercard to speed development and access to COVID-19 therapies."
+      ],
+      "sources": [
+        {
+          "text": "Gates Foundation, COVID-19 Therapeutics Accelerator",
+          "url": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2020/03/covid-19-therapeutics-accelerator-awards-$20-million-in-initial-grants-to-fund-clinical-trials"
+        }
+      ]
+    },
+    {
+      "id": "covid-therapeutics-initial-grants",
+      "title": "COVID-19 Therapeutics Accelerator initial grants",
+      "quotes": [
+        "$20 million awarded in initial grants in 2020 to fund clinical trials for COVID-19 treatments."
+      ],
+      "sources": [
+        {
+          "text": "Gates Foundation, March 2020"
+        }
+      ]
+    },
+    {
       "id": "crispr-discovery-yogurt-bacteria",
       "title": "Discovery of CRISPR in yogurt bacteria research",
       "quotes": [
@@ -1821,7 +2087,7 @@
       "id": "dct-platform-funding-medable",
       "title": "Medable DCT platform funding",
       "quotes": [
-        "Medable, a leader in the DCT platform space, has raised a total of $521 million in capital, achieving a valuation of $2.1 billion as of late 2021. This level of funding represents the capital required to develop a comprehensive SaaS platform, establish a global presence across 60+ countries, and achieve significant market penetration."
+        "Medable, a leader in the DCT platform space, has raised a total of $521 million in capital, achieving a valuation of $2.1 billion as of late 2021. This funding level shows what it costs to build a global SaaS platform operating across 60+ countries and capture significant market share."
       ],
       "sources": [
         {
@@ -1841,7 +2107,7 @@
         "Science 37: ~$40M raised",
         "Thread: up to $50M raised",
         "uMotif: ~$25.5M raised",
-        "These companies show that significant traction and platform development can be achieved with investments in the tens of millions."
+        "These companies show that you can achieve significant traction and platform development with investments in the tens of millions."
       ],
       "sources": [
         {
@@ -2006,10 +2272,12 @@
     },
     {
       "id": "dfda-roi-463-to-1",
-      "title": "dFDA ROI of 463:1 over 10 years",
+      "title": "dFDA ROI: 4,990:1 (recommended) to 8,542:1 (full impact)",
       "quotes": [
-        "NPV analysis estimate: 463:1 ROI over 10 years (central estimate)",
-        "Range: 66:1 to 2,577:1 depending on total ecosystem costs",
+        "**Recommended**: 4,990:1 including rigorous regulatory delay elimination analysis",
+        "**Conservative**: 463:1 R&D savings only (NPV-adjusted over 10 years)",
+        "**Full impact**: 8,542:1 including lost innovation avoidance",
+        "Range: 66:1 (worst case) to 2,577:1 depending on total ecosystem costs",
         "Based on: $37.5-46M upfront platform investment + operational costs vs $50.0B annual R&D savings",
         "Value proposition: 80X reduction in per-patient trial costs; $50.0B gross annual savings from pharma R&D",
         "Pharmaceutical industry spends ~$100.0B/year on R&D; 50.0% cost reduction yields enormous net savings"
@@ -2250,10 +2518,6 @@
       "sources": [
         {
           "text": "Calculated from IHME Global Burden of Disease (2.55B DALYs) and global GDP per capita valuation"
-        },
-        {
-          "text": "See detailed calculation: Cost of Disease Analysis",
-          "url": "./problem/cost-of-disease.qmd"
         }
       ]
     },
@@ -2505,7 +2769,7 @@
       "sources": [
         {
           "text": "Dunbar, R.I.M., 1992, Neocortex size as a constraint on group size in primates",
-          "url": "https://doi.org/10.1016/0047-2484(92"
+          "url": "<https://doi.org/10.1016/0047-2484(92"
         }
       ]
     },
@@ -2702,7 +2966,7 @@
       "sources": [
         {
           "text": "e-Residency, 2024, Statistics",
-          "url": "https://e-resident.gov.ee/statistics/"
+          "url": "https://www.e-resident.gov.ee/dashboard/"
         }
       ]
     },
@@ -2771,6 +3035,18 @@
         {
           "text": "GovInsider: Estonia Blockchain Health Records",
           "url": "https://govinsider.asia/innovation/estonia-using-blockchain-to-secure-health-records/"
+        }
+      ]
+    },
+    {
+      "id": "eu-annual-health-research-budget",
+      "title": "EU annual health research budget",
+      "quotes": [
+        "EU Horizon Europe Health research funding averages approximately €1.17 billion per year ($1.3 billion USD)."
+      ],
+      "sources": [
+        {
+          "text": "Calculated from total health budget allocation"
         }
       ]
     },
@@ -2869,6 +3145,31 @@
       ]
     },
     {
+      "id": "eu4health-2024-budget",
+      "title": "EU4Health 2024 annual budget",
+      "quotes": [
+        "EU4Health programme budget for 2024 is €726 million."
+      ],
+      "sources": [
+        {
+          "text": "European Commission resources"
+        }
+      ]
+    },
+    {
+      "id": "eu4health-budget",
+      "title": "EU4Health programme budget",
+      "quotes": [
+        "EU4Health programme has a budget of €5.3 billion for 2021-2027 period."
+      ],
+      "sources": [
+        {
+          "text": "European Commission, EU4Health",
+          "url": "https://research-and-innovation.ec.europa.eu/research-area/health_en"
+        }
+      ]
+    },
+    {
       "id": "european-drug-approval-timeline",
       "title": "Average drug approval timeline in Europe",
       "quotes": [
@@ -2902,7 +3203,7 @@
       "sources": [
         {
           "text": "Lieberman, Daniel, 2013, The Story of the Human Body: Evolution, Health, and Disease",
-          "url": "https://www.hup.harvard.edu/catalog.php?isbn=9780307379412"
+          "url": "https://www.penguinrandomhouse.com/books/206671/the-story-of-the-human-body-by-daniel-e-lieberman/"
         }
       ]
     },
@@ -3036,6 +3337,27 @@
       ]
     },
     {
+      "id": "fintech-identity-verification-conversion-2024",
+      "title": "Fintech identity verification conversion rates and costs (2024)",
+      "quotes": [
+        "Auto-approval rates: 67-95% with good UX systems",
+        "Drop-off rates: 5-33% for well-designed systems, 50%+ for poor UX",
+        "Real-world examples: ABA Bank achieved 67% eKYC completion, HyperVerge achieves 95% auto-approval",
+        "Cost impact: Maza fintech reduced onboarding expenses by 50% through integrated verification",
+        "Note: Multi-modal biometrics report 250% accuracy gains while lowering manual review costs and boosting customer conversion."
+      ],
+      "sources": [
+        {
+          "text": "Regula (BusinessWire), ABA Bank Boosts Conversion Rate",
+          "url": "https://www.businesswire.com/news/home/20241217060846/en/ABA-Bank-Boosts-Conversion-Rate-and-Cuts-Acquisition-Costs-by-65-with-Regula-Identity-Verification-Solution"
+        },
+        {
+          "text": "Biometric Update, Identity verification scale to push costs down",
+          "url": "https://www.biometricupdate.com/202412/identity-verification-scale-and-maturity-to-push-average-cost-down"
+        }
+      ]
+    },
+    {
       "id": "fda-annual-drug-approvals",
       "title": "Average annual new drug approvals by FDA",
       "quotes": [
@@ -3125,7 +3447,7 @@
         },
         {
           "text": "FDA: FY24 CJ Online Version",
-          "url": "https://www.fda.gov/files/about fda/published/FY24 CJ Online Version.pdf"
+          "url": "https://www.fda.gov/files/about%20fda/published/FY24%20CJ%20Online%20Version.pdf"
         }
       ]
     },
@@ -3180,14 +3502,15 @@
         },
         {
           "text": "FDA: CURE ID Automated Data Collection",
-          "url": "https://www.fda.gov/drugs/our-perspective/cure-id-moves-automated-data-collection-light-covid-pandemic"
+          "url": "https://content.govdelivery.com/accounts/USFDA/bulletins/2e7f941"
         }
       ]
     },
     {
-      "id": "fda-drug-lag-deaths-estimate",
-      "title": "Estimated deaths from FDA drug lag (1962-present)",
+      "id": "fda-new-drug-approvals",
+      "title": "FDA new drug approvals annually",
       "quotes": [
+        "30–40 new drugs approved annually in the U.S. on average.",
         "Dale Gieringer (1985): 21,000-120,000 lives lost per decade from FDA delay",
         "Gieringer: \"Loss of life from delay alone in the hundreds of thousands\" (not millions)",
         "Beta-blockers alone: William Wardell estimated \"10,000 lives/year\" if allowed; FDA delay 1965-1976",
@@ -3197,6 +3520,10 @@
         "Note: \"4-10 million\" figure not found in sources. Gieringer's estimates: 21K-120K deaths per decade, \"hundreds of thousands\" total (not millions). Specific drug delays (beta-blockers): ~100K deaths estimated"
       ],
       "sources": [
+        {
+          "text": "FDA, Novel Drug Approvals 2022",
+          "url": "https://www.fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2022"
+        },
         {
           "text": "FEE: Patients and Doctors vs FDA",
           "url": "https://fee.org/articles/patients-and-doctors-vs-the-fda"
@@ -3221,6 +3548,19 @@
         {
           "text": "FDA, Novel Drug Approvals 2022",
           "url": "https://www.fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/novel-drug-approvals-2022"
+        }
+      ]
+    },
+    {
+      "id": "fda-phase-4-requirements",
+      "title": "FDA Phase 4 trial requirements",
+      "quotes": [
+        "FDA may require Phase 4 trials after drug approval to detect adverse reactions in wider use or may be conducted voluntarily for marketing purposes."
+      ],
+      "sources": [
+        {
+          "text": "FDA, Phase 4 Commitment Category",
+          "url": "https://www.fda.gov/drugs/data-standards-manual-monographs/phase-4-commitment-category"
         }
       ]
     },
@@ -3404,6 +3744,68 @@
         {
           "text": "ASCO: Transforming Eligibility Criteria",
           "url": "https://ascopubs.org/doi/10.1200/EDBK_155880"
+        }
+      ]
+    },
+    {
+      "id": "antidepressant-trial-exclusion-rates",
+      "title": "Antidepressant clinical trial exclusion rates",
+      "quotes": [
+        "Mean exclusion rate: 86.1% across 158 antidepressant efficacy trials (range: 44.4% to 99.8%)",
+        "More than 82% of real-world depression patients would be ineligible for antidepressant registration trials",
+        "Exclusion rates increased over time: 91.4% (2010-2014) vs. 83.8% (1995-2009)",
+        "Most common exclusions: comorbid psychiatric disorders, age restrictions, insufficient depression severity, medical conditions",
+        "Emergency psychiatry patients: only 3.3% eligible (96.7% excluded) when applying 9 common exclusion criteria",
+        "\"Only a minority of depressed patients seen in clinical practice are likely to be eligible for most AETs\"",
+        "Note: Generalizability of antidepressant trials has decreased over time, with increasingly stringent exclusion criteria eliminating patients who would actually use the drugs in clinical practice"
+      ],
+      "sources": [
+        {
+          "text": "Zimmerman et al., Mayo Clinic Proceedings, 2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26276679/"
+        },
+        {
+          "text": "Preskorn et al., Journal of Psychiatric Practice, 2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26164052/"
+        },
+        {
+          "text": "Wolters Kluwer: Antidepressant Trials Exclude Most Real World Patients",
+          "url": "https://www.wolterskluwer.com/en/news/antidepressant-trials-exclude-most-real-world-patients-with-depression"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trial-geographic-barriers",
+      "title": "Clinical trial geographic access barriers",
+      "quotes": [
+        "70% of US counties (2,211 of 3,143) had no active clinical trials in 2022, representing 19% of people age ≥55 years",
+        "Rural residents travel distances over 4× those traveled by urban peers",
+        "Median distance: 67 miles one-way on average (2022), up from 25.8 miles (1993-2014)",
+        "Low-income patients: median 58.3 miles vs. 17.8 miles for higher-income patients",
+        "Rare disease patients: 135 miles average",
+        "Phase I trials: 41.2 miles median",
+        "Geographic concentration: Clinical trials predominantly conducted at urban academic medical centers in coastal areas",
+        "Trial \"deserts\": Large regions with no trial access, mostly in West and Southwest",
+        "For patients in central US states: Nearest major trial center often 500+ miles away (e.g., Chicago from Kansas/Missouri geographic center)",
+        "Selection bias: Published median distances only reflect patients who successfully enrolled; those living farther away simply don't participate",
+        "Note: The wide range reflects severe geographic inequality - urban patients may travel <20 miles while rural/central US patients face 100-500+ mile journeys to nearest trial sites"
+      ],
+      "sources": [
+        {
+          "text": "JCO Oncology Practice: Geographic Access to Cancer Trials, 2024",
+          "url": "https://ascopubs.org/doi/10.1200/OP.24.00261"
+        },
+        {
+          "text": "PMC: Geographic Disparities in Clinical Trials",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10982574/"
+        },
+        {
+          "text": "PMC: Travel Burden in Cancer Clinical Trials",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6263122/"
+        },
+        {
+          "text": "Elligo Health Research: 67 Miles Average Travel Distance, 2022",
+          "url": "https://www.elligohealthresearch.com/knowledge-hub/solutions-to-clinical-trial-travel/"
         }
       ]
     },
@@ -3616,12 +4018,12 @@
       "id": "fossil-fuel-lobbying-roi",
       "title": "Fossil Fuel Lobbying ROI",
       "quotes": [
-        "\"The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%.\""
+        "\"In 2023, the oil, gas, and coal industry spent nearly $137 million lobbying Congress... Compared to $17 billion in subsidies, that's a more than 12,300 percent return on investment.\""
       ],
       "sources": [
         {
-          "text": "The Guardian, 2021, Fossil fuel lobbying ROI",
-          "url": "https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment"
+          "text": "Rep. Omar & Sen. Sanders, 2024, End Polluter Welfare Act",
+          "url": "https://omar.house.gov/media/press-releases/rep-omar-and-sen-sanders-introduce-legislation-end-corporate-welfare-fossil-0"
         }
       ]
     },
@@ -3635,19 +4037,6 @@
         {
           "text": "IMF, 2023, Fossil Fuel Subsidies Surged to Record $7 Trillion",
           "url": "https://www.imf.org/en/Blogs/Articles/2023/08/24/fossil-fuel-subsidies-surged-to-record-7-trillion"
-        }
-      ]
-    },
-    {
-      "id": "friends-cancer-research-fda-approvals",
-      "title": "FDA novel drug approvals annually",
-      "quotes": [
-        "In 2023, the FDA Center for Drug Evaluation and Research (CDER) approved 55 novel drugs, either as new molecular entities (NMEs) under New Drug Applications (NDAs) or as new therapeutic biologics under Biologics License Applications (BLAs). The FDA has consistently approved a significant number of novel therapies annually over the past decade."
-      ],
-      "sources": [
-        {
-          "text": "Friends of Cancer Research, 2023 FDA Drug Approvals",
-          "url": "https://www.focr.org/"
         }
       ]
     },
@@ -3671,6 +4060,19 @@
         {
           "text": "Campus France: France 2030 Boost Health Research",
           "url": "https://www.campusfrance.org/en/actu/france-2030-accelerer-la-recherche-et-l-innovation-en-sante"
+        }
+      ]
+    },
+    {
+      "id": "friends-cancer-research-fda-approvals",
+      "title": "FDA novel drug approvals annually",
+      "quotes": [
+        "In 2023, the FDA Center for Drug Evaluation and Research (CDER) approved 55 novel drugs, either as new molecular entities (NMEs) under New Drug Applications (NDAs) or as new therapeutic biologics under Biologics License Applications (BLAs). The FDA has consistently approved a significant number of novel therapies annually over the past decade."
+      ],
+      "sources": [
+        {
+          "text": "Friends of Cancer Research, 2023 FDA Drug Approvals",
+          "url": "https://www.focr.org/"
         }
       ]
     },
@@ -3756,6 +4158,32 @@
         {
           "text": "Fortune: Spend Down to Zero",
           "url": "https://fortune.com/2024/01/25/bill-gates-foundation-annual-letter-elite-universities-chuck-feeney/"
+        }
+      ]
+    },
+    {
+      "id": "gates-wellcome-novo-partnership-2024",
+      "title": "Gates Foundation, Wellcome, and Novo Nordisk partnership 2024",
+      "quotes": [
+        "Three-year initiative with each organization committing $100 million, totaling $300 million, announced in 2024."
+      ],
+      "sources": [
+        {
+          "text": "Wellcome, Global Health Equity Partnership",
+          "url": "https://wellcome.org/news/novo-nordisk-foundation-wellcome-and-gates-foundation-join-forces-accelerate-global-health"
+        }
+      ]
+    },
+    {
+      "id": "gates-wellcome-tb-vaccine-550m",
+      "title": "Gates and Wellcome TB vaccine funding",
+      "quotes": [
+        "Wellcome and Gates Foundation awarded up to $550 million for tuberculosis vaccine development, including $150M from Wellcome and approximately $400M from Gates."
+      ],
+      "sources": [
+        {
+          "text": "Philanthropy News Digest, TB Vaccine Funding",
+          "url": "https://philanthropynewsdigest.org/news/wellcome-gates-foundation-award-550-million-for-tuberculosis-vaccine"
         }
       ]
     },
@@ -3905,7 +4333,7 @@
         },
         {
           "text": "National Geographic-Roper 2006 Report",
-          "url": "https://media.nationalgeographic.org/assets/file/NGS-Roper-2006-Report.pdf"
+          "url": "https://sites.geography.unt.edu/~rice/geog3100/3100handouts/nationalgeographicpoll.pdf"
         },
         {
           "text": "ETIAS: EU Country Survey",
@@ -4005,6 +4433,42 @@
         {
           "text": "GiveWell, 2023, Cost-Effectiveness",
           "url": "https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness/cost-effectiveness-models"
+        }
+      ]
+    },
+    {
+      "id": "deworming-cost-per-daly",
+      "title": "Cost per DALY for Deworming Programs",
+      "quotes": [
+        "Schistosomiasis treatment: $28.19-$70.48 per DALY (using arithmetic means with varying disability weights)",
+        "Soil-transmitted helminths (STH) treatment: $82.54 per DALY (midpoint estimate)",
+        "Note: GiveWell explicitly states this 2011 analysis is \"out of date\" and their current methodology focuses on long-term income effects rather than short-term health DALYs"
+      ],
+      "sources": [
+        {
+          "text": "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
+          "url": "https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness"
+        }
+      ]
+    },
+    {
+      "id": "vitamin-a-cost-per-daly",
+      "title": "Cost per DALY for Vitamin A Supplementation",
+      "quotes": [
+        "India: $23-$50 per DALY averted (least costly intervention, $1,000-$6,100 per death averted)",
+        "Sub-Saharan Africa (2022): $220-$860 per DALY (Burkina Faso: $220, Kenya: $550, Nigeria: $860)",
+        "WHO estimates for Africa: $40 per DALY for fortification, $255 for supplementation",
+        "Uganda fortification: $18-$82 per DALY (oil: $18, sugar: $82)",
+        "Note: Wide variation reflects differences in baseline VAD prevalence, coverage levels, and whether intervention is supplementation or fortification"
+      ],
+      "sources": [
+        {
+          "text": "PLOS ONE: Cost-effectiveness of \"Golden Mustard\" for Treating Vitamin A Deficiency in India (2010)",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012046"
+        },
+        {
+          "text": "PLOS ONE: Cost-effectiveness of Vitamin A supplementation in Sub-Saharan Africa (2022)",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0266495"
         }
       ]
     },
@@ -4133,6 +4597,87 @@
       ]
     },
     {
+      "id": "global-clinical-trials-market-2024",
+      "title": "Global clinical trials market 2024",
+      "quotes": [
+        "Global clinical trials market valued at approximately $83 billion in 2024, with projections to reach $83-132 billion by 2030."
+      ],
+      "sources": [
+        {
+          "text": "Research and Markets, Global Clinical Trials Market Report 2024",
+          "url": "https://www.globenewswire.com/news-release/2024/04/19/2866012/0/en/Global-Clinical-Trials-Market-Research-Report-2024-An-83-16-Billion-Market-by-2030-AI-Machine-Learning-and-Blockchain-will-Transform-the-Clinical-Trials-Landscape.html"
+        },
+        {
+          "text": "Precedence Research, Clinical Trials Market Size",
+          "url": "https://www.precedenceresearch.com/clinical-trials-market"
+        }
+      ]
+    },
+    {
+      "id": "england-trial-participants-2023-24",
+      "title": "England clinical trial participants 2023/24",
+      "quotes": [
+        "1,045,282 participants recruited to NIHR Clinical Research Network (CRN) supported studies in England in 2023/24, compared to 952,789 in 2022/23."
+      ],
+      "sources": [
+        {
+          "text": "NIHR, Annual Statistics 2023/24",
+          "url": "https://www.nihr.ac.uk/about-us/who-we-are/reports-and-performance/annual-statistics"
+        }
+      ]
+    },
+    {
+      "id": "us-trial-enrollment-targets-2009",
+      "title": "US clinical trial enrollment targets (2009)",
+      "quotes": [
+        "As of August 2009, 10,974 ongoing interventional clinical trials with at least one U.S. center were collectively seeking to enroll 2.8 million subjects."
+      ],
+      "sources": [
+        {
+          "text": "Institute of Medicine (US), The State of Clinical Research in the United States: An Overview",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK50886/"
+        }
+      ]
+    },
+    {
+      "id": "clinicaltrials-gov-enrollment-data-2025",
+      "title": "ClinicalTrials.gov cumulative enrollment data (2025)",
+      "quotes": [
+        "Analysis of 100,000 active/recruiting/completed trials on ClinicalTrials.gov (November 2025) shows cumulative enrollment of 12.2 million participants: Phase 1 (722k), Phase 2 (2.2M), Phase 3 (6.5M), Phase 4 (2.7M). Median participants per trial: Phase 1 (33), Phase 2 (60), Phase 3 (237), Phase 4 (90)."
+      ],
+      "sources": [
+        {
+          "text": "Direct analysis via ClinicalTrials.gov API v2",
+          "url": "https://clinicaltrials.gov/data-api/api"
+        }
+      ]
+    },
+    {
+      "id": "global-burden-disease-chronic-conditions-2013",
+      "title": "Global Burden of Disease Study 2013: 2.4 billion people with chronic diseases",
+      "quotes": [
+        "The Global Burden of Disease Study 2013 found that 2.3 billion people worldwide were experiencing five or more chronic ailments, with only 4.3% of the global population having no health problems. Eight chronic disorders affected more than 10% of the world population in 2013, including cavities in permanent teeth (2.4 billion), tension-type headaches (1.6 billion), iron-deficiency anemia (1.2 billion), age-related hearing loss (1.23 billion), and migraine (850 million). As of 2020-2021: cardiovascular disease affects 523 million people, diabetes affects 537 million, and NCDs account for 41 million deaths annually (74% of all deaths)."
+      ],
+      "sources": [
+        {
+          "text": "ScienceDaily: GBD 2013 Study",
+          "url": "https://www.sciencedaily.com/releases/2015/06/150608081753.htm"
+        },
+        {
+          "text": "UN News: Chronic Diseases Taking Toll",
+          "url": "https://news.un.org/en/story/2023/05/1136832"
+        },
+        {
+          "text": "WHO: Noncommunicable Diseases Fact Sheet",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases"
+        },
+        {
+          "text": "PMC: The Burden of Chronic Disease",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10830426/"
+        }
+      ]
+    },
+    {
       "id": "global-cosmetics-market-90b",
       "title": "Global cosmetics market size: $90 billion",
       "quotes": [
@@ -4244,8 +4789,8 @@
           "url": "https://www.statista.com/outlook/cmo/food/worldwide"
         },
         {
-          "text": "Gitnux: Global Food Industry Statistics",
-          "url": "https://gitnux.org/global-food-industry/"
+          "text": "World Metrics: Global Food Industry Statistics",
+          "url": "https://worldmetrics.org/global-food-industry-statistics/"
         }
       ]
     },
@@ -4335,12 +4880,33 @@
       "id": "global-gov-med-research-spending",
       "title": "Global government medical research spending (\\$67.5B, 2023–2024)",
       "quotes": [
-        "\"Global government spending on cure-oriented medical research reached approximately \\$67.5 billion in 2023–2024.\""
+        "\"Global government spending on cure-oriented medical research reached approximately \\$67.5 billion in 2023–2024.\"",
+        "Calculated from: US NIH ($47.1B) + China (~$15B) + EU Horizon Health (~$1.3B) + Other governments (~$4.1B)"
       ],
       "sources": [
         {
-          "text": "DFDA Wiki, 2025, Global Government Medical Research Spending",
-          "url": "./appendix/global-government-medical-research-spending.qmd"
+          "text": "See component country budgets: NIH Budget",
+          "url": "#nih-budget-fy2025"
+        },
+        {
+          "text": ", China R&D",
+          "url": "#china-medical-research-spending-15b"
+        },
+        {
+          "text": ", EU Horizon Health",
+          "url": "#eu-horizon-health-budget-8-2b"
+        }
+      ]
+    },
+    {
+      "id": "global-government-clinical-trial-spending-estimate",
+      "title": "Global government clinical trial spending estimate",
+      "quotes": [
+        "Governments globally spend approximately $19-25 billion annually on clinical trials, representing roughly 10-12% of total global clinical trial spending."
+      ],
+      "sources": [
+        {
+          "text": "Derived from NIH, EU, and other government funding data"
         }
       ]
     },
@@ -4862,7 +5428,7 @@
         },
         {
           "text": "Our World in Data: Terrorism Deaths",
-          "url": "https://ourworldindata.org/grapher/terrorism-deaths"
+          "url": "https://ourworldindata.org/grapher/fatalities-from-terrorism"
         }
       ]
     },
@@ -4919,41 +5485,6 @@
         {
           "text": "Econlib: Friedrich August Hayek",
           "url": "https://www.econlib.org/library/Enc/bios/Hayek.html"
-        }
-      ]
-    },
-    {
-      "id": "health-outcomes-840000-qalys-gained",
-      "title": "840,000 QALYs gained annually",
-      "quotes": [
-        "This is an INTERNAL PROJECTION from this book's economic model, NOT an external citation",
-        "Projection: 840,000 QALYs/year (base case) from dFDA implementation",
-        "Range: Conservative: 190,000 QALYs/year | Base: 840,000 | Optimistic: 3,650,000",
-        "Components: Faster drug access (200k base), enhanced prevention via RWD (140k base), new therapies for rare/neglected diseases (500k base)",
-        "QALY definition: One year in perfect health = 1 QALY; scores range from 1 (perfect health) to 0 (dead)",
-        "Calculation: Change in utility value induced by treatment × duration of treatment effect",
-        "Used in economic evaluation to assess value of medical interventions; combines length & quality of life into single index"
-      ],
-      "sources": [
-        {
-          "text": "Internal model: Appendix: Detailed QALY Calculation Model",
-          "url": "./appendix/dfda-cost-benefit-analysis.qmd#appendix-detailed-qaly-calculation-model"
-        },
-        {
-          "text": "QALY background: Wikipedia: Quality-adjusted life year",
-          "url": "https://en.wikipedia.org/wiki/Quality-adjusted_life_year"
-        },
-        {
-          "text": "PMC: Calculating QALYs",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC317370/"
-        },
-        {
-          "text": "Physiopedia: QALY",
-          "url": "https://www.physio-pedia.com/Quality-Adjusted_Life_Year"
-        },
-        {
-          "text": "York Health Economics: QALY",
-          "url": "https://yhec.co.uk/glossary/quality-adjusted-life-year-qaly/"
         }
       ]
     },
@@ -5111,6 +5642,19 @@
         {
           "text": "Discover: Life Expectancy Ancient Humans",
           "url": "https://www.discovermagazine.com/the-sciences/what-was-the-life-expectancy-of-ancient-humans"
+        }
+      ]
+    },
+    {
+      "id": "horizon-europe-budget",
+      "title": "Horizon Europe total budget",
+      "quotes": [
+        "Horizon Europe has a budget of €95.5 billion for the period 2021-2027, covering all research and innovation funding."
+      ],
+      "sources": [
+        {
+          "text": "European Commission, Horizon Europe Overview",
+          "url": "https://ecrin.org/funding-multinational-clinical-trials"
         }
       ]
     },
@@ -5287,6 +5831,19 @@
       ]
     },
     {
+      "id": "ihi-horizon-europe",
+      "title": "Innovative Health Initiative (IHI) Horizon Europe",
+      "quotes": [
+        "IHI is a public-private partnership funding source under Horizon Europe, with broader scope than predecessor IMI, covering biopharmaceutical, biotech, diagnostics, imaging, digital health, and medical devices."
+      ],
+      "sources": [
+        {
+          "text": "European Commission, Horizon Europe Health Funding",
+          "url": "https://ecrin.org/funding-multinational-clinical-trials"
+        }
+      ]
+    },
+    {
       "id": "ihme-gbd-2019",
       "title": "IHME Global Burden of Disease (2.55B DALYs, 2019)",
       "quotes": [
@@ -5382,8 +5939,8 @@
       ],
       "sources": [
         {
-          "text": "Brookings, 2022, Policy to Support Impact Investing",
-          "url": "https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/"
+          "text": "Norton Rose Fulbright, Regulatory Initiatives Applicable to Impact Investing",
+          "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/dae2d556/regulatory-initiatives-applicable-to-impact-investing"
         }
       ]
     },
@@ -5474,6 +6031,70 @@
         {
           "text": "Yale Insights: Billion Identities Digitized",
           "url": "https://insights.som.yale.edu/insights/what-happens-when-billion-identities-are-digitized"
+        }
+      ]
+    },
+    {
+      "id": "industry-clinical-trial-spending-estimate",
+      "title": "Private industry clinical trial spending",
+      "quotes": [
+        "Private pharmaceutical and biotech industry spends approximately $75-90 billion annually on clinical trials, representing roughly 90% of global clinical trial spending."
+      ],
+      "sources": [
+        {
+          "text": "Derived from global market size and public/private funding ratios"
+        }
+      ]
+    },
+    {
+      "id": "industry-phase-1-per-approved-drug",
+      "title": "Industry Phase 1 spending per approved drug",
+      "quotes": [
+        "Companies spent an average of $28 million on Phase 1 trials per approved new drug."
+      ],
+      "sources": [
+        {
+          "text": "CBO, R&D Cost Analysis",
+          "url": "https://www.cbo.gov/publication/57126"
+        }
+      ]
+    },
+    {
+      "id": "industry-phase-2-per-approved-drug",
+      "title": "Industry Phase 2 spending per approved drug",
+      "quotes": [
+        "Companies spent an average of $65 million on Phase 2 trials per approved new drug."
+      ],
+      "sources": [
+        {
+          "text": "CBO, Clinical Trial Economics",
+          "url": "https://www.cbo.gov/publication/57126"
+        }
+      ]
+    },
+    {
+      "id": "industry-phase-3-per-approved-drug",
+      "title": "Industry Phase 3 spending per approved drug",
+      "quotes": [
+        "Companies spent an average of $282 million on Phase 3 trials per approved new drug."
+      ],
+      "sources": [
+        {
+          "text": "CBO, Drug Development Costs",
+          "url": "https://www.cbo.gov/publication/57126"
+        }
+      ]
+    },
+    {
+      "id": "industry-rd-growth-2012-2022",
+      "title": "Industry R&D spending growth 2012-2022",
+      "quotes": [
+        "Inflation-adjusted pharmaceutical industry R&D spending increased 44% from 2012 to 2022, growing from $170 billion to $247 billion."
+      ],
+      "sources": [
+        {
+          "text": "CBO, Research and Development in the Pharmaceutical Industry",
+          "url": "https://www.cbo.gov/publication/57126"
         }
       ]
     },
@@ -5672,12 +6293,16 @@
       "id": "investment-return-comparison",
       "title": "Investment Return Comparison",
       "quotes": [
-        "\"Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%.\""
+        "\"Over the 2019-2024 five-year period, the iShares U.S. Aerospace & Defense ETF (ITA) achieved an annualized return of 22.58%, while the Health Care Select Sector SPDR Fund (XLV) achieved an annualized return of approximately 9.8%. Defense stocks significantly outperformed healthcare during this period.\""
       ],
       "sources": [
         {
-          "text": "Forbes, 2024, Healthcare Stocks Poised for a Rebound",
-          "url": "https://www.forbes.com/sites/greatspeculations/2024/01/15/healthcare-stocks-poised-for-rebound-in-2024/"
+          "text": "iShares U.S. Aerospace & Defense ETF Performance",
+          "url": "https://finance.yahoo.com/quote/ITA/performance/"
+        },
+        {
+          "text": "XLV Performance Analysis",
+          "url": "https://www.mezzi.com/blog/xlv-performance-healthcare-etfs-after-fee-returns"
         }
       ]
     },
@@ -5847,7 +6472,33 @@
       "sources": [
         {
           "text": "Johnson & Johnson, 2024, Investor Relations",
-          "url": "https://www.macrotrends.net/stocks/figures/JNJ/johnson-johnson/revenue"
+          "url": "https://www.macrotrends.net/stocks/charts/JNJ/johnson-johnson/revenue"
+        }
+      ]
+    },
+    {
+      "id": "kyc-biometric-verification-costs-2024",
+      "title": "KYC and biometric identity verification costs (2024)",
+      "quotes": [
+        "High-volume pricing (300M+ verifications): $0.15-0.25 per verification",
+        "Medium-volume (100K-1M): $0.50-1.00 per verification",
+        "Low-volume (<100K): $1.00-2.00 per verification",
+        "Examples: ComplyCube at scale: $0.20 per biometric verification; Ondato: €0.50 ($0.54) at high volume",
+        "Enterprise banking KYC (full compliance): $1,500-$3,000 per client (complex regulatory requirements)",
+        "Note: Global spending on identity verification to reach $26B by 2028 (74% increase). Cost per check dropping 15% globally over next 4 years due to scale and maturation."
+      ],
+      "sources": [
+        {
+          "text": "ComplyCube, How Much Does KYC Really Cost?",
+          "url": "https://www.complycube.com/en/how-much-does-kyc-cost/"
+        },
+        {
+          "text": "Alice Biometrics, Cost of Identity Verification",
+          "url": "https://alicebiometrics.com/en/cost-of-identity-verification/"
+        },
+        {
+          "text": "Ondato, Identity Verification Pricing",
+          "url": "https://ondato.com/identity-verification-pricing/"
         }
       ]
     },
@@ -6074,6 +6725,19 @@
       ]
     },
     {
+      "id": "life-sciences-venture-capital-2024",
+      "title": "Life sciences venture capital funding",
+      "quotes": [
+        "Estimated $146 billion in life sciences venture capital funding occurred over the three years preceding 2024."
+      ],
+      "sources": [
+        {
+          "text": "AAMC, Clinical Trials Research Funding",
+          "url": "https://www.aamc.org/news/whats-stake-when-clinical-trials-research-gets-cut"
+        }
+      ]
+    },
+    {
       "id": "lobbying-100m",
       "title": "Defense industry lobbying spending",
       "quotes": [
@@ -6140,8 +6804,8 @@
       ],
       "sources": [
         {
-          "text": "Watson Institute, Brown University, 2022, Profits of War",
-          "url": "https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf"
+          "text": "Watson Institute, Brown University, 2021, Profits of War",
+          "url": "https://costsofwar.watson.brown.edu/paper/profits-war-corporate-beneficiaries-post-911-pentagon-spending-surge"
         }
       ]
     },
@@ -6597,8 +7261,8 @@
       ],
       "sources": [
         {
-          "text": "Watson Institute, Brown University, 2022, Profits of War",
-          "url": "https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf"
+          "text": "Watson Institute, Brown University, 2021, Profits of War",
+          "url": "https://costsofwar.watson.brown.edu/paper/profits-war-corporate-beneficiaries-post-911-pentagon-spending-surge"
         }
       ]
     },
@@ -6715,8 +7379,12 @@
           "url": "https://www.cbo.gov/publication/52156"
         },
         {
-          "text": "NATO: Defense Expenditure 2024",
-          "url": "https://www.nato.int/cps/en/natohq/news_226465.htm"
+          "text": "NATO: Defence Expenditures",
+          "url": "https://www.nato.int/cps/en/natohq/topics_49198.htm"
+        },
+        {
+          "text": "Statista: NATO Combined Defense Expenditures 2024",
+          "url": "https://www.statista.com/statistics/1293301/combined-defense-expenditures-nato/"
         }
       ]
     },
@@ -6728,8 +7396,8 @@
       ],
       "sources": [
         {
-          "text": "Pew Research Center, 2014, FCC's net neutrality comment period ends with a bang",
-          "url": "https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/"
+          "text": "TechCrunch, 2014, FCC Confirms That Nearly 4M Net Neutrality Comments Were Submitted By The Public",
+          "url": "https://techcrunch.com/2014/12/23/fcc-confirms-that-nearly-4m-net-neutrality-comments-were-submitted-by-the-public/"
         }
       ]
     },
@@ -6931,6 +7599,19 @@
       "notes": "FY2024 budget was $47.1B"
     },
     {
+      "id": "nih-clinical-research-funding-2023",
+      "title": "NIH clinical research funding 2023",
+      "quotes": [
+        "NIH clinical research funding was approximately $18.9 billion in fiscal year 2023."
+      ],
+      "sources": [
+        {
+          "text": "Statista, NIH Clinical Research Funding",
+          "url": "https://www.statista.com/statistics/716602/total-clinical-research-funding-by-the-national-institutes-for-health/"
+        }
+      ]
+    },
+    {
       "id": "nih-common-fund-overview",
       "title": "NIH Common Fund overview",
       "quotes": [
@@ -6939,7 +7620,7 @@
       "sources": [
         {
           "text": "NIH, Common Fund Overview",
-          "url": "https://commonfund.nih.gov/overview"
+          "url": "https://commonfund.nih.gov/about"
         }
       ]
     },
@@ -6956,12 +7637,12 @@
       ],
       "sources": [
         {
-          "text": "NIH: Who We Are",
-          "url": "https://www.nih.gov/about-nih/what-we-do/nih-almanac/who-we-are"
+          "text": "NIH Almanac",
+          "url": "https://www.nih.gov/about-nih/what-we-do/nih-almanac"
         },
         {
-          "text": "NIH: Organizational Structure",
-          "url": "https://www.nih.gov/about-nih/what-we-do/nih-almanac/organizational-structure"
+          "text": "NIH Organization",
+          "url": "https://www.nih.gov/about-nih/what-we-do/nih-almanac/nih-organization"
         }
       ]
     },
@@ -7237,6 +7918,201 @@
       ]
     },
     {
+      "id": "nih-phase-1-coverage",
+      "title": "NIH Phase 1 cost coverage",
+      "quotes": [
+        "NIH covers approximately 25% of Phase 1 clinical trial costs compared to industry."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Coverage Analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-1-industry-percentage",
+      "title": "NIH Phase 1 as percentage of industry costs",
+      "quotes": [
+        "NIH spending on Phase 1 trials represented 24.6-25.3% of estimated industry Phase 1 costs."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Industry Cost Comparison",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-1-percentage",
+      "title": "NIH Phase 1 trial percentage",
+      "quotes": [
+        "17% of NIH-funded clinical trials are Phase 1 trials."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Clinical Trial Characteristics",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5802548/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-1-spending-per-drug",
+      "title": "NIH Phase 1 spending per drug",
+      "quotes": [
+        "Average NIH spending was $13.9 million per drug for Phase 1 trials (for drugs ultimately approved)."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Clinical Development Spending",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-2-coverage",
+      "title": "NIH Phase 2 cost coverage",
+      "quotes": [
+        "NIH covers approximately 22% of Phase 2 clinical trial costs compared to industry."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Phase Funding",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-2-industry-percentage",
+      "title": "NIH Phase 2 as percentage of industry costs",
+      "quotes": [
+        "NIH spending on Phase 2 trials represented 21.4-23.2% of estimated industry Phase 2 costs."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Phase Cost Analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-2-percentage",
+      "title": "NIH Phase 2 trial percentage",
+      "quotes": [
+        "35% of NIH-funded clinical trials are Phase 2 trials, the largest share of any phase."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Trial Distribution",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5802548/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-2-spending-per-drug",
+      "title": "NIH Phase 2 spending per drug",
+      "quotes": [
+        "Average NIH spending was $22.2 million per drug for Phase 2 trials (for drugs ultimately approved)."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Clinical Trial Expenditures",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-3-coverage",
+      "title": "NIH Phase 3 cost coverage",
+      "quotes": [
+        "NIH covers only approximately 4% of Phase 3 clinical trial costs, with industry bearing the vast majority."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Late-Stage Funding",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-3-industry-percentage",
+      "title": "NIH Phase 3 as percentage of industry costs",
+      "quotes": [
+        "NIH spending on Phase 3 trials represented only 3.7-4.3% of estimated industry Phase 3 costs, showing industry dominance in late-stage trials."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Industry Funding Comparison",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-3-percentage",
+      "title": "NIH Phase 3 trial percentage",
+      "quotes": [
+        "11% of NIH-funded clinical trials are Phase 3 trials."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Clinical Trial Portfolio",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5802548/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-3-spending-per-drug",
+      "title": "NIH Phase 3 spending per drug",
+      "quotes": [
+        "Average NIH spending was $12.9 million per drug for Phase 3 trials (for drugs ultimately approved)."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Clinical Development Analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-4-percentage",
+      "title": "NIH Phase 4 trial percentage",
+      "quotes": [
+        "5% of NIH-funded clinical trials are Phase 4 post-marketing studies."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Clinical Trial Portfolio",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5802548/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-other-percentage",
+      "title": "NIH trials with unspecified phase",
+      "quotes": [
+        "33% of NIH-funded trials are classified as \"Other\" phase or \"Phase not specified.\""
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH Trial Characteristics",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5802548/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phased-trial-spending-2010-2019",
+      "title": "NIH phased trial spending for approved drugs 2010-2019",
+      "quotes": [
+        "NIH spent $8.1 billion on phased clinical trials of 387 drugs that were approved between 2010 and 2019."
+      ],
+      "sources": [
+        {
+          "text": "PMC, NIH vs Industry Clinical Trial Spending",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
+    },
+    {
       "id": "nih-recover-inefficiency",
       "title": "NIH RECOVER Initiative inefficiency",
       "quotes": [
@@ -7247,6 +8123,19 @@
         {
           "text": "RECOVER Initiative & News Reports, 2025, Official Site",
           "url": "https://recovercovid.org/about"
+        }
+      ]
+    },
+    {
+      "id": "nih-research-percentage",
+      "title": "NIH research funding percentage",
+      "quotes": [
+        "Approximately 80% of NIH's $47 billion budget supports research at over 2,500 scientific institutions, including clinical trials."
+      ],
+      "sources": [
+        {
+          "text": "AAMC, NIH Research Funding",
+          "url": "https://www.aamc.org/news/whats-stake-when-clinical-trials-research-gets-cut"
         }
       ]
     },
@@ -7273,6 +8162,31 @@
         {
           "text": "Bentley University, 2022, New Study Shows NIH Investment in New Drug Approvals",
           "url": "https://www.bentley.edu/news/new-study-shows-nih-investment-new-drug-approvals-comparable-investment-pharmaceutical"
+        }
+      ]
+    },
+    {
+      "id": "nih-vs-industry-spending-ratio",
+      "title": "NIH vs industry spending ratio",
+      "quotes": [
+        "NIH spending on phased clinical development represented approximately 10% of estimated industry spending for drugs approved 2010-2019."
+      ],
+      "sources": [
+        {
+          "text": "Harvard Catalyst, NIH Industry Spending Comparison",
+          "url": "https://catalyst.harvard.edu/news/article/nih-spent-8-1b-for-phased-clinical-trials-of-drugs-approved-2010-19-10-of-reported-industry-spending/"
+        }
+      ]
+    },
+    {
+      "id": "nonprofit-clinical-trial-spending-estimate",
+      "title": "Nonprofit clinical trial funding estimate",
+      "quotes": [
+        "Nonprofit foundations spend an estimated $2-5 billion annually on clinical trials globally, representing approximately 2-5% of total clinical trial spending."
+      ],
+      "sources": [
+        {
+          "text": "Estimated from major foundation budgets and activities"
         }
       ]
     },
@@ -7601,7 +8515,7 @@
       "id": "ostrom-game-theory-cooperation",
       "title": "Elinor Ostrom's work on cooperation vs. punishment",
       "quotes": [
-        "Ostrom demonstrated cooperative management of natural resources can preserve (not degrade) them; trust between strangers can be established as basis for collaborative common-pool resource management",
+        "Ostrom demonstrated cooperative management of natural resources can preserve (not degrade) them; strangers can establish trust as basis for collaborative common-pool resource management",
         "Pioneering experiments confirmed widespread use of costly punishment in response to excessive resource extraction",
         "Showed power of communication and critical role of informal agreements in supporting cooperation",
         "Public goods game experiments: 70-80% cooperation thresholds achievable with leader support systems (vs. none without support)",
@@ -7696,8 +8610,8 @@
           "url": "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3"
         },
         {
-          "text": "CenterWatch: Willingness Drops Dramatically",
-          "url": "https://www.centerwatch.com/articles/24924-patient-willingness-to-join-clinical-trials-drops-dramatically-new-data-show"
+          "text": "Applied Clinical Trials: Patient Participation",
+          "url": "https://www.appliedclinicaltrialsonline.com/view/industry-forced-to-rethink-patient-participation-in-trials"
         },
         {
           "text": "PMC: Study Design Factors",
@@ -7778,6 +8692,37 @@
         {
           "text": "ALA: Chronology of USA PATRIOT Act",
           "url": "https://www.ala.org/advocacy/chronology-usa-patriot-act-2001"
+        }
+      ]
+    },
+    {
+      "id": "paypal-dropbox-referral-case-studies",
+      "title": "PayPal and Dropbox referral program case studies (viral growth economics)",
+      "quotes": [
+        "PayPal (1999-2001): Started with $20/referral, optimized to $10-20 range for viral growth",
+        "Dropbox (2008): ~$2 value per referral (500MB storage), achieved 3900% growth in 15 months",
+        "Key findings: Optimal referral incentive varies by product value and target market",
+        "PayPal found $10-20 optimal (inflation-adjusted: ~$18-36 in 2024)",
+        "Dropbox succeeded with lower incentive due to high perceived value of storage",
+        "Increasing marginal costs: Early adopters (believers) require minimal incentive; late majority and laggards require higher payments",
+        "Diffusion of innovations: 2.5% innovators, 13.5% early adopters, 34% early majority, 34% late majority, 16% laggards"
+      ],
+      "sources": [
+        {
+          "text": "PayPal Wars Book",
+          "url": "https://en.wikipedia.org/wiki/The_PayPal_Wars"
+        },
+        {
+          "text": "Dropbox Growth Case Study",
+          "url": "https://www.referralrock.com/blog/dropbox-referral-program/"
+        },
+        {
+          "text": "Harvard Business Review: Hard Truth About Innovative Cultures",
+          "url": "https://hbr.org/2019/01/the-hard-truth-about-innovative-cultures"
+        },
+        {
+          "text": "Rogers (2003): Diffusion of Innovations Theory",
+          "url": "https://en.wikipedia.org/wiki/Diffusion_of_innovations"
         }
       ]
     },
@@ -8026,6 +8971,486 @@
       ]
     },
     {
+      "id": "pharma-drug-revenue-average",
+      "title": "Average lifetime revenue per successful drug",
+      "quotes": [
+        "Study of 361 FDA-approved drugs from 1995-2014 (median follow-up 13.2 years):",
+        "Mean lifetime revenue: $15.2 billion per drug",
+        "Median lifetime revenue: $6.7 billion per drug",
+        "Revenue after 5 years: $3.2 billion (mean)",
+        "Revenue after 10 years: $9.5 billion (mean)",
+        "Revenue after 15 years: $19.2 billion (mean)",
+        "Distribution highly skewed: top 25 drugs (7%) accounted for 38% of total revenue ($2.1T of $5.5T)"
+      ],
+      "sources": [
+        {
+          "text": "Value in Health: Sales Revenues for New Therapeutic Agents",
+          "url": "https://www.valueinhealthjournal.com/article/S1098-3015(24"
+        },
+        {
+          "text": "ScienceDirect: Sales Revenues FDA Drugs",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1098301524027542"
+        }
+      ]
+    },
+    {
+      "id": "pharma-roi-current",
+      "title": "Pharmaceutical R&D return on investment (ROI)",
+      "quotes": [
+        "Deloitte's annual study of top 20 pharma companies by R&D spend (2010-2024):",
+        "2024 ROI: 5.9% (second year of growth after decade of decline)",
+        "2023 ROI: ~4.3% (estimated from trend)",
+        "2022 ROI: 1.2% (historic low since study began, 13-year low)",
+        "2021 ROI: 6.8% (record high, inflated by COVID-19 vaccines/treatments)",
+        "Long-term trend: Declining for over a decade before 2023 recovery",
+        "Average R&D cost per asset: $2.3B (2022), $2.23B (2024)",
+        "Key insight: Returns barely profitable (1.2-5.9% range), far below typical corporate ROI targets (15-20%)"
+      ],
+      "sources": [
+        {
+          "text": "Deloitte: Measuring Pharmaceutical Innovation 2025",
+          "url": "https://www.deloitte.com/ch/en/Industries/life-sciences-health-care/research/measuring-return-from-pharmaceutical-innovation.html"
+        },
+        {
+          "text": "Deloitte 2023: Pharma R&D ROI Falls",
+          "url": "https://www.prnewswire.com/news-releases/deloittes-13th-annual-pharmaceutical-innovation-report-pharma-rd-return-on-investment-falls-in-post-pandemic-market-301738807.html"
+        },
+        {
+          "text": "HIT Consultant: 13-Year Low",
+          "url": "https://hitconsultant.net/2023/02/16/pharma-rd-roi-falls-to-lowest-level-in-13-years/"
+        }
+      ]
+    },
+    {
+      "id": "pharmaceutical-innovation-acceleration-economics",
+      "title": "Pharmaceutical innovation acceleration through cost reduction",
+      "quotes": [
+        "AI and technology can reduce drug discovery timelines by 50% and costs by up to 70%. Holistic process improvements can achieve 500-day acceleration in overall development timeline plus 25% cost reduction. Adaptive trial designs increasing success rates by 4 percentage points could lower development costs from $2.6B to $2.2B, freeing up $4.2 billion globally for R&D capable of generating 3.5 million additional life-years."
+      ],
+      "sources": [
+        {
+          "text": "Nature, AI's potential to accelerate drug discovery",
+          "url": "https://www.nature.com/articles/d41586-023-03172-6"
+        },
+        {
+          "text": "McKinsey, The pursuit of excellence in new-drug development",
+          "url": "https://www.mckinsey.com/industries/life-sciences/our-insights/the-pursuit-of-excellence-in-new-drug-development"
+        },
+        {
+          "text": "Health Economics Review, Adaptive clinical trials and productivity",
+          "url": "https://healtheconomicsreview.biomedcentral.com/articles/10.1186/s13561-021-00302-6"
+        }
+      ]
+    },
+    {
+      "id": "pharmaceutical-innovation-dynamic-efficiency",
+      "title": "Optimal value share for pharmaceutical innovation (dynamic efficiency framework)",
+      "quotes": [
+        "Research on dynamic efficiency in pharmaceutical innovation suggests the optimal share of value to offer manufacturers is roughly 20% (range: 6%-51%) for maximizing long-term population health. This framework accounts for both static effects (current drug benefits) and dynamic effects (incentivizing future innovation). Roughly a quarter of long-term innovation value should go to manufacturers to maximize contributions to health from both dimensions."
+      ],
+      "sources": [
+        {
+          "text": "Health Economics, Woods et al. 2024, Achieving dynamic efficiency in pharmaceutical innovation",
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/hec.4795"
+        }
+      ]
+    },
+    {
+      "id": "pharmaceutical-rd-cost-barriers-timeline-impact",
+      "title": "Impact of R&D cost barriers on drug development timelines",
+      "quotes": [
+        "Cost of capital is the largest category in pharmaceutical R&D costs. A 1-year decrease in regulatory approval times decreases breakeven lifetime by 3-4 years. Clinical trials comprise 68% of out-of-pocket R&D expenditures at $117.4 million average. Lower-cost strategies (facilities, mobile tech) can reduce Phase 1 costs by 16%, Phase 2 by 22%, and Phase 3 by 17%. Improvements in FDA review process efficiency show -27.1% impact on development costs, adaptive design -22.8%, and simplified protocols -22.2%."
+      ],
+      "sources": [
+        {
+          "text": "ASPE, Examination of Clinical Trial Costs and Barriers for Drug Development",
+          "url": "https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0"
+        },
+        {
+          "text": "JAMA Network Open, Costs of Drug Development 2000-2018",
+          "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562"
+        },
+        {
+          "text": "Tandfonline, Public sector replacement of privately funded pharmaceutical R&D",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/13696998.2024.2405407"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-cost-per-patient-137k",
+      "title": "Phase 1 cost per patient",
+      "quotes": [
+        "Phase 1 trials cost approximately $137,000 per patient on average, the highest per-patient cost of any phase."
+      ],
+      "sources": [
+        {
+          "text": "JAMA Internal Medicine, Clinical Trial Cost Breakdown",
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-cost-per-trial-range",
+      "title": "Phase 1 cost per trial range",
+      "quotes": [
+        "Phase 1 clinical trials cost between $4 million and $28 million per trial, with typical costs around $25 million."
+      ],
+      "sources": [
+        {
+          "text": "SofproMed, Clinical Trial Cost Analysis",
+          "url": "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost"
+        },
+        {
+          "text": "CBO, 2021"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-cost-typical",
+      "title": "Typical Phase 1 trial cost",
+      "quotes": [
+        "Phase 1 trials typically cost approximately $25 million."
+      ],
+      "sources": [
+        {
+          "text": "GreenField Chemical, Cost of Drug Development",
+          "url": "https://greenfieldchemical.com/2023/08/10/the-staggering-cost-of-drug-development-a-look-at-the-numbers/"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-duration-average",
+      "title": "Average Phase 1 trial duration",
+      "quotes": [
+        "Phase 1 trials take an average of 27.8 months to complete."
+      ],
+      "sources": [
+        {
+          "text": "ASPE, Clinical Trial Timeline Analysis",
+          "url": "https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-global-spending-estimate",
+      "title": "Phase 1 global spending estimate",
+      "quotes": [
+        "Phase 1 clinical trials are estimated to represent $8-15 billion in annual global spending (approximately 10-18% of the clinical trials market)."
+      ],
+      "sources": [
+        {
+          "text": "Derived from market analysis and phase distribution data"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-participant-numbers",
+      "title": "Phase 1 trial participant numbers",
+      "quotes": [
+        "Phase 1 trials average approximately 51 participants, testing safety and dosage in small groups."
+      ],
+      "sources": [
+        {
+          "text": "ASPE, Clinical Trial Characteristics",
+          "url": "https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-rd-percentage",
+      "title": "Phase 1 as percentage of total R&D",
+      "quotes": [
+        "Phase 1 clinical trials (including proof of mechanism) account for 9.2% of total pharmaceutical R&D expenditure."
+      ],
+      "sources": [
+        {
+          "text": "Knowledge Portal, R&D Costs Distribution",
+          "url": "https://www.knowledgeportalia.org/costs-r-d"
+        }
+      ]
+    },
+    {
+      "id": "phase-1-to-approval-success-rate",
+      "title": "Clinical trial success rate Phase 1 to approval",
+      "quotes": [
+        "Only approximately 12% of drugs entering Phase 1 clinical trials ultimately gain FDA approval. Of 100 drugs entering Phase 1: ~60 advance to Phase 2, ~20 enter Phase 3, and ~12 gain approval."
+      ],
+      "sources": [
+        {
+          "text": "CBO, Pharmaceutical R&D Success Rates",
+          "url": "https://www.cbo.gov/publication/57126"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-3-spending-percentage",
+      "title": "Phase 2-3 spending as percentage of total",
+      "quotes": [
+        "Phase 2 and Phase 3 trials combined account for approximately 95% of clinical trial spending, with the remaining 5% split between Phase 1 and Phase 4."
+      ],
+      "sources": [
+        {
+          "text": "Derived from phase cost distribution data"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-cost-per-patient-130k",
+      "title": "Phase 2 cost per patient",
+      "quotes": [
+        "Phase 2 trials cost approximately $130,000 per patient on average."
+      ],
+      "sources": [
+        {
+          "text": "JAMA Internal Medicine, Clinical Trial Cost Analysis",
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-cost-per-trial-range",
+      "title": "Phase 2 cost per trial range",
+      "quotes": [
+        "Phase 2 clinical trials cost between $13 million and $65 million per trial on average."
+      ],
+      "sources": [
+        {
+          "text": "SofproMed, Clinical Trial Costs",
+          "url": "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost"
+        },
+        {
+          "text": "CBO, 2021"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-duration-average",
+      "title": "Average Phase 2 trial duration",
+      "quotes": [
+        "Phase 2 trials typically take 2-3 years to complete."
+      ],
+      "sources": [
+        {
+          "text": "ClinicalTrials.gov resources and industry estimates"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-global-spending-estimate",
+      "title": "Phase 2 global spending estimate",
+      "quotes": [
+        "Phase 2 clinical trials are estimated to represent $15-25 billion in annual global spending (approximately 20-30% of the clinical trials market)."
+      ],
+      "sources": [
+        {
+          "text": "Derived from market analysis and phase distribution data"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-participant-numbers",
+      "title": "Phase 2 trial participant numbers",
+      "quotes": [
+        "Phase 2 trials typically involve 100-300 patients to assess biological activity and identify side effects."
+      ],
+      "sources": [
+        {
+          "text": "FDA, Clinical Research Phases",
+          "url": "https://www.fda.gov/patients/drug-development-process/step-3-clinical-research"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-rd-percentage",
+      "title": "Phase 2 as percentage of total R&D",
+      "quotes": [
+        "Phase 2 clinical trials (including proof of concept) account for 17.4% of total pharmaceutical R&D expenditure."
+      ],
+      "sources": [
+        {
+          "text": "Knowledge Portal, R&D Cost Distribution",
+          "url": "https://www.knowledgeportalia.org/costs-r-d"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-therapeutic-area-costs",
+      "title": "Phase 2 costs by therapeutic area",
+      "quotes": [
+        "Phase 2 trial costs range from $7.0 million (cardiovascular) to $19.6 million (hematology) depending on therapeutic area."
+      ],
+      "sources": [
+        {
+          "text": "ASPE, Clinical Trial Cost Examination",
+          "url": "https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-cost-per-patient-113k",
+      "title": "Phase 3 cost per patient",
+      "quotes": [
+        "Phase 3 trials cost approximately $113,000 per patient on average."
+      ],
+      "sources": [
+        {
+          "text": "JAMA Internal Medicine, Clinical Trial Cost Breakdown",
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-cost-per-trial-range",
+      "title": "Phase 3 cost per trial range",
+      "quotes": [
+        "Phase 3 clinical trials cost between $20 million and $282 million per trial, with significant variation by therapeutic area and trial complexity."
+      ],
+      "sources": [
+        {
+          "text": "SofproMed, How Much Does a Clinical Trial Cost",
+          "url": "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost"
+        },
+        {
+          "text": "CBO, Research and Development in the Pharmaceutical Industry",
+          "url": "https://www.cbo.gov/publication/57126"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-duration-average",
+      "title": "Average Phase 3 trial duration",
+      "quotes": [
+        "Phase 3 trials take an average of 38 months to complete, longer than earlier phase trials."
+      ],
+      "sources": [
+        {
+          "text": "ASPE, Examination of Clinical Trial Costs and Barriers",
+          "url": "https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-market-share-2024",
+      "title": "Phase 3 clinical trials market share",
+      "quotes": [
+        "Phase 3 trials represent the largest market segment at 53-55% of total clinical trial spending, approximately $29-45 billion annually in 2024. Phase 3 accounted for USD 29.3 billion in 2024."
+      ],
+      "sources": [
+        {
+          "text": "Towards Healthcare, Clinical Trials Market Phase Analysis",
+          "url": "https://www.towardshealthcare.com/insights/innovation-in-drug-development-calls-for-clinical-trials"
+        },
+        {
+          "text": "Global Market Insights, 2024"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-median-cost",
+      "title": "Phase 3 median trial cost",
+      "quotes": [
+        "Median cost for a single Phase 3 trial exceeds $19 million."
+      ],
+      "sources": [
+        {
+          "text": "JAMA Internal Medicine, Clinical Trial Costs Study",
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-participant-numbers",
+      "title": "Phase 3 trial participant numbers",
+      "quotes": [
+        "Phase 3 trials typically involve 300-3,000 participants to assess clinical effectiveness in larger populations."
+      ],
+      "sources": [
+        {
+          "text": "FDA, Step 3: Clinical Research",
+          "url": "https://www.fda.gov/patients/drug-development-process/step-3-clinical-research"
+        },
+        {
+          "text": "ClinicalTrials.gov resources"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-rd-percentage",
+      "title": "Phase 3 as percentage of total R&D",
+      "quotes": [
+        "Phase 3 clinical trials account for 39.8% of total pharmaceutical R&D expenditure, the largest single component."
+      ],
+      "sources": [
+        {
+          "text": "Knowledge Portal, R&D Costs",
+          "url": "https://www.knowledgeportalia.org/costs-r-d"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-therapeutic-area-costs",
+      "title": "Phase 3 costs by therapeutic area",
+      "quotes": [
+        "Phase 3 trial costs range from $11.5 million (dermatology) to $52.9 million (pain and anesthesia) depending on therapeutic area."
+      ],
+      "sources": [
+        {
+          "text": "ASPE, Clinical Trial Cost Drivers",
+          "url": "https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-budget-percentage",
+      "title": "Phase 4 as percentage of pharma R&D budgets",
+      "quotes": [
+        "11% of pharmaceutical R&D budgets are allocated to Phase 4 post-marketing studies."
+      ],
+      "sources": [
+        {
+          "text": "PhRMA data cited in PMC, Phase 4 Research Analysis",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2651713/"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-growth-rate",
+      "title": "Phase 4 trial growth rate",
+      "quotes": [
+        "Phase 4 clinical research was increasing at 23% annually as of 2007."
+      ],
+      "sources": [
+        {
+          "text": "Thomson CenterWatch data, PMC 2009"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-spending-2007",
+      "title": "Phase 4 clinical trial spending 2007",
+      "quotes": [
+        "Pharmaceutical manufacturers spent an estimated $12 billion on Phase 4 post-marketing surveillance research in 2007, growing at 23% annually."
+      ],
+      "sources": [
+        {
+          "text": "PMC, Phase 4 Research Growth",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2651713/"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-spending-2024-estimate",
+      "title": "Phase 4 spending 2024 estimate",
+      "quotes": [
+        "Phase 4 post-marketing trials estimated at $15-20 billion annually in 2024, based on continued growth from 2007 baseline."
+      ],
+      "sources": [
+        {
+          "text": "Estimated from 2007 data with market growth projections"
+        }
+      ]
+    },
+    {
       "id": "polypill-prevention-qaly",
       "title": "Polypill for Primary Prevention Cost per QALY",
       "quotes": [
@@ -8172,6 +9597,20 @@
         {
           "text": "NAS: Drug Efficacy Study 1966-1969",
           "url": "http://www.nasonline.org/about-nas/history/archives/collections/des-1966-1969-1.html"
+        }
+      ]
+    },
+    {
+      "id": "pragmatic-trials-patsopoulos-2011",
+      "title": "Pragmatic vs. explanatory trials",
+      "quotes": [
+        "\"Pragmatic trials evaluate the effectiveness of interventions in real-life routine practice conditions, whereas explanatory trials determine the efficacy of interventions under ideal situations. Pragmatic trials produce results that can be generalized and applied in routine practice settings.\"",
+        "Note: Pragmatic trials often find smaller effect sizes than explanatory trials but have higher external validity (generalizability to real-world populations)"
+      ],
+      "sources": [
+        {
+          "text": "Patsopoulos, Nikolaos A., 2011, A pragmatic view on pragmatic trials",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181997/"
         }
       ]
     },
@@ -8404,6 +9843,23 @@
       ]
     },
     {
+      "id": "who-cost-effectiveness-threshold",
+      "title": "Cost-effectiveness threshold ($50,000/QALY)",
+      "quotes": [
+        "The $50,000/QALY threshold is widely used in US health economics literature, originating from dialysis cost benchmarks in the 1980s. In US cost-utility analyses, 77.5% of authors use either $50,000 or $100,000 per QALY as reference points. Most successful health programs cost $3,000-10,000 per QALY. WHO-CHOICE uses GDP per capita multiples (1× GDP/capita = \"very cost-effective\", 3× GDP/capita = \"cost-effective\"), which for the US (~$70,000 GDP/capita) translates to $70,000-$210,000/QALY thresholds."
+      ],
+      "sources": [
+        {
+          "text": "PMC, Country-Level Cost-Effectiveness Thresholds",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/"
+        },
+        {
+          "text": "WHO, WHO-CHOICE Methods Update",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9278384/"
+        }
+      ]
+    },
+    {
       "id": "rare-disease-patients-300m-globally",
       "title": "300 million people with rare diseases globally",
       "quotes": [
@@ -8603,11 +10059,11 @@
     },
     {
       "id": "recovery-trial-82x-cost-reduction",
-      "title": "RECOVERY trial 82x cost reduction",
+      "title": "RECOVERY trial 82× cost reduction",
       "quotes": [
         "RECOVERY trial: ~$500 per patient ($20M for 48,000 patients = $417/patient)",
         "Typical clinical trial: ~$41,000 median per-patient cost",
-        "Cost reduction: ~80-82x cheaper ($41,000 ÷ $500 ≈ 82x)",
+        "Cost reduction: ~80-82× cheaper ($41,000 ÷ $500 ≈ 82×)",
         "Efficiency: $50 per patient per answer (10 therapeutics tested, 4 effective)",
         "Dexamethasone estimated to save >630,000 lives"
       ],
@@ -9200,7 +10656,7 @@
       ]
     },
     {
-      "id": "sipri-2024-spending",
+      "id": "global-military-spending",
       "title": "Global military spending (\\$2.72T, 2024)",
       "quotes": [
         "\"In 2024, world military expenditure reached \\$2.718 trillion, marking a 9.4% increase from the previous year.\""
@@ -9219,7 +10675,7 @@
         "2024: Basic research 2.63 trillion won (~$2 billion), grew 2%",
         "Korean ARPA-H launched: 48.5 billion won initial funding; backers seek 1.9 trillion won over 10 years for high-risk biomedical studies",
         "Overall R&D dropped 8% to 28.6 trillion won ($22B) in 2024",
-        "Healthcare R&D subsidies cut 24% in 2023 despite being designated future growth engine"
+        "Healthcare R&D subsidies cut 23.8% in 2023 (from 101.2B won to 77.1B won) despite being designated future growth engine"
       ],
       "sources": [
         {
@@ -9231,8 +10687,12 @@
           "url": "https://www.statista.com/statistics/1228017/south-korea-expenditure-for-rnd/"
         },
         {
-          "text": "Korea Biomed: Healthcare R&D Cut",
-          "url": "https://www.koreabiomed.com/news/articleView.html?idxno=24273"
+          "text": "Nature: South Korea R&D Budget Cuts",
+          "url": "https://www.nature.com/articles/d41586-023-02841-w"
+        },
+        {
+          "text": "University World News: R&D Budget Cuts",
+          "url": "https://www.universityworldnews.com/post.php?story=20230913174051170"
         }
       ]
     },
@@ -9277,12 +10737,12 @@
       ],
       "sources": [
         {
-          "text": "PMC3720047, Link",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/"
-        },
-        {
           "text": "CSIS, Smallpox Eradication Model: Global Cooperation",
           "url": "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation"
+        },
+        {
+          "text": "PMC3720047, Link",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/"
         }
       ]
     },
@@ -9698,6 +11158,48 @@
       ]
     },
     {
+      "id": "thalidomide-scandal",
+      "title": "Thalidomide scandal: worldwide cases and mortality",
+      "quotes": [
+        "\"The total number of embryos affected by the use of thalidomide during pregnancy is estimated at 10,000, of whom about 40% died around the time of birth.\"",
+        "\"More than 10,000 children in 46 countries were born with deformities such as phocomelia.\""
+      ],
+      "sources": [
+        {
+          "text": "Wikipedia, Thalidomide scandal",
+          "url": "https://en.wikipedia.org/wiki/Thalidomide_scandal"
+        }
+      ]
+    },
+    {
+      "id": "thalidomide-survivors-health",
+      "title": "Health and quality of life of Thalidomide survivors as they age",
+      "quotes": [
+        "Study of thalidomide survivors documenting ongoing disability impacts, quality of life, and long-term health outcomes.",
+        "Survivors (now in their 60s) continue to experience significant disability from limb deformities, organ damage, and other effects."
+      ],
+      "sources": [
+        {
+          "text": "PLOS One, 2019, The health and quality of life of Thalidomide survivors as they age",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0210222"
+        }
+      ]
+    },
+    {
+      "id": "us-census-world-population-1960",
+      "title": "Historical world population estimates",
+      "quotes": [
+        "US Census Bureau historical estimates of world population by country and region (1950-2050).",
+        "US population in 1960: ~180 million of ~3 billion worldwide (6%)."
+      ],
+      "sources": [
+        {
+          "text": "US Census Bureau, Historical Estimates of World Population",
+          "url": "https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html"
+        }
+      ]
+    },
+    {
       "id": "tobacco-control-roi",
       "title": "Tobacco Control ROI",
       "quotes": [
@@ -9766,7 +11268,7 @@
       ],
       "sources": [
         {
-          "text": "Cost breakdown calculated from cost-of-war.qmd analysis using SIPRI, ACLED, World Bank, academic sources"
+          "text": "Cost breakdown calculated using SIPRI, ACLED, World Bank, academic sources"
         }
       ]
     },
@@ -9815,6 +11317,18 @@
       "notes": "1.25 million deaths in 2023 (including 161,000 people with HIV)"
     },
     {
+      "id": "tufts-drug-development-cost-2021",
+      "title": "Tufts Center drug development cost estimate 2021",
+      "quotes": [
+        "Total cost to develop a new drug estimated at $2.6 billion as of 2021, nearly a 3-fold increase from $802 million in 2003 (inflation-adjusted)."
+      ],
+      "sources": [
+        {
+          "text": "Tufts Center for the Study of Drug Development, 2021"
+        }
+      ]
+    },
+    {
       "id": "ucdp-state-violence-deaths",
       "title": "State violence deaths annually",
       "quotes": [
@@ -9834,8 +11348,8 @@
           "url": "https://en.wikipedia.org/wiki/Uppsala_Conflict_Data_Program"
         },
         {
-          "text": "Our World in Data: State-Based Conflicts",
-          "url": "https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region"
+          "text": "Our World in Data: Armed Conflict Deaths",
+          "url": "https://ourworldindata.org/grapher/deaths-in-armed-conflicts-by-region"
         }
       ]
     },
@@ -10037,6 +11551,102 @@
         {
           "text": "CDC, Chronic Disease Data",
           "url": "https://www.cdc.gov/chronic-disease/data-research/facts-stats/index.html"
+        }
+      ]
+    },
+    {
+      "id": "chronic-illness-workforce-productivity-loss",
+      "title": "Chronic illness workforce productivity loss",
+      "quotes": [
+        "78.4% of U.S. employees have at least one chronic condition (7% increase since 2021)",
+        "58% of employees report physical chronic health conditions",
+        "28% of all employees experience productivity loss due to chronic conditions",
+        "Average productivity loss: $4,798 per employee per year",
+        "Employees with 3+ chronic conditions miss 7.8 days annually vs 2.2 days for those without",
+        "Note: 28% productivity loss translates to roughly 11 hours per week (28% of 40-hour workweek)"
+      ],
+      "sources": [
+        {
+          "text": "Integrated Benefits Institute 2024, Chronic Conditions in US Workforce",
+          "url": "https://www.ibiweb.org/resources/chronic-conditions-in-the-us-workforce-prevalence-trends-and-productivity-impacts"
+        },
+        {
+          "text": "One Medical 2024, Study on Chronic Conditions",
+          "url": "https://www.onemedical.com/mediacenter/study-finds-more-than-half-of-employees-are-living-with-chronic-conditions-including-1-in-3-gen-z-and-millennial-employees/"
+        },
+        {
+          "text": "de Beaumont Foundation 2025, Poll on Chronic Health Conditions",
+          "url": "https://debeaumont.org/news/2025/poll-the-toll-of-chronic-health-conditions-on-employees-and-workplaces/"
+        }
+      ]
+    },
+    {
+      "id": "unpaid-caregiver-hours-economic-value",
+      "title": "Unpaid caregiver hours and economic value",
+      "quotes": [
+        "Average family caregiver: 25-26 hours per week (100-104 hours per month)",
+        "38 million caregivers providing 36 billion hours of care annually",
+        "Economic value: $16.59 per hour = $600 billion total annual value (2021)",
+        "28% of people provided eldercare on a given day, averaging 3.9 hours when providing care",
+        "Caregivers living with care recipient: 37.4 hours per week",
+        "Caregivers not living with recipient: 23.7 hours per week",
+        "Note: Disease-related caregiving is subset of total; includes elderly care, disability care, and child care"
+      ],
+      "sources": [
+        {
+          "text": "AARP 2023, Unpaid Care Report",
+          "url": "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html"
+        },
+        {
+          "text": "Bureau of Labor Statistics 2023-2024, Unpaid Eldercare",
+          "url": "https://www.bls.gov/news.release/elcare.nr0.htm"
+        },
+        {
+          "text": "National Alliance for Caregiving, Caregiver Statistics",
+          "url": "https://www.caregiver.org/resource/caregiver-statistics-demographics/"
+        }
+      ]
+    },
+    {
+      "id": "life-expectancy-gains-medical-advances",
+      "title": "Life expectancy gains from antibiotics and vaccines",
+      "quotes": [
+        "Antibiotics alone: Added 5-23 years to average life expectancy (estimates vary)",
+        "Combined effect (vaccines + hygiene + antibiotics): Added ~35 years from 1900 to 2000",
+        "U.S. life expectancy: 47.3 years (1900) → 78.7 years (2000) = 31.4 year gain",
+        "Steepest increase: Late 1800s to mid-1900s",
+        "Vaccines prevented: 40M cases diphtheria, 35M cases measles, 103M total childhood disease cases since 1924",
+        "Note: Most effective medical treatments (antibiotics, chemotherapy, blood pressure drugs) available only since WWII; public health measures (sanitation, clean water) preceded and enabled later medical advances"
+      ],
+      "sources": [
+        {
+          "text": "Slate, Life Expectancy History",
+          "url": "https://slate.com/technology/2013/09/life-expectancy-history-public-health-and-medical-advances-that-lead-to-long-lives.html"
+        },
+        {
+          "text": "PMC, Antibiotics Impact",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5354621/"
+        },
+        {
+          "text": "Our World in Data, Life Expectancy",
+          "url": "https://ourworldindata.org/life-expectancy"
+        },
+        {
+          "text": "Concierge MDLA, Life Expectancy Evolution",
+          "url": "https://conciergemdla.com/blog/average-human-life-expectancy/"
+        }
+      ]
+    },
+    {
+      "id": "us-clinical-trials-market-2024",
+      "title": "US clinical trials market size 2024",
+      "quotes": [
+        "The U.S. clinical trials market was estimated at $45.07 billion in 2024, representing approximately 54% of the global market."
+      ],
+      "sources": [
+        {
+          "text": "Precedence Research, US Clinical Trials Market",
+          "url": "https://www.precedenceresearch.com/us-clinical-trials-market"
         }
       ]
     },
@@ -10439,7 +12049,8 @@
       "id": "us-post-wwii-military-spending-cut",
       "title": "US military spending reduction after WWII",
       "quotes": [
-        "\"Peaking at over $81 billion in 1945, the U.S. defense budget plummeted to approximately $13 billion by 1948, representing an 84% decrease. The number of personnel was reduced almost 90%, from more than 12 million to about 1.5 million between mid-1945 and mid-1947.\""
+        "\"Peaking at over $81 billion in 1945, the U.S. defense budget plummeted to approximately $13 billion by 1948, representing an 84% decrease. The number of personnel was reduced almost 90%, from more than 12 million to about 1.5 million between mid-1945 and mid-1947.\"",
+        "> \"Defense spending exceeded 41 percent of GDP in 1945. After World War II, the US reduced defense spending to 7.2 percent of GDP by 1948. Defense spending doubled from the 1948 low to 15 percent at the height of the Korean War in 1953.\""
       ],
       "sources": [
         {
@@ -10449,6 +12060,14 @@
         {
           "text": "American Progress, Historical Perspective on Defense Budgets",
           "url": "https://www.americanprogress.org/article/a-historical-perspective-on-defense-budgets/"
+        },
+        {
+          "text": "St. Louis Fed, Which War Saw the Highest Defense Spending?",
+          "url": "https://www.stlouisfed.org/on-the-economy/2020/february/war-highest-defense-spending-measured"
+        },
+        {
+          "text": "US Government Spending, Defense Spending History",
+          "url": "https://www.usgovernmentspending.com/defense_spending_history"
         }
       ]
     },
@@ -10536,12 +12155,7 @@
       ],
       "sources": [
         {
-          "text": "See 1% Treaty overview",
-          "url": "solution/1-percent-treaty.qmd"
-        },
-        {
-          "text": "for full calculation details and VICTORY Bonds",
-          "url": "economics/victory-bonds.qmd"
+          "text": "Calculated from 1% of global military spending ($2.7T × 1%)"
         }
       ]
     },
@@ -10857,6 +12471,163 @@
       ]
     },
     {
+      "id": "who-global-health-estimates-2024",
+      "title": "WHO Global Health Estimates 2024",
+      "quotes": [
+        "Comprehensive mortality and morbidity data by cause, age, sex, country, and year",
+        "Global mortality: ~55-60 million deaths annually",
+        "Lives saved by modern medicine (vaccines, cardiovascular drugs, oncology): ~12M annually (conservative aggregate)",
+        "Leading causes of death: Cardiovascular disease (17.9M), Cancer (10.3M), Respiratory disease (4.0M)",
+        "Note: Baseline data for regulatory mortality analysis. Conservative estimate of pharmaceutical impact based on WHO immunization data (4.5M/year from vaccines) + cardiovascular interventions (3.3M/year) + oncology (1.5M/year) + other therapies."
+      ],
+      "sources": [
+        {
+          "text": "World Health Organization, 2024, Global Health Estimates: Life expectancy and leading causes of death and disability",
+          "url": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates"
+        }
+      ]
+    },
+    {
+      "id": "cvd-80-percent-preventable",
+      "title": "80% of cardiovascular disease is preventable",
+      "quotes": [
+        "\"As many as 80% of all heart attacks and strokes are preventable\" through addressing lifestyle risk factors",
+        "WHO: Most cardiovascular diseases can be prevented by addressing behavioral and environmental risk factors such as tobacco use, unhealthy diet, obesity, physical inactivity, harmful use of alcohol, and air pollution",
+        "Cleveland Clinic: \"90 percent of heart disease is preventable through healthier diet, regular exercise, and not smoking\"",
+        "In 2 large cohort studies, a reduction of CVD risk of >80% and diabetes >90% were demonstrated in individuals who followed healthy lifestyle practices",
+        "Only 5% of individuals follow all lifestyle factors for \"ideal\" cardiovascular health (American Heart Association)"
+      ],
+      "sources": [
+        {
+          "text": "WHO: Cardiovascular diseases (CVDs)",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds"
+        },
+        {
+          "text": "World Heart Federation: CVD Prevention",
+          "url": "https://world-heart-federation.org/what-we-do/prevention/"
+        },
+        {
+          "text": "Cleveland Clinic: 90% Preventable",
+          "url": "https://newsroom.clevelandclinic.org/2021/09/29/90-percent-of-heart-disease-is-preventable-through-healthier-diet-regular-exercise-and-not-smoking"
+        },
+        {
+          "text": "PMC: Strategy to Reduce CVD by 80%",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC162259/"
+        }
+      ]
+    },
+    {
+      "id": "cancer-30-50-percent-preventable",
+      "title": "30-50% of cancer is currently preventable; 90-95% has environmental/lifestyle roots",
+      "quotes": [
+        "IARC/WHO: Environmental and lifestyle factors contribute to about 50% of the global cancer burden; expected to contribute to remaining 50% for which causes currently unknown",
+        "WHO: 35% of cancer deaths worldwide are due to potentially preventable or modifiable risk factors",
+        "PMC: \"Only 5-10% of all cancer cases can be attributed to genetic defects, whereas the remaining 90-95% have their roots in the environment and lifestyle\"",
+        "Breakdown: 25-30% due to tobacco, 30-35% linked to diet, 15-20% due to infections, remainder from radiation, stress, physical activity, pollutants",
+        "US: 4 out of 10 cancer cases associated with preventable risk factors (tobacco/alcohol use, physical inactivity)",
+        "Note: Current preventability (~35-40%) vs. theoretical max (90-95% if all environmental/lifestyle factors addressed)"
+      ],
+      "sources": [
+        {
+          "text": "PMC: Cancer is a Preventable Disease",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2515569/"
+        },
+        {
+          "text": "IARC: Environment and Lifestyle Epidemiology",
+          "url": "https://www.iarc.who.int/branches-env/"
+        },
+        {
+          "text": "AACR Cancer Progress Report: Risk Factors",
+          "url": "https://cancerprogressreport.aacr.org/progress/cpr22-contents/cpr22-preventing-cancer-identifying-risk-factors/"
+        }
+      ]
+    },
+    {
+      "id": "injuries-largely-preventable",
+      "title": "Injuries are largely preventable events",
+      "quotes": [
+        "WHO: \"Injuries have traditionally been regarded as random, unavoidable 'accidents'. Today both unintentional and intentional injuries are viewed as largely preventable events.\"",
+        "4.4 million injury-related deaths annually: 3.16M unintentional, 1.25M violence-related",
+        "Injuries are preventable by changing environment, individual behavior, products, social norms, legislation, and governmental/institutional policies",
+        "When standardized per 100,000 population, death rate is nearly double in low/middle-income vs high-income countries (65 vs 35 per 100,000)",
+        "90% of injury-related deaths occur in low- and middle-income countries",
+        "Note: ~60% of accidental deaths theoretically preventable through policy, technology, and behavior change; 40% involve instantaneous trauma beyond medical intervention"
+      ],
+      "sources": [
+        {
+          "text": "WHO: Injuries and Violence Fact Sheet",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/injuries-and-violence"
+        },
+        {
+          "text": "PMC: Global Burden of Unintentional Injuries",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2912603/"
+        },
+        {
+          "text": "WHO: Injury Chart Book",
+          "url": "https://www.who.int/publications-detail-redirect/the-injury-chart-book-a-graphical-overview-of-the-global-burden-of-injuries"
+        }
+      ]
+    },
+    {
+      "id": "aging-reversal-mammals-yamanaka",
+      "title": "Aging reversal demonstrated in mammals using Yamanaka factors",
+      "quotes": [
+        "Harvard/Sinclair: Loss of epigenetic information causes aging; restoring epigenome integrity reverses aging signs in mice",
+        "OSK therapy (Oct4, Sox2, Klf4): Ectopic induction can restore youthful DNA methylation patterns, transcript profiles, and tissue function without erasing cellular identity",
+        "Results in mice: Systemically delivered adeno-associated viruses encoding inducible OSK in 124-week-old mice extended median remaining lifespan by 109% over wild-type controls",
+        "Vision restored in glaucoma mice - first successful reversal (not just halting progression)",
+        "Cyclic partial reprogramming (2 days on, 5 days off) showed improvements after just 6 weeks including reduced age-related spinal curvature",
+        "Human cells: Babraham Institute showed cellular reprogramming reverses epigenetic age of human skin cells by 30 years",
+        "Chemical alternatives: Six chemical cocktails identified that restore youthful genome-wide transcript profile in less than a week without compromising cellular identity",
+        "Note: Demonstrates biological aging is reversible, not inevitable; safety testing ongoing before human application"
+      ],
+      "sources": [
+        {
+          "text": "PMC: Chemically Induced Reprogramming to Reverse Aging",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10373966/"
+        },
+        {
+          "text": "Nature: Long Road of Reprogramming-Induced Rejuvenation",
+          "url": "https://www.nature.com/articles/s41467-024-46020-5"
+        },
+        {
+          "text": "Liebertpub: Gene Therapy Extends Lifespan 109%",
+          "url": "https://www.liebertpub.com/doi/10.1089/cell.2023.0072"
+        },
+        {
+          "text": "Clinical Epigenetics: Cellular Reprogramming and Rejuvenation",
+          "url": "https://clinicalepigeneticsjournal.biomedcentral.com/articles/10.1186/s13148-021-01158-7"
+        }
+      ]
+    },
+    {
+      "id": "neurodegenerative-stem-cell-potential",
+      "title": "Stem cell therapy shows promise for neurodegenerative diseases",
+      "quotes": [
+        "R3 paradigm: Rejuvenation (restoring cell function), Regeneration (stimulating repair), Replacement (substituting lost cells)",
+        "Alzheimer's: Stanford study showed stem cell transplants reduced brain abnormalities in mice; Neural Stem Cell Therapy shown to improve cognitive function and reduce amyloid plaques",
+        "Parkinson's: Clinical trial found Neural Stem Cell Therapy significantly improved motor function and was well-tolerated",
+        "ALS/Huntington's: MSC (mesenchymal stem cell) therapy effectiveness confirmed; slows ALS progression",
+        "Challenge: Clinical trials often enroll patients at advanced stages; many preclinically promising drugs ineffective in late-stage human trials",
+        "Current status: Largely experimental and early clinical trial stages; researchers working to overcome delivery challenges, safety concerns, and targeting widespread neuronal damage",
+        "Note: 80% theoretical max for neurodegenerative reflects early-stage intervention potential; current treatments limited (~10% effective)"
+      ],
+      "sources": [
+        {
+          "text": "PMC: Regenerative Stem Cell Therapy for Neurodegenerative Diseases",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7926761/"
+        },
+        {
+          "text": "Stanford Medicine: Stem Cell Alzheimer's Study",
+          "url": "https://med.stanford.edu/news/all-news/2023/09/stem-cell-alzheimers.html"
+        },
+        {
+          "text": "Stem Cell Research & Therapy: Cell-based Strategies",
+          "url": "https://stemcellres.biomedcentral.com/articles/10.1186/s13287-025-04285-7"
+        }
+      ]
+    },
+    {
       "id": "who-smallpox-eradication-commemoration",
       "title": "WHO smallpox eradication commemoration (2010)",
       "quotes": [
@@ -10954,12 +12725,12 @@
       "id": "worldcoin-scale",
       "title": "Worldcoin identity verification scale",
       "quotes": [
-        "\"Worldcoin has verified over 2 million unique human identities using iris biometric scanning, demonstrating feasibility of global-scale biometric verification.\""
+        "\"World Network now spans 160 countries and more than 14 million verified unique humans using iris biometric scanning, demonstrating feasibility of global-scale biometric verification.\""
       ],
       "sources": [
         {
-          "text": "Worldcoin Foundation, 2024, Progress Update",
-          "url": "https://worldcoin.org/blog/announcements/worldcoin-milestones"
+          "text": "World Foundation, 2025, World: Year Two",
+          "url": "https://world.org/blog/announcements/world-year-two"
         }
       ]
     },
@@ -11026,6 +12797,269 @@
         {
           "text": "NCSE, How Many Young-Earth Creationists?",
           "url": "https://ncse.ngo/just-how-many-young-earth-creationists-are-there-us"
+        }
+      ]
+    },
+    {
+      "id": "average-us-hourly-wage",
+      "title": "Average US hourly wage",
+      "quotes": [
+        "Mean: $32.66 | Median: $23.80 (May 2024)"
+      ],
+      "sources": [
+        {
+          "text": "BLS, Occupational Employment and Wages May 2024",
+          "url": "https://www.bls.gov/news.release/pdf/ocwage.pdf"
+        }
+      ]
+    },
+    {
+      "id": "us-median-salary-2024",
+      "title": "US median salary",
+      "quotes": [
+        "Personal income: $45,140 | Household: $83,730 (2024)"
+      ],
+      "sources": [
+        {
+          "text": "Census Bureau, Income in the United States: 2024",
+          "url": "https://www.census.gov/library/publications/2025/demo/p60-286.html"
+        }
+      ]
+    },
+    {
+      "id": "ceo-compensation",
+      "title": "CEO compensation",
+      "quotes": [
+        "S&P 500 average: $18.9M (2024) | ~$9,087/hour | 285:1 CEO-to-worker ratio"
+      ],
+      "sources": [
+        {
+          "text": "EPI, CEO Pay 2024",
+          "url": "https://www.epi.org/blog/ceo-pay-increased-in-2024-and-is-now-281-times-that-of-the-typical-worker-new-epi-landing-page-has-all-the-details/"
+        }
+      ]
+    },
+    {
+      "id": "hospital-room-costs",
+      "title": "Hospital room costs",
+      "quotes": [
+        "Average: $3,025/day ($126/hour) in 2024"
+      ],
+      "sources": [
+        {
+          "text": "Average Hospital Stay Costs 2025",
+          "url": "https://nchstats.com/average-cost-of-hospital-stays-in-us/"
+        }
+      ]
+    },
+    {
+      "id": "average-reading-speed",
+      "title": "Average reading speed",
+      "quotes": [
+        "Adults: ~250 words/minute (silent reading)"
+      ],
+      "sources": [
+        {
+          "text": "Educational psychology literature"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trial-eligibility-rate",
+      "title": "Clinical trial eligibility",
+      "quotes": [
+        "Ineligibility: 18.5-25.4% | 55% agree when offered"
+      ],
+      "sources": [
+        {
+          "text": "Applied Clinical Trials",
+          "url": "https://www.appliedclinicaltrialsonline.com/view/rebooting-the-statistic-that-5-of-eligible-patients-participate-in-clinical-trials"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trial-abandonment-rate",
+      "title": "Clinical trial abandonment",
+      "quotes": [
+        "Average: ~10% abandoned before completion"
+      ],
+      "sources": [
+        {
+          "text": "Industry estimates"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trial-completion-rate",
+      "title": "Clinical trial completion",
+      "quotes": [
+        "Average: ~85-90% reach completion"
+      ],
+      "sources": [
+        {
+          "text": "Industry estimates"
+        }
+      ]
+    },
+    {
+      "id": "global-trial-participant-capacity",
+      "title": "Global trial capacity",
+      "quotes": [
+        "1.9M participants annually (2022, post-COVID normalization from 4M peak in 2021)"
+      ],
+      "sources": [
+        {
+          "text": "IQVIA Report: Clinical Trial Subjects Number Drops Due to Decline in COVID-19 Enrollment",
+          "url": "https://gmdpacademy.org/news/iqvia-report-clinical-trial-subjects-number-drops-due-to-decline-in-covid-19-enrollment/"
+        }
+      ]
+    },
+    {
+      "id": "software-pricing-market-rates",
+      "title": "Software pricing",
+      "quotes": [
+        "SaaS: $10-500/month/user | Enterprise: $100-10,000/month"
+      ],
+      "sources": [
+        {
+          "text": "Market rate estimates"
+        }
+      ]
+    },
+    {
+      "id": "childhood-vaccination-economic-benefits",
+      "title": "Childhood vaccination economic benefits",
+      "quotes": [
+        "US programs (1994-2023): $540B direct savings, $2.7T societal savings (~$18B/year direct, ~$90B/year societal)",
+        "Global (2001-2020): $820B value for 10 diseases in 73 countries (~$41B/year)",
+        "ROI: $11 return per $1 invested",
+        "Measles vaccination alone saved 93.7M lives (61% of 154M total) over 50 years (1974-2024)"
+      ],
+      "sources": [
+        {
+          "text": "CDC MMWR, Childhood Immunizations 1994-2023",
+          "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm"
+        },
+        {
+          "text": "The Lancet, 50 Years of Expanded Programme on Immunization",
+          "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24"
+        }
+      ]
+    },
+    {
+      "id": "chemical-space-size",
+      "title": "Total drug-like chemical space (10^23 - 10^60)",
+      "quotes": [
+        "\"Estimated 10^23 to 10^60 drug-like molecules exist in chemical space, dwarfing the number of compounds ever synthesized.\""
+      ],
+      "sources": [
+        {
+          "text": "Reymond, J. L., 2015, The Chemical Space Project",
+          "url": "https://pubs.acs.org/doi/10.1021/ar500432k"
+        }
+      ]
+    },
+    {
+      "id": "clinical-trials-puzzle-interactome",
+      "title": "Only ~12% of human interactome targeted",
+      "quotes": [
+        "\"Mapping 350,000+ clinical trials showed that only ~12% of the human interactome has ever been targeted by drugs.\""
+      ],
+      "sources": [
+        {
+          "text": "PMC, 2023, The Clinical Trials Puzzle",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10749231/"
+        }
+      ]
+    },
+    {
+      "id": "disease-network-overlap",
+      "title": "Disease network overlap (network medicine)",
+      "quotes": [
+        "\"Diseases cluster on shared biological networks, meaning drugs for one condition may plausibly affect many others.\""
+      ],
+      "sources": [
+        {
+          "text": "Barabási et al., 2011, Network medicine: a network-based approach to human disease",
+          "url": "https://www.nature.com/articles/nrg2918"
+        }
+      ]
+    },
+    {
+      "id": "drug-repurposing-rate",
+      "title": "Drug Repurposing Rate (~30%)",
+      "quotes": [
+        "\"Approximately 30% of drugs gain at least one new indication after initial approval.\""
+      ],
+      "sources": [
+        {
+          "text": "Nature Medicine, 2024, Drug Repurposing Trends",
+          "url": "https://www.nature.com/articles/s41591-024-03233-x"
+        }
+      ]
+    },
+    {
+      "id": "fda-approved-products-20k",
+      "title": "FDA-approved prescription drug products (20,000+)",
+      "quotes": [
+        "\"There are over 20,000 prescription drug products approved for marketing.\""
+      ],
+      "sources": [
+        {
+          "text": "FDA, Facts About Generic Drugs",
+          "url": "https://www.fda.gov/media/143704/download"
+        }
+      ]
+    },
+    {
+      "id": "fda-gras-list-count",
+      "title": "FDA GRAS List Count (~570-700)",
+      "quotes": [
+        "\"The FDA GRAS (Generally Recognized as Safe) list contains approximately 570–700 substances.\""
+      ],
+      "sources": [
+        {
+          "text": "FDA, GRAS Notice Inventory",
+          "url": "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory"
+        }
+      ]
+    },
+    {
+      "id": "icd-10-code-count",
+      "title": "ICD-10 Code Count (~14,000)",
+      "quotes": [
+        "\"The ICD-10 classification contains approximately 14,000 codes for diseases, signs and symptoms.\""
+      ],
+      "sources": [
+        {
+          "text": "WHO, ICD-10 Browser",
+          "url": "https://icd.who.int/browse10/2019/en"
+        }
+      ]
+    },
+    {
+      "id": "preferential-target-attachment",
+      "title": "Preferential target attachment in clinical trials",
+      "quotes": [
+        "\"Clinical trials overwhelmingly test the same few biological targets due to preferential attachment dynamics.\""
+      ],
+      "sources": [
+        {
+          "text": "arXiv, 2023, Preferential Attachment in Drug Development",
+          "url": "https://arxiv.org/abs/2301.10709"
+        }
+      ]
+    },
+    {
+      "id": "zinc-22-database",
+      "title": "ZINC-22 Database (Billions of compounds)",
+      "quotes": [
+        "\"ZINC-22 contains tens of billions of purchasable virtual molecules for drug discovery.\""
+      ],
+      "sources": [
+        {
+          "text": "ACS, ZINC-22",
+          "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.2c01253"
         }
       ]
     }

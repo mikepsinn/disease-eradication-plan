@@ -7,8 +7,9 @@ Generate _variables.yml and academic outputs from parameters.py
 Reads all numeric constants from dih_models/parameters.py and generates:
 1. _variables.yml - Quarto-compatible variables with tooltips
 2. knowledge/appendix/parameters-and-calculations.qmd - Academic reference with LaTeX
-3. references.bib - BibTeX export for LaTeX submissions
-4. (Optional) Inject citations into economics.qmd
+3. knowledge/references.json - Structured JSON from references.qmd
+4. references.bib - BibTeX export for LaTeX submissions
+5. (Optional) Inject citations into economics.qmd
 
 Usage:
     python scripts/generate-variables-yml.py [options]
@@ -51,6 +52,14 @@ from pathlib import Path
 from typing import Any, Dict, Union
 
 import yaml
+
+# Add scripts directory to path for local imports
+_scripts_dir = Path(__file__).parent.absolute()
+if str(_scripts_dir) not in sys.path:
+    sys.path.insert(0, str(_scripts_dir))
+
+# Import the references JSON generator
+from generate_references_json import generate_references_json
 
 
 def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
@@ -1638,6 +1647,12 @@ def main():
     print(f"[OK] Found {len(available_refs)} reference entries")
     print()
 
+    # Generate references.json from references.qmd
+    print("[*] Generating knowledge/references.json...")
+    references_json_path = project_root / "knowledge" / "references.json"
+    generate_references_json(references_path, references_json_path)
+    print()
+
     # Generate reference_ids.py enum SECOND (before loading parameters.py which imports it)
     print("[*] Generating dih_models/reference_ids.py...")
     reference_ids_path = project_root / "dih_models" / "reference_ids.py"
@@ -1740,6 +1755,7 @@ def main():
     print("    1. Review generated files:")
     print(f"       - {output_path.relative_to(project_root)}")
     print(f"       - {qmd_output.relative_to(project_root)}")
+    print(f"       - {references_json_path.relative_to(project_root)}")
     print(f"       - {bib_output.relative_to(project_root)}")
     print(f"       - {reference_ids_path.relative_to(project_root)}")
     print(f"       - OUTLINE-GENERATED.MD")
