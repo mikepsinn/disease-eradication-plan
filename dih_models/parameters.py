@@ -43,6 +43,27 @@ class SourceType(str, Enum):
     DEFINITION = "definition"
 
 
+class DistributionType(str, Enum):
+    """Probability distributions for Probabilistic Sensitivity Analysis (PSA).
+
+    Attributes:
+        NORMAL: Symmetric uncertainty (mean, sd). Good for large samples.
+        LOGNORMAL: Right-skewed, strictly positive. Good for costs, relative risks.
+        BETA: Bounded [0,1]. Good for probabilities, utilities.
+        GAMMA: Right-skewed, strictly positive. Good for costs.
+        TRIANGULAR: Defined by min, mode, max. Good when data is scarce.
+        UNIFORM: Equal probability between min/max. Good for deep uncertainty.
+        FIXED: No uncertainty (deterministic).
+    """
+    NORMAL = "normal"
+    LOGNORMAL = "lognormal"
+    BETA = "beta"
+    GAMMA = "gamma"
+    TRIANGULAR = "triangular"
+    UNIFORM = "uniform"
+    FIXED = "fixed"
+
+
 class Parameter(float):
     r"""A numeric parameter that works in calculations but carries source metadata.
 
@@ -70,8 +91,9 @@ class Parameter(float):
         keywords: List of search keywords for parameter discovery
         min_value: Minimum valid value (validation)
         max_value: Maximum valid value (validation)
-        confidence_interval: Tuple of (lower_bound, upper_bound) for statistical confidence
+        confidence_interval: Tuple of (lower, upper) for statistical confidence
         std_error: Standard error for statistical parameters
+        distribution: DistributionType for Probabilistic Sensitivity Analysis
 
     Examples:
         # External data source with high confidence
@@ -135,9 +157,10 @@ class Parameter(float):
 
     __slots__ = (
         'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
-        'confidence', 'last_updated', 'peer_reviewed', 'conservative', 'sensitivity',
-        'display_value', 'display_name', 'keywords', 'min_value', 'max_value',
-        'confidence_interval', 'std_error'
+        'confidence', 'last_updated', 'peer_reviewed', 'conservative',
+        'sensitivity', 'display_value', 'display_name', 'keywords',
+        'min_value', 'max_value', 'confidence_interval', 'std_error',
+        'distribution'
     )
 
     # Type annotations for Pylance/Pyright
@@ -159,6 +182,7 @@ class Parameter(float):
     max_value: "float | None"
     confidence_interval: "tuple[float, float] | None"
     std_error: "float | None"
+    distribution: "DistributionType | None"
 
     def __new__(
         cls,
@@ -182,21 +206,26 @@ class Parameter(float):
         max_value: Optional[float] = None,
         confidence_interval: Optional[Tuple[float, float]] = None,
         std_error: Optional[float] = None,
+        distribution: Union[DistributionType, str, None] = None,
     ):
         # Convert string source_type to enum (backwards compatibility)
         if not isinstance(source_type, SourceType):
             source_type = SourceType(source_type)
 
+        # Convert string distribution to enum
+        if distribution is not None and not isinstance(distribution, DistributionType):
+            distribution = DistributionType(distribution)
+
         # Validation: check bounds
         if min_value is not None and value < min_value:
             raise ValueError(
-                f"Parameter value {value} is below minimum {min_value}. "
-                f"Description: {description or 'No description'}"
+                f"Value {value} < min {min_value}. "
+                f"Desc: {description or 'N/A'}"
             )
         if max_value is not None and value > max_value:
             raise ValueError(
-                f"Parameter value {value} exceeds maximum {max_value}. "
-                f"Description: {description or 'No description'}"
+                f"Value {value} > max {max_value}. "
+                f"Desc: {description or 'N/A'}"
             )
 
         # Validation: confidence interval should contain value
@@ -204,8 +233,8 @@ class Parameter(float):
             lower, upper = confidence_interval
             if not (lower <= value <= upper):
                 raise ValueError(
-                    f"Parameter value {value} outside confidence interval [{lower}, {upper}]. "
-                    f"Description: {description or 'No description'}"
+                    f"Value {value} outside interval [{lower}, {upper}]. "
+                    f"Desc: {description or 'N/A'}"
                 )
 
         instance = super().__new__(cls, value)
@@ -229,6 +258,7 @@ class Parameter(float):
         instance.max_value = max_value
         instance.confidence_interval = confidence_interval
         instance.std_error = std_error
+        instance.distribution = distribution
 
         return instance
 

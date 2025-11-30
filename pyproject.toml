@@ -80,3 +80,10 @@ disallow_untyped_defs = false
 ignore_missing_imports = true
 no_strict_optional = true
 
+# Flake8 configuration (disable line-length rule E501)
+[tool.flake8]
+max-line-length = 120
+extend-ignore = [
+    "E501",  # line too long
+]
+
