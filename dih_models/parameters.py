@@ -1069,16 +1069,6 @@ CURRENT_TRIAL_ABANDONMENT_RATE = Parameter(
     keywords=["40%", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
 )  # 40% of trials never complete
 
-CURRENT_TRIAL_COMPLETION_RATE = Parameter(
-    0.60,
-    source_ref="clinical-trial-completion-rate",
-    source_type="external",
-    description="Current trial completion rate (60%)",
-    display_name="Current Trial Completion Rate",
-    unit="rate",
-    keywords=["60%", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
-)  # 60% completion rate
-
 CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
     1_900_000,
     source_ref="global-trial-participant-capacity",
