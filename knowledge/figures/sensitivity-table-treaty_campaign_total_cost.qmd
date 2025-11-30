@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treaty Campaign Budget Lobbying | 251823497.1376 | Strong driver |
-| Treaty Campaign Budget Referendum | 81183517.8204 | Strong driver |
-| Treaty Campaign Budget Reserve | 20244101.6868 | Strong driver |
+| Treaty Campaign Budget Lobbying | 249233433.4099 | Strong driver |
+| Treaty Campaign Budget Referendum | 81992380.6304 | Strong driver |
+| Treaty Campaign Budget Reserve | 20363405.5618 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

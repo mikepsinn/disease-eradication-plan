@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA R&D Gross Savings Annual | 4830587553.5335 | Strong driver |
-| dFDA Annual OPEX | -6322789.9275 | Strong driver |
+| dFDA R&D Gross Savings Annual | 4871747470.5033 | Strong driver |
+| dFDA Annual OPEX | -6403501.1478 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

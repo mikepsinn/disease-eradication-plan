@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Regulatory Delay Suffering Period Years | 188450435.3785 | Strong driver |
-| Chronic Disease Disability Weight | 167256865.8367 | Strong driver |
-| Disease Eradication Delay Deaths Total | 84230491.3343 | Strong driver |
+| Regulatory Delay Suffering Period Years | 1359810810.9798 | Strong driver |
+| Disease Eradication Delay Deaths Total | -1005476346.7401 | Strong driver |
+| Chronic Disease Disability Weight | 122407018.0447 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

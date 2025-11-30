@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Regulatory Delay Mean Age Of Death | -1235566311.6043 | Strong driver |
-| Global Life Expectancy 2024 | 827195501.5644 | Strong driver |
-| Disease Eradication Delay Deaths Total | 686059341.3866 | Strong driver |
+| Global Life Expectancy 2024 | 1350128056.9201 | Strong driver |
+| Regulatory Delay Mean Age Of Death | -938164219.7823 | Strong driver |
+| Disease Eradication Delay Deaths Total | -139553203.5065 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).
