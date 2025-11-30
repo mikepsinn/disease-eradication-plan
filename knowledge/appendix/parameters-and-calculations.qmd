@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 389
+**Total parameters**: 387
 
 - External sources (peer-reviewed): 129
-- Calculated values: 212
-- Core definitions: 48
+- Calculated values: 211
+- Core definitions: 47
 
 ## External Data Sources {#sec-external}
 
@@ -2162,21 +2162,6 @@ DeathsPerSecond = \frac{150,000 \text{ (daily deaths)}}{86,400 \text{ (sec/day)}
 $$
 
 **Methodology**: [../problem/cost-of-war#cost-of-delay](../problem/cost-of-war#cost-of-delay)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Current Completed Trials per Year {#sec-current_completed_trials_per_year}
-
-**Value**: 1,980
-
-Current completed trials per year (trials × completion rate)
-
-$$
-Completed_{current} = 3,300 \times 0.60 = 1,980
-$$
 
 *✓ High confidence*
 
@@ -5130,17 +5115,6 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 **Value**: 99%
 
 Percentage of budget defense sector keeps under 1% treaty
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### dFDA Trial Completion Rate {#sec-dfda_trial_completion_rate}
-
-**Value**: 95%
-
-dFDA trial completion rate (95%)
 
 *Core definition*
 

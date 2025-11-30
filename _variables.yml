@@ -276,10 +276,6 @@
   \ trial participation rate (0.06% of population) | ✓ High confidence | Unit: rate\
   \ | Click to view source\">0.06%</a>"
 "current_clinical_trial_participation_rate_cite": "@clinical-trial-patient-participation-rate"
-"current_completed_trials_per_year": "<span class=\"parameter-link\" title=\"parameters.CURRENT_COMPLETED_TRIALS_PER_YEAR\"\
-  >1,980</span>"
-"current_completed_trials_per_year_latex": "$$\nCompleted_{current} = 3,300 \\times\
-  \ 0.60 = 1,980\n$$"
 "current_disease_patients_global": "<a href=\"https://warondisease.org/knowledge/references.html#disease-prevalence-2-billion\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-prevalence-2-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population with chronic diseases\
@@ -555,8 +551,6 @@
   >84,834</span>"
 "dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 25.7 = 84,800\n\
   $$"
-"dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
-  \ completion rate (95%) | Unit: rate | Core definition\">95%</span>"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA platform\
@@ -2243,6 +2237,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "389"
-"total_latex_equation_count": "141"
+"total_parameter_count": "387"
+"total_latex_equation_count": "140"
 "total_citation_count": "129"
