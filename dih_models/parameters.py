@@ -1133,12 +1133,6 @@ PHASE_3_TRIAL_COST_MIN = Parameter(
 
 # (DFDA_ACTIVE_TRIALS moved to after TRIAL_CAPACITY_MULTIPLIER definition)
 
-DFDA_TRIAL_COMPLETION_RATE = Parameter(
-    0.95, source_ref="", source_type="definition", description="dFDA trial completion rate (95%)", unit="rate",
-    display_name="dFDA Trial Completion Rate",
-    keywords=["95%", "pragmatic trials", "real world evidence", "credible interval", "uncertainty range", "rct", "error bars"]
-)  # 95% completion rate
-
 # dFDA Trial Economics
 RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     500,
@@ -1174,18 +1168,6 @@ PRE_1962_VALIDATION_YEARS = Parameter(
 # Research Acceleration Multipliers - MOVED to after GLOBAL_MED_RESEARCH_SPENDING (line ~2971)
 # See calculation block after TOTAL_RESEARCH_FUNDING_WITH_TREATY
 
-# Calculated Research Capacity
-# Traditional: 3,300 trials/year × 60% completion = ~2,000 completed/year
-CURRENT_COMPLETED_TRIALS_PER_YEAR = Parameter(
-    int(CURRENT_TRIALS_PER_YEAR * CURRENT_TRIAL_COMPLETION_RATE),
-    source_type="calculated",
-    description="Current completed trials per year (trials × completion rate)",
-    display_name="Current Completed Trials per Year",
-    unit="trials/year",
-    formula="TRIALS_PER_YEAR × COMPLETION_RATE",
-    latex=r"Completed_{current} = 3,300 \times 0.60 = 1,980",
-    keywords=["rct", "clinical study", "clinical trial", "research trial", "faster development", "innovation speed", "randomized controlled trial"]
-)  # 1,980
 # (DFDA_COMPLETED_TRIALS_PER_YEAR moved to after DFDA_TRIALS_PER_YEAR_CAPACITY definition)
 
 # dFDA operational costs
