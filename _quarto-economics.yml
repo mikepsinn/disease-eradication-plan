@@ -51,7 +51,6 @@ project:
     - knowledge/appendix/parameters-and-calculations.qmd # ✅ AUTO-GENERATED comprehensive parameter reference with LaTeX equations, citations, confidence indicators
     - knowledge/appendix/peace-dividend-calculations.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd # ✓ Style reviewed 2025-01-15
-    - knowledge/appendix/research-acceleration-model.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/dfda-cost-benefit-analysis.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
@@ -142,8 +141,6 @@ website:
             text: "Value of Accelerated Drug Development"
           - href: knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd
             text: "Lifetime Wealth Impact Model"
-          - href: knowledge/appendix/research-acceleration-model.qmd
-            text: "Research Acceleration Framework"
           - href: knowledge/appendix/intervention-comparison-table.qmd
             text: "Comparative Intervention Analysis"
       - section: "Implementation Feasibility"

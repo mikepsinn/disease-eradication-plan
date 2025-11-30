@@ -60,6 +60,15 @@ if str(_scripts_dir) not in sys.path:
 
 # Import the references JSON generator
 from generate_references_json import generate_references_json
+try:
+    # Optional uncertainty integration
+    from dih_models.uncertainty import simulate, one_at_a_time_sensitivity, tornado_deltas, regression_sensitivity, Outcome
+except Exception:
+    simulate = None  # type: ignore
+    one_at_a_time_sensitivity = None  # type: ignore
+    tornado_deltas = None  # type: ignore
+    regression_sensitivity = None  # type: ignore
+    Outcome = None  # type: ignore
 
 
 def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
@@ -1019,6 +1028,22 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 content.append("*" + " • ".join(metadata) + "*")
                 content.append("")
 
+            # Add uncertainty visualization if tornado/sensitivity data exists
+            project_root = output_path.parent.parent.parent  # Go up from knowledge/appendix/ to project root
+            tornado_json = project_root / "_analysis" / f"tornado_{param_name}.json"
+            tornado_qmd = project_root / "knowledge" / "figures" / f"tornado-{param_name.lower()}.qmd"
+            sensitivity_qmd = project_root / "knowledge" / "figures" / f"sensitivity-table-{param_name.lower()}.qmd"
+
+            if tornado_qmd.exists():
+                content.append("#### Sensitivity Analysis")
+                content.append("")
+                content.append(f"{{{{< include ../figures/tornado-{param_name.lower()}.qmd >}}}}")
+                content.append("")
+
+                if sensitivity_qmd.exists():
+                    content.append(f"{{{{< include ../figures/sensitivity-table-{param_name.lower()}.qmd >}}}}")
+                    content.append("")
+
             content.append(":::")
             content.append("")
 
@@ -1638,6 +1663,186 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
         print("[OK] No citation injection needed (already present or no external params)")
 
 
+def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: Path, param_metadata: dict = None, baseline: float = None, units: str = "") -> Path:
+    """
+    Generate a tornado chart QMD file for a parameter with uncertainty.
+    
+    Args:
+        param_name: Parameter name (e.g., 'TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT')
+        tornado_data: Dict mapping input names to {delta_minus, delta_plus}
+        output_dir: Directory to write QMD file (knowledge/figures/)
+        param_metadata: Optional parameter metadata for context
+        baseline: Baseline value to center chart on (instead of 0)
+        units: Units for x-axis label
+    
+    Returns:
+        Path to generated QMD file
+    """
+    # Get display name for title
+    if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
+        display_name = param_metadata["value"].display_name
+    else:
+        display_name = smart_title_case(param_name)
+    
+    # Sort by absolute impact (largest first)
+    sorted_drivers = sorted(
+        tornado_data.items(),
+        key=lambda x: abs(x[1].get("delta_minus", 0)) + abs(x[1].get("delta_plus", 0)),
+        reverse=True
+    )
+    
+    # Generate Python code for tornado chart
+    qmd_content = f'''```{{python}}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+display_name = "{display_name}"
+
+# Baseline and units
+baseline = {baseline if baseline is not None else 0.0}
+
+# Tornado data from sensitivity analysis
+drivers = {[driver for driver, _ in sorted_drivers]}
+impacts_low = {[data["delta_minus"] for _, data in sorted_drivers]}
+impacts_high = {[data["delta_plus"] for _, data in sorted_drivers]}
+
+# Convert deltas to absolute values (baseline + delta)
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {{display_name}}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+units_label = "{units if units else ""}"
+if units_label:
+    ax.set_xlabel(f'{{display_name}} ({{units_label}})', fontsize=12)
+else:
+    ax.set_xlabel(f'{{display_name}}', fontsize=12)
+
+# Add vertical line at baseline
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+clean_spines(ax)
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG (mandatory per design guide)
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'tornado-{param_name.lower()}.png'
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {{display_name}}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {{display_name}}'
+)
+
+plt.show()
+```'''
+    
+    # Write QMD file
+    output_file = output_dir / f'tornado-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(qmd_content)
+    
+    return output_file
+
+
+def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, output_dir: Path, param_metadata: dict = None) -> Path:
+    """
+    Generate a sensitivity indices table QMD file for a parameter.
+    
+    Args:
+        param_name: Parameter name
+        sensitivity_data: Dict mapping input names to sensitivity coefficients
+        output_dir: Directory to write QMD file
+        param_metadata: Optional parameter metadata for context
+    
+    Returns:
+        Path to generated QMD file
+    """
+    # Get display name
+    if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
+        display_name = param_metadata["value"].display_name
+    else:
+        display_name = smart_title_case(param_name)
+    
+    # Sort by absolute sensitivity (largest first)
+    sorted_indices = sorted(
+        sensitivity_data.items(),
+        key=lambda x: abs(x[1]),
+        reverse=True
+    )
+    
+    # Generate markdown table
+    qmd_content = f'''**Sensitivity Indices for {display_name}**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+'''
+    
+    for input_name, coef in sorted_indices:
+        display_input = smart_title_case(input_name)
+        interpretation = "Strong driver" if abs(coef) > 0.5 else "Moderate influence" if abs(coef) > 0.1 else "Minor effect"
+        qmd_content += f'| {display_input} | {coef:.4f} | {interpretation} |\n'
+    
+    qmd_content += '''
+*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).
+'''
+    
+    # Write QMD file
+    output_file = output_dir / f'sensitivity-table-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(qmd_content)
+    
+    return output_file
+
+
 def main():
     # Parse command-line arguments
     inject_citations = "--inject-citations" in sys.argv
@@ -1734,6 +1939,271 @@ def main():
     bib_output = project_root / "references.bib"
     generate_bibtex(parameters, bib_output, available_refs=available_refs, references_path=references_path)
     print()
+
+    # Always generate uncertainty outputs when module is available
+    try:
+        if simulate is not None:
+            print("[*] Generating uncertainty summaries...")
+            # Choose a target calculated parameter if any
+            target = next((name for name, meta in parameters.items()
+                           if hasattr(meta.get("value"), "formula") and meta.get("value").formula), None)
+            # Summaries directory
+            analysis_dir = project_root / "_analysis"
+            analysis_dir.mkdir(exist_ok=True)
+            # Minimal inline summary generation to avoid duplicating logic
+            from dih_models.uncertainty import simulate as _sim, one_at_a_time_sensitivity as _sens
+            sims = _sim(parameters, n=10000)
+            import json
+            try:
+                import numpy as np
+            except Exception:
+                np = None  # type: ignore
+            summaries = {}
+            for name, arr in sims.items():
+                if np is not None:
+                    a = np.asarray(arr)
+                    summaries[name] = {
+                        "mean": float(np.mean(a)),
+                        "std": float(np.std(a)),
+                        "p5": float(np.percentile(a, 5)),
+                        "p50": float(np.percentile(a, 50)),
+                        "p95": float(np.percentile(a, 95)),
+                    }
+                else:
+                    vals = list(arr)
+                    m = sum(vals) / len(vals)
+                    var = sum((v - m) ** 2 for v in vals) / len(vals)
+                    std = var ** 0.5
+                    vals_sorted = sorted(vals)
+                    def pct(p: float):
+                        i = int(p / 100 * (len(vals_sorted) - 1))
+                        return vals_sorted[i]
+                    summaries[name] = {
+                        "mean": m,
+                        "std": std,
+                        "p5": pct(5),
+                        "p50": pct(50),
+                        "p95": pct(95),
+                    }
+            with open(analysis_dir / "samples.json", "w", encoding="utf-8") as f:
+                json.dump(summaries, f, indent=2)
+            print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
+
+            if target and _sens is not None:
+                sens = _sens(parameters, target_name=target, n=2000)
+                with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8") as f:
+                    json.dump(sens, f, indent=2)
+                print(f"[OK] Wrote {(analysis_dir / 'sensitivity.json').relative_to(project_root)}")
+            else:
+                print("[WARN] No calculated target found for sensitivity analysis.")
+
+            # Generate rigorous outcomes, tornado, and sensitivity indices for parameters with compute
+            if tornado_deltas and regression_sensitivity and Outcome:
+                print("[*] Generating outcome distributions and sensitivity analysis...")
+                
+                # Validate: Find calculated parameters missing inputs/compute
+                validation_warnings = []
+                for param_name, meta in parameters.items():
+                    val = meta.get("value")
+                    source_type = getattr(val, "source_type", None)
+                    has_inputs = hasattr(val, "inputs") and val.inputs
+                    has_compute = hasattr(val, "compute") and val.compute
+                    
+                    if source_type == "calculated":
+                        if not has_inputs:
+                            validation_warnings.append(f"{param_name}: missing 'inputs' (calculated parameter)")
+                        if not has_compute:
+                            validation_warnings.append(f"{param_name}: missing 'compute' (calculated parameter)")
+                
+                if validation_warnings:
+                    print(f"\n[WARN] {len(validation_warnings)} calculated parameters missing inputs/compute:")
+                    for warning in validation_warnings[:10]:  # Show first 10
+                        print(f"  - {warning}")
+                    if len(validation_warnings) > 10:
+                        print(f"  ... and {len(validation_warnings) - 10} more")
+                    print("  (These parameters won't appear in tornado analysis drill-down)\n")
+                
+                # Auto-discover parameters with compute functions
+                analyzable_params = []
+                for param_name, meta in parameters.items():
+                    val = meta.get("value")
+                    if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
+                        # Wrap as Outcome for tornado/sensitivity
+                        outcome = Outcome(
+                            name=param_name,
+                            inputs=val.inputs,
+                            compute=val.compute,
+                            units=getattr(val, "unit", "")
+                        )
+                        analyzable_params.append(outcome)
+                
+                if not analyzable_params:
+                    print("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
+                
+                outcomes_data = {}
+                for outcome in analyzable_params:
+                    try:
+                        # Build baseline context
+                        ctx = {}
+                        for inp in outcome.inputs:
+                            meta = parameters.get(inp, {})
+                            val = meta.get("value")
+                            ctx[inp] = float(val) if val is not None else 0.0
+                        baseline = outcome.compute(ctx)
+
+                        # MC samples for outcome
+                        input_sims = {name: sims[name] for name in outcome.inputs if name in sims}
+                        if input_sims:
+                            n_samples = len(list(input_sims.values())[0])
+                            outcome_samples = []
+                            for i in range(n_samples):
+                                ctx_i = {name: float(arr[i]) for name, arr in input_sims.items()}
+                                outcome_samples.append(outcome.compute(ctx_i))
+
+                            if np is not None:
+                                oa = np.asarray(outcome_samples)
+                                outcomes_data[outcome.name] = {
+                                    "baseline": float(baseline),
+                                    "mean": float(np.mean(oa)),
+                                    "std": float(np.std(oa)),
+                                    "p5": float(np.percentile(oa, 5)),
+                                    "p50": float(np.percentile(oa, 50)),
+                                    "p95": float(np.percentile(oa, 95)),
+                                    "units": outcome.units,
+                                }
+                            else:
+                                m = sum(outcome_samples) / len(outcome_samples)
+                                var = sum((v - m) ** 2 for v in outcome_samples) / len(outcome_samples)
+                                std = var ** 0.5
+                                sorted_o = sorted(outcome_samples)
+                                def pct_o(p: float):
+                                    return sorted_o[int(p / 100 * (len(sorted_o) - 1))]
+                                outcomes_data[outcome.name] = {
+                                    "baseline": float(baseline),
+                                    "mean": m,
+                                    "std": std,
+                                    "p5": pct_o(5),
+                                    "p50": pct_o(50),
+                                    "p95": pct_o(95),
+                                    "units": outcome.units,
+                                }
+
+                            # Tornado deltas for this outcome
+                            tornado = tornado_deltas(parameters, outcome)
+                            with open(analysis_dir / f"tornado_{outcome.name}.json", "w", encoding="utf-8") as f:
+                                json.dump(tornado, f, indent=2)
+                            print(f"[OK] Wrote {(analysis_dir / f'tornado_{outcome.name}.json').relative_to(project_root)}")
+
+                            # Generate tornado chart QMD
+                            try:
+                                figures_dir = project_root / "knowledge" / "figures"
+                                param_meta = parameters.get(outcome.name, {})
+                                chart_file = generate_tornado_chart_qmd(
+                                    outcome.name, tornado, figures_dir, param_meta,
+                                    baseline=float(baseline),
+                                    units=outcome.units
+                                )
+                                print(f"[OK] Generated {chart_file.relative_to(project_root)}")
+                            except Exception as chart_err:
+                                print(f"[WARN] Failed to generate tornado chart for {outcome.name}: {chart_err}")
+
+                            # Regression sensitivity indices (filter out zero-variance inputs)
+                            filtered_input_sims = {}
+                            for inp_name, inp_vals in input_sims.items():
+                                if np is not None:
+                                    std = float(np.std(np.asarray(inp_vals)))
+                                else:
+                                    vals = list(inp_vals)
+                                    mean = sum(vals) / len(vals)
+                                    variance = sum((v - mean) ** 2 for v in vals) / len(vals)
+                                    std = variance ** 0.5
+                                
+                                # Only include inputs that actually vary
+                                if std > 1e-10:
+                                    filtered_input_sims[inp_name] = inp_vals
+                            
+                            if filtered_input_sims:
+                                sens_indices = regression_sensitivity(filtered_input_sims, outcome_samples)
+                            else:
+                                sens_indices = {inp: 0.0 for inp in input_sims.keys()}
+                            
+                            with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8") as f:
+                                json.dump(sens_indices, f, indent=2)
+                            print(f"[OK] Wrote {(analysis_dir / f'sensitivity_indices_{outcome.name}.json').relative_to(project_root)}")
+
+                            # Generate sensitivity table QMD
+                            try:
+                                sensitivity_table_file = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                print(f"[OK] Generated {sensitivity_table_file.relative_to(project_root)}")
+                            except Exception as table_err:
+                                print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
+                    except Exception as e:
+                        print(f"[WARN] Skipped outcome {outcome.name}: {e}")
+
+                with open(analysis_dir / "outcomes.json", "w", encoding="utf-8") as f:
+                    json.dump(outcomes_data, f, indent=2)
+                print(f"[OK] Wrote {(analysis_dir / 'outcomes.json').relative_to(project_root)}")
+
+                # Discount rate sensitivity for ROI_complete
+                try:
+                    roi_outcome = next((o for o in analyzable_params if "ROI" in o.name.upper() and "COMPLETE" in o.name.upper()), None)
+                    if roi_outcome:
+                        print("[*] Generating discount rate sensitivity curve...")
+                        discount_curve = []
+                        for rate in [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07]:
+                            ctx_disc = {}
+                            for inp in roi_outcome.inputs:
+                                meta = parameters.get(inp, {})
+                                val = meta.get("value")
+                                if inp == "NPV_DISCOUNT_RATE_STANDARD":
+                                    ctx_disc[inp] = rate
+                                else:
+                                    ctx_disc[inp] = float(val) if val is not None else 0.0
+                            roi_val = roi_outcome.compute(ctx_disc)
+                            discount_curve.append({"discount_rate": rate, "roi": float(roi_val)})
+                        with open(analysis_dir / "discount_curve_ROI.json", "w", encoding="utf-8") as f:
+                            json.dump(discount_curve, f, indent=2)
+                        print(f"[OK] Wrote {(analysis_dir / 'discount_curve_ROI.json').relative_to(project_root)}")
+                except Exception as e:
+                    print(f"[WARN] Discount curve generation skipped: {e}")
+
+                # Scenario bands for ROI_complete
+                try:
+                    roi_outcome = next((o for o in analyzable_params if "ROI" in o.name.upper() and "COMPLETE" in o.name.upper()), None)
+                    if roi_outcome:
+                        print("[*] Generating scenario bands...")
+                        scenarios = {
+                            "worst": 0.5,  # benefits half
+                            "conservative": 0.8,
+                            "baseline": 1.0,
+                            "optimistic": 1.5,
+                        }
+                        scenario_results = []
+                        for scenario_name, multiplier in scenarios.items():
+                            ctx_scen = {}
+                            for inp in roi_outcome.inputs:
+                                meta = parameters.get(inp, {})
+                                val = meta.get("value")
+                                v = float(val) if val is not None else 0.0
+                                # Scale benefits, keep costs fixed
+                                if inp in ["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "TRIAL_COST_REDUCTION_PCT"]:
+                                    v *= multiplier
+                                ctx_scen[inp] = v
+                            roi_val = roi_outcome.compute(ctx_scen)
+                            scenario_results.append({"scenario": scenario_name, "roi": float(roi_val)})
+                        with open(analysis_dir / "scenario_bands_ROI.json", "w", encoding="utf-8") as f:
+                            json.dump(scenario_results, f, indent=2)
+                        print(f"[OK] Wrote {(analysis_dir / 'scenario_bands_ROI.json').relative_to(project_root)}")
+                except Exception as e:
+                    print(f"[WARN] Scenario bands generation skipped: {e}")
+
+            print()
+        else:
+            print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
+            print()
+    except Exception as e:
+        print(f"[WARN] Uncertainty generation skipped: {e}")
+        print()
 
     # Optionally inject citations
     if inject_citations:

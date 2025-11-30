@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 411
+**Total parameters**: 392
 
-- External sources (peer-reviewed): 135
-- Calculated values: 228
-- Core definitions: 48
+- External sources (peer-reviewed): 130
+- Calculated values: 213
+- Core definitions: 49
 
 ## External Data Sources {#sec-external}
 
@@ -791,32 +791,6 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-### Global Cost to Achieve Universal Education {#sec-global_education_for_all_cost}
-
-**Value**: $30B
-
-Global cost to achieve universal education
-
-**Source**: [unesco-education-for-all-cost](https://warondisease.org/knowledge/references.html#unesco-education-for-all-cost)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global GDP Annual 2024 {#sec-global_gdp_annual_2024}
-
-**Value**: $105T
-
-Global GDP in 2024 (World Bank estimate, approximately $105 trillion USD)
-
-**Source**: [https://www.worldbank.org/en/publication/global-economic-prospects](https://warondisease.org/knowledge/references.html#https://www.worldbank.org/en/publication/global-economic-prospects)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
 ### Global Life Expectancy (2024) {#sec-global_life_expectancy_2024}
 
 **Value**: 79
@@ -1454,39 +1428,13 @@ US share of world population in 1960
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-### Typical Phase 3 Trial Size {#sec-traditional_large_trial_size}
+### Typical Phase 3 Trial Size
 
 **Value**: 1,000
 
 Typical Phase 3 trial size
 
 **Source**: [phase-3-participant-numbers](https://warondisease.org/knowledge/references.html#phase-3-participant-numbers)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Phase 2 Cost per Patient (High Estimate) {#sec-traditional_phase2_cost_per_patient_high}
-
-**Value**: $120K
-
-Phase 2 cost per patient (high estimate)
-
-**Source**: [clinical-trial-cost-per-patient](https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Phase 2 Cost per Patient (Low Estimate) {#sec-traditional_phase2_cost_per_patient_low}
-
-**Value**: $40K
-
-Phase 2 cost per patient (low estimate)
-
-**Source**: [clinical-trial-cost-per-patient](https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient)
 
 *✓ High confidence*
 
@@ -1526,19 +1474,6 @@ Example Phase 3 trial cost per patient ($48K)
 FDA cited Phase 3 cost per patient ($41K)
 
 **Source**: [trial-costs-fda-study](https://warondisease.org/knowledge/references.html#trial-costs-fda-study)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Typical Phase 2 Trial Size {#sec-traditional_small_trial_size}
-
-**Value**: 100
-
-Typical Phase 2 trial size
-
-**Source**: [phase-2-participant-numbers](https://warondisease.org/knowledge/references.html#phase-2-participant-numbers)
 
 *✓ High confidence*
 
@@ -1783,32 +1718,6 @@ World War II war bond return percentage (4%)
 Parameters derived from mathematical formulas and economic models.
 
 ::: {.callout-note icon=false collapse=false}
-### Time to Invest (Minimum) {#sec-action_time_invest_minutes}
-
-**Value**: 10
-
-Time to invest (minutes)
-
-**Methodology**: [../solution/wishocracy#action-steps](../solution/wishocracy#action-steps)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Time to Recruit Others (Minimum) {#sec-action_time_recruit_minutes}
-
-**Value**: 15
-
-Time to recruit others (minutes)
-
-**Methodology**: [../solution/wishocracy#action-steps](../solution/wishocracy#action-steps)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total Action Time in Hours {#sec-action_time_total_hours}
 
 **Value**: 0.45
@@ -1822,6 +1731,12 @@ $$
 **Methodology**: [../solution/wishocracy#action-steps](../solution/wishocracy#action-steps)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-action_time_total_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-action_time_total_hours.qmd >}}
 
 :::
 
@@ -1840,31 +1755,11 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Time to Vote (Minimum) {#sec-action_time_vote_minutes}
+{{< include ../figures/tornado-action_time_total_minutes.qmd >}}
 
-**Value**: 2
-
-Time to vote (minutes)
-
-**Methodology**: [../solution/wishocracy#action-steps](../solution/wishocracy#action-steps)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Benefit from 115x Research Capacity Increase {#sec-benefit_medical_research_acceleration_annual}
-
-**Value**: $100B
-
-Annual benefit from 115x research capacity increase
-
-**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
-
-*✓ High confidence*
+{{< include ../figures/sensitivity-table-action_time_total_minutes.qmd >}}
 
 :::
 
@@ -2264,22 +2159,11 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Conservative Completed Trials Multiplier Accounting for Scale-Up {#sec-completed_trials_multiplier_conservative}
+{{< include ../figures/tornado-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
-**Value**: 25.7
-
-Conservative completed trials multiplier accounting for scale-up
-
-$$
-Multiplier_{conservative} = 25.7
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#conservative-multiplier](../appendix/research-acceleration-model#conservative-multiplier)
-
-*✓ High confidence*
+{{< include ../figures/sensitivity-table-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
 :::
 
@@ -2310,8 +2194,6 @@ Current completed trials per year (trials × completion rate)
 $$
 Completed_{current} = 3,300 \times 0.60 = 1,980
 $$
-
-**Methodology**: [../appendix/research-acceleration-model#current-capacity](../appendix/research-acceleration-model#current-capacity)
 
 *✓ High confidence*
 
@@ -2385,23 +2267,6 @@ Misallocation factor for spending on death vs prevention
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Active Trials at Any Given Time {#sec-dfda_active_trials}
-
-**Value**: 257K
-
-Active trials at any given time with trial capacity multiplier
-
-$$
-Active_{dFDA} = 10,000 \times 25.7 = 257,000
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#dfda-capacity](../appendix/research-acceleration-model#dfda-capacity)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total Annual dFDA Operational Costs {#sec-dfda_annual_opex}
 
 **Value**: $40M
@@ -2415,6 +2280,12 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
 
 :::
 
@@ -2433,6 +2304,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2446,60 +2323,13 @@ $$
 Completed_{dFDA} = 84,800 \times 0.95 = 80,560
 $$
 
-**Methodology**: [../appendix/research-acceleration-model#dfda-capacity](../appendix/research-acceleration-model#dfda-capacity)
-
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### dFDA Optimistic Drug Approvals Estimate (High Estimate) {#sec-dfda_drug_approvals_per_year_high}
+{{< include ../figures/tornado-dfda_completed_trials_per_year.qmd >}}
 
-**Value**: 2,000
-
-Optimistic drug approvals estimate (40x current)
-
-$$
-Approvals_{high} = 50 \text{ (current)} \times 40 \text{ (factor)} = 2,000
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#approval-projections](../appendix/research-acceleration-model#approval-projections)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Conservative Drug Approvals Estimate (Low Estimate) {#sec-dfda_drug_approvals_per_year_low}
-
-**Value**: 1,000
-
-Conservative drug approvals estimate (20x current)
-
-$$
-Approvals_{low} = 50 \text{ (current)} \times 20 \text{ (factor)} = 1,000
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#approval-projections](../appendix/research-acceleration-model#approval-projections)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Global Eligible Patients with Minimal Exclusions {#sec-dfda_eligible_patients_global}
-
-**Value**: 1.20B
-
-Global eligible patients with minimal exclusions
-
-$$
-Eligible_{dFDA} = 2.4B \text{ (patients)} \times 50\% \text{ (eligible)} = 1.2B
-$$
-
-**Methodology**: [../appendix/research-acceleration-model#eligible-population](../appendix/research-acceleration-model#eligible-population)
-
-*✓ High confidence*
+{{< include ../figures/sensitivity-table-dfda_completed_trials_per_year.qmd >}}
 
 :::
 
@@ -2517,6 +2347,12 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_0_1pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_0_1pct_political_success.qmd >}}
 
 :::
 
@@ -2606,32 +2442,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Months to Recruit 10,000+ Patients in dFDA System {#sec-dfda_large_trial_recruitment_months}
-
-**Value**: 3
-
-Months to recruit 10,000+ patients in dFDA system
-
-**Methodology**: [../appendix/research-acceleration-model#recruitment-speed](../appendix/research-acceleration-model#recruitment-speed)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Large dFDA Pragmatic Trial Size {#sec-dfda_large_trial_size}
-
-**Value**: 10,000
-
-Large dFDA pragmatic trial size
-
-**Methodology**: [../appendix/research-acceleration-model#trial-sizes](../appendix/research-acceleration-model#trial-sizes)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### dFDA Annual Net Savings (R&D Only) {#sec-dfda_net_savings_rd_only_annual}
 
 **Value**: $41.5B
@@ -2645,6 +2455,12 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#net-savings](../appendix/dfda-cost-benefit-analysis#net-savings)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_net_savings_rd_only_annual.qmd >}}
 
 :::
 
@@ -2886,6 +2702,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_rd_gross_savings_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_rd_gross_savings_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2940,32 +2762,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Weeks to Recruit 1,000 Patients in dFDA System {#sec-dfda_small_trial_recruitment_weeks}
-
-**Value**: 3
-
-Weeks to recruit 1,000 patients in dFDA system
-
-**Methodology**: [../appendix/research-acceleration-model#recruitment-speed](../appendix/research-acceleration-model#recruitment-speed)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Typical dFDA Trial Size {#sec-dfda_small_trial_size}
-
-**Value**: 1,000
-
-Typical dFDA trial size
-
-**Methodology**: [../appendix/research-acceleration-model#trial-sizes](../appendix/research-acceleration-model#trial-sizes)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### dFDA Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
 
 **Value**: $1.00K
@@ -2988,8 +2784,6 @@ Maximum trials per year possible with trial capacity multiplier
 $$
 Trials_{dFDA} = 3,300 \times 25.7 = 84,800
 $$
-
-**Methodology**: [../appendix/research-acceleration-model#dfda-capacity](../appendix/research-acceleration-model#dfda-capacity)
 
 *✓ High confidence*
 
@@ -3130,6 +2924,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_dalys.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3181,6 +2981,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_yld.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_yld.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3197,6 +3003,12 @@ $$
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_yll.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_yll.qmd >}}
 
 :::
 
@@ -3645,6 +3457,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_total_cost.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3885,6 +3703,12 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#peace-dividend](../appendix/1-percent-treaty-cost-effectiveness#peace-dividend)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_annual_societal_benefit.qmd >}}
 
 :::
 
@@ -4694,6 +4518,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_total_cost.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4776,6 +4606,12 @@ $$
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_complete_roi_all_benefits.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_complete_roi_all_benefits.qmd >}}
 
 :::
 
@@ -4913,6 +4749,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4929,6 +4771,12 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_expected_cost_per_daly_conservative.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_expected_cost_per_daly_conservative.qmd >}}
 
 :::
 
@@ -4995,6 +4843,12 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-benefits](../appendix/1-percent-treaty-cost-effectiveness#total-benefits)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_plus_rd_annual_benefits.qmd >}}
 
 :::
 
@@ -5098,6 +4952,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_lag_elimination.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_roi_lag_elimination.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -5135,36 +4995,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Treaty Value Per Person {#sec-treaty_value_per_person}
-
-**Value**: $149K
-
-Total treaty economic value per person on Earth
-
-$$
-Per Person = \$1.191\text{ quadrillion} / 8B = \$148,875
-$$
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Treaty Value vs Global GDP Ratio {#sec-treaty_value_vs_global_gdp_ratio}
-
-**Value**: 11.3
-
-Ratio of total treaty economic value to global GDP (equivalent 'Earths' of GDP)
-
-$$
-TreatyValueToGDPRatio = \$1.191\text{ quadrillion} / \$105T = 11,343
-$$
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_vs_bed_nets_multiplier}
 
 **Value**: 707
@@ -5190,8 +5020,6 @@ $$
 Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
 $$
 
-**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
-
 *✓ High confidence*
 
 :::
@@ -5206,8 +5034,6 @@ Trial capacity multiplier from DIH funding capacity vs. current global trial par
 $$
 Multiplier = 48.8M \div 1.9M = 25.7
 $$
-
-**Methodology**: [../appendix/research-acceleration-model](../appendix/research-acceleration-model)
 
 *✓ High confidence*
 
@@ -5299,6 +5125,39 @@ $$
 Fundamental parameters and constants used throughout the analysis.
 
 ::: {.callout-warning icon=false collapse=false}
+### Time to Invest (Minimum) {#sec-action_time_invest_minutes}
+
+**Value**: 10
+
+Time to invest (minutes)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Time to Recruit Others (Minimum) {#sec-action_time_recruit_minutes}
+
+**Value**: 15
+
+Time to recruit others (minutes)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Time to Vote (Minimum) {#sec-action_time_vote_minutes}
+
+**Value**: 2
+
+Time to vote (minutes)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Childhood Vaccination Cost per DALY (Estimated) {#sec-childhood_vaccination_cost_per_daly}
 
 **Value**: $30
@@ -5315,17 +5174,6 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 **Value**: 99%
 
 Percentage of budget defense sector keeps under 1% treaty
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### dFDA Patient Eligibility Rate {#sec-dfda_patient_eligibility_rate}
-
-**Value**: 50%
-
-dFDA patient eligibility rate (50% of disease patients can participate)
 
 *Core definition*
 
@@ -5597,17 +5445,6 @@ Standard time horizon for NPV analysis
 ### Personal Lifetime Benefit Eradication 5yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
 
 **Value**: 572K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Years Until Disease Cures (Far-Future Scenario) {#sec-regulatory_delay_avoidance_far_future_years}
-
-**Value**: 100
-
-Assumed average years until disease cures occur (for far-future NPV calculation). Many diseases may not be cured for 100 years, but eliminating the regulatory delay means they arrive 8.2 years earlier (at year 92 instead of year 100).
 
 *Core definition*
 

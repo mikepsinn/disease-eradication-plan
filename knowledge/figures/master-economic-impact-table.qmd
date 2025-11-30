@@ -35,7 +35,7 @@ economic_impacts = pd.DataFrame({
         float(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL) / 1_000_000_000_000,
         float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS) / 1_000_000_000_000,
         float(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL) / 1_000_000_000_000,
-        float(BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL) / 1_000_000_000_000,
+        np.nan,
         np.nan,  # ROI only
         np.nan   # ROI only
     ],

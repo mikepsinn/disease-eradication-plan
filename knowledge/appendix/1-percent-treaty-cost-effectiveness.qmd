@@ -371,7 +371,7 @@ This chart compares the gross annual economic benefits across major public healt
 
 For publication-quality analysis, run a Monte Carlo simulation with:
 
-- {{< var dfda_large_trial_size >}} iterations
+- 10000 iterations
 - Probability distributions for each parameter
 - Correlation analysis between variables
 - 95% confidence intervals

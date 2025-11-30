@@ -698,19 +698,17 @@ For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-divid
 
 The {{< var trial_capacity_multiplier >}}× research acceleration multiplier comes from the combination of multiple proven accelerators:
 
-**Faster Recruitment**: The Oxford RECOVERY trial recruited {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients in 3 weeks, compared to 6-18 months for 100 patients in traditional trials. This speed comes from pragmatic eligibility (50% of patients qualify vs. 2% traditionally) and embedded recruitment in routine care.
+**Faster Recruitment**: The Oxford RECOVERY trial recruited 1000 patients in 3 weeks, compared to 6-18 months for 100 patients in traditional trials. This speed comes from pragmatic eligibility (50% of patients qualify vs. 2% traditionally) and embedded recruitment in routine care.
 
 **Faster Completion**: Pragmatic trials complete in 3-12 months instead of 3-5 years because patient subsidies flip economic incentives. Physicians gain revenue from trial participation rather than losing it, eliminating the perverse incentives that delay traditional trials.
 
-**Massive Parallelization**: With {{< var dfda_active_trials >}} trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves 20× more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
+**Massive Parallelization**: With trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves 20× more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
 
 **Higher Completion Rates**: {{< var dfda_trial_completion_rate >}} of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
 
 **Increased Funding**: The 1% Treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
 
 These improvements compound multiplicatively to produce the {{< var trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
-
-For detailed derivation, see [Research Acceleration Model](../appendix/research-acceleration-model.qmd).
 
 **Automating Friction, Not Judgment**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
 
@@ -1215,20 +1213,16 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 **Current System Baseline**:
 
 - {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} clinical trials initiated per year
-- [60% completion rate](../appendix/research-acceleration-model.qmd) = **{{< var current_completed_trials_per_year >}} completed trials/year**
 - {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials at any time (3-5 year duration)
 - {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} [people with chronic disease](../references.qmd#disease-prevalence-2-billion))
 - {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate (studies never complete)
-- [6-18 months to recruit 100 patients](../appendix/research-acceleration-model.qmd)
 
 **Pragmatic Trial System Performance** (RECOVERY model scaled globally):
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
-- [95% completion rate](../appendix/research-acceleration-model.qmd) = **{{< var dfda_completed_trials_per_year >}} completed trials/year**
-- {{< var dfda_active_trials >}} active trials at any time (3-12 month duration)
-- {{< var trial_cost_reduction_pct >}} patient eligibility ([1.2B eligible](../appendix/research-acceleration-model.qmd) with minimal exclusions)
+- {{< var trial_cost_reduction_pct >}} patient eligibility (1.2B eligible with minimal exclusions)
 - {{< var dfda_trial_abandonment_rate >}} abandonment rate (patient subsidies flip economic incentives)
-- 3 weeks to recruit {{< var traditional_large_trial_size >}} {{< var traditional_large_trial_size_cite >}} patients (RECOVERY achieved this enrollment speed)
+- 3 weeks to recruit 10000 patients (RECOVERY achieved this enrollment speed)
 
 **How the {{< var trial_capacity_multiplier >}}× Multiplier Works**:
 
@@ -1241,13 +1235,11 @@ This represents DIH's funding capacity alone, without assuming behavior changes 
 **Net Effect**:
 
 - From {{< var current_completed_trials_per_year >}} completed trials/year → {{< var dfda_completed_trials_per_year >}} completed trials/year ({{< var trial_capacity_multiplier >}}×)
-- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000-{{< var dfda_drug_approvals_per_year_high >}} approvals/year (20-40x)
-- From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}}-1,000 cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
+- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000 approvals/year (20-40x)
+- From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **Why More Trials = More Cures (No Diminishing Returns)**:
 Crucially, this {{< var trial_capacity_multiplier >}}x increase in capacity translates directly into medical progress because humanity has empirically tested only **0.417%** of the known therapeutic landscape. We are not facing diminishing returns; we are facing a cost barrier that has prevented us from testing 99.6% of plausible treatments. See **[The Myth of Diminishing Returns](#the-myth-of-diminishing-returns)** for the mathematical proof that the search space is effectively infinite relative to our current efforts.
-
-**For detailed analysis including the 7-year access model, research capacity calculations, benefit breakdown table, and sanity checks**, see [Research Acceleration Model: Detailed Analysis](../appendix/research-acceleration-model.qmd).
 
 ## Personal Economic Impact: From Societal to Individual
 
@@ -1329,7 +1321,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 **Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
 - **Defense sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
-- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); [research capacity](../appendix/research-acceleration-model.qmd) increases {{< var trial_capacity_multiplier >}}×
+- **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); research capacity increases {{< var trial_capacity_multiplier >}}×
 - **Insurance companies**: Net savings from [reduced disease burden](../references.qmd#disease-economic-burden-109t) ({{< var global_disease_economic_burden_annual >}} current economic cost)
 - **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner

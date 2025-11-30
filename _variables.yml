@@ -13,11 +13,11 @@
 
 "action_time_invest_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to invest\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to invest\
   \ (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\">10</a>"
 "action_time_recruit_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to recruit\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to recruit\
   \ others (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\"\
   >15</a>"
 "action_time_total_hours": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
@@ -35,7 +35,7 @@
   $$"
 "action_time_vote_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to vote\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to vote\
   \ (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\">2</a>"
 "antidepressant_trial_exclusion_rate": "<a href=\"https://warondisease.org/knowledge/references.html#antidepressant-trial-exclusion-rates\"\
   \ class=\"parameter-link\" data-source-ref=\"antidepressant-trial-exclusion-rates\"\
@@ -67,11 +67,6 @@
   \ (midpoint estimate, range $78-100) | ✓ High confidence | Unit: USD/DALY | Click\
   \ to view source\">$89</a>"
 "bed_nets_cost_per_daly_cite": "@givewell-cost-per-life-saved"
-"benefit_medical_research_acceleration_annual": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual benefit\
-  \ from 115x research capacity increase | ✓ High confidence | Unit: USD/year | Click\
-  \ to view calculation\">$100B</a>"
 "book_reading_speed_wpm": "<a href=\"https://warondisease.org/knowledge/references.html#average-reading-speed\"\
   \ class=\"parameter-link\" data-source-ref=\"average-reading-speed\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Average reading speed (conservative\
@@ -98,11 +93,13 @@
 "campaign_contingency": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Contingency fund for unexpected costs\
-  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$50M</a>"
+  \ | ✓ High confidence | 95% CI: [$30M, $80M] | Dist: Uniform | Unit: USD | Click\
+  \ to view calculation\">$50M</a>"
 "campaign_defense_conversion": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Defense industry conversion program\
-  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$50M</a>"
+  \ | ✓ High confidence | 95% CI: [$40M, $70M] | Dist: Lognormal | Unit: USD | Click\
+  \ to view calculation\">$50M</a>"
 "campaign_defense_lobbyist_budget": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Budget for co-opting\
@@ -128,7 +125,8 @@
 "campaign_legal_work": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Legal drafting and compliance work\
-  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$60M</a>"
+  \ | ✓ High confidence | 95% CI: [$50M, $80M] | Dist: Lognormal | Unit: USD | Click\
+  \ to view calculation\">$60M</a>"
 "campaign_lobbying_eu": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"EU lobbying campaign budget | ✓ High\
@@ -170,8 +168,8 @@
 "campaign_platform_development": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Voting platform\
-  \ and technology development | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$35M</a>"
+  \ and technology development | ✓ High confidence | 95% CI: [$25M, $50M] | Dist:\
+  \ Lognormal | Unit: USD | Click to view calculation\">$35M</a>"
 "campaign_regulatory_navigation": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Regulatory compliance\
@@ -195,8 +193,8 @@
 "campaign_treaty_implementation": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Post-victory\
-  \ treaty implementation support | ✓ High confidence | Unit: USD | Click to view\
-  \ calculation\">$40M</a>"
+  \ treaty implementation support | ✓ High confidence | 95% CI: [$30M, $55M] | Dist:\
+  \ Lognormal | Unit: USD | Click to view calculation\">$40M</a>"
 "campaign_viral_content_budget": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Viral marketing\
@@ -248,8 +246,8 @@
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Disability weight for untreated chronic conditions (WHO Global Burden\
-  \ of Disease) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Unit: weight |\
-  \ Click to view source\">0.35</a>"
+  \ of Disease) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal (SE:\
+  \ 0.07) | Unit: weight | Click to view source\">0.35</a>"
 "chronic_disease_disability_weight_cite": "@who-global-health-estimates-2024"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#combined-dividends\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
@@ -258,13 +256,6 @@
   \ + R&D_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nCombined = \\$113.55B\
   \ + \\$50B = \\$163.55B\n$$"
-"completed_trials_multiplier_conservative": "<a href=\"/knowledge/appendix/research-acceleration-model#conservative-multiplier\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#conservative-multiplier\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ completed trials multiplier accounting for scale-up | ✓ High confidence | Formula:\
-  \ TRIAL_CAPACITY_MULTIPLIER | Unit: ratio | Click to view calculation\">25.7</a>"
-"completed_trials_multiplier_conservative_latex": "$$\nMultiplier_{conservative} =\
-  \ 25.7\n$$"
 "cost_of_delay_deaths_per_second": "<a href=\"/knowledge/problem/cost-of-war#cost-of-delay\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#cost-of-delay\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Preventable deaths\
@@ -285,11 +276,8 @@
   \ trial participation rate (0.06% of population) | ✓ High confidence | Unit: rate\
   \ | Click to view source\">0.06%</a>"
 "current_clinical_trial_participation_rate_cite": "@clinical-trial-patient-participation-rate"
-"current_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model#current-capacity\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#current-capacity\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Current completed\
-  \ trials per year (trials × completion rate) | ✓ High confidence | Formula: TRIALS_PER_YEAR\
-  \ × COMPLETION_RATE | Unit: trials/year | Click to view calculation\">1,980</a>"
+"current_completed_trials_per_year": "<span class=\"parameter-link\" title=\"parameters.CURRENT_COMPLETED_TRIALS_PER_YEAR\"\
+  >1,980</span>"
 "current_completed_trials_per_year_latex": "$$\nCompleted_{current} = 3,300 \\times\
   \ 0.60 = 1,980\n$$"
 "current_disease_patients_global": "<a href=\"https://warondisease.org/knowledge/references.html#disease-prevalence-2-billion\"\
@@ -366,19 +354,13 @@
   \ short-term health DALYs. | ? Low confidence | Unit: USD/DALY | Click to view source\"\
   >$55</a>"
 "deworming_cost_per_daly_cite": "@deworming-cost-per-daly"
-"dfda_active_trials": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Active trials\
-  \ at any given time with trial capacity multiplier | ✓ High confidence | Formula:\
-  \ CURRENT_ACTIVE_TRIALS × TRIAL_CAPACITY_MULTIPLIER | Unit: trials | Click to view\
-  \ calculation\">257K</a>"
-"dfda_active_trials_latex": "$$\nActive_{dFDA} = 10,000 \\times 25.7 = 257,000\n$$"
 "dfda_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)\
-  \ | ✓ High confidence | Formula: PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE +\
-  \ REGULATORY + COMMUNITY | Unit: USD/year | Click to view calculation\">$40M</a>"
+  \ | ✓ High confidence | 95% CI: [$30M, $55M] | Dist: Lognormal | Formula: PLATFORM_MAINTENANCE\
+  \ + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY | Unit: USD/year | Click to\
+  \ view calculation\">$40M</a>"
 "dfda_annual_opex_latex": "$$\nOPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{\
   \ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)}\
   \ = \\$40M\n$$"
@@ -386,38 +368,14 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
   \ from R&D savings (trial cost reduction, secondary component) | ✓ High confidence\
-  \ | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view\
-  \ calculation\">$41.5B</a>"
+  \ | 95% CI: [$33B, $52B] | Dist: Lognormal | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT\
+  \ | Unit: USD/year | Click to view calculation\">$41.5B</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
   $41.5B\n$$"
-"dfda_completed_trials_per_year": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA completed\
-  \ trials per year (capacity × completion rate) | ✓ High confidence | Formula: CAPACITY\
-  \ × COMPLETION_RATE | Unit: trials/year | Click to view calculation\">80,592</a>"
+"dfda_completed_trials_per_year": "<span class=\"parameter-link\" title=\"parameters.DFDA_COMPLETED_TRIALS_PER_YEAR\"\
+  >80,592</span>"
 "dfda_completed_trials_per_year_latex": "$$\nCompleted_{dFDA} = 84,800 \\times 0.95\
   \ = 80,560\n$$"
-"dfda_drug_approvals_per_year_high": "<a href=\"/knowledge/appendix/research-acceleration-model#approval-projections\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic drug\
-  \ approvals estimate (40x current) | ✓ High confidence | Formula: CURRENT_APPROVALS\
-  \ × 40 | Unit: approvals/year | Click to view calculation\">2,000</a>"
-"dfda_drug_approvals_per_year_high_latex": "$$\nApprovals_{high} = 50 \\text{ (current)}\
-  \ \\times 40 \\text{ (factor)} = 2,000\n$$"
-"dfda_drug_approvals_per_year_low": "<a href=\"/knowledge/appendix/research-acceleration-model#approval-projections\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#approval-projections\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ drug approvals estimate (20x current) | ✓ High confidence | Formula: CURRENT_APPROVALS\
-  \ × 20 | Unit: approvals/year | Click to view calculation\">1,000</a>"
-"dfda_drug_approvals_per_year_low_latex": "$$\nApprovals_{low} = 50 \\text{ (current)}\
-  \ \\times 20 \\text{ (factor)} = 1,000\n$$"
-"dfda_eligible_patients_global": "<a href=\"/knowledge/appendix/research-acceleration-model#eligible-population\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#eligible-population\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Global eligible\
-  \ patients with minimal exclusions | ✓ High confidence | Formula: DISEASE_PATIENTS\
-  \ × ELIGIBILITY_RATE | Unit: people | Click to view calculation\">1.20B</a>"
-"dfda_eligible_patients_global_latex": "$$\nEligible_{dFDA} = 2.4B \\text{ (patients)}\
-  \ \\times 50\\% \\text{ (eligible)} = 1.2B\n$$"
 "dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   low\" title=\"Expected ROI for 1% Treaty accounting for 0.1% political success probability\
@@ -462,16 +420,6 @@
   \ * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC | Click to view calculation\">596K</a>"
 "dfda_expected_roi_50pct_political_success_latex": "$$\nE[ROI]_{\\text{50\\%}} = 1{,}286{,}242\
   \ \\times 0.50 = 643{,}121\n$$"
-"dfda_large_trial_recruitment_months": "<a href=\"/knowledge/appendix/research-acceleration-model#recruitment-speed\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Months to recruit\
-  \ 10,000+ patients in dFDA system | ✓ High confidence | Unit: months | Click to\
-  \ view calculation\">3</a>"
-"dfda_large_trial_size": "<a href=\"/knowledge/appendix/research-acceleration-model#trial-sizes\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#trial-sizes\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Large dFDA pragmatic\
-  \ trial size | ✓ High confidence | Unit: participants | Click to view calculation\"\
-  >10,000</a>"
 "dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
@@ -536,8 +484,9 @@
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV upfront\
-  \ costs (dFDA core + DIH initiatives) | ✓ High confidence | Formula: DFDA_BUILD\
-  \ + DIH_INITIATIVES | Unit: USD | Click to view calculation\">$270M</a>"
+  \ costs (dFDA core + DIH initiatives) | ✓ High confidence | 95% CI: [$180M, $400M]\
+  \ | Dist: Lognormal | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit: USD | Click\
+  \ to view calculation\">$270M</a>"
 "dfda_npv_upfront_cost_total_latex": "$$\nC_0 = \\$0.040B + \\$0.22975B = \\$0.26975B\
   \ \\text{ (upfront cost)}\n$$"
 "dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
@@ -572,15 +521,12 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA staff costs\
   \ (minimal, AI-assisted) | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$10M</a>"
-"dfda_patient_eligibility_rate": "<span class=\"parameter-definition\" title=\"dFDA\
-  \ patient eligibility rate (50% of disease patients can participate) | Unit: rate\
-  \ | Core definition\">50%</span>"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
   \ from R&D savings (trial cost reduction, secondary component) | ✓ High confidence\
-  \ | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view\
-  \ calculation\">$41.5B</a>"
+  \ | 95% CI: [$33B, $52B] | Dist: Lognormal | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT\
+  \ | Unit: USD/year | Click to view calculation\">$41.5B</a>"
 "dfda_rd_gross_savings_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
   $41.5B\n$$"
 "dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction\"\
@@ -604,27 +550,13 @@
   \ ÷ ANNUAL_OPEX | Unit: ratio | Click to view calculation\">1,038</a>"
 "dfda_roi_simple_latex": "$$\nROI_{simple} = \\frac{\\$41.5B}{\\$0.04B} = 1,038:1\n\
   $$"
-"dfda_small_trial_recruitment_weeks": "<a href=\"/knowledge/appendix/research-acceleration-model#recruitment-speed\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#recruitment-speed\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Weeks to recruit\
-  \ 1,000 patients in dFDA system | ✓ High confidence | Unit: weeks | Click to view\
-  \ calculation\">3</a>"
-"dfda_small_trial_size": "<a href=\"/knowledge/appendix/research-acceleration-model#trial-sizes\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#trial-sizes\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Typical dFDA\
-  \ trial size | ✓ High confidence | Unit: participants | Click to view calculation\"\
-  >1,000</a>"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-per-patient\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Target cost per\
   \ patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars) | ✓ High\
   \ confidence | Unit: USD/patient | Click to view calculation\">$1.00K</a>"
-"dfda_trials_per_year_capacity": "<a href=\"/knowledge/appendix/research-acceleration-model#dfda-capacity\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd#dfda-capacity\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum trials\
-  \ per year possible with trial capacity multiplier | ✓ High confidence | Formula:\
-  \ CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER | Unit: trials/year | Click to view\
-  \ calculation\">84,834</a>"
+"dfda_trials_per_year_capacity": "<span class=\"parameter-link\" title=\"parameters.DFDA_TRIALS_PER_YEAR_CAPACITY\"\
+  >84,834</span>"
 "dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 25.7 = 84,800\n\
   $$"
 "dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
@@ -699,8 +631,9 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total eventually\
   \ avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate,\
   \ conservative). Excludes fundamentally unavoidable deaths (primarily accidents\
-  \ ~7.9%). | ~ Medium confidence | Formula: ANNUAL_DEATHS × EFFICACY_LAG_YEARS ×\
-  \ EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to view calculation\">416M</a>"
+  \ ~7.9%). | ~ Medium confidence | 95% CI: [340M, 500M] | Dist: Lognormal | Formula:\
+  \ ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths\
+  \ | Click to view calculation\">416M</a>"
 "disease_eradication_delay_deaths_total_latex": "$$\nD_{total} = 54.75M \\text{ (annual)}\
   \ \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M\n$$"
 "disease_eradication_delay_economic_loss": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
@@ -858,8 +791,8 @@
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Regulatory\
   \ delay for efficacy testing (Phase II/III) post-safety verification | ✓ High confidence\
-  \ | \U0001F4CA Peer-reviewed | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET - PHASE_1_DURATION\
-  \ | Unit: years | Click to view source\">8.2</a>"
+  \ | \U0001F4CA Peer-reviewed | Dist: Normal (SE: 1) | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET\
+  \ - PHASE_1_DURATION | Unit: years | Click to view source\">8.2</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
 "eventually_avoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.EVENTUALLY_AVOIDABLE_DEATH_PCT\"\
@@ -1114,15 +1047,16 @@
 "global_annual_war_total_cost": "<a href=\"/knowledge/problem/cost-of-war#total-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ cost of war worldwide (direct + indirect costs) | ✓ High confidence | Formula:\
-  \ DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view calculation\">$11.4T</a>"
+  \ cost of war worldwide (direct + indirect costs) | ✓ High confidence | 95% CI:\
+  \ [$9.00T, $14T] | Dist: Lognormal | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit:\
+  \ USD/year | Click to view calculation\">$11.4T</a>"
 "global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B \\text{ (direct)}\
   \ + \\$3,700B \\text{ (indirect)} = \\$11,355B\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global spending\
-  \ on clinical trials | ✓ High confidence | 95% CI: [$75B, $91B] | Dist: Lognormal\
-  \ (SE: $8.30B) | Unit: USD/year | Click to view source\">$83B</a>"
+  \ on clinical trials | ✓ High confidence | 95% CI: [$70B, $97B] | Dist: Lognormal\
+  \ (SE: $12.5B) | Unit: USD/year | Click to view source\">$83B</a>"
 "global_clinical_trials_spending_annual_cite": "@global-clinical-trials-market-2024"
 "global_cost_per_life_saved_med_research_annual": "<a href=\"/knowledge/problem/cost-of-war#grotesque-mathematics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
@@ -1170,22 +1104,12 @@
   \ globally (absenteeism, reduced output) | ✓ High confidence | Unit: USD/year |\
   \ Click to view source\">$5.00T</a>"
 "global_disease_productivity_loss_annual_cite": "@disease-economic-burden-109t"
-"global_education_for_all_cost": "<a href=\"https://warondisease.org/knowledge/references.html#unesco-education-for-all-cost\"\
-  \ class=\"parameter-link\" data-source-ref=\"unesco-education-for-all-cost\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Global cost to achieve universal education\
-  \ | ✓ High confidence | Unit: USD | Click to view source\">$30B</a>"
-"global_education_for_all_cost_cite": "@unesco-education-for-all-cost"
-"global_gdp_annual_2024": "<a href=\"https://warondisease.org/knowledge/references.html#https://www.worldbank.org/en/publication/global-economic-prospects\"\
-  \ class=\"parameter-link\" data-source-ref=\"https://www.worldbank.org/en/publication/global-economic-prospects\"\
-  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global GDP in 2024\
-  \ (World Bank estimate, approximately $105 trillion USD) | ✓ High confidence | Unit:\
-  \ USD | Click to view source\">$105T</a>"
-"global_gdp_annual_2024_cite": "@https-www-worldbank-org-en-publication-global-economic-prospects"
 "global_life_expectancy_2024": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
   \ title=\"Global life expectancy (2024) | ✓ High confidence | \U0001F4CA Peer-reviewed\
-  \ | Updated: 2024 | Unit: years | Click to view source\">79</a>"
+  \ | Dist: Normal (SE: 2) | Updated: 2024 | Unit: years | Click to view source\"\
+  >79</a>"
 "global_life_expectancy_2024_cite": "@who-global-health-estimates-2024"
 "global_med_research_spending": "<a href=\"https://warondisease.org/knowledge/references.html#global-gov-med-research-spending\"\
   \ class=\"parameter-link\" data-source-ref=\"global-gov-med-research-spending\"\
@@ -1359,8 +1283,9 @@
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual peace\
-  \ dividend from 1% reduction in total war costs | ✓ High confidence | Formula: TOTAL_WAR_COST\
-  \ × 1% | Unit: USD/year | Click to view calculation\">$114B</a>"
+  \ dividend from 1% reduction in total war costs | ✓ High confidence | 95% CI: [$90B,\
+  \ $140B] | Dist: Lognormal | Formula: TOTAL_WAR_COST × 1% | Unit: USD/year | Click\
+  \ to view calculation\">$114B</a>"
 "peace_dividend_annual_societal_benefit_latex": "$$\nPeaceDividend = \\$11,355B \\\
   times 0.01 = \\$113.55B\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/calculated\" class=\"parameter-link\"\
@@ -1609,27 +1534,20 @@
   external\" data-confidence=\"high\" title=\"RECOVERY trial cost per patient | ✓\
   \ High confidence | Unit: USD/patient | Click to view source\">$500</a>"
 "recovery_trial_cost_per_patient_cite": "@recovery-cost-500"
-"regulatory_delay_avoidance_far_future_years": "<a href=\"/knowledge/economics/economics\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Assumed average\
-  \ years until disease cures occur (for far-future NPV calculation). Many diseases\
-  \ may not be cured for 100 years, but eliminating the regulatory delay means they\
-  \ arrive 8.2 years earlier (at year 92 instead of year 100). | ✓ High confidence\
-  \ | Unit: years | Click to view calculation\">100</a>"
 "regulatory_delay_mean_age_of_death": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Mean age of preventable death from post-safety efficacy testing regulatory\
-  \ delay (Phase 2-4) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Unit: years\
-  \ | Click to view source\">62</a>"
+  \ delay (Phase 2-4) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal\
+  \ (SE: 3) | Unit: years | Click to view source\">62</a>"
 "regulatory_delay_mean_age_of_death_cite": "@who-global-health-estimates-2024"
 "regulatory_delay_suffering_period_years": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Pre-death suffering period during post-safety efficacy testing delay (average\
   \ years lived with untreated condition while awaiting Phase 2-4 completion) | ~\
-  \ Medium confidence | \U0001F4CA Peer-reviewed | Unit: years | Click to view source\"\
-  >6</a>"
+  \ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [4, 9] | Dist: Lognormal\
+  \ | Unit: years | Click to view source\">6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
 "roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
@@ -1767,7 +1685,7 @@
 "standard_economic_qaly_value_usd": "<a href=\"https://warondisease.org/knowledge/references.html#qaly-value\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Standard economic value per QALY | ✓ High confidence\
-  \ | Unit: USD/QALY | Click to view source\">$150K</a>"
+  \ | Dist: Normal (SE: $30K) | Unit: USD/QALY | Click to view source\">$150K</a>"
 "standard_economic_qaly_value_usd_cite": "@qaly-value"
 "standard_qalys_per_life_saved": "<a href=\"https://warondisease.org/knowledge/references.html#qaly-value\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
@@ -1880,16 +1798,6 @@
   external\" data-confidence=\"high\" title=\"Typical Phase 3 trial size | ✓ High\
   \ confidence | Unit: participants | Click to view source\">1,000</a>"
 "traditional_large_trial_size_cite": "@phase-3-participant-numbers"
-"traditional_phase2_cost_per_patient_high": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-cost-per-patient\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Phase 2 cost per patient (high estimate)\
-  \ | ✓ High confidence | Unit: USD/patient | Click to view source\">$120K</a>"
-"traditional_phase2_cost_per_patient_high_cite": "@clinical-trial-cost-per-patient"
-"traditional_phase2_cost_per_patient_low": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-cost-per-patient\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-cost-per-patient\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Phase 2 cost per patient (low estimate)\
-  \ | ✓ High confidence | Unit: USD/patient | Click to view source\">$40K</a>"
-"traditional_phase2_cost_per_patient_low_cite": "@clinical-trial-cost-per-patient"
 "traditional_phase3_cost_per_patient": "<a href=\"https://warondisease.org/knowledge/references.html#phase-3-cost-per-patient-113k\"\
   \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-patient-113k\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median) |\
@@ -1905,11 +1813,6 @@
   external\" data-confidence=\"high\" title=\"FDA cited Phase 3 cost per patient ($41K)\
   \ | ✓ High confidence | Unit: USD/patient | Click to view source\">$41K</a>"
 "traditional_phase3_cost_per_patient_fda_example_41k_cite": "@trial-costs-fda-study"
-"traditional_small_trial_size": "<a href=\"https://warondisease.org/knowledge/references.html#phase-2-participant-numbers\"\
-  \ class=\"parameter-link\" data-source-ref=\"phase-2-participant-numbers\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Typical Phase 2 trial size | ✓ High\
-  \ confidence | Unit: participants | Click to view source\">100</a>"
-"traditional_small_trial_size_cite": "@phase-2-participant-numbers"
 "treatment_acceleration_years_current": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years\"\
   \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Traditional FDA drug development timeline\
@@ -1937,20 +1840,21 @@
   $$"
 "treaty_campaign_budget_lobbying": "<a href=\"/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Political lobbying\
+  \ data-source-type=\"definition\" data-confidence=\"low\" title=\"Political lobbying\
   \ campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff,\
-  \ legal/compliance (exceeds pharma $300M + MIC $150M) | ✓ High confidence | Unit:\
-  \ USD | Click to view calculation\">$650M</a>"
+  \ legal/compliance (exceeds pharma $300M + MIC $150M) | ? Low confidence | 95% CI:\
+  \ [$325M, $1.30B] | Dist: Lognormal | Unit: USD | Click to view calculation\">$650M</a>"
 "treaty_campaign_budget_referendum": "<a href=\"/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Global referendum\
+  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Global referendum\
   \ campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance |\
-  \ ✓ High confidence | Unit: USD | Click to view calculation\">$300M</a>"
+  \ ~ Medium confidence | 95% CI: [$180M, $500M] | Dist: Lognormal | Unit: USD | Click\
+  \ to view calculation\">$300M</a>"
 "treaty_campaign_budget_reserve": "<a href=\"/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Reserve fund\
-  \ / contingency buffer | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$50M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Reserve fund\
+  \ / contingency buffer | ~ Medium confidence | 95% CI: [$20M, $100M] | Dist: Lognormal\
+  \ | Unit: USD | Click to view calculation\">$50M</a>"
 "treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/strategy/roadmap#campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Campaign budget\
@@ -2183,31 +2087,16 @@
   \ view calculation\">$155B</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nRecurring_{annual} = \\$113.6B\
   \ + \\$41.5B = \\$155.1B\n$$"
-"treaty_value_per_person": "<span class=\"parameter-link\" title=\"parameters.TREATY_VALUE_PER_PERSON\"\
-  >$149K</span>"
-"treaty_value_per_person_latex": "$$\nPer Person = \\$1.191\\text{ quadrillion} /\
-  \ 8B = \\$148,875\n$$"
-"treaty_value_vs_global_gdp_ratio": "<span class=\"parameter-link\" title=\"parameters.TREATY_VALUE_VS_GLOBAL_GDP_RATIO\"\
-  >11.3</span>"
-"treaty_value_vs_global_gdp_ratio_latex": "$$\nTreatyValueToGDPRatio = \\$1.191\\\
-  text{ quadrillion} / \\$105T = 11,343\n$$"
 "treaty_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"parameters.TREATY_VS_BED_NETS_MULTIPLIER\"\
   >707</span>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
   $0.127} = 701\\times\n$$"
-"trial_capacity_cumulative_years_20yr": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cumulative trial-capacity-equivalent\
-  \ years over 20-year period | ✓ High confidence | Formula: TRIAL_CAPACITY_MULTIPLIER\
-  \ × 20 YEARS | Unit: years | Click to view calculation\">514</a>"
+"trial_capacity_cumulative_years_20yr": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR\"\
+  >514</span>"
 "trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
   \ 20 = 514 \\text{ years}\n$$"
-"trial_capacity_multiplier": "<a href=\"/knowledge/appendix/research-acceleration-model\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/research-acceleration-model.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Trial capacity\
-  \ multiplier from DIH funding capacity vs. current global trial participation |\
-  \ ✓ High confidence | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | Unit:\
-  \ ratio | Click to view calculation\">25.7</a>"
+"trial_capacity_multiplier": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER\"\
+  >25.7</span>"
 "trial_capacity_multiplier_latex": "$$\nMultiplier = 48.8M \\div 1.9M = 25.7\n$$"
 "trial_capacity_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_10PCT\"\
   >257</span>"
@@ -2365,6 +2254,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "411"
-"total_latex_equation_count": "149"
-"total_citation_count": "135"
+"total_parameter_count": "392"
+"total_latex_equation_count": "142"
+"total_citation_count": "130"
