@@ -12,6 +12,9 @@ node_modules/
 
 # Temporary files
 temp-repo/
+TODO.md
+url-check-results.json
+temp_urls.txt
 
 # Logs
 *.log
