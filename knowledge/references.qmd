@@ -1547,7 +1547,7 @@ from dih_models.parameters import *
   > Providers can browse documented cases, treatment results, relevant clinical trials
   > Expansion: Automating EHR data extraction; adding anonymized registry data
   > Access: <https://cure.ncats.io> | App/Play Store
-  > — [CURE ID: About](https://cure.ncats.io/about) | [C-Path: CDRC and CURE ID FAQs](https://c-path.org/cdrc-and-cure-id-faqs/) | [FDA: CURE ID Automated Data Collection](https://www.fda.gov/drugs/our-perspective/cure-id-moves-automated-data-collection-light-covid-pandemic)
+  > — [CURE ID: About](https://cure.ncats.io/about) | [C-Path: CDRC and CURE ID FAQs](https://c-path.org/cdrc-and-cure-id-faqs/) | [FDA: CURE ID Automated Data Collection](https://content.govdelivery.com/accounts/USFDA/bulletins/2e7f941)
   > Note: Platform exists and functions. "Insufficient Incentives and Network Effects" may refer to adoption challenges, but platform provides real-world evidence infrastructure
 
 <a id="fda-drug-lag-deaths-estimate"></a>
@@ -1691,7 +1691,7 @@ from dih_models.parameters import *
   > Trial "deserts": Large regions with no trial access, mostly in West and Southwest
   > For patients in central US states: Nearest major trial center often 500+ miles away (e.g., Chicago from Kansas/Missouri geographic center)
   > Selection bias: Published median distances only reflect patients who successfully enrolled; those living farther away simply don't participate
-  > — [JCO Oncology Practice: Geographic Access to Cancer Trials, 2024](https://ascopubs.org/doi/10.1200/OP.24.00261) | [PMC: Geographic Disparities in Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC10982574/) | [PMC: Travel Burden in Cancer Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC6263122/) | [Outsourcing Pharma: 67 Miles Average Travel Distance, 2022](https://www.outsourcing-pharma.com/Article/2022/11/09/clinical-trial-participants-travel-67-miles-to-study-sites-on-average-analysis-finds)
+  > — [JCO Oncology Practice: Geographic Access to Cancer Trials, 2024](https://ascopubs.org/doi/10.1200/OP.24.00261) | [PMC: Geographic Disparities in Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC10982574/) | [PMC: Travel Burden in Cancer Clinical Trials](https://pmc.ncbi.nlm.nih.gov/articles/PMC6263122/) | [Elligo Health Research: 67 Miles Average Travel Distance, 2022](https://www.elligohealthresearch.com/knowledge-hub/solutions-to-clinical-trial-travel/)
   > Note: The wide range reflects severe geographic inequality - urban patients may travel <20 miles while rural/central US patients face 100-500+ mile journeys to nearest trial sites
 
 <a id="fda-vs-oxford-paperwork"></a>
@@ -1791,8 +1791,8 @@ from dih_models.parameters import *
 <a id="fossil-fuel-lobbying-roi"></a>
 
 - **Fossil Fuel Lobbying ROI**
-  > "The fossil fuel industry spends millions on lobbying and gets billions in subsidies – an ROI of over 800%."
-  > — The Guardian, 2021, [Fossil fuel lobbying ROI](https://www.theguardian.com/environment/2021/oct/27/fossil-fuel-industry-lobbying-roi-return-on-investment)
+  > "In 2023, the oil, gas, and coal industry spent nearly $137 million lobbying Congress... Compared to $17 billion in subsidies, that's a more than 12,300 percent return on investment."
+  > — Rep. Omar & Sen. Sanders, 2024, [End Polluter Welfare Act](https://omar.house.gov/media/press-releases/rep-omar-and-sen-sanders-introduce-legislation-end-corporate-welfare-fossil-0)
 
 <a id="fossil-fuel-subsidies"></a>
 
@@ -2414,7 +2414,7 @@ from dih_models.parameters import *
   > Global Terrorism Database (GTD): 200,000+ terrorist attacks recorded (2021 version)
   > Maintained by: National Consortium for Study of Terrorism & Responses to Terrorism (START), U. of Maryland
   > Geographic shift: Epicenter moved from Middle East to Central Sahel (sub-Saharan Africa) - now >50% of all deaths
-  > — [Our World in Data: Terrorism](https://ourworldindata.org/terrorism) | [Global Terrorism Index 2024](https://reliefweb.int/report/world/global-terrorism-index-2024) | [START Global Terrorism Database](https://www.start.umd.edu/gtd/) | [Our World in Data: Terrorism Deaths](https://ourworldindata.org/grapher/terrorism-deaths)
+  > — [Our World in Data: Terrorism](https://ourworldindata.org/terrorism) | [Global Terrorism Index 2024](https://reliefweb.int/report/world/global-terrorism-index-2024) | [START Global Terrorism Database](https://www.start.umd.edu/gtd/) | [Our World in Data: Terrorism Deaths](https://ourworldindata.org/grapher/fatalities-from-terrorism)
 
 <a id="hallmarks-of-aging"></a>
 
@@ -2608,7 +2608,7 @@ from dih_models.parameters import *
 
 - **Impact investing regulatory reform**
   > "Reforms to securities regulation can better support impact investing while maintaining investor protections."
-  > — Brookings, 2022, [Policy to Support Impact Investing](https://www.brookings.edu/research/reforming-securities-regulation-to-support-impact-investing/)
+  > — Norton Rose Fulbright, [Regulatory Initiatives Applicable to Impact Investing](https://www.nortonrosefulbright.com/en/knowledge/publications/dae2d556/regulatory-initiatives-applicable-to-impact-investing)
 
 <a id="india-medical-research-spending-1-2b"></a>
 
@@ -3181,7 +3181,7 @@ from dih_models.parameters import *
 
 - **Net Neutrality Comments (nearly 4M, 2014-2015)**
   > "The nearly 4 million comments submitted to the Federal Communications Commission about its proposed net neutrality rules shattered the agency's previous record..."
-  > — Pew Research Center, 2014, [FCC's net neutrality comment period ends with a bang](https://www.pewresearch.org/short-reads/2014/12/18/fccs-net-neutrality-comment-period-ends-with-a-bang/)
+  > — TechCrunch, 2014, [FCC Confirms That Nearly 4M Net Neutrality Comments Were Submitted By The Public](https://techcrunch.com/2014/12/23/fcc-confirms-that-nearly-4m-net-neutrality-comments-were-submitted-by-the-public/)
 
 <a id="neuromodulation-trd-response-rates"></a>
 
@@ -3713,7 +3713,7 @@ from dih_models.parameters import *
   > Study type variation: 44.8% willing for drug trial, 76.2% for diagnostic study
   > Top motivation: "Learning more about my health/medical condition" (67.4%)
   > Top barrier: "Worry about experiencing side effects" (52.6%)
-  > — [Trials: Patients' Willingness Survey](https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3) | [CenterWatch: Willingness Drops Dramatically](https://www.centerwatch.com/articles/24924-patient-willingness-to-join-clinical-trials-drops-dramatically-new-data-show) | [PMC: Study Design Factors](https://pmc.ncbi.nlm.nih.gov/articles/PMC7183682/)
+  > — [Trials: Patients' Willingness Survey](https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3) | [Applied Clinical Trials: Patient Participation](https://www.appliedclinicaltrialsonline.com/view/industry-forced-to-rethink-patient-participation-in-trials) | [PMC: Study Design Factors](https://pmc.ncbi.nlm.nih.gov/articles/PMC7183682/)
 
 <a id="patientslikeme-advocacy"></a>
 
@@ -5405,8 +5405,8 @@ from dih_models.parameters import *
 <a id="worldcoin-scale"></a>
 
 - **Worldcoin identity verification scale**
-  > "Worldcoin has verified over 2 million unique human identities using iris biometric scanning, demonstrating feasibility of global-scale biometric verification."
-  > — Worldcoin Foundation, 2024, [Progress Update](https://worldcoin.org/blog/announcements/worldcoin-milestones)
+  > "World Network now spans 160 countries and more than 14 million verified unique humans using iris biometric scanning, demonstrating feasibility of global-scale biometric verification."
+  > — World Foundation, 2025, [World: Year Two](https://world.org/blog/announcements/world-year-two)
 
 <a id="wwii-cost-4-trillion-today"></a>
 
