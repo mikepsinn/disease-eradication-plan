@@ -372,10 +372,6 @@
   \ | Unit: USD/year | Click to view calculation\">$41.5B</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
   $41.5B\n$$"
-"dfda_completed_trials_per_year": "<span class=\"parameter-link\" title=\"parameters.DFDA_COMPLETED_TRIALS_PER_YEAR\"\
-  >80,592</span>"
-"dfda_completed_trials_per_year_latex": "$$\nCompleted_{dFDA} = 84,800 \\times 0.95\
-  \ = 80,560\n$$"
 "dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   low\" title=\"Expected ROI for 1% Treaty accounting for 0.1% political success probability\
@@ -559,8 +555,6 @@
   >84,834</span>"
 "dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 25.7 = 84,800\n\
   $$"
-"dfda_trial_abandonment_rate": "<span class=\"parameter-definition\" title=\"dFDA\
-  \ trial abandonment rate (5%) | Unit: rate | Core definition\">5%</span>"
 "dfda_trial_completion_rate": "<span class=\"parameter-definition\" title=\"dFDA trial\
   \ completion rate (95%) | Unit: rate | Core definition\">95%</span>"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
@@ -2249,6 +2243,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "391"
-"total_latex_equation_count": "142"
+"total_parameter_count": "389"
+"total_latex_equation_count": "141"
 "total_citation_count": "129"
