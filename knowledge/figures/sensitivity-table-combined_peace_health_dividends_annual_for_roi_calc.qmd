@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Peace Dividend Annual Societal Benefit | 12885950476.2877 | Strong driver |
-| dFDA R&D Gross Savings Annual | 4792207621.3165 | Strong driver |
+| Peace Dividend Annual Societal Benefit | 12846061549.3486 | Strong driver |
+| dFDA R&D Gross Savings Annual | 4867897725.3657 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

@@ -4,6 +4,6 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Annual War Total Cost | 12852045490.6018 | Strong driver |
+| Global Annual War Total Cost | 12640209083.1013 | Strong driver |
 
 *Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).

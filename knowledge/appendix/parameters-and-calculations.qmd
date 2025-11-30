@@ -1723,8 +1723,6 @@ $$
 
 {{< include ../figures/tornado-action_time_total_hours.qmd >}}
 
-{{< include ../figures/sensitivity-table-action_time_total_hours.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1745,8 +1743,6 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-action_time_total_minutes.qmd >}}
-
-{{< include ../figures/sensitivity-table-action_time_total_minutes.qmd >}}
 
 :::
 
@@ -2271,8 +2267,6 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_annual_opex.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
 
 :::
 
@@ -3426,8 +3420,6 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_annual_war_total_cost.qmd >}}
 
 :::
 
@@ -4741,8 +4733,6 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_expected_cost_per_daly_conservative.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_expected_cost_per_daly_conservative.qmd >}}
 
 :::
 
