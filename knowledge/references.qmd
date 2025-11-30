@@ -1219,7 +1219,7 @@ from dih_models.parameters import *
 
 - **Dunbar's Number**
   > "The cognitive limit to the number of people with whom one can maintain stable social relationships is approximately 150."
-  > — Dunbar, R.I.M., 1992, [Neocortex size as a constraint on group size in primates](https://doi.org/10.1016/0047-2484(92)90081-J)
+  > — Dunbar, R.I.M., 1992, [Neocortex size as a constraint on group size in primates](<https://doi.org/10.1016/0047-2484(92)90081-J>)
 
 <a id="eclinicalmedicine-statins-polypill"></a>
 
@@ -1413,7 +1413,7 @@ from dih_models.parameters import *
 
 - **Evolutionary Mismatch and Modern Disease**
   > "Many modern diseases result from a mismatch between our evolutionary adaptations and current environments, particularly regarding diet and physical activity."
-  > — Lieberman, Daniel, 2013, [The Story of the Human Body: Evolution, Health, and Disease](https://www.hup.harvard.edu/catalog.php?isbn=9780307379412)
+  > — Lieberman, Daniel, 2013, [The Story of the Human Body: Evolution, Health, and Disease](https://www.penguinrandomhouse.com/books/206671/the-story-of-the-human-body-by-daniel-e-lieberman/)
 
 <a id="excess-deaths-fda-covid-response"></a>
 
@@ -1522,7 +1522,7 @@ from dih_models.parameters import *
   > Devices Program: Digital Transformation initiative funding
   > Biologics: Information management & data infrastructure modernization
   > Outdated IT processes modernization across all programs
-  > — [FDA: FY2024 Budget Summary](https://www.fda.gov/about-fda/budgets/2024-budget-summary) | [FDA: FY24 CJ Online Version](https://www.fda.gov/files/about fda/published/FY24 CJ Online Version.pdf)
+  > — [FDA: FY2024 Budget Summary](https://www.fda.gov/about-fda/budgets/2024-budget-summary) | [FDA: FY24 CJ Online Version](https://www.fda.gov/files/about%20fda/published/FY24%20CJ%20Online%20Version.pdf)
   > Note: Specific "$105M for modernization" not found. $128.2M for food safety modernization; broader IT modernization across multiple programs. Total FY24 request: $7.2B
 
 <a id="fda-covid-test-delay"></a>
@@ -1937,7 +1937,7 @@ from dih_models.parameters import *
   > European Union knowledge: 2 in 5 Americans don't know which countries in EU
   > 18-26 college attendees: Average 55% on geography/current events/economics test (failing grade)
   > US consistently scores near bottom vs peers in developed nations
-  > — [National Geographic: Survey Reveals Geographic Illiteracy](https://www.nationalgeographic.com/science/article/geography-survey-illiteracy) | [National Geographic-Roper 2006 Report](https://media.nationalgeographic.org/assets/file/NGS-Roper-2006-Report.pdf) | [ETIAS: EU Country Survey](https://etias.com/articles/eu-country-survey)
+  > — [National Geographic: Survey Reveals Geographic Illiteracy](https://www.nationalgeographic.com/science/article/geography-survey-illiteracy) | [National Geographic-Roper 2006 Report](https://sites.geography.unt.edu/~rice/geog3100/3100handouts/nationalgeographicpoll.pdf) | [ETIAS: EU Country Survey](https://etias.com/articles/eu-country-survey)
   > Note: Severe geographic illiteracy documented across multiple surveys. Specific "can't find Europe on map" not found, but 65% couldn't find France, 69% couldn't find UK
 
 <a id="germany-medical-research-spending-6b"></a>
@@ -2131,7 +2131,7 @@ from dih_models.parameters import *
   > 2022-2023: $6.73T → $7.22T (+7.3%)
   > Food & beverage industry (2024): >$12T globally (~11% of world GDP)
   > Food & grocery retail (2023): $11,932.5B (includes retail distribution)
-  > — [Statista: Food Market Revenue Worldwide](https://www.statista.com/forecasts/1243605/revenue-food-market-worldwide) | [Statista: Food Worldwide Outlook](https://www.statista.com/outlook/cmo/food/worldwide) | [Gitnux: Global Food Industry Statistics](https://gitnux.org/global-food-industry/)
+  > — [Statista: Food Market Revenue Worldwide](https://www.statista.com/forecasts/1243605/revenue-food-market-worldwide) | [Statista: Food Worldwide Outlook](https://www.statista.com/outlook/cmo/food/worldwide) | [World Metrics: Global Food Industry Statistics](https://worldmetrics.org/global-food-industry-statistics/)
   > Note: $9.0T figure accurate for 2025 consumer food spending. Total food & beverage industry >$12T when including beverages and all channels
 
 <a id="global-fund"></a>
@@ -2754,8 +2754,8 @@ from dih_models.parameters import *
 <a id="investment-return-comparison"></a>
 
 - **Investment Return Comparison**
-  > "Over the past five years, the average annual return for major defense contractors has been approximately 8%, while leading healthcare companies have yielded average annual returns of around 12%."
-  > — Forbes, 2024, [Healthcare Stocks Poised for a Rebound](https://www.forbes.com/sites/greatspeculations/2024/01/15/healthcare-stocks-poised-for-rebound-in-2024/)
+  > "Over the 2019-2024 five-year period, the iShares U.S. Aerospace & Defense ETF (ITA) achieved an annualized return of 22.58%, while the Health Care Select Sector SPDR Fund (XLV) achieved an annualized return of approximately 9.8%. Defense stocks significantly outperformed healthcare during this period."
+  > — [iShares U.S. Aerospace & Defense ETF Performance](https://finance.yahoo.com/quote/ITA/performance/) | [XLV Performance Analysis](https://www.mezzi.com/blog/xlv-performance-healthcare-etfs-after-fee-returns)
 
 <a id="jama-founded-1893"></a>
 
@@ -3175,7 +3175,7 @@ from dih_models.parameters import *
   > 2005-2015 trend: O&M represented 40-50% of DoD total budget
   > NATO 2024: $1.47T total spending across 32 member countries; US $967B (66%), European members $454B (30%)
   > NATO equipment investment guideline: At least 20% of defense expenditures for major equipment/R&D
-  > — [USAFacts: US Military Spending](https://usafacts.org/articles/how-much-does-the-us-spend-on-the-military/) | [CBO: DoD O&M Trends](https://www.cbo.gov/publication/52156) | [NATO: Defense Expenditure 2024](https://www.nato.int/cps/en/natohq/news_226465.htm)
+  > — [USAFacts: US Military Spending](https://usafacts.org/articles/how-much-does-the-us-spend-on-the-military/) | [CBO: DoD O&M Trends](https://www.cbo.gov/publication/52156) | [NATO: Defence Expenditures](https://www.nato.int/cps/en/natohq/topics_49198.htm) | [Statista: NATO Combined Defense Expenditures 2024](https://www.statista.com/statistics/1293301/combined-defense-expenditures-nato/)
 
 <a id="net-neutrality-comments"></a>
 
@@ -4593,8 +4593,8 @@ from dih_models.parameters import *
   > 2024: Basic research 2.63 trillion won (~$2 billion), grew 2%
   > Korean ARPA-H launched: 48.5 billion won initial funding; backers seek 1.9 trillion won over 10 years for high-risk biomedical studies
   > Overall R&D dropped 8% to 28.6 trillion won ($22B) in 2024
-  > Healthcare R&D subsidies cut 24% in 2023 despite being designated future growth engine
-  > — [Science: South Korea Proposes Cutbacks](https://www.science.org/content/article/south-korea-science-spending-champion-proposes-cutbacks) | [Statista: South Korea R&D Expenditure](https://www.statista.com/statistics/1228017/south-korea-expenditure-for-rnd/) | [Korea Biomed: Healthcare R&D Cut](https://www.koreabiomed.com/news/articleView.html?idxno=24273)
+  > Healthcare R&D subsidies cut 23.8% in 2023 (from 101.2B won to 77.1B won) despite being designated future growth engine
+  > — [Science: South Korea Proposes Cutbacks](https://www.science.org/content/article/south-korea-science-spending-champion-proposes-cutbacks) | [Statista: South Korea R&D Expenditure](https://www.statista.com/statistics/1228017/south-korea-expenditure-for-rnd/) | [Nature: South Korea R&D Budget Cuts](https://www.nature.com/articles/d41586-023-02841-w) | [University World News: R&D Budget Cuts](https://www.universityworldnews.com/post.php?story=20230913174051170)
 
 <a id="smallpox-eradicated"></a>
 
