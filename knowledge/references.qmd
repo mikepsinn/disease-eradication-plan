@@ -268,7 +268,7 @@ from dih_models.parameters import *
   > Total time to market (Phase I-III + approval): 10.5 years average
   > Phase transition success rates: Phase I→II: 63.2%, Phase II→III: 30.7%, Phase III→Approval: 58.1%
   > Overall probability of approval from Phase I: 12%
-  > — Biotechnology Innovation Organization (BIO), 2021, [Clinical Development Success Rates and Contributing Factors 2011-2020](https://www.bio.org/sites/default/files/2021-02/Clinical-Development-Success-Rates-2011-2020.pdf)
+  > — Biotechnology Innovation Organization (BIO), 2021, [Clinical Development Success Rates and Contributing Factors 2011-2020](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf)
   > Note: Largest publicly available study of clinical trial success rates. Efficacy lag = 10.5 - 2.3 = 8.2 years post-safety verification.
 
 <a id="bloom-ideas-getting-harder-2020"></a>
@@ -1306,7 +1306,7 @@ from dih_models.parameters import *
 
 - **Estonia e-Residency statistics**
   > "Estonia's e-Residency program has issued digital identities to over 100,000 people from 170+ countries, demonstrating global-scale digital identity verification."
-  > — e-Residency, 2024, [Statistics](https://e-resident.gov.ee/statistics/)
+  > — e-Residency, 2024, [Statistics](https://www.e-resident.gov.ee/dashboard/)
 
 <a id="estonia-government-on-blockchain"></a>
 
@@ -2820,7 +2820,7 @@ from dih_models.parameters import *
 
 - **Johnson & Johnson 2023 Financials**
   > "Johnson & Johnson reported revenues of \$85.2 billion and a net income of \$35.2 billion in 2023, resulting in a profit margin of about 41%."
-  > — Johnson & Johnson, 2024, [Investor Relations](https://www.macrotrends.net/stocks/figures/JNJ/johnson-johnson/revenue)
+  > — Johnson & Johnson, 2024, [Investor Relations](https://www.macrotrends.net/stocks/charts/JNJ/johnson-johnson/revenue)
 
 <a id="kyc-biometric-verification-costs-2024"></a>
 
@@ -2949,7 +2949,7 @@ from dih_models.parameters import *
 
 - **Lobbying ROI Feasibility**
   > "Policy-influenced investments can yield high ROIs when backed by public mandates."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
+  > — Watson Institute, Brown University, 2021, [Profits of War](https://costsofwar.watson.brown.edu/paper/profits-war-corporate-beneficiaries-post-911-pentagon-spending-surge)
 
 <a id="lobbying-roi-nih-funding"></a>
 
@@ -3130,7 +3130,7 @@ from dih_models.parameters import *
 
 - **Military Lobbying Returns**
   > "For every dollar spent on lobbying, defense contractors receive over \$100 in contracts."
-  > — Watson Institute, Brown University, 2022, [Profits of War](https://watson.brown.edu/costsofwar/files/cow/imce/papers/2021/Profits%20of%20War_Hartung_Costs%20of%20War_Sept%2013%2C%202021.pdf)
+  > — Watson Institute, Brown University, 2021, [Profits of War](https://costsofwar.watson.brown.edu/paper/profits-war-corporate-beneficiaries-post-911-pentagon-spending-surge)
 
 <a id="military-spending-economic-multiplier"></a>
 
@@ -3274,7 +3274,7 @@ from dih_models.parameters import *
 
 - **NIH Common Fund overview**
   > "The Common Fund supports cross‑cutting programs that are expected to have exceptionally high impact."
-  > — NIH, [Common Fund Overview](https://commonfund.nih.gov/overview)
+  > — NIH, [Common Fund Overview](https://commonfund.nih.gov/about)
 
 <a id="nih-decision-makers-200-people"></a>
 
@@ -3285,7 +3285,7 @@ from dih_models.parameters import *
   > Total NIH employees: ~20,000
   > Leadership structure: Director + 27 Institute/Center directors + division chiefs + council members
   > Specific count of "key decision-makers" varies by definition; centralized funding decisions flow through Office of Director and IC leadership
-  > — [NIH: Who We Are](https://www.nih.gov/about-nih/what-we-do/nih-almanac/who-we-are) | [NIH: Organizational Structure](https://www.nih.gov/about-nih/what-we-do/nih-almanac/organizational-structure)
+  > — [NIH Almanac](https://www.nih.gov/about-nih/what-we-do/nih-almanac) | [NIH Organization](https://www.nih.gov/about-nih/what-we-do/nih-almanac/nih-organization)
 
 <a id="nih-eradicated-zero-diseases"></a>
 
@@ -3756,7 +3756,7 @@ from dih_models.parameters import *
   > Dropbox succeeded with lower incentive due to high perceived value of storage
   > Increasing marginal costs: Early adopters (believers) require minimal incentive; late majority and laggards require higher payments
   > Diffusion of innovations: 2.5% innovators, 13.5% early adopters, 34% early majority, 34% late majority, 16% laggards
-  > — [PayPal Wars Book](https://en.wikipedia.org/wiki/The_PayPal_Wars) | [Dropbox Growth Case Study](https://www.referralrock.com/blog/dropbox-referral-program/) | [Harvard Business Review: Diffusion of Innovations](https://hbr.org/2013/11/the-hard-truth-about-innovative-cultures) | [Rogers (2003): Diffusion of Innovations Theory](https://en.wikipedia.org/wiki/Diffusion_of_innovations)
+  > — [PayPal Wars Book](https://en.wikipedia.org/wiki/The_PayPal_Wars) | [Dropbox Growth Case Study](https://www.referralrock.com/blog/dropbox-referral-program/) | [Harvard Business Review: Hard Truth About Innovative Cultures](https://hbr.org/2019/01/the-hard-truth-about-innovative-cultures) | [Rogers (2003): Diffusion of Innovations Theory](https://en.wikipedia.org/wiki/Diffusion_of_innovations)
 
 <a id="pdufa-user-fees"></a>
 
@@ -4879,7 +4879,7 @@ from dih_models.parameters import *
   > 2023 total organized violence: 154,000 deaths; Non-state conflicts: 20,900 deaths
   > UCDP collects data on state-based conflicts, non-state conflicts, and one-sided violence
   > Specific "2,700 annually" figure for state violence not found in recent UCDP data; actual figures vary annually
-  > — [UCDP: Uppsala Conflict Data Program](https://ucdp.uu.se/) | [Wikipedia: UCDP](https://en.wikipedia.org/wiki/Uppsala_Conflict_Data_Program) | [Our World in Data: State-Based Conflicts](https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region)
+  > — [UCDP: Uppsala Conflict Data Program](https://ucdp.uu.se/) | [Wikipedia: UCDP](https://en.wikipedia.org/wiki/Uppsala_Conflict_Data_Program) | [Our World in Data: Armed Conflict Deaths](https://ourworldindata.org/grapher/deaths-in-armed-conflicts-by-region)
 
 <a id="uk-electoral-registration-threshold-500k"></a>
 
