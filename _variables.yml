@@ -302,11 +302,6 @@
   external\" data-confidence=\"high\" title=\"Current trial abandonment rate (40%\
   \ never complete) | ✓ High confidence | Unit: rate | Click to view source\">40%</a>"
 "current_trial_abandonment_rate_cite": "@clinical-trial-abandonment-rate"
-"current_trial_completion_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-completion-rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-completion-rate\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Current trial completion rate (60%)\
-  \ | ✓ High confidence | Unit: rate | Click to view source\">60%</a>"
-"current_trial_completion_rate_cite": "@clinical-trial-completion-rate"
 "current_trial_slots_available": "<a href=\"https://warondisease.org/knowledge/references.html#global-trial-participant-capacity\"\
   \ class=\"parameter-link\" data-source-ref=\"global-trial-participant-capacity\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global clinical\
@@ -2237,6 +2232,6 @@
   external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
   \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
 "ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "387"
+"total_parameter_count": "386"
 "total_latex_equation_count": "140"
-"total_citation_count": "129"
+"total_citation_count": "128"

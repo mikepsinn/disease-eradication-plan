@@ -13,9 +13,9 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 387
+**Total parameters**: 386
 
-- External sources (peer-reviewed): 129
+- External sources (peer-reviewed): 128
 - Calculated values: 211
 - Core definitions: 47
 
@@ -265,19 +265,6 @@ Current global clinical trials per year
 Current trial abandonment rate (40% never complete)
 
 **Source**: [clinical-trial-abandonment-rate](https://warondisease.org/knowledge/references.html#clinical-trial-abandonment-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Current Trial Completion Rate {#sec-current_trial_completion_rate}
-
-**Value**: 60%
-
-Current trial completion rate (60%)
-
-**Source**: [clinical-trial-completion-rate](https://warondisease.org/knowledge/references.html#clinical-trial-completion-rate)
 
 *✓ High confidence*
 
