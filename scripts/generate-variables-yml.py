@@ -1457,7 +1457,7 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
             certainty_phrase = "This estimate is highly uncertain"
             range_desc = "a very wide range"
         
-        content.append(f"**What this means**: {certainty_phrase}: the true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results.")
+        content.append(f"**What this means**: {certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results.")
         content.append("")
         
         # Add distribution explanation if present
@@ -1601,6 +1601,15 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             # Uncertainty section with human-friendly explanations
             uncertainty_content = generate_uncertainty_section(value, unit)
             content.extend(uncertainty_content)
+
+            # Add input distribution chart if exists (for external params with uncertainty)
+            project_root = output_path.parent.parent.parent  # Go up from knowledge/appendix/ to project root
+            dist_qmd = project_root / "knowledge" / "figures" / f"distribution-{param_name.lower()}.qmd"
+            if dist_qmd.exists():
+                content.append("#### Input Distribution")
+                content.append("")
+                content.append(f"{{{{< include ../figures/distribution-{param_name.lower()}.qmd >}}}}")
+                content.append("")
 
             # Confidence and metadata - cleaner formatting
             metadata = []
@@ -1758,6 +1767,8 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             tornado_json = project_root / "_analysis" / f"tornado_{param_name}.json"
             tornado_qmd = project_root / "knowledge" / "figures" / f"tornado-{param_name.lower()}.qmd"
             sensitivity_qmd = project_root / "knowledge" / "figures" / f"sensitivity-table-{param_name.lower()}.qmd"
+            mc_dist_qmd = project_root / "knowledge" / "figures" / f"mc-distribution-{param_name.lower()}.qmd"
+            exceedance_qmd = project_root / "knowledge" / "figures" / f"exceedance-{param_name.lower()}.qmd"
 
             if tornado_qmd.exists():
                 content.append("#### Sensitivity Analysis")
@@ -1768,6 +1779,20 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 if sensitivity_qmd.exists():
                     content.append(f"{{{{< include ../figures/sensitivity-table-{param_name.lower()}.qmd >}}}}")
                     content.append("")
+
+            # Add Monte Carlo distribution chart if exists
+            if mc_dist_qmd.exists():
+                content.append("#### Monte Carlo Distribution")
+                content.append("")
+                content.append(f"{{{{< include ../figures/mc-distribution-{param_name.lower()}.qmd >}}}}")
+                content.append("")
+
+            # Add exceedance/CDF chart if exists
+            if exceedance_qmd.exists():
+                content.append("#### Exceedance Probability")
+                content.append("")
+                content.append(f"{{{{< include ../figures/exceedance-{param_name.lower()}.qmd >}}}}")
+                content.append("")
 
             content.append(":::")
             content.append("")
@@ -2810,6 +2835,480 @@ Regression-based sensitivity showing which inputs explain the most variance in t
     return output_file
 
 
+def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, output_dir: Path) -> Path:
+    """
+    Generate a distribution chart for an input parameter showing its uncertainty range.
+
+    This visualizes the assumed probability distribution for external/definition parameters
+    that have confidence_interval and/or distribution metadata.
+
+    Args:
+        param_name: Parameter name (e.g., 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024')
+        param_data: Parameter metadata dict with 'value' key containing Parameter instance
+        output_dir: Directory to write QMD file (knowledge/figures/)
+
+    Returns:
+        Path to generated QMD file
+
+    Raises:
+        ValueError: If parameter has no uncertainty metadata
+    """
+    value = param_data.get("value")
+    if not value:
+        raise ValueError(f"No value for parameter {param_name}")
+
+    # Check for uncertainty metadata
+    has_ci = hasattr(value, "confidence_interval") and value.confidence_interval
+    has_dist = hasattr(value, "distribution") and value.distribution
+    has_se = hasattr(value, "std_error") and value.std_error
+
+    if not (has_ci or has_dist or has_se):
+        raise ValueError(f"Parameter {param_name} has no uncertainty metadata")
+
+    # Get display name
+    if hasattr(value, "display_name") and value.display_name:
+        display_name = value.display_name
+    else:
+        display_name = smart_title_case(param_name)
+
+    # Get values
+    central_value = float(value)
+    unit = getattr(value, "unit", "")
+
+    # Determine distribution parameters
+    if has_ci:
+        low, high = value.confidence_interval
+    elif has_se:
+        # Approximate 95% CI from standard error
+        low = central_value - 1.96 * value.std_error
+        high = central_value + 1.96 * value.std_error
+    else:
+        # Default ±20% if only distribution type specified
+        low = central_value * 0.8
+        high = central_value * 1.2
+
+    # Get distribution type
+    dist_type = "normal"  # default
+    if has_dist:
+        dist_type = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+        dist_type = dist_type.lower()
+
+    # Generate Python code for the chart
+    qmd_content = f'''```{{python}}
+#| echo: false
+#| fig-cap: "Probability Distribution: {display_name}"
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+
+setup_chart_style()
+
+# Parameter values
+central_value = {central_value}
+low = {low}
+high = {high}
+dist_type = "{dist_type}"
+display_name = "{display_name}"
+unit = "{unit}"
+
+# Calculate distribution parameters
+if dist_type == "lognormal":
+    # For lognormal, we need to work in log space
+    # Assume low/high are 5th/95th percentiles
+    if central_value > 0 and low > 0:
+        mu = np.log(central_value)
+        # Estimate sigma from CI width
+        sigma = (np.log(high) - np.log(low)) / (2 * 1.645)  # 90% CI
+        sigma = max(sigma, 0.1)  # Minimum sigma
+        x = np.linspace(max(0.01, low * 0.5), high * 1.5, 500)
+        y = stats.lognorm.pdf(x, s=sigma, scale=np.exp(mu))
+    else:
+        # Fall back to normal if values aren't positive
+        dist_type = "normal"
+
+if dist_type == "normal":
+    # Estimate sigma from CI width (assuming 95% CI)
+    sigma = (high - low) / (2 * 1.96)
+    sigma = max(sigma, abs(central_value) * 0.01)  # Minimum 1% of value
+    x = np.linspace(low - sigma, high + sigma, 500)
+    y = stats.norm.pdf(x, loc=central_value, scale=sigma)
+
+elif dist_type == "uniform":
+    x = np.linspace(low * 0.9, high * 1.1, 500)
+    y = np.where((x >= low) & (x <= high), 1 / (high - low), 0)
+
+elif dist_type == "triangular":
+    # Triangular with mode at central value
+    x = np.linspace(low * 0.9, high * 1.1, 500)
+    y = stats.triang.pdf(x, c=(central_value - low) / (high - low), loc=low, scale=high - low)
+
+elif dist_type == "beta":
+    # Beta distribution scaled to [low, high]
+    # Use alpha=2, beta=2 for symmetric bell shape
+    x_norm = np.linspace(0, 1, 500)
+    x = low + x_norm * (high - low)
+    y = stats.beta.pdf(x_norm, a=2, b=2) / (high - low)
+
+elif dist_type == "pert":
+    # PERT is a special case of beta
+    # Mode = central_value, min = low, max = high
+    range_val = high - low
+    if range_val > 0:
+        # PERT uses alpha = 1 + 4*(mode-min)/(max-min), beta = 1 + 4*(max-mode)/(max-min)
+        mode_ratio = (central_value - low) / range_val
+        alpha = 1 + 4 * mode_ratio
+        beta_param = 1 + 4 * (1 - mode_ratio)
+        x_norm = np.linspace(0, 1, 500)
+        x = low + x_norm * range_val
+        y = stats.beta.pdf(x_norm, a=alpha, b=beta_param) / range_val
+    else:
+        x = np.array([central_value])
+        y = np.array([1])
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot distribution
+ax.fill_between(x, y, alpha=0.3, color=COLOR_BLACK)
+ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
+
+# Mark central value
+ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
+           label=f'Central: {{central_value:,.2g}}')
+
+# Mark confidence interval
+ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
+           label=f'95% CI Low: {{low:,.2g}}')
+ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
+           label=f'95% CI High: {{high:,.2g}}')
+
+# Shade the CI region
+ci_mask = (x >= low) & (x <= high)
+ax.fill_between(x, y, where=ci_mask, alpha=0.2, color=COLOR_BLACK)
+
+# Labels
+ax.set_xlabel(f'{{display_name}} ({{unit}})' if unit else display_name, fontsize=12)
+ax.set_ylabel('Probability Density', fontsize=12)
+ax.set_title(f'Assumed Distribution: {{display_name}}', fontsize=14, weight='bold', pad=15)
+
+# Legend
+ax.legend(loc='upper right', fontsize=10)
+
+# Clean up
+clean_spines(ax)
+ax.set_ylim(bottom=0)
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'distribution-{param_name.lower()}.png'
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Distribution: {{display_name}}',
+    description=f'Assumed probability distribution for {{display_name}} showing uncertainty range'
+)
+
+plt.show()
+```
+
+*This chart shows the assumed probability distribution for this parameter. The shaded region represents the 95% confidence interval where we expect the true value to fall.*
+'''
+
+    # Write QMD file
+    output_file = output_dir / f'distribution-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(qmd_content)
+
+    return output_file
+
+
+def generate_monte_carlo_distribution_chart_qmd(
+    param_name: str,
+    outcome_data: dict,
+    samples: list,
+    output_dir: Path,
+    param_metadata: dict = None
+) -> Path:
+    """
+    Generate a Monte Carlo output distribution chart for a calculated parameter.
+
+    Shows the histogram of simulated outcomes with percentiles and statistics.
+
+    Args:
+        param_name: Parameter name (e.g., 'TREATY_COMPLETE_ROI_ALL_BENEFITS')
+        outcome_data: Dict with baseline, mean, std, p5, p50, p95, units
+        samples: List of Monte Carlo samples for this outcome
+        output_dir: Directory to write QMD file
+        param_metadata: Optional parameter metadata
+
+    Returns:
+        Path to generated QMD file
+    """
+    # Get display name
+    if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
+        display_name = param_metadata["value"].display_name
+    else:
+        display_name = smart_title_case(param_name)
+
+    baseline = outcome_data.get("baseline", 0)
+    mean = outcome_data.get("mean", baseline)
+    std = outcome_data.get("std", 0)
+    p5 = outcome_data.get("p5", baseline)
+    p50 = outcome_data.get("p50", baseline)
+    p95 = outcome_data.get("p95", baseline)
+    units = outcome_data.get("units", "")
+
+    # Generate QMD with embedded Python
+    qmd_content = f'''```{{python}}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+
+setup_chart_style()
+
+# Simulation results
+samples = {samples[:1000] if len(samples) > 1000 else samples}  # Truncate for embedding
+baseline = {baseline}
+mean = {mean}
+std = {std}
+p5 = {p5}
+p50 = {p50}
+p95 = {p95}
+display_name = "{display_name}"
+units = "{units}"
+
+# Create figure with two subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+n, bins, patches = ax1.hist(samples, bins=50, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Mark key statistics
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {{p50:,.2g}}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {{p5:,.2g}}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {{p95:,.2g}}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {{baseline:,.2g}}')
+
+ax1.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Mark key percentiles
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{{exceed_baseline_pct:.0f}}% chance of\\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+fig.suptitle(f'Monte Carlo Analysis: {{display_name}}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'mc-distribution-{param_name.lower()}.png'
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {{display_name}}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {{display_name}}'
+)
+
+plt.show()
+```
+
+**Key Statistics:**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | {baseline:,.4g} |
+| Mean (expected value) | {mean:,.4g} |
+| Median (50th percentile) | {p50:,.4g} |
+| Standard Deviation | {std:,.4g} |
+| 90% Confidence Interval | [{p5:,.4g}, {p95:,.4g}] |
+
+*The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+'''
+
+    # Write QMD file
+    output_file = output_dir / f'mc-distribution-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(qmd_content)
+
+    return output_file
+
+
+def generate_cdf_chart_qmd(
+    param_name: str,
+    samples: list,
+    output_dir: Path,
+    param_metadata: dict = None,
+    thresholds: list = None
+) -> Path:
+    """
+    Generate a standalone Cumulative Distribution Function (CDF) chart.
+
+    This is the "probability of exceeding X" chart that funders love.
+
+    Args:
+        param_name: Parameter name
+        samples: List of Monte Carlo samples
+        output_dir: Directory to write QMD file
+        param_metadata: Optional parameter metadata
+        thresholds: Optional list of threshold values to annotate (e.g., [10, 50, 100] for ROI)
+
+    Returns:
+        Path to generated QMD file
+    """
+    # Get display name
+    if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
+        display_name = param_metadata["value"].display_name
+    else:
+        display_name = smart_title_case(param_name)
+
+    units = ""
+    if param_metadata and hasattr(param_metadata.get("value"), "unit"):
+        units = param_metadata["value"].unit or ""
+
+    # Auto-generate thresholds if not provided
+    if thresholds is None:
+        sorted_s = sorted(samples)
+        p10 = sorted_s[int(len(sorted_s) * 0.10)]
+        p50 = sorted_s[int(len(sorted_s) * 0.50)]
+        p90 = sorted_s[int(len(sorted_s) * 0.90)]
+        thresholds = [p10, p50, p90]
+
+    qmd_content = f'''```{{python}}
+#| echo: false
+#| fig-cap: "Probability of Exceeding Threshold: {display_name}"
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+
+setup_chart_style()
+
+# Monte Carlo samples
+samples = {samples[:2000] if len(samples) > 2000 else samples}
+thresholds = {thresholds}
+display_name = "{display_name}"
+units = "{units}"
+
+# Calculate exceedance probabilities (1 - CDF)
+sorted_samples = np.sort(samples)
+exceedance = 1 - np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot exceedance curve
+ax.plot(sorted_samples, exceedance * 100, color=COLOR_BLACK, linewidth=2.5)
+ax.fill_between(sorted_samples, 0, exceedance * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Annotate thresholds
+for thresh in thresholds:
+    exceed_pct = (np.array(samples) >= thresh).sum() / len(samples) * 100
+    ax.axvline(thresh, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+    ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
+    
+    # Add label
+    ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{thresh:,.2g}}',
+                xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
+                fontsize=10, ha='left', weight='bold',
+                bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))
+
+ax.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=12)
+ax.set_ylabel('Probability of Exceeding Value (%)', fontsize=12)
+ax.set_title(f'Exceedance Probability: {{display_name}}', fontsize=14, weight='bold', pad=15)
+ax.set_ylim(0, 100)
+ax.set_xlim(left=min(sorted_samples) * 0.95)
+
+clean_spines(ax)
+add_watermark(fig)
+
+# Save PNG
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'exceedance-{param_name.lower()}.png'
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Exceedance: {{display_name}}',
+    description=f'Probability of {{display_name}} exceeding various thresholds'
+)
+
+plt.show()
+```
+
+*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+'''
+
+    # Write QMD file
+    output_file = output_dir / f'exceedance-{param_name.lower()}.qmd'
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(qmd_content)
+
+    return output_file
+
+
 def main():
     # Parse command-line arguments
     inject_citations = "--inject-citations" in sys.argv
@@ -3047,6 +3546,38 @@ def main():
                 json.dump(summaries, f, indent=2)
             print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
 
+            # Generate input distribution charts for parameters with uncertainty metadata
+            print("[*] Generating input distribution charts...")
+            input_dist_figures_dir = project_root / "knowledge" / "figures"
+            input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Clean up stale input distribution QMD files
+            stale_dist_files = list(input_dist_figures_dir.glob("distribution-*.qmd"))
+            if stale_dist_files:
+                print(f"[*] Cleaning {len(stale_dist_files)} stale distribution QMD files...")
+                for f in stale_dist_files:
+                    f.unlink()
+            
+            input_dist_count = 0
+            for param_name, param_data in parameters.items():
+                try:
+                    # Only generate for parameters with uncertainty metadata
+                    dist_file = generate_input_distribution_chart_qmd(
+                        param_name, param_data, input_dist_figures_dir
+                    )
+                    input_dist_count += 1
+                    if input_dist_count <= 5:  # Only log first few to avoid clutter
+                        print(f"[OK] Generated {dist_file.relative_to(project_root)}")
+                except ValueError:
+                    # Parameter doesn't have uncertainty metadata - skip silently
+                    pass
+                except Exception as e:
+                    print(f"[WARN] Failed to generate input distribution for {param_name}: {e}")
+            
+            if input_dist_count > 5:
+                print(f"[OK] ... and {input_dist_count - 5} more input distribution charts")
+            print(f"[OK] Generated {input_dist_count} input distribution charts")
+
             if target and _sens is not None:
                 sens = _sens(parameters, target_name=target, n=2000)
                 with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8") as f:
@@ -3059,15 +3590,18 @@ def main():
             if tornado_deltas and regression_sensitivity and Outcome:
                 print("[*] Generating outcome distributions and sensitivity analysis...")
                 
-                # Clean up stale generated tornado/sensitivity QMD files
+                # Clean up stale generated QMD files
                 # This handles deleted/renamed parameters that would leave orphan files
                 figures_dir = project_root / "knowledge" / "figures"
                 stale_tornado_files = list(figures_dir.glob("tornado-*.qmd"))
                 stale_sensitivity_files = list(figures_dir.glob("sensitivity-table-*.qmd"))
-                stale_count = len(stale_tornado_files) + len(stale_sensitivity_files)
+                stale_mc_dist_files = list(figures_dir.glob("mc-distribution-*.qmd"))
+                stale_exceedance_files = list(figures_dir.glob("exceedance-*.qmd"))
+                stale_files = stale_tornado_files + stale_sensitivity_files + stale_mc_dist_files + stale_exceedance_files
+                stale_count = len(stale_files)
                 if stale_count > 0:
                     print(f"[*] Cleaning {stale_count} stale generated QMD files...")
-                    for f in stale_tornado_files + stale_sensitivity_files:
+                    for f in stale_files:
                         f.unlink()
                 
                 # Validate: Find calculated parameters missing inputs/compute
@@ -3229,6 +3763,30 @@ def main():
                                     print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
                             else:
                                 print(f"[SKIP] Sensitivity table for {outcome.name}: all coefficients near zero")
+
+                            # Generate Monte Carlo distribution chart
+                            try:
+                                outcome_info = outcomes_data.get(outcome.name, {})
+                                if outcome_samples and len(outcome_samples) > 100:
+                                    mc_dist_file = generate_monte_carlo_distribution_chart_qmd(
+                                        outcome.name,
+                                        outcome_info,
+                                        outcome_samples,
+                                        figures_dir,
+                                        param_meta
+                                    )
+                                    print(f"[OK] Generated {mc_dist_file.relative_to(project_root)}")
+
+                                    # Generate standalone CDF/exceedance chart
+                                    cdf_file = generate_cdf_chart_qmd(
+                                        outcome.name,
+                                        outcome_samples,
+                                        figures_dir,
+                                        param_meta
+                                    )
+                                    print(f"[OK] Generated {cdf_file.relative_to(project_root)}")
+                            except Exception as mc_err:
+                                print(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
                     except Exception as e:
                         print(f"[WARN] Skipped outcome {outcome.name}: {e}")
 
