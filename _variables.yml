@@ -725,13 +725,6 @@
   \ for military spending (0.6x ROI) | ✓ High confidence | Unit: ratio | Click to\
   \ view source\">0.6</a>"
 "economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
-"effective_hourly_rate": "<a href=\"/knowledge/solution/wishocracy#effective-hourly-rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Effective hourly\
-  \ rate from treaty participation | ✓ High confidence | Formula: LIFETIME_BENEFIT\
-  \ ÷ TIME_INVESTED | Unit: USD/hour | Click to view calculation\">$292K</a>"
-"effective_hourly_rate_latex": "$$\nHourlyRate = \\frac{\\$4,300,000}{14.75} \\approx\
-  \ \\$291,525/hr\n$$"
 "effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Lifetime benefit\
@@ -2007,11 +2000,6 @@
 "victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
   \ of captured dividend funding VICTORY bonds (10%) | Unit: rate | Core definition\"\
   >10%</span>"
-"victory_bond_investment_unit_usd": "<a href=\"/knowledge/strategy/roadmap#victory-bonds\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"VICTORY bond\
-  \ investment unit for retail investors | ✓ High confidence | Unit: USD | Click to\
-  \ view calculation\">$1.00K</a>"
 "vitamin_a_cost_per_daly": "<a href=\"https://warondisease.org/knowledge/references.html#vitamin-a-cost-per-daly\"\
   \ class=\"parameter-link\" data-source-ref=\"vitamin-a-cost-per-daly\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Cost per DALY for vitamin A supplementation\
@@ -2042,6 +2030,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "352"
-"total_latex_equation_count": "129"
+"total_parameter_count": "350"
+"total_latex_equation_count": "128"
 "total_citation_count": "126"

@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 352
+**Total parameters**: 350
 
 - External sources (peer-reviewed): 126
 - Calculated values: 105
-- Core definitions: 121
+- Core definitions: 119
 
 ## External Data Sources {#sec-external}
 
@@ -4608,17 +4608,6 @@ Ratio of annual disease deaths to war deaths
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### Effective Hourly Rate from Treaty Participation {#sec-effective_hourly_rate}
-
-**Value**: $292K
-
-Effective hourly rate from treaty participation
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ### Lifetime Benefit for Age 30 Baseline Scenario {#sec-effective_hourly_rate_lifetime_benefit}
 
 **Value**: $4.30M
@@ -5205,17 +5194,6 @@ Annual return percentage for VICTORY bondholders
 **Value**: 10%
 
 Percentage of captured dividend funding VICTORY bonds (10%)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Victory Bond Investment Unit for Retail Investors {#sec-victory_bond_investment_unit_usd}
-
-**Value**: $1.00K
-
-VICTORY bond investment unit for retail investors
 
 *Core definition*
 
