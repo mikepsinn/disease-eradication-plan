@@ -88,6 +88,7 @@ book:
       chapters:
         - knowledge/strategy/strategy-execution-overview.qmd # ✅ Complete execution strategy (merged 3-step, 5-step, bribe sequence) ~6p
         - knowledge/strategy/treaty-adoption-strategy.qmd # ✅ Dual-track approach (merged grassroots + diplomatic) ~8p
+        - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/co-opt-dont-compete.qmd # ✅ (EXCELLENT voice - "You'd lose") ~3p
         - knowledge/appendix/global-referendum-implementation.qmd # ✅ (technical spec, appropriate) ~1p
         - knowledge/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
@@ -237,6 +238,9 @@ execute:
   # Relaunch kernel for each render
   cache: false  # Disabled: incompatible with inline expressions
   freeze: auto  # Re-render only when source changes
+  # Reuse kernel across files to prevent socket exhaustion (ZMQ buffer errors)
+  daemon: 300
+  daemon-restart: false
   # Send all generated figures to a central directory
   fig-path: "knowledge/figures/"
 

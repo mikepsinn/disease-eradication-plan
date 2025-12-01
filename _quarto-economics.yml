@@ -148,6 +148,8 @@ website:
             text: "Strategic Appeal to Nonprofits"
           - href: knowledge/strategy/treaty-adoption-strategy.qmd
             text: "Treaty Adoption Strategy"
+          - href: knowledge/appendix/treaty-feasibility.qmd
+            text: "Treaty Feasibility & Cost Analysis"
           - href: knowledge/strategy/global-referendum.qmd
             text: "Global Referendum Mechanics"
       - section: "Legal & Regulatory Framework"
@@ -209,6 +211,8 @@ execute:
   fig-path: "knowledge/figures/"
   cache: false
   freeze: false
+  daemon: 300
+  daemon-restart: false
   env:
     PYTHONPATH: "."
 

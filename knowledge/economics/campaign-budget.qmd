@@ -42,6 +42,14 @@ This {{< var treaty_campaign_total_cost >}} will:
 - Strategic lobbying: {{< var campaign_lobbying_us >}} (bribe only the humans who matter)
 - **Total: {{< var treaty_campaign_total_cost >}}** (80% savings, same corruption)
 
+### The Minimum Viable Budget
+
+The $1B target is overkill-by-design. The actual cost to get governments to sign a piece of paper? Historically, ~$90–140 million.
+
+The Ottawa Treaty (banning landmines) cost $15M in diplomatic paperwork. The Nuclear Ban Treaty: $10M. Countries love signing papers - it makes them look good without doing anything.
+
+See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd) for the full breakdown of why getting signatures is cheap and implementation is where the real money goes.
+
 ## Where the Papers Go
 
 ### 1. Viral Referendum (part of {{< var treaty_campaign_budget_referendum >}} Referendum Budget)
@@ -444,9 +452,3 @@ But the real return:
 - Bondholders: $2.7B/year forever ({{< var victory_bond_annual_return_pct >}} annually)
 - Society: ${{< var treaty_complete_roi_all_benefits >}}:1 per dollar (cures, wealth, fewer dead people)
 - Humanity: Optional death by 2050
-
-
-
-
-
-
