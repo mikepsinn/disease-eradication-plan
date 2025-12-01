@@ -90,7 +90,7 @@ jobs:
 
       - name: Render Quarto Project (HTML) with validation and monitoring
         run: python scripts/render-book-website.py
-        timeout-minutes: 15
+        timeout-minutes: 25
 
       - name: Deploy Main Site to Netlify
         uses: nwtgck/actions-netlify@v3.0
@@ -116,7 +116,7 @@ jobs:
 
       - name: Render Economics Website (for Netlify deployment)
         run: python scripts/render-economics-website.py --output-dir _site/economics
-        timeout-minutes: 10
+        timeout-minutes: 25
 
       - name: Deploy Economics Site to Netlify
         uses: nwtgck/actions-netlify@v3.0
