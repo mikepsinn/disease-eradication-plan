@@ -11,32 +11,6 @@
 #   {{< var total_citation_count >}} - Number of citations
 #
 
-"action_time_invest_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to invest\
-  \ (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\">10</a>"
-"action_time_recruit_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to recruit\
-  \ others (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\"\
-  >15</a>"
-"action_time_total_hours": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total action\
-  \ time in hours | ✓ High confidence | Formula: MINUTES ÷ 60 | Unit: hours | Click\
-  \ to view calculation\">0.45</a>"
-"action_time_total_hours_latex": "$$\nHours = 27 / 60 = 0.45 \\text{ hours}\n$$"
-"action_time_total_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total time for\
-  \ all three actions | ✓ High confidence | Formula: VOTE + INVEST + RECRUIT | Unit:\
-  \ minutes | Click to view calculation\">27</a>"
-"action_time_total_minutes_latex": "$$\nTotalTime = 2 + 10 + 15 = 27 \\text{ minutes}\n\
-  $$"
-"action_time_vote_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to vote\
-  \ (minutes) | ✓ High confidence | Unit: minutes | Click to view calculation\">2</a>"
 "antidepressant_trial_exclusion_rate": "<a href=\"https://warondisease.org/knowledge/references.html#antidepressant-trial-exclusion-rates\"\
   \ class=\"parameter-link\" data-source-ref=\"antidepressant-trial-exclusion-rates\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Mean exclusion\
@@ -73,13 +47,6 @@
   \ for non-fiction) | ✓ High confidence | Unit: words/minute | Click to view source\"\
   >200</a>"
 "book_reading_speed_wpm_cite": "@average-reading-speed"
-"book_reading_time_hours": "<a href=\"/knowledge/solution/wishocracy#time-investment\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to read\
-  \ the entire book | ✓ High confidence | Formula: (WORDS ÷ SPEED) ÷ 60 | Unit: hours\
-  \ | Click to view calculation\">14.3</a>"
-"book_reading_time_hours_latex": "$$\nReadTime = \\frac{171,121 / 200}{60} \\approx\
-  \ 14.3 \\text{ hours}\n$$"
 "campaign_celebrity_endorsement": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Celebrity and\
@@ -1645,13 +1612,6 @@
   \ calculation\">$94.7B</a>"
 "total_research_funding_with_treaty_latex": "$$\nFunding_{total} = Spending_{global}\
   \ + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B\n$$"
-"total_time_investment_hours": "<a href=\"/knowledge/solution/wishocracy#time-investment\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total time investment\
-  \ (reading + actions) | ✓ High confidence | Formula: READING + ACTIONS | Unit: hours\
-  \ | Click to view calculation\">14.7</a>"
-"total_time_investment_hours_latex": "$$\nTotalInvestment = 14.3 + 0.45 = 14.75 \\\
-  text{ hours}\n$$"
 "traditional_phase3_cost_per_patient": "<a href=\"https://warondisease.org/knowledge/references.html#phase-3-cost-per-patient-113k\"\
   \ class=\"parameter-link\" data-source-ref=\"phase-3-cost-per-patient-113k\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Phase 3 cost per patient (median) |\
@@ -2030,6 +1990,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "350"
-"total_latex_equation_count": "128"
+"total_parameter_count": "343"
+"total_latex_equation_count": "124"
 "total_citation_count": "126"

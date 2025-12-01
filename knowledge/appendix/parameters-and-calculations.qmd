@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 350
+**Total parameters**: 343
 
 - External sources (peer-reviewed): 126
 - Calculated values: 105
-- Core definitions: 119
+- Core definitions: 112
 
 ## External Data Sources {#sec-external}
 
@@ -3961,72 +3961,6 @@ $$
 Fundamental parameters and constants used throughout the analysis.
 
 ::: {.callout-warning icon=false collapse=false}
-### Time to Invest (Minimum) {#sec-action_time_invest_minutes}
-
-**Value**: 10
-
-Time to invest (minutes)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Time to Recruit Others (Minimum) {#sec-action_time_recruit_minutes}
-
-**Value**: 15
-
-Time to recruit others (minutes)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Total Action Time in Hours {#sec-action_time_total_hours}
-
-**Value**: 0.45
-
-Total action time in hours
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Total Time for All Three Actions (Minimum) {#sec-action_time_total_minutes}
-
-**Value**: 27
-
-Total time for all three actions
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Time to Vote (Minimum) {#sec-action_time_vote_minutes}
-
-**Value**: 2
-
-Time to vote (minutes)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Time to Read the Entire Book {#sec-book_reading_time_hours}
-
-**Value**: 14.3
-
-Time to read the entire book
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ### Celebrity and Influencer Endorsements {#sec-campaign_celebrity_endorsement}
 
 **Value**: $15M
@@ -4993,17 +4927,6 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 **Value**: 171K
 
 Total words in the book
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Total Time Investment in Treaty Participation {#sec-total_time_investment_hours}
-
-**Value**: 14.7
-
-Total time investment (reading + actions)
 
 *Core definition*
 
