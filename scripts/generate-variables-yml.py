@@ -3103,7 +3103,12 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 fig.subplots_adjust(wspace=0.3)
 
 # --- Left: Histogram ---
-n, bins, patches = ax1.hist(samples, bins=50, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+# Handle edge case where all samples are identical (zero variance)
+if std == 0 or (max(samples) == min(samples)):
+    n_bins = 1
+else:
+    n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
+n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
 
 # Mark key statistics
 ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {{p50:,.2g}}')
@@ -3500,7 +3505,7 @@ def main():
             
             analysis_dir.mkdir(exist_ok=True)
             # Minimal inline summary generation to avoid duplicating logic
-            from dih_models.uncertainty import simulate as _sim, one_at_a_time_sensitivity as _sens
+            from dih_models.uncertainty import simulate_with_propagation as _sim, one_at_a_time_sensitivity as _sens
             # Use fixed seed for reproducibility (avoids git churn from random variation)
             RANDOM_SEED = 42
             sims = _sim(parameters, n=10000, seed=RANDOM_SEED)
@@ -3545,10 +3550,13 @@ def main():
             input_dist_figures_dir = project_root / "knowledge" / "figures"
             input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
             
-            # Clean up stale input distribution QMD files
-            stale_dist_files = list(input_dist_figures_dir.glob("distribution-*.qmd"))
+            # Clean up stale input distribution files (QMD and PNG)
+            # This handles deleted/renamed parameters that would leave orphan files
+            stale_dist_qmd = list(input_dist_figures_dir.glob("distribution-*.qmd"))
+            stale_dist_png = list(input_dist_figures_dir.glob("distribution-*.png"))
+            stale_dist_files = stale_dist_qmd + stale_dist_png
             if stale_dist_files:
-                print(f"[*] Cleaning {len(stale_dist_files)} stale distribution QMD files...")
+                print(f"[*] Cleaning {len(stale_dist_files)} stale distribution files ({len(stale_dist_qmd)} QMD, {len(stale_dist_png)} PNG)...")
                 for f in stale_dist_files:
                     f.unlink()
             
@@ -3583,17 +3591,28 @@ def main():
             if tornado_deltas and regression_sensitivity and Outcome:
                 print("[*] Generating outcome distributions and sensitivity analysis...")
                 
-                # Clean up stale generated QMD files
+                # Clean up stale generated files (QMD and PNG)
                 # This handles deleted/renamed parameters that would leave orphan files
                 figures_dir = project_root / "knowledge" / "figures"
-                stale_tornado_files = list(figures_dir.glob("tornado-*.qmd"))
-                stale_sensitivity_files = list(figures_dir.glob("sensitivity-table-*.qmd"))
-                stale_mc_dist_files = list(figures_dir.glob("mc-distribution-*.qmd"))
-                stale_exceedance_files = list(figures_dir.glob("exceedance-*.qmd"))
-                stale_files = stale_tornado_files + stale_sensitivity_files + stale_mc_dist_files + stale_exceedance_files
+                
+                # Collect stale QMD files
+                stale_tornado_qmd = list(figures_dir.glob("tornado-*.qmd"))
+                stale_sensitivity_qmd = list(figures_dir.glob("sensitivity-table-*.qmd"))
+                stale_mc_dist_qmd = list(figures_dir.glob("mc-distribution-*.qmd"))
+                stale_exceedance_qmd = list(figures_dir.glob("exceedance-*.qmd"))
+                stale_qmd_files = stale_tornado_qmd + stale_sensitivity_qmd + stale_mc_dist_qmd + stale_exceedance_qmd
+                
+                # Collect stale PNG files (rendered from QMD)
+                stale_tornado_png = list(figures_dir.glob("tornado-*.png"))
+                stale_sensitivity_png = list(figures_dir.glob("sensitivity-table-*.png"))
+                stale_mc_dist_png = list(figures_dir.glob("mc-distribution-*.png"))
+                stale_exceedance_png = list(figures_dir.glob("exceedance-*.png"))
+                stale_png_files = stale_tornado_png + stale_sensitivity_png + stale_mc_dist_png + stale_exceedance_png
+                
+                stale_files = stale_qmd_files + stale_png_files
                 stale_count = len(stale_files)
                 if stale_count > 0:
-                    print(f"[*] Cleaning {stale_count} stale generated QMD files...")
+                    print(f"[*] Cleaning {stale_count} stale generated files ({len(stale_qmd_files)} QMD, {len(stale_png_files)} PNG)...")
                     for f in stale_files:
                         f.unlink()
                 
@@ -3621,6 +3640,74 @@ def main():
                     print("[ERROR]   1. Add inputs=[] and compute=lambda ctx: ... to the Parameter", file=sys.stderr)
                     print("[ERROR]   2. Change source_type='definition' if it's an estimate/assumption", file=sys.stderr)
                     print("[ERROR]   3. Change source_type='external' if it comes from a source", file=sys.stderr)
+                    sys.exit(1)
+                
+                # Validate: Check for leaf input parameters missing uncertainty metadata
+                # These cause zero-variance Monte Carlo outputs, making distribution charts meaningless
+                
+                def get_all_leaf_inputs(param_name: str, visited: set = None) -> set:
+                    """Recursively find all leaf (non-calculated) inputs for a parameter."""
+                    if visited is None:
+                        visited = set()
+                    if param_name in visited:
+                        return set()
+                    visited.add(param_name)
+                    
+                    meta = parameters.get(param_name, {})
+                    val = meta.get("value")
+                    
+                    # If has inputs, recurse
+                    if hasattr(val, "inputs") and val.inputs:
+                        leaves = set()
+                        for inp in val.inputs:
+                            leaves.update(get_all_leaf_inputs(inp, visited))
+                        return leaves
+                    else:
+                        # This is a leaf parameter
+                        return {param_name}
+                
+                def has_uncertainty(val) -> bool:
+                    """Check if a parameter has uncertainty metadata."""
+                    has_dist = hasattr(val, "distribution") and val.distribution
+                    has_std = hasattr(val, "std_error") and val.std_error
+                    has_ci = hasattr(val, "confidence_interval") and val.confidence_interval
+                    return bool(has_dist or has_std or has_ci)
+                
+                # Collect ALL leaf parameters that are used in calculations but lack uncertainty
+                all_deterministic_leaves = set()
+                all_uncertain_leaves = set()
+                
+                for param_name, meta in parameters.items():
+                    val = meta.get("value")
+                    if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
+                        # Find all leaf inputs for this calculated param
+                        leaf_inputs = get_all_leaf_inputs(param_name)
+                        for leaf in leaf_inputs:
+                            leaf_meta = parameters.get(leaf, {})
+                            leaf_val = leaf_meta.get("value")
+                            if has_uncertainty(leaf_val):
+                                all_uncertain_leaves.add(leaf)
+                            else:
+                                all_deterministic_leaves.add(leaf)
+                
+                # Only flag deterministic leaves that aren't also uncertain (some params may be checked multiple times)
+                truly_deterministic = all_deterministic_leaves - all_uncertain_leaves
+                
+                if truly_deterministic:
+                    print(f"\n[ERROR] {len(truly_deterministic)} leaf input parameters lack uncertainty metadata:", file=sys.stderr)
+                    print("[ERROR] These cause zero-variance Monte Carlo outputs for calculated parameters.", file=sys.stderr)
+                    for leaf in sorted(truly_deterministic)[:20]:  # Show first 20
+                        leaf_meta = parameters.get(leaf, {})
+                        leaf_val = leaf_meta.get("value")
+                        val_str = f"{float(leaf_val):,.4g}" if leaf_val is not None else "?"
+                        print(f"  - {leaf} = {val_str}", file=sys.stderr)
+                    if len(truly_deterministic) > 20:
+                        print(f"  ... and {len(truly_deterministic) - 20} more", file=sys.stderr)
+                    print("\n[ERROR] To fix: Add one of these to each leaf parameter:", file=sys.stderr)
+                    print("[ERROR]   - distribution='normal' + std_error=<value>", file=sys.stderr)
+                    print("[ERROR]   - distribution='lognormal' + std_error=<value>", file=sys.stderr)
+                    print("[ERROR]   - confidence_interval=(low, high)", file=sys.stderr)
+                    print("[ERROR] Monte Carlo analysis requires uncertainty on ALL input parameters.", file=sys.stderr)
                     sys.exit(1)
                 
                 # Auto-discover parameters with compute functions
@@ -3763,9 +3850,11 @@ def main():
                                     print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
 
                             # Generate Monte Carlo distribution chart
+                            # Skip if zero variance (all samples identical) - these are meaningless
                             try:
                                 outcome_info = outcomes_data.get(outcome.name, {})
-                                if outcome_samples and len(outcome_samples) > 100:
+                                outcome_std = outcome_info.get("std", 0)
+                                if outcome_samples and len(outcome_samples) > 100 and outcome_std > 0:
                                     generate_monte_carlo_distribution_chart_qmd(
                                         outcome.name,
                                         outcome_info,
@@ -3783,6 +3872,8 @@ def main():
                                         param_meta
                                     )
                                     exceedance_count += 1
+                                elif outcome_samples and outcome_std == 0:
+                                    print(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
                             except Exception as mc_err:
                                 print(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
                     except Exception as e:

@@ -229,6 +229,82 @@ def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | 
     return results
 
 
+def simulate_with_propagation(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | None = None):
+    """Sample all Parameter values with proper uncertainty propagation.
+
+    Unlike simulate(), this function properly handles calculated parameters by:
+    1. First sampling all leaf parameters (those with distribution metadata)
+    2. Then computing calculated parameters from their sampled inputs
+    3. Recursively handling dependencies so intermediate calculated params work
+
+    `parameters` is the dict produced by parse_parameters_file().
+    Returns a dict: name -> samples (numpy array or list).
+    """
+    # First, do basic sampling for all parameters
+    results = simulate(parameters, n=n, seed=seed)
+    
+    # Build dependency graph: which params depend on which
+    has_compute = {}  # name -> (inputs, compute_fn)
+    for name, meta in parameters.items():
+        val = meta.get("value")
+        if hasattr(val, 'compute') and hasattr(val, 'inputs') and val.compute and val.inputs:
+            has_compute[name] = (val.inputs, val.compute)
+    
+    if not has_compute:
+        return results
+    
+    # Track which params have been finalized (either recomputed or confirmed deterministic)
+    finalized = set()
+    max_iterations = 100  # Prevent infinite loops (allow more for deep DAGs)
+    
+    for iteration in range(max_iterations):
+        progress = False
+        for name, (inputs, compute_fn) in has_compute.items():
+            if name in finalized:
+                continue
+            
+            # Check if all inputs are available
+            all_inputs_ready = all(inp in results for inp in inputs)
+            if not all_inputs_ready:
+                continue
+            
+            # Check if all inputs that are themselves computed have been finalized
+            # This ensures we process in correct dependency order
+            all_inputs_finalized = all(
+                inp not in has_compute or inp in finalized 
+                for inp in inputs
+            )
+            if not all_inputs_finalized:
+                continue
+            
+            # Compute this parameter from its inputs
+            try:
+                # Recompute samples from input samples (regardless of variance)
+                # This propagates any variance that exists
+                n_samples = len(results[inputs[0]])
+                new_samples = []
+                for i in range(n_samples):
+                    ctx = {inp: float(results[inp][i]) for inp in inputs}
+                    new_samples.append(compute_fn(ctx))
+                
+                if np is not None:
+                    results[name] = np.array(new_samples)
+                else:
+                    results[name] = new_samples
+                
+                finalized.add(name)
+                progress = True
+            except Exception:
+                # If computation fails, mark as finalized to avoid infinite loop
+                finalized.add(name)
+                progress = True
+        
+        if not progress:
+            break
+    
+    return results
+
+
 def one_at_a_time_sensitivity(parameters: Dict[str, Dict[str, Any]], target_name: str, n: int = 1000):
     """Compute simple One-At-A-Time sensitivity on calculated `target_name`.
 

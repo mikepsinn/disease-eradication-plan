@@ -1,0 +1,11 @@
+**Sensitivity Indices for Misallocation Factor: Cost to Kill vs Cost to Save**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Annual War Total Cost | 1.4500 | Strong driver |
+| Global Annual Conflict Deaths Total | -0.8878 | Strong driver |
+| Global Cost Per Life Saved Med Research Annual | -0.3718 | Moderate driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

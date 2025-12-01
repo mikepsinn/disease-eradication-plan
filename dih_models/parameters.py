@@ -764,7 +764,8 @@ TREATY_REDUCTION_PCT = Parameter(
     description="1% reduction in military spending/war costs from treaty",
     display_name="1% Reduction in Military Spending/War Costs from Treaty",
     unit="rate",
-    keywords=["1%", "dod", "pentagon", "national security", "army", "navy", "one percent"]
+    keywords=["1%", "dod", "pentagon", "national security", "army", "navy", "one percent"],
+    distribution="fixed",  # Policy choice: the 1% is our proposal, not uncertain
 )  # Core treaty definition - the 1% is our proposal, not derived from external data
 
 TREATY_ANNUAL_FUNDING = Parameter(
@@ -1054,7 +1055,9 @@ CURRENT_TRIALS_PER_YEAR = Parameter(
     description="Current global clinical trials per year",
     display_name="Current Global Clinical Trials per Year",
     unit="trials/year",
-    keywords=["3k", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"]
+    keywords=["3k", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research"],
+    distribution="lognormal",  # Count data with right skew; different registries report 3000-4000
+    confidence_interval=(2640, 3960),  # ±20% to account for registry counting differences
 )  # Global clinical trials per year
 
 CURRENT_DRUG_APPROVALS_PER_YEAR = Parameter(
@@ -1073,6 +1076,7 @@ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS = Parameter(
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="external",
     description="Oxford RECOVERY trial duration (found life-saving treatment in 3 months)",
+    distribution="fixed",  # Historical fact: exact observed trial duration, not uncertain
     display_name="Oxford RECOVERY Trial Duration",
     unit="months",
     confidence="high",
@@ -1139,7 +1143,9 @@ PRE_1962_DRUG_DEVELOPMENT_COST = Parameter(
     display_name="Pre-1962 Drug Development Cost",
     unit="USD",
     confidence="medium",
-    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation"]
+    keywords=["pre-1962", "drug", "development", "cost", "historical", "fda", "regulation"],
+    distribution="lognormal",  # Cost data with right skew; historical estimates vary widely
+    confidence_interval=(10_000_000, 50_000_000),  # Documented range $10M-$50M
 )  # Documented range was $10-50M; using upper bound
 
 CURRENT_ACTIVE_TRIALS = Parameter(
@@ -1184,7 +1190,9 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
     description="Global population with chronic diseases",
     display_name="Global Population with Chronic Diseases",
     unit="people",
-    keywords=["2.4b", "participant", "subject", "volunteer", "enrollee", "people", "worldwide"]
+    keywords=["2.4b", "participant", "subject", "volunteer", "enrollee", "people", "worldwide"],
+    distribution="lognormal",  # Population count with diagnostic/definitional uncertainty
+    confidence_interval=(2_000_000_000, 2_800_000_000),  # ±15-17%: GBD methodology + definitional variance
 )  # GBD 2013 study
 
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
@@ -1510,7 +1518,9 @@ STANDARD_QALYS_PER_LIFE_SAVED = Parameter(
     description="Standard QALYs per life saved (WHO life tables)",
     display_name="Standard QALYs per Life Saved",
     unit="QALYs/life",
-    keywords=["quality adjusted", "disability adjusted", "health metric", "health benefit", "quality of life", "health status", "life satisfaction"]
+    keywords=["quality adjusted", "disability adjusted", "health metric", "health benefit", "quality of life", "health status", "life satisfaction"],
+    distribution="normal",  # Life expectancy tables well-established
+    std_error=7,  # ±20%: reflects age-at-death variance and quality-weighting methodology
 )  # Standard assumption (WHO life tables)
 
 # Efficacy Lag Duration
@@ -1555,7 +1565,9 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     unit="deaths/day",
     confidence="high",
     peer_reviewed=True,
-    keywords=["mortality", "global burden", "disease", "aging", "WHO", "daily deaths"]
+    keywords=["mortality", "global burden", "disease", "aging", "WHO", "daily deaths"],
+    distribution="normal",  # Well-established WHO methodology with systematic data collection
+    std_error=7500,  # ±5%: reflects reporting gaps + cause-of-death coding variance
 )  # 150,000 deaths/day from all disease/aging
 
 # ===================================================================
@@ -2153,7 +2165,9 @@ TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     description="Treaty campaign duration (3-5 year range, using midpoint)",
     display_name="Treaty Campaign Duration",
     unit="years",
-    keywords=["1%", "one percent", "international agreement", "peace treaty", "agreement", "pact", "duration"]
+    keywords=["1%", "one percent", "international agreement", "peace treaty", "agreement", "pact", "duration"],
+    distribution="triangular",  # Documented range with most likely midpoint
+    confidence_interval=(3, 5),  # 3-5 year range as specified
 )  # 3-5 year range, using midpoint
 
 # Campaign budget breakdown - Two main categories
@@ -2699,7 +2713,8 @@ NPV_TIME_HORIZON_YEARS = Parameter(
     10, source_ref="", source_type="definition", description="Standard time horizon for NPV analysis", unit="years",
     display_name="Standard Time Horizon for NPV Analysis",
     latex=r"T = 10 \text{ (time horizon, years)}",
-    keywords=["npv", "time", "horizon", "years"]
+    keywords=["npv", "time", "horizon", "years"],
+    distribution="fixed",  # Methodological choice: standard 10-year NPV analysis window
 )  # Standard 10-year analysis window (T)
 
 # ---
@@ -2905,13 +2920,13 @@ DFDA_ROI_RD_ONLY = Parameter(
     formula="NPV_BENEFIT ÷ NPV_TOTAL_COST",
     latex=r"ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "low estimate"],
-    inputs=["DFDA_RD_GROSS_SAVINGS_ANNUAL", "DFDA_ANNUAL_OPEX", "NPV_DISCOUNT_RATE_STANDARD", "DFDA_UPFRONT_COST_TOTAL"],
+    inputs=["DFDA_RD_GROSS_SAVINGS_ANNUAL", "DFDA_ANNUAL_OPEX", "NPV_DISCOUNT_RATE_STANDARD", "DFDA_NPV_UPFRONT_COST_TOTAL"],
     compute=lambda ctx: (
         sum([
             (ctx["DFDA_RD_GROSS_SAVINGS_ANNUAL"] - ctx["DFDA_ANNUAL_OPEX"]) * (min(year, 5) / 5) / (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** year
             for year in range(1, 11)
         ]) / (
-            ctx["DFDA_UPFRONT_COST_TOTAL"] + ctx["DFDA_ANNUAL_OPEX"] * ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -10) / ctx["NPV_DISCOUNT_RATE_STANDARD"])
+            ctx["DFDA_NPV_UPFRONT_COST_TOTAL"] + ctx["DFDA_ANNUAL_OPEX"] * ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -10) / ctx["NPV_DISCOUNT_RATE_STANDARD"])
         )
     )
 )  # ~463:1 - Most conservative, R&D cost savings only (NPV-adjusted)
@@ -2994,7 +3009,9 @@ POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC = Parameter(
     confidence="low",
     description="Extremely pessimistic estimate of political success probability (0.1%)",
     display_name="Extremely Pessimistic Estimate of Political Success Probability",
-    keywords=["0.1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "worst case"]
+    keywords=["0.1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "worst case"],
+    distribution="beta",  # Probability bounded [0,1], appropriate for uncertain rare events
+    std_error=0.0005,  # ±50%: high uncertainty on very small probability
 )
 
 POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC = Parameter(
@@ -3004,7 +3021,9 @@ POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC = Parameter(
     confidence="low",
     description="Very pessimistic estimate of political success probability (1%)",
     display_name="Very Pessimistic Estimate of Political Success Probability",
-    keywords=["1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "pessimistic"]
+    keywords=["1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "pessimistic"],
+    distribution="beta",  # Probability bounded [0,1]
+    std_error=0.005,  # ±50%: high uncertainty on low probability
 )
 
 POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
@@ -3014,7 +3033,9 @@ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
     confidence="medium",
     description="Conservative estimate of political success probability (10%)",
     display_name="Conservative Estimate of Political Success Probability",
-    keywords=["10%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"]
+    keywords=["10%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"],
+    distribution="beta",  # Probability bounded [0,1]
+    std_error=0.03,  # ±30%: moderate uncertainty
 )
 
 POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
@@ -3024,7 +3045,9 @@ POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
     confidence="medium",
     description="Moderate estimate of political success probability (25%)",
     display_name="Moderate Estimate of Political Success Probability",
-    keywords=["25%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"]
+    keywords=["25%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"],
+    distribution="beta",  # Probability bounded [0,1]
+    std_error=0.075,  # ±30%: moderate uncertainty
 )
 
 POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH = Parameter(
@@ -3034,7 +3057,9 @@ POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH = Parameter(
     confidence="medium",
     description="Moderate-high estimate of political success probability (40%)",
     display_name="Moderate-High Estimate of Political Success Probability",
-    keywords=["40%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"]
+    keywords=["40%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"],
+    distribution="beta",  # Probability bounded [0,1]
+    std_error=0.12,  # ±30%: moderate uncertainty
 )
 
 POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
@@ -3044,7 +3069,9 @@ POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
     confidence="medium",
     description="Optimistic estimate of political success probability (50%)",
     display_name="Optimistic Estimate of Political Success Probability",
-    keywords=["50%", "deployment rate", "high estimate", "market penetration", "participation rate", "best case", "uptake"]
+    keywords=["50%", "deployment rate", "high estimate", "market penetration", "participation rate", "best case", "uptake"],
+    distribution="beta",  # Probability bounded [0,1]
+    std_error=0.15,  # ±30%: moderate uncertainty
 )
 
 # ---
@@ -3060,7 +3087,8 @@ VICTORY_BOND_FUNDING_PCT = Parameter(
     description="Percentage of captured dividend funding VICTORY bonds (10%)",
     display_name="Percentage of Captured Dividend Funding Victory Bonds",
     unit="rate",
-    keywords=["10%", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"]
+    keywords=["10%", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"],
+    distribution="fixed",  # Policy choice: bond allocation percentage is a design decision
 )  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
@@ -3107,7 +3135,9 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT",
     latex=r"ResearchFunding = \$27.18B - \$2.718B = \$24.462B",
-    keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"]
+    keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"],
+    inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_ANNUAL_PAYOUT'],
+    compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] - ctx["VICTORY_BOND_ANNUAL_PAYOUT"],
 )  # $24.3B/year
 DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
@@ -3302,7 +3332,9 @@ GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
     description="Annual global spending on symptomatic disease treatment",
     display_name="Annual Global Spending on Symptomatic Disease Treatment",
     unit="USD/year",
-    keywords=["8.2t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"]
+    keywords=["8.2t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"],
+    distribution="lognormal",  # Economic estimates with methodological variance
+    confidence_interval=(6_500_000_000_000, 10_000_000_000_000),  # ±20-22%: reflects definitional + accounting differences
 )  # $8.2 trillion annually
 
 # Disease cost breakdown components
@@ -3568,7 +3600,9 @@ CHILDHOOD_VACCINATION_ANNUAL_BENEFIT = Parameter(
     description="Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)",
     display_name="Estimated Annual Global Economic Benefit from Childhood Vaccination Programs",
     unit="USD/year",
-    keywords=["15.0b", "yearly", "profit", "return", "worldwide", "childhood", "vaccination"]
+    keywords=["15.0b", "yearly", "profit", "return", "worldwide", "childhood", "vaccination"],
+    distribution="lognormal",  # Economic benefit estimates with methodological variance
+    std_error=4_500_000_000,  # ±30%: reflects program-specific and valuation methodology differences
 )  # ~$15B annual benefit from preventing measles, polio, etc.
 
 WATER_FLUORIDATION_ROI = Parameter(
@@ -3905,7 +3939,9 @@ BED_NETS_COST_PER_DALY = Parameter(
     display_name="Bed Nets Cost per DALY",
     unit="USD/DALY",
     confidence="high",
-    keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"]
+    keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"],
+    distribution="normal",  # Well-studied intervention with systematic cost tracking
+    confidence_interval=(78, 100),  # Documented GiveWell range
 )
 
 DEWORMING_COST_PER_DALY = Parameter(
@@ -4882,7 +4918,9 @@ US_MENTAL_HEALTH_COST_ANNUAL = Parameter(
     description="US mental health costs (treatment + productivity loss)",
     display_name="US Mental Health Costs",
     unit="USD/year",
-    keywords=["350.0b", "yearly", "costs", "funding", "investment", "mental", "health"]
+    keywords=["350.0b", "yearly", "costs", "funding", "investment", "mental", "health"],
+    distribution="lognormal",  # Economic cost estimates with methodological variance
+    confidence_interval=(260e9, 450e9),  # ±25%: reflects treatment vs productivity cost allocation uncertainty
 )
 
 PER_CAPITA_MENTAL_HEALTH_COST = Parameter(
@@ -5929,7 +5967,8 @@ DRUG_DEVELOPMENT_COST_1980S = Parameter(
     display_name="Drug Development Cost (1980s)",
     unit="USD",
     confidence="high",
-    keywords=["pharma", "drug", "development", "cost", "1980s", "historical"]
+    keywords=["pharma", "drug", "development", "cost", "1980s", "historical"],
+    distribution="fixed",  # Historical documented value; uncertainty is in the methodology, not measurement
 )
 
 DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(

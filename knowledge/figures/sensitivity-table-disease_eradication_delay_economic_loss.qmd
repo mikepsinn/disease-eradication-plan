@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Standard Economic QALY Value Usd | 1.0000 | Strong driver |
-| Disease Eradication Delay DALYs | 0.0000 | Minimal effect |
+| Disease Eradication Delay DALYs | 0.8437 | Strong driver |
+| Standard Economic QALY Value Usd | 0.1555 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

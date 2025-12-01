@@ -19,9 +19,9 @@ display_name = "Annual QALYs Gained from Peace Dividend"
 baseline = 85610.0
 
 # Tornado data from sensitivity analysis
-drivers = ['GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE']
-impacts_low = [-18760.0, -805.0, -420.0]
-impacts_high = [23240.0, 1295.0, 805.0]
+drivers = ['GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'STANDARD_QALYS_PER_LIFE_SAVED', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE']
+impacts_low = [-18760.0, -17122.0, -805.0, -420.0]
+impacts_high = [23240.0, 17122.0, 1295.0, 805.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

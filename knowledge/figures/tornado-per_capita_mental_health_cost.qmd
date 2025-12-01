@@ -19,9 +19,9 @@ display_name = "US Per Capita Mental Health Cost"
 baseline = 1044.7761194029852
 
 # Tornado data from sensitivity analysis
-drivers = ['US_POPULATION_2024']
-impacts_low = [15.82994120307535]
-impacts_high = [-15.364354697102726]
+drivers = ['US_MENTAL_HEALTH_COST_ANNUAL', 'US_POPULATION_2024']
+impacts_low = [-268.6567164179105, 15.82994120307535]
+impacts_high = [298.5074626865671, -15.364354697102726]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

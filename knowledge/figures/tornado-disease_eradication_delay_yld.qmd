@@ -19,9 +19,9 @@ display_name = "Years Lived with Disability During Disease Eradication Delay"
 baseline = 873290340.3
 
 # Tornado data from sensitivity analysis
-drivers = ['REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT', 'EFFICACY_LAG_YEARS']
-impacts_low = [-291096780.1, -174658068.06000006, -106498822.5]
-impacts_high = [436645170.14999986, 174658068.06000006, 106498822.5]
+drivers = ['REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'CHRONIC_DISEASE_DISABILITY_WEIGHT', 'EFFICACY_LAG_YEARS', 'GLOBAL_DISEASE_DEATHS_DAILY']
+impacts_low = [-291096780.1, -174658068.06000006, -106498822.5, -43664516.70000005]
+impacts_high = [436645170.14999986, 174658068.06000006, 106498822.5, 43664516.70000005]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

@@ -38,8 +38,8 @@
 "bed_nets_cost_per_daly": "<a href=\"https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved\"\
   \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"GiveWell cost per DALY for bed nets\
-  \ (midpoint estimate, range $78-100) | ✓ High confidence | Unit: USD/DALY | Click\
-  \ to view source\">$89</a>"
+  \ (midpoint estimate, range $78-100) | ✓ High confidence | 95% CI: [$78, $100] |\
+  \ Dist: Normal | Unit: USD/DALY | Click to view source\">$89</a>"
 "bed_nets_cost_per_daly_cite": "@givewell-cost-per-life-saved"
 "book_reading_speed_wpm": "<a href=\"https://warondisease.org/knowledge/references.html#average-reading-speed\"\
   \ class=\"parameter-link\" data-source-ref=\"average-reading-speed\" data-source-type=\"\
@@ -197,7 +197,8 @@
   \ class=\"parameter-link\" data-source-ref=\"childhood-vaccination-economic-benefits\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated annual\
   \ global economic benefit from childhood vaccination programs (measles, polio, etc.)\
-  \ | ✓ High confidence | Unit: USD/year | Click to view source\">$15B</a>"
+  \ | ✓ High confidence | Dist: Lognormal (SE: $4.50B) | Unit: USD/year | Click to\
+  \ view source\">$15B</a>"
 "childhood_vaccination_annual_benefit_cite": "@childhood-vaccination-economic-benefits"
 "childhood_vaccination_cost_per_daly": "<span class=\"parameter-definition\" title=\"\
   Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness\
@@ -239,7 +240,8 @@
 "current_disease_patients_global": "<a href=\"https://warondisease.org/knowledge/references.html#disease-prevalence-2-billion\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-prevalence-2-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population with chronic diseases\
-  \ | ✓ High confidence | Unit: people | Click to view source\">2.40B</a>"
+  \ | ✓ High confidence | 95% CI: [2.00B, 2.80B] | Dist: Lognormal | Unit: people\
+  \ | Click to view source\">2.40B</a>"
 "current_disease_patients_global_cite": "@disease-prevalence-2-billion"
 "current_drug_approvals_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-new-drug-approvals-50-annually\"\
   \ class=\"parameter-link\" data-source-ref=\"global-new-drug-approvals-50-annually\"\
@@ -255,8 +257,8 @@
 "current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current global\
-  \ clinical trials per year | ✓ High confidence | Unit: trials/year | Click to view\
-  \ source\">3,300</a>"
+  \ clinical trials per year | ✓ High confidence | 95% CI: [2,640, 3,960] | Dist:\
+  \ Lognormal | Unit: trials/year | Click to view source\">3,300</a>"
 "current_trials_per_year_cite": "@global-clinical-trials-market-2024"
 "current_trial_abandonment_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-abandonment-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-abandonment-rate\" data-source-type=\"\
@@ -665,8 +667,8 @@
 "drug_development_cost_1980s": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
-  \ to approval, 1990 dollars) | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$194M</a>"
+  \ to approval, 1990 dollars) | ✓ High confidence | Dist: Fixed | Unit: USD | Click\
+  \ to view source\">$194M</a>"
 "drug_development_cost_1980s_cite": "@pre-1962-drug-costs-timeline"
 "economic_multiplier_education_investment": "<a href=\"https://warondisease.org/knowledge/references.html#education-investment-economic-multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"education-investment-economic-multiplier\"\
@@ -988,8 +990,8 @@
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
   \ title=\"Total global deaths per day from all disease and aging (WHO Global Burden\
-  \ of Disease 2024) | ✓ High confidence | \U0001F4CA Peer-reviewed | Unit: deaths/day\
-  \ | Click to view source\">150K</a>"
+  \ of Disease 2024) | ✓ High confidence | \U0001F4CA Peer-reviewed | Dist: Normal\
+  \ (SE: 7,500) | Unit: deaths/day | Click to view source\">150K</a>"
 "global_disease_deaths_daily_cite": "@who-global-health-estimates-2024"
 "global_disease_direct_medical_cost_annual": "<a href=\"https://warondisease.org/knowledge/references.html#disease-economic-burden-109t\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
@@ -1066,8 +1068,8 @@
 "global_symptomatic_disease_treatment_annual": "<a href=\"https://warondisease.org/knowledge/references.html#disease-economic-burden-109t\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual global spending on symptomatic\
-  \ disease treatment | ✓ High confidence | Unit: USD/year | Click to view source\"\
-  >$8.20T</a>"
+  \ disease treatment | ✓ High confidence | 95% CI: [$6.50T, $10T] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view source\">$8.20T</a>"
 "global_symptomatic_disease_treatment_annual_cite": "@disease-economic-burden-109t"
 "global_total_health_and_war_cost_annual": "<a href=\"/knowledge/appendix/humanity-budget-overview\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/humanity-budget-overview.qmd\"\
@@ -1173,7 +1175,7 @@
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Oxford RECOVERY\
   \ trial duration (found life-saving treatment in 3 months) | ✓ High confidence |\
-  \ Unit: months | Click to view source\">3</a>"
+  \ Dist: Fixed | Unit: months | Click to view source\">3</a>"
 "oxford_recovery_trial_duration_months_cite": "@recovery-trial-82x-cost-reduction"
 "patient_willingness_trial_participation_pct": "<a href=\"https://warondisease.org/knowledge/references.html#patient-willingness-clinical-trials\"\
   \ class=\"parameter-link\" data-source-ref=\"patient-willingness-clinical-trials\"\
@@ -1349,32 +1351,38 @@
 "political_success_probability_conservative": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Conservative estimate of political\
-  \ success probability (10%) | ~ Medium confidence | Click to view source\">0.1</a>"
+  \ success probability (10%) | ~ Medium confidence | Dist: Beta (SE: 0.03) | Click\
+  \ to view source\">0.1</a>"
 "political_success_probability_conservative_cite": "@icbl-ottawa-treaty"
 "political_success_probability_extremely_pessimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Extremely pessimistic estimate of political\
-  \ success probability (0.1%) | ? Low confidence | Click to view source\">0.001</a>"
+  \ success probability (0.1%) | ? Low confidence | Dist: Beta (SE: 0.0005) | Click\
+  \ to view source\">0.001</a>"
 "political_success_probability_extremely_pessimistic_cite": "@icbl-ottawa-treaty"
 "political_success_probability_moderate": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Moderate estimate of political success\
-  \ probability (25%) | ~ Medium confidence | Click to view source\">0.25</a>"
+  \ probability (25%) | ~ Medium confidence | Dist: Beta (SE: 0.075) | Click to view\
+  \ source\">0.25</a>"
 "political_success_probability_moderate_cite": "@icbl-ottawa-treaty"
 "political_success_probability_moderate_high": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Moderate-high estimate of political\
-  \ success probability (40%) | ~ Medium confidence | Click to view source\">0.4</a>"
+  \ success probability (40%) | ~ Medium confidence | Dist: Beta (SE: 0.12) | Click\
+  \ to view source\">0.4</a>"
 "political_success_probability_moderate_high_cite": "@icbl-ottawa-treaty"
 "political_success_probability_optimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Optimistic estimate of political success\
-  \ probability (50%) | ~ Medium confidence | Click to view source\">0.5</a>"
+  \ probability (50%) | ~ Medium confidence | Dist: Beta (SE: 0.15) | Click to view\
+  \ source\">0.5</a>"
 "political_success_probability_optimistic_cite": "@icbl-ottawa-treaty"
 "political_success_probability_very_pessimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Very pessimistic estimate of political\
-  \ success probability (1%) | ? Low confidence | Click to view source\">0.01</a>"
+  \ success probability (1%) | ? Low confidence | Dist: Beta (SE: 0.005) | Click to\
+  \ view source\">0.01</a>"
 "political_success_probability_very_pessimistic_cite": "@icbl-ottawa-treaty"
 "post_1962_drug_approval_reduction_pct": "<a href=\"https://warondisease.org/knowledge/references.html#post-1962-drug-approval-drop\"\
   \ class=\"parameter-link\" data-source-ref=\"post-1962-drug-approval-drop\" data-source-type=\"\
@@ -1391,8 +1399,8 @@
 "pre_1962_drug_development_cost": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Pre-1962 drug development cost (documented\
-  \ range: $10-50M in 1950s-1960s) | ~ Medium confidence | Unit: USD | Click to view\
-  \ source\">$50M</a>"
+  \ range: $10-50M in 1950s-1960s) | ~ Medium confidence | 95% CI: [$10M, $50M] |\
+  \ Dist: Lognormal | Unit: USD | Click to view source\">$50M</a>"
 "pre_1962_drug_development_cost_cite": "@pre-1962-drug-costs-timeline"
 "pre_1962_physician_count": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-physician-trials\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-physician-trials\" data-source-type=\"\
@@ -1480,7 +1488,8 @@
 "standard_qalys_per_life_saved": "<a href=\"https://warondisease.org/knowledge/references.html#qaly-value\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Standard QALYs per life saved (WHO life tables)\
-  \ | ✓ High confidence | Unit: QALYs/life | Click to view source\">35</a>"
+  \ | ✓ High confidence | Dist: Normal (SE: 7) | Unit: QALYs/life | Click to view\
+  \ source\">35</a>"
 "standard_qalys_per_life_saved_cite": "@qaly-value"
 "suffering_hours_eliminated_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
@@ -1643,8 +1652,8 @@
 "treaty_campaign_duration_years": "<a href=\"/knowledge/strategy/roadmap\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Treaty campaign duration (3-5 year\
-  \ range, using midpoint) | ✓ High confidence | Unit: years | Click to view calculation\"\
-  >4</a>"
+  \ range, using midpoint) | ✓ High confidence | 95% CI: [3, 5] | Dist: Triangular\
+  \ | Unit: years | Click to view calculation\">4</a>"
 "treaty_campaign_total_cost": "<a href=\"/knowledge/appendix/fundraising-strategy#capital-structure-campaign-vs-implementation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total treaty\
@@ -1886,8 +1895,8 @@
 "us_mental_health_cost_annual": "<a href=\"https://warondisease.org/knowledge/references.html#mental-health-burden\"\
   \ class=\"parameter-link\" data-source-ref=\"mental-health-burden\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US mental health costs (treatment +\
-  \ productivity loss) | ✓ High confidence | Unit: USD/year | Click to view source\"\
-  >$350B</a>"
+  \ productivity loss) | ✓ High confidence | 95% CI: [$260B, $450B] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view source\">$350B</a>"
 "us_mental_health_cost_annual_cite": "@mental-health-burden"
 "us_military_spending_pct_gdp": "<a href=\"https://warondisease.org/knowledge/references.html#us-military-budget-3-5-pct-gdp\"\
   \ class=\"parameter-link\" data-source-ref=\"us-military-budget-3-5-pct-gdp\" data-source-type=\"\

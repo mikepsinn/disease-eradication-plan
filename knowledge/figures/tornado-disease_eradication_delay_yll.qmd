@@ -19,9 +19,9 @@ display_name = "Years of Life Lost from Disease Eradication Delay"
 baseline = 7069493231.0
 
 # Tornado data from sensitivity analysis
-drivers = ['REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'EFFICACY_LAG_YEARS', 'GLOBAL_LIFE_EXPECTANCY_2024']
-impacts_low = [1247557629.0, -862133325.0, -831705086.0]
-impacts_high = [-1247557629.0, 862133325.0, 831705086.0]
+drivers = ['REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'EFFICACY_LAG_YEARS', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_DISEASE_DEATHS_DAILY']
+impacts_low = [1247557629.0, -862133325.0, -831705086.0, -353474659.0]
+impacts_high = [-1247557629.0, 862133325.0, 831705086.0, 353474659.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

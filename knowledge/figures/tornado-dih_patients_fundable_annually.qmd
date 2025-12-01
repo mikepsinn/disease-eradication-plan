@@ -19,9 +19,9 @@ display_name = "Patients Fundable Annually"
 baseline = 48844000.0
 
 # Tornado data from sensitivity analysis
-drivers = ['RECOVERY_TRIAL_COST_PER_PATIENT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [20933142.85714285, 10000.0, 6000.0, 6000.0, 4000.0, 2000.0]
-impacts_high = [-13955428.571428575, -14000.0, -10000.0, -8000.0, -6000.0, -2000.0]
+drivers = ['RECOVERY_TRIAL_COST_PER_PATIENT', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+impacts_low = [20933142.85714285, -4896000.0, 10000.0, 6000.0, 6000.0, 4000.0, 2000.0]
+impacts_high = [-13955428.571428575, 4896000.0, -14000.0, -10000.0, -8000.0, -6000.0, -2000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

@@ -19,9 +19,9 @@ display_name = "Current Patient Participation Rate in Clinical Trials"
 baseline = 0.0007916666666666666
 
 # Tornado data from sensitivity analysis
-drivers = ['CURRENT_TRIAL_SLOTS_AVAILABLE']
-impacts_low = [-0.00016666666666666663]
-impacts_high = [0.00016666666666666663]
+drivers = ['CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_DISEASE_PATIENTS_GLOBAL']
+impacts_low = [-0.00016666666666666663, 0.00015833333333333335]
+impacts_high = [0.00016666666666666663, -0.00011309523809523809]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

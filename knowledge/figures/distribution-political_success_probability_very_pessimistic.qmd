@@ -1,0 +1,131 @@
+```{python}
+#| echo: false
+#| fig-cap: "Probability Distribution: Very Pessimistic Estimate of Political Success Probability"
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+
+setup_chart_style()
+
+# Parameter values
+central_value = 0.01
+low = 0.00020000000000000052
+high = 0.019799999999999998
+dist_type = "beta"
+display_name = "Very Pessimistic Estimate of Political Success Probability"
+unit = ""
+
+# Calculate distribution parameters
+if dist_type == "lognormal":
+    # For lognormal, we need to work in log space
+    # Assume low/high are 5th/95th percentiles
+    if central_value > 0 and low > 0:
+        mu = np.log(central_value)
+        # Estimate sigma from CI width
+        sigma = (np.log(high) - np.log(low)) / (2 * 1.645)  # 90% CI
+        sigma = max(sigma, 0.1)  # Minimum sigma
+        x = np.linspace(max(0.01, low * 0.5), high * 1.5, 500)
+        y = stats.lognorm.pdf(x, s=sigma, scale=np.exp(mu))
+    else:
+        # Fall back to normal if values aren't positive
+        dist_type = "normal"
+
+if dist_type == "normal":
+    # Estimate sigma from CI width (assuming 95% CI)
+    sigma = (high - low) / (2 * 1.96)
+    sigma = max(sigma, abs(central_value) * 0.01)  # Minimum 1% of value
+    x = np.linspace(low - sigma, high + sigma, 500)
+    y = stats.norm.pdf(x, loc=central_value, scale=sigma)
+
+elif dist_type == "uniform":
+    x = np.linspace(low * 0.9, high * 1.1, 500)
+    y = np.where((x >= low) & (x <= high), 1 / (high - low), 0)
+
+elif dist_type == "triangular":
+    # Triangular with mode at central value
+    x = np.linspace(low * 0.9, high * 1.1, 500)
+    y = stats.triang.pdf(x, c=(central_value - low) / (high - low), loc=low, scale=high - low)
+
+elif dist_type == "beta":
+    # Beta distribution scaled to [low, high]
+    # Use alpha=2, beta=2 for symmetric bell shape
+    x_norm = np.linspace(0, 1, 500)
+    x = low + x_norm * (high - low)
+    y = stats.beta.pdf(x_norm, a=2, b=2) / (high - low)
+
+elif dist_type == "pert":
+    # PERT is a special case of beta
+    # Mode = central_value, min = low, max = high
+    range_val = high - low
+    if range_val > 0:
+        # PERT uses alpha = 1 + 4*(mode-min)/(max-min), beta = 1 + 4*(max-mode)/(max-min)
+        mode_ratio = (central_value - low) / range_val
+        alpha = 1 + 4 * mode_ratio
+        beta_param = 1 + 4 * (1 - mode_ratio)
+        x_norm = np.linspace(0, 1, 500)
+        x = low + x_norm * range_val
+        y = stats.beta.pdf(x_norm, a=alpha, b=beta_param) / range_val
+    else:
+        x = np.array([central_value])
+        y = np.array([1])
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot distribution
+ax.fill_between(x, y, alpha=0.3, color=COLOR_BLACK)
+ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
+
+# Mark central value
+ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
+           label=f'Central: {central_value:,.2g}')
+
+# Mark confidence interval
+ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
+           label=f'95% CI Low: {low:,.2g}')
+ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
+           label=f'95% CI High: {high:,.2g}')
+
+# Shade the CI region
+ci_mask = (x >= low) & (x <= high)
+ax.fill_between(x, y, where=ci_mask, alpha=0.2, color=COLOR_BLACK)
+
+# Labels
+ax.set_xlabel(f'{display_name} ({unit})' if unit else display_name, fontsize=12)
+ax.set_ylabel('Probability Density', fontsize=12)
+ax.set_title(f'Assumed Distribution: {display_name}', fontsize=14, weight='bold', pad=15)
+
+# Legend
+ax.legend(loc='upper right', fontsize=10)
+
+# Clean up
+clean_spines(ax)
+ax.set_ylim(bottom=0)
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'distribution-political_success_probability_very_pessimistic.png'
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Distribution: {display_name}',
+    description=f'Assumed probability distribution for {display_name} showing uncertainty range'
+)
+
+plt.show()
+```
+
+*This chart shows the assumed probability distribution for this parameter. The shaded region represents the 95% confidence interval where we expect the true value to fall.*

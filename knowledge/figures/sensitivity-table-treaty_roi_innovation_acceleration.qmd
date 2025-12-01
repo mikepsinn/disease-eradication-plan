@@ -1,0 +1,10 @@
+**Sensitivity Indices for Treaty ROI - Innovation Acceleration (Optimistic)**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Disease Eradication Plus Acceleration Economic Loss Total | 5.3101 | Strong driver |
+| Treaty Campaign Total Cost | -5.1271 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -84,6 +84,18 @@ GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)
 
 **Source**: [givewell-cost-per-life-saved](https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$78, $100] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -162,6 +174,14 @@ Estimated annual global economic benefit from childhood vaccination programs (me
 
 **Source**: [childhood-vaccination-economic-benefits](https://warondisease.org/knowledge/references.html#childhood-vaccination-economic-benefits)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Lognormal (SE: $4.50B)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-childhood_vaccination_annual_benefit.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -235,6 +255,18 @@ Global population with chronic diseases
 
 **Source**: [disease-prevalence-2-billion](https://warondisease.org/knowledge/references.html#disease-prevalence-2-billion)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2.00B, 2.80B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00B and 2.80B (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_disease_patients_global.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -260,6 +292,18 @@ Average annual new drug approvals globally
 Current global clinical trials per year
 
 **Source**: [global-clinical-trials-market-2024](https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2,640, 3,960] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 and 3,960 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trials_per_year.qmd >}}
 
 *✓ High confidence*
 
@@ -337,6 +381,14 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
 **Source**: [pre-1962-drug-costs-timeline](https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+#### Input Distribution
+
+{{< include ../figures/distribution-drug_development_cost_1980s.qmd >}}
 
 *✓ High confidence*
 
@@ -1038,6 +1090,14 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7,500)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 :::
@@ -1247,6 +1307,18 @@ Annual global spending on symptomatic disease treatment
 
 **Source**: [disease-economic-burden-109t](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$6.50T, $10T] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $6.50T and $10T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_symptomatic_disease_treatment_annual.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1324,6 +1396,14 @@ Annual productivity loss per capita from mental health issues (beyond treatment 
 Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
 
 **Source**: [recovery-trial-82x-cost-reduction](https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+#### Input Distribution
+
+{{< include ../figures/distribution-oxford_recovery_trial_duration_months.qmd >}}
 
 *✓ High confidence*
 
@@ -1454,6 +1534,14 @@ Conservative estimate of political success probability (10%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Beta (SE: 0.03)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability_conservative.qmd >}}
+
 *~ Medium confidence*
 
 :::
@@ -1466,6 +1554,14 @@ Conservative estimate of political success probability (10%)
 Extremely pessimistic estimate of political success probability (0.1%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Beta (SE: 0.0005)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability_extremely_pessimistic.qmd >}}
 
 *? Low confidence*
 
@@ -1480,6 +1576,14 @@ Moderate estimate of political success probability (25%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Beta (SE: 0.075)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability_moderate.qmd >}}
+
 *~ Medium confidence*
 
 :::
@@ -1492,6 +1596,14 @@ Moderate estimate of political success probability (25%)
 Moderate-high estimate of political success probability (40%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Beta (SE: 0.12)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability_moderate_high.qmd >}}
 
 *~ Medium confidence*
 
@@ -1506,6 +1618,14 @@ Optimistic estimate of political success probability (50%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Beta (SE: 0.15)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability_optimistic.qmd >}}
+
 *~ Medium confidence*
 
 :::
@@ -1518,6 +1638,14 @@ Optimistic estimate of political success probability (50%)
 Very pessimistic estimate of political success probability (1%)
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Beta (SE: 0.005)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability_very_pessimistic.qmd >}}
 
 *? Low confidence*
 
@@ -1557,6 +1685,18 @@ Percentage military spending cut after WW2 (historical precedent)
 Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
 
 **Source**: [pre-1962-drug-costs-timeline](https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10M, $50M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $50M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pre_1962_drug_development_cost.qmd >}}
 
 *~ Medium confidence*
 
@@ -1727,6 +1867,14 @@ Standard economic value per QALY
 Standard QALYs per life saved (WHO life tables)
 
 **Source**: [qaly-value](https://warondisease.org/knowledge/references.html#qaly-value)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_qalys_per_life_saved.qmd >}}
 
 *✓ High confidence*
 
@@ -2133,6 +2281,18 @@ US mental health costs (treatment + productivity loss)
 
 **Source**: [mental-health-burden](https://warondisease.org/knowledge/references.html#mental-health-burden)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$260B, $450B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $260B and $450B (±27%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_mental_health_cost_annual.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -2288,6 +2448,8 @@ $$
 
 {{< include ../figures/tornado-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
+{{< include ../figures/sensitivity-table-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
@@ -2379,6 +2541,8 @@ $$
 
 {{< include ../figures/tornado-dfda_expected_roi_0_1pct_political_success.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_expected_roi_0_1pct_political_success.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_expected_roi_0_1pct_political_success.qmd >}}
@@ -2438,6 +2602,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_expected_roi_1pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_1pct_political_success.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -2561,6 +2727,8 @@ $$
 
 {{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_net_savings_rd_only_annual.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_net_savings_rd_only_annual.qmd >}}
@@ -2652,6 +2820,8 @@ $$
 
 {{< include ../figures/tornado-dfda_npv_net_benefit_rd_only.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_npv_net_benefit_rd_only.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_npv_net_benefit_rd_only.qmd >}}
@@ -2711,6 +2881,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_total_cost.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -2803,6 +2975,8 @@ $$
 
 {{< include ../figures/tornado-dfda_rd_savings_daily.qmd >}}
 
+{{< include ../figures/sensitivity-table-dfda_rd_savings_daily.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-dfda_rd_savings_daily.qmd >}}
@@ -2828,6 +3002,20 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_roi_rd_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2848,6 +3036,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_roi_simple.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_roi_simple.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -2875,6 +3065,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trials_per_year_capacity.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trials_per_year_capacity.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -2935,6 +3127,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dih_treasury_trial_subsidies_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dih_treasury_trial_subsidies_annual.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -3151,6 +3345,8 @@ $$
 
 {{< include ../figures/tornado-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
 
+{{< include ../figures/sensitivity-table-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
@@ -3179,6 +3375,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dividend_coverage_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-dividend_coverage_factor.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -3457,6 +3655,8 @@ $$
 
 {{< include ../figures/tornado-global_annual_human_life_losses_conflict.qmd >}}
 
+{{< include ../figures/sensitivity-table-global_annual_human_life_losses_conflict.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-global_annual_human_life_losses_conflict.qmd >}}
@@ -3609,6 +3809,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_total_cost.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -3763,6 +3965,8 @@ $$
 
 {{< include ../figures/tornado-global_total_health_and_war_cost_annual.qmd >}}
 
+{{< include ../figures/sensitivity-table-global_total_health_and_war_cost_annual.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-global_total_health_and_war_cost_annual.qmd >}}
@@ -3916,6 +4120,8 @@ $$
 
 {{< include ../figures/tornado-misallocation_factor_death_vs_saving.qmd >}}
 
+{{< include ../figures/sensitivity-table-misallocation_factor_death_vs_saving.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-misallocation_factor_death_vs_saving.qmd >}}
@@ -3944,6 +4150,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_annual_societal_benefit.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -3974,6 +4182,8 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_conflict_reduction.qmd >}}
 
+{{< include ../figures/sensitivity-table-peace_dividend_conflict_reduction.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-peace_dividend_conflict_reduction.qmd >}}
@@ -4002,6 +4212,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_direct_costs.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_direct_costs.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4063,6 +4275,8 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_human_casualties.qmd >}}
 
+{{< include ../figures/sensitivity-table-peace_dividend_human_casualties.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-peace_dividend_human_casualties.qmd >}}
@@ -4092,6 +4306,8 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_indirect_costs.qmd >}}
 
+{{< include ../figures/sensitivity-table-peace_dividend_indirect_costs.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-peace_dividend_indirect_costs.qmd >}}
@@ -4120,6 +4336,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_infrastructure.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_infrastructure.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4274,6 +4492,8 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_trade_disruption.qmd >}}
 
+{{< include ../figures/sensitivity-table-peace_dividend_trade_disruption.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-peace_dividend_trade_disruption.qmd >}}
@@ -4392,6 +4612,8 @@ $$
 
 {{< include ../figures/tornado-roi_discount_1pct.qmd >}}
 
+{{< include ../figures/sensitivity-table-roi_discount_1pct.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-roi_discount_1pct.qmd >}}
@@ -4420,6 +4642,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-roi_discount_3pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-roi_discount_3pct.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4450,6 +4674,8 @@ $$
 
 {{< include ../figures/tornado-roi_discount_5pct.qmd >}}
 
+{{< include ../figures/sensitivity-table-roi_discount_5pct.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-roi_discount_5pct.qmd >}}
@@ -4478,6 +4704,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-roi_discount_7pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-roi_discount_7pct.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4508,6 +4736,8 @@ $$
 
 {{< include ../figures/tornado-suffering_hours_eliminated_total.qmd >}}
 
+{{< include ../figures/sensitivity-table-suffering_hours_eliminated_total.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-suffering_hours_eliminated_total.qmd >}}
@@ -4534,6 +4764,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_dalys_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_dalys_per_event.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4678,6 +4910,8 @@ $$
 
 {{< include ../figures/tornado-thalidomide_yll_per_event.qmd >}}
 
+{{< include ../figures/sensitivity-table-thalidomide_yll_per_event.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-thalidomide_yll_per_event.qmd >}}
@@ -4738,6 +4972,8 @@ $$
 
 {{< include ../figures/tornado-treaty_benefit_multiplier_vs_vaccines.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_benefit_multiplier_vs_vaccines.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_benefit_multiplier_vs_vaccines.qmd >}}
@@ -4766,6 +5002,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_campaign_annual_cost_amortized.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_annual_cost_amortized.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4889,6 +5127,8 @@ $$
 
 {{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
@@ -4918,6 +5158,8 @@ $$
 
 {{< include ../figures/tornado-treaty_expected_cost_per_daly_conservative.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_expected_cost_per_daly_conservative.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_expected_cost_per_daly_conservative.qmd >}}
@@ -4944,6 +5186,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_expected_vs_bed_nets_multiplier.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -4974,6 +5218,8 @@ $$
 
 {{< include ../figures/tornado-treaty_lives_saved_annual_global.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_lives_saved_annual_global.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_lives_saved_annual_global.qmd >}}
@@ -5002,6 +5248,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_peace_plus_rd_annual_benefits.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -5032,6 +5280,8 @@ $$
 
 {{< include ../figures/tornado-treaty_qalys_gained_annual_global.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_qalys_gained_annual_global.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_qalys_gained_annual_global.qmd >}}
@@ -5060,6 +5310,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_recurring_benefits_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_recurring_benefits_annual.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -5121,6 +5373,8 @@ $$
 
 {{< include ../figures/tornado-treaty_roi_innovation_acceleration.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_roi_innovation_acceleration.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_roi_innovation_acceleration.qmd >}}
@@ -5181,6 +5435,8 @@ $$
 
 {{< include ../figures/tornado-treaty_total_annual_costs.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_total_annual_costs.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_total_annual_costs.qmd >}}
@@ -5210,6 +5466,8 @@ $$
 
 {{< include ../figures/tornado-treaty_total_complete_benefits_annual.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_total_complete_benefits_annual.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_total_complete_benefits_annual.qmd >}}
@@ -5237,6 +5495,8 @@ $$
 
 {{< include ../figures/tornado-treaty_vs_bed_nets_multiplier.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_vs_bed_nets_multiplier.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_vs_bed_nets_multiplier.qmd >}}
@@ -5263,6 +5523,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-trial_capacity_cumulative_years_20yr.qmd >}}
+
+{{< include ../figures/sensitivity-table-trial_capacity_cumulative_years_20yr.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -5322,6 +5584,8 @@ $$
 
 {{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
 
+{{< include ../figures/sensitivity-table-type_ii_error_cost_ratio.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
@@ -5350,6 +5614,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-type_i_error_benefit_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-type_i_error_benefit_dalys.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -6226,6 +6492,10 @@ Standard discount rate for NPV analysis (8% annual)
 
 Standard time horizon for NPV analysis
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
 *Core definition*
 
 :::
@@ -6421,6 +6691,14 @@ Campaign budget for Super PACs and political lobbying
 
 Treaty campaign duration (3-5 year range, using midpoint)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3, 5] • Distribution: Triangular
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 3 and 5 (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
 *Core definition*
 
 :::
@@ -6464,6 +6742,10 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 **Value**: 1%
 
 1% reduction in military spending/war costs from treaty
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
@@ -6516,6 +6798,10 @@ Annual return percentage for VICTORY bondholders
 **Value**: 10%
 
 Percentage of captured dividend funding VICTORY bonds (10%)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

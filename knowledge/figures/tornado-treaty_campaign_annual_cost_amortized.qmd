@@ -19,9 +19,9 @@ display_name = "Amortized Annual Treaty Campaign Cost"
 baseline = 250000000.0
 
 # Tornado data from sensitivity analysis
-drivers = ['TREATY_CAMPAIGN_BUDGET_LOBBYING', 'TREATY_CAMPAIGN_BUDGET_REFERENDUM', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
-impacts_low = [-81250000.0, -30000000.0, -7500000.0]
-impacts_high = [162500000.0, 50000000.0, 12500000.0]
+drivers = ['TREATY_CAMPAIGN_BUDGET_LOBBYING', 'TREATY_CAMPAIGN_DURATION_YEARS', 'TREATY_CAMPAIGN_BUDGET_REFERENDUM', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
+impacts_low = [-81250000.0, 83333333.33333331, -30000000.0, -7500000.0]
+impacts_high = [162500000.0, -50000000.0, 50000000.0, 12500000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]
