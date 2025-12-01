@@ -16,8 +16,8 @@ This appendix provides comprehensive documentation of all parameters and calcula
 **Total parameters**: 346
 
 - External sources (peer-reviewed): 126
-- Calculated values: 122
-- Core definitions: 98
+- Calculated values: 106
+- Core definitions: 114
 
 ## External Data Sources {#sec-external}
 
@@ -1252,7 +1252,7 @@ Total economic benefit from smallpox eradication campaign
 
 Estimated annual global economic benefit from smoking cessation programs
 
-**Source**: [smoking-cessation-economic-benefits](https://warondisease.org/knowledge/references.html#smoking-cessation-economic-benefits)
+**Source**: [life-expectancy-gains-smoking-reduction](https://warondisease.org/knowledge/references.html#life-expectancy-gains-smoking-reduction)
 
 *✓ High confidence*
 
@@ -1666,70 +1666,6 @@ Percentage of workforce experiencing productivity loss from chronic illness (28%
 Parameters derived from mathematical formulas and economic models.
 
 ::: {.callout-note icon=false collapse=false}
-### Total Action Time in Hours {#sec-action_time_total_hours}
-
-**Value**: 0.45
-
-Total action time in hours
-
-$$
-Hours = 27 / 60 = 0.45 \text{ hours}
-$$
-
-**Methodology**: [../solution/wishocracy#action-steps](../solution/wishocracy#action-steps)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Total Time for All Three Actions (Minimum) {#sec-action_time_total_minutes}
-
-**Value**: 27
-
-Total time for all three actions
-
-$$
-TotalTime = 2 + 10 + 15 = 27 \text{ minutes}
-$$
-
-**Methodology**: [../solution/wishocracy#action-steps](../solution/wishocracy#action-steps)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Time to Read the Entire Book {#sec-book_reading_time_hours}
-
-**Value**: 14.3
-
-Time to read the entire book
-
-$$
-ReadTime = \frac{171,121 / 200}{60} \approx 14.3 \text{ hours}
-$$
-
-**Methodology**: [../solution/wishocracy#time-investment](../solution/wishocracy#time-investment)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Cost of Unpaid Caregiving {#sec-caregiver_cost_annual}
-
-**Value**: $6.00K
-
-Annual cost of unpaid caregiving (replacement cost method)
-
-*Formula*: `HOURS_PER_MONTH × 12 × VALUE_PER_HOUR`
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Combined Peace and Health Dividends for ROI Calculation {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 **Value**: $155B
@@ -1744,20 +1680,9 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Current Patient Participation Rate in Clinical Trials {#sec-current_patient_participation_rate}
-
-**Value**: 0.0792%
-
-Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)
-
-$$
-Rate = 1.9M \div 2.4B = 0.08\%
-$$
-
-*✓ High confidence*
+{{< include ../figures/tornado-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
 :::
 
@@ -1776,6 +1701,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1792,6 +1723,12 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
 
 :::
 
@@ -1810,6 +1747,12 @@ $$
 
 *? Low confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_0_1pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_0_1pct_political_success.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1826,6 +1769,12 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_10pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_10pct_political_success.qmd >}}
 
 :::
 
@@ -1844,6 +1793,12 @@ $$
 
 *? Low confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_1pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_1pct_political_success.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1860,6 +1815,12 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_25pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_25pct_political_success.qmd >}}
 
 :::
 
@@ -1878,6 +1839,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_40pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_40pct_political_success.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1894,6 +1861,12 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_expected_roi_50pct_political_success.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_expected_roi_50pct_political_success.qmd >}}
 
 :::
 
@@ -1912,6 +1885,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1928,6 +1905,12 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_annual_opex_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_annual_opex_total.qmd >}}
 
 :::
 
@@ -1946,6 +1929,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_benefit_rd_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_benefit_rd_only.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1962,6 +1951,10 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-net-benefit](../appendix/dfda-cost-benefit-analysis#npv-net-benefit)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_net_benefit_rd_only.qmd >}}
 
 :::
 
@@ -1980,6 +1973,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_pv_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_pv_annual_opex.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1996,6 +1995,12 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-total-cost](../appendix/dfda-cost-benefit-analysis#npv-total-cost)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_total_cost.qmd >}}
 
 :::
 
@@ -2014,22 +2019,11 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### dFDA Overhead Percentage of Treaty Funding {#sec-dfda_opex_pct_of_treaty_funding}
+{{< include ../figures/tornado-dfda_npv_upfront_cost_total.qmd >}}
 
-**Value**: 0.147%
-
-Percentage of treaty funding allocated to dFDA platform overhead
-
-$$
-DFDAOpexPct = \$0.04B / \$27.18B = 0.00147 = 0.15\%
-$$
-
-**Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
-
-*✓ High confidence*
+{{< include ../figures/sensitivity-table-dfda_npv_upfront_cost_total.qmd >}}
 
 :::
 
@@ -2048,6 +2042,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_rd_gross_savings_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_rd_gross_savings_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2064,6 +2064,10 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction](../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_rd_savings_daily.qmd >}}
 
 :::
 
@@ -2099,6 +2103,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_roi_simple.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2113,6 +2121,10 @@ Trials_{dFDA} = 3,300 \times 25.7 = 84,800
 $$
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trials_per_year_capacity.qmd >}}
 
 :::
 
@@ -2131,22 +2143,9 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Medical Research Percentage of Treaty Funding {#sec-dih_treasury_medical_research_pct}
-
-**Value**: 90%
-
-Percentage of treaty funding allocated to medical research (after bond payouts)
-
-$$
-MedicalResearchPct = \$24.462B / \$27.18B = 0.90 = 90\%
-$$
-
-**Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
-
-*✓ High confidence*
+{{< include ../figures/tornado-dih_patients_fundable_annually.qmd >}}
 
 :::
 
@@ -2165,22 +2164,9 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Patient Trial Subsidies Percentage of Treaty Funding {#sec-dih_treasury_trial_subsidies_pct}
-
-**Value**: 89.9%
-
-Percentage of treaty funding going directly to patient trial subsidies
-
-$$
-TrialSubsidiesPct = \$24.422B / \$27.18B = 0.8986 = 89.86\%
-$$
-
-**Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
-
-*✓ High confidence*
+{{< include ../figures/tornado-dih_treasury_trial_subsidies_annual.qmd >}}
 
 :::
 
@@ -2199,6 +2185,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_dalys.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2215,6 +2207,12 @@ $$
 **Methodology**: [../appendix/regulatory-mortality-analysis#disease-eradication-delay](../appendix/regulatory-mortality-analysis#disease-eradication-delay)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_deaths_total.qmd >}}
 
 :::
 
@@ -2233,6 +2231,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_economic_loss.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_economic_loss.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2249,6 +2253,12 @@ $$
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_yld.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_yld.qmd >}}
 
 :::
 
@@ -2267,6 +2277,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_delay_yll.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_delay_yll.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2283,6 +2299,12 @@ $$
 **Methodology**: [../references#pharmaceutical-innovation-acceleration-economics](../references#pharmaceutical-innovation-acceleration-economics)
 
 *? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_eradication_plus_acceleration_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_eradication_plus_acceleration_deaths_total.qmd >}}
 
 :::
 
@@ -2301,39 +2323,9 @@ $$
 
 *? Low confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
-
-**Value**: 18,274
-
-Ratio of annual disease deaths to 9/11 terrorism deaths
-
-$$
-\frac{54.75\text{M disease deaths}}{3{,}000\text{ terrorism deaths}} \approx 18{,}274:1
-$$
-
-**Methodology**: [../economics/economics](../economics/economics)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
-
-**Value**: 224
-
-Ratio of annual disease deaths to war deaths
-
-$$
-\frac{54.75\text{M disease deaths}}{400{,}000\text{ conflict deaths}} \approx 137:1
-$$
-
-**Methodology**: [../economics/economics](../economics/economics)
-
-*✓ High confidence*
+{{< include ../figures/tornado-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
 
 :::
 
@@ -2352,6 +2344,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dividend_coverage_factor.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2368,6 +2364,12 @@ $$
 **Methodology**: [pre-1962-drug-costs-timeline](../references#pre-1962-drug-costs-timeline)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
 
 :::
 
@@ -2386,54 +2388,11 @@ $$
 
 *~ Medium confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Effective Hourly Rate from Treaty Participation {#sec-effective_hourly_rate}
+{{< include ../figures/tornado-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
-**Value**: $292K
-
-Effective hourly rate from treaty participation
-
-$$
-HourlyRate = \frac{\$4,300,000}{14.75} \approx \$291,525/hr
-$$
-
-**Methodology**: [../solution/wishocracy#effective-hourly-rate](../solution/wishocracy#effective-hourly-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Lifetime Benefit for Age 30 Baseline Scenario {#sec-effective_hourly_rate_lifetime_benefit}
-
-**Value**: $4.30M
-
-Lifetime benefit for age 30 baseline scenario ($4.3M)
-
-$$
-Benefit = \$4,300,000
-$$
-
-**Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations](../appendix/disease-eradication-personal-lifetime-wealth-calculations)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Eventually Avoidable Death Percentage {#sec-eventually_avoidable_death_pct}
-
-**Value**: 92.6%
-
-Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement
-
-$$
-P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%
-$$
-
-*~ Medium confidence*
+{{< include ../figures/sensitivity-table-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
 :::
 
@@ -2452,20 +2411,11 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Fundamentally Unavoidable Death Percentage {#sec-fundamentally_unavoidable_death_pct}
+{{< include ../figures/tornado-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
 
-**Value**: 7.37%
-
-Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
-
-$$
-P_{\text{unavoidable}} = \sum_{\text{categories}} (\text{disease burden} \times (1 - \text{max cure rate})) = 7.91\%
-$$
-
-*~ Medium confidence*
+{{< include ../figures/sensitivity-table-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
 
 :::
 
@@ -3281,23 +3231,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Total Time Investment in Treaty Participation {#sec-total_time_investment_hours}
-
-**Value**: 14.7
-
-Total time investment (reading + actions)
-
-$$
-TotalInvestment = 14.3 + 0.45 = 14.75 \text{ hours}
-$$
-
-**Methodology**: [../solution/wishocracy#time-investment](../solution/wishocracy#time-investment)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Treaty System Benefit Multiplier vs Childhood Vaccination Programs {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 **Value**: 10.3
@@ -3324,19 +3257,6 @@ Amortized annual campaign cost (total cost ÷ campaign duration)
 $$
 AnnualCost = \$1B / 4 = \$0.25B
 $$
-
-**Methodology**: [../strategy/roadmap#campaign-budget](../strategy/roadmap#campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Campaign Budget for Super Pacs and Political Lobbying {#sec-treaty_campaign_budget_super_pacs}
-
-**Value**: $800M
-
-Campaign budget for Super PACs and political lobbying
 
 **Methodology**: [../strategy/roadmap#campaign-budget](../strategy/roadmap#campaign-budget)
 
@@ -3720,11 +3640,44 @@ Time to recruit others (minutes)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Total Action Time in Hours {#sec-action_time_total_hours}
+
+**Value**: 0.45
+
+Total action time in hours
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Total Time for All Three Actions (Minimum) {#sec-action_time_total_minutes}
+
+**Value**: 27
+
+Total time for all three actions
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Time to Vote (Minimum) {#sec-action_time_vote_minutes}
 
 **Value**: 2
 
 Time to vote (minutes)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Time to Read the Entire Book {#sec-book_reading_time_hours}
+
+**Value**: 14.3
+
+Time to read the entire book
 
 *Core definition*
 
@@ -4028,11 +3981,33 @@ Viral marketing content creation budget
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Annual Cost of Unpaid Caregiving {#sec-caregiver_cost_annual}
+
+**Value**: $6.00K
+
+Annual cost of unpaid caregiving (replacement cost method)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Childhood Vaccination Cost per DALY (Estimated) {#sec-childhood_vaccination_cost_per_daly}
 
 **Value**: $30
 
 Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Current Patient Participation Rate in Clinical Trials {#sec-current_patient_participation_rate}
+
+**Value**: 0.0792%
+
+Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)
 
 *Core definition*
 
@@ -4110,6 +4085,17 @@ dFDA community support costs
 **Value**: $8.00M
 
 dFDA infrastructure costs (cloud, security)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Overhead Percentage of Treaty Funding {#sec-dfda_opex_pct_of_treaty_funding}
+
+**Value**: 0.147%
+
+Percentage of treaty funding allocated to dFDA platform overhead
 
 *Core definition*
 
@@ -4204,11 +4190,33 @@ DIH broader initiatives upfront cost (medium case)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Medical Research Percentage of Treaty Funding {#sec-dih_treasury_medical_research_pct}
+
+**Value**: 90%
+
+Percentage of treaty funding allocated to medical research (after bond payouts)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### DIH Annual Funding for Medical Research {#sec-dih_treasury_to_medical_research_annual}
 
 **Value**: $24.5B
 
 Annual funding for medical research (treaty funding minus bond payouts)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Patient Trial Subsidies Percentage of Treaty Funding {#sec-dih_treasury_trial_subsidies_pct}
+
+**Value**: 89.9%
+
+Percentage of treaty funding going directly to patient trial subsidies
 
 *Core definition*
 
@@ -4226,11 +4234,77 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
+
+**Value**: 18,274
+
+Ratio of annual disease deaths to 9/11 terrorism deaths
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
+
+**Value**: 224
+
+Ratio of annual disease deaths to war deaths
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Effective Hourly Rate from Treaty Participation {#sec-effective_hourly_rate}
+
+**Value**: $292K
+
+Effective hourly rate from treaty participation
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Lifetime Benefit for Age 30 Baseline Scenario {#sec-effective_hourly_rate_lifetime_benefit}
+
+**Value**: $4.30M
+
+Lifetime benefit for age 30 baseline scenario ($4.3M)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Eventually Avoidable Death Percentage {#sec-eventually_avoidable_death_pct}
+
+**Value**: 92.6%
+
+Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Minimum Investment for Family Offices {#sec-family_office_investment_min}
 
 **Value**: $5.00M
 
 Minimum investment for family offices
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Fundamentally Unavoidable Death Percentage {#sec-fundamentally_unavoidable_death_pct}
+
+**Value**: 7.37%
+
+Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
 
 *Core definition*
 
@@ -4528,6 +4602,17 @@ Total words in the book
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Total Time Investment in Treaty Participation {#sec-total_time_investment_hours}
+
+**Value**: 14.7
+
+Total time investment (reading + actions)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH {#sec-treaty_annual_funding}
 
 **Value**: $27.2B
@@ -4566,6 +4651,17 @@ Global referendum campaign (get 208M votes): ads, media, partnerships, staff, le
 **Value**: $50M
 
 Reserve fund / contingency buffer
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Campaign Budget for Super Pacs and Political Lobbying {#sec-treaty_campaign_budget_super_pacs}
+
+**Value**: $800M
+
+Campaign budget for Super PACs and political lobbying
 
 *Core definition*
 

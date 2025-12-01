@@ -22,13 +22,13 @@
   >15</a>"
 "action_time_total_hours": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total action\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total action\
   \ time in hours | ✓ High confidence | Formula: MINUTES ÷ 60 | Unit: hours | Click\
   \ to view calculation\">0.45</a>"
 "action_time_total_hours_latex": "$$\nHours = 27 / 60 = 0.45 \\text{ hours}\n$$"
 "action_time_total_minutes": "<a href=\"/knowledge/solution/wishocracy#action-steps\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#action-steps\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total time for\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total time for\
   \ all three actions | ✓ High confidence | Formula: VOTE + INVEST + RECRUIT | Unit:\
   \ minutes | Click to view calculation\">27</a>"
 "action_time_total_minutes_latex": "$$\nTotalTime = 2 + 10 + 15 = 27 \\text{ minutes}\n\
@@ -75,7 +75,7 @@
 "book_reading_speed_wpm_cite": "@average-reading-speed"
 "book_reading_time_hours": "<a href=\"/knowledge/solution/wishocracy#time-investment\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Time to read\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Time to read\
   \ the entire book | ✓ High confidence | Formula: (WORDS ÷ SPEED) ÷ 60 | Unit: hours\
   \ | Click to view calculation\">14.3</a>"
 "book_reading_time_hours_latex": "$$\nReadTime = \\frac{171,121 / 200}{60} \\approx\
@@ -206,7 +206,8 @@
   \ of unpaid caregiving in US | ✓ High confidence | Unit: USD/year | Click to view\
   \ source\">$600B</a>"
 "caregiver_annual_value_total_cite": "@unpaid-caregiver-hours-economic-value"
-"caregiver_cost_annual": "<span class=\"parameter-link\" title=\"parameters.CAREGIVER_COST_ANNUAL\"\
+"caregiver_cost_annual": "<span class=\"parameter-definition\" title=\"Annual cost\
+  \ of unpaid caregiving (replacement cost method) | Unit: USD/year | Core definition\"\
   >$6.00K</span>"
 "caregiver_count_us": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
@@ -279,8 +280,9 @@
   \ new drug approvals globally | ✓ High confidence | Unit: drugs/year | Click to\
   \ view source\">50</a>"
 "current_drug_approvals_per_year_cite": "@global-new-drug-approvals-50-annually"
-"current_patient_participation_rate": "<span class=\"parameter-link\" title=\"parameters.CURRENT_PATIENT_PARTICIPATION_RATE\"\
-  >0.0792%</span>"
+"current_patient_participation_rate": "<span class=\"parameter-definition\" title=\"\
+  Current patient participation rate in clinical trials (0.08% = 1.9M participants\
+  \ / 2.4B disease patients) | Unit: rate | Core definition\">0.0792%</span>"
 "current_patient_participation_rate_latex": "$$\nRate = 1.9M \\div 2.4B = 0.08\\%\n\
   $$"
 "current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
@@ -326,9 +328,8 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)\
-  \ | ✓ High confidence | 95% CI: [$30M, $55M] | Dist: Lognormal | Formula: PLATFORM_MAINTENANCE\
-  \ + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY | Unit: USD/year | Click to\
-  \ view calculation\">$40M</a>"
+  \ | ✓ High confidence | Formula: PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE +\
+  \ REGULATORY + COMMUNITY | Unit: USD/year | Click to view calculation\">$40M</a>"
 "dfda_annual_opex_latex": "$$\nOPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{\
   \ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)}\
   \ = \\$40M\n$$"
@@ -336,8 +337,8 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
   \ from R&D savings (trial cost reduction, secondary component) | ✓ High confidence\
-  \ | 95% CI: [$33B, $52B] | Dist: Lognormal | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT\
-  \ | Unit: USD/year | Click to view calculation\">$41.5B</a>"
+  \ | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view\
+  \ calculation\">$41.5B</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
   $41.5B\n$$"
 "dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
@@ -400,8 +401,8 @@
 "dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA core platform\
-  \ annual opex (midpoint of $11-26.5M) | ✓ High confidence | Unit: USD/year | Click\
-  \ to view calculation\">$18.9M</a>"
+  \ annual opex (midpoint of $11-26.5M) | ✓ High confidence | 95% CI: [$11M, $26.5M]\
+  \ | Dist: Lognormal | Unit: USD/year | Click to view calculation\">$18.9M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV annual\
@@ -444,28 +445,28 @@
 "dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA core platform\
-  \ build cost | ✓ High confidence | Unit: USD | Click to view calculation\">$40M</a>"
+  \ build cost | ✓ High confidence | 95% CI: [$25M, $65M] | Dist: Lognormal | Unit:\
+  \ USD | Click to view calculation\">$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV upfront\
-  \ costs (dFDA core + DIH initiatives) | ✓ High confidence | 95% CI: [$180M, $400M]\
-  \ | Dist: Lognormal | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit: USD | Click\
-  \ to view calculation\">$270M</a>"
+  \ costs (dFDA core + DIH initiatives) | ✓ High confidence | Formula: DFDA_BUILD\
+  \ + DIH_INITIATIVES | Unit: USD | Click to view calculation\">$270M</a>"
 "dfda_npv_upfront_cost_total_latex": "$$\nC_0 = \\$0.040B + \\$0.22975B = \\$0.26975B\
   \ \\text{ (upfront cost)}\n$$"
 "dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA community\
-  \ support costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$2.00M</a>"
+  \ support costs | ✓ High confidence | 95% CI: [$1.00M, $3.00M] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view calculation\">$2.00M</a>"
 "dfda_opex_infrastructure": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA infrastructure\
-  \ costs (cloud, security) | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$8.00M</a>"
+  \ costs (cloud, security) | ✓ High confidence | 95% CI: [$5.00M, $12M] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view calculation\">$8.00M</a>"
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to dFDA platform overhead | ✓ High confidence | Formula:\
   \ DFDA_OPEX / TREATY_FUNDING | Unit: rate | Click to view calculation\">0.147%</a>"
 "dfda_opex_pct_of_treaty_funding_latex": "$$\nDFDAOpexPct = \\$0.04B / \\$27.18B =\
@@ -473,24 +474,24 @@
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
-  \ maintenance costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$15M</a>"
+  \ maintenance costs | ✓ High confidence | 95% CI: [$10M, $22M] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view calculation\">$15M</a>"
 "dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA regulatory\
-  \ coordination costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$5.00M</a>"
+  \ coordination costs | ✓ High confidence | 95% CI: [$3.00M, $8.00M] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view calculation\">$5.00M</a>"
 "dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA staff costs\
-  \ (minimal, AI-assisted) | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$10M</a>"
+  \ (minimal, AI-assisted) | ✓ High confidence | 95% CI: [$7.00M, $15M] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view calculation\">$10M</a>"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
   \ from R&D savings (trial cost reduction, secondary component) | ✓ High confidence\
-  \ | 95% CI: [$33B, $52B] | Dist: Lognormal | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT\
-  \ | Unit: USD/year | Click to view calculation\">$41.5B</a>"
+  \ | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view\
+  \ calculation\">$41.5B</a>"
 "dfda_rd_gross_savings_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
   $41.5B\n$$"
 "dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction\"\
@@ -536,13 +537,13 @@
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
-  \ annual opex (medium case) | ✓ High confidence | Unit: USD/year | Click to view\
-  \ calculation\">$21.1M</a>"
+  \ annual opex (medium case) | ✓ High confidence | 95% CI: [$14M, $32M] | Dist: Lognormal\
+  \ | Unit: USD/year | Click to view calculation\">$21.1M</a>"
 "dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
-  \ upfront cost (medium case) | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$230M</a>"
+  \ upfront cost (medium case) | ✓ High confidence | 95% CI: [$150M, $350M] | Dist:\
+  \ Lognormal | Unit: USD | Click to view calculation\">$230M</a>"
 "dih_patients_fundable_annually": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\
@@ -552,7 +553,7 @@
   $500 = 48.8M\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to medical research (after bond payouts) | ✓ High confidence\
   \ | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit: rate | Click to view\
   \ calculation\">90%</a>"
@@ -573,7 +574,7 @@
   $0.04B = \\$24.422B\n$$"
 "dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
   \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view calculation\"\
   >89.9%</a>"
@@ -591,9 +592,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total eventually\
   \ avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate,\
   \ conservative). Excludes fundamentally unavoidable deaths (primarily accidents\
-  \ ~7.9%). | ~ Medium confidence | 95% CI: [340M, 500M] | Dist: Lognormal | Formula:\
-  \ ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths\
-  \ | Click to view calculation\">416M</a>"
+  \ ~7.9%). | ~ Medium confidence | Formula: ANNUAL_DEATHS × EFFICACY_LAG_YEARS ×\
+  \ EVENTUALLY_AVOIDABLE_DEATH_PCT | Unit: deaths | Click to view calculation\">416M</a>"
 "disease_eradication_delay_deaths_total_latex": "$$\nD_{total} = 54.75M \\text{ (annual)}\
   \ \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M\n$$"
 "disease_eradication_delay_economic_loss": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#economic-valuation\"\
@@ -658,14 +658,14 @@
   \ ✓ High confidence | Unit: rate | Click to view calculation\">40%</a>"
 "disease_vs_terrorism_deaths_ratio": "<a href=\"/knowledge/economics/economics\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
+  definition\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
   \ 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS\
   \ | Unit: ratio | Click to view calculation\">18,274</a>"
 "disease_vs_terrorism_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{3{,}000\\\
   text{ terrorism deaths}} \\approx 18{,}274:1\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/economics/economics\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
+  definition\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
   \ war deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS |\
   \ Unit: ratio | Click to view calculation\">224</a>"
 "disease_vs_war_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{400{,}000\\\
@@ -722,14 +722,14 @@
 "economic_multiplier_military_spending_cite": "@military-spending-economic-multiplier"
 "effective_hourly_rate": "<a href=\"/knowledge/solution/wishocracy#effective-hourly-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Effective hourly\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Effective hourly\
   \ rate from treaty participation | ✓ High confidence | Formula: LIFETIME_BENEFIT\
   \ ÷ TIME_INVESTED | Unit: USD/hour | Click to view calculation\">$292K</a>"
 "effective_hourly_rate_latex": "$$\nHourlyRate = \\frac{\\$4,300,000}{14.75} \\approx\
   \ \\$291,525/hr\n$$"
 "effective_hourly_rate_lifetime_benefit": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Lifetime benefit\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Lifetime benefit\
   \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
   \ health gains from 1% Treaty | Unit: USD | Click to view calculation\">$4.30M</a>"
 "effective_hourly_rate_lifetime_benefit_latex": "$$\nBenefit = \\$4,300,000\n$$"
@@ -741,8 +741,9 @@
   \ - PHASE_1_DURATION | Unit: years | Click to view source\">8.2</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
-"eventually_avoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.EVENTUALLY_AVOIDABLE_DEATH_PCT\"\
-  >92.6%</span>"
+"eventually_avoidable_death_pct": "<span class=\"parameter-definition\" title=\"Percentage\
+  \ of deaths that are eventually avoidable with sufficient biomedical research and\
+  \ technological advancement | Unit: percentage | Core definition\">92.6%</span>"
 "eventually_avoidable_death_pct_latex": "$$\nP_{\\text{avoidable}} = 1 - 0.0791 =\
   \ 92.09\\%\n$$"
 "family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
@@ -763,8 +764,10 @@
   \ | Unit: ratio | Click to view calculation\">36.4</a>"
 "fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\frac{9.1 \\text{ years}\
   \ \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4\n$$"
-"fundamentally_unavoidable_death_pct": "<span class=\"parameter-link\" title=\"parameters.FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT\"\
-  >7.37%</span>"
+"fundamentally_unavoidable_death_pct": "<span class=\"parameter-definition\" title=\"\
+  Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology\
+  \ (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential))\
+  \ across all disease categories. | Unit: percentage | Core definition\">7.37%</span>"
 "fundamentally_unavoidable_death_pct_latex": "$$\nP_{\\text{unavoidable}} = \\sum_{\\\
   text{categories}} (\\text{disease burden} \\times (1 - \\text{max cure rate})) =\
   \ 7.91\\%\n$$"
@@ -993,9 +996,8 @@
 "global_annual_war_total_cost": "<a href=\"/knowledge/problem/cost-of-war#total-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#total-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ cost of war worldwide (direct + indirect costs) | ✓ High confidence | 95% CI:\
-  \ [$9.00T, $14T] | Dist: Lognormal | Formula: DIRECT_COSTS + INDIRECT_COSTS | Unit:\
-  \ USD/year | Click to view calculation\">$11.4T</a>"
+  \ cost of war worldwide (direct + indirect costs) | ✓ High confidence | Formula:\
+  \ DIRECT_COSTS + INDIRECT_COSTS | Unit: USD/year | Click to view calculation\">$11.4T</a>"
 "global_annual_war_total_cost_latex": "$$\nTotalWarCost = \\$7,655B \\text{ (direct)}\
   \ + \\$3,700B \\text{ (indirect)} = \\$11,355B\n$$"
 "global_clinical_trials_spending_annual": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
@@ -1211,9 +1213,8 @@
 "peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual peace\
-  \ dividend from 1% reduction in total war costs | ✓ High confidence | 95% CI: [$90B,\
-  \ $140B] | Dist: Lognormal | Formula: TOTAL_WAR_COST × 1% | Unit: USD/year | Click\
-  \ to view calculation\">$114B</a>"
+  \ dividend from 1% reduction in total war costs | ✓ High confidence | Formula: TOTAL_WAR_COST\
+  \ × 1% | Unit: USD/year | Click to view calculation\">$114B</a>"
 "peace_dividend_annual_societal_benefit_latex": "$$\nPeaceDividend = \\$11,355B \\\
   times 0.01 = \\$113.55B\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/calculated\" class=\"parameter-link\"\
@@ -1505,12 +1506,12 @@
   \ eradication campaign | ✓ High confidence | Unit: USD | Click to view source\"\
   >$1.42B</a>"
 "smallpox_eradication_total_benefit_cite": "@smallpox-eradication-roi"
-"smoking_cessation_annual_benefit": "<a href=\"https://warondisease.org/knowledge/references.html#smoking-cessation-economic-benefits\"\
-  \ class=\"parameter-link\" data-source-ref=\"smoking-cessation-economic-benefits\"\
+"smoking_cessation_annual_benefit": "<a href=\"https://warondisease.org/knowledge/references.html#life-expectancy-gains-smoking-reduction\"\
+  \ class=\"parameter-link\" data-source-ref=\"life-expectancy-gains-smoking-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated annual\
   \ global economic benefit from smoking cessation programs | ✓ High confidence |\
   \ Unit: USD/year | Click to view source\">$12B</a>"
-"smoking_cessation_annual_benefit_cite": "@smoking-cessation-economic-benefits"
+"smoking_cessation_annual_benefit_cite": "@life-expectancy-gains-smoking-reduction"
 "standard_economic_qaly_value_usd": "<a href=\"https://warondisease.org/knowledge/references.html#qaly-value\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Standard economic value per QALY | ✓ High confidence\
@@ -1617,7 +1618,7 @@
   \ \\$27.18B = \\$94.68B\n$$"
 "total_time_investment_hours": "<a href=\"/knowledge/solution/wishocracy#time-investment\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total time investment\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total time investment\
   \ (reading + actions) | ✓ High confidence | Formula: READING + ACTIONS | Unit: hours\
   \ | Click to view calculation\">14.7</a>"
 "total_time_investment_hours_latex": "$$\nTotalInvestment = 14.3 + 0.45 = 14.75 \\\
@@ -1681,7 +1682,7 @@
   \ | Unit: USD | Click to view calculation\">$50M</a>"
 "treaty_campaign_budget_super_pacs": "<a href=\"/knowledge/strategy/roadmap#campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Campaign budget\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Campaign budget\
   \ for Super PACs and political lobbying | ✓ High confidence | Unit: USD | Click\
   \ to view calculation\">$800M</a>"
 "treaty_campaign_duration_years": "<a href=\"/knowledge/strategy/roadmap\" class=\"\

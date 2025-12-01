@@ -326,7 +326,9 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
     description="Annual deaths from active combat worldwide",
     display_name="Annual Deaths from Active Combat Worldwide",
     unit="deaths/year",
-    keywords=["234k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "active"]
+    keywords=["234k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "active"],
+    distribution="lognormal",
+    confidence_interval=(180_000, 300_000),  # ±20% - conflict data has high uncertainty
 )  # ACLED data
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
@@ -336,7 +338,9 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS = Parameter(
     description="Annual deaths from terror attacks globally",
     display_name="Annual Deaths from Terror Attacks Globally",
     unit="deaths/year",
-    keywords=["8k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "terror"]
+    keywords=["8k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "terror"],
+    distribution="lognormal",
+    confidence_interval=(6_000, 12_000),  # ±25% - terrorism data varies by definition
 )  # Global Terrorism Database
 
 GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
@@ -346,7 +350,9 @@ GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE = Parameter(
     description="Annual deaths from state violence",
     display_name="Annual Deaths from State Violence",
     unit="deaths/year",
-    keywords=["3k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "state"]
+    keywords=["3k", "worldwide", "yearly", "fatalities", "casualties", "mortality", "state"],
+    distribution="lognormal",
+    confidence_interval=(1_500, 5_000),  # ±40% - state violence often underreported
 )  # Uppsala Conflict Data Program
 
 # Total conflict deaths (calculated from breakdown)
