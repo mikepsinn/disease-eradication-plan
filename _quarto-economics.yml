@@ -28,7 +28,7 @@ project:
     - knowledge/solution/aligning-incentives.qmd
     # Strategy
     - knowledge/strategy/roadmap.qmd
-    - knowledge/strategy/stop-fighting-over-scraps.qmd
+    - knowledge/strategy/nonprofit-coalition-strategy.qmd
     - knowledge/strategy/treaty-adoption-strategy.qmd
     - knowledge/strategy/global-referendum.qmd
     # Legal Framework
@@ -147,7 +147,7 @@ website:
         contents:
           - href: knowledge/strategy/roadmap.qmd
             text: "Implementation Roadmap"
-          - href: knowledge/strategy/stop-fighting-over-scraps.qmd
+          - href: knowledge/strategy/nonprofit-coalition-strategy.qmd
             text: "Strategic Appeal to Nonprofits"
           - href: knowledge/strategy/treaty-adoption-strategy.qmd
             text: "Treaty Adoption Strategy"

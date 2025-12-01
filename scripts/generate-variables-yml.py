@@ -1677,6 +1677,9 @@ def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: 
     
     Returns:
         Path to generated QMD file
+        
+    Raises:
+        ValueError: If tornado_data is empty or has no meaningful drivers
     """
     # Get display name for title
     if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
@@ -1690,6 +1693,20 @@ def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: 
         key=lambda x: abs(x[1].get("delta_minus", 0)) + abs(x[1].get("delta_plus", 0)),
         reverse=True
     )
+    
+    # Validate: skip if no drivers or all deltas are zero
+    if not sorted_drivers:
+        raise ValueError(f"No tornado drivers found for {param_name}")
+    
+    # Check if all impacts are effectively zero (< 1e-10 relative to baseline)
+    threshold = abs(baseline) * 1e-10 if baseline and abs(baseline) > 0 else 1e-10
+    has_meaningful_impact = any(
+        abs(data.get("delta_minus", 0)) > threshold or abs(data.get("delta_plus", 0)) > threshold
+        for _, data in sorted_drivers
+    )
+    
+    if not has_meaningful_impact:
+        raise ValueError(f"All tornado impacts near zero for {param_name}")
     
     # Generate Python code for tornado chart
     qmd_content = f'''```{{python}}
@@ -2039,12 +2056,16 @@ def main():
                             validation_warnings.append(f"{param_name}: missing 'compute' (calculated parameter)")
                 
                 if validation_warnings:
-                    print(f"\n[WARN] {len(validation_warnings)} calculated parameters missing inputs/compute:")
-                    for warning in validation_warnings[:10]:  # Show first 10
-                        print(f"  - {warning}")
-                    if len(validation_warnings) > 10:
-                        print(f"  ... and {len(validation_warnings) - 10} more")
-                    print("  (These parameters won't appear in tornado analysis drill-down)\n")
+                    print(f"\n[ERROR] {len(validation_warnings)} calculated parameters missing inputs/compute:", file=sys.stderr)
+                    # Show ALL warnings - do not truncate
+                    for warning in validation_warnings:
+                        print(f"  - {warning}", file=sys.stderr)
+                    print("\n[ERROR] Calculated parameters MUST have 'inputs' and 'compute' defined.", file=sys.stderr)
+                    print("[ERROR] Options to fix:", file=sys.stderr)
+                    print("[ERROR]   1. Add inputs=[] and compute=lambda ctx: ... to the Parameter", file=sys.stderr)
+                    print("[ERROR]   2. Change source_type='definition' if it's an estimate/assumption", file=sys.stderr)
+                    print("[ERROR]   3. Change source_type='external' if it comes from a source", file=sys.stderr)
+                    sys.exit(1)
                 
                 # Auto-discover parameters with compute functions
                 analyzable_params = []
@@ -2127,8 +2148,22 @@ def main():
                                     units=outcome.units
                                 )
                                 print(f"[OK] Generated {chart_file.relative_to(project_root)}")
+                            except ValueError as val_err:
+                                # STRICT MODE: Fail fast when tornado data is incomplete
+                                # This forces developers to either:
+                                # 1. Add proper inputs/compute to intermediate calculated parameters
+                                # 2. Change source_type to "definition" if not truly calculated
+                                # 3. Add uncertainty distributions to leaf input parameters
+                                print(f"[ERROR] {val_err}", file=sys.stderr)
+                                print(f"[ERROR] Parameter '{outcome.name}' has inputs/compute but no tornado sensitivity.", file=sys.stderr)
+                                print(f"[ERROR] This usually means:", file=sys.stderr)
+                                print(f"[ERROR]   - Input parameters need uncertainty distributions (std_error, confidence_interval, or distribution)", file=sys.stderr)
+                                print(f"[ERROR]   - OR intermediate inputs need their own inputs/compute definitions", file=sys.stderr)
+                                print(f"[ERROR]   - OR this should be source_type='definition' instead of 'calculated'", file=sys.stderr)
+                                sys.exit(1)
                             except Exception as chart_err:
-                                print(f"[WARN] Failed to generate tornado chart for {outcome.name}: {chart_err}")
+                                print(f"[ERROR] Failed to generate tornado chart for {outcome.name}: {chart_err}", file=sys.stderr)
+                                sys.exit(1)
 
                             # Regression sensitivity indices (filter out zero-variance inputs)
                             filtered_input_sims = {}

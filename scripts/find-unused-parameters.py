@@ -5,7 +5,7 @@ Find unused parameters in parameters.py
 
 This script identifies:
 1. Parameters defined in parameters.py but never used anywhere
-2. Parameters only used in calculations, never displayed (orphaned)
+2. Intermediate calculation parameters (used in formulas, not displayed)
 3. Parameters actively used in QMD files or Python scripts
 
 Checks for parameter usage in:
@@ -20,7 +20,7 @@ Checks for parameter usage in:
 import sys
 import re
 from pathlib import Path
-from typing import Set, Dict, List
+from typing import Set, Dict, List, Tuple
 from collections import defaultdict
 
 # Set UTF-8 encoding for stdout on Windows
@@ -53,6 +53,92 @@ def find_all_parameters(parameters_file: Path) -> Set[str]:
         params.add(match.group(1))
 
     return params
+
+
+def find_dependents(parameters_file: Path, all_params: Set[str]) -> Dict[str, List[str]]:
+    """
+    Build a robust map of parameter dependencies by extracting the full
+    Parameter(...) definition blocks using balanced parentheses, then
+    scanning each block for references to other parameters.
+
+    Returns: other_param -> [list of params that depend on it]
+    """
+    dependents: Dict[str, List[str]] = defaultdict(list)
+
+    with open(parameters_file, 'r', encoding='utf-8') as f:
+        file_text = f.read()
+
+    lines = file_text.splitlines()
+
+    # Build blocks with positional info: list of (name, start_line, end_line, text)
+    blocks: List[Tuple[str, int, int, str]] = []
+
+    i = 0
+    n = len(lines)
+    while i < n:
+        line = lines[i]
+        m = re.match(r'^([A-Z][A-Z0-9_]+)\s*=\s*Parameter\s*\(', line)
+        if not m:
+            i += 1
+            continue
+
+        param_name = m.group(1)
+        start_line = i
+        depth = 0
+        block_lines = []
+
+        first_paren_idx = line.find('(')
+        if first_paren_idx != -1:
+            segment = line[first_paren_idx:]
+            depth += segment.count('(') - segment.count(')')
+            block_lines.append(line)
+        else:
+            block_lines.append(line)
+
+        i += 1
+        while i < n and depth > 0:
+            curr = lines[i]
+            depth += curr.count('(') - curr.count(')')
+            block_lines.append(curr)
+            i += 1
+
+        end_line = i - 1
+        blocks.append((param_name, start_line, end_line, '\n'.join(block_lines)))
+
+    # 1) Attribute references found inside blocks to that block's param
+    for param, start_line, end_line, block_text in blocks:
+        for other_param in all_params:
+            if other_param == param:
+                continue
+            if re.search(rf'\b{other_param}\b', block_text):
+                dependents[other_param].append(param)
+
+    # 2) Heuristic: attribute free-standing references to the nearest preceding block
+    #    Find all occurrences by line, then map to owning block by line range
+    owner_by_line = {}
+    for name, start, end, _ in blocks:
+        for ln in range(start, end + 1):
+            owner_by_line[ln] = name
+
+    for idx, line in enumerate(lines):
+        # Skip lines that are part of a known block (already handled)
+        if idx in owner_by_line:
+            continue
+        for other_param in all_params:
+            if re.search(rf'\b{other_param}\b', line):
+                # Find nearest preceding block owner, if any
+                prev_lines = [line_no for line_no in owner_by_line.keys() if line_no < idx]
+                if prev_lines:
+                    nearest = max(prev_lines)
+                    owner = owner_by_line.get(nearest)
+                    if owner and owner != other_param:
+                        dependents[other_param].append(owner)
+
+    # Deduplicate and stabilize order
+    for k, v in dependents.items():
+        dependents[k] = sorted(set(v))
+
+    return dependents
 
 
 def build_parameter_usage_maps(root: Path, qmd_dir: Path, all_params: Set[str]):
@@ -89,9 +175,9 @@ def build_parameter_usage_maps(root: Path, qmd_dir: Path, all_params: Set[str]):
 
         code_refs[param] = count
 
-    # Scan QMD files ONCE
+    # Scan QMD files ONCE (search across the entire workspace, not just knowledge/)
     print("   [2/4] Scanning QMD files...")
-    qmd_files = [f for f in qmd_dir.rglob('*.qmd') if not should_skip_path(f)]
+    qmd_files = [f for f in root.rglob('*.qmd') if not should_skip_path(f)]
     print(f"         Found {len(qmd_files)} QMD files to scan")
 
     for idx, qmd_file in enumerate(qmd_files, 1):
@@ -109,6 +195,9 @@ def build_parameter_usage_maps(root: Path, qmd_dir: Path, all_params: Set[str]):
                 # Could be base param or param_latex
                 if var_name.endswith('_latex'):
                     param_name = var_name[:-6].upper()
+                elif var_name.endswith('_cite'):
+                    # Citation variables map back to the base parameter
+                    param_name = var_name[:-5].upper()
                 else:
                     param_name = var_name.upper()
 
@@ -177,105 +266,155 @@ def main():
     # Paths
     root = Path(__file__).parent.parent
     parameters_file = root / 'dih_models' / 'parameters.py'
-    qmd_dir = root / 'knowledge'
+    # Historically we scanned only 'knowledge/'. Now we scan the entire workspace
+    # for QMD files, but keep qmd_dir param for compatibility.
+    qmd_dir = root
 
     print("=" * 80)
-    print("FINDING UNUSED PARAMETERS")
+    print("PARAMETER USAGE ANALYSIS")
     print("=" * 80)
     print()
 
     # Find all parameters
-    print("[1/3] Extracting all parameters from parameters.py...")
+    print("[1/4] Extracting all parameters from parameters.py...")
     all_params = find_all_parameters(parameters_file)
     print(f"      Found {len(all_params)} parameters")
     print()
 
     # Build usage maps
-    print("[2/3] Building parameter usage maps (optimized single-pass)...")
+    print("[2/4] Building parameter usage maps (optimized single-pass)...")
     code_refs, qmd_refs, script_refs = build_parameter_usage_maps(root, qmd_dir, all_params)
     print("      Analysis complete!")
+    print()
+    
+    # Find dependents
+    print("[3/4] Analyzing parameter dependencies...")
+    dependents = find_dependents(parameters_file, all_params)
+    print("      Dependency analysis complete!")
     print()
 
     # Categorize parameters
     unused_params = []
-    orphaned_params = []
+    intermediate_params = []  # Used in calculations only
     used_params = []
 
     for param in sorted(all_params):
         code_count = code_refs.get(param, 0)
         qmd_files = qmd_refs.get(param, [])
         script_files = script_refs.get(param, [])
+        dependent_params = dependents.get(param, [])
 
         all_external_files = qmd_files + script_files
         total_external = len(set(all_external_files))  # Unique files
 
         if code_count == 0 and total_external == 0:
             unused_params.append(param)
-        elif code_count == 0 and total_external > 0:
-            used_params.append((param, total_external, all_external_files[:5]))
-        elif code_count > 0 and total_external == 0:
-            orphaned_params.append((param, code_count))
+        elif total_external == 0:
+            # Only used in calculations - intermediate value
+            intermediate_params.append((param, code_count, dependent_params))
         else:
             used_params.append((param, total_external, all_external_files[:5]))
 
     # Report results
-    print("[3/3] Results:")
+    print("[4/4] Results:")
     print()
 
     if unused_params:
-        print(f"COMPLETELY UNUSED ({len(unused_params)} parameters):")
-        print("These are not referenced anywhere - safe to delete!")
+        print(f"🗑️  COMPLETELY UNUSED ({len(unused_params)} parameters):")
+        print("   These are not referenced anywhere - safe to delete!")
         print("-" * 80)
         for param in unused_params:
-            print(f"  - {param}")
+            print(f"   - {param}")
         print()
     else:
-        print("No completely unused parameters found!")
+        print("✅ No completely unused parameters found!")
         print()
 
-    if orphaned_params:
-        print(f"ORPHANED PARAMETERS ({len(orphaned_params)} parameters):")
-        print("Only used in calculations, never used in QMD files or scripts")
+    if intermediate_params:
+        print(f"🔧 INTERMEDIATE CALCULATION VALUES ({len(intermediate_params)} parameters):")
+        print("   Used in other parameter formulas, not displayed in documents.")
+        print("   These are REQUIRED for calculations - do NOT delete unless consolidating!")
         print("-" * 80)
-        for param, count in orphaned_params:
-            print(f"  - {param} (used {count}x in calculations)")
-        print()
-        print("Note: These might be intermediate calculation values.")
-        print("Review before deleting - they may be needed for formulas!")
+        
+        # Sort by usage count (lowest first - candidates for consolidation)
+        intermediate_sorted = sorted(intermediate_params, key=lambda x: (x[1], len(x[2])))
+        
+        # Group by usage count
+        single_use = [(p, c, d) for p, c, d in intermediate_sorted if c == 1]
+        multi_use = [(p, c, d) for p, c, d in intermediate_sorted if c > 1]
+        
+        if single_use:
+            print()
+            print(f"   📍 SINGLE-USE ({len(single_use)} params) - could potentially inline:")
+            for param, count, deps in single_use[:15]:
+                dep_str = deps[0] if deps else "unknown"
+                print(f"      - {param}")
+                print(f"        └─ used by: {dep_str}")
+                # Also list external files (QMD/Python/Notebook) where referenced
+                ext_files = sorted(set((qmd_refs.get(param, []) + script_refs.get(param, []))))
+                if ext_files:
+                    short_list = ', '.join([ext_files[i].replace('\\', '/') for i in range(min(3, len(ext_files)))])
+                    more = f" (+{len(ext_files) - 3} more)" if len(ext_files) > 3 else ""
+                    print(f"        └─ files: {short_list}{more}")
+            if len(single_use) > 15:
+                print(f"      ... and {len(single_use) - 15} more single-use params")
+        
+        if multi_use:
+            print()
+            print(f"   🔗 MULTI-USE ({len(multi_use)} params) - keep these (reused across formulas):")
+            for param, count, deps in multi_use[:10]:
+                dep_list = ', '.join(deps[:3])
+                if len(deps) > 3:
+                    dep_list += f" (+{len(deps)-3} more)"
+                print(f"      - {param} ({count}x)")
+                print(f"        └─ used by: {dep_list}")
+            if len(multi_use) > 10:
+                print(f"      ... and {len(multi_use) - 10} more multi-use params")
+        
         print()
 
-    print(f"ACTIVELY USED PARAMETERS ({len(used_params)} parameters):")
-    print("Used in QMD files or scripts - keep these!")
+    print(f"📊 ACTIVELY DISPLAYED ({len(used_params)} parameters):")
+    print("   Used in QMD files or scripts - these appear in output documents.")
     print("-" * 80)
 
     # Show top 10 most used
     used_params_sorted = sorted(used_params, key=lambda x: x[1], reverse=True)
-    print("Top 10 most referenced:")
+    print("   Top 10 most referenced:")
     for param, total_refs, files in used_params_sorted[:10]:
-        file_list = ', '.join([f.split('/')[-1] for f in files[:3]])
+        file_list = ', '.join([f.split('\\')[-1] for f in files[:3]])
         if len(files) > 3:
-            file_list += f", ... ({total_refs} files total)"
-        print(f"  - {param}: {total_refs} files - {file_list}")
+            file_list += ", ..."
+        print(f"      - {param}: {total_refs} files")
+        print(f"        └─ {file_list}")
 
     if len(used_params_sorted) > 10:
-        print(f"  ... and {len(used_params_sorted) - 10} more")
+        print(f"      ... and {len(used_params_sorted) - 10} more")
     print()
 
     # Summary
     print("=" * 80)
     print("SUMMARY")
     print("=" * 80)
-    print(f"Total parameters:        {len(all_params)}")
-    print(f"Completely unused:       {len(unused_params)} (can delete)")
-    print(f"Orphaned (calc only):    {len(orphaned_params)} (review carefully)")
-    print(f"Actively used:           {len(used_params)} (keep)")
+    print(f"Total parameters:              {len(all_params)}")
+    print(f"Completely unused:             {len(unused_params)} (can delete)")
+    print(f"Intermediate (calc only):      {len(intermediate_params)} (required for formulas)")
+    print(f"  - Single-use:                {len([p for p, c, d in intermediate_params if c == 1])}")
+    print(f"  - Multi-use:                 {len([p for p, c, d in intermediate_params if c > 1])}")
+    print(f"Actively displayed:            {len(used_params)} (appear in documents)")
     print()
 
     if unused_params:
-        print(f"Suggested action: Delete {len(unused_params)} unused parameters")
-        print("Run this script again after deletion to verify!")
+        print(f"🎯 Action: Delete {len(unused_params)} unused parameters")
+        print("   Run this script again after deletion to verify!")
     else:
-        print("No unused parameters found - codebase is clean!")
+        print("✅ No unused parameters - codebase is clean!")
+        
+    single_use_count = len([p for p, c, d in intermediate_params if c == 1])
+    if single_use_count > 20:
+        print()
+        print(f"💡 Tip: {single_use_count} single-use intermediate params could potentially")
+        print("   be inlined into their parent formulas to simplify parameters.py")
+    
     print()
 
     return 0 if len(unused_params) == 0 else 1
