@@ -188,6 +188,10 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 0.07)
+
 *~ Medium confidence • 📊 Peer-reviewed*
 
 :::
@@ -278,6 +282,14 @@ Current trial abandonment rate (40% never complete)
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
 **Source**: [global-trial-participant-capacity](https://warondisease.org/knowledge/references.html#global-trial-participant-capacity)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.50M, 2.30M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between 1.50M and 2.30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -383,6 +395,10 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
 **Source**: [bio-clinical-development-2021](https://warondisease.org/knowledge/references.html#bio-clinical-development-2021)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 1)
+
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
@@ -395,6 +411,14 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
 
 **Source**: [fda-approval-timeline-10-years](https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6, 12] • Distribution: Gamma (SE: 2)
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 6 and 12 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
 
 *✓ High confidence*
 
@@ -448,6 +472,14 @@ Annual deaths from active combat worldwide
 
 **Source**: [acled-active-combat-deaths](https://warondisease.org/knowledge/references.html#acled-active-combat-deaths)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [180K, 300K] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 180K and 300K (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -460,6 +492,14 @@ Annual deaths from active combat worldwide
 Annual deaths from state violence
 
 **Source**: [ucdp-state-violence-deaths](https://warondisease.org/knowledge/references.html#ucdp-state-violence-deaths)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1,500, 5,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain—the true value likely falls between 1,500 and 5,000 (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -474,6 +514,14 @@ Annual deaths from terror attacks globally
 
 **Source**: [gtd-terror-attack-deaths](https://warondisease.org/knowledge/references.html#gtd-terror-attack-deaths)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6,000, 12,000] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 6,000 and 12,000 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -486,6 +534,14 @@ Annual deaths from terror attacks globally
 Annual environmental damage and restoration costs from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$70B, $140B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -500,6 +556,14 @@ Annual infrastructure damage to communications from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$209B, $418B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $209B and $418B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -512,6 +576,14 @@ Annual infrastructure damage to communications from conflict
 Annual infrastructure damage to education facilities from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$164B, $328B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -526,6 +598,14 @@ Annual infrastructure damage to energy systems from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$295B, $590B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $295B and $590B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -538,6 +618,14 @@ Annual infrastructure damage to energy systems from conflict
 Annual infrastructure damage to healthcare facilities from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$116B, $232B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -552,6 +640,14 @@ Annual infrastructure damage to transportation from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$340B, $680B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $340B and $680B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -564,6 +660,14 @@ Annual infrastructure damage to transportation from conflict
 Annual infrastructure damage to water systems from conflict
 
 **Source**: [environmental-cost-of-war](https://warondisease.org/knowledge/references.html#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$187B, $375B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -578,6 +682,14 @@ Annual lives saved by medical research globally
 
 **Source**: [medical-research-lives-saved-annually](https://warondisease.org/knowledge/references.html#medical-research-lives-saved-annually)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3.00M, 6.00M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 3.00M and 6.00M (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -590,6 +702,14 @@ Annual lives saved by medical research globally
 Annual lost economic growth from military spending opportunity cost
 
 **Source**: [disparity-ratio-weapons-vs-cures](https://warondisease.org/knowledge/references.html#disparity-ratio-weapons-vs-cures)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.90T, $3.80T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $1.90T and $3.80T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -604,6 +724,14 @@ Annual lost productivity from conflict casualties
 
 **Source**: [lost-human-capital-war-cost](https://warondisease.org/knowledge/references.html#lost-human-capital-war-cost)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$210B, $420B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $210B and $420B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -616,6 +744,14 @@ Annual lost productivity from conflict casualties
 Annual PTSD and mental health costs from conflict
 
 **Source**: [psychological-impact-war-cost](https://warondisease.org/knowledge/references.html#psychological-impact-war-cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$162B, $325B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -630,6 +766,14 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 **Source**: [unhcr-refugee-support-cost](https://warondisease.org/knowledge/references.html#unhcr-refugee-support-cost)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$105B, $210B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $105B and $210B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -642,6 +786,14 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 Annual trade disruption costs from currency instability
 
 **Source**: [world-bank-trade-disruption-conflict](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40B, $80B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -656,6 +808,14 @@ Annual trade disruption costs from energy price volatility
 
 **Source**: [world-bank-trade-disruption-conflict](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$87B, $175B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $87B and $175B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -668,6 +828,14 @@ Annual trade disruption costs from energy price volatility
 Annual trade disruption costs from shipping disruptions
 
 **Source**: [world-bank-trade-disruption-conflict](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$173B, $346B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -682,6 +850,14 @@ Annual trade disruption costs from supply chain disruptions
 
 **Source**: [world-bank-trade-disruption-conflict](https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$131B, $262B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $131B and $262B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -694,6 +870,14 @@ Annual trade disruption costs from supply chain disruptions
 Annual veteran healthcare costs (20-year projected)
 
 **Source**: [veteran-healthcare-cost-projections](https://warondisease.org/knowledge/references.html#veteran-healthcare-cost-projections)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$140B, $280B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -708,6 +892,14 @@ Annual global spending on clinical trials
 
 **Source**: [global-clinical-trials-market-2024](https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$70B, $97B] • Distribution: Lognormal (SE: $12.5B)
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $70B and $97B (±16%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -720,6 +912,14 @@ Annual global spending on clinical trials
 Daily deaths from curable diseases globally
 
 **Source**: [deaths-from-treatable-diseases-15m](https://warondisease.org/knowledge/references.html#deaths-from-treatable-diseases-15m)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [120K, 180K] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between 120K and 180K (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -747,6 +947,14 @@ Direct medical costs of disease globally (treatment, hospitalization, medication
 
 **Source**: [disease-economic-burden-109t](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7.00T, $14T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $7.00T and $14T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -759,6 +967,14 @@ Direct medical costs of disease globally (treatment, hospitalization, medication
 Economic value of human life lost to disease annually (mortality valuation)
 
 **Source**: [disease-economic-burden-109t](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$66T, $132T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $66T and $132T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -773,6 +989,14 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 
 **Source**: [disease-economic-burden-109t](https://warondisease.org/knowledge/references.html#disease-economic-burden-109t)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.50T, $7.00T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $3.50T and $7.00T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -785,6 +1009,10 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 Global life expectancy (2024)
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2)
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
@@ -799,6 +1027,14 @@ Global government medical research spending
 
 **Source**: [global-gov-med-research-spending](https://warondisease.org/knowledge/references.html#global-gov-med-research-spending)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$54B, $81B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $54B and $81B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -811,6 +1047,14 @@ Global government medical research spending
 Global military spending in 2024
 
 **Source**: [global-military-spending](https://warondisease.org/knowledge/references.html#global-military-spending)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2.45T, $2.99T] • Distribution: Lognormal (SE: $272B)
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $2.45T and $2.99T (±10%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -825,6 +1069,14 @@ Global population in 2024
 
 **Source**: [global-population-8-billion](https://warondisease.org/knowledge/references.html#global-population-8-billion)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [7.80B, 8.20B] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate—the true value likely falls between 7.80B and 8.20B (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -837,6 +1089,14 @@ Global population in 2024
 Critical mass threshold for social change (3.5% rule)
 
 **Source**: [3-5-rule](https://warondisease.org/knowledge/references.html#3-5-rule)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2.5%, 4.5%] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 2.5% and 4.5% (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -954,6 +1214,14 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 Average cost to develop one drug in current system
 
 **Source**: [drug-development-cost](https://warondisease.org/knowledge/references.html#drug-development-cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.50B, $4.00B] • Distribution: Lognormal (SE: $500M)
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $1.50B and $4.00B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence • 📊 Peer-reviewed*
 
@@ -1189,6 +1457,14 @@ RECOVERY trial cost per patient
 
 **Source**: [recovery-cost-500](https://warondisease.org/knowledge/references.html#recovery-cost-500)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$350, $700] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $350 and $700 (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -1202,6 +1478,10 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
 
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 3)
+
 *~ Medium confidence • 📊 Peer-reviewed*
 
 :::
@@ -1214,6 +1494,14 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
 **Source**: [who-global-health-estimates-2024](https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [4, 9] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 4 and 9 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *~ Medium confidence • 📊 Peer-reviewed*
 
@@ -1266,6 +1554,10 @@ Estimated annual global economic benefit from smoking cessation programs
 Standard economic value per QALY
 
 **Source**: [qaly-value](https://warondisease.org/knowledge/references.html#qaly-value)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30K)
 
 *✓ High confidence*
 
@@ -1345,6 +1637,14 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 **Source**: [thalidomide-scandal](https://warondisease.org/knowledge/references.html#thalidomide-scandal)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10,000, 20,000] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 10,000 and 20,000 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *~ Medium confidence*
 
 :::
@@ -1357,6 +1657,14 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 **Source**: [thalidomide-survivors-health](https://warondisease.org/knowledge/references.html#thalidomide-survivors-health)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.32, 0.48] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between 0.32 and 0.48 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *~ Medium confidence*
 
@@ -1371,6 +1679,14 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 **Source**: [thalidomide-scandal](https://warondisease.org/knowledge/references.html#thalidomide-scandal)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [35%, 45%] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between 35% and 45% (±13%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -1384,6 +1700,14 @@ Average lifespan for thalidomide survivors
 
 **Source**: [thalidomide-survivors-health](https://warondisease.org/knowledge/references.html#thalidomide-survivors-health)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50, 70] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between 50 and 70 (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *~ Medium confidence*
 
 :::
@@ -1396,6 +1720,14 @@ Average lifespan for thalidomide survivors
 US share of world population in 1960
 
 **Source**: [us-census-world-population-1960](https://warondisease.org/knowledge/references.html#us-census-world-population-1960)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5.5%, 6.5%] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate—the true value likely falls between 5.5% and 6.5% (±8%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence*
 
@@ -1462,6 +1794,14 @@ Cost reduction factor demonstrated by RECOVERY trial
 
 **Source**: [recovery-trial-82x-cost-reduction](https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [20, 150] • Distribution: Lognormal (SE: 20)
+
+**What this means**: This estimate is highly uncertain—the true value likely falls between 20 and 150 (±79%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -1488,6 +1828,14 @@ Annual US cost of Alzheimer's disease (direct and indirect)
 
 **Source**: [disease-cost-alzheimers-1300b](https://warondisease.org/knowledge/references.html#disease-cost-alzheimers-1300b)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$302B, $408B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $302B and $408B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 :::
@@ -1500,6 +1848,14 @@ Annual US cost of Alzheimer's disease (direct and indirect)
 Annual US cost of cancer (direct and indirect)
 
 **Source**: [disease-cost-cancer-1800b](https://warondisease.org/knowledge/references.html#disease-cost-cancer-1800b)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$177B, $239B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $177B and $239B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence • 📊 Peer-reviewed*
 
@@ -1514,6 +1870,14 @@ US annual chronic disease spending
 
 **Source**: [us-chronic-disease-spending](https://warondisease.org/knowledge/references.html#us-chronic-disease-spending)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.30T, $5.00T] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $3.30T and $5.00T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -1527,6 +1891,14 @@ Annual US cost of diabetes (direct and indirect)
 
 **Source**: [disease-cost-diabetes-1500b](https://warondisease.org/knowledge/references.html#disease-cost-diabetes-1500b)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$278B, $376B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $278B and $376B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 :::
@@ -1539,6 +1911,14 @@ Annual US cost of diabetes (direct and indirect)
 Annual US cost of heart disease and stroke (direct and indirect)
 
 **Source**: [disease-cost-heart-disease-2100b](https://warondisease.org/knowledge/references.html#disease-cost-heart-disease-2100b)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$309B, $417B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $309B and $417B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *✓ High confidence • 📊 Peer-reviewed*
 
@@ -1579,6 +1959,14 @@ US population in 2024
 
 **Source**: [us-voter-population](https://warondisease.org/knowledge/references.html#us-voter-population)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [330M, 340M] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate—the true value likely falls between 330M and 340M (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *✓ High confidence*
 
 :::
@@ -1591,6 +1979,14 @@ US population in 2024
 Value of Statistical Life (conservative estimate)
 
 **Source**: [dot-vsl-13-6m](https://warondisease.org/knowledge/references.html#dot-vsl-13-6m)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5.00M, $15M] • Distribution: Gamma (SE: $3.00M)
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $5.00M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
 
 *✓ High confidence*
 
@@ -3989,6 +4385,14 @@ Community organizing and ambassador program budget
 
 Contingency fund for unexpected costs
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30M, $80M] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $30M and $80M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
 *Core definition*
 
 :::
@@ -3999,6 +4403,14 @@ Contingency fund for unexpected costs
 **Value**: $50M
 
 Defense industry conversion program
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40M, $70M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $40M and $70M (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4065,6 +4477,14 @@ Legal defense fund
 **Value**: $60M
 
 Legal drafting and compliance work
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50M, $80M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between $50M and $80M (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4176,6 +4596,14 @@ Pilot program testing in small countries
 
 Voting platform and technology development
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25M, $50M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $25M and $50M (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4241,6 +4669,14 @@ Tech industry partnerships and infrastructure
 **Value**: $40M
 
 Post-victory treaty implementation support
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30M, $55M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $30M and $55M (±31%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4339,6 +4775,14 @@ Years to reach full dFDA adoption
 
 dFDA core platform annual opex (midpoint of $11-26.5M)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$11M, $26.5M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $11M and $26.5M (±41%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4349,6 +4793,14 @@ dFDA core platform annual opex (midpoint of $11-26.5M)
 **Value**: $40M
 
 dFDA core platform build cost
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25M, $65M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $25M and $65M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4361,6 +4813,14 @@ dFDA core platform build cost
 
 dFDA community support costs
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.00M, $3.00M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $1.00M and $3.00M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4371,6 +4831,14 @@ dFDA community support costs
 **Value**: $8.00M
 
 dFDA infrastructure costs (cloud, security)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5.00M, $12M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $5.00M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4394,6 +4862,14 @@ Percentage of treaty funding allocated to dFDA platform overhead
 
 dFDA platform maintenance costs
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4405,6 +4881,14 @@ dFDA platform maintenance costs
 
 dFDA regulatory coordination costs
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.00M, $8.00M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $3.00M and $8.00M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4415,6 +4899,14 @@ dFDA regulatory coordination costs
 **Value**: $10M
 
 dFDA staff costs (minimal, AI-assisted)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7.00M, $15M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $7.00M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4460,6 +4952,14 @@ dFDA platform one-time build cost (high estimate)
 
 DIH broader initiatives annual opex (medium case)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$14M, $32M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $14M and $32M (±43%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4470,6 +4970,14 @@ DIH broader initiatives annual opex (medium case)
 **Value**: $230M
 
 DIH broader initiatives upfront cost (medium case)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150M, $350M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between $150M and $350M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -4731,6 +5239,14 @@ Maximum bond investment for lobbyist incentives
 
 Standard discount rate for NPV analysis (8% annual)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [4%, 12%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here—the true value likely falls between 4% and 12% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
 *Core definition*
 
 :::
@@ -4950,6 +5466,14 @@ Annual funding from 1% of global military spending redirected to DIH
 
 Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$325M, $1.30B] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain—the true value likely falls between $325M and $1.30B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4961,6 +5485,14 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$180M, $500M] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain—the true value likely falls between $180M and $500M (±53%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
 *Core definition*
 
 :::
@@ -4971,6 +5503,14 @@ Global referendum campaign (get 208M votes): ads, media, partnerships, staff, le
 **Value**: $50M
 
 Reserve fund / contingency buffer
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20M, $100M] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain—the true value likely falls between $20M and $100M (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -5084,6 +5624,14 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 **Value**: 50%
 
 Trial cost reduction percentage (50% baseline, conservative)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [40%, 65%] • Distribution: Beta
+
+**What this means**: This estimate has moderate uncertainty—the true value likely falls between 40% and 65% (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
 
 *Core definition*
 

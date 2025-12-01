@@ -1375,6 +1375,119 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             print(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")
 
 
+def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
+    """
+    Generate human-friendly uncertainty explanation for a parameter.
+
+    Returns both technical notation (for economists) and plain-language
+    explanations (for general readers).
+
+    Args:
+        value: Parameter instance with uncertainty metadata
+        unit: Unit string for formatting
+
+    Returns:
+        List of content lines to append to the QMD
+    """
+    content = []
+
+    # Check if we have any uncertainty metadata
+    has_ci = hasattr(value, "confidence_interval") and value.confidence_interval
+    has_dist = hasattr(value, "distribution") and value.distribution
+    has_se = hasattr(value, "std_error") and value.std_error
+    has_sensitivity = hasattr(value, "sensitivity") and value.sensitivity
+    
+    if not (has_ci or has_dist or has_se or has_sensitivity):
+        return content
+    
+    content.append("#### Uncertainty Range")
+    content.append("")
+    
+    # Technical notation line
+    technical_parts = []
+    
+    if has_ci:
+        low, high = value.confidence_interval
+        low_str = format_parameter_value(low, unit)
+        high_str = format_parameter_value(high, unit)
+        technical_parts.append(f"95% CI: [{low_str}, {high_str}]")
+    
+    if has_dist:
+        dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+        dist_str = dist_name.title()
+        if has_se:
+            se_str = format_parameter_value(value.std_error, unit)
+            dist_str += f" (SE: {se_str})"
+        technical_parts.append(f"Distribution: {dist_str}")
+    
+    if has_sensitivity and not has_ci:
+        sens_str = format_parameter_value(value.sensitivity, unit)
+        technical_parts.append(f"Sensitivity: ±{sens_str}")
+    
+    if technical_parts:
+        content.append("**Technical**: " + " • ".join(technical_parts))
+        content.append("")
+    
+    # Human-friendly explanation
+    main_value = float(value)
+    
+    if has_ci:
+        low, high = value.confidence_interval
+        
+        # Calculate percentage range from central value
+        low_pct = abs((main_value - low) / main_value * 100) if main_value != 0 else 0
+        high_pct = abs((high - main_value) / main_value * 100) if main_value != 0 else 0
+        avg_pct = (low_pct + high_pct) / 2
+        
+        # Format the bounds nicely
+        low_str = format_parameter_value(low, unit)
+        high_str = format_parameter_value(high, unit)
+        
+        # Generate plain-language explanation based on uncertainty size
+        if avg_pct <= 10:
+            certainty_phrase = "We're quite confident in this estimate"
+            range_desc = "a narrow range"
+        elif avg_pct <= 25:
+            certainty_phrase = "This estimate has moderate uncertainty"
+            range_desc = "a reasonable range"
+        elif avg_pct <= 50:
+            certainty_phrase = "There's significant uncertainty here"
+            range_desc = "a wide range"
+        else:
+            certainty_phrase = "This estimate is highly uncertain"
+            range_desc = "a very wide range"
+        
+        content.append(f"**What this means**: {certainty_phrase}: the true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results.")
+        content.append("")
+        
+        # Add distribution explanation if present
+        if has_dist:
+            dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+            
+            dist_explanations = {
+                "normal": "values cluster around the center with equal chances of being higher or lower",
+                "lognormal": "values can't go negative and have a longer tail toward higher values (common for costs and populations)",
+                "uniform": "any value in the range is equally likely",
+                "triangular": "values cluster around a most-likely point but can range higher or lower",
+                "beta": "values are bounded and can skew toward one end",
+                "pert": "values cluster around a most-likely estimate with defined min/max bounds",
+            }
+            
+            explanation = dist_explanations.get(dist_name.lower(), "values follow a specific statistical pattern")
+            content.append(f"*The {dist_name.lower()} distribution means {explanation}.*")
+            content.append("")
+    
+    elif has_sensitivity:
+        sens = value.sensitivity
+        sens_str = format_parameter_value(sens, unit)
+        sens_pct = abs(sens / main_value * 100) if main_value != 0 else 0
+        
+        content.append(f"**What this means**: This value could reasonably vary by ±{sens_str} (±{sens_pct:.0f}%) based on different assumptions or data sources.")
+        content.append("")
+    
+    return content
+
+
 def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, params_file: Path = None):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
@@ -1384,6 +1497,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     - LaTeX equations where available (hardcoded or auto-generated)
     - Citations and source links
     - Confidence indicators and metadata
+    - Uncertainty ranges with human-friendly explanations
 
     Args:
         parameters: Dict of parameter metadata
@@ -1483,6 +1597,10 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 display_ref = source_ref_str
                 content.append(f"**Source**: [{display_ref}](https://warondisease.org/knowledge/references.html#{source_ref_str})")
                 content.append("")
+
+            # Uncertainty section with human-friendly explanations
+            uncertainty_content = generate_uncertainty_section(value, unit)
+            content.extend(uncertainty_content)
 
             # Confidence and metadata - cleaner formatting
             metadata = []
@@ -1613,6 +1731,10 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 content.append(f"**Methodology**: [{link_text}]({link_target})")
                 content.append("")
 
+            # Uncertainty section with human-friendly explanations (for calculated values too)
+            uncertainty_content = generate_uncertainty_section(value, unit)
+            content.extend(uncertainty_content)
+
             # Confidence and notes
             metadata = []
             if hasattr(value, "confidence") and value.confidence:
@@ -1681,6 +1803,10 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             if hasattr(value, "description") and value.description:
                 content.append(f"{value.description}")
                 content.append("")
+
+            # Uncertainty section with human-friendly explanations (for definitions too)
+            uncertainty_content = generate_uncertainty_section(value, unit)
+            content.extend(uncertainty_content)
 
             content.append("*Core definition*")
             content.append("")
