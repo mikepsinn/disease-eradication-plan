@@ -15,7 +15,14 @@ Usage:
 """
 
 from enum import Enum
-from typing import Optional, List, Tuple, Union, Any
+from typing import Optional, List, Tuple, Union, Callable, Any  # noqa: F401
+
+# Import compute context type for type-safe compute lambdas
+try:
+    from .compute_context import ComputeContext
+except ImportError:
+    # Handle direct execution (not as package)
+    from compute_context import ComputeContext
 
 # Import valid reference IDs for type-safe citations
 try:
@@ -184,7 +191,7 @@ class Parameter(float):
     std_error: "float | None"
     distribution: "DistributionType | None"
     inputs: "list[str]"
-    compute: "Any"
+    compute: "Callable[[ComputeContext], float] | None"
 
     def __new__(
         cls,
@@ -210,7 +217,7 @@ class Parameter(float):
         std_error: Optional[float] = None,
         distribution: Union[DistributionType, str, None] = None,
         inputs: Optional[List[str]] = None,
-        compute: Optional[Any] = None,
+        compute: Optional[Callable[[ComputeContext], float]] = None,
     ):
         # Convert string source_type to enum (backwards compatibility)
         if not isinstance(source_type, SourceType):
@@ -2871,7 +2878,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
 # NPV of Regulatory Delay Avoidance (Disease Eradication Delay Elimination)
 # This calculates the present value of eliminating the 8.2-year regulatory delay,
 # assuming diseases are cured 100 years in the future on average.
-# 
+#
 # Key assumption: If diseases are cured at year 100, eliminating the regulatory delay
 # brings them 8.2 years earlier (years 92-100). This is a simple timeline shift -
 # the full annual benefit applies for all 8.2 years.
@@ -3887,13 +3894,6 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 # - Balanced presentations / general use: DFDA_ROI_RD_PLUS_DELAY (6,489:1) **RECOMMENDED**
 # - Academic/comprehensive analyses: Show full range 463:1 to 11,540:1
 # - Advocacy (use cautiously): DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1)
-
-
-
-
-
-
-
 
 
 # Cost per DALY benchmarks for comparison
@@ -5368,8 +5368,6 @@ def calculate_personal_lifetime_wealth_improved(
     }
 
 
-
-
 # --- Test Output (when module executed directly) ---
 if __name__ == "__main__":
     print("\n=== not sure why this is here ===")
@@ -6319,43 +6317,3 @@ if __name__ == "__main__":
     erad_10yr_life = PERSONAL_WEALTH_ERADICATION_10YR_AGE_30_1PCT["life_extension_years"]
     erad_20yr_life = PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT["life_extension_years"]
     erad_40yr_life = PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT["life_extension_years"]
-
-    print("DEPRECATED Models (kept for reference):")
-    print(f"  Conservative (1.2yr):              ${conservative_total/1000:.0f}K  [Arbitrary formulas - DO NOT USE]")
-    print()
-    print("Conservative Baselines (antibiotic precedent - for skeptical audiences):")
-    print(
-        f"  Conservative Baseline (5yr):       ${cons_baseline_total/1000:.0f}K  [Antibiotic precedent, properly cited]"
-    )
-    print(
-        f"  Conservative Moderate (10yr):      ${cons_moderate_total/1000:.0f}K  [Antibiotic precedent, properly cited]"
-    )
-    print()
-    print("Disease Eradication Model (RECOMMENDED - cumulative 115x research):")
-    print(
-        f"  5-year  ({erad_5yr_life:.1f}yr life ext):  ${erad_5yr/1000:.0f}K  [575 research-years, low-hanging fruit]"
-    )
-    print(
-        f"  10-year ({erad_10yr_life:.1f}yr life ext): ${erad_10yr/1000:.0f}K  [1,150 research-years, major categories]"
-    )
-    print(f"  20-year ({erad_20yr_life:.1f}yr life ext): ${erad_20yr/1000:.0f}K  [2,300 research-years, DEFAULT]")
-    print(
-        f"  40-year ({erad_40yr_life:.1f}yr life ext): ${erad_40yr/1000:.0f}K  [4,600 research-years, biological limits]"
-    )
-
-    print("\n=== KEY INSIGHT ===")
-    print("The antibiotic precedent (10 years) was ONE technology solving ONE disease category.")
-    print("The 1% Treaty enables:")
-    print("  - 115x research acceleration EVERY YEAR (cumulative)")
-    print("  - AI discovering millions of treatments in parallel")
-    print("  - Gene therapy, epigenetics, stem cells, organ regeneration ALL converging")
-    print("  - Near-zero trial costs removing pharma's biggest barrier")
-    print("\n20 years of 115x research = 2300 equivalent years")
-    print(f"  = {2300/124:.1f}x the ENTIRE modern medical revolution (1900-2024)")
-    print(f"  = Realistic life extension: {erad_20yr_life:.1f} years")
-    print(f"  = Personal benefit: ${erad_20yr/1000:.0f}K")
-
-
-
-
-

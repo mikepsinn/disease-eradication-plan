@@ -390,12 +390,16 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
         # Create short label (abbreviation from display name and param name)
         short_label = create_short_label(inp_display, inp_name)
         
+        # Create symbolic name for traceable equations
+        inp_symbolic = create_latex_variable_name(inp_name, inp_display)
+        
         input_data.append({
             'name': inp_name,
             'value': inp_float,
             'formatted': inp_formatted,
             'display': inp_display,
             'short': short_label,
+            'symbolic': inp_symbolic,
             'unit': inp_unit,
         })
     
@@ -418,8 +422,11 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
                 return f"{lhs_short} = {sympy_latex} = {result_formatted}"
     
     # Build equation based on inferred operation type
+    # Format: LHS = Symbolic formula = Numeric values = Result
+    # This makes calculations traceable AND verifiable
+    
     if operation == 'divide' and len(input_data) == 2:
-        # Division: X = A / B = result
+        # Division: X = A/B = num/denom = result
         if order == 'second_over_first':
             numerator = input_data[1]
             denominator = input_data[0]
@@ -427,39 +434,43 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
             numerator = input_data[0]
             denominator = input_data[1]
         
-        latex = (
-            f"{lhs_short} = "
-            f"\\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}} = "
-            f"{result_formatted}"
-        )
+        symbolic = f"\\frac{{{numerator['symbolic']}}}{{{denominator['symbolic']}}}"
+        numeric = f"\\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
     
     elif operation == 'multiply':
-        # Multiplication: X = A × B = result
-        terms = ' \\times '.join(d['formatted'] for d in input_data)
-        latex = f"{lhs_short} = {terms} = {result_formatted}"
+        # Multiplication: X = A × B = val1 × val2 = result
+        symbolic_terms = ' \\times '.join(d['symbolic'] for d in input_data)
+        numeric_terms = ' \\times '.join(d['formatted'] for d in input_data)
+        latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
     
     elif operation == 'sum':
-        # Addition: X = A + B + C = result (with underbraces for labels)
-        terms_parts = []
-        for d in input_data:
-            terms_parts.append(f"\\underbrace{{{d['formatted']}}}_{{{d['short']}}}")
-        terms = ' + '.join(terms_parts)
-        latex = f"{lhs_short} = {terms} = {result_formatted}"
+        # Addition: X = A + B + C = val1 + val2 + val3 = result
+        symbolic_terms = ' + '.join(d['symbolic'] for d in input_data)
+        numeric_terms = ' + '.join(d['formatted'] for d in input_data)
+        latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
     
     elif operation == 'subtract' and len(input_data) == 2:
-        # Subtraction: X = A - B = result
+        # Subtraction: X = A - B = val1 - val2 = result
         if order == 'second_minus_first':
             first = input_data[1]
             second = input_data[0]
         else:
             first = input_data[0]
             second = input_data[1]
-        latex = f"{lhs_short} = {first['formatted']} - {second['formatted']} = {result_formatted}"
+        symbolic = f"{first['symbolic']} - {second['symbolic']}"
+        numeric = f"{first['formatted']} - {second['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
     
     elif operation in ('identity', 'transform') and len(input_data) == 1:
-        # Single input transformation
+        # Single input transformation: X = A = val = result
+        # BUT: Check if formula suggests a binary operation - if so, inputs metadata is incomplete
+        formula = getattr(param_value, 'formula', '') or ''
+        if '÷' in formula or '×' in formula or '+' in formula or '-' in formula:
+            # Formula suggests binary op but only 1 input - skip auto-generation
+            return None
         inp = input_data[0]
-        latex = f"{lhs_short} = {inp['formatted']} = {result_formatted}"
+        latex = f"{lhs_short} = {inp['symbolic']} = {inp['formatted']} = {result_formatted}"
     
     else:
         # Complex or unrecognized - skip auto-generation
@@ -609,97 +620,178 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         param_name: Parameter name like DFDA_ANNUAL_OPEX
         display_name: Human-readable name like "DFDA Annual Operating Expenses"
     """
-    # Domain-specific main concepts (what type of thing this is)
-    main_concepts = {
-        'cost': 'Cost',
-        'opex': 'OPEX',
-        'capex': 'CAPEX', 
-        'death': 'Deaths',
-        'daly': 'DALYs',
-        'benefit': 'Benefit',
-        'saving': 'Savings',
-        'funding': 'Funding',
-        'dividend': 'Dividend',
-        'roi': 'ROI',
-        'ratio': 'Ratio',
-        'rate': 'Rate',
-        'multiplier': 'Multiplier',
-        'capacity': 'Capacity',
-        'population': 'Population',
-        'delay': 'Delay',
-        'time': 'Time',
-        'probability': 'Probability',
-        'damage': 'Damage',
-        'disruption': 'Disruption',
-    }
+    # Domain-specific main concepts - USE LIST for priority ordering
+    # More specific terms should come FIRST
+    main_concepts = [
+        ('threshold_pct', 'Threshold'),  # Activism threshold -> Threshold
+        ('reduction_pct', 'Reduction'),  # Cost reduction -> Reduction
+        ('activism', 'Activism'),        # Activism threshold
+        ('treasury', 'Treasury'),  # More specific than 'trial'
+        ('subsid', 'Subsidies'),   # Trial subsidies -> Subsidies
+        ('fundable', 'Fundable'),  # Patients fundable -> Fundable
+        ('multiplier', 'Multiplier'),  # Before cost to catch "cost increase multiplier"
+        ('increase', 'Increase'),  # Cost increase
+        ('cost', 'Cost'),
+        ('opex', 'OPEX'),
+        ('capex', 'CAPEX'),
+        ('death', 'Deaths'),
+        ('daly', 'DALYs'),
+        ('benefit', 'Benefit'),
+        ('saving', 'Savings'),
+        ('funding', 'Funding'),
+        ('dividend', 'Dividend'),
+        ('roi', 'ROI'),
+        ('ratio', 'Ratio'),
+        ('rate', 'Rate'),
+        ('capacity', 'Capacity'),
+        ('population', 'Population'),
+        ('delay', 'Delay'),
+        ('time', 'Time'),
+        ('probability', 'Probability'),
+        ('damage', 'Damage'),
+        ('disruption', 'Disruption'),
+        ('burden', 'Burden'),
+        ('patient', 'Patients'),
+        ('trial', 'Trials'),
+        ('lives', 'Lives'),
+        ('qaly', 'QALYs'),
+        ('yll', 'YLL'),
+        ('yld', 'YLD'),
+        ('hour', 'Hours'),
+        ('spending', 'Spending'),
+        ('loss', 'Loss'),
+        ('campaign', 'Campaign'),
+        ('bloc', 'VotingBloc'),
+    ]
     
-    # Domain-specific subscripts
-    subscripts = {
+    # Priority subscripts - distinguishing modifiers (checked first, only one picked)
+    # Order matters! Check longer strings first to avoid substring matches
+    priority_subscripts = [
+        ('per_capita', 'percap'),  # Per capita metrics
+        ('mental_health', 'mental'),
+        ('chronic_disease', 'chronic'),
+        ('symptomatic', 'sympt'),
+        ('indirect', 'indirect'),  # Check before 'direct'
+        ('direct', 'direct'),
+        ('gross', 'gross'),
+        ('net', 'net'),
+        ('human', 'human'),
+        ('infrastructure', 'infra'),
+        ('infra', 'infra'),
+        ('combat', 'combat'),
+        ('terror', 'terror'),
+        ('trade', 'trade'),
+        ('military', 'mil'),
+        ('environmental', 'env'),
+        ('veteran', 'vet'),
+        ('refugee', 'ref'),
+        ('ptsd', 'PTSD'),
+        ('current', 'curr'),
+        ('pre_1962', 'pre62'),
+        ('pre1962', 'pre62'),
+        ('1980', '80s'),
+        ('lost_human', 'lost_cap'),  # Human capital
+        ('lost_economic', 'lost_econ'),
+        ('lost', 'lost'),
+        # Disease-specific
+        ('alzheimer', 'alz'),
+        ('cancer', 'cancer'),
+        ('diabetes', 'diab'),
+        ('heart', 'heart'),
+        ('stroke', 'stroke'),
+        ('obesity', 'obes'),
+        # Source-specific
+        ('dfda', 'DFDA'),
+        ('campaign', 'camp'),
+        ('opex', 'opex'),
+        ('societal', 'soc'),
+        ('symptomatic', 'sympt'),
+        ('war_total', 'war'),  # War total cost
+    ]
+    
+    # Secondary subscripts - context modifiers
+    secondary_subscripts = {
         'total': 'total',
-        'annual': 'annual',
+        'annual': 'ann',
         'daily': 'daily',
-        'combat': 'combat',
-        'terror': 'terror',
-        'state': 'state',
-        'direct': 'direct',
-        'indirect': 'indirect',
-        'infra': 'infra',
-        'infrastructure': 'infra',
-        'human': 'human',
-        'trade': 'trade',
-        'military': 'mil',
+        'global': 'global',
         'research': 'RD',
         'rd': 'RD',
         'peace': 'peace',
         'war': 'war',
         'dfda': 'DFDA',
         'treaty': 'treaty',
-        'disease': 'disease',
+        'disease': 'dis',
         'health': 'health',
-        'veteran': 'vet',
-        'refugee': 'ref',
-        'environmental': 'env',
-        'fiscal': 'fiscal',
-        'capital': 'capital',
-        'ptsd': 'PTSD',
-        'global': 'global',
-        'net': 'net',
-        'gross': 'gross',
         'npv': 'NPV',
         'pv': 'PV',
+        'expected': 'exp',
     }
     
     param_lower = param_name.lower()
     display_lower = display_name.lower() if display_name else param_lower
     
-    # Find main concept
+    # Find main concept (main_concepts is a list of tuples for priority ordering)
     main = None
-    for key, val in main_concepts.items():
+    for key, val in main_concepts:
         if key in param_lower or key in display_lower:
             main = val
             break
     
-    # Find subscript(s)
-    subs = []
-    for key, val in subscripts.items():
+    # Find ONE priority subscript (the distinguishing one)
+    # priority_subscripts is a list of tuples to control order
+    priority_sub = None
+    for key, val in priority_subscripts:
         if key in param_lower:
-            subs.append(val)
+            priority_sub = val
+            break
+    
+    # Find secondary subscript(s)
+    secondary_subs = []
+    for key, val in secondary_subscripts.items():
+        if key in param_lower and val != priority_sub:
+            secondary_subs.append(val)
     
     # Build the LaTeX name
     if main:
+        subs = []
+        if priority_sub:
+            subs.append(priority_sub)
+        # Add at most one secondary subscript
+        if secondary_subs:
+            subs.append(secondary_subs[0])
+        
         if subs:
-            # Limit to 2 most relevant subscripts
-            sub_str = ','.join(subs[:2])
+            sub_str = ','.join(subs)
             return f"{main}_{{{sub_str}}}"
         return main
     else:
-        # Fall back to abbreviated param name
+        # Fall back to creating a meaningful name from param parts
+        # Use known acronyms and full words, not truncation
         parts = param_name.split('_')
-        if len(parts) >= 2:
-            main_part = parts[0][:6].title()
-            sub_part = parts[1][:6].lower()
-            return f"\\text{{{main_part}}}_{{{sub_part}}}"
-        return f"\\text{{{param_name[:10]}}}"
+        
+        # Known acronyms to preserve
+        acronyms = {'US', 'DIH', 'DFDA', 'ROI', 'NPV', 'PV', 'GDP', 'VSL', 'FDA', 'R&D'}
+        # Words to use as subscripts
+        sub_words = {'annual', 'total', 'current', 'global', 'major', 'simple', 'daily'}
+        
+        # Build main word(s) and subscript
+        main_parts = []
+        sub_parts = []
+        for part in parts:
+            part_upper = part.upper()
+            part_lower = part.lower()
+            if part_upper in acronyms:
+                main_parts.append(part_upper.replace('R&D', 'RD'))
+            elif part_lower in sub_words:
+                sub_parts.append(part.title())
+            elif not main_parts:  # Use first non-acronym, non-sub word
+                main_parts.append(part.title())
+        
+        main_text = ''.join(main_parts) if main_parts else parts[0].title()
+        if sub_parts:
+            return f"{main_text}_{{{sub_parts[0].lower()}}}"
+        return main_text
 
 
 def format_parameter_value(value: float, unit: str = "") -> str:
@@ -1215,28 +1307,28 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
                     variables[f"{var_name}_cite"] = f"@{sanitized_ref}"
                     citation_count += 1
 
-        # Export LaTeX equation if available (with $$ delimiters)
-        if hasattr(value, "latex") and value.latex:
-            latex_var_name = f"{var_name}_latex"
-            # Include $$ delimiters so variable can be used directly
-            variables[latex_var_name] = f"$$\n{value.latex}\n$$"
-        
-        # Also generate auto-LaTeX for calculated parameters (in addition to hardcoded)
+        # Export LaTeX equation: prefer hardcoded (hand-crafted with good labels),
+        # fall back to auto-generated for params without hardcoded latex
+        hardcoded_latex = getattr(value, "latex", None)
         auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file)
-        if auto_latex:
-            auto_latex_var_name = f"{var_name}_latex_auto"
-            variables[auto_latex_var_name] = f"$$\n{auto_latex}\n$$"
+        
+        if hardcoded_latex:
+            # Use hardcoded (preferred - hand-crafted with semantic labels)
+            latex_var_name = f"{var_name}_latex"
+            variables[latex_var_name] = f"$$\n{hardcoded_latex}\n$$"
+        elif auto_latex:
+            # Fall back to auto-generated for params without hardcoded
+            latex_var_name = f"{var_name}_latex"
+            variables[latex_var_name] = f"$$\n{auto_latex}\n$$"
 
     # Count exports by type BEFORE adding metadata variables
-    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex") and not k.endswith("_latex_auto"))
-    auto_latex_count = sum(1 for k in variables.keys() if k.endswith("_latex_auto"))
+    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
     cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
-    param_count = len(variables) - latex_count - auto_latex_count - cite_count
+    param_count = len(variables) - latex_count - cite_count
 
     # Add metadata variables for use in QMD files
     variables["total_parameter_count"] = str(param_count)
     variables["total_latex_equation_count"] = str(latex_count)
-    variables["total_auto_latex_equation_count"] = str(auto_latex_count)
     if citation_mode in ("separate", "both"):
         variables["total_citation_count"] = str(cite_count)
 
@@ -1263,19 +1355,18 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
 
     print(f"[OK] Generated {output_path}")
     print(f"     {param_count} parameters exported")
-    print(f"     {latex_count} LaTeX equations exported (hardcoded)")
-    print(f"     {auto_latex_count} LaTeX equations exported (auto-generated)")
+    print(f"     {latex_count} LaTeX equations exported")
     if citation_mode in ("separate", "both"):
         print(f"     {cite_count} citation keys exported")
     if citation_mode in ("inline", "both"):
         print("     Citation mode: inline [@key] for peer-reviewed sources")
     print("\nUsage in QMD files:")
     print(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
-    if auto_latex_count > 0:
-        # Find first auto-generated latex
-        auto_latex_var = next((k for k in variables.keys() if k.endswith("_latex_auto")), None)
-        if auto_latex_var:
-            print(f"  {{{{< var {auto_latex_var} >}}}}  (auto-generated equation)")
+    if latex_count > 0:
+        # Find first latex equation
+        latex_var = next((k for k in variables.keys() if k.endswith("_latex")), None)
+        if latex_var:
+            print(f"  {{{{< var {latex_var} >}}}}  (equation)")
     if cite_count > 0:
         # Find first parameter with citation
         cite_var = next((k for k in variables.keys() if k.endswith("_cite")), None)
@@ -1284,13 +1375,13 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             print(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")
 
 
-def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None):
+def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, params_file: Path = None):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
 
     Creates an academic reference page with:
     - All parameters organized by type (external/calculated)
-    - LaTeX equations where available
+    - LaTeX equations where available (hardcoded or auto-generated)
     - Citations and source links
     - Confidence indicators and metadata
 
@@ -1298,6 +1389,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
         parameters: Dict of parameter metadata
         output_path: Path to write the QMD file
         available_refs: Set of valid reference IDs from references.qmd (optional, for detecting reference links)
+        params_file: Path to parameters.py (for auto-generating latex equations)
     """
     # Categorize parameters
     external_params = []
@@ -1450,9 +1542,18 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 content.append("")
 
             # LaTeX equation - prominently displayed
-            if hasattr(value, "latex") and value.latex:
+            # Priority: hardcoded latex > auto-generated latex > formula
+            hardcoded_latex = getattr(value, "latex", None)
+            auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file) if not hardcoded_latex else None
+            
+            if hardcoded_latex:
                 content.append("$$")
-                content.append(value.latex)
+                content.append(hardcoded_latex)
+                content.append("$$")
+                content.append("")
+            elif auto_latex:
+                content.append("$$")
+                content.append(auto_latex)
                 content.append("$$")
                 content.append("")
             elif hasattr(value, "formula") and value.formula:
@@ -2019,6 +2120,72 @@ def validate_compute_inputs_match(parameters: Dict[str, Dict[str, Any]], params_
             issues.append((param_name, 'missing_from_inputs', sorted(missing_from_inputs)))
         if extra_in_inputs:
             issues.append((param_name, 'extra_in_inputs', sorted(extra_in_inputs)))
+    
+    return issues
+
+
+def validate_inline_calculations_have_compute(parameters: Dict[str, Dict[str, Any]], params_file: Path) -> list:
+    """
+    Validate that CALCULATED parameters with inline calculations have inputs and compute functions.
+    
+    This catches parameters like:
+        PARAM = Parameter(A * B, source_type="calculated", ...)  # Inline calculation
+        
+    Without inputs/compute metadata, these break:
+    - Uncertainty propagation (can't trace what inputs affect the value)
+    - LaTeX auto-generation (can't format the equation)
+    - Recalculation when inputs change
+    
+    NOTE: Skips source_type="definition" parameters - these are policy choices or
+    simple unit conversions that don't need uncertainty propagation.
+    
+    Args:
+        parameters: Dict of parameter metadata
+        params_file: Path to parameters.py file for source code inspection
+        
+    Returns:
+        List of (param_name, first_arg_snippet) tuples for params with inline calcs but no compute
+    """
+    issues = []
+    
+    if not params_file or not params_file.exists():
+        return issues
+    
+    content = params_file.read_text(encoding="utf-8")
+    
+    for param_name, param_data in parameters.items():
+        value = param_data["value"]
+        
+        # Skip if already has compute function
+        if hasattr(value, 'compute') and value.compute:
+            continue
+        
+        # Skip definitions - they're policy choices, not uncertain calculations
+        source_type = getattr(value, 'source_type', '')
+        if source_type and 'definition' in str(source_type).lower():
+            continue
+        
+        # Find the parameter definition in the source
+        pattern = rf'{param_name}\s*=\s*Parameter\(\s*\n?\s*([^,\n]+)'
+        match = re.search(pattern, content)
+        if not match:
+            continue
+        
+        first_arg = match.group(1).strip()
+        
+        # Skip if first arg is just a number
+        if re.match(r'^[\d._]+$', first_arg):
+            continue
+        # Skip if it's a float() or int() of a single param (simple wrapper)
+        if re.match(r'^(float|int)\(\w+\)$', first_arg):
+            continue
+        # Skip common constants
+        if first_arg in ('True', 'False', 'None'):
+            continue
+        
+        # Check if it has an inline calculation (arithmetic operators)
+        if any(op in first_arg for op in ['*', '/', '+', '-']):
+            issues.append((param_name, first_arg[:60]))
     
     return issues
 
@@ -2657,6 +2824,24 @@ def main():
         print("[OK] All compute functions match their inputs list")
         print()
 
+    # Validate inline calculations have inputs/compute metadata
+    print("[*] Checking for inline calculations missing inputs/compute...")
+    inline_issues = validate_inline_calculations_have_compute(parameters, parameters_path)
+    
+    if inline_issues:
+        print(f"[ERROR] {len(inline_issues)} parameters have inline calculations but no inputs/compute:", file=sys.stderr)
+        for param_name, first_arg in inline_issues[:10]:
+            print(f"  - {param_name}: {first_arg}...", file=sys.stderr)
+        if len(inline_issues) > 10:
+            print(f"  ... and {len(inline_issues) - 10} more", file=sys.stderr)
+        print(file=sys.stderr)
+        print("[ERROR] Add 'inputs' and 'compute' to these parameters for uncertainty propagation.", file=sys.stderr)
+        has_fatal_error = True
+        print()
+    else:
+        print("[OK] All inline calculations have inputs/compute metadata")
+        print()
+
     # Generate _variables.yml
     print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
     output_path = project_root / "_variables.yml"
@@ -2666,7 +2851,7 @@ def main():
     # Generate parameters-and-calculations.qmd
     print("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
-    generate_parameters_qmd(parameters, qmd_output, available_refs=available_refs)
+    generate_parameters_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path)
     print()
 
     # Generate references.bib (with full citation data from references.qmd)
