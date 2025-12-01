@@ -736,14 +736,6 @@
 "fundamentally_unavoidable_death_pct_latex": "$$\nP_{\\text{unavoidable}} = \\sum_{\\\
   text{categories}} (\\text{disease burden} \\times (1 - \\text{max cure rate})) =\
   \ 7.91\\%\n$$"
-"gdp_growth_boost_10pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_10PCT\"\
-  >0.025</span>"
-"gdp_growth_boost_1pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_1PCT\
-  \ - Just the boost component\">0.0025</span>"
-"gdp_growth_boost_2pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_2PCT\"\
-  >0.005</span>"
-"gdp_growth_boost_5pct": "<span class=\"parameter-link\" title=\"parameters.GDP_GROWTH_BOOST_5PCT\"\
-  >0.0125</span>"
 "givewell_cost_per_life_avg": "<a href=\"https://warondisease.org/knowledge/references.html#givewell-cost-per-life-saved\"\
   \ class=\"parameter-link\" data-source-ref=\"givewell-cost-per-life-saved\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"GiveWell average cost per life saved\
@@ -1119,14 +1111,6 @@
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Minimum investment for institutional\
   \ investors | ✓ High confidence | Unit: USD | Click to view calculation\">$10M</a>"
-"life_extension_years_10pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_10PCT\"\
-  >2.57</span>"
-"life_extension_years_1pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_1PCT\"\
-  >0.257</span>"
-"life_extension_years_2pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_2PCT\"\
-  >0.514</span>"
-"life_extension_years_5pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_5PCT\"\
-  >1.29</span>"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Maximum bond\
@@ -1297,24 +1281,6 @@
   \ × 1% | Unit: USD/year | Click to view calculation\">$2.00B</a>"
 "peace_dividend_veteran_healthcare_latex": "$$\nCost_{vet,peace} = Cost_{vet,ann}\
   \ \\times Reduction_{treaty} = \\$200.10B \\times 1.0\\% = \\$2.00B\n$$"
-"personal_lifetime_benefit_age_20_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">205K</span>"
-"personal_lifetime_benefit_age_30_10pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT\">2.55M</span>"
-"personal_lifetime_benefit_age_30_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT\">186K</span>"
-"personal_lifetime_benefit_age_30_2pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT\">390K</span>"
-"personal_lifetime_benefit_age_30_5pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT\">1.12M</span>"
-"personal_lifetime_benefit_age_30_half_pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT\">91,034</span>"
-"personal_lifetime_benefit_age_40_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT\">153K</span>"
-"personal_lifetime_benefit_age_50_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT\">104K</span>"
-"personal_lifetime_benefit_age_60_1pct": "<span class=\"parameter-link\" title=\"\
-  parameters.PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT\">51,902</span>"
 "personal_lifetime_benefit_conservative_age_30_1pct": "<span class=\"parameter-link\"\
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">186K</span>"
 "personal_lifetime_benefit_conservative_moderate_age_30_1pct": "<span class=\"parameter-link\"\
@@ -1844,14 +1810,6 @@
   >25.7</span>"
 "trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
   \ = \\frac{48.8M}{1.9M} = 25.71\n$$"
-"trial_capacity_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_10PCT\"\
-  >257</span>"
-"trial_capacity_multiplier_1pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_1PCT\"\
-  >25.7</span>"
-"trial_capacity_multiplier_2pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_2PCT\"\
-  >51.4</span>"
-"trial_capacity_multiplier_5pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_5PCT\"\
-  >129</span>"
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
@@ -1990,6 +1948,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "343"
+"total_parameter_count": "322"
 "total_latex_equation_count": "124"
 "total_citation_count": "126"

@@ -4836,59 +4836,6 @@ def calculate_personal_lifetime_wealth(
     }
 
 
-# Pre-calculated personal wealth scenarios for common ages (1% Treaty)
-# Age 20
-PERSONAL_WEALTH_AGE_20_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=20, annual_income=40000)
-PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT = PERSONAL_WEALTH_AGE_20_1PCT["total_lifetime_benefit"]
-
-# Age 30
-PERSONAL_WEALTH_AGE_30_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=30, annual_income=50000)
-PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT = PERSONAL_WEALTH_AGE_30_1PCT["total_lifetime_benefit"]
-
-# Age 40
-PERSONAL_WEALTH_AGE_40_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=40, annual_income=60000)
-PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT = PERSONAL_WEALTH_AGE_40_1PCT["total_lifetime_benefit"]
-
-# Age 50
-PERSONAL_WEALTH_AGE_50_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=50, annual_income=65000)
-PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT = PERSONAL_WEALTH_AGE_50_1PCT["total_lifetime_benefit"]
-
-# Age 60
-PERSONAL_WEALTH_AGE_60_1PCT = calculate_personal_lifetime_wealth(treaty_pct=0.01, current_age=60, annual_income=60000)
-PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT = PERSONAL_WEALTH_AGE_60_1PCT["total_lifetime_benefit"]
-
-# Different treaty percentages (Age 30 baseline)
-PERSONAL_WEALTH_AGE_30_HALF_PCT = calculate_personal_lifetime_wealth(treaty_pct=0.005, current_age=30)
-PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT = PERSONAL_WEALTH_AGE_30_HALF_PCT["total_lifetime_benefit"]
-
-PERSONAL_WEALTH_AGE_30_2PCT = calculate_personal_lifetime_wealth(treaty_pct=0.02, current_age=30)
-PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT = PERSONAL_WEALTH_AGE_30_2PCT["total_lifetime_benefit"]
-
-PERSONAL_WEALTH_AGE_30_5PCT = calculate_personal_lifetime_wealth(treaty_pct=0.05, current_age=30)
-PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT = PERSONAL_WEALTH_AGE_30_5PCT["total_lifetime_benefit"]
-
-PERSONAL_WEALTH_AGE_30_10PCT = calculate_personal_lifetime_wealth(treaty_pct=0.10, current_age=30)
-PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT = PERSONAL_WEALTH_AGE_30_10PCT["total_lifetime_benefit"]
-
-# Life expectancy gains by treaty percentage
-LIFE_EXTENSION_YEARS_1PCT = PERSONAL_WEALTH_AGE_30_1PCT["life_extension_years"]
-LIFE_EXTENSION_YEARS_2PCT = PERSONAL_WEALTH_AGE_30_2PCT["life_extension_years"]
-LIFE_EXTENSION_YEARS_5PCT = PERSONAL_WEALTH_AGE_30_5PCT["life_extension_years"]
-LIFE_EXTENSION_YEARS_10PCT = PERSONAL_WEALTH_AGE_30_10PCT["life_extension_years"]
-
-# Trial capacity multipliers (calculated on-the-fly in charts, these are for reference)
-TRIAL_CAPACITY_MULTIPLIER_1PCT = calculate_trial_capacity_multiplier(0.01)
-TRIAL_CAPACITY_MULTIPLIER_2PCT = calculate_trial_capacity_multiplier(0.02)
-TRIAL_CAPACITY_MULTIPLIER_5PCT = calculate_trial_capacity_multiplier(0.05)
-TRIAL_CAPACITY_MULTIPLIER_10PCT = calculate_trial_capacity_multiplier(0.10)
-
-# GDP growth boosts
-GDP_GROWTH_BOOST_1PCT = calculate_gdp_growth_boost(0.01) - 0.025  # Just the boost component
-GDP_GROWTH_BOOST_2PCT = calculate_gdp_growth_boost(0.02) - 0.025
-GDP_GROWTH_BOOST_5PCT = calculate_gdp_growth_boost(0.05) - 0.025
-GDP_GROWTH_BOOST_10PCT = calculate_gdp_growth_boost(0.10) - 0.025
-
-
 # ---
 # IMPROVED PERSONAL LIFETIME WEALTH MODEL
 # ---

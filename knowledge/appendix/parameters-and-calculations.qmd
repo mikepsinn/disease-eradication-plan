@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 343
+**Total parameters**: 322
 
 - External sources (peer-reviewed): 126
 - Calculated values: 105
-- Core definitions: 112
+- Core definitions: 91
 
 ## External Data Sources {#sec-external}
 
@@ -192,6 +192,10 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 **Technical**: Distribution: Normal (SE: 0.07)
 
+#### Input Distribution
+
+{{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
+
 *~ Medium confidence • 📊 Peer-reviewed*
 
 :::
@@ -290,6 +294,10 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M and 2.30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trial_slots_available.qmd >}}
 
 *✓ High confidence*
 
@@ -399,6 +407,10 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
 **Technical**: Distribution: Normal (SE: 1)
 
+#### Input Distribution
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
@@ -419,6 +431,10 @@ FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
 **What this means**: There's significant uncertainty here. The true value likely falls between 6 and 12 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
 
 *✓ High confidence*
 
@@ -480,6 +496,10 @@ Annual deaths from active combat worldwide
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_active_combat.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -500,6 +520,10 @@ Annual deaths from state violence
 **What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 and 5,000 (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_state_violence.qmd >}}
 
 *✓ High confidence*
 
@@ -522,6 +546,10 @@ Annual deaths from terror attacks globally
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_terror_attacks.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -542,6 +570,10 @@ Annual environmental damage and restoration costs from conflict
 **What this means**: There's significant uncertainty here. The true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_environmental_damage_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -564,6 +596,10 @@ Annual infrastructure damage to communications from conflict
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_communications_conflict.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -584,6 +620,10 @@ Annual infrastructure damage to education facilities from conflict
 **What this means**: There's significant uncertainty here. The true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_education_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -606,6 +646,10 @@ Annual infrastructure damage to energy systems from conflict
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_energy_conflict.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -626,6 +670,10 @@ Annual infrastructure damage to healthcare facilities from conflict
 **What this means**: There's significant uncertainty here. The true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_healthcare_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -648,6 +696,10 @@ Annual infrastructure damage to transportation from conflict
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_transportation_conflict.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -668,6 +720,10 @@ Annual infrastructure damage to water systems from conflict
 **What this means**: There's significant uncertainty here. The true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -690,6 +746,10 @@ Annual lives saved by medical research globally
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lives_saved_by_med_research.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -710,6 +770,10 @@ Annual lost economic growth from military spending opportunity cost
 **What this means**: There's significant uncertainty here. The true value likely falls between $1.90T and $3.80T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_economic_growth_military_spending.qmd >}}
 
 *✓ High confidence*
 
@@ -732,6 +796,10 @@ Annual lost productivity from conflict casualties
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_human_capital_conflict.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -752,6 +820,10 @@ Annual PTSD and mental health costs from conflict
 **What this means**: There's significant uncertainty here. The true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_psychological_impact_costs_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -774,6 +846,10 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_refugee_support_costs.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -794,6 +870,10 @@ Annual trade disruption costs from currency instability
 **What this means**: There's significant uncertainty here. The true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_currency_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -816,6 +896,10 @@ Annual trade disruption costs from energy price volatility
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_energy_price_conflict.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -836,6 +920,10 @@ Annual trade disruption costs from shipping disruptions
 **What this means**: There's significant uncertainty here. The true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_shipping_conflict.qmd >}}
 
 *✓ High confidence*
 
@@ -858,6 +946,10 @@ Annual trade disruption costs from supply chain disruptions
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_supply_chain_conflict.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -878,6 +970,10 @@ Annual veteran healthcare costs (20-year projected)
 **What this means**: There's significant uncertainty here. The true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_veteran_healthcare_costs.qmd >}}
 
 *✓ High confidence*
 
@@ -900,6 +996,10 @@ Annual global spending on clinical trials
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -920,6 +1020,10 @@ Daily deaths from curable diseases globally
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 120K and 180K (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_daily_deaths_curable_diseases.qmd >}}
 
 *✓ High confidence*
 
@@ -955,6 +1059,10 @@ Direct medical costs of disease globally (treatment, hospitalization, medication
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_direct_medical_cost_annual.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -975,6 +1083,10 @@ Economic value of human life lost to disease annually (mortality valuation)
 **What this means**: There's significant uncertainty here. The true value likely falls between $66T and $132T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_human_life_value_loss_annual.qmd >}}
 
 *✓ High confidence*
 
@@ -997,6 +1109,10 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_productivity_loss_annual.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1013,6 +1129,10 @@ Global life expectancy (2024)
 #### Uncertainty Range
 
 **Technical**: Distribution: Normal (SE: 2)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
@@ -1035,6 +1155,10 @@ Global government medical research spending
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_med_research_spending.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1055,6 +1179,10 @@ Global military spending in 2024
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between $2.45T and $2.99T (±10%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_military_spending_annual_2024.qmd >}}
 
 *✓ High confidence*
 
@@ -1077,6 +1205,10 @@ Global population in 2024
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-global_population_2024.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1097,6 +1229,10 @@ Critical mass threshold for social change (3.5% rule)
 **What this means**: There's significant uncertainty here. The true value likely falls between 2.5% and 4.5% (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
 
 *✓ High confidence*
 
@@ -1222,6 +1358,10 @@ Average cost to develop one drug in current system
 **What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4.00B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
 
@@ -1465,6 +1605,10 @@ RECOVERY trial cost per patient
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1481,6 +1625,10 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 #### Uncertainty Range
 
 **Technical**: Distribution: Normal (SE: 3)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
 
@@ -1502,6 +1650,10 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 **What this means**: There's significant uncertainty here. The true value likely falls between 4 and 9 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
 
@@ -1558,6 +1710,10 @@ Standard economic value per QALY
 #### Uncertainty Range
 
 **Technical**: Distribution: Normal (SE: $30K)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
 
 *✓ High confidence*
 
@@ -1645,6 +1801,10 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_cases_worldwide.qmd >}}
+
 *~ Medium confidence*
 
 :::
@@ -1665,6 +1825,10 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32 and 0.48 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_disability_weight.qmd >}}
 
 *~ Medium confidence*
 
@@ -1687,6 +1851,10 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_mortality_rate.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1708,6 +1876,10 @@ Average lifespan for thalidomide survivors
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_survivor_lifespan.qmd >}}
+
 *~ Medium confidence*
 
 :::
@@ -1728,6 +1900,10 @@ US share of world population in 1960
 **What this means**: We're quite confident in this estimate. The true value likely falls between 5.5% and 6.5% (±8%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_us_population_share_1960.qmd >}}
 
 *✓ High confidence*
 
@@ -1802,6 +1978,10 @@ Cost reduction factor demonstrated by RECOVERY trial
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-trial_cost_reduction_factor.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1836,6 +2016,10 @@ Annual US cost of Alzheimer's disease (direct and indirect)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-us_alzheimers_annual_cost.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 :::
@@ -1856,6 +2040,10 @@ Annual US cost of cancer (direct and indirect)
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between $177B and $239B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_cancer_annual_cost.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
 
@@ -1878,6 +2066,10 @@ US annual chronic disease spending
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-us_chronic_disease_spending_annual.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1899,6 +2091,10 @@ Annual US cost of diabetes (direct and indirect)
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-us_diabetes_annual_cost.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 :::
@@ -1919,6 +2115,10 @@ Annual US cost of heart disease and stroke (direct and indirect)
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between $309B and $417B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
 
@@ -1967,6 +2167,10 @@ US population in 2024
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
+#### Input Distribution
+
+{{< include ../figures/distribution-us_population_2024.qmd >}}
+
 *✓ High confidence*
 
 :::
@@ -1987,6 +2191,10 @@ Value of Statistical Life (conservative estimate)
 **What this means**: There's significant uncertainty here. The true value likely falls between $5.00M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-value_of_statistical_life.qmd >}}
 
 *✓ High confidence*
 
@@ -2080,6 +2288,14 @@ $$
 
 {{< include ../figures/tornado-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2102,6 +2318,14 @@ $$
 {{< include ../figures/tornado-dfda_annual_opex.qmd >}}
 
 {{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
 
 :::
 
@@ -2126,6 +2350,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2146,6 +2378,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_expected_roi_0_1pct_political_success.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_expected_roi_0_1pct_political_success.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_expected_roi_0_1pct_political_success.qmd >}}
 
 :::
 
@@ -2170,6 +2410,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_expected_roi_10pct_political_success.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_expected_roi_10pct_political_success.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_expected_roi_10pct_political_success.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2190,6 +2438,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_expected_roi_1pct_political_success.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_expected_roi_1pct_political_success.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_expected_roi_1pct_political_success.qmd >}}
 
 :::
 
@@ -2214,6 +2470,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_expected_roi_25pct_political_success.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_expected_roi_25pct_political_success.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_expected_roi_25pct_political_success.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2236,6 +2500,14 @@ $$
 {{< include ../figures/tornado-dfda_expected_roi_40pct_political_success.qmd >}}
 
 {{< include ../figures/sensitivity-table-dfda_expected_roi_40pct_political_success.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_expected_roi_40pct_political_success.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_expected_roi_40pct_political_success.qmd >}}
 
 :::
 
@@ -2260,6 +2532,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_expected_roi_50pct_political_success.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_expected_roi_50pct_political_success.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_expected_roi_50pct_political_success.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2280,6 +2560,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_net_savings_rd_only_annual.qmd >}}
 
 :::
 
@@ -2304,6 +2592,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_npv_annual_opex_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_annual_opex_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_annual_opex_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2327,6 +2623,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_npv_benefit_rd_only.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_benefit_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_benefit_rd_only.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2347,6 +2651,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_net_benefit_rd_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_net_benefit_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_net_benefit_rd_only.qmd >}}
 
 :::
 
@@ -2371,6 +2683,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_npv_pv_annual_opex.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_pv_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_pv_annual_opex.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2391,6 +2711,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_total_cost.qmd >}}
 
 :::
 
@@ -2415,6 +2743,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_npv_upfront_cost_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_upfront_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_upfront_cost_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2438,6 +2774,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dfda_rd_gross_savings_annual.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_rd_gross_savings_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_rd_gross_savings_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2458,6 +2802,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_rd_savings_daily.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_rd_savings_daily.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_rd_savings_daily.qmd >}}
 
 :::
 
@@ -2497,6 +2849,14 @@ $$
 
 {{< include ../figures/tornado-dfda_roi_simple.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_roi_simple.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_roi_simple.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2515,6 +2875,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_trials_per_year_capacity.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trials_per_year_capacity.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trials_per_year_capacity.qmd >}}
 
 :::
 
@@ -2539,6 +2907,14 @@ $$
 
 {{< include ../figures/sensitivity-table-dih_patients_fundable_annually.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_patients_fundable_annually.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_patients_fundable_annually.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2559,6 +2935,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dih_treasury_trial_subsidies_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_treasury_trial_subsidies_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_trial_subsidies_annual.qmd >}}
 
 :::
 
@@ -2583,6 +2967,14 @@ $$
 
 {{< include ../figures/sensitivity-table-disease_eradication_delay_dalys.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_delay_dalys.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2605,6 +2997,14 @@ $$
 {{< include ../figures/tornado-disease_eradication_delay_deaths_total.qmd >}}
 
 {{< include ../figures/sensitivity-table-disease_eradication_delay_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_delay_deaths_total.qmd >}}
 
 :::
 
@@ -2629,6 +3029,14 @@ $$
 
 {{< include ../figures/sensitivity-table-disease_eradication_delay_economic_loss.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_economic_loss.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_delay_economic_loss.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2651,6 +3059,14 @@ $$
 {{< include ../figures/tornado-disease_eradication_delay_yld.qmd >}}
 
 {{< include ../figures/sensitivity-table-disease_eradication_delay_yld.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_yld.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_delay_yld.qmd >}}
 
 :::
 
@@ -2675,6 +3091,14 @@ $$
 
 {{< include ../figures/sensitivity-table-disease_eradication_delay_yll.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_yll.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_delay_yll.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2698,6 +3122,14 @@ $$
 
 {{< include ../figures/sensitivity-table-disease_eradication_plus_acceleration_deaths_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_plus_acceleration_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_plus_acceleration_deaths_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2719,6 +3151,14 @@ $$
 
 {{< include ../figures/tornado-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2739,6 +3179,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dividend_coverage_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dividend_coverage_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dividend_coverage_factor.qmd >}}
 
 :::
 
@@ -2763,6 +3211,14 @@ $$
 
 {{< include ../figures/sensitivity-table-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2785,6 +3241,14 @@ $$
 {{< include ../figures/tornado-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
 {{< include ../figures/sensitivity-table-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
 :::
 
@@ -2809,6 +3273,14 @@ $$
 
 {{< include ../figures/sensitivity-table-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2831,6 +3303,14 @@ $$
 {{< include ../figures/tornado-global_annual_conflict_deaths_total.qmd >}}
 
 {{< include ../figures/sensitivity-table-global_annual_conflict_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_conflict_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_conflict_deaths_total.qmd >}}
 
 :::
 
@@ -2855,6 +3335,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_annual_deaths_curable_diseases.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_deaths_curable_diseases.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_deaths_curable_diseases.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2877,6 +3365,14 @@ $$
 {{< include ../figures/tornado-global_annual_human_cost_active_combat.qmd >}}
 
 {{< include ../figures/sensitivity-table-global_annual_human_cost_active_combat.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_active_combat.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_active_combat.qmd >}}
 
 :::
 
@@ -2901,6 +3397,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_annual_human_cost_state_violence.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_state_violence.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_state_violence.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2924,6 +3428,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_annual_human_cost_terror_attacks.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_cost_terror_attacks.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_cost_terror_attacks.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2944,6 +3456,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-global_annual_human_life_losses_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_human_life_losses_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_human_life_losses_conflict.qmd >}}
 
 :::
 
@@ -2968,6 +3488,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_annual_infrastructure_destruction_conflict.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_infrastructure_destruction_conflict.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2990,6 +3518,14 @@ $$
 {{< include ../figures/tornado-global_annual_trade_disruption_conflict.qmd >}}
 
 {{< include ../figures/sensitivity-table-global_annual_trade_disruption_conflict.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_trade_disruption_conflict.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_trade_disruption_conflict.qmd >}}
 
 :::
 
@@ -3014,6 +3550,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_annual_war_direct_costs_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_direct_costs_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_direct_costs_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3037,6 +3581,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_annual_war_indirect_costs_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_indirect_costs_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_indirect_costs_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3057,6 +3609,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_annual_war_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_annual_war_total_cost.qmd >}}
 
 :::
 
@@ -3081,6 +3641,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_cost_per_life_saved_med_research_annual.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_cost_per_life_saved_med_research_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3103,6 +3671,14 @@ $$
 {{< include ../figures/tornado-global_disease_economic_burden_annual.qmd >}}
 
 {{< include ../figures/sensitivity-table-global_disease_economic_burden_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_economic_burden_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
 
 :::
 
@@ -3127,6 +3703,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_military_spending_per_capita_annual.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_military_spending_per_capita_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_military_spending_per_capita_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3150,6 +3734,14 @@ $$
 
 {{< include ../figures/sensitivity-table-global_military_spending_post_treaty_annual_2024.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_military_spending_post_treaty_annual_2024.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_military_spending_post_treaty_annual_2024.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3170,6 +3762,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-global_total_health_and_war_cost_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_total_health_and_war_cost_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_total_health_and_war_cost_annual.qmd >}}
 
 :::
 
@@ -3194,6 +3794,14 @@ $$
 
 {{< include ../figures/sensitivity-table-historical_progress_deaths_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-historical_progress_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-historical_progress_deaths_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3216,6 +3824,14 @@ $$
 {{< include ../figures/tornado-historical_progress_economic_loss_total.qmd >}}
 
 {{< include ../figures/sensitivity-table-historical_progress_economic_loss_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-historical_progress_economic_loss_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-historical_progress_economic_loss_total.qmd >}}
 
 :::
 
@@ -3240,6 +3856,14 @@ $$
 
 {{< include ../figures/sensitivity-table-medical_research_pct_of_disease_burden.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-medical_research_pct_of_disease_burden.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-medical_research_pct_of_disease_burden.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3263,6 +3887,14 @@ $$
 
 {{< include ../figures/sensitivity-table-military_vs_medical_research_ratio.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-military_vs_medical_research_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-military_vs_medical_research_ratio.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3283,6 +3915,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-misallocation_factor_death_vs_saving.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-misallocation_factor_death_vs_saving.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-misallocation_factor_death_vs_saving.qmd >}}
 
 :::
 
@@ -3305,6 +3945,14 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_annual_societal_benefit.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_annual_societal_benefit.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3326,6 +3974,14 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_conflict_reduction.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_conflict_reduction.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_conflict_reduction.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3346,6 +4002,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_direct_costs.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_direct_costs.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_direct_costs.qmd >}}
 
 :::
 
@@ -3370,6 +4034,14 @@ $$
 
 {{< include ../figures/sensitivity-table-peace_dividend_environmental.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_environmental.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_environmental.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3390,6 +4062,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_human_casualties.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_human_casualties.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_human_casualties.qmd >}}
 
 :::
 
@@ -3412,6 +4092,14 @@ $$
 
 {{< include ../figures/tornado-peace_dividend_indirect_costs.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_indirect_costs.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_indirect_costs.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3432,6 +4120,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_infrastructure.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_infrastructure.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_infrastructure.qmd >}}
 
 :::
 
@@ -3456,6 +4152,14 @@ $$
 
 {{< include ../figures/sensitivity-table-peace_dividend_lost_economic_growth.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_lost_economic_growth.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_lost_economic_growth.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3478,6 +4182,14 @@ $$
 {{< include ../figures/tornado-peace_dividend_lost_human_capital.qmd >}}
 
 {{< include ../figures/sensitivity-table-peace_dividend_lost_human_capital.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_lost_human_capital.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_lost_human_capital.qmd >}}
 
 :::
 
@@ -3502,6 +4214,14 @@ $$
 
 {{< include ../figures/sensitivity-table-peace_dividend_ptsd.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_ptsd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_ptsd.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3525,6 +4245,14 @@ $$
 
 {{< include ../figures/sensitivity-table-peace_dividend_refugee_support.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_refugee_support.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_refugee_support.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3545,6 +4273,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-peace_dividend_trade_disruption.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_trade_disruption.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_trade_disruption.qmd >}}
 
 :::
 
@@ -3569,6 +4305,14 @@ $$
 
 {{< include ../figures/sensitivity-table-peace_dividend_veteran_healthcare.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_dividend_veteran_healthcare.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_dividend_veteran_healthcare.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3589,6 +4333,14 @@ $$
 {{< include ../figures/tornado-per_capita_chronic_disease_cost.qmd >}}
 
 {{< include ../figures/sensitivity-table-per_capita_chronic_disease_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-per_capita_chronic_disease_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-per_capita_chronic_disease_cost.qmd >}}
 
 :::
 
@@ -3611,6 +4363,14 @@ $$
 
 {{< include ../figures/sensitivity-table-per_capita_mental_health_cost.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-per_capita_mental_health_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-per_capita_mental_health_cost.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3631,6 +4391,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-roi_discount_1pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-roi_discount_1pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-roi_discount_1pct.qmd >}}
 
 :::
 
@@ -3653,6 +4421,14 @@ $$
 
 {{< include ../figures/tornado-roi_discount_3pct.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-roi_discount_3pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-roi_discount_3pct.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3673,6 +4449,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-roi_discount_5pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-roi_discount_5pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-roi_discount_5pct.qmd >}}
 
 :::
 
@@ -3695,6 +4479,14 @@ $$
 
 {{< include ../figures/tornado-roi_discount_7pct.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-roi_discount_7pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-roi_discount_7pct.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3716,6 +4508,14 @@ $$
 
 {{< include ../figures/tornado-suffering_hours_eliminated_total.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-suffering_hours_eliminated_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-suffering_hours_eliminated_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3734,6 +4534,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_dalys_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_dalys_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_dalys_per_event.qmd >}}
 
 :::
 
@@ -3756,6 +4564,14 @@ $$
 
 {{< include ../figures/sensitivity-table-thalidomide_deaths_per_event.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_deaths_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_deaths_per_event.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3776,6 +4592,14 @@ $$
 {{< include ../figures/tornado-thalidomide_survivors_per_event.qmd >}}
 
 {{< include ../figures/sensitivity-table-thalidomide_survivors_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_survivors_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_survivors_per_event.qmd >}}
 
 :::
 
@@ -3798,6 +4622,14 @@ $$
 
 {{< include ../figures/sensitivity-table-thalidomide_us_cases_prevented.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_us_cases_prevented.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_us_cases_prevented.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3819,6 +4651,14 @@ $$
 
 {{< include ../figures/sensitivity-table-thalidomide_yld_per_event.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_yld_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_yld_per_event.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3837,6 +4677,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-thalidomide_yll_per_event.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-thalidomide_yll_per_event.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-thalidomide_yll_per_event.qmd >}}
 
 :::
 
@@ -3861,6 +4709,14 @@ $$
 
 {{< include ../figures/sensitivity-table-total_research_funding_with_treaty.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-total_research_funding_with_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-total_research_funding_with_treaty.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3882,6 +4738,14 @@ $$
 
 {{< include ../figures/tornado-treaty_benefit_multiplier_vs_vaccines.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_benefit_multiplier_vs_vaccines.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_benefit_multiplier_vs_vaccines.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3902,6 +4766,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_campaign_annual_cost_amortized.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_annual_cost_amortized.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_annual_cost_amortized.qmd >}}
 
 :::
 
@@ -3926,6 +4798,14 @@ $$
 
 {{< include ../figures/sensitivity-table-treaty_campaign_total_cost.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_total_cost.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3948,6 +4828,14 @@ $$
 {{< include ../figures/tornado-treaty_campaign_voting_bloc_target.qmd >}}
 
 {{< include ../figures/sensitivity-table-treaty_campaign_voting_bloc_target.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_voting_bloc_target.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_voting_bloc_target.qmd >}}
 
 :::
 
@@ -3972,6 +4860,14 @@ $$
 
 {{< include ../figures/sensitivity-table-treaty_complete_roi_all_benefits.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_complete_roi_all_benefits.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_complete_roi_all_benefits.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3992,6 +4888,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
 
 :::
 
@@ -4014,6 +4918,14 @@ $$
 
 {{< include ../figures/tornado-treaty_expected_cost_per_daly_conservative.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_expected_cost_per_daly_conservative.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_expected_cost_per_daly_conservative.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4032,6 +4944,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_expected_vs_bed_nets_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_expected_vs_bed_nets_multiplier.qmd >}}
 
 :::
 
@@ -4054,6 +4974,14 @@ $$
 
 {{< include ../figures/tornado-treaty_lives_saved_annual_global.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_lives_saved_annual_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_lives_saved_annual_global.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4074,6 +5002,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_peace_plus_rd_annual_benefits.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_peace_plus_rd_annual_benefits.qmd >}}
 
 :::
 
@@ -4096,6 +5032,14 @@ $$
 
 {{< include ../figures/tornado-treaty_qalys_gained_annual_global.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_qalys_gained_annual_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_qalys_gained_annual_global.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4116,6 +5060,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_recurring_benefits_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_recurring_benefits_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_recurring_benefits_annual.qmd >}}
 
 :::
 
@@ -4140,6 +5092,14 @@ $$
 
 {{< include ../figures/sensitivity-table-treaty_roi_historical_rate.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_roi_historical_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_roi_historical_rate.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4160,6 +5120,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_roi_innovation_acceleration.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_roi_innovation_acceleration.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_roi_innovation_acceleration.qmd >}}
 
 :::
 
@@ -4184,6 +5152,14 @@ $$
 
 {{< include ../figures/sensitivity-table-treaty_roi_lag_elimination.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_roi_lag_elimination.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_roi_lag_elimination.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4204,6 +5180,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_total_annual_costs.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_total_annual_costs.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_total_annual_costs.qmd >}}
 
 :::
 
@@ -4226,6 +5210,14 @@ $$
 
 {{< include ../figures/tornado-treaty_total_complete_benefits_annual.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_total_complete_benefits_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_total_complete_benefits_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4245,6 +5237,14 @@ $$
 
 {{< include ../figures/tornado-treaty_vs_bed_nets_multiplier.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_vs_bed_nets_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_vs_bed_nets_multiplier.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4263,6 +5263,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-trial_capacity_cumulative_years_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-trial_capacity_cumulative_years_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-trial_capacity_cumulative_years_20yr.qmd >}}
 
 :::
 
@@ -4285,6 +5293,14 @@ $$
 
 {{< include ../figures/sensitivity-table-trial_capacity_multiplier.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-trial_capacity_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-trial_capacity_multiplier.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4306,6 +5322,14 @@ $$
 
 {{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
 
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-type_ii_error_cost_ratio.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4326,6 +5350,14 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-type_i_error_benefit_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-type_i_error_benefit_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
 
 :::
 
@@ -4349,6 +5381,14 @@ $$
 {{< include ../figures/tornado-us_major_diseases_total_annual_cost.qmd >}}
 
 {{< include ../figures/sensitivity-table-us_major_diseases_total_annual_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_major_diseases_total_annual_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_major_diseases_total_annual_cost.qmd >}}
 
 :::
 
@@ -5094,42 +6134,6 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### GDP Growth Boost 10% {#sec-gdp_growth_boost_10pct}
-
-**Value**: 0.025
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### GDP Growth Boost 1% {#sec-gdp_growth_boost_1pct}
-
-**Value**: 0.0025
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### GDP Growth Boost 2% {#sec-gdp_growth_boost_2pct}
-
-**Value**: 0.005
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### GDP Growth Boost 5% {#sec-gdp_growth_boost_5pct}
-
-**Value**: 0.0125
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ### Hours Per Day {#sec-hours_per_day}
 
 **Value**: 24
@@ -5162,42 +6166,6 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 **Value**: $10M
 
 Minimum investment for institutional investors
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Life Extension Years 10% {#sec-life_extension_years_10pct}
-
-**Value**: 2.57
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Life Extension Years 1% {#sec-life_extension_years_1pct}
-
-**Value**: 0.257
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Life Extension Years 2% {#sec-life_extension_years_2pct}
-
-**Value**: 0.514
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Life Extension Years 5% {#sec-life_extension_years_5pct}
-
-**Value**: 1.29
 
 *Core definition*
 
@@ -5268,87 +6236,6 @@ Standard time horizon for NPV analysis
 **Value**: $27.2B
 
 Direct fiscal savings from 1% military spending reduction (high confidence)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 20 1% {#sec-personal_lifetime_benefit_age_20_1pct}
-
-**Value**: 205K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 30 10% {#sec-personal_lifetime_benefit_age_30_10pct}
-
-**Value**: 2.55M
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 30 1% {#sec-personal_lifetime_benefit_age_30_1pct}
-
-**Value**: 186K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 30 2% {#sec-personal_lifetime_benefit_age_30_2pct}
-
-**Value**: 390K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 30 5% {#sec-personal_lifetime_benefit_age_30_5pct}
-
-**Value**: 1.12M
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 30 Half % {#sec-personal_lifetime_benefit_age_30_half_pct}
-
-**Value**: 91,034
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 40 1% {#sec-personal_lifetime_benefit_age_40_1pct}
-
-**Value**: 153K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 50 1% {#sec-personal_lifetime_benefit_age_50_1pct}
-
-**Value**: 104K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Age 60 1% {#sec-personal_lifetime_benefit_age_60_1pct}
-
-**Value**: 51,902
 
 *Core definition*
 
@@ -5577,42 +6464,6 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 **Value**: 1%
 
 1% reduction in military spending/war costs from treaty
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Trial Capacity Multiplier 10% {#sec-trial_capacity_multiplier_10pct}
-
-**Value**: 257
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Trial Capacity Multiplier 1% {#sec-trial_capacity_multiplier_1pct}
-
-**Value**: 25.7
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Trial Capacity Multiplier 2% {#sec-trial_capacity_multiplier_2pct}
-
-**Value**: 51.4
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Trial Capacity Multiplier 5% {#sec-trial_capacity_multiplier_5pct}
-
-**Value**: 129
 
 *Core definition*
 
