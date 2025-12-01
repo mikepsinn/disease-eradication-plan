@@ -1259,12 +1259,17 @@ def main():
         import subprocess
 
         result = subprocess.run(
-            [sys.executable, "scripts/generate-variables-yml.py"], capture_output=True, text=True, timeout=60
+            [sys.executable, "scripts/generate-variables-yml.py"], capture_output=True, text=True, timeout=120
         )
         if result.returncode != 0:
-            print(f"Warning: generate-variables-yml.py failed with exit code {result.returncode}", file=sys.stderr)
+            print(f"ERROR: generate-variables-yml.py failed with exit code {result.returncode}", file=sys.stderr)
+            if result.stdout:
+                print(result.stdout, file=sys.stderr)
             if result.stderr:
                 print(result.stderr, file=sys.stderr)
+            print("\nPre-render validation FAILED: Variable generation failed.", file=sys.stderr)
+            print("Fix the issues above before rendering.\n", file=sys.stderr)
+            sys.exit(1)
         else:
             # Print condensed output (just the summary lines)
             for line in result.stdout.split("\n"):
@@ -1272,7 +1277,8 @@ def main():
                     print(line)
         print()
     except Exception as e:
-        print(f"Warning: Failed to regenerate _variables.yml: {e}\n", file=sys.stderr)
+        print(f"ERROR: Failed to regenerate _variables.yml: {e}\n", file=sys.stderr)
+        sys.exit(1)
 
     print("Running pre-render validation checks on .qmd files...\n")
 

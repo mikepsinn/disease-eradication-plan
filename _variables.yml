@@ -82,122 +82,122 @@
   \ 14.3 \\text{ hours}\n$$"
 "campaign_celebrity_endorsement": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Celebrity and\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Celebrity and\
   \ influencer endorsements | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$15M</a>"
 "campaign_community_organizing": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Community organizing\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Community organizing\
   \ and ambassador program budget | ✓ High confidence | Unit: USD | Click to view\
   \ calculation\">$30M</a>"
 "campaign_contingency": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Contingency fund for unexpected costs\
+  definition\" data-confidence=\"high\" title=\"Contingency fund for unexpected costs\
   \ | ✓ High confidence | 95% CI: [$30M, $80M] | Dist: Uniform | Unit: USD | Click\
   \ to view calculation\">$50M</a>"
 "campaign_defense_conversion": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Defense industry conversion program\
+  definition\" data-confidence=\"high\" title=\"Defense industry conversion program\
   \ | ✓ High confidence | 95% CI: [$40M, $70M] | Dist: Lognormal | Unit: USD | Click\
   \ to view calculation\">$50M</a>"
 "campaign_defense_lobbyist_budget": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Budget for co-opting\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Budget for co-opting\
   \ defense industry lobbyists | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$50M</a>"
 "campaign_healthcare_alignment": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Healthcare industry\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Healthcare industry\
   \ alignment and partnerships | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$35M</a>"
 "campaign_infrastructure": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Campaign operational infrastructure\
+  definition\" data-confidence=\"high\" title=\"Campaign operational infrastructure\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$20M</a>"
 "campaign_legal_ai_budget": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"AI-assisted legal work budget | ✓\
+  definition\" data-confidence=\"high\" title=\"AI-assisted legal work budget | ✓\
   \ High confidence | Unit: USD | Click to view calculation\">$50M</a>"
 "campaign_legal_defense": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Legal defense fund | ✓ High confidence\
+  definition\" data-confidence=\"high\" title=\"Legal defense fund | ✓ High confidence\
   \ | Unit: USD | Click to view calculation\">$20M</a>"
 "campaign_legal_work": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Legal drafting and compliance work\
+  definition\" data-confidence=\"high\" title=\"Legal drafting and compliance work\
   \ | ✓ High confidence | 95% CI: [$50M, $80M] | Dist: Lognormal | Unit: USD | Click\
   \ to view calculation\">$60M</a>"
 "campaign_lobbying_eu": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"EU lobbying campaign budget | ✓ High\
+  definition\" data-confidence=\"high\" title=\"EU lobbying campaign budget | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$40M</a>"
 "campaign_lobbying_g20_millions": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"G20 countries\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"G20 countries\
   \ lobbying budget | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$35M</a>"
 "campaign_lobbying_us": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"US lobbying campaign budget | ✓ High\
+  definition\" data-confidence=\"high\" title=\"US lobbying campaign budget | ✓ High\
   \ confidence | Unit: USD | Click to view calculation\">$50M</a>"
 "campaign_media_budget_max": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Maximum mass media campaign budget\
+  definition\" data-confidence=\"high\" title=\"Maximum mass media campaign budget\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$1.00B</a>"
 "campaign_media_budget_min": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Minimum mass media campaign budget\
+  definition\" data-confidence=\"high\" title=\"Minimum mass media campaign budget\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$500M</a>"
 "campaign_opposition_research": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Opposition research\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Opposition research\
   \ and rapid response | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$25M</a>"
 "campaign_phase1_budget": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Phase 1 campaign budget (Foundation,\
+  definition\" data-confidence=\"high\" title=\"Phase 1 campaign budget (Foundation,\
   \ Year 1) | ✓ High confidence | Unit: USD | Click to view calculation\">$200M</a>"
 "campaign_phase2_budget": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Phase 2 campaign budget (Scale & Momentum,\
+  definition\" data-confidence=\"high\" title=\"Phase 2 campaign budget (Scale & Momentum,\
   \ Years 2-3) | ✓ High confidence | Unit: USD | Click to view calculation\">$500M</a>"
 "campaign_pilot_programs": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Pilot program testing in small countries\
+  definition\" data-confidence=\"high\" title=\"Pilot program testing in small countries\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$30M</a>"
 "campaign_platform_development": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Voting platform\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Voting platform\
   \ and technology development | ✓ High confidence | 95% CI: [$25M, $50M] | Dist:\
   \ Lognormal | Unit: USD | Click to view calculation\">$35M</a>"
 "campaign_regulatory_navigation": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Regulatory compliance\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Regulatory compliance\
   \ and navigation | ✓ High confidence | Unit: USD | Click to view calculation\">$20M</a>"
 "campaign_scaling_prep": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Scaling preparation and blueprints\
+  definition\" data-confidence=\"high\" title=\"Scaling preparation and blueprints\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$30M</a>"
 "campaign_staff_budget": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Campaign core team staff budget |\
+  definition\" data-confidence=\"high\" title=\"Campaign core team staff budget |\
   \ ✓ High confidence | Unit: USD | Click to view calculation\">$40M</a>"
 "campaign_super_pac_budget": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Super PAC campaign expenditures |\
+  definition\" data-confidence=\"high\" title=\"Super PAC campaign expenditures |\
   \ ✓ High confidence | Unit: USD | Click to view calculation\">$30M</a>"
 "campaign_tech_partnerships": "<a href=\"/knowledge/economics/campaign-budget\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Tech industry partnerships and infrastructure\
+  definition\" data-confidence=\"high\" title=\"Tech industry partnerships and infrastructure\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$25M</a>"
 "campaign_treaty_implementation": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Post-victory\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Post-victory\
   \ treaty implementation support | ✓ High confidence | 95% CI: [$30M, $55M] | Dist:\
   \ Lognormal | Unit: USD | Click to view calculation\">$40M</a>"
 "campaign_viral_content_budget": "<a href=\"/knowledge/economics/campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Viral marketing\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Viral marketing\
   \ content creation budget | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$40M</a>"
 "caregiver_annual_value_total": "<a href=\"https://warondisease.org/knowledge/references.html#unpaid-caregiver-hours-economic-value\"\
@@ -256,14 +256,6 @@
   \ + R&D_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
 "combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nCombined = \\$113.55B\
   \ + \\$50B = \\$163.55B\n$$"
-"cost_of_delay_deaths_per_second": "<a href=\"/knowledge/problem/cost-of-war#cost-of-delay\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#cost-of-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Preventable deaths\
-  \ per second from curable diseases | ✓ High confidence | Formula: DAILY_DEATHS ÷\
-  \ SECONDS_PER_DAY | Unit: deaths/second | Click to view calculation\">1.74</a>"
-"cost_of_delay_deaths_per_second_latex": "$$\nDeathsPerSecond = \\frac{150,000 \\\
-  text{ (daily deaths)}}{86,400 \\text{ (sec/day)}} \\approx 1.74 \\text{ (deaths/sec)}\n\
-  $$"
 "current_active_trials": "<a href=\"https://warondisease.org/knowledge/references.html#clinicaltrials-gov-enrollment-data-2025\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -308,26 +300,11 @@
   \ trial participants (IQVIA 2022: 1.9M post-COVID normalization) | ✓ High confidence\
   \ | Unit: patients/year | Click to view source\">1.90M</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
-"daily_cost_inefficiency": "<a href=\"/knowledge/solution/dfda#cost-of-delay\" class=\"\
-  parameter-link\" data-source-ref=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily cost of\
-  \ healthcare system inefficiency | ✓ High confidence | Unit: USD/day | Click to\
-  \ view calculation\">$327M</a>"
 "dct_platform_funding_medium": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#analogous-rom\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Mid-range funding\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Mid-range funding\
   \ for commercial DCT platform | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$500M</a>"
-"deaths_during_reading_section": "<a href=\"/knowledge/solution/dfda#cost-of-delay\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/dfda.qmd#cost-of-delay\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Deaths from curable\
-  \ diseases during reading one section | ✓ High confidence | Unit: deaths | Click\
-  \ to view calculation\">410</a>"
-"death_spending_misallocation_factor": "<a href=\"/knowledge/problem/cost-of-war#misallocation\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#misallocation\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Misallocation\
-  \ factor for spending on death vs prevention | ✓ High confidence | Unit: ratio |\
-  \ Click to view calculation\">1,750</a>"
 "defense_lobbying_annual": "<a href=\"https://warondisease.org/knowledge/references.html#lobbying-spend-defense\"\
   \ class=\"parameter-link\" data-source-ref=\"lobbying-spend-defense\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Annual defense\
@@ -417,12 +394,12 @@
   \ = \\$41.46B\n$$"
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#adoption-curve\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Years to reach\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Years to reach\
   \ full dFDA adoption | ✓ High confidence | Unit: years | Click to view calculation\"\
   >5</a>"
 "dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA core platform\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA core platform\
   \ annual opex (midpoint of $11-26.5M) | ✓ High confidence | Unit: USD/year | Click\
   \ to view calculation\">$18.9M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
@@ -466,7 +443,7 @@
   \ \\$0.54B\n$$"
 "dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA core platform\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA core platform\
   \ build cost | ✓ High confidence | Unit: USD | Click to view calculation\">$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
@@ -478,12 +455,12 @@
   \ \\text{ (upfront cost)}\n$$"
 "dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA community\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA community\
   \ support costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$2.00M</a>"
 "dfda_opex_infrastructure": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA infrastructure\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA infrastructure\
   \ costs (cloud, security) | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$8.00M</a>"
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
@@ -495,17 +472,17 @@
   \ 0.00147 = 0.15\\%\n$$"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA platform\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
   \ maintenance costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$15M</a>"
 "dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA regulatory\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA regulatory\
   \ coordination costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$5.00M</a>"
 "dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA staff costs\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA staff costs\
   \ (minimal, AI-assisted) | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
   >$10M</a>"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
@@ -539,7 +516,7 @@
   $$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-per-patient\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Target cost per\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
   \ patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars) | ✓ High\
   \ confidence | Unit: USD/patient | Click to view calculation\">$1.00K</a>"
 "dfda_trials_per_year_capacity": "<span class=\"parameter-link\" title=\"parameters.DFDA_TRIALS_PER_YEAR_CAPACITY\"\
@@ -548,22 +525,22 @@
   $$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA platform\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
   \ one-time build cost (central estimate) | ✓ High confidence | Unit: USD | Click\
   \ to view calculation\">$40M</a>"
 "dfda_upfront_build_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"dFDA platform\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
   \ one-time build cost (high estimate) | ✓ High confidence | Unit: USD | Click to\
   \ view calculation\">$46M</a>"
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"DIH broader initiatives\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
   \ annual opex (medium case) | ✓ High confidence | Unit: USD/year | Click to view\
   \ calculation\">$21.1M</a>"
 "dih_npv_upfront_cost_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"DIH broader initiatives\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
   \ upfront cost (medium case) | ✓ High confidence | Unit: USD | Click to view calculation\"\
   >$230M</a>"
 "dih_patients_fundable_annually": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
@@ -676,7 +653,7 @@
   \ = \\$1,286T \\times 2 = \\$2,572T\n$$"
 "disease_related_caregiver_pct": "<a href=\"/disease-related-caregiving-estimate\"\
   \ class=\"parameter-link\" data-source-ref=\"/disease-related-caregiving-estimate\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Percentage of\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ caregiving for treatable disease conditions (vs aging, disability, children) |\
   \ ✓ High confidence | Unit: rate | Click to view calculation\">40%</a>"
 "disease_vs_terrorism_deaths_ratio": "<a href=\"/knowledge/economics/economics\" class=\"\
@@ -756,20 +733,6 @@
   \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
   \ health gains from 1% Treaty | Unit: USD | Click to view calculation\">$4.30M</a>"
 "effective_hourly_rate_lifetime_benefit_latex": "$$\nBenefit = \\$4,300,000\n$$"
-"effective_hourly_rate_vs_ceo_multiplier": "<a href=\"/knowledge/solution/wishocracy#effective-hourly-rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Effective rate\
-  \ multiplier vs CEO rate | ✓ High confidence | Formula: EFFECTIVE_RATE ÷ CEO_RATE\
-  \ | Unit: ratio | Click to view calculation\">29.2</a>"
-"effective_hourly_rate_vs_ceo_multiplier_latex": "$$\nMultiplier = \\frac{\\$291,525}{\\\
-  $10,000} \\approx 29x\n$$"
-"effective_hourly_rate_vs_wage_multiplier": "<a href=\"/knowledge/solution/wishocracy#effective-hourly-rate\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#effective-hourly-rate\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Effective rate\
-  \ multiplier vs average US wage | ✓ High confidence | Formula: EFFECTIVE_RATE ÷\
-  \ AVG_WAGE | Unit: ratio | Click to view calculation\">9,744</a>"
-"effective_hourly_rate_vs_wage_multiplier_latex": "$$\nMultiplier = \\frac{\\$291,525}{\\\
-  $30} \\approx 9,718x\n$$"
 "efficacy_lag_years": "<a href=\"https://warondisease.org/knowledge/references.html#bio-clinical-development-2021\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Regulatory\
@@ -784,7 +747,7 @@
   \ 92.09\\%\n$$"
 "family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Minimum investment for family offices\
+  definition\" data-confidence=\"high\" title=\"Minimum investment for family offices\
   \ | ✓ High confidence | Unit: USD | Click to view calculation\">$5.00M</a>"
 "fda_phase_1_to_approval_years": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years\"\
   \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
@@ -1169,7 +1132,7 @@
   \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Minimum investment for institutional\
+  definition\" data-confidence=\"high\" title=\"Minimum investment for institutional\
   \ investors | ✓ High confidence | Unit: USD | Click to view calculation\">$10M</a>"
 "life_extension_years_10pct": "<span class=\"parameter-link\" title=\"parameters.LIFE_EXTENSION_YEARS_10PCT\"\
   >2.57</span>"
@@ -1181,14 +1144,9 @@
   >1.29</span>"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Maximum bond\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Maximum bond\
   \ investment for lobbyist incentives | ✓ High confidence | Unit: USD | Click to\
   \ view calculation\">$20M</a>"
-"lobbyist_bond_investment_min": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Minimum bond\
-  \ investment for lobbyist incentives | ✓ High confidence | Unit: USD | Click to\
-  \ view calculation\">$5.00M</a>"
 "lobbyist_salary_max": "<a href=\"https://warondisease.org/knowledge/references.html#lobbyist-statistics-dc\"\
   \ class=\"parameter-link\" data-source-ref=\"lobbyist-statistics-dc\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Maximum annual lobbyist salary range\
@@ -1199,11 +1157,6 @@
   external\" data-confidence=\"high\" title=\"Minimum annual lobbyist salary range\
   \ | ✓ High confidence | Unit: USD | Click to view source\">$500K</a>"
 "lobbyist_salary_min_k_cite": "@lobbyist-statistics-dc"
-"lobbyist_salary_typical_k": "<a href=\"https://warondisease.org/knowledge/references.html#lobbyist-statistics-dc\"\
-  \ class=\"parameter-link\" data-source-ref=\"lobbyist-statistics-dc\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Typical annual lobbyist salary for comparison\
-  \ | ✓ High confidence | Unit: USD | Click to view source\">$500K</a>"
-"lobbyist_salary_typical_k_cite": "@lobbyist-statistics-dc"
 "measles_vaccination_roi": "<a href=\"https://warondisease.org/knowledge/references.html#measles-vaccination-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"measles-vaccination-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from measles (MMR)\
@@ -1237,14 +1190,6 @@
   \ ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to view calculation\">2,889</a>"
 "misallocation_factor_death_vs_saving_latex": "$$\nMisallocation = \\frac{\\$46.4M}{\\\
   $16,071} \\approx 2,889x\n$$"
-"multiplier_vs_givewell": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#givewell-comparison\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost-effectiveness\
-  \ multiplier vs GiveWell top charities | ✓ High confidence | Formula: ABS(NET_BENEFIT\
-  \ × 1B) ÷ GIVEWELL_COST | Unit: ratio | Click to view calculation\">0</a>"
-"multiplier_vs_givewell_latex": "$$\nCostEffectivenessMultiplier = \\frac{|\\text{NetBenefit}\
-  \ \\times 10^9|}{\\text{GiveWellCost}} = \\frac{|\\$6.19M \\times 10^9|}{\\$4,500}\
-  \ \\approx 1,376x\n$$"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_discount_rate_standard_latex": "$$\nr = 0.08 \\text{ (discount rate)}\n$$"
@@ -1499,14 +1444,9 @@
 "pre_1962_physician_count_cite": "@pre-1962-physician-trials"
 "pre_1962_validation_years": "<a href=\"/life-expectancy-increase-pre-1962\" class=\"\
   parameter-link\" data-source-ref=\"/life-expectancy-increase-pre-1962\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"Years of empirical validation for\
+  definition\" data-confidence=\"high\" title=\"Years of empirical validation for\
   \ physician-led pragmatic trials (1883-1960) | ✓ High confidence | Formula: 1960\
   \ - 1883 | Unit: years | Click to view calculation\">77</a>"
-"profit_per_life_saved": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#profit-per-life\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"System profit\
-  \ per life saved (specific calculation) | ✓ High confidence | Unit: USD/life | Click\
-  \ to view calculation\">$168K</a>"
 "rare_diseases_count_global": "<a href=\"https://warondisease.org/knowledge/references.html#95-pct-diseases-no-treatment\"\
   \ class=\"parameter-link\" data-source-ref=\"95-pct-diseases-no-treatment\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Total number of rare diseases globally\
@@ -1554,100 +1494,6 @@
 "roi_discount_7pct_latex": "$$\nROI_{7\\%} \\approx 463 \\times 0.78 = 361\n$$"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
   >31.5M</span>"
-"sensitivity_campaign_cost_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ campaign cost (3-year amortization) | ✓ High confidence | Unit: USD/year | Click\
-  \ to view calculation\">$333M</a>"
-"sensitivity_campaign_cost_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic campaign\
-  \ cost (5-year amortization) | ✓ High confidence | Unit: USD/year | Click to view\
-  \ calculation\">$200M</a>"
-"sensitivity_cost_per_life_central": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#central-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Central cost\
-  \ per life saved | ✓ High confidence | Unit: USD/life | Click to view calculation\"\
-  >$-6.55</a>"
-"sensitivity_cost_per_life_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ cost per life saved | ✓ High confidence | Unit: USD/life | Click to view calculation\"\
-  >$-5.97</a>"
-"sensitivity_cost_per_life_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic cost\
-  \ per life saved | ✓ High confidence | Unit: USD/life | Click to view calculation\"\
-  >$-4.79</a>"
-"sensitivity_dfda_opex_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ dFDA operational costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$60M</a>"
-"sensitivity_dfda_opex_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic dFDA\
-  \ operational costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$30M</a>"
-"sensitivity_dfda_savings_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ dFDA savings estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$25B</a>"
-"sensitivity_dfda_savings_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic dFDA\
-  \ savings estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$95B</a>"
-"sensitivity_net_benefit_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ net benefit from sensitivity analysis | ✓ High confidence | Unit: USD | Click\
-  \ to view calculation\">$74.6B</a>"
-"sensitivity_net_benefit_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic net\
-  \ benefit from sensitivity analysis | ✓ High confidence | Unit: USD | Click to view\
-  \ calculation\">$295B</a>"
-"sensitivity_peace_dividend_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ peace dividend estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$50B</a>"
-"sensitivity_peace_dividend_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic peace\
-  \ dividend estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$200B</a>"
-"sensitivity_peace_qalys_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ peace QALYs (500 lives × 35 QALYs/life) | ✓ High confidence | Unit: QALYs/year\
-  \ | Click to view calculation\">17,500</a>"
-"sensitivity_peace_qalys_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic peace\
-  \ QALYs (1,500 lives × 35 QALYs/life) | ✓ High confidence | Unit: QALYs/year | Click\
-  \ to view calculation\">52,500</a>"
-"sensitivity_total_benefits_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ total benefits estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$75B</a>"
-"sensitivity_total_benefits_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic total\
-  \ benefits estimate | ✓ High confidence | Unit: USD | Click to view calculation\"\
-  >$295B</a>"
-"sensitivity_total_costs_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ total costs | ✓ High confidence | Unit: USD/year | Click to view calculation\"\
-  >$393M</a>"
-"sensitivity_total_costs_optimistic": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic total\
-  \ costs | ✓ High confidence | Unit: USD/year | Click to view calculation\">$230M</a>"
 "smallpox_eradication_roi": "<a href=\"https://warondisease.org/knowledge/references.html#smallpox-eradication-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
@@ -1758,7 +1604,7 @@
 "thalidomide_yll_per_event_latex": "$$\n360 \\text{ (deaths)} \\times 80 \\text{ (years)}\
   \ = 28{,}800 \\text{ YLL}\n$$"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" data-source-ref=\"\
-  /book-word-count\" data-source-type=\"calculated\" data-confidence=\"high\" title=\"\
+  /book-word-count\" data-source-type=\"definition\" data-confidence=\"high\" title=\"\
   Total words in the book | ✓ High confidence | Unit: words | Click to view calculation\"\
   >171K</a>"
 "total_research_funding_with_treaty": "<a href=\"/knowledge/economics/economics\"\
@@ -1852,13 +1698,13 @@
   $650M \\text{ (lob)} + \\$50M \\text{ (res)} = \\$1.0B\n$$"
 "treaty_campaign_viral_referendum_base_case": "<a href=\"/knowledge/economics/campaign-budget#base-case-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd#base-case-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Base case viral\
+  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Base case viral\
   \ referendum budget (assumes flat $0.50/vote, optimistic) | ~ Medium confidence\
   \ | Formula: PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE | Unit: USD | Click to\
   \ view calculation\">$140M</a>"
 "treaty_campaign_viral_referendum_realistic": "<a href=\"/knowledge/economics/campaign-budget#realistic-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd#realistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Realistic viral\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Realistic viral\
   \ referendum budget (moderate tiered pricing) | ✓ High confidence | Formula: PLATFORM\
   \ + VERIFICATION + MODERATE_TIERED_PAYMENTS | Unit: USD | Click to view calculation\"\
   >$220M</a>"
@@ -1866,7 +1712,7 @@
   \ + \\$59M_{verification} + \\$126M_{tiered\\ payments} = \\$220M\n$$"
 "treaty_campaign_viral_referendum_worst_case": "<a href=\"/knowledge/economics/campaign-budget#worst-case-scenario\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/campaign-budget.qmd#worst-case-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Worst-case\
+  \ data-source-type=\"definition\" data-confidence=\"medium\" title=\"Worst-case\
   \ viral referendum budget (tiered pricing with increasing marginal costs) | ~ Medium\
   \ confidence | Formula: PLATFORM + VERIFICATION + TIERED_PAYMENTS | Unit: USD |\
   \ Click to view calculation\">$406M</a>"
@@ -1890,59 +1736,6 @@
   \ Unit: ratio | Click to view calculation\">1.19M</a>"
 "treaty_complete_roi_all_benefits_latex": "$$\nROI_{lag\\_elimination} = \\frac{\\\
   $1{,}286T}{\\$1.00B} = 1{,}286{,}242:1\n$$"
-"treaty_complete_roi_conditional_5th_percentile": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Lower bound conditional\
-  \ ROI (95% CI lower bound, if treaty passes) | ✓ High confidence | Formula: Probabilistic\
-  \ simulation: 5th percentile | Unit: ratio | Click to view calculation\">44</a>"
-"treaty_complete_roi_conditional_5th_percentile_latex": "$$\nROI_{conditional,lower}\
-  \ = 44:1\n$$"
-"treaty_complete_roi_conditional_95th_percentile": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Worst-case conditional\
-  \ ROI (95% CI upper bound, if treaty passes) | ✓ High confidence | Formula: Probabilistic\
-  \ simulation: benefits half, costs double | Unit: ratio | Click to view calculation\"\
-  >66</a>"
-"treaty_complete_roi_conditional_95th_percentile_latex": "$$\nROI_{conditional,worst}\
-  \ = 66:1\n$$"
-"treaty_complete_roi_conditional_median": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Median conditional\
-  \ ROI (50th percentile, if treaty passes) | ✓ High confidence | Formula: Probabilistic\
-  \ simulation: median outcome | Unit: ratio | Click to view calculation\">54</a>"
-"treaty_complete_roi_conditional_median_latex": "$$\nROI_{conditional,median} = 54:1\n\
-  $$"
-"treaty_complete_roi_expected_5th_percentile": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Lower bound expected\
-  \ ROI (95% CI, accounting for political risk) | ✓ High confidence | Formula: Conditional\
-  \ ROI × P(treaty passes): 5th percentile | Unit: ratio | Click to view calculation\"\
-  >2.7</a>"
-"treaty_complete_roi_expected_5th_percentile_latex": "$$\nROI_{expected,lower} = 2.7:1\n\
-  $$"
-"treaty_complete_roi_expected_95th_percentile": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Upper bound expected\
-  \ ROI (95% CI, accounting for political risk) | ✓ High confidence | Formula: Conditional\
-  \ ROI × P(treaty passes): 95th percentile | Unit: ratio | Click to view calculation\"\
-  >27</a>"
-"treaty_complete_roi_expected_95th_percentile_latex": "$$\nROI_{expected,upper} =\
-  \ 27:1\n$$"
-"treaty_complete_roi_expected_median": "<a href=\"/knowledge/economics/economics#probabilistic-analysis\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#probabilistic-analysis\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Median expected\
-  \ ROI (50th percentile, accounting for political risk) | ✓ High confidence | Formula:\
-  \ Conditional ROI × P(treaty passes): median | Unit: ratio | Click to view calculation\"\
-  >14</a>"
-"treaty_complete_roi_expected_median_latex": "$$\nROI_{expected,median} = 14:1\n$$"
-"treaty_conservative_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#conservative-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Conservative\
-  \ scenario ROI for 1% Treaty (net benefit ÷ total costs, lower-bound economic assumptions)\
-  \ | ✓ High confidence | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio | Click\
-  \ to view calculation\">189</a>"
-"treaty_conservative_scenario_roi_latex": "$$\nROI_{conservative} = \\$74.6B / \\\
-  $0.393B = 190:1\n$$"
 "treaty_dfda_cost_per_daly_timeline_shift": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per DALY\
@@ -1977,14 +1770,6 @@
   \ × REDUCTION_PCT | Unit: lives/year | Click to view calculation\">2,446</a>"
 "treaty_lives_saved_annual_global_latex": "$$\nLivesSaved = 244,600 \\times 0.01 =\
   \ 2,446\n$$"
-"treaty_optimistic_scenario_roi": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Optimistic scenario\
-  \ ROI for 1% Treaty (net benefit ÷ total costs, upper-bound economic assumptions)\
-  \ | ✓ High confidence | Formula: NET_BENEFIT ÷ TOTAL_COSTS | Unit: ratio | Click\
-  \ to view calculation\">1,281</a>"
-"treaty_optimistic_scenario_roi_latex": "$$\nROI_{optimistic} = \\$294.8B / \\$0.230B\
-  \ = 1,282:1\n$$"
 "treaty_peace_plus_rd_annual_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-benefits\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Basic annual\
@@ -1993,14 +1778,6 @@
   \ | Unit: USD/year | Click to view calculation\">$155B</a>"
 "treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefits_{peace+RD} = \\$113.55B\
   \ + \\$41.5B = \\$155.05B\n$$"
-"treaty_peace_plus_rd_net_annual_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#net-benefit\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Net annual benefit\
-  \ from peace dividend + R&D savings (basic 2-benefit case minus costs) | ✓ High\
-  \ confidence | Formula: TOTAL_BENEFITS - TOTAL_COSTS | Unit: USD/year | Click to\
-  \ view calculation\">$155B</a>"
-"treaty_peace_plus_rd_net_annual_benefit_latex": "$$\nNetBenefit = \\$163.55B - \\\
-  $0.29B = \\$163.26B\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#peace-qalys\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
@@ -2187,16 +1964,9 @@
   >10%</span>"
 "victory_bond_investment_unit_usd": "<a href=\"/knowledge/strategy/roadmap#victory-bonds\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"VICTORY bond\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"VICTORY bond\
   \ investment unit for retail investors | ✓ High confidence | Unit: USD | Click to\
   \ view calculation\">$1.00K</a>"
-"victory_bond_payout_per_unit_usd_annual": "<a href=\"/knowledge/strategy/roadmap#victory-bonds\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#victory-bonds\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual payout\
-  \ per $1,000 VICTORY bond investment unit | ✓ High confidence | Formula: (ANNUAL_PAYOUT\
-  \ ÷ CAMPAIGN_COST) × UNIT | Unit: USD/year | Click to view calculation\">$2.72K</a>"
-"victory_bond_payout_per_unit_usd_annual_latex": "$$\nPayoutPerUnit = \\frac{\\$2.718B}{\\\
-  $1B} \\times \\$1,000 = \\$2,718\n$$"
 "vitamin_a_cost_per_daly": "<a href=\"https://warondisease.org/knowledge/references.html#vitamin-a-cost-per-daly\"\
   \ class=\"parameter-link\" data-source-ref=\"vitamin-a-cost-per-daly\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Cost per DALY for vitamin A supplementation\
@@ -2227,11 +1997,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"ww2_bond_return_pct": "<a href=\"https://warondisease.org/knowledge/references.html#wwii-war-bonds\"\
-  \ class=\"parameter-link\" data-source-ref=\"wwii-war-bonds\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"World War II war bond return percentage\
-  \ (4%) | ✓ High confidence | Unit: rate | Click to view source\">4%</a>"
-"ww2_bond_return_pct_cite": "@wwii-war-bonds"
-"total_parameter_count": "386"
-"total_latex_equation_count": "140"
-"total_citation_count": "128"
+"total_parameter_count": "346"
+"total_latex_equation_count": "126"
+"total_citation_count": "126"

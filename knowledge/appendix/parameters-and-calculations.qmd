@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 386
+**Total parameters**: 346
 
-- External sources (peer-reviewed): 128
-- Calculated values: 211
-- Core definitions: 47
+- External sources (peer-reviewed): 126
+- Calculated values: 122
+- Core definitions: 98
 
 ## External Data Sources {#sec-external}
 
@@ -895,19 +895,6 @@ Minimum annual lobbyist salary range
 :::
 
 ::: {.callout-tip icon=false collapse=false}
-### Typical Annual Lobbyist Salary for Comparison {#sec-lobbyist_salary_typical_k}
-
-**Value**: $500K
-
-Typical annual lobbyist salary for comparison
-
-**Source**: [lobbyist-statistics-dc](https://warondisease.org/knowledge/references.html#lobbyist-statistics-dc)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
 ### Return on Investment from Measles Vaccination Programs {#sec-measles_vaccination_roi}
 
 **Value**: 14
@@ -1674,19 +1661,6 @@ Percentage of workforce experiencing productivity loss from chronic illness (28%
 
 :::
 
-::: {.callout-tip icon=false collapse=false}
-### World War Ii War Bond Return Percentage {#sec-ww2_bond_return_pct}
-
-**Value**: 4%
-
-World War II war bond return percentage (4%)
-
-**Source**: [wwii-war-bonds](https://warondisease.org/knowledge/references.html#wwii-war-bonds)
-
-*✓ High confidence*
-
-:::
-
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
@@ -1706,10 +1680,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-action_time_total_hours.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1727,10 +1697,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-action_time_total_minutes.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1745,357 +1711,6 @@ ReadTime = \frac{171,121 / 200}{60} \approx 14.3 \text{ hours}
 $$
 
 **Methodology**: [../solution/wishocracy#time-investment](../solution/wishocracy#time-investment)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Celebrity and Influencer Endorsements {#sec-campaign_celebrity_endorsement}
-
-**Value**: $15M
-
-Celebrity and influencer endorsements
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Community Organizing and Ambassador Program Budget {#sec-campaign_community_organizing}
-
-**Value**: $30M
-
-Community organizing and ambassador program budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Contingency Fund for Unexpected Costs {#sec-campaign_contingency}
-
-**Value**: $50M
-
-Contingency fund for unexpected costs
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Defense Industry Conversion Program {#sec-campaign_defense_conversion}
-
-**Value**: $50M
-
-Defense industry conversion program
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Budget for Co-Opting Defense Industry Lobbyists {#sec-campaign_defense_lobbyist_budget}
-
-**Value**: $50M
-
-Budget for co-opting defense industry lobbyists
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Healthcare Industry Alignment and Partnerships {#sec-campaign_healthcare_alignment}
-
-**Value**: $35M
-
-Healthcare industry alignment and partnerships
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Campaign Operational Infrastructure {#sec-campaign_infrastructure}
-
-**Value**: $20M
-
-Campaign operational infrastructure
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### AI-Assisted Legal Work Budget {#sec-campaign_legal_ai_budget}
-
-**Value**: $50M
-
-AI-assisted legal work budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Legal Defense Fund {#sec-campaign_legal_defense}
-
-**Value**: $20M
-
-Legal defense fund
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Legal Drafting and Compliance Work {#sec-campaign_legal_work}
-
-**Value**: $60M
-
-Legal drafting and compliance work
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### EU Lobbying Campaign Budget {#sec-campaign_lobbying_eu}
-
-**Value**: $40M
-
-EU lobbying campaign budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### G20 Countries Lobbying Budget {#sec-campaign_lobbying_g20_millions}
-
-**Value**: $35M
-
-G20 countries lobbying budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### US Lobbying Campaign Budget {#sec-campaign_lobbying_us}
-
-**Value**: $50M
-
-US lobbying campaign budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Maximum Mass Media Campaign Budget {#sec-campaign_media_budget_max}
-
-**Value**: $1.00B
-
-Maximum mass media campaign budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Minimum Mass Media Campaign Budget {#sec-campaign_media_budget_min}
-
-**Value**: $500M
-
-Minimum mass media campaign budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Opposition Research and Rapid Response {#sec-campaign_opposition_research}
-
-**Value**: $25M
-
-Opposition research and rapid response
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Phase 1 Campaign Budget {#sec-campaign_phase1_budget}
-
-**Value**: $200M
-
-Phase 1 campaign budget (Foundation, Year 1)
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Phase 2 Campaign Budget {#sec-campaign_phase2_budget}
-
-**Value**: $500M
-
-Phase 2 campaign budget (Scale & Momentum, Years 2-3)
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Pilot Program Testing in Small Countries {#sec-campaign_pilot_programs}
-
-**Value**: $30M
-
-Pilot program testing in small countries
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Voting Platform and Technology Development {#sec-campaign_platform_development}
-
-**Value**: $35M
-
-Voting platform and technology development
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Regulatory Compliance and Navigation {#sec-campaign_regulatory_navigation}
-
-**Value**: $20M
-
-Regulatory compliance and navigation
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Scaling Preparation and Blueprints {#sec-campaign_scaling_prep}
-
-**Value**: $30M
-
-Scaling preparation and blueprints
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Campaign Core Team Staff Budget {#sec-campaign_staff_budget}
-
-**Value**: $40M
-
-Campaign core team staff budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Super PAC Campaign Expenditures {#sec-campaign_super_pac_budget}
-
-**Value**: $30M
-
-Super PAC campaign expenditures
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Tech Industry Partnerships and Infrastructure {#sec-campaign_tech_partnerships}
-
-**Value**: $25M
-
-Tech industry partnerships and infrastructure
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Post-Victory Treaty Implementation Support {#sec-campaign_treaty_implementation}
-
-**Value**: $40M
-
-Post-victory treaty implementation support
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Viral Marketing Content Creation Budget {#sec-campaign_viral_content_budget}
-
-**Value**: $40M
-
-Viral marketing content creation budget
-
-**Methodology**: [../economics/campaign-budget](../economics/campaign-budget)
 
 *✓ High confidence*
 
@@ -2129,29 +1744,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
-
-{{< include ../figures/sensitivity-table-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Preventable Deaths per Second from Curable Diseases {#sec-cost_of_delay_deaths_per_second}
-
-**Value**: 1.74
-
-Preventable deaths per second from curable diseases
-
-$$
-DeathsPerSecond = \frac{150,000 \text{ (daily deaths)}}{86,400 \text{ (sec/day)}} \approx 1.74 \text{ (deaths/sec)}
-$$
-
-**Methodology**: [../problem/cost-of-war#cost-of-delay](../problem/cost-of-war#cost-of-delay)
-
-*✓ High confidence*
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2164,58 +1756,6 @@ Current patient participation rate in clinical trials (0.08% = 1.9M participants
 $$
 Rate = 1.9M \div 2.4B = 0.08\%
 $$
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Daily Cost of Global Healthcare System Inefficiency {#sec-daily_cost_inefficiency}
-
-**Value**: $327M
-
-Daily cost of healthcare system inefficiency
-
-**Methodology**: [../solution/dfda#cost-of-delay](../solution/dfda#cost-of-delay)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Mid-Range Funding for Commercial Dct Platform {#sec-dct_platform_funding_medium}
-
-**Value**: $500M
-
-Mid-range funding for commercial DCT platform
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#analogous-rom](../appendix/dfda-cost-benefit-analysis#analogous-rom)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Deaths from Curable Diseases During Reading One Section {#sec-deaths_during_reading_section}
-
-**Value**: 410
-
-Deaths from curable diseases during reading one section
-
-**Methodology**: [../solution/dfda#cost-of-delay](../solution/dfda#cost-of-delay)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Misallocation Factor for Spending on Death vs Prevention {#sec-death_spending_misallocation_factor}
-
-**Value**: 1,750
-
-Misallocation factor for spending on death vs prevention
-
-**Methodology**: [../problem/cost-of-war#misallocation](../problem/cost-of-war#misallocation)
 
 *✓ High confidence*
 
@@ -2236,10 +1776,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_annual_opex.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2257,12 +1793,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2279,12 +1809,6 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_expected_roi_0_1pct_political_success.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_expected_roi_0_1pct_political_success.qmd >}}
 
 :::
 
@@ -2388,38 +1912,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_net_savings_rd_only_annual.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Years to Reach Full dFDA Adoption {#sec-dfda_npv_adoption_ramp_years}
-
-**Value**: 5
-
-Years to reach full dFDA adoption
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#adoption-curve](../appendix/dfda-cost-benefit-analysis#adoption-curve)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Core Platform Annual OPEX {#sec-dfda_npv_annual_opex}
-
-**Value**: $18.9M
-
-dFDA core platform annual opex (midpoint of $11-26.5M)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
-
-*✓ High confidence*
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2508,19 +2000,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Core Platform Build Cost {#sec-dfda_npv_upfront_cost}
-
-**Value**: $40M
-
-dFDA core platform build cost
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### dFDA Total NPV Upfront Costs {#sec-dfda_npv_upfront_cost_total}
 
 **Value**: $270M
@@ -2532,32 +2011,6 @@ C_0 = \$0.040B + \$0.22975B = \$0.26975B \text{ (upfront cost)}
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Community Support Costs {#sec-dfda_opex_community}
-
-**Value**: $2.00M
-
-dFDA community support costs
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Infrastructure Costs {#sec-dfda_opex_infrastructure}
-
-**Value**: $8.00M
-
-dFDA infrastructure costs (cloud, security)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
 
 *✓ High confidence*
 
@@ -2581,45 +2034,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Platform Maintenance Costs {#sec-dfda_opex_platform_maintenance}
-
-**Value**: $15M
-
-dFDA platform maintenance costs
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Regulatory Coordination Costs {#sec-dfda_opex_regulatory}
-
-**Value**: $5.00M
-
-dFDA regulatory coordination costs
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Staff Costs {#sec-dfda_opex_staff}
-
-**Value**: $10M
-
-dFDA staff costs (minimal, AI-assisted)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#opex-breakdown](../appendix/dfda-cost-benefit-analysis#opex-breakdown)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### dFDA Annual Benefit: R&D Savings {#sec-dfda_rd_gross_savings_annual}
 
 **Value**: $41.5B
@@ -2633,12 +2047,6 @@ $$
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
 
 *✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_rd_gross_savings_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_rd_gross_savings_annual.qmd >}}
 
 :::
 
@@ -2694,19 +2102,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### dFDA Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
-
-**Value**: $1.00K
-
-Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-per-patient](../appendix/dfda-cost-benefit-analysis#cost-per-patient)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
 **Value**: 84,834
@@ -2716,58 +2111,6 @@ Maximum trials per year possible with trial capacity multiplier
 $$
 Trials_{dFDA} = 3,300 \times 25.7 = 84,800
 $$
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Platform One-Time Build Cost {#sec-dfda_upfront_build}
-
-**Value**: $40M
-
-dFDA platform one-time build cost (central estimate)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#build-costs](../appendix/dfda-cost-benefit-analysis#build-costs)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### dFDA Platform One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
-
-**Value**: $46M
-
-dFDA platform one-time build cost (high estimate)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#build-costs](../appendix/dfda-cost-benefit-analysis#build-costs)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### DIH Broader Initiatives Annual OPEX {#sec-dih_npv_annual_opex_initiatives}
-
-**Value**: $21.1M
-
-DIH broader initiatives annual opex (medium case)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### DIH Broader Initiatives Upfront Cost {#sec-dih_npv_upfront_cost_initiatives}
-
-**Value**: $230M
-
-DIH broader initiatives upfront cost (medium case)
-
-**Methodology**: [../appendix/dfda-cost-benefit-analysis#npv-costs](../appendix/dfda-cost-benefit-analysis#npv-costs)
 
 *✓ High confidence*
 
@@ -2856,12 +2199,6 @@ $$
 
 *~ Medium confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_dalys.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_dalys.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2913,12 +2250,6 @@ $$
 
 *~ Medium confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_yld.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_yld.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2935,12 +2266,6 @@ $$
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
 
 *~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-disease_eradication_delay_yll.qmd >}}
-
-{{< include ../figures/sensitivity-table-disease_eradication_delay_yll.qmd >}}
 
 :::
 
@@ -2975,19 +2300,6 @@ $$
 **Methodology**: [../references#pharmaceutical-innovation-acceleration-economics](../references#pharmaceutical-innovation-acceleration-economics)
 
 *? Low confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Percentage of Caregiving for Treatable Disease Conditions {#sec-disease_related_caregiver_pct}
-
-**Value**: 40%
-
-Percentage of caregiving for treatable disease conditions (vs aging, disability, children)
-
-**Methodology**: [Disease-Related Caregiving Analysis](#disease-related-caregiving-estimate)
-
-*✓ High confidence*
 
 :::
 
@@ -3111,40 +2423,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Effective Rate Multiplier vs CEO Rate {#sec-effective_hourly_rate_vs_ceo_multiplier}
-
-**Value**: 29.2
-
-Effective rate multiplier vs CEO rate
-
-$$
-Multiplier = \frac{\$291,525}{\$10,000} \approx 29x
-$$
-
-**Methodology**: [../solution/wishocracy#effective-hourly-rate](../solution/wishocracy#effective-hourly-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Effective Rate Multiplier vs Average US Wage {#sec-effective_hourly_rate_vs_wage_multiplier}
-
-**Value**: 9,744
-
-Effective rate multiplier vs average US wage
-
-$$
-Multiplier = \frac{\$291,525}{\$30} \approx 9,718x
-$$
-
-**Methodology**: [../solution/wishocracy#effective-hourly-rate](../solution/wishocracy#effective-hourly-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Eventually Avoidable Death Percentage {#sec-eventually_avoidable_death_pct}
 
 **Value**: 92.6%
@@ -3156,19 +2434,6 @@ P_{\text{avoidable}} = 1 - 0.0791 = 92.09\%
 $$
 
 *~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Minimum Investment for Family Offices {#sec-family_office_investment_min}
-
-**Value**: $5.00M
-
-Minimum investment for family offices
-
-**Methodology**: [../economics/victory-bonds](../economics/victory-bonds)
-
-*✓ High confidence*
 
 :::
 
@@ -3389,10 +2654,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3513,45 +2774,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Minimum Investment for Institutional Investors {#sec-institutional_investor_min}
-
-**Value**: $10M
-
-Minimum investment for institutional investors
-
-**Methodology**: [../economics/victory-bonds](../economics/victory-bonds)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Maximum Bond Investment for Lobbyist Incentives {#sec-lobbyist_bond_investment_max}
-
-**Value**: $20M
-
-Maximum bond investment for lobbyist incentives
-
-**Methodology**: [../strategy/roadmap#lobbyist-incentives](../strategy/roadmap#lobbyist-incentives)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Minimum Bond Investment for Lobbyist Incentives {#sec-lobbyist_bond_investment_min}
-
-**Value**: $5.00M
-
-Minimum bond investment for lobbyist incentives
-
-**Methodology**: [../strategy/roadmap#lobbyist-incentives](../strategy/roadmap#lobbyist-incentives)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Medical Research Spending as Percentage of Total Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
 **Value**: 0.0525%
@@ -3603,23 +2825,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Cost-Effectiveness Multiplier vs Givewell Top Charities {#sec-multiplier_vs_givewell}
-
-**Value**: 0
-
-Cost-effectiveness multiplier vs GiveWell top charities
-
-$$
-CostEffectivenessMultiplier = \frac{|\text{NetBenefit} \times 10^9|}{\text{GiveWellCost}} = \frac{|\$6.19M \times 10^9|}{\$4,500} \approx 1,376x
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#givewell-comparison](../appendix/1-percent-treaty-cost-effectiveness#givewell-comparison)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Annual Peace Dividend from 1% Reduction in Total War Costs {#sec-peace_dividend_annual_societal_benefit}
 
 **Value**: $114B
@@ -3633,12 +2838,6 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#peace-dividend](../appendix/1-percent-treaty-cost-effectiveness#peace-dividend)
 
 *✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
-
-{{< include ../figures/sensitivity-table-peace_dividend_annual_societal_benefit.qmd >}}
 
 :::
 
@@ -3890,34 +3089,6 @@ US per capita mental health cost
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Pre-1962 Validation Years {#sec-pre_1962_validation_years}
-
-**Value**: 77
-
-Years of empirical validation for physician-led pragmatic trials (1883-1960)
-
-*Formula*: `1960 - 1883`
-
-**Methodology**: [life-expectancy-increase-pre-1962](../references#life-expectancy-increase-pre-1962)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### System Profit per Life Saved {#sec-profit_per_life_saved}
-
-**Value**: $168K
-
-System profit per life saved (specific calculation)
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#profit-per-life](../appendix/1-percent-treaty-cost-effectiveness#profit-per-life)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### 1% Treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
 **Value**: 442
@@ -3982,253 +3153,6 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Campaign Cost {#sec-sensitivity_campaign_cost_conservative}
-
-**Value**: $333M
-
-Conservative campaign cost (3-year amortization)
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Campaign Cost {#sec-sensitivity_campaign_cost_optimistic}
-
-**Value**: $200M
-
-Optimistic campaign cost (5-year amortization)
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Central Cost per Life Saved {#sec-sensitivity_cost_per_life_central}
-
-**Value**: $-6.55
-
-Central cost per life saved
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#central-scenario](../appendix/1-percent-treaty-cost-effectiveness#central-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Cost per Life Saved {#sec-sensitivity_cost_per_life_conservative}
-
-**Value**: $-5.97
-
-Conservative cost per life saved
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Cost per Life Saved {#sec-sensitivity_cost_per_life_optimistic}
-
-**Value**: $-4.79
-
-Optimistic cost per life saved
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative dFDA Operational Costs {#sec-sensitivity_dfda_opex_conservative}
-
-**Value**: $60M
-
-Conservative dFDA operational costs
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic dFDA Operational Costs {#sec-sensitivity_dfda_opex_optimistic}
-
-**Value**: $30M
-
-Optimistic dFDA operational costs
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative dFDA Savings Estimate {#sec-sensitivity_dfda_savings_conservative}
-
-**Value**: $25B
-
-Conservative dFDA savings estimate
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic dFDA Savings Estimate {#sec-sensitivity_dfda_savings_optimistic}
-
-**Value**: $95B
-
-Optimistic dFDA savings estimate
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Net Benefit from Sensitivity Analysis {#sec-sensitivity_net_benefit_conservative}
-
-**Value**: $74.6B
-
-Conservative net benefit from sensitivity analysis
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Net Benefit from Sensitivity Analysis {#sec-sensitivity_net_benefit_optimistic}
-
-**Value**: $295B
-
-Optimistic net benefit from sensitivity analysis
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Peace Dividend Estimate {#sec-sensitivity_peace_dividend_conservative}
-
-**Value**: $50B
-
-Conservative peace dividend estimate
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Peace Dividend Estimate {#sec-sensitivity_peace_dividend_optimistic}
-
-**Value**: $200B
-
-Optimistic peace dividend estimate
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Peace QALYs {#sec-sensitivity_peace_qalys_conservative}
-
-**Value**: 17,500
-
-Conservative peace QALYs (500 lives × 35 QALYs/life)
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Peace QALYs {#sec-sensitivity_peace_qalys_optimistic}
-
-**Value**: 52,500
-
-Optimistic peace QALYs (1,500 lives × 35 QALYs/life)
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Total Benefits Estimate {#sec-sensitivity_total_benefits_conservative}
-
-**Value**: $75B
-
-Conservative total benefits estimate
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Total Benefits Estimate {#sec-sensitivity_total_benefits_optimistic}
-
-**Value**: $295B
-
-Optimistic total benefits estimate
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Conservative Total Costs {#sec-sensitivity_total_costs_conservative}
-
-**Value**: $393M
-
-Conservative total costs
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Optimistic Total Costs {#sec-sensitivity_total_costs_optimistic}
-
-**Value**: $230M
-
-Optimistic total costs
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
 
 :::
 
@@ -4340,19 +3264,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Total Words in the Book {#sec-total_book_words}
-
-**Value**: 171K
-
-Total words in the book
-
-**Methodology**: [Book Word Count Analysis](#book-word-count)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### Total Global Research Funding (Baseline + 1% Treaty Funding) {#sec-total_research_funding_with_treaty}
 
 **Value**: $94.7B
@@ -4448,61 +3359,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_campaign_total_cost.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_campaign_total_cost.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Base Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_base_case}
-
-**Value**: $140M
-
-Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
-
-*Formula*: `PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE`
-
-**Methodology**: [../economics/campaign-budget#base-case-scenario](../economics/campaign-budget#base-case-scenario)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Realistic Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_realistic}
-
-**Value**: $220M
-
-Realistic viral referendum budget (moderate tiered pricing)
-
-$$
-Budget_{realistic} = \$35M_{platform} + \$59M_{verification} + \$126M_{tiered\ payments} = \$220M
-$$
-
-**Methodology**: [../economics/campaign-budget#realistic-scenario](../economics/campaign-budget#realistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Worst-Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_worst_case}
-
-**Value**: $406M
-
-Worst-case viral referendum budget (tiered pricing with increasing marginal costs)
-
-$$
-Budget_{worst} = \$35M_{platform} + \$59M_{verification} + \$312M_{tiered\ payments} = \$406M
-$$
-
-**Methodology**: [../economics/campaign-budget#worst-case-scenario](../economics/campaign-budget#worst-case-scenario)
-
-*~ Medium confidence*
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4537,131 +3393,6 @@ $$
 
 *~ Medium confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_complete_roi_all_benefits.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_complete_roi_all_benefits.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Lower Bound Conditional ROI {#sec-treaty_complete_roi_conditional_5th_percentile}
-
-**Value**: 44
-
-Lower bound conditional ROI (95% CI lower bound, if treaty passes)
-
-$$
-ROI_{conditional,lower} = 44:1
-$$
-
-**Methodology**: [../economics/economics#probabilistic-analysis](../economics/economics#probabilistic-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Worst-Case Conditional ROI {#sec-treaty_complete_roi_conditional_95th_percentile}
-
-**Value**: 66
-
-Worst-case conditional ROI (95% CI upper bound, if treaty passes)
-
-$$
-ROI_{conditional,worst} = 66:1
-$$
-
-**Methodology**: [../economics/economics#probabilistic-analysis](../economics/economics#probabilistic-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Median Conditional ROI {#sec-treaty_complete_roi_conditional_median}
-
-**Value**: 54
-
-Median conditional ROI (50th percentile, if treaty passes)
-
-$$
-ROI_{conditional,median} = 54:1
-$$
-
-**Methodology**: [../economics/economics#probabilistic-analysis](../economics/economics#probabilistic-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Lower Bound Expected ROI {#sec-treaty_complete_roi_expected_5th_percentile}
-
-**Value**: 2.7
-
-Lower bound expected ROI (95% CI, accounting for political risk)
-
-$$
-ROI_{expected,lower} = 2.7:1
-$$
-
-**Methodology**: [../economics/economics#probabilistic-analysis](../economics/economics#probabilistic-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Upper Bound Expected ROI {#sec-treaty_complete_roi_expected_95th_percentile}
-
-**Value**: 27
-
-Upper bound expected ROI (95% CI, accounting for political risk)
-
-$$
-ROI_{expected,upper} = 27:1
-$$
-
-**Methodology**: [../economics/economics#probabilistic-analysis](../economics/economics#probabilistic-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Median Expected ROI {#sec-treaty_complete_roi_expected_median}
-
-**Value**: 14
-
-Median expected ROI (50th percentile, accounting for political risk)
-
-$$
-ROI_{expected,median} = 14:1
-$$
-
-**Methodology**: [../economics/economics#probabilistic-analysis](../economics/economics#probabilistic-analysis)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### 1% Treaty Conservative Scenario ROI {#sec-treaty_conservative_scenario_roi}
-
-**Value**: 189
-
-Conservative scenario ROI for 1% Treaty (net benefit ÷ total costs, lower-bound economic assumptions)
-
-$$
-ROI_{conservative} = \$74.6B / \$0.393B = 190:1
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario](../appendix/1-percent-treaty-cost-effectiveness#conservative-scenario)
-
-*✓ High confidence*
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4679,12 +3410,6 @@ $$
 
 *✓ High confidence*
 
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -4701,10 +3426,6 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
 
 *~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_expected_cost_per_daly_conservative.qmd >}}
 
 :::
 
@@ -4741,23 +3462,6 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty Optimistic Scenario ROI {#sec-treaty_optimistic_scenario_roi}
-
-**Value**: 1,281
-
-Optimistic scenario ROI for 1% Treaty (net benefit ÷ total costs, upper-bound economic assumptions)
-
-$$
-ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario](../appendix/1-percent-treaty-cost-effectiveness#optimistic-scenario)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
 ### 1% Treaty Basic Annual Benefits (Peace + R&D Savings) {#sec-treaty_peace_plus_rd_annual_benefits}
 
 **Value**: $155B
@@ -4769,29 +3473,6 @@ Benefits_{peace+RD} = \$113.55B + \$41.5B = \$155.05B
 $$
 
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-benefits](../appendix/1-percent-treaty-cost-effectiveness#total-benefits)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_peace_plus_rd_annual_benefits.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_peace_plus_rd_annual_benefits.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### 1% Treaty Net Annual Benefit (Peace + R&D) {#sec-treaty_peace_plus_rd_net_annual_benefit}
-
-**Value**: $155B
-
-Net annual benefit from peace dividend + R&D savings (basic 2-benefit case minus costs)
-
-$$
-NetBenefit = \$163.55B - \$0.29B = \$163.26B
-$$
-
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#net-benefit](../appendix/1-percent-treaty-cost-effectiveness#net-benefit)
 
 *✓ High confidence*
 
@@ -4879,12 +3560,6 @@ $$
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
 
 *~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-treaty_roi_lag_elimination.qmd >}}
-
-{{< include ../figures/sensitivity-table-treaty_roi_lag_elimination.qmd >}}
 
 :::
 
@@ -5018,36 +3693,6 @@ $$
 
 :::
 
-::: {.callout-note icon=false collapse=false}
-### Victory Bond Investment Unit for Retail Investors {#sec-victory_bond_investment_unit_usd}
-
-**Value**: $1.00K
-
-VICTORY bond investment unit for retail investors
-
-**Methodology**: [../strategy/roadmap#victory-bonds](../strategy/roadmap#victory-bonds)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### Annual Payout per $1,000 Victory Bond Investment Unit {#sec-victory_bond_payout_per_unit_usd_annual}
-
-**Value**: $2.72K
-
-Annual payout per $1,000 VICTORY bond investment unit
-
-$$
-PayoutPerUnit = \frac{\$2.718B}{\$1B} \times \$1,000 = \$2,718
-$$
-
-**Methodology**: [../strategy/roadmap#victory-bonds](../strategy/roadmap#victory-bonds)
-
-*✓ High confidence*
-
-:::
-
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
@@ -5086,11 +3731,319 @@ Time to vote (minutes)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Celebrity and Influencer Endorsements {#sec-campaign_celebrity_endorsement}
+
+**Value**: $15M
+
+Celebrity and influencer endorsements
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Community Organizing and Ambassador Program Budget {#sec-campaign_community_organizing}
+
+**Value**: $30M
+
+Community organizing and ambassador program budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Contingency Fund for Unexpected Costs {#sec-campaign_contingency}
+
+**Value**: $50M
+
+Contingency fund for unexpected costs
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Defense Industry Conversion Program {#sec-campaign_defense_conversion}
+
+**Value**: $50M
+
+Defense industry conversion program
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Budget for Co-Opting Defense Industry Lobbyists {#sec-campaign_defense_lobbyist_budget}
+
+**Value**: $50M
+
+Budget for co-opting defense industry lobbyists
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Healthcare Industry Alignment and Partnerships {#sec-campaign_healthcare_alignment}
+
+**Value**: $35M
+
+Healthcare industry alignment and partnerships
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Campaign Operational Infrastructure {#sec-campaign_infrastructure}
+
+**Value**: $20M
+
+Campaign operational infrastructure
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### AI-Assisted Legal Work Budget {#sec-campaign_legal_ai_budget}
+
+**Value**: $50M
+
+AI-assisted legal work budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Legal Defense Fund {#sec-campaign_legal_defense}
+
+**Value**: $20M
+
+Legal defense fund
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Legal Drafting and Compliance Work {#sec-campaign_legal_work}
+
+**Value**: $60M
+
+Legal drafting and compliance work
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### EU Lobbying Campaign Budget {#sec-campaign_lobbying_eu}
+
+**Value**: $40M
+
+EU lobbying campaign budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### G20 Countries Lobbying Budget {#sec-campaign_lobbying_g20_millions}
+
+**Value**: $35M
+
+G20 countries lobbying budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### US Lobbying Campaign Budget {#sec-campaign_lobbying_us}
+
+**Value**: $50M
+
+US lobbying campaign budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Maximum Mass Media Campaign Budget {#sec-campaign_media_budget_max}
+
+**Value**: $1.00B
+
+Maximum mass media campaign budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Minimum Mass Media Campaign Budget {#sec-campaign_media_budget_min}
+
+**Value**: $500M
+
+Minimum mass media campaign budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Opposition Research and Rapid Response {#sec-campaign_opposition_research}
+
+**Value**: $25M
+
+Opposition research and rapid response
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Phase 1 Campaign Budget {#sec-campaign_phase1_budget}
+
+**Value**: $200M
+
+Phase 1 campaign budget (Foundation, Year 1)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Phase 2 Campaign Budget {#sec-campaign_phase2_budget}
+
+**Value**: $500M
+
+Phase 2 campaign budget (Scale & Momentum, Years 2-3)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Pilot Program Testing in Small Countries {#sec-campaign_pilot_programs}
+
+**Value**: $30M
+
+Pilot program testing in small countries
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Voting Platform and Technology Development {#sec-campaign_platform_development}
+
+**Value**: $35M
+
+Voting platform and technology development
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Regulatory Compliance and Navigation {#sec-campaign_regulatory_navigation}
+
+**Value**: $20M
+
+Regulatory compliance and navigation
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Scaling Preparation and Blueprints {#sec-campaign_scaling_prep}
+
+**Value**: $30M
+
+Scaling preparation and blueprints
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Campaign Core Team Staff Budget {#sec-campaign_staff_budget}
+
+**Value**: $40M
+
+Campaign core team staff budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Super PAC Campaign Expenditures {#sec-campaign_super_pac_budget}
+
+**Value**: $30M
+
+Super PAC campaign expenditures
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Tech Industry Partnerships and Infrastructure {#sec-campaign_tech_partnerships}
+
+**Value**: $25M
+
+Tech industry partnerships and infrastructure
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Post-Victory Treaty Implementation Support {#sec-campaign_treaty_implementation}
+
+**Value**: $40M
+
+Post-victory treaty implementation support
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Viral Marketing Content Creation Budget {#sec-campaign_viral_content_budget}
+
+**Value**: $40M
+
+Viral marketing content creation budget
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Childhood Vaccination Cost per DALY (Estimated) {#sec-childhood_vaccination_cost_per_daly}
 
 **Value**: $30
 
 Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Mid-Range Funding for Commercial Dct Platform {#sec-dct_platform_funding_medium}
+
+**Value**: $500M
+
+Mid-range funding for commercial DCT platform
 
 *Core definition*
 
@@ -5108,11 +4061,176 @@ Percentage of budget defense sector keeps under 1% treaty
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Years to Reach Full dFDA Adoption {#sec-dfda_npv_adoption_ramp_years}
+
+**Value**: 5
+
+Years to reach full dFDA adoption
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Core Platform Annual OPEX {#sec-dfda_npv_annual_opex}
+
+**Value**: $18.9M
+
+dFDA core platform annual opex (midpoint of $11-26.5M)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Core Platform Build Cost {#sec-dfda_npv_upfront_cost}
+
+**Value**: $40M
+
+dFDA core platform build cost
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Community Support Costs {#sec-dfda_opex_community}
+
+**Value**: $2.00M
+
+dFDA community support costs
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Infrastructure Costs {#sec-dfda_opex_infrastructure}
+
+**Value**: $8.00M
+
+dFDA infrastructure costs (cloud, security)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Platform Maintenance Costs {#sec-dfda_opex_platform_maintenance}
+
+**Value**: $15M
+
+dFDA platform maintenance costs
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Regulatory Coordination Costs {#sec-dfda_opex_regulatory}
+
+**Value**: $5.00M
+
+dFDA regulatory coordination costs
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Staff Costs {#sec-dfda_opex_staff}
+
+**Value**: $10M
+
+dFDA staff costs (minimal, AI-assisted)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
+
+**Value**: $1.00K
+
+Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Platform One-Time Build Cost {#sec-dfda_upfront_build}
+
+**Value**: $40M
+
+dFDA platform one-time build cost (central estimate)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### dFDA Platform One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
+
+**Value**: $46M
+
+dFDA platform one-time build cost (high estimate)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### DIH Broader Initiatives Annual OPEX {#sec-dih_npv_annual_opex_initiatives}
+
+**Value**: $21.1M
+
+DIH broader initiatives annual opex (medium case)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### DIH Broader Initiatives Upfront Cost {#sec-dih_npv_upfront_cost_initiatives}
+
+**Value**: $230M
+
+DIH broader initiatives upfront cost (medium case)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### DIH Annual Funding for Medical Research {#sec-dih_treasury_to_medical_research_annual}
 
 **Value**: $24.5B
 
 Annual funding for medical research (treaty funding minus bond payouts)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Percentage of Caregiving for Treatable Disease Conditions {#sec-disease_related_caregiver_pct}
+
+**Value**: 40%
+
+Percentage of caregiving for treatable disease conditions (vs aging, disability, children)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Minimum Investment for Family Offices {#sec-family_office_investment_min}
+
+**Value**: $5.00M
+
+Minimum investment for family offices
 
 *Core definition*
 
@@ -5164,6 +4282,17 @@ Annual funding for medical research (treaty funding minus bond payouts)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Minimum Investment for Institutional Investors {#sec-institutional_investor_min}
+
+**Value**: $10M
+
+Minimum investment for institutional investors
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Life Extension Years 10% {#sec-life_extension_years_10pct}
 
 **Value**: 2.57
@@ -5194,6 +4323,17 @@ Annual funding for medical research (treaty funding minus bond payouts)
 ### Life Extension Years 5% {#sec-life_extension_years_5pct}
 
 **Value**: 1.29
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Maximum Bond Investment for Lobbyist Incentives {#sec-lobbyist_bond_investment_max}
+
+**Value**: $20M
+
+Maximum bond investment for lobbyist incentives
 
 *Core definition*
 
@@ -5357,9 +4497,31 @@ Standard time horizon for NPV analysis
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Pre-1962 Validation Years {#sec-pre_1962_validation_years}
+
+**Value**: 77
+
+Years of empirical validation for physician-led pragmatic trials (1883-1960)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Seconds Per Year {#sec-seconds_per_year}
 
 **Value**: 31.5M
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Total Words in the Book {#sec-total_book_words}
+
+**Value**: 171K
+
+Total words in the book
 
 *Core definition*
 
@@ -5415,6 +4577,39 @@ Reserve fund / contingency buffer
 **Value**: 4
 
 Treaty campaign duration (3-5 year range, using midpoint)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Base Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_base_case}
+
+**Value**: $140M
+
+Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Realistic Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_realistic}
+
+**Value**: $220M
+
+Realistic viral referendum budget (moderate tiered pricing)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Worst-Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_worst_case}
+
+**Value**: $406M
+
+Worst-case viral referendum budget (tiered pricing with increasing marginal costs)
 
 *Core definition*
 
@@ -5506,6 +4701,17 @@ Annual return percentage for VICTORY bondholders
 **Value**: 10%
 
 Percentage of captured dividend funding VICTORY bonds (10%)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Victory Bond Investment Unit for Retail Investors {#sec-victory_bond_investment_unit_usd}
+
+**Value**: $1.00K
+
+VICTORY bond investment unit for retail investors
 
 *Core definition*
 

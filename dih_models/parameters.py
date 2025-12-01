@@ -1147,7 +1147,7 @@ ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
 PRE_1962_VALIDATION_YEARS = Parameter(
     77,
     source_ref=ReferenceID.LIFE_EXPECTANCY_INCREASE_PRE_1962,
-    source_type="calculated",
+    source_type="definition",
     description="Years of empirical validation for physician-led pragmatic trials (1883-1960)",
     display_name="Pre-1962 Validation Years",
     unit="years",
@@ -1164,7 +1164,7 @@ PRE_1962_VALIDATION_YEARS = Parameter(
 DFDA_UPFRONT_BUILD = Parameter(
     40_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA platform one-time build cost (central estimate)",
     display_name="dFDA Platform One-Time Build Cost",
     unit="USD",
@@ -1174,7 +1174,7 @@ DFDA_UPFRONT_BUILD = Parameter(
 DFDA_UPFRONT_BUILD_MAX = Parameter(
     46_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA platform one-time build cost (high estimate)",
     display_name="dFDA Platform One-Time Build Cost (Maximum)",
     unit="USD",
@@ -1185,7 +1185,7 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
 DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
     500_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom",
-    source_type="calculated",
+    source_type="definition",
     description="Mid-range funding for commercial DCT platform",
     display_name="Mid-Range Funding for Commercial Dct Platform",
     unit="USD",
@@ -1196,7 +1196,7 @@ DCT_PLATFORM_FUNDING_MEDIUM = Parameter(
 DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
     1000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
-    source_type="calculated",
+    source_type="definition",
     description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
     display_name="dFDA Target Cost per Patient in USD",
     unit="USD/patient",
@@ -1207,7 +1207,7 @@ DFDA_TARGET_COST_PER_PATIENT_USD = Parameter(
 DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     15_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA platform maintenance costs",
     display_name="dFDA Platform Maintenance Costs",
     unit="USD/year",
@@ -1217,7 +1217,7 @@ DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
 DFDA_OPEX_STAFF = Parameter(
     10_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA staff costs (minimal, AI-assisted)",
     display_name="dFDA Staff Costs",
     unit="USD/year",
@@ -1227,7 +1227,7 @@ DFDA_OPEX_STAFF = Parameter(
 DFDA_OPEX_INFRASTRUCTURE = Parameter(
     8_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA infrastructure costs (cloud, security)",
     display_name="dFDA Infrastructure Costs",
     unit="USD/year",
@@ -1237,7 +1237,7 @@ DFDA_OPEX_INFRASTRUCTURE = Parameter(
 DFDA_OPEX_REGULATORY = Parameter(
     5_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA regulatory coordination costs",
     display_name="dFDA Regulatory Coordination Costs",
     unit="USD/year",
@@ -1247,7 +1247,7 @@ DFDA_OPEX_REGULATORY = Parameter(
 DFDA_OPEX_COMMUNITY = Parameter(
     2_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA community support costs",
     display_name="dFDA Community Support Costs",
     unit="USD/year",
@@ -2111,7 +2111,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
 TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
     140_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd#base-case-scenario",
-    source_type="calculated",
+    source_type="definition",
     description="Base case viral referendum budget (assumes flat $0.50/vote, optimistic)",
     display_name="Base Case Viral Referendum Budget",
     unit="USD",
@@ -2123,7 +2123,7 @@ TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
 TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE = Parameter(
     406_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd#worst-case-scenario",
-    source_type="calculated",
+    source_type="definition",
     description="Worst-case viral referendum budget (tiered pricing with increasing marginal costs)",
     display_name="Worst-Case Viral Referendum Budget",
     unit="USD",
@@ -2136,7 +2136,7 @@ TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE = Parameter(
 TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC = Parameter(
     220_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd#realistic-scenario",
-    source_type="calculated",
+    source_type="definition",
     description="Realistic viral referendum budget (moderate tiered pricing)",
     display_name="Realistic Viral Referendum Budget",
     unit="USD",
@@ -2162,7 +2162,7 @@ TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED = Parameter(
 CAMPAIGN_PHASE1_BUDGET = Parameter(
     200_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Phase 1 campaign budget (Foundation, Year 1)",
     display_name="Phase 1 Campaign Budget",
     unit="USD",
@@ -2172,7 +2172,7 @@ CAMPAIGN_PHASE1_BUDGET = Parameter(
 CAMPAIGN_PHASE2_BUDGET = Parameter(
     500_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
     display_name="Phase 2 Campaign Budget",
     unit="USD",
@@ -2182,7 +2182,7 @@ CAMPAIGN_PHASE2_BUDGET = Parameter(
 CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
     500_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Minimum mass media campaign budget",
     display_name="Minimum Mass Media Campaign Budget",
     unit="USD",
@@ -2192,7 +2192,7 @@ CAMPAIGN_MEDIA_BUDGET_MIN = Parameter(
 CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
     1_000_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Maximum mass media campaign budget",
     display_name="Maximum Mass Media Campaign Budget",
     unit="USD",
@@ -2202,7 +2202,7 @@ CAMPAIGN_MEDIA_BUDGET_MAX = Parameter(
 CAMPAIGN_STAFF_BUDGET = Parameter(
     40_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Campaign core team staff budget",
     display_name="Campaign Core Team Staff Budget",
     unit="USD",
@@ -2213,7 +2213,7 @@ CAMPAIGN_STAFF_BUDGET = Parameter(
 CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
     50_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="AI-assisted legal work budget",
     display_name="AI-Assisted Legal Work Budget",
     unit="USD",
@@ -2223,7 +2223,7 @@ CAMPAIGN_LEGAL_AI_BUDGET = Parameter(
 CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
     40_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Viral marketing content creation budget",
     display_name="Viral Marketing Content Creation Budget",
     unit="USD",
@@ -2233,7 +2233,7 @@ CAMPAIGN_VIRAL_CONTENT_BUDGET = Parameter(
 CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
     30_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Community organizing and ambassador program budget",
     display_name="Community Organizing and Ambassador Program Budget",
     unit="USD",
@@ -2243,7 +2243,7 @@ CAMPAIGN_COMMUNITY_ORGANIZING = Parameter(
 CAMPAIGN_LOBBYING_US = Parameter(
     50_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="US lobbying campaign budget",
     display_name="US Lobbying Campaign Budget",
     unit="USD",
@@ -2253,7 +2253,7 @@ CAMPAIGN_LOBBYING_US = Parameter(
 CAMPAIGN_LOBBYING_EU = Parameter(
     40_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="EU lobbying campaign budget",
     display_name="EU Lobbying Campaign Budget",
     unit="USD",
@@ -2263,7 +2263,7 @@ CAMPAIGN_LOBBYING_EU = Parameter(
 CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
     35_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="G20 countries lobbying budget",
     display_name="G20 Countries Lobbying Budget",
     unit="USD",
@@ -2273,7 +2273,7 @@ CAMPAIGN_LOBBYING_G20_MILLIONS = Parameter(
 CAMPAIGN_DEFENSE_LOBBYIST_BUDGET = Parameter(
     50_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Budget for co-opting defense industry lobbyists",
     display_name="Budget for Co-Opting Defense Industry Lobbyists",
     unit="USD",
@@ -2296,7 +2296,7 @@ DEFENSE_LOBBYING_ANNUAL = Parameter(
 CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
     30_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Super PAC campaign expenditures",
     display_name="Super PAC Campaign Expenditures",
     unit="USD",
@@ -2306,7 +2306,7 @@ CAMPAIGN_SUPER_PAC_BUDGET = Parameter(
 CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
     25_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Opposition research and rapid response",
     display_name="Opposition Research and Rapid Response",
     unit="USD",
@@ -2316,7 +2316,7 @@ CAMPAIGN_OPPOSITION_RESEARCH = Parameter(
 CAMPAIGN_PILOT_PROGRAMS = Parameter(
     30_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Pilot program testing in small countries",
     display_name="Pilot Program Testing in Small Countries",
     unit="USD",
@@ -2326,7 +2326,7 @@ CAMPAIGN_PILOT_PROGRAMS = Parameter(
 CAMPAIGN_LEGAL_WORK = Parameter(
     60_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Legal drafting and compliance work",
     display_name="Legal Drafting and Compliance Work",
     unit="USD",
@@ -2344,7 +2344,7 @@ CAMPAIGN_LEGAL_WORK = Parameter(
 CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
     20_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Regulatory compliance and navigation",
     display_name="Regulatory Compliance and Navigation",
     unit="USD",
@@ -2354,7 +2354,7 @@ CAMPAIGN_REGULATORY_NAVIGATION = Parameter(
 CAMPAIGN_LEGAL_DEFENSE = Parameter(
     20_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Legal defense fund",
     display_name="Legal Defense Fund",
     unit="USD",
@@ -2364,7 +2364,7 @@ CAMPAIGN_LEGAL_DEFENSE = Parameter(
 CAMPAIGN_DEFENSE_CONVERSION = Parameter(
     50_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Defense industry conversion program",
     display_name="Defense Industry Conversion Program",
     unit="USD",
@@ -2382,7 +2382,7 @@ CAMPAIGN_DEFENSE_CONVERSION = Parameter(
 CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
     35_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Healthcare industry alignment and partnerships",
     display_name="Healthcare Industry Alignment and Partnerships",
     unit="USD",
@@ -2392,7 +2392,7 @@ CAMPAIGN_HEALTHCARE_ALIGNMENT = Parameter(
 CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
     25_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Tech industry partnerships and infrastructure",
     display_name="Tech Industry Partnerships and Infrastructure",
     unit="USD",
@@ -2402,7 +2402,7 @@ CAMPAIGN_TECH_PARTNERSHIPS = Parameter(
 CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
     15_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Celebrity and influencer endorsements",
     display_name="Celebrity and Influencer Endorsements",
     unit="USD",
@@ -2412,7 +2412,7 @@ CAMPAIGN_CELEBRITY_ENDORSEMENT = Parameter(
 CAMPAIGN_INFRASTRUCTURE = Parameter(
     20_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Campaign operational infrastructure",
     display_name="Campaign Operational Infrastructure",
     unit="USD",
@@ -2422,7 +2422,7 @@ CAMPAIGN_INFRASTRUCTURE = Parameter(
 CAMPAIGN_CONTINGENCY = Parameter(
     50_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Contingency fund for unexpected costs",
     display_name="Contingency Fund for Unexpected Costs",
     unit="USD",
@@ -2440,7 +2440,7 @@ CAMPAIGN_CONTINGENCY = Parameter(
 CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
     40_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Post-victory treaty implementation support",
     display_name="Post-Victory Treaty Implementation Support",
     unit="USD",
@@ -2458,7 +2458,7 @@ CAMPAIGN_TREATY_IMPLEMENTATION = Parameter(
 CAMPAIGN_SCALING_PREP = Parameter(
     30_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Scaling preparation and blueprints",
     display_name="Scaling Preparation and Blueprints",
     unit="USD",
@@ -2468,7 +2468,7 @@ CAMPAIGN_SCALING_PREP = Parameter(
 CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
     35_000_000,
     source_ref="/knowledge/economics/campaign-budget.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Voting platform and technology development",
     display_name="Voting Platform and Technology Development",
     unit="USD",
@@ -2488,7 +2488,7 @@ CAMPAIGN_PLATFORM_DEVELOPMENT = Parameter(
 INSTITUTIONAL_INVESTOR_MIN = Parameter(
     10_000_000,
     source_ref="/knowledge/economics/victory-bonds.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Minimum investment for institutional investors",
     display_name="Minimum Investment for Institutional Investors",
     unit="USD",
@@ -2498,7 +2498,7 @@ INSTITUTIONAL_INVESTOR_MIN = Parameter(
 FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
     5_000_000,
     source_ref="/knowledge/economics/victory-bonds.qmd",
-    source_type="calculated",
+    source_type="definition",
     description="Minimum investment for family offices",
     display_name="Minimum Investment for Family Offices",
     unit="USD",
@@ -2537,21 +2537,6 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_RD_GROSS_SAVINGS_ANNUAL"],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_RD_GROSS_SAVINGS_ANNUAL"]
 )  # $155.05B (peace + R&D only)
-
-# Net benefit (peace + R&D only)
-TREATY_PEACE_PLUS_RD_NET_ANNUAL_BENEFIT = Parameter(
-    TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS - TREATY_TOTAL_ANNUAL_COSTS,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#net-benefit",
-    source_type="calculated",
-    description="Net annual benefit from peace dividend + R&D savings (basic 2-benefit case minus costs)",
-    display_name="1% Treaty Net Annual Benefit (Peace + R&D)",
-    unit="USD/year",
-    formula="TOTAL_BENEFITS - TOTAL_COSTS",
-    latex=r"NetBenefit = \$163.55B - \$0.29B = \$163.26B",
-    keywords=["1%", "one percent", "international agreement", "peace treaty", "yearly", "agreement", "pact"]
-)  # $163.71B
-# DELETED: TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED
-# Depended on deleted TREATY_DFDA_ICER_PER_QALY
 
 # ---
 # FINANCIAL PARAMETERS - NPV ANALYSIS
@@ -2597,7 +2582,7 @@ NPV_TIME_HORIZON_YEARS = Parameter(
 DFDA_NPV_UPFRONT_COST = Parameter(
     40_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA core platform build cost",
     display_name="dFDA Core Platform Build Cost",
     unit="USD",
@@ -2607,7 +2592,7 @@ DFDA_NPV_UPFRONT_COST = Parameter(
 DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
     229_750_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
-    source_type="calculated",
+    source_type="definition",
     description="DIH broader initiatives upfront cost (medium case)",
     display_name="DIH Broader Initiatives Upfront Cost",
     unit="USD",
@@ -2617,7 +2602,7 @@ DIH_NPV_UPFRONT_COST_INITIATIVES = Parameter(
 DFDA_NPV_ANNUAL_OPEX = Parameter(
     18_950_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
-    source_type="calculated",
+    source_type="definition",
     description="dFDA core platform annual opex (midpoint of $11-26.5M)",
     display_name="dFDA Core Platform Annual OPEX",
     unit="USD/year",
@@ -2627,7 +2612,7 @@ DFDA_NPV_ANNUAL_OPEX = Parameter(
 DIH_NPV_ANNUAL_OPEX_INITIATIVES = Parameter(
     21_100_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
-    source_type="calculated",
+    source_type="definition",
     description="DIH broader initiatives annual opex (medium case)",
     display_name="DIH Broader Initiatives Annual OPEX",
     unit="USD/year",
@@ -2675,7 +2660,7 @@ DFDA_NPV_ANNUAL_OPEX_TOTAL = Parameter(
 DFDA_NPV_ADOPTION_RAMP_YEARS = Parameter(
     5,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve",
-    source_type="calculated",
+    source_type="definition",
     description="Years to reach full dFDA adoption",
     display_name="Years to Reach Full dFDA Adoption",
     unit="years",
@@ -3346,20 +3331,6 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"]
 )  # Midpoint of top charities
 
-# Cost-effectiveness multiplier
-MULTIPLIER_VS_GIVEWELL = Parameter(
-    # DELETED: Was using TREATY_DFDA_NET_BENEFIT_PER_LIFE_SAVED which is deleted
-    0,  # Placeholder - parameter needs recalculation with different methodology
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#givewell-comparison",
-    source_type="calculated",
-    description="Cost-effectiveness multiplier vs GiveWell top charities",
-    display_name="Cost-Effectiveness Multiplier vs Givewell Top Charities",
-    unit="ratio",
-    formula="ABS(NET_BENEFIT × 1B) ÷ GIVEWELL_COST",
-    latex=r"CostEffectivenessMultiplier = \frac{|\text{NetBenefit} \times 10^9|}{\text{GiveWellCost}} = \frac{|\$6.19M \times 10^9|}{\$4,500} \approx 1,376x",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple", "factor", "international agreement"]
-)  # ~1,376x more cost-effective
-
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
     280,
@@ -3622,19 +3593,6 @@ DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
 # should be calculated directly from GLOBAL_DAILY_DEATHS_CURABLE_DISEASES (150,000 deaths/day)
 # rather than through this circular division.
 
-# Deaths delay costs (preventable deaths per second from curable diseases)
-COST_OF_DELAY_DEATHS_PER_SECOND = Parameter(
-    GLOBAL_DAILY_DEATHS_CURABLE_DISEASES / (24 * 60 * 60),
-    source_ref="/knowledge/problem/cost-of-war.qmd#cost-of-delay",
-    source_type="calculated",
-    description="Preventable deaths per second from curable diseases",
-    display_name="Preventable Deaths per Second from Curable Diseases",
-    unit="deaths/second",
-    formula="DAILY_DEATHS ÷ SECONDS_PER_DAY",
-    latex=r"DeathsPerSecond = \frac{150,000 \text{ (daily deaths)}}{86,400 \text{ (sec/day)}} \approx 1.74 \text{ (deaths/sec)}",
-    keywords=["day", "each day", "holdup", "lag", "latency", "per day", "postponement"]
-)  # deaths per second
-
 # ---
 # SCENARIO PARAMETERS
 # ---
@@ -3733,303 +3691,13 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 # - Academic/comprehensive analyses: Show full range 463:1 to 11,540:1
 # - Advocacy (use cautiously): DFDA_ROI_RD_PLUS_DELAY_PLUS_INNOVATION (11,540:1)
 
-# ---
-# SENSITIVITY ANALYSIS SCENARIOS
-# ---
 
-# Source: brain/book/appendix/icer-full-calculation.qmd sensitivity tables
 
-# Conservative scenario
-SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE = Parameter(
-    50_000_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative peace dividend estimate",
-    display_name="Conservative Peace Dividend Estimate",
-    unit="USD",
-    keywords=["50.0b", "low estimate", "conflict resolution", "international agreement", "peace treaty", "cautious", "pessimistic"]
-)  # $50B
 
-SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE = Parameter(
-    25_000_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative dFDA savings estimate",
-    display_name="Conservative dFDA Savings Estimate",
-    unit="USD",
-    keywords=["25.0b", "pragmatic trials", "real world evidence", "low estimate", "decentralized trials", "drug agency", "food and drug administration"]
-)  # $25B
 
-SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE = Parameter(
-    75_000_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative total benefits estimate",
-    display_name="Conservative Total Benefits Estimate",
-    unit="USD",
-    keywords=["75.0b", "low estimate", "international agreement", "peace treaty", "cautious", "pessimistic", "worst case"]
-)  # $75B
 
-SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE = Parameter(
-    333_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative campaign cost (3-year amortization)",
-    display_name="Conservative Campaign Cost",
-    unit="USD/year",
-    keywords=["333.0m", "low estimate", "international agreement", "peace treaty", "cautious", "pessimistic", "worst case"]
-)  # $333M/year (3-year amortization)
 
-SENSITIVITY_DFDA_OPEX_CONSERVATIVE = Parameter(
-    60_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative dFDA operational costs",
-    display_name="Conservative dFDA Operational Costs",
-    unit="USD/year",
-    keywords=["60.0m", "pragmatic trials", "real world evidence", "low estimate", "decentralized trials", "drug agency", "food and drug administration"]
-)  # $60M/year
 
-SENSITIVITY_TOTAL_COSTS_CONSERVATIVE = Parameter(
-    393_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative total costs",
-    display_name="Conservative Total Costs",
-    unit="USD/year",
-    keywords=["393.0m", "low estimate", "international agreement", "peace treaty", "cautious", "pessimistic", "worst case"]
-)  # $393M/year
-
-SENSITIVITY_PEACE_QALYS_CONSERVATIVE = Parameter(
-    17500,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative peace QALYs (500 lives × 35 QALYs/life)",
-    display_name="Conservative Peace QALYs",
-    unit="QALYs/year",
-    keywords=["18k", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "gbd"]
-)  # 500 lives × 35 QALYs/life
-SENSITIVITY_NET_BENEFIT_CONSERVATIVE = Parameter(
-    74_600_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative net benefit from sensitivity analysis",
-    display_name="Conservative Net Benefit from Sensitivity Analysis",
-    unit="USD",
-    keywords=["74.6b", "low estimate", "international agreement", "peace treaty", "cautious", "pessimistic", "worst case"]
-)  # $74.6B
-
-SENSITIVITY_COST_PER_LIFE_CONSERVATIVE = Parameter(
-    -5.97,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative cost per life saved",
-    display_name="Conservative Cost per Life Saved",
-    unit="USD/life",
-    keywords=["low estimate", "international agreement", "peace treaty", "cautious", "pessimistic", "worst case", "costs"]
-)  # -$5.97M per life (in millions)
-
-# Central scenario (baseline) - uses main parameters directly, no aliases needed
-SENSITIVITY_COST_PER_LIFE_CENTRAL = Parameter(
-    -6.55,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#central-scenario",
-    source_type="calculated",
-    description="Central cost per life saved",
-    display_name="Central Cost per Life Saved",
-    unit="USD/life",
-    keywords=["international agreement", "peace treaty", "costs", "funding", "investment", "life", "allocation"]
-)  # -$6.55M per life (in millions)
-
-# Optimistic scenario
-SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC = Parameter(
-    200_000_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic peace dividend estimate",
-    display_name="Optimistic Peace Dividend Estimate",
-    unit="USD",
-    keywords=["200.0b", "high estimate", "best case", "ambitious", "overestimate", "conflict resolution", "international agreement"]
-)  # $200B
-
-SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC = Parameter(
-    95_000_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic dFDA savings estimate",
-    display_name="Optimistic dFDA Savings Estimate",
-    unit="USD",
-    keywords=["95.0b", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
-)  # $95B
-
-SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC = Parameter(
-    295_000_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic total benefits estimate",
-    display_name="Optimistic Total Benefits Estimate",
-    unit="USD",
-    keywords=["295.0b", "high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty"]
-)  # $295B
-
-SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC = Parameter(
-    200_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic campaign cost (5-year amortization)",
-    display_name="Optimistic Campaign Cost",
-    unit="USD/year",
-    keywords=["200.0m", "high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty"]
-)  # $200M/year (5-year amortization)
-
-SENSITIVITY_DFDA_OPEX_OPTIMISTIC = Parameter(
-    30_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic dFDA operational costs",
-    display_name="Optimistic dFDA Operational Costs",
-    unit="USD/year",
-    keywords=["30.0m", "pragmatic trials", "real world evidence", "high estimate", "best case", "ambitious", "overestimate"]
-)  # $30M/year
-
-SENSITIVITY_TOTAL_COSTS_OPTIMISTIC = Parameter(
-    230_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic total costs",
-    display_name="Optimistic Total Costs",
-    unit="USD/year",
-    keywords=["230.0m", "high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty"]
-)  # $230M/year
-
-SENSITIVITY_PEACE_QALYS_OPTIMISTIC = Parameter(
-    52500,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic peace QALYs (1,500 lives × 35 QALYs/life)",
-    display_name="Optimistic Peace QALYs",
-    unit="QALYs/year",
-    keywords=["52k", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "high estimate"]
-)  # 1,500 lives × 35 QALYs/life
-
-SENSITIVITY_NET_BENEFIT_OPTIMISTIC = Parameter(
-    294_800_000_000,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic net benefit from sensitivity analysis",
-    display_name="Optimistic Net Benefit from Sensitivity Analysis",
-    unit="USD",
-    keywords=["294.8b", "high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty"]
-)  # $294.8B
-
-SENSITIVITY_COST_PER_LIFE_OPTIMISTIC = Parameter(
-    -4.79,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic cost per life saved",
-    display_name="Optimistic Cost per Life Saved",
-    unit="USD/life",
-    keywords=["high estimate", "best case", "ambitious", "overestimate", "international agreement", "peace treaty", "costs"]
-)  # -$4.79M per life (in millions)
-
-# Sensitivity ROI calculations for Treaty economic scenarios
-TREATY_CONSERVATIVE_SCENARIO_ROI = Parameter(
-    int(SENSITIVITY_NET_BENEFIT_CONSERVATIVE / SENSITIVITY_TOTAL_COSTS_CONSERVATIVE),
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#conservative-scenario",
-    source_type="calculated",
-    description="Conservative scenario ROI for 1% Treaty (net benefit ÷ total costs, lower-bound economic assumptions)",
-    display_name="1% Treaty Conservative Scenario ROI",
-    unit="ratio",
-    formula="NET_BENEFIT ÷ TOTAL_COSTS",
-    latex=r"ROI_{conservative} = \$74.6B / \$0.393B = 190:1",
-    keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "low estimate", "return on investment", "international agreement", "treaty"]
-)  # 190:1 for conservative economic scenario
-TREATY_OPTIMISTIC_SCENARIO_ROI = Parameter(
-    int(SENSITIVITY_NET_BENEFIT_OPTIMISTIC / SENSITIVITY_TOTAL_COSTS_OPTIMISTIC),
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#optimistic-scenario",
-    source_type="calculated",
-    description="Optimistic scenario ROI for 1% Treaty (net benefit ÷ total costs, upper-bound economic assumptions)",
-    display_name="1% Treaty Optimistic Scenario ROI",
-    unit="ratio",
-    formula="NET_BENEFIT ÷ TOTAL_COSTS",
-    latex=r"ROI_{optimistic} = \$294.8B / \$0.230B = 1,282:1",
-    keywords=["high estimate", "bcr", "best case", "ambitious", "overestimate", "benefit cost ratio", "economic return", "treaty"]
-)  # 1,282:1 for optimistic economic scenario
-
-# Probabilistic ROI analysis - conditional on implementation success
-# Source: /knowledge/economics/economics.qmd probabilistic analysis section
-TREATY_COMPLETE_ROI_CONDITIONAL_95TH_PERCENTILE = Parameter(
-    66,
-    source_ref="/knowledge/economics/economics.qmd#probabilistic-analysis",
-    source_type="calculated",
-    description="Worst-case conditional ROI (95% CI upper bound, if treaty passes)",
-    display_name="Worst-Case Conditional ROI",
-    unit="ratio",
-    formula="Probabilistic simulation: benefits half, costs double",
-    latex=r"ROI_{conditional,worst} = 66:1",
-    keywords=["66", "upper bound", "if implementation succeeds", "simulation", "95% ci", "pessimistic", "conservative"]
-)
-
-TREATY_COMPLETE_ROI_CONDITIONAL_MEDIAN = Parameter(
-    54,
-    source_ref="/knowledge/economics/economics.qmd#probabilistic-analysis",
-    source_type="calculated",
-    description="Median conditional ROI (50th percentile, if treaty passes)",
-    display_name="Median Conditional ROI",
-    unit="ratio",
-    formula="Probabilistic simulation: median outcome",
-    latex=r"ROI_{conditional,median} = 54:1",
-    keywords=["54", "50th percentile", "middle value", "if implementation succeeds", "simulation", "typical", "expected"]
-)
-
-TREATY_COMPLETE_ROI_CONDITIONAL_5TH_PERCENTILE = Parameter(
-    44,
-    source_ref="/knowledge/economics/economics.qmd#probabilistic-analysis",
-    source_type="calculated",
-    description="Lower bound conditional ROI (95% CI lower bound, if treaty passes)",
-    display_name="Lower Bound Conditional ROI",
-    unit="ratio",
-    formula="Probabilistic simulation: 5th percentile",
-    latex=r"ROI_{conditional,lower} = 44:1",
-    keywords=["44", "if implementation succeeds", "simulation", "95% ci", "pessimistic", "conservative", "probabilistic"]
-)
-
-# Probabilistic ROI analysis - expected value accounting for political risk
-# Source: /knowledge/economics/economics.qmd probabilistic analysis section
-TREATY_COMPLETE_ROI_EXPECTED_5TH_PERCENTILE = Parameter(
-    2.7,
-    source_ref="/knowledge/economics/economics.qmd#probabilistic-analysis",
-    source_type="calculated",
-    description="Lower bound expected ROI (95% CI, accounting for political risk)",
-    display_name="Lower Bound Expected ROI",
-    unit="ratio",
-    formula="Conditional ROI × P(treaty passes): 5th percentile",
-    latex=r"ROI_{expected,lower} = 2.7:1",
-    keywords=["2.7", "political risk", "treaty passage probability", "simulation", "95% ci", "pessimistic", "conservative"]
-)
-
-TREATY_COMPLETE_ROI_EXPECTED_MEDIAN = Parameter(
-    14,
-    source_ref="/knowledge/economics/economics.qmd#probabilistic-analysis",
-    source_type="calculated",
-    description="Median expected ROI (50th percentile, accounting for political risk)",
-    display_name="Median Expected ROI",
-    unit="ratio",
-    formula="Conditional ROI × P(treaty passes): median",
-    latex=r"ROI_{expected,median} = 14:1",
-    keywords=["14", "50th percentile", "political risk", "treaty passage probability", "middle value", "simulation", "typical"]
-)
-
-TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE = Parameter(
-    27,
-    source_ref="/knowledge/economics/economics.qmd#probabilistic-analysis",
-    source_type="calculated",
-    description="Upper bound expected ROI (95% CI, accounting for political risk)",
-    display_name="Upper Bound Expected ROI",
-    unit="ratio",
-    formula="Conditional ROI × P(treaty passes): 95th percentile",
-    latex=r"ROI_{expected,upper} = 27:1",
-    keywords=["27", "political risk", "treaty passage probability", "simulation", "95% ci", "optimistic", "probabilistic"]
-)
 
 # Cost per DALY benchmarks for comparison
 BED_NETS_COST_PER_DALY = Parameter(
@@ -4568,16 +4236,6 @@ MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict"]
 )  # Calculated ratio of military to medical research spending
 
-DEATH_SPENDING_MISALLOCATION_FACTOR = Parameter(
-    1750,
-    source_ref="/knowledge/problem/cost-of-war.qmd#misallocation",
-    source_type="calculated",
-    description="Misallocation factor for spending on death vs prevention",
-    display_name="Misallocation Factor for Spending on Death vs Prevention",
-    unit="ratio",
-    keywords=["2k", "multiple", "avoidance", "deterrence", "precaution", "prophylaxis", "fatalities"]
-)  # Multiplier for spending on death vs prevention (specific citation in text)
-
 POST_WW2_MILITARY_CUT_PCT = Parameter(
     0.30,
     source_ref=ReferenceID.US_POST_WWII_MILITARY_SPENDING_CUT,
@@ -4608,16 +4266,6 @@ SWITZERLAND_GDP_PER_CAPITA_K = Parameter(
     keywords=["93k", "average person", "individual", "per person", "household benefit", "per individual", "typical individual"]
 )  # Thousands USD, Switzerland GDP per capita, for comparison
 
-WW2_BOND_RETURN_PCT = Parameter(
-    0.04,
-    source_ref=ReferenceID.WWII_WAR_BONDS,
-    source_type="external",
-    description="World War II war bond return percentage (4%)",
-    display_name="World War Ii War Bond Return Percentage",
-    unit="rate",
-    keywords=["4%", "social impact bond", "sib", "impact investing", "pay for success", "debt instrument", "development finance"]
-)  # WWII bond return percentage, historical comparison
-
 AVERAGE_MARKET_RETURN_PCT = Parameter(
     0.10,
     source_ref=ReferenceID.WARREN_BUFFETT_CAREER_AVERAGE_RETURN_20_PCT,
@@ -4632,55 +4280,23 @@ AVERAGE_MARKET_RETURN_PCT = Parameter(
 VICTORY_BOND_INVESTMENT_UNIT_USD = Parameter(
     1000,
     source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="calculated",
+    source_type="definition",
     description="VICTORY bond investment unit for retail investors",
     display_name="Victory Bond Investment Unit for Retail Investors",
     unit="USD",
     keywords=["1k", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"]
 )  # USD, per bond investment unit for retail investors
 
-VICTORY_BOND_PAYOUT_PER_UNIT_USD_ANNUAL = Parameter(
-    (VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST) * VICTORY_BOND_INVESTMENT_UNIT_USD,
-    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="calculated",
-    description="Annual payout per $1,000 VICTORY bond investment unit",
-    display_name="Annual Payout per $1,000 Victory Bond Investment Unit",
-    unit="USD/year",
-    formula="(ANNUAL_PAYOUT ÷ CAMPAIGN_COST) × UNIT",
-    latex=r"PayoutPerUnit = \frac{\$2.718B}{\$1B} \times \$1,000 = \$2,718",
-    keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"]
-)  # Derived from total payout and total raise
-
 # Lobbyist compensation & incentives
-LOBBYIST_BOND_INVESTMENT_MIN = Parameter(
-    5_000_000,
-    source_ref="/knowledge/strategy/roadmap.qmd#lobbyist-incentives",
-    source_type="calculated",
-    description="Minimum bond investment for lobbyist incentives",
-    display_name="Minimum Bond Investment for Lobbyist Incentives",
-    unit="USD",
-    keywords=["5.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"]
-)  # Millions USD, bond investment for lobbyists (min incentive)
-
 LOBBYIST_BOND_INVESTMENT_MAX = Parameter(
     20_000_000,
     source_ref="/knowledge/strategy/roadmap.qmd#lobbyist-incentives",
-    source_type="calculated",
+    source_type="definition",
     description="Maximum bond investment for lobbyist incentives",
     display_name="Maximum Bond Investment for Lobbyist Incentives",
     unit="USD",
     keywords=["20.0m", "social impact bond", "sib", "impact investing", "pay for success", "capital", "finance"]
 )  # Millions USD, bond investment for lobbyists (max incentive)
-
-LOBBYIST_SALARY_TYPICAL_K = Parameter(
-    500_000,
-    source_ref=ReferenceID.LOBBYIST_STATISTICS_DC,
-    source_type="external",
-    description="Typical annual lobbyist salary for comparison",
-    display_name="Typical Annual Lobbyist Salary for Comparison",
-    unit="USD",
-    keywords=["500k", "yearly", "lobbyist", "typical", "pa", "per annum", "per year"]
-)  # Thousands USD, typical lobbyist salary, for comparison
 
 LOBBYIST_SALARY_MIN_K = Parameter(
     500_000,
@@ -4718,17 +4334,6 @@ COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_RD_GROSS_SAVINGS_ANNUAL"],
 )
 
-# System effectiveness & ROI comparisons
-PROFIT_PER_LIFE_SAVED = Parameter(
-    167771,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#profit-per-life",
-    source_type="calculated",
-    description="System profit per life saved (specific calculation)",
-    display_name="System Profit per Life Saved",
-    unit="USD/life",
-    keywords=["168k", "international agreement", "peace treaty", "life", "saved", "profit", "1 pct"]
-)  # USD, profit per life saved from the system (specific calculation in text)
-
 TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC / CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
     source_ref="/knowledge/economics/economics.qmd#better-than-the-best-charities",
@@ -4741,170 +4346,6 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     keywords=["1%", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple"]
 )  # ~11:1 ratio (treaty system is 11x larger in economic impact)
 
-# Price of Procrastination Metrics
-DEATHS_DURING_READING_SECTION = Parameter(
-    410,
-    source_ref="/knowledge/solution/dfda.qmd#cost-of-delay",
-    source_type="calculated",
-    description="Deaths from curable diseases during reading one section",
-    display_name="Deaths from Curable Diseases During Reading One Section",
-    unit="deaths",
-    keywords=["pragmatic trials", "real world evidence", "holdup", "lag", "latency", "postponement", "wait time"]
-)  # Number of deaths from curable diseases during reading a section
-
-DAILY_COST_INEFFICIENCY = Parameter(
-    327_000_000,
-    source_ref="/knowledge/solution/dfda.qmd#cost-of-delay",
-    source_type="calculated",
-    description="Daily cost of healthcare system inefficiency",
-    display_name="Daily Cost of Global Healthcare System Inefficiency",
-    unit="USD/day",
-    keywords=["327.0m", "pragmatic trials", "real world evidence", "day", "each day", "holdup", "lag"]
-)  # billions USD, daily cost of inefficiency
-
-
-# ---
-# PRE-FORMATTED VALUES FOR INLINE DISPLAY
-# ---
-# These are pre-computed formatted strings for use in Quarto inline expressions.
-# Quarto inline code should only reference simple variables, not function calls.
-# See: https://quarto.org/docs/computations/inline-code.html
-
-average_market_return_pct_formatted = format_percentage(AVERAGE_MARKET_RETURN_PCT)
-# DELETED format calls for obsolete parameters: BENEFIT_EARLIER_DRUG_ACCESS_ANNUAL, BENEFIT_MEDICAL_RESEARCH_ACCELERATION_ANNUAL
-benefit_research_and_development_savings_annual_formatted = format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)
-childhood_vaccination_roi_formatted = format_roi(CHILDHOOD_VACCINATION_ROI)
-combined_peace_health_dividends_annual_for_roi_calc_formatted = format_parameter_value(
-    COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC
-)
-treaty_conservative_scenario_roi_formatted = format_roi(TREATY_CONSERVATIVE_SCENARIO_ROI)
-cost_of_delay_deaths_per_second_formatted = f"{COST_OF_DELAY_DEATHS_PER_SECOND:.3f}"
-# DELETED: cost_of_delay_qaly_days_per_second_formatted - parameter was deleted
-# DELETED: cost_per_life_investor_funded_formatted - parameter was deleted
-# DELETED: cost_per_life_opportunity_cost_formatted - parameter was deleted
-daily_cost_inefficiency_formatted = format_parameter_value(DAILY_COST_INEFFICIENCY)
-death_spending_misallocation_factor_formatted = f"{DEATH_SPENDING_MISALLOCATION_FACTOR:,.0f}"
-deaths_during_reading_section_formatted = f"{DEATHS_DURING_READING_SECTION:,.0f}"
-dfda_annual_opex_formatted = format_parameter_value(DFDA_ANNUAL_OPEX)
-dfda_gross_savings_annual_formatted = format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)
-dfda_npv_net_benefit_rd_only_formatted = format_parameter_value(DFDA_NPV_NET_BENEFIT_RD_ONLY)
-dfda_npv_total_cost_formatted = format_parameter_value(DFDA_NPV_TOTAL_COST)
-dfda_opex_community_formatted = format_parameter_value(DFDA_OPEX_COMMUNITY)
-dfda_opex_infrastructure_formatted = format_parameter_value(DFDA_OPEX_INFRASTRUCTURE)
-dfda_opex_platform_maintenance_formatted = format_parameter_value(DFDA_OPEX_PLATFORM_MAINTENANCE)
-dfda_opex_regulatory_formatted = format_parameter_value(DFDA_OPEX_REGULATORY)
-dfda_opex_staff_formatted = format_parameter_value(DFDA_OPEX_STAFF)
-dfda_roi_simple_formatted = format_roi(DFDA_ROI_SIMPLE)
-dih_treasury_to_medical_research_annual_formatted = format_parameter_value(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
-dih_treasury_trial_subsidies_annual_formatted = format_parameter_value(DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL)
-dih_patients_fundable_annually_formatted = format_parameter_value(DIH_PATIENTS_FUNDABLE_ANNUALLY)
-dividend_coverage_factor_formatted = f"{DIVIDEND_COVERAGE_FACTOR:,.0f}"
-givewell_cost_per_life_avg_formatted = f"${GIVEWELL_COST_PER_LIFE_AVG:,.0f}"
-givewell_cost_per_life_max_formatted = f"${GIVEWELL_COST_PER_LIFE_MAX:,.0f}"
-givewell_cost_per_life_min_formatted = f"${GIVEWELL_COST_PER_LIFE_MIN:,.0f}"
-global_annual_conflict_deaths_active_combat_formatted = f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT:,}"
-global_annual_conflict_deaths_state_violence_formatted = f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE:,}"
-global_annual_conflict_deaths_terror_attacks_formatted = f"{GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS:,}"
-global_annual_conflict_deaths_total_formatted = format_qalys(GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL)
-global_annual_environmental_damage_conflict_formatted = format_parameter_value(
-    GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT
-)
-global_annual_human_life_losses_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT)
-global_annual_infrastructure_destruction_conflict_formatted = format_parameter_value(
-    GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT
-)
-global_annual_lost_economic_growth_military_spending_formatted = format_parameter_value(
-    GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING
-)
-global_annual_lost_human_capital_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT)
-global_annual_psychological_impact_costs_conflict_formatted = format_parameter_value(
-    GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT
-)
-global_annual_refugee_support_costs_formatted = format_parameter_value(GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS)
-global_annual_trade_disruption_conflict_formatted = format_parameter_value(GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT)
-global_annual_veteran_healthcare_costs_formatted = format_parameter_value(GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS)
-global_annual_war_direct_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL)
-global_annual_war_indirect_costs_total_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL)
-global_annual_war_total_cost_formatted = format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)
-global_daily_deaths_curable_diseases_formatted = f"{GLOBAL_DAILY_DEATHS_CURABLE_DISEASES:,.0f}"
-# DELETED: global_dfda_qalys_gained_annual_formatted - parameter was deleted
-global_med_research_spending_formatted = format_parameter_value(GLOBAL_MED_RESEARCH_SPENDING)
-global_military_spending_annual_2024_formatted = format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)
-global_military_spending_post_treaty_annual_2024_formatted = format_parameter_value(
-    GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024
-)
-global_population_activism_threshold_pct_formatted = format_percentage(GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT)
-# DELETED: icer_investor_funded_formatted - parameter was deleted
-# DELETED: icer_opportunity_cost_formatted - parameter was deleted
-# DELETED: icer_per_qaly_formatted - parameter was deleted
-lobbyist_bond_investment_max_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MAX)
-lobbyist_bond_investment_min_millions_formatted = format_parameter_value(LOBBYIST_BOND_INVESTMENT_MIN)
-lobbyist_salary_typical_k_formatted = format_parameter_value(LOBBYIST_SALARY_TYPICAL_K)
-military_vs_medical_research_ratio_formatted = f"{MILITARY_VS_MEDICAL_RESEARCH_RATIO:,.0f}"
-multiplier_vs_givewell_formatted = f"{MULTIPLIER_VS_GIVEWELL:,.0f}x"
-# DELETED: net_benefit_per_life_saved_formatted - parameter was deleted
-treaty_optimistic_scenario_roi_formatted = format_roi(TREATY_OPTIMISTIC_SCENARIO_ROI)
-peace_dividend_annual_societal_benefit_formatted = format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)
-post_ww2_military_cut_pct_formatted = format_percentage(POST_WW2_MILITARY_CUT_PCT)
-profit_per_life_saved_formatted = f"${PROFIT_PER_LIFE_SAVED:,.0f}"
-recovery_trial_cost_per_patient_formatted = format_parameter_value(RECOVERY_TRIAL_COST_PER_PATIENT)
-dfda_roi_rd_only_formatted = format_roi(DFDA_ROI_RD_ONLY)
-# DELETED: dfda_roi_rd_plus_delay_formatted (obsolete parameter from 3-tier structure)
-# DELETED: dfda_roi_rd_plus_delay_plus_innovation_formatted (obsolete parameter)
-sensitivity_campaign_cost_conservative_formatted = format_parameter_value(SENSITIVITY_CAMPAIGN_COST_CONSERVATIVE)
-sensitivity_campaign_cost_optimistic_formatted = format_parameter_value(SENSITIVITY_CAMPAIGN_COST_OPTIMISTIC)
-sensitivity_cost_per_life_central_formatted = f"${SENSITIVITY_COST_PER_LIFE_CENTRAL:.2f}M"
-sensitivity_cost_per_life_conservative_formatted = f"${SENSITIVITY_COST_PER_LIFE_CONSERVATIVE:.2f}M"
-sensitivity_cost_per_life_optimistic_formatted = f"${SENSITIVITY_COST_PER_LIFE_OPTIMISTIC:.2f}M"
-sensitivity_dfda_opex_conservative_formatted = format_parameter_value(SENSITIVITY_DFDA_OPEX_CONSERVATIVE)
-sensitivity_dfda_opex_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_OPEX_OPTIMISTIC)
-sensitivity_dfda_savings_conservative_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_CONSERVATIVE)
-sensitivity_dfda_savings_optimistic_formatted = format_parameter_value(SENSITIVITY_DFDA_SAVINGS_OPTIMISTIC)
-# DELETED: sensitivity_icer_central_formatted, sensitivity_icer_conservative_formatted, sensitivity_icer_optimistic_formatted - parameters deleted
-# DELETED: sensitivity_lives_saved_central_formatted - parameter was deleted
-sensitivity_net_benefit_conservative_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_CONSERVATIVE)
-sensitivity_net_benefit_optimistic_formatted = format_parameter_value(SENSITIVITY_NET_BENEFIT_OPTIMISTIC)
-sensitivity_peace_dividend_conservative_formatted = format_parameter_value(SENSITIVITY_PEACE_DIVIDEND_CONSERVATIVE)
-sensitivity_peace_dividend_optimistic_formatted = format_parameter_value(SENSITIVITY_PEACE_DIVIDEND_OPTIMISTIC)
-sensitivity_peace_qalys_conservative_formatted = format_qalys(SENSITIVITY_PEACE_QALYS_CONSERVATIVE)
-sensitivity_peace_qalys_optimistic_formatted = format_qalys(SENSITIVITY_PEACE_QALYS_OPTIMISTIC)
-sensitivity_total_benefits_conservative_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_CONSERVATIVE)
-sensitivity_total_benefits_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_BENEFITS_OPTIMISTIC)
-sensitivity_total_costs_conservative_formatted = format_parameter_value(SENSITIVITY_TOTAL_COSTS_CONSERVATIVE)
-sensitivity_total_costs_optimistic_formatted = format_parameter_value(SENSITIVITY_TOTAL_COSTS_OPTIMISTIC)
-# DELETED: sensitivity_total_qalys_conservative_formatted - parameter was deleted
-# DELETED: sensitivity_total_qalys_optimistic_formatted - parameter was deleted
-smallpox_eradication_roi_formatted = format_roi(SMALLPOX_ERADICATION_ROI)
-switzerland_defense_spending_pct_formatted = format_percentage(SWITZERLAND_DEFENSE_SPENDING_PCT)
-switzerland_gdp_per_capita_k_formatted = format_parameter_value(SWITZERLAND_GDP_PER_CAPITA_K)
-# DELETED: system_profit_per_life_saved_millions_formatted - parameter deleted
-treaty_recurring_benefits_annual_formatted = format_parameter_value(TREATY_RECURRING_BENEFITS_ANNUAL)
-traditional_phase3_cost_per_patient_fda_example_41k_formatted = format_parameter_value(
-    TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K
-)
-treaty_annual_funding_formatted = format_parameter_value(TREATY_ANNUAL_FUNDING)
-treaty_benefit_multiplier_vs_vaccines_formatted = f"{TREATY_BENEFIT_MULTIPLIER_VS_VACCINES:,.0f}"
-treaty_campaign_annual_cost_amortized_formatted = format_parameter_value(TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED)
-treaty_campaign_budget_lobbying_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_LOBBYING)
-treaty_campaign_budget_referendum_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_REFERENDUM)
-treaty_campaign_budget_reserve_formatted = format_parameter_value(TREATY_CAMPAIGN_BUDGET_RESERVE)
-treaty_campaign_total_cost_formatted = format_parameter_value(TREATY_CAMPAIGN_TOTAL_COST)
-treaty_lives_saved_annual_global_formatted = format_qalys(TREATY_LIVES_SAVED_ANNUAL_GLOBAL)
-treaty_net_annual_benefit_formatted = format_parameter_value(TREATY_PEACE_PLUS_RD_NET_ANNUAL_BENEFIT)
-treaty_qalys_gained_annual_global_formatted = format_qalys(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
-treaty_reduction_pct_formatted = format_percentage(TREATY_REDUCTION_PCT)
-treaty_total_annual_benefits_formatted = format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)
-treaty_total_annual_costs_formatted = format_parameter_value(TREATY_TOTAL_ANNUAL_COSTS)
-# DELETED: treaty_total_qalys_gained_annual_formatted - parameter was deleted
-trial_cost_reduction_pct_formatted = format_percentage(TRIAL_COST_REDUCTION_PCT)
-victory_bond_annual_payout_formatted = format_parameter_value(VICTORY_BOND_ANNUAL_PAYOUT)
-victory_bond_annual_return_pct_formatted = format_percentage(VICTORY_BOND_ANNUAL_RETURN_PCT)
-victory_bond_funding_pct_formatted = format_percentage(VICTORY_BOND_FUNDING_PCT)
-victory_bond_investment_unit_usd_formatted = f"${VICTORY_BOND_INVESTMENT_UNIT_USD:,.0f}"
-victory_bond_payout_per_unit_usd_annual_formatted = f"${VICTORY_BOND_PAYOUT_PER_UNIT_USD_ANNUAL:,.0f}"
-water_fluoridation_roi_formatted = format_roi(WATER_FLUORIDATION_ROI)
-ww2_bond_return_pct_formatted = format_percentage(WW2_BOND_RETURN_PCT)
-
 
 # ---
 # BOOK READING TIME & HOURLY RATE CALCULATIONS
@@ -4913,7 +4354,7 @@ ww2_bond_return_pct_formatted = format_percentage(WW2_BOND_RETURN_PCT)
 # Book reading time parameters
 # Source: word_count.ps1 output
 TOTAL_BOOK_WORDS = Parameter(
-    171121, source_ref="book-word-count", source_type="calculated", description="Total words in the book", unit="words",
+    171121, source_ref="book-word-count", source_type="definition", description="Total words in the book", unit="words",
     display_name="Total Words in the Book",
     keywords=["total", "book", "words", "171k"]
 )  # Total words in the book
@@ -5051,36 +4492,6 @@ TYPICAL_CEO_HOURLY_RATE = Parameter(
     display_name="Typical CEO Hourly Rate",
     keywords=["typical", "ceo", "hourly", "rate", "10k"]
 )  # ~$10,000/hour typical CEO rate
-EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER = Parameter(
-    EFFECTIVE_HOURLY_RATE / AVERAGE_US_HOURLY_WAGE,
-    source_ref="/knowledge/solution/wishocracy.qmd#effective-hourly-rate",
-    source_type="calculated",
-    description="Effective rate multiplier vs average US wage",
-    display_name="Effective Rate Multiplier vs Average US Wage",
-    unit="ratio",
-    formula="EFFECTIVE_RATE ÷ AVG_WAGE",
-    latex=r"Multiplier = \frac{\$291,525}{\$30} \approx 9,718x",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple", "factor", "coefficient"]
-)  # ~9,711x
-EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER = Parameter(
-    EFFECTIVE_HOURLY_RATE / TYPICAL_CEO_HOURLY_RATE,
-    source_ref="/knowledge/solution/wishocracy.qmd#effective-hourly-rate",
-    source_type="calculated",
-    description="Effective rate multiplier vs CEO rate",
-    display_name="Effective Rate Multiplier vs CEO Rate",
-    unit="ratio",
-    formula="EFFECTIVE_RATE ÷ CEO_RATE",
-    latex=r"Multiplier = \frac{\$291,525}{\$10,000} \approx 29x",
-    keywords=["economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple", "factor", "coefficient"]
-)  # ~29x
-
-# Formatted values for display
-effective_hourly_rate_thousands_formatted = f"${EFFECTIVE_HOURLY_RATE / 1000:.0f}K"
-total_time_investment_hours_formatted = f"{TOTAL_TIME_INVESTMENT_HOURS:.1f}"
-book_reading_time_hours_formatted = f"{BOOK_READING_TIME_HOURS:.1f}"
-action_time_total_hours_formatted = f"{ACTION_TIME_TOTAL_HOURS:.1f}"
-effective_hourly_rate_vs_wage_multiplier_formatted = f"{EFFECTIVE_HOURLY_RATE_VS_WAGE_MULTIPLIER:.0f}"
-effective_hourly_rate_vs_ceo_multiplier_formatted = f"{EFFECTIVE_HOURLY_RATE_VS_CEO_MULTIPLIER:.0f}"
 
 # ---
 # PERSONAL LIFETIME WEALTH CALCULATIONS
@@ -5367,33 +4778,6 @@ GDP_GROWTH_BOOST_1PCT = calculate_gdp_growth_boost(0.01) - 0.025  # Just the boo
 GDP_GROWTH_BOOST_2PCT = calculate_gdp_growth_boost(0.02) - 0.025
 GDP_GROWTH_BOOST_5PCT = calculate_gdp_growth_boost(0.05) - 0.025
 GDP_GROWTH_BOOST_10PCT = calculate_gdp_growth_boost(0.10) - 0.025
-
-# Formatted values for display
-personal_lifetime_benefit_age_20_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT)
-personal_lifetime_benefit_age_30_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT)
-personal_lifetime_benefit_age_40_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_40_1PCT)
-personal_lifetime_benefit_age_50_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_50_1PCT)
-personal_lifetime_benefit_age_60_1pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_60_1PCT)
-
-personal_lifetime_benefit_age_30_half_pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_HALF_PCT)
-personal_lifetime_benefit_age_30_2pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_2PCT)
-personal_lifetime_benefit_age_30_5pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_5PCT)
-personal_lifetime_benefit_age_30_10pct_formatted = format_parameter_value(PERSONAL_LIFETIME_BENEFIT_AGE_30_10PCT)
-
-life_extension_years_1pct_formatted = f"{LIFE_EXTENSION_YEARS_1PCT:.1f}"
-life_extension_years_2pct_formatted = f"{LIFE_EXTENSION_YEARS_2PCT:.1f}"
-life_extension_years_5pct_formatted = f"{LIFE_EXTENSION_YEARS_5PCT:.1f}"
-life_extension_years_10pct_formatted = f"{LIFE_EXTENSION_YEARS_10PCT:.1f}"
-
-trial_capacity_multiplier_1pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_1PCT:.1f}x"
-trial_capacity_multiplier_2pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_2PCT:.1f}x"
-trial_capacity_multiplier_5pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_5PCT:.1f}x"
-trial_capacity_multiplier_10pct_formatted = f"{TRIAL_CAPACITY_MULTIPLIER_10PCT:.1f}x"
-
-gdp_growth_boost_1pct_formatted = format_percentage(GDP_GROWTH_BOOST_1PCT)
-gdp_growth_boost_2pct_formatted = format_percentage(GDP_GROWTH_BOOST_2PCT)
-gdp_growth_boost_5pct_formatted = format_percentage(GDP_GROWTH_BOOST_5PCT)
-gdp_growth_boost_10pct_formatted = format_percentage(GDP_GROWTH_BOOST_10PCT)
 
 
 # ---
@@ -5767,45 +5151,11 @@ def calculate_personal_lifetime_wealth_improved(
     }
 
 
-# DEPRECATED: Pre-calculated improved model scenarios (superseded by Disease Eradication Model)
-# Kept for reference only - DO NOT USE
-# The Disease Eradication Model (lines 1879-2310) is now the recommended approach
-#
-# PERSONAL_WEALTH_IMPROVED_AGE_30_1PCT = calculate_personal_lifetime_wealth_improved(
-#     treaty_pct=0.01, current_age=30, annual_income=50000, timeframe='mid-term'
-# )
-# PERSONAL_LIFETIME_BENEFIT_IMPROVED_AGE_30_1PCT = PERSONAL_WEALTH_IMPROVED_AGE_30_1PCT['total_lifetime_benefit']
-#
-# PERSONAL_WEALTH_ENDGAME_AGE_30_1PCT = calculate_personal_lifetime_wealth_improved(
-#     treaty_pct=0.01, current_age=30, annual_income=50000, timeframe='long-term'
-# )
-# PERSONAL_LIFETIME_BENEFIT_ENDGAME_AGE_30_1PCT = PERSONAL_WEALTH_ENDGAME_AGE_30_1PCT['total_lifetime_benefit']
-
-# DEPRECATED: US-only peace dividend allocation (used IMPROVED model)
-# PERSONAL_WEALTH_US_ONLY_AGE_30_1PCT = calculate_personal_lifetime_wealth_improved(
-#     treaty_pct=0.01, current_age=30, annual_income=50000, timeframe='mid-term', peace_dividend_scope='us-only'
-# )
-# PERSONAL_LIFETIME_BENEFIT_US_ONLY_AGE_30_1PCT = PERSONAL_WEALTH_US_ONLY_AGE_30_1PCT['total_lifetime_benefit']
 
 
 # --- Test Output (when module executed directly) ---
 if __name__ == "__main__":
-    print("\n=== CONSERVATIVE MODEL (Original) ===")
-    print("\n--- Personal Lifetime Wealth (1% Treaty) ---")
-    print(f"Age 20: {personal_lifetime_benefit_age_20_1pct_formatted}")
-    print(f"Age 30: {personal_lifetime_benefit_age_30_1pct_formatted}")
-    print(f"Age 40: {personal_lifetime_benefit_age_40_1pct_formatted}")
-    print(f"Age 50: {personal_lifetime_benefit_age_50_1pct_formatted}")
-    print(f"Age 60: {personal_lifetime_benefit_age_60_1pct_formatted}")
-    print(f"\nLife extension (1%): {life_extension_years_1pct_formatted} years")
-    print(f"Trial capacity multiplier (1%): {trial_capacity_multiplier_1pct_formatted}")
-    print(f"GDP growth boost (1%): {gdp_growth_boost_1pct_formatted}")
-    print("\n--- Different Treaty Percentages (Age 30) ---")
-    print(f"0.5% Treaty: {personal_lifetime_benefit_age_30_half_pct_formatted}")
-    print(f"1% Treaty: {personal_lifetime_benefit_age_30_1pct_formatted}")
-    print(f"2% Treaty: {personal_lifetime_benefit_age_30_2pct_formatted}")
-    print(f"5% Treaty: {personal_lifetime_benefit_age_30_5pct_formatted}")
-    print(f"10% Treaty: {personal_lifetime_benefit_age_30_10pct_formatted}")
+    print("\n=== not sure why this is here ===")
 
 WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     0.28,
@@ -5842,7 +5192,7 @@ CAREGIVER_COUNT_US = Parameter(
 DISEASE_RELATED_CAREGIVER_PCT = Parameter(
     0.40,
     source_ref="disease-related-caregiving-estimate",
-    source_type="calculated",
+    source_type="definition",
     description="Percentage of caregiving for treatable disease conditions (vs aging, disability, children)",
     display_name="Percentage of Caregiving for Treatable Disease Conditions",
     unit="rate",
@@ -6512,9 +5862,6 @@ PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT = calculate_personal_lifetime_wealt
 PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT[
     "total_lifetime_benefit"
 ]
-personal_lifetime_benefit_eradication_20yr_age_30_1pct_millions_formatted = (
-    f"{PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT / 1_000_000:.1f}"
-)
 
 # 40-year scenario (approaching biological limits)
 PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT = calculate_personal_lifetime_wealth_disease_eradication(
@@ -6781,120 +6128,6 @@ if __name__ == "__main__":
     print(f"  = Personal benefit: ${erad_20yr/1000:.0f}K")
 
 
-# ==============================================================================
-# PARAMETER LINKING SYSTEM
-# ==============================================================================
-# Maps parameter names to their detailed source documentation
-# This allows us to both use calculated values AND link to sources automatically
-
-PARAMETER_LINKS = {
-    # Peace Dividend Parameters
-    "treaty_annual_funding": "../appendix/peace-dividend-calculations.qmd",
-    "peace_dividend_annual_societal_benefit": "../appendix/peace-dividend-calculations.qmd",
-    "global_military_spending_annual_2024": "../references.qmd#sipri-2024-spending",
-    "global_war_total_cost": "../appendix/peace-dividend-calculations.qmd",
-    # Health Dividend Parameters (dFDA)
-    "roi_dfda_savings_only": "../appendix/dfda-cost-benefit-analysis.qmd",
-    "roi_all_direct_benefits": "../appendix/dfda-cost-benefit-analysis.qmd",
-    "trial_cost_reduction": "../appendix/recovery-trial.qmd",
-    "dfda_annual_savings": "../appendix/dfda-cost-benefit-analysis.qmd",
-    "qalys_annual": "../appendix/dfda-qaly-model.qmd",
-    # Cost-Effectiveness
-    "cost_per_life_saved": "../appendix/1-percent-treaty-cost-effectiveness.qmd",
-    "icer": "../appendix/dfda-cost-benefit-analysis.qmd#dfda-icer-analysis",
-    # External Sources (references.qmd)
-    "givewell_cost_per_life": "../references.qmd#givewell-cost-per-life-saved",
-    "smallpox_roi": "../references.qmd#smallpox-eradication-roi",
-    "childhood_vaccination_roi": "../references.qmd#childhood-vaccination-roi",
-    "disease_economic_burden": "../references.qmd#disease-economic-burden-109t",
-    "conflict_deaths": "../references.qmd#acled-active-combat-deaths",
-    "clinical_trial_market": "../references.qmd#clinical-trial-market-size",
-    # Personal Impact
-    "personal_lifetime_wealth": "../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
-}
 
 
-def _convert_qmd_to_html(path: str) -> str:
-    """
-    Remove .qmd extension from paths for format-agnostic links.
-    Quarto will resolve extensionless paths appropriately for each output format:
-    - HTML: resolves to .html files
-    - PDF: resolves to internal PDF references
-    - EPUB: resolves to internal EPUB references
-    
-    Args:
-        path: Path that may contain .qmd extension
-        
-    Returns:
-        Path with .qmd extension removed (format-agnostic)
-    """
-    if path.endswith('.qmd'):
-        return path[:-4]  # Remove .qmd extension
-    elif '.qmd#' in path:
-        # Handle paths with fragments like "file.qmd#section"
-        return path.replace('.qmd#', '#')  # Remove .qmd, keep #
-    return path
 
-
-def param_link(param_name: str, formatted_value: str | None = None) -> str:
-    """
-    Create an HTML link combining a formatted parameter with its source.
-
-    Args:
-        param_name: Name of the parameter (e.g., 'treaty_annual_funding')
-        formatted_value: Pre-formatted display value. If None, will use param_name_formatted
-
-    Returns:
-        HTML link string like '<a href="../appendix/peace-dividend-calculations.html">$27.2B</a>'
-
-    Usage in QMD files:
-        `{python} param_link('treaty_annual_funding')`
-        `{python} param_link('roi_conservative', '463:1')`
-    """
-    # Get formatted value if not provided
-    if formatted_value is None:
-        formatted_var_name = f"{param_name}_formatted"
-        if formatted_var_name in globals():
-            formatted_value = globals()[formatted_var_name]
-        else:
-            # Fallback to the raw value
-            formatted_value = str(globals().get(param_name.upper(), "???"))
-    
-    # At this point formatted_value is guaranteed to be a string
-    formatted_value_str: str = formatted_value if isinstance(formatted_value, str) else str(formatted_value)
-
-    # Get source link
-    source_link = PARAMETER_LINKS.get(param_name, "")
-
-    # Return HTML link or unlinked based on whether we have a source
-    if source_link:
-        # Convert .qmd to .html for rendered output
-        html_link = _convert_qmd_to_html(source_link)
-        return f'<a href="{html_link}">{formatted_value_str}</a>'
-    else:
-        return formatted_value_str
-
-
-def add_parameter_link(param_name: str, source_path: str):
-    """
-    Add a new parameter → source mapping to the registry.
-
-    Args:
-        param_name: Parameter name (e.g., 'new_parameter')
-        source_path: Relative path to source doc (e.g., '../appendix/analysis.qmd')
-    """
-    PARAMETER_LINKS[param_name] = source_path
-
-
-# Create commonly used linked versions automatically
-treaty_annual_funding_linked = param_link("treaty_annual_funding", treaty_annual_funding_formatted)
-peace_dividend_annual_societal_benefit_linked = param_link(
-    "peace_dividend_annual_societal_benefit", peace_dividend_annual_societal_benefit_formatted
-)
-dfda_roi_rd_only_linked = param_link("dfda_roi_rd_only", dfda_roi_rd_only_formatted)
-# DELETED: dfda_roi_rd_plus_delay_linked (obsolete parameter from 3-tier structure)
-# DELETED: dfda_roi_rd_plus_delay_plus_innovation_linked (obsolete parameter)
-trial_cost_reduction_linked = param_link("trial_cost_reduction", f"{TRIAL_COST_REDUCTION_FACTOR}x")
-global_military_spending_annual_2024_linked = param_link(
-    "global_military_spending_annual_2024", global_military_spending_annual_2024_formatted
-)
