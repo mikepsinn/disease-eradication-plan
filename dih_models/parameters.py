@@ -281,6 +281,19 @@ class Parameter(float):
 
 
 # ---
+# TIME CONSTANTS
+# ---
+# Base time unit constants for consistent calculations
+DAYS_PER_YEAR = 365
+HOURS_PER_DAY = 24
+MONTHS_PER_YEAR = 12
+MINUTES_PER_HOUR = 60
+SECONDS_PER_MINUTE = 60
+HOURS_PER_YEAR = HOURS_PER_DAY * DAYS_PER_YEAR  # 8760
+SECONDS_PER_YEAR = DAYS_PER_YEAR * HOURS_PER_DAY * MINUTES_PER_HOUR * SECONDS_PER_MINUTE  # 31,536,000
+
+
+# ---
 # PEACE DIVIDEND PARAMETERS
 # ---
 
@@ -383,7 +396,6 @@ GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT = Parameter(
     display_name="Annual Cost of Combat Deaths",
     unit="USD/year",
     formula="COMBAT_DEATHS × VSL ",
-    latex=r"Cost_{combat} = 233,600 \times \$10M = \$2,336B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'VALUE_OF_STATISTICAL_LIFE'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
@@ -397,7 +409,6 @@ GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS = Parameter(
     display_name="Annual Cost of Terror Deaths",
     unit="USD/year",
     formula="TERROR_DEATHS × VSL ",
-    latex=r"Cost_{terror} = 8,300 \times \$10M = \$83B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'VALUE_OF_STATISTICAL_LIFE'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
@@ -411,7 +422,6 @@ GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE = Parameter(
     display_name="Annual Cost of State Violence Deaths",
     unit="USD/year",
     formula="STATE_DEATHS × VSL ",
-    latex=r"Cost_{state} = 2,700 \times \$10M = \$27B",
     keywords=["worldwide", "yearly", "conflict", "costs", "funding", "investment", "mortality"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE', 'VALUE_OF_STATISTICAL_LIFE'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE"] * ctx["VALUE_OF_STATISTICAL_LIFE"],
@@ -758,8 +768,9 @@ TREATY_ANNUAL_FUNDING = Parameter(
     display_name="Annual Funding from 1% of Global Military Spending Redirected to DIH",
     unit="USD/year",
     formula="MILITARY_SPENDING × 1%",
-    latex=r"Funding = \$2,718B \times 0.01 = \$27.18B",
-    keywords=["1%", "dod", "pentagon", "distributed research", "global research", "national security", "open science"]
+    keywords=["1%", "dod", "pentagon", "distributed research", "global research", "national security", "open science"],
+    inputs=['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'TREATY_REDUCTION_PCT'],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * ctx["TREATY_REDUCTION_PCT"],
 )  # $27.18B
 
 # ==============================================================================
@@ -776,13 +787,12 @@ TREATY_ANNUAL_FUNDING = Parameter(
 
 PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT = Parameter(
     GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend",
+    source_ref="/knowledge/appendix/peace-dividend-calculations.qmd",
     source_type="calculated",
     description="Annual peace dividend from 1% reduction in total war costs",
     display_name="Annual Peace Dividend from 1% Reduction in Total War Costs",
     unit="USD/year",
     formula="TOTAL_WAR_COST × 1%",
-    latex=r"PeaceDividend = \$11,355B \times 0.01 = \$113.55B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "yearly", "armistice", "ceasefire", "conflict"],
     # Uncertainty derived from inputs (WAR_COST × REDUCTION_PCT)
     validation_min=70_000_000_000,   # Floor: Conservative war cost estimates, 50% realization
@@ -800,7 +810,6 @@ PEACE_DIVIDEND_DIRECT_COSTS = Parameter(
     display_name="Annual Savings from 1% Reduction in Direct War Costs",
     unit="USD/year",
     formula="DIRECT_COSTS × 1%",
-    latex=r"PeaceDividend_{direct} = \$7,655B \times 0.01 = \$76.55B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "conflict"],
     inputs=['GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL"] * ctx["TREATY_REDUCTION_PCT"],
@@ -814,7 +823,6 @@ PEACE_DIVIDEND_INFRASTRUCTURE = Parameter(
     display_name="Annual Savings from 1% Reduction in Infrastructure Destruction",
     unit="USD/year",
     formula="INFRASTRUCTURE_DESTRUCTION × 1%",
-    latex=r"PeaceDividend_{infra} = \$1,875B \times 0.01 = \$18.75B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
@@ -828,7 +836,6 @@ PEACE_DIVIDEND_HUMAN_CASUALTIES = Parameter(
     display_name="Annual Savings from 1% Reduction in Human Casualties",
     unit="USD/year",
     formula="HUMAN_LIFE_LOSSES × 1%",
-    latex=r"PeaceDividend_{human} = \$2,446B \times 0.01 = \$24.46B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
@@ -842,7 +849,6 @@ PEACE_DIVIDEND_TRADE_DISRUPTION = Parameter(
     display_name="Annual Savings from 1% Reduction in Trade Disruption",
     unit="USD/year",
     formula="TRADE_DISRUPTION × 1%",
-    latex=r"PeaceDividend_{trade} = \$616B \times 0.01 = \$6.16B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
@@ -856,7 +862,6 @@ PEACE_DIVIDEND_INDIRECT_COSTS = Parameter(
     display_name="Annual Savings from 1% Reduction in Indirect War Costs",
     unit="USD/year",
     formula="INDIRECT_COSTS × 1%",
-    latex=r"PeaceDividend_{indirect} = \$3,700.1B \times 0.01 = \$37.00B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "conflict"],
     inputs=['GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL"] * ctx["TREATY_REDUCTION_PCT"],
@@ -870,7 +875,6 @@ PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH = Parameter(
     display_name="Annual Savings from 1% Reduction in Lost Economic Growth",
     unit="USD/year",
     formula="LOST_ECONOMIC_GROWTH × 1%",
-    latex=r"PeaceDividend_{growth} = \$2,718B \times 0.01 = \$27.18B",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"],
     inputs=['GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING"] * ctx["TREATY_REDUCTION_PCT"],
@@ -884,7 +888,6 @@ PEACE_DIVIDEND_VETERAN_HEALTHCARE = Parameter(
     display_name="Annual Savings from 1% Reduction in Veteran Healthcare Costs",
     unit="USD/year",
     formula="VETERAN_HEALTHCARE × 1%",
-    latex=r"PeaceDividend_{veteran} = \$20.01B \times 0.01 = \$0.20B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS"] * ctx["TREATY_REDUCTION_PCT"],
@@ -898,7 +901,6 @@ PEACE_DIVIDEND_REFUGEE_SUPPORT = Parameter(
     display_name="Annual Savings from 1% Reduction in Refugee Support Costs",
     unit="USD/year",
     formula="REFUGEE_SUPPORT × 1%",
-    latex=r"PeaceDividend_{refugee} = \$15B \times 0.01 = \$0.15B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS"] * ctx["TREATY_REDUCTION_PCT"],
@@ -912,7 +914,6 @@ PEACE_DIVIDEND_ENVIRONMENTAL = Parameter(
     display_name="Annual Savings from 1% Reduction in Environmental Damage",
     unit="USD/year",
     formula="ENVIRONMENTAL_DAMAGE × 1%",
-    latex=r"PeaceDividend_{env} = \$10B \times 0.01 = \$0.10B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
@@ -926,7 +927,6 @@ PEACE_DIVIDEND_PTSD = Parameter(
     display_name="Annual Savings from 1% Reduction in PTSD and Mental Health Costs",
     unit="USD/year",
     formula="PTSD_COSTS × 1%",
-    latex=r"PeaceDividend_{PTSD} = \$23.2B \times 0.01 = \$0.23B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
@@ -940,7 +940,6 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
     display_name="Annual Savings from 1% Reduction in Lost Human Capital",
     unit="USD/year",
     formula="LOST_HUMAN_CAPITAL × 1%",
-    latex=r"PeaceDividend_{capital} = \$30B \times 0.01 = \$0.30B",
     keywords=["conflict resolution", "international agreement", "peace treaty", "armistice", "benefit", "ceasefire", "non-violence"],
     inputs=['GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT"] * ctx["TREATY_REDUCTION_PCT"],
@@ -1100,18 +1099,18 @@ POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
 )
 
 FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
-    (FDA_PHASE_1_TO_APPROVAL_YEARS * 12) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
+    (FDA_PHASE_1_TO_APPROVAL_YEARS * MONTHS_PER_YEAR) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="calculated",
     description="FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)",
     display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
     unit="ratio",
-    formula="FDA_PHASE_1_TO_APPROVAL_YEARS × 12 ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
+    formula="FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
     latex=r"\frac{9.1 \text{ years} \times 12 \text{ months/year}}{3 \text{ months}} = 36.4",
     confidence="high",
     keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
     inputs=['FDA_PHASE_1_TO_APPROVAL_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],
-    compute=lambda ctx: (ctx["FDA_PHASE_1_TO_APPROVAL_YEARS"] * 12) / ctx["OXFORD_RECOVERY_TRIAL_DURATION_MONTHS"],
+    compute=lambda ctx: (ctx["FDA_PHASE_1_TO_APPROVAL_YEARS"] * MONTHS_PER_YEAR) / ctx["OXFORD_RECOVERY_TRIAL_DURATION_MONTHS"],
 )
 
 PRE_1962_PHYSICIAN_COUNT = Parameter(
@@ -1188,8 +1187,9 @@ CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     display_name="Current Patient Participation Rate in Clinical Trials",
     unit="rate",
     formula="CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
-    latex=r"Rate = 1.9M \div 2.4B = 0.08\%",
     keywords=["0%", "rct", "participant", "subject", "volunteer", "enrollee", "clinical study"],
+    inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_DISEASE_PATIENTS_GLOBAL'],
+    compute=lambda ctx: ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"] / ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"],
 )  # 0.08% of disease patients participate in trials (1.9M / 2.4B, IQVIA 2022)
 
 # Traditional Trial Economics
@@ -1407,7 +1407,6 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
     display_name="dFDA Annual Benefit: R&D Savings",
     unit="USD/year",
     formula="TRIAL_SPENDING × COST_REDUCTION_PCT",
-    latex=r"Benefit_{RD} = \$83B \times 0.50 = \$41.5B",
     keywords=["rd savings", "pragmatic trials", "real world evidence", "rct", "clinical trial"],
     # Uncertainty derived from inputs (TRIAL_SPENDING × COST_REDUCTION_PCT)
     validation_min=25_000_000_000,   # Floor: 30% cost reduction at $83B market
@@ -1421,17 +1420,17 @@ DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
 # Legacy aliases for backward compatibility (will be removed after transition)
 DFDA_RD_GROSS_SAVINGS_ANNUAL = DFDA_BENEFIT_RD_ONLY_ANNUAL  # Alias
 DFDA_RD_SAVINGS_DAILY = Parameter(
-    DFDA_BENEFIT_RD_ONLY_ANNUAL / 365,
+    DFDA_BENEFIT_RD_ONLY_ANNUAL / DAYS_PER_YEAR,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction",
     source_type="calculated",
     description="Daily R&D savings from trial cost reduction (opportunity cost of delay)",
     display_name="Daily R&D Savings from Trial Cost Reduction",
     unit="USD/day",
-    formula="ANNUAL_RD_SAVINGS ÷ 365",
-    latex=r"Savings_{daily} = \$41.5B \div 365 = \$113.7M",
+    formula="ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR",
+    latex=r"Savings_{daily} = \frac{\$41.5B}{365} = \$113.7M",
     keywords=["137m", "daily", "per day", "each day", "opportunity cost", "delay cost"],
     inputs=['DFDA_BENEFIT_RD_ONLY_ANNUAL'],
-    compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] / 365,
+    compute=lambda ctx: ctx["DFDA_BENEFIT_RD_ONLY_ANNUAL"] / DAYS_PER_YEAR,
 )  # $113.7M/day
 
 DFDA_NET_SAVINGS_RD_ONLY_ANNUAL = Parameter(
@@ -1457,10 +1456,9 @@ DFDA_ROI_SIMPLE = Parameter(
     display_name="dFDA Simple ROI Without NPV Adjustment",
     unit="ratio",
     formula="GROSS_SAVINGS ÷ ANNUAL_OPEX",
-    latex=r"ROI_{simple} = \frac{\$41.5B}{\$0.04B} = 1,038:1",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
-    inputs=['DFDA_ANNUAL_OPEX'],
-    compute=lambda ctx: DFDA_RD_GROSS_SAVINGS_ANNUAL / ctx["DFDA_ANNUAL_OPEX"],
+    inputs=['DFDA_RD_GROSS_SAVINGS_ANNUAL', 'DFDA_ANNUAL_OPEX'],
+    compute=lambda ctx: ctx["DFDA_RD_GROSS_SAVINGS_ANNUAL"] / ctx["DFDA_ANNUAL_OPEX"],
 )  # 1,038:1
 # NOTE: For NPV-adjusted ROI (463:1), use DFDA_ROI_RD_ONLY below
 # The NPV-based calculation accounts for time value of money and gradual adoption
@@ -1643,7 +1641,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
 # Assumes regulatory delay shifts disease eradication timeline back by efficacy lag period
 # Adjusted to exclude fundamentally unavoidable deaths (primarily accidents)
 DISEASE_ERADICATION_DELAY_DEATHS_TOTAL = Parameter(
-    int(GLOBAL_DISEASE_DEATHS_DAILY * EFFICACY_LAG_YEARS * 365 * (1 - _unavoidable_pct)),
+    int(GLOBAL_DISEASE_DEATHS_DAILY * EFFICACY_LAG_YEARS * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
     source_type="calculated",
     description="Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
@@ -1657,7 +1655,7 @@ DISEASE_ERADICATION_DELAY_DEATHS_TOTAL = Parameter(
     validation_min=250_000_000,  # Floor: Pessimistic avoidability (70%), lower lag (6y)
     validation_max=600_000_000,  # Ceiling: Optimistic avoidability (98%), higher lag (10y)
     inputs=['EFFICACY_LAG_YEARS', 'GLOBAL_DISEASE_DEATHS_DAILY'],
-    compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["EFFICACY_LAG_YEARS"] * 365 * (1 - _unavoidable_pct)),
+    compute=lambda ctx: int(ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["EFFICACY_LAG_YEARS"] * DAYS_PER_YEAR * (1 - _unavoidable_pct)),
 )  # 413.4M eventually avoidable deaths (down from 449M raw total)
 
 # DELETED: DISEASE_ERADICATION_DELAY_DEATHS_ANNUAL, HISTORICAL_PROGRESS_DEATHS_ANNUAL,
@@ -1789,7 +1787,6 @@ DISEASE_ERADICATION_DELAY_YLD = Parameter(
     display_name="Years Lived with Disability During Disease Eradication Delay",
     unit="years",
     formula="DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
-    latex=r"YLD = 413.4M \times 6 \times 0.35 = 868M",
     confidence="medium",
     keywords=["disease eradication", "YLD", "years lived with disability", "disease burden", "morbidity"],
     inputs=["DISEASE_ERADICATION_DELAY_DEATHS_TOTAL", "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS", "CHRONIC_DISEASE_DISABILITY_WEIGHT"],
@@ -1824,18 +1821,18 @@ DISEASE_ERADICATION_DELAY_DALYS = Parameter(
 
 # Suffering Hours (one-time benefit from timeline shift)
 SUFFERING_HOURS_ELIMINATED_TOTAL = Parameter(
-    DISEASE_ERADICATION_DELAY_YLD * 8760,  # YLD in years × hours per year
+    DISEASE_ERADICATION_DELAY_YLD * HOURS_PER_YEAR,  # YLD in years × hours per year
     source_ref="/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
     source_type="calculated",
     description="Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)",
     display_name="Total Suffering Hours Eliminated",
     unit="hours",
-    formula="YLD × 8760 hours/year",
+    formula="YLD × HOURS_PER_YEAR",
     latex=r"Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T",
     confidence="medium",
     keywords=["suffering", "disability", "pain", "morbidity", "quality of life", "one-time benefit", "disease burden"],
     inputs=['DISEASE_ERADICATION_DELAY_YLD'],
-    compute=lambda ctx: ctx["DISEASE_ERADICATION_DELAY_YLD"] * 8760,
+    compute=lambda ctx: ctx["DISEASE_ERADICATION_DELAY_YLD"] * HOURS_PER_YEAR,
 )  # 7.65 trillion hours total
 
 # Economic Valuation (using standardized $150k VSLY)
@@ -1891,7 +1888,7 @@ HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL = Parameter(
 
 # Disease Eradication + Acceleration - TOTAL (Optimistic Upper Bound)
 DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL = Parameter(
-    (GLOBAL_DISEASE_DEATHS_DAILY * 365 * 2) * EFFICACY_LAG_YEARS,
+    (GLOBAL_DISEASE_DEATHS_DAILY * DAYS_PER_YEAR * 2) * EFFICACY_LAG_YEARS,
     source_ref="/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics",
     source_type="calculated",
     description="Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.",
@@ -1902,7 +1899,7 @@ DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL = Parameter(
     confidence="low",
     keywords=["898m", "optimistic", "total", "one-time", "upper bound", "acceleration", "innovation"],
     inputs=['EFFICACY_LAG_YEARS', 'GLOBAL_DISEASE_DEATHS_DAILY'],
-    compute=lambda ctx: (ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * 365 * 2) * ctx["EFFICACY_LAG_YEARS"],
+    compute=lambda ctx: (ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * DAYS_PER_YEAR * 2) * ctx["EFFICACY_LAG_YEARS"],
 )  # 898M total deaths (optimistic with innovation acceleration)
 
 DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL = Parameter(
@@ -2098,7 +2095,6 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
     display_name="Ratio of Type Ii Error Cost to Type I Error Benefit",
     unit="ratio",
     formula="TYPE_II_COST ÷ TYPE_I_BENEFIT",
-    latex=r"\frac{Cost_{delay}}{Benefit_{safety}} = \frac{7.90B}{0.00259B} = 3{,}050:1",
     confidence="medium",
     keywords=["approval lag", "drug lag", "fda delay", "bureaucratic delay", "efficacy lag", "approval"],
     inputs=['DISEASE_ERADICATION_DELAY_DALYS', 'TYPE_I_ERROR_BENEFIT_DALYS'],
@@ -2108,26 +2104,24 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * TREATY_REDUCTION_PCT,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved",
+    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global",
     source_type="calculated",
     description="Annual lives saved from 1% reduction in conflict deaths",
     display_name="Annual Lives Saved from 1% Reduction in Conflict Deaths",
     unit="lives/year",
     formula="TOTAL_DEATHS × REDUCTION_PCT",
-    latex=r"LivesSaved = 244,600 \times 0.01 = 2,446",
     keywords=["1%", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "one percent", "international agreement"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'TREATY_REDUCTION_PCT'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"] * ctx["TREATY_REDUCTION_PCT"],
 )  # 2,446 lives
 TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
     TREATY_LIVES_SAVED_ANNUAL_GLOBAL * STANDARD_QALYS_PER_LIFE_SAVED,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys",
+    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global",
     source_type="calculated",
     description="Annual QALYs gained from peace dividend (lives saved × QALYs/life)",
     display_name="Annual QALYs Gained from Peace Dividend",
     unit="QALYs/year",
     formula="LIVES_SAVED × QALYS_PER_LIFE",
-    latex=r"QALYs_{peace} = 2,446 \times 35 = 85,610",
     keywords=["1%", "cost effectiveness", "value for money", "disease burden", "cost per daly", "cost per qaly", "deaths prevented"],
     inputs=['STANDARD_QALYS_PER_LIFE_SAVED', 'TREATY_LIVES_SAVED_ANNUAL_GLOBAL'],
     compute=lambda ctx: ctx["TREATY_LIVES_SAVED_ANNUAL_GLOBAL"] * ctx["STANDARD_QALYS_PER_LIFE_SAVED"],
@@ -2637,13 +2631,12 @@ FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
 # Total system costs
 TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs",
+    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs",
     source_type="calculated",
     description="Total annual system costs (campaign + dFDA operations)",
     display_name="Total Annual Treaty System Costs",
     unit="USD/year",
     formula="CAMPAIGN_ANNUAL + DFDA_OPEX",
-    latex=r"TotalCosts = \$0.25B + \$0.04B = \$0.29B",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "decentralized trials", "drug agency", "food and drug administration"],
     inputs=['DFDA_ANNUAL_OPEX', 'TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED'],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED"] + ctx["DFDA_ANNUAL_OPEX"],
@@ -2656,13 +2649,12 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
 # Basic annual benefits (peace dividend + R&D savings only, excludes regulatory delay & other benefits)
 TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits",
+    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits",
     source_type="calculated",
     description="Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
     display_name="1% Treaty Basic Annual Benefits (Peace + R&D Savings)",
     unit="USD/year",
     formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
-    latex=r"Benefits_{peace+RD} = \$113.55B + \$41.5B = \$155.05B",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency", "basic benefits"],
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_RD_GROSS_SAVINGS_ANNUAL"],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_RD_GROSS_SAVINGS_ANNUAL"]
@@ -2898,7 +2890,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
 # Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
 DFDA_ROI_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
-    source_ref="/knowledge/figures/dfda-roi-analysis.qmd",
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
     source_type="calculated",
     description="ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
     display_name="ROI from dFDA R&D Savings Only",
@@ -3071,8 +3063,9 @@ VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     display_name="Annual Victory Bond Payout",
     unit="USD/year",
     formula="TREATY_FUNDING × BOND_PCT",
-    latex=r"BondPayout = \$27.18B \times 0.10 = \$2.718B",
-    keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"]
+    keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"],
+    inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_FUNDING_PCT'],
+    compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] * ctx["VICTORY_BOND_FUNDING_PCT"],
 )  # $2.718B
 VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
@@ -3131,7 +3124,6 @@ DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     display_name="Patients Fundable Annually",
     unit="patients/year",
     formula="TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
-    latex=r"PatientsFundable = \$24.422B \div \$500 = 48.8M",
     keywords=["trial", "participant", "enrollment", "capacity", "patient"],
     inputs=['DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL', 'RECOVERY_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["RECOVERY_TRIAL_COST_PER_PATIENT"],
@@ -3207,7 +3199,6 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     display_name="Total Global Research Funding (Baseline + 1% Treaty Funding)",
     unit="USD",
     formula="GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
-    latex=r"TotalResearchFunding = \$67.5B + \$27.18B = \$94.68B",
     keywords=["research", "funding", "total", "dih", "treaty"],
     inputs=['GLOBAL_MED_RESEARCH_SPENDING', 'TREATY_ANNUAL_FUNDING'],
     compute=lambda ctx: ctx["GLOBAL_MED_RESEARCH_SPENDING"] + ctx["TREATY_ANNUAL_FUNDING"],
@@ -3224,7 +3215,6 @@ TRIAL_CAPACITY_MULTIPLIER = Parameter(
     display_name="Trial Capacity Multiplier",
     unit="ratio",
     formula="DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
-    latex=r"Multiplier = 48.8M \div 1.9M = 25.7",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"],
     inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'DIH_PATIENTS_FUNDABLE_ANNUALLY'],
     compute=lambda ctx: ctx["DIH_PATIENTS_FUNDABLE_ANNUALLY"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
@@ -3251,7 +3241,6 @@ DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     display_name="dFDA Maximum Trials per Year",
     unit="trials/year",
     formula="CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
-    latex=r"Trials_{dFDA} = 3,300 \times 25.7 = 84,800",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
     inputs=['CURRENT_TRIALS_PER_YEAR', 'TRIAL_CAPACITY_MULTIPLIER'],
     compute=lambda ctx: int(ctx["CURRENT_TRIALS_PER_YEAR"] * ctx["TRIAL_CAPACITY_MULTIPLIER"]),
@@ -3285,17 +3274,17 @@ GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
 
 # Annual disease deaths (calculated from daily)
 GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
-    GLOBAL_DAILY_DEATHS_CURABLE_DISEASES * 365,
+    GLOBAL_DAILY_DEATHS_CURABLE_DISEASES * DAYS_PER_YEAR,
     source_ref="/knowledge/economics/economics.qmd",
     source_type="calculated",
     description="Annual deaths from curable diseases globally",
     display_name="Annual Deaths from Curable Diseases Globally",
     unit="deaths/year",
-    formula="GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × 365",
+    formula="GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × DAYS_PER_YEAR",
     latex=r"Deaths_{annual} = 150{,}000 \times 365 = 54.75M",
     keywords=["day", "each day", "per day", "worldwide", "yearly", "fatalities", "casualties"],
     inputs=['GLOBAL_DAILY_DEATHS_CURABLE_DISEASES'],
-    compute=lambda ctx: ctx["GLOBAL_DAILY_DEATHS_CURABLE_DISEASES"] * 365,
+    compute=lambda ctx: ctx["GLOBAL_DAILY_DEATHS_CURABLE_DISEASES"] * DAYS_PER_YEAR,
 )  # 54.75 million deaths/year
 
 # Disease economic burden
@@ -3354,7 +3343,6 @@ GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
     display_name="Total Economic Burden of Disease Globally",
     unit="USD/year",
     formula="MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
-    latex=r"Burden_{annual} = \$9.9T + \$5.0T + \$94.2T = \$109.1T",
     keywords=["109.0t", "109.1t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"],
     inputs=['GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL', 'GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL', 'GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL'],
     compute=lambda ctx: ctx["GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL"] + ctx["GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL"] + ctx["GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL"],
@@ -3641,13 +3629,12 @@ SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
 
 TREATY_RECURRING_BENEFITS_ANNUAL = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
+    source_ref="/knowledge/economics/economics.qmd",
     source_type="calculated",
     description="Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
     display_name="1% Treaty Recurring Annual Benefits",
     unit="USD/year",
     formula="PEACE_DIVIDEND + RD_SAVINGS",
-    latex=r"Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B",
     confidence="high",
     keywords=["recurring", "annual", "treaty benefits", "peace dividend", "rd savings", "perpetual"],
     inputs=['DFDA_BENEFIT_RD_ONLY_ANNUAL', 'PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT'],
@@ -3668,7 +3655,6 @@ TREATY_ROI_HISTORICAL_RATE = Parameter(
     display_name="Treaty ROI - Historical Rate (Conservative Floor)",
     unit="ratio",
     formula="HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
-    latex=r"ROI_{historical} = \frac{\$251T}{\$1.00B} = 250{,}920:1",
     confidence="high",
     keywords=["250920", "historical", "conservative", "floor", "existing drugs", "roi"],
     inputs=['HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL', 'TREATY_CAMPAIGN_TOTAL_COST'],
@@ -3698,7 +3684,6 @@ TREATY_ROI_INNOVATION_ACCELERATION = Parameter(
     display_name="Treaty ROI - Innovation Acceleration (Optimistic)",
     unit="ratio",
     formula="DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL ÷ CAMPAIGN_COST",
-    latex=r"ROI_{acceleration} = \frac{\$2{,}572T}{\$1.00B} = 2{,}572{,}484:1",
     confidence="low",
     keywords=["2572484", "innovation", "acceleration", "optimistic", "upper bound", "roi"],
     inputs=['DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL', 'TREATY_CAMPAIGN_TOTAL_COST'],
@@ -3964,7 +3949,7 @@ CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
 
 TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
     TREATY_CAMPAIGN_TOTAL_COST / DISEASE_ERADICATION_DELAY_DALYS,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
     description=f"Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost ${BED_NETS_COST_PER_DALY}/DALY, deworming costs $4-10/DALY. This intervention is {int(BED_NETS_COST_PER_DALY/0.127)}x more cost-effective than bed nets while also being self-funding.",
     display_name="Cost per DALY Averted (Timeline Shift)",
@@ -3979,7 +3964,7 @@ TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
 
 TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE = Parameter(
     TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT / POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd",
+    source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
     description=f"Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still {int(BED_NETS_COST_PER_DALY/1.27)}x more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.",
     display_name="Expected Cost per DALY (Conservative 10% Success)",
@@ -4310,8 +4295,8 @@ if __name__ == "__main__":
     print(f"dFDA savings: {format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
     print(f"Total benefits: {format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)}")
 
-# Derived time-based costs
-SECONDS_PER_YEAR = 365 * 24 * 60 * 60
+# Derived time-based costs (SECONDS_PER_YEAR defined in TIME CONSTANTS section)
+# SECONDS_PER_YEAR = DAYS_PER_YEAR * HOURS_PER_DAY * 60 * 60
 GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
     4_200_000,
     source_ref="medical-research-lives-saved-annually",
@@ -4423,7 +4408,6 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     display_name="Target Voting Bloc Size for Campaign",
     unit="of people",
     formula="GLOBAL_POPULATION × 3.5%",
-    latex=r"VotingBloc = 8.0B \times 0.035 = 280M",
     keywords=["280.0m", "1%", "one percent", "international agreement", "peace treaty", "agreement", "pact"],
     inputs=['GLOBAL_POPULATION_2024', 'GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT'],
     compute=lambda ctx: ctx["GLOBAL_POPULATION_2024"] * ctx["GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT"],
@@ -4551,13 +4535,12 @@ LOBBYIST_SALARY_MAX = Parameter(
 # This sum is distinct from TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS which uses different categories for broader calculation.
 COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
-    source_ref="/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends",
+    source_ref="/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition",
     source_type="calculated",
     description="Combined peace and health dividends for ROI calculation",
     display_name="Combined Peace and Health Dividends for ROI Calculation",
     unit="USD/year",
     formula="PEACE_DIVIDEND + R&D_SAVINGS",
-    latex=r"Combined = \$113.55B + \$50B = \$163.55B",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT", "DFDA_RD_GROSS_SAVINGS_ANNUAL"],
     compute=lambda ctx: ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"] + ctx["DFDA_RD_GROSS_SAVINGS_ANNUAL"],
@@ -4571,7 +4554,6 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
     display_name="Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
     unit="ratio",
     formula="TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
-    latex=r"Multiplier = \frac{\$155.1B}{\$15.0B} = 10.3\times",
     keywords=["1%", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "bcr", "multiple"],
     inputs=['CHILDHOOD_VACCINATION_ANNUAL_BENEFIT', 'COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC'],
     compute=lambda ctx: ctx["COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC"] / ctx["CHILDHOOD_VACCINATION_ANNUAL_BENEFIT"],
@@ -5099,12 +5081,12 @@ CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
     keywords=["caregiver", "hour", "simple", "expenditure", "spending", "value", "budget"]
 )  # Replacement cost estimate
 CAREGIVER_COST_ANNUAL = Parameter(
-    CAREGIVER_HOURS_PER_MONTH * 12 * CAREGIVER_VALUE_PER_HOUR_SIMPLE,
+    CAREGIVER_HOURS_PER_MONTH * MONTHS_PER_YEAR * CAREGIVER_VALUE_PER_HOUR_SIMPLE,
     source_type="definition",
     description="Annual cost of unpaid caregiving (replacement cost method)",
     display_name="Annual Cost of Unpaid Caregiving",
     unit="USD/year",
-    formula="HOURS_PER_MONTH × 12 × VALUE_PER_HOUR",
+    formula="HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
     keywords=["caregiver", "unpaid", "annual", "expenditure", "spending", "value", "budget"],
 )  # $6,000/year
 
@@ -6152,7 +6134,6 @@ DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
     display_name="Drug Cost Increase: 1980s to Current",
     unit="ratio",
     formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
-    latex=r"\frac{\$2.6B}{\$194M} = 13.4",
     confidence="high",
     keywords=["cost", "increase", "multiplier", "drug", "development", "1980s", "current"],
     inputs=['DRUG_DEVELOPMENT_COST_1980S', 'PHARMA_DRUG_DEVELOPMENT_COST_CURRENT'],
@@ -6167,7 +6148,6 @@ DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
     display_name="Drug Cost Increase: Pre-1962 to Current",
     unit="ratio",
     formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST",
-    latex=r"\frac{\$2.6B}{\$50M} = 52",
     confidence="medium",
     keywords=["cost", "increase", "multiplier", "drug", "development", "1962", "regulation", "fda", "pre-1962", "current"],
     inputs=['PHARMA_DRUG_DEVELOPMENT_COST_CURRENT', 'PRE_1962_DRUG_DEVELOPMENT_COST'],
@@ -6285,7 +6265,6 @@ US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
     display_name="US Major Diseases Total Annual Cost",
     unit="USD",
     formula="DIABETES + ALZHEIMERS + HEART + CANCER",
-    latex=r"Total = \$327B + \$355B + \$363B + \$208B = \$1.253T",
     confidence="high",
     keywords=["insurance", "disease", "cost", "annual", "us", "total", "burden"],
     inputs=['US_ALZHEIMERS_ANNUAL_COST', 'US_CANCER_ANNUAL_COST', 'US_DIABETES_ANNUAL_COST', 'US_HEART_DISEASE_ANNUAL_COST'],

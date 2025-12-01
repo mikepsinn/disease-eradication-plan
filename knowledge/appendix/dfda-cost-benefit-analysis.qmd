@@ -1225,7 +1225,7 @@ value_per_qaly = STANDARD_ECONOMIC_QALY_VALUE_USD  # Value per quality-adjusted 
 
 # Gross R&D savings
 
-gross_rd_savings = DFDA_RD_GROSS_SAVINGS_ANNUAL  # Pre-calculated: {{< var sensitivity_peace_dividend_conservative >}}
+gross_rd_savings = DFDA_RD_GROSS_SAVINGS_ANNUAL  # Pre-calculated: {{< var dfda_rd_gross_savings_annual >}}
 
 # Net R&D savings (after operational costs)
 

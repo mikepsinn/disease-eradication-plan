@@ -250,13 +250,13 @@
   \ of Disease) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal (SE:\
   \ 0.07) | Unit: weight | Click to view source\">0.35</a>"
 "chronic_disease_disability_weight_cite": "@who-global-health-estimates-2024"
-"combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#combined-dividends\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#combined-dividends\"\
+"combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Combined peace\
   \ and health dividends for ROI calculation | ✓ High confidence | Formula: PEACE_DIVIDEND\
   \ + R&D_SAVINGS | Unit: USD/year | Click to view calculation\">$155B</a>"
-"combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nCombined = \\$113.55B\
-  \ + \\$50B = \\$163.55B\n$$"
+"combined_peace_health_dividends_annual_for_roi_calc_latex": "$$\nDividend_{ann} =\
+  \ Cost_{soc,ann} + Benefit_{gross,ann} = \\$113.55B + \\$41.50B = \\$155.05B\n$$"
 "current_active_trials": "<a href=\"https://warondisease.org/knowledge/references.html#clinicaltrials-gov-enrollment-data-2025\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -283,8 +283,8 @@
 "current_patient_participation_rate": "<span class=\"parameter-definition\" title=\"\
   Current patient participation rate in clinical trials (0.08% = 1.9M participants\
   \ / 2.4B disease patients) | Unit: rate | Core definition\">0.0792%</span>"
-"current_patient_participation_rate_latex": "$$\nRate = 1.9M \\div 2.4B = 0.08\\%\n\
-  $$"
+"current_patient_participation_rate_latex": "$$\nRate_{curr} = \\frac{Trials_{curr}}{Population_{curr,global}}\
+  \ = \\frac{1.9M}{2.40B} = 0.1\\%\n$$"
 "current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current global\
@@ -303,6 +303,8 @@
   \ | 95% CI: [1.50M, 2.30M] | Dist: Lognormal | Unit: patients/year | Click to view\
   \ source\">1.90M</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
+"days_per_year": "<span class=\"parameter-link\" title=\"parameters.DAYS_PER_YEAR\"\
+  >365</span>"
 "dct_platform_funding_medium": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#analogous-rom\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Mid-range funding\
@@ -340,8 +342,8 @@
   \ from R&D savings (trial cost reduction, secondary component) | ✓ High confidence\
   \ | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view\
   \ calculation\">$41.5B</a>"
-"dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
-  $41.5B\n$$"
+"dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{DFDA,ann} = Trials_{ann} \\times\
+  \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
 "dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   low\" title=\"Expected ROI for 1% Treaty accounting for 0.1% political success probability\
@@ -493,20 +495,22 @@
   \ from R&D savings (trial cost reduction, secondary component) | ✓ High confidence\
   \ | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view\
   \ calculation\">$41.5B</a>"
-"dfda_rd_gross_savings_annual_latex": "$$\nBenefit_{RD} = \\$83B \\times 0.50 = \\\
-  $41.5B\n$$"
+"dfda_rd_gross_savings_annual_latex": "$$\nBenefit_{gross,ann} = Trials_{ann} \\times\
+  \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
 "dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Daily R&D savings\
   \ from trial cost reduction (opportunity cost of delay) | ✓ High confidence | Formula:\
-  \ ANNUAL_RD_SAVINGS ÷ 365 | Unit: USD/day | Click to view calculation\">$114M</a>"
-"dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\$41.5B \\div 365 = \\$113.7M\n\
+  \ ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR | Unit: USD/day | Click to view calculation\"\
+  >$114M</a>"
+"dfda_rd_savings_daily_latex": "$$\nSavings_{daily} = \\frac{\\$41.5B}{365} = \\$113.7M\n\
   $$"
-"dfda_roi_rd_only": "<a href=\"/knowledge/figures/dfda-roi-analysis\" class=\"parameter-link\"\
-  \ data-source-ref=\"/knowledge/figures/dfda-roi-analysis.qmd\" data-source-type=\"\
-  calculated\" data-confidence=\"high\" title=\"ROI from dFDA R&D savings only (10-year\
-  \ NPV, most conservative estimate) | ✓ High confidence | Formula: NPV_BENEFIT ÷\
-  \ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\">384</a>"
+"dfda_roi_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from dFDA\
+  \ R&D savings only (10-year NPV, most conservative estimate) | ✓ High confidence\
+  \ | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\"\
+  >384</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple\"\
@@ -514,8 +518,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Simple ROI without\
   \ NPV adjustment (gross savings / annual opex) | ✓ High confidence | Formula: GROSS_SAVINGS\
   \ ÷ ANNUAL_OPEX | Unit: ratio | Click to view calculation\">1,038</a>"
-"dfda_roi_simple_latex": "$$\nROI_{simple} = \\frac{\\$41.5B}{\\$0.04B} = 1,038:1\n\
-  $$"
+"dfda_roi_simple_latex": "$$\nROI_{DFDA} = \\frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}}\
+  \ = \\frac{\\$41.50B}{\\$40.0M} = 1{,}038\n$$"
 "dfda_target_cost_per_patient_usd": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-per-patient\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
@@ -523,8 +527,8 @@
   \ confidence | Unit: USD/patient | Click to view calculation\">$1.00K</a>"
 "dfda_trials_per_year_capacity": "<span class=\"parameter-link\" title=\"parameters.DFDA_TRIALS_PER_YEAR_CAPACITY\"\
   >84,834</span>"
-"dfda_trials_per_year_capacity_latex": "$$\nTrials_{dFDA} = 3,300 \\times 25.7 = 84,800\n\
-  $$"
+"dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
+  \ Multiplier = 3{,}300 \\times 25.71 = 84{,}834\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
@@ -550,8 +554,8 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\
   \ fundable annually at RECOVERY trial cost | ✓ High confidence | Formula: TRIAL_SUBSIDIES\
   \ ÷ COST_PER_PATIENT | Unit: patients/year | Click to view calculation\">48.8M</a>"
-"dih_patients_fundable_annually_latex": "$$\nPatientsFundable = \\$24.422B \\div \\\
-  $500 = 48.8M\n$$"
+"dih_patients_fundable_annually_latex": "$$\nFundable_{ann} = \\frac{Treasury_{ann}}{Cost}\
+  \ = \\frac{\\$24.42B}{\\$500} = 48.8M\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
@@ -613,8 +617,8 @@
   \ with Disability during disease eradication delay (PRIMARY estimate) | ~ Medium\
   \ confidence | Formula: DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT | Unit:\
   \ years | Click to view calculation\">873M</a>"
-"disease_eradication_delay_yld_latex": "$$\nYLD = 413.4M \\times 6 \\times 0.35 =\
-  \ 868M\n$$"
+"disease_eradication_delay_yld_latex": "$$\nDelay_{dis} = Deaths_{total} \\times Deaths\
+  \ \\times Chronic = 415.9M \\times 6 \\times 0.35 = 873.3M\n$$"
 "disease_eradication_delay_yll": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Years of Life\
@@ -682,15 +686,15 @@
   calculated\" data-confidence=\"high\" title=\"Drug development cost increase from\
   \ 1980s to current ($194M → $2.6B = 13.4x) | ✓ High confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT\
   \ ÷ DRUG_DEVELOPMENT_COST_1980S | Unit: ratio | Click to view calculation\">13.4</a>"
-"drug_cost_increase_1980s_to_current_multiplier_latex": "$$\n\\frac{\\$2.6B}{\\$194M}\
-  \ = 13.4\n$$"
+"drug_cost_increase_1980s_to_current_multiplier_latex": "$$\nMultiplier_{curr} = \\\
+  frac{Cost_{curr}}{Cost_{80s}} = \\frac{\\$2.60B}{\\$194.0M} = 13.4\n$$"
 "drug_cost_increase_pre1962_to_current_multiplier": "<a href=\"/pre-1962-drug-costs-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"/pre-1962-drug-costs-timeline\" data-source-type=\"\
   calculated\" data-confidence=\"medium\" title=\"Drug development cost increase from\
   \ pre-1962 to current ($50M → $2.6B = 52x) | ~ Medium confidence | Formula: PHARMA_DRUG_DEVELOPMENT_COST_CURRENT\
   \ ÷ PRE_1962_DRUG_DEVELOPMENT_COST | Unit: ratio | Click to view calculation\">52</a>"
-"drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\n\\frac{\\$2.6B}{\\\
-  $50M} = 52\n$$"
+"drug_cost_increase_pre1962_to_current_multiplier_latex": "$$\nMultiplier_{curr} =\
+  \ \\frac{Cost_{curr}}{Cost_{pre62}} = \\frac{\\$2.60B}{\\$50.0M} = 52\n$$"
 "drug_development_cost_1980s": "<a href=\"https://warondisease.org/knowledge/references.html#pre-1962-drug-costs-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"pre-1962-drug-costs-timeline\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Drug development cost in 1980s (compounded\
@@ -761,7 +765,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"FDA approval\
   \ timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower) | ✓ High\
-  \ confidence | Formula: FDA_PHASE_1_TO_APPROVAL_YEARS × 12 ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS\
+  \ confidence | Formula: FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS\
   \ | Unit: ratio | Click to view calculation\">36.4</a>"
 "fda_to_oxford_recovery_trial_time_multiplier_latex": "$$\n\\frac{9.1 \\text{ years}\
   \ \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4\n$$"
@@ -828,7 +832,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
   \ from curable diseases globally | ✓ High confidence | Formula: GLOBAL_DAILY_DEATHS_CURABLE_DISEASES\
-  \ × 365 | Unit: deaths/year | Click to view calculation\">54.8M</a>"
+  \ × DAYS_PER_YEAR | Unit: deaths/year | Click to view calculation\">54.8M</a>"
 "global_annual_deaths_curable_diseases_latex": "$$\nDeaths_{annual} = 150{,}000 \\\
   times 365 = 54.75M\n$$"
 "global_annual_environmental_damage_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
@@ -842,22 +846,22 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual cost of\
   \ combat deaths (deaths × VSL) | ✓ High confidence | Formula: COMBAT_DEATHS × VSL\
   \  | Unit: USD/year | Click to view calculation\">$2.34T</a>"
-"global_annual_human_cost_active_combat_latex": "$$\nCost_{combat} = 233,600 \\times\
-  \ \\$10M = \\$2,336B\n$$"
+"global_annual_human_cost_active_combat_latex": "$$\nCost_{human,ann} = Deaths_{combat,ann}\
+  \ \\times Value = 233{,}600 \\times \\$10.0M = \\$2.34T\n$$"
 "global_annual_human_cost_state_violence": "<a href=\"/knowledge/problem/cost-of-war#human-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual cost of\
   \ state violence deaths (deaths × VSL) | ✓ High confidence | Formula: STATE_DEATHS\
   \ × VSL  | Unit: USD/year | Click to view calculation\">$27B</a>"
-"global_annual_human_cost_state_violence_latex": "$$\nCost_{state} = 2,700 \\times\
-  \ \\$10M = \\$27B\n$$"
+"global_annual_human_cost_state_violence_latex": "$$\nCost_{human,ann} = Deaths_{ann}\
+  \ \\times Value = 2{,}700 \\times \\$10.0M = \\$27.00B\n$$"
 "global_annual_human_cost_terror_attacks": "<a href=\"/knowledge/problem/cost-of-war#human-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual cost of\
   \ terror deaths (deaths × VSL) | ✓ High confidence | Formula: TERROR_DEATHS × VSL\
   \  | Unit: USD/year | Click to view calculation\">$83B</a>"
-"global_annual_human_cost_terror_attacks_latex": "$$\nCost_{terror} = 8,300 \\times\
-  \ \\$10M = \\$83B\n$$"
+"global_annual_human_cost_terror_attacks_latex": "$$\nCost_{human,ann} = Deaths_{terror,ann}\
+  \ \\times Value = 8{,}300 \\times \\$10.0M = \\$83.00B\n$$"
 "global_annual_human_life_losses_conflict": "<a href=\"/knowledge/problem/cost-of-war#human-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
@@ -1047,8 +1051,9 @@
   \ (medical + productivity + mortality) | ✓ High confidence | Formula: MEDICAL_COSTS\
   \ + PRODUCTIVITY_LOSS + MORTALITY_VALUE | Unit: USD/year | Click to view calculation\"\
   >$109T</a>"
-"global_disease_economic_burden_annual_latex": "$$\nBurden_{annual} = \\$9.9T + \\\
-  $5.0T + \\$94.2T = \\$109.1T\n$$"
+"global_disease_economic_burden_annual_latex": "$$\nBurden_{ann} = Cost_{direct,ann}\
+  \ + Loss_{human,ann} + Loss_{ann} = \\$9.90T + \\$94.20T + \\$5.00T = \\$109.10T\n\
+  $$"
 "global_disease_human_life_value_loss_annual": "<a href=\"https://warondisease.org/knowledge/references.html#disease-economic-burden-109t\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Economic value of human life lost to\
@@ -1118,6 +1123,9 @@
   \ cost of war and disease with all externalities (direct + indirect costs for both)\
   \ | ✓ High confidence | Formula: WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN\
   \ | Unit: USD/year | Click to view calculation\">$129T</a>"
+"global_total_health_and_war_cost_annual_latex": "$$\nCost_{total} = Cost_{war,total}\
+  \ + Burden_{ann} + Spending_{sympt,ann} = \\$11.36T + \\$109.10T + \\$8.20T = \\\
+  $128.66T\n$$"
 "historical_progress_deaths_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#historical-progress\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total deaths\
@@ -1135,6 +1143,10 @@
   \ DEATHS_TOTAL × YLL × VSLY | Unit: USD | Click to view calculation\">$251T</a>"
 "historical_progress_economic_loss_total_latex": "$$\nLoss_{total} = 98.4M \\times\
   \ 17 \\times \\$150k = \\$251T\n$$"
+"hours_per_day": "<span class=\"parameter-link\" title=\"parameters.HOURS_PER_DAY\"\
+  >24</span>"
+"hours_per_year": "<span class=\"parameter-link\" title=\"parameters.HOURS_PER_YEAR\
+  \ - 8760\">8,760</span>"
 "human_genome_project_total_economic_impact": "<a href=\"https://warondisease.org/knowledge/references.html#human-genome-and-genetic-editing\"\
   \ class=\"parameter-link\" data-source-ref=\"human-genome-and-genetic-editing\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated total\
@@ -1196,6 +1208,8 @@
   \ ÷ MEDICAL_RESEARCH | Unit: ratio | Click to view calculation\">40.3</a>"
 "military_vs_medical_research_ratio_latex": "$$\nRatio = \\frac{\\$2,718B}{\\$67.5B}\
   \ \\approx 40.3:1\n$$"
+"minutes_per_hour": "<span class=\"parameter-link\" title=\"parameters.MINUTES_PER_HOUR\"\
+  >60</span>"
 "misallocation_factor_death_vs_saving": "<a href=\"/knowledge/problem/cost-of-war#grotesque-mathematics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Misallocation\
@@ -1203,6 +1217,8 @@
   \ ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to view calculation\">2,889</a>"
 "misallocation_factor_death_vs_saving_latex": "$$\nMisallocation = \\frac{\\$46.4M}{\\\
   $16,071} \\approx 2,889x\n$$"
+"months_per_year": "<span class=\"parameter-link\" title=\"parameters.MONTHS_PER_YEAR\"\
+  >12</span>"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
   \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
 "npv_discount_rate_standard_latex": "$$\nr = 0.08 \\text{ (discount rate)}\n$$"
@@ -1221,13 +1237,13 @@
   \ to participate in drug trials (44.8% in surveys, 88% when actually approached)\
   \ | ~ Medium confidence | Unit: percentage | Click to view source\">44.8%</a>"
 "patient_willingness_trial_participation_pct_cite": "@patient-willingness-clinical-trials"
-"peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#peace-dividend\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-dividend\"\
+"peace_dividend_annual_societal_benefit": "<a href=\"/knowledge/appendix/peace-dividend-calculations\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual peace\
   \ dividend from 1% reduction in total war costs | ✓ High confidence | Formula: TOTAL_WAR_COST\
   \ × 1% | Unit: USD/year | Click to view calculation\">$114B</a>"
-"peace_dividend_annual_societal_benefit_latex": "$$\nPeaceDividend = \\$11,355B \\\
-  times 0.01 = \\$113.55B\n$$"
+"peace_dividend_annual_societal_benefit_latex": "$$\nCost_{soc,ann} = Cost_{war,total}\
+  \ \\times Reduction_{treaty} = \\$11.36T \\times 1.0\\% = \\$113.55B\n$$"
 "peace_dividend_conflict_reduction": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
   low\" title=\"Conflict reduction benefits from 1% less military spending (lower\
@@ -1241,8 +1257,8 @@
   calculated\" data-confidence=\"high\" title=\"Annual savings from 1% reduction in\
   \ direct war costs | ✓ High confidence | Formula: DIRECT_COSTS × 1% | Unit: USD/year\
   \ | Click to view calculation\">$76.5B</a>"
-"peace_dividend_direct_costs_latex": "$$\nPeaceDividend_{direct} = \\$7,655B \\times\
-  \ 0.01 = \\$76.55B\n$$"
+"peace_dividend_direct_costs_latex": "$$\nCost_{direct,peace} = Cost_{direct,total}\
+  \ \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.55B\n$$"
 "peace_dividend_direct_fiscal_savings": "<a href=\"/sipri-2024-spending\" class=\"\
   parameter-link\" data-source-ref=\"/sipri-2024-spending\" data-source-type=\"definition\"\
   \ data-confidence=\"high\" title=\"Direct fiscal savings from 1% military spending\
@@ -1255,72 +1271,72 @@
   calculated\" data-confidence=\"high\" title=\"Annual savings from 1% reduction in\
   \ environmental damage | ✓ High confidence | Formula: ENVIRONMENTAL_DAMAGE × 1%\
   \ | Unit: USD/year | Click to view calculation\">$1.00B</a>"
-"peace_dividend_environmental_latex": "$$\nPeaceDividend_{env} = \\$10B \\times 0.01\
-  \ = \\$0.10B\n$$"
+"peace_dividend_environmental_latex": "$$\nSavings_{env,peace} = Cost_{env,ann} \\\
+  times Reduction_{treaty} = \\$100.00B \\times 1.0\\% = \\$1.00B\n$$"
 "peace_dividend_human_casualties": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in human casualties | ✓ High confidence | Formula: HUMAN_LIFE_LOSSES\
   \ × 1% | Unit: USD/year | Click to view calculation\">$24.5B</a>"
-"peace_dividend_human_casualties_latex": "$$\nPeaceDividend_{human} = \\$2,446B \\\
-  times 0.01 = \\$24.46B\n$$"
+"peace_dividend_human_casualties_latex": "$$\nSavings_{human,peace} = Loss_{human,ann}\
+  \ \\times Reduction_{treaty} = \\$2.45T \\times 1.0\\% = \\$24.46B\n$$"
 "peace_dividend_indirect_costs": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in indirect war costs | ✓ High confidence | Formula: INDIRECT_COSTS\
   \ × 1% | Unit: USD/year | Click to view calculation\">$37B</a>"
-"peace_dividend_indirect_costs_latex": "$$\nPeaceDividend_{indirect} = \\$3,700.1B\
-  \ \\times 0.01 = \\$37.00B\n$$"
+"peace_dividend_indirect_costs_latex": "$$\nCost_{indirect,peace} = Cost_{indirect,total}\
+  \ \\times Reduction_{treaty} = \\$3.70T \\times 1.0\\% = \\$37.00B\n$$"
 "peace_dividend_infrastructure": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in infrastructure destruction | ✓ High confidence | Formula:\
   \ INFRASTRUCTURE_DESTRUCTION × 1% | Unit: USD/year | Click to view calculation\"\
   >$18.8B</a>"
-"peace_dividend_infrastructure_latex": "$$\nPeaceDividend_{infra} = \\$1,875B \\times\
-  \ 0.01 = \\$18.75B\n$$"
+"peace_dividend_infrastructure_latex": "$$\nSavings_{infra,peace} = Infrastructure_{global}\
+  \ \\times Reduction_{treaty} = \\$1.88T \\times 1.0\\% = \\$18.75B\n$$"
 "peace_dividend_lost_economic_growth": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in lost economic growth | ✓ High confidence | Formula: LOST_ECONOMIC_GROWTH\
   \ × 1% | Unit: USD/year | Click to view calculation\">$27.2B</a>"
-"peace_dividend_lost_economic_growth_latex": "$$\nPeaceDividend_{growth} = \\$2,718B\
-  \ \\times 0.01 = \\$27.18B\n$$"
+"peace_dividend_lost_economic_growth_latex": "$$\nSavings_{lost_econ,peace} = Cost_{mil,ann}\
+  \ \\times Reduction_{treaty} = \\$2.72T \\times 1.0\\% = \\$27.18B\n$$"
 "peace_dividend_lost_human_capital": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in lost human capital | ✓ High confidence | Formula: LOST_HUMAN_CAPITAL\
   \ × 1% | Unit: USD/year | Click to view calculation\">$3.00B</a>"
-"peace_dividend_lost_human_capital_latex": "$$\nPeaceDividend_{capital} = \\$30B \\\
-  times 0.01 = \\$0.30B\n$$"
+"peace_dividend_lost_human_capital_latex": "$$\nSavings_{human,peace} = Lost_{global}\
+  \ \\times Reduction_{treaty} = \\$300.00B \\times 1.0\\% = \\$3.00B\n$$"
 "peace_dividend_ptsd": "<a href=\"/knowledge/economics/peace-dividend\" class=\"parameter-link\"\
   \ data-source-ref=\"/knowledge/economics/peace-dividend.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Annual savings from 1% reduction in\
   \ PTSD and mental health costs | ✓ High confidence | Formula: PTSD_COSTS × 1% |\
   \ Unit: USD/year | Click to view calculation\">$2.32B</a>"
-"peace_dividend_ptsd_latex": "$$\nPeaceDividend_{PTSD} = \\$23.2B \\times 0.01 = \\\
-  $0.23B\n$$"
+"peace_dividend_ptsd_latex": "$$\nCost_{PTSD,peace} = Cost_{ann} \\times Reduction_{treaty}\
+  \ = \\$232.00B \\times 1.0\\% = \\$2.32B\n$$"
 "peace_dividend_refugee_support": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in refugee support costs | ✓ High confidence | Formula: REFUGEE_SUPPORT\
   \ × 1% | Unit: USD/year | Click to view calculation\">$1.50B</a>"
-"peace_dividend_refugee_support_latex": "$$\nPeaceDividend_{refugee} = \\$15B \\times\
-  \ 0.01 = \\$0.15B\n$$"
+"peace_dividend_refugee_support_latex": "$$\nCost_{ref,peace} = Cost_{ref,ann} \\\
+  times Reduction_{treaty} = \\$150.00B \\times 1.0\\% = \\$1.50B\n$$"
 "peace_dividend_trade_disruption": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in trade disruption | ✓ High confidence | Formula: TRADE_DISRUPTION\
   \ × 1% | Unit: USD/year | Click to view calculation\">$6.16B</a>"
-"peace_dividend_trade_disruption_latex": "$$\nPeaceDividend_{trade} = \\$616B \\times\
-  \ 0.01 = \\$6.16B\n$$"
+"peace_dividend_trade_disruption_latex": "$$\nSavings_{trade,peace} = Disruption_{trade,ann}\
+  \ \\times Reduction_{treaty} = \\$616.00B \\times 1.0\\% = \\$6.16B\n$$"
 "peace_dividend_veteran_healthcare": "<a href=\"/knowledge/economics/peace-dividend\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/peace-dividend.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual savings\
   \ from 1% reduction in veteran healthcare costs | ✓ High confidence | Formula: VETERAN_HEALTHCARE\
   \ × 1% | Unit: USD/year | Click to view calculation\">$2.00B</a>"
-"peace_dividend_veteran_healthcare_latex": "$$\nPeaceDividend_{veteran} = \\$20.01B\
-  \ \\times 0.01 = \\$0.20B\n$$"
+"peace_dividend_veteran_healthcare_latex": "$$\nCost_{vet,peace} = Cost_{vet,ann}\
+  \ \\times Reduction_{treaty} = \\$200.10B \\times 1.0\\% = \\$2.00B\n$$"
 "personal_lifetime_benefit_age_20_1pct": "<span class=\"parameter-link\" title=\"\
   parameters.PERSONAL_LIFETIME_BENEFIT_AGE_20_1PCT\">205K</span>"
 "personal_lifetime_benefit_age_30_10pct": "<span class=\"parameter-link\" title=\"\
@@ -1354,8 +1370,12 @@
   \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">572K</span>"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
   >$12.2K</span>"
+"per_capita_chronic_disease_cost_latex": "$$\nCost_{percap,dis} = \\frac{Spending_{chronic,ann}}{Population}\
+  \ = \\frac{\\$4.10T}{335M} = \\$12.2K\n$$"
 "per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\"\
   >$1.04K</span>"
+"per_capita_mental_health_cost_latex": "$$\nCost_{percap,health} = \\frac{Cost_{mental,ann}}{Population}\
+  \ = \\frac{\\$350.00B}{335M} = \\$1.0K\n$$"
 "pharma_drug_development_cost_current": "<a href=\"https://warondisease.org/knowledge/references.html#drug-development-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"drug-development-cost\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Average\
@@ -1505,8 +1525,10 @@
   ROI at 7% discount rate (approximate 22% decrease from 3% baseline) | ~ Medium confidence\
   \ | Formula: DFDA_ROI_RD_ONLY * 0.78 | Click to view calculation\">300</a>"
 "roi_discount_7pct_latex": "$$\nROI_{7\\%} \\approx 463 \\times 0.78 = 361\n$$"
-"seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\"\
-  >31.5M</span>"
+"seconds_per_minute": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_MINUTE\"\
+  >60</span>"
+"seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\
+  \ - 31,536,000\">31.5M</span>"
 "smallpox_eradication_roi": "<a href=\"https://warondisease.org/knowledge/references.html#smallpox-eradication-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
@@ -1539,7 +1561,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total hours\
   \ of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time\
   \ benefit from YLD component, not annual recurring) | ~ Medium confidence | Formula:\
-  \ YLD × 8760 hours/year | Unit: hours | Click to view calculation\">7.65T</a>"
+  \ YLD × HOURS_PER_YEAR | Unit: hours | Click to view calculation\">7.65T</a>"
 "suffering_hours_eliminated_total_latex": "$$\nHours = 868M \\text{ (YLD)} \\times\
   \ 8{,}760 \\text{ (hrs/yr)} = 7.60T\n$$"
 "sugar_subsidy_cost_per_person_annual": "<a href=\"https://warondisease.org/knowledge/references.html#sugar-subsidies-cost\"\
@@ -1628,8 +1650,8 @@
   \ research funding (baseline + 1% treaty funding) | ✓ High confidence | Formula:\
   \ GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING | Unit: USD | Click to view\
   \ calculation\">$94.7B</a>"
-"total_research_funding_with_treaty_latex": "$$\nTotalResearchFunding = \\$67.5B +\
-  \ \\$27.18B = \\$94.68B\n$$"
+"total_research_funding_with_treaty_latex": "$$\nFunding_{total} = Spending_{global}\
+  \ + Funding_{ann} = \\$67.50B + \\$27.18B = \\$94.68B\n$$"
 "total_time_investment_hours": "<a href=\"/knowledge/solution/wishocracy#time-investment\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/solution/wishocracy.qmd#time-investment\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total time investment\
@@ -1660,16 +1682,16 @@
 "treaty_annual_funding": "<span class=\"parameter-definition\" title=\"Annual funding\
   \ from 1% of global military spending redirected to DIH | Unit: USD/year | Core\
   \ definition\">$27.2B</span>"
-"treaty_annual_funding_latex": "$$\nFunding = \\$2,718B \\times 0.01 = \\$27.18B\n\
-  $$"
+"treaty_annual_funding_latex": "$$\nFunding_{ann} = Spending_{mil,ann} \\times Reduction_{treaty}\
+  \ = \\$2.72T \\times 1.0\\% = \\$27.18B\n$$"
 "treaty_benefit_multiplier_vs_vaccines": "<a href=\"/knowledge/economics/economics#better-than-the-best-charities\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#better-than-the-best-charities\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Treaty system\
   \ benefit multiplier vs childhood vaccination programs | ✓ High confidence | Formula:\
   \ TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT | Unit: ratio | Click\
   \ to view calculation\">10.3</a>"
-"treaty_benefit_multiplier_vs_vaccines_latex": "$$\nMultiplier = \\frac{\\$155.1B}{\\\
-  $15.0B} = 10.3\\times\n$$"
+"treaty_benefit_multiplier_vs_vaccines_latex": "$$\nMultiplier_{treaty} = \\frac{Dividend_{ann}}{Benefit_{ann}}\
+  \ = \\frac{\\$155.05B}{\\$15.00B} = 10.34\n$$"
 "treaty_campaign_annual_cost_amortized": "<a href=\"/knowledge/strategy/roadmap#campaign-budget\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#campaign-budget\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Amortized annual\
@@ -1739,8 +1761,8 @@
   \ bloc size for campaign (3.5% of global population - critical mass for social change)\
   \ | ✓ High confidence | Formula: GLOBAL_POPULATION × 3.5% | Unit: of people | Click\
   \ to view calculation\">280M</a>"
-"treaty_campaign_voting_bloc_target_latex": "$$\nVotingBloc = 8.0B \\times 0.035 =\
-  \ 280M\n$$"
+"treaty_campaign_voting_bloc_target_latex": "$$\nCampaign_{camp,treaty} = Population_{global}\
+  \ \\times Threshold_{global} = 8.00B \\times 3.5\\% = 280M\n$$"
 "treaty_complete_roi_all_benefits": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Treaty ROI\
@@ -1751,8 +1773,8 @@
   \ Unit: ratio | Click to view calculation\">1.19M</a>"
 "treaty_complete_roi_all_benefits_latex": "$$\nROI_{lag\\_elimination} = \\frac{\\\
   $1{,}286T}{\\$1.00B} = 1{,}286{,}242:1\n$$"
-"treaty_dfda_cost_per_daly_timeline_shift": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
+"treaty_dfda_cost_per_daly_timeline_shift": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Cost per DALY\
   \ averted from one-time timeline shift (8.2 years). This is a conservative estimate\
   \ that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year\
@@ -1762,8 +1784,8 @@
   \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0.13</a>"
 "treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
   $1.0B}{7.90B} = \\$0.127\n$$"
-"treaty_expected_cost_per_daly_conservative": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
+"treaty_expected_cost_per_daly_conservative": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Expected cost\
   \ per DALY accounting for 10% political success probability (conservative estimate).\
   \ Even at this pessimistic probability (1 in 10 chance of success), the intervention\
@@ -1778,38 +1800,38 @@
   parameters.TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER\">70.7</span>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\
   $89}{\\$1.27} = 70\\times\n$$"
-"treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#lives-saved\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#lives-saved\"\
+"treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
   \ saved from 1% reduction in conflict deaths | ✓ High confidence | Formula: TOTAL_DEATHS\
   \ × REDUCTION_PCT | Unit: lives/year | Click to view calculation\">2,446</a>"
-"treaty_lives_saved_annual_global_latex": "$$\nLivesSaved = 244,600 \\times 0.01 =\
-  \ 2,446\n$$"
-"treaty_peace_plus_rd_annual_benefits": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-benefits\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-benefits\"\
+"treaty_lives_saved_annual_global_latex": "$$\nDeaths_{ann} = Deaths_{total} \\times\
+  \ Reduction_{treaty} = 244{,}600 \\times 1.0\\% = 2{,}446\n$$"
+"treaty_peace_plus_rd_annual_benefits": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Basic annual\
   \ benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes\
   \ regulatory delay value) | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_RD_SAVINGS\
   \ | Unit: USD/year | Click to view calculation\">$155B</a>"
-"treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefits_{peace+RD} = \\$113.55B\
-  \ + \\$41.5B = \\$155.05B\n$$"
-"treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#peace-qalys\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#peace-qalys\"\
+"treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefit_{ann} = Cost_{soc,ann}\
+  \ + Benefit_{gross,ann} = \\$113.55B + \\$41.50B = \\$155.05B\n$$"
+"treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
   \ gained from peace dividend (lives saved × QALYs/life) | ✓ High confidence | Formula:\
   \ LIVES_SAVED × QALYS_PER_LIFE | Unit: QALYs/year | Click to view calculation\"\
   >85,610</a>"
-"treaty_qalys_gained_annual_global_latex": "$$\nQALYs_{peace} = 2,446 \\times 35 =\
-  \ 85,610\n$$"
-"treaty_recurring_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
-  \ annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
-  \ Note: Health benefits are one-time timeline shifts, NOT included here. | ✓ High\
-  \ confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit: USD/year | Click to\
-  \ view calculation\">$155B</a>"
-"treaty_recurring_benefits_annual_latex": "$$\nRecurring_{annual} = \\$113.6B + \\\
-  $41.5B = \\$155.1B\n$$"
+"treaty_qalys_gained_annual_global_latex": "$$\nDividend_{ann} = QALYs_{RD} \\times\
+  \ Deaths_{ann} = 35 \\times 2{,}446 = 85{,}610\n$$"
+"treaty_recurring_benefits_annual": "<a href=\"/knowledge/economics/economics\" class=\"\
+  parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
+  calculated\" data-confidence=\"high\" title=\"Truly recurring annual benefits from\
+  \ 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health\
+  \ benefits are one-time timeline shifts, NOT included here. | ✓ High confidence\
+  \ | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit: USD/year | Click to view calculation\"\
+  >$155B</a>"
+"treaty_recurring_benefits_annual_latex": "$$\nBenefit_{ann} = Benefit_{DFDA,ann}\
+  \ + Cost_{soc,ann} = \\$41.50B + \\$113.55B = \\$155.05B\n$$"
 "treaty_reduction_pct": "<span class=\"parameter-definition\" title=\"1% reduction\
   \ in military spending/war costs from treaty | Unit: rate | Core definition\">1%</span>"
 "treaty_roi_historical_rate": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart\"\
@@ -1819,8 +1841,8 @@
   \ Total one-time benefit from avoiding regulatory delay for drugs already in development\
   \ divided by $1B campaign cost. | ✓ High confidence | Formula: HISTORICAL_PROGRESS_TOTAL\
   \ ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">251K</a>"
-"treaty_roi_historical_rate_latex": "$$\nROI_{historical} = \\frac{\\$251T}{\\$1.00B}\
-  \ = 250{,}920:1\n$$"
+"treaty_roi_historical_rate_latex": "$$\nROI_{treaty} = \\frac{Delay_{total}}{Cost_{camp,total}}\
+  \ = \\frac{\\$250.92T}{\\$1.00B} = 250{,}920\n$$"
 "treaty_roi_innovation_acceleration": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Treaty ROI based\
@@ -1829,8 +1851,8 @@
   \ Research-backed 2× multiplier represents combined timeline and volume effects\
   \ (Nature 2023, Woods et al. 2024). | ? Low confidence | Formula: DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL\
   \ ÷ CAMPAIGN_COST | Unit: ratio | Click to view calculation\">2.38M</a>"
-"treaty_roi_innovation_acceleration_latex": "$$\nROI_{acceleration} = \\frac{\\$2{,}572T}{\\\
-  $1.00B} = 2{,}572{,}484:1\n$$"
+"treaty_roi_innovation_acceleration_latex": "$$\nROI_{treaty} = \\frac{Ratio_{total}}{Cost_{camp,total}}\
+  \ = \\frac{\\$2382.84T}{\\$1.00B} = 2.4M\n$$"
 "treaty_roi_lag_elimination": "<a href=\"/knowledge/figures/dfda-investment-returns-bar-chart\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/figures/dfda-investment-returns-bar-chart.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Treaty ROI\
@@ -1841,22 +1863,22 @@
   \ Unit: ratio | Click to view calculation\">1.19M</a>"
 "treaty_roi_lag_elimination_latex": "$$\nROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\\
   $1.00B} = 1{,}286{,}242:1\n$$"
-"treaty_total_annual_costs": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness#total-costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd#total-costs\"\
+"treaty_total_annual_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
   \ system costs (campaign + dFDA operations) | ✓ High confidence | Formula: CAMPAIGN_ANNUAL\
   \ + DFDA_OPEX | Unit: USD/year | Click to view calculation\">$290M</a>"
-"treaty_total_annual_costs_latex": "$$\nTotalCosts = \\$0.25B + \\$0.04B = \\$0.29B\n\
-  $$"
-"treaty_total_complete_benefits_annual": "<a href=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/1-percent-treaty-cost-effectiveness.qmd\"\
+"treaty_total_annual_costs_latex": "$$\nCost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann}\
+  \ = \\$40.0M + \\$250.0M = \\$290.0M\n$$"
+"treaty_total_complete_benefits_annual": "<a href=\"/knowledge/economics/economics\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
   \ annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | ✓ High\
   \ confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit: USD/year | Click to\
   \ view calculation\">$155B</a>"
-"treaty_total_complete_benefits_annual_latex": "$$\nRecurring_{annual} = \\$113.6B\
-  \ + \\$41.5B = \\$155.1B\n$$"
+"treaty_total_complete_benefits_annual_latex": "$$\nBenefit_{total} = Benefit_{DFDA,ann}\
+  \ + Cost_{soc,ann} = \\$41.50B + \\$113.55B = \\$155.05B\n$$"
 "treaty_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"parameters.TREATY_VS_BED_NETS_MULTIPLIER\"\
   >707</span>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
@@ -1867,7 +1889,8 @@
   \ 20 = 514 \\text{ years}\n$$"
 "trial_capacity_multiplier": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER\"\
   >25.7</span>"
-"trial_capacity_multiplier_latex": "$$\nMultiplier = 48.8M \\div 1.9M = 25.7\n$$"
+"trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
+  \ = \\frac{48.8M}{1.9M} = 25.71\n$$"
 "trial_capacity_multiplier_10pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_10PCT\"\
   >257</span>"
 "trial_capacity_multiplier_1pct": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER_1PCT\"\
@@ -1891,8 +1914,8 @@
   \ II error cost to Type I error benefit (harm from delay vs. harm prevented) | ~\
   \ Medium confidence | Formula: TYPE_II_COST ÷ TYPE_I_BENEFIT | Unit: ratio | Click\
   \ to view calculation\">3,068</a>"
-"type_ii_error_cost_ratio_latex": "$$\n\\frac{Cost_{delay}}{Benefit_{safety}} = \\\
-  frac{7.90B}{0.00259B} = 3{,}050:1\n$$"
+"type_ii_error_cost_ratio_latex": "$$\nCost = \\frac{DALYs_{dis}}{DALYs} = \\frac{7.94B}{2.6M}\
+  \ = 3{,}068\n$$"
 "type_i_error_benefit_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#risk-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Maximum DALYs\
@@ -1946,8 +1969,9 @@
   \ US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer) | ✓ High\
   \ confidence | Formula: DIABETES + ALZHEIMERS + HEART + CANCER | Unit: USD | Click\
   \ to view calculation\">$1.25T</a>"
-"us_major_diseases_total_annual_cost_latex": "$$\nTotal = \\$327B + \\$355B + \\$363B\
-  \ + \\$208B = \\$1.253T\n$$"
+"us_major_diseases_total_annual_cost_latex": "$$\nCost_{total} = Cost_{alz,ann} +\
+  \ Cost_{cancer,ann} + Cost_{diab,ann} + Cost_{heart,ann} = \\$355.00B + \\$208.00B\
+  \ + \\$327.00B + \\$363.00B = \\$1.25T\n$$"
 "us_mental_health_cost_annual": "<a href=\"https://warondisease.org/knowledge/references.html#mental-health-burden\"\
   \ class=\"parameter-link\" data-source-ref=\"mental-health-burden\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US mental health costs (treatment +\
@@ -1974,8 +1998,8 @@
 "victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
   \ VICTORY bond payout (treaty funding × bond percentage) | Unit: USD/year | Core\
   \ definition\">$2.72B</span>"
-"victory_bond_annual_payout_latex": "$$\nBondPayout = \\$27.18B \\times 0.10 = \\\
-  $2.718B\n$$"
+"victory_bond_annual_payout_latex": "$$\nVictory_{annual} = Funding_{ann} \\times\
+  \ Funding = \\$27.18B \\times 10.0\\% = \\$2.72B\n$$"
 "victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
   \ return percentage for VICTORY bondholders | Unit: rate | Core definition\">272%</span>"
 "victory_bond_annual_return_pct_latex": "$$\nReturn = \\$2.718B / \\$1B = 2.718 =\
@@ -2018,6 +2042,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "346"
-"total_latex_equation_count": "126"
+"total_parameter_count": "352"
+"total_latex_equation_count": "129"
 "total_citation_count": "126"

@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
 
-**Total parameters**: 346
+**Total parameters**: 352
 
 - External sources (peer-reviewed): 126
 - Calculated values: 105
-- Core definitions: 115
+- Core definitions: 121
 
 ## External Data Sources {#sec-external}
 
@@ -1673,10 +1673,10 @@ Parameters derived from mathematical formulas and economic models.
 Combined peace and health dividends for ROI calculation
 
 $$
-Combined = \$113.55B + \$50B = \$163.55B
+Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#combined-dividends](../appendix/1-percent-treaty-cost-effectiveness#combined-dividends)
+**Methodology**: [../appendix/peace-dividend-calculations#peace-dividend-composition](../appendix/peace-dividend-calculations#peace-dividend-composition)
 
 *✓ High confidence*
 
@@ -1717,7 +1717,7 @@ $$
 Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
 
 $$
-Benefit_{RD} = \$83B \times 0.50 = \$41.5B
+Benefit_{DFDA,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
@@ -2029,7 +2029,7 @@ $$
 Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
 
 $$
-Benefit_{RD} = \$83B \times 0.50 = \$41.5B
+Benefit_{gross,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
@@ -2052,7 +2052,7 @@ $$
 Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 $$
-Savings_{daily} = \$41.5B \div 365 = \$113.7M
+Savings_{daily} = \frac{\$41.5B}{365} = \$113.7M
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction](../appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction)
@@ -2076,7 +2076,7 @@ $$
 ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
 $$
 
-**Methodology**: [../figures/dfda-roi-analysis](../figures/dfda-roi-analysis)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
 
 *✓ High confidence*
 
@@ -2090,7 +2090,7 @@ $$
 Simple ROI without NPV adjustment (gross savings / annual opex)
 
 $$
-ROI_{simple} = \frac{\$41.5B}{\$0.04B} = 1,038:1
+ROI_{DFDA} = \frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \frac{\$41.50B}{\$40.0M} = 1{,}038
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
@@ -2111,7 +2111,7 @@ $$
 Maximum trials per year possible with trial capacity multiplier
 
 $$
-Trials_{dFDA} = 3,300 \times 25.7 = 84,800
+Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 25.71 = 84{,}834
 $$
 
 *✓ High confidence*
@@ -2130,7 +2130,7 @@ $$
 Number of patients fundable annually at RECOVERY trial cost
 
 $$
-PatientsFundable = \$24.422B \div \$500 = 48.8M
+Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$24.42B}{\$500} = 48.8M
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -2243,7 +2243,7 @@ $$
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 $$
-YLD = 413.4M \times 6 \times 0.35 = 868M
+Delay_{dis} = Deaths_{total} \times Deaths \times Chronic = 415.9M \times 6 \times 0.35 = 873.3M
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#daly-calculation](../appendix/regulatory-mortality-analysis#daly-calculation)
@@ -2354,7 +2354,7 @@ $$
 Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
 
 $$
-\frac{\$2.6B}{\$194M} = 13.4
+Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{80s}} = \frac{\$2.60B}{\$194.0M} = 13.4
 $$
 
 **Methodology**: [pre-1962-drug-costs-timeline](../references#pre-1962-drug-costs-timeline)
@@ -2377,7 +2377,7 @@ $$
 Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)
 
 $$
-\frac{\$2.6B}{\$50M} = 52
+Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.60B}{\$50.0M} = 52
 $$
 
 **Methodology**: [pre-1962-drug-costs-timeline](../references#pre-1962-drug-costs-timeline)
@@ -2469,7 +2469,7 @@ $$
 Annual cost of combat deaths (deaths × VSL)
 
 $$
-Cost_{combat} = 233,600 \times \$10M = \$2,336B
+Cost_{human,ann} = Deaths_{combat,ann} \times Value = 233{,}600 \times \$10.0M = \$2.34T
 $$
 
 **Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
@@ -2492,7 +2492,7 @@ $$
 Annual cost of state violence deaths (deaths × VSL)
 
 $$
-Cost_{state} = 2,700 \times \$10M = \$27B
+Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10.0M = \$27.00B
 $$
 
 **Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
@@ -2515,7 +2515,7 @@ $$
 Annual cost of terror deaths (deaths × VSL)
 
 $$
-Cost_{terror} = 8,300 \times \$10M = \$83B
+Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times \$10.0M = \$83.00B
 $$
 
 **Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
@@ -2695,7 +2695,7 @@ $$
 Total economic burden of disease globally (medical + productivity + mortality)
 
 $$
-Burden_{annual} = \$9.9T + \$5.0T + \$94.2T = \$109.1T
+Burden_{ann} = Cost_{direct,ann} + Loss_{human,ann} + Loss_{ann} = \$9.90T + \$94.20T + \$5.00T = \$109.10T
 $$
 
 **Methodology**: [disease-economic-burden-109t](../references#disease-economic-burden-109t)
@@ -2763,7 +2763,9 @@ $$
 
 Total annual cost of war and disease with all externalities (direct + indirect costs for both)
 
-*Formula*: `WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN`
+$$
+Cost_{total} = Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} = \$11.36T + \$109.10T + \$8.20T = \$128.66T
+$$
 
 **Methodology**: [../appendix/humanity-budget-overview](../appendix/humanity-budget-overview)
 
@@ -2896,10 +2898,10 @@ $$
 Annual peace dividend from 1% reduction in total war costs
 
 $$
-PeaceDividend = \$11,355B \times 0.01 = \$113.55B
+Cost_{soc,ann} = Cost_{war,total} \times Reduction_{treaty} = \$11.36T \times 1.0\% = \$113.55B
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#peace-dividend](../appendix/1-percent-treaty-cost-effectiveness#peace-dividend)
+**Methodology**: [../appendix/peace-dividend-calculations](../appendix/peace-dividend-calculations)
 
 *✓ High confidence*
 
@@ -2938,7 +2940,7 @@ $$
 Annual savings from 1% reduction in direct war costs
 
 $$
-PeaceDividend_{direct} = \$7,655B \times 0.01 = \$76.55B
+Cost_{direct,peace} = Cost_{direct,total} \times Reduction_{treaty} = \$7.66T \times 1.0\% = \$76.55B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -2959,7 +2961,7 @@ $$
 Annual savings from 1% reduction in environmental damage
 
 $$
-PeaceDividend_{env} = \$10B \times 0.01 = \$0.10B
+Savings_{env,peace} = Cost_{env,ann} \times Reduction_{treaty} = \$100.00B \times 1.0\% = \$1.00B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -2982,7 +2984,7 @@ $$
 Annual savings from 1% reduction in human casualties
 
 $$
-PeaceDividend_{human} = \$2,446B \times 0.01 = \$24.46B
+Savings_{human,peace} = Loss_{human,ann} \times Reduction_{treaty} = \$2.45T \times 1.0\% = \$24.46B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3003,7 +3005,7 @@ $$
 Annual savings from 1% reduction in indirect war costs
 
 $$
-PeaceDividend_{indirect} = \$3,700.1B \times 0.01 = \$37.00B
+Cost_{indirect,peace} = Cost_{indirect,total} \times Reduction_{treaty} = \$3.70T \times 1.0\% = \$37.00B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3024,7 +3026,7 @@ $$
 Annual savings from 1% reduction in infrastructure destruction
 
 $$
-PeaceDividend_{infra} = \$1,875B \times 0.01 = \$18.75B
+Savings_{infra,peace} = Infrastructure_{global} \times Reduction_{treaty} = \$1.88T \times 1.0\% = \$18.75B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3045,7 +3047,7 @@ $$
 Annual savings from 1% reduction in lost economic growth
 
 $$
-PeaceDividend_{growth} = \$2,718B \times 0.01 = \$27.18B
+Savings_{lost_econ,peace} = Cost_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1.0\% = \$27.18B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3068,7 +3070,7 @@ $$
 Annual savings from 1% reduction in lost human capital
 
 $$
-PeaceDividend_{capital} = \$30B \times 0.01 = \$0.30B
+Savings_{human,peace} = Lost_{global} \times Reduction_{treaty} = \$300.00B \times 1.0\% = \$3.00B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3091,7 +3093,7 @@ $$
 Annual savings from 1% reduction in PTSD and mental health costs
 
 $$
-PeaceDividend_{PTSD} = \$23.2B \times 0.01 = \$0.23B
+Cost_{PTSD,peace} = Cost_{ann} \times Reduction_{treaty} = \$232.00B \times 1.0\% = \$2.32B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3114,7 +3116,7 @@ $$
 Annual savings from 1% reduction in refugee support costs
 
 $$
-PeaceDividend_{refugee} = \$15B \times 0.01 = \$0.15B
+Cost_{ref,peace} = Cost_{ref,ann} \times Reduction_{treaty} = \$150.00B \times 1.0\% = \$1.50B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3137,7 +3139,7 @@ $$
 Annual savings from 1% reduction in trade disruption
 
 $$
-PeaceDividend_{trade} = \$616B \times 0.01 = \$6.16B
+Savings_{trade,peace} = Disruption_{trade,ann} \times Reduction_{treaty} = \$616.00B \times 1.0\% = \$6.16B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3158,7 +3160,7 @@ $$
 Annual savings from 1% reduction in veteran healthcare costs
 
 $$
-PeaceDividend_{veteran} = \$20.01B \times 0.01 = \$0.20B
+Cost_{vet,peace} = Cost_{vet,ann} \times Reduction_{treaty} = \$200.10B \times 1.0\% = \$2.00B
 $$
 
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
@@ -3180,7 +3182,9 @@ $$
 
 US per capita chronic disease cost
 
-*Formula*: `US_CHRONIC_DISEASE_SPENDING ÷ US_POPULATION`
+$$
+Cost_{percap,dis} = \frac{Spending_{chronic,ann}}{Population} = \frac{\$4.10T}{335M} = \$12.2K
+$$
 
 *✓ High confidence*
 
@@ -3199,7 +3203,9 @@ US per capita chronic disease cost
 
 US per capita mental health cost
 
-*Formula*: `US_MENTAL_HEALTH_COST ÷ US_POPULATION`
+$$
+Cost_{percap,health} = \frac{Cost_{mental,ann}}{Population} = \frac{\$350.00B}{335M} = \$1.0K
+$$
 
 *✓ High confidence*
 
@@ -3446,7 +3452,7 @@ $$
 Total global research funding (baseline + 1% treaty funding)
 
 $$
-TotalResearchFunding = \$67.5B + \$27.18B = \$94.68B
+Funding_{total} = Spending_{global} + Funding_{ann} = \$67.50B + \$27.18B = \$94.68B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -3469,7 +3475,7 @@ $$
 Treaty system benefit multiplier vs childhood vaccination programs
 
 $$
-Multiplier = \frac{\$155.1B}{\$15.0B} = 10.3\times
+Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$155.05B}{\$15.00B} = 10.34
 $$
 
 **Methodology**: [../economics/economics#better-than-the-best-charities](../economics/economics#better-than-the-best-charities)
@@ -3534,7 +3540,7 @@ $$
 Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
 
 $$
-VotingBloc = 8.0B \times 0.035 = 280M
+Campaign_{camp,treaty} = Population_{global} \times Threshold_{global} = 8.00B \times 3.5\% = 280M
 $$
 
 **Methodology**: [../strategy/roadmap#voting-bloc](../strategy/roadmap#voting-bloc)
@@ -3583,7 +3589,7 @@ $$
 \text{Cost/DALY} = \frac{\$1.0B}{7.90B} = \$0.127
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
 
 *✓ High confidence*
 
@@ -3604,7 +3610,7 @@ $$
 E[\text{Cost/DALY}]_{10\%} = \frac{\$0.127}{0.10} = \$1.27
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
+**Methodology**: [../appendix/dfda-cost-benefit-analysis](../appendix/dfda-cost-benefit-analysis)
 
 *~ Medium confidence*
 
@@ -3641,10 +3647,10 @@ $$
 Annual lives saved from 1% reduction in conflict deaths
 
 $$
-LivesSaved = 244,600 \times 0.01 = 2,446
+Deaths_{ann} = Deaths_{total} \times Reduction_{treaty} = 244{,}600 \times 1.0\% = 2{,}446
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#lives-saved](../appendix/1-percent-treaty-cost-effectiveness#lives-saved)
+**Methodology**: [../appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global](../appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global)
 
 *✓ High confidence*
 
@@ -3662,10 +3668,10 @@ $$
 Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)
 
 $$
-Benefits_{peace+RD} = \$113.55B + \$41.5B = \$155.05B
+Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-benefits](../appendix/1-percent-treaty-cost-effectiveness#total-benefits)
+**Methodology**: [../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits](../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits)
 
 *✓ High confidence*
 
@@ -3683,10 +3689,10 @@ $$
 Annual QALYs gained from peace dividend (lives saved × QALYs/life)
 
 $$
-QALYs_{peace} = 2,446 \times 35 = 85,610
+Dividend_{ann} = QALYs_{RD} \times Deaths_{ann} = 35 \times 2{,}446 = 85{,}610
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#peace-qalys](../appendix/1-percent-treaty-cost-effectiveness#peace-qalys)
+**Methodology**: [../appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global](../appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global)
 
 *✓ High confidence*
 
@@ -3704,10 +3710,10 @@ $$
 Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
 
 $$
-Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B
+Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
+**Methodology**: [../economics/economics](../economics/economics)
 
 *✓ High confidence*
 
@@ -3725,7 +3731,7 @@ $$
 Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.
 
 $$
-ROI_{historical} = \frac{\$251T}{\$1.00B} = 250{,}920:1
+ROI_{treaty} = \frac{Delay_{total}}{Cost_{camp,total}} = \frac{\$250.92T}{\$1.00B} = 250{,}920
 $$
 
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
@@ -3748,7 +3754,7 @@ $$
 Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).
 
 $$
-ROI_{acceleration} = \frac{\$2{,}572T}{\$1.00B} = 2{,}572{,}484:1
+ROI_{treaty} = \frac{Ratio_{total}}{Cost_{camp,total}} = \frac{\$2382.84T}{\$1.00B} = 2.4M
 $$
 
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
@@ -3792,10 +3798,10 @@ $$
 Total annual system costs (campaign + dFDA operations)
 
 $$
-TotalCosts = \$0.25B + \$0.04B = \$0.29B
+Cost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann} = \$40.0M + \$250.0M = \$290.0M
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-costs](../appendix/1-percent-treaty-cost-effectiveness#total-costs)
+**Methodology**: [../appendix/parameters-and-calculations#sec-treaty_total_annual_costs](../appendix/parameters-and-calculations#sec-treaty_total_annual_costs)
 
 *✓ High confidence*
 
@@ -3813,10 +3819,10 @@ $$
 Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
 
 $$
-Recurring_{annual} = \$113.6B + \$41.5B = \$155.1B
+Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
 $$
 
-**Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
+**Methodology**: [../economics/economics](../economics/economics)
 
 *✓ High confidence*
 
@@ -3872,7 +3878,7 @@ $$
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
 $$
-Multiplier = 48.8M \div 1.9M = 25.7
+Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{48.8M}{1.9M} = 25.71
 $$
 
 *✓ High confidence*
@@ -3893,7 +3899,7 @@ $$
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 $$
-\frac{Cost_{delay}}{Benefit_{safety}} = \frac{7.90B}{0.00259B} = 3{,}050:1
+Cost = \frac{DALYs_{dis}}{DALYs} = \frac{7.94B}{2.6M} = 3{,}068
 $$
 
 **Methodology**: [../appendix/regulatory-mortality-analysis#risk-analysis](../appendix/regulatory-mortality-analysis#risk-analysis)
@@ -3935,7 +3941,7 @@ $$
 Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)
 
 $$
-Total = \$327B + \$355B + \$363B + \$208B = \$1.253T
+Cost_{total} = Cost_{alz,ann} + Cost_{cancer,ann} + Cost_{diab,ann} + Cost_{heart,ann} = \$355.00B + \$208.00B + \$327.00B + \$363.00B = \$1.25T
 $$
 
 **Methodology**: [../solution/aligning-incentives#insurance-companies](../solution/aligning-incentives#insurance-companies)
@@ -4351,6 +4357,15 @@ Current patient participation rate in clinical trials (0.08% = 1.9M participants
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Days Per Year {#sec-days_per_year}
+
+**Value**: 365
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Mid-Range Funding for Commercial Dct Platform {#sec-dct_platform_funding_medium}
 
 **Value**: $500M
@@ -4684,6 +4699,24 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 :::
 
 ::: {.callout-warning icon=false collapse=false}
+### Hours Per Day {#sec-hours_per_day}
+
+**Value**: 24
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Hours Per Year {#sec-hours_per_year}
+
+**Value**: 8,760
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
 ### Infections Death Rate {#sec-infections_death_rate}
 
 **Value**: 15
@@ -4745,6 +4778,24 @@ Minimum investment for institutional investors
 **Value**: $20M
 
 Maximum bond investment for lobbyist incentives
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Minutes Per Hour {#sec-minutes_per_hour}
+
+**Value**: 60
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Months Per Year {#sec-months_per_year}
+
+**Value**: 12
 
 *Core definition*
 
@@ -4924,6 +4975,15 @@ Direct fiscal savings from 1% military spending reduction (high confidence)
 **Value**: 77
 
 Years of empirical validation for physician-led pragmatic trials (1883-1960)
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Seconds Per Minute {#sec-seconds_per_minute}
+
+**Value**: 60
 
 *Core definition*
 

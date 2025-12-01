@@ -757,7 +757,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 - Includes only R&D efficiency savings (excludes peace dividend and six additional benefit categories)
 
 
-**Optimistic Scenario ({{< var treaty_optimistic_scenario_roi >}}:1 ROI):**
+**Optimistic Scenario ({{< var treaty_roi_lag_elimination >}}:1 ROI):**
 
 - R&D cost reduction: {{< var trial_cost_reduction_pct >}} (RECOVERY trial-like efficiency)
 - QALY gains: {{< var disease_eradication_delay_dalys >}} annually
@@ -770,20 +770,15 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 - Earlier treatment access, research acceleration, rare disease treatments, drug price reductions, prevention medicine, mental health benefits
 
 
-**Probabilistic sensitivity analysis:** Instead of just testing a few scenarios (worst-case, conservative, optimistic), we ran 10,000 simulations where each uncertain parameter was randomly sampled from probability distributions. This tells us not just "what if X happens" but "what's the range of likely outcomes given all the uncertainty."
+**Probabilistic sensitivity analysis:** We ran 10,000 Monte Carlo simulations where each uncertain parameter was randomly sampled from probability distributions. The chart below shows the resulting ROI distributions with 95% confidence intervals.
 
 **What we varied:** Cost reduction (50-95%), political success probability (5-60%), adoption timeline (3-8 years), discount rate (1-7%), and QALY gains (0.7-1.3× baseline).
 
-#### Results
-
-- **If implementation succeeds** (conditional ROI): 95% of simulations fall between {{< var treaty_complete_roi_conditional_5th_percentile >}}:1 and {{< var treaty_complete_roi_conditional_95th_percentile >}}:1 ROI, with median {{< var treaty_complete_roi_conditional_median >}}:1. This means even with all the uncertainty, if the treaty passes, returns are almost certainly between {{< var treaty_complete_roi_conditional_5th_percentile >}}:1 and {{< var treaty_complete_roi_conditional_95th_percentile >}}:1.
-- **Accounting for political risk** (expected ROI): 95% of simulations fall between {{< var treaty_complete_roi_expected_5th_percentile >}}:1 and {{< var treaty_complete_roi_expected_95th_percentile >}}:1 ROI, with median {{< var treaty_complete_roi_expected_median >}}:1. This incorporates the probability that the treaty might not pass, even with that risk, expected returns are still {{< var treaty_complete_roi_expected_5th_percentile >}}:1 to {{< var treaty_complete_roi_expected_95th_percentile >}}:1.
-
-**Economic interpretation:** ROI > 1:1 means benefits exceed costs. All 10,000 simulations produced ROI > 1:1, meaning there is zero probability (within the modeled uncertainty) that this intervention loses money. Even the worst-case scenario (5th percentile expected ROI of {{< var treaty_complete_roi_expected_5th_percentile >}}:1) generates {{< var treaty_complete_roi_expected_5th_percentile >}}× more value than cost. This qualifies as a **dominant intervention** in health economics: it should be implemented regardless of budget constraints, as it generates net economic surplus while improving health outcomes.
-
-This probabilistic analysis complements the scenario-based sensitivity analysis above, providing confidence intervals rather than point estimates.
-
 {{< include ../figures/monte-carlo-roi-distribution-chart.qmd >}}
+
+**Economic interpretation:** ROI > 1:1 means benefits exceed costs. All simulations produce ROI > 1:1, meaning there is effectively zero probability (within the modeled uncertainty) that this intervention loses money. Even the most conservative scenario (R&D savings only at {{< var dfda_roi_rd_only >}}:1) generates positive returns. This qualifies as a **dominant intervention** in health economics: it should be implemented regardless of budget constraints, as it generates net economic surplus while improving health outcomes.
+
+For comprehensive sensitivity analysis including tornado charts for all calculated parameters, see [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 ### Discount Rate Sensitivity
 
@@ -1008,7 +1003,7 @@ The peace dividend math is simple: wars cost {{< var global_annual_war_total_cos
 | **Human Life Losses** | {{< var global_annual_human_life_losses_conflict >}} | {{< var global_annual_conflict_deaths_total >}} conflict deaths × {{< var value_of_statistical_life >}} {{< var value_of_statistical_life_cite >}} value of statistical life (conservative estimate) |
 | **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |
 | **[Lost Economic Growth](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_lost_economic_growth_military_spending >}} {{< var global_annual_lost_economic_growth_military_spending_cite >}} | Opportunity cost of military spending vs. productive investment |
-| **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | {{< var sensitivity_peace_dividend_optimistic >}} | Long-term medical care for conflict-related injuries |
+| **[Veteran Healthcare](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_veteran_healthcare_costs >}} {{< var global_annual_veteran_healthcare_costs_cite >}} | Long-term medical care for conflict-related injuries |
 | **Refugee Support** | {{< var global_annual_refugee_support_costs >}} {{< var global_annual_refugee_support_costs_cite >}} | [108.4M displaced persons](../references.qmd#unhcr-forcibly-displaced-2023) × [$1,384/year](../references.qmd#unhcr-refugee-support-cost) |
 | **[Environmental Damage](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_environmental_damage_conflict >}} {{< var global_annual_environmental_damage_conflict_cite >}} | Environmental destruction, toxic contamination, restoration costs |
 | **[Psychological Impact](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_psychological_impact_costs_conflict >}} {{< var global_annual_psychological_impact_costs_conflict_cite >}} | PTSD treatment, mental health services, productivity loss |
@@ -1124,7 +1119,7 @@ The negative cost (net benefit) per life saved distinguishes this as a **dominan
 
 The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-funding system requiring zero net new spending from donors or taxpayers.
 
-**Economic Structure** ([see detailed calculation](../appendix/1-percent-treaty-cost-effectiveness.qmd)):
+**Economic Structure**:
 
 - **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} [redirection of existing military budgets](../appendix/peace-dividend-calculations.qmd) (money already allocated in national budgets)
 
@@ -1141,7 +1136,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)
 - **Net Position**: {{< var treaty_peace_plus_rd_annual_benefits >}} annual surplus after all costs
 - **Lives Saved**: {{< var disease_eradication_delay_deaths_total >}} annually
-- **Cost per Life Saved**: Net societal benefit per life ([negative cost](../appendix/1-percent-treaty-cost-effectiveness.qmd) indicates net profit, meaning the system generates economic value while saving lives)
+- **Cost per Life Saved**: Net societal benefit per life (negative cost indicates net profit, meaning the system generates economic value while saving lives)
 
 This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
 
@@ -1664,7 +1659,7 @@ The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates 
 
 **Stream C (Rare Disease Treatments):** Lower confidence, economic viability of rare disease research is theoretically sound but empirically unproven at scale.
 
-**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var disease_eradication_delay_dalys >}} annually yields {{< var treaty_complete_roi_conditional_95th_percentile >}}:1 ROI).
+**Conservative approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even at conservative QALY levels ({{< var disease_eradication_delay_dalys >}} annually yields {{< var dfda_roi_rd_only >}}:1 ROI using R&D savings alone).
 
 ### Data Limitations
 
@@ -1740,7 +1735,7 @@ The following table summarizes key risk factors and their mitigation strategies:
 
 Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
-- **Worst-case ({{< var treaty_complete_roi_conditional_95th_percentile >}}:1 ROI):** Benefits half as good, costs twice as high, intervention remains highly cost-effective
+- **Worst-case ({{< var dfda_expected_roi_0_1pct_political_success >}}:1 expected ROI):** Only 0.1% political success probability, intervention still generates positive returns
 - **Conservative ({{< var dfda_roi_rd_only >}}:1 ROI):** R&D savings only, excludes peace dividend, intervention is dominant
 - **Complete ({{< var treaty_complete_roi_all_benefits >}}:1 ROI):** All quantifiable benefits, intervention transforms global health economics
 
@@ -1891,7 +1886,7 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to medi
 
 **Timeline**: [36 months](../strategy/roadmap.qmd) from global referendum to full deployment. ([Complete roadmap](../strategy/roadmap.qmd))
 
-**The Evidence**: Conservative assumptions, validated by [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), tested via [sensitivity analysis](../appendix/1-percent-treaty-cost-effectiveness.qmd). Uses standard health economics (NPV, QALYs, ICER) for direct comparison with existing interventions.
+**The Evidence**: Conservative assumptions, validated by [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), tested via sensitivity analysis. Uses standard health economics (NPV, QALYs, ICER) for direct comparison with existing interventions.
 
 **The Reality**: This works because every step is economically rational for everyone involved. Nobody needs to evolve morally. They just need to count.
 
