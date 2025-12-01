@@ -800,17 +800,20 @@
 "global_annual_conflict_deaths_active_combat": "<a href=\"https://warondisease.org/knowledge/references.html#acled-active-combat-deaths\"\
   \ class=\"parameter-link\" data-source-ref=\"acled-active-combat-deaths\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual deaths from active combat worldwide\
-  \ | ✓ High confidence | Unit: deaths/year | Click to view source\">234K</a>"
+  \ | ✓ High confidence | 95% CI: [180K, 300K] | Dist: Lognormal | Unit: deaths/year\
+  \ | Click to view source\">234K</a>"
 "global_annual_conflict_deaths_active_combat_cite": "@acled-active-combat-deaths"
 "global_annual_conflict_deaths_state_violence": "<a href=\"https://warondisease.org/knowledge/references.html#ucdp-state-violence-deaths\"\
   \ class=\"parameter-link\" data-source-ref=\"ucdp-state-violence-deaths\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual deaths from state violence |\
-  \ ✓ High confidence | Unit: deaths/year | Click to view source\">2,700</a>"
+  \ ✓ High confidence | 95% CI: [1,500, 5,000] | Dist: Lognormal | Unit: deaths/year\
+  \ | Click to view source\">2,700</a>"
 "global_annual_conflict_deaths_state_violence_cite": "@ucdp-state-violence-deaths"
 "global_annual_conflict_deaths_terror_attacks": "<a href=\"https://warondisease.org/knowledge/references.html#gtd-terror-attack-deaths\"\
   \ class=\"parameter-link\" data-source-ref=\"gtd-terror-attack-deaths\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual deaths from terror attacks globally\
-  \ | ✓ High confidence | Unit: deaths/year | Click to view source\">8,300</a>"
+  \ | ✓ High confidence | 95% CI: [6,000, 12,000] | Dist: Lognormal | Unit: deaths/year\
+  \ | Click to view source\">8,300</a>"
 "global_annual_conflict_deaths_terror_attacks_cite": "@gtd-terror-attack-deaths"
 "global_annual_conflict_deaths_total": "<a href=\"/knowledge/problem/cost-of-war#death-accounting\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#death-accounting\"\
@@ -830,7 +833,8 @@
 "global_annual_environmental_damage_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual environmental damage and restoration\
-  \ costs from conflict | ✓ High confidence | Unit: USD | Click to view source\">$100B</a>"
+  \ costs from conflict | ✓ High confidence | 95% CI: [$70B, $140B] | Dist: Lognormal\
+  \ | Unit: USD | Click to view source\">$100B</a>"
 "global_annual_environmental_damage_conflict_cite": "@environmental-cost-of-war"
 "global_annual_human_cost_active_combat": "<a href=\"/knowledge/problem/cost-of-war#human-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#human-cost\"\
@@ -865,36 +869,38 @@
 "global_annual_infrastructure_damage_communications_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to communications\
-  \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$298B</a>"
+  \ from conflict | ✓ High confidence | 95% CI: [$209B, $418B] | Dist: Lognormal |\
+  \ Unit: USD | Click to view source\">$298B</a>"
 "global_annual_infrastructure_damage_communications_conflict_cite": "@environmental-cost-of-war"
 "global_annual_infrastructure_damage_education_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to education\
-  \ facilities from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$234B</a>"
+  \ facilities from conflict | ✓ High confidence | 95% CI: [$164B, $328B] | Dist:\
+  \ Lognormal | Unit: USD | Click to view source\">$234B</a>"
 "global_annual_infrastructure_damage_education_conflict_cite": "@environmental-cost-of-war"
 "global_annual_infrastructure_damage_energy_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to energy\
-  \ systems from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$422B</a>"
+  \ systems from conflict | ✓ High confidence | 95% CI: [$295B, $590B] | Dist: Lognormal\
+  \ | Unit: USD | Click to view source\">$422B</a>"
 "global_annual_infrastructure_damage_energy_conflict_cite": "@environmental-cost-of-war"
 "global_annual_infrastructure_damage_healthcare_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to healthcare\
-  \ facilities from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$166B</a>"
+  \ facilities from conflict | ✓ High confidence | 95% CI: [$116B, $232B] | Dist:\
+  \ Lognormal | Unit: USD | Click to view source\">$166B</a>"
 "global_annual_infrastructure_damage_healthcare_conflict_cite": "@environmental-cost-of-war"
 "global_annual_infrastructure_damage_transportation_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to transportation\
-  \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$487B</a>"
+  \ from conflict | ✓ High confidence | 95% CI: [$340B, $680B] | Dist: Lognormal |\
+  \ Unit: USD | Click to view source\">$487B</a>"
 "global_annual_infrastructure_damage_transportation_conflict_cite": "@environmental-cost-of-war"
 "global_annual_infrastructure_damage_water_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual infrastructure damage to water\
-  \ systems from conflict | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$268B</a>"
+  \ systems from conflict | ✓ High confidence | 95% CI: [$187B, $375B] | Dist: Lognormal\
+  \ | Unit: USD | Click to view source\">$268B</a>"
 "global_annual_infrastructure_damage_water_conflict_cite": "@environmental-cost-of-war"
 "global_annual_infrastructure_destruction_conflict": "<a href=\"/knowledge/problem/cost-of-war#infrastructure-damage\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#infrastructure-damage\"\
@@ -916,24 +922,26 @@
 "global_annual_lost_economic_growth_military_spending": "<a href=\"https://warondisease.org/knowledge/references.html#disparity-ratio-weapons-vs-cures\"\
   \ class=\"parameter-link\" data-source-ref=\"disparity-ratio-weapons-vs-cures\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lost economic\
-  \ growth from military spending opportunity cost | ✓ High confidence | Unit: USD\
-  \ | Click to view source\">$2.72T</a>"
+  \ growth from military spending opportunity cost | ✓ High confidence | 95% CI: [$1.90T,\
+  \ $3.80T] | Dist: Lognormal | Unit: USD | Click to view source\">$2.72T</a>"
 "global_annual_lost_economic_growth_military_spending_cite": "@disparity-ratio-weapons-vs-cures"
 "global_annual_lost_human_capital_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#lost-human-capital-war-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"lost-human-capital-war-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual lost productivity from conflict\
-  \ casualties | ✓ High confidence | Unit: USD | Click to view source\">$300B</a>"
+  \ casualties | ✓ High confidence | 95% CI: [$210B, $420B] | Dist: Lognormal | Unit:\
+  \ USD | Click to view source\">$300B</a>"
 "global_annual_lost_human_capital_conflict_cite": "@lost-human-capital-war-cost"
 "global_annual_psychological_impact_costs_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#psychological-impact-war-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"psychological-impact-war-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual PTSD and mental health costs\
-  \ from conflict | ✓ High confidence | Unit: USD | Click to view source\">$232B</a>"
+  \ from conflict | ✓ High confidence | 95% CI: [$162B, $325B] | Dist: Lognormal |\
+  \ Unit: USD | Click to view source\">$232B</a>"
 "global_annual_psychological_impact_costs_conflict_cite": "@psychological-impact-war-cost"
 "global_annual_refugee_support_costs": "<a href=\"https://warondisease.org/knowledge/references.html#unhcr-refugee-support-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"unhcr-refugee-support-cost\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual refugee support costs (108.4M\
-  \ refugees × $1,384/year) | ✓ High confidence | Unit: USD | Click to view source\"\
-  >$150B</a>"
+  \ refugees × $1,384/year) | ✓ High confidence | 95% CI: [$105B, $210B] | Dist: Lognormal\
+  \ | Unit: USD | Click to view source\">$150B</a>"
 "global_annual_refugee_support_costs_cite": "@unhcr-refugee-support-cost"
 "global_annual_trade_disruption_conflict": "<a href=\"/knowledge/problem/cost-of-war#trade-disruption\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#trade-disruption\"\
@@ -947,32 +955,32 @@
 "global_annual_trade_disruption_currency_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"world-bank-trade-disruption-conflict\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
-  \ costs from currency instability | ✓ High confidence | Unit: USD | Click to view\
-  \ source\">$57.4B</a>"
+  \ costs from currency instability | ✓ High confidence | 95% CI: [$40B, $80B] | Dist:\
+  \ Lognormal | Unit: USD | Click to view source\">$57.4B</a>"
 "global_annual_trade_disruption_currency_conflict_cite": "@world-bank-trade-disruption-conflict"
 "global_annual_trade_disruption_energy_price_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"world-bank-trade-disruption-conflict\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
-  \ costs from energy price volatility | ✓ High confidence | Unit: USD | Click to\
-  \ view source\">$125B</a>"
+  \ costs from energy price volatility | ✓ High confidence | 95% CI: [$87B, $175B]\
+  \ | Dist: Lognormal | Unit: USD | Click to view source\">$125B</a>"
 "global_annual_trade_disruption_energy_price_conflict_cite": "@world-bank-trade-disruption-conflict"
 "global_annual_trade_disruption_shipping_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"world-bank-trade-disruption-conflict\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
-  \ costs from shipping disruptions | ✓ High confidence | Unit: USD | Click to view\
-  \ source\">$247B</a>"
+  \ costs from shipping disruptions | ✓ High confidence | 95% CI: [$173B, $346B] |\
+  \ Dist: Lognormal | Unit: USD | Click to view source\">$247B</a>"
 "global_annual_trade_disruption_shipping_conflict_cite": "@world-bank-trade-disruption-conflict"
 "global_annual_trade_disruption_supply_chain_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#world-bank-trade-disruption-conflict\"\
   \ class=\"parameter-link\" data-source-ref=\"world-bank-trade-disruption-conflict\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual trade disruption\
-  \ costs from supply chain disruptions | ✓ High confidence | Unit: USD | Click to\
-  \ view source\">$187B</a>"
+  \ costs from supply chain disruptions | ✓ High confidence | 95% CI: [$131B, $262B]\
+  \ | Dist: Lognormal | Unit: USD | Click to view source\">$187B</a>"
 "global_annual_trade_disruption_supply_chain_conflict_cite": "@world-bank-trade-disruption-conflict"
 "global_annual_veteran_healthcare_costs": "<a href=\"https://warondisease.org/knowledge/references.html#veteran-healthcare-cost-projections\"\
   \ class=\"parameter-link\" data-source-ref=\"veteran-healthcare-cost-projections\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual veteran\
-  \ healthcare costs (20-year projected) | ✓ High confidence | Unit: USD | Click to\
-  \ view source\">$200B</a>"
+  \ healthcare costs (20-year projected) | ✓ High confidence | 95% CI: [$140B, $280B]\
+  \ | Dist: Lognormal | Unit: USD | Click to view source\">$200B</a>"
 "global_annual_veteran_healthcare_costs_cite": "@veteran-healthcare-cost-projections"
 "global_annual_war_direct_costs_total": "<a href=\"/knowledge/problem/cost-of-war#direct-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#direct-costs\"\
@@ -1016,8 +1024,8 @@
 "global_daily_deaths_curable_diseases": "<a href=\"https://warondisease.org/knowledge/references.html#deaths-from-treatable-diseases-15m\"\
   \ class=\"parameter-link\" data-source-ref=\"deaths-from-treatable-diseases-15m\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Daily deaths from\
-  \ curable diseases globally | ✓ High confidence | Unit: deaths/day | Click to view\
-  \ source\">150K</a>"
+  \ curable diseases globally | ✓ High confidence | 95% CI: [120K, 180K] | Dist: Lognormal\
+  \ | Unit: deaths/day | Click to view source\">150K</a>"
 "global_daily_deaths_curable_diseases_cite": "@deaths-from-treatable-diseases-15m"
 "global_disease_deaths_daily": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\

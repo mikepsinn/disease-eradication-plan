@@ -444,7 +444,9 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT = Parameter(
     description="Annual infrastructure damage to transportation from conflict",
     display_name="Annual Infrastructure Damage to Transportation from Conflict",
     unit="USD",
-    keywords=["487.3b", "worldwide", "yearly", "infrastructure", "damage", "transportation", "armed conflict"]
+    keywords=["487.3b", "worldwide", "yearly", "infrastructure", "damage", "transportation", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(340_000_000_000, 680_000_000_000),  # ±30% - damage estimates highly variable
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
@@ -454,7 +456,9 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT = Parameter(
     description="Annual infrastructure damage to energy systems from conflict",
     display_name="Annual Infrastructure Damage to Energy Systems from Conflict",
     unit="USD",
-    keywords=["421.7b", "worldwide", "yearly", "infrastructure", "damage", "energy", "armed conflict"]
+    keywords=["421.7b", "worldwide", "yearly", "infrastructure", "damage", "energy", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(295_000_000_000, 590_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
@@ -464,7 +468,9 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT = Parameter(
     description="Annual infrastructure damage to communications from conflict",
     display_name="Annual Infrastructure Damage to Communications from Conflict",
     unit="USD",
-    keywords=["298.1b", "worldwide", "yearly", "infrastructure", "damage", "communications", "armed conflict"]
+    keywords=["298.1b", "worldwide", "yearly", "infrastructure", "damage", "communications", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(209_000_000_000, 418_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
@@ -474,7 +480,9 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT = Parameter(
     description="Annual infrastructure damage to water systems from conflict",
     display_name="Annual Infrastructure Damage to Water Systems from Conflict",
     unit="USD",
-    keywords=["267.8b", "worldwide", "yearly", "infrastructure", "damage", "water", "armed conflict"]
+    keywords=["267.8b", "worldwide", "yearly", "infrastructure", "damage", "water", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(187_000_000_000, 375_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
@@ -484,7 +492,9 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT = Parameter(
     description="Annual infrastructure damage to education facilities from conflict",
     display_name="Annual Infrastructure Damage to Education Facilities from Conflict",
     unit="USD",
-    keywords=["234.5b", "worldwide", "yearly", "infrastructure", "damage", "education", "armed conflict"]
+    keywords=["234.5b", "worldwide", "yearly", "infrastructure", "damage", "education", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(164_000_000_000, 328_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
@@ -494,7 +504,9 @@ GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT = Parameter(
     description="Annual infrastructure damage to healthcare facilities from conflict",
     display_name="Annual Infrastructure Damage to Healthcare Facilities from Conflict",
     unit="USD",
-    keywords=["165.6b", "worldwide", "yearly", "infrastructure", "damage", "healthcare", "armed conflict"]
+    keywords=["165.6b", "worldwide", "yearly", "infrastructure", "damage", "healthcare", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(116_000_000_000, 232_000_000_000),  # ±30%
 )
 
 # Total infrastructure destruction (calculated from breakdown)
@@ -530,7 +542,9 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT = Parameter(
     description="Annual trade disruption costs from shipping disruptions",
     display_name="Annual Trade Disruption Costs from Shipping Disruptions",
     unit="USD",
-    keywords=["247.1b", "worldwide", "yearly", "trade", "disruption", "shipping", "armed conflict"]
+    keywords=["247.1b", "worldwide", "yearly", "trade", "disruption", "shipping", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(173_000_000_000, 346_000_000_000),  # ±30% - economic cost estimates variable
 )
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
@@ -540,7 +554,9 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT = Parameter(
     description="Annual trade disruption costs from supply chain disruptions",
     display_name="Annual Trade Disruption Costs from Supply Chain Disruptions",
     unit="USD",
-    keywords=["186.8b", "worldwide", "yearly", "trade", "disruption", "supply", "chain"]
+    keywords=["186.8b", "worldwide", "yearly", "trade", "disruption", "supply", "chain"],
+    distribution="lognormal",
+    confidence_interval=(131_000_000_000, 262_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
@@ -550,7 +566,9 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT = Parameter(
     description="Annual trade disruption costs from energy price volatility",
     display_name="Annual Trade Disruption Costs from Energy Price Volatility",
     unit="USD",
-    keywords=["124.7b", "worldwide", "yearly", "trade", "disruption", "energy", "armed conflict"]
+    keywords=["124.7b", "worldwide", "yearly", "trade", "disruption", "energy", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(87_000_000_000, 175_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
@@ -560,7 +578,9 @@ GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT = Parameter(
     description="Annual trade disruption costs from currency instability",
     display_name="Annual Trade Disruption Costs from Currency Instability",
     unit="USD",
-    keywords=["57.4b", "worldwide", "yearly", "trade", "disruption", "currency", "armed conflict"]
+    keywords=["57.4b", "worldwide", "yearly", "trade", "disruption", "currency", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(40_000_000_000, 80_000_000_000),  # ±30%
 )
 
 # Total trade disruption (calculated from breakdown)
@@ -612,7 +632,9 @@ GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING = Parameter(
     description="Annual lost economic growth from military spending opportunity cost",
     display_name="Annual Lost Economic Growth from Military Spending Opportunity Cost",
     unit="USD",
-    keywords=["2.7t", "dod", "pentagon", "national security", "army", "navy", "armed forces"]
+    keywords=["2.7t", "dod", "pentagon", "national security", "army", "navy", "armed forces"],
+    distribution="lognormal",
+    confidence_interval=(1_900_000_000_000, 3_800_000_000_000),  # ±30% - opportunity cost estimates vary
 )
 
 GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
@@ -622,7 +644,9 @@ GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS = Parameter(
     description="Annual veteran healthcare costs (20-year projected)",
     display_name="Annual Veteran Healthcare Costs",
     unit="USD",
-    keywords=["200.1b", "worldwide", "yearly", "funding", "investment", "veteran", "healthcare"]
+    keywords=["200.1b", "worldwide", "yearly", "funding", "investment", "veteran", "healthcare"],
+    distribution="lognormal",
+    confidence_interval=(140_000_000_000, 280_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
@@ -632,7 +656,9 @@ GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS = Parameter(
     description="Annual refugee support costs (108.4M refugees × $1,384/year)",
     display_name="Annual Refugee Support Costs",
     unit="USD",
-    keywords=["150.0b", "worldwide", "yearly", "funding", "investment", "refugee", "support"]
+    keywords=["150.0b", "worldwide", "yearly", "funding", "investment", "refugee", "support"],
+    distribution="lognormal",
+    confidence_interval=(105_000_000_000, 210_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
@@ -642,7 +668,9 @@ GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT = Parameter(
     description="Annual environmental damage and restoration costs from conflict",
     display_name="Annual Environmental Damage and Restoration Costs from Conflict",
     unit="USD",
-    keywords=["100.0b", "worldwide", "yearly", "environmental", "damage", "armed conflict", "military action"]
+    keywords=["100.0b", "worldwide", "yearly", "environmental", "damage", "armed conflict", "military action"],
+    distribution="lognormal",
+    confidence_interval=(70_000_000_000, 140_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
@@ -652,7 +680,9 @@ GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT = Parameter(
     description="Annual PTSD and mental health costs from conflict",
     display_name="Annual PTSD and Mental Health Costs from Conflict",
     unit="USD",
-    keywords=["232.0b", "worldwide", "yearly", "funding", "investment", "psychological", "impact"]
+    keywords=["232.0b", "worldwide", "yearly", "funding", "investment", "psychological", "impact"],
+    distribution="lognormal",
+    confidence_interval=(162_000_000_000, 325_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
@@ -662,7 +692,9 @@ GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT = Parameter(
     description="Annual lost productivity from conflict casualties",
     display_name="Annual Lost Productivity from Conflict Casualties",
     unit="USD",
-    keywords=["300.0b", "worldwide", "yearly", "lost", "human", "capital", "armed conflict"]
+    keywords=["300.0b", "worldwide", "yearly", "lost", "human", "capital", "armed conflict"],
+    distribution="lognormal",
+    confidence_interval=(210_000_000_000, 420_000_000_000),  # ±30%
 )
 
 GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL = Parameter(
@@ -3230,7 +3262,9 @@ GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
     description="Daily deaths from curable diseases globally",
     display_name="Daily Deaths from Curable Diseases Globally",
     unit="deaths/day",
-    keywords=["150k", "day", "each day", "per day", "worldwide", "fatalities", "casualties"]
+    keywords=["150k", "day", "each day", "per day", "worldwide", "fatalities", "casualties"],
+    distribution="lognormal",
+    confidence_interval=(120_000, 180_000),  # ±20% - disease mortality estimates vary by methodology
 )  # Daily deaths from curable diseases
 
 # Annual disease deaths (calculated from daily)

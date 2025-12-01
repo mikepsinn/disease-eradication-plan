@@ -1376,6 +1376,47 @@ def validate_calculated_parameters(parameters: Dict[str, Dict[str, Any]]) -> lis
     return suspicious_params
 
 
+def validate_calculated_params_no_uncertainty(parameters: Dict[str, Dict[str, Any]]) -> list:
+    """
+    Validate that calculated parameters don't have their own uncertainty distributions.
+    
+    Calculated parameters should derive uncertainty from their inputs via the compute
+    function, not have their own confidence_interval or distribution. Having both
+    would double-count uncertainty.
+    
+    Args:
+        parameters: Dict of parameter metadata
+        
+    Returns:
+        List of (param_name, issues) tuples for calculated params with uncertainty
+    """
+    problematic_params = []
+    
+    for param_name, param_data in parameters.items():
+        value = param_data["value"]
+        if hasattr(value, "source_type"):
+            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+            if source_type_str == "calculated":
+                issues = []
+                
+                # Check for confidence_interval
+                if hasattr(value, "confidence_interval") and value.confidence_interval is not None:
+                    issues.append("confidence_interval")
+                
+                # Check for distribution
+                if hasattr(value, "distribution") and value.distribution is not None:
+                    issues.append("distribution")
+                
+                # Check for std_error
+                if hasattr(value, "std_error") and value.std_error is not None:
+                    issues.append("std_error")
+                
+                if issues:
+                    problematic_params.append((param_name, issues))
+    
+    return problematic_params
+
+
 def generate_reference_ids_enum(available_refs: set, output_path: Path):
     """
     Generate dih_models/reference_ids.py with enum of valid reference IDs.
@@ -1937,6 +1978,24 @@ def main():
         print()
     else:
         print("[OK] All calculated parameters have formulas or latex equations")
+        print()
+
+    # Validate calculated parameters don't have their own uncertainty (should derive from inputs)
+    print("[*] Validating uncertainty is only on input parameters...")
+    uncertainty_problems = validate_calculated_params_no_uncertainty(parameters)
+    
+    if uncertainty_problems:
+        print(f"[ERROR] Found {len(uncertainty_problems)} calculated parameters with their own uncertainty:", file=sys.stderr)
+        for param_name, issues in uncertainty_problems:
+            print(f"  - {param_name} has: {', '.join(issues)}", file=sys.stderr)
+        print(file=sys.stderr)
+        print("[ERROR] Calculated parameters should derive uncertainty from inputs via compute function.", file=sys.stderr)
+        print("[ERROR] Remove confidence_interval/distribution/std_error from these calculated parameters.", file=sys.stderr)
+        print("[ERROR] Add uncertainty to their INPUT parameters instead.", file=sys.stderr)
+        has_fatal_error = True
+        print()
+    else:
+        print("[OK] All calculated parameters derive uncertainty from inputs")
         print()
 
     # Generate _variables.yml

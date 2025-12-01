@@ -2434,6 +2434,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_conflict_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_conflict_deaths_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2450,6 +2456,12 @@ $$
 **Methodology**: [../economics/economics](../economics/economics)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_deaths_curable_diseases.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_deaths_curable_diseases.qmd >}}
 
 :::
 
@@ -2468,6 +2480,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_active_combat.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_active_combat.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2484,6 +2502,12 @@ $$
 **Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_state_violence.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_state_violence.qmd >}}
 
 :::
 
@@ -2502,6 +2526,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_cost_terror_attacks.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_human_cost_terror_attacks.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2518,6 +2548,10 @@ $$
 **Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_human_life_losses_conflict.qmd >}}
 
 :::
 
@@ -2536,6 +2570,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_infrastructure_destruction_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_infrastructure_destruction_conflict.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2553,6 +2593,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_trade_disruption_conflict.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_trade_disruption_conflict.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2569,6 +2615,12 @@ $$
 **Methodology**: [../problem/cost-of-war#direct-costs](../problem/cost-of-war#direct-costs)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_direct_costs_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_direct_costs_total.qmd >}}
 
 :::
 
