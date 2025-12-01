@@ -50,12 +50,8 @@ ax.set_xlim(left=min(sorted_samples) * 0.95)
 clean_spines(ax)
 add_watermark(fig)
 
-# Save PNG
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'exceedance-current_patient_participation_rate.png'
+# Save PNG (same directory as the QMD file)
+output_path = Path('exceedance-current_patient_participation_rate.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

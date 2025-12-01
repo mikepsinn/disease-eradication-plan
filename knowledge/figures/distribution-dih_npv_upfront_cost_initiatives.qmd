@@ -111,12 +111,9 @@ ax.set_ylim(bottom=0)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'distribution-dih_npv_upfront_cost_initiatives.png'
+# Save PNG (same directory as the QMD file)
+# Use relative path - Quarto runs from the file's directory
+output_path = Path('distribution-dih_npv_upfront_cost_initiatives.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

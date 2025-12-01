@@ -79,12 +79,8 @@ fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold'
 # Add watermark
 add_watermark(fig)
 
-# Save PNG
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'mc-distribution-global_annual_human_life_losses_conflict.png'
+# Save PNG (same directory as the QMD file)
+output_path = Path('mc-distribution-global_annual_human_life_losses_conflict.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -2746,12 +2746,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (mandatory per design guide)
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'tornado-{param_name.lower()}.png'
+# Save PNG (same directory as the QMD file)
+output_path = Path('tornado-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -3007,12 +3003,9 @@ ax.set_ylim(bottom=0)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'distribution-{param_name.lower()}.png'
+# Save PNG (same directory as the QMD file)
+# Use relative path - Quarto runs from the file's directory
+output_path = Path('distribution-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -3154,12 +3147,8 @@ fig.suptitle(f'Monte Carlo Analysis: {{display_name}}', fontsize=14, weight='bol
 # Add watermark
 add_watermark(fig)
 
-# Save PNG
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'mc-distribution-{param_name.lower()}.png'
+# Save PNG (same directory as the QMD file)
+output_path = Path('mc-distribution-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -3285,12 +3274,8 @@ ax.set_xlim(left=min(sorted_samples) * 0.95)
 clean_spines(ax)
 add_watermark(fig)
 
-# Save PNG
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'exceedance-{param_name.lower()}.png'
+# Save PNG (same directory as the QMD file)
+output_path = Path('exceedance-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -3550,30 +3535,40 @@ def main():
             input_dist_figures_dir = project_root / "knowledge" / "figures"
             input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
             
-            # Clean up stale input distribution files (QMD and PNG)
-            # This handles deleted/renamed parameters that would leave orphan files
+            # First, delete stale QMD files (we regenerate all)
             stale_dist_qmd = list(input_dist_figures_dir.glob("distribution-*.qmd"))
-            stale_dist_png = list(input_dist_figures_dir.glob("distribution-*.png"))
-            stale_dist_files = stale_dist_qmd + stale_dist_png
-            if stale_dist_files:
-                print(f"[*] Cleaning {len(stale_dist_files)} stale distribution files ({len(stale_dist_qmd)} QMD, {len(stale_dist_png)} PNG)...")
-                for f in stale_dist_files:
+            if stale_dist_qmd:
+                print(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
+                for f in stale_dist_qmd:
                     f.unlink()
             
             input_dist_count = 0
             input_dist_errors = []
+            generated_dist_qmds = set()  # Track what we generate
             for param_name, param_data in parameters.items():
                 try:
                     # Only generate for parameters with uncertainty metadata
                     dist_file = generate_input_distribution_chart_qmd(
                         param_name, param_data, input_dist_figures_dir
                     )
+                    generated_dist_qmds.add(dist_file.name)
                     input_dist_count += 1
                 except ValueError:
                     # Parameter doesn't have uncertainty metadata - skip silently
                     pass
                 except Exception as e:
                     input_dist_errors.append(f"{param_name}: {e}")
+            
+            # Clean up orphaned PNG files (PNGs without matching QMD)
+            orphaned_dist_pngs = []
+            for png_file in input_dist_figures_dir.glob("distribution-*.png"):
+                expected_qmd = png_file.stem + ".qmd"
+                if expected_qmd not in generated_dist_qmds:
+                    orphaned_dist_pngs.append(png_file)
+            if orphaned_dist_pngs:
+                print(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
+                for f in orphaned_dist_pngs:
+                    f.unlink()
             
             print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
             for err in input_dist_errors:
@@ -3591,30 +3586,23 @@ def main():
             if tornado_deltas and regression_sensitivity and Outcome:
                 print("[*] Generating outcome distributions and sensitivity analysis...")
                 
-                # Clean up stale generated files (QMD and PNG)
-                # This handles deleted/renamed parameters that would leave orphan files
                 figures_dir = project_root / "knowledge" / "figures"
                 
-                # Collect stale QMD files
+                # Delete stale QMD files first (we regenerate all)
+                # PNGs will be cleaned up after generation (only orphans)
                 stale_tornado_qmd = list(figures_dir.glob("tornado-*.qmd"))
                 stale_sensitivity_qmd = list(figures_dir.glob("sensitivity-table-*.qmd"))
                 stale_mc_dist_qmd = list(figures_dir.glob("mc-distribution-*.qmd"))
                 stale_exceedance_qmd = list(figures_dir.glob("exceedance-*.qmd"))
                 stale_qmd_files = stale_tornado_qmd + stale_sensitivity_qmd + stale_mc_dist_qmd + stale_exceedance_qmd
                 
-                # Collect stale PNG files (rendered from QMD)
-                stale_tornado_png = list(figures_dir.glob("tornado-*.png"))
-                stale_sensitivity_png = list(figures_dir.glob("sensitivity-table-*.png"))
-                stale_mc_dist_png = list(figures_dir.glob("mc-distribution-*.png"))
-                stale_exceedance_png = list(figures_dir.glob("exceedance-*.png"))
-                stale_png_files = stale_tornado_png + stale_sensitivity_png + stale_mc_dist_png + stale_exceedance_png
-                
-                stale_files = stale_qmd_files + stale_png_files
-                stale_count = len(stale_files)
-                if stale_count > 0:
-                    print(f"[*] Cleaning {stale_count} stale generated files ({len(stale_qmd_files)} QMD, {len(stale_png_files)} PNG)...")
-                    for f in stale_files:
+                if stale_qmd_files:
+                    print(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
+                    for f in stale_qmd_files:
                         f.unlink()
+                
+                # Track generated QMD files for orphan PNG cleanup later
+                generated_outcome_qmds = set()
                 
                 # Validate: Find calculated parameters missing inputs/compute
                 validation_warnings = []
@@ -3792,11 +3780,12 @@ def main():
                             try:
                                 figures_dir = project_root / "knowledge" / "figures"
                                 param_meta = parameters.get(outcome.name, {})
-                                generate_tornado_chart_qmd(
+                                tornado_qmd = generate_tornado_chart_qmd(
                                     outcome.name, tornado, figures_dir, param_meta,
                                     baseline=float(baseline),
                                     units=outcome.units
                                 )
+                                generated_outcome_qmds.add(tornado_qmd.name)
                                 tornado_count += 1
                             except ValueError as val_err:
                                 # STRICT MODE: Fail fast when tornado data is incomplete
@@ -3844,7 +3833,8 @@ def main():
                             max_coef = max(abs(v) for v in sens_indices.values()) if sens_indices else 0
                             if max_coef >= 0.001:
                                 try:
-                                    generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                    sens_qmd = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                    generated_outcome_qmds.add(sens_qmd.name)
                                     sensitivity_count += 1
                                 except Exception as table_err:
                                     print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
@@ -3855,22 +3845,24 @@ def main():
                                 outcome_info = outcomes_data.get(outcome.name, {})
                                 outcome_std = outcome_info.get("std", 0)
                                 if outcome_samples and len(outcome_samples) > 100 and outcome_std > 0:
-                                    generate_monte_carlo_distribution_chart_qmd(
+                                    mc_qmd = generate_monte_carlo_distribution_chart_qmd(
                                         outcome.name,
                                         outcome_info,
                                         outcome_samples,
                                         figures_dir,
                                         param_meta
                                     )
+                                    generated_outcome_qmds.add(mc_qmd.name)
                                     mc_dist_count += 1
 
                                     # Generate standalone CDF/exceedance chart
-                                    generate_cdf_chart_qmd(
+                                    cdf_qmd = generate_cdf_chart_qmd(
                                         outcome.name,
                                         outcome_samples,
                                         figures_dir,
                                         param_meta
                                     )
+                                    generated_outcome_qmds.add(cdf_qmd.name)
                                     exceedance_count += 1
                                 elif outcome_samples and outcome_std == 0:
                                     print(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
@@ -3881,6 +3873,30 @@ def main():
 
                 with open(analysis_dir / "outcomes.json", "w", encoding="utf-8") as f:
                     json.dump(outcomes_data, f, indent=2)
+                
+                # Clean up orphaned PNG files (PNGs without matching QMD)
+                orphaned_pngs = []
+                for png_file in figures_dir.glob("tornado-*.png"):
+                    expected_qmd = png_file.stem + ".qmd"
+                    if expected_qmd not in generated_outcome_qmds:
+                        orphaned_pngs.append(png_file)
+                for png_file in figures_dir.glob("sensitivity-table-*.png"):
+                    expected_qmd = png_file.stem + ".qmd"
+                    if expected_qmd not in generated_outcome_qmds:
+                        orphaned_pngs.append(png_file)
+                for png_file in figures_dir.glob("mc-distribution-*.png"):
+                    expected_qmd = png_file.stem + ".qmd"
+                    if expected_qmd not in generated_outcome_qmds:
+                        orphaned_pngs.append(png_file)
+                for png_file in figures_dir.glob("exceedance-*.png"):
+                    expected_qmd = png_file.stem + ".qmd"
+                    if expected_qmd not in generated_outcome_qmds:
+                        orphaned_pngs.append(png_file)
+                
+                if orphaned_pngs:
+                    print(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
+                    for f in orphaned_pngs:
+                        f.unlink()
                 
                 # Print summary of generated files
                 print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")

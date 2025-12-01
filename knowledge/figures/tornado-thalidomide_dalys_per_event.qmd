@@ -70,12 +70,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (mandatory per design guide)
-project_root = Path.cwd()
-while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-    project_root = project_root.parent
-
-output_path = project_root / 'knowledge' / 'figures' / 'tornado-thalidomide_dalys_per_event.png'
+# Save PNG (same directory as the QMD file)
+output_path = Path('tornado-thalidomide_dalys_per_event.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
