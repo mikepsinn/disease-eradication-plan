@@ -3473,12 +3473,6 @@ def main():
     generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
     print()
 
-    # Generate parameters-and-calculations.qmd
-    print("[*] Generating parameters-and-calculations.qmd...")
-    qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
-    generate_parameters_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path)
-    print()
-
     # Generate references.bib (with full citation data from references.qmd)
     print("[*] Generating references.bib...")
     bib_output = project_root / "references.bib"
@@ -3860,6 +3854,13 @@ def main():
     except Exception as e:
         print(f"[WARN] Uncertainty generation skipped: {e}")
         print()
+
+    # Generate parameters-and-calculations.qmd AFTER uncertainty charts are created
+    # so the file existence checks work correctly
+    print("[*] Generating parameters-and-calculations.qmd...")
+    qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
+    generate_parameters_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path)
+    print()
 
     # Optionally inject citations
     if inject_citations:

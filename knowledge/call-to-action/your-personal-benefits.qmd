@@ -56,11 +56,6 @@ Here's what a typical 30-year-old making $50,000/year actually gets:
 
 {{< include ../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
-```{python}
-#| echo: false
-from IPython.display import Markdown
-Markdown(f"#### Total lifetime benefit: ${personal_lifetime_benefit_eradication_20yr_age_30_1pct_millions_formatted}M")
-```
 
 Where does this come from?
 
