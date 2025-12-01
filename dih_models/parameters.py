@@ -5368,10 +5368,6 @@ def calculate_personal_lifetime_wealth_improved(
     }
 
 
-# --- Test Output (when module executed directly) ---
-if __name__ == "__main__":
-    print("\n=== not sure why this is here ===")
-
 WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
     0.28,
     source_ref="chronic-illness-workforce-productivity-loss",
@@ -5686,41 +5682,6 @@ PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT = PERSONAL_WEALTH_CO
     "total_lifetime_benefit"
 ]
 
-
-if __name__ == "__main__":
-    # Test conservative baseline model (this section runs after constants are defined)
-    print("\n\n=== CONSERVATIVE BASELINE MODEL (ANTIBIOTIC PRECEDENT) ===")
-    print("\n--- Conservative Baseline (Age 30, $50K income, 1% Treaty) ---")
-    cons = PERSONAL_WEALTH_CONSERVATIVE_AGE_30_1PCT
-    print(f"Total Benefit: ${cons['total_lifetime_benefit']/1000:.0f}K")
-    print(f"Life Extension: {cons['life_extension_years']:.1f} years")
-    print("\nComponent Breakdown:")
-    print(f"  Peace Dividend: ${cons['npv_breakdown']['peace_dividend_total']/1000:.0f}K")
-    print(f"  Healthcare Savings: ${cons['npv_breakdown']['healthcare_savings_total']/1000:.0f}K")
-    print(f"  Productivity Gains: ${cons['npv_breakdown']['productivity_gains_total']/1000:.0f}K (IBI 2024 data)")
-    print(
-        f"  Caregiver Savings: ${cons['npv_breakdown']['caregiver_savings_total']/1000:.0f}K (AARP data, disease-only)"
-    )
-    print(f"  GDP Boost: ${cons['npv_breakdown']['gdp_boost_benefit']/1000:.0f}K")
-    print(f"  Extended Earnings: ${cons['npv_breakdown']['extended_earnings']/1000:.0f}K")
-
-    print("\n--- Moderate Conservative Baseline (Age 30, $50K income, 1% Treaty) ---")
-    cons_mod = PERSONAL_WEALTH_CONSERVATIVE_MODERATE_AGE_30_1PCT
-    print(f"Total Benefit: ${cons_mod['total_lifetime_benefit']/1000:.0f}K")
-    print(f"Life Extension: {cons_mod['life_extension_years']:.1f} years (antibiotic precedent)")
-    print(f"Extended Earnings: ${cons_mod['npv_breakdown']['extended_earnings']/1000:.0f}K")
-
-    # DEPRECATED: Improved and Endgame comparison removed - superseded by Disease Eradication Model below
-
-    print("\n=== CONSERVATIVE BASELINE MODEL FEATURES ===")
-    print("- All parameters cited in ../references.qmd")
-    print("- Productivity: IBI 2024 workforce data (28% affected, $4,798/yr loss)")
-    print("- Caregiver: AARP data ($16.59/hr, 110 hrs/mo, disease-portion only)")
-    print("- Life extension: Antibiotic precedent (10 years for major breakthrough)")
-    print("- No arbitrary divisors (30, 10, 2, 1000, etc.)")
-    print("- Mental health folded into productivity (no double-counting)")
-    print("- Healthcare by disease category (treatable/manageable/incurable)")
-    print("- Conservative treatable portions (60% productivity, 40% caregiver)")
 
 INFECTIONS_DEATH_RATE = 15.0  # Estimate (flu, pneumonia, sepsis)
 
@@ -6268,52 +6229,3 @@ US_MAJOR_DISEASES_TOTAL_ANNUAL_COST = Parameter(
     inputs=['US_ALZHEIMERS_ANNUAL_COST', 'US_CANCER_ANNUAL_COST', 'US_DIABETES_ANNUAL_COST', 'US_HEART_DISEASE_ANNUAL_COST'],
     compute=lambda ctx: ctx["US_DIABETES_ANNUAL_COST"] + ctx["US_ALZHEIMERS_ANNUAL_COST"] + ctx["US_HEART_DISEASE_ANNUAL_COST"] + ctx["US_CANCER_ANNUAL_COST"],
 )
-
-
-if __name__ == "__main__":
-    # Test disease eradication model
-    print("\n\n=== DISEASE ERADICATION MODEL (CUMULATIVE RESEARCH ACCELERATION) ===")
-    print("\nThis model properly accounts for 115x CUMULATIVE research acceleration")
-    print("and systematic disease-by-disease eradication with real CDC burden data.\n")
-
-    for years, label in [(5, "5-Year"), (10, "10-Year"), (20, "20-Year"), (40, "40-Year")]:
-        result = calculate_personal_lifetime_wealth_disease_eradication(
-            treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=years, conservative=False
-        )
-        cumulative_research = result["cumulative_research_years"]
-        life_ext = result["life_extension_years"]
-        total = result["total_lifetime_benefit"]
-
-        print(f"--- {label} Scenario (Age 30, $50K, 1% Treaty) ---")
-        print(
-            f"Cumulative Research: {cumulative_research:.0f} equivalent years ({cumulative_research/124:.1f}x entire 1900-2024 medical progress)"
-        )
-        print(f"Life Extension: {life_ext:.1f} years")
-        print(f"Total Benefit: ${total/1000:.0f}K\n")
-
-        # Show disease-by-disease breakdown for selected scenario
-        if years == 20:
-            print("Disease-by-Disease Eradication Progress (20-year scenario):")
-            for category, details in result["eradication_details"].items():
-                cure_improvement = details["improvement"]
-                new_cure_rate = details["new_cure_rate"]
-                life_contribution = details["life_extension_contribution"]
-                if cure_improvement > 0.01:  # Only show meaningful improvements
-                    print(
-                        f"  {category.capitalize():20s}: {details['current_cure_rate']:.0%} -> {new_cure_rate:.0%} cure rate (+{cure_improvement:.0%}) = +{life_contribution:.1f} yrs"
-                    )
-            print()
-
-    print("\n=== COMPARISON: ALL MODELS ===")
-    conservative_total = PERSONAL_LIFETIME_BENEFIT_AGE_30_1PCT
-    cons_baseline_total = PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT
-    cons_moderate_total = PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT
-    erad_5yr = PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT
-    erad_10yr = PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT
-    erad_20yr = PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT
-    erad_40yr = PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT
-
-    erad_5yr_life = PERSONAL_WEALTH_ERADICATION_5YR_AGE_30_1PCT["life_extension_years"]
-    erad_10yr_life = PERSONAL_WEALTH_ERADICATION_10YR_AGE_30_1PCT["life_extension_years"]
-    erad_20yr_life = PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT["life_extension_years"]
-    erad_40yr_life = PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT["life_extension_years"]

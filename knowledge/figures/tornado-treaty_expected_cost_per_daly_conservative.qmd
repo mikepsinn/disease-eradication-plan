@@ -1,0 +1,88 @@
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+display_name = "Expected Cost per DALY (Conservative 10% Success)"
+
+# Baseline and units
+baseline = 1.2590044674178746
+
+# Tornado data from sensitivity analysis
+drivers = ['TREATY_CAMPAIGN_BUDGET_LOBBYING', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'TREATY_CAMPAIGN_BUDGET_REFERENDUM', 'EFFICACY_LAG_YEARS', 'GLOBAL_LIFE_EXPECTANCY_2024', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'TREATY_CAMPAIGN_BUDGET_RESERVE', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
+impacts_low = [-0.4091764519108093, -0.1709055838123812, -0.15108053609014505, 0.17486173254359794, 0.14725198449331844, 0.04789690908654931, -0.03777013402253648, 0.028307380959074147]
+impacts_high = [0.8183529038216184, 0.23459710573003845, 0.2518008934835747, -0.13684831226247485, -0.11933691634292654, -0.06560569185055942, 0.06295022337089362, -0.027089235466983164]
+
+# Convert deltas to absolute values (baseline + delta)
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+units_label = "USD/DALY"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Add vertical line at baseline
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+clean_spines(ax)
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG (mandatory per design guide)
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'tornado-treaty_expected_cost_per_daly_conservative.png'
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```

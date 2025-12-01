@@ -1,0 +1,14 @@
+**Sensitivity Indices for Total Annual Infrastructure Destruction**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Annual Infrastructure Damage Transportation Conflict | 0.2591 | Weak driver |
+| Global Annual Infrastructure Damage Energy Conflict | 0.2248 | Weak driver |
+| Global Annual Infrastructure Damage Communications Conflict | 0.1593 | Weak driver |
+| Global Annual Infrastructure Damage Water Conflict | 0.1433 | Weak driver |
+| Global Annual Infrastructure Damage Education Conflict | 0.1250 | Weak driver |
+| Global Annual Infrastructure Damage Healthcare Conflict | 0.0884 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

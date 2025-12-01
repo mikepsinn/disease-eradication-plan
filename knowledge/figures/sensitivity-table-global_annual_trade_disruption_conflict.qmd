@@ -1,0 +1,12 @@
+**Sensitivity Indices for Total Annual Trade Disruption**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Annual Trade Disruption Shipping Conflict | 0.4005 | Moderate driver |
+| Global Annual Trade Disruption Supply Chain Conflict | 0.3033 | Moderate driver |
+| Global Annual Trade Disruption Energy Price Conflict | 0.2037 | Weak driver |
+| Global Annual Trade Disruption Currency Conflict | 0.0926 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -1,0 +1,9 @@
+**Sensitivity Indices for dFDA Present Value of Annual OPEX Over 10 Years**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| NPV Discount Rate Standard | -0.9953 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

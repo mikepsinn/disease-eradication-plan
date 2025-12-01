@@ -1,0 +1,10 @@
+**Sensitivity Indices for Ratio of Military Spending to Medical Research Spending**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Global Med Research Spending | -2.8723 | Strong driver |
+| Global Military Spending Annual 2024 | 2.1117 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

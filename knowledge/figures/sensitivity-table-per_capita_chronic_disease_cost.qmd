@@ -1,0 +1,10 @@
+**Sensitivity Indices for US Per Capita Chronic Disease Cost**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| US Chronic Disease Spending Annual | 0.9139 | Strong driver |
+| US Population 2024 | 0.0862 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

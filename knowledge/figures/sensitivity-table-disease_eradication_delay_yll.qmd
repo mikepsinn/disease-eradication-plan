@@ -1,0 +1,10 @@
+**Sensitivity Indices for Years of Life Lost from Disease Eradication Delay**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Regulatory Delay Mean Age Of Death | -2.9915 | Strong driver |
+| Global Life Expectancy 2024 | 1.9921 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
