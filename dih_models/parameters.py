@@ -950,7 +950,7 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
 PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     float(TREATY_ANNUAL_FUNDING),
     source_ref=ReferenceID.SIPRI_2024_SPENDING,
-    source_type="calculated",
+    source_type="definition",  # This is a policy-derived value (1% of military spending)
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",
     latex=r"PeaceDividend_{fiscal} = \$27.18B",
@@ -958,8 +958,6 @@ PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     display_name="Direct Fiscal Savings from 1% Military Spending Reduction",
     unit="USD/year",
     keywords=["dod", "pentagon", "national security", "army", "navy", "armed forces", "conflict resolution"],
-    inputs=['TREATY_ANNUAL_FUNDING'],
-    compute=lambda ctx: float(ctx["TREATY_ANNUAL_FUNDING"]),
 )
 
 PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
@@ -1168,6 +1166,8 @@ CURRENT_TRIAL_SLOTS_AVAILABLE = Parameter(
     description="Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)",
     display_name="Annual Global Clinical Trial Participants",
     unit="patients/year",
+    confidence_interval=(1_500_000, 2_300_000),  # ±20% - trial capacity data variable
+    distribution="lognormal",
     keywords=["1.9m", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "research", "iqvia"]
 )  # 1.9M patients/year (IQVIA 2022, post-COVID normalization from 4M peak in 2021)
 
@@ -1223,6 +1223,8 @@ RECOVERY_TRIAL_COST_PER_PATIENT = Parameter(
     description="RECOVERY trial cost per patient",
     display_name="Recovery Trial Cost per Patient",
     unit="USD/patient",
+    confidence_interval=(350, 700),  # ±30% - pragmatic trial costs can vary
+    distribution="lognormal",
     keywords=["rct", "participant", "subject", "volunteer", "enrollee", "clinical study", "clinical trial"]
 )  # Proven cost from Oxford RECOVERY trial
 
@@ -1929,6 +1931,8 @@ THALIDOMIDE_CASES_WORLDWIDE = Parameter(
     display_name="Thalidomide Cases Worldwide",
     unit="cases",
     confidence="medium",
+    confidence_interval=(10_000, 20_000),  # Documented range 10,000-20,000 cases
+    distribution="lognormal",
     keywords=["thalidomide", "birth defects", "drug safety"]
 )
 
@@ -1940,6 +1944,8 @@ THALIDOMIDE_MORTALITY_RATE = Parameter(
     display_name="Thalidomide Mortality Rate",
     unit="percentage",
     confidence="high",
+    confidence_interval=(0.35, 0.45),  # ±15% on mortality rate
+    distribution="lognormal",
     keywords=["thalidomide", "mortality", "infant deaths"]
 )
 
@@ -1951,6 +1957,8 @@ THALIDOMIDE_US_POPULATION_SHARE_1960 = Parameter(
     display_name="US Population Share 1960",
     unit="percentage",
     confidence="high",
+    confidence_interval=(0.055, 0.065),  # ±10% on census data
+    distribution="lognormal",
     keywords=["population", "demographics"]
 )
 
@@ -1976,6 +1984,8 @@ THALIDOMIDE_DISABILITY_WEIGHT = Parameter(
     display_name="Thalidomide Disability Weight",
     unit="ratio",
     confidence="medium",
+    confidence_interval=(0.32, 0.48),  # ±20% on disability weight
+    distribution="lognormal",
     keywords=["thalidomide", "disability", "quality of life"]
 )
 
@@ -1987,6 +1997,8 @@ THALIDOMIDE_SURVIVOR_LIFESPAN = Parameter(
     display_name="Thalidomide Survivor Lifespan",
     unit="years",
     confidence="medium",
+    confidence_interval=(50, 70),  # ±15% on lifespan estimate
+    distribution="lognormal",
     keywords=["thalidomide", "longevity", "life expectancy"]
 )
 
@@ -3182,7 +3194,9 @@ GLOBAL_MED_RESEARCH_SPENDING = Parameter(
     description="Global government medical research spending",
     display_name="Global Government Medical Research Spending",
     unit="USD",
-    keywords=["67.5b", "worldwide", "investigation", "r&d", "science", "study", "costs"]
+    keywords=["67.5b", "worldwide", "investigation", "r&d", "science", "study", "costs"],
+    distribution="lognormal",
+    confidence_interval=(54_000_000_000, 81_000_000_000),  # ±20% - government spending estimates vary
 )
 
 TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
@@ -3252,6 +3266,8 @@ GLOBAL_POPULATION_2024 = Parameter(
     description="Global population in 2024",
     display_name="Global Population in 2024",
     unit="of people",
+    confidence_interval=(7_800_000_000, 8_200_000_000),  # ±2% census estimate uncertainty
+    distribution="lognormal",
     keywords=["2024", "8.0b", "people", "worldwide", "citizens", "individuals", "inhabitants"]
 )  # UN World Population Prospects 2022
 
@@ -3301,7 +3317,9 @@ GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
     description="Direct medical costs of disease globally (treatment, hospitalization, medication)",
     display_name="Global Annual Direct Medical Costs of Disease",
     unit="USD/year",
-    keywords=["9.9t", "medical", "healthcare", "treatment", "hospitalization"]
+    keywords=["9.9t", "medical", "healthcare", "treatment", "hospitalization"],
+    distribution="lognormal",
+    confidence_interval=(7_000_000_000_000, 14_000_000_000_000),  # ±30% - global healthcare cost estimates vary widely
 )  # $9.9 trillion annually
 
 GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
@@ -3311,7 +3329,9 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     description="Annual productivity loss from disease globally (absenteeism, reduced output)",
     display_name="Global Annual Productivity Loss from Disease",
     unit="USD/year",
-    keywords=["5.0t", "productivity", "lost work", "economic loss", "absenteeism"]
+    keywords=["5.0t", "productivity", "lost work", "economic loss", "absenteeism"],
+    distribution="lognormal",
+    confidence_interval=(3_500_000_000_000, 7_000_000_000_000),  # ±30%
 )  # $5 trillion annually
 
 GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
@@ -3321,7 +3341,9 @@ GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
     description="Economic value of human life lost to disease annually (mortality valuation)",
     display_name="Global Annual Economic Value of Human Life Lost to Disease",
     unit="USD/year",
-    keywords=["94.2t", "human life", "mortality", "deaths", "dalys", "life value"]
+    keywords=["94.2t", "human life", "mortality", "deaths", "dalys", "life value"],
+    distribution="lognormal",
+    confidence_interval=(66_000_000_000_000, 132_000_000_000_000),  # ±30%
 )  # $94.2 trillion annually
 
 GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
@@ -4297,7 +4319,9 @@ GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH = Parameter(
     description="Annual lives saved by medical research globally",
     display_name="Annual Lives Saved by Medical Research Globally",
     unit="lives/year",
-    keywords=["4.2m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "worldwide", "yearly"]
+    keywords=["4.2m", "deaths prevented", "life saving", "mortality reduction", "deaths averted", "worldwide", "yearly"],
+    distribution="lognormal",
+    confidence_interval=(3_000_000, 6_000_000),  # ±30% - attribution difficult to measure
 )
 GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL = Parameter(
     GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH,
@@ -4386,6 +4410,8 @@ GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT = Parameter(
     description="Critical mass threshold for social change (3.5% rule)",
     display_name="Critical Mass Threshold for Social Change",
     unit="rate",
+    confidence_interval=(0.025, 0.045),  # Range 2.5-4.5% based on different studies
+    distribution="lognormal",
     keywords=["4%", "people", "worldwide", "citizens", "individuals", "inhabitants", "persons"]
 )  # 3.5% rule for social change, key tipping point
 
@@ -4994,13 +5020,17 @@ US_CHRONIC_DISEASE_SPENDING_ANNUAL = Parameter(
     description="US annual chronic disease spending",
     display_name="US Annual Chronic Disease Spending",
     unit="USD/year",
-    keywords=["4.1t", "yearly", "costs", "funding", "illness", "investment", "chronic"]
+    keywords=["4.1t", "yearly", "costs", "funding", "illness", "investment", "chronic"],
+    distribution="lognormal",
+    confidence_interval=(3.3e12, 5.0e12),  # ±20% - healthcare spending estimates vary
 )  # $4.1T/year CDC estimate
 
 US_POPULATION_2024 = Parameter(
     335e6, source_ref=ReferenceID.US_VOTER_POPULATION, source_type="external", description="US population in 2024", unit="people",
     display_name="US Population in 2024",
-    keywords=["2024", "335.0m", "people", "citizens", "individuals", "inhabitants", "persons"]
+    keywords=["2024", "335.0m", "people", "citizens", "individuals", "inhabitants", "persons"],
+    distribution="lognormal",
+    confidence_interval=(330e6, 340e6),  # ±1.5% - census estimates well-known
 )
 
 PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
@@ -6199,6 +6229,8 @@ US_DIABETES_ANNUAL_COST = Parameter(
     display_name="US Diabetes Annual Cost",
     unit="USD",
     confidence="high",
+    confidence_interval=(278_000_000_000, 376_000_000_000),  # ±15% on disease cost estimates
+    distribution="lognormal",
     peer_reviewed=True,
     keywords=["insurance", "diabetes", "cost", "annual", "us", "disease", "burden"]
 )
@@ -6211,6 +6243,8 @@ US_ALZHEIMERS_ANNUAL_COST = Parameter(
     display_name="US Alzheimer's Annual Cost",
     unit="USD",
     confidence="high",
+    confidence_interval=(302_000_000_000, 408_000_000_000),  # ±15% on disease cost estimates
+    distribution="lognormal",
     peer_reviewed=True,
     keywords=["insurance", "alzheimer", "dementia", "cost", "annual", "us", "disease", "burden"]
 )
@@ -6223,6 +6257,8 @@ US_HEART_DISEASE_ANNUAL_COST = Parameter(
     display_name="US Heart Disease Annual Cost",
     unit="USD",
     confidence="high",
+    confidence_interval=(309_000_000_000, 417_000_000_000),  # ±15% on disease cost estimates
+    distribution="lognormal",
     peer_reviewed=True,
     keywords=["insurance", "heart", "cardiovascular", "stroke", "cost", "annual", "us", "disease", "burden"]
 )
@@ -6235,6 +6271,8 @@ US_CANCER_ANNUAL_COST = Parameter(
     display_name="US Cancer Annual Cost",
     unit="USD",
     confidence="high",
+    confidence_interval=(177_000_000_000, 239_000_000_000),  # ±15% on disease cost estimates
+    distribution="lognormal",
     peer_reviewed=True,
     keywords=["insurance", "cancer", "oncology", "cost", "annual", "us", "disease", "burden"]
 )

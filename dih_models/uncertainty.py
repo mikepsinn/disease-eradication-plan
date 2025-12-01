@@ -500,14 +500,18 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
 
 
 def regression_sensitivity(samples: Dict[str, Any], outcome_samples: Sequence[float]) -> Dict[str, float]:
-    """Compute standardized regression coefficients as sensitivity indices.
+    """Compute fully standardized regression coefficients as sensitivity indices.
+
+    Standardized coefficients (beta*) represent the change in output SD per 1 SD
+    change in input, holding other inputs constant. Values range from -1 to 1
+    and are comparable across different inputs regardless of their units/scales.
 
     `samples`: name -> array-like of sampled input values
     `outcome_samples`: array-like of outcome values per simulation
-    Returns: name -> standardized beta coefficient
+    Returns: name -> standardized beta coefficient (range approximately -1 to 1)
     """
     if np is None:
-        # Fallback: simple correlation coefficient per input
+        # Fallback: simple correlation coefficient per input (already standardized)
         vals = list(outcome_samples)
         def corr(x: Sequence[float]) -> float:
             xm = sum(x)/len(x)
@@ -522,17 +526,28 @@ def regression_sensitivity(samples: Dict[str, Any], outcome_samples: Sequence[fl
     # Standardize inputs
     X_list: List[Any] = []
     names = list(samples.keys())
+    input_stds: List[float] = []
     for name in names:
         a = np.asarray(samples[name], dtype=float)
         mu = np.mean(a)
         sd = np.std(a)
+        input_stds.append(sd if sd != 0 else 1.0)
         X_list.append((a - mu) / (sd if sd != 0 else 1))
     X = np.vstack(X_list).T  # shape (n, p)
+    
+    # Standardize output
     y = np.asarray(outcome_samples, dtype=float)
-    # OLS beta = (X'X)^(-1) X'y
+    y_mu = np.mean(y)
+    y_sd = np.std(y)
+    if y_sd == 0:
+        y_sd = 1.0  # Avoid division by zero
+    y_standardized = (y - y_mu) / y_sd
+    
+    # OLS beta = (X'X)^(-1) X'y on standardized data
+    # This gives fully standardized coefficients (beta*)
     XtX = X.T @ X
     try:
-        beta = np.linalg.solve(XtX, X.T @ y)
+        beta = np.linalg.solve(XtX, X.T @ y_standardized)
     except Exception:
-        beta = np.linalg.pinv(XtX) @ (X.T @ y)
+        beta = np.linalg.pinv(XtX) @ (X.T @ y_standardized)
     return {name: float(b) for name, b in zip(names, beta)}

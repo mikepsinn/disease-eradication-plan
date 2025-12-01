@@ -215,6 +215,493 @@ def smart_title_case(param_name: str) -> str:
     return ' '.join(result)
 
 
+def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, str | None]:
+    """
+    Infer operation type by testing the compute function with known values.
+    
+    Returns:
+        Tuple of (operation_type, order) where:
+        - operation_type: 'sum', 'multiply', 'divide', 'subtract', 'identity', 'complex'
+        - order: For division/subtraction, 'first_over_second' or 'second_over_first'
+    """
+    if not hasattr(param_value, 'compute') or not param_value.compute:
+        return 'complex', None
+    
+    n = len(inputs)
+    if n == 0:
+        return 'complex', None
+    
+    # Create test context with distinct values that make operations distinguishable
+    # Use values like [2, 3, 4, ...] so we can identify the operation
+    test_vals = [2.0 + i for i in range(n)]
+    ctx = {name: val for name, val in zip(inputs, test_vals)}
+    
+    try:
+        result = param_value.compute(ctx)
+    except Exception:
+        return 'complex', None
+    
+    if n == 1:
+        # Single input - check for identity or simple transformation
+        if abs(result - test_vals[0]) < 0.01:
+            return 'identity', None
+        return 'transform', None
+    
+    elif n == 2:
+        a, b = test_vals[0], test_vals[1]  # 2.0, 3.0
+        
+        # Check each operation type
+        if abs(result - (a + b)) < 0.01:  # 2 + 3 = 5
+            return 'sum', None
+        elif abs(result - (a * b)) < 0.01:  # 2 * 3 = 6
+            return 'multiply', None
+        elif abs(result - (a / b)) < 0.01:  # 2 / 3 ≈ 0.667
+            return 'divide', 'first_over_second'
+        elif abs(result - (b / a)) < 0.01:  # 3 / 2 = 1.5
+            return 'divide', 'second_over_first'
+        elif abs(result - (a - b)) < 0.01:  # 2 - 3 = -1
+            return 'subtract', 'first_minus_second'
+        elif abs(result - (b - a)) < 0.01:  # 3 - 2 = 1
+            return 'subtract', 'second_minus_first'
+        else:
+            return 'complex', None
+    
+    else:
+        # Multi-input: check if it's a sum or product
+        expected_sum = sum(test_vals)
+        if abs(result - expected_sum) < 0.01:
+            return 'sum', None
+        
+        # Check product (for 3+ inputs)
+        expected_product = 1.0
+        for v in test_vals:
+            expected_product *= v
+        if abs(result - expected_product) < 0.01:
+            return 'multiply', None
+        
+        return 'complex', None
+
+
+def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | None:
+    """Extract the lambda body from parameters.py for a given parameter."""
+    content = params_file.read_text(encoding="utf-8")
+    
+    # Find the parameter definition start
+    start_pattern = rf'{param_name}\s*=\s*Parameter\('
+    start_match = re.search(start_pattern, content)
+    if not start_match:
+        return None
+    
+    start = start_match.start()
+    
+    # Find matching closing paren by counting depth
+    depth = 0
+    end = start
+    for i, c in enumerate(content[start:], start):
+        if c == '(':
+            depth += 1
+        elif c == ')':
+            depth -= 1
+            if depth == 0:
+                end = i + 1
+                break
+    
+    param_def = content[start:end]
+    
+    # Find compute=lambda ctx: ... pattern
+    compute_match = re.search(
+        r'compute\s*=\s*lambda\s+ctx\s*:\s*(.+?)(?=,\s*\n\s*\)|$)',
+        param_def,
+        re.DOTALL
+    )
+    if compute_match:
+        body = compute_match.group(1).strip()
+        body = body.rstrip(',').strip()
+        return body
+    
+    return None
+
+
+def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
+    """
+    Convert a Python lambda body to LaTeX using sympy.
+    
+    NOTE: This often produces unreadable output for complex formulas with
+    variable names. Only use when the result is simpler than inference-based
+    approach. For complex formulas, prefer hardcoded latex fields.
+    """
+    # For now, skip sympy entirely - the output is worse than inference
+    # Complex formulas should use handwritten latex fields
+    return None
+
+
+def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str, Dict[str, Any]], params_file: Path = None) -> str | None:
+    r"""
+    Generate LaTeX equation from parameter metadata.
+    
+    Strategy:
+    1. First try sympy-based conversion (parses actual compute lambda)
+    2. Fall back to inference-based approach for simple operations
+    3. Return None for truly complex cases (hardcoded latex used instead)
+    
+    Creates equations like:
+    - Sum: \text{Total} = \underbrace{\$327B}_{\text{Diabetes}} + \underbrace{\$355B}_{\text{Alzheimer's}} = \$1.253T
+    - Product: \text{Cost} = 233{,}600 \times \$10M = \$2.34T
+    - Ratio: \text{Multiplier} = \frac{48.8M}{1.9M} = 25.7\times
+    - Complex: Uses sympy to generate proper fractions, exponents, etc.
+    
+    Args:
+        param_name: Name of the parameter
+        param_value: Parameter object with metadata
+        parameters: Full parameters dict for looking up input values
+        params_file: Path to parameters.py for lambda extraction (optional)
+    
+    Returns:
+        LaTeX string or None if cannot generate
+    """
+    # Check if this is a calculated parameter with inputs and compute
+    if not hasattr(param_value, 'inputs') or not param_value.inputs:
+        return None
+    if not hasattr(param_value, 'compute') or not param_value.compute:
+        return None
+    
+    inputs = param_value.inputs
+    result_value = float(param_value)
+    result_unit = getattr(param_value, 'unit', '') or ''
+    
+    # Infer operation type from compute function
+    operation, order = infer_operation_from_compute(param_value, inputs)
+    
+    # Get input values and format them
+    input_data = []
+    for inp_name in inputs:
+        inp_meta = parameters.get(inp_name, {})
+        inp_value = inp_meta.get('value')
+        if inp_value is None:
+            return None  # Can't generate if missing input
+        
+        inp_float = float(inp_value)
+        inp_unit = getattr(inp_value, 'unit', '') or ''
+        inp_display = getattr(inp_value, 'display_name', smart_title_case(inp_name))
+        
+        # Format the value for LaTeX
+        inp_formatted = format_latex_value(inp_float, inp_unit)
+        
+        # Create short label (abbreviation from display name and param name)
+        short_label = create_short_label(inp_display, inp_name)
+        
+        input_data.append({
+            'name': inp_name,
+            'value': inp_float,
+            'formatted': inp_formatted,
+            'display': inp_display,
+            'short': short_label,
+            'unit': inp_unit,
+        })
+    
+    # Format result value
+    result_formatted = format_latex_value(result_value, result_unit)
+    
+    # Get display name for creating meaningful LHS
+    result_display = getattr(param_value, 'display_name', '') or smart_title_case(param_name)
+    
+    # Create short name for LHS using both param_name and display_name
+    lhs_short = create_latex_variable_name(param_name, result_display)
+    
+    # For complex operations, try sympy-based conversion first
+    if operation == 'complex' and params_file and params_file.exists():
+        lambda_body = extract_lambda_body_from_file(param_name, params_file)
+        if lambda_body:
+            sympy_latex = lambda_to_sympy_latex(lambda_body, inputs)
+            if sympy_latex:
+                # Sympy gives us the formula structure, add = result
+                return f"{lhs_short} = {sympy_latex} = {result_formatted}"
+    
+    # Build equation based on inferred operation type
+    if operation == 'divide' and len(input_data) == 2:
+        # Division: X = A / B = result
+        if order == 'second_over_first':
+            numerator = input_data[1]
+            denominator = input_data[0]
+        else:
+            numerator = input_data[0]
+            denominator = input_data[1]
+        
+        latex = (
+            f"{lhs_short} = "
+            f"\\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}} = "
+            f"{result_formatted}"
+        )
+    
+    elif operation == 'multiply':
+        # Multiplication: X = A × B = result
+        terms = ' \\times '.join(d['formatted'] for d in input_data)
+        latex = f"{lhs_short} = {terms} = {result_formatted}"
+    
+    elif operation == 'sum':
+        # Addition: X = A + B + C = result (with underbraces for labels)
+        terms_parts = []
+        for d in input_data:
+            terms_parts.append(f"\\underbrace{{{d['formatted']}}}_{{{d['short']}}}")
+        terms = ' + '.join(terms_parts)
+        latex = f"{lhs_short} = {terms} = {result_formatted}"
+    
+    elif operation == 'subtract' and len(input_data) == 2:
+        # Subtraction: X = A - B = result
+        if order == 'second_minus_first':
+            first = input_data[1]
+            second = input_data[0]
+        else:
+            first = input_data[0]
+            second = input_data[1]
+        latex = f"{lhs_short} = {first['formatted']} - {second['formatted']} = {result_formatted}"
+    
+    elif operation in ('identity', 'transform') and len(input_data) == 1:
+        # Single input transformation
+        inp = input_data[0]
+        latex = f"{lhs_short} = {inp['formatted']} = {result_formatted}"
+    
+    else:
+        # Complex or unrecognized - skip auto-generation
+        # (hardcoded latex can still be used)
+        return None
+    
+    return latex
+
+
+def format_latex_value(value: float, unit: str) -> str:
+    """Format a numeric value for LaTeX display with proper units and scaling."""
+    is_currency = "USD" in unit or "usd" in unit or "dollar" in unit.lower()
+    is_percentage = "%" in unit or "percent" in unit.lower() or "rate" in unit.lower()
+    is_in_billions = "billion" in unit.lower()
+    
+    abs_val = abs(value)
+    
+    if is_currency:
+        if is_in_billions:
+            if abs_val >= 1000:
+                scaled = value / 1000
+                return f"\\${scaled:.1f}T" if abs(scaled) < 100 else f"\\${scaled:.0f}T"
+            elif abs_val >= 1:
+                return f"\\${value:.1f}B" if abs_val < 100 else f"\\${value:.0f}B"
+            else:
+                scaled = value * 1000
+                return f"\\${scaled:.0f}M"
+        else:
+            # Raw USD value
+            if abs_val >= 1e12:
+                return f"\\${value/1e12:.2f}T"
+            elif abs_val >= 1e9:
+                return f"\\${value/1e9:.2f}B"
+            elif abs_val >= 1e6:
+                return f"\\${value/1e6:.1f}M"
+            elif abs_val >= 1e3:
+                return f"\\${value/1e3:.1f}K"
+            else:
+                return f"\\${value:.0f}"
+    elif is_percentage:
+        if abs_val <= 1:
+            return f"{value * 100:.1f}\\%"
+        else:
+            return f"{value:.1f}\\%"
+    else:
+        # Non-currency, non-percentage
+        if abs_val >= 1e12:
+            return f"{value/1e12:.2f}T"
+        elif abs_val >= 1e9:
+            return f"{value/1e9:.2f}B"
+        elif abs_val >= 1e6:
+            formatted = f"{value/1e6:.1f}M"
+            return formatted.replace('.0M', 'M')
+        elif abs_val >= 1e3:
+            # Use thousands separator
+            return f"{value:,.0f}".replace(',', '{,}')
+        elif abs_val >= 1:
+            return f"{value:.2f}".rstrip('0').rstrip('.')
+        else:
+            return f"{value:.4f}".rstrip('0').rstrip('.')
+
+
+def create_short_label(display_name: str, param_name: str = "") -> str:
+    """
+    Create a short LaTeX label from a display name or parameter name.
+    
+    Strategy: Keep labels readable and domain-specific, not overly abbreviated.
+    Use common medical/economic terms that are recognizable.
+    """
+    # Domain-specific terms that should NOT be abbreviated (recognizable as-is)
+    preserve_words = {
+        'diabetes', 'alzheimer', 'heart', 'cancer', 'stroke', 'obesity',
+        'combat', 'terror', 'state', 'ptsd', 'refugee', 'veteran',
+        'platform', 'staff', 'trial', 'water', 'energy', 'supply',
+    }
+    
+    # Abbreviations only for very long words
+    abbrevs = {
+        'infrastructure': 'infra',
+        'transportation': 'transport',
+        'communications': 'comms',
+        'environmental': 'environ',
+        'military': 'military',
+        'healthcare': 'health',
+        'research': 'R\\&D',
+        'population': 'pop',
+        'lobbying': 'lobby',
+        'referendum': 'referendum',
+        'regulatory': 'regulatory',
+        'community': 'community',
+        'maintenance': 'maint',
+        'subsidies': 'subsidy',
+        'shipping': 'shipping',
+        'currency': 'currency',
+        'capital': 'capital',
+        'opportunity': 'opp cost',
+        'indirect': 'indirect',
+        'direct': 'direct',
+    }
+    
+    display_lower = display_name.lower()
+    
+    # First check for known abbreviations
+    for full, short in abbrevs.items():
+        if full in display_lower:
+            return f"\\text{{{short}}}"
+    
+    # Check for words to preserve as-is
+    for word in preserve_words:
+        if word in display_lower:
+            return f"\\text{{{word}}}"
+    
+    # Extract from parameter name if possible (e.g., ACLED_CONFLICT_DEATHS -> "ACLED")
+    if param_name:
+        parts = param_name.split('_')
+        # Look for source indicators (ACLED, GTD, UCDP, WHO, CDC, UN, EPA)
+        for part in parts:
+            if part in ['ACLED', 'GTD', 'UCDP', 'WHO', 'CDC', 'UN', 'EPA']:
+                return f"\\text{{{part}}}"
+    
+    # Extract first significant word from display name
+    words = display_name.split()
+    # Skip common prefixes
+    skip_words = {'annual', 'global', 'total', 'us', 'the', 'a', 'an', 'per', 'of', 'and'}
+    significant_words = [w for w in words if w.lower() not in skip_words and len(w) > 2]
+    
+    if len(significant_words) >= 1:
+        # Use first significant word, only abbreviate if very long
+        first_word = significant_words[0]
+        if len(first_word) > 10:
+            return f"\\text{{{first_word[:8]}}}"
+        return f"\\text{{{first_word}}}"
+    
+    return f"\\text{{{display_name[:8]}}}"
+
+
+def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
+    """
+    Create a meaningful LaTeX variable name from parameter info.
+    
+    Following patterns from hardcoded equations:
+    - OPEX_{total}, Cost_{combat}, Deaths_{total}
+    - PeaceDividend_{infra}, Benefit_{RD}
+    - TotalWarCost, DirectCosts
+    
+    Args:
+        param_name: Parameter name like DFDA_ANNUAL_OPEX
+        display_name: Human-readable name like "DFDA Annual Operating Expenses"
+    """
+    # Domain-specific main concepts (what type of thing this is)
+    main_concepts = {
+        'cost': 'Cost',
+        'opex': 'OPEX',
+        'capex': 'CAPEX', 
+        'death': 'Deaths',
+        'daly': 'DALYs',
+        'benefit': 'Benefit',
+        'saving': 'Savings',
+        'funding': 'Funding',
+        'dividend': 'Dividend',
+        'roi': 'ROI',
+        'ratio': 'Ratio',
+        'rate': 'Rate',
+        'multiplier': 'Multiplier',
+        'capacity': 'Capacity',
+        'population': 'Population',
+        'delay': 'Delay',
+        'time': 'Time',
+        'probability': 'Probability',
+        'damage': 'Damage',
+        'disruption': 'Disruption',
+    }
+    
+    # Domain-specific subscripts
+    subscripts = {
+        'total': 'total',
+        'annual': 'annual',
+        'daily': 'daily',
+        'combat': 'combat',
+        'terror': 'terror',
+        'state': 'state',
+        'direct': 'direct',
+        'indirect': 'indirect',
+        'infra': 'infra',
+        'infrastructure': 'infra',
+        'human': 'human',
+        'trade': 'trade',
+        'military': 'mil',
+        'research': 'RD',
+        'rd': 'RD',
+        'peace': 'peace',
+        'war': 'war',
+        'dfda': 'DFDA',
+        'treaty': 'treaty',
+        'disease': 'disease',
+        'health': 'health',
+        'veteran': 'vet',
+        'refugee': 'ref',
+        'environmental': 'env',
+        'fiscal': 'fiscal',
+        'capital': 'capital',
+        'ptsd': 'PTSD',
+        'global': 'global',
+        'net': 'net',
+        'gross': 'gross',
+        'npv': 'NPV',
+        'pv': 'PV',
+    }
+    
+    param_lower = param_name.lower()
+    display_lower = display_name.lower() if display_name else param_lower
+    
+    # Find main concept
+    main = None
+    for key, val in main_concepts.items():
+        if key in param_lower or key in display_lower:
+            main = val
+            break
+    
+    # Find subscript(s)
+    subs = []
+    for key, val in subscripts.items():
+        if key in param_lower:
+            subs.append(val)
+    
+    # Build the LaTeX name
+    if main:
+        if subs:
+            # Limit to 2 most relevant subscripts
+            sub_str = ','.join(subs[:2])
+            return f"{main}_{{{sub_str}}}"
+        return main
+    else:
+        # Fall back to abbreviated param name
+        parts = param_name.split('_')
+        if len(parts) >= 2:
+            main_part = parts[0][:6].title()
+            sub_part = parts[1][:6].lower()
+            return f"\\text{{{main_part}}}_{{{sub_part}}}"
+        return f"\\text{{{param_name[:10]}}}"
+
+
 def format_parameter_value(value: float, unit: str = "") -> str:
     """
     Format a numeric value with appropriate precision, thousand separators, and units.
@@ -683,7 +1170,7 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
     return html
 
 
-def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: Path, citation_mode: str = "none"):
+def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: Path, citation_mode: str = "none", params_file: Path = None):
     """
     Generate _variables.yml file from parameters.
 
@@ -698,6 +1185,7 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             - "inline": Include [@key] after external peer-reviewed parameters
             - "separate": Export citation keys as {param_name}_cite variables
             - "both": Both inline AND separate variables
+        params_file: Path to parameters.py for sympy-based LaTeX generation
     """
     variables = {}
     citation_count = 0
@@ -732,15 +1220,23 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
             latex_var_name = f"{var_name}_latex"
             # Include $$ delimiters so variable can be used directly
             variables[latex_var_name] = f"$$\n{value.latex}\n$$"
+        
+        # Also generate auto-LaTeX for calculated parameters (in addition to hardcoded)
+        auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file)
+        if auto_latex:
+            auto_latex_var_name = f"{var_name}_latex_auto"
+            variables[auto_latex_var_name] = f"$$\n{auto_latex}\n$$"
 
     # Count exports by type BEFORE adding metadata variables
-    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
+    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex") and not k.endswith("_latex_auto"))
+    auto_latex_count = sum(1 for k in variables.keys() if k.endswith("_latex_auto"))
     cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
-    param_count = len(variables) - latex_count - cite_count
+    param_count = len(variables) - latex_count - auto_latex_count - cite_count
 
     # Add metadata variables for use in QMD files
     variables["total_parameter_count"] = str(param_count)
     variables["total_latex_equation_count"] = str(latex_count)
+    variables["total_auto_latex_equation_count"] = str(auto_latex_count)
     if citation_mode in ("separate", "both"):
         variables["total_citation_count"] = str(cite_count)
 
@@ -767,13 +1263,19 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
 
     print(f"[OK] Generated {output_path}")
     print(f"     {param_count} parameters exported")
-    print(f"     {latex_count} LaTeX equations exported")
+    print(f"     {latex_count} LaTeX equations exported (hardcoded)")
+    print(f"     {auto_latex_count} LaTeX equations exported (auto-generated)")
     if citation_mode in ("separate", "both"):
         print(f"     {cite_count} citation keys exported")
     if citation_mode in ("inline", "both"):
-        print(f"     Citation mode: inline [@key] for peer-reviewed sources")
+        print("     Citation mode: inline [@key] for peer-reviewed sources")
     print("\nUsage in QMD files:")
     print(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
+    if auto_latex_count > 0:
+        # Find first auto-generated latex
+        auto_latex_var = next((k for k in variables.keys() if k.endswith("_latex_auto")), None)
+        if auto_latex_var:
+            print(f"  {{{{< var {auto_latex_var} >}}}}  (auto-generated equation)")
     if cite_count > 0:
         # Find first parameter with citation
         cite_var = next((k for k in variables.keys() if k.endswith("_cite")), None)
@@ -1417,6 +1919,110 @@ def validate_calculated_params_no_uncertainty(parameters: Dict[str, Dict[str, An
     return problematic_params
 
 
+def validate_formula_uses_full_param_names(parameters: Dict[str, Dict[str, Any]]) -> list:
+    """
+    Validate that formula strings use full parameter names matching the inputs list.
+    
+    This ensures LaTeX auto-generation can correctly determine operand order
+    (e.g., numerator vs denominator in divisions) by matching formula text to inputs.
+    
+    Args:
+        parameters: Dict of parameter metadata
+        
+    Returns:
+        List of (param_name, input_name, formula) tuples for mismatches
+    """
+    mismatches = []
+    
+    for param_name, param_data in parameters.items():
+        value = param_data["value"]
+        
+        # Only check parameters with both inputs and formula
+        if not hasattr(value, 'inputs') or not value.inputs:
+            continue
+        if not hasattr(value, 'formula') or not value.formula:
+            continue
+        
+        formula_upper = value.formula.upper()
+        
+        for inp_name in value.inputs:
+            # Check if full input name appears in formula
+            if inp_name.upper() not in formula_upper:
+                mismatches.append((param_name, inp_name, value.formula))
+                break  # Only report first missing input per parameter
+    
+    return mismatches
+
+
+def validate_compute_inputs_match(parameters: Dict[str, Dict[str, Any]], params_file: Path) -> list:
+    """
+    Validate that the 'inputs' list matches what's actually used in the compute function.
+    
+    This catches bugs where:
+    - compute uses ctx["X"] but X is not in inputs list (will break uncertainty propagation)
+    - inputs lists X but compute doesn't use ctx["X"] (unnecessary dependency)
+    
+    Args:
+        parameters: Dict of parameter metadata
+        params_file: Path to parameters.py file for source code inspection
+        
+    Returns:
+        List of (param_name, issue_type, missing_or_extra_vars) tuples
+    """
+    issues = []
+    
+    if not params_file or not params_file.exists():
+        return issues
+    
+    content = params_file.read_text(encoding="utf-8")
+    
+    for param_name, param_data in parameters.items():
+        value = param_data["value"]
+        
+        # Only check parameters with compute function
+        if not hasattr(value, 'compute') or not value.compute:
+            continue
+        
+        inputs = getattr(value, 'inputs', []) or []
+        input_set = set(inputs)
+        
+        # Find the parameter definition in the source
+        start_pattern = rf'{param_name}\s*=\s*Parameter\('
+        start_match = re.search(start_pattern, content)
+        if not start_match:
+            continue
+        
+        start = start_match.start()
+        
+        # Find matching closing paren
+        depth = 0
+        end = start
+        for i, c in enumerate(content[start:], start):
+            if c == '(':
+                depth += 1
+            elif c == ')':
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        
+        param_def = content[start:end]
+        
+        # Find all ctx["X"] references in the compute lambda
+        ctx_refs = set(re.findall(r'ctx\["([^"]+)"\]', param_def))
+        
+        # Check for mismatches
+        missing_from_inputs = ctx_refs - input_set
+        extra_in_inputs = input_set - ctx_refs
+        
+        if missing_from_inputs:
+            issues.append((param_name, 'missing_from_inputs', sorted(missing_from_inputs)))
+        if extra_in_inputs:
+            issues.append((param_name, 'extra_in_inputs', sorted(extra_in_inputs)))
+    
+    return issues
+
+
 def generate_reference_ids_enum(available_refs: set, output_path: Path):
     """
     Generate dih_models/reference_ids.py with enum of valid reference IDs.
@@ -1885,11 +2491,21 @@ Regression-based sensitivity showing which inputs explain the most variance in t
     
     for input_name, coef in sorted_indices:
         display_input = smart_title_case(input_name)
-        interpretation = "Strong driver" if abs(coef) > 0.5 else "Moderate influence" if abs(coef) > 0.1 else "Minor effect"
+        # Standardized coefficients range from -1 to 1
+        # Use absolute value thresholds appropriate for standardized betas
+        abs_coef = abs(coef)
+        if abs_coef > 0.5:
+            interpretation = "Strong driver"
+        elif abs_coef > 0.3:
+            interpretation = "Moderate driver"
+        elif abs_coef > 0.1:
+            interpretation = "Weak driver"
+        else:
+            interpretation = "Minimal effect"
         qmd_content += f'| {display_input} | {coef:.4f} | {interpretation} |\n'
     
     qmd_content += '''
-*Interpretation*: Higher absolute values indicate stronger influence. Coefficients show the change in output per unit change in input (standardized).
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
 '''
     
     # Write QMD file
@@ -1998,10 +2614,53 @@ def main():
         print("[OK] All calculated parameters derive uncertainty from inputs")
         print()
 
+    # Validate formula strings use full parameter names (informational only)
+    # Note: LaTeX auto-generation now infers operation from compute(), so formula is optional
+    print("[*] Checking formula strings (informational)...")
+    formula_mismatches = validate_formula_uses_full_param_names(parameters)
+    
+    if formula_mismatches:
+        print(f"[INFO] {len(formula_mismatches)} formulas use abbreviated names (this is OK - operation inferred from compute)")
+        # Only show details if there are few
+        if len(formula_mismatches) <= 5:
+            for param_name, missing_input, formula in formula_mismatches:
+                print(f"       {param_name}: \"{formula}\"")
+        print()
+    else:
+        print("[OK] All formulas use full parameter names")
+        print()
+
+    # Validate compute functions match inputs list
+    print("[*] Validating compute functions match inputs list...")
+    compute_issues = validate_compute_inputs_match(parameters, parameters_path)
+    
+    if compute_issues:
+        missing_issues = [(p, v) for p, t, v in compute_issues if t == 'missing_from_inputs']
+        extra_issues = [(p, v) for p, t, v in compute_issues if t == 'extra_in_inputs']
+        
+        if missing_issues:
+            print(f"[ERROR] {len(missing_issues)} parameters use ctx[] vars not in inputs list:", file=sys.stderr)
+            for param_name, missing_vars in missing_issues[:10]:
+                print(f"  - {param_name}: missing {missing_vars}", file=sys.stderr)
+            if len(missing_issues) > 10:
+                print(f"  ... and {len(missing_issues) - 10} more", file=sys.stderr)
+            print(file=sys.stderr)
+            print("[ERROR] Add these to the 'inputs' list for proper uncertainty propagation.", file=sys.stderr)
+            has_fatal_error = True
+        
+        if extra_issues:
+            print(f"[WARN] {len(extra_issues)} parameters have unused inputs (not fatal):")
+            for param_name, extra_vars in extra_issues[:5]:
+                print(f"  - {param_name}: unused {extra_vars}")
+        print()
+    else:
+        print("[OK] All compute functions match their inputs list")
+        print()
+
     # Generate _variables.yml
     print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
     output_path = project_root / "_variables.yml"
-    generate_variables_yml(parameters, output_path, citation_mode=citation_mode)
+    generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
     print()
 
     # Generate parameters-and-calculations.qmd

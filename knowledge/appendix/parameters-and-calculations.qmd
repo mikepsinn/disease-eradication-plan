@@ -16,8 +16,8 @@ This appendix provides comprehensive documentation of all parameters and calcula
 **Total parameters**: 346
 
 - External sources (peer-reviewed): 126
-- Calculated values: 106
-- Core definitions: 114
+- Calculated values: 105
+- Core definitions: 115
 
 ## External Data Sources {#sec-external}
 
@@ -1751,8 +1751,6 @@ $$
 
 {{< include ../figures/tornado-dfda_expected_roi_0_1pct_political_success.qmd >}}
 
-{{< include ../figures/sensitivity-table-dfda_expected_roi_0_1pct_political_success.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -1796,8 +1794,6 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dfda_expected_roi_1pct_political_success.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_expected_roi_1pct_political_success.qmd >}}
 
 :::
 
@@ -2000,8 +1996,6 @@ $$
 
 {{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
 
-{{< include ../figures/sensitivity-table-dfda_npv_total_cost.qmd >}}
-
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2146,6 +2140,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-dih_patients_fundable_annually.qmd >}}
+
+{{< include ../figures/sensitivity-table-dih_patients_fundable_annually.qmd >}}
 
 :::
 
@@ -2639,6 +2635,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_indirect_costs_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_annual_war_indirect_costs_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2655,6 +2657,10 @@ $$
 **Methodology**: [../problem/cost-of-war#total-cost](../problem/cost-of-war#total-cost)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_annual_war_total_cost.qmd >}}
 
 :::
 
@@ -2673,6 +2679,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_cost_per_life_saved_med_research_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2689,6 +2701,12 @@ $$
 **Methodology**: [disease-economic-burden-109t](../references#disease-economic-burden-109t)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_economic_burden_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_economic_burden_annual.qmd >}}
 
 :::
 
@@ -2707,6 +2725,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_military_spending_per_capita_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_military_spending_per_capita_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2724,6 +2748,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_military_spending_post_treaty_annual_2024.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_military_spending_post_treaty_annual_2024.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2738,6 +2768,10 @@ Total annual cost of war and disease with all externalities (direct + indirect c
 **Methodology**: [../appendix/humanity-budget-overview](../appendix/humanity-budget-overview)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_total_health_and_war_cost_annual.qmd >}}
 
 :::
 
@@ -2756,6 +2790,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-historical_progress_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-historical_progress_deaths_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2772,6 +2812,12 @@ $$
 **Methodology**: [../appendix/regulatory-mortality-analysis#historical-progress](../appendix/regulatory-mortality-analysis#historical-progress)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-historical_progress_economic_loss_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-historical_progress_economic_loss_total.qmd >}}
 
 :::
 
@@ -2790,6 +2836,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-medical_research_pct_of_disease_burden.qmd >}}
+
+{{< include ../figures/sensitivity-table-medical_research_pct_of_disease_burden.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2806,6 +2858,12 @@ $$
 **Methodology**: [../problem/cost-of-war#misallocation](../problem/cost-of-war#misallocation)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-military_vs_medical_research_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-military_vs_medical_research_ratio.qmd >}}
 
 :::
 
@@ -2824,6 +2882,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-misallocation_factor_death_vs_saving.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2840,6 +2902,10 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#peace-dividend](../appendix/1-percent-treaty-cost-effectiveness#peace-dividend)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
 
 :::
 
@@ -2858,6 +2924,10 @@ $$
 
 *? Low confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_conflict_reduction.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2875,22 +2945,9 @@ $$
 
 *✓ High confidence*
 
-:::
+#### Sensitivity Analysis
 
-::: {.callout-note icon=false collapse=false}
-### Direct Fiscal Savings from 1% Military Spending Reduction {#sec-peace_dividend_direct_fiscal_savings}
-
-**Value**: $27.2B
-
-Direct fiscal savings from 1% military spending reduction (high confidence)
-
-$$
-PeaceDividend_{fiscal} = \$27.18B
-$$
-
-**Methodology**: [SIPRI Military Spending Database](../references#sipri-2024-spending)
-
-*✓ High confidence*
+{{< include ../figures/tornado-peace_dividend_direct_costs.qmd >}}
 
 :::
 
@@ -2909,6 +2966,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_environmental.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_environmental.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2925,6 +2988,10 @@ $$
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_human_casualties.qmd >}}
 
 :::
 
@@ -2943,6 +3010,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_indirect_costs.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2959,6 +3030,10 @@ $$
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_infrastructure.qmd >}}
 
 :::
 
@@ -2977,6 +3052,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_lost_economic_growth.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_lost_economic_growth.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -2993,6 +3074,12 @@ $$
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_lost_human_capital.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_lost_human_capital.qmd >}}
 
 :::
 
@@ -3011,6 +3098,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_ptsd.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_ptsd.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3027,6 +3120,12 @@ $$
 **Methodology**: [../economics/peace-dividend](../economics/peace-dividend)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_refugee_support.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_refugee_support.qmd >}}
 
 :::
 
@@ -3045,6 +3144,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_trade_disruption.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3062,6 +3165,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_dividend_veteran_healthcare.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_dividend_veteran_healthcare.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3075,6 +3184,12 @@ US per capita chronic disease cost
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-per_capita_chronic_disease_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-per_capita_chronic_disease_cost.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3087,6 +3202,12 @@ US per capita mental health cost
 *Formula*: `US_MENTAL_HEALTH_COST ÷ US_POPULATION`
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-per_capita_mental_health_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-per_capita_mental_health_cost.qmd >}}
 
 :::
 
@@ -3105,6 +3226,10 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-roi_discount_1pct.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3121,6 +3246,10 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-roi_discount_3pct.qmd >}}
 
 :::
 
@@ -3139,6 +3268,10 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-roi_discount_5pct.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3155,6 +3288,10 @@ $$
 **Methodology**: [Direct Calculation](#calculated)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-roi_discount_7pct.qmd >}}
 
 :::
 
@@ -3173,6 +3310,10 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-suffering_hours_eliminated_total.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3187,6 +3328,10 @@ $$
 $$
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_dalys_per_event.qmd >}}
 
 :::
 
@@ -3203,6 +3348,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_deaths_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_deaths_per_event.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3217,6 +3368,12 @@ $$
 $$
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_survivors_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_survivors_per_event.qmd >}}
 
 :::
 
@@ -3233,6 +3390,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_us_cases_prevented.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_us_cases_prevented.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3248,6 +3411,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_yld_per_event.qmd >}}
+
+{{< include ../figures/sensitivity-table-thalidomide_yld_per_event.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3262,6 +3431,10 @@ $$
 $$
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-thalidomide_yll_per_event.qmd >}}
 
 :::
 
@@ -3280,6 +3453,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-total_research_funding_with_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-total_research_funding_with_treaty.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3296,6 +3475,10 @@ $$
 **Methodology**: [../economics/economics#better-than-the-best-charities](../economics/economics#better-than-the-best-charities)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_benefit_multiplier_vs_vaccines.qmd >}}
 
 :::
 
@@ -3314,6 +3497,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_annual_cost_amortized.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3330,6 +3517,12 @@ $$
 **Methodology**: [../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_total_cost.qmd >}}
 
 :::
 
@@ -3348,6 +3541,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_voting_bloc_target.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_voting_bloc_target.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3364,6 +3563,12 @@ $$
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_complete_roi_all_benefits.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_complete_roi_all_benefits.qmd >}}
 
 :::
 
@@ -3382,6 +3587,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3399,6 +3608,10 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_expected_cost_per_daly_conservative.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3413,6 +3626,10 @@ E[\text{Multiplier}] = \frac{\$89}{\$1.27} = 70\times
 $$
 
 *~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_expected_vs_bed_nets_multiplier.qmd >}}
 
 :::
 
@@ -3431,6 +3648,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_lives_saved_annual_global.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3447,6 +3668,10 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-benefits](../appendix/1-percent-treaty-cost-effectiveness#total-benefits)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_peace_plus_rd_annual_benefits.qmd >}}
 
 :::
 
@@ -3465,6 +3690,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_qalys_gained_annual_global.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3481,6 +3710,10 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness](../appendix/1-percent-treaty-cost-effectiveness)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_recurring_benefits_annual.qmd >}}
 
 :::
 
@@ -3499,6 +3732,12 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_historical_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_roi_historical_rate.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3515,6 +3754,10 @@ $$
 **Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
 
 *? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_innovation_acceleration.qmd >}}
 
 :::
 
@@ -3533,6 +3776,12 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_roi_lag_elimination.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_roi_lag_elimination.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3549,6 +3798,10 @@ $$
 **Methodology**: [../appendix/1-percent-treaty-cost-effectiveness#total-costs](../appendix/1-percent-treaty-cost-effectiveness#total-costs)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_total_annual_costs.qmd >}}
 
 :::
 
@@ -3567,6 +3820,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_total_complete_benefits_annual.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3581,6 +3838,10 @@ $$
 $$
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_vs_bed_nets_multiplier.qmd >}}
 
 :::
 
@@ -3597,6 +3858,10 @@ $$
 
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-trial_capacity_cumulative_years_20yr.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3611,6 +3876,12 @@ Multiplier = 48.8M \div 1.9M = 25.7
 $$
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-trial_capacity_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-trial_capacity_multiplier.qmd >}}
 
 :::
 
@@ -3629,6 +3900,10 @@ $$
 
 *~ Medium confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3646,6 +3921,10 @@ $$
 
 *? Low confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-type_i_error_benefit_dalys.qmd >}}
+
 :::
 
 ::: {.callout-note icon=false collapse=false}
@@ -3662,6 +3941,12 @@ $$
 **Methodology**: [../solution/aligning-incentives#insurance-companies](../solution/aligning-incentives#insurance-companies)
 
 *✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_major_diseases_total_annual_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_major_diseases_total_annual_cost.qmd >}}
 
 :::
 
@@ -4482,6 +4767,17 @@ Standard discount rate for NPV analysis (8% annual)
 **Value**: 10
 
 Standard time horizon for NPV analysis
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### Direct Fiscal Savings from 1% Military Spending Reduction {#sec-peace_dividend_direct_fiscal_savings}
+
+**Value**: $27.2B
+
+Direct fiscal savings from 1% military spending reduction (high confidence)
 
 *Core definition*
 
