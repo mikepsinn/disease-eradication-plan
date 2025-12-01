@@ -43,7 +43,7 @@ fig, ax = plt.subplots(figsize=(8, 10))
 for i in range(3):
     ax.bar(i, values[i], color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2, width=0.6)
 
-# Create stacked bar for 1% Treaty
+# Create stacked bar for 1% treaty
 
 x_pos = 3
 # Peace dividend portion (bottom)
@@ -66,7 +66,7 @@ for i in range(3):
     ax.text(i, values[i] + 3, f'${values[i]:,.1f}B',
             ha='center', va='bottom', fontsize=20, color=COLOR_BLACK, weight='bold')
 
-# Value labels for stacked 1% Treaty bar
+# Value labels for stacked 1% treaty bar
 # Peace dividend label (in middle of bottom segment)
 
 ax.text(x_pos, peace_dividend/2, f'${peace_dividend:.1f}B\nPeace\nDividend\nfrom 1%\nLess\nConflict',
@@ -84,13 +84,13 @@ ax.text(x_pos, total_benefit + 3, f'${total_benefit:.1f}B\ntotal',
 
 # Add title
 
-ax.set_title('Gross Annual Economic Benefit of the 1% Treaty and Decentralized FDA', fontsize=18, color=COLOR_BLACK, weight='bold', pad=20)
+ax.set_title('Gross Annual Economic Benefit of a 1% treaty and decentralized framework for drug assessment', fontsize=18, color=COLOR_BLACK, weight='bold', pad=20)
 
 # Add annotations
 
-# Note about self-funding (arrow to 1% Treaty bar)
+# Note about self-funding (arrow to 1% treaty bar)
 
-ax.annotate('Only the 1% Treaty\nis self-funding\n(generates wealth\nwhile saving lives)',
+ax.annotate('Only a 1% treaty\nis self-funding\n(generates wealth\nwhile saving lives)',
            xy=(x_pos, total_benefit/2), xytext=(x_pos - 1.2, total_benefit * 0.55),
            ha='center', fontsize=12, color=COLOR_BLACK, weight='bold',
            bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),

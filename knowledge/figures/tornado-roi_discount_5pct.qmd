@@ -13,7 +13,7 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
-display_name = "1% Treaty ROI at 5% Discount Rate"
+display_name = "1% treaty ROI at 5% Discount Rate"
 
 # Baseline and units
 baseline = 338.1197615877601

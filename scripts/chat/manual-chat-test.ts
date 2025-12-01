@@ -57,7 +57,7 @@ async function testChat(question: string) {
 async function main() {
   console.log("Testing Book Chat Agent...\n");
 
-  await testChat("What is the 1% Treaty?");
+  await testChat("What is a 1% treaty?");
   await testChat("How much does the US spend on military per year?");
   await testChat("What are the Decentralized Institutes of Health?");
 }

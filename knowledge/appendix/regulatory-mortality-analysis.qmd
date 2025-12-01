@@ -302,7 +302,7 @@ A superior framework would:
 
 1. **Maintain rigorous Phase I safety testing** (~2.3 years)
 2. **Allow provisional approval post-safety** with real-world evidence collection
-3. **Continuous monitoring** via distributed systems (see: [Decentralized FDA](../solution/dfda.qmd))
+3. **Continuous monitoring** via distributed systems (see: [decentralized framework for drug assessment](../solution/dfda.qmd))
 4. **Outcome-based validation** rather than pre-market prediction
 
 This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} years to near-zero while maintaining safety standards.
@@ -316,7 +316,7 @@ If implemented in 2025, the bifurcated model would:
 - **Reduce R&D costs by 82%** (from $2.6B to $350M per drug)
 - **Accelerate rare disease treatments** (95% currently have zero therapies)
 
-See [The 1% Treaty Whitepaper](../economics/economics.qmd) for full cost-benefit analysis.
+See [1% treaty impact analysis](../economics/economics.qmd) for full cost-benefit analysis.
 
 ## Conclusion
 
@@ -333,7 +333,7 @@ The path forward is clear: maintain safety testing, eliminate efficacy delay, de
 
 ---
 
-*For implementation details, see the [Decentralized FDA Technical Specification](../solution/dfda.qmd).*
+*For implementation details, see the [dFDA Technical Specification](../solution/dfda.qmd).*
 
 
 ---

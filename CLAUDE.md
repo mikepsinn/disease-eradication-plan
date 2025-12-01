@@ -1,6 +1,6 @@
 ## Project Overview
 
-This is a Quarto-based book project: "How to End War and Disease" - a guide to getting nations to sign the 1% Treaty, redirecting military spending to the Decentralized Institutes of Health and Decentralized FDA to automate ubiquitous clinical trials. 
+This is a Quarto-based book project: "How to End War and Disease" - a guide to getting nations to sign a 1% treaty, redirecting military spending to the Decentralized Institutes of Health and decentralized framework for drug assessment to automate ubiquitous clinical trials. 
 
 **Key Navigation:**
 

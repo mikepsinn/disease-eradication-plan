@@ -131,11 +131,11 @@
 
 *How to Build Systems That Don't Suck (A Step-by-Step Guide)*
 
-### The 1% Treaty
+### A 1% treaty
 
 *How to Steal 1% of the Murder Budget Without Anyone Noticing*
 
-- **[FIGURE: The 1% Treaty Visualization]**
+- **[FIGURE: 1% treaty Visualization]**
   - Visual showing $2.7T military budget with tiny 1% slice ($27B) being redirected
   - Shows what $27B funds: 54,000 trials, 27M patients treated, 10-20 diseases cured
   - Impact: Shows the scale comparison
@@ -312,7 +312,7 @@
   - Anyone can add tasks, Wishocracy voting determines priority
   - Tasks at the bottom are so simple a robot (or motivated intern) can do them
 
-### The Decentralized FDA
+### A Decentralized Framework for Drug Assessment
 
 *How to Build the Amazon and Consumer Reports of Not Dying (With Reviews You Can Trust)*
 
@@ -496,7 +496,7 @@
   - Cancer nonprofit in Boston + biotech in Switzerland + university in Beijing = coordinated via shared task list
 
 - **Funding the Global Referendum Campaign**
-  - Need $100M in donations to fund referendum on 1% Treaty
+  - Need $100M in donations to fund referendum on 1% treaty
   - Positron coordinates donor outreach across all aligned organizations
   - Agents identify high-net-worth individuals aligned with health causes
   - Draft personalized outreach, coordinate who contacts whom
@@ -688,7 +688,7 @@
 
 #### The Complete Benefits Calculation
 
-The 1% Treaty doesn't just make trials cheaper. It:
+A 1% treaty doesn't just make trials cheaper. It:
 
 1. Restructures global resource allocation (peace dividend: $97B)
 2. Slashes R&D costs 82X (saves $50B)
@@ -785,7 +785,7 @@ Global GDP: $111 trillion/year
 Global healthcare spending: $9.8 trillion/year
 Global military spending: $2.7 trillion/year
 
-If the 1% Treaty generates $1.22T/year in benefits, that's:
+If a 1% treaty generates $1.22T/year in benefits, that's:
 
 - 1.1% of global GDP
 - 12.4% of healthcare spending
@@ -799,7 +799,7 @@ For comparison:
 - Curing all infectious disease: ~$800B/year
 - Fixing mental health: ~$300B/year
 
-The 1% Treaty doesn't cure everything, but it:
+A 1% treaty doesn't cure everything, but it:
 
 - Accelerates access by 7 years (earlier trial participation)
 - Increases research velocity 10-20X (more breakthroughs)
@@ -990,10 +990,10 @@ If the answer to these is yes, the idea is viable. If no, the idea is dead. The 
 
 - **"Is This Quantifiably Better Than Saving Kids From Malaria?"**
   - **Malaria nets (The Sure Thing):** Cost ~$5,000 per life saved with ~100% certainty. A $1B investment saves ~200,000 lives, creating ~$1T in economic value.
-  - **1% Treaty (The Moonshot):** Costs $1B to bootstrap a campaign that, if successful, redirects $270B over 10 years, generating $12.2T in benefits and saving ~1,000,000 lives.
+  - **1% treaty (The Moonshot):** Costs $1B to bootstrap a campaign that, if successful, redirects $270B over 10 years, generating $12.2T in benefits and saving ~1,000,000 lives.
   - **Expected Value:** The treaty has a much lower probability of success (e.g., 10-15%). However, the potential leverage is 270:1.
   - **Break-Even:** If you believe the probability of the treaty succeeding is greater than ~15%, its expected value is higher than malaria nets.
-  - **The Portfolio Answer:** Effective Altruism is currently ~100% allocated to direct, certain interventions and ~0% to high-leverage, systemic change moonshots. A rational portfolio would allocate something to both. The 1% Treaty is a prime candidate for the moonshot category.
+  - **The Portfolio Answer:** Effective Altruism is currently ~100% allocated to direct, certain interventions and ~0% to high-leverage, systemic change moonshots. A rational portfolio would allocate something to both. A 1% treaty is a prime candidate for the moonshot category.
 
 - **"Why not just fund medical research more?"**
   - Because money isn't real, resources are (see Fixed Pie Reality in Part I)
@@ -1039,7 +1039,7 @@ If the answer to these is yes, the idea is viable. If no, the idea is dead. The 
     - **Abolishing Slavery:** Dismantled a global economic system that was the bedrock of colonial empires, requiring a century of moral, economic, and military force to overcome.
     - **Eradicating Smallpox:** Required the direct cooperation of bitter Cold War rivals (USA and Soviet Union) to vaccinate every community on Earth, including in active war zones.
     - **Building the Post-WWII Order:** In the rubble of the world's most destructive war, humanity built the UN, the Marshall Plan, and the Universal Declaration of Human Rights, creating a new global framework from scratch.
-  - The primary challenge of the 1% Treaty is unique—it asks us to redefine national strength—but the scale of coordination required is not unprecedented. The real question isn't whether it's possible, but whether we choose to do it.
+  - The primary challenge of a 1% treaty is unique—it asks us to redefine national strength—but the scale of coordination required is not unprecedented. The real question isn't whether it's possible, but whether we choose to do it.
   - The current reality is 69 million people dying unnecessarily each year. That is the truly unrealistic path to continue on.
 - **"What if it fails?"**
   - Then we die of preventable diseases like we're doing now
@@ -1074,12 +1074,12 @@ You want to end war and disease. You need $1 billion. You have $0. Here's the 36
 
 - **Raise $10M Series A:** Use initial traction to fund a larger team.
 - **Viral Growth:** Scale referendum to millions of users.
-- **Lobbying Machine:** Hire the best lobbyists to put the 1% Treaty on the political map.
+- **Lobbying Machine:** Hire the best lobbyists to put a 1% treaty on the political map.
 
 **Phase 3: Bond Offering & Treaty Push (Months 19-36)**
 
 - **Raise $1B via VICTORY Bonds:** The war chest to win the political fight.
-- **Global Media Blitz:** Make the 1% Treaty the #1 issue globally.
+- **Global Media Blitz:** Make a 1% treaty the #1 issue globally.
 - **Treaty Ratification:** Coordinated political push in key nations to get the treaty signed.
 
 ### The Right Tools for the Job: A Hybrid Legal Architecture
@@ -1092,7 +1092,7 @@ A charity (501c3) can't lobby. A lobbying group (501c4) can't offer tax-deductio
 
 Trying to use one tool for all three jobs is like trying to build a house with only a hammer. The solution isn't to pick one; it's to build a complete toolkit. Here is the four-part legal structure that allows you to do everything you need to do, legally.
 
-- **1. The Decentralized Institutes of Health US (The "Brain" - US 501(c)(3) Public Charity)**
+- **1. Your Decentralized Institutes of Health US (The "Brain" - US 501(c)(3) Public Charity)**
   - **What It Is:** The traditional non-profit that everyone thinks of. This is the entity that major US foundations like the Gates Foundation can give large, tax-deductible grants to.
   - **What It Does (Legally):**
     - **Research:** Funds the academic and economic studies that prove the system is broken.
@@ -1103,7 +1103,7 @@ Trying to use one tool for all three jobs is like trying to build a house with o
 - **2. The DIH Action Fund (The "Sword" - US 501(c)(4) Social Welfare Org)**
   - **What It Is:** The political advocacy arm. Donations to it are *not* tax-deductible. This is the vehicle for politically-motivated giving.
   - **What It Does:** It takes the research and data from the (c)(3) and weaponizes it.
-    - **Lobbying:** Conducts unlimited, direct lobbying of politicians to pass the 1% Treaty.
+    - **Lobbying:** Conducts unlimited, direct lobbying of politicians to pass a 1% treaty.
     - **The Referendum:** Runs the global referendum and mobilizes voters.
     - **Political Action:** Buys ads, organizes protests, and does whatever is necessary to create overwhelming political pressure.
 

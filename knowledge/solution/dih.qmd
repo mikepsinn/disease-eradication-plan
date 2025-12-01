@@ -1,6 +1,6 @@
 ---
 title: Decentralized Institutes of Health
-description: A system for curing disease that replaces bureaucrats with code and committees with patient choice.
+description: A framework for medical research funding that automates allocation and prioritizes patient choice.
 published: true
 tags:
   - solution
@@ -8,7 +8,7 @@ tags:
   - governance
   - dao
   - funding-model
-  - bureaucracy-murder
+  - efficiency
 ---
 
 ```{python}
@@ -16,19 +16,19 @@ tags:
 from dih_models.parameters import *
 ```
 
-![Decentralized Institutes of Health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
+![A decentralized institute of health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
 
-The NIH is a $47 billion machine designed to prevent medical progress by rewarding grant-writing over research. 
+The NIH spends $47 billion a year. Scientists spend [50-67% of their time writing grant applications](../references.qmd#grant-writing-time-50pct) instead of doing research. This is not a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
 
-You don't fix a system like that. You replace it.
+Here's what an alternative might look like.
 
-The Decentralized Institutes of Health (DIH) cures diseases instead of writing papers about them. It's an anti-bureaucracy built on four rules.
+A decentralized institute of health (DIH) is an alternative institutional design built on four principles.
 
-## The Four Rules of a System That Actually Works
+## The Four Principles
 
 ### Rule 1: Let Patients Decide What Gets Funded
 
-**The DIH Solution:** Give the money directly to patients in the form of subsidies. Let them, in consultation with their doctors, decide which clinical trials to join. The trials that attract patients get funded. The ones that don't, die.
+**The idea:** Give the money directly to patients in the form of subsidies. Let them, in consultation with their doctors, decide which clinical trials to join. The trials that attract patients get funded. The ones that don't, don't.
 
 This replaces a grant-writing contest with a distributed supercomputer of millions of patients and doctors, all with skin in the game. It's the collective intelligence of humanity voting with its feet.
 
@@ -36,30 +36,30 @@ This replaces a grant-writing contest with a distributed supercomputer of millio
 
 **The Problem:** The NIH pays scientists for writing grant applications. This is like paying a chef for writing a menu instead of cooking a meal.
 
-**The DIH Solution:** Pay for results. Researchers get paid in two ways:
+**The alternative:** Pay for results. Researchers get paid in two ways:
 
 1.  **Per-patient funding:** The more patients who believe in your trial enough to join, the more funding you get.
 2.  **Outcome Bounties:** Massive, multi-billion dollar prizes for solving the big problems (e.g., "$1 billion to the first team to reverse aging by 10 years").
 
-In the NIH, you get rich by writing proposals. In the DIH, you get rich by curing diseases.
+In the NIH, you get rich by writing proposals. In a results-based system, you get rich by curing diseases.
 
 ### Rule 3: Make Corruption Mathematically Impossible
 
 **The Problem:** Give billions of dollars to humans and they will find creative ways to steal it. This is not cynicism, this is pattern recognition.
 
-**The DIH Solution:** Replace humans with code. Code is very bad at embezzlement.
+**The alternative:** Replace humans with code. Code is very bad at embezzlement.
 
 - **Algorithmic Governance:** All funding rules live in smart contracts. You can bribe a committee. You cannot bribe an if-statement.
 - **No CEO:** There's no one to corrupt because there's no one. It's like trying to bribe a vending machine.
-- **Public Ledger:** Every dollar is tracked on a blockchain anyone can read. It's a financial colonoscopy broadcast live to the entire planet.
+- **Public Ledger:** Every dollar is tracked on a blockchain anyone can read. It's radical transparency for an industry that has historically preferred opacity.
 
-You're not trusting people to be good. You're making it mathematically impossible for them to be bad. 
+The goal isn't to rely on people being virtuous. It's to design incentives where good outcomes are also the easy outcomes. 
 
 ### Rule 4: Publish Everything (Especially the Failures)
 
 **The Problem:** Companies and researchers hide their failed experiments. This means scientists around the world waste billions of dollars and decades of time repeating the same mistakes.
 
-**The DIH Solution:** Make 100% open publication of all data, positive and negative, a condition of funding.
+**The alternative:** Make 100% open publication of all data, positive and negative, a condition of funding.
 
 - Every trial, every result, every dataset is published for the world to see.
 - AI models continuously scan this global data commons, finding patterns and connections humans would miss.
@@ -71,7 +71,7 @@ This doubles research efficiency by preventing the same failure twice. It's like
 
 ## The Core Innovation: Pay for Success
 
-Every dollar in the DIH flows based on results, not promises:
+Every dollar flows based on results, not promises:
 
 - **Patients vote with their enrollment** → Researchers get paid for attracting patients (market signal of efficacy)
 - **Communities vote with their pools** → Bounties get paid for solving problems (not for proposing solutions)
@@ -80,31 +80,31 @@ Every dollar in the DIH flows based on results, not promises:
   - Attending review committees
   - Publishing papers about why their research might work someday
 
-This isn't radical. It's how every other industry works. You pay contractors when they build the house, not when they promise to build it. You pay farmers when they grow the food, not when they apply for a farming license.
+This is how most other industries work. You pay contractors when they build the house, not when they promise to build it. You pay farmers when they grow the food, not when they apply for a farming license.
 
-The NIH pays for permission to do research. The DIH pays for research that works.
+The NIH pays for permission to do research. A results-based system pays for research that works.
 
-**Single-sentence summary:** The DIH is what you get when you pay scientists like you pay plumbers, for fixing the problem, not for explaining why it's hard.
+**Single-sentence summary:** This is what you get when you pay scientists like you pay plumbers. i.e. for fixing the problem, not for explaining why it's hard.
 :::
 
 ## How the Money Flows: DIH as Decentralized Crowdfunding Platform
 
-The DIH is the **single governance layer** for all health research funding. It's like Kickstarter meets the NIH, but without the corruption or incompetence.
+A decentralized institute of health functions as the **single governance layer** for all health research funding. Think of it as Kickstarter for clinical trials, except the stakes are higher and the rewards are measured in years of life.
 
 {{< include ../figures/dih-architecture-diagram.qmd >}}
 
 ### The Architecture
 
-#### DIH (Decentralized Institutes of Health)
+#### Your Decentralized Institutes of Health (DIH)
 
-- Holds the treasury (from [1% Treaty](1-percent-treaty.qmd))
+- Holds the treasury (from [1% treaty](1-percent-treaty.qmd))
 - Handles ALL budgeting decisions via [Wishocracy](wishocracy.qmd)
 - Funds campaigns, not bureaucracies
 - No CEO, no board, no one to corrupt
 
-**dFDA (Decentralized FDA)**
+**Your Decentralized Framework for Drug Assessment (dFDA)**
 
-- Pure technical platform/protocol
+- Pure technical framework/protocol
 - No budget authority (gets funded BY DIH like any other campaign)
 - Just provides marketplace infrastructure
 - One of many campaigns competing for DIH funding
@@ -113,7 +113,7 @@ The DIH is the **single governance layer** for all health research funding. It's
 
 **1. Fill the Treasury**
 
-The [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury.
+A [1% treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury.
 
 **2. Anyone Can Propose a Campaign**
 
@@ -121,7 +121,7 @@ The [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding 
 
 The global population uses [Wishocracy](wishocracy.qmd) to allocate funds across competing campaigns using pairwise comparisons:
 
-- "What's more important: dFDA development or Alzheimer's prize?"
+- "What's more important: decentralized framework for drug assessment development"
 - "What's more important: EHR integration or security audits?"
 
 No committees. No lobbying. Just millions of pairwise preferences aggregated into funding allocations.
@@ -141,9 +141,9 @@ Campaigns that deliver impact get continued funding. Failures get defunded. It's
 
 {{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
 
-**Traditional NIH:** Bribe the director → Control $47B
+**Traditional centralized system:** Concentrated decision-making → lobbying targets
 
-#### DIH
+#### Decentralized alternative
 
 - No director to bribe
 - Millions vote via pairwise comparisons
@@ -151,48 +151,50 @@ Campaigns that deliver impact get continued funding. Failures get defunded. It's
 - Anyone can fork if captured
 - Cost to corrupt: Prohibitively high
 
-**Traditional dFDA risk:** "What if dFDA becomes the new FDA?"
+**Risk:** "What if the decentralized framework for drug assessment becomes the new FDA?"
 
-**Solution:** dFDA has no budget authority. It's just a campaign competing for DIH funding. If it gets captured, fund a competing platform instead.
+**Mitigation:** A dFDA has no budget authority. It's just a campaign competing for DIH funding. If it gets captured, fund a competing framework instead.
 
-## The Result: A 10-100x Improvement in QALY Production Efficiency
+## Projected Efficiency Gains
 
-The DIH isn't incrementally better than the NIH. Through pure mechanism design, no new technology, no better scientists, it achieves a **phase change in economic efficiency.**
+If the mechanism design works as intended, a decentralized institute of health could achieve significant efficiency improvements over the current system. The following projections are theoretical and depend on successful implementation.
 
-### Projected Performance Metrics
+### Projected Performance Metrics (Theoretical)
 
-| Metric | NIH (Current) | DIH (Projected) | Improvement |
+| Metric | NIH (Current) | DIH (Theoretical) | Potential Improvement |
 |--------|---------------|-----------------|-------------|
-| **Payment trigger** | Grant approved | Results achieved | **Incentive revolution** |
-| **Cost per QALY** | [$50,000-$150,000](../references.qmd#qaly-value) | $5,000-$15,000 | **10x reduction** |
-| **Overhead percentage** | [50-67%](../references.qmd#grant-writing-time-50pct) | <10% | **6x reduction in waste** |
-| **Time to treatment** | [10-17 years](../references.qmd#drug-development-timeline-17-years) | 2-4 years | **4x faster** |
-| **Publication rate** | ~50% (positive results only) | 100% (all results) | **2x knowledge base** |
-| **Trials run annually** | ~5,000 major trials | 50,000-500,000 trials | **10-100x scale** |
-| **Researcher time on research** | 33-50% | >90% | **2x productivity** |
+| **Payment trigger** | Grant approved | Results achieved | Incentive alignment |
+| **Cost per QALY** | [$50,000-$150,000](../references.qmd#qaly-value) | $5,000-$15,000 | ~10x reduction (theoretical) |
+| **Overhead percentage** | [50-67%](../references.qmd#grant-writing-time-50pct) | <10% | ~6x reduction in overhead |
+| **Time to treatment** | [10-17 years](../references.qmd#drug-development-timeline-17-years) | 2-4 years | ~4x faster (theoretical) |
+| **Publication rate** | ~50% (positive results only) | 100% (all results) | 2x knowledge base |
+| **Trials run annually** | ~5,000 major trials | 50,000-500,000 trials | 10-100x scale (theoretical) |
+| **Researcher time on research** | 33-50% | >90% | ~2x productivity |
 
-### How the Efficiency Gains Compound
+### How the Efficiency Gains Could Compound
 
-These aren't independent improvements, they multiply:
+If these improvements are achieved independently, they could multiply:
 
-1. **10x cost reduction** per QALY through elimination of overhead
-2. **2x knowledge multiplier** from mandatory publication of all results
-3. **4x speed multiplier** from cutting bureaucratic delays
-4. **100x scale** from distributed trial infrastructure ([dFDA](dfda.qmd))
+1. **~10x cost reduction** per QALY through elimination of overhead
+2. **~2x knowledge multiplier** from mandatory publication of all results
+3. **~4x speed multiplier** from cutting bureaucratic delays
+4. **~10-100x scale** from distributed trial infrastructure ([dFDA](dfda.qmd))
 
-**Combined conservative estimate:** 10 × 2 × 4 × 10 = **800x improvement** in QALY production rate
+**Theoretical ceiling (if everything works):** 10 × 2 × 4 × 10 = 800x improvement in QALY production rate
 
-#### What This Means in Practice
+This is obviously a theoretical maximum. Real-world implementation would face friction, resistance, and unforeseen problems. But even achieving 10% of this improvement would represent a significant advance.
 
-The DIH + dFDA system, operating on the 1% Treaty budget of {{< var treaty_annual_funding >}} annually, could produce more QALYs than the entire current global medical research output. By 2040, this could mean:
+#### What This Could Mean in Practice
 
-- Cancer survival rates above 90% (currently ~68%)
-- Aging treated as a reversible condition
-- Rare diseases no longer "too expensive" to cure
-- Personalized medicine available to everyone, not just billionaires
+A well-functioning DIH, combined with the dFDA framework and operating on a 1% treaty budget of {{< var treaty_annual_funding >}} annually, could theoretically produce more QALYs than the entire current global medical research output. 
 
-**The fundamental difference:** The NIH pays researchers to explain why curing cancer is hard. The DIH pays them to actually cure it.
+If the theoretical efficiency gains are even partially realized, this could eventually lead to:
 
-This is what happens when you optimize for living instead of paperwork. When you pay for success instead of grant applications. When you replace committees with code and bureaucrats with math.
+- Significantly improved cancer survival rates
+- Aging research accelerated (whether "reversible" is another question)
+- Rare diseases becoming economically viable to research
+- Personalized medicine becoming more accessible
 
-You replace a system that values credentials with one that values breathing. This is what happens when you stop paying people to ask permission and start paying them to deliver results.
+**The core hypothesis:** Systems that pay for results tend to produce more results than systems that pay for proposals. Whether this hypothesis holds for medical research at scale is what we're proposing to test.
+
+That's the theory. The rest of this guide explains how you'd actually build it.

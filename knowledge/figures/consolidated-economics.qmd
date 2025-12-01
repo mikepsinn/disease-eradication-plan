@@ -23,7 +23,7 @@ pd.options.display.float_format = '{:,.0f}'.format
 
 economic_impacts = pd.DataFrame({
     'Source': [
-        '1% Treaty Peace Dividend',
+        '1% treaty Peace Dividend',
         'dFDA R&D Savings (82x cost reduction)',
         'Earlier Drug Access (7-year acceleration)',
         'Trial Capacity Expansion (25.7x capacity)',
@@ -313,7 +313,7 @@ fig.show()
 
 ### Primary Economic Models
 
-- **1% Treaty Analysis**: {{< var peace_dividend_annual_societal_benefit >}} annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
+- **1% treaty Analysis**: {{< var peace_dividend_annual_societal_benefit >}} annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
 - **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_rd_gross_savings_annual_formatted` in trial costs
 - **Conservative Case**: Peace dividend + dFDA R&D savings = {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually, 463:1 ROI
 - **Complete Case**: All 8 benefit categories = $1,238.6B annually, 1,239:1 ROI
@@ -339,4 +339,4 @@ fig.show()
 - 5% discount rate for NPV calculations
 - 10-year time horizon for ROI analysis
 
-All calculations based on peer-reviewed sources and industry reports as of 2024-2025. See [The 1% Treaty Whitepaper](../economics/economics.qmd) for detailed methodology.
+All calculations based on peer-reviewed sources and industry reports as of 2024-2025. See [1% treaty impact analysis](../economics/economics.qmd) for detailed methodology.

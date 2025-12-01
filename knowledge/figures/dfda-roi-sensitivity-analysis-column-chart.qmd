@@ -87,7 +87,7 @@ for i, (roi_param, roi, benefit) in enumerate(zip(roi_parameters, roi_values, be
 # --- Styling ---
 
 ax.set_title(
-    '1% Treaty Return on Investment\nThree Health Benefit Scenarios',
+    '1% treaty Return on Investment\nThree Health Benefit Scenarios',
     fontsize=19, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
@@ -131,7 +131,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,
-    title="1% Treaty Return on Investment - Three Health Benefit Scenarios",
+    title="1% treaty Return on Investment - Three Health Benefit Scenarios",
     description=f"ROI analysis across three health benefit tiers based on $1B campaign cost. Historical Rate (existing drugs only): {float(TREATY_ROI_HISTORICAL_RATE):,.0f}:1 ({benefit_historical}). Lag Elimination PRIMARY: {float(TREATY_ROI_LAG_ELIMINATION):,.0f}:1 ({benefit_primary}). Innovation Acceleration: {float(TREATY_ROI_INNOVATION_ACCELERATION):,.0f}:1 ({benefit_optimistic}). All scenarios show total one-time benefits divided by campaign investment."
 )
 

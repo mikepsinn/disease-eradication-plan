@@ -88,7 +88,7 @@ export function createBookChatAgent(vectorStore: BookVectorStore): Agent {
     instructions: `You are a helpful assistant for "How to End War and Disease" book.
 
 Your mission is to help readers understand the book's content about:
-- The 1% Treaty to redirect 1% of military spending to cure diseases
+- A 1% treaty to redirect 1% of military spending to cure diseases
 - The unnecessary suffering from war (14M deaths/year) and disease (55M deaths/year)
 - Systems that are 80X more efficient than current approaches
 - Public Choice Theory and incentive engineering

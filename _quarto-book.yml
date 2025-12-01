@@ -42,11 +42,11 @@ book:
     - part: "The Solution"
       chapters:
         - knowledge/solution.qmd # ✅ Part II Intro ~8p
-        - knowledge/solution/1-percent-treaty.qmd # ✅ The 1% Treaty (includes TL;DR at top) ~12p
+        - knowledge/solution/1-percent-treaty.qmd # ✅ A 1% treaty (includes TL;DR at top) ~12p
         - knowledge/solution/dih.qmd # ✅ The DIH ~7p
         - knowledge/solution/wishocracy.qmd # ✅ Wishocracy ~4p
         - knowledge/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program") ~12p
-        - knowledge/solution/dfda.qmd # ✅ The Decentralized FDA ~20p
+        - knowledge/solution/dfda.qmd # ✅ The decentralized framework for drug assessment ~20p
         - knowledge/solution/war-on-disease.qmd # ✅ The War on Disease ~5p
         - knowledge/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
 
@@ -65,7 +65,7 @@ book:
     - part: "The Plan"
       chapters:
         - knowledge/strategy/roadmap.qmd # ✅ (DETAILED 36-MONTH EXECUTION PLAN) ~3p
-        - knowledge/strategy/nonprofit-coalition-strategy.qmd # ✅ Why every nonprofit should support the 1% Treaty ~4p
+        - knowledge/strategy/nonprofit-coalition-strategy.qmd # ✅ Why every nonprofit should support a 1% treaty ~4p
         - knowledge/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE) ~9p
         - knowledge/legal/securities-law.qmd # ✅ Securities Law ~6p
         - knowledge/legal/election-law.qmd # ✅ Election Law ~6p

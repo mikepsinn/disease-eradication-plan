@@ -115,7 +115,7 @@ async function analyzeImage(filepath: string): Promise<Partial<ImageMetadata>> {
     const base64Image = imageBuffer.toString('base64');
     const mimeType = getMimeType(filepath);
 
-    const prompt = `Analyze this image for a book about redirecting military spending to medical research (the "1% Treaty").
+    const prompt = `Analyze this image for a book about redirecting military spending to medical research (a "1% treaty").
 
 Provide:
 1. DESCRIPTION: Detailed description of what the image shows (2-3 sentences)

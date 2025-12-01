@@ -24,7 +24,7 @@ with dot.subgraph(name='cluster_system') as system:
     system.node('Cures', 'CURES\nCancer gone\nDeath optional')
     system.node('Feedback', 'Everyone profits\n270% returns\nRepeat until death optional')
 
-    system.edge('Military', 'Treaty', label='1% Treaty')
+    system.edge('Military', 'Treaty', label='1% treaty')
     system.edge('Treaty', 'DIH', label='$27B/year')
     system.edge('DIH', 'DFDA', label='Fund trials')
     system.edge('DFDA', 'Cures', label='Actually works')

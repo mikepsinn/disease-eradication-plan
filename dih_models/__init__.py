@@ -1,7 +1,7 @@
 """
 DIH Economic Models Package
 
-Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA).
+Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA).
 """
 
 __version__ = "1.0.0"

@@ -126,7 +126,7 @@ for i, (x, total, life_ext) in enumerate(zip(x_positions, totals, life_exts)):
 ax.set_xticks(x_positions)
 ax.set_xticklabels(models, fontsize=14, weight='bold')
 ax.set_ylabel('Total Lifetime Wealth (NPV)', fontsize=32, weight='bold')
-ax.set_title('Personal Lifetime Wealth:\nDisease Eradication Model vs Conservative Baselines\n(Age 30, $50K Income, 1% Treaty)',
+ax.set_title('Personal Lifetime Wealth:\nDisease Eradication Model vs Conservative Baselines\n(Age 30, $50K Income, 1% treaty)',
              fontsize=32, weight='bold', pad=50)
 
 # Format y-axis

@@ -14,7 +14,7 @@ tags:
 from dih_models.parameters import *
 ```
 
-The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY Social Impact Bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
+A [1% treaty](../solution/1-percent-treaty.qmd) initiative faces three critical legal challenges: **foreign national election funding restrictions**, **securities law compliance for [VICTORY Social Impact Bonds](../economics/victory-bonds.qmd)**, and **international coordination of legal structures**. This document provides a detailed compliance strategy.
 
 ## Challenge 1: Foreign National Election Funding
 
@@ -36,7 +36,7 @@ The [1% Treaty](../solution/1-percent-treaty.qmd) initiative faces three critica
 
 #### International Coordination (No Direct Connection)
 
-- **Strategy Alignment:** Public commitment to support districts that favor 1% Treaty
+- **Strategy Alignment:** Public commitment to support districts that favor 1% treaty
 - **No Coordination:** Zero communication between US and international entities about specific campaigns
 - **Independent Research:** Both organizations independently identify priority districts
 - **Parallel Development:** Similar but separately developed messaging and strategy
@@ -88,7 +88,7 @@ This phase focuses on mass distribution of a non-security utility token.
 
 ##### Phase 2: VICTORY Token Conversion (Post-Treaty)
 
-This phase occurs only _after_ the 1% Treaty is successfully ratified and the [DIH Treasury](../solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
+This phase occurs only _after_ a 1% treaty is successfully ratified and the [DIH Treasury](../solution/dih.qmd) is funded. This is the point at which a security is distributed, and it will be handled in a fully compliant manner.
 
 - **Mechanism: Voluntary, Opt-In Conversion:** Holders of VOTE points will have the option to convert their points into real VICTORY governance tokens through a dedicated, compliant portal.
 - **Legal Rationale & Safe Harbor:** This conversion event will be structured to [fall within the SEC's "safe harbor" provisions](../references.qmd#peirce-token-safe-harbor) for networks that have become sufficiently decentralized. By the time of conversion, the primary "work of the promoters" (getting the treaty passed) is complete. The VICTORY bond's function is now primarily for utility, governing the active, funded DIH treasury, which strengthens the case for a more favorable regulatory treatment.
@@ -172,7 +172,7 @@ Swiss Foundation (Treaty Coordination)
 - **Public Information Sharing:** Publishing research and position papers
 - **Strategy Conferences:** Academic conferences on global health policy
 - **Independent Development:** Each jurisdiction develops own strategy
-- **Public Commitments:** Transparent statements of support for 1% Treaty
+- **Public Commitments:** Transparent statements of support for 1% treaty
 
 #### Prohibited Activities
 
@@ -254,7 +254,7 @@ dot.attr(rankdir='TD', size='12,14')
 setup_graphviz_style(dot)
 
 with dot.subgraph(name='cluster_initiative') as initiative:
-    initiative.attr(label='1% Treaty Initiative', style='dashed')
+    initiative.attr(label='1% treaty Initiative', style='dashed')
     initiative.node('A', 'For-Profit Entity / Foundation\n(e.g., Cayman or DE Corp)\nAccepts Investments')
     initiative.node('B', '501(c)(3) Public Charity\nAccepts Tax-Deductible Donations')
     initiative.node('C', '501(c)(4) Social Welfare Org\nAccepts Donations (Not Deductible)')
@@ -302,7 +302,7 @@ display(IPImage(str(png_path)))
 
 #### 2. The 501(c)(4) Social Welfare Organization: "The Advocate"
 
-**Primary Purpose:** Advocate directly for 1% Treaty adoption and related policies.
+**Primary Purpose:** Advocate directly for 1% treaty adoption and related policies.
 
 #### Permitted Activities
 
@@ -316,13 +316,13 @@ display(IPImage(str(png_path)))
 
 #### 3. The For-Profit / Foundation: "The Engine"
 
-**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial dFDA development and operations, providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY Social Impact Bonds** which will ultimately fund the DIH Treasury following the 1% Treaty's ratification.
+**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial dFDA development and operations, providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY Social Impact Bonds** which will ultimately fund the DIH Treasury following a 1% treaty's ratification.
 
 #### Permitted Activities
 
 - Issuing private investment securities and managing investor relations to fund pre-treaty initiative development.
 - Funding technology development and operational scaling for the dFDA.
-- Upon ratification of the 1% Treaty, this entity may transition to managing operational infrastructure for the DIH Treasury and facilitating the mechanisms for investor payouts related to the government-issued VICTORY Social Impact Bonds.
+- Upon ratification of a 1% treaty, this entity may transition to managing operational infrastructure for the DIH Treasury and facilitating the mechanisms for investor payouts related to the government-issued VICTORY Social Impact Bonds.
 
 **Legal Structure:** Delaware C-Corporation or Cayman Islands foundation optimized for global investment and crypto-asset management.
 
@@ -330,7 +330,7 @@ display(IPImage(str(png_path)))
 
 ### HHS Policy Recommendations
 
-To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source, Decentralized FDA Protocol enabling perpetual, patient-driven clinical trials.
+To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source decentralized framework for drug assessment protocol enabling perpetual, patient-driven clinical trials.
 
 #### Key Policy Objectives
 

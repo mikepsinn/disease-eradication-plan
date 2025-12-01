@@ -101,7 +101,7 @@ Goals:
 
 These assumptions set a stage where the platform can indeed function at scale, but this remains a forward-looking scenario.
 
-## dFDA Platform Costs - ROM Estimates (Partnership Model) {#dfda-platform-costs-rom-estimates-partnership-model}
+## dFDA Costs - ROM Estimates (Partnership Model) {#dfda-platform-costs-rom-estimates-partnership-model}
 
 > **Section Summary - Partnership Approach**
 >
@@ -466,7 +466,7 @@ This analysis uses a conservative baseline estimate of [**$100.0B per year in gl
 
    - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
    - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-   - Crowdsourced funding mechanisms, like those established by the [Decentralized Institutes of Health (DIH)](../solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
+   - Crowdsourced funding mechanisms, like those established by [your DIH](../solution/dih.qmd), can further reduce patient costs and direct resources to high-value research.
 
 3. **Regulatory Savings**
 
@@ -635,7 +635,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high becau
    - **Upfront Cost (Core Platform Build):** Based on the ROM estimate of **~\$37.5 - {{< var dfda_upfront_build_max >}}** detailed in [Upfront (Capital) Expenditure](#upfront-capital-expenditure-initial-build-illustrative-30-months). ROI calculations use a representative figure (e.g., {{< var dfda_upfront_build >}}).
    - **Annual Operational Cost (Core Platform):** Based on the ROM estimate of **~\$11 - \$26.5 Million / year** detailed in [Annual Operational Costs](#annual-operational-costs-illustrative-at-target-scale-of-5m-mau-50tb-ingest-month).
    - **Annual Broader Initiative Costs:** These can vary significantly, from near zero in optimistic scenarios to tens or hundreds of millions annually. The ROI analysis will consider scenarios, including a "Lean Ecosystem" that combines core platform operational costs with the **Medium Case annual broader initiative costs (~\$21.3 Million / year)** from [Scenario-Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs).
-     _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular figures from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section for the purpose of this ROI calculation.)_
+     _(Note: The ROI analysis will primarily focus on these ROM-derived costs. Previous high-level conceptual estimates for a fully scaled, long-term global dFDA vision, which were significantly larger, are superseded by these more granular figures from the [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model) section for the purpose of this ROI calculation.)_
 
    - **Cost Reduction**: Up to 80× in the biggest, most efficient scenarios; conservative average ~50.0%–80% reduction in trial costs.
    - **Increased Throughput**: 2×–5× more trials and potentially many more candidates tested in parallel.
@@ -644,7 +644,7 @@ The return on investment for the dFDA Infrastructure is exceptionally high becau
 ### Simplified ROI Scenario {#simplified-roi-scenario}
 
 _Initial Note on Operational Costs in this ROI Scenario:_
-_The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [Costs of Building and Operating the Global Decentralized FDA (ROM Estimate)](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
+_The following ROI calculation primarily uses cost figures derived from the detailed ROM estimates in [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model). This includes the core platform build and operational costs, as well as scenarios for broader initiative costs. This approach provides a more grounded basis for the ROI than previous high-level conceptual figures for a fully scaled global ecosystem._
 
 - **Industry R&D Spend** (Baseline): [$100.0B/year](#market-size-and-impact) globally (approx.).
 - **Potential Savings**: 50.0% reduction implies [$50.0B/year saved](#gross-r-and-d-savings-from-dfda-implementation) if the entire industry migrated.
@@ -708,7 +708,7 @@ _The NPV analysis provides the final estimated ROI of approximately **{{< var df
 
 ### Full Range ROI Sensitivity Analysis
 
-To provide a comprehensive view, you can calculate the ROI across the full spectrum of cost possibilities by combining the Core Platform costs with the Broader Initiative scenarios from [Costs of Building and Operating the Global Decentralized FDA](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate).
+To provide a comprehensive view, you can calculate the ROI across the full spectrum of cost possibilities by combining the Core Platform costs with the Broader Initiative scenarios from [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model).
 
 #### Assumptions for Full Range ROI Calculation
 
@@ -761,7 +761,7 @@ To provide a comprehensive view, you can calculate the ROI across the full spect
   \text{ROI}^{\text{high}} = \frac{S_{\text{annual}}}{C_{\text{annualized}}^{\text{high}}} = \frac{\$50.0\text{B}}{\$0.7529\text{B}} \approx 66:1
   $$
 
-This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, the financial return is substantial.
+This full range sensitivity analysis demonstrates that the ROI for the dFDA initiative remains exceptionally positive. Even at the highest conceivable costs derived from the [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model) section, the financial return is substantial.
 
 {{< include ../figures/dfda-roi-sensitivity-analysis-column-chart.qmd >}}
 
@@ -1153,7 +1153,7 @@ $$
   = 248.99155 \text{ (billion USD)}
 $$
 
-In this rough example, even **partial adoption** in the early years delivers large returns. If $\alpha$ or $p(t)$ were higher, or if the discount rate $r$ were lower, the ROI would increase further. _This ROI is based on a cost model that is now explicitly derived from the detailed component estimates in the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section, providing a more transparent and verifiable result._
+In this rough example, even **partial adoption** in the early years delivers large returns. If $\alpha$ or $p(t)$ were higher, or if the discount rate $r$ were lower, the ROI would increase further. _This ROI is based on a cost model that is now explicitly derived from the detailed component estimates in the [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model) section, providing a more transparent and verifiable result._
 
 #### Other Extensions and Considerations
 
@@ -1483,7 +1483,7 @@ Where:
 
 For a complete breakdown of the assumptions, data sources (including NBER working papers by Glied & Lleras-Muney and Philipson et al.), and calculations behind these figures, please see the **[Appendix: Detailed QALY Calculation Model](#appendix-detailed-qaly-calculation-model)**.
 
-- **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the platform's operational costs, derived from the [Costs of Building and Operating the Global Decentralized FDA ROM Estimate](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) section.
+- **Platform Operational Cost Scenarios:** The sensitivity analysis below considers various scopes for the platform's operational costs, derived from the [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model) section.
 - **Core Platform Ops (Midpoint):** $0.01875B ($18.75M) / year
 - **Core Platform + Medium Broader Initiative:** $0.04B ({{< var dfda_upfront_build >}}) / year
 - **Illustrative Total Ecosystem (Low-Medium):** $0.5B ({{< var recovery_trial_cost_per_patient >}}) / year
@@ -1510,10 +1510,10 @@ _Note: The dFDA Infrastructure is cost-saving while also improving health outcom
 
 The analysis robustly demonstrates that the **dFDA Infrastructure is not merely cost-effective but is overwhelmingly a dominant (cost-saving) intervention across a wide range of plausible scenarios, especially when considering the core platform's technical operational costs.**
 
-- **Massive Cost Savings & Exceptional Value**: The core dFDA Infrastructure (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var disease_eradication_delay_dalys >}} DALYs through regulatory delay elimination. This combination creates exceptional value.
+- **Massive Cost Savings & Exceptional Value**: The core dFDA Infrastructure (with operational costs of ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}}/year as per the [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model)) generates tens of billions in net annual R and D savings while simultaneously preventing {{< var disease_eradication_delay_dalys >}} DALYs through regulatory delay elimination. This combination creates exceptional value.
 - **Total Ecosystem Considerations**: Even when accounting for significantly broader ecosystem costs (e.g., hundreds of millions or even billions annually for extensive global rollout, governance, plugin development, and/or large-scale participant compensation), the dFDA initiative remains dominant and highly cost-saving across all scenarios.
 
-**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the ['Costs of Building and Operating the Global Decentralized FDA ROM Estimate'](#costs-of-building-and-operating-the-global-decentralized-fda-rom-estimate) ROM), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var disease_eradication_delay_dalys >}} DALYs through regulatory delay elimination. The combination of massive financial returns and significant health gains makes the dFDA an exceptionally compelling investment.**
+**Summary: The dFDA initiative is projected to be a dominant healthcare transformation. The core technology platform itself is exceptionally efficient (annual operational costs ~{{< var dfda_npv_annual_opex >}}-{{< var dfda_upfront_build >}} per the [dFDA Costs ROM Estimates](#dfda-platform-costs-rom-estimates-partnership-model)), generating tens of billions in R&D savings. Even when considering broader total ecosystem costs (potentially $0.5B to $5B+ annually to include extensive global operations, participant compensation etc.), the initiative yields huge net monetary savings (e.g., $29.5B to $94.5B annually in various scenarios) while simultaneously preventing {{< var disease_eradication_delay_dalys >}} DALYs through regulatory delay elimination. The combination of massive financial returns and significant health gains makes the dFDA an exceptionally compelling investment.**
 
 *(Optional: A note could be added here that specific programs _built upon_ the dFDA Infrastructure, if they incur additional marginal costs, would then be evaluated for their own cost-effectiveness. However, they would benefit from the already cost-saving nature of the underlying dFDA infrastructure.)*
 

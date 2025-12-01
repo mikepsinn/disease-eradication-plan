@@ -22,7 +22,7 @@ setup_graphviz_style(dot)
 
 # DIH Treasury (top)
 
-dot.node('Treaty', '1% Treaty\n$1T/year', shape='box', style='filled', fillcolor='white')
+dot.node('Treaty', '1% treaty\n$1T/year', shape='box', style='filled', fillcolor='white')
 dot.node('Treasury', 'DIH Treasury\nDecentralized Governance Layer', shape='box', penwidth='3')
 
 # Wishocracy voting
@@ -35,7 +35,7 @@ with dot.subgraph(name='cluster_campaigns') as campaigns:
     campaigns.attr(label='Campaign Proposals (Anyone Can Submit)', style='dashed')
 
     campaigns.node('PatientSubs', 'Patient Subsidies\n$800B/year\n(Automatic Formula)', shape='box')
-    campaigns.node('dFDA', 'dFDA Platform\n$10B/year\n(One of many campaigns)', shape='box')
+    campaigns.node('dFDA', 'Decentralized Framework for Drug Assessment\n$10B/year\n(One of many campaigns)', shape='box')
     campaigns.node('Infrastructure', 'Infrastructure Services\n$20B/year total\n(Competing providers)', shape='box')
     campaigns.node('Prizes', 'Research Prizes\n$100B total\n(Cure bounties)', shape='box')
     campaigns.node('PublicGoods', 'Public Goods\n$30B/year\n(Market failures)', shape='box')

@@ -20,7 +20,7 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# Base case using Evidence-Based Conservative model: Age 30, 1% Treaty
+# Base case using Evidence-Based Conservative model: Age 30, 1% treaty
 # NOTE: This is the CONSERVATIVE baseline (antibiotic precedent, 5yr life extension)
 # For realistic estimates, see Disease Eradication Model ($2.4M-$5.8M, 34-106yr)
 
@@ -131,7 +131,7 @@ ax.text(base_value, len(parameter_names) - 0.5, f'  Base Case\n  ${base_value/10
 ax.set_yticks(y_positions)
 ax.set_yticklabels(parameter_names, fontsize=24, weight='bold')
 ax.set_xlabel(f'Total Lifetime Wealth (Base Case: ${base_value/1000:.0f}K)', fontsize=22, weight='bold')
-ax.set_title('Conservative Baseline - Personal Lifetime Wealth\nSensitivity Analysis\n1% Treaty Impact on 30-Year-Old\n($50K Income, 5yr Life Extension)',
+ax.set_title('Conservative Baseline - Personal Lifetime Wealth\nSensitivity Analysis\n1% treaty Impact on 30-Year-Old\n($50K Income, 5yr Life Extension)',
              fontsize=32, weight='bold', pad=50)
 
 # Format x-axis to show dollars
@@ -157,7 +157,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 add_png_metadata(
     output_path,
     title="Personal Lifetime Wealth Sensitivity - Tornado Chart",
-    description="Shows which parameters have largest impact on personal lifetime wealth from 1% Treaty"
+    description="Shows which parameters have largest impact on personal lifetime wealth from 1% treaty"
 )
 
 plt.tight_layout()

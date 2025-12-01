@@ -83,11 +83,11 @@ ax.plot(treaty_percentages * 100, np.array(near_retirement)/1000000,
         marker='^', linewidth=2.5, markersize=8, color=COLOR_BLACK,
         linestyle=':', label='Near Retirement (Age 55, $90K income)')
 
-# Highlight 1% Treaty (the DEFAULT proposal)
+# Highlight 1% treaty (the DEFAULT proposal)
 
 treaty_1pct_idx = 4  # Index of 1%
 ax.axvline(x=1.0, color='gray', linewidth=2, linestyle='--', alpha=0.5, zorder=0)
-ax.text(1.0, ax.get_ylim()[1] * 0.95, '1% Treaty\n(DEFAULT)',
+ax.text(1.0, ax.get_ylim()[1] * 0.95, '1% treaty\n(DEFAULT)',
         ha='center', va='top', fontsize=32, weight='bold',
         bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
                  edgecolor=COLOR_BLACK, linewidth=1.5))

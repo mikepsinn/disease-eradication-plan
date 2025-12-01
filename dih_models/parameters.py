@@ -783,7 +783,7 @@ TREATY_ANNUAL_FUNDING = Parameter(
 # ==============================================================================
 # PEACE DIVIDEND - RECURRING ANNUAL BENEFIT ($113.55B/year perpetual)
 # ==============================================================================
-# The 1% Treaty redirects 1% of military spending ($27.18B/year) to medical research.
+# A 1% treaty redirects 1% of military spending ($27.18B/year) to medical research.
 # This generates recurring annual benefits from reduced conflict costs:
 #   - Direct military savings
 #   - Reduced infrastructure destruction
@@ -1266,8 +1266,8 @@ DFDA_UPFRONT_BUILD = Parameter(
     40_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
     source_type="definition",
-    description="dFDA platform one-time build cost (central estimate)",
-    display_name="dFDA Platform One-Time Build Cost",
+    description="dFDA one-time build cost (central estimate)",
+    display_name="dFDA One-Time Build Cost",
     unit="USD",
     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
 )  # $40M one-time build cost
@@ -1276,8 +1276,8 @@ DFDA_UPFRONT_BUILD_MAX = Parameter(
     46_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
     source_type="definition",
-    description="dFDA platform one-time build cost (high estimate)",
-    display_name="dFDA Platform One-Time Build Cost (Maximum)",
+    description="dFDA one-time build cost (high estimate)",
+    display_name="dFDA One-Time Build Cost (Maximum)",
     unit="USD",
     keywords=["46.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
 )  # $46M one-time build cost (high end)
@@ -1309,8 +1309,8 @@ DFDA_OPEX_PLATFORM_MAINTENANCE = Parameter(
     15_000_000,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
     source_type="definition",
-    description="dFDA platform maintenance costs",
-    display_name="dFDA Platform Maintenance Costs",
+    description="dFDA maintenance costs",
+    display_name="dFDA Maintenance Costs",
     unit="USD/year",
     keywords=["15.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
     distribution="lognormal",
@@ -2659,7 +2659,7 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits",
     source_type="calculated",
     description="Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
-    display_name="1% Treaty Basic Annual Benefits (Peace + R&D Savings)",
+    display_name="1% treaty Basic Annual Benefits (Peace + R&D Savings)",
     unit="USD/year",
     formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
     keywords=["1%", "pragmatic trials", "real world evidence", "one percent", "conflict resolution", "decentralized trials", "drug agency", "basic benefits"],
@@ -2928,7 +2928,7 @@ ROI_DISCOUNT_1PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY * 1.15",
     latex=r"ROI_{1\%} \approx 463 \times 1.15 = 532",
     description="ROI at 1% discount rate (approximate 15% increase from 3% baseline)",
-    display_name="1% Treaty ROI at 1% Discount Rate",
+    display_name="1% treaty ROI at 1% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=['DFDA_ROI_RD_ONLY'],
     compute=lambda ctx: float(ctx["DFDA_ROI_RD_ONLY"]) * 1.15,
@@ -2942,7 +2942,7 @@ ROI_DISCOUNT_3PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY",
     latex=r"ROI_{3\%} = 463",
     description="ROI at 3% discount rate (baseline)",
-    display_name="1% Treaty ROI at 3% Discount Rate",
+    display_name="1% treaty ROI at 3% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=['DFDA_ROI_RD_ONLY'],
     compute=lambda ctx: float(ctx["DFDA_ROI_RD_ONLY"]),
@@ -2956,7 +2956,7 @@ ROI_DISCOUNT_5PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY * 0.88",
     latex=r"ROI_{5\%} \approx 463 \times 0.88 = 407",
     description="ROI at 5% discount rate (approximate 12% decrease from 3% baseline)",
-    display_name="1% Treaty ROI at 5% Discount Rate",
+    display_name="1% treaty ROI at 5% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=['DFDA_ROI_RD_ONLY'],
     compute=lambda ctx: float(ctx["DFDA_ROI_RD_ONLY"]) * 0.88,
@@ -2970,7 +2970,7 @@ ROI_DISCOUNT_7PCT = Parameter(
     formula="DFDA_ROI_RD_ONLY * 0.78",
     latex=r"ROI_{7\%} \approx 463 \times 0.78 = 361",
     description="ROI at 7% discount rate (approximate 22% decrease from 3% baseline)",
-    display_name="1% Treaty ROI at 7% Discount Rate",
+    display_name="1% treaty ROI at 7% Discount Rate",
     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
     inputs=['DFDA_ROI_RD_ONLY'],
     compute=lambda ctx: float(ctx["DFDA_ROI_RD_ONLY"]) * 0.78,
@@ -3203,7 +3203,7 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
     source_ref="/knowledge/economics/economics.qmd",
     source_type="calculated",
     description="Total global research funding (baseline + 1% treaty funding)",
-    display_name="Total Global Research Funding (Baseline + 1% Treaty Funding)",
+    display_name="Total Global Research Funding (Baseline + 1% treaty Funding)",
     unit="USD",
     formula="GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
     keywords=["research", "funding", "total", "dih", "treaty"],
@@ -3374,7 +3374,7 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     source_ref="",
     source_type="definition",
     description="Percentage of budget defense sector keeps under 1% treaty",
-    display_name="Percentage of Budget Defense Sector Keeps Under 1% Treaty",
+    display_name="Percentage of Budget Defense Sector Keeps Under 1% treaty",
     unit="rate",
     keywords=["99%", "armed forces", "international agreement", "peace treaty", "conflict", "sector", "retention"]
 )  # 99% retention
@@ -3638,8 +3638,8 @@ TREATY_RECURRING_BENEFITS_ANNUAL = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
     source_ref="/knowledge/economics/economics.qmd",
     source_type="calculated",
-    description="Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
-    display_name="1% Treaty Recurring Annual Benefits",
+    description="Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
+    display_name="1% treaty Recurring Annual Benefits",
     unit="USD/year",
     formula="PEACE_DIVIDEND + RD_SAVINGS",
     confidence="high",
@@ -3710,7 +3710,7 @@ DFDA_EXPECTED_ROI_0_1PCT_POLITICAL_SUCCESS = Parameter(
     formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC",
     latex=r"E[ROI]_{\text{0.1\%}} = 1{,}286{,}242 \times 0.001 = 1{,}286",
     confidence="low",
-    description="Expected ROI for 1% Treaty accounting for 0.1% political success probability (extremely pessimistic estimate)",
+    description="Expected ROI for 1% treaty accounting for 0.1% political success probability (extremely pessimistic estimate)",
     display_name="Expected Treaty ROI with 0.1% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "worst case", "extremely pessimistic"],
     inputs=["TREATY_ROI_LAG_ELIMINATION", "POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC"],
@@ -3724,7 +3724,7 @@ DFDA_EXPECTED_ROI_1PCT_POLITICAL_SUCCESS = Parameter(
     formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC",
     latex=r"E[ROI]_{\text{1\%}} = 1{,}286{,}242 \times 0.01 = 12{,}862",
     confidence="low",
-    description="Expected ROI for 1% Treaty accounting for 1% political success probability (very pessimistic estimate)",
+    description="Expected ROI for 1% treaty accounting for 1% political success probability (very pessimistic estimate)",
     display_name="Expected Treaty ROI with 1% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "pessimistic"],
     inputs=['POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC', 'TREATY_ROI_LAG_ELIMINATION'],
@@ -3738,7 +3738,7 @@ DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS = Parameter(
     formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
     latex=r"E[ROI]_{\text{10\%}} = 1{,}286{,}242 \times 0.10 = 128{,}624",
     confidence="medium",
-    description="Expected ROI for 1% Treaty accounting for 10% political success probability (conservative estimate)",
+    description="Expected ROI for 1% treaty accounting for 10% political success probability (conservative estimate)",
     display_name="Expected Treaty ROI with 10% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "conservative"],
     inputs=['POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE', 'TREATY_ROI_LAG_ELIMINATION'],
@@ -3752,7 +3752,7 @@ DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS = Parameter(
     formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
     latex=r"E[ROI]_{\text{25\%}} = 1{,}286{,}242 \times 0.25 = 321{,}561",
     confidence="medium",
-    description="Expected ROI for 1% Treaty accounting for 25% political success probability (moderate estimate)",
+    description="Expected ROI for 1% treaty accounting for 25% political success probability (moderate estimate)",
     display_name="Expected Treaty ROI with 25% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate"],
     inputs=['POLITICAL_SUCCESS_PROBABILITY_MODERATE', 'TREATY_ROI_LAG_ELIMINATION'],
@@ -3766,7 +3766,7 @@ DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS = Parameter(
     formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH",
     latex=r"E[ROI]_{\text{40\%}} = 1{,}286{,}242 \times 0.40 = 514{,}497",
     confidence="medium",
-    description="Expected ROI for 1% Treaty accounting for 40% political success probability (moderate-high estimate)",
+    description="Expected ROI for 1% treaty accounting for 40% political success probability (moderate-high estimate)",
     display_name="Expected Treaty ROI with 40% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate-high"],
     inputs=['POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH', 'TREATY_ROI_LAG_ELIMINATION'],
@@ -3780,7 +3780,7 @@ DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
     formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
     latex=r"E[ROI]_{\text{50\%}} = 1{,}286{,}242 \times 0.50 = 643{,}121",
     confidence="medium",
-    description="Expected ROI for 1% Treaty accounting for 50% political success probability (optimistic estimate)",
+    description="Expected ROI for 1% treaty accounting for 50% political success probability (optimistic estimate)",
     display_name="Expected Treaty ROI with 50% Political Success Probability",
     keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"],
     inputs=['POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC', 'TREATY_ROI_LAG_ELIMINATION'],
@@ -4571,7 +4571,7 @@ BOOK_READING_SPEED_WPM = Parameter(
     keywords=["low estimate", "faster development", "innovation speed", "research velocity", "cautious", "pessimistic", "worst case"]
 )  # Words per minute (conservative for non-fiction)
 
-# Effective hourly rate calculation (20-year scenario, age 30, $50K income, 1% Treaty)
+# Effective hourly rate calculation (20-year scenario, age 30, $50K income, 1% treaty)
 # Using the lifetime benefit value from your-personal-benefits.qmd
 EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
     4_300_000,
@@ -4580,7 +4580,7 @@ EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
     description="Lifetime benefit for age 30 baseline scenario ($4.3M)",
     display_name="Lifetime Benefit for Age 30 Baseline Scenario",
     unit="USD",
-    formula="Total lifetime health gains from 1% Treaty",
+    formula="Total lifetime health gains from 1% treaty",
     latex=r"Benefit = \$4,300,000",
     keywords=["4.3m", "financial benefit", "individual benefit", "monetary gain", "per capita benefit", "personal benefit", "30 year old"]
 )

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: dFDA Platform Maintenance Costs"
+#| fig-cap: "Probability Distribution: dFDA Maintenance Costs"
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
@@ -18,7 +18,7 @@ central_value = 15000000.0
 low = 10000000
 high = 22000000
 dist_type = "lognormal"
-display_name = "dFDA Platform Maintenance Costs"
+display_name = "dFDA Maintenance Costs"
 unit = "USD/year"
 
 # Calculate distribution parameters

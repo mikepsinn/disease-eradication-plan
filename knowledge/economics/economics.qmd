@@ -1,5 +1,5 @@
 ---
-title: The 1% Treaty Health & Economic Impact Analysis
+title: 1% Treaty Health & Economic Impact Analysis
 description: How to Save 416 Million Lives for $0.13 Per DALY, achieve 514 years of medical progress in 20 years (25× acceleration) and shift the cure of every disease forward by 8.2 years generating $1.2 quadrillion in value
 author:
   - name: "Decentralized Institutes of Health"
@@ -61,7 +61,7 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 ::: {.callout-note}
 ## Document Status
 
-This is an evolving analytical preprint published by the [Decentralized Institutes of Health](https://www.dih.earth/?ref=LTU1JFLH).
+This is an evolving analytical preprint.
 
 Economists, policy analysts, and domain experts are invited to provide comments or suggest revisions.
 
@@ -152,15 +152,15 @@ Prospective co-authors are encouraged to contribute where they have expertise.
 
 **ROI (Return on Investment)**: Ratio of net benefits to costs. Calculated as NPV(Benefits) / NPV(Costs) for time-adjusted analysis, or Annual Benefits / Annual Costs for simple analysis.
 
-**dFDA (Decentralized FDA)**: Proposed system for conducting clinical trials using real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
+**A decentralized framework for drug assessment (dFDA)**: Proposed global decentralized protocol for conducting clinical trials using real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
 
-**DIH (Decentralized Institutes of Health)**: Proposed global research infrastructure funded by 1% of military spending reallocation, coordinating decentralized clinical trials and medical research.
+**A decentralized institutes of health (DIH)**: Proposed decentralized, programmable, purely democractic and uncapturable treasury funded by 1% of military spending reallocation, subsidizing patient participation in decentralized pragmatic clinical trials.
 
 **Peace Dividend**: Economic benefits from reduced military spending, including fiscal savings, reduced conflict-related economic damage, and favorable economic multiplier effects from reallocating resources to productive sectors.
 
 **Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Unconditionally recommended regardless of willingness-to-pay thresholds (e.g., vaccination programs, smoking cessation).
 
-**1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to medical research infrastructure.
+**A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to medical research infrastructure.
 
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions. Reduces costs while improving generalizability (e.g., Oxford RECOVERY trial).
 :::
@@ -713,7 +713,7 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 
 **Higher Completion Rates**: More of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
 
-**Increased Funding**: The 1% Treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
+**Increased Funding**: A 1% treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
 
 These improvements compound multiplicatively to produce the {{< var trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
 
@@ -856,7 +856,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
-**Context:** The decentralized FDA approach is not an untested innovation extrapolated from a single case study (RECOVERY trial). Rather, it represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
+**Context:** The decentralized framework for drug assessment approach is not an untested innovation extrapolated from a single case study (RECOVERY trial). Rather, it represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
@@ -921,8 +921,8 @@ The preceding analysis presents *conditional* benefits (returns IF implementatio
 
 - Childhood vaccination programs: {{< var childhood_vaccination_roi >}} {{< var childhood_vaccination_roi_cite >}}:1 ROI with P≈1.0
 - Against Malaria Foundation: ~8:1 equivalent ROI
-- **1% Treaty (P=10%)**: {{< var dfda_expected_roi_10pct_political_success >}}:1 expected ROI
-- **1% Treaty (P=25%)**: {{< var dfda_expected_roi_25pct_political_success >}}:1 expected ROI
+- **1% treaty (P=10%)**: {{< var dfda_expected_roi_10pct_political_success >}}:1 expected ROI
+- **1% treaty (P=25%)**: {{< var dfda_expected_roi_25pct_political_success >}}:1 expected ROI
 
 **Interpretation**: The high conditional ROI ({{< var dfda_roi_rd_only >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
@@ -1037,11 +1037,11 @@ The vast majority goes to **patient subsidies** ({{< var dih_treasury_to_medical
 
 2. **Victory Bond Payouts** ({{< var victory_bond_funding_pct >}}): {{< var victory_bond_annual_payout >}}/year to campaign investors
 
-3. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for decentralized FDA infrastructure
+3. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
 
-**Why platform costs are low:** Decentralized FDA infrastructure provides coordination protocols (like HTTP for the internet), not a competing platform.
+**Why platform costs are low:** The decentralized framework for drug assessment infrastructure provides coordination protocols (like HTTP for the internet), not a competing platform.
 
-The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. A decentralized FDA protocol creates the coordination layer that makes them work together for clinical trials.
+The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. The decentralized framework for drug assessment protocol creates the coordination layer that makes them work together for clinical trials.
 
 Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
@@ -1104,7 +1104,7 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 - **[Deworming](../references.qmd#deworming-cost-per-daly)**: {{< var deworming_cost_per_daly >}}/DALY (Deworm the World Initiative)
 - **[Vitamin A Supplementation](../references.qmd#vitamin-a-cost-per-daly)**: {{< var vitamin_a_cost_per_daly >}}/DALY (Helen Keller International)
 
-**1% Treaty/dFDA System:**
+**A 1% Treaty/Decentralized Framework for Drug Assessment:**
 
 - **Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets)
 
@@ -1114,7 +1114,7 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 
 {{< var treaty_expected_vs_bed_nets_multiplier_latex >}}
 
-**Translation:** Even assuming only a 1-in-10 chance of political success, the 1% Treaty campaign is {{< var treaty_expected_vs_bed_nets_multiplier >}}× more cost-effective than distributing bed nets, while also being self-funding (generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits).
+**Translation:** Even assuming only a 1-in-10 chance of political success, a 1% treaty campaign is {{< var treaty_expected_vs_bed_nets_multiplier >}}× more cost-effective than distributing bed nets, while also being self-funding (generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits).
 
 The negative cost (net benefit) per life saved distinguishes this as a **dominant intervention** in health economics terminology, an intervention that both reduces costs and improves outcomes, with no trade-off between efficiency and effectiveness.
 
@@ -1133,7 +1133,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 **Funding Allocation**:
 
 1. **Victory Bond Payouts**: {{< var victory_bond_annual_payout >}}/year to investors who funded the campaign
-2. **dFDA Platform Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
+2. **Decentralized Framework for Drug Assessment Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
 3. **Patient Trial Subsidies**: {{< var dih_treasury_trial_subsidies_annual >}}/year subsidizing patient participation in clinical trials
    - At {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient ([RECOVERY trial cost](../appendix/recovery-trial.qmd)), this funds {{< var dih_patients_fundable_annually >}} patients annually
    - Patients choose which trials to join; trials that attract patients get funded
@@ -1242,7 +1242,7 @@ For detailed analysis of personal wealth calculations, see [Disease Eradication 
 
 ## Comparative Effectiveness
 
-This section compares the 1% Treaty/dFDA system to best-in-class health interventions across multiple categories.
+This section compares a 1% treaty/decentralized framework for drug assessment system to best-in-class health interventions across multiple categories.
 
 ### Comprehensive Comparison
 
@@ -1269,7 +1269,7 @@ This section compares the 1% Treaty/dFDA system to best-in-class health interven
 
 Standard interventions (Bed Nets, Vaccines) are **linear**: to save 2x more lives, you need 2x more money. They compete for a fixed pool of philanthropic capital.
 
-The 1% Treaty is **systemic and exponential**:
+A 1% treaty is **systemic and exponential**:
 
 1.  **Negative Cost**: It unlocks a *new* funding source (military waste) that generates profit, effectively having an infinite ROI compared to spending existing capital.
 2.  **Multiplier Effect**: It accelerates the *rate* of cure discovery for *all* diseases (25x acceleration), compounding benefits over time.
@@ -1508,7 +1508,7 @@ Decentralized pragmatic trials fix all of this:
 
 ### Who's Actually In Charge (Patients Edition)
 
-The Decentralized Institutes of Health puts patients in control through trial participation, not committee votes.
+A decentralized institutes of health put patients in control through trial participation, not committee votes.
 
 **Current system**: [200 NIH bureaucrats](../references.qmd#nih-decision-makers-200-people) decide what {{< var global_population_2024 >}} humans can try when dying
 

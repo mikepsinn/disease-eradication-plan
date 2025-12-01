@@ -123,7 +123,7 @@ ax.fill_between(ages, cumulative_productivity, cumulative_total,
 
 ax.set_xlabel('Age', fontsize=24, weight='bold')
 ax.set_ylabel('Cumulative Lifetime Wealth (Undiscounted)', fontsize=24, weight='bold')
-ax.set_title('Cumulative Lifetime Wealth Over Lifetime\n(Conservative Estimate)\n(Age 30, $50K Income, 1% Treaty, 5yr Life Extension)',
+ax.set_title('Cumulative Lifetime Wealth Over Lifetime\n(Conservative Estimate)\n(Age 30, $50K Income, 1% treaty, 5yr Life Extension)',
              fontsize=32, weight='bold', pad=50)
 
 # Format y-axis

@@ -155,7 +155,7 @@ ax.annotate(f'Total: ${final_value/1000000:.1f}M',
 
 ax.set_xlabel('Age (Years)', fontsize=24, weight='bold')
 ax.set_ylabel('Total Wealth Gained (Millions)', fontsize=24, weight='bold')
-ax.set_title('How Your Wealth Grows from Age 30 to 152\n(Living 72 Years Longer with the 1% Treaty)',
+ax.set_title('How Your Wealth Grows from Age 30 to 152\n(Living 72 Years Longer with a 1% treaty)',
              fontsize=32, weight='bold', pad=50)
 
 # Format y-axis

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Total Global Research Funding (Baseline + 1% Treaty Funding) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Total Global Research Funding (Baseline + 1% treaty Funding) (10,000 simulations)"
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -20,7 +20,7 @@ std = 6563047295.417644
 p5 = 83811460414.41083
 p50 = 94241372422.9881
 p95 = 106551628414.21606
-display_name = "Total Global Research Funding (Baseline + 1% Treaty Funding)"
+display_name = "Total Global Research Funding (Baseline + 1% treaty Funding)"
 units = "USD"
 
 # Create figure with two subplots
@@ -101,4 +101,4 @@ plt.show()
 | Standard Deviation | 6.563e+09 |
 | 90% Confidence Interval | [8.381e+10, 1.066e+11] |
 
-*The histogram shows the distribution of Total Global Research Funding (Baseline + 1% Treaty Funding) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Total Global Research Funding (Baseline + 1% treaty Funding) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

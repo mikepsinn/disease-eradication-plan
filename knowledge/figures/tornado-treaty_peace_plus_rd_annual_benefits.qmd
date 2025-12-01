@@ -13,7 +13,7 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
-display_name = "1% Treaty Basic Annual Benefits (Peace + R&D Savings)"
+display_name = "1% treaty Basic Annual Benefits (Peace + R&D Savings)"
 
 # Baseline and units
 baseline = 155051000000.0

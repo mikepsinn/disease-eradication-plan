@@ -3,7 +3,7 @@
 from dih_models.parameters import *
 ```
 
-| Metric | Current FDA System | Decentralized FDA | Improvement |
+| Metric | Current FDA System | Decentralized Framework for Drug Assessment | Improvement |
 |--------|-------------------|-------------------|-------------|
 | **Approach** | 📋 Central Planning | 🛒 Open Platform | Market-based |
 | **Cost per Patient** | $41,000 | $500 | **`{python} TRIAL_COST_REDUCTION_FACTOR`x cheaper** |

@@ -43,12 +43,12 @@ interventions = {
         'category': 'givewell-top',
         'note': 'GiveWell top charity'
     },
-    '1% Treaty + dFDA\n(Expected Value,\n10% Success)': {
+    '1% treaty + dFDA\n(Expected Value,\n10% Success)': {
         'cost_per_daly': float(TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE),  # $1.27
         'category': 'proposed-expected',
         'note': 'Accounts for political risk'
     },
-    '1% Treaty + dFDA\n(Conditional on\nSuccess)': {
+    '1% treaty + dFDA\n(Conditional on\nSuccess)': {
         'cost_per_daly': float(TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT),  # $0.127
         'category': 'proposed-conditional',
         'note': 'Assumes treaty passes'
@@ -122,7 +122,7 @@ ax.set_title('Cost-Effectiveness Comparison: Health Interventions\n(Cost per Dis
 
 # Add explanatory callout
 
-callout_text = ('DALY = Disability-Adjusted Life Year\nOne DALY = one year of healthy life lost\n\nLower cost per DALY = more cost-effective\n\nEven accounting for political risk (10% success),\nthe 1% Treaty is 40-80x more cost-effective\nthan malaria bed nets ($1.27 vs $75 per DALY)\n\nConditional on success: 400-800x better')
+callout_text = ('DALY = Disability-Adjusted Life Year\nOne DALY = one year of healthy life lost\n\nLower cost per DALY = more cost-effective\n\nEven accounting for political risk (10% success),\na 1% treaty is 40-80x more cost-effective\nthan malaria bed nets ($1.27 vs $75 per DALY)\n\nConditional on success: 400-800x better')
 ax.text(0.73, 0.58, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=14, color=COLOR_BLACK,

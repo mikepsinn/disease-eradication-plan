@@ -77,7 +77,7 @@ profiles:
 
 website:
   title: "DIH Economic Models"
-  description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+  description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"
   site-url: https://impact.dih.earth
   favicon: assets/icons/favicon.ico
   page-navigation: true
@@ -109,11 +109,11 @@ website:
       - section: "Proposed Intervention"
         contents:
           - href: knowledge/solution/1-percent-treaty.qmd
-            text: "The 1% Treaty Framework"
+            text: "A 1% Treaty Framework"
           - href: knowledge/solution/dih.qmd
-            text: "Decentralized Institutes of Health"
+            text: "A Decentralized Institutes of Health"
           - href: knowledge/solution/dfda.qmd
-            text: "Decentralized FDA Protocol"
+            text: "A Decentralized Framework for Drug Assessment"
           - href: knowledge/solution/wishocracy.qmd
             text: "Decentralized Governance Model"
           - href: knowledge/solution/aligning-incentives.qmd
@@ -222,7 +222,7 @@ metadata:
   author-website: "https://WarOnDisease.org"
   contact: "hello@dih.earth"
   title: "DIH Economic Models"
-  description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+  description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"
   abstract: "By redirecting 1% of global military spending to hyper-efficient pragmatic clinical trials, humanity can achieve 514 years of medical progress in 20 years and shift the cure of every disease forward by 8.2 years, saving 416 million lives and generating $1.2 quadrillion in value."
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
@@ -352,9 +352,9 @@ format:
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:image" content="https://impact.dih.earth/assets/icons/og-image.png">
           <meta name="twitter:title" content="DIH Economic Models">
-          <meta name="twitter:description" content="Economic analysis for the 1% Treaty and Decentralized FDA initiative">
+          <meta name="twitter:description" content="Economic analysis for a 1% treaty and decentralized framework for drug assessment initiative">
           <meta property="og:title" content="DIH Economic Models">
-          <meta property="og:description" content="Economic analysis for the 1% Treaty and Decentralized FDA initiative">
+          <meta property="og:description" content="Economic analysis for a 1% treaty and decentralized framework for drug assessment initiative">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://impact.dih.earth">
 # PDF format disabled for website deployment - only HTML is needed
@@ -372,4 +372,4 @@ format:
   #     - right=1in
   #   variables:
   #     title: "DIH Economic Models"
-  #     description: "Economic analysis and ROI calculations for the 1% Treaty and Decentralized FDA (dFDA) initiative"
+  #     description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"

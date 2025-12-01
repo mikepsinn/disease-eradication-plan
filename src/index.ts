@@ -37,7 +37,7 @@ const bookChatAgent = createBookChatAgent(vectorStore);
 const dihAgent = new Agent({
   name: "DIH Agent",
   instructions: `You are a helpful assistant for the Decentralized Institutes of Health project.
-This project documents "How to End War and Disease" - a book about getting every nation to sign the 1% Treaty to redirect 1% of military spending to cure diseases instead of cause them.
+This project documents "How to End War and Disease" - a book about getting every nation to sign a 1% treaty to redirect 1% of military spending to cure diseases instead of cause them.
 
 Your mission is to help save millions of lives by making curing people more profitable than killing them. The project focuses on:
 - The unnecessary suffering and death from war (14M deaths/year) and disease (55M deaths/year)

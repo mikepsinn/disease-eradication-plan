@@ -21,7 +21,7 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# Calculate for base case using Evidence-Based Conservative model: Age 30, $50K income, 1% Treaty
+# Calculate for base case using Evidence-Based Conservative model: Age 30, $50K income, 1% treaty
 # NOTE: This is the CONSERVATIVE baseline (antibiotic precedent, 5yr life extension)
 # For realistic estimates, see Disease Eradication Model ($2.4M-$5.8M, 34-106yr)
 
@@ -77,7 +77,7 @@ for i, wedge in enumerate(wedges):
 
 # Add title
 
-ax.set_title('Where Does the $402K Come From?\nLifetime Wealth Component Breakdown\n(Age 30, $50K Income, 1% Treaty)',
+ax.set_title('Where Does the $402K Come From?\nLifetime Wealth Component Breakdown\n(Age 30, $50K Income, 1% treaty)',
              fontsize=32, weight='bold', pad=50)
 
 # Add watermark

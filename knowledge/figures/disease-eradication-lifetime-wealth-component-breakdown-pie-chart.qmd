@@ -21,7 +21,7 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# Calculate for base case using Disease Eradication Model: Age 30, $50K income, 1% Treaty, 20-year scenario
+# Calculate for base case using Disease Eradication Model: Age 30, $50K income, 1% treaty, 20-year scenario
 
 calc = calculate_personal_lifetime_wealth_disease_eradication(
     treaty_pct=0.01,
@@ -75,7 +75,7 @@ for i, wedge in enumerate(wedges):
 
 # Add title
 
-ax.set_title('Where Does the $4.3M Come From?\nDisease Eradication Model Component Breakdown\n(Age 30, $50K Income, 1% Treaty, 20yr scenario)',
+ax.set_title('Where Does the $4.3M Come From?\nDisease Eradication Model Component Breakdown\n(Age 30, $50K Income, 1% treaty, 20yr scenario)',
              fontsize=32, weight='bold', pad=50)
 
 # Add watermark

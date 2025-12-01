@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: 1% Treaty ROI at 7% Discount Rate (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: 1% treaty ROI at 7% Discount Rate (10,000 simulations)"
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -20,7 +20,7 @@ std = 0.0
 p5 = 299.69706140733285
 p50 = 299.69706140733285
 p95 = 299.69706140733285
-display_name = "1% Treaty ROI at 7% Discount Rate"
+display_name = "1% treaty ROI at 7% Discount Rate"
 units = ""
 
 # Create figure with two subplots
@@ -101,4 +101,4 @@ plt.show()
 | Standard Deviation | 0 |
 | 90% Confidence Interval | [299.7, 299.7] |
 
-*The histogram shows the distribution of 1% Treaty ROI at 7% Discount Rate across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of 1% treaty ROI at 7% Discount Rate across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

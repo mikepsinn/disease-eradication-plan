@@ -71,7 +71,7 @@ annotation_x = 0.9  # Center between the two bars
 annotation_y = 1800  # Middle height
 
 ax.text(annotation_x, annotation_y,
-        f'The 1% Treaty would\nredirect this tiny sliver\n(${treaty_funding:.0f}B) to the\nWar on Disease',
+        f'A 1% treaty would\nredirect this tiny sliver\n(${treaty_funding:.0f}B) to the\nWar on Disease',
         fontsize=20, fontweight='bold', color=COLOR_BLACK,
         ha='center', va='center',
         bbox=dict(boxstyle='square,pad=0.6', facecolor=COLOR_WHITE,

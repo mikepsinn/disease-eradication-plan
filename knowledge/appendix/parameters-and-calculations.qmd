@@ -11,7 +11,7 @@ format:
 
 ## Overview
 
-This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA.
+This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
 **Total parameters**: 322
 
@@ -2365,7 +2365,7 @@ $$
 
 **Value**: 1,191
 
-Expected ROI for 1% Treaty accounting for 0.1% political success probability (extremely pessimistic estimate)
+Expected ROI for 1% treaty accounting for 0.1% political success probability (extremely pessimistic estimate)
 
 $$
 E[ROI]_{\text{0.1\%}} = 1{,}286{,}242 \times 0.001 = 1{,}286
@@ -2394,7 +2394,7 @@ $$
 
 **Value**: 119K
 
-Expected ROI for 1% Treaty accounting for 10% political success probability (conservative estimate)
+Expected ROI for 1% treaty accounting for 10% political success probability (conservative estimate)
 
 $$
 E[ROI]_{\text{10\%}} = 1{,}286{,}242 \times 0.10 = 128{,}624
@@ -2425,7 +2425,7 @@ $$
 
 **Value**: 11,914
 
-Expected ROI for 1% Treaty accounting for 1% political success probability (very pessimistic estimate)
+Expected ROI for 1% treaty accounting for 1% political success probability (very pessimistic estimate)
 
 $$
 E[ROI]_{\text{1\%}} = 1{,}286{,}242 \times 0.01 = 12{,}862
@@ -2454,7 +2454,7 @@ $$
 
 **Value**: 298K
 
-Expected ROI for 1% Treaty accounting for 25% political success probability (moderate estimate)
+Expected ROI for 1% treaty accounting for 25% political success probability (moderate estimate)
 
 $$
 E[ROI]_{\text{25\%}} = 1{,}286{,}242 \times 0.25 = 321{,}561
@@ -2485,7 +2485,7 @@ $$
 
 **Value**: 477K
 
-Expected ROI for 1% Treaty accounting for 40% political success probability (moderate-high estimate)
+Expected ROI for 1% treaty accounting for 40% political success probability (moderate-high estimate)
 
 $$
 E[ROI]_{\text{40\%}} = 1{,}286{,}242 \times 0.40 = 514{,}497
@@ -2516,7 +2516,7 @@ $$
 
 **Value**: 596K
 
-Expected ROI for 1% Treaty accounting for 50% political success probability (optimistic estimate)
+Expected ROI for 1% treaty accounting for 50% political success probability (optimistic estimate)
 
 $$
 E[ROI]_{\text{50\%}} = 1{,}286{,}242 \times 0.50 = 643{,}121
@@ -4374,7 +4374,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
+### 1% treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
 **Value**: 442
 
@@ -4403,7 +4403,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty ROI at 3% Discount Rate {#sec-roi_discount_3pct}
+### 1% treaty ROI at 3% Discount Rate {#sec-roi_discount_3pct}
 
 **Value**: 384
 
@@ -4432,7 +4432,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty ROI at 5% Discount Rate {#sec-roi_discount_5pct}
+### 1% treaty ROI at 5% Discount Rate {#sec-roi_discount_5pct}
 
 **Value**: 338
 
@@ -4461,7 +4461,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty ROI at 7% Discount Rate {#sec-roi_discount_7pct}
+### 1% treaty ROI at 7% Discount Rate {#sec-roi_discount_7pct}
 
 **Value**: 300
 
@@ -4689,7 +4689,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### Total Global Research Funding (Baseline + 1% Treaty Funding) {#sec-total_research_funding_with_treaty}
+### Total Global Research Funding (Baseline + 1% treaty Funding) {#sec-total_research_funding_with_treaty}
 
 **Value**: $94.7B
 
@@ -4985,7 +4985,7 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty Basic Annual Benefits (Peace + R&D Savings) {#sec-treaty_peace_plus_rd_annual_benefits}
+### 1% treaty Basic Annual Benefits (Peace + R&D Savings) {#sec-treaty_peace_plus_rd_annual_benefits}
 
 **Value**: $155B
 
@@ -5043,11 +5043,11 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty Recurring Annual Benefits {#sec-treaty_recurring_benefits_annual}
+### 1% treaty Recurring Annual Benefits {#sec-treaty_recurring_benefits_annual}
 
 **Value**: $155B
 
-Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
+Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
 
 $$
 Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
@@ -5192,11 +5192,11 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
-### 1% Treaty Recurring Annual Benefits {#sec-treaty_total_complete_benefits_annual}
+### 1% treaty Recurring Annual Benefits {#sec-treaty_total_complete_benefits_annual}
 
 **Value**: $155B
 
-Truly recurring annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
+Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
 
 $$
 Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
@@ -5787,7 +5787,7 @@ Mid-range funding for commercial DCT platform
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### Percentage of Budget Defense Sector Keeps Under 1% Treaty {#sec-defense_sector_retention_pct}
+### Percentage of Budget Defense Sector Keeps Under 1% treaty {#sec-defense_sector_retention_pct}
 
 **Value**: 99%
 
@@ -5896,11 +5896,11 @@ Percentage of treaty funding allocated to dFDA platform overhead
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### dFDA Platform Maintenance Costs {#sec-dfda_opex_platform_maintenance}
+### dFDA Maintenance Costs {#sec-dfda_opex_platform_maintenance}
 
 **Value**: $15M
 
-dFDA platform maintenance costs
+dFDA maintenance costs
 
 #### Uncertainty Range
 
@@ -5964,22 +5964,22 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### dFDA Platform One-Time Build Cost {#sec-dfda_upfront_build}
+### dFDA One-Time Build Cost {#sec-dfda_upfront_build}
 
 **Value**: $40M
 
-dFDA platform one-time build cost (central estimate)
+dFDA one-time build cost (central estimate)
 
 *Core definition*
 
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### dFDA Platform One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
+### dFDA One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
 
 **Value**: $46M
 
-dFDA platform one-time build cost (high estimate)
+dFDA one-time build cost (high estimate)
 
 *Core definition*
 

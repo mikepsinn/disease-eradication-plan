@@ -14,7 +14,7 @@ Not because you're altruistic (you're not), but because the math is so obvious t
 
 ## What This Is
 
-A complete strategic plan to get nations to sign the **1% Treaty** - redirecting just 1% of military spending ($27.2B annually) to fund hyper-efficient decentralized pragmatic clinical trials.
+A complete strategic plan to get nations to sign a **1% treaty** - redirecting just 1% of military spending ($27.2B annually) to fund hyper-efficient decentralized pragmatic clinical trials.
 
 Everything is calculated, cited, and designed to work WITH human dysfunction, not against it.
 
@@ -133,7 +133,7 @@ This is like buying 40 umbrellas while your house is on fire.
 
 If cancer had oil reserves, you would have cured it by 2003.
 
-The 1% Treaty redirects just $27.2B/year (1% of military spending) to fund pragmatic clinical trials that:
+A 1% treaty redirects just $27.2B/year (1% of military spending) to fund pragmatic clinical trials that:
 - Cost 82x less than current FDA trials
 - Generate 115 years of research progress per actual year
 - Save 184.6M lives over 20 years

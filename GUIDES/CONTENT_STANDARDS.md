@@ -92,7 +92,7 @@ title: "The Peace Dividend"
 description: "How redirecting military spending can generate a massive societal return."
 ---
 
-The 1% Treaty proposes redirecting a small fraction of global military expenditure...
+A 1% treaty proposes redirecting a small fraction of global military expenditure...
 ```
 
 **Incorrect Example:**
@@ -105,7 +105,7 @@ description: "How redirecting military spending can generate a massive societal 
 
 ## Introduction
 
-The 1% Treaty proposes redirecting a small fraction of global military expenditure...
+A 1% treaty proposes redirecting a small fraction of global military expenditure...
 ```
 
 ## 8. Automated Formatting Standards

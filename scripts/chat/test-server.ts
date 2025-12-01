@@ -56,7 +56,7 @@ async function main() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        messages: [{ role: "user", content: "What is the 1% Treaty?" }],
+        messages: [{ role: "user", content: "What is a 1% treaty?" }],
       }),
     }
   );

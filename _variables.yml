@@ -313,7 +313,7 @@
   \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
 "dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  low\" title=\"Expected ROI for 1% Treaty accounting for 0.1% political success probability\
+  low\" title=\"Expected ROI for 1% treaty accounting for 0.1% political success probability\
   \ (extremely pessimistic estimate) | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC | Click to view calculation\"\
   >1,191</a>"
@@ -321,14 +321,14 @@
   \ 1{,}286{,}242 \\times 0.001 = 1{,}286\n$$"
 "dfda_expected_roi_10pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% Treaty accounting for 10% political success\
+  medium\" title=\"Expected ROI for 1% treaty accounting for 10% political success\
   \ probability (conservative estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE | Click to view calculation\">119K</a>"
 "dfda_expected_roi_10pct_political_success_latex": "$$\nE[ROI]_{\\text{10\\%}} = 1{,}286{,}242\
   \ \\times 0.10 = 128{,}624\n$$"
 "dfda_expected_roi_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  low\" title=\"Expected ROI for 1% Treaty accounting for 1% political success probability\
+  low\" title=\"Expected ROI for 1% treaty accounting for 1% political success probability\
   \ (very pessimistic estimate) | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC | Click to view calculation\"\
   >11,914</a>"
@@ -336,21 +336,21 @@
   \ \\times 0.01 = 12{,}862\n$$"
 "dfda_expected_roi_25pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% Treaty accounting for 25% political success\
+  medium\" title=\"Expected ROI for 1% treaty accounting for 25% political success\
   \ probability (moderate estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE | Click to view calculation\">298K</a>"
 "dfda_expected_roi_25pct_political_success_latex": "$$\nE[ROI]_{\\text{25\\%}} = 1{,}286{,}242\
   \ \\times 0.25 = 321{,}561\n$$"
 "dfda_expected_roi_40pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% Treaty accounting for 40% political success\
+  medium\" title=\"Expected ROI for 1% treaty accounting for 40% political success\
   \ probability (moderate-high estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH | Click to view calculation\">477K</a>"
 "dfda_expected_roi_40pct_political_success_latex": "$$\nE[ROI]_{\\text{40\\%}} = 1{,}286{,}242\
   \ \\times 0.40 = 514{,}497\n$$"
 "dfda_expected_roi_50pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
   \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% Treaty accounting for 50% political success\
+  medium\" title=\"Expected ROI for 1% treaty accounting for 50% political success\
   \ probability (optimistic estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
   \ * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC | Click to view calculation\">596K</a>"
 "dfda_expected_roi_50pct_political_success_latex": "$$\nE[ROI]_{\\text{50\\%}} = 1{,}286{,}242\
@@ -443,9 +443,9 @@
   \ 0.00147 = 0.15\\%\n$$"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
-  \ maintenance costs | ✓ High confidence | 95% CI: [$10M, $22M] | Dist: Lognormal\
-  \ | Unit: USD/year | Click to view calculation\">$15M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA maintenance\
+  \ costs | ✓ High confidence | 95% CI: [$10M, $22M] | Dist: Lognormal | Unit: USD/year\
+  \ | Click to view calculation\">$15M</a>"
 "dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA regulatory\
@@ -498,14 +498,14 @@
   \ Multiplier = 3{,}300 \\times 25.71 = 84{,}834\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
-  \ one-time build cost (central estimate) | ✓ High confidence | Unit: USD | Click\
-  \ to view calculation\">$40M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA one-time\
+  \ build cost (central estimate) | ✓ High confidence | Unit: USD | Click to view\
+  \ calculation\">$40M</a>"
 "dfda_upfront_build_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA platform\
-  \ one-time build cost (high estimate) | ✓ High confidence | Unit: USD | Click to\
-  \ view calculation\">$46M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA one-time\
+  \ build cost (high estimate) | ✓ High confidence | Unit: USD | Click to view calculation\"\
+  >$46M</a>"
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
@@ -696,7 +696,7 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Lifetime benefit\
   \ for age 30 baseline scenario ($4.3M) | ✓ High confidence | Formula: Total lifetime\
-  \ health gains from 1% Treaty | Unit: USD | Click to view calculation\">$4.30M</a>"
+  \ health gains from 1% treaty | Unit: USD | Click to view calculation\">$4.30M</a>"
 "effective_hourly_rate_lifetime_benefit_latex": "$$\nBenefit = \\$4,300,000\n$$"
 "efficacy_lag_years": "<a href=\"https://warondisease.org/knowledge/references.html#bio-clinical-development-2021\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
@@ -1745,7 +1745,7 @@
 "treaty_recurring_benefits_annual": "<a href=\"/knowledge/economics/economics\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
   calculated\" data-confidence=\"high\" title=\"Truly recurring annual benefits from\
-  \ 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health\
+  \ 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health\
   \ benefits are one-time timeline shifts, NOT included here. | ✓ High confidence\
   \ | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit: USD/year | Click to view calculation\"\
   >$155B</a>"
@@ -1792,7 +1792,7 @@
 "treaty_total_complete_benefits_annual": "<a href=\"/knowledge/economics/economics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Truly recurring\
-  \ annual benefits from 1% Treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
+  \ annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year).\
   \ Note: Health benefits are one-time timeline shifts, NOT included here. | ✓ High\
   \ confidence | Formula: PEACE_DIVIDEND + RD_SAVINGS | Unit: USD/year | Click to\
   \ view calculation\">$155B</a>"

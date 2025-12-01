@@ -23,7 +23,7 @@ setup_chart_style()
 # Using central/conservative estimates where ranges exist
 
 interventions = {
-    'Decentralized FDA': {
+    'Decentralized Framework for Drug Assessment': {
         'roi': float(TREATY_COMPLETE_ROI_ALL_BENEFITS),  # PRIMARY: includes R&D + disease eradication delay
         'category': 'proposed',
         'note': 'Leverages all global R&D'

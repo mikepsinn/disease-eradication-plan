@@ -183,7 +183,7 @@ async function testChatEndpoint(): Promise<void> {
     {
       name: "Simple string input",
       body: {
-        input: "What is the 1% Treaty?",
+        input: "What is a 1% treaty?",
       },
     },
     {
@@ -200,7 +200,7 @@ async function testChatEndpoint(): Promise<void> {
       name: "Message array format",
       body: {
         input: [
-          { role: "user", content: "What problem does the 1% Treaty solve?" },
+          { role: "user", content: "What problem does a 1% treaty solve?" },
         ],
       },
     },

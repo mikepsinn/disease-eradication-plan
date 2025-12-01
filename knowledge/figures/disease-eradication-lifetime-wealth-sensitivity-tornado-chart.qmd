@@ -20,7 +20,7 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# Base case using Disease Eradication Model: Age 30, 1% Treaty, 20-year scenario (72yr life extension)
+# Base case using Disease Eradication Model: Age 30, 1% treaty, 20-year scenario (72yr life extension)
 
 base_case = calculate_personal_lifetime_wealth_disease_eradication(
     treaty_pct=0.01,
@@ -129,7 +129,7 @@ ax.text(base_value, len(parameter_names) - 0.5, f'  Base Case\n  ${base_value/10
 ax.set_yticks(y_positions)
 ax.set_yticklabels(parameter_names, fontsize=24, weight='bold')
 ax.set_xlabel(f'Your Lifetime Wealth (Base Case: ${base_value/1000000:.1f}M)', fontsize=22, weight='bold')
-ax.set_title('What Matters Most for Your Lifetime Wealth?\nHow Different Factors Change Your $4.3M Gain\nfrom the 1% Treaty',
+ax.set_title('What Matters Most for Your Lifetime Wealth?\nHow Different Factors Change Your $4.3M Gain\nfrom a 1% treaty',
              fontsize=32, weight='bold', pad=50)
 
 # Format x-axis to show dollars in millions
@@ -159,7 +159,7 @@ plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
 add_png_metadata(
     output_path,
     title="Disease Eradication Model - Personal Lifetime Wealth Sensitivity - Tornado Chart",
-    description="Shows which parameters have largest impact on personal lifetime wealth from 1% Treaty under Disease Eradication Model (72yr life extension)"
+    description="Shows which parameters have largest impact on personal lifetime wealth from 1% treaty under Disease Eradication Model (72yr life extension)"
 )
 
 plt.tight_layout()

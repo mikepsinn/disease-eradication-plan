@@ -13,7 +13,7 @@ You are reviewing economic analysis content for CRITICAL DEALBREAKERS that would
    - Victory Social Impact Bonds must be clearly framed as government-issued instruments, not nonprofit activities
 
 **DO NOT CHANGE:**
-- "1% Treaty" - never change this term
+- "1% treaty" - never change this term
 - Tone, style, or writing quality (unless it directly violates compliance above)
 - Content structure, organization, or flow
 - Specific claims, estimates, or arguments (unless they violate compliance)

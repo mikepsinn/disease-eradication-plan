@@ -37,7 +37,7 @@ async function loadVariables(): Promise<VariableInfo[]> {
   const variables: VariableInfo[] = [];
 
   for (const [name, htmlValue] of Object.entries(data)) {
-    // Skip treaty_reduction_pct to avoid "1%" replacements in "1% Treaty"
+    // Skip treaty_reduction_pct to avoid "1%" replacements in "1% treaty"
     if (name === "treaty_reduction_pct") continue;
 
     // Extract display value: <a ...>VALUE</a>
@@ -137,7 +137,7 @@ WHAT TO LINK:
 - Data percentages (3.5% threshold, 0.7% GDP)
 
 WHAT TO SKIP:
-- "1%" (appears in treaty name "1% Treaty")
+- "1%" (appears in treaty name "1% treaty")
 - Proper names, titles, chapter numbers
 - LaTeX equations (already filtered)
 

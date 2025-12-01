@@ -13,7 +13,7 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
-display_name = "1% Treaty Recurring Annual Benefits"
+display_name = "1% treaty Recurring Annual Benefits"
 
 # Baseline and units
 baseline = 155051000000.0

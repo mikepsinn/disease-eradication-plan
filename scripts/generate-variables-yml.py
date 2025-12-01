@@ -151,7 +151,7 @@ def smart_title_case(param_name: str) -> str:
     """
     # Common acronyms to preserve (with proper capitalization)
     ACRONYMS = {
-        'DFDA': 'dFDA',  # Decentralized FDA
+        'DFDA': 'dFDA',  # decentralized framework for drug assessment
         'DIH': 'DIH',    # Decentralized Institutes of Health
         'ROI': 'ROI',    # Return on Investment
         'QALY': 'QALY',  # Quality-Adjusted Life Year
@@ -1544,7 +1544,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     content.append("## Overview")
     content.append("")
     content.append(
-        "This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of the 1% Treaty and Decentralized FDA."
+        "This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment."
     )
     content.append("")
     content.append(f"**Total parameters**: {len(parameters)}")
@@ -2470,7 +2470,7 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
     content.append("% Generated from dih_models/parameters.py and knowledge/references.qmd")
     content.append("")
     content.append("% This file contains BibTeX references for all external data sources")
-    content.append("% used in the economic analysis of the 1% Treaty and Decentralized FDA.")
+    content.append("% used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.")
     content.append("")
     content.append("% Extracted from knowledge/references.qmd with author, year, source, and URL data.")
     content.append("% For manual curation or DOI-based enrichment, see references.qmd")
@@ -3559,6 +3559,7 @@ def main():
                     f.unlink()
             
             input_dist_count = 0
+            input_dist_errors = []
             for param_name, param_data in parameters.items():
                 try:
                     # Only generate for parameters with uncertainty metadata
@@ -3566,17 +3567,15 @@ def main():
                         param_name, param_data, input_dist_figures_dir
                     )
                     input_dist_count += 1
-                    if input_dist_count <= 5:  # Only log first few to avoid clutter
-                        print(f"[OK] Generated {dist_file.relative_to(project_root)}")
                 except ValueError:
                     # Parameter doesn't have uncertainty metadata - skip silently
                     pass
                 except Exception as e:
-                    print(f"[WARN] Failed to generate input distribution for {param_name}: {e}")
+                    input_dist_errors.append(f"{param_name}: {e}")
             
-            if input_dist_count > 5:
-                print(f"[OK] ... and {input_dist_count - 5} more input distribution charts")
-            print(f"[OK] Generated {input_dist_count} input distribution charts")
+            print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
+            for err in input_dist_errors:
+                print(f"[WARN] {err}")
 
             if target and _sens is not None:
                 sens = _sens(parameters, target_name=target, n=2000)
@@ -3647,6 +3646,13 @@ def main():
                 if not analyzable_params:
                     print("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
                 
+                # Counters for summary output
+                tornado_count = 0
+                sensitivity_count = 0
+                mc_dist_count = 0
+                exceedance_count = 0
+                analysis_json_count = 0
+                
                 outcomes_data = {}
                 for outcome in analyzable_params:
                     try:
@@ -3699,18 +3705,18 @@ def main():
                             tornado = tornado_deltas(parameters, outcome)
                             with open(analysis_dir / f"tornado_{outcome.name}.json", "w", encoding="utf-8") as f:
                                 json.dump(tornado, f, indent=2)
-                            print(f"[OK] Wrote {(analysis_dir / f'tornado_{outcome.name}.json').relative_to(project_root)}")
+                            analysis_json_count += 1
 
                             # Generate tornado chart QMD
                             try:
                                 figures_dir = project_root / "knowledge" / "figures"
                                 param_meta = parameters.get(outcome.name, {})
-                                chart_file = generate_tornado_chart_qmd(
+                                generate_tornado_chart_qmd(
                                     outcome.name, tornado, figures_dir, param_meta,
                                     baseline=float(baseline),
                                     units=outcome.units
                                 )
-                                print(f"[OK] Generated {chart_file.relative_to(project_root)}")
+                                tornado_count += 1
                             except ValueError as val_err:
                                 # STRICT MODE: Fail fast when tornado data is incomplete
                                 # This forces developers to either:
@@ -3750,41 +3756,39 @@ def main():
                             
                             with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8") as f:
                                 json.dump(sens_indices, f, indent=2)
-                            print(f"[OK] Wrote {(analysis_dir / f'sensitivity_indices_{outcome.name}.json').relative_to(project_root)}")
+                            analysis_json_count += 1
 
                             # Generate sensitivity table QMD only if there's meaningful variance
                             # Skip tables where all coefficients are effectively zero (< 0.001)
                             max_coef = max(abs(v) for v in sens_indices.values()) if sens_indices else 0
                             if max_coef >= 0.001:
                                 try:
-                                    sensitivity_table_file = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
-                                    print(f"[OK] Generated {sensitivity_table_file.relative_to(project_root)}")
+                                    generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                    sensitivity_count += 1
                                 except Exception as table_err:
                                     print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
-                            else:
-                                print(f"[SKIP] Sensitivity table for {outcome.name}: all coefficients near zero")
 
                             # Generate Monte Carlo distribution chart
                             try:
                                 outcome_info = outcomes_data.get(outcome.name, {})
                                 if outcome_samples and len(outcome_samples) > 100:
-                                    mc_dist_file = generate_monte_carlo_distribution_chart_qmd(
+                                    generate_monte_carlo_distribution_chart_qmd(
                                         outcome.name,
                                         outcome_info,
                                         outcome_samples,
                                         figures_dir,
                                         param_meta
                                     )
-                                    print(f"[OK] Generated {mc_dist_file.relative_to(project_root)}")
+                                    mc_dist_count += 1
 
                                     # Generate standalone CDF/exceedance chart
-                                    cdf_file = generate_cdf_chart_qmd(
+                                    generate_cdf_chart_qmd(
                                         outcome.name,
                                         outcome_samples,
                                         figures_dir,
                                         param_meta
                                     )
-                                    print(f"[OK] Generated {cdf_file.relative_to(project_root)}")
+                                    exceedance_count += 1
                             except Exception as mc_err:
                                 print(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
                     except Exception as e:
@@ -3792,13 +3796,18 @@ def main():
 
                 with open(analysis_dir / "outcomes.json", "w", encoding="utf-8") as f:
                     json.dump(outcomes_data, f, indent=2)
-                print(f"[OK] Wrote {(analysis_dir / 'outcomes.json').relative_to(project_root)}")
+                
+                # Print summary of generated files
+                print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")
+                print(f"[OK] Generated {sensitivity_count} sensitivity tables in knowledge/figures/")
+                print(f"[OK] Generated {mc_dist_count} MC distribution charts in knowledge/figures/")
+                print(f"[OK] Generated {exceedance_count} exceedance charts in knowledge/figures/")
+                print(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
 
                 # Discount rate sensitivity for ROI_complete
                 try:
                     roi_outcome = next((o for o in analyzable_params if "ROI" in o.name.upper() and "COMPLETE" in o.name.upper()), None)
                     if roi_outcome:
-                        print("[*] Generating discount rate sensitivity curve...")
                         discount_curve = []
                         for rate in [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07]:
                             ctx_disc = {}
@@ -3813,7 +3822,6 @@ def main():
                             discount_curve.append({"discount_rate": rate, "roi": float(roi_val)})
                         with open(analysis_dir / "discount_curve_ROI.json", "w", encoding="utf-8") as f:
                             json.dump(discount_curve, f, indent=2)
-                        print(f"[OK] Wrote {(analysis_dir / 'discount_curve_ROI.json').relative_to(project_root)}")
                 except Exception as e:
                     print(f"[WARN] Discount curve generation skipped: {e}")
 
@@ -3821,7 +3829,6 @@ def main():
                 try:
                     roi_outcome = next((o for o in analyzable_params if "ROI" in o.name.upper() and "COMPLETE" in o.name.upper()), None)
                     if roi_outcome:
-                        print("[*] Generating scenario bands...")
                         scenarios = {
                             "worst": 0.5,  # benefits half
                             "conservative": 0.8,
@@ -3843,7 +3850,6 @@ def main():
                             scenario_results.append({"scenario": scenario_name, "roi": float(roi_val)})
                         with open(analysis_dir / "scenario_bands_ROI.json", "w", encoding="utf-8") as f:
                             json.dump(scenario_results, f, indent=2)
-                        print(f"[OK] Wrote {(analysis_dir / 'scenario_bands_ROI.json').relative_to(project_root)}")
                 except Exception as e:
                     print(f"[WARN] Scenario bands generation skipped: {e}")
 

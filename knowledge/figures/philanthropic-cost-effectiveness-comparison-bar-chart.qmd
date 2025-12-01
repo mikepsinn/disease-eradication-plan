@@ -42,10 +42,10 @@ costs = [
     4500,   # New Incentives
     5500,   # AMF
     -25000, # Smallpox - dominant intervention with ROI 159:1 to 400:1
-    -5870000  # 1% Treaty/dFDA - DOMINANT intervention (full ICER = -$167,771/QALY × 35 QALY/life)
+    -5870000  # 1% treaty/dFDA - DOMINANT intervention (full ICER = -$167,771/QALY × 35 QALY/life)
 ]
 
-# For the 1% Treaty bar, we'll stack it to show peace dividend vs dFDA savings
+# For a 1% treaty bar, we'll stack it to show peace dividend vs dFDA savings
 # Total QALYs from parameters:
 #   - Peace: TREATY_QALYS_GAINED_ANNUAL_GLOBAL (85,610 annual recurring)
 #   - dFDA: DISEASE_ERADICATION_DELAY_DALYS (8.57B total from one-time timeline shift)
@@ -60,7 +60,7 @@ peace_dividend_per_life = -5870000 * (peace_qalys / total_qalys)  # Proportional
 dfda_savings_per_life = -5870000 * (dfda_qalys / total_qalys)   # Proportional to QALYs
 
 # Error bars (uncertainty ranges from GiveWell and dFDA analysis)
-# GiveWell range: $3,000-5,500, Smallpox range, 1% Treaty range based on sensitivity
+# GiveWell range: $3,000-5,500, Smallpox range, 1% treaty range based on sensitivity
 
 errors_lower = [500, 1000, 500, 5000, 870000]   # Distance below central
 errors_upper = [2000, 1000, 2000, 10000, 1130000]  # Distance above central
@@ -82,7 +82,7 @@ for i in range(4):
            yerr=[[errors_lower[i]], [errors_upper[i]]], capsize=8,
            error_kw={'linewidth': 2, 'ecolor': COLOR_BLACK})
 
-# For the 5th bar (1% Treaty), create stacked bar showing peace + dFDA
+# For the 5th bar (1% treaty), create stacked bar showing peace + dFDA
 # Bottom segment: Peace dividend contribution
 
 bar_peace = ax.bar(x_pos[4], peace_dividend_per_life, width=0.6,
@@ -114,7 +114,7 @@ for i in range(4):
                 f'-${abs(cost):,.0f}',
                 ha='center', va='top', fontsize=14, color=COLOR_BLACK, weight='bold')
 
-# Label for stacked 1% Treaty bar (total value below)
+# Label for stacked 1% treaty bar (total value below)
 
 ax.text(x_pos[4], costs[4] - errors_lower[4] - 400000,
         f'-${abs(costs[4])/1000000:,.1f}M',
@@ -150,7 +150,7 @@ ax.annotate('Smallpox Eradication:\nHistoric dominant intervention\n(saved money
             bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1),
             arrowprops=dict(arrowstyle='->', lw=1, color=COLOR_BLACK))
 
-# Annotation for 1% Treaty (lower left, away from bar)
+# Annotation for 1% treaty (lower left, away from bar)
 
 ax.annotate('1% Treaty + DIH + dFDA:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
             xy=(x_pos[4], -3000000), xytext=(2, -6500000),

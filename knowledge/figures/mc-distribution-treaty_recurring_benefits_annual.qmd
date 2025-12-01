@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: 1% Treaty Recurring Annual Benefits (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: 1% treaty Recurring Annual Benefits (10,000 simulations)"
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -20,7 +20,7 @@ std = 0.0
 p5 = 155051000000.0
 p50 = 155051000000.0
 p95 = 155051000000.0
-display_name = "1% Treaty Recurring Annual Benefits"
+display_name = "1% treaty Recurring Annual Benefits"
 units = "USD/year"
 
 # Create figure with two subplots
@@ -101,4 +101,4 @@ plt.show()
 | Standard Deviation | 0 |
 | 90% Confidence Interval | [1.551e+11, 1.551e+11] |
 
-*The histogram shows the distribution of 1% Treaty Recurring Annual Benefits across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of 1% treaty Recurring Annual Benefits across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

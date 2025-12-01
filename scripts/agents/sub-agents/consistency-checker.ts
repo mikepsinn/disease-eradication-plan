@@ -12,7 +12,7 @@ export function createConsistencyCheckerAgent(memory?: Memory): Agent {
     instructions: `You are a Consistency Checker agent. Your job is to check cross-file consistency:
 
 1. Same numbers use same parameters across files
-2. Terminology is consistent (e.g., "1% Treaty" vs "one percent treaty")
+2. Terminology is consistent (e.g., "1% treaty" vs "one percent treaty")
 3. References are valid (links work, targets exist)
 4. Links work correctly (no broken internal links)
 5. Formatting is consistent (same style for numbers, dates, etc.)

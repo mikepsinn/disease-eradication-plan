@@ -78,7 +78,7 @@ ax1.axvspan(1, 5, alpha=0.1, color=COLOR_BLACK, label='Viable Treaty Range')
 
 # Add vertical line at 1% (base case)
 
-ax1.axvline(x=1, color=COLOR_BLACK, linestyle='--', linewidth=2, alpha=0.5, label='1% Treaty (Base Case)')
+ax1.axvline(x=1, color=COLOR_BLACK, linestyle='--', linewidth=2, alpha=0.5, label='1% treaty (Base Case)')
 
 # Title
 
@@ -122,14 +122,14 @@ plt.show()
 ## Key Insights
 
 1. **Non-linear growth**: Benefits accelerate as treaty percentage increases (not a straight line)
-2. **1% Treaty baseline**: $402K - the minimum viable threshold
+2. **1% treaty baseline**: $402K - the minimum viable threshold
 3. **2% Treaty**: $592K (+47%) - modest increase doubles gains
 4. **5% Treaty**: $1.3M (+223%) - transformative outcome
 5. **10% Treaty**: $3M (+646%) - generational wealth
 
 **Why non-linear?** The trial capacity multiplier compounds:
 
-- 1% Treaty: 25.7x trial capacity
+- 1% treaty: 25.7x trial capacity
 - 5% Treaty: 128.5x trial capacity
 - 10% Treaty: 257x trial capacity
 

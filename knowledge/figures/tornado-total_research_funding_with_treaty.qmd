@@ -13,7 +13,7 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
-display_name = "Total Global Research Funding (Baseline + 1% Treaty Funding)"
+display_name = "Total Global Research Funding (Baseline + 1% treaty Funding)"
 
 # Baseline and units
 baseline = 94680000000.0
