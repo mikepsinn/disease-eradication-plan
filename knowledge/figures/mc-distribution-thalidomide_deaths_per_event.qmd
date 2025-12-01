@@ -1,0 +1,104 @@
+```{python}
+#| echo: false
+#| fig-cap: "Monte Carlo Distribution: Thalidomide Deaths Per Event (10,000 simulations)"
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+)
+
+setup_chart_style()
+
+# Simulation results
+samples = [366, 336, 376, 381, 317, 330, 362, 352, 358, 340, 379, 377, 360, 386, 370, 340, 367, 337, 379, 358, 355, 344, 388, 355, 349, 351, 371, 367, 368, 369, 405, 350, 347, 341, 373, 386, 356, 340, 340, 374, 376, 371, 344, 364, 361, 364, 379, 364, 375, 360, 365, 374, 327, 352, 348, 344, 353, 395, 339, 382, 322, 351, 363, 372, 375, 377, 351, 348, 379, 354, 331, 334, 338, 370, 362, 375, 349, 362, 373, 352, 369, 344, 351, 350, 332, 370, 348, 359, 370, 369, 374, 357, 349, 357, 322, 327, 330, 337, 368, 339, 350, 390, 351, 376, 338, 354, 338, 351, 379, 321, 369, 364, 345, 327, 360, 347, 364, 359, 397, 353, 336, 363, 364, 391, 378, 367, 394, 333, 344, 338, 350, 329, 374, 354, 327, 336, 366, 378, 405, 405, 368, 337, 315, 365, 341, 349, 345, 356, 384, 362, 355, 336, 322, 348, 358, 402, 362, 382, 348, 333, 337, 343, 405, 340, 378, 339, 381, 368, 355, 358, 344, 369, 349, 332, 331, 363, 397, 362, 356, 365, 390, 364, 349, 385, 369, 396, 363, 332, 329, 399, 400, 355, 350, 394, 334, 339, 374, 350, 359, 355, 367, 392, 361, 374, 315, 358, 340, 332, 339, 351, 380, 330, 359, 348, 351, 382, 371, 391, 355, 343, 354, 364, 363, 335, 361, 364, 405, 404, 340, 352, 327, 346, 366, 387, 342, 344, 315, 355, 335, 347, 339, 357, 321, 327, 405, 330, 335, 403, 405, 333, 350, 367, 401, 337, 353, 377, 369, 350, 356, 329, 353, 353, 364, 346, 370, 383, 362, 367, 360, 359, 343, 366, 357, 405, 397, 368, 342, 334, 387, 365, 370, 321, 381, 369, 334, 348, 365, 360, 352, 356, 353, 362, 394, 315, 353, 363, 366, 350, 321, 366, 401, 325, 379, 351, 357, 335, 351, 390, 372, 401, 387, 369, 401, 369, 378, 352, 360, 343, 382, 333, 377, 354, 387, 376, 403, 376, 325, 357, 333, 347, 395, 374, 343, 336, 360, 332, 344, 366, 386, 373, 315, 366, 360, 368, 398, 315, 345, 373, 324, 394, 367, 379, 346, 378, 384, 364, 364, 365, 340, 355, 355, 368, 382, 335, 356, 394, 342, 340, 363, 379, 359, 391, 379, 379, 372, 405, 354, 316, 397, 348, 361, 390, 324, 331, 324, 341, 369, 371, 365, 328, 315, 360, 348, 369, 375, 362, 377, 364, 371, 343, 355, 363, 378, 350, 371, 353, 356, 378, 316, 330, 326, 315, 344, 376, 352, 363, 385, 390, 357, 391, 361, 340, 345, 326, 339, 351, 378, 400, 328, 368, 336, 370, 356, 319, 381, 345, 347, 335, 344, 369, 354, 366, 367, 390, 351, 327, 384, 351, 385, 368, 356, 367, 405, 405, 360, 362, 384, 340, 366, 358, 366, 340, 324, 315, 334, 348, 352, 405, 385, 337, 367, 350, 352, 363, 373, 351, 384, 334, 359, 405, 364, 393, 361, 372, 357, 355, 341, 369, 340, 374, 384, 367, 352, 369, 352, 381, 319, 351, 316, 326, 391, 380, 343, 326, 315, 347, 405, 369, 346, 370, 325, 352, 361, 357, 377, 367, 374, 343, 380, 398, 337, 339, 391, 354, 392, 349, 394, 362, 365, 396, 351, 338, 349, 369, 325, 374, 347, 386, 315, 341, 322, 340, 364, 355, 353, 355, 363, 336, 375, 374, 368, 372, 366, 405, 357, 352, 342, 336, 331, 339, 357, 367, 360, 342, 380, 376, 355, 344, 372, 363, 327, 357, 365, 339, 363, 327, 391, 389, 353, 367, 315, 333, 352, 335, 376, 405, 333, 340, 364, 398, 332, 365, 403, 323, 331, 349, 347, 378, 364, 320, 371, 346, 389, 345, 344, 371, 377, 369, 322, 371, 336, 364, 328, 369, 341, 331, 375, 364, 345, 394, 349, 360, 365, 345, 370, 347, 349, 391, 336, 315, 398, 405, 350, 317, 352, 352, 354, 334, 372, 371, 326, 375, 405, 363, 351, 356, 373, 321, 363, 350, 404, 355, 399, 334, 372, 366, 339, 363, 388, 351, 322, 358, 339, 351, 357, 322, 324, 370, 347, 315, 377, 365, 343, 330, 378, 367, 405, 369, 368, 355, 378, 373, 389, 347, 349, 348, 377, 395, 348, 349, 366, 353, 381, 315, 340, 341, 315, 337, 338, 354, 385, 353, 336, 357, 384, 337, 339, 372, 354, 374, 358, 375, 336, 358, 354, 332, 325, 375, 351, 336, 357, 386, 315, 326, 338, 394, 365, 377, 334, 334, 369, 360, 372, 355, 365, 362, 377, 378, 324, 315, 382, 387, 336, 319, 361, 381, 402, 371, 350, 339, 359, 352, 336, 405, 402, 386, 338, 379, 374, 369, 389, 374, 376, 374, 367, 320, 361, 346, 331, 399, 401, 391, 365, 391, 359, 363, 335, 368, 360, 330, 358, 357, 402, 380, 359, 365, 360, 354, 335, 355, 342, 331, 371, 368, 320, 356, 382, 384, 383, 360, 340, 335, 367, 368, 389, 385, 356, 331, 352, 364, 354, 346, 365, 347, 345, 366, 350, 364, 365, 334, 348, 393, 333, 315, 319, 359, 359, 356, 388, 315, 368, 396, 334, 350, 342, 339, 351, 393, 403, 351, 405, 360, 401, 357, 362, 367, 405, 379, 343, 382, 351, 348, 380, 359, 365, 359, 367, 369, 317, 374, 337, 327, 357, 361, 343, 378, 329, 350, 346, 358, 365, 336, 376, 360, 318, 317, 358, 354, 356, 358, 364, 381, 334, 333, 335, 365, 388, 349, 315, 322, 340, 346, 350, 360, 352, 384, 344, 340, 370, 325, 368, 361, 355, 397, 345, 405, 354, 331, 360, 335, 342, 368, 372, 345, 382, 386, 393, 371, 391, 318, 352, 339, 362, 346, 355, 405, 355, 368, 353, 361, 359, 369, 386, 399, 366, 373, 333, 357, 381, 379, 364, 380, 370, 387, 365, 351, 367, 315, 368, 315, 321, 369, 370, 333, 343, 392, 348, 405, 359, 368, 398, 362, 337, 356, 358, 329, 353, 342, 381, 360, 352, 356, 364, 373, 337, 336, 385, 349, 328, 369, 370, 325, 364, 376, 367, 374, 328, 366, 352, 348, 379, 394, 402, 390, 356, 367, 377, 362, 362, 378]  # Truncate for embedding
+baseline = 360.0
+mean = 359.1426
+std = 21.958170808152484
+p5 = 322.0
+p50 = 358.0
+p95 = 398.0
+display_name = "Thalidomide Deaths Per Event"
+units = "deaths"
+
+# Create figure with two subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+fig.subplots_adjust(wspace=0.3)
+
+# --- Left: Histogram ---
+n, bins, patches = ax1.hist(samples, bins=50, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
+
+# Mark key statistics
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {p50:,.2g}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {p5:,.2g}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {p95:,.2g}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {baseline:,.2g}')
+
+ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_ylabel('Frequency', fontsize=11)
+ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
+ax1.legend(loc='upper right', fontsize=9)
+clean_spines(ax1)
+
+# --- Right: CDF (Cumulative Probability) ---
+sorted_samples = np.sort(samples)
+cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+
+ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Mark key percentiles
+ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
+ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
+
+ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_ylim(0, 100)
+clean_spines(ax2)
+
+# Add annotation for "probability of exceeding baseline"
+exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
+ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
+             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             fontsize=9, ha='left',
+             arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
+
+# Main title
+fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+
+# Add watermark
+add_watermark(fig)
+
+# Save PNG
+project_root = Path.cwd()
+while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+    project_root = project_root.parent
+
+output_path = project_root / 'knowledge' / 'figures' / 'mc-distribution-thalidomide_deaths_per_event.png'
+plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Monte Carlo: {display_name}',
+    description=f'Monte Carlo simulation results showing uncertainty distribution for {display_name}'
+)
+
+plt.show()
+```
+
+**Key Statistics:**
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 360 |
+| Mean (expected value) | 359.1 |
+| Median (50th percentile) | 358 |
+| Standard Deviation | 21.96 |
+| 90% Confidence Interval | [322, 398] |
+
+*The histogram shows the distribution of Thalidomide Deaths Per Event across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

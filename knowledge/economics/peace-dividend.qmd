@@ -11,15 +11,10 @@ tags:
 
 <!-- ✓ Style reviewed 2025-01-15 -->
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
-
 Here's what 1% less murder money buys:
 
-- **DIH gets**: [`{python} treaty_annual_funding_formatted`](../appendix/peace-dividend-calculations.qmd) to subsidize hyper-efficient pragmatic clinical trials
-- **World saves**: [`{python} peace_dividend_annual_societal_benefit_formatted`](../appendix/peace-dividend-calculations.qmd) not spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees
+- **DIH gets**: {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials
+- **World saves**: {{< var peace_dividend_annual_societal_benefit >}} not spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees
 - **Source**: [Cost of War breakdown](../problem/cost-of-war.qmd)
 
 ## How 1% Less Violence Pays For Everything
