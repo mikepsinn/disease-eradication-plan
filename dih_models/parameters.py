@@ -4489,17 +4489,6 @@ AVERAGE_MARKET_RETURN_PCT = Parameter(
     keywords=["10%", "benefit", "profit", "yield", "yearly", "average", "market"]
 )  # Average market return percentage for portfolio comparisons
 
-# VICTORY Social Impact Bonds derived payout (per unit of investment)
-VICTORY_BOND_INVESTMENT_UNIT_USD = Parameter(
-    1000,
-    source_ref="/knowledge/strategy/roadmap.qmd#victory-bonds",
-    source_type="definition",
-    description="VICTORY bond investment unit for retail investors",
-    display_name="Victory Bond Investment Unit for Retail Investors",
-    unit="USD",
-    keywords=["1k", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"]
-)  # USD, per bond investment unit for retail investors
-
 # Lobbyist compensation & incentives
 LOBBYIST_BOND_INVESTMENT_MAX = Parameter(
     20_000_000,
@@ -4673,17 +4662,6 @@ EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT = Parameter(
     latex=r"Benefit = \$4,300,000",
     keywords=["4.3m", "financial benefit", "individual benefit", "monetary gain", "per capita benefit", "personal benefit", "30 year old"]
 )
-EFFECTIVE_HOURLY_RATE = Parameter(
-    EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT / TOTAL_TIME_INVESTMENT_HOURS,
-    source_ref="/knowledge/solution/wishocracy.qmd#effective-hourly-rate",
-    source_type="definition",
-    description="Effective hourly rate from treaty participation",
-    display_name="Effective Hourly Rate from Treaty Participation",
-    unit="USD/hour",
-    formula="LIFETIME_BENEFIT ÷ TIME_INVESTED",
-    latex=r"HourlyRate = \frac{\$4,300,000}{14.75} \approx \$291,525/hr",
-    keywords=["individual benefit", "per capita benefit", "personal benefit", "average person", "per person", "family", "household"],
-)  # ~$291K/hour
 
 # Comparison benchmarks
 AVERAGE_US_HOURLY_WAGE = Parameter(
