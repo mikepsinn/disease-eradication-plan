@@ -3534,6 +3534,7 @@ def main():
                     var = sum((v - m) ** 2 for v in vals) / len(vals)
                     std = var ** 0.5
                     vals_sorted = sorted(vals)
+
                     def pct(p: float):
                         i = int(p / 100 * (len(vals_sorted) - 1))
                         return vals_sorted[i]
@@ -3776,6 +3777,7 @@ def main():
                                 var = sum((v - m) ** 2 for v in outcome_samples) / len(outcome_samples)
                                 std = var ** 0.5
                                 sorted_o = sorted(outcome_samples)
+
                                 def pct_o(p: float):
                                     return sorted_o[int(p / 100 * (len(sorted_o) - 1))]
                                 outcomes_data[outcome.name] = {

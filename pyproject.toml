@@ -66,6 +66,7 @@ select = [
 ignore = [
     "E501",  # line too long (handled by formatter)
     "E402",  # module level import not at top of file (needed for sys.path modifications)
+    "E203",  # whitespace before ':' in slices - Black-compatible formatting like [start :]
     "W293",  # blank line contains whitespace (trivial, auto-fixed by formatters)
     "E722",  # bare except (intentional catch-all handlers for robustness)
     "B006",  # mutable default argument (sometimes intentional for caching)
@@ -101,6 +102,7 @@ no_strict_optional = true
 max-line-length = 120
 extend-ignore = [
     "E501",  # line too long
+    "E203",  # whitespace before ':' - Black-compatible slice formatting
 ]
 
 # Pyright/Pylance configuration
