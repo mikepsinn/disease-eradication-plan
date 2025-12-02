@@ -194,8 +194,6 @@ This is the monetized value of {{< var disease_eradication_delay_deaths_total >}
 
 **Investment required**: {{< var treaty_campaign_total_cost >}}
 
-That's a quadrillion-dollar bill lying on the ground. The only question is whether humanity picks it up.
-
 ### Research Acceleration
 
 {{< var trial_capacity_multiplier >}}× faster medical progress ({{< var trial_capacity_cumulative_years_20yr >}} years of medical advancement in 20 years)
@@ -1118,14 +1116,15 @@ These estimates derive from:
 | **Timeline Shift** | One-time | {{< var disease_eradication_delay_economic_loss >}} | Once | Eliminating {{< var efficacy_lag_years >}}-year regulatory delay shifts disease eradication {{< var efficacy_lag_years >}} years earlier. Saves {{< var disease_eradication_delay_deaths_total >}} lives and {{< var disease_eradication_delay_dalys >}} DALYs. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) |
 | **Peace Dividend** | Recurring | {{< var peace_dividend_annual_societal_benefit >}}/year | Perpetual | {{< var treaty_reduction_pct >}} reduction in global military spending redirected to medical research |
 
-**Efficacy lag uncertainty:** The timeline shift depends on the efficacy lag parameter, which represents years of regulatory delay after safety is established. The distribution below shows the uncertainty range:
-
-{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 | **R&D Savings** | Recurring | {{< var dfda_rd_gross_savings_annual >}}/year | Perpetual | {{< var trial_cost_reduction_factor >}}× trial cost reduction from pragmatic trial model |
 | **Total Recurring** | Recurring | {{< var treaty_total_complete_benefits_annual >}}/year | Perpetual | Peace dividend + R&D savings (makes system self-funding) |
 | **Total Value** | Combined | {{< var disease_eradication_delay_economic_loss >}} + recurring | Once + perpetual | One-time timeline shift + perpetual annual benefits |
 
 **Investment required**: {{< var treaty_campaign_total_cost >}} (one-time campaign cost)
+
+**Efficacy lag uncertainty:** The timeline shift depends on the efficacy lag parameter, which represents years of regulatory delay after safety is established. The distribution below shows the uncertainty range:
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 ### Trial Capacity Scaling
 
@@ -1823,6 +1822,8 @@ Redirecting {{< var treaty_reduction_pct >}} of global military spending to medi
 **The Evidence**: Conservative assumptions, validated by [Oxford RECOVERY trial](../appendix/recovery-trial.qmd), tested via sensitivity analysis. Uses standard health economics (NPV, QALYs, ICER) for direct comparison with existing interventions.
 
 **The Reality**: This works because every step is economically rational for everyone involved. Nobody needs to evolve morally. They just need to count.
+
+There's a quadrillion-dollar bill lying on the sidewalk. The math shows it's real. The only question is whether humanity picks it up.
 
 ## Notes
 
