@@ -1730,30 +1730,31 @@ GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
     validation_max=85   # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
 )
 
-# Expected life extension from 1% treaty research acceleration
-# Historical context: Antibiotics alone added 5-10 years to life expectancy
-# With 115x research acceleration across ALL disease categories simultaneously,
-# potential ranges from antibiotic-level (conservative) to aging reversal (optimistic)
+# Expected life extension from 1% treaty research acceleration (25x trial capacity)
+# Bounds are physically constrained: 0 (failure) to accident-limited lifespan - current
+# Distribution encodes beliefs about where in that range we'll land
 LIFE_EXTENSION_YEARS = Parameter(
-    20,  # Median estimate: multiple disease category breakthroughs
-    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+    20,  # Conservative median: meaningful progress without assuming miracles
+    source_ref=ReferenceID.LONGEVITY_ESCAPE_VELOCITY,
     source_type="external",
-    description="Expected years of life extension from 1% treaty research acceleration (115x trial capacity). Range: 5 years (antibiotic precedent floor) to 70 years (approaching accident-limited lifespan with aging reversal).",
+    description="Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.",
     display_name="Life Extension from Treaty Research Acceleration",
     unit="years",
     confidence="low",
-    keywords=["life extension", "longevity", "lifespan", "aging", "disease eradication", "research acceleration"],
+    keywords=["life extension", "longevity", "lifespan", "aging", "disease eradication", "research acceleration", "longevity escape velocity"],
     distribution="lognormal",  # Right-skewed: aging reversal scenarios create long tail
-    confidence_interval=(5, 50),  # 80% CI: 5 years (conservative floor) to 50 years (aging reversal)
-    # Rationale for range:
-    #   - 5 years (P10): Single breakthrough class, similar to antibiotics
-    #   - 20 years (median): Multiple disease categories cured (cancer, CVD, diabetes)
-    #   - 50 years (P90): Aging reversal, organ regeneration, epigenetic reprogramming
-    #   - Theoretical max ~120 years (accident-limited lifespan ~200 minus current ~80)
-    # Historical precedent: 1900-2000 medical advances added 35 years total
-    # 115x acceleration = 2,300 research-years in 20 years = 18.5x the 20th century
-    validation_min=0,   # Floor: No benefit (complete failure)
-    validation_max=120  # Ceiling: Accident-limited lifespan (~200 years - 80 baseline)
+    confidence_interval=(5, 100),  # 80% CI: 5 years (minimal progress) to 100 years (LEV achieved)
+    # Physically constrained bounds:
+    #   - 0 years: Complete failure, nothing works
+    #   - 150 years: Accident-limited lifespan (~230 years) minus current (~80 years)
+    # Distribution rationale:
+    #   - 5 years (P10): Minimal progress, similar to single drug class breakthrough
+    #   - 20 years (median): Conservative expectation - disease reduction without aging reversal
+    #   - 100 years (P90): Longevity escape velocity achieved (aging reversal works)
+    # Context: 25x trial capacity + CRISPR + AI drug discovery + epigenetic reprogramming
+    # Key evidence: 109% lifespan extension demonstrated in aged mice (Yamanaka factors)
+    validation_min=0,   # Floor: Complete failure
+    validation_max=150  # Ceiling: Accident-limited lifespan (~230 years - 80 baseline)
 )
 
 REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(

@@ -16,7 +16,7 @@ setup_chart_style()
 # Parameter values
 central_value = 20.0
 low = 5
-high = 50
+high = 100
 dist_type = "lognormal"
 display_name = "Life Extension from Treaty Research Acceleration"
 unit = "years"

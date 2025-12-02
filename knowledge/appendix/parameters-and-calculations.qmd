@@ -1341,15 +1341,15 @@ Estimated total economic impact of Human Genome Project
 
 **Value**: 20
 
-Expected years of life extension from 1% treaty research acceleration (115x trial capacity). Range: 5 years (antibiotic precedent floor) to 70 years (approaching accident-limited lifespan with aging reversal).
+Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.
 
-**Source**: [/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](disease-eradication-personal-lifetime-wealth-calculations)
+**Source**: [longevity-escape-velocity](../references.qmd#longevity-escape-velocity)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [5, 50] • Distribution: Lognormal
+**Technical**: 95% CI: [5, 100] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 5 and 50 (±112%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 and 100 (±238%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

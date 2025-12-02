@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Life Extension Years | 0.5607 | Strong driver |
-| Trial Capacity Multiplier | -0.4680 | Moderate driver |
+| Trial Capacity Multiplier | -0.5403 | Strong driver |
+| Life Extension Years | 0.5002 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

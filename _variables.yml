@@ -1076,14 +1076,14 @@
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Minimum investment for institutional\
   \ investors | ✓ High confidence | Unit: USD | Click to view calculation\">$10M</a>"
-"life_extension_years": "<a href=\"https://warondisease.org/knowledge/references.html#/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
-  \ data-source-type=\"external\" data-confidence=\"low\" title=\"Expected years of\
-  \ life extension from 1% treaty research acceleration (115x trial capacity). Range:\
-  \ 5 years (antibiotic precedent floor) to 70 years (approaching accident-limited\
-  \ lifespan with aging reversal). | ? Low confidence | 95% CI: [5, 50] | Dist: Lognormal\
+"life_extension_years": "<a href=\"https://warondisease.org/knowledge/references.html#longevity-escape-velocity\"\
+  \ class=\"parameter-link\" data-source-ref=\"longevity-escape-velocity\" data-source-type=\"\
+  external\" data-confidence=\"low\" title=\"Expected years of life extension from\
+  \ 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure)\
+  \ to ~150 (accident-limited lifespan minus current). Lognormal distribution allows\
+  \ for breakthrough scenarios. | ? Low confidence | 95% CI: [5, 100] | Dist: Lognormal\
   \ | Unit: years | Click to view source\">20</a>"
-"life_extension_years_cite": "@knowledge-appendix-disease-eradication-personal-lifetime-wealth-calculations"
+"life_extension_years_cite": "@longevity-escape-velocity"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Maximum bond\

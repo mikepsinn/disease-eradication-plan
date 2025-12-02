@@ -53,10 +53,19 @@
       "title": "3.5% participation tipping point",
       "quotes": [
         "\"The research found that nonviolent campaigns were twice as likely to succeed as violent ones, and once 3.5% of the population were involved, they were always successful.\"",
-        "Alternative title: 3.5% rule academic source",
-        "\"Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed.\""
+        "\"Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed.\"",
+        "Key finding: Every campaign that mobilized at least 3.5% of the population in sustained protest was successful (in their 1900-2006 dataset)",
+        "Note: The 3.5% figure is a descriptive statistic from historical analysis, not a guaranteed threshold. One exception (Bahrain 2011-2014 with 6%+ participation) has been identified. The rule applies to regime change, not policy change in democracies."
       ],
       "sources": [
+        {
+          "text": "Harvard Kennedy School, The '3.5% rule': How a small minority can change the world",
+          "url": "https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world"
+        },
+        {
+          "text": "Chenoweth Research Paper (2020)",
+          "url": "https://www.hks.harvard.edu/sites/default/files/2024-05/Erica%20Chenoweth_2020-005.pdf"
+        },
         {
           "text": "BBC Future, 2019, 'The 3.5% rule'",
           "url": "https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world"
@@ -457,6 +466,35 @@
         {
           "text": "ARPA‑H, About",
           "url": "https://arpa-h.gov/"
+        }
+      ]
+    },
+    {
+      "id": "arms-trade-treaty-2013",
+      "title": "Arms Trade Treaty (2013) - Campaign and Adoption",
+      "quotes": [
+        "The Arms Trade Treaty (ATT) regulates international trade in conventional arms. Adopted by UN General Assembly April 2, 2013.",
+        "Campaign duration: 10 years (2003-2013) by Control Arms coalition",
+        "Started with only 3 governments supporting (Mali, Costa Rica, Cambodia); achieved 130 signatories",
+        "Coalition published 50+ reports over the campaign period",
+        "One of the fastest multilateral treaties to enter into force after opening for signature"
+      ],
+      "sources": [
+        {
+          "text": "UN Legal, Arms Trade Treaty",
+          "url": "https://legal.un.org/avl/ha/att/att.html"
+        },
+        {
+          "text": "Control Arms, ATT Overview",
+          "url": "https://controlarms.org/att/"
+        },
+        {
+          "text": "Oxfam America, The International Arms Trade Treaty",
+          "url": "https://www.oxfamamerica.org/about-us/measuring-impact/global-arms-trade-treaty/the-international-arms-trade-treaty/"
+        },
+        {
+          "text": "Arms Control Association, ATT At a Glance",
+          "url": "https://www.armscontrol.org/factsheets/arms_trade_treaty"
         }
       ]
     },
@@ -1598,6 +1636,31 @@
       ]
     },
     {
+      "id": "cluster-munitions-convention-2008",
+      "title": "Convention on Cluster Munitions (2008) - Oslo Process",
+      "quotes": [
+        "The Convention on Cluster Munitions bans the use, production, stockpiling, and transfer of cluster munitions.",
+        "Oslo Process timeline: February 2007 to December 2008 (~2 years)",
+        "46 states signed Oslo Declaration (Feb 2007); 94 states signed convention (Dec 2008)",
+        "Core Group: Norway, Austria, Ireland, Mexico, New Zealand, Peru, Holy See",
+        "Results: 29 States Parties destroyed nearly 1.4 million stockpiled cluster munitions containing 172.9 million submunitions"
+      ],
+      "sources": [
+        {
+          "text": "Convention on Cluster Munitions, Oslo Process",
+          "url": "https://www.clusterconvention.org/oslo-process/"
+        },
+        {
+          "text": "UNIDIR, Unacceptable Harm: History of the Treaty",
+          "url": "https://unidir.org/files/publication/pdfs/unacceptable-harm-a-history-of-how-the-treaty-to-ban-cluster-munitions-was-won-en-258.pdf"
+        },
+        {
+          "text": "CMC, Global Cluster Munition Ban",
+          "url": "https://www.stopclustermunitions.org/en-gb/the-treaty/global-ban.aspx"
+        }
+      ]
+    },
+    {
       "id": "cmmi-overview",
       "title": "CMS Innovation Center (CMMI) Overview",
       "quotes": [
@@ -1749,6 +1812,31 @@
         {
           "text": "Responsible Statecraft, 2021, Top defense firms see \\$2T return on \\$1B investment in Afghan war",
           "url": "https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/"
+        }
+      ]
+    },
+    {
+      "id": "control-arms-coalition",
+      "title": "Control Arms Coalition - Arms Trade Treaty Campaign",
+      "quotes": [
+        "Coalition of 100+ organizations including Amnesty International, Oxfam, and International Action Network on Small Arms (IANSA)",
+        "Campaign duration: 10 years (October 2003 - April 2013)",
+        "Published 50+ reports over the campaign period on various aspects of arms trade regulation",
+        "Campaign tactics: Publicity stunts, mass public actions, Million Faces petition, worldwide consultations, lobbying",
+        "Achievement: Arms Trade Treaty adopted by UN General Assembly April 2013, entered into force December 2014"
+      ],
+      "sources": [
+        {
+          "text": "Wikipedia, Control Arms Campaign",
+          "url": "https://en.wikipedia.org/wiki/Control_Arms_Campaign"
+        },
+        {
+          "text": "Oxfam, How did a global campaign bring about a UN Arms Trade Treaty?",
+          "url": "https://frompoverty.oxfam.org.uk/how-did-a-global-campaign-bring-about-a-un-arms-trade-treaty/"
+        },
+        {
+          "text": "Oxfam Policy, Power and Change: The Arms Trade Treaty",
+          "url": "https://policy-practice.oxfam.org/resources/power-and-change-the-arms-trade-treaty-338471/"
         }
       ]
     },
@@ -5743,15 +5831,66 @@
       ]
     },
     {
-      "id": "icbl-ottawa-treaty",
-      "title": "International Campaign to Ban Landmines (ICBL)",
+      "id": "ican-nuclear-ban-treaty",
+      "title": "International Campaign to Abolish Nuclear Weapons (ICAN) - Treaty on the Prohibition of Nuclear Weapons (2017)",
       "quotes": [
-        "\"The Convention was opened for signature at Ottawa, Canada, by all States from 3 December 1997 until 4 December 1997.\""
+        "ICAN: Founded 2007, headquartered in Geneva, coordinating 468+ partner organizations across 100+ countries (as of 2017)",
+        "Staff: 3 full-time + 2 part-time in Geneva office (when Nobel Prize awarded)",
+        "Funding: Initial grant from Poola Foundation (Australia); Norwegian government grant to establish Geneva office (2011)",
+        "Treaty on the Prohibition of Nuclear Weapons (TPNW): Adopted July 7, 2017 by vote of 122-1 at UN",
+        "Achievement: Nobel Peace Prize 2017 \"for its work to draw attention to the catastrophic humanitarian consequences of any use of nuclear weapons\""
       ],
       "sources": [
         {
-          "text": "ICBL, The Treaty",
-          "url": "https://treaties.un.org/pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XXVI-5&chapter=26&clang=_en"
+          "text": "ICAN, History",
+          "url": "https://www.icanw.org/ican_history"
+        },
+        {
+          "text": "Wikipedia, International Campaign to Abolish Nuclear Weapons",
+          "url": "https://en.wikipedia.org/wiki/International_Campaign_to_Abolish_Nuclear_Weapons"
+        },
+        {
+          "text": "Nobel Prize, 2017 Peace Prize",
+          "url": "https://www.nobelprize.org/prizes/peace/2017/ican/facts/"
+        },
+        {
+          "text": "ICAN, The Treaty",
+          "url": "https://www.icanw.org/the_treaty"
+        }
+      ]
+    },
+    {
+      "id": "icbl-ottawa-treaty",
+      "title": "International Campaign to Ban Landmines (ICBL) - Ottawa Treaty (1997)",
+      "quotes": [
+        "ICBL: Founded 1992 by 6 NGOs (Handicap International, Human Rights Watch, Medico International, Mines Advisory Group, Physicians for Human Rights, Vietnam Veterans of America Foundation)",
+        "Started with ONE staff member: Jody Williams as founding coordinator",
+        "Grew to 1,000+ organizations in 60 countries by 1997",
+        "Ottawa Process: 14 months (October 1996 - December 1997)",
+        "Convention signed by 122 states on December 3, 1997; entered into force March 1, 1999",
+        "Achievement: Nobel Peace Prize 1997 (shared by ICBL and Jody Williams)",
+        "Government funding context: Canada established $100M CAD Canadian Landmine Fund over 10 years (1997); International donors provided $169M in 1997 for mine action (up from $100M in 1996)"
+      ],
+      "sources": [
+        {
+          "text": "ICRC, Ottawa Treaty History",
+          "url": "https://www.icrc.org/en/doc/resources/documents/article/other/57jpjn.htm"
+        },
+        {
+          "text": "Wikipedia, International Campaign to Ban Landmines",
+          "url": "https://en.wikipedia.org/wiki/International_Campaign_to_Ban_Landmines"
+        },
+        {
+          "text": "Nobel Prize, 1997 Peace Prize",
+          "url": "https://www.nobelprize.org/prizes/peace/1997/summary/"
+        },
+        {
+          "text": "UN Press, ICBL Press Conference 1999",
+          "url": "https://un.org/press/en/1999/19990520.MINES.BRF.html"
+        },
+        {
+          "text": "Landmine Monitor, Mine Action Funding",
+          "url": "https://www.the-monitor.org/en-gb/reports/2003/landmine-monitor-2003/mine-action-funding.aspx"
         }
       ]
     },
@@ -6925,6 +7064,41 @@
         {
           "text": "Taxpayer.net: Military Industry Political Footprint",
           "url": "https://www.taxpayer.net/wp-content/uploads/2024/10/Oct-2024-Political-Footprint-of-the-Military-Industry.pdf"
+        }
+      ]
+    },
+    {
+      "id": "longevity-escape-velocity",
+      "title": "Longevity Escape Velocity (LEV) - Maximum Human Life Extension Potential",
+      "quotes": [
+        "Longevity escape velocity: Hypothetical point where medical advances extend life expectancy faster than time passes",
+        "Term coined by Aubrey de Grey (biogerontologist) in 2004 paper; concept from David Gobel (Methuselah Foundation)",
+        "Current progress: Science adds ~3 months to lifespan per year; LEV requires adding >1 year per year",
+        "Sinclair (Harvard): \"There is no biological upper limit to age\" - first person to live to 150 may already be born",
+        "De Grey: 50% chance of reaching LEV by mid-to-late 2030s; SENS approach = damage repair rather than slowing damage",
+        "Kurzweil (2024): LEV by 2029-2035, AI will simulate biological processes to accelerate solutions",
+        "George Church: LEV \"in a decade or two\" via age-reversal clinical trials",
+        "Natural lifespan cap: ~120-150 years (Jeanne Calment record: 122); engineering approach could bypass via damage repair",
+        "Key mechanisms: Epigenetic reprogramming, senolytic drugs, stem cell therapy, gene therapy, AI-driven drug discovery",
+        "Current record: Jeanne Calment (122 years, 164 days) - record unbroken since 1997",
+        "Note: LEV is theoretical but increasingly plausible given demonstrated age reversal in mice (109% lifespan extension) and human cells (30-year epigenetic age reversal)"
+      ],
+      "sources": [
+        {
+          "text": "Wikipedia: Longevity Escape Velocity",
+          "url": "https://en.wikipedia.org/wiki/Longevity_escape_velocity"
+        },
+        {
+          "text": "PMC: Escape Velocity - Why Life Extension Matters Now",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC423155/"
+        },
+        {
+          "text": "Popular Mechanics: Can Science Cure Death?",
+          "url": "https://www.popularmechanics.com/science/a36712084/can-science-cure-death-longevity/"
+        },
+        {
+          "text": "Diamandis: Longevity Escape Velocity",
+          "url": "https://www.diamandis.com/blog/longevity-escape-velocity"
         }
       ]
     },
