@@ -3355,6 +3355,9 @@ def main():
     print(f"[OK] Found {len(parameters)} numeric parameters")
     print()
 
+    # Track fatal validation errors
+    has_fatal_error = False
+
     # Validate that all external source_refs exist in references.qmd
     print("[*] Validating external source references...")
     missing_refs, used_refs = validate_references(parameters, available_refs)
@@ -3400,6 +3403,7 @@ def main():
         print("[ERROR] Calculated parameters should derive uncertainty from inputs via compute function.", file=sys.stderr)
         print("[ERROR] Remove confidence_interval/distribution/std_error from these calculated parameters.", file=sys.stderr)
         print("[ERROR] Add uncertainty to their INPUT parameters instead.", file=sys.stderr)
+        has_fatal_error = True
         print()
     else:
         print("[OK] All calculated parameters derive uncertainty from inputs")
@@ -3437,6 +3441,7 @@ def main():
                 print(f"  ... and {len(missing_issues) - 10} more", file=sys.stderr)
             print(file=sys.stderr)
             print("[ERROR] Add these to the 'inputs' list for proper uncertainty propagation.", file=sys.stderr)
+            has_fatal_error = True
 
         if extra_issues:
             print(f"[WARN] {len(extra_issues)} parameters have unused inputs (not fatal):")
@@ -3459,10 +3464,16 @@ def main():
             print(f"  ... and {len(inline_issues) - 10} more", file=sys.stderr)
         print(file=sys.stderr)
         print("[ERROR] Add 'inputs' and 'compute' to these parameters for uncertainty propagation.", file=sys.stderr)
+        has_fatal_error = True
         print()
     else:
         print("[OK] All inline calculations have inputs/compute metadata")
         print()
+
+    # Exit early if validation errors found
+    if has_fatal_error:
+        print("[FATAL] Validation errors found. Fix the issues above before continuing.", file=sys.stderr)
+        sys.exit(1)
 
     # Generate _variables.yml
     print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")

@@ -38,7 +38,7 @@ for thresh in thresholds:
     exceed_pct = (np.array(samples) >= thresh).sum() / len(samples) * 100
     ax.axvline(thresh, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
     ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
-    
+
     # Add label with formatted threshold value (use format_parameter_value for full units)
     ax.annotate(f'{exceed_pct:.0f}% chance\n≥ {format_parameter_value(thresh, units)}',
                 xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
