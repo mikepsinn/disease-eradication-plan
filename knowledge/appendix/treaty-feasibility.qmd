@@ -72,9 +72,9 @@ We aren't trying to buy the treaty. We are buying the **machinery** that makes t
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **1% central estimate** with a **0.1%-25% confidence interval**.
+For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
 
-**Key insight**: Even at 1% probability of success, this intervention's expected cost per DALY (~$7) is still **7x more cost-effective** than malaria bed nets (~$50/DALY), the gold standard of global health interventions.
+**Key insight**: Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}}x more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY), the gold standard of global health interventions.
 
 ### Historical Precedents for International Financial Commitments
 
@@ -111,24 +111,24 @@ Based on this analysis, economists would find the following defensible:
 | Scenario | Probability | Rationale |
 |:---------|:------------|:----------|
 | **Pessimistic floor** | 0.1% | Near-impossible - complete political gridlock, competing global crises |
-| **Conservative central** | 1% | Assumes 99% failure rate - yet still 7x better than bed nets |
+| **Conservative central** | {{< var political_success_probability >}} | Assumes 99% failure rate - yet still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets |
 | **Optimistic ceiling** | 25% | Major crisis creates political window; unique self-funding advantage |
 
-**Our model uses**: Central estimate **1%**, 95% CI **[0.1%, 25%]**
+**Our model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
 
 This is deliberately ultra-conservative. An economist reviewing our expected value calculations should find:
-- The 1% central estimate assumes a **99% chance of complete failure**
+- The {{< var political_success_probability >}} central estimate assumes a **99% chance of complete failure**
 - The 0.1% floor admits this could be nearly impossible
-- Even at 1%, expected cost/DALY (~$7) beats bed nets (~$50) by 7x
+- Even at {{< var political_success_probability >}}, expected cost/DALY ({{< var treaty_expected_cost_per_daly >}}) beats bed nets ({{< var bed_nets_cost_per_daly >}}) by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
 - The 25% ceiling reflects that partial success or crisis-driven adoption is possible
 
 ### Expected Value Implications
 
-At 1% probability of success:
+At {{< var political_success_probability >}} probability of success:
 - **Expected ROI**: {{< var dfda_expected_roi >}}:1 (still positive)
-- **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} (still 7x better than bed nets)
+- **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} (still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets)
 
 The intervention remains economically justified even assuming a 99% chance of failure because:
 1. The conditional benefits ({{< var treaty_roi_lag_elimination >}}:1 ROI if successful) are enormous
-2. Even the expected value at 1% success beats the best alternative by 7x
+2. Even the expected value at {{< var political_success_probability >}} success beats the best alternative by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
 3. The downside is capped at campaign cost (~$1B), while upside is unbounded
