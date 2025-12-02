@@ -316,12 +316,12 @@
 "dfda_expected_roi": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected\
   \ ROI for 1% treaty accounting for political success probability uncertainty. Monte\
-  \ Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(5%, 50%) distribution to\
-  \ generate full expected value distribution. Central value uses 25% probability.\
+  \ Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution\
+  \ to generate full expected value distribution. Central value uses 1% probability.\
   \ | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY\
   \ | Click to view calculation\">11,914</a>"
-"dfda_expected_roi_latex": "$$\nE[ROI] = ROI_{conditional} \\times P_{success} = 1{,}286{,}242\
-  \ \\times 0.25 = 321{,}561\n$$"
+"dfda_expected_roi_latex": "$$\nE[ROI] = ROI_{conditional} \\times P_{success} = ROI_{treaty}\
+  \ \\times 0.01\n$$"
 "dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
@@ -1637,12 +1637,12 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
   \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected cost\
   \ per DALY accounting for political success probability uncertainty. Monte Carlo\
-  \ samples from beta(5%, 50%) distribution. At the central 25% estimate, this is\
-  \ ~174x more cost-effective than bed nets ($89.0/DALY). | ? Low confidence | Formula:\
-  \ CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY | Unit: USD/DALY | Click\
-  \ to view calculation\">$13</a>"
-"treaty_expected_cost_per_daly_latex": "$$\nE[\\text{Cost/DALY}] = \\frac{\\$0.127}{0.25}\
-  \ = \\$0.51\n$$"
+  \ samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate,\
+  \ this is still more cost-effective than bed nets ($89.0/DALY). | ? Low confidence\
+  \ | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY | Unit: USD/DALY\
+  \ | Click to view calculation\">$13</a>"
+"treaty_expected_cost_per_daly_latex": "$$\nE[\\text{Cost/DALY}] = \\frac{\\text{Cost}_{conditional}}{P_{success}}\n\
+  $$"
 "treaty_expected_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"\
   parameters.TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER\">7.07</span>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\

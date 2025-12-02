@@ -17,7 +17,7 @@ tags:
 from dih_models.parameters import *
 ```
 
-The dFDA costs $40M/year to run.
+Your dFDA costs $40M/year to run.
 It saves {{< var dfda_rd_gross_savings_annual >}}/year in clinical trial waste.
 That's {{< var treaty_complete_roi_all_benefits >}}:1 returns (recommended estimate including post-safety efficacy lag elimination).
 
@@ -35,7 +35,7 @@ The Oxford RECOVERY trial proved humans can do the same thing for **$500 per pat
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)
 - Focusing on what actually matters: does the patient live or die? (not "did they complete form 27-B in triplicate?")
 
-The dFDA takes this model global. **80-160x cost reduction**. Same quality data. Better real-world applicability. Turns out you don't need 17 committees to ask "did the medicine work?"
+Your dFDA takes this model global. **80-160x cost reduction**. Same quality data. Better real-world applicability. Turns out you don't need 17 committees to ask "did the medicine work?"
 
 ## Where the $50 Billion Comes From
 
@@ -64,7 +64,7 @@ Every day we don't implement this represents a massive societal cost: **{{< var 
 
 ## The Platform Cost Breakdown
 
-The dFDA costs approximately **$40M annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
+Your dFDA costs approximately **$40M annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
 
 **For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd).
 
@@ -89,7 +89,7 @@ Simple: The people getting rich from the current system aren't the ones paying f
 - **Pharma** passes costs to patients anyway
 - **Patients** have no power to change the system they're dying in
 
-Until now. The dFDA changes the game by aligning incentives: everyone profits from efficiency.
+Until now. Your dFDA changes the game by aligning incentives: everyone profits from efficiency.
 
 ## The ROI
 

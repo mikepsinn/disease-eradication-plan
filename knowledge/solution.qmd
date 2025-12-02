@@ -117,7 +117,7 @@ Your decentralized framework for drug assessment (dFDA) does three things:
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on the dFDA platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
+Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on your dFDA platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
@@ -178,7 +178,7 @@ Insurance companies have a simple preference: They want you either dead or immor
 
 Dead people file zero claims. Immortal healthy people file zero claims. Currently sick people cost billions.
 
-The dFDA moves people from "currently sick" to either "dead" (whoops) or "cured" (success). Either way, the insurance company pays less.
+Your dFDA moves people from "currently sick" to either "dead" (whoops) or "cured" (success). Either way, the insurance company pays less.
 
 Insurance companies have been trying to achieve this for fifty years but couldn't because the FDA makes cures impossible.
 
@@ -262,7 +262,7 @@ The rest of Part II explains each component in detail:
 - How to structure a 1% treaty so countries actually sign it
 - How to build your DIH so it can't be corrupted
 - How Wishocracy prevents lobbyists from stealing all the money
-- How the dFDA achieves {{< var trial_cost_reduction_factor >}}× cost reduction
+- How your dFDA achieves {{< var trial_cost_reduction_factor >}}× cost reduction
 - How everyone makes money
 - How to make selfishness save humanity
 

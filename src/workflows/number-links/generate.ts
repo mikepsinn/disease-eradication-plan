@@ -155,7 +155,7 @@ Good replacement:
 
 Bad replacement:
 - find: "$40 million"
-- replace: "The dFDA costs only {{< var dfda_build_cost >}} to build"
+- replace: "A dFDA costs only {{< var dfda_build_cost >}} to build"
 (This changes the whole sentence!)
 
 Good replacement:

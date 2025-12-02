@@ -246,7 +246,7 @@
   - Capture-proof because there's nothing to capture at the top level:
     - No central committee to bribe for a specific research grant
     - No gatekeeper to influence for trial funding
-    - Can't stop others from launching competing trials on the dFDA
+    - Can't stop others from launching competing trials on your dFDA
     - Gaming the high-level budget is economically impossible
     - Billions of votes determine the allocation percentages, not specific winners
 
@@ -449,7 +449,7 @@
     - Coordinate to avoid duplication (500 cancer nonprofits currently duplicate grant applications)
   - **Phase 2 (AFTER Treaty Passes):**
     - Coordinate distribution of $27B treaty funds via Wishocracy
-    - Execute decentralized trials funded by patient subsidies on the dFDA platform
+    - Execute decentralized trials funded by patient subsidies on a dFDA platform
     - Shift from "beg for grants" to "allocate treaty resources efficiently"
 
 - **How Positron Helps Nonprofits NOW (The Selfish Benefits)**
@@ -471,7 +471,7 @@
     - Coordinate trial recruitment (avoid competing for same participants)
   - **Automating dFDA Trial Execution**:
     - Agents recruit trial participants from Wishocracy's prioritized list
-    - Match participants to trials on the dFDA platform
+    - Match participants to trials on a dFDA platform
     - Track outcomes, analyze data, report results
     - Coordinate between labs running different arms of same study
   - **The Network Effect**:
@@ -703,7 +703,7 @@ Each of these alone is worth tens to hundreds of billions. Together? $1.22 trill
 
 #### The 9-Year Acceleration
 
-**The insight:** The dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
+**The insight:** A dFDA gives patients the right and ability to access treatments during Phase 2/3 trials instead of waiting 9.1 years for FDA approval (or forever if trials are never completed for their condition).
 
 **How the acceleration works:**
 
@@ -1097,7 +1097,7 @@ Trying to use one tool for all three jobs is like trying to build a house with o
   - **What It Does (Legally):**
     - **Research:** Funds the academic and economic studies that prove the system is broken.
     - **Education:** Runs public awareness campaigns and publishes findings.
-    - **Software Development:** Funds the open-source creation of the dFDA and Wishocracy platforms as public goods.
+    - **Software Development:** Funds the open-source creation of a dFDA and Wishocracy platforms as public goods.
   - **What It CANNOT Do:** It cannot engage in substantial political lobbying. It can educate and inform, but it cannot tell people to vote for the treaty.
 
 - **2. The DIH Action Fund (The "Sword" - US 501(c)(4) Social Welfare Org)**

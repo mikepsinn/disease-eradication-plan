@@ -26,7 +26,7 @@ This isn't because people don't want to help find cures. It's because the curren
 
 ## The Solution: Amazon for Clinical Trials
 
-The dFDA is a **two-sided marketplace** that connects companies with treatments to patients who need them. It's Amazon, but instead of buying stuff you don't need, you're getting paid to help find cures.
+Your dFDA is a **two-sided marketplace** that connects companies with treatments to patients who need them. It's Amazon, but instead of buying stuff you don't need, you're getting paid to help find cures.
 
 ### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
 
@@ -84,7 +84,7 @@ Research ideas → Grant committees → Selected few → $57M per trial → ~10 
 Research ideas → Register instantly → Patients decide by joining → $0 per trial → Unlimited trials simultaneously
 ```
 
-**This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. The dFDA marketplace can test EVERYTHING because:
+**This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. Your dFDA marketplace can test EVERYTHING because:
 
 - No approval bottleneck (instant registration)
 - No funding bottleneck (patients pay for treatment)
@@ -118,7 +118,7 @@ We're basing the survival of our species on a sample size smaller than a kinderg
 
 ### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-The dFDA is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
+Your dFDA is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
 
 Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
 
@@ -136,7 +136,7 @@ We have the tools to get reliable answers from real-world data. We just have to 
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
-The dFDA upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
+Your dFDA upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
 
 Here's the revolutionary process:
 
@@ -178,7 +178,7 @@ No more guessing which treatment your doctor half-remembers from a conference. J
 
 ### Step 2.5: See the Future (With Financially-Backed Predictions)
 
-To complement the real-world data from past patients, the dFDA will integrate a powerful forecasting tool: **live prediction markets**.
+To complement the real-world data from past patients, your dFDA will integrate a powerful forecasting tool: **live prediction markets**.
 
 This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
 
@@ -191,7 +191,7 @@ For any given trial, you'll see real-time odds on questions like:
 #### Why Trust This?
 
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: [The DIH](dih.qmd) automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by the dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
+2.  **The Ultimate Fact-Checker**: [The DIH](dih.qmd) automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by your dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
@@ -215,7 +215,7 @@ Revolutionary!
 
 Amazon can deliver a banana costume in 2 hours but experimental medications take 6 months and require seven forms of ID?
 
-The dFDA fixes that. Your pharmacy becomes a trial site. Your doctor becomes a researcher. Your dying becomes data.
+Your dFDA fixes that. Your pharmacy becomes a trial site. Your doctor becomes a researcher. Your dying becomes data.
 
 ### Step 5: Report Results Without a PhD in Paperwork
 
@@ -251,7 +251,7 @@ Here's what we ARE doing: establishing an open protocol that lets all the existi
 
 Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP - the protocol that lets all websites connect. Same idea.
 
-**How the dFDA gets funded:** The dFDA is one of many campaigns competing for funding from the [DIH](dih.qmd) treasury via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If the dFDA gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
+**How your dFDA gets funded:** Your dFDA is one of many campaigns competing for funding from the [DIH](dih.qmd) treasury via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If your dFDA gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
 
 ### The Players Already in the Game
 
@@ -259,7 +259,7 @@ Companies like [Medable](../references.qmd#dct-platform-funding-medable) ($521M 
 
 Why compete with them? Partner instead.
 
-**The dFDA provides**:
+**Your dFDA provides**:
 
 - Open protocol for data exchange (like email protocols)
 - Federated data network (data stays in Epic/Cerner/Apple Health systems)
@@ -330,7 +330,7 @@ Data doesn't move to a central database. It stays where it is:
 - Apple Health keeps its data
 - Cerner keeps its data
 
-The dFDA protocol just lets you run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
+Your dFDA protocol just lets you run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
 
 This solves:
 
@@ -607,13 +607,13 @@ Diseases are mostly solved. Death becomes a choice, like smoking or voting Repub
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
 
-### How the dFDA Actually Works
+### How your dFDA Actually Works
 
 ::: {.content-visible when-format="html"}
-<img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how the dFDA works" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how your dFDA works" style="max-width: 600px; width: 100%;" />
 :::
 
-The dFDA achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
+Your dFDA achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
 
 - **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - **Time to results**: 2 years vs the current 17 years
