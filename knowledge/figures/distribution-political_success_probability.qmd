@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Optimistic Estimate of Political Success Probability"
+#| fig-cap: "Probability Distribution: Political Success Probability"
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
@@ -14,12 +14,12 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # Parameter values
-central_value = 0.5
-low = 0.20600000000000002
-high = 0.794
+central_value = 0.25
+low = 0.05
+high = 0.5
 dist_type = "beta"
-display_name = "Optimistic Estimate of Political Success Probability"
-unit = ""
+display_name = "Political Success Probability"
+unit = "rate"
 
 # Calculate distribution parameters
 if dist_type == "lognormal":
@@ -112,7 +112,7 @@ ax.set_ylim(bottom=0)
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
-output_path = get_figure_output_path('distribution-political_success_probability_optimistic.png')
+output_path = get_figure_output_path('distribution-political_success_probability.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

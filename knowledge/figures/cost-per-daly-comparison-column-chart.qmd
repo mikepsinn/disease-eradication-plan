@@ -43,8 +43,8 @@ interventions = {
         'category': 'givewell-top',
         'note': 'GiveWell top charity'
     },
-    '1% treaty + dFDA\n(Expected Value,\n10% Success)': {
-        'cost_per_daly': float(TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE),  # $1.27
+    '1% treaty + dFDA\n(Risk-Adjusted\nExpected Value)': {
+        'cost_per_daly': float(TREATY_EXPECTED_COST_PER_DALY),  # $0.51 at 25% probability
         'category': 'proposed-expected',
         'note': 'Accounts for political risk'
     },

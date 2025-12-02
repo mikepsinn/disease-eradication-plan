@@ -1,10 +1,10 @@
-**Sensitivity Indices for Expected Cost per DALY (Conservative 10% Success)**
+**Sensitivity Indices for Expected Cost per DALY (Risk-Adjusted)**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Political Success Probability Conservative | -0.7925 | Strong driver |
-| Treaty dFDA Cost Per DALY Timeline Shift | 0.4556 | Moderate driver |
+| Political Success Probability | -0.7682 | Strong driver |
+| Treaty dFDA Cost Per DALY Timeline Shift | 0.2508 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

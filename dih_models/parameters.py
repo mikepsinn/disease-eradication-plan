@@ -2964,78 +2964,27 @@ DFDA_ROI_RD_ONLY = Parameter(
 # POLITICAL SUCCESS PROBABILITY AND EXPECTED VALUE ANALYSIS
 # ---
 
-# Political success probability estimates
-POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC = Parameter(
-    0.001,
+# Single political success probability parameter with full uncertainty distribution
+# Replaces 6 discrete probability parameters - Monte Carlo/sensitivity analysis handles the range
+POLITICAL_SUCCESS_PROBABILITY = Parameter(
+    0.25,  # Central estimate: 25% (moderate baseline based on historical treaty adoption)
     source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
     source_type="external",
     confidence="low",
-    description="Extremely pessimistic estimate of political success probability (0.1%)",
-    display_name="Extremely Pessimistic Estimate of Political Success Probability",
-    keywords=["0.1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "worst case"],
-    distribution="beta",  # Probability bounded [0,1], appropriate for uncertain rare events
-    std_error=0.0005,  # ±50%: high uncertainty on very small probability
+    description="Estimated probability of treaty ratification and sustained implementation. "
+                "Central estimate 25% based on historical treaty adoption rates (Ottawa Treaty, Paris Agreement). "
+                "Wide uncertainty range (5%-50%) reflects geopolitical uncertainty.",
+    display_name="Political Success Probability",
+    unit="rate",
+    distribution=DistributionType.BETA,  # Bounded [0,1], appropriate for probabilities
+    confidence_interval=(0.05, 0.50),  # 5th percentile: 5%, 95th percentile: 50%
+    std_error=0.12,  # ~48% CV reflects high uncertainty
+    keywords=["probability", "political", "treaty", "ratification", "implementation", "uncertainty",
+              "adoption", "success", "campaign", "voting", "referendum"],
 )
 
-POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC = Parameter(
-    0.01,
-    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
-    source_type="external",
-    confidence="low",
-    description="Very pessimistic estimate of political success probability (1%)",
-    display_name="Very Pessimistic Estimate of Political Success Probability",
-    keywords=["1%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance", "pessimistic"],
-    distribution="beta",  # Probability bounded [0,1]
-    std_error=0.005,  # ±50%: high uncertainty on low probability
-)
-
-POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE = Parameter(
-    0.10,
-    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
-    source_type="external",
-    confidence="medium",
-    description="Conservative estimate of political success probability (10%)",
-    display_name="Conservative Estimate of Political Success Probability",
-    keywords=["10%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"],
-    distribution="beta",  # Probability bounded [0,1]
-    std_error=0.03,  # ±30%: moderate uncertainty
-)
-
-POLITICAL_SUCCESS_PROBABILITY_MODERATE = Parameter(
-    0.25,
-    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
-    source_type="external",
-    confidence="medium",
-    description="Moderate estimate of political success probability (25%)",
-    display_name="Moderate Estimate of Political Success Probability",
-    keywords=["25%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"],
-    distribution="beta",  # Probability bounded [0,1]
-    std_error=0.075,  # ±30%: moderate uncertainty
-)
-
-POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH = Parameter(
-    0.40,
-    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
-    source_type="external",
-    confidence="medium",
-    description="Moderate-high estimate of political success probability (40%)",
-    display_name="Moderate-High Estimate of Political Success Probability",
-    keywords=["40%", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate", "acceptance"],
-    distribution="beta",  # Probability bounded [0,1]
-    std_error=0.12,  # ±30%: moderate uncertainty
-)
-
-POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC = Parameter(
-    0.50,
-    source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
-    source_type="external",
-    confidence="medium",
-    description="Optimistic estimate of political success probability (50%)",
-    display_name="Optimistic Estimate of Political Success Probability",
-    keywords=["50%", "deployment rate", "high estimate", "market penetration", "participation rate", "best case", "uptake"],
-    distribution="beta",  # Probability bounded [0,1]
-    std_error=0.15,  # ±30%: moderate uncertainty
-)
+# NOTE: DFDA_EXPECTED_ROI is defined later in the file (after TREATY_ROI_LAG_ELIMINATION)
+# because it depends on that parameter which is calculated from other treaty parameters.
 
 # ---
 # VICTORY SOCIAL IMPACT BONDS
@@ -3698,90 +3647,27 @@ TREATY_ROI_INNOVATION_ACCELERATION = Parameter(
 # TODO: Refactor 16 files using this to use TREATY_ROI_LAG_ELIMINATION directly
 TREATY_COMPLETE_ROI_ALL_BENEFITS = TREATY_ROI_LAG_ELIMINATION  # Alias to PRIMARY (lag elimination) ROI
 
-# Expected ROI accounting for political implementation risk
-# Using PRIMARY health benefit tier (lag elimination) rather than R&D-only
-DFDA_EXPECTED_ROI_0_1PCT_POLITICAL_SUCCESS = Parameter(
-    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC),
+# ---
+# EXPECTED ROI WITH POLITICAL UNCERTAINTY
+# ---
+
+# Expected ROI accounting for political implementation uncertainty
+# Uses the uncertain POLITICAL_SUCCESS_PROBABILITY - Monte Carlo will sample the full distribution
+DFDA_EXPECTED_ROI = Parameter(
+    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY),
     source_ref="calculated",
     source_type="calculated",
-    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC",
-    latex=r"E[ROI]_{\text{0.1\%}} = 1{,}286{,}242 \times 0.001 = 1{,}286",
+    description="Expected ROI for 1% treaty accounting for political success probability uncertainty. "
+                "Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(5%, 50%) distribution "
+                "to generate full expected value distribution. Central value uses 25% probability.",
+    display_name="Expected Treaty ROI (Risk-Adjusted)",
+    formula="TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY",
+    latex=r"E[ROI] = ROI_{conditional} \times P_{success} = 1{,}286{,}242 \times 0.25 = 321{,}561",
     confidence="low",
-    description="Expected ROI for 1% treaty accounting for 0.1% political success probability (extremely pessimistic estimate)",
-    display_name="Expected Treaty ROI with 0.1% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "worst case", "extremely pessimistic"],
-    inputs=["TREATY_ROI_LAG_ELIMINATION", "POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC"],
-    compute=lambda ctx: ctx["TREATY_ROI_LAG_ELIMINATION"] * ctx["POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC"],
-)
-
-DFDA_EXPECTED_ROI_1PCT_POLITICAL_SUCCESS = Parameter(
-    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC",
-    latex=r"E[ROI]_{\text{1\%}} = 1{,}286{,}242 \times 0.01 = 12{,}862",
-    confidence="low",
-    description="Expected ROI for 1% treaty accounting for 1% political success probability (very pessimistic estimate)",
-    display_name="Expected Treaty ROI with 1% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "pessimistic"],
-    inputs=['POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC', 'TREATY_ROI_LAG_ELIMINATION'],
-    compute=lambda ctx: float(ctx["TREATY_ROI_LAG_ELIMINATION"]) * float(ctx["POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC"]),
-)
-
-DFDA_EXPECTED_ROI_10PCT_POLITICAL_SUCCESS = Parameter(
-    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
-    latex=r"E[ROI]_{\text{10\%}} = 1{,}286{,}242 \times 0.10 = 128{,}624",
-    confidence="medium",
-    description="Expected ROI for 1% treaty accounting for 10% political success probability (conservative estimate)",
-    display_name="Expected Treaty ROI with 10% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "conservative"],
-    inputs=['POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE', 'TREATY_ROI_LAG_ELIMINATION'],
-    compute=lambda ctx: float(ctx["TREATY_ROI_LAG_ELIMINATION"]) * float(ctx["POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE"]),
-)
-
-DFDA_EXPECTED_ROI_25PCT_POLITICAL_SUCCESS = Parameter(
-    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_MODERATE",
-    latex=r"E[ROI]_{\text{25\%}} = 1{,}286{,}242 \times 0.25 = 321{,}561",
-    confidence="medium",
-    description="Expected ROI for 1% treaty accounting for 25% political success probability (moderate estimate)",
-    display_name="Expected Treaty ROI with 25% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate"],
-    inputs=['POLITICAL_SUCCESS_PROBABILITY_MODERATE', 'TREATY_ROI_LAG_ELIMINATION'],
-    compute=lambda ctx: float(ctx["TREATY_ROI_LAG_ELIMINATION"]) * float(ctx["POLITICAL_SUCCESS_PROBABILITY_MODERATE"]),
-)
-
-DFDA_EXPECTED_ROI_40PCT_POLITICAL_SUCCESS = Parameter(
-    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH",
-    latex=r"E[ROI]_{\text{40\%}} = 1{,}286{,}242 \times 0.40 = 514{,}497",
-    confidence="medium",
-    description="Expected ROI for 1% treaty accounting for 40% political success probability (moderate-high estimate)",
-    display_name="Expected Treaty ROI with 40% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "bcr", "chance", "risk", "benefit cost ratio", "economic return", "moderate-high"],
-    inputs=['POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH', 'TREATY_ROI_LAG_ELIMINATION'],
-    compute=lambda ctx: float(ctx["TREATY_ROI_LAG_ELIMINATION"]) * float(ctx["POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH"]),
-)
-
-DFDA_EXPECTED_ROI_50PCT_POLITICAL_SUCCESS = Parameter(
-    float(TREATY_ROI_LAG_ELIMINATION) * float(POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC),
-    source_ref="calculated",
-    source_type="calculated",
-    formula="TREATY_ROI_LAG_ELIMINATION * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC",
-    latex=r"E[ROI]_{\text{50\%}} = 1{,}286{,}242 \times 0.50 = 643{,}121",
-    confidence="medium",
-    description="Expected ROI for 1% treaty accounting for 50% political success probability (optimistic estimate)",
-    display_name="Expected Treaty ROI with 50% Political Success Probability",
-    keywords=["pragmatic trials", "real world evidence", "high estimate", "bcr", "best case", "ambitious", "chance", "optimistic"],
-    inputs=['POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC', 'TREATY_ROI_LAG_ELIMINATION'],
-    compute=lambda ctx: float(ctx["TREATY_ROI_LAG_ELIMINATION"]) * float(ctx["POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC"]),
+    keywords=["expected value", "risk-adjusted", "political risk", "bcr", "benefit cost ratio",
+              "economic return", "uncertainty", "monte carlo", "321561"],
+    inputs=["TREATY_ROI_LAG_ELIMINATION", "POLITICAL_SUCCESS_PROBABILITY"],
+    compute=lambda ctx: ctx["TREATY_ROI_LAG_ELIMINATION"] * ctx["POLITICAL_SUCCESS_PROBABILITY"],
 )
 
 # Scale Comparison Parameters (demonstrating intervention magnitude)
@@ -3961,20 +3847,24 @@ TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT = Parameter(
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DISEASE_ERADICATION_DELAY_DALYS"]
 )  # $0.127 per DALY (~700x better than bed nets, while being self-funding)
 
-TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE = Parameter(
-    TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT / POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE,
+# Expected cost per DALY using the unified political success probability
+# The "conservative" label is retained for compatibility, but uses the unified parameter
+TREATY_EXPECTED_COST_PER_DALY = Parameter(
+    TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT / POLITICAL_SUCCESS_PROBABILITY,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
-    description=f"Expected cost per DALY accounting for 10% political success probability (conservative estimate). Even at this pessimistic probability (1 in 10 chance of success), the intervention is still {int(BED_NETS_COST_PER_DALY/1.27)}x more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY) and comparable to deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called a 'bold gamble' that succeeded with 164 countries signing.",
-    display_name="Expected Cost per DALY (Conservative 10% Success)",
+    description=f"Expected cost per DALY accounting for political success probability uncertainty. "
+                f"Monte Carlo samples from beta(5%, 50%) distribution. At the central 25% estimate, "
+                f"this is ~{int(BED_NETS_COST_PER_DALY/0.51)}x more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+    display_name="Expected Cost per DALY (Risk-Adjusted)",
     unit="USD/DALY",
-    formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE",
-    latex=r"E[\text{Cost/DALY}]_{10\%} = \frac{\$0.127}{0.10} = \$1.27",
-    confidence="medium",
-    keywords=["expected value", "probability weighted", "cost effectiveness", "conservative", "gates foundation", "givewell", "political risk", "10 percent"],
-    inputs=["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT", "POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE"],
-    compute=lambda ctx: ctx["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT"] / ctx["POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE"],
-)  # $1.27 per DALY (still ~70x better than bed nets, accounting for political risk)
+    formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
+    latex=r"E[\text{Cost/DALY}] = \frac{\$0.127}{0.25} = \$0.51",
+    confidence="low",
+    keywords=["expected value", "probability weighted", "cost effectiveness", "gates foundation", "givewell", "political risk", "uncertainty"],
+    inputs=["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT", "POLITICAL_SUCCESS_PROBABILITY"],
+    compute=lambda ctx: ctx["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT"] / ctx["POLITICAL_SUCCESS_PROBABILITY"],
+)  # $0.51 per DALY at 25% probability (still ~175x better than bed nets)
 
 # Cost-effectiveness multipliers vs. bed nets
 TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
@@ -3991,16 +3881,16 @@ TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
 )
 
 TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
-    BED_NETS_COST_PER_DALY / TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE,
+    BED_NETS_COST_PER_DALY / TREATY_EXPECTED_COST_PER_DALY,
     source_type="calculated",
-    description="Expected value multiplier vs bed nets at 10% success probability",
+    description="Expected value multiplier vs bed nets (accounts for political uncertainty)",
     display_name="Expected Cost-Effectiveness vs Bed Nets Multiplier",
     unit="ratio",
     formula="BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-    latex=r"E[\text{Multiplier}] = \frac{\$89}{\$1.27} = 70\times",
-    confidence="medium",
-    inputs=['BED_NETS_COST_PER_DALY', 'TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE'],
-    compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["TREATY_EXPECTED_COST_PER_DALY_CONSERVATIVE"],
+    latex=r"E[\text{Multiplier}] = \frac{\$89}{\$0.51} = 175\times",
+    confidence="low",
+    inputs=['BED_NETS_COST_PER_DALY', 'TREATY_EXPECTED_COST_PER_DALY'],
+    compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["TREATY_EXPECTED_COST_PER_DALY"],
 )
 
 # ---
