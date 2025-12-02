@@ -126,10 +126,6 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 :::
 
 
-### The Highest-ROI Public Health Intervention
-
-Shift {{< var treaty_reduction_pct >}} of global military spending to hyper-efficient pragmatic clinical trials. That's it. That's the entire plan.
-
 ## Problem Statement
 
 ### Current Resource Allocation
@@ -175,7 +171,7 @@ This mortality burden exceeds:
 
 Despite this disparity in mortality burden, resource allocation heavily favors security spending over medical research and curative interventions.
 
-## How It Actually Works
+## How It Works
 
 The mechanism is financial, not bureaucratic:
 
@@ -186,7 +182,7 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
-## The Result
+## Summary of Results
 
 **{{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI**
 
@@ -230,7 +226,7 @@ The Monte Carlo distribution below shows the range of lives saved estimates acro
 {{< include ../figures/mc-distribution-disease_eradication_delay_deaths_total.qmd >}}
 
 ::: {.callout-note}
-## Why "Eventually Avoidable" Matters
+### Why "Eventually Avoidable" Matters
 
 Of {{< var global_disease_deaths_daily >}} daily deaths:
 
@@ -287,9 +283,9 @@ Currently, diseases are winning the race.
 This reverses the score.
 
 
-## And It Strengthens National Security
+## How It Increases National Security
 
-Here's the beautiful part: everyone reduces by {{< var treaty_reduction_pct >}} simultaneously.
+All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 
 ### What doesn't change
 
@@ -319,15 +315,14 @@ By successfully executing a verified, mutual reduction in military spending to f
 It steers the ship of state away from the iceberg of extinction, one degree at a time.
 
 
-## Why This Works: The Political Economy
+## Political Economy and Financing
 
-Good ideas don't win because they're good.
+Ideas don't win because they're good.
 They win by **aligning incentives**.
 
 This is the alignment engine:
 
-
-## Victory Bonds: The Greed-Alignment Engine
+### Victory Bonds Financing Mechanism
 
 You make this happen by aligning financial incentives with their own future savings.
 
@@ -366,43 +361,10 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete anal
 
 {{< include ../figures/victory-bonds-roi-projection-bar-chart.qmd >}}
 
-## Vote Impact Ledger
 
-This campaign only needs {{< var treaty_campaign_voting_bloc_target >}} committed votes (3.5% of humanity) to force the treaty onto every ballot. Once we know the total benefit a passed treaty unlocks, the math for "what your vote is worth" is just division.
+## Dominance Analysis
 
-```{python}
-#| label: vote-ledger-calcs
-#| echo: false
-#| output: false
-
-votes = float(TREATY_CAMPAIGN_VOTING_BLOC_TARGET)
-lives_total = float(DISEASE_ERADICATION_DELAY_DEATHS_TOTAL)
-suffering_hours = float(SUFFERING_HOURS_ELIMINATED_TOTAL)
-economic_value = float(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
-
-lives_per_vote = lives_total / votes
-hours_per_vote = suffering_hours / votes
-value_per_vote = economic_value / votes
-
-minutes_to_win_vote = 15
-value_per_hour = value_per_vote / (minutes_to_win_vote / 60)
-```
-
-:::: {.callout-tip}
-## Per-Vote Ledger (public dashboard math)
-
-- **Votes required:** `{python} f"{votes:,.0f}"` committed signatures (≈3.5% of the planet)
-- **Lives unlocked:** `{python} f"{lives_per_vote:,.2f}"` lives saved per voter recruited
-- **Suffering erased:** `{python} f"{hours_per_vote:,.0f}"` hours of pain deleted per vote (≈3.1 years)
-- **Prosperity created:** `{python} f"${value_per_vote:,.2f}"` in lifetime economic surplus per vote
-- **Time leverage:** Spend 15 minutes convincing someone and you just generated `{python} f"${value_per_hour:,.2f}"` per hour of persuasion
-::::
-
-Because these figures come straight from `dih_models/parameters.py`, the running total on the public dashboard will always match the underlying treaty math, no spreadsheets, no guessing.
-
-## Why This Is the Dominant Strategy
-
-If your goal is to maximize:
+For objectives including:
 
 * Years humans spend alive and healthy (QALYs)
 * Lifespan
@@ -412,8 +374,8 @@ If your goal is to maximize:
 * Existential safety
 * Not suffering unnecessarily
 
-...then this isn't "a good policy."
-It's the **mathematically dominant strategy**.
+
+Redirection of 1% of military spending to pragmatic trials is the **mathematically dominant strategy**.
 
 A $1B invested here generates more:
 
@@ -437,10 +399,9 @@ All valuable. All recommended.
 None offer **{{< var trial_capacity_multiplier >}}× leverage**.
 
 
-## The Math (Or: How to Prove Obvious Things to Skeptics)
+## Methodology
 
-Economists require elaborate rituals before believing simple truths like "curing diseases is better than bombing people." So here's the math they demanded.
-
+Economists require elaborate rituals before believing simple truths like "curing diseases is better than bombing people." So here's the math.
 This analysis uses three economic tools that sound complicated but aren't:
 
 1. **Net Present Value (NPV)**: Future money is worth less than current money because humans are impatient
@@ -449,9 +410,9 @@ This analysis uses three economic tools that sound complicated but aren't:
 
 The methodology follows standard health economics practices, except instead of making you more confused, I'll explain what the numbers mean.
 
-## How Money Works When You Stop Wasting It
+## Cost-Benefit Framework
 
-### Cost Side (What You Spend)
+### Cost Components
 
 You spend {{< var treaty_campaign_total_cost >}} convincing humans that not dying is preferable to dying. This covers:
 
@@ -461,7 +422,7 @@ You spend {{< var treaty_campaign_total_cost >}} convincing humans that not dyin
 
 This is a one-time cost. You either achieve treaty passage or you don't.
 
-### Benefit Side (What Appears From The Void)
+### Benefit Components
 
 The treaty redirects {{< var treaty_annual_funding >}} annually from military spending to medical research. This money already exists. You're not printing new money or raising taxes. You're just moving existing money from weapons procurement to clinical trials.
 
@@ -483,7 +444,7 @@ The distribution below shows the uncertainty range for the cost reduction factor
 
 {{< include ../figures/distribution-trial_cost_reduction_factor.qmd >}}
 
-## The Return on Investment Equation
+## ROI Calculation
 
 {{< var dfda_roi_rd_only_latex >}}
 
@@ -501,7 +462,7 @@ You spend $1, you get ${{< var dfda_roi_rd_only >}} back. This beats most legal 
 
 You spend $1 billion once, you get ${{< var treaty_complete_roi_all_benefits >}} billion back every year in recurring benefits.
 
-## Cost-Effectiveness: The "Per Life Saved" Metric
+## Cost-Effectiveness Analysis
 
 Health economists invented a metric called ICER (Incremental Cost-Effectiveness Ratio) to measure cost-effectiveness:
 
@@ -523,7 +484,7 @@ This approach: "We saved a life as a side effect of doing profitable things"
 **Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). If you're into spreadsheets: [full NPV methodology here](../appendix/dfda-cost-benefit-analysis.qmd#calculation-framework---npv-methodology).
 
 ::: {.callout-note}
-## "But What If It Doesn't Pass?"
+### Expected Value Under Political Uncertainty
 
 **Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY
 
@@ -930,11 +891,11 @@ All primary data sources are documented in [References](../references.qmd) with 
 For complete parameter documentation with confidence indicators and peer-review status, see [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd).
 
 
-## The Conservative Case: dFDA Only
+## Scenario Analysis: Conservative Case
 
-{{< var dfda_roi_rd_only >}}:1 ROI
+**{{< var dfda_roi_rd_only >}}:1 ROI**
 
-This is the floor. The "what if we're wrong about everything" scenario.
+This scenario includes only R&D efficiency savings, excluding all other benefit categories.
 
 Count only R&D savings from cheaper trials. Ignore peace dividends, earlier drug access, and everything else that makes skeptics nervous.
 
@@ -1114,13 +1075,11 @@ This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty 
 
 The self-funding nature eliminates traditional barriers to scale, as the intervention generates sufficient economic surplus to sustain and expand operations without ongoing charitable contributions.
 
-## The Complete Case: All Direct Benefits
+## Scenario Analysis: Complete Case
 
-{{< var treaty_complete_roi_all_benefits >}}:1 ROI
+**{{< var treaty_complete_roi_all_benefits >}}:1 ROI**
 
-The conservative {{< var dfda_roi_rd_only >}}:1 case counted only R&D efficiency gains.
-
-Now let's include all eight quantifiable benefit categories.
+The conservative scenario counted only R&D efficiency gains. This section includes all quantifiable benefit categories.
 
 ### Annual Recurring Benefits Breakdown
 
@@ -1205,7 +1164,7 @@ This represents DIH's funding capacity alone, without assuming behavior changes 
 **Why More Trials = More Cures (No Diminishing Returns)**:
 Crucially, this {{< var trial_capacity_multiplier >}}x increase in capacity translates directly into medical progress because humanity has empirically tested only **0.417%** of the known therapeutic landscape. We are not facing diminishing returns; we are facing a cost barrier that has prevented us from testing 99.6% of plausible treatments. See **[The Myth of Diminishing Returns](#the-myth-of-diminishing-returns)** for the mathematical proof that the search space is effectively infinite relative to our current efforts.
 
-## Personal Economic Impact: From Societal to Individual
+## Individual-Level Economic Impact
 
 The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var treaty_total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
 
@@ -1293,7 +1252,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed analysis and implementation strategy.
 
-## The Inevitability of Adoption: Game Theory & Fiscal Reality
+## Adoption Dynamics: Game-Theoretic Analysis
 
 Beyond the moral and economic arguments, two existential drivers make this proposal impossible to ignore for sovereign leaders:
 
@@ -1392,7 +1351,7 @@ For the rigorous analysis:
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations you can verify yourself
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
 
-## Implementation Challenges and Risk Mitigation
+## Risk Analysis and Mitigation
 
 This section addresses common objections and potential failure modes, along with specific mitigation strategies.
 
