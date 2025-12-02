@@ -3039,6 +3039,42 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     latex=r"Return = \$2.718B / \$1B = 2.718 = 271.8\%",
     keywords=["social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond", "bcr"]
 )  # 271.8% (reported as 270%)
+
+# ---
+# INCENTIVE ALIGNMENT BONDS (IABs)
+# ---
+
+# IAB mechanism funding for political incentives (PACs, fellowships, scoring infrastructure)
+# Source: knowledge/solution/incentive-alignment-bonds.qmd
+IAB_POLITICAL_INCENTIVE_FUNDING_PCT = Parameter(
+    0.10,
+    source_ref="",
+    source_type="definition",
+    description="Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)",
+    display_name="IAB Political Incentive Funding Percentage",
+    unit="rate",
+    keywords=["10%", "incentive alignment bond", "iab", "political incentives", "pac", "fellowship", "scoring", "public good score"],
+    distribution="fixed",  # Policy choice: IAB allocation percentage is a design decision
+)  # 10% of treaty funding for political incentive mechanisms
+
+IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
+    TREATY_ANNUAL_FUNDING * IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
+    source_ref="",
+    source_type="calculated",
+    description="Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
+    display_name="Annual IAB Political Incentive Funding",
+    unit="USD/year",
+    formula="TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
+    latex=r"IABFunding = \$27.18B \times 0.10 = \$2.718B",
+    keywords=["incentive alignment bond", "iab", "political incentives", "pac", "fellowship", "scoring", "electoral", "public good score"],
+    inputs=['TREATY_ANNUAL_FUNDING', 'IAB_POLITICAL_INCENTIVE_FUNDING_PCT'],
+    compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] * ctx["IAB_POLITICAL_INCENTIVE_FUNDING_PCT"],
+)  # $2.718B/year for political incentive mechanisms
+
+# ---
+# FUNDING ALLOCATION (Updated to include IAB)
+# ---
+
 DIVIDEND_COVERAGE_FACTOR = Parameter(
     TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX,
     source_ref="/knowledge/strategy/roadmap.qmd#sustainability",
@@ -3053,18 +3089,18 @@ DIVIDEND_COVERAGE_FACTOR = Parameter(
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] / ctx["DFDA_ANNUAL_OPEX"],
 )  # ~679x
 DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
-    TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT,
+    TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
     source_ref="",
-    source_type="definition",
-    description="Annual funding for medical research (treaty funding minus bond payouts)",
+    source_type="calculated",
+    description="Annual funding for medical research (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
     display_name="DIH Annual Funding for Medical Research",
     unit="USD/year",
-    formula="TREATY_FUNDING - BOND_PAYOUT",
-    latex=r"ResearchFunding = \$27.18B - \$2.718B = \$24.462B",
+    formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
+    latex=r"ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B",
     keywords=["impact investing", "pay for success", "distributed research", "global research", "open science", "debt instrument", "development finance"],
-    inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_ANNUAL_PAYOUT'],
-    compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] - ctx["VICTORY_BOND_ANNUAL_PAYOUT"],
-)  # $24.3B/year
+    inputs=['TREATY_ANNUAL_FUNDING', 'VICTORY_BOND_ANNUAL_PAYOUT', 'IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL'],
+    compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] - ctx["VICTORY_BOND_ANNUAL_PAYOUT"] - ctx["IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"],
+)  # $21.744B/year (80% of treaty funding)
 DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
     source_ref="/knowledge/economics/economics.qmd#funding-allocation",

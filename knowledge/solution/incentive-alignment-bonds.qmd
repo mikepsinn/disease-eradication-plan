@@ -52,13 +52,13 @@ Imagine you could say to every politician on Earth:
 
 > "If your country adopts a 1%-style reform and your citizens actually get healthier, we will:
 >
-> * put real money into your citizens' pockets (they'll love you),
 > * upgrade your international reputation (you'll get invited to better parties),
+> * boost your reelection odds (independent campaigns will favor you),
 > * and make your post-office career prospects significantly better than your rivals' (Goldman Sachs boards, prestigious fellowships, that sort of thing)."
 
 No backroom deals. No suitcases of cash. No prison.
 
-No money to government budgets either. They can print their own. What they can't print is external legitimacy, grateful voters, and cushy retirement gigs.
+No money to you personally, and no money to government budgets. What you get is external legitimacy, electoral support, and cushy retirement gigs. The things politicians actually optimize for.
 
 Just a standing, public, announced-in-advance rule:
 
@@ -127,36 +127,37 @@ This is structurally similar to:
 * Catastrophe bonds that pay based on disaster events.
 * Social impact bonds that pay based on outcome metrics.
 
-#### Step 3: Pay for Outcomes (Not Inputs)
+#### Step 3: Fund Outcomes, Reward Politicians Indirectly
 
 When a country:
 
 1. Adopts a 1%-style policy (e.g., reallocating 1% of its military budget to pragmatic clinical trials managed under transparent rules), and
 2. Achieves verified improvements in health outcomes compared to a counterfactual,
 
-the bond pays out **not to the government**, but to:
+the mechanism triggers **indirect rewards for politicians**:
 
-* **Citizens** (e.g., health dividends, lower insurance premiums, reduced out-of-pocket costs, free services), and/or
-* **Health system actors** (clinics, hospitals, trial networks) that delivered the outcomes.
+* **Public Good Scores** rise (published by independent rating organizations)
+* **Electoral support** increases (independent campaigns favor high-scorers)
+* **Post-office opportunities** unlock (fellowships, advisory boards, speaking circuits)
 
 The core principle:
 
-> Money flows to **people experiencing the benefit** and **systems delivering the benefit**, not to state budgets.
+> No money flows to politicians or governments. What flows is **reputation, electoral advantage, and career advancement**.
 
-This avoids the “why pay governments, they print money” problem entirely.
+This avoids the "that's just bribery" problem entirely. Nobody's getting paid. They're just getting credit for doing their job well, in ways that happen to benefit their careers.
 
 #### Step 4: Make Politicians Care (Without Paying Them)
 
-The magic is not just the cash flows; it’s what those cash flows do to **political incentives**.
+The magic is that **better health outcomes translate directly into political benefits**.
 
 Because:
 
-* Citizens receiving benefits know *why* (the 1% policy + outcome improvements).
-* Independent rating systems can give politicians a **score** based on:
+* Citizens experiencing better health outcomes credit the politicians who made it happen (this is called "democracy working correctly").
+* Independent rating systems give politicians a **Public Good Score** based on:
 
   * whether they supported the policy, and
   * whether outcomes improved in their jurisdiction.
-* Media, NGOs, and external coalitions can:
+* Media, NGOs, and external coalitions:
 
   * highlight high-score politicians,
   * spend more on independent campaign support for them,
@@ -278,41 +279,218 @@ This separation is not a loophole; it's how the system maintains legitimacy. Eac
 
 ---
 
-### 4b. A Worked Example: Portugal Saves Lives and Gets Rich
+### 4b. A Worked Example: How Senator Smith Votes Yes on the 1% Treaty
 
-Abstract mechanisms are great for economists and terrible for everyone else. Here's how IABs actually work, using Portugal as an example because it's small enough to pilot and large enough to matter:
+Abstract mechanisms are great for economists and terrible for everyone else. Here's how IABs actually work, using a US senator deciding how to vote on the 1% Treaty as the example.
 
-**Year 0: Setup**
-* Portugal announces it will reallocate 1% of military spending (approximately €45M/year) to pragmatic clinical trials
-* An IAB fund raises €200M from impact investors and foundations
-* Baseline metrics established: current DALY burden, cardiovascular mortality, cancer survival rates
+#### The Primary Metrics We're Maximizing
 
-**Years 1-3: Implementation**
-* Portuguese health system runs 50 pragmatic trials using the RECOVERY model
-* Several treatments show significant efficacy; adoption accelerates
-* Independent evaluators track outcomes against counterfactual (what would have happened without the policy)
+The whole point of this system is to increase two numbers:
 
-**Year 4: Payout Trigger**
-* Evaluators verify: 15,000 DALYs averted compared to counterfactual
-* At €5,000 per DALY (conservative valuation), that's €75M in health value created
-* IAB pays out €50M to:
-  * Portuguese citizens (€20M as health dividend, ~€2 per person)
-  * Portuguese hospitals and clinics that participated in trials (€20M)
-  * Trial infrastructure for continued operation (€10M)
+1. **% of military spending reallocated** (starts at 1%, goal is expansion to 2%, 5%, 10%+)
+2. **$ flowing to DIH treasury annually** (starts at $27B, scales with %)
 
-**Political consequences:**
-* Portuguese Prime Minister's Public Good Score rises from 52 to 78
-* Independent campaign groups in upcoming election spend €5M more on GOTV for incumbents who supported the policy
-* Three former health ministers receive invitations to join WHO advisory committees
-* Spanish and Italian politicians notice; both countries begin drafting similar legislation
+Every politician's score is tied to their impact on these numbers. Vote to increase them? Score goes up. Vote to decrease them? Score goes down. It's that simple.
 
-**Year 5+: Cascade**
-* Spain and Italy adopt 1%-equivalent policies (FOMO is a powerful force in international relations)
-* IAB fund raises another €500M based on demonstrated success
-* EU begins discussing continent-wide framework
-* Someone gives a TED talk about it
+#### The Politician's Utility Function
 
-No one was bribed. Money went to citizens and health systems. Politicians benefited because their voters benefited, because rule-based systems rewarded good governance, and because humans are fundamentally self-interested creatures who respond to incentives.
+Politicians optimize for a utility function whether they admit it or not. Here's what it looks like:
+
+$$
+U_{politician} = \alpha \cdot P(\text{reelection}) + \beta \cdot \text{PostOfficeIncome} + \gamma \cdot \text{Status/Legacy}
+$$
+
+Where:
+
+- $\alpha, \beta, \gamma$ are weights (varies by politician, but all are positive)
+- $P(\text{reelection})$ = probability of winning next election
+- $\text{PostOfficeIncome}$ = expected lifetime earnings after leaving office (boards, speaking fees, fellowships)
+- $\text{Status/Legacy}$ = how history remembers you (books written, buildings named, Wikipedia length)
+
+The IAB system makes each of these terms a function of the politician's **Public Good Score**.
+
+#### The Public Good Score
+
+Each politician gets a score based on their votes and their jurisdiction's outcomes:
+
+$$
+\text{Score}_i = w_1 \cdot \text{VoteRecord}_i + w_2 \cdot \text{HealthOutcomes}_i
+$$
+
+Where:
+
+**VoteRecord** (0-100) measures how a politician voted on bills that affect our primary metrics:
+
+| Bill Type | Yes Vote | No Vote |
+|:----------|:---------|:--------|
+| Increase % reallocation to DIH | +15 points | -15 points |
+| Protect existing DIH funding | +10 points | -10 points |
+| Expand treaty to more countries | +10 points | -10 points |
+| Cut DIH funding or % | -20 points | +5 points |
+| Procedural support (cloture, etc.) | +5 points | -5 points |
+
+**HealthOutcomes** (0-100) measures whether their jurisdiction actually got healthier:
+
+$$
+\text{HealthOutcomes}_i = 50 + 10 \cdot \frac{\Delta \text{DALYs}_i - \mu}{\sigma}
+$$
+
+Translation: You start at 50. If your state's health improved more than average, you go up. If it improved less, you go down. The scale is normalized so most scores fall between 30-70.
+
+#### How Score Translates to Utility
+
+Here's where self-interest kicks in:
+
+**Reelection Probability:**
+
+$$
+P(\text{reelection}) = P_0 + \delta \cdot (\text{Score}_i - 50) + \epsilon \cdot \text{IndependentSpending}_i
+$$
+
+Independent health advocacy PACs commit to spending proportional to score:
+
+$$
+\text{IndependentSpending}_i = \begin{cases} 
++\$2M & \text{if Score} \geq 70 \\
++\$500K & \text{if } 60 \leq \text{Score} < 70 \\
+\$0 & \text{if } 50 \leq \text{Score} < 60 \\
+-\$500K \text{ (to opponent)} & \text{if } 40 \leq \text{Score} < 50 \\
+-\$2M \text{ (to opponent)} & \text{if Score} < 40
+\end{cases}
+$$
+
+**Post-Office Income:**
+
+$$
+\text{PostOfficeEligibility} = \begin{cases} 
+\text{Tier 1 (WHO boards, Aspen fellowships)} & \text{if Score} \geq 75 \\
+\text{Tier 2 (Think tank positions)} & \text{if } 60 \leq \text{Score} < 75 \\
+\text{Tier 3 (Standard revolving door)} & \text{if Score} < 60
+\end{cases}
+$$
+
+Expected post-office income by tier:
+
+| Tier | Annual Income | Prestige | Example Positions |
+|:-----|:--------------|:---------|:------------------|
+| Tier 1 | $500K+ | High | WHO Advisory Board, Aspen Health Fellowship, Nobel committee |
+| Tier 2 | $200-400K | Medium | Brookings, RAND, university chairs |
+| Tier 3 | $150-300K | Low | Defense contractor boards, lobbying firms |
+
+#### The Setup
+
+[VICTORY Bonds](../economics/victory-bonds.qmd) have raised $1B from investors who want 270% returns. That money has funded:
+
+- A referendum showing 70% of Americans support reallocating 1% of military spending to medical research
+- A lobbying campaign that's converted several defense contractors (they did the math on their own mortality)
+- The Public Good Scoring system described above, tracking every federal legislator
+
+Senator Smith (R-Texas) is up for reelection in 2026. The 1% Treaty Implementation Act is coming to a vote. 
+
+**Her current stats:**
+
+- Public Good Score: 45 (below Senate median of 52)
+- Current P(reelection): 55%
+- Expected post-office tier: 3
+- Expected post-office income: $200K/year
+
+#### The Old Calculus (Without IABs)
+
+| Vote Yes | Vote No |
+|:---------|:--------|
+| Attack ads: "Smith voted to WEAKEN AMERICA" | Safe from defense lobby attacks |
+| Defense contractors fund opponent | Defense contractors fund you |
+| No immediate upside | Status quo maintained |
+| Benefits arrive in 10 years | Costs arrive never |
+
+**Expected utility of No vote:** $U = 0.55 \cdot \text{Office} + \$200K/\text{year} \cdot 20\text{yrs} + \text{Medium Legacy}$
+
+Result: Vote no. Obviously.
+
+#### The New Calculus (With IABs)
+
+**If Smith votes YES:**
+
+- VoteRecord: +15 points (major treaty vote)
+- New Score: 45 + 15 = 60 → jumps to 72 with multiplier for being early supporter
+- P(reelection): 55% → 62% (score boost + $500K independent support)
+- Post-office tier: 3 → 2 (with path to Tier 1 if she becomes a champion)
+- Expected post-office income: $200K → $300K/year
+
+**If Smith votes NO:**
+
+- VoteRecord: -15 points
+- New Score: 45 - 15 = 30
+- P(reelection): 55% → 48% (score penalty + $2M goes to opponent)
+- Post-office tier: Stuck at 3
+- Attack ads funded: "Smith voted AGAINST the cure your family needs"
+
+**The math:**
+
+$$
+\Delta U_{\text{Yes vs No}} = 0.14 \cdot \text{Office} + \$100K/\text{year} \cdot 20\text{yrs} + \text{Legacy Boost}
+$$
+
+That's a +14 percentage point swing in reelection odds and +$2M in lifetime post-office earnings. 
+
+Result: Vote yes. The math changed.
+
+#### What Actually Happens
+
+1. **Pre-vote**: Senator Smith's staff pulls up her current Public Good Score (45). They model the yes vote: score jumps to 72, P(reelection) rises 7 points, post-office tier improves.
+
+2. **Lobbying meeting**: The old defense lobby shows up to threaten. But three major contractors have already announced support for the treaty (270% returns beat 8% returns). The threat is empty.
+
+3. **Campaign finance check**: Her team sees that health advocacy Super PACs have committed $50M nationally to independent expenditures. At her projected score of 72, she qualifies for $2M in support. A no vote means that $2M goes to her opponent instead.
+
+4. **Constituent mail**: 70% of Texans voted yes in the referendum. Voting against that is explaining to voters why you think they're wrong about not wanting to die.
+
+5. **The vote**: Smith votes yes. So do 67 other senators. The treaty passes.
+
+#### Post-Treaty: The Numbers
+
+**For Senator Smith:**
+
+| Metric | Before | After |
+|:-------|:-------|:------|
+| Public Good Score | 45 | 78 |
+| P(reelection) | 55% | 68% |
+| Independent support received | $0 | $3M |
+| Post-office tier | 3 | 1 |
+| Expected post-office income | $200K/yr | $500K/yr |
+
+She wins reelection by 12 points. After leaving the Senate in 2030, she joins the WHO Advisory Board and chairs the Aspen Health Initiative.
+
+**For the primary metrics:**
+
+| Metric | Before Treaty | After Treaty |
+|:-------|:--------------|:-------------|
+| % military spending to DIH | 0% | 1% |
+| Annual DIH funding | $0 | $27B |
+| Bondholder returns | 0% | 270%/year |
+| Research funding | $0 | $24.3B/year |
+
+**For expansion (Years 3-5):**
+
+As cures emerge, public pressure builds. Politicians who supported 1% now support 2%. Their scores rise again. Politicians who opposed face primary challenges from candidates promising "I'll vote for the cure your incumbent blocked."
+
+| Year | Treaty % | DIH Funding | Bondholder Payout |
+|:-----|:---------|:------------|:------------------|
+| 1 | 1% | $27B | $2.7B |
+| 3 | 2% | $54B | $5.4B |
+| 5 | 5% | $135B | $13.5B |
+
+The flywheel spins. Each expansion increases the stakes, which increases the score differential, which makes voting yes even more dominant.
+
+#### The Math for VICTORY Bond Investors
+
+The investors who funded the $1B campaign see:
+
+- Treaty passes → $27B/year flows to DIH
+- 10% ($2.7B/year) flows to bondholders → 270% annual returns
+- 90% ($24.3B/year) funds actual cures → diseases start declining → public demands expansion → returns grow
+
+Everyone's self-interest aligned. No one was bribed. The system just made "vote for cures" and "advance career" point in the same direction.
 
 This is not cynical. This is public choice theory. It's only cynical if you think politicians should be motivated by pure altruism, in which case I have some bad news about the last 5,000 years of recorded history.
 
@@ -320,31 +498,31 @@ This is not cynical. This is public choice theory. It's only cynical if you thin
 
 ### 5. Why This Is Not Bribery (Legally Speaking)
 
-At first glance, this sounds like fancy bribery. "Pay money when politicians do what you want" is pretty much the definition.
+At first glance, this sounds like fancy bribery. "Reward politicians when they do what you want" is pretty much the definition.
 
 Except it's not, for four reasons that matter to lawyers:
 
 1. **No one is paid to break a duty.**
    * Bribery = paying an official to violate their legal or ethical obligations.
    * IABs reward *compliance with* duties: improving population health using legal policy tools.
-   * "Please do your job better" is not a bribe. It's a performance bonus, except paid to citizens instead of the politician.
+   * "Please do your job better and we'll tell everyone you did" is not a bribe. It's a performance review.
 
 2. **Rules are universal and ex-ante.**
    * The mechanism applies to all politicians and parties, openly and in advance.
    * There are no secret deals, no targeting individuals, no envelopes in parking garages.
    * It's like saying "we'll give a prize to whoever cures cancer." That's not bribery. That's an incentive.
 
-3. **Money goes to citizens and systems, not to politicians or government budgets.**
-   * Citizens benefit from earlier cures, lower costs, or direct cash transfers.
-   * Politicians benefit *indirectly*: grateful voters, better scores, nicer career options.
-   * This is how representative democracy is supposed to work. It just... rarely does.
+3. **No money goes to politicians or government budgets.**
+   * Politicians benefit *indirectly*: better scores, electoral support, nicer career options.
+   * This is how representative democracy is supposed to work: leaders benefit when their constituents benefit.
+   * The mechanism just makes the connection visible and systematic.
 
 4. **Outcomes must be objectively verified.**
    * An independent "impact oracle" measures improvements using transparent data.
-   * Payments depend on real, audited progress, not press releases.
+   * Scores depend on real, audited progress, not press releases.
 
 Bribery **corrupts** alignment. ("Here's money to screw the public.")
-IABs **create** alignment. ("Here's money for the public if you stop screwing them.")
+IABs **create** alignment. ("Support policies that save lives and your career benefits.")
 
 ---
 
@@ -440,15 +618,15 @@ The 1% Treaty says:
 
 Beautiful, right? Inspiring, even. Also: meaningless without a mechanism. Treaties are just PDFs with fancy letterheads unless you give countries a reason to actually follow them.
 
-Incentive Alignment Bonds provide **the missing financial and political mechanism**:
+Incentive Alignment Bonds provide **the missing political mechanism**:
 
-1. **Funding the transition.** IABs provide capital to build trial networks, data infrastructure, and early interventions, the boring expensive stuff that nobody wants to fund because it doesn't fit in a tweet.
+1. **Scoring the transition.** IABs create public metrics that track which countries are adopting 1%-equivalent policies and achieving results. Politicians get credit (or blame) in a format that's easy to communicate.
 
-2. **Rewarding early adopters.** Countries that move first and show results unlock payouts for their citizens. Suddenly "being the first to do the right thing" becomes "being the first to get paid."
+2. **Rewarding early adopters.** Countries that move first and show results get higher Public Good Scores. Their politicians get electoral support from independent campaigns and access to prestigious post-office opportunities. Suddenly "being the first to do the right thing" becomes "being the first to get the career benefits."
 
 3. **Creating political pressure.** High-performing countries get scores, coverage, and external support. Low-performing countries get awkward questions at international summits. Politicians *hate* awkward questions at international summits.
 
-4. **Aligning global and national interests.** Global funders care about reducing disease and existential risk. National leaders care about reelection, reputation, and economic gains. IABs connect these two in a legal, transparent way that makes everyone feel clever for participating.
+4. **Aligning global and national interests.** Global funders care about reducing disease and existential risk. National leaders care about reelection, reputation, and post-office careers. IABs connect these two in a legal, transparent way that makes everyone feel clever for participating.
 
 The 1% Treaty describes the **what**.
 Incentive Alignment Bonds supply the **how**.
@@ -457,30 +635,35 @@ Incentive Alignment Bonds supply the **how**.
 
 ---
 
-### 7a. How IABs Relate to VICTORY Bonds
+### 7a. How VICTORY Bonds and IABs Work Together
 
-If you've read the [VICTORY Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "Aren't these the same thing?" They're complementary, not identical.
+If you've read the [VICTORY Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "How do these fit together?"
 
-**VICTORY Bonds** are designed to:
-* Raise capital ($1B+) to fund the campaign that *passes* the 1% Treaty
-* Pay investors perpetual returns (270%+ annually) from the treaty funding stream *after* it passes
-* Align investor interests with treaty passage: "If the treaty passes, you get paid forever."
+They solve different problems for different people:
 
-**Incentive Alignment Bonds** are designed to:
-* Reward countries and populations *after* they've adopted 1%-equivalent policies
-* Pay out based on *measured health outcomes*, not just policy adoption
-* Align politician interests with good governance: "If your constituents' health improves, you get reputational and career benefits."
+| | VICTORY Bonds | Incentive Alignment Bonds |
+|:--|:--------------|:--------------------------|
+| **Who's incentivized** | Investors | Politicians |
+| **What they get** | 270% annual returns (money) | Reputation, electoral support, post-office careers (not money) |
+| **Payout trigger** | Treaty passes | Health outcomes improve |
+| **Legal structure** | Revenue share on treaty funding | Scoring systems + independent campaign support |
 
-The relationship is sequential:
+**VICTORY Bonds** solve the **capital problem**: "How do we raise $1B to fund the campaign that passes the treaty?"
 
-| Phase | Financial Instrument | Purpose |
-|:------|:---------------------|:--------|
-| Pre-Treaty | VICTORY Bonds | Fund the campaign; align investor capital with treaty passage |
-| Post-Treaty | Incentive Alignment Bonds | Reward countries for measurable outcomes; create race-to-the-top dynamics |
+**IABs** solve the **political problem**: "How do we make politicians *want* to support and maintain the treaty?"
 
-VICTORY Bonds get the treaty passed. IABs ensure the treaty actually delivers results.
+The relationship is complementary:
 
-You can think of VICTORY Bonds as funding the **political war** and IABs as funding the **ongoing campaign** to ensure countries don't just sign treaties but actually improve health outcomes.
+| Phase | Instrument | What It Does |
+|:------|:-----------|:-------------|
+| Pre-Treaty | VICTORY Bonds | Raise capital from investors; fund the campaign |
+| Pre-Treaty | IABs (scoring) | Show politicians that supporting the treaty improves their scores |
+| Post-Treaty | VICTORY Bonds | Pay investors their 10% of treaty revenue forever |
+| Post-Treaty | IABs (full mechanism) | Reward politicians whose countries actually achieve health improvements |
+
+VICTORY Bonds get investors to fund the war. IABs get politicians to fight it (and keep fighting after victory).
+
+The 90% of treaty revenue that doesn't go to bondholders? That goes to DIH to actually fund the research. Neither instrument touches that money. VICTORY Bonds take their 10% cut for investors. IABs don't involve money at all, they just make sure politicians get credit (and career benefits) for doing the right thing.
 
 ---
 
@@ -517,7 +700,7 @@ If IABs are just plutocracy with better marketing, they deserve to fail. Let's s
 
 2. **Universal and ex-ante rules.** Every politician faces the same scoring system, announced publicly in advance. A left-wing politician who supports 1%-equivalent health policy gets the same credit as a right-wing one. The system is indifferent to party, ideology, and individual identity.
 
-3. **Money flows to citizens, not politicians.** When IABs pay out, the money goes to people who received health benefits and systems that delivered those benefits. Politicians get *indirect* benefits: higher approval from grateful constituents, better scores on public metrics, and standing eligibility for post-office positions. This is how representative democracy is *supposed* to work; leaders benefit when their constituents benefit.
+3. **No money flows to politicians.** IABs don't pay anyone. They create scoring systems and eligibility criteria. Politicians get *indirect* benefits: better scores on public metrics, electoral support from independent campaigns, and eligibility for post-office positions. No cash changes hands. This is how lobbying is *supposed* to work; it just usually doesn't.
 
 4. **The metric is suffering reduced, not interests served.** Traditional influence-buying delivers policies that benefit narrow groups at diffuse public expense. IABs do the opposite: they reward policies that deliver diffuse public benefits even when narrow groups oppose them. The direction of distortion is reversed.
 
@@ -529,7 +712,7 @@ They might. Politicians are humans, and humans have short attention spans and sh
 
 Countermeasures:
 
-* **Clawback clauses**: Payouts spread over time, conditional on maintaining reforms. Take the money and run? The money runs back.
+* **Score decay**: Public Good Scores decline if outcomes reverse. Yesterday's hero becomes today's cautionary tale.
 * **Long-term metrics**: Reward durability, not just one-off changes. "You signed a document" is worth less than "you maintained the system for five years."
 * **Political scorecards**: Reversals tank your Public Good Score. The same mechanism that rewarded you for supporting the policy punishes you for killing it.
 
@@ -542,7 +725,7 @@ It doesn't have to start global. Global is the goal. Portugal is the pilot.
 The path:
 
 1. **One or two pilot countries** adopt a limited 1%-style policy with IAB support. (Portugal, Costa Rica, maybe New Zealand - small, functional democracies with something to prove.)
-2. **Outcomes are measured**; citizens benefit; leaders get invited to better conferences.
+2. **Outcomes are measured**; health improves; leaders get invited to better conferences and their scores rise.
 3. **Other countries notice** and copy what works, as they already do with credit ratings, trade agreements, and health system reforms. FOMO is a powerful force in international relations.
 
 Credit ratings didn't start as a global system. They started as one guy in the 1800s publishing opinions about railroad bonds. Now Moody's can tank a country's economy with a press release.
@@ -569,7 +752,7 @@ What’s missing is:
 
 Incentive Alignment Bonds give us a way to say:
 
-> “If you govern well by these objective metrics, the world will make your citizens wealthier and healthier, your political life easier, and your future brighter.”
+> "If you govern well by these objective metrics, the world will systematically make your political life easier, your legacy better, and your future brighter."
 
 That does not guarantee success.
 But it changes the game from “hope someone in power cares enough” to:
@@ -585,15 +768,15 @@ Incentive Alignment Bonds are one of the simplest, most scalable tools we have t
 
 ### 10. Summary: The Mechanism in One Sentence
 
-Create an **independent, outcome-indexed system** where hitting big public-good targets (funded by Incentive Alignment Bonds) automatically:
+Create an **independent, outcome-indexed scoring system** where hitting big public-good targets automatically:
 
-* pays citizens (they like this),
-* boosts the reelection chances of politicians who made it happen (they like this more),
-* upgrades their status and post-office career prospects (they like this most),
+* boosts a politician's Public Good Score (visible, comparable, embarrassing if low),
+* increases their electoral support from independent campaigns (they like this),
+* upgrades their post-office career prospects (they like this most),
 
-all via pre-announced, universal rules and independent institutions, so it's legally clean, incentive-compatible, and doesn't give a dollar to government budgets.
+all via pre-announced, universal rules and independent institutions, so it's legally clean, incentive-compatible, and doesn't give a dollar to anyone.
 
-It's bribery, except legal, transparent, and aimed at saving lives.
+It's bribery, except no money changes hands. Just reputation, electoral support, and career advancement.
 
 You're not asking politicians to be better people. You're just making "save lives" and "advance career" point in the same direction. The rest is just self-interest doing what self-interest does.
 
