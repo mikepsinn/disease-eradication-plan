@@ -16,12 +16,12 @@ setup_chart_style()
 display_name = "Personal Lifetime Wealth (Age 30, 1% Treaty)"
 
 # Baseline and units
-baseline = 511777.6575392339
+baseline = 507984.80978508206
 
 # Tornado data from sensitivity analysis
 drivers = ['LIFE_EXTENSION_YEARS', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'RECOVERY_TRIAL_COST_PER_PATIENT']
-impacts_low = [-241833.97059182712, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-impacts_high = [414652.82321873016, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_low = [-241074.6313853925, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [411039.03245661705, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

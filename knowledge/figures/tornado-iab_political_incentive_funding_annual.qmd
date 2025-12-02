@@ -13,15 +13,15 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
-display_name = "DIH Annual Funding for Medical Research"
+display_name = "Annual IAB Political Incentive Funding"
 
 # Baseline and units
-baseline = 21744000000.0
+baseline = 2718000000.0
 
 # Tornado data from sensitivity analysis
 drivers = ['GLOBAL_MILITARY_SPENDING_ANNUAL_2024']
-impacts_low = [-2176000000.0]
-impacts_high = [2176000000.0]
+impacts_low = [-272000000.0]
+impacts_high = [272000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]
@@ -71,7 +71,7 @@ clean_spines(ax)
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
-output_path = get_figure_output_path('tornado-dih_treasury_to_medical_research_annual.png')
+output_path = get_figure_output_path('tornado-iab_political_incentive_funding_annual.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

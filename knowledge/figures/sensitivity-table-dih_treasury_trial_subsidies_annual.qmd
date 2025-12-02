@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| DIH Treasury To Medical Research Annual | 1.0045 | Strong driver |
-| dFDA Annual OPEX | -0.0047 | Minimal effect |
+| DIH Treasury To Medical Research Annual | 1.0051 | Strong driver |
+| dFDA Annual OPEX | -0.0053 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

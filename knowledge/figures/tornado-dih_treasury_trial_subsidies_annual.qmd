@@ -16,12 +16,12 @@ setup_chart_style()
 display_name = "Annual Clinical Trial Patient Subsidies"
 
 # Baseline and units
-baseline = 24422000000.0
+baseline = 21704000000.0
 
 # Tornado data from sensitivity analysis
 drivers = ['GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [-2448000000.0, 5000000.0, 3000000.0, 3000000.0, 2000000.0, 1000000.0]
-impacts_high = [2448000000.0, -7000000.0, -5000000.0, -4000000.0, -3000000.0, -1000000.0]
+impacts_low = [-2176000000.0, 5000000.0, 3000000.0, 3000000.0, 2000000.0, 1000000.0]
+impacts_high = [2176000000.0, -7000000.0, -5000000.0, -4000000.0, -3000000.0, -1000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]

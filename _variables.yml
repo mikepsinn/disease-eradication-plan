@@ -460,9 +460,9 @@
   \ patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars) | ✓ High\
   \ confidence | Unit: USD/patient | Click to view calculation\">$1.00K</a>"
 "dfda_trials_per_year_capacity": "<span class=\"parameter-link\" title=\"parameters.DFDA_TRIALS_PER_YEAR_CAPACITY\"\
-  >84,834</span>"
+  >75,392</span>"
 "dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
-  \ Multiplier = 3{,}300 \\times 25.71 = 84{,}834\n$$"
+  \ Multiplier = 3{,}300 \\times 22.85 = 75{,}392\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA one-time\
@@ -487,28 +487,27 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Number of patients\
   \ fundable annually at RECOVERY trial cost | ✓ High confidence | Formula: TRIAL_SUBSIDIES\
-  \ ÷ COST_PER_PATIENT | Unit: patients/year | Click to view calculation\">48.8M</a>"
+  \ ÷ COST_PER_PATIENT | Unit: patients/year | Click to view calculation\">43.4M</a>"
 "dih_patients_fundable_annually_latex": "$$\nFundable_{ann} = \\frac{Treasury_{ann}}{Cost}\
-  \ = \\frac{\\$24.42B}{\\$500} = 48.8M\n$$"
+  \ = \\frac{\\$21.70B}{\\$500} = 43.4M\n$$"
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding allocated to medical research (after bond payouts) | ✓ High confidence\
   \ | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit: rate | Click to view\
-  \ calculation\">90%</a>"
+  \ calculation\">80%</a>"
 "dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$24.462B /\
   \ \\$27.18B = 0.90 = 90\\%\n$$"
-"dih_treasury_to_medical_research_annual": "<span class=\"parameter-definition\" title=\"\
-  Annual funding for medical research (treaty funding minus bond payouts) | Unit:\
-  \ USD/year | Core definition\">$24.5B</span>"
+"dih_treasury_to_medical_research_annual": "<span class=\"parameter-link\" title=\"\
+  parameters.DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL\">$21.7B</span>"
 "dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.18B\
-  \ - \\$2.718B = \\$24.462B\n$$"
+  \ - \\$2.718B - \\$2.718B = \\$21.744B\n$$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
   \ trial patient subsidies (all medical research funds after dFDA operations) | ✓\
   \ High confidence | Formula: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX | Unit: USD/year\
-  \ | Click to view calculation\">$24.4B</a>"
+  \ | Click to view calculation\">$21.7B</a>"
 "dih_treasury_trial_subsidies_annual_latex": "$$\nTrialSubsidies = \\$24.462B - \\\
   $0.04B = \\$24.422B\n$$"
 "dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
@@ -516,7 +515,7 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
   \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
   \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view calculation\"\
-  >89.9%</a>"
+  >79.9%</a>"
 "dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$24.422B / \\\
   $27.18B = 0.8986 = 89.86\\%\n$$"
 "disease_eradication_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
@@ -1072,6 +1071,14 @@
   \ economic impact of Human Genome Project | ✓ High confidence | Unit: USD | Click\
   \ to view source\">$1.00T</a>"
 "human_genome_project_total_economic_impact_cite": "@human-genome-and-genetic-editing"
+"iab_political_incentive_funding_annual": "<span class=\"parameter-link\" title=\"\
+  parameters.IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL\">$2.72B</span>"
+"iab_political_incentive_funding_annual_latex": "$$\nIABFunding = \\$27.18B \\times\
+  \ 0.10 = \\$2.718B\n$$"
+"iab_political_incentive_funding_pct": "<span class=\"parameter-definition\" title=\"\
+  Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for\
+  \ political incentives (independent expenditures/PACs, post-office fellowships,\
+  \ Public Good Score infrastructure) | Unit: rate | Core definition\">10%</span>"
 "institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Minimum investment for institutional\
@@ -1263,7 +1270,7 @@
   \ outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.\
   \ | ~ Medium confidence | Formula: NPV(peace_dividend + healthcare_savings + productivity_gains\
   \ + caregiver_savings + gdp_boost + extended_earnings) | Unit: usd | Click to view\
-  \ calculation\">$512K</a>"
+  \ calculation\">$508K</a>"
 "personal_lifetime_wealth_latex": "$$\n\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\\
   frac{B_t}{(1+r)^t}\n$$"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
@@ -1731,13 +1738,13 @@
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
   $0.127} = 701\\times\n$$"
 "trial_capacity_cumulative_years_20yr": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR\"\
-  >514</span>"
+  >456</span>"
 "trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
   \ 20 = 514 \\text{ years}\n$$"
 "trial_capacity_multiplier": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER\"\
-  >25.7</span>"
+  >22.8</span>"
 "trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
-  \ = \\frac{48.8M}{1.9M} = 25.71\n$$"
+  \ = \\frac{43.4M}{1.9M} = 22.85\n$$"
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
@@ -1876,6 +1883,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "303"
-"total_latex_equation_count": "116"
+"total_parameter_count": "305"
+"total_latex_equation_count": "117"
 "total_citation_count": "122"

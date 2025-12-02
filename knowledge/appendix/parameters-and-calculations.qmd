@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 303
+**Total parameters**: 305
 
 - External sources (peer-reviewed): 122
-- Calculated values: 97
+- Calculated values: 99
 - Core definitions: 84
 
 ## External Data Sources {#sec-external}
@@ -2821,12 +2821,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
-**Value**: 84,834
+**Value**: 75,392
 
 Maximum trials per year possible with trial capacity multiplier
 
 $$
-Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 25.71 = 84{,}834
+Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 22.85 = 75{,}392
 $$
 
 *✓ High confidence*
@@ -2850,12 +2850,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Patients Fundable Annually {#sec-dih_patients_fundable_annually}
 
-**Value**: 48.8M
+**Value**: 43.4M
 
 Number of patients fundable annually at RECOVERY trial cost
 
 $$
-Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$24.42B}{\$500} = 48.8M
+Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$21.70B}{\$500} = 43.4M
 $$
 
 **Methodology**: [../economics/economics#funding-allocation](../economics/economics#funding-allocation)
@@ -2879,9 +2879,38 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### DIH Annual Funding for Medical Research {#sec-dih_treasury_to_medical_research_annual}
+
+**Value**: $21.7B
+
+Annual funding for medical research (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)
+
+$$
+ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dih_treasury_to_medical_research_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dih_treasury_to_medical_research_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_treasury_to_medical_research_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Annual Clinical Trial Patient Subsidies {#sec-dih_treasury_trial_subsidies_annual}
 
-**Value**: $24.4B
+**Value**: $21.7B
 
 Annual clinical trial patient subsidies (all medical research funds after dFDA operations)
 
@@ -3809,6 +3838,35 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Annual IAB Political Incentive Funding {#sec-iab_political_incentive_funding_annual}
+
+**Value**: $2.72B
+
+Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
+
+$$
+IABFunding = \$27.18B \times 0.10 = \$2.718B
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-iab_political_incentive_funding_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-iab_political_incentive_funding_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### Medical Research Spending as Percentage of Total Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
 **Value**: 0.0525%
@@ -4307,7 +4365,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Personal Lifetime Wealth (Age 30, 1% Treaty) {#sec-personal_lifetime_wealth}
 
-**Value**: $512K
+**Value**: $508K
 
 Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.
 
@@ -5186,7 +5244,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Cumulative Trial Capacity Years Over 20 Years {#sec-trial_capacity_cumulative_years_20yr}
 
-**Value**: 514
+**Value**: 456
 
 Cumulative trial-capacity-equivalent years over 20-year period
 
@@ -5215,12 +5273,12 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Trial Capacity Multiplier {#sec-trial_capacity_multiplier}
 
-**Value**: 25.7
+**Value**: 22.8
 
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
 $$
-Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{48.8M}{1.9M} = 25.71
+Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{43.4M}{1.9M} = 22.85
 $$
 
 *✓ High confidence*
@@ -5968,7 +6026,7 @@ DIH broader initiatives upfront cost (medium case)
 ::: {.callout-warning icon=false collapse=false}
 ### Medical Research Percentage of Treaty Funding {#sec-dih_treasury_medical_research_pct}
 
-**Value**: 90%
+**Value**: 80%
 
 Percentage of treaty funding allocated to medical research (after bond payouts)
 
@@ -5977,20 +6035,9 @@ Percentage of treaty funding allocated to medical research (after bond payouts)
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### DIH Annual Funding for Medical Research {#sec-dih_treasury_to_medical_research_annual}
-
-**Value**: $24.5B
-
-Annual funding for medical research (treaty funding minus bond payouts)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ### Patient Trial Subsidies Percentage of Treaty Funding {#sec-dih_treasury_trial_subsidies_pct}
 
-**Value**: 89.9%
+**Value**: 79.9%
 
 Percentage of treaty funding going directly to patient trial subsidies
 
@@ -6088,6 +6135,21 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 ### Hours Per Year {#sec-hours_per_year}
 
 **Value**: 8,760
+
+*Core definition*
+
+:::
+
+::: {.callout-warning icon=false collapse=false}
+### IAB Political Incentive Funding Percentage {#sec-iab_political_incentive_funding_pct}
+
+**Value**: 10%
+
+Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
