@@ -285,8 +285,8 @@ def build_formatted_var_usage_maps(root: Path, all_formatted_vars: Set[str]):
     Build maps of formatted variable usage by scanning QMD files for {{< var ... >}} references.
     Returns: (qmd_refs, script_refs) where each is formatted_var -> list of files
     """
-    parameters_file = root / 'dih_models' / 'parameters.py'
-    
+    root / 'dih_models' / 'parameters.py'
+
     qmd_refs = defaultdict(list)  # formatted_var -> [files...]
     script_refs = defaultdict(list)  # formatted_var -> [files...]
 
@@ -312,7 +312,7 @@ def build_formatted_var_usage_maps(root: Path, all_formatted_vars: Set[str]):
                     if re.search(rf'\b{fmt_var}\b', content):
                         qmd_refs[fmt_var].append(str(qmd_file.relative_to(root)))
 
-        except Exception as e:
+        except Exception:
             pass  # Silently skip - already warned during parameter scan
 
     # Scan Python files for direct usage
@@ -333,7 +333,7 @@ def build_formatted_var_usage_maps(root: Path, all_formatted_vars: Set[str]):
                 if re.search(rf'\b{fmt_var}\b', content):
                     script_refs[fmt_var].append(str(py_file.relative_to(root)))
 
-        except Exception as e:
+        except Exception:
             pass
 
     # Scan Jupyter notebooks
@@ -351,7 +351,7 @@ def build_formatted_var_usage_maps(root: Path, all_formatted_vars: Set[str]):
                 if re.search(rf'\b{fmt_var}\b', content):
                     script_refs[fmt_var].append(str(nb_file.relative_to(root)))
 
-        except Exception as e:
+        except Exception:
             pass
 
     return qmd_refs, script_refs
@@ -393,7 +393,7 @@ def main():
     fmt_qmd_refs, fmt_script_refs = build_formatted_var_usage_maps(root, all_formatted_vars)
     print("      Analysis complete!")
     print()
-    
+
     # Find dependents
     print("[5/5] Analyzing parameter dependencies...")
     dependents = find_dependents(parameters_file, all_params)
@@ -457,14 +457,14 @@ def main():
         print("   Used in other parameter formulas, not displayed in documents.")
         print("   These are REQUIRED for calculations - do NOT delete unless consolidating!")
         print("-" * 80)
-        
+
         # Sort by usage count (lowest first - candidates for consolidation)
         intermediate_sorted = sorted(intermediate_params, key=lambda x: (x[1], len(x[2])))
-        
+
         # Group by usage count
         single_use = [(p, c, d) for p, c, d in intermediate_sorted if c == 1]
         multi_use = [(p, c, d) for p, c, d in intermediate_sorted if c > 1]
-        
+
         if single_use:
             print()
             print(f"   📍 SINGLE-USE ({len(single_use)} params) - could potentially inline:")
@@ -480,7 +480,7 @@ def main():
                     print(f"        └─ files: {short_list}{more}")
             if len(single_use) > 15:
                 print(f"      ... and {len(single_use) - 15} more single-use params")
-        
+
         if multi_use:
             print()
             print(f"   🔗 MULTI-USE ({len(multi_use)} params) - keep these (reused across formulas):")
@@ -492,7 +492,7 @@ def main():
                 print(f"        └─ used by: {dep_list}")
             if len(multi_use) > 10:
                 print(f"      ... and {len(multi_use) - 10} more multi-use params")
-        
+
         print()
 
     print(f"📊 ACTIVELY DISPLAYED ({len(used_params)} parameters):")
@@ -534,7 +534,7 @@ def main():
         print(f"📊 ACTIVELY USED FORMATTED VARIABLES ({len(used_formatted)}):")
         print("   Used in QMD files via {{< var ... >}} references.")
         print("-" * 80)
-        
+
         # Show top 10 most used
         used_formatted_sorted = sorted(used_formatted, key=lambda x: x[1], reverse=True)
         print("   Top 10 most referenced:")
@@ -544,7 +544,7 @@ def main():
                 file_list += ", ..."
             print(f"      - {fmt_var}: {total_refs} files")
             print(f"        └─ {file_list}")
-        
+
         if len(used_formatted_sorted) > 10:
             print(f"      ... and {len(used_formatted_sorted) - 10} more")
         print()
@@ -571,20 +571,20 @@ def main():
     if unused_params:
         print(f"🎯 Action: Delete {len(unused_params)} unused parameters")
         print("   Run this script again after deletion to verify!")
-    
+
     if unused_formatted:
         print(f"🎯 Action: Delete {len(unused_formatted)} unused formatted variables")
         print("   These are defined in parameters.py but never referenced in QMD files.")
-    
+
     if not unused_params and not unused_formatted:
         print("✅ No unused parameters or formatted variables - codebase is clean!")
-        
+
     single_use_count = len([p for p, c, d in intermediate_params if c == 1])
     if single_use_count > 20:
         print()
         print(f"💡 Tip: {single_use_count} single-use intermediate params could potentially")
         print("   be inlined into their parent formulas to simplify parameters.py")
-    
+
     print()
 
     # Return non-zero if there are unused items

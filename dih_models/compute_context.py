@@ -6,7 +6,7 @@ DO NOT EDIT MANUALLY - changes will be overwritten.
 
 Usage:
     from dih_models.compute_context import ComputeContext, ComputeFunc
-    
+
     # In Parameter definitions:
     compute: ComputeFunc = lambda ctx: ctx["PARAM_A"] + ctx["PARAM_B"]
 """

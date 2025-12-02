@@ -6,9 +6,10 @@ import numpy as np
 from pathlib import Path
 
 from dih_models.plotting.chart_style import (
-    setup_chart_style, add_watermark, clean_spines,
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
@@ -29,14 +30,17 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(sorted_samples, exceedance * 100, color=COLOR_BLACK, linewidth=2.5)
 ax.fill_between(sorted_samples, 0, exceedance * 100, alpha=0.1, color=COLOR_BLACK)
 
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
 # Annotate thresholds
 for thresh in thresholds:
     exceed_pct = (np.array(samples) >= thresh).sum() / len(samples) * 100
     ax.axvline(thresh, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
     ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
     
-    # Add label
-    ax.annotate(f'{exceed_pct:.0f}% chance\n≥ {thresh:,.2g}',
+    # Add label with formatted threshold value (use format_parameter_value for full units)
+    ax.annotate(f'{exceed_pct:.0f}% chance\n≥ {format_parameter_value(thresh, units)}',
                 xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
                 fontsize=10, ha='left', weight='bold',
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))

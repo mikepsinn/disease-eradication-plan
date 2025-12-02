@@ -1444,26 +1444,6 @@
   \ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [4, 9] | Dist: Lognormal\
   \ | Unit: years | Click to view source\">6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
-"roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
-  /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
-  ROI at 1% discount rate (approximate 15% increase from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 1.15 | Click to view calculation\">518</a>"
-"roi_discount_1pct_latex": "$$\nROI_{1\\%} \\approx 463 \\times 1.15 = 532\n$$"
-"roi_discount_3pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
-  /calculated\" data-source-type=\"calculated\" data-confidence=\"high\" title=\"\
-  ROI at 3% discount rate (baseline) | ✓ High confidence | Formula: DFDA_ROI_RD_ONLY\
-  \ | Click to view calculation\">451</a>"
-"roi_discount_3pct_latex": "$$\nROI_{3\\%} = 463\n$$"
-"roi_discount_5pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
-  /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
-  ROI at 5% discount rate (approximate 12% decrease from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 0.88 | Click to view calculation\">396</a>"
-"roi_discount_5pct_latex": "$$\nROI_{5\\%} \\approx 463 \\times 0.88 = 407\n$$"
-"roi_discount_7pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
-  /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
-  ROI at 7% discount rate (approximate 22% decrease from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 0.78 | Click to view calculation\">351</a>"
-"roi_discount_7pct_latex": "$$\nROI_{7\\%} \\approx 463 \\times 0.78 = 361\n$$"
 "seconds_per_minute": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_MINUTE\"\
   >60</span>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\
@@ -1962,6 +1942,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "317"
-"total_latex_equation_count": "125"
+"total_parameter_count": "313"
+"total_latex_equation_count": "121"
 "total_citation_count": "127"

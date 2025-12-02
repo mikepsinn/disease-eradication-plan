@@ -280,7 +280,7 @@ class BuildMonitor:
                 print(timestamped_line, end="")
 
                 # Parse and extract relevant information for summary
-                parsed = self.parse_line(line, custom_parsers)
+                self.parse_line(line, custom_parsers)
                 # Note: parsed info is already printed above, this is just for tracking
 
                 # Check if watchdog killed the process

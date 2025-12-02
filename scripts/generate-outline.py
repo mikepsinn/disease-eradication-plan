@@ -8,11 +8,10 @@ outline showing the complete document structure.
 
 Usage:
     python scripts/generate-outline.py [--output OUTLINE.MD]
-    
+
 If --output is not specified, prints to stdout.
 """
 
-import os
 import re
 import sys
 import yaml
@@ -28,17 +27,16 @@ if sys.platform == 'win32':
 def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
     """
     Extract all headings from a .qmd file, ignoring code blocks.
-    
+
     Returns list of tuples: (level, heading_text)
     where level is 1-6 (h1-h6)
     """
     if not filepath.exists():
         return []
-    
+
     headings = []
     in_code_block = False
-    code_block_delimiter = None
-    
+
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             for line in f:
@@ -48,11 +46,11 @@ def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
                     # Toggle code block state - any ``` opens/closes
                     in_code_block = not in_code_block
                     continue
-                
+
                 # Skip lines inside code blocks
                 if in_code_block:
                     continue
-                
+
                 # Match markdown headings: # through ######
                 # Must have text after the # symbols
                 match = re.match(r'^(#{1,6})\s+(.+)$', line)
@@ -62,11 +60,11 @@ def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
                     # Only add if there's actual text content
                     if text:
                         headings.append((level, text))
-    
+
     except Exception as e:
         print(f"Warning: Error reading {filepath}: {e}", file=sys.stderr)
         return []
-    
+
     return headings
 
 
@@ -266,13 +264,13 @@ def generate_outline(book_config_path: Path, project_root: Path) -> str:
             outline_lines.append(f"### {icon} {part_name}")
             outline_lines.append("")
             current_part = part_name
-        
+
         # Get full file path
         full_path = project_root / file_path
-        
+
         # Extract headings
         headings = extract_headings_from_file(full_path)
-        
+
         if headings:
             # Add file reference - use h4 for better visual hierarchy under parts
             outline_lines.append(f"#### {file_path}")
@@ -294,24 +292,24 @@ def generate_outline(book_config_path: Path, project_root: Path) -> str:
                 outline_lines.append(f"#### {file_path} (file not found)")
                 files_not_found += 1
             outline_lines.append("")
-    
+
     # Add summary
     outline_lines.append("---")
     outline_lines.append("")
-    outline_lines.append(f"**Summary:**")
+    outline_lines.append("**Summary:**")
     outline_lines.append(f"- Files processed: {len(chapter_files)}")
     outline_lines.append(f"- Files with headings: {files_with_headings}")
     outline_lines.append(f"- Files without headings: {files_without_headings}")
     outline_lines.append(f"- Files not found: {files_not_found}")
     outline_lines.append(f"- Total headings extracted: {total_headings}")
-    
+
     return "\n".join(outline_lines)
 
 
 def main():
     """Main entry point."""
     import argparse
-    
+
     parser = argparse.ArgumentParser(
         description="Generate outline from headings in _quarto-book.yml chapter files"
     )
@@ -327,21 +325,21 @@ def main():
         default='_quarto-book.yml',
         help='Path to book configuration file (default: _quarto-book.yml)'
     )
-    
+
     args = parser.parse_args()
-    
+
     # Get project root (directory containing _quarto-book.yml)
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
     book_config_path = project_root / args.book_config
-    
+
     if not book_config_path.exists():
         print(f"Error: Book configuration file not found: {book_config_path}", file=sys.stderr)
         sys.exit(1)
-    
+
     # Generate outline
     outline = generate_outline(book_config_path, project_root)
-    
+
     # Output - always write to file now (default: OUTLINE-GENERATED.MD)
     output_path = project_root / args.output
     try:

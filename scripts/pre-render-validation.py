@@ -793,7 +793,7 @@ def check_markdown_links(content: str, filepath: str):
 
         matches = link_pattern.finditer(line)
         for match in matches:
-            link_text = match.group(1)
+            match.group(1)
             link_path = match.group(2).strip()
 
             # Skip URLs

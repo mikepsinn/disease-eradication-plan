@@ -240,28 +240,28 @@ def check_broken_internal_links(content, file_path, output_dir):
         matches = re.finditer(href_pattern, line)
         for match in matches:
             href_value = match.group(1)
-            
+
             # Skip external links (http, https, mailto, etc.)
             parsed = urlparse(href_value)
             if parsed.scheme in ('http', 'https', 'mailto', 'ftp', 'tel'):
                 continue
-            
+
             # Skip anchor-only links (fragments)
             if href_value.startswith('#'):
                 continue
-            
+
             # Skip data URIs and javascript: links
             if href_value.startswith('data:') or href_value.startswith('javascript:'):
                 continue
-            
+
             # This is an internal link - check if it exists
             # Decode URL encoding
             decoded_href = unquote(href_value)
-            
+
             # Remove fragment if present
             if '#' in decoded_href:
                 decoded_href = decoded_href.split('#')[0]
-            
+
             # Resolve relative to current file's directory
             if decoded_href.startswith('/'):
                 # Absolute path from output_dir root
@@ -269,7 +269,7 @@ def check_broken_internal_links(content, file_path, output_dir):
             else:
                 # Relative path from current file
                 target_path = (file_dir / decoded_href).resolve()
-            
+
             # Normalize the path (handle .. and .)
             try:
                 target_path = target_path.resolve()
@@ -278,7 +278,7 @@ def check_broken_internal_links(content, file_path, output_dir):
                 context = f"Invalid link path: `{href_value}` (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
                 errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))
                 continue
-            
+
             # Check if file exists
             # First check if it's a direct file path
             if target_path.exists():
@@ -297,13 +297,13 @@ def check_broken_internal_links(content, file_path, output_dir):
                 except ValueError:
                     # Link points outside output directory - might be intentional, skip
                     continue
-                
+
                 # Check if it's a file without extension and .html version exists
                 html_path = target_path.with_suffix('.html')
                 if html_path.exists():
                     # The .html version exists, so the link should work
                     continue
-                
+
                 # File doesn't exist and no .html version found
                 context = f"Broken internal link: `{href_value}` -> {target_path} (context: ...{line[max(0, match.start()-50):min(len(line), match.end()+50)]}...)"
                 errors.append(ValidationError(file_path, i, "BROKEN_LINK", context))

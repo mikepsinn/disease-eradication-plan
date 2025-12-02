@@ -58,11 +58,11 @@ _scripts_dir = Path(__file__).parent.absolute()
 if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
-# Import the references JSON generator
-from generate_references_json import generate_references_json
+from generate_references_json import generate_references_json  # noqa: E402
+
 try:
     # Optional uncertainty integration
-    from dih_models.uncertainty import simulate, one_at_a_time_sensitivity, tornado_deltas, regression_sensitivity, Outcome
+    from dih_models.uncertainty import simulate, one_at_a_time_sensitivity, tornado_deltas, regression_sensitivity, Outcome  # noqa: E402
 except Exception:
     simulate = None  # type: ignore
     one_at_a_time_sensitivity = None  # type: ignore
@@ -159,9 +159,9 @@ def smart_title_case(param_name: str) -> str:
         'DALY': 'DALY',  # Disability-Adjusted Life Year
         'DALYS': 'DALYs',
         'NPV': 'NPV',    # Net Present Value
-        'OPEX': 'OPEX',  # Operating Expenses
-        'CAPEX': 'CAPEX', # Capital Expenses
-        'GDP': 'GDP',    # Gross Domestic Product
+        'OPEX': 'OPEX',   # Operating Expenses
+        'CAPEX': 'CAPEX',  # Capital Expenses
+        'GDP': 'GDP',      # Gross Domestic Product
         'VSL': 'VSL',    # Value of Statistical Life
         'EPA': 'EPA',    # Environmental Protection Agency
         'FDA': 'FDA',    # Food and Drug Administration
@@ -218,7 +218,7 @@ def smart_title_case(param_name: str) -> str:
 def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, str | None]:
     """
     Infer operation type by testing the compute function with known values.
-    
+
     Returns:
         Tuple of (operation_type, order) where:
         - operation_type: 'sum', 'multiply', 'divide', 'subtract', 'identity', 'complex'
@@ -226,30 +226,30 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
     """
     if not hasattr(param_value, 'compute') or not param_value.compute:
         return 'complex', None
-    
+
     n = len(inputs)
     if n == 0:
         return 'complex', None
-    
+
     # Create test context with distinct values that make operations distinguishable
     # Use values like [2, 3, 4, ...] so we can identify the operation
     test_vals = [2.0 + i for i in range(n)]
     ctx = {name: val for name, val in zip(inputs, test_vals)}
-    
+
     try:
         result = param_value.compute(ctx)
     except Exception:
         return 'complex', None
-    
+
     if n == 1:
         # Single input - check for identity or simple transformation
         if abs(result - test_vals[0]) < 0.01:
             return 'identity', None
         return 'transform', None
-    
+
     elif n == 2:
         a, b = test_vals[0], test_vals[1]  # 2.0, 3.0
-        
+
         # Check each operation type
         if abs(result - (a + b)) < 0.01:  # 2 + 3 = 5
             return 'sum', None
@@ -265,35 +265,35 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
             return 'subtract', 'second_minus_first'
         else:
             return 'complex', None
-    
+
     else:
         # Multi-input: check if it's a sum or product
         expected_sum = sum(test_vals)
         if abs(result - expected_sum) < 0.01:
             return 'sum', None
-        
+
         # Check product (for 3+ inputs)
         expected_product = 1.0
         for v in test_vals:
             expected_product *= v
         if abs(result - expected_product) < 0.01:
             return 'multiply', None
-        
+
         return 'complex', None
 
 
 def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | None:
     """Extract the lambda body from parameters.py for a given parameter."""
     content = params_file.read_text(encoding="utf-8")
-    
+
     # Find the parameter definition start
     start_pattern = rf'{param_name}\s*=\s*Parameter\('
     start_match = re.search(start_pattern, content)
     if not start_match:
         return None
-    
+
     start = start_match.start()
-    
+
     # Find matching closing paren by counting depth
     depth = 0
     end = start
@@ -305,9 +305,9 @@ def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | N
             if depth == 0:
                 end = i + 1
                 break
-    
+
     param_def = content[start:end]
-    
+
     # Find compute=lambda ctx: ... pattern
     compute_match = re.search(
         r'compute\s*=\s*lambda\s+ctx\s*:\s*(.+?)(?=,\s*\n\s*\)|$)',
@@ -318,14 +318,14 @@ def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | N
         body = compute_match.group(1).strip()
         body = body.rstrip(',').strip()
         return body
-    
+
     return None
 
 
 def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
     """
     Convert a Python lambda body to LaTeX using sympy.
-    
+
     NOTE: This often produces unreadable output for complex formulas with
     variable names. Only use when the result is simpler than inference-based
     approach. For complex formulas, prefer hardcoded latex fields.
@@ -338,24 +338,24 @@ def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
 def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str, Dict[str, Any]], params_file: Path = None) -> str | None:
     r"""
     Generate LaTeX equation from parameter metadata.
-    
+
     Strategy:
     1. First try sympy-based conversion (parses actual compute lambda)
     2. Fall back to inference-based approach for simple operations
     3. Return None for truly complex cases (hardcoded latex used instead)
-    
+
     Creates equations like:
     - Sum: \text{Total} = \underbrace{\$327B}_{\text{Diabetes}} + \underbrace{\$355B}_{\text{Alzheimer's}} = \$1.253T
     - Product: \text{Cost} = 233{,}600 \times \$10M = \$2.34T
     - Ratio: \text{Multiplier} = \frac{48.8M}{1.9M} = 25.7\times
     - Complex: Uses sympy to generate proper fractions, exponents, etc.
-    
+
     Args:
         param_name: Name of the parameter
         param_value: Parameter object with metadata
         parameters: Full parameters dict for looking up input values
         params_file: Path to parameters.py for lambda extraction (optional)
-    
+
     Returns:
         LaTeX string or None if cannot generate
     """
@@ -364,14 +364,14 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
         return None
     if not hasattr(param_value, 'compute') or not param_value.compute:
         return None
-    
+
     inputs = param_value.inputs
     result_value = float(param_value)
     result_unit = getattr(param_value, 'unit', '') or ''
-    
+
     # Infer operation type from compute function
     operation, order = infer_operation_from_compute(param_value, inputs)
-    
+
     # Get input values and format them
     input_data = []
     for inp_name in inputs:
@@ -379,20 +379,20 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
         inp_value = inp_meta.get('value')
         if inp_value is None:
             return None  # Can't generate if missing input
-        
+
         inp_float = float(inp_value)
         inp_unit = getattr(inp_value, 'unit', '') or ''
         inp_display = getattr(inp_value, 'display_name', smart_title_case(inp_name))
-        
+
         # Format the value for LaTeX
         inp_formatted = format_latex_value(inp_float, inp_unit)
-        
+
         # Create short label (abbreviation from display name and param name)
         short_label = create_short_label(inp_display, inp_name)
-        
+
         # Create symbolic name for traceable equations
         inp_symbolic = create_latex_variable_name(inp_name, inp_display)
-        
+
         input_data.append({
             'name': inp_name,
             'value': inp_float,
@@ -402,16 +402,16 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
             'symbolic': inp_symbolic,
             'unit': inp_unit,
         })
-    
+
     # Format result value
     result_formatted = format_latex_value(result_value, result_unit)
-    
+
     # Get display name for creating meaningful LHS
     result_display = getattr(param_value, 'display_name', '') or smart_title_case(param_name)
-    
+
     # Create short name for LHS using both param_name and display_name
     lhs_short = create_latex_variable_name(param_name, result_display)
-    
+
     # For complex operations, try sympy-based conversion first
     if operation == 'complex' and params_file and params_file.exists():
         lambda_body = extract_lambda_body_from_file(param_name, params_file)
@@ -420,11 +420,11 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
             if sympy_latex:
                 # Sympy gives us the formula structure, add = result
                 return f"{lhs_short} = {sympy_latex} = {result_formatted}"
-    
+
     # Build equation based on inferred operation type
     # Format: LHS = Symbolic formula = Numeric values = Result
     # This makes calculations traceable AND verifiable
-    
+
     if operation == 'divide' and len(input_data) == 2:
         # Division: X = A/B = num/denom = result
         if order == 'second_over_first':
@@ -433,23 +433,23 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
         else:
             numerator = input_data[0]
             denominator = input_data[1]
-        
+
         symbolic = f"\\frac{{{numerator['symbolic']}}}{{{denominator['symbolic']}}}"
         numeric = f"\\frac{{{numerator['formatted']}}}{{{denominator['formatted']}}}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
-    
+
     elif operation == 'multiply':
         # Multiplication: X = A × B = val1 × val2 = result
         symbolic_terms = ' \\times '.join(d['symbolic'] for d in input_data)
         numeric_terms = ' \\times '.join(d['formatted'] for d in input_data)
         latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
-    
+
     elif operation == 'sum':
         # Addition: X = A + B + C = val1 + val2 + val3 = result
         symbolic_terms = ' + '.join(d['symbolic'] for d in input_data)
         numeric_terms = ' + '.join(d['formatted'] for d in input_data)
         latex = f"{lhs_short} = {symbolic_terms} = {numeric_terms} = {result_formatted}"
-    
+
     elif operation == 'subtract' and len(input_data) == 2:
         # Subtraction: X = A - B = val1 - val2 = result
         if order == 'second_minus_first':
@@ -461,7 +461,7 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
         symbolic = f"{first['symbolic']} - {second['symbolic']}"
         numeric = f"{first['formatted']} - {second['formatted']}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
-    
+
     elif operation in ('identity', 'transform') and len(input_data) == 1:
         # Single input transformation: X = A = val = result
         # BUT: Check if formula suggests a binary operation - if so, inputs metadata is incomplete
@@ -471,12 +471,12 @@ def generate_auto_latex(param_name: str, param_value: Any, parameters: Dict[str,
             return None
         inp = input_data[0]
         latex = f"{lhs_short} = {inp['symbolic']} = {inp['formatted']} = {result_formatted}"
-    
+
     else:
         # Complex or unrecognized - skip auto-generation
         # (hardcoded latex can still be used)
         return None
-    
+
     return latex
 
 
@@ -485,9 +485,9 @@ def format_latex_value(value: float, unit: str) -> str:
     is_currency = "USD" in unit or "usd" in unit or "dollar" in unit.lower()
     is_percentage = "%" in unit or "percent" in unit.lower() or "rate" in unit.lower()
     is_in_billions = "billion" in unit.lower()
-    
+
     abs_val = abs(value)
-    
+
     if is_currency:
         if is_in_billions:
             if abs_val >= 1000:
@@ -536,7 +536,7 @@ def format_latex_value(value: float, unit: str) -> str:
 def create_short_label(display_name: str, param_name: str = "") -> str:
     """
     Create a short LaTeX label from a display name or parameter name.
-    
+
     Strategy: Keep labels readable and domain-specific, not overly abbreviated.
     Use common medical/economic terms that are recognizable.
     """
@@ -546,7 +546,7 @@ def create_short_label(display_name: str, param_name: str = "") -> str:
         'combat', 'terror', 'state', 'ptsd', 'refugee', 'veteran',
         'platform', 'staff', 'trial', 'water', 'energy', 'supply',
     }
-    
+
     # Abbreviations only for very long words
     abbrevs = {
         'infrastructure': 'infra',
@@ -570,19 +570,19 @@ def create_short_label(display_name: str, param_name: str = "") -> str:
         'indirect': 'indirect',
         'direct': 'direct',
     }
-    
+
     display_lower = display_name.lower()
-    
+
     # First check for known abbreviations
     for full, short in abbrevs.items():
         if full in display_lower:
             return f"\\text{{{short}}}"
-    
+
     # Check for words to preserve as-is
     for word in preserve_words:
         if word in display_lower:
             return f"\\text{{{word}}}"
-    
+
     # Extract from parameter name if possible (e.g., ACLED_CONFLICT_DEATHS -> "ACLED")
     if param_name:
         parts = param_name.split('_')
@@ -590,32 +590,32 @@ def create_short_label(display_name: str, param_name: str = "") -> str:
         for part in parts:
             if part in ['ACLED', 'GTD', 'UCDP', 'WHO', 'CDC', 'UN', 'EPA']:
                 return f"\\text{{{part}}}"
-    
+
     # Extract first significant word from display name
     words = display_name.split()
     # Skip common prefixes
     skip_words = {'annual', 'global', 'total', 'us', 'the', 'a', 'an', 'per', 'of', 'and'}
     significant_words = [w for w in words if w.lower() not in skip_words and len(w) > 2]
-    
+
     if len(significant_words) >= 1:
         # Use first significant word, only abbreviate if very long
         first_word = significant_words[0]
         if len(first_word) > 10:
             return f"\\text{{{first_word[:8]}}}"
         return f"\\text{{{first_word}}}"
-    
+
     return f"\\text{{{display_name[:8]}}}"
 
 
 def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
     """
     Create a meaningful LaTeX variable name from parameter info.
-    
+
     Following patterns from hardcoded equations:
     - OPEX_{total}, Cost_{combat}, Deaths_{total}
     - PeaceDividend_{infra}, Benefit_{RD}
     - TotalWarCost, DirectCosts
-    
+
     Args:
         param_name: Parameter name like DFDA_ANNUAL_OPEX
         display_name: Human-readable name like "DFDA Annual Operating Expenses"
@@ -663,7 +663,7 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         ('campaign', 'Campaign'),
         ('bloc', 'VotingBloc'),
     ]
-    
+
     # Priority subscripts - distinguishing modifiers (checked first, only one picked)
     # Order matters! Check longer strings first to avoid substring matches
     priority_subscripts = [
@@ -708,7 +708,7 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         ('symptomatic', 'sympt'),
         ('war_total', 'war'),  # War total cost
     ]
-    
+
     # Secondary subscripts - context modifiers
     secondary_subscripts = {
         'total': 'total',
@@ -727,17 +727,17 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         'pv': 'PV',
         'expected': 'exp',
     }
-    
+
     param_lower = param_name.lower()
     display_lower = display_name.lower() if display_name else param_lower
-    
+
     # Find main concept (main_concepts is a list of tuples for priority ordering)
     main = None
     for key, val in main_concepts:
         if key in param_lower or key in display_lower:
             main = val
             break
-    
+
     # Find ONE priority subscript (the distinguishing one)
     # priority_subscripts is a list of tuples to control order
     priority_sub = None
@@ -745,13 +745,13 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         if key in param_lower:
             priority_sub = val
             break
-    
+
     # Find secondary subscript(s)
     secondary_subs = []
     for key, val in secondary_subscripts.items():
         if key in param_lower and val != priority_sub:
             secondary_subs.append(val)
-    
+
     # Build the LaTeX name
     if main:
         subs = []
@@ -760,7 +760,7 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         # Add at most one secondary subscript
         if secondary_subs:
             subs.append(secondary_subs[0])
-        
+
         if subs:
             sub_str = ','.join(subs)
             return f"{main}_{{{sub_str}}}"
@@ -769,12 +769,12 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         # Fall back to creating a meaningful name from param parts
         # Use known acronyms and full words, not truncation
         parts = param_name.split('_')
-        
+
         # Known acronyms to preserve
         acronyms = {'US', 'DIH', 'DFDA', 'ROI', 'NPV', 'PV', 'GDP', 'VSL', 'FDA', 'R&D'}
         # Words to use as subscripts
         sub_words = {'annual', 'total', 'current', 'global', 'major', 'simple', 'daily'}
-        
+
         # Build main word(s) and subscript
         main_parts = []
         sub_parts = []
@@ -787,7 +787,7 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
                 sub_parts.append(part.title())
             elif not main_parts:  # Use first non-acronym, non-sub word
                 main_parts.append(part.title())
-        
+
         main_text = ''.join(main_parts) if main_parts else parts[0].title()
         if sub_parts:
             return f"{main_text}_{{{sub_parts[0].lower()}}}"
@@ -1098,10 +1098,10 @@ def convert_qmd_to_html(path: str) -> str:
     - HTML: resolves to .html files
     - PDF: resolves to internal PDF references
     - EPUB: resolves to internal EPUB references
-    
+
     Args:
         path: Path that may contain .qmd extension
-        
+
     Returns:
         Path with .qmd extension removed (format-agnostic)
     """
@@ -1311,7 +1311,7 @@ def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: P
         # fall back to auto-generated for params without hardcoded latex
         hardcoded_latex = getattr(value, "latex", None)
         auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file)
-        
+
         if hardcoded_latex:
             # Use hardcoded (preferred - hand-crafted with semantic labels)
             latex_var_name = f"{var_name}_latex"
@@ -1396,22 +1396,22 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
     has_dist = hasattr(value, "distribution") and value.distribution
     has_se = hasattr(value, "std_error") and value.std_error
     has_sensitivity = hasattr(value, "sensitivity") and value.sensitivity
-    
+
     if not (has_ci or has_dist or has_se or has_sensitivity):
         return content
-    
+
     content.append("#### Uncertainty Range")
     content.append("")
-    
+
     # Technical notation line
     technical_parts = []
-    
+
     if has_ci:
         low, high = value.confidence_interval
         low_str = format_parameter_value(low, unit)
         high_str = format_parameter_value(high, unit)
         technical_parts.append(f"95% CI: [{low_str}, {high_str}]")
-    
+
     if has_dist:
         dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
         dist_str = dist_name.title()
@@ -1419,30 +1419,30 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
             se_str = format_parameter_value(value.std_error, unit)
             dist_str += f" (SE: {se_str})"
         technical_parts.append(f"Distribution: {dist_str}")
-    
+
     if has_sensitivity and not has_ci:
         sens_str = format_parameter_value(value.sensitivity, unit)
         technical_parts.append(f"Sensitivity: ±{sens_str}")
-    
+
     if technical_parts:
         content.append("**Technical**: " + " • ".join(technical_parts))
         content.append("")
-    
+
     # Human-friendly explanation
     main_value = float(value)
-    
+
     if has_ci:
         low, high = value.confidence_interval
-        
+
         # Calculate percentage range from central value
         low_pct = abs((main_value - low) / main_value * 100) if main_value != 0 else 0
         high_pct = abs((high - main_value) / main_value * 100) if main_value != 0 else 0
         avg_pct = (low_pct + high_pct) / 2
-        
+
         # Format the bounds nicely
         low_str = format_parameter_value(low, unit)
         high_str = format_parameter_value(high, unit)
-        
+
         # Generate plain-language explanation based on uncertainty size
         if avg_pct <= 10:
             certainty_phrase = "We're quite confident in this estimate"
@@ -1456,14 +1456,14 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
         else:
             certainty_phrase = "This estimate is highly uncertain"
             range_desc = "a very wide range"
-        
+
         content.append(f"**What this means**: {certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results.")
         content.append("")
-        
+
         # Add distribution explanation if present
         if has_dist:
             dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
-            
+
             dist_explanations = {
                 "normal": "values cluster around the center with equal chances of being higher or lower",
                 "lognormal": "values can't go negative and have a longer tail toward higher values (common for costs and populations)",
@@ -1472,19 +1472,19 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
                 "beta": "values are bounded and can skew toward one end",
                 "pert": "values cluster around a most-likely estimate with defined min/max bounds",
             }
-            
+
             explanation = dist_explanations.get(dist_name.lower(), "values follow a specific statistical pattern")
             content.append(f"*The {dist_name.lower()} distribution means {explanation}.*")
             content.append("")
-    
+
     elif has_sensitivity:
         sens = value.sensitivity
         sens_str = format_parameter_value(sens, unit)
         sens_pct = abs(sens / main_value * 100) if main_value != 0 else 0
-        
+
         content.append(f"**What this means**: This value could reasonably vary by ±{sens_str} (±{sens_pct:.0f}%) based on different assumptions or data sources.")
         content.append("")
-    
+
     return content
 
 
@@ -1672,7 +1672,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             # Priority: hardcoded latex > auto-generated latex > formula
             hardcoded_latex = getattr(value, "latex", None)
             auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file) if not hardcoded_latex else None
-            
+
             if hardcoded_latex:
                 content.append("$$")
                 content.append(hardcoded_latex)
@@ -1690,7 +1690,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             # Source reference (calculation methodology)
             if hasattr(value, "source_ref") and value.source_ref:
                 source_ref = value.source_ref
-                
+
                 # Convert ReferenceID enum to string value (if needed)
                 if hasattr(source_ref, 'value'):
                     source_ref = source_ref.value
@@ -1699,7 +1699,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
                 # Detect if this is an intra-document anchor (no path separators, no file extension)
                 is_anchor = "/" not in source_ref and ".qmd" not in source_ref and ".md" not in source_ref
-                
+
                 # Check if this anchor-like value is actually a reference ID from references.qmd
                 is_reference_id = False
                 if is_anchor and available_refs is not None:
@@ -1764,7 +1764,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
             # Add uncertainty visualization if tornado/sensitivity data exists
             project_root = output_path.parent.parent.parent  # Go up from knowledge/appendix/ to project root
-            tornado_json = project_root / "_analysis" / f"tornado_{param_name}.json"
+            project_root / "_analysis" / f"tornado_{param_name}.json"
             tornado_qmd = project_root / "knowledge" / "figures" / f"tornado-{param_name.lower()}.qmd"
             sensitivity_qmd = project_root / "knowledge" / "figures" / f"sensitivity-table-{param_name.lower()}.qmd"
             mc_dist_qmd = project_root / "knowledge" / "figures" / f"mc-distribution-{param_name.lower()}.qmd"
@@ -2063,13 +2063,13 @@ def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: s
             if source_type_str == "external":
                 if hasattr(value, "source_ref") and value.source_ref:
                     source_ref = value.source_ref
-                    
+
                     # Convert ReferenceID enum to string value (if needed)
                     if hasattr(source_ref, 'value'):
                         source_ref_str = source_ref.value
                     else:
                         source_ref_str = str(source_ref)
-                    
+
                     used_refs.append(source_ref_str)
 
                     # Check if reference exists
@@ -2133,119 +2133,119 @@ def validate_calculated_parameters(parameters: Dict[str, Dict[str, Any]]) -> lis
 def validate_calculated_params_no_uncertainty(parameters: Dict[str, Dict[str, Any]]) -> list:
     """
     Validate that calculated parameters don't have their own uncertainty distributions.
-    
+
     Calculated parameters should derive uncertainty from their inputs via the compute
     function, not have their own confidence_interval or distribution. Having both
     would double-count uncertainty.
-    
+
     Args:
         parameters: Dict of parameter metadata
-        
+
     Returns:
         List of (param_name, issues) tuples for calculated params with uncertainty
     """
     problematic_params = []
-    
+
     for param_name, param_data in parameters.items():
         value = param_data["value"]
         if hasattr(value, "source_type"):
             source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
             if source_type_str == "calculated":
                 issues = []
-                
+
                 # Check for confidence_interval
                 if hasattr(value, "confidence_interval") and value.confidence_interval is not None:
                     issues.append("confidence_interval")
-                
+
                 # Check for distribution
                 if hasattr(value, "distribution") and value.distribution is not None:
                     issues.append("distribution")
-                
+
                 # Check for std_error
                 if hasattr(value, "std_error") and value.std_error is not None:
                     issues.append("std_error")
-                
+
                 if issues:
                     problematic_params.append((param_name, issues))
-    
+
     return problematic_params
 
 
 def validate_formula_uses_full_param_names(parameters: Dict[str, Dict[str, Any]]) -> list:
     """
     Validate that formula strings use full parameter names matching the inputs list.
-    
+
     This ensures LaTeX auto-generation can correctly determine operand order
     (e.g., numerator vs denominator in divisions) by matching formula text to inputs.
-    
+
     Args:
         parameters: Dict of parameter metadata
-        
+
     Returns:
         List of (param_name, input_name, formula) tuples for mismatches
     """
     mismatches = []
-    
+
     for param_name, param_data in parameters.items():
         value = param_data["value"]
-        
+
         # Only check parameters with both inputs and formula
         if not hasattr(value, 'inputs') or not value.inputs:
             continue
         if not hasattr(value, 'formula') or not value.formula:
             continue
-        
+
         formula_upper = value.formula.upper()
-        
+
         for inp_name in value.inputs:
             # Check if full input name appears in formula
             if inp_name.upper() not in formula_upper:
                 mismatches.append((param_name, inp_name, value.formula))
                 break  # Only report first missing input per parameter
-    
+
     return mismatches
 
 
 def validate_compute_inputs_match(parameters: Dict[str, Dict[str, Any]], params_file: Path) -> list:
     """
     Validate that the 'inputs' list matches what's actually used in the compute function.
-    
+
     This catches bugs where:
     - compute uses ctx["X"] but X is not in inputs list (will break uncertainty propagation)
     - inputs lists X but compute doesn't use ctx["X"] (unnecessary dependency)
-    
+
     Args:
         parameters: Dict of parameter metadata
         params_file: Path to parameters.py file for source code inspection
-        
+
     Returns:
         List of (param_name, issue_type, missing_or_extra_vars) tuples
     """
     issues = []
-    
+
     if not params_file or not params_file.exists():
         return issues
-    
+
     content = params_file.read_text(encoding="utf-8")
-    
+
     for param_name, param_data in parameters.items():
         value = param_data["value"]
-        
+
         # Only check parameters with compute function
         if not hasattr(value, 'compute') or not value.compute:
             continue
-        
+
         inputs = getattr(value, 'inputs', []) or []
         input_set = set(inputs)
-        
+
         # Find the parameter definition in the source
         start_pattern = rf'{param_name}\s*=\s*Parameter\('
         start_match = re.search(start_pattern, content)
         if not start_match:
             continue
-        
+
         start = start_match.start()
-        
+
         # Find matching closing paren
         depth = 0
         end = start
@@ -2257,73 +2257,73 @@ def validate_compute_inputs_match(parameters: Dict[str, Dict[str, Any]], params_
                 if depth == 0:
                     end = i + 1
                     break
-        
+
         param_def = content[start:end]
-        
+
         # Find all ctx["X"] references in the compute lambda
         ctx_refs = set(re.findall(r'ctx\["([^"]+)"\]', param_def))
-        
+
         # Check for mismatches
         missing_from_inputs = ctx_refs - input_set
         extra_in_inputs = input_set - ctx_refs
-        
+
         if missing_from_inputs:
             issues.append((param_name, 'missing_from_inputs', sorted(missing_from_inputs)))
         if extra_in_inputs:
             issues.append((param_name, 'extra_in_inputs', sorted(extra_in_inputs)))
-    
+
     return issues
 
 
 def validate_inline_calculations_have_compute(parameters: Dict[str, Dict[str, Any]], params_file: Path) -> list:
     """
     Validate that CALCULATED parameters with inline calculations have inputs and compute functions.
-    
+
     This catches parameters like:
         PARAM = Parameter(A * B, source_type="calculated", ...)  # Inline calculation
-        
+
     Without inputs/compute metadata, these break:
     - Uncertainty propagation (can't trace what inputs affect the value)
     - LaTeX auto-generation (can't format the equation)
     - Recalculation when inputs change
-    
+
     NOTE: Skips source_type="definition" parameters - these are policy choices or
     simple unit conversions that don't need uncertainty propagation.
-    
+
     Args:
         parameters: Dict of parameter metadata
         params_file: Path to parameters.py file for source code inspection
-        
+
     Returns:
         List of (param_name, first_arg_snippet) tuples for params with inline calcs but no compute
     """
     issues = []
-    
+
     if not params_file or not params_file.exists():
         return issues
-    
+
     content = params_file.read_text(encoding="utf-8")
-    
+
     for param_name, param_data in parameters.items():
         value = param_data["value"]
-        
+
         # Skip if already has compute function
         if hasattr(value, 'compute') and value.compute:
             continue
-        
+
         # Skip definitions - they're policy choices, not uncertain calculations
         source_type = getattr(value, 'source_type', '')
         if source_type and 'definition' in str(source_type).lower():
             continue
-        
+
         # Find the parameter definition in the source
         pattern = rf'{param_name}\s*=\s*Parameter\(\s*\n?\s*([^,\n]+)'
         match = re.search(pattern, content)
         if not match:
             continue
-        
+
         first_arg = match.group(1).strip()
-        
+
         # Skip if first arg is just a number
         if re.match(r'^[\d._]+$', first_arg):
             continue
@@ -2333,11 +2333,11 @@ def validate_inline_calculations_have_compute(parameters: Dict[str, Dict[str, An
         # Skip common constants
         if first_arg in ('True', 'False', 'None'):
             continue
-        
+
         # Check if it has an inline calculation (arithmetic operators)
         if any(op in first_arg for op in ['*', '/', '+', '-']):
             issues.append((param_name, first_arg[:60]))
-    
+
     return issues
 
 
@@ -2527,7 +2527,7 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
             if url:
                 url_escaped = url.replace('&', '\\&').replace('%', '\\%')
                 content.append(f"  url = {{{url_escaped}}},")
-                content.append(f"  urldate = {{2025-01-20}},")
+                content.append("  urldate = {2025-01-20},")
 
             # Note (additional context)
             if note:
@@ -2631,7 +2631,7 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
 def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: Path, param_metadata: dict = None, baseline: float = None, units: str = "") -> Path:
     """
     Generate a tornado chart QMD file for a parameter with uncertainty.
-    
+
     Args:
         param_name: Parameter name (e.g., 'TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT')
         tornado_data: Dict mapping input names to {delta_minus, delta_plus}
@@ -2639,10 +2639,10 @@ def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: 
         param_metadata: Optional parameter metadata for context
         baseline: Baseline value to center chart on (instead of 0)
         units: Units for x-axis label
-    
+
     Returns:
         Path to generated QMD file
-        
+
     Raises:
         ValueError: If tornado_data is empty or has no meaningful drivers
     """
@@ -2651,28 +2651,28 @@ def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: 
         display_name = param_metadata["value"].display_name
     else:
         display_name = smart_title_case(param_name)
-    
+
     # Sort by absolute impact (largest first)
     sorted_drivers = sorted(
         tornado_data.items(),
         key=lambda x: abs(x[1].get("delta_minus", 0)) + abs(x[1].get("delta_plus", 0)),
         reverse=True
     )
-    
+
     # Validate: skip if no drivers or all deltas are zero
     if not sorted_drivers:
         raise ValueError(f"No tornado drivers found for {param_name}")
-    
+
     # Check if all impacts are effectively zero (< 1e-10 relative to baseline)
     threshold = abs(baseline) * 1e-10 if baseline and abs(baseline) > 0 else 1e-10
     has_meaningful_impact = any(
         abs(data.get("delta_minus", 0)) > threshold or abs(data.get("delta_plus", 0)) > threshold
         for _, data in sorted_drivers
     )
-    
+
     if not has_meaningful_impact:
         raise ValueError(f"All tornado impacts near zero for {param_name}")
-    
+
     # Generate Python code for tornado chart
     qmd_content = f'''```{{python}}
 #| echo: false
@@ -2758,26 +2758,26 @@ add_png_metadata(
 
 plt.show()
 ```'''
-    
+
     # Write QMD file
     output_file = output_dir / f'tornado-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(qmd_content)
-    
+
     return output_file
 
 
 def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, output_dir: Path, param_metadata: dict = None) -> Path:
     """
     Generate a sensitivity indices table QMD file for a parameter.
-    
+
     Args:
         param_name: Parameter name
         sensitivity_data: Dict mapping input names to sensitivity coefficients
         output_dir: Directory to write QMD file
         param_metadata: Optional parameter metadata for context
-    
+
     Returns:
         Path to generated QMD file
     """
@@ -2786,14 +2786,14 @@ def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, outp
         display_name = param_metadata["value"].display_name
     else:
         display_name = smart_title_case(param_name)
-    
+
     # Sort by absolute sensitivity (largest first)
     sorted_indices = sorted(
         sensitivity_data.items(),
         key=lambda x: abs(x[1]),
         reverse=True
     )
-    
+
     # Generate markdown table
     qmd_content = f'''**Sensitivity Indices for {display_name}**
 
@@ -2802,7 +2802,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
 '''
-    
+
     for input_name, coef in sorted_indices:
         display_input = smart_title_case(input_name)
         # Standardized coefficients range from -1 to 1
@@ -2817,17 +2817,17 @@ Regression-based sensitivity showing which inputs explain the most variance in t
         else:
             interpretation = "Minimal effect"
         qmd_content += f'| {display_input} | {coef:.4f} | {interpretation} |\n'
-    
+
     qmd_content += '''
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
 '''
-    
+
     # Write QMD file
     output_file = output_dir / f'sensitivity-table-{param_name.lower()}.qmd'
     output_file.parent.mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(qmd_content)
-    
+
     return output_file
 
 
@@ -3268,7 +3268,7 @@ for thresh in thresholds:
     exceed_pct = (np.array(samples) >= thresh).sum() / len(samples) * 100
     ax.axvline(thresh, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
     ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
-    
+
     # Add label with formatted threshold value (use format_parameter_value for full units)
     ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{format_parameter_value(thresh, units)}}',
                 xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
@@ -3381,7 +3381,7 @@ def main():
             print(f"  - {param_name} = {value:,.2f} (marked as calculated but no formula)", file=sys.stderr)
         if len(suspicious_params) > 10:
             print(f"  ... and {len(suspicious_params) - 10} more", file=sys.stderr)
-        print(f"\n[WARN] Consider adding 'formula' or 'latex' to these parameters", file=sys.stderr)
+        print("\n[WARN] Consider adding 'formula' or 'latex' to these parameters", file=sys.stderr)
         print("[WARN] Or change source_type to 'definition' if they're intentional estimates", file=sys.stderr)
         print()
     else:
@@ -3391,7 +3391,7 @@ def main():
     # Validate calculated parameters don't have their own uncertainty (should derive from inputs)
     print("[*] Validating uncertainty is only on input parameters...")
     uncertainty_problems = validate_calculated_params_no_uncertainty(parameters)
-    
+
     if uncertainty_problems:
         print(f"[ERROR] Found {len(uncertainty_problems)} calculated parameters with their own uncertainty:", file=sys.stderr)
         for param_name, issues in uncertainty_problems:
@@ -3400,7 +3400,6 @@ def main():
         print("[ERROR] Calculated parameters should derive uncertainty from inputs via compute function.", file=sys.stderr)
         print("[ERROR] Remove confidence_interval/distribution/std_error from these calculated parameters.", file=sys.stderr)
         print("[ERROR] Add uncertainty to their INPUT parameters instead.", file=sys.stderr)
-        has_fatal_error = True
         print()
     else:
         print("[OK] All calculated parameters derive uncertainty from inputs")
@@ -3410,7 +3409,7 @@ def main():
     # Note: LaTeX auto-generation now infers operation from compute(), so formula is optional
     print("[*] Checking formula strings (informational)...")
     formula_mismatches = validate_formula_uses_full_param_names(parameters)
-    
+
     if formula_mismatches:
         print(f"[INFO] {len(formula_mismatches)} formulas use abbreviated names (this is OK - operation inferred from compute)")
         # Only show details if there are few
@@ -3425,11 +3424,11 @@ def main():
     # Validate compute functions match inputs list
     print("[*] Validating compute functions match inputs list...")
     compute_issues = validate_compute_inputs_match(parameters, parameters_path)
-    
+
     if compute_issues:
         missing_issues = [(p, v) for p, t, v in compute_issues if t == 'missing_from_inputs']
         extra_issues = [(p, v) for p, t, v in compute_issues if t == 'extra_in_inputs']
-        
+
         if missing_issues:
             print(f"[ERROR] {len(missing_issues)} parameters use ctx[] vars not in inputs list:", file=sys.stderr)
             for param_name, missing_vars in missing_issues[:10]:
@@ -3438,8 +3437,7 @@ def main():
                 print(f"  ... and {len(missing_issues) - 10} more", file=sys.stderr)
             print(file=sys.stderr)
             print("[ERROR] Add these to the 'inputs' list for proper uncertainty propagation.", file=sys.stderr)
-            has_fatal_error = True
-        
+
         if extra_issues:
             print(f"[WARN] {len(extra_issues)} parameters have unused inputs (not fatal):")
             for param_name, extra_vars in extra_issues[:5]:
@@ -3452,7 +3450,7 @@ def main():
     # Validate inline calculations have inputs/compute metadata
     print("[*] Checking for inline calculations missing inputs/compute...")
     inline_issues = validate_inline_calculations_have_compute(parameters, parameters_path)
-    
+
     if inline_issues:
         print(f"[ERROR] {len(inline_issues)} parameters have inline calculations but no inputs/compute:", file=sys.stderr)
         for param_name, first_arg in inline_issues[:10]:
@@ -3461,7 +3459,6 @@ def main():
             print(f"  ... and {len(inline_issues) - 10} more", file=sys.stderr)
         print(file=sys.stderr)
         print("[ERROR] Add 'inputs' and 'compute' to these parameters for uncertainty propagation.", file=sys.stderr)
-        has_fatal_error = True
         print()
     else:
         print("[OK] All inline calculations have inputs/compute metadata")
@@ -3488,7 +3485,7 @@ def main():
                            if hasattr(meta.get("value"), "formula") and meta.get("value").formula), None)
             # Summaries directory
             analysis_dir = project_root / "_analysis"
-            
+
             # Clean up stale analysis files before regenerating
             # This handles deleted/renamed parameters that would leave orphan files
             if analysis_dir.exists():
@@ -3497,7 +3494,7 @@ def main():
                 if stale_count > 0:
                     print(f"[*] Cleaning {stale_count} stale analysis files...")
                     shutil.rmtree(analysis_dir)
-            
+
             analysis_dir.mkdir(exist_ok=True)
             # Minimal inline summary generation to avoid duplicating logic
             from dih_models.uncertainty import simulate_with_propagation as _sim, one_at_a_time_sensitivity as _sens
@@ -3544,14 +3541,14 @@ def main():
             print("[*] Generating input distribution charts...")
             input_dist_figures_dir = project_root / "knowledge" / "figures"
             input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
-            
+
             # First, delete stale QMD files (we regenerate all)
             stale_dist_qmd = list(input_dist_figures_dir.glob("distribution-*.qmd"))
             if stale_dist_qmd:
                 print(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
                 for f in stale_dist_qmd:
                     f.unlink()
-            
+
             input_dist_count = 0
             input_dist_errors = []
             generated_dist_qmds = set()  # Track what we generate
@@ -3568,7 +3565,7 @@ def main():
                     pass
                 except Exception as e:
                     input_dist_errors.append(f"{param_name}: {e}")
-            
+
             # Clean up orphaned PNG files (PNGs without matching QMD)
             orphaned_dist_pngs = []
             for png_file in input_dist_figures_dir.glob("distribution-*.png"):
@@ -3579,7 +3576,7 @@ def main():
                 print(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
                 for f in orphaned_dist_pngs:
                     f.unlink()
-            
+
             print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
             for err in input_dist_errors:
                 print(f"[WARN] {err}")
@@ -3595,9 +3592,9 @@ def main():
             # Generate rigorous outcomes, tornado, and sensitivity indices for parameters with compute
             if tornado_deltas and regression_sensitivity and Outcome:
                 print("[*] Generating outcome distributions and sensitivity analysis...")
-                
+
                 figures_dir = project_root / "knowledge" / "figures"
-                
+
                 # Delete stale QMD files first (we regenerate all)
                 # PNGs will be cleaned up after generation (only orphans)
                 stale_tornado_qmd = list(figures_dir.glob("tornado-*.qmd"))
@@ -3605,15 +3602,15 @@ def main():
                 stale_mc_dist_qmd = list(figures_dir.glob("mc-distribution-*.qmd"))
                 stale_exceedance_qmd = list(figures_dir.glob("exceedance-*.qmd"))
                 stale_qmd_files = stale_tornado_qmd + stale_sensitivity_qmd + stale_mc_dist_qmd + stale_exceedance_qmd
-                
+
                 if stale_qmd_files:
                     print(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
                     for f in stale_qmd_files:
                         f.unlink()
-                
+
                 # Track generated QMD files for orphan PNG cleanup later
                 generated_outcome_qmds = set()
-                
+
                 # Validate: Find calculated parameters missing inputs/compute
                 validation_warnings = []
                 for param_name, meta in parameters.items():
@@ -3621,13 +3618,13 @@ def main():
                     source_type = getattr(val, "source_type", None)
                     has_inputs = hasattr(val, "inputs") and val.inputs
                     has_compute = hasattr(val, "compute") and val.compute
-                    
+
                     if source_type == "calculated":
                         if not has_inputs:
                             validation_warnings.append(f"{param_name}: missing 'inputs' (calculated parameter)")
                         if not has_compute:
                             validation_warnings.append(f"{param_name}: missing 'compute' (calculated parameter)")
-                
+
                 if validation_warnings:
                     print(f"\n[ERROR] {len(validation_warnings)} calculated parameters missing inputs/compute:", file=sys.stderr)
                     # Show ALL warnings - do not truncate
@@ -3639,10 +3636,10 @@ def main():
                     print("[ERROR]   2. Change source_type='definition' if it's an estimate/assumption", file=sys.stderr)
                     print("[ERROR]   3. Change source_type='external' if it comes from a source", file=sys.stderr)
                     sys.exit(1)
-                
+
                 # Validate: Check for leaf input parameters missing uncertainty metadata
                 # These cause zero-variance Monte Carlo outputs, making distribution charts meaningless
-                
+
                 def get_all_leaf_inputs(param_name: str, visited: set = None) -> set:
                     """Recursively find all leaf (non-calculated) inputs for a parameter."""
                     if visited is None:
@@ -3650,10 +3647,10 @@ def main():
                     if param_name in visited:
                         return set()
                     visited.add(param_name)
-                    
+
                     meta = parameters.get(param_name, {})
                     val = meta.get("value")
-                    
+
                     # If has inputs, recurse
                     if hasattr(val, "inputs") and val.inputs:
                         leaves = set()
@@ -3663,18 +3660,18 @@ def main():
                     else:
                         # This is a leaf parameter
                         return {param_name}
-                
+
                 def has_uncertainty(val) -> bool:
                     """Check if a parameter has uncertainty metadata."""
                     has_dist = hasattr(val, "distribution") and val.distribution
                     has_std = hasattr(val, "std_error") and val.std_error
                     has_ci = hasattr(val, "confidence_interval") and val.confidence_interval
                     return bool(has_dist or has_std or has_ci)
-                
+
                 # Collect ALL leaf parameters that are used in calculations but lack uncertainty
                 all_deterministic_leaves = set()
                 all_uncertain_leaves = set()
-                
+
                 for param_name, meta in parameters.items():
                     val = meta.get("value")
                     if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
@@ -3687,10 +3684,10 @@ def main():
                                 all_uncertain_leaves.add(leaf)
                             else:
                                 all_deterministic_leaves.add(leaf)
-                
+
                 # Only flag deterministic leaves that aren't also uncertain (some params may be checked multiple times)
                 truly_deterministic = all_deterministic_leaves - all_uncertain_leaves
-                
+
                 if truly_deterministic:
                     print(f"\n[ERROR] {len(truly_deterministic)} leaf input parameters lack uncertainty metadata:", file=sys.stderr)
                     print("[ERROR] These cause zero-variance Monte Carlo outputs for calculated parameters.", file=sys.stderr)
@@ -3707,7 +3704,7 @@ def main():
                     print("[ERROR]   - confidence_interval=(low, high)", file=sys.stderr)
                     print("[ERROR] Monte Carlo analysis requires uncertainty on ALL input parameters.", file=sys.stderr)
                     sys.exit(1)
-                
+
                 # Auto-discover parameters with compute functions
                 analyzable_params = []
                 for param_name, meta in parameters.items():
@@ -3721,17 +3718,17 @@ def main():
                             units=getattr(val, "unit", "")
                         )
                         analyzable_params.append(outcome)
-                
+
                 if not analyzable_params:
                     print("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
-                
+
                 # Counters for summary output
                 tornado_count = 0
                 sensitivity_count = 0
                 mc_dist_count = 0
                 exceedance_count = 0
                 analysis_json_count = 0
-                
+
                 outcomes_data = {}
                 for outcome in analyzable_params:
                     try:
@@ -3805,10 +3802,10 @@ def main():
                                 # 3. Add uncertainty distributions to leaf input parameters
                                 print(f"[ERROR] {val_err}", file=sys.stderr)
                                 print(f"[ERROR] Parameter '{outcome.name}' has inputs/compute but no tornado sensitivity.", file=sys.stderr)
-                                print(f"[ERROR] This usually means:", file=sys.stderr)
-                                print(f"[ERROR]   - Input parameters need uncertainty distributions (std_error, confidence_interval, or distribution)", file=sys.stderr)
-                                print(f"[ERROR]   - OR intermediate inputs need their own inputs/compute definitions", file=sys.stderr)
-                                print(f"[ERROR]   - OR this should be source_type='definition' instead of 'calculated'", file=sys.stderr)
+                                print("[ERROR] This usually means:", file=sys.stderr)
+                                print("[ERROR]   - Input parameters need uncertainty distributions (std_error, confidence_interval, or distribution)", file=sys.stderr)
+                                print("[ERROR]   - OR intermediate inputs need their own inputs/compute definitions", file=sys.stderr)
+                                print("[ERROR]   - OR this should be source_type='definition' instead of 'calculated'", file=sys.stderr)
                                 sys.exit(1)
                             except Exception as chart_err:
                                 print(f"[ERROR] Failed to generate tornado chart for {outcome.name}: {chart_err}", file=sys.stderr)
@@ -3824,16 +3821,16 @@ def main():
                                     mean = sum(vals) / len(vals)
                                     variance = sum((v - mean) ** 2 for v in vals) / len(vals)
                                     std = variance ** 0.5
-                                
+
                                 # Only include inputs that actually vary
                                 if std > 1e-10:
                                     filtered_input_sims[inp_name] = inp_vals
-                            
+
                             if filtered_input_sims:
                                 sens_indices = regression_sensitivity(filtered_input_sims, outcome_samples)
                             else:
                                 sens_indices = {inp: 0.0 for inp in input_sims.keys()}
-                            
+
                             with open(analysis_dir / f"sensitivity_indices_{outcome.name}.json", "w", encoding="utf-8") as f:
                                 json.dump(sens_indices, f, indent=2)
                             analysis_json_count += 1
@@ -3883,7 +3880,7 @@ def main():
 
                 with open(analysis_dir / "outcomes.json", "w", encoding="utf-8") as f:
                     json.dump(outcomes_data, f, indent=2)
-                
+
                 # Clean up orphaned PNG files (PNGs without matching QMD)
                 orphaned_pngs = []
                 for png_file in figures_dir.glob("tornado-*.png"):
@@ -3902,12 +3899,12 @@ def main():
                     expected_qmd = png_file.stem + ".qmd"
                     if expected_qmd not in generated_outcome_qmds:
                         orphaned_pngs.append(png_file)
-                
+
                 if orphaned_pngs:
                     print(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
                     for f in orphaned_pngs:
                         f.unlink()
-                
+
                 # Print summary of generated files
                 print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")
                 print(f"[OK] Generated {sensitivity_count} sensitivity tables in knowledge/figures/")
@@ -4017,7 +4014,7 @@ def main():
     print(f"       - {references_json_path.relative_to(project_root)}")
     print(f"       - {bib_output.relative_to(project_root)}")
     print(f"       - {reference_ids_path.relative_to(project_root)}")
-    print(f"       - OUTLINE-GENERATED.MD")
+    print("       - OUTLINE-GENERATED.MD")
     if inject_citations:
         print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
     print("    2. Render Quarto book to see results")

@@ -281,8 +281,6 @@ def add_watermark(fig, text="WarOnDisease.org", alpha=1.0):
         text: Watermark text (default: 'WarOnDisease.org')
         alpha: Transparency (default: 1.0 - fully opaque)
     """
-    from matplotlib.font_manager import FontProperties
-
     # Fixed padding in inches (not percentage) for consistent placement
     padding_right_inches = 0.05  # 0.05 inches from right edge
     padding_bottom_inches = 0.05  # 0.05 inches from bottom edge
@@ -294,11 +292,8 @@ def add_watermark(fig, text="WarOnDisease.org", alpha=1.0):
     fontsize = 11
     watermark_color = "#333333"  # Darker gray
 
-    # Get font properties to measure text
-    font_prop = FontProperties(size=fontsize, weight="normal")
-
     # Estimate text width: average character width * number of characters
-    # For sans-serif fonts at 9pt, average char width is approximately 0.6 * fontsize
+    # For sans-serif fonts at 11pt, average char width is approximately 0.55 * fontsize
     # Convert points to inches: 1 point = 1/72 inches
     fontsize_inches = fontsize / 72.0
     # Average character width in inches (conservative estimate for 'WarOnDisease.org')
@@ -348,31 +343,31 @@ def clean_spines(ax, positions=["top", "right"]):
 def format_tick_value(value, unit=None, prefix_currency=True):
     """
     Format a numeric value for axis tick labels with K/M/B/T suffixes.
-    
+
     Designed for axis ticks where the unit appears in the axis label itself,
     so units are NOT appended to each tick value (e.g., axis shows "10, 20, 30"
     with label "Life Extension (years)", not "10 years, 20 years, 30 years").
-    
+
     For currency units (USD, EUR, etc.), adds $ prefix by default since
     currency symbols are conventionally shown with values.
-    
+
     Args:
         value: Numeric value to format
         unit: Unit string (e.g., "USD", "years", etc.) - only used to detect currency
         prefix_currency: If True, add $ prefix for currency units (default: True)
-    
+
     Returns:
         str: Formatted string like "$1.2B", "500K", "3.5M" (no unit suffix)
     """
     abs_value = abs(value)
     sign = "-" if value < 0 else ""
-    
+
     # Determine if this is currency (check for common currency indicators)
     is_currency = False
     if unit and prefix_currency:
         unit_lower = unit.lower()
         is_currency = any(curr in unit_lower for curr in ["usd", "dollar", "eur", "euro", "gbp", "pound", "currency"])
-    
+
     # Format with appropriate suffix
     if abs_value >= 1e12:
         formatted = f"{abs_value / 1e12:.1f}T"
@@ -390,7 +385,7 @@ def format_tick_value(value, unit=None, prefix_currency=True):
             formatted = f"{abs_value:.1f}"
         else:
             formatted = f"{abs_value:.2f}"
-    
+
     # Clean up trailing .0 (e.g., "1.0B" -> "1B")
     if formatted.endswith(".0K"):
         formatted = formatted.replace(".0K", "K")
@@ -400,36 +395,36 @@ def format_tick_value(value, unit=None, prefix_currency=True):
         formatted = formatted.replace(".0B", "B")
     elif formatted.endswith(".0T"):
         formatted = formatted.replace(".0T", "T")
-    
+
     # Add currency prefix if applicable
     prefix = "$" if is_currency else ""
-    
+
     return f"{sign}{prefix}{formatted}"
 
 
 def get_tick_formatter(unit=None, prefix_currency=True):
     """
     Get a matplotlib FuncFormatter for axis tick labels.
-    
+
     Uses K/M/B/T suffixes for large numbers and $ prefix for currency.
     Units are NOT appended (they belong in the axis label).
-    
+
     Args:
         unit: Unit string to detect if currency formatting is needed
         prefix_currency: If True, add $ prefix for currency units (default: True)
-    
+
     Returns:
         matplotlib.ticker.FuncFormatter: Formatter for use with ax.xaxis.set_major_formatter()
-    
+
     Example:
         ax.xaxis.set_major_formatter(get_tick_formatter(unit="USD"))
         ax.set_xlabel("Revenue (USD)")  # Unit goes in axis label
     """
     from matplotlib.ticker import FuncFormatter
-    
+
     def formatter(value, pos):
         return format_tick_value(value, unit=unit, prefix_currency=prefix_currency)
-    
+
     return FuncFormatter(formatter)
 
 
@@ -487,29 +482,29 @@ def get_project_root():
     """
     # Marker files that indicate the project root
     markers = ["package.json", "pyproject.toml", "_quarto.yml", "_quarto-book.yml"]
-    
+
     # Start from current working directory
     current = Path.cwd().resolve()
-    
+
     # Walk up the directory tree looking for marker files
     for path in [current] + list(current.parents):
         for marker in markers:
             if (path / marker).exists():
                 return path
-    
+
     # If no markers found, fall back to looking for directory name
     # (for backwards compatibility, but this is less reliable)
     project_root = current
     if project_root.name != "decentralized-institutes-of-health":
         while project_root.name != "decentralized-institutes-of-health" and project_root.parent != project_root:
             project_root = project_root.parent
-    
+
     # If we've reached the filesystem root without finding anything, raise an error
     if project_root == project_root.parent:
         raise FileNotFoundError(
             "Could not find project root. Looked for marker files: " + ", ".join(markers)
         )
-    
+
     return project_root
 
 

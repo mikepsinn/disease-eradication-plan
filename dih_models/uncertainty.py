@@ -161,18 +161,18 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
             if np is not None:
                 return np.full(n, _bounded(mean, bounds))
             return [_bounded(mean, bounds) for _ in range(n)]
-        
+
         # Estimate variance from std or CI
         variance = std ** 2 if std and std > 0 else None
         if variance is None and ci:
             # Estimate from CI: assume 95% CI spans ~4 std deviations
             variance = ((ci[1] - ci[0]) / 4) ** 2
-        
+
         if variance is None or variance <= 0:
             if np is not None:
                 return np.full(n, _bounded(mean, bounds))
             return [_bounded(mean, bounds) for _ in range(n)]
-        
+
         # Method of moments: alpha = mean * ((mean*(1-mean)/var) - 1)
         #                    beta = (1-mean) * ((mean*(1-mean)/var) - 1)
         common = (mean * (1 - mean) / variance) - 1
@@ -180,11 +180,11 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
             common = 1  # Fall back to uniform-ish
         alpha = mean * common
         beta_param = (1 - mean) * common
-        
+
         # Ensure valid parameters
         alpha = max(0.1, alpha)
         beta_param = max(0.1, beta_param)
-        
+
         if np is not None:
             samples = rng.beta(alpha, beta_param, size=n)
             return np.clip(samples, bounds[0] if bounds[0] is not None else 0,
@@ -242,41 +242,41 @@ def simulate_with_propagation(parameters: Dict[str, Dict[str, Any]], n: int = 10
     """
     # First, do basic sampling for all parameters
     results = simulate(parameters, n=n, seed=seed)
-    
+
     # Build dependency graph: which params depend on which
     has_compute = {}  # name -> (inputs, compute_fn)
     for name, meta in parameters.items():
         val = meta.get("value")
         if hasattr(val, 'compute') and hasattr(val, 'inputs') and val.compute and val.inputs:
             has_compute[name] = (val.inputs, val.compute)
-    
+
     if not has_compute:
         return results
-    
+
     # Track which params have been finalized (either recomputed or confirmed deterministic)
     finalized = set()
     max_iterations = 100  # Prevent infinite loops (allow more for deep DAGs)
-    
+
     for iteration in range(max_iterations):
         progress = False
         for name, (inputs, compute_fn) in has_compute.items():
             if name in finalized:
                 continue
-            
+
             # Check if all inputs are available
             all_inputs_ready = all(inp in results for inp in inputs)
             if not all_inputs_ready:
                 continue
-            
+
             # Check if all inputs that are themselves computed have been finalized
             # This ensures we process in correct dependency order
             all_inputs_finalized = all(
-                inp not in has_compute or inp in finalized 
+                inp not in has_compute or inp in finalized
                 for inp in inputs
             )
             if not all_inputs_finalized:
                 continue
-            
+
             # Compute this parameter from its inputs
             try:
                 # Recompute samples from input samples (regardless of variance)
@@ -286,22 +286,22 @@ def simulate_with_propagation(parameters: Dict[str, Dict[str, Any]], n: int = 10
                 for i in range(n_samples):
                     ctx = {inp: float(results[inp][i]) for inp in inputs}
                     new_samples.append(compute_fn(ctx))
-                
+
                 if np is not None:
                     results[name] = np.array(new_samples)
                 else:
                     results[name] = new_samples
-                
+
                 finalized.add(name)
                 progress = True
             except Exception:
                 # If computation fails, mark as finalized to avoid infinite loop
                 finalized.add(name)
                 progress = True
-        
+
         if not progress:
             break
-    
+
     return results
 
 
@@ -385,13 +385,13 @@ def one_at_a_time_sensitivity(parameters: Dict[str, Dict[str, Any]], target_name
                 new_mean_up = sum((means[i] if i != name else up) for i in inputs)
                 new_mean_down = sum((means[i] if i != name else down) for i in inputs)
             elif isinstance(formula, str) and "*" in formula and "+" not in formula:
-                vec_up = [ (means[i] if i != name else up) for i in inputs ]
-                vec_down = [ (means[i] if i != name else down) for i in inputs ]
+                vec_up = [(means[i] if i != name else up) for i in inputs]
+                vec_down = [(means[i] if i != name else down) for i in inputs]
                 new_mean_up = float(np.prod(vec_up))
                 new_mean_down = float(np.prod(vec_down))
             else:
-                new_mean_up = sum( (means[i] if i != name else up) for i in inputs )
-                new_mean_down = sum( (means[i] if i != name else down) for i in inputs )
+                new_mean_up = sum((means[i] if i != name else up) for i in inputs)
+                new_mean_down = sum((means[i] if i != name else down) for i in inputs)
 
         delta = (new_mean_up - new_mean_down) / 2.0
         pct = (delta / baseline) * 100.0 if baseline != 0 else 0.0
@@ -427,58 +427,58 @@ class Outcome:
 def get_fundamental_inputs(parameters: Dict[str, Dict[str, Any]], param_name: str, visited: Optional[set] = None) -> set:
     """
     Recursively find all fundamental (leaf) parameters that a calculated parameter depends on.
-    
+
     A fundamental parameter is one that either:
     - Has no inputs (is a constant/measured value)
     - Has uncertainty (distribution, confidence_interval, or std_error)
-    
+
     Args:
         parameters: Full parameters dictionary
         param_name: Name of parameter to analyze
         visited: Set of already-visited params (for cycle detection)
-    
+
     Returns:
         Set of fundamental parameter names
     """
     if visited is None:
         visited = set()
-    
+
     if param_name in visited:
         return set()  # Avoid cycles
-    
+
     visited.add(param_name)
-    
+
     meta = parameters.get(param_name, {})
     val = meta.get("value")
-    
+
     # Check if this parameter has uncertainty (is fundamental)
     has_uncertainty = (
         hasattr(val, "distribution") and val.distribution or
         hasattr(val, "confidence_interval") and val.confidence_interval or
         hasattr(val, "std_error") and val.std_error
     )
-    
+
     # Check if this parameter has inputs (is calculated)
     has_inputs = hasattr(val, "inputs") and val.inputs
-    
+
     # If no inputs, it's fundamental (leaf node)
     if not has_inputs:
         if has_uncertainty:
             return {param_name}
         else:
             return set()  # Constant with no uncertainty
-    
+
     # If has uncertainty AND inputs, this is a calculated parameter with its own uncertainty
     # We could either:
     # 1. Treat it as fundamental (stop here)
     # 2. Expand it to show component uncertainties
     # Let's expand to show more detail
-    
+
     # Recursively expand all inputs
     fundamental = set()
     for inp in val.inputs:
         fundamental.update(get_fundamental_inputs(parameters, inp, visited))
-    
+
     return fundamental
 
 
@@ -487,7 +487,7 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
 
     Uses each input's `std_error` or `confidence_interval` to derive low/high.
     Returns mapping: input -> {delta_minus, delta_plus} relative to baseline.
-    
+
     Args:
         parameters: Full parameters dictionary
         outcome: Outcome with compute function and inputs
@@ -503,7 +503,7 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
     else:
         # Use only direct inputs (old behavior)
         inputs_to_analyze = outcome.inputs
-    
+
     # Build baseline context (need ALL inputs for compute, not just fundamental)
     ctx = {}
     for name in outcome.inputs:
@@ -521,23 +521,23 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
         if std and std > 0:
             return m - std, m + std
         return m, m
-    
+
     def evaluate_param(param_name: str, overrides: Dict[str, float]) -> float:
         """Evaluate a parameter with overrides propagated through dependencies."""
         meta = parameters.get(param_name, {})
         val = meta.get("value")
-        
+
         # If overridden directly, use that
         if param_name in overrides:
             return overrides[param_name]
-        
+
         # If has compute function, recursively evaluate inputs
         if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
             sub_ctx = {}
             for inp in val.inputs:
                 sub_ctx[inp] = evaluate_param(inp, overrides)
             return val.compute(sub_ctx)
-        
+
         # Otherwise use base value
         return float(val) if val is not None else 0.0
 
@@ -546,11 +546,11 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
         meta = parameters.get(name, {})
         val = meta.get("value")
         lo, hi = low_high(val)
-        
+
         # Skip if no uncertainty
         if lo == hi:
             continue
-        
+
         # Evaluate outcome with fundamental input varied (propagates through calc chain)
         # minus
         overrides_minus = {name: lo}
@@ -558,19 +558,19 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
         for direct_inp in outcome.inputs:
             ctx_minus[direct_inp] = evaluate_param(direct_inp, overrides_minus)
         y_minus = outcome.compute(ctx_minus)
-        
+
         # plus
         overrides_plus = {name: hi}
         ctx_plus = {}
         for direct_inp in outcome.inputs:
             ctx_plus[direct_inp] = evaluate_param(direct_inp, overrides_plus)
         y_plus = outcome.compute(ctx_plus)
-        
+
         deltas[name] = {
             "delta_minus": float(y_minus - baseline),
             "delta_plus": float(y_plus - baseline),
         }
-    
+
     # Sort by max abs delta for presentation (caller may sort again)
     return dict(sorted(deltas.items(), key=lambda kv: max(abs(kv[1]["delta_minus"]), abs(kv[1]["delta_plus"])), reverse=True))
 
@@ -589,6 +589,7 @@ def regression_sensitivity(samples: Dict[str, Any], outcome_samples: Sequence[fl
     if np is None:
         # Fallback: simple correlation coefficient per input (already standardized)
         vals = list(outcome_samples)
+
         def corr(x: Sequence[float]) -> float:
             xm = sum(x)/len(x)
             ym = sum(vals)/len(vals)
@@ -610,7 +611,7 @@ def regression_sensitivity(samples: Dict[str, Any], outcome_samples: Sequence[fl
         input_stds.append(sd if sd != 0 else 1.0)
         X_list.append((a - mu) / (sd if sd != 0 else 1))
     X = np.vstack(X_list).T  # shape (n, p)
-    
+
     # Standardize output
     y = np.asarray(outcome_samples, dtype=float)
     y_mu = np.mean(y)
@@ -618,7 +619,7 @@ def regression_sensitivity(samples: Dict[str, Any], outcome_samples: Sequence[fl
     if y_sd == 0:
         y_sd = 1.0  # Avoid division by zero
     y_standardized = (y - y_mu) / y_sd
-    
+
     # OLS beta = (X'X)^(-1) X'y on standardized data
     # This gives fully standardized coefficients (beta*)
     XtX = X.T @ X

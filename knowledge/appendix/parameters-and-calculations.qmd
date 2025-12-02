@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 317
+**Total parameters**: 313
 
 - External sources (peer-reviewed): 127
-- Calculated values: 106
+- Calculated values: 102
 - Core definitions: 84
 
 ## External Data Sources {#sec-external}
@@ -4646,130 +4646,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-per_capita_mental_health_cost.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### 1% treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
-
-**Value**: 518
-
-ROI at 1% discount rate (approximate 15% increase from 3% baseline)
-
-$$
-ROI_{1\%} \approx 463 \times 1.15 = 532
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-roi_discount_1pct.qmd >}}
-
-{{< include ../figures/sensitivity-table-roi_discount_1pct.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-roi_discount_1pct.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-roi_discount_1pct.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### 1% treaty ROI at 3% Discount Rate {#sec-roi_discount_3pct}
-
-**Value**: 451
-
-ROI at 3% discount rate (baseline)
-
-$$
-ROI_{3\%} = 463
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-roi_discount_3pct.qmd >}}
-
-{{< include ../figures/sensitivity-table-roi_discount_3pct.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-roi_discount_3pct.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-roi_discount_3pct.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### 1% treaty ROI at 5% Discount Rate {#sec-roi_discount_5pct}
-
-**Value**: 396
-
-ROI at 5% discount rate (approximate 12% decrease from 3% baseline)
-
-$$
-ROI_{5\%} \approx 463 \times 0.88 = 407
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-roi_discount_5pct.qmd >}}
-
-{{< include ../figures/sensitivity-table-roi_discount_5pct.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-roi_discount_5pct.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-roi_discount_5pct.qmd >}}
-
-:::
-
-::: {.callout-note icon=false collapse=false}
-### 1% treaty ROI at 7% Discount Rate {#sec-roi_discount_7pct}
-
-**Value**: 351
-
-ROI at 7% discount rate (approximate 22% decrease from 3% baseline)
-
-$$
-ROI_{7\%} \approx 463 \times 0.78 = 361
-$$
-
-**Methodology**: [Direct Calculation](#calculated)
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-roi_discount_7pct.qmd >}}
-
-{{< include ../figures/sensitivity-table-roi_discount_7pct.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-roi_discount_7pct.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-roi_discount_7pct.qmd >}}
 
 :::
 

@@ -38,14 +38,14 @@ DEFAULT_OUTPUT_DIR = "_book/warondisease"
 def build_book(output_dir: str):
     """Build the book website using render-book-website.py."""
     print(f"[*] Building book website to {output_dir}...")
-    
+
     script_path = Path(__file__).parent / "render-book-website.py"
     if not script_path.exists():
         print(f"[ERROR] Build script not found: {script_path}", file=sys.stderr)
         return False
-    
+
     try:
-        result = subprocess.run(
+        subprocess.run(
             [sys.executable, str(script_path), "--output-dir", output_dir],
             check=True,
         )
@@ -89,39 +89,39 @@ def main():
         action="store_true",
         help="Skip building and only deploy (assumes site is already built)",
     )
-    
+
     args = parser.parse_args()
-    
+
     # Get project root (parent of scripts directory) and change to it
     project_root = Path(__file__).parent.parent.absolute()
     os.chdir(project_root)
-    
+
     print("=" * 60)
     print("Deploy Book to Netlify")
     print("=" * 60)
     print()
-    
+
     # Check prerequisites
     netlify_cmd = check_netlify_cli()
     if not netlify_cmd:
         sys.exit(1)
-    
+
     # Build the book (unless skipped)
     if not args.skip_build:
         if not build_book(args.output_dir):
             sys.exit(1)
-        
+
         if not verify_output_directory(args.output_dir):
             sys.exit(1)
     else:
         print("[*] Skipping build (--skip-build flag set)")
         if not verify_output_directory(args.output_dir):
             print("[WARN] Output directory verification failed, but continuing...", file=sys.stderr)
-    
+
     # Deploy to Netlify
     if not deploy_to_netlify(args.output_dir, args.site_id, netlify_cmd, production=not args.draft):
         sys.exit(1)
-    
+
     print()
     print("=" * 60)
     print("[OK] All done! Book deployed to Netlify.")

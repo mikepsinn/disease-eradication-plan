@@ -65,11 +65,27 @@ select = [
 ]
 ignore = [
     "E501",  # line too long (handled by formatter)
+    "E402",  # module level import not at top of file (needed for sys.path modifications)
+    "W293",  # blank line contains whitespace (trivial, auto-fixed by formatters)
+    "E722",  # bare except (intentional catch-all handlers for robustness)
+    "B006",  # mutable default argument (sometimes intentional for caching)
+    "B007",  # loop control variable not used (common pattern for unpacking)
     "B008",  # do not perform function calls in argument defaults
+    "B023",  # function definition does not bind loop variable (often intentional closures)
+    "B033",  # duplicate set items (float/int duplicates like 0 and 0.0)
+    "I001",  # import block unsorted (let formatter handle)
+    "UP006", # use lowercase dict/list for type annotations (Python 3.8 compat)
+    "UP009", # UTF-8 encoding declaration unnecessary (but harmless)
+    "UP015", # unnecessary open mode 'r' (explicit is fine)
+    "UP034", # avoid extraneous parentheses (style preference)
+    "UP045", # use X | None instead of Optional (Python 3.8 compat)
+    "C416",  # unnecessary dict comprehension (readability preference)
+    "C420",  # unnecessary dict comprehension for dict.fromkeys (readability)
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+"scripts/*.py" = ["E402"]  # Allow imports after sys.path modifications
 
 # MyPy configuration
 [tool.mypy]
@@ -86,4 +102,15 @@ max-line-length = 120
 extend-ignore = [
     "E501",  # line too long
 ]
+
+# Pyright/Pylance configuration
+[tool.pyright]
+pythonVersion = "3.8"
+typeCheckingMode = "basic"  # Less strict than "strict"
+reportUnknownParameterType = false  # Suppress "type of parameter is unknown" (for Any fallbacks)
+reportUnknownArgumentType = false  # Suppress "argument type is unknown"
+reportUnknownMemberType = false  # Suppress unknown member access
+reportUnknownVariableType = false  # Suppress "type of variable is unknown"
+reportMissingTypeStubs = false  # Don't complain about missing stubs
+reportPrivateUsage = false  # Allow accessing _private members
 

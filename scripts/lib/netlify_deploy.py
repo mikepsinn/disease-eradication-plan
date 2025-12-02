@@ -6,7 +6,6 @@ Netlify Deployment Utilities
 Shared utilities for deploying sites to Netlify.
 """
 
-import os
 import subprocess
 import sys
 from pathlib import Path
@@ -21,13 +20,13 @@ except ImportError:
 
 def check_netlify_cli():
     """Check if Netlify CLI is installed and available.
-    
+
     Returns:
         str or None: The working Netlify command, or None if not found
     """
     # Try different command variations for Windows
     commands = ["netlify", "netlify.cmd", "netlify.ps1"]
-    
+
     for cmd in commands:
         try:
             result = subprocess.run(
@@ -41,7 +40,7 @@ def check_netlify_cli():
             return cmd  # Return the working command
         except (subprocess.CalledProcessError, FileNotFoundError):
             continue
-    
+
     print("[ERROR] Netlify CLI not found", file=sys.stderr)
     print("        Install it with: npm install -g netlify-cli", file=sys.stderr)
     return None
@@ -49,10 +48,10 @@ def check_netlify_cli():
 
 def verify_output_directory(output_dir: str):
     """Verify that the output directory exists and contains HTML files.
-    
+
     Args:
         output_dir: Path to the output directory
-        
+
     Returns:
         bool: True if directory exists and contains HTML files
     """
@@ -60,40 +59,40 @@ def verify_output_directory(output_dir: str):
     if not output_path.exists():
         print(f"[ERROR] Output directory does not exist: {output_dir}", file=sys.stderr)
         return False
-    
+
     if not output_path.is_dir():
         print(f"[ERROR] Output path is not a directory: {output_dir}", file=sys.stderr)
         return False
-    
+
     # Check for at least one HTML file (recursively)
     html_files = list(output_path.rglob("*.html"))
     if not html_files:
         print(f"[WARN] No HTML files found in {output_dir}", file=sys.stderr)
         print("       The build may have failed or output may be in a subdirectory", file=sys.stderr)
         return False
-    
+
     print(f"[OK] Output directory verified: {len(html_files)} HTML file(s) found")
     return True
 
 
 def deploy_to_netlify(output_dir: str, site_id: str, netlify_cmd: str, production: bool = True):
     """Deploy the built site to Netlify.
-    
+
     Args:
         output_dir: Path to the directory containing the built site
         site_id: Netlify site ID
         netlify_cmd: The Netlify CLI command to use
         production: If True, deploy to production; if False, deploy as draft
-        
+
     Returns:
         bool: True if deployment succeeded, False otherwise
     """
     deploy_type = "production" if production else "draft"
     print(f"[*] Deploying to Netlify ({deploy_type})...")
-    
+
     # Convert Windows path separators if needed
     deploy_dir = str(Path(output_dir).absolute())
-    
+
     cmd = [
         netlify_cmd,
         "deploy",
@@ -101,12 +100,12 @@ def deploy_to_netlify(output_dir: str, site_id: str, netlify_cmd: str, productio
         "--site", site_id,
         "--no-build",  # Skip build since we already built locally
     ]
-    
+
     if production:
         cmd.append("--prod")
-    
+
     try:
-        result = subprocess.run(
+        subprocess.run(
             cmd,
             check=True,
             text=True,
