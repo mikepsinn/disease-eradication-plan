@@ -62,6 +62,14 @@ For comparison, {{< var treaty_annual_funding >}} is:
 - Roughly what humans spend on pet food every three months
 - Apparently too much to ask for curing diseases
 
+Of that {{< var treaty_annual_funding >}}, here's where it goes:
+
+| Allocation | Share | Amount | Purpose |
+|:-----------|:------|:-------|:--------|
+| VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the people who funded the campaign |
+| Political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned via [IABs](solution/incentive-alignment-bonds.qmd) |
+| DIH research | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually cure diseases |
+
 They say you can't put a price on human life. But apparently the price is somewhere south of pet food, which seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
 ### A Decentralized Institute of Health
@@ -164,7 +172,7 @@ It's democracy for medical research, except instead of voting every four years f
 
 You'd think defense contractors would hate this. But here's what you tell them:
 
-"You can keep 99% of your murder budget. But also, here are some bonds that pay 270% returns. Your pension fund would like those returns. Your shareholders would like those returns. You would personally like those returns because you also have a body that's falling apart.
+"You can keep 99% of your murder budget. But also, here are some bonds that pay {{< var victory_bond_annual_return_pct >}} returns. Your pension fund would like those returns. Your shareholders would like those returns. You would personally like those returns because you also have a body that's falling apart.
 
 Plus, killing people is getting bad PR. Curing cancer is excellent PR. Your ESG score goes up. Your stock price goes up. You still make weapons with the other 99%, you just also cure diseases with 1%.
 
@@ -217,11 +225,11 @@ The difference is like asking a firefighter to prevent fires versus asking a fir
 
 The solution only works if everyone wins by winning. Here's who gets what:
 
-**Defense contractors:** Keep 99% of budget + 270% returns on bonds  
+**Defense contractors:** Keep 99% of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds  
 **Pharmaceutical companies:** Patients pay them instead of vice versa  
 **Politicians:** Campaign donations + not losing elections  
 **Insurance companies:** Fewer claims = more profit  
-**Billionaires:** 270% returns + legacy + naming rights  
+**Billionaires:** {{< var victory_bond_annual_return_pct >}} returns + legacy + naming rights  
 **Regular people:** Subsidized treatment + direct democracy + not dying
 
 Notice that everyone's selfish reason for participating happens to save humanity. Trick people into doing good by making good profitable.

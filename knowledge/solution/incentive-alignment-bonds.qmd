@@ -466,9 +466,10 @@ She wins reelection by 12 points. After leaving the Senate in 2030, she joins th
 | Metric | Before Treaty | After Treaty |
 |:-------|:--------------|:-------------|
 | % military spending to DIH | 0% | 1% |
-| Annual DIH funding | $0 | $27B |
-| Bondholder returns | 0% | 270%/year |
-| Research funding | $0 | $24.3B/year |
+| Annual DIH funding | $0 | {{< var treaty_annual_funding >}} |
+| Bondholder returns | 0% | {{< var victory_bond_annual_return_pct >}}/year |
+| Political incentive funding | $0 | {{< var iab_political_incentive_funding_annual >}}/year |
+| Research funding | $0 | {{< var dih_treasury_to_medical_research_annual >}}/year |
 
 **For expansion (Years 3-5):**
 
@@ -486,9 +487,10 @@ The flywheel spins. Each expansion increases the stakes, which increases the sco
 
 The investors who funded the $1B campaign see:
 
-- Treaty passes → $27B/year flows to DIH
-- 10% ($2.7B/year) flows to bondholders → 270% annual returns
-- 90% ($24.3B/year) funds actual cures → diseases start declining → public demands expansion → returns grow
+- Treaty passes → {{< var treaty_annual_funding >}}/year flows to DIH
+- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}/year) flows to bondholders → {{< var victory_bond_annual_return_pct >}} annual returns
+- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentive mechanisms → keeps politicians aligned
+- {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds actual cures → diseases start declining → public demands expansion → returns grow
 
 Everyone's self-interest aligned. No one was bribed. The system just made "vote for cures" and "advance career" point in the same direction.
 
@@ -644,7 +646,8 @@ They solve different problems for different people:
 | | VICTORY Bonds | Incentive Alignment Bonds |
 |:--|:--------------|:--------------------------|
 | **Who's incentivized** | Investors | Politicians |
-| **What they get** | 270% annual returns (money) | Reputation, electoral support, post-office careers (not money) |
+| **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers (funded by IAB allocation) |
+| **Funding source** | {{< var victory_bond_funding_pct >}} of treaty revenue ({{< var victory_bond_annual_payout >}}/year) | {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) |
 | **Payout trigger** | Treaty passes | Health outcomes improve |
 | **Legal structure** | Revenue share on treaty funding | Scoring systems + independent campaign support |
 
@@ -663,7 +666,13 @@ The relationship is complementary:
 
 VICTORY Bonds get investors to fund the war. IABs get politicians to fight it (and keep fighting after victory).
 
-The 90% of treaty revenue that doesn't go to bondholders? That goes to DIH to actually fund the research. Neither instrument touches that money. VICTORY Bonds take their 10% cut for investors. IABs don't involve money at all, they just make sure politicians get credit (and career benefits) for doing the right thing.
+The {{< var dih_treasury_medical_research_pct >}} of treaty revenue that doesn't go to bondholders or political incentives? That goes to DIH to actually fund the research. The split is:
+
+| Allocation | Share | Annual Amount | Purpose |
+|:-----------|:------|:--------------|:--------|
+| VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Returns for funding the campaign |
+| IAB political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Electoral support, post-office fellowships |
+| DIH medical research | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually curing diseases |
 
 ---
 

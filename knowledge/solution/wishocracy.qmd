@@ -17,11 +17,19 @@ tags:
 from dih_models.parameters import *
 ```
 
-Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd) and now you've got {{< var treaty_annual_funding >}}/year to allocate.
+Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd) and now you've got {{< var treaty_annual_funding >}}/year flowing into the DIH treasury.
 
-How do you avoid parasitic special interests from stealing it or bureacracy from wasting it all?
+But not all of it is available for allocation. First, the automatic deductions:
 
-**Wishocracy** replaces committees with code and representatives with mathematics. It's how you let 8 billion people collectively decide how to spend {{< var treaty_annual_funding >}} without it turning into a bureaucratic nightmare.
+| Allocation | Share | Amount | Purpose |
+|:-----------|:------|:-------|:--------|
+| [VICTORY Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
+| [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
+| **Available for Wishocracy** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | What you get to allocate |
+
+How do you avoid parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}} or bureaucracy from wasting it all?
+
+**Wishocracy** replaces committees with code and representatives with mathematics. It's how you let 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without it turning into a bureaucratic nightmare.
 
 ## How Wishocracy Allocates DIH Funds: Decentralized Crowdfunding
 

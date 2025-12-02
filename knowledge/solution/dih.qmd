@@ -113,7 +113,13 @@ A decentralized institute of health functions as the **single governance layer**
 
 **1. Fill the Treasury**
 
-A [1% treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury.
+A [1% treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the DIH treasury. But not all of it reaches Wishocracy:
+
+| Allocation | Share | Amount | Purpose |
+|:-----------|:------|:-------|:--------|
+| [VICTORY Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the investors who funded the campaign |
+| [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned with curing diseases |
+| **DIH research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Available for allocation via Wishocracy |
 
 **2. Anyone Can Propose a Campaign**
 

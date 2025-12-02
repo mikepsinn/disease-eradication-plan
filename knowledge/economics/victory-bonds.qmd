@@ -29,7 +29,15 @@ VICTORY Bonds are the **investor-facing** half of our incentive system. They sol
 
 [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are the **politician-facing** half. They solve the political problem: "How do we make politicians actually support and maintain the treaty?"
 
-VICTORY Bonds pay investors. IABs give politicians reputation and career benefits. Together, they align everyone's self-interest with not dying.
+The {{< var treaty_annual_funding >}} annual treaty revenue is split three ways:
+
+| Allocation | Share | Annual Amount |
+|------------|-------|---------------|
+| VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} |
+| [IAB political incentives](../solution/incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} |
+| DIH medical research | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} |
+
+VICTORY Bonds pay investors. IABs fund political incentives. The rest cures diseases. Everyone's self-interest aligns with not dying.
 :::
 
 ## What You're Actually Building
@@ -39,8 +47,9 @@ A financial instrument that makes obscene amounts of money appear from nowhere w
 - Collect $1.0B in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
 - Once treaty passes, {{< var treaty_annual_funding >}} in papers annually stops going to bombs and starts going to [DIH](../solution/dih.qmd)
-- Give the rich humans 10% of that ({{< var victory_bond_annual_payout >}}) every year, forever
-- Use the remaining 90% ($24.3B) to cure the diseases actually killing people
+- Give the rich humans {{< var victory_bond_funding_pct >}} of that ({{< var victory_bond_annual_payout >}}) every year, forever
+- Reserve {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) for [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) that keep politicians aligned
+- Use the remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to cure the diseases actually killing people
 
 **What you're offering investors:** {{< var victory_bond_annual_return_pct >}} annual returns, which beats everything except insider trading and certain federal crimes
 
@@ -81,8 +90,9 @@ For the complete breakdown of where every paper goes, see [Campaign Budget](camp
 Treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
 
 - {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to DIH treasury (automatic, no takebacks)
-- 10% ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
-- 90% ($24.3B) automatically goes to curing the diseases actually killing people
+- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
+- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) automatically funds [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) (keeps politicians aligned with curing diseases)
+- {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) automatically goes to curing the diseases actually killing people
 
 Nobody has to vote on this again. Nobody can change their mind. The papers just flow, forever, like a river made of money.
 
@@ -108,13 +118,16 @@ No maturity date means the money never stops. As long as the treaty exists, bond
 **What bondholders get**:
 $$ 10\% \times \$27.2\text{B} = \$2.7\text{B}/\text{year} $$
 
+**What funds political incentives** (keeps politicians aligned):
+$$ 10\% \times \$27.2\text{B} = \$2.7\text{B}/\text{year} $$
+
 **What actually cures diseases**:
-$$ 90\% \times \$27.2\text{B} = \$24.3\text{B}/\text{year} $$
+$$ 80\% \times \$27.2\text{B} = \$21.7\text{B}/\text{year} $$
 
 **What countries still have for wars**:
 $$ 99\% \times \$2.7\text{T} = \$2.67\text{T} $$
 
-This is important: Investors aren't "taking" money from sick people. 90% goes to cures. Bondholders just get 10% for having the revolutionary idea of "what if we didn't all die?"
+This is important: Investors aren't "taking" money from sick people. {{< var dih_treasury_medical_research_pct >}} goes to cures. Bondholders get {{< var victory_bond_funding_pct >}} for having the revolutionary idea of "what if we didn't all die?" and another {{< var iab_political_incentive_funding_pct >}} keeps politicians incentivized to maintain and expand the treaty.
 
 ### When Math Becomes Obscene
 
@@ -188,16 +201,15 @@ Give bondholders these five layers of security:
 
 Explain to investors: Multiple layers of protection, not just one point of failure.
 
-## Present Two Scenarios to Investors
+## What Full Success Looks Like
 
-### Scenario A: Full Success ({{< var treaty_annual_funding >}}/year)
-
-Show investors what full treaty adoption looks like:
+Show investors what full treaty adoption delivers:
 
 **Treaty adoption**: 100+ countries (all major military powers)
 **Annual DIH revenue**: {{< var treaty_annual_funding >}}
-**Bondholder annual payment**: 2.7B (10%)
-**Research funding**: $24.3B (90%)
+**Bondholder annual payment**: {{< var victory_bond_annual_payout >}} ({{< var victory_bond_funding_pct >}})
+**Political incentive funding**: {{< var iab_political_incentive_funding_annual >}} ({{< var iab_political_incentive_funding_pct >}})
+**Research funding**: {{< var dih_treasury_to_medical_research_annual >}} ({{< var dih_treasury_medical_research_pct >}})
 **Investor ROI**: {{< var victory_bond_annual_return_pct >}} annually
 
 **What happens**:
@@ -208,35 +220,16 @@ Show investors what full treaty adoption looks like:
 - Political momentum builds for 2%, then 5% expansion
 - Returns scale up proportionally
 
-### Scenario B: Partial Success ($13B/year)
+## Explain the {{< var dih_treasury_medical_research_pct >}}/{{< var victory_bond_funding_pct >}}/{{< var iab_political_incentive_funding_pct >}} Split
 
-Show investors the downside case is still attractive:
+Structure the allocation to balance four goals:
 
-**Treaty adoption**: US, EU, UK only ([~50% of global military spending](../references.qmd#us-eu-military-spending-share))
-**Annual DIH revenue**: $13B
-**Bondholder annual payment**: $1.3B (10%)
-**Research funding**: $11.7B (90%)
-**Investor ROI**: 130% annually
+1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds ({{< var victory_bond_funding_pct >}} to investors)
+2. **Keep politicians aligned**: {{< var iab_political_incentive_funding_pct >}} funds [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) that make supporting the treaty career-optimal for politicians
+3. **Fund the mission**: {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) gives researchers substantial capital
+4. **Align all incentives**: Investors, politicians, and researchers all profit from treaty expansion
 
-**What happens**:
-
-- 130% returns still crush traditional investments
-- Partial funding still produces major breakthroughs
-- Early-adopter success creates FOMO in other nations
-- Additional countries join over time
-- Returns grow toward full scenario
-
-**Key pitch point:** Even the conservative scenario outperforms most traditional investments.
-
-## Explain Why You Chose 10%
-
-Structure the allocation to balance three goals:
-
-1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds
-2. **Fund the mission**: 90% ($24.3B) gives researchers substantial capital
-3. **Align incentives**: Bondholders profit from treaty expansion, so they become advocates
-
-Tell investors: Everyone wins when treaties grow, more cures = bigger treaties = higher returns.
+Tell investors: Everyone wins when treaties grow. More cures = bigger treaties = higher returns + more political support + more research funding.
 
 ## Set Up the Legal Structure
 
@@ -354,7 +347,7 @@ Set these minimum investment amounts by investor type:
 *(Have lawyers review, this is illustrative only)*
 
 - **Interest rate**: 0% (all returns via revenue share model)
-- **Revenue share**: 10% of all treaty inflows
+- **Revenue share**: {{< var victory_bond_funding_pct >}} of all treaty inflows
 - **Term**: Perpetual (no maturity date)
 - **Payment frequency**: Annual distributions
 - **Default provisions**: Transparent reporting, third-party audits
@@ -379,7 +372,7 @@ It's not a Ponzi scheme. It's weaponized lobbying economics pointed at diseases 
 
 This is the primary risk. You're essentially funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
 
-But even partial success (just US + EU) yields 130% annually, which beats most legal investments. And if it fails completely, you'll probably die of a preventable disease anyway, so you won't be around to complain about the lost money.
+If it fails completely, you'll probably die of a preventable disease anyway, so you won't be around to complain about the lost money.
 
 It's venture capital but for not dying."
 
@@ -454,9 +447,10 @@ Hand this to investors who can't read more than one page:
 1. Collect $1.0B from rich humans
 2. Use it to convince politicians that living constituents vote more reliably than dead ones
 3. Treaty passes, redirecting {{< var treaty_annual_funding >}} annually from bombs to cures
-4. Give bondholders 10% ({{< var victory_bond_annual_payout >}}) every year, forever
-5. Use remaining 90% ($24.3B) to actually cure the diseases killing people
-6. Diseases decline, public demands more funding, returns scale up
-7. Repeat until death is optional or universe ends
+4. Give bondholders {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) every year, forever
+5. Fund political incentives with {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) to keep politicians aligned
+6. Use remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to actually cure the diseases killing people
+7. Diseases decline, public demands more funding, returns scale up
+8. Repeat until death is optional or universe ends
 
 It's the simplest way to become generationally wealthy while making it harder for people to die from stupid preventable things.
