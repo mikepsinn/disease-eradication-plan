@@ -40,9 +40,10 @@ from dih_models.parameters import *
 
 - **3.5% participation tipping point**
   > "The research found that nonviolent campaigns were twice as likely to succeed as violent ones, and once 3.5% of the population were involved, they were always successful."
-  > Alternative title: 3.5% rule academic source
   > "Chenoweth and Maria Stephan studied the success rates of civil resistance efforts from 1900 to 2006, finding that nonviolent movements attracted, on average, four times as many participants as violent movements and were more likely to succeed."
-  > — BBC Future, 2019, ['The 3.5% rule'](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) | Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
+  > Key finding: Every campaign that mobilized at least 3.5% of the population in sustained protest was successful (in their 1900-2006 dataset)
+  > — Harvard Kennedy School, [The '3.5% rule': How a small minority can change the world](https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world) | [Chenoweth Research Paper (2020)](https://www.hks.harvard.edu/sites/default/files/2024-05/Erica%20Chenoweth_2020-005.pdf) | BBC Future, 2019, ['The 3.5% rule'](https://www.bbc.com/future/article/20190513-it-only-takes-35-of-people-to-change-the-world) | Wikipedia, [3.5% rule](https://en.wikipedia.org/wiki/3.5%25_rule)
+  > Note: The 3.5% figure is a descriptive statistic from historical analysis, not a guaranteed threshold. One exception (Bahrain 2011-2014 with 6%+ participation) has been identified. The rule applies to regime change, not policy change in democracies.
 
 <a id="5-million-annual-child-deaths"></a>
 
@@ -203,6 +204,16 @@ from dih_models.parameters import *
 - **ARPA‑H official site**
   > "ARPA‑H funds high‑impact research to drive biomedical breakthroughs."
   > — ARPA‑H, [About](https://arpa-h.gov/)
+
+<a id="arms-trade-treaty-2013"></a>
+
+- **Arms Trade Treaty (2013) - Campaign and Adoption**
+  > The Arms Trade Treaty (ATT) regulates international trade in conventional arms. Adopted by UN General Assembly April 2, 2013.
+  > Campaign duration: 10 years (2003-2013) by Control Arms coalition
+  > Started with only 3 governments supporting (Mali, Costa Rica, Cambodia); achieved 130 signatories
+  > Coalition published 50+ reports over the campaign period
+  > One of the fastest multilateral treaties to enter into force after opening for signature
+  > — UN Legal, [Arms Trade Treaty](https://legal.un.org/avl/ha/att/att.html) | Control Arms, [ATT Overview](https://controlarms.org/att/) | Oxfam America, [The International Arms Trade Treaty](https://www.oxfamamerica.org/about-us/measuring-impact/global-arms-trade-treaty/the-international-arms-trade-treaty/) | Arms Control Association, [ATT At a Glance](https://www.armscontrol.org/factsheets/arms_trade_treaty)
 
 <a id="astrology-belief-poll"></a>
 
@@ -699,6 +710,16 @@ from dih_models.parameters import *
   > Market estimates for 2024 range from $54 billion to $84 billion depending on methodology and scope.
   > — Towards Healthcare, [Clinical Trials Market](https://www.towardshealthcare.com/insights/innovation-in-drug-development-calls-for-clinical-trials) | Straits Research, [Clinical Trials Market Analysis](https://straitsresearch.com/report/clinical-trials-market)
 
+<a id="cluster-munitions-convention-2008"></a>
+
+- **Convention on Cluster Munitions (2008) - Oslo Process**
+  > The Convention on Cluster Munitions bans the use, production, stockpiling, and transfer of cluster munitions.
+  > Oslo Process timeline: February 2007 to December 2008 (~2 years)
+  > 46 states signed Oslo Declaration (Feb 2007); 94 states signed convention (Dec 2008)
+  > Core Group: Norway, Austria, Ireland, Mexico, New Zealand, Peru, Holy See
+  > Results: 29 States Parties destroyed nearly 1.4 million stockpiled cluster munitions containing 172.9 million submunitions
+  > — Convention on Cluster Munitions, [Oslo Process](https://www.clusterconvention.org/oslo-process/) | UNIDIR, [Unacceptable Harm: History of the Treaty](https://unidir.org/files/publication/pdfs/unacceptable-harm-a-history-of-how-the-treaty-to-ban-cluster-munitions-was-won-en-258.pdf) | CMC, [Global Cluster Munition Ban](https://www.stopclustermunitions.org/en-gb/the-treaty/global-ban.aspx)
+
 <a id="cmmi-overview"></a>
 
 - **CMS Innovation Center (CMMI) Overview**
@@ -769,6 +790,16 @@ from dih_models.parameters import *
 - **Defense Contracts (2001-2021)**
   > "The top five defense firms received \$2.02 trillion in contracts from the Pentagon during the 20 years of the war in Afghanistan."
   > — Responsible Statecraft, 2021, [Top defense firms see \$2T return on \$1B investment in Afghan war](https://responsiblestatecraft.org/2021/09/02/top-defense-firms-see-2t-return-on-1b-investment-in-afghan-war/)
+
+<a id="control-arms-coalition"></a>
+
+- **Control Arms Coalition - Arms Trade Treaty Campaign**
+  > Coalition of 100+ organizations including Amnesty International, Oxfam, and International Action Network on Small Arms (IANSA)
+  > Campaign duration: 10 years (October 2003 - April 2013)
+  > Published 50+ reports over the campaign period on various aspects of arms trade regulation
+  > Campaign tactics: Publicity stunts, mass public actions, Million Faces petition, worldwide consultations, lobbying
+  > Achievement: Arms Trade Treaty adopted by UN General Assembly April 2013, entered into force December 2014
+  > — Wikipedia, [Control Arms Campaign](https://en.wikipedia.org/wiki/Control_Arms_Campaign) | Oxfam, [How did a global campaign bring about a UN Arms Trade Treaty?](https://frompoverty.oxfam.org.uk/how-did-a-global-campaign-bring-about-a-un-arms-trade-treaty/) | Oxfam Policy, [Power and Change: The Arms Trade Treaty](https://policy-practice.oxfam.org/resources/power-and-change-the-arms-trade-treaty-338471/)
 
 <a id="coppa-compliance"></a>
 
@@ -2531,11 +2562,27 @@ from dih_models.parameters import *
   > "The estimated cost per QALY gained for screening was less than \$1000 for men and approximately \$1600 for women."
   > — PMC5217841, [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5217841/)
 
+<a id="ican-nuclear-ban-treaty"></a>
+
+- **International Campaign to Abolish Nuclear Weapons (ICAN) - Treaty on the Prohibition of Nuclear Weapons (2017)**
+  > ICAN: Founded 2007, headquartered in Geneva, coordinating 468+ partner organizations across 100+ countries (as of 2017)
+  > Staff: 3 full-time + 2 part-time in Geneva office (when Nobel Prize awarded)
+  > Funding: Initial grant from Poola Foundation (Australia); Norwegian government grant to establish Geneva office (2011)
+  > Treaty on the Prohibition of Nuclear Weapons (TPNW): Adopted July 7, 2017 by vote of 122-1 at UN
+  > Achievement: Nobel Peace Prize 2017 "for its work to draw attention to the catastrophic humanitarian consequences of any use of nuclear weapons"
+  > — ICAN, [History](https://www.icanw.org/ican_history) | Wikipedia, [International Campaign to Abolish Nuclear Weapons](https://en.wikipedia.org/wiki/International_Campaign_to_Abolish_Nuclear_Weapons) | Nobel Prize, [2017 Peace Prize](https://www.nobelprize.org/prizes/peace/2017/ican/facts/) | ICAN, [The Treaty](https://www.icanw.org/the_treaty)
+
 <a id="icbl-ottawa-treaty"></a>
 
-- **International Campaign to Ban Landmines (ICBL)**
-  > "The Convention was opened for signature at Ottawa, Canada, by all States from 3 December 1997 until 4 December 1997."
-  > — ICBL, [The Treaty](https://treaties.un.org/pages/ViewDetails.aspx?src=TREATY&mtdsg_no=XXVI-5&chapter=26&clang=_en)
+- **International Campaign to Ban Landmines (ICBL) - Ottawa Treaty (1997)**
+  > ICBL: Founded 1992 by 6 NGOs (Handicap International, Human Rights Watch, Medico International, Mines Advisory Group, Physicians for Human Rights, Vietnam Veterans of America Foundation)
+  > Started with ONE staff member: Jody Williams as founding coordinator
+  > Grew to 1,000+ organizations in 60 countries by 1997
+  > Ottawa Process: 14 months (October 1996 - December 1997)
+  > Convention signed by 122 states on December 3, 1997; entered into force March 1, 1999
+  > Achievement: Nobel Peace Prize 1997 (shared by ICBL and Jody Williams)
+  > Government funding context: Canada established $100M CAD Canadian Landmine Fund over 10 years (1997); International donors provided $169M in 1997 for mine action (up from $100M in 1996)
+  > — ICRC, [Ottawa Treaty History](https://www.icrc.org/en/doc/resources/documents/article/other/57jpjn.htm) | Wikipedia, [International Campaign to Ban Landmines](https://en.wikipedia.org/wiki/International_Campaign_to_Ban_Landmines) | Nobel Prize, [1997 Peace Prize](https://www.nobelprize.org/prizes/peace/1997/summary/) | UN Press, [ICBL Press Conference 1999](https://un.org/press/en/1999/19990520.MINES.BRF.html) | Landmine Monitor, [Mine Action Funding](https://www.the-monitor.org/en-gb/reports/2003/landmine-monitor-2003/mine-action-funding.aspx)
 
 <a id="icer-qaly-methodology"></a>
 

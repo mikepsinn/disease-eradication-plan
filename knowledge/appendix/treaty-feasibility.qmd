@@ -16,18 +16,31 @@ No. Getting countries to *implement* things costs billions. Getting them to *sig
 
 ## What Treaties Actually Cost
 
-Here's what previous "getting countries to sign a piece of paper" campaigns actually spent:
+NGO campaign budgets are rarely disclosed publicly, but we know enough about organizational structure and government funding to establish that treaty campaigns operate on remarkably modest resources:
 
-| Treaty | Time to Entry-Into-Force | Direct Campaign Cost | Who Paid | Notes |
+| Treaty | Timeline | Campaign Structure | Government Support | Outcome |
 | :--- | :--- | :--- | :--- | :--- |
-| **Ottawa Treaty (Landmines, 1997)** | ~2.5 years | **≈ $12–18M** | Canada, Norway, ICBL NGO | ICBL campaign budget was only ~$5–7M total. Canada spent ~$10–15M on the diplomatic process. |
-| **Cluster Munitions (2008)** | ~2.5 years | **≈ $10–15M** | Norway, CMC Coalition | Norway spent ~$12–15M on the Oslo Process. |
-| **Arms Trade Treaty (2013)** | ~5 years | **≈ $20–25M** | UK, Australia, NGOs | Longer and more contested, so slightly more expensive. |
-| **Nuclear Ban (TPNW, 2017)** | ~4 years | **≈ $8–12M** | ICAN Campaign, Austria | ICAN's budget was ~$10M; governments paid for UN conferences. |
+| **[Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (Landmines, 1997)** | 14 months (Oct '96 - Dec '97) | [ICBL](../references.qmd#icbl-ottawa-treaty): Started with **1 staff member** (Jody Williams), grew to 1,000+ orgs in 60 countries | Canada: $100M CAD Landmine Fund over 10 years; International donors: $169M in 1997 for mine action | 122 states signed; Nobel Peace Prize 1997 |
+| **[Cluster Munitions](../references.qmd#cluster-munitions-convention-2008) (2008)** | ~2 years (Feb '07 - Dec '08) | [CMC Coalition](../references.qmd#cluster-munitions-convention-2008) of NGOs; Core Group of 7 governments | Norway: Funded UNIDIR research project 2004-2008; hosted Oslo conferences | 94 states signed; 1.4M stockpiled munitions destroyed |
+| **[Arms Trade Treaty](../references.qmd#arms-trade-treaty-2013) (2013)** | 10 years (2003-2013) | [Control Arms](../references.qmd#control-arms-coalition): 100+ organizations (Oxfam, Amnesty); published 50+ reports | UK, Australia led diplomatic process; UN conferences | Started with 3 supporting govts → 130 signatories |
+| **[Nuclear Ban](../references.qmd#ican-nuclear-ban-treaty) (TPNW, 2017)** | 10 years (2007-2017) | [ICAN](../references.qmd#ican-nuclear-ban-treaty): **5 staff** (3 full-time + 2 part-time) in Geneva coordinating 468 partner orgs | Norwegian govt grant funded Geneva office (2011); Austria hosted conferences | 122 states voted yes; Nobel Peace Prize 2017 |
 
-**Pattern**: $10–25 million (in 1990s/2000s dollars, ~$20-40M today) covers diplomatic conferences, flying poor-country delegates to Geneva, and global NGO campaigns. That's **less than 0.2%** of the implementation cost.
+**Pattern**: These campaigns succeed with **tiny staff** (1-5 people) coordinating large coalitions. The NGO campaign costs are minimal - a few million dollars per year at most. Government support for conferences and delegate travel adds another $10-30M. Total "getting the treaty signed" costs: **$15-50M over the campaign period**.
 
-Banning landmines: $15M in paperwork, $5B+ to actually remove them. The signing part is the cheap part.
+### Inflation-Adjusted to 2024 Dollars
+
+Using [BLS CPI data](https://www.bls.gov/data/inflation_calculator.htm):
+
+| Treaty (Year) | Original Cost Estimate | 2024 Dollars | Inflation Multiplier |
+|:--------------|:----------------------|:-------------|:---------------------|
+| Ottawa (1997) | $15-25M | **$30-50M** | ~2.0x |
+| Cluster Munitions (2008) | $15-25M | **$23-38M** | ~1.5x |
+| Arms Trade Treaty (2013) | $20-30M | **$27-41M** | ~1.35x |
+| Nuclear Ban (2017) | $10-20M | **$13-25M** | ~1.25x |
+
+**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD) for the "getting it signed" phase.
+
+That's **less than 0.2%** of the implementation cost. Banning landmines: ~$40M in campaigning and diplomacy (2024 dollars), [$5B+ to actually remove them](../references.qmd#icbl-ottawa-treaty). The signing part is the cheap part.
 
 ## Cost for a 1% Health Treaty
 
@@ -54,7 +67,7 @@ The diplomatic process costs ~0.3% of a single year's funding. Three days of the
 
 Politicians move when they see (a) voters demanding it and (b) political safety. Give them both:
 
-1. **Prove public demand**: Get 3.5% of the population (280M people) to say "yes" with verified identity. That's not activism - that's a mandate. Hard to ignore 280 million verified humans.
+1. **Prove public demand**: Get [3.5% of the population](../references.qmd#3-5-rule) (280M people) to say "yes" with verified identity. Harvard researcher Erica Chenoweth found that [every nonviolent campaign](../references.qmd#3-5-rule) with 3.5%+ participation succeeded. That's not activism - that's a mandate. Hard to ignore 280 million verified humans.
 2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover. Give them studies to wave around.
 
 ### Timeline to "Governments Can't Ignore This"
@@ -132,3 +145,14 @@ The intervention remains economically justified even assuming a 99% chance of fa
 1. The conditional benefits ({{< var treaty_roi_lag_elimination >}}:1 ROI if successful) are enormous
 2. Even the expected value at {{< var political_success_probability >}} success beats the best alternative by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
 3. The downside is capped at campaign cost (~$1B), while upside is unbounded
+
+## Sources
+
+For detailed citations and source documentation, see [References](../references.qmd):
+
+- [3.5% Rule](../references.qmd#3-5-rule) - Chenoweth's research on nonviolent movement success thresholds
+- [Ottawa Treaty / ICBL](../references.qmd#icbl-ottawa-treaty) - Landmines ban campaign (1992-1997)
+- [Cluster Munitions Convention](../references.qmd#cluster-munitions-convention-2008) - Oslo Process (2007-2008)
+- [Arms Trade Treaty](../references.qmd#arms-trade-treaty-2013) - UN arms trade regulation (2003-2013)
+- [Control Arms Coalition](../references.qmd#control-arms-coalition) - NGO campaign structure and tactics
+- [ICAN / Nuclear Ban Treaty](../references.qmd#ican-nuclear-ban-treaty) - Nuclear weapons prohibition (2007-2017)
