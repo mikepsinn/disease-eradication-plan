@@ -102,21 +102,6 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 :::
 
 
-::: {.callout-tip}
-## For Decision Makers: Three Numbers That Matter
-
-1. **Cost-Effectiveness**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY ({{< var treaty_vs_bed_nets_multiplier >}}x better than bed nets at {{< var bed_nets_cost_per_daly >}}/DALY)
-   - Risk-adjusted: {{< var treaty_expected_cost_per_daly >}} per DALY (still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets)
-
-2. **Scale**: {{< var global_disease_deaths_daily >}} deaths per day = {{< var disease_eradication_delay_deaths_total >}} lives over {{< var efficacy_lag_years >}}-year timeline shift
-   - {{< var eventually_avoidable_death_pct >}} eventually avoidable with sufficient biomedical research
-
-3. **Innovation**: {{< var trial_capacity_multiplier >}}x research acceleration = {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 years
-   - Compresses decades of medical progress into years
-
-:::
-
-
 ## Research Hypothesis
 
 **Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to fund decentralized pragmatic clinical trials generates return on investment between {{< var dfda_roi_rd_only >}}:1 (conservative estimate, R&D savings only) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
