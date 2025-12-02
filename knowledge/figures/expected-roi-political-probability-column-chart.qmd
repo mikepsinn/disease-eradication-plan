@@ -1,0 +1,104 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| fig-cap: "Expected ROI by Political Success Probability: Accounting for Implementation Risk"
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+# Import centralized style
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, PATTERN_DIAGONAL, PATTERN_HORIZONTAL,
+    add_png_metadata, get_figure_output_path)
+from dih_models.parameters import format_parameter_value, TREATY_ROI_LAG_ELIMINATION
+
+setup_chart_style()
+
+# Generate expected ROI values at different political success probabilities
+# These now derive from the unified POLITICAL_SUCCESS_PROBABILITY distribution range (5%-50%)
+base_roi = float(TREATY_ROI_LAG_ELIMINATION)
+
+# Probability scenarios derived from the uncertainty distribution
+probability_values = [0.05, 0.10, 0.25, 0.40, 0.50]  # 5th to 95th percentile range
+probability_labels = [
+    '5%\n(Very\nPessimistic)',
+    '10%\n(Conservative)',
+    '25%\n(Central)',
+    '40%\n(Moderate-High)',
+    '50%\n(Optimistic)'
+]
+expected_rois = [base_roi * p for p in probability_values]
+
+# Create figure
+
+fig, ax = plt.subplots(figsize=(14, 8))
+
+# Create bars - use solid black for emphasis on the central case (25%)
+
+bars = ax.bar(
+    range(len(probability_labels)),
+    expected_rois,
+    color=[COLOR_WHITE, COLOR_WHITE, COLOR_BLACK, COLOR_WHITE, COLOR_WHITE],
+    edgecolor=COLOR_BLACK,
+    linewidth=2.5,
+    width=0.7,
+    hatch=[None, None, None, PATTERN_DIAGONAL, PATTERN_HORIZONTAL]
+)
+
+# Add value labels using centralized formatter
+
+for i, (bar, roi) in enumerate(zip(bars, expected_rois)):
+    # Format as ratio (will show as 64.3K:1, 128.6K:1, etc.)
+    label = f'{format_parameter_value(roi, unit="ratio")}:1'
+    ax.text(
+        i, roi + max(expected_rois) * 0.04,
+        label,
+        ha='center', va='bottom',
+        fontsize=28, fontweight='bold',
+        color=COLOR_BLACK,
+        bbox=dict(
+            boxstyle='round,pad=0.4',
+            facecolor=COLOR_WHITE,
+            edgecolor=COLOR_BLACK,
+            linewidth=2
+        )
+    )
+
+# Add probability labels below bars
+
+ax.set_xticks(range(len(probability_labels)))
+ax.set_xticklabels(probability_labels, fontsize=18)
+
+# Remove y-axis (values are on bars)
+
+ax.get_yaxis().set_visible(False)
+
+# Set title
+
+ax.set_title('Expected ROI by Political Success Probability', 
+             fontsize=28, weight='bold', pad=30)
+
+# Clean spines
+
+clean_spines(ax, ['top', 'right', 'left'])
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG
+
+output_path = get_figure_output_path('expected-roi-political-probability-column-chart.png')
+plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
+add_png_metadata(output_path,
+                 title="Expected ROI by Political Success Probability",
+                 description="Expected value analysis showing ROI accounting for implementation risk across different political success probabilities")
+
+plt.show()
+```
+

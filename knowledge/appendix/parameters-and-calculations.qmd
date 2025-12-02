@@ -1553,17 +1553,17 @@ Return on investment from sustaining polio vaccination assets and integrating in
 ::: {.callout-tip icon=false collapse=false}
 ### Political Success Probability {#sec-political_success_probability}
 
-**Value**: 25%
+**Value**: 1%
 
-Estimated probability of treaty ratification and sustained implementation. Central estimate 25% based on historical treaty adoption rates (Ottawa Treaty, Paris Agreement). Wide uncertainty range (5%-50%) reflects geopolitical uncertainty.
+Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. Even at this pessimistic level, expected cost/DALY ($7) is still 7x better than bed nets ($50/DALY). Range 0.1%-25% reflects extreme uncertainty.
 
 **Source**: [icbl-ottawa-treaty](https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [5%, 50%] • Distribution: Beta (SE: 12%)
+**Technical**: 95% CI: [0.1%, 25%] • Distribution: Beta (SE: 2%)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 50% (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 25% (±1245%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The beta distribution means values are bounded and can skew toward one end.*
 
@@ -2449,7 +2449,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI (Risk-Adjusted) {#sec-dfda_expected_roi}
 
-**Value**: 298K
+**Value**: 11,914
 
 Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(5%, 50%) distribution to generate full expected value distribution. Central value uses 25% probability.
 
@@ -4818,7 +4818,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Cost per DALY (Risk-Adjusted) {#sec-treaty_expected_cost_per_daly}
 
-**Value**: $0.50
+**Value**: $13
 
 Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(5%, 50%) distribution. At the central 25% estimate, this is ~174x more cost-effective than bed nets ($89.0/DALY).
 
@@ -4849,7 +4849,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### Expected Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_expected_vs_bed_nets_multiplier}
 
-**Value**: 177
+**Value**: 7.07
 
 Expected value multiplier vs bed nets (accounts for political uncertainty)
 

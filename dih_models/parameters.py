@@ -2966,19 +2966,32 @@ DFDA_ROI_RD_ONLY = Parameter(
 
 # Single political success probability parameter with full uncertainty distribution
 # Replaces 6 discrete probability parameters - Monte Carlo/sensitivity analysis handles the range
+#
+# Rationale for 10% central estimate (see knowledge/appendix/treaty-feasibility.qmd):
+# - 0.7% ODA target: Only 5-6 of ~30 DAC countries meet it despite 50+ years of commitment (~20% compliance)
+# - Kyoto Protocol: ~55% of emissions covered initially, but US never ratified, Canada withdrew
+# - Paris Agreement: High adoption but non-binding; actual NDC compliance ~15-25%
+# - International financial commitments requiring ongoing budget allocation historically have <25% full compliance
+# - A 1% military→health reallocation is HARDER than most precedents (touches defense budgets)
+# - However, unique advantages exist: self-funding mechanism, bipartisan health appeal, referendum pathway
+#
+# Conservative 10% central estimate with 2%-25% range reflects:
+# - Floor (2%): Black swan scenario requiring unprecedented global cooperation
+# - Central (1%): Ultra-conservative - assumes 99% chance of failure
+# - Floor (0.1%): Near-impossibility scenarios (gridlock, competing crises)
+# - Ceiling (25%): Optimistic scenario where major crisis creates political window
 POLITICAL_SUCCESS_PROBABILITY = Parameter(
-    0.25,  # Central estimate: 25% (moderate baseline based on historical treaty adoption)
+    0.01,  # Central estimate: 1% - assumes 99% failure rate, yet still 7x better than bed nets
     source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
     source_type="external",
     confidence="low",
     description="Estimated probability of treaty ratification and sustained implementation. "
-                "Central estimate 25% based on historical treaty adoption rates (Ottawa Treaty, Paris Agreement). "
-                "Wide uncertainty range (5%-50%) reflects geopolitical uncertainty.",
+                "Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. ",
     display_name="Political Success Probability",
     unit="rate",
     distribution=DistributionType.BETA,  # Bounded [0,1], appropriate for probabilities
-    confidence_interval=(0.05, 0.50),  # 5th percentile: 5%, 95th percentile: 50%
-    std_error=0.12,  # ~48% CV reflects high uncertainty
+    confidence_interval=(0.001, 0.25),  # 0.1% floor to 25% ceiling
+    std_error=0.02,  # Tighter spread around 1% central
     keywords=["probability", "political", "treaty", "ratification", "implementation", "uncertainty",
               "adoption", "success", "campaign", "voting", "referendum"],
 )

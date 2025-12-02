@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treaty Expected Cost Per DALY | -0.7756 | Strong driver |
-| Bed Nets Cost Per DALY | -0.0490 | Minimal effect |
+| Treaty Expected Cost Per DALY | -0.5732 | Strong driver |
+| Bed Nets Cost Per DALY | 0.0783 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

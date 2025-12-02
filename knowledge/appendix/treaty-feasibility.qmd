@@ -69,3 +69,66 @@ Once these assets exist, formal negotiations become inevitable.
 ## Conclusion
 
 We aren't trying to buy the treaty. We are buying the **machinery** that makes the treaty inevitable. And that machinery costs about $90M, a rounding error compared to the $140 Trillion/year problem we are solving.
+
+## Political Success Probability: Economic Analysis {#sec-political-success-probability}
+
+For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **1% central estimate** with a **0.1%-25% confidence interval**.
+
+**Key insight**: Even at 1% probability of success, this intervention's expected cost per DALY (~$7) is still **7x more cost-effective** than malaria bed nets (~$50/DALY), the gold standard of global health interventions.
+
+### Historical Precedents for International Financial Commitments
+
+| Commitment | Target | Actual Compliance | Duration | Notes |
+|:-----------|:-------|:------------------|:---------|:------|
+| **0.7% ODA Target** | 0.7% of GNI to foreign aid | 5-6 of ~30 DAC countries (~20%) | 50+ years | Only Denmark, Luxembourg, Norway, Sweden, Germany consistently meet it |
+| **Kyoto Protocol** | Binding emissions targets | ~55% coverage initially | 1997-2012 | US never ratified, Canada withdrew, many missed targets |
+| **Paris Agreement NDCs** | Non-binding pledges | ~15-25% on track | 2015-present | High adoption (195 countries) but low compliance |
+| **NATO 2% GDP Defense** | 2% of GDP on defense | ~10 of 31 members (~32%) | Since 2014 | Even with security pressure, most miss target |
+| **EU Stability Pact** | 3% deficit, 60% debt | Routinely violated | Since 1997 | France, Germany themselves violated it |
+
+**Pattern**: Binding international financial commitments requiring ongoing budget reallocation achieve **<25% meaningful compliance**, even with strong institutional pressure.
+
+### Why a 1% Treaty is Harder Than Most Precedents
+
+1. **Touches military budgets**: The most politically sensitive area of national sovereignty
+2. **Requires ongoing annual allocation**: Not a one-time action like banning a weapon
+3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine
+4. **Novel mechanism**: Military→health reallocation is unprecedented
+5. **Coordination problem**: Benefits require critical mass of participants
+
+### Why a 1% Treaty Might Beat the Odds
+
+1. **Self-funding mechanism**: Creates health dividends that exceed the "cost"
+2. **Bipartisan appeal**: Health spending polls better than military across political spectrum
+3. **Referendum pathway**: Can bypass government resistance through direct democracy
+4. **Visible beneficiaries**: 150,000 daily disease deaths creates moral urgency
+5. **Network effects**: Each signing country makes the next more likely
+
+### Probability Estimates
+
+Based on this analysis, economists would find the following defensible:
+
+| Scenario | Probability | Rationale |
+|:---------|:------------|:----------|
+| **Pessimistic floor** | 0.1% | Near-impossible - complete political gridlock, competing global crises |
+| **Conservative central** | 1% | Assumes 99% failure rate - yet still 7x better than bed nets |
+| **Optimistic ceiling** | 25% | Major crisis creates political window; unique self-funding advantage |
+
+**Our model uses**: Central estimate **1%**, 95% CI **[0.1%, 25%]**
+
+This is deliberately ultra-conservative. An economist reviewing our expected value calculations should find:
+- The 1% central estimate assumes a **99% chance of complete failure**
+- The 0.1% floor admits this could be nearly impossible
+- Even at 1%, expected cost/DALY (~$7) beats bed nets (~$50) by 7x
+- The 25% ceiling reflects that partial success or crisis-driven adoption is possible
+
+### Expected Value Implications
+
+At 1% probability of success:
+- **Expected ROI**: {{< var dfda_expected_roi >}}:1 (still positive)
+- **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} (still 7x better than bed nets)
+
+The intervention remains economically justified even assuming a 99% chance of failure because:
+1. The conditional benefits ({{< var treaty_roi_lag_elimination >}}:1 ROI if successful) are enormous
+2. Even the expected value at 1% success beats the best alternative by 7x
+3. The downside is capped at campaign cost (~$1B), while upside is unbounded

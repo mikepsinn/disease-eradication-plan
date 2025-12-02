@@ -313,50 +313,15 @@
   \ calculation\">$41.5B</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{DFDA,ann} = Trials_{ann} \\times\
   \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
-"dfda_expected_roi_0_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
-  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  low\" title=\"Expected ROI for 1% treaty accounting for 0.1% political success probability\
-  \ (extremely pessimistic estimate) | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_EXTREMELY_PESSIMISTIC | Click to view calculation\"\
-  >1,191</a>"
-"dfda_expected_roi_0_1pct_political_success_latex": "$$\nE[ROI]_{\\text{0.1\\%}} =\
-  \ 1{,}286{,}242 \\times 0.001 = 1{,}286\n$$"
-"dfda_expected_roi_10pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
-  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% treaty accounting for 10% political success\
-  \ probability (conservative estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE | Click to view calculation\">119K</a>"
-"dfda_expected_roi_10pct_political_success_latex": "$$\nE[ROI]_{\\text{10\\%}} = 1{,}286{,}242\
-  \ \\times 0.10 = 128{,}624\n$$"
-"dfda_expected_roi_1pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
-  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  low\" title=\"Expected ROI for 1% treaty accounting for 1% political success probability\
-  \ (very pessimistic estimate) | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_VERY_PESSIMISTIC | Click to view calculation\"\
-  >11,914</a>"
-"dfda_expected_roi_1pct_political_success_latex": "$$\nE[ROI]_{\\text{1\\%}} = 1{,}286{,}242\
-  \ \\times 0.01 = 12{,}862\n$$"
-"dfda_expected_roi_25pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
-  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% treaty accounting for 25% political success\
-  \ probability (moderate estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE | Click to view calculation\">298K</a>"
-"dfda_expected_roi_25pct_political_success_latex": "$$\nE[ROI]_{\\text{25\\%}} = 1{,}286{,}242\
+"dfda_expected_roi": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
+  /calculated\" data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected\
+  \ ROI for 1% treaty accounting for political success probability uncertainty. Monte\
+  \ Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(5%, 50%) distribution to\
+  \ generate full expected value distribution. Central value uses 25% probability.\
+  \ | ? Low confidence | Formula: TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY\
+  \ | Click to view calculation\">11,914</a>"
+"dfda_expected_roi_latex": "$$\nE[ROI] = ROI_{conditional} \\times P_{success} = 1{,}286{,}242\
   \ \\times 0.25 = 321{,}561\n$$"
-"dfda_expected_roi_40pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
-  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% treaty accounting for 40% political success\
-  \ probability (moderate-high estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_MODERATE_HIGH | Click to view calculation\">477K</a>"
-"dfda_expected_roi_40pct_political_success_latex": "$$\nE[ROI]_{\\text{40\\%}} = 1{,}286{,}242\
-  \ \\times 0.40 = 514{,}497\n$$"
-"dfda_expected_roi_50pct_political_success": "<a href=\"/calculated\" class=\"parameter-link\"\
-  \ data-source-ref=\"/calculated\" data-source-type=\"calculated\" data-confidence=\"\
-  medium\" title=\"Expected ROI for 1% treaty accounting for 50% political success\
-  \ probability (optimistic estimate) | ~ Medium confidence | Formula: TREATY_ROI_LAG_ELIMINATION\
-  \ * POLITICAL_SUCCESS_PROBABILITY_OPTIMISTIC | Click to view calculation\">596K</a>"
-"dfda_expected_roi_50pct_political_success_latex": "$$\nE[ROI]_{\\text{50\\%}} = 1{,}286{,}242\
-  \ \\times 0.50 = 643{,}121\n$$"
 "dfda_net_savings_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#net-savings\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual net savings\
@@ -1353,42 +1318,15 @@
   \ polio vaccination assets and integrating into expanded immunization programs |\
   \ ✓ High confidence | Unit: ratio | Click to view source\">39</a>"
 "polio_vaccination_roi_cite": "@polio-vaccination-roi"
-"political_success_probability_conservative": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
+"political_success_probability": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Conservative estimate of political\
-  \ success probability (10%) | ~ Medium confidence | Dist: Beta (SE: 0.03) | Click\
-  \ to view source\">0.1</a>"
-"political_success_probability_conservative_cite": "@icbl-ottawa-treaty"
-"political_success_probability_extremely_pessimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
-  \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
-  external\" data-confidence=\"low\" title=\"Extremely pessimistic estimate of political\
-  \ success probability (0.1%) | ? Low confidence | Dist: Beta (SE: 0.0005) | Click\
-  \ to view source\">0.001</a>"
-"political_success_probability_extremely_pessimistic_cite": "@icbl-ottawa-treaty"
-"political_success_probability_moderate": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
-  \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Moderate estimate of political success\
-  \ probability (25%) | ~ Medium confidence | Dist: Beta (SE: 0.075) | Click to view\
-  \ source\">0.25</a>"
-"political_success_probability_moderate_cite": "@icbl-ottawa-treaty"
-"political_success_probability_moderate_high": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
-  \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Moderate-high estimate of political\
-  \ success probability (40%) | ~ Medium confidence | Dist: Beta (SE: 0.12) | Click\
-  \ to view source\">0.4</a>"
-"political_success_probability_moderate_high_cite": "@icbl-ottawa-treaty"
-"political_success_probability_optimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
-  \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Optimistic estimate of political success\
-  \ probability (50%) | ~ Medium confidence | Dist: Beta (SE: 0.15) | Click to view\
-  \ source\">0.5</a>"
-"political_success_probability_optimistic_cite": "@icbl-ottawa-treaty"
-"political_success_probability_very_pessimistic": "<a href=\"https://warondisease.org/knowledge/references.html#icbl-ottawa-treaty\"\
-  \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
-  external\" data-confidence=\"low\" title=\"Very pessimistic estimate of political\
-  \ success probability (1%) | ? Low confidence | Dist: Beta (SE: 0.005) | Click to\
-  \ view source\">0.01</a>"
-"political_success_probability_very_pessimistic_cite": "@icbl-ottawa-treaty"
+  external\" data-confidence=\"low\" title=\"Estimated probability of treaty ratification\
+  \ and sustained implementation. Central estimate 1% is ultra-conservative - assumes\
+  \ 99% chance of failure. Even at this pessimistic level, expected cost/DALY ($7)\
+  \ is still 7x better than bed nets ($50/DALY). Range 0.1%-25% reflects extreme uncertainty.\
+  \ | ? Low confidence | 95% CI: [0.1%, 25%] | Dist: Beta (SE: 2%) | Unit: rate |\
+  \ Click to view source\">1%</a>"
+"political_success_probability_cite": "@icbl-ottawa-treaty"
 "post_1962_drug_approval_reduction_pct": "<a href=\"https://warondisease.org/knowledge/references.html#post-1962-drug-approval-drop\"\
   \ class=\"parameter-link\" data-source-ref=\"post-1962-drug-approval-drop\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Reduction in new drug approvals after\
@@ -1697,22 +1635,20 @@
   \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0.13</a>"
 "treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
   $1.0B}{7.90B} = \\$0.127\n$$"
-"treaty_expected_cost_per_daly_conservative": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis\"\
+"treaty_expected_cost_per_daly": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Expected cost\
-  \ per DALY accounting for 10% political success probability (conservative estimate).\
-  \ Even at this pessimistic probability (1 in 10 chance of success), the intervention\
-  \ is still 70x more cost-effective than bed nets ($89.0/DALY) and comparable to\
-  \ deworming ($4-10/DALY). For reference: Ottawa Treaty (landmine ban) was called\
-  \ a 'bold gamble' that succeeded with 164 countries signing. | ~ Medium confidence\
-  \ | Formula: CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY_CONSERVATIVE\
-  \ | Unit: USD/DALY | Click to view calculation\">$1.26</a>"
-"treaty_expected_cost_per_daly_conservative_latex": "$$\nE[\\text{Cost/DALY}]_{10\\\
-  %} = \\frac{\\$0.127}{0.10} = \\$1.27\n$$"
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Expected cost\
+  \ per DALY accounting for political success probability uncertainty. Monte Carlo\
+  \ samples from beta(5%, 50%) distribution. At the central 25% estimate, this is\
+  \ ~174x more cost-effective than bed nets ($89.0/DALY). | ? Low confidence | Formula:\
+  \ CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY | Unit: USD/DALY | Click\
+  \ to view calculation\">$13</a>"
+"treaty_expected_cost_per_daly_latex": "$$\nE[\\text{Cost/DALY}] = \\frac{\\$0.127}{0.25}\
+  \ = \\$0.51\n$$"
 "treaty_expected_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"\
-  parameters.TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER\">70.7</span>"
+  parameters.TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER\">7.07</span>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\
-  $89}{\\$1.27} = 70\\times\n$$"
+  $89}{\\$0.51} = 175\\times\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
@@ -1942,6 +1878,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "313"
-"total_latex_equation_count": "121"
-"total_citation_count": "127"
+"total_parameter_count": "303"
+"total_latex_equation_count": "116"
+"total_citation_count": "122"
