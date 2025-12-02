@@ -341,7 +341,7 @@ They just follow their calculator to accidentally save humanity.
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-### Why Every Type of Human Will Do This
+### Incentive Alignment by Actor Type
 
 **Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on Victory Bonds."
 
@@ -401,8 +401,7 @@ None offer **{{< var trial_capacity_multiplier >}}× leverage**.
 
 ## Methodology
 
-Economists require elaborate rituals before believing simple truths like "curing diseases is better than bombing people." So here's the math.
-This analysis uses three economic tools that sound complicated but aren't:
+This analysis uses three standard health economics tools:
 
 1. **Net Present Value (NPV)**: Future money is worth less than current money because humans are impatient
 2. **Quality-Adjusted Life Years (QALYs)**: A year of life spent healthy beats a year spent dying (economists needed a formula for this)
@@ -895,11 +894,9 @@ For complete parameter documentation with confidence indicators and peer-review 
 
 **{{< var dfda_roi_rd_only >}}:1 ROI**
 
-This scenario includes only R&D efficiency savings, excluding all other benefit categories.
+This scenario includes only R&D efficiency savings, excluding peace dividends, earlier drug access, and other features.
 
-Count only R&D savings from cheaper trials. Ignore peace dividends, earlier drug access, and everything else that makes skeptics nervous.
-
-### The Math
+### ROI Derivation
 
 Simple ROI calculation:
 
@@ -1130,7 +1127,7 @@ These estimates derive from:
 
 **Investment required**: {{< var treaty_campaign_total_cost >}} (one-time campaign cost)
 
-### Research Acceleration Mechanism
+### Trial Capacity Scaling
 
 The {{< var trial_capacity_multiplier >}}× research acceleration multiplier comes from scaling the Oxford RECOVERY trial approach globally:
 
@@ -1265,7 +1262,7 @@ This is not just a treaty; it is a technology for economic dominance. The first 
 
 **The Strategic Dilemma**: If the US rejects this but China adopts it, China gains a massive structural advantage in the bio-economy and population health. This fear creates a "Race to the Top" where nations must adopt the efficient model or be left behind in the most important industry of the 21st century.
 
-### 2. The Only Solution to the Fiscal Cliff
+### 2. How To Not Drive Off a Fiscal Cliff
 Western economies are facing a solvency crisis driven by healthcare inflation and aging populations.
 *   **Austerity** (cutting benefits) is political suicide.
 *   **Printing Money** (MMT) is inflationary suicide.
@@ -1438,7 +1435,7 @@ Decentralized pragmatic trials fix all of this:
 
 {{< var patient_willingness_trial_participation_pct >}} of patients are willing to participate in clinical trials, yet only {{< var current_patient_participation_rate >}} actually do. The bottleneck isn't human willingness, it's the requirement for dedicated trial infrastructure and restrictive eligibility criteria.
 
-### Who's Actually In Charge (Patients Edition)
+### Patient Agency and Autonomy
 
 A decentralized institutes of health put patients in control through trial participation, not committee votes.
 
@@ -1470,8 +1467,6 @@ See [Governance and Accountability](../appendix/governance.qmd) and [Legal Struc
 ## Limitations and Uncertainties
 
 This analysis acknowledges several important limitations and sources of uncertainty inherent in modeling a transformative policy intervention of this scale.
-
-### Model Assumptions and Constraints
 
 ### Adoption Timeline Uncertainty
 
