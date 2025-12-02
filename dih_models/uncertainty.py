@@ -26,19 +26,26 @@ from __future__ import annotations
 
 import math
 import random
-from typing import Dict, Any, Tuple, Sequence, cast, Callable, List, Optional
+from typing import TYPE_CHECKING, Dict, Any, Tuple, Sequence, cast, Callable, List, Optional, Union
 
 try:
     import numpy as np  # type: ignore
 except Exception:  # pragma: no cover
     np = None  # Fallback handled below
 
+# Import types for type checking only (avoids runtime issues)
+if TYPE_CHECKING:
+    from .parameters import Parameter as ParameterType, DistributionType as DistType
+else:
+    ParameterType = Any
+    DistType = Any
+
 try:
-    # Import Parameter and DistributionType without causing side effects
+    # Import Parameter and DistributionType for runtime use
     from .parameters import Parameter, DistributionType
 except Exception:  # pragma: no cover
-    Parameter = Any  # type: ignore
-    DistributionType = Any  # type: ignore
+    Parameter = None  # type: ignore
+    DistributionType = None  # type: ignore
 
 
 def _rng(seed: int | None):
@@ -57,7 +64,8 @@ def _bounded(value: float, bounds: Tuple[float | None, float | None]):
     return value
 
 
-def _get_bounds(param: Parameter) -> Tuple[float | None, float | None]:
+def _get_bounds(param: Any) -> Tuple[Optional[float], Optional[float]]:
+    """Extract validation bounds from a Parameter-like object."""
     lo = getattr(param, "validation_min", None)
     hi = getattr(param, "validation_max", None)
     # If CI available, use it as soft bounds when validation_* missing
@@ -69,7 +77,7 @@ def _get_bounds(param: Parameter) -> Tuple[float | None, float | None]:
     return lo, hi
 
 
-def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
+def sample_parameter(param: Any, n: int = 10000, seed: Optional[int] = None) -> Union[List[float], Any]:
     """Sample from a Parameter's uncertainty distribution.
 
     Strategy:
@@ -79,7 +87,6 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
     - If no distribution metadata: return constant array of param value
     - Respect validation_min/max and clip
     """
-
     mean = float(param)
     dist = getattr(param, "distribution", None)
     std = getattr(param, "std_error", None)
@@ -106,7 +113,7 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
 
     # Sampling per distribution
     if dist == getattr(DistributionType, "NORMAL", "NORMAL"):
-        if np is not None:
+        if np is not None and rng is not None:
             samples = rng.normal(loc=mean, scale=std, size=n)
             return np.clip(samples, bounds[0] if bounds[0] is not None else -np.inf,
                            bounds[1] if bounds[1] is not None else np.inf)
@@ -125,7 +132,7 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
         sigma2 = math.log(1 + variance / (mean ** 2))
         sigma = math.sqrt(sigma2)
         mu = math.log(mean) - 0.5 * sigma2
-        if np is not None:
+        if np is not None and rng is not None:
             samples = rng.lognormal(mean=mu, sigma=sigma, size=n)
             return np.clip(samples, bounds[0] if bounds[0] is not None else -np.inf,
                            bounds[1] if bounds[1] is not None else np.inf)
@@ -141,7 +148,7 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
         var = std ** 2
         theta = var / mean
         k = mean / theta
-        if np is not None:
+        if np is not None and rng is not None:
             samples = rng.gamma(shape=k, scale=theta, size=n)
             return np.clip(samples, bounds[0] if bounds[0] is not None else -np.inf,
                            bounds[1] if bounds[1] is not None else np.inf)
@@ -185,7 +192,7 @@ def sample_parameter(param: Parameter, n: int = 10000, seed: int | None = None):
         alpha = max(0.1, alpha)
         beta_param = max(0.1, beta_param)
 
-        if np is not None:
+        if np is not None and rng is not None:
             samples = rng.beta(alpha, beta_param, size=n)
             return np.clip(samples, bounds[0] if bounds[0] is not None else 0,
                            bounds[1] if bounds[1] is not None else 1)
@@ -209,18 +216,20 @@ def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: int | 
     results = {}
     for name, meta in parameters.items():
         val = meta.get("value")
-        # Use duck-typing instead of isinstance() to handle module reload issues
+        if val is None:
+            continue
+        # Use duck-typing to handle module reload issues
         # where Parameter class may be loaded from different module paths
         if hasattr(val, 'distribution') or hasattr(val, 'std_error') or hasattr(val, 'confidence_interval'):
             results[name] = sample_parameter(val, n=n, seed=seed)
-        elif isinstance(val, Parameter):
+        elif Parameter is not None and isinstance(val, Parameter):
             # Fallback for Parameter without uncertainty metadata
             results[name] = sample_parameter(val, n=n, seed=seed)
         else:
-            # Plain numeric
+            # Plain numeric - try to convert to float
             try:
                 v = float(val)
-            except Exception:
+            except (TypeError, ValueError):
                 continue
             if np is not None:
                 results[name] = np.full(n, v)
@@ -247,8 +256,12 @@ def simulate_with_propagation(parameters: Dict[str, Dict[str, Any]], n: int = 10
     has_compute = {}  # name -> (inputs, compute_fn)
     for name, meta in parameters.items():
         val = meta.get("value")
-        if hasattr(val, 'compute') and hasattr(val, 'inputs') and val.compute and val.inputs:
-            has_compute[name] = (val.inputs, val.compute)
+        if val is None:
+            continue
+        compute_fn = getattr(val, 'compute', None)
+        inputs_list = getattr(val, 'inputs', None)
+        if compute_fn and inputs_list:
+            has_compute[name] = (inputs_list, compute_fn)
 
     if not has_compute:
         return results
@@ -360,7 +373,10 @@ def one_at_a_time_sensitivity(parameters: Dict[str, Dict[str, Any]], target_name
     for name in inputs:
         meta = parameters[name]
         val = meta.get("value")
-        if not isinstance(val, Parameter):
+        if val is None:
+            continue
+        # Skip non-Parameter values
+        if Parameter is not None and not isinstance(val, Parameter):
             continue
         std = getattr(val, "std_error", None)
         if std in (None, 0):
@@ -450,16 +466,19 @@ def get_fundamental_inputs(parameters: Dict[str, Dict[str, Any]], param_name: st
 
     meta = parameters.get(param_name, {})
     val = meta.get("value")
+    if val is None:
+        return set()
 
     # Check if this parameter has uncertainty (is fundamental)
-    has_uncertainty = (
-        hasattr(val, "distribution") and val.distribution or
-        hasattr(val, "confidence_interval") and val.confidence_interval or
-        hasattr(val, "std_error") and val.std_error
+    has_uncertainty = bool(
+        getattr(val, "distribution", None) or
+        getattr(val, "confidence_interval", None) or
+        getattr(val, "std_error", None)
     )
 
     # Check if this parameter has inputs (is calculated)
-    has_inputs = hasattr(val, "inputs") and val.inputs
+    inputs_list = getattr(val, "inputs", None)
+    has_inputs = bool(inputs_list)
 
     # If no inputs, it's fundamental (leaf node)
     if not has_inputs:
@@ -476,7 +495,7 @@ def get_fundamental_inputs(parameters: Dict[str, Dict[str, Any]], param_name: st
 
     # Recursively expand all inputs
     fundamental = set()
-    for inp in val.inputs:
+    for inp in inputs_list:
         fundamental.update(get_fundamental_inputs(parameters, inp, visited))
 
     return fundamental
@@ -531,12 +550,17 @@ def tornado_deltas(parameters: Dict[str, Dict[str, Any]], outcome: Outcome, expa
         if param_name in overrides:
             return overrides[param_name]
 
+        if val is None:
+            return 0.0
+
         # If has compute function, recursively evaluate inputs
-        if hasattr(val, "compute") and val.compute and hasattr(val, "inputs") and val.inputs:
+        compute_fn = getattr(val, "compute", None)
+        inputs_list = getattr(val, "inputs", None)
+        if compute_fn and inputs_list:
             sub_ctx = {}
-            for inp in val.inputs:
+            for inp in inputs_list:
                 sub_ctx[inp] = evaluate_param(inp, overrides)
-            return val.compute(sub_ctx)
+            return compute_fn(sub_ctx)
 
         # Otherwise use base value
         return float(val) if val is not None else 0.0
@@ -603,7 +627,7 @@ def regression_sensitivity(samples: Dict[str, Any], outcome_samples: Sequence[fl
     # Standardize inputs
     X_list: List[Any] = []
     names = list(samples.keys())
-    input_stds: List[float] = []
+    input_stds: List[Any] = []  # Can be float or numpy floating
     for name in names:
         a = np.asarray(samples[name], dtype=float)
         mu = np.mean(a)
