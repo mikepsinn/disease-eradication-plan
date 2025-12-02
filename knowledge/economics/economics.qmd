@@ -37,6 +37,11 @@ from dih_models.parameters import *
 
 ```
 
+::: {.callout-tip}
+## Working Paper – Feedback Invited
+
+This is an evolving analytical working paper. We welcome critical review of methodology, assumptions, and calculations. Contributors who provide substantive feedback will be acknowledged; those offering significant methodological improvements may be invited as co-authors. Contact: [hello@dih.earth](mailto:hello@dih.earth?subject=Economics%20Working%20Paper%20Feedback) | Annotate any section via the sidebar
+:::
 
 ## Abstract
 
@@ -56,19 +61,6 @@ A secondary peace dividend adds {{< var peace_dividend_annual_societal_benefit >
 All parameters, data sources, and uncertainty ranges are documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, pragmatic clinical trials, regulatory delay, cost-effectiveness analysis, DALY, peace dividend
-
-
-::: {.callout-note}
-## Document Status
-
-This is an evolving analytical preprint.
-
-Economists, policy analysts, and domain experts are invited to provide comments or suggest revisions.
-
-You can annotate any section using the hypothes.is tool on the right side of the page.
-
-Prospective co-authors are encouraged to contribute where they have expertise.
-:::
 
 
 ::: {.callout-note}

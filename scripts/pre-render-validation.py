@@ -799,6 +799,9 @@ def check_markdown_links(content: str, filepath: str):
             # Skip URLs
             if link_path.startswith("http://") or link_path.startswith("https://"):
                 continue
+            # Skip mailto links
+            if link_path.startswith("mailto:"):
+                continue
             # Skip anchors
             if link_path.startswith("#"):
                 continue

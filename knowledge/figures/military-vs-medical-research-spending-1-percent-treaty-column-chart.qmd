@@ -24,7 +24,7 @@ fig, ax = plt.subplots(figsize=(12, 6))
 
 # Data
 
-categories = ['Global Military Spending', 'Curing Disease']
+categories = ['Global\nMilitary\nSpending', 'Curing\nDisease']
 # Convert parameters to billions for chart display
 
 BILLION = 1_000_000_000
