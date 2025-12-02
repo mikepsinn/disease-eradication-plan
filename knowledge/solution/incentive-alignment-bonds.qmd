@@ -322,11 +322,72 @@ At first glance, paying money when policies pass and outcomes improve might soun
 
 4. **Outcomes must be objectively verified.**
 
-   * An independent “impact oracle” measures the improvements using transparent data and methods.
+   * An independent "impact oracle" measures the improvements using transparent data and methods.
    * Payments depend on real, audited progress, not announcements or promises.
 
 Bribery **corrupts** alignment.
 Incentive Alignment Bonds **create** alignment.
+
+---
+
+### 5a. Impact Oracle Governance: Who Decides If Outcomes Improved?
+
+The phrase "independent impact oracle" may sound like hand-waving. This section makes it concrete.
+
+The impact oracle is the entity that determines whether a country achieved verified health improvements. If the oracle can be captured, corrupted, or politically influenced, the entire IAB mechanism fails. Here's how to make it robust:
+
+#### Structure: Federated Verification
+
+No single organization should have sole authority to verify outcomes. Instead, use a federated model:
+
+1. **Multiple independent assessors** (at least three) must agree before a payout is triggered
+2. **Diverse institutional types**: academic institutions, multilateral organizations, commercial auditors
+3. **Geographic diversity**: assessors should span different regions to reduce political capture
+4. **Rotating membership**: no assessor serves more than 5 consecutive years
+
+Example federation for health metrics:
+* Institute for Health Metrics and Evaluation (IHME)
+* Lancet Commission on Health Metrics
+* WHO Statistical Division
+* One rotating commercial auditor (PwC, Deloitte, etc.)
+
+Payout requires: 3 of 4 assessors agree outcomes met threshold.
+
+#### Metrics: Hard to Manipulate
+
+The oracle measures outcomes, not inputs or promises. Preferred metrics:
+
+| Metric | Why It's Hard to Game |
+|:-------|:----------------------|
+| All-cause mortality (age-standardized) | Requires falsifying death certificates at scale |
+| Cause-specific DALYs (GBD methodology) | Cross-validated by multiple data sources |
+| Excess mortality vs counterfactual | Computed from population-level data |
+| Trial enrollment and completion rates | Verified by independent trial registries |
+
+Metrics to avoid (too gameable):
+* Self-reported health status
+* "Access to care" definitions that can be manipulated
+* Policy adoption announcements (not the same as outcomes)
+
+#### Pre-Registration and Transparency
+
+All assessment methods must be:
+* **Pre-registered** before any country begins implementation
+* **Published** in full methodological detail
+* **Versioned** with change logs if adjustments are needed
+* **Open to challenge** via a formal dispute resolution process
+
+If an assessor deviates from pre-registered methodology without documented justification, their assessment is excluded.
+
+#### Dispute Resolution
+
+When countries disagree with oracle determinations:
+
+1. **Technical appeal**: Country submits alternative data or methodology critique; independent panel reviews
+2. **Arbitration**: If technical appeal fails, binding arbitration by a neutral body (e.g., Permanent Court of Arbitration health panel)
+3. **No self-assessment**: Countries cannot assess their own outcomes, ever
+
+This structure doesn't make the oracle perfect. It makes capture expensive enough that it's not worth attempting.
 
 ---
 
@@ -399,6 +460,33 @@ Incentive Alignment Bonds help supply the **how**.
 
 ---
 
+### 7a. How IABs Relate to VICTORY Bonds
+
+If you've read the [VICTORY Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "Aren't these the same thing?" They're complementary, not identical.
+
+**VICTORY Bonds** are designed to:
+* Raise capital ($1B+) to fund the campaign that *passes* the 1% Treaty
+* Pay investors perpetual returns (270%+ annually) from the treaty funding stream *after* it passes
+* Align investor interests with treaty passage: "If the treaty passes, you get paid forever."
+
+**Incentive Alignment Bonds** are designed to:
+* Reward countries and populations *after* they've adopted 1%-equivalent policies
+* Pay out based on *measured health outcomes*, not just policy adoption
+* Align politician interests with good governance: "If your constituents' health improves, you get reputational and career benefits."
+
+The relationship is sequential:
+
+| Phase | Financial Instrument | Purpose |
+|:------|:---------------------|:--------|
+| Pre-Treaty | VICTORY Bonds | Fund the campaign; align investor capital with treaty passage |
+| Post-Treaty | Incentive Alignment Bonds | Reward countries for measurable outcomes; create race-to-the-top dynamics |
+
+VICTORY Bonds get the treaty passed. IABs ensure the treaty actually delivers results.
+
+You can think of VICTORY Bonds as funding the **political war** and IABs as funding the **ongoing campaign** to ensure countries don't just sign treaties but actually improve health outcomes.
+
+---
+
 ### 8. Objections and Failure Modes
 
 No mechanism is magic. It is worth being explicit about what can go wrong.
@@ -413,23 +501,23 @@ They will try. That’s why:
 
 Gaming is a risk, but it’s easier to harden a metric than to harden every informal lobbying channel on Earth.
 
-#### Objection 2: “Isn’t this just rich people buying policy?”
+#### Objection 2: "Isn't this just rich people buying policy?"
 
-Compared to what?
+This is the most important objection. If IABs fail to address it convincingly, the mechanism will (rightly) be rejected as plutocracy with better marketing.
 
-Right now, wealthy actors already buy policy via:
+**First, the uncomfortable reality:** Wealthy actors *already* buy policy. They do it via lobbying, revolving doors, campaign finance, and regulatory capture. The pharmaceutical industry alone spends over $300 million annually on lobbying in the United States. Defense contractors spend more. The question is not "should money influence policy?" but rather "given that money *already* influences policy, can we channel that influence toward measurable global welfare instead of narrow interests?"
 
-* lobbying,
-* revolving doors,
-* campaign finance,
-* regulatory capture.
+**Second, the structural safeguards:**
 
-The difference here is:
+1. **No quid pro quo.** The three-layer architecture explicitly separates scoring (data), electoral support (issue campaigns), and post-office benefits (standing eligibility rules). No one can say "vote for X, get Y." There are only standing rules: "Any politician who supports this *class* of policies will score higher on this public metric, and entities that care about that metric may independently favor high-scorers."
 
-* The mechanism is **explicit**, **measured**, and tied to **global welfare improvements**.
-* Money is not buying arbitrary favors; it is buying **measurable reductions in suffering**.
+2. **Universal and ex-ante rules.** Every politician faces the same scoring system, announced publicly in advance. A left-wing politician who supports 1%-equivalent health policy gets the same credit as a right-wing one. The system is indifferent to party, ideology, and individual identity.
 
-If the rich are going to have influence anyway, this is a way to channel it into something rational and audited.
+3. **Money flows to citizens, not politicians.** When IABs pay out, the money goes to people who received health benefits and systems that delivered those benefits. Politicians get *indirect* benefits: higher approval from grateful constituents, better scores on public metrics, and standing eligibility for post-office positions. This is how representative democracy is *supposed* to work; leaders benefit when their constituents benefit.
+
+4. **The metric is suffering reduced, not interests served.** Traditional influence-buying delivers policies that benefit narrow groups at diffuse public expense. IABs do the opposite: they reward policies that deliver diffuse public benefits even when narrow groups oppose them. The direction of distortion is reversed.
+
+**Third, the honest admission:** Yes, wealthy people who fund IABs will have more influence over which public goods get prioritized than people who don't fund IABs. That's true of all philanthropy. The Gates Foundation has more influence over malaria policy than a random person who also cares about malaria. The question is whether that influence is being exercised transparently, toward measurable welfare improvements, through legal and auditable channels. IABs satisfy all three criteria in ways that traditional lobbying does not.
 
 #### Objection 3: “What if governments take the health gains but reverse the policy later?”
 
