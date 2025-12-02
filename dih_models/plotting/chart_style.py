@@ -345,6 +345,94 @@ def clean_spines(ax, positions=["top", "right"]):
         ax.spines[pos].set_visible(False)
 
 
+def format_tick_value(value, unit=None, prefix_currency=True):
+    """
+    Format a numeric value for axis tick labels with K/M/B/T suffixes.
+    
+    Designed for axis ticks where the unit appears in the axis label itself,
+    so units are NOT appended to each tick value (e.g., axis shows "10, 20, 30"
+    with label "Life Extension (years)", not "10 years, 20 years, 30 years").
+    
+    For currency units (USD, EUR, etc.), adds $ prefix by default since
+    currency symbols are conventionally shown with values.
+    
+    Args:
+        value: Numeric value to format
+        unit: Unit string (e.g., "USD", "years", etc.) - only used to detect currency
+        prefix_currency: If True, add $ prefix for currency units (default: True)
+    
+    Returns:
+        str: Formatted string like "$1.2B", "500K", "3.5M" (no unit suffix)
+    """
+    abs_value = abs(value)
+    sign = "-" if value < 0 else ""
+    
+    # Determine if this is currency (check for common currency indicators)
+    is_currency = False
+    if unit and prefix_currency:
+        unit_lower = unit.lower()
+        is_currency = any(curr in unit_lower for curr in ["usd", "dollar", "eur", "euro", "gbp", "pound", "currency"])
+    
+    # Format with appropriate suffix
+    if abs_value >= 1e12:
+        formatted = f"{abs_value / 1e12:.1f}T"
+    elif abs_value >= 1e9:
+        formatted = f"{abs_value / 1e9:.1f}B"
+    elif abs_value >= 1e6:
+        formatted = f"{abs_value / 1e6:.1f}M"
+    elif abs_value >= 1e3:
+        formatted = f"{abs_value / 1e3:.1f}K"
+    else:
+        # For small numbers, use appropriate decimal places
+        if abs_value == int(abs_value):
+            formatted = f"{int(abs_value)}"
+        elif abs_value >= 10:
+            formatted = f"{abs_value:.1f}"
+        else:
+            formatted = f"{abs_value:.2f}"
+    
+    # Clean up trailing .0 (e.g., "1.0B" -> "1B")
+    if formatted.endswith(".0K"):
+        formatted = formatted.replace(".0K", "K")
+    elif formatted.endswith(".0M"):
+        formatted = formatted.replace(".0M", "M")
+    elif formatted.endswith(".0B"):
+        formatted = formatted.replace(".0B", "B")
+    elif formatted.endswith(".0T"):
+        formatted = formatted.replace(".0T", "T")
+    
+    # Add currency prefix if applicable
+    prefix = "$" if is_currency else ""
+    
+    return f"{sign}{prefix}{formatted}"
+
+
+def get_tick_formatter(unit=None, prefix_currency=True):
+    """
+    Get a matplotlib FuncFormatter for axis tick labels.
+    
+    Uses K/M/B/T suffixes for large numbers and $ prefix for currency.
+    Units are NOT appended (they belong in the axis label).
+    
+    Args:
+        unit: Unit string to detect if currency formatting is needed
+        prefix_currency: If True, add $ prefix for currency units (default: True)
+    
+    Returns:
+        matplotlib.ticker.FuncFormatter: Formatter for use with ax.xaxis.set_major_formatter()
+    
+    Example:
+        ax.xaxis.set_major_formatter(get_tick_formatter(unit="USD"))
+        ax.set_xlabel("Revenue (USD)")  # Unit goes in axis label
+    """
+    from matplotlib.ticker import FuncFormatter
+    
+    def formatter(value, pos):
+        return format_tick_value(value, unit=unit, prefix_currency=prefix_currency)
+    
+    return FuncFormatter(formatter)
+
+
 def style_bar_chart(ax, color=COLOR_BLACK, patterns=None, edge_color=COLOR_BLACK, edge_width=1.5):
     """
     Apply consistent styling to bar charts.

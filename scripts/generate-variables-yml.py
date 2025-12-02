@@ -3073,9 +3073,10 @@ import numpy as np
 from pathlib import Path
 
 from dih_models.plotting.chart_style import (
-    setup_chart_style, add_watermark, clean_spines,
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
@@ -3102,11 +3103,14 @@ else:
     n_bins = min(50, max(1, int(np.sqrt(len(samples)))))
 n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
 
-# Mark key statistics
-ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {{p50:,.2g}}')
-ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {{p5:,.2g}}')
-ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {{p95:,.2g}}')
-ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {{baseline:,.2g}}')
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
+# Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {{format_parameter_value(p50, units)}}')
+ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {{format_parameter_value(p5, units)}}')
+ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {{format_parameter_value(p95, units)}}')
+ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {{format_parameter_value(baseline, units)}}')
 
 ax1.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
 ax1.set_ylabel('Frequency', fontsize=11)
@@ -3120,6 +3124,9 @@ cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
 
 ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
 ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
 
 # Mark key percentiles
 ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
@@ -3229,9 +3236,10 @@ import numpy as np
 from pathlib import Path
 
 from dih_models.plotting.chart_style import (
-    setup_chart_style, add_watermark, clean_spines,
+    setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
+from dih_models.parameters import format_parameter_value
 
 setup_chart_style()
 
@@ -3252,14 +3260,17 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(sorted_samples, exceedance * 100, color=COLOR_BLACK, linewidth=2.5)
 ax.fill_between(sorted_samples, 0, exceedance * 100, alpha=0.1, color=COLOR_BLACK)
 
+# Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+
 # Annotate thresholds
 for thresh in thresholds:
     exceed_pct = (np.array(samples) >= thresh).sum() / len(samples) * 100
     ax.axvline(thresh, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
     ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
     
-    # Add label
-    ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{thresh:,.2g}}',
+    # Add label with formatted threshold value (use format_parameter_value for full units)
+    ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{format_parameter_value(thresh, units)}}',
                 xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
                 fontsize=10, ha='left', weight='bold',
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))

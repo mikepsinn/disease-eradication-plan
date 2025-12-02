@@ -787,29 +787,6 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 
 For comprehensive sensitivity analysis including tornado charts for all calculated parameters, see [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
-### Discount Rate Sensitivity
-
-The baseline analysis uses a {{< var npv_discount_rate_standard >}} annual discount rate (standard for long-term public health investments). NPV calculations are sensitive to this critical parameter:
-
-**ROI sensitivity to discount rate**:
-
-| Discount Rate | ROI (dFDA Only) | Interpretation |
-|:---|---:|:---|
-| **1%** | {{< var roi_discount_1pct >}}:1 | Low discount rate (very long-term view) |
-| **3% (baseline)** | {{< var roi_discount_3pct >}}:1 | Standard public health discount rate |
-| **5%** | {{< var roi_discount_5pct >}}:1 | Higher discount rate (private sector typical) |
-| **7%** | {{< var roi_discount_7pct >}}:1 | High discount rate (short-term focus) |
-
-**Formula**: Higher discount rates reduce NPV of future benefits:
-
-{{< var dfda_npv_net_benefit_rd_only_latex >}}
-
-where $r$ is the discount rate, $B_t$ are benefits in year $t$, and $C_t$ are costs in year $t$.
-
-**Key insight**: Even at 7% discount rate (high by public health standards), ROI remains {{< var roi_discount_7pct >}}:1, substantially exceeding alternative interventions. The {{< var npv_time_horizon_years >}}-year horizon captures the majority of NPV; benefits continue beyond year {{< var npv_time_horizon_years >}} but are discounted heavily.
-
-**Benefit timing**: Peace dividend is immediate (year 1), R&D savings ramp gradually (years 1-5), QALY gains are long-term (years 5-20+). Front-loaded benefits (peace dividend) are less sensitive to discount rate than back-loaded benefits (QALYs).
-
 ## Key Analytical Assumptions
 
 This analysis rests on several core assumptions that should be made explicit for academic transparency:
