@@ -181,6 +181,126 @@ That is **public choice-compatible** incentive alignment.
 
 ---
 
+### 4a. The Three-Layer Architecture (How It Actually Works Legally)
+
+The previous section described the *what*. This section describes the *how*, in enough detail that a lawyer could implement it.
+
+The key insight: you cannot legally say "support Bill #XYZ123 and get paid." That's bribery. But you *can* create a system where politicians who support a **class of pro-social policies** systematically get more electoral support, better reputations, and better post-office careers, all through rule-based, ex-ante, universal mechanisms.
+
+Here's the architecture:
+
+#### Layer A: Outcome and Policy Scoring (Data Only)
+
+Create an independent scoring system that assigns each politician a **Public Good Score** based on:
+
+**Outcome metrics** (jurisdiction-level):
+* DALYs averted
+* Age-standardized mortality reduction
+* Excess mortality trends
+* Disease-specific survival rates
+
+**Policy action metrics** (individual-level):
+* Votes in favor of "1%-equivalent" measures
+* Sponsorship of such bills
+* Public commitments and campaign positions
+* Blocking harmful reversals
+
+Critical design choice: **Don't tie scores to "The 1% Treaty" specifically.** Define a policy class:
+
+> "Policies that reallocate ≥1% of national military spending into independently governed pragmatic clinical trials with open data and outcome-based evaluation."
+
+Any politician supporting *any* policy matching this pattern gets credit. This avoids the "paying for your specific bill" problem entirely.
+
+The scoring system is:
+* **Public** (anyone can see the methodology and data)
+* **Rules-based** (no discretion, no case-by-case decisions)
+* **Non-partisan** (applies equally to all parties and ideologies)
+
+#### Layer B: Electoral and Reputational Benefits (Separate Actors)
+
+Independent entities, legally separate from the scoring system, can commit **ex ante** to favor high-scoring politicians:
+
+**501(c)(4) organizations and PACs can:**
+* Spend more on independent ads and voter turnout for higher-scoring candidates
+* Run comparative campaigns highlighting score differences between candidates
+
+**NGOs and media can:**
+* Publish annual rankings of politicians by Public Good Score
+* Feature high-scorers in conferences, interviews, and reports
+* Create awards and recognition programs
+
+**Key constraints:**
+* No private deals ("we promise *you* specifically")
+* Just standing rules ("we support *any* candidate with Score ≥ S")
+* All commitments made publicly and in advance
+
+This is exactly how NRA grades, League of Conservation Voters scores, and Chamber of Commerce ratings already shape political behavior. The difference is the metric: instead of "did you vote for our narrow interest," it's "did you vote for policies that measurably reduced human suffering."
+
+#### Layer C: Post-Office Career Benefits (Rule-Based Eligibility)
+
+Foundations, think tanks, and impact funds can establish:
+
+> "Eligibility for certain fellowships, advisory roles, and governance positions is restricted to former leaders from jurisdictions that:
+> 1. Adopted a 1%-equivalent policy during their tenure, and
+> 2. Achieved threshold improvements on agreed health metrics."
+
+Politicians know the rule **in advance**. Their self-interest calculation becomes:
+* Support 1%-style reform → more prestigious options after leaving office
+* Oppose it → fewer options
+
+No one is paid for a specific vote. There's just a standing rule that systematically advantages leaders who governed well by objective metrics.
+
+#### Legal Entity Separation
+
+The three layers must be housed in legally distinct entities:
+
+| Layer | Entity Type | Can Do | Cannot Do |
+|:------|:------------|:-------|:----------|
+| Scoring | 501(c)(3) or independent research org | Fund metrics, dashboards, public data | Support/oppose candidates |
+| Electoral | 501(c)(4), PAC, or Super PAC | Independent expenditures favoring high-scorers | Coordinate with candidates |
+| Post-office | Private foundations, think tanks | Set eligibility criteria for positions | Condition grants on specific votes |
+
+This separation is not a loophole; it's how the system maintains legitimacy. Each layer does what it's legally permitted to do, and the combined effect is that supporting 1%-equivalent policies becomes the utility-maximizing choice for rational politicians.
+
+---
+
+### 4b. A Worked Example: Portugal Pilots a 1%-Equivalent Policy
+
+Abstract mechanisms need concrete examples. Here's how IABs might work for a mid-sized country:
+
+**Year 0: Setup**
+* Portugal announces it will reallocate 1% of military spending (approximately €45M/year) to pragmatic clinical trials
+* An IAB fund raises €200M from impact investors and foundations
+* Baseline metrics established: current DALY burden, cardiovascular mortality, cancer survival rates
+
+**Years 1-3: Implementation**
+* Portuguese health system runs 50 pragmatic trials using the RECOVERY model
+* Several treatments show significant efficacy; adoption accelerates
+* Independent evaluators track outcomes against counterfactual (what would have happened without the policy)
+
+**Year 4: Payout Trigger**
+* Evaluators verify: 15,000 DALYs averted compared to counterfactual
+* At €5,000 per DALY (conservative valuation), that's €75M in health value created
+* IAB pays out €50M to:
+  * Portuguese citizens (€20M as health dividend, ~€2 per person)
+  * Portuguese hospitals and clinics that participated in trials (€20M)
+  * Trial infrastructure for continued operation (€10M)
+
+**Political consequences:**
+* Portuguese Prime Minister's Public Good Score rises from 52 to 78
+* Independent campaign groups in upcoming election spend €5M more on GOTV for incumbents who supported the policy
+* Three former health ministers receive invitations to join WHO advisory committees
+* Spanish and Italian politicians notice; both countries begin drafting similar legislation
+
+**Year 5+: Cascade**
+* Spain and Italy adopt 1%-equivalent policies
+* IAB fund raises another €500M based on demonstrated success
+* EU begins discussing continent-wide framework
+
+No one was bribed. Money went to citizens and health systems. Politicians benefited because their voters benefited and because rule-based systems rewarded good governance.
+
+---
+
 ### 5. Why This Is Not Bribery
 
 At first glance, paying money when policies pass and outcomes improve might sound like “fancy bribery.” It’s not, for four reasons:
