@@ -55,48 +55,48 @@ If we want different outcomes, we need different incentives.
 
 ---
 
-### 2. What We Really Need: A Legal Way to Buy Better Behavior
+### 2. What You Need: Legal Bribery That Isn't Technically Bribery
 
-Imagine you could say, as a coordinated global public:
+Imagine you could say to every politician on Earth:
 
-> “If your country adopts a 1%-style reform and actually improves health outcomes, we will:
+> "If your country adopts a 1%-style reform and your citizens actually get healthier, we will:
 >
-> * put real money into your citizens’ pockets,
-> * upgrade your reputation,
-> * and quietly make your career and reelection prospects much better than your rivals’.”
+> * put real money into your citizens' pockets (they'll love you),
+> * upgrade your international reputation (you'll get invited to better parties),
+> * and make your post-office career prospects significantly better than your rivals' (Goldman Sachs boards, prestigious fellowships, that sort of thing)."
 
-No backroom deals.
-No “vote for X and get a suitcase.”
-No money to government budgets (they can print their own).
+No backroom deals. No suitcases of cash. No prison.
 
-Just a standing, public rule:
+No money to government budgets either. They can print their own. What they can't print is external legitimacy, grateful voters, and cushy retirement gigs.
 
-> “If you do **this** objectively good thing, the world will **automatically reward you**.”
+Just a standing, public, announced-in-advance rule:
 
-That is the job of **Incentive Alignment Bonds**.
+> "Do this objectively good thing, and the world will systematically reward you."
+
+This is the job of **Incentive Alignment Bonds**. It's bribery, except legal, transparent, and pointed at saving lives instead of ruining them.
 
 ---
 
 ### 3. Definition: What Are Incentive Alignment Bonds?
 
-Incentive Alignment Bonds (IABs) are a class of financial instruments designed to:
+Incentive Alignment Bonds (IABs) are financial instruments designed to:
 
 1. **Pay out when measurable public-good outcomes improve**, and
-2. **Translate those outcomes into political, reputational, and career benefits for the leaders who made them happen.**
+2. **Translate those outcomes into political, reputational, and career benefits for leaders who made them happen.**
 
-They are not charity.
-They are not lobbying.
-They are not “paying politicians.”
+They are not charity. (Charity doesn't work at scale.)
+They are not lobbying. (That's already taken.)
+They are not "paying politicians." (That's illegal, and also already taken.)
 
 They are:
 
-> **A way for private capital and philanthropy to reward improvements in global public goods, using clear metrics and rule-based mechanisms, in a way that makes it self-interested for governments to cooperate.**
+> **A way to make governments cooperate by appealing to the only thing public choice theory says they respond to: naked self-interest.**
 
 Think of them as:
 
-* Social impact bonds, but aimed at **national public goods**, not local projects.
-* Advance Market Commitments, but aimed at **policies**, not just products.
-* A lawful, transparent, “anti-bribery” version of paying for good governance.
+* **Social impact bonds**, but aimed at national public goods instead of whether one city's recidivism rate dropped 3%.
+* **Advance Market Commitments**, but aimed at policies instead of vaccines.
+* **Bribery**, but legal, transparent, and aimed at reducing human suffering instead of increasing it.
 
 ---
 
@@ -179,13 +179,21 @@ Just a **standing rule**:
 
 That is **public choice-compatible** incentive alignment.
 
+In mechanism design terms: the politician's utility function is roughly:
+
+> U = P(reelection) + career advancement + post-office income + status/legacy
+
+IABs make supporting 1%-equivalent policies **strictly increase all four terms**. No altruism required. The mechanism is *incentive-compatible*: the privately optimal action (maximize personal payoff) and the socially optimal action (support policies that reduce suffering) become identical.
+
 ---
 
-### 4a. The Three-Layer Architecture (How It Actually Works Legally)
+### 4a. The Three-Layer Architecture (How to Not Go to Prison)
 
-The previous section described the *what*. This section describes the *how*, in enough detail that a lawyer could implement it.
+The previous section described the *what*. This section describes the *how*, in enough detail that a lawyer could implement it without anyone getting indicted.
 
-The key insight: you cannot legally say "support Bill #XYZ123 and get paid." That's bribery. But you *can* create a system where politicians who support a **class of pro-social policies** systematically get more electoral support, better reputations, and better post-office careers, all through rule-based, ex-ante, universal mechanisms.
+The key insight: you cannot legally say "support Bill #XYZ123 and get paid." That's bribery. People go to prison for that. It's also inefficient because you'd have to bribe every politician individually, which doesn't scale.
+
+But you *can* create a system where politicians who support a **class of pro-social policies** systematically get more electoral support, better reputations, and better post-office careers. The trick is: rule-based, ex-ante, universal mechanisms. No targeting individuals. No secret deals. Just standing rules that happen to reward saving lives.
 
 Here's the architecture:
 
@@ -222,12 +230,23 @@ Independent entities, legally separate from the scoring system, can commit **ex 
 
 **501(c)(4) organizations and PACs can:**
 * Spend more on independent ads and voter turnout for higher-scoring candidates
-* Run comparative campaigns highlighting score differences between candidates
+* Run comparative campaigns: "Senator Smith scored 23 on the Public Good Index. His opponent scored 78. One of them wants you to keep dying."
 
 **NGOs and media can:**
 * Publish annual rankings of politicians by Public Good Score
-* Feature high-scorers in conferences, interviews, and reports
-* Create awards and recognition programs
+* Feature high-scorers at conferences (politicians love conferences)
+* Create awards (politicians love awards even more than conferences)
+
+The goal is to make the Public Good Score as influential as existing trusted benchmarks:
+* **Freedom House** scores shape how democracies are perceived globally
+* **Transparency International** rankings affect investment and diplomatic relationships  
+* **Credit ratings** (Moody's, S&P) directly constrain sovereign borrowing costs
+
+Moody's can downgrade a country's credit rating and suddenly their borrowing costs go up. That's power. If the Public Good Score achieves similar salience:
+* High score → respect, invitations, soft power, legacy, better book deals
+* Low score → reputational cost, fewer opportunities, awkward questions at dinner parties
+
+That's a direct self-interest lever that requires no altruism to activate. Politicians don't need to become better people. They just need to notice which direction the incentives are pointing.
 
 **Key constraints:**
 * No private deals ("we promise *you* specifically")
@@ -236,7 +255,11 @@ Independent entities, legally separate from the scoring system, can commit **ex 
 
 This is exactly how NRA grades, League of Conservation Voters scores, and Chamber of Commerce ratings already shape political behavior. The difference is the metric: instead of "did you vote for our narrow interest," it's "did you vote for policies that measurably reduced human suffering."
 
-#### Layer C: Post-Office Career Benefits (Rule-Based Eligibility)
+#### Layer C: Post-Office Career Benefits (The Goldman Sachs Board Problem)
+
+After politicians leave office, they want prestigious jobs. Board seats. Fellowships. Speaking fees. This is called "the revolving door" and it's usually pointed at whoever paid the most lobbyists.
+
+You can point it somewhere else.
 
 Foundations, think tanks, and impact funds can establish:
 
@@ -244,11 +267,11 @@ Foundations, think tanks, and impact funds can establish:
 > 1. Adopted a 1%-equivalent policy during their tenure, and
 > 2. Achieved threshold improvements on agreed health metrics."
 
-Politicians know the rule **in advance**. Their self-interest calculation becomes:
-* Support 1%-style reform → more prestigious options after leaving office
-* Oppose it → fewer options
+Politicians know this rule **in advance**. Their calculation becomes:
+* Support 1%-style reform → prestigious fellowships, advisory boards, speaking circuits, book deals
+* Oppose it → you can still get a job, but it won't be as good, and you'll have to explain why you voted against curing diseases
 
-No one is paid for a specific vote. There's just a standing rule that systematically advantages leaders who governed well by objective metrics.
+No one is paid for a specific vote. There's just a standing rule that systematically advantages leaders who governed well by objective metrics. It's the revolving door, except spinning toward "saved lives" instead of "defense contractor profits."
 
 #### Legal Entity Separation
 
@@ -264,9 +287,9 @@ This separation is not a loophole; it's how the system maintains legitimacy. Eac
 
 ---
 
-### 4b. A Worked Example: Portugal Pilots a 1%-Equivalent Policy
+### 4b. A Worked Example: Portugal Saves Lives and Gets Rich
 
-Abstract mechanisms need concrete examples. Here's how IABs might work for a mid-sized country:
+Abstract mechanisms are great for economists and terrible for everyone else. Here's how IABs actually work, using Portugal as an example because it's small enough to pilot and large enough to matter:
 
 **Year 0: Setup**
 * Portugal announces it will reallocate 1% of military spending (approximately €45M/year) to pragmatic clinical trials
@@ -293,11 +316,14 @@ Abstract mechanisms need concrete examples. Here's how IABs might work for a mid
 * Spanish and Italian politicians notice; both countries begin drafting similar legislation
 
 **Year 5+: Cascade**
-* Spain and Italy adopt 1%-equivalent policies
+* Spain and Italy adopt 1%-equivalent policies (FOMO is a powerful force in international relations)
 * IAB fund raises another €500M based on demonstrated success
 * EU begins discussing continent-wide framework
+* Someone gives a TED talk about it
 
-No one was bribed. Money went to citizens and health systems. Politicians benefited because their voters benefited and because rule-based systems rewarded good governance.
+No one was bribed. Money went to citizens and health systems. Politicians benefited because their voters benefited, because rule-based systems rewarded good governance, and because humans are fundamentally self-interested creatures who respond to incentives.
+
+This is not cynical. This is public choice theory. It's only cynical if you think politicians should be motivated by pure altruism, in which case I have some bad news about the last 5,000 years of recorded history.
 
 ---
 
@@ -330,11 +356,13 @@ Incentive Alignment Bonds **create** alignment.
 
 ---
 
-### 5a. Impact Oracle Governance: Who Decides If Outcomes Improved?
+### 5a. Impact Oracle Governance: Who Decides If You Actually Saved Lives?
 
-The phrase "independent impact oracle" may sound like hand-waving. This section makes it concrete.
+"Independent impact oracle" sounds like something from a fantasy novel or a crypto whitepaper. This section makes it concrete enough that skeptical economists stop rolling their eyes.
 
-The impact oracle is the entity that determines whether a country achieved verified health improvements. If the oracle can be captured, corrupted, or politically influenced, the entire IAB mechanism fails. Here's how to make it robust:
+The impact oracle determines whether a country actually achieved health improvements or just claimed to. If the oracle can be captured, corrupted, or politically influenced, the entire mechanism collapses into the same mess as everything else humans have tried.
+
+Here's how to make it robust enough that gaming it costs more than just doing the right thing:
 
 #### Structure: Federated Verification
 
@@ -359,15 +387,15 @@ The oracle measures outcomes, not inputs or promises. Preferred metrics:
 
 | Metric | Why It's Hard to Game |
 |:-------|:----------------------|
-| All-cause mortality (age-standardized) | Requires falsifying death certificates at scale |
-| Cause-specific DALYs (GBD methodology) | Cross-validated by multiple data sources |
-| Excess mortality vs counterfactual | Computed from population-level data |
-| Trial enrollment and completion rates | Verified by independent trial registries |
+| All-cause mortality (age-standardized) | Requires falsifying death certificates at scale. Possible but expensive. |
+| Cause-specific DALYs (GBD methodology) | Cross-validated by multiple data sources. Would need to corrupt several independent institutions simultaneously. |
+| Excess mortality vs counterfactual | Computed from population-level data. Can't hide bodies. |
+| Trial enrollment and completion rates | Verified by independent trial registries. Patients notice if they didn't actually enroll. |
 
 Metrics to avoid (too gameable):
-* Self-reported health status
-* "Access to care" definitions that can be manipulated
-* Policy adoption announcements (not the same as outcomes)
+* Self-reported health status (people lie)
+* "Access to care" definitions (bureaucrats can redefine anything)
+* Policy adoption announcements (signing a document isn't the same as saving lives)
 
 #### Pre-Registration and Transparency
 
@@ -491,19 +519,26 @@ You can think of VICTORY Bonds as funding the **political war** and IABs as fund
 
 No mechanism is magic. It is worth being explicit about what can go wrong.
 
-#### Objection 1: “Won’t politicians game the metrics?”
+#### Objection 1: "Won't politicians game the metrics?"
 
-They will try. That’s why:
+Yes. Obviously. Politicians game everything. That's what they do.
 
-* Metrics must be designed to be **hard to manipulate** (DALYs, mortality, cause-specific trends).
-* Multiple independent data sources must be used.
-* Methods must be public and subject to expert review.
+The question isn't "will they try to game it?" The question is "is gaming it harder than just doing the right thing?"
 
-Gaming is a risk, but it’s easier to harden a metric than to harden every informal lobbying channel on Earth.
+To game IAB metrics, you'd need to:
+* Falsify death certificates at scale (hard, people notice when relatives aren't dead)
+* Corrupt multiple independent international health organizations simultaneously (expensive)
+* Maintain the lie across rotating assessors over many years (exhausting)
+
+Or you could just... run some clinical trials and save lives. That's actually easier.
+
+Gaming is a risk. But it's easier to harden a metric than to harden every informal lobbying channel on Earth. Right now, there are no metrics. The gaming is free and unlimited.
 
 #### Objection 2: "Isn't this just rich people buying policy?"
 
-This is the most important objection. If IABs fail to address it convincingly, the mechanism will (rightly) be rejected as plutocracy with better marketing.
+This is the most important objection, so let's take it seriously instead of hand-waving.
+
+If IABs are just plutocracy with better marketing, they deserve to fail. Let's see if they are.
 
 **First, the uncomfortable reality:** Wealthy actors *already* buy policy. They do it via lobbying, revolving doors, campaign finance, and regulatory capture. The pharmaceutical industry alone spends over $300 million annually on lobbying in the United States. Defense contractors spend more. The question is not "should money influence policy?" but rather "given that money *already* influences policy, can we channel that influence toward measurable global welfare instead of narrow interests?"
 
@@ -519,29 +554,31 @@ This is the most important objection. If IABs fail to address it convincingly, t
 
 **Third, the honest admission:** Yes, wealthy people who fund IABs will have more influence over which public goods get prioritized than people who don't fund IABs. That's true of all philanthropy. The Gates Foundation has more influence over malaria policy than a random person who also cares about malaria. The question is whether that influence is being exercised transparently, toward measurable welfare improvements, through legal and auditable channels. IABs satisfy all three criteria in ways that traditional lobbying does not.
 
-#### Objection 3: “What if governments take the health gains but reverse the policy later?”
+#### Objection 3: "What if governments take the health gains but reverse the policy later?"
 
-Policies can be reversed; that’s reality.
+They might. Politicians are humans, and humans have short attention spans and shorter terms.
 
-To reduce this:
+Countermeasures:
 
-* Some IAB structures can have **clawback clauses** (payouts spread over time, conditional on maintaining reforms).
-* Long-term metrics can reward durability, not just one-off changes.
-* Political scorecards can penalize reversals.
+* **Clawback clauses**: Payouts spread over time, conditional on maintaining reforms. Take the money and run? The money runs back.
+* **Long-term metrics**: Reward durability, not just one-off changes. "You signed a document" is worth less than "you maintained the system for five years."
+* **Political scorecards**: Reversals tank your Public Good Score. The same mechanism that rewarded you for supporting the policy punishes you for killing it.
 
-You cannot prevent all backsliding. You can make it **much more expensive**.
+You cannot prevent all backsliding. But you can make it expensive enough that it's not the default move.
 
-#### Objection 4: “Is this realistic at a global scale?”
+#### Objection 4: "Is this realistic at a global scale?"
 
-It doesn’t have to start global.
+It doesn't have to start global. Global is the goal. Portugal is the pilot.
 
-The path is more likely:
+The path:
 
-1. One or two **pilot countries** adopt a limited 1%-style policy with IAB support.
-2. Outcomes are measured; citizens benefit; leaders are rewarded.
-3. Other countries copy what works, as they already do with credit ratings, trade agreements, and health system reforms.
+1. **One or two pilot countries** adopt a limited 1%-style policy with IAB support. (Portugal, Costa Rica, maybe New Zealand - small, functional democracies with something to prove.)
+2. **Outcomes are measured**; citizens benefit; leaders get invited to better conferences.
+3. **Other countries notice** and copy what works, as they already do with credit ratings, trade agreements, and health system reforms. FOMO is a powerful force in international relations.
 
-Just as bond markets and credit ratings slowly became central to sovereign behavior, a successful IAB ecosystem can grow from proof-of-concept into norms.
+Credit ratings didn't start as a global system. They started as one guy in the 1800s publishing opinions about railroad bonds. Now Moody's can tank a country's economy with a press release.
+
+IABs can scale the same way: proof of concept → adoption by early movers → FOMO among laggards → new normal.
 
 ---
 
@@ -574,4 +611,20 @@ If ending war and disease is about anything, it is about that:
 **reprogramming the incentive landscape so that the easiest and most rewarding path for powerful actors is the path that saves the most lives.**
 
 Incentive Alignment Bonds are one of the simplest, most scalable tools we have to do that.
+
+---
+
+### 10. Summary: The Mechanism in One Sentence
+
+Create an **independent, outcome-indexed system** where hitting big public-good targets (funded by Incentive Alignment Bonds) automatically:
+
+* pays citizens (they like this),
+* boosts the reelection chances of politicians who made it happen (they like this more),
+* upgrades their status and post-office career prospects (they like this most),
+
+all via pre-announced, universal rules and independent institutions—so it's legally clean, incentive-compatible, and doesn't give a dollar to government budgets.
+
+It's bribery, except legal, transparent, and aimed at saving lives.
+
+You're not asking politicians to be better people. You're just making "save lives" and "advance career" point in the same direction. The rest is just self-interest doing what self-interest does.
 
