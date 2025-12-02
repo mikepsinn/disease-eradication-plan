@@ -16,7 +16,7 @@ setup_chart_style()
 # Parameter values
 central_value = 0.01
 low = 0.001
-high = 0.25
+high = 0.1
 dist_type = "beta"
 display_name = "Political Success Probability"
 unit = "rate"

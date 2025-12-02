@@ -2979,7 +2979,7 @@ DFDA_ROI_RD_ONLY = Parameter(
 # - Floor (2%): Black swan scenario requiring unprecedented global cooperation
 # - Central (1%): Ultra-conservative - assumes 99% chance of failure
 # - Floor (0.1%): Near-impossibility scenarios (gridlock, competing crises)
-# - Ceiling (25%): Optimistic scenario where major crisis creates political window
+# - Ceiling (10%): Optimistic scenario where major crisis creates political window
 POLITICAL_SUCCESS_PROBABILITY = Parameter(
     0.01,  # Central estimate: 1% - assumes 99% failure rate, yet still 7x better than bed nets
     source_ref=ReferenceID.ICBL_OTTAWA_TREATY,
@@ -2990,7 +2990,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
     display_name="Political Success Probability",
     unit="rate",
     distribution=DistributionType.BETA,  # Bounded [0,1], appropriate for probabilities
-    confidence_interval=(0.001, 0.25),  # 0.1% floor to 25% ceiling
+    confidence_interval=(0.001, 0.10),  # 0.1% floor to 10% ceiling
     std_error=0.02,  # Tighter spread around 1% central
     keywords=["probability", "political", "treaty", "ratification", "implementation", "uncertainty",
               "adoption", "success", "campaign", "voting", "referendum"],

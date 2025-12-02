@@ -1595,7 +1595,27 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
                 # Use the reference ID value for display (not the enum representation)
                 display_ref = source_ref_str
-                content.append(f"**Source**: [{display_ref}](https://warondisease.org/knowledge/references.html#{source_ref_str})")
+                # Check if source_ref is a .qmd file path or a references.qmd anchor
+                # Use relative paths for multi-format compatibility (HTML, PDF, EPUB)
+                if source_ref_str.endswith('.qmd'):
+                    # It's a path to another .qmd document
+                    # Convert absolute path to relative from knowledge/appendix/
+                    if source_ref_str.startswith('/knowledge/'):
+                        # /knowledge/appendix/foo.qmd -> foo (same dir)
+                        # /knowledge/foo.qmd -> ../foo (parent dir)
+                        rel_path = source_ref_str[len('/knowledge/'):]
+                        if rel_path.startswith('appendix/'):
+                            rel_path = rel_path[len('appendix/'):]
+                        else:
+                            rel_path = '../' + rel_path
+                    else:
+                        rel_path = source_ref_str
+                    # Remove .qmd extension for format-agnostic links
+                    rel_path = convert_qmd_to_html(rel_path)
+                    content.append(f"**Source**: [{display_ref}]({rel_path})")
+                else:
+                    # It's a reference anchor ID - link to references.qmd (relative path)
+                    content.append(f"**Source**: [{display_ref}](../references.qmd#{source_ref_str})")
                 content.append("")
 
             # Uncertainty section with human-friendly explanations
@@ -2069,6 +2089,10 @@ def validate_references(parameters: Dict[str, Dict[str, Any]], available_refs: s
                         source_ref_str = source_ref.value
                     else:
                         source_ref_str = str(source_ref)
+
+                    # Skip validation for .qmd file paths - they're internal document links, not references.qmd anchors
+                    if source_ref_str.endswith('.qmd'):
+                        continue
 
                     used_refs.append(source_ref_str)
 
@@ -3369,7 +3393,8 @@ def main():
         print(f"\n[ERROR] Please add missing references to {references_path}", file=sys.stderr)
         print(f"[ERROR] Format: <a id=\"{missing_refs[0][1]}\"></a>", file=sys.stderr)
         print()
-        # Don't exit - continue generation but warn user
+        # Mark as fatal error so we exit with code 1 at the end
+        has_fatal_error = True
     else:
         print(f"[OK] All {len(set(used_refs))} external references validated")
         print()

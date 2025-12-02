@@ -292,22 +292,13 @@ def add_watermark(fig, text="WarOnDisease.org", alpha=1.0):
     fontsize = 11
     watermark_color = "#333333"  # Darker gray
 
-    # Estimate text width: average character width * number of characters
-    # For sans-serif fonts at 11pt, average char width is approximately 0.55 * fontsize
-    # Convert points to inches: 1 point = 1/72 inches
-    fontsize_inches = fontsize / 72.0
-    # Average character width in inches (conservative estimate for 'WarOnDisease.org')
-    avg_char_width_inches = fontsize_inches * 0.55
-    text_width_inches = len(text) * avg_char_width_inches
-
-    # Text height: font size + descenders (approximately 1.2x font size)
-    text_height_inches = fontsize_inches * 1.2
-
     # Calculate position in figure coordinates (0-1)
-    # Right edge: 1.0 - (padding + text_width) / fig_width
-    # Bottom edge: (padding + text_height) / fig_height
-    x_position = 1.0 - (padding_right_inches + text_width_inches) / fig_width_inches
-    y_position = (padding_bottom_inches + text_height_inches) / fig_height_inches
+    # We use ha="right" and va="bottom", so x/y define the bottom-right anchor of the text box.
+    # To position it padding_inches from the corner:
+    # x = 1.0 - padding_right / width
+    # y = padding_bottom / height
+    x_position = 1.0 - padding_right_inches / fig_width_inches
+    y_position = padding_bottom_inches / fig_height_inches
 
     # Clamp to valid range [0, 1] to prevent out-of-bounds
     x_position = max(0.0, min(1.0, x_position))

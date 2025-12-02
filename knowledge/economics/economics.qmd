@@ -265,6 +265,10 @@ That's a quadrillion-dollar bill lying on the ground. The only question is wheth
 
 For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current regulatory system waiting for drug approval.
 
+The Monte Carlo distribution below shows the range of lives saved estimates across 10,000 simulations, accounting for uncertainty in efficacy lag duration, daily mortality rates, and avoidable death percentages:
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_deaths_total.qmd >}}
+
 ::: {.callout-note}
 ## Why "Eventually Avoidable" Matters
 
@@ -515,6 +519,10 @@ Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient_
 
 That's an {{< var trial_cost_reduction_factor >}}x {{< var trial_cost_reduction_factor_cite >}} cost reduction from eliminating unnecessary overhead and using existing infrastructure.
 
+The distribution below shows the uncertainty range for the cost reduction factor based on empirical data from RECOVERY and similar pragmatic trials:
+
+{{< include ../figures/distribution-trial_cost_reduction_factor.qmd >}}
+
 ## The Return on Investment Equation
 
 {{< var dfda_roi_rd_only_latex >}}
@@ -660,6 +668,10 @@ Transformative potential to create viable research pathways for conditions ignor
 
 **QALY Valuation:** Standard economic valuations range from {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY. This analysis uses conservative mid-range values.
 
+The distribution below shows the uncertainty range in DALYs averted from the 8.2-year timeline shift, based on Monte Carlo simulation of input parameter uncertainty:
+
+{{< include ../figures/mc-distribution-disease_eradication_delay_dalys.qmd >}}
+
 For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
 ## Counterfactual Baseline Specification
@@ -716,6 +728,10 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 **Increased Funding**: A 1% treaty adds {{< var treaty_annual_funding >}} to the current {{< var global_med_research_spending >}} {{< var global_med_research_spending_cite >}} baseline, increasing total research funding to {{< var total_research_funding_with_treaty >}} (1.4× increase).
 
 These improvements compound multiplicatively to produce the {{< var trial_capacity_multiplier >}}× acceleration used in this analysis. This is a conservative estimate accounting for implementation constraints, regulatory requirements, and gradual adoption.
+
+**Sensitivity of research acceleration estimate:** The tornado chart below shows which input parameters have the largest impact on the trial capacity multiplier. The width of each bar shows how much the multiplier changes when that parameter varies across its uncertainty range:
+
+{{< include ../figures/tornado-trial_capacity_multiplier.qmd >}}
 
 **Automating Friction, Not Judgment**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
 
@@ -784,6 +800,10 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 {{< include ../figures/monte-carlo-roi-distribution-chart.qmd >}}
 
 **Economic interpretation:** ROI > 1:1 means benefits exceed costs. All simulations produce ROI > 1:1, meaning there is effectively zero probability (within the modeled uncertainty) that this intervention loses money. Even the most conservative scenario (R&D savings only at {{< var dfda_roi_rd_only >}}:1) generates positive returns. This qualifies as a **dominant intervention** in health economics: it should be implemented regardless of budget constraints, as it generates net economic surplus while improving health outcomes.
+
+**Which parameters matter most for conservative ROI?** The tornado chart below shows the sensitivity of the R&D-only ROI estimate to each input parameter. Parameters at the top have the largest impact on the final result:
+
+{{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
 
 For comprehensive sensitivity analysis including tornado charts for all calculated parameters, see [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
@@ -881,7 +901,9 @@ $$E[ROI] = ROI_{conditional} \times P_{success}$$
 
 The preceding analysis presents *conditional* benefits (returns IF implementation succeeds). Expected value analysis incorporates the probability of achieving political ratification and sustained commitment.
 
-**Political success probability**: We model political success as uncertain, with a central estimate of 25% (based on historical treaty adoption rates like the Ottawa Treaty and Paris Agreement) and a wide uncertainty range of 5%-50% reflecting geopolitical uncertainty.
+**Political success probability**: We model political success as uncertain, with a central estimate of 1% (ultra-conservative, assuming 99% failure rate) and an uncertainty range of 0.1%-10% reflecting geopolitical uncertainty. The distribution below shows the assumed probability range:
+
+{{< include ../figures/distribution-political_success_probability.qmd >}}
 
 **Risk-adjusted expected ROI**: {{< var dfda_expected_roi >}}:1
 
@@ -1002,6 +1024,10 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 **Note on confidence levels**: The direct military spending reduction ({{< var treaty_annual_funding >}}) has high confidence. The remaining conflict cost reductions assume proportional scaling (1% military spending → 1% conflict reduction) which lacks empirical validation. Conservative scenarios should use only direct fiscal savings; optimistic scenarios can include full peace dividend effects.
 
 {{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
+
+**Sensitivity of peace dividend estimate:** The tornado chart below shows which cost components have the largest impact on the total peace dividend. The dominant drivers are infrastructure destruction costs and lost economic growth:
+
+{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
 
 ### How Treaty Funding Is Allocated
 
@@ -1159,6 +1185,10 @@ That's **{{< var treaty_total_complete_benefits_annual >}} per year** (recurring
 
 **Translation:** Every $1 invested returns ${{< var treaty_complete_roi_all_benefits >}} in **recurring annual benefits** (peace dividend + R&D savings), plus a one-time 8.2-year timeline shift in disease eradication (not included in annual figure).
 
+**Sensitivity of complete ROI:** The tornado chart below shows which parameters most affect the complete ROI estimate:
+
+{{< include ../figures/tornado-treaty_complete_roi_all_benefits.qmd >}}
+
 These estimates derive from:
 
 - Proven trial costs ([RECOVERY](../appendix/recovery-trial.qmd): {{< var trial_cost_reduction_factor >}}× cost reduction demonstrated)
@@ -1171,6 +1201,10 @@ These estimates derive from:
 |:---|:---:|---:|:---|:---|
 | **Timeline Shift** | One-time | {{< var disease_eradication_delay_economic_loss >}} | Once | Eliminating {{< var efficacy_lag_years >}}-year regulatory delay shifts disease eradication {{< var efficacy_lag_years >}} years earlier. Saves {{< var disease_eradication_delay_deaths_total >}} lives and {{< var disease_eradication_delay_dalys >}} DALYs. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) |
 | **Peace Dividend** | Recurring | {{< var peace_dividend_annual_societal_benefit >}}/year | Perpetual | {{< var treaty_reduction_pct >}} reduction in global military spending redirected to medical research |
+
+**Efficacy lag uncertainty:** The timeline shift depends on the efficacy lag parameter, which represents years of regulatory delay after safety is established. The distribution below shows the uncertainty range:
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 | **R&D Savings** | Recurring | {{< var dfda_rd_gross_savings_annual >}}/year | Perpetual | {{< var trial_cost_reduction_factor >}}× trial cost reduction from pragmatic trial model |
 | **Total Recurring** | Recurring | {{< var treaty_total_complete_benefits_annual >}}/year | Perpetual | Peace dividend + R&D savings (makes system self-funding) |
 | **Total Value** | Combined | {{< var disease_eradication_delay_economic_loss >}} + recurring | Once + perpetual | One-time timeline shift + perpetual annual benefits |
