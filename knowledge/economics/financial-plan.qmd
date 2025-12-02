@@ -31,7 +31,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 - **Target Returns:** {{< var victory_bond_annual_return_pct >}} annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
-- **Payout:** 10% of all DIH treaty inflows (2.7B/year)
+- **Payout:** {{< var victory_bond_funding_pct >}} of all DIH treaty inflows ({{< var victory_bond_annual_payout >}}/year)
 - **Protection:** Bondholders paid before mission spending
 - **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream
 - **The Pitch:** "Invest $1B. Get {{< var victory_bond_annual_payout >}}/year. Forever."
@@ -40,7 +40,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 - Simplest pitch in finance: {{< var victory_bond_annual_return_pct >}} annual returns, perpetual
 - Clean {{< var treaty_campaign_total_cost >}} target (vs confusing $1.2-2.5B range)
-- 10% payout is easy math (vs 5% complex calculations)
+- {{< var victory_bond_funding_pct >}} payout is easy math (vs 5% complex calculations)
 - "Forever" beats any finite timeline
 - Better returns than any investment in history
 
@@ -88,14 +88,23 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from mi
 
 #### Expenditure Allocation
 
-#### The Only Fixed Cost (10%)
+The DIH Treasury uses an **80/10/10 automatic allocation** before any funds reach discretionary spending:
 
-- VICTORY bond returns: 2.7B annually (10% of treaty inflows)
-- Sacred and untouchable (or investors walk)
+| Allocation | Percentage | Annual Amount | Purpose |
+|------------|------------|---------------|---------|
+| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, research, platform |
+| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
+
+#### The Fixed Costs ({{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} = 20%)
+
+- **VICTORY bond returns:** {{< var victory_bond_annual_payout >}} annually ({{< var victory_bond_funding_pct >}} of treaty inflows)
+- **IAB political incentives:** {{< var iab_political_incentive_funding_annual >}} annually ({{< var iab_political_incentive_funding_pct >}} of treaty inflows)
+- Both are sacred and untouchable (or the system fails)
 - Automatically distributed via smart contracts
 - {{< var victory_bond_annual_return_pct >}} annual returns to bondholders
 
-##### Everything Else (90%): Decided by Wishocracy
+##### Everything Else ({{< var dih_treasury_medical_research_pct >}}): Decided by Wishocracy
 
 Instead of committees, 8 billion humans vote via pairwise comparisons:
 
@@ -149,282 +158,33 @@ As more patients join:
 - NIH grants: 6 months of proposal writing, committees decide, universities take 40% overhead
 - DIH subsidies: Patient wants treatment, joins trial, funds follow automatically, zero overhead
 
-## The Cash Flow Machine
-
-### Year 1: Treaty Launch
-
-#### Revenue
-
-- 1% treaty: {{< var treaty_annual_funding >}}
-
-#### Expenses
-
-- VICTORY bond returns: 2.7B (10% of treaty inflows)
-- Patient subsidies: ~$16B (decided by Wishocracy, ~66%)
-- Platform infrastructure: ~$3B (scaling to 10M patients)
-- Research prizes: ~$2.5B (first-cure bonuses)
-- Expansion campaign: ~$2B (advocacy for 2% treaty)
-- Contingency: ~$2B
-
-### Year 4: 2% Treaty Expansion
-
-#### Revenue
-
-- 2% Treaty: $54B (doubled)
-
-#### Expenses
-
-- VICTORY bond returns: $5.4B (10% of treaty inflows)
-- Patient subsidies: ~$33B (more patients, more trials)
-- Platform infrastructure: ~$5B (50M patients)
-- Research prizes: ~$5B (major diseases falling)
-- Expansion campaign: ~$4B (advocacy for 5% treaty)
-- Pharma partnerships: ~$1.6B (co-development)
-
-### Year 8: 5% Treaty Domination
-
-#### Revenue
-
-- 5% Treaty: $135B (exponential)
-
-#### Expenses
-
-- VICTORY bond returns: $13.5B (10% of treaty inflows)
-- Patient subsidies: ~$85B (universal access)
-- Platform infrastructure: ~$12B (200M patients)
-- Research prizes: ~$15B (rare diseases getting solved)
-- Space medicine: ~$6B (extending to longevity research)
-- Prevention programs: ~$3.5B (shifting from treatment to prevention)
-
-### Year 10+: Endgame
-
-#### Revenue
-
-- 10%+ Treaty: $270B+ (war is obsolete)
-
-#### Expenses
-
-- VICTORY bond returns: {{< var treaty_annual_funding >}}+ (10% forever)
-- Death becomes optional
-- Suffering becomes archaeology
-- Humanity explores space
-- Earth achieves paradise
-
-## Financial Performance Metrics
-
-### Return on Investment (The {{< var treaty_complete_roi_all_benefits >}}:1 Recommended Multiplier)
-
-#### Direct Investment Returns (VICTORY Social Impact Bonds)
-
-- {{< var victory_bond_annual_return_pct >}} annually to bondholders
-- Perpetual returns (not 10-year finite)
-- {{< var treaty_campaign_total_cost >}} investment → {{< var victory_bond_annual_payout >}}/year forever
-- Better than every investment in human history
-
-#### Societal Returns (Everyone Else)
-
-- ${{< var treaty_complete_roi_all_benefits >}}:1 in value created per dollar spent (PRIMARY estimate)
-- {{< var trial_cost_reduction_factor >}}× reduction in trial costs ($50.0B annual savings)
-- 10-year acceleration in drug development ($5.4T productivity)
-- 100X more diseases addressed (10M lives saved annually)
-- 3X ROI on prevention vs treatment ({{< var caregiver_annual_value_total >}} saved)
-- Knowledge compounds through open data ($2.1T avoided waste)
-
-##### Total 10-Year Value Creation: $16.4T
-
-That's more than China's entire GDP.
-
 ## Risk Management
 
-### Investor Protection
+For detailed risk analysis, see **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)**.
 
-#### Assurance Contracts
+Key protections:
 
-- Funds escrowed until milestones hit
-- Automatic refund if targets missed
-- No "trust us" required
-
-#### Milestone-Based Release
-
-- Phase 1 (50%): Platform live, legal entities established
-- Phase 1 (50%): 50M participants OR electoral victory
-- Phase 2 (40%): Platform scaled, 10 countries compliant
-- Phase 2 (60%): 280M participants OR G7 commitment
-- Phase 3 (30%): 300M users, 20+ countries
-- Phase 3 (70%): Treaty signed by 3+ G7 nations
-
-#### Downside Protection
-
-- Even with partial treaty adoption ($13B), bonds return 130% annually
-- Tradable on secondary markets if exit needed
-- First-mover advantages for early investors
-- 10% perpetual payout means returns never stop
-
-### Operational Protection
-
-#### Smart Contract Security
-
-- 5+ independent audits before launch
-- Multi-sig wallets (7 of 12 required)
-- Time-locked withdrawals (24-hour delays)
-- Circuit breakers (auto-pause on anomalies)
-- Insurance for smart contract bugs
-
-#### Financial Controls
-
-- Public transparency dashboard (real-time)
-- Quarterly independent audits
-- Board oversight (includes bondholders)
-- Fraud detection via AI
-- Whistleblower bounties
-
-## Transparency & Accountability
-
-### Public Dashboard (Real-Time)
-
-**URL:** WarOnDisease.org/transparency
-
-#### What You See
-
-- Total raised vs budget
-- Spending by category (live)
-- Milestone completion
-- Political race outcomes
-- Treaty negotiation status
-- Treasury balance
-- Subsidy rates per patient
-- Trials funded
-- Lives saved (estimated)
-
-### On-Chain Verification
-
-- All treasury movements public
-- Multi-sig addresses published
-- Transaction history immutable
-- Anyone can audit independently
-
-### Independent Oversight
-
-- Quarterly financial audits (Big 4)
-- Annual security audits
-- Performance reviews against KPIs
-- Published with zero redactions
-
-## Key Performance Indicators
-
-### Mission KPIs (What Actually Matters)
-
-#### Primary
-
-- QALYs (Quality-Adjusted Life Years) generated
-- Cost per life saved (target: <$1,000)
-- Time from discovery to patient (target: <3 years)
-- Percentage of diseases with active trials (target: 100%)
-
-#### Efficiency
-
-- Cost per patient in trials (target: {{< var recovery_trial_cost_per_patient >}}, proven by Oxford RECOVERY)
-- Administrative overhead (target: <15%, reality will be 10-20% decided by voters)
-- Treatments tested per billion allocated
-- Negative results published (target: 100%)
-
-#### Access
-
-- Global population with trial access (target: 50.0%+)
-- Languages supported (target: 50+)
-- Income diversity of participants (ensuring equity)
-
-#### Financial
-
-- Treaty expansion rate (1% → 2% → 5%)
-- VICTORY bond returns delivered (target: {{< var victory_bond_annual_return_pct >}} annually)
-- Multiplier effects (target: {{< var treaty_complete_roi_all_benefits >}}:1 societal value, recommended estimate)
-
-## The Compound Flywheel
-
-```{python}
-#| fig-alt: "Flowchart: 1% treaty → Subsidize Patients → Generate Cures → Save Lives → Media Frenzy → Public Demands 2% → Treasury Doubles → More Cures → More Lives → Nobel Prizes → 5% Treaty Inevitable → Death Optional by 2050"
-import graphviz
-from pathlib import Path
-from IPython.display import Image as IPImage, display
-
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
-
-dot = graphviz.Digraph(comment='Compound Flywheel', format='png')
-dot.attr(rankdir='TD', size='10,14')
-setup_graphviz_style(dot)
-
-dot.node('A', f'1% treaty: {format_parameter_value(TREATY_ANNUAL_FUNDING)}')
-dot.node('B', 'Subsidize Patients')
-dot.node('C', 'Generate Cures')
-dot.node('D', 'Save Lives')
-dot.node('E', 'Media Frenzy')
-dot.node('F', 'Public Demands 2%')
-dot.node('G', 'Treasury Doubles')
-dot.node('H', 'More Cures')
-dot.node('I', 'More Lives')
-dot.node('J', 'Nobel Prizes')
-dot.node('K', '5% Treaty Inevitable')
-dot.node('L', 'Death Optional by 2050')
-
-dot.edge('A', 'B')
-dot.edge('B', 'C')
-dot.edge('C', 'D')
-dot.edge('D', 'E')
-dot.edge('E', 'F')
-dot.edge('F', 'G')
-dot.edge('G', 'H')
-dot.edge('H', 'I')
-dot.edge('I', 'J')
-dot.edge('J', 'K')
-dot.edge('K', 'L')
-
-png_path = render_graphviz_with_watermark(dot, 'compound-flywheel')
-display(IPImage(str(png_path)))
-```
-
-Each success makes the next success easier:
-
-- More cures → More political support
-- Bigger treasury → Lower cost per patient
-- Better data → Smarter allocation
-- Healthier people → Stronger economy
-- Stronger economy → Bigger treaties
-- Repeat until paradise
+- **Assurance contracts:** Funds escrowed until milestones hit, automatic refund if targets missed
+- **Milestone-based release:** Phased funding tied to platform launch, user growth, and treaty progress
+- **Downside protection:** Even partial treaty adoption ($13B) returns 130% annually to bondholders
+- **Smart contract security:** Multi-sig wallets, time-locked withdrawals, independent audits
+- **On-chain transparency:** All treasury movements public, anyone can audit independently
 
 ## Related Documents
 
-### For Investors
-
-- **[VICTORY Social Impact Bonds - Investment Thesis](victory-bonds.qmd)** - Why this beats every other investment
-- **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - What could go wrong and how to mitigate it
-- **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise $1.2-2.5B in 36 months
-
-### For Budget Wonks
-
-- **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown of the $1.2-2.5B
-- **[Coalition Economics](../solution/aligning-incentives.qmd)** - How to align everyone's financial incentives
-
-### For Health Economics Nerds
-
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - Complete ROI analysis ({{< var treaty_complete_roi_all_benefits >}}:1 PRIMARY estimate)
-- **[Peace Dividend Analysis](../appendix/peace-dividend-calculations.qmd)** - Historical proof that military cuts → prosperity
-
-### For Treaty Supporters
-
-- **[1% treaty Peace Dividend](../appendix/peace-dividend-calculations.qmd)** - The two-tier dividend model
-- **[1% treaty impact analysis](economics.qmd)** - TL;DR version for busy people
+- **[VICTORY Social Impact Bonds](victory-bonds.qmd)** - Investment thesis and bond structure
+- **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
+- **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
+- **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise $1B
+- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - Complete ROI analysis
 
 ## Summary
 
-**To Raise:** $1.0B via VICTORY Social Impact Bonds
+| Component | Target | Mechanism |
+|-----------|--------|-----------|
+| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY Social Impact Bonds |
+| **Spend** | Campaign budget | Referendum + lobbying + platform |
+| **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation via Wishocracy |
+| **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |
 
-**To Spend:** 20% viral referendum, 25% AI lobbying, 25% tech platform, 10% AI legal, 10% partnerships, 5% ops, 5% implementation
-
-**To Manage:** {{< var treaty_annual_funding >}}+ annually via Wishocracy (8 billion voters)
-
-**To Deliver:** {{< var victory_bond_annual_return_pct >}} annual returns to investors (perpetual), {{< var treaty_complete_roi_all_benefits >}}:1 societal returns, optional death by 2050
-
-**The Simple Math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever
-
-**The Question:** Do you want in, or do you want to watch history happen without you?
+**The math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever.

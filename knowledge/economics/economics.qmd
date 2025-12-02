@@ -958,16 +958,22 @@ This calculation methodology follows standard cost-of-conflict analysis framewor
 
 **Total annual treaty funding**: {{< var treaty_annual_funding >}}
 
-The vast majority goes to **patient subsidies** ({{< var dih_treasury_to_medical_research_annual >}}), with minimal overhead:
+The funding uses an **80/10/10 automatic allocation**:
+
+| Allocation | Percentage | Annual Amount | Purpose |
+|------------|------------|---------------|---------|
+| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA platform |
+| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Rewards for supporting legislators](../solution/incentive-alignment-bonds.qmd) |
+
+Within the {{< var dih_treasury_medical_research_pct >}} allocated to medical research:
 
 1. **Patient Trial Subsidies** ({{< var dih_treasury_trial_subsidies_pct >}}): {{< var dih_treasury_trial_subsidies_annual >}}/year
    - Subsidizes {{< var dih_patients_fundable_annually >}} patients annually at {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient
    - Patients bring subsidies to trials; providers collect payment when patients enroll
    - Makes trial participation profitable for providers instead of costly
 
-2. **Victory Bond Payouts** ({{< var victory_bond_funding_pct >}}): {{< var victory_bond_annual_payout >}}/year to campaign investors
-
-3. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
+2. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
 
 **Why framework costs are low:** A dFDA provides coordination protocols (like HTTP for the internet), not a competing platform.
 
@@ -1060,14 +1066,21 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 - **Funding Source**: {{< var treaty_annual_funding >}} annually from {{< var treaty_reduction_pct >}} [redirection of existing military budgets](../appendix/peace-dividend-calculations.qmd) (money already allocated in national budgets)
 
-**Funding Allocation**:
+**Funding Allocation** (80/10/10 split):
 
-1. **Victory Bond Payouts**: {{< var victory_bond_annual_payout >}}/year to investors who funded the campaign
-2. **Decentralized Framework for Drug Assessment Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
-3. **Patient Trial Subsidies**: {{< var dih_treasury_trial_subsidies_annual >}}/year subsidizing patient participation in clinical trials
+| Allocation | Percentage | Annual Amount | Purpose |
+|------------|------------|---------------|---------|
+| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA operations |
+| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) for legislators |
+
+Within the {{< var dih_treasury_medical_research_pct >}} allocated to medical research:
+
+1. **Patient Trial Subsidies**: {{< var dih_treasury_trial_subsidies_annual >}}/year subsidizing patient participation in clinical trials
    - At {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient ([RECOVERY trial cost](../appendix/recovery-trial.qmd)), this funds {{< var dih_patients_fundable_annually >}} patients annually
    - Patients choose which trials to join; trials that attract patients get funded
    - **ALL remaining funds go to patient subsidies** - no separate bureaucracy or overhead budget
+2. **Decentralized Framework for Drug Assessment Operations**: {{< var dfda_annual_opex >}}/year for core infrastructure
 
 - **Annual Benefits**: {{< var combined_peace_health_dividends_annual_for_roi_calc >}} (Peace dividend: {{< var peace_dividend_annual_societal_benefit >}} + R&D savings: {{< var dfda_rd_gross_savings_annual >}})
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and dFDA infrastructure)

@@ -250,10 +250,17 @@ Once the treaty is signed and the money starts flowing, here's what happens:
 **Input**: {{< var treaty_annual_funding >}} annually from military budgets worldwide
 
 **Distribution**:
-The {{< var treaty_annual_funding >}} flows into the DIH Treasury, where it is allocated directly by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
+The {{< var treaty_annual_funding >}} flows into the DIH Treasury, where it is allocated using an **80/10/10 automatic split** before any funds reach discretionary spending:
+
+| Allocation | Percentage | Annual Amount | Purpose |
+|------------|------------|---------------|---------|
+| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, R&D, pandemic prep |
+| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
+
+The {{< var dih_treasury_medical_research_pct >}} allocated to medical research is then distributed by the people of Earth via the Wishocracy platform. There are no committees or central planners. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
 
 - **Patient Subsidies:** The largest portion, creating a market for clinical trials.
-- **VICTORY Bond Returns:** A fixed 10% of inflows, as promised to investors.
 - **Research & Development:** Funding for breakthrough platform technologies.
 - **Pandemic Preparedness:** A global insurance policy against the next COVID.
 The exact percentages will shift in real-time based on humanity's collective will.

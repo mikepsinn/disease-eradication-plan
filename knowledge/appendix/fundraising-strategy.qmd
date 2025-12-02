@@ -229,10 +229,10 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ##### How it would work
 
-- Issue registered securities offering 270% annual returns from treaty revenue
+- Issue registered securities offering {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue
 - Target accredited investors, family offices, hedge funds
 - SEC-compliant offering (Reg D, Reg A+, or public offering)
-- Returns paid from treaty appropriations ($27B/year × 10% = $2.7B/year)
+- Returns paid from treaty appropriations ({{< var treaty_annual_funding >}}/year × {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year)
 
 ##### Evidence
 
@@ -351,9 +351,9 @@ To understand realistic funding strategies, we examined historical evidence from
 ##### Calculation
 
 - Current: Spend $150M lobbying → Get $750B contracts → 15% margins = $112B profit
-- New model: Spend $150M lobbying for treaty → Keep $2.67T defense budget (99%) + earn 270% on $27B health budget
+- New model: Spend $150M lobbying for treaty → Keep $2.67T defense budget (99%) + earn {{< var victory_bond_annual_return_pct >}} on $27B health budget
 - Defense budget stays at $2.67T (barely changes)
-- They get NEW income stream: $27B × 10% = $2.7B/year to VICTORY bondholders
+- They get NEW income stream: {{< var treaty_annual_funding >}} × {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year to VICTORY bondholders
 - Plus they can BUY VICTORY bonds with their existing profits
 
 ##### Pros
@@ -402,7 +402,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - **Evidence**: PEPFAR ($15B/year federal), Paris Agreement (government commitments)
 - **Structure**: International treaty obligations
 - **Use**: Actual dFDA/DIH operations
-- **Returns**: VICTORY bondholders get $2.7B/year (10% of $27B)
+- **Returns**: VICTORY bondholders get {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}} of {{< var treaty_annual_funding >}})
 
 **Total philanthropic need: $110-220M over 5 years (NOT $942M)**
 
@@ -428,8 +428,8 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ###### Year 7+: Implementation
 
-- Government appropriations: $27B/year from treaty signatories
-- VICTORY bondholders: $2.7B/year (10%)
+- Government appropriations: {{< var treaty_annual_funding >}}/year from treaty signatories
+- VICTORY bondholders: {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}})
 - Everyone gets rich, nobody dies
 
 ##### Why this works

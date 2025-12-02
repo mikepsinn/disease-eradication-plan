@@ -85,7 +85,7 @@ Here's the genius move: Structure them as debt instruments, not equity. Why?
 ### The Structure
 
 - **Perpetual bonds**: No maturity date (like British consols)
-- **10% of treaty flows**: Direct percentage, not fixed amount
+- **{{< var victory_bond_funding_pct >}} of treaty flows**: Direct percentage, not fixed amount
 - **Tradeable**: Secondary market liquidity
 - **Smart contract execution**: Automatic payments
 - **Multi-jurisdiction**: Not just US securities

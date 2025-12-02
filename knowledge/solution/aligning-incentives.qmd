@@ -364,3 +364,58 @@ Don't fight human nature. Weaponize it.
 
 Adam Smith's invisible hand, but for healing instead of widgets.
 
+## The Two-Engine System: Why You Need Both
+
+Everything above describes how to align incentives for the **initial win**: passing the 1% treaty. But the goal isn't 1%. The goal is eventually redirecting *all* military spending to health. That requires two different engines.
+
+### Engine 1: VICTORY Bonds (The Initial Alignment)
+
+VICTORY Bonds solve the **funding problem**:
+
+- Raise {{< var treaty_campaign_total_cost >}} to fund the campaign
+- Investors get {{< var victory_bond_annual_return_pct >}} returns forever
+- Creates the financial coalition to pass the first treaty
+
+But after the 1% treaty passes, VICTORY Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10% treaties. Their job is done.
+
+### Engine 2: Incentive Alignment Bonds (The Scaling Engine)
+
+[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve the **expansion problem**:
+
+- {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives
+- Politicians who supported the 1% treaty get rewarded with better scores, electoral support, and post-office careers
+- This creates **perpetual pressure** for expansion: 1% → 2% → 5% → 10% → ... → 100%
+
+The key insight: **IAB funding scales with treaty size.**
+
+| Treaty Level | VICTORY Bond Returns | IAB Political Funding |
+|:-------------|:--------------------|:---------------------|
+| 1% | {{< var victory_bond_annual_return_pct >}} (fixed) | $2.7B/year |
+| 2% | {{< var victory_bond_annual_return_pct >}} (fixed) | $5.4B/year |
+| 5% | {{< var victory_bond_annual_return_pct >}} (fixed) | $13.5B/year |
+| 10% | {{< var victory_bond_annual_return_pct >}} (fixed) | $27B/year |
+| 50% | {{< var victory_bond_annual_return_pct >}} (fixed) | $135B/year |
+| 100% | {{< var victory_bond_annual_return_pct >}} (fixed) | $270B/year |
+
+VICTORY Bond investors are satisfied at 1%. IAB-funded political incentives **grow with each expansion**, creating a ratchet that only moves in one direction.
+
+### Why Both Are Necessary
+
+**Without VICTORY Bonds**: No funding for the initial campaign. The treaty never passes.
+
+**Without IABs**: The treaty passes but stalls at 1-2%. Politicians move on, defense lobby regroups, expansion never happens. The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
+
+**With both**: Initial funding secures the 1% victory. Then IABs create compounding political pressure that drives expansion for decades. Every politician has career-long incentives to maximize health spending. The defense industry eventually pivots entirely to health because that's where the political rewards are.
+
+### The Endgame
+
+At 100% military-to-health redirection:
+
+- $2.7 trillion flows to health annually
+- $270 billion funds political incentives (more than all current global lobbying combined)
+- $2.16 trillion funds actual research
+- "Support health spending" becomes the single most rewarded political position on Earth
+- War becomes economically obsolete
+
+The 80/10/10 allocation isn't just a funding structure. It's a **political transformation engine** designed to make humanity's transition from war to health economically inevitable.
+

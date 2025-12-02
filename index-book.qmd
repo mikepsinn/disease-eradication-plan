@@ -238,7 +238,7 @@ The treaty passes. Every nation moves 1% of their explosion budget to their not-
 
 Clinical trials suddenly cost 82 times less because you don't need 17 years of paperwork to discover if something stops humans from leaking important fluids.
 
-The $24.3B flowing to research at 82x efficiency creates **{{< var trial_capacity_multiplier >}}× trial capacity per year**. Over 20 years, that's **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**, a massive expansion of our ability to test treatments.
+The {{< var dih_treasury_to_medical_research_annual >}} flowing to research at 82x efficiency creates **{{< var trial_capacity_multiplier >}}× trial capacity per year**. Over 20 years, that's **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**, a massive expansion of our ability to test treatments.
 
 The rich humans who gave you papers get {{< var victory_bond_annual_payout >}} yearly forever, or until the sun explodes, whichever happens first (probably the sun thing).
 

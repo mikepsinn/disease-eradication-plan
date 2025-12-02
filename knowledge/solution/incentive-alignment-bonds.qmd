@@ -661,7 +661,7 @@ The relationship is complementary:
 |:------|:-----------|:-------------|
 | Pre-Treaty | VICTORY Bonds | Raise capital from investors; fund the campaign |
 | Pre-Treaty | IABs (scoring) | Show politicians that supporting the treaty improves their scores |
-| Post-Treaty | VICTORY Bonds | Pay investors their 10% of treaty revenue forever |
+| Post-Treaty | VICTORY Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
 | Post-Treaty | IABs (full mechanism) | Reward politicians whose countries actually achieve health improvements |
 
 VICTORY Bonds get investors to fund the war. IABs get politicians to fight it (and keep fighting after victory).
@@ -788,4 +788,94 @@ all via pre-announced, universal rules and independent institutions, so it's leg
 It's bribery, except no money changes hands. Just reputation, electoral support, and career advancement.
 
 You're not asking politicians to be better people. You're just making "save lives" and "advance career" point in the same direction. The rest is just self-interest doing what self-interest does.
+
+---
+
+### 11. Why 10%: The Scaling Engine
+
+You might wonder: Why dedicate {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) to political incentives? Isn't that money that could go to research?
+
+The answer requires understanding what we're actually trying to do.
+
+#### The Goal Isn't a 1% Treaty. The Goal Is 100%.
+
+The 1% treaty is the **proof of concept**. The endgame is redirecting *most* of global military spending to health. Ideally, 50%, 75%, eventually approaching 100%.
+
+That doesn't happen automatically. Once the 1% treaty passes:
+
+- VICTORY Bond investors are satisfied. They're getting {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10%.
+- Defense contractors adapt. They'll accept 1% as a small loss, then lobby to prevent further cuts.
+- Political attention fades. Once the "win" is declared, politicians move on to the next issue.
+- Backlash builds. The military-industrial complex regroups. Attack ads return.
+
+Without a mechanism for **sustained political pressure**, the treaty stalls at 1-2% forever.
+
+#### IABs Are the Political Ratchet
+
+The 10% IAB allocation creates something VICTORY Bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
+
+| Treaty Level | Total Revenue | IAB Funding | Research Funding | Political Incentive |
+|:-------------|:--------------|:------------|:-----------------|:--------------------|
+| 1% | $27B | $2.7B/year | $21.7B/year | Politicians rewarded for passage |
+| 2% | $54B | $5.4B/year | $43.2B/year | Politicians compete to expand |
+| 5% | $135B | $13.5B/year | $108B/year | Defense industry pivots to health |
+| 10% | $270B | $27B/year | $216B/year | War becomes economically obsolete |
+| 25% | $675B | $67.5B/year | $540B/year | Superpowers compete on health outcomes |
+| 50% | $1.35T | $135B/year | $1.08T/year | Global transformation |
+| 100% | $2.7T | $270B/year | $2.16T/year | Full redirection achieved |
+
+At 100% redirection, the IAB mechanism would fund **$270 billion per year** in political incentives. That's more than all current global lobbying combined. It would make "support health spending" the single most rewarded political position on Earth.
+
+#### The Math Changes Everything
+
+At 1%: "Is $2.7B/year for political incentives worth it?"
+
+At 100%: "$270B/year in political incentives unlocks $2.16 *trillion* per year in research funding."
+
+The 10% isn't a cost. It's the **engine** that drives the entire expansion. Without it, you get a one-time win. With it, you get a self-reinforcing cycle that makes each expansion easier than the last.
+
+#### Why VICTORY Bonds Alone Won't Scale
+
+VICTORY Bonds solve the *initial* alignment problem:
+- Investors fund the campaign
+- Treaty passes
+- Investors get {{< var victory_bond_annual_return_pct >}} returns forever
+
+But after the 1% treaty passes:
+- Investors are done. Their job was funding the campaign. Mission accomplished.
+- They have no mechanism to push for expansion.
+- Their returns are locked in. 2% treaty or 10% treaty, they still get {{< var victory_bond_annual_return_pct >}}.
+
+IABs solve the *ongoing* alignment problem:
+- Politicians who pushed for 1% see their IAB-funded benefits
+- They see colleagues getting rewarded for health outcomes
+- They compete to push for 2%, then 5%, then 10%
+- Each expansion increases IAB funding, which increases political pressure, which drives the next expansion
+
+It's a **political ratchet** that only moves in one direction: toward more health spending.
+
+#### The Alternative Is Stagnation
+
+Without IABs, here's the likely trajectory:
+- Year 1-3: 1% treaty passes. Celebration.
+- Year 4-7: Defense lobby regroups. Politicians lose interest. No expansion.
+- Year 8-15: Treaty stalls at 1%. Defense spending slowly creeps back up.
+- Year 16+: The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
+
+With IABs:
+- Year 1-3: 1% treaty passes. Politicians rewarded.
+- Year 4-7: Politicians compete to expand to 2%. More rewards.
+- Year 8-15: 5% treaty. Defense contractors pivot to health. More rewards.
+- Year 16-30: 10%, 25%, 50%. War becomes economically obsolete.
+- Year 50+: Full redirection. Disease becomes a solved problem.
+
+The 10% allocation is the difference between a one-time policy win and a multi-generational transformation of human civilization.
+
+#### Bottom Line
+
+The question isn't "Is 10% too much?"
+
+The question is: "Is 10% enough to sustain political momentum through the inevitable backlash as military budgets face real cuts?"
+
+Probably. But if anything, 10% might be conservative for what we're trying to accomplish.
 
