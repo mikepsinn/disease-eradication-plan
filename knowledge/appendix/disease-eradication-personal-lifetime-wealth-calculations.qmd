@@ -209,19 +209,15 @@ If you need ultra-conservative numbers for skeptical audiences, use the Evidence
 
 **Note**: These models use the **antibiotic precedent** which fundamentally understates a 1% treaty's impact. They're provided for credibility building, not because they're accurate.
 
-### Conservative Baseline Visualizations
+### Unified Model with Uncertainty
 
-For skeptical audiences who need ultra-conservative estimates based on antibiotic precedent:
+Our unified `PERSONAL_LIFETIME_WEALTH` model uses uncertainty in the inputs (particularly `LIFE_EXTENSION_YEARS` with a 5-50 year range) to determine the range of outcomes. This replaces the previous approach of separate conservative/moderate/disease-eradication scenarios.
 
-{{< include ../figures/conservative-baseline-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< include ../figures/tornado-personal_lifetime_wealth.qmd >}}
 
-{{< include ../figures/conservative-baseline-annual-benefits-stacked-area-chart.qmd >}}
+{{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
 
-{{< include ../figures/conservative-baseline-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
-
-{{< include ../figures/conservative-baseline-lifetime-wealth-by-scenario-column-chart.qmd >}}
-
-{{< include ../figures/conservative-baseline-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+{{< include ../figures/distribution-life_extension_years.qmd >}}
 
 #### Why These Are Underestimates
 
@@ -427,9 +423,9 @@ $$
 
 ## Sensitivity Analysis
 
-{{< include ../figures/disease-eradication-lifetime-wealth-sensitivity-tornado-chart.qmd >}}
+{{< include ../figures/tornado-personal_lifetime_wealth.qmd >}}
 
-The tornado chart shows which parameters have the largest impact on your personal lifetime wealth under the **Disease Eradication Model** (72-year life extension). The black vertical line marks the base case ($4.3M).
+The tornado chart shows which parameters have the largest impact on your personal lifetime wealth. The black vertical line marks the base case.
 
 ### Reading the Chart
 
@@ -457,9 +453,11 @@ The tornado chart shows which parameters have the largest impact on your persona
 
 ## Demographic Variations
 
-{{< include ../figures/disease-eradication-lifetime-wealth-by-scenario-column-chart.qmd >}}
+See the Monte Carlo distribution and sensitivity analysis above for how different inputs affect outcomes.
 
-This chart uses the **Disease Eradication Model** ({{< var trial_capacity_multiplier >}}× cumulative trial capacity, {{< var trial_capacity_cumulative_years_20yr >}} trial-capacity-equivalent years) showing **realistic expected benefits**:
+<!--
+The demographic variation chart has been replaced with probabilistic analysis via the unified model.
+-->
 
 ### Key Insights
 
@@ -483,9 +481,15 @@ This chart uses the **Disease Eradication Model** ({{< var trial_capacity_multip
 
 ## Component Breakdown
 
-{{< include ../figures/disease-eradication-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+{{< include ../figures/personal-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
 
-**Key Finding:** With 72 years of life extension, **Extended Earnings dominates** (~30-40% of total) - working and retirement years from age 80 to 152 create massive compound wealth.
+**Key Finding:** With life extension of 5-50 years (median 20 years), the extended earnings component dominates - working and retirement years create massive compound wealth.
+
+### Probabilistic Analysis
+
+{{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
+
+{{< include ../figures/exceedance-personal_lifetime_wealth.qmd >}}
 
 ### Component Mix vs Conservative Model
 
@@ -498,11 +502,18 @@ This chart uses the **Disease Eradication Model** ({{< var trial_capacity_multip
 - Conservative (5yr): Healthcare savings dominates (49%)
 - Realistic (72yr): **Extended productive years dominates** - living to 152 with continued earnings transforms everything
 
-The biggest wealth creation comes from simply **being alive and productive for 72 extra years**.
+The biggest wealth creation comes from simply **being alive and productive for extra years**.
 
+## Life Extension Input Distribution
+
+The `LIFE_EXTENSION_YEARS` parameter captures uncertainty from conservative (5 years, antibiotic precedent) to optimistic (50 years, aging reversal) scenarios:
+
+{{< include ../figures/distribution-life_extension_years.qmd >}}
+
+<!--
 ## Wealth Accumulation Over Lifetime
-
-{{< include ../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+Stacked area chart removed - see component breakdown pie chart and MC distribution above for value composition.
+-->
 
 ### The Power of Extended Life
 
@@ -534,11 +545,13 @@ This chart shows how wealth accumulates over a **122-year lifetime** (age 30→1
 
 The conservative model completely misses that being alive from age 80→152 is where most of the value comes from. It's not just about curing diseases - it's about living long enough to benefit from decades of compound economic growth, productivity improvements, and continued earnings.
 
-**Bottom Line:** A 1% treaty's value is primarily in the **YEARS OF LIFE** gained, not just immediate healthcare savings. Living to 152 instead of 80 means 72 extra years of earning, compounding GDP growth, and accumulating wealth. This is why the Disease Eradication Model shows 7x more lifetime benefit than the conservative antibiotic precedent model.
+**Bottom Line:** A 1% treaty's value is primarily in the **YEARS OF LIFE** gained, not just immediate healthcare savings. The Monte Carlo analysis shows a wide range of outcomes based on how much life extension is achieved.
 
+<!--
 ## Treaty Percentage Impact
-
-{{< include ../figures/disease-eradication-lifetime-wealth-by-treaty-percentage-line-chart.qmd >}}
+Treaty percentage chart removed - uncertainty is now captured via LIFE_EXTENSION_YEARS Monte Carlo.
+The tornado chart (sensitivity analysis) shows relative importance of different parameters.
+-->
 
 ## Key Findings
 
@@ -564,11 +577,13 @@ Under the Disease Eradication Model (72-year life extension), treaty percentage 
 - Moving from 1% to 2% nearly doubles lifetime wealth
 - 5% treaty creates generational wealth for average workers
 
-**Bottom Line:** Under realistic disease eradication accounting, the treaty percentage negotiated is the single most important economic decision of the 21st century. The difference between 1% and 5% is measured in tens of millions per person.
+**Bottom Line:** Under realistic disease eradication accounting, the treaty percentage negotiated is the single most important economic decision of the 21st century.
 
+<!--
 ## Model Comparison
-
-{{< include ../figures/individual-benefits-from-disease-eradication-model.qmd >}}
+The old model comparison chart has been replaced by the unified PERSONAL_LIFETIME_WEALTH parameter
+with uncertainty-driven life extension (5-50 years). See the Monte Carlo distribution above.
+-->
 
 ## Testing
 

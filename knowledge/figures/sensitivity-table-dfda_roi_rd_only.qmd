@@ -4,9 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Annual OPEX | -4.4758 | Strong driver |
-| dFDA NPV Upfront Cost Total | 3.6686 | Strong driver |
-| dFDA R&D Gross Savings Annual | 1.0305 | Strong driver |
-| NPV Discount Rate Standard | -0.6615 | Strong driver |
+| dFDA Annual OPEX | -5.7813 | Strong driver |
+| dFDA NPV Upfront Cost Total | 4.3602 | Strong driver |
+| dFDA R&D Gross Savings Annual | 1.3190 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

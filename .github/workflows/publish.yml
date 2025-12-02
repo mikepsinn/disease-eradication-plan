@@ -157,7 +157,7 @@ jobs:
 
       - name: Render Book EPUB (reuses PDF cache)
         run: python scripts/render-book-epub.py
-        timeout-minutes: 15
+        timeout-minutes: 30
 
       - name: Upload EPUB artifact
         uses: actions/upload-artifact@v4

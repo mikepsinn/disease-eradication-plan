@@ -6,7 +6,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 from dih_models.parameters import format_parameter_value
 
@@ -16,12 +16,12 @@ setup_chart_style()
 display_name = "dFDA Present Value of Annual OPEX Over 10 Years"
 
 # Baseline and units
-baseline = 268738760.02760494
+baseline = 341634623.61287224
 
 # Tornado data from sensitivity analysis
-drivers = ['DIH_NPV_ANNUAL_OPEX_INITIATIVES', 'DFDA_NPV_ANNUAL_OPEX', 'NPV_DISCOUNT_RATE_STANDARD']
-impacts_low = [-47641577.93248424, -53345147.121584475, 56102615.93556422]
-impacts_high = [73139887.24846178, 50661114.56200796, -42447327.7397497]
+drivers = ['DIH_NPV_ANNUAL_OPEX_INITIATIVES', 'DFDA_NPV_ANNUAL_OPEX']
+impacts_low = [-60564440.14110845, -67815112.55236793]
+impacts_high = [92979210.92085654, 64403031.417657554]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]
@@ -70,8 +70,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('tornado-dfda_npv_pv_annual_opex.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('tornado-dfda_npv_pv_annual_opex.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

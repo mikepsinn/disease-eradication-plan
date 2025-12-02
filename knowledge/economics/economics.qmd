@@ -1236,7 +1236,9 @@ Crucially, this {{< var trial_capacity_multiplier >}}x increase in capacity tran
 
 The aggregate societal benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}-{{< var treaty_total_complete_benefits_annual >}} annually) result from individual economic gains multiplied across billions of people. Understanding individual impact helps explain both the scale and the equity of the Disease Eradication Model.
 
-{{< include ../figures/disease-eradication-annual-benefits-stacked-area-chart.qmd >}}
+{{< include ../figures/personal-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
+
+{{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
 
 For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](../appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd).
 
@@ -1262,8 +1264,6 @@ This section compares a 1% treaty/decentralized framework for drug assessment sy
 {{< include ../figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
-
-{{< include ../figures/disease-eradication-timeline-shift-total-benefit-comparison-column-chart.qmd >}}
 
 ### Linear vs. Systemic Leverage
 

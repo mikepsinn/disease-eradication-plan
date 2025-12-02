@@ -387,7 +387,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA R&D\
   \ savings only with 5-year adoption ramp (10-year horizon, most conservative financial\
   \ estimate) | ✓ High confidence | Formula: Sum of discounted annual net R&D savings\
-  \ with linear adoption ramp | Unit: USD | Click to view calculation\">$207B</a>"
+  \ with linear adoption ramp | Unit: USD | Click to view calculation\">$275B</a>"
 "dfda_npv_benefit_rd_only_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption\
   \ ramp)}\n$$"
@@ -396,7 +396,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV net benefit\
   \ using R&D savings only (most conservative financial estimate, excludes regulatory\
   \ delay health value) | ✓ High confidence | Formula: NPV of net R&D savings with\
-  \ 5-year linear adoption ramp | Unit: USD | Click to view calculation\">$207B</a>"
+  \ 5-year linear adoption ramp | Unit: USD | Click to view calculation\">$275B</a>"
 "dfda_npv_net_benefit_rd_only_latex": "$$\nBenefit_{NPV} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption\
   \ ramp)}\n$$"
@@ -404,14 +404,14 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Present value\
   \ of annual opex over 10 years (NPV formula) | ✓ High confidence | Formula: OPEX\
-  \ × [(1 - (1 + r)^-T) / r] | Unit: USD | Click to view calculation\">$269M</a>"
+  \ × [(1 - (1 + r)^-T) / r] | Unit: USD | Click to view calculation\">$342M</a>"
 "dfda_npv_pv_annual_opex_latex": "$$\nPV_{opex} = \\$0.04005B \\times \\frac{1 - 1.08^{-10}}{0.08}\
   \ \\approx \\$0.269B\n$$"
 "dfda_npv_total_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-total-cost\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV cost\
   \ (upfront + PV of annual opex) | ✓ High confidence | Formula: UPFRONT + PV_OPEX\
-  \ | Unit: USD | Click to view calculation\">$538M</a>"
+  \ | Unit: USD | Click to view calculation\">$611M</a>"
 "dfda_npv_total_cost_latex": "$$\nTotalCost_{NPV} = \\$0.26975B + \\$0.269B \\approx\
   \ \\$0.54B\n$$"
 "dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
@@ -479,7 +479,7 @@
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from dFDA\
   \ R&D savings only (10-year NPV, most conservative estimate) | ✓ High confidence\
   \ | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST | Unit: ratio | Click to view calculation\"\
-  >384</a>"
+  >451</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple\"\
@@ -1107,12 +1107,18 @@
   \ economic impact of Human Genome Project | ✓ High confidence | Unit: USD | Click\
   \ to view source\">$1.00T</a>"
 "human_genome_project_total_economic_impact_cite": "@human-genome-and-genetic-editing"
-"infections_death_rate": "<span class=\"parameter-link\" title=\"parameters.INFECTIONS_DEATH_RATE\
-  \ - Estimate (flu, pneumonia, sepsis)\">15</span>"
 "institutional_investor_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Minimum investment for institutional\
   \ investors | ✓ High confidence | Unit: USD | Click to view calculation\">$10M</a>"
+"life_extension_years": "<a href=\"https://warondisease.org/knowledge/references.html#/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
+  \ data-source-type=\"external\" data-confidence=\"low\" title=\"Expected years of\
+  \ life extension from 1% treaty research acceleration (115x trial capacity). Range:\
+  \ 5 years (antibiotic precedent floor) to 70 years (approaching accident-limited\
+  \ lifespan with aging reversal). | ? Low confidence | 95% CI: [5, 50] | Dist: Lognormal\
+  \ | Unit: years | Click to view source\">20</a>"
+"life_extension_years_cite": "@knowledge-appendix-disease-eradication-personal-lifetime-wealth-calculations"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Maximum bond\
@@ -1166,8 +1172,9 @@
 "months_per_year": "<span class=\"parameter-link\" title=\"parameters.MONTHS_PER_YEAR\"\
   >12</span>"
 "npv_discount_rate_standard": "<span class=\"parameter-definition\" title=\"Standard\
-  \ discount rate for NPV analysis (8% annual) | Unit: rate | Core definition\">8%</span>"
-"npv_discount_rate_standard_latex": "$$\nr = 0.08 \\text{ (discount rate)}\n$$"
+  \ discount rate for NPV analysis (3% annual, social discount rate) | Unit: rate\
+  \ | Core definition\">3%</span>"
+"npv_discount_rate_standard_latex": "$$\nr = 0.03 \\text{ (discount rate)}\n$$"
 "npv_time_horizon_years": "<span class=\"parameter-definition\" title=\"Standard time\
   \ horizon for NPV analysis | Unit: years | Core definition\">10</span>"
 "npv_time_horizon_years_latex": "$$\nT = 10 \\text{ (time horizon, years)}\n$$"
@@ -1283,19 +1290,17 @@
   \ × 1% | Unit: USD/year | Click to view calculation\">$2.00B</a>"
 "peace_dividend_veteran_healthcare_latex": "$$\nCost_{vet,peace} = Cost_{vet,ann}\
   \ \\times Reduction_{treaty} = \\$200.10B \\times 1.0\\% = \\$2.00B\n$$"
-"personal_lifetime_benefit_conservative_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT\">186K</span>"
-"personal_lifetime_benefit_conservative_moderate_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT\"\
-  >208K</span>"
-"personal_lifetime_benefit_eradication_10yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT\">687K</span>"
-"personal_lifetime_benefit_eradication_20yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT\">848K</span>"
-"personal_lifetime_benefit_eradication_40yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT\">1.04M</span>"
-"personal_lifetime_benefit_eradication_5yr_age_30_1pct": "<span class=\"parameter-link\"\
-  \ title=\"parameters.PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT\">572K</span>"
+"personal_lifetime_wealth": "<a href=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Personal lifetime\
+  \ wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension\
+  \ uncertainty (5-50 years) propagates through Monte Carlo to show full range of\
+  \ outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.\
+  \ | ~ Medium confidence | Formula: NPV(peace_dividend + healthcare_savings + productivity_gains\
+  \ + caregiver_savings + gdp_boost + extended_earnings) | Unit: usd | Click to view\
+  \ calculation\">$512K</a>"
+"personal_lifetime_wealth_latex": "$$\n\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\\
+  frac{B_t}{(1+r)^t}\n$$"
 "per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
   >$12.2K</span>"
 "per_capita_chronic_disease_cost_latex": "$$\nCost_{percap,dis} = \\frac{Spending_{chronic,ann}}{Population}\
@@ -1442,22 +1447,22 @@
 "roi_discount_1pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 1% discount rate (approximate 15% increase from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 1.15 | Click to view calculation\">442</a>"
+  \ | Formula: DFDA_ROI_RD_ONLY * 1.15 | Click to view calculation\">518</a>"
 "roi_discount_1pct_latex": "$$\nROI_{1\\%} \\approx 463 \\times 1.15 = 532\n$$"
 "roi_discount_3pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"high\" title=\"\
   ROI at 3% discount rate (baseline) | ✓ High confidence | Formula: DFDA_ROI_RD_ONLY\
-  \ | Click to view calculation\">384</a>"
+  \ | Click to view calculation\">451</a>"
 "roi_discount_3pct_latex": "$$\nROI_{3\\%} = 463\n$$"
 "roi_discount_5pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 5% discount rate (approximate 12% decrease from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 0.88 | Click to view calculation\">338</a>"
+  \ | Formula: DFDA_ROI_RD_ONLY * 0.88 | Click to view calculation\">396</a>"
 "roi_discount_5pct_latex": "$$\nROI_{5\\%} \\approx 463 \\times 0.88 = 407\n$$"
 "roi_discount_7pct": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
   /calculated\" data-source-type=\"calculated\" data-confidence=\"medium\" title=\"\
   ROI at 7% discount rate (approximate 22% decrease from 3% baseline) | ~ Medium confidence\
-  \ | Formula: DFDA_ROI_RD_ONLY * 0.78 | Click to view calculation\">300</a>"
+  \ | Formula: DFDA_ROI_RD_ONLY * 0.78 | Click to view calculation\">351</a>"
 "roi_discount_7pct_latex": "$$\nROI_{7\\%} \\approx 463 \\times 0.78 = 361\n$$"
 "seconds_per_minute": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_MINUTE\"\
   >60</span>"
@@ -1957,6 +1962,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "322"
-"total_latex_equation_count": "124"
-"total_citation_count": "126"
+"total_parameter_count": "317"
+"total_latex_equation_count": "125"
+"total_citation_count": "127"

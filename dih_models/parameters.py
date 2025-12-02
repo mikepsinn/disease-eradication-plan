@@ -1730,6 +1730,32 @@ GLOBAL_LIFE_EXPECTANCY_2024 = Parameter(
     validation_max=85   # Ceiling: Optimistic scenario (longevity breakthroughs, developed countries)
 )
 
+# Expected life extension from 1% treaty research acceleration
+# Historical context: Antibiotics alone added 5-10 years to life expectancy
+# With 115x research acceleration across ALL disease categories simultaneously,
+# potential ranges from antibiotic-level (conservative) to aging reversal (optimistic)
+LIFE_EXTENSION_YEARS = Parameter(
+    20,  # Median estimate: multiple disease category breakthroughs
+    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+    source_type="external",
+    description="Expected years of life extension from 1% treaty research acceleration (115x trial capacity). Range: 5 years (antibiotic precedent floor) to 70 years (approaching accident-limited lifespan with aging reversal).",
+    display_name="Life Extension from Treaty Research Acceleration",
+    unit="years",
+    confidence="low",
+    keywords=["life extension", "longevity", "lifespan", "aging", "disease eradication", "research acceleration"],
+    distribution="lognormal",  # Right-skewed: aging reversal scenarios create long tail
+    confidence_interval=(5, 50),  # 80% CI: 5 years (conservative floor) to 50 years (aging reversal)
+    # Rationale for range:
+    #   - 5 years (P10): Single breakthrough class, similar to antibiotics
+    #   - 20 years (median): Multiple disease categories cured (cancer, CVD, diabetes)
+    #   - 50 years (P90): Aging reversal, organ regeneration, epigenetic reprogramming
+    #   - Theoretical max ~120 years (accident-limited lifespan ~200 minus current ~80)
+    # Historical precedent: 1900-2000 medical advances added 35 years total
+    # 115x acceleration = 2,300 research-years in 20 years = 18.5x the 20th century
+    validation_min=0,   # Floor: No benefit (complete failure)
+    validation_max=120  # Ceiling: Accident-limited lifespan (~200 years - 80 baseline)
+)
+
 REGULATORY_DELAY_SUFFERING_PERIOD_YEARS = Parameter(
     6,
     source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
@@ -2688,26 +2714,28 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
 # NPV analysis parameters
 # Source: brain/book/appendix/dfda-calculation-framework.qmd
 NPV_DISCOUNT_RATE_STANDARD = Parameter(
-    0.08,
+    0.03,
     source_ref="",
     source_type="definition",
-    description="Standard discount rate for NPV analysis (8% annual)",
+    description="Standard discount rate for NPV analysis (3% annual, social discount rate)",
     display_name="Standard Discount Rate for NPV Analysis",
     unit="rate",
-    latex=r"r = 0.08 \text{ (discount rate)}",
-    keywords=["8%", "yearly", "npv", "discount", "standard", "pa", "per annum"],
-    distribution="normal",  # Normal reasonable for rate parameters in typical range
-    confidence_interval=(0.04, 0.12),  # 80% CI: 4-12% real discount rate (widened)
-    # Economist rationale: OMB Circular A-94 mandates 7% real for public projects
-    # World Bank uses 5-12% range depending on country risk. 8% is corporate WACC median.
-    # CRITICAL: This is REAL rate (inflation-adjusted). For nominal, add ~2-3% inflation.
-    # Justification: Wide CI reflects debate between:
-    #   - Social discount rate proponents (Stern: 1.4%, Nordhaus: 4.5%, OMB: 3-7%)
-    #   - Market rate proponents (corporate: 8-12%, private equity: 12-15%)
-    # Widened to 4-12% to span full public-to-private range for sensitivity analysis
-    validation_min=0.03,  # Floor: Near risk-free rate (long-term gov't bonds)
-    validation_max=0.15   # Ceiling: High-risk private equity hurdle rate
-)  # 8% annual discount rate (r)
+    latex=r"r = 0.03 \text{ (discount rate)}",
+    keywords=["3%", "yearly", "npv", "discount", "standard", "pa", "per annum"],
+    distribution="fixed",  # Methodological choice - not empirical uncertainty
+    # Economist rationale: Using 3% social discount rate per:
+    #   - OMB Circular A-4 (2023): 2% for regulatory analysis
+    #   - EPA/HHS: 3% for health benefit analysis
+    #   - Stern Review: 1.4% for climate/long-term
+    #   - Academic consensus for intergenerational projects: 2-4%
+    # NOTE: Previous 8% corporate WACC is inappropriate for:
+    #   - Public health benefits (not corporate investment)
+    #   - Intergenerational benefits (lives saved decades from now)
+    #   - Social welfare analysis (not shareholder returns)
+    # 3% balances time preference with ethical weight of future lives.
+    validation_min=0.01,  # Floor: Near-zero for very long-term analysis
+    validation_max=0.10   # Ceiling: High corporate rate (inappropriate for health)
+)  # 3% annual social discount rate (r)
 
 NPV_TIME_HORIZON_YEARS = Parameter(
     10, source_ref="", source_type="definition", description="Standard time horizon for NPV analysis", unit="years",
@@ -4697,34 +4725,6 @@ def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     return float(TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
 
 
-def calculate_life_expectancy_gain(treaty_pct: float) -> float:
-    """
-    Calculate additional years of life from medical progress acceleration
-
-    Model:
-    - 1% treaty → 115x research capacity
-    - Conservative: 1 year gained per 100x research acceleration
-    - Optimistic: 10 years gained per 100x (exponential breakthrough effects)
-
-    LaTeX:
-        Life_{gain} = \frac{Multiplier_{research}}{100}
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-
-    Returns:
-        Additional years of healthy life expectancy
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Conservative model: linear relationship
-    # 100x research → 1 year of life extension
-    conservative_gain = multiplier / 100
-
-    # Use conservative estimate
-    return conservative_gain
-
-
 def compound_sum(annual_benefit: float, years: float, growth_rate: float, discount_rate: float = 0.03) -> float:
     """
     Calculate present value of compounding annual benefits
@@ -4749,127 +4749,6 @@ def compound_sum(annual_benefit: float, years: float, growth_rate: float, discou
         present_value = future_value / ((1 + discount_rate) ** t)
         total += present_value
     return total
-
-
-def calculate_personal_lifetime_wealth(
-    treaty_pct: float = TREATY_REDUCTION_PCT,
-    current_age: int = 30,
-    baseline_life_expectancy: int = 80,
-    annual_income: float = 50000,  # Global median income
-    discount_rate: float = 0.03,
-) -> dict[str, Any]:
-    """
-    Calculate individual lifetime wealth impact from treaty
-
-    This captures the personal economic benefit from:
-    1. Peace dividend flowing to economy (higher GDP → higher incomes)
-    2. Healthcare cost savings (insurance premiums drop as diseases cured)
-    3. Productivity gains (fewer sick days, more working years)
-    4. Life extension (more earning years from medical breakthroughs)
-
-    Args:
-        treaty_pct: Fraction of military spending redirected (0.01 = 1%)
-        current_age: Person's current age
-        baseline_life_expectancy: Life expectancy without treaty
-        annual_income: Current annual income
-        discount_rate: NPV discount rate for future earnings
-
-    Returns:
-        Dict with:
-        - total_lifetime_benefit: Total personal $ over lifetime (NPV)
-        - annual_breakdown: Dict of annual benefit components
-        - life_extension_years: Additional years lived
-        - gdp_growth_boost: Annual GDP growth increase
-        - medical_progress_multiplier: Research capacity multiplier
-    """
-
-    # Calculate key metrics
-    life_extension_years = calculate_life_expectancy_gain(treaty_pct)
-    gdp_boost = calculate_gdp_growth_boost(treaty_pct)
-    years_remaining = baseline_life_expectancy - current_age
-    total_years = years_remaining + life_extension_years
-
-    # Component 1: Peace dividend per capita (flows through economy to incomes)
-    # Total societal benefit / population, conservatively assume 50% flows to incomes over time
-    peace_dividend_per_capita_annual = (
-        GLOBAL_ANNUAL_WAR_TOTAL_COST * treaty_pct / GLOBAL_POPULATION_2024
-    ) * 0.5
-
-    # Component 2: Healthcare savings (insurance premiums drop)
-    # Current: ~$3,000/year average global health insurance cost
-    # As diseases cured, insurance costs drop proportionally to research acceleration
-    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-    healthcare_savings_pct = min(0.7, progress_multiplier / 200)  # Cap at 70% savings
-    healthcare_savings_annual = 3000 * healthcare_savings_pct
-
-    # Component 3: Productivity gains (fewer sick days, healthier = more productive)
-    # Average person loses ~5% of productive days to illness
-    # Medical progress reduces this proportionally
-    productivity_gain_pct = min(0.05, progress_multiplier / 2000)  # Cap at 5% productivity gain
-    productivity_gains_annual = annual_income * productivity_gain_pct
-
-    # Component 4: Income growth from GDP boost (compound effect)
-    # Higher GDP growth → higher wage growth over career
-    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
-    # (Extended years are fully captured in the extended_earnings component)
-    base_growth = 0.025
-    income_with_gdp_boost = compound_sum(annual_income, years_remaining, gdp_boost, discount_rate)
-    income_without_boost = compound_sum(annual_income, years_remaining, base_growth, discount_rate)
-    gdp_boost_benefit = income_with_gdp_boost - income_without_boost
-
-    # Component 5: Extended earning years
-    # Additional years of life = additional years of earnings
-    extended_earnings = 0
-    if life_extension_years > 0:
-        # Assume working until age 70, then retirement income at 40% of final salary
-        working_years_extended = max(0, min(life_extension_years, 70 - baseline_life_expectancy))
-        retirement_years_extended = life_extension_years - working_years_extended
-
-        # Future earnings discounted to present value
-        for t in range(int(years_remaining), int(years_remaining + working_years_extended)):
-            future_income = annual_income * ((1 + gdp_boost) ** t)
-            extended_earnings += future_income / ((1 + discount_rate) ** t)
-
-        # Retirement income (40% of final working income)
-        if retirement_years_extended > 0:
-            final_working_income = annual_income * ((1 + gdp_boost) ** (years_remaining + working_years_extended))
-            retirement_income = final_working_income * 0.4
-            for t in range(int(years_remaining + working_years_extended), int(total_years)):
-                extended_earnings += retirement_income / ((1 + discount_rate) ** t)
-
-    # Compound other benefits over lifetime
-    peace_dividend_total = compound_sum(peace_dividend_per_capita_annual, total_years, gdp_boost, discount_rate)
-    healthcare_savings_total = compound_sum(healthcare_savings_annual, total_years, gdp_boost, discount_rate)
-    productivity_gains_total = compound_sum(productivity_gains_annual, total_years, gdp_boost, discount_rate)
-
-    # Total lifetime benefit
-    total_benefit = (
-        peace_dividend_total
-        + healthcare_savings_total
-        + productivity_gains_total
-        + gdp_boost_benefit
-        + extended_earnings
-    )
-
-    return {
-        "total_lifetime_benefit": total_benefit,
-        "annual_breakdown": {
-            "peace_dividend": peace_dividend_per_capita_annual,
-            "healthcare_savings": healthcare_savings_annual,
-            "productivity_gains": productivity_gains_annual,
-        },
-        "npv_breakdown": {
-            "peace_dividend_total": peace_dividend_total,
-            "healthcare_savings_total": healthcare_savings_total,
-            "productivity_gains_total": productivity_gains_total,
-            "gdp_boost_benefit": gdp_boost_benefit,
-            "extended_earnings": extended_earnings,
-        },
-        "life_extension_years": life_extension_years,
-        "new_life_expectancy": baseline_life_expectancy + life_extension_years,
-        "gdp_growth_boost": gdp_boost - 0.025,  # Just the boost component
-        "medical_progress_multiplier": progress_multiplier,
-    }
 
 
 # ---
@@ -4974,283 +4853,6 @@ CAREGIVER_COST_ANNUAL = Parameter(
     formula="HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
     keywords=["caregiver", "unpaid", "annual", "expenditure", "spending", "value", "budget"],
 )  # $6,000/year
-
-
-def calculate_life_expectancy_gain_improved(treaty_pct: float, timeframe: str = "mid-term") -> float:
-    """
-    Improved life expectancy model using tiered evidence-based approach
-
-    Replaces arbitrary linear formula with realistic gain estimates:
-    - Near-term (5yr horizon): Faster access to existing pipeline
-    - Mid-term (15yr horizon): New breakthrough treatments
-    - Long-term (endgame): Aging reversal and compound effects
-
-    Args:
-        treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
-        timeframe: 'near-term' (5yr), 'mid-term' (15yr), or 'long-term' (endgame)
-
-    Returns:
-        Years of life expectancy gained
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Near-term (Years 1-5): Faster access to existing pipeline drugs
-    # Conservative: Each 100x research acceleration = 3-5 years earlier access
-    near_term_gain = min(5, multiplier / 30)  # 115x → 3.8 years
-
-    if timeframe == "near-term":
-        return near_term_gain
-
-    # Mid-term (Years 5-15): New breakthrough treatments from expanded research
-    # Moderate: Major diseases start falling, treatment options expand dramatically
-    mid_term_gain = min(15, multiplier / 10)  # 115x → 11.5 years
-
-    if timeframe == "mid-term":
-        return near_term_gain + mid_term_gain  # Total: ~15 years
-
-    # Long-term (Years 15+): Aging reversal and compound effects
-    # Optimistic but plausible: Matches endgame projection (80→150 years)
-    long_term_gain = min(70, multiplier / 2)  # 115x → 57.5 years
-
-    return near_term_gain + mid_term_gain + long_term_gain  # Total: ~70 years
-
-
-def calculate_healthcare_savings_improved(treaty_pct: float) -> float:
-    """
-    Improved healthcare savings based on actual chronic disease spending
-
-    Replaces arbitrary $10K × (multiplier/2000) with evidence-based model:
-    - Base: $12,239/person/year chronic disease spending (CDC data)
-    - Reduction: Proportional to research acceleration
-    - Conservative: 115x research → 10-15% cost reduction
-
-    Args:
-        treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
-
-    Returns:
-        Annual per capita healthcare savings
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Conservative model: Each 100x research acceleration → 10% cost reduction
-    # This accounts for both better treatments and prevention
-    reduction_pct = min(0.20, multiplier / 1000)  # Cap at 20%, 115x → 11.5%
-
-    return PER_CAPITA_CHRONIC_DISEASE_COST * reduction_pct
-
-
-def calculate_productivity_gains_improved(treaty_pct: float, annual_income: float) -> float:
-    """
-    Improved productivity gains without arbitrary 5% cap
-
-    Reality:
-    - Chronic illness reduces productivity by 15-40% (depression alone: 35%)
-    - Better treatments = people work more efficiently
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-        annual_income: Person's annual income
-
-    Returns:
-        Annual productivity gain
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Baseline productivity loss from preventable illness: 15-20%
-    BASELINE_PRODUCTIVITY_LOSS = 0.175  # 17.5% average
-
-    # Medical progress reduces this loss proportionally
-    # 115x research → reduce productivity loss by 50-80%
-    recovery_pct = min(0.80, multiplier / 150)  # 115x → 76.7% recovery
-
-    # Net productivity gain
-    productivity_gain_pct = BASELINE_PRODUCTIVITY_LOSS * recovery_pct  # ~13.4% for 1% treaty
-
-    return annual_income * productivity_gain_pct
-
-
-def calculate_mental_health_benefit(treaty_pct: float) -> float:
-    """
-    Mental health improvement benefits (previously missing)
-
-    - Mental health historically underfunded (5% of NIH budget)
-    - 115x research acceleration → major breakthroughs likely
-    - Depression, anxiety, PTSD, addiction all addressable
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-
-    Returns:
-        Annual per capita mental health benefit
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Mental health sees outsized gains from increased research
-    # Current underfunding means high-value low-hanging fruit
-    improvement_pct = min(0.40, multiplier / 300)  # 115x → 38.3%
-
-    cost_savings = PER_CAPITA_MENTAL_HEALTH_COST * improvement_pct
-    productivity_gain = MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA * improvement_pct
-
-    return cost_savings + productivity_gain
-
-
-def calculate_caregiver_savings(treaty_pct: float) -> float:
-    """
-    Caregiver time savings (previously missing)
-
-    - Average family: 20 hours/month unpaid caregiving
-    - Healthier population = less caregiving needed
-    - Value at replacement cost: $25/hour
-
-    Args:
-        treaty_pct: Fraction of military spending redirected
-
-    Returns:
-        Annual per capita caregiver time savings
-    """
-    multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # Healthier population reduces caregiving burden
-    reduction_pct = min(0.50, multiplier / 250)  # 115x → 46%
-
-    return CAREGIVER_COST_ANNUAL * reduction_pct
-
-
-def calculate_personal_lifetime_wealth_improved(
-    treaty_pct: float = TREATY_REDUCTION_PCT,
-    current_age: int = 30,
-    baseline_life_expectancy: int = 80,
-    annual_income: float = 50000,
-    discount_rate: float = 0.03,
-    timeframe: str = "mid-term",
-    peace_dividend_scope: str = "global",  # 'global' or 'us-only'
-) -> dict[str, Any]:
-    """
-    IMPROVED personal lifetime wealth calculation with methodology fixes
-
-    Key improvements:
-    1. Tiered life expectancy model (near/mid/long-term)
-    2. Evidence-based healthcare savings (actual chronic disease costs)
-    3. Realistic productivity gains (no arbitrary cap)
-    4. Mental health benefits included
-    5. Caregiver time savings included
-    6. Reduced GDP/productivity overlap (15% adjustment)
-    7. Clarified peace dividend allocation
-
-    Args:
-        treaty_pct: Fraction of military spending redirected (default: 1%)
-        current_age: Current age
-        baseline_life_expectancy: Life expectancy without treaty (default: 80)
-        annual_income: Annual income
-        discount_rate: Discount rate for NPV (default: 3%)
-        timeframe: 'near-term', 'mid-term', or 'long-term' for life extension
-        peace_dividend_scope: 'global' (÷8B) or 'us-only' (÷335M)
-
-    Returns:
-        Dictionary with total benefit and component breakdown
-    """
-    # Calculate life extension and total years
-    life_extension_years = calculate_life_expectancy_gain_improved(treaty_pct, timeframe)
-    years_remaining = baseline_life_expectancy - current_age
-    total_years = years_remaining + life_extension_years
-
-    # Medical progress multiplier
-    progress_multiplier = calculate_trial_capacity_multiplier(treaty_pct)
-
-    # GDP boost
-    gdp_boost = calculate_gdp_growth_boost(treaty_pct)
-
-    # Component 1: Peace dividend (clarified allocation)
-    if peace_dividend_scope == "us-only":
-        # If this is US military reduction only, allocate to US population
-        peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / US_POPULATION_2024
-    else:
-        # If global reduction, allocate to global population
-        peace_dividend_per_capita_annual = PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT / GLOBAL_POPULATION_2024
-
-    # Component 2: Healthcare savings (IMPROVED - evidence-based)
-    healthcare_savings_annual = calculate_healthcare_savings_improved(treaty_pct)
-
-    # Component 3: Productivity gains (IMPROVED - no arbitrary cap)
-    productivity_gains_annual = calculate_productivity_gains_improved(treaty_pct, annual_income)
-
-    # Component 4: Mental health benefits (NEW)
-    mental_health_benefit_annual = calculate_mental_health_benefit(treaty_pct)
-
-    # Component 5: Caregiver time savings (NEW)
-    caregiver_savings_annual = calculate_caregiver_savings(treaty_pct)
-
-    # Component 6: Income growth from GDP boost (ADJUSTED for overlap)
-    # Reduce by 15% to account for overlap with productivity gains
-    # FIXED: Only calculate boost for years_remaining to avoid double-counting extended years
-    base_growth = 0.025
-    income_with_gdp_boost = compound_sum(annual_income, years_remaining, gdp_boost, discount_rate)
-    income_without_boost = compound_sum(annual_income, years_remaining, base_growth, discount_rate)
-    gdp_boost_benefit = (income_with_gdp_boost - income_without_boost) * 0.85  # 15% reduction for overlap
-
-    # Component 7: Extended earning years (IMPROVED - realistic life extension)
-    extended_earnings = 0
-    if life_extension_years > 0:
-        # Assume working until age 70, then retirement income at 60% of final salary (increased from 40%)
-        working_years_extended = max(0, min(life_extension_years, 70 - baseline_life_expectancy))
-        retirement_years_extended = life_extension_years - working_years_extended
-
-        # Future earnings discounted to present value
-        for t in range(int(years_remaining), int(years_remaining + working_years_extended)):
-            future_income = annual_income * ((1 + gdp_boost) ** t)
-            extended_earnings += future_income / ((1 + discount_rate) ** t)
-
-        # Retirement income (60% of final working income, increased from 40%)
-        if retirement_years_extended > 0:
-            final_working_income = annual_income * ((1 + gdp_boost) ** (years_remaining + working_years_extended))
-            retirement_income = final_working_income * 0.60  # Increased from 0.40
-            for t in range(int(years_remaining + working_years_extended), int(total_years)):
-                extended_earnings += retirement_income / ((1 + discount_rate) ** t)
-
-    # Compound other benefits over lifetime
-    peace_dividend_total = compound_sum(peace_dividend_per_capita_annual, total_years, gdp_boost, discount_rate)
-    healthcare_savings_total = compound_sum(healthcare_savings_annual, total_years, gdp_boost, discount_rate)
-    productivity_gains_total = compound_sum(productivity_gains_annual, total_years, gdp_boost, discount_rate)
-    mental_health_total = compound_sum(mental_health_benefit_annual, total_years, gdp_boost, discount_rate)
-    caregiver_savings_total = compound_sum(caregiver_savings_annual, total_years, gdp_boost, discount_rate)
-
-    # Total lifetime benefit
-    total_benefit = (
-        peace_dividend_total
-        + healthcare_savings_total
-        + productivity_gains_total
-        + mental_health_total
-        + caregiver_savings_total
-        + gdp_boost_benefit
-        + extended_earnings
-    )
-
-    return {
-        "total_lifetime_benefit": total_benefit,
-        "annual_breakdown": {
-            "peace_dividend": peace_dividend_per_capita_annual,
-            "healthcare_savings": healthcare_savings_annual,
-            "productivity_gains": productivity_gains_annual,
-            "mental_health_benefit": mental_health_benefit_annual,
-            "caregiver_savings": caregiver_savings_annual,
-        },
-        "npv_breakdown": {
-            "peace_dividend_total": peace_dividend_total,
-            "healthcare_savings_total": healthcare_savings_total,
-            "productivity_gains_total": productivity_gains_total,
-            "mental_health_total": mental_health_total,
-            "caregiver_savings_total": caregiver_savings_total,
-            "gdp_boost_benefit": gdp_boost_benefit,
-            "extended_earnings": extended_earnings,
-        },
-        "life_extension_years": life_extension_years,
-        "new_life_expectancy": baseline_life_expectancy + life_extension_years,
-        "gdp_growth_boost": gdp_boost - 0.025,
-        "medical_progress_multiplier": progress_multiplier,
-        "timeframe": timeframe,
-        "peace_dividend_scope": peace_dividend_scope,
-    }
 
 
 WORKFORCE_WITH_PRODUCTIVITY_LOSS = Parameter(
@@ -5426,14 +5028,15 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
     annual_income: float = 50000,
     discount_rate: float = 0.03,
     conservative: bool = True,
+    life_extension_override: float | None = None,
 ) -> dict[str, Any]:
     """
-    CONSERVATIVE BASELINE personal lifetime wealth using antibiotic precedent
+    Personal lifetime wealth calculation with configurable life extension
 
-    Key improvements over "improved" model:
+    Key components:
     1. Productivity loss: Based on IBI 2024 data (28% affected, $4,798 loss)
     2. Caregiver savings: Based on AARP data, only disease-related portion (40%)
-    3. Life expectancy: Based on antibiotic precedent (10 years for breakthrough)
+    3. Life expectancy: Configurable via life_extension_override or model-based
     4. All parameters properly cited in ../references.qmd
     5. Mental health folded into productivity (no double-counting)
     6. Healthcare savings based on disease categories (not arbitrary divisor)
@@ -5444,13 +5047,17 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
         baseline_life_expectancy: Life expectancy without treaty (default: 80)
         annual_income: Annual income
         discount_rate: Discount rate for NPV (default: 3%)
-        conservative: Use conservative estimates if True
+        conservative: Use conservative estimates if True (only used if life_extension_override is None)
+        life_extension_override: Direct life extension years (bypasses model calculation)
 
     Returns:
         Dictionary with total benefit and component breakdown
     """
-    # Calculate life extension
-    life_extension_years = calculate_life_expectancy_gain_conservative_baseline(treaty_pct, conservative)
+    # Calculate life extension - use override if provided, otherwise use model
+    if life_extension_override is not None:
+        life_extension_years = life_extension_override
+    else:
+        life_extension_years = calculate_life_expectancy_gain_conservative_baseline(treaty_pct, conservative)
     years_remaining = baseline_life_expectancy - current_age
     total_years = years_remaining + life_extension_years
 
@@ -5553,22 +5160,38 @@ def calculate_personal_lifetime_wealth_conservative_baseline(
     }
 
 
-# Pre-calculated conservative baseline scenarios (antibiotic precedent)
-PERSONAL_WEALTH_CONSERVATIVE_AGE_30_1PCT = calculate_personal_lifetime_wealth_conservative_baseline(
-    treaty_pct=0.01, current_age=30, annual_income=50000, conservative=True
+# Personal lifetime wealth with uncertainty-driven life extension
+# Uses LIFE_EXTENSION_YEARS parameter which has 80% CI of 5-50 years
+# NOTE: Uses fixed 3% personal discount rate (not NPV_DISCOUNT_RATE_STANDARD)
+# because personal time preference is typically 2-4%, and varying discount rate
+# would swamp all other factors in sensitivity analysis
+PERSONAL_LIFETIME_WEALTH = Parameter(
+    calculate_personal_lifetime_wealth_conservative_baseline(
+        treaty_pct=0.01, current_age=30, annual_income=50000,
+        life_extension_override=float(LIFE_EXTENSION_YEARS)
+    )["total_lifetime_benefit"],
+    source_ref="/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+    source_type="calculated",
+    description="Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
+    display_name="Personal Lifetime Wealth (Age 30, 1% Treaty)",
+    unit="usd",
+    formula="NPV(peace_dividend + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)",
+    latex=r"\text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}",
+    confidence="medium",
+    keywords=["personal", "lifetime", "wealth", "individual benefit", "age 30", "npv", "life extension"],
+    inputs=[
+        "LIFE_EXTENSION_YEARS",  # Primary driver: 66% of benefit from extended earnings
+        "TRIAL_CAPACITY_MULTIPLIER",  # Drives healthcare, productivity, GDP boost (~30%)
+    ],
+    compute=lambda ctx: calculate_personal_lifetime_wealth_conservative_baseline(
+        treaty_pct=0.01,
+        current_age=30,
+        annual_income=50000,
+        discount_rate=0.03,  # Fixed 3% personal discount rate
+        life_extension_override=float(ctx["LIFE_EXTENSION_YEARS"]),
+    )["total_lifetime_benefit"],
 )
-PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_AGE_30_1PCT = PERSONAL_WEALTH_CONSERVATIVE_AGE_30_1PCT["total_lifetime_benefit"]
 
-# Moderate (non-conservative) baseline
-PERSONAL_WEALTH_CONSERVATIVE_MODERATE_AGE_30_1PCT = calculate_personal_lifetime_wealth_conservative_baseline(
-    treaty_pct=0.01, current_age=30, annual_income=50000, conservative=False
-)
-PERSONAL_LIFETIME_BENEFIT_CONSERVATIVE_MODERATE_AGE_30_1PCT = PERSONAL_WEALTH_CONSERVATIVE_MODERATE_AGE_30_1PCT[
-    "total_lifetime_benefit"
-]
-
-
-INFECTIONS_DEATH_RATE = 15.0  # Estimate (flu, pneumonia, sepsis)
 
 # Years of life lost per death by category
 # Source: Cancer YLL studies, cardiovascular burden research
@@ -5897,40 +5520,6 @@ def calculate_personal_lifetime_wealth_disease_eradication(
         "years_elapsed": years_elapsed,
         "conservative": conservative,
     }
-
-
-# Pre-calculated disease eradication scenarios
-# 5-year scenario (low-hanging fruit)
-PERSONAL_WEALTH_ERADICATION_5YR_AGE_30_1PCT = calculate_personal_lifetime_wealth_disease_eradication(
-    treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=5, conservative=False
-)
-PERSONAL_LIFETIME_BENEFIT_ERADICATION_5YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_5YR_AGE_30_1PCT[
-    "total_lifetime_benefit"
-]
-
-# 10-year scenario (major categories tackled)
-PERSONAL_WEALTH_ERADICATION_10YR_AGE_30_1PCT = calculate_personal_lifetime_wealth_disease_eradication(
-    treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=10, conservative=False
-)
-PERSONAL_LIFETIME_BENEFIT_ERADICATION_10YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_10YR_AGE_30_1PCT[
-    "total_lifetime_benefit"
-]
-
-# 20-year scenario (aging partially reversed)
-PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT = calculate_personal_lifetime_wealth_disease_eradication(
-    treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=20, conservative=False
-)
-PERSONAL_LIFETIME_BENEFIT_ERADICATION_20YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_20YR_AGE_30_1PCT[
-    "total_lifetime_benefit"
-]
-
-# 40-year scenario (approaching biological limits)
-PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT = calculate_personal_lifetime_wealth_disease_eradication(
-    treaty_pct=0.01, current_age=30, annual_income=50000, years_elapsed=40, conservative=False
-)
-PERSONAL_LIFETIME_BENEFIT_ERADICATION_40YR_AGE_30_1PCT = PERSONAL_WEALTH_ERADICATION_40YR_AGE_30_1PCT[
-    "total_lifetime_benefit"
-]
 
 
 # ==============================================================================

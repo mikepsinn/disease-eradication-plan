@@ -6,7 +6,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 from dih_models.parameters import format_parameter_value
 
@@ -16,12 +16,12 @@ setup_chart_style()
 display_name = "NPV Net Benefit (R&D Only, Conservative)"
 
 # Baseline and units
-baseline = 206901921770.7072
+baseline = 275468208149.5121
 
 # Tornado data from sensitivity analysis
-drivers = ['TRIAL_COST_REDUCTION_PCT', 'NPV_DISCOUNT_RATE_STANDARD', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [-41420307542.13385, 52653097229.798004, -32437590243.839752, 24951992.495269775, 14971195.497161865, 14971195.497161865, 9980796.99810791, 4990398.499084473]
-impacts_high = [62130461313.200806, -39162835160.9082, 34932789493.36594, -34932789.49334717, -24951992.495239258, -19961593.996185303, -14971195.497131348, -4990398.4990234375]
+drivers = ['TRIAL_COST_REDUCTION_PCT', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+impacts_low = [-55146795167.41318, -43187249227.49225, 33220960.944213867, 19932576.56652832, 19932576.56652832, 13288384.377685547, 6644192.188842773]
+impacts_high = [82720192751.11975, 46509345321.914734, -46509345.32196045, -33220960.944213867, -26576768.755371094, -19932576.56652832, -6644192.188842773]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]
@@ -70,8 +70,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('tornado-dfda_npv_net_benefit_rd_only.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('tornado-dfda_npv_net_benefit_rd_only.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

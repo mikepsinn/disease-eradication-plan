@@ -6,7 +6,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 from dih_models.parameters import format_parameter_value
 
@@ -70,8 +70,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('tornado-disease_eradication_delay_yld.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('tornado-disease_eradication_delay_yld.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

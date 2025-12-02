@@ -4,7 +4,6 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA NPV Annual OPEX Total | 1.1287 | Strong driver |
-| NPV Discount Rate Standard | -0.1340 | Weak driver |
+| dFDA NPV Annual OPEX Total | 1.0000 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

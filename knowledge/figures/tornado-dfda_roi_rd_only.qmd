@@ -6,7 +6,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 from dih_models.parameters import format_parameter_value
 
@@ -16,12 +16,12 @@ setup_chart_style()
 display_name = "ROI from dFDA R&D Savings Only"
 
 # Baseline and units
-baseline = 384.4665427184302
+baseline = 450.8790407651613
 
 # Tornado data from sensitivity analysis
-drivers = ['TRIAL_COST_REDUCTION_PCT', 'DIH_NPV_UPFRONT_COST_INITIATIVES', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_NPV_UPFRONT_COST', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [-76.96749408014881, 66.88697425968314, -60.27574837602015, 52.35810940695808, 25.612144289529226, 14.969173974665239, 14.969173974665239, 11.023534834395093, 9.851836024842783, 4.863722631221435]
-impacts_high = [115.4512411202233, -70.2185193398625, 64.91234440494486, -46.11844758927248, -30.922592058126384, -22.60604892717538, -18.29962165731183, -17.067580567594973, -13.889675377800359, -4.74392754676677]
+drivers = ['TRIAL_COST_REDUCTION_PCT', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DIH_NPV_UPFRONT_COST_INITIATIVES', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_NPV_UPFRONT_COST', 'DFDA_OPEX_COMMUNITY']
+impacts_low = [-90.26280845033375, -70.68774155749031, 67.69023776023772, 33.89658399128916, 19.745205356207066, 19.745205356207066, 12.974402204900741, 11.348424425479607, 6.395344234151253]
+impacts_high = [135.39421267550068, 76.12526013883581, -74.14880066721042, -40.21225911295113, -29.472766686948148, -23.889999914988778, -18.157607100872042, -17.724400051454722, -6.2192195774234165]
 
 # Convert deltas to absolute values (baseline + delta)
 values_low = [baseline + delta for delta in impacts_low]
@@ -70,8 +70,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('tornado-dfda_roi_rd_only.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('tornado-dfda_roi_rd_only.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

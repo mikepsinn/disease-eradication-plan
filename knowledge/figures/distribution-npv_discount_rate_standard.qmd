@@ -8,16 +8,16 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 
 setup_chart_style()
 
 # Parameter values
-central_value = 0.08
-low = 0.04
-high = 0.12
-dist_type = "normal"
+central_value = 0.03
+low = 0.024
+high = 0.036
+dist_type = "fixed"
 display_name = "Standard Discount Rate for NPV Analysis"
 unit = "rate"
 
@@ -111,9 +111,8 @@ ax.set_ylim(bottom=0)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-# Use relative path - Quarto runs from the file's directory
-output_path = Path('distribution-npv_discount_rate_standard.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('distribution-npv_discount_rate_standard.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

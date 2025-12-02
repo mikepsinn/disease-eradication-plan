@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 322
+**Total parameters**: 317
 
-- External sources (peer-reviewed): 126
-- Calculated values: 105
-- Core definitions: 91
+- External sources (peer-reviewed): 127
+- Calculated values: 106
+- Core definitions: 84
 
 ## External Data Sources {#sec-external}
 
@@ -1333,6 +1333,31 @@ Estimated total economic impact of Human Genome Project
 **Source**: [human-genome-and-genetic-editing](https://warondisease.org/knowledge/references.html#human-genome-and-genetic-editing)
 
 *✓ High confidence*
+
+:::
+
+::: {.callout-tip icon=false collapse=false}
+### Life Extension from Treaty Research Acceleration {#sec-life_extension_years}
+
+**Value**: 20
+
+Expected years of life extension from 1% treaty research acceleration (115x trial capacity). Range: 5 years (antibiotic precedent floor) to 70 years (approaching accident-limited lifespan with aging reversal).
+
+**Source**: [/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd](https://warondisease.org/knowledge/references.html#/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5, 50] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 and 50 (±112%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-life_extension_years.qmd >}}
+
+*? Low confidence*
 
 :::
 
@@ -2773,7 +2798,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### NPV of dFDA Benefits (R&D Only, 10-Year Discounted) {#sec-dfda_npv_benefit_rd_only}
 
-**Value**: $207B
+**Value**: $275B
 
 NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
@@ -2804,7 +2829,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### NPV Net Benefit (R&D Only, Conservative) {#sec-dfda_npv_net_benefit_rd_only}
 
-**Value**: $207B
+**Value**: $275B
 
 NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)
 
@@ -2835,7 +2860,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### dFDA Present Value of Annual OPEX Over 10 Years {#sec-dfda_npv_pv_annual_opex}
 
-**Value**: $269M
+**Value**: $342M
 
 Present value of annual opex over 10 years (NPV formula)
 
@@ -2866,7 +2891,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### dFDA Total NPV Cost {#sec-dfda_npv_total_cost}
 
-**Value**: $538M
+**Value**: $611M
 
 Total NPV cost (upfront + PV of annual opex)
 
@@ -2990,7 +3015,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
 
-**Value**: 384
+**Value**: 451
 
 ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
 
@@ -4536,6 +4561,37 @@ $$
 :::
 
 ::: {.callout-note icon=false collapse=false}
+### Personal Lifetime Wealth (Age 30, 1% Treaty) {#sec-personal_lifetime_wealth}
+
+**Value**: $512K
+
+Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.
+
+$$
+\text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}
+$$
+
+**Methodology**: [../appendix/disease-eradication-personal-lifetime-wealth-calculations](../appendix/disease-eradication-personal-lifetime-wealth-calculations)
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-personal_lifetime_wealth.qmd >}}
+
+{{< include ../figures/sensitivity-table-personal_lifetime_wealth.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-personal_lifetime_wealth.qmd >}}
+
+:::
+
+::: {.callout-note icon=false collapse=false}
 ### US Per Capita Chronic Disease Cost {#sec-per_capita_chronic_disease_cost}
 
 **Value**: $12.2K
@@ -4596,7 +4652,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### 1% treaty ROI at 1% Discount Rate {#sec-roi_discount_1pct}
 
-**Value**: 442
+**Value**: 518
 
 ROI at 1% discount rate (approximate 15% increase from 3% baseline)
 
@@ -4627,7 +4683,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### 1% treaty ROI at 3% Discount Rate {#sec-roi_discount_3pct}
 
-**Value**: 384
+**Value**: 451
 
 ROI at 3% discount rate (baseline)
 
@@ -4658,7 +4714,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### 1% treaty ROI at 5% Discount Rate {#sec-roi_discount_5pct}
 
-**Value**: 338
+**Value**: 396
 
 ROI at 5% discount rate (approximate 12% decrease from 3% baseline)
 
@@ -4689,7 +4745,7 @@ $$
 ::: {.callout-note icon=false collapse=false}
 ### 1% treaty ROI at 7% Discount Rate {#sec-roi_discount_7pct}
 
-**Value**: 300
+**Value**: 351
 
 ROI at 7% discount rate (approximate 22% decrease from 3% baseline)
 
@@ -6418,15 +6474,6 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 :::
 
 ::: {.callout-warning icon=false collapse=false}
-### Infections Death Rate {#sec-infections_death_rate}
-
-**Value**: 15
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
 ### Minimum Investment for Institutional Investors {#sec-institutional_investor_min}
 
 **Value**: $10M
@@ -6469,17 +6516,13 @@ Maximum bond investment for lobbyist incentives
 ::: {.callout-warning icon=false collapse=false}
 ### Standard Discount Rate for NPV Analysis {#sec-npv_discount_rate_standard}
 
-**Value**: 8%
+**Value**: 3%
 
-Standard discount rate for NPV analysis (8% annual)
+Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [4%, 12%] • Distribution: Normal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 4% and 12% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
@@ -6506,60 +6549,6 @@ Standard time horizon for NPV analysis
 **Value**: $27.2B
 
 Direct fiscal savings from 1% military spending reduction (high confidence)
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Conservative Age 30 1% {#sec-personal_lifetime_benefit_conservative_age_30_1pct}
-
-**Value**: 186K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Conservative Moderate Age 30 1% {#sec-personal_lifetime_benefit_conservative_moderate_age_30_1pct}
-
-**Value**: 208K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Eradication 10yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_10yr_age_30_1pct}
-
-**Value**: 687K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Eradication 20yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_20yr_age_30_1pct}
-
-**Value**: 848K
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Eradication 40yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_40yr_age_30_1pct}
-
-**Value**: 1.04M
-
-*Core definition*
-
-:::
-
-::: {.callout-warning icon=false collapse=false}
-### Personal Lifetime Benefit Eradication 5yr Age 30 1% {#sec-personal_lifetime_benefit_eradication_5yr_age_30_1pct}
-
-**Value**: 572K
 
 *Core definition*
 

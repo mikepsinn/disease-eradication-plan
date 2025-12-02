@@ -2682,7 +2682,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 from dih_models.parameters import format_parameter_value
 
@@ -2746,8 +2746,8 @@ clean_spines(ax)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('tornado-{param_name.lower()}.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('tornado-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -2900,7 +2900,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 
 setup_chart_style()
@@ -3003,9 +3003,8 @@ ax.set_ylim(bottom=0)
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-# Use relative path - Quarto runs from the file's directory
-output_path = Path('distribution-{param_name.lower()}.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('distribution-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -3075,7 +3074,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 
 setup_chart_style()
@@ -3147,8 +3146,8 @@ fig.suptitle(f'Monte Carlo Analysis: {{display_name}}', fontsize=14, weight='bol
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('mc-distribution-{param_name.lower()}.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('mc-distribution-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -3231,7 +3230,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 
 setup_chart_style()
@@ -3274,8 +3273,8 @@ ax.set_xlim(left=min(sorted_samples) * 0.95)
 clean_spines(ax)
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('exceedance-{param_name.lower()}.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('exceedance-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

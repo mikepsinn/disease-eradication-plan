@@ -1,0 +1,150 @@
+```{python}
+#| echo: false
+from dih_models.parameters import *
+```
+
+```{python}
+#| label: personal-lifetime-wealth-component-breakdown-pie-chart
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata,
+    PATTERN_DIAGONAL, PATTERN_HORIZONTAL, PATTERN_CROSS,
+    PATTERN_DOTS, get_figure_output_path,
+    get_serif_font)
+from dih_models.parameters import format_parameter_value
+
+CLASSY_FONT = get_serif_font()
+
+setup_chart_style()
+fig, ax = plt.subplots(figsize=(12, 10))
+
+# --- Calculate component breakdown using median life extension (20 years) ---
+# Using the unified model with LIFE_EXTENSION_YEARS median value
+result = calculate_personal_lifetime_wealth_conservative_baseline(
+    treaty_pct=0.01,
+    current_age=30,
+    annual_income=50000,
+    discount_rate=0.03,
+    life_extension_override=20.0  # Median of LIFE_EXTENSION_YEARS (5-50 range)
+)
+
+npv = result["npv_breakdown"]
+total = result["total_lifetime_benefit"]
+
+# Extract component values
+components = {
+    "Extended Earnings": npv["extended_earnings"],
+    "GDP Boost\n(Mil→Research)": npv["gdp_boost_benefit"],
+    "Healthcare\nSavings": npv["healthcare_savings_total"],
+    "Productivity\nGains": npv["productivity_gains_total"],
+    "Caregiver\nSavings": npv["caregiver_savings_total"],
+    "Peace\nDividend": npv["peace_dividend_total"],
+}
+
+# Filter out tiny components (< 1% of total)
+filtered = {k: v for k, v in components.items() if v / total >= 0.01}
+
+# Sort by size (largest first)
+sorted_components = dict(sorted(filtered.items(), key=lambda x: x[1], reverse=True))
+
+labels = []
+sizes = []
+for name, value in sorted_components.items():
+    pct = value / total * 100
+    formatted_value = format_parameter_value(value, "USD")
+    labels.append(f"{name}\n{formatted_value} ({pct:.0f}%)")
+    sizes.append(value)
+
+# --- Create Pie Chart ---
+# Alternate black/white with patterns for distinction
+
+colors = [COLOR_BLACK, COLOR_WHITE, COLOR_BLACK, COLOR_WHITE, COLOR_BLACK, COLOR_WHITE]
+hatches = [None, PATTERN_DIAGONAL, PATTERN_CROSS, PATTERN_HORIZONTAL, PATTERN_DOTS, "\\\\\\"]
+
+# Trim to actual number of components
+colors = colors[:len(sizes)]
+hatches = hatches[:len(sizes)]
+
+wedges, texts = ax.pie(
+    sizes,
+    labels=None,
+    colors=colors,
+    wedgeprops=dict(edgecolor=COLOR_BLACK, linewidth=2),
+    startangle=90,
+    counterclock=False
+)
+
+# Apply hatching patterns
+for wedge, hatch in zip(wedges, hatches):
+    if hatch:
+        wedge.set_hatch(hatch)
+
+# --- Add Title ---
+life_ext = result["life_extension_years"]
+new_le = result["new_life_expectancy"]
+formatted_total = format_parameter_value(total, "USD")
+
+ax.set_title(
+    f"Personal Lifetime Wealth: {formatted_total}\n(Age 30, 1% Treaty, {life_ext:.0f}yr Life Extension)",
+    fontsize=24, weight='bold', color=COLOR_BLACK, pad=30
+)
+
+# --- Add Labels OUTSIDE the pie with connecting lines ---
+for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
+    angle = (wedge.theta2 + wedge.theta1) / 2
+    angle_rad = np.deg2rad(angle)
+    
+    # Position labels closer to the pie (reduced from 1.35)
+    label_radius = 1.15
+    
+    # Special adjustment for Healthcare Savings label (move right)
+    x_offset = 0.0
+    if "Healthcare" in label:
+        x_offset = 0.08  # Shift right
+    
+    x_label = label_radius * np.cos(angle_rad) + x_offset
+    y_label = label_radius * np.sin(angle_rad)
+    
+    # Adjust horizontal alignment based on which side of the pie
+    ha = 'left' if x_label > 0 else 'right'
+    
+    # Draw connecting line from wedge edge to label
+    x_edge = 1.0 * np.cos(angle_rad)
+    y_edge = 1.0 * np.sin(angle_rad)
+    
+    ax.plot([x_edge, x_label], [y_edge, y_label], 
+            color=COLOR_BLACK, linewidth=1, solid_capstyle='round')
+    
+    # All labels: black text in white box for consistency
+    ax.text(x_label, y_label, label, ha=ha, va='center',
+            fontsize=11, weight='bold', color=COLOR_BLACK,
+            fontname=CLASSY_FONT, linespacing=1.2,
+            bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=1))
+
+# --- Add subtitle with key insight ---
+fig.text(0.5, 0.02, 
+         f"With {life_ext:.0f} years of life extension, extended earnings from living longer dominate the benefit calculation.",
+         ha='center', fontsize=12, style='italic', color=COLOR_BLACK)
+
+# --- Add Watermark ---
+add_watermark(fig)
+
+# --- Save ---
+output_path = get_figure_output_path('personal-lifetime-wealth-component-breakdown-pie-chart.png')
+
+plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f"Personal Lifetime Wealth Component Breakdown: {formatted_total}",
+    description=f"Component breakdown showing where lifetime wealth comes from with {life_ext:.0f}-year life extension. Extended earnings from additional productive years is the largest component."
+)
+
+plt.show()
+```

@@ -7,7 +7,7 @@ from pathlib import Path
 
 from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines,
-    COLOR_BLACK, COLOR_WHITE, add_png_metadata
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
 
 setup_chart_style()
@@ -79,8 +79,8 @@ fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold'
 # Add watermark
 add_watermark(fig)
 
-# Save PNG (same directory as the QMD file)
-output_path = Path('mc-distribution-peace_dividend_human_casualties.png')
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+output_path = get_figure_output_path('mc-distribution-peace_dividend_human_casualties.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(
