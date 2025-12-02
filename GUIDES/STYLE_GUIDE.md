@@ -109,7 +109,7 @@ We're describing frameworks and concepts, not pitching branded products. Use com
 | Decentralized FDA | dFDA / decentralized framework for drug assessment |
 | The Decentralized Institutes of Health | your DIH / decentralized institutes of health |
 | Join the DIH | here's how you build a DIH |
-| Our dFDA platform | the dFDA framework / your decentralized trial system |
+| Our dFDA platform | a dFDA framework / your decentralized trial system |
 
 ### When to use "your"
 
@@ -121,7 +121,7 @@ Use "your" in instructional/empowering contexts - this is a DIY guide:
 ### When to stay neutral
 
 - **Definitions/glossary:** "dFDA (decentralized framework for drug assessment): A system for..."
-- **Technical/economic analysis:** "The dFDA model achieves 82× cost reduction..."
+- **Technical/economic analysis:** "A dFDA model achieves 82× cost reduction..."
 - **Comparisons:** "A decentralized approach vs the current FDA..."
 
 ### Acronyms are fine
@@ -135,7 +135,7 @@ Use "framework" when describing the concept/approach. Use "platform" only when r
 | Context | Use |
 |---------|-----|
 | Conceptual discussions | "dFDA framework" |
-| Policy/methodology | "the dFDA approach" |
+| Policy/methodology | "a dFDA approach" |
 | Actual software/infrastructure | "core platform build costs" |
 
 ### The test

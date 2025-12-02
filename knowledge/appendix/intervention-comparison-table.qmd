@@ -1,6 +1,6 @@
 ---
 title: High-Impact Health Interventions
-description: How the dFDA compares to history's best health wins
+description: How a dFDA compares to history's best health wins
 ---
 
 <!-- ✓ Style reviewed 2025-01-15 -->
@@ -10,7 +10,7 @@ description: How the dFDA compares to history's best health wins
 from dih_models.parameters import *
 ```
 
-The dFDA competes with smallpox eradication as history's best health intervention by ROI, cost per quality-adjusted life year, and total impact.
+A dFDA competes with smallpox eradication as history's best health intervention by ROI, cost per quality-adjusted life year, and total impact.
 
 ![QALY Comparison Chart](../../assets/qaly-comparison-chart.png)
 
@@ -38,4 +38,4 @@ _Note: The bar represents the mid-point of the uncertainty range, and the error 
 
 ## Conclusion
 
-The dFDA Infrastructure is projected to have a higher ROI and more QALYs per dollar than almost any other single health intervention, rivaled only by foundational public health measures like smallpox eradication and mass vaccination in low-resource settings. Most other interventions, while highly cost-effective, do not approach the systemic leverage or scale of dFDA.
+dFDA Infrastructure is projected to have a higher ROI and more QALYs per dollar than almost any other single health intervention, rivaled only by foundational public health measures like smallpox eradication and mass vaccination in low-resource settings. Most other interventions, while highly cost-effective, do not approach the systemic leverage or scale of dFDA.

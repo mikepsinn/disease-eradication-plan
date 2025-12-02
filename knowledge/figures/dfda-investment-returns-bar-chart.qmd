@@ -18,7 +18,7 @@ from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DI
 
 setup_chart_style()
 
-# Core parameters for the dFDA model (in billions of USD)
+# Core parameters for a dFDA model (in billions of USD)
 # WORST CASE SCENARIO (Conservative) from ../appendix/dfda-cost-benefit-analysis.qmd
 
 BILLION = 1_000_000_000

@@ -95,7 +95,7 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 
 **Testable Predictions**:
 
-- Conservative case: NPV benefit exceeds $100B over {{< var npv_time_horizon_years >}}-year horizon
+- Conservative case: NPV benefit of {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_horizon_years >}}-year horizon
 - Cost-effectiveness: ICER < $0/QALY (cost-saving while improving health)
 - Research acceleration: {{< var trial_capacity_multiplier >}}× increase in completed trials per year
 - Self-funding threshold: Annual benefits exceed annual costs by year 3 of implementation
@@ -112,7 +112,7 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 
 **ROI (Return on Investment)**: Ratio of net benefits to costs. Calculated as NPV(Benefits) / NPV(Costs) for time-adjusted analysis, or Annual Benefits / Annual Costs for simple analysis.
 
-**A decentralized framework for drug assessment (dFDA)**: Proposed global decentralized protocol for conducting clinical trials using real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
+**A decentralized framework for drug assessment (dFDA)**: A regulatory wrapper that automates trial creation, IRB approval, liability insurance, and simultaneous multi-agency submissions (FDA, EMA, PMDA, etc.) across countries. Like TurboTax abstracts away tax code complexity, a dFDA abstracts away regulatory complexity: researchers define hypotheses, and the framework handles compliance. Uses real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
 
 **A decentralized institutes of health (DIH)**: Proposed decentralized, programmable, purely democractic and uncapturable treasury funded by 1% of military spending reallocation, subsidizing patient participation in decentralized pragmatic clinical trials.
 
@@ -177,7 +177,7 @@ The mechanism is financial, not bureaucratic:
 
 1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
 2. **Providers get paid**: Treatment providers can charge for patient participation in trials, making trials profitable rather than costly
-3. **Easy enrollment**: A streamlined FDA wrapper (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials
+3. **Easy enrollment**: a decentralized framework for drug assessment infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
@@ -241,7 +241,7 @@ This distinction maintains intellectual honesty while acknowledging that most di
 These aren't projections. They're measurements:
 
 * **Oxford RECOVERY** proved trials cost **{{< var trial_cost_reduction_factor >}}× less** by using existing hospital infrastructure instead of dedicated trial sites
-* This single trial enrolled [49,000](../references.qmd#recovery-trial-82x-cost-reduction) patients across [185](../references.qmd#recovery-trial-82x-cost-reduction) hospitals, found [dexamethasone (reducing COVID deaths 33%)](../references.qmd#recovery-trial-dexamethasone-results), ruled out hydroxychloroquine, and identified effective treatments faster than traditional regulatory processes
+* This single trial enrolled [47,000+](../references.qmd#recovery-trial-summary-quote) patients across [nearly 200](../references.qmd#recovery-trial-summary-quote) hospitals, found [dexamethasone (reducing deaths by one-third in ventilated patients)](../references.qmd#recovery-trial-dexamethasone-results), ruled out hydroxychloroquine, and identified effective treatments faster than traditional regulatory processes
 * The bottleneck isn't scientific knowledge
 * The bottleneck is requiring dedicated trial infrastructure when hospitals already exist
 
@@ -413,7 +413,7 @@ The methodology follows standard health economics practices, except instead of m
 
 You spend {{< var treaty_campaign_total_cost >}} convincing humans that not dying is preferable to dying. This covers:
 
-- Global referendum campaign to get 280M votes ({{< var treaty_campaign_budget_referendum >}})
+- Global referendum campaign to get {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var treaty_campaign_budget_referendum >}})
 - Professional lobbyists, previously employed by defense contractors, now employed by pharmaceutical companies ({{< var treaty_campaign_budget_lobbying >}})
 - Super PAC papers that make politicians care about living voters ({{< var treaty_campaign_budget_super_pacs >}})
 
@@ -491,9 +491,9 @@ This approach: "We saved a life as a side effect of doing profitable things"
 
 {{< var treaty_expected_cost_per_daly_latex >}}
 
-Accounting for political uncertainty (5%-50% success probability range), this remains {{< var treaty_expected_vs_bed_nets_multiplier >}}x more cost-effective than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) and comparable to deworming, the gold standard.
+Accounting for political uncertainty ({{< var political_success_probability >}} central, 0.1%-10% range), this remains {{< var treaty_expected_vs_bed_nets_multiplier >}}x more cost-effective than bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) and comparable to deworming, the gold standard.
 
-For context: [Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (landmine ban) was called a "bold gamble" that succeeded with [164 countries signing](../references.qmd#icbl-ottawa-treaty) (80%+ of world).
+For context: [Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (landmine ban) was called a "bold gamble" that succeeded with [122 states signing](../references.qmd#icbl-ottawa-treaty) in just 14 months.
 :::
 
 ### The Detailed NPV Formulas (For Spreadsheet Enthusiasts)
@@ -528,7 +528,7 @@ This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over
 
 **Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the one-time 8.2-year timeline shift in disease eradication, as this represents the primary health benefit from eliminating the regulatory delay (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
 
-For the dFDA infrastructure's cost per health benefit averted (8.2-year timeline shift):
+For a dFDA infrastructure's cost per health benefit averted (8.2-year timeline shift):
 
 **Cost per DALY averted: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}**
 
@@ -604,9 +604,9 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 3. **Alternative government priorities**: Reallocation to other public investments such as infrastructure, education, or climate mitigation. Each alternative use would require separate cost-benefit analysis to determine relative efficiency.
 
-**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of dFDA reallocation**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
+**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a dFDA reallocation**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
 
-**Conservative interpretation**: Even if alternative uses generate positive economic value, the dFDA infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
+**Conservative interpretation**: Even if alternative uses generate positive economic value, a dFDA infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
 
 ## Peace Dividend Calculation Methodology
 
@@ -635,11 +635,11 @@ For detailed calculations, see [Peace Dividend Analysis](../appendix/peace-divid
 
 The {{< var trial_capacity_multiplier >}}× research acceleration multiplier comes from the combination of multiple proven accelerators:
 
-**Faster Recruitment**: The Oxford RECOVERY trial recruited 1000 patients in 3 weeks, compared to 6-18 months for 100 patients in traditional trials. This speed comes from pragmatic eligibility (50% of patients qualify vs. 2% traditionally) and embedded recruitment in routine care.
+**Faster Recruitment**: The Oxford RECOVERY trial recruited [47,000+ patients across nearly 200 hospitals](../references.qmd#recovery-trial-summary-quote), while [80% of traditional trials fail to meet enrollment timelines](../references.qmd#clinical-trial-enrollment-timelines). This speed comes from pragmatic eligibility ([minimal exclusions](../references.qmd#fda-trial-patient-exclusion-criteria) vs. [86% excluded](../references.qmd#antidepressant-trial-exclusion-rates) traditionally) and embedded recruitment in routine care.
 
 **Faster Completion**: Pragmatic trials complete in 3-12 months instead of 3-5 years because patient subsidies flip economic incentives. Physicians gain revenue from trial participation rather than losing it, eliminating the perverse incentives that delay traditional trials.
 
-**Massive Parallelization**: With trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves 20× more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
+**Massive Parallelization**: With more trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves substantially more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
 
 **Higher Completion Rates**: More of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
 
@@ -651,13 +651,22 @@ These improvements compound multiplicatively to produce the {{< var trial_capaci
 
 {{< include ../figures/tornado-trial_capacity_multiplier.qmd >}}
 
-**Automating Friction, Not Judgment**: The dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
+**Automating Friction, Not Judgment**: A dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
-Currently, researchers spend 90% of their time on compliance, monitoring, and data entry. The dFDA automates this "grunt work," liberating human judgment to focus on hypothesis generation and complex safety signal interpretation. It's like TurboTax for clinical trials: it doesn't replace the accountant's strategy, but it automates the 90% of the work that is just filling out forms.
+Currently, researchers spend [up to 50% of their time](../references.qmd#grant-writing-time-50pct) on grants and administrative tasks. A dFDA automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
 
-The platform uses federated queries (data stays in Epic/Cerner/Apple Health systems) rather than centralized databases, enabling analysis without data movement. Physicians continue normal clinical practice; the platform automatically detects patterns, identifies treatment effects, and flags signals for peer review. This is fundamentally different from traditional research models that scale linearly with researcher headcount.
+**The TurboTax Analogy**: Just as TurboTax wraps the complexity of federal, state, and local tax codes into a simple interface (you answer questions, it generates compliant filings), a dFDA wraps the complexity of global regulatory bodies (FDA, EMA, PMDA, Health Canada, TGA, etc.) into a unified framework. Researchers define their hypothesis and patient population; the framework automatically:
+
+- Generates IRB submissions for each jurisdiction
+- Handles liability insurance and indemnification
+- Creates compliant protocol documents for each agency
+- Submits applications simultaneously to multiple regulatory bodies
+- Aggregates real-world evidence into agency-specific formats
+- Manages ongoing reporting requirements across jurisdictions
+
+The framework uses federated queries (data stays in Epic/Cerner/Apple Health systems) rather than centralized databases, enabling analysis without data movement. Physicians continue normal clinical practice; the framework automatically detects patterns, identifies treatment effects, and flags signals for peer review. This is fundamentally different from traditional research models that scale linearly with researcher headcount.
 
 ## Data Sources and Primary Inputs
 
@@ -713,7 +722,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 
 **Probabilistic sensitivity analysis:** We ran 10,000 Monte Carlo simulations where each uncertain parameter was randomly sampled from probability distributions. The chart below shows the resulting ROI distributions with 95% confidence intervals.
 
-**What we varied:** Cost reduction (50-95%), political success probability (5-60%), adoption timeline (3-8 years), discount rate (1-7%), and QALY gains (0.7-1.3× baseline).
+**What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), discount rate (1-7%), and QALY gains (0.7-1.3× baseline).
 
 {{< include ../figures/monte-carlo-roi-distribution-chart.qmd >}}
 
@@ -835,17 +844,17 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 {{< include ../figures/mc-distribution-dfda_expected_roi.qmd >}}
 
-**Key insight**: Even at the 5th percentile (P≈5%), expected ROI substantially exceeds typical public health interventions (which have P≈1.0 but ROI of 10-30:1).
+**Key insight**: Even at the 5th percentile (P≈0.1%), expected ROI substantially exceeds typical public health interventions (which have P≈1.0 but ROI of 10-30:1).
 
 **Comparison to traditional interventions** (assuming 100% implementation probability):
 
 - Childhood vaccination programs: {{< var childhood_vaccination_roi >}} {{< var childhood_vaccination_roi_cite >}}:1 ROI with P≈1.0
 - Against Malaria Foundation: ~8:1 equivalent ROI
-- **1% treaty (central estimate, P=25%)**: {{< var dfda_expected_roi >}}:1 expected ROI
+- **1% treaty (central estimate, P={{< var political_success_probability >}})**: {{< var dfda_expected_roi >}}:1 expected ROI
 
 **Interpretation**: The high conditional ROI ({{< var treaty_roi_lag_elimination >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
 
-**Note**: The uncertainty analysis samples political probability from a beta distribution with 5th percentile at 5% and 95th percentile at 50%. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
+**Note**: The uncertainty analysis samples political probability from a beta distribution with 5th percentile at 0.1% and 95th percentile at 10%. Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The [campaign strategy](campaign-budget.qmd) allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
 ### Time Inconsistency and Commitment Credibility
 
@@ -960,7 +969,7 @@ The vast majority goes to **patient subsidies** ({{< var dih_treasury_to_medical
 
 3. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
 
-**Why platform costs are low:** The decentralized framework for drug assessment infrastructure provides coordination protocols (like HTTP for the internet), not a competing platform.
+**Why framework costs are low:** A dFDA provides coordination protocols (like HTTP for the internet), not a competing platform.
 
 The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. The decentralized framework for drug assessment protocol creates the coordination layer that makes them work together for clinical trials.
 
@@ -968,7 +977,7 @@ Data stays federated (in Epic/Cerner/Apple Health systems). No massive centraliz
 
 For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
 
-**Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to medical research (patients and providers as trial participation subsidies). Platform overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
+**Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to medical research (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
 This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
 
@@ -1001,7 +1010,7 @@ ICER measures how much you pay per year of healthy life gained (QALY):
 
 **ICER = (Intervention Cost) / (QALYs Gained)**
 
-For the dFDA (using the 8.2-year timeline shift):
+For a dFDA (using the 8.2-year timeline shift):
 
 **Cost per DALY: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}** (negative = cost-dominant)
 
@@ -1140,8 +1149,8 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 **Pragmatic Trial System Performance** (RECOVERY model scaled globally):
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
-- {{< var trial_cost_reduction_pct >}} patient eligibility (1.2B eligible with minimal exclusions)
-- 3 weeks to recruit 10000 patients (RECOVERY achieved this enrollment speed)
+- Minimal exclusion criteria ([vs. 86% excluded](../references.qmd#antidepressant-trial-exclusion-rates) in traditional trials)
+- [47,000 patients across nearly 200 sites](../references.qmd#recovery-trial-summary-quote) in 3 months (RECOVERY)
 
 **How the {{< var trial_capacity_multiplier >}}× Multiplier Works**:
 
@@ -1154,7 +1163,7 @@ This represents DIH's funding capacity alone, without assuming behavior changes 
 **Net Effect**:
 
 - {{< var trial_capacity_multiplier >}}× more completed trials/year
-- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → 1,000 approvals/year (20-40x)
+- From [50 drug approvals/year](../references.qmd#global-new-drug-approvals-50-annually) → proportionally more approvals
 - From {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} [cost per patient](../appendix/recovery-trial.qmd) → {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} cost per patient ({{< var trial_cost_reduction_factor >}}× [cost reduction](../appendix/recovery-trial.qmd), proven by Oxford RECOVERY trial)
 
 **Why More Trials = More Cures (No Diminishing Returns)**:
@@ -1253,7 +1262,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 Beyond the moral and economic arguments, two existential drivers make this proposal impossible to ignore for sovereign leaders:
 
 ### 1. The Geopolitical "Race to the Top"
-This is not just a treaty; it is a technology for economic dominance. The first nation or bloc to implement the dFDA infrastructure will:
+This is not just a treaty; it is a technology for economic dominance. The first nation or bloc to implement a dFDA infrastructure will:
 
 *   **Attract Global Capital**: Become the world's primary hub for biotechnology investment.
 *   **Own the IP**: Secure intellectual property rights for the next generation of curative therapies.
@@ -1369,7 +1378,7 @@ You're not defeating greed. You're aligning economic incentives to direct existi
 
 **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders who reject this are effectively signing death warrants for their own voters, donors, and family members.
 
-If politicians fail to adopt the treaty and build the dFDA, they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
+If politicians fail to adopt the treaty and build a dFDA, they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
 
 Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed {{< var treaty_reduction_pct >}} reduction is significantly more modest.
 
@@ -1381,11 +1390,11 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 **Response**: The current system is flying blind. It barely collects and does not systematically publish adverse event rates for most treatments.
 
-**The dFDA system improves safety by:**
+**A dFDA system improves safety by:**
 
 1. **Mandating Data Collection**: The system collects and publishes outcome labels on the frequency and magnitude of *all* health outcomes. We have nothing like this today.
 2. **Continuous Monitoring**: Pragmatic trials with larger samples and continuous monitoring detect safety problems faster than traditional trials.
-3. **Preserving Phase I**: The dFDA retains rigorous Phase I safety testing (~{{< var phase_1_safety_duration_years >}} years), which successfully prevented the Thalidomide disaster in the US.
+3. **Preserving Phase I**: A dFDA retains rigorous Phase I safety testing (~{{< var phase_1_safety_duration_years >}} years), which successfully prevented the Thalidomide disaster in the US.
 
 **What changes:** Eliminating the {{< var efficacy_lag_years >}} {{< var efficacy_lag_years_cite >}}-year efficacy delay AFTER safety is proven. You still can't sell poison. You just don't have to wait 8 years to prove aspirin helps headaches AFTER you've already proved it doesn't kill people.
 
@@ -1396,7 +1405,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 | Sample size | 100-300 patients | 10,000-100,000+ patients |
 | Patient selection | {{< var antidepressant_trial_exclusion_rate >}} [excluded](../references.qmd#antidepressant-trial-exclusion-rates) (comorbidities, age, medications) | All volunteers included |
 | Monitoring duration | 3-12 months | Continuous through EHR integration |
-| Publication | 37% of negative results published | **100% automatically published** |
+| Publication | [~50% unpublished](../references.qmd#publication-bias-clinical-trials); positive 3× more likely | **100% automatically published** |
 | Subpopulation testing | Excludes elderly, children, pregnant patients | Tests all populations |
 
 **Empirical validation**: The [RECOVERY trial](../appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients in 3 months at {{< var recovery_trial_cost_per_patient >}} per patient, identifying effective treatments (dexamethasone) and ruling out harmful ones (hydroxychloroquine) faster than traditional trials.
@@ -1566,11 +1575,11 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 
 ![Comparison of effect sizes from observational studies versus randomized trials across diverse outcomes, demonstrating that observational methods yield similar conclusions when properly designed.](../../assets/observational-vs-randomized-trial-effect-sizes.png)
 
-These meta-analytic findings support the validity of pragmatic trial designs used in the dFDA model. Modern statistical methods, large sample sizes, and proper covariate adjustment enable observational and quasi-experimental designs to achieve causal inference comparable to traditional RCTs at a fraction of the cost.
+These meta-analytic findings support the validity of pragmatic trial designs used in a dFDA model. Modern statistical methods, large sample sizes, and proper covariate adjustment enable observational and quasi-experimental designs to achieve causal inference comparable to traditional RCTs at a fraction of the cost.
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
-**Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compared to 94% of positive results](../references.qmd#publication-bias-clinical-trials), leading to overestimation of treatment effectiveness and [~$100 billion annually wasted on repeating failed experiments](../references.qmd#wasted-spending-on-failed-experiments). The dFDA system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, dFDA's mandatory publication of all registered trials eliminates publication bias as a concern.
+**Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compared to 94% of positive results](../references.qmd#publication-bias-clinical-trials), leading to overestimation of treatment effectiveness and [~$100 billion annually wasted on repeating failed experiments](../references.qmd#wasted-spending-on-failed-experiments). A dFDA system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, dFDA's mandatory publication of all registered trials eliminates publication bias as a concern.
 
 **Conclusion:** Internal validity concerns are acknowledged, but the combination of randomization, large samples, and replication capacity provides adequate causal inference even with broader eligibility criteria.
 
@@ -1582,7 +1591,7 @@ The {{< var disease_eradication_delay_dalys >}} annual QALY estimate aggregates 
 
 **This estimate is extremely conservative for three reasons:**
 
-1.  **It ignores the {{< var trial_capacity_multiplier >}}x Research Acceleration**: The {{< var efficacy_lag_years >}}-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that the dFDA system accelerates the *pace of research itself* by {{< var trial_capacity_multiplier >}}x. With {{< var trial_capacity_multiplier >}}x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just {{< var efficacy_lag_years >}} years earlier.
+1.  **It ignores the {{< var trial_capacity_multiplier >}}x Research Acceleration**: The {{< var efficacy_lag_years >}}-year shift accounts *only* for eliminating the regulatory efficacy lag (the time wasted waiting for approval *after* safety is proven). It does **not** account for the fact that a dFDA system accelerates the *pace of research itself* by {{< var trial_capacity_multiplier >}}x. With {{< var trial_capacity_multiplier >}}x more trials running simultaneously and cost barriers removed, cures would likely arrive **decades** earlier, not just {{< var efficacy_lag_years >}} years earlier.
 2.  **It assumes a fixed timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward by 8.2 years saves 8.2 years' worth of future lives. Given the trajectory of biotechnology, "eventual" control over biology is a matter of *when*, not *if*.
 3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discount), accelerating cures for just the "easiest" 10% of the burden (e.g., cardiovascular disease, metabolic disorders) still yields over **$120 trillion** in value. The ROI is positive even at 1/100th of the projected success rate.
 
@@ -1674,24 +1683,6 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 **Key insight:** Even under pessimistic assumptions with multiple adverse conditions simultaneously occurring, the intervention generates positive returns exceeding most established public health programs. The tornado chart for `DFDA_EXPECTED_ROI` shows that political success probability is the dominant driver of uncertainty.
 
-### External Validity Considerations
-
-### Transferability Across Contexts
-
-This analysis models global implementation. Results may vary by:
-
-- **Income level:** High-income countries may see greater cost reductions (trials more expensive); low-income countries may see greater health gains (larger disease burden)
-- **Disease profiles:** Communicable disease contexts (prevalent in low-income settings) vs. chronic disease contexts (prevalent in high-income settings) may yield different QALY gains
-- **Regulatory maturity:** Countries with established regulatory frameworks may implement faster
-
-### Temporal Validity
-
-Projections use 2024 baseline data. Secular trends may affect outcomes:
-
-- **Medical technology advancement:** AI/ML capabilities improving rapidly; may enhance or diminish relative dFDA advantages
-- **Geopolitical shifts:** Global military spending trends dependent on international relations
-- **Healthcare costs:** Rising healthcare expenditures may increase baseline benefits; cost controls may decrease them
-
 ### General Equilibrium Effects
 
 This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating the intervention's direct effects. General equilibrium analysis would account for market adjustments to the $27.2B annual reallocation from military to medical research spending.
@@ -1711,77 +1702,11 @@ This analysis employs partial equilibrium methodology, holding prices and market
 **Methodological limitation acknowledged**: Full general equilibrium modeling (computable general equilibrium models with labor markets, international trade, and technology diffusion) would require substantial additional complexity beyond this analysis scope. The partial equilibrium approach follows standard cost-benefit analysis methodology for policy interventions.
 
 
-### Failure Modes and Risk Scenarios
 
-The economic analysis presented above assumes successful implementation of the dFDA system. This section explicitly examines failure modes that could prevent anticipated benefits from materializing, acknowledging that positive ROI estimates are conditional on effective execution.
-
-### Implementation Failure Scenarios
-
-#### False Positive Detection
-
-**Risk**: Decentralized trials could produce false positive results, leading to approval of ineffective treatments.
-
-**Mechanism**: Broader eligibility criteria and real-world settings introduce potential confounders. Without stringent monitoring, selection bias or inadequate randomization could yield spurious treatment effects.
-
-**Consequence**: Approval of ineffective drugs wastes healthcare resources, erodes public trust, and potentially causes harm if ineffective treatments displace superior alternatives.
-
-**Mitigation strategies in dFDA design**:
-
-- Randomization preserved as core causal identification mechanism
-- Large sample sizes (10-100× traditional trials) improve statistical power and enable sensitivity analysis
-- Replication requirements across diverse populations test robustness
-- Bayesian adaptive trial designs update probabilities continuously based on accumulating evidence
-- Post-market surveillance using continuous real-world data collection detects efficacy deterioration
-
-**Residual risk**: Even with mitigation, decentralized settings may have higher false positive rates than traditional controlled trials. This represents a fundamental trade-off between internal validity (causal certainty) and external validity (real-world generalizability).
-
-##### Regulatory Rejection
-
-**Risk**: Regulatory agencies (FDA, EMA) refuse to accept dFDA trial evidence for approval decisions.
-
-**Mechanism**: Regulators may view decentralized trial data as insufficiently rigorous, cite concerns about data quality, or face political pressure from pharmaceutical companies and CROs invested in traditional trial infrastructure.
-
-**Consequence**: Even if dFDA trials generate valid efficacy evidence, failure to achieve regulatory acceptance prevents market access. The entire cost-reduction thesis collapses if dFDA trials must be repeated using traditional methods for approval.
-
-**Empirical precedent**: FDA's accelerated approval pathway and RECOVERY trial's global emergency use authorization demonstrate regulatory willingness to accept alternative evidence standards when public health benefits are clear.
-
-**Mitigation strategies**:
-
-- **The TurboTax Model**: The dFDA acts as a **wrapper around global regulatory agencies** (like TurboTax is to the IRS). It complies with their requirements while diffusing costs and streamlining processes through economies of scale. It doesn't replace regulators; it makes their job easier and cheaper.
-- Pilot programs establish proof-of-concept in willing jurisdictions (e.g., UK MHRA, which already accepted RECOVERY evidence)
-- Regulatory harmonization efforts (ICH guidelines) create international standards for pragmatic trial designs
-- Phased implementation allows regulators to observe real-world performance before full commitment
-- Hybrid trial designs combine pragmatic Phase III efficacy testing with traditional Phase II safety validation
-
-**Residual risk**: Regulatory capture by pharmaceutical industry incumbents could block adoption. See [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) for political economy analysis of implementation barriers.
-
-##### Pharmaceutical Industry Adoption Failure
-
-**Risk**: Pharmaceutical companies decline to use dFDA platform, preferring traditional controlled trials despite higher costs.
-
-**Mechanism**: Industry may resist for several reasons:
-
-- **Control preference**: Traditional trials offer greater control over patient selection, endpoints, and data interpretation
-- **Intellectual property concerns**: Sharing data with decentralized platforms may expose competitive information
-- **Risk aversion**: Established trial methods are predictable; dFDA represents uncertain innovation
-- **Regulatory conservatism**: Companies may prefer proven pathways over novel approaches requiring regulatory negotiation
-
-**Consequence**: If pharmaceutical industry participation is low, dFDA trial volume remains small, preventing economies of scale and limiting cost reductions. The intervention fails to transform drug development economics.
-
-**Mitigation strategies**:
-
-- Economic incentives: {{< var trial_cost_reduction_factor >}}× cost reduction creates overwhelming financial motivation for adoption
-- First-mover advantages: Companies adopting early gain competitive speed-to-market advantages
-- Regulatory push: If regulators preferentially review dFDA submissions (shorter timelines), companies face competitive pressure to adopt
-- Public funding focus: Government-funded research (NIH, Wellcome Trust) can mandate dFDA platform use, creating initial scale
-
-**Empirical precedent**: Electronic data capture systems and clinical trial registries faced similar industry resistance but achieved near-universal adoption once cost benefits became clear or regulatory requirements were established.
-
-**Residual risk**: Oligopolistic pharmaceutical market structure enables coordinated resistance. Large incumbents may lobby against dFDA adoption to protect barriers to entry against smaller competitors.
 
 ### Conditional Benefits Interpretation
 
-The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var treaty_complete_roi_all_benefits >}}:1 complete) are **conditional on successful implementation**, they represent returns *if* the dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
+The ROI estimates ({{< var dfda_roi_rd_only >}}:1 conservative, {{< var treaty_complete_roi_all_benefits >}}:1 complete) are **conditional on successful implementation**, they represent returns *if* a dFDA operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ### Limitations Summary
 

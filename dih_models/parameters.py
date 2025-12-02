@@ -3672,11 +3672,11 @@ DFDA_EXPECTED_ROI = Parameter(
     source_ref="calculated",
     source_type="calculated",
     description="Expected ROI for 1% treaty accounting for political success probability uncertainty. "
-                "Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(5%, 50%) distribution "
-                "to generate full expected value distribution. Central value uses 25% probability.",
+                "Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution "
+                "to generate full expected value distribution. Central value uses 1% probability.",
     display_name="Expected Treaty ROI (Risk-Adjusted)",
     formula="TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY",
-    latex=r"E[ROI] = ROI_{conditional} \times P_{success} = 1{,}286{,}242 \times 0.25 = 321{,}561",
+    latex=r"E[ROI] = ROI_{conditional} \times P_{success} = ROI_{treaty} \times 0.01",
     confidence="low",
     keywords=["expected value", "risk-adjusted", "political risk", "bcr", "benefit cost ratio",
               "economic return", "uncertainty", "monte carlo", "321561"],
@@ -3868,17 +3868,17 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
     source_type="calculated",
     description=f"Expected cost per DALY accounting for political success probability uncertainty. "
-                f"Monte Carlo samples from beta(5%, 50%) distribution. At the central 25% estimate, "
-                f"this is ~{int(BED_NETS_COST_PER_DALY/0.51)}x more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+                f"Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, "
+                f"this is still more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
     display_name="Expected Cost per DALY (Risk-Adjusted)",
     unit="USD/DALY",
     formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
-    latex=r"E[\text{Cost/DALY}] = \frac{\$0.127}{0.25} = \$0.51",
+    latex=r"E[\text{Cost/DALY}] = \frac{\text{Cost}_{conditional}}{P_{success}}",
     confidence="low",
     keywords=["expected value", "probability weighted", "cost effectiveness", "gates foundation", "givewell", "political risk", "uncertainty"],
     inputs=["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT", "POLITICAL_SUCCESS_PROBABILITY"],
     compute=lambda ctx: ctx["TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT"] / ctx["POLITICAL_SUCCESS_PROBABILITY"],
-)  # $0.51 per DALY at 25% probability (still ~175x better than bed nets)
+)  # Expected cost per DALY at 1% probability (still better than bed nets)
 
 # Cost-effectiveness multipliers vs. bed nets
 TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
