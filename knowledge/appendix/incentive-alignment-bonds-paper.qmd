@@ -54,6 +54,33 @@ The key innovation is that all three alignments reinforce each other. A fraction
 
 Unlike Social Impact Bonds (which align service providers with program outcomes), IABs align the actors who control large-scale budget decisions, the politicians, with public-good production. Unlike lobbying (which aligns politicians with narrow interests), IABs align politicians with measurable, welfare-improving outcomes. Unlike campaign contributions (which are ad hoc and candidate-specific), IABs create universal, ex-ante rules tied to objective metrics. And unlike new taxation or deficit spending, IABs fund public goods by displacing harmful or wasteful expenditure.
 
+### Why Reallocation, Not Addition
+
+A natural question arises: why insist on *redirecting* resources from harmful programs rather than simply *adding* new spending on public goods? The answer lies in the political economy of budget expansion and the fundamental constraint that real resources, including human capital, productive capacity, and scientific talent, are finite.
+
+When advocates successfully lobby for increased spending on a beneficial program, the political response is rarely a corresponding reduction in harmful programs. Instead, governments typically:
+
+1. **Expand the overall budget** through deficit spending or monetary expansion
+2. **Increase spending on politically powerful programs** in parallel, to maintain coalition support
+3. **Dilute the real value** of new spending through inflation and competition for fixed resources
+
+The result is that the beneficial program's *nominal* budget increases while its *real* share of resources remains unchanged or even decreases. The concentrated beneficiaries of harmful programs lose nothing; the diffuse beneficiaries of the new program gain less than the headline figures suggest.
+
+Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both defense and healthcare increased substantially in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
+
+This is not a failure of advocacy; it is the equilibrium outcome of Olsonian dynamics operating under soft budget constraints. Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows (in nominal terms) while each program's claim on real resources remains contested.
+
+The mechanism is straightforward: when Congress appropriates \$10 billion for medical research without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases. But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to defense, fossil fuel subsidies, and other Olsonian programs, for the same finite resources. Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
+
+IABs break this dynamic by *specifying the funding source* as part of the mechanism. The policy does not say "fund medical research"; it says "redirect 1% of military spending to medical research." This forces a real reallocation:
+
+- Military budgets face *actual* cuts in nominal and real terms
+- Concentrated losers (defense contractors) face *real* losses, which they will resist
+- But the IAB political incentive layer ensures politicians who support the reallocation benefit more than those who resist
+- The finite pool of resources shifts from net-negative to net-positive uses
+
+The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. It is a mechanism design requirement for achieving real resource reallocation. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
+
 ### Quantifying Net Social Value of Funding Sources
 
 The third primitive property requires identifying government expenditures with negative or zero net social value. This is an empirical question that can be addressed using standard welfare economics:
