@@ -17,7 +17,7 @@ jel:
   - H41  # Public Goods
   - P16  # Political Economy
 abstract: |
-  This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with negative net social value. Drawing on mechanism design theory, public choice economics, and campaign finance research, we formalize a three-layer architecture (scoring, electoral support, and post-office benefits) that makes supporting public-good policies incentive-compatible for rational political actors. Unlike Social Impact Bonds, which reward service providers for program outcomes, IABs target politicians directly at the policy level where large-scale budget decisions are made. We prove conditions under which supporting public goods becomes a Nash equilibrium for utility-maximizing politicians, analyze legal constraints under U.S. anti-bribery law, and provide a welfare-economic criterion for identifying appropriate funding sources. By redirecting resources from programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than social value, IABs are Pareto-improving by construction. We illustrate the mechanism with a hypothetical global health treaty and discuss applications to climate change, nuclear disarmament, and pandemic preparedness. We conclude with a discussion of limitations, governance challenges, and directions for empirical research.
+  This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use. Drawing on mechanism design theory, public choice economics, and campaign finance research, we formalize a three-layer architecture (scoring, electoral support, and post-office benefits) that makes supporting public-good policies incentive-compatible for rational political actors. Unlike Social Impact Bonds, which reward service providers for program outcomes, IABs target politicians directly at the policy level where large-scale budget decisions are made. We prove conditions under which supporting public goods becomes a Nash equilibrium for utility-maximizing politicians, analyze legal constraints under U.S. anti-bribery law, and provide a comparative welfare criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. Critically, we show why *specified reallocation*, rather than budget addition, is a mechanism design requirement: under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation, leaving real resource allocation unchanged. IABs restore alignment between politician incentives and general welfare by redirecting resources from lower-value to higher-value uses. We illustrate the mechanism with a hypothetical global health treaty and discuss applications to climate change, nuclear disarmament, and pandemic preparedness. We conclude with a discussion of limitations, governance challenges, and directions for empirical research.
 bibliography: references.bib
 format:
   html:
@@ -36,17 +36,23 @@ A central puzzle in political economy is why policies with large positive net so
 
 Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] established that groups with concentrated interests systematically outcompete groups with diffuse interests in political competition. A small group facing large per-member stakes will invest more in lobbying than a large group facing small per-member stakes, even when total welfare losses exceed total welfare gains. This insight explains persistent policy failures: the beneficiaries of inefficient policies (defense contractors, pharmaceutical incumbents, fossil fuel producers) are concentrated, while the beneficiaries of efficient policies (citizens who would benefit from cures, climate stability, reduced existential risk) are diffuse.
 
+The result is a systematic distortion of democratic governance. The U.S. Constitution's Preamble charges government to "promote the general Welfare," the welfare of all citizens, not the welfare of any particular faction. Yet Olsonian dynamics ensure that government routinely promotes *specific* welfare (of concentrated interests who can afford to lobby) at the expense of *general* welfare (of the diffuse public). This is not corruption in the legal sense; it is the predictable equilibrium of rational actors operating within existing institutional rules. The problem is not bad actors but bad incentives.
+
+Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero; whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
+
+![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at approximately 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from Gilens and Page (2014) analysis of 1,779 policy decisions.](../../assets/voter-support-vs-law-passage.png){#fig-policy-influence}
+
 This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or hoping for philosopher-kings, IABs change what rational self-interest points at.
 
 ### Definition
 
 An Incentive Alignment Bond is a financial instrument with three primitive properties:
 
-1. **Investor alignment with public good production:** Investors receive returns proportional to verified public-good funding achieved. If the policy succeeds, investors profit; if it fails, they do not. This creates a class of actors with concentrated financial interest in policy success.
+1. **Investor alignment with public good production:** Investors receive returns proportional to verified public-good funding flows achieved (e.g., treaty ratification, appropriations enacted). Returns are keyed to observable funding events, not downstream outcomes, avoiding complex attribution problems. If the policy succeeds, investors profit; if it fails, they do not. This creates a class of actors with concentrated financial interest in policy success.
 
 2. **Politician alignment with public good production:** Politicians receive electoral support and career benefits based on their voting record for the target policy class. Supporting the public good becomes the utility-maximizing choice, increasing reelection probability, post-office income, and status.
 
-3. **Funding from harmful or wasteful sources:** The public good is funded by redirecting resources from government activities that either (a) produce measurable harm to society, or (b) persist despite producing no measurable value due to Olsonian concentrated-benefit/diffuse-cost dynamics. This constraint ensures IABs do not crowd out other beneficial programs; they are Pareto-improving by construction.
+3. **Funding from lower-value sources:** The public good is funded by redirecting resources from government activities with lower marginal social value than the target use. In the strongest case, these are programs that produce measurable net harm; more generally, they are programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than comparative merit. This constraint ensures IABs reallocate from less valuable to more valuable uses; they are welfare-improving in expectation under standard utilitarian social welfare assumptions.
 
 The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements, agricultural subsidies that distort markets, and fossil fuel subsidies that accelerate climate change: these programs survive political competition not on merit but on lobbying intensity. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
 
@@ -81,17 +87,47 @@ IABs break this dynamic by *specifying the funding source* as part of the mechan
 
 The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. It is a mechanism design requirement for achieving real resource reallocation. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
 
-### Quantifying Net Social Value of Funding Sources
+### Political Change as an Asset Class
 
-The third primitive property requires identifying government expenditures with negative or zero net social value. This is an empirical question that can be addressed using standard welfare economics:
+To understand why investors would fund the initial campaign to pass an IAB treaty, we must recognize political advocacy not as charity, but as a high-yield asset class. The Return on Investment (ROI) for corporate lobbying is historically orders of magnitude higher than traditional financial markets. The following illustrative estimates, drawn from existing studies, suggest order-of-magnitude returns:
+
+- **Defense:** The top five defense contractors spent $1.1 billion on lobbying over two decades while receiving $2.02 trillion in Pentagon contracts, an implied ROI of approximately **181,000%** [@responsiblestatecraft2021].
+- **Fossil Fuels:** The oil and gas industry spent $137 million lobbying in 2023 to protect $17 billion in subsidies, an implied annual return of approximately **12,000%** [@omar2024].
+- **Medical Research:** Academic analysis finds that for specific disease groups, each $1,000 spent on lobbying is associated with $25,000 in additional NIH funding, an implied return of approximately **2,500%** [@nature2014].
+
+These figures are illustrative rather than precise point estimates; causal attribution is complex and effects vary by context. Nevertheless, they suggest that political influence generates returns far exceeding traditional asset classes (compare to the S&P 500's historical average of ~10%). Political change is currently accessible only to concentrated industries protecting the status quo. IABs securitize this opportunity, allowing investors to capture a fraction of the value generated by shifting government priorities toward public goods.
 
 $$
-NSV_i = B_i - C_i - O_i
+E[R] = \frac{P(\text{success}) \times (\text{Redirected Flow} \times \text{Investor Share})}{\text{Campaign Cost}}
+$$
+
+If a campaign costs $100 million and has a 20% chance of passing a treaty that redirects $24 billion/year (with 10% to investors), the expected annual value is:
+
+$$
+E[V] = 0.20 \times \$2.4\text{ billion} = \$480\text{ million/year}
+$$
+
+The expected first-year ROI alone is 380%, with the revenue stream continuing in perpetuity. Even with high risk, the asymmetric upside makes funding the "bootstrap" campaign rational for risk-tolerant capital.
+
+### Quantifying Net Social Value of Funding Sources
+
+The third primitive property requires identifying government expenditures with lower marginal social value than the proposed alternative. This is an empirical question that can be addressed using standard welfare economics:
+
+$$
+NSV_i = B_i - C_i
 $$ {#eq-nsv}
 
-where $NSV_i$ is net social value of program $i$, $B_i$ is measurable social benefits, $C_i$ is direct costs, and $O_i$ is opportunity cost (value if resources were allocated to highest-value alternative use).
+where $NSV_i$ is net social value of program $i$, $B_i$ is measurable social benefits, and $C_i$ is total costs (including both direct expenditure and opportunity costs of foregone alternatives).
 
-A program is an appropriate IAB funding source if $NSV_i \leq 0$. That is, if society would be better off without it, even ignoring what the redirected funds could produce.
+A program is an appropriate IAB funding source if:
+
+$$
+NSV_{source} < NSV_{target}
+$$ {#eq-comparative}
+
+That is, if the marginal social value of the source program is lower than that of the target program. In the strongest case, $NSV_{source} \leq 0$; the program produces net harm. But reallocation is justified even when both programs have positive value, as long as the target exceeds the source.
+
+This comparative criterion implies a natural ranking of government expenditures by marginal social value. IABs should draw from the *lowest-ranked* programs first, those that persist primarily due to Olsonian dynamics rather than merit. This avoids the objection that "defense isn't ALL bad"; the claim is not that military spending is worthless, but that its marginal value is lower than medical research, and that it persists at current levels due to lobbying intensity rather than comparative social value.
 
 **Military spending** provides a concrete example. The economic multiplier for military spending is approximately 0.6, compared to 1.5-2.0 for infrastructure, education, and healthcare investments. This means each dollar of military spending generates \$0.60 in economic activity, while each dollar of infrastructure investment generates \$1.50-2.00. The opportunity cost alone, before considering direct harms, makes military spending beyond minimum deterrence requirements a net social loss.
 
@@ -110,7 +146,7 @@ More comprehensive analysis includes:
 
 : Estimated Annual Societal Cost of Global Military Spending {#tbl-military-cost}
 
-The net social value calculation for military spending beyond deterrence is unambiguously negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs. Redirecting even 1% to medical research, which has positive externalities and high multipliers, is Pareto-improving.
+A large literature suggests the net social value of military spending beyond minimum deterrence is plausibly strongly negative: the \$2.4 trillion in direct expenditure may produce \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are approximately correct, redirecting even 1% to medical research, which has positive externalities and high multipliers, would be welfare-improving on net.
 
 Similar analysis applies to other Olsonian programs:
 
@@ -118,7 +154,7 @@ Similar analysis applies to other Olsonian programs:
 - **Agricultural subsidies** in developed nations: Distort global food markets, harm developing-country farmers, produce environmental damage from monoculture incentives
 - **Regulatory capture programs**: Expenditures that exist to protect incumbent firms from competition rather than serve public interest
 
-The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV \leq 0$, it is an appropriate IAB funding source. The IAB mechanism does not require moral judgment about the program, only measurement.
+The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has substantially higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
 
 ### Contribution
 
@@ -126,11 +162,11 @@ This paper makes four contributions:
 
 1. **Mechanism Design for Governance**: We apply the formal tools of mechanism design theory, developed for auctions, matching markets, and resource allocation, to the problem of political incentives. While mechanism design has transformed economic institutions from spectrum auctions to kidney exchanges, its application to democratic governance remains underdeveloped.
 
-2. **A Novel Financial Instrument**: We define IABs as a distinct class of financial instrument with three primitive properties: investor alignment, politician alignment, and funding from net-negative-value sources. This distinguishes IABs from Social Impact Bonds (which reward service providers, not politicians), lobbying (which serves narrow interests), and campaign contributions (which lack systematic, ex-ante, universal rules tied to measurable outcomes).
+2. **A Novel Financial Instrument**: We define IABs as a distinct class of financial instrument with three primitive properties: investor alignment, politician alignment, and funding from lower-value sources. This distinguishes IABs from Social Impact Bonds (which reward service providers, not politicians), lobbying (which serves narrow interests), and campaign contributions (which lack systematic, ex-ante, universal rules tied to measurable outcomes).
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
 
-4. **A Pareto-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using net social value analysis. By redirecting resources from programs with $NSV \leq 0$, those that persist due to Olsonian dynamics rather than social value, IABs are welfare-improving by construction, avoiding the trade-offs inherent in new taxation or deficit spending.
+4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and demonstrate why *specified reallocation*, rather than budget addition, is a mechanism design requirement. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
 
 ### Roadmap
 
@@ -180,11 +216,11 @@ More fundamentally, SIBs target the wrong level. They incentivize **service prov
 
 Empirical research on campaign finance provides the evidentiary foundation for the electoral layer of IABs.
 
-**Independent expenditures affect elections.** Following *Citizens United v. FEC* (2010), independent expenditures increased dramatically, from $52 million in 2006 to $290 million in 2010 in congressional races alone [@fowler2016]. Research using transaction-level disbursement data finds that "spending on messages to voters has a statistically significant effect on voter support for candidates" and is "especially effective in changing the composition of voters" [@spenkuch2018].
+**Independent expenditures affect elections.** Following *Citizens United v. FEC* (2010), independent expenditures increased dramatically. In the decade prior to the decision, outside groups spent $296 million total on independent expenditures; in the decade after, they spent $4.26 billion, a 14-fold increase [@opensecrets2020]. Research using transaction-level disbursement data finds that "spending on messages to voters has a statistically significant effect on voter support for candidates" and is "especially effective in changing the composition of voters" [@spenkuch2018].
 
 **Interest group scorecards influence behavior.** Organizations like the National Rifle Association (NRA), League of Conservation Voters (LCV), and Chamber of Commerce publish voting scorecards that affect politician behavior. The LCV has published its National Environmental Scorecard since 1970, and it has "become the gold standard of congressional vote scoring on environmental issues" [@lcv2024]. Research confirms that PAC contributions correlate with votes on relevant issues, though causality is debated [@stratmann2002; @fowler2020].
 
-**The revolving door affects politician incentives.** Research documents significant movement between government and private sector. A 2023 study found that 32% of HHS appointees exited to industry employment [@jha2023]. Among four-star military retirees, 80% are employed in the defense industry [@defiancepress2023]. Shepherd and You [-@shepherd2019] find evidence that "career concerns" about post-office employment influence legislative behavior.
+**The revolving door affects politician incentives.** Research documents significant movement between government and private sector. A 2023 study found that 32% of HHS appointees exited to industry employment [@hhs2023]. Among four-star military officers who retired after June 2018, over 80% went to work for the defense industry as board members, advisors, executives, consultants, or lobbyists [@hartung2023]. Shepherd and You [-@shepherd2019] find evidence that "career concerns" about post-office employment influence legislative behavior.
 
 ### Credit Rating Agencies as Governance Mechanisms
 
@@ -241,7 +277,7 @@ $$
 \Delta U_i^{\text{pre-IAB}}(a_i = 1) = \epsilon - c_i
 $$ {#eq-pre-iab}
 
-where $\epsilon$ is the small diffuse benefit and $c_i > 0$ is the concentrated cost. Since $c_i > \epsilon$ for most policies with diffuse benefits, the equilibrium is $a_i^* = 0$. This is Olson's result in formal terms.
+where $\epsilon$ is the small diffuse benefit and $c_i > 0$ is the net concentrated cost from losing incumbents' support (campaign contributions foregone, attack ads received, post-office opportunities closed). Since $c_i > \epsilon$ for most policies with diffuse benefits, the equilibrium is $a_i^* = 0$. This is Olson's result in formal terms.
 
 ### The IAB Mechanism
 
@@ -270,8 +306,8 @@ $$ {#eq-reelection}
 where:
 - $P_i^0$ is baseline reelection probability
 - $\bar{\theta}$ is the median score
-- $\delta > 0$ captures direct score effect
-- $I_i(\theta_i)$ is independent expenditure support, a step function:
+- $\delta > 0$ is an empirical parameter capturing the direct electoral effect of scorecard visibility (media coverage, voter information)
+- $I_i(\theta_i)$ is independent expenditure support determined by a pre-announced, public rule, a step function:
 
 $$
 I_i(\theta_i) = \begin{cases}
@@ -323,7 +359,9 @@ The all-defect equilibrium is stable because no individual politician benefits f
 
 **Proposition 3 (Equilibrium Selection):** The IAB mechanism selects the all-cooperate equilibrium by making individual deviation unprofitable.
 
-*Proof:* Under IABs, $a_i = 1$ is a dominant strategy when @eq-ic holds. If $a_i = 1$ is individually optimal regardless of others' actions, then $(1, \ldots, 1)$ is the unique Nash equilibrium. $\square$
+*Proof:* Under IABs, $a_i = 1$ is a dominant strategy within the binary policy choice when @eq-ic holds, conditional on the mechanism being funded as specified. If $a_i = 1$ is individually optimal regardless of others' actions, then $(1, \ldots, 1)$ is the unique Nash equilibrium. $\square$
+
+*Note:* The "dominant strategy" claim applies to the stylized binary choice over the target policy class, taking the IAB funding and rules as given. In richer models with multiple policy dimensions or strategic IAB design, additional equilibrium refinements would apply.
 
 ### Illustrative Example: A Global Health Treaty
 
@@ -365,6 +403,45 @@ The IAB mechanism transforms the incentive landscape. The concentrated costs (de
 ## The Three-Layer Architecture
 
 The formal model requires mechanisms to operationalize score-dependent payoffs. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
+
+```{mermaid}
+graph TD
+    subgraph "The Vicious Cycle (Status Quo)"
+    Taxpayers((Taxpayers)) -->|$| Gov[Government Budget]
+    Gov -->|Funding| Harm[Harmful/Wasteful Programs]
+    Harm -->|Profits| Incumbents[Concentrated Interests]
+    Incumbents -->|Lobbying/Donations| Pols[Politicians]
+    Pols -->|Votes| Gov
+    end
+
+    subgraph "The IAB Intervention"
+    IAB[Incentive Alignment Bond] -->|Redirects %| Harm
+    Harm -.->|Reallocated Funds| IAB_Flows{IAB Capital Flow}
+    
+    IAB_Flows -->|80%| PublicGood[Public Good\n(e.g., Cures)]
+    IAB_Flows -->|10%| Investors[Investor Returns]
+    IAB_Flows -->|10%| PolIncentives[Political Incentives]
+    
+    PolIncentives --> Layer1[Scoring Layer\n(Data/501c3)]
+    PolIncentives --> Layer2[Electoral Layer\n(Super PACs)]
+    PolIncentives --> Layer3[Post-Office Layer\n(Foundations)]
+    
+    Layer1 -->|Score| Pols2[Politicians]
+    Layer2 -->|Support| Pols2
+    Layer3 -->|Jobs| Pols2
+    
+    Pols2 -->|Votes for Treaty| IAB
+    Investors -->|Campaign Funding| Pols2
+    end
+    
+    classDef money fill:#85bb65,stroke:#333,stroke-width:2px;
+    classDef harm fill:#ff9999,stroke:#333,stroke-width:2px;
+    classDef good fill:#99ccff,stroke:#333,stroke-width:2px;
+    
+    class IAB_Flows,Investors,PolIncentives money;
+    class Harm,Incumbents harm;
+    class PublicGood good;
+```
 
 ### Layer A: Scoring (Data Provision)
 
@@ -608,11 +685,11 @@ The contribution is fourfold:
 
 1. **Theoretical:** We formalize political incentive alignment as a mechanism design problem and prove conditions for incentive compatibility.
 
-2. **Instrumental:** We define IABs through three primitive properties: investor alignment, politician alignment, and funding from net-negative-value sources. Together, these create a self-sustaining mechanism for public good production.
+2. **Instrumental:** We define IABs through three primitive properties: investor alignment, politician alignment, and funding from lower-value sources. Together, these create a self-sustaining mechanism for public good production that restores alignment between politician incentives and general welfare.
 
 3. **Practical:** We specify a three-layer architecture (scoring, electoral, post-office) that achieves alignment without violating anti-bribery law.
 
-4. **Welfare-Economic:** We provide a rigorous criterion ($NSV \leq 0$) for identifying appropriate funding sources, ensuring IABs are Pareto-improving by construction rather than competing with beneficial programs.
+4. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is necessary to achieve real resource shifts under soft budget constraints. This ensures IABs produce genuine welfare improvements rather than nominal victories diluted by deficit expansion and inflation.
 
 Important limitations remain. Gaming and metric corruption require ongoing institutional vigilance. The plutocracy objection, that wealthy funders determine priorities, has partial force and requires governance solutions. Unintended consequences on political culture are possible. These risks counsel for careful pilot implementation with rigorous evaluation before scaling.
 
@@ -624,4 +701,3 @@ If IABs can change political behavior at scale, if they can make supporting meas
 
 ::: {#refs}
 :::
-
