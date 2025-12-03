@@ -85,7 +85,7 @@ IABs break this dynamic by *specifying the funding source* as part of the mechan
 - But the IAB political incentive layer ensures politicians who support the reallocation benefit more than those who resist
 - The finite pool of resources shifts from net-negative to net-positive uses
 
-The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. It is a mechanism design requirement for achieving real resource reallocation. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
+The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. Under the soft budget constraint dynamics described above, it is a sufficient condition for achieving real resource reallocation, and may be necessary in practice. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
 
 ### Political Change as an Asset Class
 
@@ -156,6 +156,16 @@ Similar analysis applies to other Olsonian programs:
 
 The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has substantially higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
 
+### Relation to Existing Literature
+
+This paper sits at the intersection of three literatures. First, **mechanism design theory** [@hurwicz1972; @myerson1979; @maskin1999] provides tools for designing institutions when agents have private information and act strategically. While mechanism design has transformed market institutions, from spectrum auctions [@milgrom2004] to kidney exchanges [@roth2002], its application to political institutions remains limited. We extend this framework to political incentives, treating politicians as strategic agents whose actions (votes) are observable but whose preferences may diverge from social welfare.
+
+Second, **public choice theory** [@buchanan1962; @olson1965] models politicians as utility maximizers rather than benevolent planners. Olson's analysis of concentrated versus diffuse interests explains persistent policy failures but offers limited remedies. We operationalize Olson's insight: if concentrated benefits cause politicians to favor narrow interests, then *concentrating benefits on the welfare-improving side* can reverse the dynamic.
+
+Third, **campaign finance research** [@spenkuch2018; @stratmann2002; @fowler2020] and **political agency models** [@shepherd2019] document how electoral incentives and career concerns shape politician behavior. We synthesize these findings into a mechanism that systematically exploits these channels for public goods.
+
+Relative to Social Impact Bonds [@liebman2011; @gustafsson2017], IABs target a different agent (politicians vs. service providers) at a different level (policy adoption vs. program delivery). Relative to lobbying and campaign contributions, IABs create universal, ex-ante, public rules tied to verifiable outcomes rather than ad hoc relationships. Relative to pure voting reform proposals, IABs work within existing institutional constraints.
+
 ### Contribution
 
 This paper makes four contributions:
@@ -166,7 +176,7 @@ This paper makes four contributions:
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
 
-4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and demonstrate why *specified reallocation*, rather than budget addition, is a mechanism design requirement. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
+4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is sufficient, and likely necessary, for achieving real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
 
 ### Roadmap
 
@@ -231,6 +241,22 @@ Barta [-@barta2024] describes CRAs as "unelected, unappointed, unaccountable pro
 The IAB scoring system is structurally analogous to credit ratings: an independent body publishes scores based on objective criteria, and market actors (voters, donors, employers) respond to those scores. The difference is the metric: instead of fiscal sustainability, IABs measure support for measurable public goods.
 
 ## Formal Model
+
+This section presents a formal model of political incentives under IABs. We state explicit assumptions, derive conditions for incentive compatibility, and characterize equilibria. Appendix A provides detailed proofs.
+
+### Assumptions
+
+We maintain the following assumptions throughout:
+
+**A1 (Rational Politicians).** Each politician $i \in \{1, \ldots, N\}$ is a rational agent maximizing expected utility $U_i$ over career outcomes, including reelection, post-office income, and legacy.
+
+**A2 (Observable Votes).** Voting records on policy class $\mathcal{P}$ are publicly observable and verifiable. The scoring function $f: \text{VoteRecord} \to \mathbb{R}$ is common knowledge.
+
+**A3 (Credible Commitment).** The IAB mechanism can credibly commit to score-dependent payoffs: independent expenditure rules $I_i(\theta_i)$ and post-office eligibility criteria $\tau(\theta_i)$ are announced ex ante and cannot be renegotiated ex post.
+
+**A4 (Funded Mechanism).** The IAB is sufficiently capitalized that the payoff differentials $\Delta P_i$, $\Delta Y_i$ induced by score changes are non-negligible relative to concentrated opposition costs $c_i$.
+
+**A5 (Single Policy Dimension).** Politicians face a binary choice $a_i \in \{0,1\}$ on the target policy class. Extensions to multiple dimensions are discussed in Section 6.
 
 ### The Politician's Utility Function
 
@@ -337,31 +363,45 @@ where $\tau: \mathbb{R} \to \{1, 2, 3\}$ is a tier function and $Y(1) > Y(2) > Y
 
 ### Incentive Compatibility
 
-**Proposition 1 (Incentive Compatibility):** Under the IAB mechanism, if the score gain from supporting policy class $\mathcal{P}$ is $\Delta\theta > 0$, and
+**Proposition 1 (Sufficient Condition for Incentive Compatibility).** *Under assumptions A1–A5, if the score gain from supporting policy class $\mathcal{P}$ is $\Delta\theta > 0$, and*
 
 $$
 \alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i + \gamma_i \cdot \Delta S_i > c_i
 $$ {#eq-ic}
 
-then $a_i = 1$ is the unique best response.
+*then $a_i = 1$ is the unique best response for politician $i$.*
 
-*Proof:* By construction, $a_i = 1 \Rightarrow \theta_i' = \theta_i + \Delta\theta$. If $\Delta\theta$ is sufficient to cross tier thresholds or trigger independent expenditure support, then $\Delta P_i, \Delta Y_i, \Delta S_i > 0$. If the left-hand side of @eq-ic exceeds the concentrated cost $c_i$, then $\Delta U_i(a_i = 1) > 0$, making $a_i = 1$ strictly preferred. $\square$
+*Proof sketch:* By A2, votes are observable and the scoring function is common knowledge, so the politician can compute $\theta_i' = \theta_i + \Delta\theta$ conditional on $a_i = 1$. By A3, the payoff functions are credibly committed, so the politician can compute $\Delta P_i$, $\Delta Y_i$, and $\Delta S_i$. By A1, the politician maximizes $U_i$. The change in utility from choosing $a_i = 1$ versus $a_i = 0$ is:
 
-**Corollary:** If the IAB mechanism is sufficiently well-funded that $\Delta P_i$ and $\Delta Y_i$ are large, then $a_i = 1$ becomes incentive-compatible even for politicians facing significant concentrated opposition.
+$$
+\Delta U_i = \alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i + \gamma_i \cdot \Delta S_i - c_i
+$$
+
+When @eq-ic holds, $\Delta U_i > 0$, so $a_i = 1$ strictly dominates $a_i = 0$. See Appendix A for the complete proof. $\square$
+
+**Corollary 1.** *Under A4, there exists a funding level $\bar{F}$ such that for all $F > \bar{F}$, @eq-ic holds for all politicians with $c_i < \bar{c}$ for some threshold $\bar{c}(F)$ increasing in $F$.*
+
+This establishes that sufficiently funded IABs can overcome concentrated opposition up to a threshold that increases with funding.
 
 ### Nash Equilibrium Analysis
 
 Consider a legislature of $N$ politicians. Let $n = \sum_{i=1}^N a_i$ be the number supporting the policy.
 
-**Proposition 2 (Multiple Equilibria):** The pre-IAB game has two pure strategy Nash equilibria: $(a_1, \ldots, a_N) = (0, \ldots, 0)$ and potentially $(a_1, \ldots, a_N) = (1, \ldots, 1)$.
+**Proposition 2 (Multiple Equilibria Without IABs).** *Under A1–A2 and A5, without the IAB mechanism, the game among $N$ politicians has at least two pure strategy Nash equilibria:*
 
-The all-defect equilibrium is stable because no individual politician benefits from unilaterally supporting the policy when concentrated interests oppose and diffuse benefits cannot coordinate.
+*(i) The all-defect equilibrium $(a_1, \ldots, a_N) = (0, \ldots, 0)$*
 
-**Proposition 3 (Equilibrium Selection):** The IAB mechanism selects the all-cooperate equilibrium by making individual deviation unprofitable.
+*(ii) Potentially the all-cooperate equilibrium $(a_1, \ldots, a_N) = (1, \ldots, 1)$ if coordination is feasible*
 
-*Proof:* Under IABs, $a_i = 1$ is a dominant strategy within the binary policy choice when @eq-ic holds, conditional on the mechanism being funded as specified. If $a_i = 1$ is individually optimal regardless of others' actions, then $(1, \ldots, 1)$ is the unique Nash equilibrium. $\square$
+*The all-defect equilibrium is risk-dominant when $c_i > \epsilon$ for all $i$.*
 
-*Note:* The "dominant strategy" claim applies to the stylized binary choice over the target policy class, taking the IAB funding and rules as given. In richer models with multiple policy dimensions or strategic IAB design, additional equilibrium refinements would apply.
+*Proof sketch:* In the all-defect equilibrium, no politician benefits from unilateral deviation because the diffuse benefit $\epsilon$ is outweighed by the concentrated cost $c_i$. The all-cooperate equilibrium may exist if coordination reduces per-politician costs or if $\epsilon$ aggregates across politicians, but it is unstable to individual defection when concentrated interests can target defectors. See Appendix A. $\square$
+
+**Proposition 3 (Equilibrium Selection With IABs).** *Under A1–A5, if the IAB mechanism is funded such that @eq-ic holds for all $i$, then $(1, \ldots, 1)$ is the unique Nash equilibrium.*
+
+*Proof sketch:* When @eq-ic holds for each politician $i$, choosing $a_i = 1$ is a strictly dominant strategy regardless of other politicians' choices. A profile of strictly dominant strategies constitutes the unique Nash equilibrium. $\square$
+
+**Remark.** The "dominant strategy" characterization applies to the stylized binary choice taking the IAB mechanism as given. In richer settings with endogenous IAB design, strategic scoring manipulation, or multiple policy dimensions, additional equilibrium refinements apply. Section 5 discusses these extensions.
 
 ### Illustrative Example: A Global Health Treaty
 
@@ -399,6 +439,37 @@ Consider the decision calculus for a hypothetical Senator Smith facing a vote on
 : Senator Smith's Decision Calculus {#tbl-smith}
 
 The IAB mechanism transforms the incentive landscape. The concentrated costs (defense contractor opposition) remain, but they are now outweighed by concentrated benefits (score increases, electoral support, career advancement). Supporting the treaty becomes the utility-maximizing choice.
+
+### Calibration: Parameter Ranges for Incentive Compatibility
+
+To assess whether IABs could plausibly achieve incentive compatibility, we calibrate the model using empirical estimates from campaign finance and lobbying research. Table @tbl-calibration reports parameter ranges.
+
+| Parameter | Symbol | Empirical Range | Source |
+|:----------|:-------|:----------------|:-------|
+| Defense contractor opposition spending | $c_i$ | \$0.5–5M per race | OpenSecrets 2020 |
+| Independent expenditure effect on vote share | $\epsilon_i$ | 0.5–2 pp per \$1M | Spenkuch & Toniatti 2018 |
+| Value of 1 pp reelection probability | $\alpha_i$ | \$0.5–2M | Implied by campaign spending |
+| Post-office income differential (Tier 1 vs 3) | $\Delta Y$ | \$150–300K/yr | Industry salary data |
+| Discount rate for post-office income | $r$ | 5–10% | Standard |
+| Career length post-office | $T$ | 10–20 years | Empirical average |
+
+: Calibration Parameters for IAB Model {#tbl-calibration}
+
+**Calibration exercise.** Consider a senator facing concentrated opposition of $c_i = \$2\text{M}$ from defense contractors. Under the IAB mechanism with political incentive funding of \$2.4B annually:
+
+*Electoral layer:* If \$50M is allocated to 25 competitive races, each high-scorer receives \$2M in independent expenditure support. At 1 pp per \$1M, this implies $\Delta P_i \approx 2\text{ pp}$. With $\alpha_i = \$1\text{M}$ per pp, the electoral benefit is $\alpha_i \cdot \Delta P_i = \$2\text{M}$.
+
+*Post-office layer:* Moving from Tier 3 to Tier 1 increases expected annual post-office income by \$200K. With $T = 15$ years and $r = 7\%$, the present value is:
+
+$$
+\Delta Y_i = \$200\text{K} \times \frac{1 - (1.07)^{-15}}{0.07} \approx \$1.8\text{M}
+$$
+
+*Total benefit:* $\alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i \approx \$2\text{M} + \$1.8\text{M} = \$3.8\text{M}$
+
+*Incentive compatibility check:* Since $\$3.8\text{M} > c_i = \$2\text{M}$, the incentive compatibility condition @eq-ic is satisfied. The senator strictly prefers supporting the treaty.
+
+This calibration suggests that IAB funding levels in the billions can overcome concentrated opposition in the millions, consistent with the "lobbying alpha" asymmetry observed empirically.
 
 ## The Three-Layer Architecture
 
@@ -628,45 +699,17 @@ These risks counsel for careful pilot implementation with evaluation before scal
 
 ## Generalization: IABs for Global Coordination Problems
 
-The IAB architecture is not specific to health policy. It applies to any global coordination problem satisfying:
+The IAB architecture is not specific to health policy. It applies to any global coordination problem satisfying three conditions:
 
 1. **Measurable outcomes:** There exists a metric politicians can be scored on
 2. **Political control:** Politicians' actions (votes, treaties, budget allocations) affect outcomes
 3. **Diffuse benefits, concentrated costs:** The Olsonian collective action failure applies
 
-### Climate Change
-
-**Metric:** Verified emissions reductions (UNFCCC reporting), renewable energy deployment, carbon pricing adoption
-
-**Scoring:** Politicians receive Climate Good Scores based on votes on climate legislation, treaty ratification, and budget allocations
-
-**Electoral layer:** Climate-focused Super PACs commit to supporting high-scorers
-
-**Post-office layer:** Clean energy foundation positions, climate advisory boards, green bank directorships reserved for high-scorers
-
-### Nuclear Disarmament
-
-**Metric:** Verified warhead reductions (START treaty verification), arms control treaty support, non-proliferation funding
-
-**Scoring:** Nuclear Safety Scores based on votes on arms control, defense authorization amendments, treaty ratification
-
-**Electoral layer:** Peace-focused PACs back high-scorers in contested races
-
-**Post-office layer:** Arms control advisory positions, security fellowships, peace foundation leadership
-
-### Pandemic Preparedness
-
-**Metric:** WHO Joint External Evaluation scores, pandemic preparedness funding, international health regulation compliance
-
-**Scoring:** Pandemic Readiness Scores based on health security appropriations votes
-
-**Electoral layer:** Global health PACs support high-scorers
-
-**Post-office layer:** WHO advisory positions, global health security fellowships
+These conditions identify domains where the mechanism design approach is applicable. The formal requirements (A1–A5) must be satisfied, with domain-specific adaptations to the scoring function $f$ and payoff calibration.
 
 ### The General Template
 
-Any global public good can be "IAB-ified" with the structure in @tbl-template.
+Any global public good satisfying the above conditions can be "IAB-ified" using the structure in @tbl-template.
 
 | Component | Function | Legal Form |
 |:----------|:---------|:-----------|
@@ -676,6 +719,18 @@ Any global public good can be "IAB-ified" with the structure in @tbl-template.
 | Post-office layer | Reserves prestige positions for high-scorers | Foundations, think tanks |
 
 : General IAB Template for Global Public Goods {#tbl-template}
+
+### Candidate Domains
+
+We briefly survey three domains where IABs may be applicable; Appendix B provides detailed specifications.
+
+**Climate change.** Verified emissions reductions (UNFCCC reporting) provide a measurable metric. Politicians can be scored on climate legislation votes, treaty ratification, and budget allocations. The concentrated-diffuse asymmetry is stark: fossil fuel producers face concentrated losses while climate benefits are globally diffuse.
+
+**Nuclear disarmament.** Verified warhead reductions under START-type treaties provide objective metrics. The scoring function would weight votes on arms control treaties, defense authorization amendments, and non-proliferation funding. Defense contractor opposition creates concentrated costs; security benefits are diffuse.
+
+**Pandemic preparedness.** WHO Joint External Evaluation scores and pandemic preparedness funding levels are measurable. Health security appropriations votes provide a scoring basis. Pharmaceutical incumbent opposition and budget competition create concentrated resistance; pandemic prevention benefits the global population.
+
+Each domain requires calibration of the opposition cost $c_i$ and the IAB funding levels needed to satisfy @eq-ic. The structural requirements remain constant across applications.
 
 ## Conclusion
 
@@ -701,3 +756,245 @@ If IABs can change political behavior at scale, if they can make supporting meas
 
 ::: {#refs}
 :::
+
+## Appendix A: Formal Proofs {.unnumbered}
+
+This appendix provides complete proofs of the propositions stated in Section 3.
+
+### Proof of Proposition 1 (Sufficient Condition for Incentive Compatibility)
+
+**Statement.** Under assumptions A1–A5, if the score gain from supporting policy class $\mathcal{P}$ is $\Delta\theta > 0$, and
+
+$$
+\alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i + \gamma_i \cdot \Delta S_i > c_i
+$$
+
+then $a_i = 1$ is the unique best response for politician $i$.
+
+**Proof.**
+
+*Step 1: Action space.* By A5, politician $i$ faces a binary choice $a_i \in \{0, 1\}$.
+
+*Step 2: Information structure.* By A2, voting records are publicly observable and the scoring function $f: \text{VoteRecord} \to \mathbb{R}$ is common knowledge. Hence, politician $i$ can compute:
+$$
+\theta_i(a_i = 1) = \theta_i^0 + \Delta\theta
+$$
+$$
+\theta_i(a_i = 0) = \theta_i^0
+$$
+where $\theta_i^0$ is the current score and $\Delta\theta > 0$ is the score increment from supporting $\mathcal{P}$.
+
+*Step 3: Payoff functions.* By A3, the IAB mechanism credibly commits to score-dependent payoffs. The politician can therefore compute the payoff differentials:
+
+For the electoral component, by @eq-reelection:
+$$
+\Delta P_i = P_i(\theta_i^0 + \Delta\theta) - P_i(\theta_i^0) = \delta \cdot \Delta\theta + \epsilon_i \cdot [I_i(\theta_i^0 + \Delta\theta) - I_i(\theta_i^0)]
+$$
+
+For the post-office component, by @eq-postoffice:
+$$
+\Delta Y_i = Y(\tau(\theta_i^0 + \Delta\theta)) - Y(\tau(\theta_i^0))
+$$
+
+For the legacy component:
+$$
+\Delta S_i = S_i(\theta_i^0 + \Delta\theta) - S_i(\theta_i^0)
+$$
+
+*Step 4: Utility comparison.* By A1, politician $i$ maximizes expected utility $U_i$ as defined in @eq-utility. The change in utility from choosing $a_i = 1$ versus $a_i = 0$ is:
+
+$$
+\Delta U_i = U_i(a_i = 1) - U_i(a_i = 0) = \alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i + \gamma_i \cdot \Delta S_i - c_i
+$$
+
+where $c_i > 0$ represents the concentrated costs from opposition interests.
+
+*Step 5: Optimality.* When $\alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i + \gamma_i \cdot \Delta S_i > c_i$, we have $\Delta U_i > 0$. Since $a_i \in \{0, 1\}$ and choosing $a_i = 1$ yields strictly higher utility, $a_i = 1$ is the unique best response.
+
+*Step 6: Uniqueness.* The best response is unique because the action space is finite (binary) and $\Delta U_i > 0$ implies strict preference. There is no indifference. $\square$
+
+### Proof of Corollary 1 (Funding Threshold)
+
+**Statement.** Under A4, there exists a funding level $\bar{F}$ such that for all $F > \bar{F}$, @eq-ic holds for all politicians with $c_i < \bar{c}$ for some threshold $\bar{c}(F)$ increasing in $F$.
+
+**Proof.**
+
+*Step 1: Funding dependence.* By construction of the IAB mechanism, both $\Delta P_i$ and $\Delta Y_i$ are increasing functions of the total IAB funding $F$:
+
+- Electoral layer: Higher $F$ implies larger independent expenditure capacity $M$ in @eq-independent, increasing $\Delta P_i$
+- Post-office layer: Higher $F$ implies more fellowship positions and higher salaries, increasing $\Delta Y_i$
+
+Let $\Delta P_i(F)$ and $\Delta Y_i(F)$ denote these functions, with $\frac{\partial \Delta P_i}{\partial F} > 0$ and $\frac{\partial \Delta Y_i}{\partial F} > 0$.
+
+*Step 2: Define the benefit function.* Let:
+$$
+B_i(F) = \alpha_i \cdot \Delta P_i(F) + \beta_i \cdot \Delta Y_i(F) + \gamma_i \cdot \Delta S_i
+$$
+
+Since $\alpha_i, \beta_i > 0$ and both $\Delta P_i(F)$ and $\Delta Y_i(F)$ are increasing in $F$, we have $\frac{\partial B_i}{\partial F} > 0$.
+
+*Step 3: Threshold construction.* For any $\bar{c} > 0$, define:
+$$
+\bar{F}(\bar{c}) = \inf \{F : B_i(F) \geq \bar{c} \text{ for all } i\}
+$$
+
+This is well-defined because $B_i(F) \to \infty$ as $F \to \infty$ (under A4, the mechanism can scale payoffs arbitrarily with funding).
+
+*Step 4: Monotonicity.* For $F > \bar{F}(\bar{c})$, we have $B_i(F) > \bar{c}$ for all $i$. Hence, for any politician with $c_i < \bar{c}$:
+$$
+B_i(F) > \bar{c} > c_i
+$$
+which is precisely the incentive compatibility condition @eq-ic.
+
+*Step 5: Increasing threshold.* The function $\bar{c}(F) = \min_i B_i(F)$ is increasing in $F$ because each $B_i(F)$ is increasing. $\square$
+
+### Proof of Proposition 2 (Multiple Equilibria Without IABs)
+
+**Statement.** Under A1–A2 and A5, without the IAB mechanism, the game among $N$ politicians has at least two pure strategy Nash equilibria: (i) the all-defect equilibrium $(0, \ldots, 0)$, and (ii) potentially the all-cooperate equilibrium $(1, \ldots, 1)$ if coordination is feasible. The all-defect equilibrium is risk-dominant when $c_i > \epsilon$ for all $i$.
+
+**Proof.**
+
+*Step 1: Payoff structure without IABs.* By @eq-pre-iab, the payoff gain from choosing $a_i = 1$ versus $a_i = 0$ is:
+$$
+\Delta U_i^{\text{pre-IAB}} = \epsilon - c_i
+$$
+where $\epsilon$ represents diffuse voter approval and $c_i$ represents concentrated opposition costs.
+
+*Step 2: All-defect equilibrium.* Consider the strategy profile $(a_1, \ldots, a_N) = (0, \ldots, 0)$. For any politician $i$, unilateral deviation to $a_i = 1$ yields:
+$$
+\Delta U_i = \epsilon - c_i < 0 \quad \text{(by assumption } c_i > \epsilon \text{)}
+$$
+Since no politician can improve utility by unilateral deviation, $(0, \ldots, 0)$ is a Nash equilibrium.
+
+*Step 3: Potential cooperation equilibrium.* If politicians can coordinate (through party discipline, repeated game dynamics, or reputation mechanisms), the all-cooperate profile $(1, \ldots, 1)$ may be sustainable. In this case:
+
+- Collective benefits may exceed individual costs if policy success generates concentrated rewards (e.g., historical legacy, party brand value)
+- Defection can be punished in subsequent interactions
+
+However, this equilibrium requires coordination mechanisms external to the single-shot game.
+
+*Step 4: Risk dominance.* An equilibrium is risk-dominant if it is the best response to the belief that opponents choose each strategy with equal probability. Under uniform mixing, the expected payoff from $a_i = 0$ exceeds that from $a_i = 1$ when $c_i > \epsilon$, making $(0, \ldots, 0)$ risk-dominant. $\square$
+
+### Proof of Proposition 3 (Equilibrium Selection With IABs)
+
+**Statement.** Under A1–A5, if the IAB mechanism is funded such that @eq-ic holds for all $i$, then $(1, \ldots, 1)$ is the unique Nash equilibrium.
+
+**Proof.**
+
+*Step 1: Dominant strategy.* By Proposition 1, when @eq-ic holds for politician $i$, choosing $a_i = 1$ is the unique best response regardless of other politicians' choices. This is because the payoff comparison depends only on $i$'s own score change and the pre-committed IAB payoff rules, not on the actions of other politicians.
+
+Formally, $\Delta U_i > 0$ holds for all strategy profiles $(a_{-i}) \in \{0,1\}^{N-1}$ of other politicians.
+
+*Step 2: Strict dominance.* Since $a_i = 1$ yields strictly higher utility than $a_i = 0$ for all $a_{-i}$, the strategy $a_i = 1$ strictly dominates $a_i = 0$.
+
+*Step 3: Unique equilibrium.* When every player has a strictly dominant strategy, the profile of dominant strategies is the unique Nash equilibrium. Since $a_i = 1$ is strictly dominant for all $i \in \{1, \ldots, N\}$, the profile $(1, \ldots, 1)$ is the unique Nash equilibrium.
+
+*Step 4: Uniqueness verification.* No other strategy profile can be a Nash equilibrium because at any profile containing $a_i = 0$ for some $i$, politician $i$ has a profitable deviation to $a_i = 1$. $\square$
+
+## Appendix B: Detailed Application Specifications {.unnumbered}
+
+This appendix provides detailed IAB specifications for the candidate domains discussed in Section 6.
+
+### B.1 Climate Change
+
+**Policy objective.** Reduce global greenhouse gas emissions in line with Paris Agreement targets (limiting warming to 1.5–2°C).
+
+**Scoring metric.** The Climate Leadership Score $\theta_i^C$ is computed as a weighted average:
+
+$$
+\theta_i^C = w_1 \cdot V_i^{\text{legislation}} + w_2 \cdot V_i^{\text{treaty}} + w_3 \cdot V_i^{\text{budget}} + w_4 \cdot V_i^{\text{oversight}}
+$$
+
+where:
+
+- $V_i^{\text{legislation}}$: Voting record on climate legislation (carbon pricing, renewable standards, efficiency mandates)
+- $V_i^{\text{treaty}}$: Support for international climate agreements
+- $V_i^{\text{budget}}$: Votes on clean energy appropriations and fossil fuel subsidy reform
+- $V_i^{\text{oversight}}$: Participation in climate-related oversight activities
+
+Weights $w_j$ sum to 1 and are calibrated to policy impact.
+
+**Electoral layer specification.**
+
+| Score Tier | Independent Expenditure Rule |
+|:-----------|:-----------------------------|
+| $\theta_i^C \geq 80$ | Full support: +\$M per competitive race |
+| $60 \leq \theta_i^C < 80$ | Neutral: no expenditure |
+| $\theta_i^C < 60$ | Opposition: −\$M per competitive race |
+
+**Post-office layer specification.**
+
+- Tier 1 ($\theta_i^C \geq 75$): Eligibility for clean energy foundation boards, climate advisory positions, green bank directorships
+- Tier 2 ($60 \leq \theta_i^C < 75$): Standard think tank positions
+- Tier 3 ($\theta_i^C < 60$): Fossil fuel industry positions remain available but climate-aligned positions closed
+
+**Calibration notes.** Fossil fuel industry opposition spending averages \$100–500M annually on federal elections. IAB funding at \$1B+ annually would satisfy @eq-ic for most legislators in competitive districts.
+
+### B.2 Nuclear Disarmament
+
+**Policy objective.** Verified reduction of global nuclear arsenals and strengthened non-proliferation.
+
+**Scoring metric.** The Nuclear Safety Score $\theta_i^N$:
+
+$$
+\theta_i^N = w_1 \cdot V_i^{\text{treaty}} + w_2 \cdot V_i^{\text{NDAA}} + w_3 \cdot V_i^{\text{nonprolif}} + w_4 \cdot V_i^{\text{oversight}}
+$$
+
+where:
+
+- $V_i^{\text{treaty}}$: Votes on arms control treaty ratification (New START, CTBT, etc.)
+- $V_i^{\text{NDAA}}$: Votes on National Defense Authorization Act amendments affecting nuclear posture
+- $V_i^{\text{nonprolif}}$: Support for non-proliferation funding and diplomacy
+- $V_i^{\text{oversight}}$: Engagement with nuclear policy oversight
+
+**Electoral layer specification.** Peace-focused PACs commit to independent expenditure rules analogous to the climate case, with thresholds calibrated to the nuclear policy domain.
+
+**Post-office layer specification.**
+
+- Tier 1: Arms control advisory positions, security fellowships at peace-oriented institutions, disarmament diplomacy roles
+- Tier 2: General foreign policy positions
+- Tier 3: Defense contractor positions remain available but arms control positions closed
+
+**Calibration notes.** Defense contractor opposition is substantial (over \$100M annually in lobbying). However, the concentrated-diffuse asymmetry is extreme: nuclear war risks affect all humanity. IAB funding levels comparable to current defense lobbying would create countervailing incentives.
+
+### B.3 Pandemic Preparedness
+
+**Policy objective.** Strengthen global health security infrastructure to prevent and respond to pandemic threats.
+
+**Scoring metric.** The Pandemic Readiness Score $\theta_i^P$:
+
+$$
+\theta_i^P = w_1 \cdot V_i^{\text{funding}} + w_2 \cdot V_i^{\text{IHR}} + w_3 \cdot V_i^{\text{surge}} + w_4 \cdot V_i^{\text{oversight}}
+$$
+
+where:
+
+- $V_i^{\text{funding}}$: Votes on CDC, BARDA, and global health security appropriations
+- $V_i^{\text{IHR}}$: Support for International Health Regulations compliance and funding
+- $V_i^{\text{surge}}$: Votes on pandemic surge capacity and stockpile funding
+- $V_i^{\text{oversight}}$: Engagement with health security oversight
+
+**Electoral layer specification.** Global health PACs commit to score-dependent independent expenditures supporting high-scorers in competitive races.
+
+**Post-office layer specification.**
+
+- Tier 1: WHO advisory positions, global health security fellowships, pandemic preparedness foundation leadership
+- Tier 2: General health policy positions
+- Tier 3: Pharmaceutical industry positions remain available but global health leadership positions closed
+
+**Calibration notes.** Pharmaceutical industry lobbying exceeds \$300M annually. However, pandemic preparedness funding faces less concentrated opposition than defense or fossil fuels, suggesting lower IAB funding thresholds may achieve incentive compatibility.
+
+### B.4 Comparative Analysis
+
+@tbl-comparison summarizes key parameters across domains.
+
+| Domain | Opposition Cost $c_i$ | Existing Lobbying | IAB Threshold $\bar{F}$ |
+|:-------|:---------------------|:------------------|:-----------------------|
+| Climate | \$2–10M | \$100–500M | ~\$1B |
+| Nuclear | \$2–8M | \$100–200M | ~\$500M |
+| Pandemic | \$1–5M | \$50–150M | ~\$300M |
+| Health Research | \$1–4M | \$20–100M | ~\$200M |
+
+: Comparative IAB Parameters Across Domains {#tbl-comparison}
+
+These estimates are illustrative and require empirical calibration. The general pattern suggests that domains with lower concentrated opposition (pandemic preparedness, health research) require lower IAB funding to achieve incentive compatibility, while domains with entrenched industrial opposition (climate, defense) require larger investments.
