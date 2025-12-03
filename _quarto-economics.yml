@@ -27,6 +27,7 @@ project:
     - knowledge/solution/wishocracy.qmd
     - knowledge/solution/aligning-incentives.qmd
     - knowledge/solution/incentive-alignment-bonds.qmd
+    - knowledge/appendix/incentive-alignment-bonds-paper.qmd
     # Strategy
     - knowledge/strategy/roadmap.qmd
     - knowledge/strategy/nonprofit-coalition-strategy.qmd
@@ -206,6 +207,8 @@ website:
         contents:
           - href: knowledge/appendix/faq.qmd
             text: "Frequently Asked Questions"
+          - href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+            text: "Incentive Alignment Bonds Working Paper"
           - href: knowledge/references.qmd
             text: "Bibliography & Citations"
 

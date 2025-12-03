@@ -98,6 +98,7 @@ book:
       chapters:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
+        - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
 
     # Economic Analysis
     - part: "Economic Analysis"
