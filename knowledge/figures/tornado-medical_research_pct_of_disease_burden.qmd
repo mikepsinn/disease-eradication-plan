@@ -13,26 +13,32 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
+
 display_name = "Medical Research Spending as Percentage of Total Disease Burden"
 
 # Baseline and units
+
 baseline = 0.0005246585638657154
 
 # Tornado data from sensitivity analysis
+
 drivers = ['GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL', 'GLOBAL_MED_RESEARCH_SPENDING', 'GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL', 'GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL', 'GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL', 'VALUE_OF_STATISTICAL_LIFE', 'GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT', 'GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT', 'GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT', 'GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT', 'GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT', 'GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE']
 impacts_low = [0.00014728342812871792, -0.00010493171277314308, 1.2098991096270257e-05, 7.025472458937988e-06, 6.18919607470376e-06, 5.035288782086807e-06, 3.3571686563771148e-06, 2.1949653894854336e-06, 1.1115725463201791e-06, 6.01381444997255e-07, 5.171949549032497e-07, 3.6727907299814126e-07, 3.6360373691665757e-07, 3.297113961370701e-07, 3.0235571027166074e-07, 2.876583101906133e-07, 2.8561706971177644e-07, 2.4520377688345106e-07, 2.276524667218149e-07, 2.0234799264211723e-07, 1.8357528198758265e-07, 1.5378656276470587e-07, 1.2236924920540002e-07, 9.381131901690671e-08, 7.096721265427864e-08, 4.894085082205249e-08]
 impacts_high = [-0.0001191438034288168, 0.00010493171277314308, -1.620352146056484e-05, -7.239160561436789e-06, -8.031199147461032e-06, -4.940458965813099e-06, -4.375622440325124e-06, -2.693904352928816e-06, -1.1068823340591814e-06, -7.846599263388199e-07, -6.854347602889112e-07, -4.88906843511619e-07, -4.88499800485381e-07, -4.368001973124175e-07, -4.0300675681001225e-07, -3.8101832347265784e-07, -3.7898226412289276e-07, -3.256318736386118e-07, -3.064882471547764e-07, -2.706411022299201e-07, -2.4456737268544783e-07, -2.0504443296433597e-07, -1.6307025329348988e-07, -1.5084350059584462e-07, -9.214715170828384e-08, -9.377778323522469e-08]
 
 # Convert deltas to absolute values (baseline + delta)
+
 values_low = [baseline + delta for delta in impacts_low]
 values_high = [baseline + delta for delta in impacts_high]
 
 # Create tornado chart (horizontal bars showing swing range)
+
 fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
 
 y_pos = np.arange(len(drivers))
 
 # Plot low impact (left side)
+
 for i, (low, high) in enumerate(zip(values_low, values_high)):
     left = min(low, high)
     width_low = baseline - left if left < baseline else 0
@@ -49,12 +55,15 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
                 color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Format axis
+
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
+
 ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units
+
 units_label = "rate"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
@@ -62,15 +71,19 @@ else:
     ax.set_xlabel(f'{display_name}', fontsize=12)
 
 # Add vertical line at baseline
+
 ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
 
 # Clean spines
+
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('tornado-medical_research_pct_of_disease_burden.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 

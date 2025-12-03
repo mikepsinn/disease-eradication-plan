@@ -73,6 +73,7 @@ Politicians move when they see (a) voters demanding it and (b) political safety.
 ### Timeline to "Governments Can't Ignore This"
 
 With ~$60M in seed funding, we can reach "Treaty-Ready" status in **2–3 years**:
+
 - **Platform:** 280M verified supporters (3.5% threshold)
 - **Modeling:** Country-by-country impact analysis
 - **Coalition:** 120+ supportive NGOs and 5-10 champion governments
@@ -130,6 +131,7 @@ Based on this analysis, economists would find the following defensible:
 **Our model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
 
 This is deliberately ultra-conservative. An economist reviewing our expected value calculations should find:
+
 - The {{< var political_success_probability >}} central estimate assumes a **99% chance of complete failure**
 - The 0.1% floor admits this could be nearly impossible
 - Even at {{< var political_success_probability >}}, expected cost/DALY ({{< var treaty_expected_cost_per_daly >}}) beats bed nets ({{< var bed_nets_cost_per_daly >}}) by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
@@ -138,6 +140,7 @@ This is deliberately ultra-conservative. An economist reviewing our expected val
 ### Expected Value Implications
 
 At {{< var political_success_probability >}} probability of success:
+
 - **Expected ROI**: {{< var dfda_expected_roi >}}:1 (still positive)
 - **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} (still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets)
 

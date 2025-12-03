@@ -21,9 +21,11 @@ setup_chart_style()
 
 # Generate expected ROI values at different political success probabilities
 # These now derive from the unified POLITICAL_SUCCESS_PROBABILITY distribution range (5%-50%)
+
 base_roi = float(TREATY_ROI_LAG_ELIMINATION)
 
 # Probability scenarios derived from the uncertainty distribution
+
 probability_values = [0.05, 0.10, 0.25, 0.40, 0.50]  # 5th to 95th percentile range
 probability_labels = [
     '5%\n(Very\nPessimistic)',

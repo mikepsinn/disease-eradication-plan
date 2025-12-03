@@ -30,8 +30,6 @@ This chapter describes a mechanism to legally bribe politicians into doing the r
 
 > **Incentive Alignment Bonds (IABs)** – a way to pay for better governance without technically paying politicians, giving money to governments, or going to prison.
 
----
-
 ### 1. The Core Problem: Good Ideas Die in Committee
 
 You've seen the numbers by now:
@@ -52,8 +50,6 @@ The system does exactly what it's incentivized to do. It's not broken. It's work
 
 If you want different outcomes, you need different incentives. Wishing very hard doesn't count.
 
----
-
 ### 2. What You Need: Legal Bribery That Isn't Technically Bribery
 
 Imagine you could say to every politician on Earth:
@@ -73,8 +69,6 @@ Just a standing, public, announced-in-advance rule:
 > "Do this objectively good thing, and the world will systematically reward you."
 
 This is the job of **Incentive Alignment Bonds**. It's bribery, except legal, transparent, and pointed at saving lives instead of ruining them.
-
----
 
 ### 3. Definition: What Are Incentive Alignment Bonds?
 
@@ -111,8 +105,6 @@ Think of IABs as:
 * **Social impact bonds**, but rewarding politicians and investors instead of service providers.
 * **Advance Market Commitments**, but aimed at policies instead of vaccines.
 * **Bribery**, but legal, transparent, and aimed at reducing human suffering instead of increasing it.
-
----
 
 ### 4. How Incentive Alignment Bonds Work – The Simple Version
 
@@ -183,6 +175,7 @@ Because:
 
   * whether they supported the policy, and
   * whether outcomes improved in their jurisdiction.
+
 * Media, NGOs, and external coalitions:
 
   * highlight high-score politicians,
@@ -203,8 +196,6 @@ In mechanism design terms: the politician's utility function is roughly:
 
 IABs make supporting 1%-equivalent policies **strictly increase all four terms**. No altruism required. The mechanism is *incentive-compatible*: the privately optimal action (maximize personal payoff) and the socially optimal action (support policies that reduce suffering) become identical.
 
----
-
 ### 4a. The Three-Layer Architecture (How to Not Go to Prison)
 
 The previous section described the *what*. This section describes the *how*, in enough detail that a lawyer could implement it without anyone getting indicted.
@@ -222,12 +213,14 @@ Here's the architecture:
 Create an independent scoring system that assigns each politician a **Public Good Score** based on:
 
 **Outcome metrics** (jurisdiction-level):
+
 * DALYs averted
 * Age-standardized mortality reduction
 * Excess mortality trends
 * Disease-specific survival rates
 
 **Policy action metrics** (individual-level):
+
 * Votes in favor of "1%-equivalent" measures
 * Sponsorship of such bills
 * Public commitments and campaign positions
@@ -240,6 +233,7 @@ Critical design choice: **Don't tie scores to "The 1% Treaty" specifically.** De
 Any politician supporting *any* policy matching this pattern gets credit. This avoids the "paying for your specific bill" problem entirely.
 
 The scoring system is:
+
 * **Public** (anyone can see the methodology and data)
 * **Rules-based** (no discretion, no case-by-case decisions)
 * **Non-partisan** (applies equally to all parties and ideologies)
@@ -249,26 +243,31 @@ The scoring system is:
 Independent entities, legally separate from the scoring system, can commit **ex ante** to favor high-scoring politicians:
 
 **501(c)(4) organizations and PACs can:**
+
 * Spend more on independent ads and voter turnout for higher-scoring candidates
 * Run comparative campaigns: "Senator Smith scored 23 on the Public Good Index. His opponent scored 78. One of them wants you to keep dying."
 
 **NGOs and media can:**
+
 * Publish annual rankings of politicians by Public Good Score
 * Feature high-scorers at conferences (politicians love conferences)
 * Create awards (politicians love awards even more than conferences)
 
 The goal is to make the Public Good Score as influential as existing trusted benchmarks:
+
 * **Freedom House** scores shape how democracies are perceived globally
 * **Transparency International** rankings affect investment and diplomatic relationships  
 * **Credit ratings** (Moody's, S&P) directly constrain sovereign borrowing costs
 
 Moody's can downgrade a country's credit rating and suddenly their borrowing costs go up. That's power. If the Public Good Score achieves similar salience:
+
 * High score → respect, invitations, soft power, legacy, better book deals
 * Low score → reputational cost, fewer opportunities, awkward questions at dinner parties
 
 That's a direct self-interest lever that requires no altruism to activate. Politicians don't need to become better people. They just need to notice which direction the incentives are pointing.
 
 **Key constraints:**
+
 * No private deals ("we promise *you* specifically")
 * Just standing rules ("we support *any* candidate with Score ≥ S")
 * All commitments made publicly and in advance
@@ -288,6 +287,7 @@ Foundations, think tanks, and impact funds can establish:
 > 2. Achieved threshold improvements on agreed health metrics."
 
 Politicians know this rule **in advance**. Their calculation becomes:
+
 * Support 1%-style reform → prestigious fellowships, advisory boards, speaking circuits, book deals
 * Oppose it → you can still get a job, but it won't be as good, and you'll have to explain why you voted against curing diseases
 
@@ -304,8 +304,6 @@ The three layers must be housed in legally distinct entities:
 | Post-office | Private foundations, think tanks | Set eligibility criteria for positions | Condition grants on specific votes |
 
 This separation is not a loophole; it's how the system maintains legitimacy. Each layer does what it's legally permitted to do, and the combined effect is that supporting 1%-equivalent policies becomes the utility-maximizing choice for rational politicians.
-
----
 
 ### 4b. A Worked Example: How Senator Smith Votes Yes on the 1% Treaty
 
@@ -518,8 +516,6 @@ Everyone's self-interest aligned. No one was bribed. The system just made "vote 
 
 This is not cynical. This is public choice theory. It's only cynical if you think politicians should be motivated by pure altruism, in which case I have some bad news about the last 5,000 years of recorded history.
 
----
-
 ### 5. Why This Is Not Bribery (Legally Speaking)
 
 At first glance, this sounds like fancy bribery. "Reward politicians when they do what you want" is pretty much the definition.
@@ -552,8 +548,6 @@ IABs **create** alignment. ("Support policies that save lives and your career be
 ---
 
 
----
-
 ### 6. How IABs Differ from Social Impact Bonds
 
 People sometimes hear this and say, "We already have Social Impact Bonds." This is like saying "we already have bicycles" when someone proposes building a railroad.
@@ -570,8 +564,6 @@ Here's the difference (yes, it matters):
 Social Impact Bonds are pilot projects. Important! Valuable! Also: small.
 
 Incentive Alignment Bonds are an attempt to **change the rules of the game** at the level where games actually get changed, which is to say, the level where politicians decide what gets funded and what dies in committee.
-
----
 
 ### 7. How This Plugs Into the 1% Treaty (The Part Where It All Comes Together)
 
@@ -597,8 +589,6 @@ The 1% Treaty describes the **what**.
 Incentive Alignment Bonds supply the **how**.
 
 (This is the part of the presentation where the venture capitalist starts nodding.)
-
----
 
 ### 7a. How VICTORY Bonds and IABs Work Together
 
@@ -637,8 +627,6 @@ The {{< var dih_treasury_medical_research_pct >}} of treaty revenue that doesn't
 | IAB political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Electoral support, post-office fellowships |
 | DIH medical research | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually curing diseases |
 
----
-
 ### 8. Objections and Failure Modes
 
 No mechanism is magic. It is worth being explicit about what can go wrong.
@@ -650,6 +638,7 @@ Yes. Obviously. Politicians game everything. That's what they do.
 The question isn't "will they try to game it?" The question is "is gaming it harder than just doing the right thing?"
 
 To game IAB metrics, you'd need to:
+
 * Falsify death certificates at scale (hard, people notice when relatives aren't dead)
 * Corrupt multiple independent international health organizations simultaneously (expensive)
 * Maintain the lie across rotating assessors over many years (exhausting)
@@ -704,8 +693,6 @@ Credit ratings didn't start as a global system. They started as one guy in the 1
 
 IABs can scale the same way: proof of concept → adoption by early movers → FOMO among laggards → new normal.
 
----
-
 ### 9. Why This Matters for Ending War and Disease
 
 Ending war and disease is not primarily a **scientific** problem; it is a **governance** problem.
@@ -736,8 +723,6 @@ If ending war and disease is about anything, it is about that:
 
 Incentive Alignment Bonds are one of the simplest, most scalable tools we have to do that.
 
----
-
 ### 10. Summary: The Mechanism in One Sentence
 
 Create an **independent, outcome-indexed scoring system** where hitting big public-good targets automatically:
@@ -751,8 +736,6 @@ all via pre-announced, universal rules and independent institutions, so it's leg
 It's bribery, except no money changes hands. Just reputation, electoral support, and career advancement.
 
 You're not asking politicians to be better people. You're just making "save lives" and "advance career" point in the same direction. The rest is just self-interest doing what self-interest does.
-
----
 
 ### 11. Why 10%: The Scaling Engine {#sec-why-ten-pct-scaling-engine}
 
@@ -800,16 +783,19 @@ The 10% isn't a cost. It's the **engine** that drives the entire expansion. With
 #### Why VICTORY Bonds Alone Won't Scale
 
 VICTORY Bonds solve the *initial* alignment problem:
+
 - Investors fund the campaign
 - Treaty passes
 - Investors get {{< var victory_bond_annual_return_pct >}} returns forever
 
 But after the 1% treaty passes:
+
 - Investors are done. Their job was funding the campaign. Mission accomplished.
 - They have no mechanism to push for expansion.
 - Their returns are locked in. 2% treaty or 10% treaty, they still get {{< var victory_bond_annual_return_pct >}}.
 
 IABs solve the *ongoing* alignment problem:
+
 - Politicians who pushed for 1% see their IAB-funded benefits
 - They see colleagues getting rewarded for health outcomes
 - They compete to push for 2%, then 5%, then 10%
@@ -820,12 +806,14 @@ It's a **political ratchet** that only moves in one direction: toward more healt
 #### The Alternative Is Stagnation
 
 Without IABs, here's the likely trajectory:
+
 - Year 1-3: 1% treaty passes. Celebration.
 - Year 4-7: Defense lobby regroups. Politicians lose interest. No expansion.
 - Year 8-15: Treaty stalls at 1%. Defense spending slowly creeps back up.
 - Year 16+: The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
 
 With IABs:
+
 - Year 1-3: 1% treaty passes. Politicians rewarded.
 - Year 4-7: Politicians compete to expand to 2%. More rewards.
 - Year 8-15: 5% treaty. Defense contractors pivot to health. More rewards.
@@ -841,8 +829,6 @@ The question isn't "Is 10% too much?"
 The question is: "Is 10% enough to sustain political momentum through the inevitable backlash as military budgets face real cuts?"
 
 Probably. But if anything, 10% might be conservative for what we're trying to accomplish.
-
----
 
 ### 12. Beyond the 1% Treaty: IABs as a General Governance Tool
 
@@ -862,6 +848,7 @@ That describes most of the problems that could end civilization.
 **The problem:** Politicians know what to do (reduce emissions). They don't do it because fossil fuel lobbies are concentrated and voters won't reward them for costs paid today that benefit people in 2070.
 
 **IAB solution:**
+
 - **Metric:** Verified emissions reductions (already measured by UNFCCC)
 - **Scoring:** Politicians who vote for aggressive climate policy get higher Climate Good Scores
 - **Electoral layer:** Climate PACs commit to $X million in independent support for high-scorers
@@ -874,6 +861,7 @@ The math changes. "Vote for emissions cuts" stops being a career risk and become
 **The problem:** Everyone agrees fewer nukes would be good. No politician wants to be the one who "weakened deterrence." The incentives favor maintaining 5,000+ warheads indefinitely.
 
 **IAB solution:**
+
 - **Metric:** Verified warhead reductions (already tracked by START treaties)
 - **Scoring:** Politicians who support arms reduction get higher Nuclear Safety Scores
 - **Electoral layer:** Peace PACs back high-scorers in contested races
@@ -886,6 +874,7 @@ Suddenly "I reduced our nuclear arsenal" becomes a *positive* legacy instead of 
 **The problem:** Pandemics are rare but catastrophic. Politicians have no incentive to invest in preparedness because the benefits arrive (as non-events) during someone else's term. COVID-19 killed millions partly because preparedness was systematically underfunded.
 
 **IAB solution:**
+
 - **Metric:** WHO Joint External Evaluation scores (already exist), pandemic response capacity indicators
 - **Scoring:** Politicians who fund preparedness get higher Pandemic Readiness Scores
 - **Electoral layer:** Health security PACs reward high-scorers
@@ -929,8 +918,6 @@ The 1% Treaty is the proof of concept. If it works, if we can show that IABs act
 We're not just building a mechanism to fund medical research. We're building a template for making politicians care about humanity's long-term survival.
 
 That's worth getting right.
-
----
 
 ### 13. Summary: What IABs Actually Are
 

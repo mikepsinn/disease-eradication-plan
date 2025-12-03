@@ -14,6 +14,7 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # Parameter values
+
 central_value = 3.0
 low = 2.4000000000000004
 high = 3.5999999999999996
@@ -22,6 +23,7 @@ display_name = "Oxford RECOVERY Trial Duration"
 unit = "months"
 
 # Calculate distribution parameters
+
 if dist_type == "lognormal":
     # For lognormal, we need to work in log space
     # Assume low/high are 5th/95th percentiles
@@ -76,42 +78,52 @@ elif dist_type == "pert":
         y = np.array([1])
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Plot distribution
+
 ax.fill_between(x, y, alpha=0.3, color=COLOR_BLACK)
 ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
 
 # Mark central value
+
 ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
            label=f'Central: {central_value:,.2g}')
 
 # Mark confidence interval
+
 ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
            label=f'95% CI Low: {low:,.2g}')
 ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
            label=f'95% CI High: {high:,.2g}')
 
 # Shade the CI region
+
 ci_mask = (x >= low) & (x <= high)
 ax.fill_between(x, y, where=ci_mask, alpha=0.2, color=COLOR_BLACK)
 
 # Labels
+
 ax.set_xlabel(f'{display_name} ({unit})' if unit else display_name, fontsize=12)
 ax.set_ylabel('Probability Density', fontsize=12)
 ax.set_title(f'Assumed Distribution: {display_name}', fontsize=14, weight='bold', pad=15)
 
 # Legend
+
 ax.legend(loc='upper right', fontsize=10)
 
 # Clean up
+
 clean_spines(ax)
 ax.set_ylim(bottom=0)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('distribution-oxford_recovery_trial_duration_months.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 

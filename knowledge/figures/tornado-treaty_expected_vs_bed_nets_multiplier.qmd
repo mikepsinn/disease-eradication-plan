@@ -13,26 +13,32 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
+
 display_name = "Expected Cost-Effectiveness vs Bed Nets Multiplier"
 
 # Baseline and units
+
 baseline = 7.069077378457
 
 # Tornado data from sensitivity analysis
+
 drivers = ['POLITICAL_SUCCESS_PROBABILITY', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'TREATY_CAMPAIGN_BUDGET_REFERENDUM', 'BED_NETS_COST_PER_DALY', 'EFFICACY_LAG_YEARS', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'TREATY_CAMPAIGN_BUDGET_RESERVE', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
 impacts_low = [-6.3621696406113, 3.4036298488867045, 1.1103262898099997, 0.9639650970623181, -0.8737061928429997, -0.8620826112750004, -0.7402175265399995, -0.353453866373, -0.2590761342889989, 0.21863125912753745, -0.15544568057340058]
 impacts_high = [63.621696406112996, -2.7847880581800295, -1.1103262898099997, -1.1781795630761662, 0.8737061928429997, 0.8620826112749995, 0.7402175265400004, 0.353453866373, 0.38861420143350056, -0.3366227323074762, 0.1554456805733997]
 
 # Convert deltas to absolute values (baseline + delta)
+
 values_low = [baseline + delta for delta in impacts_low]
 values_high = [baseline + delta for delta in impacts_high]
 
 # Create tornado chart (horizontal bars showing swing range)
+
 fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
 
 y_pos = np.arange(len(drivers))
 
 # Plot low impact (left side)
+
 for i, (low, high) in enumerate(zip(values_low, values_high)):
     left = min(low, high)
     width_low = baseline - left if left < baseline else 0
@@ -49,12 +55,15 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
                 color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Format axis
+
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
+
 ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units
+
 units_label = "ratio"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
@@ -62,15 +71,19 @@ else:
     ax.set_xlabel(f'{display_name}', fontsize=12)
 
 # Add vertical line at baseline
+
 ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
 
 # Clean spines
+
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('tornado-treaty_expected_vs_bed_nets_multiplier.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 

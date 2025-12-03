@@ -1,8 +1,7 @@
 ---
-title: "Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy"
-description: "This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use."
-author: "M. Sinn"
-date: last-modified
+title: 'Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy'
+description: 'This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use.'
+author: M. Sinn
 keywords:
   - mechanism design
   - public choice
@@ -12,10 +11,10 @@ keywords:
   - campaign finance
   - incentive compatibility
 jel:
-  - D72  # Political Processes
-  - D82  # Asymmetric and Private Information; Mechanism Design
-  - H41  # Public Goods
-  - P16  # Political Economy
+  - D72
+  - D82
+  - H41
+  - P16
 bibliography: references.bib
 format:
   html:
@@ -303,10 +302,12 @@ Let $W(G)$ denote the social welfare gain from $G$. By assumption, $W(G) > 0$; t
 Without IABs, the politician faces:
 
 **Benefits of $a_i = 1$:**
+
 - Diffuse voter approval (small per-voter benefit, hard to attribute)
 - Abstract "doing the right thing" utility (assumed small)
 
 **Costs of $a_i = 1$:**
+
 - Concentrated opposition from losers (defense contractors, pharmaceutical incumbents)
 - Attack ads: "Senator voted to WEAKEN AMERICA"
 - Loss of campaign contributions from concentrated interests
@@ -346,6 +347,7 @@ P_i(\text{reelection}) = P_i^0 + \delta \cdot (\theta_i - \bar{\theta}) + \epsil
 $$ {#eq-reelection}
 
 where:
+
 - $P_i^0$ is baseline reelection probability
 - $\bar{\theta}$ is the median score
 - $\delta > 0$ is an empirical parameter capturing the direct electoral effect of scorecard visibility (media coverage, voter information)
@@ -498,11 +500,13 @@ The formal model requires mechanisms to operationalize score-dependent payoffs. 
 An independent entity, structured as a 501(c)(3) research organization, maintains the Public Good Score system.
 
 **Inputs:**
+
 - Public voting records from official government sources
 - Bill classifications (does legislation meet criteria for policy class $\mathcal{P}$?)
 - Sponsorship and co-sponsorship records
 
 **Outputs:**
+
 - Individual politician scores $\theta_i$
 - Historical score trajectories
 - Comparative rankings
@@ -519,6 +523,7 @@ The scoring layer does not violate this constraint because it:
 Independent actors, structured as 501(c)(4) organizations, PACs, or Super PACs, commit to electoral support rules tied to scores.
 
 **Mechanism:**
+
 - Super PACs announce: "We will spend \$X million on independent expenditures supporting candidates with Public Good Score ≥ 70 in competitive races"
 - This is a standing, public, ex-ante rule, not a deal with any specific candidate
 
@@ -531,6 +536,7 @@ Justice Kennedy wrote that independent spending "does not give rise to corruptio
 Private foundations, think tanks, and advisory boards establish eligibility criteria tied to scores.
 
 **Mechanism:**
+
 - Foundations announce: "Eligibility for the Global Health Fellowship requires a career average Public Good Score ≥ 75"
 - Think tanks announce: "Advisory board positions are restricted to former officials from jurisdictions that achieved threshold improvements under their leadership"
 
@@ -583,16 +589,19 @@ The IAB architecture is protected by the First Amendment at multiple levels:
 The most powerful evidence that IABs are legal is that their core components have operated openly for decades without prosecution:
 
 **Scoring systems:**
+
 - The **League of Conservation Voters** has published its National Environmental Scorecard since 1970, for 54 years rating legislators on environmental votes
 - The **NRA** grades legislators A through F on gun rights votes and publicizes the ratings
 - The **Chamber of Commerce**, **AFL-CIO**, **ACLU**, and dozens of other organizations publish voting scorecards
 
 **Electoral support tied to scores:**
+
 - The NRA explicitly endorses candidates based on their grades and spends millions on independent expenditures supporting high-scorers
 - The LCV endorses based on scorecard performance
 - Labor unions support candidates with pro-labor voting records
 
 **Post-office benefits tied to policy positions:**
+
 - Defense contractors hire former Pentagon officials who supported procurement programs
 - Pharmaceutical companies hire former FDA officials who approved their drugs
 - Think tanks hire former legislators who championed their policy priorities
@@ -651,6 +660,7 @@ Any metric can be gamed. Goodhart's Law states: "When a measure becomes a target
 3. **Strategic timing:** Time votes when outcomes are predetermined
 
 **Countermeasures:**
+
 - Score multiple dimensions (votes, sponsorship, floor statements, implementation oversight)
 - Weight by vote significance (close votes count more)
 - Track long-term outcomes as validation (though not as scoring basis)
@@ -660,6 +670,7 @@ Any metric can be gamed. Goodhart's Law states: "When a measure becomes a target
 Critics may argue IABs are "plutocracy with better marketing," with wealthy funders determining which public goods get prioritized.
 
 **Response:**
+
 1. Wealthy actors *already* influence policy through lobbying, revolving doors, and campaign finance. IABs redirect existing influence toward measurable welfare improvements.
 2. The mechanism is transparent: funders, rules, and scores are public.
 3. The metric is social welfare, not funder interests. Funders cannot manipulate the scoring criteria to benefit themselves without public scrutiny.

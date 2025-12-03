@@ -13,26 +13,32 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
+
 display_name = "Expected Treaty ROI (Risk-Adjusted)"
 
 # Baseline and units
+
 baseline = 11914.175356950002
 
 # Tornado data from sensitivity analysis
+
 drivers = ['POLITICAL_SUCCESS_PROBABILITY', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'REGULATORY_DELAY_MEAN_AGE_OF_DEATH', 'TREATY_CAMPAIGN_BUDGET_REFERENDUM', 'EFFICACY_LAG_YEARS', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_DISEASE_DEATHS_DAILY', 'REGULATORY_DELAY_SUFFERING_PERIOD_YEARS', 'TREATY_CAMPAIGN_BUDGET_RESERVE', 'CHRONIC_DISEASE_DISABILITY_WEIGHT']
 impacts_low = [-10722.757821255002, 5736.454801494443, -2382.8350713900018, 1871.3364434999985, 1624.6602759477264, -1452.9482212500006, -1247.5576290000008, -595.7087635500011, -436.6451701500009, 368.47965021494747, -261.98710209000274]
 impacts_high = [107227.57821255001, -4693.463019404547, 2382.835071389998, -1871.3364435000003, -1985.6958928250006, 1452.9482212499988, 1247.557628999999, 595.7087635499975, 654.9677552249977, -567.3416836642882, 261.9871020899991]
 
 # Convert deltas to absolute values (baseline + delta)
+
 values_low = [baseline + delta for delta in impacts_low]
 values_high = [baseline + delta for delta in impacts_high]
 
 # Create tornado chart (horizontal bars showing swing range)
+
 fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
 
 y_pos = np.arange(len(drivers))
 
 # Plot low impact (left side)
+
 for i, (low, high) in enumerate(zip(values_low, values_high)):
     left = min(low, high)
     width_low = baseline - left if left < baseline else 0
@@ -49,12 +55,15 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
                 color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Format axis
+
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
+
 ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units
+
 units_label = ""
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
@@ -62,15 +71,19 @@ else:
     ax.set_xlabel(f'{display_name}', fontsize=12)
 
 # Add vertical line at baseline
+
 ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
 
 # Clean spines
+
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('tornado-dfda_expected_roi.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 

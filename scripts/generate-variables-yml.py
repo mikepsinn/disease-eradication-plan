@@ -1554,109 +1554,7 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
     content.append(f"- Core definitions: {len(definition_params)}")
     content.append("")
 
-    # External parameters section
-    if external_params:
-        content.append("## External Data Sources {#sec-external}")
-        content.append("")
-        content.append(
-            "Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports."
-        )
-        content.append("")
-
-        for param_name, param_data in external_params:
-            value = param_data["value"]
-
-            # Generate display title with priority chain: display_name → smart_title_case() → .title()
-            if hasattr(value, "display_name") and value.display_name:
-                display_title = value.display_name
-            else:
-                display_title = smart_title_case(param_name)
-
-            # Start callout box for external source
-            content.append("::: {.callout-tip icon=false collapse=false}")
-            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
-            content.append("")
-
-            # Value
-            unit = getattr(value, "unit", "")
-            formatted = format_parameter_value(value, unit)
-            content.append(f"**Value**: {formatted}")
-            content.append("")
-
-            # Description
-            if hasattr(value, "description") and value.description:
-                content.append(f"{value.description}")
-                content.append("")
-
-            # Source citation
-            if hasattr(value, "source_ref") and value.source_ref:
-                source_ref = value.source_ref
-                # Convert ReferenceID enum to string value for URL
-                source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
-                # Use the reference ID value for display (not the enum representation)
-                display_ref = source_ref_str
-                # Check if source_ref is a .qmd file path or a references.qmd anchor
-                # Use relative paths for multi-format compatibility (HTML, PDF, EPUB)
-                if source_ref_str.endswith('.qmd'):
-                    # It's a path to another .qmd document
-                    # Convert absolute path to relative from knowledge/appendix/
-                    if source_ref_str.startswith('/knowledge/'):
-                        # /knowledge/appendix/foo.qmd -> foo (same dir)
-                        # /knowledge/foo.qmd -> ../foo (parent dir)
-                        rel_path = source_ref_str[len('/knowledge/'):]
-                        if rel_path.startswith('appendix/'):
-                            rel_path = rel_path[len('appendix/'):]
-                        else:
-                            rel_path = '../' + rel_path
-                    else:
-                        rel_path = source_ref_str
-                    # Remove .qmd extension for format-agnostic links
-                    rel_path = convert_qmd_to_html(rel_path)
-                    content.append(f"**Source**: [{display_ref}]({rel_path})")
-                else:
-                    # It's a reference anchor ID - link to references.qmd (relative path)
-                    content.append(f"**Source**: [{display_ref}](../references.qmd#{source_ref_str})")
-                content.append("")
-
-            # Uncertainty section with human-friendly explanations
-            uncertainty_content = generate_uncertainty_section(value, unit)
-            content.extend(uncertainty_content)
-
-            # Add input distribution chart if exists (for external params with uncertainty)
-            project_root = output_path.parent.parent.parent  # Go up from knowledge/appendix/ to project root
-            dist_qmd = project_root / "knowledge" / "figures" / f"distribution-{param_name.lower()}.qmd"
-            if dist_qmd.exists():
-                content.append("#### Input Distribution")
-                content.append("")
-                content.append(f"{{{{< include ../figures/distribution-{param_name.lower()}.qmd >}}}}")
-                content.append("")
-
-            # Confidence and metadata - cleaner formatting
-            metadata = []
-            if hasattr(value, "confidence") and value.confidence:
-                confidence_labels = {
-                    "high": "✓ High confidence",
-                    "medium": "~ Medium confidence",
-                    "low": "? Low confidence",
-                    "estimated": "≈ Estimated",
-                }
-                metadata.append(confidence_labels.get(value.confidence, value.confidence))
-
-            if hasattr(value, "peer_reviewed") and value.peer_reviewed:
-                metadata.append("📊 Peer-reviewed")
-
-            # Only show last_updated if it's not None/empty
-            if hasattr(value, "last_updated") and value.last_updated:
-                metadata.append(f"Updated {value.last_updated}")
-
-            if metadata:
-                content.append("*" + " • ".join(metadata) + "*")
-                content.append("")
-
-            content.append(":::")
-            content.append("")
-
-    # Calculated parameters section
+    # Calculated parameters section (moved first)
     if calculated_params:
         content.append("## Calculated Values {#sec-calculated}")
         content.append("")
@@ -1672,8 +1570,6 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             else:
                 display_title = smart_title_case(param_name)
 
-            # Start callout box for calculated value
-            content.append("::: {.callout-note icon=false collapse=false}")
             content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
@@ -1814,7 +1710,105 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 content.append(f"{{{{< include ../figures/exceedance-{param_name.lower()}.qmd >}}}}")
                 content.append("")
 
-            content.append(":::")
+            content.append("")
+
+    # External parameters section
+    if external_params:
+        content.append("## External Data Sources {#sec-external}")
+        content.append("")
+        content.append(
+            "Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports."
+        )
+        content.append("")
+
+        for param_name, param_data in external_params:
+            value = param_data["value"]
+
+            # Generate display title with priority chain: display_name → smart_title_case() → .title()
+            if hasattr(value, "display_name") and value.display_name:
+                display_title = value.display_name
+            else:
+                display_title = smart_title_case(param_name)
+
+            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
+            content.append("")
+
+            # Value
+            unit = getattr(value, "unit", "")
+            formatted = format_parameter_value(value, unit)
+            content.append(f"**Value**: {formatted}")
+            content.append("")
+
+            # Description
+            if hasattr(value, "description") and value.description:
+                content.append(f"{value.description}")
+                content.append("")
+
+            # Source citation
+            if hasattr(value, "source_ref") and value.source_ref:
+                source_ref = value.source_ref
+                # Convert ReferenceID enum to string value for URL
+                source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
+                # Use the reference ID value for display (not the enum representation)
+                display_ref = source_ref_str
+                # Check if source_ref is a .qmd file path or a references.qmd anchor
+                # Use relative paths for multi-format compatibility (HTML, PDF, EPUB)
+                if source_ref_str.endswith('.qmd'):
+                    # It's a path to another .qmd document
+                    # Convert absolute path to relative from knowledge/appendix/
+                    if source_ref_str.startswith('/knowledge/'):
+                        # /knowledge/appendix/foo.qmd -> foo (same dir)
+                        # /knowledge/foo.qmd -> ../foo (parent dir)
+                        rel_path = source_ref_str[len('/knowledge/'):]
+                        if rel_path.startswith('appendix/'):
+                            rel_path = rel_path[len('appendix/'):]
+                        else:
+                            rel_path = '../' + rel_path
+                    else:
+                        rel_path = source_ref_str
+                    # Remove .qmd extension for format-agnostic links
+                    rel_path = convert_qmd_to_html(rel_path)
+                    content.append(f"**Source**: [{display_ref}]({rel_path})")
+                else:
+                    # It's a reference anchor ID - link to references.qmd (relative path)
+                    content.append(f"**Source**: [{display_ref}](../references.qmd#{source_ref_str})")
+                content.append("")
+
+            # Uncertainty section with human-friendly explanations
+            uncertainty_content = generate_uncertainty_section(value, unit)
+            content.extend(uncertainty_content)
+
+            # Add input distribution chart if exists (for external params with uncertainty)
+            project_root = output_path.parent.parent.parent  # Go up from knowledge/appendix/ to project root
+            dist_qmd = project_root / "knowledge" / "figures" / f"distribution-{param_name.lower()}.qmd"
+            if dist_qmd.exists():
+                content.append("#### Input Distribution")
+                content.append("")
+                content.append(f"{{{{< include ../figures/distribution-{param_name.lower()}.qmd >}}}}")
+                content.append("")
+
+            # Confidence and metadata - cleaner formatting
+            metadata = []
+            if hasattr(value, "confidence") and value.confidence:
+                confidence_labels = {
+                    "high": "✓ High confidence",
+                    "medium": "~ Medium confidence",
+                    "low": "? Low confidence",
+                    "estimated": "≈ Estimated",
+                }
+                metadata.append(confidence_labels.get(value.confidence, value.confidence))
+
+            if hasattr(value, "peer_reviewed") and value.peer_reviewed:
+                metadata.append("📊 Peer-reviewed")
+
+            # Only show last_updated if it's not None/empty
+            if hasattr(value, "last_updated") and value.last_updated:
+                metadata.append(f"Updated {value.last_updated}")
+
+            if metadata:
+                content.append("*" + " • ".join(metadata) + "*")
+                content.append("")
+
             content.append("")
 
     # Core definitions section
@@ -1833,8 +1827,6 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
             else:
                 display_title = smart_title_case(param_name)
 
-            # Start callout box for definition
-            content.append("::: {.callout-warning icon=false collapse=false}")
             content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
             content.append("")
 
@@ -1855,8 +1847,6 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
 
             content.append("*Core definition*")
             content.append("")
-
-            content.append(":::")
             content.append("")
 
     # Write file
@@ -2700,6 +2690,7 @@ def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: 
     # Generate Python code for tornado chart
     qmd_content = f'''```{{python}}
 #| echo: false
+
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -2713,48 +2704,59 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
+
 display_name = "{display_name}"
 
 # Baseline and units
+
 baseline = {baseline if baseline is not None else 0.0}
 
 # Tornado data from sensitivity analysis
+
 drivers = {[driver for driver, _ in sorted_drivers]}
 impacts_low = {[data["delta_minus"] for _, data in sorted_drivers]}
 impacts_high = {[data["delta_plus"] for _, data in sorted_drivers]}
 
 # Convert deltas to absolute values (baseline + delta)
+
 values_low = [baseline + delta for delta in impacts_low]
 values_high = [baseline + delta for delta in impacts_high]
 
 # Create tornado chart (horizontal bars showing swing range)
+
 fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
 
 y_pos = np.arange(len(drivers))
 
 # Plot low impact (left side)
+
 for i, (low, high) in enumerate(zip(values_low, values_high)):
     left = min(low, high)
     width_low = baseline - left if left < baseline else 0
     width_high = max(low, high) - baseline if max(low, high) > baseline else 0
 
     # White bar for range below baseline
+
     if width_low > 0:
         ax.barh(i, width_low, left=left,
                 color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
 
     # Black bar for range above baseline
+
     if width_high > 0:
         ax.barh(i, width_high, left=baseline,
                 color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Format axis
+
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
+
 ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {{display_name}}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units
+
 units_label = "{units if units else ""}"
 if units_label:
     ax.set_xlabel(f'{{display_name}} ({{units_label}})', fontsize=12)
@@ -2762,15 +2764,19 @@ else:
     ax.set_xlabel(f'{{display_name}}', fontsize=12)
 
 # Add vertical line at baseline
+
 ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
 
 # Clean spines
+
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('tornado-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
@@ -2917,6 +2923,7 @@ def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, out
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Probability Distribution: {display_name}"
+
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
@@ -2930,6 +2937,7 @@ from dih_models.plotting.chart_style import (
 setup_chart_style()
 
 # Parameter values
+
 central_value = {central_value}
 low = {low}
 high = {high}
@@ -2938,24 +2946,32 @@ display_name = "{display_name}"
 unit = "{unit}"
 
 # Calculate distribution parameters
+
 if dist_type == "lognormal":
     # For lognormal, we need to work in log space
+
     # Assume low/high are 5th/95th percentiles
+
     if central_value > 0 and low > 0:
         mu = np.log(central_value)
         # Estimate sigma from CI width
+
         sigma = (np.log(high) - np.log(low)) / (2 * 1.645)  # 90% CI
         sigma = max(sigma, 0.1)  # Minimum sigma
+
         x = np.linspace(max(0.01, low * 0.5), high * 1.5, 500)
         y = stats.lognorm.pdf(x, s=sigma, scale=np.exp(mu))
     else:
         # Fall back to normal if values aren't positive
+
         dist_type = "normal"
 
 if dist_type == "normal":
     # Estimate sigma from CI width (assuming 95% CI)
+
     sigma = (high - low) / (2 * 1.96)
     sigma = max(sigma, abs(central_value) * 0.01)  # Minimum 1% of value
+
     x = np.linspace(low - sigma, high + sigma, 500)
     y = stats.norm.pdf(x, loc=central_value, scale=sigma)
 
@@ -2965,22 +2981,28 @@ elif dist_type == "uniform":
 
 elif dist_type == "triangular":
     # Triangular with mode at central value
+
     x = np.linspace(low * 0.9, high * 1.1, 500)
     y = stats.triang.pdf(x, c=(central_value - low) / (high - low), loc=low, scale=high - low)
 
 elif dist_type == "beta":
     # Beta distribution scaled to [low, high]
+
     # Use alpha=2, beta=2 for symmetric bell shape
+
     x_norm = np.linspace(0, 1, 500)
     x = low + x_norm * (high - low)
     y = stats.beta.pdf(x_norm, a=2, b=2) / (high - low)
 
 elif dist_type == "pert":
     # PERT is a special case of beta
+
     # Mode = central_value, min = low, max = high
+
     range_val = high - low
     if range_val > 0:
         # PERT uses alpha = 1 + 4*(mode-min)/(max-min), beta = 1 + 4*(max-mode)/(max-min)
+
         mode_ratio = (central_value - low) / range_val
         alpha = 1 + 4 * mode_ratio
         beta_param = 1 + 4 * (1 - mode_ratio)
@@ -2992,42 +3014,52 @@ elif dist_type == "pert":
         y = np.array([1])
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Plot distribution
+
 ax.fill_between(x, y, alpha=0.3, color=COLOR_BLACK)
 ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
 
 # Mark central value
+
 ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
            label=f'Central: {{central_value:,.2g}}')
 
 # Mark confidence interval
+
 ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
            label=f'95% CI Low: {{low:,.2g}}')
 ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
            label=f'95% CI High: {{high:,.2g}}')
 
 # Shade the CI region
+
 ci_mask = (x >= low) & (x <= high)
 ax.fill_between(x, y, where=ci_mask, alpha=0.2, color=COLOR_BLACK)
 
 # Labels
+
 ax.set_xlabel(f'{{display_name}} ({{unit}})' if unit else display_name, fontsize=12)
 ax.set_ylabel('Probability Density', fontsize=12)
 ax.set_title(f'Assumed Distribution: {{display_name}}', fontsize=14, weight='bold', pad=15)
 
 # Legend
+
 ax.legend(loc='upper right', fontsize=10)
 
 # Clean up
+
 clean_spines(ax)
 ax.set_ylim(bottom=0)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('distribution-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
@@ -3092,6 +3124,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
+
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -3105,6 +3138,7 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Simulation results
+
 samples = {samples[:1000] if len(samples) > 1000 else samples}  # Truncate for embedding
 baseline = {baseline}
 mean = {mean}
@@ -3116,11 +3150,14 @@ display_name = "{display_name}"
 units = "{units}"
 
 # Create figure with two subplots
+
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 fig.subplots_adjust(wspace=0.3)
 
 # --- Left: Histogram ---
+
 # Handle edge case where all samples are identical (zero variance)
+
 if std == 0 or (max(samples) == min(samples)):
     n_bins = 1
 else:
@@ -3128,9 +3165,11 @@ else:
 n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1)
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
 ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
 
 # Mark key statistics with formatted values in legend (use format_parameter_value for full units)
+
 ax1.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=2, label=f'Median: {{format_parameter_value(p50, units)}}')
 ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'5th %-ile: {{format_parameter_value(p5, units)}}')
 ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {{format_parameter_value(p95, units)}}')
@@ -3143,6 +3182,7 @@ ax1.legend(loc='upper right', fontsize=9)
 clean_spines(ax1)
 
 # --- Right: CDF (Cumulative Probability) ---
+
 sorted_samples = np.sort(samples)
 cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
 
@@ -3150,9 +3190,11 @@ ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
 ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
 ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
 
 # Mark key percentiles
+
 ax2.axhline(50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
@@ -3165,6 +3207,7 @@ ax2.set_ylim(0, 100)
 clean_spines(ax2)
 
 # Add annotation for "probability of exceeding baseline"
+
 exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
 ax2.annotate(f'{{exceed_baseline_pct:.0f}}% chance of\\nexceeding baseline',
              xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
@@ -3172,12 +3215,15 @@ ax2.annotate(f'{{exceed_baseline_pct:.0f}}% chance of\\nexceeding baseline',
              arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
 
 # Main title
+
 fig.suptitle(f'Monte Carlo Analysis: {{display_name}}', fontsize=14, weight='bold', y=1.02)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('mc-distribution-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
@@ -3255,6 +3301,7 @@ def generate_cdf_chart_qmd(
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Probability of Exceeding Threshold: {display_name}"
+
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -3268,32 +3315,39 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Monte Carlo samples
+
 samples = {samples[:2000] if len(samples) > 2000 else samples}
 thresholds = {thresholds}
 display_name = "{display_name}"
 units = "{units}"
 
 # Calculate exceedance probabilities (1 - CDF)
+
 sorted_samples = np.sort(samples)
 exceedance = 1 - np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 # Plot exceedance curve
+
 ax.plot(sorted_samples, exceedance * 100, color=COLOR_BLACK, linewidth=2.5)
 ax.fill_between(sorted_samples, 0, exceedance * 100, alpha=0.1, color=COLOR_BLACK)
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
+
 ax.xaxis.set_major_formatter(get_tick_formatter(unit=units))
 
 # Annotate thresholds
+
 for thresh in thresholds:
     exceed_pct = (np.array(samples) >= thresh).sum() / len(samples) * 100
     ax.axvline(thresh, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
     ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
 
     # Add label with formatted threshold value (use format_parameter_value for full units)
+
     ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{format_parameter_value(thresh, units)}}',
                 xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
                 fontsize=10, ha='left', weight='bold',
@@ -3309,6 +3363,7 @@ clean_spines(ax)
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('exceedance-{param_name.lower()}.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 

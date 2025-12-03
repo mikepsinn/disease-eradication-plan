@@ -13,26 +13,32 @@ from dih_models.parameters import format_parameter_value
 setup_chart_style()
 
 # Display name for chart title
+
 display_name = "FDA to Oxford RECOVERY Trial Time Multiplier"
 
 # Baseline and units
+
 baseline = 36.4
 
 # Tornado data from sensitivity analysis
+
 drivers = ['FDA_PHASE_1_TO_APPROVAL_YEARS']
 impacts_low = [-12.399999999999999]
 impacts_high = [11.600000000000001]
 
 # Convert deltas to absolute values (baseline + delta)
+
 values_low = [baseline + delta for delta in impacts_low]
 values_high = [baseline + delta for delta in impacts_high]
 
 # Create tornado chart (horizontal bars showing swing range)
+
 fig, ax = plt.subplots(figsize=(10, max(6, len(drivers) * 0.8)))
 
 y_pos = np.arange(len(drivers))
 
 # Plot low impact (left side)
+
 for i, (low, high) in enumerate(zip(values_low, values_high)):
     left = min(low, high)
     width_low = baseline - left if left < baseline else 0
@@ -49,12 +55,15 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
                 color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
 
 # Format axis
+
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
+
 ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units
+
 units_label = "ratio"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
@@ -62,15 +71,19 @@ else:
     ax.set_xlabel(f'{display_name}', fontsize=12)
 
 # Add vertical line at baseline
+
 ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
 
 # Clean spines
+
 clean_spines(ax)
 
 # Add watermark
+
 add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
+
 output_path = get_figure_output_path('tornado-fda_to_oxford_recovery_trial_time_multiplier.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 

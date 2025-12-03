@@ -25,6 +25,7 @@ fig, ax = plt.subplots(figsize=(12, 10))
 
 # --- Calculate component breakdown using median life extension (20 years) ---
 # Using the unified model with LIFE_EXTENSION_YEARS median value
+
 result = calculate_personal_lifetime_wealth_conservative_baseline(
     treaty_pct=0.01,
     current_age=30,
@@ -37,6 +38,7 @@ npv = result["npv_breakdown"]
 total = result["total_lifetime_benefit"]
 
 # Extract component values
+
 components = {
     "Extended Earnings": npv["extended_earnings"],
     "GDP Boost\n(Mil→Research)": npv["gdp_boost_benefit"],
@@ -47,9 +49,11 @@ components = {
 }
 
 # Filter out tiny components (< 1% of total)
+
 filtered = {k: v for k, v in components.items() if v / total >= 0.01}
 
 # Sort by size (largest first)
+
 sorted_components = dict(sorted(filtered.items(), key=lambda x: x[1], reverse=True))
 
 labels = []
@@ -67,6 +71,7 @@ colors = [COLOR_BLACK, COLOR_WHITE, COLOR_BLACK, COLOR_WHITE, COLOR_BLACK, COLOR
 hatches = [None, PATTERN_DIAGONAL, PATTERN_CROSS, PATTERN_HORIZONTAL, PATTERN_DOTS, "\\\\\\"]
 
 # Trim to actual number of components
+
 colors = colors[:len(sizes)]
 hatches = hatches[:len(sizes)]
 
@@ -80,11 +85,13 @@ wedges, texts = ax.pie(
 )
 
 # Apply hatching patterns
+
 for wedge, hatch in zip(wedges, hatches):
     if hatch:
         wedge.set_hatch(hatch)
 
 # --- Add Title ---
+
 life_ext = result["life_extension_years"]
 new_le = result["new_life_expectancy"]
 formatted_total = format_parameter_value(total, "USD")
@@ -95,6 +102,7 @@ ax.set_title(
 )
 
 # --- Add Labels OUTSIDE the pie with connecting lines ---
+
 for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
     angle = (wedge.theta2 + wedge.theta1) / 2
     angle_rad = np.deg2rad(angle)
@@ -128,14 +136,17 @@ for i, (wedge, label, size) in enumerate(zip(wedges, labels, sizes)):
                      edgecolor=COLOR_BLACK, linewidth=1))
 
 # --- Add subtitle with key insight ---
+
 fig.text(0.5, 0.02, 
          f"With {life_ext:.0f} years of life extension, extended earnings from living longer dominate the benefit calculation.",
          ha='center', fontsize=12, style='italic', color=COLOR_BLACK)
 
 # --- Add Watermark ---
+
 add_watermark(fig)
 
 # --- Save ---
+
 output_path = get_figure_output_path('personal-lifetime-wealth-component-breakdown-pie-chart.png')
 
 plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor=COLOR_WHITE)

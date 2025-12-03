@@ -10,11 +10,13 @@ from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_gra
 dot = graphviz.Digraph(comment='IAB Three-Layer Architecture', format='png')
 dot.attr(rankdir='TB', size='14,12', nodesep='0.8', ranksep='1.1', dpi='300')
 # Use Helvetica for cleaner rendering, consistent 14pt for all text
+
 dot.attr('node', fontsize='14', fontname='Helvetica', margin='0.3,0.2')
 dot.attr('edge', fontsize='14', fontname='Helvetica', labelfontsize='14')
 setup_graphviz_style(dot)
 
 # Helper function for boxed edge labels with consistent font
+
 def boxed_label(text):
     """Wrap label in HTML-like table for white background with border.
 
@@ -25,6 +27,7 @@ def boxed_label(text):
     return f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="white"><TR><TD><FONT FACE="Helvetica" POINT-SIZE="14">{escaped_text}</FONT></TD></TR></TABLE>>'
 
 # Helper function for node labels with consistent font rendering
+
 def node_label(text):
     """Wrap node label in HTML font tag for clean rendering.
 
@@ -35,23 +38,28 @@ def node_label(text):
     return f'<<FONT FACE="Helvetica" POINT-SIZE="14">{html_text}</FONT>>'
 
 # Top: Funding source - generic category with concrete example
+
 dot.node('Source', node_label('Low Net Social Value\n(NSV) Programs\n(e.g., $2.7T Weapons and Military Systems)'), shape='box')
 
 # The treaty creates a fund - not the bond itself
+
 dot.node('TreatyFund', node_label('1% Treaty Fund\n($27 Billion/year)'), shape='box', style='bold', penwidth='2')
 
 dot.edge('Source', 'TreatyFund', label=boxed_label('1% redirect'), penwidth='2')
 
 # Fund allocation (invisible node for branching)
+
 dot.node('split', '', shape='point', width='0.1')
 dot.edge('TreatyFund', 'split', style='invis')
 
 # Three destinations with percentages AND dollar amounts for clarity
+
 dot.node('PublicGood', node_label('High Net Social Value\n(NSV) Programs \n(e.g., Medical Research)\n$21.6B (80%)'), shape='box')
 dot.node('Investors', node_label('Bond Investor Returns\n$2.7B (10%)'), shape='box')
 dot.node('PolFund', node_label('Political Incentive Fund\n$2.7B (10%)'), shape='box')
 
 # Use invisible edges to control layout, visible edges for actual flows
+
 with dot.subgraph() as s:
     s.attr(rank='same')
     s.node('PublicGood')
@@ -59,11 +67,13 @@ with dot.subgraph() as s:
     s.node('PolFund')
 
 # Simpler edge labels since amounts are in nodes now
+
 dot.edge('TreatyFund', 'PublicGood')
 dot.edge('TreatyFund', 'Investors')
 dot.edge('TreatyFund', 'PolFund')
 
 # Three-layer architecture - clearer descriptions of what each does
+
 with dot.subgraph() as layers:
     layers.attr(rank='same')
     layers.node('Layer1', node_label('Scoring Layer\n(501(c)(3) Research Org)\n\nPublicly rates politicians\non treaty support'), shape='box')
@@ -71,17 +81,21 @@ with dot.subgraph() as layers:
     layers.node('Layer3', node_label('Career Layer\n(Foundations)\n\nPost-office jobs\nfor high-scoring politicians'), shape='box')
 
 # Connect political fund to layers
+
 dot.edge('PolFund', 'Layer1')
 dot.edge('PolFund', 'Layer2')
 dot.edge('PolFund', 'Layer3')
 
 # Politicians at bottom
+
 dot.node('Politicians', node_label('Politicians'), shape='box', style='bold', penwidth='2')
 
 # Voters node (for feedback loop)
+
 dot.node('Voters', node_label('Voters'), shape='ellipse')
 
 # Layers influence politicians
+
 dot.edge('Layer1', 'Politicians', label=boxed_label('Public<BR/>Score'))
 dot.edge('Layer2', 'Politicians', label=boxed_label('Campaign<BR/>Support'))
 dot.edge('Layer3', 'Politicians', label=boxed_label('Career<BR/>Opportunities'))
@@ -89,12 +103,15 @@ dot.edge('Layer3', 'Politicians', label=boxed_label('Career<BR/>Opportunities'))
 # === FEEDBACK LOOPS (dashed, showing self-reinforcing dynamics) ===
 
 # Primary feedback: Politicians vote for treaty
+
 dot.edge('Politicians', 'TreatyFund', label=boxed_label('Vote YES<BR/>on Treaty'), style='dashed', constraint='false')
 
 # Investor feedback: Bond investors lobby to protect their returns
+
 dot.edge('Investors', 'Politicians', label=boxed_label('Lobby to<BR/>protect returns'), style='dashed', constraint='false')
 
 # Public good feedback: Benefits -> Voters -> Politicians
+
 dot.edge('PublicGood', 'Voters', label=boxed_label('Tangible<BR/>benefits'), style='dashed')
 dot.edge('Voters', 'Politicians', label=boxed_label('Electoral<BR/>reward'), style='dashed')
 

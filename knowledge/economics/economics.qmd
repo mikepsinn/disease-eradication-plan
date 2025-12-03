@@ -1,16 +1,20 @@
 ---
-title: "A 1% Treaty: Modeling the Impact of Redirecting Military Spending to Pragmatic Clinical Trials"
-description: "This paper models the potential global health and economic effects of redirecting 1% of military spending to pragmatic clinical trials. It evaluates cost-effectiveness, expected value across a range of adoption probabilities, trial-throughput effects, and key considerations for political feasibility and incentive alignment."
+title: 'A 1% Treaty: Modeling the Impact of Redirecting Military Spending to Pragmatic Clinical Trials'
+description: This paper models the potential global health and economic effects of redirecting 1% of military spending to pragmatic clinical trials. It evaluates cost-effectiveness, expected value across a range of adoption probabilities, trial-throughput effects, and key considerations for political feasibility and incentive alignment.
 author:
-  - name: "Decentralized Institutes of Health"
+  - name: Decentralized Institutes of Health
     affiliation:
-      name: "Decentralized Institutes of Health"
-      url: "https://dih.earth"
-    roles: [conceptualization, methodology]
-  - name: "Mike P. Sinn"
+      name: Decentralized Institutes of Health
+      url: https://dih.earth
+    roles:
+      - conceptualization
+      - methodology
+  - name: Mike P. Sinn
     affiliation:
-      name: "Decentralized Institutes of Health"
-    roles: [conceptualization, "writing – original draft"]
+      name: Decentralized Institutes of Health
+    roles:
+      - conceptualization
+      - writing – original draft
     email: m@dih.earth
     corresponding: true
 published: true
@@ -1301,19 +1305,22 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 Beyond the moral and economic arguments, two existential drivers make this proposal impossible to ignore for sovereign leaders:
 
 ### 1. The Geopolitical "Race to the Top"
+
 This is not just a treaty; it is a technology for economic dominance. The first nation or bloc to implement a dFDA infrastructure will:
 
-*   **Attract Global Capital**: Become the world's primary hub for biotechnology investment.
-*   **Own the IP**: Secure intellectual property rights for the next generation of curative therapies.
-*   **Export Health**: Project soft power by becoming the "pharmacy of the world," exporting life-saving treatments to allies.
+* **Attract Global Capital**: Become the world's primary hub for biotechnology investment.
+* **Own the IP**: Secure intellectual property rights for the next generation of curative therapies.
+* **Export Health**: Project soft power by becoming the "pharmacy of the world," exporting life-saving treatments to allies.
 
 **The Strategic Dilemma**: If the US rejects this but China adopts it, China gains a massive structural advantage in the bio-economy and population health. This fear creates a "Race to the Top" where nations must adopt the efficient model or be left behind in the most important industry of the 21st century.
 
 ### 2. How To Not Drive Off a Fiscal Cliff
+
 Western economies are facing a solvency crisis driven by healthcare inflation and aging populations.
-*   **Austerity** (cutting benefits) is political suicide.
-*   **Printing Money** (MMT) is inflationary suicide.
-*   **The Third Option**: **Technological Deflation**.
+
+* **Austerity** (cutting benefits) is political suicide.
+* **Printing Money** (MMT) is inflationary suicide.
+* **The Third Option**: **Technological Deflation**.
 
 By collapsing the cost of clinical trials by {{< var trial_cost_reduction_factor >}}x, we fundamentally alter the cost structure of healthcare. We replace expensive "chronic disease management" with cheap "curative interventions." This is the **only mathematically viable path** to long-term fiscal solvency for G7 nations. It is impossible *not* to fund this, because the alternative is national bankruptcy.
 
@@ -1376,8 +1383,9 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 | **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
 
 **Philanthropic Leverage Ratio**: For a donor (e.g., Gates Foundation), a **$1 billion** catalytic investment to pass the treaty unlocks **{{< var treaty_annual_funding >}} per year** in perpetual public funding.
-*   **1-Year Leverage**: 27x
-*   **10-Year Leverage**: 270x
+
+* **1-Year Leverage**: 27x
+* **10-Year Leverage**: 270x
 
 This is the highest-leverage philanthropic opportunity in history: using $1B of private capital to unlock a permanent $27B/year public revenue stream for global health.
 
@@ -1474,6 +1482,7 @@ Current barriers:
 - Trials pay nothing and cost weeks of your time
 
 Decentralized pragmatic trials fix all of this:
+
 - Join from your couch
 - Everyone qualifies (you don't need to be the perfect kind of sick)
 - Get subsidized to participate + access to treatments
