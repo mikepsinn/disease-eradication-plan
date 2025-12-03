@@ -329,9 +329,9 @@ where $\tau: \mathbb{R} \to \{1, 2, 3\}$ is a tier function and $Y(1) > Y(2) > Y
 
 | Tier | Threshold | Expected Annual Income | Examples |
 |:-----|:----------|:-----------------------|:---------|
-| 1 | $\theta_i \geq 75$ | $500K+ | WHO Advisory Board, Aspen Fellowships |
-| 2 | $60 \leq \theta_i < 75$ | $200-400K | Brookings, RAND, university chairs |
-| 3 | $\theta_i < 60$ | $150-300K | Defense contractor boards, lobbying firms |
+| 1 | $\theta_i \geq 75$ | \$500K+ | WHO Advisory Board, Aspen Fellowships |
+| 2 | $60 \leq \theta_i < 75$ | \$200-400K | Brookings, RAND, university chairs |
+| 3 | $\theta_i < 60$ | \$150-300K | Defense contractor boards, lobbying firms |
 
 : Post-Office Income by Public Good Score Tier {#tbl-postoffice}
 
