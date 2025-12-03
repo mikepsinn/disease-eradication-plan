@@ -16,8 +16,8 @@ from pathlib import Path
 import graphviz
 from PIL import Image, ImageDraw, ImageFont
 
-# Import get_project_root from chart_style to avoid duplication
-from .chart_style import get_project_root
+# Import get_project_root and add_png_metadata from chart_style to avoid duplication
+from .chart_style import get_project_root, add_png_metadata
 
 # Add Graphviz to PATH if not already there (Windows)
 if sys.platform == "win32":
@@ -251,5 +251,14 @@ def render_graphviz_with_watermark(dot, filename, output_dir=None):
     except Exception:
         # If PIL operations fail, still try to add watermark
         add_watermark_to_png(png_path)
+
+    # Add metadata (Author, Copyright, Source)
+    # Extract title/description from dot object if available
+    title = getattr(dot, 'comment', None)
+    # Clean up title if it's just the comment char
+    if title and title.startswith('%'): 
+        title = title[1:].strip()
+        
+    add_png_metadata(str(png_path), title=title)
 
     return Path(png_path)

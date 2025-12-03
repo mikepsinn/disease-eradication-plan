@@ -380,6 +380,8 @@ But after the 1% treaty passes, VICTORY Bond holders are **satisfied**. They're 
 
 ### Engine 2: Incentive Alignment Bonds (The Scaling Engine)
 
+{{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
+
 [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve the **expansion problem**:
 
 - {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives
@@ -428,4 +430,3 @@ At 100% military-to-health redirection:
 - War becomes economically obsolete
 
 The 80/10/10 allocation isn't just a funding structure. It's a **political transformation engine** designed to make humanity's transition from war to health economically inevitable.
-

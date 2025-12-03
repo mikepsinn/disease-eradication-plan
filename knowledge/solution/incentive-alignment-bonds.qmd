@@ -116,6 +116,8 @@ Think of IABs as:
 
 ### 4. How Incentive Alignment Bonds Work – The Simple Version
 
+![Incentive Alignment Bonds Mechanism](../../assets/iab-inforgraphic.png){#fig-iab-infographic}
+
 Let’s walk through the basic structure in four steps.
 
 #### Step 1: Define a Measurable Outcome
@@ -212,6 +214,8 @@ The key insight: you cannot legally say "support Bill #XYZ123 and get paid." Tha
 But you *can* create a system where politicians who support a **class of pro-social policies** systematically get more electoral support, better reputations, and better post-office careers. The trick is: rule-based, ex-ante, universal mechanisms. No targeting individuals. No secret deals. Just standing rules that happen to reward saving lives.
 
 Here's the architecture:
+
+{{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
 
 #### Layer A: Outcome and Policy Scoring (Data Only)
 
@@ -966,4 +970,3 @@ We've known for decades that ending war and disease is technically feasible. The
 You're not asking politicians to be saints. You're just making "save millions of lives" and "advance my career" point in the same direction.
 
 The rest is just self-interest doing what self-interest does.
-

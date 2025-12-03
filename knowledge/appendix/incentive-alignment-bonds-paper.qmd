@@ -1,6 +1,6 @@
 ---
 title: "Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy"
-subtitle: "Working Paper"
+description: "This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use."
 author: "M. Sinn"
 date: last-modified
 keywords:
@@ -16,8 +16,6 @@ jel:
   - D82  # Asymmetric and Private Information; Mechanism Design
   - H41  # Public Goods
   - P16  # Political Economy
-abstract: |
-  This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use. Drawing on mechanism design theory, public choice economics, and campaign finance research, we formalize a three-layer architecture (scoring, electoral support, and post-office benefits) that makes supporting public-good policies incentive-compatible for rational political actors. Unlike Social Impact Bonds, which reward service providers for program outcomes, IABs target politicians directly at the policy level where large-scale budget decisions are made. We prove conditions under which supporting public goods becomes a Nash equilibrium for utility-maximizing politicians, analyze legal constraints under U.S. anti-bribery law, and provide a comparative welfare criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. Critically, we show why *specified reallocation*, rather than budget addition, is a mechanism design requirement: under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation, leaving real resource allocation unchanged. IABs restore alignment between politician incentives and general welfare by redirecting resources from lower-value to higher-value uses. We illustrate the mechanism with a hypothetical global health treaty and discuss applications to climate change, nuclear disarmament, and pandemic preparedness. We conclude with a discussion of limitations, governance challenges, and directions for empirical research.
 bibliography: references.bib
 format:
   html:
@@ -29,6 +27,10 @@ format:
     geometry: margin=1in
     fontsize: 11pt
 ---
+
+## Abstract
+
+This paper introduces Incentive Alignment Bonds (IABs), a novel class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use. Drawing on mechanism design theory, public choice economics, and campaign finance research, we formalize a three-layer architecture (scoring, electoral support, and post-office benefits) that makes supporting public-good policies incentive-compatible for rational political actors. Unlike Social Impact Bonds, which reward service providers for program outcomes, IABs target politicians directly at the policy level where large-scale budget decisions are made. We prove conditions under which supporting public goods becomes a Nash equilibrium for utility-maximizing politicians, analyze legal constraints under U.S. anti-bribery law, and provide a comparative welfare criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. Critically, we show why *specified reallocation*, rather than budget addition, is a mechanism design requirement: under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation, leaving real resource allocation unchanged. IABs restore alignment between politician incentives and general welfare by redirecting resources from lower-value to higher-value uses. We illustrate the mechanism with a hypothetical global health treaty and discuss applications to climate change, nuclear disarmament, and pandemic preparedness. We conclude with a discussion of limitations, governance challenges, and directions for empirical research.
 
 ## Introduction
 
@@ -318,6 +320,8 @@ $$ {#eq-pre-iab}
 where $\epsilon$ is the small diffuse benefit and $c_i > 0$ is the net concentrated cost from losing incumbents' support (campaign contributions foregone, attack ads received, post-office opportunities closed). Since $c_i > \epsilon$ for most policies with diffuse benefits, the equilibrium is $a_i^* = 0$. This is Olson's result in formal terms.
 
 ### The IAB Mechanism
+
+![The Incentive Alignment Bonds Mechanism](../../assets/iab-inforgraphic.png){#fig-iab-infographic}
 
 The IAB mechanism introduces a **Public Good Score** $\theta_i$ for each politician, where:
 
