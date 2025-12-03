@@ -1,0 +1,62 @@
+**Amazon for Clinical Trials + Consumer Reports for Drugs**
+
+[Your dFDA](/knowledge/solution/dfda.qmd) achieves **{{< var trial_cost_reduction_factor >}}x cost reduction** through decentralized pragmatic trials.
+Patients can search treatments ranked by real-world effectiveness and join trials with one click.
+
+#### Safer Than the FDA
+
+**Current FDA system:**
+
+- Adverse events require filling out a PDF form (seriously)
+- Most side effects never get reported
+- No public database of outcome frequencies
+- You find out a drug causes heart attacks 10 years later when lawyers get involved
+
+**dFDA system:**
+
+- Adverse events collected automatically from every participant
+- Real-time reporting to everyone (not buried in FDA databases)
+- Outcome labels show exact frequency and severity of every effect
+- You know the risks BEFORE you take the drug, not after the class action lawsuit
+
+The FDA doesn't even publish adverse event rates. They make you guess. The dFDA tells you "12% of patients got headaches, 3% were severe, 0.1% discontinued treatment." That's not less safe than the current system. That's actually having safety data.
+
+#### Treatment Rankings
+
+Consumer Reports for Drugs
+
+**Current system:** Your doctor picks treatments based on:
+
+- That drug rep who brought good donuts in 2003
+- Something they half-remember from medical school
+- Whatever the insurance company allows
+- Vibes
+
+[dFDA system](/knowledge/solution/dfda.qmd): Type your condition, see every [treatment ranked by real-world effectiveness](/knowledge/solution/dfda.qmd):
+
+![Treatment Rankings Example](/assets/dfda-comparative-effectiveness-ranking-search.png)
+
+Rankings are based on frequency and magnitude of health outcome changes across all patients - or filtered to patients with similar omic profiles to yours. A treatment that works great for 25-year-old women with your genetic variants might not work for 60-year-old men with different variants. The dFDA shows you what works for people like you, not average effects across everyone.
+
+##### Outcome Labels
+
+*Nutrition Facts for Drugs*
+
+Food has nutrition labels.
+Cigarettes have warning labels.
+Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
+
+[Your dFDA](/knowledge/solution/dfda.qmd) fixes that with **[Outcome Labels](/knowledge/solution/dfda.qmd)** - simple, data-driven summaries showing exactly what happens when real people try a treatment:
+
+![Outcome Labels Example](/assets/dfda-outcome-labels.png)
+
+Based on thousands of real patients, you see:
+
+- **Cognitive Improvements**: Memory +35%, Executive Function +22%
+- **Side Effects**: Headache +9% (mild), Fatigue +7% (moderate)
+- **Discontinuation rate**: 2.3% stopped due to side effects
+- **The Truth**: Not marketing claims, actual measured effects from real humans
+
+No more pharmaceutical fan fiction.
+No more lawyers writing medical advice during fever dreams.
+Just cold, hard data about whether this chemical makes your meat work better or worse.

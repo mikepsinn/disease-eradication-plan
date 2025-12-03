@@ -182,6 +182,10 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
+## A Decentralized Framework for Drug Assessment
+
+{{< include ../includes/dfda-overview.qmd >}}
+
 ## Summary of Results
 
 **{{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI**
@@ -312,6 +316,27 @@ By successfully executing a verified, mutual reduction in military spending to f
 
 It steers the ship of state away from the iceberg of extinction, one degree at a time.
 
+### Why The Ratchet Works: The IAB Scaling Engine
+
+The "ratchet mechanism" isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd).
+
+**The key insight**: {{< var iab_political_incentive_funding_pct >}} of treaty revenue goes to political incentives. This amount **scales with treaty size**:
+
+| Treaty Level | Total Revenue | IAB Political Funding | Research Funding |
+|:-------------|:--------------|:---------------------|:-----------------|
+| 1% | $27B | $2.7B/year | $21.7B/year |
+| 2% | $54B | $5.4B/year | $43.2B/year |
+| 5% | $135B | $13.5B/year | $108B/year |
+| 10% | $270B | $27B/year | $216B/year |
+| 50% | $1.35T | $135B/year | $1.08T/year |
+| 100% | $2.7T | $270B/year | $2.16T/year |
+
+**VICTORY Bond investors** are satisfied at 1% - they're getting {{< var victory_bond_annual_return_pct >}} returns regardless of treaty expansion.
+
+**Politicians**, however, see their IAB-funded rewards **grow with each expansion**. This creates perpetual pressure to increase treaty percentages. By the time you reach 50% redirection, the political incentive pool ($135B/year) exceeds all current global lobbying combined.
+
+The 80/10/10 allocation structure isn't just a funding mechanism - it's a **political transformation engine** designed to make humanity's transition from war to health economically inevitable.
+
 
 ## Political Economy and Financing
 
@@ -357,8 +382,9 @@ You just point everyone's greed at diseases instead of each other.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
-{{< include ../figures/victory-bonds-roi-projection-bar-chart.qmd >}}
+### Incentive Alignment Bonds
 
+{{< include ../includes/incentive-alignment-bonds-overview.qmd >}}
 
 ## Dominance Analysis
 

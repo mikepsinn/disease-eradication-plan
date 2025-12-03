@@ -80,6 +80,30 @@ def check_brace_balance(match: str) -> bool:
     return brace_count == 0
 
 
+def resolve_link_path(link_path: str, file_dir: str) -> str:
+    """
+    Resolve a link path to an absolute filesystem path.
+    
+    Handles:
+    - Relative paths (resolved relative to file_dir)
+    - Absolute paths starting with / (resolved from project root)
+    
+    Args:
+        link_path: The path from the markdown link (may start with / for absolute)
+        file_dir: The directory containing the file with the link
+        
+    Returns:
+        Normalized absolute path to the target file
+    """
+    if link_path.startswith("/"):
+        # Absolute path from project root - resolve from current working directory
+        # Remove the leading slash and resolve from project root
+        return os.path.normpath(link_path[1:])
+    else:
+        # Relative path - resolve from the file's directory
+        return os.path.normpath(os.path.join(file_dir, link_path))
+
+
 def check_math_delimiters(content: str, filename: str):
     """Check for unmatched dollar signs in math mode"""
     lines = content.split("\n")
@@ -198,8 +222,8 @@ def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line
     if image_path.startswith("http://") or image_path.startswith("https://"):
         return
 
-    # Resolve the image path relative to the .qmd file
-    resolved_path = os.path.normpath(os.path.join(file_dir, image_path))
+    # Resolve the image path (handles both relative and absolute /paths)
+    resolved_path = resolve_link_path(image_path, file_dir)
 
     if not os.path.exists(resolved_path):
         errors.append(
@@ -294,8 +318,8 @@ def check_cross_reference_links(content: str, filepath: str):
             if link_path.startswith("http://") or link_path.startswith("https://"):
                 continue
 
-            # Resolve the link path relative to the .qmd file
-            resolved_path = os.path.normpath(os.path.join(file_dir, link_path))
+            # Resolve the link path (handles both relative and absolute /paths)
+            resolved_path = resolve_link_path(link_path, file_dir)
 
             if not os.path.exists(resolved_path):
                 errors.append(
@@ -694,8 +718,8 @@ def check_include_directives(content: str, filepath: str):
             if include_path.startswith("http://") or include_path.startswith("https://"):
                 continue
 
-            # Resolve the include path relative to the .qmd file
-            resolved_path = os.path.normpath(os.path.join(file_dir, include_path))
+            # Resolve the include path (handles both relative and absolute /paths)
+            resolved_path = resolve_link_path(include_path, file_dir)
 
             if not os.path.exists(resolved_path):
                 errors.append(
@@ -835,8 +859,8 @@ def check_markdown_links(content: str, filepath: str):
             link_file = link_path.split("#")[0] if "#" in link_path else link_path
 
             if link_file:  # If there's actually a file path (not just an anchor)
-                # Resolve the path relative to the current file
-                resolved_path = os.path.normpath(os.path.join(file_dir, link_file))
+                # Resolve the path (handles both relative and absolute /paths)
+                resolved_path = resolve_link_path(link_file, file_dir)
 
                 # Check if file exists as-is
                 if os.path.exists(resolved_path):
@@ -1006,8 +1030,8 @@ def check_anchor_ids(content: str, filepath: str, anchor_map: Dict[str, Set[str]
             if not link_file:
                 continue
 
-            # Resolve the link path relative to the current file
-            resolved_path = os.path.normpath(os.path.join(file_dir, link_file))
+            # Resolve the link path (handles both relative and absolute /paths)
+            resolved_path = resolve_link_path(link_file, file_dir)
 
             # Check if file exists
             if not os.path.exists(resolved_path):

@@ -1,0 +1,66 @@
+**Legal Bribery That Isn't Technically Bribery**
+
+Politicians don't optimize for "humans continuing to exist." They optimize for reelection, status, and post-office careers. You don't fix this with awareness campaigns. You fix it by changing what self-interest points at.
+
+[Incentive Alignment Bonds (IABs)](/knowledge/solution/incentive-alignment-bonds.qmd) are financial instruments that make "support policies that save lives" and "advance your career" point in the same direction. No altruism required.
+
+#### How It Works
+
+Politicians are scored on their **voting record** for treaty funding - not health outcomes (which are global and can't be attributed to any country). When a politician votes YES on treaty funding:
+
+- Their **Public Good Score** rises (based on public voting records - verifiable, ungameable)
+- **Electoral support** increases (independent campaigns favor high-scorers)
+- **Post-office opportunities** unlock (fellowships, advisory boards, speaking circuits)
+
+No money flows to politicians. What flows is reputation, electoral advantage, and career advancement. The 10% political incentive fund is automatic - just math on treasury inflows, no oracle needed.
+
+#### The Senator Smith Example
+
+Senator Smith (R-Texas) is deciding how to vote on the 1% Treaty.
+
+**Without IABs:**
+
+| Vote Yes | Vote No |
+|:---------|:--------|
+| Attack ads: "Smith voted to WEAKEN AMERICA" | Safe from defense lobby attacks |
+| Defense contractors fund opponent | Defense contractors fund you |
+| Benefits arrive in 10 years | Costs arrive never |
+
+Result: Vote no. Obviously.
+
+**With IABs:**
+
+| If Smith votes YES | If Smith votes NO |
+|:-------------------|:------------------|
+| Public Good Score: 45 → 72 | Score: 45 → 30 |
+| P(reelection): 55% → 62% | P(reelection): 55% → 48% |
+| $2M independent support | $2M goes to opponent |
+| Post-office tier: 3 → 1 | Stuck at tier 3 |
+| Expected post-office income: $200K → $500K/yr | Attack ads: "Smith voted AGAINST the cure" |
+
+Result: Vote yes. The math changed.
+
+#### VICTORY Bonds: IABs for the War on Disease
+
+[VICTORY Bonds](/knowledge/economics/victory-bonds.qmd) are a specific Incentive Alignment Bond designed to fund and sustain the 1% treaty. They align multiple stakeholder types with a single instrument:
+
+| Stakeholder | What They Get | Funding Source |
+|:--|:--------------|:--------------------------|
+| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
+| **Politicians** | Reputation, electoral support, better careers | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
+| **Patients** | Subsidized trial participation, cures | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
+
+Investors fund the campaign ({{< var treaty_campaign_total_cost >}}). Politicians get career benefits for supporting it. Patients get cures. Everyone's self-interest points at the same outcome: pass the treaty, expand it, cure diseases.
+
+#### Why This Isn't Bribery
+
+1. **No one is paid to break a duty** - IABs reward compliance with duties (funding public health), not violating them
+2. **Rules are universal and ex-ante** - Same rules for all politicians, announced publicly in advance
+3. **No money goes to politicians** - They benefit indirectly through scores, electoral support, career options
+4. **Scores based on public voting records** - No oracle needed, just verifiable votes from official government sources
+
+Bribery corrupts alignment. IABs create alignment. You're not asking politicians to be better people. You're just making "fund health research" and "advance career" point in the same direction.
+
+#### A General Governance Tool
+
+The IAB architecture, with its scoring, electoral support, and post-office benefits, isn't specific to health. The same template works for any global coordination problem: climate change, nuclear disarmament, pandemic preparedness. The 1% Treaty is the proof of concept. If it works, the mechanism becomes available for every problem where humanity's long-term survival depends on politicians doing the right thing.

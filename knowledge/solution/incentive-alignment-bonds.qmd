@@ -1,10 +1,18 @@
 ---
 title: Incentive Alignment Bonds
-description: How to bribe politicians into saving lives using legal loopholes and their own greed
+description: A new financial instrument for aligning political incentives with public goods
 published: true
 tags:
   - financial-instruments
+  - mechanism-design
+  - governance-innovation
 ---
+
+::: {.callout-note}
+## A Novel Approach to Political Economy
+
+Incentive Alignment Bonds represent a new class of financial instrument, distinct from Social Impact Bonds, lobbying, or campaign finance, designed to systematically align politicians' career incentives with measurable public goods. The three-layer architecture described here (scoring, electoral support, post-office benefits) provides a legal template that could apply to any global coordination problem: climate change, nuclear disarmament, pandemic preparedness, and beyond.
+:::
 
 Here's a fun puzzle: You know how to save millions of lives. You can measure exactly how many. You have the money. And governments still don't do it.
 
@@ -70,10 +78,15 @@ This is the job of **Incentive Alignment Bonds**. It's bribery, except legal, tr
 
 ### 3. Definition: What Are Incentive Alignment Bonds?
 
-Incentive Alignment Bonds (IABs) are financial instruments designed to:
+Incentive Alignment Bonds (IABs) are a new class of financial instruments designed to:
 
-1. **Pay out when measurable public-good outcomes improve**, and
-2. **Translate those outcomes into political, reputational, and career benefits for leaders who made them happen.**
+1. **Reward investors** with returns proportional to public-good funding achieved
+2. **Reward politicians** with electoral support and career benefits based on their voting record for public-good policies
+3. **Fund the public good itself** from the policy outcome (self-sustaining)
+
+**The key innovation:** IABs align **both** investors and politicians with public-good outcomes through a single instrument. Investors provide capital to pass the policy. Politicians get career benefits for supporting it. The policy outcome funds everything.
+
+This is mechanism design applied to governance, using the tools economists developed for auctions and markets to solve political economy problems. The insight is that politicians respond to incentives like everyone else; the question is whether those incentives point toward saving lives or toward pleasing lobbies. IABs change what the incentives point at.
 
 They are not charity. (Charity doesn't work at scale.)
 They are not lobbying. (That's already taken.)
@@ -81,11 +94,21 @@ They are not "paying politicians." (That's illegal, and also already taken.)
 
 They are:
 
-> **A way to make governments cooperate by appealing to the only thing public choice theory says they respond to: naked self-interest.**
+> **A way to make investors and politicians cooperate on public goods by appealing to the only thing they respond to: self-interest.**
 
-Think of them as:
+#### How IABs Differ from Social Impact Bonds
 
-* **Social impact bonds**, but aimed at national public goods instead of whether one city's recidivism rate dropped 3%.
+| | Social Impact Bonds | Incentive Alignment Bonds |
+|:--|:--|:--|
+| **Who's rewarded** | Service providers (nonprofits) | Politicians AND investors |
+| **What's measured** | Service delivery outcomes | Policy adoption and funding flows |
+| **Attribution** | Easy (one provider, one program) | Based on votes and $ contributed |
+| **Scale** | City/program level | National/global |
+| **Funding source** | External (government pays for outcomes) | Self-funding (policy outcome funds returns) |
+
+Think of IABs as:
+
+* **Social impact bonds**, but rewarding politicians and investors instead of service providers.
 * **Advance Market Commitments**, but aimed at policies instead of vaccines.
 * **Bribery**, but legal, transparent, and aimed at reducing human suffering instead of increasing it.
 
@@ -100,19 +123,20 @@ Let’s walk through the basic structure in four steps.
 You choose an outcome that:
 
 * Is **measurable** with agreed methods.
-* Is **causally linked** to specific policies.
+* Is **directly attributable** to policy actions.
 * Matters at scale.
 
-Examples:
+The key insight: **measure funding flows, not downstream health outcomes.** Health benefits are global and diffuse - you can't attribute a cure discovered via dFDA to any specific country's funding. But you CAN measure:
 
-* Reduction in age-standardized mortality from cardiovascular disease.
-* Years of life saved by earlier access to effective treatments.
-* Reduction in excess mortality from pandemics.
-* DALYs averted by faster access to cancer drugs.
+* % of military spending redirected to the DIH treasury
+* Total $ contributed by each country
+* Politician votes on treaty passage/expansion
 
-For the 1% Treaty, an obvious candidate is:
+For the 1% Treaty, the measurable outcomes are:
 
-> **DALYs averted or QALYs gained** due to earlier access to cures enabled by pragmatic trials funded from the 1% reallocation.
+> **$ flowing to the DIH treasury** and **% of military spending redirected** - not health outcomes, which are global and unattributable.
+
+Health improvements are the *justification* for the policy. Funding flows are the *metric* for scoring, because they're what politicians can actually control and be held accountable for.
 
 #### Step 2: Raise Capital
 
@@ -311,15 +335,15 @@ The IAB system makes each of these terms a function of the politician's **Public
 
 #### The Public Good Score
 
-Each politician gets a score based on their votes and their jurisdiction's outcomes:
+Each politician gets a score based on their **voting record** :
 
 $$
-\text{Score}_i = w_1 \cdot \text{VoteRecord}_i + w_2 \cdot \text{HealthOutcomes}_i
+\text{Score}_i = \text{VoteRecord}_i
 $$
 
 Where:
 
-**VoteRecord** (0-100) measures how a politician voted on bills that affect our primary metrics:
+**VoteRecord** (0-100) measures how a politician voted on bills that affect funding flows:
 
 | Bill Type | Yes Vote | No Vote |
 |:----------|:---------|:--------|
@@ -329,13 +353,7 @@ Where:
 | Cut DIH funding or % | -20 points | +5 points |
 | Procedural support (cloture, etc.) | +5 points | -5 points |
 
-**HealthOutcomes** (0-100) measures whether their jurisdiction actually got healthier:
 
-$$
-\text{HealthOutcomes}_i = 50 + 10 \cdot \frac{\Delta \text{DALYs}_i - \mu}{\sigma}
-$$
-
-Translation: You start at 50. If your state's health improved more than average, you go up. If it improved less, you go down. The scale is normalized so most scores fall between 30-70.
 
 #### How Score Translates to Utility
 
@@ -519,75 +537,16 @@ Except it's not, for four reasons that matter to lawyers:
    * This is how representative democracy is supposed to work: leaders benefit when their constituents benefit.
    * The mechanism just makes the connection visible and systematic.
 
-4. **Outcomes must be objectively verified.**
-   * An independent "impact oracle" measures improvements using transparent data.
-   * Scores depend on real, audited progress, not press releases.
+4. **Scores are based on public voting records.**
+   * No "impact oracle" needed - just public voting records from official government sources.
+   * Did the politician vote YES on treaty funding? That's verifiable, ungameable, and directly attributable.
+   * The 10% political incentive fund flows automatically based on treasury inflows - pure math, no discretion.
 
 Bribery **corrupts** alignment. ("Here's money to screw the public.")
 IABs **create** alignment. ("Support policies that save lives and your career benefits.")
 
 ---
 
-### 5a. Impact Oracle Governance: Who Decides If You Actually Saved Lives?
-
-"Independent impact oracle" sounds like something from a fantasy novel or a crypto whitepaper. This section makes it concrete enough that skeptical economists stop rolling their eyes.
-
-The impact oracle determines whether a country actually achieved health improvements or just claimed to. If the oracle can be captured, corrupted, or politically influenced, the entire mechanism collapses into the same mess as everything else humans have tried.
-
-Here's how to make it robust enough that gaming it costs more than just doing the right thing:
-
-#### Structure: Federated Verification
-
-No single organization should have sole authority to verify outcomes. Instead, use a federated model:
-
-1. **Multiple independent assessors** (at least three) must agree before a payout is triggered
-2. **Diverse institutional types**: academic institutions, multilateral organizations, commercial auditors
-3. **Geographic diversity**: assessors should span different regions to reduce political capture
-4. **Rotating membership**: no assessor serves more than 5 consecutive years
-
-Example federation for health metrics:
-* Institute for Health Metrics and Evaluation (IHME)
-* Lancet Commission on Health Metrics
-* WHO Statistical Division
-* One rotating commercial auditor (PwC, Deloitte, etc.)
-
-Payout requires: 3 of 4 assessors agree outcomes met threshold.
-
-#### Metrics: Hard to Manipulate
-
-The oracle measures outcomes, not inputs or promises. Preferred metrics:
-
-| Metric | Why It's Hard to Game |
-|:-------|:----------------------|
-| All-cause mortality (age-standardized) | Requires falsifying death certificates at scale. Possible but expensive. |
-| Cause-specific DALYs (GBD methodology) | Cross-validated by multiple data sources. Would need to corrupt several independent institutions simultaneously. |
-| Excess mortality vs counterfactual | Computed from population-level data. Can't hide bodies. |
-| Trial enrollment and completion rates | Verified by independent trial registries. Patients notice if they didn't actually enroll. |
-
-Metrics to avoid (too gameable):
-* Self-reported health status (people lie)
-* "Access to care" definitions (bureaucrats can redefine anything)
-* Policy adoption announcements (signing a document isn't the same as saving lives)
-
-#### Pre-Registration and Transparency
-
-All assessment methods must be:
-* **Pre-registered** before any country begins implementation
-* **Published** in full methodological detail
-* **Versioned** with change logs if adjustments are needed
-* **Open to challenge** via a formal dispute resolution process
-
-If an assessor deviates from pre-registered methodology without documented justification, their assessment is excluded.
-
-#### Dispute Resolution
-
-When countries disagree with oracle determinations:
-
-1. **Technical appeal**: Country submits alternative data or methodology critique; independent panel reviews
-2. **Arbitration**: If technical appeal fails, binding arbitration by a neutral body (e.g., Permanent Court of Arbitration health panel)
-3. **No self-assessment**: Countries cannot assess their own outcomes, ever
-
-This structure doesn't make the oracle perfect. It makes capture expensive enough that it's not worth attempting.
 
 ---
 
@@ -791,7 +750,7 @@ You're not asking politicians to be better people. You're just making "save live
 
 ---
 
-### 11. Why 10%: The Scaling Engine
+### 11. Why 10%: The Scaling Engine {#sec-why-ten-pct-scaling-engine}
 
 You might wonder: Why dedicate {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) to political incentives? Isn't that money that could go to research?
 
@@ -878,4 +837,133 @@ The question isn't "Is 10% too much?"
 The question is: "Is 10% enough to sustain political momentum through the inevitable backlash as military budgets face real cuts?"
 
 Probably. But if anything, 10% might be conservative for what we're trying to accomplish.
+
+---
+
+### 12. Beyond the 1% Treaty: IABs as a General Governance Tool
+
+The 1% Treaty is the first application of Incentive Alignment Bonds. It doesn't have to be the last.
+
+The core insight, that you can legally align politicians' self-interest with public goods by creating scoring systems, independent electoral support, and post-office career paths, applies to *any* global coordination problem where:
+
+1. **The public good is measurable** (CO₂ emissions, nuclear warheads, pandemic preparedness scores)
+2. **Politicians control the outcome** (they vote on policies, sign treaties, allocate budgets)
+3. **Benefits are diffuse and long-term** (climate stability, existential risk reduction, global health)
+4. **Costs are concentrated and immediate** (fossil fuel jobs, military contracts, pharmaceutical lobbying)
+
+That describes most of the problems that could end civilization.
+
+#### Climate Change
+
+**The problem:** Politicians know what to do (reduce emissions). They don't do it because fossil fuel lobbies are concentrated and voters won't reward them for costs paid today that benefit people in 2070.
+
+**IAB solution:**
+- **Metric:** Verified emissions reductions (already measured by UNFCCC)
+- **Scoring:** Politicians who vote for aggressive climate policy get higher Climate Good Scores
+- **Electoral layer:** Climate PACs commit to $X million in independent support for high-scorers
+- **Post-office layer:** Climate fellowships, green advisory boards, clean energy foundation positions reserved for former leaders with threshold scores
+
+The math changes. "Vote for emissions cuts" stops being a career risk and becomes a career strategy.
+
+#### Nuclear Disarmament
+
+**The problem:** Everyone agrees fewer nukes would be good. No politician wants to be the one who "weakened deterrence." The incentives favor maintaining 5,000+ warheads indefinitely.
+
+**IAB solution:**
+- **Metric:** Verified warhead reductions (already tracked by START treaties)
+- **Scoring:** Politicians who support arms reduction get higher Nuclear Safety Scores
+- **Electoral layer:** Peace PACs back high-scorers in contested races
+- **Post-office layer:** Arms control advisory positions, Nobel Peace Prize committee visibility, prestigious security fellowships for leaders who governed during verified reductions
+
+Suddenly "I reduced our nuclear arsenal" becomes a *positive* legacy instead of an attack ad waiting to happen.
+
+#### Pandemic Preparedness
+
+**The problem:** Pandemics are rare but catastrophic. Politicians have no incentive to invest in preparedness because the benefits arrive (as non-events) during someone else's term. COVID-19 killed millions partly because preparedness was systematically underfunded.
+
+**IAB solution:**
+- **Metric:** WHO Joint External Evaluation scores (already exist), pandemic response capacity indicators
+- **Scoring:** Politicians who fund preparedness get higher Pandemic Readiness Scores
+- **Electoral layer:** Health security PACs reward high-scorers
+- **Post-office layer:** Global health security fellowships, WHO advisory positions
+
+The same mechanism that makes voting for the 1% Treaty career-optimal makes voting for pandemic preparedness career-optimal.
+
+#### The General Template
+
+Any global public good can be IAB-ified with this structure:
+
+| Component | What It Does | Legal Form |
+|:----------|:-------------|:-----------|
+| **Metric** | Measures the outcome politicians control | 501(c)(3) research org |
+| **Score** | Translates votes/actions into a public number | Published by independent body |
+| **Electoral layer** | Rewards high-scorers with campaign support | 501(c)(4), PACs, Super PACs |
+| **Post-office layer** | Reserves prestige positions for high-scorers | Foundations, think tanks, advisory boards |
+
+The three-layer architecture (scoring, electoral, post-office) is reusable. The only thing that changes is the metric.
+
+#### Why This Hasn't Been Done Before
+
+If IABs are so obvious, why hasn't anyone built them?
+
+1. **Social Impact Bonds got there first, but aimed at the wrong target.** SIBs reward *service providers* for *program outcomes*. That's useful for local pilot projects. It doesn't change how politicians vote on trillion-dollar budgets. IABs flip the target: incentivize *politicians* directly.
+
+2. **The three-layer architecture is legally subtle.** You can't just pay politicians; that's bribery. The separation into scoring (data), electoral (independent campaigns), and post-office (eligibility rules) is what makes it legal. Most people proposing "better incentives" haven't worked through the legal structure.
+
+3. **Mechanism design for governance is new.** Economists have been designing mechanisms for auctions, markets, and matching for decades. Applying the same rigor to political incentives is more recent. Political science studies institutions; it rarely *designs* them.
+
+4. **No one's tried it yet.** Many innovations seem obvious in retrospect. Before credit ratings, people thought "you can't just *rate* sovereign debt." Before carbon markets, people thought "you can't *trade* pollution." IABs are at the "this might be crazy" stage that precedes "obviously we should have done this earlier."
+
+#### The Bigger Picture
+
+Incentive Alignment Bonds are not a complete solution to global governance. They're a **tool**, one that can be combined with treaties, international institutions, citizen movements, and other mechanisms.
+
+But they fill a gap that nothing else fills: **systematic, legal, transparent incentives for politicians to support policies with diffuse benefits and concentrated costs.**
+
+The 1% Treaty is the proof of concept. If it works, if we can show that IABs actually change political behavior at scale, the same architecture becomes available for climate, nuclear risk, pandemic preparedness, and every other problem where human extinction is possible but boring.
+
+We're not just building a mechanism to fund medical research. We're building a template for making politicians care about humanity's long-term survival.
+
+That's worth getting right.
+
+---
+
+### 13. Summary: What IABs Actually Are
+
+Incentive Alignment Bonds are a new class of financial instrument designed to solve a problem as old as governance: **politicians optimize for reelection and post-office careers, not for humanity's long-term welfare.**
+
+IABs don't try to change human nature. They redirect it.
+
+**The core innovation:**
+
+> Create scoring systems, electoral support mechanisms, and post-office career paths that make supporting public-good policies the personally optimal choice for politicians, without paying anyone directly.
+
+**How they differ from existing instruments:**
+
+| Instrument | Who's Incentivized | Scope | IAB Advantage |
+|:-----------|:-------------------|:------|:--------------|
+| Social Impact Bonds | Service providers | Local programs | IABs target politicians at scale |
+| Lobbying | Politicians (via access) | Narrow interests | IABs align with measurable public goods |
+| Campaign finance | Candidates | Individual races | IABs create universal, ex-ante rules |
+| Treaties | Governments | Commitments | IABs provide enforcement mechanism |
+
+**Why they matter:**
+
+1. **They solve the political economy problem.** Good policies die because concentrated losers lobby harder than diffuse beneficiaries. IABs concentrate benefits on politicians who support good policies.
+
+2. **They're legal.** The three-layer architecture (scoring, electoral, post-office) avoids bribery law by rewarding policy *classes*, not specific votes, through independent actors, with no money flowing to officials.
+
+3. **They scale.** Start with one treaty, one country. Success creates FOMO. Other countries copy. The mechanism spreads.
+
+4. **They're self-reinforcing.** Each success (1% → 2% → 5%) increases IAB funding, which increases political incentives, which drives the next expansion.
+
+5. **They generalize.** The same architecture works for climate, nuclear risk, pandemic preparedness, and any global coordination problem with measurable outcomes.
+
+**The bottom line:**
+
+We've known for decades that ending war and disease is technically feasible. The constraint is political will. IABs don't create political will out of nothing; they make it the path of least resistance.
+
+You're not asking politicians to be saints. You're just making "save millions of lives" and "advance my career" point in the same direction.
+
+The rest is just self-interest doing what self-interest does.
 

@@ -146,6 +146,49 @@ The intervention remains economically justified even assuming a 99% chance of fa
 2. Even the expected value at {{< var political_success_probability >}} success beats the best alternative by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
 3. The downside is capped at campaign cost (~$1B), while upside is unbounded
 
+## Why The Treaty Won't Stop at 1%
+
+Most international commitments stagnate after initial signing. The table above shows 0.7% ODA targets unmet for 50+ years, Kyoto Protocol abandoned, Paris Agreement goals missed. Why expect different from a 1% health treaty?
+
+**Because we've built a scaling engine into the mechanism.**
+
+The [80/10/10 funding structure](../solution/incentive-alignment-bonds.qmd) allocates {{< var iab_political_incentive_funding_pct >}}% of treaty funding ($2.7B/year at 1%) to [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) - securities that pay out when treaties *expand*, not just maintain.
+
+### The Expansion Mechanism
+
+| Treaty Level | Annual IAB Pool | Political Pressure | Historical Comparison |
+|:-------------|:----------------|:-------------------|:---------------------|
+| 1% | $2.7B/year | Strong | 10× largest NGO budgets |
+| 2% | $5.4B/year | Very strong | Nation-state level |
+| 5% | $13.5B/year | Overwhelming | Major industry lobby |
+| 10% | $27B/year | Unstoppable | No precedent |
+
+### Why This Differs from Stagnant Treaties
+
+**0.7% ODA failed** because there was no financial mechanism incentivizing expansion. The NGOs pushing for compliance have small budgets and compete with each other.
+
+**The 1% health treaty creates its own expansion lobby** - bond holders who profit when the treaty expands to 2%, then 5%, then 10%. These aren't activists who can be ignored. They're investors with returns tied to treaty growth.
+
+### The Ratchet Effect
+
+Once 1% passes:
+1. **$2.7B/year** flows to IAB holders pushing for 2%
+2. When 2% passes → **$5.4B/year** pushing for 5%  
+3. When 5% passes → **$13.5B/year** pushing for 10%
+4. The political pressure for expansion *accelerates* with each success
+
+This is the opposite of typical treaties where political momentum fades after signing. The IAB mechanism ensures that the constituency for expansion *grows* rather than shrinks over time.
+
+### Long-Term Feasibility
+
+The $90M campaign gets the 1% treaty signed. But the real question isn't "Can we get 1%?" - it's "Can we eventually redirect most military spending to health?"
+
+With IABs: Yes. The 10% allocation creates a perpetual political engine that makes expansion inevitable once the initial treaty passes. Each percentage point adds more fuel to the engine.
+
+Without IABs: Probably not. We'd join the long list of international commitments that achieved initial success but stagnated because there was no mechanism to sustain political pressure for expansion.
+
+**The $90M buys more than a 1% treaty - it buys the seed of a scaling mechanism that can eventually unlock $2.7 trillion/year.**
+
 ## Sources
 
 For detailed citations and source documentation, see [References](../references.qmd):

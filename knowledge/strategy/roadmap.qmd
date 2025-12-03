@@ -78,3 +78,38 @@ You now know the exact sequence:
 It's not complicated. You're just bribing everyone in the correct order with the correct amounts.
 
 Like a recipe, except instead of making bread, you're ending war and disease. And instead of yeast, it's greed.
+
+## Phase 4+: The Expansion Phases (Years 4-50)
+
+The 1% treaty is just the beginning. The real goal is eventually redirecting *most* military spending to health.
+
+### Why Expansion Is Built Into The System
+
+The [80/10/10 funding allocation](../solution/incentive-alignment-bonds.qmd#sec-why-ten-pct-scaling-engine) includes {{< var iab_political_incentive_funding_pct >}} for political incentives via [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). This isn't a fixed cost - it's a **scaling engine**.
+
+As treaty percentage increases, IAB funding scales proportionally:
+
+| Phase | Year | Treaty % | Political Incentive Pool | What Happens |
+|:------|:-----|:---------|:------------------------|:-------------|
+| 3 | 1-3 | 1% | $2.7B/year | Treaty passes, cures begin |
+| 4 | 4-7 | 2% | $5.4B/year | Politicians compete to expand |
+| 5 | 8-12 | 5% | $13.5B/year | Defense lobby can't compete |
+| 6 | 13-20 | 10% | $27B/year | War becomes economically obsolete |
+| 7 | 21-35 | 25% | $67.5B/year | Superpowers compete on health outcomes |
+| 8 | 36-50 | 50%+ | $135B+/year | Full transformation |
+
+### The Key Insight
+
+**VICTORY Bond investors** are satisfied at 1%. They get their {{< var victory_bond_annual_return_pct >}} returns regardless of expansion.
+
+**Politicians** see their [IAB-funded rewards](../solution/incentive-alignment-bonds.qmd) grow with each expansion. By Phase 6, the political incentive pool ($27B/year) exceeds all current global lobbying combined. "Support health spending" becomes the single most rewarded political position on Earth.
+
+### The Endgame
+
+By 2075, the math becomes irresistible:
+- $1.35+ trillion flows to health annually
+- $135+ billion funds political incentives (more than all lobbying ever)
+- $1.08+ trillion funds actual research
+- War is economically obsolete
+
+The 1% treaty isn't the goal. It's the proof of concept. The IAB mechanism ensures the system keeps ratcheting upward until military spending is a historical curiosity, like jousting or the telegraph.

@@ -23,21 +23,19 @@ Remember when your grandparents funded WW2 by buying war bonds? They gave the go
 You're doing the same thing, except instead of buying bonds to kill Nazis, you're buying bonds to kill diseases. It's like war bonds but backwards.
 
 ::: {.callout-note}
-## How This Relates to Incentive Alignment Bonds
+## VICTORY Bonds Are Incentive Alignment Bonds
 
-VICTORY Bonds are the **investor-facing** half of our incentive system. They solve the capital problem: "How do we raise $1B to fund the campaign?"
+[Incentive Alignment Bonds (IABs)](../solution/incentive-alignment-bonds.qmd) are financial instruments that pay out when measurable public-good outcomes improve, translating those outcomes into benefits for the people who made them happen.
 
-[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are the **politician-facing** half. They solve the political problem: "How do we make politicians actually support and maintain the treaty?"
+**VICTORY Bonds are a specific IAB** designed to fund and sustain the 1% treaty. They align three stakeholder types with a single instrument:
 
-The {{< var treaty_annual_funding >}} annual treaty revenue is split three ways:
-
-| Allocation | Share | Annual Amount |
+| Stakeholder | What They Get | Funding Source |
 |------------|-------|---------------|
-| VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} |
-| [IAB political incentives](../solution/incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} |
-| DIH medical research | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} |
+| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
+| **Politicians** | Reputation, electoral support, better careers | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
+| **Patients** | Subsidized trial participation, cures | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
 
-VICTORY Bonds pay investors. IABs fund political incentives. The rest cures diseases. Everyone's self-interest aligns with not dying.
+Investors fund the campaign. Politicians get career benefits for supporting it. Patients get cures. Everyone's self-interest points at the same outcome: pass the treaty, expand it, cure diseases.
 :::
 
 ## What You're Actually Building

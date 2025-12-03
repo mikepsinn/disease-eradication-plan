@@ -392,47 +392,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### A Decentralized Framework for Drug Assessment (dFDA)
 
-**Amazon for Clinical Trials + Consumer Reports for Drugs**
-
-[Your dFDA](knowledge/solution/dfda.qmd) achieves **{{< var trial_cost_reduction_factor >}}x cost reduction** through decentralized pragmatic trials.
-Patients can search treatments ranked by real-world effectiveness and join trials with one click.
-
-#### Treatment Rankings
-
-Consumer Reports for Drugs
-
-**Current system:** Your doctor picks treatments based on:
-
-- That drug rep who brought good donuts in 2003
-- Something they half-remember from medical school
-- Whatever the insurance company allows
-- Vibes
-
-[dFDA system](knowledge/solution/dfda.qmd): Type your condition, see every [treatment ranked by real-world effectiveness](knowledge/solution/dfda.qmd):
-
-![Treatment Rankings Example](assets/dfda-comparative-effectiveness-ranking-search.png)
-
-##### Outcome Labels
-
-*Nutrition Facts for Drugs*
-
-Food has nutrition labels.
-Cigarettes have warning labels.
-Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
-
-[Your dFDA](knowledge/solution/dfda.qmd) fixes that with **[Outcome Labels](knowledge/solution/dfda.qmd)** - simple, data-driven summaries showing exactly what happens when real people try a treatment:
-
-![Outcome Labels Example](assets/dfda-outcome-labels.png)
-
-Based on thousands of real patients, you see:
-
-- **Cognitive Improvements**: Memory +35%, Executive Function +22%
-- **Side Effects**: Headache +9%, Fatigue +7%
-- **The Truth**: Not marketing claims, actual measured effects from real humans
-
-No more pharmaceutical fan fiction.
-No more lawyers writing medical advice during fever dreams.
-Just cold, hard data about whether this chemical makes your meat work better or worse.
+{{< include knowledge/includes/dfda-overview.qmd >}}
 
 ## Why This Actually Works
 
@@ -581,6 +541,12 @@ The conversation goes:
 - Politician: "I've always been very passionate about helping sick people!" (they discovered this passion approximately 3 seconds ago)
 
 It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
+
+But Super PACs alone aren't enough. You need a system that makes supporting the treaty the best career move a politician can make - not just today, but forever.
+
+#### Incentive Alignment Bonds
+
+{{< include knowledge/includes/incentive-alignment-bonds-overview.qmd >}}
 
 ### Step 5: Enjoy
 

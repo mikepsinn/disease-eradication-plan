@@ -397,15 +397,25 @@ The key insight: **IAB funding scales with treaty size.**
 | 50% | {{< var victory_bond_annual_return_pct >}} (fixed) | $135B/year |
 | 100% | {{< var victory_bond_annual_return_pct >}} (fixed) | $270B/year |
 
-VICTORY Bond investors are satisfied at 1%. IAB-funded political incentives **grow with each expansion**, creating a ratchet that only moves in one direction.
+Investor returns are fixed at {{< var victory_bond_annual_return_pct >}}. But political incentive funding **grows with each expansion**, creating a ratchet that only moves in one direction.
 
-### Why Both Are Necessary
+### VICTORY Impact Alignment Bonds
 
-**Without VICTORY Bonds**: No funding for the initial campaign. The treaty never passes.
+**Without VICTORY Impact Alignment Bonds**: No funding for the initial campaign. The treaty never passes.
 
-**Without IABs**: The treaty passes but stalls at 1-2%. Politicians move on, defense lobby regroups, expansion never happens. The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
+Even if it the treaty does pass. It stalls at 1-2%. Politicians move on, defense lobby regroups, expansion never happens. The 1% treaty becomes like the Paris Agreement: a nice symbol that everyone ignores.
 
-**With both**: Initial funding secures the 1% victory. Then IABs create compounding political pressure that drives expansion for decades. Every politician has career-long incentives to maximize health spending. The defense industry eventually pivots entirely to health because that's where the political rewards are.
+**With VICTORY Impact Alignment Bond**: Initial funding secures the 1% victory. Then IABs create compounding political pressure that drives expansion for decades. Every politician has career-long incentives to maximize health spending. The defense industry eventually pivots entirely to health because that's where the political rewards are
+
+[VICTORY Bonds](/knowledge/economics/victory-bonds.qmd) are a specific [Incentive Alignment Bond](/knowledge/solution/incentive-alignment-bonds.qmd) - a single instrument that aligns all three stakeholder types:
+
+| Stakeholder | What They Get | Funding Source |
+|:--|:--------------|:--------------------------|
+| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
+| **Politicians** | Electoral support, career benefits | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
+| **Patients** | Subsidized trials, cures | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
+
+The 80/10/10 split is baked into the instrument. Investors fund the campaign. Politicians get career benefits for supporting it (scored on voting records, not health outcomes - because health benefits are global and can't be attributed to any country). Patients get cures. Everyone's self-interest points at the same outcome: expand treaty funding.
 
 ### The Endgame
 
