@@ -40,7 +40,7 @@ The result is a systematic distortion of democratic governance. The U.S. Constit
 
 Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero; whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
 
-![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at approximately 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from Gilens and Page (2014) analysis of 1,779 policy decisions.](../../assets/voter-support-vs-law-passage.png){#fig-policy-influence}
+![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at approximately 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from Gilens and Page (2014) analysis of 1,779 policy decisions.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
 This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or hoping for philosopher-kings, IABs change what rational self-interest points at.
 
@@ -475,44 +475,7 @@ This calibration suggests that IAB funding levels in the billions can overcome c
 
 The formal model requires mechanisms to operationalize score-dependent payoffs. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
 
-```{mermaid}
-graph TD
-    subgraph "The Vicious Cycle (Status Quo)"
-    Taxpayers((Taxpayers)) -->|$| Gov[Government Budget]
-    Gov -->|Funding| Harm[Harmful/Wasteful Programs]
-    Harm -->|Profits| Incumbents[Concentrated Interests]
-    Incumbents -->|Lobbying/Donations| Pols[Politicians]
-    Pols -->|Votes| Gov
-    end
-
-    subgraph "The IAB Intervention"
-    IAB[Incentive Alignment Bond] -->|Redirects %| Harm
-    Harm -.->|Reallocated Funds| IAB_Flows{IAB Capital Flow}
-    
-    IAB_Flows -->|80%| PublicGood[Public Good\n(e.g., Cures)]
-    IAB_Flows -->|10%| Investors[Investor Returns]
-    IAB_Flows -->|10%| PolIncentives[Political Incentives]
-    
-    PolIncentives --> Layer1[Scoring Layer\n(Data/501c3)]
-    PolIncentives --> Layer2[Electoral Layer\n(Super PACs)]
-    PolIncentives --> Layer3[Post-Office Layer\n(Foundations)]
-    
-    Layer1 -->|Score| Pols2[Politicians]
-    Layer2 -->|Support| Pols2
-    Layer3 -->|Jobs| Pols2
-    
-    Pols2 -->|Votes for Treaty| IAB
-    Investors -->|Campaign Funding| Pols2
-    end
-    
-    classDef money fill:#85bb65,stroke:#333,stroke-width:2px;
-    classDef harm fill:#ff9999,stroke:#333,stroke-width:2px;
-    classDef good fill:#99ccff,stroke:#333,stroke-width:2px;
-    
-    class IAB_Flows,Investors,PolIncentives money;
-    class Harm,Incumbents harm;
-    class PublicGood good;
-```
+{{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
 
 ### Layer A: Scoring (Data Provision)
 
