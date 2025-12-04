@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 # Add scripts directory to path for local imports
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from lib.llm import generate_claude_sonnet_content, generate_gemini_flash_content
+from lib.llm import generate_gemini_pro_content, generate_gemini_flash_content
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
 
 # Load environment variables
@@ -191,8 +191,8 @@ Example output format:
 Return ONLY the JSON array, no markdown formatting or explanation."""
 
     try:
-        # Use Claude Sonnet for better writing quality
-        response = generate_claude_sonnet_content(prompt)
+        # Use Gemini Pro for better writing quality
+        response = generate_gemini_pro_content(prompt)
 
         # Clean up response
         response = response.strip()
@@ -323,7 +323,9 @@ def replace_video_audio(video_path: pathlib.Path, audio_path: pathlib.Path, outp
 
 def process_video_with_style_transfer(video_path: pathlib.Path, output_dir: pathlib.Path):
     """
-    Full pipeline: transcribe -> improve style -> generate TTS -> replace audio.
+    Full pipeline: 
+    1. First create version with cuts/trim/watermark/icon ending
+    2. Then transcribe -> improve style -> generate TTS -> replace audio on that version.
 
     Args:
         video_path: Path to the input video
@@ -331,28 +333,51 @@ def process_video_with_style_transfer(video_path: pathlib.Path, output_dir: path
     """
     stem = video_path.stem
 
-    # Step 1: Transcribe
-    print(f"\n[1/5] Transcribing {video_path.name}...")
+    # Step 1: Create intermediate video with cuts, trim, watermark, and icon ending
+    print(f"\n[1/7] Creating intermediate video with cuts, trim, watermark, and icon ending...")
     transcript_result = transcribe_video(video_path)
+    transcript_text = transcript_result["text"]
+
+    # Save raw transcript for reference
+    transcript_path = output_dir / f"{stem}_transcript.txt"
+    with open(transcript_path, "w", encoding="utf-8") as f:
+        f.write(transcript_text)
+
+    # Save timestamped transcript
+    timestamped_transcript_path = output_dir / f"{stem}_transcript_with_timestamps.txt"
+    save_timestamped_transcript(transcript_result, timestamped_transcript_path)
+
+    # Get cuts from Gemini
+    cuts = get_cuts_from_gemini(transcript_text)
+    print(f"Proposed cuts: {cuts}")
+
+    # Create intermediate video with cuts, trim, watermark, and icon
+    intermediate_video_path = output_dir / f"{stem}_intermediate.mp4"
+    edit_video(video_path, cuts, intermediate_video_path)
+    print(f"Intermediate video saved to {intermediate_video_path}")
+
+    # Step 2: Transcribe the intermediate video
+    print(f"\n[2/7] Transcribing intermediate video...")
+    intermediate_transcript_result = transcribe_video(intermediate_video_path)
 
     # Save original transcript
     original_transcript_path = output_dir / f"{stem}_original_transcript.txt"
     with open(original_transcript_path, "w", encoding="utf-8") as f:
-        for seg in transcript_result["segments"]:
+        for seg in intermediate_transcript_result["segments"]:
             f.write(f"[{seg['start']:.1f}-{seg['end']:.1f}] {seg['text'].strip()}\n")
     print(f"Original transcript saved to {original_transcript_path}")
 
-    # Step 2: Load style reference
-    print(f"\n[2/5] Loading style reference...")
+    # Step 3: Load style reference
+    print(f"\n[3/7] Loading style reference...")
     style_reference = load_style_reference()
     if not style_reference:
         print("No style reference found, skipping style transfer")
         return
 
-    # Step 3: Improve transcript with LLM
-    print(f"\n[3/5] Improving transcript style with LLM...")
+    # Step 4: Improve transcript with LLM
+    print(f"\n[4/7] Improving transcript style with LLM...")
     improved_segments = improve_transcript_with_llm(
-        transcript_result["segments"],
+        intermediate_transcript_result["segments"],
         style_reference
     )
 
@@ -363,8 +388,8 @@ def process_video_with_style_transfer(video_path: pathlib.Path, output_dir: path
             f.write(f"[{seg['start']:.1f}-{seg['end']:.1f}] {seg['text'].strip()}\n")
     print(f"Improved transcript saved to {improved_transcript_path}")
 
-    # Step 4: Generate TTS audio
-    print(f"\n[4/5] Generating TTS audio...")
+    # Step 5: Generate TTS audio
+    print(f"\n[5/7] Generating TTS audio...")
     audio_path = output_dir / f"{stem}_tts_audio"
     generated_audio = generate_tts_audio(improved_segments, audio_path)
 
@@ -372,12 +397,14 @@ def process_video_with_style_transfer(video_path: pathlib.Path, output_dir: path
         print("Failed to generate TTS audio, aborting")
         return
 
-    # Step 5: Replace audio in video
-    print(f"\n[5/5] Replacing video audio...")
+    # Step 6: Replace audio in intermediate video
+    print(f"\n[6/7] Replacing audio in intermediate video...")
     output_video_path = output_dir / f"{stem}_restyled.mp4"
-    replace_video_audio(video_path, generated_audio, output_video_path)
+    replace_video_audio(intermediate_video_path, generated_audio, output_video_path)
 
-    print(f"\nStyle transfer complete! Output: {output_video_path}")
+    print(f"\n[7/7] Style transfer complete!")
+    print(f"Intermediate video (with cuts/watermark/icon): {intermediate_video_path}")
+    print(f"Final video (with audio replacement): {output_video_path}")
 
 
 def get_cuts_from_gemini(transcript_text):
@@ -564,6 +591,7 @@ def edit_video(video_path, cuts, output_path):
 
 def main():
     """Main entry point - process videos with style transfer pipeline."""
+    global TTS_VOICE_NAME
     import argparse
 
     parser = argparse.ArgumentParser(description="Process videos with style transfer")
@@ -587,7 +615,6 @@ def main():
     args = parser.parse_args()
 
     # Update TTS voice if specified
-    global TTS_VOICE_NAME
     TTS_VOICE_NAME = args.voice
 
     if not VIDEOS_DIR.exists():
