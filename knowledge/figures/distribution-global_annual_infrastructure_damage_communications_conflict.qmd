@@ -1,6 +1,7 @@
 ```{python}
 #| echo: false
 #| fig-cap: "Probability Distribution: Annual Infrastructure Damage to Communications from Conflict"
+
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
@@ -26,22 +27,29 @@ unit = "USD"
 
 if dist_type == "lognormal":
     # For lognormal, we need to work in log space
+
     # Assume low/high are 5th/95th percentiles
+
     if central_value > 0 and low > 0:
         mu = np.log(central_value)
         # Estimate sigma from CI width
+
         sigma = (np.log(high) - np.log(low)) / (2 * 1.645)  # 90% CI
         sigma = max(sigma, 0.1)  # Minimum sigma
+
         x = np.linspace(max(0.01, low * 0.5), high * 1.5, 500)
         y = stats.lognorm.pdf(x, s=sigma, scale=np.exp(mu))
     else:
         # Fall back to normal if values aren't positive
+
         dist_type = "normal"
 
 if dist_type == "normal":
     # Estimate sigma from CI width (assuming 95% CI)
+
     sigma = (high - low) / (2 * 1.96)
     sigma = max(sigma, abs(central_value) * 0.01)  # Minimum 1% of value
+
     x = np.linspace(low - sigma, high + sigma, 500)
     y = stats.norm.pdf(x, loc=central_value, scale=sigma)
 
@@ -51,22 +59,28 @@ elif dist_type == "uniform":
 
 elif dist_type == "triangular":
     # Triangular with mode at central value
+
     x = np.linspace(low * 0.9, high * 1.1, 500)
     y = stats.triang.pdf(x, c=(central_value - low) / (high - low), loc=low, scale=high - low)
 
 elif dist_type == "beta":
     # Beta distribution scaled to [low, high]
+
     # Use alpha=2, beta=2 for symmetric bell shape
+
     x_norm = np.linspace(0, 1, 500)
     x = low + x_norm * (high - low)
     y = stats.beta.pdf(x_norm, a=2, b=2) / (high - low)
 
 elif dist_type == "pert":
     # PERT is a special case of beta
+
     # Mode = central_value, min = low, max = high
+
     range_val = high - low
     if range_val > 0:
         # PERT uses alpha = 1 + 4*(mode-min)/(max-min), beta = 1 + 4*(max-mode)/(max-min)
+
         mode_ratio = (central_value - low) / range_val
         alpha = 1 + 4 * mode_ratio
         beta_param = 1 + 4 * (1 - mode_ratio)

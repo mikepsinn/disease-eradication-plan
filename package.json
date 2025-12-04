@@ -110,7 +110,8 @@
     "voltagent:build": "tsdown",
     "voltagent:start": "node dist/index.js",
     "voltagent": "volt",
-    "volt": "volt"
+    "volt": "volt",
+    "download:notebooklm": "tsx scripts/download-notebooklm-files.ts"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

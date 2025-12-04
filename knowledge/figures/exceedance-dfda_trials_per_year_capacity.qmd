@@ -1,6 +1,7 @@
 ```{python}
 #| echo: false
 #| fig-cap: "Probability of Exceeding Threshold: dFDA Maximum Trials per Year"
+
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -46,6 +47,7 @@ for thresh in thresholds:
     ax.axhline(exceed_pct, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.3)
 
     # Add label with formatted threshold value (use format_parameter_value for full units)
+
     ax.annotate(f'{exceed_pct:.0f}% chance\n≥ {format_parameter_value(thresh, units)}',
                 xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
                 fontsize=10, ha='left', weight='bold',

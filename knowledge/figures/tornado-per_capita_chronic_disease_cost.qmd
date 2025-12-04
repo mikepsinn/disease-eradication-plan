@@ -1,5 +1,6 @@
 ```{python}
 #| echo: false
+
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -45,11 +46,13 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
     width_high = max(low, high) - baseline if max(low, high) > baseline else 0
 
     # White bar for range below baseline
+
     if width_low > 0:
         ax.barh(i, width_low, left=left,
                 color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
 
     # Black bar for range above baseline
+
     if width_high > 0:
         ax.barh(i, width_high, left=baseline,
                 color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)

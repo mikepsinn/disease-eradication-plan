@@ -1,6 +1,7 @@
 ```{python}
 #| echo: false
 #| fig-cap: "Monte Carlo Distribution: US Per Capita Mental Health Cost (10,000 simulations)"
+
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
@@ -31,6 +32,7 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 fig.subplots_adjust(wspace=0.3)
 
 # --- Left: Histogram ---
+
 # Handle edge case where all samples are identical (zero variance)
 
 if std == 0 or (max(samples) == min(samples)):

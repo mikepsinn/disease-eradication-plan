@@ -1,6 +1,6 @@
 ---
-title: Parameters and Calculations Reference
-subtitle: Comprehensive Documentation of Economic Model Variables
+title: "Parameters and Calculations Reference"
+subtitle: "Comprehensive Documentation of Economic Model Variables"
 format:
   html:
     toc: true
@@ -19,2341 +19,10 @@ This appendix provides comprehensive documentation of all parameters and calcula
 - Calculated values: 99
 - Core definitions: 84
 
-## External Data Sources {#sec-external}
-
-Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
-
-::: {.callout-tip icon=false collapse=false}
-### Antidepressant Trial Exclusion Rate {#sec-antidepressant_trial_exclusion_rate}
-
-**Value**: 86.1%
-
-Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
-
-**Source**: [antidepressant-trial-exclusion-rates](../references.qmd#antidepressant-trial-exclusion-rates)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average Annual Stock Market Return {#sec-average_market_return_pct}
-
-**Value**: 10%
-
-Average annual stock market return (10%)
-
-**Source**: [warren-buffett-career-average-return-20-pct](../references.qmd#warren-buffett-career-average-return-20-pct)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average US Hourly Wage {#sec-average_us_hourly_wage}
-
-**Value**: $30
-
-Average US hourly wage
-
-**Source**: [average-us-hourly-wage](../references.qmd#average-us-hourly-wage)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Baseline Annual Lives Saved by Pharmaceuticals {#sec-baseline_lives_saved_annual}
-
-**Value**: 12
-
-Baseline annual lives saved by pharmaceuticals (conservative aggregate)
-
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
-
-*~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Bed Nets Cost per DALY {#sec-bed_nets_cost_per_daly}
-
-**Value**: $89
-
-GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)
-
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$78, $100] • Distribution: Normal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average Reading Speed {#sec-book_reading_speed_wpm}
-
-**Value**: 200
-
-Average reading speed (conservative for non-fiction)
-
-**Source**: [average-reading-speed](../references.qmd#average-reading-speed)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Total Annual Value of Unpaid Caregiving in US {#sec-caregiver_annual_value_total}
-
-**Value**: $600B
-
-Total annual value of unpaid caregiving in US
-
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Number of Unpaid Caregivers in US {#sec-caregiver_count_us}
-
-**Value**: 38M
-
-Number of unpaid caregivers in US
-
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average Monthly Hours of Unpaid Family Caregiving in US {#sec-caregiver_hours_per_month}
-
-**Value**: 20
-
-Average monthly hours of unpaid family caregiving in US
-
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Estimated Replacement Cost per Hour of Caregiving {#sec-caregiver_value_per_hour_simple}
-
-**Value**: $25
-
-Estimated replacement cost per hour of caregiving
-
-**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Estimated Annual Global Economic Benefit from Childhood Vaccination Programs {#sec-childhood_vaccination_annual_benefit}
-
-**Value**: $15B
-
-Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)
-
-**Source**: [childhood-vaccination-economic-benefits](../references.qmd#childhood-vaccination-economic-benefits)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Lognormal (SE: $4.50B)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-childhood_vaccination_annual_benefit.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Return on Investment from Childhood Vaccination Programs {#sec-childhood_vaccination_roi}
-
-**Value**: 13
-
-Return on investment from childhood vaccination programs
-
-**Source**: [childhood-vaccination-roi](../references.qmd#childhood-vaccination-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Disability Weight for Untreated Chronic Conditions {#sec-chronic_disease_disability_weight}
-
-**Value**: 0.35
-
-Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
-
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 0.07)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
-
-*~ Medium confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Current Active Trials at Any Given Time {#sec-current_active_trials}
-
-**Value**: 10,000
-
-Current active trials at any given time (3-5 year duration)
-
-**Source**: [clinicaltrials-gov-enrollment-data-2025](../references.qmd#clinicaltrials-gov-enrollment-data-2025)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Current Clinical Trial Participation Rate {#sec-current_clinical_trial_participation_rate}
-
-**Value**: 0.06%
-
-Current clinical trial participation rate (0.06% of population)
-
-**Source**: [clinical-trial-patient-participation-rate](../references.qmd#clinical-trial-patient-participation-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Population with Chronic Diseases {#sec-current_disease_patients_global}
-
-**Value**: 2.40B
-
-Global population with chronic diseases
-
-**Source**: [disease-prevalence-2-billion](../references.qmd#disease-prevalence-2-billion)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [2.00B, 2.80B] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00B and 2.80B (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-current_disease_patients_global.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Average Annual New Drug Approvals Globally {#sec-current_drug_approvals_per_year}
-
-**Value**: 50
-
-Average annual new drug approvals globally
-
-**Source**: [global-new-drug-approvals-50-annually](../references.qmd#global-new-drug-approvals-50-annually)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Current Global Clinical Trials per Year {#sec-current_trials_per_year}
-
-**Value**: 3,300
-
-Current global clinical trials per year
-
-**Source**: [global-clinical-trials-market-2024](../references.qmd#global-clinical-trials-market-2024)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [2,640, 3,960] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 and 3,960 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-current_trials_per_year.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Current Trial Abandonment Rate {#sec-current_trial_abandonment_rate}
-
-**Value**: 40%
-
-Current trial abandonment rate (40% never complete)
-
-**Source**: [clinical-trial-abandonment-rate](../references.qmd#clinical-trial-abandonment-rate)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Global Clinical Trial Participants {#sec-current_trial_slots_available}
-
-**Value**: 1.90M
-
-Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
-
-**Source**: [global-trial-participant-capacity](../references.qmd#global-trial-participant-capacity)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [1.50M, 2.30M] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M and 2.30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-current_trial_slots_available.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Defense Industry Lobbying Spending {#sec-defense_lobbying_annual}
-
-**Value**: $127M
-
-Annual defense industry lobbying spending
-
-**Source**: [lobbying-spend-defense](../references.qmd#lobbying-spend-defense)
-
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Deworming Cost per DALY {#sec-deworming_cost_per_daly}
-
-**Value**: $55
-
-Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.
-
-**Source**: [deworming-cost-per-daly](../references.qmd#deworming-cost-per-daly)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Drug Development Cost (1980s) {#sec-drug_development_cost_1980s}
-
-**Value**: $194M
-
-Drug development cost in 1980s (compounded to approval, 1990 dollars)
-
-**Source**: [pre-1962-drug-costs-timeline](../references.qmd#pre-1962-drug-costs-timeline)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-#### Input Distribution
-
-{{< include ../figures/distribution-drug_development_cost_1980s.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Economic Multiplier for Education Investment {#sec-economic_multiplier_education_investment}
-
-**Value**: 2.1
-
-Economic multiplier for education investment (2.1x ROI)
-
-**Source**: [education-investment-economic-multiplier](../references.qmd#education-investment-economic-multiplier)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Economic Multiplier for Healthcare Investment {#sec-economic_multiplier_healthcare_investment}
-
-**Value**: 4.3
-
-Economic multiplier for healthcare investment (4.3x ROI)
-
-**Source**: [healthcare-investment-economic-multiplier](../references.qmd#healthcare-investment-economic-multiplier)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Economic Multiplier for Infrastructure Investment {#sec-economic_multiplier_infrastructure_investment}
-
-**Value**: 1.6
-
-Economic multiplier for infrastructure investment (1.6x ROI)
-
-**Source**: [infrastructure-investment-economic-multiplier](../references.qmd#infrastructure-investment-economic-multiplier)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Economic Multiplier for Military Spending {#sec-economic_multiplier_military_spending}
-
-**Value**: 0.6
-
-Economic multiplier for military spending (0.6x ROI)
-
-**Source**: [military-spending-economic-multiplier](../references.qmd#military-spending-economic-multiplier)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Regulatory Delay for Efficacy Testing Post-Safety Verification {#sec-efficacy_lag_years}
-
-**Value**: 8.2
-
-Regulatory delay for efficacy testing (Phase II/III) post-safety verification
-
-**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 1)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### FDA Phase 1 to Approval Timeline {#sec-fda_phase_1_to_approval_years}
-
-**Value**: 9.1
-
-FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
-
-**Source**: [fda-approval-timeline-10-years](../references.qmd#fda-approval-timeline-10-years)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [6, 12] • Distribution: Gamma (SE: 2)
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 and 12 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The gamma distribution means values follow a specific statistical pattern.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Givewell Average Cost per Life Saved Across Top Charities {#sec-givewell_cost_per_life_avg}
-
-**Value**: $4.50K
-
-GiveWell average cost per life saved across top charities
-
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Givewell Cost per Life Saved (Maximum) {#sec-givewell_cost_per_life_max}
-
-**Value**: $5.50K
-
-GiveWell cost per life saved (Against Malaria Foundation)
-
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Givewell Cost per Life Saved (Minimum) {#sec-givewell_cost_per_life_min}
-
-**Value**: $3.50K
-
-GiveWell cost per life saved (Helen Keller International)
-
-**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Deaths from Active Combat Worldwide {#sec-global_annual_conflict_deaths_active_combat}
-
-**Value**: 234K
-
-Annual deaths from active combat worldwide
-
-**Source**: [acled-active-combat-deaths](../references.qmd#acled-active-combat-deaths)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [180K, 300K] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 180K and 300K (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_conflict_deaths_active_combat.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Deaths from State Violence {#sec-global_annual_conflict_deaths_state_violence}
-
-**Value**: 2,700
-
-Annual deaths from state violence
-
-**Source**: [ucdp-state-violence-deaths](../references.qmd#ucdp-state-violence-deaths)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [1,500, 5,000] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 and 5,000 (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_conflict_deaths_state_violence.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Deaths from Terror Attacks Globally {#sec-global_annual_conflict_deaths_terror_attacks}
-
-**Value**: 8,300
-
-Annual deaths from terror attacks globally
-
-**Source**: [gtd-terror-attack-deaths](../references.qmd#gtd-terror-attack-deaths)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [6,000, 12,000] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 and 12,000 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_conflict_deaths_terror_attacks.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Environmental Damage and Restoration Costs from Conflict {#sec-global_annual_environmental_damage_conflict}
-
-**Value**: $100B
-
-Annual environmental damage and restoration costs from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$70B, $140B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_environmental_damage_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Infrastructure Damage to Communications from Conflict {#sec-global_annual_infrastructure_damage_communications_conflict}
-
-**Value**: $298B
-
-Annual infrastructure damage to communications from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$209B, $418B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $209B and $418B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_infrastructure_damage_communications_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Infrastructure Damage to Education Facilities from Conflict {#sec-global_annual_infrastructure_damage_education_conflict}
-
-**Value**: $234B
-
-Annual infrastructure damage to education facilities from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$164B, $328B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_infrastructure_damage_education_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Infrastructure Damage to Energy Systems from Conflict {#sec-global_annual_infrastructure_damage_energy_conflict}
-
-**Value**: $422B
-
-Annual infrastructure damage to energy systems from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$295B, $590B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $295B and $590B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_infrastructure_damage_energy_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Infrastructure Damage to Healthcare Facilities from Conflict {#sec-global_annual_infrastructure_damage_healthcare_conflict}
-
-**Value**: $166B
-
-Annual infrastructure damage to healthcare facilities from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$116B, $232B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_infrastructure_damage_healthcare_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Infrastructure Damage to Transportation from Conflict {#sec-global_annual_infrastructure_damage_transportation_conflict}
-
-**Value**: $487B
-
-Annual infrastructure damage to transportation from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$340B, $680B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $340B and $680B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_infrastructure_damage_transportation_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Infrastructure Damage to Water Systems from Conflict {#sec-global_annual_infrastructure_damage_water_conflict}
-
-**Value**: $268B
-
-Annual infrastructure damage to water systems from conflict
-
-**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$187B, $375B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Lives Saved by Medical Research Globally {#sec-global_annual_lives_saved_by_med_research}
-
-**Value**: 4.20M
-
-Annual lives saved by medical research globally
-
-**Source**: [medical-research-lives-saved-annually](../references.qmd#medical-research-lives-saved-annually)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3.00M, 6.00M] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 3.00M and 6.00M (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_lives_saved_by_med_research.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Lost Economic Growth from Military Spending Opportunity Cost {#sec-global_annual_lost_economic_growth_military_spending}
-
-**Value**: $2.72T
-
-Annual lost economic growth from military spending opportunity cost
-
-**Source**: [disparity-ratio-weapons-vs-cures](../references.qmd#disparity-ratio-weapons-vs-cures)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$1.90T, $3.80T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.90T and $3.80T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_lost_economic_growth_military_spending.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Lost Productivity from Conflict Casualties {#sec-global_annual_lost_human_capital_conflict}
-
-**Value**: $300B
-
-Annual lost productivity from conflict casualties
-
-**Source**: [lost-human-capital-war-cost](../references.qmd#lost-human-capital-war-cost)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$210B, $420B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $210B and $420B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_lost_human_capital_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual PTSD and Mental Health Costs from Conflict {#sec-global_annual_psychological_impact_costs_conflict}
-
-**Value**: $232B
-
-Annual PTSD and mental health costs from conflict
-
-**Source**: [psychological-impact-war-cost](../references.qmd#psychological-impact-war-cost)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$162B, $325B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_psychological_impact_costs_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Refugee Support Costs {#sec-global_annual_refugee_support_costs}
-
-**Value**: $150B
-
-Annual refugee support costs (108.4M refugees × $1,384/year)
-
-**Source**: [unhcr-refugee-support-cost](../references.qmd#unhcr-refugee-support-cost)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$105B, $210B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $105B and $210B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_refugee_support_costs.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Trade Disruption Costs from Currency Instability {#sec-global_annual_trade_disruption_currency_conflict}
-
-**Value**: $57.4B
-
-Annual trade disruption costs from currency instability
-
-**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$40B, $80B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_trade_disruption_currency_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Trade Disruption Costs from Energy Price Volatility {#sec-global_annual_trade_disruption_energy_price_conflict}
-
-**Value**: $125B
-
-Annual trade disruption costs from energy price volatility
-
-**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$87B, $175B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $87B and $175B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_trade_disruption_energy_price_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Trade Disruption Costs from Shipping Disruptions {#sec-global_annual_trade_disruption_shipping_conflict}
-
-**Value**: $247B
-
-Annual trade disruption costs from shipping disruptions
-
-**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$173B, $346B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_trade_disruption_shipping_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Trade Disruption Costs from Supply Chain Disruptions {#sec-global_annual_trade_disruption_supply_chain_conflict}
-
-**Value**: $187B
-
-Annual trade disruption costs from supply chain disruptions
-
-**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$131B, $262B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $131B and $262B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_trade_disruption_supply_chain_conflict.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Veteran Healthcare Costs {#sec-global_annual_veteran_healthcare_costs}
-
-**Value**: $200B
-
-Annual veteran healthcare costs (20-year projected)
-
-**Source**: [veteran-healthcare-cost-projections](../references.qmd#veteran-healthcare-cost-projections)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$140B, $280B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_veteran_healthcare_costs.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Global Spending on Clinical Trials {#sec-global_clinical_trials_spending_annual}
-
-**Value**: $83B
-
-Annual global spending on clinical trials
-
-**Source**: [global-clinical-trials-market-2024](../references.qmd#global-clinical-trials-market-2024)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$70B, $97B] • Distribution: Lognormal (SE: $12.5B)
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $70B and $97B (±16%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Daily Deaths from Curable Diseases Globally {#sec-global_daily_deaths_curable_diseases}
-
-**Value**: 150K
-
-Daily deaths from curable diseases globally
-
-**Source**: [deaths-from-treatable-diseases-15m](../references.qmd#deaths-from-treatable-diseases-15m)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [120K, 180K] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120K and 180K (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_daily_deaths_curable_diseases.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Daily Deaths from Disease and Aging {#sec-global_disease_deaths_daily}
-
-**Value**: 150K
-
-Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
-
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 7,500)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Annual Direct Medical Costs of Disease {#sec-global_disease_direct_medical_cost_annual}
-
-**Value**: $9.90T
-
-Direct medical costs of disease globally (treatment, hospitalization, medication)
-
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$7.00T, $14T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $7.00T and $14T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_direct_medical_cost_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Annual Economic Value of Human Life Lost to Disease {#sec-global_disease_human_life_value_loss_annual}
-
-**Value**: $94.2T
-
-Economic value of human life lost to disease annually (mortality valuation)
-
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$66T, $132T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $66T and $132T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_human_life_value_loss_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Annual Productivity Loss from Disease {#sec-global_disease_productivity_loss_annual}
-
-**Value**: $5.00T
-
-Annual productivity loss from disease globally (absenteeism, reduced output)
-
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$3.50T, $7.00T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $3.50T and $7.00T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_productivity_loss_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Life Expectancy (2024) {#sec-global_life_expectancy_2024}
-
-**Value**: 79
-
-Global life expectancy (2024)
-
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 2)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Government Medical Research Spending {#sec-global_med_research_spending}
-
-**Value**: $67.5B
-
-Global government medical research spending
-
-**Source**: [global-gov-med-research-spending](../references.qmd#global-gov-med-research-spending)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$54B, $81B] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $54B and $81B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_med_research_spending.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Military Spending in 2024 {#sec-global_military_spending_annual_2024}
-
-**Value**: $2.72T
-
-Global military spending in 2024
-
-**Source**: [global-military-spending](../references.qmd#global-military-spending)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$2.45T, $2.99T] • Distribution: Lognormal (SE: $272B)
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $2.45T and $2.99T (±10%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_military_spending_annual_2024.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Global Population in 2024 {#sec-global_population_2024}
-
-**Value**: 8.00B
-
-Global population in 2024
-
-**Source**: [global-population-8-billion](../references.qmd#global-population-8-billion)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [7.80B, 8.20B] • Distribution: Lognormal
-
-**What this means**: We're quite confident in this estimate. The true value likely falls between 7.80B and 8.20B (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_population_2024.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Critical Mass Threshold for Social Change {#sec-global_population_activism_threshold_pct}
-
-**Value**: 3.5%
-
-Critical mass threshold for social change (3.5% rule)
-
-**Source**: [3-5-rule](../references.qmd#3-5-rule)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [2.5%, 4.5%] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 2.5% and 4.5% (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Global Spending on Symptomatic Disease Treatment {#sec-global_symptomatic_disease_treatment_annual}
-
-**Value**: $8.20T
-
-Annual global spending on symptomatic disease treatment
-
-**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$6.50T, $10T] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $6.50T and $10T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_symptomatic_disease_treatment_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Estimated Total Economic Impact of Human Genome Project {#sec-human_genome_project_total_economic_impact}
-
-**Value**: $1.00T
-
-Estimated total economic impact of Human Genome Project
-
-**Source**: [human-genome-and-genetic-editing](../references.qmd#human-genome-and-genetic-editing)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Life Extension from Treaty Research Acceleration {#sec-life_extension_years}
-
-**Value**: 20
-
-Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.
-
-**Source**: [longevity-escape-velocity](../references.qmd#longevity-escape-velocity)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [5, 100] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 5 and 100 (±238%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-life_extension_years.qmd >}}
-
-*? Low confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Maximum Annual Lobbyist Salary Range {#sec-lobbyist_salary_max}
-
-**Value**: $2.00M
-
-Maximum annual lobbyist salary range
-
-**Source**: [lobbyist-statistics-dc](../references.qmd#lobbyist-statistics-dc)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Minimum Annual Lobbyist Salary Range {#sec-lobbyist_salary_min_k}
-
-**Value**: $500K
-
-Minimum annual lobbyist salary range
-
-**Source**: [lobbyist-statistics-dc](../references.qmd#lobbyist-statistics-dc)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Return on Investment from Measles Vaccination Programs {#sec-measles_vaccination_roi}
-
-**Value**: 14
-
-Return on investment from measles (MMR) vaccination programs
-
-**Source**: [measles-vaccination-roi](../references.qmd#measles-vaccination-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Productivity Loss per Capita from Mental Health Issues {#sec-mental_health_productivity_loss_per_capita}
-
-**Value**: $2.00K
-
-Annual productivity loss per capita from mental health issues (beyond treatment costs)
-
-**Source**: [mental-health-burden](../references.qmd#mental-health-burden)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Oxford RECOVERY Trial Duration {#sec-oxford_recovery_trial_duration_months}
-
-**Value**: 3
-
-Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
-
-**Source**: [recovery-trial-82x-cost-reduction](../references.qmd#recovery-trial-82x-cost-reduction)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-#### Input Distribution
-
-{{< include ../figures/distribution-oxford_recovery_trial_duration_months.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Patient Willingness to Participate in Clinical Trials {#sec-patient_willingness_trial_participation_pct}
-
-**Value**: 44.8%
-
-Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
-
-**Source**: [patient-willingness-clinical-trials](../references.qmd#patient-willingness-clinical-trials)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pharma Drug Development Cost (Current System) {#sec-pharma_drug_development_cost_current}
-
-**Value**: $2.60B
-
-Average cost to develop one drug in current system
-
-**Source**: [drug-development-cost](../references.qmd#drug-development-cost)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$1.50B, $4.00B] • Distribution: Lognormal (SE: $500M)
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4.00B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pharma Average Drug Revenue (Current System) {#sec-pharma_drug_revenue_average_current}
-
-**Value**: $6.70B
-
-Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)
-
-**Source**: [pharma-drug-revenue-average](../references.qmd#pharma-drug-revenue-average)
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pharma ROI (Current System) {#sec-pharma_roi_current_system_pct}
-
-**Value**: 1.2%
-
-ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)
-
-**Source**: [pharma-roi-current](../references.qmd#pharma-roi-current)
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pharma Drug Success Rate (Current System) {#sec-pharma_success_rate_current_pct}
-
-**Value**: 10%
-
-Percentage of drugs that reach market in current system
-
-**Source**: [drug-trial-success-rate-12-pct](../references.qmd#drug-trial-success-rate-12-pct)
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Phase I Safety Trial Duration {#sec-phase_1_safety_duration_years}
-
-**Value**: 2.3
-
-Phase I safety trial duration
-
-**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
-
-*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Phase 3 Trial Total Cost (Minimum) {#sec-phase_3_trial_cost_min}
-
-**Value**: $20M
-
-Phase 3 trial total cost (minimum)
-
-**Source**: [phase-3-cost-per-trial-range](../references.qmd#phase-3-cost-per-trial-range)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs {#sec-polio_vaccination_roi}
-
-**Value**: 39
-
-Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs
-
-**Source**: [polio-vaccination-roi](../references.qmd#polio-vaccination-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Political Success Probability {#sec-political_success_probability}
-
-**Value**: 1%
-
-Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. 
-
-**Source**: [icbl-ottawa-treaty](../references.qmd#icbl-ottawa-treaty)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.1%, 10%] • Distribution: Beta (SE: 2%)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 10% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-political_success_probability.qmd >}}
-
-*? Low confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Post-1962 Drug Approval Reduction {#sec-post_1962_drug_approval_reduction_pct}
-
-**Value**: 70%
-
-Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
-
-**Source**: [post-1962-drug-approval-drop](../references.qmd#post-1962-drug-approval-drop)
-
-*✓ High confidence • Updated 1962-1970*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Percentage Military Spending Cut After WW2 {#sec-post_ww2_military_cut_pct}
-
-**Value**: 30%
-
-Percentage military spending cut after WW2 (historical precedent)
-
-**Source**: [us-post-wwii-military-spending-cut](../references.qmd#us-post-wwii-military-spending-cut)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pre-1962 Drug Development Cost {#sec-pre_1962_drug_development_cost}
-
-**Value**: $50M
-
-Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
-
-**Source**: [pre-1962-drug-costs-timeline](../references.qmd#pre-1962-drug-costs-timeline)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$10M, $50M] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $50M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-pre_1962_drug_development_cost.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pre-1962 Physician Count (Unverified) {#sec-pre_1962_physician_count}
-
-**Value**: 144K
-
-Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
-
-**Source**: [pre-1962-physician-trials](../references.qmd#pre-1962-physician-trials)
-
-*? Low confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Total Number of Rare Diseases Globally {#sec-rare_diseases_count_global}
-
-**Value**: 7,000
-
-Total number of rare diseases globally
-
-**Source**: [95-pct-diseases-no-treatment](../references.qmd#95-pct-diseases-no-treatment)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Recovery Trial Cost per Patient {#sec-recovery_trial_cost_per_patient}
-
-**Value**: $500
-
-RECOVERY trial cost per patient
-
-**Source**: [recovery-cost-500](../references.qmd#recovery-cost-500)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$350, $700] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $350 and $700 (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Mean Age of Preventable Death from Post-Safety Efficacy Delay {#sec-regulatory_delay_mean_age_of_death}
-
-**Value**: 62
-
-Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
-
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 3)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
-
-*~ Medium confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Pre-Death Suffering Period During Post-Safety Efficacy Delay {#sec-regulatory_delay_suffering_period_years}
-
-**Value**: 6
-
-Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
-
-**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [4, 9] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 4 and 9 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
-
-*~ Medium confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Return on Investment from Smallpox Eradication Campaign {#sec-smallpox_eradication_roi}
-
-**Value**: 280
-
-Return on investment from smallpox eradication campaign
-
-**Source**: [smallpox-eradication-roi](../references.qmd#smallpox-eradication-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Total Economic Benefit from Smallpox Eradication Campaign {#sec-smallpox_eradication_total_benefit}
-
-**Value**: $1.42B
-
-Total economic benefit from smallpox eradication campaign
-
-**Source**: [smallpox-eradication-roi](../references.qmd#smallpox-eradication-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Estimated Annual Global Economic Benefit from Smoking Cessation Programs {#sec-smoking_cessation_annual_benefit}
-
-**Value**: $12B
-
-Estimated annual global economic benefit from smoking cessation programs
-
-**Source**: [life-expectancy-gains-smoking-reduction](../references.qmd#life-expectancy-gains-smoking-reduction)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Standard Economic Value per QALY {#sec-standard_economic_qaly_value_usd}
-
-**Value**: $150K
-
-Standard economic value per QALY
-
-**Source**: [qaly-value](../references.qmd#qaly-value)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: $30K)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Standard QALYs per Life Saved {#sec-standard_qalys_per_life_saved}
-
-**Value**: 35
-
-Standard QALYs per life saved (WHO life tables)
-
-**Source**: [qaly-value](../references.qmd#qaly-value)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 7)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-standard_qalys_per_life_saved.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Annual Cost of Sugar Subsidies per Person {#sec-sugar_subsidy_cost_per_person_annual}
-
-**Value**: $10
-
-Annual cost of sugar subsidies per person
-
-**Source**: [sugar-subsidies-cost](../references.qmd#sugar-subsidies-cost)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Switzerland's Defense Spending as Percentage of GDP {#sec-switzerland_defense_spending_pct}
-
-**Value**: 0.7%
-
-Switzerland's defense spending as percentage of GDP (0.7%)
-
-**Source**: [swiss-military-budget-0-7-pct-gdp](../references.qmd#swiss-military-budget-0-7-pct-gdp)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Switzerland GDP per Capita {#sec-switzerland_gdp_per_capita_k}
-
-**Value**: $93K
-
-Switzerland GDP per capita
-
-**Source**: [swiss-vs-us-gdp-per-capita](../references.qmd#swiss-vs-us-gdp-per-capita)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Deaths from 9/11 Terrorist Attacks {#sec-terrorism_deaths_911}
-
-**Value**: 2,996
-
-Deaths from 9/11 terrorist attacks
-
-**Source**: [chance-of-dying-from-terrorism-1-in-30m](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Thalidomide Cases Worldwide {#sec-thalidomide_cases_worldwide}
-
-**Value**: 15,000
-
-Total thalidomide birth defect cases worldwide (1957-1962)
-
-**Source**: [thalidomide-scandal](../references.qmd#thalidomide-scandal)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [10,000, 20,000] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 and 20,000 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_cases_worldwide.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Thalidomide Disability Weight {#sec-thalidomide_disability_weight}
-
-**Value**: 0.4
-
-Disability weight for thalidomide survivors (limb deformities, organ damage)
-
-**Source**: [thalidomide-survivors-health](../references.qmd#thalidomide-survivors-health)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.32, 0.48] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32 and 0.48 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_disability_weight.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Thalidomide Mortality Rate {#sec-thalidomide_mortality_rate}
-
-**Value**: 40%
-
-Mortality rate for thalidomide-affected infants (died within first year)
-
-**Source**: [thalidomide-scandal](../references.qmd#thalidomide-scandal)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [35%, 45%] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 35% and 45% (±13%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_mortality_rate.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Thalidomide Survivor Lifespan {#sec-thalidomide_survivor_lifespan}
-
-**Value**: 60
-
-Average lifespan for thalidomide survivors
-
-**Source**: [thalidomide-survivors-health](../references.qmd#thalidomide-survivors-health)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [50, 70] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 50 and 70 (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_survivor_lifespan.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Population Share 1960 {#sec-thalidomide_us_population_share_1960}
-
-**Value**: 6%
-
-US share of world population in 1960
-
-**Source**: [us-census-world-population-1960](../references.qmd#us-census-world-population-1960)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [5.5%, 6.5%] • Distribution: Lognormal
-
-**What this means**: We're quite confident in this estimate. The true value likely falls between 5.5% and 6.5% (±8%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_us_population_share_1960.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Phase 3 Cost per Patient {#sec-traditional_phase3_cost_per_patient}
-
-**Value**: $80K
-
-Phase 3 cost per patient (median)
-
-**Source**: [phase-3-cost-per-patient-113k](../references.qmd#phase-3-cost-per-patient-113k)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Example Phase 3 Trial Cost per Patient {#sec-traditional_phase3_cost_per_patient_example_48k}
-
-**Value**: $48K
-
-Example Phase 3 trial cost per patient ($48K)
-
-**Source**: [clinical-trial-cost-per-patient](../references.qmd#clinical-trial-cost-per-patient)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### FDA Cited Phase 3 Cost per Patient {#sec-traditional_phase3_cost_per_patient_fda_example_41k}
-
-**Value**: $41K
-
-FDA cited Phase 3 cost per patient ($41K)
-
-**Source**: [trial-costs-fda-study](../references.qmd#trial-costs-fda-study)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Traditional FDA Drug Development Timeline {#sec-treatment_acceleration_years_current}
-
-**Value**: 17
-
-Traditional FDA drug development timeline
-
-**Source**: [fda-approval-timeline-10-years](../references.qmd#fda-approval-timeline-10-years)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Cost Reduction Factor Demonstrated by Recovery Trial {#sec-trial_cost_reduction_factor}
-
-**Value**: 82
-
-Cost reduction factor demonstrated by RECOVERY trial
-
-**Source**: [recovery-trial-82x-cost-reduction](../references.qmd#recovery-trial-82x-cost-reduction)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [20, 150] • Distribution: Lognormal (SE: 20)
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 20 and 150 (±79%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-trial_cost_reduction_factor.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Typical CEO Hourly Rate {#sec-typical_ceo_hourly_rate}
-
-**Value**: $10K
-
-Typical CEO hourly rate
-
-**Source**: [ceo-compensation](../references.qmd#ceo-compensation)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Alzheimer's Annual Cost {#sec-us_alzheimers_annual_cost}
-
-**Value**: $355B
-
-Annual US cost of Alzheimer's disease (direct and indirect)
-
-**Source**: [disease-cost-alzheimers-1300b](../references.qmd#disease-cost-alzheimers-1300b)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$302B, $408B] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $302B and $408B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_alzheimers_annual_cost.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Cancer Annual Cost {#sec-us_cancer_annual_cost}
-
-**Value**: $208B
-
-Annual US cost of cancer (direct and indirect)
-
-**Source**: [disease-cost-cancer-1800b](../references.qmd#disease-cost-cancer-1800b)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$177B, $239B] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $177B and $239B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_cancer_annual_cost.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Annual Chronic Disease Spending {#sec-us_chronic_disease_spending_annual}
-
-**Value**: $4.10T
-
-US annual chronic disease spending
-
-**Source**: [us-chronic-disease-spending](../references.qmd#us-chronic-disease-spending)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$3.30T, $5.00T] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.30T and $5.00T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_chronic_disease_spending_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Diabetes Annual Cost {#sec-us_diabetes_annual_cost}
-
-**Value**: $327B
-
-Annual US cost of diabetes (direct and indirect)
-
-**Source**: [disease-cost-diabetes-1500b](../references.qmd#disease-cost-diabetes-1500b)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$278B, $376B] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $278B and $376B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_diabetes_annual_cost.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Heart Disease Annual Cost {#sec-us_heart_disease_annual_cost}
-
-**Value**: $363B
-
-Annual US cost of heart disease and stroke (direct and indirect)
-
-**Source**: [disease-cost-heart-disease-2100b](../references.qmd#disease-cost-heart-disease-2100b)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$309B, $417B] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $309B and $417B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Mental Health Costs {#sec-us_mental_health_cost_annual}
-
-**Value**: $350B
-
-US mental health costs (treatment + productivity loss)
-
-**Source**: [mental-health-burden](../references.qmd#mental-health-burden)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$260B, $450B] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $260B and $450B (±27%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_mental_health_cost_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Military Spending as Percentage of GDP {#sec-us_military_spending_pct_gdp}
-
-**Value**: 3.5%
-
-US military spending as percentage of GDP (2024)
-
-**Source**: [us-military-budget-3-5-pct-gdp](../references.qmd#us-military-budget-3-5-pct-gdp)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### US Population in 2024 {#sec-us_population_2024}
-
-**Value**: 335M
-
-US population in 2024
-
-**Source**: [us-voter-population](../references.qmd#us-voter-population)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [330M, 340M] • Distribution: Lognormal
-
-**What this means**: We're quite confident in this estimate. The true value likely falls between 330M and 340M (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-us_population_2024.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Value of Statistical Life {#sec-value_of_statistical_life}
-
-**Value**: $10M
-
-Value of Statistical Life (conservative estimate)
-
-**Source**: [dot-vsl-13-6m](../references.qmd#dot-vsl-13-6m)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$5.00M, $15M] • Distribution: Gamma (SE: $3.00M)
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $5.00M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The gamma distribution means values follow a specific statistical pattern.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-value_of_statistical_life.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Vitamin A Supplementation Cost per DALY {#sec-vitamin_a_cost_per_daly}
-
-**Value**: $37
-
-Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.
-
-**Source**: [vitamin-a-cost-per-daly](../references.qmd#vitamin-a-cost-per-daly)
-
-*~ Medium confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Estimated Annual Global Economic Benefit from Water Fluoridation Programs {#sec-water_fluoridation_annual_benefit}
-
-**Value**: $800M
-
-Estimated annual global economic benefit from water fluoridation programs
-
-**Source**: [clean-water-sanitation-roi](../references.qmd#clean-water-sanitation-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Return on Investment from Water Fluoridation Programs {#sec-water_fluoridation_roi}
-
-**Value**: 23
-
-Return on investment from water fluoridation programs
-
-**Source**: [clean-water-sanitation-roi](../references.qmd#clean-water-sanitation-roi)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Cost-Effectiveness Threshold ($50,000/QALY) {#sec-who_qaly_threshold_cost_effective}
-
-**Value**: $50K
-
-Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)
-
-**Source**: [who-cost-effectiveness-threshold](../references.qmd#who-cost-effectiveness-threshold)
-
-*✓ High confidence*
-
-:::
-
-::: {.callout-tip icon=false collapse=false}
-### Percentage of Workforce Experiencing Productivity Loss from Chronic Illness {#sec-workforce_with_productivity_loss}
-
-**Value**: 28%
-
-Percentage of workforce experiencing productivity loss from chronic illness (28%)
-
-**Source**: [chronic-illness-workforce-productivity-loss](../references.qmd#chronic-illness-workforce-productivity-loss)
-
-*✓ High confidence*
-
-:::
-
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
 
-::: {.callout-note icon=false collapse=false}
 ### Combined Peace and Health Dividends for ROI Calculation {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 **Value**: $155B
@@ -2382,9 +51,7 @@ $$
 
 {{< include ../figures/exceedance-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual dFDA Operational Costs {#sec-dfda_annual_opex}
 
 **Value**: $40M
@@ -2413,9 +80,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Annual Benefit: R&D Savings {#sec-dfda_benefit_rd_only_annual}
 
 **Value**: $41.5B
@@ -2444,9 +109,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Expected Treaty ROI (Risk-Adjusted) {#sec-dfda_expected_roi}
 
 **Value**: 11,914
@@ -2475,9 +138,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_expected_roi.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Annual Net Savings (R&D Only) {#sec-dfda_net_savings_rd_only_annual}
 
 **Value**: $41.5B
@@ -2506,9 +167,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_net_savings_rd_only_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Total NPV Annual OPEX {#sec-dfda_npv_annual_opex_total}
 
 **Value**: $40M
@@ -2537,9 +196,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_npv_annual_opex_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### NPV of dFDA Benefits (R&D Only, 10-Year Discounted) {#sec-dfda_npv_benefit_rd_only}
 
 **Value**: $275B
@@ -2568,9 +225,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_npv_benefit_rd_only.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### NPV Net Benefit (R&D Only, Conservative) {#sec-dfda_npv_net_benefit_rd_only}
 
 **Value**: $275B
@@ -2599,9 +254,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_npv_net_benefit_rd_only.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Present Value of Annual OPEX Over 10 Years {#sec-dfda_npv_pv_annual_opex}
 
 **Value**: $342M
@@ -2630,9 +283,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_npv_pv_annual_opex.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Total NPV Cost {#sec-dfda_npv_total_cost}
 
 **Value**: $611M
@@ -2661,9 +312,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_npv_total_cost.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Total NPV Upfront Costs {#sec-dfda_npv_upfront_cost_total}
 
 **Value**: $270M
@@ -2692,9 +341,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_npv_upfront_cost_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Annual Benefit: R&D Savings {#sec-dfda_rd_gross_savings_annual}
 
 **Value**: $41.5B
@@ -2723,9 +370,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_rd_gross_savings_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Daily R&D Savings from Trial Cost Reduction {#sec-dfda_rd_savings_daily}
 
 **Value**: $114M
@@ -2754,9 +399,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_rd_savings_daily.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
 
 **Value**: 451
@@ -2785,9 +428,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
 
 **Value**: 1,038
@@ -2816,9 +457,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_roi_simple.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
 **Value**: 75,392
@@ -2845,9 +484,7 @@ $$
 
 {{< include ../figures/exceedance-dfda_trials_per_year_capacity.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Patients Fundable Annually {#sec-dih_patients_fundable_annually}
 
 **Value**: 43.4M
@@ -2876,9 +513,7 @@ $$
 
 {{< include ../figures/exceedance-dih_patients_fundable_annually.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### DIH Annual Funding for Medical Research {#sec-dih_treasury_to_medical_research_annual}
 
 **Value**: $21.7B
@@ -2905,9 +540,7 @@ $$
 
 {{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Clinical Trial Patient Subsidies {#sec-dih_treasury_trial_subsidies_annual}
 
 **Value**: $21.7B
@@ -2936,9 +569,7 @@ $$
 
 {{< include ../figures/exceedance-dih_treasury_trial_subsidies_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_dalys}
 
 **Value**: 7.94B
@@ -2967,9 +598,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_delay_dalys.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_total}
 
 **Value**: 416M
@@ -2998,9 +627,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_delay_deaths_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Economic Loss from Disease Eradication Delay {#sec-disease_eradication_delay_economic_loss}
 
 **Value**: $1.19 quadrillion
@@ -3029,9 +656,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_delay_economic_loss.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Years Lived with Disability During Disease Eradication Delay {#sec-disease_eradication_delay_yld}
 
 **Value**: 873M
@@ -3060,9 +685,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_delay_yld.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Years of Life Lost from Disease Eradication Delay {#sec-disease_eradication_delay_yll}
 
 **Value**: 7.07B
@@ -3091,9 +714,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_delay_yll.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Disease Eradication + Innovation Acceleration {#sec-disease_eradication_plus_acceleration_deaths_total}
 
 **Value**: 898M
@@ -3122,9 +743,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_plus_acceleration_deaths_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Economic Loss from Disease Eradication + Innovation Acceleration {#sec-disease_eradication_plus_acceleration_economic_loss_total}
 
 **Value**: $2.38 quadrillion
@@ -3153,9 +772,7 @@ $$
 
 {{< include ../figures/exceedance-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Coverage Factor of Treaty Funding vs dFDA OPEX {#sec-dividend_coverage_factor}
 
 **Value**: 680
@@ -3184,9 +801,7 @@ $$
 
 {{< include ../figures/exceedance-dividend_coverage_factor.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Drug Cost Increase: 1980s to Current {#sec-drug_cost_increase_1980s_to_current_multiplier}
 
 **Value**: 13.4
@@ -3215,9 +830,7 @@ $$
 
 {{< include ../figures/exceedance-drug_cost_increase_1980s_to_current_multiplier.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Drug Cost Increase: Pre-1962 to Current {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
 **Value**: 52
@@ -3246,9 +859,7 @@ $$
 
 {{< include ../figures/exceedance-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### FDA to Oxford RECOVERY Trial Time Multiplier {#sec-fda_to_oxford_recovery_trial_time_multiplier}
 
 **Value**: 36.4
@@ -3277,9 +888,7 @@ $$
 
 {{< include ../figures/exceedance-fda_to_oxford_recovery_trial_time_multiplier.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Conflict Deaths Globally {#sec-global_annual_conflict_deaths_total}
 
 **Value**: 245K
@@ -3308,9 +917,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_conflict_deaths_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Deaths from Curable Diseases Globally {#sec-global_annual_deaths_curable_diseases}
 
 **Value**: 54.8M
@@ -3339,9 +946,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_deaths_curable_diseases.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Cost of Combat Deaths {#sec-global_annual_human_cost_active_combat}
 
 **Value**: $2.34T
@@ -3370,9 +975,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_human_cost_active_combat.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Cost of State Violence Deaths {#sec-global_annual_human_cost_state_violence}
 
 **Value**: $27B
@@ -3401,9 +1004,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_human_cost_state_violence.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Cost of Terror Deaths {#sec-global_annual_human_cost_terror_attacks}
 
 **Value**: $83B
@@ -3432,9 +1033,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_human_cost_terror_attacks.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Human Life Losses from Conflict {#sec-global_annual_human_life_losses_conflict}
 
 **Value**: $2.45T
@@ -3463,9 +1062,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_human_life_losses_conflict.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Infrastructure Destruction {#sec-global_annual_infrastructure_destruction_conflict}
 
 **Value**: $1.88T
@@ -3494,9 +1091,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_infrastructure_destruction_conflict.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Trade Disruption {#sec-global_annual_trade_disruption_conflict}
 
 **Value**: $616B
@@ -3525,9 +1120,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_trade_disruption_conflict.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Direct War Costs {#sec-global_annual_war_direct_costs_total}
 
 **Value**: $7.66T
@@ -3556,9 +1149,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_war_direct_costs_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Indirect War Costs {#sec-global_annual_war_indirect_costs_total}
 
 **Value**: $3.70T
@@ -3587,9 +1178,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_war_indirect_costs_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Cost of War Worldwide {#sec-global_annual_war_total_cost}
 
 **Value**: $11.4T
@@ -3618,9 +1207,7 @@ $$
 
 {{< include ../figures/exceedance-global_annual_war_total_cost.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Cost per Life Saved by Medical Research {#sec-global_cost_per_life_saved_med_research_annual}
 
 **Value**: $16.1K
@@ -3649,9 +1236,7 @@ $$
 
 {{< include ../figures/exceedance-global_cost_per_life_saved_med_research_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Economic Burden of Disease Globally {#sec-global_disease_economic_burden_annual}
 
 **Value**: $109T
@@ -3680,9 +1265,7 @@ $$
 
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Per Capita Military Spending Globally {#sec-global_military_spending_per_capita_annual}
 
 **Value**: $340
@@ -3711,9 +1294,7 @@ $$
 
 {{< include ../figures/exceedance-global_military_spending_per_capita_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Global Military Spending After 1% Treaty Reduction {#sec-global_military_spending_post_treaty_annual_2024}
 
 **Value**: $2.69T
@@ -3742,9 +1323,7 @@ $$
 
 {{< include ../figures/exceedance-global_military_spending_post_treaty_annual_2024.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Cost of War and Disease with All Externalities {#sec-global_total_health_and_war_cost_annual}
 
 **Value**: $129T
@@ -3773,9 +1352,7 @@ $$
 
 {{< include ../figures/exceedance-global_total_health_and_war_cost_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Deaths from Historical Progress Delays {#sec-historical_progress_deaths_total}
 
 **Value**: 98.4M
@@ -3804,9 +1381,7 @@ $$
 
 {{< include ../figures/exceedance-historical_progress_deaths_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Economic Loss from Historical Progress Delays {#sec-historical_progress_economic_loss_total}
 
 **Value**: $251T
@@ -3835,9 +1410,7 @@ $$
 
 {{< include ../figures/exceedance-historical_progress_economic_loss_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual IAB Political Incentive Funding {#sec-iab_political_incentive_funding_annual}
 
 **Value**: $2.72B
@@ -3864,9 +1437,7 @@ $$
 
 {{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Medical Research Spending as Percentage of Total Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
 **Value**: 0.0525%
@@ -3895,9 +1466,7 @@ $$
 
 {{< include ../figures/exceedance-medical_research_pct_of_disease_burden.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Ratio of Military Spending to Medical Research Spending {#sec-military_vs_medical_research_ratio}
 
 **Value**: 40.3
@@ -3926,9 +1495,7 @@ $$
 
 {{< include ../figures/exceedance-military_vs_medical_research_ratio.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Misallocation Factor: Cost to Kill vs Cost to Save {#sec-misallocation_factor_death_vs_saving}
 
 **Value**: 2,889
@@ -3957,9 +1524,7 @@ $$
 
 {{< include ../figures/exceedance-misallocation_factor_death_vs_saving.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Peace Dividend from 1% Reduction in Total War Costs {#sec-peace_dividend_annual_societal_benefit}
 
 **Value**: $114B
@@ -3988,9 +1553,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_annual_societal_benefit.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Conflict Reduction Benefits from 1% Less Military Spending {#sec-peace_dividend_conflict_reduction}
 
 **Value**: $86.4B
@@ -4019,9 +1582,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_conflict_reduction.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Direct War Costs {#sec-peace_dividend_direct_costs}
 
 **Value**: $76.5B
@@ -4050,9 +1611,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_direct_costs.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Environmental Damage {#sec-peace_dividend_environmental}
 
 **Value**: $1.00B
@@ -4081,9 +1640,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_environmental.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Human Casualties {#sec-peace_dividend_human_casualties}
 
 **Value**: $24.5B
@@ -4112,9 +1669,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_human_casualties.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Indirect War Costs {#sec-peace_dividend_indirect_costs}
 
 **Value**: $37B
@@ -4143,9 +1698,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_indirect_costs.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Infrastructure Destruction {#sec-peace_dividend_infrastructure}
 
 **Value**: $18.8B
@@ -4174,9 +1727,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_infrastructure.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Lost Economic Growth {#sec-peace_dividend_lost_economic_growth}
 
 **Value**: $27.2B
@@ -4205,9 +1756,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_lost_economic_growth.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Lost Human Capital {#sec-peace_dividend_lost_human_capital}
 
 **Value**: $3.00B
@@ -4236,9 +1785,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_lost_human_capital.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in PTSD and Mental Health Costs {#sec-peace_dividend_ptsd}
 
 **Value**: $2.32B
@@ -4267,9 +1814,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_ptsd.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Refugee Support Costs {#sec-peace_dividend_refugee_support}
 
 **Value**: $1.50B
@@ -4298,9 +1843,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_refugee_support.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Trade Disruption {#sec-peace_dividend_trade_disruption}
 
 **Value**: $6.16B
@@ -4329,9 +1872,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_trade_disruption.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Savings from 1% Reduction in Veteran Healthcare Costs {#sec-peace_dividend_veteran_healthcare}
 
 **Value**: $2.00B
@@ -4360,9 +1901,7 @@ $$
 
 {{< include ../figures/exceedance-peace_dividend_veteran_healthcare.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Personal Lifetime Wealth (Age 30, 1% Treaty) {#sec-personal_lifetime_wealth}
 
 **Value**: $508K
@@ -4391,9 +1930,7 @@ $$
 
 {{< include ../figures/exceedance-personal_lifetime_wealth.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### US Per Capita Chronic Disease Cost {#sec-per_capita_chronic_disease_cost}
 
 **Value**: $12.2K
@@ -4420,9 +1957,7 @@ $$
 
 {{< include ../figures/exceedance-per_capita_chronic_disease_cost.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### US Per Capita Mental Health Cost {#sec-per_capita_mental_health_cost}
 
 **Value**: $1.04K
@@ -4449,9 +1984,7 @@ $$
 
 {{< include ../figures/exceedance-per_capita_mental_health_cost.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Suffering Hours Eliminated {#sec-suffering_hours_eliminated_total}
 
 **Value**: 7.65T
@@ -4480,9 +2013,7 @@ $$
 
 {{< include ../figures/exceedance-suffering_hours_eliminated_total.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Thalidomide DALYs Per Event {#sec-thalidomide_dalys_per_event}
 
 **Value**: 41,760
@@ -4509,9 +2040,7 @@ $$
 
 {{< include ../figures/exceedance-thalidomide_dalys_per_event.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Thalidomide Deaths Per Event {#sec-thalidomide_deaths_per_event}
 
 **Value**: 360
@@ -4538,9 +2067,7 @@ $$
 
 {{< include ../figures/exceedance-thalidomide_deaths_per_event.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Thalidomide Survivors Per Event {#sec-thalidomide_survivors_per_event}
 
 **Value**: 540
@@ -4567,9 +2094,7 @@ $$
 
 {{< include ../figures/exceedance-thalidomide_survivors_per_event.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Thalidomide US Cases Prevented {#sec-thalidomide_us_cases_prevented}
 
 **Value**: 900
@@ -4596,9 +2121,7 @@ $$
 
 {{< include ../figures/exceedance-thalidomide_us_cases_prevented.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Thalidomide YLD Per Event {#sec-thalidomide_yld_per_event}
 
 **Value**: 12,960
@@ -4625,9 +2148,7 @@ $$
 
 {{< include ../figures/exceedance-thalidomide_yld_per_event.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Thalidomide YLL Per Event {#sec-thalidomide_yll_per_event}
 
 **Value**: 28,800
@@ -4654,9 +2175,7 @@ $$
 
 {{< include ../figures/exceedance-thalidomide_yll_per_event.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Global Research Funding (Baseline + 1% treaty Funding) {#sec-total_research_funding_with_treaty}
 
 **Value**: $94.7B
@@ -4685,9 +2204,7 @@ $$
 
 {{< include ../figures/exceedance-total_research_funding_with_treaty.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Treaty System Benefit Multiplier vs Childhood Vaccination Programs {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 **Value**: 10.3
@@ -4716,9 +2233,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_benefit_multiplier_vs_vaccines.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Amortized Annual Treaty Campaign Cost {#sec-treaty_campaign_annual_cost_amortized}
 
 **Value**: $250M
@@ -4747,9 +2262,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_campaign_annual_cost_amortized.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total 1% Treaty Campaign Cost {#sec-treaty_campaign_total_cost}
 
 **Value**: $1.00B
@@ -4778,9 +2291,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_campaign_total_cost.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Target Voting Bloc Size for Campaign {#sec-treaty_campaign_voting_bloc_target}
 
 **Value**: 280M
@@ -4809,9 +2320,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_campaign_voting_bloc_target.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_complete_roi_all_benefits}
 
 **Value**: 1.19M
@@ -4840,9 +2349,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_complete_roi_all_benefits.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Cost per DALY Averted (Timeline Shift) {#sec-treaty_dfda_cost_per_daly_timeline_shift}
 
 **Value**: $0.13
@@ -4871,9 +2378,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_dfda_cost_per_daly_timeline_shift.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Expected Cost per DALY (Risk-Adjusted) {#sec-treaty_expected_cost_per_daly}
 
 **Value**: $13
@@ -4902,9 +2407,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_expected_cost_per_daly.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Expected Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 **Value**: 7.07
@@ -4931,9 +2434,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_expected_vs_bed_nets_multiplier.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual Lives Saved from 1% Reduction in Conflict Deaths {#sec-treaty_lives_saved_annual_global}
 
 **Value**: 2,446
@@ -4962,9 +2463,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_lives_saved_annual_global.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### 1% treaty Basic Annual Benefits (Peace + R&D Savings) {#sec-treaty_peace_plus_rd_annual_benefits}
 
 **Value**: $155B
@@ -4993,9 +2492,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_peace_plus_rd_annual_benefits.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Annual QALYs Gained from Peace Dividend {#sec-treaty_qalys_gained_annual_global}
 
 **Value**: 85,610
@@ -5024,9 +2521,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_qalys_gained_annual_global.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### 1% treaty Recurring Annual Benefits {#sec-treaty_recurring_benefits_annual}
 
 **Value**: $155B
@@ -5055,9 +2550,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_recurring_benefits_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Historical Rate (Conservative Floor) {#sec-treaty_roi_historical_rate}
 
 **Value**: 251K
@@ -5086,9 +2579,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_roi_historical_rate.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Innovation Acceleration (Optimistic) {#sec-treaty_roi_innovation_acceleration}
 
 **Value**: 2.38M
@@ -5117,9 +2608,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_roi_innovation_acceleration.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_roi_lag_elimination}
 
 **Value**: 1.19M
@@ -5148,9 +2637,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_roi_lag_elimination.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Total Annual Treaty System Costs {#sec-treaty_total_annual_costs}
 
 **Value**: $290M
@@ -5179,9 +2666,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_total_annual_costs.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### 1% treaty Recurring Annual Benefits {#sec-treaty_total_complete_benefits_annual}
 
 **Value**: $155B
@@ -5210,9 +2695,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_total_complete_benefits_annual.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_vs_bed_nets_multiplier}
 
 **Value**: 707
@@ -5239,9 +2722,7 @@ $$
 
 {{< include ../figures/exceedance-treaty_vs_bed_nets_multiplier.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Cumulative Trial Capacity Years Over 20 Years {#sec-trial_capacity_cumulative_years_20yr}
 
 **Value**: 456
@@ -5268,9 +2749,7 @@ $$
 
 {{< include ../figures/exceedance-trial_capacity_cumulative_years_20yr.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Trial Capacity Multiplier {#sec-trial_capacity_multiplier}
 
 **Value**: 22.8
@@ -5297,9 +2776,7 @@ $$
 
 {{< include ../figures/exceedance-trial_capacity_multiplier.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
 **Value**: 3,068
@@ -5328,9 +2805,7 @@ $$
 
 {{< include ../figures/exceedance-type_ii_error_cost_ratio.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024) {#sec-type_i_error_benefit_dalys}
 
 **Value**: 2.59M
@@ -5359,9 +2834,7 @@ $$
 
 {{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
 
-:::
 
-::: {.callout-note icon=false collapse=false}
 ### US Major Diseases Total Annual Cost {#sec-us_major_diseases_total_annual_cost}
 
 **Value**: $1.25T
@@ -5390,13 +2863,2097 @@ $$
 
 {{< include ../figures/exceedance-us_major_diseases_total_annual_cost.qmd >}}
 
-:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Antidepressant Trial Exclusion Rate {#sec-antidepressant_trial_exclusion_rate}
+
+**Value**: 86.1%
+
+Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
+
+**Source**: [antidepressant-trial-exclusion-rates](../references.qmd#antidepressant-trial-exclusion-rates)
+
+*✓ High confidence*
+
+
+### Average Annual Stock Market Return {#sec-average_market_return_pct}
+
+**Value**: 10%
+
+Average annual stock market return (10%)
+
+**Source**: [warren-buffett-career-average-return-20-pct](../references.qmd#warren-buffett-career-average-return-20-pct)
+
+*✓ High confidence*
+
+
+### Average US Hourly Wage {#sec-average_us_hourly_wage}
+
+**Value**: $30
+
+Average US hourly wage
+
+**Source**: [average-us-hourly-wage](../references.qmd#average-us-hourly-wage)
+
+*✓ High confidence*
+
+
+### Baseline Annual Lives Saved by Pharmaceuticals {#sec-baseline_lives_saved_annual}
+
+**Value**: 12
+
+Baseline annual lives saved by pharmaceuticals (conservative aggregate)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2024*
+
+
+### Bed Nets Cost per DALY {#sec-bed_nets_cost_per_daly}
+
+**Value**: $89
+
+GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)
+
+**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$78, $100] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
+
+*✓ High confidence*
+
+
+### Average Reading Speed {#sec-book_reading_speed_wpm}
+
+**Value**: 200
+
+Average reading speed (conservative for non-fiction)
+
+**Source**: [average-reading-speed](../references.qmd#average-reading-speed)
+
+*✓ High confidence*
+
+
+### Total Annual Value of Unpaid Caregiving in US {#sec-caregiver_annual_value_total}
+
+**Value**: $600B
+
+Total annual value of unpaid caregiving in US
+
+**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+
+*✓ High confidence*
+
+
+### Number of Unpaid Caregivers in US {#sec-caregiver_count_us}
+
+**Value**: 38M
+
+Number of unpaid caregivers in US
+
+**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+
+*✓ High confidence*
+
+
+### Average Monthly Hours of Unpaid Family Caregiving in US {#sec-caregiver_hours_per_month}
+
+**Value**: 20
+
+Average monthly hours of unpaid family caregiving in US
+
+**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+
+*✓ High confidence*
+
+
+### Estimated Replacement Cost per Hour of Caregiving {#sec-caregiver_value_per_hour_simple}
+
+**Value**: $25
+
+Estimated replacement cost per hour of caregiving
+
+**Source**: [unpaid-caregiver-hours-economic-value](../references.qmd#unpaid-caregiver-hours-economic-value)
+
+*✓ High confidence*
+
+
+### Estimated Annual Global Economic Benefit from Childhood Vaccination Programs {#sec-childhood_vaccination_annual_benefit}
+
+**Value**: $15B
+
+Estimated annual global economic benefit from childhood vaccination programs (measles, polio, etc.)
+
+**Source**: [childhood-vaccination-economic-benefits](../references.qmd#childhood-vaccination-economic-benefits)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Lognormal (SE: $4.50B)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-childhood_vaccination_annual_benefit.qmd >}}
+
+*✓ High confidence*
+
+
+### Return on Investment from Childhood Vaccination Programs {#sec-childhood_vaccination_roi}
+
+**Value**: 13
+
+Return on investment from childhood vaccination programs
+
+**Source**: [childhood-vaccination-roi](../references.qmd#childhood-vaccination-roi)
+
+*✓ High confidence*
+
+
+### Disability Weight for Untreated Chronic Conditions {#sec-chronic_disease_disability_weight}
+
+**Value**: 0.35
+
+Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 0.07)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+
+### Current Active Trials at Any Given Time {#sec-current_active_trials}
+
+**Value**: 10,000
+
+Current active trials at any given time (3-5 year duration)
+
+**Source**: [clinicaltrials-gov-enrollment-data-2025](../references.qmd#clinicaltrials-gov-enrollment-data-2025)
+
+*✓ High confidence*
+
+
+### Current Clinical Trial Participation Rate {#sec-current_clinical_trial_participation_rate}
+
+**Value**: 0.06%
+
+Current clinical trial participation rate (0.06% of population)
+
+**Source**: [clinical-trial-patient-participation-rate](../references.qmd#clinical-trial-patient-participation-rate)
+
+*✓ High confidence*
+
+
+### Global Population with Chronic Diseases {#sec-current_disease_patients_global}
+
+**Value**: 2.40B
+
+Global population with chronic diseases
+
+**Source**: [disease-prevalence-2-billion](../references.qmd#disease-prevalence-2-billion)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2.00B, 2.80B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00B and 2.80B (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_disease_patients_global.qmd >}}
+
+*✓ High confidence*
+
+
+### Average Annual New Drug Approvals Globally {#sec-current_drug_approvals_per_year}
+
+**Value**: 50
+
+Average annual new drug approvals globally
+
+**Source**: [global-new-drug-approvals-50-annually](../references.qmd#global-new-drug-approvals-50-annually)
+
+*✓ High confidence*
+
+
+### Current Global Clinical Trials per Year {#sec-current_trials_per_year}
+
+**Value**: 3,300
+
+Current global clinical trials per year
+
+**Source**: [global-clinical-trials-market-2024](../references.qmd#global-clinical-trials-market-2024)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2,640, 3,960] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 and 3,960 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trials_per_year.qmd >}}
+
+*✓ High confidence*
+
+
+### Current Trial Abandonment Rate {#sec-current_trial_abandonment_rate}
+
+**Value**: 40%
+
+Current trial abandonment rate (40% never complete)
+
+**Source**: [clinical-trial-abandonment-rate](../references.qmd#clinical-trial-abandonment-rate)
+
+*✓ High confidence*
+
+
+### Annual Global Clinical Trial Participants {#sec-current_trial_slots_available}
+
+**Value**: 1.90M
+
+Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
+
+**Source**: [global-trial-participant-capacity](../references.qmd#global-trial-participant-capacity)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.50M, 2.30M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M and 2.30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trial_slots_available.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Defense Industry Lobbying Spending {#sec-defense_lobbying_annual}
+
+**Value**: $127M
+
+Annual defense industry lobbying spending
+
+**Source**: [lobbying-spend-defense](../references.qmd#lobbying-spend-defense)
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+
+### Deworming Cost per DALY {#sec-deworming_cost_per_daly}
+
+**Value**: $55
+
+Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell notes this 2011 estimate is outdated and their current methodology focuses on long-term income effects rather than short-term health DALYs.
+
+**Source**: [deworming-cost-per-daly](../references.qmd#deworming-cost-per-daly)
+
+*? Low confidence*
+
+
+### Drug Development Cost (1980s) {#sec-drug_development_cost_1980s}
+
+**Value**: $194M
+
+Drug development cost in 1980s (compounded to approval, 1990 dollars)
+
+**Source**: [pre-1962-drug-costs-timeline](../references.qmd#pre-1962-drug-costs-timeline)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+#### Input Distribution
+
+{{< include ../figures/distribution-drug_development_cost_1980s.qmd >}}
+
+*✓ High confidence*
+
+
+### Economic Multiplier for Education Investment {#sec-economic_multiplier_education_investment}
+
+**Value**: 2.1
+
+Economic multiplier for education investment (2.1x ROI)
+
+**Source**: [education-investment-economic-multiplier](../references.qmd#education-investment-economic-multiplier)
+
+*✓ High confidence*
+
+
+### Economic Multiplier for Healthcare Investment {#sec-economic_multiplier_healthcare_investment}
+
+**Value**: 4.3
+
+Economic multiplier for healthcare investment (4.3x ROI)
+
+**Source**: [healthcare-investment-economic-multiplier](../references.qmd#healthcare-investment-economic-multiplier)
+
+*✓ High confidence*
+
+
+### Economic Multiplier for Infrastructure Investment {#sec-economic_multiplier_infrastructure_investment}
+
+**Value**: 1.6
+
+Economic multiplier for infrastructure investment (1.6x ROI)
+
+**Source**: [infrastructure-investment-economic-multiplier](../references.qmd#infrastructure-investment-economic-multiplier)
+
+*✓ High confidence*
+
+
+### Economic Multiplier for Military Spending {#sec-economic_multiplier_military_spending}
+
+**Value**: 0.6
+
+Economic multiplier for military spending (0.6x ROI)
+
+**Source**: [military-spending-economic-multiplier](../references.qmd#military-spending-economic-multiplier)
+
+*✓ High confidence*
+
+
+### Regulatory Delay for Efficacy Testing Post-Safety Verification {#sec-efficacy_lag_years}
+
+**Value**: 8.2
+
+Regulatory delay for efficacy testing (Phase II/III) post-safety verification
+
+**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 1)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+
+### FDA Phase 1 to Approval Timeline {#sec-fda_phase_1_to_approval_years}
+
+**Value**: 9.1
+
+FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
+
+**Source**: [fda-approval-timeline-10-years](../references.qmd#fda-approval-timeline-10-years)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6, 12] • Distribution: Gamma (SE: 2)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 and 12 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
+
+*✓ High confidence*
+
+
+### Givewell Average Cost per Life Saved Across Top Charities {#sec-givewell_cost_per_life_avg}
+
+**Value**: $4.50K
+
+GiveWell average cost per life saved across top charities
+
+**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+
+*✓ High confidence*
+
+
+### Givewell Cost per Life Saved (Maximum) {#sec-givewell_cost_per_life_max}
+
+**Value**: $5.50K
+
+GiveWell cost per life saved (Against Malaria Foundation)
+
+**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+
+*✓ High confidence*
+
+
+### Givewell Cost per Life Saved (Minimum) {#sec-givewell_cost_per_life_min}
+
+**Value**: $3.50K
+
+GiveWell cost per life saved (Helen Keller International)
+
+**Source**: [givewell-cost-per-life-saved](../references.qmd#givewell-cost-per-life-saved)
+
+*✓ High confidence*
+
+
+### Annual Deaths from Active Combat Worldwide {#sec-global_annual_conflict_deaths_active_combat}
+
+**Value**: 234K
+
+Annual deaths from active combat worldwide
+
+**Source**: [acled-active-combat-deaths](../references.qmd#acled-active-combat-deaths)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [180K, 300K] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 180K and 300K (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_active_combat.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Deaths from State Violence {#sec-global_annual_conflict_deaths_state_violence}
+
+**Value**: 2,700
+
+Annual deaths from state violence
+
+**Source**: [ucdp-state-violence-deaths](../references.qmd#ucdp-state-violence-deaths)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1,500, 5,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 and 5,000 (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_state_violence.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Deaths from Terror Attacks Globally {#sec-global_annual_conflict_deaths_terror_attacks}
+
+**Value**: 8,300
+
+Annual deaths from terror attacks globally
+
+**Source**: [gtd-terror-attack-deaths](../references.qmd#gtd-terror-attack-deaths)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6,000, 12,000] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 and 12,000 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_conflict_deaths_terror_attacks.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Environmental Damage and Restoration Costs from Conflict {#sec-global_annual_environmental_damage_conflict}
+
+**Value**: $100B
+
+Annual environmental damage and restoration costs from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$70B, $140B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $70B and $140B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_environmental_damage_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Infrastructure Damage to Communications from Conflict {#sec-global_annual_infrastructure_damage_communications_conflict}
+
+**Value**: $298B
+
+Annual infrastructure damage to communications from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$209B, $418B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $209B and $418B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_communications_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Infrastructure Damage to Education Facilities from Conflict {#sec-global_annual_infrastructure_damage_education_conflict}
+
+**Value**: $234B
+
+Annual infrastructure damage to education facilities from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$164B, $328B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $164B and $328B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_education_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Infrastructure Damage to Energy Systems from Conflict {#sec-global_annual_infrastructure_damage_energy_conflict}
+
+**Value**: $422B
+
+Annual infrastructure damage to energy systems from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$295B, $590B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $295B and $590B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_energy_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Infrastructure Damage to Healthcare Facilities from Conflict {#sec-global_annual_infrastructure_damage_healthcare_conflict}
+
+**Value**: $166B
+
+Annual infrastructure damage to healthcare facilities from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$116B, $232B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $116B and $232B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_healthcare_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Infrastructure Damage to Transportation from Conflict {#sec-global_annual_infrastructure_damage_transportation_conflict}
+
+**Value**: $487B
+
+Annual infrastructure damage to transportation from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$340B, $680B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $340B and $680B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_transportation_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Infrastructure Damage to Water Systems from Conflict {#sec-global_annual_infrastructure_damage_water_conflict}
+
+**Value**: $268B
+
+Annual infrastructure damage to water systems from conflict
+
+**Source**: [environmental-cost-of-war](../references.qmd#environmental-cost-of-war)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$187B, $375B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $187B and $375B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_infrastructure_damage_water_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Lives Saved by Medical Research Globally {#sec-global_annual_lives_saved_by_med_research}
+
+**Value**: 4.20M
+
+Annual lives saved by medical research globally
+
+**Source**: [medical-research-lives-saved-annually](../references.qmd#medical-research-lives-saved-annually)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3.00M, 6.00M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3.00M and 6.00M (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lives_saved_by_med_research.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Lost Economic Growth from Military Spending Opportunity Cost {#sec-global_annual_lost_economic_growth_military_spending}
+
+**Value**: $2.72T
+
+Annual lost economic growth from military spending opportunity cost
+
+**Source**: [disparity-ratio-weapons-vs-cures](../references.qmd#disparity-ratio-weapons-vs-cures)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.90T, $3.80T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.90T and $3.80T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_economic_growth_military_spending.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Lost Productivity from Conflict Casualties {#sec-global_annual_lost_human_capital_conflict}
+
+**Value**: $300B
+
+Annual lost productivity from conflict casualties
+
+**Source**: [lost-human-capital-war-cost](../references.qmd#lost-human-capital-war-cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$210B, $420B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $210B and $420B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_lost_human_capital_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual PTSD and Mental Health Costs from Conflict {#sec-global_annual_psychological_impact_costs_conflict}
+
+**Value**: $232B
+
+Annual PTSD and mental health costs from conflict
+
+**Source**: [psychological-impact-war-cost](../references.qmd#psychological-impact-war-cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$162B, $325B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $162B and $325B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_psychological_impact_costs_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Refugee Support Costs {#sec-global_annual_refugee_support_costs}
+
+**Value**: $150B
+
+Annual refugee support costs (108.4M refugees × $1,384/year)
+
+**Source**: [unhcr-refugee-support-cost](../references.qmd#unhcr-refugee-support-cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$105B, $210B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $105B and $210B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_refugee_support_costs.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Trade Disruption Costs from Currency Instability {#sec-global_annual_trade_disruption_currency_conflict}
+
+**Value**: $57.4B
+
+Annual trade disruption costs from currency instability
+
+**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40B, $80B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $40B and $80B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_currency_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Trade Disruption Costs from Energy Price Volatility {#sec-global_annual_trade_disruption_energy_price_conflict}
+
+**Value**: $125B
+
+Annual trade disruption costs from energy price volatility
+
+**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$87B, $175B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $87B and $175B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_energy_price_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Trade Disruption Costs from Shipping Disruptions {#sec-global_annual_trade_disruption_shipping_conflict}
+
+**Value**: $247B
+
+Annual trade disruption costs from shipping disruptions
+
+**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$173B, $346B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $173B and $346B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_shipping_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Trade Disruption Costs from Supply Chain Disruptions {#sec-global_annual_trade_disruption_supply_chain_conflict}
+
+**Value**: $187B
+
+Annual trade disruption costs from supply chain disruptions
+
+**Source**: [world-bank-trade-disruption-conflict](../references.qmd#world-bank-trade-disruption-conflict)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$131B, $262B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $131B and $262B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_trade_disruption_supply_chain_conflict.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Veteran Healthcare Costs {#sec-global_annual_veteran_healthcare_costs}
+
+**Value**: $200B
+
+Annual veteran healthcare costs (20-year projected)
+
+**Source**: [veteran-healthcare-cost-projections](../references.qmd#veteran-healthcare-cost-projections)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$140B, $280B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $140B and $280B (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_veteran_healthcare_costs.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Global Spending on Clinical Trials {#sec-global_clinical_trials_spending_annual}
+
+**Value**: $83B
+
+Annual global spending on clinical trials
+
+**Source**: [global-clinical-trials-market-2024](../references.qmd#global-clinical-trials-market-2024)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$70B, $97B] • Distribution: Lognormal (SE: $12.5B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $70B and $97B (±16%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Daily Deaths from Curable Diseases Globally {#sec-global_daily_deaths_curable_diseases}
+
+**Value**: 150K
+
+Daily deaths from curable diseases globally
+
+**Source**: [deaths-from-treatable-diseases-15m](../references.qmd#deaths-from-treatable-diseases-15m)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [120K, 180K] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120K and 180K (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_daily_deaths_curable_diseases.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Daily Deaths from Disease and Aging {#sec-global_disease_deaths_daily}
+
+**Value**: 150K
+
+Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7,500)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### Global Annual Direct Medical Costs of Disease {#sec-global_disease_direct_medical_cost_annual}
+
+**Value**: $9.90T
+
+Direct medical costs of disease globally (treatment, hospitalization, medication)
+
+**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7.00T, $14T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $7.00T and $14T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_direct_medical_cost_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Annual Economic Value of Human Life Lost to Disease {#sec-global_disease_human_life_value_loss_annual}
+
+**Value**: $94.2T
+
+Economic value of human life lost to disease annually (mortality valuation)
+
+**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$66T, $132T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $66T and $132T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_human_life_value_loss_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Annual Productivity Loss from Disease {#sec-global_disease_productivity_loss_annual}
+
+**Value**: $5.00T
+
+Annual productivity loss from disease globally (absenteeism, reduced output)
+
+**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.50T, $7.00T] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3.50T and $7.00T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_productivity_loss_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Life Expectancy (2024) {#sec-global_life_expectancy_2024}
+
+**Value**: 79
+
+Global life expectancy (2024)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+
+### Global Government Medical Research Spending {#sec-global_med_research_spending}
+
+**Value**: $67.5B
+
+Global government medical research spending
+
+**Source**: [global-gov-med-research-spending](../references.qmd#global-gov-med-research-spending)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$54B, $81B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $54B and $81B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_med_research_spending.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Military Spending in 2024 {#sec-global_military_spending_annual_2024}
+
+**Value**: $2.72T
+
+Global military spending in 2024
+
+**Source**: [global-military-spending](../references.qmd#global-military-spending)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2.45T, $2.99T] • Distribution: Lognormal (SE: $272B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $2.45T and $2.99T (±10%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_military_spending_annual_2024.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Population in 2024 {#sec-global_population_2024}
+
+**Value**: 8.00B
+
+Global population in 2024
+
+**Source**: [global-population-8-billion](../references.qmd#global-population-8-billion)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [7.80B, 8.20B] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 7.80B and 8.20B (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_population_2024.qmd >}}
+
+*✓ High confidence*
+
+
+### Critical Mass Threshold for Social Change {#sec-global_population_activism_threshold_pct}
+
+**Value**: 3.5%
+
+Critical mass threshold for social change (3.5% rule)
+
+**Source**: [3-5-rule](../references.qmd#3-5-rule)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2.5%, 4.5%] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 2.5% and 4.5% (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Global Spending on Symptomatic Disease Treatment {#sec-global_symptomatic_disease_treatment_annual}
+
+**Value**: $8.20T
+
+Annual global spending on symptomatic disease treatment
+
+**Source**: [disease-economic-burden-109t](../references.qmd#disease-economic-burden-109t)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$6.50T, $10T] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $6.50T and $10T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_symptomatic_disease_treatment_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Estimated Total Economic Impact of Human Genome Project {#sec-human_genome_project_total_economic_impact}
+
+**Value**: $1.00T
+
+Estimated total economic impact of Human Genome Project
+
+**Source**: [human-genome-and-genetic-editing](../references.qmd#human-genome-and-genetic-editing)
+
+*✓ High confidence*
+
+
+### Life Extension from Treaty Research Acceleration {#sec-life_extension_years}
+
+**Value**: 20
+
+Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.
+
+**Source**: [longevity-escape-velocity](../references.qmd#longevity-escape-velocity)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5, 100] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 and 100 (±238%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-life_extension_years.qmd >}}
+
+*? Low confidence*
+
+
+### Maximum Annual Lobbyist Salary Range {#sec-lobbyist_salary_max}
+
+**Value**: $2.00M
+
+Maximum annual lobbyist salary range
+
+**Source**: [lobbyist-statistics-dc](../references.qmd#lobbyist-statistics-dc)
+
+*✓ High confidence*
+
+
+### Minimum Annual Lobbyist Salary Range {#sec-lobbyist_salary_min_k}
+
+**Value**: $500K
+
+Minimum annual lobbyist salary range
+
+**Source**: [lobbyist-statistics-dc](../references.qmd#lobbyist-statistics-dc)
+
+*✓ High confidence*
+
+
+### Return on Investment from Measles Vaccination Programs {#sec-measles_vaccination_roi}
+
+**Value**: 14
+
+Return on investment from measles (MMR) vaccination programs
+
+**Source**: [measles-vaccination-roi](../references.qmd#measles-vaccination-roi)
+
+*✓ High confidence*
+
+
+### Annual Productivity Loss per Capita from Mental Health Issues {#sec-mental_health_productivity_loss_per_capita}
+
+**Value**: $2.00K
+
+Annual productivity loss per capita from mental health issues (beyond treatment costs)
+
+**Source**: [mental-health-burden](../references.qmd#mental-health-burden)
+
+*✓ High confidence*
+
+
+### Oxford RECOVERY Trial Duration {#sec-oxford_recovery_trial_duration_months}
+
+**Value**: 3
+
+Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
+
+**Source**: [recovery-trial-82x-cost-reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+#### Input Distribution
+
+{{< include ../figures/distribution-oxford_recovery_trial_duration_months.qmd >}}
+
+*✓ High confidence*
+
+
+### Patient Willingness to Participate in Clinical Trials {#sec-patient_willingness_trial_participation_pct}
+
+**Value**: 44.8%
+
+Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
+
+**Source**: [patient-willingness-clinical-trials](../references.qmd#patient-willingness-clinical-trials)
+
+*~ Medium confidence*
+
+
+### Pharma Drug Development Cost (Current System) {#sec-pharma_drug_development_cost_current}
+
+**Value**: $2.60B
+
+Average cost to develop one drug in current system
+
+**Source**: [drug-development-cost](../references.qmd#drug-development-cost)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.50B, $4.00B] • Distribution: Lognormal (SE: $500M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4.00B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### Pharma Average Drug Revenue (Current System) {#sec-pharma_drug_revenue_average_current}
+
+**Value**: $6.70B
+
+Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)
+
+**Source**: [pharma-drug-revenue-average](../references.qmd#pharma-drug-revenue-average)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### Pharma ROI (Current System) {#sec-pharma_roi_current_system_pct}
+
+**Value**: 1.2%
+
+ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)
+
+**Source**: [pharma-roi-current](../references.qmd#pharma-roi-current)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### Pharma Drug Success Rate (Current System) {#sec-pharma_success_rate_current_pct}
+
+**Value**: 10%
+
+Percentage of drugs that reach market in current system
+
+**Source**: [drug-trial-success-rate-12-pct](../references.qmd#drug-trial-success-rate-12-pct)
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### Phase I Safety Trial Duration {#sec-phase_1_safety_duration_years}
+
+**Value**: 2.3
+
+Phase I safety trial duration
+
+**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+
+### Phase 3 Trial Total Cost (Minimum) {#sec-phase_3_trial_cost_min}
+
+**Value**: $20M
+
+Phase 3 trial total cost (minimum)
+
+**Source**: [phase-3-cost-per-trial-range](../references.qmd#phase-3-cost-per-trial-range)
+
+*✓ High confidence*
+
+
+### Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs {#sec-polio_vaccination_roi}
+
+**Value**: 39
+
+Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs
+
+**Source**: [polio-vaccination-roi](../references.qmd#polio-vaccination-roi)
+
+*✓ High confidence*
+
+
+### Political Success Probability {#sec-political_success_probability}
+
+**Value**: 1%
+
+Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. 
+
+**Source**: [icbl-ottawa-treaty](../references.qmd#icbl-ottawa-treaty)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1%, 10%] • Distribution: Beta (SE: 2%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 10% (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_success_probability.qmd >}}
+
+*? Low confidence*
+
+
+### Post-1962 Drug Approval Reduction {#sec-post_1962_drug_approval_reduction_pct}
+
+**Value**: 70%
+
+Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
+
+**Source**: [post-1962-drug-approval-drop](../references.qmd#post-1962-drug-approval-drop)
+
+*✓ High confidence • Updated 1962-1970*
+
+
+### Percentage Military Spending Cut After WW2 {#sec-post_ww2_military_cut_pct}
+
+**Value**: 30%
+
+Percentage military spending cut after WW2 (historical precedent)
+
+**Source**: [us-post-wwii-military-spending-cut](../references.qmd#us-post-wwii-military-spending-cut)
+
+*✓ High confidence*
+
+
+### Pre-1962 Drug Development Cost {#sec-pre_1962_drug_development_cost}
+
+**Value**: $50M
+
+Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
+
+**Source**: [pre-1962-drug-costs-timeline](../references.qmd#pre-1962-drug-costs-timeline)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10M, $50M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $50M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pre_1962_drug_development_cost.qmd >}}
+
+*~ Medium confidence*
+
+
+### Pre-1962 Physician Count (Unverified) {#sec-pre_1962_physician_count}
+
+**Value**: 144K
+
+Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
+
+**Source**: [pre-1962-physician-trials](../references.qmd#pre-1962-physician-trials)
+
+*? Low confidence*
+
+
+### Total Number of Rare Diseases Globally {#sec-rare_diseases_count_global}
+
+**Value**: 7,000
+
+Total number of rare diseases globally
+
+**Source**: [95-pct-diseases-no-treatment](../references.qmd#95-pct-diseases-no-treatment)
+
+*✓ High confidence*
+
+
+### Recovery Trial Cost per Patient {#sec-recovery_trial_cost_per_patient}
+
+**Value**: $500
+
+RECOVERY trial cost per patient
+
+**Source**: [recovery-cost-500](../references.qmd#recovery-cost-500)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$350, $700] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $350 and $700 (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+
+### Mean Age of Preventable Death from Post-Safety Efficacy Delay {#sec-regulatory_delay_mean_age_of_death}
+
+**Value**: 62
+
+Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 3)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+
+### Pre-Death Suffering Period During Post-Safety Efficacy Delay {#sec-regulatory_delay_suffering_period_years}
+
+**Value**: 6
+
+Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [4, 9] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 4 and 9 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
+
+*~ Medium confidence • 📊 Peer-reviewed*
+
+
+### Return on Investment from Smallpox Eradication Campaign {#sec-smallpox_eradication_roi}
+
+**Value**: 280
+
+Return on investment from smallpox eradication campaign
+
+**Source**: [smallpox-eradication-roi](../references.qmd#smallpox-eradication-roi)
+
+*✓ High confidence*
+
+
+### Total Economic Benefit from Smallpox Eradication Campaign {#sec-smallpox_eradication_total_benefit}
+
+**Value**: $1.42B
+
+Total economic benefit from smallpox eradication campaign
+
+**Source**: [smallpox-eradication-roi](../references.qmd#smallpox-eradication-roi)
+
+*✓ High confidence*
+
+
+### Estimated Annual Global Economic Benefit from Smoking Cessation Programs {#sec-smoking_cessation_annual_benefit}
+
+**Value**: $12B
+
+Estimated annual global economic benefit from smoking cessation programs
+
+**Source**: [life-expectancy-gains-smoking-reduction](../references.qmd#life-expectancy-gains-smoking-reduction)
+
+*✓ High confidence*
+
+
+### Standard Economic Value per QALY {#sec-standard_economic_qaly_value_usd}
+
+**Value**: $150K
+
+Standard economic value per QALY
+
+**Source**: [qaly-value](../references.qmd#qaly-value)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: $30K)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+
+### Standard QALYs per Life Saved {#sec-standard_qalys_per_life_saved}
+
+**Value**: 35
+
+Standard QALYs per life saved (WHO life tables)
+
+**Source**: [qaly-value](../references.qmd#qaly-value)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 7)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-standard_qalys_per_life_saved.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Cost of Sugar Subsidies per Person {#sec-sugar_subsidy_cost_per_person_annual}
+
+**Value**: $10
+
+Annual cost of sugar subsidies per person
+
+**Source**: [sugar-subsidies-cost](../references.qmd#sugar-subsidies-cost)
+
+*✓ High confidence*
+
+
+### Switzerland's Defense Spending as Percentage of GDP {#sec-switzerland_defense_spending_pct}
+
+**Value**: 0.7%
+
+Switzerland's defense spending as percentage of GDP (0.7%)
+
+**Source**: [swiss-military-budget-0-7-pct-gdp](../references.qmd#swiss-military-budget-0-7-pct-gdp)
+
+*✓ High confidence*
+
+
+### Switzerland GDP per Capita {#sec-switzerland_gdp_per_capita_k}
+
+**Value**: $93K
+
+Switzerland GDP per capita
+
+**Source**: [swiss-vs-us-gdp-per-capita](../references.qmd#swiss-vs-us-gdp-per-capita)
+
+*✓ High confidence*
+
+
+### Deaths from 9/11 Terrorist Attacks {#sec-terrorism_deaths_911}
+
+**Value**: 2,996
+
+Deaths from 9/11 terrorist attacks
+
+**Source**: [chance-of-dying-from-terrorism-1-in-30m](../references.qmd#chance-of-dying-from-terrorism-1-in-30m)
+
+*✓ High confidence*
+
+
+### Thalidomide Cases Worldwide {#sec-thalidomide_cases_worldwide}
+
+**Value**: 15,000
+
+Total thalidomide birth defect cases worldwide (1957-1962)
+
+**Source**: [thalidomide-scandal](../references.qmd#thalidomide-scandal)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10,000, 20,000] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 and 20,000 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_cases_worldwide.qmd >}}
+
+*~ Medium confidence*
+
+
+### Thalidomide Disability Weight {#sec-thalidomide_disability_weight}
+
+**Value**: 0.4
+
+Disability weight for thalidomide survivors (limb deformities, organ damage)
+
+**Source**: [thalidomide-survivors-health](../references.qmd#thalidomide-survivors-health)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.32, 0.48] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32 and 0.48 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_disability_weight.qmd >}}
+
+*~ Medium confidence*
+
+
+### Thalidomide Mortality Rate {#sec-thalidomide_mortality_rate}
+
+**Value**: 40%
+
+Mortality rate for thalidomide-affected infants (died within first year)
+
+**Source**: [thalidomide-scandal](../references.qmd#thalidomide-scandal)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [35%, 45%] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 35% and 45% (±13%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_mortality_rate.qmd >}}
+
+*✓ High confidence*
+
+
+### Thalidomide Survivor Lifespan {#sec-thalidomide_survivor_lifespan}
+
+**Value**: 60
+
+Average lifespan for thalidomide survivors
+
+**Source**: [thalidomide-survivors-health](../references.qmd#thalidomide-survivors-health)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50, 70] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 50 and 70 (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_survivor_lifespan.qmd >}}
+
+*~ Medium confidence*
+
+
+### US Population Share 1960 {#sec-thalidomide_us_population_share_1960}
+
+**Value**: 6%
+
+US share of world population in 1960
+
+**Source**: [us-census-world-population-1960](../references.qmd#us-census-world-population-1960)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5.5%, 6.5%] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 5.5% and 6.5% (±8%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-thalidomide_us_population_share_1960.qmd >}}
+
+*✓ High confidence*
+
+
+### Phase 3 Cost per Patient {#sec-traditional_phase3_cost_per_patient}
+
+**Value**: $80K
+
+Phase 3 cost per patient (median)
+
+**Source**: [phase-3-cost-per-patient-113k](../references.qmd#phase-3-cost-per-patient-113k)
+
+*✓ High confidence*
+
+
+### Example Phase 3 Trial Cost per Patient {#sec-traditional_phase3_cost_per_patient_example_48k}
+
+**Value**: $48K
+
+Example Phase 3 trial cost per patient ($48K)
+
+**Source**: [clinical-trial-cost-per-patient](../references.qmd#clinical-trial-cost-per-patient)
+
+*✓ High confidence*
+
+
+### FDA Cited Phase 3 Cost per Patient {#sec-traditional_phase3_cost_per_patient_fda_example_41k}
+
+**Value**: $41K
+
+FDA cited Phase 3 cost per patient ($41K)
+
+**Source**: [trial-costs-fda-study](../references.qmd#trial-costs-fda-study)
+
+*✓ High confidence*
+
+
+### Traditional FDA Drug Development Timeline {#sec-treatment_acceleration_years_current}
+
+**Value**: 17
+
+Traditional FDA drug development timeline
+
+**Source**: [fda-approval-timeline-10-years](../references.qmd#fda-approval-timeline-10-years)
+
+*✓ High confidence*
+
+
+### Cost Reduction Factor Demonstrated by Recovery Trial {#sec-trial_cost_reduction_factor}
+
+**Value**: 82
+
+Cost reduction factor demonstrated by RECOVERY trial
+
+**Source**: [recovery-trial-82x-cost-reduction](../references.qmd#recovery-trial-82x-cost-reduction)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [20, 150] • Distribution: Lognormal (SE: 20)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 20 and 150 (±79%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-trial_cost_reduction_factor.qmd >}}
+
+*✓ High confidence*
+
+
+### Typical CEO Hourly Rate {#sec-typical_ceo_hourly_rate}
+
+**Value**: $10K
+
+Typical CEO hourly rate
+
+**Source**: [ceo-compensation](../references.qmd#ceo-compensation)
+
+*✓ High confidence*
+
+
+### US Alzheimer's Annual Cost {#sec-us_alzheimers_annual_cost}
+
+**Value**: $355B
+
+Annual US cost of Alzheimer's disease (direct and indirect)
+
+**Source**: [disease-cost-alzheimers-1300b](../references.qmd#disease-cost-alzheimers-1300b)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$302B, $408B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $302B and $408B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_alzheimers_annual_cost.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### US Cancer Annual Cost {#sec-us_cancer_annual_cost}
+
+**Value**: $208B
+
+Annual US cost of cancer (direct and indirect)
+
+**Source**: [disease-cost-cancer-1800b](../references.qmd#disease-cost-cancer-1800b)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$177B, $239B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $177B and $239B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_cancer_annual_cost.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### US Annual Chronic Disease Spending {#sec-us_chronic_disease_spending_annual}
+
+**Value**: $4.10T
+
+US annual chronic disease spending
+
+**Source**: [us-chronic-disease-spending](../references.qmd#us-chronic-disease-spending)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.30T, $5.00T] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.30T and $5.00T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_chronic_disease_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### US Diabetes Annual Cost {#sec-us_diabetes_annual_cost}
+
+**Value**: $327B
+
+Annual US cost of diabetes (direct and indirect)
+
+**Source**: [disease-cost-diabetes-1500b](../references.qmd#disease-cost-diabetes-1500b)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$278B, $376B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $278B and $376B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_diabetes_annual_cost.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### US Heart Disease Annual Cost {#sec-us_heart_disease_annual_cost}
+
+**Value**: $363B
+
+Annual US cost of heart disease and stroke (direct and indirect)
+
+**Source**: [disease-cost-heart-disease-2100b](../references.qmd#disease-cost-heart-disease-2100b)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$309B, $417B] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $309B and $417B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+
+### US Mental Health Costs {#sec-us_mental_health_cost_annual}
+
+**Value**: $350B
+
+US mental health costs (treatment + productivity loss)
+
+**Source**: [mental-health-burden](../references.qmd#mental-health-burden)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$260B, $450B] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $260B and $450B (±27%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_mental_health_cost_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### US Military Spending as Percentage of GDP {#sec-us_military_spending_pct_gdp}
+
+**Value**: 3.5%
+
+US military spending as percentage of GDP (2024)
+
+**Source**: [us-military-budget-3-5-pct-gdp](../references.qmd#us-military-budget-3-5-pct-gdp)
+
+*✓ High confidence*
+
+
+### US Population in 2024 {#sec-us_population_2024}
+
+**Value**: 335M
+
+US population in 2024
+
+**Source**: [us-voter-population](../references.qmd#us-voter-population)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [330M, 340M] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 330M and 340M (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_population_2024.qmd >}}
+
+*✓ High confidence*
+
+
+### Value of Statistical Life {#sec-value_of_statistical_life}
+
+**Value**: $10M
+
+Value of Statistical Life (conservative estimate)
+
+**Source**: [dot-vsl-13-6m](../references.qmd#dot-vsl-13-6m)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5.00M, $15M] • Distribution: Gamma (SE: $3.00M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $5.00M and $15M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The gamma distribution means values follow a specific statistical pattern.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-value_of_statistical_life.qmd >}}
+
+*✓ High confidence*
+
+
+### Vitamin A Supplementation Cost per DALY {#sec-vitamin_a_cost_per_daly}
+
+**Value**: $37
+
+Cost per DALY for vitamin A supplementation programs (India: $23-50; Africa: $40-255; wide variation by region and baseline VAD prevalence). Using India midpoint as conservative estimate.
+
+**Source**: [vitamin-a-cost-per-daly](../references.qmd#vitamin-a-cost-per-daly)
+
+*~ Medium confidence*
+
+
+### Estimated Annual Global Economic Benefit from Water Fluoridation Programs {#sec-water_fluoridation_annual_benefit}
+
+**Value**: $800M
+
+Estimated annual global economic benefit from water fluoridation programs
+
+**Source**: [clean-water-sanitation-roi](../references.qmd#clean-water-sanitation-roi)
+
+*✓ High confidence*
+
+
+### Return on Investment from Water Fluoridation Programs {#sec-water_fluoridation_roi}
+
+**Value**: 23
+
+Return on investment from water fluoridation programs
+
+**Source**: [clean-water-sanitation-roi](../references.qmd#clean-water-sanitation-roi)
+
+*✓ High confidence*
+
+
+### Cost-Effectiveness Threshold ($50,000/QALY) {#sec-who_qaly_threshold_cost_effective}
+
+**Value**: $50K
+
+Cost-effectiveness threshold widely used in US health economics ($50,000/QALY, from 1980s dialysis costs)
+
+**Source**: [who-cost-effectiveness-threshold](../references.qmd#who-cost-effectiveness-threshold)
+
+*✓ High confidence*
+
+
+### Percentage of Workforce Experiencing Productivity Loss from Chronic Illness {#sec-workforce_with_productivity_loss}
+
+**Value**: 28%
+
+Percentage of workforce experiencing productivity loss from chronic illness (28%)
+
+**Source**: [chronic-illness-workforce-productivity-loss](../references.qmd#chronic-illness-workforce-productivity-loss)
+
+*✓ High confidence*
+
 
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
 
-::: {.callout-warning icon=false collapse=false}
 ### Celebrity and Influencer Endorsements {#sec-campaign_celebrity_endorsement}
 
 **Value**: $15M
@@ -5405,9 +4962,7 @@ Celebrity and influencer endorsements
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Community Organizing and Ambassador Program Budget {#sec-campaign_community_organizing}
 
 **Value**: $30M
@@ -5416,9 +4971,7 @@ Community organizing and ambassador program budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Contingency Fund for Unexpected Costs {#sec-campaign_contingency}
 
 **Value**: $50M
@@ -5435,9 +4988,7 @@ Contingency fund for unexpected costs
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Defense Industry Conversion Program {#sec-campaign_defense_conversion}
 
 **Value**: $50M
@@ -5454,9 +5005,7 @@ Defense industry conversion program
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Budget for Co-Opting Defense Industry Lobbyists {#sec-campaign_defense_lobbyist_budget}
 
 **Value**: $50M
@@ -5465,9 +5014,7 @@ Budget for co-opting defense industry lobbyists
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Healthcare Industry Alignment and Partnerships {#sec-campaign_healthcare_alignment}
 
 **Value**: $35M
@@ -5476,9 +5023,7 @@ Healthcare industry alignment and partnerships
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Campaign Operational Infrastructure {#sec-campaign_infrastructure}
 
 **Value**: $20M
@@ -5487,9 +5032,7 @@ Campaign operational infrastructure
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### AI-Assisted Legal Work Budget {#sec-campaign_legal_ai_budget}
 
 **Value**: $50M
@@ -5498,9 +5041,7 @@ AI-assisted legal work budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Legal Defense Fund {#sec-campaign_legal_defense}
 
 **Value**: $20M
@@ -5509,9 +5050,7 @@ Legal defense fund
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Legal Drafting and Compliance Work {#sec-campaign_legal_work}
 
 **Value**: $60M
@@ -5528,9 +5067,7 @@ Legal drafting and compliance work
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### EU Lobbying Campaign Budget {#sec-campaign_lobbying_eu}
 
 **Value**: $40M
@@ -5539,9 +5076,7 @@ EU lobbying campaign budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### G20 Countries Lobbying Budget {#sec-campaign_lobbying_g20_millions}
 
 **Value**: $35M
@@ -5550,9 +5085,7 @@ G20 countries lobbying budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### US Lobbying Campaign Budget {#sec-campaign_lobbying_us}
 
 **Value**: $50M
@@ -5561,9 +5094,7 @@ US lobbying campaign budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Maximum Mass Media Campaign Budget {#sec-campaign_media_budget_max}
 
 **Value**: $1.00B
@@ -5572,9 +5103,7 @@ Maximum mass media campaign budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Minimum Mass Media Campaign Budget {#sec-campaign_media_budget_min}
 
 **Value**: $500M
@@ -5583,9 +5112,7 @@ Minimum mass media campaign budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Opposition Research and Rapid Response {#sec-campaign_opposition_research}
 
 **Value**: $25M
@@ -5594,9 +5121,7 @@ Opposition research and rapid response
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Phase 1 Campaign Budget {#sec-campaign_phase1_budget}
 
 **Value**: $200M
@@ -5605,9 +5130,7 @@ Phase 1 campaign budget (Foundation, Year 1)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Phase 2 Campaign Budget {#sec-campaign_phase2_budget}
 
 **Value**: $500M
@@ -5616,9 +5139,7 @@ Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Pilot Program Testing in Small Countries {#sec-campaign_pilot_programs}
 
 **Value**: $30M
@@ -5627,9 +5148,7 @@ Pilot program testing in small countries
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Voting Platform and Technology Development {#sec-campaign_platform_development}
 
 **Value**: $35M
@@ -5646,9 +5165,7 @@ Voting platform and technology development
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Regulatory Compliance and Navigation {#sec-campaign_regulatory_navigation}
 
 **Value**: $20M
@@ -5657,9 +5174,7 @@ Regulatory compliance and navigation
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Scaling Preparation and Blueprints {#sec-campaign_scaling_prep}
 
 **Value**: $30M
@@ -5668,9 +5183,7 @@ Scaling preparation and blueprints
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Campaign Core Team Staff Budget {#sec-campaign_staff_budget}
 
 **Value**: $40M
@@ -5679,9 +5192,7 @@ Campaign core team staff budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Super PAC Campaign Expenditures {#sec-campaign_super_pac_budget}
 
 **Value**: $30M
@@ -5690,9 +5201,7 @@ Super PAC campaign expenditures
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Tech Industry Partnerships and Infrastructure {#sec-campaign_tech_partnerships}
 
 **Value**: $25M
@@ -5701,9 +5210,7 @@ Tech industry partnerships and infrastructure
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Post-Victory Treaty Implementation Support {#sec-campaign_treaty_implementation}
 
 **Value**: $40M
@@ -5720,9 +5227,7 @@ Post-victory treaty implementation support
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Viral Marketing Content Creation Budget {#sec-campaign_viral_content_budget}
 
 **Value**: $40M
@@ -5731,9 +5236,7 @@ Viral marketing content creation budget
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Annual Cost of Unpaid Caregiving {#sec-caregiver_cost_annual}
 
 **Value**: $6.00K
@@ -5742,9 +5245,7 @@ Annual cost of unpaid caregiving (replacement cost method)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Childhood Vaccination Cost per DALY (Estimated) {#sec-childhood_vaccination_cost_per_daly}
 
 **Value**: $30
@@ -5753,9 +5254,7 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Current Patient Participation Rate in Clinical Trials {#sec-current_patient_participation_rate}
 
 **Value**: 0.0792%
@@ -5764,18 +5263,14 @@ Current patient participation rate in clinical trials (0.08% = 1.9M participants
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Days Per Year {#sec-days_per_year}
 
 **Value**: 365
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Mid-Range Funding for Commercial Dct Platform {#sec-dct_platform_funding_medium}
 
 **Value**: $500M
@@ -5784,9 +5279,7 @@ Mid-range funding for commercial DCT platform
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Percentage of Budget Defense Sector Keeps Under 1% treaty {#sec-defense_sector_retention_pct}
 
 **Value**: 99%
@@ -5795,9 +5288,7 @@ Percentage of budget defense sector keeps under 1% treaty
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Years to Reach Full dFDA Adoption {#sec-dfda_npv_adoption_ramp_years}
 
 **Value**: 5
@@ -5806,9 +5297,7 @@ Years to reach full dFDA adoption
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Core Platform Annual OPEX {#sec-dfda_npv_annual_opex}
 
 **Value**: $18.9M
@@ -5825,9 +5314,7 @@ dFDA core platform annual opex (midpoint of $11-26.5M)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Core Platform Build Cost {#sec-dfda_npv_upfront_cost}
 
 **Value**: $40M
@@ -5844,9 +5331,7 @@ dFDA core platform build cost
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Community Support Costs {#sec-dfda_opex_community}
 
 **Value**: $2.00M
@@ -5863,9 +5348,7 @@ dFDA community support costs
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Infrastructure Costs {#sec-dfda_opex_infrastructure}
 
 **Value**: $8.00M
@@ -5882,9 +5365,7 @@ dFDA infrastructure costs (cloud, security)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Overhead Percentage of Treaty Funding {#sec-dfda_opex_pct_of_treaty_funding}
 
 **Value**: 0.147%
@@ -5893,9 +5374,7 @@ Percentage of treaty funding allocated to dFDA platform overhead
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Maintenance Costs {#sec-dfda_opex_platform_maintenance}
 
 **Value**: $15M
@@ -5912,9 +5391,7 @@ dFDA maintenance costs
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Regulatory Coordination Costs {#sec-dfda_opex_regulatory}
 
 **Value**: $5.00M
@@ -5931,9 +5408,7 @@ dFDA regulatory coordination costs
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Staff Costs {#sec-dfda_opex_staff}
 
 **Value**: $10M
@@ -5950,9 +5425,7 @@ dFDA staff costs (minimal, AI-assisted)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
 
 **Value**: $1.00K
@@ -5961,9 +5434,7 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA One-Time Build Cost {#sec-dfda_upfront_build}
 
 **Value**: $40M
@@ -5972,9 +5443,7 @@ dFDA one-time build cost (central estimate)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
 
 **Value**: $46M
@@ -5983,9 +5452,7 @@ dFDA one-time build cost (high estimate)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### DIH Broader Initiatives Annual OPEX {#sec-dih_npv_annual_opex_initiatives}
 
 **Value**: $21.1M
@@ -6002,9 +5469,7 @@ DIH broader initiatives annual opex (medium case)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### DIH Broader Initiatives Upfront Cost {#sec-dih_npv_upfront_cost_initiatives}
 
 **Value**: $230M
@@ -6021,9 +5486,7 @@ DIH broader initiatives upfront cost (medium case)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Medical Research Percentage of Treaty Funding {#sec-dih_treasury_medical_research_pct}
 
 **Value**: 80%
@@ -6032,9 +5495,7 @@ Percentage of treaty funding allocated to medical research (after bond payouts)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Patient Trial Subsidies Percentage of Treaty Funding {#sec-dih_treasury_trial_subsidies_pct}
 
 **Value**: 79.9%
@@ -6043,9 +5504,7 @@ Percentage of treaty funding going directly to patient trial subsidies
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Percentage of Caregiving for Treatable Disease Conditions {#sec-disease_related_caregiver_pct}
 
 **Value**: 40%
@@ -6054,9 +5513,7 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
 
 **Value**: 18,274
@@ -6065,9 +5522,7 @@ Ratio of annual disease deaths to 9/11 terrorism deaths
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
 
 **Value**: 224
@@ -6076,9 +5531,7 @@ Ratio of annual disease deaths to war deaths
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Lifetime Benefit for Age 30 Baseline Scenario {#sec-effective_hourly_rate_lifetime_benefit}
 
 **Value**: $4.30M
@@ -6087,9 +5540,7 @@ Lifetime benefit for age 30 baseline scenario ($4.3M)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Eventually Avoidable Death Percentage {#sec-eventually_avoidable_death_pct}
 
 **Value**: 92.6%
@@ -6098,9 +5549,7 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Minimum Investment for Family Offices {#sec-family_office_investment_min}
 
 **Value**: $5.00M
@@ -6109,9 +5558,7 @@ Minimum investment for family offices
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Fundamentally Unavoidable Death Percentage {#sec-fundamentally_unavoidable_death_pct}
 
 **Value**: 7.37%
@@ -6120,27 +5567,21 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Hours Per Day {#sec-hours_per_day}
 
 **Value**: 24
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Hours Per Year {#sec-hours_per_year}
 
 **Value**: 8,760
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### IAB Political Incentive Funding Percentage {#sec-iab_political_incentive_funding_pct}
 
 **Value**: 10%
@@ -6153,9 +5594,7 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Minimum Investment for Institutional Investors {#sec-institutional_investor_min}
 
 **Value**: $10M
@@ -6164,9 +5603,7 @@ Minimum investment for institutional investors
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Maximum Bond Investment for Lobbyist Incentives {#sec-lobbyist_bond_investment_max}
 
 **Value**: $20M
@@ -6175,27 +5612,21 @@ Maximum bond investment for lobbyist incentives
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Minutes Per Hour {#sec-minutes_per_hour}
 
 **Value**: 60
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Months Per Year {#sec-months_per_year}
 
 **Value**: 12
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Standard Discount Rate for NPV Analysis {#sec-npv_discount_rate_standard}
 
 **Value**: 3%
@@ -6208,9 +5639,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Standard Time Horizon for NPV Analysis {#sec-npv_time_horizon_years}
 
 **Value**: 10
@@ -6223,9 +5652,7 @@ Standard time horizon for NPV analysis
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Direct Fiscal Savings from 1% Military Spending Reduction {#sec-peace_dividend_direct_fiscal_savings}
 
 **Value**: $27.2B
@@ -6234,9 +5661,7 @@ Direct fiscal savings from 1% military spending reduction (high confidence)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Pre-1962 Validation Years {#sec-pre_1962_validation_years}
 
 **Value**: 77
@@ -6245,27 +5670,21 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Seconds Per Minute {#sec-seconds_per_minute}
 
 **Value**: 60
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Seconds Per Year {#sec-seconds_per_year}
 
 **Value**: 31.5M
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Total Words in the Book {#sec-total_book_words}
 
 **Value**: 171K
@@ -6274,9 +5693,7 @@ Total words in the book
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH {#sec-treaty_annual_funding}
 
 **Value**: $27.2B
@@ -6285,9 +5702,7 @@ Annual funding from 1% of global military spending redirected to DIH
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance {#sec-treaty_campaign_budget_lobbying}
 
 **Value**: $650M
@@ -6304,9 +5719,7 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance {#sec-treaty_campaign_budget_referendum}
 
 **Value**: $300M
@@ -6323,9 +5736,7 @@ Global referendum campaign (get 208M votes): ads, media, partnerships, staff, le
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Reserve Fund / Contingency Buffer {#sec-treaty_campaign_budget_reserve}
 
 **Value**: $50M
@@ -6342,9 +5753,7 @@ Reserve fund / contingency buffer
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Campaign Budget for Super Pacs and Political Lobbying {#sec-treaty_campaign_budget_super_pacs}
 
 **Value**: $800M
@@ -6353,9 +5762,7 @@ Campaign budget for Super PACs and political lobbying
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Treaty Campaign Duration {#sec-treaty_campaign_duration_years}
 
 **Value**: 4
@@ -6372,9 +5779,7 @@ Treaty campaign duration (3-5 year range, using midpoint)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Base Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_base_case}
 
 **Value**: $140M
@@ -6383,9 +5788,7 @@ Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Realistic Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_realistic}
 
 **Value**: $220M
@@ -6394,9 +5797,7 @@ Realistic viral referendum budget (moderate tiered pricing)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Worst-Case Viral Referendum Budget {#sec-treaty_campaign_viral_referendum_worst_case}
 
 **Value**: $406M
@@ -6405,9 +5806,7 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### 1% Reduction in Military Spending/War Costs from Treaty {#sec-treaty_reduction_pct}
 
 **Value**: 1%
@@ -6420,9 +5819,7 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### dFDA Trial Cost Reduction Percentage {#sec-trial_cost_reduction_pct}
 
 **Value**: 50%
@@ -6439,9 +5836,7 @@ Trial cost reduction percentage (50% baseline, conservative)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Annual Victory Bond Payout {#sec-victory_bond_annual_payout}
 
 **Value**: $2.72B
@@ -6450,9 +5845,7 @@ Annual VICTORY bond payout (treaty funding × bond percentage)
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Annual Return Percentage for Victory Bondholders {#sec-victory_bond_annual_return_pct}
 
 **Value**: 272%
@@ -6461,9 +5854,7 @@ Annual return percentage for VICTORY bondholders
 
 *Core definition*
 
-:::
 
-::: {.callout-warning icon=false collapse=false}
 ### Percentage of Captured Dividend Funding Victory Bonds {#sec-victory_bond_funding_pct}
 
 **Value**: 10%
@@ -6476,4 +5867,3 @@ Percentage of captured dividend funding VICTORY bonds (10%)
 
 *Core definition*
 
-:::
