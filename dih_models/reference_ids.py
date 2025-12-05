@@ -416,6 +416,7 @@ class ReferenceID(str, Enum):
     NIH_BUDGET_FY2025 = "nih-budget-fy2025"
     NIH_CLINICAL_RESEARCH_FUNDING_2023 = "nih-clinical-research-funding-2023"
     NIH_COMMON_FUND_OVERVIEW = "nih-common-fund-overview"
+    NIH_CTSA_PROGRAM_FUNDING = "nih-ctsa-program-funding"
     NIH_DECISION_MAKERS_200_PEOPLE = "nih-decision-makers-200-people"
     NIH_ERADICATED_ZERO_DISEASES = "nih-eradicated-zero-diseases"
     NIH_FAVORS_EXPERIENCED_WRITERS = "nih-favors-experienced-writers"
