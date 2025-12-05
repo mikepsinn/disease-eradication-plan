@@ -260,7 +260,8 @@
   - Random pairwise battles: Your proposal fights others in gladiatorial swipe combat
   - Slide to decide: "Fund Sarah's cancer cure" ← → "Fund MIT's immortality pill"
   - No gatekeepers: Nobody filters proposals (democracy means hearing stupid ideas too)
-- **[FIGURE: How Wishocracy Works]**
+- **How Wishocracy Works**
+  - ![Wishocracy slider interface showing pairwise comparison between proposals](assets/wishocracy-slider.png)
   - Flow diagram: Anyone proposes → Random pairs shown to voters → Swipe to allocate → Aggregation → Funds flow automatically
   - Simple visual showing decentralized decision-making
   - Impact: Makes the complex simple

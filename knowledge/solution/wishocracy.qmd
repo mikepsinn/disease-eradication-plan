@@ -100,6 +100,8 @@ Instead of asking, "Rank these 10,000 problems," the system asks:
 
 **"What's more important right now: Curing cancer or fixing climate change?"**
 
+![Wishocracy slider interface showing pairwise comparison between proposals](../../assets/wishocracy-slider.png)
+
 You make a choice. That's it. You do this a few times with different random pairs. It takes five minutes. Millions of other people do the same. An algorithm then takes these millions of simple, head-to-head "smackdowns" and builds a perfect, real-time ranking of humanity's collective priorities.
 
 It's the wisdom of crowds, but without the crowds having to talk to each other.
@@ -135,37 +137,8 @@ Once the Pairwise Smackdown tells you that "Curing Alzheimer's" is a top priorit
 
 3.  **The World Competes:** The best teams from around the world, from MIT to some kid in a garage, bid on these tasks. Multiple approaches are funded in parallel. The ones that show promise get more funding. The ones that fail are defunded instantly. It's venture capital, but for not dying.
 
-## The Opposition
 
-**Politicians:** "But how do we get bribes if there's no one to bribe?"
-
-**Answer:** Get a real job.
-
-**Lobbyists:** "But how do we corrupt the system?"
-
-**Answer:** You can't easily bribe a transparent, open-source algorithm being watched by millions. The cost of capture becomes prohibitively high.
-
-**Bureaucrats:** "But who will form committees?"
-
-**Answer:** Nobody. That's the point.
-
-**Consultants:** "But who will make PowerPoints?"
-
-**Answer:** AI makes better ones in seconds.
-
-**Think Tanks:** "But who will write incomprehensible reports?"
-
-**Answer:** AI will write clearer ones, instantly.
-
-**Congress:** "But we're the representatives!"
-
-**Answer:** You [represent donors, not people](../problem/unrepresentative-democracy.qmd).
-
-**Skeptics:** "But people are too stupid to decide!"
-
-**Answer:** People are individually stupid but collectively smart. Politicians are the reverse.
-
-## The Truth: We Already Do This, Just Badly
+## We Already Do This, Just Badly
 
 Every time you:
 
@@ -231,6 +204,3 @@ Will it make mistakes? Yes.
 
 Will it be better than letting cocaine-addled politicians decide based on bribes? Absolutely.
 
-After all, we're all going to die anyway.
-
-Might as well die in a system that actually tries to prevent it.

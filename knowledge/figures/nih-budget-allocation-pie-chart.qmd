@@ -19,10 +19,12 @@ setup_chart_style()
 # Based on FY2025 NIH budget of $47.7B
 # Clinical development for drug trials = 3.3% of total NIH funding
 # Source: PMC10349341 - NIH spent $8.1B on clinical development out of $247.3B total (2010-2019)
+# FY2017-2021: $97B basic (72%), $28B clinical trials/related (21%), $9B training (7%)
+# But only 3.3% goes to drug treatment trials patients can actually join
 
 categories = [
-    'Actually Testing\nTreatments\n$1.6B',
-    'Everything Else\n(Buildings, Admin,\nTraining, Basic Research)\n$46.1B'
+    'Actually Testing\nTreatments in Humans\n$1.6B',
+    'Everything Else\n(Basic Research, Training,\nInfrastructure, Admin,\nObservational Studies)\n$46.1B'
 ]
 
 values = [1.6, 46.1]  # Billions (3.3% and 96.7% of $47.7B)

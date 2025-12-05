@@ -7736,11 +7736,13 @@
       "id": "nih-budget-allocation-breakdown",
       "title": "NIH budget allocation for basic vs. clinical research",
       "quotes": [
-        "Basic research: ~54% of NIH research budget ($97B in FY2017-2021)",
-        "Clinical trials: ~22% of budget ($28B in FY2017-2021)",
-        "For drug development: Clinical trials represent only 3.3% of total NIH funding ($8.1B of $247.3B from 2010-2019)",
+        "FY2017-2021 totals: Basic research: $97B (72%), Clinical trials and related activities: $28B (21%), Biomedical workforce training: $9B (7%)",
+        "Note: Categories overlap - research can be counted in multiple categories, so percentages don't sum to 100%",
+        "Drug development trials: Only 3.3% of total NIH funding ($8.1B of $247.3B from 2010-2019)",
+        "Phase distribution of drug development funding: Phase 1 (18.5%), Phase 2 (43.2%), Phase 3 (32.1%), Phase 4 (5.3%)",
         "Applied to FY2025 budget ($47.7B): ~$1.6B for drug development trials, $46.1B for everything else",
         "NIH covers ~25% of Phase 1, ~22% of Phase 2, but only ~4% of Phase 3 trial costs",
+        "\"Clinical trials and related activities\" (21-22%) includes: drug development trials (3.3%), infrastructure programs like CTSA (~1%), observational/cohort studies (~0.4%), training programs (~3.8%), device trials, behavioral interventions, and other supporting activities",
         "Note: NIH focuses primarily on basic research and early-phase trials; industry funds most late-stage clinical trials. NIH clinical trial spending is ~10% of industry spending for approved drugs"
       ],
       "sources": [
@@ -7751,6 +7753,14 @@
         {
           "text": "HHS Budget Brief",
           "url": "https://www.hhs.gov/about/budget/budget-in-brief/nih/index.html"
+        },
+        {
+          "text": "NIH Triennial Report FY2019-2021",
+          "url": "https://dpcpsi.nih.gov/oepr/nih-triennial-report/FY19-21-triennial"
+        },
+        {
+          "text": "Science: NIH Basics",
+          "url": "https://www.science.org/doi/full/10.1126/science.1227820"
         }
       ]
     },
@@ -7795,6 +7805,31 @@
         {
           "text": "NIH, Common Fund Overview",
           "url": "https://commonfund.nih.gov/about"
+        }
+      ]
+    },
+    {
+      "id": "nih-ctsa-program-funding",
+      "title": "NIH Clinical and Translational Science Awards (CTSA) Program",
+      "quotes": [
+        "Network of 60+ leading medical institutions providing clinical trial infrastructure",
+        "Individual awards: $4M-$23M annually per site",
+        "Total CTSA budget: $461M annually (FY2012)",
+        "Provides: Research design/biostatistics, regulatory support, community engagement, workforce development, collaborative networks",
+        "5-year cooperative agreements supporting translation of research discoveries into improved care"
+      ],
+      "sources": [
+        {
+          "text": "NCBI: CTSA Program Summary",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK169198/"
+        },
+        {
+          "text": "Wikipedia: CTSA",
+          "url": "https://en.wikipedia.org/wiki/Clinical_and_Translational_Science_Award"
+        },
+        {
+          "text": "NCATS: CTSA Program",
+          "url": "https://ncats.nih.gov/research/research-activities/ctsa"
         }
       ]
     },
