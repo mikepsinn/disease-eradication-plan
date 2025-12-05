@@ -69,7 +69,9 @@ def add_watermark_to_image(image_path, watermark_path, output_path=None):
         
         # Save the watermarked image
         output = output_path if output_path else image_path
-        watermarked_img.save(output, quality=95, optimize=True)
+        # Convert to string for Windows compatibility with special characters
+        output_str = str(output)
+        watermarked_img.save(output_str, quality=95, optimize=True)
         
         print(f"✓ Watermarked: {image_path.name}")
         return True
