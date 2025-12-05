@@ -122,7 +122,7 @@ ax.set_title('Cost-Effectiveness Comparison: Health Interventions\n(Cost per Dis
 
 # Add explanatory callout
 
-callout_text = ('DALY = Disability-Adjusted Life Year\nOne DALY = one year of healthy life lost\n\nLower cost per DALY = more cost-effective\n\nEven accounting for political risk (10% success),\na 1% treaty is 40-80x more cost-effective\nthan malaria bed nets ($1.27 vs $75 per DALY)\n\nConditional on success: 400-800x better')
+callout_text = ('DALY = Disability-Adjusted Life Year\nOne DALY = one year of healthy life lost\n\nLower cost per DALY = more cost-effective\n\nRisk-adjusted expected value (1% success):\n2-7x more cost-effective than top interventions\n($13 vs $30-89 per DALY)\n\nConditional on success: 236-707x better')
 ax.text(0.73, 0.58, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=14, color=COLOR_BLACK,
