@@ -1,124 +1,124 @@
-[0.0-3.6] Ever watch the news and wonder why the most painfully obvious ideas just seem to die?
-[3.6-5.8] You know, the ones with ridiculously huge upsides for almost everyone.
-[5.8-7.5] The ones that basically everyone agrees on?
-[7.8-9.2] Somehow never make it into law.
-[9.6-11.5] It's a huge, glaring bug in modern democracy.
-[11.7-14.2] Well, today we're going to explore a fascinating hack,
-[14.5-16.9] a specific mechanism built to solve that exact problem.
-[17.4-20.4] Now, this is going to sound horribly cynical, but it needs to be said:
-[20.4-22.2] your personal opinion doesn't matter in politics.
-[22.5-24.6] But according to a rather depressing academic study,
-[24.6-26.0] that statement is disturbingly close to reality.
-[26.4-29.0] Researchers analyzed decades of American policy decisions,
-[29.0-33.4] and what they found about the average citizen's actual influence is, well, pretty depressing.
-[33.9-37.1] And this chart... oh boy, it just tells the whole story.
-[37.4-42.4] Researchers Martin Gilens and Benjamin Page analyzed nearly 1,800 different policy outcomes.
-[42.7-44.2] And this is exactly what they found.
-[44.5-50.4] Look at the line for average citizens. Whether a policy had 0% support or 100% support,
-[50.6-54.1] its chance of becoming law just stubbornly hovers right around thirty percent.
-[54.4-55.8] It basically doesn't move.
-[56.1-58.8] But now look at the line for the economic elites.
-[59.2-62.9] As their support for an idea goes up—what a surprise—so does its chance of passing.
-[63.3-64.4] The data is not exactly subtle.
-[64.4-67.6] Your personal opinion has nearly zero statistical effect on policy.
+[0.0-3.6] Have you ever looked at the news and just wondered why some common sense policies,
+[3.6-5.8] you know, the ones that would create massive public benefits,
+[5.8-7.5] the ones most people actually support?
+[7.8-9.2] Just never seem to happen.
+[9.6-11.5] It's a huge puzzle in modern democracy.
+[11.7-14.2] Well, today we're diving into a fascinating idea,
+[14.5-16.9] a mechanism designed to solve that exact problem.
+[17.4-20.4] Now, I know this sounds super cynical to just come out and say,
+[20.4-22.2] your opinion doesn't count in politics,
+[22.5-24.6] but according to a major academic study,
+[24.6-26.0] it's alarmingly close to the truth.
+[26.4-29.0] Researchers looked at decades of US policy decisions,
+[29.0-33.4] and they came to a pretty stark conclusion about how much influence the average citizen really has.
+[33.9-37.1] And this chart, wow, it just lays it all out.
+[37.4-42.4] Researchers, Martin Gillens and Benjamin Page went through almost 1800 different policy decisions.
+[42.7-44.2] And what they found is right here.
+[44.5-50.4] Look at the bar for average citizens, whether a policy had 0% public support or 100% public support,
+[50.6-54.1] it's chance of becoming law pretty much flatlines at around 30%.
+[54.4-55.8] It just doesn't move.
+[56.1-58.8] But now look at the preferences of economic elites.
+[59.2-62.9] As their support goes up, boom, so does the chance of a policy passing.
+[63.3-64.4] The data is pretty clear.
+[64.4-67.6] Your opinion has almost no statistical impact on policy.
 [68.2-69.2] So why?
 [69.4-70.4] Why does this happen?
-[70.8-73.7] Well, an economist named Mancur Olson diagnosed it perfectly.
-[74.0-77.8] It's basically a rigged game between two different kinds of interests.
-[78.1-84.2] On one side are small, highly organized groups, where every member has a massive personal stake in the outcome.
-[84.5-88.2] Think of an industry lobbyist fighting tooth and nail for one tiny regulatory change.
-[88.7-91.6] And on the other side? Well, that's just the rest of us.
-[91.9-97.2] There are millions of us, but for any one policy, the personal benefit to each of us is tiny.
-[97.5-99.9] Which makes getting everyone organized nearly impossible.
-[100.3-104.2] And in that fight, the small, focused group wins almost every single time.
-[104.9-108.0] Okay, so maybe the problem isn't necessarily evil people,
-[108.0-112.9] but a system with terrible incentives, what if we could just hack the incentives themselves?
-[113.1-115.8] What if we could somehow engineer a way to make doing good,
-[115.8-119.8] the most selfishly rational choice that any politician could ever possibly make?
-[120.6-123.4] Yeah, that is basically the billion-dollar question, isn't it?
-[123.8-127.1] And the paper we are looking at today offers a truly radical and brilliant answer.
-[127.4-129.7] It's a concept called an incentive alignment bond.
-[130.6-137.4] At its heart, an incentive alignment bond—or IAB—is a financial tool designed to completely rewrite the rules of the game.
-[137.7-142.8] It’s a system for creating powerful, concentrated rewards for politicians who back policies with those broad,
-[142.8-144.5] widespread public benefits.
-[144.5-147.7] It’s about weaponizing their personal incentives for the common good.
+[70.8-73.7] Well, the economist Mansier Olsen explained it perfectly.
+[74.0-77.8] It's basically a battle between two different kinds of interests.
+[78.1-84.2] On one side, you have these small, incredibly organized groups with a ton to gain or lose for each individual.
+[84.5-88.2] You know, think of an industry lobbyist fighting for one specific regulation.
+[88.7-91.6] And on the other side, well, that's the general public.
+[91.9-97.2] We're a massive group, but for any single issue, the stakes for each of us individually are tiny,
+[97.5-99.9] which makes it almost impossible to get organized.
+[100.3-104.2] And in that fight, the small, motivated group wins almost every time.
+[104.9-108.0] Okay, so if the problem isn't necessarily bad people,
+[108.0-112.9] but a system that has bad incentives, then what if we could hack those incentives?
+[113.1-115.8] What if we could actually make supporting the public good,
+[115.8-119.8] the most rational, self-interested choice a politician could possibly make?
+[120.6-123.4] Yeah, that really is the billion dollar question, isn't it?
+[123.8-127.1] And the paper we're looking at today offers a pretty radical and fascinating answer.
+[127.4-129.7] It's something called an incentive alignment bond.
+[130.6-137.4] At its core, an incentive alignment bond or an IAB is a tool that's designed to just completely flip the script.
+[137.7-142.8] It's a way to create powerful, concentrated benefits for politicians who vote for policies that have these broad,
+[142.8-144.5] diffuse public benefits.
+[144.5-147.7] It's all about aligning their personal incentives with the public good.
 [148.6-149.7] So how does it work?
-[149.7-151.1] The mechanism is pretty clever.
-[151.5-155.0] It creates a sort of self-perpetuating engine with three essential parts.
-[155.6-157.4] First, you get the investors aligned.
-[157.4-160.7] They only make a return if the public-good policy actually becomes law.
-[161.4-163.1] Second, you get the politicians aligned.
-[163.5-165.8] They receive very real career incentives for supporting it.
-[166.1-168.8] And third, and this is where it gets really brilliant:
-[169.0-174.1] The whole system is paid for by redirecting cash from wasteful or actively harmful government programs.
-[175.0-181.0] Okay, so that's the big picture, but you are probably wondering how this all works in the real world
-[181.0-182.7] without, you know, landing everyone in jail?
-[183.3-187.0] Well, the secret is in its very clever, three-layer design.
-[187.8-191.6] It all begins with data—just cold, hard, public data.
-[192.2-195.4] Layer one is a fiercely independent, non-partisan research group,
-[195.4-199.3] think of something like the League of Conservation Voters creating a public scorecard.
-[199.3-204.2] It simply tracks and grades politicians based on their voting record for a specific public good.
-[204.2-208.5] This is completely objective, totally transparent, and based only on public information.
-[209.1-212.9] Layer two is where that nice objective score gets turned into real political power.
-[213.4-218.0] You get independent groups, like Super PACs, that announce publicly, way in advance,
-[218.0-223.1] something like, “We plan to spend $20 million dollars supporting any candidate of any party,”
-[223.1-226.6] “as long as their score is above a 75 on the public good scorecard.”
-[226.6-230.9] Suddenly, you've created a direct, powerful, and very public incentive to get a good score.
-[231.8-235.8] And finally, layer three lines up their long-term career incentives.
-[235.8-239.8] Prestigious foundations or think tanks could announce that a high score is a huge factor
-[239.8-244.1] in landing one of those cushy fellowships or board seats after a politician leaves office.
-[244.1-247.9] This basically hijacks the infamous revolving door between government and the private sector,
-[247.9-249.9] but aims it back in the direction of public service.
-[250.6-255.0] Now, the first question everyone always asks is, 'Wait a second, isn't that just bribery?'
-[255.0-257.8] And that is a very important point, so let's examine the legal line.
-[258.6-261.5] Bribery is a secret, private deal in exchange for one specific vote.
+[149.7-151.1] Well, it's pretty clever.
+[151.5-155.0] It creates this kind of self-reinforcing loop with three key features.
+[155.6-157.4] First, you align investors.
+[157.4-160.7] They only make a profit if the public good policy actually gets passed.
+[161.4-163.1] Second, you align the politicians.
+[163.5-165.8] They get tangible career benefits for supporting it.
+[166.1-168.8] And third, and this part is absolutely critical.
+[169.0-174.1] The whole system is funded by redirecting money from less effective or even harmful government programs.
+[175.0-181.0] Okay, so that's the big idea, but you're probably thinking how on earth does this actually work in practice
+[181.0-182.7] without being, you know, illegal?
+[183.3-187.0] Well, the answer lies in this really smart, three-layer architecture.
+[187.8-191.6] It all kicks off with data, just pure, simple data.
+[192.2-195.4] Layer 1 is an independent nonpartisan research group,
+[195.4-199.3] kind of like the League of Conservation Voters that creates a public scorecard.
+[199.3-204.2] It just tracks and rates politicians based on how they vote on a specific public good issue.
+[204.2-208.5] It's totally objective, it's transparent, and it's all based on public information.
+[209.1-212.9] Layer 2 is where that score gets connected to real political power.
+[213.4-218.0] You have independent groups, like SuperPacks, who publicly announce, way ahead of time,
+[218.0-223.1] something like, we are going to spend $20 million supporting any candidate from any party,
+[223.1-226.6] whose score is above a 75 on the public good scorecard.
+[226.6-230.9] All of a sudden you've created a really powerful and direct incentive to get a good score.
+[231.8-235.8] And finally, layer 3 aligns their long-term career path.
+[235.8-239.8] prestigious foundations or think tanks can announce that getting a high score is a key factor
+[239.8-244.1] for landing those lucrative fellowships or board seats after a politician leaves office.
+[244.1-247.9] This basically co-ops that whole revolving door between government and the private sector,
+[247.9-249.9] but points it in the direction of public service.
+[250.6-255.0] Now the first question pretty much everyone asks is, wait a minute, isn't that just bribery?
+[255.0-257.8] And that is a crucial point, so let's look at the legal distinction.
+[258.6-261.5] bribery is a private secret deal for a specific vote.
 [261.5-262.6] It's a quid pro quo.
-[263.1-265.5] This IAB system is designed to be the exact opposite.
-[265.5-268.6] It is public, it is universal—meaning it's open to absolutely everyone—
-[268.6-272.2] and it's based on pre-declared rules that reward an entire class of behavior,
-[272.2-273.4] not just a single specific vote.
-[274.1-278.0] Legally, it's much closer to how groups like the NRA or major environmental organizations
-[278.0-278.6] already operate.
-[279.6-281.7] So that brings us to the money, the paper.
-[281.7-284.3] For this whole thing to work, you will need investors.
-[284.3-285.9] But why would anyone fund this?
-[285.9-290.7] Because it turns out political influence is already the single most profitable investment on Earth.
-[291.6-295.0] This quote from the paper itself just completely reframes the whole issue.
-[295.5-300.2] It says, 'Political influence isn't charity; it's a high-return asset class.'
-[300.8-306.2] The money spent to influence policy isn't a gift; it's an investment with returns that can
-[306.2-308.7] make the stock market look like a savings account.
-[309.4-312.9] IABs are just a way of opening up that asset class to fund public goods.
-[313.6-315.6] I mean, prepare yourself for this number.
-[315.6-317.1] It is just bonkers.
-[317.1-321.5] According to one study, for every single dollar the top five defense contractors
-[321.5-326.0] spent on lobbying, they raked in over $180,000 in government contracts.
-[326.0-328.2] That's an 18 million percent return.
-[328.2-331.6] The return on investment for political influence is cosmic.
-[331.6-335.3] IABs simply want to skim a tiny fraction of that for the public good.
-[336.2-338.7] And here is another absolutely crucial point.
-[338.7-341.0] This is not about conjuring up new money.
-[341.0-345.7] Just adding new spending usually gets lost to inflation or becomes deficit spending.
+[263.1-265.5] This IAB system is the complete opposite.
+[265.5-268.6] It's public, it's universal, meaning it applies to everyone,
+[268.6-272.2] and it's based on pre-announced rules that reward a whole class of policies,
+[272.2-273.4] not just one specific vote.
+[274.1-278.0] Legally, this is way closer to how groups like the NRA or major environmental organizations
+[278.0-278.6] already work.
+[279.6-281.7] So this brings us to the money.
+[281.7-284.3] To make this whole thing work, you need investors.
+[284.3-285.9] But why would they fund this?
+[285.9-290.7] Well, it turns out influencing politics is already the most profitable game in town.
+[291.6-295.0] This quote from the source material just completely reframes the issue.
+[295.5-300.2] It says, political advocacy isn't charity, it's a high yield asset class.
+[300.8-306.2] The money spent to influence policy isn't a donation, it's an investment with returns that can
+[306.2-308.7] absolutely dwarf anything you'd see in the stock market.
+[309.4-312.9] ABS are just a way to open up this asset class to fund public goods.
+[313.6-315.6] I mean, just look at this number.
+[315.6-317.1] It is insane.
+[317.1-321.5] According to one analysis, for every single dollar, the top five defense contractors
+[321.5-326.0] spent on lobbying, they got back over $180,000 in government contracts.
+[326.0-328.2] That's an 181,000% return.
+[328.2-331.6] The ROI on political influence is astronomical.
+[331.6-335.3] AIBs just want to capture a tiny piece of that value for public benefit.
+[336.2-338.7] And here's another really critical point.
+[338.7-341.0] This is not about printing more money.
+[341.0-345.7] Just adding new spending often gets eaten up by inflation or deficit spending?
 [345.7-346.3] No.
-[346.3-350.2] The real magic of an IAB is that it's designed to redirect funds.
-[350.2-354.7] You take cash from a program that has little or even negative social return,
-[354.7-357.8] and you shift it toward one that creates enormous positive return.
-[358.3-361.5] And this next table just makes that idea perfectly clear.
-[361.5-365.8] The source paper actually gives a ranking of government spending by net social value.
-[365.8-370.5] For example, spending one dollar on fossil fuel subsidies is estimated to create a net
-[370.5-374.3] loss of over four dollars, thanks to little things like destroying the planet.
-[374.3-376.6] But then, look at the other side of this ledger.
-[376.6-382.6] Every single dollar spent on medical R&D can generate from three to over one hundred dollars in social value.
-[382.6-384.3] The goal of an IAB is simple.
-[384.3-387.7] Fund the political will to drag money from the bottom of this chart to the top.
-[388.4-393.8] So once you have a tool like this in your hands, the potential uses are actually kind of mind-blowing.
-[393.8-397.7] Just imagine applying this mechanism to the world's most intractable collective action problems,
-[397.7-401.3] to incentivize real, tangible, meaningful action on climate change,
-[401.3-404.2] to make sure we are actually ready for the next global pandemic,
-[404.2-407.4] or, I don't know, finally making some progress on nuclear disarmament.
-[407.4-410.6] These are the challenges that feel completely impossible within our current system.
-[411.4-415.1] And that, really, is the final thought that this whole idea leaves you with.
-[415.1-420.7] It's a blueprint, a kind of instruction manual for hacking our political system to solve problems that seem completely hopeless.
-[421.3-423.8] It doesn't rely on us finding magically better politicians.
-[423.8-427.8] It simply asks that we build a much smarter system where their own self-interest
-[427.8-429.4] finally, mercifully aligns with ours.
-[429.4-434.3] Which leaves you with just one question: which "impossible" problem do we want to solve first?
+[346.3-350.2] The real power of an IAB comes from redirecting funds.
+[350.2-354.7] You take money from a program that gives us little or even negative social value
+[354.7-357.8] and you move it to one that provides huge positive value.
+[358.3-361.5] And this table just makes the concept crystal clear.
+[361.5-365.8] The source material actually ranks government spending by its net social value.
+[365.8-370.5] So look here, spending a dollar on fossil fuel subsidies is estimated to create a net social
+[370.5-374.3] loss of over $4 because of externalities like climate change.
+[374.3-376.6] But now, look at the other end of the spectrum.
+[376.6-382.6] Every dollar we spend on medical research can generate anywhere from $3 to over $100 in social value.
+[382.6-384.3] The IAB's goal is simple.
+[384.3-387.7] Fund the political will to move money from the bottom of this list to the top.
+[388.4-393.8] So once you have a mechanism like this, the potential applications are honestly breathtaking.
+[393.8-397.7] Imagine applying this tool to some of the world's biggest collective action problems,
+[397.7-401.3] incentivizing real, meaningful action on climate change,
+[401.3-404.2] making sure we are truly prepared for the next pandemic,
+[404.2-407.4] or maybe even making progress on nuclear disarmament.
+[407.4-410.6] These are the kinds of problems that feel impossible with our current setup.
+[411.4-415.1] And really, that's the final thought this whole idea leaves us with.
+[415.1-420.7] It's a tool, a blueprint for hacking our political system to solve problems that seem completely stuck.
+[421.3-423.8] It doesn't require us to hope for better politicians.
+[423.8-427.8] It just asks us to design a smarter system where their own self-interest
+[427.8-429.4] finally aligns with ours.
+[429.4-434.3] So it really makes you wonder which impossible problems should we decide to fix first.
