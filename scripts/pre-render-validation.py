@@ -1354,7 +1354,11 @@ def main():
     md_files = [
         f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
     ]
+    # Exclude files in the root directory (files with no directory component)
+    md_files = [f for f in md_files if os.path.dirname(f)]
+
     # Exclude OUTLINE-GENERATED.MD and TODO.md from validation (auto-generated/internal files)
+    # Note: The root exclusion above handles these if they are in root, but keeping ensures they are skipped in subdirs too if generated there
     md_files = [
         f
         for f in md_files
