@@ -1,0 +1,107 @@
+---
+title: "Government Spending vs. Benefit-Cost Ratio"
+description: "Scatter plot showing the inverse correlation between program spending and social value"
+format:
+  html:
+    code-fold: true
+---
+
+```{python}
+#| label: fig-spending-bcr-scatter
+#| fig-cap: "Government Spending vs. Benefit-Cost Ratio. Programs with the highest BCRs (>100:1) receive the least funding, while programs with negative NSV receive hundreds of billions. This inverse correlation demonstrates that spending is driven by lobbying intensity, not social value."
+#| fig-alt: "Scatter plot showing annual government spending on the x-axis (log scale) and benefit-cost ratio on the y-axis (log scale). High-NSV programs cluster in the upper-left (underfunded), while low/negative-NSV programs cluster in the lower-right (overfunded)."
+#| warning: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from dih_models.plotting.chart_style import setup_chart_style, COLOR_BLACK, COLOR_WHITE
+from dih_models.plotting.chart_style import PATTERN_SOLID, PATTERN_DIAGONAL, PATTERN_HORIZONTAL
+
+setup_chart_style()
+
+# Data from @tbl-ranking in the IAB paper
+programs = [
+    # (name, annual_spending_billions, BCR, category)
+    ("Childhood Vaccinations", 8, 101, "High-NSV"),
+    ("E-Government", 2, 125, "High-NSV"),
+    ("Maternal/Neonatal Care", 12, 87, "High-NSV"),
+    ("Nutrition Interventions", 5, 18, "High-NSV"),
+    ("NIH Medical Research", 47, 4.75, "High-NSV"),
+    ("Early Childhood Education", 30, 10.8, "High-NSV"),
+    ("Infrastructure (avg)", 100, 1.5, "Moderate-NSV"),
+    ("Military (beyond deterrence)", 450, 0.7, "Low/Negative-NSV"),
+    ("Fossil Fuel Subsidies (explicit)", 20, 0.1, "Low/Negative-NSV"),
+    ("Fossil Fuel (implicit/externalities)", 568, -5, "Low/Negative-NSV"),
+]
+
+# Separate by category
+high_nsv = [(s, b) for n, s, b, c in programs if c == "High-NSV"]
+moderate_nsv = [(s, b) for n, s, b, c in programs if c == "Moderate-NSV"]
+low_nsv = [(s, b) for n, s, b, c in programs if c == "Low/Negative-NSV"]
+
+# Create figure
+fig, ax = plt.subplots(figsize=(10, 7))
+
+# Plot each category with different markers
+ax.scatter(*zip(*high_nsv), s=200, c=COLOR_BLACK, marker='o',
+           label='High-NSV Programs', edgecolors=COLOR_BLACK, linewidth=1.5, zorder=3)
+ax.scatter(*zip(*moderate_nsv), s=200, c=COLOR_WHITE, marker='s',
+           label='Moderate-NSV Programs', edgecolors=COLOR_BLACK, linewidth=1.5, zorder=3)
+ax.scatter(*zip(*low_nsv), s=200, c=COLOR_BLACK, marker='^',
+           label='Low/Negative-NSV Programs', edgecolors=COLOR_BLACK, linewidth=1.5, zorder=3)
+
+# Add program labels
+for name, spending, bcr, category in programs:
+    # Adjust label positions to avoid overlap
+    offset_x = 1.15 if spending > 100 else 1.12
+    offset_y = 1.08 if bcr > 50 else (0.92 if bcr < 0 else 1.05)
+
+    ax.annotate(name, xy=(spending, bcr),
+                xytext=(spending * offset_x, bcr * offset_y),
+                fontsize=9, ha='left' if spending < 100 else 'left',
+                bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK, linewidth=0.5))
+
+# Set log scales
+ax.set_xscale('log')
+ax.set_yscale('symlog', linthresh=0.1)  # symlog handles negative values
+
+# Labels and title
+ax.set_xlabel('Annual Spending ($ Billions, log scale)', fontsize=12, fontweight='bold')
+ax.set_ylabel('Benefit-Cost Ratio (log scale)', fontsize=12, fontweight='bold')
+ax.set_title('The NSV-Spending Disconnect:\nHigh-Value Programs Are Systematically Underfunded',
+             fontsize=14, fontweight='bold', pad=20)
+
+# Add reference lines
+ax.axhline(y=1, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5, label='Break-even (BCR=1)')
+ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=0.5, alpha=0.3)
+
+# Add quadrant labels
+ax.text(1.5, 110, 'UNDERINVESTED\n(High BCR, Low Spending)',
+        fontsize=11, fontweight='bold', ha='left', va='top',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                 edgecolor=COLOR_BLACK, linewidth=1.5))
+ax.text(400, 0.15, 'OVERINVESTED\n(Low BCR, High Spending)',
+        fontsize=11, fontweight='bold', ha='right', va='bottom',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                 edgecolor=COLOR_BLACK, linewidth=1.5))
+
+# Grid
+ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
+ax.set_axisbelow(True)
+
+# Legend
+ax.legend(loc='lower left', fontsize=10, frameon=True, fancybox=False,
+          edgecolor=COLOR_BLACK, framealpha=1)
+
+# Axis limits
+ax.set_xlim(1, 1000)
+ax.set_ylim(-10, 150)
+
+plt.tight_layout()
+plt.show()
+```
+
+**Key Insight:** Under rational resource allocation, we would expect high-BCR programs to receive high spending (upper-right quadrant) and low-BCR programs to receive low spending (lower-left quadrant). Instead, we observe the opposite: programs with BCRs exceeding 100:1 are clustered in the "UNDERINVESTED" region, while programs with BCRs below 1:1 (or negative) are in the "OVERINVESTED" region.
+
+This systematic misallocation is the empirical foundation for Incentive Alignment Bonds: **spending correlates with lobbying intensity, not social value.**

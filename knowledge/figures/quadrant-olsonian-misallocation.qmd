@@ -1,0 +1,160 @@
+---
+title: "The Olsonian Quadrant Chart"
+description: "Four-quadrant visualization of government program allocation by NSV and spending"
+format:
+  html:
+    code-fold: true
+---
+
+```{python}
+#| label: fig-olsonian-quadrants
+#| fig-cap: "The Olsonian Quadrant Chart: Government Program Allocation by NSV and Spending. Quadrant I (upper-right) represents rational allocation; Quadrant II (upper-left) shows high-value programs that are systematically underfunded; Quadrant IV (lower-right) shows low-value programs that are overfunded due to Olsonian dynamics."
+#| fig-alt: "Four-quadrant chart with NSV on y-axis and Spending on x-axis, showing specific government programs positioned according to their social value and funding levels."
+#| warning: false
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+from matplotlib.patches import FancyBboxPatch
+import numpy as np
+from dih_models.plotting.chart_style import setup_chart_style, COLOR_BLACK, COLOR_WHITE
+
+setup_chart_style()
+
+# Program data: (name, spending_billions, NSV_per_dollar, size_for_bubble)
+programs = [
+    # Quadrant II: UNDERINVESTED (High NSV, Low Spending)
+    ("Childhood\nVaccinations", 8, 100, 800),
+    ("E-Government", 2, 124, 500),
+    ("Maternal Care", 12, 86, 900),
+    ("Nutrition", 5, 17, 600),
+
+    # Quadrant I: RATIONAL (High NSV, High Spending)
+    ("NIH Medical\nResearch", 47, 3.75, 1200),
+    ("Early Childhood\nEducation", 30, 9.8, 1000),
+
+    # Quadrant III: Wasteful but Small (Low NSV, Low Spending)
+    # (None in our dataset)
+
+    # Quadrant IV: OVERINVESTED (Low NSV, High Spending)
+    ("Military\n(beyond deterrence)", 450, -0.30, 2000),
+    ("Fossil Fuel\n(explicit subsidies)", 20, -2, 700),
+    ("Fossil Fuel\n(incl. externalities)", 568, -5, 2500),
+]
+
+# Create figure
+fig, ax = plt.subplots(figsize=(12, 9))
+
+# Draw quadrant background shading
+quad_alpha = 0.05
+ax.axhspan(0, 150, 0, 0.5, facecolor=COLOR_BLACK, alpha=quad_alpha, zorder=0)  # Quad III
+ax.axhspan(0, 150, 0.5, 1, facecolor=COLOR_BLACK, alpha=quad_alpha*2, zorder=0)  # Quad IV
+ax.axhspan(0, -10, 0, 0.5, facecolor=COLOR_BLACK, alpha=quad_alpha*2, zorder=0)  # Below break-even, low spending
+ax.axhspan(0, -10, 0.5, 1, facecolor=COLOR_BLACK, alpha=quad_alpha*3, zorder=0)  # Below break-even, high spending
+
+# Plot programs as bubbles
+for name, spending, nsv, size in programs:
+    # Color based on NSV
+    if nsv > 10:
+        facecolor = COLOR_BLACK
+        edgecolor = COLOR_BLACK
+        alpha = 0.7
+    elif nsv > 0:
+        facecolor = COLOR_WHITE
+        edgecolor = COLOR_BLACK
+        alpha = 1.0
+    else:
+        facecolor = COLOR_BLACK
+        edgecolor = COLOR_BLACK
+        alpha = 0.9
+
+    ax.scatter(spending, nsv, s=size, c=facecolor, edgecolors=edgecolor,
+               linewidth=2, alpha=alpha, zorder=3)
+
+    # Add labels
+    offset_y = 5 if nsv > 0 else -5
+    va = 'bottom' if nsv > 0 else 'top'
+    ax.annotate(name, xy=(spending, nsv),
+                xytext=(spending, nsv + offset_y),
+                fontsize=9, ha='center', va=va, fontweight='bold',
+                bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                         edgecolor=COLOR_BLACK, linewidth=0.8))
+
+# Draw quadrant dividing lines
+median_spending = 50  # Approximate median
+ax.axvline(x=median_spending, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.7)
+ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.7)
+
+# Add quadrant labels in boxes
+def add_quadrant_label(x, y, title, subtitle, size='large'):
+    fontsize_title = 13 if size == 'large' else 11
+    fontsize_sub = 10 if size == 'large' else 9
+
+    ax.text(x, y, title, fontsize=fontsize_title, fontweight='bold',
+            ha='center', va='center',
+            bbox=dict(boxstyle='round,pad=0.8', facecolor=COLOR_WHITE,
+                     edgecolor=COLOR_BLACK, linewidth=2))
+    ax.text(x, y - 15, subtitle, fontsize=fontsize_sub,
+            ha='center', va='center', style='italic')
+
+# Quadrant II: Upper-Left (UNDERINVESTED)
+add_quadrant_label(15, 120, 'QUADRANT II\nUNDERINVESTED',
+                  '(High NSV, Low Spending)\nOlsonian Failure')
+
+# Quadrant I: Upper-Right (RATIONAL)
+add_quadrant_label(200, 120, 'QUADRANT I\nRATIONAL',
+                  '(High NSV, High Spending)\nDesired State')
+
+# Quadrant III: Lower-Left (Wasteful but Small)
+add_quadrant_label(15, -7, 'QUADRANT III\nWasteful but Small',
+                  '(Low NSV, Low Spending)', size='small')
+
+# Quadrant IV: Lower-Right (OVERINVESTED)
+add_quadrant_label(350, -7, 'QUADRANT IV\nOVERINVESTED',
+                  '(Low NSV, High Spending)\nOlsonian Capture')
+
+# Labels and title
+ax.set_xlabel('Annual Spending ($ Billions)', fontsize=13, fontweight='bold')
+ax.set_ylabel('Net Social Value per Dollar Spent ($)', fontsize=13, fontweight='bold')
+ax.set_title('The Olsonian Quadrant Chart:\nWhere Government Resources Flow vs. Where They Should Flow',
+             fontsize=15, fontweight='bold', pad=20)
+
+# Add arrow annotations showing desired movement
+arrow_props = dict(arrowstyle='->', lw=3, color=COLOR_BLACK, alpha=0.6)
+
+# Arrow from Quadrant IV to Quadrant I (the IAB goal)
+ax.annotate('', xy=(200, 50), xytext=(450, -4),
+            arrowprops=dict(arrowstyle='->', lw=4, color=COLOR_BLACK, alpha=0.7))
+ax.text(325, 35, 'IAB Reallocation', fontsize=11, fontweight='bold',
+        ha='center', rotation=-20,
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                 edgecolor=COLOR_BLACK, linewidth=1.5))
+
+# Grid
+ax.grid(True, alpha=0.2, linestyle='--', linewidth=0.5)
+ax.set_axisbelow(True)
+
+# Axis limits
+ax.set_xlim(-5, 600)
+ax.set_ylim(-10, 135)
+
+# Add legend
+legend_elements = [
+    mpatches.Patch(facecolor=COLOR_BLACK, edgecolor=COLOR_BLACK, label='High NSV (>10:1)', alpha=0.7),
+    mpatches.Patch(facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, label='Moderate NSV (0-10:1)'),
+    mpatches.Patch(facecolor=COLOR_BLACK, edgecolor=COLOR_BLACK, label='Negative NSV (<0:1)', alpha=0.9),
+]
+ax.legend(handles=legend_elements, loc='upper right', fontsize=10,
+          frameon=True, fancybox=False, edgecolor=COLOR_BLACK, framealpha=1)
+
+plt.tight_layout()
+plt.show()
+```
+
+**Interpretation:**
+
+- **Quadrant I (Rational):** Programs with high NSV receiving high spending: the desired equilibrium
+- **Quadrant II (Underinvested):** High-NSV programs receiving low spending: Olsonian failure where diffuse benefits cannot coordinate
+- **Quadrant III (Wasteful but Small):** Low-NSV programs with low spending: wasteful but limited damage
+- **Quadrant IV (Overinvested):** Low-NSV programs receiving high spending: Olsonian capture where concentrated interests dominate
+
+**The IAB Mechanism:** Redirects resources from Quadrant IV → Quadrant I by making politician support for high-NSV programs individually rational through score-dependent electoral and career benefits.

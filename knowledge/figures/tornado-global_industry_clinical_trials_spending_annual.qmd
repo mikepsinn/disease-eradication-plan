@@ -15,17 +15,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "NPV of dFDA Benefits (R&D Only, 10-Year Discounted)"
+display_name = "Annual Global Industry Spending on Clinical Trials"
 
 # Baseline and units
 
-baseline = 275468208149.5121
+baseline = 78500000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'TRIAL_COST_REDUCTION_PCT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [-76408210171.71704, -55146795167.41318, 33220960.944213867, 19932576.56652832, 19932576.56652832, 13288384.377685547, 6644192.188842773]
-impacts_high = [89696594549.40698, 82720192751.11975, -46509345.32196045, -33220960.944213867, -26576768.755371094, -19932576.56652832, -6644192.188842773]
+drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL']
+impacts_low = [-23000000000.0, 1500000000.0]
+impacts_high = [27000000000.0, -1500000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -87,7 +87,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('tornado-dfda_npv_benefit_rd_only.png')
+output_path = get_figure_output_path('tornado-global_industry_clinical_trials_spending_annual.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

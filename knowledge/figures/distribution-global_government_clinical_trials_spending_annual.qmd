@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Annual Global Spending on Clinical Trials"
+#| fig-cap: "Probability Distribution: Annual Global Government Spending on Clinical Trials"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -16,11 +16,11 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 83000000000.0
-low = 60000000000
-high = 110000000000
+central_value = 4500000000.0
+low = 3000000000
+high = 6000000000
 dist_type = "lognormal"
-display_name = "Annual Global Spending on Clinical Trials"
+display_name = "Annual Global Government Spending on Clinical Trials"
 unit = "USD"
 
 # Calculate distribution parameters
@@ -138,7 +138,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-global_clinical_trials_spending_annual.png')
+output_path = get_figure_output_path('distribution-global_government_clinical_trials_spending_annual.png')
 plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor=COLOR_WHITE)
 
 add_png_metadata(

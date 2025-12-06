@@ -23,9 +23,9 @@ baseline = 113698630.1369863
 
 # Tornado data from sensitivity analysis
 
-drivers = ['TRIAL_COST_REDUCTION_PCT', 'GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL']
-impacts_low = [-22739726.02739726, -17808219.178082198]
-impacts_high = [34109589.0410959, 19178082.19178082]
+drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'TRIAL_COST_REDUCTION_PCT']
+impacts_low = [-31506849.3150685, -22739726.02739726]
+impacts_high = [36986301.36986302, 34109589.0410959]
 
 # Convert deltas to absolute values (baseline + delta)
 

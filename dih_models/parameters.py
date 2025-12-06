@@ -991,23 +991,81 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
 GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     83_000_000_000,
     source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
-    source_type="external",
-    description="Annual global spending on clinical trials",
+    source_type=SourceType.EXTERNAL,
+    description="Annual global spending on clinical trials (Total: Government + Industry)",
     display_name="Annual Global Spending on Clinical Trials",
-    unit="USD/year",
+    unit="USD",
+    display_value="$83B",
     distribution=DistributionType.LOGNORMAL,
-    std_error=12_500_000_000,  # 15% uncertainty (widened from 10%)
-    confidence_interval=(70_000_000_000, 97_000_000_000),  # $70B-$97B (±15%)
-    # Economist rationale: Market research varies significantly across sources:
-    # GlobalData: $68B-$78B, IQVIA: $80B-$90B, Grand View Research: $85B-$95B.
-    # Using $83B midpoint ±15% spans full source range. Right-skewed distribution
-    # because large pharma trials (oncology, rare disease) drive high-cost tail.
-    # CRITICAL: R&D savings directly proportional to market size—15% variance here
-    # translates to ±$6B uncertainty in DFDA gross savings ($41.5B baseline).
-    validation_min=60_000_000_000,   # Floor: Core Phase 2/3 trials only
-    validation_max=110_000_000_000,  # Ceiling: Including Phase 4, observational, registries
-    keywords=["83.0b", "rct", "clinical study", "clinical trial", "research trial", "randomized controlled trial", "worldwide"]
-)  # $83B spent globally on clinical trials annually
+    std_error=12_500_000_000,
+    confidence_interval=(60_000_000_000, 110_000_000_000),
+    keywords=["83b", "clinical trials", "market size", "global spending", "research", "industry"]
+)
+
+GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
+    4_500_000_000,
+    source_ref=ReferenceID.GLOBAL_GOVERNMENT_CLINICAL_TRIAL_SPENDING_ESTIMATE,
+    source_type=SourceType.EXTERNAL,
+    description="Annual global government spending on interventional clinical trials (~5-10% of total)",
+    display_name="Annual Global Government Spending on Clinical Trials",
+    unit="USD",
+    display_value="$4.5B",
+    distribution=DistributionType.LOGNORMAL,
+    std_error=1_000_000_000,
+    confidence_interval=(3_000_000_000, 6_000_000_000),
+    keywords=["4.5b", "clinical trials", "government spending", "nih", "public funding"]
+)
+
+NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
+    0.033,
+    source_ref=ReferenceID.NIH_CLINICAL_TRIALS_SPENDING_PCT_3_3,
+    source_type=SourceType.EXTERNAL,
+    description="Percentage of NIH budget spent on clinical trials (3.3%)",
+    display_name="NIH Clinical Trials Spending Percentage",
+    unit="percentage",
+    display_value="3.3%",
+    distribution=DistributionType.BETA,
+    confidence_interval=(0.02, 0.05),
+    keywords=["3.3%", "nih", "clinical trials", "budget", "percentage"]
+)
+
+MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Ratio of global military spending to government clinical trials spending",
+    display_name="Ratio of Military to Government Clinical Trials Spending",
+    unit="ratio",
+    formula="MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING",
+    latex=r"\text{Ratio} = \frac{\$2.7T}{\$4.5B} \approx 600\times",
+    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "government"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+)
+
+GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL - GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    source_ref="",
+    source_type=SourceType.CALCULATED,
+    description="Annual global industry spending on clinical trials (Total - Government)",
+    display_name="Annual Global Industry Spending on Clinical Trials",
+    unit="USD",
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+)
+
+INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
+    (GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL - GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL) / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
+    source_ref=ReferenceID.INDUSTRY_VS_GOVERNMENT_TRIAL_SPENDING_SPLIT,
+    source_type=SourceType.CALCULATED,
+    description="Ratio of Industry to Government spending on clinical trials (approx 90/10 split)",
+    display_name="Ratio of Industry to Government Clinical Trials Spending",
+    unit="ratio",
+    formula="(TOTAL - GOVT) / GOVT",
+    keywords=["ratio", "industry", "government", "clinical trials", "funding"],
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
+    compute=lambda ctx: (ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]) / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
+)
 
 TRIAL_COST_REDUCTION_PCT = Parameter(
     0.50,

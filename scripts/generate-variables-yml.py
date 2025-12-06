@@ -1127,13 +1127,13 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
         HTML string with formatted value, clickable link, and tooltip
     """
     # Check for display_value override (NEW v2.0)
+    unit = ""
+    if hasattr(value, "unit") and value.unit:
+        unit = value.unit
+
     if hasattr(value, "display_value") and value.display_value:
         formatted_value = value.display_value
     else:
-        # Extract unit if available
-        unit = ""
-        if hasattr(value, "unit") and value.unit:
-            unit = value.unit
         formatted_value = format_parameter_value(value, unit)
 
     # Check if value is a Parameter instance with source metadata

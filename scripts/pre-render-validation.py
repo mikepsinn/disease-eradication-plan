@@ -280,7 +280,7 @@ def check_em_dashes(content: str, filepath: str):
                         file=filepath,
                         line=line_index + 1,
                         column=column,
-                        message='Em-dash (—) found. Replace with comma and space (", "), period, or semicolon as appropriate.',
+                        message='Em-dash (—) found. Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.',
                         context=line.strip()[:80],
                     )
                 )
@@ -1355,7 +1355,14 @@ def main():
         f for f in md_files if not any(x in f for x in ["node_modules", "_book", ".quarto", "_site", "__tests__"])
     ]
     # Exclude OUTLINE-GENERATED.MD and TODO.md from validation (auto-generated/internal files)
-    md_files = [f for f in md_files if not f.endswith("OUTLINE-GENERATED.MD") and not f.endswith("TODO.md")]
+    md_files = [
+        f
+        for f in md_files
+        if not f.endswith("OUTLINE-GENERATED.MD")
+        and not f.endswith("TODO.md")
+        and not f.endswith("brainstorm.md")
+        and os.path.basename(f) != "brainstorm.md"
+    ]
 
     all_files = qmd_files + md_files
     print(f"Found {len(qmd_files)} .qmd files and {len(md_files)} .md files to validate ({len(all_files)} total)\n")

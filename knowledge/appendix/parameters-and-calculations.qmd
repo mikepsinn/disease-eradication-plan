@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 305
+**Total parameters**: 310
 
-- External sources (peer-reviewed): 122
-- Calculated values: 99
+- External sources (peer-reviewed): 124
+- Calculated values: 102
 - Core definitions: 84
 
 ## Calculated Values {#sec-calculated}
@@ -1266,6 +1266,33 @@ $$
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
 
 
+### Annual Global Industry Spending on Clinical Trials {#sec-global_industry_clinical_trials_spending_annual}
+
+**Value**: $78.5B
+
+Annual global industry spending on clinical trials (Total - Government)
+
+$$
+Trials_{ann} = Trials_{ann} - Trials_{ann} = \$83.00B - \$4.50B = \$78.50B
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_industry_clinical_trials_spending_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_industry_clinical_trials_spending_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_industry_clinical_trials_spending_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_industry_clinical_trials_spending_annual.qmd >}}
+
+
 ### Per Capita Military Spending Globally {#sec-global_military_spending_per_capita_annual}
 
 **Value**: $340
@@ -1438,6 +1465,33 @@ $$
 {{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
 
 
+### Ratio of Industry to Government Clinical Trials Spending {#sec-industry_vs_government_clinical_trials_spending_ratio}
+
+**Value**: 17.4
+
+Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
+
+*Formula*: `(TOTAL - GOVT) / GOVT`
+
+**Methodology**: [industry-vs-government-trial-spending-split](../references#industry-vs-government-trial-spending-split)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-industry_vs_government_clinical_trials_spending_ratio.qmd >}}
+
+
 ### Medical Research Spending as Percentage of Total Disease Burden {#sec-medical_research_pct_of_disease_burden}
 
 **Value**: 0.0525%
@@ -1465,6 +1519,33 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-medical_research_pct_of_disease_burden.qmd >}}
+
+
+### Ratio of Military to Government Clinical Trials Spending {#sec-military_to_government_clinical_trials_spending_ratio}
+
+**Value**: 604
+
+Ratio of global military spending to government clinical trials spending
+
+$$
+\text{Ratio} = \frac{\$2.7T}{\$4.5B} \approx 600\times
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
 
 
 ### Ratio of Military Spending to Medical Research Spending {#sec-military_vs_medical_research_ratio}
@@ -3776,15 +3857,15 @@ Annual veteran healthcare costs (20-year projected)
 
 **Value**: $83B
 
-Annual global spending on clinical trials
+Annual global spending on clinical trials (Total: Government + Industry)
 
 **Source**: [global-clinical-trials-market-2024](../references.qmd#global-clinical-trials-market-2024)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$70B, $97B] • Distribution: Lognormal (SE: $12.5B)
+**Technical**: 95% CI: [$60B, $110B] • Distribution: Lognormal (SE: $12.5B)
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $70B and $97B (±16%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $110B (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3902,6 +3983,29 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 #### Input Distribution
 
 {{< include ../figures/distribution-global_disease_productivity_loss_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Annual Global Government Spending on Clinical Trials {#sec-global_government_clinical_trials_spending_annual}
+
+**Value**: $4.50B
+
+Annual global government spending on interventional clinical trials (~5-10% of total)
+
+**Source**: [global-government-clinical-trial-spending-estimate](../references.qmd#global-government-clinical-trial-spending-estimate)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.00B, $6.00B] • Distribution: Lognormal (SE: $1.00B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3.00B and $6.00B (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_government_clinical_trials_spending_annual.qmd >}}
 
 *✓ High confidence*
 
@@ -4114,6 +4218,29 @@ Return on investment from measles (MMR) vaccination programs
 Annual productivity loss per capita from mental health issues (beyond treatment costs)
 
 **Source**: [mental-health-burden](../references.qmd#mental-health-burden)
+
+*✓ High confidence*
+
+
+### NIH Clinical Trials Spending Percentage {#sec-nih_clinical_trials_spending_pct}
+
+**Value**: 3.3%
+
+Percentage of NIH budget spent on clinical trials (3.3%)
+
+**Source**: [nih-clinical-trials-spending-pct-3-3](../references.qmd#nih-clinical-trials-spending-pct-3-3)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2%, 5%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 2% and 5% (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nih_clinical_trials_spending_pct.qmd >}}
 
 *✓ High confidence*
 

@@ -15,17 +15,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "NPV of dFDA Benefits (R&D Only, 10-Year Discounted)"
+display_name = "Ratio of Military to Government Clinical Trials Spending"
 
 # Baseline and units
 
-baseline = 275468208149.5121
+baseline = 604.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'TRIAL_COST_REDUCTION_PCT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-impacts_low = [-76408210171.71704, -55146795167.41318, 33220960.944213867, 19932576.56652832, 19932576.56652832, 13288384.377685547, 6644192.188842773]
-impacts_high = [89696594549.40698, 82720192751.11975, -46509345.32196045, -33220960.944213867, -26576768.755371094, -19932576.56652832, -6644192.188842773]
+drivers = ['GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL', 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024']
+impacts_low = [302.0, -60.44444444444446]
+impacts_high = [-151.0, 60.44444444444446]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -67,7 +67,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD"
+units_label = "ratio"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -87,7 +87,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('tornado-dfda_npv_benefit_rd_only.png')
+output_path = get_figure_output_path('tornado-military_to_government_clinical_trials_spending_ratio.png')
 plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
