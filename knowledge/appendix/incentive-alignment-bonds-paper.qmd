@@ -63,7 +63,7 @@ Yet government spending patterns have not shifted. The U.S. spends $16 on milita
 
 **Put another way:** If a private equity firm allocated capital like the U.S. government, it would invest $100M in ventures that destroy $500M in value while rejecting ventures that would return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
 
-**The marginal value of producing another ranking is zero.** We don't need more information. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
+**The marginal value of producing another ranking is zero.** We don't need more information. Writing another report about how nuclear bombs are bad and we have too many is like writing another memo explaining that fire is hot. Politicians already know. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
 
 This paper argues that politicians maximize reelection probability, post-office career prospects, and status, not aggregate social welfare. **The problem is not that decision-makers don't know which programs produce value. They do know. They don't care, because caring doesn't appear in their utility function.**
 
@@ -71,7 +71,7 @@ Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] estab
 
 The result is a systematic distortion of democratic governance. The U.S. Constitution's Preamble charges government to "promote the general Welfare," the welfare of all citizens, not the welfare of any particular faction. Yet Olsonian dynamics ensure that government routinely promotes *specific* welfare (of concentrated interests who can afford to lobby) at the expense of *general* welfare (of the diffuse public). This is not corruption in the legal sense; it is the predictable equilibrium (stable outcome where nobody wants to change their behavior) of rational actors operating within existing institutional rules. The problem is not bad actors but bad incentives.
 
-Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades. Finding: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero; whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
+Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades. Finding: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero. Whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
 
 ![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at around 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from Gilens and Page (2014) analysis of 1,779 policy decisions.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
@@ -140,7 +140,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 For additional terms: definitions in parentheses on first use throughout the paper.
 :::
 
-This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach (designing rules so people's selfish choices create good outcomes) to reversing this dynamic. Rather than attempting to change politicians' preferences (good luck with that) or waiting for philosopher-kings (Plato has been dead for 2,400 years and we're still waiting), IABs simply change what rational self-interest points at.
+This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach (designing rules so people's selfish choices create good outcomes) to reversing this dynamic. Rather than attempting to change politicians' preferences (good luck with that) or waiting for philosopher-kings (Plato has been dead for 2,400 years and we're still waiting), IABs simply change what rational self-interest points at. It's like training a dog: you don't lecture it about morality, you just move the treats.
 
 ### Definition
 
@@ -152,7 +152,7 @@ An Incentive Alignment Bond is a financial instrument with three primitive prope
 
 3. **Funding from lower-value sources:** The public good is funded by redirecting resources from government activities with lower social value than the target use. In the strongest case, these are programs that produce measurable net harm. More generally, they are programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than comparative merit. This constraint ensures IABs reallocate from less valuable to more valuable uses; they are welfare-improving in expectation under standard utilitarian social welfare assumptions.
 
-The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements, agricultural subsidies that distort markets, and fossil fuel subsidies that accelerate climate change: these programs survive political competition not on merit but on lobbying intensity. They exist because Lockheed Martin has lobbyists and you don't. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
+The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements. Agricultural subsidies that distort markets. Fossil fuel subsidies that accelerate climate change. These programs survive political competition not on merit but on lobbying intensity. Lockheed Martin has lobbyists. You don't. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
 
 The key innovation is that all three alignments reinforce each other. A fraction of redirected funding flows perpetually to (a) investor returns and (b) political incentive mechanisms, while (c) the funding source ensures no beneficial programs are displaced. This makes the instrument self-sustaining: policy success generates the resources that maintain both investor and politician alignment, creating pressure for continuation and expansion.
 
@@ -359,7 +359,7 @@ Public choice theory applies economic methods to political behavior. Buchanan an
 2. **Asymmetric stakes**: Per-member stakes are higher in small groups
 3. **Organization costs**: Smaller groups face lower coordination costs
 
-The result is that "concentrated minor interests will be overrepresented and diffuse majority interests trumped" [@olson1965]. Empirical support includes Lohmann's observation that U.S. sugar import quotas generated 2,261 jobs while reducing overall welfare by $1.162 billion, an implicit cost per job exceeding $500,000 [@lohmann1998]. In other words, the government could have paid each sugar worker half a million dollars to not grow sugar and saved money. But sugar growers have lobbyists, and consumers don't.
+The result is that "concentrated minor interests will be overrepresented and diffuse majority interests trumped" [@olson1965]. Empirical support includes Lohmann's observation that U.S. sugar import quotas generated 2,261 jobs while reducing overall welfare by $1.162 billion, an implicit cost per job exceeding $500,000 [@lohmann1998]. The government could have paid each sugar worker half a million dollars to not grow sugar. This would have saved money. Nobody did this. Sugar growers have lobbyists. Consumers don't.
 
 IABs address this directly: by concentrating benefits on politicians who support diffuse-benefit policies, the asymmetry is reversed. Supporting the public good becomes the concentrated-benefit option.
 
@@ -658,9 +658,9 @@ $$ {#eq-score}
 
 The score is based purely on voting record on policy class $\mathcal{P}$ (policies meeting specified criteria for the target public good). This is a design choice with important implications:
 
-1. **Measurability**: Voting records are public, verifiable, and ungameable
+1. **Measurability**: Voting records are public, verifiable, and ungameable (they literally write down who voted for what; it's very hard to fake this)
 2. **Attribution**: Each politician's vote is directly attributable
-3. **No oracle problem**: No need for contested measurement of downstream outcomes
+3. **No oracle problem**: No need for contested measurement of downstream outcomes (we don't have to hire a wizard to decide if the cure "worked")
 
 ### Score-Dependent Payoffs
 
@@ -1315,7 +1315,7 @@ Even accounting for these risks (expected cost: ~\$75M/year, down from ~\$100M/y
 
 ## Conclusion
 
-Incentive Alignment Bonds represent a novel application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
+Incentive Alignment Bonds represent a new application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
 
 **In plain English:** We've designed a way to make politicians support cures instead of bombs, not by appealing to their better nature (good luck with that), but by making it personally profitable. Same selfish politicians, better outcomes.
 
