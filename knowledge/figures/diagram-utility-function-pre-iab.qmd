@@ -1,11 +1,3 @@
----
-title: "Pre-IAB Utility Function Diagram"
-description: "Flow diagram showing politician incentives before IABs - NSV rankings ignored"
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| label: fig-utility-pre-iab
 #| fig-cap: "PRE-IAB: Rankings Ignored. NSV rankings exist but don't affect politician utility, which is driven by lobbying intensity from concentrated interests."

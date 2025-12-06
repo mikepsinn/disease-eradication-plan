@@ -28,7 +28,9 @@ Your success requires someone else's failure. You're not solving scarcity. You'r
 
 Meanwhile, the real driver of scarcity, the real reason the bowl is so small, is ignored:
 
-**Humanity spends {{< var military_vs_medical_research_ratio >}} times more on making humans stop existing than on making humans continue existing.**
+**Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials to discover which medicines actually work.**
+
+The bottleneck isn't basic research or lab equipment. It's testing. We've explored less than 1% of possible drug-disease combinations using existing safe compounds because clinical trials are too slow and expensive. This is the chokepoint that limits every health outcome.
 
 This is not an ideological claim. It's arithmetic.
 
@@ -97,7 +99,7 @@ A 1% treaty is not a peace movement. It's a **resource-reallocation movement**. 
 
 **If you're a peace organization:** You've been making moral appeals for 70 years. It hasn't worked. Try something else. A 1% treaty makes peace more profitable than war. It's not a moral argument; it's a financial one. And in a world run by greed, that's the only argument that matters.
 
-**If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. A 1% treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases the total global funding for medical research by {{< var military_vs_medical_research_ratio >}} times and makes the process 82x more efficient.
+**If you're a disease advocacy group:** You are currently fighting every other disease group for a tiny sliver of the NIH's budget. You are competing for crumbs. A 1% treaty doesn't just give you a bigger slice of the pie; it bakes a new, much larger pie. It increases clinical trials capacity by {{< var military_to_government_clinical_trials_spending_ratio >}} times and makes the testing process 82x more efficient. The bottleneck isn't ideas or molecules - it's running enough trials to find out what works. This solves that.
 
 ## "But Shouldn't Nonprofits Focus on Their Core Mission?"
 

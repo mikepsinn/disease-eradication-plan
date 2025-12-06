@@ -1,11 +1,3 @@
----
-title: "Post-IAB Utility Function Diagram"
-description: "Flow diagram showing politician incentives after IABs - NSV rankings operative via score"
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| label: fig-utility-post-iab
 #| fig-cap: "POST-IAB: Rankings Operative via Score. The same NSV rankings now determine politician scores, which drive electoral support, post-office opportunities, and legacy benefits."

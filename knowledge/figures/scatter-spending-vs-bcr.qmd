@@ -1,11 +1,3 @@
----
-title: "Government Spending vs. Benefit-Cost Ratio"
-description: "Scatter plot showing the inverse correlation between program spending and social value"
-format:
-  html:
-    code-fold: true
----
-
 ```{python}
 #| label: fig-spending-bcr-scatter
 #| fig-cap: "Government Spending vs. Benefit-Cost Ratio. Programs with the highest BCRs (>100:1) receive the least funding, while programs with negative NSV receive hundreds of billions. This inverse correlation demonstrates that spending is driven by lobbying intensity, not social value."
