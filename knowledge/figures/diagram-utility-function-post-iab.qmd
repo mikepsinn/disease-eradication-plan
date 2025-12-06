@@ -1,0 +1,100 @@
+---
+title: "Post-IAB Utility Function Diagram"
+description: "Flow diagram showing politician incentives after IABs - NSV rankings operative via score"
+format:
+  html:
+    code-fold: true
+---
+
+```{python}
+#| label: fig-utility-post-iab
+#| fig-cap: "POST-IAB: Rankings Operative via Score. The same NSV rankings now determine politician scores, which drive electoral support, post-office opportunities, and legacy benefits."
+#| fig-alt: "Flow diagram showing that after IABs, NSV rankings become operative through a score function that determines all components of politician utility."
+#| warning: false
+
+import graphviz
+from pathlib import Path
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+# Create the diagram
+dot = graphviz.Digraph(comment='Post-IAB Utility Function', format='png')
+
+# Set graph attributes for compact layout
+dot.attr(rankdir='TB', size='10,8', nodesep='0.5', ranksep='0.6', dpi='200')
+dot.attr('node', fontsize='13', fontname='Helvetica', margin='0.3,0.2')
+dot.attr('edge', fontsize='12', fontname='Helvetica')
+
+# Apply standard styling
+setup_graphviz_style(dot)
+
+# Helper for boxed labels
+def boxed_label(text, size='12'):
+    """Wrap label in HTML-like table for white background with border."""
+    # First, temporarily replace <BR/> with a placeholder
+    text = text.replace('<BR/>', '<<<LINEBREAK>>>')
+    # Escape ampersands first (before adding &lt; &gt;)
+    text = text.replace('&', '&amp;')
+    # Escape angle brackets in mathematical expressions
+    text = text.replace('<', '&lt;').replace('>', '&gt;')
+    # Restore <BR/> tags
+    text = text.replace('<<<LINEBREAK>>>', '<BR/>')
+    return f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="white"><TR><TD><FONT FACE="Helvetica" POINT-SIZE="{size}">{text}</FONT></TD></TR></TABLE>>'
+
+def node_label(text, size='13'):
+    """Wrap node label in HTML font tag for clean rendering."""
+    # Escape ampersands first, then convert newlines to HTML line breaks
+    html_text = text.replace('&', '&amp;').replace('\n', '<BR/>')
+    return f'<<FONT FACE="Helvetica" POINT-SIZE="{size}">{html_text}</FONT>>'
+
+# Title
+dot.node('title', node_label('POST-IAB: Rankings Operative via Score', '16'),
+         shape='plaintext', fontsize='16', style='bold')
+
+# NSV Ranking now feeds into score
+dot.node('ranking', node_label('NSV Ranking R\n(Same rankings,\nnow consequential)'),
+         shape='box', style='bold', penwidth='2')
+
+# The score mechanism
+dot.node('score', node_label('Score Function\ntheta = f(R, VoteRecord)'),
+         shape='box', style='filled,bold', fillcolor='lightgray', penwidth='2.5')
+
+# Individual components now score-dependent
+dot.node('P', node_label('Pi(theta)\n- Scorecard visibility\n- Independent expenditures\n- Campaign support'),
+         shape='box', style='filled', fillcolor='white')
+dot.node('Y', node_label('Yi(theta)\n- Fellowship eligibility\n- Think tank positions\n- Advisory boards'),
+         shape='box', style='filled', fillcolor='white')
+dot.node('S', node_label('Si(theta)\n- Public recognition\n- Historical legacy\n- Wikipedia length'),
+         shape='box', style='filled', fillcolor='white')
+
+# Utility function now score-dependent
+dot.node('utility', node_label('Ui = ai*Pi(theta) + bi*Yi(theta) + gi*Si(theta)'),
+         shape='box', style='bold', penwidth='2.5')
+
+# Action outcome
+dot.node('action', node_label('ai = 1\n(Support Public Good)'),
+         shape='box', style='filled,bold', fillcolor='lightgray', penwidth='2')
+
+# Edges
+dot.edge('title', 'ranking', style='invis')
+dot.edge('ranking', 'score', label=boxed_label('Vote Record'), penwidth='2')
+dot.edge('score', 'P', label=boxed_label('Higher Score'), penwidth='1.5')
+dot.edge('score', 'Y', label=boxed_label('Higher Score'), penwidth='1.5')
+dot.edge('score', 'S', label=boxed_label('Higher Score'), penwidth='1.5')
+dot.edge('P', 'utility', penwidth='1.5')
+dot.edge('Y', 'utility', penwidth='1.5')
+dot.edge('S', 'utility', penwidth='1.5')
+dot.edge('utility', 'action', label=boxed_label('Change in Ui = benefit > cost'), penwidth='2')
+
+# Layout organization
+with dot.subgraph() as s:
+    s.attr(rank='same')
+    s.node('P')
+    s.node('Y')
+    s.node('S')
+
+# Render the diagram
+png_path = render_graphviz_with_watermark(dot, 'utility-function-post-iab')
+print(f"Generated: {png_path}")
+```
+
+**After IABs:** The same utility function becomes score-dependent: each component (electoral, career, legacy) now depends on the politician's score, which is determined by their voting record on NSV-ranked programs. Supporting high-NSV programs becomes the rational, self-interested choice.

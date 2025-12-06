@@ -1,147 +1,23 @@
 ---
-title: "Utility Function Transformation Diagram"
-description: "Flow diagram showing how IABs transform politician incentives by making NSV rankings operative"
+title: "Utility Function Transformation Diagrams"
+description: "Side-by-side comparison showing how IABs transform politician incentives by making NSV rankings operative"
 format:
   html:
     code-fold: true
 ---
 
-```{python}
-#| label: fig-utility-transformation
-#| fig-cap: "The Utility Function Transformation: How IABs Make NSV Rankings Operative. Before IABs, the NSV ranking R is ignored and politician utility is driven by lobbying intensity. After IABs, the ranking becomes operative through the score θᵢ, which determines electoral support, post-office income, and legacy benefits."
-#| fig-alt: "Flow diagram showing the transformation of politician utility functions from pre-IAB (where NSV rankings are ignored) to post-IAB (where rankings determine scores which determine all utility components)."
-#| warning: false
+::: {.panel-tabset}
 
-import graphviz
-from pathlib import Path
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+## PRE-IAB: Rankings Ignored
 
-# Create the diagram
-dot = graphviz.Digraph(comment='Utility Function Transformation', format='png')
+![NSV rankings exist but don't affect politician utility, which is driven by lobbying intensity from concentrated interests.](utility-function-pre-iab.png){#fig-utility-pre-iab}
 
-# Set graph attributes for better layout
-dot.attr(rankdir='TB', size='14,10', nodesep='0.6', ranksep='0.8', dpi='200')
-dot.attr('node', fontsize='13', fontname='Helvetica', margin='0.3,0.2')
-dot.attr('edge', fontsize='12', fontname='Helvetica')
+## POST-IAB: Rankings Operative
 
-# Apply standard styling
-setup_graphviz_style(dot)
+![The same NSV rankings now determine politician scores, which drive electoral support, post-office opportunities, and legacy benefits.](utility-function-post-iab.png){#fig-utility-post-iab}
 
-# Helper for boxed labels
-def boxed_label(text, size='12'):
-    return f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="white"><TR><TD><FONT FACE="Helvetica" POINT-SIZE="{size}">{text}</FONT></TD></TR></TABLE>>'
-
-def node_label(text, size='13'):
-    return f'<<FONT FACE="Helvetica" POINT-SIZE="{size}">{text.replace(chr(10), "<BR/>")}</FONT>>'
-
-# ============ PRE-IAB SECTION ============
-dot.node('pre_title', node_label('PRE-IAB: Rankings Ignored', '15'),
-         shape='plaintext', fontsize='15')
-
-# NSV Ranking exists but is ignored
-dot.node('pre_ranking', node_label('NSV Ranking R\n(Copenhagen Consensus,\nGiveWell, IMF)'),
-         shape='box', style='dashed', penwidth='2')
-dot.node('pre_ignored', node_label('IGNORED'), shape='plaintext',
-         fontsize='14', fontcolor='gray')
-
-# Utility components driven by lobbying
-dot.node('pre_utility', node_label('Uᵢ = αᵢ·Pᵢ + βᵢ·Yᵢ + γᵢ·Sᵢ'),
-         shape='box', style='bold', penwidth='2.5')
-
-# Individual components
-dot.node('pre_P', node_label('Pᵢ (Reelection)\nDriven by:\n• Campaign Funding\n• Attack ads avoided'),
-         shape='box')
-dot.node('pre_Y', node_label('Yᵢ (Post-Office)\nDriven by:\n• Revolving door\n• Industry ties'),
-         shape='box')
-dot.node('pre_S', node_label('Sᵢ (Legacy)\nDriven by:\n• Partisan loyalty\n• Donor satisfaction'),
-         shape='box')
-
-# Action outcome
-dot.node('pre_action', node_label('aᵢ = 0\n(Oppose Public Good)'),
-         shape='box', style='filled', fillcolor='lightgray')
-
-# Edges for PRE-IAB
-dot.edge('pre_ranking', 'pre_ignored', style='dashed', color='gray')
-dot.edge('pre_P', 'pre_utility')
-dot.edge('pre_Y', 'pre_utility')
-dot.edge('pre_S', 'pre_utility')
-dot.edge('pre_utility', 'pre_action', label=boxed_label('ΔUᵢ = ε - cᵢ < 0'))
-
-# ============ TRANSFORMATION ARROW ============
-dot.node('transform', node_label('⬇\nIAB MECHANISM\nIntroduces Score θᵢ\n⬇'),
-         shape='plaintext', fontsize='14', fontcolor='black')
-
-# ============ POST-IAB SECTION ============
-dot.node('post_title', node_label('POST-IAB: Rankings Operative via Score', '15'),
-         shape='plaintext', fontsize='15')
-
-# NSV Ranking now feeds into score
-dot.node('post_ranking', node_label('NSV Ranking R\n(Same rankings,\nnow consequential)'),
-         shape='box', style='bold', penwidth='2')
-
-# The score mechanism
-dot.node('post_score', node_label('Score Function\nθᵢ = f(R, VoteRecordᵢ)'),
-         shape='box', style='filled,bold', fillcolor='lightgray', penwidth='2.5')
-
-# Utility function now score-dependent
-dot.node('post_utility', node_label('Uᵢ = αᵢ·Pᵢ(θᵢ) + βᵢ·Yᵢ(θᵢ) + γᵢ·Sᵢ(θᵢ)'),
-         shape='box', style='bold', penwidth='2.5')
-
-# Individual components now score-dependent
-dot.node('post_P', node_label('Pᵢ(θᵢ)\n• Scorecard visibility\n• Independent expenditures\n• Campaign support'),
-         shape='box', style='filled', fillcolor='white')
-dot.node('post_Y', node_label('Yᵢ(θᵢ)\n• Fellowship eligibility\n• Think tank positions\n• Advisory boards'),
-         shape='box', style='filled', fillcolor='white')
-dot.node('post_S', node_label('Sᵢ(θᵢ)\n• Public recognition\n• Historical legacy\n• Wikipedia length'),
-         shape='box', style='filled', fillcolor='white')
-
-# Action outcome
-dot.node('post_action', node_label('aᵢ = 1\n(Support Public Good)'),
-         shape='box', style='filled,bold', fillcolor='lightgray', penwidth='2')
-
-# Edges for POST-IAB
-dot.edge('post_ranking', 'post_score', label=boxed_label('Vote Record'), penwidth='2')
-dot.edge('post_score', 'post_P', label=boxed_label('θᵢ ↑'), penwidth='1.5')
-dot.edge('post_score', 'post_Y', label=boxed_label('θᵢ ↑'), penwidth='1.5')
-dot.edge('post_score', 'post_S', label=boxed_label('θᵢ ↑'), penwidth='1.5')
-dot.edge('post_P', 'post_utility', penwidth='1.5')
-dot.edge('post_Y', 'post_utility', penwidth='1.5')
-dot.edge('post_S', 'post_utility', penwidth='1.5')
-dot.edge('post_utility', 'post_action',
-         label=boxed_label('ΔUᵢ = αᵢΔPᵢ + βᵢΔYᵢ + γᵢΔSᵢ > cᵢ'), penwidth='2')
-
-# ============ LAYOUT ORGANIZATION ============
-# Use invisible edges to control layout
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.edge('pre_title', 'transform', style='invis')
-    s.edge('transform', 'post_title', style='invis')
-
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node('pre_ranking')
-    s.node('post_ranking')
-
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node('pre_P')
-    s.node('pre_Y')
-    s.node('pre_S')
-
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node('post_P')
-    s.node('post_Y')
-    s.node('post_S')
-
-# Render the diagram
-png_path = render_graphviz_with_watermark(dot, 'utility-function-transformation')
-print(f"Generated: {png_path}")
-```
+:::
 
 **Key Insight:** The IAB mechanism does not require politicians to become better people or to care about social welfare intrinsically. It simply redirects their existing selfish utility maximization toward welfare-improving outcomes.
-
-**Before IABs:** Politicians maximize $U_i$ based on lobbying intensity. The NSV ranking $R$ exists but doesn't appear in their utility function, so they have no incentive to support high-NSV programs.
-**After IABs:** The same utility function becomes score-dependent: $U_i = \alpha_i \cdot P_i(\theta_i) + \beta_i \cdot Y_i(\theta_i) + \gamma_i \cdot S_i(\theta_i)$. Now the ranking $R$ is operative through $\theta_i = f(R, \text{VoteRecord}_i)$. Supporting high-NSV programs becomes the rational, self-interested choice.
 
 **Same selfish optimization, radically different equilibrium.** This is the core mechanism design contribution.
