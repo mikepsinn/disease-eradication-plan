@@ -515,13 +515,9 @@ where $S_0$ is baseline status and $\lambda > 0$ captures the marginal status ga
 
 **The transformation does not change what politicians optimize; it changes what optimizing points at.** Same selfish utility maximization, radically different equilibrium outcome. This is the core mechanism design contribution: we align private incentives with public welfare not by appealing to altruism, but by redirecting self-interest. The diagrams below illustrate this transformation (compare @fig-utility-pre-iab with @fig-utility-post-iab).
 
-::: {layout-ncol=2}
-
 {{< include ../figures/diagram-utility-function-pre-iab.qmd >}}
 
 {{< include ../figures/diagram-utility-function-post-iab.qmd >}}
-
-:::
 
 ### Numerical Calibration and Parameter Ranges
 
