@@ -87,7 +87,7 @@ For the complete breakdown of where every paper goes, see [Campaign Budget](camp
 
 Treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
 
-- {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to DIH treasury (automatic, no takebacks)
+- {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to 1% Treaty Fund (automatic, no takebacks)
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
 - {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) automatically funds [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) (keeps politicians aligned with curing diseases)
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) automatically goes to curing the diseases actually killing people

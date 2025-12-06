@@ -38,7 +38,7 @@ dot.attr(rankdir='TD', size='10,12')
 setup_graphviz_style(dot)
 
 dot.node('A', '1% Treaty Funds')
-dot.node('B', 'DIH Treasury')
+dot.node('B', '1% Treaty Fund')
 dot.node('C', 'Trial Coverage Pool')
 dot.node('D', 'Covers Patient Costs')
 dot.node('E', 'Medications')

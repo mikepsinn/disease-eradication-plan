@@ -20,10 +20,10 @@ dot.attr(rankdir='TB', size='12,14')
 
 setup_graphviz_style(dot)
 
-# DIH Treasury (top)
+# 1% Treaty Fund (top)
 
 dot.node('Treaty', '1% treaty\n$1T/year', shape='box', style='filled', fillcolor='white')
-dot.node('Treasury', 'DIH Treasury\nDecentralized Governance Layer', shape='box', penwidth='3')
+dot.node('Treasury', '1% Treaty Fund\nDecentralized Governance Layer', shape='box', penwidth='3')
 
 # Wishocracy voting
 

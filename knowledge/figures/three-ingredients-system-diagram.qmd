@@ -19,7 +19,7 @@ with dot.subgraph(name='cluster_system') as system:
     system.attr(label='How to Trick Humanity Into Not Killing Itself', style='dashed')
     system.node('Military', '$2.7 TRILLION\nMurder Budget\n(current situation)')
     system.node('Treaty', 'Steal 1%\n($27B/year)\nNobody notices')
-    system.node('DIH', 'DIH Treasury\nHolds the money\nDemocracy but working', penwidth='3')
+    system.node('DIH', '1% Treaty Fund\nHolds the money\nDemocracy but working', penwidth='3')
     system.node('DFDA', 'dFDA\nAmazon for drugs\n82X cheaper trials')
     system.node('Cures', 'CURES\nCancer gone\nDeath optional')
     system.node('Feedback', 'Everyone profits\n270% returns\nRepeat until death optional')

@@ -145,7 +145,7 @@
   - Political viability: 1% is a rounding error, not a revolution
   - The ratchet strategy: 1% this year, 2% next year, eventually they'll wonder why they have bombs at all
 - **The Two-Tier Peace Dividend (History Shows This Works)**
-  - Captured Dividend: $24.4B to DIH treasury (direct military cuts)
+  - Captured Dividend: $24.4B to 1% Treaty Fund (direct military cuts)
   - Societal Dividend: $92B to humanity (total economic benefit)
     - Lost economic growth avoided: $24.4B
     - Infrastructure not destroyed: $18.8B

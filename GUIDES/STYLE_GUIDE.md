@@ -115,7 +115,7 @@ We're describing frameworks and concepts, not pitching branded products. Use com
 
 Use "your" in instructional/empowering contexts - this is a DIY guide:
 - "Your dFDA platform connects patients to trials"
-- "Your DIH treasury holds the funds"
+- "Your 1% Treaty Fund holds the funds"
 - "Here's how your decentralized trial system works"
 
 ### When to stay neutral
