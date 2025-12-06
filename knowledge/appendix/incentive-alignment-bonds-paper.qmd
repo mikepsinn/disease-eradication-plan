@@ -765,7 +765,7 @@ Consider a legislature of $N$ politicians. Let $n = \sum_{i=1}^N a_i$ be the num
 
 ### Illustrative Example: A Global Health Treaty
 
-To ground the formal model in concrete terms, consider a hypothetical application. Suppose one's public goods objective is to simultaneously reduce global conflict and reduce the global burden of disease. Global military expenditure currently exceeds \$2.4 trillion annually [@sipri2024], while the global burden of disease exceeds 2.5 billion disability-adjusted life years (DALYs) annually [@who2024]. An international treaty in which signatory nations commit to redirecting 1% of military spending to a global pragmatic clinical trial system generates approximately \$24 billion per year for medical research, roughly tripling current global public health R&D funding, while creating modest but meaningful pressure toward demilitarization.
+To ground the formal model in concrete terms, consider a hypothetical application. Suppose one's public goods objective is to simultaneously reduce global conflict and reduce the global burden of disease. Global military expenditure currently exceeds \$2.4 trillion annually [@sipri2024], while the global burden of disease exceeds 2.5 billion disability-adjusted life years (DALYs) annually [@who2024]. An international treaty in which signatory nations commit to redirecting 1% of military spending to a global pragmatic clinical trial system generates approximately \$24 billion per year for pragmatic clinical trials, roughly tripling current global clinical trial funding, while creating modest but meaningful pressure toward demilitarization.
 
 The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
@@ -1291,7 +1291,7 @@ The paper demonstrates that IABs redirect resources from low-NSV to high-NSV pro
 | Benefit Category | Estimated Annual Value | Source |
 |:-----------------|:----------------------|:-------|
 | Peace dividend (reduced conflict costs) | \$113.55B | 1% × \$11.355T global war costs |
-| Medical research acceleration | \$24B reallocated × 4.75 BCR | \$114B | NIH ROI analyses |
+| Pragmatic clinical trials acceleration | \$24B reallocated × 4.75 BCR | \$114B | NIH ROI analyses |
 | **Total annual benefits** | **\$227.55B** | Conservative estimate |
 
 **Net welfare calculation:**
