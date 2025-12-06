@@ -41,11 +41,7 @@ from dih_models.parameters import *
 
 ```
 
-M. Sinn
-
-Decentralized Institutes of Health
-
-[m@dih.earth](mailto:m@dih.earth)
+M. Sinn - Decentralized Institutes of Health - [m@dih.earth](mailto:m@dih.earth)
 
 ::: {.callout-tip}
 This is a working paper. Comments and critical feedback are appreciated. Annotate via the sidebar or email [m@dih.earth](mailto:m@dih.earth).
@@ -128,7 +124,7 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 
 **Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Unconditionally recommended regardless of willingness-to-pay thresholds (e.g., vaccination programs, smoking cessation).
 
-**A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to medical research infrastructure.
+**A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to pragmatic clinical trials infrastructure.
 
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions. Reduces costs while improving generalizability (e.g., Oxford RECOVERY trial).
 :::
@@ -145,6 +141,10 @@ Humanity's budget priorities, explained simply:
 - **Government clinical trials spending**: {{< var global_government_clinical_trials_spending_annual >}} {{< var global_government_clinical_trials_spending_annual_cite >}}/year (testing which medicines actually work)
 
 - **Ratio**: {{< var military_to_government_clinical_trials_spending_ratio >}}:1 (you spend {{< var military_to_government_clinical_trials_spending_ratio >}}× more on weapons than on discovering which drugs cure diseases)
+
+::: {.callout-note}
+**Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
+:::
 
 The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost [$41K per patient](../references.qmd#trial-cost-41k) while pragmatic trials like Oxford RECOVERY run for [$500 per patient](../references.qmd#recovery-cost-500). At current funding levels, testing the remaining 99% of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
 
@@ -457,7 +457,7 @@ This is a one-time cost. You either achieve treaty passage or you don't.
 
 ### Benefit Components
 
-The treaty redirects {{< var treaty_annual_funding >}} annually from military spending to medical research. This money already exists. You're not printing new money or raising taxes. You're just moving existing money from weapons procurement to clinical trials.
+The treaty redirects {{< var treaty_annual_funding >}} annually from military spending to pragmatic clinical trials. This money already exists. You're not printing new money or raising taxes. You're just moving existing money from weapons procurement to clinical trials.
 
 This generates benefits through two mechanisms:
 
@@ -630,11 +630,11 @@ For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](.
 
 ## Counterfactual Baseline Specification
 
-This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: military spending continues at current levels ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} annually) and is allocated to traditional military purposes. Under this baseline, the {{< var treaty_annual_funding >}} redirected to medical research infrastructure would otherwise remain in military budgets.
+This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: military spending continues at current levels ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} annually) and is allocated to traditional military purposes. Under this baseline, the {{< var treaty_annual_funding >}} redirected to pragmatic clinical trials infrastructure would otherwise remain in military budgets.
 
 **Alternative counterfactual scenarios** include:
 
-1. **Military R&D continuation**: The {{< var treaty_annual_funding >}} continues funding military research and development, potentially yielding civilian technology spillovers (e.g., GPS, internet protocols, materials science advances). This scenario is partially addressed in the peace dividend calculations, which acknowledge that military spending generates economic multiplier effects of 0.5-1.0× compared to medical research multipliers of 2.0-3.0×.
+1. **Military R&D continuation**: The {{< var treaty_annual_funding >}} continues funding military research and development, potentially yielding civilian technology spillovers (e.g., GPS, internet protocols, materials science advances). This scenario is partially addressed in the peace dividend calculations, which acknowledge that military spending generates economic multiplier effects of 0.5-1.0× compared to pragmatic clinical trial multipliers of 2.0-3.0×.
 
 2. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually in developed economies).
 
@@ -894,7 +894,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 ### Time Inconsistency and Commitment Credibility
 
-**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the medical research budget for short-term priorities.
+**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the pragmatic clinical trials budget for short-term priorities.
 
 **Concentrated costs, diffuse benefits**: Defense contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually). Health benefits, while larger in aggregate ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually), are diffuse across millions of beneficiaries. Olson's logic of collective action predicts that concentrated interests will resist more effectively than diffuse beneficiaries will mobilize, creating political economy barriers to sustained implementation.
 
@@ -998,11 +998,11 @@ The funding uses an **80/10/10 automatic allocation**:
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
-| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA platform |
-| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA platform |
+| **VICTORY IAB Investor Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Rewards for supporting legislators](../solution/incentive-alignment-bonds.qmd) |
 
-Within the {{< var dih_treasury_medical_research_pct >}} allocated to medical research:
+Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:
 
 1. **Patient Trial Subsidies** ({{< var dih_treasury_trial_subsidies_pct >}}): {{< var dih_treasury_trial_subsidies_annual >}}/year
    - Subsidizes {{< var dih_patients_fundable_annually >}} patients annually at {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient
@@ -1019,7 +1019,7 @@ Data stays federated (in Epic/Cerner/Apple Health systems). No massive centraliz
 
 For detailed cost breakdown: [Platform Costs](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
 
-**Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to medical research (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
+**Key insight**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
 This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}} years). Full breakdown: [dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd#dfda-platform-costs-rom-estimates-partnership-model).
 
@@ -1110,7 +1110,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) for legislators |
 
-Within the {{< var dih_treasury_medical_research_pct >}} allocated to medical research:
+Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:
 
 1. **Patient Trial Subsidies**: {{< var dih_treasury_trial_subsidies_annual >}}/year subsidizing patient participation in clinical trials
    - At {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient ([RECOVERY trial cost](../appendix/recovery-trial.qmd)), this funds {{< var dih_patients_fundable_annually >}} patients annually
@@ -1172,7 +1172,7 @@ These estimates derive from:
 | Benefit Category | Type | Value | Frequency | Description |
 |:---|:---:|---:|:---|:---|
 | **Timeline Shift** | One-time | {{< var disease_eradication_delay_economic_loss >}} | Once | Eliminating {{< var efficacy_lag_years >}}-year regulatory delay shifts disease eradication {{< var efficacy_lag_years >}} years earlier. Saves {{< var disease_eradication_delay_deaths_total >}} lives and {{< var disease_eradication_delay_dalys >}} DALYs. See [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd) |
-| **Peace Dividend** | Recurring | {{< var peace_dividend_annual_societal_benefit >}}/year | Perpetual | {{< var treaty_reduction_pct >}} reduction in global military spending redirected to medical research |
+| **Peace Dividend** | Recurring | {{< var peace_dividend_annual_societal_benefit >}}/year | Perpetual | {{< var treaty_reduction_pct >}} reduction in global military spending redirected to pragmatic clinical trials |
 
 | **R&D Savings** | Recurring | {{< var dfda_rd_gross_savings_annual >}}/year | Perpetual | {{< var trial_cost_reduction_factor >}}× trial cost reduction from pragmatic trial model |
 | **Total Recurring** | Recurring | {{< var treaty_total_complete_benefits_annual >}}/year | Perpetual | Peace dividend + R&D savings (makes system self-funding) |
@@ -1284,7 +1284,7 @@ The {{< var treaty_reduction_pct >}} Treaty pays for itself by solving two probl
 1. **The Peace Dividend** ({{< var peace_dividend_annual_societal_benefit >}} annually) - created simply by reducing global conflict spending 1%
 2. **Pragmatic trial infrastructure** - uses a fraction of that dividend to fix the *system* of medical research, generating a second massive win
 
-When you redirect the world's largest source of waste (conflict spending) to fund its most impactful opportunity (medical research), the math gets wild.
+When you redirect the world's largest source of waste (conflict spending) to fund its most impactful opportunity (pragmatic clinical trials), the math gets wild.
 
 **Scale**: Conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually) exceed childhood vaccinations by {{< var treaty_benefit_multiplier_vs_vaccines >}}×.
 
@@ -1415,7 +1415,7 @@ This section addresses common objections and potential failure modes, along with
 
 ### The "But Politicians Won't Do It" Problem
 
-**What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to medical research because defense contractors oppose the change.
+**What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because defense contractors oppose the change.
 
 **Why this actually won't happen**:
 
@@ -1427,7 +1427,7 @@ This creates a financial "kill switch": if the treaty is not respected, this mas
 
 When you show powerful stakeholders a spreadsheet where they keep {{< var defense_sector_retention_pct >}} of their current contracts PLUS get massive perpetual returns on bonds, they stop lobbying against you and start lobbying for you.
 
-You're not defeating greed. You're aligning economic incentives to direct existing profit motives toward medical research.
+You're not defeating greed. You're aligning economic incentives to direct existing profit motives toward pragmatic clinical trials.
 
 **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders who reject this are effectively signing death warrants for their own voters, donors, and family members.
 
@@ -1739,7 +1739,7 @@ Comprehensive sensitivity analysis across multiple scenarios demonstrates:
 
 ### General Equilibrium Effects
 
-This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating the intervention's direct effects. General equilibrium analysis would account for market adjustments to the $27.2B annual reallocation from military to medical research spending.
+This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating the intervention's direct effects. General equilibrium analysis would account for market adjustments to the $27.2B annual reallocation from military to pragmatic clinical trials spending.
 
 **Unmodeled general equilibrium effects include**:
 
@@ -1747,7 +1747,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 2. **Clinical trial market price effects**: Increasing trial demand by {{< var trial_capacity_multiplier >}}× could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var trial_cost_reduction_factor >}}× cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient; decentralized trials target {{< var recovery_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
 
-3. **Crowding out effects**: Does $27.2B in new medical research displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
+3. **Crowding out effects**: Do billions in new pragmatic clinical trials displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
 
 4. **Quality versus quantity trade-off**: {{< var trial_capacity_multiplier >}}× more trials may not yield proportional breakthroughs if resources spread thin or trial quality declines. The analysis assumes quality maintenance through peer review and replication; actual quality effects remain uncertain.
 
@@ -1778,7 +1778,7 @@ Future research priorities include prospective data collection during pilot impl
 
 ## Conclusion
 
-Redirecting {{< var treaty_reduction_pct >}} of global military spending to medical research generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI, depending on what you count.
+Redirecting {{< var treaty_reduction_pct >}} of global military spending to pragmatic clinical trials generates {{< var dfda_roi_rd_only >}}:1 to {{< var treaty_complete_roi_all_benefits >}}:1 ROI, depending on what you count.
 
 **The Numbers**:
 

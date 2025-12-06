@@ -39,7 +39,7 @@ war_indirect_total = war_infrastructure + war_lives_trade + war_longterm
 
 # Cure research spending
 
-cure_total = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION  # Global government medical research spending
+cure_total = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION  # Global government clinical trials
 
 categories = [
     'Cost of\nDisease',

@@ -29,11 +29,7 @@ format:
     fontsize: 11pt
 ---
 
-M. Sinn
-
-Decentralized Institutes of Health
-
-[m@dih.earth](mailto:m@dih.earth)
+M. Sinn - Decentralized Institutes of Health - [m@dih.earth](mailto:m@dih.earth)
 
 ::: {.callout-tip}
 This is a working paper. Comments and critical feedback are appreciated. Annotate via the sidebar or email [m@dih.earth](mailto:m@dih.earth).
@@ -43,7 +39,7 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 This paper introduces Incentive Alignment Bonds (IABs), financial instruments that make supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three properties: (1) investor returns keyed to policy adoption, (2) politician benefits (electoral support, career prospects) based on voting record, and (3) funding from programs with lower net social value than the target use. Drawing on mechanism design theory and campaign finance research, we formalize a three-layer architecture (scoring, electoral, post-office) that transforms the politician's utility function: the same selfish optimization that currently favors concentrated interests can be redirected toward public goods.
 
-We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to 380%+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control \$454 trillion vs. \$5 trillion for concentrated interests. Welfare accounting shows the mechanism's benefit-cost ratio exceeds 300:1. We illustrate with a global health treaty and discuss applications to climate, nuclear risk, and pandemic preparedness. Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming.
+We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to 380%+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control \$454 trillion vs. \$5 trillion for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds 300:1 (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
 
 ![The Incentive Alignment Bonds Mechanism](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
 
@@ -59,7 +55,7 @@ We prove conditions for Nash equilibrium, provide explicit functional forms and 
 
 ### The Information-Incentive Disconnect
 
-A central puzzle in political economy is why policies with large positive net social welfare often fail to be adopted. The economic case for many global public goods, including climate mitigation, pandemic preparedness, and medical research, is overwhelming, yet governments don't do them. **The conventional diagnosis is wrong**: the problem is not lack of information or resources, but wrong incentives.
+A central puzzle in political economy is why policies with large positive net social welfare often fail to be adopted. The economic case for many global public goods, including climate mitigation, pandemic preparedness, and clinical trials, is overwhelming, yet governments don't do them. **The conventional diagnosis is wrong**: the problem is not lack of information or resources, but wrong incentives.
 
 **Rankings of government programs by net social value already exist and are systematically ignored.** The Copenhagen Consensus has published rigorous benefit-cost ratio (BCR) analyses since 2004 [@copenhagenconsensus2023]. Their findings are clear: childhood vaccinations (101:1 BCR), e-government procurement (125:1), and maternal health interventions (87:1) dramatically outperform military spending beyond deterrence requirements (~0.7:1) and fossil fuel subsidies (negative net social value). GiveWell, Open Philanthropy, the IMF, and numerous academic institutions produce similar analyses.
 
@@ -67,7 +63,7 @@ Yet government spending patterns have not shifted. The U.S. spends $16 on milita
 
 **Put another way:** If a private equity firm allocated capital like the U.S. government, it invests $100M in ventures that destroy $500M in value while rejecting ventures that return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
 
-**The marginal value of producing another ranking is zero.** We don't need more information. Writing another report about how nuclear bombs are bad and we have too many is like writing another memo explaining that fire is hot. Politicians already know. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
+**The marginal value of producing another ranking is zero.** We don't need more information. Politicians already know which programs produce net social value. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
 
 This paper argues that politicians maximize reelection probability, post-office career prospects, and status, not aggregate social welfare. **The problem is not that decision-makers don't know which programs produce value. They do know. They don't care, because caring doesn't appear in their utility function.**
 
@@ -149,7 +145,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 For additional terms: definitions in parentheses on first use throughout the paper.
 :::
 
-This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach (designing rules so people's selfish choices create good outcomes) to reversing this dynamic. Rather than attempting to change politicians' preferences (good luck with that) or waiting for philosopher-kings (Plato has been dead for 2,400 years and we're still waiting), IABs simply change what rational self-interest points at. It's like training a dog: you don't lecture it about morality, you just move the treats.
+This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or relying on benevolent decision-makers, IABs restructure the incentive environment so that rational self-interest points toward welfare-improving policies.
 
 ### Definition
 
@@ -161,11 +157,13 @@ An Incentive Alignment Bond is a financial instrument with three primitive prope
 
 3. **Funding from lower-value sources:** The public good is funded by redirecting resources from government activities with lower social value than the target use. In the strongest case, these are programs that produce measurable net harm. More generally, they are programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than comparative merit. This constraint ensures IABs reallocate from less valuable to more valuable uses; they are welfare-improving in expectation under standard utilitarian social welfare assumptions.
 
-The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements. Agricultural subsidies that distort markets. Fossil fuel subsidies that accelerate climate change. These programs survive political competition not on merit but on lobbying intensity. Lockheed Martin has lobbyists. You don't. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
+The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements. Agricultural subsidies that distort markets. Fossil fuel subsidies that accelerate climate change. These programs survive political competition not on merit but on lobbying intensity. Concentrated interests (defense contractors, incumbent industries) invest heavily in maintaining these programs, while diffuse beneficiaries face collective action problems. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
 
 The key innovation is that all three alignments reinforce each other. A fraction of redirected funding flows perpetually to (a) investor returns and (b) political incentive mechanisms, while (c) the funding source ensures no beneficial programs are displaced. This makes the instrument self-sustaining: policy success generates the resources that maintain both investor and politician alignment, creating pressure for continuation and expansion.
 
 Unlike Social Impact Bonds (which align service providers with program outcomes), IABs align the actors who control large-scale budget decisions, the politicians, with public-good production. Unlike lobbying (which aligns politicians with narrow interests), IABs align politicians with measurable, welfare-improving outcomes. Unlike campaign contributions (which are ad hoc and candidate-specific), IABs create universal, ex-ante rules tied to objective metrics. And unlike new taxation or deficit spending, IABs fund public goods by displacing harmful or wasteful expenditure.
+
+**A natural objection:** "How is this not just PACs + voter scorecards + SIBs?" The answer is that existing mechanisms fail to solve the Olsonian problem because they operate in isolation. PACs exist but remain dominated by concentrated interests due to the 90:1 capital asymmetry. Scorecards exist (League of Conservation Voters, NRA ratings) but lack teeth without accompanying financial incentives. SIBs exist but require government to agree upfront, which faces the same collective action problem IABs solve. IABs integrate all three components (investor capital, electoral accountability, post-office incentives) into a single instrument where each component's effectiveness depends on the others, and where the funding mechanism creates permanent financial incentives for diffuse beneficiaries to overcome collective action barriers. The whole is greater than the sum of its parts because the integrated architecture makes coordinated capital deployment economically rational for millions of individual investors.
 
 ### Why Reallocation, Not Addition
 
@@ -183,13 +181,13 @@ Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on 
 
 This is not a failure of advocacy. It is the equilibrium outcome (stable result when everyone optimizes given current rules) of Olsonian dynamics operating under soft budget constraints (when governments can spend without immediate consequences; they just print money or charge it to the credit card of future generations). Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows in nominal terms while each program's claim on real resources remains contested.
 
-The mechanism is straightforward: when Congress appropriates \$10 billion for medical research without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases.
+The mechanism is straightforward: when Congress appropriates \$10 billion for pragmatic clinical trials without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases.
 
 But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to defense, fossil fuel subsidies, and other Olsonian programs, for the same finite resources.
 
 Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
 
-IABs break this dynamic by *specifying the funding source* as part of the mechanism. The policy does not say "fund medical research"; it says "redirect 1% of military spending to medical research." This forces a real reallocation:
+IABs break this dynamic by *specifying the funding source* as part of the mechanism. The policy does not say "fund pragmatic clinical trials"; it says "redirect 1% of military spending to pragmatic clinical trials." This forces a real reallocation:
 
 - Military budgets face *actual* cuts in nominal and real terms
 - Concentrated losers (defense contractors) face *real* losses, which they will resist
@@ -296,7 +294,7 @@ More comprehensive analysis includes:
 
 : Estimated Annual Societal Cost of Global Military Spending {#tbl-military-cost}
 
-A large literature suggests the net social value of military spending beyond minimum deterrence is strongly negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are roughly correct, redirecting even 1% to medical research, which has positive externalities and high multipliers, would be welfare-improving on net.
+A large literature suggests the net social value of military spending beyond minimum deterrence is strongly negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are roughly correct, redirecting even 1% to pragmatic clinical trials, which has positive externalities and high multipliers, would be welfare-improving on net.
 
 Similar analysis applies to other Olsonian programs:
 
@@ -676,9 +674,9 @@ $$ {#eq-score}
 
 The score is based purely on voting record on policy class $\mathcal{P}$ (policies meeting specified criteria for the target public good). This is a design choice with important implications:
 
-1. **Measurability**: Voting records are public, verifiable, and ungameable (they literally write down who voted for what; it's very hard to fake this)
+1. **Measurability**: Voting records are public, verifiable, and effectively ungameable
 2. **Attribution**: Each politician's vote is directly attributable
-3. **No oracle problem**: No need for contested measurement of downstream outcomes (we don't have to hire a wizard to decide if the cure "worked")
+3. **No oracle problem**: No need for contested measurement of downstream outcomes; the mechanism relies on observable voting records
 
 ### Score-Dependent Payoffs
 
@@ -771,7 +769,7 @@ To ground the formal model in concrete terms, consider a hypothetical applicatio
 
 The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
-- **80%** to the public good itself (medical research via the pragmatic trial system)
+- **80%** to the public good itself (pragmatic clinical trials)
 - **10%** to investor returns (perpetual payments to those who funded the campaign to pass the treaty)
 - **10%** to political incentives (funding the three-layer architecture)
 
@@ -1025,7 +1023,7 @@ This criticism deserves a careful response, as it goes to the heart of whether I
 
 3. **Transparent, universal, ex-ante rules:** Corporate lobbying operates through opaque relationships (revolving door promises, implicit quid pro quos, insider access). IABs publish scoring criteria ex-ante, apply them universally to all politicians regardless of relationship, and make scores publicly available. Any politician can improve their score through observable actions.
 
-4. **Diffuse vs. concentrated funders:** Corporate lobbying concentrates returns to a small number of firms. IABs, if structured as retail-accessible securities, allow millions of diffuse beneficiaries to invest small amounts. A $1,000 IAB investment makes a retiree a "special interest" in medical research, structurally impossible with current lobbying.
+4. **Diffuse vs. concentrated funders:** Corporate lobbying concentrates returns to a small number of firms. IABs, if structured as retail-accessible securities, allow millions of diffuse beneficiaries to invest small amounts. A $1,000 IAB investment makes a retiree a "special interest" in pragmatic clinical trials, structurally impossible with current lobbying.
 
 5. **Metric validation:** Corporate lobbying success is measured by dollars flowing to the lobbying firm. IAB success is measured by rigorous external benefit-cost analyses (Copenhagen Consensus, GiveWell, academic literature). The scoring organizations are independent 501(c)(3) entities, not the investors themselves.
 
@@ -1041,7 +1039,7 @@ As detailed in Section 6.2.3, once IABs successfully redirect resources to high-
 
 **The division of labor:**
 
-- **Layer 0 (Wishocracy for Domain Ranking):** Determine *which domains* should be funded (medical research vs. military spending vs. climate vs. subsidies). Expert organizations provide BCR data; citizens aggregate via pairwise comparisons to produce democratic domain rankings.
+- **Layer 0 (Wishocracy for Domain Ranking):** Determine *which domains* should be funded (pragmatic clinical trials vs. military spending vs. climate vs. subsidies). Expert organizations provide BCR data; citizens aggregate via pairwise comparisons to produce democratic domain rankings.
 - **Layer 1 (IABs):** Make politicians care about Layer 0 rankings via score-dependent incentives
 - **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate *within approved domains* (30% cancer, 20% Alzheimer's, etc.) without committee capture
 - **Layer 3 (Domain marketplaces):** Market mechanisms determine *specific projects* (which trials, which researchers)
@@ -1094,7 +1092,7 @@ IABs do not solve all governance problems. They address one specific failure mod
 | Congressional Budget Office | Federal programs | Program evaluations |
 | PNAS / Academic Literature | Externalities | Climate, pollution valuations |
 
-2. **Citizens review data and make pairwise comparisons:** Wishocracy platform shows random pairs of domains (Medical Research vs. Military Spending). For each pair, users see synthesized data from multiple expert sources (Copenhagen Consensus BCR: 100:1 vs. 0.7:1; GiveWell analyses; IMF externality estimates; etc.). Citizens choose which domain should receive MORE resources.
+2. **Citizens review data and make pairwise comparisons:** Wishocracy platform shows random pairs of domains (Pragmatic Clinical Trials vs. Military Spending). For each pair, users see synthesized data from multiple expert sources (Copenhagen Consensus BCR: 100:1 vs. 0.7:1; GiveWell analyses; IMF externality estimates; etc.). Citizens choose which domain should receive MORE resources.
 
 3. **Bradley-Terry aggregation produces democratic rankings:** Millions of pairwise comparisons aggregate into a global ranking of domains by democratically-determined priority.
 
@@ -1127,7 +1125,7 @@ IABs do not solve all governance problems. They address one specific failure mod
 
 - IABs get the treaty passed and resources redirected
 - Wishocracy prevents those resources from being captured by new concentrated interests
-- Example: IAB treaty redirects $24B to medical research. Wishocracy determines allocation across cancer, Alzheimer's, rare diseases, etc.
+- Example: IAB treaty redirects $24B to pragmatic clinical trials. Wishocracy determines allocation across cancer, Alzheimer's, rare diseases, etc.
 
 **Division of labor:**
 
@@ -1169,9 +1167,9 @@ Wishocracy's random pairwise sampling makes advertising economically infeasible.
 
 **Example cascade:**
 
-1. **Layer 0 (Wishocracy for Domain Ranking):** Citizens review expert BCR data (Copenhagen Consensus: medical research 100:1, military 0.7:1; GiveWell analyses; IMF externality data) and aggregate via pairwise comparisons to rank medical research above military spending
-2. **Layer 1 (IABs):** Politicians pass treaty redirecting $24B to health research based on Layer 0 democratic domain ranking
-3. **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate within medical research: 30% to cancer, 20% to Alzheimer's, 15% to infectious disease, etc.
+1. **Layer 0 (Wishocracy for Domain Ranking):** Citizens review expert BCR data (Copenhagen Consensus: pragmatic clinical trials 100:1, military 0.7:1; GiveWell analyses; IMF externality data) and aggregate via pairwise comparisons to rank pragmatic clinical trials above military spending
+2. **Layer 1 (IABs):** Politicians pass treaty redirecting $24B to pragmatic clinical trials based on Layer 0 democratic domain ranking
+3. **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate within pragmatic clinical trials: 30% to cancer, 20% to Alzheimer's, 15% to infectious disease, etc.
 4. **Layer 3 (dFDA):** Researchers compete in prediction markets; trials funded based on predicted effectiveness
 
 ### Why This Sequencing Matters
@@ -1337,7 +1335,7 @@ Even accounting for these risks (expected cost: ~\$75M/year, down from ~\$100M/y
 
 Incentive Alignment Bonds represent a new application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
 
-**In plain English:** We've designed a way to make politicians support cures instead of bombs, not by appealing to their better nature (good luck with that), but by making it personally profitable. Same selfish politicians, better outcomes.
+**In plain English:** The mechanism makes it personally profitable for politicians to support welfare-improving policies such as pragmatic clinical trials, rather than harmful or low-value programs.
 
 The contribution is fivefold:
 

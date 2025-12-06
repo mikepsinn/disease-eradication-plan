@@ -41,7 +41,7 @@ total_war = war_indirect_total + war_direct
 
 # Cure research
 
-cure_research = GLOBAL_MED_RESEARCH_SPENDING  # Global government medical research spending
+cure_research = GLOBAL_MED_RESEARCH_SPENDING  # Global government clinical trials
 
 categories = ['War\'s Hidden\nCosts', 'War Direct\nSpending', 'Curing\nDiseases']
 

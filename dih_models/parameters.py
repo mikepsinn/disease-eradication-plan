@@ -784,7 +784,7 @@ TREATY_ANNUAL_FUNDING = Parameter(
 # ==============================================================================
 # PEACE DIVIDEND - RECURRING ANNUAL BENEFIT ($113.55B/year perpetual)
 # ==============================================================================
-# A 1% treaty redirects 1% of military spending ($27.18B/year) to medical research.
+# A 1% treaty redirects 1% of military spending ($27.18B/year) to pragmatic clinical trials.
 # This generates recurring annual benefits from reduced conflict costs:
 #   - Direct military savings
 #   - Reduced infrastructure destruction
@@ -3150,8 +3150,8 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
     source_ref="",
     source_type="calculated",
-    description="Annual funding for medical research (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
-    display_name="DIH Annual Funding for Medical Research",
+    description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+    display_name="DIH Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
     latex=r"ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B",

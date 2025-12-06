@@ -30,7 +30,7 @@ disease_total = float(GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL) / BILLION
 
 # Cure research spending
 
-cure_total = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION  # Global government medical research spending
+cure_total = float(GLOBAL_MED_RESEARCH_SPENDING) / BILLION  # Global government clinical trials
 
 categories = [
     'Cost of\nDisease',
