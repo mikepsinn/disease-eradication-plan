@@ -55,27 +55,27 @@ Yet government spending patterns have not shifted. The U.S. spends $16 on milita
 
 **Put another way:** If a private equity firm allocated capital like the U.S. government, it would invest $100M in ventures that destroy $500M in value while rejecting ventures that would return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
 
-**The marginal value of producing another ranking is approximately zero.** What is needed is not more information, but a mechanism to make existing information consequential in the political utility function.
+**The marginal value of producing another ranking is zero.** We don't need more information. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
 
 This paper argues that politicians maximize reelection probability, post-office career prospects, and status, not aggregate social welfare. **The problem is not that decision-makers don't know which programs produce value. They do know. They don't care, because caring doesn't appear in their utility function.**
 
-Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] established that groups with concentrated interests systematically outcompete groups with diffuse interests in political competition. A small group facing large per-member stakes will invest more in lobbying than a large group facing small per-member stakes, even when total welfare losses exceed total welfare gains. This insight explains persistent policy failures: the beneficiaries of inefficient policies (defense contractors, pharmaceutical incumbents, fossil fuel producers) are concentrated, while the beneficiaries of efficient policies (citizens who would benefit from cures, climate stability, reduced existential risk) are diffuse.
+Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] established that groups with concentrated interests (small groups with huge per-person stakes, like defense contractors) systematically outcompete groups with diffuse interests (millions of people with small individual stakes, like citizens who'd benefit from cures) in political competition. A small group facing large per-member stakes will invest more in lobbying than a large group facing small per-member stakes, even when total welfare losses exceed total welfare gains. This insight explains persistent policy failures: the beneficiaries of inefficient policies (defense contractors, pharmaceutical incumbents, fossil fuel producers) are concentrated, while the beneficiaries of efficient policies (citizens who would benefit from cures, climate stability, reduced existential risk) are diffuse.
 
-The result is a systematic distortion of democratic governance. The U.S. Constitution's Preamble charges government to "promote the general Welfare," the welfare of all citizens, not the welfare of any particular faction. Yet Olsonian dynamics ensure that government routinely promotes *specific* welfare (of concentrated interests who can afford to lobby) at the expense of *general* welfare (of the diffuse public). This is not corruption in the legal sense; it is the predictable equilibrium of rational actors operating within existing institutional rules. The problem is not bad actors but bad incentives.
+The result is a systematic distortion of democratic governance. The U.S. Constitution's Preamble charges government to "promote the general Welfare," the welfare of all citizens, not the welfare of any particular faction. Yet Olsonian dynamics ensure that government routinely promotes *specific* welfare (of concentrated interests who can afford to lobby) at the expense of *general* welfare (of the diffuse public). This is not corruption in the legal sense; it is the predictable equilibrium (stable outcome where nobody wants to change their behavior) of rational actors operating within existing institutional rules. The problem is not bad actors but bad incentives.
 
-Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero; whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
+Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades. Finding: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero; whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
 
 ![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at approximately 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from Gilens and Page (2014) analysis of 1,779 policy decisions.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
 ::: {.callout-note icon=false}
 ## Key Results
 
-This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design:
+This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
 - **380% expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
-- **\$454 trillion vs. \$5 trillion capital asymmetry** ensures diffuse beneficiaries can outspend concentrated opposition by 90:1 (Section 2.3)
+- **\$454 trillion vs. \$5 trillion capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (defense contractors) by 90:1 (Section 2.3)
 - **303:1 benefit-cost ratio** of the IAB mechanism itself, even accounting for overhead costs and failure risk (Section 7.3)
-- **Mechanism achieves incentive compatibility** with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
+- **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
 - **Wishocracy (Layer 2) prevents allocation capture** through random pairwise sampling that makes advertising economically infeasible (Section 6.2.3)
 - **Bootstrap problem is solvable**: ROI potential attracts risk-tolerant capital; capital asymmetry ensures scalability once proof-of-concept succeeds (Section 8.1)
 :::
@@ -90,7 +90,49 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 **For investors and philanthropists:** Read Section 2.2 (ROI calculation), Section 2.3 (capital asymmetry), Section 7.3 (mechanism BCR), and Section 8.1 (bootstrap problem solution). Expected returns derive from proven lobbying economics, not speculative outcomes.
 :::
 
-This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or hoping for philosopher-kings, IABs change what rational self-interest points at.
+::: {.callout-note icon=false collapse="true"}
+## Key Terms for Non-Economists (Click to Expand)
+
+**The Big Concepts:**
+- **Mechanism design:** Designing rules so people's selfish choices create good outcomes (like auctions that make bidders reveal true value)
+- **Incentive compatibility:** When doing the right thing is also the profitable thing
+- **Nash equilibrium:** A stable situation where nobody can improve by changing their strategy alone
+- **Utility function:** Mathematical representation of what someone cares about (reelection, money, legacy)
+- **Dominant strategy:** Best choice regardless of what others do
+
+**Political Economy:**
+- **Concentrated interests:** Small groups with huge per-person stakes (defense contractors losing billions)
+- **Diffuse beneficiaries:** Millions of people with small individual stakes (each citizen gains 5 healthy years)
+- **Olsonian dynamics:** Named after economist Mancur Olson. It is the pattern where small organized groups beat large disorganized groups in political competition
+- **Collective action problem:** Hard for large groups to coordinate even when everyone would benefit
+- **Public goods:** Things everyone benefits from (clean air, medical research, pandemic preparedness)
+- **Regulatory capture:** When regulated industries control their regulators
+- **Rent-seeking:** Lobbying for special favors rather than creating value
+
+**Finance & ROI:**
+- **ROI (Return on Investment):** Profit divided by cost (380% ROI means you get $4.80 back for every $1 invested)
+- **Capital asymmetry:** Unequal distribution of wealth ($454 trillion households vs. $5 trillion defense contractors)
+- **Securitization:** Turning something into tradable financial instruments (like turning mortgages into mortgage-backed securities)
+- **Expected value:** Average outcome accounting for probabilities (20% chance of $100 = $20 expected value)
+- **Market capitalization:** Total value of a company's stock
+
+**Game Theory & Economics:**
+- **Strategic agents:** People making calculated choices based on self-interest
+- **Equilibrium outcome:** Stable result when everyone is doing their best given what others are doing
+- **Ex ante / Ex post:** Latin for "beforehand" / "afterwards"
+- **Quid pro quo:** Latin for "this for that." It refers to a direct exchange
+
+**Domain-Specific:**
+- **Social Impact Bonds (SIBs):** Investors fund social programs, get repaid only if outcomes achieved
+- **BCR (Benefit-Cost Ratio):** For every $1 spent, how many $ of social benefit (100:1 BCR = $100 benefit per $1 spent)
+- **NSV (Net Social Value):** Total benefit minus total cost to society
+- **DALYs:** Disability-Adjusted Life Years. This is a measure of disease burden combining mortality and quality of life
+- **VSL (Value of Statistical Life):** How much society values preventing one death (EPA uses ~$10M)
+
+For additional terms: definitions in parentheses on first use throughout the paper.
+:::
+
+This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach (designing rules so people's selfish choices create good outcomes) to reversing this dynamic. Rather than attempting to change politicians' preferences (good luck with that) or waiting for philosopher-kings (Plato has been dead for 2,400 years and we're still waiting), IABs simply change what rational self-interest points at.
 
 ### Definition
 
@@ -100,9 +142,9 @@ An Incentive Alignment Bond is a financial instrument with three primitive prope
 
 2. **Politician alignment with public good production:** Politicians receive electoral support and career benefits based on their voting record for the target policy class. Supporting the public good becomes the utility-maximizing choice, increasing reelection probability, post-office income, and status.
 
-3. **Funding from lower-value sources:** The public good is funded by redirecting resources from government activities with lower marginal social value than the target use. In the strongest case, these are programs that produce measurable net harm; more generally, they are programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than comparative merit. This constraint ensures IABs reallocate from less valuable to more valuable uses; they are welfare-improving in expectation under standard utilitarian social welfare assumptions.
+3. **Funding from lower-value sources:** The public good is funded by redirecting resources from government activities with lower marginal social value than the target use. In the strongest case, these are programs that produce measurable net harm. More generally, they are programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than comparative merit. This constraint ensures IABs reallocate from less valuable to more valuable uses; they are welfare-improving in expectation under standard utilitarian social welfare assumptions.
 
-The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements, agricultural subsidies that distort markets, and fossil fuel subsidies that accelerate climate change: these programs survive political competition not on merit but on lobbying intensity. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
+The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements, agricultural subsidies that distort markets, and fossil fuel subsidies that accelerate climate change: these programs survive political competition not on merit but on lobbying intensity. They exist because Lockheed Martin has lobbyists and you don't. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
 
 The key innovation is that all three alignments reinforce each other. A fraction of redirected funding flows perpetually to (a) investor returns and (b) political incentive mechanisms, while (c) the funding source ensures no beneficial programs are displaced. This makes the instrument self-sustaining: policy success generates the resources that maintain both investor and politician alignment, creating pressure for continuation and expansion.
 
@@ -110,9 +152,9 @@ Unlike Social Impact Bonds (which align service providers with program outcomes)
 
 ### Why Reallocation, Not Addition
 
-A natural question arises: why insist on *redirecting* resources from harmful programs rather than simply *adding* new spending on public goods? The answer lies in the political economy of budget expansion and the fundamental constraint that real resources, including human capital, productive capacity, and scientific talent, are finite.
+A natural question: why insist on *redirecting* resources from harmful programs rather than simply *adding* new spending on public goods? The answer: real resources (people, factories, scientists) are finite.
 
-When advocates successfully lobby for increased spending on a beneficial program, the political response is rarely a corresponding reduction in harmful programs. Instead, governments typically:
+When advocates successfully lobby for increased spending on a beneficial program, the political response is rarely a corresponding reduction in harmful programs. Instead, governments usually:
 
 1. **Expand the overall budget** through deficit spending or monetary expansion
 2. **Increase spending on politically powerful programs** in parallel, to maintain coalition support
@@ -120,9 +162,9 @@ When advocates successfully lobby for increased spending on a beneficial program
 
 The result is that the beneficial program's *nominal* budget increases while its *real* share of resources remains unchanged or even decreases. The concentrated beneficiaries of harmful programs lose nothing; the diffuse beneficiaries of the new program gain less than the headline figures suggest.
 
-Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both defense and healthcare increased substantially in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
+Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both defense and healthcare increased much in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
 
-This is not a failure of advocacy; it is the equilibrium outcome of Olsonian dynamics operating under soft budget constraints. Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows (in nominal terms) while each program's claim on real resources remains contested.
+This is not a failure of advocacy; it is the equilibrium outcome (stable result when everyone optimizes given current rules) of Olsonian dynamics operating under soft budget constraints (when governments can spend without immediate consequences; they just print money or charge it to the credit card of future generations). Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows (in nominal terms) while each program's claim on real resources remains contested.
 
 The mechanism is straightforward: when Congress appropriates \$10 billion for medical research without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases. But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to defense, fossil fuel subsidies, and other Olsonian programs, for the same finite resources. Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
 
@@ -133,7 +175,7 @@ IABs break this dynamic by *specifying the funding source* as part of the mechan
 - But the IAB political incentive layer ensures politicians who support the reallocation benefit more than those who resist
 - The finite pool of resources shifts from net-negative to net-positive uses
 
-The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. Under the soft budget constraint dynamics described above, it is a sufficient condition for achieving real resource reallocation, and may be necessary in practice. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
+The third primitive property, funding from harmful sources, is therefore not merely a normative preference or a political strategy. Under the soft budget constraint dynamics described above, it is enough for achieving real resource reallocation. It may be needed in practice. Without specifying the funding source, advocates win symbolic victories while real resources continue flowing to Olsonian programs. With specified reallocation, the IAB creates genuine redistribution from net-negative to net-positive uses, constrained only by political will rather than by the illusion of unlimited budgetary capacity.
 
 ### Political Change as an Asset Class
 
@@ -179,9 +221,9 @@ Consider the global capital distribution:
 
 [^capital-estimate]: Conservative estimate based on: Top 100 defense contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition likely \$2T-$5T depending on domain.
 
-The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem: each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
+The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem (hard for large groups to coordinate even when everyone would benefit): each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
 
-**IABs solve the coordination problem by securitizing political change.** If IABs can be structured as tradable securities that any individual can purchase, they transform diffuse beneficiaries into the largest special interest group in history. The mechanism:
+**IABs solve the coordination problem by securitizing political change** (turning policy outcomes into tradable financial instruments, like turning mortgages into mortgage-backed securities). If IABs can be structured as tradable securities that any individual can purchase, they transform diffuse beneficiaries into the largest special interest group in history. The mechanism:
 
 1. **Investment accessibility:** Structure IABs as securities available to retail investors (similar to green bonds or social impact bonds)
 2. **Returns exceed alternatives:** Expected returns of 100-1000%+ (from lobbying ROI) dramatically exceed stock market returns of ~10%
@@ -190,7 +232,7 @@ The 90:1 capital advantage cannot currently be deployed because diffuse benefici
 
 **This reverses the Olsonian asymmetry.** Defense contractors spend \$100M+ annually lobbying because each firm captures concentrated benefits. But the IAB mechanism allows millions of diffuse beneficiaries to collectively deploy billions while each capturing a proportional return. The concentrated opposition ($100M-$1B annually) becomes outmatched by newly-coordinated diffuse support ($10B-$100B+ available capital).
 
-**The key insight:** We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're considerably richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
+**The key insight:** We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
 
 ### Quantifying Net Social Value of Funding Sources
 
@@ -210,7 +252,7 @@ $$ {#eq-comparative}
 
 That is, if the marginal social value of the source program is lower than that of the target program. In the strongest case, $NSV_{source} \leq 0$; the program produces net harm. But reallocation is justified even when both programs have positive value, as long as the target exceeds the source.
 
-This comparative criterion implies a natural ranking of government expenditures by marginal social value. IABs should draw from the *lowest-ranked* programs first, those that persist primarily due to Olsonian dynamics rather than merit. This avoids the objection that "defense isn't ALL bad"; the claim is not that military spending is worthless, but that its marginal value is lower than medical research, and that it persists at current levels due to lobbying intensity rather than comparative social value.
+This comparative criterion implies a natural ranking of government expenditures by marginal social value. IABs should draw from the *lowest-ranked* programs first, those that persist mainly due to Olsonian dynamics rather than merit. This avoids the objection that "defense isn't ALL bad"; the claim is not that military spending is worthless, but that its marginal value is lower than medical research, and that it persists at current levels due to lobbying intensity rather than comparative social value.
 
 **Military spending** provides a concrete example. The economic multiplier for military spending is approximately 0.6, compared to 1.5–3.0 for infrastructure, education, and medical research. This means each dollar of military spending generates \$0.60 in economic activity, while each dollar of medical research investment generates \$2.00–3.00. The opportunity cost alone, before considering direct harms, makes military spending beyond minimum deterrence requirements a net social loss.
 
@@ -229,7 +271,7 @@ More comprehensive analysis includes:
 
 : Estimated Annual Societal Cost of Global Military Spending {#tbl-military-cost}
 
-A large literature suggests the net social value of military spending beyond minimum deterrence is plausibly strongly negative: the \$2.4 trillion in direct expenditure may produce \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are approximately correct, redirecting even 1% to medical research, which has positive externalities and high multipliers, would be welfare-improving on net.
+A large literature suggests the net social value of military spending beyond minimum deterrence is strongly negative: the \$2.4 trillion in direct expenditure produces \$10+ trillion in societal costs (see @tbl-military-cost for illustrative order-of-magnitude estimates). If these estimates are approximately correct, redirecting even 1% to medical research, which has positive externalities and high multipliers, would be welfare-improving on net.
 
 Similar analysis applies to other Olsonian programs:
 
@@ -257,7 +299,7 @@ Similar analysis applies to other Olsonian programs:
 
 : Ranking of Government Expenditures by Benefit-Cost Ratio and Net Social Value {#tbl-ranking}
 
-The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has substantially higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
+The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has much higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
 
 @fig-spending-bcr-scatter visualizes this systematic misallocation as a scatter plot, while @fig-olsonian-quadrants categorizes programs into four quadrants based on their NSV and funding levels. The visualizations make clear that under rational allocation, high-BCR programs would receive high funding (upper-right quadrant). Instead, we observe the opposite: high-BCR programs cluster in the "UNDERINVESTED" region while low/negative-BCR programs are "OVERINVESTED."
 
@@ -285,7 +327,7 @@ This paper makes four contributions:
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
 
-4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is sufficient, and likely necessary, for achieving real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
+4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is enough, and likely needed, for achieving real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
 
 ### Roadmap
 
@@ -295,9 +337,9 @@ Section 2 reviews the relevant literature on mechanism design, public choice, So
 
 ### Mechanism Design Theory
 
-The Sveriges Riksbank Prize in Economic Sciences 2007 was awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson "for having laid the foundations of mechanism design theory" [@nobelprize2007]. Mechanism design addresses a fundamental problem: how should institutions be designed when agents have private information and may act strategically?
+The Sveriges Riksbank Prize in Economic Sciences 2007 was awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson "for having laid the foundations of mechanism design theory" [@nobelprize2007]. Mechanism design addresses a fundamental problem: how should institutions be designed when agents have private information and may act strategically? Or, in plain English: how do you get selfish people to do the right thing without forcing them?
 
-Hurwicz [-@hurwicz1972] introduced the concept of **incentive compatibility**: a mechanism is incentive-compatible if truthful revelation (or, more generally, the socially optimal action) is in each agent's self-interest. The **revelation principle** [@myerson1979] shows that any equilibrium outcome achievable by any mechanism can be achieved by a direct mechanism in which agents truthfully reveal their private information. Maskin's **implementation theory** [-@maskin1999] clarifies when social choice rules can be implemented by mechanisms with unique equilibria.
+Hurwicz [-@hurwicz1972] introduced the concept of **incentive compatibility**: a mechanism is incentive-compatible if truthful revelation (or, more generally, the socially optimal action) is in each agent's self-interest. Translation: the rules make doing the right thing also the profitable thing. The **revelation principle** [@myerson1979] shows that any equilibrium outcome achievable by any mechanism can be achieved by a direct mechanism in which agents truthfully reveal their private information. Maskin's **implementation theory** [-@maskin1999] clarifies when social choice rules can be implemented by mechanisms with unique equilibria.
 
 These concepts have been applied extensively to market design: auction theory [@milgrom2004], matching markets [@roth2002], and regulation [@laffont1993]. However, application to political institutions remains limited. This paper extends mechanism design to the domain of political incentives, treating politicians as strategic agents whose private information includes their true policy preferences and whose actions (votes, public statements, bill sponsorship) are observable.
 
@@ -309,7 +351,7 @@ Public choice theory applies economic methods to political behavior. Buchanan an
 2. **Asymmetric stakes**: Per-member stakes are higher in small groups
 3. **Organization costs**: Smaller groups face lower coordination costs
 
-The result is that "concentrated minor interests will be overrepresented and diffuse majority interests trumped" [@olson1965]. Empirical support includes Lohmann's observation that U.S. sugar import quotas generated 2,261 jobs while reducing overall welfare by $1.162 billion, an implicit cost per job exceeding $500,000 [@lohmann1998].
+The result is that "concentrated minor interests will be overrepresented and diffuse majority interests trumped" [@olson1965]. Empirical support includes Lohmann's observation that U.S. sugar import quotas generated 2,261 jobs while reducing overall welfare by $1.162 billion, an implicit cost per job exceeding $500,000 [@lohmann1998]. In other words, the government could have paid each sugar worker half a million dollars to not grow sugar and saved money. But sugar growers have lobbyists, and consumers don't.
 
 IABs address this directly: by concentrating benefits on politicians who support diffuse-benefit policies, the asymmetry is reversed. Supporting the public good becomes the concentrated-benefit option.
 
@@ -317,9 +359,9 @@ IABs address this directly: by concentrating benefits on politicians who support
 
 Social Impact Bonds (SIBs), introduced in the UK in 2010, are outcome-based contracts in which private investors fund social interventions and are repaid by government only if specified outcomes are achieved [@liebman2011]. The Peterborough Prison SIB, the first implemented, funded prisoner rehabilitation and measured recidivism rates against a control group [@disley2011].
 
-SIBs have attracted considerable policy enthusiasm but limited empirical evidence of their distinctive effect. As Hevenstone [-@hevenstone2023] notes, "only program effects have been estimated, not the specific impact of SIB financing itself." A systematic review by the Brookings Institution found that "there is insufficient evidence as to whether and how SIBs deliver better outcomes than conventional forms of financing" [@gustafsson2017].
+SIBs have attracted considerable policy enthusiasm but limited empirical evidence of their distinctive effect. As Hevenstone [-@hevenstone2023] notes, "only program effects have been estimated, not the specific impact of SIB financing itself." A systematic review by the Brookings Institution found "insufficient evidence as to whether and how SIBs deliver better outcomes than conventional forms of financing" [@gustafsson2017].
 
-More fundamentally, SIBs target the wrong level. They incentivize **service providers** (nonprofits delivering programs) for **local outcomes** (recidivism in one city). IABs target **politicians** for **policy adoption** at the national or international level. The difference: incentivizing one job training program versus incentivizing the legislation that funds all job training programs. Table 1 summarizes the distinction.
+More important, SIBs target the wrong level. They incentivize **service providers** (nonprofits delivering programs) for **local outcomes** (recidivism in one city). IABs target **politicians** for **policy adoption** at the national or international level. The difference: incentivizing one job training program versus incentivizing the legislation that funds all job training programs. Table 1 summarizes the distinction.
 
 | Dimension | Social Impact Bonds | Incentive Alignment Bonds |
 |:----------|:--------------------|:--------------------------|
@@ -351,7 +393,20 @@ The IAB scoring system is structurally analogous to credit ratings: an independe
 
 ## Formal Model
 
-This section presents a formal model of political incentives under IABs. We state explicit assumptions, derive conditions for incentive compatibility, and characterize equilibria. Appendix A provides detailed proofs.
+::: {.callout-tip icon=false}
+## For Non-Technical Readers: You Can Skip This Section
+
+**The key insight (in plain English):** We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get:
+1. Campaign support from independent political groups (money for ads)
+2. Better post-office job opportunities (lucrative fellowships, think tank positions)
+3. Higher public status (Wikipedia article length, media coverage)
+
+When the benefits from a higher score (campaign money + career prospects + reputation) exceed the costs (losing defense contractor donations), supporting public goods becomes the rational, self-interested choice.
+
+**You can skip to Section 4** for the practical implementation details, or read Section 6 for the governance architecture. This section provides mathematical precision for economists who need to verify the mechanism works under formal assumptions.
+:::
+
+This section presents a formal model of political incentives under IABs. We state explicit assumptions, derive conditions for incentive compatibility (when doing the right thing is also the profitable thing), and characterize equilibria (stable outcomes). Appendix A provides detailed proofs.
 
 ### Assumptions
 
@@ -700,7 +755,7 @@ This allocation structure creates aligned incentives across all participants. In
 
 **Post-office layer:** Foundations funded by the political incentive allocation establish eligibility criteria: "The Global Health Leadership Fellowship (\$300K/year, 5-year term) requires a career Health Research Score above 70."
 
-The self-funding nature is critical. The treaty's success generates the resources that sustain both investor returns and political incentives for its continuation and expansion. This creates multiple reinforcing feedback loops:
+The self-funding nature matters. The treaty's success generates the resources that sustain both investor returns and political incentives for its continuation and expansion. This creates multiple reinforcing feedback loops:
 
 1. **Investor pressure for expansion:** Investors receiving 10% of \$24B want 10% of \$48B (if the treaty expands to 2%), creating a constituency that lobbies for treaty growth
 2. **Political incentives for continuation:** Politicians who supported the treaty benefit from ongoing electoral and career support, incentivizing them to defend it against repeal
@@ -723,7 +778,7 @@ The IAB mechanism transforms the incentive landscape. The concentrated costs (de
 
 ### Calibration: Parameter Ranges for Incentive Compatibility
 
-To assess whether IABs could plausibly achieve incentive compatibility, we calibrate the model using empirical estimates from campaign finance and lobbying research. Table @tbl-calibration reports parameter ranges.
+To assess whether IABs can achieve incentive compatibility, we calibrate the model using empirical estimates from campaign finance and lobbying research. Table @tbl-calibration reports parameter ranges.
 
 | Parameter | Symbol | Empirical Range | Source |
 |:----------|:-------|:----------------|:-------|
@@ -754,7 +809,7 @@ This calibration suggests that IAB funding levels in the billions can overcome c
 
 ## The Three-Layer Architecture
 
-The formal model requires mechanisms to implement score-dependent payoffs. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
+To implement score-dependent payoffs, we need mechanisms. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
 
 {{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
 
@@ -833,7 +888,7 @@ The distinction matters legally. In *United States v. Sun-Diamond Growers* [-@su
 
 **Element 3: No quid pro quo.**
 
-There is no exchange with any official. Officials are not party to any agreement. They merely observe standing rules and act in their self-interest. The Supreme Court in *McCutcheon v. FEC* [-@mccutcheon2014] held that "ingratiation and access... are not corruption" and that only "quid pro quo corruption" justifies regulation of political speech.
+No exchange occurs with any official. Officials are not party to any agreement. They merely observe standing rules and act in their self-interest. The Supreme Court in *McCutcheon v. FEC* [-@mccutcheon2014] held that "ingratiation and access... are not corruption" and that only "quid pro quo corruption" justifies regulation of political speech.
 
 *McDonnell v. United States* (2016) further narrowed the definition of "official act," requiring a formal exercise of governmental power on a specific matter [@mcdonnell2016]. The IAB mechanism does not pay for specific official acts; it creates a scoring system that independent actors may choose to use.
 
@@ -969,7 +1024,7 @@ As detailed in Section 6.2.3, once IABs successfully redirect resources to high-
 - **Democratic aggregation:** Bradley-Terry model aggregates citizen pairwise comparisons; prevents capture of domain prioritization
 - **Anti-gaming:** Random pairwise sampling makes advertising economically infeasible (same mechanism as Layer 2)
 
-**The key innovation:** We don't need a single authoritative answer to "whose conception of public good governs allocation" at Layer 1 because **Layers 0 and 2 democratize that decision**. Layer 0 democratizes *domain* prioritization (medical research vs. military spending). Layer 2 democratizes *within-domain* allocation (Alzheimer's vs. cancer). IABs (Layer 1) solve the *adoption* problem, getting politicians to vote for reallocation based on democratically-determined priorities. This is why the four-layer stack is necessary. Each layer addresses a distinct failure mode.
+**The key innovation:** We don't need a single authoritative answer to "whose conception of public good governs allocation" at Layer 1 because **Layers 0 and 2 democratize that decision**. Layer 0 democratizes *domain* prioritization (medical research vs. military spending). Layer 2 democratizes *within-domain* allocation (Alzheimer's vs. cancer). IABs (Layer 1) solve the *adoption* problem, getting politicians to vote for reallocation based on democratically-determined priorities. This is why the four-layer stack is needed. Each layer addresses a distinct failure mode.
 
 **Democratic legitimacy:** IABs overcome the Olsonian collective action failure at the *adoption* stage, the binding constraint that prevents welfare-improving policies from being considered. Democratic legitimacy is addressed at two levels: **(1) Layer 0** democratizes domain prioritization (which broad areas like medical research, climate, pandemic preparedness should be funded), and **(2) Layer 2** democratizes within-domain allocation (how to allocate within medical research across cancer, Alzheimer's, etc.). Both layers use Wishocracy's pairwise comparison mechanism, ensuring that resource allocation reflects aggregated citizen preferences rather than committee capture or funder control. The mechanism is compatible with democratic governance precisely because domain prioritization, adoption, and allocation are separated across layers.
 
@@ -1020,7 +1075,7 @@ IABs do not solve all governance problems. They address one specific failure mod
 - **Value pluralism:** Citizens can weight domains based on diverse values beyond utilitarian BCR (some prioritize climate, others health, etc.)
 - **Anti-gaming:** Random pairwise sampling makes advertising economically infeasible (same mechanism as Layer 2)
 
-**The original problem remains:** Expert rankings exist but don't influence allocation because they don't appear in politician utility functions. **The marginal value of producing another expert ranking is approximately zero.** Wishocracy at Layer 0 solves democratic legitimacy and capture-resistance, but doesn't solve the adoption problem. That requires Layer 1.
+**The original problem remains:** Expert rankings exist but don't influence allocation because they don't appear in politician utility functions. **The marginal value of producing another expert ranking is zero.** Wishocracy at Layer 0 solves democratic legitimacy and capture-resistance, but doesn't solve the adoption problem. That requires Layer 1.
 
 **Layer 1: Incentive Alignment Bonds**
 
@@ -1051,7 +1106,7 @@ IABs do not solve all governance problems. They address one specific failure mod
 
 The Wishocracy mechanism can be extended beyond government program allocation to replace traditional research grants and contracts entirely. Instead of government bureaucracies deciding which projects to fund, researchers create crowdfunding campaigns explaining:
 - Why their project creates the greatest marginal net social value per dollar
-- Evidence they can successfully implement (past results, team credentials, methodology)
+- Evidence they can implement (past results, team credentials, methodology)
 - Expected outcomes and benefit-cost ratios
 
 Citizens then allocate between these campaigns through pairwise comparisons, with the Bradley-Terry model aggregating preferences. Funding flows directly based on aggregated citizen rankings, eliminating government gatekeepers.
@@ -1103,7 +1158,7 @@ The four layers must be implemented in order:
 
 ### Comparison to Alternative Governance Mechanisms
 
-@tbl-governance-comparison compares IABs to alternative governance reform approaches based on feasibility assessments, implementation timelines, capital requirements, and structural barriers. The comparison is based on analysis of historical precedents for institutional reform, capital requirements relative to available funding sources, political economy barriers, and adoption rates of analogous mechanisms.
+@tbl-governance-comparison compares IABs to alternative governance reform approaches. Comparison criteria: feasibility assessments, implementation timelines, capital requirements, and structural barriers. The analysis draws on historical precedents for institutional reform, capital requirements relative to available funding sources, political economy barriers, and adoption rates of analogous mechanisms.
 
 | Approach | Feasibility Assessment | Time Horizon | Capital Required | Key Barrier | What It Solves |
 |:---------|:----------------------|:-------------|:-----------------|:------------|:---------------|
@@ -1129,7 +1184,7 @@ The four layers must be implemented in order:
 
 4. **NSV rankings alone** are infeasible because they lack incentive linkage. The empirical fact motivating this entire paper.
 
-**A sequenced implementation strategy** may be optimal:
+**A sequenced implementation strategy** works better:
 1. **Near-term (0-10 years):** IABs for high-value domains (health, climate, pandemic preparedness)
 2. **Medium-term (10-20 years):** Use IAB political capital to pass Wishocracy and futarchy pilots
 3. **Long-term (20+ years):** Successful pilots create demand for broader adoption
@@ -1153,7 +1208,7 @@ IABs solve the *adoption* problem (the binding constraint that prevents welfare-
 3. **Transition risk:** Bootstrap phase (12-24 months before proof-of-concept) vulnerable to regulatory counter-attack
 4. **Value pluralism vs. utilitarian efficiency:** Even with Wishocracy at Layer 0 allowing citizens to weight domains by their values, some citizens may reject the entire framework of cost-effectiveness analysis in favor of deontological or rights-based approaches
 
-**What IABs do solve:** The adoption problem. They make it individually rational for politicians to support welfare-improving policies despite concentrated opposition. This is the *binding constraint* in the governance stack. Without solving adoption, better allocation mechanisms (Layers 2-3) cannot be implemented. IABs are necessary but not sufficient for optimal resource allocation.
+**What IABs do solve:** The adoption problem. They make it individually rational for politicians to support welfare-improving policies despite concentrated opposition. This is the *binding constraint* in the governance stack. Without solving adoption, better allocation mechanisms (Layers 2-3) cannot be implemented. IABs are needed but not enough for optimal resource allocation.
 
 ## Generalization: IABs for Global Coordination Problems
 
@@ -1180,7 +1235,7 @@ Any global public good satisfying the above conditions can be "IAB-ified" using 
 
 ### Candidate Domains
 
-We briefly survey three domains where IABs may be applicable; Appendix B provides detailed specifications.
+We briefly survey three domains where IABs are applicable; Appendix B provides detailed specifications.
 
 **Climate change.** Verified emissions reductions (UNFCCC reporting) provide a measurable metric. Politicians can be scored on climate legislation votes, treaty ratification, and budget allocations. The concentrated-diffuse asymmetry is stark: fossil fuel producers face concentrated losses while climate benefits are globally diffuse.
 
@@ -1252,23 +1307,25 @@ Even accounting for these risks (expected cost: ~\$75M/year, down from ~\$100M/y
 
 Incentive Alignment Bonds represent a novel application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
 
+**In plain English:** We've designed a way to make politicians support cures instead of bombs, not by appealing to their better nature (good luck with that), but by making it personally profitable. Same selfish politicians, better outcomes.
+
 The contribution is fivefold:
 
 1. **Theoretical:** We formalize political incentive alignment as a mechanism design problem, provide explicit functional forms for politician utility components, and prove conditions for incentive compatibility.
 
-2. **Empirical:** We provide numerical calibration demonstrating that the incentive compatibility condition is achievable with realistic parameters in carefully-selected domains (pandemic preparedness, health research) while honestly showing mechanism failure in high-opposition domains (defense reallocation) absent sufficient funding.
+2. **Empirical:** We provide numerical calibration demonstrating that the incentive compatibility condition is achievable with realistic parameters in selected domains (pandemic preparedness, health research) while showing mechanism failure in high-opposition domains (defense reallocation) absent enough funding.
 
 3. **Instrumental:** We define IABs through three primitive properties: investor alignment, politician alignment, and funding from lower-value sources. Together, these create a self-sustaining mechanism for public good production that restores alignment between politician incentives and general welfare.
 
 4. **Practical:** We specify a three-layer architecture (scoring, electoral, post-office) that achieves alignment without violating anti-bribery law, and demonstrate that the bootstrap problem is solvable due to ROI economics and capital asymmetry.
 
-5. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is necessary to achieve real resource shifts under soft budget constraints. Welfare accounting shows the mechanism itself has a BCR exceeding 300:1, justifying overhead costs across a wide range of success probabilities.
+5. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is needed to achieve real resource shifts under soft budget constraints. Welfare accounting shows the mechanism itself has a BCR exceeding 300:1, justifying overhead costs across a wide range of success probabilities.
 
 Important limitations remain. Gaming and metric corruption require ongoing institutional vigilance. The plutocracy objection, that wealthy funders determine priorities, is addressed structurally by Wishocracy (Layer 2), which democratizes allocation decisions via aggregated citizen preferences and prevents advertising-based capture through random pairwise sampling. The capital asymmetry (\$454T household wealth vs. \$5T concentrated interests) combined with retail-accessible securities ensures that funding itself becomes democratized. Unintended consequences on political culture (e.g., crowding out intrinsic motivation) remain empirical questions requiring pilot evaluation. These considerations counsel for careful pilot implementation with rigorous evaluation before scaling.
 
 ### The Bootstrap Problem and Regulatory Resistance
 
-The most significant implementation challenge may be neither technical nor economic, but political: **concentrated interests threatened by IABs will attempt to regulate them out of existence before they can demonstrate effectiveness.**
+The biggest challenge is political: **concentrated interests threatened by IABs will attempt to regulate them out of existence before they can demonstrate effectiveness.**
 
 If IABs successfully redirect even 1% of military spending (\$24B globally), defense contractors facing real losses will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
 
@@ -1277,7 +1334,7 @@ If IABs successfully redirect even 1% of military spending (\$24B globally), def
 - **Tax law changes:** Eliminate tax-exempt status for scoring organizations
 - **Capture attempts:** Lobby to control the scoring methodology or install friendly board members
 
-**The bootstrap paradox:** IABs need sufficient scale to create political incentives strong enough to resist regulatory capture, but concentrated interests will attempt to kill the mechanism before it reaches that scale.
+**The bootstrap paradox:** IABs need enough scale to create political incentives strong enough to resist regulatory capture, but concentrated interests will attempt to kill the mechanism before it reaches that scale. It's the classic Catch-22: you need to be big enough to win, but your enemies will try to kill you while you're small.
 
 **Potential solutions:**
 
@@ -1301,7 +1358,7 @@ $$
 E[V] = 0.20 \times \$2.4\text{B/year} = \$480\text{M/year}
 $$
 
-First-year expected ROI: 380%, with the revenue stream continuing in perpetuity. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This fundamentally changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
+First-year expected ROI: 380%, with the revenue stream continuing in perpetuity. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
 
 **Capital asymmetry ensures scalability beyond bootstrap:**
 
@@ -1387,7 +1444,7 @@ where $c_i > 0$ represents the concentrated costs from opposition interests.
 
 *Step 5: Optimality.* When $\alpha_i \cdot \Delta P_i + \beta_i \cdot \Delta Y_i + \gamma_i \cdot \Delta S_i > c_i$, we have $\Delta U_i > 0$. Since $a_i \in \{0, 1\}$ and choosing $a_i = 1$ yields strictly higher utility, $a_i = 1$ is the unique best response.
 
-*Step 6: Uniqueness.* The best response is unique because the action space is finite (binary) and $\Delta U_i > 0$ implies strict preference. There is no indifference. $\square$
+*Step 6: Uniqueness.* The best response is unique because the action space is finite (binary) and $\Delta U_i > 0$ implies strict preference. No indifference exists. $\square$
 
 ### Proof of Corollary 1 (Funding Threshold)
 
