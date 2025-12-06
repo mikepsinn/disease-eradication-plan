@@ -1,5 +1,5 @@
 ---
-title: "Medical Research Spending: The $68 Billion Lie"
+title: 'Medical Research Spending: The $68 Billion Lie'
 description: A comprehensive breakdown of how little humanity invests in not dying, distinguishing broad "research" from actual cures.
 published: true
 tags:
@@ -23,6 +23,7 @@ Governments love to claim they spend billions on "medical research." In 2024, th
 It sounds like a lot. It is a lie.
 
 ### The Accounting Trick
+
 That $68 billion figure includes:
 1.  **Basic Science:** Studying fruit fly genetics and yeast cells (important, but not a cure).
 2.  **Overhead:** University buildings, admin salaries, and electricity bills (often 40-60% of grants).
@@ -30,6 +31,7 @@ That $68 billion figure includes:
 4.  **Epidemiology:** Counting how many people have died (instead of saving them).
 
 ### The Real Number: {{< var global_government_clinical_trials_spending_annual >}}
+
 When you strip away the overhead and basic science to ask **"How much do governments spend on actually testing cures in humans?"** the number collapses.
 
 **Global government spending on interventional clinical trials is only ~{{< var global_government_clinical_trials_spending_annual >}} per year.**
@@ -38,6 +40,7 @@ That is the entire public contribution to testing new medicines for 8 billion pe
 
 :::{.callout-important}
 ## The 604x Disparity
+
 In 2024, global military spending reached **{{< var global_military_spending_annual_2024 >}}**.
 In contrast, global government spending on interventional clinical trials is estimated at **{{< var global_government_clinical_trials_spending_annual >}}**.
 
@@ -61,29 +64,36 @@ This creates a fatal incentive structure:
 **We have outsourced our survival to a business model that requires us to stay sick enough to buy pills, but alive enough to pay for them.**
 
 ## Broad R&D Breakdown: The Hall of Shame
+
 *Note: These figures refer to the broader "Medical Research" budgets (the $68B figure), not the specific clinical trial spending.*
 
 ### United States: The Alleged Leader
+
 **NIH Budget (2024): [$47.1 billion](../references.qmd#nih-budget-fy2025)**
 
--   **Actual Clinical Trials:** Only [~$810M - $5.6B](../references.qmd#nih-phased-trial-spending-2010-2019) (depending on definition).
--   **Administrative Costs:** [31%](../references.qmd#nih-administrative-costs-31pct) of the budget.
--   **Indirect Costs:** Universities take [40-60%](../references.qmd#university-indirect-costs-40-60pct) for overhead.
+- **Actual Clinical Trials:** Only [~$810M - $5.6B](../references.qmd#nih-phased-trial-spending-2010-2019) (depending on definition).
+- **Administrative Costs:** [31%](../references.qmd#nih-administrative-costs-31pct) of the budget.
+- **Indirect Costs:** Universities take [40-60%](../references.qmd#university-indirect-costs-40-60pct) for overhead.
 
 ### China: The Rising Power
+
 **Medical Research Spending: [~$15 billion](../references.qmd#china-medical-research-spending-15b)**
--   Prioritizes surveillance technology over medical breakthroughs.
--   Spends [97x more](../references.qmd#china-surveillance-vs-medicine-spending) on domestic security than clinical research.
+
+- Prioritizes surveillance technology over medical breakthroughs.
+- Spends [97x more](../references.qmd#china-surveillance-vs-medicine-spending) on domestic security than clinical research.
 
 ### European Union
+
 **Horizon Europe Health Budget: [€1.17 billion/year](../references.qmd#eu-horizon-health-budget-8-2b)**
--   Per citizen: Less than the cost of a cup of coffee ($2.89/year).
--   Individual countries like Germany ($6B) and France ($4B) add to this, but the total remains a fraction of their military budgets.
+
+- Per citizen: Less than the cost of a cup of coffee ($2.89/year).
+- Individual countries like Germany ($6B) and France ($4B) add to this, but the total remains a fraction of their military budgets.
 
 ### The Rest of the World
--   **Japan:** [$5 billion](../references.qmd#japan-medical-research-spending-5b) (Aging population, zero urgency).
--   **India:** [$3 billion](../references.qmd#india-medical-research-spending-1-2b) ($2.14 per person).
--   **Russia:** [$800 million](../references.qmd#russia-medical-research-spending-800m) (Spend huge on nukes, pennies on health).
+
+- **Japan:** [$5 billion](../references.qmd#japan-medical-research-spending-5b) (Aging population, zero urgency).
+- **India:** [$3 billion](../references.qmd#india-medical-research-spending-1-2b) ($2.14 per person).
+- **Russia:** [$800 million](../references.qmd#russia-medical-research-spending-800m) (Spend huge on nukes, pennies on health).
 
 ## Conclusion: A Species-Wide Failure
 

@@ -12,6 +12,7 @@ from dih_models.plotting.chart_style import PATTERN_SOLID, PATTERN_DIAGONAL, PAT
 setup_chart_style()
 
 # Data from @tbl-ranking in the IAB paper
+
 programs = [
     # (name, annual_spending_billions, BCR, category)
     ("Childhood Vaccinations", 8, 101, "High-NSV"),
@@ -27,14 +28,17 @@ programs = [
 ]
 
 # Separate by category
+
 high_nsv = [(s, b) for n, s, b, c in programs if c == "High-NSV"]
 moderate_nsv = [(s, b) for n, s, b, c in programs if c == "Moderate-NSV"]
 low_nsv = [(s, b) for n, s, b, c in programs if c == "Low/Negative-NSV"]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(10, 7))
 
 # Plot each category with different markers
+
 ax.scatter(*zip(*high_nsv), s=200, c=COLOR_BLACK, marker='o',
            label='High-NSV Programs', edgecolors=COLOR_BLACK, linewidth=1.5, zorder=3)
 ax.scatter(*zip(*moderate_nsv), s=200, c=COLOR_WHITE, marker='s',
@@ -43,6 +47,7 @@ ax.scatter(*zip(*low_nsv), s=200, c=COLOR_BLACK, marker='^',
            label='Low/Negative-NSV Programs', edgecolors=COLOR_BLACK, linewidth=1.5, zorder=3)
 
 # Add program labels
+
 for name, spending, bcr, category in programs:
     # Adjust label positions to avoid overlap
     offset_x = 1.15 if spending > 100 else 1.12
@@ -55,20 +60,24 @@ for name, spending, bcr, category in programs:
                          edgecolor=COLOR_BLACK, linewidth=0.5))
 
 # Set log scales
+
 ax.set_xscale('log')
 ax.set_yscale('symlog', linthresh=0.1)  # symlog handles negative values
 
 # Labels and title
+
 ax.set_xlabel('Annual Spending ($ Billions, log scale)', fontsize=12, fontweight='bold')
 ax.set_ylabel('Benefit-Cost Ratio (log scale)', fontsize=12, fontweight='bold')
 ax.set_title('The NSV-Spending Disconnect:\nHigh-Value Programs Are Systematically Underfunded',
              fontsize=14, fontweight='bold', pad=20)
 
 # Add reference lines
+
 ax.axhline(y=1, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5, label='Break-even (BCR=1)')
 ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=0.5, alpha=0.3)
 
 # Add quadrant labels
+
 ax.text(1.5, 110, 'UNDERINVESTED\n(High BCR, Low Spending)',
         fontsize=11, fontweight='bold', ha='left', va='top',
         bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
@@ -79,14 +88,17 @@ ax.text(400, 0.15, 'OVERINVESTED\n(Low BCR, High Spending)',
                  edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Grid
+
 ax.grid(True, alpha=0.2, linestyle='-', linewidth=0.5)
 ax.set_axisbelow(True)
 
 # Legend
+
 ax.legend(loc='lower left', fontsize=10, frameon=True, fancybox=False,
           edgecolor=COLOR_BLACK, framealpha=1)
 
 # Axis limits
+
 ax.set_xlim(1, 1000)
 ax.set_ylim(-10, 150)
 

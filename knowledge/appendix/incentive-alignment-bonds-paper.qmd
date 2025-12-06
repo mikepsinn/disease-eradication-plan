@@ -15,7 +15,9 @@ jel:
   - D82
   - H41
   - P16
-bibliography: iab-references.bib
+bibliography:
+  - iab-references.bib
+  - ../../references.bib
 format:
   html:
     toc: true
@@ -63,7 +65,7 @@ A central puzzle in political economy is why policies with large positive net so
 
 Yet government spending patterns have not shifted. The U.S. spends $16 on military operations for every $1 on diplomacy and humanitarian aid. Programs with benefit-cost ratios exceeding 100:1 receive single-digit billions while programs with negative net social value receive hundreds of billions.
 
-**Put another way:** If a private equity firm allocated capital like the U.S. government, it would invest $100M in ventures that destroy $500M in value while rejecting ventures that would return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
+**Put another way:** If a private equity firm allocated capital like the U.S. government, it invests $100M in ventures that destroy $500M in value while rejecting ventures that return $10B. The firm would be bankrupt within a year. The government simply prints more money and calls it "fiscal policy."
 
 **The marginal value of producing another ranking is zero.** We don't need more information. Writing another report about how nuclear bombs are bad and we have too many is like writing another memo explaining that fire is hot. Politicians already know. We need a mechanism to make existing information consequential in the political utility function (the mathematical representation of what politicians actually care about: reelection, money, status).
 
@@ -104,6 +106,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 ## Key Terms for Non-Economists (Click to Expand)
 
 **The Big Concepts:**
+
 - **Mechanism design:** Designing rules so people's selfish choices create good outcomes (like auctions that make bidders reveal true value)
 - **Incentive compatibility:** When doing the right thing is also the profitable thing
 - **Nash equilibrium:** A stable situation where nobody can improve by changing their strategy alone
@@ -111,6 +114,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **Dominant strategy:** Best choice regardless of what others do
 
 **Political Economy:**
+
 - **Concentrated interests:** Small groups with huge per-person stakes (defense contractors losing billions)
 - **Diffuse beneficiaries:** Millions of people with small individual stakes (each citizen gains 5 healthy years)
 - **Olsonian dynamics:** Named after economist Mancur Olson. It is the pattern where small organized groups beat large disorganized groups in political competition
@@ -120,6 +124,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **Rent-seeking:** Lobbying for special favors rather than creating value
 
 **Finance & ROI:**
+
 - **ROI (Return on Investment):** Profit divided by cost (380% ROI means you get $4.80 back for every $1 invested)
 - **Capital asymmetry:** Unequal distribution of wealth ($454 trillion households vs. $5 trillion defense contractors)
 - **Securitization:** Turning something into tradable financial instruments (like turning mortgages into mortgage-backed securities)
@@ -127,12 +132,14 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **Market capitalization:** Total value of a company's stock
 
 **Game Theory & Economics:**
+
 - **Strategic agents:** People making calculated choices based on self-interest
 - **Equilibrium outcome:** Stable result when everyone is doing their best given what others are doing
 - **Ex ante / Ex post:** Latin for "beforehand" / "afterwards"
 - **Quid pro quo:** Latin for "this for that." It refers to a direct exchange
 
 **Domain-Specific:**
+
 - **Social Impact Bonds (SIBs):** Investors fund social programs, get repaid only if outcomes achieved
 - **BCR (Benefit-Cost Ratio):** For every $1 spent, how many $ of social benefit (100:1 BCR = $100 benefit per $1 spent)
 - **NSV (Net Social Value):** Total benefit minus total cost to society
@@ -174,9 +181,13 @@ The result is that the beneficial program's *nominal* budget increases while its
 
 Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both defense and healthcare increased much in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
 
-This is not a failure of advocacy; it is the equilibrium outcome (stable result when everyone optimizes given current rules) of Olsonian dynamics operating under soft budget constraints (when governments can spend without immediate consequences; they just print money or charge it to the credit card of future generations). Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows (in nominal terms) while each program's claim on real resources remains contested.
+This is not a failure of advocacy. It is the equilibrium outcome (stable result when everyone optimizes given current rules) of Olsonian dynamics operating under soft budget constraints (when governments can spend without immediate consequences; they just print money or charge it to the credit card of future generations). Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows in nominal terms while each program's claim on real resources remains contested.
 
-The mechanism is straightforward: when Congress appropriates \$10 billion for medical research without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases. But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to defense, fossil fuel subsidies, and other Olsonian programs, for the same finite resources. Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
+The mechanism is straightforward: when Congress appropriates \$10 billion for medical research without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases.
+
+But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to defense, fossil fuel subsidies, and other Olsonian programs, for the same finite resources.
+
+Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
 
 IABs break this dynamic by *specifying the funding source* as part of the mechanism. The policy does not say "fund medical research"; it says "redirect 1% of military spending to medical research." This forces a real reallocation:
 
@@ -229,7 +240,7 @@ Consider the global capital distribution:
 - **Concentrated interests** (defense contractors, fossil fuel companies, pharmaceutical incumbents): Combined market capitalization ~\$5 trillion[^capital-estimate]
 - **Diffuse beneficiaries** (everyone who would benefit from cures, climate stability, pandemic prevention): Global household wealth ~\$454 trillion [@creditsuisse2023]
 
-[^capital-estimate]: Conservative estimate based on: Top 100 defense contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition likely \$2T-$5T depending on domain.
+[^capital-estimate]: Conservative estimate based on: Top 100 defense contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition ranges \$2T-$5T depending on domain.
 
 The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem (hard for large groups to coordinate even when everyone would benefit): each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
 
@@ -240,7 +251,11 @@ The 90:1 capital advantage cannot currently be deployed because diffuse benefici
 3. **Massive capital mobilization:** Even 0.1% of global household wealth (\$454 billion) exceeds total annual global lobbying spending by 100x
 4. **Self-interest alignment:** Investors profit directly from policy success, creating concentrated financial incentives on the welfare-improving side
 
-**This reverses the Olsonian asymmetry.** Defense contractors spend \$100M+ annually lobbying because each firm captures concentrated benefits. But the IAB mechanism allows millions of diffuse beneficiaries to collectively deploy billions while each capturing a proportional return. The concentrated opposition ($100M-$1B annually) becomes outmatched by newly-coordinated diffuse support ($10B-$100B+ available capital).
+**This reverses the Olsonian asymmetry.** Defense contractors spend \$100M+ annually lobbying because each firm captures concentrated benefits.
+
+But the IAB mechanism allows millions of diffuse beneficiaries to collectively deploy billions while each capturing a proportional return.
+
+The concentrated opposition ($100M-$1B annually) becomes outmatched by newly-coordinated diffuse support ($10B-$100B+ available capital).
 
 **The key insight:** We're not inventing lobbying. Defense contractors proved it works decades ago. We're just making it available to everyone whose lives depend on cures instead of bombs. Turns out there are more of us, and we're much richer. The political change ROI (100-10,000x) that currently accrues only to concentrated industries becomes accessible to everyone who benefits from public goods.
 
@@ -311,7 +326,7 @@ Similar analysis applies to other Olsonian programs:
 
 The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has much higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
 
-@fig-spending-bcr-scatter visualizes this systematic misallocation as a scatter plot, while @fig-olsonian-quadrants categorizes programs into four quadrants based on their NSV and funding levels. The visualizations make clear that under rational allocation, high-BCR programs would receive high funding (upper-right quadrant). Instead, we observe the opposite: high-BCR programs cluster in the "UNDERINVESTED" region while low/negative-BCR programs are "OVERINVESTED."
+@fig-spending-bcr-scatter visualizes this systematic misallocation as a scatter plot, while @fig-olsonian-quadrants categorizes programs into four quadrants based on their NSV and funding levels. The visualizations make clear that under rational allocation, high-BCR programs receive high funding (upper-right quadrant). Instead, we observe the opposite: high-BCR programs cluster in the "UNDERINVESTED" region while low/negative-BCR programs are "OVERINVESTED."
 
 {{< include ../figures/scatter-spending-vs-bcr.qmd >}}
 
@@ -337,7 +352,7 @@ This paper makes four contributions:
 
 3. **A Legal Architecture**: We specify a three-layer structure (scoring, electoral support, post-office benefits) that achieves incentive alignment without violating anti-bribery statutes. The legal innovation is separating data provision from electoral activity from career benefits, with each layer operated by legally distinct entities.
 
-4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is enough (likely needed) to achieve real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
+4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net social value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is enough (needed) to achieve real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
 
 ### Roadmap
 
@@ -581,6 +596,7 @@ $$
 $$
 
 **Mechanism fails with current calibration.** To achieve incentive compatibility, IABs must increase either:
+
 - Independent expenditure support ($M$) from \$10M to \$20M+
 - Post-office income differential ($\Delta Y$) via additional tier benefits
 - Electoral impact ($\delta$) through more aggressive scorecard visibility campaigns
@@ -751,7 +767,7 @@ Consider a legislature of $N$ politicians. Let $n = \sum_{i=1}^N a_i$ be the num
 
 ### Illustrative Example: A Global Health Treaty
 
-To ground the formal model in concrete terms, consider a hypothetical application. Suppose one's public goods objective is to simultaneously reduce global conflict and reduce the global burden of disease. Global military expenditure currently exceeds \$2.4 trillion annually [@sipri2024], while the global burden of disease exceeds 2.5 billion disability-adjusted life years (DALYs) annually [@who2024]. An international treaty in which signatory nations commit to redirecting 1% of military spending to a global pragmatic clinical trial system would generate approximately \$24 billion per year for medical research, roughly tripling current global public health R&D funding, while creating modest but meaningful pressure toward demilitarization.
+To ground the formal model in concrete terms, consider a hypothetical application. Suppose one's public goods objective is to simultaneously reduce global conflict and reduce the global burden of disease. Global military expenditure currently exceeds \$2.4 trillion annually [@sipri2024], while the global burden of disease exceeds 2.5 billion disability-adjusted life years (DALYs) annually [@who2024]. An international treaty in which signatory nations commit to redirecting 1% of military spending to a global pragmatic clinical trial system generates approximately \$24 billion per year for medical research, roughly tripling current global public health R&D funding, while creating modest but meaningful pressure toward demilitarization.
 
 The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
@@ -807,7 +823,7 @@ To assess whether IABs can achieve incentive compatibility, we calibrate the mod
 
 *Electoral layer:* If \$50M is allocated to 25 competitive races, each high-scorer receives \$2M in independent expenditure support. At 1 pp per \$1M, this implies $\Delta P_i \approx 2\text{ pp}$. With $\alpha_i = \$1\text{M}$ per pp, the electoral benefit is $\alpha_i \cdot \Delta P_i = \$2\text{M}$.
 
-*Post-office layer:* Moving from Tier 3 to Tier 1 increases expected annual post-office income by \$200K. With $T = 15$ years and $r = 7\%$, the present value is:
+*Post-office layer:* Moving from Tier 3 to Tier 1 increases expected annual post-office income by \$200K. Given $T = 15$ years and $r = 7\%$, we calculate the present value:
 
 $$
 \Delta Y_i = \$200\text{K} \times \frac{1 - (1.07)^{-15}}{0.07} \approx \$1.8\text{M}
@@ -1024,12 +1040,14 @@ As detailed in Section 6.2.3, once IABs successfully redirect resources to high-
 3. **What prevents IAB funders from controlling the scoring process?** Layer 0 (Wishocracy for Domain Ranking) combines expert BCR data from multiple independent sources (Copenhagen Consensus, GiveWell, IMF, academic literature) with democratic aggregation via citizen pairwise comparisons. IAB funders cannot capture the domain rankings because that would require capturing all expert organizations AND manipulating millions of citizen preferences. Layer 2 (Wishocracy) then democratizes allocation *within* domains approved via Layer 0 rankings.
 
 **The division of labor:**
+
 - **Layer 0 (Wishocracy for Domain Ranking):** Determine *which domains* should be funded (medical research vs. military spending vs. climate vs. subsidies). Expert organizations provide BCR data; citizens aggregate via pairwise comparisons to produce democratic domain rankings.
 - **Layer 1 (IABs):** Make politicians care about Layer 0 rankings via score-dependent incentives
 - **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate *within approved domains* (30% cancer, 20% Alzheimer's, etc.) without committee capture
 - **Layer 3 (Domain marketplaces):** Market mechanisms determine *specific projects* (which trials, which researchers)
 
 **Residual governance requirements for Layer 0 (Wishocracy for Domain Ranking):**
+
 - **Multiple independent expert organizations:** Copenhagen Consensus, GiveWell, IMF, CBO, academic literature provide BCR data (no monopoly on expertise)
 - **Academic peer review:** BCR methodologies published in peer-reviewed journals, subject to replication
 - **Transparent methodology:** All expert data sources, BCR calculations, and Wishocracy aggregation algorithms publicly available
@@ -1106,17 +1124,20 @@ IABs do not solve all governance problems. They address one specific failure mod
 **Solution:** Aggregated Pairwise Preference Allocation, where citizens make simple pairwise comparisons ("Curing Alzheimer's vs. Climate Change?") and a Bradley-Terry model aggregates millions of comparisons into global rankings [@wishocracy2024].
 
 **Why this is separate from IABs:**
+
 - IABs get the treaty passed and resources redirected
 - Wishocracy prevents those resources from being captured by new concentrated interests
 - Example: IAB treaty redirects $24B to medical research. Wishocracy determines allocation across cancer, Alzheimer's, rare diseases, etc.
 
 **Division of labor:**
+
 - **Layer 1 (IABs):** Politicians → Vote for treaty
 - **Layer 2 (Wishocracy):** Citizens → Allocate across diseases/interventions
 
 **Crowdfunding Campaign Evolution:**
 
-The Wishocracy mechanism can be extended beyond government program allocation to replace traditional research grants and contracts entirely. Instead of government bureaucracies deciding which projects to fund, researchers create crowdfunding campaigns explaining:
+The Wishocracy mechanism can be extended beyond government program allocation to replace traditional research grants and contracts entirely. Instead of government bureaucracies deciding which projects to fund, researchers create crowdfunding campaigns. These campaigns explain:
+
 - Why their project creates the greatest marginal net social value per dollar
 - Evidence they can implement (past results, team credentials, methodology)
 - Expected outcomes and benefit-cost ratios
@@ -1127,18 +1148,14 @@ Citizens then allocate between these campaigns through pairwise comparisons, wit
 
 This mechanism addresses the critical failure mode of traditional crowdfunding platforms (Kickstarter, GoFundMe, Indiegogo): **marketing skill matters more than merit.** Campaigns with professional videos, celebrity endorsements, and advertising budgets systematically outperform higher-value projects with poor presentation.
 
-Wishocracy's random pairwise sampling makes advertising economically infeasible:
+Wishocracy's random pairwise sampling makes advertising economically infeasible.
 
-**The math:** With 10,000 active campaigns and each user completing 50 pairwise comparisons:
-- Probability any specific campaign appears in a given comparison: $\frac{2}{10,000} \approx 0.02\%$
-- Probability a user sees a specific campaign in their 50 comparisons: $\approx 0.1\%$
-- Total comparisons needed to shift a campaign from 15th percentile to top 5%: ~10 million favorable comparisons
-- Users needing persuasion: ~200 million (at 50 comparisons each)
-- Advertising cost to reach 200M users with persuasive content: ~\$200 million
+**The math:** With 10,000 active campaigns and each user completing 50 pairwise comparisons, the probability any specific campaign appears in a given comparison is $\frac{2}{10,000} \approx 0.02\%$, and the probability a user sees a specific campaign in their 50 comparisons is $\approx 0.1\%$. To shift a campaign from the 15th percentile to the top 5% requires approximately 10 million favorable comparisons, which means persuading approximately 200 million users (at 50 comparisons each), at an advertising cost of approximately \$200 million to reach that many users with persuasive content.
 
 **Economic conclusion:** Spending \$200 million on advertising to win research funding is irrational. **It's cheaper to just do the research yourself.** The only cost-effective strategy is to create genuinely high-NSV projects that win pairwise comparisons on merit.
 
 **Contrast with traditional crowdfunding:**
+
 - **Kickstarter:** All campaigns visible on browse pages, search results. A \$100K ad campaign can reach millions of potential backers directly.
 - **Wishocracy:** Each campaign appears in ~0.1% of comparisons. The same \$100K ad campaign increases funding probability by <0.01%.
 
@@ -1151,6 +1168,7 @@ Wishocracy's random pairwise sampling makes advertising economically infeasible:
 **Solution:** Market mechanisms like the Decentralized FDA for clinical trials, prize markets for research breakthroughs, retroactive public goods funding.
 
 **Example cascade:**
+
 1. **Layer 0 (Wishocracy for Domain Ranking):** Citizens review expert BCR data (Copenhagen Consensus: medical research 100:1, military 0.7:1; GiveWell analyses; IMF externality data) and aggregate via pairwise comparisons to rank medical research above military spending
 2. **Layer 1 (IABs):** Politicians pass treaty redirecting $24B to health research based on Layer 0 democratic domain ranking
 3. **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate within medical research: 30% to cancer, 20% to Alzheimer's, 15% to infectious disease, etc.
@@ -1339,7 +1357,7 @@ Important limitations remain. Gaming and metric corruption require ongoing insti
 
 The biggest challenge is political: **concentrated interests threatened by IABs will attempt to regulate them out of existence before they can demonstrate effectiveness.**
 
-If IABs successfully redirect even 1% of military spending (\$24B globally), defense contractors facing real losses will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
+If IABs successfully redirect even 1% of military spending (\$24B globally), defense contractors will face real losses. They will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
 
 - **Campaign finance regulation:** Classify IAB-funded independent expenditures as illegal coordination
 - **Securities regulation:** Prohibit retail investment in "political outcome bonds"
@@ -1383,7 +1401,7 @@ The 90:1 capital advantage means that **even if concentrated interests attempt c
 
 **Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 380% expected ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise \$200M?" but "can we structure the offering legally?"
 
-**The race condition:** Concentrated interests can likely mobilize regulatory opposition within 12-24 months of IAB visibility. But if:
+**The race condition:** Concentrated interests can mobilize regulatory opposition within 12-24 months of IAB visibility. But if:
 1. Initial \$200M-$500M is raised from high-risk capital (impact funds, crypto whales, patient billionaires)
 2. Rapid deployment achieves proof-of-concept (one scoring cycle, measurable electoral impact)
 3. Returns materialize (even partial treaty passage increases bond value)

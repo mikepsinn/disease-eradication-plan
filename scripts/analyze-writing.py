@@ -69,8 +69,8 @@ def extract_prose(content: str) -> str:
     content = re.sub(r'\*\*([^*]+)\*\*', r'\1', content)
     content = re.sub(r'\*([^*]+)\*', r'\1', content)
 
-    # Remove table separators
-    content = re.sub(r'^\|[-:| ]+\|$', '', content, flags=re.MULTILINE)
+    # Remove entire tables (including content)
+    content = re.sub(r'^\|.*\|$', '', content, flags=re.MULTILINE)
 
     # Remove excessive whitespace
     content = re.sub(r'\n\n+', '\n\n', content)
@@ -243,12 +243,9 @@ def analyze_file(filepath: Path) -> None:
 
     if long_sentences:
         print(f"\nFound {len(long_sentences)} sentences longer than 35 words:\n")
-        for i, (sent, word_count) in enumerate(long_sentences[:10], 1):
+        for i, (sent, word_count) in enumerate(long_sentences, 1):
             preview = sent[:100] + "..." if len(sent) > 100 else sent
             print(f"{i}. [{word_count} words] {preview}")
-
-        if len(long_sentences) > 10:
-            print(f"\n... and {len(long_sentences) - 10} more long sentences")
     else:
         print("\nOK: No sentences longer than 35 words")
 
@@ -267,10 +264,8 @@ def analyze_file(filepath: Path) -> None:
     passive = find_passive_voice(sentences)
     if passive:
         print(f"\nPossible Passive Voice ({len(passive)} instances):")
-        for i, (sent, marker) in enumerate(passive[:5], 1):
+        for i, (sent, marker) in enumerate(passive, 1):
             print(f"{i}. {marker}: {sent}")
-        if len(passive) > 5:
-            print(f"... and {len(passive) - 5} more instances")
     else:
         print("\nOK: No obvious passive voice detected")
 
@@ -278,10 +273,8 @@ def analyze_file(filepath: Path) -> None:
     hedges = find_hedging(prose)
     if hedges:
         print(f"\nHedging Language ({len(hedges)} instances):")
-        for hedge in hedges[:5]:
+        for hedge in hedges:
             print(f"  {hedge}")
-        if len(hedges) > 5:
-            print(f"... and {len(hedges) - 5} more instances")
     else:
         print("\nOK: Minimal hedging language")
 

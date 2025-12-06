@@ -13,6 +13,7 @@ from dih_models.plotting.chart_style import setup_chart_style, COLOR_BLACK, COLO
 setup_chart_style()
 
 # Program data: (name, spending_billions, NSV_per_dollar, size_for_bubble)
+
 programs = [
     # Quadrant II: UNDERINVESTED (High NSV, Low Spending)
     ("Childhood\nVaccinations", 8, 100, 800),
@@ -34,9 +35,11 @@ programs = [
 ]
 
 # Create figure
+
 fig, ax = plt.subplots(figsize=(12, 9))
 
 # Draw quadrant background shading
+
 quad_alpha = 0.05
 ax.axhspan(0, 150, 0, 0.5, facecolor=COLOR_BLACK, alpha=quad_alpha, zorder=0)  # Quad III
 ax.axhspan(0, 150, 0.5, 1, facecolor=COLOR_BLACK, alpha=quad_alpha*2, zorder=0)  # Quad IV
@@ -44,6 +47,7 @@ ax.axhspan(0, -10, 0, 0.5, facecolor=COLOR_BLACK, alpha=quad_alpha*2, zorder=0) 
 ax.axhspan(0, -10, 0.5, 1, facecolor=COLOR_BLACK, alpha=quad_alpha*3, zorder=0)  # Below break-even, high spending
 
 # Plot programs as bubbles
+
 for name, spending, nsv, size in programs:
     # Color based on NSV
     if nsv > 10:
@@ -72,11 +76,13 @@ for name, spending, nsv, size in programs:
                          edgecolor=COLOR_BLACK, linewidth=0.8))
 
 # Draw quadrant dividing lines
+
 median_spending = 50  # Approximate median
 ax.axvline(x=median_spending, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.7)
 ax.axhline(y=0, color=COLOR_BLACK, linestyle='-', linewidth=2, alpha=0.7)
 
 # Add quadrant labels in boxes
+
 def add_quadrant_label(x, y, title, subtitle, size='large'):
     fontsize_title = 13 if size == 'large' else 11
     fontsize_sub = 10 if size == 'large' else 9
@@ -89,31 +95,38 @@ def add_quadrant_label(x, y, title, subtitle, size='large'):
             ha='center', va='center', style='italic')
 
 # Quadrant II: Upper-Left (UNDERINVESTED)
+
 add_quadrant_label(15, 120, 'QUADRANT II\nUNDERINVESTED',
                   '(High NSV, Low Spending)\nOlsonian Failure')
 
 # Quadrant I: Upper-Right (RATIONAL)
+
 add_quadrant_label(200, 120, 'QUADRANT I\nRATIONAL',
                   '(High NSV, High Spending)\nDesired State')
 
 # Quadrant III: Lower-Left (Wasteful but Small)
+
 add_quadrant_label(15, -7, 'QUADRANT III\nWasteful but Small',
                   '(Low NSV, Low Spending)', size='small')
 
 # Quadrant IV: Lower-Right (OVERINVESTED)
+
 add_quadrant_label(350, -7, 'QUADRANT IV\nOVERINVESTED',
                   '(Low NSV, High Spending)\nOlsonian Capture')
 
 # Labels and title
+
 ax.set_xlabel('Annual Spending ($ Billions)', fontsize=13, fontweight='bold')
 ax.set_ylabel('Net Social Value per Dollar Spent ($)', fontsize=13, fontweight='bold')
 ax.set_title('The Olsonian Quadrant Chart:\nWhere Government Resources Flow vs. Where They Should Flow',
              fontsize=15, fontweight='bold', pad=20)
 
 # Add arrow annotations showing desired movement
+
 arrow_props = dict(arrowstyle='->', lw=3, color=COLOR_BLACK, alpha=0.6)
 
 # Arrow from Quadrant IV to Quadrant I (the IAB goal)
+
 ax.annotate('', xy=(200, 50), xytext=(450, -4),
             arrowprops=dict(arrowstyle='->', lw=4, color=COLOR_BLACK, alpha=0.7))
 ax.text(325, 35, 'IAB Reallocation', fontsize=11, fontweight='bold',
@@ -122,14 +135,17 @@ ax.text(325, 35, 'IAB Reallocation', fontsize=11, fontweight='bold',
                  edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Grid
+
 ax.grid(True, alpha=0.2, linestyle='--', linewidth=0.5)
 ax.set_axisbelow(True)
 
 # Axis limits
+
 ax.set_xlim(-5, 600)
 ax.set_ylim(-10, 135)
 
 # Add legend
+
 legend_elements = [
     mpatches.Patch(facecolor=COLOR_BLACK, edgecolor=COLOR_BLACK, label='High NSV (>10:1)', alpha=0.7),
     mpatches.Patch(facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, label='Moderate NSV (0-10:1)'),

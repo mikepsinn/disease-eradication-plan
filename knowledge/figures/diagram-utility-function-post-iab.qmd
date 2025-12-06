@@ -9,17 +9,21 @@ from pathlib import Path
 from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create the diagram
+
 dot = graphviz.Digraph(comment='Post-IAB Utility Function', format='png')
 
 # Set graph attributes for compact layout
+
 dot.attr(rankdir='TB', size='10,8', nodesep='0.5', ranksep='0.6', dpi='200')
 dot.attr('node', fontsize='13', fontname='Helvetica', margin='0.3,0.2')
 dot.attr('edge', fontsize='12', fontname='Helvetica')
 
 # Apply standard styling
+
 setup_graphviz_style(dot)
 
 # Helper for boxed labels
+
 def boxed_label(text, size='12'):
     """Wrap label in HTML-like table for white background with border."""
     # First, temporarily replace <BR/> with a placeholder
@@ -39,18 +43,22 @@ def node_label(text, size='13'):
     return f'<<FONT FACE="Helvetica" POINT-SIZE="{size}">{html_text}</FONT>>'
 
 # Title
+
 dot.node('title', node_label('POST-IAB: Rankings Operative via Score', '16'),
          shape='plaintext', fontsize='16', style='bold')
 
 # NSV Ranking now feeds into score
+
 dot.node('ranking', node_label('NSV Ranking R\n(Same rankings,\nnow consequential)'),
          shape='box', style='bold', penwidth='2')
 
 # The score mechanism
+
 dot.node('score', node_label('Score Function\ntheta = f(R, VoteRecord)'),
          shape='box', style='filled,bold', fillcolor='lightgray', penwidth='2.5')
 
 # Individual components now score-dependent
+
 dot.node('P', node_label('Pi(theta)\n- Scorecard visibility\n- Independent expenditures\n- Campaign support'),
          shape='box', style='filled', fillcolor='white')
 dot.node('Y', node_label('Yi(theta)\n- Fellowship eligibility\n- Think tank positions\n- Advisory boards'),
@@ -59,14 +67,17 @@ dot.node('S', node_label('Si(theta)\n- Public recognition\n- Historical legacy\n
          shape='box', style='filled', fillcolor='white')
 
 # Utility function now score-dependent
+
 dot.node('utility', node_label('Ui = ai*Pi(theta) + bi*Yi(theta) + gi*Si(theta)'),
          shape='box', style='bold', penwidth='2.5')
 
 # Action outcome
+
 dot.node('action', node_label('ai = 1\n(Support Public Good)'),
          shape='box', style='filled,bold', fillcolor='lightgray', penwidth='2')
 
 # Edges
+
 dot.edge('title', 'ranking', style='invis')
 dot.edge('ranking', 'score', label=boxed_label('Vote Record'), penwidth='2')
 dot.edge('score', 'P', label=boxed_label('Higher Score'), penwidth='1.5')
@@ -78,6 +89,7 @@ dot.edge('S', 'utility', penwidth='1.5')
 dot.edge('utility', 'action', label=boxed_label('Change in Ui = benefit > cost'), penwidth='2')
 
 # Layout organization
+
 with dot.subgraph() as s:
     s.attr(rank='same')
     s.node('P')
@@ -85,6 +97,7 @@ with dot.subgraph() as s:
     s.node('S')
 
 # Render the diagram
+
 png_path = render_graphviz_with_watermark(dot, 'utility-function-post-iab')
 print(f"Generated: {png_path}")
 ```
