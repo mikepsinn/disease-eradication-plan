@@ -22,7 +22,7 @@ setup_chart_style()
 # Using central/conservative estimates where ranges exist
 
 interventions = {
-    '1% Treaty-Funded Health Network': {
+    'Treaty-\nFunded\nPragmatic\nTrials': {
         'roi': 50000,  # Using 50000 to represent "infinite" - make other bars look like 0
         'category': 'proposed',
         'note': 'Self-funded by military redirection',
@@ -139,7 +139,7 @@ ax.set_title('When Self-Funded by 1% Military Redirection: Infinite ROI',
 # Add explanatory callout with inline LaTeX equation - positioned to the right
 
 total_benefits_formatted = format_parameter_value(TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL, "USD")
-callout_text = r'A 1% Treaty redirects military spending to a 1% Treaty Fund, which finances pragmatic clinical trials through decentralized institutes of health at zero net cost to society.' + '\n\n' + rf'$\mathrm{{ROI}} = \frac{{{total_benefits_formatted}}}{{\$0}} = \infty$' + '\n\n' + f'Result: {total_benefits_formatted} in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.'
+callout_text = r'Treaty redirects military spending to pragmatic clinical trials at zero net cost to society.' + '\n\n' + rf'$\mathrm{{ROI}} = \frac{{{total_benefits_formatted}}}{{\$0}} = \infty$' + '\n\n' + f'Result: {total_benefits_formatted} in annual benefits (peace dividend + R&D savings)\nwith zero new spending = infinite ROI.\n\nThis is a "dominant intervention" - it saves money while saving lives.\n\nOther health interventions (shown for comparison) are invisible at this scale.'
 ax.text(0.62, 0.50, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=15, color=COLOR_BLACK,
@@ -157,7 +157,7 @@ add_watermark(fig)
 
 # Save figure with tight bbox to minimize whitespace
 
-output_path = get_figure_output_path('treaty-dih-dfda-roi-comparison-column-chart.png')
+output_path = get_figure_output_path('self-funding-roi-comparison-column-chart.png')
 
 # Save the figure
 

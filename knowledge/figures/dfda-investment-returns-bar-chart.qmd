@@ -75,9 +75,24 @@ bar_rd_savings = ax.bar(x_positions[1], gross_rd_savings, bar_width,
                        color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5)
 
 # Create stacked bar for health gains (3 tiers) with calculations in labels
+# Helper function to format values in trillions (used for both labels and legend)
 
-conservative_value = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
-primary_value = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+def format_as_trillions(value_usd):
+    """Format USD values in trillions with T suffix, regardless of magnitude."""
+    trillions = value_usd / 1e12
+    if abs(trillions) >= 100:
+        result = "${:.0f}T".format(trillions)
+    elif abs(trillions) >= 10:
+        result = "${:.1f}T".format(trillions)
+    else:
+        result = "${:.2f}T".format(trillions)
+    # Clean up trailing zeros
+    result = result.replace(".0T", "T")
+    return result
+
+conservative_value = format_as_trillions(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
+primary_value = format_as_trillions(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+optimistic_value = format_as_trillions(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
 
 bar_conservative = ax.bar(x_positions[2], health_gains_conservative, bar_width,
                          color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5,
@@ -93,7 +108,7 @@ bar_optimistic = ax.bar(x_positions[2], health_gains_optimistic - health_gains_p
                        bottom=health_gains_primary,
                        color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2.5,
                        hatch=PATTERN_DIAGONAL,
-                       label=f'Innovation Acceleration (eliminating Phase 2-4 cost barrier):\nEstimated additional timeline acceleration from lower barriers\n= {format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)}')
+                       label=f'Innovation Acceleration (eliminating Phase 2-4 cost barrier):\nEstimated additional timeline acceleration from lower barriers\n= {optimistic_value}')
 
 # Apply modern styling
 
@@ -119,17 +134,7 @@ ax.text(x_positions[1], gross_rd_savings + 10,
         fontweight='bold', color=COLOR_BLACK)
 
 # Health gains - label each tier in trillions with "T" suffix (TOTAL values, not annual)
-# Custom formatter to force trillion display for quadrillion-scale values
-
-def format_as_trillions(value_usd):
-    """Format USD values in trillions with T suffix, regardless of magnitude."""
-    trillions = value_usd / 1e12
-    if abs(trillions) >= 100:
-        return f"${trillions:.0f}T"
-    elif abs(trillions) >= 10:
-        return f"${trillions:.1f}T"
-    else:
-        return f"${trillions:.2f}T"
+# Note: format_as_trillions() function defined earlier in the code
 
 # Conservative tier (bottom)
 
@@ -137,7 +142,8 @@ conservative_label = format_as_trillions(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL
 ax.text(x_positions[2], health_gains_conservative / 2,
         conservative_label,
         ha='center', va='center', fontsize=22,
-        fontweight='bold', color=COLOR_BLACK)
+        fontweight='bold', color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # PRIMARY tier (middle)
 
@@ -145,7 +151,8 @@ primary_label = format_as_trillions(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
 ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - health_gains_conservative) / 2,
         primary_label,
         ha='center', va='center', fontsize=26,
-        fontweight='bold', color=COLOR_WHITE)
+        fontweight='bold', color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Optimistic tier (top)
 
@@ -153,7 +160,8 @@ optimistic_label = format_as_trillions(DISEASE_ERADICATION_PLUS_ACCELERATION_ECO
 ax.text(x_positions[2], health_gains_primary + (health_gains_optimistic - health_gains_primary) / 2,
         optimistic_label,
         ha='center', va='center', fontsize=22,
-        fontweight='bold', color=COLOR_BLACK)
+        fontweight='bold', color=COLOR_BLACK,
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5))
 
 # Title
 
