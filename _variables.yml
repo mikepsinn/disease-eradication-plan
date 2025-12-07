@@ -1100,11 +1100,19 @@
 "iab_bootstrap_campaign_cost_optimistic_usd": "<span class=\"parameter-definition\"\
   \ title=\"Optimistic estimate for bootstrap campaign cost | Unit: USD | Core definition\"\
   >$50M</span>"
+"iab_mechanism_annual_cost": "<a href=\"/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Estimated annual\
+  \ cost of the IAB mechanism (high-end estimate including regulatory defense) | ✓\
+  \ High confidence | 95% CI: [$160M, $750M] | Unit: USD/year | Click to view calculation\"\
+  >$750M</a>"
 "iab_mechanism_benefit_cost_ratio": "<a href=\"/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Benefit-Cost\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
   \ Ratio of the IAB mechanism itself | ✓ High confidence | Unit: ratio | Click to\
-  \ view calculation\">303</a>"
+  \ view calculation\">207</a>"
+"iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
+  \ = \\frac{\\$155.05B}{\\$750.0M} = 206.73\n$$"
 "iab_political_incentive_funding_annual": "<span class=\"parameter-link\" title=\"\
   parameters.IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL\">$2.72B</span>"
 "iab_political_incentive_funding_annual_latex": "$$\nIABFunding = \\$27.18B \\times\
@@ -1933,6 +1941,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "316"
-"total_latex_equation_count": "118"
+"total_parameter_count": "317"
+"total_latex_equation_count": "119"
 "total_citation_count": "126"

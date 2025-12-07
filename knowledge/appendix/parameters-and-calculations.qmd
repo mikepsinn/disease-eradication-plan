@@ -13,10 +13,10 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 316
+**Total parameters**: 317
 
 - External sources (peer-reviewed): 126
-- Calculated values: 101
+- Calculated values: 102
 - Core definitions: 89
 
 ## Calculated Values {#sec-calculated}
@@ -1407,6 +1407,35 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-historical_progress_economic_loss_total.qmd >}}
+
+
+### IAB Mechanism Benefit-Cost Ratio {#sec-iab_mechanism_benefit_cost_ratio}
+
+**Value**: 207 ratio
+
+Benefit-Cost Ratio of the IAB mechanism itself
+
+$$
+Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$155.05B}{\$750.0M} = 206.73
+$$
+
+**Methodology**: [../appendix/incentive-alignment-bonds-paper#welfare-analysis](../appendix/incentive-alignment-bonds-paper#welfare-analysis)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_mechanism_benefit_cost_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_mechanism_benefit_cost_ratio.qmd >}}
 
 
 ### Annual IAB Political Incentive Funding {#sec-iab_political_incentive_funding_annual}
@@ -5738,11 +5767,17 @@ Optimistic estimate for bootstrap campaign cost
 *Core definition*
 
 
-### IAB Mechanism Benefit-Cost Ratio {#sec-iab_mechanism_benefit_cost_ratio}
+### IAB Mechanism Annual Cost (High Estimate) {#sec-iab_mechanism_annual_cost}
 
-**Value**: 303 ratio
+**Value**: $750M
 
-Benefit-Cost Ratio of the IAB mechanism itself
+Estimated annual cost of the IAB mechanism (high-end estimate including regulatory defense)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$160M, $750M]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $160M and $750M (±39%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *Core definition*
 
