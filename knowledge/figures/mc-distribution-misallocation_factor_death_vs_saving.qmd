@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2,889 |
-| Mean (expected value) | 2,859 |
-| Median (50th percentile) | 2,836 |
+| Baseline (deterministic) | 2.89k |
+| Mean (expected value) | 2.86k |
+| Median (50th percentile) | 2.84k |
 | Standard Deviation | 292 |
-| 90% Confidence Interval | [2,416, 3,379] |
+| 90% Confidence Interval | [2.42k, 3.38k] |
 
 *The histogram shows the distribution of Misallocation Factor: Cost to Kill vs Cost to Save across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

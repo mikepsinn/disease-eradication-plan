@@ -59,17 +59,41 @@ if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
 from generate_references_json import generate_references_json  # noqa: E402
-from dih_models.parameters import format_parameter_value
+# Delayed imports to allow reference_ids.py regeneration
+# from dih_models.parameters import format_parameter_value
+from dih_models.formatting import format_parameter_value
 
-try:
-    # Optional uncertainty integration
-    from dih_models.uncertainty import simulate, one_at_a_time_sensitivity, tornado_deltas, regression_sensitivity, Outcome  # noqa: E402
-except Exception:
-    simulate = None  # type: ignore
-    one_at_a_time_sensitivity = None  # type: ignore
-    tornado_deltas = None  # type: ignore
-    regression_sensitivity = None  # type: ignore
-    Outcome = None  # type: ignore
+# Delayed imports placeholders
+simulate = None
+one_at_a_time_sensitivity = None
+tornado_deltas = None
+regression_sensitivity = None
+Outcome = None
+
+
+def init_uncertainty():
+    """
+    Initialize uncertainty module imports.
+    Must be called AFTER generate_reference_ids_enum has run.
+    """
+    global simulate, one_at_a_time_sensitivity, tornado_deltas, regression_sensitivity, Outcome
+    try:
+        from dih_models.uncertainty import (
+            simulate as _sim, 
+            one_at_a_time_sensitivity as _oaat, 
+            tornado_deltas as _td, 
+            regression_sensitivity as _rs, 
+            Outcome as _Out
+        )
+        simulate = _sim
+        one_at_a_time_sensitivity = _oaat
+        tornado_deltas = _td
+        regression_sensitivity = _rs
+        Outcome = _Out
+    except ImportError:
+        pass
+    except Exception as e:
+        print(f"[WARN] Failed to load uncertainty module: {e}")
 
 
 def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
@@ -3151,6 +3175,9 @@ def main():
     print("[*] Generating dih_models/reference_ids.py...")
     reference_ids_path = project_root / "dih_models" / "reference_ids.py"
     generate_reference_ids_enum(available_refs, reference_ids_path)
+
+    # Initialize uncertainty module now that dependencies are ready
+    init_uncertainty()
 
     # Parse parameters file THIRD (now reference_ids.py is up to date)
     parameters_path = project_root / "dih_models" / "parameters.py"

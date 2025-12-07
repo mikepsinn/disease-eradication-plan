@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 901 |
 | Median (50th percentile) | 884 |
 | Standard Deviation | 182 |
-| 90% Confidence Interval | [622, 1,254] |
+| 90% Confidence Interval | [622, 1.25k] |
 
 *The histogram shows the distribution of Thalidomide US Cases Prevented across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

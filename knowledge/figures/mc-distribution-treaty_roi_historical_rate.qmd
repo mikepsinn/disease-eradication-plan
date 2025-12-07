@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 251K |
-| Mean (expected value) | 261K |
-| Median (50th percentile) | 266K |
-| Standard Deviation | 25,426 |
-| 90% Confidence Interval | [219K, 278K] |
+| Baseline (deterministic) | 251k |
+| Mean (expected value) | 261k |
+| Median (50th percentile) | 266k |
+| Standard Deviation | 25.4k |
+| 90% Confidence Interval | [219k, 278k] |
 
 *The histogram shows the distribution of Treaty ROI - Historical Rate (Conservative Floor) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

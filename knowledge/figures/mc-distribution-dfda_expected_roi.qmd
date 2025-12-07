@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 11,914 |
-| Mean (expected value) | 12,555 |
-| Median (50th percentile) | 1,991 |
-| Standard Deviation | 22,290 |
-| 90% Confidence Interval | [1,171, 61,355] |
+| Baseline (deterministic) | 11.9k |
+| Mean (expected value) | 12.6k |
+| Median (50th percentile) | 1.99k |
+| Standard Deviation | 22.3k |
+| 90% Confidence Interval | [1.17k, 61.4k] |
 
 *The histogram shows the distribution of Expected Treaty ROI (Risk-Adjusted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

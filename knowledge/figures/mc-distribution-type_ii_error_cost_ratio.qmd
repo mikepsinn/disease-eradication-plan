@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 3,068 |
-| Mean (expected value) | 3,157 |
-| Median (50th percentile) | 3,130 |
+| Baseline (deterministic) | 3.07k |
+| Mean (expected value) | 3.16k |
+| Median (50th percentile) | 3.13k |
 | Standard Deviation | 396 |
-| 90% Confidence Interval | [2,551, 3,879] |
+| 90% Confidence Interval | [2.55k, 3.88k] |
 
 *The histogram shows the distribution of Ratio of Type Ii Error Cost to Type I Error Benefit across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

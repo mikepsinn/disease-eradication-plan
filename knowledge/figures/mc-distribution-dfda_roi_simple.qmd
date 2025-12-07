@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1,038 |
-| Mean (expected value) | 1,049 |
-| Median (50th percentile) | 1,046 |
+| Baseline (deterministic) | 1.04k |
+| Mean (expected value) | 1.05k |
+| Median (50th percentile) | 1.05k |
 | Standard Deviation | 148 |
-| 90% Confidence Interval | [809, 1,298] |
+| 90% Confidence Interval | [809, 1.30k] |
 
 *The histogram shows the distribution of dFDA Simple ROI Without NPV Adjustment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

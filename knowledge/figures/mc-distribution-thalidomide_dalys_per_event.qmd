@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 41,760 |
-| Mean (expected value) | 42,387 |
-| Median (50th percentile) | 40,750 |
-| Standard Deviation | 12,167 |
-| 90% Confidence Interval | [24,767, 66,964] |
+| Baseline (deterministic) | 41.8k |
+| Mean (expected value) | 42.4k |
+| Median (50th percentile) | 40.7k |
+| Standard Deviation | 12.2k |
+| 90% Confidence Interval | [24.8k, 67.0k] |
 
 *The histogram shows the distribution of Thalidomide DALYs Per Event across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

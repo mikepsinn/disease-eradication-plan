@@ -38,7 +38,7 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 This paper introduces Incentive Alignment Bonds (IABs), financial instruments that make supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three properties: (1) investor returns keyed to policy adoption, (2) politician benefits (electoral support, career prospects) based on voting record, and (3) funding from programs with lower net social value than the target use. Drawing on mechanism design theory and campaign finance research, we formalize a three-layer architecture (scoring, electoral, post-office) that transforms the politician's utility function: the same selfish optimization that currently favors concentrated interests can be redirected toward public goods.
 
-We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to 272%+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control \$454 trillion vs. \$5 trillion for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds 300:1 (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
+We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to {{< var victory_bond_annual_return_pct >}}+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control {{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds {{< var iab_mechanism_benefit_cost_ratio >}}:1 (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
 
 ![The Incentive Alignment Bonds Mechanism](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
 
@@ -79,9 +79,9 @@ Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyze
 
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
-- **272% expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
-- **\$454 trillion vs. \$5 trillion capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (defense contractors) by 90:1 (Section 2.3)
-- **303:1 benefit-cost ratio** of the IAB mechanism itself, even accounting for overhead costs and failure risk (Section 7.3)
+- **{{< var victory_bond_annual_return_pct >}} expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
+- **{{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (defense contractors) by 90:1 (Section 2.3)
+- **{{< var iab_mechanism_benefit_cost_ratio >}}:1 benefit-cost ratio** of the IAB mechanism itself, even accounting for overhead costs and failure risk (Section 7.3)
 - **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
 - **Wishocracy (Layer 2) prevents allocation capture** through random pairwise sampling that makes advertising economically infeasible (Section 6.2.3)
 - **Bootstrap problem is solvable**: ROI potential attracts risk-tolerant capital; capital asymmetry ensures scalability once proof-of-concept succeeds (Section 8.1)
@@ -120,8 +120,8 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 **Finance & ROI:**
 
-- **ROI (Return on Investment):** Profit divided by cost (272% ROI means you get \$3.72 back for every \$1 invested)
-- **Capital asymmetry:** Unequal distribution of wealth ($454 trillion households vs. $5 trillion defense contractors)
+- **ROI (Return on Investment):** Profit divided by cost ({{< var victory_bond_annual_return_pct >}} ROI means you get \$3.72 back for every \$1 invested)
+- **Capital asymmetry:** Unequal distribution of wealth ({{< var global_household_wealth_usd >}} households vs. {{< var concentrated_interest_sector_market_cap_usd >}} defense contractors)
 - **Securitization:** Turning something into tradable financial instruments (like turning mortgages into mortgage-backed securities)
 - **Expected value:** Average outcome accounting for probabilities (20% chance of $100 = $20 expected value)
 - **Market capitalization:** Total value of a company's stock
@@ -215,7 +215,7 @@ $$
 E[V] = 0.20 \times \$2.4\text{ billion} = \$480\text{ million/year}
 $$
 
-The expected first-year ROI is 272%, with the revenue stream continuing in perpetuity.
+The expected first-year ROI is {{< var victory_bond_annual_return_pct >}}, with the revenue stream continuing in perpetuity.
 
 **Sensitivity to parameter uncertainty:**
 
@@ -234,8 +234,8 @@ Here's what almost everyone misses: **the collective capital available to diffus
 
 Consider the global capital distribution:
 
-- **Concentrated interests** (defense contractors, fossil fuel companies, pharmaceutical incumbents): Combined market capitalization ~\$5 trillion[^capital-estimate]
-- **Diffuse beneficiaries** (everyone who would benefit from cures, climate stability, pandemic prevention): Global household wealth ~\$454 trillion [@creditsuisse2023]
+- **Concentrated interests** (defense contractors, fossil fuel companies, pharmaceutical incumbents): Combined market capitalization ~{{< var concentrated_interest_sector_market_cap_usd >}}[^capital-estimate]
+- **Diffuse beneficiaries** (everyone who would benefit from cures, climate stability, pandemic prevention): Global household wealth ~{{< var global_household_wealth_usd >}} [@creditsuisse2023]
 
 [^capital-estimate]: Conservative estimate based on: Top 100 defense contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition ranges \$2T-$5T depending on domain.
 
@@ -244,7 +244,7 @@ The 90:1 capital advantage cannot currently be deployed because diffuse benefici
 **IABs solve the coordination problem by securitizing political change** (turning policy outcomes into tradable financial instruments, like turning mortgages into mortgage-backed securities). If IABs can be structured as tradable securities that any individual can purchase, they transform diffuse beneficiaries into the largest special interest group in history. The mechanism:
 
 1. **Investment accessibility:** Structure IABs as securities available to retail investors (similar to green bonds or social impact bonds)
-2. **Returns exceed alternatives:** Expected returns of 100-1000%+ (from lobbying ROI) dramatically exceed stock market returns of ~10%
+2. **Returns exceed alternatives:** Expected returns of 100-1000%+ (from lobbying ROI) dramatically exceed stock market returns of {{< var average_market_return_pct >}}
 3. **Massive capital mobilization:** Even 0.1% of global household wealth (\$454 billion) exceeds total annual global lobbying spending by 100x
 4. **Self-interest alignment:** Investors profit directly from policy success, creating concentrated financial incentives on the welfare-improving side
 

@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 310
+**Total parameters**: 316
 
-- External sources (peer-reviewed): 125
+- External sources (peer-reviewed): 126
 - Calculated values: 101
-- Core definitions: 84
+- Core definitions: 89
 
 ## Calculated Values {#sec-calculated}
 
@@ -112,7 +112,7 @@ $$
 
 ### Expected Treaty ROI (Risk-Adjusted) {#sec-dfda_expected_roi}
 
-**Value**: 11,914
+**Value**: 11.9k
 
 Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.
 
@@ -431,7 +431,7 @@ $$
 
 ### dFDA Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
 
-**Value**: 1,038 ratio
+**Value**: 1.04k ratio
 
 Simple ROI without NPV adjustment (gross savings / annual opex)
 
@@ -460,7 +460,7 @@ $$
 
 ### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
-**Value**: 75,392 trials/year
+**Value**: 75.4k trials/year
 
 Maximum trials per year possible with trial capacity multiplier
 
@@ -891,7 +891,7 @@ $$
 
 ### Total Annual Conflict Deaths Globally {#sec-global_annual_conflict_deaths_total}
 
-**Value**: 245K deaths/year
+**Value**: 245k deaths/year
 
 Total annual conflict deaths globally (sum of combat, terror, state violence)
 
@@ -1550,7 +1550,7 @@ $$
 
 ### Misallocation Factor: Cost to Kill vs Cost to Save {#sec-misallocation_factor_death_vs_saving}
 
-**Value**: 2,889 ratio
+**Value**: 2.89k ratio
 
 Misallocation factor: cost to kill vs cost to save
 
@@ -2068,7 +2068,7 @@ $$
 
 ### Thalidomide DALYs Per Event {#sec-thalidomide_dalys_per_event}
 
-**Value**: 41,760 DALYs
+**Value**: 41.8k DALYs
 
 Total DALYs per US-scale thalidomide event (YLL + YLD)
 
@@ -2176,7 +2176,7 @@ $$
 
 ### Thalidomide YLD Per Event {#sec-thalidomide_yld_per_event}
 
-**Value**: 12,960 years
+**Value**: 13.0k years
 
 Years Lived with Disability per thalidomide event
 
@@ -2203,7 +2203,7 @@ $$
 
 ### Thalidomide YLL Per Event {#sec-thalidomide_yll_per_event}
 
-**Value**: 28,800 years
+**Value**: 28.8k years
 
 Years of Life Lost per thalidomide event (infant deaths)
 
@@ -2489,7 +2489,7 @@ $$
 
 ### Annual Lives Saved from 1% Reduction in Conflict Deaths {#sec-treaty_lives_saved_annual_global}
 
-**Value**: 2,446 lives/year
+**Value**: 2.45k lives/year
 
 Annual lives saved from 1% reduction in conflict deaths
 
@@ -2547,7 +2547,7 @@ $$
 
 ### Annual QALYs Gained from Peace Dividend {#sec-treaty_qalys_gained_annual_global}
 
-**Value**: 85,610 QALYs/year
+**Value**: 85.6k QALYs/year
 
 Annual QALYs gained from peace dividend (lives saved × QALYs/life)
 
@@ -2605,7 +2605,7 @@ $$
 
 ### Treaty ROI - Historical Rate (Conservative Floor) {#sec-treaty_roi_historical_rate}
 
-**Value**: 251K ratio
+**Value**: 251k ratio
 
 Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.
 
@@ -2831,7 +2831,7 @@ $$
 
 ### Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
-**Value**: 3,068 ratio
+**Value**: 3.07k ratio
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
@@ -3011,7 +3011,7 @@ Total annual value of unpaid caregiving in US
 
 ### Number of Unpaid Caregivers in US {#sec-caregiver_count_us}
 
-**Value**: 38M people
+**Value**: 38.0M people
 
 Number of unpaid caregivers in US
 
@@ -3093,7 +3093,7 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 ### Current Active Trials at Any Given Time {#sec-current_active_trials}
 
-**Value**: 10,000 trials
+**Value**: 10.0k trials
 
 Current active trials at any given time (3-5 year duration)
 
@@ -3149,7 +3149,7 @@ Average annual new drug approvals globally
 
 ### Current Global Clinical Trials per Year {#sec-current_trials_per_year}
 
-**Value**: 3,300 trials/year
+**Value**: 3.30k trials/year
 
 Current global clinical trials per year
 
@@ -3157,9 +3157,9 @@ Current global clinical trials per year
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2,640 trials/year, 3,960 trials/year] • Distribution: Lognormal
+**Technical**: 95% CI: [2.64k trials/year, 3.96k trials/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 trials/year and 3,960 trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.64k trials/year and 3.96k trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3366,7 +3366,7 @@ GiveWell cost per life saved (Helen Keller International)
 
 ### Annual Deaths from Active Combat Worldwide {#sec-global_annual_conflict_deaths_active_combat}
 
-**Value**: 234K deaths/year
+**Value**: 234k deaths/year
 
 Annual deaths from active combat worldwide
 
@@ -3374,9 +3374,9 @@ Annual deaths from active combat worldwide
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [180K deaths/year, 300K deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [180k deaths/year, 300k deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 180K deaths/year and 300K deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 180k deaths/year and 300k deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3389,7 +3389,7 @@ Annual deaths from active combat worldwide
 
 ### Annual Deaths from State Violence {#sec-global_annual_conflict_deaths_state_violence}
 
-**Value**: 2,700 deaths/year
+**Value**: 2.70k deaths/year
 
 Annual deaths from state violence
 
@@ -3397,9 +3397,9 @@ Annual deaths from state violence
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1,500 deaths/year, 5,000 deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.50k deaths/year, 5.00k deaths/year] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 deaths/year and 5,000 deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.50k deaths/year and 5.00k deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3412,7 +3412,7 @@ Annual deaths from state violence
 
 ### Annual Deaths from Terror Attacks Globally {#sec-global_annual_conflict_deaths_terror_attacks}
 
-**Value**: 8,300 deaths/year
+**Value**: 8.30k deaths/year
 
 Annual deaths from terror attacks globally
 
@@ -3420,9 +3420,9 @@ Annual deaths from terror attacks globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6,000 deaths/year, 12,000 deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [6.00k deaths/year, 12.0k deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 deaths/year and 12,000 deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k deaths/year and 12.0k deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3435,7 +3435,7 @@ Annual deaths from terror attacks globally
 
 ### Annual Deaths from Curable Diseases Globally {#sec-global_annual_deaths_curable_diseases}
 
-**Value**: 55M deaths/year
+**Value**: 55.0M deaths/year
 
 Annual deaths from all diseases and aging globally
 
@@ -3860,7 +3860,7 @@ Annual global spending on clinical trials (Total: Government + Industry)
 
 ### Daily Deaths from Curable Diseases Globally {#sec-global_daily_deaths_curable_diseases}
 
-**Value**: 150K deaths/day
+**Value**: 150k deaths/day
 
 Daily deaths from all diseases and aging globally
 
@@ -3868,9 +3868,9 @@ Daily deaths from all diseases and aging globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [120K deaths/day, 180K deaths/day] • Distribution: Lognormal
+**Technical**: 95% CI: [120k deaths/day, 180k deaths/day] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120K deaths/day and 180K deaths/day (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120k deaths/day and 180k deaths/day (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3883,7 +3883,7 @@ Daily deaths from all diseases and aging globally
 
 ### Global Daily Deaths from Disease and Aging {#sec-global_disease_deaths_daily}
 
-**Value**: 150K deaths/day
+**Value**: 150k deaths/day
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
@@ -3891,7 +3891,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7,500 deaths/day)
+**Technical**: Distribution: Normal (SE: 7.50k deaths/day)
 
 #### Input Distribution
 
@@ -3988,6 +3988,17 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 #### Input Distribution
 
 {{< include ../figures/distribution-global_government_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+
+### Global Household Wealth {#sec-global_household_wealth_usd}
+
+**Value**: $454T
+
+Total global household wealth (2022/2023 estimate)
+
+**Source**: [cs-global-wealth-report-2023](../references.qmd#cs-global-wealth-report-2023)
 
 *✓ High confidence*
 
@@ -4416,7 +4427,7 @@ Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
 
 ### Pre-1962 Physician Count (Unverified) {#sec-pre_1962_physician_count}
 
-**Value**: 144K physicians
+**Value**: 144k physicians
 
 Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
 
@@ -4427,7 +4438,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 ### Total Number of Rare Diseases Globally {#sec-rare_diseases_count_global}
 
-**Value**: 7,000 diseases
+**Value**: 7.00k diseases
 
 Total number of rare diseases globally
 
@@ -4607,7 +4618,7 @@ Switzerland GDP per capita
 
 ### Deaths from 9/11 Terrorist Attacks {#sec-terrorism_deaths_911}
 
-**Value**: 2,996 deaths
+**Value**: 3.00k deaths
 
 Deaths from 9/11 terrorist attacks
 
@@ -4618,7 +4629,7 @@ Deaths from 9/11 terrorist attacks
 
 ### Thalidomide Cases Worldwide {#sec-thalidomide_cases_worldwide}
 
-**Value**: 15,000 cases
+**Value**: 15.0k cases
 
 Total thalidomide birth defect cases worldwide (1957-1962)
 
@@ -4626,9 +4637,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10,000 cases, 20,000 cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10.0k cases, 20.0k cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 cases and 20,000 cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10.0k cases and 20.0k cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5364,6 +5375,15 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 *Core definition*
 
 
+### Concentrated Interest Sector Market Cap {#sec-concentrated_interest_sector_market_cap_usd}
+
+**Value**: $5.00T
+
+Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
+
+*Core definition*
+
+
 ### Current Patient Participation Rate in Clinical Trials {#sec-current_patient_participation_rate}
 
 **Value**: 0.0792%
@@ -5625,7 +5645,7 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 ### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
 
-**Value**: 18,358 ratio
+**Value**: 18.4k ratio
 
 Ratio of annual disease deaths to 9/11 terrorism deaths
 
@@ -5686,7 +5706,43 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 ### Hours Per Year {#sec-hours_per_year}
 
-**Value**: 8,760
+**Value**: 8.76k
+
+*Core definition*
+
+
+### Bootstrap Campaign Cost (Base Case) {#sec-iab_bootstrap_campaign_cost_base_usd}
+
+**Value**: $100M
+
+Base case estimate for bootstrap campaign cost
+
+*Core definition*
+
+
+### Bootstrap Campaign Cost (Conservative) {#sec-iab_bootstrap_campaign_cost_conservative_usd}
+
+**Value**: $200M
+
+Conservative estimate for bootstrap campaign cost
+
+*Core definition*
+
+
+### Bootstrap Campaign Cost (Optimistic) {#sec-iab_bootstrap_campaign_cost_optimistic_usd}
+
+**Value**: $50M
+
+Optimistic estimate for bootstrap campaign cost
+
+*Core definition*
+
+
+### IAB Mechanism Benefit-Cost Ratio {#sec-iab_mechanism_benefit_cost_ratio}
+
+**Value**: 303 ratio
+
+Benefit-Cost Ratio of the IAB mechanism itself
 
 *Core definition*
 
@@ -5796,7 +5852,7 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 ### Total Words in the Book {#sec-total_book_words}
 
-**Value**: 171K words
+**Value**: 171k words
 
 Total words in the book
 

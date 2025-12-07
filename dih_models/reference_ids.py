@@ -145,6 +145,7 @@ class ReferenceID(str, Enum):
     COVID_THERAPEUTICS_ACCELERATOR = "covid-therapeutics-accelerator"
     COVID_THERAPEUTICS_INITIAL_GRANTS = "covid-therapeutics-initial-grants"
     CRISPR_DISCOVERY_YOGURT_BACTERIA = "crispr-discovery-yogurt-bacteria"
+    CS_GLOBAL_WEALTH_REPORT_2023 = "cs-global-wealth-report-2023"
     CURRENT_MEDIAN_HOUSEHOLD_WEALTH_100K = "current-median-household-wealth-100k"
     CVD_80_PERCENT_PREVENTABLE = "cvd-80-percent-preventable"
     CYBERCRIME_ECONOMY_10_5T = "cybercrime-economy-10-5t"

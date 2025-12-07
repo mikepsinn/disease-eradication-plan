@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 85,610 |
-| Mean (expected value) | 87,479 |
-| Median (50th percentile) | 84,448 |
-| Standard Deviation | 28,619 |
-| 90% Confidence Interval | [45,091, 141K] |
+| Baseline (deterministic) | 85.6k |
+| Mean (expected value) | 87.5k |
+| Median (50th percentile) | 84.4k |
+| Standard Deviation | 28.6k |
+| 90% Confidence Interval | [45.1k, 141k] |
 
 *The histogram shows the distribution of Annual QALYs Gained from Peace Dividend across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
