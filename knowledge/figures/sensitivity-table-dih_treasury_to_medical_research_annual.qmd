@@ -6,6 +6,6 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 |:----------------|------------------------:|:---------------|
 | Treaty Annual Funding | 0.3333 | Moderate driver |
 | Iab Political Incentive Funding Annual | 0.3333 | Moderate driver |
-| VICTORY Incentive Alignment Bond Annual Payout | 0.3333 | Moderate driver |
+| Victory Bond Annual Payout | 0.3333 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

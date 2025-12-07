@@ -330,7 +330,7 @@ It steers the ship of state away from the iceberg of extinction, one degree at a
 
 ### Why The Ratchet Works: The IAB Scaling Engine
 
-The "ratchet mechanism" isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd).
+The "ratchet mechanism" isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
 
 **The key insight**: {{< var iab_political_incentive_funding_pct >}} of treaty revenue goes to political incentives. This amount **scales with treaty size**:
 
@@ -357,13 +357,13 @@ They win by **aligning incentives**.
 
 This is the alignment engine:
 
-### VICTORY Incentive Alignment Bonds Financing Mechanism
+### VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) Financing Mechanism
 
 You make this happen by aligning financial incentives with their own future savings.
 
 ### The Mechanism
 
-1. Investors buy **VICTORY Incentive Alignment Bonds** funding the political campaign ({{< var treaty_campaign_total_cost >}})
+1. Investors buy **VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)** funding the political campaign ({{< var treaty_campaign_total_cost >}})
 2. Bond funds finance lobbying to redirect {{< var treaty_reduction_pct >}} of military spending
 3. When the treaty passes, it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual benefits
 4. Bondholders receive {{< var victory_bond_annual_return_pct >}} annual returns from the captured surplus
@@ -378,7 +378,7 @@ They just follow their calculator to accidentally save humanity.
 
 ### Incentive Alignment by Actor Type
 
-**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on VICTORY Incentive Alignment Bonds."
+**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)."
 
 **Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
 
@@ -386,7 +386,7 @@ They just follow their calculator to accidentally save humanity.
 
 **Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
 
-**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. VICTORY Incentive Alignment Bonds make {{< var victory_bond_annual_return_pct >}}."
+**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) make {{< var victory_bond_annual_return_pct >}}."
 
 **Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join. Your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
 
@@ -394,7 +394,7 @@ You just point everyone's greed at diseases instead of each other.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
-### Incentive Alignment Bonds
+### [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
 
 {{< include ../includes/incentive-alignment-bonds-overview.qmd >}}
 
@@ -1110,7 +1110,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 |------------|------------|---------------|---------|
 | **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA operations |
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
-| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) for legislators |
+| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) for legislators |
 
 Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:
 
@@ -1344,15 +1344,15 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 **Funding**: This educational and scientific polling initiative is the primary entry point for **philanthropic partners**, validating global demand before the main campaign begins.
 
-### Step 2: Sell $1B in VICTORY Incentive Alignment Bonds
+### Step 2: Sell $1B in VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
 
-VICTORY Incentive Alignment Bond investors fund the campaign because the returns exceed comparable investment opportunities.
+VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) investors fund the campaign because the returns exceed comparable investment opportunities.
 They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
 It's the Louisiana Purchase of medical research.
 
 ### Step 3: Implment the Legislative Strategy
 
-Deploy VICTORY Incentive Alignment Bond funds to translate public support into legislative action.
+Deploy VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) funds to translate public support into legislative action.
 Strategic advocacy, just pointed at curing diseases instead of making bombs.
 
 ### Step 4: Build the Infrastructure
@@ -1380,7 +1380,7 @@ Nobody needs to be convinced. They just need to count.
 **For comprehensive implementation details**, see:
 
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
-- **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Financing mechanism for ratification efforts
+- **[VICTORY Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)** - Financing mechanism for ratification efforts
 - **[Financial Plan Overview](financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
 
 ### Campaign Budget Breakdown
@@ -1425,7 +1425,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Why this actually won't happen**:
 
-Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. You're offering VICTORY Incentive Alignment Bondholders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. You're offering VICTORY [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 
