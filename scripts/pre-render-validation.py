@@ -842,17 +842,6 @@ def check_markdown_links(content: str, filepath: str):
                 )
                 continue
 
-            # Check for references to old migration directories
-            if "brain/book/" in link_path or "brain/" in link_path:
-                errors.append(
-                    ValidationError(
-                        file=filepath,
-                        line=line_index + 1,
-                        message=f"Reference to old migration directory: {link_path}",
-                        context=line.strip()[:80],
-                    )
-                )
-                continue
 
             # For local file links, check if the file exists
             # Split off any anchor (#section)

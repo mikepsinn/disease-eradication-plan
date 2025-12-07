@@ -305,7 +305,7 @@ SECONDS_PER_YEAR = DAYS_PER_YEAR * HOURS_PER_DAY * MINUTES_PER_HOUR * SECONDS_PE
 # ---
 
 # Total cost of war (billions USD)
-# Source: brain/book/problem/cost-of-war.qmd
+# Source: knowledge/problem/cost-of-war.qmd
 # Reference: references.qmd#total-military-and-war-costs-11-4t
 
 # Direct costs
@@ -338,7 +338,7 @@ VALUE_OF_STATISTICAL_LIFE = Parameter(
 )  # US DOT uses $13.6M, we use $10M conservatively
 
 # Conflict death breakdown (for QALY calculations)
-# Source: brain/book/problem/cost-of-war.qmd#death-accounting
+# Source: knowledge/problem/cost-of-war.qmd#death-accounting
 GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT = Parameter(
     233600,
     source_ref=ReferenceID.ACLED_ACTIVE_COMBAT_DEATHS,
@@ -987,7 +987,7 @@ PEACE_DIVIDEND_CONFLICT_REDUCTION = Parameter(
 # ---
 
 # Clinical trial market
-# Source: brain/book/appendix/dfda-roi-calculations.qmd
+# Source: knowledge/appendix/dfda-roi-calculations.qmd
 GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     83_000_000_000,
     source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
@@ -1541,7 +1541,7 @@ DFDA_ROI_SIMPLE = Parameter(
 # ---
 
 # QALY valuations
-# Source: brain/book/appendix/icer-full-calculation.qmd
+# Source: knowledge/appendix/icer-full-calculation.qmd
 STANDARD_ECONOMIC_QALY_VALUE_USD = Parameter(
     150000,
     source_ref=ReferenceID.QALY_VALUE,
@@ -2771,7 +2771,7 @@ TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
 # ---
 
 # NPV analysis parameters
-# Source: brain/book/appendix/dfda-calculation-framework.qmd
+# Source: knowledge/appendix/dfda-calculation-framework.qmd
 NPV_DISCOUNT_RATE_STANDARD = Parameter(
     0.03,
     source_ref="",
@@ -2996,7 +2996,7 @@ DFDA_NPV_NET_BENEFIT_RD_ONLY = Parameter(
 # ---
 
 # Tier 1: Conservative - dFDA R&D savings only (10-year NPV)
-# Source: brain/book/appendix/dfda-roi-calculations.qmd NPV analysis
+# Source: knowledge/appendix/dfda-roi-calculations.qmd NPV analysis
 DFDA_ROI_RD_ONLY = Parameter(
     DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
@@ -3063,7 +3063,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 # ---
 
 # VICTORY Social Impact Bonds
-# Source: brain/book/economics/victory-bonds.qmd
+# Source: knowledge/economics/victory-bonds.qmd
 VICTORY_BOND_FUNDING_PCT = Parameter(
     0.10,
     source_ref="",
@@ -3319,9 +3319,9 @@ GLOBAL_POPULATION_2024 = Parameter(
 
 GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
     150000,
-    source_ref=ReferenceID.DEATHS_FROM_TREATABLE_DISEASES_15M,
+    source_ref=ReferenceID.WHO_DAILY_DEATHS,
     source_type="external",
-    description="Daily deaths from curable diseases globally",
+    description="Daily deaths from all diseases and aging globally",
     display_name="Daily Deaths from Curable Diseases Globally",
     unit="deaths/day",
     keywords=["150k", "day", "each day", "per day", "worldwide", "fatalities", "casualties"],
@@ -3329,20 +3329,16 @@ GLOBAL_DAILY_DEATHS_CURABLE_DISEASES = Parameter(
     confidence_interval=(120_000, 180_000),  # ±20% - disease mortality estimates vary by methodology
 )  # Daily deaths from curable diseases
 
-# Annual disease deaths (calculated from daily)
+# Annual disease deaths (from WHO global health estimates)
 GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
-    GLOBAL_DAILY_DEATHS_CURABLE_DISEASES * DAYS_PER_YEAR,
-    source_ref="/knowledge/economics/economics.qmd",
-    source_type="calculated",
-    description="Annual deaths from curable diseases globally",
+    55_000_000,
+    source_ref=ReferenceID.WHO_GLOBAL_HEALTH_ESTIMATES_2024,
+    source_type="external",
+    description="Annual deaths from all diseases and aging globally",
     display_name="Annual Deaths from Curable Diseases Globally",
     unit="deaths/year",
-    formula="GLOBAL_DAILY_DEATHS_CURABLE_DISEASES × DAYS_PER_YEAR",
-    latex=r"Deaths_{annual} = 150{,}000 \times 365 = 54.75M",
-    keywords=["day", "each day", "per day", "worldwide", "yearly", "fatalities", "casualties"],
-    inputs=['GLOBAL_DAILY_DEATHS_CURABLE_DISEASES'],
-    compute=lambda ctx: ctx["GLOBAL_DAILY_DEATHS_CURABLE_DISEASES"] * DAYS_PER_YEAR,
-)  # 54.75 million deaths/year
+    keywords=["worldwide", "yearly", "fatalities", "casualties"],
+)  # 55 million deaths/year from WHO
 
 # Disease economic burden
 GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
@@ -3541,7 +3537,7 @@ GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL = Parameter(
 )  # $340/person/year
 
 # GiveWell charity comparison
-# Source: brain/book/appendix/icer-full-calculation.qmd
+# Source: knowledge/appendix/icer-full-calculation.qmd
 GIVEWELL_COST_PER_LIFE_MIN = Parameter(
     3500,
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,

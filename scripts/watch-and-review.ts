@@ -57,15 +57,15 @@ function scheduleReview(filePath: string) {
   }, DEBOUNCE_MS);
 
   pendingReviews.set(filePath, timer);
-  console.log(`⏳ Scheduled review for ${path.basename(filePath)} in ${DEBOUNCE_MS/1000}s...`);
+  console.log(`⏳ Scheduled review for ${path.basename(filePath)} in ${DEBOUNCE_MS / 1000}s...`);
 }
 
-console.log('👀 Watching brain/book/**/*.qmd for changes...');
+console.log('👀 Watching knowledge/**/*.qmd for changes...');
 console.log('💡 Save a file to trigger automated review');
 console.log('⌛ Reviews run 3 seconds after you stop editing');
 console.log('🛑 Press Ctrl+C to stop\n');
 
-const watcher = chokidar.watch('brain/book/**/*.qmd', {
+const watcher = chokidar.watch('knowledge/**/*.qmd', {
   ignored: /(^|[\/\\])\../, // ignore dotfiles
   persistent: true,
   ignoreInitial: true

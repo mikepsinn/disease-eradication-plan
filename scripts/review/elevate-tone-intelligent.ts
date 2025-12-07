@@ -82,7 +82,7 @@ async function main() {
   const filesByDir = new Map<string, string[]>();
 
   for (const file of filesToProcess) {
-    const relPath = path.relative('brain/book', file).replace(/\\/g, '/');
+    const relPath = path.relative('knowledge', file).replace(/\\/g, '/');
     const dir = path.dirname(relPath);
 
     if (!filesByDir.has(dir)) {
@@ -115,9 +115,9 @@ async function main() {
   console.log('🚀 FILES READY FOR AGENT PROCESSING\n');
 
   // Write the file list to a temporary file for the agent
-  const fileListPath = 'brain/book/tone-elevation-files.txt';
+  const fileListPath = 'knowledge/tone-elevation-files.txt';
   const fileListContent = filesToProcess
-    .map(f => path.relative('brain/book', f).replace(/\\/g, '/'))
+    .map(f => path.relative('knowledge', f).replace(/\\/g, '/'))
     .join('\n');
 
   await fs.writeFile(fileListPath, fileListContent);

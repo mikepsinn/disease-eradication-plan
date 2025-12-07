@@ -110,7 +110,7 @@
 - Lobbying ROI: 1,813%
 - Public Choice Theory: Everyone's selfish (including government workers)
 - The solution: Align selfish incentives with good outcomes
-- See full chapter: brain/book/problem/unrepresentative-democracy.qmd
+- See full chapter: knowledge/problem/unrepresentative-democracy.qmd
 
 ### Regulatory Capture
 

@@ -78,7 +78,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
   let referencesFrontmatter = '';
 
   try {
-    existingReferencesContent = await fs.readFile('brain/book/references.qmd', 'utf-8');
+    existingReferencesContent = await fs.readFile('knowledge/references.qmd', 'utf-8');
     const refMatter = matter(existingReferencesContent);
     referencesFrontmatter = matter.stringify('', refMatter.data, { lineWidth: -1 } as any).trim();
     existingReferences = parseReferences(refMatter.content);
@@ -91,7 +91,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
     .join('\n\n');
 
   const fileDir = path.dirname(filePath);
-  const referencesPath = path.relative(fileDir, 'brain/book/references.qmd').replace(/\\/g, '/');
+  const referencesPath = path.relative(fileDir, 'knowledge/references.qmd').replace(/\\/g, '/');
 
   let bookStructure = '';
   try {
@@ -102,9 +102,9 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
 
   let prompt = await fs.readFile('scripts/prompts/fact-checker.md', 'utf-8');
   prompt = prompt.replace('{{referencesPath}}', referencesPath)
-                 .replace('{{bookStructure}}', bookStructure)
-                 .replace('{{existingRefsSummary}}', existingRefsSummary)
-                 .replace('{{body}}', body);
+    .replace('{{bookStructure}}', bookStructure)
+    .replace('{{existingRefsSummary}}', existingRefsSummary)
+    .replace('{{body}}', body);
 
   try {
     const responseText = await generateGeminiProContent(prompt);
@@ -129,7 +129,7 @@ export async function factCheckFileWithLLM(filePath: string): Promise<void> {
       if (dedupedNewRefs.length > 0) {
         const allReferences = [...existingReferences, ...dedupedNewRefs];
         const newReferencesFile = formatReferencesFile(allReferences, referencesFrontmatter);
-        await saveFile('brain/book/references.qmd', newReferencesFile);
+        await saveFile('knowledge/references.qmd', newReferencesFile);
         console.log(`✓ Added ${dedupedNewRefs.length} new reference(s) to references.qmd`);
       }
     } else {
@@ -369,9 +369,9 @@ async function mergeContentWithLLM(archivedContent: string, targetFilePath: stri
 
   let prompt = await fs.readFile('scripts/prompts/content-merger.md', 'utf-8');
   prompt = prompt.replace('{{styleGuide}}', styleGuide)
-                 .replace('{{targetFilePath}}', targetFilePath)
-                 .replace('{{targetBody}}', targetBody)
-                 .replace('{{archivedBody}}', archivedBody);
+    .replace('{{targetFilePath}}', targetFilePath)
+    .replace('{{targetBody}}', targetBody)
+    .replace('{{archivedBody}}', archivedBody);
 
   const mergedBody = await generateGeminiProContent(prompt);
 
@@ -387,9 +387,9 @@ export async function analyzeArchivedFile(filePath: string): Promise<void> {
 
   let prompt = await fs.readFile('scripts/prompts/archive-analysis.md', 'utf-8');
   prompt = prompt.replace('{{quartoYmlContent}}', quartoYmlContent)
-                 .replace('{{bookOutline}}', bookOutline)
-                 .replace('{{filePath}}', filePath)
-                 .replace('{{archivedContent}}', archivedContent);
+    .replace('{{bookOutline}}', bookOutline)
+    .replace('{{filePath}}', filePath)
+    .replace('{{archivedContent}}', archivedContent);
 
   const responseText = await generateGeminiProContent(prompt);
   const jsonMatch = responseText.match(/\{[\s\S]*\}/);
@@ -480,9 +480,9 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
 
   // Get Design Guide and Example File Content
   const designGuide = await fs.readFile('GUIDES/DESIGN_GUIDE.md', 'utf-8');
-  
+
   let prompt = await fs.readFile('scripts/prompts/figure-generator-prompt.md', 'utf-8');
-  
+
   // Inject the design guide
   prompt = prompt.replace('... [The full design guide content as provided previously] ...', designGuide);
 
@@ -519,9 +519,9 @@ export async function generateFigureForChapter(filePath: string): Promise<{ acti
   }
   if (responseJson.filename && responseJson.code && responseJson.insertion_paragraph) {
     console.log(`Generated new figure for ${filePath}: ${responseJson.filename}`);
-    return { 
-      action: 'create', 
-      filename: responseJson.filename, 
+    return {
+      action: 'create',
+      filename: responseJson.filename,
       code: responseJson.code,
       insertion_paragraph: responseJson.insertion_paragraph
     };

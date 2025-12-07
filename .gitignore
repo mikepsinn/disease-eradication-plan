@@ -65,7 +65,7 @@ brain/figures/**/*.html
 # Ignore stray HTML and _files directories from `quarto preview`
 # but DON'T ignore them if they are in the _book directory
 *_files/
-brain/book/**/*.html
+knowledge/**/*.html
 _book/
 libs/
 index.tex

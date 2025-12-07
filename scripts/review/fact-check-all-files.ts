@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Checking brain/book files for stale fact-checks...');
+  console.log('Checking knowledge files for stale fact-checks...');
 
   // Get all book files (already excludes references.qmd)
   const allBookFiles = await getBookFilesForProcessing();
@@ -20,7 +20,7 @@ async function main() {
   ];
 
   // Get stale files that need fact-checking
-  const allStaleBookFiles = await getStaleFiles('lastFactCheckHash', 'brain/book');
+  const allStaleBookFiles = await getStaleFiles('lastFactCheckHash', 'knowledge');
 
   // Filter to only book files that are stale and not excluded
   const staleFilesToCheck = allStaleBookFiles.filter(file => {
@@ -37,14 +37,14 @@ async function main() {
     return true;
   });
 
-  console.log(`\nFound ${allStaleBookFiles.length} stale files in brain/book`);
+  console.log(`\nFound ${allStaleBookFiles.length} stale files in knowledge`);
   if (allStaleBookFiles.length > staleFilesToCheck.length) {
     console.log(`  - ${allStaleBookFiles.length - staleFilesToCheck.length} excluded (references.qmd, vision.qmd, futures chapters)`);
   }
   console.log(`  - ${staleFilesToCheck.length} files to fact-check\n`);
 
   if (staleFilesToCheck.length === 0) {
-    console.log('All files in brain/book are up-to-date!');
+    console.log('All files in knowledge are up-to-date!');
     return;
   }
 

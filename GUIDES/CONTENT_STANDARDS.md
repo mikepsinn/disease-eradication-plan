@@ -17,7 +17,7 @@ tags: [standards, contributing, content, style, review, process, quality-assuran
 This repo is structured like a book. Root files are "chapters." Subdirectories are "sections" with the details. 
 
 
-**Note:** Don't edit `brain/book/index.md` directly - it's auto-generated from frontmatter.
+**Note:** Don't edit `knowledge/index.md` directly - it's auto-generated from frontmatter.
 
 ## 2. Quality Assurance and Actionable TODOs
 
@@ -53,7 +53,7 @@ lastFigureCheck: "YYYY-MM-DD"
 
 ## 4. Sourcing and Citation Standard (CRITICAL)
 
-**Every claim needs a source.** All source quotes go in `brain/book/references.qmd`.
+**Every claim needs a source.** All source quotes go in `knowledge/references.qmd`.
 
 1. Check if your source is already there
 2. If yes, link to it with the appropriate anchor
@@ -152,7 +152,7 @@ Use these five checks to audit every chapter file.
 
 **3. Sourcing & Credibility:**
 
-- **Universal Citation:** Is every claim, number, and statistic backed by an inline citation to `brain/book/references.qmd`?
+- **Universal Citation:** Is every claim, number, and statistic backed by an inline citation to `knowledge/references.qmd`?
 - **Source Verification:** Have you personally checked that the source exists, is valid, and actually supports the claim being made?
 
 **4. Visuals & Data (per `DESIGN_GUIDE.md`):**

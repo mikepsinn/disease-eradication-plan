@@ -11,19 +11,19 @@ async function main() {
   console.log(`Found ${mainChapterFiles.length} main chapter files (excluding appendices)`);
 
   // Get stale files that need checking
-  const allStaleFiles = await getStaleFiles('lastStructureCheckHash', 'brain/book');
+  const allStaleFiles = await getStaleFiles('lastStructureCheckHash', 'knowledge');
 
   // Files to exclude from structure checking:
   // - references.qmd: Reference list, not a narrative chapter
   // - Part intro files: These are meant to summarize their child chapters
   const excludedFiles = [
-    'brain/book/references.qmd',
-    'brain/book/problem.qmd',     // Part I: The Problem intro
-    'brain/book/solution.qmd',    // Part II: The Solution intro
-    'brain/book/proof.qmd',       // Part III: The Case intro
-    'brain/book/economics.qmd',   // The Economic Case intro
-    'brain/book/futures.qmd',     // Intro to Paths
-    'brain/book/strategy.qmd',    // Strategy section intro
+    'knowledge/references.qmd',
+    'knowledge/problem.qmd',     // Part I: The Problem intro
+    'knowledge/solution.qmd',    // Part II: The Solution intro
+    'knowledge/proof.qmd',       // Part III: The Case intro
+    'knowledge/economics.qmd',   // The Economic Case intro
+    'knowledge/futures.qmd',     // Intro to Paths
+    'knowledge/strategy.qmd',    // Strategy section intro
   ];
 
   // Filter to only include main chapter files that are stale

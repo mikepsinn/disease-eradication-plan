@@ -48,35 +48,35 @@ const ROOT_DIR = getProjectRoot();
 const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
 
 export async function getGitignorePatterns(): Promise<string[]> {
-    const gitignorePath = path.join(ROOT_DIR, '.gitignore');
-    try {
-        const gitignoreContent = await fs.readFile(gitignorePath, 'utf-8');
-        return gitignoreContent.split('\n').filter(line => line.trim() && !line.startsWith('#'));
-    } catch (error) {
-        console.error("Could not read .gitignore file:", error);
-        return [];
-    }
+  const gitignorePath = path.join(ROOT_DIR, '.gitignore');
+  try {
+    const gitignoreContent = await fs.readFile(gitignorePath, 'utf-8');
+    return gitignoreContent.split('\n').filter(line => line.trim() && !line.startsWith('#'));
+  } catch (error) {
+    console.error("Could not read .gitignore file:", error);
+    return [];
+  }
 }
 
 export async function findFiles(pattern: string): Promise<string[]> {
-    const gitignore = ignore().add(await getGitignorePatterns());
-    const files = await glob(pattern, {
-        cwd: ROOT_DIR,
-        nodir: true,
-        absolute: true,
-    });
-    return files.filter(file => !gitignore.ignores(path.relative(ROOT_DIR, file)));
+  const gitignore = ignore().add(await getGitignorePatterns());
+  const files = await glob(pattern, {
+    cwd: ROOT_DIR,
+    nodir: true,
+    absolute: true,
+  });
+  return files.filter(file => !gitignore.ignores(path.relative(ROOT_DIR, file)));
 }
 
 export async function findBookFiles(): Promise<string[]> {
-    const pattern = 'knowledge/**/*.qmd';
-    const files = await glob(pattern, {
-        cwd: ROOT_DIR,
-        ignore: IGNORE_PATTERNS.map(p => `**/${p}/**`),
-        nodir: true,
-        absolute: true,
-    });
-    return files;
+  const pattern = 'knowledge/**/*.qmd';
+  const files = await glob(pattern, {
+    cwd: ROOT_DIR,
+    ignore: IGNORE_PATTERNS.map(p => `**/${p}/**`),
+    nodir: true,
+    absolute: true,
+  });
+  return files;
 }
 
 /**
@@ -84,18 +84,18 @@ export async function findBookFiles(): Promise<string[]> {
  * Only replaces em-dashes surrounded by letters
  */
 export function replaceEmDashesInValue(value: any): any {
-    if (typeof value === 'string') {
-        return value.replace(/([a-zA-Z])—([a-zA-Z])/g, '$1, $2');
-    } else if (Array.isArray(value)) {
-        return value.map(replaceEmDashesInValue);
-    } else if (value && typeof value === 'object') {
-        const newObj: any = {};
-        for (const key in value) {
-            newObj[key] = replaceEmDashesInValue(value[key]);
-        }
-        return newObj;
+  if (typeof value === 'string') {
+    return value.replace(/([a-zA-Z])—([a-zA-Z])/g, '$1, $2');
+  } else if (Array.isArray(value)) {
+    return value.map(replaceEmDashesInValue);
+  } else if (value && typeof value === 'object') {
+    const newObj: any = {};
+    for (const key in value) {
+      newObj[key] = replaceEmDashesInValue(value[key]);
     }
-    return value;
+    return newObj;
+  }
+  return value;
 }
 
 /**
@@ -107,31 +107,31 @@ export function replaceEmDashesInValue(value: any): any {
  * Note: Em-dash replacement is only done in content, not frontmatter
  */
 export function cleanFrontmatterData(data: any): any {
-    const cleaned = { ...data };
+  const cleaned = { ...data };
 
-    // For descriptions that are multi-line, collapse them to a single line.
-    if (cleaned.description && typeof cleaned.description === 'string') {
-        cleaned.description = cleaned.description.replace(/\n/g, ' ').trim();
+  // For descriptions that are multi-line, collapse them to a single line.
+  if (cleaned.description && typeof cleaned.description === 'string') {
+    cleaned.description = cleaned.description.replace(/\n/g, ' ').trim();
+  }
+
+  // Remove date and dateCreated fields
+  delete cleaned.date;
+  delete cleaned.dateCreated;
+
+  // Remove all hash fields - they're stored in the centralized hash store now
+  const hashFields = Object.values(HASH_FIELDS);
+  for (const hashField of hashFields) {
+    delete cleaned[hashField];
+  }
+
+  // Convert any remaining Date objects to ISO strings to prevent YAML errors
+  for (const key in cleaned) {
+    if (cleaned[key] instanceof Date) {
+      cleaned[key] = cleaned[key].toISOString();
     }
+  }
 
-    // Remove date and dateCreated fields
-    delete cleaned.date;
-    delete cleaned.dateCreated;
-
-    // Remove all hash fields - they're stored in the centralized hash store now
-    const hashFields = Object.values(HASH_FIELDS);
-    for (const hashField of hashFields) {
-        delete cleaned[hashField];
-    }
-
-    // Convert any remaining Date objects to ISO strings to prevent YAML errors
-    for (const key in cleaned) {
-        if (cleaned[key] instanceof Date) {
-            cleaned[key] = cleaned[key].toISOString();
-        }
-    }
-
-    return cleaned;
+  return cleaned;
 }
 
 /**
@@ -139,24 +139,24 @@ export function cleanFrontmatterData(data: any): any {
  * This should be used by all scripts when saving .qmd/.md files
  */
 export function stringifyWithFrontmatter(body: string, frontmatter: any): string {
-    const cleanedFrontmatter = cleanFrontmatterData(frontmatter);
-    
-    // Check if frontmatter is empty (no keys or all values are empty/null/undefined)
-    const hasContent = cleanedFrontmatter && Object.keys(cleanedFrontmatter).length > 0;
-    
-    if (!hasContent) {
-        // No frontmatter - return body as-is
-        return body;
-    }
-    
-    // Use js-yaml.dump directly with options that preserve emojis and Unicode characters
-    // lineWidth: -1 prevents wrapping, which helps preserve emojis
-    const yamlFrontmatter = yaml.dump(cleanedFrontmatter, {
-        lineWidth: -1,
-        noRefs: true,
-        sortKeys: false,
-    });
-    return `---\n${yamlFrontmatter}---\n${body}`;
+  const cleanedFrontmatter = cleanFrontmatterData(frontmatter);
+
+  // Check if frontmatter is empty (no keys or all values are empty/null/undefined)
+  const hasContent = cleanedFrontmatter && Object.keys(cleanedFrontmatter).length > 0;
+
+  if (!hasContent) {
+    // No frontmatter - return body as-is
+    return body;
+  }
+
+  // Use js-yaml.dump directly with options that preserve emojis and Unicode characters
+  // lineWidth: -1 prevents wrapping, which helps preserve emojis
+  const yamlFrontmatter = yaml.dump(cleanedFrontmatter, {
+    lineWidth: -1,
+    noRefs: true,
+    sortKeys: false,
+  });
+  return `---\n${yamlFrontmatter}---\n${body}`;
 }
 
 /**
@@ -164,8 +164,8 @@ export function stringifyWithFrontmatter(body: string, frontmatter: any): string
  * This is the internal function used by programmaticFormat
  */
 function formatFrontmatter(content: string): string {
-    const { data, content: body } = matter(content);
-    return stringifyWithFrontmatter(body, data);
+  const { data, content: body } = matter(content);
+  return stringifyWithFrontmatter(body, data);
 }
 
 export function programmaticFormat(content: string): string {
@@ -239,43 +239,43 @@ export async function saveFile(filePath: string, content: string): Promise<void>
 }
 
 export async function getBookFiles(options: { includeAppendices?: boolean; exclude?: string[] } = {}): Promise<string[]> {
-    const { includeAppendices = true, exclude = [] } = options;
-    const quartoYmlContent = await fs.readFile('_book.yml', 'utf-8');
-    const doc: any = yaml.load(quartoYmlContent);
+  const { includeAppendices = true, exclude = [] } = options;
+  const quartoYmlContent = await fs.readFile('_book.yml', 'utf-8');
+  const doc: any = yaml.load(quartoYmlContent);
 
-    let files: string[] = [];
+  let files: string[] = [];
 
-    const extractFiles = (section: any[]): string[] => {
-        let fileList: string[] = [];
-        if (!section) return fileList;
-        for (const item of section) {
-            if (typeof item === 'string') {
-                fileList.push(item);
-            } else if (item && item.href) {
-                fileList.push(item.href);
-            } else if (item && item.chapters) {
-                fileList = fileList.concat(extractFiles(item.chapters));
-            }
-        }
-        return fileList;
-    };
-
-    if (doc.book && doc.book.chapters) {
-        files = files.concat(extractFiles(doc.book.chapters));
+  const extractFiles = (section: any[]): string[] => {
+    let fileList: string[] = [];
+    if (!section) return fileList;
+    for (const item of section) {
+      if (typeof item === 'string') {
+        fileList.push(item);
+      } else if (item && item.href) {
+        fileList.push(item.href);
+      } else if (item && item.chapters) {
+        fileList = fileList.concat(extractFiles(item.chapters));
+      }
     }
+    return fileList;
+  };
 
-    if (includeAppendices && doc.appendices) {
-        files = files.concat(extractFiles(doc.appendices));
-    }
+  if (doc.book && doc.book.chapters) {
+    files = files.concat(extractFiles(doc.book.chapters));
+  }
 
-    const defaultExclusions = ['brain/book/references.qmd'];
-    const allExclusions = [...defaultExclusions, ...exclude];
+  if (includeAppendices && doc.appendices) {
+    files = files.concat(extractFiles(doc.appendices));
+  }
 
-    return files.filter(file => {
-        if (!file) return false;
-        const normalizedFile = file.replace(/\\/g, '/');
-        return !allExclusions.some(excluded => normalizedFile.includes(excluded));
-    });
+  const defaultExclusions = ['knowledge/references.qmd'];
+  const allExclusions = [...defaultExclusions, ...exclude];
+
+  return files.filter(file => {
+    if (!file) return false;
+    const normalizedFile = file.replace(/\\/g, '/');
+    return !allExclusions.some(excluded => normalizedFile.includes(excluded));
+  });
 }
 
 // --- Content Hash Utilities ---
@@ -295,14 +295,14 @@ export function getBodyHash(content: string): string {
 export async function readFileWithMatter(filePath: string): Promise<{ frontmatter: any; body: string; originalContent: string }> {
   const originalContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(originalContent);
-  
+
   // Remove hash fields from frontmatter - they're stored in hash store now
   const hashFields = Object.values(HASH_FIELDS);
   const cleanedFrontmatter = { ...frontmatter };
   for (const hashField of hashFields) {
     delete cleanedFrontmatter[hashField];
   }
-  
+
   return { frontmatter: cleanedFrontmatter, body, originalContent };
 }
 
@@ -318,10 +318,10 @@ export async function updateFileWithHash(
 ): Promise<void> {
   const tempContent = stringifyWithFrontmatter(body, frontmatter);
   const hash = getBodyHash(tempContent);
-  
+
   // Store hash in centralized hash store instead of frontmatter
   await setFileHash(filePath, hashFieldName as HashFieldName, hash);
-  
+
   // Save file without hash in frontmatter
   const newContent = stringifyWithFrontmatter(body, frontmatter);
   await saveFile(filePath, newContent);
@@ -372,7 +372,7 @@ export async function parseQuartoYml(): Promise<BookStructure> {
       inAppendices = false;
     }
 
-    // Match files directly listed (e.g., "- brain/book/file.qmd")
+    // Match files directly listed (e.g., "- knowledge/file.qmd")
     const directMatch = line.match(/^\s*-\s+([^\s]+\.qmd)/);
     if (directMatch) {
       if (inAppendices) {
@@ -404,10 +404,10 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
   console.log('  → Loading glob module...');
   const { glob } = await import('glob');
 
-  // Find all .qmd files in brain/book
-  console.log('  → Searching for .qmd files in brain/book/**/*.qmd...');
-  const bookFiles = await glob('brain/book/**/*.qmd');
-  console.log(`  → Found ${bookFiles.length} files in brain/book`);
+  // Find all .qmd files in knowledge
+  console.log('  → Searching for .qmd files in knowledge/**/*.qmd...');
+  const bookFiles = await glob('knowledge/**/*.qmd');
+  console.log(`  → Found ${bookFiles.length} files in knowledge`);
 
   // Also include index.qmd from root
   console.log('  → Searching for .qmd files in root...');
@@ -424,8 +424,8 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
   allFiles = allFiles.filter(file => {
     const normalizedPath = file.replace(/\\/g, '/');
     return !normalizedPath.includes('references.qmd') &&
-           !normalizedPath.includes('_freeze/') &&
-           !normalizedPath.includes('_book/');
+      !normalizedPath.includes('_freeze/') &&
+      !normalizedPath.includes('_book/');
   });
   console.log(`  → Final count after filtering: ${allFiles.length} files`);
 

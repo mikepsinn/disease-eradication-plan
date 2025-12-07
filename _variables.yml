@@ -598,14 +598,14 @@
   parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
   \ 9/11 terrorism deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS\
-  \ | Unit: ratio | Click to view calculation\">18,274</a>"
+  \ | Unit: ratio | Click to view calculation\">18,358</a>"
 "disease_vs_terrorism_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{3{,}000\\\
   text{ terrorism deaths}} \\approx 18{,}274:1\n$$"
 "disease_vs_war_deaths_ratio": "<a href=\"/knowledge/economics/economics\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Ratio of annual disease deaths to\
   \ war deaths | ✓ High confidence | Formula: ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS |\
-  \ Unit: ratio | Click to view calculation\">224</a>"
+  \ Unit: ratio | Click to view calculation\">225</a>"
 "disease_vs_war_deaths_ratio_latex": "$$\n\\frac{54.75\\text{M disease deaths}}{400{,}000\\\
   text{ conflict deaths}} \\approx 137:1\n$$"
 "dividend_coverage_factor": "<a href=\"/knowledge/strategy/roadmap#sustainability\"\
@@ -747,13 +747,12 @@
   \ calculation\">245K</a>"
 "global_annual_conflict_deaths_total_latex": "$$\nDeaths_{total} = 233,600 \\text{\
   \ (combat)} + 8,300 \\text{ (terror)} + 2,700 \\text{ (state)} = 244,600\n$$"
-"global_annual_deaths_curable_diseases": "<a href=\"/knowledge/economics/economics\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual deaths\
-  \ from curable diseases globally | ✓ High confidence | Formula: GLOBAL_DAILY_DEATHS_CURABLE_DISEASES\
-  \ × DAYS_PER_YEAR | Unit: deaths/year | Click to view calculation\">54.8M</a>"
-"global_annual_deaths_curable_diseases_latex": "$$\nDeaths_{annual} = 150{,}000 \\\
-  times 365 = 54.75M\n$$"
+"global_annual_deaths_curable_diseases": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual deaths from\
+  \ all diseases and aging globally | ✓ High confidence | Unit: deaths/year | Click\
+  \ to view source\">55M</a>"
+"global_annual_deaths_curable_diseases_cite": "@who-global-health-estimates-2024"
 "global_annual_environmental_damage_conflict": "<a href=\"https://warondisease.org/knowledge/references.html#environmental-cost-of-war\"\
   \ class=\"parameter-link\" data-source-ref=\"environmental-cost-of-war\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual environmental damage and restoration\
@@ -947,12 +946,12 @@
   \ 1B) ÷ LIVES_SAVED | Unit: USD/life | Click to view calculation\">$16.1K</a>"
 "global_cost_per_life_saved_med_research_annual_latex": "$$\nCostPerLifeSaved = \\\
   frac{\\$67.5B \\times 10^9}{4,200,000} \\approx \\$16,071\n$$"
-"global_daily_deaths_curable_diseases": "<a href=\"https://warondisease.org/knowledge/references.html#deaths-from-treatable-diseases-15m\"\
-  \ class=\"parameter-link\" data-source-ref=\"deaths-from-treatable-diseases-15m\"\
-  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Daily deaths from\
-  \ curable diseases globally | ✓ High confidence | 95% CI: [120K deaths/day, 180K\
-  \ deaths/day] | Dist: Lognormal | Unit: deaths/day | Click to view source\">150K</a>"
-"global_daily_deaths_curable_diseases_cite": "@deaths-from-treatable-diseases-15m"
+"global_daily_deaths_curable_diseases": "<a href=\"https://warondisease.org/knowledge/references.html#who-daily-deaths\"\
+  \ class=\"parameter-link\" data-source-ref=\"who-daily-deaths\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Daily deaths from all diseases and aging\
+  \ globally | ✓ High confidence | 95% CI: [120K deaths/day, 180K deaths/day] | Dist:\
+  \ Lognormal | Unit: deaths/day | Click to view source\">150K</a>"
+"global_daily_deaths_curable_diseases_cite": "@who-daily-deaths"
 "global_disease_deaths_daily": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -1914,5 +1913,5 @@
   \ | Unit: rate | Click to view source\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "total_parameter_count": "310"
-"total_latex_equation_count": "119"
-"total_citation_count": "124"
+"total_latex_equation_count": "118"
+"total_citation_count": "125"

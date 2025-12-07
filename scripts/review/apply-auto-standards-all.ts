@@ -4,14 +4,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Checking brain/book files for stale formatting...');
+  console.log('Checking knowledge files for stale formatting...');
 
-  const staleFilesToCheck = await getStaleFiles('lastFormattedHash', 'brain/book');
+  const staleFilesToCheck = await getStaleFiles('lastFormattedHash', 'knowledge');
 
-  console.log(`\nFound ${staleFilesToCheck.length} stale files in brain/book to format\n`);
+  console.log(`\nFound ${staleFilesToCheck.length} stale files in knowledge to format\n`);
 
   if (staleFilesToCheck.length === 0) {
-    console.log('All files in brain/book are up-to-date!');
+    console.log('All files in knowledge are up-to-date!');
     return;
   }
 

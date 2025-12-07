@@ -1,9 +1,0 @@
-**Sensitivity Indices for Annual Deaths from Curable Diseases Globally**
-
-Regression-based sensitivity showing which inputs explain the most variance in the output.
-
-| Input Parameter | Sensitivity Coefficient | Interpretation |
-|:----------------|------------------------:|:---------------|
-| Global Daily Deaths Curable Diseases | 1.0000 | Strong driver |
-
-*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

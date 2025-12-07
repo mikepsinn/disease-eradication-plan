@@ -169,7 +169,7 @@ python scripts/hardcode_list_values.py
 
 This script:
 1. Dynamically loads all 384 formatted variables and constants from `dih_models/parameters.py`
-2. Scans all `.qmd` files (in `brain/book/` and root directory)
+2. Scans all `.qmd` files (in `knowledge/` and root directory)
 3. Replaces all `` `{python} variable_name` `` with the actual hardcoded value
 4. Skips code blocks and frontmatter
 

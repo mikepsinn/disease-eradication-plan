@@ -13,8 +13,8 @@ function printUsage() {
     console.log(`  ${key.padEnd(25)} → ${value}`);
   });
   console.log('\nExample:');
-  console.log('  npx tsx scripts/review/update-hash.ts brain/book/theory.qmd TONE_ELEVATION_WITH_HUMOR');
-  console.log('  npx tsx scripts/review/update-hash.ts brain/book/theory.qmd lastToneElevationWithHumorHash');
+  console.log('  npx tsx scripts/review/update-hash.ts knowledge/theory.qmd TONE_ELEVATION_WITH_HUMOR');
+  console.log('  npx tsx scripts/review/update-hash.ts knowledge/theory.qmd lastToneElevationWithHumorHash');
 }
 
 async function main() {

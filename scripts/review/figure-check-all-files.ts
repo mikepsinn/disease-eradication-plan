@@ -38,32 +38,32 @@ async function generateFigures() {
       let content = await fs.readFile(file, 'utf-8');
       let contentModified = false;
 
-    if (result.action === 'create' && result.filename && result.code && result.insertion_paragraph) {
-      const figurePath = path.join('brain/figures', result.filename);
-      await fs.writeFile(figurePath, result.code);
-      console.log(`✓ Created new figure: ${figurePath}`);
-      
-      const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), figurePath).replace(/\\/g, '/')} >}}\n`;
-      if (content.includes(result.insertion_paragraph)) {
-        content = content.replace(result.insertion_paragraph, `${result.insertion_paragraph}\n${includeDirective}`);
-        contentModified = true;
-        console.log(`✓ Inserted new figure after paragraph in ${file}.`);
+      if (result.action === 'create' && result.filename && result.code && result.insertion_paragraph) {
+        const figurePath = path.join('brain/figures', result.filename);
+        await fs.writeFile(figurePath, result.code);
+        console.log(`✓ Created new figure: ${figurePath}`);
+
+        const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), figurePath).replace(/\\/g, '/')} >}}\n`;
+        if (content.includes(result.insertion_paragraph)) {
+          content = content.replace(result.insertion_paragraph, `${result.insertion_paragraph}\n${includeDirective}`);
+          contentModified = true;
+          console.log(`✓ Inserted new figure after paragraph in ${file}.`);
+        }
+
+      } else if (result.action === 'include' && result.filename && result.insertion_paragraph) {
+        const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), result.filename).replace(/\\/g, '/')} >}}\n`;
+        if (!content.includes(result.filename) && content.includes(result.insertion_paragraph)) {
+          content = content.replace(result.insertion_paragraph, `${result.insertion_paragraph}\n${includeDirective}`);
+          contentModified = true;
+          console.log(`✓ Inserted existing figure after paragraph in ${file}.`);
+        }
+      } else if (result.action === 'none') {
+        console.log(`- No action needed for ${file}.`);
       }
 
-    } else if (result.action === 'include' && result.filename && result.insertion_paragraph) {
-      const includeDirective = `\n\n{{< include ${path.relative(path.dirname(file), result.filename).replace(/\\/g, '/')} >}}\n`;
-      if (!content.includes(result.filename) && content.includes(result.insertion_paragraph)) {
-        content = content.replace(result.insertion_paragraph, `${result.insertion_paragraph}\n${includeDirective}`);
-        contentModified = true;
-        console.log(`✓ Inserted existing figure after paragraph in ${file}.`);
+      if (contentModified) {
+        await fs.writeFile(file, content);
       }
-    } else if (result.action === 'none') {
-      console.log(`- No action needed for ${file}.`);
-    }
-
-    if (contentModified) {
-      await fs.writeFile(file, content);
-    }
     } catch (error) {
       console.error(`\n❌ FATAL ERROR analyzing ${file}:`, error);
       console.error('\nStopping script due to error.');
@@ -75,14 +75,14 @@ async function generateFigures() {
 }
 
 async function checkFigures() {
-  console.log('Checking brain/book files for stale figure-checks...');
+  console.log('Checking knowledge files for stale figure-checks...');
 
-  const staleFilesToCheck = await getStaleFiles('lastFigureCheckHash', 'brain/book');
+  const staleFilesToCheck = await getStaleFiles('lastFigureCheckHash', 'knowledge');
 
-  console.log(`\nFound ${staleFilesToCheck.length} stale files in brain/book to figure-check\n`);
+  console.log(`\nFound ${staleFilesToCheck.length} stale files in knowledge to figure-check\n`);
 
   if (staleFilesToCheck.length === 0) {
-    console.log('All files in brain/book are up-to-date!');
+    console.log('All files in knowledge are up-to-date!');
     return;
   }
 

@@ -52,9 +52,9 @@ export interface ReviewCheck {
  * Default directories for different types of content
  */
 export const CONTENT_DIRS = {
-  BOOK: 'brain/book',
-  APPENDIX: 'brain/book/appendix',
-  REFERENCES: 'brain/book/references.qmd',
+  BOOK: 'knowledge',
+  APPENDIX: 'knowledge/appendix',
+  REFERENCES: 'knowledge/references.qmd',
 } as const;
 
 /**
@@ -73,12 +73,12 @@ export const SPECIAL_FILES = {
   REFERENCES: 'references.qmd',
   // Part introduction files that summarize their child chapters
   PART_INTROS: [
-    'brain/book/problem.qmd',
-    'brain/book/solution.qmd',
-    'brain/book/proof.qmd',
-    'brain/book/economics.qmd',
-    'brain/book/futures.qmd',
-    'brain/book/strategy.qmd',
+    'knowledge/problem.qmd',
+    'knowledge/solution.qmd',
+    'knowledge/proof.qmd',
+    'knowledge/economics.qmd',
+    'knowledge/futures.qmd',
+    'knowledge/strategy.qmd',
   ],
 } as const;
 
@@ -87,10 +87,10 @@ export const SPECIAL_FILES = {
  * Note: We no longer do programmatic transformations - each file needs intelligent review
  */
 export const TONE_REVIEW_PRIORITY = [
-  'brain/book/economics/best-idea-in-the-world.qmd', // Has "Best Idea Ever Conceived" type language
-  'brain/book/strategy/strategy-execution-overview.qmd',
-  'brain/book/solution/war-on-disease.qmd',
-  'brain/book/solution/1-percent-treaty.qmd',
+  'knowledge/economics/best-idea-in-the-world.qmd', // Has "Best Idea Ever Conceived" type language
+  'knowledge/strategy/strategy-execution-overview.qmd',
+  'knowledge/solution/war-on-disease.qmd',
+  'knowledge/solution/1-percent-treaty.qmd',
 ] as const;
 
 /**

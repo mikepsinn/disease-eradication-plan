@@ -15,8 +15,8 @@ This appendix provides comprehensive documentation of all parameters and calcula
 
 **Total parameters**: 310
 
-- External sources (peer-reviewed): 124
-- Calculated values: 102
+- External sources (peer-reviewed): 125
+- Calculated values: 101
 - Core definitions: 84
 
 ## Calculated Values {#sec-calculated}
@@ -916,35 +916,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_annual_conflict_deaths_total.qmd >}}
-
-
-### Annual Deaths from Curable Diseases Globally {#sec-global_annual_deaths_curable_diseases}
-
-**Value**: 54.8M deaths/year
-
-Annual deaths from curable diseases globally
-
-$$
-Deaths_{annual} = 150{,}000 \times 365 = 54.75M
-$$
-
-**Methodology**: [../economics/economics](../economics/economics)
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_annual_deaths_curable_diseases.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_annual_deaths_curable_diseases.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_annual_deaths_curable_diseases.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_annual_deaths_curable_diseases.qmd >}}
 
 
 ### Annual Cost of Combat Deaths {#sec-global_annual_human_cost_active_combat}
@@ -3462,6 +3433,17 @@ Annual deaths from terror attacks globally
 *✓ High confidence*
 
 
+### Annual Deaths from Curable Diseases Globally {#sec-global_annual_deaths_curable_diseases}
+
+**Value**: 55M deaths/year
+
+Annual deaths from all diseases and aging globally
+
+**Source**: [who-global-health-estimates-2024](../references.qmd#who-global-health-estimates-2024)
+
+*✓ High confidence*
+
+
 ### Annual Environmental Damage and Restoration Costs from Conflict {#sec-global_annual_environmental_damage_conflict}
 
 **Value**: $100B
@@ -3880,9 +3862,9 @@ Annual global spending on clinical trials (Total: Government + Industry)
 
 **Value**: 150K deaths/day
 
-Daily deaths from curable diseases globally
+Daily deaths from all diseases and aging globally
 
-**Source**: [deaths-from-treatable-diseases-15m](../references.qmd#deaths-from-treatable-diseases-15m)
+**Source**: [who-daily-deaths](../references.qmd#who-daily-deaths)
 
 #### Uncertainty Range
 
@@ -5643,7 +5625,7 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 ### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
 
-**Value**: 18,274 ratio
+**Value**: 18,358 ratio
 
 Ratio of annual disease deaths to 9/11 terrorism deaths
 
@@ -5652,7 +5634,7 @@ Ratio of annual disease deaths to 9/11 terrorism deaths
 
 ### Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
 
-**Value**: 224 ratio
+**Value**: 225 ratio
 
 Ratio of annual disease deaths to war deaths
 

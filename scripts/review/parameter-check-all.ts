@@ -4,14 +4,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function main() {
-  console.log('Checking brain/book files for hardcoded numbers...');
+  console.log('Checking knowledge files for hardcoded numbers...');
 
-  const staleFilesToCheck = await getStaleFiles('lastParamCheckHash', 'brain/book');
+  const staleFilesToCheck = await getStaleFiles('lastParamCheckHash', 'knowledge');
 
-  console.log(`\nFound ${staleFilesToCheck.length} stale files in brain/book to check for parameterization.\n`);
+  console.log(`\nFound ${staleFilesToCheck.length} stale files in knowledge to check for parameterization.\n`);
 
   if (staleFilesToCheck.length === 0) {
-    console.log('All files in brain/book are up-to-date!');
+    console.log('All files in knowledge are up-to-date!');
     return;
   }
 

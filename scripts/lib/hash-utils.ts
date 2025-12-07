@@ -23,11 +23,11 @@ export async function updateFileHash(
  */
 export async function getStaleFilesForWishonia(): Promise<string[]> {
   const { glob } = await import("glob");
-  // Check both knowledge/ and brain/book/ directories
+  // Check both knowledge/ and knowledge/ directories
   const knowledgeFiles = await glob("knowledge/**/*.qmd", {
     ignore: ["**/node_modules/**", "**/_book/**", "**/_freeze/**"],
   });
-  const bookFiles = await glob("brain/book/**/*.qmd", {
+  const bookFiles = await glob("knowledge/**/*.qmd", {
     ignore: ["**/node_modules/**", "**/_book/**", "**/_freeze/**", "**/references.qmd"],
   });
   const files = [...knowledgeFiles, ...bookFiles];
