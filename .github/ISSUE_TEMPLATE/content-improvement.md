@@ -8,7 +8,7 @@ assignees: ""
 
 **1. Describe the improvement or correction**
 A clear and concise description of what you want to improve or correct.
-_Example: "The section on VICTORY Bonds is missing a citation for the $2.4T figure."_
+_Example: "The section on VICTORY Incentive Alignment Bonds is missing a citation for the $2.4T figure."_
 
 **2. Location of the content**
 Please provide a link to the page or section that needs improvement.

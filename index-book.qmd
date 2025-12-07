@@ -214,7 +214,7 @@ Meanwhile, your species spends {{< var military_to_government_clinical_trials_sp
 
 #### Step 1: The Paper Collection Phase
 
-You create special papers called "VICTORY Bonds" which are like war bonds except backwards. Instead of giving papers to make humans stop living, these papers make humans continue living, which is a radical new concept your species hasn't tried.
+You create special papers called "VICTORY Incentive Alignment Bonds" which are like war bonds except backwards. Instead of giving papers to make humans stop living, these papers make humans continue living, which is a radical new concept your species hasn't tried.
 
 Rich humans give you {{< var treaty_campaign_total_cost >}} in papers because you promise them {{< var victory_bond_annual_return_pct >}}, which is better returns than selling organs but requires less refrigeration. They calculate that being dead significantly reduces their yacht-purchasing capacity.
 
@@ -458,7 +458,7 @@ If the treaty fails, investors lose their money. But they'll be too dead from pr
 - Real Estate: 15% (for people who like being landlords)
 - S&P 500: 10% (for people who hate money)
 - Cocaine Trafficking: 90% (but risky)
-- **VICTORY Bonds: {{< var victory_bond_annual_return_pct >}} (and legal)**
+- **VICTORY Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}} (and legal)**
 
 {{< include knowledge/figures/victory-bonds-roi-projection-bar-chart.qmd >}}
 
@@ -522,7 +522,7 @@ Show them a spreadsheet:
 
 #### Your Offer
 
-- VICTORY Bonds: $20M (worth $54M/year at {{< var victory_bond_annual_return_pct >}} returns)
+- VICTORY Incentive Alignment Bonds: $20M (worth $54M/year at {{< var victory_bond_annual_return_pct >}} returns)
 - Moral status: "Medical hero" (fake, but sounds nice)
 - Legacy: "Accidentally saved humanity while getting rich"
 

@@ -398,7 +398,7 @@ Expected post-office income by tier:
 
 #### The Setup
 
-[VICTORY Bonds](../economics/victory-bonds.qmd) have raised $1B from investors who want 270% returns. That money has funded:
+[VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) have raised $1B from investors who want 270% returns. That money has funded:
 
 - A referendum showing 70% of Americans support reallocating 1% of military spending to pragmatic clinical trials
 - A lobbying campaign that's converted several defense contractors (they did the math on their own mortality)
@@ -586,13 +586,13 @@ Incentive Alignment Bonds supply the **how**.
 
 (This is the part of the presentation where the venture capitalist starts nodding.)
 
-### 7a. How VICTORY Bonds and IABs Work Together
+### 7a. How VICTORY Incentive Alignment Bonds and IABs Work Together
 
-If you've read the [VICTORY Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "How do these fit together?"
+If you've read the [VICTORY Incentive Alignment Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "How do these fit together?"
 
 They solve different problems for different people:
 
-| | VICTORY Bonds | Incentive Alignment Bonds |
+| | VICTORY Incentive Alignment Bonds | Incentive Alignment Bonds |
 |:--|:--------------|:--------------------------|
 | **Who's incentivized** | Investors | Politicians |
 | **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers (funded by IAB allocation) |
@@ -600,7 +600,7 @@ They solve different problems for different people:
 | **Payout trigger** | Treaty passes | Health outcomes improve |
 | **Legal structure** | Revenue share on treaty funding | Scoring systems + independent campaign support |
 
-**VICTORY Bonds** solve the **capital problem**: "How do we raise $1B to fund the campaign that passes the treaty?"
+**VICTORY Incentive Alignment Bonds** solve the **capital problem**: "How do we raise $1B to fund the campaign that passes the treaty?"
 
 **IABs** solve the **political problem**: "How do we make politicians *want* to support and maintain the treaty?"
 
@@ -608,12 +608,12 @@ The relationship is complementary:
 
 | Phase | Instrument | What It Does |
 |:------|:-----------|:-------------|
-| Pre-Treaty | VICTORY Bonds | Raise capital from investors; fund the campaign |
+| Pre-Treaty | VICTORY Incentive Alignment Bonds | Raise capital from investors; fund the campaign |
 | Pre-Treaty | IABs (scoring) | Show politicians that supporting the treaty improves their scores |
-| Post-Treaty | VICTORY Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
+| Post-Treaty | VICTORY Incentive Alignment Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
 | Post-Treaty | IABs (full mechanism) | Reward politicians whose countries actually achieve health improvements |
 
-VICTORY Bonds get investors to fund the war. IABs get politicians to fight it (and keep fighting after victory).
+VICTORY Incentive Alignment Bonds get investors to fund the war. IABs get politicians to fight it (and keep fighting after victory).
 
 The {{< var dih_treasury_medical_research_pct >}} of treaty revenue that doesn't go to bondholders or political incentives? That is allocated from the 1% Treaty Fund to decentralized institutes of health (DIH) to actually fund the pragmatic clinical trials. The split is:
 
@@ -754,7 +754,7 @@ Without a mechanism for **sustained political pressure**, the treaty stalls at 1
 
 #### IABs Are the Political Ratchet
 
-The 10% IAB allocation creates something VICTORY Bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
+The 10% IAB allocation creates something VICTORY Incentive Alignment Bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
 
 | Treaty Level | Total Revenue | 1% Treaty Fund Revenue | Research Funding | Political Incentive |
 |:-------------|:--------------|:------------|:-----------------|:--------------------|
@@ -776,9 +776,9 @@ At 100%: "$270B/year in political incentives unlocks $2.16 *trillion* per year i
 
 The 10% isn't a cost. It's the **engine** that drives the entire expansion. Without it, you get a one-time win. With it, you get a self-reinforcing cycle that makes each expansion easier than the last.
 
-#### Why VICTORY Bonds Alone Won't Scale
+#### Why VICTORY Incentive Alignment Bonds Alone Won't Scale
 
-VICTORY Bonds solve the *initial* alignment problem:
+VICTORY Incentive Alignment Bonds solve the *initial* alignment problem:
 
 - Investors fund the campaign
 - Treaty passes

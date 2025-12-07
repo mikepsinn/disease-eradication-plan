@@ -189,7 +189,7 @@ The mechanism is financial, not bureaucratic:
 
 1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
 2. **Providers get paid**: Treatment providers can charge for patient participation in trials, making trials profitable rather than costly
-3. **Easy enrollment**: a decentralized framework for drug assessment infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
+3. **Easy enrollment**: A decentralized framework for drug assessment infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
@@ -230,7 +230,7 @@ This is the monetized value of {{< var disease_eradication_delay_deaths_total >}
 
 {{< var disease_eradication_delay_deaths_total_latex >}}
 
-- **{{< var disease_eradication_delay_deaths_total >}} by eliminating {{< var efficacy_lag_years >}}-year post-safety efficacy lag by allowing anyone to participate in efficacy trials and immediately publishing results (one-time benefit)
+- **{{< var disease_eradication_delay_deaths_total >}} by eliminating {{< var efficacy_lag_years >}}-year post-safety efficacy lag** by allowing anyone to participate in efficacy trials and immediately publishing results (one-time benefit)
 - **{{< var treaty_lives_saved_annual_global >}}/year from peace dividend** ({{< var treaty_reduction_pct >}} conflict reduction; recurring annual benefit)
 
 For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current regulatory system waiting for drug approval.
@@ -1336,11 +1336,15 @@ By collapsing the cost of clinical trials by {{< var trial_cost_reduction_factor
 
 The economic benefits outlined above demonstrate the value proposition of the {{< var treaty_reduction_pct >}} Treaty system. Implementation requires political mobilization to achieve treaty adoption:
 
-### Step 1: Run a Global Survey
+### Step 1: The Global Mandate (The Philanthropic Catalyst)
 
-Ask 3.5% of the global population if they would support a treaty that would redirect {{< var treaty_reduction_pct >}} of global military spending to hyper-efficient pragmatic clinical trials.
+**Goal**: Survey **3.5% of the global population** ({{< var treaty_campaign_voting_bloc_target >}} people).
 
-### Step 2: Sell $1B in VICTORY Social Impact Bonds
+**Why 3.5%?**: Historical analysis (Chenoweth et al.) proves that no government has ever withstood nonviolent civil challenge from 3.5% of its population. This "Shadow Mandate" creates the political inevitability required to ratify the treaty.
+
+**Funding**: This educational and scientific polling initiative is the primary entry point for **philanthropic partners**, validating global demand before the main campaign begins.
+
+### Step 2: Sell $1B in VICTORY Incentive Alignment Bonds
 
 Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
 They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
@@ -1376,7 +1380,7 @@ Nobody needs to be convinced. They just need to count.
 **For comprehensive implementation details**, see:
 
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
-- **[VICTORY Social Impact Bonds](victory-bonds.qmd)** - Financing mechanism for lobbying efforts
+- **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Financing mechanism for lobbying efforts
 - **[Financial Plan Overview](financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
 
 ### Campaign Budget Breakdown

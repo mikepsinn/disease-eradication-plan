@@ -1079,7 +1079,7 @@ You want to end war and disease. You need $1 billion. You have $0. Here's the 36
 
 **Phase 3: Bond Offering & Treaty Push (Months 19-36)**
 
-- **Raise $1B via VICTORY Bonds:** The war chest to win the political fight.
+- **Raise $1B via VICTORY Incentive Alignment Bonds:** The war chest to win the political fight.
 - **Global Media Blitz:** Make a 1% treaty the #1 issue globally.
 - **Treaty Ratification:** Coordinated political push in key nations to get the treaty signed.
 
@@ -1111,7 +1111,7 @@ Trying to use one tool for all three jobs is like trying to build a house with o
 - **3. The Victory Corporation (The "Engine" - Delaware C-Corp)**
   - **What It Is:** A standard, for-profit corporation.
   - **What It Does:** It's the financial engine designed to attract Wall Street.
-    - **Issues VICTORY Bonds:** Sells the high-risk, high-return bonds to investors.
+    - **Issues VICTORY Incentive Alignment Bonds:** Sells the high-risk, high-return bonds to investors.
     - **Funds the War Chest:** Uses the $1B raised to fund the expensive lobbying and media campaigns run by the 501(c)(4).
     - **Delivers Returns:** Manages the treaty inflows to pay the 270% return to its bondholders.
 
@@ -1137,7 +1137,7 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
 
 ### The Investment Vehicle
 
-*VICTORY Bonds*
+*VICTORY Incentive Alignment Bonds*
 
 - **The Instrument: High-Risk, High-Return Political Arbitrage**
   - Perpetual 10% of all DIH treaty inflows
@@ -1228,7 +1228,7 @@ This four-part "sibling" structure is the standard for sophisticated, large-scal
   - Become eligible for subsidized treatments
   - Share information with others
 - **Invest Capital** (If you have it)
-  - VICTORY Bonds: $1,000 minimum
+  - VICTORY Incentive Alignment Bonds: $1,000 minimum
   - Growth: Returns scale automatically with treasury
   - Risk: Tradable on secondary markets
 - **Contribute Skills** (If you have them)

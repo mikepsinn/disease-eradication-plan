@@ -27,7 +27,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 ### 1. Fundraising: How To Raise $1.0B
 
-**Instrument:** [VICTORY Social Impact Bonds](victory-bonds.qmd)
+**Instrument:** [VICTORY Incentive Alignment Bonds](victory-bonds.qmd)
 
 - **Target Returns:** {{< var victory_bond_annual_return_pct >}} annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
@@ -172,7 +172,7 @@ Key protections:
 
 ## Related Documents
 
-- **[VICTORY Social Impact Bonds](victory-bonds.qmd)** - Investment thesis and bond structure
+- **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Investment thesis and bond structure
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
 - **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
 - **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise $1B
@@ -182,7 +182,7 @@ Key protections:
 
 | Component | Target | Mechanism |
 |-----------|--------|-----------|
-| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY Social Impact Bonds |
+| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY Incentive Alignment Bonds |
 | **Spend** | Campaign budget | Referendum + lobbying + platform |
 | **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation via Wishocracy |
 | **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |

@@ -4,7 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
-#| fig-cap: "VICTORY Social Impact Bonds: 270% Perpetual Returns"
+#| fig-cap: "VICTORY Incentive Alignment Bonds: 270% Perpetual Returns"
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -19,7 +19,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 # Sources: S&P 500 (historical avg), Real Estate (avg appreciation),
 # Venture Capital (industry avg), Medallion Fund (../references.qmd),
-# Cocaine (UN estimates), VICTORY Social Impact Bonds (../economics/victory-bonds.qmd)
+# Cocaine (UN estimates), VICTORY Incentive Alignment Bonds (../economics/victory-bonds.qmd)
 
 investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
 returns = [
@@ -28,18 +28,18 @@ returns = [
     25,  # Venture Capital (no parameter exists)
     39,  # Medallion Fund (no parameter exists)
     90,  # Cocaine (no parameter exists)
-    VICTORY_BOND_ANNUAL_RETURN_PCT * 100  # VICTORY Bonds
+    VICTORY_BOND_ANNUAL_RETURN_PCT * 100  # VICTORY Incentive Alignment Bonds
 ]
 
 # Create chart
 
 fig, ax = plt.subplots(figsize=(14, 10))
 
-# White bars with black outline for comparison items, solid black for VICTORY Social Impact Bonds (emphasis)
+# White bars with black outline for comparison items, solid black for VICTORY Incentive Alignment Bonds (emphasis)
 
 bars = []
 for i, ret in enumerate(returns):
-    if i == len(returns) - 1:  # Last item (VICTORY Social Impact Bonds) - solid black for emphasis
+    if i == len(returns) - 1:  # Last item (VICTORY Incentive Alignment Bonds) - solid black for emphasis
         bar = ax.barh(i, ret, color=COLOR_BLACK, edgecolor=COLOR_BLACK, height=0.6, linewidth=2)
     else:  # Other investments - white with black outline
         bar = ax.barh(i, ret, color=COLOR_WHITE, edgecolor=COLOR_BLACK, height=0.6, linewidth=2)
@@ -49,8 +49,8 @@ for i, ret in enumerate(returns):
 
 for i, (bar, ret) in enumerate(zip(bars, returns)):
     width = bar[0].get_width()
-    # White text on black bar (VICTORY Social Impact Bonds), black text on white bars (others)
-    if i == len(returns) - 1:  # VICTORY Social Impact Bonds - white text on black bar
+    # White text on black bar (VICTORY Incentive Alignment Bonds), black text on white bars (others)
+    if i == len(returns) - 1:  # VICTORY Incentive Alignment Bonds - white text on black bar
         ax.text(width/2, bar[0].get_y() + bar[0].get_height()/2.,
                 f'{ret}%', ha='center', va='center', fontsize=44, weight='bold',
                 color=COLOR_WHITE)
@@ -99,7 +99,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 add_png_metadata(
     output_path,
     title="Annual Returns from Various Investments",
-    description="Comparison of ROI: S&P 500, real estate, venture capital, hedge funds, and VICTORY Social Impact Bonds"
+    description="Comparison of ROI: S&P 500, real estate, venture capital, hedge funds, and VICTORY Incentive Alignment Bonds"
 )
 
 plt.show()

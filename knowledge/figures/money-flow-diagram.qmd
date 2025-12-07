@@ -57,7 +57,7 @@ for box in boxes:
 arrows = [
     ((2.5, 5.6), (3.5, 5.6)),  # Treaty -> Fund
     ((5, 6.5), (6, 8.1)),      # Fund -> Patient Subsidies
-    ((5, 5.6), (6, 5.6)),      # Fund -> VICTORY Social Impact Bonds
+    ((5, 5.6), (6, 5.6)),      # Fund -> VICTORY Incentive Alignment Bonds
     ((5, 4.5), (6, 3.1)),      # Fund -> Pragmatic Trials
     ((7.5, 8.1), (8.5, 8.1)),  # Subsidies -> Treatment
     ((7.5, 5.6), (8.5, 5.6)),  # Bonds -> Returns

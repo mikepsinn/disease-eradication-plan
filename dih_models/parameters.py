@@ -2314,7 +2314,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     TREATY_CAMPAIGN_BUDGET_REFERENDUM + TREATY_CAMPAIGN_BUDGET_LOBBYING + TREATY_CAMPAIGN_BUDGET_RESERVE,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation",
     source_type="calculated",
-    description="Total treaty campaign cost (100% VICTORY Social Impact Bonds)",
+    description="Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
     display_name="Total 1% Treaty Campaign Cost",
     unit="USD",
     formula="REFERENDUM + LOBBYING + RESERVE",
@@ -3062,7 +3062,7 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 # VICTORY SOCIAL IMPACT BONDS
 # ---
 
-# VICTORY Social Impact Bonds
+# VICTORY Incentive Alignment Bonds
 # Source: knowledge/economics/victory-bonds.qmd
 VICTORY_BOND_FUNDING_PCT = Parameter(
     0.10,

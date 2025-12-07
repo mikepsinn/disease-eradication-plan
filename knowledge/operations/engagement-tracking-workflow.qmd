@@ -363,7 +363,7 @@ AUTOMATION CONFIG
 
 Name: "High-Value VICTORY Bond Lead - Alert Founder"
 
-Trigger: When record created in table "VICTORY Bonds"
+Trigger: When record created in table "VICTORY Incentive Alignment Bonds"
 Condition: IF {Amount Invested} > 100000
 Actions:
   1. Send Slack message

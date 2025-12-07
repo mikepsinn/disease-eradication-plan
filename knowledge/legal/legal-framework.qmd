@@ -47,7 +47,7 @@ with dot.subgraph(name='cluster_entities') as entities:
     entities.attr(label='Operating Entities', style='dashed')
     entities.node('C3', '501(c)(3) Public Charity\n"The Brain"\n- Tax-deductible donations\n- Education & research\n- Global referendum')
     entities.node('C4', '501(c)(4) Social Welfare\n"The Sword"\n- Political advocacy\n- Unlimited lobbying\n- Voter mobilization')
-    entities.node('Corp', 'Victory Corporation\n"The Engine"\n- For-profit\n- Issues VICTORY Bonds\n- Investor returns')
+    entities.node('Corp', 'Victory Corporation\n"The Engine"\n- For-profit\n- Issues VICTORY Incentive Alignment Bonds\n- Investor returns')
 
 dot.node('Foundations', 'Foundations\n(Tax-deductible)')
 dot.node('Donors', 'Political Donors\n(Not deductible)')
@@ -97,7 +97,7 @@ display(IPImage(str(png_path)))
 
 ### What It Does
 
-- **Issues VICTORY Bonds:** Sells bonds with {{< var victory_bond_annual_return_pct >}} target returns
+- **Issues VICTORY Incentive Alignment Bonds:** Sells bonds with {{< var victory_bond_annual_return_pct >}} target returns
 - **Funds Bribery Operations:** Uses $1.0B raised to fund lobbying and campaigns
 - **Delivers Returns:** Manages treaty inflows to pay bondholders
 
@@ -202,7 +202,7 @@ Day-to-day operations managed by General Staff, modeled after military command s
 - **G-1 (Personnel & Recruitment):** Manages Personnel Roster - master list of everyone involved
 - **G-2 (Intelligence):** Intelligence on diseases and operational landscape
 - **G-3 (Operations):** Plans and executes pragmatic clinical trials using a decentralized framework for drug assessment (dFDA)
-- **G-4 (Logistics & Treasury):** Manages flow of funds from VICTORY Bonds
+- **G-4 (Logistics & Treasury):** Manages flow of funds from VICTORY Incentive Alignment Bonds
 - **G-5 (Plans & Strategy):** Develops long-term strategy, treaty expansions
 - **G-6 (Signal & Communications):** Manages propaganda, communications, technology platforms
 
@@ -246,7 +246,7 @@ For complete breakdown of financial mechanics and returns, see [Investment Vehic
 
 The SEC thinks everything is a security. Your grandmother's cookies? Probably a security. That feeling after a good sneeze? Definitely a security.
 
-### VICTORY Bonds: Definitely a Security
+### VICTORY Incentive Alignment Bonds: Definitely a Security
 
 #### The Howey Test
 
@@ -255,7 +255,7 @@ The SEC thinks everything is a security. Your grandmother's cookies? Probably a 
 3. With expectation of profits ✓ ({{< var victory_bond_annual_return_pct >}} annually)
 4. From efforts of others ✓
 
-Conclusion: VICTORY Bonds are super definitely a security. Time to comply!
+Conclusion: VICTORY Incentive Alignment Bonds are super definitely a security. Time to comply!
 
 ### How to Structure It
 
