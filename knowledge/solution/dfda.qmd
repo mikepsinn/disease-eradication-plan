@@ -26,13 +26,13 @@ This isn't because people don't want to help find cures. It's because the curren
 
 ## The Solution: Amazon for Clinical Trials
 
-Your dFDA is a **two-sided marketplace** that connects companies with treatments to patients who need them. It's Amazon, but instead of buying stuff you don't need, you're getting paid to help find cures.
+Your decentralized framework for drug assessment (dFDA) is a **two-sided marketplace** that connects companies with treatments to patients who need them. It's Amazon, but instead of buying stuff you don't need, you're getting paid to help find cures.
 
 ### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
 
 **Any company** - pharma, supplements, food, interventions - can instantly create a trial:
 
-1. **Register treatment** on dFDA.gov (name, ingredients, condition, price)
+1. **Register treatment** on a public portal (name, ingredients, condition, price)
 2. **Set treatment price** (what you charge patients - covers manufacturing + delivery)
 3. **Get automatic liability insurance** (built into platform)
 4. **Trial goes live immediately** - appears in search results, ranked by existing data
@@ -50,7 +50,7 @@ Your dFDA is a **two-sided marketplace** that connects companies with treatments
 ### The Payment Flow (Or: How Everyone Profits Except Disease)
 
 **Patient pays:** Treatment cost + Refundable deposit
-**Patient receives:** [DIH](dih.qmd) subsidy (from 1% treaty treasury)
+**Patient receives:** Subsidy (from a 1% Treaty Fund)
 **Patient reports:** Outcomes via simple app
 **Deposit refunded:** When trial complete
 **Net to patient:** $0 to -$50 (they might profit)
@@ -59,7 +59,7 @@ Your dFDA is a **two-sided marketplace** that connects companies with treatments
 
 - Patient joins trial for experimental migraine treatment ($100/month)
 - Pays: $100 treatment + $50 deposit = $150
-- Receives: $125 DIH subsidy
+- Receives: $125 subsidy
 - Out of pocket: $25
 - Completes trial, reports outcomes
 - Gets back: $50 deposit
@@ -79,12 +79,12 @@ Your dFDA is a **two-sided marketplace** that connects companies with treatments
 Research ideas → Grant committees → Selected few → $57M per trial → ~10 trials/year per company
 ```
 
-**dFDA marketplace (unlimited):**
+**Decentralized marketplace (unlimited):**
 ```
 Research ideas → Register instantly → Patients decide by joining → $0 per trial → Unlimited trials simultaneously
 ```
 
-**This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. Your dFDA marketplace can test EVERYTHING because:
+**This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. This decentralized marketplace can test EVERYTHING because:
 
 - No approval bottleneck (instant registration)
 - No funding bottleneck (patients pay for treatment)
@@ -92,9 +92,9 @@ Research ideas → Register instantly → Patients decide by joining → $0 per 
 - No disease too rare (if 100 patients exist globally, trial can run profitably)
 
 **Traditional trial:** Pharma spends $57M, tests most profitable drug only
-**dFDA trial:** Pharma spends $0, tests everything including supplements, food, lifestyle, off-patent drugs
+**Decentralized trial:** Pharma spends $0, tests everything including supplements, food, lifestyle, off-patent drugs
 
-The [DIH](dih.qmd) treasury doesn't fund research directly. **It subsidizes participation, which unlocks a self-sustaining marketplace that funds ALL research.**
+A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining marketplace that funds ALL research.**
 
 ## How It Works: Just Let People Try Stuff (Carefully)
 
@@ -118,7 +118,7 @@ We're basing the survival of our species on a sample size smaller than a kinderg
 
 ### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-Your dFDA is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
+Your decentralized framework for drug assessment is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
 
 Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
 
@@ -136,7 +136,7 @@ We have the tools to get reliable answers from real-world data. We just have to 
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
-Your dFDA upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
+Your decentralized framework for drug assessment upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
 
 Here's the revolutionary process:
 
@@ -178,7 +178,7 @@ No more guessing which treatment your doctor half-remembers from a conference. J
 
 ### Step 2.5: See the Future (With Financially-Backed Predictions)
 
-To complement the real-world data from past patients, your dFDA will integrate a powerful forecasting tool: **live prediction markets**.
+To complement the real-world data from past patients, your decentralized framework for drug assessment will integrate a powerful forecasting tool: **live prediction markets**.
 
 This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
 
@@ -191,7 +191,7 @@ For any given trial, you'll see real-time odds on questions like:
 #### Why Trust This?
 
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: [The DIH](dih.qmd) automatically resolves these bets using the actual, aggregated, and anonymized patient data collected by your dFDA. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
+2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using the actual, aggregated, and anonymized patient data collected through your decentralized framework for drug assessment. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
@@ -215,7 +215,7 @@ Revolutionary!
 
 Amazon can deliver a banana costume in 2 hours but experimental medications take 6 months and require seven forms of ID?
 
-Your dFDA fixes that. Your pharmacy becomes a trial site. Your doctor becomes a researcher. Your dying becomes data.
+Your framework fixes that. Your pharmacy becomes a trial site. Your doctor becomes a researcher. Your dying becomes data.
 
 ### Step 5: Publish Results
 
@@ -251,7 +251,7 @@ Here's what we ARE doing: establishing an open protocol that lets all the existi
 
 Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP - the protocol that lets all websites connect. Same idea.
 
-**How your dFDA gets funded:** Your dFDA is one of many campaigns competing for funding from the [DIH](dih.qmd) treasury via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If your dFDA gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
+**How your framework gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
 
 ### The Players Already in the Game
 
@@ -259,7 +259,7 @@ Companies like [Medable](../references.qmd#dct-platform-funding-medable) ($521M 
 
 Why compete with them? Partner instead.
 
-**Your dFDA provides**:
+**Your decentralized framework for drug assessment provides**:
 
 - Open protocol for data exchange (like email protocols)
 - Federated data network (data stays in Epic/Cerner/Apple Health systems)
@@ -310,7 +310,7 @@ Before writing code, form partnerships with:
 **For DCT platforms**:
 
 - "Founding Partner" status (branding/marketing value)
-- Access to {{< var treaty_annual_funding >}} annual DIH funding pool
+- Access to the {{< var treaty_annual_funding >}} annual 1% Treaty Fund pool
 - Governance representation
 - Early access to protocol features
 - Revenue sharing on trials they run
@@ -330,7 +330,7 @@ Data doesn't move to a central database. It stays where it is:
 - Apple Health keeps its data
 - Cerner keeps its data
 
-Your dFDA protocol just lets you run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
+Your framework's protocol just lets you run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
 
 This solves:
 
@@ -424,7 +424,7 @@ But they decide for you anyway.
     Millions Die
 ```
 
-**dFDA system:**
+**Decentralized system:**
 
 ```
 8 Billion Humans
@@ -605,13 +605,13 @@ Diseases are mostly solved. Death becomes a choice, like smoking or voting Repub
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
 
-### How your dFDA Actually Works
+### How Your Framework Actually Works
 
 ::: {.content-visible when-format="html"}
-<img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how your dFDA works" style="max-width: 600px; width: 100%;" />
+<img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how this framework works" style="max-width: 600px; width: 100%;" />
 :::
 
-Your dFDA achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
+Your decentralized framework for drug assessment achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
 
 - **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - **Time to results**: 2 years vs the current 17 years

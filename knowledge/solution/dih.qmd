@@ -28,7 +28,7 @@ A decentralized institute of health (DIH) is an alternative institutional design
 
 ### Rule 1: Let Patients Decide What Gets Funded
 
-**The idea:** Give the money directly to patients in the form of subsidies. Let them, in consultation with their doctors, decide which clinical trials to join. The trials that attract patients get funded. The ones that don't, don't.
+**The idea:** Give the money directly to patients in the form of subsidies. Let them, in consultation with their doctors, decide which pragmatic clinical trials to join. The trials that attract patients get funded. The ones that don't, don't.
 
 This replaces a grant-writing contest with a distributed supercomputer of millions of patients and doctors, all with skin in the game. It's the collective intelligence of humanity voting with its feet.
 
@@ -87,39 +87,46 @@ The NIH pays for permission to do research. A results-based system pays for rese
 **Single-sentence summary:** This is what you get when you pay scientists like you pay plumbers. i.e. for fixing the problem, not for explaining why it's hard.
 :::
 
-## How the Money Flows: DIH as Decentralized Crowdfunding Platform
+## How the Money Flows: The 1% Treaty Fund and Your DIH
 
-A decentralized institute of health functions as the **single governance layer** for all health research funding. Think of it as Kickstarter for clinical trials, except the stakes are higher and the rewards are measured in years of life.
+The **1% Treaty Fund** is the treasury that receives and allocates all funding. Your decentralized institute of health is an implementation pattern for organizations and trials that plug into this fund. Think of the fund as the App Store, and your DIH is one of the apps.
 
 {{< include ../figures/dih-architecture-diagram.qmd >}}
 
 ### The Architecture
 
-#### Your Decentralized Institutes of Health (DIH)
+#### A 1% Treaty Fund
 
-- Holds the treasury (from [1% treaty](1-percent-treaty.qmd))
+- Holds the treasury (from the [1% Treaty](1-percent-treaty.qmd))
 - Handles ALL budgeting decisions via [Wishocracy](wishocracy.qmd)
 - Funds campaigns, not bureaucracies
 - No CEO, no board, no one to corrupt
 
-**Your Decentralized Framework for Drug Assessment (dFDA)**
+#### Your Decentralized Institutes of Health (DIH)
 
-- Pure technical framework/protocol
-- No budget authority (gets funded BY DIH like any other campaign)
-- Just provides marketplace infrastructure
-- One of many campaigns competing for DIH funding
+- An implementation pattern for running pragmatic clinical trials.
+- Receives funding *from* the 1% Treaty Fund.
+- Competes with other research models for funding.
+- The operational layer where the science happens.
+
+#### Your Decentralized Framework for Drug Assessment (dFDA)
+
+- A pure technical framework/protocol for running pragmatic clinical trials at scale.
+- Has no budget authority (it's a campaign that gets funded by the 1% Treaty Fund).
+- Provides marketplace infrastructure for trials.
+- One of many campaigns competing for funding.
 
 ### How It Actually Works
 
 **1. Fill the Treasury**
 
-A [1% treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the 1% Treaty Fund. But not all of it reaches Wishocracy:
+A [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the 1% Treaty Fund. But not all of it reaches Wishocracy:
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
 | [VICTORY Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the investors who funded the campaign |
 | [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned with curing diseases |
-| **DIH research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Available for allocation via Wishocracy |
+| **1% Treaty Fund research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Available for allocation via Wishocracy |
 
 **2. Anyone Can Propose a Campaign**
 
@@ -135,7 +142,7 @@ No committees. No lobbying. Just millions of pairwise preferences aggregated int
 **4. Campaigns Compete for Funding**
 
 - **Patient subsidies:** Automatically funded (formulaic, ~80% of treasury)
-- **Infrastructure campaigns:** Multiple providers compete (dFDA platform, data storage, integrations)
+- **Infrastructure campaigns:** Multiple providers compete (a decentralized framework for drug assessment (dFDA), data storage, integrations)
 - **Research prizes:** Bounties for specific breakthroughs
 - **Public goods:** Market failures that need direct funding
 
@@ -157,9 +164,9 @@ Campaigns that deliver impact get continued funding. Failures get defunded. It's
 - Anyone can fork if captured
 - Cost to corrupt: Prohibitively high
 
-**Risk:** "What if the decentralized framework for drug assessment becomes the new FDA?"
+**Risk:** "What if your decentralized framework for drug assessment becomes the new FDA?"
 
-**Mitigation:** A dFDA has no budget authority. It's just a campaign competing for DIH funding. If it gets captured, fund a competing framework instead.
+**Mitigation:** Such a framework has no budget authority. It's just a campaign competing for funding from the 1% Treaty Fund. If it gets captured, fund a competing framework instead.
 
 ## Projected Efficiency Gains
 
@@ -167,7 +174,7 @@ If the mechanism design works as intended, a decentralized institute of health c
 
 ### Projected Performance Metrics (Theoretical)
 
-| Metric | NIH (Current) | DIH (Theoretical) | Potential Improvement |
+| Metric | NIH (Current) | A DIH (Theoretical) | Potential Improvement |
 |--------|---------------|-----------------|-------------|
 | **Payment trigger** | Grant approved | Results achieved | Incentive alignment |
 | **Cost per QALY** | [$50,000-$150,000](../references.qmd#qaly-value) | $5,000-$15,000 | ~10x reduction (theoretical) |
@@ -184,7 +191,7 @@ If these improvements are achieved independently, they could multiply:
 1. **~10x cost reduction** per QALY through elimination of overhead
 2. **~2x knowledge multiplier** from mandatory publication of all results
 3. **~4x speed multiplier** from cutting bureaucratic delays
-4. **~10-100x scale** from distributed trial infrastructure ([dFDA](dfda.qmd))
+4. **~10-100x scale** from distributed trial infrastructure (a decentralized framework for drug assessment)
 
 **Theoretical ceiling (if everything works):** 10 × 2 × 4 × 10 = 800x improvement in QALY production rate
 
@@ -192,7 +199,7 @@ This is obviously a theoretical maximum. Real-world implementation would face fr
 
 #### What This Could Mean in Practice
 
-A well-functioning DIH, combined with your dFDA framework and operating on a 1% treaty budget of {{< var treaty_annual_funding >}} annually, could theoretically produce more QALYs than the entire current global pragmatic clinical trials output. 
+A well-functioning decentralized institute of health (DIH), combined with your decentralized framework for drug assessment (dFDA) and operating on a 1% Treaty budget of {{< var treaty_annual_funding >}} annually, could theoretically produce more QALYs than the entire current global pragmatic clinical trials output. 
 
 If the theoretical efficiency gains are even partially realized, this could eventually lead to:
 

@@ -24,7 +24,7 @@ BILLION = 1_000_000_000
 # --- Data (annual costs in millions) ---
 
 programs = [
-    'dFDA Infrastructure\n(Lean Ecosystem)',
+    'Decentralized Drug Assessment\nFramework (Lean Ecosystem)',
     'Cancer Moonshot\nInitiative',
     'NIH "All of Us"\nResearch Program',
     'National Cancer\nInstitute (NCI)'
@@ -54,7 +54,7 @@ bars = ax.barh(
     height=0.7
 )
 
-# Highlight dFDA with solid fill
+# Highlight the decentralized framework with solid fill
 
 bars[0].set_facecolor(COLOR_BLACK)
 bars[0].set_hatch(None)
@@ -90,7 +90,7 @@ for i, (cost, mult) in enumerate(zip(costs, multipliers)):
 # --- Styling ---
 
 ax.set_title(
-    'dFDA Cost vs Other Federal Health Programs\nAnnual Operating Budget Comparison',
+    'Decentralized Drug Assessment Framework Cost\nvs. Other Federal Health Programs',
     fontsize=34, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
@@ -115,7 +115,7 @@ clean_spines(ax)
 ax.spines['left'].set_linewidth(2.5)
 ax.tick_params(axis='y', length=0)
 
-# Invert y-axis so dFDA is at top
+# Invert y-axis so the decentralized framework is at top
 
 ax.invert_yaxis()
 
@@ -134,9 +134,8 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,
-    title="dFDA Cost vs Other Federal Health Programs",
-    description="dFDA at $40M/year is 180x less than NCI, 12.5x less than All of Us program"
+    title="Cost of a Decentralized Drug Assessment Framework vs. Other Federal Health Programs",
+    description="A decentralized drug assessment framework at $40M/year is 180x less than NCI and 12.5x less than the 'All of Us' research program."
 )
 
 plt.show()
-```

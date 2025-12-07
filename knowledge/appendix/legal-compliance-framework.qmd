@@ -242,7 +242,7 @@ Swiss Foundation (Treaty Coordination)
 Building on the compliance requirements outlined above, this framework uses a sophisticated multi-entity structure that separates charitable, political, and investment activities while keeping everything aligned.
 
 ```{python}
-#| fig-alt: "Three main entities: For-Profit Entity (accepts investments, funds dFDA), 501(c)(3) Public Charity (accepts tax-deductible donations, focuses on education), 501(c)(4) Social Welfare Org (accepts non-deductible donations, focuses on advocacy). Funding sources connect to each entity. Education informs Advocacy, which creates mandate for For-Profit."
+#| fig-alt: "Three main entities: For-Profit Entity (accepts investments, funds development of a decentralized framework for drug assessment), 501(c)(3) Public Charity (accepts tax-deductible donations, focuses on education), 501(c)(4) Social Welfare Org (accepts non-deductible donations, focuses on advocacy). Funding sources connect to each entity. Education informs Advocacy, which creates mandate for For-Profit."
 import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
@@ -260,7 +260,7 @@ with dot.subgraph(name='cluster_initiative') as initiative:
     initiative.node('C', '501(c)(4) Social Welfare Org\nAccepts Donations (Not Deductible)')
 
 dot.node('Investors', 'Investors\n(Seeking Return)')
-dot.node('D', 'dFDA Infrastructure & Operations\n(The Product)')
+dot.node('D', 'Decentralized Drug Assessment Framework\nInfrastructure & Operations')
 dot.node('E', 'Education & Research\n- Public awareness campaigns\n- White papers & analysis\n- Building the website')
 dot.node('F', 'Advocacy & Lobbying\n- Independent expenditures\n- Direct lobbying for the treaty\n- Mobilizing voters')
 
@@ -316,12 +316,12 @@ display(IPImage(str(png_path)))
 
 #### 3. The For-Profit / Foundation: "The Engine"
 
-**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial dFDA development and operations, providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY Social Impact Bonds** which will ultimately fund the 1% Treaty Fund following a 1% treaty's ratification.
+**Primary Purpose:** Issue and manage private investment instruments (e.g., 'Project VICTORY Tokens/Bonds') to fund initial development and operations for a decentralized framework for drug assessment (dFDA), providing investor returns. This entity's work is distinct from, but aims to enable, the future issuance of **government-issued VICTORY Social Impact Bonds** which will ultimately fund the 1% Treaty Fund following a 1% treaty's ratification.
 
 #### Permitted Activities
 
 - Issuing private investment securities and managing investor relations to fund pre-treaty initiative development.
-- Funding technology development and operational scaling for a dFDA.
+- Funding technology development and operational scaling for a decentralized framework for drug assessment.
 - Upon ratification of a 1% treaty, this entity may transition to managing operational infrastructure for the 1% Treaty Fund and facilitating the mechanisms for investor payouts related to the government-issued VICTORY Social Impact Bonds.
 
 **Legal Structure:** Delaware C-Corporation or Cayman Islands foundation optimized for global investment and crypto-asset management.
@@ -330,13 +330,13 @@ display(IPImage(str(png_path)))
 
 ### HHS Policy Recommendations
 
-To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source decentralized framework for drug assessment protocol enabling perpetual, patient-driven clinical trials.
+To maximize the effectiveness of the [decentralized framework for drug assessment infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** (\$500 million) to incentivize creation of an open-source decentralized framework for drug assessment protocol enabling perpetual, patient-driven clinical trials.
 
 #### Key Policy Objectives
 
 1.  **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
 2.  **Clarify Pricing Mechanisms:** [Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8)](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)
-3.  **Redirect NIH Funding:** Transition research toward dFDA-leveraging projects
+3.  **Redirect NIH Funding:** Transition research toward projects leveraging the decentralized framework for drug assessment
 4.  **Leverage Medicare/Medicaid:** Utilize existing provisions for clinical trial participation
 5.  **Incentivize Innovation:** Launch \$500M X Prize for platform development
 
@@ -363,7 +363,7 @@ To maximize the effectiveness of the [dFDA Infrastructure](../solution/dfda.qmd)
 
 #### Revolutionary Exemptions for Certified Platforms
 
-- **Radical Device Simplification:** Class I/II devices require only registration if evaluated via certified dFDA
+- **Radical Device Simplification:** Class I/II devices require only registration if evaluated via a certified decentralized framework for drug assessment
 - **Platform-Based Post-Market Surveillance:** Replace traditional REMS programs with real-time platform monitoring
 - **Dynamic Digital Labeling:** FDA-approved systems for rapid label updates based on platform data
 - **Integrated Combination Product Review:** Single coordinated assessment using unified platform data

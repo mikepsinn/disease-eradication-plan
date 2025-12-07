@@ -101,7 +101,7 @@ ax.plot(years, cumulative_net_benefit_npv, marker='^', linewidth=4,
 
 ax.set_xlabel('Year', fontsize=24, fontweight='bold', color=COLOR_BLACK)
 ax.set_ylabel('Net Present Value ($B)', fontsize=24, fontweight='bold', color=COLOR_BLACK)
-ax.set_title('dFDA Net Present Value Analysis\n8% Discount, 5-Yr Adoption Ramp',
+ax.set_title('Net Present Value: A Decentralized Drug Assessment Framework\n8% Discount, 5-Yr Adoption Ramp',
              fontsize=28, fontweight='bold', pad=25, color=COLOR_BLACK)
 
 # Larger tick labels for mobile readability
@@ -163,7 +163,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
-    title="dFDA Net Present Value Analysis Over Time",
+    title="Net Present Value of a Decentralized Drug Assessment Framework",
     description="10-year NPV analysis showing cumulative costs, savings, and net benefit with 8% discount rate and 5-year adoption ramp"
 )
 

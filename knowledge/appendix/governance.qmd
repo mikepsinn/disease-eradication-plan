@@ -27,9 +27,9 @@ It functions like Kickstarter meets the NIH, but without corruption or bureaucra
 
 {{< include ../figures/dih-architecture-diagram.qmd >}}
 
-The DIH handles ALL budgeting decisions:
+Your decentralized institutes of health (DIH) handles ALL budgeting decisions:
 
-- Holds the treasury (from a [1% treaty](../solution/1-percent-treaty.qmd))
+- Governs the allocation of the [1% Treaty Fund](../solution/1-percent-treaty.qmd) treasury
 - Accepts campaign proposals from anyone
 - Uses [Wishocracy](../solution/wishocracy.qmd) to allocate funds across competing campaigns
 - No CEO, no board, governed by transparent code
@@ -38,36 +38,36 @@ The DIH handles ALL budgeting decisions:
 
 {{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
 
-### DIH (Governance Layer)
+### Your decentralized institutes of health (DIH) (Governance Layer)
 
 - Handles all budget allocation
 - Wishocracy voting on campaigns
-- Treasury management
+- Treasury governance
 - Prize distribution
 
-**dFDA (Technical Platform)**
+**A decentralized framework for drug assessment (dFDA) (Technical Platform)**
 
 - Pure technical infrastructure
 - NO budget authority
-- Gets funded BY DIH (like any other campaign)
-- If captured → fund alternative platform instead
+- Is funded by the 1% Treaty Fund (as directed by DIH governance)
+- If captured → fund an alternative platform instead
 
-This prevents the "new FDA" problem: dFDA can't become a bureaucratic bottleneck because it has no independent funding - it's just one campaign competing with others for 1% Treaty Fund funds.
+This prevents the "new FDA" problem: a decentralized framework for drug assessment can't become a bureaucratic bottleneck because it has no independent funding - it's just one campaign competing with others for 1% Treaty Fund funds.
 
 ## How Budget Allocation Works
 
-The DIH uses **[Wishocracy](../solution/wishocracy.qmd)** - a pairwise voting system - to allocate funds across competing campaign proposals.
+Your decentralized institutes of health (DIH) network uses **[Wishocracy](../solution/wishocracy.qmd)** - a pairwise voting system - to allocate funds across competing campaign proposals.
 
 **See [Wishocracy](../solution/wishocracy.qmd) for detailed explanation of how pairwise allocation works.**
 
 ### What Gets Funded: Market Failures Only
 
-Since the [dFDA marketplace](../solution/dfda.qmd) handles most research allocation automatically (patients choose trials → funding flows there), the 1% Treaty Fund primarily funds **market failures** - things the marketplace can't handle:
+Since the marketplace enabled by a [decentralized framework for drug assessment (dFDA)](../solution/dfda.qmd) handles most research allocation automatically (patients choose trials → funding flows there), the 1% Treaty Fund primarily funds **market failures** - things the marketplace can't handle:
 
 #### Infrastructure (Platform Must Exist First)
 
-- dFDA platform development & operations (~$10B/year)
-- Competing alternative dFDA implementations
+- Development and operations for a decentralized framework for drug assessment (~$10B/year)
+- Competing alternative implementations of a decentralized drug assessment framework
 - Data commons infrastructure (storage, processing)
 - Security audits and fraud detection systems
 
@@ -78,12 +78,12 @@ Since the [dFDA marketplace](../solution/dfda.qmd) handles most research allocat
 - Basic research with no patient application yet (can't be trials)
 - Replication studies (unglamorous but critical)
 
-**Why This is Minimal:** The [dFDA marketplace](../solution/dfda.qmd) eliminates most traditional research funding needs. Companies register treatments → Patients join trials → Revenue flows → Research happens. The DIH only needs to fund what the marketplace truly can't handle.
+**Why This is Minimal:** The marketplace created by a [decentralized framework for drug assessment](../solution/dfda.qmd) eliminates most traditional research funding needs. Companies register treatments → Patients join trials → Revenue flows → Research happens. Your decentralized institutes of health only needs to direct the 1% Treaty Fund to cover what the marketplace truly can't handle.
 
 ## Dive Deeper into the Governance Model
 
 - **[Wishocracy (RAPPA) Governance Model](../solution/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
-- **DIH On-Chain & AI Architecture:** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power the DIH. *(Coming Soon)*
+- **DIH On-Chain & AI Architecture:** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power a decentralized institutes of health network. *(Coming Soon)*
 
 ## Security & Anti-Corruption: Building Uncorruptible Institutions
 
@@ -127,7 +127,7 @@ Since the [dFDA marketplace](../solution/dfda.qmd) handles most research allocat
 
 ### Beyond Medical Research: A Template for Uncorruptible Governance
 
-This isn't just about protecting research funding – it's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods.
+This isn't just about protecting funding for pragmatic clinical trials and other public health goods – it's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods.
 
 Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), you demonstrate that {{< var treaty_annual_funding >}} can be managed with:
 

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-alt: "Separation of concerns: DIH handles governance and budgeting, dFDA provides technical platform"
+#| fig-alt: "Separation of concerns: The 1% Treaty Fund is the treasury, a decentralized institute of health provides governance, and a decentralized framework provides the technical platform."
 
 import graphviz
 from pathlib import Path
@@ -13,43 +13,47 @@ from dih_models.plotting.graphviz_helper import (
 
 # Create diagram
 
-dot = graphviz.Digraph(comment='DIH vs dFDA Separation', format='png')
+dot = graphviz.Digraph(comment='Fund vs DIH vs dFDA Separation', format='png')
 dot.attr(rankdir='LR', size='12,10')
 
 # Apply design guide styling
 
 setup_graphviz_style(dot)
 
-# DIH cluster (left)
+# 1% Treaty Fund node (The Treasury)
+
+dot.node('Fund', '1% Treaty Fund\n($1T/year)', shape='box')
+
+# Your decentralized institutes of health (DIH) cluster (Governance)
 
 with dot.subgraph(name='cluster_dih') as dih:
-    dih.attr(label='DIH: Governance Layer', style='solid', penwidth='3')
-    dih.node('Treasury', 'Treasury\n($1T/year)', shape='box')
+    dih.attr(label='Your decentralized institutes of health (DIH):\nGovernance Layer', style='solid', penwidth='3')
     dih.node('Wishocracy', 'Wishocracy\nVoting', shape='diamond')
     dih.node('Campaigns', 'Campaign\nAllocation', shape='box')
 
-    # What DIH does
-    dih.node('DIHDoes', 'DIH Handles:\n• Budget decisions\n• Campaign funding\n• Wishocracy voting\n• Treasury management\n• Prize distribution',
+    # What a DIH does
+    dih.node('DIHDoes', 'A DIH handles:\n• Budget decisions\n• Campaign funding\n• Wishocracy voting\n• Prize distribution',
              shape='note', style='filled', fillcolor='white')
 
-# dFDA cluster (right)
+# Your decentralized framework for drug assessment (dFDA) cluster (Technical Platform)
 
 with dot.subgraph(name='cluster_dfda') as dfda:
-    dfda.attr(label='dFDA: Technical Platform', style='solid', penwidth='3')
+    dfda.attr(label='Your decentralized framework for drug assessment (dFDA):\nTechnical Platform', style='solid', penwidth='3')
     dfda.node('Protocol', 'Open Protocol\n(Like HTTP)', shape='box')
-    dfda.node('Marketplace', 'Trial\nMarketplace', shape='box')
+    dfda.node('Marketplace', 'Pragmatic Trial\nMarketplace', shape='box')
     dfda.node('Data', 'Data Commons\n& Rankings', shape='box')
 
-    # What dFDA does
-    dfda.node('dFDADoes', 'dFDA Provides:\n• Platform infrastructure\n• Trial marketplace\n• Outcome rankings\n• Data protocol\n• NO budget authority',
+    # What a dFDA-style framework provides
+    dfda.node('dFDADoes', 'A dFDA provides:\n• Platform infrastructure\n• Pragmatic trial marketplace\n• Outcome rankings\n• Data protocol\n• NO budget authority',
               shape='note', style='filled', fillcolor='white')
 
-# Connections within DIH
+# Connections: Fund -> Governance -> Platform
 
-dot.edge('Treasury', 'Wishocracy', label='allocates via')
+dot.edge('Fund', 'Wishocracy', label='allocates via')
 dot.edge('Wishocracy', 'Campaigns', label='votes on')
+dot.edge('Campaigns', 'Protocol', label='Funds a technical platform\nas one campaign', style='bold', penwidth='2')
 
-# Connections within dFDA
+# Connections within the technical platform
 
 dot.edge('Protocol', 'Marketplace', label='enables')
 dot.edge('Marketplace', 'Data', label='generates')
@@ -60,7 +64,7 @@ dot.edge('Campaigns', 'Protocol', label='Funds dFDA as\none campaign', style='bo
 
 # Prevention of capture
 
-dot.node('Capture', 'If dFDA gets captured:\nFund alternative platform',
+dot.node('Capture', 'If a platform gets captured:\nFund an alternative',
          shape='note', style='dashed')
 dot.edge('Campaigns', 'Capture', style='dashed')
 

@@ -29,7 +29,7 @@ interventions = [
     'Water\nFluoridation',
     'Smoking\nCessation',
     'Childhood\nVaccinations',
-    '1% Treaty /\ndFDA Initiative'
+    '1% Treaty &\nDecentralized Drug\nAssessment'
 ]
 
 values = [water_fluoridation_benefit, smoking_cessation_benefit, childhood_vacc_benefit, total_benefit]
@@ -50,10 +50,10 @@ x_pos = 3
 
 bar1 = ax.bar(x_pos, peace_dividend, color=COLOR_WHITE, edgecolor=COLOR_BLACK,
               linewidth=2, width=0.6, label='Peace Dividend')
-# dFDA savings portion (stacked on top)
+# Decentralized framework savings portion (stacked on top)
 
 bar2 = ax.bar(x_pos, dfda_savings, bottom=peace_dividend, color=COLOR_WHITE,
-              edgecolor=COLOR_BLACK, linewidth=2, width=0.6, hatch='///', label='dFDA R&D Savings')
+              edgecolor=COLOR_BLACK, linewidth=2, width=0.6, hatch='///', label='R&D Savings from Decentralized Drug Assessment')
 
 # X-axis labels
 
@@ -72,9 +72,9 @@ for i in range(3):
 ax.text(x_pos, peace_dividend/2, f'${peace_dividend:.1f}B\nPeace\nDividend\nfrom 1%\nLess\nConflict',
         ha='center', va='center', fontsize=14, color=COLOR_BLACK, weight='bold',
         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
-# dFDA label (in middle of top segment)
+# Decentralized framework benefit label (in middle of top segment)
 
-ax.text(x_pos, peace_dividend + dfda_savings/2, f'${dfda_savings:.0f}B\nHealth and\nEconomic\nBenefit of a\nDecentralized\nFDA',
+ax.text(x_pos, peace_dividend + dfda_savings/2, f'${dfda_savings:.0f}B\nBenefit from a\nDecentralized\nDrug Assessment\nFramework',
         ha='center', va='center', fontsize=13, color=COLOR_BLACK, weight='bold',
         bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1))
 # Total label (above bar)

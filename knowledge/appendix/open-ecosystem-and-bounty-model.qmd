@@ -14,8 +14,7 @@ tags:
 #| echo: false
 from dih_models.parameters import *
 ```
-
-The [dFDA Infrastructure](../solution/dfda.qmd) won't cost billions to build. Because you're not building most of it.
+The infrastructure for a decentralized framework for drug assessment (dFDA) won't cost billions to build. Because you're not building most of it.
 
 Here's the plan:
 
@@ -137,7 +136,7 @@ For this strategy to succeed, four things must happen:
 
 ### 1. Critical Mass
 
-Platform needs enough users (patients, researchers, clinicians) and developers to create network effects.
+Your framework needs enough users (patients, researchers, clinicians) and developers to create network effects.
 
 No users = no developers. No developers = no plugins. No plugins = no users. Death spiral.
 
@@ -145,7 +144,7 @@ No users = no developers. No developers = no plugins. No plugins = no users. Dea
 
 ### 2. API Quality and Documentation
 
-Platform APIs must be:
+Your framework APIs must be:
 
 - **Robust:** They work reliably
 - **Well-documented:** Developers can figure them out
@@ -157,7 +156,7 @@ Non-negotiable.
 
 ### 3. Transparent Governance
 
-Bounty process must be:
+The bounty process must be:
 
 - **Transparent:** Anyone can see what's funded
 - **Fair:** Best solution wins, not best connection
@@ -167,7 +166,7 @@ Corruption kills trust. Trust is the foundation of open-source communities.
 
 ### 4. Clear Roadmap
 
-Core team must maintain and communicate clear vision (detailed in [Canonical Roadmap](../strategy/roadmap.qmd)).
+Your core team must maintain and communicate a clear vision (detailed in [Canonical Roadmap](../strategy/roadmap.qmd)).
 
 Developers need to know where the rails are going so they can build accordingly.
 
@@ -175,10 +174,10 @@ Ambiguity kills momentum.
 
 ## The Result
 
-If these four conditions are met, a dFDA can foster a thriving global network of tools that delivers medical innovation at a fraction of the cost of centralized, top-down development.
+If these four conditions are met, your decentralized framework for drug assessment can foster a thriving global network of tools that delivers medical innovation at a fraction of the cost of centralized, top-down development.
 
 WordPress proved this works for websites.
 Linux proved it works for operating systems.
-A dFDA will prove it works for curing disease.
+Your framework will prove it works for curing disease.
 
 Or it won't, and everyone continues dying from preventable things. Your choice.

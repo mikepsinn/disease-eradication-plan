@@ -26,7 +26,7 @@ interventions_data = {
     'Childhood\nVaccinations (US)': 15.0
 }
 
-# 1% treaty + DIH + dFDA breakdown
+# 1% Treaty & dFDA Initiative breakdown
 # Convert Parameter objects to billions for chart display
 
 peace_dividend_components = {
@@ -59,7 +59,7 @@ for i, (name, value) in enumerate(zip(intervention_names, intervention_values)):
     ax.text(i, value + 2, f'${value:.1f}B',
             ha='center', va='bottom', fontsize=24, color=COLOR_BLACK, weight='bold')
 
-# Plot stacked bar for 1% treaty + DIH + dFDA
+# Plot stacked bar for the 1% Treaty & dFDA Initiative
 
 bottom_offset = 0
 hatches = ['', '///', '...', '|||']
@@ -149,7 +149,7 @@ ax.set_ylim(0, total_treaty_benefit * 1.15)
 
 # Title (28-36pt per DESIGN_GUIDE)
 
-ax.set_title('Annual Net Societal Benefits:\nCurrent Health Programs vs 1% treaty + DIH + dFDA',
+ax.set_title('Annual Net Societal Benefits:\nCurrent Health Programs vs the 1% Treaty & dFDA Initiative',
             fontsize=32, color=COLOR_BLACK, weight='bold', pad=20)
 
 # Add callout about uniqueness - positioned in upper left with consistent style

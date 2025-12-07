@@ -80,10 +80,10 @@ def calculate_peace_dividend(reduction_percent: float = 0.01) -> Dict[str, float
 
 peace_dividend = calculate_peace_dividend(0.01)
 print(f"1% Peace Dividend: ${peace_dividend['total_peace_dividend']/1e9:.1f}B annually")
-print(f"Military budget available for DIH: ${peace_dividend['military_budget_redirect']/1e9:.1f}B")
+print(f"Military budget available for a 1% Treaty Fund: ${peace_dividend['military_budget_redirect']/1e9:.1f}B")
 ```
 
-## 2. dFDA ROI Calculation
+## 2. ROI for a Global Pragmatic Trial Framework
 
 ```{python}
 #| echo: true
@@ -93,7 +93,7 @@ def calculate_dfda_roi(
     addressable_market: float = GLOBAL_CLINICAL_TRIAL_MARKET
 ) -> Dict[str, float]:
     """
-    Calculate ROI for a dFDA Infrastructure.
+    Calculate ROI for a decentralized framework for drug assessment (dFDA).
 
     Returns:
         Dictionary with ROI metrics
@@ -127,7 +127,7 @@ def calculate_dfda_roi(
 # Calculate base case ROI
 
 dfda_roi = calculate_dfda_roi()
-print(f"dFDA ROI: {dfda_roi['roi_ratio']:.0f}:1")
+print(f"Framework ROI: {dfda_roi['roi_ratio']:.0f}:1")
 print(f"Annual savings: ${dfda_roi['annual_savings']/1e9:.1f}B")
 print(f"10-year NPV: ${dfda_roi['npv_10_year']/1e9:.1f}B")
 ```
@@ -163,13 +163,13 @@ print(f"Economic value: ${qaly_value['total_value']/1e9:.1f}B")
 print(f"ICER: ${qaly_value['icer']:,} (dominant intervention)")
 ```
 
-## 4. DIH Market Allocation Efficiency
+## 4. Market Allocation Efficiency
 
 ```{python}
 #| echo: true
 def calculate_market_efficiency(
     nih_budget: float = NIH_ANNUAL_BUDGET,
-    dih_budget: float = 27_000_000_000,  # From 1% treaty
+    dih_budget: float = 27_000_000_000,  # e.g., an allocation from a 1% Treaty Fund
     efficiency_gain: float = 0.50  # Markets 50% better than committees
 ) -> Dict[str, float]:
     """
@@ -204,7 +204,7 @@ def calculate_market_efficiency(
     }
 
 market_efficiency = calculate_market_efficiency()
-print(f"DIH budget: ${market_efficiency['dih_budget']/1e9:.1f}B")
+print(f"Budget for pragmatic clinical trials: ${market_efficiency['dih_budget']/1e9:.1f}B")
 print(f"Additional value from markets: ${market_efficiency['additional_value_created']/1e9:.1f}B")
 print(f"Information processing advantage: {market_efficiency['information_advantage']:.0f}x")
 ```
@@ -396,7 +396,7 @@ print(f"Development time: 17 years → 3 years")
 formulas_df = pd.DataFrame({
     'Formula': [
         'Peace Dividend',
-        'dFDA ROI',
+        'Pragmatic Trial Framework ROI',
         'QALY Value',
         'Market Efficiency',
         'Total Impact',
@@ -407,7 +407,7 @@ formulas_df = pd.DataFrame({
         'War Cost × 1% = $92B',
         'Savings / Cost = 1,250:1',
         f"{qaly_value['total_qalys']/1e6:.1f}M QALYs × $150K",
-        'DIH Budget × 50% gain = $13.5B',
+        'Allocated Budget × 50% gain = $13.5B',
         'Direct × Multipliers = $16.5T',
         'Disease Cost × 50% × Patients',
         'Approvals × 80 × $1.62B = $6.5T'

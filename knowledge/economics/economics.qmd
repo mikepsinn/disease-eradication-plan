@@ -118,13 +118,15 @@ All parameters, data sources, and uncertainty ranges are documented in [Paramete
 
 **A decentralized framework for drug assessment (dFDA)**: A regulatory wrapper that automates trial creation, IRB approval, liability insurance, and simultaneous multi-agency submissions (FDA, EMA, PMDA, etc.) across countries. Like TurboTax abstracts away tax code complexity, a dFDA abstracts away regulatory complexity: researchers define hypotheses, and the framework handles compliance. Uses real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
 
-**A decentralized institutes of health (DIH)**: Proposed decentralized, programmable, purely democractic and uncapturable treasury funded by 1% of military spending reallocation, subsidizing patient participation in decentralized pragmatic clinical trials.
+**decentralized institutes of health (DIH)**: A pattern for decentralized, programmable, and democratic organizations that implement health initiatives. Your decentralized institutes of health (DIH) can be funded by a 1% Treaty Fund to subsidize patient participation in pragmatic clinical trials.
 
 **Peace Dividend**: Economic benefits from reduced military spending, including fiscal savings, reduced conflict-related economic damage, and favorable economic multiplier effects from reallocating resources to productive sectors.
 
 **Dominant Intervention**: Health economics term for interventions that both reduce costs AND improve health outcomes. Unconditionally recommended regardless of willingness-to-pay thresholds (e.g., vaccination programs, smoking cessation).
 
 **A 1% Treaty**: Proposed international agreement where signatory nations commit to reducing military expenditure by 1% and redirecting those funds ({{< var treaty_annual_funding >}} globally) to pragmatic clinical trials infrastructure.
+
+**A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of decentralized institutes of health.
 
 **Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions. Reduces costs while improving generalizability (e.g., Oxford RECOVERY trial).
 :::
@@ -332,7 +334,7 @@ The "ratchet mechanism" isn't just economic gravity. It's engineered through [In
 
 **The key insight**: {{< var iab_political_incentive_funding_pct >}} of treaty revenue goes to political incentives. This amount **scales with treaty size**:
 
-| Treaty Level | Total Revenue | IAB Political Funding | Research Funding |
+| Treaty Level | Total Revenue | IAB Political Funding | Pragmatic Trial Funding |
 |:-------------|:--------------|:---------------------|:-----------------|
 | 1% | $27B | $2.7B/year | $21.7B/year |
 | 2% | $54B | $5.4B/year | $43.2B/year |
@@ -564,7 +566,7 @@ This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over
 
 **Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the one-time 8.2-year timeline shift in disease eradication, as this represents the primary health benefit from eliminating the regulatory delay (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
 
-For a dFDA infrastructure's cost per health benefit averted (8.2-year timeline shift):
+For a decentralized framework for drug assessment (dFDA) infrastructure's cost per health benefit averted (8.2-year timeline shift):
 
 **Cost per DALY averted: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}**
 
@@ -640,9 +642,9 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 3. **Alternative government priorities**: Reallocation to other public investments such as infrastructure, education, or climate mitigation. Each alternative use would require separate cost-benefit analysis to determine relative efficiency.
 
-**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a dFDA reallocation**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
+**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a reallocation to a decentralized framework for drug assessment (dFDA)**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
 
-**Conservative interpretation**: Even if alternative uses generate positive economic value, a dFDA infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
+**Conservative interpretation**: Even if alternative uses generate positive economic value, a decentralized framework for drug assessment infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
 
 ## Peace Dividend Calculation Methodology
 
@@ -687,7 +689,7 @@ These improvements compound multiplicatively to produce the {{< var trial_capaci
 
 {{< include ../figures/tornado-trial_capacity_multiplier.qmd >}}
 
-**Automating Friction, Not Judgment**: A dFDA system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
+**Automating Friction, Not Judgment**: A decentralized framework for drug assessment (dFDA) system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
@@ -791,7 +793,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Adoption Rate Assumptions
 
-**Assumption:** dFDA achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
+**Assumption:** A decentralized framework for drug assessment (dFDA) achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
 
 **Conservative case:** 50% of trials adopt dFDA methodology
 **Optimistic case:** 80% adoption rate
@@ -804,7 +806,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Cost Reduction Assumptions
 
-**Assumption:** dFDA methodology reduces per-patient trial costs by {{< var trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
+**Assumption:** The methodology of a decentralized framework for drug assessment reduces per-patient trial costs by {{< var trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
 
 #### Empirical basis
 
@@ -1011,7 +1013,7 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 
 2. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
 
-**Why framework costs are low:** A dFDA provides coordination protocols (like HTTP for the internet), not a competing platform.
+**Why framework costs are low:** A decentralized framework for drug assessment (dFDA) provides coordination protocols (like HTTP for the internet), not a competing platform.
 
 The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. The decentralized framework for drug assessment protocol creates the coordination layer that makes them work together for clinical trials.
 
@@ -1106,7 +1108,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
-| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA operations |
+| **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA operations |
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) for legislators |
 
@@ -1203,11 +1205,11 @@ The {{< var trial_capacity_multiplier >}}× research acceleration multiplier com
 
 **How the {{< var trial_capacity_multiplier >}}× Multiplier Works**:
 
-The acceleration comes from simple economics: DIH can fund {{< var dih_patients_fundable_annually >}} patients/year at [RECOVERY trial cost](../references.qmd#recovery-cost-500) ({{< var recovery_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
+The acceleration comes from simple economics: The 1% Treaty Fund can fund {{< var dih_patients_fundable_annually >}} patients/year at [RECOVERY trial cost](../references.qmd#recovery-cost-500) ({{< var recovery_trial_cost_per_patient >}}/patient), compared to [current global trial participation](../references.qmd#global-trial-participant-capacity) of {{< var current_trial_slots_available >}} patients/year (IQVIA 2022).
 
 {{< var trial_capacity_multiplier_latex >}}
 
-This represents DIH's funding capacity alone, without assuming behavior changes from the existing {{< var global_med_research_spending >}} baseline research ecosystem.
+This represents the funding capacity from the 1% Treaty Fund alone, without assuming behavior changes from the existing {{< var global_med_research_spending >}} baseline research ecosystem.
 
 **Net Effect**:
 
@@ -1312,7 +1314,7 @@ Beyond the moral and economic arguments, two existential drivers make this propo
 
 ### 1. The Geopolitical "Race to the Top"
 
-This is not just a treaty; it is a technology for economic dominance. The first nation or bloc to implement a dFDA infrastructure will:
+This is not just a treaty; it is a technology for economic dominance. The first nation or bloc to implement a decentralized framework for drug assessment (dFDA) infrastructure will:
 
 * **Attract Global Capital**: Become the world's primary hub for biotechnology investment.
 * **Own the IP**: Secure intellectual property rights for the next generation of curative therapies.
@@ -1431,7 +1433,7 @@ You're not defeating greed. You're aligning economic incentives to direct existi
 
 **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders who reject this are effectively signing death warrants for their own voters, donors, and family members.
 
-If politicians fail to adopt the treaty and build a dFDA, they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
+If politicians fail to adopt the treaty and build a decentralized framework for drug assessment (dFDA), they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
 
 Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed {{< var treaty_reduction_pct >}} reduction is significantly more modest.
 
@@ -1443,7 +1445,7 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 **Response**: The current system is flying blind. It barely collects and does not systematically publish adverse event rates for most treatments.
 
-**A dFDA system improves safety by:**
+**A decentralized framework for drug assessment (dFDA) system improves safety by:**
 
 1. **Mandating Data Collection**: The system collects and publishes outcome labels on the frequency and magnitude of *all* health outcomes. We have nothing like this today.
 2. **Continuous Monitoring**: Pragmatic trials with larger samples and continuous monitoring detect safety problems faster than traditional trials.
@@ -1618,7 +1620,7 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 
 #### Mitigation strategies
 
-- **Randomization preserved:** dFDA maintains random treatment assignment (the core causal identification strategy)
+- **Randomization preserved:** A decentralized framework for drug assessment (dFDA) maintains random treatment assignment (the core causal identification strategy)
 - **Large sample sizes:** Decentralized recruitment enables 10-100× larger trials, improving statistical power and subgroup analysis
 - **Covariate adjustment:** Electronic health record data enables controlling for confounders ex-post using propensity score matching and instrumental variables
 - **Replication at scale:** Lower costs enable rapid replication across diverse populations, testing robustness
@@ -1699,7 +1701,7 @@ This analysis models economic returns conditional on treaty ratification. Politi
 
 Implementation requires substantial institutional development:
 
-- **Regulatory expertise:** dFDA requires experienced personnel (FDA, EMA, other regulators)
+- **Regulatory expertise:** A decentralized framework for drug assessment (dFDA) requires experienced personnel (FDA, EMA, other regulators)
 - **Technical infrastructure:** Data systems, AI/ML capabilities, cybersecurity at global scale
 - **Legal frameworks:** International treaties, data privacy compliance, intellectual property harmonization
 

@@ -41,7 +41,7 @@ total = result["total_lifetime_benefit"]
 
 components = {
     "Extended Earnings": npv["extended_earnings"],
-    "GDP Boost\n(Mil→Research)": npv["gdp_boost_benefit"],
+    "GDP Boost\n(Mil→Pragmatic Trials)": npv["gdp_boost_benefit"],
     "Healthcare\nSavings": npv["healthcare_savings_total"],
     "Productivity\nGains": npv["productivity_gains_total"],
     "Caregiver\nSavings": npv["caregiver_savings_total"],

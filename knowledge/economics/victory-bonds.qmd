@@ -44,7 +44,7 @@ A financial instrument that makes obscene amounts of money appear from nowhere w
 
 - Collect $1.0B in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
-- Once treaty passes, {{< var treaty_annual_funding >}} in papers annually stops going to bombs and starts going to [DIH](../solution/dih.qmd)
+- Once the treaty passes, {{< var treaty_annual_funding >}} in papers annually stops going to bombs and starts going to a 1% Treaty Fund
 - Give the rich humans {{< var victory_bond_funding_pct >}} of that ({{< var victory_bond_annual_payout >}}) every year, forever
 - Reserve {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) for [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) that keep politicians aligned
 - Use the remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to cure the diseases actually killing people
@@ -76,7 +76,7 @@ Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convinc
 
 - **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_budget_referendum >}})
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_lobbying >}})
-- **Build the actual tech** - [dFDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
+- **Build the actual tech** - a decentralized framework for drug assessment (dFDA) and [Wishocracy](../solution/wishocracy.qmd) platforms ($180M)
 - **Hire lawyers** - Make bribery legal by calling it other things ({{< var treaty_campaign_budget_reserve >}})
 - **Co-opt death merchants** - Convince defense contractors that {{< var victory_bond_annual_return_pct >}} beats 8% ($150M)
 - **Run the thing** - Pay humans to coordinate the paper distribution ($170M)
@@ -85,9 +85,9 @@ For the complete breakdown of where every paper goes, see [Campaign Budget](camp
 
 ### Phase 3: Turn On the Money Faucet
 
-Treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
+The treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
 
-- {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to 1% Treaty Fund (automatic, no takebacks)
+- {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to the 1% Treaty Fund (automatic, no takebacks)
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
 - {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) automatically funds [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) (keeps politicians aligned with curing diseases)
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) automatically goes to curing the diseases actually killing people
@@ -204,15 +204,15 @@ Explain to investors: Multiple layers of protection, not just one point of failu
 Show investors what full treaty adoption delivers:
 
 **Treaty adoption**: 100+ countries (all major military powers)
-**Annual DIH revenue**: {{< var treaty_annual_funding >}}
+**Annual 1% Treaty Fund revenue**: {{< var treaty_annual_funding >}}
 **Bondholder annual payment**: {{< var victory_bond_annual_payout >}} ({{< var victory_bond_funding_pct >}})
 **Political incentive funding**: {{< var iab_political_incentive_funding_annual >}} ({{< var iab_political_incentive_funding_pct >}})
-**Research funding**: {{< var dih_treasury_to_medical_research_annual >}} ({{< var dih_treasury_medical_research_pct >}})
+**Pragmatic clinical trial funding**: {{< var dih_treasury_to_medical_research_annual >}} ({{< var dih_treasury_medical_research_pct >}})
 **Investor ROI**: {{< var victory_bond_annual_return_pct >}} annually
 
 **What happens**:
 
-- Medical research accelerates dramatically
+- Pragmatic clinical trials accelerate dramatically
 - Disease burden declines measurably
 - Public support grows stronger
 - Political momentum builds for 2%, then 5% expansion
@@ -227,7 +227,7 @@ Structure the allocation to balance four goals:
 3. **Fund the mission**: {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) gives researchers substantial capital
 4. **Align all incentives**: Investors, politicians, and researchers all profit from treaty expansion
 
-Tell investors: Everyone wins when treaties grow. More cures = bigger treaties = higher returns + more political support + more research funding.
+Tell investors: Everyone wins when treaties grow. More cures = bigger treaties = higher returns + more political support + more funding for pragmatic clinical trials.
 
 ## Set Up the Legal Structure
 
@@ -239,7 +239,7 @@ This structure legally separates the investment activities from the philanthropi
 
 **Instrument type**: Create as senior secured debt
 
-**Priority**: Give first lien on all DIH treaty revenue
+**Priority**: Give first lien on all 1% Treaty Fund revenue
 
 **Term**: Make perpetual (no maturity date)
 
@@ -247,7 +247,7 @@ This structure legally separates the investment activities from the philanthropi
 
 **Transferability**: Allow secondary market trading
 
-**Governance**: Grant bondholder seats on DIH oversight board
+**Governance**: Grant bondholder seats on the 1% Treaty Fund's oversight board
 
 ### Create Milestone-Based Releases
 
@@ -271,7 +271,7 @@ Protect investors by releasing funds in tranches tied to achievements:
 
 - Get treaty signed by 50+ countries
 - Achieve $13B+ annual revenue flowing
-- Have dFDA processing trials
+- Have your decentralized framework for drug assessment (dFDA) processing trials
 - Demonstrate irreversible momentum
 
 **Set up protection**: Hold all funds in escrow, refund if milestones aren't hit
@@ -398,7 +398,7 @@ Charity is for people who want to feel good. This is for people who want to get 
 
 You're not donating to cure diseases. You're investing in curing diseases because it's the most profitable legal thing you can do with a billion dollars.
 
-It's the Louisiana Purchase of medical research - except instead of buying land from France, you're buying immortality from death, and unlike Louisiana, immortality doesn't flood."
+It's the Louisiana Purchase of pragmatic clinical trials - except instead of buying land from France, you're buying immortality from death, and unlike Louisiana, immortality doesn't flood."
 
 ### When they want detailed financials
 
@@ -444,7 +444,7 @@ Hand this to investors who can't read more than one page:
 
 1. Collect $1.0B from rich humans
 2. Use it to convince politicians that living constituents vote more reliably than dead ones
-3. Treaty passes, redirecting {{< var treaty_annual_funding >}} annually from bombs to cures
+3. The treaty passes, redirecting {{< var treaty_annual_funding >}} annually from bombs to cures via a 1% Treaty Fund
 4. Give bondholders {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) every year, forever
 5. Fund political incentives with {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) to keep politicians aligned
 6. Use remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to actually cure the diseases killing people

@@ -21,7 +21,7 @@ with dot.subgraph(name='cluster_machine') as machine:
     machine.node('Campaign', 'Fund AI campaign\n(lobbying + viral)')
     machine.node('Treaty', '1% Treaty passes\n$27B/year redirected')
     machine.node('Returns', f'You get {VICTORY_BOND_ANNUAL_PAYOUT}\n({VICTORY_BOND_ANNUAL_RETURN_PCT} returns forever)')
-    machine.node('Cures', f'{DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL} funds\nefficient\ndecentralized trials')
+    machine.node('Cures', f'A 1% Treaty Fund allocates\n{DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL} to efficient\ndecentralized pragmatic trials')
 
     machine.edge('Investors', 'Campaign')
     machine.edge('Campaign', 'Treaty')

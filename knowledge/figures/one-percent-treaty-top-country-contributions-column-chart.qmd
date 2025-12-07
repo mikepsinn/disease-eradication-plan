@@ -4,7 +4,7 @@ from dih_models.parameters import *
 ```
 
 ```{python}
-#| fig-cap: "Projected annual contributions to the decentralized institutes of health treasury from top military spenders, based on a 1% reallocation of their defense budgets."
+#| fig-cap: "Projected annual contributions to a 1% Treaty Fund from top military spenders, based on a 1% reallocation of their defense budgets."
 # --- Imports ---
 
 import matplotlib.pyplot as plt

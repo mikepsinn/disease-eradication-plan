@@ -20,14 +20,14 @@ pd.options.display.float_format = '{:,.0f}'.format
 
 economic_impacts = pd.DataFrame({
     'Source': [
-        '1% treaty Peace Dividend (Annual)',
-        'dFDA R&D Savings Only (Annual)',
-        'dFDA Historical Rate (Total One-Time)',
-        'dFDA Lag Elimination PRIMARY (Total One-Time)',
-        'dFDA Innovation Acceleration (Total One-Time)',
-        'Medical Research Acceleration (Annual)',
+        '1% Treaty Peace Dividend (Annual)',
+        'Global Trials Framework: R&D Savings (Annual)',
+        'Global Trials Framework: Historical Rate (Total One-Time)',
+        'Global Trials Framework: Lag Elimination (Total One-Time)',
+        'Global Trials Framework: Innovation Acceleration (Total One-Time)',
+        'Pragmatic Trial Acceleration (Annual)',
         'Treaty ROI: Peace + R&D + Historical',
-        'Treaty ROI: Complete (PRIMARY)'
+        'Treaty ROI: Complete'
     ],
     'Benefit Value (Trillions)': [
         float(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) / 1_000_000_000_000,

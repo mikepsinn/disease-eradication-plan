@@ -146,7 +146,7 @@ Current model (pharma pays for trials):
 - 90% of drugs fail in trials = money incinerated
 - Success means jacking up prices to recover losses
 
-DIH model (costs eliminated):
+The new model (using decentralized pragmatic trials):
 
 - Trial cost per participant drops to near-zero (pragmatic design, existing medical records, no dedicated sites)
 - Positive cash flow from day one
@@ -162,12 +162,12 @@ DIH model (costs eliminated):
 - Average revenue per success: {{< var pharma_drug_revenue_average_current >}}
 - **ROI: {{< var pharma_roi_current_system_pct >}}** (Barely profitable!)
 
-#### New DIH System - Cost Elimination
+#### New System - Cost Elimination
 
-The main benefit: trials become 100x cheaper due to pragmatic design.
+The main benefit: pragmatic clinical trials become 100x cheaper.
 
 ::: {.callout-note}
-## How DIH Eliminates Trial Costs
+## How your decentralized institutes of health eliminate trial costs
 
 **Current system:** Pharma spends $48,000 per participant on:
 
@@ -176,7 +176,7 @@ The main benefit: trials become 100x cheaper due to pragmatic design.
 - Custom data collection infrastructure
 - Regulatory compliance overhead
 
-**DIH system:** Cost drops to near-zero because:
+**A system using your decentralized institutes of health (DIH):** Cost drops to near-zero because:
 
 - Uses existing medical practices (no dedicated sites)
 - Patient's regular doctor enrolls them (one-click)
@@ -187,7 +187,7 @@ The main benefit: trials become 100x cheaper due to pragmatic design.
 Result: 50,000-participant trial costs pharma ~$0 instead of $2.4 billion.
 :::
 
-| Current System | DIH/dFDA System |
+| Current System | A decentralized trials framework |
 |---------------|-----------------|
 | Pay {{< var pharma_drug_development_cost_current >}} for trials | Pay near-zero for trials |
 | 90% of drugs fail = $2.3B loss | Failure costs almost nothing |
@@ -195,7 +195,7 @@ Result: 50,000-participant trial costs pharma ~$0 instead of $2.4 billion.
 | Only blockbusters viable | Rare diseases = profitable |
 | Massive risk | Minimal risk per attempt |
 
-The DIH doesn't change whether drugs work biologically. It changes the economics: you profit from TRYING, not just from SUCCEEDING.
+A decentralized institutes of health network doesn't change whether drugs work biologically. It changes the economics: you profit from TRYING, not just from SUCCEEDING.
 
 ### Pharma's New Business Model: Volume Over Blockbusters
 
@@ -208,7 +208,7 @@ The trade-off: **Lower revenue per drug, but massively more attempts.**
 - Need huge markets to justify risk
 - 10,000 compounds sitting on shelf
 
-#### New DIH model
+#### The new decentralized model
 
 - $500M per success is profitable (smaller markets work)
 - Can attempt all 10,000 compounds (get paid per attempt)
@@ -366,7 +366,7 @@ Adam Smith's invisible hand, but for healing instead of widgets.
 
 ## The Two-Engine System: Why You Need Both
 
-Everything above describes how to align incentives for the **initial win**: passing the 1% treaty. But the goal isn't 1%. The goal is eventually redirecting *all* military spending to health. That requires two different engines.
+Everything above describes how to align incentives for the **initial win**: passing a 1% treaty. But the goal isn't 1%. The goal is eventually redirecting *all* military spending to health. That requires two different engines.
 
 ### Engine 1: VICTORY Bonds (The Initial Alignment)
 
@@ -413,19 +413,19 @@ Even if it the treaty does pass. It stalls at 1-2%. Politicians move on, defense
 
 | Stakeholder | What They Get | Funding Source |
 |:--|:--------------|:--------------------------|
-| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
-| **Politicians** | Electoral support, career benefits | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
-| **Patients** | Subsidized trials, cures | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
+| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of the 1% Treaty Fund's revenue |
+| **Politicians** | Electoral support, career benefits | {{< var iab_political_incentive_funding_pct >}} of the 1% Treaty Fund's revenue |
+| **Patients & Researchers** | Subsidized pragmatic clinical trials, cures | {{< var dih_treasury_medical_research_pct >}} of the 1% Treaty Fund's revenue |
 
-The 80/10/10 split is baked into the instrument. Investors fund the campaign. Politicians get career benefits for supporting it (scored on voting records, not health outcomes - because health benefits are global and can't be attributed to any country). Patients get cures. Everyone's self-interest points at the same outcome: expand treaty funding.
+The 80/10/10 split is baked into the instrument. Investors fund the campaign. Politicians get career benefits for supporting it (scored on voting records, not health outcomes - because health benefits are global and can't be attributed to any country). Patients get access to cures funded through the 1% Treaty Fund and delivered by a network of decentralized institutes of health. Everyone's self-interest points at the same outcome: expand treaty funding.
 
 ### The Endgame
 
 At 100% military-to-health redirection:
 
-- $2.7 trillion flows to health annually
+- $2.7 trillion flows into a 1% Treaty Fund annually
 - $270 billion funds political incentives (more than all current global lobbying combined)
-- $2.16 trillion funds actual research
+- $2.16 trillion funds pragmatic clinical trials and new therapies
 - "Support health spending" becomes the single most rewarded political position on Earth
 - War becomes economically obsolete
 

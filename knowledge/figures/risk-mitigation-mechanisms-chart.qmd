@@ -22,7 +22,7 @@ risk_data = pd.DataFrame({
         'Execution Risk'
     ],
     'Traditional VC Risk Level': [8, 3, 7, 9, 8],
-    'dFDA Mitigated Risk': [2, 4, 3, 2, 4],
+    'Decentralized Framework Mitigated Risk': [2, 4, 3, 2, 4],
     'Mitigation Strategy': [
         'Assurance Contract (auto-refund)',
         'Metaculus prediction markets',
@@ -46,7 +46,7 @@ traditional.append(traditional[0])
 
 # Mitigated risks
 
-mitigated = risk_data['dFDA Mitigated Risk'].tolist()
+mitigated = risk_data['Decentralized Framework Mitigated Risk'].tolist()
 mitigated.append(mitigated[0])
 
 fig.add_trace(go.Scatterpolar(
@@ -62,7 +62,7 @@ fig.add_trace(go.Scatterpolar(
     r=mitigated,
     theta=categories,
     fill='toself',
-    name='dFDA with Mitigation',
+    name='Decentralized Framework with Mitigation',
     fillcolor='rgba(0, 255, 0, 0.2)',
     line=dict(color='green', width=2)
 ))
@@ -77,7 +77,7 @@ fig.update_layout(
             dtick=2
         )
     ),
-    title='Risk Profile: Traditional VC vs dFDA with Mitigation',
+    title='Risk Profile: Traditional VC vs. a Decentralized Framework with Mitigation',
     showlegend=True,
     height=500
 )
@@ -89,6 +89,6 @@ fig.show()
 print("\n=== Key Risk Mitigation Innovations ===")
 for _, row in risk_data.iterrows():
     print(f"\n{row['Risk Type']}: {row['Mitigation Strategy']}")
-    reduction = ((row['Traditional VC Risk Level'] - row['dFDA Mitigated Risk']) /
+    reduction = ((row['Traditional VC Risk Level'] - row['Decentralized Framework Mitigated Risk']) /
                  row['Traditional VC Risk Level'] * 100)
     print(f"  → Risk reduced by {reduction:.0f}%")

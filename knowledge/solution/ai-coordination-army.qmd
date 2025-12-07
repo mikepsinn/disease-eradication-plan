@@ -12,11 +12,11 @@ from dih_models.parameters import *
 print("Economic parameters loaded.", flush=True)
 ```
 
-You've got mission control ([DIH](dih.qmd)) and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents to do the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
+You've got mission control, a network of decentralized institutes of health ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents to do the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
 Here's the division of labor:
 
-- **The DIH** declares war on disease instead of on other humans (revolutionary concept)
+- **Your decentralized institutes of health** declare war on disease instead of on other humans (revolutionary concept)
 - **Wishocracy** tells your army what to fight for (e.g., "Cure cancer" instead of "invade a country with oil")
 - **Your AI agents** coordinate the millions of people and resources needed to actually win, without requiring a single Zoom meeting
 
@@ -188,7 +188,7 @@ The thing the agent *does* to complete its task. For a "find researchers" agent:
 
 **3. Define the Lag Measure (the result):**
 
-The outcome you actually care about. For the same agent: "Number of researchers who sign up for a dFDA trial." This tells you if the action is working or if you've built an agent that's really good at sending emails no one reads.
+The outcome you actually care about. For the same agent: "Number of researchers who sign up for a trial within your decentralized framework for drug assessment (dFDA)." This tells you if the action is working or if you've built an agent that's really good at sending emails no one reads.
 
 This structure (borrowed from "The 4 Disciplines of Execution") turns tasks from Wishocracy's global list into specific agent missions you can build, measure, and improve without needing to hire a consultant to interpret the results.
 

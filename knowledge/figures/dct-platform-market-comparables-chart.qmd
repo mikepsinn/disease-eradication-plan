@@ -14,7 +14,7 @@ import plotly.express as px
 # Data from dfda-cost-benefit-analysis.md
 
 dct_companies = pd.DataFrame({
-    'Company': ['Medable', 'Science 37', 'Thread', 'uMotif', 'dFDA (Target)'],
+    'Company': ['Medable', 'Science 37', 'Thread', 'uMotif', 'Decentralized Framework (Target)'],
     'Total Raised (Millions)': [521, 40, 50, 25.5, 40],
     'Valuation (Billions)': [2.1, 0.2, 0.25, 0.1, None],
     'Global Reach': ['60+ countries', '10+ countries', '15+ countries', '5+ countries', 'Global target'],
@@ -25,7 +25,7 @@ dct_companies = pd.DataFrame({
 
 fig = go.Figure()
 
-colors = ['darkgreen' if x == 'Medable' else 'lightgreen' if x == 'dFDA (Target)' else 'gray'
+colors = ['darkgreen' if x == 'Medable' else 'lightgreen' if x == 'Decentralized Framework (Target)' else 'gray'
           for x in dct_companies['Company']]
 
 fig.add_trace(go.Bar(

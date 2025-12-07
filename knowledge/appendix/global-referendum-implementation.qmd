@@ -8,7 +8,7 @@ description: Practical design for a secure, globally verifiable referendum to me
 from dih_models.parameters import *
 ```
 
-Implement a privacy-preserving, globally verifiable referendum to assess public support for a [1% treaty](../solution/1-percent-treaty.qmd) and DIH. Outputs must be auditable and persuasive to policymakers.
+Implement a privacy-preserving, globally verifiable referendum to assess public support for a [1% treaty](../solution/1-percent-treaty.qmd) and decentralized institutes of health. Outputs must be auditable and persuasive to policymakers.
 
 ## Principles
 
@@ -48,5 +48,5 @@ Verification rate, audit pass rate, unique-voter deduplication quality, and poli
 
 ## Cross-References
 
-- [The DIH](../solution/dih.qmd)
+- [Decentralized Institutes of Health](../solution/dih.qmd)
 - [VICTORY Bonds](../economics/victory-bonds.qmd)

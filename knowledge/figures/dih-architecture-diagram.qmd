@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-alt: "DIH Architecture showing treasury flowing to campaigns via Wishocracy allocation"
+#| fig-alt: "Architecture diagram for a decentralized institute of health, showing the 1% Treaty Fund flowing to campaigns via Wishocracy allocation"
 
 import graphviz
 from pathlib import Path
@@ -13,7 +13,7 @@ from dih_models.plotting.graphviz_helper import (
 
 # Create diagram
 
-dot = graphviz.Digraph(comment='DIH Architecture', format='png')
+dot = graphviz.Digraph(comment='Architecture of a decentralized institute of health', format='png')
 dot.attr(rankdir='TB', size='12,14')
 
 # Apply design guide styling
@@ -22,7 +22,7 @@ setup_graphviz_style(dot)
 
 # 1% Treaty Fund (top)
 
-dot.node('Treaty', '1% treaty\n$1T/year', shape='box', style='filled', fillcolor='white')
+dot.node('Treaty', 'The 1% Treaty\n$1T/year', shape='box', style='filled', fillcolor='white')
 dot.node('Treasury', '1% Treaty Fund\nDecentralized Governance Layer', shape='box', penwidth='3')
 
 # Wishocracy voting
@@ -35,7 +35,7 @@ with dot.subgraph(name='cluster_campaigns') as campaigns:
     campaigns.attr(label='Campaign Proposals (Anyone Can Submit)', style='dashed')
 
     campaigns.node('PatientSubs', 'Patient Subsidies\n$800B/year\n(Automatic Formula)', shape='box')
-    campaigns.node('dFDA', 'Decentralized Framework for Drug Assessment\n$10B/year\n(One of many campaigns)', shape='box')
+    campaigns.node('DrugAssessment', 'A decentralized framework\nfor drug assessment\n$10B/year\n(One of many campaigns)', shape='box')
     campaigns.node('Infrastructure', 'Infrastructure Services\n$20B/year total\n(Competing providers)', shape='box')
     campaigns.node('Prizes', 'Research Prizes\n$100B total\n(Cure bounties)', shape='box')
     campaigns.node('PublicGoods', 'Public Goods\n$30B/year\n(Market failures)', shape='box')
@@ -49,7 +49,7 @@ dot.node('Outcomes', 'Outcomes:\nCures, Trials, Data', shape='ellipse', style='f
 dot.edge('Treaty', 'Treasury', label='Funds')
 dot.edge('Treasury', 'Wishocracy', label='Allocates via')
 dot.edge('Wishocracy', 'PatientSubs', label='80%')
-dot.edge('Wishocracy', 'dFDA', label='Vote')
+dot.edge('Wishocracy', 'DrugAssessment', label='Vote')
 dot.edge('Wishocracy', 'Infrastructure', label='Vote')
 dot.edge('Wishocracy', 'Prizes', label='Vote')
 dot.edge('Wishocracy', 'PublicGoods', label='Vote')
@@ -57,7 +57,7 @@ dot.edge('Wishocracy', 'PublicGoods', label='Vote')
 # All campaigns lead to outcomes
 
 dot.edge('PatientSubs', 'Outcomes')
-dot.edge('dFDA', 'Outcomes')
+dot.edge('DrugAssessment', 'Outcomes')
 dot.edge('Infrastructure', 'Outcomes')
 dot.edge('Prizes', 'Outcomes')
 dot.edge('PublicGoods', 'Outcomes')

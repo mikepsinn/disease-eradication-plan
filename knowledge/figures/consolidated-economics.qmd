@@ -24,14 +24,14 @@ pd.options.display.float_format = '{:,.0f}'.format
 economic_impacts = pd.DataFrame({
     'Source': [
         '1% treaty Peace Dividend',
-        'dFDA R&D Savings (82x cost reduction)',
+        'R&D Savings (Decentralized Trials, 82x cost reduction)',
         'Earlier Drug Access (7-year acceleration)',
         'Trial Capacity Expansion (25.7x capacity)',
         'Rare Disease Treatments',
         'Drug Price Reduction',
         'Prevention Economic Viability',
         'Mental Health Treatment Gap',
-        'Combined Conservative (Peace + dFDA)',
+        'Combined Conservative (Peace + R&D Savings)',
         'Combined Complete (All 8 Categories)'
     ],
     'Annual Value (Billions)': [
@@ -189,7 +189,7 @@ fig = go.Figure(go.Waterfall(
 ))
 
 fig.update_layout(
-    title="How We Get to $1.2 Trillion Annual Value (Complete Case)",
+    title="Value Buildup to $1.2 Trillion in Annual Value (Complete Case)",
     xaxis_title="Value Component",
     yaxis_title="Annual Value ($ Billions)",
     showlegend=False,
@@ -314,14 +314,14 @@ fig.show()
 ### Primary Economic Models
 
 - **1% treaty Analysis**: {{< var peace_dividend_annual_societal_benefit >}} annual peace dividend from 1% military spending reduction ($11.36T total war costs × 1%)
-- **dFDA Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from `{python} dfda_annual_opex_formatted` platform saving `{python} dfda_rd_gross_savings_annual_formatted` in trial costs
-- **Conservative Case**: Peace dividend + dFDA R&D savings = {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually, 463:1 ROI
+- **Decentralized Trials Cost-Benefit**: `{python} roi_dfda_savings_only_formatted` ROI from a `{python} dfda_annual_opex_formatted` decentralized trial framework saving `{python} dfda_rd_gross_savings_annual_formatted` in trial costs
+- **Conservative Case**: Peace dividend + R&D savings from decentralized trials = {{< var combined_peace_health_dividends_annual_for_roi_calc >}} annually, 463:1 ROI
 - **Complete Case**: All 8 benefit categories = $1,238.6B annually, 1,239:1 ROI
 
 ### Eight Benefit Categories (Complete Case)
 
 1. **Peace Dividend**: {{< var peace_dividend_annual_societal_benefit >}} from 1% military spending reduction
-2. **R&D Savings**: $50B from 82x cheaper clinical trials
+2. **R&D Savings**: $50B from 82x cheaper pragmatic clinical trials
 3. **Earlier Drug Access**: $300B from 7-year acceleration to market
 4. **Trial Capacity Expansion**: $100B from {{< var trial_capacity_multiplier >}}× trial capacity
 5. **Rare Diseases**: $400B from orphan drug economic viability

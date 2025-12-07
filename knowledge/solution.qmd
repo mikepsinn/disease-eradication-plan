@@ -24,8 +24,8 @@ Now that you understand the problem, which is that everyone is dying while you b
 Your solution has three parts:
 
 1. A 1% treaty (stealing money from the murder budget)
-2. A decentralized institutes of health (spending it wisely, which is harder than it sounds)
-3. A decentralized framework for drug assessment (making medicine 82 times cheaper)
+2. Your decentralized institutes of health (spending it wisely, which is harder than it sounds)
+3. Your decentralized framework for drug assessment (making medicine 82 times cheaper)
 
 Take money from death, give it to life. The tricky part is convincing humans, who historically prefer the death option.
 
@@ -49,7 +49,7 @@ The math is simple: If everyone has 1% fewer weapons, the balance stays exactly 
 
 {{< var treaty_annual_funding >}} funds:
 
-- 54,000 clinical trials at $500,000 each (the cheap way)
+- 54,000 pragmatic clinical trials at $500,000 each (the cheap way)
 - Or 27 million patients in trials at $1,000 each
 - Or 540 new drug approvals (current rate: {{< var current_drug_approvals_per_year >}} per year)
 - Or curing 10-20 rare diseases completely in Year 1
@@ -72,11 +72,11 @@ Of that {{< var treaty_annual_funding >}}, here's where it goes:
 
 They say you can't put a price on human life. But apparently the price is somewhere south of pet food, which seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
-### Your Decentralized Institute of Health
+### Your decentralized institutes of health
 
-Once you've got {{< var treaty_annual_funding >}} per year to spend, you need somewhere to put it. This is where your DIH comes in.
+Once the 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **1% Treaty Fund**. Now you need a system to spend it wisely. This is where your decentralized institutes of health (DIH) come in.
 
-Your DIH is like the NIH, except it works. Here's how:
+Your decentralized institutes of health are like the NIH, except they work. Here's how:
 
 #### What the NIH does
 
@@ -86,11 +86,11 @@ Your DIH is like the NIH, except it works. Here's how:
 - Nothing gets cured
 - Everyone gets tenure
 
-#### What your DIH does
+#### What your decentralized institutes of health do
 
-- Put the money in a treasury controlled by smart contracts
-- Let 8 billion humans vote on budget allocation rules
-- Subsidize patients in a marketplace of trials
+- Use the **1% Treaty Fund**, a treasury controlled by smart contracts
+- Let 8 billion humans vote on the Fund's budget allocation rules
+- Subsidize patients in a marketplace of pragmatic clinical trials
 - Patients choose which trials to join
 - Trials that work get more patients and more funding
 - Things actually get cured
@@ -112,23 +112,23 @@ Here's how it works:
 
 5. Everyone's swipes get aggregated using math
 6. The math reveals what humanity actually wants
-7. Money flows automatically to top priorities
+7. Money flows automatically from the 1% Treaty Fund to top priorities
 
 This is called "Aggregated Pairwise Preference Allocation," or APPA, which sounds complicated but is actually just "Tinder for budget priorities."
 
 The important part is there's no committee. No gatekeepers. No humans with the power to say no. Just billions of micro-decisions that add up to what humanity actually wants, not what 200 people in suits think humanity wants.
 
-##### Your Decentralized Framework for Drug Assessment
+##### Your decentralized framework for drug assessment
 
 The FDA currently makes drugs {{< var trial_cost_reduction_factor >}} times more expensive than necessary. You're going to build a better one.
 
 Your decentralized framework for drug assessment (dFDA) does three things:
 
-1. **Lets anyone run clinical trials** (no permission needed)
+1. **Lets anyone run pragmatic clinical trials** (no permission needed)
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on this. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
+Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on this platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
@@ -158,8 +158,8 @@ Finally, the truth about everything, generated by millions of humans testing thi
 
 Here's where it gets weird in a good way:
 
-Currently: Pharma companies pay $48,000 per trial patient  
-New system: Patients pay researchers, subsidized by your DIH
+Currently: Pharma companies pay $48,000 per trial patient
+New system: Patients pay researchers, subsidized by the **1% Treaty Fund**
 
 The subsidy works like this: Available treaty funds divided by number of participating patients equals subsidy per person. More patients means lower subsidy per person, which prevents frivolous treatment seeking.
 
@@ -169,7 +169,7 @@ Markets decide, not committees.
 
 Sick people, guided by their doctors and data, choose what gets funded. Not bureaucrats. Not grant writers. Actual humans who need actual cures.
 
-It's democracy for medical research, except instead of voting every four years for people who lie to you, you vote every day with your trial participation for treatments that might save your life.
+It's democracy for funding pragmatic clinical trials, except instead of voting every four years for people who lie to you, you vote every day with your trial participation for treatments that might save your life.
 
 ##### On Why Defense Contractors Should Care
 
@@ -300,7 +300,7 @@ They say if something seems too good to be true, it probably is. But sometimes t
 The rest of Part II explains each component in detail:
 
 - How to structure a 1% treaty so countries actually sign it
-- How to build your DIH so it can't be corrupted
+- How to build your decentralized institutes of health so they can't be corrupted
 - How Wishocracy prevents lobbyists from stealing all the money
 - How your global trial framework achieves {{< var trial_cost_reduction_factor >}}× cost reduction
 - How everyone makes money
@@ -313,4 +313,3 @@ If that seems anticlimactic, remember: Every revolution starts with someone doin
 In this case, the slightly less stupid thing is redirecting 1% of the murder budget to the not-dying budget.
 
 History will judge whether this was genius or obvious. But either way, you'll be alive to see it, which is more than you can say for the alternative.
-

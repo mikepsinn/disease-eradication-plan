@@ -16,7 +16,7 @@ tags:
 from dih_models.parameters import *
 ```
 
-The 1% Treaty is a legally-binding global accord with a single provision: every signatory nation redirects 1% of its annual military budget to [a decentralized institutes of health (DIH)](dih.qmd).
+The 1% Treaty is a legally-binding global accord with a single provision: every signatory nation redirects 1% of its annual military budget to **the 1% Treaty Fund**, which finances global health initiatives like [your decentralized institutes of health (DIH)](dih.qmd).
 
 ## The Math
 
@@ -26,8 +26,8 @@ The 1% Treaty is a legally-binding global accord with a single provision: every 
 
 ### How It Works
 
-1.  **Funding:** Creates {{< var treaty_annual_funding >}}/year revenue stream for the DIH
-2.  **Execution:** DIH subsidizes patient participation in the [dFDA](dfda.qmd), clinical trials that are **{{< var trial_cost_reduction_factor >}}× cheaper** than current model
+1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
+2.  **Execution:** **A network of decentralized institutes of health (DIH)** subsidizes patient participation in **a decentralized framework for drug assessment ([dFDA](dfda.qmd))**, clinical trials that are **{{< var trial_cost_reduction_factor >}}× cheaper** than the current model
 3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -131,7 +131,7 @@ Sometimes they work (we haven't had World War III yet). Sometimes they don't (we
 
 #### Article 2: The Money Part
 
-Every signatory nation contributes exactly 1% of their military budget to your decentralized institutes of health treasury (working title).
+Every signatory nation contributes exactly 1% of their military budget to **the 1% Treaty Fund**.
 
 - USA: $8.86 billion (won't even notice, [they've failed to account for over $2.46 trillion](../references.qmd#pentagon-unaccounted-2-5t))
 - China: $2.96 billion ([what they spend on military parades](../references.qmd#china-military-parade-cost))
@@ -245,7 +245,7 @@ Every politician claims credit. Nobody remembers who opposed it. History books c
 
 Once the treaty is signed and the money starts flowing, here's what happens:
 
-### Your Decentralized Institute of Health Treasury
+### The 1% Treaty Fund
 
 **Input**: {{< var treaty_annual_funding >}} annually from military budgets worldwide
 
@@ -254,7 +254,7 @@ The {{< var treaty_annual_funding >}} flows into the 1% Treaty Fund, where it is
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
-| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, R&D, pandemic prep |
+| **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, R&D, pandemic prep |
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
@@ -279,7 +279,7 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 - 99.8% of willing participants turned away
 - 17 years to approve one drug
 
-#### With 1% treaty + Decentralized Framework for Drug Assessment
+#### With a 1% treaty + a decentralized framework for drug assessment
 
 - $110B total funding ($83B existing + {{< var treaty_annual_funding >}} from treaty)
 - Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient ({{< var trial_cost_reduction_factor >}}× cheaper)
@@ -418,7 +418,7 @@ WHEREAS, this is embarrassing;
 
 NOW, THEREFORE, the undersigned nations agree to stop being complete idiots about this, as follows:
 
-**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to a global pragmatic clinical trials fund, starting immediately or whenever their legislature gets around to it, whichever comes first.
+**Article I**: Each signatory shall redirect exactly 1% of its annual military budget to **the 1% Treaty Fund**, starting immediately or whenever their legislature gets around to it, whichever comes first.
 
 **Article II**: This money shall be used exclusively to cure diseases, extend human life, and make existence less horrible.
 

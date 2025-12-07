@@ -24,7 +24,7 @@ funding_sources = pd.DataFrame({
     ],
     'Annual Budget (Millions)': [684, 2300, 1000, 1500, 50, 5534],
     'Redirectable %': [20, 5, 30, 40, 50, None],
-    'Potential dFDA Funding': [137, 115, 300, 600, 25, 1177]
+    'Potential Pragmatic Trial Funding': [137, 115, 300, 600, 25, 1177]
 })
 
 # Create waterfall of potential funding
@@ -34,9 +34,9 @@ fig = go.Figure(go.Waterfall(
     orientation="v",
     measure=["relative", "relative", "relative", "relative", "relative", "total"],
     x=funding_sources['Source'][:-1].tolist() + ['Total Potential'],
-    y=funding_sources['Potential dFDA Funding'].tolist(),
+    y=funding_sources['Potential Pragmatic Trial Funding'].tolist(),
     textposition="outside",
-    text=[f'${x}M' for x in funding_sources['Potential dFDA Funding']],
+    text=[f'${x}M' for x in funding_sources['Potential Pragmatic Trial Funding']],
     connector={"line": {"color": "rgb(63, 63, 63)"}},
     increasing={"marker": {"color": "green"}},
     totals={"marker": {"color": "blue"}}
@@ -52,4 +52,4 @@ fig.update_layout(
 fig.show()
 
 print("\nDOGE Precedent: Executive Order 14158 repurposed existing USDS → DOGE Service")
-print("dFDA Strategy: Similar EO could redirect NIH/ARPA-H funds to decentralized trials")
+print("A potential strategy: A similar EO could redirect NIH/ARPA-H funds to a decentralized framework for pragmatic trials.")

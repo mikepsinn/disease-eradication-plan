@@ -31,7 +31,7 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 - **Target Returns:** {{< var victory_bond_annual_return_pct >}} annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
-- **Payout:** {{< var victory_bond_funding_pct >}} of all DIH treaty inflows ({{< var victory_bond_annual_payout >}}/year)
+- **Payout:** {{< var victory_bond_funding_pct >}} of all 1% Treaty Fund inflows ({{< var victory_bond_annual_payout >}}/year)
 - **Protection:** Bondholders paid before mission spending
 - **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream
 - **The Pitch:** "Invest $1B. Get {{< var victory_bond_annual_payout >}}/year. Forever."
@@ -92,7 +92,7 @@ The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds re
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
-| **DIH Medical Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, research, platform |
+| **Pragmatic Clinical Trials & Platform** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, research, platform |
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
@@ -129,7 +129,7 @@ Billions of micro-decisions aggregate into humanity's true priorities.
 
 #### Dynamic Patient Subsidies
 
-**The Revolutionary Part:** The DIH doesn't pay researchers. It subsidizes patients.
+**The revolutionary part:** your decentralized institutes of health don't pay researchers. They subsidize patients.
 
 #### How It Works
 
@@ -156,7 +156,7 @@ As more patients join:
 #### Compare to Grant System
 
 - NIH grants: 6 months of proposal writing, committees decide, universities take 40% overhead
-- DIH subsidies: Patient wants treatment, joins trial, funds follow automatically, zero overhead
+- Subsidies via your decentralized institutes of health: Patient wants treatment, joins trial, funds follow automatically, zero overhead
 
 ## Risk Management
 
@@ -176,7 +176,7 @@ Key protections:
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
 - **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
 - **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise $1B
-- **[dFDA Cost-Benefit Analysis](../appendix/dfda-cost-benefit-analysis.qmd)** - Complete ROI analysis
+- **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](../appendix/dfda-cost-benefit-analysis.qmd)** - Complete ROI analysis
 
 ## Summary
 

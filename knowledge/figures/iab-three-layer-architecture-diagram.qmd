@@ -54,7 +54,7 @@ dot.edge('TreatyFund', 'split', style='invis')
 
 # Three destinations with percentages AND dollar amounts for clarity
 
-dot.node('PublicGood', node_label('High Net Social Value\n(NSV) Programs \n(e.g., Medical Research)\n$21.6B (80%)'), shape='box')
+dot.node('PublicGood', node_label('High Net Social Value\n(NSV) Programs\n(e.g., Pragmatic Clinical Trials)\n$21.6B (80%)'), shape='box')
 dot.node('Investors', node_label('Bond Investor Returns\n$2.7B (10%)'), shape='box')
 dot.node('PolFund', node_label('Political Incentive Fund\n$2.7B (10%)'), shape='box')
 

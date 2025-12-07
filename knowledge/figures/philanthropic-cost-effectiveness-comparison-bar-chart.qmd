@@ -32,7 +32,7 @@ charities = [
     'New Incentives\n(Vaccination)',
     'Against Malaria\nFoundation',
     'Smallpox\nEradication\n(Historical)',
-    '1% Treaty +\ndFDA Infrastructure'
+    '1% Treaty Fund\n+ Pragmatic Trial\nFramework'
 ]
 
 # Central estimates (positive = cost to society, negative = net savings to society)
@@ -42,24 +42,24 @@ costs = [
     4500,   # New Incentives
     5500,   # AMF
     -25000, # Smallpox - dominant intervention with ROI 159:1 to 400:1
-    -5870000  # 1% treaty/dFDA - DOMINANT intervention (full ICER = -$167,771/QALY × 35 QALY/life)
+    -5870000  # 1% treaty/framework - DOMINANT intervention (full ICER = -$167,771/QALY × 35 QALY/life)
 ]
 
-# For a 1% treaty bar, we'll stack it to show peace dividend vs dFDA savings
+# For the 1% Treaty Fund bar, we'll stack it to show peace dividend vs R&D savings
 # Total QALYs from parameters:
 #   - Peace: TREATY_QALYS_GAINED_ANNUAL_GLOBAL (85,610 annual recurring)
-#   - dFDA: DISEASE_ERADICATION_DELAY_DALYS (8.57B total from one-time timeline shift)
+#   - Pragmatic Trials: DISEASE_ERADICATION_DELAY_DALYS (8.57B total from one-time timeline shift)
 # Note: These represent different timeframes but the proportional split shows contribution sources
 # We'll show them as proportional contributions to the total -$5.87M
 
 peace_qalys = float(TREATY_QALYS_GAINED_ANNUAL_GLOBAL)
-dfda_qalys = float(DISEASE_ERADICATION_DELAY_DALYS)
-total_qalys = peace_qalys + dfda_qalys
+pragmatic_trials_qalys = float(DISEASE_ERADICATION_DELAY_DALYS)
+total_qalys = peace_qalys + pragmatic_trials_qalys
 
 peace_dividend_per_life = -5870000 * (peace_qalys / total_qalys)  # Proportional to QALYs
-dfda_savings_per_life = -5870000 * (dfda_qalys / total_qalys)   # Proportional to QALYs
+pragmatic_trials_savings_per_life = -5870000 * (pragmatic_trials_qalys / total_qalys)   # Proportional to QALYs
 
-# Error bars (uncertainty ranges from GiveWell and dFDA analysis)
+# Error bars (uncertainty ranges from GiveWell and framework analysis)
 # GiveWell range: $3,000-5,500, Smallpox range, 1% treaty range based on sensitivity
 
 errors_lower = [500, 1000, 500, 5000, 870000]   # Distance below central
@@ -82,18 +82,18 @@ for i in range(4):
            yerr=[[errors_lower[i]], [errors_upper[i]]], capsize=8,
            error_kw={'linewidth': 2, 'ecolor': COLOR_BLACK})
 
-# For the 5th bar (1% treaty), create stacked bar showing peace + dFDA
+# For the 5th bar (1% treaty), create stacked bar showing peace + pragmatic trial savings
 # Bottom segment: Peace dividend contribution
 
 bar_peace = ax.bar(x_pos[4], peace_dividend_per_life, width=0.6,
                    color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
                    label='Peace Dividend (1% less conflict)')
 
-# Top segment: dFDA contribution (stacked on peace)
+# Top segment: Pragmatic Trial contribution (stacked on peace)
 
-bar_dfda = ax.bar(x_pos[4], dfda_savings_per_life, width=0.6, bottom=peace_dividend_per_life,
+bar_pragmatic_trials = ax.bar(x_pos[4], pragmatic_trials_savings_per_life, width=0.6, bottom=peace_dividend_per_life,
                   color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2,
-                  hatch='///', label='dFDA R&D Savings')
+                  hatch='///', label='R&D Savings from Pragmatic Trials')
 
 # Add error bars to the stacked bar (total)
 
@@ -125,8 +125,8 @@ ax.text(x_pos[4], costs[4] - errors_lower[4] - 400000,
 ax.text(x_pos[4] - 0.35, peace_dividend_per_life/2,
         'Peace\nDividend\n(1% less war)',
         ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
-ax.text(x_pos[4] - 0.35, peace_dividend_per_life + dfda_savings_per_life/2,
-        'dFDA\nR&D\nSavings',
+ax.text(x_pos[4] - 0.35, peace_dividend_per_life + pragmatic_trials_savings_per_life/2,
+        'Pragmatic\nTrial\nR&D\nSavings',
         ha='right', va='center', fontsize=9, color=COLOR_BLACK, style='italic')
 
 # Add zero line for reference
@@ -152,7 +152,7 @@ ax.annotate('Smallpox Eradication:\nHistoric dominant intervention\n(saved money
 
 # Annotation for 1% treaty (lower left, away from bar)
 
-ax.annotate('1% Treaty + DIH + dFDA:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
+ax.annotate('A 1% Treaty Fund that enables\na decentralized health network:\nSociety SAVES $5.87M\nper life saved\n(dominant intervention)',
             xy=(x_pos[4], -3000000), xytext=(2, -6500000),
             ha='center', fontsize=10, color=COLOR_BLACK,
             bbox=dict(boxstyle='round,pad=0.6', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=1.5),
@@ -204,17 +204,17 @@ fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
 #
 # Annual Economic Benefits:
 #   - Peace Dividend: $113.55B (1% reduction in $11.355T annual war costs)
-#   - dFDA R&D Savings: $50B (50% reduction in $100B clinical trial market)
+#   - R&D Savings (Pragmatic Trials): $50B (50% reduction in $100B clinical trial market)
 #   - Total Benefits: $163.55B/year
 #
 # Annual Costs:
 #   - Campaign: $250M/year ($1B over 4 years, amortized)
-#   - dFDA Operations: $40M/year
+#   - Pragmatic Trial Framework Operations: $40M/year
 #   - Total Costs: $290M/year
 #
 # Annual Health Benefits:
 #   - Peace: 2,446 lives saved (1% of 244,600 conflict deaths/year) x 35 QALYs/life = 85,610 QALYs
-#   - dFDA: 74.15M QALYs (regulatory delay elimination methodology)
+#   - Pragmatic Trials: 74.15M QALYs (regulatory delay elimination methodology)
 #   - Total: 74.23M QALYs/year
 #
 # ICER Calculation:
@@ -224,7 +224,7 @@ fig.text(0.5, 0.93, 'How much does it cost society to save one life?',
 #
 # Sensitivity: Conservative: -$5.97M/life | Central: -$6.55M/life | Optimistic: -$4.79M/life (all scenarios dominant)
 #
-# Sources: GiveWell 2024, dFDA Cost-Benefit Analysis, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
+# Sources: GiveWell 2024, Cost-Benefit Analysis of a Pragmatic Trial Framework, Peace Dividend Analysis, Cost of War Analysis. Error bars show uncertainty ranges.'''
 #
 # fig.text(0.5, -0.03, calc_text,
 #          ha='center', va='top', fontsize=6.5, color=COLOR_BLACK, family='monospace',

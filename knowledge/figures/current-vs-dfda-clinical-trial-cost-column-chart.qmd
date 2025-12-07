@@ -22,7 +22,7 @@ fig, ax = plt.subplots(figsize=(8, 6))
 # --- Data ---
 # Source: Chapter table "The Itemized Receipt of Stupidity We're Eliminating"
 
-categories = ['Current System\n(Average Trial)', 'Proposed dFDA\n(Decentralized Trial)']
+categories = ['Current System\n(Average Trial)', 'Decentralized Framework\n(Pragmatic Trial)']
 values = [57, 2]  # In millions of USD
 
 # --- Create Bar Chart ---

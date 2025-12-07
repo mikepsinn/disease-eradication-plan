@@ -46,7 +46,7 @@ dot.node('F', 'Testing')
 dot.node('G', 'Travel/Time')
 dot.node('H', 'Patient Copay $20-50')
 dot.node('I', 'Data Generated')
-dot.node('J', 'dFDA Database')
+dot.node('J', 'Drug Assessment Database')
 dot.node('K', 'Better Treatment Rankings')
 
 dot.edge('A', 'B')
@@ -97,13 +97,13 @@ display(IPImage(str(png_path)))
 - Pays $500/month for branded drug
 - Still has poor control
 
-#### With DIH Integration
+#### With a decentralized institutes of health integration
 
-1. Doctor checks DIH portal during visit
+1. Doctor checks the portal for the trial network during visit
 2. Sees 5 relevant trials for new diabetes drugs
 3. Recommends Trial #3 based on Sarah's profile
 4. Sarah enrolls with one click
-5. DIH covers all costs
+5. The trial coverage plan covers all costs
 6. Sarah pays $30 copay
 7. Gets experimental drug that might work better
 8. Reports blood sugar via app
@@ -155,13 +155,13 @@ Before the 1962 Kefauver-Harris Amendment:
 
 ### Per Patient Per Trial
 
-- Medication costs: $200-2000/month (covered by DIH)
-- Monitoring costs: $100-500/month (covered by DIH)
-- Travel/time: $50-200/month (covered by DIH)
+- Medication costs: $200-2000/month (covered by the trial coverage pool)
+- Monitoring costs: $100-500/month (covered by the trial coverage pool)
+- Travel/time: $50-200/month (covered by the trial coverage pool)
 - **Patient copay: $20-50/month**
 - Data collection: $10/month (automated)
 
-**Total DIH cost per patient:** $360-2,710/month
+**Total trial fund cost per patient:** $360-2,710/month
 **Traditional trial cost per patient:** [$6,800-13,600/month](../references.qmd#trial-costs-fda-study)
 
 #### Efficiency gain: 75-80% cost reduction
@@ -169,7 +169,7 @@ Before the 1962 Kefauver-Harris Amendment:
 ## Why Doctors Will Love This
 
 1. **More treatment options** for desperate patients
-2. **Professional satisfaction** from contributing to research
+2. **Professional satisfaction** from contributing to pragmatic clinical trials
 3. **CME credits** for participation
 4. **No liability** (covered by trial insurance)
 5. **Simple integration** (one click in EMR)
@@ -180,7 +180,7 @@ Before the 1962 Kefauver-Harris Amendment:
 1. **Affordable access** to experimental treatments ($20-50 copay)
 2. **Doctor recommended** (trusted source)
 3. **Insurance-like coverage** (familiar model)
-4. **No financial risk** (DIH covers everything)
+4. **No financial risk** (the trial fund covers everything)
 5. **Helping others** while helping themselves
 
 ## The Transition Plan
@@ -208,7 +208,7 @@ Before the 1962 Kefauver-Harris Amendment:
 
 ## Integration Strategy
 
-The DIH isn't trying to replace the healthcare system. It's adding an "experimental treatment insurance layer" that:
+Your decentralized institutes of health (DIH) network isn't trying to replace the healthcare system. It's adding an "experimental treatment insurance layer" that:
 
 - Works within existing infrastructure
 - Respects current relationships

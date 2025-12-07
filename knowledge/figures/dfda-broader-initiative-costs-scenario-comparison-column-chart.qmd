@@ -88,7 +88,7 @@ add_labels(bars3, worst_case)
 # --- Styling ---
 
 ax.set_title(
-    'dFDA Broader Initiative Costs\nUpfront Investment by Scenario',
+    'Costs for a Decentralized Drug Assessment Framework\nUpfront Investment by Scenario',
     fontsize=34, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
@@ -154,7 +154,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 from dih_models.plotting.chart_style import add_png_metadata, get_figure_output_path
 add_png_metadata(
     output_path,
-    title="dFDA Broader Initiative Costs by Scenario",
+    title="Costs for a Decentralized Drug Assessment Framework by Scenario",
     description="Upfront costs range from $4.5M (best) to $1.98B (worst) across 5 major components"
 )
 

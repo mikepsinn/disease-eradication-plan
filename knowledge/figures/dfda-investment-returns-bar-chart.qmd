@@ -18,7 +18,7 @@ from dih_models.plotting.chart_style import COLOR_BLACK, COLOR_WHITE, PATTERN_DI
 
 setup_chart_style()
 
-# Core parameters for a dFDA model (in billions of USD)
+# Core parameters for a model of a decentralized framework for drug assessment (dFDA) (in billions of USD)
 # WORST CASE SCENARIO (Conservative) from ../appendix/dfda-cost-benefit-analysis.qmd
 
 BILLION = 1_000_000_000
@@ -145,7 +145,7 @@ ax.text(x_positions[2], health_gains_primary + (health_gains_optimistic - health
 
 # Title
 
-ax.set_title('1% treaty Investment and Returns', fontsize=32, fontweight='bold',
+ax.set_title('1% Treaty Investment and Returns', fontsize=32, fontweight='bold',
              color=COLOR_BLACK, pad=25)
 
 # Clean axis
@@ -180,7 +180,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
     output_path,
-    title="1% treaty Investment and Returns",
+    title="1% Treaty Investment and Returns",
     description=f"Campaign Investment: {campaign_label} (one-time) | Annual R&D Savings: {rd_savings_label} (recurring) | Total Health Gains (One-Time): {conservative_label} (conservative floor) to {optimistic_label} (optimistic), PRIMARY: {primary_label}. Calculations show deaths × YLL × VSLY for each scenario."
 )
 

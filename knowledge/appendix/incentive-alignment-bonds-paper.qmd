@@ -28,7 +28,6 @@ format:
     geometry: margin=1in
     fontsize: 11pt
 ---
-
 M. Sinn - Decentralized Institutes of Health - [m@dih.earth](mailto:m@dih.earth)
 
 ::: {.callout-tip}
@@ -1163,14 +1162,14 @@ Wishocracy's random pairwise sampling makes advertising economically infeasible.
 
 **Problem addressed:** Within a specific domain (e.g., cancer research), how do we allocate to specific projects, researchers, and trials?
 
-**Solution:** Market mechanisms like the Decentralized FDA for clinical trials, prize markets for research breakthroughs, retroactive public goods funding.
+**Solution:** Market mechanisms like a decentralized framework for drug assessment for clinical trials, prize markets for research breakthroughs, retroactive public goods funding.
 
 **Example cascade:**
 
 1. **Layer 0 (Wishocracy for Domain Ranking):** Citizens review expert BCR data (Copenhagen Consensus: pragmatic clinical trials 100:1, military 0.7:1; GiveWell analyses; IMF externality data) and aggregate via pairwise comparisons to rank pragmatic clinical trials above military spending
 2. **Layer 1 (IABs):** Politicians pass treaty redirecting $24B to pragmatic clinical trials based on Layer 0 democratic domain ranking
 3. **Layer 2 (Wishocracy for Within-Domain Allocation):** Citizens allocate within pragmatic clinical trials: 30% to cancer, 20% to Alzheimer's, 15% to infectious disease, etc.
-4. **Layer 3 (dFDA):** Researchers compete in prediction markets; trials funded based on predicted effectiveness
+4. **Layer 3 (a decentralized framework for drug assessment, or dFDA):** Researchers compete in prediction markets; trials funded based on predicted effectiveness
 
 ### Why This Sequencing Matters
 
@@ -1225,7 +1224,7 @@ IABs solve the *adoption* problem (the binding constraint that prevents welfare-
 
 - **What counts as "public good"?** → **Solved by Layer 0 (Wishocracy for Domain Ranking):** Expert organizations provide BCR data; citizens aggregate via pairwise comparisons to produce democratic domain rankings. This combines expert cost-effectiveness analysis with democratic legitimacy while preventing capture of the scoring methodology.
 - **How to allocate within approved domains?** → **Solved by Layer 2:** Wishocracy democratizes allocation via aggregated pairwise preferences, preventing committee capture
-- **Which specific projects to fund?** → **Solved by Layer 3:** Domain-specific marketplaces (dFDA for trials, prize markets for breakthroughs) allocate to specific projects
+- **Which specific projects to fund?** → **Solved by Layer 3:** Domain-specific marketplaces (a decentralized framework for drug assessment for trials, prize markets for breakthroughs) allocate to specific projects
 - **How to prevent metric corruption?** → **Partially solved by Layers 0 & 2:** Multiple competing scoring orgs (Layer 0) + democratic allocation (Layer 2) reduce single-point-of-failure risk
 - **Democratic legitimacy of wealthy funder influence** → **Solved by Layer 2:** Capital asymmetry (Section 2.3) + Wishocracy (Section 6.2.3) mean millions of retail investors democratize funding, and allocation decisions are made by all citizens via pairwise comparisons, not funders
 
@@ -1654,7 +1653,7 @@ where:
 | Climate | \$2–10M | \$150M+ (2024) | ~\$1B |
 | Nuclear | \$2–8M | \$130M+ (2024) | ~\$500M |
 | Pandemic | \$1–5M | \$50–150M | ~\$300M |
-| Health Research | \$1–4M | \$20–100M | ~\$200M |
+| Pragmatic Clinical Trials | \$1–4M | \$20–100M | ~\$200M |
 
 : Comparative IAB Parameters Across Domains {#tbl-comparison}
 

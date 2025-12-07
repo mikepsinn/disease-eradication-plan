@@ -34,10 +34,10 @@ fig.text(0.5, 0.95, 'Money Flow: From Treaty to Impact', fontsize=36,
 
 boxes = [
     {'pos': (1, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\n$27B/year', 'color': COLOR_BLACK},
-    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': 'DIH\nTreasury', 'color': COLOR_BLACK},
+    {'pos': (3.5, 5), 'size': (1.5, 1.2), 'text': '1% Treaty\nFund', 'color': COLOR_BLACK},
     {'pos': (6, 7.5), 'size': (1.5, 1.2), 'text': 'Patient\nSubsidies', 'color': COLOR_BLACK},
     {'pos': (6, 5), 'size': (1.5, 1.2), 'text': 'VICTORY\nBonds 5%', 'color': COLOR_BLACK},
-    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Research\nFunding', 'color': COLOR_BLACK},
+    {'pos': (6, 2.5), 'size': (1.5, 1.2), 'text': 'Pragmatic\nTrials', 'color': COLOR_BLACK},
     {'pos': (8.5, 7.5), 'size': (1.5, 1.2), 'text': 'Free\nTreatment', 'color': COLOR_BLACK},
     {'pos': (8.5, 5), 'size': (1.5, 1.2), 'text': '270%\nReturns', 'color': COLOR_BLACK},
     {'pos': (8.5, 2.5), 'size': (1.5, 1.2), 'text': 'Cures\nFound', 'color': COLOR_BLACK},
@@ -55,13 +55,13 @@ for box in boxes:
 # Draw arrows - black for clarity
 
 arrows = [
-    ((2.5, 5.6), (3.5, 5.6)),  # Treaty -> Treasury
-    ((5, 6.5), (6, 8.1)),      # Treasury -> Patient Subsidies
-    ((5, 5.6), (6, 5.6)),      # Treasury -> VICTORY Social Impact Bonds
-    ((5, 4.5), (6, 3.1)),      # Treasury -> Research
+    ((2.5, 5.6), (3.5, 5.6)),  # Treaty -> Fund
+    ((5, 6.5), (6, 8.1)),      # Fund -> Patient Subsidies
+    ((5, 5.6), (6, 5.6)),      # Fund -> VICTORY Social Impact Bonds
+    ((5, 4.5), (6, 3.1)),      # Fund -> Pragmatic Trials
     ((7.5, 8.1), (8.5, 8.1)),  # Subsidies -> Treatment
     ((7.5, 5.6), (8.5, 5.6)),  # Bonds -> Returns
-    ((7.5, 3.1), (8.5, 3.1)),  # Research -> Cures
+    ((7.5, 3.1), (8.5, 3.1)),  # Pragmatic Trials -> Cures
 ]
 
 for arrow in arrows:

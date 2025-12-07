@@ -116,7 +116,7 @@ ax.set_title('Return on Investment Comparison: Health Interventions',
 
 # Add explanatory callout in the empty space above smaller bars
 
-callout_text = ('For every $1 invested, the intervention generates\nthe shown dollar amount in benefits.\n\ndFDA achieves the highest ROI through:\n• $50B annual R&D cost savings\n• Faster access to new treatments\n• Better prevention via real-world data\n• New therapies for rare/neglected diseases')
+callout_text = ('For every $1 invested, the intervention generates\nthe shown dollar amount in benefits.\n\nA decentralized framework for drug assessment\nachieves the highest ROI through:\n• $50B annual R&D cost savings\n• Faster access to new treatments\n• Better prevention via real-world data\n• New therapies for rare/neglected diseases')
 ax.text(0.72, 0.65, callout_text,
         transform=ax.transAxes, ha='center', va='center',
         fontsize=16, color=COLOR_BLACK,
@@ -142,7 +142,7 @@ plt.savefig(output_path, dpi=200, bbox_inches=None, pad_inches=0.1, facecolor=CO
 
 # Add metadata for attribution
 
-add_png_metadata(output_path, title="dFDA ROI Comparison")
+add_png_metadata(output_path, title="Decentralized Framework for Drug Assessment ROI Comparison")
 
 plt.show()
 ```
