@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Years of Life Lost from Disease Eradication Delay**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.069e+09 |
-| Mean (expected value) | 7.036e+09 |
-| Median (50th percentile) | 7.059e+09 |
-| Standard Deviation | 7.827e+08 |
-| 90% Confidence Interval | [5.663e+09, 8.295e+09] |
+| Baseline (deterministic) | 7.07B |
+| Mean (expected value) | 7.04B |
+| Median (50th percentile) | 7.06B |
+| Standard Deviation | 783M |
+| 90% Confidence Interval | [5.66B, 8.30B] |
 
 *The histogram shows the distribution of Years of Life Lost from Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

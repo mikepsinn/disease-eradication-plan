@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Treaty System Benefit Multiplier vs Childhood Vaccination Programs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 10.34 |
-| Mean (expected value) | 10.81 |
-| Median (50th percentile) | 10.63 |
-| Standard Deviation | 1.854 |
-| 90% Confidence Interval | [8.155, 13.97] |
+| Baseline (deterministic) | 10.3 |
+| Mean (expected value) | 10.8 |
+| Median (50th percentile) | 10.6 |
+| Standard Deviation | 1.85 |
+| 90% Confidence Interval | [8.16, 14] |
 
 *The histogram shows the distribution of Treaty System Benefit Multiplier vs Childhood Vaccination Programs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

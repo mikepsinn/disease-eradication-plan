@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Annual Trade Disruption**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 6.16e+11 |
-| Mean (expected value) | 6.143e+11 |
-| Median (50th percentile) | 6.05e+11 |
-| Standard Deviation | 1.049e+11 |
-| 90% Confidence Interval | [4.505e+11, 8.117e+11] |
+| Baseline (deterministic) | $616B |
+| Mean (expected value) | $614B |
+| Median (50th percentile) | $605B |
+| Standard Deviation | $105B |
+| 90% Confidence Interval | [$450B, $812B] |
 
 *The histogram shows the distribution of Total Annual Trade Disruption across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

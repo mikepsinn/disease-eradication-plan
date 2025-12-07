@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Ratio of Industry to Government Clinical Trials Spending**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 17.44 |
-| Mean (expected value) | 17.79 |
+| Baseline (deterministic) | 17.4 |
+| Mean (expected value) | 17.8 |
 | Median (50th percentile) | 17.7 |
-| Standard Deviation | 1.049 |
-| 90% Confidence Interval | [16.18, 19.63] |
+| Standard Deviation | 1.05 |
+| 90% Confidence Interval | [16.2, 19.6] |
 
 *The histogram shows the distribution of Ratio of Industry to Government Clinical Trials Spending across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

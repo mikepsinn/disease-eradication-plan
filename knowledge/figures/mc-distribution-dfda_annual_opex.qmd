@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Annual dFDA Operational Costs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 4e+07 |
-| Mean (expected value) | 3.986e+07 |
-| Median (50th percentile) | 3.898e+07 |
-| Standard Deviation | 8.211e+06 |
-| 90% Confidence Interval | [2.733e+07, 5.56e+07] |
+| Baseline (deterministic) | $40M |
+| Mean (expected value) | $39.9M |
+| Median (50th percentile) | $39M |
+| Standard Deviation | $8.21M |
+| 90% Confidence Interval | [$27.3M, $55.6M] |
 
 *The histogram shows the distribution of Total Annual dFDA Operational Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

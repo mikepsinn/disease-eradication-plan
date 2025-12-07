@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Suffering Hours Eliminated**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.65e+12 |
-| Mean (expected value) | 8.519e+12 |
-| Median (50th percentile) | 7.426e+12 |
-| Standard Deviation | 4.972e+12 |
-| 90% Confidence Interval | [2.553e+12, 1.824e+13] |
+| Baseline (deterministic) | 7.65T |
+| Mean (expected value) | 8.52T |
+| Median (50th percentile) | 7.43T |
+| Standard Deviation | 4.97T |
+| 90% Confidence Interval | [2.55T, 18.2T] |
 
 *The histogram shows the distribution of Total Suffering Hours Eliminated across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

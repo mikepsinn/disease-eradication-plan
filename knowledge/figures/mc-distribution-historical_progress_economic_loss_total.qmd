@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Economic Loss from Historical Progress Delays**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.509e+14 |
-| Mean (expected value) | 2.515e+14 |
-| Median (50th percentile) | 2.501e+14 |
-| Standard Deviation | 6.067e+13 |
-| 90% Confidence Interval | [1.463e+14, 3.606e+14] |
+| Baseline (deterministic) | $251T |
+| Mean (expected value) | $251T |
+| Median (50th percentile) | $250T |
+| Standard Deviation | $60.7T |
+| 90% Confidence Interval | [$146T, $361T] |
 
 *The histogram shows the distribution of Total Economic Loss from Historical Progress Delays across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

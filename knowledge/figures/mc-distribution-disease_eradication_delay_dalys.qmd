@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total DALYs Lost from Disease Eradication Delay**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.943e+09 |
-| Mean (expected value) | 8.009e+09 |
-| Median (50th percentile) | 7.907e+09 |
-| Standard Deviation | 1.329e+09 |
-| 90% Confidence Interval | [5.954e+09, 1.038e+10] |
+| Baseline (deterministic) | 7.94B |
+| Mean (expected value) | 8.01B |
+| Median (50th percentile) | 7.91B |
+| Standard Deviation | 1.33B |
+| 90% Confidence Interval | [5.95B, 10.4B] |
 
 *The histogram shows the distribution of Total DALYs Lost from Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

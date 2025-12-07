@@ -4006,7 +4006,7 @@ TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER = Parameter(
 # ---
 
 
-def format_parameter_value(param: float | int | str | Parameter, unit: str | None = None) -> str:
+def format_parameter_value(param: float | int | str | Parameter, unit: str | None = None, include_unit: bool = True) -> str:
     """
     Universal formatter - handles Parameter objects, auto-scales based on value.
 
@@ -4016,234 +4016,208 @@ def format_parameter_value(param: float | int | str | Parameter, unit: str | Non
     Args:
         param: Parameter object or raw number
         unit: Optional unit override (auto-detected if param has .unit attribute)
+        include_unit: Whether to include the unit string in the output (default: True)
 
     Returns:
         Formatted string like "$27.18B", "50%", "184.6M deaths", etc.
-
-    Examples:
-        >>> format_parameter_value(TREATY_ANNUAL_FUNDING)  # Auto-detects USD unit
-        "$27.18B"
-        >>> format_parameter_value(27180000000, "USD")  # Manual unit
-        "$27.18B"
-        >>> format_parameter_value(0.5, "rate")  # Percentage
-        "50%"
     """
-    # Auto-detect unit from Parameter object
-    if unit is None:
-        if isinstance(param, Parameter) and param.unit:
-            unit = param.unit
-        else:
-            unit = ""
+    if param is None:
+        return ""
 
-    # Get raw numeric value
-    if isinstance(param, (int, float)):
-        value = float(param)
-    elif hasattr(param, "__float__"):
-        value = float(param)
-    else:
-        # Parameter object - extract numeric value
-        value = float(param)
-
+    # Extract value and unit
+    value = float(param)
+    
+    # Auto-detect unit from Parameter object if not provided
+    if unit is None and hasattr(param, "unit"):
+        unit = param.unit
+    
+    # Normalize unit for checking
+    unit_check = unit.lower() if unit else ""
+    
     # Detect currency parameters
-    is_currency = "USD" in unit or "usd" in unit or "dollar" in unit.lower()
+    is_currency = "usd" in unit_check or "dollar" in unit_check or "$" in unit_check
 
     # Detect percentage parameters
-    is_percentage = "%" in unit or "percent" in unit.lower() or "rate" in unit.lower()
+    is_percentage = "%" in unit_check or "percent" in unit_check or "rate" in unit_check
 
-    # Check if value is already in billions, millions, thousands
-    is_in_billions = "billion" in unit.lower()
-    is_in_millions = "million" in unit.lower()
-    is_in_thousands = "thousand" in unit.lower()
+    # Check if value is already scaled (e.g. input is in billions)
+    is_in_billions = "billion" in unit_check
+    is_in_millions = "million" in unit_check
+    is_in_thousands = "thousand" in unit_check
 
-    # Helper to remove trailing zeros
+    formatted_num = ""
+
+    # Helper to remove trailing zeros and decimal point
     def clean_number(num_str: str) -> str:
         if "." in num_str:
             num_str = num_str.rstrip("0").rstrip(".")
         return num_str
 
-    # Currency formatting (3 significant figures)
     if is_currency:
+        # Determine the absolute value for scaling
         abs_val = abs(value)
 
+        # Handle pre-scaled inputs (e.g. value=50, unit="billions USD")
         if is_in_billions:
-            # Value already in billions
-            if abs_val >= 1000:  # Trillions
-                scaled = value / 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}T"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}T"
-                else:
-                    formatted = f"${scaled:.2f}T"
-            elif abs_val >= 1:  # Billions
-                if abs_val >= 100:
-                    formatted = f"${value:.0f}B"
-                elif abs_val >= 10:
-                    formatted = f"${value:.1f}B"
-                else:
-                    formatted = f"${value:.2f}B"
-            elif abs_val >= 0.001:  # Millions
-                scaled = value * 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}M"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}M"
-                else:
-                    formatted = f"${scaled:.2f}M"
-            else:
-                formatted = f"${value*1000000:.0f}K"
+            raw_dollars = value * 1e9
         elif is_in_millions:
-            # Value already in millions
-            if abs_val >= 1000:  # Billions
-                scaled = value / 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}B"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}B"
-                else:
-                    formatted = f"${scaled:.2f}B"
-            elif abs_val >= 1:  # Millions
-                if abs_val >= 100:
-                    formatted = f"${value:.0f}M"
-                elif abs_val >= 10:
-                    formatted = f"${value:.1f}M"
-                else:
-                    formatted = f"${value:.2f}M"
-            elif abs_val >= 0.001:  # Thousands
-                scaled = value * 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}K"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}K"
-                else:
-                    formatted = f"${scaled:.2f}K"
-            else:
-                formatted = f"${value*1000:.0f}"
+            raw_dollars = value * 1e6
         elif is_in_thousands:
-            # Value already in thousands
-            if abs_val >= 1000000:  # Billions
-                scaled = value / 1000000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}B"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}B"
-                else:
-                    formatted = f"${scaled:.2f}B"
-            elif abs_val >= 1000:  # Millions
-                scaled = value / 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}M"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}M"
-                else:
-                    formatted = f"${scaled:.2f}M"
-            elif abs_val >= 1:  # Thousands
-                if abs_val >= 100:
-                    formatted = f"${value:.0f}K"
-                elif abs_val >= 10:
-                    formatted = f"${value:.1f}K"
-                else:
-                    formatted = f"${value:.2f}K"
+            raw_dollars = value * 1e3
+        else:
+            raw_dollars = value
+        
+        abs_raw = abs(raw_dollars)
+
+        if abs_raw >= 1e15:  # Quadrillions
+            scaled = raw_dollars / 1e15
+            if abs(scaled) >= 100:
+                formatted_num = f"${scaled:.0f} quadrillion"
+            elif abs(scaled) >= 10:
+                formatted_num = f"${scaled:.1f} quadrillion"
             else:
-                formatted = f"${value*1000:.0f}"
-        else:
-            # Value in raw dollars - auto-scale
-            if abs_val >= 1e12:  # Trillions
-                scaled = value / 1e12
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}T"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}T"
-                else:
-                    formatted = f"${scaled:.2f}T"
-            elif abs_val >= 1e9:  # Billions
-                scaled = value / 1e9
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}B"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}B"
-                else:
-                    formatted = f"${scaled:.2f}B"
-            elif abs_val >= 1e6:  # Millions
-                scaled = value / 1e6
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}M"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}M"
-                else:
-                    formatted = f"${scaled:.2f}M"
-            elif abs_val >= 1e3:  # Thousands
-                scaled = value / 1e3
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}K"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}K"
-                else:
-                    formatted = f"${scaled:.2f}K"
+                formatted_num = f"${scaled:.2f} quadrillion"
+        elif abs_raw >= 1e12:  # Trillions
+            scaled = raw_dollars / 1e12
+            if abs(scaled) >= 100:
+                formatted_num = f"${scaled:.0f}T"
+            elif abs(scaled) >= 10:
+                formatted_num = f"${scaled:.1f}T"
             else:
-                formatted = f"${value:.0f}"
-
-        # Clean trailing .0
-        return formatted.replace(".0B", "B").replace(".0M", "M").replace(".0T", "T").replace(".0K", "K")
-
-    # Non-currency numbers - auto-scale large numbers
-    abs_val = abs(value)
-
-    if abs_val >= 1e9:  # Billions
-        scaled = value / 1e9
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}B"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}B"
+                formatted_num = f"${scaled:.2f}T"
+        elif abs_raw >= 1e9:  # Billions
+            scaled = raw_dollars / 1e9
+            if abs(scaled) >= 100:
+                formatted_num = f"${scaled:.0f}B"
+            elif abs(scaled) >= 10:
+                formatted_num = f"${scaled:.1f}B"
+            else:
+                formatted_num = f"${scaled:.2f}B"
+        elif abs_raw >= 1e6:  # Millions
+            scaled = raw_dollars / 1e6
+            if abs(scaled) >= 100:
+                formatted_num = f"${scaled:.0f}M"
+            elif abs(scaled) >= 10:
+                formatted_num = f"${scaled:.1f}M"
+            else:
+                formatted_num = f"${scaled:.2f}M"
+        elif abs_raw >= 1e3:  # Thousands
+            scaled = raw_dollars / 1e3
+            if abs(scaled) >= 100:
+                formatted_num = f"${scaled:.0f}K"
+            elif abs(scaled) >= 10:
+                formatted_num = f"${scaled:.1f}K"
+            else:
+                formatted_num = f"${scaled:.2f}K"
+        elif abs_raw >= 10:
+            formatted_num = f"${raw_dollars:.0f}"
+        elif abs_raw >= 1:
+            formatted_num = f"${raw_dollars:.2f}"
+        elif abs_raw >= 0.01:
+            formatted_num = f"${raw_dollars:.3f}"
+        elif abs_raw > 0:
+            formatted_num = f"${raw_dollars:.4f}"
         else:
-            formatted_num = f"{scaled:.2f}B"
-    elif abs_val >= 1e6:  # Millions
-        scaled = value / 1e6
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}M"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}M"
-        else:
-            formatted_num = f"{scaled:.2f}M"
-    elif abs_val >= 100_000:  # 100K+
-        scaled = value / 1e3
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}K"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}K"
-        else:
-            formatted_num = f"{scaled:.2f}K"
-    elif value == int(value):
-        formatted_num = f"{int(value):,}"
-    elif abs_val >= 1000:
-        formatted_num = f"{value:,.0f}"
-    elif abs_val >= 1:
-        if value >= 100:
-            formatted_num = f"{value:,.0f}"
-        elif value >= 10:
-            formatted_num = clean_number(f"{value:,.1f}")
-        else:
-            formatted_num = clean_number(f"{value:,.2f}")
-    else:
-        formatted_num = clean_number(f"{value:.3g}")
+            formatted_num = "$0"
 
-    # Clean trailing zeros
-    formatted_num = formatted_num.replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
+        # Clean up trailing .0 for cleaner look (e.g. $50.0B -> $50B)
+        formatted_num = formatted_num.replace(".0 ", " ").replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
+        return formatted_num
 
-    # Percentage formatting
-    if is_percentage:
-        pct_value = value * 100
-        if abs(pct_value) >= 100:
-            pct_formatted = f"{pct_value:.0f}"
-        elif abs(pct_value) >= 10:
-            pct_formatted = clean_number(f"{pct_value:.1f}")
-        elif abs(pct_value) >= 1:
-            pct_formatted = clean_number(f"{pct_value:.2f}")
+    elif is_percentage:
+        # Normalize to percentage points (e.g. 0.01 -> 1%)
+        # Note: Some inputs might already be in percentage points (e.g. 50 meaning 50%)
+        # Heuristic: if value > 1, assume it's already a percentage, unless strictly <= 1.0 which is ambiguous.
+        # Standard convention in this codebase: 0.50 = 50%
+        pct_val = value * 100
+        
+        # Format with appropriate precision
+        if abs(pct_val) >= 100:
+            pct_formatted = f"{pct_val:.0f}"
+        elif abs(pct_val) >= 10:
+            pct_formatted = clean_number(f"{pct_val:.1f}")
+        elif abs(pct_val) >= 1:
+            pct_formatted = clean_number(f"{pct_val:.2f}")
         else:
-            pct_formatted = clean_number(f"{pct_value:.3g}")
+            pct_formatted = clean_number(f"{pct_val:.3g}")
+            
         return f"{pct_formatted}%"
 
-    return formatted_num
+    else:
+        # Standard number formatting with auto-scaling
+        # Handle pre-scaled inputs
+        if is_in_billions:
+            raw_val = value * 1e9
+        elif is_in_millions:
+            raw_val = value * 1e6
+        elif is_in_thousands:
+            raw_val = value * 1e3
+        else:
+            raw_val = value
+            
+        abs_val = abs(raw_val)
+
+        if abs_val >= 1e15:  # Quadrillions
+            scaled = raw_val / 1e15
+            if abs(scaled) >= 100:
+                formatted_num = f"{scaled:.0f} quadrillion"
+            elif abs(scaled) >= 10:
+                formatted_num = f"{scaled:.1f} quadrillion"
+            else:
+                formatted_num = f"{scaled:.2f} quadrillion"
+        elif abs_val >= 1e12:  # Trillions
+            scaled = raw_val / 1e12
+            if abs(scaled) >= 100:
+                formatted_num = f"{scaled:.0f}T"
+            elif abs(scaled) >= 10:
+                formatted_num = f"{scaled:.1f}T"
+            else:
+                formatted_num = f"{scaled:.2f}T"
+        elif abs_val >= 1e9:  # Billions
+            scaled = raw_val / 1e9
+            if abs(scaled) >= 100:
+                formatted_num = f"{scaled:.0f}B"
+            elif abs(scaled) >= 10:
+                formatted_num = f"{scaled:.1f}B"
+            else:
+                formatted_num = f"{scaled:.2f}B"
+        elif abs_val >= 1e6:  # Millions
+            scaled = raw_val / 1e6
+            if abs(scaled) >= 100:
+                formatted_num = f"{scaled:.0f}M"
+            elif abs(scaled) >= 10:
+                formatted_num = f"{scaled:.1f}M"
+            else:
+                formatted_num = f"{scaled:.2f}M"
+        elif abs_val >= 100_000:  # 100K+
+            scaled = raw_val / 1e3
+            if abs(scaled) >= 100:
+                formatted_num = f"{scaled:.0f}K"
+            elif abs(scaled) >= 10:
+                formatted_num = f"{scaled:.1f}K"
+            else:
+                formatted_num = f"{scaled:.2f}K"
+        elif raw_val == int(raw_val):
+            formatted_num = f"{int(raw_val):,}"
+        elif abs_val >= 1000:
+             formatted_num = f"{raw_val:,.0f}"
+        elif abs_val >= 1:
+            if abs_val >= 100:
+                formatted_num = f"{raw_val:.0f}"
+            elif abs_val >= 10:
+                formatted_num = clean_number(f"{raw_val:.1f}")
+            else:
+                formatted_num = clean_number(f"{raw_val:.2f}")
+        else:
+             formatted_num = clean_number(f"{raw_val:.3g}")
+             
+        # Cleanup
+        formatted_num = formatted_num.replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
+        
+        if include_unit and unit and not (is_in_billions or is_in_millions or is_in_thousands):
+            return f"{formatted_num} {unit}".strip()
+            
+        return formatted_num
 
 
 def format_roi(value: float) -> str:

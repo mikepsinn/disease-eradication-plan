@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Ratio of Military to Government Clinical Trials Spending**
 
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 604 |
-| Mean (expected value) | 624.1 |
-| Median (50th percentile) | 616.6 |
-| Standard Deviation | 81.03 |
-| 90% Confidence Interval | [498.3, 804.1] |
+| Mean (expected value) | 624 |
+| Median (50th percentile) | 617 |
+| Standard Deviation | 81 |
+| 90% Confidence Interval | [498, 804] |
 
 *The histogram shows the distribution of Ratio of Military to Government Clinical Trials Spending across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

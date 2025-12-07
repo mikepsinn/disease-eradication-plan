@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Annual Infrastructure Destruction**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.875e+12 |
-| Mean (expected value) | 1.87e+12 |
-| Median (50th percentile) | 1.842e+12 |
-| Standard Deviation | 3.185e+11 |
-| 90% Confidence Interval | [1.372e+12, 2.469e+12] |
+| Baseline (deterministic) | $1.88T |
+| Mean (expected value) | $1.87T |
+| Median (50th percentile) | $1.84T |
+| Standard Deviation | $319B |
+| 90% Confidence Interval | [$1.37T, $2.47T] |
 
 *The histogram shows the distribution of Total Annual Infrastructure Destruction across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

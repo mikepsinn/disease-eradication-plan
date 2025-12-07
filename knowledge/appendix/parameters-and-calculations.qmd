@@ -402,7 +402,7 @@ $$
 
 ### ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
 
-**Value**: 451
+**Value**: 451 ratio
 
 ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
 
@@ -431,7 +431,7 @@ $$
 
 ### dFDA Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
 
-**Value**: 1,038
+**Value**: 1,038 ratio
 
 Simple ROI without NPV adjustment (gross savings / annual opex)
 
@@ -460,7 +460,7 @@ $$
 
 ### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
-**Value**: 75,392
+**Value**: 75,392 trials/year
 
 Maximum trials per year possible with trial capacity multiplier
 
@@ -487,7 +487,7 @@ $$
 
 ### Patients Fundable Annually {#sec-dih_patients_fundable_annually}
 
-**Value**: 43.4M
+**Value**: 43.4M patients/year
 
 Number of patients fundable annually at RECOVERY trial cost
 
@@ -572,7 +572,7 @@ $$
 
 ### Total DALYs Lost from Disease Eradication Delay {#sec-disease_eradication_delay_dalys}
 
-**Value**: 7.94B
+**Value**: 7.94B DALYs
 
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
@@ -601,7 +601,7 @@ $$
 
 ### Total Deaths from Disease Eradication Delay {#sec-disease_eradication_delay_deaths_total}
 
-**Value**: 416M
+**Value**: 416M deaths
 
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
 
@@ -659,7 +659,7 @@ $$
 
 ### Years Lived with Disability During Disease Eradication Delay {#sec-disease_eradication_delay_yld}
 
-**Value**: 873M
+**Value**: 873M years
 
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
@@ -688,7 +688,7 @@ $$
 
 ### Years of Life Lost from Disease Eradication Delay {#sec-disease_eradication_delay_yll}
 
-**Value**: 7.07B
+**Value**: 7.07B years
 
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
@@ -717,7 +717,7 @@ $$
 
 ### Total Deaths from Disease Eradication + Innovation Acceleration {#sec-disease_eradication_plus_acceleration_deaths_total}
 
-**Value**: 898M
+**Value**: 898M deaths
 
 Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.
 
@@ -775,7 +775,7 @@ $$
 
 ### Coverage Factor of Treaty Funding vs dFDA OPEX {#sec-dividend_coverage_factor}
 
-**Value**: 680
+**Value**: 680 ratio
 
 Coverage factor of treaty funding vs dFDA opex (sustainability margin)
 
@@ -804,7 +804,7 @@ $$
 
 ### Drug Cost Increase: 1980s to Current {#sec-drug_cost_increase_1980s_to_current_multiplier}
 
-**Value**: 13.4
+**Value**: 13.4 ratio
 
 Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
 
@@ -833,7 +833,7 @@ $$
 
 ### Drug Cost Increase: Pre-1962 to Current {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
-**Value**: 52
+**Value**: 52 ratio
 
 Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)
 
@@ -862,7 +862,7 @@ $$
 
 ### FDA to Oxford RECOVERY Trial Time Multiplier {#sec-fda_to_oxford_recovery_trial_time_multiplier}
 
-**Value**: 36.4
+**Value**: 36.4 ratio
 
 FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)
 
@@ -891,7 +891,7 @@ $$
 
 ### Total Annual Conflict Deaths Globally {#sec-global_annual_conflict_deaths_total}
 
-**Value**: 245K
+**Value**: 245K deaths/year
 
 Total annual conflict deaths globally (sum of combat, terror, state violence)
 
@@ -920,7 +920,7 @@ $$
 
 ### Annual Deaths from Curable Diseases Globally {#sec-global_annual_deaths_curable_diseases}
 
-**Value**: 54.8M
+**Value**: 54.8M deaths/year
 
 Annual deaths from curable diseases globally
 
@@ -1382,7 +1382,7 @@ $$
 
 ### Total Deaths from Historical Progress Delays {#sec-historical_progress_deaths_total}
 
-**Value**: 98.4M
+**Value**: 98.4M deaths
 
 Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.
 
@@ -1467,7 +1467,7 @@ $$
 
 ### Ratio of Industry to Government Clinical Trials Spending {#sec-industry_vs_government_clinical_trials_spending_ratio}
 
-**Value**: 17.4
+**Value**: 17.4 ratio
 
 Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
 
@@ -1523,7 +1523,7 @@ $$
 
 ### Ratio of Military to Government Clinical Trials Spending {#sec-military_to_government_clinical_trials_spending_ratio}
 
-**Value**: 604
+**Value**: 604 ratio
 
 Ratio of global military spending to government clinical trials spending
 
@@ -1550,7 +1550,7 @@ $$
 
 ### Ratio of Military Spending to Medical Research Spending {#sec-military_vs_medical_research_ratio}
 
-**Value**: 40.3
+**Value**: 40.3 ratio
 
 Ratio of military spending to medical research spending
 
@@ -1579,7 +1579,7 @@ $$
 
 ### Misallocation Factor: Cost to Kill vs Cost to Save {#sec-misallocation_factor_death_vs_saving}
 
-**Value**: 2,889
+**Value**: 2,889 ratio
 
 Misallocation factor: cost to kill vs cost to save
 
@@ -2068,7 +2068,7 @@ $$
 
 ### Total Suffering Hours Eliminated {#sec-suffering_hours_eliminated_total}
 
-**Value**: 7.65T
+**Value**: 7.65T hours
 
 Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)
 
@@ -2097,7 +2097,7 @@ $$
 
 ### Thalidomide DALYs Per Event {#sec-thalidomide_dalys_per_event}
 
-**Value**: 41,760
+**Value**: 41,760 DALYs
 
 Total DALYs per US-scale thalidomide event (YLL + YLD)
 
@@ -2124,7 +2124,7 @@ $$
 
 ### Thalidomide Deaths Per Event {#sec-thalidomide_deaths_per_event}
 
-**Value**: 360
+**Value**: 360 deaths
 
 Deaths per US-scale thalidomide event
 
@@ -2151,7 +2151,7 @@ $$
 
 ### Thalidomide Survivors Per Event {#sec-thalidomide_survivors_per_event}
 
-**Value**: 540
+**Value**: 540 cases
 
 Survivors per US-scale thalidomide event
 
@@ -2178,7 +2178,7 @@ $$
 
 ### Thalidomide US Cases Prevented {#sec-thalidomide_us_cases_prevented}
 
-**Value**: 900
+**Value**: 900 cases
 
 Estimated US thalidomide cases prevented by FDA rejection
 
@@ -2205,7 +2205,7 @@ $$
 
 ### Thalidomide YLD Per Event {#sec-thalidomide_yld_per_event}
 
-**Value**: 12,960
+**Value**: 12,960 years
 
 Years Lived with Disability per thalidomide event
 
@@ -2232,7 +2232,7 @@ $$
 
 ### Thalidomide YLL Per Event {#sec-thalidomide_yll_per_event}
 
-**Value**: 28,800
+**Value**: 28,800 years
 
 Years of Life Lost per thalidomide event (infant deaths)
 
@@ -2288,7 +2288,7 @@ $$
 
 ### Treaty System Benefit Multiplier vs Childhood Vaccination Programs {#sec-treaty_benefit_multiplier_vs_vaccines}
 
-**Value**: 10.3
+**Value**: 10.3 ratio
 
 Treaty system benefit multiplier vs childhood vaccination programs
 
@@ -2375,7 +2375,7 @@ $$
 
 ### Target Voting Bloc Size for Campaign {#sec-treaty_campaign_voting_bloc_target}
 
-**Value**: 280M
+**Value**: 280M of people
 
 Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
 
@@ -2404,7 +2404,7 @@ $$
 
 ### Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_complete_roi_all_benefits}
 
-**Value**: 1.19M
+**Value**: 1.19M ratio
 
 Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
@@ -2433,7 +2433,7 @@ $$
 
 ### Cost per DALY Averted (Timeline Shift) {#sec-treaty_dfda_cost_per_daly_timeline_shift}
 
-**Value**: $0.13
+**Value**: $0.126
 
 Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.
 
@@ -2491,7 +2491,7 @@ $$
 
 ### Expected Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_expected_vs_bed_nets_multiplier}
 
-**Value**: 7.07
+**Value**: 7.07 ratio
 
 Expected value multiplier vs bed nets (accounts for political uncertainty)
 
@@ -2518,7 +2518,7 @@ $$
 
 ### Annual Lives Saved from 1% Reduction in Conflict Deaths {#sec-treaty_lives_saved_annual_global}
 
-**Value**: 2,446
+**Value**: 2,446 lives/year
 
 Annual lives saved from 1% reduction in conflict deaths
 
@@ -2576,7 +2576,7 @@ $$
 
 ### Annual QALYs Gained from Peace Dividend {#sec-treaty_qalys_gained_annual_global}
 
-**Value**: 85,610
+**Value**: 85,610 QALYs/year
 
 Annual QALYs gained from peace dividend (lives saved × QALYs/life)
 
@@ -2634,7 +2634,7 @@ $$
 
 ### Treaty ROI - Historical Rate (Conservative Floor) {#sec-treaty_roi_historical_rate}
 
-**Value**: 251K
+**Value**: 251K ratio
 
 Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.
 
@@ -2663,7 +2663,7 @@ $$
 
 ### Treaty ROI - Innovation Acceleration (Optimistic) {#sec-treaty_roi_innovation_acceleration}
 
-**Value**: 2.38M
+**Value**: 2.38M ratio
 
 Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).
 
@@ -2692,7 +2692,7 @@ $$
 
 ### Treaty ROI - Lag Elimination (PRIMARY) {#sec-treaty_roi_lag_elimination}
 
-**Value**: 1.19M
+**Value**: 1.19M ratio
 
 Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
@@ -2779,7 +2779,7 @@ $$
 
 ### Cost-Effectiveness vs Bed Nets Multiplier {#sec-treaty_vs_bed_nets_multiplier}
 
-**Value**: 707
+**Value**: 707 ratio
 
 How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
 
@@ -2806,7 +2806,7 @@ $$
 
 ### Cumulative Trial Capacity Years Over 20 Years {#sec-trial_capacity_cumulative_years_20yr}
 
-**Value**: 456
+**Value**: 456 years
 
 Cumulative trial-capacity-equivalent years over 20-year period
 
@@ -2833,7 +2833,7 @@ $$
 
 ### Trial Capacity Multiplier {#sec-trial_capacity_multiplier}
 
-**Value**: 22.8
+**Value**: 22.8 ratio
 
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
@@ -2860,7 +2860,7 @@ $$
 
 ### Ratio of Type Ii Error Cost to Type I Error Benefit {#sec-type_ii_error_cost_ratio}
 
-**Value**: 3,068
+**Value**: 3,068 ratio
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
@@ -2889,7 +2889,7 @@ $$
 
 ### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024) {#sec-type_i_error_benefit_dalys}
 
-**Value**: 2.59M
+**Value**: 2.59M DALYs
 
 Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
 
@@ -2984,7 +2984,7 @@ Average US hourly wage
 
 ### Baseline Annual Lives Saved by Pharmaceuticals {#sec-baseline_lives_saved_annual}
 
-**Value**: 12
+**Value**: 12 deaths/year
 
 Baseline annual lives saved by pharmaceuticals (conservative aggregate)
 
@@ -3018,7 +3018,7 @@ GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)
 
 ### Average Reading Speed {#sec-book_reading_speed_wpm}
 
-**Value**: 200
+**Value**: 200 words/minute
 
 Average reading speed (conservative for non-fiction)
 
@@ -3040,7 +3040,7 @@ Total annual value of unpaid caregiving in US
 
 ### Number of Unpaid Caregivers in US {#sec-caregiver_count_us}
 
-**Value**: 38M
+**Value**: 38M people
 
 Number of unpaid caregivers in US
 
@@ -3051,7 +3051,7 @@ Number of unpaid caregivers in US
 
 ### Average Monthly Hours of Unpaid Family Caregiving in US {#sec-caregiver_hours_per_month}
 
-**Value**: 20
+**Value**: 20 hours/month
 
 Average monthly hours of unpaid family caregiving in US
 
@@ -3092,7 +3092,7 @@ Estimated annual global economic benefit from childhood vaccination programs (me
 
 ### Return on Investment from Childhood Vaccination Programs {#sec-childhood_vaccination_roi}
 
-**Value**: 13
+**Value**: 13 ratio
 
 Return on investment from childhood vaccination programs
 
@@ -3103,7 +3103,7 @@ Return on investment from childhood vaccination programs
 
 ### Disability Weight for Untreated Chronic Conditions {#sec-chronic_disease_disability_weight}
 
-**Value**: 0.35
+**Value**: 0.35 weight
 
 Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
 
@@ -3111,7 +3111,7 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 0.07)
+**Technical**: Distribution: Normal (SE: 0.07 weight)
 
 #### Input Distribution
 
@@ -3122,7 +3122,7 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 ### Current Active Trials at Any Given Time {#sec-current_active_trials}
 
-**Value**: 10,000
+**Value**: 10,000 trials
 
 Current active trials at any given time (3-5 year duration)
 
@@ -3144,7 +3144,7 @@ Current clinical trial participation rate (0.06% of population)
 
 ### Global Population with Chronic Diseases {#sec-current_disease_patients_global}
 
-**Value**: 2.40B
+**Value**: 2.40B people
 
 Global population with chronic diseases
 
@@ -3152,9 +3152,9 @@ Global population with chronic diseases
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.00B, 2.80B] • Distribution: Lognormal
+**Technical**: 95% CI: [2.00B people, 2.80B people] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00B and 2.80B (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00B people and 2.80B people (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3167,7 +3167,7 @@ Global population with chronic diseases
 
 ### Average Annual New Drug Approvals Globally {#sec-current_drug_approvals_per_year}
 
-**Value**: 50
+**Value**: 50 drugs/year
 
 Average annual new drug approvals globally
 
@@ -3178,7 +3178,7 @@ Average annual new drug approvals globally
 
 ### Current Global Clinical Trials per Year {#sec-current_trials_per_year}
 
-**Value**: 3,300
+**Value**: 3,300 trials/year
 
 Current global clinical trials per year
 
@@ -3186,9 +3186,9 @@ Current global clinical trials per year
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2,640, 3,960] • Distribution: Lognormal
+**Technical**: 95% CI: [2,640 trials/year, 3,960 trials/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 and 3,960 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2,640 trials/year and 3,960 trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3212,7 +3212,7 @@ Current trial abandonment rate (40% never complete)
 
 ### Annual Global Clinical Trial Participants {#sec-current_trial_slots_available}
 
-**Value**: 1.90M
+**Value**: 1.90M patients/year
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -3220,9 +3220,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50M, 2.30M] • Distribution: Lognormal
+**Technical**: 95% CI: [1.50M patients/year, 2.30M patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M and 2.30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M patients/year and 2.30M patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3276,7 +3276,7 @@ Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
 ### Economic Multiplier for Education Investment {#sec-economic_multiplier_education_investment}
 
-**Value**: 2.1
+**Value**: 2.1 ratio
 
 Economic multiplier for education investment (2.1x ROI)
 
@@ -3287,7 +3287,7 @@ Economic multiplier for education investment (2.1x ROI)
 
 ### Economic Multiplier for Healthcare Investment {#sec-economic_multiplier_healthcare_investment}
 
-**Value**: 4.3
+**Value**: 4.3 ratio
 
 Economic multiplier for healthcare investment (4.3x ROI)
 
@@ -3298,7 +3298,7 @@ Economic multiplier for healthcare investment (4.3x ROI)
 
 ### Economic Multiplier for Infrastructure Investment {#sec-economic_multiplier_infrastructure_investment}
 
-**Value**: 1.6
+**Value**: 1.6 ratio
 
 Economic multiplier for infrastructure investment (1.6x ROI)
 
@@ -3309,7 +3309,7 @@ Economic multiplier for infrastructure investment (1.6x ROI)
 
 ### Economic Multiplier for Military Spending {#sec-economic_multiplier_military_spending}
 
-**Value**: 0.6
+**Value**: 0.6 ratio
 
 Economic multiplier for military spending (0.6x ROI)
 
@@ -3320,7 +3320,7 @@ Economic multiplier for military spending (0.6x ROI)
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification {#sec-efficacy_lag_years}
 
-**Value**: 8.2
+**Value**: 8.2 years
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
@@ -3328,7 +3328,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 1)
+**Technical**: Distribution: Normal (SE: 1 years)
 
 #### Input Distribution
 
@@ -3339,7 +3339,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 
 ### FDA Phase 1 to Approval Timeline {#sec-fda_phase_1_to_approval_years}
 
-**Value**: 9.1
+**Value**: 9.1 years
 
 FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
 
@@ -3347,9 +3347,9 @@ FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6, 12] • Distribution: Gamma (SE: 2)
+**Technical**: 95% CI: [6 years, 12 years] • Distribution: Gamma (SE: 2 years)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6 and 12 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 years and 12 years (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The gamma distribution means values follow a specific statistical pattern.*
 
@@ -3395,7 +3395,7 @@ GiveWell cost per life saved (Helen Keller International)
 
 ### Annual Deaths from Active Combat Worldwide {#sec-global_annual_conflict_deaths_active_combat}
 
-**Value**: 234K
+**Value**: 234K deaths/year
 
 Annual deaths from active combat worldwide
 
@@ -3403,9 +3403,9 @@ Annual deaths from active combat worldwide
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [180K, 300K] • Distribution: Lognormal
+**Technical**: 95% CI: [180K deaths/year, 300K deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 180K and 300K (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 180K deaths/year and 300K deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3418,7 +3418,7 @@ Annual deaths from active combat worldwide
 
 ### Annual Deaths from State Violence {#sec-global_annual_conflict_deaths_state_violence}
 
-**Value**: 2,700
+**Value**: 2,700 deaths/year
 
 Annual deaths from state violence
 
@@ -3426,9 +3426,9 @@ Annual deaths from state violence
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1,500, 5,000] • Distribution: Lognormal
+**Technical**: 95% CI: [1,500 deaths/year, 5,000 deaths/year] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 and 5,000 (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1,500 deaths/year and 5,000 deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3441,7 +3441,7 @@ Annual deaths from state violence
 
 ### Annual Deaths from Terror Attacks Globally {#sec-global_annual_conflict_deaths_terror_attacks}
 
-**Value**: 8,300
+**Value**: 8,300 deaths/year
 
 Annual deaths from terror attacks globally
 
@@ -3449,9 +3449,9 @@ Annual deaths from terror attacks globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6,000, 12,000] • Distribution: Lognormal
+**Technical**: 95% CI: [6,000 deaths/year, 12,000 deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 and 12,000 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6,000 deaths/year and 12,000 deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3625,7 +3625,7 @@ Annual infrastructure damage to water systems from conflict
 
 ### Annual Lives Saved by Medical Research Globally {#sec-global_annual_lives_saved_by_med_research}
 
-**Value**: 4.20M
+**Value**: 4.20M lives/year
 
 Annual lives saved by medical research globally
 
@@ -3633,9 +3633,9 @@ Annual lives saved by medical research globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [3.00M, 6.00M] • Distribution: Lognormal
+**Technical**: 95% CI: [3.00M lives/year, 6.00M lives/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 3.00M and 6.00M (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 3.00M lives/year and 6.00M lives/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3878,7 +3878,7 @@ Annual global spending on clinical trials (Total: Government + Industry)
 
 ### Daily Deaths from Curable Diseases Globally {#sec-global_daily_deaths_curable_diseases}
 
-**Value**: 150K
+**Value**: 150K deaths/day
 
 Daily deaths from curable diseases globally
 
@@ -3886,9 +3886,9 @@ Daily deaths from curable diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [120K, 180K] • Distribution: Lognormal
+**Technical**: 95% CI: [120K deaths/day, 180K deaths/day] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120K and 180K (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 120K deaths/day and 180K deaths/day (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3901,7 +3901,7 @@ Daily deaths from curable diseases globally
 
 ### Global Daily Deaths from Disease and Aging {#sec-global_disease_deaths_daily}
 
-**Value**: 150K
+**Value**: 150K deaths/day
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
@@ -3909,7 +3909,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7,500)
+**Technical**: Distribution: Normal (SE: 7,500 deaths/day)
 
 #### Input Distribution
 
@@ -4012,7 +4012,7 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 ### Global Life Expectancy (2024) {#sec-global_life_expectancy_2024}
 
-**Value**: 79
+**Value**: 79 years
 
 Global life expectancy (2024)
 
@@ -4020,7 +4020,7 @@ Global life expectancy (2024)
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 2)
+**Technical**: Distribution: Normal (SE: 2 years)
 
 #### Input Distribution
 
@@ -4077,7 +4077,7 @@ Global military spending in 2024
 
 ### Global Population in 2024 {#sec-global_population_2024}
 
-**Value**: 8.00B
+**Value**: 8.00B of people
 
 Global population in 2024
 
@@ -4085,9 +4085,9 @@ Global population in 2024
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [7.80B, 8.20B] • Distribution: Lognormal
+**Technical**: 95% CI: [7.80B of people, 8.20B of people] • Distribution: Lognormal
 
-**What this means**: We're quite confident in this estimate. The true value likely falls between 7.80B and 8.20B (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between 7.80B of people and 8.20B of people (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4157,7 +4157,7 @@ Estimated total economic impact of Human Genome Project
 
 ### Life Extension from Treaty Research Acceleration {#sec-life_extension_years}
 
-**Value**: 20
+**Value**: 20 years
 
 Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.
 
@@ -4165,9 +4165,9 @@ Expected years of life extension from 1% treaty research acceleration (25x trial
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [5, 100] • Distribution: Lognormal
+**Technical**: 95% CI: [5 years, 100 years] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 5 and 100 (±238%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 years and 100 years (±238%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4202,7 +4202,7 @@ Minimum annual lobbyist salary range
 
 ### Return on Investment from Measles Vaccination Programs {#sec-measles_vaccination_roi}
 
-**Value**: 14
+**Value**: 14 ratio
 
 Return on investment from measles (MMR) vaccination programs
 
@@ -4247,7 +4247,7 @@ Percentage of NIH budget spent on clinical trials (3.3%)
 
 ### Oxford RECOVERY Trial Duration {#sec-oxford_recovery_trial_duration_months}
 
-**Value**: 3
+**Value**: 3 months
 
 Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
 
@@ -4333,7 +4333,7 @@ Percentage of drugs that reach market in current system
 
 ### Phase I Safety Trial Duration {#sec-phase_1_safety_duration_years}
 
-**Value**: 2.3
+**Value**: 2.3 years
 
 Phase I safety trial duration
 
@@ -4355,7 +4355,7 @@ Phase 3 trial total cost (minimum)
 
 ### Return on Investment from Sustaining Polio Vaccination Assets and Integrating into Expanded Immunization Programs {#sec-polio_vaccination_roi}
 
-**Value**: 39
+**Value**: 39 ratio
 
 Return on investment from sustaining polio vaccination assets and integrating into expanded immunization programs
 
@@ -4434,7 +4434,7 @@ Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
 
 ### Pre-1962 Physician Count (Unverified) {#sec-pre_1962_physician_count}
 
-**Value**: 144K
+**Value**: 144K physicians
 
 Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
 
@@ -4445,7 +4445,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 ### Total Number of Rare Diseases Globally {#sec-rare_diseases_count_global}
 
-**Value**: 7,000
+**Value**: 7,000 diseases
 
 Total number of rare diseases globally
 
@@ -4479,7 +4479,7 @@ RECOVERY trial cost per patient
 
 ### Mean Age of Preventable Death from Post-Safety Efficacy Delay {#sec-regulatory_delay_mean_age_of_death}
 
-**Value**: 62
+**Value**: 62 years
 
 Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
 
@@ -4487,7 +4487,7 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 3)
+**Technical**: Distribution: Normal (SE: 3 years)
 
 #### Input Distribution
 
@@ -4498,7 +4498,7 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 ### Pre-Death Suffering Period During Post-Safety Efficacy Delay {#sec-regulatory_delay_suffering_period_years}
 
-**Value**: 6
+**Value**: 6 years
 
 Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
@@ -4506,9 +4506,9 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [4, 9] • Distribution: Lognormal
+**Technical**: 95% CI: [4 years, 9 years] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 4 and 9 (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 4 years and 9 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4521,7 +4521,7 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 ### Return on Investment from Smallpox Eradication Campaign {#sec-smallpox_eradication_roi}
 
-**Value**: 280
+**Value**: 280 ratio
 
 Return on investment from smallpox eradication campaign
 
@@ -4573,7 +4573,7 @@ Standard economic value per QALY
 
 ### Standard QALYs per Life Saved {#sec-standard_qalys_per_life_saved}
 
-**Value**: 35
+**Value**: 35 QALYs/life
 
 Standard QALYs per life saved (WHO life tables)
 
@@ -4581,7 +4581,7 @@ Standard QALYs per life saved (WHO life tables)
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7)
+**Technical**: Distribution: Normal (SE: 7 QALYs/life)
 
 #### Input Distribution
 
@@ -4625,7 +4625,7 @@ Switzerland GDP per capita
 
 ### Deaths from 9/11 Terrorist Attacks {#sec-terrorism_deaths_911}
 
-**Value**: 2,996
+**Value**: 2,996 deaths
 
 Deaths from 9/11 terrorist attacks
 
@@ -4636,7 +4636,7 @@ Deaths from 9/11 terrorist attacks
 
 ### Thalidomide Cases Worldwide {#sec-thalidomide_cases_worldwide}
 
-**Value**: 15,000
+**Value**: 15,000 cases
 
 Total thalidomide birth defect cases worldwide (1957-1962)
 
@@ -4644,9 +4644,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10,000, 20,000] • Distribution: Lognormal
+**Technical**: 95% CI: [10,000 cases, 20,000 cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 and 20,000 (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 cases and 20,000 cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4659,7 +4659,7 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 ### Thalidomide Disability Weight {#sec-thalidomide_disability_weight}
 
-**Value**: 0.4
+**Value**: 0.4 ratio
 
 Disability weight for thalidomide survivors (limb deformities, organ damage)
 
@@ -4667,9 +4667,9 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [0.32, 0.48] • Distribution: Lognormal
+**Technical**: 95% CI: [0.32 ratio, 0.48 ratio] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32 and 0.48 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32 ratio and 0.48 ratio (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4705,7 +4705,7 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 ### Thalidomide Survivor Lifespan {#sec-thalidomide_survivor_lifespan}
 
-**Value**: 60
+**Value**: 60 years
 
 Average lifespan for thalidomide survivors
 
@@ -4713,9 +4713,9 @@ Average lifespan for thalidomide survivors
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [50, 70] • Distribution: Lognormal
+**Technical**: 95% CI: [50 years, 70 years] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 50 and 70 (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 50 years and 70 years (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4784,7 +4784,7 @@ FDA cited Phase 3 cost per patient ($41K)
 
 ### Traditional FDA Drug Development Timeline {#sec-treatment_acceleration_years_current}
 
-**Value**: 17
+**Value**: 17 years
 
 Traditional FDA drug development timeline
 
@@ -4795,7 +4795,7 @@ Traditional FDA drug development timeline
 
 ### Cost Reduction Factor Demonstrated by Recovery Trial {#sec-trial_cost_reduction_factor}
 
-**Value**: 82
+**Value**: 82 ratio
 
 Cost reduction factor demonstrated by RECOVERY trial
 
@@ -4803,9 +4803,9 @@ Cost reduction factor demonstrated by RECOVERY trial
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [20, 150] • Distribution: Lognormal (SE: 20)
+**Technical**: 95% CI: [20 ratio, 150 ratio] • Distribution: Lognormal (SE: 20 ratio)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 20 and 150 (±79%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 20 ratio and 150 ratio (±79%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4978,7 +4978,7 @@ US military spending as percentage of GDP (2024)
 
 ### US Population in 2024 {#sec-us_population_2024}
 
-**Value**: 335M
+**Value**: 335M people
 
 US population in 2024
 
@@ -4986,9 +4986,9 @@ US population in 2024
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [330M, 340M] • Distribution: Lognormal
+**Technical**: 95% CI: [330M people, 340M people] • Distribution: Lognormal
 
-**What this means**: We're quite confident in this estimate. The true value likely falls between 330M and 340M (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: We're quite confident in this estimate. The true value likely falls between 330M people and 340M people (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -5046,7 +5046,7 @@ Estimated annual global economic benefit from water fluoridation programs
 
 ### Return on Investment from Water Fluoridation Programs {#sec-water_fluoridation_roi}
 
-**Value**: 23
+**Value**: 23 ratio
 
 Return on investment from water fluoridation programs
 
@@ -5418,7 +5418,7 @@ Percentage of budget defense sector keeps under 1% treaty
 
 ### Years to Reach Full dFDA Adoption {#sec-dfda_npv_adoption_ramp_years}
 
-**Value**: 5
+**Value**: 5 years
 
 Years to reach full dFDA adoption
 
@@ -5643,7 +5643,7 @@ Percentage of caregiving for treatable disease conditions (vs aging, disability,
 
 ### Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths {#sec-disease_vs_terrorism_deaths_ratio}
 
-**Value**: 18,274
+**Value**: 18,274 ratio
 
 Ratio of annual disease deaths to 9/11 terrorism deaths
 
@@ -5652,7 +5652,7 @@ Ratio of annual disease deaths to 9/11 terrorism deaths
 
 ### Ratio of Annual Disease Deaths to War Deaths {#sec-disease_vs_war_deaths_ratio}
 
-**Value**: 224
+**Value**: 224 ratio
 
 Ratio of annual disease deaths to war deaths
 
@@ -5769,7 +5769,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ### Standard Time Horizon for NPV Analysis {#sec-npv_time_horizon_years}
 
-**Value**: 10
+**Value**: 10 years
 
 Standard time horizon for NPV analysis
 
@@ -5791,7 +5791,7 @@ Direct fiscal savings from 1% military spending reduction (high confidence)
 
 ### Pre-1962 Validation Years {#sec-pre_1962_validation_years}
 
-**Value**: 77
+**Value**: 77 years
 
 Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
@@ -5814,7 +5814,7 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 ### Total Words in the Book {#sec-total_book_words}
 
-**Value**: 171K
+**Value**: 171K words
 
 Total words in the book
 
@@ -5892,15 +5892,15 @@ Campaign budget for Super PACs and political lobbying
 
 ### Treaty Campaign Duration {#sec-treaty_campaign_duration_years}
 
-**Value**: 4
+**Value**: 4 years
 
 Treaty campaign duration (3-5 year range, using midpoint)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [3, 5] • Distribution: Triangular
+**Technical**: 95% CI: [3 years, 5 years] • Distribution: Triangular
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 3 and 5 (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 3 years and 5 years (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
 

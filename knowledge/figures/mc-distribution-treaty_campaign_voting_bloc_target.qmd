@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Target Voting Bloc Size for Campaign**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.8e+08 |
-| Mean (expected value) | 2.794e+08 |
-| Median (50th percentile) | 2.765e+08 |
-| Standard Deviation | 4.214e+07 |
-| 90% Confidence Interval | [2.127e+08, 3.59e+08] |
+| Baseline (deterministic) | 280M |
+| Mean (expected value) | 279M |
+| Median (50th percentile) | 276M |
+| Standard Deviation | 42.1M |
+| 90% Confidence Interval | [213M, 359M] |
 
 *The histogram shows the distribution of Target Voting Bloc Size for Campaign across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

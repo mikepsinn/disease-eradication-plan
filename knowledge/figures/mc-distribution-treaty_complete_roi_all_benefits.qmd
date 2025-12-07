@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Treaty ROI - Lag Elimination (PRIMARY)**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.191e+06 |
-| Mean (expected value) | 1.237e+06 |
-| Median (50th percentile) | 1.256e+06 |
-| Standard Deviation | 5.015e+04 |
-| 90% Confidence Interval | [1.138e+06, 1.27e+06] |
+| Baseline (deterministic) | 1.19M |
+| Mean (expected value) | 1.24M |
+| Median (50th percentile) | 1.26M |
+| Standard Deviation | 50,153 |
+| 90% Confidence Interval | [1.14M, 1.27M] |
 
 *The histogram shows the distribution of Treaty ROI - Lag Elimination (PRIMARY) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

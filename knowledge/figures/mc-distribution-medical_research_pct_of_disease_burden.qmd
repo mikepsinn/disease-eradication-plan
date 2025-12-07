@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Medical Research Spending as Percentage of Total Disease Burden**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 0.0005247 |
-| Mean (expected value) | 0.0005306 |
-| Median (50th percentile) | 0.0005303 |
-| Standard Deviation | 3.455e-05 |
-| 90% Confidence Interval | [0.0004731, 0.0005896] |
+| Baseline (deterministic) | 0.0525% |
+| Mean (expected value) | 0.0531% |
+| Median (50th percentile) | 0.053% |
+| Standard Deviation | 0.00345% |
+| 90% Confidence Interval | [0.0473%, 0.059%] |
 
 *The histogram shows the distribution of Medical Research Spending as Percentage of Total Disease Burden across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

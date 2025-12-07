@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Peace Dividend from 1% Reduction in Total War Costs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.136e+11 |
-| Mean (expected value) | 1.13e+11 |
-| Median (50th percentile) | 1.117e+11 |
-| Standard Deviation | 1.684e+10 |
-| 90% Confidence Interval | [8.74e+10, 1.433e+11] |
+| Baseline (deterministic) | $114B |
+| Mean (expected value) | $113B |
+| Median (50th percentile) | $112B |
+| Standard Deviation | $16.8B |
+| 90% Confidence Interval | [$87.4B, $143B] |
 
 *The histogram shows the distribution of Annual Peace Dividend from 1% Reduction in Total War Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

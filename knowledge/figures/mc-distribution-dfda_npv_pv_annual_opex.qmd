@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: dFDA Present Value of Annual OPEX Over 10 Years**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 3.416e+08 |
-| Mean (expected value) | 3.4e+08 |
-| Median (50th percentile) | 3.332e+08 |
-| Standard Deviation | 6.858e+07 |
-| 90% Confidence Interval | [2.347e+08, 4.725e+08] |
+| Baseline (deterministic) | $342M |
+| Mean (expected value) | $340M |
+| Median (50th percentile) | $333M |
+| Standard Deviation | $68.6M |
+| 90% Confidence Interval | [$235M, $473M] |
 
 *The histogram shows the distribution of dFDA Present Value of Annual OPEX Over 10 Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

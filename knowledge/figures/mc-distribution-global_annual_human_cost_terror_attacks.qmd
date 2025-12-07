@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Cost of Terror Deaths**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 8.3e+10 |
-| Mean (expected value) | 8.207e+10 |
-| Median (50th percentile) | 7.891e+10 |
-| Standard Deviation | 2.705e+10 |
-| 90% Confidence Interval | [4.307e+10, 1.314e+11] |
+| Baseline (deterministic) | $83B |
+| Mean (expected value) | $82.1B |
+| Median (50th percentile) | $78.9B |
+| Standard Deviation | $27B |
+| 90% Confidence Interval | [$43.1B, $131B] |
 
 *The histogram shows the distribution of Annual Cost of Terror Deaths across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

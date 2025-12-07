@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: US Per Capita Chronic Disease Cost**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.224e+04 |
-| Mean (expected value) | 1.221e+04 |
-| Median (50th percentile) | 1.216e+04 |
-| Standard Deviation | 1,147 |
-| 90% Confidence Interval | [1.033e+04, 1.429e+04] |
+| Baseline (deterministic) | $12.2K |
+| Mean (expected value) | $12.2K |
+| Median (50th percentile) | $12.2K |
+| Standard Deviation | $1.15K |
+| 90% Confidence Interval | [$10.3K, $14.3K] |
 
 *The histogram shows the distribution of US Per Capita Chronic Disease Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

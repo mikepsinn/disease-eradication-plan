@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Patients Fundable Annually**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 4.341e+07 |
-| Mean (expected value) | 4.414e+07 |
-| Median (50th percentile) | 4.392e+07 |
-| Standard Deviation | 4.521e+06 |
-| 90% Confidence Interval | [3.624e+07, 5.341e+07] |
+| Baseline (deterministic) | 43.4M |
+| Mean (expected value) | 44.1M |
+| Median (50th percentile) | 43.9M |
+| Standard Deviation | 4.52M |
+| 90% Confidence Interval | [36.2M, 53.4M] |
 
 *The histogram shows the distribution of Patients Fundable Annually across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Deaths from Curable Diseases Globally**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 5.475e+07 |
-| Mean (expected value) | 5.463e+07 |
-| Median (50th percentile) | 5.439e+07 |
-| Standard Deviation | 5.323e+06 |
-| 90% Confidence Interval | [4.593e+07, 6.438e+07] |
+| Baseline (deterministic) | 54.8M |
+| Mean (expected value) | 54.6M |
+| Median (50th percentile) | 54.4M |
+| Standard Deviation | 5.32M |
+| 90% Confidence Interval | [45.9M, 64.4M] |
 
 *The histogram shows the distribution of Annual Deaths from Curable Diseases Globally across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

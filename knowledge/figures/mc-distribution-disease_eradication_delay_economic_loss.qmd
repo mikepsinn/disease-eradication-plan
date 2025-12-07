@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Economic Loss from Disease Eradication Delay**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.191e+15 |
-| Mean (expected value) | 1.235e+15 |
-| Median (50th percentile) | 1.183e+15 |
-| Standard Deviation | 4.264e+14 |
-| 90% Confidence Interval | [5.954e+14, 2.068e+15] |
+| Baseline (deterministic) | $1.19 quadrillion |
+| Mean (expected value) | $1.24 quadrillion |
+| Median (50th percentile) | $1.18 quadrillion |
+| Standard Deviation | $426T |
+| 90% Confidence Interval | [$595T, $2.07 quadrillion] |
 
 *The histogram shows the distribution of Total Economic Loss from Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

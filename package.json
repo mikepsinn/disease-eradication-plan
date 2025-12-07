@@ -79,6 +79,7 @@
     "param-check:all": "tsx scripts/review/parameter-check-all.ts",
     "archive:file": "tsx scripts/review/archive-process-file.ts",
     "archive:all": "tsx scripts/review/archive-process-all.ts",
+    "apply-instruction:all": "tsx scripts/review/apply-instruction-all-files.ts",
     "review": "tsx scripts/review/review.ts",
     "watch": "tsx scripts/watch-and-review.ts",
     "sort-references": "tsx scripts/sort-references.ts",

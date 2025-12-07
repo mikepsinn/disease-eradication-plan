@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Deaths from Disease Eradication Delay**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 4.159e+08 |
-| Mean (expected value) | 4.179e+08 |
-| Median (50th percentile) | 4.149e+08 |
-| Standard Deviation | 7.123e+07 |
-| 90% Confidence Interval | [3.033e+08, 5.402e+08] |
+| Baseline (deterministic) | 416M |
+| Mean (expected value) | 418M |
+| Median (50th percentile) | 415M |
+| Standard Deviation | 71.2M |
+| 90% Confidence Interval | [303M, 540M] |
 
 *The histogram shows the distribution of Total Deaths from Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

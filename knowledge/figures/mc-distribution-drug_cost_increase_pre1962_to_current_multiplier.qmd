@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Drug Cost Increase: Pre-1962 to Current**
 
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 52 |
-| Mean (expected value) | 56.17 |
-| Median (50th percentile) | 52.97 |
-| Standard Deviation | 6.071 |
-| 90% Confidence Interval | [52.12, 69.84] |
+| Mean (expected value) | 56.2 |
+| Median (50th percentile) | 53 |
+| Standard Deviation | 6.07 |
+| 90% Confidence Interval | [52.1, 69.8] |
 
 *The histogram shows the distribution of Drug Cost Increase: Pre-1962 to Current across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

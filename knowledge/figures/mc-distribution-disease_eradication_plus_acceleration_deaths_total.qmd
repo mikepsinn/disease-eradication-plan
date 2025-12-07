@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Deaths from Disease Eradication + Innovation Acceleration**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 8.979e+08 |
-| Mean (expected value) | 9.023e+08 |
-| Median (50th percentile) | 8.959e+08 |
-| Standard Deviation | 1.538e+08 |
-| 90% Confidence Interval | [6.548e+08, 1.166e+09] |
+| Baseline (deterministic) | 898M |
+| Mean (expected value) | 902M |
+| Median (50th percentile) | 896M |
+| Standard Deviation | 154M |
+| 90% Confidence Interval | [655M, 1.17B] |
 
 *The histogram shows the distribution of Total Deaths from Disease Eradication + Innovation Acceleration across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

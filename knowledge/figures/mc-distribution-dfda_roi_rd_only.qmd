@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: ROI from dFDA R&D Savings Only**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 450.9 |
-| Mean (expected value) | 456.2 |
+| Baseline (deterministic) | 451 |
+| Mean (expected value) | 456 |
 | Median (50th percentile) | 455 |
-| Standard Deviation | 65.28 |
-| 90% Confidence Interval | [350.9, 566.5] |
+| Standard Deviation | 65.3 |
+| 90% Confidence Interval | [351, 566] |
 
 *The histogram shows the distribution of ROI from dFDA R&D Savings Only across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Ratio of Type Ii Error Cost to Type I Error Benefit**
 
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 3,068 |
 | Mean (expected value) | 3,157 |
 | Median (50th percentile) | 3,130 |
-| Standard Deviation | 395.7 |
+| Standard Deviation | 396 |
 | 90% Confidence Interval | [2,551, 3,879] |
 
 *The histogram shows the distribution of Ratio of Type Ii Error Cost to Type I Error Benefit across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Savings from 1% Reduction in PTSD and Mental Health Costs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.32e+09 |
-| Mean (expected value) | 2.314e+09 |
-| Median (50th percentile) | 2.278e+09 |
-| Standard Deviation | 3.957e+08 |
-| 90% Confidence Interval | [1.696e+09, 3.058e+09] |
+| Baseline (deterministic) | $2.32B |
+| Mean (expected value) | $2.31B |
+| Median (50th percentile) | $2.28B |
+| Standard Deviation | $396M |
+| 90% Confidence Interval | [$1.70B, $3.06B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in PTSD and Mental Health Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

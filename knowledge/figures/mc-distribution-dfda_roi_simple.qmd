@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: dFDA Simple ROI Without NPV Adjustment**
 
 | Statistic | Value |
 |:----------|------:|
@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 1,049 |
 | Median (50th percentile) | 1,046 |
 | Standard Deviation | 148 |
-| 90% Confidence Interval | [808.8, 1,298] |
+| 90% Confidence Interval | [809, 1,298] |
 
 *The histogram shows the distribution of dFDA Simple ROI Without NPV Adjustment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

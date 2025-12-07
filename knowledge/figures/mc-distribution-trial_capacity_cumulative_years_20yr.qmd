@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Cumulative Trial Capacity Years Over 20 Years**
 
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 456 |
 | Mean (expected value) | 475 |
 | Median (50th percentile) | 465 |
-| Standard Deviation | 98.33 |
+| Standard Deviation | 98.3 |
 | 90% Confidence Interval | [321, 676] |
 
 *The histogram shows the distribution of Cumulative Trial Capacity Years Over 20 Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

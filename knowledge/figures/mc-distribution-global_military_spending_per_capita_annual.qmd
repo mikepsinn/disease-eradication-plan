@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Per Capita Military Spending Globally**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 339.8 |
-| Mean (expected value) | 338.5 |
-| Median (50th percentile) | 337.7 |
-| Standard Deviation | 20.3 |
-| 90% Confidence Interval | [310.5, 368] |
+| Baseline (deterministic) | $340 |
+| Mean (expected value) | $339 |
+| Median (50th percentile) | $338 |
+| Standard Deviation | $20 |
+| 90% Confidence Interval | [$310, $368] |
 
 *The histogram shows the distribution of Per Capita Military Spending Globally across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

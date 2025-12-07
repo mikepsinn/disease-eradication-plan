@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Thalidomide YLD Per Event**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.296e+04 |
-| Mean (expected value) | 1.328e+04 |
-| Median (50th percentile) | 1.259e+04 |
+| Baseline (deterministic) | 12,960 |
+| Mean (expected value) | 13,284 |
+| Median (50th percentile) | 12,590 |
 | Standard Deviation | 4,502 |
-| 90% Confidence Interval | [6,927, 2.256e+04] |
+| 90% Confidence Interval | [6,927, 22,564] |
 
 *The histogram shows the distribution of Thalidomide YLD Per Event across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

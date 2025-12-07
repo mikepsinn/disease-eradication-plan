@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Years Lived with Disability During Disease Eradication Delay**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 8.733e+08 |
-| Mean (expected value) | 9.725e+08 |
-| Median (50th percentile) | 8.477e+08 |
-| Standard Deviation | 5.676e+08 |
-| 90% Confidence Interval | [2.914e+08, 2.082e+09] |
+| Baseline (deterministic) | 873M |
+| Mean (expected value) | 972M |
+| Median (50th percentile) | 848M |
+| Standard Deviation | 568M |
+| 90% Confidence Interval | [291M, 2.08B] |
 
 *The histogram shows the distribution of Years Lived with Disability During Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

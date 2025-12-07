@@ -5,6 +5,6 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
 | Recovery Trial Cost Per Patient | -1.3662 | Strong driver |
-| 1% Treaty Fund Trial Subsidies Annual | 0.4126 | Moderate driver |
+| DIH Treasury Trial Subsidies Annual | 0.4126 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

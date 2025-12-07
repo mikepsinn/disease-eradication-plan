@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Ratio of Military Spending to Medical Research Spending**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 40.27 |
-| Mean (expected value) | 40.34 |
-| Median (50th percentile) | 40.28 |
-| Standard Deviation | 1.376 |
-| 90% Confidence Interval | [37.67, 43.19] |
+| Baseline (deterministic) | 40.3 |
+| Mean (expected value) | 40.3 |
+| Median (50th percentile) | 40.3 |
+| Standard Deviation | 1.38 |
+| 90% Confidence Interval | [37.7, 43.2] |
 
 *The histogram shows the distribution of Ratio of Military Spending to Medical Research Spending across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

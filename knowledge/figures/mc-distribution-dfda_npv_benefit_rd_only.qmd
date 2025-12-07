@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: NPV of dFDA Benefits (R&D Only, 10-Year Discounted)**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.755e+11 |
-| Mean (expected value) | 2.741e+11 |
-| Median (50th percentile) | 2.704e+11 |
-| Standard Deviation | 5.326e+10 |
-| 90% Confidence Interval | [1.932e+11, 3.689e+11] |
+| Baseline (deterministic) | $275B |
+| Mean (expected value) | $274B |
+| Median (50th percentile) | $270B |
+| Standard Deviation | $53.3B |
+| 90% Confidence Interval | [$193B, $369B] |
 
 *The histogram shows the distribution of NPV of dFDA Benefits (R&D Only, 10-Year Discounted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

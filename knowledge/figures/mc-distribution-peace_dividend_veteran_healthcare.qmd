@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Savings from 1% Reduction in Veteran Healthcare Costs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.001e+09 |
-| Mean (expected value) | 1.996e+09 |
-| Median (50th percentile) | 1.965e+09 |
-| Standard Deviation | 3.399e+08 |
-| 90% Confidence Interval | [1.464e+09, 2.635e+09] |
+| Baseline (deterministic) | $2.00B |
+| Mean (expected value) | $2.00B |
+| Median (50th percentile) | $1.97B |
+| Standard Deviation | $340M |
+| 90% Confidence Interval | [$1.46B, $2.63B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in Veteran Healthcare Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

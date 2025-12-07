@@ -59,6 +59,7 @@ if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
 from generate_references_json import generate_references_json  # noqa: E402
+from dih_models.parameters import format_parameter_value
 
 try:
     # Optional uncertainty integration
@@ -794,303 +795,6 @@ def create_latex_variable_name(param_name: str, display_name: str = "") -> str:
         return main_text
 
 
-def format_parameter_value(value: float, unit: str = "") -> str:
-    """
-    Format a numeric value with appropriate precision, thousand separators, and units.
-
-    Uses 3 significant figures max, removes trailing zeros.
-
-    Args:
-        value: The numeric value (may be billions for currency)
-        unit: The unit string from the Parameter (e.g., "billions USD/year", "percent", "deaths/year")
-
-    Returns:
-        Formatted string with units (e.g., "$50B", "50%", "244,600")
-    """
-    # Detect currency parameters
-    is_currency = "USD" in unit or "usd" in unit or "dollar" in unit.lower()
-
-    # Detect percentage parameters
-    is_percentage = "%" in unit or "percent" in unit.lower() or "rate" in unit.lower()
-
-    # Check if value is already in billions, millions, thousands, or in actual dollars
-    is_in_billions = "billion" in unit.lower()
-    is_in_millions = "million" in unit.lower()
-    is_in_thousands = "thousand" in unit.lower()
-
-    # Helper to remove trailing zeros and decimal point
-    def clean_number(num_str: str) -> str:
-        if "." in num_str:
-            num_str = num_str.rstrip("0").rstrip(".")
-        return num_str
-
-    # Add currency formatting if applicable (3 significant figures)
-    if is_currency:
-        # Determine the absolute value for scaling
-        abs_val = abs(value)
-
-        if is_in_billions:
-            # Value is already in billions
-            if abs_val >= 1000:  # Trillions
-                scaled = value / 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}T"  # e.g., "$123T" (3 sig figs)
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}T"  # e.g., "$12.3T" (3 sig figs)
-                else:
-                    formatted = f"${scaled:.2f}T"  # e.g., "$1.23T" (3 sig figs)
-            elif abs_val >= 1:  # Billions
-                if abs_val >= 100:
-                    formatted = f"${value:.0f}B"  # e.g., "$123B" (3 sig figs)
-                elif abs_val >= 10:
-                    formatted = f"${value:.1f}B"  # e.g., "$12.3B" (3 sig figs)
-                else:
-                    formatted = f"${value:.2f}B"  # e.g., "$1.23B" (3 sig figs)
-            elif abs_val >= 0.001:  # Millions
-                scaled = value * 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}M"  # e.g., "$123M"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
-                else:
-                    formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
-            else:
-                # Less than 1M - convert billions to dollars
-                dollar_value = value * 1_000_000_000
-                if dollar_value >= 1000:
-                    formatted = f"${dollar_value/1000:.1f}K"  # e.g., "$1.2K"
-                elif dollar_value >= 10:
-                    formatted = f"${dollar_value:.0f}"
-                elif dollar_value >= 1:
-                    formatted = f"${dollar_value:.2f}"  # e.g., "$1.27"
-                elif dollar_value >= 0.10:
-                    formatted = f"${dollar_value:.2f}"
-                elif dollar_value >= 0.01:
-                    formatted = f"${dollar_value:.3f}"
-                else:
-                    formatted = f"${dollar_value:.4f}"
-        elif is_in_millions:
-            # Value is already in millions
-            if abs_val >= 1000:  # Billions
-                scaled = value / 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}B"  # e.g., "$123B" (3 sig figs)
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}B"  # e.g., "$12.3B" (3 sig figs)
-                else:
-                    formatted = f"${scaled:.2f}B"  # e.g., "$1.23B" (3 sig figs)
-            elif abs_val >= 1:  # Millions
-                if abs_val >= 100:
-                    formatted = f"${value:.0f}M"  # e.g., "$123M" (3 sig figs)
-                elif abs_val >= 10:
-                    formatted = f"${value:.1f}M"  # e.g., "$12.3M" (3 sig figs)
-                else:
-                    formatted = f"${value:.2f}M"  # e.g., "$1.23M" (3 sig figs)
-            elif abs_val >= 0.001:  # Thousands
-                scaled = value * 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}K"  # e.g., "$123K"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}K"  # e.g., "$12.3K"
-                else:
-                    formatted = f"${scaled:.2f}K"  # e.g., "$1.23K"
-            else:
-                # Less than 1K - convert millions to dollars
-                dollar_value = value * 1_000_000
-                if dollar_value >= 10:
-                    formatted = f"${dollar_value:.0f}"
-                elif dollar_value >= 1:
-                    formatted = f"${dollar_value:.2f}"  # e.g., "$1.27"
-                elif dollar_value >= 0.10:
-                    formatted = f"${dollar_value:.2f}"
-                elif dollar_value >= 0.01:
-                    formatted = f"${dollar_value:.3f}"
-                else:
-                    formatted = f"${dollar_value:.4f}"
-        elif is_in_thousands:
-            # Value is already in thousands
-            if abs_val >= 1000000:  # Billions
-                scaled = value / 1000000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}B"  # e.g., "$123B" (3 sig figs)
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}B"  # e.g., "$12.3B" (3 sig figs)
-                else:
-                    formatted = f"${scaled:.2f}B"  # e.g., "$1.23B" (3 sig figs)
-            elif abs_val >= 1000:  # Millions
-                scaled = value / 1000
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}M"  # e.g., "$123M"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
-                else:
-                    formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
-            elif abs_val >= 1:  # Thousands
-                if abs_val >= 100:
-                    formatted = f"${value:.0f}K"  # e.g., "$123K" (3 sig figs)
-                elif abs_val >= 10:
-                    formatted = f"${value:.1f}K"  # e.g., "$12.3K" (3 sig figs)
-                else:
-                    formatted = f"${value:.2f}K"  # e.g., "$1.23K" (3 sig figs)
-            else:
-                # Less than 1K - convert thousands to dollars
-                dollar_value = value * 1000
-                if dollar_value >= 10:
-                    formatted = f"${dollar_value:.0f}"
-                elif dollar_value >= 1:
-                    formatted = f"${dollar_value:.2f}"  # e.g., "$1.27"
-                elif dollar_value >= 0.10:
-                    formatted = f"${dollar_value:.2f}"
-                elif dollar_value >= 0.01:
-                    formatted = f"${dollar_value:.3f}"
-                else:
-                    formatted = f"${dollar_value:.4f}"
-        else:
-            # Value is in actual dollars, convert to appropriate scale
-            if abs_val >= 1e15:  # Quadrillions
-                scaled = value / 1e15
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f} quadrillion"  # e.g., "$123 quadrillion"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f} quadrillion"  # e.g., "$12.3 quadrillion"
-                else:
-                    formatted = f"${scaled:.2f} quadrillion"  # e.g., "$1.23 quadrillion"
-            elif abs_val >= 1e12:  # Trillions
-                scaled = value / 1e12
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}T"  # e.g., "$123T"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}T"  # e.g., "$12.3T"
-                else:
-                    formatted = f"${scaled:.2f}T"  # e.g., "$1.23T"
-            elif abs_val >= 1e9:  # Billions
-                scaled = value / 1e9
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}B"  # e.g., "$123B"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}B"  # e.g., "$12.3B"
-                else:
-                    formatted = f"${scaled:.2f}B"  # e.g., "$1.23B"
-            elif abs_val >= 1e6:  # Millions
-                scaled = value / 1e6
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}M"  # e.g., "$123M"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}M"  # e.g., "$12.3M"
-                else:
-                    formatted = f"${scaled:.2f}M"  # e.g., "$1.23M"
-            elif abs_val >= 1e3:  # Thousands
-                scaled = value / 1e3
-                if abs(scaled) >= 100:
-                    formatted = f"${scaled:.0f}K"  # e.g., "$123K"
-                elif abs(scaled) >= 10:
-                    formatted = f"${scaled:.1f}K"  # e.g., "$12.3K"
-                else:
-                    formatted = f"${scaled:.2f}K"  # e.g., "$1.23K"
-            elif abs_val >= 10:
-                # $10 to $999 - no decimals needed
-                formatted = f"${value:.0f}"
-            elif abs_val >= 1:
-                # $1 to $9.99 - show cents for precision
-                formatted = f"${value:.2f}"
-            else:
-                # Less than $1 - show cents with appropriate precision (3 sig figs)
-                if abs_val >= 0.10:
-                    formatted = f"${value:.2f}"  # e.g., "$0.13"
-                elif abs_val >= 0.01:
-                    formatted = f"${value:.3f}"  # e.g., "$0.013"
-                else:
-                    formatted = f"${value:.4f}"  # e.g., "$0.0013"
-
-        # Clean up trailing .0 (e.g., "$50.0B" → "$50B")
-        return formatted.replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
-
-    # Format plain numbers with appropriate precision
-    # Auto-scale large numbers to M/B/K (like we do for currency)
-    abs_val = abs(value)
-
-    if abs_val >= 1e15:  # Quadrillions
-        scaled = value / 1e15
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f} quadrillion"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f} quadrillion"
-        else:
-            formatted_num = f"{scaled:.2f} quadrillion"
-    elif abs_val >= 1e12:  # Trillions
-        scaled = value / 1e12
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}T"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}T"
-        else:
-            formatted_num = f"{scaled:.2f}T"
-    elif abs_val >= 1e9:  # Billions
-        scaled = value / 1e9
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}B"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}B"
-        else:
-            formatted_num = f"{scaled:.2f}B"
-    elif abs_val >= 1e6:  # Millions
-        scaled = value / 1e6
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}M"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}M"
-        else:
-            formatted_num = f"{scaled:.2f}M"
-    elif abs_val >= 100_000:  # 100K+ (for readability, scale to K)
-        scaled = value / 1e3
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}K"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}K"
-        else:
-            formatted_num = f"{scaled:.2f}K"
-    elif value == int(value):
-        # Integer value - no decimals needed, use comma separators
-        formatted_num = f"{int(value):,}"
-    elif abs_val >= 1000:
-        # Large numbers (1K-99K): use comma separators
-        formatted_num = f"{value:,.0f}"
-    elif abs_val >= 1:
-        # Medium numbers: up to 3 sig figs, remove trailing zeros
-        if value >= 100:
-            formatted_num = f"{value:,.0f}"  # No decimals for 100+
-        elif value >= 10:
-            formatted_num = clean_number(f"{value:,.1f}")  # 1 decimal for 10-99
-        else:
-            formatted_num = clean_number(f"{value:,.2f}")  # 2 decimals for 1-9
-    else:
-        # Small numbers: 3 sig figs
-        formatted_num = clean_number(f"{value:.3g}")
-
-    # Clean trailing zeros from scaled numbers
-    formatted_num = formatted_num.replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
-
-    # Add percentage formatting if applicable
-    if is_percentage:
-        # Convert ratio to percentage (e.g., 2.718 → 272%)
-        pct_value = value * 100
-
-        # Format with appropriate precision
-        if abs(pct_value) >= 100:
-            pct_formatted = f"{pct_value:.0f}"  # e.g., "272%"
-        elif abs(pct_value) >= 10:
-            pct_formatted = clean_number(f"{pct_value:.1f}")  # e.g., "27.2%"
-        elif abs(pct_value) >= 1:
-            pct_formatted = clean_number(f"{pct_value:.2f}")  # e.g., "2.72%"
-        else:
-            pct_formatted = clean_number(f"{pct_value:.3g}")  # e.g., "0.272%"
-
-        return f"{pct_formatted}%"
-
-    # Default: just the formatted number
-    return formatted_num
-
-
 def convert_qmd_to_html(path: str) -> str:
     """
     Remove .qmd extension from paths for format-agnostic links.
@@ -1134,7 +838,7 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
     if hasattr(value, "display_value") and value.display_value:
         formatted_value = value.display_value
     else:
-        formatted_value = format_parameter_value(value, unit)
+        formatted_value = format_parameter_value(value, unit, include_unit=False)
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, "source_ref") and value.source_ref
@@ -1695,6 +1399,16 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 if sensitivity_qmd.exists():
                     content.append(f"{{{{< include ../figures/sensitivity-table-{param_name.lower()}.qmd >}}}}")
                     content.append("")
+            
+            # Generate sensitivity table if needed (dynamic generation)
+            # Find input parameters via compute function or inputs list
+            if hasattr(value, "inputs") and value.inputs and hasattr(value, "compute"):
+                # We need to calculate sensitivity indices (regression coefficients)
+                # This requires the dih_models.uncertainty module
+                if regression_sensitivity and hasattr(value, "distribution"):
+                     # This is logically where we would generate the table
+                     # For now, we are relying on pre-calculated sensitivity files or on-demand generation elsewhere
+                     pass
 
             # Add Monte Carlo distribution chart if exists
             if mc_dist_qmd.exists():
@@ -2798,7 +2512,7 @@ plt.show()
     return output_file
 
 
-def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, output_dir: Path, param_metadata: dict = None) -> Path:
+def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, output_dir: Path, param_metadata: dict = None, parameters: Dict[str, Dict[str, Any]] = None) -> Path:
     """
     Generate a sensitivity indices table QMD file for a parameter.
 
@@ -2807,6 +2521,7 @@ def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, outp
         sensitivity_data: Dict mapping input names to sensitivity coefficients
         output_dir: Directory to write QMD file
         param_metadata: Optional parameter metadata for context
+        parameters: Optional dict of all parameter metadata for looking up inputs
 
     Returns:
         Path to generated QMD file
@@ -2834,7 +2549,21 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 '''
 
     for input_name, coef in sorted_indices:
+        # Use parameters dict to find better display name and units
         display_input = smart_title_case(input_name)
+        
+        if parameters and input_name in parameters:
+            input_val = parameters[input_name]["value"]
+            if hasattr(input_val, "display_name") and input_val.display_name:
+                display_input = input_val.display_name
+                
+            # Add unit if available
+            if hasattr(input_val, "unit") and input_val.unit:
+                # Use format_parameter_value to get a clean unit string if possible, or just append
+                # For brevity in tables, just the unit name is often best
+                unit_str = input_val.unit
+                # Clean up unit (e.g., don't show "USD" if it's obvious, but maybe good to be explicit)
+                display_input = f"{display_input} ({unit_str})"
         # Standardized coefficients range from -1 to 1
         # Use absolute value thresholds appropriate for standardized betas
         abs_coef = abs(coef)
@@ -3236,15 +2965,15 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: {display_name}**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | {baseline:,.4g} |
-| Mean (expected value) | {mean:,.4g} |
-| Median (50th percentile) | {p50:,.4g} |
-| Standard Deviation | {std:,.4g} |
-| 90% Confidence Interval | [{p5:,.4g}, {p95:,.4g}] |
+| Baseline (deterministic) | {format_parameter_value(baseline, units, include_unit=False)} |
+| Mean (expected value) | {format_parameter_value(mean, units, include_unit=False)} |
+| Median (50th percentile) | {format_parameter_value(p50, units, include_unit=False)} |
+| Standard Deviation | {format_parameter_value(std, units, include_unit=False)} |
+| 90% Confidence Interval | [{format_parameter_value(p5, units, include_unit=False)}, {format_parameter_value(p95, units, include_unit=False)}] |
 
 *The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
 '''

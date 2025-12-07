@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Savings from 1% Reduction in Environmental Damage**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1e+09 |
-| Mean (expected value) | 9.973e+08 |
-| Median (50th percentile) | 9.821e+08 |
-| Standard Deviation | 1.7e+08 |
-| 90% Confidence Interval | [7.318e+08, 1.317e+09] |
+| Baseline (deterministic) | $1.00B |
+| Mean (expected value) | $997M |
+| Median (50th percentile) | $982M |
+| Standard Deviation | $170M |
+| 90% Confidence Interval | [$732M, $1.32B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in Environmental Damage across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

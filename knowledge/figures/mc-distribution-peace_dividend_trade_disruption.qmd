@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Savings from 1% Reduction in Trade Disruption**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 6.16e+09 |
-| Mean (expected value) | 6.143e+09 |
-| Median (50th percentile) | 6.05e+09 |
-| Standard Deviation | 1.049e+09 |
-| 90% Confidence Interval | [4.505e+09, 8.117e+09] |
+| Baseline (deterministic) | $6.16B |
+| Mean (expected value) | $6.14B |
+| Median (50th percentile) | $6.05B |
+| Standard Deviation | $1.05B |
+| 90% Confidence Interval | [$4.50B, $8.12B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in Trade Disruption across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

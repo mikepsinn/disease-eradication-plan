@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Daily R&D Savings from Trial Cost Reduction**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.137e+08 |
-| Mean (expected value) | 1.132e+08 |
-| Median (50th percentile) | 1.116e+08 |
-| Standard Deviation | 2.198e+07 |
-| 90% Confidence Interval | [7.975e+07, 1.523e+08] |
+| Baseline (deterministic) | $114M |
+| Mean (expected value) | $113M |
+| Median (50th percentile) | $112M |
+| Standard Deviation | $22M |
+| 90% Confidence Interval | [$79.8M, $152M] |
 
 *The histogram shows the distribution of Daily R&D Savings from Trial Cost Reduction across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

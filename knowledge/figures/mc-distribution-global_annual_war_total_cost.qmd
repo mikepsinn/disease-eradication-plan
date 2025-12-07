@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Annual Cost of War Worldwide**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.136e+13 |
-| Mean (expected value) | 1.13e+13 |
-| Median (50th percentile) | 1.117e+13 |
-| Standard Deviation | 1.684e+12 |
-| 90% Confidence Interval | [8.74e+12, 1.433e+13] |
+| Baseline (deterministic) | $11.4T |
+| Mean (expected value) | $11.3T |
+| Median (50th percentile) | $11.2T |
+| Standard Deviation | $1.68T |
+| 90% Confidence Interval | [$8.74T, $14.3T] |
 
 *The histogram shows the distribution of Total Annual Cost of War Worldwide across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

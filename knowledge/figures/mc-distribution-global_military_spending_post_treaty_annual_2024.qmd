@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Global Military Spending After 1% Treaty Reduction**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.691e+12 |
-| Mean (expected value) | 2.683e+12 |
-| Median (50th percentile) | 2.674e+12 |
-| Standard Deviation | 1.923e+11 |
-| 90% Confidence Interval | [2.422e+12, 2.96e+12] |
+| Baseline (deterministic) | $2.69T |
+| Mean (expected value) | $2.68T |
+| Median (50th percentile) | $2.67T |
+| Standard Deviation | $192B |
+| 90% Confidence Interval | [$2.42T, $2.96T] |
 
 *The histogram shows the distribution of Global Military Spending After 1% Treaty Reduction across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

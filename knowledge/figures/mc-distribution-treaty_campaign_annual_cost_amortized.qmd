@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Amortized Annual Treaty Campaign Cost**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.5e+08 |
-| Mean (expected value) | 2.493e+08 |
-| Median (50th percentile) | 2.347e+08 |
-| Standard Deviation | 8.785e+07 |
-| 90% Confidence Interval | [1.34e+08, 4.129e+08] |
+| Baseline (deterministic) | $250M |
+| Mean (expected value) | $249M |
+| Median (50th percentile) | $235M |
+| Standard Deviation | $87.9M |
+| 90% Confidence Interval | [$134M, $413M] |
 
 *The histogram shows the distribution of Amortized Annual Treaty Campaign Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

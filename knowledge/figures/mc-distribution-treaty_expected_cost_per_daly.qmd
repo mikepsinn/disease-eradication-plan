@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Expected Cost per DALY (Risk-Adjusted)**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 12.59 |
-| Mean (expected value) | 68.52 |
-| Median (50th percentile) | 71.26 |
-| Standard Deviation | 54.06 |
-| 90% Confidence Interval | [2.336, 148.5] |
+| Baseline (deterministic) | $13 |
+| Mean (expected value) | $69 |
+| Median (50th percentile) | $71 |
+| Standard Deviation | $54 |
+| 90% Confidence Interval | [$2.34, $148] |
 
 *The histogram shows the distribution of Expected Cost per DALY (Risk-Adjusted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

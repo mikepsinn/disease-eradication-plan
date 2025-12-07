@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Coverage Factor of Treaty Funding vs dFDA OPEX**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 679.5 |
-| Mean (expected value) | 698.7 |
+| Baseline (deterministic) | 680 |
+| Mean (expected value) | 699 |
 | Median (50th percentile) | 693 |
-| Standard Deviation | 95.25 |
-| 90% Confidence Interval | [537.8, 894.9] |
+| Standard Deviation | 95.2 |
+| 90% Confidence Interval | [538, 895] |
 
 *The histogram shows the distribution of Coverage Factor of Treaty Funding vs dFDA OPEX across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

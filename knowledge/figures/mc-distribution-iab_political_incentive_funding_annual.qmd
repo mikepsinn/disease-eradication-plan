@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual IAB Political Incentive Funding**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.718e+09 |
-| Mean (expected value) | 2.71e+09 |
-| Median (50th percentile) | 2.701e+09 |
-| Standard Deviation | 1.943e+08 |
-| 90% Confidence Interval | [2.446e+09, 2.99e+09] |
+| Baseline (deterministic) | $2.72B |
+| Mean (expected value) | $2.71B |
+| Median (50th percentile) | $2.70B |
+| Standard Deviation | $194M |
+| 90% Confidence Interval | [$2.45B, $2.99B] |
 
 *The histogram shows the distribution of Annual IAB Political Incentive Funding across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

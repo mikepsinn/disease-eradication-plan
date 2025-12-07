@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Annual Treaty System Costs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.9e+08 |
-| Mean (expected value) | 2.892e+08 |
-| Median (50th percentile) | 2.736e+08 |
-| Standard Deviation | 9.593e+07 |
-| 90% Confidence Interval | [1.613e+08, 4.685e+08] |
+| Baseline (deterministic) | $290M |
+| Mean (expected value) | $289M |
+| Median (50th percentile) | $274M |
+| Standard Deviation | $95.9M |
+| 90% Confidence Interval | [$161M, $468M] |
 
 *The histogram shows the distribution of Total Annual Treaty System Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

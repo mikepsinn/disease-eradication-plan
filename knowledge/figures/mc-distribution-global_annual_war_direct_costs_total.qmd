@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Annual Direct War Costs**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.655e+12 |
-| Mean (expected value) | 7.611e+12 |
-| Median (50th percentile) | 7.511e+12 |
-| Standard Deviation | 1.137e+12 |
-| 90% Confidence Interval | [5.895e+12, 9.643e+12] |
+| Baseline (deterministic) | $7.66T |
+| Mean (expected value) | $7.61T |
+| Median (50th percentile) | $7.51T |
+| Standard Deviation | $1.14T |
+| 90% Confidence Interval | [$5.89T, $9.64T] |
 
 *The histogram shows the distribution of Total Annual Direct War Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

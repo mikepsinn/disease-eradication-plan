@@ -216,7 +216,7 @@
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Disability weight for untreated chronic conditions (WHO Global Burden\
   \ of Disease) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal (SE:\
-  \ 0.07) | Unit: weight | Click to view source\">0.35</a>"
+  \ 0.07 weight) | Unit: weight | Click to view source\">0.35</a>"
 "chronic_disease_disability_weight_cite": "@who-global-health-estimates-2024"
 "combined_peace_health_dividends_annual_for_roi_calc": "<a href=\"/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition\"\
@@ -240,8 +240,8 @@
 "current_disease_patients_global": "<a href=\"https://warondisease.org/knowledge/references.html#disease-prevalence-2-billion\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-prevalence-2-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population with chronic diseases\
-  \ | ✓ High confidence | 95% CI: [2.00B, 2.80B] | Dist: Lognormal | Unit: people\
-  \ | Click to view source\">2.40B</a>"
+  \ | ✓ High confidence | 95% CI: [2.00B people, 2.80B people] | Dist: Lognormal |\
+  \ Unit: people | Click to view source\">2.40B</a>"
 "current_disease_patients_global_cite": "@disease-prevalence-2-billion"
 "current_drug_approvals_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-new-drug-approvals-50-annually\"\
   \ class=\"parameter-link\" data-source-ref=\"global-new-drug-approvals-50-annually\"\
@@ -257,8 +257,8 @@
 "current_trials_per_year": "<a href=\"https://warondisease.org/knowledge/references.html#global-clinical-trials-market-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"global-clinical-trials-market-2024\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current global\
-  \ clinical trials per year | ✓ High confidence | 95% CI: [2,640, 3,960] | Dist:\
-  \ Lognormal | Unit: trials/year | Click to view source\">3,300</a>"
+  \ clinical trials per year | ✓ High confidence | 95% CI: [2,640 trials/year, 3,960\
+  \ trials/year] | Dist: Lognormal | Unit: trials/year | Click to view source\">3,300</a>"
 "current_trials_per_year_cite": "@global-clinical-trials-market-2024"
 "current_trial_abandonment_rate": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trial-abandonment-rate\"\
   \ class=\"parameter-link\" data-source-ref=\"clinical-trial-abandonment-rate\" data-source-type=\"\
@@ -269,8 +269,8 @@
   \ class=\"parameter-link\" data-source-ref=\"global-trial-participant-capacity\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global clinical\
   \ trial participants (IQVIA 2022: 1.9M post-COVID normalization) | ✓ High confidence\
-  \ | 95% CI: [1.50M, 2.30M] | Dist: Lognormal | Unit: patients/year | Click to view\
-  \ source\">1.90M</a>"
+  \ | 95% CI: [1.50M patients/year, 2.30M patients/year] | Dist: Lognormal | Unit:\
+  \ patients/year | Click to view source\">1.90M</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
 "days_per_year": "<span class=\"parameter-link\" title=\"parameters.DAYS_PER_YEAR\"\
   >365</span>"
@@ -668,8 +668,9 @@
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Regulatory\
   \ delay for efficacy testing (Phase II/III) post-safety verification | ✓ High confidence\
-  \ | \U0001F4CA Peer-reviewed | Dist: Normal (SE: 1) | Updated: 2021 | Formula: TOTAL_TIME_TO_MARKET\
-  \ - PHASE_1_DURATION | Unit: years | Click to view source\">8.2</a>"
+  \ | \U0001F4CA Peer-reviewed | Dist: Normal (SE: 1 years) | Updated: 2021 | Formula:\
+  \ TOTAL_TIME_TO_MARKET - PHASE_1_DURATION | Unit: years | Click to view source\"\
+  >8.2</a>"
 "efficacy_lag_years_cite": "@bio-clinical-development-2021"
 "efficacy_lag_years_latex": "$$\nt_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}\n$$"
 "eventually_avoidable_death_pct": "<span class=\"parameter-definition\" title=\"Percentage\
@@ -684,8 +685,8 @@
 "fda_phase_1_to_approval_years": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years\"\
   \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"FDA timeline from Phase 1 start to approval\
-  \ (Phase 1-3 + NDA review) | ✓ High confidence | 95% CI: [6, 12] | Dist: Gamma (SE:\
-  \ 2) | Unit: years | Click to view source\">9.1</a>"
+  \ (Phase 1-3 + NDA review) | ✓ High confidence | 95% CI: [6 years, 12 years] | Dist:\
+  \ Gamma (SE: 2 years) | Unit: years | Click to view source\">9.1</a>"
 "fda_phase_1_to_approval_years_cite": "@fda-approval-timeline-10-years"
 "fda_to_oxford_recovery_trial_time_multiplier": "<a href=\"/recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/recovery-trial-82x-cost-reduction\"\
@@ -723,20 +724,20 @@
 "global_annual_conflict_deaths_active_combat": "<a href=\"https://warondisease.org/knowledge/references.html#acled-active-combat-deaths\"\
   \ class=\"parameter-link\" data-source-ref=\"acled-active-combat-deaths\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual deaths from active combat worldwide\
-  \ | ✓ High confidence | 95% CI: [180K, 300K] | Dist: Lognormal | Unit: deaths/year\
-  \ | Click to view source\">234K</a>"
+  \ | ✓ High confidence | 95% CI: [180K deaths/year, 300K deaths/year] | Dist: Lognormal\
+  \ | Unit: deaths/year | Click to view source\">234K</a>"
 "global_annual_conflict_deaths_active_combat_cite": "@acled-active-combat-deaths"
 "global_annual_conflict_deaths_state_violence": "<a href=\"https://warondisease.org/knowledge/references.html#ucdp-state-violence-deaths\"\
   \ class=\"parameter-link\" data-source-ref=\"ucdp-state-violence-deaths\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual deaths from state violence |\
-  \ ✓ High confidence | 95% CI: [1,500, 5,000] | Dist: Lognormal | Unit: deaths/year\
-  \ | Click to view source\">2,700</a>"
+  \ ✓ High confidence | 95% CI: [1,500 deaths/year, 5,000 deaths/year] | Dist: Lognormal\
+  \ | Unit: deaths/year | Click to view source\">2,700</a>"
 "global_annual_conflict_deaths_state_violence_cite": "@ucdp-state-violence-deaths"
 "global_annual_conflict_deaths_terror_attacks": "<a href=\"https://warondisease.org/knowledge/references.html#gtd-terror-attack-deaths\"\
   \ class=\"parameter-link\" data-source-ref=\"gtd-terror-attack-deaths\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual deaths from terror attacks globally\
-  \ | ✓ High confidence | 95% CI: [6,000, 12,000] | Dist: Lognormal | Unit: deaths/year\
-  \ | Click to view source\">8,300</a>"
+  \ | ✓ High confidence | 95% CI: [6,000 deaths/year, 12,000 deaths/year] | Dist:\
+  \ Lognormal | Unit: deaths/year | Click to view source\">8,300</a>"
 "global_annual_conflict_deaths_terror_attacks_cite": "@gtd-terror-attack-deaths"
 "global_annual_conflict_deaths_total": "<a href=\"/knowledge/problem/cost-of-war#death-accounting\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#death-accounting\"\
@@ -839,8 +840,9 @@
 "global_annual_lives_saved_by_med_research": "<a href=\"https://warondisease.org/knowledge/references.html#medical-research-lives-saved-annually\"\
   \ class=\"parameter-link\" data-source-ref=\"medical-research-lives-saved-annually\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual lives saved\
-  \ by medical research globally | ✓ High confidence | 95% CI: [3.00M, 6.00M] | Dist:\
-  \ Lognormal | Unit: lives/year | Click to view source\">4.20M</a>"
+  \ by medical research globally | ✓ High confidence | 95% CI: [3.00M lives/year,\
+  \ 6.00M lives/year] | Dist: Lognormal | Unit: lives/year | Click to view source\"\
+  >4.20M</a>"
 "global_annual_lives_saved_by_med_research_cite": "@medical-research-lives-saved-annually"
 "global_annual_lost_economic_growth_military_spending": "<a href=\"https://warondisease.org/knowledge/references.html#disparity-ratio-weapons-vs-cures\"\
   \ class=\"parameter-link\" data-source-ref=\"disparity-ratio-weapons-vs-cures\"\
@@ -948,15 +950,15 @@
 "global_daily_deaths_curable_diseases": "<a href=\"https://warondisease.org/knowledge/references.html#deaths-from-treatable-diseases-15m\"\
   \ class=\"parameter-link\" data-source-ref=\"deaths-from-treatable-diseases-15m\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Daily deaths from\
-  \ curable diseases globally | ✓ High confidence | 95% CI: [120K, 180K] | Dist: Lognormal\
-  \ | Unit: deaths/day | Click to view source\">150K</a>"
+  \ curable diseases globally | ✓ High confidence | 95% CI: [120K deaths/day, 180K\
+  \ deaths/day] | Dist: Lognormal | Unit: deaths/day | Click to view source\">150K</a>"
 "global_daily_deaths_curable_diseases_cite": "@deaths-from-treatable-diseases-15m"
 "global_disease_deaths_daily": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
   \ title=\"Total global deaths per day from all disease and aging (WHO Global Burden\
   \ of Disease 2024) | ✓ High confidence | \U0001F4CA Peer-reviewed | Dist: Normal\
-  \ (SE: 7,500) | Unit: deaths/day | Click to view source\">150K</a>"
+  \ (SE: 7,500 deaths/day) | Unit: deaths/day | Click to view source\">150K</a>"
 "global_disease_deaths_daily_cite": "@who-global-health-estimates-2024"
 "global_disease_direct_medical_cost_annual": "<a href=\"https://warondisease.org/knowledge/references.html#disease-economic-burden-109t\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-economic-burden-109t\" data-source-type=\"\
@@ -1000,7 +1002,7 @@
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
   \ title=\"Global life expectancy (2024) | ✓ High confidence | \U0001F4CA Peer-reviewed\
-  \ | Dist: Normal (SE: 2) | Updated: 2024 | Unit: years | Click to view source\"\
+  \ | Dist: Normal (SE: 2 years) | Updated: 2024 | Unit: years | Click to view source\"\
   >79</a>"
 "global_life_expectancy_2024_cite": "@who-global-health-estimates-2024"
 "global_med_research_spending": "<a href=\"https://warondisease.org/knowledge/references.html#global-gov-med-research-spending\"\
@@ -1032,8 +1034,8 @@
 "global_population_2024": "<a href=\"https://warondisease.org/knowledge/references.html#global-population-8-billion\"\
   \ class=\"parameter-link\" data-source-ref=\"global-population-8-billion\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Global population in 2024 | ✓ High confidence\
-  \ | 95% CI: [7.80B, 8.20B] | Dist: Lognormal | Unit: of people | Click to view source\"\
-  >8.00B</a>"
+  \ | 95% CI: [7.80B of people, 8.20B of people] | Dist: Lognormal | Unit: of people\
+  \ | Click to view source\">8.00B</a>"
 "global_population_2024_cite": "@global-population-8-billion"
 "global_population_activism_threshold_pct": "<a href=\"https://warondisease.org/knowledge/references.html#3-5-rule\"\
   \ class=\"parameter-link\" data-source-ref=\"3-5-rule\" data-source-type=\"external\"\
@@ -1105,8 +1107,8 @@
   external\" data-confidence=\"low\" title=\"Expected years of life extension from\
   \ 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure)\
   \ to ~150 (accident-limited lifespan minus current). Lognormal distribution allows\
-  \ for breakthrough scenarios. | ? Low confidence | 95% CI: [5, 100] | Dist: Lognormal\
-  \ | Unit: years | Click to view source\">20</a>"
+  \ for breakthrough scenarios. | ? Low confidence | 95% CI: [5 years, 100 years]\
+  \ | Dist: Lognormal | Unit: years | Click to view source\">20</a>"
 "life_extension_years_cite": "@longevity-escape-velocity"
 "lobbyist_bond_investment_max": "<a href=\"/knowledge/strategy/roadmap#lobbyist-incentives\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#lobbyist-incentives\"\
@@ -1404,15 +1406,15 @@
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Mean age of preventable death from post-safety efficacy testing regulatory\
   \ delay (Phase 2-4) | ~ Medium confidence | \U0001F4CA Peer-reviewed | Dist: Normal\
-  \ (SE: 3) | Unit: years | Click to view source\">62</a>"
+  \ (SE: 3 years) | Unit: years | Click to view source\">62</a>"
 "regulatory_delay_mean_age_of_death_cite": "@who-global-health-estimates-2024"
 "regulatory_delay_suffering_period_years": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
   \ title=\"Pre-death suffering period during post-safety efficacy testing delay (average\
   \ years lived with untreated condition while awaiting Phase 2-4 completion) | ~\
-  \ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [4, 9] | Dist: Lognormal\
-  \ | Unit: years | Click to view source\">6</a>"
+  \ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [4 years, 9 years] | Dist:\
+  \ Lognormal | Unit: years | Click to view source\">6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
 "seconds_per_minute": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_MINUTE\"\
   >60</span>"
@@ -1443,8 +1445,8 @@
 "standard_qalys_per_life_saved": "<a href=\"https://warondisease.org/knowledge/references.html#qaly-value\"\
   \ class=\"parameter-link\" data-source-ref=\"qaly-value\" data-source-type=\"external\"\
   \ data-confidence=\"high\" title=\"Standard QALYs per life saved (WHO life tables)\
-  \ | ✓ High confidence | Dist: Normal (SE: 7) | Unit: QALYs/life | Click to view\
-  \ source\">35</a>"
+  \ | ✓ High confidence | Dist: Normal (SE: 7 QALYs/life) | Unit: QALYs/life | Click\
+  \ to view source\">35</a>"
 "standard_qalys_per_life_saved_cite": "@qaly-value"
 "suffering_hours_eliminated_total": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
@@ -1479,8 +1481,8 @@
 "thalidomide_cases_worldwide": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-scandal\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-scandal\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Total thalidomide birth defect cases\
-  \ worldwide (1957-1962) | ~ Medium confidence | 95% CI: [10,000, 20,000] | Dist:\
-  \ Lognormal | Unit: cases | Click to view source\">15,000</a>"
+  \ worldwide (1957-1962) | ~ Medium confidence | 95% CI: [10,000 cases, 20,000 cases]\
+  \ | Dist: Lognormal | Unit: cases | Click to view source\">15,000</a>"
 "thalidomide_cases_worldwide_cite": "@thalidomide-scandal"
 "thalidomide_dalys_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_DALYS_PER_EVENT\"\
   >41,760</span>"
@@ -1493,8 +1495,8 @@
 "thalidomide_disability_weight": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-survivors-health\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-survivors-health\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Disability weight for thalidomide\
-  \ survivors (limb deformities, organ damage) | ~ Medium confidence | 95% CI: [0.32,\
-  \ 0.48] | Dist: Lognormal | Unit: ratio | Click to view source\">0.4</a>"
+  \ survivors (limb deformities, organ damage) | ~ Medium confidence | 95% CI: [0.32\
+  \ ratio, 0.48 ratio] | Dist: Lognormal | Unit: ratio | Click to view source\">0.4</a>"
 "thalidomide_disability_weight_cite": "@thalidomide-survivors-health"
 "thalidomide_mortality_rate": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-scandal\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-scandal\" data-source-type=\"\
@@ -1509,8 +1511,8 @@
 "thalidomide_survivor_lifespan": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-survivors-health\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-survivors-health\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Average lifespan for thalidomide survivors\
-  \ | ~ Medium confidence | 95% CI: [50, 70] | Dist: Lognormal | Unit: years | Click\
-  \ to view source\">60</a>"
+  \ | ~ Medium confidence | 95% CI: [50 years, 70 years] | Dist: Lognormal | Unit:\
+  \ years | Click to view source\">60</a>"
 "thalidomide_survivor_lifespan_cite": "@thalidomide-survivors-health"
 "thalidomide_us_cases_prevented": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_US_CASES_PREVENTED\"\
   >900</span>"
@@ -1607,8 +1609,8 @@
 "treaty_campaign_duration_years": "<a href=\"/knowledge/strategy/roadmap\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Treaty campaign duration (3-5 year\
-  \ range, using midpoint) | ✓ High confidence | 95% CI: [3, 5] | Dist: Triangular\
-  \ | Unit: years | Click to view calculation\">4</a>"
+  \ range, using midpoint) | ✓ High confidence | 95% CI: [3 years, 5 years] | Dist:\
+  \ Triangular | Unit: years | Click to view calculation\">4</a>"
 "treaty_campaign_total_cost": "<a href=\"/knowledge/appendix/fundraising-strategy#capital-structure-campaign-vs-implementation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total treaty\
@@ -1664,7 +1666,7 @@
   \ funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY,\
   \ deworming costs $4-10/DALY. This intervention is 700x more cost-effective than\
   \ bed nets while also being self-funding. | ✓ High confidence | Formula: CAMPAIGN_COST\
-  \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0.13</a>"
+  \ ÷ DALYS_TIMELINE_SHIFT | Unit: USD/DALY | Click to view calculation\">$0.126</a>"
 "treaty_dfda_cost_per_daly_timeline_shift_latex": "$$\n\\text{Cost/DALY} = \\frac{\\\
   $1.0B}{7.90B} = \\$0.127\n$$"
 "treaty_expected_cost_per_daly": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis\"\
@@ -1775,8 +1777,9 @@
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"recovery-trial-82x-cost-reduction\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Cost reduction\
-  \ factor demonstrated by RECOVERY trial | ✓ High confidence | 95% CI: [20, 150]\
-  \ | Dist: Lognormal (SE: 20) | Unit: ratio | Click to view source\">82</a>"
+  \ factor demonstrated by RECOVERY trial | ✓ High confidence | 95% CI: [20 ratio,\
+  \ 150 ratio] | Dist: Lognormal (SE: 20 ratio) | Unit: ratio | Click to view source\"\
+  >82</a>"
 "trial_cost_reduction_factor_cite": "@recovery-trial-82x-cost-reduction"
 "trial_cost_reduction_pct": "<span class=\"parameter-definition\" title=\"Trial cost\
   \ reduction percentage (50% baseline, conservative) | Unit: rate | Core definition\"\
@@ -1859,8 +1862,8 @@
 "us_population_2024": "<a href=\"https://warondisease.org/knowledge/references.html#us-voter-population\"\
   \ class=\"parameter-link\" data-source-ref=\"us-voter-population\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US population in 2024 | ✓ High confidence\
-  \ | 95% CI: [330M, 340M] | Dist: Lognormal | Unit: people | Click to view source\"\
-  >335M</a>"
+  \ | 95% CI: [330M people, 340M people] | Dist: Lognormal | Unit: people | Click\
+  \ to view source\">335M</a>"
 "us_population_2024_cite": "@us-voter-population"
 "value_of_statistical_life": "<a href=\"https://warondisease.org/knowledge/references.html#dot-vsl-13-6m\"\
   \ class=\"parameter-link\" data-source-ref=\"dot-vsl-13-6m\" data-source-type=\"\

@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Treaty ROI - Innovation Acceleration (Optimistic)**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.383e+06 |
-| Mean (expected value) | 2.473e+06 |
-| Median (50th percentile) | 2.511e+06 |
-| Standard Deviation | 1.003e+05 |
-| 90% Confidence Interval | [2.275e+06, 2.539e+06] |
+| Baseline (deterministic) | 2.38M |
+| Mean (expected value) | 2.47M |
+| Median (50th percentile) | 2.51M |
+| Standard Deviation | 100K |
+| 90% Confidence Interval | [2.28M, 2.54M] |
 
 *The histogram shows the distribution of Treaty ROI - Innovation Acceleration (Optimistic) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

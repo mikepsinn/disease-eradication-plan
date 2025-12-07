@@ -12,6 +12,33 @@ This is a Quarto-based book project: "How to End War and Disease" - a guide to g
 
 **Important:** Use `tsx` (not ts-node) to run TypeScript files. Example: `npx tsx scripts/review/review.ts`
 
+### Applying Global Changes to All QMD Files
+
+When the user requests a change that should be applied to all QMD chapter/appendix files (e.g., "replace all instances of X with Y", "fix all occurrences of...", "update formatting for..."), use the automated batch processing script:
+
+```bash
+npx tsx scripts/review/apply-instruction-all-files.ts "Your instruction here"
+```
+
+**Examples:**
+```bash
+# Style/formatting changes
+npx tsx scripts/review/apply-instruction-all-files.ts "Replace all instances of 'utilise' with 'use'"
+
+# Consistency fixes
+npx tsx scripts/review/apply-instruction-all-files.ts "Ensure all section headers use sentence case, not title case"
+
+# Content updates
+npx tsx scripts/review/apply-instruction-all-files.ts "Replace references to 'FDA approval timeline' with 'regulatory approval timeline'"
+```
+
+**How it works:**
+- Loops through all book QMD files (excludes references.qmd, vision.qmd, futures chapters)
+- Sends each file to Gemini Pro with your instruction
+- Shows 5-second preview with file list before processing
+- Tracks statistics (modified/unchanged/errors)
+- Continues processing if individual files fail
+
 ### Python Scripts on Windows
 
 **CRITICAL: All Python scripts must handle Windows console encoding.**

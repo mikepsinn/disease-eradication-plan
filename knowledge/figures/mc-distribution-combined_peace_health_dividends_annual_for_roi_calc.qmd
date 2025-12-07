@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Combined Peace and Health Dividends for ROI Calculation**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.551e+11 |
-| Mean (expected value) | 1.543e+11 |
-| Median (50th percentile) | 1.525e+11 |
-| Standard Deviation | 2.305e+10 |
-| 90% Confidence Interval | [1.193e+11, 1.954e+11] |
+| Baseline (deterministic) | $155B |
+| Mean (expected value) | $154B |
+| Median (50th percentile) | $152B |
+| Standard Deviation | $23.1B |
+| 90% Confidence Interval | [$119B, $195B] |
 
 *The histogram shows the distribution of Combined Peace and Health Dividends for ROI Calculation across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Cost per Life Saved by Medical Research**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.607e+04 |
-| Mean (expected value) | 1.627e+04 |
-| Median (50th percentile) | 1.627e+04 |
-| Standard Deviation | 1,206 |
-| 90% Confidence Interval | [1.427e+04, 1.825e+04] |
+| Baseline (deterministic) | $16.1K |
+| Mean (expected value) | $16.3K |
+| Median (50th percentile) | $16.3K |
+| Standard Deviation | $1.21K |
+| 90% Confidence Interval | [$14.3K, $18.3K] |
 
 *The histogram shows the distribution of Cost per Life Saved by Medical Research across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

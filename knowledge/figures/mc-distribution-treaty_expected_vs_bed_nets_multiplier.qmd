@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Expected Cost-Effectiveness vs Bed Nets Multiplier**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.069 |
-| Mean (expected value) | 7.607 |
-| Median (50th percentile) | 1.225 |
-| Standard Deviation | 13.58 |
-| 90% Confidence Interval | [0.6469, 37.45] |
+| Baseline (deterministic) | 7.07 |
+| Mean (expected value) | 7.61 |
+| Median (50th percentile) | 1.23 |
+| Standard Deviation | 13.6 |
+| 90% Confidence Interval | [0.647, 37.4] |
 
 *The histogram shows the distribution of Expected Cost-Effectiveness vs Bed Nets Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

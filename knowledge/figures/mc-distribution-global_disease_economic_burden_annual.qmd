@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Economic Burden of Disease Globally**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.091e+14 |
-| Mean (expected value) | 1.088e+14 |
-| Median (50th percentile) | 1.071e+14 |
-| Standard Deviation | 1.857e+13 |
-| 90% Confidence Interval | [7.979e+13, 1.437e+14] |
+| Baseline (deterministic) | $109T |
+| Mean (expected value) | $109T |
+| Median (50th percentile) | $107T |
+| Standard Deviation | $18.6T |
+| 90% Confidence Interval | [$79.8T, $144T] |
 
 *The histogram shows the distribution of Total Economic Burden of Disease Globally across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

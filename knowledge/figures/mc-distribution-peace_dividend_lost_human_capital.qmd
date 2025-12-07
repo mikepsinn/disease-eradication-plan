@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Savings from 1% Reduction in Lost Human Capital**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 3e+09 |
-| Mean (expected value) | 2.992e+09 |
-| Median (50th percentile) | 2.946e+09 |
-| Standard Deviation | 5.099e+08 |
-| 90% Confidence Interval | [2.195e+09, 3.951e+09] |
+| Baseline (deterministic) | $3.00B |
+| Mean (expected value) | $2.99B |
+| Median (50th percentile) | $2.95B |
+| Standard Deviation | $510M |
+| 90% Confidence Interval | [$2.20B, $3.95B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in Lost Human Capital across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

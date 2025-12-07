@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Annual Funding from 1% of Global Military Spending Redirected to DIH**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.718e+10 |
-| Mean (expected value) | 2.71e+10 |
-| Median (50th percentile) | 2.701e+10 |
-| Standard Deviation | 1.943e+09 |
-| 90% Confidence Interval | [2.446e+10, 2.99e+10] |
+| Baseline (deterministic) | $27.2B |
+| Mean (expected value) | $27.1B |
+| Median (50th percentile) | $27B |
+| Standard Deviation | $1.94B |
+| 90% Confidence Interval | [$24.5B, $29.9B] |
 
 *The histogram shows the distribution of Annual Funding from 1% of Global Military Spending Redirected to DIH across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

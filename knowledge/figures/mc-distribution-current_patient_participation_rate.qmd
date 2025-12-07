@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Current Patient Participation Rate in Clinical Trials**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 0.0007917 |
-| Mean (expected value) | 0.0007898 |
-| Median (50th percentile) | 0.0007897 |
-| Standard Deviation | 1.687e-05 |
-| 90% Confidence Interval | [0.0007611, 0.0008194] |
+| Baseline (deterministic) | 0.0792% |
+| Mean (expected value) | 0.079% |
+| Median (50th percentile) | 0.079% |
+| Standard Deviation | 0.00169% |
+| 90% Confidence Interval | [0.0761%, 0.0819%] |
 
 *The histogram shows the distribution of Current Patient Participation Rate in Clinical Trials across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: Total Deaths from Historical Progress Delays**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 9.84e+07 |
-| Mean (expected value) | 9.833e+07 |
-| Median (50th percentile) | 9.824e+07 |
-| Standard Deviation | 1.187e+07 |
-| 90% Confidence Interval | [7.831e+07, 1.181e+08] |
+| Baseline (deterministic) | 98.4M |
+| Mean (expected value) | 98.3M |
+| Median (50th percentile) | 98.2M |
+| Standard Deviation | 11.9M |
+| 90% Confidence Interval | [78.3M, 118M] |
 
 *The histogram shows the distribution of Total Deaths from Historical Progress Delays across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

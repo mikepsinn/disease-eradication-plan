@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: dFDA Maximum Trials per Year**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 7.539e+04 |
-| Mean (expected value) | 7.675e+04 |
-| Median (50th percentile) | 7.633e+04 |
+| Baseline (deterministic) | 75,392 |
+| Mean (expected value) | 76,754 |
+| Median (50th percentile) | 76,334 |
 | Standard Deviation | 8,256 |
-| 90% Confidence Interval | [6.243e+04, 9.364e+04] |
+| 90% Confidence Interval | [62,430, 93,642] |
 
 *The histogram shows the distribution of dFDA Maximum Trials per Year across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

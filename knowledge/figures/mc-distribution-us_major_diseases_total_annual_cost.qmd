@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: US Major Diseases Total Annual Cost**
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1.253e+12 |
-| Mean (expected value) | 1.251e+12 |
-| Median (50th percentile) | 1.248e+12 |
-| Standard Deviation | 9.113e+10 |
-| 90% Confidence Interval | [1.1e+12, 1.416e+12] |
+| Baseline (deterministic) | $1.25T |
+| Mean (expected value) | $1.25T |
+| Median (50th percentile) | $1.25T |
+| Standard Deviation | $91.1B |
+| 90% Confidence Interval | [$1.10T, $1.42T] |
 
 *The histogram shows the distribution of US Major Diseases Total Annual Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

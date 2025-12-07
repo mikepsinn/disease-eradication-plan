@@ -113,14 +113,14 @@ add_png_metadata(
 plt.show()
 ```
 
-**Key Statistics:**
+**Simulation Results Summary: FDA to Oxford RECOVERY Trial Time Multiplier**
 
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 36.4 |
-| Mean (expected value) | 36.16 |
-| Median (50th percentile) | 35.85 |
-| Standard Deviation | 6.995 |
-| 90% Confidence Interval | [24.31, 48] |
+| Mean (expected value) | 36.2 |
+| Median (50th percentile) | 35.9 |
+| Standard Deviation | 6.99 |
+| 90% Confidence Interval | [24.3, 48] |
 
 *The histogram shows the distribution of FDA to Oxford RECOVERY Trial Time Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
