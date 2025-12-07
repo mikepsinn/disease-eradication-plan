@@ -3191,14 +3191,14 @@ DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL / TREATY_ANNUAL_FUNDING,
     source_type="definition",
     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
-    description="Percentage of treaty funding allocated to medical research (after bond payouts)",
+    description="Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
     display_name="Medical Research Percentage of Treaty Funding",
     unit="rate",
     formula="MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
-    latex=r"MedicalResearchPct = \$24.462B / \$27.18B = 0.90 = 90\%",
+    latex=r"MedicalResearchPct = \$21.744B / \$27.18B = 0.80 = 80\%",
     confidence="high",
     keywords=["allocation", "percentage", "medical research", "funding"],
-)  # 90%
+)  # 80%
 
 DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / TREATY_ANNUAL_FUNDING,
@@ -3208,10 +3208,10 @@ DIH_TREASURY_TRIAL_SUBSIDIES_PCT = Parameter(
     display_name="Patient Trial Subsidies Percentage of Treaty Funding",
     unit="rate",
     formula="TRIAL_SUBSIDIES / TREATY_FUNDING",
-    latex=r"TrialSubsidiesPct = \$24.422B / \$27.18B = 0.8986 = 89.86\%",
+    latex=r"TrialSubsidiesPct = \$21.70B / \$27.18B = 0.7985 = 79.85\%",
     confidence="high",
     keywords=["allocation", "percentage", "patient", "trial", "subsidy"],
-)  # 89.86%
+)  # 79.85%
 
 DFDA_OPEX_PCT_OF_TREATY_FUNDING = Parameter(
     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,

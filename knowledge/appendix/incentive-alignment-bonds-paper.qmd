@@ -38,7 +38,7 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 This paper introduces Incentive Alignment Bonds (IABs), financial instruments that make supporting welfare-improving policies incentive-compatible for rational politicians. IABs are defined by three properties: (1) investor returns keyed to policy adoption, (2) politician benefits (electoral support, career prospects) based on voting record, and (3) funding from programs with lower net social value than the target use. Drawing on mechanism design theory and campaign finance research, we formalize a three-layer architecture (scoring, electoral, post-office) that transforms the politician's utility function: the same selfish optimization that currently favors concentrated interests can be redirected toward public goods.
 
-We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to 380%+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control \$454 trillion vs. \$5 trillion for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds 300:1 (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
+We prove conditions for Nash equilibrium, provide explicit functional forms and numerical calibration showing feasibility with realistic parameters in low-opposition domains, and analyze legal constraints under U.S. anti-bribery law. The bootstrap problem (raising capital before regulatory opposition mobilizes) is solvable due to 272%+ expected ROI (from lobbying economics) and capital asymmetry: diffuse beneficiaries control \$454 trillion vs. \$5 trillion for concentrated interests. Under our global health treaty calibration, welfare accounting shows the mechanism's benefit-cost ratio exceeds 300:1 (Section 7.3). We demonstrate the mechanism through a detailed global health treaty application (Section 5), then analyze extensions to climate, nuclear risk, and pandemic preparedness (Section 8). Wishocracy (Layer 2) prevents allocation capture through democratic preference aggregation resistant to advertising-based gaming. We analyze failure modes, legal constraints, and implementation challenges in Sections 7-8.
 
 ![The Incentive Alignment Bonds Mechanism](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
 
@@ -79,7 +79,7 @@ Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyze
 
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
-- **380% expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
+- **272% expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
 - **\$454 trillion vs. \$5 trillion capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (defense contractors) by 90:1 (Section 2.3)
 - **303:1 benefit-cost ratio** of the IAB mechanism itself, even accounting for overhead costs and failure risk (Section 7.3)
 - **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
@@ -120,7 +120,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 **Finance & ROI:**
 
-- **ROI (Return on Investment):** Profit divided by cost (380% ROI means you get $4.80 back for every $1 invested)
+- **ROI (Return on Investment):** Profit divided by cost (272% ROI means you get \$3.72 back for every \$1 invested)
 - **Capital asymmetry:** Unequal distribution of wealth ($454 trillion households vs. $5 trillion defense contractors)
 - **Securitization:** Turning something into tradable financial instruments (like turning mortgages into mortgage-backed securities)
 - **Expected value:** Average outcome accounting for probabilities (20% chance of $100 = $20 expected value)
@@ -215,18 +215,18 @@ $$
 E[V] = 0.20 \times \$2.4\text{ billion} = \$480\text{ million/year}
 $$
 
-The expected first-year ROI is 380%, with the revenue stream continuing in perpetuity.
+The expected first-year ROI is 272%, with the revenue stream continuing in perpetuity.
 
 **Sensitivity to parameter uncertainty:**
 
 | Parameter | Conservative | Base Case | Optimistic | Expected First-Year ROI |
 |:----------|:-------------|:----------|:-----------|:------------------------|
-| Success probability | 10% | 20% | 40% | 140% / 380% / 860% |
-| Campaign cost | $200M | $100M | $50M | 140% / 380% / 860% |
-| Investor share | 5% | 10% | 15% | 140% / 380% / 860% |
-| Treaty size | $12B/year | $24B/year | $48B/year | 140% / 380% / 860% |
+| Success probability | 10% | 20% | 40% | 36% / 444% / 2,076% |
+| Campaign cost | \$200M | \$100M | \$50M | 36% / 444% / 2,076% |
+| Investor share | 10% | 10% | 15% | 36% / 444% / 2,076% |
+| Treaty size | \$27.2B/year | \$24B/year | \$48B/year | 36% / 444% / 2,076% |
 
-Even under conservative assumptions (10% success, $200M cost, 5% investor share, $12B treaty), expected first-year ROI exceeds 140%. This is dramatically higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
+Even under conservative assumptions (10% success, \$200M cost, 10% investor share, \$27.2B treaty), expected first-year ROI is 36% positive. This is significantly higher than traditional asset classes. The calculation demonstrates that the mechanism is economically rational for risk-tolerant capital across a wide parameter range, not dependent on optimistic assumptions.
 
 ### The Capital Asymmetry: Why IABs Can Outcompete Incumbent Lobbying
 
@@ -1385,7 +1385,7 @@ $$
 E[V] = 0.20 \times \$2.4\text{B/year} = \$480\text{M/year}
 $$
 
-First-year expected ROI: 380%, with the revenue stream continuing in perpetuity. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
+First-year expected ROI: 272%, with the revenue stream continuing in perpetuity. Even with high risk and long timelines, the asymmetric upside makes initial funding economically rational, not philanthropic. This changes the bootstrap calculus: **early investors are not donors making grants; they are rational actors making high-risk, high-return investments.**
 
 **Capital asymmetry ensures scalability beyond bootstrap:**
 
@@ -1396,7 +1396,7 @@ The bootstrap phase requires \$200M-$2B, which is small relative to the aggregat
 
 The 90:1 capital advantage means that **even if concentrated interests attempt counter-lobbying, they face a resource constraint.** If defense contractors allocate \$500M to kill IABs, diffuse beneficiaries can deploy \$5B in response, and still represent only 0.001% of available household wealth. The political change ROI (100-10,000x) that defense contractors exploit becomes accessible to millions of retail investors.
 
-**Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 380% expected ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise \$200M?" but "can we structure the offering legally?"
+**Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 272% expected ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise \$200M?" but "can we structure the offering legally?"
 
 **The race condition:** Concentrated interests can mobilize regulatory opposition within 12-24 months of IAB visibility. But if:
 1. Initial \$200M-$500M is raised from high-risk capital (impact funds, crypto whales, patient billionaires)

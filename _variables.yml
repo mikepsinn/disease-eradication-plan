@@ -493,11 +493,11 @@
 "dih_treasury_medical_research_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
-  \ treaty funding allocated to medical research (after bond payouts) | ✓ High confidence\
-  \ | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit: rate | Click to view\
-  \ calculation\">80%</a>"
-"dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$24.462B /\
-  \ \\$27.18B = 0.90 = 90\\%\n$$"
+  \ treaty funding allocated to medical research (after bond payouts and IAB incentives)\
+  \ | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING | Unit:\
+  \ rate | Click to view calculation\">80%</a>"
+"dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$21.744B /\
+  \ \\$27.18B = 0.80 = 80\\%\n$$"
 "dih_treasury_to_medical_research_annual": "<span class=\"parameter-link\" title=\"\
   parameters.DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL\">$21.7B</span>"
 "dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.18B\
@@ -516,8 +516,8 @@
   \ treaty funding going directly to patient trial subsidies | ✓ High confidence |\
   \ Formula: TRIAL_SUBSIDIES / TREATY_FUNDING | Unit: rate | Click to view calculation\"\
   >79.9%</a>"
-"dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$24.422B / \\\
-  $27.18B = 0.8986 = 89.86\\%\n$$"
+"dih_treasury_trial_subsidies_pct_latex": "$$\nTrialSubsidiesPct = \\$21.70B / \\\
+  $27.18B = 0.7985 = 79.85\\%\n$$"
 "disease_eradication_delay_dalys": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#daly-calculation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Total Disability-Adjusted\
