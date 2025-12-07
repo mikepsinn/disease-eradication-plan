@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Percentage of Captured Dividend Funding Victory Bonds"
+#| fig-cap: "Probability Distribution: Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,7 +20,7 @@ central_value = 0.1
 low = 0.08000000000000002
 high = 0.12
 dist_type = "fixed"
-display_name = "Percentage of Captured Dividend Funding Victory Bonds"
+display_name = "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds"
 unit = "rate"
 
 # Calculate distribution parameters

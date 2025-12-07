@@ -357,13 +357,13 @@ They win by **aligning incentives**.
 
 This is the alignment engine:
 
-### Victory Bonds Financing Mechanism
+### VICTORY Incentive Alignment Bonds Financing Mechanism
 
 You make this happen by aligning financial incentives with their own future savings.
 
 ### The Mechanism
 
-1. Investors buy **Victory Bonds** funding the political campaign ({{< var treaty_campaign_total_cost >}})
+1. Investors buy **VICTORY Incentive Alignment Bonds** funding the political campaign ({{< var treaty_campaign_total_cost >}})
 2. Bond funds finance lobbying to redirect {{< var treaty_reduction_pct >}} of military spending
 3. When the treaty passes, it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual benefits
 4. Bondholders receive {{< var victory_bond_annual_return_pct >}} annual returns from the captured surplus
@@ -378,7 +378,7 @@ They just follow their calculator to accidentally save humanity.
 
 ### Incentive Alignment by Actor Type
 
-**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on Victory Bonds."
+**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on VICTORY Incentive Alignment Bonds."
 
 **Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
 
@@ -386,7 +386,7 @@ They just follow their calculator to accidentally save humanity.
 
 **Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
 
-**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. Victory Bonds make {{< var victory_bond_annual_return_pct >}}."
+**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. VICTORY Incentive Alignment Bonds make {{< var victory_bond_annual_return_pct >}}."
 
 **Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join. Your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
 
@@ -1346,14 +1346,14 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 ### Step 2: Sell $1B in VICTORY Incentive Alignment Bonds
 
-Victory Bond investors fund the campaign because the returns exceed comparable investment opportunities.
+VICTORY Incentive Alignment Bond investors fund the campaign because the returns exceed comparable investment opportunities.
 They're buying ${{< var victory_bond_annual_return_pct >}} in returns for every $100 invested.
 It's the Louisiana Purchase of medical research.
 
-### Step 3: Run the Lobbying Campaign
+### Step 3: Implment the Legislative Strategy
 
-Deploy Victory Bond funds to convince politicians that voters want this.
-Standard lobbying tactics, just pointed at curing diseases instead of making bombs.
+Deploy VICTORY Incentive Alignment Bond funds to translate public support into legislative action.
+Strategic advocacy, just pointed at curing diseases instead of making bombs.
 
 ### Step 4: Build the Infrastructure
 
@@ -1380,7 +1380,7 @@ Nobody needs to be convinced. They just need to count.
 **For comprehensive implementation details**, see:
 
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed breakdown of political mobilization costs
-- **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Financing mechanism for lobbying efforts
+- **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Financing mechanism for ratification efforts
 - **[Financial Plan Overview](financial-plan.qmd)** - Complete fundraising, spending, and treasury management framework
 
 ### Campaign Budget Breakdown
@@ -1390,16 +1390,16 @@ The {{< var treaty_campaign_total_cost >}} [campaign cost](campaign-budget.qmd) 
 | Budget Category | Amount | Purpose |
 |:---|---:|:---|
 | **[Global Referendum](campaign-budget.qmd)** | {{< var treaty_campaign_budget_referendum >}} | Global direct democracy campaign ({{< var treaty_campaign_voting_bloc_target >}} votes). Creates a **"Shadow Mandate"** and political cost for non-adoption. Not legally binding, but politically coercive. |
-| **[Political Lobbying](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), Super PACs, defense industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
+| **[Legislative Advocacy](campaign-budget.qmd)** | {{< var treaty_campaign_budget_lobbying >}} | Legislative outreach (US/EU/G20), policy education, defense industry conversion, legal/compliance, opposition research. Outspends pharma + MIC combined |
 | **[Reserve Fund](campaign-budget.qmd)** | {{< var treaty_campaign_budget_reserve >}} | Post-victory transition, treaty implementation support, contingency buffer |
 | **Total Campaign Cost** | **{{< var treaty_campaign_total_cost >}}** | 4-year implementation timeline |
 
-**Philanthropic Leverage Ratio**: For a donor (e.g., Gates Foundation), a **$1 billion** catalytic investment to pass the treaty unlocks **{{< var treaty_annual_funding >}} per year** in perpetual public funding.
+**Philanthropic Leverage Ratio (The Double Multiplier)**: For a philanthropic partner, the leverage works in two phases:
 
-* **1-Year Leverage**: 27x
-* **10-Year Leverage**: 270x
+1.  **Phase 1 (The Catalyst):** Your **$100M grant** for the Global Survey provides the proof-of-demand that de-risks the private capital raise. (Your money unlocks the **$1B** bond market).
+2.  **Phase 2 (The Outcome):** That $1B campaign unlocks **{{< var treaty_annual_funding >}}/year** in public funding.
 
-This is the highest-leverage philanthropic opportunity in history: using $1B of private capital to unlock a permanent $27B/year public revenue stream for global health.
+**Total Leverage**: Your **$100M** catalyst effectively unlocks a **$27B/year** revenue stream for global health. This is a **270x annual return** on philanthropic capital.
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var combined_peace_health_dividends_annual_for_roi_calc >}}). The referendum component isn't a "magic wand"; it's a mechanism to generate the **political capital** required to force the treaty onto the agenda of sovereign nations.
 
@@ -1425,7 +1425,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Why this actually won't happen**:
 
-Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. You're offering Victory Bondholders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Defense lobbyists currently get [$1,813 back for every $1 spent](../references.qmd#lobbying-roi-calc) on political influence. You're offering VICTORY Incentive Alignment Bondholders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 

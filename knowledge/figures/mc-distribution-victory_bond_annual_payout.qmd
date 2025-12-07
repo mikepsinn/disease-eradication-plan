@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Annual Victory Bond Payout (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Annual VICTORY Incentive Alignment Bond Payout (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 194269355.30860633
 p5 = 2446000000.0
 p50 = 2700961104.0683985
 p95 = 2990000000.0
-display_name = "Annual Victory Bond Payout"
+display_name = "Annual VICTORY Incentive Alignment Bond Payout"
 units = "USD/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Annual Victory Bond Payout**
+**Simulation Results Summary: Annual VICTORY Incentive Alignment Bond Payout**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $194M |
 | 90% Confidence Interval | [$2.45B, $2.99B] |
 
-*The histogram shows the distribution of Annual Victory Bond Payout across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Annual VICTORY Incentive Alignment Bond Payout across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
