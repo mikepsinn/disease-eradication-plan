@@ -118,10 +118,22 @@ ax.text(x_positions[1], gross_rd_savings + 10,
         ha='center', va='bottom', fontsize=30,
         fontweight='bold', color=COLOR_BLACK)
 
-# Health gains - label each tier using centralized formatter (TOTAL values, not annual)
+# Health gains - label each tier in trillions with "T" suffix (TOTAL values, not annual)
+# Custom formatter to force trillion display for quadrillion-scale values
+
+def format_as_trillions(value_usd):
+    """Format USD values in trillions with T suffix, regardless of magnitude."""
+    trillions = value_usd / 1e12
+    if abs(trillions) >= 100:
+        return f"${trillions:.0f}T"
+    elif abs(trillions) >= 10:
+        return f"${trillions:.1f}T"
+    else:
+        return f"${trillions:.2f}T"
+
 # Conservative tier (bottom)
 
-conservative_label = format_parameter_value(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
+conservative_label = format_as_trillions(HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL)
 ax.text(x_positions[2], health_gains_conservative / 2,
         conservative_label,
         ha='center', va='center', fontsize=22,
@@ -129,7 +141,7 @@ ax.text(x_positions[2], health_gains_conservative / 2,
 
 # PRIMARY tier (middle)
 
-primary_label = format_parameter_value(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
+primary_label = format_as_trillions(DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS)
 ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - health_gains_conservative) / 2,
         primary_label,
         ha='center', va='center', fontsize=26,
@@ -137,7 +149,7 @@ ax.text(x_positions[2], health_gains_conservative + (health_gains_primary - heal
 
 # Optimistic tier (top)
 
-optimistic_label = format_parameter_value(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
+optimistic_label = format_as_trillions(DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL)
 ax.text(x_positions[2], health_gains_primary + (health_gains_optimistic - health_gains_primary) / 2,
         optimistic_label,
         ha='center', va='center', fontsize=22,
