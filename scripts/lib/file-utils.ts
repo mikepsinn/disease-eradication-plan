@@ -399,6 +399,13 @@ export async function parseQuartoYml(): Promise<BookStructure> {
 /**
  * Gets all book chapter and appendix files, excluding references.qmd
  * This is the standard list of files to process for most review/edit operations
+ * Also excludes auto-generated files from scripts/generate-variables-yml.py:
+ * - knowledge/appendix/parameters-and-calculations.qmd
+ * - knowledge/figures/tornado-*.qmd
+ * - knowledge/figures/sensitivity-table-*.qmd
+ * - knowledge/figures/mc-distribution-*.qmd
+ * - knowledge/figures/exceedance-*.qmd
+ * - knowledge/figures/distribution-*.qmd
  */
 export async function getBookFilesForProcessing(): Promise<string[]> {
   console.log('  → Loading glob module...');
@@ -419,13 +426,36 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
   let allFiles = [...indexFile, ...bookFiles];
   console.log(`  → Combined total: ${allFiles.length} files`);
 
-  // Filter out references.qmd and any files in _freeze or _book directories
-  console.log('  → Filtering out references.qmd and _freeze/_book directories...');
+  // Filter out references.qmd, auto-generated files, and any files in _freeze or _book directories
+  console.log('  → Filtering out references.qmd, auto-generated files, and _freeze/_book directories...');
   allFiles = allFiles.filter(file => {
     const normalizedPath = file.replace(/\\/g, '/');
-    return !normalizedPath.includes('references.qmd') &&
-      !normalizedPath.includes('_freeze/') &&
-      !normalizedPath.includes('_book/');
+
+    // Exclude references.qmd
+    if (normalizedPath.includes('references.qmd')) return false;
+
+    // Exclude _freeze and _book directories
+    if (normalizedPath.includes('_freeze/') || normalizedPath.includes('_book/')) return false;
+
+    // Exclude auto-generated parameters-and-calculations.qmd
+    if (normalizedPath.includes('knowledge/appendix/parameters-and-calculations.qmd')) return false;
+
+    // Exclude auto-generated figure QMD files
+    const autogenFigurePatterns = [
+      '/tornado-',
+      '/sensitivity-table-',
+      '/mc-distribution-',
+      '/exceedance-',
+      '/distribution-'
+    ];
+
+    if (normalizedPath.includes('knowledge/figures/')) {
+      for (const pattern of autogenFigurePatterns) {
+        if (normalizedPath.includes(pattern)) return false;
+      }
+    }
+
+    return true;
   });
   console.log(`  → Final count after filtering: ${allFiles.length} files`);
 

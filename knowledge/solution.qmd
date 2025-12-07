@@ -68,11 +68,11 @@ Of that {{< var treaty_annual_funding >}}, here's where it goes:
 |:-----------|:------|:-------|:--------|
 | VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the people who funded the campaign |
 | Political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned via [IABs](solution/incentive-alignment-bonds.qmd) |
-| DIH research | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually cure diseases |
+| Patient Subsidies for Pragmatic Clinical Trials | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually cure diseases |
 
 They say you can't put a price on human life. But apparently the price is somewhere south of pet food, which seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
-### A Decentralized Institute of Health
+### Your Decentralized Institute of Health
 
 Once you've got {{< var treaty_annual_funding >}} per year to spend, you need somewhere to put it. This is where your DIH comes in.
 
@@ -118,7 +118,7 @@ This is called "Aggregated Pairwise Preference Allocation," or APPA, which sound
 
 The important part is there's no committee. No gatekeepers. No humans with the power to say no. Just billions of micro-decisions that add up to what humanity actually wants, not what 200 people in suits think humanity wants.
 
-##### Your Decentralized Framework for Drug Assessment (dFDA)
+##### Your Decentralized Framework for Drug Assessment
 
 The FDA currently makes drugs {{< var trial_cost_reduction_factor >}} times more expensive than necessary. You're going to build a better one.
 
@@ -128,7 +128,7 @@ Your decentralized framework for drug assessment (dFDA) does three things:
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on your dFDA platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
+Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on this. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
@@ -218,7 +218,7 @@ Insurance companies have a simple preference: They want you either dead or immor
 
 Dead people file zero claims. Immortal healthy people file zero claims. Currently sick people cost billions.
 
-Your dFDA moves people from "currently sick" to either "dead" (whoops) or "cured" (success). Either way, the insurance company pays less.
+This new framework moves people from "currently sick" to either "dead" (whoops) or "cured" (success). Either way, the insurance company pays less.
 
 Insurance companies have been trying to achieve this for fifty years but couldn't because the FDA makes cures impossible.
 
@@ -257,11 +257,11 @@ The difference is like asking a firefighter to prevent fires versus asking a fir
 
 The solution only works if everyone wins by winning. Here's who gets what:
 
-**Defense contractors:** Keep 99% of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds  
-**Pharmaceutical companies:** Patients pay them instead of vice versa  
-**Politicians:** Campaign donations + not losing elections  
-**Insurance companies:** Fewer claims = more profit  
-**Billionaires:** {{< var victory_bond_annual_return_pct >}} returns + legacy + naming rights  
+**Defense contractors:** Keep 99% of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds
+**Pharmaceutical companies:** Patients pay them instead of vice versa
+**Politicians:** Campaign donations + not losing elections
+**Insurance companies:** Fewer claims = more profit
+**Billionaires:** {{< var victory_bond_annual_return_pct >}} returns + legacy + naming rights
 **Regular people:** Subsidized treatment + direct democracy + not dying
 
 Notice that everyone's selfish reason for participating happens to save humanity. Trick people into doing good by making good profitable.
@@ -285,7 +285,7 @@ This solution isn't just about ending disease. It proves markets work better tha
 If you can cure diseases by redirecting 1% of military spending through market mechanisms, you can solve:
 
 - Education (same structure, different market)
-- Housing (same structure, different market)  
+- Housing (same structure, different market)
 - Climate change (same structure, different market)
 - Literally any public goods problem (same structure, different market)
 
@@ -302,7 +302,7 @@ The rest of Part II explains each component in detail:
 - How to structure a 1% treaty so countries actually sign it
 - How to build your DIH so it can't be corrupted
 - How Wishocracy prevents lobbyists from stealing all the money
-- How your dFDA achieves {{< var trial_cost_reduction_factor >}}× cost reduction
+- How your global trial framework achieves {{< var trial_cost_reduction_factor >}}× cost reduction
 - How everyone makes money
 - How to make selfishness save humanity
 
