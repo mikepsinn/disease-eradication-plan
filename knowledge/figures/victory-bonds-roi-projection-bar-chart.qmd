@@ -19,7 +19,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 # Sources: S&P 500 (historical avg), Real Estate (avg appreciation),
 # Venture Capital (industry avg), Medallion Fund (../references.qmd),
-# Cocaine (UN estimates), VICTORY Incentive Alignment Bonds (../economics/victory-bonds.qmd)
+# Cocaine (UN estimates), VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (../economics/victory-bonds.qmd)
 
 investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
 returns = [
@@ -35,7 +35,7 @@ returns = [
 
 fig, ax = plt.subplots(figsize=(14, 10))
 
-# White bars with black outline for comparison items, solid black for VICTORY Incentive Alignment Bonds (emphasis)
+# White bars with black outline for comparison items, solid black for VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (emphasis)
 
 bars = []
 for i, ret in enumerate(returns):
@@ -50,7 +50,7 @@ for i, ret in enumerate(returns):
 for i, (bar, ret) in enumerate(zip(bars, returns)):
     width = bar[0].get_width()
     # White text on black bar (VICTORY Incentive Alignment Bonds), black text on white bars (others)
-    if i == len(returns) - 1:  # VICTORY Incentive Alignment Bonds - white text on black bar
+    if i == len(returns) - 1:  # VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) - white text on black bar
         ax.text(width/2, bar[0].get_y() + bar[0].get_height()/2.,
                 f'{ret}%', ha='center', va='center', fontsize=44, weight='bold',
                 color=COLOR_WHITE)

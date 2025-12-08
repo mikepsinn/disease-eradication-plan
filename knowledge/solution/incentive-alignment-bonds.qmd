@@ -586,42 +586,39 @@ Incentive Alignment Bonds supply the **how**.
 
 (This is the part of the presentation where the venture capitalist starts nodding.)
 
-### 7a. How VICTORY Incentive Alignment Bonds and IABs Work Together
+### 7a. The Two Engines: Financial and Political
 
-If you've read the [VICTORY Incentive Alignment Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "How do these fit together?"
+If you've read the [VICTORY Incentive Alignment Bonds chapter](../economics/victory-bonds.qmd), you might wonder: "Are these two different things?"
 
-They solve different problems for different people:
+No. **VICTORY Incentive Alignment Bonds are the specific financial instrument that implements the IAB concept.**
 
-| | VICTORY Incentive Alignment Bonds | Incentive Alignment Bonds |
-|:--|:--------------|:--------------------------|
+However, the instrument has two distinct "engines" inside it. One pays investors to provide the capital. The other pays politicians to provide the policy.
+
+| | Engine 1: The Investor Component<br>(VICTORY Bonds) | Engine 2: The Political Component<br>(The IAB Mechanism) |
+|:--|:------------------------------------|:-----------------------------------|
 | **Who's incentivized** | Investors | Politicians |
-| **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers (funded by IAB allocation) |
+| **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers |
 | **Funding source** | {{< var victory_bond_funding_pct >}} of treaty revenue ({{< var victory_bond_annual_payout >}}/year) | {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) |
-| **Payout trigger** | Treaty passes | Health outcomes improve |
-| **Legal structure** | Revenue share on treaty funding | Scoring systems + independent campaign support |
-
-**VICTORY Incentive Alignment Bonds** solve the **capital problem**: "How do we raise $1B to fund the campaign that passes the treaty?"
-
-**IABs** solve the **political problem**: "How do we make politicians *want* to support and maintain the treaty?"
+| **Role** | **Solves the Capital Problem**<br>Raises $1B to fund the campaign | **Solves the Political Problem**<br>Makes politicians *want* to support the treaty |
 
 The relationship is complementary:
 
-| Phase | Instrument | What It Does |
+| Phase | Engine | What It Does |
 |:------|:-----------|:-------------|
-| Pre-Treaty | VICTORY Incentive Alignment Bonds | Raise capital from investors; fund the campaign |
-| Pre-Treaty | IABs (scoring) | Show politicians that supporting the treaty improves their scores |
-| Post-Treaty | VICTORY Incentive Alignment Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
-| Post-Treaty | IABs (full mechanism) | Reward politicians whose countries actually achieve health improvements |
+| Pre-Treaty | VICTORY Bonds | Raise capital from investors to fund the campaign |
+| Pre-Treaty | IAB Mechanism | Shows politicians that supporting the treaty improves their scores |
+| Post-Treaty | VICTORY Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
+| Post-Treaty | IAB Mechanism | Rewards politicians whose countries actually achieve health improvements |
 
-VICTORY Incentive Alignment Bonds get investors to fund the war. IABs get politicians to fight it (and keep fighting after victory).
+VICTORY Incentive Alignment Bonds get investors to fund the war. The IAB mechanism gets politicians to fight it (and to keep fighting after victory).
 
-The {{< var dih_treasury_medical_research_pct >}} of treaty revenue that doesn't go to bondholders or political incentives? That is allocated from the 1% Treaty Fund to decentralized institutes of health (DIH) to actually fund the pragmatic clinical trials. The split is:
+The {{< var dih_treasury_medical_research_pct >}} of treaty revenue that doesn't go to investors or political incentives? That is allocated from the 1% Treaty Fund to decentralized institutes of health (DIH) to actually fund the pragmatic clinical trials. The split is:
 
 | Allocation | Share | Annual Amount | Purpose |
 |:-----------|:------|:--------------|:--------|
-| VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Returns for funding the campaign |
-| IAB political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Electoral support, post-office fellowships |
-| Research Funding | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually curing diseases |
+| **Engine 1** (Investors) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Returns for funding the campaign |
+| **Engine 2** (Politicians) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Electoral support, post-office fellowships |
+| **The Mission** (Research) | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually curing diseases |
 
 ### 8. Objections and Failure Modes
 
@@ -754,7 +751,7 @@ Without a mechanism for **sustained political pressure**, the treaty stalls at 1
 
 #### IABs Are the Political Ratchet
 
-The 10% IAB allocation creates something VICTORY Incentive Alignment Bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
+The 10% IAB allocation creates something social impact bonds cannot: **perpetual, compounding political incentives** that only increase with treaty expansion.
 
 | Treaty Level | Total Revenue | 1% Treaty Fund Revenue | Research Funding | Political Incentive |
 |:-------------|:--------------|:------------|:-----------------|:--------------------|

@@ -182,7 +182,7 @@ Key protections:
 
 | Component | Target | Mechanism |
 |-----------|--------|-----------|
-| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY Incentive Alignment Bonds |
+| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) |
 | **Spend** | Campaign budget | Referendum + lobbying + platform |
 | **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation via Wishocracy |
 | **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |

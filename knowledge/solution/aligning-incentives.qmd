@@ -368,9 +368,9 @@ Adam Smith's invisible hand, but for healing instead of widgets.
 
 Everything above describes how to align incentives for the **initial win**: passing a 1% treaty. But the goal isn't 1%. The goal is eventually redirecting *all* military spending to health. That requires two different engines.
 
-### Engine 1: VICTORY Incentive Alignment Bonds (The Initial Alignment)
+### Engine 1: VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (The Initial Alignment)
 
-VICTORY Incentive Alignment Bonds solve the **funding problem**:
+VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) solve the **funding problem**:
 
 - Raise {{< var treaty_campaign_total_cost >}} to fund the campaign
 - Investors get {{< var victory_bond_annual_return_pct >}} returns forever
@@ -378,7 +378,7 @@ VICTORY Incentive Alignment Bonds solve the **funding problem**:
 
 But after the 1% treaty passes, VICTORY Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10% treaties. Their job is done.
 
-### Engine 2: Incentive Alignment Bonds (The Scaling Engine)
+### Engine 2: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (The Scaling Engine)
 
 {{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
 
