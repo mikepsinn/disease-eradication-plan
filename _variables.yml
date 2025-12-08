@@ -275,7 +275,7 @@
   \ | 95% CI: [1.50M patients/year, 2.30M patients/year] | Dist: Lognormal | Unit:\
   \ patients/year | Click to view source\">1.90M</a>"
 "current_trial_slots_available_cite": "@global-trial-participant-capacity"
-"days_per_year": "<span class=\"parameter-link\" title=\"parameters.DAYS_PER_YEAR\"\
+"days_per_year": "<span class=\"parameter-link\" title=\"Parameter: DAYS_PER_YEAR\"\
   >365</span>"
 "dct_platform_funding_medium": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#analogous-rom\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom\"\
@@ -462,8 +462,11 @@
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Target cost per\
   \ patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars) | ✓ High\
   \ confidence | Unit: USD/patient | Click to view calculation\">$1.00K</a>"
-"dfda_trials_per_year_capacity": "<span class=\"parameter-link\" title=\"parameters.DFDA_TRIALS_PER_YEAR_CAPACITY\"\
-  >75.4k</span>"
+"dfda_trials_per_year_capacity": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-dfda_trials_per_year_capacity\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Maximum trials per year possible with trial capacity multiplier | Formula:\
+  \ CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER | ✓ High confidence | Unit: trials/year\
+  \ | Click to view calculation\">75.4k</a>"
 "dfda_trials_per_year_capacity_latex": "$$\nCapacity_{DFDA} = Trials_{curr} \\times\
   \ Multiplier = 3{,}300 \\times 22.85 = 75{,}392\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
@@ -501,8 +504,12 @@
   \ rate | Click to view calculation\">80%</a>"
 "dih_treasury_medical_research_pct_latex": "$$\nMedicalResearchPct = \\$21.744B /\
   \ \\$27.18B = 0.80 = 80\\%\n$$"
-"dih_treasury_to_medical_research_annual": "<span class=\"parameter-link\" title=\"\
-  parameters.DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL\">$21.7B</span>"
+"dih_treasury_to_medical_research_annual": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-dih_treasury_to_medical_research_annual\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Annual funding for pragmatic clinical trials (treaty funding minus VICTORY\
+  \ Bond payouts and IAB political incentive mechanism) | Formula: TREATY_FUNDING\
+  \ - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING | ✓ High confidence | Unit: USD/year\
+  \ | Click to view calculation\">$21.7B</a>"
 "dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.18B\
   \ - \\$2.718B - \\$2.718B = \\$21.744B\n$$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
@@ -1001,8 +1008,10 @@
   external\" data-confidence=\"high\" title=\"Total global household wealth (2022/2023\
   \ estimate) | ✓ High confidence | Unit: USD | Click to view source\">$454T</a>"
 "global_household_wealth_usd_cite": "@cs-global-wealth-report-2023"
-"global_industry_clinical_trials_spending_annual": "<span class=\"parameter-link\"\
-  \ title=\"parameters.GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL\">$78.5B</span>"
+"global_industry_clinical_trials_spending_annual": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-global_industry_clinical_trials_spending_annual\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Annual global industry spending on clinical trials (Total - Government)\
+  \ | ✓ High confidence | Unit: USD | Click to view calculation\">$78.5B</a>"
 "global_industry_clinical_trials_spending_annual_latex": "$$\nTrials_{ann} = Trials_{ann}\
   \ - Trials_{ann} = \\$83.00B - \\$4.50B = \\$78.50B\n$$"
 "global_life_expectancy_2024": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
@@ -1082,10 +1091,9 @@
   \ DEATHS_TOTAL × YLL × VSLY | Unit: USD | Click to view calculation\">$251T</a>"
 "historical_progress_economic_loss_total_latex": "$$\nLoss_{total} = 98.4M \\times\
   \ 17 \\times \\$150k = \\$251T\n$$"
-"hours_per_day": "<span class=\"parameter-link\" title=\"parameters.HOURS_PER_DAY\"\
+"hours_per_day": "<span class=\"parameter-link\" title=\"Parameter: HOURS_PER_DAY\"\
   >24</span>"
-"hours_per_year": "<span class=\"parameter-link\" title=\"parameters.HOURS_PER_YEAR\
-  \ - 8760\">8.76k</span>"
+"hours_per_year": "<span class=\"parameter-link\" title=\"8760\">8.76k</span>"
 "human_genome_project_total_economic_impact": "<a href=\"https://warondisease.org/knowledge/references.html#human-genome-and-genetic-editing\"\
   \ class=\"parameter-link\" data-source-ref=\"human-genome-and-genetic-editing\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Estimated total\
@@ -1113,8 +1121,12 @@
   \ view calculation\">207</a>"
 "iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
   \ = \\frac{\\$155.05B}{\\$750.0M} = 206.73\n$$"
-"iab_political_incentive_funding_annual": "<span class=\"parameter-link\" title=\"\
-  parameters.IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL\">$2.72B</span>"
+"iab_political_incentive_funding_annual": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Annual funding for IAB political incentive mechanism (independent expenditures\
+  \ supporting high-scoring politicians, post-office fellowship endowments, Public\
+  \ Good Score infrastructure) | Formula: TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT\
+  \ | ✓ High confidence | Unit: USD/year | Click to view calculation\">$2.72B</a>"
 "iab_political_incentive_funding_annual_latex": "$$\nIABFunding = \\$27.18B \\times\
   \ 0.10 = \\$2.718B\n$$"
 "iab_political_incentive_funding_pct": "<span class=\"parameter-definition\" title=\"\
@@ -1172,8 +1184,11 @@
   \ from mental health issues (beyond treatment costs) | ✓ High confidence | Unit:\
   \ USD/year | Click to view source\">$2.00K</a>"
 "mental_health_productivity_loss_per_capita_cite": "@mental-health-burden"
-"military_to_government_clinical_trials_spending_ratio": "<span class=\"parameter-link\"\
-  \ title=\"parameters.MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO\">604</span>"
+"military_to_government_clinical_trials_spending_ratio": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-military_to_government_clinical_trials_spending_ratio\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Ratio of global military spending to government clinical trials spending\
+  \ | Formula: MILITARY_SPENDING / GOVT_CLINICAL_TRIALS_SPENDING | ✓ High confidence\
+  \ | Unit: ratio | Click to view calculation\">604</a>"
 "military_to_government_clinical_trials_spending_ratio_latex": "$$\n\\text{Ratio}\
   \ = \\frac{\\$2.7T}{\\$4.5B} \\approx 600\\times\n$$"
 "military_vs_medical_research_ratio": "<a href=\"/knowledge/problem/cost-of-war#misallocation\"\
@@ -1183,7 +1198,7 @@
   \ ÷ MEDICAL_RESEARCH | Unit: ratio | Click to view calculation\">40.3</a>"
 "military_vs_medical_research_ratio_latex": "$$\nRatio = \\frac{\\$2,718B}{\\$67.5B}\
   \ \\approx 40.3:1\n$$"
-"minutes_per_hour": "<span class=\"parameter-link\" title=\"parameters.MINUTES_PER_HOUR\"\
+"minutes_per_hour": "<span class=\"parameter-link\" title=\"Parameter: MINUTES_PER_HOUR\"\
   >60</span>"
 "misallocation_factor_death_vs_saving": "<a href=\"/knowledge/problem/cost-of-war#grotesque-mathematics\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/cost-of-war.qmd#grotesque-mathematics\"\
@@ -1192,7 +1207,7 @@
   \ ÷ COST_PER_LIFE_SAVED | Unit: ratio | Click to view calculation\">2.89k</a>"
 "misallocation_factor_death_vs_saving_latex": "$$\nMisallocation = \\frac{\\$46.4M}{\\\
   $16,071} \\approx 2,889x\n$$"
-"months_per_year": "<span class=\"parameter-link\" title=\"parameters.MONTHS_PER_YEAR\"\
+"months_per_year": "<span class=\"parameter-link\" title=\"Parameter: MONTHS_PER_YEAR\"\
   >12</span>"
 "nih_clinical_trials_spending_pct": "<a href=\"https://warondisease.org/knowledge/references.html#nih-clinical-trials-spending-pct-3-3\"\
   \ class=\"parameter-link\" data-source-ref=\"nih-clinical-trials-spending-pct-3-3\"\
@@ -1330,12 +1345,17 @@
   \ calculation\">$508K</a>"
 "personal_lifetime_wealth_latex": "$$\n\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\\
   frac{B_t}{(1+r)^t}\n$$"
-"per_capita_chronic_disease_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_CHRONIC_DISEASE_COST\"\
-  >$12.2K</span>"
+"per_capita_chronic_disease_cost": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-per_capita_chronic_disease_cost\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"US per capita chronic disease cost | Formula: US_CHRONIC_DISEASE_SPENDING\
+  \ ÷ US_POPULATION | ✓ High confidence | Unit: USD/person/year | Click to view calculation\"\
+  >$12.2K</a>"
 "per_capita_chronic_disease_cost_latex": "$$\nCost_{percap,dis} = \\frac{Spending_{chronic,ann}}{Population}\
   \ = \\frac{\\$4.10T}{335M} = \\$12.2K\n$$"
-"per_capita_mental_health_cost": "<span class=\"parameter-link\" title=\"parameters.PER_CAPITA_MENTAL_HEALTH_COST\"\
-  >$1.04K</span>"
+"per_capita_mental_health_cost": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-per_capita_mental_health_cost\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"US per capita mental health cost | Formula: US_MENTAL_HEALTH_COST ÷ US_POPULATION\
+  \ | ✓ High confidence | Unit: USD/person/year | Click to view calculation\">$1.04K</a>"
 "per_capita_mental_health_cost_latex": "$$\nCost_{percap,health} = \\frac{Cost_{mental,ann}}{Population}\
   \ = \\frac{\\$350.00B}{335M} = \\$1.0K\n$$"
 "pharma_drug_development_cost_current": "<a href=\"https://warondisease.org/knowledge/references.html#drug-development-cost\"\
@@ -1444,10 +1464,9 @@
   \ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [4 years, 9 years] | Dist:\
   \ Lognormal | Unit: years | Click to view source\">6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
-"seconds_per_minute": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_MINUTE\"\
+"seconds_per_minute": "<span class=\"parameter-link\" title=\"Parameter: SECONDS_PER_MINUTE\"\
   >60</span>"
-"seconds_per_year": "<span class=\"parameter-link\" title=\"parameters.SECONDS_PER_YEAR\
-  \ - 31,536,000\">31.5M</span>"
+"seconds_per_year": "<span class=\"parameter-link\" title=\"31,536,000\">31.5M</span>"
 "smallpox_eradication_roi": "<a href=\"https://warondisease.org/knowledge/references.html#smallpox-eradication-roi\"\
   \ class=\"parameter-link\" data-source-ref=\"smallpox-eradication-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from smallpox eradication\
@@ -1512,12 +1531,16 @@
   \ worldwide (1957-1962) | ~ Medium confidence | 95% CI: [10.0k cases, 20.0k cases]\
   \ | Dist: Lognormal | Unit: cases | Click to view source\">15.0k</a>"
 "thalidomide_cases_worldwide_cite": "@thalidomide-scandal"
-"thalidomide_dalys_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_DALYS_PER_EVENT\"\
-  >41.8k</span>"
+"thalidomide_dalys_per_event": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-thalidomide_dalys_per_event\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"medium\"\
+  \ title=\"Total DALYs per US-scale thalidomide event (YLL + YLD) | Formula: YLL\
+  \ + YLD | ~ Medium confidence | Unit: DALYs | Click to view calculation\">41.8k</a>"
 "thalidomide_dalys_per_event_latex": "$$\n28{,}800 + 12{,}960 = 41{,}760 \\text{ DALYs}\n\
   $$"
-"thalidomide_deaths_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_DEATHS_PER_EVENT\"\
-  >360</span>"
+"thalidomide_deaths_per_event": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-thalidomide_deaths_per_event\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"medium\"\
+  \ title=\"Deaths per US-scale thalidomide event | Formula: US_CASES × MORTALITY_RATE\
+  \ | ~ Medium confidence | Unit: deaths | Click to view calculation\">360</a>"
 "thalidomide_deaths_per_event_latex": "$$\n900 \\text{ (cases)} \\times 40\\% \\text{\
   \ (mortality)} = 360 \\text{ deaths}\n$$"
 "thalidomide_disability_weight": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-survivors-health\"\
@@ -1532,8 +1555,10 @@
   \ infants (died within first year) | ✓ High confidence | 95% CI: [35%, 45%] | Dist:\
   \ Lognormal | Unit: percentage | Click to view source\">40%</a>"
 "thalidomide_mortality_rate_cite": "@thalidomide-scandal"
-"thalidomide_survivors_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_SURVIVORS_PER_EVENT\"\
-  >540</span>"
+"thalidomide_survivors_per_event": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-thalidomide_survivors_per_event\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"medium\"\
+  \ title=\"Survivors per US-scale thalidomide event | Formula: US_CASES × (1 - MORTALITY_RATE)\
+  \ | ~ Medium confidence | Unit: cases | Click to view calculation\">540</a>"
 "thalidomide_survivors_per_event_latex": "$$\n900 \\text{ (cases)} \\times 60\\% \\\
   text{ (survival)} = 540 \\text{ survivors}\n$$"
 "thalidomide_survivor_lifespan": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-survivors-health\"\
@@ -1542,8 +1567,11 @@
   \ | ~ Medium confidence | 95% CI: [50 years, 70 years] | Dist: Lognormal | Unit:\
   \ years | Click to view source\">60</a>"
 "thalidomide_survivor_lifespan_cite": "@thalidomide-survivors-health"
-"thalidomide_us_cases_prevented": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_US_CASES_PREVENTED\"\
-  >900</span>"
+"thalidomide_us_cases_prevented": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-thalidomide_us_cases_prevented\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"medium\"\
+  \ title=\"Estimated US thalidomide cases prevented by FDA rejection | Formula: WORLDWIDE_CASES\
+  \ × US_POPULATION_SHARE | ~ Medium confidence | Unit: cases | Click to view calculation\"\
+  >900</a>"
 "thalidomide_us_cases_prevented_latex": "$$\n15{,}000 \\times 6\\% = 900 \\text{ cases}\n\
   $$"
 "thalidomide_us_population_share_1960": "<a href=\"https://warondisease.org/knowledge/references.html#us-census-world-population-1960\"\
@@ -1552,12 +1580,17 @@
   \ | ✓ High confidence | 95% CI: [5.5%, 6.5%] | Dist: Lognormal | Unit: percentage\
   \ | Click to view source\">6%</a>"
 "thalidomide_us_population_share_1960_cite": "@us-census-world-population-1960"
-"thalidomide_yld_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_YLD_PER_EVENT\"\
-  >13.0k</span>"
+"thalidomide_yld_per_event": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-thalidomide_yld_per_event\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"medium\"\
+  \ title=\"Years Lived with Disability per thalidomide event | Formula: SURVIVORS\
+  \ × LIFESPAN × DISABILITY_WEIGHT | ~ Medium confidence | Unit: years | Click to\
+  \ view calculation\">13.0k</a>"
 "thalidomide_yld_per_event_latex": "$$\n540 \\text{ (surv)} \\times 60 \\text{ (yrs)}\
   \ \\times 0.4 \\text{ (weight)} = 12{,}960 \\text{ YLD}\n$$"
-"thalidomide_yll_per_event": "<span class=\"parameter-link\" title=\"parameters.THALIDOMIDE_YLL_PER_EVENT\"\
-  >28.8k</span>"
+"thalidomide_yll_per_event": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-thalidomide_yll_per_event\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"medium\"\
+  \ title=\"Years of Life Lost per thalidomide event (infant deaths) | Formula: DEATHS\
+  \ × 80 years | ~ Medium confidence | Unit: years | Click to view calculation\">28.8k</a>"
 "thalidomide_yll_per_event_latex": "$$\n360 \\text{ (deaths)} \\times 80 \\text{ (years)}\
   \ = 28{,}800 \\text{ YLL}\n$$"
 "total_book_words": "<a href=\"/book-word-count\" class=\"parameter-link\" data-source-ref=\"\
@@ -1707,8 +1740,11 @@
   \ | Click to view calculation\">$13</a>"
 "treaty_expected_cost_per_daly_latex": "$$\nE[\\text{Cost/DALY}] = \\frac{\\text{Cost}_{conditional}}{P_{success}}\n\
   $$"
-"treaty_expected_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"\
-  parameters.TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER\">7.07</span>"
+"treaty_expected_vs_bed_nets_multiplier": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-treaty_expected_vs_bed_nets_multiplier\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"low\"\
+  \ title=\"Expected value multiplier vs bed nets (accounts for political uncertainty)\
+  \ | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY | ? Low confidence\
+  \ | Unit: ratio | Click to view calculation\">7.07</a>"
 "treaty_expected_vs_bed_nets_multiplier_latex": "$$\nE[\\text{Multiplier}] = \\frac{\\\
   $89}{\\$0.51} = 175\\times\n$$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
@@ -1790,16 +1826,25 @@
   \ view calculation\">$155B</a>"
 "treaty_total_complete_benefits_annual_latex": "$$\nBenefit_{total} = Benefit_{DFDA,ann}\
   \ + Cost_{soc,ann} = \\$41.50B + \\$113.55B = \\$155.05B\n$$"
-"treaty_vs_bed_nets_multiplier": "<span class=\"parameter-link\" title=\"parameters.TREATY_VS_BED_NETS_MULTIPLIER\"\
-  >707</span>"
+"treaty_vs_bed_nets_multiplier": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-treaty_vs_bed_nets_multiplier\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"How many times more cost-effective than bed nets (using $89/DALY midpoint\
+  \ estimate) | Formula: BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY | ✓ High confidence\
+  \ | Unit: ratio | Click to view calculation\">707</a>"
 "treaty_vs_bed_nets_multiplier_latex": "$$\n\\text{Multiplier} = \\frac{\\$89}{\\\
   $0.127} = 701\\times\n$$"
-"trial_capacity_cumulative_years_20yr": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR\"\
-  >456</span>"
+"trial_capacity_cumulative_years_20yr": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-trial_capacity_cumulative_years_20yr\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Cumulative trial-capacity-equivalent years over 20-year period | Formula:\
+  \ TRIAL_CAPACITY_MULTIPLIER × 20 YEARS | ✓ High confidence | Unit: years | Click\
+  \ to view calculation\">456</a>"
 "trial_capacity_cumulative_years_20yr_latex": "$$\nCapacity_{20yr} = 25.7 \\times\
   \ 20 = 514 \\text{ years}\n$$"
-"trial_capacity_multiplier": "<span class=\"parameter-link\" title=\"parameters.TRIAL_CAPACITY_MULTIPLIER\"\
-  >22.8</span>"
+"trial_capacity_multiplier": "<a href=\"knowledge/appendix/parameters-and-calculations#sec-trial_capacity_multiplier\"\
+  \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
+  \ title=\"Trial capacity multiplier from DIH funding capacity vs. current global\
+  \ trial participation | Formula: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS | ✓\
+  \ High confidence | Unit: ratio | Click to view calculation\">22.8</a>"
 "trial_capacity_multiplier_latex": "$$\nMultiplier = \\frac{Fundable_{ann}}{Trials_{curr}}\
   \ = \\frac{43.4M}{1.9M} = 22.85\n$$"
 "trial_cost_reduction_factor": "<a href=\"https://warondisease.org/knowledge/references.html#recovery-trial-82x-cost-reduction\"\

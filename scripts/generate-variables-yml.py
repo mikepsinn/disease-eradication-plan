@@ -978,13 +978,66 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
         tooltip = " | ".join(tooltip_parts)
 
         html = f'<span class="parameter-definition" title="{tooltip}">{formatted_value}</span>'
+    elif source_type_str == "calculated":
+        # Calculated parameter without source_ref: link to parameters-and-calculations.qmd
+        # Auto-link to the generated section in parameters-and-calculations.qmd
+        href = f"knowledge/appendix/parameters-and-calculations#sec-{param_name.lower()}"
+
+        # Build tooltip from available metadata
+        tooltip_parts = []
+        if hasattr(value, "description") and value.description:
+            tooltip_parts.append(value.description)
+
+        if hasattr(value, "formula") and value.formula:
+            tooltip_parts.append(f"Formula: {value.formula}")
+
+        if hasattr(value, "confidence") and value.confidence:
+            confidence_indicators = {
+                "high": "✓ High confidence",
+                "medium": "~ Medium confidence",
+                "low": "? Low confidence",
+                "estimated": "≈ Estimated",
+            }
+            tooltip_parts.append(confidence_indicators.get(value.confidence, value.confidence))
+
+        if hasattr(value, "unit") and value.unit:
+            tooltip_parts.append(f"Unit: {value.unit}")
+
+        tooltip_parts.append("Click to view calculation")
+        tooltip = " | ".join(tooltip_parts)
+
+        # Build data attributes
+        data_attrs = f'data-source-type="calculated"'
+        if hasattr(value, "confidence") and value.confidence:
+            data_attrs += f' data-confidence="{value.confidence}"'
+
+        html = f'<a href="{href}" class="parameter-link" {data_attrs} title="{tooltip}">{formatted_value}</a>'
     else:
-        # Fallback: no source metadata, use span with basic tooltip
-        tooltip_parts = [f"parameters.{param_name}"]
+        # Fallback: truly bare parameter with no metadata
+        # Build best tooltip we can from available info
+        tooltip_parts = []
+
+        # Try to extract description from Parameter object
+        if hasattr(value, "description") and value.description:
+            tooltip_parts.append(value.description)
+
+        # Show formula if available
+        if hasattr(value, "formula") and value.formula:
+            tooltip_parts.append(f"Formula: {value.formula}")
+
+        # Show unit if available
+        if hasattr(value, "unit") and value.unit:
+            tooltip_parts.append(f"Unit: {value.unit}")
+
+        # Add comment from source code if we have it
         if comment:
             tooltip_parts.append(comment)
-        tooltip = " - ".join(tooltip_parts)
 
+        # Only fall back to param name if we have NOTHING else
+        if not tooltip_parts:
+            tooltip_parts.append(f"Parameter: {param_name}")
+
+        tooltip = " | ".join(tooltip_parts)
         html = f'<span class="parameter-link" title="{tooltip}">{formatted_value}</span>'
 
     return html
