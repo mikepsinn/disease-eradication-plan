@@ -12,7 +12,7 @@ tags:
 
 <!-- ✓ Style reviewed 2025-01-15 -->
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Your decentralized framework for drug assessment (dFDA) costs $40M/year to run.
 It saves {{< var dfda_rd_gross_savings_annual >}}/year in clinical trial waste.

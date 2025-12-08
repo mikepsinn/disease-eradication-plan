@@ -7,7 +7,7 @@ format:
     toc-depth: 3
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 This book is not about convincing people to be better. It's about building a system where doing well and doing good are the same thing. The current system pays for death and disease. The new system pays for life and health.
 

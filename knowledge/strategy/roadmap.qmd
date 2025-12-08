@@ -12,7 +12,7 @@ tags:
   - nonprofit
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 You've seen the problem (humans are bad at priorities) and the solution (trick them into fixing it). Now for the interesting part: the exact sequence of bribes.
 

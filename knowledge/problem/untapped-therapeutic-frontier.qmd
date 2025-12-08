@@ -11,7 +11,7 @@ tags:
   - opportunity
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 # The Untapped Therapeutic Frontier
 

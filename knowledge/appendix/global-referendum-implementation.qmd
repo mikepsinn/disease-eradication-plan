@@ -3,7 +3,7 @@ title: Global Referendum Implementation
 description: Practical design for a secure, globally verifiable referendum to measure consent for a 1% treaty and DIH funding.
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Implement a privacy-preserving, globally verifiable referendum to assess public support for a [1% treaty](../solution/1-percent-treaty.qmd) and decentralized institutes of health. Outputs must be auditable and persuasive to policymakers.
 

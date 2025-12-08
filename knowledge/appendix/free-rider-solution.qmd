@@ -11,7 +11,7 @@ tags:
   - incentives
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 The classic "free-rider" objection to any global treaty is valid: "Why should we comply if our rivals won't?"
 

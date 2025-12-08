@@ -8,7 +8,7 @@ tags:
   - statistics
   - data-gap
 ---
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Here's a fun fact: humanity spends [$83 billion a year on clinical trials](../references.qmd#global-clinical-trials-market-2024), but **nobody tracks how many people actually participate**.
 

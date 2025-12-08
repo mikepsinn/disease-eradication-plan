@@ -10,7 +10,7 @@ tags:
   - collapse
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ![Existential risk: the dark future of unchecked AI weapons](../../assets/existential-risk.jpg)
 

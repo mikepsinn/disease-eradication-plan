@@ -14,7 +14,7 @@ format:
     code-fold: true
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Every single day:
 

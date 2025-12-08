@@ -1,4 +1,4 @@
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| fig-cap: "Life expectancy trends before and after FDA creation (1901-2000)"

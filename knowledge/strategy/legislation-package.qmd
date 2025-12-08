@@ -7,7 +7,7 @@ format:
     toc-depth: 3
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Here's how democracy actually works: Lobbyists write bills, give them to politicians who can't read, and those politicians vote based on who donated most to their campaign. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.
 

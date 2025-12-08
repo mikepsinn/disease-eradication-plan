@@ -1,4 +1,4 @@
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| fig-cap: "Projected annual contributions to a 1% Treaty Fund from top military spenders, based on a 1% reallocation of their defense budgets."

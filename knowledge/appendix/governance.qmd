@@ -14,7 +14,7 @@ lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Your [decentralized institutes of health (DIH)](../solution/dih.qmd) is a **decentralized crowdfunding platform** that serves as the single governance layer for all health research funding.
 

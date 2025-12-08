@@ -10,7 +10,7 @@ tags:
   - assurance-contracts
   - metaculus
 ---
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 A sophisticated investor must ask: "Is this venture riskier than a standard startup investment?" The answer is nuanced. The risk is not greater; it is fundamentally _different_. This document provides a full analysis of this initiative's unique risk profile and the specific mechanisms engineered to mitigate it.
 

@@ -35,7 +35,7 @@ toc-depth: 3
 fig-cap-location: bottom
 tbl-cap-location: top
 ---
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Version 0.9 - Working Draft
 

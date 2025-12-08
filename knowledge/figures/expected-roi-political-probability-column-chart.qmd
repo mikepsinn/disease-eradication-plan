@@ -1,4 +1,4 @@
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| fig-cap: "Expected ROI by Political Success Probability: Accounting for Implementation Risk"

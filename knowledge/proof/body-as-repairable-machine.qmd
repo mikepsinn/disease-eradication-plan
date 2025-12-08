@@ -12,7 +12,7 @@ tags:
   - car-analogy
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Your body is a machine. A ridiculously complex, self-repairing, 4-billion-year-old biological machine, but a machine nonetheless. It was built from a blueprint (DNA), it has parts that wear out (organs), and it requires regular maintenance (medicine).
 

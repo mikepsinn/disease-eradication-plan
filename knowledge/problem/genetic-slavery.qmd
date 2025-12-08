@@ -12,7 +12,7 @@ tags:
   - stupidity
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Your brain is 200,000 years old, living in a world that's 200 years old, making decisions that will kill you in 20 years.
 

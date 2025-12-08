@@ -1,4 +1,4 @@
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| include: false

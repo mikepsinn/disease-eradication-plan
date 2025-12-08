@@ -9,7 +9,7 @@ tags:
   - death-by-clipboard
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 

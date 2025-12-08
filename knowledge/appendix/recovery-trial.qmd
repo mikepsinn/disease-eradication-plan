@@ -10,7 +10,7 @@ tags:
   - oxford
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while the FDA spent [$41,000 per patient](../references.qmd#trial-cost-41k) on traditional trials, Oxford spent [$500 per patient](../references.qmd#recovery-cost-500) and [saved over 1 million lives globally](../references.qmd#recovery-trial-1m-lives-saved). This {{< var trial_cost_reduction_factor >}}× efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to centralized FDA approaches.
 

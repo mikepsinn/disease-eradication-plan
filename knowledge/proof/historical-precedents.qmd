@@ -11,7 +11,7 @@ tags:
   - governance
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Before you say "this is impossible," let me remind you: humans have accidentally done smart things before.
 

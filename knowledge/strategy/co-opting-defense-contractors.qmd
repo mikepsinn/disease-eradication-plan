@@ -10,7 +10,7 @@ tags:
   - victory-bonds
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Defense lobbyists spend [~$100M/year](../references.qmd#lobbying-100m) bribing politicians and get $181B in government contracts back. That's a [1,810:1 ROI](../references.qmd#lobbying-roi-calc).
 

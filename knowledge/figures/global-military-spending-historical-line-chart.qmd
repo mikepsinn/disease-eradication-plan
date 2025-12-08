@@ -1,4 +1,4 @@
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| fig-cap: "Global military spending (inflation-adjusted) has grown 2.7× since 1960"

@@ -7,7 +7,7 @@ format:
     toc-depth: 3
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 International treaties supersede national sovereignty. The Vienna Convention on the Law of Treaties (1969) makes them binding forever. 
 

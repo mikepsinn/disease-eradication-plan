@@ -15,8 +15,7 @@ lastReviewed: '2025-10-16T00:00:00.000Z'
 lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 ---
-
-{{< include includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Before you can fix something, you need to understand what's broken. In this case, what's broken is approximately everything.
 
@@ -216,4 +215,3 @@ The following chapters will explain:
 But first, you need to understand each problem in detail. Not because understanding is fun (it isn't), but because you can't fix what you don't understand.
 
 And if you don't fix it, you're going to die from something preventable while the Pentagon loses another trillion dollars in their couch cushions.
-

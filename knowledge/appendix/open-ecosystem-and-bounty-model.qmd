@@ -10,7 +10,7 @@ tags:
   - ai-development
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 The infrastructure for a decentralized framework for drug assessment (dFDA) won't cost billions to build. Because you're not building most of it.
 
 Here's the plan:

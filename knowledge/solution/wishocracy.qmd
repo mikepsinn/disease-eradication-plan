@@ -12,7 +12,7 @@ tags:
   - democracy-but-working
 ---
 
-{{< include ../includes/setup-parameters.qmd >}}
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd) and now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund.
 
