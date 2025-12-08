@@ -1,4 +1,5 @@
 ```{python}
+#| echo: false
 #| label: fig-utility-pre-iab
 #| fig-cap: "PRE-IAB: Rankings Ignored. NSV rankings exist but don't affect politician utility, which is driven by lobbying intensity from concentrated interests."
 #| fig-alt: "Flow diagram showing that before IABs, NSV rankings are ignored and politician utility is driven by campaign funding, revolving door incentives, and partisan loyalty rather than social welfare."

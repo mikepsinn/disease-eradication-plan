@@ -1,4 +1,5 @@
 ```{python}
+#| echo: false
 #| label: fig-olsonian-quadrants
 #| fig-cap: "The Olsonian Quadrant Chart: Government Program Allocation by NSV and Spending. Quadrant I (upper-right) represents rational allocation; Quadrant II (upper-left) shows high-value programs that are systematically underfunded; Quadrant IV (lower-right) shows low-value programs that are overfunded due to Olsonian dynamics."
 #| fig-alt: "Four-quadrant chart with NSV on y-axis and Spending on x-axis, showing specific government programs positioned according to their social value and funding levels."

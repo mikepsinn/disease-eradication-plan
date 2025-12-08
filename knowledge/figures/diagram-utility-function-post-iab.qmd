@@ -1,4 +1,5 @@
 ```{python}
+#| echo: false
 #| label: fig-utility-post-iab
 #| fig-cap: "POST-IAB: Rankings Operative via Score. The same NSV rankings now determine politician scores, which drive electoral support, post-office opportunities, and legacy benefits."
 #| fig-alt: "Flow diagram showing that after IABs, NSV rankings become operative through a score function that determines all components of politician utility."

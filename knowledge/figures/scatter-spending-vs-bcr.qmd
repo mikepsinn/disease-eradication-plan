@@ -1,4 +1,5 @@
 ```{python}
+#| echo: false
 #| label: fig-spending-bcr-scatter
 #| fig-cap: "Government Spending vs. Benefit-Cost Ratio. Programs with the highest BCRs (>100:1) receive the least funding, while programs with negative NSV receive hundreds of billions. This inverse correlation demonstrates that spending is driven by lobbying intensity, not social value."
 #| fig-alt: "Scatter plot showing annual government spending on the x-axis (log scale) and benefit-cost ratio on the y-axis (log scale). High-NSV programs cluster in the upper-left (underfunded), while low/negative-NSV programs cluster in the lower-right (overfunded)."
