@@ -11,10 +11,7 @@ tags:
   - efficiency
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 ![A decentralized institute of health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
 

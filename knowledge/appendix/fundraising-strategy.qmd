@@ -9,10 +9,7 @@ tags:
   - victory-bonds
   - whale-targeting
 ---
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 <!-- This file contains content consolidated from orphaned fundraising files -->
 

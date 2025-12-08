@@ -14,10 +14,7 @@ lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include includes/setup-parameters.qmd >}}
 
 This isn't a theoretical plan. It's a greatest hits album of things that already worked. Like mixing chocolate and peanut butter, except the chocolate is "not dying" and the peanut butter is "getting rich."
 

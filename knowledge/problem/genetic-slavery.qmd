@@ -12,10 +12,7 @@ tags:
   - stupidity
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Your brain is 200,000 years old, living in a world that's 200 years old, making decisions that will kill you in 20 years.
 

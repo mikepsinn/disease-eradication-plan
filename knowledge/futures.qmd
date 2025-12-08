@@ -14,10 +14,7 @@ lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include includes/setup-parameters.qmd >}}
 
 Two timelines diverge from this moment. Same planet, same technology, opposite destinies. The only variable is a 1% budget reallocation.
 

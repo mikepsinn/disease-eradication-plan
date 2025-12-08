@@ -7,10 +7,7 @@ format:
     toc-depth: 3
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Every government "War on X" (Drugs, Poverty, Terror, Christmas) has been a spectacular failure.
 

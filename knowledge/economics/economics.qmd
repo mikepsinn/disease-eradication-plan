@@ -35,11 +35,7 @@ toc-depth: 3
 fig-cap-location: bottom
 tbl-cap-location: top
 ---
-```{python}
-#| echo: false
-from dih_models.parameters import *
-
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Version 0.9 - Working Draft
 

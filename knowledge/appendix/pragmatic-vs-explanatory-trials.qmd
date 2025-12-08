@@ -9,10 +9,7 @@ tags:
   - trial-design
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 What are Pragmatic Trials?
 

@@ -10,10 +10,7 @@ tags:
   - inflation
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Every dollar in your wallet is a death certificate with a president's face on it.
 

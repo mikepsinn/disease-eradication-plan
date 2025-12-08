@@ -6,10 +6,7 @@ emoji: 💾
 
 <!-- ✓ Style reviewed 2025-01-15 -->
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 ## How Much Space One Patient Takes
 

@@ -9,10 +9,7 @@ tags:
   - victory-bonds
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 You could spend decades fighting the military-industrial complex. You could march. You could vote. You could write angry letters.
 

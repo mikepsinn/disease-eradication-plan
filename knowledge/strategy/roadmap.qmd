@@ -12,10 +12,7 @@ tags:
   - nonprofit
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 You've seen the problem (humans are bad at priorities) and the solution (trick them into fixing it). Now for the interesting part: the exact sequence of bribes.
 

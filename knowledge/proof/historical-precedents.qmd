@@ -11,10 +11,7 @@ tags:
   - governance
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Before you say "this is impossible," let me remind you: humans have accidentally done smart things before.
 

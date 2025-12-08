@@ -1,7 +1,4 @@
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 ```{python}
 #| fig-cap: "Global military spending (inflation-adjusted) has grown 2.7× since 1960"

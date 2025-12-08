@@ -10,10 +10,7 @@ tags:
   - cost-reduction
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Pharmaceutical companies aren't evil. They're just following incentives. Right now, the incentives say: "Keep people sick forever, bill monthly."
 

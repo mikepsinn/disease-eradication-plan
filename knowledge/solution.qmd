@@ -14,10 +14,7 @@ lastFormatted: '2025-10-16T00:00:00.000Z'
 lastStyleCheck: '2025-10-16T00:00:00.000Z'
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include includes/setup-parameters.qmd >}}
 
 Now that you understand the problem, which is that everyone is dying while you build missiles, it's time to learn how to fix it.
 

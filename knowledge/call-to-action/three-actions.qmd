@@ -3,10 +3,7 @@ title: The Three Actions
 description: Vote, Invest, Share - That's It
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Forget marches. Forget petitions. Forget changing your profile picture. This doesn't demand your life. It demands 30 minutes.
 

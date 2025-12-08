@@ -12,10 +12,7 @@ tags:
   - democracy-but-working
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd) and now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund.
 

@@ -1,7 +1,4 @@
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 ```{python}
 #| fig-cap: "Cost to develop one new drug has exploded under FDA regulations (1950-2000)"

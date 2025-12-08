@@ -3,10 +3,7 @@ title: Every Objection Demolished
 description: The FAQ That Ends All Excuses
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 **Objection**: "Nice idea, but it's too ambitious. It'll never actually happen."
 

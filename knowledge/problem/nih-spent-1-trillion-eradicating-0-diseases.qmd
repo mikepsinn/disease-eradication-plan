@@ -12,10 +12,7 @@ tags:
 lastReviewed: '2025-10-16T00:00:00.000Z'
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted).
 

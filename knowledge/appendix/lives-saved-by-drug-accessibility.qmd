@@ -10,10 +10,7 @@ tags:
 published: true
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Here’s an estimated table of the number of lives that could potentially be saved annually if these drugs were made more accessible, based on available data and studies:
 

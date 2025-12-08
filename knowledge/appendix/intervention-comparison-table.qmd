@@ -5,10 +5,7 @@ description: How a dFDA compares to history's best health wins
 
 <!-- ✓ Style reviewed 2025-01-15 -->
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 A decentralized framework for drug assessment (dFDA) competes with smallpox eradication as history's best health intervention by ROI, cost per quality-adjusted life year, and total impact.
 

@@ -9,10 +9,7 @@ tags:
   - drug-development
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 **Estimating the Economic Value of Accelerating Medical Progress Through New Therapies**
 

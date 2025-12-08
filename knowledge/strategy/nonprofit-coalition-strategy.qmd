@@ -11,10 +11,7 @@ tags:
   - game-theory
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 # Stop Fighting Over Scraps, Grow the Global Pie
 

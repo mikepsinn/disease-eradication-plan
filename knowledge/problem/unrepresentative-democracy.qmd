@@ -11,10 +11,7 @@ tags:
   - politics
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Here's some fun math to ruin your day:
 

@@ -1,7 +1,4 @@
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 # | label: stupidity-budget-true-war-costs
 

@@ -3,10 +3,7 @@ title: Humanity's Budget
 description: The True Scale of War & Disease
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 If you think of Earth as a household with a budget, here's what our species decided to spend money on:
 

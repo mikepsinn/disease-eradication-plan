@@ -14,10 +14,7 @@ tags:
   - open-data
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 **Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,**
 

@@ -3,10 +3,7 @@ title: Viral Marketing Strategy
 description: How to Make Curing Disease More Viral Than Cat Videos
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Historical analysis shows: Every peaceful movement that gets **{{< var global_population_activism_threshold_pct >}} active support** succeeds.
 

@@ -9,10 +9,7 @@ tags:
   - hiring
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 This document analyzes the organizational structures of three successful entities that serve as precedents for your decentralized institutes of health (DIH). By understanding how they are staffed and organized, you can provide a credible, real-world justification for your own [Hiring Plan](../operations/careers/hiring-plan.qmd).
 

@@ -11,10 +11,7 @@ tags:
   - implementation
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 This isn't a protest. It's a recipe. Like making bread, except instead of bread it's immortality, and instead of yeast it's bribes.
 

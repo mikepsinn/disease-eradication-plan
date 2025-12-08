@@ -11,10 +11,7 @@ tags:
   - incentives
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 The classic "free-rider" objection to any global treaty is valid: "Why should we comply if our rivals won't?"
 

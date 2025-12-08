@@ -8,10 +8,7 @@ tags:
   - statistics
   - data-gap
 ---
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 Here's a fun fact: humanity spends [$83 billion a year on clinical trials](../references.qmd#global-clinical-trials-market-2024), but **nobody tracks how many people actually participate**.
 

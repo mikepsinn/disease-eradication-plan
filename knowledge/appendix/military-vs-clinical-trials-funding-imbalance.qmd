@@ -9,10 +9,7 @@ tags:
   - market-failure
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 **Executive Summary**
 
@@ -80,10 +77,7 @@ tags:
   - market-failure
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 **Executive Summary**
 

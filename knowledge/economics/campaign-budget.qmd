@@ -2,10 +2,7 @@
 title: 'Campaign Budget: The $1B Bribery Machine'
 ---
 
-```{python}
-#| echo: false
-from dih_models.parameters import *
-```
+{{< include ../includes/setup-parameters.qmd >}}
 
 ## How to Buy a Planet for {{< var treaty_campaign_total_cost >}}
 
