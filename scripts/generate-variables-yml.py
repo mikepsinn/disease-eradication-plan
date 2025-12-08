@@ -888,19 +888,24 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
         if source_type_str == "external":
             # Link to citation in references.html (full URL)
             href = f"https://warondisease.org/knowledge/references.html#{source_ref_value}"
-            link_text = "View source"
+            link_text = "View source citation"
         else:
             # Link to calculation/methodology page (ensure absolute path)
             if not source_ref_value.startswith("/"):
                 source_ref_value = f"/{source_ref_value}"
             # Convert .qmd to .html for rendered output
             href = convert_qmd_to_html(source_ref_value)
-            link_text = "View calculation"
+            link_text = "View methodology & calculation"
 
         # Build tooltip from Parameter metadata with credibility indicators
         tooltip_parts = []
         if hasattr(value, "description") and value.description:
             tooltip_parts.append(value.description)
+
+        # Show input parameters if this is a calculated parameter
+        if source_type_str == "calculated" and hasattr(value, "inputs") and value.inputs:
+            num_inputs = len(value.inputs)
+            tooltip_parts.append(f"Calculated from {num_inputs} input{'s' if num_inputs != 1 else ''}")
 
         # Add confidence level with emoji indicators
         if hasattr(value, "confidence") and value.confidence:
@@ -981,7 +986,8 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
     elif source_type_str == "calculated":
         # Calculated parameter without source_ref: link to parameters-and-calculations.qmd
         # Auto-link to the generated section in parameters-and-calculations.qmd
-        href = f"knowledge/appendix/parameters-and-calculations#sec-{param_name.lower()}"
+        # Use absolute path for consistency with other calculated parameters
+        href = f"/knowledge/appendix/parameters-and-calculations#sec-{param_name.lower()}"
 
         # Build tooltip from available metadata
         tooltip_parts = []
@@ -990,6 +996,11 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
 
         if hasattr(value, "formula") and value.formula:
             tooltip_parts.append(f"Formula: {value.formula}")
+
+        # Show input parameters if available
+        if hasattr(value, "inputs") and value.inputs:
+            num_inputs = len(value.inputs)
+            tooltip_parts.append(f"Calculated from {num_inputs} input{'s' if num_inputs != 1 else ''}")
 
         if hasattr(value, "confidence") and value.confidence:
             confidence_indicators = {
@@ -1003,7 +1014,8 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
         if hasattr(value, "unit") and value.unit:
             tooltip_parts.append(f"Unit: {value.unit}")
 
-        tooltip_parts.append("Click to view calculation")
+        # More informative call-to-action
+        tooltip_parts.append("Click for equation, sensitivity analysis & Monte Carlo distribution")
         tooltip = " | ".join(tooltip_parts)
 
         # Build data attributes
