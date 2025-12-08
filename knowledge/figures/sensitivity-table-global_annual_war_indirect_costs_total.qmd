@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Annual Lost Human Capital Conflict | 5.0931 | Strong driver |
-| Global Annual Refugee Support Costs | -2.5522 | Strong driver |
-| Global Annual Environmental Damage Conflict | -2.3922 | Strong driver |
+| Global Annual Lost Human Capital Conflict | 5.0390 | Strong driver |
+| Global Annual Environmental Damage Conflict | -2.4463 | Strong driver |
+| Global Annual Refugee Support Costs | -2.4440 | Strong driver |
 | Global Annual Lost Economic Growth Military Spending | 0.7342 | Strong driver |
 | Global Annual Psychological Impact Costs Conflict | 0.0630 | Minimal effect |
 | Global Annual Veteran Healthcare Costs | 0.0541 | Minimal effect |
