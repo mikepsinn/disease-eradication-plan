@@ -1049,8 +1049,9 @@
 "global_industry_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_industry_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-type=\"calculated\" data-confidence=\"high\"\
   \ title=\"Annual global industry spending on clinical trials (Total - Government)\
-  \ | Calculated from 2 inputs | ✓ High confidence | Unit: USD | Click for equation,\
-  \ sensitivity analysis & Monte Carlo distribution\">$78.5B</a>"
+  \ | Formula: Total - Government | Calculated from 2 inputs | ✓ High confidence |\
+  \ Unit: USD | Click for equation, sensitivity analysis & Monte Carlo distribution\"\
+  >$78.5B</a>"
 "global_industry_clinical_trials_spending_annual_latex": "$$\nTrials_{ann} = Trials_{ann}\
   \ - Trials_{ann} = \\$83.00B - \\$4.50B = \\$78.50B\n$$"
 "global_life_expectancy_2024": "<a href=\"https://warondisease.org/knowledge/references.html#who-global-health-estimates-2024\"\
@@ -1162,7 +1163,8 @@
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Benefit-Cost\
   \ Ratio of the IAB mechanism itself | Calculated from 2 inputs | ✓ High confidence\
-  \ | Unit: ratio | Click to view methodology & calculation\">207</a>"
+  \ | Formula: Annual Benefits / Annual Cost | Unit: ratio | Click to view methodology\
+  \ & calculation\">207</a>"
 "iab_mechanism_benefit_cost_ratio_latex": "$$\nCost = \\frac{Benefit_{ann}}{Cost_{ann}}\
   \ = \\frac{\\$155.05B}{\\$750.0M} = 206.73\n$$"
 "iab_political_incentive_funding_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-iab_political_incentive_funding_annual\"\
