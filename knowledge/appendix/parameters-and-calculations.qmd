@@ -29,6 +29,11 @@ Parameters derived from mathematical formulas and economic models.
 
 Combined peace and health dividends for ROI calculation
 
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+
 $$
 Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
 $$
@@ -57,6 +62,14 @@ $$
 **Value**: $40M
 
 Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+
+**Inputs**:
+
+- [dFDA Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
+- [dFDA Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7.00M - $15M)
+- [dFDA Infrastructure Costs](#sec-dfda_opex_infrastructure): $8.00M (95% CI: $5.00M - $12M)
+- [dFDA Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5.00M (95% CI: $3.00M - $8.00M)
+- [dFDA Community Support Costs](#sec-dfda_opex_community): $2.00M (95% CI: $1.00M - $3.00M)
 
 $$
 OPEX_{total} = \$15M \text{ (plat)} + \$10M \text{ (staff)} + \$8M \text{ (infra)} + \$5M \text{ (reg)} + \$2M \text{ (comm)} = \$40M
@@ -87,6 +100,11 @@ $$
 
 Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
 
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [dFDA Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
+
 $$
 Benefit_{DFDA,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
 $$
@@ -115,6 +133,11 @@ $$
 **Value**: 11.9k
 
 Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.
+
+**Inputs**:
+
+- [Treaty ROI - Lag Elimination (PRIMARY)](#sec-treaty_roi_lag_elimination) 🔢: 1.19M ratio
+- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 E[ROI] = ROI_{conditional} \times P_{success} = ROI_{treaty} \times 0.01
@@ -145,6 +168,11 @@ $$
 
 Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
 
+**Inputs**:
+
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+
 $$
 Savings_{net} = \$41.5B - \$0.04B = \$41.46B
 $$
@@ -173,6 +201,11 @@ $$
 **Value**: $40M
 
 Total NPV annual opex (dFDA core + DIH initiatives)
+
+**Inputs**:
+
+- [dFDA Core Platform Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
+- [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1M (95% CI: $14M - $32M)
 
 $$
 C_{op} = \$0.01895B + \$0.02110B = \$0.04005B \text{ (annual operational cost)}
@@ -203,6 +236,11 @@ $$
 
 NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
+**Inputs**:
+
+- [dFDA Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $41.5B
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
 $$
 PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
 $$
@@ -231,6 +269,10 @@ $$
 **Value**: $275B
 
 NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)
+
+**Inputs**:
+
+- [NPV of dFDA Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $275B
 
 $$
 Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
@@ -261,6 +303,12 @@ $$
 
 Present value of annual opex over 10 years (NPV formula)
 
+**Inputs**:
+
+- [dFDA Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
+
 $$
 PV_{opex} = \$0.04005B \times \frac{1 - 1.08^{-10}}{0.08} \approx \$0.269B
 $$
@@ -289,6 +337,11 @@ $$
 **Value**: $611M
 
 Total NPV cost (upfront + PV of annual opex)
+
+**Inputs**:
+
+- [dFDA Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [dFDA Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 TotalCost_{NPV} = \$0.26975B + \$0.269B \approx \$0.54B
@@ -319,6 +372,11 @@ $$
 
 Total NPV upfront costs (dFDA core + DIH initiatives)
 
+**Inputs**:
+
+- [dFDA Core Platform Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
+- [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230M (95% CI: $150M - $350M)
+
 $$
 C_0 = \$0.040B + \$0.22975B = \$0.26975B \text{ (upfront cost)}
 $$
@@ -347,6 +405,11 @@ $$
 **Value**: $41.5B
 
 Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
+
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [dFDA Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
 
 $$
 Benefit_{gross,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
@@ -377,6 +440,10 @@ $$
 
 Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
+**Inputs**:
+
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+
 $$
 Savings_{daily} = \frac{\$41.5B}{365} = \$113.7M
 $$
@@ -405,6 +472,13 @@ $$
 **Value**: 451 ratio
 
 ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
+
+**Inputs**:
+
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [dFDA Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
@@ -435,6 +509,11 @@ $$
 
 Simple ROI without NPV adjustment (gross savings / annual opex)
 
+**Inputs**:
+
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+
 $$
 ROI_{DFDA} = \frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \frac{\$41.50B}{\$40.0M} = 1{,}038
 $$
@@ -464,6 +543,11 @@ $$
 
 Maximum trials per year possible with trial capacity multiplier
 
+**Inputs**:
+
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.8 ratio
+
 $$
 Capacity_{DFDA} = Trials_{curr} \times Multiplier = 3{,}300 \times 22.85 = 75{,}392
 $$
@@ -490,6 +574,11 @@ $$
 **Value**: 43.4M patients/year
 
 Number of patients fundable annually at RECOVERY trial cost
+
+**Inputs**:
+
+- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $350 - $700)
 
 $$
 Fundable_{ann} = \frac{Treasury_{ann}}{Cost} = \frac{\$21.70B}{\$500} = 43.4M
@@ -520,6 +609,12 @@ $$
 
 Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)
 
+**Inputs**:
+
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout): $2.72B
+- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
+
 $$
 ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B
 $$
@@ -546,6 +641,11 @@ $$
 **Value**: $21.7B
 
 Annual clinical trial patient subsidies (all medical research funds after dFDA operations)
+
+**Inputs**:
+
+- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [DIH Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.7B
 
 $$
 TrialSubsidies = \$24.462B - \$0.04B = \$24.422B
@@ -576,6 +676,11 @@ $$
 
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
+**Inputs**:
+
+- [Years of Life Lost from Disease Eradication Delay](#sec-disease_eradication_delay_yll) 🔢: 7.07B years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-disease_eradication_delay_yld) 🔢: 873M years
+
 $$
 DALY_{total} = 7.03B \text{ (YLL)} + 0.87B \text{ (YLD)} = 7.90B
 $$
@@ -604,6 +709,11 @@ $$
 **Value**: 416M deaths
 
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
 
 $$
 D_{total} = 54.75M \text{ (annual)} \times 8.2 \text{ (lag)} \times 92.1\% \text{ (avoidable)} = 413.4M
@@ -634,6 +744,11 @@ $$
 
 Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
 
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+
 $$
 Loss = 7.90B \times \$150k = \$1.185\text{ quadrillion}
 $$
@@ -662,6 +777,12 @@ $$
 **Value**: 873M years
 
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
+
+**Inputs**:
+
+- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: 416M deaths
+- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
+- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
 
 $$
 Delay_{dis} = Deaths_{total} \times Deaths \times Chronic = 415.9M \times 6 \times 0.35 = 873.3M
@@ -692,6 +813,12 @@ $$
 
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
+**Inputs**:
+
+- [Total Deaths from Disease Eradication Delay](#sec-disease_eradication_delay_deaths_total) 🔢: 416M deaths
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+
 $$
 YLL = 413.4M \times 17 \text{ (years lost)} = 7.03B
 $$
@@ -720,6 +847,11 @@ $$
 **Value**: 898M deaths
 
 Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.
+
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
 
 $$
 D_{total} = (54.75M \times 2) \times 8.2 = 898M
@@ -750,6 +882,10 @@ $$
 
 Total economic loss from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents combined timeline and volume effects from eliminating Phase 2-4 cost barriers. Research shows: (1) Timeline acceleration of 50% achievable through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024, Health Economics), (3) Cost barrier elimination enables more drugs to reach viability. The 2× factor conservatively represents either 2× timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer value share ~20% maximizes long-term population health (Woods 2024).
 
+**Inputs**:
+
+- [Total Economic Loss from Disease Eradication Delay](#sec-disease_eradication_delay_economic_loss) 🔢: $1.19 quadrillion
+
 $$
 Loss_{total} = \$1,286T \times 2 = \$2,572T
 $$
@@ -778,6 +914,11 @@ $$
 **Value**: 680 ratio
 
 Coverage factor of treaty funding vs dFDA opex (sustainability margin)
+
+**Inputs**:
+
+- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
 Coverage = \$27.18B / \$0.04B = 679x
@@ -808,6 +949,11 @@ $$
 
 Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
 
+**Inputs**:
+
+- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4.00B)
+
 $$
 Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{80s}} = \frac{\$2.60B}{\$194.0M} = 13.4
 $$
@@ -836,6 +982,11 @@ $$
 **Value**: 52 ratio
 
 Drug development cost increase from pre-1962 to current ($50M → $2.6B = 52x)
+
+**Inputs**:
+
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4.00B)
+- [Pre-1962 Drug Development Cost](#sec-pre_1962_drug_development_cost) 📊: $50M (95% CI: $10M - $50M)
 
 $$
 Multiplier_{curr} = \frac{Cost_{curr}}{Cost_{pre62}} = \frac{\$2.60B}{\$50.0M} = 52
@@ -866,6 +1017,11 @@ $$
 
 FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x slower)
 
+**Inputs**:
+
+- [FDA Phase 1 to Approval Timeline](#sec-fda_phase_1_to_approval_years) 📊: 9.1 years (95% CI: 6 years - 12 years)
+- [Oxford RECOVERY Trial Duration](#sec-oxford_recovery_trial_duration_months) 📊: 3 months
+
 $$
 \frac{9.1 \text{ years} \times 12 \text{ months/year}}{3 \text{ months}} = 36.4
 $$
@@ -894,6 +1050,12 @@ $$
 **Value**: 245k deaths/year
 
 Total annual conflict deaths globally (sum of combat, terror, state violence)
+
+**Inputs**:
+
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234k deaths/year (95% CI: 180k deaths/year - 300k deaths/year)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70k deaths/year (95% CI: 1.50k deaths/year - 5.00k deaths/year)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30k deaths/year (95% CI: 6.00k deaths/year - 12.0k deaths/year)
 
 $$
 Deaths_{total} = 233,600 \text{ (combat)} + 8,300 \text{ (terror)} + 2,700 \text{ (state)} = 244,600
@@ -924,6 +1086,11 @@ $$
 
 Annual cost of combat deaths (deaths × VSL)
 
+**Inputs**:
+
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234k deaths/year (95% CI: 180k deaths/year - 300k deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5.00M - $15M)
+
 $$
 Cost_{human,ann} = Deaths_{combat,ann} \times Value = 233{,}600 \times \$10.0M = \$2.34T
 $$
@@ -952,6 +1119,11 @@ $$
 **Value**: $27B
 
 Annual cost of state violence deaths (deaths × VSL)
+
+**Inputs**:
+
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70k deaths/year (95% CI: 1.50k deaths/year - 5.00k deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5.00M - $15M)
 
 $$
 Cost_{human,ann} = Deaths_{ann} \times Value = 2{,}700 \times \$10.0M = \$27.00B
@@ -982,6 +1154,11 @@ $$
 
 Annual cost of terror deaths (deaths × VSL)
 
+**Inputs**:
+
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30k deaths/year (95% CI: 6.00k deaths/year - 12.0k deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5.00M - $15M)
+
 $$
 Cost_{human,ann} = Deaths_{terror,ann} \times Value = 8{,}300 \times \$10.0M = \$83.00B
 $$
@@ -1010,6 +1187,12 @@ $$
 **Value**: $2.45T
 
 Total annual human life losses from conflict (sum of combat, terror, state violence)
+
+**Inputs**:
+
+- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat) 🔢: $2.34T
+- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence) 🔢: $27B
+- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks) 🔢: $83B
 
 $$
 Cost_{human} = \$2,336B \text{ (combat)} + \$83B \text{ (terror)} + \$27B \text{ (state)} = \$2,446B
@@ -1040,6 +1223,15 @@ $$
 
 Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)
 
+**Inputs**:
+
+- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict) 📊: $298B (95% CI: $209B - $418B)
+- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict) 📊: $234B (95% CI: $164B - $328B)
+- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict) 📊: $422B (95% CI: $295B - $590B)
+- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict) 📊: $166B (95% CI: $116B - $232B)
+- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict) 📊: $487B (95% CI: $340B - $680B)
+- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict) 📊: $268B (95% CI: $187B - $375B)
+
 $$
 Infra_{damage} = \$487B \text{ (trans)} + \$422B \text{ (nrg)} + \$298B \text{ (comms)} + \$268B \text{ (water)} + \$235B \text{ (edu)} + \$166B \text{ (hlth)} = \$1,875B
 $$
@@ -1068,6 +1260,13 @@ $$
 **Value**: $616B
 
 Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)
+
+**Inputs**:
+
+- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict) 📊: $57.4B (95% CI: $40B - $80B)
+- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict) 📊: $125B (95% CI: $87B - $175B)
+- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict) 📊: $247B (95% CI: $173B - $346B)
+- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict) 📊: $187B (95% CI: $131B - $262B)
 
 $$
 Trade_{disruption} = \$247B \text{ (ship)} + \$187B \text{ (supply)} + \$125B \text{ (nrg)} + \$57B \text{ (curr)} = \$616B
@@ -1098,6 +1297,13 @@ $$
 
 Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
 
+**Inputs**:
+
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+
 $$
 DirectCosts = \$2,718B \text{ (mil)} + \$1,875B \text{ (infra)} + \$2,446B \text{ (human)} + \$616B \text{ (trade)} = \$7,655B
 $$
@@ -1126,6 +1332,15 @@ $$
 **Value**: $3.70T
 
 Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)
+
+**Inputs**:
+
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.90T - $3.80T)
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
 
 $$
 IndirectCosts = \$2.7T \text{ (opp cost)} + \$200B \text{ (vet)} + \$150B \text{ (ref)} + \$100B \text{ (env)} + \$232B \text{ (ptsd)} + \$300B \text{ (hum cap)} = \$3.7T
@@ -1156,6 +1371,11 @@ $$
 
 Total annual cost of war worldwide (direct + indirect costs)
 
+**Inputs**:
+
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
+
 $$
 TotalWarCost = \$7,655B \text{ (direct)} + \$3,700B \text{ (indirect)} = \$11,355B
 $$
@@ -1184,6 +1404,11 @@ $$
 **Value**: $16.1K
 
 Cost per life saved by medical research
+
+**Inputs**:
+
+- [Annual Lives Saved by Medical Research Globally](#sec-global_annual_lives_saved_by_med_research) 📊: 4.20M lives/year (95% CI: 3.00M lives/year - 6.00M lives/year)
+- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
 
 $$
 CostPerLifeSaved = \frac{\$67.5B \times 10^9}{4,200,000} \approx \$16,071
@@ -1214,6 +1439,12 @@ $$
 
 Total economic burden of disease globally (medical + productivity + mortality)
 
+**Inputs**:
+
+- [Global Annual Direct Medical Costs of Disease](#sec-global_disease_direct_medical_cost_annual) 📊: $9.90T (95% CI: $7.00T - $14T)
+- [Global Annual Economic Value of Human Life Lost to Disease](#sec-global_disease_human_life_value_loss_annual) 📊: $94.2T (95% CI: $66T - $132T)
+- [Global Annual Productivity Loss from Disease](#sec-global_disease_productivity_loss_annual) 📊: $5.00T (95% CI: $3.50T - $7.00T)
+
 $$
 Burden_{ann} = Cost_{direct,ann} + Loss_{human,ann} + Loss_{ann} = \$9.90T + \$94.20T + \$5.00T = \$109.10T
 $$
@@ -1243,6 +1474,11 @@ $$
 
 Annual global industry spending on clinical trials (Total - Government)
 
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3.00B - $6.00B)
+
 $$
 Trials_{ann} = Trials_{ann} - Trials_{ann} = \$83.00B - \$4.50B = \$78.50B
 $$
@@ -1269,6 +1505,11 @@ $$
 **Value**: $340
 
 Per capita military spending globally
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8.00B of people (95% CI: 7.80B of people - 8.20B of people)
 
 $$
 PerCapita_{military} = \$2,718B / 8.0B = \$339.75
@@ -1299,6 +1540,11 @@ $$
 
 Global military spending after 1% treaty reduction
 
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
 $$
 PostTreaty_{military} = \$2,718B \times 0.99 = \$2,690.82B
 $$
@@ -1327,6 +1573,12 @@ $$
 **Value**: $129T
 
 Total annual cost of war and disease with all externalities (direct + indirect costs for both)
+
+**Inputs**:
+
+- [Total Annual Cost of War Worldwide](#sec-global_annual_war_total_cost) 🔢: $11.4T
+- [Total Economic Burden of Disease Globally](#sec-global_disease_economic_burden_annual) 🔢: $109T
+- [Annual Global Spending on Symptomatic Disease Treatment](#sec-global_symptomatic_disease_treatment_annual) 📊: $8.20T (95% CI: $6.50T - $10T)
 
 $$
 Cost_{total} = Cost_{war,total} + Burden_{ann} + Spending_{sympt,ann} = \$11.36T + \$109.10T + \$8.20T = \$128.66T
@@ -1357,6 +1609,10 @@ $$
 
 Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.
 
+**Inputs**:
+
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±1 years)
+
 $$
 D_{total} = 12M \times 8.2 = 98.4M
 $$
@@ -1385,6 +1641,13 @@ $$
 **Value**: $251T
 
 Total economic loss from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time benefit of eliminating Phase 2-4 delay.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Total Deaths from Historical Progress Delays](#sec-historical_progress_deaths_total) 🔢: 98.4M deaths
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 Loss_{total} = 98.4M \times 17 \times \$150k = \$251T
@@ -1415,6 +1678,11 @@ $$
 
 Benefit-Cost Ratio of the IAB mechanism itself
 
+**Inputs**:
+
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $155B
+- [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750M (95% CI: $160M - $750M)
+
 $$
 Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$155.05B}{\$750.0M} = 206.73
 $$
@@ -1444,6 +1712,11 @@ $$
 
 Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
 
+**Inputs**:
+
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
+
 $$
 IABFunding = \$27.18B \times 0.10 = \$2.718B
 $$
@@ -1471,6 +1744,11 @@ $$
 
 Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
 
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3.00B - $6.00B)
+
 *Formula*: `(TOTAL - GOVT) / GOVT`
 
 **Methodology**: [industry-vs-government-trial-spending-split](../references#industry-vs-government-trial-spending-split)
@@ -1497,6 +1775,11 @@ Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
 **Value**: 0.0525%
 
 Medical research spending as percentage of total disease burden
+
+**Inputs**:
+
+- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
+- [Total Annual Cost of War and Disease with All Externalities](#sec-global_total_health_and_war_cost_annual) 🔢: $129T
 
 $$
 \frac{\$67.5\text{B}}{\$128.6\text{T}} = 0.052\%
@@ -1527,6 +1810,11 @@ $$
 
 Ratio of global military spending to government clinical trials spending
 
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3.00B - $6.00B)
+
 $$
 \text{Ratio} = \frac{\$2.7T}{\$4.5B} \approx 600\times
 $$
@@ -1553,6 +1841,11 @@ $$
 **Value**: 40.3 ratio
 
 Ratio of military spending to medical research spending
+
+**Inputs**:
+
+- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T (95% CI: $2.45T - $2.99T)
 
 $$
 Ratio = \frac{\$2,718B}{\$67.5B} \approx 40.3:1
@@ -1583,6 +1876,12 @@ $$
 
 Misallocation factor: cost to kill vs cost to save
 
+**Inputs**:
+
+- [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245k deaths/year
+- [Total Annual Cost of War Worldwide](#sec-global_annual_war_total_cost) 🔢: $11.4T
+- [Cost per Life Saved by Medical Research](#sec-global_cost_per_life_saved_med_research_annual) 🔢: $16.1K
+
 $$
 Misallocation = \frac{\$46.4M}{\$16,071} \approx 2,889x
 $$
@@ -1611,6 +1910,11 @@ $$
 **Value**: $114B
 
 Annual peace dividend from 1% reduction in total war costs
+
+**Inputs**:
+
+- [Total Annual Cost of War Worldwide](#sec-global_annual_war_total_cost) 🔢: $11.4T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Cost_{soc,ann} = Cost_{war,total} \times Reduction_{treaty} = \$11.36T \times 1.0\% = \$113.55B
@@ -1641,6 +1945,11 @@ $$
 
 Conflict reduction benefits from 1% less military spending (lower confidence - assumes proportional relationship)
 
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+
 $$
 PeaceDividend_{conflict} = \$113.55B - \$27.18B = \$86.37B
 $$
@@ -1669,6 +1978,11 @@ $$
 **Value**: $76.5B
 
 Annual savings from 1% reduction in direct war costs
+
+**Inputs**:
+
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Cost_{direct,peace} = Cost_{direct,total} \times Reduction_{treaty} = \$7.66T \times 1.0\% = \$76.55B
@@ -1699,6 +2013,11 @@ $$
 
 Annual savings from 1% reduction in environmental damage
 
+**Inputs**:
+
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
 $$
 Savings_{env,peace} = Cost_{env,ann} \times Reduction_{treaty} = \$100.00B \times 1.0\% = \$1.00B
 $$
@@ -1727,6 +2046,11 @@ $$
 **Value**: $24.5B
 
 Annual savings from 1% reduction in human casualties
+
+**Inputs**:
+
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Savings_{human,peace} = Loss_{human,ann} \times Reduction_{treaty} = \$2.45T \times 1.0\% = \$24.46B
@@ -1757,6 +2081,11 @@ $$
 
 Annual savings from 1% reduction in indirect war costs
 
+**Inputs**:
+
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
 $$
 Cost_{indirect,peace} = Cost_{indirect,total} \times Reduction_{treaty} = \$3.70T \times 1.0\% = \$37.00B
 $$
@@ -1785,6 +2114,11 @@ $$
 **Value**: $18.8B
 
 Annual savings from 1% reduction in infrastructure destruction
+
+**Inputs**:
+
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Savings_{infra,peace} = Infrastructure_{global} \times Reduction_{treaty} = \$1.88T \times 1.0\% = \$18.75B
@@ -1815,6 +2149,11 @@ $$
 
 Annual savings from 1% reduction in lost economic growth
 
+**Inputs**:
+
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.90T - $3.80T)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
 $$
 Savings_{lost_econ,peace} = Cost_{mil,ann} \times Reduction_{treaty} = \$2.72T \times 1.0\% = \$27.18B
 $$
@@ -1843,6 +2182,11 @@ $$
 **Value**: $3.00B
 
 Annual savings from 1% reduction in lost human capital
+
+**Inputs**:
+
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Savings_{human,peace} = Lost_{global} \times Reduction_{treaty} = \$300.00B \times 1.0\% = \$3.00B
@@ -1873,6 +2217,11 @@ $$
 
 Annual savings from 1% reduction in PTSD and mental health costs
 
+**Inputs**:
+
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
 $$
 Cost_{PTSD,peace} = Cost_{ann} \times Reduction_{treaty} = \$232.00B \times 1.0\% = \$2.32B
 $$
@@ -1901,6 +2250,11 @@ $$
 **Value**: $1.50B
 
 Annual savings from 1% reduction in refugee support costs
+
+**Inputs**:
+
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Cost_{ref,peace} = Cost_{ref,ann} \times Reduction_{treaty} = \$150.00B \times 1.0\% = \$1.50B
@@ -1931,6 +2285,11 @@ $$
 
 Annual savings from 1% reduction in trade disruption
 
+**Inputs**:
+
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
 $$
 Savings_{trade,peace} = Disruption_{trade,ann} \times Reduction_{treaty} = \$616.00B \times 1.0\% = \$6.16B
 $$
@@ -1959,6 +2318,11 @@ $$
 **Value**: $2.00B
 
 Annual savings from 1% reduction in veteran healthcare costs
+
+**Inputs**:
+
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Cost_{vet,peace} = Cost_{vet,ann} \times Reduction_{treaty} = \$200.10B \times 1.0\% = \$2.00B
@@ -1989,6 +2353,11 @@ $$
 
 Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.
 
+**Inputs**:
+
+- [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.8 ratio
+
 $$
 \text{PLW} = \sum_{t=0}^{T + \Delta L} \frac{B_t}{(1+r)^t}
 $$
@@ -2018,6 +2387,11 @@ $$
 
 US per capita chronic disease cost
 
+**Inputs**:
+
+- [US Annual Chronic Disease Spending](#sec-us_chronic_disease_spending_annual) 📊: $4.10T (95% CI: $3.30T - $5.00T)
+- [US Population in 2024](#sec-us_population_2024) 📊: 335M people (95% CI: 330M people - 340M people)
+
 $$
 Cost_{percap,dis} = \frac{Spending_{chronic,ann}}{Population} = \frac{\$4.10T}{335M} = \$12.2K
 $$
@@ -2045,6 +2419,11 @@ $$
 
 US per capita mental health cost
 
+**Inputs**:
+
+- [US Mental Health Costs](#sec-us_mental_health_cost_annual) 📊: $350B (95% CI: $260B - $450B)
+- [US Population in 2024](#sec-us_population_2024) 📊: 335M people (95% CI: 330M people - 340M people)
+
 $$
 Cost_{percap,health} = \frac{Cost_{mental,ann}}{Population} = \frac{\$350.00B}{335M} = \$1.0K
 $$
@@ -2071,6 +2450,10 @@ $$
 **Value**: 7.65T hours
 
 Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)
+
+**Inputs**:
+
+- [Years Lived with Disability During Disease Eradication Delay](#sec-disease_eradication_delay_yld) 🔢: 873M years
 
 $$
 Hours = 868M \text{ (YLD)} \times 8{,}760 \text{ (hrs/yr)} = 7.60T
@@ -2101,6 +2484,11 @@ $$
 
 Total DALYs per US-scale thalidomide event (YLL + YLD)
 
+**Inputs**:
+
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0k years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8k years
+
 $$
 28{,}800 + 12{,}960 = 41{,}760 \text{ DALYs}
 $$
@@ -2127,6 +2515,11 @@ $$
 **Value**: 360 deaths
 
 Deaths per US-scale thalidomide event
+
+**Inputs**:
+
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
 
 $$
 900 \text{ (cases)} \times 40\% \text{ (mortality)} = 360 \text{ deaths}
@@ -2155,6 +2548,11 @@ $$
 
 Survivors per US-scale thalidomide event
 
+**Inputs**:
+
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
+
 $$
 900 \text{ (cases)} \times 60\% \text{ (survival)} = 540 \text{ survivors}
 $$
@@ -2181,6 +2579,11 @@ $$
 **Value**: 900 cases
 
 Estimated US thalidomide cases prevented by FDA rejection
+
+**Inputs**:
+
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0k cases (95% CI: 10.0k cases - 20.0k cases)
+- [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
 15{,}000 \times 6\% = 900 \text{ cases}
@@ -2209,6 +2612,12 @@ $$
 
 Years Lived with Disability per thalidomide event
 
+**Inputs**:
+
+- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4 ratio (95% CI: 0.32 ratio - 0.48 ratio)
+- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
+- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
+
 $$
 540 \text{ (surv)} \times 60 \text{ (yrs)} \times 0.4 \text{ (weight)} = 12{,}960 \text{ YLD}
 $$
@@ -2236,6 +2645,10 @@ $$
 
 Years of Life Lost per thalidomide event (infant deaths)
 
+**Inputs**:
+
+- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event) 🔢: 360 deaths
+
 $$
 360 \text{ (deaths)} \times 80 \text{ (years)} = 28{,}800 \text{ YLL}
 $$
@@ -2262,6 +2675,11 @@ $$
 **Value**: $94.7B
 
 Total global research funding (baseline + 1% treaty funding)
+
+**Inputs**:
+
+- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
 Funding_{total} = Spending_{global} + Funding_{ann} = \$67.50B + \$27.18B = \$94.68B
@@ -2292,6 +2710,11 @@ $$
 
 Treaty system benefit multiplier vs childhood vaccination programs
 
+**Inputs**:
+
+- [Estimated Annual Global Economic Benefit from Childhood Vaccination Programs](#sec-childhood_vaccination_annual_benefit) 📊: $15B (SE: ±$4.50B)
+- [Combined Peace and Health Dividends for ROI Calculation](#sec-combined_peace_health_dividends_annual_for_roi_calc) 🔢: $155B
+
 $$
 Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$155.05B}{\$15.00B} = 10.34
 $$
@@ -2320,6 +2743,11 @@ $$
 **Value**: $250M
 
 Amortized annual campaign cost (total cost ÷ campaign duration)
+
+**Inputs**:
+
+- [Treaty Campaign Duration](#sec-treaty_campaign_duration_years): 4 years (95% CI: 3 years - 5 years)
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1.00B
 
 $$
 AnnualCost = \$1B / 4 = \$0.25B
@@ -2350,6 +2778,12 @@ $$
 
 Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 
+**Inputs**:
+
+- [Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance](#sec-treaty_campaign_budget_referendum): $300M (95% CI: $180M - $500M)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.30B)
+- [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $50M (95% CI: $20M - $100M)
+
 $$
 CampaignCost = \$300M \text{ (ref)} + \$650M \text{ (lob)} + \$50M \text{ (res)} = \$1.0B
 $$
@@ -2378,6 +2812,11 @@ $$
 **Value**: 280M of people
 
 Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
+
+**Inputs**:
+
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8.00B of people (95% CI: 7.80B of people - 8.20B of people)
+- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 2.5% - 4.5%)
 
 $$
 Campaign_{camp,treaty} = Population_{global} \times Threshold_{global} = 8.00B \times 3.5\% = 280M
@@ -2408,6 +2847,12 @@ $$
 
 Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
 
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1.00B
+
 $$
 ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1
 $$
@@ -2436,6 +2881,11 @@ $$
 **Value**: $0.126
 
 Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1.00B
+- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
 
 $$
 \text{Cost/DALY} = \frac{\$1.0B}{7.90B} = \$0.127
@@ -2466,6 +2916,11 @@ $$
 
 Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
 
+**Inputs**:
+
+- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_dfda_cost_per_daly_timeline_shift) 🔢: $0.126
+- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
+
 $$
 E[\text{Cost/DALY}] = \frac{\text{Cost}_{conditional}}{P_{success}}
 $$
@@ -2495,6 +2950,11 @@ $$
 
 Expected value multiplier vs bed nets (accounts for political uncertainty)
 
+**Inputs**:
+
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $13
+
 $$
 E[\text{Multiplier}] = \frac{\$89}{\$0.51} = 175\times
 $$
@@ -2521,6 +2981,11 @@ $$
 **Value**: 2.45k lives/year
 
 Annual lives saved from 1% reduction in conflict deaths
+
+**Inputs**:
+
+- [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245k deaths/year
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 Deaths_{ann} = Deaths_{total} \times Reduction_{treaty} = 244{,}600 \times 1.0\% = 2{,}446
@@ -2551,6 +3016,11 @@ $$
 
 Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)
 
+**Inputs**:
+
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+
 $$
 Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
 $$
@@ -2579,6 +3049,11 @@ $$
 **Value**: 85.6k QALYs/year
 
 Annual QALYs gained from peace dividend (lives saved × QALYs/life)
+
+**Inputs**:
+
+- [Standard QALYs per Life Saved](#sec-standard_qalys_per_life_saved) 📊: 35 QALYs/life (SE: ±7 QALYs/life)
+- [Annual Lives Saved from 1% Reduction in Conflict Deaths](#sec-treaty_lives_saved_annual_global) 🔢: 2.45k lives/year
 
 $$
 Dividend_{ann} = QALYs_{RD} \times Deaths_{ann} = 35 \times 2{,}446 = 85{,}610
@@ -2609,6 +3084,11 @@ $$
 
 Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
 
+**Inputs**:
+
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
+
 $$
 Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
 $$
@@ -2637,6 +3117,11 @@ $$
 **Value**: 251k ratio
 
 Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.
+
+**Inputs**:
+
+- [Total Economic Loss from Historical Progress Delays](#sec-historical_progress_economic_loss_total) 🔢: $251T
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1.00B
 
 $$
 ROI_{treaty} = \frac{Delay_{total}}{Cost_{camp,total}} = \frac{\$250.92T}{\$1.00B} = 250{,}920
@@ -2667,6 +3152,11 @@ $$
 
 Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).
 
+**Inputs**:
+
+- [Total Economic Loss from Disease Eradication + Innovation Acceleration](#sec-disease_eradication_plus_acceleration_economic_loss_total) 🔢: $2.38 quadrillion
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1.00B
+
 $$
 ROI_{treaty} = \frac{Ratio_{total}}{Cost_{camp,total}} = \frac{\$2382.84T}{\$1.00B} = 2.4M
 $$
@@ -2695,6 +3185,12 @@ $$
 **Value**: 1.19M ratio
 
 Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.
+
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1.00B
 
 $$
 ROI_{lag\_elimination} = \frac{\$1{,}286T}{\$1.00B} = 1{,}286{,}242:1
@@ -2725,6 +3221,11 @@ $$
 
 Total annual system costs (campaign + dFDA operations)
 
+**Inputs**:
+
+- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Amortized Annual Treaty Campaign Cost](#sec-treaty_campaign_annual_cost_amortized) 🔢: $250M
+
 $$
 Cost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann} = \$40.0M + \$250.0M = \$290.0M
 $$
@@ -2753,6 +3254,11 @@ $$
 **Value**: $155B
 
 Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.
+
+**Inputs**:
+
+- [dFDA Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
 Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
@@ -2783,6 +3289,11 @@ $$
 
 How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
 
+**Inputs**:
+
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
+- [Cost per DALY Averted (Timeline Shift)](#sec-treaty_dfda_cost_per_daly_timeline_shift) 🔢: $0.126
+
 $$
 \text{Multiplier} = \frac{\$89}{\$0.127} = 701\times
 $$
@@ -2809,6 +3320,10 @@ $$
 **Value**: 456 years
 
 Cumulative trial-capacity-equivalent years over 20-year period
+
+**Inputs**:
+
+- [Trial Capacity Multiplier](#sec-trial_capacity_multiplier) 🔢: 22.8 ratio
 
 $$
 Capacity_{20yr} = 25.7 \times 20 = 514 \text{ years}
@@ -2837,6 +3352,11 @@ $$
 
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 43.4M patients/year
+
 $$
 Multiplier = \frac{Fundable_{ann}}{Trials_{curr}} = \frac{43.4M}{1.9M} = 22.85
 $$
@@ -2863,6 +3383,11 @@ $$
 **Value**: 3.07k ratio
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
+
+**Inputs**:
+
+- [Total DALYs Lost from Disease Eradication Delay](#sec-disease_eradication_delay_dalys) 🔢: 7.94B DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59M DALYs
 
 $$
 Cost = \frac{DALYs_{dis}}{DALYs} = \frac{7.94B}{2.6M} = 3{,}068
@@ -2893,6 +3418,10 @@ $$
 
 Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
 
+**Inputs**:
+
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8k DALYs
+
 $$
 41{,}760 \times 62 = 2.59M \text{ DALYs}
 $$
@@ -2921,6 +3450,13 @@ $$
 **Value**: $1.25T
 
 Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)
+
+**Inputs**:
+
+- [US Alzheimer's Annual Cost](#sec-us_alzheimers_annual_cost) 📊: $355B (95% CI: $302B - $408B)
+- [US Cancer Annual Cost](#sec-us_cancer_annual_cost) 📊: $208B (95% CI: $177B - $239B)
+- [US Diabetes Annual Cost](#sec-us_diabetes_annual_cost) 📊: $327B (95% CI: $278B - $376B)
+- [US Heart Disease Annual Cost](#sec-us_heart_disease_annual_cost) 📊: $363B (95% CI: $309B - $417B)
 
 $$
 Cost_{total} = Cost_{alz,ann} + Cost_{cancer,ann} + Cost_{diab,ann} + Cost_{heart,ann} = \$355.00B + \$208.00B + \$327.00B + \$363.00B = \$1.25T

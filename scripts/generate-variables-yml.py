@@ -1377,6 +1377,54 @@ def generate_parameters_qmd(parameters: Dict[str, Dict[str, Any]], output_path: 
                 content.append(f"{value.description}")
                 content.append("")
 
+            # Show input parameters with links (NEW)
+            if hasattr(value, "inputs") and value.inputs:
+                content.append("**Inputs**:")
+                content.append("")
+                for inp_name in value.inputs:
+                    inp_meta = parameters.get(inp_name, {})
+                    inp_value = inp_meta.get('value')
+
+                    if inp_value is None:
+                        # Handle missing input gracefully
+                        content.append(f"- [{smart_title_case(inp_name)}](#sec-{inp_name.lower()}): *not found*")
+                        continue
+
+                    # Get display name
+                    if hasattr(inp_value, "display_name") and inp_value.display_name:
+                        inp_display = inp_value.display_name
+                    else:
+                        inp_display = smart_title_case(inp_name)
+
+                    # Format value
+                    inp_unit = getattr(inp_value, "unit", "")
+                    inp_formatted = format_parameter_value(inp_value, inp_unit)
+
+                    # Add uncertainty information if available (verbose format)
+                    uncertainty_str = ""
+                    if hasattr(inp_value, "confidence_interval") and inp_value.confidence_interval:
+                        low, high = inp_value.confidence_interval
+                        low_str = format_parameter_value(low, inp_unit)
+                        high_str = format_parameter_value(high, inp_unit)
+                        uncertainty_str = f" (95% CI: {low_str} - {high_str})"
+                    elif hasattr(inp_value, "std_error") and inp_value.std_error:
+                        se_str = format_parameter_value(inp_value.std_error, inp_unit)
+                        uncertainty_str = f" (SE: ±{se_str})"
+
+                    # Get source type for visual indicator
+                    source_type_indicator = ""
+                    if hasattr(inp_value, "source_type"):
+                        source_type_str = str(inp_value.source_type.value) if hasattr(inp_value.source_type, 'value') else str(inp_value.source_type)
+                        if source_type_str == "external":
+                            source_type_indicator = " 📊"  # External data
+                        elif source_type_str == "calculated":
+                            source_type_indicator = " 🔢"  # Calculated value
+
+                    # Link to parameter section
+                    content.append(f"- [{inp_display}](#sec-{inp_name.lower()}){source_type_indicator}: {inp_formatted}{uncertainty_str}")
+
+                content.append("")
+
             # LaTeX equation - prominently displayed
             # Priority: hardcoded latex > auto-generated latex > formula
             hardcoded_latex = getattr(value, "latex", None)
