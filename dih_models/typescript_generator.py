@@ -21,6 +21,7 @@ Usage:
 from pathlib import Path
 from typing import Any, Dict, Optional
 import re
+import shutil
 
 from dih_models.reference_parser import parse_references_qmd_detailed
 
@@ -425,50 +426,14 @@ def generate_typescript_parameters(
         # getCitation helper
         content.append("/**")
         content.append(" * Get citation for a parameter by its sourceRef")
+        content.append(" * ")
+        content.append(" * Example:")
+        content.append(" *   const citation = getCitation(ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE);")
+        content.append(" *   console.log(formatCitation(citation, 'apa'));")
         content.append(" */")
         content.append("export function getCitation(param: Parameter): Citation | undefined {")
         content.append("  if (!param.sourceRef) return undefined;")
         content.append("  return citations[param.sourceRef];")
-        content.append("}")
-        content.append("")
-
-        # getSourceUrl helper
-        content.append("/**")
-        content.append(" * Get URL from sourceRef")
-        content.append(" * ")
-        content.append(" * Note: Internal QMD paths are automatically converted to URLs during")
-        content.append(" * generation, so this function typically just returns the sourceRef as-is.")
-        content.append(" * Returns undefined for citation IDs (use getCitation() instead).")
-        content.append(" * ")
-        content.append(" * Examples:")
-        content.append(" *   https://impact.dih.earth/knowledge/economics/campaign-budget")
-        content.append(" *   -> https://impact.dih.earth/knowledge/economics/campaign-budget")
-        content.append(" *")
-        content.append(" *   \"antidepressant-trial-exclusion-rates\" (citation ID)")
-        content.append(" *   -> undefined (use getCitation() instead)")
-        content.append(" */")
-        content.append("export function getSourceUrl(sourceRef: string | undefined): string | undefined {")
-        content.append("  if (!sourceRef) return undefined;")
-        content.append("")
-        content.append("  // If it's already a full URL, return as-is (most common case)")
-        content.append("  if (sourceRef.startsWith('http://') || sourceRef.startsWith('https://')) {")
-        content.append("    return sourceRef;")
-        content.append("  }")
-        content.append("")
-        content.append("  // If it's a citation ID (no slashes), return undefined")
-        content.append("  // Caller should use getCitation() to look up citation details")
-        content.append("  if (!sourceRef.includes('/')) {")
-        content.append("    return undefined;")
-        content.append("  }")
-        content.append("")
-        content.append("  // Fallback: convert any remaining internal paths (shouldn't happen)")
-        content.append("  const base = 'https://impact.dih.earth';")
-        content.append("  const path = sourceRef")
-        content.append("    .replace(/^\\//, '')      // Remove leading slash")
-        content.append("    .replace(/\\.qmd$/, '')   // Remove .qmd extension")
-        content.append("    .replace(/\\.qmd#/, '#'); // Remove .qmd before anchor")
-        content.append("")
-        content.append("  return `${base}/${path}`;")
         content.append("}")
         content.append("")
 
@@ -559,11 +524,19 @@ def generate_typescript_parameters(
     print(f"     {len(definition_params)} core definitions")
     if all_citations:
         print(f"     {len(all_citations)} citations (CSL JSON)")
+
+    # Copy to Next.js project if it exists
+    nextjs_lib = Path("E:/code/dih-neobrutalist/lib")
+    if nextjs_lib.exists() and nextjs_lib.is_dir():
+        dest_path = nextjs_lib / output_path.name
+        shutil.copy2(output_path, dest_path)
+        print(f"[OK] Copied to {dest_path}")
+
     print()
     print("Usage in Next.js/React:")
     if all_params:
         first_param = all_params[0][0]
-        print(f"  import {{ {first_param}, parameters, citations }} from './parameters';")
+        print(f"  import {{ {first_param}, parameters, citations }} from './parameters-calculations-citations';")
         print(f"  console.log({first_param}.value);")
         if all_citations:
             first_cite = sorted(all_citations.keys())[0]

@@ -6134,48 +6134,14 @@ export const PARAMETER_STATS = {
 
 /**
  * Get citation for a parameter by its sourceRef
+ * 
+ * Example:
+ *   const citation = getCitation(ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE);
+ *   console.log(formatCitation(citation, 'apa'));
  */
 export function getCitation(param: Parameter): Citation | undefined {
   if (!param.sourceRef) return undefined;
   return citations[param.sourceRef];
-}
-
-/**
- * Get URL from sourceRef
- * 
- * Note: Internal QMD paths are automatically converted to URLs during
- * generation, so this function typically just returns the sourceRef as-is.
- * Returns undefined for citation IDs (use getCitation() instead).
- * 
- * Examples:
- *   https://impact.dih.earth/knowledge/economics/campaign-budget
- *   -> https://impact.dih.earth/knowledge/economics/campaign-budget
- *
- *   "antidepressant-trial-exclusion-rates" (citation ID)
- *   -> undefined (use getCitation() instead)
- */
-export function getSourceUrl(sourceRef: string | undefined): string | undefined {
-  if (!sourceRef) return undefined;
-
-  // If it's already a full URL, return as-is (most common case)
-  if (sourceRef.startsWith('http://') || sourceRef.startsWith('https://')) {
-    return sourceRef;
-  }
-
-  // If it's a citation ID (no slashes), return undefined
-  // Caller should use getCitation() to look up citation details
-  if (!sourceRef.includes('/')) {
-    return undefined;
-  }
-
-  // Fallback: convert any remaining internal paths (shouldn't happen)
-  const base = 'https://impact.dih.earth';
-  const path = sourceRef
-    .replace(/^\//, '')      // Remove leading slash
-    .replace(/\.qmd$/, '')   // Remove .qmd extension
-    .replace(/\.qmd#/, '#'); // Remove .qmd before anchor
-
-  return `${base}/${path}`;
 }
 
 /**
