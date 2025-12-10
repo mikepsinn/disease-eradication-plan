@@ -13367,6 +13367,126 @@
           "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.2c01253"
         }
       ]
+    },
+    {
+      "id": "drug-repurposing-hub-collection",
+      "title": "Drug Repurposing Hub (Broad Institute)",
+      "quotes": [
+        "The Drug Repurposing Hub contains 4,707 hand-curated compounds (later expanded to 6,801), including 3,422 drugs that are marketed or have been in clinical trials. The collection includes 1,988 approved/marketed drugs and 1,348 compounds that cleared at least phase 1 clinical testing."
+      ],
+      "sources": [
+        {
+          "text": "Broad Institute, Drug Repurposing Hub",
+          "url": "https://www.broadinstitute.org/drug-repurposing-hub"
+        },
+        {
+          "text": "Corsello et al., Nature Medicine (2017)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5568558/"
+        }
+      ]
+    },
+    {
+      "id": "nih-funded-approved-drugs",
+      "title": "NIH funding contributed to 99% of approved drugs",
+      "quotes": [
+        "\"NIH funding contributed to published research associated with every one of the 356 new drugs approved by the FDA from 2010–2019.\" Total NIH spending on this research was $187 billion, while industry spending on clinical development for these drugs was significantly higher.",
+        "Approximately 54% of the NIH research budget is devoted to basic biomedical and behavioral research, while about one-third (33%) is allocated to clinical research including patient-oriented research, clinical trials, and health services research. Categories overlap so totals exceed 100%."
+      ],
+      "sources": [
+        {
+          "text": "Bentley University / Cleary et al. (PNAS 2020)",
+          "url": "https://www.pnas.org/doi/10.1073/pnas.1920929117"
+        },
+        {
+          "text": "Mazzucato: The Entrepreneurial State",
+          "url": "https://marianamazzucato.com/books/the-entrepreneurial-state"
+        },
+        {
+          "text": "HHS, FY2016 Budget in Brief - NIH",
+          "url": "https://www.hhs.gov/about/budget/budget-in-brief/nih/index.html"
+        }
+      ]
+    },
+    {
+      "id": "recovery-trial-roi",
+      "title": "RECOVERY Trial Cost-Effectiveness (~$300/QALY)",
+      "quotes": [
+        "RECOVERY trial (UK) cost ~$2.7M for the dexamethasone arm and saved ~1 million lives globally in 9 months. Implied cost per QALY is ~$300 or less, approx. 50-100x more efficient than standard care interventions."
+      ],
+      "sources": [
+        {
+          "text": "RECOVERY Trial Results",
+          "url": "https://www.recoverytrial.net/results"
+        }
+      ]
+    },
+    {
+      "id": "standard-medical-research-roi",
+      "title": "Standard Medical Research ROI ($20k-$100k/QALY)",
+      "quotes": [
+        "Typical cost-effectiveness thresholds for medical interventions in rich countries range from $50,000 to $150,000 per QALY. The Institute for Clinical and Economic Review (ICER) uses a $100,000-$150,000/QALY threshold for value-based pricing. Between 1990-2021, authors increasingly cited $100,000 (47% by 2020-21) or $150,000 (24% by 2020-21) per QALY as benchmarks for cost-effectiveness."
+      ],
+      "sources": [
+        {
+          "text": "PMC: Cost-effectiveness Thresholds Used by Study Authors, 1990-2021",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10114019/"
+        },
+        {
+          "text": "ICER Cost-Effectiveness Methods",
+          "url": "https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/"
+        }
+      ]
+    },
+    {
+      "id": "nih-clinical-trials-small-fraction",
+      "title": "NIH Actual Interventional Trial Spending: Only 3.3% of Budget",
+      "quotes": [
+        "The \"33% clinical research\" category is misleading. NIH spent only **$8.1 billion (3.3% of $247.3 billion)** on phased clinical development (Phases 1-3) for drugs approved 2010-2019. This represents just **~10% of what industry spends** on clinical trials. The remaining \"clinical research\" budget includes observational studies, epidemiological research, health services research, and infrastructure—not actual interventional trials testing treatments."
+      ],
+      "sources": [
+        {
+          "text": "JAMA Health Forum: NIH Clinical Development Spending (2023)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        },
+        {
+          "text": "Harvard Catalyst: NIH vs Industry Spending",
+          "url": "https://catalyst.harvard.edu/news/article/nih-spent-8-1b-for-phased-clinical-trials-of-drugs-approved-2010-19-10-of-reported-industry-spending/"
+        }
+      ]
+    },
+    {
+      "id": "pragmatic-trials-cost-advantage",
+      "title": "NIH Pragmatic Trials: Minimal Funding Despite 30x Cost Advantage",
+      "quotes": [
+        "The NIH Pragmatic Trials Collaboratory funds trials at **$500K for planning phase, $1M/year for implementation**—a tiny fraction of NIH's budget. The ADAPTABLE trial cost **$14 million** versus **$420 million** for a similar traditional RCT (30x cheaper), yet pragmatic trials remain severely underfunded. PCORnet infrastructure enables real-world trials embedded in healthcare systems, but receives minimal support compared to basic research funding."
+      ],
+      "sources": [
+        {
+          "text": "NIH Common Fund: HCS Research Collaboratory",
+          "url": "https://commonfund.nih.gov/hcscollaboratory"
+        },
+        {
+          "text": "PMC: Pragmatic Clinical Trials in Healthcare Systems",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5604499/"
+        },
+        {
+          "text": "PMC: Pragmatic Trials and Real-World Evidence",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11902901/"
+        }
+      ]
+    },
+    {
+      "id": "nih-phase-3-minimal-coverage",
+      "title": "NIH Phase 3 Underfunding: Only 3.7-4.3% of Industry Spending",
+      "quotes": [
+        "NIH covers **21-25% of Phase 1** costs and **21-23% of Phase 2** costs, but only **3.7-4.3% of Phase 3** costs—the critical bottleneck where treatments are proven effective. Of NIH's $8.1B in clinical development spending (2010-2019): Phase 1 received $1.5B, Phase 2 received $3.5B, but Phase 3 received only $2.6B. Industry must shoulder 95-96% of Phase 3 costs, creating a massive funding gap for late-stage trials."
+      ],
+      "sources": [
+        {
+          "text": "JAMA Health Forum: NIH Phase Distribution (2023)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/"
+        }
+      ]
     }
   ]
 }

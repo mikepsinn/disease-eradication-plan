@@ -31,35 +31,36 @@ Just ask the WHO, who [eradicated smallpox for \$300 million](../references.qmd#
 Or ask Jonas Salk, who developed the polio vaccine in a university lab.
 Or ask the veterinarians, who've [eradicated multiple animal diseases](../references.qmd#animal-diseases-eradicated-by-vets) while the NIH was forming subcommittees.
 
-## The Translation Crisis: 166 Billion Untested Treatments
+## The Translation Crisis: Concept Rich, Trial Poor
 
-Here's what the NIH won't tell you:
+Here is the "Stock vs Flow" problem in one sentence: **We are not short of hypotheses; we are short of trial slots.**
 
-**Your grandma has Alzheimer's in St. Louis.**
+- **FDA-approved drugs:** >20,000 known safe in humans
+- **Repurposable compounds:** [~4,700-6,800 clinically-tested candidates](../references.qmd#drug-repurposing-hub-collection) (including 3,422 marketed drugs) sitting on shelves
+- **Plausible dementia interventions:** Hundreds
+- **Clinical trials available for your grandma in St. Louis:** Zero
 
-- **Trial-ready treatments for Alzheimer's:** Hundreds sitting on shelves
-- **Clinical trials available in St. Louis:** Zero (for years)
-- **Trials on clinicaltrials.gov for your grandma:** Finally, one appeared!
+We have a massive **stock** of safe molecules that have never been systematically evaluated for new uses.
+But the **flow** of trials is a trickle.
 
-### That one trial
+### The $600,000 "Trial"
+
+Recently, one dementia trial finally appeared for your grandma on clinicaltrials.gov.
 
 - **Cost:** $600,000
 - **Purpose:** A Google form survey asking if people would be *interested* in participating in dementia trials
 - **Number of patients treated:** Zero
 - **Number of treatments tested:** Zero
 
-The NIH spent $600,000 researching *whether people want their loved ones to get treatment*.
+The NIH spent $600,000 researching *whether people want their loved ones to get treatment*. (They do. ~49-75% of patients say they are willing to participate, but only ~10% are ever invited.)
 
 **Here's what $600,000 could have actually funded:**
 
 - 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
 - Testing 5-10 repurposed drugs we already know are safe
 - Actual data on whether treatments work
-- Maybe saving your grandma
 
-Instead: Meta-research. Studying whether we should do studies.
-
-This isn't a story about a lack of treatments. It's about a system that chooses not to test them.
+This isn't a "lack of ideas" problem. It is a **capacity failure**.
 
 ## The Basic Research Black Hole
 
@@ -75,13 +76,14 @@ Here's where the [FY2017-2021 budget](../references.qmd#nih-budget-allocation-br
 - **"Clinical trials and related activities":** [21% ($28B)](../references.qmd#nih-budget-allocation-breakdown)
 - **Training programs:** [7% ($9B)](../references.qmd#nih-budget-allocation-breakdown)
 
-But here's the scam: that "21% for clinical trials" sounds impressive until you see what it actually includes:
+But here's the scam: that "21% for clinical trials" sounds impressive until you see [what it actually includes](../references.qmd#nih-clinical-trials-small-fraction):
 
-- **Drug treatment trials your grandma could join:** [3.3% of total budget](../references.qmd#nih-budget-allocation-breakdown)
-- **Phase 1 safety trials:** Healthy volunteers only, you can't join if you're sick
-- **Infrastructure programs:** [CTSA network](../references.qmd#nih-ctsa-program-funding) buildings and overhead, not treating patients
+- **Actual drug treatment trials (Phases 1-3):** [Only 3.3% of total budget](../references.qmd#nih-clinical-trials-small-fraction) ($8.1B over 2010-2019)
+- **Phase 3 trials** (where treatments are proven effective): [NIH covers only 3.7-4.3% of costs](../references.qmd#nih-phase-3-minimal-coverage), abandoning funding at the critical stage
+- **Pragmatic trials** (30x cheaper than traditional trials): [Severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite massive cost advantage
 - **Observational studies:** Watching you get sicker ([All of Us](../references.qmd#nih-all-of-us-inefficiency) - $2.16B, zero treatments tested)
-- **Device trials and behavioral studies:** You probably don't qualify due to location, age, or other restrictions
+- **Infrastructure programs:** [CTSA network](../references.qmd#nih-ctsa-program-funding) buildings and overhead, not treating patients
+- **Health services research, epidemiology, behavioral studies:** The remaining 17.7% that sounds like "clinical research"
 
 The result is a system that produces papers, not cures:
 
@@ -94,6 +96,32 @@ We know everything about how cancer works in mice. We've mapped every pathway, g
 #### What we don't have: Cures.
 
 Because understanding disease and curing disease are completely different things. The NIH chose understanding. Patients needed cures.
+
+## The Public Goods vs. Club Goods Scam
+
+The NIH defends its existence by claiming to produce "Public Goods" (open science, data, training).
+In reality, it spends taxpayers' money to produce "Club Goods" for private industry.
+
+**The Scam in Numbers:**
+
+- **Direct commercialization support:** ~3-5% of budget
+- **Indirect subsidy to profitable firms:** [~54% of budget goes to basic research](../references.qmd#nih-clinical-trials-small-fraction) that de-risks early drug development for industry
+- **NIH vs. Industry spending ratio:** [NIH covers only ~10% of what industry spends](../references.qmd#nih-clinical-trials-small-fraction) on clinical trials for approved drugs
+
+We pay ~$48 billion/year to risk-reduce the early stages of drug development for private companies.
+When a hit is found, the IP is privatized (patented), and the public pays a second time through high drug prices.
+When the research leads to a dead end, the public eats the loss.
+
+**Socialized Risk, Privatized Profit.**
+
+True public goods would be **unpatentable** but high-value assets like:
+- **Open pragmatic trial platforms:** [30x cheaper than traditional trials](../references.qmd#pragmatic-trials-cost-advantage), yet receive minimal NIH funding
+- **Re-purposing generic drugs:** [4,700+ clinically-tested compounds](../references.qmd#drug-repurposing-hub-collection) where no patent exists
+- **Comparative effectiveness data:** Head-to-Head trials that would reveal which drugs actually work best
+
+Private companies *cannot* profitably fund these, so they are the **only** thing the NIH should be funding.
+Instead, the NIH explicitly avoids them to "not crowd out industry."
+Translation: We won't run the trials that would lower drug prices or fix problems without a patent attached.
 
 ## The Gerontocracy: Science by Social Security Recipients
 
@@ -200,55 +228,38 @@ Major breakthroughs while NIH was busy:
 
 The NIH is like that group member who shows up after the project is done to add their name.
 
-## The Efficiency Rating: An {{< var trial_cost_reduction_factor >}}× Opportunity Cost
+## The Efficiency Rating: Burning Life-Years
 
-Let's do the real math on what we could have done with that money:
+Let's do the rigorous math on the opportunity cost.
 
-### Current NIH System
+### Cost Per QALY (Quality-Adjusted Life Year)
 
-- Annual budget: [\$51 billion](../references.qmd#nih-budget-fy2025)
-- Cost per trial participant: {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
-- Annual participants: ~1.2 million
-- Diseases cured: Zero
+- **Standard NIH Portfolio:** [~$20,000 - $100,000 per QALY](../references.qmd#standard-medical-research-roi) (generous estimate)
+- **Pragmatic Platform Trials (RECOVERY model):** [~$300 per QALY](../references.qmd#recovery-trial-roi)
+- **NIH pragmatic trials funding:** [Capped at $500K planning + $1M/year implementation](../references.qmd#pragmatic-trials-cost-advantage). This is a tiny fraction of the $47B budget
 
-**What \$51 billion could buy using UK RECOVERY methods:**
+**The Multiplier:**
+Every $1 spent on efficient pragmatic trials buys **~50x to 100x more health** than a dollar spent on the current NIH mix.
 
-- Cost per trial participant: {{< var recovery_trial_cost_per_patient >}}
-- Annual participants: 102 million ({{< var trial_cost_reduction_factor >}}× more)
-- Potential treatments found: Hundreds
+Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite the ADAPTABLE trial proving they cost [30x less than traditional RCTs](../references.qmd#pragmatic-trials-cost-advantage) ($14M vs $420M).
 
-We're literally choosing to help 1 person badly instead of helping 82 people well.
+### The "Death Equivalent" of Misallocation
 
-This {{< var trial_cost_reduction_factor >}}× cost disparity is the core inefficiency you can solve. (See The {{< var trial_cost_reduction_factor >}}× Solution for how.)
+When you misallocate $40 billion a year into low-efficiency buckets instead of high-efficiency buckets, you aren't just wasting money. You are burning time.
 
-#### The \$2 Trillion Healthcare Burden
+**Annual Opportunity Cost:**
+- **QALYs Lost:** ~100 million life-years per year.
+- **Deaths NOT Prevented:** ~7 million death-equivalents per year.
 
-Not only are we inefficient, we're drowning:
+The NIH isn't just inefficient.
+By blocking the shift to high-efficiency trial platforms, the current budget allocation is **actively destroying** the equivalent of millions of lives annually compared to the optimal allocation.
 
-- US-only healthcare costs: [\$2+ trillion annually](../references.qmd#us-annual-healthcare-costs)
-- Potential savings with efficient trials: \$2 trillion
-- Net economic swing: \$4 trillion
-- Untested treatments sitting on shelf: 166 billion ([source](../references.qmd#166-billion-compounds))
-
-We have more untested treatments than stars in our galaxy, but we're too busy writing grants to test them.
-
-The overall efficiency score:
-
-- **Input:** \$1.1 trillion over 50 years
-- **Output:** Zero diseases eradicated
-
-This results in a cost per disease cured of:
+**Mathematical Conclusion:**
 $$
-\text{Cost per cure} = \frac{\text{\$1.1 trillion}}{0} = \infty
+\text{Efficiency Loss} = 1 - \frac{\text{Current QALYs gained}}{\text{Potential QALYs gained}} \approx 98\%
 $$
 
-Or, to put it another way:
-$$
-\text{Efficiency} = \frac{\text{Diseases cured}}{\text{\$1.1 trillion}} = \frac{0}{\text{\$1.1 trillion}} = 0
-$$
-
-The NIH has achieved zero efficiency at infinite cost.
-That's actually mathematically impressive.
+We are operating at ~2% of our potential theoretical capacity to save lives.
 
 ## The Patient Disconnect: Zero Correlation with Health Outcomes
 
