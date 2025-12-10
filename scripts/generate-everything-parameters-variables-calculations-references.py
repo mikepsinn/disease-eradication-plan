@@ -59,15 +59,16 @@ if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
 from generate_references_json import generate_references_json  # noqa: E402
-from chart_generators import (
+
+# Import all generator modules
+from dih_models.bibtex_generator import generate_bibtex
+from dih_models.chart_generators import (
     generate_tornado_chart_qmd,
     generate_sensitivity_table_qmd,
     generate_input_distribution_chart_qmd,
     generate_monte_carlo_distribution_chart_qmd,
     generate_cdf_chart_qmd,
 )
-# Delayed imports to allow reference_ids.py regeneration
-# from dih_models.parameters import format_parameter_value
 from dih_models.latex_generation import (
     generate_auto_latex,
     format_latex_value,
@@ -77,6 +78,13 @@ from dih_models.latex_generation import (
     extract_lambda_body_from_file,
     lambda_to_sympy_latex,
 )
+from dih_models.parameters_and_calculations_qmd_generator import (
+    generate_parameters_and_calculations_qmd,
+)
+from dih_models.quarto_formatting import (
+    generate_html_with_tooltip,
+)
+from dih_models.reference_ids_generator import generate_reference_ids_enum
 from dih_models.reference_parser import (
     parse_references_qmd_detailed,
     parse_references_qmd,
@@ -90,12 +98,7 @@ from dih_models.validation import (
     validate_compute_inputs_match,
     validate_inline_calculations_have_compute,
 )
-from dih_models.quarto_formatting import (
-    generate_html_with_tooltip,
-)
-from dih_models.parameters_and_calculations_qmd_generator import (
-    generate_parameters_and_calculations_qmd,
-)
+from dih_models.variables_yml_generator import generate_variables_yml
 
 # Delayed imports placeholders
 simulate = None
@@ -211,354 +214,13 @@ def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
 # - generate_uncertainty_section()
 
 
-def generate_variables_yml(parameters: Dict[str, Dict[str, Any]], output_path: Path, citation_mode: str = "none", params_file: Path = None):
-    """
-    Generate _variables.yml file from parameters.
-
-    Creates YAML with lowercase variable names mapped to formatted HTML values.
-    Also exports LaTeX equations as {param_name}_latex variables.
-
-    Args:
-        parameters: Dict of parameter metadata
-        output_path: Path to write _variables.yml
-        citation_mode: Citation handling mode:
-            - "none": No inline citations (default)
-            - "inline": Include [@key] after external peer-reviewed parameters
-            - "separate": Export citation keys as {param_name}_cite variables
-            - "both": Both inline AND separate variables
-        params_file: Path to parameters.py for sympy-based LaTeX generation
-    """
-    variables = {}
-    citation_count = 0
-
-    # Sort parameters by name for consistent output
-    for param_name in sorted(parameters.keys()):
-        param_data = parameters[param_name]
-        value = param_data["value"]
-        comment = param_data["comment"]
-
-        # Use lowercase name for Quarto variables (convention)
-        var_name = param_name.lower()
-
-        # Generate formatted HTML with tooltip
-        include_inline_citation = citation_mode in ("inline", "both")
-        html_value = generate_html_with_tooltip(param_name, value, comment, include_citation=include_inline_citation)
-
-        variables[var_name] = html_value
-
-        # Export citation key separately for external sources (if mode enabled)
-        if citation_mode in ("separate", "both"):
-            if hasattr(value, "source_type") and hasattr(value, "source_ref"):
-                source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
-                if source_type_str == "external" and value.source_ref:
-                    # Sanitize citation key for BibTeX compatibility
-                    sanitized_ref = sanitize_bibtex_key(value.source_ref)
-                    variables[f"{var_name}_cite"] = f"@{sanitized_ref}"
-                    citation_count += 1
-
-        # Export LaTeX equation: prefer hardcoded (hand-crafted with good labels),
-        # fall back to auto-generated for params without hardcoded latex
-        hardcoded_latex = getattr(value, "latex", None)
-        auto_latex = generate_auto_latex(param_name, value, parameters, params_file=params_file)
-
-        if hardcoded_latex:
-            # Use hardcoded (preferred - hand-crafted with semantic labels)
-            latex_var_name = f"{var_name}_latex"
-            variables[latex_var_name] = f"$$\n{hardcoded_latex}\n$$"
-        elif auto_latex:
-            # Fall back to auto-generated for params without hardcoded
-            latex_var_name = f"{var_name}_latex"
-            variables[latex_var_name] = f"$$\n{auto_latex}\n$$"
-
-    # Count exports by type BEFORE adding metadata variables
-    latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
-    cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
-    param_count = len(variables) - latex_count - cite_count
-
-    # Add metadata variables for use in QMD files
-    variables["total_parameter_count"] = str(param_count)
-    variables["total_latex_equation_count"] = str(latex_count)
-    if citation_mode in ("separate", "both"):
-        variables["total_citation_count"] = str(cite_count)
-
-    # Write YAML file
-    with open(output_path, "w", encoding="utf-8") as f:
-        # Add header comment
-        f.write("# AUTO-GENERATED FILE - DO NOT EDIT\n")
-        f.write("# Generated from dih_models/parameters.py\n")
-        f.write("# Run: python scripts/generate-everything-parameters-variables-calculations-references.py\n")
-        f.write("#\n")
-        f.write("# Use in QMD files with: {{< var param_name >}}\n")
-        if citation_mode in ("separate", "both"):
-            f.write("# Citations available as: {{< var param_name_cite >}}\n")
-        f.write("#\n")
-        f.write("# Metadata variables:\n")
-        f.write("#   {{< var total_parameter_count >}} - Number of parameters\n")
-        f.write("#   {{< var total_latex_equation_count >}} - Number of LaTeX equations\n")
-        if citation_mode in ("separate", "both"):
-            f.write("#   {{< var total_citation_count >}} - Number of citations\n")
-        f.write("#\n\n")
-
-        # Write variables with proper quoting for HTML
-        yaml.dump(variables, f, default_flow_style=False, allow_unicode=True, sort_keys=False, default_style='"')
-
-    print(f"[OK] Generated {output_path}")
-    print(f"     {param_count} parameters exported")
-    print(f"     {latex_count} LaTeX equations exported")
-    if citation_mode in ("separate", "both"):
-        print(f"     {cite_count} citation keys exported")
-    if citation_mode in ("inline", "both"):
-        print("     Citation mode: inline [@key] for peer-reviewed sources")
-    print("\nUsage in QMD files:")
-    print(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
-    if latex_count > 0:
-        # Find first latex equation
-        latex_var = next((k for k in variables.keys() if k.endswith("_latex")), None)
-        if latex_var:
-            print(f"  {{{{< var {latex_var} >}}}}  (equation)")
-    if cite_count > 0:
-        # Find first parameter with citation
-        cite_var = next((k for k in variables.keys() if k.endswith("_cite")), None)
-        if cite_var:
-            base_var = cite_var[:-5]  # Remove "_cite"
-            print(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")
-
-
-# (generate_uncertainty_section moved to dih_models/quarto_formatting.py)
-# (generate_parameters_and_calculations_qmd moved to dih_models/parameters_and_calculations_qmd_generator.py)
-
-
-# Reference parsing and validation functions moved to dih_models/
-# - parse_references_qmd_detailed() -> dih_models.reference_parser
-# - parse_references_qmd() -> dih_models.reference_parser
-# - sanitize_bibtex_key() -> dih_models.reference_parser
-# - validate_references() -> dih_models.validation
-# - validate_calculated_parameters() -> dih_models.validation
-# - validate_calculated_params_no_uncertainty() -> dih_models.validation
-# - validate_formula_uses_full_param_names() -> dih_models.validation
-# - validate_compute_inputs_match() -> dih_models.validation
-# - validate_inline_calculations_have_compute() -> dih_models.validation
-
-
-def generate_reference_ids_enum(available_refs: set, output_path: Path):
-    """
-    Generate dih_models/reference_ids.py with enum of valid reference IDs.
-
-    Creates a Python enum for IDE autocomplete and static type checking.
-    Developers can use ReferenceID.CDC_LEADING_CAUSES_DEATH instead of strings.
-
-    Args:
-        available_refs: Set of reference IDs from references.qmd
-        output_path: Path to write reference_ids.py
-    """
-    content = []
-    content.append("#!/usr/bin/env python3")
-    content.append('"""')
-    content.append("AUTO-GENERATED FILE - DO NOT EDIT")
-    content.append("=" * 70)
-    content.append("")
-    content.append("Valid reference IDs extracted from knowledge/references.qmd")
-    content.append("")
-    content.append("Usage in parameters.py:")
-    content.append("    from .reference_ids import ReferenceID")
-    content.append("")
-    content.append("    PARAM = Parameter(")
-    content.append("        123.45,")
-    content.append('        source_type="external",')
-    content.append("        source_ref=ReferenceID.CDC_LEADING_CAUSES_DEATH,")
-    content.append('        description="..."')
-    content.append("    )")
-    content.append("")
-    content.append("Benefits:")
-    content.append("  - IDE autocomplete shows all valid reference IDs")
-    content.append("  - Static type checking catches typos before runtime")
-    content.append("  - Refactoring safety when renaming references")
-    content.append('"""')
-    content.append("")
-    content.append("from enum import Enum")
-    content.append("")
-    content.append("")
-    content.append("class ReferenceID(str, Enum):")
-    content.append('    """Valid reference IDs from knowledge/references.qmd"""')
-    content.append("")
-
-    # Sort reference IDs for consistent output
-    sorted_refs = sorted(available_refs)
-
-    # Convert reference IDs to enum member names
-    # e.g., "cdc-leading-causes-death" -> "CDC_LEADING_CAUSES_DEATH"
-    # e.g., "95-pct-diseases-no-treatment" -> "N95_PCT_DISEASES_NO_TREATMENT"
-    for ref_id in sorted_refs:
-        # Convert kebab-case to SCREAMING_SNAKE_CASE
-        enum_name = ref_id.upper().replace("-", "_")
-
-        # Handle special cases that start with numbers: prefix with 'N' instead of '_'
-        # This avoids Python's protected member convention (_var)
-        if enum_name[0].isdigit():
-            enum_name = f"N{enum_name}"
-
-        content.append(f'    {enum_name} = "{ref_id}"')
-
-    content.append("")
-
-    # Write file
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(content))
-
-    print(f"[OK] Generated {output_path}")
-    print(f"     {len(sorted_refs)} reference IDs exported as enum")
-    print()
-    print("Usage in parameters.py:")
-    print("    from .reference_ids import ReferenceID")
-    if sorted_refs:
-        first_ref = sorted_refs[0].upper().replace("-", "_")
-        if first_ref[0].isdigit():
-            first_ref = f"N{first_ref}"
-        print(f"    source_ref=ReferenceID.{first_ref}")
-    print()
-
-
-def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, references_path: Path = None):
-    """
-    Generate references.bib BibTeX file from external parameters.
-
-    Extracts unique citations from parameters with source_type="external"
-    and creates BibTeX entries using actual citation data from references.qmd.
-
-    Args:
-        parameters: Dict of parameter metadata
-        output_path: Path to write references.bib
-        available_refs: Set of valid reference IDs from references.qmd (optional)
-        references_path: Path to references.qmd file for detailed citation data
-    """
-    # Parse detailed citation data from references.qmd
-    citation_data = {}
-    if references_path and references_path.exists():
-        citation_data = parse_references_qmd_detailed(references_path)
-
-    # Collect unique source_refs from external parameters
-    citations = set()
-    for param_name, param_data in parameters.items():
-        value = param_data["value"]
-        if hasattr(value, "source_type"):
-            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
-            if source_type_str == "external":
-                if hasattr(value, "source_ref") and value.source_ref:
-                    # Convert ReferenceID enum to string value
-                    source_ref = value.source_ref
-                    if hasattr(source_ref, 'value'):
-                        # It's an enum, get the actual string value
-                        source_ref = source_ref.value
-                    else:
-                        # It's already a string
-                        source_ref = str(source_ref)
-
-                    # Skip internal document references (contain / or .qmd)
-                    if '/' in source_ref or '.qmd' in source_ref:
-                        continue
-
-                    # Optionally skip missing references
-                    if available_refs and source_ref not in available_refs:
-                        continue
-
-                    citations.add(source_ref)
-
-    # Generate BibTeX entries
-    content = []
-    content.append("% AUTO-GENERATED FILE - DO NOT EDIT")
-    content.append("% Generated from dih_models/parameters.py and knowledge/references.qmd")
-    content.append("")
-    content.append("% This file contains BibTeX references for all external data sources")
-    content.append("% used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.")
-    content.append("")
-    content.append("% Extracted from knowledge/references.qmd with author, year, source, and URL data.")
-    content.append("% For manual curation or DOI-based enrichment, see references.qmd")
-    content.append("")
-
-    entries_with_data = 0
-    entries_placeholder = 0
-
-    for citation_key in sorted(citations):
-        # Sanitize citation key for BibTeX (remove /, #, etc.)
-        sanitized_key = sanitize_bibtex_key(citation_key)
-
-        # Get detailed citation data if available
-        ref_data = citation_data.get(citation_key, {})
-
-        if ref_data and ref_data.get('title'):
-            # Create proper BibTeX entry with real data
-            entry_type = ref_data.get('type', 'misc')
-            title = ref_data.get('title', citation_key)
-            author = ref_data.get('author', '')
-            year = ref_data.get('year', 'n.d.')
-            source = ref_data.get('source', '')
-            url = ref_data.get('url', '')
-            note = ref_data.get('note', '')
-
-            # Build BibTeX entry
-            content.append(f"@{entry_type}{{{sanitized_key},")
-
-            # Title (required for all types)
-            # Escape special LaTeX characters
-            title_escaped = title.replace('&', '\\&').replace('%', '\\%')
-            content.append(f"  title = {{{title_escaped}}},")
-
-            # Author/organization
-            if author:
-                author_escaped = author.replace('&', '\\&')
-                if entry_type in ['report', 'techreport', 'legislation']:
-                    content.append(f"  institution = {{{author_escaped}}},")
-                else:
-                    content.append(f"  author = {{{author_escaped}}},")
-
-            # Year
-            content.append(f"  year = {{{year}}},")
-
-            # Source/journal/publisher
-            if source:
-                source_escaped = source.replace('&', '\\&')
-                if entry_type == 'article':
-                    content.append(f"  journal = {{{source_escaped}}},")
-                elif entry_type in ['book', 'report', 'techreport']:
-                    content.append(f"  publisher = {{{source_escaped}}},")
-
-            # URL (with proper escaping)
-            if url:
-                url_escaped = url.replace('&', '\\&').replace('%', '\\%')
-                content.append(f"  url = {{{url_escaped}}},")
-                content.append("  urldate = {2025-01-20},")
-
-            # Note (additional context)
-            if note:
-                note_escaped = note.replace('&', '\\&').replace('%', '\\%')
-                # Truncate if too long
-                if len(note_escaped) > 200:
-                    note_escaped = note_escaped[:197] + "..."
-                content.append(f"  note = {{{note_escaped}}},")
-
-            content.append("}")
-            content.append("")
-            entries_with_data += 1
-
-        else:
-            # Fallback: create minimal placeholder entry
-            content.append(f"@misc{{{sanitized_key},")
-            content.append(f"  title = {{{citation_key}}},")
-            content.append(f"  note = {{See https://warondisease.org/knowledge/references.html\\#{citation_key}}},")
-            content.append(f"  url = {{https://warondisease.org/knowledge/references.html\\#{citation_key}}},")
-            content.append("}")
-            content.append("")
-            entries_placeholder += 1
-
-    # Write file
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(content))
-
-    print(f"[OK] Generated {output_path}")
-    print(f"     {len(citations)} unique citations")
-    print(f"     {entries_with_data} with full citation data")
-    if entries_placeholder > 0:
-        print(f"     {entries_placeholder} placeholder entries (missing data in references.qmd)")
+# Generator functions moved to dih_models/ for better code organization:
+# - generate_variables_yml() -> dih_models/variables_yml_generator.py
+# - generate_reference_ids_enum() -> dih_models/reference_ids_generator.py
+# - generate_bibtex() -> dih_models/bibtex_generator.py
+# - generate_parameters_and_calculations_qmd() -> dih_models/parameters_and_calculations_qmd_generator.py
+# - generate_uncertainty_section() -> dih_models/quarto_formatting.py
+# - Chart generation functions (5 functions) -> dih_models/chart_generators.py
 
 
 def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: Path):
