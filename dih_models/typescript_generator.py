@@ -434,29 +434,34 @@ def generate_typescript_parameters(
 
         # getSourceUrl helper
         content.append("/**")
-        content.append(" * Convert internal QMD path to published URL")
+        content.append(" * Get URL from sourceRef")
+        content.append(" * ")
+        content.append(" * Note: Internal QMD paths are automatically converted to URLs during")
+        content.append(" * generation, so this function typically just returns the sourceRef as-is.")
+        content.append(" * Returns undefined for citation IDs (use getCitation() instead).")
         content.append(" * ")
         content.append(" * Examples:")
-        content.append(" *   /knowledge/economics/campaign-budget.qmd")
+        content.append(" *   https://impact.dih.earth/knowledge/economics/campaign-budget")
         content.append(" *   -> https://impact.dih.earth/knowledge/economics/campaign-budget")
         content.append(" *")
-        content.append(" *   /knowledge/appendix/peace-dividend.qmd#calculations")
-        content.append(" *   -> https://impact.dih.earth/knowledge/appendix/peace-dividend#calculations")
+        content.append(" *   \"antidepressant-trial-exclusion-rates\" (citation ID)")
+        content.append(" *   -> undefined (use getCitation() instead)")
         content.append(" */")
         content.append("export function getSourceUrl(sourceRef: string | undefined): string | undefined {")
         content.append("  if (!sourceRef) return undefined;")
         content.append("")
-        content.append("  // If it's already a full URL, return as-is")
+        content.append("  // If it's already a full URL, return as-is (most common case)")
         content.append("  if (sourceRef.startsWith('http://') || sourceRef.startsWith('https://')) {")
         content.append("    return sourceRef;")
         content.append("  }")
         content.append("")
-        content.append("  // If it's a citation ID (no slashes, no .qmd), return undefined")
-        content.append("  if (!sourceRef.includes('/') && !sourceRef.includes('.qmd')) {")
+        content.append("  // If it's a citation ID (no slashes), return undefined")
+        content.append("  // Caller should use getCitation() to look up citation details")
+        content.append("  if (!sourceRef.includes('/')) {")
         content.append("    return undefined;")
         content.append("  }")
         content.append("")
-        content.append("  // Convert internal QMD path to public URL")
+        content.append("  // Fallback: convert any remaining internal paths (shouldn't happen)")
         content.append("  const base = 'https://impact.dih.earth';")
         content.append("  const path = sourceRef")
         content.append("    .replace(/^\\//, '')      // Remove leading slash")
@@ -641,13 +646,30 @@ def _generate_parameter_constant(
                 source_ref = source_ref.value
             else:
                 source_ref = str(source_ref)
+
+            # Convert internal QMD paths to published URLs
+            if '/' in source_ref or '.qmd' in source_ref:
+                # This is an internal path, convert to URL
+                if not source_ref.startswith('http://') and not source_ref.startswith('https://'):
+                    base = 'https://impact.dih.earth'
+                    path = source_ref.replace('//', '/').lstrip('/')  # Normalize slashes
+                    path = path.replace('.qmd#', '#').replace('.qmd', '')  # Remove .qmd
+                    source_ref = f"{base}/{path}"
+
             lines.append(f"  sourceRef: {_format_typescript_value(source_ref)},")
 
             # Collect citation for the citations lookup (don't embed)
-            if citation_data and '/' not in source_ref and '.qmd' not in source_ref:
-                ref_data = citation_data.get(source_ref)
+            # Only for citation IDs (no slashes, no .qmd in original)
+            original_ref = getattr(value_obj, "source_ref", None)
+            if hasattr(original_ref, 'value'):
+                original_ref = original_ref.value
+            else:
+                original_ref = str(original_ref) if original_ref else None
+
+            if citation_data and original_ref and '/' not in original_ref and '.qmd' not in original_ref:
+                ref_data = citation_data.get(original_ref)
                 if ref_data:
-                    csl_json = _convert_to_csl_json(source_ref, ref_data)
+                    csl_json = _convert_to_csl_json(original_ref, ref_data)
                     if csl_json:
                         citation = csl_json
 

@@ -1837,7 +1837,7 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   displayName: "Combined Peace and Health Dividends for ROI Calculation",
   description: "Combined peace and health dividends for ROI calculation",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/peace-dividend-calculations.qmd#peace-dividend-composition",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/peace-dividend-calculations#peace-dividend-composition",
   confidence: "high",
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
 };
@@ -1852,7 +1852,7 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
   displayName: "Total Annual dFDA Operational Costs",
   description: "Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   formula: "PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
   latex: "OPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)} = \\$40M",
@@ -1868,7 +1868,7 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   displayName: "dFDA Annual Benefit: R&D Savings",
   description: "Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
 };
@@ -1900,7 +1900,7 @@ export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   displayName: "dFDA Annual Net Savings (R&D Only)",
   description: "Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#net-savings",
   confidence: "high",
   formula: "GROSS_SAVINGS - ANNUAL_OPEX",
   latex: "Savings_{net} = \\$41.5B - \\$0.04B = \\$41.46B",
@@ -1915,7 +1915,7 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   displayName: "dFDA Total NPV Annual OPEX",
   description: "Total NPV annual opex (dFDA core + DIH initiatives)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   formula: "DFDA_OPEX + DIH_OPEX",
   latex: "C_{op} = \\$0.01895B + \\$0.02110B = \\$0.04005B \\text{ (annual operational cost)}",
@@ -1931,7 +1931,7 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
   displayName: "NPV of dFDA Benefits (R&D Only, 10-Year Discounted)",
   description: "NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-benefit",
   confidence: "high",
   formula: "Sum of discounted annual net R&D savings with linear adoption ramp",
   latex: "PV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}",
@@ -1947,7 +1947,7 @@ export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
   displayName: "NPV Net Benefit (R&D Only, Conservative)",
   description: "NPV net benefit using R&D savings only (most conservative financial estimate, excludes regulatory delay health value)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-net-benefit",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-net-benefit",
   confidence: "high",
   formula: "NPV of net R&D savings with 5-year linear adoption ramp",
   latex: "Benefit_{NPV} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}",
@@ -1962,7 +1962,7 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   displayName: "dFDA Present Value of Annual OPEX Over 10 Years",
   description: "Present value of annual opex over 10 years (NPV formula)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-calculation",
   confidence: "high",
   formula: "OPEX × [(1 - (1 + r)^-T) / r]",
   latex: "PV_{opex} = \\$0.04005B \\times \\frac{1 - 1.08^{-10}}{0.08} \\approx \\$0.269B",
@@ -1977,7 +1977,7 @@ export const DFDA_NPV_TOTAL_COST: Parameter = {
   displayName: "dFDA Total NPV Cost",
   description: "Total NPV cost (upfront + PV of annual opex)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-total-cost",
   confidence: "high",
   formula: "UPFRONT + PV_OPEX",
   latex: "TotalCost_{NPV} = \\$0.26975B + \\$0.269B \\approx \\$0.54B",
@@ -1992,7 +1992,7 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   displayName: "dFDA Total NPV Upfront Costs",
   description: "Total NPV upfront costs (dFDA core + DIH initiatives)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   formula: "DFDA_BUILD + DIH_INITIATIVES",
   latex: "C_0 = \\$0.040B + \\$0.22975B = \\$0.26975B \\text{ (upfront cost)}",
@@ -2008,7 +2008,7 @@ export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
   displayName: "dFDA Annual Benefit: R&D Savings",
   description: "Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
 };
@@ -2022,7 +2022,7 @@ export const DFDA_RD_SAVINGS_DAILY: Parameter = {
   displayName: "Daily R&D Savings from Trial Cost Reduction",
   description: "Daily R&D savings from trial cost reduction (opportunity cost of delay)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#daily-opportunity-cost-of-inaction",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction",
   confidence: "high",
   formula: "ANNUAL_RD_SAVINGS ÷ DAYS_PER_YEAR",
   latex: "Savings_{daily} = \\frac{\\$41.5B}{365} = \\$113.7M",
@@ -2037,7 +2037,7 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   displayName: "ROI from dFDA R&D Savings Only",
   description: "ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "NPV_BENEFIT ÷ NPV_TOTAL_COST",
   latex: "ROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463",
@@ -2052,7 +2052,7 @@ export const DFDA_ROI_SIMPLE: Parameter = {
   displayName: "dFDA Simple ROI Without NPV Adjustment",
   description: "Simple ROI without NPV adjustment (gross savings / annual opex)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
   formula: "GROSS_SAVINGS ÷ ANNUAL_OPEX",
 };
@@ -2079,7 +2079,7 @@ export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   displayName: "Patients Fundable Annually",
   description: "Number of patients fundable annually at RECOVERY trial cost",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd#funding-allocation",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
 };
@@ -2109,7 +2109,7 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   displayName: "Annual Clinical Trial Patient Subsidies",
   description: "Annual clinical trial patient subsidies (all medical research funds after dFDA operations)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd#funding-allocation",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
   latex: "TrialSubsidies = \\$24.462B - \\$0.04B = \\$24.422B",
@@ -2125,7 +2125,7 @@ export const DISEASE_ERADICATION_DELAY_DALYS: Parameter = {
   displayName: "Total DALYs Lost from Disease Eradication Delay",
   description: "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "medium",
   formula: "YLL + YLD",
   latex: "DALY_{total} = 7.03B \\text{ (YLL)} + 0.87B \\text{ (YLD)} = 7.90B",
@@ -2142,7 +2142,7 @@ export const DISEASE_ERADICATION_DELAY_DEATHS_TOTAL: Parameter = {
   displayName: "Total Deaths from Disease Eradication Delay",
   description: "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#disease-eradication-delay",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#disease-eradication-delay",
   confidence: "medium",
   formula: "ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
   latex: "D_{total} = 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M",
@@ -2160,7 +2160,7 @@ export const DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS: Parameter = {
   displayName: "Total Economic Loss from Disease Eradication Delay",
   description: "Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#economic-valuation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#economic-valuation",
   confidence: "medium",
   formula: "DALYS_TOTAL × VSLY",
   latex: "Loss = 7.90B \\times \\$150k = \\$1.185\\text{ quadrillion}",
@@ -2176,7 +2176,7 @@ export const DISEASE_ERADICATION_DELAY_YLD: Parameter = {
   displayName: "Years Lived with Disability During Disease Eradication Delay",
   description: "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "medium",
   formula: "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
 };
@@ -2191,7 +2191,7 @@ export const DISEASE_ERADICATION_DELAY_YLL: Parameter = {
   displayName: "Years of Life Lost from Disease Eradication Delay",
   description: "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "medium",
   formula: "DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
   latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
@@ -2213,7 +2213,7 @@ export const DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL: Parameter = {
   displayName: "Total Deaths from Disease Eradication + Innovation Acceleration",
   description: "Total deaths from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag elimination through innovation cascade effects: faster development cycles, lower barriers enabling more drugs, earlier phase starts. The 2× multiplier is supported by research showing 50% timeline reductions achievable (Nature 2023) and adaptive trials generating millions of additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2) × 8.2 years.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics",
+  sourceRef: "https://impact.dih.earth/knowledge/references#pharmaceutical-innovation-acceleration-economics",
   confidence: "low",
   formula: "(ANNUAL_DEATHS × 2) × EFFICACY_LAG_YEARS",
   latex: "D_{total} = (54.75M \\times 2) \\times 8.2 = 898M",
@@ -2238,7 +2238,7 @@ export const DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL: Paramete
   displayName: "Total Economic Loss from Disease Eradication + Innovation Acceleration",
   description: "Total economic loss from disease eradication delay plus innovation acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents combined timeline and volume effects from eliminating Phase 2-4 cost barriers. Research shows: (1) Timeline acceleration of 50% achievable through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024, Health Economics), (3) Cost barrier elimination enables more drugs to reach viability. The 2× factor conservatively represents either 2× timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency framework suggests optimal manufacturer value share ~20% maximizes long-term population health (Woods 2024).",
   sourceType: "calculated",
-  sourceRef: "/knowledge/references.qmd#pharmaceutical-innovation-acceleration-economics",
+  sourceRef: "https://impact.dih.earth/knowledge/references#pharmaceutical-innovation-acceleration-economics",
   confidence: "low",
   formula: "PRIMARY_TOTAL × 2 (combined timeline + volume effects)",
   latex: "Loss_{total} = \\$1,286T \\times 2 = \\$2,572T",
@@ -2253,7 +2253,7 @@ export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   displayName: "Coverage Factor of Treaty Funding vs dFDA OPEX",
   description: "Coverage factor of treaty funding vs dFDA opex (sustainability margin)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/strategy/roadmap.qmd#sustainability",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#sustainability",
   confidence: "high",
   formula: "TREATY_FUNDING ÷ DFDA_OPEX",
   latex: "Coverage = \\$27.18B / \\$0.04B = 679x",
@@ -2315,7 +2315,7 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
   displayName: "Total Annual Conflict Deaths Globally",
   description: "Total annual conflict deaths globally (sum of combat, terror, state violence)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#death-accounting",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#death-accounting",
   confidence: "high",
   formula: "COMBAT + TERROR + STATE_VIOLENCE",
   latex: "Deaths_{total} = 233,600 \\text{ (combat)} + 8,300 \\text{ (terror)} + 2,700 \\text{ (state)} = 244,600",
@@ -2330,7 +2330,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   displayName: "Annual Cost of Combat Deaths",
   description: "Annual cost of combat deaths (deaths × VSL)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#human-cost",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "COMBAT_DEATHS × VSL ",
 };
@@ -2344,7 +2344,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
   displayName: "Annual Cost of State Violence Deaths",
   description: "Annual cost of state violence deaths (deaths × VSL)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#human-cost",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "STATE_DEATHS × VSL ",
 };
@@ -2358,7 +2358,7 @@ export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
   displayName: "Annual Cost of Terror Deaths",
   description: "Annual cost of terror deaths (deaths × VSL)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#human-cost",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "TERROR_DEATHS × VSL ",
 };
@@ -2373,7 +2373,7 @@ export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
   displayName: "Total Annual Human Life Losses from Conflict",
   description: "Total annual human life losses from conflict (sum of combat, terror, state violence)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#human-cost",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#human-cost",
   confidence: "high",
   formula: "COMBAT_COST + TERROR_COST + STATE_VIOLENCE_COST",
   latex: "Cost_{human} = \\$2,336B \\text{ (combat)} + \\$83B \\text{ (terror)} + \\$27B \\text{ (state)} = \\$2,446B",
@@ -2389,7 +2389,7 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
   displayName: "Total Annual Infrastructure Destruction",
   description: "Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#infrastructure-damage",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#infrastructure-damage",
   confidence: "high",
   formula: "TRANSPORT + ENERGY + COMMS + WATER + EDUCATION + HEALTHCARE",
   latex: "Infra_{damage} = \\$487B \\text{ (trans)} + \\$422B \\text{ (nrg)} + \\$298B \\text{ (comms)} + \\$268B \\text{ (water)} + \\$235B \\text{ (edu)} + \\$166B \\text{ (hlth)} = \\$1,875B",
@@ -2405,7 +2405,7 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
   displayName: "Total Annual Trade Disruption",
   description: "Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#trade-disruption",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#trade-disruption",
   confidence: "high",
   formula: "SHIPPING + SUPPLY_CHAIN + ENERGY_PRICE + CURRENCY",
   latex: "Trade_{disruption} = \\$247B \\text{ (ship)} + \\$187B \\text{ (supply)} + \\$125B \\text{ (nrg)} + \\$57B \\text{ (curr)} = \\$616B",
@@ -2421,7 +2421,7 @@ export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
   displayName: "Total Annual Direct War Costs",
   description: "Total annual direct war costs (military spending + infrastructure + human life + trade disruption)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#direct-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#direct-costs",
   confidence: "high",
   formula: "MILITARY + INFRASTRUCTURE + HUMAN_LIFE + TRADE",
   latex: "DirectCosts = \\$2,718B \\text{ (mil)} + \\$1,875B \\text{ (infra)} + \\$2,446B \\text{ (human)} + \\$616B \\text{ (trade)} = \\$7,655B",
@@ -2437,7 +2437,7 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   displayName: "Total Annual Indirect War Costs",
   description: "Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#indirect-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#indirect-costs",
   confidence: "high",
   formula: "OPPORTUNITY + VETERANS + REFUGEES + ENVIRONMENT + MENTAL_HEALTH + LOST_CAPITAL",
   latex: "IndirectCosts = \\$2.7T \\text{ (opp cost)} + \\$200B \\text{ (vet)} + \\$150B \\text{ (ref)} + \\$100B \\text{ (env)} + \\$232B \\text{ (ptsd)} + \\$300B \\text{ (hum cap)} = \\$3.7T",
@@ -2452,7 +2452,7 @@ export const GLOBAL_ANNUAL_WAR_TOTAL_COST: Parameter = {
   displayName: "Total Annual Cost of War Worldwide",
   description: "Total annual cost of war worldwide (direct + indirect costs)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#total-cost",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#total-cost",
   confidence: "high",
   formula: "DIRECT_COSTS + INDIRECT_COSTS",
   latex: "TotalWarCost = \\$7,655B \\text{ (direct)} + \\$3,700B \\text{ (indirect)} = \\$11,355B",
@@ -2467,7 +2467,7 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   displayName: "Cost per Life Saved by Medical Research",
   description: "Cost per life saved by medical research",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#grotesque-mathematics",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#grotesque-mathematics",
   confidence: "high",
   formula: "(RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED",
   latex: "CostPerLifeSaved = \\frac{\\$67.5B \\times 10^9}{4,200,000} \\approx \\$16,071",
@@ -2510,7 +2510,7 @@ export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   displayName: "Per Capita Military Spending Globally",
   description: "Per capita military spending globally",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#per-capita",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#per-capita",
   confidence: "high",
   formula: "MILITARY_SPENDING ÷ POPULATION",
   latex: "PerCapita_{military} = \\$2,718B / 8.0B = \\$339.75",
@@ -2525,7 +2525,7 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   displayName: "Global Military Spending After 1% Treaty Reduction",
   description: "Global military spending after 1% treaty reduction",
   sourceType: "calculated",
-  sourceRef: "/knowledge/strategy/treaty-adoption-strategy.qmd#post-treaty",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/treaty-adoption-strategy#post-treaty",
   confidence: "high",
   formula: "MILITARY_SPENDING × (1 - REDUCTION)",
   latex: "PostTreaty_{military} = \\$2,718B \\times 0.99 = \\$2,690.82B",
@@ -2541,7 +2541,7 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   displayName: "Total Annual Cost of War and Disease with All Externalities",
   description: "Total annual cost of war and disease with all externalities (direct + indirect costs for both)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/humanity-budget-overview.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/humanity-budget-overview",
   confidence: "high",
   formula: "WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
 };
@@ -2558,7 +2558,7 @@ export const HISTORICAL_PROGRESS_DEATHS_TOTAL: Parameter = {
   displayName: "Total Deaths from Historical Progress Delays",
   description: "Total deaths from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on 12M deaths/year rate × 8.2 years.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
   confidence: "high",
   formula: "12M × EFFICACY_LAG_YEARS",
   latex: "D_{total} = 12M \\times 8.2 = 98.4M",
@@ -2574,7 +2574,7 @@ export const HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL: Parameter = {
   displayName: "Total Economic Loss from Historical Progress Delays",
   description: "Total economic loss from delaying existing drugs over 8.2-year efficacy lag (CONSERVATIVE FLOOR). One-time benefit of eliminating Phase 2-4 delay.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#historical-progress",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#historical-progress",
   confidence: "high",
   formula: "DEATHS_TOTAL × YLL × VSLY",
   latex: "Loss_{total} = 98.4M \\times 17 \\times \\$150k = \\$251T",
@@ -2589,7 +2589,7 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   displayName: "IAB Mechanism Benefit-Cost Ratio",
   description: "Benefit-Cost Ratio of the IAB mechanism itself",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
 };
@@ -2634,7 +2634,7 @@ export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
   displayName: "Medical Research Spending as Percentage of Total Disease Burden",
   description: "Medical research spending as percentage of total disease burden",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "MED_RESEARCH ÷ TOTAL_BURDEN",
   latex: "\\frac{\\$67.5\\text{B}}{\\$128.6\\text{T}} = 0.052\\%",
@@ -2663,7 +2663,7 @@ export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
   displayName: "Ratio of Military Spending to Medical Research Spending",
   description: "Ratio of military spending to medical research spending",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#misallocation",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#misallocation",
   confidence: "high",
   formula: "MILITARY_SPENDING ÷ MEDICAL_RESEARCH",
   latex: "Ratio = \\frac{\\$2,718B}{\\$67.5B} \\approx 40.3:1",
@@ -2678,7 +2678,7 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   displayName: "Misallocation Factor: Cost to Kill vs Cost to Save",
   description: "Misallocation factor: cost to kill vs cost to save",
   sourceType: "calculated",
-  sourceRef: "/knowledge/problem/cost-of-war.qmd#grotesque-mathematics",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/cost-of-war#grotesque-mathematics",
   confidence: "high",
   formula: "COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
   latex: "Misallocation = \\frac{\\$46.4M}{\\$16,071} \\approx 2,889x",
@@ -2693,7 +2693,7 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   displayName: "Annual Peace Dividend from 1% Reduction in Total War Costs",
   description: "Annual peace dividend from 1% reduction in total war costs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/peace-dividend-calculations.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/peace-dividend-calculations",
   confidence: "high",
   formula: "TOTAL_WAR_COST × 1%",
 };
@@ -2723,7 +2723,7 @@ export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Direct War Costs",
   description: "Annual savings from 1% reduction in direct war costs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "DIRECT_COSTS × 1%",
 };
@@ -2737,7 +2737,7 @@ export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Environmental Damage",
   description: "Annual savings from 1% reduction in environmental damage",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "ENVIRONMENTAL_DAMAGE × 1%",
 };
@@ -2751,7 +2751,7 @@ export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Human Casualties",
   description: "Annual savings from 1% reduction in human casualties",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "HUMAN_LIFE_LOSSES × 1%",
 };
@@ -2765,7 +2765,7 @@ export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Indirect War Costs",
   description: "Annual savings from 1% reduction in indirect war costs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "INDIRECT_COSTS × 1%",
 };
@@ -2779,7 +2779,7 @@ export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Infrastructure Destruction",
   description: "Annual savings from 1% reduction in infrastructure destruction",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "INFRASTRUCTURE_DESTRUCTION × 1%",
 };
@@ -2793,7 +2793,7 @@ export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Lost Economic Growth",
   description: "Annual savings from 1% reduction in lost economic growth",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "LOST_ECONOMIC_GROWTH × 1%",
 };
@@ -2807,7 +2807,7 @@ export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Lost Human Capital",
   description: "Annual savings from 1% reduction in lost human capital",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "LOST_HUMAN_CAPITAL × 1%",
 };
@@ -2821,7 +2821,7 @@ export const PEACE_DIVIDEND_PTSD: Parameter = {
   displayName: "Annual Savings from 1% Reduction in PTSD and Mental Health Costs",
   description: "Annual savings from 1% reduction in PTSD and mental health costs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "PTSD_COSTS × 1%",
 };
@@ -2835,7 +2835,7 @@ export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Refugee Support Costs",
   description: "Annual savings from 1% reduction in refugee support costs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "REFUGEE_SUPPORT × 1%",
 };
@@ -2849,7 +2849,7 @@ export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Trade Disruption",
   description: "Annual savings from 1% reduction in trade disruption",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "TRADE_DISRUPTION × 1%",
 };
@@ -2863,7 +2863,7 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   displayName: "Annual Savings from 1% Reduction in Veteran Healthcare Costs",
   description: "Annual savings from 1% reduction in veteran healthcare costs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/peace-dividend.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/peace-dividend",
   confidence: "high",
   formula: "VETERAN_HEALTHCARE × 1%",
 };
@@ -2880,7 +2880,7 @@ export const PERSONAL_LIFETIME_WEALTH: Parameter = {
   displayName: "Personal Lifetime Wealth (Age 30, 1% Treaty)",
   description: "Personal lifetime wealth benefit for a 30-year-old with $50K income under 1% treaty. Life extension uncertainty (5-50 years) propagates through Monte Carlo to show full range of outcomes from conservative antibiotic precedent to optimistic aging reversal scenarios.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations",
   confidence: "medium",
   formula: "NPV(peace_dividend + healthcare_savings + productivity_gains + caregiver_savings + gdp_boost + extended_earnings)",
   latex: "\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\frac{B_t}{(1+r)^t}",
@@ -2922,7 +2922,7 @@ export const SUFFERING_HOURS_ELIMINATED_TOTAL: Parameter = {
   displayName: "Total Suffering Hours Eliminated",
   description: "Total hours of human suffering eliminated by 8.2-year disease eradication timeline shift (one-time benefit from YLD component, not annual recurring)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#daly-calculation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#daly-calculation",
   confidence: "medium",
   formula: "YLD × HOURS_PER_YEAR",
   latex: "Hours = 868M \\text{ (YLD)} \\times 8{,}760 \\text{ (hrs/yr)} = 7.60T",
@@ -3021,7 +3021,7 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   displayName: "Total Global Research Funding (Baseline + 1% treaty Funding)",
   description: "Total global research funding (baseline + 1% treaty funding)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
 };
@@ -3035,7 +3035,7 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   displayName: "Treaty System Benefit Multiplier vs Childhood Vaccination Programs",
   description: "Treaty system benefit multiplier vs childhood vaccination programs",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd#better-than-the-best-charities",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics#better-than-the-best-charities",
   confidence: "high",
   formula: "TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
 };
@@ -3049,7 +3049,7 @@ export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
   displayName: "Amortized Annual Treaty Campaign Cost",
   description: "Amortized annual campaign cost (total cost ÷ campaign duration)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/strategy/roadmap.qmd#campaign-budget",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#campaign-budget",
   confidence: "high",
   formula: "TOTAL_COST ÷ DURATION",
   latex: "AnnualCost = \\$1B / 4 = \\$0.25B",
@@ -3064,7 +3064,7 @@ export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
   displayName: "Total 1% Treaty Campaign Cost",
   description: "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/fundraising-strategy#capital-structure-campaign-vs-implementation",
   confidence: "high",
   formula: "REFERENDUM + LOBBYING + RESERVE",
   latex: "CampaignCost = \\$300M \\text{ (ref)} + \\$650M \\text{ (lob)} + \\$50M \\text{ (res)} = \\$1.0B",
@@ -3080,7 +3080,7 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   displayName: "Target Voting Bloc Size for Campaign",
   description: "Target voting bloc size for campaign (3.5% of global population - critical mass for social change)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/strategy/roadmap.qmd#voting-bloc",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#voting-bloc",
   confidence: "high",
   formula: "GLOBAL_POPULATION × 3.5%",
 };
@@ -3097,7 +3097,7 @@ export const TREATY_COMPLETE_ROI_ALL_BENEFITS: Parameter = {
   displayName: "Treaty ROI - Lag Elimination (PRIMARY)",
   description: "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "medium",
   formula: "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
   latex: "ROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\$1.00B} = 1{,}286{,}242:1",
@@ -3117,7 +3117,7 @@ export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
   displayName: "Cost per DALY Averted (Timeline Shift)",
   description: "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "high",
   formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
   latex: "\\text{Cost/DALY} = \\frac{\\$1.0B}{7.90B} = \\$0.127",
@@ -3135,7 +3135,7 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   displayName: "Expected Cost per DALY (Risk-Adjusted)",
   description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis",
   confidence: "low",
   formula: "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
   latex: "E[\\text{Cost/DALY}] = \\frac{\\text{Cost}_{conditional}}{P_{success}}",
@@ -3164,7 +3164,7 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
   displayName: "Annual Lives Saved from 1% Reduction in Conflict Deaths",
   description: "Annual lives saved from 1% reduction in conflict deaths",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global",
   confidence: "high",
   formula: "TOTAL_DEATHS × REDUCTION_PCT",
 };
@@ -3179,7 +3179,7 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   displayName: "1% treaty Basic Annual Benefits (Peace + R&D Savings)",
   description: "Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits",
   confidence: "high",
   formula: "PEACE_DIVIDEND + DFDA_RD_SAVINGS",
 };
@@ -3193,7 +3193,7 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   displayName: "Annual QALYs Gained from Peace Dividend",
   description: "Annual QALYs gained from peace dividend (lives saved × QALYs/life)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global",
   confidence: "high",
   formula: "LIVES_SAVED × QALYS_PER_LIFE",
 };
@@ -3209,7 +3209,7 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
 };
@@ -3225,7 +3225,7 @@ export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
   displayName: "Treaty ROI - Historical Rate (Conservative Floor)",
   description: "Treaty ROI based on historical rate of drug development (existing drugs only, conservative floor). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "high",
   formula: "HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
 };
@@ -3243,7 +3243,7 @@ export const TREATY_ROI_INNOVATION_ACCELERATION: Parameter = {
   displayName: "Treaty ROI - Innovation Acceleration (Optimistic)",
   description: "Treaty ROI based on lag elimination plus innovation acceleration effects (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier represents combined timeline and volume effects (Nature 2023, Woods et al. 2024).",
   sourceType: "calculated",
-  sourceRef: "/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "low",
   formula: "DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL ÷ CAMPAIGN_COST",
 };
@@ -3260,7 +3260,7 @@ export const TREATY_ROI_LAG_ELIMINATION: Parameter = {
   displayName: "Treaty ROI - Lag Elimination (PRIMARY)",
   description: "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/figures/dfda-investment-returns-bar-chart.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/figures/dfda-investment-returns-bar-chart",
   confidence: "medium",
   formula: "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
   latex: "ROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\$1.00B} = 1{,}286{,}242:1",
@@ -3275,7 +3275,7 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   displayName: "Total Annual Treaty System Costs",
   description: "Total annual system costs (campaign + dFDA operations)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs",
   confidence: "high",
   formula: "CAMPAIGN_ANNUAL + DFDA_OPEX",
 };
@@ -3291,7 +3291,7 @@ export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
   displayName: "1% treaty Recurring Annual Benefits",
   description: "Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are one-time timeline shifts, NOT included here.",
   sourceType: "calculated",
-  sourceRef: "/knowledge/economics/economics.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
 };
@@ -3349,7 +3349,7 @@ export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   displayName: "Ratio of Type Ii Error Cost to Type I Error Benefit",
   description: "Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#risk-analysis",
   confidence: "medium",
   formula: "TYPE_II_COST ÷ TYPE_I_BENEFIT",
 };
@@ -3364,7 +3364,7 @@ export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
   displayName: "Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)",
   description: "Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/regulatory-mortality-analysis#risk-analysis",
   confidence: "low",
   formula: "THALIDOMIDE_DALYS_PER_EVENT × 62 years",
   latex: "41{,}760 \\times 62 = 2.59M \\text{ DALYs}",
@@ -3380,7 +3380,7 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   displayName: "US Major Diseases Total Annual Cost",
   description: "Total annual US cost of major diseases (diabetes, Alzheimer's, heart disease, cancer)",
   sourceType: "calculated",
-  sourceRef: "/knowledge/solution/aligning-incentives.qmd#insurance-companies",
+  sourceRef: "https://impact.dih.earth/knowledge/solution/aligning-incentives#insurance-companies",
   confidence: "high",
   formula: "DIABETES + ALZHEIMERS + HEART + CANCER",
 };
@@ -3398,7 +3398,7 @@ export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
   displayName: "Celebrity and Influencer Endorsements",
   description: "Celebrity and influencer endorsements",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3411,7 +3411,7 @@ export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
   displayName: "Community Organizing and Ambassador Program Budget",
   description: "Community organizing and ambassador program budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3424,7 +3424,7 @@ export const CAMPAIGN_CONTINGENCY: Parameter = {
   displayName: "Contingency Fund for Unexpected Costs",
   description: "Contingency fund for unexpected costs",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [30000000.0, 80000000.0],
 };
@@ -3438,7 +3438,7 @@ export const CAMPAIGN_DEFENSE_CONVERSION: Parameter = {
   displayName: "Defense Industry Conversion Program",
   description: "Defense industry conversion program",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [40000000.0, 70000000.0],
 };
@@ -3452,7 +3452,7 @@ export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
   displayName: "Budget for Co-Opting Defense Industry Lobbyists",
   description: "Budget for co-opting defense industry lobbyists",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3465,7 +3465,7 @@ export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
   displayName: "Healthcare Industry Alignment and Partnerships",
   description: "Healthcare industry alignment and partnerships",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3478,7 +3478,7 @@ export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
   displayName: "Campaign Operational Infrastructure",
   description: "Campaign operational infrastructure",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3491,7 +3491,7 @@ export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
   displayName: "AI-Assisted Legal Work Budget",
   description: "AI-assisted legal work budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3504,7 +3504,7 @@ export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
   displayName: "Legal Defense Fund",
   description: "Legal defense fund",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3517,7 +3517,7 @@ export const CAMPAIGN_LEGAL_WORK: Parameter = {
   displayName: "Legal Drafting and Compliance Work",
   description: "Legal drafting and compliance work",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [50000000.0, 80000000.0],
 };
@@ -3531,7 +3531,7 @@ export const CAMPAIGN_LOBBYING_EU: Parameter = {
   displayName: "EU Lobbying Campaign Budget",
   description: "EU lobbying campaign budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3544,7 +3544,7 @@ export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
   displayName: "G20 Countries Lobbying Budget",
   description: "G20 countries lobbying budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3557,7 +3557,7 @@ export const CAMPAIGN_LOBBYING_US: Parameter = {
   displayName: "US Lobbying Campaign Budget",
   description: "US lobbying campaign budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3570,7 +3570,7 @@ export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
   displayName: "Maximum Mass Media Campaign Budget",
   description: "Maximum mass media campaign budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3583,7 +3583,7 @@ export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
   displayName: "Minimum Mass Media Campaign Budget",
   description: "Minimum mass media campaign budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3596,7 +3596,7 @@ export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
   displayName: "Opposition Research and Rapid Response",
   description: "Opposition research and rapid response",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3609,7 +3609,7 @@ export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
   displayName: "Phase 1 Campaign Budget",
   description: "Phase 1 campaign budget (Foundation, Year 1)",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3622,7 +3622,7 @@ export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
   displayName: "Phase 2 Campaign Budget",
   description: "Phase 2 campaign budget (Scale & Momentum, Years 2-3)",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3635,7 +3635,7 @@ export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
   displayName: "Pilot Program Testing in Small Countries",
   description: "Pilot program testing in small countries",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3648,7 +3648,7 @@ export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
   displayName: "Voting Platform and Technology Development",
   description: "Voting platform and technology development",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [25000000.0, 50000000.0],
 };
@@ -3662,7 +3662,7 @@ export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
   displayName: "Regulatory Compliance and Navigation",
   description: "Regulatory compliance and navigation",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3675,7 +3675,7 @@ export const CAMPAIGN_SCALING_PREP: Parameter = {
   displayName: "Scaling Preparation and Blueprints",
   description: "Scaling preparation and blueprints",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3688,7 +3688,7 @@ export const CAMPAIGN_STAFF_BUDGET: Parameter = {
   displayName: "Campaign Core Team Staff Budget",
   description: "Campaign core team staff budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3701,7 +3701,7 @@ export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
   displayName: "Super PAC Campaign Expenditures",
   description: "Super PAC campaign expenditures",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3714,7 +3714,7 @@ export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
   displayName: "Tech Industry Partnerships and Infrastructure",
   description: "Tech industry partnerships and infrastructure",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3727,7 +3727,7 @@ export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
   displayName: "Post-Victory Treaty Implementation Support",
   description: "Post-victory treaty implementation support",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
   confidenceInterval: [30000000.0, 55000000.0],
 };
@@ -3741,7 +3741,7 @@ export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
   displayName: "Viral Marketing Content Creation Budget",
   description: "Viral marketing content creation budget",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget",
   confidence: "high",
 };
 
@@ -3813,7 +3813,7 @@ export const DCT_PLATFORM_FUNDING_MEDIUM: Parameter = {
   displayName: "Mid-Range Funding for Commercial Dct Platform",
   description: "Mid-range funding for commercial DCT platform",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#analogous-rom",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#analogous-rom",
   confidence: "high",
 };
 
@@ -3838,7 +3838,7 @@ export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
   displayName: "Years to Reach Full dFDA Adoption",
   description: "Years to reach full dFDA adoption",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#adoption-curve",
   confidence: "high",
 };
 
@@ -3851,7 +3851,7 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   displayName: "dFDA Core Platform Annual OPEX",
   description: "dFDA core platform annual opex (midpoint of $11-26.5M)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   confidenceInterval: [11000000.0, 26500000.0],
 };
@@ -3865,7 +3865,7 @@ export const DFDA_NPV_UPFRONT_COST: Parameter = {
   displayName: "dFDA Core Platform Build Cost",
   description: "dFDA core platform build cost",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   confidenceInterval: [25000000.0, 65000000.0],
 };
@@ -3879,7 +3879,7 @@ export const DFDA_OPEX_COMMUNITY: Parameter = {
   displayName: "dFDA Community Support Costs",
   description: "dFDA community support costs",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   confidenceInterval: [1000000.0, 3000000.0],
 };
@@ -3893,7 +3893,7 @@ export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
   displayName: "dFDA Infrastructure Costs",
   description: "dFDA infrastructure costs (cloud, security)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   confidenceInterval: [5000000.0, 12000000.0],
 };
@@ -3907,7 +3907,7 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   displayName: "dFDA Overhead Percentage of Treaty Funding",
   description: "Percentage of treaty funding allocated to dFDA platform overhead",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/economics.qmd#funding-allocation",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "DFDA_OPEX / TREATY_FUNDING",
   latex: "DFDAOpexPct = \\$0.04B / \\$27.18B = 0.00147 = 0.15\\%",
@@ -3922,7 +3922,7 @@ export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
   displayName: "dFDA Maintenance Costs",
   description: "dFDA maintenance costs",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   confidenceInterval: [10000000.0, 22000000.0],
 };
@@ -3936,7 +3936,7 @@ export const DFDA_OPEX_REGULATORY: Parameter = {
   displayName: "dFDA Regulatory Coordination Costs",
   description: "dFDA regulatory coordination costs",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   confidenceInterval: [3000000.0, 8000000.0],
 };
@@ -3950,7 +3950,7 @@ export const DFDA_OPEX_STAFF: Parameter = {
   displayName: "dFDA Staff Costs",
   description: "dFDA staff costs (minimal, AI-assisted)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
   confidenceInterval: [7000000.0, 15000000.0],
 };
@@ -3965,7 +3965,7 @@ export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
   displayName: "dFDA Target Cost per Patient in USD",
   description: "Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-per-patient",
   confidence: "high",
 };
 
@@ -3978,7 +3978,7 @@ export const DFDA_UPFRONT_BUILD: Parameter = {
   displayName: "dFDA One-Time Build Cost",
   description: "dFDA one-time build cost (central estimate)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#build-costs",
   confidence: "high",
 };
 
@@ -3991,7 +3991,7 @@ export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   displayName: "dFDA One-Time Build Cost (Maximum)",
   description: "dFDA one-time build cost (high estimate)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#build-costs",
   confidence: "high",
 };
 
@@ -4004,7 +4004,7 @@ export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
   displayName: "DIH Broader Initiatives Annual OPEX",
   description: "DIH broader initiatives annual opex (medium case)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   confidenceInterval: [14000000.0, 32000000.0],
 };
@@ -4018,7 +4018,7 @@ export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
   displayName: "DIH Broader Initiatives Upfront Cost",
   description: "DIH broader initiatives upfront cost (medium case)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
   confidenceInterval: [150000000.0, 350000000.0],
 };
@@ -4033,7 +4033,7 @@ export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
   displayName: "Medical Research Percentage of Treaty Funding",
   description: "Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/economics.qmd#funding-allocation",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "MEDICAL_RESEARCH_FUNDING / TREATY_FUNDING",
   latex: "MedicalResearchPct = \\$21.744B / \\$27.18B = 0.80 = 80\\%",
@@ -4048,7 +4048,7 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
   displayName: "Patient Trial Subsidies Percentage of Treaty Funding",
   description: "Percentage of treaty funding going directly to patient trial subsidies",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/economics.qmd#funding-allocation",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
   formula: "TRIAL_SUBSIDIES / TREATY_FUNDING",
   latex: "TrialSubsidiesPct = \\$21.70B / \\$27.18B = 0.7985 = 79.85\\%",
@@ -4077,7 +4077,7 @@ export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
   displayName: "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths",
   description: "Ratio of annual disease deaths to 9/11 terrorism deaths",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/economics.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "ANNUAL_DISEASE_DEATHS ÷ 911_DEATHS",
   latex: "\\frac{54.75\\text{M disease deaths}}{3{,}000\\text{ terrorism deaths}} \\approx 18{,}274:1",
@@ -4092,7 +4092,7 @@ export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
   displayName: "Ratio of Annual Disease Deaths to War Deaths",
   description: "Ratio of annual disease deaths to war deaths",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/economics.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/economics",
   confidence: "high",
   formula: "ANNUAL_DISEASE_DEATHS ÷ WAR_DEATHS",
   latex: "\\frac{54.75\\text{M disease deaths}}{400{,}000\\text{ conflict deaths}} \\approx 137:1",
@@ -4107,7 +4107,7 @@ export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
   displayName: "Lifetime Benefit for Age 30 Baseline Scenario",
   description: "Lifetime benefit for age 30 baseline scenario ($4.3M)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/disease-eradication-personal-lifetime-wealth-calculations",
   confidence: "high",
   formula: "Total lifetime health gains from 1% treaty",
   latex: "Benefit = \\$4,300,000",
@@ -4137,7 +4137,7 @@ export const FAMILY_OFFICE_INVESTMENT_MIN: Parameter = {
   displayName: "Minimum Investment for Family Offices",
   description: "Minimum investment for family offices",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/victory-bonds.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/victory-bonds",
   confidence: "high",
 };
 
@@ -4211,7 +4211,7 @@ export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   displayName: "IAB Mechanism Annual Cost (High Estimate)",
   description: "Estimated annual cost of the IAB mechanism (high-end estimate including regulatory defense)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/incentive-alignment-bonds-paper.qmd#welfare-analysis",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/incentive-alignment-bonds-paper#welfare-analysis",
   confidence: "high",
   confidenceInterval: [160000000.0, 750000000.0],
 };
@@ -4239,7 +4239,7 @@ export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
   displayName: "Minimum Investment for Institutional Investors",
   description: "Minimum investment for institutional investors",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/victory-bonds.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/victory-bonds",
   confidence: "high",
 };
 
@@ -4252,7 +4252,7 @@ export const LOBBYIST_BOND_INVESTMENT_MAX: Parameter = {
   displayName: "Maximum Bond Investment for Lobbyist Incentives",
   description: "Maximum bond investment for lobbyist incentives",
   sourceType: "definition",
-  sourceRef: "/knowledge/strategy/roadmap.qmd#lobbyist-incentives",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#lobbyist-incentives",
   confidence: "high",
 };
 
@@ -4366,7 +4366,7 @@ export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
   displayName: "Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
   description: "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
   confidence: "low",
   confidenceInterval: [325000000.0, 1300000000.0],
 };
@@ -4381,7 +4381,7 @@ export const TREATY_CAMPAIGN_BUDGET_REFERENDUM: Parameter = {
   displayName: "Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance",
   description: "Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
   confidence: "medium",
   confidenceInterval: [180000000.0, 500000000.0],
 };
@@ -4395,7 +4395,7 @@ export const TREATY_CAMPAIGN_BUDGET_RESERVE: Parameter = {
   displayName: "Reserve Fund / Contingency Buffer",
   description: "Reserve fund / contingency buffer",
   sourceType: "definition",
-  sourceRef: "/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
+  sourceRef: "https://impact.dih.earth/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
   confidence: "medium",
   confidenceInterval: [20000000.0, 100000000.0],
 };
@@ -4409,7 +4409,7 @@ export const TREATY_CAMPAIGN_BUDGET_SUPER_PACS: Parameter = {
   displayName: "Campaign Budget for Super Pacs and Political Lobbying",
   description: "Campaign budget for Super PACs and political lobbying",
   sourceType: "definition",
-  sourceRef: "/knowledge/strategy/roadmap.qmd#campaign-budget",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#campaign-budget",
   confidence: "high",
 };
 
@@ -4422,7 +4422,7 @@ export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
   displayName: "Treaty Campaign Duration",
   description: "Treaty campaign duration (3-5 year range, using midpoint)",
   sourceType: "definition",
-  sourceRef: "/knowledge/strategy/roadmap.qmd",
+  sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap",
   confidence: "high",
   confidenceInterval: [3.0, 5.0],
 };
@@ -4436,7 +4436,7 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
   displayName: "Base Case Viral Referendum Budget",
   description: "Base case viral referendum budget (assumes flat $0.50/vote, optimistic)",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd#base-case-scenario",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget#base-case-scenario",
   confidence: "medium",
   formula: "PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE",
 };
@@ -4450,7 +4450,7 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC: Parameter = {
   displayName: "Realistic Viral Referendum Budget",
   description: "Realistic viral referendum budget (moderate tiered pricing)",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd#realistic-scenario",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget#realistic-scenario",
   confidence: "high",
   formula: "PLATFORM + VERIFICATION + MODERATE_TIERED_PAYMENTS",
   latex: "Budget_{realistic} = \\$35M_{platform} + \\$59M_{verification} + \\$126M_{tiered\\ payments} = \\$220M",
@@ -4466,7 +4466,7 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE: Parameter = {
   displayName: "Worst-Case Viral Referendum Budget",
   description: "Worst-case viral referendum budget (tiered pricing with increasing marginal costs)",
   sourceType: "definition",
-  sourceRef: "/knowledge/economics/campaign-budget.qmd#worst-case-scenario",
+  sourceRef: "https://impact.dih.earth/knowledge/economics/campaign-budget#worst-case-scenario",
   confidence: "medium",
   formula: "PLATFORM + VERIFICATION + TIERED_PAYMENTS",
   latex: "Budget_{worst} = \\$35M_{platform} + \\$59M_{verification} + \\$312M_{tiered\\ payments} = \\$406M",
@@ -6141,29 +6141,34 @@ export function getCitation(param: Parameter): Citation | undefined {
 }
 
 /**
- * Convert internal QMD path to published URL
+ * Get URL from sourceRef
+ * 
+ * Note: Internal QMD paths are automatically converted to URLs during
+ * generation, so this function typically just returns the sourceRef as-is.
+ * Returns undefined for citation IDs (use getCitation() instead).
  * 
  * Examples:
- *   /knowledge/economics/campaign-budget.qmd
+ *   https://impact.dih.earth/knowledge/economics/campaign-budget
  *   -> https://impact.dih.earth/knowledge/economics/campaign-budget
  *
- *   /knowledge/appendix/peace-dividend.qmd#calculations
- *   -> https://impact.dih.earth/knowledge/appendix/peace-dividend#calculations
+ *   "antidepressant-trial-exclusion-rates" (citation ID)
+ *   -> undefined (use getCitation() instead)
  */
 export function getSourceUrl(sourceRef: string | undefined): string | undefined {
   if (!sourceRef) return undefined;
 
-  // If it's already a full URL, return as-is
+  // If it's already a full URL, return as-is (most common case)
   if (sourceRef.startsWith('http://') || sourceRef.startsWith('https://')) {
     return sourceRef;
   }
 
-  // If it's a citation ID (no slashes, no .qmd), return undefined
-  if (!sourceRef.includes('/') && !sourceRef.includes('.qmd')) {
+  // If it's a citation ID (no slashes), return undefined
+  // Caller should use getCitation() to look up citation details
+  if (!sourceRef.includes('/')) {
     return undefined;
   }
 
-  // Convert internal QMD path to public URL
+  // Fallback: convert any remaining internal paths (shouldn't happen)
   const base = 'https://impact.dih.earth';
   const path = sourceRef
     .replace(/^\//, '')      // Remove leading slash
