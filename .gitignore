@@ -112,6 +112,6 @@ _quarto.yml
 # Generated outline file
 OUTLINE-GENERATED.MD
 
-# Generated analysis outputs (regenerate with: python scripts/generate-variables-yml.py)
+# Generated analysis outputs (regenerate with: python scripts/generate-everything-parameters-variables-calculations-references.py)
 _analysis/
 .chrome-automation-profile/

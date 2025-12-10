@@ -1275,10 +1275,10 @@ def main():
         import subprocess
 
         result = subprocess.run(
-            [sys.executable, "scripts/generate-variables-yml.py"], capture_output=True, text=True, timeout=120
+            [sys.executable, "scripts/generate-everything-parameters-variables-calculations-references.py"], capture_output=True, text=True, timeout=120
         )
         if result.returncode != 0:
-            print(f"ERROR: generate-variables-yml.py failed with exit code {result.returncode}", file=sys.stderr)
+            print(f"ERROR: generate-everything-parameters-variables-calculations-references.py failed with exit code {result.returncode}", file=sys.stderr)
             if result.stdout:
                 print(result.stdout, file=sys.stderr)
             if result.stderr:

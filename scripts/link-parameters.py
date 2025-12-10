@@ -235,7 +235,7 @@ def main():
     variables_yml = project_root / "_variables.yml"
     if not variables_yml.exists():
         print(f"[ERROR] {variables_yml} not found", file=sys.stderr)
-        print("        Run: python tools/generate-variables-yml.py", file=sys.stderr)
+        print("        Run: python tools/generate-everything-parameters-variables-calculations-references.py", file=sys.stderr)
         sys.exit(1)
 
     print(f"[*] Loading {variables_yml}...")

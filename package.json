@@ -87,7 +87,7 @@
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:pre-render": "python scripts/pre-render-validation.py",
     "validate:post-render": "python scripts/post-render-validation.py",
-    "generate:variables": "python scripts/generate-variables-yml.py",
+    "generate:variables": "python scripts/generate-everything-parameters-variables-calculations-references.py",
     "render:website": "python scripts/render-book-website.py",
     "render:economics": "python scripts/render-economics-website.py --output-dir _site/economics",
     "render:pdf": "python scripts/render-book-pdf.py",

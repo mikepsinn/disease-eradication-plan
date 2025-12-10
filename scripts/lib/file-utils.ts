@@ -399,7 +399,7 @@ export async function parseQuartoYml(): Promise<BookStructure> {
 /**
  * Gets all book chapter and appendix files, excluding references.qmd
  * This is the standard list of files to process for most review/edit operations
- * Also excludes auto-generated files from scripts/generate-variables-yml.py:
+ * Also excludes auto-generated files from scripts/generate-everything-parameters-variables-calculations-references.py:
  * - knowledge/appendix/parameters-and-calculations.qmd
  * - knowledge/figures/tornado-*.qmd
  * - knowledge/figures/sensitivity-table-*.qmd

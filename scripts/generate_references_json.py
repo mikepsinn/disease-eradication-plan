@@ -4,7 +4,7 @@
 Generate JSON references file from references.qmd
 
 Parses knowledge/references.qmd and converts it to a structured JSON format.
-This is called by generate-variables-yml.py as part of the build process.
+This is called by generate-everything-parameters-variables-calculations-references.py as part of the build process.
 
 Usage:
     python scripts/generate-references-json.py

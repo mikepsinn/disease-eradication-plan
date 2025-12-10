@@ -1,6 +1,6 @@
 # AUTO-GENERATED FILE - DO NOT EDIT
 # Generated from dih_models/parameters.py
-# Run: python tools/generate-variables-yml.py
+# Run: python scripts/generate-everything-parameters-variables-calculations-references.py
 #
 # Use in QMD files with: {{< var param_name >}}
 # Citations available as: {{< var param_name_cite >}}

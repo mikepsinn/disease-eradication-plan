@@ -91,7 +91,7 @@ if sys.platform == 'win32':
 
 2. **Generate variables** by running:
    ```bash
-   .venv/Scripts/python.exe scripts/generate-variables-yml.py
+   .venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py
    ```
 
 3. **Use in QMD files** (formatter handles all formatting):

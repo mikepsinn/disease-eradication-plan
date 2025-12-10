@@ -312,7 +312,7 @@ def main():
 
     if args.execute and deleted > 0:
         print("IMPORTANT: Now run these commands:")
-        print("  1. python scripts/generate-variables-yml.py")
+        print("  1. python scripts/generate-everything-parameters-variables-calculations-references.py")
         print("  2. python scripts/find-unused-parameters.py  (to verify)")
         print()
 
