@@ -14,7 +14,7 @@ Usage:
     from pathlib import Path
 
     # Generate TypeScript file
-    output_path = Path("dih_models/parameters.ts")
+    output_path = Path("dih_models/parameters-calculations-citations.ts")
     generate_typescript_parameters(parameters, output_path, references_path=Path("knowledge/references.qmd"))
 """
 
