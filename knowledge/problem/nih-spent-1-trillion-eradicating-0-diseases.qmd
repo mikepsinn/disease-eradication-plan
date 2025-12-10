@@ -43,24 +43,35 @@ Here is the "Stock vs Flow" problem in one sentence: **We are not short of hypot
 We have a massive **stock** of safe molecules that have never been systematically evaluated for new uses.
 But the **flow** of trials is a trickle.
 
-### The $600,000 "Trial"
+### The $600,000 Meta-Research Masterpiece
 
-Recently, one dementia trial finally appeared for your grandma on clinicaltrials.gov.
+After searching clinicaltrials.gov for dementia trials your grandma could join, one finally appears.
+
+It's a study asking if people would be *interested* in dementia trials.
 
 - **Cost:** $600,000
-- **Purpose:** A Google form survey asking if people would be *interested* in participating in dementia trials
-- **Number of patients treated:** Zero
-- **Number of treatments tested:** Zero
+- **Purpose:** Survey research about hypothetical willingness to participate
+- **Patients treated:** Zero
+- **Treatments tested:** Zero
 
-The NIH spent $600,000 researching *whether people want their loved ones to get treatment*. (They do. ~49-75% of patients say they are willing to participate, but only ~10% are ever invited.)
+Let's be clear: **This isn't the researcher's fault.** They wrote the grant NIH rewards. They're playing the game correctly.
 
-**Here's what $600,000 could have actually funded:**
+The problem is the game itself.
 
+NIH will fund $600,000 to *ask* if people want trials. But it won't fund the actual trials people want to join.
+
+**We already know the answer:** [~50-75% of patients say they're willing to participate](../references.qmd#patient-willingness-clinical-trials), but [only ~10% are ever invited](../references.qmd#patient-willingness-clinical-trials).
+
+The bottleneck isn't information about willingness. It's **capacity**.
+
+**That $600,000 could have funded:**
 - 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
 - Testing 5-10 repurposed drugs we already know are safe
 - Actual data on whether treatments work
 
-This isn't a "lack of ideas" problem. It is a **capacity failure**.
+Instead, we got confirmation that people dying of dementia would like not to die of dementia.
+
+This is what happens when the system rewards *papers about trials* more than *running trials*.
 
 ## The Basic Research Black Hole
 
@@ -91,6 +102,21 @@ The result is a system that produces papers, not cures:
 - **New treatments approved:** [~50 annually](../references.qmd#global-new-drug-approvals-50-annually)
 - **Conversion rate from paper to patient:** 0.002%
 
+### Knowledge Production: Saturated. Translation Capacity: Starved.
+
+The bottleneck isn't ideas. It's execution:
+
+- **Biomedical papers produced:** [2.5 million per year](../references.qmd#nih-annual-papers-published)
+- **Adults who've participated in trials:** [~5%](../references.qmd#clinical-trial-patient-participation-rate)
+- **Adults willing to participate if invited:** [~50-75%](../references.qmd#patient-willingness-clinical-trials)
+- **Adults actually invited:** [~9-11%](../references.qmd#patient-willingness-clinical-trials)
+
+We're drowning in hypotheses while patients are starving for trial slots.
+
+The system produces millions of papers testing ideas in mice, but offers trial participation to only 5% of humans. Even though half would say yes if asked.
+
+That's not an information failure. That's a capacity failure.
+
 We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
 
 #### What we don't have: Cures.
@@ -105,11 +131,13 @@ In reality, it spends taxpayers' money to produce "Club Goods" for private indus
 **The Scam in Numbers:**
 
 - **Direct commercialization support:** ~3-5% of budget
-- **Indirect subsidy to profitable firms:** [~54% of budget goes to basic research](../references.qmd#nih-clinical-trials-small-fraction) that de-risks early drug development for industry
-- **NIH vs. Industry spending ratio:** [NIH covers only ~10% of what industry spends](../references.qmd#nih-clinical-trials-small-fraction) on clinical trials for approved drugs
+- **Indirect subsidy to profitable firms:** [~40-60% of NIH spending](../references.qmd#nih-clinical-trials-small-fraction) functions as a de facto subsidy to industry. This includes funding basic research, training scientists, and generating patents that private companies exploit
+- **NIH contribution to approved drugs:** [Funded research for 99% of new drugs](../references.qmd#nih-funded-approved-drugs) (356 drugs, 2010-2019), but covers only ~10% of clinical trial costs
+- **Who pays for translation:** [NIH covers only ~10% of what industry spends](../references.qmd#nih-clinical-trials-small-fraction) on clinical trials for approved drugs
 
-We pay ~$48 billion/year to risk-reduce the early stages of drug development for private companies.
-When a hit is found, the IP is privatized (patented), and the public pays a second time through high drug prices.
+The pattern is clear: taxpayers fund 40-60% of the knowledge pipeline (~$20-30B/year), industry patents the winners, and the public pays again through high drug prices.
+
+When a discovery leads to a blockbuster drug, the IP is privatized.
 When the research leads to a dead end, the public eats the loss.
 
 **Socialized Risk, Privatized Profit.**
@@ -247,9 +275,17 @@ Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-t
 
 When you misallocate $40 billion a year into low-efficiency buckets instead of high-efficiency buckets, you aren't just wasting money. You are burning time.
 
-**Annual Opportunity Cost:**
-- **QALYs Lost:** ~100 million life-years per year.
-- **Deaths NOT Prevented:** ~7 million death-equivalents per year.
+**Annual Opportunity Cost (Central Estimates):**
+- **QALYs Lost:** ~100 million life-years per year
+- **Deaths NOT Prevented:** ~7 million death-equivalents per year
+
+**Conservative 90% Confidence Interval:**
+- **QALYs Lost:** 10 million to 820 million per year
+- **Deaths NOT Prevented:** 0.7 million to 64 million per year
+
+Even in the **most conservative 5th-percentile scenario**, NIH misallocation costs ~10 million QALYs and prevents ~700,000 deaths' worth of health gains annually.
+
+In the 95th-percentile scenario, it's burning health equivalent to **most of the global death toll** (60M deaths/year).
 
 The NIH isn't just inefficient.
 By blocking the shift to high-efficiency trial platforms, the current budget allocation is **actively destroying** the equivalent of millions of lives annually compared to the optimal allocation.

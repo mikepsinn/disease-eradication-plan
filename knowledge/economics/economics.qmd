@@ -194,9 +194,54 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
-## A Decentralized Framework for Drug Assessment
+## Decentralized Evidence Generation Infrastructure
 
-{{< include ../includes/dfda-overview.qmd >}}
+The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery, shifting from centralized regulatory gatekeeping to distributed, real-world evidence generation. This architectural approach achieves a **{{< var trial_cost_reduction_factor >}}x cost reduction** while enhancing safety monitoring and treatment selection capabilities.
+
+### Cost Structure of Decentralized Trials
+
+Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}} per patient due to dedicated research infrastructure requirements. Pragmatic trial designs, exemplified by the Oxford RECOVERY trial, reduce costs to {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient by leveraging existing healthcare infrastructure.
+
+Cost reduction mechanisms include:
+
+- **Infrastructure reuse**: Utilizing existing hospital systems rather than building dedicated trial sites
+- **Minimal additional documentation**: Collecting only incremental data beyond standard medical records
+- **Simplified consent processes**: Streamlined patient enrollment integrated with clinical care
+- **Embedded trial operations**: Evidence collection within routine healthcare delivery
+
+### Continuous Safety Surveillance
+
+Current adverse event reporting relies on voluntary submission, resulting in systematic underreporting. Integrated trial infrastructure enables:
+
+- **Systematic adverse event capture**: Automated collection from all participants within standard care workflows
+- **Real-time signal detection**: Continuous safety monitoring with immediate public reporting
+- **Quantified risk profiles**: Precise measurement of effect rates and severity distributions
+- **Post-approval surveillance**: Ongoing outcome tracking after initial regulatory clearance
+
+This infrastructure provides superior safety data compared to voluntary reporting systems, where adverse events often remain undetected until post-approval litigation reveals patterns years later.
+
+### Comparative Effectiveness Data Integration
+
+Embedded trial infrastructure enables systematic comparative effectiveness measurement. Rather than relying on pharmaceutical marketing or physician recall, treatment decisions can be informed by outcomes data ranked by real-world effectiveness:
+
+![Treatment Rankings Example](/assets/dfda-comparative-effectiveness-ranking-search.png)
+
+Ranking systems reflect frequency and magnitude of outcome changes across patient populations, with stratification by genetic profiles, demographic characteristics, and comorbidities. This precision medicine approach ensures treatment recommendations reflect individual patient characteristics rather than population averages.
+
+### Standardized Outcome Reporting
+
+Integrated evidence systems enable **standardized outcome labels** - quantified summaries of measured treatment effects from real-world data:
+
+![Outcome Labels Example](/assets/dfda-outcome-labels.png)
+
+Based on systematic outcome collection, standardized labels provide:
+
+- **Quantified benefits**: Measured effect magnitudes across outcome domains
+- **Adverse effect frequencies**: Precise rates and severity distributions
+- **Treatment persistence**: Discontinuation rates and reasons
+- **Evidence-based information**: Data from actual patient outcomes rather than marketing claims
+
+This approach replaces lengthy, legally-defensive package inserts with concise, data-driven summaries enabling informed clinical decision-making.
 
 ## Summary of Results
 
@@ -396,7 +441,64 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete anal
 
 ### [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
 
-{{< include ../includes/incentive-alignment-bonds-overview.qmd >}}
+[Incentive Alignment Bonds (IABs)](/knowledge/solution/incentive-alignment-bonds.qmd) represent a mechanism design innovation for resolving principal-agent problems in political decision-making. Rather than relying on altruistic motivation, IABs restructure incentives such that political self-interest aligns with socially optimal policy choices.
+
+#### Mechanism Architecture
+
+Politicians are evaluated through a **Public Good Score** based on verifiable voting records for treaty funding. This scoring system creates three channels of incentive alignment:
+
+1. **Electoral advantage**: Independent campaign support flows to high-scoring politicians
+2. **Reputational benefits**: Public scores create transparency and accountability
+3. **Post-office opportunities**: High scorers gain access to prestigious fellowships, advisory positions, and speaking engagements
+
+Critically, no direct monetary transfers to politicians occur. Benefits flow through reputation, electoral support, and career advancement - all based on publicly verifiable voting records that cannot be manipulated.
+
+#### Comparative Static Analysis: Senator Smith
+
+Consider a legislator's decision calculus regarding the 1% Treaty vote:
+
+**Without IABs:**
+
+| Action | Expected Outcome |
+|:-------|:-----------------|
+| Vote Yes | Defense lobby attack ads; reduced industry support |
+| Vote No | Retained defense contractor funding; no electoral risk |
+
+**With IABs:**
+
+| Action | Expected Outcome |
+|:-------|:-----------------|
+| Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |
+| Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |
+
+The mechanism transforms the payoff structure such that supporting beneficial policy becomes individually rational rather than requiring altruistic sacrifice.
+
+#### VICTORY Incentive Alignment Bonds
+
+[VICTORY Incentive Alignment Bonds](/knowledge/economics/victory-bonds.qmd) implement this architecture specifically for the 1% treaty, aligning multiple stakeholder groups:
+
+| Stakeholder | Return Mechanism | Funding Source |
+|:------------|:-----------------|:---------------|
+| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
+| **Politicians** | Reputation, electoral support, career advancement | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
+| **Patients** | Subsidized trial access, accelerated treatments | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
+
+Investors provide upfront campaign capital ({{< var treaty_campaign_total_cost >}}). Politicians gain career benefits for treaty support. Patients receive medical benefits. Each stakeholder's self-interest points toward treaty passage and expansion.
+
+#### Legal and Ethical Framework
+
+This mechanism differs fundamentally from bribery through several criteria:
+
+1. **No duty violation**: IABs reward policy support that fulfills rather than violates fiduciary obligations
+2. **Universal ex-ante rules**: Transparent, publicly announced scoring criteria apply equally to all legislators
+3. **No direct payments**: Benefits accrue through reputation and electoral outcomes, not monetary transfers
+4. **Verifiable metrics**: Scoring relies exclusively on public voting records from official government sources
+
+The mechanism creates rather than corrupts alignment between political incentives and social welfare.
+
+#### Generalized Governance Application
+
+While designed for the 1% Treaty, the IAB architecture provides a template for any global coordination problem requiring sustained political commitment: climate change mitigation, nuclear disarmament, pandemic preparedness. The mechanism addresses the fundamental challenge of aligning short-term political incentives with long-term collective welfare.
 
 ## Dominance Analysis
 
