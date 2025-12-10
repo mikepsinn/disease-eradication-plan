@@ -279,6 +279,11 @@ metadata:
   genre: "Public Policy, Health Economics, Peace Studies"
   medium: "Digital"
 
+# Remove "Appendix" prefix from appendix chapters
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
 jupyter: dih-project-kernel
 
 format:

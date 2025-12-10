@@ -231,6 +231,11 @@ metadata:
   # bibliography: "references.bib"
   # csl: "style.csl"
 
+# Remove "Appendix" prefix from appendix chapters
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
 profiles:
   default:
     dotenv:

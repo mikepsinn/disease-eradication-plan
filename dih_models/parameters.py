@@ -1050,7 +1050,7 @@ GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(
     description="Annual global industry spending on clinical trials (Total - Government)",
     display_name="Annual Global Industry Spending on Clinical Trials",
     unit="USD",
-    formula="Total - Government",
+    formula="TOTAL_CLINICAL_TRIALS - GOVT_CLINICAL_TRIALS",
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
     compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] - ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"]
 )
@@ -5413,7 +5413,7 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     description="Benefit-Cost Ratio of the IAB mechanism itself",
     display_name="IAB Mechanism Benefit-Cost Ratio",
     unit="ratio",
-    formula="Annual Benefits / Annual Cost",
+    formula="TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
     keywords=["bcr", "benefit cost ratio", "iab", "mechanism"],
     inputs=["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS", "IAB_MECHANISM_ANNUAL_COST"],
     compute=lambda ctx: ctx["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS"] / ctx["IAB_MECHANISM_ANNUAL_COST"]
