@@ -92,13 +92,13 @@ Health economics literature identifies three historical interventions that achie
 
 1. **Smallpox eradication** (1967-1980): {{< var smallpox_eradication_roi >}}:1 ROI {{< var smallpox_eradication_roi_cite >}}, eliminating a disease that killed 300-500 million people in the 20th century alone
 2. **Childhood vaccination programs**: Self-funding interventions generating {{< var childhood_vaccination_annual_benefit >}} in annual economic benefits {{< var childhood_vaccination_annual_benefit_cite >}}
-3. **Water fluoridation**: ~$38 return per dollar invested in dental health improvements {{< var water_fluoridation_roi_cite >}}
+3. **Water fluoridation**: {{< var water_fluoridation_roi >}}:1 ROI in dental health improvements {{< var water_fluoridation_roi_cite >}}
 
 These successes share common features: systemic interventions that address root causes rather than symptoms, positive externalities that compound over time, and political consensus achieved through demonstrated value. They also share a critical limitation: they targeted specific diseases or conditions. No historical intervention has systematically accelerated the discovery process itself.
 
 ### The Medical Research Bottleneck
 
-Current medical research faces a fundamental capacity constraint. Less than 1% of willing patients can access clinical trials [@Unger2016-clinical-trial-access], and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve [@Himmelstein2014-drug-repurposing; @ZINC2022]. This represents exploration of <1% of the theoretically testable drug-disease space. This limitation exists not because promising candidates don't exist, but because traditional Phase II-III randomized controlled trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}}, making comprehensive exploration economically infeasible.
+Current medical research faces a fundamental capacity constraint. {{< var current_clinical_trial_participation_rate >}} of willing patients can access clinical trials [@Unger2016-clinical-trial-access], and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve [@Himmelstein2014-drug-repurposing; @ZINC2022]. This represents exploration of {{< var exploration_ratio >}} of the theoretically testable drug-disease space. This limitation exists not because promising candidates don't exist, but because traditional Phase II-III randomized controlled trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}}, making comprehensive exploration economically infeasible.
 
 The Oxford RECOVERY trial demonstrated that pragmatic trial design can reduce per-patient costs to {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} while maintaining scientific rigor and delivering results in <100 days [@recovery-trial-100-days-to-cure]. This {{< var trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
 
@@ -188,7 +188,7 @@ Humanity's budget priorities, explained simply:
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
 :::
 
-The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [{{< var exploration_ratio >}} of possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
+The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
 
 {{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
 
@@ -234,7 +234,7 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
-## Decentralized Framework for Drug Assessment
+## A decentralized framework for drug assessment
 
 The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works, but what measurably happens to real humans taking real treatments.
 
@@ -889,9 +889,9 @@ These improvements compound multiplicatively to produce the {{< var trial_capaci
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
-Currently, researchers spend [up to 50% of their time](../references.qmd#grant-writing-time-50pct) on grants and administrative tasks. A dFDA automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
+Currently, researchers spend [up to 50% of their time](../references.qmd#grant-writing-time-50pct) on grants and administrative tasks. A decentralized framework for drug assessment automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
 
-**The TurboTax Analogy**: Just as TurboTax wraps the complexity of federal, state, and local tax codes into a simple interface (you answer questions, it generates compliant filings), a dFDA wraps the complexity of global regulatory bodies (FDA, EMA, PMDA, Health Canada, TGA, etc.) into a unified framework. Researchers define their hypothesis and patient population; the framework automatically:
+**The TurboTax Analogy**: Just as TurboTax wraps the complexity of federal, state, and local tax codes into a simple interface (you answer questions, it generates compliant filings), a decentralized framework for drug assessment wraps the complexity of global regulatory bodies (FDA, EMA, PMDA, Health Canada, TGA, etc.) into a unified framework. Researchers define their hypothesis and patient population; the framework automatically:
 
 - Generates IRB submissions for each jurisdiction
 - Handles liability insurance and indemnification
@@ -1284,7 +1284,7 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 - **[Deworming](../references.qmd#deworming-cost-per-daly)**: {{< var deworming_cost_per_daly >}}/DALY (Deworm the World Initiative)
 - **[Vitamin A Supplementation](../references.qmd#vitamin-a-cost-per-daly)**: {{< var vitamin_a_cost_per_daly >}}/DALY (Helen Keller International)
 
-**A 1% Treaty/Decentralized Framework for Drug Assessment:**
+**A 1% Treaty/decentralized framework for drug assessment:**
 
 - **Conditional on success**: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}/DALY ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than bed nets)
 
@@ -1857,7 +1857,7 @@ These meta-analytic findings support the validity of pragmatic trial designs use
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
-**Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compared to 94% of positive results](../references.qmd#publication-bias-clinical-trials), leading to overestimation of treatment effectiveness and [~$100 billion annually wasted on repeating failed experiments](../references.qmd#wasted-spending-on-failed-experiments). A dFDA system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, dFDA's mandatory publication of all registered trials eliminates publication bias as a concern.
+**Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compared to 94% of positive results](../references.qmd#publication-bias-clinical-trials), leading to overestimation of treatment effectiveness and [~$100 billion annually wasted on repeating failed experiments](../references.qmd#wasted-spending-on-failed-experiments). A decentralized framework for drug assessment system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, a decentralized framework for drug assessment's mandatory publication of all registered trials eliminates publication bias as a concern.
 
 **Conclusion:** Internal validity concerns are acknowledged, but the combination of randomization, large samples, and replication capacity provides adequate causal inference even with broader eligibility criteria.
 
