@@ -137,7 +137,7 @@ class BuildMonitor:
             return line.strip()
 
         # Detect warnings (WARN: can appear anywhere in line, often with timestamps)
-        if "WARN:" in line or "Warning:" in line:
+        if any(marker in line for marker in ["WARN:", "Warning:", "[WARNING]"]):
             self.warnings.append(line.strip())
             return f"WARNING: {line.strip()}"
 

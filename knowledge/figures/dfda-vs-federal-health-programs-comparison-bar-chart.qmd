@@ -69,7 +69,7 @@ for i, (cost, mult) in enumerate(zip(costs, multipliers)):
     if cost < 2000:  # Small/medium bars: label outside (to the right)
         ax.text(
             cost + 200, i,
-            f'${cost}M/year\n({mult})',
+            f'${cost}M/year\\n({mult})',
             ha='left', va='center',
             fontsize=24, fontweight='bold',
             color=COLOR_BLACK
@@ -77,7 +77,7 @@ for i, (cost, mult) in enumerate(zip(costs, multipliers)):
     else:  # Very large bars (NCI): label inside (white on pattern)
         ax.text(
             cost / 2, i,
-            f'${cost:,}M/year\n({mult})',
+            f'${cost:,}M/year\\n({mult})',
             ha='center', va='center',
             fontsize=24, fontweight='bold',
             color=COLOR_BLACK,
