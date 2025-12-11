@@ -98,13 +98,13 @@ These successes share common features: systemic interventions that address root 
 
 ### The Medical Research Bottleneck
 
-Current medical research faces a fundamental capacity constraint. {{< var current_clinical_trial_participation_rate >}} of willing patients can access clinical trials [@Unger2016-clinical-trial-access], and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve [@Himmelstein2014-drug-repurposing; @ZINC2022]. This represents exploration of {{< var exploration_ratio >}} of the theoretically testable drug-disease space. This limitation exists not because promising candidates don't exist, but because traditional Phase II-III randomized controlled trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}}, making comprehensive exploration economically infeasible.
+Current medical research faces a fundamental capacity constraint. {{< var current_clinical_trial_participation_rate >}} of willing patients can access clinical trials [@clinical-trial-patient-participation-rate], and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve [@drug-repurposing-rate]. This represents exploration of {{< var exploration_ratio >}} of the theoretically testable drug-disease space. This limitation exists not because promising candidates don't exist, but because traditional Phase II-III randomized controlled trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}}, making comprehensive exploration economically infeasible.
 
-The Oxford RECOVERY trial demonstrated that pragmatic trial design can reduce per-patient costs to {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} while maintaining scientific rigor and delivering results in <100 days [@recovery-trial-100-days-to-cure]. This {{< var trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
+The Oxford RECOVERY trial demonstrated that pragmatic trial design can reduce per-patient costs to {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} while maintaining scientific rigor and delivering results in <100 days [@recovery-trial-82x-cost-reduction]. This {{< var trial_cost_reduction_factor >}}× cost reduction transforms the economics of medical research: what was previously too expensive to test becomes systematically explorable.
 
 ### Addressing Skepticism: Why This Differs from Failed Megaprojects
 
-Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100% [@Flyvbjerg2009-megaproject-overruns], foreign aid programs with negative or negligible returns [@Easterly2006-aid-effectiveness], and "grand challenges" that fail to materialize promised benefits [@Kremer2019-advance-market-commitments].
+Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
 
 This intervention differs in four critical ways:
 
@@ -114,7 +114,7 @@ This intervention differs in four critical ways:
 
 3. **Dominant intervention status**: Cost-dominant interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
 
-4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY Incentive Alignment Bonds: a single instrument that aligns investors (10% returns), politicians (10% political incentive fund), and patients (80% pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
+4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty uses VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors (10% returns), politicians (10% political incentive fund), and patients (80% pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
 
 ### Contribution to Literature
 
@@ -472,9 +472,9 @@ They win by **aligning incentives**.
 
 This is the alignment engine:
 
-### [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
+### Incentive Alignment Bonds
 
-[Incentive Alignment Bonds (IABs)](/knowledge/solution/incentive-alignment-bonds.qmd) represent a mechanism design innovation for resolving principal-agent problems in political decision-making. Rather than relying on altruistic motivation, IABs restructure incentives such that political self-interest aligns with socially optimal policy choices.
+[Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) represent a mechanism design innovation for resolving principal-agent problems in political decision-making. Rather than relying on altruistic motivation, IABs restructure incentives such that political self-interest aligns with socially optimal policy choices.
 
 It's **public choice theory applied correctly**: Self-interest becomes a public good.
 
@@ -538,7 +538,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete anal
 
 #### VICTORY Incentive Alignment Bonds
 
-[VICTORY Incentive Alignment Bonds](/knowledge/economics/victory-bonds.qmd) implement this architecture specifically for the 1% treaty, aligning multiple stakeholder groups:
+[VICTORY Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) implement this architecture specifically for the 1% treaty, aligning multiple stakeholder groups:
 
 | Stakeholder | Return Mechanism | Funding Source |
 |:------------|:-----------------|:---------------|
@@ -2039,7 +2039,7 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 Current global health funding relies on unpredictable philanthropic donations and limited government aid budgets. Total official development assistance for health: ~$40B/year. This intervention creates a {{< var treaty_annual_funding >}}/year permanent funding stream.
 
-**Key insight**: This is not charity; it's profitable. Investors can buy VICTORY Incentive Alignment Bonds paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
+**Key insight**: This is not charity; it's profitable. Investors can buy VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
 **Mechanism design**: The 1% Treaty Fund uses an 80/10/10 split:
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) → pragmatic trials
@@ -2075,7 +2075,7 @@ This intervention is **cost-dominant** (saves money while improving outcomes), m
 
 It requires only a 1% reallocation from the least cost-effective government spending (military) to the most cost-effective health intervention (pragmatic trials at {{< var recovery_trial_cost_per_patient >}}/patient).
 
-The political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) that make supporting the treaty more profitable for politicians than opposing it.
+The political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that make supporting the treaty more profitable for politicians than opposing it.
 
 
 ## Treaty Adoption: Political Will and Diplomatic Strategy
