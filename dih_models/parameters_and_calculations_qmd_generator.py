@@ -30,6 +30,47 @@ from typing import Any, Dict
 from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import generate_auto_latex, smart_title_case
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
+from dih_models.reference_parser import parse_references_qmd_detailed
+
+
+def format_citation(ref_data: Dict[str, Any]) -> str:
+    """
+    Format citation data as a professional-looking citation string.
+
+    Examples:
+        - "SIPRI (2024) - Global Military Expenditure Database"
+        - "WHO (2024) - Global Health Estimates"
+        - "Smith et al. (2021) - Pragmatic Trial Design"
+
+    Args:
+        ref_data: Citation metadata from parse_references_qmd_detailed()
+
+    Returns:
+        Formatted citation string
+    """
+    author = ref_data.get('author', '')
+    source = ref_data.get('source', '')
+    year = ref_data.get('year', '')
+    title = ref_data.get('title', '')
+
+    # Use source if author not available (common for institutional reports)
+    citation_author = author if author else source
+
+    # Build citation: "Author (Year) - Title" or "Author (Year)"
+    parts = []
+    if citation_author:
+        if year:
+            parts.append(f"{citation_author} ({year})")
+        else:
+            parts.append(citation_author)
+
+    if title and title != citation_author:
+        # Add title if it's different from author/source
+        citation = f"{parts[0]} - {title}" if parts else title
+    else:
+        citation = parts[0] if parts else "Unknown Source"
+
+    return citation
 
 
 def generate_parameters_and_calculations_qmd(
@@ -55,6 +96,10 @@ def generate_parameters_and_calculations_qmd(
         available_refs: Set of valid reference IDs from references.qmd (optional, for detecting reference links)
         params_file: Path to parameters.py (for auto-generating latex equations)
     """
+    # Parse references.qmd for professional citation formatting
+    references_path = output_path.parent.parent / "references.qmd"  # knowledge/references.qmd
+    citation_data = parse_references_qmd_detailed(references_path)
+
     # Categorize parameters by source type
     external_params = []
     calculated_params = []
@@ -244,10 +289,14 @@ def generate_parameters_and_calculations_qmd(
                 }
 
                 if is_reference_id:
-                    # This is a reference ID - link to references (extensionless for format-agnostic links)
-                    # Quarto will resolve to references.html (HTML), references.pdf (PDF), or references.epub (EPUB)
-                    link_target = f"../references#{source_ref}"
-                    link_text = methodology_labels.get(source_ref, source_ref)
+                    # This is a reference ID - format as professional citation
+                    link_target = f"../references.qmd#{source_ref}"
+                    # Try to use formatted citation from references.qmd
+                    if source_ref in citation_data:
+                        link_text = format_citation(citation_data[source_ref])
+                    else:
+                        # Fallback to friendly label or reference ID
+                        link_text = methodology_labels.get(source_ref, source_ref)
                 elif is_anchor:
                     # Intra-document anchor - add # prefix
                     link_target = f"#{source_ref}"
@@ -362,10 +411,8 @@ def generate_parameters_and_calculations_qmd(
                 source_ref = value.source_ref
                 # Convert ReferenceID enum to string value for URL
                 source_ref_str = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
-                # Use the reference ID value for display (not the enum representation)
-                display_ref = source_ref_str
+
                 # Check if source_ref is a .qmd file path or a references.qmd anchor
-                # Use relative paths for multi-format compatibility (HTML, PDF, EPUB)
                 if source_ref_str.endswith('.qmd'):
                     # It's a path to another .qmd document
                     # Convert absolute path to relative from knowledge/appendix/
@@ -381,10 +428,15 @@ def generate_parameters_and_calculations_qmd(
                         rel_path = source_ref_str
                     # Remove .qmd extension for format-agnostic links
                     rel_path = convert_qmd_to_html(rel_path)
-                    content.append(f"**Source**: [{display_ref}]({rel_path})")
+                    content.append(f"**Source**: [{source_ref_str}]({rel_path})")
                 else:
-                    # It's a reference anchor ID - link to references.qmd (relative path)
-                    content.append(f"**Source**: [{display_ref}](../references.qmd#{source_ref_str})")
+                    # It's a reference anchor ID - format as professional citation
+                    if source_ref_str in citation_data:
+                        formatted_citation = format_citation(citation_data[source_ref_str])
+                        content.append(f"**Source**: [{formatted_citation}](../references.qmd#{source_ref_str})")
+                    else:
+                        # Fallback to reference ID if not found in citations
+                        content.append(f"**Source**: [{source_ref_str}](../references.qmd#{source_ref_str})")
                 content.append("")
 
             # Uncertainty section with human-friendly explanations
