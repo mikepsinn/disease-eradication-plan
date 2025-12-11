@@ -138,8 +138,11 @@ class BuildMonitor:
 
         # Detect warnings (WARN: can appear anywhere in line, often with timestamps)
         if any(marker in line for marker in ["WARN:", "Warning:", "[WARNING]"]):
-            self.warnings.append(line.strip())
-            return f"WARNING: {line.strip()}"
+            # Ignore warnings about thinkbynumbers (Twitter handle in YAML, not a citation)
+            if "thinkbynumbers" not in line:
+                self.warnings.append(line.strip())
+                return f"WARNING: {line.strip()}"
+            return None  # Silently ignore thinkbynumbers warnings
 
         # Detect errors
         if line.startswith("ERROR:") or line.startswith("Error:") or "error:" in line.lower():

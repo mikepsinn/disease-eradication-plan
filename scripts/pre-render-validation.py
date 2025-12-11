@@ -13,6 +13,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Missing Python imports in code blocks
 - GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
 - Unknown Quarto variables ({{< var name >}}) not defined in _variables.yml
+- Missing citations ([@citation-id]) not found in references.bib
 - _quarto.yml configuration (validates all chapter paths exist)
 
 Runs automatically via _quarto.yml pre-render hook
@@ -1110,6 +1111,88 @@ def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str])
                 )
 
 
+def load_citations_from_bib() -> Set[str]:
+    """
+    Load citation IDs from all .bib files.
+    Returns set of citation keys (e.g., 'recovery-trial-82x-cost-reduction')
+    """
+    citation_ids = set()
+
+    # List of bibliography files to check
+    bib_files = [
+        "references.bib",
+        "knowledge/appendix/iab-references.bib"
+    ]
+
+    for bib_file in bib_files:
+        if not os.path.exists(bib_file):
+            print(f"Warning: {bib_file} not found, skipping")
+            continue
+
+        try:
+            with open(bib_file, encoding="utf-8") as f:
+                content = f.read()
+
+            # Pattern to match BibTeX entry keys: @type{key,
+            # e.g., @article{smith2021, or @misc{recovery-trial-82x-cost-reduction,
+            entry_pattern = re.compile(r'@\w+\{([^,]+),')
+
+            count = 0
+            for match in entry_pattern.finditer(content):
+                citation_id = match.group(1).strip()
+                citation_ids.add(citation_id)
+                count += 1
+
+            print(f"  Loaded {count} citations from {bib_file}")
+
+        except Exception as e:
+            print(f"Warning: Failed to parse {bib_file}: {str(e)}\n")
+
+    return citation_ids
+
+
+def check_citations(content: str, filepath: str, defined_citations: Set[str]):
+    """
+    Check for citations that are referenced but not defined in references.bib
+    Pattern: [@citation-id] or @citation-id (in some contexts)
+    """
+    if not defined_citations:
+        # Skip if no citations loaded
+        return
+
+    lines = content.split("\n")
+
+    # Pattern to match Pandoc citations: [@citation-id] or [@cite1; @cite2]
+    citation_pattern = re.compile(r'\[@([^\]]+)\]')
+
+    for line_index, line in enumerate(lines):
+        # Skip HTML comments and code blocks
+        if re.match(r"^\s*<!--", line.strip()) or line.strip().startswith("```"):
+            continue
+
+        matches = citation_pattern.finditer(line)
+        for match in matches:
+            # Extract all citation IDs from the match (handles multiple citations like [@a; @b])
+            citation_text = match.group(1)
+            # Split by semicolon and @ to get individual citation IDs
+            citation_ids = [c.strip() for c in re.split(r'[;@]', citation_text) if c.strip()]
+
+            for citation_id in citation_ids:
+                # Remove any trailing punctuation or spaces
+                citation_id = re.sub(r'[,\s]+$', '', citation_id)
+
+                # Check if citation is defined in references.bib
+                if citation_id and citation_id not in defined_citations:
+                    errors.append(
+                        ValidationError(
+                            file=filepath,
+                            line=line_index + 1,
+                            message=f"Missing citation: [@{citation_id}] - not found in references.bib",
+                            context=line.strip()[:80],
+                        )
+                    )
+
+
 def validate_quarto_config():
     """
     Validate _quarto.yml configuration file.
@@ -1179,7 +1262,7 @@ def validate_quarto_config():
             check_file_refs(config["book"]["appendices"], "book.appendices")
 
 
-def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set[str], anchor_map: Dict[str, Set[str]]):
+def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set[str], anchor_map: Dict[str, Set[str]], defined_citations: Set[str]):
     """Validate a single file"""
     if not os.path.exists(filepath):
         print(f"File not found: {filepath}", file=sys.stderr)
@@ -1198,6 +1281,8 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
         check_markdown_links(content, filepath)
         # Check anchor IDs
         check_anchor_ids(content, filepath, anchor_map)
+        # Check citations
+        check_citations(content, filepath, defined_citations)
         return
 
     # For .qmd files, run all validation checks
@@ -1262,6 +1347,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     # Check for unknown Quarto variables
     check_unknown_variables(content, filepath, defined_vars)
 
+    # Check citations
+    check_citations(content, filepath, defined_citations)
+
     # Check for inline expressions (incompatible with Jupyter Cache)
     # DISABLED: We've disabled cache: true in Quarto configs, so inline expressions are fine
     # check_inline_expressions(content, filepath)
@@ -1323,6 +1411,14 @@ def main():
     else:
         print("No anchor IDs loaded\n")
 
+    # Load citations from references.bib
+    print("Loading citations from references.bib...")
+    defined_citations = load_citations_from_bib()
+    if defined_citations:
+        print(f"Loaded {len(defined_citations)} citation IDs\n")
+    else:
+        print("No citations loaded\n")
+
     # Validate _quarto.yml configuration first
     validate_quarto_config()
 
@@ -1362,7 +1458,7 @@ def main():
 
     # Validate each file
     for file in all_files:
-        validate_file(file, defined_vars, defined_parameters, anchor_map)
+        validate_file(file, defined_vars, defined_parameters, anchor_map, defined_citations)
 
     # Report results
     if len(errors) == 0:
