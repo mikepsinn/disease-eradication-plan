@@ -87,6 +87,12 @@ website:
   page-navigation: true
   navbar:
     right:
+      - text: "Calculations"
+        href: calculations.html
+      - text: "IAB Paper"
+        href: iab.html
+      - text: "References"
+        href: references.html
       - text: "VOTE"
         href: https://dih.earth/?ref=LTU1JFLH
   sidebar:
@@ -96,6 +102,16 @@ website:
     contents:
       - href: index.qmd
         text: "Executive Summary"
+      - section: "Key Resources"
+        contents:
+          - href: knowledge/economics/economics.qmd
+            text: "Economic Analysis"
+          - href: knowledge/appendix/parameters-and-calculations.qmd
+            text: "Parameters & Calculations"
+          - href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+            text: "Incentive Alignment Bonds"
+          - href: knowledge/references.qmd
+            text: "References & Citations"
       - section: "Problem Statement"
         contents:
           - href: knowledge/problem/cost-of-war.qmd
@@ -314,6 +330,12 @@ format:
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
+              <a href="knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> | 
+              <a href="calculations.html" style="color: #8b7355;">Calculations</a> | 
+              <a href="iab.html" style="color: #8b7355;">IAB Paper</a> | 
+              <a href="references.html" style="color: #8b7355;">References</a>
+            </p>
           </div>
     include-after-body:
       - text: |
@@ -325,6 +347,12 @@ format:
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
+              <a href="knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> | 
+              <a href="calculations.html" style="color: #8b7355;">Calculations</a> | 
+              <a href="iab.html" style="color: #8b7355;">IAB Paper</a> | 
+              <a href="references.html" style="color: #8b7355;">References</a>
             </p>
           </footer>
           <!-- Quarto Sidebar Horizontal Overlap Fix -->
