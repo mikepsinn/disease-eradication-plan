@@ -85,28 +85,21 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
 
     is_definition = source_type_str == "definition"
 
-    if has_source:
-        # Convert ReferenceID enum to string value
-        source_ref_value = value.source_ref
-        if hasattr(source_ref_value, 'value'):
-            # It's an enum, get the actual string value
-            source_ref_value = source_ref_value.value
-        else:
-            # Already a string
-            source_ref_value = str(source_ref_value)
+    # ALL parameters link to parameters-and-calculations.qmd for centralized documentation
+    # That page will have links to original sources (references.qmd, economics.qmd, etc.)
+    if has_source or source_type_str in ("calculated", "external"):
+        # Extract source_ref for data attributes (if available)
+        source_ref_value = ""
+        if has_source:
+            source_ref_val = value.source_ref
+            if hasattr(source_ref_val, 'value'):
+                source_ref_value = source_ref_val.value
+            else:
+                source_ref_value = str(source_ref_val)
 
-        # Determine link destination based on source type
-        if source_type_str == "external":
-            # Link to citation in references.html (full URL)
-            href = f"https://warondisease.org/knowledge/references.html#{source_ref_value}"
-            link_text = "View source citation"
-        else:
-            # Link to calculation/methodology page (ensure absolute path)
-            if not source_ref_value.startswith("/"):
-                source_ref_value = f"/{source_ref_value}"
-            # Convert .qmd to .html for rendered output
-            href = convert_qmd_to_html(source_ref_value)
-            link_text = "View methodology & calculation"
+        # Link to parameters-and-calculations.qmd section for this parameter
+        href = f"/knowledge/appendix/parameters-and-calculations#sec-{param_name.lower()}"
+        link_text = "View details, calculation & sources"
 
         # Build tooltip from Parameter metadata with credibility indicators
         tooltip_parts = []
@@ -179,7 +172,7 @@ def generate_html_with_tooltip(param_name: str, value: Union[float, int, Any], c
         html = f'<a href="{href}" class="parameter-link" {data_attrs} title="{tooltip}">{formatted_value}</a>'
 
         # Add Quarto citation inline for external peer-reviewed sources (if requested)
-        if include_citation and source_type_str == "external":
+        if include_citation and source_type_str == "external" and has_source and source_ref_value:
             if hasattr(value, "peer_reviewed") and value.peer_reviewed:
                 html += f' [@{source_ref_value}]'
     elif is_definition:
