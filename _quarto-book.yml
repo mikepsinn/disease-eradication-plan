@@ -19,13 +19,13 @@ book:
   navbar:
     right:
       - text: "Economics"
-        href: /knowledge/economics/economics.qmd
+        href: knowledge/economics/economics.qmd
       - text: "Calculations"
-        href: /knowledge/appendix/parameters-and-calculations.qmd
+        href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "IAB Paper"
-        href: /knowledge/appendix/incentive-alignment-bonds-paper.qmd
+        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
       - text: "References"
-        href: /knowledge/references.qmd
+        href: knowledge/references.qmd
       - text: "VOTE"
         href: https://DIH.earth
   sidebar:
