@@ -1,28 +1,35 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-Script to add watermark to all images in the infographics folder.
-Adds the watermark to the lower right corner of each image.
+Script to add watermark to images from need-watermark folder.
+Adds the watermark to the lower right corner of each image and saves to watermarked folder.
 """
 
 import os
-from PIL import Image
+import sys
 from pathlib import Path
+from PIL import Image
+
+# Set UTF-8 encoding for stdout on Windows
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Configuration
 WATERMARK_PATH = Path("assets/icons/war-on-disease-org-watermark-simple.JPG")
-INFographics_DIR = Path("assets/infographics")
+SOURCE_DIR = Path("assets/need-watermark")
+OUTPUT_DIR = Path("assets/watermarked")
 WATERMARK_OPACITY = 1.0  # Fully opaque
 WATERMARK_SCALE = 0.075  # Scale watermark to 7.5% of image width
 PADDING = 0  # No padding - flush to edges
 
-def add_watermark_to_image(image_path, watermark_path, output_path=None):
+def add_watermark_to_image(image_path, watermark_path, output_path):
     """
     Add watermark to the lower right corner of an image.
     
     Args:
         image_path: Path to the source image
         watermark_path: Path to the watermark image
-        output_path: Path to save the watermarked image (if None, overwrites original)
+        output_path: Path to save the watermarked image
     """
     try:
         # Open the main image
@@ -67,51 +74,63 @@ def add_watermark_to_image(image_path, watermark_path, output_path=None):
         if img.mode == 'RGB':
             watermarked_img = watermarked_img.convert('RGB')
         
+        # Ensure output directory exists
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
         # Save the watermarked image
-        output = output_path if output_path else image_path
         # Convert to string for Windows compatibility with special characters
-        output_str = str(output)
+        output_str = str(output_path)
         watermarked_img.save(output_str, quality=95, optimize=True)
         
-        print(f"✓ Watermarked: {image_path.name}")
+        print(f"[OK] Watermarked: {image_path.name} -> {output_path.name}")
         return True
         
     except Exception as e:
-        print(f"✗ Error processing {image_path.name}: {str(e)}")
+        print(f"[ERROR] Failed to process {image_path.name}: {str(e)}")
         return False
 
 def main():
-    """Main function to process all images in the infographics folder."""
+    """Main function to process all images in the need-watermark folder."""
     # Check if watermark exists
     if not WATERMARK_PATH.exists():
-        print(f"Error: Watermark file not found at {WATERMARK_PATH}")
+        print(f"[ERROR] Watermark file not found at {WATERMARK_PATH}")
         return
     
-    # Check if infographics directory exists
-    if not INFographics_DIR.exists():
-        print(f"Error: Infographics directory not found at {INFographics_DIR}")
+    # Check if source directory exists
+    if not SOURCE_DIR.exists():
+        print(f"[ERROR] Source directory not found at {SOURCE_DIR}")
+        print(f"[INFO] Creating source directory: {SOURCE_DIR}")
+        SOURCE_DIR.mkdir(parents=True, exist_ok=True)
         return
     
-    # Get all PNG images
-    image_files = list(INFographics_DIR.glob("*.png"))
+    # Get all image files (PNG, JPG, JPEG)
+    image_files = []
+    for ext in ['*.png', '*.jpg', '*.jpeg', '*.PNG', '*.JPG', '*.JPEG']:
+        image_files.extend(SOURCE_DIR.glob(ext))
     
     if not image_files:
-        print(f"No PNG images found in {INFographics_DIR}")
+        print(f"[INFO] No images found in {SOURCE_DIR}")
         return
     
-    print(f"Found {len(image_files)} images to watermark")
-    print(f"Watermark: {WATERMARK_PATH}")
-    print(f"Output: Overwriting original images")
+    print(f"[INFO] Found {len(image_files)} image(s) to watermark")
+    print(f"[INFO] Watermark: {WATERMARK_PATH}")
+    print(f"[INFO] Source: {SOURCE_DIR}")
+    print(f"[INFO] Output: {OUTPUT_DIR}")
     print("-" * 60)
+    
+    # Ensure output directory exists
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
     # Process each image
     success_count = 0
     for image_path in image_files:
-        if add_watermark_to_image(image_path, WATERMARK_PATH):
+        # Create output path preserving filename
+        output_path = OUTPUT_DIR / image_path.name
+        if add_watermark_to_image(image_path, WATERMARK_PATH, output_path):
             success_count += 1
     
     print("-" * 60)
-    print(f"Completed: {success_count}/{len(image_files)} images watermarked successfully")
+    print(f"[SUMMARY] Completed: {success_count}/{len(image_files)} images watermarked successfully")
 
 if __name__ == "__main__":
     main()
