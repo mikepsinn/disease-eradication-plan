@@ -194,54 +194,74 @@ The mechanism is financial, not bureaucratic:
 
 This isn't "funding infrastructure" - it's making trial participation financially attractive for both patients and providers while streamlining evidence collection.
 
-## Decentralized Evidence Generation Infrastructure
+## Decentralized Framework for Drug Assessment
 
-The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery, shifting from centralized regulatory gatekeeping to distributed, real-world evidence generation. This architectural approach achieves a **{{< var trial_cost_reduction_factor >}}x cost reduction** while enhancing safety monitoring and treatment selection capabilities.
+The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works, but what measurably happens to real humans taking real treatments.
 
-### Cost Structure of Decentralized Trials
+This architectural shift from centralized regulatory gatekeeping to distributed, real-world evidence generation achieves a **{{< var trial_cost_reduction_factor >}}x cost reduction** while providing superior safety monitoring and treatment selection capabilities.
 
-Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}} per patient due to dedicated research infrastructure requirements. Pragmatic trial designs, exemplified by the Oxford RECOVERY trial, reduce costs to {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient by leveraging existing healthcare infrastructure.
+### Trial Cost Reduction
 
-Cost reduction mechanisms include:
+Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} {{< var traditional_phase3_cost_per_patient_fda_example_41k_cite >}} per patient because they require dedicated infrastructure: specialized research sites, dedicated research coordinators, custom data collection systems, patient travel reimbursement, and extensive monitoring visits. This overhead exists independent of the actual treatment being tested.
 
-- **Infrastructure reuse**: Utilizing existing hospital systems rather than building dedicated trial sites
-- **Minimal additional documentation**: Collecting only incremental data beyond standard medical records
-- **Simplified consent processes**: Streamlined patient enrollment integrated with clinical care
-- **Embedded trial operations**: Evidence collection within routine healthcare delivery
+The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospital infrastructure, collect only incremental data beyond standard medical records, and integrate evidence generation into routine clinical care. Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient. Same quality evidence. {{< var trial_cost_reduction_factor >}}x lower cost.
 
-### Continuous Safety Surveillance
+**Concrete example**: A hospital already tracks patient lab results, symptoms, and outcomes in electronic health records. Traditional trials build a parallel research infrastructure to collect the same information again. Pragmatic trials simply flag which patients are enrolled and automatically extract relevant data from existing systems. No duplicate infrastructure, no dedicated research staff per trial.
 
-Current adverse event reporting relies on voluntary submission, resulting in systematic underreporting. Integrated trial infrastructure enables:
+The cost reduction stems from eliminating unnecessary overhead, not reducing evidence quality. Hospitals already exist. Electronic health records already exist. Doctors already see patients. The trial infrastructure simply uses what's already there rather than building dedicated research facilities.
 
-- **Systematic adverse event capture**: Automated collection from all participants within standard care workflows
-- **Real-time signal detection**: Continuous safety monitoring with immediate public reporting
-- **Quantified risk profiles**: Precise measurement of effect rates and severity distributions
-- **Post-approval surveillance**: Ongoing outcome tracking after initial regulatory clearance
+### Enhanced Safety Monitoring
 
-This infrastructure provides superior safety data compared to voluntary reporting systems, where adverse events often remain undetected until post-approval litigation reveals patterns years later.
+**Current system pain point**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until 100,000+ prescriptions have been written, because adverse event reporting is voluntary. Doctors must notice the problem, remember to file a report, and actually complete the paperwork. Estimated reporting rate: 1-10% of actual adverse events.
 
-### Comparative Effectiveness Data Integration
+**Integrated surveillance alternative**: Every prescription automatically becomes a tracked data point. When patients get lab tests or report symptoms at routine visits, the system captures these outcomes. No extra paperwork required. Like how credit card companies detect fraud patterns across millions of transactions in real-time, integrated health systems can detect treatment effects across millions of patients.
 
-Embedded trial infrastructure enables systematic comparative effectiveness measurement. Rather than relying on pharmaceutical marketing or physician recall, treatment decisions can be informed by outcomes data ranked by real-world effectiveness:
+The system automatically aggregates outcomes:
+- **10,000 patients prescribed Drug X** → System tracks all subsequent lab results, ER visits, and reported symptoms
+- **120 patients (1.2%) show elevated liver enzymes within 30 days** → Automated flag triggers
+- **Pattern detected after 5,000 prescriptions** → Public alert issued, rather than waiting for 100,000+ prescriptions and years of voluntary reports
+
+This isn't hypothetical. Analogous systems already exist: the Sentinel Initiative monitors 200+ million patients across US health systems for drug safety signals. The difference is making this the default infrastructure for all treatments, not a separate monitoring program.
+
+### Comparative Effectiveness Rankings
+
+**Current decision-making**: Doctor prescribes treatments based on pharmaceutical marketing, medical school training from years ago, and whatever clinical experiences they happen to remember. Patient has no access to comparative effectiveness data.
+
+**Evidence-based alternative**: Doctor searches "rheumatoid arthritis treatment" in the integrated evidence system, sees treatments ranked by measured effectiveness in real-world patients:
 
 ![Treatment Rankings Example](/assets/dfda-comparative-effectiveness-ranking-search.png)
 
-Ranking systems reflect frequency and magnitude of outcome changes across patient populations, with stratification by genetic profiles, demographic characteristics, and comorbidities. This precision medicine approach ensures treatment recommendations reflect individual patient characteristics rather than population averages.
+Rankings show frequency and magnitude of outcome changes across actual patient populations. Filters allow stratification: "Show me effectiveness in women over 50 with my patient's genetic markers and comorbidities." This precision medicine approach shows what works for patients like yours, not what works on average across everyone.
 
-### Standardized Outcome Reporting
+Like Amazon rankings based on verified purchase reviews, except based on measured clinical outcomes rather than subjective opinions, and stratified by patient characteristics rather than averaged across all users.
 
-Integrated evidence systems enable **standardized outcome labels** - quantified summaries of measured treatment effects from real-world data:
+**Implementation**: The system already has prescription records and outcome data from routine care. Ranking is just aggregation and sorting. No new data collection needed, just making existing data actually useful for treatment decisions.
+
+### Outcome Labels
+
+**Current drug information**: 40-page package inserts written by lawyers, listing every possible side effect without quantifying frequencies. Patients have no idea whether "may cause headaches" means 0.1% or 50% of users.
+
+**Standardized outcome labels**: Quantified summaries of what actually happens to patients taking each treatment, displayed like nutrition labels:
 
 ![Outcome Labels Example](/assets/dfda-outcome-labels.png)
 
-Based on systematic outcome collection, standardized labels provide:
+Based on systematic outcome collection across thousands of patients, labels show:
 
-- **Quantified benefits**: Measured effect magnitudes across outcome domains
-- **Adverse effect frequencies**: Precise rates and severity distributions
-- **Treatment persistence**: Discontinuation rates and reasons
-- **Evidence-based information**: Data from actual patient outcomes rather than marketing claims
+- **Quantified benefits**: "Memory improved 35%, Executive Function improved 22%"
+- **Adverse effect frequencies**: "Headache: 9% (8% mild, 1% severe); Fatigue: 7%"
+- **Treatment persistence**: "2.3% discontinued due to side effects"
+- **Sample size and confidence**: "Based on 4,200 patients, 95% CI"
 
-This approach replaces lengthy, legally-defensive package inserts with concise, data-driven summaries enabling informed clinical decision-making.
+This is measured data from actual patient outcomes, not marketing claims or lawyer-drafted disclaimers.
+
+**Implementation workflow**:
+1. Patient prescribed new treatment → Automatically enrolled in outcome tracking
+2. Patient reports symptoms at routine visits → Data flows into aggregation system
+3. Lab results, ER visits, prescription refills → Automatically captured from electronic health records
+4. System aggregates outcomes across all patients taking that treatment → Updates outcome label in real-time
+5. Next doctor/patient looking at that treatment sees current evidence, not 5-year-old clinical trial results
+
+No extra paperwork. No dedicated research staff. Just making routine clinical data actually useful for evidence generation.
 
 ## Summary of Results
 
