@@ -21,6 +21,11 @@ This appendix provides comprehensive documentation of all parameters and calcula
 - Calculated values: 105
 - Core definitions: 93
 
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (105 parameters) • [External Data Sources](#sec-external) (133 parameters) • [Core Definitions](#sec-definitions) (93 parameters)
+
+
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
@@ -6878,3 +6883,74 @@ Percentage of captured dividend funding VICTORY bonds (10%)
 
 *Core definition*
 
+
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```

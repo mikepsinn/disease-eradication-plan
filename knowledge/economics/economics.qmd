@@ -2042,9 +2042,9 @@ Current global health funding relies on unpredictable philanthropic donations an
 **Key insight**: This is not charity; it's profitable. Investors can buy VICTORY Incentive Alignment Bonds paying {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
 **Mechanism design**: The 1% Treaty Fund uses an 80/10/10 split:
-- 80% ({{< var dih_treasury_to_medical_research_annual >}}) → pragmatic trials
-- 10% ({{< var victory_bond_annual_payout >}}) → bond investor returns
-- 10% ({{< var iab_political_incentive_funding_annual >}}) → political incentive alignment
+- {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) → pragmatic trials
+- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) → bond investor returns
+- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) → political incentive alignment
 
 This creates a self-sustaining funding mechanism where:
 1. **Investors profit** from peace dividend returns
