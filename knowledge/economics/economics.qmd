@@ -1721,6 +1721,16 @@ $$
 
 We have empirically tested **{{< var exploration_ratio >}}** of the drug-disease relationships possible using *existing, approved, safe compounds*. The other {{< var unexplored_ratio >}} remains unexplored due to transaction costs. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for full analysis.
 
+##### Uncertainty Analysis
+
+{{< include ../figures/tornado-exploration_ratio.qmd >}}
+
+The tornado diagram shows that estimates of tested relationships dominate the uncertainty in our exploration ratio calculation. Even under conservative assumptions (upper bound of tested relationships), humanity has explored less than 1% of the therapeutic space.
+
+{{< include ../figures/mc-distribution-exploration_ratio.qmd >}}
+
+Monte Carlo simulation across 10,000 trials confirms robustness: even accounting for uncertainty in all input parameters (safe compounds, diseases, tested relationships), the median exploration ratio remains well below 1% with high confidence.
+
 **2. The Ultimate Frontier (New Molecules)**
 
 If we look beyond existing drugs to the broader [chemical space](../references.qmd#chemical-space-size) (10^23 to 10^60 molecules), humanity has explored roughly one-quintillionth of what is possible.
