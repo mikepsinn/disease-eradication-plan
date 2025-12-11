@@ -27,41 +27,41 @@ Here's some math. Don't worry, it's painful but brief.
 
 Here is everything humanity considers "medicine" after 5,000 years of civilization:
 
-* **Prescriptions:** [Over 20,000 products](../references.qmd#fda-approved-products-20k) approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
-* **Unique Ingredients:** These 20,000 products contain only ~1,300-2,000 unique active ingredients. That's fewer ingredients than a decent French bakery uses.
-* **Investigational Drugs:** Pipeline analyses suggest [5,000-10,000+ compounds](../references.qmd#bio-clinical-development-2021) have passed Phase I globally.
-* **Safe Stuff:** The FDA GRAS list contains [~570-700 substances](../references.qmd#fda-gras-list-count).
+* **Prescriptions:** {{< var fda_approved_products_count >}} products approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
+* **Unique Ingredients:** These products contain only {{< var fda_approved_unique_active_ingredients >}} unique active ingredients. That's fewer ingredients than a decent French bakery uses.
+* **Investigational Drugs:** Pipeline analyses suggest {{< var phase_1_passed_compounds_global >}} compounds have passed Phase I globally.
+* **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}} substances.
 
-**Total unique compounds humanity knows are safe-ish: ~7,000-12,000.**
+**Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count >}}.**
 
 That's it. That's your entire medicine cabinet after five millennia.
 
 ## The Target List (Ways Your Body Breaks)
 
-* **Codes:** The ICD-10 has [~14,000 codes](../references.qmd#icd-10-code-count) for ways your meat can malfunction.
-* **Real Targets:** Consolidation gives **~1,000 trial-relevant diseases** worth fixing.
+* **Codes:** The ICD-10 has {{< var icd_10_total_codes >}} codes for ways your meat can malfunction.
+* **Real Targets:** Consolidation gives {{< var trial_relevant_diseases_count >}} trial-relevant diseases worth fixing.
 
 ## The Math You're Ignoring
 
-Take your ~12,000 safe compounds. Multiply by ~1,000 diseases. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
+Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}} diseases. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
 
-**7,000-12,000 compounds x 1,000 diseases = 7-12 million plausible drug-condition combinations.**
+**{{< var safe_compounds_count >}} compounds × {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
 
 ### What You've Actually Tested
 
-* **Approved uses:** ~1,500-2,000 unique approved drug-disease pairings.
-* **Repurposed uses:** [~30% of drugs gain at least one new indication](../references.qmd#drug-repurposing-rate) after initial approval.
+* **Approved uses:** {{< var approved_drug_disease_pairings >}} unique approved drug-disease pairings.
+* **Repurposed uses:** {{< var drug_repurposing_success_rate >}} of drugs gain at least one new indication after initial approval.
 * **Failed trials:** Let's be generous and say you tested 10 times as many things that failed.
 
-**Total tested: ~15,000-50,000 relationships.**
+**Total tested: {{< var tested_relationships_estimate >}} relationships.**
 
 ### The Scorecard
 
-50,000 tested / 7,000,000 possibilities = **0.7%**
+{{< var tested_relationships_estimate >}} tested / {{< var drug_disease_combinations_possible >}} possibilities = {{< var exploration_ratio >}}
 
 **Humanity has explored less than 1% of the theoretically testable drug-disease space.**
 
-You are missing **99.3%** of the picture.
+You are missing {{< var unexplored_ratio >}} of the picture.
 
 It's like reading the first page of *War and Peace* and writing a book report called "It's About a Party." Technically accurate. Cosmically insufficient.
 
@@ -71,7 +71,7 @@ You might argue, "Maybe the other 99% is useless!"
 
 Biology disagrees.
 
-* **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only [~12% of the human interactome](../references.qmd#clinical-trials-puzzle-interactome) has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and only ever entering the bathroom.
+* **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only {{< var human_interactome_targeted_pct >}} of the human interactome has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and only ever entering the bathroom.
 * **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are often "cures for something else" that you haven't noticed yet. Every headache pill might cure Alzheimer's. You won't know until you check.
 * **Network Overlap:** [Diseases cluster on shared biological networks](../references.qmd#disease-network-overlap). A drug for arthritis might cure Alzheimer's. You won't know until you check. But you're not checking.
 

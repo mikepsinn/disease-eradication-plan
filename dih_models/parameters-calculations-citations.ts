@@ -377,6 +377,20 @@ export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
 };
 
 /**
+ * Percentage of drugs that gain at least one new indication after initial
+ * approval
+ */
+export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
+  value: 0.3,
+  unit: "percentage",
+  displayName: "Drug Repurposing Success Rate",
+  description: "Percentage of drugs that gain at least one new indication after initial approval",
+  sourceType: "external",
+  sourceRef: "drug-repurposing-rate",
+  confidence: "high",
+};
+
+/**
  * Economic multiplier for education investment (2.1x ROI)
  */
 export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
@@ -444,6 +458,49 @@ export const EFFICACY_LAG_YEARS: Parameter = {
   latex: "t_{lag} = 10.5 - 2.3 = 8.2 \\text{ years}",
   stdError: 1.0,
   peerReviewed: true,
+};
+
+/**
+ * Total FDA-approved drug products in the U.S.
+ */
+export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
+  value: 20000.0,
+  unit: "products",
+  displayName: "FDA-Approved Drug Products",
+  description: "Total FDA-approved drug products in the U.S.",
+  sourceType: "external",
+  sourceRef: "fda-approved-products-20k",
+  confidence: "high",
+};
+
+/**
+ * Unique active pharmaceutical ingredients in FDA-approved products
+ * (midpoint of 1,300-2,000 range)
+ */
+export const FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS: Parameter = {
+  value: 1650.0,
+  unit: "compounds",
+  displayName: "FDA-Approved Unique Active Ingredients",
+  description: "Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)",
+  sourceType: "external",
+  sourceRef: "fda-approved-products-20k",
+  confidence: "high",
+  confidenceInterval: [1300.0, 2000.0],
+};
+
+/**
+ * FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700
+ * range)
+ */
+export const FDA_GRAS_SUBSTANCES_COUNT: Parameter = {
+  value: 635.0,
+  unit: "substances",
+  displayName: "FDA GRAS Substances",
+  description: "FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)",
+  sourceType: "external",
+  sourceRef: "fda-gras-list-count",
+  confidence: "high",
+  confidenceInterval: [570.0, 700.0],
 };
 
 /**
@@ -1012,6 +1069,33 @@ export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
 };
 
 /**
+ * Percentage of human interactome (protein-protein interactions) targeted by
+ * drugs
+ */
+export const HUMAN_INTERACTOME_TARGETED_PCT: Parameter = {
+  value: 0.12,
+  unit: "percentage",
+  displayName: "Human Interactome Targeted by Drugs",
+  description: "Percentage of human interactome (protein-protein interactions) targeted by drugs",
+  sourceType: "external",
+  sourceRef: "clinical-trials-puzzle-interactome",
+  confidence: "high",
+};
+
+/**
+ * Total ICD-10 diagnostic codes for human diseases and conditions
+ */
+export const ICD_10_TOTAL_CODES: Parameter = {
+  value: 14000.0,
+  unit: "codes",
+  displayName: "ICD-10 Total Codes",
+  description: "Total ICD-10 diagnostic codes for human diseases and conditions",
+  sourceType: "external",
+  sourceRef: "icd-10-code-count",
+  confidence: "high",
+};
+
+/**
  * Expected years of life extension from 1% treaty research acceleration (25x
  * trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited
  * lifespan minus current). Lognormal distribution allows for breakthrough
@@ -1180,6 +1264,21 @@ export const PHARMA_SUCCESS_RATE_CURRENT_PCT: Parameter = {
   sourceRef: "drug-trial-success-rate-12-pct",
   confidence: "high",
   peerReviewed: true,
+};
+
+/**
+ * Investigational compounds that have passed Phase I globally (midpoint of
+ * 5,000-10,000 range)
+ */
+export const PHASE_1_PASSED_COMPOUNDS_GLOBAL: Parameter = {
+  value: 7500.0,
+  unit: "compounds",
+  displayName: "Phase I-Passed Compounds Globally",
+  description: "Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)",
+  sourceType: "external",
+  sourceRef: "bio-clinical-development-2021",
+  confidence: "high",
+  confidenceInterval: [5000.0, 10000.0],
 };
 
 /**
@@ -2290,6 +2389,36 @@ export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
 };
 
 /**
+ * Total possible drug-disease combinations using existing safe compounds
+ */
+export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
+  value: 9500000.0,
+  unit: "combinations",
+  displayName: "Possible Drug-Disease Combinations",
+  description: "Total possible drug-disease combinations using existing safe compounds",
+  sourceType: "calculated",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  formula: "SAFE_COMPOUNDS × DISEASES",
+  latex: "N_{combinations} = N_{compounds} \\times N_{diseases} = 9{,}500 \\times 1{,}000 = 9{,}500{,}000",
+};
+
+/**
+ * Fraction of possible drug-disease space actually tested (<1%)
+ */
+export const EXPLORATION_RATIO: Parameter = {
+  value: 0.0034210526315789475,
+  unit: "percentage",
+  displayName: "Therapeutic Frontier Exploration Ratio",
+  description: "Fraction of possible drug-disease space actually tested (<1%)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  formula: "TESTED / POSSIBLE",
+  latex: "\\text{Exploration Ratio} = \\frac{N_{tested}}{N_{possible}} = \\frac{32{,}500}{9{,}500{,}000} = 0.342\\%",
+};
+
+/**
  * FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x
  * slower)
  */
@@ -3371,6 +3500,21 @@ export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
 };
 
 /**
+ * Fraction of possible drug-disease space that remains unexplored (>99%)
+ */
+export const UNEXPLORED_RATIO: Parameter = {
+  value: 0.996578947368421,
+  unit: "percentage",
+  displayName: "Unexplored Therapeutic Frontier",
+  description: "Fraction of possible drug-disease space that remains unexplored (>99%)",
+  sourceType: "calculated",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  formula: "1 - EXPLORATION_RATIO",
+  latex: "\\text{Unexplored} = 1 - \\text{Exploration Ratio} = 1 - 0.00342 = 99.66\\%",
+};
+
+/**
  * Total annual US cost of major diseases (diabetes, Alzheimer's, heart
  * disease, cancer)
  */
@@ -3388,6 +3532,21 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
 // ============================================================================
 // Core Definitions
 // ============================================================================
+
+/**
+ * Unique approved drug-disease pairings (FDA-approved uses, midpoint of
+ * 1,500-2,000 range)
+ */
+export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
+  value: 1750.0,
+  unit: "pairings",
+  displayName: "Approved Drug-Disease Pairings",
+  description: "Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)",
+  sourceType: "definition",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [1500.0, 2000.0],
+};
 
 /**
  * Celebrity and influencer endorsements
@@ -4321,12 +4480,42 @@ export const PRE_1962_VALIDATION_YEARS: Parameter = {
   formula: "1960 - 1883",
 };
 
+/**
+ * Total safe compounds available for repurposing (FDA-approved + GRAS
+ * substances, midpoint of 7,000-12,000 range)
+ */
+export const SAFE_COMPOUNDS_COUNT: Parameter = {
+  value: 9500.0,
+  unit: "compounds",
+  displayName: "Safe Compounds Available for Testing",
+  description: "Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)",
+  sourceType: "definition",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [7000.0, 12000.0],
+};
+
 export const SECONDS_PER_MINUTE: Parameter = {
   value: 60.0,
 };
 
 export const SECONDS_PER_YEAR: Parameter = {
   value: 31536000.0,
+};
+
+/**
+ * Estimated drug-disease relationships actually tested (approved uses +
+ * repurposed + failed trials, midpoint of 15,000-50,000 range)
+ */
+export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
+  value: 32500.0,
+  unit: "relationships",
+  displayName: "Tested Drug-Disease Relationships",
+  description: "Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)",
+  sourceType: "definition",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [15000.0, 50000.0],
 };
 
 /**
@@ -4498,6 +4687,21 @@ export const TRIAL_COST_REDUCTION_PCT: Parameter = {
 };
 
 /**
+ * Consolidated count of trial-relevant diseases worth targeting (after
+ * grouping ICD-10 codes)
+ */
+export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
+  value: 1000.0,
+  unit: "diseases",
+  displayName: "Trial-Relevant Diseases",
+  description: "Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)",
+  sourceType: "definition",
+  sourceRef: "https://impact.dih.earth/knowledge/problem/untapped-therapeutic-frontier",
+  confidence: "high",
+  confidenceInterval: [800.0, 1200.0],
+};
+
+/**
  * Annual VICTORY bond payout (treaty funding × bond percentage)
  */
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
@@ -4564,11 +4768,15 @@ export const parameters = {
   DEFENSE_LOBBYING_ANNUAL,
   DEWORMING_COST_PER_DALY,
   DRUG_DEVELOPMENT_COST_1980S,
+  DRUG_REPURPOSING_SUCCESS_RATE,
   ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT,
   ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT,
   ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT,
   ECONOMIC_MULTIPLIER_MILITARY_SPENDING,
   EFFICACY_LAG_YEARS,
+  FDA_APPROVED_PRODUCTS_COUNT,
+  FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS,
+  FDA_GRAS_SUBSTANCES_COUNT,
   FDA_PHASE_1_TO_APPROVAL_YEARS,
   GIVEWELL_COST_PER_LIFE_AVG,
   GIVEWELL_COST_PER_LIFE_MAX,
@@ -4609,6 +4817,8 @@ export const parameters = {
   GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
   HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT,
+  HUMAN_INTERACTOME_TARGETED_PCT,
+  ICD_10_TOTAL_CODES,
   LIFE_EXTENSION_YEARS,
   LOBBYIST_SALARY_MAX,
   LOBBYIST_SALARY_MIN_K,
@@ -4621,6 +4831,7 @@ export const parameters = {
   PHARMA_DRUG_REVENUE_AVERAGE_CURRENT,
   PHARMA_ROI_CURRENT_SYSTEM_PCT,
   PHARMA_SUCCESS_RATE_CURRENT_PCT,
+  PHASE_1_PASSED_COMPOUNDS_GLOBAL,
   PHASE_1_SAFETY_DURATION_YEARS,
   PHASE_3_TRIAL_COST_MIN,
   POLIO_VACCINATION_ROI,
@@ -4696,6 +4907,8 @@ export const parameters = {
   DIVIDEND_COVERAGE_FACTOR,
   DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER,
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
+  DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+  EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
   GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT,
@@ -4768,7 +4981,9 @@ export const parameters = {
   TRIAL_CAPACITY_MULTIPLIER,
   TYPE_II_ERROR_COST_RATIO,
   TYPE_I_ERROR_BENEFIT_DALYS,
+  UNEXPLORED_RATIO,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
+  APPROVED_DRUG_DISEASE_PAIRINGS,
   CAMPAIGN_CELEBRITY_ENDORSEMENT,
   CAMPAIGN_COMMUNITY_ORGANIZING,
   CAMPAIGN_CONTINGENCY,
@@ -4841,8 +5056,10 @@ export const parameters = {
   NPV_TIME_HORIZON_YEARS,
   PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS,
   PRE_1962_VALIDATION_YEARS,
+  SAFE_COMPOUNDS_COUNT,
   SECONDS_PER_MINUTE,
   SECONDS_PER_YEAR,
+  TESTED_RELATIONSHIPS_ESTIMATE,
   TOTAL_BOOK_WORDS,
   TREATY_ANNUAL_FUNDING,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
@@ -4855,6 +5072,7 @@ export const parameters = {
   TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE,
   TREATY_REDUCTION_PCT,
   TRIAL_COST_REDUCTION_PCT,
+  TRIAL_RELEVANT_DISEASES_COUNT,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VICTORY_BOND_FUNDING_PCT
@@ -5090,6 +5308,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
         note: "ACS CAN: Barriers to Clinical Trial Enrollment | HINTS: Clinical Trial Participation",
   },
+  "clinical-trials-puzzle-interactome": {
+        id: "clinical-trials-puzzle-interactome",
+        type: "webpage",
+        title: "Only ~12% of human interactome targeted",
+        author: [
+          {
+            literal: "PMC"
+          },
+        ],
+        issued: { 'date-parts': [[2023]] },
+        publisher: "PMC",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10749231/",
+        note: "PMC, 2023, The Clinical Trials Puzzle",
+  },
   "clinicaltrials-gov-enrollment-data-2025": {
         id: "clinicaltrials-gov-enrollment-data-2025",
         type: "webpage",
@@ -5251,6 +5483,20 @@ export const citations: Record<string, Citation> = {
         publisher: "Tufts CSDD",
         note: "Tufts CSDD | IQVIA | Deloitte",
   },
+  "drug-repurposing-rate": {
+        id: "drug-repurposing-rate",
+        type: "article-journal",
+        title: "Drug Repurposing Rate (~30%)",
+        author: [
+          {
+            literal: "Nature Medicine"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "Nature Medicine",
+        URL: "https://www.nature.com/articles/s41591-024-03233-x",
+        note: "Nature Medicine, 2024, Drug Repurposing Trends",
+  },
   "drug-trial-success-rate-12-pct": {
         id: "drug-trial-success-rate-12-pct",
         type: "article-journal",
@@ -5303,6 +5549,32 @@ export const citations: Record<string, Citation> = {
         publisher: "Drugs.com: FDA Drug Approval Process",
         URL: "https://www.drugs.com/fda-approval-process.html",
         note: "Drugs.com: FDA Drug Approval Process | FDAReview.org: Drug Development & Approval | PMC: Drugs, Devices, FDA Overview",
+  },
+  "fda-approved-products-20k": {
+        id: "fda-approved-products-20k",
+        type: "report",
+        title: "FDA-approved prescription drug products (20,000+)",
+        author: [
+          {
+            literal: "FDA"
+          },
+        ],
+        publisher: "FDA",
+        URL: "https://www.fda.gov/media/143704/download",
+        note: "FDA, Facts About Generic Drugs",
+  },
+  "fda-gras-list-count": {
+        id: "fda-gras-list-count",
+        type: "report",
+        title: "FDA GRAS List Count (~570-700)",
+        author: [
+          {
+            literal: "FDA"
+          },
+        ],
+        publisher: "FDA",
+        URL: "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
+        note: "FDA, GRAS Notice Inventory",
   },
   "givewell-cost-per-life-saved": {
         id: "givewell-cost-per-life-saved",
@@ -5467,6 +5739,20 @@ export const citations: Record<string, Citation> = {
         publisher: "ICRC",
         URL: "https://www.icrc.org/en/doc/resources/documents/article/other/57jpjn.htm",
         note: "ICRC, Ottawa Treaty History | Wikipedia, International Campaign to Ban Landmines | Nobel Prize, 1997 Peace Prize | UN Press, ICBL Press Conference 1999 | Landmine Monitor, Mine Action Funding",
+  },
+  "icd-10-code-count": {
+        id: "icd-10-code-count",
+        type: "report",
+        title: "ICD-10 Code Count (~14,000)",
+        author: [
+          {
+            literal: "WHO"
+          },
+        ],
+        issued: { 'date-parts': [[2019]] },
+        publisher: "WHO",
+        URL: "https://icd.who.int/browse10/2019/en",
+        note: "WHO, ICD-10 Browser",
   },
   "industry-vs-government-trial-spending-split": {
         id: "industry-vs-government-trial-spending-split",
@@ -6121,11 +6407,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 317,
-  external: 126,
-  calculated: 102,
-  definitions: 89,
-  citations: 92,
+  total: 331,
+  external: 133,
+  calculated: 105,
+  definitions: 93,
+  citations: 97,
 } as const;
 
 // ============================================================================

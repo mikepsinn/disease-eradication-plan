@@ -1328,6 +1328,194 @@ PRE_1962_VALIDATION_YEARS = Parameter(
 
 # (DFDA_COMPLETED_TRIALS_PER_YEAR moved to after DFDA_TRIALS_PER_YEAR_CAPACITY definition)
 
+# ===================================================================
+# THERAPEUTIC FRONTIER - Drug Discovery Space Analysis
+# ===================================================================
+# Quantifies the unexplored space of potential drug-disease combinations
+# using existing safe compounds (FDA-approved + GRAS substances).
+# Shows that <1% of testable combinations have been explored.
+# ===================================================================
+
+# Input parameters: Safe compound counts from external sources
+
+FDA_APPROVED_PRODUCTS_COUNT = Parameter(
+    20_000,
+    source_ref=ReferenceID.FDA_APPROVED_PRODUCTS_20K,
+    source_type="external",
+    description="Total FDA-approved drug products in the U.S.",
+    display_name="FDA-Approved Drug Products",
+    unit="products",
+    keywords=["fda", "approved", "drugs", "products", "pharmaceuticals", "medicines"]
+)
+
+FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS = Parameter(
+    1_650,
+    source_ref=ReferenceID.FDA_APPROVED_PRODUCTS_20K,
+    source_type="external",
+    description="Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)",
+    display_name="FDA-Approved Unique Active Ingredients",
+    unit="compounds",
+    keywords=["fda", "active ingredients", "unique", "pharmaceutical", "compounds"],
+    confidence_interval=(1_300, 2_000),
+    distribution=DistributionType.UNIFORM
+)
+
+PHASE_1_PASSED_COMPOUNDS_GLOBAL = Parameter(
+    7_500,
+    source_ref=ReferenceID.BIO_CLINICAL_DEVELOPMENT_2021,
+    source_type="external",
+    description="Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)",
+    display_name="Phase I-Passed Compounds Globally",
+    unit="compounds",
+    keywords=["phase 1", "clinical trials", "investigational", "pipeline", "drug development"],
+    confidence_interval=(5_000, 10_000),
+    distribution=DistributionType.UNIFORM
+)
+
+FDA_GRAS_SUBSTANCES_COUNT = Parameter(
+    635,
+    source_ref=ReferenceID.FDA_GRAS_LIST_COUNT,
+    source_type="external",
+    description="FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)",
+    display_name="FDA GRAS Substances",
+    unit="substances",
+    keywords=["gras", "fda", "safe", "food additives", "supplements"],
+    confidence_interval=(570, 700),
+    distribution=DistributionType.UNIFORM
+)
+
+# Calculated: Total safe compounds available for repurposing
+
+SAFE_COMPOUNDS_COUNT = Parameter(
+    9_500,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)",
+    display_name="Safe Compounds Available for Testing",
+    unit="compounds",
+    keywords=["safe", "compounds", "repurposing", "drug discovery", "therapeutic frontier", "fda", "gras"],
+    confidence_interval=(7_000, 12_000),
+    distribution=DistributionType.UNIFORM
+)
+
+# Input parameters: Disease targets
+
+ICD_10_TOTAL_CODES = Parameter(
+    14_000,
+    source_ref=ReferenceID.ICD_10_CODE_COUNT,
+    source_type="external",
+    description="Total ICD-10 diagnostic codes for human diseases and conditions",
+    display_name="ICD-10 Total Codes",
+    unit="codes",
+    keywords=["icd-10", "disease", "diagnosis", "medical codes", "classification"]
+)
+
+TRIAL_RELEVANT_DISEASES_COUNT = Parameter(
+    1_000,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)",
+    display_name="Trial-Relevant Diseases",
+    unit="diseases",
+    keywords=["disease", "targets", "clinical trials", "therapeutic", "conditions"],
+    confidence_interval=(800, 1_200),
+    distribution=DistributionType.UNIFORM
+)
+
+# Calculated: Combinatorial space
+
+DRUG_DISEASE_COMBINATIONS_POSSIBLE = Parameter(
+    SAFE_COMPOUNDS_COUNT * TRIAL_RELEVANT_DISEASES_COUNT,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="calculated",
+    description="Total possible drug-disease combinations using existing safe compounds",
+    display_name="Possible Drug-Disease Combinations",
+    unit="combinations",
+    formula="SAFE_COMPOUNDS × DISEASES",
+    latex=r"N_{combinations} = N_{compounds} \times N_{diseases} = 9{,}500 \times 1{,}000 = 9{,}500{,}000",
+    keywords=["combinatorial space", "drug-disease", "therapeutic frontier", "unexplored", "potential"],
+    inputs=["SAFE_COMPOUNDS_COUNT", "TRIAL_RELEVANT_DISEASES_COUNT"],
+    compute=lambda ctx: ctx["SAFE_COMPOUNDS_COUNT"] * ctx["TRIAL_RELEVANT_DISEASES_COUNT"]
+)
+
+# Input parameters: What's been tested
+
+APPROVED_DRUG_DISEASE_PAIRINGS = Parameter(
+    1_750,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)",
+    display_name="Approved Drug-Disease Pairings",
+    unit="pairings",
+    keywords=["approved", "indications", "drug-disease", "fda", "uses"],
+    confidence_interval=(1_500, 2_000),
+    distribution=DistributionType.UNIFORM
+)
+
+DRUG_REPURPOSING_SUCCESS_RATE = Parameter(
+    0.30,
+    source_ref=ReferenceID.DRUG_REPURPOSING_RATE,
+    source_type="external",
+    description="Percentage of drugs that gain at least one new indication after initial approval",
+    display_name="Drug Repurposing Success Rate",
+    unit="percentage",
+    keywords=["repurposing", "new indications", "drug discovery", "success rate"]
+)
+
+TESTED_RELATIONSHIPS_ESTIMATE = Parameter(
+    32_500,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="definition",
+    description="Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)",
+    display_name="Tested Drug-Disease Relationships",
+    unit="relationships",
+    keywords=["tested", "clinical trials", "drug-disease", "explored", "research"],
+    confidence_interval=(15_000, 50_000),
+    distribution=DistributionType.LOGNORMAL
+)
+
+# Calculated: Exploration ratio
+
+EXPLORATION_RATIO = Parameter(
+    TESTED_RELATIONSHIPS_ESTIMATE / DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="calculated",
+    description="Fraction of possible drug-disease space actually tested (<1%)",
+    display_name="Therapeutic Frontier Exploration Ratio",
+    unit="percentage",
+    formula="TESTED / POSSIBLE",
+    latex=r"\text{Exploration Ratio} = \frac{N_{tested}}{N_{possible}} = \frac{32{,}500}{9{,}500{,}000} = 0.342\%",
+    keywords=["exploration", "untapped", "therapeutic frontier", "unexplored", "discovery"],
+    inputs=["TESTED_RELATIONSHIPS_ESTIMATE", "DRUG_DISEASE_COMBINATIONS_POSSIBLE"],
+    compute=lambda ctx: ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"]
+)
+
+UNEXPLORED_RATIO = Parameter(
+    1 - (TESTED_RELATIONSHIPS_ESTIMATE / DRUG_DISEASE_COMBINATIONS_POSSIBLE),
+    source_ref="/knowledge/problem/untapped-therapeutic-frontier.qmd",
+    source_type="calculated",
+    description="Fraction of possible drug-disease space that remains unexplored (>99%)",
+    display_name="Unexplored Therapeutic Frontier",
+    unit="percentage",
+    formula="1 - EXPLORATION_RATIO",
+    latex=r"\text{Unexplored} = 1 - \text{Exploration Ratio} = 1 - 0.00342 = 99.66\%",
+    keywords=["unexplored", "untapped", "therapeutic frontier", "opportunity", "discovery"],
+    inputs=["TESTED_RELATIONSHIPS_ESTIMATE", "DRUG_DISEASE_COMBINATIONS_POSSIBLE"],
+    compute=lambda ctx: 1 - (ctx["TESTED_RELATIONSHIPS_ESTIMATE"] / ctx["DRUG_DISEASE_COMBINATIONS_POSSIBLE"])
+)
+
+# Additional context: Biological targets
+
+HUMAN_INTERACTOME_TARGETED_PCT = Parameter(
+    0.12,
+    source_ref=ReferenceID.CLINICAL_TRIALS_PUZZLE_INTERACTOME,
+    source_type="external",
+    description="Percentage of human interactome (protein-protein interactions) targeted by drugs",
+    display_name="Human Interactome Targeted by Drugs",
+    unit="percentage",
+    keywords=["interactome", "targets", "proteins", "biology", "drug discovery", "untapped"]
+)
+
 # dFDA operational costs
 DFDA_UPFRONT_BUILD = Parameter(
     40_000_000,

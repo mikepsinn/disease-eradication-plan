@@ -17,6 +17,12 @@
   \ rate in antidepressant trials (86.1% of real-world patients excluded) | ✓ High\
   \ confidence | Unit: percentage | Click to view source citation\">86.1%</a>"
 "antidepressant_trial_exclusion_rate_cite": "@antidepressant-trial-exclusion-rates"
+"approved_drug_disease_pairings": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Unique approved\
+  \ drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range) | ✓ High\
+  \ confidence | 95% CI: [1.50k pairings, 2.00k pairings] | Dist: Uniform | Unit:\
+  \ pairings | Click to view methodology & calculation\">1.75k</a>"
 "average_market_return_pct": "<a href=\"https://warondisease.org/knowledge/references.html#warren-buffett-career-average-return-20-pct\"\
   \ class=\"parameter-link\" data-source-ref=\"warren-buffett-career-average-return-20-pct\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Average annual\
@@ -673,6 +679,20 @@
   \ to approval, 1990 dollars) | ✓ High confidence | Dist: Fixed | Unit: USD | Click\
   \ to view source citation\">$194M</a>"
 "drug_development_cost_1980s_cite": "@pre-1962-drug-costs-timeline"
+"drug_disease_combinations_possible": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total possible\
+  \ drug-disease combinations using existing safe compounds | Calculated from 2 inputs\
+  \ | ✓ High confidence | Formula: SAFE_COMPOUNDS × DISEASES | Unit: combinations\
+  \ | Click to view methodology & calculation\">9.50M</a>"
+"drug_disease_combinations_possible_latex": "$$\nN_{combinations} = N_{compounds}\
+  \ \\times N_{diseases} = 9{,}500 \\times 1{,}000 = 9{,}500{,}000\n$$"
+"drug_repurposing_success_rate": "<a href=\"https://warondisease.org/knowledge/references.html#drug-repurposing-rate\"\
+  \ class=\"parameter-link\" data-source-ref=\"drug-repurposing-rate\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Percentage of drugs that gain at least\
+  \ one new indication after initial approval | ✓ High confidence | Unit: percentage\
+  \ | Click to view source citation\">30%</a>"
+"drug_repurposing_success_rate_cite": "@drug-repurposing-rate"
 "economic_multiplier_education_investment": "<a href=\"https://warondisease.org/knowledge/references.html#education-investment-economic-multiplier\"\
   \ class=\"parameter-link\" data-source-ref=\"education-investment-economic-multiplier\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Economic multiplier\
@@ -718,10 +738,38 @@
   \ technological advancement | Unit: percentage | Core definition\">92.6%</span>"
 "eventually_avoidable_death_pct_latex": "$$\nP_{\\text{avoidable}} = 1 - 0.0791 =\
   \ 92.09\\%\n$$"
+"exploration_ratio": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
+  \ drug-disease space actually tested (<1%) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: TESTED / POSSIBLE | Unit: percentage | Click to view methodology &\
+  \ calculation\">0.342%</a>"
+"exploration_ratio_latex": "$$\n\\text{Exploration Ratio} = \\frac{N_{tested}}{N_{possible}}\
+  \ = \\frac{32{,}500}{9{,}500{,}000} = 0.342\\%\n$$"
 "family_office_investment_min": "<a href=\"/knowledge/economics/victory-bonds\" class=\"\
   parameter-link\" data-source-ref=\"/knowledge/economics/victory-bonds.qmd\" data-source-type=\"\
   definition\" data-confidence=\"high\" title=\"Minimum investment for family offices\
   \ | ✓ High confidence | Unit: USD | Click to view methodology & calculation\">$5.00M</a>"
+"fda_approved_products_count": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approved-products-20k\"\
+  \ class=\"parameter-link\" data-source-ref=\"fda-approved-products-20k\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total FDA-approved drug products in\
+  \ the U.S. | ✓ High confidence | Unit: products | Click to view source citation\"\
+  >20.0k</a>"
+"fda_approved_products_count_cite": "@fda-approved-products-20k"
+"fda_approved_unique_active_ingredients": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approved-products-20k\"\
+  \ class=\"parameter-link\" data-source-ref=\"fda-approved-products-20k\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Unique active pharmaceutical ingredients\
+  \ in FDA-approved products (midpoint of 1,300-2,000 range) | ✓ High confidence |\
+  \ 95% CI: [1.30k compounds, 2.00k compounds] | Dist: Uniform | Unit: compounds |\
+  \ Click to view source citation\">1.65k</a>"
+"fda_approved_unique_active_ingredients_cite": "@fda-approved-products-20k"
+"fda_gras_substances_count": "<a href=\"https://warondisease.org/knowledge/references.html#fda-gras-list-count\"\
+  \ class=\"parameter-link\" data-source-ref=\"fda-gras-list-count\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"FDA Generally Recognized as Safe (GRAS)\
+  \ substances (midpoint of 570-700 range) | ✓ High confidence | 95% CI: [570 substances,\
+  \ 700 substances] | Dist: Uniform | Unit: substances | Click to view source citation\"\
+  >635</a>"
+"fda_gras_substances_count_cite": "@fda-gras-list-count"
 "fda_phase_1_to_approval_years": "<a href=\"https://warondisease.org/knowledge/references.html#fda-approval-timeline-10-years\"\
   \ class=\"parameter-link\" data-source-ref=\"fda-approval-timeline-10-years\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"FDA timeline from Phase 1 start to approval\
@@ -1145,6 +1193,12 @@
   \ economic impact of Human Genome Project | ✓ High confidence | Unit: USD | Click\
   \ to view source citation\">$1.00T</a>"
 "human_genome_project_total_economic_impact_cite": "@human-genome-and-genetic-editing"
+"human_interactome_targeted_pct": "<a href=\"https://warondisease.org/knowledge/references.html#clinical-trials-puzzle-interactome\"\
+  \ class=\"parameter-link\" data-source-ref=\"clinical-trials-puzzle-interactome\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Percentage of human\
+  \ interactome (protein-protein interactions) targeted by drugs | ✓ High confidence\
+  \ | Unit: percentage | Click to view source citation\">12%</a>"
+"human_interactome_targeted_pct_cite": "@clinical-trials-puzzle-interactome"
 "iab_bootstrap_campaign_cost_base_usd": "<span class=\"parameter-definition\" title=\"\
   Base case estimate for bootstrap campaign cost | Unit: USD | Core definition\">$100M</span>"
 "iab_bootstrap_campaign_cost_conservative_usd": "<span class=\"parameter-definition\"\
@@ -1180,6 +1234,12 @@
   Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for\
   \ political incentives (independent expenditures/PACs, post-office fellowships,\
   \ Public Good Score infrastructure) | Unit: rate | Core definition\">10%</span>"
+"icd_10_total_codes": "<a href=\"https://warondisease.org/knowledge/references.html#icd-10-code-count\"\
+  \ class=\"parameter-link\" data-source-ref=\"icd-10-code-count\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Total ICD-10 diagnostic codes for human\
+  \ diseases and conditions | ✓ High confidence | Unit: codes | Click to view source\
+  \ citation\">14.0k</a>"
+"icd_10_total_codes_cite": "@icd-10-code-count"
 "industry_vs_government_clinical_trials_spending_ratio": "<a href=\"/industry-vs-government-trial-spending-split\"\
   \ class=\"parameter-link\" data-source-ref=\"/industry-vs-government-trial-spending-split\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of Industry\
@@ -1449,6 +1509,13 @@
   \ of drugs that reach market in current system | ✓ High confidence | \U0001F4CA\
   \ Peer-reviewed | Unit: percentage | Click to view source citation\">10%</a>"
 "pharma_success_rate_current_pct_cite": "@drug-trial-success-rate-12-pct"
+"phase_1_passed_compounds_global": "<a href=\"https://warondisease.org/knowledge/references.html#bio-clinical-development-2021\"\
+  \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Investigational compounds that have\
+  \ passed Phase I globally (midpoint of 5,000-10,000 range) | ✓ High confidence |\
+  \ 95% CI: [5.00k compounds, 10.0k compounds] | Dist: Uniform | Unit: compounds |\
+  \ Click to view source citation\">7.50k</a>"
+"phase_1_passed_compounds_global_cite": "@bio-clinical-development-2021"
 "phase_1_safety_duration_years": "<a href=\"https://warondisease.org/knowledge/references.html#bio-clinical-development-2021\"\
   \ class=\"parameter-link\" data-source-ref=\"bio-clinical-development-2021\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Phase I\
@@ -1528,6 +1595,12 @@
   \ Medium confidence | \U0001F4CA Peer-reviewed | 95% CI: [4 years, 9 years] | Dist:\
   \ Lognormal | Unit: years | Click to view source citation\">6</a>"
 "regulatory_delay_suffering_period_years_cite": "@who-global-health-estimates-2024"
+"safe_compounds_count": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Total safe compounds\
+  \ available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000\
+  \ range) | ✓ High confidence | 95% CI: [7.00k compounds, 12.0k compounds] | Dist:\
+  \ Uniform | Unit: compounds | Click to view methodology & calculation\">9.50k</a>"
 "seconds_per_minute": "<span class=\"parameter-link\" title=\"Parameter: SECONDS_PER_MINUTE\"\
   >60</span>"
 "seconds_per_year": "<span class=\"parameter-link\" title=\"31,536,000\">31.5M</span>"
@@ -1591,6 +1664,13 @@
   \ terrorist attacks | ✓ High confidence | Unit: deaths | Click to view source citation\"\
   >3.00k</a>"
 "terrorism_deaths_911_cite": "@chance-of-dying-from-terrorism-1-in-30m"
+"tested_relationships_estimate": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Estimated drug-disease\
+  \ relationships actually tested (approved uses + repurposed + failed trials, midpoint\
+  \ of 15,000-50,000 range) | ✓ High confidence | 95% CI: [15.0k relationships, 50.0k\
+  \ relationships] | Dist: Lognormal | Unit: relationships | Click to view methodology\
+  \ & calculation\">32.5k</a>"
 "thalidomide_cases_worldwide": "<a href=\"https://warondisease.org/knowledge/references.html#thalidomide-scandal\"\
   \ class=\"parameter-link\" data-source-ref=\"thalidomide-scandal\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Total thalidomide birth defect cases\
@@ -1944,6 +2024,12 @@
 "trial_cost_reduction_pct": "<span class=\"parameter-definition\" title=\"Trial cost\
   \ reduction percentage (50% baseline, conservative) | Unit: rate | Core definition\"\
   >50%</span>"
+"trial_relevant_diseases_count": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\
+  \ count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)\
+  \ | ✓ High confidence | 95% CI: [800 diseases, 1.20k diseases] | Dist: Uniform |\
+  \ Unit: diseases | Click to view methodology & calculation\">1.00k</a>"
 "type_ii_error_cost_ratio": "<a href=\"/knowledge/appendix/regulatory-mortality-analysis#risk-analysis\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/regulatory-mortality-analysis.qmd#risk-analysis\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Ratio of Type\
@@ -1966,6 +2052,14 @@
   external\" data-confidence=\"high\" title=\"Typical CEO hourly rate | ✓ High confidence\
   \ | Unit: USD/hour | Click to view source citation\">$10K</a>"
 "typical_ceo_hourly_rate_cite": "@ceo-compensation"
+"unexplored_ratio": "<a href=\"/knowledge/problem/untapped-therapeutic-frontier\"\
+  \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Fraction of possible\
+  \ drug-disease space that remains unexplored (>99%) | Calculated from 2 inputs |\
+  \ ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click\
+  \ to view methodology & calculation\">99.7%</a>"
+"unexplored_ratio_latex": "$$\n\\text{Unexplored} = 1 - \\text{Exploration Ratio}\
+  \ = 1 - 0.00342 = 99.66\\%\n$$"
 "us_alzheimers_annual_cost": "<a href=\"https://warondisease.org/knowledge/references.html#disease-cost-alzheimers-1300b\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-cost-alzheimers-1300b\" data-source-type=\"\
   external\" data-peer-reviewed=\"true\" data-confidence=\"high\" title=\"Annual US\
@@ -2076,6 +2170,6 @@
   \ experiencing productivity loss from chronic illness (28%) | ✓ High confidence\
   \ | Unit: rate | Click to view source citation\">28%</a>"
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
-"total_parameter_count": "317"
-"total_latex_equation_count": "119"
-"total_citation_count": "126"
+"total_parameter_count": "331"
+"total_latex_equation_count": "122"
+"total_citation_count": "133"

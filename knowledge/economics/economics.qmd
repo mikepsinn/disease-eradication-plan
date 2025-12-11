@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials'
-description: Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials could save ~416M lives at ≈$0.13 per DALY and generate ≈$1.19 quadrillion in long-run value.
+description: Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.
 author:
   - name: Decentralized Institutes of Health
     affiliation:
@@ -49,20 +49,13 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 ## Abstract
 
-**Objective**: Evaluate the global health and economic impact of reallocating {{< var treaty_reduction_pct >}} of annual military expenditure toward large-scale pragmatic clinical trials, with conditional treatment access granted after Phase I safety confirmation.
+We identify a cost-dominant intervention that simultaneously reduces costs while saving lives: reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}}/year) to fund pragmatic clinical trials. This intervention delivers {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY averted ({{< var treaty_vs_bed_nets_multiplier >}}× more cost-effective than malaria bed nets) while generating ROI between {{< var dfda_roi_rd_only >}}:1 (conservative estimate) and {{< var treaty_complete_roi_all_benefits >}}:1 (complete estimate including peace dividend).
 
-**Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using data from SIPRI military expenditure database, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature.
-Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits.
+**Key Results**: Eliminating the {{< var efficacy_lag_years >}}-year efficacy-trial delay shifts forward patient access to future cures by {{< var efficacy_lag_years >}} years (a timeline shift independent of when discoveries occur), saving approximately {{< var disease_eradication_delay_deaths_total >}} lives globally, valued at {{< var disease_eradication_delay_economic_loss >}} ({{< var standard_economic_qaly_value_usd >}} per QALY). This {{< var efficacy_lag_years >}}-year advancement represents a conservative floor; it excludes additional acceleration from increased research capacity and lowered economic barrier from eliminating phase 2-4 trial costs for pharma. Redirecting {{< var treaty_annual_funding >}}/year at {{< var recovery_trial_cost_per_patient >}} per patient increases annual trial capacity by {{< var trial_capacity_multiplier >}}×, compressing 500+ years' worth of traditional clinical research into 20 calendar years. This removes the primary bottleneck to medical progress: currently less than 1% of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve. Even at {{< var political_success_probability >}} probability of adoption, expected cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}}× better than bed nets.
 
-**Results**: Removing the current {{< var efficacy_lag_years >}}-year average efficacy-trial delay advances access to future disease-modifying therapies by {{< var efficacy_lag_years >}} years, independent of when discovery occurs.
-Redirecting ~{{< var treaty_annual_funding >}}/year at {{< var recovery_trial_cost_per_patient >}} per patient also increases annual trial capacity by {{< var trial_capacity_multiplier >}}×.
-Under conservative assumptions (timeline shift only), the intervention saves approximately {{< var disease_eradication_delay_deaths_total >}} lives globally, valued at ~{{< var disease_eradication_delay_economic_loss >}} ({{< var standard_economic_qaly_value_usd >}} per QALY).
-Cost-effectiveness is {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY averted, which is {{< var treaty_vs_bed_nets_multiplier >}}× more efficient than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY).
-Even at 1% probability of policy adoption, expected cost-effectiveness remains favorable.
-A secondary peace dividend adds {{< var peace_dividend_annual_societal_benefit >}} in annual societal value.
+**Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Oxford RECOVERY trial results, and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits.
 
-**Conclusions**: This intervention qualifies as cost-dominant (reduces costs while improving outcomes).
-All parameters, data sources, and uncertainty ranges are documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
+**Implications**: This intervention qualifies as cost-dominant (reduces costs while improving outcomes), comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI). All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 **Keywords**: {{< var treaty_reduction_pct >}} Treaty, pragmatic clinical trials, regulatory delay, cost-effectiveness analysis, DALY, peace dividend
 
@@ -1715,10 +1708,10 @@ High trial costs (median [~$41,000 per patient](../references.qmd#trial-cost-41k
 
 Even restricting ourselves to compounds humans *already know are safe* (FDA-approved drugs and GRAS substances), we have barely scratched the surface.
 
-- **Safe compounds available**: [12,000](../references.qmd#fda-approved-products-20k) (FDA approved + GRAS)
-- **Diseases to treat**: [1,000](../references.qmd#icd-10-code-count) (trial-relevant ICD-10 codes)
-- **Possible combinations**: 12.0 million plausible drug-condition pairs
-- **Actually tested**: [50,000](../problem/untapped-therapeutic-frontier.qmd#what-youve-actually-tested) (optimistic estimate)
+- **Safe compounds available**: {{< var safe_compounds_count >}} (FDA approved + GRAS)
+- **Diseases to treat**: {{< var trial_relevant_diseases_count >}} (trial-relevant ICD-10 codes)
+- **Possible combinations**: {{< var drug_disease_combinations_possible >}} plausible drug-condition pairs
+- **Actually tested**: {{< var tested_relationships_estimate >}} (estimate)
 
 We can express the exploration gap mathematically as:
 
@@ -1726,7 +1719,7 @@ $$
 \text{Exploration Ratio} = \frac{N_{tested}}{N_{compounds} \times N_{diseases}} \approx \frac{50,000}{12,000 \times 1,000} \approx 0.417\%
 $$
 
-We have empirically tested **0.417%** of the drug-disease relationships possible using *existing, approved, safe compounds*. The other 99.6% remains unexplored due to transaction costs. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for full analysis.
+We have empirically tested **{{< var exploration_ratio >}}** of the drug-disease relationships possible using *existing, approved, safe compounds*. The other {{< var unexplored_ratio >}} remains unexplored due to transaction costs. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for full analysis.
 
 **2. The Ultimate Frontier (New Molecules)**
 

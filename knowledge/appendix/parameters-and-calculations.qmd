@@ -13,11 +13,11 @@ format:
 
 This appendix provides comprehensive documentation of all parameters and calculations used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.
 
-**Total parameters**: 317
+**Total parameters**: 331
 
-- External sources (peer-reviewed): 126
-- Calculated values: 102
-- Core definitions: 89
+- External sources (peer-reviewed): 133
+- Calculated values: 105
+- Core definitions: 93
 
 ## Calculated Values {#sec-calculated}
 
@@ -1009,6 +1009,64 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+
+### Possible Drug-Disease Combinations {#sec-drug_disease_combinations_possible}
+
+**Value**: 9.50M combinations
+
+Total possible drug-disease combinations using existing safe compounds
+
+**Inputs**:
+
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50k compounds (95% CI: 7.00k compounds - 12.0k compounds)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+
+$$
+N_{combinations} = N_{compounds} \times N_{diseases} = 9{,}500 \times 1{,}000 = 9{,}500{,}000
+$$
+
+**Methodology**: [../problem/untapped-therapeutic-frontier](../problem/untapped-therapeutic-frontier)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drug_disease_combinations_possible.qmd >}}
+
+
+### Therapeutic Frontier Exploration Ratio {#sec-exploration_ratio}
+
+**Value**: 0.342%
+
+Fraction of possible drug-disease space actually tested (<1%)
+
+**Inputs**:
+
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5k relationships (95% CI: 15.0k relationships - 50.0k relationships)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+
+$$
+\text{Exploration Ratio} = \frac{N_{tested}}{N_{possible}} = \frac{32{,}500}{9{,}500{,}000} = 0.342\%
+$$
+
+**Methodology**: [../problem/untapped-therapeutic-frontier](../problem/untapped-therapeutic-frontier)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-exploration_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-exploration_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-exploration_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-exploration_ratio.qmd >}}
 
 
 ### FDA to Oxford RECOVERY Trial Time Multiplier {#sec-fda_to_oxford_recovery_trial_time_multiplier}
@@ -3445,6 +3503,40 @@ $$
 {{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
 
 
+### Unexplored Therapeutic Frontier {#sec-unexplored_ratio}
+
+**Value**: 99.7%
+
+Fraction of possible drug-disease space that remains unexplored (>99%)
+
+**Inputs**:
+
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5k relationships (95% CI: 15.0k relationships - 50.0k relationships)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+
+$$
+\text{Unexplored} = 1 - \text{Exploration Ratio} = 1 - 0.00342 = 99.66\%
+$$
+
+**Methodology**: [../problem/untapped-therapeutic-frontier](../problem/untapped-therapeutic-frontier)
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-unexplored_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-unexplored_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-unexplored_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-unexplored_ratio.qmd >}}
+
+
 ### US Major Diseases Total Annual Cost {#sec-us_major_diseases_total_annual_cost}
 
 **Value**: $1.25T
@@ -3810,6 +3902,17 @@ Drug development cost in 1980s (compounded to approval, 1990 dollars)
 *✓ High confidence*
 
 
+### Drug Repurposing Success Rate {#sec-drug_repurposing_success_rate}
+
+**Value**: 30%
+
+Percentage of drugs that gain at least one new indication after initial approval
+
+**Source**: [drug-repurposing-rate](../references.qmd#drug-repurposing-rate)
+
+*✓ High confidence*
+
+
 ### Economic Multiplier for Education Investment {#sec-economic_multiplier_education_investment}
 
 **Value**: 2.1 ratio
@@ -3871,6 +3974,63 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+
+### FDA-Approved Drug Products {#sec-fda_approved_products_count}
+
+**Value**: 20.0k products
+
+Total FDA-approved drug products in the U.S.
+
+**Source**: [fda-approved-products-20k](../references.qmd#fda-approved-products-20k)
+
+*✓ High confidence*
+
+
+### FDA-Approved Unique Active Ingredients {#sec-fda_approved_unique_active_ingredients}
+
+**Value**: 1.65k compounds
+
+Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)
+
+**Source**: [fda-approved-products-20k](../references.qmd#fda-approved-products-20k)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.30k compounds, 2.00k compounds] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.30k compounds and 2.00k compounds (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-fda_approved_unique_active_ingredients.qmd >}}
+
+*✓ High confidence*
+
+
+### FDA GRAS Substances {#sec-fda_gras_substances_count}
+
+**Value**: 635 substances
+
+FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)
+
+**Source**: [fda-gras-list-count](../references.qmd#fda-gras-list-count)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [570 substances, 700 substances] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 570 substances and 700 substances (±10%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-fda_gras_substances_count.qmd >}}
+
+*✓ High confidence*
 
 
 ### FDA Phase 1 to Approval Timeline {#sec-fda_phase_1_to_approval_years}
@@ -4713,6 +4873,28 @@ Estimated total economic impact of Human Genome Project
 *✓ High confidence*
 
 
+### Human Interactome Targeted by Drugs {#sec-human_interactome_targeted_pct}
+
+**Value**: 12%
+
+Percentage of human interactome (protein-protein interactions) targeted by drugs
+
+**Source**: [clinical-trials-puzzle-interactome](../references.qmd#clinical-trials-puzzle-interactome)
+
+*✓ High confidence*
+
+
+### ICD-10 Total Codes {#sec-icd_10_total_codes}
+
+**Value**: 14.0k codes
+
+Total ICD-10 diagnostic codes for human diseases and conditions
+
+**Source**: [icd-10-code-count](../references.qmd#icd-10-code-count)
+
+*✓ High confidence*
+
+
 ### Life Extension from Treaty Research Acceleration {#sec-life_extension_years}
 
 **Value**: 20 years
@@ -4887,6 +5069,29 @@ Percentage of drugs that reach market in current system
 **Source**: [drug-trial-success-rate-12-pct](../references.qmd#drug-trial-success-rate-12-pct)
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+
+### Phase I-Passed Compounds Globally {#sec-phase_1_passed_compounds_global}
+
+**Value**: 7.50k compounds
+
+Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)
+
+**Source**: [bio-clinical-development-2021](../references.qmd#bio-clinical-development-2021)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5.00k compounds, 10.0k compounds] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 5.00k compounds and 10.0k compounds (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_1_passed_compounds_global.qmd >}}
+
+*✓ High confidence*
 
 
 ### Phase I Safety Trial Duration {#sec-phase_1_safety_duration_years}
@@ -5638,6 +5843,23 @@ Percentage of workforce experiencing productivity loss from chronic illness (28%
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+### Approved Drug-Disease Pairings {#sec-approved_drug_disease_pairings}
+
+**Value**: 1.75k pairings
+
+Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.50k pairings, 2.00k pairings] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50k pairings and 2.00k pairings (±14%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+*Core definition*
+
 
 ### Celebrity and Influencer Endorsements {#sec-campaign_celebrity_endorsement}
 
@@ -6407,6 +6629,23 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 *Core definition*
 
 
+### Safe Compounds Available for Testing {#sec-safe_compounds_count}
+
+**Value**: 9.50k compounds
+
+Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [7.00k compounds, 12.0k compounds] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 7.00k compounds and 12.0k compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+*Core definition*
+
+
 ### Seconds Per Minute {#sec-seconds_per_minute}
 
 **Value**: 60
@@ -6417,6 +6656,23 @@ Years of empirical validation for physician-led pragmatic trials (1883-1960)
 ### Seconds Per Year {#sec-seconds_per_year}
 
 **Value**: 31.5M
+
+*Core definition*
+
+
+### Tested Drug-Disease Relationships {#sec-tested_relationships_estimate}
+
+**Value**: 32.5k relationships
+
+Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [15.0k relationships, 50.0k relationships] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 15.0k relationships and 50.0k relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 *Core definition*
 
@@ -6569,6 +6825,23 @@ Trial cost reduction percentage (50% baseline, conservative)
 **What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 65% (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The beta distribution means values are bounded and can skew toward one end.*
+
+*Core definition*
+
+
+### Trial-Relevant Diseases {#sec-trial_relevant_diseases_count}
+
+**Value**: 1.00k diseases
+
+Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [800 diseases, 1.20k diseases] • Distribution: Uniform
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.20k diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
 
 *Core definition*
 
