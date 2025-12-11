@@ -1,0 +1,635 @@
+
+Searching for "dFDA" (exact case, within strings only) in: E:\code\decentralized-institutes-of-health\dih_models\parameters.py
+
+Found 48 occurrence(s) of "dFDA" in 48 line(s)
+
+
+================================================================================
+Match 1 of 48 (Line 97)
+================================================================================
+     94 | 
+     95 |         # NEW FIELDS (v2.0):
+     96 |         display_value: Optional override for formatted display (e.g., "$2.7T" instead of auto-format)
+>    97 |         display_name: Optional override for parameter title in documentation (e.g., "dFDA Active Trials")
+         |                                                                                      ^^^^                 
+     98 |         keywords: List of search keywords for parameter discovery
+     99 |         validation_min: Minimum valid value (hard constraint for validation)
+    100 |         validation_max: Maximum valid value (hard constraint for validation)
+
+
+================================================================================
+Match 2 of 48 (Line 1076)
+================================================================================
+   1073 |     source_ref="",
+   1074 |     source_type="definition",
+   1075 |     description="Trial cost reduction percentage (50% baseline, conservative)",
+>  1076 |     display_name="dFDA Trial Cost Reduction Percentage",
+         |                   ^^^^                                   
+   1077 |     unit="rate",
+   1078 |     distribution=DistributionType.BETA,  # Beta distribution mandatory for [0,1] bounded probabilities
+   1079 |     confidence_interval=(0.40, 0.65),  # 40-65% reduction range (widened from 30-70%)
+
+
+================================================================================
+Match 3 of 48 (Line 1524)
+================================================================================
+   1521 |     40_000_000,
+   1522 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+   1523 |     source_type="definition",
+>  1524 |     description="dFDA one-time build cost (central estimate)",
+         |                  ^^^^                                          
+   1525 |     display_name="dFDA One-Time Build Cost",
+   1526 |     unit="USD",
+   1527 |     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
+
+
+================================================================================
+Match 4 of 48 (Line 1525)
+================================================================================
+   1522 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+   1523 |     source_type="definition",
+   1524 |     description="dFDA one-time build cost (central estimate)",
+>  1525 |     display_name="dFDA One-Time Build Cost",
+         |                   ^^^^                       
+   1526 |     unit="USD",
+   1527 |     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
+   1528 | )  # $40M one-time build cost
+
+
+================================================================================
+Match 5 of 48 (Line 1534)
+================================================================================
+   1531 |     46_000_000,
+   1532 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+   1533 |     source_type="definition",
+>  1534 |     description="dFDA one-time build cost (high estimate)",
+         |                  ^^^^                                       
+   1535 |     display_name="dFDA One-Time Build Cost (Maximum)",
+   1536 |     unit="USD",
+   1537 |     keywords=["46.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
+
+
+================================================================================
+Match 6 of 48 (Line 1535)
+================================================================================
+   1532 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs",
+   1533 |     source_type="definition",
+   1534 |     description="dFDA one-time build cost (high estimate)",
+>  1535 |     display_name="dFDA One-Time Build Cost (Maximum)",
+         |                   ^^^^                                 
+   1536 |     unit="USD",
+   1537 |     keywords=["46.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"]
+   1538 | )  # $46M one-time build cost (high end)
+
+
+================================================================================
+Match 7 of 48 (Line 1557)
+================================================================================
+   1554 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-per-patient",
+   1555 |     source_type="definition",
+   1556 |     description="Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
+>  1557 |     display_name="dFDA Target Cost per Patient in USD",
+         |                   ^^^^                                  
+   1558 |     unit="USD/patient",
+   1559 |     keywords=["1k", "pragmatic trials", "real world evidence", "participant", "subject", "volunteer", "enrollee"]
+   1560 | )  # $1,000 per patient
+
+
+================================================================================
+Match 8 of 48 (Line 1567)
+================================================================================
+   1564 |     15_000_000,
+   1565 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1566 |     source_type="definition",
+>  1567 |     description="dFDA maintenance costs",
+         |                  ^^^^                     
+   1568 |     display_name="dFDA Maintenance Costs",
+   1569 |     unit="USD/year",
+   1570 |     keywords=["15.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+
+
+================================================================================
+Match 9 of 48 (Line 1568)
+================================================================================
+   1565 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1566 |     source_type="definition",
+   1567 |     description="dFDA maintenance costs",
+>  1568 |     display_name="dFDA Maintenance Costs",
+         |                   ^^^^                     
+   1569 |     unit="USD/year",
+   1570 |     keywords=["15.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+   1571 |     distribution="lognormal",
+
+
+================================================================================
+Match 10 of 48 (Line 1579)
+================================================================================
+   1576 |     10_000_000,
+   1577 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1578 |     source_type="definition",
+>  1579 |     description="dFDA staff costs (minimal, AI-assisted)",
+         |                  ^^^^                                      
+   1580 |     display_name="dFDA Staff Costs",
+   1581 |     unit="USD/year",
+   1582 |     keywords=["10.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+
+
+================================================================================
+Match 11 of 48 (Line 1580)
+================================================================================
+   1577 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1578 |     source_type="definition",
+   1579 |     description="dFDA staff costs (minimal, AI-assisted)",
+>  1580 |     display_name="dFDA Staff Costs",
+         |                   ^^^^               
+   1581 |     unit="USD/year",
+   1582 |     keywords=["10.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+   1583 |     distribution="lognormal",
+
+
+================================================================================
+Match 12 of 48 (Line 1591)
+================================================================================
+   1588 |     8_000_000,
+   1589 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1590 |     source_type="definition",
+>  1591 |     description="dFDA infrastructure costs (cloud, security)",
+         |                  ^^^^                                          
+   1592 |     display_name="dFDA Infrastructure Costs",
+   1593 |     unit="USD/year",
+   1594 |     keywords=["8.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+
+
+================================================================================
+Match 13 of 48 (Line 1592)
+================================================================================
+   1589 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1590 |     source_type="definition",
+   1591 |     description="dFDA infrastructure costs (cloud, security)",
+>  1592 |     display_name="dFDA Infrastructure Costs",
+         |                   ^^^^                        
+   1593 |     unit="USD/year",
+   1594 |     keywords=["8.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+   1595 |     distribution="lognormal",
+
+
+================================================================================
+Match 14 of 48 (Line 1603)
+================================================================================
+   1600 |     5_000_000,
+   1601 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1602 |     source_type="definition",
+>  1603 |     description="dFDA regulatory coordination costs",
+         |                  ^^^^                                 
+   1604 |     display_name="dFDA Regulatory Coordination Costs",
+   1605 |     unit="USD/year",
+   1606 |     keywords=["5.0m", "pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation"],
+
+
+================================================================================
+Match 15 of 48 (Line 1604)
+================================================================================
+   1601 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1602 |     source_type="definition",
+   1603 |     description="dFDA regulatory coordination costs",
+>  1604 |     display_name="dFDA Regulatory Coordination Costs",
+         |                   ^^^^                                 
+   1605 |     unit="USD/year",
+   1606 |     keywords=["5.0m", "pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation"],
+   1607 |     distribution="lognormal",
+
+
+================================================================================
+Match 16 of 48 (Line 1615)
+================================================================================
+   1612 |     2_000_000,
+   1613 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1614 |     source_type="definition",
+>  1615 |     description="dFDA community support costs",
+         |                  ^^^^                           
+   1616 |     display_name="dFDA Community Support Costs",
+   1617 |     unit="USD/year",
+   1618 |     keywords=["2.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+
+
+================================================================================
+Match 17 of 48 (Line 1616)
+================================================================================
+   1613 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1614 |     source_type="definition",
+   1615 |     description="dFDA community support costs",
+>  1616 |     display_name="dFDA Community Support Costs",
+         |                   ^^^^                           
+   1617 |     unit="USD/year",
+   1618 |     keywords=["2.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+   1619 |     distribution="lognormal",
+
+
+================================================================================
+Match 18 of 48 (Line 1632)
+================================================================================
+   1629 |     + DFDA_OPEX_COMMUNITY,
+   1630 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1631 |     source_type="calculated",
+>  1632 |     description="Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+         |                               ^^^^                                                                            
+   1633 |     display_name="Total Annual dFDA Operational Costs",
+   1634 |     unit="USD/year",
+   1635 |     formula="PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
+
+
+================================================================================
+Match 19 of 48 (Line 1633)
+================================================================================
+   1630 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown",
+   1631 |     source_type="calculated",
+   1632 |     description="Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+>  1633 |     display_name="Total Annual dFDA Operational Costs",
+         |                                ^^^^                     
+   1634 |     unit="USD/year",
+   1635 |     formula="PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
+   1636 |     latex=r"OPEX_{total} = \$15M \text{ (plat)} + \$10M \text{ (staff)} + \$8M \text{ (infra)} + \$5M \text{ (reg)} + \$2M \text{ (comm)} = \$40M",
+
+
+================================================================================
+Match 20 of 48 (Line 1668)
+================================================================================
+   1665 |     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * TRIAL_COST_REDUCTION_PCT,
+   1666 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+   1667 |     source_type="calculated",
+>  1668 |     description="Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)",
+         |                         ^^^^                                                                        
+   1669 |     display_name="dFDA Annual Benefit: R&D Savings",
+   1670 |     unit="USD/year",
+   1671 |     formula="TRIAL_SPENDING ├ù COST_REDUCTION_PCT",
+
+
+================================================================================
+Match 21 of 48 (Line 1669)
+================================================================================
+   1666 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction",
+   1667 |     source_type="calculated",
+   1668 |     description="Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)",
+>  1669 |     display_name="dFDA Annual Benefit: R&D Savings",
+         |                   ^^^^                               
+   1670 |     unit="USD/year",
+   1671 |     formula="TRIAL_SPENDING ├ù COST_REDUCTION_PCT",
+   1672 |     keywords=["rd savings", "pragmatic trials", "real world evidence", "rct", "clinical trial"],
+
+
+================================================================================
+Match 22 of 48 (Line 1703)
+================================================================================
+   1700 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#net-savings",
+   1701 |     source_type="calculated",
+   1702 |     description="Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
+>  1703 |     display_name="dFDA Annual Net Savings (R&D Only)",
+         |                   ^^^^                                 
+   1704 |     unit="USD/year",
+   1705 |     formula="GROSS_SAVINGS - ANNUAL_OPEX",
+   1706 |     latex=r"Savings_{net} = \$41.5B - \$0.04B = \$41.46B",
+
+
+================================================================================
+Match 23 of 48 (Line 1718)
+================================================================================
+   1715 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+   1716 |     source_type="calculated",
+   1717 |     description="Simple ROI without NPV adjustment (gross savings / annual opex)",
+>  1718 |     display_name="dFDA Simple ROI Without NPV Adjustment",
+         |                   ^^^^                                     
+   1719 |     unit="ratio",
+   1720 |     formula="GROSS_SAVINGS ├╖ ANNUAL_OPEX",
+   1721 |     keywords=["pragmatic trials", "real world evidence", "bcr", "benefit cost ratio", "economic return", "investment return", "return on investment"],
+
+
+================================================================================
+Match 24 of 48 (Line 2931)
+================================================================================
+   2928 |     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,
+   2929 |     source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs",
+   2930 |     source_type="calculated",
+>  2931 |     description="Total annual system costs (campaign + dFDA operations)",
+         |                                                        ^^^^               
+   2932 |     display_name="Total Annual Treaty System Costs",
+   2933 |     unit="USD/year",
+   2934 |     formula="CAMPAIGN_ANNUAL + DFDA_OPEX",
+
+
+================================================================================
+Match 25 of 48 (Line 2949)
+================================================================================
+   2946 |     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_RD_GROSS_SAVINGS_ANNUAL,
+   2947 |     source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits",
+   2948 |     source_type="calculated",
+>  2949 |     description="Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
+         |                                                          ^^^^                                                                                 
+   2950 |     display_name="1% treaty Basic Annual Benefits (Peace + R&D Savings)",
+   2951 |     unit="USD/year",
+   2952 |     formula="PEACE_DIVIDEND + DFDA_RD_SAVINGS",
+
+
+================================================================================
+Match 26 of 48 (Line 3006)
+================================================================================
+   3003 |     40_000_000,
+   3004 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3005 |     source_type="definition",
+>  3006 |     description="dFDA core platform build cost",
+         |                  ^^^^                            
+   3007 |     display_name="dFDA Core Platform Build Cost",
+   3008 |     unit="USD",
+   3009 |     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+
+
+================================================================================
+Match 27 of 48 (Line 3007)
+================================================================================
+   3004 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3005 |     source_type="definition",
+   3006 |     description="dFDA core platform build cost",
+>  3007 |     display_name="dFDA Core Platform Build Cost",
+         |                   ^^^^                            
+   3008 |     unit="USD",
+   3009 |     keywords=["40.0m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+   3010 |     distribution="lognormal",
+
+
+================================================================================
+Match 28 of 48 (Line 3030)
+================================================================================
+   3027 |     18_950_000,
+   3028 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3029 |     source_type="definition",
+>  3030 |     description="dFDA core platform annual opex (midpoint of $11-26.5M)",
+         |                  ^^^^                                                     
+   3031 |     display_name="dFDA Core Platform Annual OPEX",
+   3032 |     unit="USD/year",
+   3033 |     keywords=["18.9m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+
+
+================================================================================
+Match 29 of 48 (Line 3031)
+================================================================================
+   3028 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3029 |     source_type="definition",
+   3030 |     description="dFDA core platform annual opex (midpoint of $11-26.5M)",
+>  3031 |     display_name="dFDA Core Platform Annual OPEX",
+         |                   ^^^^                             
+   3032 |     unit="USD/year",
+   3033 |     keywords=["18.9m", "pragmatic trials", "real world evidence", "decentralized trials", "drug agency", "food and drug administration", "medicines agency"],
+   3034 |     distribution="lognormal",
+
+
+================================================================================
+Match 30 of 48 (Line 3056)
+================================================================================
+   3053 |     DFDA_NPV_UPFRONT_COST + DIH_NPV_UPFRONT_COST_INITIATIVES,
+   3054 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3055 |     source_type="calculated",
+>  3056 |     description="Total NPV upfront costs (dFDA core + DIH initiatives)",
+         |                                           ^^^^                           
+   3057 |     display_name="dFDA Total NPV Upfront Costs",
+   3058 |     unit="USD",
+   3059 |     formula="DFDA_BUILD + DIH_INITIATIVES",
+
+
+================================================================================
+Match 31 of 48 (Line 3057)
+================================================================================
+   3054 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3055 |     source_type="calculated",
+   3056 |     description="Total NPV upfront costs (dFDA core + DIH initiatives)",
+>  3057 |     display_name="dFDA Total NPV Upfront Costs",
+         |                   ^^^^                           
+   3058 |     unit="USD",
+   3059 |     formula="DFDA_BUILD + DIH_INITIATIVES",
+   3060 |     latex=r"C_0 = \$0.040B + \$0.22975B = \$0.26975B \text{ (upfront cost)}",
+
+
+================================================================================
+Match 32 of 48 (Line 3074)
+================================================================================
+   3071 |     DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES,
+   3072 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3073 |     source_type="calculated",
+>  3074 |     description="Total NPV annual opex (dFDA core + DIH initiatives)",
+         |                                         ^^^^                           
+   3075 |     display_name="dFDA Total NPV Annual OPEX",
+   3076 |     unit="USD/year",
+   3077 |     formula="DFDA_OPEX + DIH_OPEX",
+
+
+================================================================================
+Match 33 of 48 (Line 3075)
+================================================================================
+   3072 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs",
+   3073 |     source_type="calculated",
+   3074 |     description="Total NPV annual opex (dFDA core + DIH initiatives)",
+>  3075 |     display_name="dFDA Total NPV Annual OPEX",
+         |                   ^^^^                         
+   3076 |     unit="USD/year",
+   3077 |     formula="DFDA_OPEX + DIH_OPEX",
+   3078 |     latex=r"C_{op} = \$0.01895B + \$0.02110B = \$0.04005B \text{ (annual operational cost)}",
+
+
+================================================================================
+Match 34 of 48 (Line 3089)
+================================================================================
+   3086 |     5,
+   3087 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve",
+   3088 |     source_type="definition",
+>  3089 |     description="Years to reach full dFDA adoption",
+         |                                      ^^^^            
+   3090 |     display_name="Years to Reach Full dFDA Adoption",
+   3091 |     unit="years",
+   3092 |     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"]
+
+
+================================================================================
+Match 35 of 48 (Line 3090)
+================================================================================
+   3087 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve",
+   3088 |     source_type="definition",
+   3089 |     description="Years to reach full dFDA adoption",
+>  3090 |     display_name="Years to Reach Full dFDA Adoption",
+         |                                       ^^^^            
+   3091 |     unit="years",
+   3092 |     keywords=["pragmatic trials", "real world evidence", "deployment rate", "market penetration", "participation rate", "uptake", "usage rate"]
+   3093 | )  # Years to reach full adoption
+
+
+================================================================================
+Match 36 of 48 (Line 3103)
+================================================================================
+   3100 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-calculation",
+   3101 |     source_type="calculated",
+   3102 |     description="Present value of annual opex over 10 years (NPV formula)",
+>  3103 |     display_name="dFDA Present Value of Annual OPEX Over 10 Years",
+         |                   ^^^^                                              
+   3104 |     unit="USD",
+   3105 |     formula="OPEX ├ù [(1 - (1 + r)^-T) / r]",
+   3106 |     latex=r"PV_{opex} = \$0.04005B \times \frac{1 - 1.08^{-10}}{0.08} \approx \$0.269B",
+
+
+================================================================================
+Match 37 of 48 (Line 3118)
+================================================================================
+   3115 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-total-cost",
+   3116 |     source_type="calculated",
+   3117 |     description="Total NPV cost (upfront + PV of annual opex)",
+>  3118 |     display_name="dFDA Total NPV Cost",
+         |                   ^^^^                  
+   3119 |     unit="USD",
+   3120 |     formula="UPFRONT + PV_OPEX",
+   3121 |     latex=r"TotalCost_{NPV} = \$0.26975B + \$0.269B \approx \$0.54B",
+
+
+================================================================================
+Match 38 of 48 (Line 3140)
+================================================================================
+   3137 |     ),
+   3138 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
+   3139 |     source_type="calculated",
+>  3140 |     description="NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
+         |                         ^^^^                                                                                                      
+   3141 |     display_name="NPV of dFDA Benefits (R&D Only, 10-Year Discounted)",
+   3142 |     unit="USD",
+   3143 |     formula="Sum of discounted annual net R&D savings with linear adoption ramp",
+
+
+================================================================================
+Match 39 of 48 (Line 3141)
+================================================================================
+   3138 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit",
+   3139 |     source_type="calculated",
+   3140 |     description="NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
+>  3141 |     display_name="NPV of dFDA Benefits (R&D Only, 10-Year Discounted)",
+         |                          ^^^^                                           
+   3142 |     unit="USD",
+   3143 |     formula="Sum of discounted annual net R&D savings with linear adoption ramp",
+   3144 |     latex=r"PV_{benefits} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}",
+
+
+================================================================================
+Match 40 of 48 (Line 3193)
+================================================================================
+   3190 |     DFDA_NPV_BENEFIT_RD_ONLY / DFDA_NPV_TOTAL_COST,
+   3191 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+   3192 |     source_type="calculated",
+>  3193 |     description="ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
+         |                           ^^^^                                                              
+   3194 |     display_name="ROI from dFDA R&D Savings Only",
+   3195 |     unit="ratio",
+   3196 |     formula="NPV_BENEFIT ├╖ NPV_TOTAL_COST",
+
+
+================================================================================
+Match 41 of 48 (Line 3194)
+================================================================================
+   3191 |     source_ref="/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple",
+   3192 |     source_type="calculated",
+   3193 |     description="ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
+>  3194 |     display_name="ROI from dFDA R&D Savings Only",
+         |                            ^^^^                    
+   3195 |     unit="ratio",
+   3196 |     formula="NPV_BENEFIT ├╖ NPV_TOTAL_COST",
+   3197 |     latex=r"ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463",
+
+
+================================================================================
+Match 42 of 48 (Line 3329)
+================================================================================
+   3326 |     TREATY_ANNUAL_FUNDING / DFDA_ANNUAL_OPEX,
+   3327 |     source_ref="/knowledge/strategy/roadmap.qmd#sustainability",
+   3328 |     source_type="calculated",
+>  3329 |     description="Coverage factor of treaty funding vs dFDA opex (sustainability margin)",
+         |                                                       ^^^^                                
+   3330 |     display_name="Coverage Factor of Treaty Funding vs dFDA OPEX",
+   3331 |     unit="ratio",
+   3332 |     formula="TREATY_FUNDING ├╖ DFDA_OPEX",
+
+
+================================================================================
+Match 43 of 48 (Line 3330)
+================================================================================
+   3327 |     source_ref="/knowledge/strategy/roadmap.qmd#sustainability",
+   3328 |     source_type="calculated",
+   3329 |     description="Coverage factor of treaty funding vs dFDA opex (sustainability margin)",
+>  3330 |     display_name="Coverage Factor of Treaty Funding vs dFDA OPEX",
+         |                                                        ^^^^        
+   3331 |     unit="ratio",
+   3332 |     formula="TREATY_FUNDING ├╖ DFDA_OPEX",
+   3333 |     latex=r"Coverage = \$27.18B / \$0.04B = 679x",
+
+
+================================================================================
+Match 44 of 48 (Line 3355)
+================================================================================
+   3352 |     DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL - DFDA_ANNUAL_OPEX,
+   3353 |     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+   3354 |     source_type="calculated",
+>  3355 |     description="Annual clinical trial patient subsidies (all medical research funds after dFDA operations)",
+         |                                                                                            ^^^^               
+   3356 |     display_name="Annual Clinical Trial Patient Subsidies",
+   3357 |     unit="USD/year",
+   3358 |     formula="MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
+
+
+================================================================================
+Match 45 of 48 (Line 3409)
+================================================================================
+   3406 |     DFDA_ANNUAL_OPEX / TREATY_ANNUAL_FUNDING,
+   3407 |     source_type="definition",
+   3408 |     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+>  3409 |     description="Percentage of treaty funding allocated to dFDA platform overhead",
+         |                                                            ^^^^                     
+   3410 |     display_name="dFDA Overhead Percentage of Treaty Funding",
+   3411 |     unit="rate",
+   3412 |     formula="DFDA_OPEX / TREATY_FUNDING",
+
+
+================================================================================
+Match 46 of 48 (Line 3410)
+================================================================================
+   3407 |     source_type="definition",
+   3408 |     source_ref="/knowledge/economics/economics.qmd#funding-allocation",
+   3409 |     description="Percentage of treaty funding allocated to dFDA platform overhead",
+>  3410 |     display_name="dFDA Overhead Percentage of Treaty Funding",
+         |                   ^^^^                                         
+   3411 |     unit="rate",
+   3412 |     formula="DFDA_OPEX / TREATY_FUNDING",
+   3413 |     latex=r"DFDAOpexPct = \$0.04B / \$27.18B = 0.00147 = 0.15\%",
+
+
+================================================================================
+Match 47 of 48 (Line 3487)
+================================================================================
+   3484 |     int(CURRENT_TRIALS_PER_YEAR * TRIAL_CAPACITY_MULTIPLIER),
+   3485 |     source_type="calculated",
+   3486 |     description="Maximum trials per year possible with trial capacity multiplier",
+>  3487 |     display_name="dFDA Maximum Trials per Year",
+         |                   ^^^^                           
+   3488 |     unit="trials/year",
+   3489 |     formula="CURRENT_TRIALS ├ù TRIAL_CAPACITY_MULTIPLIER",
+   3490 |     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect"],
+
+
+================================================================================
+Match 48 of 48 (Line 4213)
+================================================================================
+   4210 |     print(f"Military spending: {format_parameter_value(GLOBAL_MILITARY_SPENDING_ANNUAL_2024)}")
+   4211 |     print(f"Total war costs: {format_parameter_value(GLOBAL_ANNUAL_WAR_TOTAL_COST)}")
+   4212 |     print(f"Peace dividend: {format_parameter_value(PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)}")
+>  4213 |     print(f"dFDA savings: {format_parameter_value(DFDA_RD_GROSS_SAVINGS_ANNUAL)}")
+         |             ^^^^                                                                   
+   4214 |     print(f"Total benefits: {format_parameter_value(TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS)}")
+   4215 | 
+   4216 | # Derived time-based costs (SECONDS_PER_YEAR defined in TIME CONSTANTS section)
+
+
+================================================================================
+SUMMARY: 48 total occurrences of "dFDA" in 48 lines
+(Only showing exact case matches within string literals)
+================================================================================
+

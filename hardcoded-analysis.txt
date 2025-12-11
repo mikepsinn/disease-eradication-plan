@@ -1,0 +1,1321 @@
+
+========================================
+AVAILABLE VARIABLES FROM _variables.yml
+========================================
+
+
+--- ANTIDEPRESSANT (1) ---
+antidepressant_trial_exclusion_rate                          = 86.1%
+
+--- APPROVED (1) ---
+approved_drug_disease_pairings                               = 1.75k
+
+--- AVERAGE (2) ---
+average_market_return_pct                                    = 10%
+average_us_hourly_wage                                       = $30
+
+--- BASELINE (1) ---
+baseline_lives_saved_annual                                  = 12
+
+--- BED (1) ---
+bed_nets_cost_per_daly                                       = $89
+
+--- BOOK (1) ---
+book_reading_speed_wpm                                       = 200
+
+--- CAMPAIGN (27) ---
+campaign_celebrity_endorsement                               = $15M
+campaign_community_organizing                                = $30M
+campaign_contingency                                         = $50M
+campaign_defense_conversion                                  = $50M
+campaign_defense_lobbyist_budget                             = $50M
+campaign_healthcare_alignment                                = $35M
+campaign_infrastructure                                      = $20M
+campaign_legal_ai_budget                                     = $50M
+campaign_legal_defense                                       = $20M
+campaign_legal_work                                          = $60M
+campaign_lobbying_eu                                         = $40M
+campaign_lobbying_g20_millions                               = $35M
+campaign_lobbying_us                                         = $50M
+campaign_media_budget_max                                    = $1.00B
+campaign_media_budget_min                                    = $500M
+campaign_opposition_research                                 = $25M
+campaign_phase1_budget                                       = $200M
+campaign_phase2_budget                                       = $500M
+campaign_pilot_programs                                      = $30M
+campaign_platform_development                                = $35M
+campaign_regulatory_navigation                               = $20M
+campaign_scaling_prep                                        = $30M
+campaign_staff_budget                                        = $40M
+campaign_super_pac_budget                                    = $30M
+campaign_tech_partnerships                                   = $25M
+campaign_treaty_implementation                               = $40M
+campaign_viral_content_budget                                = $40M
+
+--- CAREGIVER (5) ---
+caregiver_annual_value_total                                 = $600B
+caregiver_cost_annual                                        = $6.00K
+caregiver_count_us                                           = 38.0M
+caregiver_hours_per_month                                    = 20
+caregiver_value_per_hour_simple                              = $25
+
+--- CHILDHOOD (3) ---
+childhood_vaccination_annual_benefit                         = $15B
+childhood_vaccination_cost_per_daly                          = $30
+childhood_vaccination_roi                                    = 13
+
+--- CHRONIC (1) ---
+chronic_disease_disability_weight                            = 0.35
+
+--- COMBINED (1) ---
+combined_peace_health_dividends_annual_for_roi_calc          = $155B
+
+--- CONCENTRATED (1) ---
+concentrated_interest_sector_market_cap_usd                  = $5.00T
+
+--- CURRENT (8) ---
+current_active_trials                                        = 10.0k
+current_clinical_trial_participation_rate                    = 0.06%
+current_disease_patients_global                              = 2.40B
+current_drug_approvals_per_year                              = 50
+current_patient_participation_rate                           = 0.0792%
+current_trial_abandonment_rate                               = 40%
+current_trial_slots_available                                = 1.90M
+current_trials_per_year                                      = 3.30k
+
+--- DAYS (1) ---
+days_per_year                                                = 365
+
+--- DCT (1) ---
+dct_platform_funding_medium                                  = $500M
+
+--- DEFENSE (2) ---
+defense_lobbying_annual                                      = $127M
+defense_sector_retention_pct                                 = 99%
+
+--- DEWORMING (1) ---
+deworming_cost_per_daly                                      = $55
+
+--- DFDA (27) ---
+dfda_annual_opex                                             = $40M
+dfda_benefit_rd_only_annual                                  = $41.5B
+dfda_expected_roi                                            = 11.9k
+dfda_net_savings_rd_only_annual                              = $41.5B
+dfda_npv_adoption_ramp_years                                 = 5
+dfda_npv_annual_opex                                         = $18.9M
+dfda_npv_annual_opex_total                                   = $40M
+dfda_npv_benefit_rd_only                                     = $275B
+dfda_npv_net_benefit_rd_only                                 = $275B
+dfda_npv_pv_annual_opex                                      = $342M
+dfda_npv_total_cost                                          = $611M
+dfda_npv_upfront_cost                                        = $40M
+dfda_npv_upfront_cost_total                                  = $270M
+dfda_opex_community                                          = $2.00M
+dfda_opex_infrastructure                                     = $8.00M
+dfda_opex_pct_of_treaty_funding                              = 0.147%
+dfda_opex_platform_maintenance                               = $15M
+dfda_opex_regulatory                                         = $5.00M
+dfda_opex_staff                                              = $10M
+dfda_rd_gross_savings_annual                                 = $41.5B
+dfda_rd_savings_daily                                        = $114M
+dfda_roi_rd_only                                             = 451
+dfda_roi_simple                                              = 1.04k
+dfda_target_cost_per_patient_usd                             = $1.00K
+dfda_trials_per_year_capacity                                = 75.4k
+dfda_upfront_build                                           = $40M
+dfda_upfront_build_max                                       = $46M
+
+--- DIH (7) ---
+dih_npv_annual_opex_initiatives                              = $21.1M
+dih_npv_upfront_cost_initiatives                             = $230M
+dih_patients_fundable_annually                               = 43.4M
+dih_treasury_medical_research_pct                            = 80%
+dih_treasury_to_medical_research_annual                      = $21.7B
+dih_treasury_trial_subsidies_annual                          = $21.7B
+dih_treasury_trial_subsidies_pct                             = 79.9%
+
+--- DISEASE (10) ---
+disease_eradication_delay_dalys                              = 7.94B
+disease_eradication_delay_deaths_total                       = 416M
+disease_eradication_delay_economic_loss                      = $1.19 quadrillion
+disease_eradication_delay_yld                                = 873M
+disease_eradication_delay_yll                                = 7.07B
+disease_eradication_plus_acceleration_deaths_total           = 898M
+disease_eradication_plus_acceleration_economic_loss_total    = $2.38 quadrillion
+disease_related_caregiver_pct                                = 40%
+disease_vs_terrorism_deaths_ratio                            = 18.4k
+disease_vs_war_deaths_ratio                                  = 225
+
+--- DIVIDEND (1) ---
+dividend_coverage_factor                                     = 680
+
+--- DRUG (5) ---
+drug_cost_increase_1980s_to_current_multiplier               = 13.4
+drug_cost_increase_pre1962_to_current_multiplier             = 52
+drug_development_cost_1980s                                  = $194M
+drug_disease_combinations_possible                           = 9.50M
+drug_repurposing_success_rate                                = 30%
+
+--- ECONOMIC (4) ---
+economic_multiplier_education_investment                     = 2.1
+economic_multiplier_healthcare_investment                    = 4.3
+economic_multiplier_infrastructure_investment                = 1.6
+economic_multiplier_military_spending                        = 0.6
+
+--- EFFECTIVE (1) ---
+effective_hourly_rate_lifetime_benefit                       = $4.30M
+
+--- EFFICACY (1) ---
+efficacy_lag_years                                           = 8.2
+
+--- EVENTUALLY (1) ---
+eventually_avoidable_death_pct                               = 92.6%
+
+--- EXPLORATION (1) ---
+exploration_ratio                                            = 0.342%
+
+--- FAMILY (1) ---
+family_office_investment_min                                 = $5.00M
+
+--- FDA (5) ---
+fda_approved_products_count                                  = 20.0k
+fda_approved_unique_active_ingredients                       = 1.65k
+fda_gras_substances_count                                    = 635
+fda_phase_1_to_approval_years                                = 9.1
+fda_to_oxford_recovery_trial_time_multiplier                 = 36.4
+
+--- FUNDAMENTALLY (1) ---
+fundamentally_unavoidable_death_pct                          = 7.37%
+
+--- GIVEWELL (3) ---
+givewell_cost_per_life_avg                                   = $4.50K
+givewell_cost_per_life_max                                   = $5.50K
+givewell_cost_per_life_min                                   = $3.50K
+
+--- GLOBAL (51) ---
+global_annual_conflict_deaths_active_combat                  = 234k
+global_annual_conflict_deaths_state_violence                 = 2.70k
+global_annual_conflict_deaths_terror_attacks                 = 8.30k
+global_annual_conflict_deaths_total                          = 245k
+global_annual_deaths_curable_diseases                        = 55.0M
+global_annual_environmental_damage_conflict                  = $100B
+global_annual_human_cost_active_combat                       = $2.34T
+global_annual_human_cost_state_violence                      = $27B
+global_annual_human_cost_terror_attacks                      = $83B
+global_annual_human_life_losses_conflict                     = $2.45T
+global_annual_infrastructure_damage_communications_conflict  = $298B
+global_annual_infrastructure_damage_education_conflict       = $234B
+global_annual_infrastructure_damage_energy_conflict          = $422B
+global_annual_infrastructure_damage_healthcare_conflict      = $166B
+global_annual_infrastructure_damage_transportation_conflict  = $487B
+global_annual_infrastructure_damage_water_conflict           = $268B
+global_annual_infrastructure_destruction_conflict            = $1.88T
+global_annual_lives_saved_by_med_research                    = 4.20M
+global_annual_lost_economic_growth_military_spending         = $2.72T
+global_annual_lost_human_capital_conflict                    = $300B
+global_annual_psychological_impact_costs_conflict            = $232B
+global_annual_refugee_support_costs                          = $150B
+global_annual_trade_disruption_conflict                      = $616B
+global_annual_trade_disruption_currency_conflict             = $57.4B
+global_annual_trade_disruption_energy_price_conflict         = $125B
+global_annual_trade_disruption_shipping_conflict             = $247B
+global_annual_trade_disruption_supply_chain_conflict         = $187B
+global_annual_veteran_healthcare_costs                       = $200B
+global_annual_war_direct_costs_total                         = $7.66T
+global_annual_war_indirect_costs_total                       = $3.70T
+global_annual_war_total_cost                                 = $11.4T
+global_clinical_trials_spending_annual                       = $83B
+global_cost_per_life_saved_med_research_annual               = $16.1K
+global_daily_deaths_curable_diseases                         = 150k
+global_disease_deaths_daily                                  = 150k
+global_disease_direct_medical_cost_annual                    = $9.90T
+global_disease_economic_burden_annual                        = $109T
+global_disease_human_life_value_loss_annual                  = $94.2T
+global_disease_productivity_loss_annual                      = $5.00T
+global_government_clinical_trials_spending_annual            = $4.5B
+global_household_wealth_usd                                  = $454T
+global_industry_clinical_trials_spending_annual              = $78.5B
+global_life_expectancy_2024                                  = 79
+global_med_research_spending                                 = $67.5B
+global_military_spending_annual_2024                         = $2.72T
+global_military_spending_per_capita_annual                   = $340
+global_military_spending_post_treaty_annual_2024             = $2.69T
+global_population_2024                                       = 8.00B
+global_population_activism_threshold_pct                     = 3.5%
+global_symptomatic_disease_treatment_annual                  = $8.20T
+global_total_health_and_war_cost_annual                      = $129T
+
+--- HISTORICAL (2) ---
+historical_progress_deaths_total                             = 98.4M
+historical_progress_economic_loss_total                      = $251T
+
+--- HOURS (2) ---
+hours_per_day                                                = 24
+hours_per_year                                               = 8.76k
+
+--- HUMAN (2) ---
+human_genome_project_total_economic_impact                   = $1.00T
+human_interactome_targeted_pct                               = 12%
+
+--- IAB (7) ---
+iab_bootstrap_campaign_cost_base_usd                         = $100M
+iab_bootstrap_campaign_cost_conservative_usd                 = $200M
+iab_bootstrap_campaign_cost_optimistic_usd                   = $50M
+iab_mechanism_annual_cost                                    = $750M
+iab_mechanism_benefit_cost_ratio                             = 207
+iab_political_incentive_funding_annual                       = $2.72B
+iab_political_incentive_funding_pct                          = 10%
+
+--- ICD (1) ---
+icd_10_total_codes                                           = 14.0k
+
+--- INDUSTRY (1) ---
+industry_vs_government_clinical_trials_spending_ratio        = 17.4
+
+--- INSTITUTIONAL (1) ---
+institutional_investor_min                                   = $10M
+
+--- LIFE (1) ---
+life_extension_years                                         = 20
+
+--- LOBBYIST (3) ---
+lobbyist_bond_investment_max                                 = $20M
+lobbyist_salary_max                                          = $2.00M
+lobbyist_salary_min_k                                        = $500K
+
+--- MEASLES (1) ---
+measles_vaccination_roi                                      = 14
+
+--- MEDICAL (1) ---
+medical_research_pct_of_disease_burden                       = 0.0525%
+
+--- MENTAL (1) ---
+mental_health_productivity_loss_per_capita                   = $2.00K
+
+--- MILITARY (2) ---
+military_to_government_clinical_trials_spending_ratio        = 604
+military_vs_medical_research_ratio                           = 40.3
+
+--- MINUTES (1) ---
+minutes_per_hour                                             = 60
+
+--- MISALLOCATION (1) ---
+misallocation_factor_death_vs_saving                         = 2.89k
+
+--- MONTHS (1) ---
+months_per_year                                              = 12
+
+--- NIH (1) ---
+nih_clinical_trials_spending_pct                             = 3.3%
+
+--- NPV (2) ---
+npv_discount_rate_standard                                   = 3%
+npv_time_horizon_years                                       = 10
+
+--- OXFORD (1) ---
+oxford_recovery_trial_duration_months                        = 3
+
+--- PATIENT (1) ---
+patient_willingness_trial_participation_pct                  = 44.8%
+
+--- PEACE (14) ---
+peace_dividend_annual_societal_benefit                       = $114B
+peace_dividend_conflict_reduction                            = $86.4B
+peace_dividend_direct_costs                                  = $76.5B
+peace_dividend_direct_fiscal_savings                         = $27.2B
+peace_dividend_environmental                                 = $1.00B
+peace_dividend_human_casualties                              = $24.5B
+peace_dividend_indirect_costs                                = $37B
+peace_dividend_infrastructure                                = $18.8B
+peace_dividend_lost_economic_growth                          = $27.2B
+peace_dividend_lost_human_capital                            = $3.00B
+peace_dividend_ptsd                                          = $2.32B
+peace_dividend_refugee_support                               = $1.50B
+peace_dividend_trade_disruption                              = $6.16B
+peace_dividend_veteran_healthcare                            = $2.00B
+
+--- PER (2) ---
+per_capita_chronic_disease_cost                              = $12.2K
+per_capita_mental_health_cost                                = $1.04K
+
+--- PERSONAL (1) ---
+personal_lifetime_wealth                                     = $508K
+
+--- PHARMA (4) ---
+pharma_drug_development_cost_current                         = $2.60B
+pharma_drug_revenue_average_current                          = $6.70B
+pharma_roi_current_system_pct                                = 1.2%
+pharma_success_rate_current_pct                              = 10%
+
+--- PHASE (3) ---
+phase_1_passed_compounds_global                              = 7.50k
+phase_1_safety_duration_years                                = 2.3
+phase_3_trial_cost_min                                       = $20M
+
+--- POLIO (1) ---
+polio_vaccination_roi                                        = 39
+
+--- POLITICAL (1) ---
+political_success_probability                                = 1%
+
+--- POST (2) ---
+post_1962_drug_approval_reduction_pct                        = 70%
+post_ww2_military_cut_pct                                    = 30%
+
+--- PRE (3) ---
+pre_1962_drug_development_cost                               = $50M
+pre_1962_physician_count                                     = 144k
+pre_1962_validation_years                                    = 77
+
+--- RARE (1) ---
+rare_diseases_count_global                                   = 7.00k
+
+--- RECOVERY (1) ---
+recovery_trial_cost_per_patient                              = $500
+
+--- REGULATORY (2) ---
+regulatory_delay_mean_age_of_death                           = 62
+regulatory_delay_suffering_period_years                      = 6
+
+--- SAFE (1) ---
+safe_compounds_count                                         = 9.50k
+
+--- SECONDS (2) ---
+seconds_per_minute                                           = 60
+seconds_per_year                                             = 31.5M
+
+--- SMALLPOX (2) ---
+smallpox_eradication_roi                                     = 280
+smallpox_eradication_total_benefit                           = $1.42B
+
+--- SMOKING (1) ---
+smoking_cessation_annual_benefit                             = $12B
+
+--- STANDARD (2) ---
+standard_economic_qaly_value_usd                             = $150K
+standard_qalys_per_life_saved                                = 35
+
+--- SUFFERING (1) ---
+suffering_hours_eliminated_total                             = 7.65T
+
+--- SUGAR (1) ---
+sugar_subsidy_cost_per_person_annual                         = $10
+
+--- SWITZERLAND (2) ---
+switzerland_defense_spending_pct                             = 0.7%
+switzerland_gdp_per_capita_k                                 = $93K
+
+--- TERRORISM (1) ---
+terrorism_deaths_911                                         = 3.00k
+
+--- TESTED (1) ---
+tested_relationships_estimate                                = 32.5k
+
+--- THALIDOMIDE (11) ---
+thalidomide_cases_worldwide                                  = 15.0k
+thalidomide_dalys_per_event                                  = 41.8k
+thalidomide_deaths_per_event                                 = 360
+thalidomide_disability_weight                                = 0.4
+thalidomide_mortality_rate                                   = 40%
+thalidomide_survivor_lifespan                                = 60
+thalidomide_survivors_per_event                              = 540
+thalidomide_us_cases_prevented                               = 900
+thalidomide_us_population_share_1960                         = 6%
+thalidomide_yld_per_event                                    = 13.0k
+thalidomide_yll_per_event                                    = 28.8k
+
+--- TOTAL (5) ---
+total_book_words                                             = 171k
+total_citation_count                                         = 133
+total_latex_equation_count                                   = 122
+total_parameter_count                                        = 331
+total_research_funding_with_treaty                           = $94.7B
+
+--- TRADITIONAL (3) ---
+traditional_phase3_cost_per_patient                          = $80K
+traditional_phase3_cost_per_patient_example_48k              = $48K
+traditional_phase3_cost_per_patient_fda_example_41k          = $41K
+
+--- TREATMENT (1) ---
+treatment_acceleration_years_current                         = 17
+
+--- TREATY (28) ---
+treaty_annual_funding                                        = $27.2B
+treaty_benefit_multiplier_vs_vaccines                        = 10.3
+treaty_campaign_annual_cost_amortized                        = $250M
+treaty_campaign_budget_lobbying                              = $650M
+treaty_campaign_budget_referendum                            = $300M
+treaty_campaign_budget_reserve                               = $50M
+treaty_campaign_budget_super_pacs                            = $800M
+treaty_campaign_duration_years                               = 4
+treaty_campaign_total_cost                                   = $1.00B
+treaty_campaign_viral_referendum_base_case                   = $140M
+treaty_campaign_viral_referendum_realistic                   = $220M
+treaty_campaign_viral_referendum_worst_case                  = $406M
+treaty_campaign_voting_bloc_target                           = 280M
+treaty_complete_roi_all_benefits                             = 1.19M
+treaty_dfda_cost_per_daly_timeline_shift                     = $0.126
+treaty_expected_cost_per_daly                                = $13
+treaty_expected_vs_bed_nets_multiplier                       = 7.07
+treaty_lives_saved_annual_global                             = 2.45k
+treaty_peace_plus_rd_annual_benefits                         = $155B
+treaty_qalys_gained_annual_global                            = 85.6k
+treaty_recurring_benefits_annual                             = $155B
+treaty_reduction_pct                                         = 1%
+treaty_roi_historical_rate                                   = 251k
+treaty_roi_innovation_acceleration                           = 2.38M
+treaty_roi_lag_elimination                                   = 1.19M
+treaty_total_annual_costs                                    = $290M
+treaty_total_complete_benefits_annual                        = $155B
+treaty_vs_bed_nets_multiplier                                = 707
+
+--- TRIAL (5) ---
+trial_capacity_cumulative_years_20yr                         = 456
+trial_capacity_multiplier                                    = 22.8
+trial_cost_reduction_factor                                  = 82
+trial_cost_reduction_pct                                     = 50%
+trial_relevant_diseases_count                                = 1.00k
+
+--- TYPE (2) ---
+type_i_error_benefit_dalys                                   = 2.59M
+type_ii_error_cost_ratio                                     = 3.07k
+
+--- TYPICAL (1) ---
+typical_ceo_hourly_rate                                      = $10K
+
+--- UNEXPLORED (1) ---
+unexplored_ratio                                             = 99%) | Calculated from 2 inputs | ✓ High
+
+--- US (9) ---
+us_alzheimers_annual_cost                                    = $355B
+us_cancer_annual_cost                                        = $208B
+us_chronic_disease_spending_annual                           = $4.10T
+us_diabetes_annual_cost                                      = $327B
+us_heart_disease_annual_cost                                 = $363B
+us_major_diseases_total_annual_cost                          = $1.25T
+us_mental_health_cost_annual                                 = $350B
+us_military_spending_pct_gdp                                 = 3.5%
+us_population_2024                                           = 335M
+
+--- VALUE (1) ---
+value_of_statistical_life                                    = $10M
+
+--- VICTORY (3) ---
+victory_bond_annual_payout                                   = $2.72B
+victory_bond_annual_return_pct                               = 272%
+victory_bond_funding_pct                                     = 10%
+
+--- VITAMIN (1) ---
+vitamin_a_cost_per_daly                                      = $37
+
+--- WATER (2) ---
+water_fluoridation_annual_benefit                            = $800M
+water_fluoridation_roi                                       = 23
+
+--- WHO (1) ---
+who_qaly_threshold_cost_effective                            = $50K
+
+--- WORKFORCE (1) ---
+workforce_with_productivity_loss                             = 28%
+
+
+TOTAL VARIABLES: 334
+
+
+========================================
+HARDCODED NUMBERS IN economics.qmd
+========================================
+
+
+--- CURRENCY (98) ---
+Line 143: $0
+  - Cost-effectiveness: ICER < $0/QALY (cost-saving while improving health)...
+
+Line 143: $0
+  - Cost-effectiveness: ICER < $0/QALY (cost-saving while improving health)...
+
+Line 191: $41K
+  The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possi...
+
+Line 191: $500 
+  The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possi...
+
+Line 191: $41K
+  The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possi...
+
+Line 191: $500 
+  The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possi...
+
+Line 454: $27B
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 454: $2.7B
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 454: $21.7B
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 454: $27B
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 454: $2.7B
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 454: $21.7B
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 455: $54B
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 455: $5.4B
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 455: $43.2B
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 455: $54B
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 455: $5.4B
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 455: $43.2B
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 456: $135B
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 456: $13.5B
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 456: $108B
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 456: $135B
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 456: $13.5B
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 456: $108B
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 457: $270B
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 457: $27B
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 457: $216B
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 457: $270B
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 457: $27B
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 457: $216B
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 458: $1.35T
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 458: $135B
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 458: $1.08T
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 458: $1.35T
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 458: $135B
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 458: $1.08T
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 459: $2.7T
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 459: $270B
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 459: $2.16T
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 459: $2.7T
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 459: $270B
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 459: $2.16T
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 463: $135B
+  **Politicians**, however, see their IAB-funded rewards **grow with each expansion**. This creates perpetual pressure to ...
+
+Line 463: $135B
+  **Politicians**, however, see their IAB-funded rewards **grow with each expansion**. This creates perpetual pressure to ...
+
+Line 512: $200K
+  | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |...
+
+Line 512: $500K
+  | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |...
+
+Line 512: $200K
+  | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |...
+
+Line 512: $500K
+  | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |...
+
+Line 513: $2M
+  | Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |...
+
+Line 513: $2M
+  | Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |...
+
+Line 583: $1B
+  If you have $1B to allocate toward saving lives, here's what each option delivers:...
+
+Line 583: $1B
+  If you have $1B to allocate toward saving lives, here's what each option delivers:...
+
+Line 592: $20,000
+  | **Cancer Screening** | $20,000-$50,000 | Variable | Linear scaling |...
+
+Line 592: $50,000 
+  | **Cancer Screening** | $20,000-$50,000 | Variable | Linear scaling |...
+
+Line 592: $20
+  | **Cancer Screening** | $20,000-$50,000 | Variable | Linear scaling |...
+
+Line 592: $50
+  | **Cancer Screening** | $20,000-$50,000 | Variable | Linear scaling |...
+
+Line 593: $10,000
+  | **Cardiovascular Prevention** | $10,000-$30,000 | Variable | Linear scaling |...
+
+Line 593: $30,000 
+  | **Cardiovascular Prevention** | $10,000-$30,000 | Variable | Linear scaling |...
+
+Line 593: $10
+  | **Cardiovascular Prevention** | $10,000-$30,000 | Variable | Linear scaling |...
+
+Line 593: $30
+  | **Cardiovascular Prevention** | $10,000-$30,000 | Variable | Linear scaling |...
+
+Line 1101: $100B
+  **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties rati...
+
+Line 1101: $100B
+  **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties rati...
+
+Line 1454: $20,000
+  | **Cancer Screening** | Cost per QALY | $20,000-$50,000 | Variable |...
+
+Line 1454: $50,000 
+  | **Cancer Screening** | Cost per QALY | $20,000-$50,000 | Variable |...
+
+Line 1454: $20
+  | **Cancer Screening** | Cost per QALY | $20,000-$50,000 | Variable |...
+
+Line 1454: $50
+  | **Cancer Screening** | Cost per QALY | $20,000-$50,000 | Variable |...
+
+Line 1455: $10,000
+  | **Cardiovascular Prevention** | Cost per QALY | $10,000-$30,000 | Variable |...
+
+Line 1455: $30,000 
+  | **Cardiovascular Prevention** | Cost per QALY | $10,000-$30,000 | Variable |...
+
+Line 1455: $10
+  | **Cardiovascular Prevention** | Cost per QALY | $10,000-$30,000 | Variable |...
+
+Line 1455: $30
+  | **Cardiovascular Prevention** | Cost per QALY | $10,000-$30,000 | Variable |...
+
+Line 1456: $50,000
+  | **Medicare/Medicaid Expansion** | Cost per QALY | $50,000-$100,000 | Variable |...
+
+Line 1456: $100,000 
+  | **Medicare/Medicaid Expansion** | Cost per QALY | $50,000-$100,000 | Variable |...
+
+Line 1456: $50
+  | **Medicare/Medicaid Expansion** | Cost per QALY | $50,000-$100,000 | Variable |...
+
+Line 1456: $100
+  | **Medicare/Medicaid Expansion** | Cost per QALY | $50,000-$100,000 | Variable |...
+
+Line 1480: $1.1M
+  - This system: Makes $1.1M profit per life saved...
+
+Line 1480: $1.1M
+  - This system: Makes $1.1M profit per life saved...
+
+Line 1607: $100M
+  1.  **Phase 1 (The Catalyst):** Your **$100M grant** for the Global Survey provides the proof-of-demand that de-risks th...
+
+Line 1607: $1B
+  1.  **Phase 1 (The Catalyst):** Your **$100M grant** for the Global Survey provides the proof-of-demand that de-risks th...
+
+Line 1607: $100M
+  1.  **Phase 1 (The Catalyst):** Your **$100M grant** for the Global Survey provides the proof-of-demand that de-risks th...
+
+Line 1607: $1B
+  1.  **Phase 1 (The Catalyst):** Your **$100M grant** for the Global Survey provides the proof-of-demand that de-risks th...
+
+Line 1610: $100M
+  **Total Leverage**: Your **$100M** catalyst effectively unlocks a **$27B/year** revenue stream for global health. This i...
+
+Line 1610: $27B
+  **Total Leverage**: Your **$100M** catalyst effectively unlocks a **$27B/year** revenue stream for global health. This i...
+
+Line 1610: $100M
+  **Total Leverage**: Your **$100M** catalyst effectively unlocks a **$27B/year** revenue stream for global health. This i...
+
+Line 1610: $27B
+  **Total Leverage**: Your **$100M** catalyst effectively unlocks a **$27B/year** revenue stream for global health. This i...
+
+Line 1646: $1.2
+  **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders ...
+
+Line 1646: $1.2
+  **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders ...
+
+Line 1798: $41,000 
+  High trial costs (median [~$41,000 per patient](../references.qmd#trial-cost-41k)) force researchers to bet only on "sur...
+
+Line 1798: ~$41
+  High trial costs (median [~$41,000 per patient](../references.qmd#trial-cost-41k)) force researchers to bet only on "sur...
+
+Line 1860: $100 billion
+  **Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compa...
+
+Line 1860: ~$100 billion
+  **Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compa...
+
+Line 1874: $120 trillion
+  3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discou...
+
+Line 1874: $120 trillion
+  3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discou...
+
+Line 1952: $521M
+  | **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms ([Medable $521M raised...
+
+Line 1952: $2.1B
+  | **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms ([Medable $521M raised...
+
+Line 1952: $521M
+  | **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms ([Medable $521M raised...
+
+Line 1952: $2.1B
+  | **Technical Risk** | MEDIUM | Data interoperability, AI/ML accuracy | Build on proven platforms ([Medable $521M raised...
+
+Line 1966: $27.2B
+  This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating th...
+
+Line 1966: $27.2B
+  This analysis employs partial equilibrium methodology, holding prices and market structures constant while evaluating th...
+
+
+--- PERCENTAGES (95) ---
+Line 107: 100%
+  Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: ...
+
+Line 115: 50%
+  3. **Dominant intervention status**: Cost-dominant interventions (reducing costs while improving outcomes) are robust to...
+
+Line 159: 95%
+  **A decentralized framework for drug assessment (dFDA)**: A regulatory wrapper that automates trial creation, IRB approv...
+
+Line 161: 1%
+  **decentralized institutes of health (DIH)**: A pattern for decentralized, programmable, and democratic organizations th...
+
+Line 169: 1%
+  **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty....
+
+Line 169: 1%
+  **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty....
+
+Line 169: 1%
+  **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty....
+
+Line 191: 1%
+  The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possi...
+
+Line 191: 99%
+  The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possi...
+
+Line 255: 1%
+  **Current system pain point**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until...
+
+Line 255: 10%
+  **Current system pain point**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until...
+
+Line 261: 1.2%
+  - **120 patients (1.2%) show elevated liver enzymes within 30 days** → Automated flag triggers...
+
+Line 282: 0.1%
+  **Current drug information**: 40-page package inserts written by lawyers, listing every possible side effect without qua...
+
+Line 282: 50%
+  **Current drug information**: 40-page package inserts written by lawyers, listing every possible side effect without qua...
+
+Line 290: 35%
+  - **Quantified benefits**: "Memory improved 35%, Executive Function improved 22%"...
+
+Line 290: 22%
+  - **Quantified benefits**: "Memory improved 35%, Executive Function improved 22%"...
+
+Line 291: 9%
+  - **Adverse effect frequencies**: "Headache: 9% (8% mild, 1% severe); Fatigue: 7%"...
+
+Line 291: 8%
+  - **Adverse effect frequencies**: "Headache: 9% (8% mild, 1% severe); Fatigue: 7%"...
+
+Line 291: 1%
+  - **Adverse effect frequencies**: "Headache: 9% (8% mild, 1% severe); Fatigue: 7%"...
+
+Line 291: 7%
+  - **Adverse effect frequencies**: "Headache: 9% (8% mild, 1% severe); Fatigue: 7%"...
+
+Line 292: 2.3%
+  - **Treatment persistence**: "2.3% discontinued due to side effects"...
+
+Line 293: 95%
+  - **Sample size and confidence**: "Based on 4,200 patients, 95% CI"...
+
+Line 324: 95%
+  Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for total economic value re...
+
+Line 440: 1%
+  1.  **Confidence Building**: Successfully auditing and reallocating 1% builds the trust and verification infrastructure ...
+
+Line 454: 1%
+  | 1% | $27B | $2.7B/year | $21.7B/year |...
+
+Line 455: 2%
+  | 2% | $54B | $5.4B/year | $43.2B/year |...
+
+Line 456: 5%
+  | 5% | $135B | $13.5B/year | $108B/year |...
+
+Line 457: 10%
+  | 10% | $270B | $27B/year | $216B/year |...
+
+Line 458: 50%
+  | 50% | $1.35T | $135B/year | $1.08T/year |...
+
+Line 459: 100%
+  | 100% | $2.7T | $270B/year | $2.16T/year |...
+
+Line 463: 50%
+  **Politicians**, however, see their IAB-funded rewards **grow with each expansion**. This creates perpetual pressure to ...
+
+Line 499: 1%
+  Consider a legislator's decision calculus regarding the 1% Treaty vote:...
+
+Line 512: 55%
+  | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |...
+
+Line 512: 62%
+  | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |...
+
+Line 513: 55%
+  | Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |...
+
+Line 513: 48%
+  | Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |...
+
+Line 541: 1%
+  [VICTORY Incentive Alignment Bonds](/knowledge/economics/victory-bonds.qmd) implement this architecture specifically for...
+
+Line 564: 1%
+  While designed for the 1% Treaty, the IAB architecture provides a template for any global coordination problem requiring...
+
+Line 579: 1%
+  Redirection of 1% of military spending to pragmatic trials is the **mathematically dominant strategy**....
+
+Line 611: 99.6%
+  The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **system...
+
+Line 801: 10%
+  - **Baseline:** Research shows treatment delays significantly increase cancer mortality, with studies indicating approxi...
+
+Line 854: 1%
+  **Opportunity Cost & Signal Value**: The argument isn't just that 1% less budget stops 1% of bullets linearly. It's that...
+
+Line 854: 1%
+  **Opportunity Cost & Signal Value**: The argument isn't just that 1% less budget stops 1% of bullets linearly. It's that...
+
+Line 854: 1%
+  **Opportunity Cost & Signal Value**: The argument isn't just that 1% less budget stops 1% of bullets linearly. It's that...
+
+Line 872: 80%
+  **Faster Recruitment**: The Oxford RECOVERY trial recruited [47,000+ patients across nearly 200 hospitals](../references...
+
+Line 872: 86%
+  **Faster Recruitment**: The Oxford RECOVERY trial recruited [47,000+ patients across nearly 200 hospitals](../references...
+
+Line 892: 50%
+  Currently, researchers spend [up to 50% of their time](../references.qmd#grant-writing-time-50pct) on grants and adminis...
+
+Line 957: 95%
+  **Probabilistic sensitivity analysis:** We ran 10,000 Monte Carlo simulations where each uncertain parameter was randoml...
+
+Line 959: 95%
+  **What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), di...
+
+Line 959: 0.1%
+  **What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), di...
+
+Line 959: 10%
+  **What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), di...
+
+Line 959: 7%
+  **What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), di...
+
+Line 994: 50%
+  **Conservative case:** 50% of trials adopt dFDA methodology...
+
+Line 995: 80%
+  **Optimistic case:** 80% adoption rate...
+
+Line 1001: 50%
+  **Sensitivity:** NPV calculations explicitly model adoption uncertainty through gradual ramp-up rather than immediate fu...
+
+Line 1011: 95%
+  - Literature on pragmatic trials consistently shows 50-95% cost reductions...
+
+Line 1023: 95%
+  - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health recor...
+
+Line 1065: 1%
+  **Political success probability**: We model political success as uncertain, with a central estimate of 1% (ultra-conserv...
+
+Line 1065: 99%
+  **Political success probability**: We model political success as uncertain, with a central estimate of 1% (ultra-conserv...
+
+Line 1065: 0.1%
+  **Political success probability**: We model political success as uncertain, with a central estimate of 1% (ultra-conserv...
+
+Line 1065: 10%
+  **Political success probability**: We model political success as uncertain, with a central estimate of 1% (ultra-conserv...
+
+Line 1081: 0.1%
+  **Key insight**: Even at the 5th percentile (P≈0.1%), expected ROI substantially exceeds typical public health intervent...
+
+Line 1083: 100%
+  **Comparison to traditional interventions** (assuming 100% implementation probability):...
+
+Line 1099: 41%
+  **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall f...
+
+Line 1099: 7.2%
+  **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall f...
+
+Line 1099: 15%
+  **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall f...
+
+Line 1127: 78%
+  - **High confidence** (78%): SIPRI military expenditure, WHO mortality statistics, ClinicalTrials.gov data...
+
+Line 1128: 17%
+  - **Medium confidence** (17%): Peace dividend estimates, QALY valuations (wide range in literature)...
+
+Line 1245: 95%
+  Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for combined annual benefit...
+
+Line 1287: 1%
+  **A 1% Treaty/Decentralized Framework for Drug Assessment:**...
+
+Line 1409: 86%
+  - Minimal exclusion criteria ([vs. 86% excluded](../references.qmd#antidepressant-trial-exclusion-rates) in traditional ...
+
+Line 1441: 1%
+  This section compares a 1% treaty/decentralized framework for drug assessment system to best-in-class health interventio...
+
+Line 1466: 1%
+  A 1% treaty is **systemic and exponential**:...
+
+Line 1551: 3.5%
+  **Why 3.5%?**: Historical analysis (Chenoweth et al.) proves that no government has ever withstood nonviolent civil chal...
+
+Line 1551: 3.5%
+  **Why 3.5%?**: Historical analysis (Chenoweth et al.) proves that no government has ever withstood nonviolent civil chal...
+
+Line 1568: 1%
+  The 1% shift funds globally scaled pragmatic trial infrastructure modeled on RECOVERY's approach....
+
+Line 1675: 50%
+  | Publication | [~50% unpublished](../references.qmd#publication-bias-clinical-trials); positive 3× more likely | **100%...
+
+Line 1675: 100%
+  | Publication | [~50% unpublished](../references.qmd#publication-bias-clinical-trials); positive 3× more likely | **100%...
+
+Line 1696: 0.1%
+  **The Gap is the Opportunity**: Nearly half of patients *want* to help, but less than 0.1% can....
+
+Line 1736: 1%
+  - Annual third-party audits of 1% Treaty Fund and dFDA operations...
+
+Line 1775: 70%
+  - Conservative estimate uses 50-70% cost reduction (not the 95%+ demonstrated by RECOVERY)...
+
+Line 1775: 95%
+  - Conservative estimate uses 50-70% cost reduction (not the 95%+ demonstrated by RECOVERY)...
+
+Line 1777: 95%
+  - [Pragmatic trial literature](../references.qmd#pragmatic-trials-patsopoulos-2011) consistently shows 50-95% cost reduc...
+
+Line 1783: 5%
+  Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-i...
+
+Line 1821: 1%
+  The tornado diagram shows that estimates of tested relationships dominate the uncertainty in our exploration ratio calcu...
+
+Line 1825: 1%
+  Monte Carlo simulation across 10,000 trials confirms robustness: even accounting for uncertainty in all input parameters...
+
+Line 1833: 95%
+  **Empirical evidence for efficiency gains:** RECOVERY trial and pre-1962 physician-led system both achieved 80-95% cost ...
+
+Line 1835: 50%
+  **Sensitivity:** Even applying 50% diminishing returns adjustment to research acceleration estimates, ROI remains 230:1 ...
+
+Line 1841: 25%
+  **Trade-off between internal and external validity:** [Patsopoulos (2011)](../references.qmd#pragmatic-trials-patsopoulo...
+
+Line 1860: 37%
+  **Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compa...
+
+Line 1860: 94%
+  **Publication bias:** Traditional trials face severe publication bias: only [37% of negative results are published compa...
+
+Line 1874: 90%
+  3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discou...
+
+Line 1874: 10%
+  3.  **It works with partial success**: Even if we assume 90% of diseases remain biologically incurable (a massive discou...
+
+Line 2044: 1%
+  **Mechanism design**: The 1% Treaty Fund uses an 80/10/10 split:...
+
+Line 2083: 1%
+  International treaty adoption is fundamentally a political and diplomatic process, not a technical implementation timeli...
+
+
+--- YEARS (30) ---
+Line 44: 2025
+  Last updated: December 2025...
+
+Line 801: 2020
+  - **Baseline:** Research shows treatment delays significantly increase cancer mortality, with studies indicating approxi...
+
+Line 921: 2024
+  - Disease burden: [WHO Global Health Observatory](../references.qmd#who-global-health-estimates-2024)...
+
+Line 1017: 1960
+  **Context:** The decentralized framework for drug assessment approach is not an untested innovation extrapolated from a ...
+
+Line 1025: 1962
+  ![Drug development costs exploded after 1962 regulations](../../assets/cost-to-develop-a-new-drug.png)...
+
+Line 1037: 1962
+  **Safety record, the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevent...
+
+Line 1037: 1957
+  **Safety record, the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevent...
+
+Line 1037: 1938
+  **Safety record, the thalidomide success story:** Critically, the pre-1962 safety testing framework successfully prevent...
+
+Line 1041: 2014
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1041: 2017
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1041: 2020
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1041: 2021
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1041: 1915
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1041: 1918
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1041: 1962
+  **Current system deterioration:** Life expectancy in the United States has declined in recent years (2014-2017, 2020-202...
+
+Line 1099: 1945
+  **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall f...
+
+Line 1099: 1948
+  **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall f...
+
+Line 1099: 1953
+  **Historical precedent: Post-WWII peace dividend**: The post-World War II "peace dividend" saw [military spending fall f...
+
+Line 1101: 2024
+  **Treaty ratification ≠ sustained funding**: The Paris Climate Agreement provides a cautionary example: 196 parties rati...
+
+Line 1776: 1962
+  - Pre-1962 system achieved similar efficiencies across diverse therapeutic areas (not limited to repurposed drugs)...
+
+Line 1777: 2011
+  - [Pragmatic trial literature](../references.qmd#pragmatic-trials-patsopoulos-2011) consistently shows 50-95% cost reduc...
+
+Line 1783: 2020
+  Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-i...
+
+Line 1783: 2020
+  Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-i...
+
+Line 1833: 1962
+  **Empirical evidence for efficiency gains:** RECOVERY trial and pre-1962 physician-led system both achieved 80-95% cost ...
+
+Line 1841: 2011
+  **Trade-off between internal and external validity:** [Patsopoulos (2011)](../references.qmd#pragmatic-trials-patsopoulo...
+
+Line 1841: 2011
+  **Trade-off between internal and external validity:** [Patsopoulos (2011)](../references.qmd#pragmatic-trials-patsopoulo...
+
+Line 1858: 1962
+  **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vacci...
+
+Line 2098: 1997
+  - **Ottawa Landmine Ban Treaty (1997)**: Diplomatic push → international negotiation → 122 nations signed in 2 years...
+
+Line 2099: 2015
+  - **Paris Climate Agreement (2015)**: Built on existing framework, achieved 195 signatories through coordinated diplomat...
+
+Line 2100: 1993
+  - **Chemical Weapons Convention (1993)**: International negotiation process, 193 state parties...
+
+
+--- OTHER NUMBERS (37) ---
+Line 129: 10,000
+  The analysis that follows uses standard cost-benefit methodology (NPV, QALY modeling, ICER analysis) applied to SIPRI mi...
+
+Line 136: 1:1
+  **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)...
+
+Line 212: 54,750,000
+  <!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-fr...
+
+Line 212: 2,996
+  <!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/deaths-fr...
+
+Line 255: 100,000
+  **Current system pain point**: If a drug causes liver damage in 1% of patients, this pattern often goes undetected until...
+
+Line 260: 10,000
+  - **10,000 patients prescribed Drug X** → System tracks all subsequent lab results, ER visits, and reported symptoms...
+
+Line 262: 5,000
+  - **Pattern detected after 5,000 prescriptions** → Public alert issued, rather than waiting for 100,000+ prescriptions a...
+
+Line 262: 100,000
+  - **Pattern detected after 5,000 prescriptions** → Public alert issued, rather than waiting for 100,000+ prescriptions a...
+
+Line 293: 4,200
+  - **Sample size and confidence**: "Based on 4,200 patients, 95% CI"...
+
+Line 324: 10,000
+  Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for total economic value re...
+
+Line 353: 10,000
+  The Monte Carlo distribution below shows the range of lives saved estimates across 10,000 simulations, accounting for un...
+
+Line 375: 47,000
+  * This single trial enrolled [47,000+](../references.qmd#recovery-trial-summary-quote) patients across [nearly 200](../r...
+
+Line 611: 2×
+  The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **system...
+
+Line 611: 2×
+  The critical distinction: most interventions are **linear** (2× impact requires 2× money). This intervention is **system...
+
+Line 872: 47,000
+  **Faster Recruitment**: The Oxford RECOVERY trial recruited [47,000+ patients across nearly 200 hospitals](../references...
+
+Line 957: 10,000
+  **Probabilistic sensitivity analysis:** We ran 10,000 Monte Carlo simulations where each uncertain parameter was randoml...
+
+Line 959: 1.3×
+  **What we varied:** Cost reduction (50-95%), political success probability (0.1%-10%), adoption timeline (3-8 years), di...
+
+Line 1033: 10,000
+  ![Life expectancy was flat for 10,000 years, then exploded starting in 1883](../../assets/life-expectancy-historical.jpg...
+
+Line 1081: 30:1
+  **Key insight**: Even at the 5th percentile (P≈0.1%), expected ROI substantially exceeds typical public health intervent...
+
+Line 1086: 8:1
+  - Against Malaria Foundation: ~8:1 equivalent ROI...
+
+Line 1245: 10,000
+  Monte Carlo simulation across 10,000 trials confirms robustness: the 95% confidence interval for combined annual benefit...
+
+Line 1410: 47,000
+  - [47,000 patients across nearly 200 sites](../references.qmd#recovery-trial-summary-quote) in 3 months (RECOVERY)...
+
+Line 1672: 10,000
+  | Sample size | 100-300 patients | 10,000-100,000+ patients |...
+
+Line 1672: 100,000
+  | Sample size | 100-300 patients | 10,000-100,000+ patients |...
+
+Line 1675: 3×
+  | Publication | [~50% unpublished](../references.qmd#publication-bias-clinical-trials); positive 3× more likely | **100%...
+
+Line 1755: 66:1
+  **Sensitivity analysis addresses this:** Worst-case scenario models extended timelines with ROI remaining positive (66:1...
+
+Line 1783: 18×
+  Economic literature documents declining research productivity over time. [Bloom et al. (2020)](../references.qmd#bloom-i...
+
+Line 1812: 50,000
+  \text{Exploration Ratio} = \frac{N_{tested}}{N_{compounds} \times N_{diseases}} \approx \frac{50,000}{12,000 \times 1,00...
+
+Line 1812: 12,000
+  \text{Exploration Ratio} = \frac{N_{tested}}{N_{compounds} \times N_{diseases}} \approx \frac{50,000}{12,000 \times 1,00...
+
+Line 1812: 1,000
+  \text{Exploration Ratio} = \frac{N_{tested}}{N_{compounds} \times N_{diseases}} \approx \frac{50,000}{12,000 \times 1,00...
+
+Line 1825: 10,000
+  Monte Carlo simulation across 10,000 trials confirms robustness: even accounting for uncertainty in all input parameters...
+
+Line 1835: 230:1
+  **Sensitivity:** Even applying 50% diminishing returns adjustment to research acceleration estimates, ROI remains 230:1 ...
+
+Line 1835: 620:1
+  **Sensitivity:** Even applying 50% diminishing returns adjustment to research acceleration estimates, ROI remains 230:1 ...
+
+Line 1846: 100×
+  - **Large sample sizes:** Decentralized recruitment enables 10-100× larger trials, improving statistical power and subgr...
+
+Line 1873: 1,000
+  2.  **It assumes a fixed timeline**: Even if full biological control takes 1,000 years, shifting that timeline forward b...
+
+Line 1876: 84,000
+  **Stream A (Accelerated Drug Access):** High confidence, based on well-documented costs of delayed access (84,000 life-y...
+
+Line 1906: 3×
+  - **Geographic variation:** WHO recommends 1-3× GDP per capita; high-income countries use higher thresholds...
+
+
+
+TOTAL HARDCODED NUMBERS: 260
+TOTAL AVAILABLE VARIABLES: 334
+
