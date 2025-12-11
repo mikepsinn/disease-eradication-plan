@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Total NPV Annual OPEX (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Decentralized Framework for Drug Assessment Total NPV Annual OPEX (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 8040029.27864433
 p5 = 27512603.801403433
 p50 = 39059231.354343794
 p95 = 55395973.133008234
-display_name = "dFDA Total NPV Annual OPEX"
+display_name = "Decentralized Framework for Drug Assessment Total NPV Annual OPEX"
 units = "USD/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Total NPV Annual OPEX**
+**Simulation Results Summary: Decentralized Framework for Drug Assessment Total NPV Annual OPEX**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $8.04M |
 | 90% Confidence Interval | [$27.5M, $55.4M] |
 
-*The histogram shows the distribution of dFDA Total NPV Annual OPEX across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Decentralized Framework for Drug Assessment Total NPV Annual OPEX across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -61,16 +61,57 @@ function normalizeNumber(num: string): string {
   return num.toLowerCase().replace(/\s+/g, '').replace(/,/g, '');
 }
 
-function findMatchingVariables(hardcodedNum: string, variables: Variable[]): Variable[] {
+function findMatchingVariables(hardcodedNum: string, variables: Variable[], context?: string): Variable[] {
   const normalized = normalizeNumber(hardcodedNum);
 
-  return variables.filter(v => {
+  const matches = variables.filter(v => {
     const varNormalized = normalizeNumber(v.displayValue);
     // Check for exact match or if the variable display contains the hardcoded number
     return varNormalized === normalized ||
            varNormalized.includes(normalized) ||
            normalized.includes(varNormalized);
   });
+
+  // Sort matches: prioritize exact matches, then use context clues
+  return matches.sort((a, b) => {
+    const aNormalized = normalizeNumber(a.displayValue);
+    const bNormalized = normalizeNumber(b.displayValue);
+
+    // Exact match gets highest priority
+    const aExact = aNormalized === normalized ? 1 : 0;
+    const bExact = bNormalized === normalized ? 1 : 0;
+    if (aExact !== bExact) return bExact - aExact;
+
+    // Context-based scoring (if context provided)
+    if (context) {
+      const contextLower = context.toLowerCase();
+      const aScore = getContextScore(a.name, contextLower);
+      const bScore = getContextScore(b.name, contextLower);
+      if (aScore !== bScore) return bScore - aScore;
+    }
+
+    return a.name.localeCompare(b.name);
+  });
+}
+
+function getContextScore(variableName: string, context: string): number {
+  let score = 0;
+  const varWords = variableName.toLowerCase().split('_');
+
+  // Extract meaningful words from context (ignore common words)
+  const contextWords = context.match(/\b\w{4,}\b/g) || [];
+
+  // Score based on word overlap between variable name and context
+  for (const varWord of varWords) {
+    if (varWord.length < 3) continue; // Skip short words like "pct", "roi"
+    for (const ctxWord of contextWords) {
+      if (ctxWord.includes(varWord) || varWord.includes(ctxWord)) {
+        score += 2;
+      }
+    }
+  }
+
+  return score;
 }
 
 function findHardcodedNumbers(content: string): HardcodedNumber[] {
@@ -283,11 +324,11 @@ function main() {
     console.log(`Line ${h.line}: ${h.number}`);
     console.log(`  ${h.context.substring(0, 120)}...`);
 
-    // Find matching variables
-    const matches = findMatchingVariables(h.number, variables);
+    // Find matching variables with context
+    const matches = findMatchingVariables(h.number, variables, h.context);
     if (matches.length > 0) {
       console.log(`  → Potential variables:`);
-      matches.forEach(m => {
+      matches.slice(0, 5).forEach(m => { // Limit to top 5 matches
         console.log(`     {{< var ${m.name} >}} = ${m.displayValue}`);
       });
     }
@@ -299,10 +340,10 @@ function main() {
     console.log(`Line ${h.line}: ${h.number}`);
     console.log(`  ${h.context.substring(0, 120)}...`);
 
-    const matches = findMatchingVariables(h.number, variables);
+    const matches = findMatchingVariables(h.number, variables, h.context);
     if (matches.length > 0) {
       console.log(`  → Potential variables:`);
-      matches.forEach(m => {
+      matches.slice(0, 5).forEach(m => {
         console.log(`     {{< var ${m.name} >}} = ${m.displayValue}`);
       });
     }
@@ -314,10 +355,10 @@ function main() {
     console.log(`Line ${h.line}: ${h.number}`);
     console.log(`  ${h.context.substring(0, 120)}...`);
 
-    const matches = findMatchingVariables(h.number, variables);
+    const matches = findMatchingVariables(h.number, variables, h.context);
     if (matches.length > 0) {
       console.log(`  → Potential variables:`);
-      matches.forEach(m => {
+      matches.slice(0, 5).forEach(m => {
         console.log(`     {{< var ${m.name} >}} = ${m.displayValue}`);
       });
     }
@@ -329,10 +370,10 @@ function main() {
     console.log(`Line ${h.line}: ${h.number}`);
     console.log(`  ${h.context.substring(0, 120)}...`);
 
-    const matches = findMatchingVariables(h.number, variables);
+    const matches = findMatchingVariables(h.number, variables, h.context);
     if (matches.length > 0) {
       console.log(`  → Potential variables:`);
-      matches.forEach(m => {
+      matches.slice(0, 5).forEach(m => {
         console.log(`     {{< var ${m.name} >}} = ${m.displayValue}`);
       });
     }

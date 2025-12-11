@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Coverage Factor of Treaty Funding vs dFDA OPEX (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 95.24955462847971
 p5 = 537.8021352026143
 p50 = 692.9870222396996
 p95 = 894.8938706475473
-display_name = "Coverage Factor of Treaty Funding vs dFDA OPEX"
+display_name = "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX"
 units = "ratio"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Coverage Factor of Treaty Funding vs dFDA OPEX**
+**Simulation Results Summary: Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 95.2 |
 | 90% Confidence Interval | [538, 895] |
 
-*The histogram shows the distribution of Coverage Factor of Treaty Funding vs dFDA OPEX across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

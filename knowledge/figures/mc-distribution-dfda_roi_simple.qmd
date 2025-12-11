@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Simple ROI Without NPV Adjustment (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 148.03624054759902
 p5 = 808.8401688609204
 p50 = 1046.4219870903469
 p95 = 1298.0528550864883
-display_name = "dFDA Simple ROI Without NPV Adjustment"
+display_name = "Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment"
 units = "ratio"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Simple ROI Without NPV Adjustment**
+**Simulation Results Summary: Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 148 |
 | 90% Confidence Interval | [809, 1.30k] |
 
-*The histogram shows the distribution of dFDA Simple ROI Without NPV Adjustment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Maximum Trials per Year (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Decentralized Framework for Drug Assessment Maximum Trials per Year (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 8255.57093967763
 p5 = 62429.95
 p50 = 76333.5
 p95 = 93642.5
-display_name = "dFDA Maximum Trials per Year"
+display_name = "Decentralized Framework for Drug Assessment Maximum Trials per Year"
 units = "trials/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Maximum Trials per Year**
+**Simulation Results Summary: Decentralized Framework for Drug Assessment Maximum Trials per Year**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 8.26k |
 | 90% Confidence Interval | [62.4k, 93.6k] |
 
-*The histogram shows the distribution of dFDA Maximum Trials per Year across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Decentralized Framework for Drug Assessment Maximum Trials per Year across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: ROI from dFDA R&D Savings Only (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: ROI from Decentralized Framework for Drug Assessment R&D Savings Only (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 65.27659483976971
 p5 = 350.90971520811416
 p50 = 454.98579153489976
 p95 = 566.4813930677116
-display_name = "ROI from dFDA R&D Savings Only"
+display_name = "ROI from Decentralized Framework for Drug Assessment R&D Savings Only"
 units = "ratio"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: ROI from dFDA R&D Savings Only**
+**Simulation Results Summary: ROI from Decentralized Framework for Drug Assessment R&D Savings Only**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 65.3 |
 | 90% Confidence Interval | [351, 566] |
 
-*The histogram shows the distribution of ROI from dFDA R&D Savings Only across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of ROI from Decentralized Framework for Drug Assessment R&D Savings Only across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

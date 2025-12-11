@@ -315,19 +315,20 @@
 "dfda_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)\
-  \ | Calculated from 5 inputs | ✓ High confidence | Formula: PLATFORM_MAINTENANCE\
-  \ + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY | Unit: USD/year | Click to\
-  \ view methodology & calculation\">$40M</a>"
+  \ Decentralized Framework for Drug Assessment operational costs (sum of all components:\
+  \ $15M + $10M + $8M + $5M + $2M) | Calculated from 5 inputs | ✓ High confidence\
+  \ | Formula: PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY\
+  \ | Unit: USD/year | Click to view methodology & calculation\">$40M</a>"
 "dfda_annual_opex_latex": "$$\nOPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{\
   \ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)}\
   \ = \\$40M\n$$"
 "dfda_benefit_rd_only_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
-  \ from R&D savings (trial cost reduction, secondary component) | Calculated from\
-  \ 2 inputs | ✓ High confidence | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT |\
-  \ Unit: USD/year | Click to view methodology & calculation\">$41.5B</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual Decentralized\
+  \ Framework for Drug Assessment benefit from R&D savings (trial cost reduction,\
+  \ secondary component) | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view methodology\
+  \ & calculation\">$41.5B</a>"
 "dfda_benefit_rd_only_annual_latex": "$$\nBenefit_{DFDA,ann} = Trials_{ann} \\times\
   \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
 "dfda_expected_roi": "<a href=\"/calculated\" class=\"parameter-link\" data-source-ref=\"\
@@ -351,29 +352,29 @@
 "dfda_npv_adoption_ramp_years": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#adoption-curve\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#adoption-curve\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Years to reach\
-  \ full dFDA adoption | ✓ High confidence | Unit: years | Click to view methodology\
-  \ & calculation\">5</a>"
+  \ full Decentralized Framework for Drug Assessment adoption | ✓ High confidence\
+  \ | Unit: years | Click to view methodology & calculation\">5</a>"
 "dfda_npv_annual_opex": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA core platform\
-  \ annual opex (midpoint of $11-26.5M) | ✓ High confidence | 95% CI: [$11M, $26.5M]\
-  \ | Dist: Lognormal | Unit: USD/year | Click to view methodology & calculation\"\
-  >$18.9M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)\
+  \ | ✓ High confidence | 95% CI: [$11M, $26.5M] | Dist: Lognormal | Unit: USD/year\
+  \ | Click to view methodology & calculation\">$18.9M</a>"
 "dfda_npv_annual_opex_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV annual\
-  \ opex (dFDA core + DIH initiatives) | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: DFDA_OPEX + DIH_OPEX | Unit: USD/year | Click to view methodology &\
-  \ calculation\">$40M</a>"
+  \ opex (Decentralized Framework for Drug Assessment core + DIH initiatives) | Calculated\
+  \ from 2 inputs | ✓ High confidence | Formula: DFDA_OPEX + DIH_OPEX | Unit: USD/year\
+  \ | Click to view methodology & calculation\">$40M</a>"
 "dfda_npv_annual_opex_total_latex": "$$\nC_{op} = \\$0.01895B + \\$0.02110B = \\$0.04005B\
   \ \\text{ (annual operational cost)}\n$$"
 "dfda_npv_benefit_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-benefit\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-benefit\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of dFDA R&D\
-  \ savings only with 5-year adoption ramp (10-year horizon, most conservative financial\
-  \ estimate) | Calculated from 2 inputs | ✓ High confidence | Formula: Sum of discounted\
-  \ annual net R&D savings with linear adoption ramp | Unit: USD | Click to view methodology\
-  \ & calculation\">$275B</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"NPV of Decentralized\
+  \ Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year\
+  \ horizon, most conservative financial estimate) | Calculated from 2 inputs | ✓\
+  \ High confidence | Formula: Sum of discounted annual net R&D savings with linear\
+  \ adoption ramp | Unit: USD | Click to view methodology & calculation\">$275B</a>"
 "dfda_npv_benefit_rd_only_latex": "$$\nPV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD}\
   \ \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption\
   \ ramp)}\n$$"
@@ -405,56 +406,63 @@
   \ \\$0.54B\n$$"
 "dfda_npv_upfront_cost": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA core platform\
-  \ build cost | ✓ High confidence | 95% CI: [$25M, $65M] | Dist: Lognormal | Unit:\
-  \ USD | Click to view methodology & calculation\">$40M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment core platform build cost | ✓ High confidence | 95%\
+  \ CI: [$25M, $65M] | Dist: Lognormal | Unit: USD | Click to view methodology & calculation\"\
+  >$40M</a>"
 "dfda_npv_upfront_cost_total": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total NPV upfront\
-  \ costs (dFDA core + DIH initiatives) | Calculated from 2 inputs | ✓ High confidence\
-  \ | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit: USD | Click to view methodology\
-  \ & calculation\">$270M</a>"
+  \ costs (Decentralized Framework for Drug Assessment core + DIH initiatives) | Calculated\
+  \ from 2 inputs | ✓ High confidence | Formula: DFDA_BUILD + DIH_INITIATIVES | Unit:\
+  \ USD | Click to view methodology & calculation\">$270M</a>"
 "dfda_npv_upfront_cost_total_latex": "$$\nC_0 = \\$0.040B + \\$0.22975B = \\$0.26975B\
   \ \\text{ (upfront cost)}\n$$"
 "dfda_opex_community": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA community\
-  \ support costs | ✓ High confidence | 95% CI: [$1.00M, $3.00M] | Dist: Lognormal\
-  \ | Unit: USD/year | Click to view methodology & calculation\">$2.00M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment community support costs | ✓ High confidence | 95%\
+  \ CI: [$1.00M, $3.00M] | Dist: Lognormal | Unit: USD/year | Click to view methodology\
+  \ & calculation\">$2.00M</a>"
 "dfda_opex_infrastructure": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA infrastructure\
-  \ costs (cloud, security) | ✓ High confidence | 95% CI: [$5.00M, $12M] | Dist: Lognormal\
-  \ | Unit: USD/year | Click to view methodology & calculation\">$8.00M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment infrastructure costs (cloud, security) | ✓ High\
+  \ confidence | 95% CI: [$5.00M, $12M] | Dist: Lognormal | Unit: USD/year | Click\
+  \ to view methodology & calculation\">$8.00M</a>"
 "dfda_opex_pct_of_treaty_funding": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Percentage of\
-  \ treaty funding allocated to dFDA platform overhead | ✓ High confidence | Formula:\
-  \ DFDA_OPEX / TREATY_FUNDING | Unit: rate | Click to view methodology & calculation\"\
-  >0.147%</a>"
+  \ treaty funding allocated to Decentralized Framework for Drug Assessment platform\
+  \ overhead | ✓ High confidence | Formula: DFDA_OPEX / TREATY_FUNDING | Unit: rate\
+  \ | Click to view methodology & calculation\">0.147%</a>"
 "dfda_opex_pct_of_treaty_funding_latex": "$$\nDFDAOpexPct = \\$0.04B / \\$27.18B =\
   \ 0.00147 = 0.15\\%\n$$"
 "dfda_opex_platform_maintenance": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA maintenance\
-  \ costs | ✓ High confidence | 95% CI: [$10M, $22M] | Dist: Lognormal | Unit: USD/year\
-  \ | Click to view methodology & calculation\">$15M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment maintenance costs | ✓ High confidence | 95% CI:\
+  \ [$10M, $22M] | Dist: Lognormal | Unit: USD/year | Click to view methodology &\
+  \ calculation\">$15M</a>"
 "dfda_opex_regulatory": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA regulatory\
-  \ coordination costs | ✓ High confidence | 95% CI: [$3.00M, $8.00M] | Dist: Lognormal\
-  \ | Unit: USD/year | Click to view methodology & calculation\">$5.00M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment regulatory coordination costs | ✓ High confidence\
+  \ | 95% CI: [$3.00M, $8.00M] | Dist: Lognormal | Unit: USD/year | Click to view\
+  \ methodology & calculation\">$5.00M</a>"
 "dfda_opex_staff": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#opex-breakdown\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA staff costs\
-  \ (minimal, AI-assisted) | ✓ High confidence | 95% CI: [$7.00M, $15M] | Dist: Lognormal\
-  \ | Unit: USD/year | Click to view methodology & calculation\">$10M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment staff costs (minimal, AI-assisted) | ✓ High confidence\
+  \ | 95% CI: [$7.00M, $15M] | Dist: Lognormal | Unit: USD/year | Click to view methodology\
+  \ & calculation\">$10M</a>"
 "dfda_rd_gross_savings_annual": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#cost-reduction\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual dFDA benefit\
-  \ from R&D savings (trial cost reduction, secondary component) | Calculated from\
-  \ 2 inputs | ✓ High confidence | Formula: TRIAL_SPENDING × COST_REDUCTION_PCT |\
-  \ Unit: USD/year | Click to view methodology & calculation\">$41.5B</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual Decentralized\
+  \ Framework for Drug Assessment benefit from R&D savings (trial cost reduction,\
+  \ secondary component) | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ TRIAL_SPENDING × COST_REDUCTION_PCT | Unit: USD/year | Click to view methodology\
+  \ & calculation\">$41.5B</a>"
 "dfda_rd_gross_savings_annual_latex": "$$\nBenefit_{gross,ann} = Trials_{ann} \\times\
   \ Reduction = \\$83.00B \\times 50.0\\% = \\$41.50B\n$$"
 "dfda_rd_savings_daily": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#daily-opportunity-cost-of-inaction\"\
@@ -467,10 +475,10 @@
   $$"
 "dfda_roi_rd_only": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#roi-simple\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from dFDA\
-  \ R&D savings only (10-year NPV, most conservative estimate) | Calculated from 4\
-  \ inputs | ✓ High confidence | Formula: NPV_BENEFIT ÷ NPV_TOTAL_COST | Unit: ratio\
-  \ | Click to view methodology & calculation\">451</a>"
+  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"ROI from Decentralized\
+  \ Framework for Drug Assessment R&D savings only (10-year NPV, most conservative\
+  \ estimate) | Calculated from 4 inputs | ✓ High confidence | Formula: NPV_BENEFIT\
+  \ ÷ NPV_TOTAL_COST | Unit: ratio | Click to view methodology & calculation\">451</a>"
 "dfda_roi_rd_only_latex": "$$\nROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463\n\
   $$"
 "dfda_roi_simple": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple\"\
@@ -496,14 +504,14 @@
   \ Multiplier = 3{,}300 \\times 22.85 = 75{,}392\n$$"
 "dfda_upfront_build": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA one-time\
-  \ build cost (central estimate) | ✓ High confidence | Unit: USD | Click to view\
-  \ methodology & calculation\">$40M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment one-time build cost (central estimate) | ✓ High\
+  \ confidence | Unit: USD | Click to view methodology & calculation\">$40M</a>"
 "dfda_upfront_build_max": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#build-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#build-costs\"\
-  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"dFDA one-time\
-  \ build cost (high estimate) | ✓ High confidence | Unit: USD | Click to view methodology\
-  \ & calculation\">$46M</a>"
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Decentralized\
+  \ Framework for Drug Assessment one-time build cost (high estimate) | ✓ High confidence\
+  \ | Unit: USD | Click to view methodology & calculation\">$46M</a>"
 "dih_npv_annual_opex_initiatives": "<a href=\"/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/dfda-cost-benefit-analysis.qmd#npv-costs\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"DIH broader initiatives\
@@ -542,9 +550,10 @@
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/economics/economics.qmd#funding-allocation\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual clinical\
-  \ trial patient subsidies (all medical research funds after dFDA operations) | Calculated\
-  \ from 2 inputs | ✓ High confidence | Formula: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX\
-  \ | Unit: USD/year | Click to view methodology & calculation\">$21.7B</a>"
+  \ trial patient subsidies (all medical research funds after Decentralized Framework\
+  \ for Drug Assessment operations) | Calculated from 2 inputs | ✓ High confidence\
+  \ | Formula: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX | Unit: USD/year | Click to view\
+  \ methodology & calculation\">$21.7B</a>"
 "dih_treasury_trial_subsidies_annual_latex": "$$\nTrialSubsidies = \\$24.462B - \\\
   $0.04B = \\$24.422B\n$$"
 "dih_treasury_trial_subsidies_pct": "<a href=\"/knowledge/economics/economics#funding-allocation\"\
@@ -653,9 +662,9 @@
 "dividend_coverage_factor": "<a href=\"/knowledge/strategy/roadmap#sustainability\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/strategy/roadmap.qmd#sustainability\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Coverage factor\
-  \ of treaty funding vs dFDA opex (sustainability margin) | Calculated from 2 inputs\
-  \ | ✓ High confidence | Formula: TREATY_FUNDING ÷ DFDA_OPEX | Unit: ratio | Click\
-  \ to view methodology & calculation\">680</a>"
+  \ of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability\
+  \ margin) | Calculated from 2 inputs | ✓ High confidence | Formula: TREATY_FUNDING\
+  \ ÷ DFDA_OPEX | Unit: ratio | Click to view methodology & calculation\">680</a>"
 "dividend_coverage_factor_latex": "$$\nCoverage = \\$27.18B / \\$0.04B = 679x\n$$"
 "drug_cost_increase_1980s_to_current_multiplier": "<a href=\"/pre-1962-drug-costs-timeline\"\
   \ class=\"parameter-link\" data-source-ref=\"/pre-1962-drug-costs-timeline\" data-source-type=\"\
@@ -1917,10 +1926,10 @@
 "treaty_peace_plus_rd_annual_benefits": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Basic annual\
-  \ benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes\
-  \ regulatory delay value) | Calculated from 2 inputs | ✓ High confidence | Formula:\
-  \ PEACE_DIVIDEND + DFDA_RD_SAVINGS | Unit: USD/year | Click to view methodology\
-  \ & calculation\">$155B</a>"
+  \ benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings\
+  \ only (2 of 8 benefit categories, excludes regulatory delay value) | Calculated\
+  \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_RD_SAVINGS\
+  \ | Unit: USD/year | Click to view methodology & calculation\">$155B</a>"
 "treaty_peace_plus_rd_annual_benefits_latex": "$$\nBenefit_{ann} = Cost_{soc,ann}\
   \ + Benefit_{gross,ann} = \\$113.55B + \\$41.50B = \\$155.05B\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global\"\
@@ -1976,9 +1985,9 @@
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs\"\
   \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ system costs (campaign + dFDA operations) | Calculated from 2 inputs | ✓ High\
-  \ confidence | Formula: CAMPAIGN_ANNUAL + DFDA_OPEX | Unit: USD/year | Click to\
-  \ view methodology & calculation\">$290M</a>"
+  \ system costs (campaign + Decentralized Framework for Drug Assessment operations)\
+  \ | Calculated from 2 inputs | ✓ High confidence | Formula: CAMPAIGN_ANNUAL + DFDA_OPEX\
+  \ | Unit: USD/year | Click to view methodology & calculation\">$290M</a>"
 "treaty_total_annual_costs_latex": "$$\nCost_{total} = Cost_{DFDA,ann} + Cost_{camp,ann}\
   \ = \\$40.0M + \\$250.0M = \\$290.0M\n$$"
 "treaty_total_complete_benefits_annual": "<a href=\"/knowledge/economics/economics\"\

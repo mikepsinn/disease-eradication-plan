@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Total NPV Cost (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Decentralized Framework for Drug Assessment Total NPV Cost (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 126602890.37078722
 p5 = 415486533.1432253
 p50 = 595453173.581164
 p95 = 852697532.3993205
-display_name = "dFDA Total NPV Cost"
+display_name = "Decentralized Framework for Drug Assessment Total NPV Cost"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Total NPV Cost**
+**Simulation Results Summary: Decentralized Framework for Drug Assessment Total NPV Cost**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $127M |
 | 90% Confidence Interval | [$415M, $853M] |
 
-*The histogram shows the distribution of dFDA Total NPV Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Decentralized Framework for Drug Assessment Total NPV Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

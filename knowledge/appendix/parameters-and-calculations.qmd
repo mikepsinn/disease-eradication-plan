@@ -39,7 +39,7 @@ Combined peace and health dividends for ROI calculation
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
 
 $$
 Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
@@ -64,19 +64,19 @@ $$
 {{< include ../figures/exceedance-combined_peace_health_dividends_annual_for_roi_calc.qmd >}}
 
 
-### Total Annual dFDA Operational Costs {#sec-dfda_annual_opex}
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs {#sec-dfda_annual_opex}
 
 **Value**: $40M
 
-Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
 **Inputs**:
 
-- [dFDA Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
-- [dFDA Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7.00M - $15M)
-- [dFDA Infrastructure Costs](#sec-dfda_opex_infrastructure): $8.00M (95% CI: $5.00M - $12M)
-- [dFDA Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5.00M (95% CI: $3.00M - $8.00M)
-- [dFDA Community Support Costs](#sec-dfda_opex_community): $2.00M (95% CI: $1.00M - $3.00M)
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7.00M - $15M)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8.00M (95% CI: $5.00M - $12M)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5.00M (95% CI: $3.00M - $8.00M)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2.00M (95% CI: $1.00M - $3.00M)
 
 $$
 OPEX_{total} = \$15M \text{ (plat)} + \$10M \text{ (staff)} + \$8M \text{ (infra)} + \$5M \text{ (reg)} + \$2M \text{ (comm)} = \$40M
@@ -101,16 +101,16 @@ $$
 {{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
 
 
-### dFDA Annual Benefit: R&D Savings {#sec-dfda_benefit_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings {#sec-dfda_benefit_rd_only_annual}
 
 **Value**: $41.5B
 
-Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
+Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
-- [dFDA Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
+- [Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
 
 $$
 Benefit_{DFDA,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
@@ -169,7 +169,7 @@ $$
 {{< include ../figures/exceedance-dfda_expected_roi.qmd >}}
 
 
-### dFDA Annual Net Savings (R&D Only) {#sec-dfda_net_savings_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only) {#sec-dfda_net_savings_rd_only_annual}
 
 **Value**: $41.5B
 
@@ -177,8 +177,8 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
-- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
 Savings_{net} = \$41.5B - \$0.04B = \$41.46B
@@ -203,15 +203,15 @@ $$
 {{< include ../figures/exceedance-dfda_net_savings_rd_only_annual.qmd >}}
 
 
-### dFDA Total NPV Annual OPEX {#sec-dfda_npv_annual_opex_total}
+### Decentralized Framework for Drug Assessment Total NPV Annual OPEX {#sec-dfda_npv_annual_opex_total}
 
 **Value**: $40M
 
-Total NPV annual opex (dFDA core + DIH initiatives)
+Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
 **Inputs**:
 
-- [dFDA Core Platform Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
+- [Decentralized Framework for Drug Assessment Core Platform Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
 - [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1M (95% CI: $14M - $32M)
 
 $$
@@ -237,15 +237,15 @@ $$
 {{< include ../figures/exceedance-dfda_npv_annual_opex_total.qmd >}}
 
 
-### NPV of dFDA Benefits (R&D Only, 10-Year Discounted) {#sec-dfda_npv_benefit_rd_only}
+### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted) {#sec-dfda_npv_benefit_rd_only}
 
 **Value**: $275B
 
-NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
+NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 **Inputs**:
 
-- [dFDA Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $41.5B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -279,7 +279,7 @@ NPV net benefit using R&D savings only (most conservative financial estimate, ex
 
 **Inputs**:
 
-- [NPV of dFDA Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $275B
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $275B
 
 $$
 Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
@@ -304,7 +304,7 @@ $$
 {{< include ../figures/exceedance-dfda_npv_net_benefit_rd_only.qmd >}}
 
 
-### dFDA Present Value of Annual OPEX Over 10 Years {#sec-dfda_npv_pv_annual_opex}
+### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years {#sec-dfda_npv_pv_annual_opex}
 
 **Value**: $342M
 
@@ -312,7 +312,7 @@ Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [dFDA Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -339,7 +339,7 @@ $$
 {{< include ../figures/exceedance-dfda_npv_pv_annual_opex.qmd >}}
 
 
-### dFDA Total NPV Cost {#sec-dfda_npv_total_cost}
+### Decentralized Framework for Drug Assessment Total NPV Cost {#sec-dfda_npv_total_cost}
 
 **Value**: $611M
 
@@ -347,8 +347,8 @@ Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [dFDA Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
-- [dFDA Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 TotalCost_{NPV} = \$0.26975B + \$0.269B \approx \$0.54B
@@ -373,15 +373,15 @@ $$
 {{< include ../figures/exceedance-dfda_npv_total_cost.qmd >}}
 
 
-### dFDA Total NPV Upfront Costs {#sec-dfda_npv_upfront_cost_total}
+### Decentralized Framework for Drug Assessment Total NPV Upfront Costs {#sec-dfda_npv_upfront_cost_total}
 
 **Value**: $270M
 
-Total NPV upfront costs (dFDA core + DIH initiatives)
+Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
 **Inputs**:
 
-- [dFDA Core Platform Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
+- [Decentralized Framework for Drug Assessment Core Platform Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
 - [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230M (95% CI: $150M - $350M)
 
 $$
@@ -407,16 +407,16 @@ $$
 {{< include ../figures/exceedance-dfda_npv_upfront_cost_total.qmd >}}
 
 
-### dFDA Annual Benefit: R&D Savings {#sec-dfda_rd_gross_savings_annual}
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings {#sec-dfda_rd_gross_savings_annual}
 
 **Value**: $41.5B
 
-Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)
+Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
-- [dFDA Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
+- [Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
 
 $$
 Benefit_{gross,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
@@ -449,7 +449,7 @@ Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
 
 $$
 Savings_{daily} = \frac{\$41.5B}{365} = \$113.7M
@@ -474,18 +474,18 @@ $$
 {{< include ../figures/exceedance-dfda_rd_savings_daily.qmd >}}
 
 
-### ROI from dFDA R&D Savings Only {#sec-dfda_roi_rd_only}
+### ROI from Decentralized Framework for Drug Assessment R&D Savings Only {#sec-dfda_roi_rd_only}
 
 **Value**: 451 ratio
 
-ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
+ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
 
 **Inputs**:
 
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
-- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
-- [dFDA Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 ROI_{RD} = \frac{\$249.3B}{\$0.54B} \approx 463
@@ -510,7 +510,7 @@ $$
 {{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
 
 
-### dFDA Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
+### Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment {#sec-dfda_roi_simple}
 
 **Value**: 1.04k ratio
 
@@ -518,8 +518,8 @@ Simple ROI without NPV adjustment (gross savings / annual opex)
 
 **Inputs**:
 
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
-- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
 ROI_{DFDA} = \frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \frac{\$41.50B}{\$40.0M} = 1{,}038
@@ -544,7 +544,7 @@ $$
 {{< include ../figures/exceedance-dfda_roi_simple.qmd >}}
 
 
-### dFDA Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
+### Decentralized Framework for Drug Assessment Maximum Trials per Year {#sec-dfda_trials_per_year_capacity}
 
 **Value**: 75.4k trials/year
 
@@ -647,11 +647,11 @@ $$
 
 **Value**: $21.7B
 
-Annual clinical trial patient subsidies (all medical research funds after dFDA operations)
+Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)
 
 **Inputs**:
 
-- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [DIH Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.7B
 
 $$
@@ -916,15 +916,15 @@ $$
 {{< include ../figures/exceedance-disease_eradication_plus_acceleration_economic_loss_total.qmd >}}
 
 
-### Coverage Factor of Treaty Funding vs dFDA OPEX {#sec-dividend_coverage_factor}
+### Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX {#sec-dividend_coverage_factor}
 
 **Value**: 680 ratio
 
-Coverage factor of treaty funding vs dFDA opex (sustainability margin)
+Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability margin)
 
 **Inputs**:
 
-- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
@@ -3079,12 +3079,12 @@ $$
 
 **Value**: $155B
 
-Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)
+Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)
 
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
 
 $$
 Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
@@ -3151,7 +3151,7 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 
 **Inputs**:
 
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
@@ -3284,11 +3284,11 @@ $$
 
 **Value**: $290M
 
-Total annual system costs (campaign + dFDA operations)
+Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)
 
 **Inputs**:
 
-- [Total Annual dFDA Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Amortized Annual Treaty Campaign Cost](#sec-treaty_campaign_annual_cost_amortized) 🔢: $250M
 
 $$
@@ -3322,7 +3322,7 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 
 **Inputs**:
 
-- [dFDA Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
@@ -6212,20 +6212,20 @@ Percentage of budget defense sector keeps under 1% treaty
 *Core definition*
 
 
-### Years to Reach Full dFDA Adoption {#sec-dfda_npv_adoption_ramp_years}
+### Years to Reach Full Decentralized Framework for Drug Assessment Adoption {#sec-dfda_npv_adoption_ramp_years}
 
 **Value**: 5 years
 
-Years to reach full dFDA adoption
+Years to reach full Decentralized Framework for Drug Assessment adoption
 
 *Core definition*
 
 
-### dFDA Core Platform Annual OPEX {#sec-dfda_npv_annual_opex}
+### Decentralized Framework for Drug Assessment Core Platform Annual OPEX {#sec-dfda_npv_annual_opex}
 
 **Value**: $18.9M
 
-dFDA core platform annual opex (midpoint of $11-26.5M)
+Decentralized Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)
 
 #### Uncertainty Range
 
@@ -6238,11 +6238,11 @@ dFDA core platform annual opex (midpoint of $11-26.5M)
 *Core definition*
 
 
-### dFDA Core Platform Build Cost {#sec-dfda_npv_upfront_cost}
+### Decentralized Framework for Drug Assessment Core Platform Build Cost {#sec-dfda_npv_upfront_cost}
 
 **Value**: $40M
 
-dFDA core platform build cost
+Decentralized Framework for Drug Assessment core platform build cost
 
 #### Uncertainty Range
 
@@ -6255,11 +6255,11 @@ dFDA core platform build cost
 *Core definition*
 
 
-### dFDA Community Support Costs {#sec-dfda_opex_community}
+### Decentralized Framework for Drug Assessment Community Support Costs {#sec-dfda_opex_community}
 
 **Value**: $2.00M
 
-dFDA community support costs
+Decentralized Framework for Drug Assessment community support costs
 
 #### Uncertainty Range
 
@@ -6272,11 +6272,11 @@ dFDA community support costs
 *Core definition*
 
 
-### dFDA Infrastructure Costs {#sec-dfda_opex_infrastructure}
+### Decentralized Framework for Drug Assessment Infrastructure Costs {#sec-dfda_opex_infrastructure}
 
 **Value**: $8.00M
 
-dFDA infrastructure costs (cloud, security)
+Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
 
 #### Uncertainty Range
 
@@ -6289,20 +6289,20 @@ dFDA infrastructure costs (cloud, security)
 *Core definition*
 
 
-### dFDA Overhead Percentage of Treaty Funding {#sec-dfda_opex_pct_of_treaty_funding}
+### Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding {#sec-dfda_opex_pct_of_treaty_funding}
 
 **Value**: 0.147%
 
-Percentage of treaty funding allocated to dFDA platform overhead
+Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment platform overhead
 
 *Core definition*
 
 
-### dFDA Maintenance Costs {#sec-dfda_opex_platform_maintenance}
+### Decentralized Framework for Drug Assessment Maintenance Costs {#sec-dfda_opex_platform_maintenance}
 
 **Value**: $15M
 
-dFDA maintenance costs
+Decentralized Framework for Drug Assessment maintenance costs
 
 #### Uncertainty Range
 
@@ -6315,11 +6315,11 @@ dFDA maintenance costs
 *Core definition*
 
 
-### dFDA Regulatory Coordination Costs {#sec-dfda_opex_regulatory}
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs {#sec-dfda_opex_regulatory}
 
 **Value**: $5.00M
 
-dFDA regulatory coordination costs
+Decentralized Framework for Drug Assessment regulatory coordination costs
 
 #### Uncertainty Range
 
@@ -6332,11 +6332,11 @@ dFDA regulatory coordination costs
 *Core definition*
 
 
-### dFDA Staff Costs {#sec-dfda_opex_staff}
+### Decentralized Framework for Drug Assessment Staff Costs {#sec-dfda_opex_staff}
 
 **Value**: $10M
 
-dFDA staff costs (minimal, AI-assisted)
+Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 #### Uncertainty Range
 
@@ -6349,7 +6349,7 @@ dFDA staff costs (minimal, AI-assisted)
 *Core definition*
 
 
-### dFDA Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
+### Decentralized Framework for Drug Assessment Target Cost per Patient in USD {#sec-dfda_target_cost_per_patient_usd}
 
 **Value**: $1.00K
 
@@ -6358,20 +6358,20 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 *Core definition*
 
 
-### dFDA One-Time Build Cost {#sec-dfda_upfront_build}
+### Decentralized Framework for Drug Assessment One-Time Build Cost {#sec-dfda_upfront_build}
 
 **Value**: $40M
 
-dFDA one-time build cost (central estimate)
+Decentralized Framework for Drug Assessment one-time build cost (central estimate)
 
 *Core definition*
 
 
-### dFDA One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
+### Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum) {#sec-dfda_upfront_build_max}
 
 **Value**: $46M
 
-dFDA one-time build cost (high estimate)
+Decentralized Framework for Drug Assessment one-time build cost (high estimate)
 
 *Core definition*
 
@@ -6819,7 +6819,7 @@ Worst-case viral referendum budget (tiered pricing with increasing marginal cost
 *Core definition*
 
 
-### dFDA Trial Cost Reduction Percentage {#sec-trial_cost_reduction_pct}
+### Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage {#sec-trial_cost_reduction_pct}
 
 **Value**: 50%
 

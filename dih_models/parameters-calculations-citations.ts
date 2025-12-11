@@ -1942,14 +1942,14 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
 };
 
 /**
- * Total annual dFDA operational costs (sum of all components: $15M + $10M +
- * $8M + $5M + $2M)
+ * Total annual Decentralized Framework for Drug Assessment operational costs
+ * (sum of all components: $15M + $10M + $8M + $5M + $2M)
  */
 export const DFDA_ANNUAL_OPEX: Parameter = {
   value: 40000000.0,
   unit: "USD/year",
-  displayName: "Total Annual dFDA Operational Costs",
-  description: "Total annual dFDA operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+  displayName: "Total Annual Decentralized Framework for Drug Assessment Operational Costs",
+  description: "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
@@ -1958,14 +1958,14 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
 };
 
 /**
- * Annual dFDA benefit from R&D savings (trial cost reduction, secondary
- * component)
+ * Annual Decentralized Framework for Drug Assessment benefit from R&D
+ * savings (trial cost reduction, secondary component)
  */
 export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   value: 41500000000.0,
   unit: "USD/year",
-  displayName: "dFDA Annual Benefit: R&D Savings",
-  description: "Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)",
+  displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
+  description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
@@ -1996,7 +1996,7 @@ export const DFDA_EXPECTED_ROI: Parameter = {
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   value: 41460000000.0,
   unit: "USD/year",
-  displayName: "dFDA Annual Net Savings (R&D Only)",
+  displayName: "Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)",
   description: "Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#net-savings",
@@ -2006,13 +2006,14 @@ export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
 };
 
 /**
- * Total NPV annual opex (dFDA core + DIH initiatives)
+ * Total NPV annual opex (Decentralized Framework for Drug Assessment core +
+ * DIH initiatives)
  */
 export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   value: 40050000.0,
   unit: "USD/year",
-  displayName: "dFDA Total NPV Annual OPEX",
-  description: "Total NPV annual opex (dFDA core + DIH initiatives)",
+  displayName: "Decentralized Framework for Drug Assessment Total NPV Annual OPEX",
+  description: "Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
@@ -2021,14 +2022,15 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
 };
 
 /**
- * NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon,
- * most conservative financial estimate)
+ * NPV of Decentralized Framework for Drug Assessment R&D savings only with
+ * 5-year adoption ramp (10-year horizon, most conservative financial
+ * estimate)
  */
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
   value: 275468208149.5121,
   unit: "USD",
-  displayName: "NPV of dFDA Benefits (R&D Only, 10-Year Discounted)",
-  description: "NPV of dFDA R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
+  displayName: "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)",
+  description: "NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-benefit",
   confidence: "high",
@@ -2058,7 +2060,7 @@ export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
 export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   value: 341634623.61287224,
   unit: "USD",
-  displayName: "dFDA Present Value of Annual OPEX Over 10 Years",
+  displayName: "Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years",
   description: "Present value of annual opex over 10 years (NPV formula)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-calculation",
@@ -2073,7 +2075,7 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
 export const DFDA_NPV_TOTAL_COST: Parameter = {
   value: 611384623.6128722,
   unit: "USD",
-  displayName: "dFDA Total NPV Cost",
+  displayName: "Decentralized Framework for Drug Assessment Total NPV Cost",
   description: "Total NPV cost (upfront + PV of annual opex)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-total-cost",
@@ -2083,13 +2085,14 @@ export const DFDA_NPV_TOTAL_COST: Parameter = {
 };
 
 /**
- * Total NPV upfront costs (dFDA core + DIH initiatives)
+ * Total NPV upfront costs (Decentralized Framework for Drug Assessment core
+ * + DIH initiatives)
  */
 export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   value: 269750000.0,
   unit: "USD",
-  displayName: "dFDA Total NPV Upfront Costs",
-  description: "Total NPV upfront costs (dFDA core + DIH initiatives)",
+  displayName: "Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
+  description: "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
@@ -2098,14 +2101,14 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
 };
 
 /**
- * Annual dFDA benefit from R&D savings (trial cost reduction, secondary
- * component)
+ * Annual Decentralized Framework for Drug Assessment benefit from R&D
+ * savings (trial cost reduction, secondary component)
  */
 export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
   value: 41500000000.0,
   unit: "USD/year",
-  displayName: "dFDA Annual Benefit: R&D Savings",
-  description: "Annual dFDA benefit from R&D savings (trial cost reduction, secondary component)",
+  displayName: "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
+  description: "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-reduction",
   confidence: "high",
@@ -2128,13 +2131,14 @@ export const DFDA_RD_SAVINGS_DAILY: Parameter = {
 };
 
 /**
- * ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)
+ * ROI from Decentralized Framework for Drug Assessment R&D savings only
+ * (10-year NPV, most conservative estimate)
  */
 export const DFDA_ROI_RD_ONLY: Parameter = {
   value: 450.5645014781041,
   unit: "ratio",
-  displayName: "ROI from dFDA R&D Savings Only",
-  description: "ROI from dFDA R&D savings only (10-year NPV, most conservative estimate)",
+  displayName: "ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
+  description: "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
   confidence: "high",
@@ -2148,7 +2152,7 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
 export const DFDA_ROI_SIMPLE: Parameter = {
   value: 1037.5,
   unit: "ratio",
-  displayName: "dFDA Simple ROI Without NPV Adjustment",
+  displayName: "Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment",
   description: "Simple ROI without NPV adjustment (gross savings / annual opex)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#roi-simple",
@@ -2162,7 +2166,7 @@ export const DFDA_ROI_SIMPLE: Parameter = {
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   value: 75392.0,
   unit: "trials/year",
-  displayName: "dFDA Maximum Trials per Year",
+  displayName: "Decentralized Framework for Drug Assessment Maximum Trials per Year",
   description: "Maximum trials per year possible with trial capacity multiplier",
   sourceType: "calculated",
   confidence: "high",
@@ -2200,13 +2204,13 @@ export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
 
 /**
  * Annual clinical trial patient subsidies (all medical research funds after
- * dFDA operations)
+ * Decentralized Framework for Drug Assessment operations)
  */
 export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   value: 21704000000.0,
   unit: "USD/year",
   displayName: "Annual Clinical Trial Patient Subsidies",
-  description: "Annual clinical trial patient subsidies (all medical research funds after dFDA operations)",
+  description: "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
@@ -2344,13 +2348,14 @@ export const DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL: Paramete
 };
 
 /**
- * Coverage factor of treaty funding vs dFDA opex (sustainability margin)
+ * Coverage factor of treaty funding vs Decentralized Framework for Drug
+ * Assessment opex (sustainability margin)
  */
 export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   value: 679.5,
   unit: "ratio",
-  displayName: "Coverage Factor of Treaty Funding vs dFDA OPEX",
-  description: "Coverage factor of treaty funding vs dFDA opex (sustainability margin)",
+  displayName: "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX",
+  description: "Coverage factor of treaty funding vs Decentralized Framework for Drug Assessment opex (sustainability margin)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/strategy/roadmap#sustainability",
   confidence: "high",
@@ -3299,14 +3304,15 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
 };
 
 /**
- * Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8
- * benefit categories, excludes regulatory delay value)
+ * Basic annual benefits: peace dividend + Decentralized Framework for Drug
+ * Assessment R&D savings only (2 of 8 benefit categories, excludes
+ * regulatory delay value)
  */
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   value: 155051000000.0,
   unit: "USD/year",
   displayName: "1% treaty Basic Annual Benefits (Peace + R&D Savings)",
-  description: "Basic annual benefits: peace dividend + dFDA R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
+  description: "Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits",
   confidence: "high",
@@ -3396,13 +3402,14 @@ export const TREATY_ROI_LAG_ELIMINATION: Parameter = {
 };
 
 /**
- * Total annual system costs (campaign + dFDA operations)
+ * Total annual system costs (campaign + Decentralized Framework for Drug
+ * Assessment operations)
  */
 export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   value: 290000000.0,
   unit: "USD/year",
   displayName: "Total Annual Treaty System Costs",
-  description: "Total annual system costs (campaign + dFDA operations)",
+  description: "Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)",
   sourceType: "calculated",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs",
   confidence: "high",
@@ -3989,26 +3996,27 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
 };
 
 /**
- * Years to reach full dFDA adoption
+ * Years to reach full Decentralized Framework for Drug Assessment adoption
  */
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
   value: 5.0,
   unit: "years",
-  displayName: "Years to Reach Full dFDA Adoption",
-  description: "Years to reach full dFDA adoption",
+  displayName: "Years to Reach Full Decentralized Framework for Drug Assessment Adoption",
+  description: "Years to reach full Decentralized Framework for Drug Assessment adoption",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#adoption-curve",
   confidence: "high",
 };
 
 /**
- * dFDA core platform annual opex (midpoint of $11-26.5M)
+ * Decentralized Framework for Drug Assessment core platform annual opex
+ * (midpoint of $11-26.5M)
  */
 export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   value: 18950000.0,
   unit: "USD/year",
-  displayName: "dFDA Core Platform Annual OPEX",
-  description: "dFDA core platform annual opex (midpoint of $11-26.5M)",
+  displayName: "Decentralized Framework for Drug Assessment Core Platform Annual OPEX",
+  description: "Decentralized Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
@@ -4016,13 +4024,13 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
 };
 
 /**
- * dFDA core platform build cost
+ * Decentralized Framework for Drug Assessment core platform build cost
  */
 export const DFDA_NPV_UPFRONT_COST: Parameter = {
   value: 40000000.0,
   unit: "USD",
-  displayName: "dFDA Core Platform Build Cost",
-  description: "dFDA core platform build cost",
+  displayName: "Decentralized Framework for Drug Assessment Core Platform Build Cost",
+  description: "Decentralized Framework for Drug Assessment core platform build cost",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#npv-costs",
   confidence: "high",
@@ -4030,13 +4038,13 @@ export const DFDA_NPV_UPFRONT_COST: Parameter = {
 };
 
 /**
- * dFDA community support costs
+ * Decentralized Framework for Drug Assessment community support costs
  */
 export const DFDA_OPEX_COMMUNITY: Parameter = {
   value: 2000000.0,
   unit: "USD/year",
-  displayName: "dFDA Community Support Costs",
-  description: "dFDA community support costs",
+  displayName: "Decentralized Framework for Drug Assessment Community Support Costs",
+  description: "Decentralized Framework for Drug Assessment community support costs",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
@@ -4044,13 +4052,14 @@ export const DFDA_OPEX_COMMUNITY: Parameter = {
 };
 
 /**
- * dFDA infrastructure costs (cloud, security)
+ * Decentralized Framework for Drug Assessment infrastructure costs (cloud,
+ * security)
  */
 export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
   value: 8000000.0,
   unit: "USD/year",
-  displayName: "dFDA Infrastructure Costs",
-  description: "dFDA infrastructure costs (cloud, security)",
+  displayName: "Decentralized Framework for Drug Assessment Infrastructure Costs",
+  description: "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
@@ -4058,13 +4067,14 @@ export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
 };
 
 /**
- * Percentage of treaty funding allocated to dFDA platform overhead
+ * Percentage of treaty funding allocated to Decentralized Framework for Drug
+ * Assessment platform overhead
  */
 export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   value: 0.0014716703458425313,
   unit: "rate",
-  displayName: "dFDA Overhead Percentage of Treaty Funding",
-  description: "Percentage of treaty funding allocated to dFDA platform overhead",
+  displayName: "Decentralized Framework for Drug Assessment Overhead Percentage of Treaty Funding",
+  description: "Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment platform overhead",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/economics/economics#funding-allocation",
   confidence: "high",
@@ -4073,13 +4083,13 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
 };
 
 /**
- * dFDA maintenance costs
+ * Decentralized Framework for Drug Assessment maintenance costs
  */
 export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
   value: 15000000.0,
   unit: "USD/year",
-  displayName: "dFDA Maintenance Costs",
-  description: "dFDA maintenance costs",
+  displayName: "Decentralized Framework for Drug Assessment Maintenance Costs",
+  description: "Decentralized Framework for Drug Assessment maintenance costs",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
@@ -4087,13 +4097,13 @@ export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
 };
 
 /**
- * dFDA regulatory coordination costs
+ * Decentralized Framework for Drug Assessment regulatory coordination costs
  */
 export const DFDA_OPEX_REGULATORY: Parameter = {
   value: 5000000.0,
   unit: "USD/year",
-  displayName: "dFDA Regulatory Coordination Costs",
-  description: "dFDA regulatory coordination costs",
+  displayName: "Decentralized Framework for Drug Assessment Regulatory Coordination Costs",
+  description: "Decentralized Framework for Drug Assessment regulatory coordination costs",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
@@ -4101,13 +4111,14 @@ export const DFDA_OPEX_REGULATORY: Parameter = {
 };
 
 /**
- * dFDA staff costs (minimal, AI-assisted)
+ * Decentralized Framework for Drug Assessment staff costs (minimal,
+ * AI-assisted)
  */
 export const DFDA_OPEX_STAFF: Parameter = {
   value: 10000000.0,
   unit: "USD/year",
-  displayName: "dFDA Staff Costs",
-  description: "dFDA staff costs (minimal, AI-assisted)",
+  displayName: "Decentralized Framework for Drug Assessment Staff Costs",
+  description: "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#opex-breakdown",
   confidence: "high",
@@ -4121,7 +4132,7 @@ export const DFDA_OPEX_STAFF: Parameter = {
 export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
   value: 1000.0,
   unit: "USD/patient",
-  displayName: "dFDA Target Cost per Patient in USD",
+  displayName: "Decentralized Framework for Drug Assessment Target Cost per Patient in USD",
   description: "Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#cost-per-patient",
@@ -4129,26 +4140,28 @@ export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
 };
 
 /**
- * dFDA one-time build cost (central estimate)
+ * Decentralized Framework for Drug Assessment one-time build cost (central
+ * estimate)
  */
 export const DFDA_UPFRONT_BUILD: Parameter = {
   value: 40000000.0,
   unit: "USD",
-  displayName: "dFDA One-Time Build Cost",
-  description: "dFDA one-time build cost (central estimate)",
+  displayName: "Decentralized Framework for Drug Assessment One-Time Build Cost",
+  description: "Decentralized Framework for Drug Assessment one-time build cost (central estimate)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#build-costs",
   confidence: "high",
 };
 
 /**
- * dFDA one-time build cost (high estimate)
+ * Decentralized Framework for Drug Assessment one-time build cost (high
+ * estimate)
  */
 export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   value: 46000000.0,
   unit: "USD",
-  displayName: "dFDA One-Time Build Cost (Maximum)",
-  description: "dFDA one-time build cost (high estimate)",
+  displayName: "Decentralized Framework for Drug Assessment One-Time Build Cost (Maximum)",
+  description: "Decentralized Framework for Drug Assessment one-time build cost (high estimate)",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/dfda-cost-benefit-analysis#build-costs",
   confidence: "high",
@@ -4679,7 +4692,7 @@ export const TREATY_REDUCTION_PCT: Parameter = {
 export const TRIAL_COST_REDUCTION_PCT: Parameter = {
   value: 0.5,
   unit: "rate",
-  displayName: "dFDA Trial Cost Reduction Percentage",
+  displayName: "Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
   description: "Trial cost reduction percentage (50% baseline, conservative)",
   sourceType: "definition",
   confidence: "high",

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: dFDA Present Value of Annual OPEX Over 10 Years (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 68583080.56045264
 p5 = 234688090.9938212
 p50 = 333183166.10110706
 p95 = 472538887.1651448
-display_name = "dFDA Present Value of Annual OPEX Over 10 Years"
+display_name = "Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: dFDA Present Value of Annual OPEX Over 10 Years**
+**Simulation Results Summary: Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $68.6M |
 | 90% Confidence Interval | [$235M, $473M] |
 
-*The histogram shows the distribution of dFDA Present Value of Annual OPEX Over 10 Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

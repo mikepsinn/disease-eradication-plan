@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: NPV of dFDA Benefits (R&D Only, 10-Year Discounted) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 53260996373.944855
 p5 = 193186928214.6086
 p50 = 270393376897.03662
 p95 = 368906817582.197
-display_name = "NPV of dFDA Benefits (R&D Only, 10-Year Discounted)"
+display_name = "NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)"
 units = "USD"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: NPV of dFDA Benefits (R&D Only, 10-Year Discounted)**
+**Simulation Results Summary: NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $53.3B |
 | 90% Confidence Interval | [$193B, $369B] |
 
-*The histogram shows the distribution of NPV of dFDA Benefits (R&D Only, 10-Year Discounted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -188,7 +188,7 @@ Humanity's budget priorities, explained simply:
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding 7-fold (from {{< var global_government_clinical_trials_spending_annual >}} to $31.68B).
 :::
 
-The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [less than 1% of possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost [$41K per patient](../references.qmd#trial-cost-41k) while pragmatic trials like Oxford RECOVERY run for [$500 per patient](../references.qmd#recovery-cost-500). At current funding levels, testing the remaining 99% of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
+The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested [{{< var exploration_ratio >}} of possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually cures people.
 
 {{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
 
@@ -451,7 +451,7 @@ The "ratchet mechanism" isn't just economic gravity. It's engineered through [In
 
 | Treaty Level | Total Revenue | IAB Political Funding | Pragmatic Trial Funding |
 |:-------------|:--------------|:---------------------|:-----------------|
-| 1% | $27B | $2.7B/year | $21.7B/year |
+| 1% | {{< var treaty_annual_funding >}} | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year |
 | 2% | $54B | $5.4B/year | $43.2B/year |
 | 5% | $135B | $13.5B/year | $108B/year |
 | 10% | $270B | $27B/year | $216B/year |
@@ -1019,7 +1019,7 @@ This analysis rests on several core assumptions that should be made explicit for
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
 - **Pre-1962 system**: {{< var pre_1962_drug_development_cost >}} {{< var pre_1962_drug_development_cost_cite >}} per drug (2024 inflation-adjusted) for safety testing; efficacy determined through decentralized physician case reports
-- **Post-1962 system**: [$2.6 billion](../references.qmd#drug-development-cost) per drug average, a **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}× cost increase**; drug companies conduct both safety and efficacy trials internally
+- **Post-1962 system**: {{< var pharma_drug_development_cost_current >}} per drug average, a **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}× cost increase**; drug companies conduct both safety and efficacy trials internally
 - **dFDA model**: Return to decentralized physician-led efficacy testing with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting **50-95% cost reductions**
 
 ![Drug development costs exploded after 1962 regulations](../../assets/cost-to-develop-a-new-drug.png)

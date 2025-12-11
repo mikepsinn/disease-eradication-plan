@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: dFDA Core Platform Build Cost"
+#| fig-cap: "Probability Distribution: Decentralized Framework for Drug Assessment Core Platform Build Cost"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,7 +20,7 @@ central_value = 40000000.0
 low = 25000000
 high = 65000000
 dist_type = "lognormal"
-display_name = "dFDA Core Platform Build Cost"
+display_name = "Decentralized Framework for Drug Assessment Core Platform Build Cost"
 unit = "USD"
 
 # Calculate distribution parameters

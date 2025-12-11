@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: dFDA Core Platform Annual OPEX"
+#| fig-cap: "Probability Distribution: Decentralized Framework for Drug Assessment Core Platform Annual OPEX"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,7 +20,7 @@ central_value = 18950000.0
 low = 11000000
 high = 26500000
 dist_type = "lognormal"
-display_name = "dFDA Core Platform Annual OPEX"
+display_name = "Decentralized Framework for Drug Assessment Core Platform Annual OPEX"
 unit = "USD/year"
 
 # Calculate distribution parameters
