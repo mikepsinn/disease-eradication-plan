@@ -4,13 +4,12 @@ subtitle: A Quantitative Analysis of Type II Errors and Welfare Loss in Global P
 description: PRIMARY METHODOLOGY - Rigorous top-down analysis estimating 184.6M preventable deaths, 3.53B DALYs, and $529T economic loss from 8.2-year efficacy lag. Source of 54M annual QALY estimate.
 published: true
 tags:
-  - appendix
-  - analysis
-  - fda
-  - regulatory-economics
-  - mortality
-  - cost-benefit
-lastReviewed: '2025-01-19T00:00:00.000Z'
+- appendix
+- analysis
+- fda
+- regulatory-economics
+- mortality
+- cost-benefit
 ---
 
 ```{python}
