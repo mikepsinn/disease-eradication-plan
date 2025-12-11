@@ -129,7 +129,7 @@ def generate_parameters_and_calculations_qmd(
     content.append('title: "Parameters and Calculations Reference"')
     content.append('subtitle: "Comprehensive Documentation of Economic Model Variables"')
     content.append("aliases:")
-    content.append("  - calculations.html")
+    content.append("  - /calculations.html")
     content.append("format:")
     content.append("  html:")
     content.append("    toc: true")
