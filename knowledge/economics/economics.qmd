@@ -422,46 +422,15 @@ They win by **aligning incentives**.
 
 This is the alignment engine:
 
-### VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) Financing Mechanism
+### [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
 
-You make this happen by aligning financial incentives with their own future savings.
-
-### The Mechanism
-
-1. Investors buy **VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)** funding the political campaign ({{< var treaty_campaign_total_cost >}})
-2. Bond funds finance lobbying to redirect {{< var treaty_reduction_pct >}} of military spending
-3. When the treaty passes, it generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual benefits
-4. Bondholders receive {{< var victory_bond_annual_return_pct >}} annual returns from the captured surplus
+[Incentive Alignment Bonds (IABs)](/knowledge/solution/incentive-alignment-bonds.qmd) represent a mechanism design innovation for resolving principal-agent problems in political decision-making. Rather than relying on altruistic motivation, IABs restructure incentives such that political self-interest aligns with socially optimal policy choices.
 
 It's **public choice theory applied correctly**: Self-interest becomes a public good.
 
 Nobody has to become a better person.
 Nobody has to evolve morally.
 They just follow their calculator to accidentally save humanity.
-
-{{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
-
-### Incentive Alignment by Actor Type
-
-**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)."
-
-**Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
-
-**Pharmaceutical Companies**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} {{< var traditional_phase3_cost_per_patient_example_48k_cite >}} per trial patient, patients bring {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidies that YOU collect when they enroll. Your trial costs become revenue. We call it 'reverse expenses' or 'profit.'"
-
-**Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
-
-**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) make {{< var victory_bond_annual_return_pct >}}."
-
-**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join. Your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
-
-You just point everyone's greed at diseases instead of each other.
-
-See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
-
-### [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)
-
-[Incentive Alignment Bonds (IABs)](/knowledge/solution/incentive-alignment-bonds.qmd) represent a mechanism design innovation for resolving principal-agent problems in political decision-making. Rather than relying on altruistic motivation, IABs restructure incentives such that political self-interest aligns with socially optimal policy choices.
 
 #### Mechanism Architecture
 
@@ -492,6 +461,28 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 | Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |
 
 The mechanism transforms the payoff structure such that supporting beneficial policy becomes individually rational rather than requiring altruistic sacrifice.
+
+#### Stakeholder Alignment
+
+The IAB mechanism aligns incentives across all key stakeholder groups:
+
+{{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
+
+**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)."
+
+**Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
+
+**Pharmaceutical Companies**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} {{< var traditional_phase3_cost_per_patient_example_48k_cite >}} per trial patient, patients bring {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidies that YOU collect when they enroll. Your trial costs become revenue. We call it 'reverse expenses' or 'profit.'"
+
+**Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
+
+**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) make {{< var victory_bond_annual_return_pct >}}."
+
+**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join. Your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
+
+You just point everyone's greed at diseases instead of each other.
+
+See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
 #### VICTORY Incentive Alignment Bonds
 
