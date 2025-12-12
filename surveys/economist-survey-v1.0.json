@@ -1,0 +1,4743 @@
+{
+  "metadata": {
+    "title": "Economic Model Validation Survey for Economists",
+    "version": "1.0",
+    "parameter_count": 50,
+    "estimated_time_minutes": 150,
+    "conducted_by": "Decentralized Institutes of Health Initiative",
+    "contact": "feedback@warondisease.org",
+    "data_usage": "Responses will be used to refine economic model parameters. Individual responses are confidential.",
+    "version_date": "2025-12-12"
+  },
+  "introduction": {
+    "overview": "This survey validates the economic model for a proposed 1% Global Health Security Treaty that would redirect 1% of global military spending ($113.5B/year) to medical research and clinical trial infrastructure.",
+    "main_claims": [
+      "416 million lives saved over 50 years through accelerated drug development",
+      "Cost-effectiveness: $27 per DALY averted (3.3x better than bed nets at $89/DALY)",
+      "ROI: 450x return on R&D savings alone (10-year NPV, most conservative estimate)",
+      "Political feasibility: 1-10% success probability over 20 years"
+    ],
+    "your_role": "As an economist, you're being asked to validate the parameters, calculations, and assumptions underlying these claims. Your feedback will be used to refine the model and strengthen the economic case for the treaty.",
+    "survey_structure": [
+      "Parameters are ordered by importance (sensitivity analysis + document usage frequency)",
+      "Within that ordering, inputs are validated before outputs that depend on them",
+      "Each parameter has 2-4 questions depending on its type (external/calculated/definition)",
+      "You can stop at any time - priority is given to high-impact parameters first",
+      "Some follow-up questions appear based on your responses (e.g., if you rate a source as low credibility, you'll be asked for alternatives)"
+    ],
+    "time_horizons": {
+      "lives_saved": "50-year cumulative impact (standard for disease eradication models)",
+      "roi_calculation": "10-year NPV with 3% discount rate",
+      "political_timeline": "20-year probability window (campaign through treaty ratification)",
+      "note": "Different parameters use different time horizons appropriate to their context. This will be specified in each parameter's description."
+    },
+    "question_types": {
+      "rating": "1-5 scale questions (e.g., credibility rating). Includes 'Not qualified to assess' option.",
+      "boolean": "Yes/No questions",
+      "choice": "Multiple choice (select one)",
+      "checklist": "Multiple select (check all that apply)",
+      "range": "Enter lower and upper bounds (e.g., confidence intervals)",
+      "text": "Open-ended text response"
+    },
+    "estimated_time": "50 parameters × ~3 min each = ~150 minutes total",
+    "note": "Your responses are confidential. We're seeking honest feedback to improve the model, not validation for pre-determined conclusions."
+  },
+  "background_questions": [
+    {
+      "id": "expertise",
+      "text": "Primary area(s) of expertise (check all that apply)",
+      "type": "checklist",
+      "options": [
+        "Health economics",
+        "Development economics",
+        "Cost-effectiveness analysis",
+        "Public finance",
+        "Political economy",
+        "Pharmaceutical economics",
+        "Epidemiological modeling",
+        "Other"
+      ],
+      "required": true
+    },
+    {
+      "id": "experience_years",
+      "text": "Years of professional experience in economics",
+      "type": "choice",
+      "options": [
+        "0-5",
+        "6-10",
+        "11-20",
+        "20+"
+      ],
+      "required": true
+    },
+    {
+      "id": "familiar_daly",
+      "text": "Familiarity with DALY (Disability-Adjusted Life Years) methodology",
+      "type": "rating",
+      "options": [
+        "1 (Not familiar)",
+        "2",
+        "3",
+        "4",
+        "5 (Very familiar)",
+        "Not qualified to assess"
+      ],
+      "required": true
+    },
+    {
+      "id": "familiar_npv",
+      "text": "Familiarity with NPV (Net Present Value) and ROI calculations",
+      "type": "rating",
+      "options": [
+        "1 (Not familiar)",
+        "2",
+        "3",
+        "4",
+        "5 (Very familiar)",
+        "Not qualified to assess"
+      ],
+      "required": true
+    }
+  ],
+  "parameters": [
+    {
+      "rank": 1,
+      "parameter_name": "BED_NETS_COST_PER_DALY",
+      "display_name": "Bed Nets Cost per DALY",
+      "description": "GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
+      "importance_score": 20.6,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 3.6,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 1,
+        "total": 50,
+        "percent_complete": 2,
+        "estimated_time_remaining_minutes": 147,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "BED_NETS_COST_PER_DALY",
+          "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER",
+          "TREATY_VS_BED_NETS_MULTIPLIER"
+        ],
+        "top_percent": 0.3
+      },
+      "context_card": {
+        "what": "GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "BED_NETS_COST_PER_DALY",
+          "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER",
+          "TREATY_VS_BED_NETS_MULTIPLIER"
+        ],
+        "data_source": "givewell-cost-per-life-saved",
+        "peer_reviewed": true,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "BED_NETS_COST_PER_DALY_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Bed Nets Cost per DALY",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "givewell-cost-per-life-saved",
+            "peer_reviewed": true,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "BED_NETS_COST_PER_DALY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "BED_NETS_COST_PER_DALY_value_reasonable",
+          "question_text": "Is the central estimate of $89 per DALY reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 89.0,
+            "unit": "USD/DALY",
+            "description": "GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review."
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "BED_NETS_COST_PER_DALY_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "BED_NETS_COST_PER_DALY_source_credibility <= 3"
+        },
+        {
+          "question_id": "BED_NETS_COST_PER_DALY_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$78, $100] per DALY. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 78,
+            "current_upper": 100,
+            "current_central": 89.0,
+            "unit": "USD/DALY"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "parameter_name": "TREATY_CAMPAIGN_BUDGET_REFERENDUM",
+      "display_name": "Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance",
+      "description": "Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
+      "importance_score": 16.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.4,
+        "type": 10,
+        "manual": 5
+      },
+      "progress": {
+        "current": 2,
+        "total": 50,
+        "percent_complete": 4,
+        "estimated_time_remaining_minutes": 144,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+          "TREATY_CAMPAIGN_BUDGET_REFERENDUM",
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+        ],
+        "top_percent": 0.6
+      },
+      "context_card": {
+        "what": "Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+          "TREATY_CAMPAIGN_BUDGET_REFERENDUM",
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_REFERENDUM_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance = $300M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 300000000.0,
+            "formatted_value": "$300M",
+            "description": "Global referendum campaign (get 208M votes): ads, media, partnerships, staff, legal/compliance"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_REFERENDUM_alternative_value",
+          "question_text": "What value would you use instead? (Current: $300M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 300000000.0,
+            "unit": "USD",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "TREATY_CAMPAIGN_BUDGET_REFERENDUM_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_REFERENDUM_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$180M, $500M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 180000000.0,
+            "current_upper": 500000000.0,
+            "current_central": 300000000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "parameter_name": "TREATY_CAMPAIGN_BUDGET_LOBBYING",
+      "display_name": "Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
+      "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+      "importance_score": 21.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.4,
+        "type": 10,
+        "manual": 10
+      },
+      "progress": {
+        "current": 3,
+        "total": 50,
+        "percent_complete": 6,
+        "estimated_time_remaining_minutes": 141,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+          "TREATY_CAMPAIGN_BUDGET_LOBBYING",
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+        ],
+        "top_percent": 0.9
+      },
+      "context_card": {
+        "what": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+          "TREATY_CAMPAIGN_BUDGET_LOBBYING",
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_LOBBYING_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance = $650M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 650000000.0,
+            "formatted_value": "$650M",
+            "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_LOBBYING_alternative_value",
+          "question_text": "What value would you use instead? (Current: $650M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 650000000.0,
+            "unit": "USD",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "TREATY_CAMPAIGN_BUDGET_LOBBYING_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_LOBBYING_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$325M, $1.30B]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 325000000.0,
+            "current_upper": 1300000000.0,
+            "current_central": 650000000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "parameter_name": "TREATY_CAMPAIGN_BUDGET_RESERVE",
+      "display_name": "Reserve Fund / Contingency Buffer",
+      "description": "Reserve fund / contingency buffer",
+      "importance_score": 15.5,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0.5,
+        "type": 10,
+        "manual": 5
+      },
+      "progress": {
+        "current": 4,
+        "total": 50,
+        "percent_complete": 8,
+        "estimated_time_remaining_minutes": 138,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+          "TREATY_CAMPAIGN_BUDGET_RESERVE",
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+        ],
+        "top_percent": 1.2
+      },
+      "context_card": {
+        "what": "Reserve fund / contingency buffer",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED",
+          "TREATY_CAMPAIGN_BUDGET_RESERVE",
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_RESERVE_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Reserve Fund / Contingency Buffer = $50M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 50000000.0,
+            "formatted_value": "$50M",
+            "description": "Reserve fund / contingency buffer"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_RESERVE_alternative_value",
+          "question_text": "What value would you use instead? (Current: $50M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 50000000.0,
+            "unit": "USD",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "TREATY_CAMPAIGN_BUDGET_RESERVE_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_BUDGET_RESERVE_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$20M, $100M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 20000000.0,
+            "current_upper": 100000000.0,
+            "current_central": 50000000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "parameter_name": "TREATY_CAMPAIGN_TOTAL_COST",
+      "display_name": "Total 1% Treaty Campaign Cost",
+      "description": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
+      "importance_score": 26.0,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 4.0,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 5,
+        "total": 50,
+        "percent_complete": 10,
+        "estimated_time_remaining_minutes": 135,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 1.5
+      },
+      "context_card": {
+        "what": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Referendum + Lobbying + Reserve",
+        "inputs_count": 3
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_CAMPAIGN_TOTAL_COST_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Total 1% Treaty Campaign Cost?\n\nCurrent result: $1B\nCalculation: $300M + $650M + $50M = $1B",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "REFERENDUM + LOBBYING + RESERVE",
+            "formula_readable": "Referendum + Lobbying + Reserve",
+            "calculation_example": "$300M + $650M + $50M = $1B",
+            "result_value": 1000000000.0,
+            "result_formatted": "$1B",
+            "description": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
+            "parameter_name": "TREATY_CAMPAIGN_TOTAL_COST"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_TOTAL_COST_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Global Referendum Campaign: $300M\n• Political Lobbying Campaign: $650M\n• Reserve Fund / Contingency Buffer: $50M",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "TREATY_CAMPAIGN_BUDGET_REFERENDUM",
+              "TREATY_CAMPAIGN_BUDGET_LOBBYING",
+              "TREATY_CAMPAIGN_BUDGET_RESERVE"
+            ],
+            "inputs_readable": "Global Referendum Campaign: Ads, Media, Partnerships, Staff, Legal/Compliance, Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance, Reserve Fund / Contingency Buffer",
+            "formula": "REFERENDUM + LOBBYING + RESERVE",
+            "formula_readable": "Referendum + Lobbying + Reserve"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_CAMPAIGN_TOTAL_COST_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TREATY_CAMPAIGN_TOTAL_COST_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "parameter_name": "EFFICACY_LAG_YEARS",
+      "display_name": "Regulatory Delay for Efficacy Testing Post-Safety Verification",
+      "description": "Regulatory delay for efficacy testing (Phase II/III) post-safety verification",
+      "importance_score": 25.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 8.4,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 6,
+        "total": 50,
+        "percent_complete": 12,
+        "estimated_time_remaining_minutes": 132,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
+        "top_percent": 1.9
+      },
+      "context_card": {
+        "what": "Regulatory delay for efficacy testing (Phase II/III) post-safety verification",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
+        "data_source": "bio-clinical-development-2021",
+        "peer_reviewed": true,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "EFFICACY_LAG_YEARS_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Regulatory Delay for Efficacy Testing Post-Safety Verification",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "bio-clinical-development-2021",
+            "peer_reviewed": true,
+            "confidence": "high",
+            "last_updated": "2021",
+            "parameter_name": "EFFICACY_LAG_YEARS"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "EFFICACY_LAG_YEARS_value_reasonable",
+          "question_text": "Is the central estimate of 8.2 years years reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 8.2,
+            "unit": "years",
+            "description": "Regulatory delay for efficacy testing (Phase II/III) post-safety verification"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "EFFICACY_LAG_YEARS_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "EFFICACY_LAG_YEARS_source_credibility <= 3"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "parameter_name": "GLOBAL_DISEASE_DEATHS_DAILY",
+      "display_name": "Global Daily Deaths from Disease and Aging",
+      "description": "Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)",
+      "importance_score": 18.1,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.1,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 7,
+        "total": 50,
+        "percent_complete": 14,
+        "estimated_time_remaining_minutes": 129,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
+        "top_percent": 2.2
+      },
+      "context_card": {
+        "what": "Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
+        "data_source": "who-global-health-estimates-2024",
+        "peer_reviewed": true,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "GLOBAL_DISEASE_DEATHS_DAILY_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Global Daily Deaths from Disease and Aging",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "who-global-health-estimates-2024",
+            "peer_reviewed": true,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "GLOBAL_DISEASE_DEATHS_DAILY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_DISEASE_DEATHS_DAILY_value_reasonable",
+          "question_text": "Is the central estimate of 150k deaths/day deaths reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 150000.0,
+            "unit": "deaths/day",
+            "description": "Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_DISEASE_DEATHS_DAILY_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "GLOBAL_DISEASE_DEATHS_DAILY_source_credibility <= 3"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "parameter_name": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+      "display_name": "Total Deaths from Disease Eradication Delay",
+      "description": "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
+      "importance_score": 30.6,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 5.6,
+        "type": 20,
+        "manual": 5
+      },
+      "progress": {
+        "current": 8,
+        "total": 50,
+        "percent_complete": 16,
+        "estimated_time_remaining_minutes": 126,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 2.5
+      },
+      "context_card": {
+        "what": "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Annual Deaths × Regulatory Delay for Efficacy Testing Post-Safety Verification × Eventually Avoidable Death Percentage",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Total Deaths from Disease Eradication Delay?\n\nCurrent result: 416M deaths deaths\nCalculation: ANNUAL_DEATHS × 8.2 years × 92.6% = 416M deaths",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+            "formula_readable": "Annual Deaths × Regulatory Delay for Efficacy Testing Post-Safety Verification × Eventually Avoidable Death Percentage",
+            "calculation_example": "ANNUAL_DEATHS × 8.2 years × 92.6% = 416M deaths",
+            "result_value": 415852543.0,
+            "result_formatted": "416M deaths",
+            "description": "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
+            "parameter_name": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years\n• Global Daily Deaths from Disease and Aging: 150k deaths/day",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "EFFICACY_LAG_YEARS",
+              "GLOBAL_DISEASE_DEATHS_DAILY"
+            ],
+            "inputs_readable": "Regulatory Delay for Efficacy Testing Post-Safety Verification, Global Daily Deaths from Disease and Aging",
+            "formula": "ANNUAL_DEATHS × EFFICACY_LAG_YEARS × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+            "formula_readable": "Annual Deaths × Regulatory Delay for Efficacy Testing Post-Safety Verification × Eventually Avoidable Death Percentage"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "parameter_name": "GLOBAL_LIFE_EXPECTANCY_2024",
+      "display_name": "Global Life Expectancy (2024)",
+      "description": "Global life expectancy (2024)",
+      "importance_score": 17,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 9,
+        "total": 50,
+        "percent_complete": 18,
+        "estimated_time_remaining_minutes": 123,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLL",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL"
+        ],
+        "top_percent": 2.8
+      },
+      "context_card": {
+        "what": "Global life expectancy (2024)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLL",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL"
+        ],
+        "data_source": "who-global-health-estimates-2024",
+        "peer_reviewed": true,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "GLOBAL_LIFE_EXPECTANCY_2024_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Global Life Expectancy (2024)",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "who-global-health-estimates-2024",
+            "peer_reviewed": true,
+            "confidence": "high",
+            "last_updated": "2024",
+            "parameter_name": "GLOBAL_LIFE_EXPECTANCY_2024"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_LIFE_EXPECTANCY_2024_value_reasonable",
+          "question_text": "Is the central estimate of 79 years years reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 79.0,
+            "unit": "years",
+            "description": "Global life expectancy (2024)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_LIFE_EXPECTANCY_2024_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "GLOBAL_LIFE_EXPECTANCY_2024_source_credibility <= 3"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "parameter_name": "REGULATORY_DELAY_MEAN_AGE_OF_DEATH",
+      "display_name": "Mean Age of Preventable Death from Post-Safety Efficacy Delay",
+      "description": "Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)",
+      "importance_score": 20,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 15,
+        "manual": 5
+      },
+      "progress": {
+        "current": 10,
+        "total": 50,
+        "percent_complete": 20,
+        "estimated_time_remaining_minutes": 120,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLL",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL"
+        ],
+        "top_percent": 3.1
+      },
+      "context_card": {
+        "what": "Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLL",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL"
+        ],
+        "data_source": "who-global-health-estimates-2024",
+        "peer_reviewed": true,
+        "confidence": "medium"
+      },
+      "questions": [
+        {
+          "question_id": "REGULATORY_DELAY_MEAN_AGE_OF_DEATH_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Mean Age of Preventable Death from Post-Safety Efficacy Delay",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "who-global-health-estimates-2024",
+            "peer_reviewed": true,
+            "confidence": "medium",
+            "last_updated": null,
+            "parameter_name": "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "REGULATORY_DELAY_MEAN_AGE_OF_DEATH_value_reasonable",
+          "question_text": "Is the central estimate of 62 years years reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 62.0,
+            "unit": "years",
+            "description": "Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "REGULATORY_DELAY_MEAN_AGE_OF_DEATH_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "REGULATORY_DELAY_MEAN_AGE_OF_DEATH_source_credibility <= 3"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "parameter_name": "DISEASE_ERADICATION_DELAY_YLL",
+      "display_name": "Years of Life Lost from Disease Eradication Delay",
+      "description": "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
+      "importance_score": 25,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 20,
+        "manual": 5
+      },
+      "progress": {
+        "current": 11,
+        "total": 50,
+        "percent_complete": 22,
+        "estimated_time_remaining_minutes": 117,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 3.4
+      },
+      "context_card": {
+        "what": "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Deaths Total × (Life Expectancy - Mean Age Of Death)",
+        "inputs_count": 3
+      },
+      "questions": [
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_YLL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Years of Life Lost from Disease Eradication Delay?\n\nCurrent result: 7.07B years years\nCalculation: 416M deaths × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B years",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
+            "formula_readable": "Deaths Total × (Life Expectancy - Mean Age Of Death)",
+            "calculation_example": "416M deaths × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B years",
+            "result_value": 7069493231.0,
+            "result_formatted": "7.07B years",
+            "description": "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
+            "parameter_name": "DISEASE_ERADICATION_DELAY_YLL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_YLL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total Deaths from Disease Eradication Delay: 416M deaths\n• Global Life Expectancy (2024): 79 years\n• Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+              "GLOBAL_LIFE_EXPECTANCY_2024",
+              "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"
+            ],
+            "inputs_readable": "Total Deaths from Disease Eradication Delay, Global Life Expectancy (2024), Mean Age of Preventable Death from Post-Safety Efficacy Delay",
+            "formula": "DEATHS_TOTAL × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH)",
+            "formula_readable": "Deaths Total × (Life Expectancy - Mean Age Of Death)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_YLL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DISEASE_ERADICATION_DELAY_YLL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "parameter_name": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS",
+      "display_name": "Pre-Death Suffering Period During Post-Safety Efficacy Delay",
+      "description": "Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)",
+      "importance_score": 20,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 15,
+        "manual": 5
+      },
+      "progress": {
+        "current": 12,
+        "total": 50,
+        "percent_complete": 24,
+        "estimated_time_remaining_minutes": 114,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL"
+        ],
+        "top_percent": 3.7
+      },
+      "context_card": {
+        "what": "Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL"
+        ],
+        "data_source": "who-global-health-estimates-2024",
+        "peer_reviewed": true,
+        "confidence": "medium"
+      },
+      "questions": [
+        {
+          "question_id": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Pre-Death Suffering Period During Post-Safety Efficacy Delay",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "who-global-health-estimates-2024",
+            "peer_reviewed": true,
+            "confidence": "medium",
+            "last_updated": null,
+            "parameter_name": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS_value_reasonable",
+          "question_text": "Is the central estimate of 6 years years reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 6.0,
+            "unit": "years",
+            "description": "Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS_source_credibility <= 3"
+        },
+        {
+          "question_id": "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [4 years, 9 years] years. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 4.0,
+            "current_upper": 9.0,
+            "current_central": 6.0,
+            "unit": "years"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "parameter_name": "CHRONIC_DISEASE_DISABILITY_WEIGHT",
+      "display_name": "Disability Weight for Untreated Chronic Conditions",
+      "description": "Disability weight for untreated chronic conditions (WHO Global Burden of Disease)",
+      "importance_score": 20,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 15,
+        "manual": 5
+      },
+      "progress": {
+        "current": 13,
+        "total": 50,
+        "percent_complete": 26,
+        "estimated_time_remaining_minutes": 111,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "CHRONIC_DISEASE_DISABILITY_WEIGHT",
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
+        "top_percent": 4.0
+      },
+      "context_card": {
+        "what": "Disability weight for untreated chronic conditions (WHO Global Burden of Disease)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "CHRONIC_DISEASE_DISABILITY_WEIGHT",
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
+        "data_source": "who-global-health-estimates-2024",
+        "peer_reviewed": true,
+        "confidence": "medium"
+      },
+      "questions": [
+        {
+          "question_id": "CHRONIC_DISEASE_DISABILITY_WEIGHT_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Disability Weight for Untreated Chronic Conditions",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "who-global-health-estimates-2024",
+            "peer_reviewed": true,
+            "confidence": "medium",
+            "last_updated": null,
+            "parameter_name": "CHRONIC_DISEASE_DISABILITY_WEIGHT"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "CHRONIC_DISEASE_DISABILITY_WEIGHT_value_reasonable",
+          "question_text": "Is the central estimate of 0.35 weight reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 0.35,
+            "unit": "weight",
+            "description": "Disability weight for untreated chronic conditions (WHO Global Burden of Disease)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "CHRONIC_DISEASE_DISABILITY_WEIGHT_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "CHRONIC_DISEASE_DISABILITY_WEIGHT_source_credibility <= 3"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "parameter_name": "DISEASE_ERADICATION_DELAY_YLD",
+      "display_name": "Years Lived with Disability During Disease Eradication Delay",
+      "description": "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
+      "importance_score": 25,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 20,
+        "manual": 5
+      },
+      "progress": {
+        "current": 14,
+        "total": 50,
+        "percent_complete": 28,
+        "estimated_time_remaining_minutes": 108,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 4.3
+      },
+      "context_card": {
+        "what": "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Deaths Total × Suffering Period × Disability Weight",
+        "inputs_count": 3
+      },
+      "questions": [
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_YLD_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Years Lived with Disability During Disease Eradication Delay?\n\nCurrent result: 873M years years\nCalculation: 416M deaths × SUFFERING_PERIOD × 0.35 weight = 873M years",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
+            "formula_readable": "Deaths Total × Suffering Period × Disability Weight",
+            "calculation_example": "416M deaths × SUFFERING_PERIOD × 0.35 weight = 873M years",
+            "result_value": 873290340.3,
+            "result_formatted": "873M years",
+            "description": "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
+            "parameter_name": "DISEASE_ERADICATION_DELAY_YLD"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_YLD_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total Deaths from Disease Eradication Delay: 416M deaths\n• Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years\n• Disability Weight for Untreated Chronic Conditions: 0.35 weight",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+              "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS",
+              "CHRONIC_DISEASE_DISABILITY_WEIGHT"
+            ],
+            "inputs_readable": "Total Deaths from Disease Eradication Delay, Pre-Death Suffering Period During Post-Safety Efficacy Delay, Disability Weight for Untreated Chronic Conditions",
+            "formula": "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
+            "formula_readable": "Deaths Total × Suffering Period × Disability Weight"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_YLD_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DISEASE_ERADICATION_DELAY_YLD_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "parameter_name": "DISEASE_ERADICATION_DELAY_DALYS",
+      "display_name": "Total DALYs Lost from Disease Eradication Delay",
+      "description": "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
+      "importance_score": 31.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 6.4,
+        "type": 20,
+        "manual": 5
+      },
+      "progress": {
+        "current": 15,
+        "total": 50,
+        "percent_complete": 30,
+        "estimated_time_remaining_minutes": 105,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 4.6
+      },
+      "context_card": {
+        "what": "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Yll + Yld",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_DALYS_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Total DALYs Lost from Disease Eradication Delay?\n\nCurrent result: 7.94B DALYs DALYs\nCalculation: 7.07B years + 873M years = 7.94B DALYs",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "YLL + YLD",
+            "formula_readable": "Yll + Yld",
+            "calculation_example": "7.07B years + 873M years = 7.94B DALYs",
+            "result_value": 7942783571.3,
+            "result_formatted": "7.94B DALYs",
+            "description": "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
+            "parameter_name": "DISEASE_ERADICATION_DELAY_DALYS"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_DALYS_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Years of Life Lost from Disease Eradication Delay: 7.07B years\n• Years Lived with Disability During Disease Eradication Delay: 873M years",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DISEASE_ERADICATION_DELAY_YLL",
+              "DISEASE_ERADICATION_DELAY_YLD"
+            ],
+            "inputs_readable": "Years of Life Lost from Disease Eradication Delay, Years Lived with Disability During Disease Eradication Delay",
+            "formula": "YLL + YLD",
+            "formula_readable": "Yll + Yld"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DISEASE_ERADICATION_DELAY_DALYS_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DISEASE_ERADICATION_DELAY_DALYS_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "parameter_name": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT",
+      "display_name": "Cost per DALY Averted (Timeline Shift)",
+      "description": "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
+      "importance_score": 28.0,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 6.0,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 16,
+        "total": 50,
+        "percent_complete": 32,
+        "estimated_time_remaining_minutes": 102,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 4.9
+      },
+      "context_card": {
+        "what": "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Campaign Cost ÷ Dalys Timeline Shift",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Cost per DALY Averted (Timeline Shift)?\n\nCurrent result: $0.126 per DALY\nCalculation: CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT = $0.126",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
+            "formula_readable": "Campaign Cost ÷ Dalys Timeline Shift",
+            "calculation_example": "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT = $0.126",
+            "result_value": 0.12590044674178746,
+            "result_formatted": "$0.126",
+            "description": "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
+            "parameter_name": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total 1% Treaty Campaign Cost: $1B\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "TREATY_CAMPAIGN_TOTAL_COST",
+              "DISEASE_ERADICATION_DELAY_DALYS"
+            ],
+            "inputs_readable": "Total 1% Treaty Campaign Cost, Total DALYs Lost from Disease Eradication Delay",
+            "formula": "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
+            "formula_readable": "Campaign Cost ÷ Dalys Timeline Shift"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "parameter_name": "POLITICAL_SUCCESS_PROBABILITY",
+      "display_name": "Political Success Probability",
+      "description": "Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. ",
+      "importance_score": 27.8,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 2.8,
+        "type": 15,
+        "manual": 10
+      },
+      "progress": {
+        "current": 17,
+        "total": 50,
+        "percent_complete": 34,
+        "estimated_time_remaining_minutes": 99,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "POLITICAL_SUCCESS_PROBABILITY",
+          "TREATY_EXPECTED_COST_PER_DALY",
+          "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER"
+        ],
+        "top_percent": 5.2
+      },
+      "context_card": {
+        "what": "Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. ",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "POLITICAL_SUCCESS_PROBABILITY",
+          "TREATY_EXPECTED_COST_PER_DALY",
+          "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER"
+        ],
+        "data_source": "icbl-ottawa-treaty",
+        "peer_reviewed": false,
+        "confidence": "low"
+      },
+      "questions": [
+        {
+          "question_id": "POLITICAL_SUCCESS_PROBABILITY_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Political Success Probability",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "icbl-ottawa-treaty",
+            "peer_reviewed": false,
+            "confidence": "low",
+            "last_updated": null,
+            "parameter_name": "POLITICAL_SUCCESS_PROBABILITY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "POLITICAL_SUCCESS_PROBABILITY_value_reasonable",
+          "question_text": "Is the central estimate of 1% reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 0.01,
+            "unit": "rate",
+            "description": "Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is ultra-conservative. This assumes 99% chance of failure. "
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "POLITICAL_SUCCESS_PROBABILITY_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "POLITICAL_SUCCESS_PROBABILITY_source_credibility <= 3"
+        },
+        {
+          "question_id": "POLITICAL_SUCCESS_PROBABILITY_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [0.1%, 10%]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 0.001,
+            "current_upper": 0.1,
+            "current_central": 0.01,
+            "unit": "rate"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "parameter_name": "TREATY_EXPECTED_COST_PER_DALY",
+      "display_name": "Expected Cost per DALY (Risk-Adjusted)",
+      "description": "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
+      "importance_score": 32.8,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 2.8,
+        "type": 20,
+        "manual": 10
+      },
+      "progress": {
+        "current": 18,
+        "total": 50,
+        "percent_complete": 36,
+        "estimated_time_remaining_minutes": 96,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 5.6
+      },
+      "context_card": {
+        "what": "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Conditional Cost Per Daly ÷ Political Success Probability",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_EXPECTED_COST_PER_DALY_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Expected Cost per DALY (Risk-Adjusted)?\n\nCurrent result: $13 per DALY\nCalculation: CONDITIONAL_COST_PER_DALY ÷ 1% = $13",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
+            "formula_readable": "Conditional Cost Per Daly ÷ Political Success Probability",
+            "calculation_example": "CONDITIONAL_COST_PER_DALY ÷ 1% = $13",
+            "result_value": 12.590044674178746,
+            "result_formatted": "$13",
+            "description": "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
+            "parameter_name": "TREATY_EXPECTED_COST_PER_DALY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_EXPECTED_COST_PER_DALY_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Cost per DALY Averted (Timeline Shift): $0.126\n• Political Success Probability: 1%",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT",
+              "POLITICAL_SUCCESS_PROBABILITY"
+            ],
+            "inputs_readable": "Cost per DALY Averted (Timeline Shift), Political Success Probability",
+            "formula": "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
+            "formula_readable": "Conditional Cost Per Daly ÷ Political Success Probability"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_EXPECTED_COST_PER_DALY_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TREATY_EXPECTED_COST_PER_DALY_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "parameter_name": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER",
+      "display_name": "Expected Cost-Effectiveness vs Bed Nets Multiplier",
+      "description": "Expected value multiplier vs bed nets (accounts for political uncertainty)",
+      "importance_score": 33.2,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 3.2,
+        "type": 20,
+        "manual": 10
+      },
+      "progress": {
+        "current": 19,
+        "total": 50,
+        "percent_complete": 38,
+        "estimated_time_remaining_minutes": 93,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 5.9
+      },
+      "context_card": {
+        "what": "Expected value multiplier vs bed nets (accounts for political uncertainty)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Bed Nets Cost per DALY ÷ Expected Cost per DALY (Risk-Adjusted)",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Expected Cost-Effectiveness vs Bed Nets Multiplier?\n\nCurrent result: 7.07 ratiox\nCalculation: $89 ÷ $13 = 7.07 ratio",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
+            "formula_readable": "Bed Nets Cost per DALY ÷ Expected Cost per DALY (Risk-Adjusted)",
+            "calculation_example": "$89 ÷ $13 = 7.07 ratio",
+            "result_value": 7.069077378457,
+            "result_formatted": "7.07 ratio",
+            "description": "Expected value multiplier vs bed nets (accounts for political uncertainty)",
+            "parameter_name": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Bed Nets Cost per DALY: $89\n• Expected Cost per DALY (Risk-Adjusted): $13",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "BED_NETS_COST_PER_DALY",
+              "TREATY_EXPECTED_COST_PER_DALY"
+            ],
+            "inputs_readable": "Bed Nets Cost per DALY, Expected Cost per DALY (Risk-Adjusted)",
+            "formula": "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
+            "formula_readable": "Bed Nets Cost per DALY ÷ Expected Cost per DALY (Risk-Adjusted)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "parameter_name": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL",
+      "display_name": "Annual Global Spending on Clinical Trials",
+      "description": "Annual global spending on clinical trials (Total: Government + Industry)",
+      "importance_score": 18.9,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.9,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 20,
+        "total": 50,
+        "percent_complete": 40,
+        "estimated_time_remaining_minutes": 90,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_BENEFIT_RD_ONLY_ANNUAL",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY"
+        ],
+        "top_percent": 6.2
+      },
+      "context_card": {
+        "what": "Annual global spending on clinical trials (Total: Government + Industry)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_BENEFIT_RD_ONLY_ANNUAL",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY"
+        ],
+        "data_source": "global-clinical-trials-market-2024",
+        "peer_reviewed": false,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Annual Global Spending on Clinical Trials",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "global-clinical-trials-market-2024",
+            "peer_reviewed": false,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL_value_reasonable",
+          "question_text": "Is the central estimate of $83B reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 83000000000.0,
+            "unit": "USD",
+            "description": "Annual global spending on clinical trials (Total: Government + Industry)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL_source_credibility <= 3"
+        },
+        {
+          "question_id": "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$60B, $110B]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 60000000000,
+            "current_upper": 110000000000,
+            "current_central": 83000000000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "parameter_name": "TRIAL_COST_REDUCTION_PCT",
+      "display_name": "Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
+      "description": "Trial cost reduction percentage (50% baseline, conservative)",
+      "importance_score": 15.1,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 3.1,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 21,
+        "total": 50,
+        "percent_complete": 42,
+        "estimated_time_remaining_minutes": 87,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_BENEFIT_RD_ONLY_ANNUAL",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY"
+        ],
+        "top_percent": 6.5
+      },
+      "context_card": {
+        "what": "Trial cost reduction percentage (50% baseline, conservative)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_BENEFIT_RD_ONLY_ANNUAL",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "TRIAL_COST_REDUCTION_PCT_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage = 50%",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 0.5,
+            "formatted_value": "50%",
+            "description": "Trial cost reduction percentage (50% baseline, conservative)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TRIAL_COST_REDUCTION_PCT_alternative_value",
+          "question_text": "What value would you use instead? (Current: 50%)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 0.5,
+            "unit": "rate",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "TRIAL_COST_REDUCTION_PCT_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "TRIAL_COST_REDUCTION_PCT_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [40%, 65%]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 0.4,
+            "current_upper": 0.65,
+            "current_central": 0.5,
+            "unit": "rate"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "parameter_name": "DFDA_RD_GROSS_SAVINGS_ANNUAL",
+      "display_name": "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings",
+      "description": "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
+      "importance_score": 24.7,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 2.7,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 22,
+        "total": 50,
+        "percent_complete": 44,
+        "estimated_time_remaining_minutes": 84,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 6.8
+      },
+      "context_card": {
+        "what": "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Trial Spending × Cost Reduction Pct",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_RD_GROSS_SAVINGS_ANNUAL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings?\n\nCurrent result: $41.5B\nCalculation: TRIAL_SPENDING × 50% = $41.5B",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "TRIAL_SPENDING × COST_REDUCTION_PCT",
+            "formula_readable": "Trial Spending × Cost Reduction Pct",
+            "calculation_example": "TRIAL_SPENDING × 50% = $41.5B",
+            "result_value": 41500000000.0,
+            "result_formatted": "$41.5B",
+            "description": "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
+            "parameter_name": "DFDA_RD_GROSS_SAVINGS_ANNUAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_RD_GROSS_SAVINGS_ANNUAL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Global Spending on Clinical Trials: $83B\n• Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage: 50%",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL",
+              "TRIAL_COST_REDUCTION_PCT"
+            ],
+            "inputs_readable": "Annual Global Spending on Clinical Trials, Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
+            "formula": "TRIAL_SPENDING × COST_REDUCTION_PCT",
+            "formula_readable": "Trial Spending × Cost Reduction Pct"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_RD_GROSS_SAVINGS_ANNUAL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DFDA_RD_GROSS_SAVINGS_ANNUAL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "parameter_name": "DFDA_OPEX_PLATFORM_MAINTENANCE",
+      "display_name": "Decentralized Framework for Drug Assessment Maintenance Costs",
+      "description": "Decentralized Framework for Drug Assessment maintenance costs",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 23,
+        "total": 50,
+        "percent_complete": 46,
+        "estimated_time_remaining_minutes": 81,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_PLATFORM_MAINTENANCE"
+        ],
+        "top_percent": 7.1
+      },
+      "context_card": {
+        "what": "Decentralized Framework for Drug Assessment maintenance costs",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_PLATFORM_MAINTENANCE"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_OPEX_PLATFORM_MAINTENANCE_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Maintenance Costs = $15M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 15000000.0,
+            "formatted_value": "$15M",
+            "description": "Decentralized Framework for Drug Assessment maintenance costs"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_OPEX_PLATFORM_MAINTENANCE_alternative_value",
+          "question_text": "What value would you use instead? (Current: $15M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 15000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DFDA_OPEX_PLATFORM_MAINTENANCE_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DFDA_OPEX_PLATFORM_MAINTENANCE_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$10M, $22M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 10000000,
+            "current_upper": 22000000,
+            "current_central": 15000000.0,
+            "unit": "USD/year"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "parameter_name": "DFDA_OPEX_STAFF",
+      "display_name": "Decentralized Framework for Drug Assessment Staff Costs",
+      "description": "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 24,
+        "total": 50,
+        "percent_complete": 48,
+        "estimated_time_remaining_minutes": 78,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_STAFF"
+        ],
+        "top_percent": 7.4
+      },
+      "context_card": {
+        "what": "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_STAFF"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_OPEX_STAFF_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Staff Costs = $10M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 10000000.0,
+            "formatted_value": "$10M",
+            "description": "Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_OPEX_STAFF_alternative_value",
+          "question_text": "What value would you use instead? (Current: $10M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 10000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DFDA_OPEX_STAFF_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DFDA_OPEX_STAFF_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$7M, $15M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 7000000,
+            "current_upper": 15000000,
+            "current_central": 10000000.0,
+            "unit": "USD/year"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "parameter_name": "DFDA_OPEX_INFRASTRUCTURE",
+      "display_name": "Decentralized Framework for Drug Assessment Infrastructure Costs",
+      "description": "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 25,
+        "total": 50,
+        "percent_complete": 50,
+        "estimated_time_remaining_minutes": 75,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_INFRASTRUCTURE"
+        ],
+        "top_percent": 7.7
+      },
+      "context_card": {
+        "what": "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_INFRASTRUCTURE"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_OPEX_INFRASTRUCTURE_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Infrastructure Costs = $8M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 8000000.0,
+            "formatted_value": "$8M",
+            "description": "Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_OPEX_INFRASTRUCTURE_alternative_value",
+          "question_text": "What value would you use instead? (Current: $8M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 8000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DFDA_OPEX_INFRASTRUCTURE_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DFDA_OPEX_INFRASTRUCTURE_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$5M, $12M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 5000000,
+            "current_upper": 12000000,
+            "current_central": 8000000.0,
+            "unit": "USD/year"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "parameter_name": "DFDA_OPEX_REGULATORY",
+      "display_name": "Decentralized Framework for Drug Assessment Regulatory Coordination Costs",
+      "description": "Decentralized Framework for Drug Assessment regulatory coordination costs",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 26,
+        "total": 50,
+        "percent_complete": 52,
+        "estimated_time_remaining_minutes": 72,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_REGULATORY"
+        ],
+        "top_percent": 8.0
+      },
+      "context_card": {
+        "what": "Decentralized Framework for Drug Assessment regulatory coordination costs",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_REGULATORY"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_OPEX_REGULATORY_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Regulatory Coordination Costs = $5M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 5000000.0,
+            "formatted_value": "$5M",
+            "description": "Decentralized Framework for Drug Assessment regulatory coordination costs"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_OPEX_REGULATORY_alternative_value",
+          "question_text": "What value would you use instead? (Current: $5M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 5000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DFDA_OPEX_REGULATORY_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DFDA_OPEX_REGULATORY_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$3M, $8M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 3000000,
+            "current_upper": 8000000,
+            "current_central": 5000000.0,
+            "unit": "USD/year"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "parameter_name": "DFDA_OPEX_COMMUNITY",
+      "display_name": "Decentralized Framework for Drug Assessment Community Support Costs",
+      "description": "Decentralized Framework for Drug Assessment community support costs",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 27,
+        "total": 50,
+        "percent_complete": 54,
+        "estimated_time_remaining_minutes": 69,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_COMMUNITY"
+        ],
+        "top_percent": 8.3
+      },
+      "context_card": {
+        "what": "Decentralized Framework for Drug Assessment community support costs",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_ANNUAL_OPEX",
+          "DFDA_NET_SAVINGS_RD_ONLY_ANNUAL",
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_OPEX_COMMUNITY"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_OPEX_COMMUNITY_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Community Support Costs = $2M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 2000000.0,
+            "formatted_value": "$2M",
+            "description": "Decentralized Framework for Drug Assessment community support costs"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_OPEX_COMMUNITY_alternative_value",
+          "question_text": "What value would you use instead? (Current: $2M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 2000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DFDA_OPEX_COMMUNITY_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DFDA_OPEX_COMMUNITY_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$1M, $3M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 1000000,
+            "current_upper": 3000000,
+            "current_central": 2000000.0,
+            "unit": "USD/year"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "parameter_name": "DFDA_ANNUAL_OPEX",
+      "display_name": "Total Annual Decentralized Framework for Drug Assessment Operational Costs",
+      "description": "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+      "importance_score": 23.9,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.9,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 28,
+        "total": 50,
+        "percent_complete": 56,
+        "estimated_time_remaining_minutes": 66,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 8.6
+      },
+      "context_card": {
+        "what": "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Platform Maintenance + Staff + Infrastructure + Regulatory + Community",
+        "inputs_count": 5
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_ANNUAL_OPEX_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Total Annual Decentralized Framework for Drug Assessment Operational Costs?\n\nCurrent result: $40M\nCalculation: $15M + $10M + $8M + $5M + $2M = $40M",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
+            "formula_readable": "Platform Maintenance + Staff + Infrastructure + Regulatory + Community",
+            "calculation_example": "$15M + $10M + $8M + $5M + $2M = $40M",
+            "result_value": 40000000.0,
+            "result_formatted": "$40M",
+            "description": "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+            "parameter_name": "DFDA_ANNUAL_OPEX"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_ANNUAL_OPEX_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Decentralized Framework for Drug Assessment Maintenance Costs: $15M\n• Decentralized Framework for Drug Assessment Staff Costs: $10M\n• Decentralized Framework for Drug Assessment Infrastructure Costs: $8M\n• Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M\n• Decentralized Framework for Drug Assessment Community Support Costs: $2M",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DFDA_OPEX_PLATFORM_MAINTENANCE",
+              "DFDA_OPEX_STAFF",
+              "DFDA_OPEX_INFRASTRUCTURE",
+              "DFDA_OPEX_REGULATORY",
+              "DFDA_OPEX_COMMUNITY"
+            ],
+            "inputs_readable": "Decentralized Framework for Drug Assessment Maintenance Costs, Decentralized Framework for Drug Assessment Staff Costs, Decentralized Framework for Drug Assessment Infrastructure Costs, Decentralized Framework for Drug Assessment Regulatory Coordination Costs, Decentralized Framework for Drug Assessment Community Support Costs",
+            "formula": "PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",
+            "formula_readable": "Platform Maintenance + Staff + Infrastructure + Regulatory + Community"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_ANNUAL_OPEX_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DFDA_ANNUAL_OPEX_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "parameter_name": "NPV_DISCOUNT_RATE_STANDARD",
+      "display_name": "Standard Discount Rate for NPV Analysis",
+      "description": "Standard discount rate for NPV analysis (3% annual, social discount rate)",
+      "importance_score": 15.5,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 3.5,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 29,
+        "total": 50,
+        "percent_complete": 57,
+        "estimated_time_remaining_minutes": 63,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_NPV_PV_ANNUAL_OPEX",
+          "DFDA_NPV_TOTAL_COST",
+          "DFDA_ROI_RD_ONLY"
+        ],
+        "top_percent": 9.0
+      },
+      "context_card": {
+        "what": "Standard discount rate for NPV analysis (3% annual, social discount rate)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_NPV_BENEFIT_RD_ONLY",
+          "DFDA_NPV_NET_BENEFIT_RD_ONLY",
+          "DFDA_NPV_PV_ANNUAL_OPEX",
+          "DFDA_NPV_TOTAL_COST",
+          "DFDA_ROI_RD_ONLY"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "NPV_DISCOUNT_RATE_STANDARD_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Standard Discount Rate for NPV Analysis = 3%",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 0.03,
+            "formatted_value": "3%",
+            "description": "Standard discount rate for NPV analysis (3% annual, social discount rate)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "NPV_DISCOUNT_RATE_STANDARD_alternative_value",
+          "question_text": "What value would you use instead? (Current: 3%)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 0.03,
+            "unit": "rate",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "NPV_DISCOUNT_RATE_STANDARD_assumption_reasonable <= 2"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "parameter_name": "DFDA_NPV_UPFRONT_COST",
+      "display_name": "Decentralized Framework for Drug Assessment Core Platform Build Cost",
+      "description": "Decentralized Framework for Drug Assessment core platform build cost",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 30,
+        "total": 50,
+        "percent_complete": 60,
+        "estimated_time_remaining_minutes": 60,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_NPV_TOTAL_COST",
+          "DFDA_NPV_UPFRONT_COST",
+          "DFDA_NPV_UPFRONT_COST_TOTAL",
+          "DFDA_ROI_RD_ONLY"
+        ],
+        "top_percent": 9.3
+      },
+      "context_card": {
+        "what": "Decentralized Framework for Drug Assessment core platform build cost",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_NPV_TOTAL_COST",
+          "DFDA_NPV_UPFRONT_COST",
+          "DFDA_NPV_UPFRONT_COST_TOTAL",
+          "DFDA_ROI_RD_ONLY"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_NPV_UPFRONT_COST_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Decentralized Framework for Drug Assessment Core Platform Build Cost = $40M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 40000000.0,
+            "formatted_value": "$40M",
+            "description": "Decentralized Framework for Drug Assessment core platform build cost"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_NPV_UPFRONT_COST_alternative_value",
+          "question_text": "What value would you use instead? (Current: $40M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 40000000.0,
+            "unit": "USD",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DFDA_NPV_UPFRONT_COST_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DFDA_NPV_UPFRONT_COST_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$25M, $65M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 25000000,
+            "current_upper": 65000000,
+            "current_central": 40000000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "parameter_name": "DIH_NPV_UPFRONT_COST_INITIATIVES",
+      "display_name": "DIH Broader Initiatives Upfront Cost",
+      "description": "DIH broader initiatives upfront cost (medium case)",
+      "importance_score": 12,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 31,
+        "total": 50,
+        "percent_complete": 62,
+        "estimated_time_remaining_minutes": 57,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_NPV_TOTAL_COST",
+          "DFDA_NPV_UPFRONT_COST_TOTAL",
+          "DFDA_ROI_RD_ONLY",
+          "DIH_NPV_UPFRONT_COST_INITIATIVES"
+        ],
+        "top_percent": 9.6
+      },
+      "context_card": {
+        "what": "DIH broader initiatives upfront cost (medium case)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_NPV_TOTAL_COST",
+          "DFDA_NPV_UPFRONT_COST_TOTAL",
+          "DFDA_ROI_RD_ONLY",
+          "DIH_NPV_UPFRONT_COST_INITIATIVES"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "DIH_NPV_UPFRONT_COST_INITIATIVES_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: DIH Broader Initiatives Upfront Cost = $230M",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 229750000.0,
+            "formatted_value": "$230M",
+            "description": "DIH broader initiatives upfront cost (medium case)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_NPV_UPFRONT_COST_INITIATIVES_alternative_value",
+          "question_text": "What value would you use instead? (Current: $230M)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 229750000.0,
+            "unit": "USD",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "DIH_NPV_UPFRONT_COST_INITIATIVES_assumption_reasonable <= 2"
+        },
+        {
+          "question_id": "DIH_NPV_UPFRONT_COST_INITIATIVES_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$150M, $350M]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 150000000,
+            "current_upper": 350000000,
+            "current_central": 229750000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "parameter_name": "DFDA_NPV_UPFRONT_COST_TOTAL",
+      "display_name": "Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
+      "description": "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
+      "importance_score": 22,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 32,
+        "total": 50,
+        "percent_complete": 64,
+        "estimated_time_remaining_minutes": 54,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 9.9
+      },
+      "context_card": {
+        "what": "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Dfda Build + Dih Initiatives",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_NPV_UPFRONT_COST_TOTAL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Decentralized Framework for Drug Assessment Total NPV Upfront Costs?\n\nCurrent result: $270M\nCalculation: DFDA_BUILD + DIH_INITIATIVES = $270M",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "DFDA_BUILD + DIH_INITIATIVES",
+            "formula_readable": "Dfda Build + Dih Initiatives",
+            "calculation_example": "DFDA_BUILD + DIH_INITIATIVES = $270M",
+            "result_value": 269750000.0,
+            "result_formatted": "$270M",
+            "description": "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
+            "parameter_name": "DFDA_NPV_UPFRONT_COST_TOTAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_NPV_UPFRONT_COST_TOTAL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Decentralized Framework for Drug Assessment Core Platform Build Cost: $40M\n• DIH Broader Initiatives Upfront Cost: $230M",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DFDA_NPV_UPFRONT_COST",
+              "DIH_NPV_UPFRONT_COST_INITIATIVES"
+            ],
+            "inputs_readable": "Decentralized Framework for Drug Assessment Core Platform Build Cost, DIH Broader Initiatives Upfront Cost",
+            "formula": "DFDA_BUILD + DIH_INITIATIVES",
+            "formula_readable": "Dfda Build + Dih Initiatives"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_NPV_UPFRONT_COST_TOTAL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DFDA_NPV_UPFRONT_COST_TOTAL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "parameter_name": "DFDA_ROI_RD_ONLY",
+      "display_name": "ROI from Decentralized Framework for Drug Assessment R&D Savings Only",
+      "description": "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
+      "importance_score": 32.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 10.4,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 33,
+        "total": 50,
+        "percent_complete": 66,
+        "estimated_time_remaining_minutes": 51,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 10.2
+      },
+      "context_card": {
+        "what": "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Npv Benefit ÷ Npv Total Cost",
+        "inputs_count": 4
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_ROI_RD_ONLY_formula_sound",
+          "question_text": "Is the calculation methodology sound for: ROI from Decentralized Framework for Drug Assessment R&D Savings Only?\n\nCurrent result: 451 ratiox ROI\nCalculation: NPV_BENEFIT ÷ NPV_TOTAL_COST = 451 ratio",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "NPV_BENEFIT ÷ NPV_TOTAL_COST",
+            "formula_readable": "Npv Benefit ÷ Npv Total Cost",
+            "calculation_example": "NPV_BENEFIT ÷ NPV_TOTAL_COST = 451 ratio",
+            "result_value": 450.5645014781041,
+            "result_formatted": "451 ratio",
+            "description": "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
+            "parameter_name": "DFDA_ROI_RD_ONLY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_ROI_RD_ONLY_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Decentralized Framework for Drug Assessment Annual Benefit: $41.5B\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• Standard Discount Rate for NPV Analysis: 3%\n• Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DFDA_RD_GROSS_SAVINGS_ANNUAL",
+              "DFDA_ANNUAL_OPEX",
+              "NPV_DISCOUNT_RATE_STANDARD",
+              "DFDA_NPV_UPFRONT_COST_TOTAL"
+            ],
+            "inputs_readable": "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings, Total Annual Decentralized Framework for Drug Assessment Operational Costs, Standard Discount Rate for NPV Analysis, Decentralized Framework for Drug Assessment Total NPV Upfront Costs",
+            "formula": "NPV_BENEFIT ÷ NPV_TOTAL_COST",
+            "formula_readable": "Npv Benefit ÷ Npv Total Cost"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_ROI_RD_ONLY_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DFDA_ROI_RD_ONLY_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "parameter_name": "STANDARD_ECONOMIC_QALY_VALUE_USD",
+      "display_name": "Standard Economic Value per QALY",
+      "description": "Standard economic value per QALY",
+      "importance_score": 19.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 2.4,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 34,
+        "total": 50,
+        "percent_complete": 68,
+        "estimated_time_remaining_minutes": 48,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL",
+          "HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL",
+          "STANDARD_ECONOMIC_QALY_VALUE_USD"
+        ],
+        "top_percent": 10.5
+      },
+      "context_card": {
+        "what": "Standard economic value per QALY",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_EXPECTED_ROI",
+          "DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS",
+          "DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL",
+          "HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL",
+          "STANDARD_ECONOMIC_QALY_VALUE_USD"
+        ],
+        "data_source": "qaly-value",
+        "peer_reviewed": false,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "STANDARD_ECONOMIC_QALY_VALUE_USD_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Standard Economic Value per QALY",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "qaly-value",
+            "peer_reviewed": false,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "STANDARD_ECONOMIC_QALY_VALUE_USD"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "STANDARD_ECONOMIC_QALY_VALUE_USD_value_reasonable",
+          "question_text": "Is the central estimate of $150K reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 150000.0,
+            "unit": "USD/QALY",
+            "description": "Standard economic value per QALY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "STANDARD_ECONOMIC_QALY_VALUE_USD_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "STANDARD_ECONOMIC_QALY_VALUE_USD_source_credibility <= 3"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "parameter_name": "TREATY_COMPLETE_ROI_ALL_BENEFITS",
+      "display_name": "Treaty ROI - Lag Elimination (PRIMARY)",
+      "description": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+      "importance_score": 31.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 6.4,
+        "type": 20,
+        "manual": 5
+      },
+      "progress": {
+        "current": 35,
+        "total": 50,
+        "percent_complete": 70,
+        "estimated_time_remaining_minutes": 45,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 10.8
+      },
+      "context_card": {
+        "what": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost",
+        "inputs_count": 3
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_COMPLETE_ROI_ALL_BENEFITS_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Treaty ROI - Lag Elimination (PRIMARY)?\n\nCurrent result: 1.19M ratiox ROI\nCalculation: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
+            "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost",
+            "calculation_example": "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
+            "result_value": 1191417.535695,
+            "result_formatted": "1.19M ratio",
+            "description": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+            "parameter_name": "TREATY_COMPLETE_ROI_ALL_BENEFITS"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_COMPLETE_ROI_ALL_BENEFITS_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs\n• Standard Economic Value per QALY: $150K\n• Total 1% Treaty Campaign Cost: $1B",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DISEASE_ERADICATION_DELAY_DALYS",
+              "STANDARD_ECONOMIC_QALY_VALUE_USD",
+              "TREATY_CAMPAIGN_TOTAL_COST"
+            ],
+            "inputs_readable": "Total DALYs Lost from Disease Eradication Delay, Standard Economic Value per QALY, Total 1% Treaty Campaign Cost",
+            "formula": "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
+            "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_COMPLETE_ROI_ALL_BENEFITS_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TREATY_COMPLETE_ROI_ALL_BENEFITS_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "parameter_name": "TREATY_ROI_LAG_ELIMINATION",
+      "display_name": "Treaty ROI - Lag Elimination (PRIMARY)",
+      "description": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+      "importance_score": 26.0,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.0,
+        "type": 20,
+        "manual": 5
+      },
+      "progress": {
+        "current": 36,
+        "total": 50,
+        "percent_complete": 72,
+        "estimated_time_remaining_minutes": 42,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 11.1
+      },
+      "context_card": {
+        "what": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost",
+        "inputs_count": 3
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_ROI_LAG_ELIMINATION_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Treaty ROI - Lag Elimination (PRIMARY)?\n\nCurrent result: 1.19M ratiox ROI\nCalculation: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
+            "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost",
+            "calculation_example": "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
+            "result_value": 1191417.535695,
+            "result_formatted": "1.19M ratio",
+            "description": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
+            "parameter_name": "TREATY_ROI_LAG_ELIMINATION"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_ROI_LAG_ELIMINATION_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs\n• Standard Economic Value per QALY: $150K\n• Total 1% Treaty Campaign Cost: $1B",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DISEASE_ERADICATION_DELAY_DALYS",
+              "STANDARD_ECONOMIC_QALY_VALUE_USD",
+              "TREATY_CAMPAIGN_TOTAL_COST"
+            ],
+            "inputs_readable": "Total DALYs Lost from Disease Eradication Delay, Standard Economic Value per QALY, Total 1% Treaty Campaign Cost",
+            "formula": "DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST",
+            "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_ROI_LAG_ELIMINATION_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TREATY_ROI_LAG_ELIMINATION_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "parameter_name": "DFDA_EXPECTED_ROI",
+      "display_name": "Expected Treaty ROI (Risk-Adjusted)",
+      "description": "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
+      "importance_score": 31.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.4,
+        "type": 20,
+        "manual": 10
+      },
+      "progress": {
+        "current": 37,
+        "total": 50,
+        "percent_complete": 74,
+        "estimated_time_remaining_minutes": 39,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 11.4
+      },
+      "context_card": {
+        "what": "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Treaty ROI - Lag Elimination (PRIMARY) × Political Success Probability",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DFDA_EXPECTED_ROI_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Expected Treaty ROI (Risk-Adjusted)?\n\nCurrent result: 11.9kx ROI\nCalculation: 1.19M ratio × 1% = 11.9k",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY",
+            "formula_readable": "Treaty ROI - Lag Elimination (PRIMARY) × Political Success Probability",
+            "calculation_example": "1.19M ratio × 1% = 11.9k",
+            "result_value": 11914.175356950002,
+            "result_formatted": "11.9k",
+            "description": "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
+            "parameter_name": "DFDA_EXPECTED_ROI"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_EXPECTED_ROI_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Treaty ROI - Lag Elimination (PRIMARY): 1.19M ratio\n• Political Success Probability: 1%",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "TREATY_ROI_LAG_ELIMINATION",
+              "POLITICAL_SUCCESS_PROBABILITY"
+            ],
+            "inputs_readable": "Treaty ROI - Lag Elimination (PRIMARY), Political Success Probability",
+            "formula": "TREATY_ROI_LAG_ELIMINATION × POLITICAL_SUCCESS_PROBABILITY",
+            "formula_readable": "Treaty ROI - Lag Elimination (PRIMARY) × Political Success Probability"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DFDA_EXPECTED_ROI_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DFDA_EXPECTED_ROI_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "parameter_name": "CURRENT_TRIAL_SLOTS_AVAILABLE",
+      "display_name": "Annual Global Clinical Trial Participants",
+      "description": "Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)",
+      "importance_score": 17.9,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 0.9,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 38,
+        "total": 50,
+        "percent_complete": 76,
+        "estimated_time_remaining_minutes": 36,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "CURRENT_PATIENT_PARTICIPATION_RATE",
+          "CURRENT_TRIAL_SLOTS_AVAILABLE",
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "PERSONAL_LIFETIME_WEALTH",
+          "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR"
+        ],
+        "top_percent": 11.7
+      },
+      "context_card": {
+        "what": "Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "CURRENT_PATIENT_PARTICIPATION_RATE",
+          "CURRENT_TRIAL_SLOTS_AVAILABLE",
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "PERSONAL_LIFETIME_WEALTH",
+          "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR"
+        ],
+        "data_source": "global-trial-participant-capacity",
+        "peer_reviewed": false,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "CURRENT_TRIAL_SLOTS_AVAILABLE_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Annual Global Clinical Trial Participants",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "global-trial-participant-capacity",
+            "peer_reviewed": false,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "CURRENT_TRIAL_SLOTS_AVAILABLE"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "CURRENT_TRIAL_SLOTS_AVAILABLE_value_reasonable",
+          "question_text": "Is the central estimate of 1.90M patients/year reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 1900000.0,
+            "unit": "patients/year",
+            "description": "Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "CURRENT_TRIAL_SLOTS_AVAILABLE_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "CURRENT_TRIAL_SLOTS_AVAILABLE_source_credibility <= 3"
+        },
+        {
+          "question_id": "CURRENT_TRIAL_SLOTS_AVAILABLE_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [1.50M patients/year, 2.30M patients/year]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 1500000,
+            "current_upper": 2300000,
+            "current_central": 1900000.0,
+            "unit": "patients/year"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "parameter_name": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
+      "display_name": "Global Military Spending in 2024",
+      "description": "Global military spending in 2024",
+      "importance_score": 21.0,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 4.0,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 39,
+        "total": 50,
+        "percent_complete": 78,
+        "estimated_time_remaining_minutes": 33,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"
+        ],
+        "top_percent": 12.0
+      },
+      "context_card": {
+        "what": "Global military spending in 2024",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"
+        ],
+        "data_source": "global-military-spending",
+        "peer_reviewed": false,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Global Military Spending in 2024",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "global-military-spending",
+            "peer_reviewed": false,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024_value_reasonable",
+          "question_text": "Is the central estimate of $2.72T reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 2718000000000.0,
+            "unit": "USD",
+            "description": "Global military spending in 2024"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024_source_credibility <= 3"
+        },
+        {
+          "question_id": "GLOBAL_MILITARY_SPENDING_ANNUAL_2024_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$2.45T, $2.99T]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 2446000000000,
+            "current_upper": 2990000000000,
+            "current_central": 2718000000000.0,
+            "unit": "USD"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "parameter_name": "TREATY_REDUCTION_PCT",
+      "display_name": "1% Reduction in Military Spending/War Costs from Treaty",
+      "description": "1% reduction in military spending/war costs from treaty",
+      "importance_score": 29.6,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 17.6,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 40,
+        "total": 50,
+        "percent_complete": 80,
+        "estimated_time_remaining_minutes": 30,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"
+        ],
+        "top_percent": 12.3
+      },
+      "context_card": {
+        "what": "1% reduction in military spending/war costs from treaty",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_REDUCTION_PCT_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: 1% Reduction in Military Spending/War Costs from Treaty = 1%",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 0.01,
+            "formatted_value": "1%",
+            "description": "1% reduction in military spending/war costs from treaty"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_REDUCTION_PCT_alternative_value",
+          "question_text": "What value would you use instead? (Current: 1%)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 0.01,
+            "unit": "rate",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "TREATY_REDUCTION_PCT_assumption_reasonable <= 2"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "parameter_name": "TREATY_ANNUAL_FUNDING",
+      "display_name": "Annual Funding from 1% of Global Military Spending Redirected to DIH",
+      "description": "Annual funding from 1% of global military spending redirected to DIH",
+      "importance_score": 22.8,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 10.8,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 41,
+        "total": 50,
+        "percent_complete": 82,
+        "estimated_time_remaining_minutes": 27,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 12.7
+      },
+      "context_card": {
+        "what": "Annual funding from 1% of global military spending redirected to DIH",
+        "parameter_type": "definition",
+        "used_in": []
+      },
+      "questions": [
+        {
+          "question_id": "TREATY_ANNUAL_FUNDING_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Annual Funding from 1% of Global Military Spending Redirected to DIH = $27.2B",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 27180000000.0,
+            "formatted_value": "$27.2B",
+            "description": "Annual funding from 1% of global military spending redirected to DIH"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TREATY_ANNUAL_FUNDING_alternative_value",
+          "question_text": "What value would you use instead? (Current: $27.2B)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 27180000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "TREATY_ANNUAL_FUNDING_assumption_reasonable <= 2"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "parameter_name": "VICTORY_BOND_FUNDING_PCT",
+      "display_name": "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds",
+      "description": "Percentage of captured dividend funding VICTORY bonds (10%)",
+      "importance_score": 14.3,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 2.3,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 42,
+        "total": 50,
+        "percent_complete": 84,
+        "estimated_time_remaining_minutes": 24,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+          "PERSONAL_LIFETIME_WEALTH"
+        ],
+        "top_percent": 13.0
+      },
+      "context_card": {
+        "what": "Percentage of captured dividend funding VICTORY bonds (10%)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+          "PERSONAL_LIFETIME_WEALTH"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "VICTORY_BOND_FUNDING_PCT_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds = 10%",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 0.1,
+            "formatted_value": "10%",
+            "description": "Percentage of captured dividend funding VICTORY bonds (10%)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "VICTORY_BOND_FUNDING_PCT_alternative_value",
+          "question_text": "What value would you use instead? (Current: 10%)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 0.1,
+            "unit": "rate",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "VICTORY_BOND_FUNDING_PCT_assumption_reasonable <= 2"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "parameter_name": "VICTORY_BOND_ANNUAL_PAYOUT",
+      "display_name": "Annual VICTORY Incentive Alignment Bond Payout",
+      "description": "Annual VICTORY bond payout (treaty funding × bond percentage)",
+      "importance_score": 13.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.4,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 43,
+        "total": 50,
+        "percent_complete": 86,
+        "estimated_time_remaining_minutes": 21,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 13.3
+      },
+      "context_card": {
+        "what": "Annual VICTORY bond payout (treaty funding × bond percentage)",
+        "parameter_type": "definition",
+        "used_in": []
+      },
+      "questions": [
+        {
+          "question_id": "VICTORY_BOND_ANNUAL_PAYOUT_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: Annual VICTORY Incentive Alignment Bond Payout = $2.72B",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 2718000000.0,
+            "formatted_value": "$2.72B",
+            "description": "Annual VICTORY bond payout (treaty funding × bond percentage)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "VICTORY_BOND_ANNUAL_PAYOUT_alternative_value",
+          "question_text": "What value would you use instead? (Current: $2.72B)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 2718000000.0,
+            "unit": "USD/year",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "VICTORY_BOND_ANNUAL_PAYOUT_assumption_reasonable <= 2"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "parameter_name": "IAB_POLITICAL_INCENTIVE_FUNDING_PCT",
+      "display_name": "IAB Political Incentive Funding Percentage",
+      "description": "Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)",
+      "importance_score": 14.3,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 2.3,
+        "type": 10,
+        "manual": 2
+      },
+      "progress": {
+        "current": 44,
+        "total": 50,
+        "percent_complete": 88,
+        "estimated_time_remaining_minutes": 18,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+          "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"
+        ],
+        "top_percent": 13.6
+      },
+      "context_card": {
+        "what": "Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)",
+        "parameter_type": "definition",
+        "used_in": [],
+        "affects": [
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+          "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"
+        ]
+      },
+      "questions": [
+        {
+          "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_PCT_assumption_reasonable",
+          "question_text": "Is this assumption reasonable: IAB Political Incentive Funding Percentage = 10%",
+          "question_type": "rating",
+          "options": [
+            "1 (Unreasonable)",
+            "2 (Questionable)",
+            "3 (Acceptable)",
+            "4 (Reasonable)",
+            "5 (Very reasonable)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "value": 0.1,
+            "formatted_value": "10%",
+            "description": "Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_PCT_alternative_value",
+          "question_text": "What value would you use instead? (Current: 10%)",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "current_value": 0.1,
+            "unit": "rate",
+            "placeholder": "Enter alternative value or leave blank"
+          },
+          "required": false,
+          "conditional_on": "IAB_POLITICAL_INCENTIVE_FUNDING_PCT_assumption_reasonable <= 2"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "parameter_name": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL",
+      "display_name": "Annual IAB Political Incentive Funding",
+      "description": "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
+      "importance_score": 23.9,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.9,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 45,
+        "total": 50,
+        "percent_complete": 90,
+        "estimated_time_remaining_minutes": 15,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 13.9
+      },
+      "context_card": {
+        "what": "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Treaty Funding × Iab Political Incentive Pct",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Annual IAB Political Incentive Funding?\n\nCurrent result: $2.72B\nCalculation: TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT = $2.72B",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
+            "formula_readable": "Treaty Funding × Iab Political Incentive Pct",
+            "calculation_example": "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT = $2.72B",
+            "result_value": 2718000000.0,
+            "result_formatted": "$2.72B",
+            "description": "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
+            "parameter_name": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B\n• IAB Political Incentive Funding Percentage: 10%",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "TREATY_ANNUAL_FUNDING",
+              "IAB_POLITICAL_INCENTIVE_FUNDING_PCT"
+            ],
+            "inputs_readable": "Annual Funding from 1% of Global Military Spending Redirected to DIH, IAB Political Incentive Funding Percentage",
+            "formula": "TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT",
+            "formula_readable": "Treaty Funding × Iab Political Incentive Pct"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "parameter_name": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
+      "display_name": "DIH Annual Funding for Pragmatic Clinical Trials",
+      "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+      "importance_score": 23.9,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.9,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 46,
+        "total": 50,
+        "percent_complete": 92,
+        "estimated_time_remaining_minutes": 12,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 14.2
+      },
+      "context_card": {
+        "what": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Treaty Funding - Bond Payout - Iab Political Incentive Funding",
+        "inputs_count": 3
+      },
+      "questions": [
+        {
+          "question_id": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: DIH Annual Funding for Pragmatic Clinical Trials?\n\nCurrent result: $21.7B\nCalculation: TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
+            "formula_readable": "Treaty Funding - Bond Payout - Iab Political Incentive Funding",
+            "calculation_example": "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
+            "result_value": 21744000000.0,
+            "result_formatted": "$21.7B",
+            "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+            "parameter_name": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B\n• Annual VICTORY Incentive Alignment Bond Payout: $2.72B\n• Annual IAB Political Incentive Funding: $2.72B",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "TREATY_ANNUAL_FUNDING",
+              "VICTORY_BOND_ANNUAL_PAYOUT",
+              "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"
+            ],
+            "inputs_readable": "Annual Funding from 1% of Global Military Spending Redirected to DIH, Annual VICTORY Incentive Alignment Bond Payout, Annual IAB Political Incentive Funding",
+            "formula": "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
+            "formula_readable": "Treaty Funding - Bond Payout - Iab Political Incentive Funding"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "parameter_name": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+      "display_name": "Annual Clinical Trial Patient Subsidies",
+      "description": "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
+      "importance_score": 23.9,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.9,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 47,
+        "total": 50,
+        "percent_complete": 94,
+        "estimated_time_remaining_minutes": 9,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 14.5
+      },
+      "context_card": {
+        "what": "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Medical Research Funding - Dfda Opex",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Annual Clinical Trial Patient Subsidies?\n\nCurrent result: $21.7B\nCalculation: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX = $21.7B",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
+            "formula_readable": "Medical Research Funding - Dfda Opex",
+            "calculation_example": "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX = $21.7B",
+            "result_value": 21704000000.0,
+            "result_formatted": "$21.7B",
+            "description": "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
+            "parameter_name": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• DIH Annual Funding for Pragmatic Clinical Trials: $21.7B",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DFDA_ANNUAL_OPEX",
+              "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"
+            ],
+            "inputs_readable": "Total Annual Decentralized Framework for Drug Assessment Operational Costs, DIH Annual Funding for Pragmatic Clinical Trials",
+            "formula": "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
+            "formula_readable": "Medical Research Funding - Dfda Opex"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "parameter_name": "RECOVERY_TRIAL_COST_PER_PATIENT",
+      "display_name": "Recovery Trial Cost per Patient",
+      "description": "RECOVERY trial cost per patient",
+      "importance_score": 24.6,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 7.6,
+        "type": 15,
+        "manual": 2
+      },
+      "progress": {
+        "current": 48,
+        "total": 50,
+        "percent_complete": 96,
+        "estimated_time_remaining_minutes": 6,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "PERSONAL_LIFETIME_WEALTH",
+          "RECOVERY_TRIAL_COST_PER_PATIENT",
+          "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR"
+        ],
+        "top_percent": 14.8
+      },
+      "context_card": {
+        "what": "RECOVERY trial cost per patient",
+        "parameter_type": "external",
+        "used_in": [],
+        "affects": [
+          "DFDA_TRIALS_PER_YEAR_CAPACITY",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+          "PERSONAL_LIFETIME_WEALTH",
+          "RECOVERY_TRIAL_COST_PER_PATIENT",
+          "TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR"
+        ],
+        "data_source": "recovery-cost-500",
+        "peer_reviewed": false,
+        "confidence": "high"
+      },
+      "questions": [
+        {
+          "question_id": "RECOVERY_TRIAL_COST_PER_PATIENT_source_credibility",
+          "question_text": "Rate the credibility of this source for estimating: Recovery Trial Cost per Patient",
+          "question_type": "rating",
+          "options": [
+            "1 (Not credible)",
+            "2",
+            "3 (Somewhat credible)",
+            "4",
+            "5 (Highly credible)",
+            "Not qualified to assess"
+          ],
+          "context": {
+            "source_ref": "recovery-cost-500",
+            "peer_reviewed": false,
+            "confidence": "high",
+            "last_updated": null,
+            "parameter_name": "RECOVERY_TRIAL_COST_PER_PATIENT"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "RECOVERY_TRIAL_COST_PER_PATIENT_value_reasonable",
+          "question_text": "Is the central estimate of $500 reasonable?",
+          "question_type": "boolean",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "context": {
+            "value": 500.0,
+            "unit": "USD/patient",
+            "description": "RECOVERY trial cost per patient"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "RECOVERY_TRIAL_COST_PER_PATIENT_better_source",
+          "question_text": "Do you know of a better or more recent source?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "Enter source/citation or leave blank"
+          },
+          "required": false,
+          "conditional_on": "RECOVERY_TRIAL_COST_PER_PATIENT_source_credibility <= 3"
+        },
+        {
+          "question_id": "RECOVERY_TRIAL_COST_PER_PATIENT_confidence_interval",
+          "question_text": "The model uses a 90% confidence interval of [$350, $700]. What is your 90% CI?",
+          "question_type": "range",
+          "options": [
+            "Lower bound",
+            "Upper bound"
+          ],
+          "context": {
+            "current_lower": 350,
+            "current_upper": 700,
+            "current_central": 500.0,
+            "unit": "USD/patient"
+          },
+          "required": false,
+          "conditional_on": null
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "parameter_name": "DIH_PATIENTS_FUNDABLE_ANNUALLY",
+      "display_name": "Patients Fundable Annually",
+      "description": "Number of patients fundable annually at RECOVERY trial cost",
+      "importance_score": 23.4,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 1.4,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 49,
+        "total": 50,
+        "percent_complete": 98,
+        "estimated_time_remaining_minutes": 3,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 15.1
+      },
+      "context_card": {
+        "what": "Number of patients fundable annually at RECOVERY trial cost",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Trial Subsidies ÷ Cost Per Patient",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "DIH_PATIENTS_FUNDABLE_ANNUALLY_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Patients Fundable Annually?\n\nCurrent result: 43.4M patients/year\nCalculation: TRIAL_SUBSIDIES ÷ $500 = 43.4M patients/year",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
+            "formula_readable": "Trial Subsidies ÷ Cost Per Patient",
+            "calculation_example": "TRIAL_SUBSIDIES ÷ $500 = 43.4M patients/year",
+            "result_value": 43408000.0,
+            "result_formatted": "43.4M patients/year",
+            "description": "Number of patients fundable annually at RECOVERY trial cost",
+            "parameter_name": "DIH_PATIENTS_FUNDABLE_ANNUALLY"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_PATIENTS_FUNDABLE_ANNUALLY_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Clinical Trial Patient Subsidies: $21.7B\n• Recovery Trial Cost per Patient: $500",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+              "RECOVERY_TRIAL_COST_PER_PATIENT"
+            ],
+            "inputs_readable": "Annual Clinical Trial Patient Subsidies, Recovery Trial Cost per Patient",
+            "formula": "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
+            "formula_readable": "Trial Subsidies ÷ Cost Per Patient"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "DIH_PATIENTS_FUNDABLE_ANNUALLY_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "DIH_PATIENTS_FUNDABLE_ANNUALLY_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "parameter_name": "TRIAL_CAPACITY_MULTIPLIER",
+      "display_name": "Trial Capacity Multiplier",
+      "description": "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
+      "importance_score": 31.2,
+      "importance_breakdown": {
+        "sensitivity": 0,
+        "usage": 9.2,
+        "type": 20,
+        "manual": 2
+      },
+      "progress": {
+        "current": 50,
+        "total": 50,
+        "percent_complete": 100,
+        "estimated_time_remaining_minutes": 0,
+        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
+      },
+      "impact": {
+        "top_outcomes": [],
+        "top_percent": 15.4
+      },
+      "context_card": {
+        "what": "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
+        "parameter_type": "calculated",
+        "used_in": [],
+        "formula_readable": "Dih Patients Fundable ÷ Current Trial Slots",
+        "inputs_count": 2
+      },
+      "questions": [
+        {
+          "question_id": "TRIAL_CAPACITY_MULTIPLIER_formula_sound",
+          "question_text": "Is the calculation methodology sound for: Trial Capacity Multiplier?\n\nCurrent result: 22.8 ratiox\nCalculation: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS = 22.8 ratio",
+          "question_type": "choice",
+          "options": [
+            "Yes - formula is appropriate",
+            "No - wrong functional form",
+            "No - missing key factors",
+            "No - includes inappropriate factors",
+            "Unsure - need more detail"
+          ],
+          "context": {
+            "formula": "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
+            "formula_readable": "Dih Patients Fundable ÷ Current Trial Slots",
+            "calculation_example": "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS = 22.8 ratio",
+            "result_value": 22.846315789473685,
+            "result_formatted": "22.8 ratio",
+            "description": "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
+            "parameter_name": "TRIAL_CAPACITY_MULTIPLIER"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TRIAL_CAPACITY_MULTIPLIER_inputs_appropriate",
+          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Global Clinical Trial Participants: 1.90M patients/year\n• Patients Fundable Annually: 43.4M patients/year",
+          "question_type": "checklist",
+          "options": [
+            "All inputs are appropriate",
+            "Missing critical factors",
+            "Includes inappropriate factors",
+            "Potential overlap between factors",
+            "Other issue (specify in comments)"
+          ],
+          "context": {
+            "inputs": [
+              "CURRENT_TRIAL_SLOTS_AVAILABLE",
+              "DIH_PATIENTS_FUNDABLE_ANNUALLY"
+            ],
+            "inputs_readable": "Annual Global Clinical Trial Participants, Patients Fundable Annually",
+            "formula": "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
+            "formula_readable": "Dih Patients Fundable ÷ Current Trial Slots"
+          },
+          "required": true,
+          "conditional_on": null
+        },
+        {
+          "question_id": "TRIAL_CAPACITY_MULTIPLIER_missing_factors",
+          "question_text": "What important factors are missing from this calculation?",
+          "question_type": "text",
+          "options": null,
+          "context": {
+            "placeholder": "List missing factors or leave blank if none"
+          },
+          "required": false,
+          "conditional_on": "TRIAL_CAPACITY_MULTIPLIER_inputs_appropriate contains 'Missing critical factors'"
+        }
+      ]
+    }
+  ]
+}

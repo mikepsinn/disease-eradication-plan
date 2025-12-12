@@ -4077,7 +4077,8 @@ BED_NETS_COST_PER_DALY = Parameter(
     89,
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
-    description="GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)",
+    peer_reviewed=True,  # GiveWell synthesizes peer-reviewed research and undergoes extensive expert review
+    description="GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
     display_name="Bed Nets Cost per DALY",
     unit="USD/DALY",
     confidence="high",

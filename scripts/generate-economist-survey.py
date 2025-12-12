@@ -63,7 +63,7 @@ def main():
     parser.add_argument('--top-n', type=int, default=50,
                        help='Number of top parameters to include (default: 50)')
     parser.add_argument('--output', type=str, default='_analysis/economist-survey.json',
-                       help='Output JSON file path')
+                       help='Output JSON file path (also saved to surveys/ for version control)')
     parser.add_argument('--usage-only', action='store_true',
                        help='Only run usage analysis and exit')
     args = parser.parse_args()
@@ -138,7 +138,17 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(survey, f, indent=2, ensure_ascii=False)
 
+    # Also save to surveys/ folder for version control
+    surveys_dir = Path("surveys")
+    surveys_dir.mkdir(exist_ok=True)
+    version = survey["metadata"]["version"]
+    surveys_path = surveys_dir / f"economist-survey-v{version}.json"
+
+    with open(surveys_path, "w", encoding="utf-8") as f:
+        json.dump(survey, f, indent=2, ensure_ascii=False)
+
     print(f"\n[OK] Survey saved to {output_path}")
+    print(f"[OK] Version control copy saved to {surveys_path}")
     print(f"\nNext steps:")
     print(f"  1. Review survey structure: {output_path}")
     print(f"  2. Export to Google Forms or Qualtrics")

@@ -110,7 +110,7 @@ class QuestionGenerator:
             question_id=f"{param_name}_source_credibility",
             question_text=f"Rate the credibility of this source for estimating: {display_name}",
             question_type=QuestionType.RATING,
-            options=["1 (Not credible)", "2", "3 (Somewhat credible)", "4", "5 (Highly credible)"],
+            options=["1 (Not credible)", "2", "3 (Somewhat credible)", "4", "5 (Highly credible)", "Not qualified to assess"],
             context={
                 "source_ref": source_ref,
                 "peer_reviewed": peer_reviewed,
@@ -168,9 +168,9 @@ class QuestionGenerator:
 
         # Q1: Formula soundness
         unit_suffix = self._get_unit_suffix(param_name, value)
-        question_text = f"Is the calculation methodology sound for: {display_name}?\n\nCurrent result: {result_formatted}{unit_suffix}"
+        question_text = f"Is the calculation methodology sound for: **{display_name}**?\n\n**Current result:** {result_formatted}{unit_suffix}"
         if calculation_example:
-            question_text += f"\nCalculation: {calculation_example}"
+            question_text += f"\n**Calculation:** {calculation_example}"
 
         questions.append(SurveyQuestion(
             question_id=f"{param_name}_formula_sound",
@@ -226,9 +226,9 @@ class QuestionGenerator:
                 options=[
                     "All inputs are appropriate",
                     "Missing critical factors",
-                    "Includes unnecessary factors",
-                    "Double-counting detected",
-                    "Interaction effects missing"
+                    "Includes inappropriate factors",
+                    "Potential overlap between factors",
+                    "Other issue (specify in comments)"
                 ],
                 context={
                     "inputs": inputs,
@@ -271,7 +271,8 @@ class QuestionGenerator:
                 "2 (Questionable)",
                 "3 (Acceptable)",
                 "4 (Reasonable)",
-                "5 (Very reasonable)"
+                "5 (Very reasonable)",
+                "Not qualified to assess"
             ],
             context={
                 "value": float(value),
@@ -627,16 +628,65 @@ def generate_survey(
                 "Parameters are ordered by importance (sensitivity analysis + document usage frequency)",
                 "Within that ordering, inputs are validated before outputs that depend on them",
                 "Each parameter has 2-4 questions depending on its type (external/calculated/definition)",
-                "You can stop at any time - priority is given to high-impact parameters first"
+                "You can stop at any time - priority is given to high-impact parameters first",
+                "Some follow-up questions appear based on your responses (e.g., if you rate a source as low credibility, you'll be asked for alternatives)"
             ],
+            "time_horizons": {
+                "lives_saved": "50-year cumulative impact (standard for disease eradication models)",
+                "roi_calculation": "10-year NPV with 3% discount rate",
+                "political_timeline": "20-year probability window (campaign through treaty ratification)",
+                "note": "Different parameters use different time horizons appropriate to their context. This will be specified in each parameter's description."
+            },
             "question_types": {
-                "external": "Source credibility, value reasonableness, confidence intervals",
-                "calculated": "Formula soundness, input appropriateness, missing factors",
-                "definition": "Assumption reasonableness, alternative values"
+                "rating": "1-5 scale questions (e.g., credibility rating). Includes 'Not qualified to assess' option.",
+                "boolean": "Yes/No questions",
+                "choice": "Multiple choice (select one)",
+                "checklist": "Multiple select (check all that apply)",
+                "range": "Enter lower and upper bounds (e.g., confidence intervals)",
+                "text": "Open-ended text response"
             },
             "estimated_time": f"{len(selected_params)} parameters × ~3 min each = ~{len(selected_params) * 3} minutes total",
             "note": "Your responses are confidential. We're seeking honest feedback to improve the model, not validation for pre-determined conclusions."
         },
+        "background_questions": [
+            {
+                "id": "expertise",
+                "text": "Primary area(s) of expertise (check all that apply)",
+                "type": "checklist",
+                "options": [
+                    "Health economics",
+                    "Development economics",
+                    "Cost-effectiveness analysis",
+                    "Public finance",
+                    "Political economy",
+                    "Pharmaceutical economics",
+                    "Epidemiological modeling",
+                    "Other"
+                ],
+                "required": True
+            },
+            {
+                "id": "experience_years",
+                "text": "Years of professional experience in economics",
+                "type": "choice",
+                "options": ["0-5", "6-10", "11-20", "20+"],
+                "required": True
+            },
+            {
+                "id": "familiar_daly",
+                "text": "Familiarity with DALY (Disability-Adjusted Life Years) methodology",
+                "type": "rating",
+                "options": ["1 (Not familiar)", "2", "3", "4", "5 (Very familiar)", "Not qualified to assess"],
+                "required": True
+            },
+            {
+                "id": "familiar_npv",
+                "text": "Familiarity with NPV (Net Present Value) and ROI calculations",
+                "type": "rating",
+                "options": ["1 (Not familiar)", "2", "3", "4", "5 (Very familiar)", "Not qualified to assess"],
+                "required": True
+            }
+        ],
         "parameters": []
     }
 
@@ -701,11 +751,12 @@ def generate_survey(
                 "current": rank,
                 "total": total_params,
                 "percent_complete": percent_complete,
-                "estimated_time_remaining_minutes": estimated_time_remaining
+                "estimated_time_remaining_minutes": estimated_time_remaining,
+                "note": "Estimated time for remaining parameters (3 minutes per parameter)"
             },
             "impact": {
                 "top_outcomes": affected_outcomes if affected_outcomes else [],
-                "importance_percentile": round(100 * (1 - (rank - 1) / total_params), 1)
+                "top_percent": round(100 * rank / len(parameters), 1)
             },
             "context_card": context_card,
             "questions": [

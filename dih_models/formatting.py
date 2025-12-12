@@ -123,7 +123,8 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
         else:
             formatted_num = "$0"
 
-        # Clean up trailing .0 for cleaner look (e.g. $50.0B -> $50B)
+        # Clean up trailing .0 and .00 for cleaner look (e.g. $50.0B -> $50B, $1.00B -> $1B)
+        formatted_num = formatted_num.replace(".00 ", " ").replace(".00T", "T").replace(".00B", "B").replace(".00M", "M").replace(".00K", "K")
         formatted_num = formatted_num.replace(".0 ", " ").replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
         return formatted_num
 
