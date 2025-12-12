@@ -705,17 +705,6 @@ def generate_survey(
         display_name = getattr(value, "display_name", "") or generator._format_param_name(param_name)
         description = getattr(value, "description", "")
 
-        # Calculate progress metrics
-        total_params = len(selected_params)
-        percent_complete = int((rank / total_params) * 100)
-        estimated_time_remaining = (total_params - rank) * 3  # 3 min per parameter
-
-        # Generate visual progress bar (10 blocks total)
-        filled_blocks = int(percent_complete / 10)
-        empty_blocks = 10 - filled_blocks
-        progress_bar = "█" * filled_blocks + "░" * empty_blocks
-        progress_text = f"{progress_bar} {percent_complete}% complete ({rank} of {total_params} parameters)"
-
         # Get impact data - calculate on-demand if requested
         affected_outcomes = []
         if calculate_sensitivity:
@@ -746,38 +735,36 @@ def generate_survey(
         if affected_outcomes:
             context_card["affects"] = affected_outcomes if isinstance(affected_outcomes, list) else [affected_outcomes]
 
-        # Add type-specific context
-        if source_type_str == "external":
-            source_ref = getattr(value, "source_ref", "")
+        # Resolve citations for ANY parameter with source_ref (external, definition, or calculated)
+        source_ref = getattr(value, "source_ref", "")
+        citation = None
+        if source_ref:
+            # Extract reference ID from enum or string
+            ref_id = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
 
-            # Resolve source_ref to full citation data
-            citation = None
-            if source_ref:
-                # Extract reference ID from enum or string
-                ref_id = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
+            # Look up citation data
+            if ref_id in citation_data:
+                citation = citation_data[ref_id]
 
-                # Look up citation data
-                if ref_id in citation_data:
-                    citation = citation_data[ref_id]
-
-            # Add citation information to context card
-            if citation:
-                context_card["citation"] = {
-                    "id": citation.get("id", ""),
-                    "title": citation.get("title", ""),
-                    "author": citation.get("author", ""),
-                    "year": citation.get("year", ""),
-                    "source": citation.get("source", ""),
-                    "url": citation.get("url", ""),
-                    "type": citation.get("type", "misc")
-                }
-            else:
-                # Fallback to raw source_ref if citation not found
-                context_card["data_source"] = str(source_ref)
-
+        # Add citation information to context card if found
+        if citation:
+            context_card["citation"] = {
+                "id": citation.get("id", ""),
+                "title": citation.get("title", ""),
+                "author": citation.get("author", ""),
+                "year": citation.get("year", ""),
+                "source": citation.get("source", ""),
+                "url": citation.get("url", ""),
+                "type": citation.get("type", "misc")
+            }
             context_card["peer_reviewed"] = getattr(value, "peer_reviewed", False)
             context_card["confidence"] = getattr(value, "confidence", "medium")
-        elif source_type_str == "calculated":
+        elif source_ref:
+            # Fallback to raw source_ref if citation not found
+            context_card["data_source"] = str(source_ref)
+
+        # Add type-specific context
+        if source_type_str == "calculated":
             context_card["formula_readable"] = generator._format_formula_readable(getattr(value, "formula", ""))
             context_card["inputs_count"] = len(getattr(value, "inputs", []))
 
@@ -838,6 +825,13 @@ def rank_parameters(
         # Skip non-Parameter values
         if not hasattr(value, "source_type"):
             continue
+
+        # Skip calculated parameters not used in economics.qmd
+        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+        if source_type_str == "calculated":
+            if usage_data and param_name not in usage_data:
+                # Calculated parameter not in economics.qmd - skip it
+                continue
 
         breakdown = {
             "sensitivity": 0,  # 0-40 points

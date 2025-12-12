@@ -1070,7 +1070,7 @@ INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
 
 TRIAL_COST_REDUCTION_PCT = Parameter(
     0.50,
-    source_ref="",
+    source_ref="dct-cost-reductions-evidence",
     source_type="definition",
     description="Trial cost reduction percentage (50% baseline, conservative)",
     display_name="Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
@@ -1256,6 +1256,7 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
+    source_ref="clinical-trial-patient-participation-rate",
     source_type="definition",
     description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
     display_name="Current Patient Participation Rate in Clinical Trials",
@@ -4111,6 +4112,7 @@ VITAMIN_A_COST_PER_DALY = Parameter(
 
 CHILDHOOD_VACCINATION_COST_PER_DALY = Parameter(
     30,  # Estimated from ROI and benefit parameters; US studies use QALYs not DALYs
+    source_ref="childhood-vaccination-roi",
     source_type="definition",
     description="Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.",
     display_name="Childhood Vaccination Cost per DALY (Estimated)",
@@ -4701,6 +4703,7 @@ CAREGIVER_VALUE_PER_HOUR_SIMPLE = Parameter(
 )  # Replacement cost estimate
 CAREGIVER_COST_ANNUAL = Parameter(
     CAREGIVER_HOURS_PER_MONTH * MONTHS_PER_YEAR * CAREGIVER_VALUE_PER_HOUR_SIMPLE,
+    source_ref="unpaid-caregiver-hours-economic-value",
     source_type="definition",
     description="Annual cost of unpaid caregiving (replacement cost method)",
     display_name="Annual Cost of Unpaid Caregiving",
