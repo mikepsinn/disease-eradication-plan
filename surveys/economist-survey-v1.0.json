@@ -113,14 +113,6 @@
         "type": 15,
         "manual": 2
       },
-      "progress": {
-        "current": 1,
-        "total": 50,
-        "percent_complete": 2,
-        "progress_bar": "░░░░░░░░░░ 2% complete (1 of 50 parameters)",
-        "estimated_time_remaining_minutes": 147,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "BED_NETS_COST_PER_DALY",
@@ -231,14 +223,6 @@
         "type": 10,
         "manual": 5
       },
-      "progress": {
-        "current": 2,
-        "total": 50,
-        "percent_complete": 4,
-        "progress_bar": "░░░░░░░░░░ 4% complete (2 of 50 parameters)",
-        "estimated_time_remaining_minutes": 144,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_EXPECTED_ROI",
@@ -326,14 +310,6 @@
         "usage": 1.4,
         "type": 10,
         "manual": 10
-      },
-      "progress": {
-        "current": 3,
-        "total": 50,
-        "percent_complete": 6,
-        "progress_bar": "░░░░░░░░░░ 6% complete (3 of 50 parameters)",
-        "estimated_time_remaining_minutes": 141,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -423,14 +399,6 @@
         "type": 10,
         "manual": 5
       },
-      "progress": {
-        "current": 4,
-        "total": 50,
-        "percent_complete": 8,
-        "progress_bar": "░░░░░░░░░░ 8% complete (4 of 50 parameters)",
-        "estimated_time_remaining_minutes": 138,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_EXPECTED_ROI",
@@ -518,14 +486,6 @@
         "usage": 4.0,
         "type": 20,
         "manual": 2
-      },
-      "progress": {
-        "current": 5,
-        "total": 50,
-        "percent_complete": 10,
-        "progress_bar": "█░░░░░░░░░ 10% complete (5 of 50 parameters)",
-        "estimated_time_remaining_minutes": 135,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -617,14 +577,6 @@
         "type": 20,
         "manual": 5
       },
-      "progress": {
-        "current": 6,
-        "total": 50,
-        "percent_complete": 12,
-        "progress_bar": "█░░░░░░░░░ 12% complete (6 of 50 parameters)",
-        "estimated_time_remaining_minutes": 132,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 1.9
@@ -713,14 +665,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 7,
-        "total": 50,
-        "percent_complete": 14,
-        "progress_bar": "█░░░░░░░░░ 14% complete (7 of 50 parameters)",
-        "estimated_time_remaining_minutes": 129,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 2.2
@@ -808,14 +752,6 @@
         "usage": 2.8,
         "type": 15,
         "manual": 10
-      },
-      "progress": {
-        "current": 8,
-        "total": 50,
-        "percent_complete": 16,
-        "progress_bar": "█░░░░░░░░░ 16% complete (8 of 50 parameters)",
-        "estimated_time_remaining_minutes": 126,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -929,14 +865,6 @@
         "type": 20,
         "manual": 10
       },
-      "progress": {
-        "current": 9,
-        "total": 50,
-        "percent_complete": 18,
-        "progress_bar": "█░░░░░░░░░ 18% complete (9 of 50 parameters)",
-        "estimated_time_remaining_minutes": 123,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 2.8
@@ -1025,14 +953,6 @@
         "type": 20,
         "manual": 10
       },
-      "progress": {
-        "current": 10,
-        "total": 50,
-        "percent_complete": 20,
-        "progress_bar": "██░░░░░░░░ 20% complete (10 of 50 parameters)",
-        "estimated_time_remaining_minutes": 120,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 3.1
@@ -1119,14 +1039,6 @@
         "usage": 1.9,
         "type": 15,
         "manual": 2
-      },
-      "progress": {
-        "current": 11,
-        "total": 50,
-        "percent_complete": 22,
-        "progress_bar": "██░░░░░░░░ 22% complete (11 of 50 parameters)",
-        "estimated_time_remaining_minutes": 117,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -1242,14 +1154,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 12,
-        "total": 50,
-        "percent_complete": 24,
-        "progress_bar": "██░░░░░░░░ 24% complete (12 of 50 parameters)",
-        "estimated_time_remaining_minutes": 114,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
@@ -1348,14 +1252,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 13,
-        "total": 50,
-        "percent_complete": 26,
-        "progress_bar": "██░░░░░░░░ 26% complete (13 of 50 parameters)",
-        "estimated_time_remaining_minutes": 111,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 4.0
@@ -1443,14 +1339,6 @@
         "usage": 0,
         "type": 10,
         "manual": 2
-      },
-      "progress": {
-        "current": 14,
-        "total": 50,
-        "percent_complete": 28,
-        "progress_bar": "██░░░░░░░░ 28% complete (14 of 50 parameters)",
-        "estimated_time_remaining_minutes": 108,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -1540,14 +1428,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 15,
-        "total": 50,
-        "percent_complete": 30,
-        "progress_bar": "███░░░░░░░ 30% complete (15 of 50 parameters)",
-        "estimated_time_remaining_minutes": 105,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_ANNUAL_OPEX",
@@ -1635,14 +1515,6 @@
         "usage": 0,
         "type": 10,
         "manual": 2
-      },
-      "progress": {
-        "current": 16,
-        "total": 50,
-        "percent_complete": 32,
-        "progress_bar": "███░░░░░░░ 32% complete (16 of 50 parameters)",
-        "estimated_time_remaining_minutes": 102,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -1732,14 +1604,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 17,
-        "total": 50,
-        "percent_complete": 34,
-        "progress_bar": "███░░░░░░░ 34% complete (17 of 50 parameters)",
-        "estimated_time_remaining_minutes": 99,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_ANNUAL_OPEX",
@@ -1828,14 +1692,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 18,
-        "total": 50,
-        "percent_complete": 36,
-        "progress_bar": "███░░░░░░░ 36% complete (18 of 50 parameters)",
-        "estimated_time_remaining_minutes": 96,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_ANNUAL_OPEX",
@@ -1923,14 +1779,6 @@
         "usage": 1.9,
         "type": 20,
         "manual": 2
-      },
-      "progress": {
-        "current": 19,
-        "total": 50,
-        "percent_complete": 38,
-        "progress_bar": "███░░░░░░░ 38% complete (19 of 50 parameters)",
-        "estimated_time_remaining_minutes": 93,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -2026,14 +1874,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 20,
-        "total": 50,
-        "percent_complete": 40,
-        "progress_bar": "████░░░░░░ 40% complete (20 of 50 parameters)",
-        "estimated_time_remaining_minutes": 90,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_NPV_BENEFIT_RD_ONLY",
@@ -2103,14 +1943,6 @@
         "usage": 10.4,
         "type": 20,
         "manual": 2
-      },
-      "progress": {
-        "current": 21,
-        "total": 50,
-        "percent_complete": 42,
-        "progress_bar": "████░░░░░░ 42% complete (21 of 50 parameters)",
-        "estimated_time_remaining_minutes": 87,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -2203,14 +2035,6 @@
         "usage": 2.4,
         "type": 15,
         "manual": 2
-      },
-      "progress": {
-        "current": 22,
-        "total": 50,
-        "percent_complete": 44,
-        "progress_bar": "████░░░░░░ 44% complete (22 of 50 parameters)",
-        "estimated_time_remaining_minutes": 84,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -2309,14 +2133,6 @@
         "type": 20,
         "manual": 5
       },
-      "progress": {
-        "current": 23,
-        "total": 50,
-        "percent_complete": 46,
-        "progress_bar": "████░░░░░░ 46% complete (23 of 50 parameters)",
-        "estimated_time_remaining_minutes": 81,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 7.1
@@ -2406,14 +2222,6 @@
         "usage": 1.0,
         "type": 20,
         "manual": 5
-      },
-      "progress": {
-        "current": 24,
-        "total": 50,
-        "percent_complete": 48,
-        "progress_bar": "████░░░░░░ 48% complete (24 of 50 parameters)",
-        "estimated_time_remaining_minutes": 78,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -2505,14 +2313,6 @@
         "type": 20,
         "manual": 10
       },
-      "progress": {
-        "current": 25,
-        "total": 50,
-        "percent_complete": 50,
-        "progress_bar": "█████░░░░░ 50% complete (25 of 50 parameters)",
-        "estimated_time_remaining_minutes": 75,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 7.7
@@ -2600,14 +2400,6 @@
         "usage": 0.9,
         "type": 15,
         "manual": 2
-      },
-      "progress": {
-        "current": 26,
-        "total": 50,
-        "percent_complete": 52,
-        "progress_bar": "█████░░░░░ 52% complete (26 of 50 parameters)",
-        "estimated_time_remaining_minutes": 72,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -2723,14 +2515,6 @@
         "type": 15,
         "manual": 2
       },
-      "progress": {
-        "current": 27,
-        "total": 50,
-        "percent_complete": 54,
-        "progress_bar": "█████░░░░░ 54% complete (27 of 50 parameters)",
-        "estimated_time_remaining_minutes": 69,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
@@ -2845,14 +2629,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 28,
-        "total": 50,
-        "percent_complete": 56,
-        "progress_bar": "█████░░░░░ 56% complete (28 of 50 parameters)",
-        "estimated_time_remaining_minutes": 66,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC",
@@ -2923,14 +2699,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 29,
-        "total": 50,
-        "percent_complete": 57,
-        "progress_bar": "█████░░░░░ 57% complete (29 of 50 parameters)",
-        "estimated_time_remaining_minutes": 63,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 9.0
@@ -2991,14 +2759,6 @@
         "usage": 2.3,
         "type": 10,
         "manual": 2
-      },
-      "progress": {
-        "current": 30,
-        "total": 50,
-        "percent_complete": 60,
-        "progress_bar": "██████░░░░ 60% complete (30 of 50 parameters)",
-        "estimated_time_remaining_minutes": 60,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -3070,14 +2830,6 @@
         "type": 10,
         "manual": 2
       },
-      "progress": {
-        "current": 31,
-        "total": 50,
-        "percent_complete": 62,
-        "progress_bar": "██████░░░░ 62% complete (31 of 50 parameters)",
-        "estimated_time_remaining_minutes": 57,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 9.6
@@ -3138,14 +2890,6 @@
         "usage": 2.3,
         "type": 10,
         "manual": 2
-      },
-      "progress": {
-        "current": 32,
-        "total": 50,
-        "percent_complete": 64,
-        "progress_bar": "██████░░░░ 64% complete (32 of 50 parameters)",
-        "estimated_time_remaining_minutes": 54,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -3216,14 +2960,6 @@
         "usage": 1.9,
         "type": 20,
         "manual": 2
-      },
-      "progress": {
-        "current": 33,
-        "total": 50,
-        "percent_complete": 66,
-        "progress_bar": "██████░░░░ 66% complete (33 of 50 parameters)",
-        "estimated_time_remaining_minutes": 51,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -3311,14 +3047,6 @@
         "usage": 1.9,
         "type": 20,
         "manual": 2
-      },
-      "progress": {
-        "current": 34,
-        "total": 50,
-        "percent_complete": 68,
-        "progress_bar": "██████░░░░ 68% complete (34 of 50 parameters)",
-        "estimated_time_remaining_minutes": 48,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -3409,14 +3137,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 35,
-        "total": 50,
-        "percent_complete": 70,
-        "progress_bar": "███████░░░ 70% complete (35 of 50 parameters)",
-        "estimated_time_remaining_minutes": 45,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 10.8
@@ -3504,14 +3224,6 @@
         "usage": 7.6,
         "type": 15,
         "manual": 2
-      },
-      "progress": {
-        "current": 36,
-        "total": 50,
-        "percent_complete": 72,
-        "progress_bar": "███████░░░ 72% complete (36 of 50 parameters)",
-        "estimated_time_remaining_minutes": 42,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -3627,14 +3339,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 37,
-        "total": 50,
-        "percent_complete": 74,
-        "progress_bar": "███████░░░ 74% complete (37 of 50 parameters)",
-        "estimated_time_remaining_minutes": 39,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 11.4
@@ -3723,14 +3427,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 38,
-        "total": 50,
-        "percent_complete": 76,
-        "progress_bar": "███████░░░ 76% complete (38 of 50 parameters)",
-        "estimated_time_remaining_minutes": 36,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 11.7
@@ -3817,14 +3513,6 @@
         "usage": 1.0,
         "type": 20,
         "manual": 2
-      },
-      "progress": {
-        "current": 39,
-        "total": 50,
-        "percent_complete": 78,
-        "progress_bar": "███████░░░ 78% complete (39 of 50 parameters)",
-        "estimated_time_remaining_minutes": 33,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -3914,14 +3602,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 40,
-        "total": 50,
-        "percent_complete": 80,
-        "progress_bar": "████████░░ 80% complete (40 of 50 parameters)",
-        "estimated_time_remaining_minutes": 30,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 12.3
@@ -4010,14 +3690,6 @@
         "type": 20,
         "manual": 10
       },
-      "progress": {
-        "current": 41,
-        "total": 50,
-        "percent_complete": 82,
-        "progress_bar": "████████░░ 82% complete (41 of 50 parameters)",
-        "estimated_time_remaining_minutes": 27,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 12.7
@@ -4105,14 +3777,6 @@
         "usage": 8.4,
         "type": 15,
         "manual": 2
-      },
-      "progress": {
-        "current": 42,
-        "total": 50,
-        "percent_complete": 84,
-        "progress_bar": "████████░░ 84% complete (42 of 50 parameters)",
-        "estimated_time_remaining_minutes": 24,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -4211,14 +3875,6 @@
         "type": 15,
         "manual": 2
       },
-      "progress": {
-        "current": 43,
-        "total": 50,
-        "percent_complete": 86,
-        "progress_bar": "████████░░ 86% complete (43 of 50 parameters)",
-        "estimated_time_remaining_minutes": 21,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DFDA_EXPECTED_ROI",
@@ -4316,14 +3972,6 @@
         "type": 20,
         "manual": 5
       },
-      "progress": {
-        "current": 44,
-        "total": 50,
-        "percent_complete": 88,
-        "progress_bar": "████████░░ 88% complete (44 of 50 parameters)",
-        "estimated_time_remaining_minutes": 18,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 13.6
@@ -4411,14 +4059,6 @@
         "usage": 5.2,
         "type": 20,
         "manual": 5
-      },
-      "progress": {
-        "current": 45,
-        "total": 50,
-        "percent_complete": 90,
-        "progress_bar": "█████████░ 90% complete (45 of 50 parameters)",
-        "estimated_time_remaining_minutes": 15,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],
@@ -4508,14 +4148,6 @@
         "type": 20,
         "manual": 2
       },
-      "progress": {
-        "current": 46,
-        "total": 50,
-        "percent_complete": 92,
-        "progress_bar": "█████████░ 92% complete (46 of 50 parameters)",
-        "estimated_time_remaining_minutes": 12,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 14.2
@@ -4603,14 +4235,6 @@
         "usage": 1.0,
         "type": 15,
         "manual": 2
-      },
-      "progress": {
-        "current": 47,
-        "total": 50,
-        "percent_complete": 94,
-        "progress_bar": "█████████░ 94% complete (47 of 50 parameters)",
-        "estimated_time_remaining_minutes": 9,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [
@@ -4722,14 +4346,6 @@
         "type": 15,
         "manual": 5
       },
-      "progress": {
-        "current": 48,
-        "total": 50,
-        "percent_complete": 96,
-        "progress_bar": "█████████░ 96% complete (48 of 50 parameters)",
-        "estimated_time_remaining_minutes": 6,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [
           "DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER",
@@ -4838,14 +4454,6 @@
         "type": 20,
         "manual": 5
       },
-      "progress": {
-        "current": 49,
-        "total": 50,
-        "percent_complete": 98,
-        "progress_bar": "█████████░ 98% complete (49 of 50 parameters)",
-        "estimated_time_remaining_minutes": 3,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-      },
       "impact": {
         "top_outcomes": [],
         "top_percent": 15.1
@@ -4943,14 +4551,6 @@
         "usage": 1.4,
         "type": 15,
         "manual": 10
-      },
-      "progress": {
-        "current": 50,
-        "total": 50,
-        "percent_complete": 100,
-        "progress_bar": "██████████ 100% complete (50 of 50 parameters)",
-        "estimated_time_remaining_minutes": 0,
-        "note": "Estimated time for remaining parameters (3 minutes per parameter)"
       },
       "impact": {
         "top_outcomes": [],

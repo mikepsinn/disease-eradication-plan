@@ -2984,6 +2984,7 @@ export const CAREGIVER_COST_ANNUAL: Parameter = {
   displayName: "Annual Cost of Unpaid Caregiving",
   description: "Annual cost of unpaid caregiving (replacement cost method)",
   sourceType: "definition",
+  sourceRef: "unpaid-caregiver-hours-economic-value",
   confidence: "high",
   formula: "HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
 };
@@ -2994,6 +2995,7 @@ export const CHILDHOOD_VACCINATION_COST_PER_DALY: Parameter = {
   displayName: "Childhood Vaccination Cost per DALY (Estimated)",
   description: "Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.",
   sourceType: "definition",
+  sourceRef: "childhood-vaccination-roi",
   confidence: "low",
 };
 
@@ -3012,6 +3014,7 @@ export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
   displayName: "Current Patient Participation Rate in Clinical Trials",
   description: "Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
   sourceType: "definition",
+  sourceRef: "clinical-trial-patient-participation-rate",
   confidence: "high",
   formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
 };
@@ -3572,6 +3575,7 @@ export const TRIAL_COST_REDUCTION_PCT: Parameter = {
   displayName: "Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage",
   description: "Trial cost reduction percentage (50% baseline, conservative)",
   sourceType: "definition",
+  sourceRef: "dct-cost-reductions-evidence",
   confidence: "high",
   confidenceInterval: [0.4, 0.65],
 };
@@ -4225,6 +4229,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Credit Suisse/UBS",
         URL: "https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html",
         note: "Credit Suisse/UBS, 2023, Global Wealth Report 2023",
+  },
+  "dct-cost-reductions-evidence": {
+        id: "dct-cost-reductions-evidence",
+        type: "article-journal",
+        title: "Decentralized Clinical Trials (DCT) cost reduction evidence",
+        author: [
+          {
+            literal: "Rogers et al."
+          },
+        ],
+        issued: { 'date-parts': [[2022]] },
+        'container-title': "Rogers et al.",
+        URL: "https://discovery.dundee.ac.uk/ws/files/72718478/Brit_J_Clinical_Pharma_2022_Rogers_A_systematic_review_of_methods_used_to_conduct_decentralised_clinical_trials.pdf",
+        note: "Rogers et al., 2022, Systematic review of methods used to conduct decentralised clinical trials | Valachis & Lindman, 2024, Lessons learned from an unsuccessful DCT in Oncology",
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
@@ -5290,7 +5308,7 @@ export const PARAMETER_STATS = {
   external: 133,
   calculated: 105,
   definitions: 93,
-  citations: 97,
+  citations: 98,
 } as const;
 
 // ============================================================================

@@ -777,14 +777,6 @@ def generate_survey(
             "description": description,
             "importance_score": round(score, 1),
             "importance_breakdown": {k: round(v, 1) for k, v in breakdown.items()},
-            "progress": {
-                "current": rank,
-                "total": total_params,
-                "percent_complete": percent_complete,
-                "progress_bar": progress_text,
-                "estimated_time_remaining_minutes": estimated_time_remaining,
-                "note": "Estimated time for remaining parameters (3 minutes per parameter)"
-            },
             "impact": {
                 "top_outcomes": affected_outcomes if affected_outcomes else [],
                 "top_percent": round(100 * rank / len(parameters), 1)

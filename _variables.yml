@@ -202,9 +202,12 @@
   \ of unpaid caregiving in US | ✓ High confidence | Unit: USD/year | Click to view\
   \ details, calculation & sources\">$600B</a>"
 "caregiver_annual_value_total_cite": "@unpaid-caregiver-hours-economic-value"
-"caregiver_cost_annual": "<span class=\"parameter-definition\" title=\"Annual cost\
-  \ of unpaid caregiving (replacement cost method) | Unit: USD/year | Core definition\"\
-  >$6K</span>"
+"caregiver_cost_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-caregiver_cost_annual\"\
+  \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Annual cost of\
+  \ unpaid caregiving (replacement cost method) | ✓ High confidence | Formula: HOURS_PER_MONTH\
+  \ × MONTHS_PER_YEAR × VALUE_PER_HOUR | Unit: USD/year | Click to view details, calculation\
+  \ & sources\">$6K</a>"
 "caregiver_count_us": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-caregiver_count_us\"\
   \ class=\"parameter-link\" data-source-ref=\"unpaid-caregiver-hours-economic-value\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Number of unpaid\
@@ -230,11 +233,13 @@
   \ | ✓ High confidence | Dist: Lognormal (SE: $4.50B) | Unit: USD/year | Click to\
   \ view details, calculation & sources\">$15B</a>"
 "childhood_vaccination_annual_benefit_cite": "@childhood-vaccination-economic-benefits"
-"childhood_vaccination_cost_per_daly": "<span class=\"parameter-definition\" title=\"\
-  Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness\
-  \ studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost\
-  \ per DALY. This estimate is derived from program costs and benefits for comparison\
-  \ purposes only. | Unit: USD/DALY | Core definition\">$30</span>"
+"childhood_vaccination_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-childhood_vaccination_cost_per_daly\"\
+  \ class=\"parameter-link\" data-source-ref=\"childhood-vaccination-roi\" data-source-type=\"\
+  definition\" data-confidence=\"low\" title=\"Estimated cost per DALY for US childhood\
+  \ vaccination programs. Note: US cost-effectiveness studies primarily use cost per\
+  \ QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is\
+  \ derived from program costs and benefits for comparison purposes only. | ? Low\
+  \ confidence | Unit: USD/DALY | Click to view details, calculation & sources\">$30</a>"
 "childhood_vaccination_roi": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-childhood_vaccination_roi\"\
   \ class=\"parameter-link\" data-source-ref=\"childhood-vaccination-roi\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Return on investment from childhood\
@@ -283,9 +288,12 @@
   \ new drug approvals globally | ✓ High confidence | Unit: drugs/year | Click to\
   \ view details, calculation & sources\">50</a>"
 "current_drug_approvals_per_year_cite": "@global-new-drug-approvals-50-annually"
-"current_patient_participation_rate": "<span class=\"parameter-definition\" title=\"\
-  Current patient participation rate in clinical trials (0.08% = 1.9M participants\
-  \ / 2.4B disease patients) | Unit: rate | Core definition\">0.0792%</span>"
+"current_patient_participation_rate": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_patient_participation_rate\"\
+  \ class=\"parameter-link\" data-source-ref=\"clinical-trial-patient-participation-rate\"\
+  \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Current patient\
+  \ participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease\
+  \ patients) | ✓ High confidence | Formula: CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS\
+  \ | Unit: rate | Click to view details, calculation & sources\">0.0792%</a>"
 "current_patient_participation_rate_latex": "$$\nRate_{curr} = \\frac{Trials_{curr}}{Population_{curr,global}}\
   \ = \\frac{1.9M}{2.40B} = 0.1\\%\n$$"
 "current_trials_per_year": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_trials_per_year\"\
@@ -2096,9 +2104,11 @@
   \ 150 ratio] | Dist: Lognormal (SE: 20 ratio) | Unit: ratio | Click to view details,\
   \ calculation & sources\">82</a>"
 "trial_cost_reduction_factor_cite": "@recovery-trial-82x-cost-reduction"
-"trial_cost_reduction_pct": "<span class=\"parameter-definition\" title=\"Trial cost\
-  \ reduction percentage (50% baseline, conservative) | Unit: rate | Core definition\"\
-  >50%</span>"
+"trial_cost_reduction_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_cost_reduction_pct\"\
+  \ class=\"parameter-link\" data-source-ref=\"dct-cost-reductions-evidence\" data-source-type=\"\
+  definition\" data-confidence=\"high\" title=\"Trial cost reduction percentage (50%\
+  \ baseline, conservative) | ✓ High confidence | 95% CI: [40%, 65%] | Dist: Beta\
+  \ | Unit: rate | Click to view details, calculation & sources\">50%</a>"
 "trial_relevant_diseases_count": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-trial_relevant_diseases_count\"\
   \ class=\"parameter-link\" data-source-ref=\"/knowledge/problem/untapped-therapeutic-frontier.qmd\"\
   \ data-source-type=\"definition\" data-confidence=\"high\" title=\"Consolidated\
