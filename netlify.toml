@@ -139,6 +139,19 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Domain redirects - redirect old dih.earth domains to warondisease.org
+[[redirects]]
+  from = "https://impact.dih.earth/*"
+  to = "https://impact.warondisease.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://models.dih.earth/*"
+  to = "https://impact.warondisease.org/:splat"
+  status = 301
+  force = true
+
 # Redirects for clean URLs
 [[redirects]]
   from = "/index.html"
