@@ -1113,21 +1113,25 @@ def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str])
 
 def load_citations_from_bib() -> Set[str]:
     """
-    Load citation IDs from all .bib files.
+    Load citation IDs from references.bib and knowledge/appendix/iab-references.bib.
     Returns set of citation keys (e.g., 'recovery-trial-82x-cost-reduction')
+
+    Note: references.bib is auto-generated from knowledge/references.qmd
     """
     citation_ids = set()
 
-    # List of bibliography files to check
+    # Main bibliography file (auto-generated from knowledge/references.qmd)
     bib_files = [
-        "references.bib",
-        "knowledge/appendix/iab-references.bib"
+        ("references.bib", "Auto-generated from knowledge/references.qmd"),
+        ("knowledge/appendix/iab-references.bib", "IAB paper references"),
     ]
 
-    for bib_file in bib_files:
+    total_citations = 0
+    for bib_file, description in bib_files:
         if not os.path.exists(bib_file):
-            print(f"Warning: {bib_file} not found, skipping")
-            continue
+            if bib_file == "references.bib":
+                print(f"Warning: {bib_file} not found")
+            continue  # Skip optional files silently
 
         try:
             with open(bib_file, encoding="utf-8") as f:
@@ -1143,7 +1147,10 @@ def load_citations_from_bib() -> Set[str]:
                 citation_ids.add(citation_id)
                 count += 1
 
-            print(f"  Loaded {count} citations from {bib_file}")
+            if count > 0:
+                print(f"  Loaded {count} citations from {bib_file}")
+                print(f"  ({description})")
+                total_citations += count
 
         except Exception as e:
             print(f"Warning: Failed to parse {bib_file}: {str(e)}\n")

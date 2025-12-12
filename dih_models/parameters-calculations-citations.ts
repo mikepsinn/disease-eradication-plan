@@ -5106,7 +5106,7 @@ export type ParameterName = keyof typeof parameters;
 export const citations: Record<string, Citation> = {
   "3-5-rule": {
         id: "3-5-rule",
-        type: "webpage",
+        type: "article-journal",
         title: "3.5% participation tipping point",
         author: [
           {
@@ -5114,13 +5114,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2020]] },
-        publisher: "Harvard Kennedy School",
+        'container-title': "Harvard Kennedy School",
         URL: "https://www.hks.harvard.edu/centers/carr/publications/35-rule-how-small-minority-can-change-world",
         note: "Harvard Kennedy School, The '3.5% rule': How a small minority can change the world | Chenoweth Research Paper (2020) | BBC Future, 2019, 'The 3.5% rule' | Wikipedia, 3.5% rule",
   },
   "95-pct-diseases-no-treatment": {
         id: "95-pct-diseases-no-treatment",
-        type: "report",
+        type: "article-journal",
         title: "95% of diseases have no effective treatment",
         author: [
           {
@@ -5128,35 +5128,35 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2025]] },
-        publisher: "GAO",
+        'container-title': "GAO",
         URL: "https://www.gao.gov/products/gao-25-106774",
         note: "GAO, 2025, Rare Disease Drugs: FDA Has Steps Underway to Strengthen Coordination | Global Genes, RARE Disease Facts | Note: Only 5% of 7,000+ rare diseases have FDA-approved treatments",
   },
   "acled-active-combat-deaths": {
         id: "acled-active-combat-deaths",
-        type: "webpage",
+        type: "article-journal",
         title: "Active combat deaths annually",
         author: [
           {
-            literal: "ACLED: Global Conflict Surged 2024"
+            literal: "ACLED"
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "ACLED: Global Conflict Surged 2024",
+        'container-title': "ACLED: Global Conflict Surged 2024",
         URL: "https://acleddata.com/2024/12/12/data-shows-global-conflict-surged-in-2024-the-washington-post/",
         note: "ACLED: Global Conflict Surged 2024 | Washington Post via ACLED | ACLED Conflict Index",
   },
   "antidepressant-trial-exclusion-rates": {
         id: "antidepressant-trial-exclusion-rates",
-        type: "webpage",
+        type: "article-journal",
         title: "Antidepressant clinical trial exclusion rates",
         author: [
           {
-            literal: "Zimmerman et al."
+            literal: "NIH"
           },
         ],
         issued: { 'date-parts': [[2015]] },
-        publisher: "Zimmerman et al.",
+        'container-title': "Zimmerman et al.",
         URL: "https://pubmed.ncbi.nlm.nih.gov/26276679/",
         note: "Zimmerman et al., Mayo Clinic Proceedings, 2015 | Preskorn et al., Journal of Psychiatric Practice, 2015 | Wolters Kluwer: Antidepressant Trials Exclude Most Real World Patients",
   },
@@ -5174,7 +5174,7 @@ export const citations: Record<string, Citation> = {
   },
   "average-us-hourly-wage": {
         id: "average-us-hourly-wage",
-        type: "webpage",
+        type: "article-journal",
         title: "Average US hourly wage",
         author: [
           {
@@ -5182,13 +5182,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "BLS",
+        'container-title': "BLS",
         URL: "https://www.bls.gov/news.release/pdf/ocwage.pdf",
         note: "BLS, Occupational Employment and Wages May 2024",
   },
   "bio-clinical-development-2021": {
         id: "bio-clinical-development-2021",
-        type: "webpage",
+        type: "article-journal",
         title: "BIO Clinical Development Success Rates 2011-2020",
         author: [
           {
@@ -5196,13 +5196,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2021]] },
-        publisher: "Biotechnology Innovation Organization (BIO)",
+        'container-title': "Biotechnology Innovation Organization (BIO)",
         URL: "https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf",
         note: "Biotechnology Innovation Organization (BIO), 2021, Clinical Development Success Rates and Contributing Factors 2011-2020",
   },
   "ceo-compensation": {
         id: "ceo-compensation",
-        type: "webpage",
+        type: "article-journal",
         title: "CEO compensation",
         author: [
           {
@@ -5210,26 +5210,26 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "EPI",
+        'container-title': "EPI",
         URL: "https://www.epi.org/blog/ceo-pay-increased-in-2024-and-is-now-281-times-that-of-the-typical-worker-new-epi-landing-page-has-all-the-details/",
         note: "EPI, CEO Pay 2024",
   },
   "chance-of-dying-from-terrorism-1-in-30m": {
         id: "chance-of-dying-from-terrorism-1-in-30m",
-        type: "webpage",
+        type: "article-journal",
         title: "Chance of dying from terrorism statistic",
         author: [
           {
-            literal: "Cato Institute: Terrorism and Immigration Risk Analysis"
+            literal: "Cato Institute"
           },
         ],
-        publisher: "Cato Institute: Terrorism and Immigration Risk Analysis",
+        'container-title': "Cato Institute: Terrorism and Immigration Risk Analysis",
         URL: "https://www.cato.org/policy-analysis/terrorism-immigration-risk-analysis",
         note: "Cato Institute: Terrorism and Immigration Risk Analysis | NBC News: Lightning vs Terrorism",
   },
   "childhood-vaccination-economic-benefits": {
         id: "childhood-vaccination-economic-benefits",
-        type: "report",
+        type: "article-journal",
         title: "Childhood vaccination economic benefits",
         author: [
           {
@@ -5237,13 +5237,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[1994]] },
-        publisher: "CDC MMWR",
+        'container-title': "CDC MMWR",
         URL: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
         note: "CDC MMWR, Childhood Immunizations 1994-2023 | The Lancet, 50 Years of Expanded Programme on Immunization00850-X/fulltext)",
   },
   "childhood-vaccination-roi": {
         id: "childhood-vaccination-roi",
-        type: "report",
+        type: "article-journal",
         title: "Childhood Vaccination (US) ROI",
         author: [
           {
@@ -5251,27 +5251,27 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2017]] },
-        publisher: "CDC",
+        'container-title': "CDC",
         URL: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
         note: "CDC, Link | Vaxopedia, Link",
   },
   "chronic-illness-workforce-productivity-loss": {
         id: "chronic-illness-workforce-productivity-loss",
-        type: "webpage",
+        type: "article-journal",
         title: "Chronic illness workforce productivity loss",
         author: [
           {
-            literal: "Integrated Benefits Institute 2024"
+            literal: "Integrated Benefits Institute"
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "Integrated Benefits Institute 2024",
+        'container-title': "Integrated Benefits Institute 2024",
         URL: "https://www.ibiweb.org/resources/chronic-conditions-in-the-us-workforce-prevalence-trends-and-productivity-impacts",
         note: "Integrated Benefits Institute 2024, Chronic Conditions in US Workforce | One Medical 2024, Study on Chronic Conditions | de Beaumont Foundation 2025, Poll on Chronic Health Conditions",
   },
   "clean-water-sanitation-roi": {
         id: "clean-water-sanitation-roi",
-        type: "webpage",
+        type: "article-journal",
         title: "Clean Water & Sanitation (LMICs) ROI",
         author: [
           {
@@ -5279,7 +5279,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2014]] },
-        publisher: "UN News",
+        'container-title': "UN News",
         URL: "https://news.un.org/en/story/2014/11/484032",
         note: "UN News, Link | WaterAid, Link",
   },
@@ -5297,33 +5297,33 @@ export const citations: Record<string, Citation> = {
   },
   "clinical-trial-cost-per-patient": {
         id: "clinical-trial-cost-per-patient",
-        type: "webpage",
+        type: "article-journal",
         title: "Clinical trial cost per patient (traditional Phase III)",
         author: [
           {
             literal: "ProRelix Research"
           },
         ],
-        publisher: "ProRelix Research",
+        'container-title': "ProRelix Research",
         URL: "https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-what-every-sponsor-needs-to-know/",
         note: "ProRelix Research, Phase-by-Phase Clinical Trial Costs | WithPower, Clinical Trial Cost Per Patient | JAMA, Cost of Bringing a New Drug",
   },
   "clinical-trial-patient-participation-rate": {
         id: "clinical-trial-patient-participation-rate",
-        type: "webpage",
+        type: "article-journal",
         title: "Clinical trial patient participation rate",
         author: [
           {
-            literal: "ACS CAN: Barriers to Clinical Trial Enrollment"
+            literal: "ACS CAN"
           },
         ],
-        publisher: "ACS CAN: Barriers to Clinical Trial Enrollment",
+        'container-title': "ACS CAN: Barriers to Clinical Trial Enrollment",
         URL: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
         note: "ACS CAN: Barriers to Clinical Trial Enrollment | HINTS: Clinical Trial Participation",
   },
   "clinical-trials-puzzle-interactome": {
         id: "clinical-trials-puzzle-interactome",
-        type: "webpage",
+        type: "article-journal",
         title: "Only ~12% of human interactome targeted",
         author: [
           {
@@ -5331,26 +5331,26 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2023]] },
-        publisher: "PMC",
+        'container-title': "PMC",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10749231/",
         note: "PMC, 2023, The Clinical Trials Puzzle",
   },
   "clinicaltrials-gov-enrollment-data-2025": {
         id: "clinicaltrials-gov-enrollment-data-2025",
-        type: "webpage",
+        type: "article-journal",
         title: "ClinicalTrials.gov cumulative enrollment data (2025)",
         author: [
           {
-            literal: "Direct analysis via ClinicalTrials.gov API v2"
+            literal: "Direct analysis via"
           },
         ],
-        publisher: "Direct analysis via ClinicalTrials.gov API v2",
+        'container-title': "Direct analysis via ClinicalTrials.gov API v2",
         URL: "https://clinicaltrials.gov/data-api/api",
         note: "Direct analysis via ClinicalTrials.gov API v2",
   },
   "cs-global-wealth-report-2023": {
         id: "cs-global-wealth-report-2023",
-        type: "webpage",
+        type: "article-journal",
         title: "Credit Suisse Global Wealth Report 2023",
         author: [
           {
@@ -5358,61 +5358,61 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2023]] },
-        publisher: "Credit Suisse/UBS",
+        'container-title': "Credit Suisse/UBS",
         URL: "https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html",
         note: "Credit Suisse/UBS, 2023, Global Wealth Report 2023",
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
-        type: "webpage",
+        type: "article-journal",
         title: "Cost per DALY for Deworming Programs",
         author: [
           {
-            literal: "GiveWell: Cost-Effectiveness in $/DALY for Deworming"
+            literal: "GiveWell"
           },
         ],
-        publisher: "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
+        'container-title': "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
         URL: "https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness",
         note: "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
   },
   "disease-cost-alzheimers-1300b": {
         id: "disease-cost-alzheimers-1300b",
-        type: "legislation",
+        type: "article-journal",
         title: "Annual global economic burden of Alzheimer's and other dementias",
         author: [
           {
-            literal: "WHO: Dementia Fact Sheet"
+            literal: "WHO"
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        publisher: "WHO: Dementia Fact Sheet",
+        'container-title': "WHO: Dementia Fact Sheet",
         URL: "https://www.who.int/news-room/fact-sheets/detail/dementia",
         note: "WHO: Dementia Fact Sheet | Alzheimer's & Dementia: Worldwide Costs 2019",
   },
   "disease-cost-cancer-1800b": {
         id: "disease-cost-cancer-1800b",
-        type: "webpage",
+        type: "article-journal",
         title: "Annual global economic burden of cancer",
         author: [
           {
-            literal: "JAMA Oncology: Global Cost 2020-2050"
+            literal: "JAMA Oncology"
           },
         ],
         issued: { 'date-parts': [[2020]] },
-        publisher: "JAMA Oncology: Global Cost 2020-2050",
+        'container-title': "JAMA Oncology: Global Cost 2020-2050",
         URL: "https://jamanetwork.com/journals/jamaoncology/fullarticle/2801798",
         note: "JAMA Oncology: Global Cost 2020-2050 | Nature: $25T Over 30 Years",
   },
   "disease-cost-diabetes-1500b": {
         id: "disease-cost-diabetes-1500b",
-        type: "webpage",
+        type: "article-journal",
         title: "Annual global economic burden of diabetes",
         author: [
           {
-            literal: "Diabetes Care: Global Economic Burden"
+            literal: "Diabetes Care"
           },
         ],
-        publisher: "Diabetes Care: Global Economic Burden",
+        'container-title': "Diabetes Care: Global Economic Burden",
         URL: "https://diabetesjournals.org/care/article/41/5/963/36522/Global-Economic-Burden-of-Diabetes-in-Adults",
         note: "Diabetes Care: Global Economic Burden | Lancet: Diabetes Economic Burden30100-6/abstract)",
   },
@@ -5422,7 +5422,7 @@ export const citations: Record<string, Citation> = {
         title: "Annual global economic burden of heart disease",
         author: [
           {
-            literal: "Int'l Journal of Cardiology: Global Heart Failure Burden02238-9/abstract)"
+            literal: "Int'l Journal of Cardiology"
           },
         ],
         issued: { 'date-parts': [[2050]] },
@@ -5448,7 +5448,7 @@ export const citations: Record<string, Citation> = {
         title: "Global prevalence of chronic disease",
         author: [
           {
-            literal: "ScienceDaily: GBD 2015 Study"
+            literal: "ScienceDaily"
           },
         ],
         issued: { 'date-parts': [[2015]] },
@@ -5458,29 +5458,29 @@ export const citations: Record<string, Citation> = {
   },
   "disparity-ratio-weapons-vs-cures": {
         id: "disparity-ratio-weapons-vs-cures",
-        type: "webpage",
+        type: "article-journal",
         title: "36:1 disparity ratio of spending on weapons over cures",
         author: [
           {
-            literal: "SIPRI: Military Spending"
+            literal: "SIPRI"
           },
         ],
         issued: { 'date-parts': [[2016]] },
-        publisher: "SIPRI: Military Spending",
+        'container-title': "SIPRI: Military Spending",
         URL: "https://www.sipri.org/commentary/blog/2016/opportunity-cost-world-military-spending",
         note: "SIPRI: Military Spending | PMC: Military vs Healthcare Crowding Out | Congress.gov: Global R&D Landscape",
   },
   "dot-vsl-13-6m": {
         id: "dot-vsl-13-6m",
-        type: "webpage",
+        type: "article-journal",
         title: "DOT Value of Statistical Life (\\$13.6M)",
         author: [
           {
-            literal: "DOT: VSL Guidance 2024"
+            literal: "DOT"
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "DOT: VSL Guidance 2024",
+        'container-title': "DOT: VSL Guidance 2024",
         URL: "https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis",
         note: "DOT: VSL Guidance 2024 | DOT: Economic Values Used in Analysis",
   },
@@ -5516,7 +5516,7 @@ export const citations: Record<string, Citation> = {
         title: "Drug trial success rate from Phase I to approval",
         author: [
           {
-            literal: "Nature Reviews Drug Discovery: Clinical Success Rates"
+            literal: "Nature Reviews Drug Discovery"
           },
         ],
         issued: { 'date-parts': [[2016]] },
@@ -5526,85 +5526,85 @@ export const citations: Record<string, Citation> = {
   },
   "education-investment-economic-multiplier": {
         id: "education-investment-economic-multiplier",
-        type: "webpage",
+        type: "article-journal",
         title: "Education investment economic multiplier (2.1)",
         author: [
           {
-            literal: "EPI: Public Investments Outside Core Infrastructure"
+            literal: "EPI"
           },
         ],
-        publisher: "EPI: Public Investments Outside Core Infrastructure",
+        'container-title': "EPI: Public Investments Outside Core Infrastructure",
         URL: "https://www.epi.org/publication/bp348-public-investments-outside-core-infrastructure/",
         note: "EPI: Public Investments Outside Core Infrastructure | World Bank: Returns to Investment in Education | Freopp: Education ROI Framework",
   },
   "environmental-cost-of-war": {
         id: "environmental-cost-of-war",
-        type: "webpage",
+        type: "article-journal",
         title: "Environmental cost of war (\\$100B annually)",
         author: [
           {
-            literal: "Brown Watson Costs of War: Environmental Cost"
+            literal: "Brown Watson Costs of War"
           },
         ],
-        publisher: "Brown Watson Costs of War: Environmental Cost",
+        'container-title': "Brown Watson Costs of War: Environmental Cost",
         URL: "https://watson.brown.edu/costsofwar/costs/social/environment",
         note: "Brown Watson Costs of War: Environmental Cost | Earth.Org: Environmental Impact of Wars | Transform Defence: Military Spending & Climate",
   },
   "fda-approval-timeline-10-years": {
         id: "fda-approval-timeline-10-years",
-        type: "report",
+        type: "article-journal",
         title: "FDA drug approval timeline",
         author: [
           {
-            literal: "Drugs.com: FDA Drug Approval Process"
+            literal: "Drugs.com"
           },
         ],
-        publisher: "Drugs.com: FDA Drug Approval Process",
+        'container-title': "Drugs.com: FDA Drug Approval Process",
         URL: "https://www.drugs.com/fda-approval-process.html",
         note: "Drugs.com: FDA Drug Approval Process | FDAReview.org: Drug Development & Approval | PMC: Drugs, Devices, FDA Overview",
   },
   "fda-approved-products-20k": {
         id: "fda-approved-products-20k",
-        type: "report",
+        type: "article-journal",
         title: "FDA-approved prescription drug products (20,000+)",
         author: [
           {
             literal: "FDA"
           },
         ],
-        publisher: "FDA",
+        'container-title': "FDA",
         URL: "https://www.fda.gov/media/143704/download",
         note: "FDA, Facts About Generic Drugs",
   },
   "fda-gras-list-count": {
         id: "fda-gras-list-count",
-        type: "report",
+        type: "article-journal",
         title: "FDA GRAS List Count (~570-700)",
         author: [
           {
             literal: "FDA"
           },
         ],
-        publisher: "FDA",
+        'container-title': "FDA",
         URL: "https://www.fda.gov/food/generally-recognized-safe-gras/gras-notice-inventory",
         note: "FDA, GRAS Notice Inventory",
   },
   "givewell-cost-per-life-saved": {
         id: "givewell-cost-per-life-saved",
-        type: "webpage",
+        type: "article-journal",
         title: "GiveWell Cost per Life Saved for Top Charities (2024)",
         author: [
           {
-            literal: "GiveWell: Top Charities"
+            literal: "GiveWell"
           },
         ],
-        publisher: "GiveWell: Top Charities",
+        'container-title': "GiveWell: Top Charities",
         URL: "https://www.givewell.org/charities/top-charities",
         note: "GiveWell: Top Charities | GiveWell: Helen Keller Vitamin A | Our World in Data: Cost-Effectiveness",
   },
   "global-clinical-trials-market-2024": {
         id: "global-clinical-trials-market-2024",
-        type: "webpage",
+        type: "article-journal",
         title: "Global clinical trials market 2024",
         author: [
           {
@@ -5612,39 +5612,39 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "Research and Markets",
+        'container-title': "Research and Markets",
         URL: "https://www.globenewswire.com/news-release/2024/04/19/2866012/0/en/Global-Clinical-Trials-Market-Research-Report-2024-An-83-16-Billion-Market-by-2030-AI-Machine-Learning-and-Blockchain-will-Transform-the-Clinical-Trials-Landscape.html",
         note: "Research and Markets, Global Clinical Trials Market Report 2024 | Precedence Research, Clinical Trials Market Size",
   },
   "global-gov-med-research-spending": {
         id: "global-gov-med-research-spending",
-        type: "report",
+        type: "article-journal",
         title: "Global government medical research spending (\\$67.5B, 2023–2024)",
         author: [
           {
-            literal: "See component country budgets: NIH Budget"
+            literal: "See component country budgets:"
           },
         ],
-        publisher: "See component country budgets: NIH Budget",
+        'container-title': "See component country budgets: NIH Budget",
         URL: "#nih-budget-fy2025",
         note: "See component country budgets: NIH Budget, China R&D, EU Horizon Health",
   },
   "global-government-clinical-trial-spending-estimate": {
         id: "global-government-clinical-trial-spending-estimate",
-        type: "webpage",
+        type: "article-journal",
         title: "Global government spending on interventional clinical trials: ~$3-6 billion/year",
         author: [
           {
             literal: "Applied Clinical Trials"
           },
         ],
-        publisher: "Applied Clinical Trials",
+        'container-title': "Applied Clinical Trials",
         URL: "https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market",
         note: "Applied Clinical Trials | Lancet Global Health30357-0/fulltext)",
   },
   "global-military-spending": {
         id: "global-military-spending",
-        type: "webpage",
+        type: "article-journal",
         title: "Global military spending (\\$2.72T, 2024)",
         author: [
           {
@@ -5652,13 +5652,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2025]] },
-        publisher: "SIPRI",
+        'container-title': "SIPRI",
         URL: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
         note: "SIPRI, 2025, Trends in World Military Expenditure 2024",
   },
   "global-new-drug-approvals-50-annually": {
         id: "global-new-drug-approvals-50-annually",
-        type: "webpage",
+        type: "article-journal",
         title: "Annual number of new drugs approved globally: ~50",
         author: [
           {
@@ -5666,68 +5666,68 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2025]] },
-        publisher: "C&EN",
+        'container-title': "C&EN",
         URL: "https://cen.acs.org/pharmaceuticals/50-new-drugs-received-FDA/103/i2",
         note: "C&EN, 2025, 50 new drugs received FDA approval in 2024 | FDA, Novel Drug Approvals | Note: Average ~50 per year 2018-2024; 32 small molecules + 18 biologics in 2024",
   },
   "global-population-8-billion": {
         id: "global-population-8-billion",
-        type: "legislation",
+        type: "article-journal",
         title: "Global population reaches 8 billion",
         author: [
           {
-            literal: "UN: World Population 8 Billion Nov 15 2022"
+            literal: "UN"
           },
         ],
         issued: { 'date-parts': [[2022]] },
-        publisher: "UN: World Population 8 Billion Nov 15 2022",
+        'container-title': "UN: World Population 8 Billion Nov 15 2022",
         URL: "https://www.un.org/en/desa/world-population-reach-8-billion-15-november-2022",
         note: "UN: World Population 8 Billion Nov 15 2022 | UN: Day of 8 Billion | Wikipedia: Day of Eight Billion",
   },
   "global-trial-participant-capacity": {
         id: "global-trial-participant-capacity",
-        type: "webpage",
+        type: "article-journal",
         title: "Global trial capacity",
         author: [
           {
-            literal: "IQVIA Report: Clinical Trial Subjects Number Drops Due to Decline in COVID-19 Enrollment"
+            literal: "IQVIA Report"
           },
         ],
-        publisher: "IQVIA Report: Clinical Trial Subjects Number Drops Due to Decline in COVID-19 Enrollment",
+        'container-title': "IQVIA Report: Clinical Trial Subjects Number Drops Due to Decline in COVID-19 Enrollment",
         URL: "https://gmdpacademy.org/news/iqvia-report-clinical-trial-subjects-number-drops-due-to-decline-in-covid-19-enrollment/",
         note: "IQVIA Report: Clinical Trial Subjects Number Drops Due to Decline in COVID-19 Enrollment",
   },
   "gtd-terror-attack-deaths": {
         id: "gtd-terror-attack-deaths",
-        type: "webpage",
+        type: "article-journal",
         title: "Terror attack deaths (8,300 annually)",
         author: [
           {
-            literal: "Our World in Data: Terrorism"
+            literal: "Our World in Data"
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "Our World in Data: Terrorism",
+        'container-title': "Our World in Data: Terrorism",
         URL: "https://ourworldindata.org/terrorism",
         note: "Our World in Data: Terrorism | Global Terrorism Index 2024 | START Global Terrorism Database | Our World in Data: Terrorism Deaths",
   },
   "healthcare-investment-economic-multiplier": {
         id: "healthcare-investment-economic-multiplier",
-        type: "webpage",
+        type: "article-journal",
         title: "Healthcare investment economic multiplier (1.8)",
         author: [
           {
-            literal: "PMC: California Universal Health Care"
+            literal: "PMC"
           },
         ],
         issued: { 'date-parts': [[2022]] },
-        publisher: "PMC: California Universal Health Care",
+        'container-title': "PMC: California Universal Health Care",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5954824/",
         note: "PMC: California Universal Health Care | CEPR: Government Investment | PMC: Health Sector Investment & Growth | ODI: Fiscal Multipliers Review",
   },
   "human-genome-and-genetic-editing": {
         id: "human-genome-and-genetic-editing",
-        type: "webpage",
+        type: "article-journal",
         title: "Human Genome Project and CRISPR Discovery",
         author: [
           {
@@ -5735,13 +5735,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2003]] },
-        publisher: "NHGRI",
+        'container-title': "NHGRI",
         URL: "https://www.genome.gov/11006929/2003-release-international-consortium-completes-hgp",
         note: "NHGRI, International Consortium Completes Human Genome Project | Nobel Prize, The Nobel Prize in Chemistry 2020 | Note: HGP cost ~$2.7B; CRISPR discovered by Doudna & Charpentier in 2012",
   },
   "icbl-ottawa-treaty": {
         id: "icbl-ottawa-treaty",
-        type: "webpage",
+        type: "article-journal",
         title: "International Campaign to Ban Landmines (ICBL) - Ottawa Treaty (1997)",
         author: [
           {
@@ -5749,13 +5749,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[1997]] },
-        publisher: "ICRC",
+        'container-title': "ICRC",
         URL: "https://www.icrc.org/en/doc/resources/documents/article/other/57jpjn.htm",
         note: "ICRC, Ottawa Treaty History | Wikipedia, International Campaign to Ban Landmines | Nobel Prize, 1997 Peace Prize | UN Press, ICBL Press Conference 1999 | Landmine Monitor, Mine Action Funding",
   },
   "icd-10-code-count": {
         id: "icd-10-code-count",
-        type: "report",
+        type: "article-journal",
         title: "ICD-10 Code Count (~14,000)",
         author: [
           {
@@ -5763,67 +5763,67 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        publisher: "WHO",
+        'container-title': "WHO",
         URL: "https://icd.who.int/browse10/2019/en",
         note: "WHO, ICD-10 Browser",
   },
   "industry-vs-government-trial-spending-split": {
         id: "industry-vs-government-trial-spending-split",
-        type: "webpage",
+        type: "article-journal",
         title: "Industry vs. Government Clinical Trial Spending Split (90/10)",
         author: [
           {
             literal: "Applied Clinical Trials"
           },
         ],
-        publisher: "Applied Clinical Trials",
+        'container-title': "Applied Clinical Trials",
         URL: "https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market",
         note: "Applied Clinical Trials | TCTMD",
   },
   "infrastructure-investment-economic-multiplier": {
         id: "infrastructure-investment-economic-multiplier",
-        type: "webpage",
+        type: "article-journal",
         title: "Infrastructure investment economic multiplier (1.6)",
         author: [
           {
-            literal: "World Bank: Infrastructure Investment as Stimulus"
+            literal: "World Bank"
           },
         ],
         issued: { 'date-parts': [[2022]] },
-        publisher: "World Bank: Infrastructure Investment as Stimulus",
+        'container-title': "World Bank: Infrastructure Investment as Stimulus",
         URL: "https://blogs.worldbank.org/en/ppps/effectiveness-infrastructure-investment-fiscal-stimulus-what-weve-learned",
         note: "World Bank: Infrastructure Investment as Stimulus | Global Infrastructure Hub: Fiscal Multiplier | CEPR: Government Investment | Richmond Fed: Infrastructure Spending",
   },
   "life-expectancy-gains-smoking-reduction": {
         id: "life-expectancy-gains-smoking-reduction",
-        type: "webpage",
+        type: "article-journal",
         title: "Contribution of smoking reduction to life expectancy gains",
         author: [
           {
-            literal: "PMC: Benefits Smoking Cessation Longevity"
+            literal: "PMC"
           },
         ],
         issued: { 'date-parts': [[2012]] },
-        publisher: "PMC: Benefits Smoking Cessation Longevity",
+        'container-title': "PMC: Benefits Smoking Cessation Longevity",
         URL: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1447499/",
         note: "PMC: Benefits Smoking Cessation Longevity | CDC: Estimating Benefits Smoking Reductions | AJPM: Benefits Quitting Different Ages00217-4/fulltext) | NEJM: 21st-Century Hazards & Benefits",
   },
   "life-expectancy-increase-pre-1962": {
         id: "life-expectancy-increase-pre-1962",
-        type: "webpage",
+        type: "article-journal",
         title: "Claim of linear 4-year life expectancy increase from 1890-1960",
         author: [
           {
-            literal: "Our World in Data: Life Expectancy"
+            literal: "Our World in Data"
           },
         ],
-        publisher: "Our World in Data: Life Expectancy",
+        'container-title': "Our World in Data: Life Expectancy",
         URL: "https://ourworldindata.org/life-expectancy",
         note: "Our World in Data: Life Expectancy | WHO: Global Health Estimates",
   },
   "lobbying-spend-defense": {
         id: "lobbying-spend-defense",
-        type: "webpage",
+        type: "article-journal",
         title: "Lobbying Spend (Defense)",
         author: [
           {
@@ -5831,53 +5831,53 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "OpenSecrets",
+        'container-title': "OpenSecrets",
         URL: "https://www.opensecrets.org/federal-lobbying/industries/summary?cycle=2024&id=D",
         note: "OpenSecrets, 2024, Defense Lobbying",
   },
   "lobbyist-statistics-dc": {
         id: "lobbyist-statistics-dc",
-        type: "webpage",
+        type: "article-journal",
         title: "Lobbyist statistics for Washington D.C.",
         author: [
           {
-            literal: "OpenSecrets: Lobbying in US"
+            literal: "OpenSecrets"
           },
         ],
-        publisher: "OpenSecrets: Lobbying in US",
+        'container-title': "OpenSecrets: Lobbying in US",
         URL: "https://en.wikipedia.org/wiki/Lobbying_in_the_United_States",
         note: "OpenSecrets: Lobbying in US | OpenSecrets: Revolving Door | Citizen.org: Revolving Congress | ProPublica: 281 Lobbyists Trump Admin",
   },
   "longevity-escape-velocity": {
         id: "longevity-escape-velocity",
-        type: "webpage",
+        type: "article-journal",
         title: "Longevity Escape Velocity (LEV) - Maximum Human Life Extension Potential",
         author: [
           {
-            literal: "Wikipedia: Longevity Escape Velocity"
+            literal: "Wikipedia"
           },
         ],
-        publisher: "Wikipedia: Longevity Escape Velocity",
+        'container-title': "Wikipedia: Longevity Escape Velocity",
         URL: "https://en.wikipedia.org/wiki/Longevity_escape_velocity",
         note: "Wikipedia: Longevity Escape Velocity | PMC: Escape Velocity - Why Life Extension Matters Now | Popular Mechanics: Can Science Cure Death? | Diamandis: Longevity Escape Velocity",
   },
   "lost-human-capital-war-cost": {
         id: "lost-human-capital-war-cost",
-        type: "webpage",
+        type: "article-journal",
         title: "Lost human capital due to war (\\$270B annually)",
         author: [
           {
-            literal: "Think by Numbers: War Costs $74"
+            literal: "Think by Numbers"
           },
         ],
         issued: { 'date-parts': [[2021]] },
-        publisher: "Think by Numbers: War Costs $74",
+        'container-title': "Think by Numbers: War Costs $74",
         URL: "<https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/>",
         note: "Think by Numbers: War Costs $74,259/Lifetime | WEF: War Violence Costs $5/Day | PubMed: Economic Value DALYs Violence",
   },
   "measles-vaccination-roi": {
         id: "measles-vaccination-roi",
-        type: "webpage",
+        type: "article-journal",
         title: "Measles Vaccination ROI",
         author: [
           {
@@ -5885,7 +5885,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "MDPI Vaccines",
+        'container-title': "MDPI Vaccines",
         URL: "https://www.mdpi.com/2076-393X/12/11/1210",
         note: "MDPI Vaccines, 2024, Health and Economic Benefits of US Measles and Rubella Control | Taylor & Francis, 2024, Economic Evaluation of Second MCV Dose",
   },
@@ -5895,7 +5895,7 @@ export const citations: Record<string, Citation> = {
         title: "Medical research lives saved annually (4.2 million)",
         author: [
           {
-            literal: "ScienceDaily: Physical Activity Prevents 4M Deaths"
+            literal: "ScienceDaily"
           },
         ],
         issued: { 'date-parts': [[2020]] },
@@ -5905,7 +5905,7 @@ export const citations: Record<string, Citation> = {
   },
   "mental-health-burden": {
         id: "mental-health-burden",
-        type: "webpage",
+        type: "article-journal",
         title: "Mental health global burden",
         author: [
           {
@@ -5913,26 +5913,26 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2022]] },
-        publisher: "World Health Organization",
+        'container-title': "World Health Organization",
         URL: "https://www.who.int/news/item/28-09-2001-the-world-health-report-2001-mental-disorders-affect-one-in-four-people",
         note: "World Health Organization, 2022, Mental Health Fact Sheet",
   },
   "military-spending-economic-multiplier": {
         id: "military-spending-economic-multiplier",
-        type: "webpage",
+        type: "article-journal",
         title: "Military spending economic multiplier (0.6)",
         author: [
           {
-            literal: "Mercatus: Defense Spending and Economy"
+            literal: "Mercatus"
           },
         ],
-        publisher: "Mercatus: Defense Spending and Economy",
+        'container-title': "Mercatus: Defense Spending and Economy",
         URL: "https://www.mercatus.org/research/research-papers/defense-spending-and-economy",
         note: "Mercatus: Defense Spending and Economy | CEPR: WWII Spending Multipliers | RAND: Defense Spending Economic Growth",
   },
   "nih-clinical-trials-spending-pct-3-3": {
         id: "nih-clinical-trials-spending-pct-3-3",
-        type: "webpage",
+        type: "article-journal",
         title: "NIH spending on clinical trials: ~3.3%",
         author: [
           {
@@ -5940,79 +5940,79 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2023]] },
-        publisher: "Bentley et al.",
+        'container-title': "Bentley et al.",
         URL: "https://www.fiercebiotech.com/biotech/nih-spending-clinical-trials-reached-81b-over-decade",
         note: "Bentley et al., 2023 | Fierce Biotech: NIH Spending",
   },
   "patient-willingness-clinical-trials": {
         id: "patient-willingness-clinical-trials",
-        type: "webpage",
+        type: "article-journal",
         title: "Patient willingness to participate in clinical trials",
         author: [
           {
-            literal: "Trials: Patients' Willingness Survey"
+            literal: "Trials"
           },
         ],
-        publisher: "Trials: Patients' Willingness Survey",
+        'container-title': "Trials: Patients' Willingness Survey",
         URL: "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3",
         note: "Trials: Patients' Willingness Survey | Applied Clinical Trials: Patient Participation | PMC: Study Design Factors",
   },
   "pharma-drug-revenue-average": {
         id: "pharma-drug-revenue-average",
-        type: "webpage",
+        type: "article-journal",
         title: "Average lifetime revenue per successful drug",
         author: [
           {
-            literal: "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext)"
+            literal: "Value in Health"
           },
         ],
-        publisher: "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext)",
+        'container-title': "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext)",
         URL: "https://www.valueinhealthjournal.com/article/S1098-3015(24",
         note: "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext) | ScienceDirect: Sales Revenues FDA Drugs",
   },
   "pharma-roi-current": {
         id: "pharma-roi-current",
-        type: "webpage",
+        type: "article-journal",
         title: "Pharmaceutical R&D return on investment (ROI)",
         author: [
           {
-            literal: "Deloitte: Measuring Pharmaceutical Innovation 2025"
+            literal: "Deloitte"
           },
         ],
         issued: { 'date-parts': [[2025]] },
-        publisher: "Deloitte: Measuring Pharmaceutical Innovation 2025",
+        'container-title': "Deloitte: Measuring Pharmaceutical Innovation 2025",
         URL: "https://www.deloitte.com/ch/en/Industries/life-sciences-health-care/research/measuring-return-from-pharmaceutical-innovation.html",
         note: "Deloitte: Measuring Pharmaceutical Innovation 2025 | Deloitte 2023: Pharma R&D ROI Falls | HIT Consultant: 13-Year Low",
   },
   "phase-3-cost-per-patient-113k": {
         id: "phase-3-cost-per-patient-113k",
-        type: "webpage",
+        type: "article-journal",
         title: "Phase 3 cost per patient",
         author: [
           {
             literal: "JAMA Internal Medicine"
           },
         ],
-        publisher: "JAMA Internal Medicine",
+        'container-title': "JAMA Internal Medicine",
         URL: "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287",
         note: "JAMA Internal Medicine, Clinical Trial Cost Breakdown",
   },
   "phase-3-cost-per-trial-range": {
         id: "phase-3-cost-per-trial-range",
-        type: "webpage",
+        type: "article-journal",
         title: "Phase 3 cost per trial range",
         author: [
           {
             literal: "SofproMed"
           },
         ],
-        publisher: "SofproMed",
+        'container-title': "SofproMed",
         URL: "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost",
         note: "SofproMed, How Much Does a Clinical Trial Cost | CBO, Research and Development in the Pharmaceutical Industry",
   },
   "polio-vaccination-roi": {
         id: "polio-vaccination-roi",
-        type: "report",
+        type: "article-journal",
         title: "Polio Vaccination ROI",
         author: [
           {
@@ -6020,67 +6020,67 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        publisher: "WHO",
+        'container-title': "WHO",
         URL: "https://www.who.int/news-room/feature-stories/detail/sustaining-polio-investments-offers-a-high-return",
         note: "WHO, 2019, Sustaining Polio Investments Offers a High Return",
   },
   "post-1962-drug-approval-drop": {
         id: "post-1962-drug-approval-drop",
-        type: "report",
+        type: "article-journal",
         title: "Post-1962 drop in new drug approvals",
         author: [
           {
-            literal: "Think by Numbers: How Many Lives Does FDA Save?"
+            literal: "Think by Numbers"
           },
         ],
-        publisher: "Think by Numbers: How Many Lives Does FDA Save?",
+        'container-title': "Think by Numbers: How Many Lives Does FDA Save?",
         URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
         note: "Think by Numbers: How Many Lives Does FDA Save? | Wikipedia: Kefauver-Harris Amendment | PMC: Lost Medicines",
   },
   "pre-1962-drug-costs-timeline": {
         id: "pre-1962-drug-costs-timeline",
-        type: "report",
+        type: "article-journal",
         title: "Pre-1962 drug development costs and timeline",
         author: [
           {
-            literal: "Think by Numbers: How Many Lives Does FDA Save?"
+            literal: "Think by Numbers"
           },
         ],
         issued: { 'date-parts': [[1962]] },
-        publisher: "Think by Numbers: How Many Lives Does FDA Save?",
+        'container-title': "Think by Numbers: How Many Lives Does FDA Save?",
         URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
         note: "Think by Numbers: How Many Lives Does FDA Save? | Wikipedia: Cost of Drug Development | STAT: 1962 Law Slowed Development",
   },
   "pre-1962-physician-trials": {
         id: "pre-1962-physician-trials",
-        type: "report",
+        type: "article-journal",
         title: "Pre-1962 physician-led clinical trials",
         author: [
           {
-            literal: "Think by Numbers: How Many Lives Does FDA Save?"
+            literal: "Think by Numbers"
           },
         ],
         issued: { 'date-parts': [[1966]] },
-        publisher: "Think by Numbers: How Many Lives Does FDA Save?",
+        'container-title': "Think by Numbers: How Many Lives Does FDA Save?",
         URL: "https://thinkbynumbers.org/health/how-many-net-lives-does-the-fda-save/",
         note: "Think by Numbers: How Many Lives Does FDA Save? | FDA: Drug Efficacy Study Implementation | NAS: Drug Efficacy Study 1966-1969",
   },
   "psychological-impact-war-cost": {
         id: "psychological-impact-war-cost",
-        type: "webpage",
+        type: "article-journal",
         title: "Psychological impact of war cost (\\$100B annually)",
         author: [
           {
-            literal: "PubMed: Economic Burden of PTSD"
+            literal: "PubMed"
           },
         ],
-        publisher: "PubMed: Economic Burden of PTSD",
+        'container-title': "PubMed: Economic Burden of PTSD",
         URL: "https://pubmed.ncbi.nlm.nih.gov/35485933/",
         note: "PubMed: Economic Burden of PTSD | VA News: Study Economic Burden | PMC: Mental Health Costs Armed Conflicts",
   },
   "qaly-value": {
         id: "qaly-value",
-        type: "webpage",
+        type: "article-journal",
         title: "Value per QALY (standard economic value)",
         author: [
           {
@@ -6088,105 +6088,106 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "ICER",
+        'container-title': "ICER",
         URL: "https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf",
         note: "ICER, Reference Case",
   },
   "recovery-cost-500": {
         id: "recovery-cost-500",
-        type: "webpage",
+        type: "article-journal",
         title: "RECOVERY Trial Cost per Patient",
         author: [
           {
-            literal: "Oren Cass"
+            family: "Oren Cass",
+            given: "Manhattan Institute"
           },
         ],
         issued: { 'date-parts': [[2023]] },
-        publisher: "Oren Cass",
+        'container-title': "Oren Cass",
         URL: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
         note: "Oren Cass, Manhattan Institute, 2023, Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs",
   },
   "recovery-trial-82x-cost-reduction": {
         id: "recovery-trial-82x-cost-reduction",
-        type: "webpage",
+        type: "article-journal",
         title: "RECOVERY trial 82× cost reduction",
         author: [
           {
-            literal: "Manhattan Institute: Slow Costly Trials"
+            literal: "Manhattan Institute"
           },
         ],
-        publisher: "Manhattan Institute: Slow Costly Trials",
+        'container-title': "Manhattan Institute: Slow Costly Trials",
         URL: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
         note: "Manhattan Institute: Slow Costly Trials | PMC: Establishing RECOVERY at Scale",
   },
   "smallpox-eradication-roi": {
         id: "smallpox-eradication-roi",
-        type: "webpage",
+        type: "article-journal",
         title: "Smallpox Eradication ROI",
         author: [
           {
             literal: "CSIS"
           },
         ],
-        publisher: "CSIS",
+        'container-title': "CSIS",
         URL: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
         note: "CSIS, Smallpox Eradication Model: Global Cooperation | PMC3720047, Link",
   },
   "sugar-subsidies-cost": {
         id: "sugar-subsidies-cost",
-        type: "report",
+        type: "article-journal",
         title: "Annual cost of U.S. sugar subsidies",
         author: [
           {
-            literal: "GAO: Sugar Program"
+            literal: "GAO"
           },
         ],
-        publisher: "GAO: Sugar Program",
+        'container-title': "GAO: Sugar Program",
         URL: "https://www.gao.gov/products/gao-24-106144",
         note: "GAO: Sugar Program | Heritage: US Sugar Program | AEI: $4B Sugar Subsidies",
   },
   "swiss-military-budget-0-7-pct-gdp": {
         id: "swiss-military-budget-0-7-pct-gdp",
-        type: "webpage",
+        type: "article-journal",
         title: "Swiss military budget as percentage of GDP",
         author: [
           {
-            literal: "World Bank: Military Expenditure % GDP Switzerland"
+            literal: "World Bank"
           },
         ],
-        publisher: "World Bank: Military Expenditure % GDP Switzerland",
+        'container-title': "World Bank: Military Expenditure % GDP Switzerland",
         URL: "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=CH",
         note: "World Bank: Military Expenditure % GDP Switzerland | Avenir Suisse: Defense Spending | Trading Economics: Switzerland Military Expenditure",
   },
   "swiss-vs-us-gdp-per-capita": {
         id: "swiss-vs-us-gdp-per-capita",
-        type: "webpage",
+        type: "article-journal",
         title: "Switzerland vs. US GDP per capita comparison",
         author: [
           {
-            literal: "World Bank: Switzerland GDP Per Capita"
+            literal: "World Bank"
           },
         ],
-        publisher: "World Bank: Switzerland GDP Per Capita",
+        'container-title': "World Bank: Switzerland GDP Per Capita",
         URL: "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=CH",
         note: "World Bank: Switzerland GDP Per Capita | Trading Economics: Switzerland GDP Per Capita PPP | TheGlobalEconomy: USA GDP Per Capita PPP",
   },
   "thalidomide-scandal": {
         id: "thalidomide-scandal",
-        type: "webpage",
+        type: "article-journal",
         title: "Thalidomide scandal: worldwide cases and mortality",
         author: [
           {
             literal: "Wikipedia"
           },
         ],
-        publisher: "Wikipedia",
+        'container-title': "Wikipedia",
         URL: "https://en.wikipedia.org/wiki/Thalidomide_scandal",
         note: "Wikipedia, Thalidomide scandal",
   },
   "thalidomide-survivors-health": {
         id: "thalidomide-survivors-health",
-        type: "webpage",
+        type: "article-journal",
         title: "Health and quality of life of Thalidomide survivors as they age",
         author: [
           {
@@ -6194,39 +6195,39 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        publisher: "PLOS One",
+        'container-title': "PLOS One",
         URL: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0210222",
         note: "PLOS One, 2019, The health and quality of life of Thalidomide survivors as they age",
   },
   "trial-costs-fda-study": {
         id: "trial-costs-fda-study",
-        type: "report",
+        type: "article-journal",
         title: "Trial Costs, FDA Study",
         author: [
           {
             literal: "FDA Study via NCBI"
           },
         ],
-        publisher: "FDA Study via NCBI",
+        'container-title': "FDA Study via NCBI",
         URL: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/",
         note: "FDA Study via NCBI, Link",
   },
   "ucdp-state-violence-deaths": {
         id: "ucdp-state-violence-deaths",
-        type: "webpage",
+        type: "article-journal",
         title: "State violence deaths annually",
         author: [
           {
-            literal: "UCDP: Uppsala Conflict Data Program"
+            literal: "UCDP"
           },
         ],
-        publisher: "UCDP: Uppsala Conflict Data Program",
+        'container-title': "UCDP: Uppsala Conflict Data Program",
         URL: "https://ucdp.uu.se/",
         note: "UCDP: Uppsala Conflict Data Program | Wikipedia: UCDP | Our World in Data: Armed Conflict Deaths",
   },
   "unhcr-refugee-support-cost": {
         id: "unhcr-refugee-support-cost",
-        type: "webpage",
+        type: "article-journal",
         title: "UNHCR average refugee support cost",
         author: [
           {
@@ -6234,53 +6235,53 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "CGDev",
+        'container-title': "CGDev",
         URL: "https://www.cgdev.org/blog/costs-hosting-refugees-oecd-countries-and-why-uk-outlier",
         note: "CGDev, Costs of Hosting Refugees in OECD Countries | UNHCR/World Bank, Global Cost of Refugee Inclusion",
   },
   "unpaid-caregiver-hours-economic-value": {
         id: "unpaid-caregiver-hours-economic-value",
-        type: "webpage",
+        type: "article-journal",
         title: "Unpaid caregiver hours and economic value",
         author: [
           {
-            literal: "AARP 2023"
+            literal: "AARP"
           },
         ],
         issued: { 'date-parts': [[2023]] },
-        publisher: "AARP 2023",
+        'container-title': "AARP 2023",
         URL: "https://www.aarp.org/caregiving/financial-legal/info-2023/unpaid-caregivers-provide-billions-in-care.html",
         note: "AARP 2023, Unpaid Care Report | Bureau of Labor Statistics 2023-2024, Unpaid Eldercare | National Alliance for Caregiving, Caregiver Statistics",
   },
   "us-census-world-population-1960": {
         id: "us-census-world-population-1960",
-        type: "webpage",
+        type: "article-journal",
         title: "Historical world population estimates",
         author: [
           {
             literal: "US Census Bureau"
           },
         ],
-        publisher: "US Census Bureau",
+        'container-title': "US Census Bureau",
         URL: "https://www.census.gov/data/tables/time-series/demo/international-programs/historical-est-worldpop.html",
         note: "US Census Bureau, Historical Estimates of World Population",
   },
   "us-chronic-disease-spending": {
         id: "us-chronic-disease-spending",
-        type: "report",
+        type: "article-journal",
         title: "U.S. chronic disease healthcare spending",
         author: [
           {
             literal: "CDC"
           },
         ],
-        publisher: "CDC",
+        'container-title': "CDC",
         URL: "https://www.cdc.gov/chronic-disease/data-research/facts-stats/index.html",
         note: "CDC, Chronic Disease Data",
   },
   "us-military-budget-3-5-pct-gdp": {
         id: "us-military-budget-3-5-pct-gdp",
-        type: "webpage",
+        type: "article-journal",
         title: "US military budget as percentage of GDP",
         author: [
           {
@@ -6288,13 +6289,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "Statista",
+        'container-title': "Statista",
         URL: "https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/",
         note: "Statista, Military spending as percent of GDP | SIPRI, Trends in World Military Expenditure 2024",
   },
   "us-post-wwii-military-spending-cut": {
         id: "us-post-wwii-military-spending-cut",
-        type: "webpage",
+        type: "article-journal",
         title: "US military spending reduction after WWII",
         author: [
           {
@@ -6302,13 +6303,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2020]] },
-        publisher: "Wikipedia",
+        'container-title': "Wikipedia",
         URL: "https://en.wikipedia.org/wiki/Demobilization_of_United_States_Armed_Forces_after_World_War_II",
         note: "Wikipedia, Demobilization After WWII | American Progress, Historical Perspective on Defense Budgets | St. Louis Fed, Which War Saw the Highest Defense Spending? | US Government Spending, Defense Spending History",
   },
   "us-voter-population": {
         id: "us-voter-population",
-        type: "webpage",
+        type: "article-journal",
         title: "Number of registered or eligible voters in the U.S.",
         author: [
           {
@@ -6316,13 +6317,13 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "US Census Bureau",
+        'container-title': "US Census Bureau",
         URL: "https://www.census.gov/newsroom/press-releases/2025/2024-presidential-election-voting-registration-tables.html",
         note: "US Census Bureau, 2024 Voting and Registration | US EAC, 2024 Election Survey Report",
   },
   "veteran-healthcare-cost-projections": {
         id: "veteran-healthcare-cost-projections",
-        type: "webpage",
+        type: "article-journal",
         title: "Veteran healthcare cost projections",
         author: [
           {
@@ -6330,27 +6331,27 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2026]] },
-        publisher: "VA",
+        'container-title': "VA",
         URL: "https://department.va.gov/wp-content/uploads/2025/06/2026-Budget-in-Brief.pdf",
         note: "VA, FY 2026 Budget Submission | CBO, Veterans' Disability Compensation | American Legion, VA budget tops $400B for 2025",
   },
   "vitamin-a-cost-per-daly": {
         id: "vitamin-a-cost-per-daly",
-        type: "webpage",
+        type: "article-journal",
         title: "Cost per DALY for Vitamin A Supplementation",
         author: [
           {
-            literal: "PLOS ONE: Cost-effectiveness of \"Golden Mustard\" for Treating Vitamin A Deficiency in India (2010)"
+            literal: "PLOS ONE"
           },
         ],
         issued: { 'date-parts': [[2010]] },
-        publisher: "PLOS ONE: Cost-effectiveness of \"Golden Mustard\" for Treating Vitamin A Deficiency in India (2010)",
+        'container-title': "PLOS ONE: Cost-effectiveness of \"Golden Mustard\" for Treating Vitamin A Deficiency in India (2010)",
         URL: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0012046",
         note: "PLOS ONE: Cost-effectiveness of \"Golden Mustard\" for Treating Vitamin A Deficiency in India (2010) | PLOS ONE: Cost-effectiveness of Vitamin A supplementation in Sub-Saharan Africa (2022)",
   },
   "warren-buffett-career-average-return-20-pct": {
         id: "warren-buffett-career-average-return-20-pct",
-        type: "webpage",
+        type: "article-journal",
         title: "Warren Buffett's career average investment return",
         author: [
           {
@@ -6358,40 +6359,41 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2025]] },
-        publisher: "CNBC",
+        'container-title': "CNBC",
         URL: "https://www.cnbc.com/2025/05/05/warren-buffetts-return-tally-after-60-years-5502284percent.html",
         note: "CNBC, Warren Buffett's return tally after 60 years: 5,502,284% | SlickCharts, Berkshire Hathaway Returns by Year",
   },
   "who-cost-effectiveness-threshold": {
         id: "who-cost-effectiveness-threshold",
-        type: "webpage",
+        type: "article-journal",
         title: "Cost-effectiveness threshold ($50,000/QALY)",
         author: [
           {
             literal: "PMC"
           },
         ],
-        publisher: "PMC",
+        'container-title': "PMC",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/",
         note: "PMC, Country-Level Cost-Effectiveness Thresholds | WHO, WHO-CHOICE Methods Update",
   },
   "who-daily-deaths": {
         id: "who-daily-deaths",
-        type: "report",
+        type: "article-journal",
         title: "150,000 deaths per day from all causes",
         author: [
           {
-            literal: "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150"
+            family: "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150",
+            given: "000 per day | WHO"
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150",
+        'container-title': "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150",
         URL: "https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death",
         note: "Based on WHO Global Health Estimates showing ~55 million annual deaths / 365 days = ~150,000 per day | WHO, 2024, The top 10 causes of death",
   },
   "who-global-health-estimates-2024": {
         id: "who-global-health-estimates-2024",
-        type: "webpage",
+        type: "article-journal",
         title: "WHO Global Health Estimates 2024",
         author: [
           {
@@ -6399,20 +6401,20 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2024]] },
-        publisher: "World Health Organization",
+        'container-title': "World Health Organization",
         URL: "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates",
         note: "World Health Organization, 2024, Global Health Estimates: Life expectancy and leading causes of death and disability",
   },
   "world-bank-trade-disruption-conflict": {
         id: "world-bank-trade-disruption-conflict",
-        type: "webpage",
+        type: "article-journal",
         title: "World Bank trade disruption cost from conflict",
         author: [
           {
             literal: "World Bank"
           },
         ],
-        publisher: "World Bank",
+        'container-title': "World Bank",
         URL: "https://www.worldbank.org/en/topic/trade/publication/trading-away-from-conflict",
         note: "World Bank, Trading Away from Conflict | NBER/World Bank, Collateral Damage: Trade Disruption | World Bank, Impacts on Global Trade of Current Trade Disputes",
   }

@@ -27,61 +27,66 @@ from dih_models.reference_parser import (
 )
 
 
-def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, references_path: Path = None):
+def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, available_refs: set = None, references_path: Path = None, export_all: bool = True):
     """
-    Generate references.bib BibTeX file from external parameters.
-
-    Extracts unique citations from parameters with source_type="external"
-    and creates BibTeX entries using actual citation data from references.qmd.
+    Generate references.bib BibTeX file from references.qmd.
 
     Args:
-        parameters: Dict of parameter metadata
+        parameters: Dict of parameter metadata (used when export_all=False)
         output_path: Path to write references.bib
         available_refs: Set of valid reference IDs from references.qmd (optional)
         references_path: Path to references.qmd file for detailed citation data
+        export_all: If True, export ALL entries from references.qmd (default: True)
+                   If False, only export citations used in parameters
     """
     # Parse detailed citation data from references.qmd
     citation_data = {}
     if references_path and references_path.exists():
         citation_data = parse_references_qmd_detailed(references_path)
 
-    # Collect unique source_refs from external parameters
+    # Collect citations based on export_all setting
     citations = set()
-    for param_name, param_data in parameters.items():
-        value = param_data["value"]
-        if hasattr(value, "source_type"):
-            source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
-            if source_type_str == "external":
-                if hasattr(value, "source_ref") and value.source_ref:
-                    # Convert ReferenceID enum to string value
-                    source_ref = value.source_ref
-                    if hasattr(source_ref, 'value'):
-                        # It's an enum, get the actual string value
-                        source_ref = source_ref.value
-                    else:
-                        # It's already a string
-                        source_ref = str(source_ref)
 
-                    # Skip internal document references (contain / or .qmd)
-                    if '/' in source_ref or '.qmd' in source_ref:
-                        continue
+    if export_all:
+        # Export ALL entries from references.qmd (single source of truth)
+        citations = set(citation_data.keys())
+    else:
+        # Legacy behavior: Only export citations used in parameters with source_type="external"
+        for param_name, param_data in parameters.items():
+            value = param_data["value"]
+            if hasattr(value, "source_type"):
+                source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+                if source_type_str == "external":
+                    if hasattr(value, "source_ref") and value.source_ref:
+                        # Convert ReferenceID enum to string value
+                        source_ref = value.source_ref
+                        if hasattr(source_ref, 'value'):
+                            # It's an enum, get the actual string value
+                            source_ref = source_ref.value
+                        else:
+                            # It's already a string
+                            source_ref = str(source_ref)
 
-                    # Optionally skip missing references
-                    if available_refs and source_ref not in available_refs:
-                        continue
+                        # Skip internal document references (contain / or .qmd)
+                        if '/' in source_ref or '.qmd' in source_ref:
+                            continue
 
-                    citations.add(source_ref)
+                        # Optionally skip missing references
+                        if available_refs and source_ref not in available_refs:
+                            continue
+
+                        citations.add(source_ref)
 
     # Generate BibTeX entries
     content = []
     content.append("% AUTO-GENERATED FILE - DO NOT EDIT")
-    content.append("% Generated from dih_models/parameters.py and knowledge/references.qmd")
+    content.append("% Generated from knowledge/references.qmd (single source of truth)")
     content.append("")
-    content.append("% This file contains BibTeX references for all external data sources")
-    content.append("% used in the economic analysis of a 1% treaty and decentralized framework for drug assessment.")
+    content.append("% This file contains BibTeX entries for ALL citations in references.qmd")
+    content.append("% For editing citations, add/modify entries in knowledge/references.qmd")
     content.append("")
-    content.append("% Extracted from knowledge/references.qmd with author, year, source, and URL data.")
-    content.append("% For manual curation or DOI-based enrichment, see references.qmd")
+    content.append("% Extracted citation data: author, year, source, URL, and notes.")
+    content.append("% Re-generate by running: python scripts/generate-everything-parameters-variables-calculations-references.py")
     content.append("")
 
     entries_with_data = 0
@@ -130,6 +135,21 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
                     content.append(f"  journal = {{{source_escaped}}},")
                 elif entry_type in ['book', 'report', 'techreport']:
                     content.append(f"  publisher = {{{source_escaped}}},")
+
+            # Additional BibTeX fields from metadata dict (volume, number, pages, DOI, address)
+            metadata = ref_data.get('metadata', {})
+            if metadata:
+                if 'volume' in metadata:
+                    content.append(f"  volume = {{{metadata['volume']}}},")
+                if 'number' in metadata:
+                    content.append(f"  number = {{{metadata['number']}}},")
+                if 'pages' in metadata:
+                    pages = metadata['pages'].replace('--', '-')  # Normalize page ranges
+                    content.append(f"  pages = {{{pages}}},")
+                if 'doi' in metadata:
+                    content.append(f"  doi = {{{metadata['doi']}}},")
+                if 'address' in metadata:
+                    content.append(f"  address = {{{metadata['address']}}},")
 
             # URL (with proper escaping)
             if url:

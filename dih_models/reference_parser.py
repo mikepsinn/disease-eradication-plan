@@ -79,18 +79,19 @@ def parse_references_qmd_detailed(references_path: Path) -> Dict[str, Dict[str, 
 
             # Save PREVIOUS reference before starting new one
             if current_id and current_ref:
-                # Determine entry type based on source
-                source_lower = current_ref['source'].lower()
-                if any(word in source_lower for word in ['journal', 'nature', 'science', 'lancet']):
-                    current_ref['type'] = 'article'
-                elif any(word in source_lower for word in ['congress.gov', 'law', 'act', 'bill']):
-                    current_ref['type'] = 'legislation'
-                elif any(word in source_lower for word in ['cdc', 'who', 'gao', 'fda', 'nih']):
-                    current_ref['type'] = 'report'
-                elif any(word in source_lower for word in ['book', 'press', 'publisher']):
-                    current_ref['type'] = 'book'
-                elif 'university' in source_lower or 'project' in source_lower:
-                    current_ref['type'] = 'techreport'
+                # Only infer type from source if type wasn't explicitly set
+                if current_ref['type'] == 'misc' and current_ref['source']:
+                    source_lower = current_ref['source'].lower()
+                    if any(word in source_lower for word in ['journal', 'nature', 'science', 'lancet']):
+                        current_ref['type'] = 'article'
+                    elif any(word in source_lower for word in ['congress.gov', 'law', 'act', 'bill']):
+                        current_ref['type'] = 'legislation'
+                    elif any(word in source_lower for word in ['cdc', 'who', 'gao', 'fda', 'nih']):
+                        current_ref['type'] = 'report'
+                    elif any(word in source_lower for word in ['book', 'press', 'publisher']):
+                        current_ref['type'] = 'book'
+                    elif 'university' in source_lower or 'project' in source_lower:
+                        current_ref['type'] = 'techreport'
 
                 references[current_id] = current_ref
 
@@ -115,6 +116,45 @@ def parse_references_qmd_detailed(references_path: Path) -> Dict[str, Dict[str, 
         if current_id and current_ref and line.startswith('- **') and line.endswith('**'):
             title = line[4:-2].strip()
             current_ref['title'] = title
+            i += 1
+            continue
+
+        # Match structured property lines: "property: value" (no indentation required)
+        # Must contain colon but not be a blockquote or markdown title
+        if current_id and current_ref and ':' in line and not line.strip().startswith('>') and not line.strip().startswith('-'):
+            # Extract property name and value
+            stripped = line.strip()
+            if ':' in stripped:
+                # Split on first colon only (URLs contain colons)
+                prop_name, prop_value = stripped.split(':', 1)
+                prop_name = prop_name.strip().lower()
+                prop_value = prop_value.strip()
+
+                # Map property names to reference fields
+                if prop_name == 'title':
+                    current_ref['title'] = prop_value
+                elif prop_name == 'type':
+                    current_ref['type'] = prop_value
+                elif prop_name == 'author':
+                    current_ref['author'] = prop_value
+                elif prop_name == 'year':
+                    current_ref['year'] = prop_value
+                elif prop_name == 'journal':
+                    current_ref['source'] = prop_value  # Use source field for journal
+                elif prop_name == 'publisher':
+                    if not current_ref['source']:  # Only set if source not already set
+                        current_ref['source'] = prop_value
+                elif prop_name == 'url':
+                    current_ref['url'] = prop_value
+                    current_ref['urls'].append(prop_value)
+                elif prop_name == 'note':
+                    current_ref['note'] = prop_value
+                elif prop_name in ['volume', 'number', 'pages', 'doi', 'address']:
+                    # Store additional BibTeX fields in a metadata dict
+                    if 'metadata' not in current_ref:
+                        current_ref['metadata'] = {}
+                    current_ref['metadata'][prop_name] = prop_value
+
             i += 1
             continue
 
