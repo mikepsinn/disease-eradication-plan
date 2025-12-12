@@ -66,6 +66,8 @@ def main():
                        help='Output JSON file path (also saved to surveys/ for version control)')
     parser.add_argument('--usage-only', action='store_true',
                        help='Only run usage analysis and exit')
+    parser.add_argument('--comprehensive', action='store_true',
+                       help='Include all parameter types (default: focused on calculated params + inputs)')
     args = parser.parse_args()
 
     print("=" * 80)
@@ -123,7 +125,8 @@ def main():
         parameters=parameters,
         sensitivity_data=sensitivity_data,
         usage_data=usage_data,
-        top_n=args.top_n
+        top_n=args.top_n,
+        focused=not args.comprehensive  # Default to focused mode
     )
 
     # Count total questions

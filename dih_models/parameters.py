@@ -3341,7 +3341,7 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     source_ref="",
     source_type="calculated",
     description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
-    display_name="DIH Annual Funding for Pragmatic Clinical Trials",
+    display_name="Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",
     latex=r"ResearchFunding = \$27.18B - \$2.718B - \$2.718B = \$21.744B",

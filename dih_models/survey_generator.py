@@ -575,12 +575,77 @@ def _calculate_parameter_impact(
     return affected_outcomes[:5]
 
 
+def select_validation_parameters(
+    parameters: Dict[str, Dict[str, Any]],
+    usage_data: Dict[str, Any] = None
+) -> Dict[str, Dict[str, Any]]:
+    """
+    Select only calculated parameters (in economics.qmd) and their fundamental inputs.
+
+    This creates a focused survey on the model's actual calculations
+    rather than all data sources, significantly reducing survey length.
+
+    Args:
+        parameters: All parameters from parameters.py
+        usage_data: Document usage data (to filter calculated params)
+
+    Returns:
+        Filtered dict with only calculated params and their inputs
+    """
+    try:
+        from dih_models.uncertainty import get_fundamental_inputs
+    except ImportError:
+        # Fallback: just use direct inputs if uncertainty module not available
+        def get_fundamental_inputs(params, param_name):
+            value = params[param_name].get("value")
+            if hasattr(value, "inputs") and value.inputs:
+                return value.inputs
+            return []
+
+    selected = {}
+
+    # First, identify all calculated parameters in economics.qmd
+    calculated_params = []
+    for param_name, param_data in parameters.items():
+        value = param_data.get("value")
+        if not hasattr(value, "source_type"):
+            continue
+
+        source_type_str = str(value.source_type.value) if hasattr(value.source_type, 'value') else str(value.source_type)
+
+        # Only include calculated parameters that are in economics.qmd
+        if source_type_str == "calculated":
+            if not usage_data or param_name in usage_data:
+                selected[param_name] = param_data
+                calculated_params.append(param_name)
+
+    # Now find all fundamental inputs to these calculated parameters
+    inputs_needed = set()
+    for calc_param in calculated_params:
+        try:
+            fundamental_inputs = get_fundamental_inputs(parameters, calc_param)
+            inputs_needed.update(fundamental_inputs)
+        except Exception:
+            # If we can't get fundamental inputs, at least include direct inputs
+            value = parameters[calc_param].get("value")
+            if hasattr(value, "inputs") and value.inputs:
+                inputs_needed.update(value.inputs)
+
+    # Add all needed inputs to selected
+    for input_param in inputs_needed:
+        if input_param in parameters and input_param not in selected:
+            selected[input_param] = parameters[input_param]
+
+    return selected
+
+
 def generate_survey(
     parameters: Dict[str, Dict[str, Any]],
     sensitivity_data: Dict[str, Any] = None,
     usage_data: Dict[str, Any] = None,
     top_n: int = 50,
-    calculate_sensitivity: bool = True
+    calculate_sensitivity: bool = True,
+    focused: bool = True
 ) -> Dict[str, Any]:
     """
     Generate complete economist validation survey from parameters.
@@ -591,10 +656,19 @@ def generate_survey(
         usage_data: From document usage analysis
         top_n: Number of parameters to include (by importance)
         calculate_sensitivity: If True, calculate sensitivity on-demand (default)
+        focused: If True, only include calculated params and their inputs (default True)
 
     Returns:
         Survey structure with all questions, organized by module
     """
+    # Filter to focused set if requested (calculated params + their inputs only)
+    if focused:
+        parameters_to_rank = select_validation_parameters(parameters, usage_data)
+        print(f"      Focused mode: {len(parameters_to_rank)} parameters (calculated + inputs)")
+    else:
+        parameters_to_rank = parameters
+        print(f"      Comprehensive mode: {len(parameters_to_rank)} parameters (all types)")
+
     generator = QuestionGenerator(sensitivity_data, usage_data, parameters)
 
     # Load reference metadata from references.qmd
@@ -605,7 +679,7 @@ def generate_survey(
 
     # Rank parameters by importance with dependency-aware ordering
     # (inputs come before outputs that use them)
-    ranked_params = rank_parameters_with_dependencies(parameters, sensitivity_data, usage_data)
+    ranked_params = rank_parameters_with_dependencies(parameters_to_rank, sensitivity_data, usage_data)
 
     # Select top N for survey
     selected_params = ranked_params[:top_n]
