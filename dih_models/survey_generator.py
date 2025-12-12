@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from enum import Enum
 
 from dih_models.formatting import format_parameter_value
+from dih_models.reference_parser import parse_references_qmd_detailed
 
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
@@ -596,6 +597,12 @@ def generate_survey(
     """
     generator = QuestionGenerator(sensitivity_data, usage_data, parameters)
 
+    # Load reference metadata from references.qmd
+    references_path = Path("knowledge/references.qmd")
+    citation_data = {}
+    if references_path.exists():
+        citation_data = parse_references_qmd_detailed(references_path)
+
     # Rank parameters by importance with dependency-aware ordering
     # (inputs come before outputs that use them)
     ranked_params = rank_parameters_with_dependencies(parameters, sensitivity_data, usage_data)
@@ -741,7 +748,33 @@ def generate_survey(
 
         # Add type-specific context
         if source_type_str == "external":
-            context_card["data_source"] = getattr(value, "source_ref", "")
+            source_ref = getattr(value, "source_ref", "")
+
+            # Resolve source_ref to full citation data
+            citation = None
+            if source_ref:
+                # Extract reference ID from enum or string
+                ref_id = source_ref.value if hasattr(source_ref, 'value') else str(source_ref)
+
+                # Look up citation data
+                if ref_id in citation_data:
+                    citation = citation_data[ref_id]
+
+            # Add citation information to context card
+            if citation:
+                context_card["citation"] = {
+                    "id": citation.get("id", ""),
+                    "title": citation.get("title", ""),
+                    "author": citation.get("author", ""),
+                    "year": citation.get("year", ""),
+                    "source": citation.get("source", ""),
+                    "url": citation.get("url", ""),
+                    "type": citation.get("type", "misc")
+                }
+            else:
+                # Fallback to raw source_ref if citation not found
+                context_card["data_source"] = str(source_ref)
+
             context_card["peer_reviewed"] = getattr(value, "peer_reviewed", False)
             context_card["confidence"] = getattr(value, "confidence", "medium")
         elif source_type_str == "calculated":
