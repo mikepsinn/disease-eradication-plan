@@ -587,12 +587,12 @@ def generate_typescript_survey(
 
     # Type definitions
     content.append("export type QuestionType =")
-    content.append("  | 'reasonable_estimate'")
-    content.append("  | 'confidence_interval'")
-    content.append("  | 'uncertainty_factors'")
-    content.append("  | 'peer_review'")
-    content.append("  | 'formula_validity'")
-    content.append("  | 'formula_concerns';")
+    content.append("  | 'rating'")
+    content.append("  | 'boolean'")
+    content.append("  | 'text'")
+    content.append("  | 'range'")
+    content.append("  | 'choice'")
+    content.append("  | 'checklist';")
     content.append("")
     content.append("export type SourceType = 'external' | 'calculated' | 'definition';")
     content.append("")
@@ -631,12 +631,14 @@ def generate_typescript_survey(
     content.append("}")
     content.append("")
     content.append("export interface SurveyMetadata {")
+    content.append("  title: string;")
     content.append("  version: string;")
-    content.append("  generated: string;")
-    content.append("  totalParameters: number;")
-    content.append("  totalQuestions: number;")
+    content.append("  versionDate: string;")
+    content.append("  parameterCount: number;")
     content.append("  estimatedTimeMinutes: number;")
-    content.append("  surveyType: string;")
+    content.append("  conductedBy: string;")
+    content.append("  contact: string;")
+    content.append("  dataUsage: string;")
     content.append("}")
     content.append("")
     content.append("export interface EconomistSurvey {")
@@ -650,47 +652,63 @@ def generate_typescript_survey(
     content.append("// Survey Data")
     content.append("// ============================================================================")
     content.append("")
+    # Calculate total questions
+    total_questions = sum(len(p['questions']) for p in survey_data['parameters'])
+
     content.append("export const economistSurvey: EconomistSurvey = {")
     content.append("  metadata: {")
+    content.append(f"    title: {_format_typescript_value(survey_data['metadata']['title'])},")
     content.append(f"    version: {_format_typescript_value(survey_data['metadata']['version'])},")
-    content.append(f"    generated: {_format_typescript_value(survey_data['metadata']['generated'])},")
-    content.append(f"    totalParameters: {survey_data['metadata']['total_parameters']},")
-    content.append(f"    totalQuestions: {survey_data['metadata']['total_questions']},")
+    content.append(f"    versionDate: {_format_typescript_value(survey_data['metadata']['version_date'])},")
+    content.append(f"    parameterCount: {survey_data['metadata']['parameter_count']},")
     content.append(f"    estimatedTimeMinutes: {survey_data['metadata']['estimated_time_minutes']},")
-    content.append(f"    surveyType: {_format_typescript_value(survey_data['metadata']['survey_type'])},")
+    content.append(f"    conductedBy: {_format_typescript_value(survey_data['metadata']['conducted_by'])},")
+    content.append(f"    contact: {_format_typescript_value(survey_data['metadata']['contact'])},")
+    content.append(f"    dataUsage: {_format_typescript_value(survey_data['metadata']['data_usage'])},")
     content.append("  },")
     content.append("  parameters: [")
 
     # Generate each parameter
     for i, param in enumerate(survey_data['parameters']):
         comma = "," if i < len(survey_data['parameters']) - 1 else ""
+        context = param.get('context_card', {})
+
         content.append("    {")
         content.append(f"      rank: {param['rank']},")
-        content.append(f"      name: {_format_typescript_value(param['name'])},")
+        content.append(f"      name: {_format_typescript_value(param['parameter_name'])},")
         content.append(f"      displayName: {_format_typescript_value(param['display_name'])},")
-        content.append(f"      value: {_format_typescript_value(param['value'])},")
 
-        if param.get('unit'):
-            content.append(f"      unit: {_format_typescript_value(param['unit'])},")
+        # Extract value and other fields from context_card or impact
+        impact = param.get('impact', {})
+        value = impact.get('value', 0)
+        unit = impact.get('unit', '')
+        formatted_value = impact.get('formatted_value', str(value))
 
-        content.append(f"      formattedValue: {_format_typescript_value(param['formatted_value'])},")
-        content.append(f"      sourceType: {_format_typescript_value(param['source_type'])},")
+        content.append(f"      value: {_format_typescript_value(value)},")
+
+        if unit:
+            content.append(f"      unit: {_format_typescript_value(unit)},")
+
+        content.append(f"      formattedValue: {_format_typescript_value(formatted_value)},")
+        content.append(f"      sourceType: {_format_typescript_value(context.get('parameter_type', 'definition'))},")
 
         if param.get('description'):
             content.append(f"      description: {_format_typescript_value(param['description'])},")
+        elif context.get('what'):
+            content.append(f"      description: {_format_typescript_value(context['what'])},")
 
-        if param.get('formula'):
-            content.append(f"      formula: {_format_typescript_value(param['formula'])},")
+        if impact.get('formula'):
+            content.append(f"      formula: {_format_typescript_value(impact['formula'])},")
 
-        if param.get('latex'):
-            content.append(f"      latex: {_format_typescript_value(param['latex'])},")
+        if impact.get('latex'):
+            content.append(f"      latex: {_format_typescript_value(impact['latex'])},")
 
-        if param.get('source_ref'):
-            content.append(f"      sourceRef: {_format_typescript_value(param['source_ref'])},")
+        if impact.get('source_ref'):
+            content.append(f"      sourceRef: {_format_typescript_value(impact['source_ref'])},")
 
         # Citation
-        if param.get('citation'):
-            citation = param['citation']
+        citation = context.get('citation')
+        if citation:
             content.append("      citation: {")
             content.append(f"        id: {_format_typescript_value(citation['id'])},")
             content.append(f"        title: {_format_typescript_value(citation['title'])},")
@@ -709,9 +727,9 @@ def generate_typescript_survey(
         for j, question in enumerate(param['questions']):
             q_comma = "," if j < len(param['questions']) - 1 else ""
             content.append("        {")
-            content.append(f"          id: {_format_typescript_value(question['id'])},")
-            content.append(f"          type: {_format_typescript_value(question['type'])},")
-            content.append(f"          question: {_format_typescript_value(question['question'])},")
+            content.append(f"          id: {_format_typescript_value(question['question_id'])},")
+            content.append(f"          type: {_format_typescript_value(question['question_type'])},")
+            content.append(f"          question: {_format_typescript_value(question['question_text'])},")
 
             if question.get('options'):
                 content.append("          options: [")
@@ -720,11 +738,7 @@ def generate_typescript_survey(
                     content.append(f"            {_format_typescript_value(option)}{opt_comma}")
                 content.append("          ],")
 
-            if question.get('allow_multiple'):
-                content.append(f"          allowMultiple: {_format_typescript_value(question['allow_multiple'])},")
-
-            if question.get('allow_other'):
-                content.append(f"          allowOther: {_format_typescript_value(question['allow_other'])},")
+            # Note: The JSON doesn't have allow_multiple or allow_other, so we skip those
 
             content.append(f"        }}{q_comma}")
         content.append("      ],")
@@ -777,7 +791,7 @@ def generate_typescript_survey(
     content.append(" * Calculate completion percentage")
     content.append(" */")
     content.append("export function getCompletionPercentage(currentRank: number): number {")
-    content.append("  const total = economistSurvey.metadata.totalParameters;")
+    content.append("  const total = economistSurvey.metadata.parameterCount;")
     content.append("  return Math.round((currentRank / total) * 100);")
     content.append("}")
     content.append("")
@@ -805,8 +819,8 @@ def generate_typescript_survey(
         f.write("\n".join(content))
 
     print(f"[OK] Generated {output_path}")
-    print(f"     {survey_data['metadata']['total_parameters']} parameters")
-    print(f"     {survey_data['metadata']['total_questions']} questions")
+    print(f"     {survey_data['metadata']['parameter_count']} parameters")
+    print(f"     {total_questions} questions")
     print(f"     {survey_data['metadata']['estimated_time_minutes']} minutes estimated")
 
     # Copy to Next.js project if it exists

@@ -2663,7 +2663,7 @@
     {
       "rank": 29,
       "parameter_name": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
-      "display_name": "DIH Annual Funding for Pragmatic Clinical Trials",
+      "display_name": "Annual Funding for Pragmatic Clinical Trials",
       "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
       "importance_score": 23.9,
       "importance_breakdown": {
@@ -2691,7 +2691,7 @@
       "questions": [
         {
           "question_id": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: **DIH Annual Funding for Pragmatic Clinical Trials**?\n\n**Current result:** $21.7B\n**Calculation:** TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
+          "question_text": "Is the calculation methodology sound for: **Annual Funding for Pragmatic Clinical Trials**?\n\n**Current result:** $21.7B\n**Calculation:** TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -2803,7 +2803,7 @@
         },
         {
           "question_id": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• DIH Annual Funding for Pragmatic Clinical Trials: $21.7B",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• Annual Funding for Pragmatic Clinical Trials: $21.7B",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -2817,7 +2817,7 @@
               "DFDA_ANNUAL_OPEX",
               "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"
             ],
-            "inputs_readable": "Total Annual Decentralized Framework for Drug Assessment Operational Costs, DIH Annual Funding for Pragmatic Clinical Trials",
+            "inputs_readable": "Total Annual Decentralized Framework for Drug Assessment Operational Costs, Annual Funding for Pragmatic Clinical Trials",
             "formula": "MEDICAL_RESEARCH_FUNDING - DFDA_OPEX",
             "formula_readable": "Medical Research Funding - Dfda Opex"
           },
