@@ -572,10 +572,10 @@
 "dih_treasury_to_medical_research_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_to_medical_research_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Annual funding for pragmatic clinical trials\
-  \ (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)\
-  \ | Calculated from 3 inputs | ✓ High confidence | Formula: TREATY_FUNDING - BOND_PAYOUT\
-  \ - IAB_POLITICAL_INCENTIVE_FUNDING | Unit: USD/year | Click to view details, calculation\
-  \ & sources\">$21.7B</a>"
+  \ (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political\
+  \ incentive mechanism) | Calculated from 3 inputs | ✓ High confidence | Formula:\
+  \ TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING | Unit: USD/year\
+  \ | Click to view details, calculation & sources\">$21.7B</a>"
 "dih_treasury_to_medical_research_annual_latex": "$$\nResearchFunding = \\$27.18B\
   \ - \\$2.718B - \\$2.718B = \\$21.744B\n$$"
 "dih_treasury_trial_subsidies_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dih_treasury_trial_subsidies_annual\"\
@@ -2213,17 +2213,18 @@
   \ Unit: USD | Click to view details, calculation & sources\">$10M</a>"
 "value_of_statistical_life_cite": "@dot-vsl-13-6m"
 "victory_bond_annual_payout": "<span class=\"parameter-definition\" title=\"Annual\
-  \ VICTORY bond payout (treaty funding × bond percentage) | Unit: USD/year | Core\
-  \ definition\">$2.72B</span>"
+  \ VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage) | Unit:\
+  \ USD/year | Core definition\">$2.72B</span>"
 "victory_bond_annual_payout_latex": "$$\nVictory_{annual} = Funding_{ann} \\times\
   \ Funding = \\$27.18B \\times 10.0\\% = \\$2.72B\n$$"
 "victory_bond_annual_return_pct": "<span class=\"parameter-definition\" title=\"Annual\
-  \ return percentage for VICTORY bondholders | Unit: rate | Core definition\">272%</span>"
+  \ return percentage for VICTORY Incentive Alignment Bondholders | Unit: rate | Core\
+  \ definition\">272%</span>"
 "victory_bond_annual_return_pct_latex": "$$\nReturn = \\$2.718B / \\$1B = 2.718 =\
   \ 271.8\\%\n$$"
 "victory_bond_funding_pct": "<span class=\"parameter-definition\" title=\"Percentage\
-  \ of captured dividend funding VICTORY bonds (10%) | Unit: rate | Core definition\"\
-  >10%</span>"
+  \ of captured dividend funding VICTORY Incentive Alignment Bonds (10%) | Unit: rate\
+  \ | Core definition\">10%</span>"
 "vitamin_a_cost_per_daly": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-vitamin_a_cost_per_daly\"\
   \ class=\"parameter-link\" data-source-ref=\"vitamin-a-cost-per-daly\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Cost per DALY for vitamin A supplementation\

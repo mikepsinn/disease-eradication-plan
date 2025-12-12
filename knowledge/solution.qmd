@@ -61,7 +61,7 @@ Of that {{< var treaty_annual_funding >}}, here's where it goes:
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
-| VICTORY Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the people who funded the campaign |
+| VICTORY Incentive Alignment Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the people who funded the campaign |
 | Political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned via [IABs](solution/incentive-alignment-bonds.qmd) |
 | Patient Subsidies for Pragmatic Clinical Trials | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually cure diseases |
 
@@ -219,7 +219,7 @@ Insurance companies have been trying to achieve this for fifty years but couldn'
 
 Show them the math: Every cure prevents decades of treatment costs. Every prevention program avoids future claims. Every patient in a trial is a patient not in an emergency room.
 
-They'll buy VICTORY bonds because healthy people are profitable people, and profitable people make insurance executives happy, and happy insurance executives buy bonds that make them richer.
+They'll buy VICTORY Incentive Alignment Bonds because healthy people are profitable people, and profitable people make insurance executives happy, and happy insurance executives buy bonds that make them richer.
 
 It's a virtuous cycle, which is Latin for "everyone wins by not dying."
 

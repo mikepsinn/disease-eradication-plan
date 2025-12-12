@@ -502,7 +502,7 @@ As cures emerge, public pressure builds. Politicians who supported 1% now suppor
 
 The flywheel spins. Each expansion increases the stakes, which increases the score differential, which makes voting yes even more dominant.
 
-#### The Math for VICTORY Bond Investors
+#### The Math for VICTORY Incentive Alignment Bond Investors
 
 The investors who funded the $1B campaign see:
 
@@ -594,7 +594,7 @@ No. **VICTORY Incentive Alignment Bonds are the specific financial instrument th
 
 However, the instrument has two distinct "engines" inside it. One pays investors to provide the capital. The other pays politicians to provide the policy.
 
-| | Engine 1: The Investor Component<br>(VICTORY Bonds) | Engine 2: The Political Component<br>(The IAB Mechanism) |
+| | Engine 1: The Investor Component<br>(VICTORY Incentive Alignment Bonds) | Engine 2: The Political Component<br>(The IAB Mechanism) |
 |:--|:------------------------------------|:-----------------------------------|
 | **Who's incentivized** | Investors | Politicians |
 | **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers |
@@ -605,9 +605,9 @@ The relationship is complementary:
 
 | Phase | Engine | What It Does |
 |:------|:-----------|:-------------|
-| Pre-Treaty | VICTORY Bonds | Raise capital from investors to fund the campaign |
+| Pre-Treaty | VICTORY Incentive Alignment Bonds | Raise capital from investors to fund the campaign |
 | Pre-Treaty | IAB Mechanism | Shows politicians that supporting the treaty improves their scores |
-| Post-Treaty | VICTORY Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
+| Post-Treaty | VICTORY Incentive Alignment Bonds | Pay investors their {{< var victory_bond_funding_pct >}} of treaty revenue forever |
 | Post-Treaty | IAB Mechanism | Rewards politicians whose countries actually achieve health improvements |
 
 VICTORY Incentive Alignment Bonds get investors to fund the war. The IAB mechanism gets politicians to fight it (and to keep fighting after victory).
@@ -742,7 +742,7 @@ The 1% treaty is the **proof of concept**. The endgame is redirecting *most* of 
 
 That doesn't happen automatically. Once the 1% treaty passes:
 
-- VICTORY Bond investors are satisfied. They're getting {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10%.
+- VICTORY Incentive Alignment Bond investors are satisfied. They're getting {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10%.
 - Defense contractors adapt. They'll accept 1% as a small loss, then lobby to prevent further cuts.
 - Political attention fades. Once the "win" is declared, politicians move on to the next issue.
 - Backlash builds. The military-industrial complex regroups. Attack ads return.

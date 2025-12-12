@@ -8,12 +8,12 @@ from IPython.display import Image as IPImage, display
 
 from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
-dot = graphviz.Digraph(comment='VICTORY Bond Money Flow', format='png')
+dot = graphviz.Digraph(comment='VICTORY Incentive Alignment Bond Money Flow', format='png')
 dot.attr(rankdir='LR', size='12,8')
 setup_graphviz_style(dot)
 
 with dot.subgraph(name='cluster_machine') as machine:
-    machine.attr(label='The VICTORY Bond Money Machine', style='dashed')
+    machine.attr(label='The VICTORY Incentive Alignment Bond Money Machine', style='dashed')
     machine.node('Investors', 'You invest\n$1B')
     machine.node('Campaign', 'Fund AI campaign\n(lobbying + viral)')
     machine.node('Treaty', '1% Treaty passes\n$27B/year redirected')

@@ -80,8 +80,8 @@ Not all leads are equal. Route to the right person:
 
 | Engagement Type | Routed To | SLA (Response Time) |
 |----------------|-----------|-------------------|
-| VICTORY Bond Interest > $100K | Founder | 4 hours |
-| VICTORY Bond Interest < $100K | Finance Lead | 24 hours |
+| VICTORY Incentive Alignment Bond Interest > $100K | Founder | 4 hours |
+| VICTORY Incentive Alignment Bond Interest < $100K | Finance Lead | 24 hours |
 | Partnership Inquiry | Partnerships Lead | 48 hours |
 | Volunteer Interest | Volunteer Coordinator | 72 hours |
 | General Inquiry | Anyone available | 5 days |
@@ -142,7 +142,7 @@ Action 6: Wait 23 days
 Action 7: Send re-engagement email
 ```
 
-##### Sequence 2: VICTORY Bond Prospect → Committed Investor
+##### Sequence 2: VICTORY Incentive Alignment Bond Prospect → Committed Investor
 
 **Goal:** Move from "interesting" to "wired the money"
 
@@ -361,7 +361,7 @@ Actions:
 ```
 AUTOMATION CONFIG
 
-Name: "High-Value VICTORY Bond Lead - Alert Founder"
+Name: "High-Value VICTORY Incentive Alignment Bond Lead - Alert Founder"
 
 Trigger: When record created in table "VICTORY Incentive Alignment Bonds"
 Condition: IF {Amount Invested} > 100000
@@ -381,7 +381,7 @@ Actions:
 
   2. Send email
      To: founder@warondisease.com
-     Subject: 🚨 URGENT: $100K+ VICTORY Bond Interest
+     Subject: 🚨 URGENT: $100K+ VICTORY Incentive Alignment Bond Interest
      Body: [Same as Slack message]
 
   3. Create calendar event

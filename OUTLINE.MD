@@ -225,7 +225,7 @@
 
   - Core Treasury Allocations (dynamically adjusted by the crowd):
     - Patient treatment subsidies (the majority of funds, creating a market for trials)
-    - VICTORY bond returns (10% of all inflows guaranteed)
+    - VICTORY Incentive Alignment Bond returns (10% of all inflows guaranteed)
     - Expansion campaigns (growing from 1% to 2% to 5%)
 
     - Community campaigns (e.g., bounties for specific platform features)
@@ -517,7 +517,7 @@
 
 - **The Global Draft: Your Planet Needs You (Whether You Like It or Not)**
   - Universal Service Mandate: Every human is conscripted.
-  - Two Ways to Serve: Fight (participate in trials) or Fund (buy VICTORY bonds).
+  - Two Ways to Serve: Fight (participate in trials) or Fund (buy VICTORY Incentive Alignment Bonds).
   - Draft Dodgers: The philosophical cowards of the 21st century who think dying of preventable disease is a "personal choice."
   - The Referendum as Draft Registration: Voting "Yes" is enlisting.
 - **How to Structure a War Without Creating a Military-Industrial Complex**
@@ -556,7 +556,7 @@
 - **Insurance Companies: Profit from Health**
   - Healthy people = fewer claims = higher profits
   - Each cure = billions in reduced payouts
-  - VICTORY bonds fit their investment portfolios
+  - VICTORY Incentive Alignment Bonds fit their investment portfolios
   - First movers gain competitive advantage
   - Math is simple: adapt or face bankruptcy from rising medical costs
 - **Pharmaceutical Companies: Revenue Model Inverts**
@@ -573,7 +573,7 @@
   - Super PACs fund treaty supporters
   - Opposition research available against opponents
   - Research centers create district jobs
-  - VICTORY bonds available for blind trusts
+  - VICTORY Incentive Alignment Bonds available for blind trusts
   - Public choice theory: money talks, health or weapons
 - **Billionaires: Returns Plus Reputation**
   - Outperforms Giving Pledge (measurable results)
@@ -815,7 +815,7 @@ $1.22T/year is reasonable for that scope.
 - **Economic Security**
   - Subsidized treatment: Dynamic vouchers for dFDA trials
   - Healthcare access: No more medical bankruptcy
-  - Investment opportunity: VICTORY bonds at 270%+ perpetual
+  - Investment opportunity: VICTORY Incentive Alignment Bonds at 270%+ perpetual
   - Job creation: Research and healthcare jobs
   - Economic growth: From health innovation
 - **Health Returns**
@@ -1017,7 +1017,7 @@ If the answer to these is yes, the idea is viable. If no, the idea is dead. The 
 - **"Wishocracy is mob rule"**
   - Better than oligarch rule. Plus AI advisors prevent poor decisions.
 - **"The powers that be won't allow this"**
-  - Existing power structures can buy VICTORY bonds
+  - Existing power structures can buy VICTORY Incentive Alignment Bonds
   - Incentive alignment beats opposition
 - **"This violates securities law"**
   - Structured as debt instruments with qualified purchaser exemptions

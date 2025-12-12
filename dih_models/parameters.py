@@ -2428,7 +2428,7 @@ TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
 # ---
 # CAMPAIGN COSTS
 # ---
-# Updated to $1B VICTORY bond model: Lobbying $650M + Referendum $300M + Reserve $50M
+# Updated to $1B VICTORY Incentive Alignment Bond model: Lobbying $650M + Referendum $300M + Reserve $50M
 # Tech R&D removed from campaign (post-treaty implementation funded by $27B/year)
 # Legal/ops/partnerships rolled into main campaign categories
 
@@ -2521,7 +2521,7 @@ TREATY_CAMPAIGN_TOTAL_COST = Parameter(
     validation_max=3_000_000_000,  # Ceiling: Full traditional + opposition response
     inputs=["TREATY_CAMPAIGN_BUDGET_REFERENDUM", "TREATY_CAMPAIGN_BUDGET_LOBBYING", "TREATY_CAMPAIGN_BUDGET_RESERVE"],
     compute=lambda ctx: ctx["TREATY_CAMPAIGN_BUDGET_REFERENDUM"] + ctx["TREATY_CAMPAIGN_BUDGET_LOBBYING"] + ctx["TREATY_CAMPAIGN_BUDGET_RESERVE"]
-)  # $1B total campaign cost (all VICTORY bonds)
+)  # $1B total campaign cost (all VICTORY Incentive Alignment Bonds)
 
 # Viral Referendum Scenario Budgets (Tiered Budget Calculations with Increasing Marginal Costs)
 TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE = Parameter(
@@ -3258,7 +3258,7 @@ VICTORY_BOND_FUNDING_PCT = Parameter(
     0.10,
     source_ref="",
     source_type="definition",
-    description="Percentage of captured dividend funding VICTORY bonds (10%)",
+    description="Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)",
     display_name="Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds",
     unit="rate",
     keywords=["10%", "social impact bond", "sib", "impact investing", "pay for success", "investor return", "development impact bond"],
@@ -3268,7 +3268,7 @@ VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
     source_ref="",
     source_type="definition",
-    description="Annual VICTORY bond payout (treaty funding × bond percentage)",
+    description="Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
     display_name="Annual VICTORY Incentive Alignment Bond Payout",
     unit="USD/year",
     formula="TREATY_FUNDING × BOND_PCT",
@@ -3280,7 +3280,7 @@ VICTORY_BOND_ANNUAL_RETURN_PCT = Parameter(
     VICTORY_BOND_ANNUAL_PAYOUT / TREATY_CAMPAIGN_TOTAL_COST,
     source_ref="",
     source_type="definition",
-    description="Annual return percentage for VICTORY bondholders",
+    description="Annual return percentage for VICTORY Incentive Alignment Bondholders",
     display_name="Annual Return Percentage for VICTORY Incentive Alignment Bondholders",
     unit="rate",
     formula="PAYOUT ÷ CAMPAIGN_COST",
@@ -3340,7 +3340,7 @@ DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL = Parameter(
     TREATY_ANNUAL_FUNDING - VICTORY_BOND_ANNUAL_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
     source_ref="",
     source_type="calculated",
-    description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+    description="Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
     display_name="Annual Funding for Pragmatic Clinical Trials",
     unit="USD/year",
     formula="TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING",

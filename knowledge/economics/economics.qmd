@@ -458,7 +458,7 @@ The "ratchet mechanism" isn't just economic gravity. It's engineered through [In
 | 50% | $1.35T | $135B/year | $1.08T/year |
 | 100% | $2.7T | $270B/year | $2.16T/year |
 
-**VICTORY Bond investors** are satisfied at 1% - they're getting {{< var victory_bond_annual_return_pct >}} returns regardless of treaty expansion.
+**VICTORY Incentive Alignment Bond investors** are satisfied at 1% - they're getting {{< var victory_bond_annual_return_pct >}} returns regardless of treaty expansion.
 
 **Politicians**, however, see their IAB-funded rewards **grow with each expansion**. This creates perpetual pressure to increase treaty percentages. By the time you reach 50% redirection, the political incentive pool ($135B/year) exceeds all current global lobbying combined.
 
@@ -1315,7 +1315,7 @@ The {{< var treaty_reduction_pct >}} Treaty financing structure creates a self-f
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
 | **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, dFDA operations |
-| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) for legislators |
 
 Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:

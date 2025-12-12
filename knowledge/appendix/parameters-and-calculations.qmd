@@ -610,11 +610,11 @@ $$
 {{< include ../figures/exceedance-dih_patients_fundable_annually.qmd >}}
 
 
-### DIH Annual Funding for Pragmatic Clinical Trials {#sec-dih_treasury_to_medical_research_annual}
+### Annual Funding for Pragmatic Clinical Trials {#sec-dih_treasury_to_medical_research_annual}
 
 **Value**: $21.7B
 
-Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)
+Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
 
 **Inputs**:
 
@@ -652,7 +652,7 @@ Annual clinical trial patient subsidies (all medical research funds after Decent
 **Inputs**:
 
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-- [DIH Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.7B
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.7B
 
 $$
 TrialSubsidies = \$24.462B - \$0.04B = \$24.422B
@@ -6857,7 +6857,7 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 **Value**: $2.72B
 
-Annual VICTORY bond payout (treaty funding × bond percentage)
+Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
 
 *Core definition*
 
@@ -6866,7 +6866,7 @@ Annual VICTORY bond payout (treaty funding × bond percentage)
 
 **Value**: 272%
 
-Annual return percentage for VICTORY bondholders
+Annual return percentage for VICTORY Incentive Alignment Bondholders
 
 *Core definition*
 
@@ -6875,7 +6875,7 @@ Annual return percentage for VICTORY bondholders
 
 **Value**: 10%
 
-Percentage of captured dividend funding VICTORY bonds (10%)
+Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 
 #### Uncertainty Range
 

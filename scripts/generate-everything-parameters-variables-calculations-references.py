@@ -90,7 +90,7 @@ from dih_models.reference_parser import (
     parse_references_qmd,
     sanitize_bibtex_key,
 )
-from dih_models.typescript_generator import generate_typescript_parameters
+from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
 from dih_models.validation import (
     validate_references,
     validate_calculated_parameters,
@@ -486,6 +486,13 @@ def main():
     print("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
     generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=references_path)
+    print()
+
+    # Generate TypeScript survey file (if survey exists)
+    print("[*] Generating TypeScript survey file...")
+    survey_json = project_root / "_analysis" / "economist-survey.json"
+    ts_survey_output = project_root / "dih_models" / "economist-survey.ts"
+    generate_typescript_survey(survey_json, ts_survey_output)
     print()
 
     # Always generate uncertainty outputs when module is available

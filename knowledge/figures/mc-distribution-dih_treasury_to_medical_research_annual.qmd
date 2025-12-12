@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: DIH Annual Funding for Pragmatic Clinical Trials (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Annual Funding for Pragmatic Clinical Trials (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 1554154842.4688504
 p5 = 19568000000.0
 p50 = 21607688832.547184
 p95 = 23920000000.0
-display_name = "DIH Annual Funding for Pragmatic Clinical Trials"
+display_name = "Annual Funding for Pragmatic Clinical Trials"
 units = "USD/year"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: DIH Annual Funding for Pragmatic Clinical Trials**
+**Simulation Results Summary: Annual Funding for Pragmatic Clinical Trials**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $1.55B |
 | 90% Confidence Interval | [$19.6B, $23.9B] |
 
-*The histogram shows the distribution of DIH Annual Funding for Pragmatic Clinical Trials across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Annual Funding for Pragmatic Clinical Trials across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

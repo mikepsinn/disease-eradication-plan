@@ -22,7 +22,7 @@ But not all of it is available for allocation. First, the automatic deductions:
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
-| [VICTORY Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
+| [VICTORY Incentive Alignment Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
 | [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
 | **Available for Wishocracy** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | What you get to allocate |
 

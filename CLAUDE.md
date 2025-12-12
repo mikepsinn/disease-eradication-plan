@@ -118,7 +118,7 @@ if sys.platform == 'win32':
 TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE  # Clear: Treaty, complete benefits, expected value, 95th percentile
 DFDA_ROI_RD_ONLY                              # Clear: dFDA, R&D savings only
 PERSONAL_LIFE_EXTENSION_YEARS_AGE_30          # Clear: Personal benefit, life extension, for age 30
-VICTORY_BOND_ANNUAL_RETURN_PCT                # Clear: Victory bonds, annual return, percentage
+VICTORY_BOND_ANNUAL_RETURN_PCT                # Clear: VICTORY Incentive Alignment Bonds, annual return, percentage
 ```
 
 ❌ **Bad (ambiguous):**

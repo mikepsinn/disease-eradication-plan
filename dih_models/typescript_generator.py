@@ -544,6 +544,286 @@ def generate_typescript_parameters(
     print()
 
 
+def generate_typescript_survey(
+    survey_json_path: Path,
+    output_path: Path
+):
+    """
+    Generate TypeScript file with economist survey data for Next.js applications.
+
+    Creates a .ts file with:
+    - Type definitions for survey structure
+    - Survey data as typed constants
+    - Helper functions for survey navigation
+    - All metadata from the JSON file
+
+    Args:
+        survey_json_path: Path to economist-survey.json
+        output_path: Path to write the .ts file
+    """
+    import json
+
+    # Load survey JSON
+    if not survey_json_path.exists():
+        print(f"[ERROR] Survey JSON not found: {survey_json_path}")
+        print(f"        Run: python scripts/generate-economist-survey.py --top-n 30")
+        return
+
+    with open(survey_json_path, encoding='utf-8') as f:
+        survey_data = json.load(f)
+
+    content = []
+
+    # Header
+    content.append("// AUTO-GENERATED FILE - DO NOT EDIT")
+    content.append("// Generated from _analysis/economist-survey.json")
+    content.append("// Run: python scripts/generate-economist-survey.py --top-n 30")
+    content.append("")
+    content.append("/**")
+    content.append(" * Economist validation survey data")
+    content.append(" * Programmatically generated questions for parameter validation")
+    content.append(" */")
+    content.append("")
+
+    # Type definitions
+    content.append("export type QuestionType =")
+    content.append("  | 'reasonable_estimate'")
+    content.append("  | 'confidence_interval'")
+    content.append("  | 'uncertainty_factors'")
+    content.append("  | 'peer_review'")
+    content.append("  | 'formula_validity'")
+    content.append("  | 'formula_concerns';")
+    content.append("")
+    content.append("export type SourceType = 'external' | 'calculated' | 'definition';")
+    content.append("")
+    content.append("export interface SurveyQuestion {")
+    content.append("  id: string;")
+    content.append("  type: QuestionType;")
+    content.append("  question: string;")
+    content.append("  options?: string[];")
+    content.append("  allowMultiple?: boolean;")
+    content.append("  allowOther?: boolean;")
+    content.append("}")
+    content.append("")
+    content.append("export interface Citation {")
+    content.append("  id: string;")
+    content.append("  title: string;")
+    content.append("  author?: string;")
+    content.append("  year?: string;")
+    content.append("  source?: string;")
+    content.append("  url?: string;")
+    content.append("}")
+    content.append("")
+    content.append("export interface SurveyParameter {")
+    content.append("  rank: number;")
+    content.append("  name: string;")
+    content.append("  displayName: string;")
+    content.append("  value: number;")
+    content.append("  unit?: string;")
+    content.append("  formattedValue: string;")
+    content.append("  sourceType: SourceType;")
+    content.append("  description?: string;")
+    content.append("  formula?: string;")
+    content.append("  latex?: string;")
+    content.append("  sourceRef?: string;")
+    content.append("  citation?: Citation;")
+    content.append("  questions: SurveyQuestion[];")
+    content.append("}")
+    content.append("")
+    content.append("export interface SurveyMetadata {")
+    content.append("  version: string;")
+    content.append("  generated: string;")
+    content.append("  totalParameters: number;")
+    content.append("  totalQuestions: number;")
+    content.append("  estimatedTimeMinutes: number;")
+    content.append("  surveyType: string;")
+    content.append("}")
+    content.append("")
+    content.append("export interface EconomistSurvey {")
+    content.append("  metadata: SurveyMetadata;")
+    content.append("  parameters: SurveyParameter[];")
+    content.append("}")
+    content.append("")
+
+    # Convert survey data to TypeScript format
+    content.append("// ============================================================================")
+    content.append("// Survey Data")
+    content.append("// ============================================================================")
+    content.append("")
+    content.append("export const economistSurvey: EconomistSurvey = {")
+    content.append("  metadata: {")
+    content.append(f"    version: {_format_typescript_value(survey_data['metadata']['version'])},")
+    content.append(f"    generated: {_format_typescript_value(survey_data['metadata']['generated'])},")
+    content.append(f"    totalParameters: {survey_data['metadata']['total_parameters']},")
+    content.append(f"    totalQuestions: {survey_data['metadata']['total_questions']},")
+    content.append(f"    estimatedTimeMinutes: {survey_data['metadata']['estimated_time_minutes']},")
+    content.append(f"    surveyType: {_format_typescript_value(survey_data['metadata']['survey_type'])},")
+    content.append("  },")
+    content.append("  parameters: [")
+
+    # Generate each parameter
+    for i, param in enumerate(survey_data['parameters']):
+        comma = "," if i < len(survey_data['parameters']) - 1 else ""
+        content.append("    {")
+        content.append(f"      rank: {param['rank']},")
+        content.append(f"      name: {_format_typescript_value(param['name'])},")
+        content.append(f"      displayName: {_format_typescript_value(param['display_name'])},")
+        content.append(f"      value: {_format_typescript_value(param['value'])},")
+
+        if param.get('unit'):
+            content.append(f"      unit: {_format_typescript_value(param['unit'])},")
+
+        content.append(f"      formattedValue: {_format_typescript_value(param['formatted_value'])},")
+        content.append(f"      sourceType: {_format_typescript_value(param['source_type'])},")
+
+        if param.get('description'):
+            content.append(f"      description: {_format_typescript_value(param['description'])},")
+
+        if param.get('formula'):
+            content.append(f"      formula: {_format_typescript_value(param['formula'])},")
+
+        if param.get('latex'):
+            content.append(f"      latex: {_format_typescript_value(param['latex'])},")
+
+        if param.get('source_ref'):
+            content.append(f"      sourceRef: {_format_typescript_value(param['source_ref'])},")
+
+        # Citation
+        if param.get('citation'):
+            citation = param['citation']
+            content.append("      citation: {")
+            content.append(f"        id: {_format_typescript_value(citation['id'])},")
+            content.append(f"        title: {_format_typescript_value(citation['title'])},")
+            if citation.get('author'):
+                content.append(f"        author: {_format_typescript_value(citation['author'])},")
+            if citation.get('year'):
+                content.append(f"        year: {_format_typescript_value(citation['year'])},")
+            if citation.get('source'):
+                content.append(f"        source: {_format_typescript_value(citation['source'])},")
+            if citation.get('url'):
+                content.append(f"        url: {_format_typescript_value(citation['url'])},")
+            content.append("      },")
+
+        # Questions
+        content.append("      questions: [")
+        for j, question in enumerate(param['questions']):
+            q_comma = "," if j < len(param['questions']) - 1 else ""
+            content.append("        {")
+            content.append(f"          id: {_format_typescript_value(question['id'])},")
+            content.append(f"          type: {_format_typescript_value(question['type'])},")
+            content.append(f"          question: {_format_typescript_value(question['question'])},")
+
+            if question.get('options'):
+                content.append("          options: [")
+                for k, option in enumerate(question['options']):
+                    opt_comma = "," if k < len(question['options']) - 1 else ""
+                    content.append(f"            {_format_typescript_value(option)}{opt_comma}")
+                content.append("          ],")
+
+            if question.get('allow_multiple'):
+                content.append(f"          allowMultiple: {_format_typescript_value(question['allow_multiple'])},")
+
+            if question.get('allow_other'):
+                content.append(f"          allowOther: {_format_typescript_value(question['allow_other'])},")
+
+            content.append(f"        }}{q_comma}")
+        content.append("      ],")
+
+        content.append(f"    }}{comma}")
+
+    content.append("  ],")
+    content.append("};")
+    content.append("")
+
+    # Helper functions
+    content.append("// ============================================================================")
+    content.append("// Helper Functions")
+    content.append("// ============================================================================")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Get parameter by rank")
+    content.append(" */")
+    content.append("export function getParameterByRank(rank: number): SurveyParameter | undefined {")
+    content.append("  return economistSurvey.parameters.find(p => p.rank === rank);")
+    content.append("}")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Get parameter by name")
+    content.append(" */")
+    content.append("export function getParameterByName(name: string): SurveyParameter | undefined {")
+    content.append("  return economistSurvey.parameters.find(p => p.name === name);")
+    content.append("}")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Get all parameters of a specific source type")
+    content.append(" */")
+    content.append("export function getParametersByType(sourceType: SourceType): SurveyParameter[] {")
+    content.append("  return economistSurvey.parameters.filter(p => p.sourceType === sourceType);")
+    content.append("}")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Get total number of questions")
+    content.append(" */")
+    content.append("export function getTotalQuestions(): number {")
+    content.append("  return economistSurvey.parameters.reduce((sum, p) => sum + p.questions.length, 0);")
+    content.append("}")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Calculate completion percentage")
+    content.append(" */")
+    content.append("export function getCompletionPercentage(currentRank: number): number {")
+    content.append("  const total = economistSurvey.metadata.totalParameters;")
+    content.append("  return Math.round((currentRank / total) * 100);")
+    content.append("}")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Get questions for a specific parameter")
+    content.append(" */")
+    content.append("export function getQuestionsForParameter(paramName: string): SurveyQuestion[] {")
+    content.append("  const param = getParameterByName(paramName);")
+    content.append("  return param?.questions || [];")
+    content.append("}")
+    content.append("")
+
+    content.append("/**")
+    content.append(" * Check if parameter has citation")
+    content.append(" */")
+    content.append("export function hasCitation(param: SurveyParameter): boolean {")
+    content.append("  return !!param.citation;")
+    content.append("}")
+    content.append("")
+
+    # Write file
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(content))
+
+    print(f"[OK] Generated {output_path}")
+    print(f"     {survey_data['metadata']['total_parameters']} parameters")
+    print(f"     {survey_data['metadata']['total_questions']} questions")
+    print(f"     {survey_data['metadata']['estimated_time_minutes']} minutes estimated")
+
+    # Copy to Next.js project if it exists
+    nextjs_lib = Path("E:/code/dih-neobrutalist/lib")
+    if nextjs_lib.exists() and nextjs_lib.is_dir():
+        dest_path = nextjs_lib / output_path.name
+        shutil.copy2(output_path, dest_path)
+        print(f"[OK] Copied to {dest_path}")
+
+    print()
+    print("Usage in Next.js/React:")
+    print("  import { economistSurvey, getParameterByRank } from './economist-survey';")
+    print("  const param = getParameterByRank(1);")
+    print("  console.log(param.displayName, param.formattedValue);")
+    print()
+
+
 def _generate_parameter_constant(
     param_name: str,
     value_obj: Any,

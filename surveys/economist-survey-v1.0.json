@@ -2664,7 +2664,7 @@
       "rank": 29,
       "parameter_name": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL",
       "display_name": "DIH Annual Funding for Pragmatic Clinical Trials",
-      "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+      "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
       "importance_score": 23.9,
       "importance_breakdown": {
         "sensitivity": 0,
@@ -2677,7 +2677,7 @@
         "top_percent": 9.0
       },
       "context_card": {
-        "what": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+        "what": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
         "parameter_type": "calculated",
         "used_in": [],
         "inputs": [
@@ -2706,7 +2706,7 @@
             "calculation_example": "TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
             "result_value": 21744000000.0,
             "result_formatted": "$21.7B",
-            "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
+            "description": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)",
             "parameter_name": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"
           },
           "required": true,

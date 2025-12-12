@@ -31,7 +31,7 @@
 
 **Current flow**:
 1. Vague intro about aligning incentives
-2. VICTORY bonds mechanism (brief)
+2. VICTORY Incentive Alignment Bonds mechanism (brief)
 3. Stakeholder alignment bullets (casual tone)
 4. Finally: "Here's how IABs actually work" (detailed mechanism)
 
@@ -40,7 +40,7 @@
 2. Explain mechanism architecture in detail
 3. Show comparative static analysis (Senator Smith example)
 4. THEN demonstrate how mechanism applies to each stakeholder type
-5. Conclude with VICTORY bonds as specific implementation
+5. Conclude with VICTORY Incentive Alignment Bonds as specific implementation
 
 ## Priority 3: Expand Dominance Analysis Section (Make it Visual and Compelling)
 
@@ -125,7 +125,7 @@
 - ✅ National health budgets (25× trial capacity without new spending)
 - ✅ International development priorities (scales exponentially vs linearly)
 - ✅ Defense budget allocation (economic multiplier comparison: military 0.5-1.0× vs healthcare 2-3×)
-- ✅ Global health funding mechanisms (self-sustaining through Victory Bonds)
+- ✅ Global health funding mechanisms (self-sustaining through VICTORY Incentive Alignment Bonds)
 - ✅ Implementation pathway (municipal → national → international)
 - ✅ Bottom line for policymakers (cost-dominant, requires only reallocation)
 

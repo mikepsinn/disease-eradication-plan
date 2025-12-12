@@ -12,7 +12,7 @@ As a scientific editor, your task is to format mathematical equations in the pro
 
 3.  **Information Preservation:**
     *   **CRITICAL: DO NOT** remove explanatory text when creating an equation. The goal is to format the math, not delete the description.
-    *   For example, if the text is `- Add 10% VICTORY bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at 270% = 33.3% blended return)`, do not change it. Replacing the parenthetical explanation with only a LaTeX formula loses valuable context like "blended return". If formatting an equation would make the content less informative, do not format it.
+    *   For example, if the text is `- Add 10% VICTORY Incentive Alignment Bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at 270% = 33.3% blended return)`, do not change it. Replacing the parenthetical explanation with only a LaTeX formula loses valuable context like "blended return". If formatting an equation would make the content less informative, do not format it.
 
 4.  **Formatting:**
     *   Use block-level LaTeX (`$$...$$`) for all formatted equations.

@@ -90,12 +90,12 @@ The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds re
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
 | **Pragmatic Clinical Trials & Platform** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, research, platform |
-| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
 #### The Fixed Costs ({{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} = 20%)
 
-- **VICTORY bond returns:** {{< var victory_bond_annual_payout >}} annually ({{< var victory_bond_funding_pct >}} of treaty inflows)
+- **VICTORY Incentive Alignment Bond returns:** {{< var victory_bond_annual_payout >}} annually ({{< var victory_bond_funding_pct >}} of treaty inflows)
 - **IAB political incentives:** {{< var iab_political_incentive_funding_annual >}} annually ({{< var iab_political_incentive_funding_pct >}} of treaty inflows)
 - Both are sacred and untouchable (or the system fails)
 - Automatically distributed via smart contracts

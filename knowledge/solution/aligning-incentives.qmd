@@ -34,7 +34,7 @@ Look at what they're working with:
 Show them this math:
 
 - **Current defense stock yields**: 2-3% (basically inflation)
-- **VICTORY bonds at full treaty**: {{< var victory_bond_annual_return_pct >}}+ perpetual returns
+- **VICTORY Incentive Alignment Bonds at full treaty**: {{< var victory_bond_annual_return_pct >}}+ perpetual returns
 - **With treaty expansion (2%, 5%, 10%)**: Returns scale automatically
 - **Liquidity**: Trade them anytime (unlike locked government contracts)
 - **Public image**: "We cure cancer" (instant party hero)
@@ -47,7 +47,7 @@ The pitch: "Keep making bombs AND buy bonds that pay 10X better returns. Or your
 
 - They have billions in pension obligations
 - Current portfolio returns: 6-8% (barely covers inflation)
-- Add 10% VICTORY bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
+- Add 10% VICTORY Incentive Alignment Bonds: Portfolio returns jump to 33%+ (90% at 7% + 10% at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
 - Their retirees get paid, they get bonuses, everyone wins
 
 #### The PR Victory
@@ -63,7 +63,7 @@ Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's su
 
 ### The Simple Pitch
 
-Keep 99% of your current weapons budget. Invest pension fund money in VICTORY bonds earning {{< var victory_bond_annual_return_pct >}} annual returns. That's 10-30x better than current defense stock yields (2-3%). No business pivot required. Just better returns on money you already have.
+Keep 99% of your current weapons budget. Invest pension fund money in VICTORY Incentive Alignment Bonds earning {{< var victory_bond_annual_return_pct >}} annual returns. That's 10-30x better than current defense stock yields (2-3%). No business pivot required. Just better returns on money you already have.
 
 ### The Implementation Playbook
 
@@ -106,7 +106,7 @@ Insurance companies are already on your side. They just don't know it yet. Every
 
 #### The Implementation
 
-1. They buy VICTORY bonds ({{< var victory_bond_annual_return_pct >}} returns)
+1. They buy VICTORY Incentive Alignment Bonds ({{< var victory_bond_annual_return_pct >}} returns)
 2. They lobby for the treaty (protects investment)
 3. Cures reduce their claims (profits increase)
 4. They lower premiums (competitive advantage)
@@ -285,7 +285,7 @@ Billionaires have everything except the one thing money can't buy: not dying. Yo
 
 #### The Investment
 
-- VICTORY bonds: {{< var victory_bond_annual_return_pct >}}+ returns forever
+- VICTORY Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}}+ returns forever
 - Beats everything in their portfolio
 
 $$
@@ -373,7 +373,7 @@ VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.
 - Investors get {{< var victory_bond_annual_return_pct >}} returns forever
 - Creates the financial coalition to pass the first treaty
 
-But after the 1% treaty passes, VICTORY Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10% treaties. Their job is done.
+But after the 1% treaty passes, VICTORY Incentive Alignment Bond holders are **satisfied**. They're getting their {{< var victory_bond_annual_return_pct >}} returns. They have no financial incentive to push for 2%, 5%, or 10% treaties. Their job is done.
 
 ### Engine 2: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (The Scaling Engine)
 
@@ -387,7 +387,7 @@ But after the 1% treaty passes, VICTORY Bond holders are **satisfied**. They're 
 
 The key insight: **IAB funding scales with treaty size.**
 
-| Treaty Level | VICTORY Bond Returns | IAB Political Funding |
+| Treaty Level | VICTORY Incentive Alignment Bond Returns | IAB Political Funding |
 |:-------------|:--------------------|:---------------------|
 | 1% | {{< var victory_bond_annual_return_pct >}} (fixed) | $2.7B/year |
 | 2% | {{< var victory_bond_annual_return_pct >}} (fixed) | $5.4B/year |
