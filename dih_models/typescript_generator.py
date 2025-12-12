@@ -559,30 +559,8 @@ def _generate_parameter_constant(
     lines = []
     citation = None
 
-    # Extract description for JSDoc comment
+    # Extract description (kept for metadata, but JSDoc comment generation removed)
     description = getattr(value_obj, "description", None)
-    if description:
-        lines.append("/**")
-        # Wrap long descriptions
-        desc_lines = description.split('\n')
-        for desc_line in desc_lines:
-            if len(desc_line) > 70:
-                # Simple word wrapping
-                words = desc_line.split()
-                current_line = " * "
-                for word in words:
-                    if len(current_line) + len(word) + 1 > 77:
-                        lines.append(current_line)
-                        current_line = " * " + word
-                    else:
-                        if current_line == " * ":
-                            current_line += word
-                        else:
-                            current_line += " " + word
-                lines.append(current_line)
-            else:
-                lines.append(f" * {desc_line}")
-        lines.append(" */")
 
     # Start constant declaration
     lines.append(f"export const {param_name}: Parameter = {{")

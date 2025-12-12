@@ -2466,7 +2466,7 @@ TREATY_CAMPAIGN_BUDGET_LOBBYING = Parameter(
     650_000_000,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
     source_type="definition",
-    description="Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+    description="Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
     display_name="Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
     unit="USD",
     confidence="low",  # Most uncertain component
@@ -2485,7 +2485,7 @@ TREATY_CAMPAIGN_BUDGET_RESERVE = Parameter(
     50_000_000,
     source_ref="/knowledge/appendix/fundraising-strategy.qmd#campaign-budget-breakdown",
     source_type="definition",
-    description="Reserve fund / contingency buffer",
+    description="Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.",
     display_name="Reserve Fund / Contingency Buffer",
     unit="USD",
     confidence="medium",

@@ -221,7 +221,7 @@ class QuestionGenerator:
             inputs_formatted = "\n".join(inputs_with_values)
             questions.append(SurveyQuestion(
                 question_id=f"{param_name}_inputs_appropriate",
-                question_text=f"Are these input factors appropriate?\n\nInputs:\n{inputs_formatted}",
+                question_text=f"Are these input factors appropriate?\n\n**Inputs:**\n{inputs_formatted}",
                 question_type=QuestionType.CHECKLIST,
                 options=[
                     "All inputs are appropriate",
@@ -703,6 +703,12 @@ def generate_survey(
         percent_complete = int((rank / total_params) * 100)
         estimated_time_remaining = (total_params - rank) * 3  # 3 min per parameter
 
+        # Generate visual progress bar (10 blocks total)
+        filled_blocks = int(percent_complete / 10)
+        empty_blocks = 10 - filled_blocks
+        progress_bar = "█" * filled_blocks + "░" * empty_blocks
+        progress_text = f"{progress_bar} {percent_complete}% complete ({rank} of {total_params} parameters)"
+
         # Get impact data - calculate on-demand if requested
         affected_outcomes = []
         if calculate_sensitivity:
@@ -724,6 +730,10 @@ def generate_survey(
             "parameter_type": source_type_str,
             "used_in": [],  # Could be enhanced with document analysis
         }
+
+        # Add dependencies: what this parameter depends on (inputs) and what depends on it (affects)
+        if hasattr(value, "inputs") and value.inputs:
+            context_card["inputs"] = value.inputs[:5]  # Limit to top 5 for readability
 
         # Only include affects if we have data
         if affected_outcomes:
@@ -751,6 +761,7 @@ def generate_survey(
                 "current": rank,
                 "total": total_params,
                 "percent_complete": percent_complete,
+                "progress_bar": progress_text,
                 "estimated_time_remaining_minutes": estimated_time_remaining,
                 "note": "Estimated time for remaining parameters (3 minutes per parameter)"
             },

@@ -60,10 +60,6 @@ export interface Parameter {
 // External Data Sources
 // ============================================================================
 
-/**
- * Mean exclusion rate in antidepressant trials (86.1% of real-world patients
- * excluded)
- */
 export const ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE: Parameter = {
   value: 0.861,
   unit: "percentage",
@@ -74,9 +70,6 @@ export const ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Average annual stock market return (10%)
- */
 export const AVERAGE_MARKET_RETURN_PCT: Parameter = {
   value: 0.1,
   unit: "rate",
@@ -87,9 +80,6 @@ export const AVERAGE_MARKET_RETURN_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Average US hourly wage
- */
 export const AVERAGE_US_HOURLY_WAGE: Parameter = {
   value: 30.0,
   unit: "USD/hour",
@@ -100,9 +90,6 @@ export const AVERAGE_US_HOURLY_WAGE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Baseline annual lives saved by pharmaceuticals (conservative aggregate)
- */
 export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
   value: 12.0,
   unit: "deaths/year",
@@ -115,23 +102,18 @@ export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
   conservative: true,
 };
 
-/**
- * GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)
- */
 export const BED_NETS_COST_PER_DALY: Parameter = {
   value: 89.0,
   unit: "USD/DALY",
   displayName: "Bed Nets Cost per DALY",
-  description: "GiveWell cost per DALY for bed nets (midpoint estimate, range $78-100)",
+  description: "GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
   confidence: "high",
   confidenceInterval: [78.0, 100.0],
+  peerReviewed: true,
 };
 
-/**
- * Average reading speed (conservative for non-fiction)
- */
 export const BOOK_READING_SPEED_WPM: Parameter = {
   value: 200.0,
   unit: "words/minute",
@@ -142,9 +124,6 @@ export const BOOK_READING_SPEED_WPM: Parameter = {
   confidence: "high",
 };
 
-/**
- * Total annual value of unpaid caregiving in US
- */
 export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
   value: 600000000000.0,
   unit: "USD/year",
@@ -155,9 +134,6 @@ export const CAREGIVER_ANNUAL_VALUE_TOTAL: Parameter = {
   confidence: "high",
 };
 
-/**
- * Number of unpaid caregivers in US
- */
 export const CAREGIVER_COUNT_US: Parameter = {
   value: 38000000.0,
   unit: "people",
@@ -168,9 +144,6 @@ export const CAREGIVER_COUNT_US: Parameter = {
   confidence: "high",
 };
 
-/**
- * Average monthly hours of unpaid family caregiving in US
- */
 export const CAREGIVER_HOURS_PER_MONTH: Parameter = {
   value: 20.0,
   unit: "hours/month",
@@ -181,9 +154,6 @@ export const CAREGIVER_HOURS_PER_MONTH: Parameter = {
   confidence: "high",
 };
 
-/**
- * Estimated replacement cost per hour of caregiving
- */
 export const CAREGIVER_VALUE_PER_HOUR_SIMPLE: Parameter = {
   value: 25.0,
   unit: "USD/hour",
@@ -194,10 +164,6 @@ export const CAREGIVER_VALUE_PER_HOUR_SIMPLE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Estimated annual global economic benefit from childhood vaccination
- * programs (measles, polio, etc.)
- */
 export const CHILDHOOD_VACCINATION_ANNUAL_BENEFIT: Parameter = {
   value: 15000000000.0,
   unit: "USD/year",
@@ -209,9 +175,6 @@ export const CHILDHOOD_VACCINATION_ANNUAL_BENEFIT: Parameter = {
   stdError: 4500000000.0,
 };
 
-/**
- * Return on investment from childhood vaccination programs
- */
 export const CHILDHOOD_VACCINATION_ROI: Parameter = {
   value: 13.0,
   unit: "ratio",
@@ -222,10 +185,6 @@ export const CHILDHOOD_VACCINATION_ROI: Parameter = {
   confidence: "high",
 };
 
-/**
- * Disability weight for untreated chronic conditions (WHO Global Burden of
- * Disease)
- */
 export const CHRONIC_DISEASE_DISABILITY_WEIGHT: Parameter = {
   value: 0.35,
   unit: "weight",
@@ -238,9 +197,6 @@ export const CHRONIC_DISEASE_DISABILITY_WEIGHT: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Current active trials at any given time (3-5 year duration)
- */
 export const CURRENT_ACTIVE_TRIALS: Parameter = {
   value: 10000.0,
   unit: "trials",
@@ -251,9 +207,6 @@ export const CURRENT_ACTIVE_TRIALS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Current clinical trial participation rate (0.06% of population)
- */
 export const CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE: Parameter = {
   value: 0.0006,
   unit: "rate",
@@ -264,9 +217,6 @@ export const CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Global population with chronic diseases
- */
 export const CURRENT_DISEASE_PATIENTS_GLOBAL: Parameter = {
   value: 2400000000.0,
   unit: "people",
@@ -278,9 +228,6 @@ export const CURRENT_DISEASE_PATIENTS_GLOBAL: Parameter = {
   confidenceInterval: [2000000000.0, 2800000000.0],
 };
 
-/**
- * Average annual new drug approvals globally
- */
 export const CURRENT_DRUG_APPROVALS_PER_YEAR: Parameter = {
   value: 50.0,
   unit: "drugs/year",
@@ -291,9 +238,6 @@ export const CURRENT_DRUG_APPROVALS_PER_YEAR: Parameter = {
   confidence: "high",
 };
 
-/**
- * Current global clinical trials per year
- */
 export const CURRENT_TRIALS_PER_YEAR: Parameter = {
   value: 3300.0,
   unit: "trials/year",
@@ -305,9 +249,6 @@ export const CURRENT_TRIALS_PER_YEAR: Parameter = {
   confidenceInterval: [2640.0, 3960.0],
 };
 
-/**
- * Current trial abandonment rate (40% never complete)
- */
 export const CURRENT_TRIAL_ABANDONMENT_RATE: Parameter = {
   value: 0.4,
   unit: "rate",
@@ -318,10 +259,6 @@ export const CURRENT_TRIAL_ABANDONMENT_RATE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID
- * normalization)
- */
 export const CURRENT_TRIAL_SLOTS_AVAILABLE: Parameter = {
   value: 1900000.0,
   unit: "patients/year",
@@ -333,9 +270,6 @@ export const CURRENT_TRIAL_SLOTS_AVAILABLE: Parameter = {
   confidenceInterval: [1500000.0, 2300000.0],
 };
 
-/**
- * Annual defense industry lobbying spending
- */
 export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
   value: 127000000.0,
   unit: "USD/year",
@@ -347,12 +281,6 @@ export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Cost per DALY for deworming programs (range $28-82, midpoint estimate).
- * GiveWell notes this 2011 estimate is outdated and their current
- * methodology focuses on long-term income effects rather than short-term
- * health DALYs.
- */
 export const DEWORMING_COST_PER_DALY: Parameter = {
   value: 55.0,
   unit: "USD/DALY",
@@ -363,9 +291,6 @@ export const DEWORMING_COST_PER_DALY: Parameter = {
   confidence: "low",
 };
 
-/**
- * Drug development cost in 1980s (compounded to approval, 1990 dollars)
- */
 export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
   value: 194000000.0,
   unit: "USD",
@@ -376,10 +301,6 @@ export const DRUG_DEVELOPMENT_COST_1980S: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage of drugs that gain at least one new indication after initial
- * approval
- */
 export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
   value: 0.3,
   unit: "percentage",
@@ -390,9 +311,6 @@ export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Economic multiplier for education investment (2.1x ROI)
- */
 export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
   value: 2.1,
   unit: "ratio",
@@ -403,9 +321,6 @@ export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Economic multiplier for healthcare investment (4.3x ROI)
- */
 export const ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT: Parameter = {
   value: 4.3,
   unit: "ratio",
@@ -416,9 +331,6 @@ export const ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Economic multiplier for infrastructure investment (1.6x ROI)
- */
 export const ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT: Parameter = {
   value: 1.6,
   unit: "ratio",
@@ -429,9 +341,6 @@ export const ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Economic multiplier for military spending (0.6x ROI)
- */
 export const ECONOMIC_MULTIPLIER_MILITARY_SPENDING: Parameter = {
   value: 0.6,
   unit: "ratio",
@@ -442,10 +351,6 @@ export const ECONOMIC_MULTIPLIER_MILITARY_SPENDING: Parameter = {
   confidence: "high",
 };
 
-/**
- * Regulatory delay for efficacy testing (Phase II/III) post-safety
- * verification
- */
 export const EFFICACY_LAG_YEARS: Parameter = {
   value: 8.2,
   unit: "years",
@@ -460,9 +365,6 @@ export const EFFICACY_LAG_YEARS: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Total FDA-approved drug products in the U.S.
- */
 export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
   value: 20000.0,
   unit: "products",
@@ -473,10 +375,6 @@ export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Unique active pharmaceutical ingredients in FDA-approved products
- * (midpoint of 1,300-2,000 range)
- */
 export const FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS: Parameter = {
   value: 1650.0,
   unit: "compounds",
@@ -488,10 +386,6 @@ export const FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS: Parameter = {
   confidenceInterval: [1300.0, 2000.0],
 };
 
-/**
- * FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700
- * range)
- */
 export const FDA_GRAS_SUBSTANCES_COUNT: Parameter = {
   value: 635.0,
   unit: "substances",
@@ -503,9 +397,6 @@ export const FDA_GRAS_SUBSTANCES_COUNT: Parameter = {
   confidenceInterval: [570.0, 700.0],
 };
 
-/**
- * FDA timeline from Phase 1 start to approval (Phase 1-3 + NDA review)
- */
 export const FDA_PHASE_1_TO_APPROVAL_YEARS: Parameter = {
   value: 9.1,
   unit: "years",
@@ -518,9 +409,6 @@ export const FDA_PHASE_1_TO_APPROVAL_YEARS: Parameter = {
   stdError: 2.0,
 };
 
-/**
- * GiveWell average cost per life saved across top charities
- */
 export const GIVEWELL_COST_PER_LIFE_AVG: Parameter = {
   value: 4500.0,
   unit: "USD/life",
@@ -531,9 +419,6 @@ export const GIVEWELL_COST_PER_LIFE_AVG: Parameter = {
   confidence: "high",
 };
 
-/**
- * GiveWell cost per life saved (Against Malaria Foundation)
- */
 export const GIVEWELL_COST_PER_LIFE_MAX: Parameter = {
   value: 5500.0,
   unit: "USD/life",
@@ -544,9 +429,6 @@ export const GIVEWELL_COST_PER_LIFE_MAX: Parameter = {
   confidence: "high",
 };
 
-/**
- * GiveWell cost per life saved (Helen Keller International)
- */
 export const GIVEWELL_COST_PER_LIFE_MIN: Parameter = {
   value: 3500.0,
   unit: "USD/life",
@@ -557,9 +439,6 @@ export const GIVEWELL_COST_PER_LIFE_MIN: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual deaths from active combat worldwide
- */
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT: Parameter = {
   value: 233600.0,
   unit: "deaths/year",
@@ -571,9 +450,6 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT: Parameter = {
   confidenceInterval: [180000.0, 300000.0],
 };
 
-/**
- * Annual deaths from state violence
- */
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE: Parameter = {
   value: 2700.0,
   unit: "deaths/year",
@@ -585,9 +461,6 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE: Parameter = {
   confidenceInterval: [1500.0, 5000.0],
 };
 
-/**
- * Annual deaths from terror attacks globally
- */
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS: Parameter = {
   value: 8300.0,
   unit: "deaths/year",
@@ -599,9 +472,6 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS: Parameter = {
   confidenceInterval: [6000.0, 12000.0],
 };
 
-/**
- * Annual deaths from all diseases and aging globally
- */
 export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   value: 55000000.0,
   unit: "deaths/year",
@@ -612,9 +482,6 @@ export const GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual environmental damage and restoration costs from conflict
- */
 export const GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT: Parameter = {
   value: 100000000000.0,
   unit: "USD",
@@ -626,9 +493,6 @@ export const GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT: Parameter = {
   confidenceInterval: [70000000000.0, 140000000000.0],
 };
 
-/**
- * Annual infrastructure damage to communications from conflict
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT: Parameter = {
   value: 298100000000.0,
   unit: "USD",
@@ -640,9 +504,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT: Parame
   confidenceInterval: [209000000000.0, 418000000000.0],
 };
 
-/**
- * Annual infrastructure damage to education facilities from conflict
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT: Parameter = {
   value: 234500000000.0,
   unit: "USD",
@@ -654,9 +515,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT: Parameter =
   confidenceInterval: [164000000000.0, 328000000000.0],
 };
 
-/**
- * Annual infrastructure damage to energy systems from conflict
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT: Parameter = {
   value: 421700000000.0,
   unit: "USD",
@@ -668,9 +526,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT: Parameter = {
   confidenceInterval: [295000000000.0, 590000000000.0],
 };
 
-/**
- * Annual infrastructure damage to healthcare facilities from conflict
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT: Parameter = {
   value: 165600000000.0,
   unit: "USD",
@@ -682,9 +537,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT: Parameter 
   confidenceInterval: [116000000000.0, 232000000000.0],
 };
 
-/**
- * Annual infrastructure damage to transportation from conflict
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT: Parameter = {
   value: 487300000000.0,
   unit: "USD",
@@ -696,9 +548,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT: Parame
   confidenceInterval: [340000000000.0, 680000000000.0],
 };
 
-/**
- * Annual infrastructure damage to water systems from conflict
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT: Parameter = {
   value: 267800000000.0,
   unit: "USD",
@@ -710,9 +559,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT: Parameter = {
   confidenceInterval: [187000000000.0, 375000000000.0],
 };
 
-/**
- * Annual lives saved by medical research globally
- */
 export const GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH: Parameter = {
   value: 4200000.0,
   unit: "lives/year",
@@ -724,9 +570,6 @@ export const GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH: Parameter = {
   confidenceInterval: [3000000.0, 6000000.0],
 };
 
-/**
- * Annual lost economic growth from military spending opportunity cost
- */
 export const GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING: Parameter = {
   value: 2718000000000.0,
   unit: "USD",
@@ -738,9 +581,6 @@ export const GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING: Parameter = {
   confidenceInterval: [1900000000000.0, 3800000000000.0],
 };
 
-/**
- * Annual lost productivity from conflict casualties
- */
 export const GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT: Parameter = {
   value: 300000000000.0,
   unit: "USD",
@@ -752,9 +592,6 @@ export const GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT: Parameter = {
   confidenceInterval: [210000000000.0, 420000000000.0],
 };
 
-/**
- * Annual PTSD and mental health costs from conflict
- */
 export const GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT: Parameter = {
   value: 232000000000.0,
   unit: "USD",
@@ -766,9 +603,6 @@ export const GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT: Parameter = {
   confidenceInterval: [162000000000.0, 325000000000.0],
 };
 
-/**
- * Annual refugee support costs (108.4M refugees × $1,384/year)
- */
 export const GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS: Parameter = {
   value: 150000000000.0,
   unit: "USD",
@@ -780,9 +614,6 @@ export const GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS: Parameter = {
   confidenceInterval: [105000000000.0, 210000000000.0],
 };
 
-/**
- * Annual trade disruption costs from currency instability
- */
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT: Parameter = {
   value: 57400000000.0,
   unit: "USD",
@@ -794,9 +625,6 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT: Parameter = {
   confidenceInterval: [40000000000.0, 80000000000.0],
 };
 
-/**
- * Annual trade disruption costs from energy price volatility
- */
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT: Parameter = {
   value: 124700000000.0,
   unit: "USD",
@@ -808,9 +636,6 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT: Parameter = {
   confidenceInterval: [87000000000.0, 175000000000.0],
 };
 
-/**
- * Annual trade disruption costs from shipping disruptions
- */
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT: Parameter = {
   value: 247100000000.0,
   unit: "USD",
@@ -822,9 +647,6 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT: Parameter = {
   confidenceInterval: [173000000000.0, 346000000000.0],
 };
 
-/**
- * Annual trade disruption costs from supply chain disruptions
- */
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT: Parameter = {
   value: 186800000000.0,
   unit: "USD",
@@ -836,9 +658,6 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT: Parameter = {
   confidenceInterval: [131000000000.0, 262000000000.0],
 };
 
-/**
- * Annual veteran healthcare costs (20-year projected)
- */
 export const GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS: Parameter = {
   value: 200100000000.0,
   unit: "USD",
@@ -850,9 +669,6 @@ export const GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS: Parameter = {
   confidenceInterval: [140000000000.0, 280000000000.0],
 };
 
-/**
- * Annual global spending on clinical trials (Total: Government + Industry)
- */
 export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 83000000000.0,
   unit: "USD",
@@ -865,9 +681,6 @@ export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   stdError: 12500000000.0,
 };
 
-/**
- * Daily deaths from all diseases and aging globally
- */
 export const GLOBAL_DAILY_DEATHS_CURABLE_DISEASES: Parameter = {
   value: 150000.0,
   unit: "deaths/day",
@@ -879,10 +692,6 @@ export const GLOBAL_DAILY_DEATHS_CURABLE_DISEASES: Parameter = {
   confidenceInterval: [120000.0, 180000.0],
 };
 
-/**
- * Total global deaths per day from all disease and aging (WHO Global Burden
- * of Disease 2024)
- */
 export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
   value: 150000.0,
   unit: "deaths/day",
@@ -895,10 +704,6 @@ export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Direct medical costs of disease globally (treatment, hospitalization,
- * medication)
- */
 export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
   value: 9900000000000.0,
   unit: "USD/year",
@@ -910,10 +715,6 @@ export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
   confidenceInterval: [7000000000000.0, 14000000000000.0],
 };
 
-/**
- * Economic value of human life lost to disease annually (mortality
- * valuation)
- */
 export const GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL: Parameter = {
   value: 94200000000000.0,
   unit: "USD/year",
@@ -925,10 +726,6 @@ export const GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL: Parameter = {
   confidenceInterval: [66000000000000.0, 132000000000000.0],
 };
 
-/**
- * Annual productivity loss from disease globally (absenteeism, reduced
- * output)
- */
 export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
   value: 5000000000000.0,
   unit: "USD/year",
@@ -940,10 +737,6 @@ export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
   confidenceInterval: [3500000000000.0, 7000000000000.0],
 };
 
-/**
- * Annual global government spending on interventional clinical trials
- * (~5-10% of total)
- */
 export const GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 4500000000.0,
   unit: "USD",
@@ -956,9 +749,6 @@ export const GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   stdError: 1000000000.0,
 };
 
-/**
- * Total global household wealth (2022/2023 estimate)
- */
 export const GLOBAL_HOUSEHOLD_WEALTH_USD: Parameter = {
   value: 454000000000000.0,
   unit: "USD",
@@ -969,9 +759,6 @@ export const GLOBAL_HOUSEHOLD_WEALTH_USD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Global life expectancy (2024)
- */
 export const GLOBAL_LIFE_EXPECTANCY_2024: Parameter = {
   value: 79.0,
   unit: "years",
@@ -984,9 +771,6 @@ export const GLOBAL_LIFE_EXPECTANCY_2024: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Global government medical research spending
- */
 export const GLOBAL_MED_RESEARCH_SPENDING: Parameter = {
   value: 67500000000.0,
   unit: "USD",
@@ -998,9 +782,6 @@ export const GLOBAL_MED_RESEARCH_SPENDING: Parameter = {
   confidenceInterval: [54000000000.0, 81000000000.0],
 };
 
-/**
- * Global military spending in 2024
- */
 export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
   value: 2718000000000.0,
   unit: "USD",
@@ -1013,9 +794,6 @@ export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
   stdError: 271800000000.0,
 };
 
-/**
- * Global population in 2024
- */
 export const GLOBAL_POPULATION_2024: Parameter = {
   value: 8000000000.0,
   unit: "of people",
@@ -1027,9 +805,6 @@ export const GLOBAL_POPULATION_2024: Parameter = {
   confidenceInterval: [7800000000.0, 8200000000.0],
 };
 
-/**
- * Critical mass threshold for social change (3.5% rule)
- */
 export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
   value: 0.035,
   unit: "rate",
@@ -1041,9 +816,6 @@ export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
   confidenceInterval: [0.025, 0.045],
 };
 
-/**
- * Annual global spending on symptomatic disease treatment
- */
 export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
   value: 8200000000000.0,
   unit: "USD/year",
@@ -1055,9 +827,6 @@ export const GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL: Parameter = {
   confidenceInterval: [6500000000000.0, 10000000000000.0],
 };
 
-/**
- * Estimated total economic impact of Human Genome Project
- */
 export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
   value: 1000000000000.0,
   unit: "USD",
@@ -1068,10 +837,6 @@ export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage of human interactome (protein-protein interactions) targeted by
- * drugs
- */
 export const HUMAN_INTERACTOME_TARGETED_PCT: Parameter = {
   value: 0.12,
   unit: "percentage",
@@ -1082,9 +847,6 @@ export const HUMAN_INTERACTOME_TARGETED_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Total ICD-10 diagnostic codes for human diseases and conditions
- */
 export const ICD_10_TOTAL_CODES: Parameter = {
   value: 14000.0,
   unit: "codes",
@@ -1095,12 +857,6 @@ export const ICD_10_TOTAL_CODES: Parameter = {
   confidence: "high",
 };
 
-/**
- * Expected years of life extension from 1% treaty research acceleration (25x
- * trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited
- * lifespan minus current). Lognormal distribution allows for breakthrough
- * scenarios.
- */
 export const LIFE_EXTENSION_YEARS: Parameter = {
   value: 20.0,
   unit: "years",
@@ -1112,9 +868,6 @@ export const LIFE_EXTENSION_YEARS: Parameter = {
   confidenceInterval: [5.0, 100.0],
 };
 
-/**
- * Maximum annual lobbyist salary range
- */
 export const LOBBYIST_SALARY_MAX: Parameter = {
   value: 2000000.0,
   unit: "USD",
@@ -1125,9 +878,6 @@ export const LOBBYIST_SALARY_MAX: Parameter = {
   confidence: "high",
 };
 
-/**
- * Minimum annual lobbyist salary range
- */
 export const LOBBYIST_SALARY_MIN_K: Parameter = {
   value: 500000.0,
   unit: "USD",
@@ -1138,9 +888,6 @@ export const LOBBYIST_SALARY_MIN_K: Parameter = {
   confidence: "high",
 };
 
-/**
- * Return on investment from measles (MMR) vaccination programs
- */
 export const MEASLES_VACCINATION_ROI: Parameter = {
   value: 14.0,
   unit: "ratio",
@@ -1151,10 +898,6 @@ export const MEASLES_VACCINATION_ROI: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual productivity loss per capita from mental health issues (beyond
- * treatment costs)
- */
 export const MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA: Parameter = {
   value: 2000.0,
   unit: "USD/year",
@@ -1165,9 +908,6 @@ export const MENTAL_HEALTH_PRODUCTIVITY_LOSS_PER_CAPITA: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage of NIH budget spent on clinical trials (3.3%)
- */
 export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
   value: 0.033,
   unit: "percentage",
@@ -1179,9 +919,6 @@ export const NIH_CLINICAL_TRIALS_SPENDING_PCT: Parameter = {
   confidenceInterval: [0.02, 0.05],
 };
 
-/**
- * Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
- */
 export const OXFORD_RECOVERY_TRIAL_DURATION_MONTHS: Parameter = {
   value: 3.0,
   unit: "months",
@@ -1192,10 +929,6 @@ export const OXFORD_RECOVERY_TRIAL_DURATION_MONTHS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Patient willingness to participate in drug trials (44.8% in surveys, 88%
- * when actually approached)
- */
 export const PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT: Parameter = {
   value: 0.448,
   unit: "percentage",
@@ -1206,9 +939,6 @@ export const PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT: Parameter = {
   confidence: "medium",
 };
 
-/**
- * Average cost to develop one drug in current system
- */
 export const PHARMA_DRUG_DEVELOPMENT_COST_CURRENT: Parameter = {
   value: 2600000000.0,
   unit: "USD",
@@ -1222,10 +952,6 @@ export const PHARMA_DRUG_DEVELOPMENT_COST_CURRENT: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Median lifetime revenue per successful drug (study of 361 FDA-approved
- * drugs 1995-2014, median follow-up 13.2 years)
- */
 export const PHARMA_DRUG_REVENUE_AVERAGE_CURRENT: Parameter = {
   value: 6700000000.0,
   unit: "USD",
@@ -1237,10 +963,6 @@ export const PHARMA_DRUG_REVENUE_AVERAGE_CURRENT: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma
- * companies, down from 6.8% in 2021, recovered to 5.9% in 2024)
- */
 export const PHARMA_ROI_CURRENT_SYSTEM_PCT: Parameter = {
   value: 0.012,
   unit: "percentage",
@@ -1252,9 +974,6 @@ export const PHARMA_ROI_CURRENT_SYSTEM_PCT: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Percentage of drugs that reach market in current system
- */
 export const PHARMA_SUCCESS_RATE_CURRENT_PCT: Parameter = {
   value: 0.1,
   unit: "percentage",
@@ -1266,10 +985,6 @@ export const PHARMA_SUCCESS_RATE_CURRENT_PCT: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Investigational compounds that have passed Phase I globally (midpoint of
- * 5,000-10,000 range)
- */
 export const PHASE_1_PASSED_COMPOUNDS_GLOBAL: Parameter = {
   value: 7500.0,
   unit: "compounds",
@@ -1281,9 +996,6 @@ export const PHASE_1_PASSED_COMPOUNDS_GLOBAL: Parameter = {
   confidenceInterval: [5000.0, 10000.0],
 };
 
-/**
- * Phase I safety trial duration
- */
 export const PHASE_1_SAFETY_DURATION_YEARS: Parameter = {
   value: 2.3,
   unit: "years",
@@ -1295,9 +1007,6 @@ export const PHASE_1_SAFETY_DURATION_YEARS: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Phase 3 trial total cost (minimum)
- */
 export const PHASE_3_TRIAL_COST_MIN: Parameter = {
   value: 20000000.0,
   unit: "USD/trial",
@@ -1308,10 +1017,6 @@ export const PHASE_3_TRIAL_COST_MIN: Parameter = {
   confidence: "high",
 };
 
-/**
- * Return on investment from sustaining polio vaccination assets and
- * integrating into expanded immunization programs
- */
 export const POLIO_VACCINATION_ROI: Parameter = {
   value: 39.0,
   unit: "ratio",
@@ -1322,11 +1027,6 @@ export const POLIO_VACCINATION_ROI: Parameter = {
   confidence: "high",
 };
 
-/**
- * Estimated probability of treaty ratification and sustained implementation.
- * Central estimate 1% is ultra-conservative. This assumes 99% chance of
- * failure.
- */
 export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
   value: 0.01,
   unit: "rate",
@@ -1339,10 +1039,6 @@ export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
   stdError: 0.02,
 };
 
-/**
- * Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70%
- * drop from 43→17 drugs/year)
- */
 export const POST_1962_DRUG_APPROVAL_REDUCTION_PCT: Parameter = {
   value: 0.7,
   unit: "percentage",
@@ -1353,9 +1049,6 @@ export const POST_1962_DRUG_APPROVAL_REDUCTION_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage military spending cut after WW2 (historical precedent)
- */
 export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
   value: 0.3,
   unit: "rate",
@@ -1366,9 +1059,6 @@ export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Pre-1962 drug development cost (documented range: $10-50M in 1950s-1960s)
- */
 export const PRE_1962_DRUG_DEVELOPMENT_COST: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -1380,10 +1070,6 @@ export const PRE_1962_DRUG_DEVELOPMENT_COST: Parameter = {
   confidenceInterval: [10000000.0, 50000000.0],
 };
 
-/**
- * Estimated physicians conducting real-world efficacy trials pre-1962
- * (unverified estimate)
- */
 export const PRE_1962_PHYSICIAN_COUNT: Parameter = {
   value: 144000.0,
   unit: "physicians",
@@ -1394,9 +1080,6 @@ export const PRE_1962_PHYSICIAN_COUNT: Parameter = {
   confidence: "low",
 };
 
-/**
- * Total number of rare diseases globally
- */
 export const RARE_DISEASES_COUNT_GLOBAL: Parameter = {
   value: 7000.0,
   unit: "diseases",
@@ -1407,9 +1090,6 @@ export const RARE_DISEASES_COUNT_GLOBAL: Parameter = {
   confidence: "high",
 };
 
-/**
- * RECOVERY trial cost per patient
- */
 export const RECOVERY_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 500.0,
   unit: "USD/patient",
@@ -1421,10 +1101,6 @@ export const RECOVERY_TRIAL_COST_PER_PATIENT: Parameter = {
   confidenceInterval: [350.0, 700.0],
 };
 
-/**
- * Mean age of preventable death from post-safety efficacy testing regulatory
- * delay (Phase 2-4)
- */
 export const REGULATORY_DELAY_MEAN_AGE_OF_DEATH: Parameter = {
   value: 62.0,
   unit: "years",
@@ -1437,11 +1113,6 @@ export const REGULATORY_DELAY_MEAN_AGE_OF_DEATH: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Pre-death suffering period during post-safety efficacy testing delay
- * (average years lived with untreated condition while awaiting Phase 2-4
- * completion)
- */
 export const REGULATORY_DELAY_SUFFERING_PERIOD_YEARS: Parameter = {
   value: 6.0,
   unit: "years",
@@ -1454,9 +1125,6 @@ export const REGULATORY_DELAY_SUFFERING_PERIOD_YEARS: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Return on investment from smallpox eradication campaign
- */
 export const SMALLPOX_ERADICATION_ROI: Parameter = {
   value: 280.0,
   unit: "ratio",
@@ -1467,9 +1135,6 @@ export const SMALLPOX_ERADICATION_ROI: Parameter = {
   confidence: "high",
 };
 
-/**
- * Total economic benefit from smallpox eradication campaign
- */
 export const SMALLPOX_ERADICATION_TOTAL_BENEFIT: Parameter = {
   value: 1420000000.0,
   unit: "USD",
@@ -1480,9 +1145,6 @@ export const SMALLPOX_ERADICATION_TOTAL_BENEFIT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Estimated annual global economic benefit from smoking cessation programs
- */
 export const SMOKING_CESSATION_ANNUAL_BENEFIT: Parameter = {
   value: 12000000000.0,
   unit: "USD/year",
@@ -1493,9 +1155,6 @@ export const SMOKING_CESSATION_ANNUAL_BENEFIT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Standard economic value per QALY
- */
 export const STANDARD_ECONOMIC_QALY_VALUE_USD: Parameter = {
   value: 150000.0,
   unit: "USD/QALY",
@@ -1507,9 +1166,6 @@ export const STANDARD_ECONOMIC_QALY_VALUE_USD: Parameter = {
   stdError: 30000.0,
 };
 
-/**
- * Standard QALYs per life saved (WHO life tables)
- */
 export const STANDARD_QALYS_PER_LIFE_SAVED: Parameter = {
   value: 35.0,
   unit: "QALYs/life",
@@ -1521,9 +1177,6 @@ export const STANDARD_QALYS_PER_LIFE_SAVED: Parameter = {
   stdError: 7.0,
 };
 
-/**
- * Annual cost of sugar subsidies per person
- */
 export const SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL: Parameter = {
   value: 10.0,
   unit: "USD/person/year",
@@ -1534,9 +1187,6 @@ export const SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL: Parameter = {
   confidence: "high",
 };
 
-/**
- * Switzerland's defense spending as percentage of GDP (0.7%)
- */
 export const SWITZERLAND_DEFENSE_SPENDING_PCT: Parameter = {
   value: 0.007,
   unit: "rate",
@@ -1547,9 +1197,6 @@ export const SWITZERLAND_DEFENSE_SPENDING_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Switzerland GDP per capita
- */
 export const SWITZERLAND_GDP_PER_CAPITA_K: Parameter = {
   value: 93000.0,
   unit: "USD",
@@ -1560,9 +1207,6 @@ export const SWITZERLAND_GDP_PER_CAPITA_K: Parameter = {
   confidence: "high",
 };
 
-/**
- * Deaths from 9/11 terrorist attacks
- */
 export const TERRORISM_DEATHS_911: Parameter = {
   value: 2996.0,
   unit: "deaths",
@@ -1573,9 +1217,6 @@ export const TERRORISM_DEATHS_911: Parameter = {
   confidence: "high",
 };
 
-/**
- * Total thalidomide birth defect cases worldwide (1957-1962)
- */
 export const THALIDOMIDE_CASES_WORLDWIDE: Parameter = {
   value: 15000.0,
   unit: "cases",
@@ -1587,10 +1228,6 @@ export const THALIDOMIDE_CASES_WORLDWIDE: Parameter = {
   confidenceInterval: [10000.0, 20000.0],
 };
 
-/**
- * Disability weight for thalidomide survivors (limb deformities, organ
- * damage)
- */
 export const THALIDOMIDE_DISABILITY_WEIGHT: Parameter = {
   value: 0.4,
   unit: "ratio",
@@ -1602,9 +1239,6 @@ export const THALIDOMIDE_DISABILITY_WEIGHT: Parameter = {
   confidenceInterval: [0.32, 0.48],
 };
 
-/**
- * Mortality rate for thalidomide-affected infants (died within first year)
- */
 export const THALIDOMIDE_MORTALITY_RATE: Parameter = {
   value: 0.4,
   unit: "percentage",
@@ -1616,9 +1250,6 @@ export const THALIDOMIDE_MORTALITY_RATE: Parameter = {
   confidenceInterval: [0.35, 0.45],
 };
 
-/**
- * Average lifespan for thalidomide survivors
- */
 export const THALIDOMIDE_SURVIVOR_LIFESPAN: Parameter = {
   value: 60.0,
   unit: "years",
@@ -1630,9 +1261,6 @@ export const THALIDOMIDE_SURVIVOR_LIFESPAN: Parameter = {
   confidenceInterval: [50.0, 70.0],
 };
 
-/**
- * US share of world population in 1960
- */
 export const THALIDOMIDE_US_POPULATION_SHARE_1960: Parameter = {
   value: 0.06,
   unit: "percentage",
@@ -1644,9 +1272,6 @@ export const THALIDOMIDE_US_POPULATION_SHARE_1960: Parameter = {
   confidenceInterval: [0.055, 0.065],
 };
 
-/**
- * Phase 3 cost per patient (median)
- */
 export const TRADITIONAL_PHASE3_COST_PER_PATIENT: Parameter = {
   value: 80000.0,
   unit: "USD/patient",
@@ -1657,9 +1282,6 @@ export const TRADITIONAL_PHASE3_COST_PER_PATIENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Example Phase 3 trial cost per patient ($48K)
- */
 export const TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K: Parameter = {
   value: 48000.0,
   unit: "USD/patient",
@@ -1670,9 +1292,6 @@ export const TRADITIONAL_PHASE3_COST_PER_PATIENT_EXAMPLE_48K: Parameter = {
   confidence: "high",
 };
 
-/**
- * FDA cited Phase 3 cost per patient ($41K)
- */
 export const TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K: Parameter = {
   value: 41000.0,
   unit: "USD/patient",
@@ -1683,9 +1302,6 @@ export const TRADITIONAL_PHASE3_COST_PER_PATIENT_FDA_EXAMPLE_41K: Parameter = {
   confidence: "high",
 };
 
-/**
- * Traditional FDA drug development timeline
- */
 export const TREATMENT_ACCELERATION_YEARS_CURRENT: Parameter = {
   value: 17.0,
   unit: "years",
@@ -1696,9 +1312,6 @@ export const TREATMENT_ACCELERATION_YEARS_CURRENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Cost reduction factor demonstrated by RECOVERY trial
- */
 export const TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   value: 82.0,
   unit: "ratio",
@@ -1711,9 +1324,6 @@ export const TRIAL_COST_REDUCTION_FACTOR: Parameter = {
   stdError: 20.0,
 };
 
-/**
- * Typical CEO hourly rate
- */
 export const TYPICAL_CEO_HOURLY_RATE: Parameter = {
   value: 10000.0,
   unit: "USD/hour",
@@ -1724,9 +1334,6 @@ export const TYPICAL_CEO_HOURLY_RATE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual US cost of Alzheimer's disease (direct and indirect)
- */
 export const US_ALZHEIMERS_ANNUAL_COST: Parameter = {
   value: 355000000000.0,
   unit: "USD",
@@ -1739,9 +1346,6 @@ export const US_ALZHEIMERS_ANNUAL_COST: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Annual US cost of cancer (direct and indirect)
- */
 export const US_CANCER_ANNUAL_COST: Parameter = {
   value: 208000000000.0,
   unit: "USD",
@@ -1754,9 +1358,6 @@ export const US_CANCER_ANNUAL_COST: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * US annual chronic disease spending
- */
 export const US_CHRONIC_DISEASE_SPENDING_ANNUAL: Parameter = {
   value: 4100000000000.0,
   unit: "USD/year",
@@ -1768,9 +1369,6 @@ export const US_CHRONIC_DISEASE_SPENDING_ANNUAL: Parameter = {
   confidenceInterval: [3300000000000.0, 5000000000000.0],
 };
 
-/**
- * Annual US cost of diabetes (direct and indirect)
- */
 export const US_DIABETES_ANNUAL_COST: Parameter = {
   value: 327000000000.0,
   unit: "USD",
@@ -1783,9 +1381,6 @@ export const US_DIABETES_ANNUAL_COST: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * Annual US cost of heart disease and stroke (direct and indirect)
- */
 export const US_HEART_DISEASE_ANNUAL_COST: Parameter = {
   value: 363000000000.0,
   unit: "USD",
@@ -1798,9 +1393,6 @@ export const US_HEART_DISEASE_ANNUAL_COST: Parameter = {
   peerReviewed: true,
 };
 
-/**
- * US mental health costs (treatment + productivity loss)
- */
 export const US_MENTAL_HEALTH_COST_ANNUAL: Parameter = {
   value: 350000000000.0,
   unit: "USD/year",
@@ -1812,9 +1404,6 @@ export const US_MENTAL_HEALTH_COST_ANNUAL: Parameter = {
   confidenceInterval: [260000000000.0, 450000000000.0],
 };
 
-/**
- * US military spending as percentage of GDP (2024)
- */
 export const US_MILITARY_SPENDING_PCT_GDP: Parameter = {
   value: 0.035,
   unit: "rate",
@@ -1825,9 +1414,6 @@ export const US_MILITARY_SPENDING_PCT_GDP: Parameter = {
   confidence: "high",
 };
 
-/**
- * US population in 2024
- */
 export const US_POPULATION_2024: Parameter = {
   value: 335000000.0,
   unit: "people",
@@ -1839,9 +1425,6 @@ export const US_POPULATION_2024: Parameter = {
   confidenceInterval: [330000000.0, 340000000.0],
 };
 
-/**
- * Value of Statistical Life (conservative estimate)
- */
 export const VALUE_OF_STATISTICAL_LIFE: Parameter = {
   value: 10000000.0,
   unit: "USD",
@@ -1854,11 +1437,6 @@ export const VALUE_OF_STATISTICAL_LIFE: Parameter = {
   stdError: 3000000.0,
 };
 
-/**
- * Cost per DALY for vitamin A supplementation programs (India: $23-50;
- * Africa: $40-255; wide variation by region and baseline VAD prevalence).
- * Using India midpoint as conservative estimate.
- */
 export const VITAMIN_A_COST_PER_DALY: Parameter = {
   value: 37.0,
   unit: "USD/DALY",
@@ -1869,9 +1447,6 @@ export const VITAMIN_A_COST_PER_DALY: Parameter = {
   confidence: "medium",
 };
 
-/**
- * Estimated annual global economic benefit from water fluoridation programs
- */
 export const WATER_FLUORIDATION_ANNUAL_BENEFIT: Parameter = {
   value: 800000000.0,
   unit: "USD/year",
@@ -1882,9 +1457,6 @@ export const WATER_FLUORIDATION_ANNUAL_BENEFIT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Return on investment from water fluoridation programs
- */
 export const WATER_FLUORIDATION_ROI: Parameter = {
   value: 23.0,
   unit: "ratio",
@@ -1895,10 +1467,6 @@ export const WATER_FLUORIDATION_ROI: Parameter = {
   confidence: "high",
 };
 
-/**
- * Cost-effectiveness threshold widely used in US health economics
- * ($50,000/QALY, from 1980s dialysis costs)
- */
 export const WHO_QALY_THRESHOLD_COST_EFFECTIVE: Parameter = {
   value: 50000.0,
   unit: "USD/QALY",
@@ -1909,10 +1477,6 @@ export const WHO_QALY_THRESHOLD_COST_EFFECTIVE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage of workforce experiencing productivity loss from chronic
- * illness (28%)
- */
 export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
   value: 0.28,
   unit: "rate",
@@ -1927,9 +1491,6 @@ export const WORKFORCE_WITH_PRODUCTIVITY_LOSS: Parameter = {
 // Calculated Values
 // ============================================================================
 
-/**
- * Combined peace and health dividends for ROI calculation
- */
 export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   value: 155051000000.0,
   unit: "USD/year",
@@ -1941,10 +1502,6 @@ export const COMBINED_PEACE_HEALTH_DIVIDENDS_ANNUAL_FOR_ROI_CALC: Parameter = {
   formula: "PEACE_DIVIDEND + R&D_SAVINGS",
 };
 
-/**
- * Total annual Decentralized Framework for Drug Assessment operational costs
- * (sum of all components: $15M + $10M + $8M + $5M + $2M)
- */
 export const DFDA_ANNUAL_OPEX: Parameter = {
   value: 40000000.0,
   unit: "USD/year",
@@ -1957,10 +1514,6 @@ export const DFDA_ANNUAL_OPEX: Parameter = {
   latex: "OPEX_{total} = \\$15M \\text{ (plat)} + \\$10M \\text{ (staff)} + \\$8M \\text{ (infra)} + \\$5M \\text{ (reg)} + \\$2M \\text{ (comm)} = \\$40M",
 };
 
-/**
- * Annual Decentralized Framework for Drug Assessment benefit from R&D
- * savings (trial cost reduction, secondary component)
- */
 export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   value: 41500000000.0,
   unit: "USD/year",
@@ -1972,12 +1525,6 @@ export const DFDA_BENEFIT_RD_ONLY_ANNUAL: Parameter = {
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
 };
 
-/**
- * Expected ROI for 1% treaty accounting for political success probability
- * uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from
- * beta(0.1%, 10%) distribution to generate full expected value distribution.
- * Central value uses 1% probability.
- */
 export const DFDA_EXPECTED_ROI: Parameter = {
   value: 11914.175356950002,
   displayName: "Expected Treaty ROI (Risk-Adjusted)",
@@ -1989,10 +1536,6 @@ export const DFDA_EXPECTED_ROI: Parameter = {
   latex: "E[ROI] = ROI_{conditional} \\times P_{success} = ROI_{treaty} \\times 0.01",
 };
 
-/**
- * Annual net savings from R&D cost reduction only (gross savings minus
- * operational costs, excludes regulatory delay value)
- */
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   value: 41460000000.0,
   unit: "USD/year",
@@ -2005,10 +1548,6 @@ export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   latex: "Savings_{net} = \\$41.5B - \\$0.04B = \\$41.46B",
 };
 
-/**
- * Total NPV annual opex (Decentralized Framework for Drug Assessment core +
- * DIH initiatives)
- */
 export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   value: 40050000.0,
   unit: "USD/year",
@@ -2021,11 +1560,6 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   latex: "C_{op} = \\$0.01895B + \\$0.02110B = \\$0.04005B \\text{ (annual operational cost)}",
 };
 
-/**
- * NPV of Decentralized Framework for Drug Assessment R&D savings only with
- * 5-year adoption ramp (10-year horizon, most conservative financial
- * estimate)
- */
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
   value: 275468208149.5121,
   unit: "USD",
@@ -2038,10 +1572,6 @@ export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
   latex: "PV_{benefits} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}",
 };
 
-/**
- * NPV net benefit using R&D savings only (most conservative financial
- * estimate, excludes regulatory delay health value)
- */
 export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
   value: 275468208149.5121,
   unit: "USD",
@@ -2054,9 +1584,6 @@ export const DFDA_NPV_NET_BENEFIT_RD_ONLY: Parameter = {
   latex: "Benefit_{NPV} = \\sum_{t=1}^{10} \\frac{NetSavings_{RD} \\times \\min(t,5)/5}{(1+r)^t} \\approx \\$249.3B \\text{ (5-year linear adoption ramp)}",
 };
 
-/**
- * Present value of annual opex over 10 years (NPV formula)
- */
 export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   value: 341634623.61287224,
   unit: "USD",
@@ -2069,9 +1596,6 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   latex: "PV_{opex} = \\$0.04005B \\times \\frac{1 - 1.08^{-10}}{0.08} \\approx \\$0.269B",
 };
 
-/**
- * Total NPV cost (upfront + PV of annual opex)
- */
 export const DFDA_NPV_TOTAL_COST: Parameter = {
   value: 611384623.6128722,
   unit: "USD",
@@ -2084,10 +1608,6 @@ export const DFDA_NPV_TOTAL_COST: Parameter = {
   latex: "TotalCost_{NPV} = \\$0.26975B + \\$0.269B \\approx \\$0.54B",
 };
 
-/**
- * Total NPV upfront costs (Decentralized Framework for Drug Assessment core
- * + DIH initiatives)
- */
 export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   value: 269750000.0,
   unit: "USD",
@@ -2100,10 +1620,6 @@ export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
   latex: "C_0 = \\$0.040B + \\$0.22975B = \\$0.26975B \\text{ (upfront cost)}",
 };
 
-/**
- * Annual Decentralized Framework for Drug Assessment benefit from R&D
- * savings (trial cost reduction, secondary component)
- */
 export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
   value: 41500000000.0,
   unit: "USD/year",
@@ -2115,9 +1631,6 @@ export const DFDA_RD_GROSS_SAVINGS_ANNUAL: Parameter = {
   formula: "TRIAL_SPENDING × COST_REDUCTION_PCT",
 };
 
-/**
- * Daily R&D savings from trial cost reduction (opportunity cost of delay)
- */
 export const DFDA_RD_SAVINGS_DAILY: Parameter = {
   value: 113698630.1369863,
   unit: "USD/day",
@@ -2130,10 +1643,6 @@ export const DFDA_RD_SAVINGS_DAILY: Parameter = {
   latex: "Savings_{daily} = \\frac{\\$41.5B}{365} = \\$113.7M",
 };
 
-/**
- * ROI from Decentralized Framework for Drug Assessment R&D savings only
- * (10-year NPV, most conservative estimate)
- */
 export const DFDA_ROI_RD_ONLY: Parameter = {
   value: 450.5645014781041,
   unit: "ratio",
@@ -2146,9 +1655,6 @@ export const DFDA_ROI_RD_ONLY: Parameter = {
   latex: "ROI_{RD} = \\frac{\\$249.3B}{\\$0.54B} \\approx 463",
 };
 
-/**
- * Simple ROI without NPV adjustment (gross savings / annual opex)
- */
 export const DFDA_ROI_SIMPLE: Parameter = {
   value: 1037.5,
   unit: "ratio",
@@ -2160,9 +1666,6 @@ export const DFDA_ROI_SIMPLE: Parameter = {
   formula: "GROSS_SAVINGS ÷ ANNUAL_OPEX",
 };
 
-/**
- * Maximum trials per year possible with trial capacity multiplier
- */
 export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   value: 75392.0,
   unit: "trials/year",
@@ -2173,9 +1676,6 @@ export const DFDA_TRIALS_PER_YEAR_CAPACITY: Parameter = {
   formula: "CURRENT_TRIALS × TRIAL_CAPACITY_MULTIPLIER",
 };
 
-/**
- * Number of patients fundable annually at RECOVERY trial cost
- */
 export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   value: 43408000.0,
   unit: "patients/year",
@@ -2187,10 +1687,6 @@ export const DIH_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   formula: "TRIAL_SUBSIDIES ÷ COST_PER_PATIENT",
 };
 
-/**
- * Annual funding for pragmatic clinical trials (treaty funding minus VICTORY
- * Bond payouts and IAB political incentive mechanism)
- */
 export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
   value: 21744000000.0,
   unit: "USD/year",
@@ -2202,10 +1698,6 @@ export const DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL: Parameter = {
   latex: "ResearchFunding = \\$27.18B - \\$2.718B - \\$2.718B = \\$21.744B",
 };
 
-/**
- * Annual clinical trial patient subsidies (all medical research funds after
- * Decentralized Framework for Drug Assessment operations)
- */
 export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   value: 21704000000.0,
   unit: "USD/year",
@@ -2218,10 +1710,6 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   latex: "TrialSubsidies = \\$24.462B - \\$0.04B = \\$24.422B",
 };
 
-/**
- * Total Disability-Adjusted Life Years lost from disease eradication delay
- * (PRIMARY estimate)
- */
 export const DISEASE_ERADICATION_DELAY_DALYS: Parameter = {
   value: 7942783571.3,
   unit: "DALYs",
@@ -2234,11 +1722,6 @@ export const DISEASE_ERADICATION_DELAY_DALYS: Parameter = {
   latex: "DALY_{total} = 7.03B \\text{ (YLL)} + 0.87B \\text{ (YLD)} = 7.90B",
 };
 
-/**
- * Total eventually avoidable deaths from delaying disease eradication by 8.2
- * years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable
- * deaths (primarily accidents ~7.9%).
- */
 export const DISEASE_ERADICATION_DELAY_DEATHS_TOTAL: Parameter = {
   value: 415852543.0,
   unit: "deaths",
@@ -2251,12 +1734,6 @@ export const DISEASE_ERADICATION_DELAY_DEATHS_TOTAL: Parameter = {
   latex: "D_{total} = 54.75M \\text{ (annual)} \\times 8.2 \\text{ (lag)} \\times 92.1\\% \\text{ (avoidable)} = 413.4M",
 };
 
-/**
- * Total economic loss from delaying disease eradication by 8.2 years
- * (PRIMARY estimate, 2024 USD). Values global DALYs at standardized
- * US/International normative rate ($150k) rather than local ability-to-pay,
- * representing the full human capital loss.
- */
 export const DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS: Parameter = {
   value: 1191417535695000.0,
   unit: "USD",
@@ -2269,10 +1746,6 @@ export const DISEASE_ERADICATION_DELAY_ECONOMIC_LOSS: Parameter = {
   latex: "Loss = 7.90B \\times \\$150k = \\$1.185\\text{ quadrillion}",
 };
 
-/**
- * Years Lived with Disability during disease eradication delay (PRIMARY
- * estimate)
- */
 export const DISEASE_ERADICATION_DELAY_YLD: Parameter = {
   value: 873290340.3,
   unit: "years",
@@ -2284,10 +1757,6 @@ export const DISEASE_ERADICATION_DELAY_YLD: Parameter = {
   formula: "DEATHS_TOTAL × SUFFERING_PERIOD × DISABILITY_WEIGHT",
 };
 
-/**
- * Years of Life Lost from disease eradication delay deaths (PRIMARY
- * estimate)
- */
 export const DISEASE_ERADICATION_DELAY_YLL: Parameter = {
   value: 7069493231.0,
   unit: "years",
@@ -2300,16 +1769,6 @@ export const DISEASE_ERADICATION_DELAY_YLL: Parameter = {
   latex: "YLL = 413.4M \\times 17 \\text{ (years lost)} = 7.03B",
 };
 
-/**
- * Total deaths from disease eradication delay plus innovation acceleration
- * (OPTIMISTIC UPPER BOUND). Represents additional deaths avoided beyond lag
- * elimination through innovation cascade effects: faster development cycles,
- * lower barriers enabling more drugs, earlier phase starts. The 2×
- * multiplier is supported by research showing 50% timeline reductions
- * achievable (Nature 2023) and adaptive trials generating millions of
- * additional life-years (Woods et al. 2024). Based on (150K daily × 365 × 2)
- * × 8.2 years.
- */
 export const DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL: Parameter = {
   value: 897899999.9999999,
   unit: "deaths",
@@ -2322,19 +1781,6 @@ export const DISEASE_ERADICATION_PLUS_ACCELERATION_DEATHS_TOTAL: Parameter = {
   latex: "D_{total} = (54.75M \\times 2) \\times 8.2 = 898M",
 };
 
-/**
- * Total economic loss from disease eradication delay plus innovation
- * acceleration (OPTIMISTIC UPPER BOUND). The 2× multiplier represents
- * combined timeline and volume effects from eliminating Phase 2-4 cost
- * barriers. Research shows: (1) Timeline acceleration of 50% achievable
- * through AI/tech (Nature 2023), (2) Adaptive trials can reduce costs
- * $2.6B→$2.2B, generating 3.5M additional life-years (Woods et al. 2024,
- * Health Economics), (3) Cost barrier elimination enables more drugs to
- * reach viability. The 2× factor conservatively represents either 2×
- * timeline acceleration OR 1.5× timeline × 1.33× volume. Dynamic efficiency
- * framework suggests optimal manufacturer value share ~20% maximizes
- * long-term population health (Woods 2024).
- */
 export const DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL: Parameter = {
   value: 2382835071390000.0,
   unit: "USD",
@@ -2347,10 +1793,6 @@ export const DISEASE_ERADICATION_PLUS_ACCELERATION_ECONOMIC_LOSS_TOTAL: Paramete
   latex: "Loss_{total} = \\$1,286T \\times 2 = \\$2,572T",
 };
 
-/**
- * Coverage factor of treaty funding vs Decentralized Framework for Drug
- * Assessment opex (sustainability margin)
- */
 export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   value: 679.5,
   unit: "ratio",
@@ -2363,10 +1805,6 @@ export const DIVIDEND_COVERAGE_FACTOR: Parameter = {
   latex: "Coverage = \\$27.18B / \\$0.04B = 679x",
 };
 
-/**
- * Drug development cost increase from 1980s to current ($194M → $2.6B =
- * 13.4x)
- */
 export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 13.402061855670103,
   unit: "ratio",
@@ -2378,10 +1816,6 @@ export const DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER: Parameter = {
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
 };
 
-/**
- * Drug development cost increase from pre-1962 to current ($50M → $2.6B =
- * 52x)
- */
 export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
   value: 52.0,
   unit: "ratio",
@@ -2393,9 +1827,6 @@ export const DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER: Parameter = {
   formula: "PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST",
 };
 
-/**
- * Total possible drug-disease combinations using existing safe compounds
- */
 export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   value: 9500000.0,
   unit: "combinations",
@@ -2408,9 +1839,6 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   latex: "N_{combinations} = N_{compounds} \\times N_{diseases} = 9{,}500 \\times 1{,}000 = 9{,}500{,}000",
 };
 
-/**
- * Fraction of possible drug-disease space actually tested (<1%)
- */
 export const EXPLORATION_RATIO: Parameter = {
   value: 0.0034210526315789475,
   unit: "percentage",
@@ -2423,10 +1851,6 @@ export const EXPLORATION_RATIO: Parameter = {
   latex: "\\text{Exploration Ratio} = \\frac{N_{tested}}{N_{possible}} = \\frac{32{,}500}{9{,}500{,}000} = 0.342\\%",
 };
 
-/**
- * FDA approval timeline vs Oxford RECOVERY trial (9.1 years ÷ 3 months = 36x
- * slower)
- */
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   value: 36.4,
   unit: "ratio",
@@ -2439,10 +1863,6 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   latex: "\\frac{9.1 \\text{ years} \\times 12 \\text{ months/year}}{3 \\text{ months}} = 36.4",
 };
 
-/**
- * Total annual conflict deaths globally (sum of combat, terror, state
- * violence)
- */
 export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
   value: 244600.0,
   unit: "deaths/year",
@@ -2455,9 +1875,6 @@ export const GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL: Parameter = {
   latex: "Deaths_{total} = 233,600 \\text{ (combat)} + 8,300 \\text{ (terror)} + 2,700 \\text{ (state)} = 244,600",
 };
 
-/**
- * Annual cost of combat deaths (deaths × VSL)
- */
 export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   value: 2336000000000.0,
   unit: "USD/year",
@@ -2469,9 +1886,6 @@ export const GLOBAL_ANNUAL_HUMAN_COST_ACTIVE_COMBAT: Parameter = {
   formula: "COMBAT_DEATHS × VSL ",
 };
 
-/**
- * Annual cost of state violence deaths (deaths × VSL)
- */
 export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
   value: 27000000000.0,
   unit: "USD/year",
@@ -2483,9 +1897,6 @@ export const GLOBAL_ANNUAL_HUMAN_COST_STATE_VIOLENCE: Parameter = {
   formula: "STATE_DEATHS × VSL ",
 };
 
-/**
- * Annual cost of terror deaths (deaths × VSL)
- */
 export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
   value: 83000000000.0,
   unit: "USD/year",
@@ -2497,10 +1908,6 @@ export const GLOBAL_ANNUAL_HUMAN_COST_TERROR_ATTACKS: Parameter = {
   formula: "TERROR_DEATHS × VSL ",
 };
 
-/**
- * Total annual human life losses from conflict (sum of combat, terror, state
- * violence)
- */
 export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
   value: 2446000000000.0,
   unit: "USD/year",
@@ -2513,10 +1920,6 @@ export const GLOBAL_ANNUAL_HUMAN_LIFE_LOSSES_CONFLICT: Parameter = {
   latex: "Cost_{human} = \\$2,336B \\text{ (combat)} + \\$83B \\text{ (terror)} + \\$27B \\text{ (state)} = \\$2,446B",
 };
 
-/**
- * Total annual infrastructure destruction (sum of transportation, energy,
- * communications, water, education, healthcare)
- */
 export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
   value: 1875000000000.0,
   unit: "USD/year",
@@ -2529,10 +1932,6 @@ export const GLOBAL_ANNUAL_INFRASTRUCTURE_DESTRUCTION_CONFLICT: Parameter = {
   latex: "Infra_{damage} = \\$487B \\text{ (trans)} + \\$422B \\text{ (nrg)} + \\$298B \\text{ (comms)} + \\$268B \\text{ (water)} + \\$235B \\text{ (edu)} + \\$166B \\text{ (hlth)} = \\$1,875B",
 };
 
-/**
- * Total annual trade disruption (sum of shipping, supply chain, energy
- * prices, currency instability)
- */
 export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
   value: 616000000000.0,
   unit: "USD/year",
@@ -2545,10 +1944,6 @@ export const GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT: Parameter = {
   latex: "Trade_{disruption} = \\$247B \\text{ (ship)} + \\$187B \\text{ (supply)} + \\$125B \\text{ (nrg)} + \\$57B \\text{ (curr)} = \\$616B",
 };
 
-/**
- * Total annual direct war costs (military spending + infrastructure + human
- * life + trade disruption)
- */
 export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
   value: 7655000000000.0,
   unit: "USD/year",
@@ -2561,10 +1956,6 @@ export const GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL: Parameter = {
   latex: "DirectCosts = \\$2,718B \\text{ (mil)} + \\$1,875B \\text{ (infra)} + \\$2,446B \\text{ (human)} + \\$616B \\text{ (trade)} = \\$7,655B",
 };
 
-/**
- * Total annual indirect war costs (opportunity cost + veterans + refugees +
- * environment + mental health + lost productivity)
- */
 export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   value: 3700100000000.0,
   unit: "USD/year",
@@ -2577,9 +1968,6 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   latex: "IndirectCosts = \\$2.7T \\text{ (opp cost)} + \\$200B \\text{ (vet)} + \\$150B \\text{ (ref)} + \\$100B \\text{ (env)} + \\$232B \\text{ (ptsd)} + \\$300B \\text{ (hum cap)} = \\$3.7T",
 };
 
-/**
- * Total annual cost of war worldwide (direct + indirect costs)
- */
 export const GLOBAL_ANNUAL_WAR_TOTAL_COST: Parameter = {
   value: 11355100000000.0,
   unit: "USD/year",
@@ -2592,9 +1980,6 @@ export const GLOBAL_ANNUAL_WAR_TOTAL_COST: Parameter = {
   latex: "TotalWarCost = \\$7,655B \\text{ (direct)} + \\$3,700B \\text{ (indirect)} = \\$11,355B",
 };
 
-/**
- * Cost per life saved by medical research
- */
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   value: 16071.42857142857,
   unit: "USD/life",
@@ -2607,10 +1992,6 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   latex: "CostPerLifeSaved = \\frac{\\$67.5B \\times 10^9}{4,200,000} \\approx \\$16,071",
 };
 
-/**
- * Total economic burden of disease globally (medical + productivity +
- * mortality)
- */
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   value: 109100000000000.0,
   unit: "USD/year",
@@ -2622,9 +2003,6 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   formula: "MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
 };
 
-/**
- * Annual global industry spending on clinical trials (Total - Government)
- */
 export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   value: 78500000000.0,
   unit: "USD",
@@ -2635,9 +2013,6 @@ export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   formula: "TOTAL_CLINICAL_TRIALS - GOVT_CLINICAL_TRIALS",
 };
 
-/**
- * Per capita military spending globally
- */
 export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   value: 339.75,
   unit: "USD/person/year",
@@ -2650,9 +2025,6 @@ export const GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL: Parameter = {
   latex: "PerCapita_{military} = \\$2,718B / 8.0B = \\$339.75",
 };
 
-/**
- * Global military spending after 1% treaty reduction
- */
 export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   value: 2690820000000.0,
   unit: "USD/year",
@@ -2665,10 +2037,6 @@ export const GLOBAL_MILITARY_SPENDING_POST_TREATY_ANNUAL_2024: Parameter = {
   latex: "PostTreaty_{military} = \\$2,718B \\times 0.99 = \\$2,690.82B",
 };
 
-/**
- * Total annual cost of war and disease with all externalities (direct +
- * indirect costs for both)
- */
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   value: 128655100000000.0,
   unit: "USD/year",
@@ -2680,12 +2048,6 @@ export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
   formula: "WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
 };
 
-/**
- * Total deaths from delaying existing drugs over 8.2-year efficacy lag
- * (CONSERVATIVE FLOOR). One-time impact of eliminating Phase 2-4 testing
- * delay for drugs already approved 1962-2024. Based on 12M deaths/year rate
- * × 8.2 years.
- */
 export const HISTORICAL_PROGRESS_DEATHS_TOTAL: Parameter = {
   value: 98399999.99999999,
   unit: "deaths",
@@ -2698,10 +2060,6 @@ export const HISTORICAL_PROGRESS_DEATHS_TOTAL: Parameter = {
   latex: "D_{total} = 12M \\times 8.2 = 98.4M",
 };
 
-/**
- * Total economic loss from delaying existing drugs over 8.2-year efficacy
- * lag (CONSERVATIVE FLOOR). One-time benefit of eliminating Phase 2-4 delay.
- */
 export const HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL: Parameter = {
   value: 250919999999999.97,
   unit: "USD",
@@ -2714,9 +2072,6 @@ export const HISTORICAL_PROGRESS_ECONOMIC_LOSS_TOTAL: Parameter = {
   latex: "Loss_{total} = 98.4M \\times 17 \\times \\$150k = \\$251T",
 };
 
-/**
- * Benefit-Cost Ratio of the IAB mechanism itself
- */
 export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   value: 206.73466666666667,
   unit: "ratio",
@@ -2728,11 +2083,6 @@ export const IAB_MECHANISM_BENEFIT_COST_RATIO: Parameter = {
   formula: "TREATY_PEACE_PLUS_RD_BENEFITS ÷ IAB_MECHANISM_COST",
 };
 
-/**
- * Annual funding for IAB political incentive mechanism (independent
- * expenditures supporting high-scoring politicians, post-office fellowship
- * endowments, Public Good Score infrastructure)
- */
 export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
   value: 2718000000.0,
   unit: "USD/year",
@@ -2744,10 +2094,6 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
   latex: "IABFunding = \\$27.18B \\times 0.10 = \\$2.718B",
 };
 
-/**
- * Ratio of Industry to Government spending on clinical trials (approx 90/10
- * split)
- */
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   value: 17.444444444444443,
   unit: "ratio",
@@ -2759,9 +2105,6 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
   formula: "(TOTAL - GOVT) / GOVT",
 };
 
-/**
- * Medical research spending as percentage of total disease burden
- */
 export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
   value: 0.0005246585638657154,
   unit: "rate",
@@ -2774,9 +2117,6 @@ export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
   latex: "\\frac{\\$67.5\\text{B}}{\\$128.6\\text{T}} = 0.052\\%",
 };
 
-/**
- * Ratio of global military spending to government clinical trials spending
- */
 export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   value: 604.0,
   unit: "ratio",
@@ -2788,9 +2128,6 @@ export const MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
   latex: "\\text{Ratio} = \\frac{\\$2.7T}{\\$4.5B} \\approx 600\\times",
 };
 
-/**
- * Ratio of military spending to medical research spending
- */
 export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
   value: 40.266666666666666,
   unit: "ratio",
@@ -2803,9 +2140,6 @@ export const MILITARY_VS_MEDICAL_RESEARCH_RATIO: Parameter = {
   latex: "Ratio = \\frac{\\$2,718B}{\\$67.5B} \\approx 40.3:1",
 };
 
-/**
- * Misallocation factor: cost to kill vs cost to save
- */
 export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   value: 2888.550922140456,
   unit: "ratio",
@@ -2818,9 +2152,6 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   latex: "Misallocation = \\frac{\\$46.4M}{\\$16,071} \\approx 2,889x",
 };
 
-/**
- * Annual peace dividend from 1% reduction in total war costs
- */
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   value: 113551000000.0,
   unit: "USD/year",
@@ -2832,10 +2163,6 @@ export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   formula: "TOTAL_WAR_COST × 1%",
 };
 
-/**
- * Conflict reduction benefits from 1% less military spending (lower
- * confidence - assumes proportional relationship)
- */
 export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
   value: 86371000000.0,
   unit: "USD/year",
@@ -2848,9 +2175,6 @@ export const PEACE_DIVIDEND_CONFLICT_REDUCTION: Parameter = {
   latex: "PeaceDividend_{conflict} = \\$113.55B - \\$27.18B = \\$86.37B",
 };
 
-/**
- * Annual savings from 1% reduction in direct war costs
- */
 export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
   value: 76550000000.0,
   unit: "USD/year",
@@ -2862,9 +2186,6 @@ export const PEACE_DIVIDEND_DIRECT_COSTS: Parameter = {
   formula: "DIRECT_COSTS × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in environmental damage
- */
 export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
   value: 1000000000.0,
   unit: "USD/year",
@@ -2876,9 +2197,6 @@ export const PEACE_DIVIDEND_ENVIRONMENTAL: Parameter = {
   formula: "ENVIRONMENTAL_DAMAGE × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in human casualties
- */
 export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
   value: 24460000000.0,
   unit: "USD/year",
@@ -2890,9 +2208,6 @@ export const PEACE_DIVIDEND_HUMAN_CASUALTIES: Parameter = {
   formula: "HUMAN_LIFE_LOSSES × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in indirect war costs
- */
 export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
   value: 37001000000.0,
   unit: "USD/year",
@@ -2904,9 +2219,6 @@ export const PEACE_DIVIDEND_INDIRECT_COSTS: Parameter = {
   formula: "INDIRECT_COSTS × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in infrastructure destruction
- */
 export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
   value: 18750000000.0,
   unit: "USD/year",
@@ -2918,9 +2230,6 @@ export const PEACE_DIVIDEND_INFRASTRUCTURE: Parameter = {
   formula: "INFRASTRUCTURE_DESTRUCTION × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in lost economic growth
- */
 export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   value: 27180000000.0,
   unit: "USD/year",
@@ -2932,9 +2241,6 @@ export const PEACE_DIVIDEND_LOST_ECONOMIC_GROWTH: Parameter = {
   formula: "LOST_ECONOMIC_GROWTH × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in lost human capital
- */
 export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
   value: 3000000000.0,
   unit: "USD/year",
@@ -2946,9 +2252,6 @@ export const PEACE_DIVIDEND_LOST_HUMAN_CAPITAL: Parameter = {
   formula: "LOST_HUMAN_CAPITAL × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in PTSD and mental health costs
- */
 export const PEACE_DIVIDEND_PTSD: Parameter = {
   value: 2320000000.0,
   unit: "USD/year",
@@ -2960,9 +2263,6 @@ export const PEACE_DIVIDEND_PTSD: Parameter = {
   formula: "PTSD_COSTS × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in refugee support costs
- */
 export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
   value: 1500000000.0,
   unit: "USD/year",
@@ -2974,9 +2274,6 @@ export const PEACE_DIVIDEND_REFUGEE_SUPPORT: Parameter = {
   formula: "REFUGEE_SUPPORT × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in trade disruption
- */
 export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
   value: 6160000000.0,
   unit: "USD/year",
@@ -2988,9 +2285,6 @@ export const PEACE_DIVIDEND_TRADE_DISRUPTION: Parameter = {
   formula: "TRADE_DISRUPTION × 1%",
 };
 
-/**
- * Annual savings from 1% reduction in veteran healthcare costs
- */
 export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   value: 2001000000.0,
   unit: "USD/year",
@@ -3002,12 +2296,6 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   formula: "VETERAN_HEALTHCARE × 1%",
 };
 
-/**
- * Personal lifetime wealth benefit for a 30-year-old with $50K income under
- * 1% treaty. Life extension uncertainty (5-50 years) propagates through
- * Monte Carlo to show full range of outcomes from conservative antibiotic
- * precedent to optimistic aging reversal scenarios.
- */
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
   value: 507984.80978508206,
   unit: "usd",
@@ -3020,9 +2308,6 @@ export const PERSONAL_LIFETIME_WEALTH: Parameter = {
   latex: "\\text{PLW} = \\sum_{t=0}^{T + \\Delta L} \\frac{B_t}{(1+r)^t}",
 };
 
-/**
- * US per capita chronic disease cost
- */
 export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
   value: 12238.805970149253,
   unit: "USD/person/year",
@@ -3033,9 +2318,6 @@ export const PER_CAPITA_CHRONIC_DISEASE_COST: Parameter = {
   formula: "US_CHRONIC_DISEASE_SPENDING ÷ US_POPULATION",
 };
 
-/**
- * US per capita mental health cost
- */
 export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   value: 1044.7761194029852,
   unit: "USD/person/year",
@@ -3046,10 +2328,6 @@ export const PER_CAPITA_MENTAL_HEALTH_COST: Parameter = {
   formula: "US_MENTAL_HEALTH_COST ÷ US_POPULATION",
 };
 
-/**
- * Total hours of human suffering eliminated by 8.2-year disease eradication
- * timeline shift (one-time benefit from YLD component, not annual recurring)
- */
 export const SUFFERING_HOURS_ELIMINATED_TOTAL: Parameter = {
   value: 7650023381028.0,
   unit: "hours",
@@ -3062,9 +2340,6 @@ export const SUFFERING_HOURS_ELIMINATED_TOTAL: Parameter = {
   latex: "Hours = 868M \\text{ (YLD)} \\times 8{,}760 \\text{ (hrs/yr)} = 7.60T",
 };
 
-/**
- * Total DALYs per US-scale thalidomide event (YLL + YLD)
- */
 export const THALIDOMIDE_DALYS_PER_EVENT: Parameter = {
   value: 41760.0,
   unit: "DALYs",
@@ -3076,9 +2351,6 @@ export const THALIDOMIDE_DALYS_PER_EVENT: Parameter = {
   latex: "28{,}800 + 12{,}960 = 41{,}760 \\text{ DALYs}",
 };
 
-/**
- * Deaths per US-scale thalidomide event
- */
 export const THALIDOMIDE_DEATHS_PER_EVENT: Parameter = {
   value: 360.0,
   unit: "deaths",
@@ -3090,9 +2362,6 @@ export const THALIDOMIDE_DEATHS_PER_EVENT: Parameter = {
   latex: "900 \\text{ (cases)} \\times 40\\% \\text{ (mortality)} = 360 \\text{ deaths}",
 };
 
-/**
- * Survivors per US-scale thalidomide event
- */
 export const THALIDOMIDE_SURVIVORS_PER_EVENT: Parameter = {
   value: 540.0,
   unit: "cases",
@@ -3104,9 +2373,6 @@ export const THALIDOMIDE_SURVIVORS_PER_EVENT: Parameter = {
   latex: "900 \\text{ (cases)} \\times 60\\% \\text{ (survival)} = 540 \\text{ survivors}",
 };
 
-/**
- * Estimated US thalidomide cases prevented by FDA rejection
- */
 export const THALIDOMIDE_US_CASES_PREVENTED: Parameter = {
   value: 900.0,
   unit: "cases",
@@ -3118,9 +2384,6 @@ export const THALIDOMIDE_US_CASES_PREVENTED: Parameter = {
   latex: "15{,}000 \\times 6\\% = 900 \\text{ cases}",
 };
 
-/**
- * Years Lived with Disability per thalidomide event
- */
 export const THALIDOMIDE_YLD_PER_EVENT: Parameter = {
   value: 12960.0,
   unit: "years",
@@ -3132,9 +2395,6 @@ export const THALIDOMIDE_YLD_PER_EVENT: Parameter = {
   latex: "540 \\text{ (surv)} \\times 60 \\text{ (yrs)} \\times 0.4 \\text{ (weight)} = 12{,}960 \\text{ YLD}",
 };
 
-/**
- * Years of Life Lost per thalidomide event (infant deaths)
- */
 export const THALIDOMIDE_YLL_PER_EVENT: Parameter = {
   value: 28800.0,
   unit: "years",
@@ -3146,9 +2406,6 @@ export const THALIDOMIDE_YLL_PER_EVENT: Parameter = {
   latex: "360 \\text{ (deaths)} \\times 80 \\text{ (years)} = 28{,}800 \\text{ YLL}",
 };
 
-/**
- * Total global research funding (baseline + 1% treaty funding)
- */
 export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   value: 94680000000.0,
   unit: "USD",
@@ -3160,9 +2417,6 @@ export const TOTAL_RESEARCH_FUNDING_WITH_TREATY: Parameter = {
   formula: "GLOBAL_MED_RESEARCH_SPENDING + TREATY_ANNUAL_FUNDING",
 };
 
-/**
- * Treaty system benefit multiplier vs childhood vaccination programs
- */
 export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   value: 10.336733333333333,
   unit: "ratio",
@@ -3174,9 +2428,6 @@ export const TREATY_BENEFIT_MULTIPLIER_VS_VACCINES: Parameter = {
   formula: "TREATY_CONSERVATIVE_BENEFIT ÷ CHILDHOOD_VACCINATION_BENEFIT",
 };
 
-/**
- * Amortized annual campaign cost (total cost ÷ campaign duration)
- */
 export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
   value: 250000000.0,
   unit: "USD/year",
@@ -3189,9 +2440,6 @@ export const TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED: Parameter = {
   latex: "AnnualCost = \\$1B / 4 = \\$0.25B",
 };
 
-/**
- * Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
- */
 export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
   value: 1000000000.0,
   unit: "USD",
@@ -3204,10 +2452,6 @@ export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
   latex: "CampaignCost = \\$300M \\text{ (ref)} + \\$650M \\text{ (lob)} + \\$50M \\text{ (res)} = \\$1.0B",
 };
 
-/**
- * Target voting bloc size for campaign (3.5% of global population - critical
- * mass for social change)
- */
 export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   value: 280000000.0,
   unit: "of people",
@@ -3219,12 +2463,6 @@ export const TREATY_CAMPAIGN_VOTING_BLOC_TARGET: Parameter = {
   formula: "GLOBAL_POPULATION × 3.5%",
 };
 
-/**
- * Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag
- * (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication
- * delay elimination divided by $1B campaign cost. This is the primary ROI
- * estimate for total health benefits.
- */
 export const TREATY_COMPLETE_ROI_ALL_BENEFITS: Parameter = {
   value: 1191417.535695,
   unit: "ratio",
@@ -3237,14 +2475,6 @@ export const TREATY_COMPLETE_ROI_ALL_BENEFITS: Parameter = {
   latex: "ROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\$1.00B} = 1{,}286{,}242:1",
 };
 
-/**
- * Cost per DALY averted from one-time timeline shift (8.2 years). This is a
- * conservative estimate that only counts campaign cost ($1B) and ignores all
- * economic benefits ($27B/year funding unlocked + $50B/year R&D savings).
- * For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This
- * intervention is 700x more cost-effective than bed nets while also being
- * self-funding.
- */
 export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
   value: 0.12590044674178746,
   unit: "USD/DALY",
@@ -3257,12 +2487,6 @@ export const TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT: Parameter = {
   latex: "\\text{Cost/DALY} = \\frac{\\$1.0B}{7.90B} = \\$0.127",
 };
 
-/**
- * Expected cost per DALY accounting for political success probability
- * uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the
- * ultra-conservative 1% estimate, this is still more cost-effective than bed
- * nets ($89.0/DALY).
- */
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   value: 12.590044674178746,
   unit: "USD/DALY",
@@ -3275,9 +2499,6 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   latex: "E[\\text{Cost/DALY}] = \\frac{\\text{Cost}_{conditional}}{P_{success}}",
 };
 
-/**
- * Expected value multiplier vs bed nets (accounts for political uncertainty)
- */
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 7.069077378457,
   unit: "ratio",
@@ -3289,9 +2510,6 @@ export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   latex: "E[\\text{Multiplier}] = \\frac{\\$89}{\\$0.51} = 175\\times",
 };
 
-/**
- * Annual lives saved from 1% reduction in conflict deaths
- */
 export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
   value: 2446.0,
   unit: "lives/year",
@@ -3303,11 +2521,6 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
   formula: "TOTAL_DEATHS × REDUCTION_PCT",
 };
 
-/**
- * Basic annual benefits: peace dividend + Decentralized Framework for Drug
- * Assessment R&D savings only (2 of 8 benefit categories, excludes
- * regulatory delay value)
- */
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   value: 155051000000.0,
   unit: "USD/year",
@@ -3319,9 +2532,6 @@ export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   formula: "PEACE_DIVIDEND + DFDA_RD_SAVINGS",
 };
 
-/**
- * Annual QALYs gained from peace dividend (lives saved × QALYs/life)
- */
 export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   value: 85610.0,
   unit: "QALYs/year",
@@ -3333,11 +2543,6 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   formula: "LIVES_SAVED × QALYS_PER_LIFE",
 };
 
-/**
- * Truly recurring annual benefits from 1% treaty: peace dividend
- * ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are
- * one-time timeline shifts, NOT included here.
- */
 export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   value: 155051000000.0,
   unit: "USD/year",
@@ -3349,11 +2554,6 @@ export const TREATY_RECURRING_BENEFITS_ANNUAL: Parameter = {
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
 };
 
-/**
- * Treaty ROI based on historical rate of drug development (existing drugs
- * only, conservative floor). Total one-time benefit from avoiding regulatory
- * delay for drugs already in development divided by $1B campaign cost.
- */
 export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
   value: 250919.99999999997,
   unit: "ratio",
@@ -3365,13 +2565,6 @@ export const TREATY_ROI_HISTORICAL_RATE: Parameter = {
   formula: "HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
 };
 
-/**
- * Treaty ROI based on lag elimination plus innovation acceleration effects
- * (OPTIMISTIC UPPER BOUND). Includes cascading innovation effects from
- * eliminating Phase 2-4 cost barriers. Research-backed 2× multiplier
- * represents combined timeline and volume effects (Nature 2023, Woods et al.
- * 2024).
- */
 export const TREATY_ROI_INNOVATION_ACCELERATION: Parameter = {
   value: 2382835.07139,
   unit: "ratio",
@@ -3383,12 +2576,6 @@ export const TREATY_ROI_INNOVATION_ACCELERATION: Parameter = {
   formula: "DISEASE_ERADICATION_PLUS_ACCELERATION_TOTAL ÷ CAMPAIGN_COST",
 };
 
-/**
- * Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag
- * (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication
- * delay elimination divided by $1B campaign cost. This is the primary ROI
- * estimate for total health benefits.
- */
 export const TREATY_ROI_LAG_ELIMINATION: Parameter = {
   value: 1191417.535695,
   unit: "ratio",
@@ -3401,10 +2588,6 @@ export const TREATY_ROI_LAG_ELIMINATION: Parameter = {
   latex: "ROI_{lag\\_elimination} = \\frac{\\$1{,}286T}{\\$1.00B} = 1{,}286{,}242:1",
 };
 
-/**
- * Total annual system costs (campaign + Decentralized Framework for Drug
- * Assessment operations)
- */
 export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   value: 290000000.0,
   unit: "USD/year",
@@ -3416,11 +2599,6 @@ export const TREATY_TOTAL_ANNUAL_COSTS: Parameter = {
   formula: "CAMPAIGN_ANNUAL + DFDA_OPEX",
 };
 
-/**
- * Truly recurring annual benefits from 1% treaty: peace dividend
- * ($113.6B/year) + R&D savings ($41.5B/year). Note: Health benefits are
- * one-time timeline shifts, NOT included here.
- */
 export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
   value: 155051000000.0,
   unit: "USD/year",
@@ -3432,10 +2610,6 @@ export const TREATY_TOTAL_COMPLETE_BENEFITS_ANNUAL: Parameter = {
   formula: "PEACE_DIVIDEND + RD_SAVINGS",
 };
 
-/**
- * How many times more cost-effective than bed nets (using $89/DALY midpoint
- * estimate)
- */
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   value: 706.9077378456999,
   unit: "ratio",
@@ -3447,9 +2621,6 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   latex: "\\text{Multiplier} = \\frac{\\$89}{\\$0.127} = 701\\times",
 };
 
-/**
- * Cumulative trial-capacity-equivalent years over 20-year period
- */
 export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
   value: 456.0,
   unit: "years",
@@ -3461,10 +2632,6 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
   latex: "Capacity_{20yr} = 25.7 \\times 20 = 514 \\text{ years}",
 };
 
-/**
- * Trial capacity multiplier from DIH funding capacity vs. current global
- * trial participation
- */
 export const TRIAL_CAPACITY_MULTIPLIER: Parameter = {
   value: 22.846315789473685,
   unit: "ratio",
@@ -3475,10 +2642,6 @@ export const TRIAL_CAPACITY_MULTIPLIER: Parameter = {
   formula: "DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
 };
 
-/**
- * Ratio of Type II error cost to Type I error benefit (harm from delay vs.
- * harm prevented)
- */
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   value: 3067.7541293180693,
   unit: "ratio",
@@ -3490,10 +2653,6 @@ export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   formula: "TYPE_II_COST ÷ TYPE_I_BENEFIT",
 };
 
-/**
- * Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period
- * 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
- */
 export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
   value: 2589120.0,
   unit: "DALYs",
@@ -3506,9 +2665,6 @@ export const TYPE_I_ERROR_BENEFIT_DALYS: Parameter = {
   latex: "41{,}760 \\times 62 = 2.59M \\text{ DALYs}",
 };
 
-/**
- * Fraction of possible drug-disease space that remains unexplored (>99%)
- */
 export const UNEXPLORED_RATIO: Parameter = {
   value: 0.996578947368421,
   unit: "percentage",
@@ -3521,10 +2677,6 @@ export const UNEXPLORED_RATIO: Parameter = {
   latex: "\\text{Unexplored} = 1 - \\text{Exploration Ratio} = 1 - 0.00342 = 99.66\\%",
 };
 
-/**
- * Total annual US cost of major diseases (diabetes, Alzheimer's, heart
- * disease, cancer)
- */
 export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   value: 1253000000000.0,
   unit: "USD",
@@ -3540,10 +2692,6 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
 // Core Definitions
 // ============================================================================
 
-/**
- * Unique approved drug-disease pairings (FDA-approved uses, midpoint of
- * 1,500-2,000 range)
- */
 export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
   value: 1750.0,
   unit: "pairings",
@@ -3555,9 +2703,6 @@ export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
   confidenceInterval: [1500.0, 2000.0],
 };
 
-/**
- * Celebrity and influencer endorsements
- */
 export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
   value: 15000000.0,
   unit: "USD",
@@ -3568,9 +2713,6 @@ export const CAMPAIGN_CELEBRITY_ENDORSEMENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Community organizing and ambassador program budget
- */
 export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
   value: 30000000.0,
   unit: "USD",
@@ -3581,9 +2723,6 @@ export const CAMPAIGN_COMMUNITY_ORGANIZING: Parameter = {
   confidence: "high",
 };
 
-/**
- * Contingency fund for unexpected costs
- */
 export const CAMPAIGN_CONTINGENCY: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -3595,9 +2734,6 @@ export const CAMPAIGN_CONTINGENCY: Parameter = {
   confidenceInterval: [30000000.0, 80000000.0],
 };
 
-/**
- * Defense industry conversion program
- */
 export const CAMPAIGN_DEFENSE_CONVERSION: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -3609,9 +2745,6 @@ export const CAMPAIGN_DEFENSE_CONVERSION: Parameter = {
   confidenceInterval: [40000000.0, 70000000.0],
 };
 
-/**
- * Budget for co-opting defense industry lobbyists
- */
 export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -3622,9 +2755,6 @@ export const CAMPAIGN_DEFENSE_LOBBYIST_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Healthcare industry alignment and partnerships
- */
 export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
   value: 35000000.0,
   unit: "USD",
@@ -3635,9 +2765,6 @@ export const CAMPAIGN_HEALTHCARE_ALIGNMENT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Campaign operational infrastructure
- */
 export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
   value: 20000000.0,
   unit: "USD",
@@ -3648,9 +2775,6 @@ export const CAMPAIGN_INFRASTRUCTURE: Parameter = {
   confidence: "high",
 };
 
-/**
- * AI-assisted legal work budget
- */
 export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -3661,9 +2785,6 @@ export const CAMPAIGN_LEGAL_AI_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Legal defense fund
- */
 export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
   value: 20000000.0,
   unit: "USD",
@@ -3674,9 +2795,6 @@ export const CAMPAIGN_LEGAL_DEFENSE: Parameter = {
   confidence: "high",
 };
 
-/**
- * Legal drafting and compliance work
- */
 export const CAMPAIGN_LEGAL_WORK: Parameter = {
   value: 60000000.0,
   unit: "USD",
@@ -3688,9 +2806,6 @@ export const CAMPAIGN_LEGAL_WORK: Parameter = {
   confidenceInterval: [50000000.0, 80000000.0],
 };
 
-/**
- * EU lobbying campaign budget
- */
 export const CAMPAIGN_LOBBYING_EU: Parameter = {
   value: 40000000.0,
   unit: "USD",
@@ -3701,9 +2816,6 @@ export const CAMPAIGN_LOBBYING_EU: Parameter = {
   confidence: "high",
 };
 
-/**
- * G20 countries lobbying budget
- */
 export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
   value: 35000000.0,
   unit: "USD",
@@ -3714,9 +2826,6 @@ export const CAMPAIGN_LOBBYING_G20_MILLIONS: Parameter = {
   confidence: "high",
 };
 
-/**
- * US lobbying campaign budget
- */
 export const CAMPAIGN_LOBBYING_US: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -3727,9 +2836,6 @@ export const CAMPAIGN_LOBBYING_US: Parameter = {
   confidence: "high",
 };
 
-/**
- * Maximum mass media campaign budget
- */
 export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
   value: 1000000000.0,
   unit: "USD",
@@ -3740,9 +2846,6 @@ export const CAMPAIGN_MEDIA_BUDGET_MAX: Parameter = {
   confidence: "high",
 };
 
-/**
- * Minimum mass media campaign budget
- */
 export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
   value: 500000000.0,
   unit: "USD",
@@ -3753,9 +2856,6 @@ export const CAMPAIGN_MEDIA_BUDGET_MIN: Parameter = {
   confidence: "high",
 };
 
-/**
- * Opposition research and rapid response
- */
 export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
   value: 25000000.0,
   unit: "USD",
@@ -3766,9 +2866,6 @@ export const CAMPAIGN_OPPOSITION_RESEARCH: Parameter = {
   confidence: "high",
 };
 
-/**
- * Phase 1 campaign budget (Foundation, Year 1)
- */
 export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
   value: 200000000.0,
   unit: "USD",
@@ -3779,9 +2876,6 @@ export const CAMPAIGN_PHASE1_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Phase 2 campaign budget (Scale & Momentum, Years 2-3)
- */
 export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
   value: 500000000.0,
   unit: "USD",
@@ -3792,9 +2886,6 @@ export const CAMPAIGN_PHASE2_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Pilot program testing in small countries
- */
 export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
   value: 30000000.0,
   unit: "USD",
@@ -3805,9 +2896,6 @@ export const CAMPAIGN_PILOT_PROGRAMS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Voting platform and technology development
- */
 export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
   value: 35000000.0,
   unit: "USD",
@@ -3819,9 +2907,6 @@ export const CAMPAIGN_PLATFORM_DEVELOPMENT: Parameter = {
   confidenceInterval: [25000000.0, 50000000.0],
 };
 
-/**
- * Regulatory compliance and navigation
- */
 export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
   value: 20000000.0,
   unit: "USD",
@@ -3832,9 +2917,6 @@ export const CAMPAIGN_REGULATORY_NAVIGATION: Parameter = {
   confidence: "high",
 };
 
-/**
- * Scaling preparation and blueprints
- */
 export const CAMPAIGN_SCALING_PREP: Parameter = {
   value: 30000000.0,
   unit: "USD",
@@ -3845,9 +2927,6 @@ export const CAMPAIGN_SCALING_PREP: Parameter = {
   confidence: "high",
 };
 
-/**
- * Campaign core team staff budget
- */
 export const CAMPAIGN_STAFF_BUDGET: Parameter = {
   value: 40000000.0,
   unit: "USD",
@@ -3858,9 +2937,6 @@ export const CAMPAIGN_STAFF_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Super PAC campaign expenditures
- */
 export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
   value: 30000000.0,
   unit: "USD",
@@ -3871,9 +2947,6 @@ export const CAMPAIGN_SUPER_PAC_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Tech industry partnerships and infrastructure
- */
 export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
   value: 25000000.0,
   unit: "USD",
@@ -3884,9 +2957,6 @@ export const CAMPAIGN_TECH_PARTNERSHIPS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Post-victory treaty implementation support
- */
 export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
   value: 40000000.0,
   unit: "USD",
@@ -3898,9 +2968,6 @@ export const CAMPAIGN_TREATY_IMPLEMENTATION: Parameter = {
   confidenceInterval: [30000000.0, 55000000.0],
 };
 
-/**
- * Viral marketing content creation budget
- */
 export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
   value: 40000000.0,
   unit: "USD",
@@ -3911,9 +2978,6 @@ export const CAMPAIGN_VIRAL_CONTENT_BUDGET: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual cost of unpaid caregiving (replacement cost method)
- */
 export const CAREGIVER_COST_ANNUAL: Parameter = {
   value: 6000.0,
   unit: "USD/year",
@@ -3924,12 +2988,6 @@ export const CAREGIVER_COST_ANNUAL: Parameter = {
   formula: "HOURS_PER_MONTH × MONTHS_PER_YEAR × VALUE_PER_HOUR",
 };
 
-/**
- * Estimated cost per DALY for US childhood vaccination programs. Note: US
- * cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted
- * Life Year) rather than cost per DALY. This estimate is derived from
- * program costs and benefits for comparison purposes only.
- */
 export const CHILDHOOD_VACCINATION_COST_PER_DALY: Parameter = {
   value: 30.0,
   unit: "USD/DALY",
@@ -3939,10 +2997,6 @@ export const CHILDHOOD_VACCINATION_COST_PER_DALY: Parameter = {
   confidence: "low",
 };
 
-/**
- * Estimated combined market capitalization of concentrated interest
- * opposition (defense, fossil fuel, etc.)
- */
 export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
   value: 5000000000000.0,
   unit: "USD",
@@ -3952,10 +3006,6 @@ export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Current patient participation rate in clinical trials (0.08% = 1.9M
- * participants / 2.4B disease patients)
- */
 export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
   value: 0.0007916666666666666,
   unit: "rate",
@@ -3970,9 +3020,6 @@ export const DAYS_PER_YEAR: Parameter = {
   value: 365.0,
 };
 
-/**
- * Mid-range funding for commercial DCT platform
- */
 export const DCT_PLATFORM_FUNDING_MEDIUM: Parameter = {
   value: 500000000.0,
   unit: "USD",
@@ -3983,9 +3030,6 @@ export const DCT_PLATFORM_FUNDING_MEDIUM: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage of budget defense sector keeps under 1% treaty
- */
 export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   value: 0.99,
   unit: "rate",
@@ -3995,9 +3039,6 @@ export const DEFENSE_SECTOR_RETENTION_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Years to reach full Decentralized Framework for Drug Assessment adoption
- */
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
   value: 5.0,
   unit: "years",
@@ -4008,10 +3049,6 @@ export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Decentralized Framework for Drug Assessment core platform annual opex
- * (midpoint of $11-26.5M)
- */
 export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   value: 18950000.0,
   unit: "USD/year",
@@ -4023,9 +3060,6 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   confidenceInterval: [11000000.0, 26500000.0],
 };
 
-/**
- * Decentralized Framework for Drug Assessment core platform build cost
- */
 export const DFDA_NPV_UPFRONT_COST: Parameter = {
   value: 40000000.0,
   unit: "USD",
@@ -4037,9 +3071,6 @@ export const DFDA_NPV_UPFRONT_COST: Parameter = {
   confidenceInterval: [25000000.0, 65000000.0],
 };
 
-/**
- * Decentralized Framework for Drug Assessment community support costs
- */
 export const DFDA_OPEX_COMMUNITY: Parameter = {
   value: 2000000.0,
   unit: "USD/year",
@@ -4051,10 +3082,6 @@ export const DFDA_OPEX_COMMUNITY: Parameter = {
   confidenceInterval: [1000000.0, 3000000.0],
 };
 
-/**
- * Decentralized Framework for Drug Assessment infrastructure costs (cloud,
- * security)
- */
 export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
   value: 8000000.0,
   unit: "USD/year",
@@ -4066,10 +3093,6 @@ export const DFDA_OPEX_INFRASTRUCTURE: Parameter = {
   confidenceInterval: [5000000.0, 12000000.0],
 };
 
-/**
- * Percentage of treaty funding allocated to Decentralized Framework for Drug
- * Assessment platform overhead
- */
 export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   value: 0.0014716703458425313,
   unit: "rate",
@@ -4082,9 +3105,6 @@ export const DFDA_OPEX_PCT_OF_TREATY_FUNDING: Parameter = {
   latex: "DFDAOpexPct = \\$0.04B / \\$27.18B = 0.00147 = 0.15\\%",
 };
 
-/**
- * Decentralized Framework for Drug Assessment maintenance costs
- */
 export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
   value: 15000000.0,
   unit: "USD/year",
@@ -4096,9 +3116,6 @@ export const DFDA_OPEX_PLATFORM_MAINTENANCE: Parameter = {
   confidenceInterval: [10000000.0, 22000000.0],
 };
 
-/**
- * Decentralized Framework for Drug Assessment regulatory coordination costs
- */
 export const DFDA_OPEX_REGULATORY: Parameter = {
   value: 5000000.0,
   unit: "USD/year",
@@ -4110,10 +3127,6 @@ export const DFDA_OPEX_REGULATORY: Parameter = {
   confidenceInterval: [3000000.0, 8000000.0],
 };
 
-/**
- * Decentralized Framework for Drug Assessment staff costs (minimal,
- * AI-assisted)
- */
 export const DFDA_OPEX_STAFF: Parameter = {
   value: 10000000.0,
   unit: "USD/year",
@@ -4125,10 +3138,6 @@ export const DFDA_OPEX_STAFF: Parameter = {
   confidenceInterval: [7000000.0, 15000000.0],
 };
 
-/**
- * Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but
- * in dollars)
- */
 export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
   value: 1000.0,
   unit: "USD/patient",
@@ -4139,10 +3148,6 @@ export const DFDA_TARGET_COST_PER_PATIENT_USD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Decentralized Framework for Drug Assessment one-time build cost (central
- * estimate)
- */
 export const DFDA_UPFRONT_BUILD: Parameter = {
   value: 40000000.0,
   unit: "USD",
@@ -4153,10 +3158,6 @@ export const DFDA_UPFRONT_BUILD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Decentralized Framework for Drug Assessment one-time build cost (high
- * estimate)
- */
 export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   value: 46000000.0,
   unit: "USD",
@@ -4167,9 +3168,6 @@ export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   confidence: "high",
 };
 
-/**
- * DIH broader initiatives annual opex (medium case)
- */
 export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
   value: 21100000.0,
   unit: "USD/year",
@@ -4181,9 +3179,6 @@ export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
   confidenceInterval: [14000000.0, 32000000.0],
 };
 
-/**
- * DIH broader initiatives upfront cost (medium case)
- */
 export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
   value: 229750000.0,
   unit: "USD",
@@ -4195,10 +3190,6 @@ export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
   confidenceInterval: [150000000.0, 350000000.0],
 };
 
-/**
- * Percentage of treaty funding allocated to medical research (after bond
- * payouts and IAB incentives)
- */
 export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
   value: 0.8,
   unit: "rate",
@@ -4211,9 +3202,6 @@ export const DIH_TREASURY_MEDICAL_RESEARCH_PCT: Parameter = {
   latex: "MedicalResearchPct = \\$21.744B / \\$27.18B = 0.80 = 80\\%",
 };
 
-/**
- * Percentage of treaty funding going directly to patient trial subsidies
- */
 export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
   value: 0.7985283296541574,
   unit: "rate",
@@ -4226,10 +3214,6 @@ export const DIH_TREASURY_TRIAL_SUBSIDIES_PCT: Parameter = {
   latex: "TrialSubsidiesPct = \\$21.70B / \\$27.18B = 0.7985 = 79.85\\%",
 };
 
-/**
- * Percentage of caregiving for treatable disease conditions (vs aging,
- * disability, children)
- */
 export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   value: 0.4,
   unit: "rate",
@@ -4240,9 +3224,6 @@ export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Ratio of annual disease deaths to 9/11 terrorism deaths
- */
 export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
   value: 18357.81041388518,
   unit: "ratio",
@@ -4255,9 +3236,6 @@ export const DISEASE_VS_TERRORISM_DEATHS_RATIO: Parameter = {
   latex: "\\frac{54.75\\text{M disease deaths}}{3{,}000\\text{ terrorism deaths}} \\approx 18{,}274:1",
 };
 
-/**
- * Ratio of annual disease deaths to war deaths
- */
 export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
   value: 224.8569092395748,
   unit: "ratio",
@@ -4270,9 +3248,6 @@ export const DISEASE_VS_WAR_DEATHS_RATIO: Parameter = {
   latex: "\\frac{54.75\\text{M disease deaths}}{400{,}000\\text{ conflict deaths}} \\approx 137:1",
 };
 
-/**
- * Lifetime benefit for age 30 baseline scenario ($4.3M)
- */
 export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
   value: 4300000.0,
   unit: "USD",
@@ -4285,10 +3260,6 @@ export const EFFECTIVE_HOURLY_RATE_LIFETIME_BENEFIT: Parameter = {
   latex: "Benefit = \\$4,300,000",
 };
 
-/**
- * Percentage of deaths that are eventually avoidable with sufficient
- * biomedical research and technological advancement
- */
 export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
   value: 0.9262780790085205,
   unit: "percentage",
@@ -4300,9 +3271,6 @@ export const EVENTUALLY_AVOIDABLE_DEATH_PCT: Parameter = {
   latex: "P_{\\text{avoidable}} = 1 - 0.0791 = 92.09\\%",
 };
 
-/**
- * Minimum investment for family offices
- */
 export const FAMILY_OFFICE_INVESTMENT_MIN: Parameter = {
   value: 5000000.0,
   unit: "USD",
@@ -4313,11 +3281,6 @@ export const FAMILY_OFFICE_INVESTMENT_MIN: Parameter = {
   confidence: "high",
 };
 
-/**
- * Percentage of deaths that are fundamentally unavoidable even with perfect
- * biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 -
- * max_cure_potential)) across all disease categories.
- */
 export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   value: 0.07372192099147949,
   unit: "percentage",
@@ -4337,9 +3300,6 @@ export const HOURS_PER_YEAR: Parameter = {
   value: 8760.0,
 };
 
-/**
- * Base case estimate for bootstrap campaign cost
- */
 export const IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD: Parameter = {
   value: 100000000.0,
   unit: "USD",
@@ -4349,9 +3309,6 @@ export const IAB_BOOTSTRAP_CAMPAIGN_COST_BASE_USD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Conservative estimate for bootstrap campaign cost
- */
 export const IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD: Parameter = {
   value: 200000000.0,
   unit: "USD",
@@ -4361,9 +3318,6 @@ export const IAB_BOOTSTRAP_CAMPAIGN_COST_CONSERVATIVE_USD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Optimistic estimate for bootstrap campaign cost
- */
 export const IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD: Parameter = {
   value: 50000000.0,
   unit: "USD",
@@ -4373,10 +3327,6 @@ export const IAB_BOOTSTRAP_CAMPAIGN_COST_OPTIMISTIC_USD: Parameter = {
   confidence: "high",
 };
 
-/**
- * Estimated annual cost of the IAB mechanism (high-end estimate including
- * regulatory defense)
- */
 export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   value: 750000000.0,
   unit: "USD/year",
@@ -4388,11 +3338,6 @@ export const IAB_MECHANISM_ANNUAL_COST: Parameter = {
   confidenceInterval: [160000000.0, 750000000.0],
 };
 
-/**
- * Percentage of treaty funding allocated to Incentive Alignment Bond
- * mechanism for political incentives (independent expenditures/PACs,
- * post-office fellowships, Public Good Score infrastructure)
- */
 export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
   value: 0.1,
   unit: "rate",
@@ -4402,9 +3347,6 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Minimum investment for institutional investors
- */
 export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
   value: 10000000.0,
   unit: "USD",
@@ -4415,9 +3357,6 @@ export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
   confidence: "high",
 };
 
-/**
- * Maximum bond investment for lobbyist incentives
- */
 export const LOBBYIST_BOND_INVESTMENT_MAX: Parameter = {
   value: 20000000.0,
   unit: "USD",
@@ -4436,9 +3375,6 @@ export const MONTHS_PER_YEAR: Parameter = {
   value: 12.0,
 };
 
-/**
- * Standard discount rate for NPV analysis (3% annual, social discount rate)
- */
 export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
   value: 0.03,
   unit: "rate",
@@ -4449,9 +3385,6 @@ export const NPV_DISCOUNT_RATE_STANDARD: Parameter = {
   latex: "r = 0.03 \\text{ (discount rate)}",
 };
 
-/**
- * Standard time horizon for NPV analysis
- */
 export const NPV_TIME_HORIZON_YEARS: Parameter = {
   value: 10.0,
   unit: "years",
@@ -4462,10 +3395,6 @@ export const NPV_TIME_HORIZON_YEARS: Parameter = {
   latex: "T = 10 \\text{ (time horizon, years)}",
 };
 
-/**
- * Direct fiscal savings from 1% military spending reduction (high
- * confidence)
- */
 export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   value: 27180000000.0,
   unit: "USD/year",
@@ -4478,10 +3407,6 @@ export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   latex: "PeaceDividend_{fiscal} = \\$27.18B",
 };
 
-/**
- * Years of empirical validation for physician-led pragmatic trials
- * (1883-1960)
- */
 export const PRE_1962_VALIDATION_YEARS: Parameter = {
   value: 77.0,
   unit: "years",
@@ -4493,10 +3418,6 @@ export const PRE_1962_VALIDATION_YEARS: Parameter = {
   formula: "1960 - 1883",
 };
 
-/**
- * Total safe compounds available for repurposing (FDA-approved + GRAS
- * substances, midpoint of 7,000-12,000 range)
- */
 export const SAFE_COMPOUNDS_COUNT: Parameter = {
   value: 9500.0,
   unit: "compounds",
@@ -4516,10 +3437,6 @@ export const SECONDS_PER_YEAR: Parameter = {
   value: 31536000.0,
 };
 
-/**
- * Estimated drug-disease relationships actually tested (approved uses +
- * repurposed + failed trials, midpoint of 15,000-50,000 range)
- */
 export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
   value: 32500.0,
   unit: "relationships",
@@ -4531,9 +3448,6 @@ export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
   confidenceInterval: [15000.0, 50000.0],
 };
 
-/**
- * Total words in the book
- */
 export const TOTAL_BOOK_WORDS: Parameter = {
   value: 171121.0,
   unit: "words",
@@ -4544,9 +3458,6 @@ export const TOTAL_BOOK_WORDS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Annual funding from 1% of global military spending redirected to DIH
- */
 export const TREATY_ANNUAL_FUNDING: Parameter = {
   value: 27180000000.0,
   unit: "USD/year",
@@ -4557,26 +3468,17 @@ export const TREATY_ANNUAL_FUNDING: Parameter = {
   formula: "MILITARY_SPENDING × 1%",
 };
 
-/**
- * Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs,
- * opposition research, staff, legal/compliance (exceeds pharma $300M + MIC
- * $150M)
- */
 export const TREATY_CAMPAIGN_BUDGET_LOBBYING: Parameter = {
   value: 650000000.0,
   unit: "USD",
   displayName: "Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
-  description: "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+  description: "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
   confidence: "low",
   confidenceInterval: [325000000.0, 1300000000.0],
 };
 
-/**
- * Global referendum campaign (get 208M votes): ads, media, partnerships,
- * staff, legal/compliance
- */
 export const TREATY_CAMPAIGN_BUDGET_REFERENDUM: Parameter = {
   value: 300000000.0,
   unit: "USD",
@@ -4588,23 +3490,17 @@ export const TREATY_CAMPAIGN_BUDGET_REFERENDUM: Parameter = {
   confidenceInterval: [180000000.0, 500000000.0],
 };
 
-/**
- * Reserve fund / contingency buffer
- */
 export const TREATY_CAMPAIGN_BUDGET_RESERVE: Parameter = {
   value: 50000000.0,
   unit: "USD",
   displayName: "Reserve Fund / Contingency Buffer",
-  description: "Reserve fund / contingency buffer",
+  description: "Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.",
   sourceType: "definition",
   sourceRef: "https://impact.dih.earth/knowledge/appendix/fundraising-strategy#campaign-budget-breakdown",
   confidence: "medium",
   confidenceInterval: [20000000.0, 100000000.0],
 };
 
-/**
- * Campaign budget for Super PACs and political lobbying
- */
 export const TREATY_CAMPAIGN_BUDGET_SUPER_PACS: Parameter = {
   value: 800000000.0,
   unit: "USD",
@@ -4615,9 +3511,6 @@ export const TREATY_CAMPAIGN_BUDGET_SUPER_PACS: Parameter = {
   confidence: "high",
 };
 
-/**
- * Treaty campaign duration (3-5 year range, using midpoint)
- */
 export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
   value: 4.0,
   unit: "years",
@@ -4629,9 +3522,6 @@ export const TREATY_CAMPAIGN_DURATION_YEARS: Parameter = {
   confidenceInterval: [3.0, 5.0],
 };
 
-/**
- * Base case viral referendum budget (assumes flat $0.50/vote, optimistic)
- */
 export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
   value: 140000000.0,
   unit: "USD",
@@ -4643,9 +3533,6 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE: Parameter = {
   formula: "PLATFORM + VERIFICATION + PAYMENTS_FLAT_RATE",
 };
 
-/**
- * Realistic viral referendum budget (moderate tiered pricing)
- */
 export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC: Parameter = {
   value: 220000000.0,
   unit: "USD",
@@ -4658,10 +3545,6 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_REALISTIC: Parameter = {
   latex: "Budget_{realistic} = \\$35M_{platform} + \\$59M_{verification} + \\$126M_{tiered\\ payments} = \\$220M",
 };
 
-/**
- * Worst-case viral referendum budget (tiered pricing with increasing
- * marginal costs)
- */
 export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE: Parameter = {
   value: 406000000.0,
   unit: "USD",
@@ -4674,9 +3557,6 @@ export const TREATY_CAMPAIGN_VIRAL_REFERENDUM_WORST_CASE: Parameter = {
   latex: "Budget_{worst} = \\$35M_{platform} + \\$59M_{verification} + \\$312M_{tiered\\ payments} = \\$406M",
 };
 
-/**
- * 1% reduction in military spending/war costs from treaty
- */
 export const TREATY_REDUCTION_PCT: Parameter = {
   value: 0.01,
   unit: "rate",
@@ -4686,9 +3566,6 @@ export const TREATY_REDUCTION_PCT: Parameter = {
   confidence: "high",
 };
 
-/**
- * Trial cost reduction percentage (50% baseline, conservative)
- */
 export const TRIAL_COST_REDUCTION_PCT: Parameter = {
   value: 0.5,
   unit: "rate",
@@ -4699,10 +3576,6 @@ export const TRIAL_COST_REDUCTION_PCT: Parameter = {
   confidenceInterval: [0.4, 0.65],
 };
 
-/**
- * Consolidated count of trial-relevant diseases worth targeting (after
- * grouping ICD-10 codes)
- */
 export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   value: 1000.0,
   unit: "diseases",
@@ -4714,9 +3587,6 @@ export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   confidenceInterval: [800.0, 1200.0],
 };
 
-/**
- * Annual VICTORY bond payout (treaty funding × bond percentage)
- */
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
   value: 2718000000.0,
   unit: "USD/year",
@@ -4727,9 +3597,6 @@ export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
   formula: "TREATY_FUNDING × BOND_PCT",
 };
 
-/**
- * Annual return percentage for VICTORY bondholders
- */
 export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
   value: 2.718,
   unit: "rate",
@@ -4741,9 +3608,6 @@ export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
   latex: "Return = \\$2.718B / \\$1B = 2.718 = 271.8\\%",
 };
 
-/**
- * Percentage of captured dividend funding VICTORY bonds (10%)
- */
 export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   value: 0.1,
   unit: "rate",

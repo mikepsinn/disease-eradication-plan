@@ -308,7 +308,7 @@
       "rank": 3,
       "parameter_name": "TREATY_CAMPAIGN_BUDGET_LOBBYING",
       "display_name": "Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance",
-      "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+      "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
       "importance_score": 21.4,
       "importance_breakdown": {
         "sensitivity": 0,
@@ -334,7 +334,7 @@
         "top_percent": 0.9
       },
       "context_card": {
-        "what": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)",
+        "what": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.",
         "parameter_type": "definition",
         "used_in": [],
         "affects": [
@@ -361,7 +361,7 @@
           "context": {
             "value": 650000000.0,
             "formatted_value": "$650M",
-            "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance (exceeds pharma $300M + MIC $150M)"
+            "description": "Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability."
           },
           "required": true,
           "conditional_on": null
@@ -402,7 +402,7 @@
       "rank": 4,
       "parameter_name": "TREATY_CAMPAIGN_BUDGET_RESERVE",
       "display_name": "Reserve Fund / Contingency Buffer",
-      "description": "Reserve fund / contingency buffer",
+      "description": "Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.",
       "importance_score": 15.5,
       "importance_breakdown": {
         "sensitivity": 0,
@@ -428,7 +428,7 @@
         "top_percent": 1.2
       },
       "context_card": {
-        "what": "Reserve fund / contingency buffer",
+        "what": "Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays.",
         "parameter_type": "definition",
         "used_in": [],
         "affects": [
@@ -455,7 +455,7 @@
           "context": {
             "value": 50000000.0,
             "formatted_value": "$50M",
-            "description": "Reserve fund / contingency buffer"
+            "description": "Reserve fund / contingency buffer (5% of total campaign cost). Conservative estimate uses 5% given transparent budget allocation and predictable referendum/lobbying costs, though industry standard is 10-20% for complex campaigns. Upper confidence bound of $100M (10%) reflects potential for unforeseen legal challenges, opposition response, or regulatory delays."
           },
           "required": true,
           "conditional_on": null
@@ -519,13 +519,18 @@
         "what": "Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "TREATY_CAMPAIGN_BUDGET_REFERENDUM",
+          "TREATY_CAMPAIGN_BUDGET_LOBBYING",
+          "TREATY_CAMPAIGN_BUDGET_RESERVE"
+        ],
         "formula_readable": "Referendum + Lobbying + Reserve",
         "inputs_count": 3
       },
       "questions": [
         {
           "question_id": "TREATY_CAMPAIGN_TOTAL_COST_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Total 1% Treaty Campaign Cost?\n\nCurrent result: $1B\nCalculation: $300M + $650M + $50M = $1B",
+          "question_text": "Is the calculation methodology sound for: **Total 1% Treaty Campaign Cost**?\n\n**Current result:** $1B\n**Calculation:** $300M + $650M + $50M = $1B",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -548,7 +553,7 @@
         },
         {
           "question_id": "TREATY_CAMPAIGN_TOTAL_COST_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Global Referendum Campaign: $300M\n• Political Lobbying Campaign: $650M\n• Reserve Fund / Contingency Buffer: $50M",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Global Referendum Campaign: $300M\n• Political Lobbying Campaign: $650M\n• Reserve Fund / Contingency Buffer: $50M",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -802,13 +807,17 @@
         "what": "Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "EFFICACY_LAG_YEARS",
+          "GLOBAL_DISEASE_DEATHS_DAILY"
+        ],
         "formula_readable": "Annual Deaths × Regulatory Delay for Efficacy Testing Post-Safety Verification × Eventually Avoidable Death Percentage",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Total Deaths from Disease Eradication Delay?\n\nCurrent result: 416M deaths deaths\nCalculation: ANNUAL_DEATHS × 8.2 years × 92.6% = 416M deaths",
+          "question_text": "Is the calculation methodology sound for: **Total Deaths from Disease Eradication Delay**?\n\n**Current result:** 416M deaths deaths\n**Calculation:** ANNUAL_DEATHS × 8.2 years × 92.6% = 416M deaths",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -831,7 +840,7 @@
         },
         {
           "question_id": "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years\n• Global Daily Deaths from Disease and Aging: 150k deaths/day",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years\n• Global Daily Deaths from Disease and Aging: 150k deaths/day",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -1084,13 +1093,18 @@
         "what": "Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+          "GLOBAL_LIFE_EXPECTANCY_2024",
+          "REGULATORY_DELAY_MEAN_AGE_OF_DEATH"
+        ],
         "formula_readable": "Deaths Total × (Life Expectancy - Mean Age Of Death)",
         "inputs_count": 3
       },
       "questions": [
         {
           "question_id": "DISEASE_ERADICATION_DELAY_YLL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Years of Life Lost from Disease Eradication Delay?\n\nCurrent result: 7.07B years years\nCalculation: 416M deaths × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B years",
+          "question_text": "Is the calculation methodology sound for: **Years of Life Lost from Disease Eradication Delay**?\n\n**Current result:** 7.07B years years\n**Calculation:** 416M deaths × (LIFE_EXPECTANCY - MEAN_AGE_OF_DEATH) = 7.07B years",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -1113,7 +1127,7 @@
         },
         {
           "question_id": "DISEASE_ERADICATION_DELAY_YLL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total Deaths from Disease Eradication Delay: 416M deaths\n• Global Life Expectancy (2024): 79 years\n• Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total Deaths from Disease Eradication Delay: 416M deaths\n• Global Life Expectancy (2024): 79 years\n• Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -1384,13 +1398,18 @@
         "what": "Years Lived with Disability during disease eradication delay (PRIMARY estimate)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DISEASE_ERADICATION_DELAY_DEATHS_TOTAL",
+          "REGULATORY_DELAY_SUFFERING_PERIOD_YEARS",
+          "CHRONIC_DISEASE_DISABILITY_WEIGHT"
+        ],
         "formula_readable": "Deaths Total × Suffering Period × Disability Weight",
         "inputs_count": 3
       },
       "questions": [
         {
           "question_id": "DISEASE_ERADICATION_DELAY_YLD_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Years Lived with Disability During Disease Eradication Delay?\n\nCurrent result: 873M years years\nCalculation: 416M deaths × SUFFERING_PERIOD × 0.35 weight = 873M years",
+          "question_text": "Is the calculation methodology sound for: **Years Lived with Disability During Disease Eradication Delay**?\n\n**Current result:** 873M years years\n**Calculation:** 416M deaths × SUFFERING_PERIOD × 0.35 weight = 873M years",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -1413,7 +1432,7 @@
         },
         {
           "question_id": "DISEASE_ERADICATION_DELAY_YLD_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total Deaths from Disease Eradication Delay: 416M deaths\n• Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years\n• Disability Weight for Untreated Chronic Conditions: 0.35 weight",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total Deaths from Disease Eradication Delay: 416M deaths\n• Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years\n• Disability Weight for Untreated Chronic Conditions: 0.35 weight",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -1475,13 +1494,17 @@
         "what": "Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DISEASE_ERADICATION_DELAY_YLL",
+          "DISEASE_ERADICATION_DELAY_YLD"
+        ],
         "formula_readable": "Yll + Yld",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DISEASE_ERADICATION_DELAY_DALYS_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Total DALYs Lost from Disease Eradication Delay?\n\nCurrent result: 7.94B DALYs DALYs\nCalculation: 7.07B years + 873M years = 7.94B DALYs",
+          "question_text": "Is the calculation methodology sound for: **Total DALYs Lost from Disease Eradication Delay**?\n\n**Current result:** 7.94B DALYs DALYs\n**Calculation:** 7.07B years + 873M years = 7.94B DALYs",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -1504,7 +1527,7 @@
         },
         {
           "question_id": "DISEASE_ERADICATION_DELAY_DALYS_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Years of Life Lost from Disease Eradication Delay: 7.07B years\n• Years Lived with Disability During Disease Eradication Delay: 873M years",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Years of Life Lost from Disease Eradication Delay: 7.07B years\n• Years Lived with Disability During Disease Eradication Delay: 873M years",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -1565,13 +1588,17 @@
         "what": "Cost per DALY averted from one-time timeline shift (8.2 years). This is a conservative estimate that only counts campaign cost ($1B) and ignores all economic benefits ($27B/year funding unlocked + $50B/year R&D savings). For comparison: bed nets cost $89.0/DALY, deworming costs $4-10/DALY. This intervention is 700x more cost-effective than bed nets while also being self-funding.",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "TREATY_CAMPAIGN_TOTAL_COST",
+          "DISEASE_ERADICATION_DELAY_DALYS"
+        ],
         "formula_readable": "Campaign Cost ÷ Dalys Timeline Shift",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Cost per DALY Averted (Timeline Shift)?\n\nCurrent result: $0.126 per DALY\nCalculation: CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT = $0.126",
+          "question_text": "Is the calculation methodology sound for: **Cost per DALY Averted (Timeline Shift)**?\n\n**Current result:** $0.126 per DALY\n**Calculation:** CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT = $0.126",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -1594,7 +1621,7 @@
         },
         {
           "question_id": "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total 1% Treaty Campaign Cost: $1B\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total 1% Treaty Campaign Cost: $1B\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -1766,13 +1793,17 @@
         "what": "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the ultra-conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "TREATY_DFDA_COST_PER_DALY_TIMELINE_SHIFT",
+          "POLITICAL_SUCCESS_PROBABILITY"
+        ],
         "formula_readable": "Conditional Cost Per Daly ÷ Political Success Probability",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "TREATY_EXPECTED_COST_PER_DALY_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Expected Cost per DALY (Risk-Adjusted)?\n\nCurrent result: $13 per DALY\nCalculation: CONDITIONAL_COST_PER_DALY ÷ 1% = $13",
+          "question_text": "Is the calculation methodology sound for: **Expected Cost per DALY (Risk-Adjusted)**?\n\n**Current result:** $13 per DALY\n**Calculation:** CONDITIONAL_COST_PER_DALY ÷ 1% = $13",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -1795,7 +1826,7 @@
         },
         {
           "question_id": "TREATY_EXPECTED_COST_PER_DALY_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Cost per DALY Averted (Timeline Shift): $0.126\n• Political Success Probability: 1%",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Cost per DALY Averted (Timeline Shift): $0.126\n• Political Success Probability: 1%",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -1856,13 +1887,17 @@
         "what": "Expected value multiplier vs bed nets (accounts for political uncertainty)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "BED_NETS_COST_PER_DALY",
+          "TREATY_EXPECTED_COST_PER_DALY"
+        ],
         "formula_readable": "Bed Nets Cost per DALY ÷ Expected Cost per DALY (Risk-Adjusted)",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Expected Cost-Effectiveness vs Bed Nets Multiplier?\n\nCurrent result: 7.07 ratiox\nCalculation: $89 ÷ $13 = 7.07 ratio",
+          "question_text": "Is the calculation methodology sound for: **Expected Cost-Effectiveness vs Bed Nets Multiplier**?\n\n**Current result:** 7.07 ratiox\n**Calculation:** $89 ÷ $13 = 7.07 ratio",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -1885,7 +1920,7 @@
         },
         {
           "question_id": "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Bed Nets Cost per DALY: $89\n• Expected Cost per DALY (Risk-Adjusted): $13",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Bed Nets Cost per DALY: $89\n• Expected Cost per DALY (Risk-Adjusted): $13",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -2153,13 +2188,17 @@
         "what": "Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL",
+          "TRIAL_COST_REDUCTION_PCT"
+        ],
         "formula_readable": "Trial Spending × Cost Reduction Pct",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DFDA_RD_GROSS_SAVINGS_ANNUAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings?\n\nCurrent result: $41.5B\nCalculation: TRIAL_SPENDING × 50% = $41.5B",
+          "question_text": "Is the calculation methodology sound for: **Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings**?\n\n**Current result:** $41.5B\n**Calculation:** TRIAL_SPENDING × 50% = $41.5B",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -2182,7 +2221,7 @@
         },
         {
           "question_id": "DFDA_RD_GROSS_SAVINGS_ANNUAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Global Spending on Clinical Trials: $83B\n• Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage: 50%",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Annual Global Spending on Clinical Trials: $83B\n• Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage: 50%",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -2713,13 +2752,20 @@
         "what": "Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DFDA_OPEX_PLATFORM_MAINTENANCE",
+          "DFDA_OPEX_STAFF",
+          "DFDA_OPEX_INFRASTRUCTURE",
+          "DFDA_OPEX_REGULATORY",
+          "DFDA_OPEX_COMMUNITY"
+        ],
         "formula_readable": "Platform Maintenance + Staff + Infrastructure + Regulatory + Community",
         "inputs_count": 5
       },
       "questions": [
         {
           "question_id": "DFDA_ANNUAL_OPEX_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Total Annual Decentralized Framework for Drug Assessment Operational Costs?\n\nCurrent result: $40M\nCalculation: $15M + $10M + $8M + $5M + $2M = $40M",
+          "question_text": "Is the calculation methodology sound for: **Total Annual Decentralized Framework for Drug Assessment Operational Costs**?\n\n**Current result:** $40M\n**Calculation:** $15M + $10M + $8M + $5M + $2M = $40M",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -2742,7 +2788,7 @@
         },
         {
           "question_id": "DFDA_ANNUAL_OPEX_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Decentralized Framework for Drug Assessment Maintenance Costs: $15M\n• Decentralized Framework for Drug Assessment Staff Costs: $10M\n• Decentralized Framework for Drug Assessment Infrastructure Costs: $8M\n• Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M\n• Decentralized Framework for Drug Assessment Community Support Costs: $2M",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Decentralized Framework for Drug Assessment Maintenance Costs: $15M\n• Decentralized Framework for Drug Assessment Staff Costs: $10M\n• Decentralized Framework for Drug Assessment Infrastructure Costs: $8M\n• Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M\n• Decentralized Framework for Drug Assessment Community Support Costs: $2M",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -3067,13 +3113,17 @@
         "what": "Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DFDA_NPV_UPFRONT_COST",
+          "DIH_NPV_UPFRONT_COST_INITIATIVES"
+        ],
         "formula_readable": "Dfda Build + Dih Initiatives",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DFDA_NPV_UPFRONT_COST_TOTAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Decentralized Framework for Drug Assessment Total NPV Upfront Costs?\n\nCurrent result: $270M\nCalculation: DFDA_BUILD + DIH_INITIATIVES = $270M",
+          "question_text": "Is the calculation methodology sound for: **Decentralized Framework for Drug Assessment Total NPV Upfront Costs**?\n\n**Current result:** $270M\n**Calculation:** DFDA_BUILD + DIH_INITIATIVES = $270M",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -3096,7 +3146,7 @@
         },
         {
           "question_id": "DFDA_NPV_UPFRONT_COST_TOTAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Decentralized Framework for Drug Assessment Core Platform Build Cost: $40M\n• DIH Broader Initiatives Upfront Cost: $230M",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Decentralized Framework for Drug Assessment Core Platform Build Cost: $40M\n• DIH Broader Initiatives Upfront Cost: $230M",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -3157,13 +3207,19 @@
         "what": "ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DFDA_RD_GROSS_SAVINGS_ANNUAL",
+          "DFDA_ANNUAL_OPEX",
+          "NPV_DISCOUNT_RATE_STANDARD",
+          "DFDA_NPV_UPFRONT_COST_TOTAL"
+        ],
         "formula_readable": "Npv Benefit ÷ Npv Total Cost",
         "inputs_count": 4
       },
       "questions": [
         {
           "question_id": "DFDA_ROI_RD_ONLY_formula_sound",
-          "question_text": "Is the calculation methodology sound for: ROI from Decentralized Framework for Drug Assessment R&D Savings Only?\n\nCurrent result: 451 ratiox ROI\nCalculation: NPV_BENEFIT ÷ NPV_TOTAL_COST = 451 ratio",
+          "question_text": "Is the calculation methodology sound for: **ROI from Decentralized Framework for Drug Assessment R&D Savings Only**?\n\n**Current result:** 451 ratiox ROI\n**Calculation:** NPV_BENEFIT ÷ NPV_TOTAL_COST = 451 ratio",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -3186,7 +3242,7 @@
         },
         {
           "question_id": "DFDA_ROI_RD_ONLY_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Decentralized Framework for Drug Assessment Annual Benefit: $41.5B\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• Standard Discount Rate for NPV Analysis: 3%\n• Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Decentralized Framework for Drug Assessment Annual Benefit: $41.5B\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• Standard Discount Rate for NPV Analysis: 3%\n• Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -3345,13 +3401,18 @@
         "what": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "STANDARD_ECONOMIC_QALY_VALUE_USD",
+          "TREATY_CAMPAIGN_TOTAL_COST"
+        ],
         "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost",
         "inputs_count": 3
       },
       "questions": [
         {
           "question_id": "TREATY_COMPLETE_ROI_ALL_BENEFITS_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Treaty ROI - Lag Elimination (PRIMARY)?\n\nCurrent result: 1.19M ratiox ROI\nCalculation: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
+          "question_text": "Is the calculation methodology sound for: **Treaty ROI - Lag Elimination (PRIMARY)**?\n\n**Current result:** 1.19M ratiox ROI\n**Calculation:** DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -3374,7 +3435,7 @@
         },
         {
           "question_id": "TREATY_COMPLETE_ROI_ALL_BENEFITS_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs\n• Standard Economic Value per QALY: $150K\n• Total 1% Treaty Campaign Cost: $1B",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs\n• Standard Economic Value per QALY: $150K\n• Total 1% Treaty Campaign Cost: $1B",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -3436,13 +3497,18 @@
         "what": "Treaty ROI based on eliminating the 8.2-year post-safety efficacy lag (PRIMARY METHODOLOGY). Total one-time benefit from disease eradication delay elimination divided by $1B campaign cost. This is the primary ROI estimate for total health benefits.",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DISEASE_ERADICATION_DELAY_DALYS",
+          "STANDARD_ECONOMIC_QALY_VALUE_USD",
+          "TREATY_CAMPAIGN_TOTAL_COST"
+        ],
         "formula_readable": "Disease Eradication Delay Total ÷ Campaign Cost",
         "inputs_count": 3
       },
       "questions": [
         {
           "question_id": "TREATY_ROI_LAG_ELIMINATION_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Treaty ROI - Lag Elimination (PRIMARY)?\n\nCurrent result: 1.19M ratiox ROI\nCalculation: DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
+          "question_text": "Is the calculation methodology sound for: **Treaty ROI - Lag Elimination (PRIMARY)**?\n\n**Current result:** 1.19M ratiox ROI\n**Calculation:** DISEASE_ERADICATION_DELAY_TOTAL ÷ CAMPAIGN_COST = 1.19M ratio",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -3465,7 +3531,7 @@
         },
         {
           "question_id": "TREATY_ROI_LAG_ELIMINATION_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs\n• Standard Economic Value per QALY: $150K\n• Total 1% Treaty Campaign Cost: $1B",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs\n• Standard Economic Value per QALY: $150K\n• Total 1% Treaty Campaign Cost: $1B",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -3527,13 +3593,17 @@
         "what": "Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "TREATY_ROI_LAG_ELIMINATION",
+          "POLITICAL_SUCCESS_PROBABILITY"
+        ],
         "formula_readable": "Treaty ROI - Lag Elimination (PRIMARY) × Political Success Probability",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DFDA_EXPECTED_ROI_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Expected Treaty ROI (Risk-Adjusted)?\n\nCurrent result: 11.9kx ROI\nCalculation: 1.19M ratio × 1% = 11.9k",
+          "question_text": "Is the calculation methodology sound for: **Expected Treaty ROI (Risk-Adjusted)**?\n\n**Current result:** 11.9kx ROI\n**Calculation:** 1.19M ratio × 1% = 11.9k",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -3556,7 +3626,7 @@
         },
         {
           "question_id": "DFDA_EXPECTED_ROI_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Treaty ROI - Lag Elimination (PRIMARY): 1.19M ratio\n• Political Success Probability: 1%",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Treaty ROI - Lag Elimination (PRIMARY): 1.19M ratio\n• Political Success Probability: 1%",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -3919,7 +3989,11 @@
       "context_card": {
         "what": "Annual funding from 1% of global military spending redirected to DIH",
         "parameter_type": "definition",
-        "used_in": []
+        "used_in": [],
+        "inputs": [
+          "GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
+          "TREATY_REDUCTION_PCT"
+        ]
       },
       "questions": [
         {
@@ -4060,7 +4134,11 @@
       "context_card": {
         "what": "Annual VICTORY bond payout (treaty funding × bond percentage)",
         "parameter_type": "definition",
-        "used_in": []
+        "used_in": [],
+        "inputs": [
+          "TREATY_ANNUAL_FUNDING",
+          "VICTORY_BOND_FUNDING_PCT"
+        ]
       },
       "questions": [
         {
@@ -4202,13 +4280,17 @@
         "what": "Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "TREATY_ANNUAL_FUNDING",
+          "IAB_POLITICAL_INCENTIVE_FUNDING_PCT"
+        ],
         "formula_readable": "Treaty Funding × Iab Political Incentive Pct",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Annual IAB Political Incentive Funding?\n\nCurrent result: $2.72B\nCalculation: TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT = $2.72B",
+          "question_text": "Is the calculation methodology sound for: **Annual IAB Political Incentive Funding**?\n\n**Current result:** $2.72B\n**Calculation:** TREATY_FUNDING × IAB_POLITICAL_INCENTIVE_PCT = $2.72B",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -4231,7 +4313,7 @@
         },
         {
           "question_id": "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B\n• IAB Political Incentive Funding Percentage: 10%",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B\n• IAB Political Incentive Funding Percentage: 10%",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -4292,13 +4374,18 @@
         "what": "Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Bond payouts and IAB political incentive mechanism)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "TREATY_ANNUAL_FUNDING",
+          "VICTORY_BOND_ANNUAL_PAYOUT",
+          "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"
+        ],
         "formula_readable": "Treaty Funding - Bond Payout - Iab Political Incentive Funding",
         "inputs_count": 3
       },
       "questions": [
         {
           "question_id": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: DIH Annual Funding for Pragmatic Clinical Trials?\n\nCurrent result: $21.7B\nCalculation: TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
+          "question_text": "Is the calculation methodology sound for: **DIH Annual Funding for Pragmatic Clinical Trials**?\n\n**Current result:** $21.7B\n**Calculation:** TREATY_FUNDING - BOND_PAYOUT - IAB_POLITICAL_INCENTIVE_FUNDING = $21.7B",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -4321,7 +4408,7 @@
         },
         {
           "question_id": "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B\n• Annual VICTORY Incentive Alignment Bond Payout: $2.72B\n• Annual IAB Political Incentive Funding: $2.72B",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B\n• Annual VICTORY Incentive Alignment Bond Payout: $2.72B\n• Annual IAB Political Incentive Funding: $2.72B",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -4383,13 +4470,17 @@
         "what": "Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DFDA_ANNUAL_OPEX",
+          "DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"
+        ],
         "formula_readable": "Medical Research Funding - Dfda Opex",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Annual Clinical Trial Patient Subsidies?\n\nCurrent result: $21.7B\nCalculation: MEDICAL_RESEARCH_FUNDING - DFDA_OPEX = $21.7B",
+          "question_text": "Is the calculation methodology sound for: **Annual Clinical Trial Patient Subsidies**?\n\n**Current result:** $21.7B\n**Calculation:** MEDICAL_RESEARCH_FUNDING - DFDA_OPEX = $21.7B",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -4412,7 +4503,7 @@
         },
         {
           "question_id": "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• DIH Annual Funding for Pragmatic Clinical Trials: $21.7B",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M\n• DIH Annual Funding for Pragmatic Clinical Trials: $21.7B",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -4586,13 +4677,17 @@
         "what": "Number of patients fundable annually at RECOVERY trial cost",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL",
+          "RECOVERY_TRIAL_COST_PER_PATIENT"
+        ],
         "formula_readable": "Trial Subsidies ÷ Cost Per Patient",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "DIH_PATIENTS_FUNDABLE_ANNUALLY_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Patients Fundable Annually?\n\nCurrent result: 43.4M patients/year\nCalculation: TRIAL_SUBSIDIES ÷ $500 = 43.4M patients/year",
+          "question_text": "Is the calculation methodology sound for: **Patients Fundable Annually**?\n\n**Current result:** 43.4M patients/year\n**Calculation:** TRIAL_SUBSIDIES ÷ $500 = 43.4M patients/year",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -4615,7 +4710,7 @@
         },
         {
           "question_id": "DIH_PATIENTS_FUNDABLE_ANNUALLY_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Clinical Trial Patient Subsidies: $21.7B\n• Recovery Trial Cost per Patient: $500",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Annual Clinical Trial Patient Subsidies: $21.7B\n• Recovery Trial Cost per Patient: $500",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",
@@ -4676,13 +4771,17 @@
         "what": "Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
         "parameter_type": "calculated",
         "used_in": [],
+        "inputs": [
+          "CURRENT_TRIAL_SLOTS_AVAILABLE",
+          "DIH_PATIENTS_FUNDABLE_ANNUALLY"
+        ],
         "formula_readable": "Dih Patients Fundable ÷ Current Trial Slots",
         "inputs_count": 2
       },
       "questions": [
         {
           "question_id": "TRIAL_CAPACITY_MULTIPLIER_formula_sound",
-          "question_text": "Is the calculation methodology sound for: Trial Capacity Multiplier?\n\nCurrent result: 22.8 ratiox\nCalculation: DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS = 22.8 ratio",
+          "question_text": "Is the calculation methodology sound for: **Trial Capacity Multiplier**?\n\n**Current result:** 22.8 ratiox\n**Calculation:** DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS = 22.8 ratio",
           "question_type": "choice",
           "options": [
             "Yes - formula is appropriate",
@@ -4705,7 +4804,7 @@
         },
         {
           "question_id": "TRIAL_CAPACITY_MULTIPLIER_inputs_appropriate",
-          "question_text": "Are these input factors appropriate?\n\nInputs:\n• Annual Global Clinical Trial Participants: 1.90M patients/year\n• Patients Fundable Annually: 43.4M patients/year",
+          "question_text": "Are these input factors appropriate?\n\n**Inputs:**\n• Annual Global Clinical Trial Participants: 1.90M patients/year\n• Patients Fundable Annually: 43.4M patients/year",
           "question_type": "checklist",
           "options": [
             "All inputs are appropriate",

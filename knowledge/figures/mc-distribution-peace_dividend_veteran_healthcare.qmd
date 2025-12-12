@@ -117,8 +117,8 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $2.00B |
-| Mean (expected value) | $2.00B |
+| Baseline (deterministic) | $2B |
+| Mean (expected value) | $2B |
 | Median (50th percentile) | $1.97B |
 | Standard Deviation | $340M |
 | 90% Confidence Interval | [$1.46B, $2.63B] |
