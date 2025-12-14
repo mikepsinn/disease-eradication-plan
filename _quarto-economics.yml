@@ -10,7 +10,6 @@ project:
     - knowledge/economics/health-dividend.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/financial-plan.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/campaign-budget.qmd # ✓ Style reviewed 2025-01-15
-    - knowledge/economics/health-savings-sharing-model.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/victory-bonds.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/central-banks.qmd
     # Problem Context
@@ -196,8 +195,6 @@ website:
             text: "Financial Planning Framework"
           - href: knowledge/economics/campaign-budget.qmd
             text: "Campaign Budget Allocation"
-          - href: knowledge/economics/health-savings-sharing-model.qmd
-            text: "Health Savings Sharing Model"
           - href: knowledge/economics/victory-bonds.qmd
             text: "Social Impact Bond Structure"
           - href: knowledge/appendix/fundraising-strategy.qmd
