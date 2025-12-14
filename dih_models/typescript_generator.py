@@ -545,8 +545,9 @@ def generate_typescript_parameters(
 
 
 def generate_typescript_survey(
-    survey_json_path: Path,
-    output_path: Path
+    survey_data: dict = None,
+    survey_json_path: Path = None,
+    output_path: Path = None
 ):
     """
     Generate TypeScript file with economist survey data for Next.js applications.
@@ -555,22 +556,24 @@ def generate_typescript_survey(
     - Type definitions for survey structure
     - Survey data as typed constants
     - Helper functions for survey navigation
-    - All metadata from the JSON file
+    - All metadata from the survey data
 
     Args:
-        survey_json_path: Path to economist-survey.json
+        survey_data: Survey data dict (from generate_survey()). If provided, uses this directly.
+        survey_json_path: Path to economist-survey.json (fallback if survey_data not provided)
         output_path: Path to write the .ts file
     """
     import json
 
-    # Load survey JSON
-    if not survey_json_path.exists():
-        print(f"[ERROR] Survey JSON not found: {survey_json_path}")
-        print(f"        Run: python scripts/generate-economist-survey.py --top-n 30")
-        return
+    # Load survey data from dict or JSON file
+    if survey_data is None:
+        if survey_json_path is None or not survey_json_path.exists():
+            print(f"[ERROR] Survey data not provided and JSON not found: {survey_json_path}")
+            print(f"        Run: python scripts/generate-economist-survey.py --top-n 30")
+            return
 
-    with open(survey_json_path, encoding='utf-8') as f:
-        survey_data = json.load(f)
+        with open(survey_json_path, encoding='utf-8') as f:
+            survey_data = json.load(f)
 
     content = []
 
@@ -678,11 +681,10 @@ def generate_typescript_survey(
         content.append(f"      name: {_format_typescript_value(param['parameter_name'])},")
         content.append(f"      displayName: {_format_typescript_value(param['display_name'])},")
 
-        # Extract value and other fields from context_card or impact
-        impact = param.get('impact', {})
-        value = impact.get('value', 0)
-        unit = impact.get('unit', '')
-        formatted_value = impact.get('formatted_value', str(value))
+        # Extract value/unit/formatted_value from top-level fields (added by survey_generator)
+        value = param.get('value', 0)
+        unit = param.get('unit', '')
+        formatted_value = param.get('formatted_value', str(value))
 
         content.append(f"      value: {_format_typescript_value(value)},")
 
@@ -697,14 +699,15 @@ def generate_typescript_survey(
         elif context.get('what'):
             content.append(f"      description: {_format_typescript_value(context['what'])},")
 
-        if impact.get('formula'):
-            content.append(f"      formula: {_format_typescript_value(impact['formula'])},")
+        # Extract formula/latex/source_ref from top-level fields
+        if param.get('formula'):
+            content.append(f"      formula: {_format_typescript_value(param['formula'])},")
 
-        if impact.get('latex'):
-            content.append(f"      latex: {_format_typescript_value(impact['latex'])},")
+        if param.get('latex'):
+            content.append(f"      latex: {_format_typescript_value(param['latex'])},")
 
-        if impact.get('source_ref'):
-            content.append(f"      sourceRef: {_format_typescript_value(impact['source_ref'])},")
+        if param.get('source_ref'):
+            content.append(f"      sourceRef: {_format_typescript_value(param['source_ref'])},")
 
         # Citation
         citation = context.get('citation')

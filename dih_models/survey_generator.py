@@ -844,11 +844,25 @@ def generate_survey(
 
         questions = generator.generate_questions_for_parameter(param_name, param_data)
 
+        # Extract parameter value/unit/formatted_value from Parameter object
+        raw_value = float(value) if value is not None else 0
+        unit_str = getattr(value, "unit", "")
+        formatted_value = format_parameter_value(value) if value is not None else "0"
+        formula_str = getattr(value, "formula", "")
+        latex_str = getattr(value, "latex", "")
+        source_ref_str = str(getattr(value, "source_ref", ""))
+
         survey["parameters"].append({
             "rank": rank,
             "parameter_name": param_name,
             "display_name": display_name,
             "description": description,
+            "value": raw_value,
+            "unit": unit_str,
+            "formatted_value": formatted_value,
+            "formula": formula_str,
+            "latex": latex_str,
+            "source_ref": source_ref_str,
             "importance_score": round(score, 1),
             "importance_breakdown": {k: round(v, 1) for k, v in breakdown.items()},
             "impact": {

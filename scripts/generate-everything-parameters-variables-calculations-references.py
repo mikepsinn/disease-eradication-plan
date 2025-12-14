@@ -492,7 +492,7 @@ def main():
     print("[*] Generating TypeScript survey file...")
     survey_json = project_root / "_analysis" / "economist-survey.json"
     ts_survey_output = project_root / "dih_models" / "economist-survey.ts"
-    generate_typescript_survey(survey_json, ts_survey_output)
+    generate_typescript_survey(survey_json_path=survey_json, output_path=ts_survey_output)
     print()
 
     # Always generate uncertainty outputs when module is available

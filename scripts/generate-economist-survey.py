@@ -33,6 +33,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from dih_models import parameters as params_module
 from dih_models.survey_generator import generate_survey, rank_parameters
 from dih_models.usage_analyzer import analyze_document_usage
+from dih_models.typescript_generator import generate_typescript_survey
 
 
 def load_parameters():
@@ -120,7 +121,7 @@ def main():
         print(f"      {rank:<6} {param_name:<45} {score:>6.1f}   {sens:>10.1f}   {usage:>6.1f}   {type_score:>4.0f}")
 
     # Step 5: Generate survey
-    print(f"\n[5/5] Generating survey for top {args.top_n} parameters...")
+    print(f"\n[5/6] Generating survey for top {args.top_n} parameters...")
     survey = generate_survey(
         parameters=parameters,
         sensitivity_data=sensitivity_data,
@@ -152,6 +153,16 @@ def main():
 
     print(f"\n[OK] Survey saved to {output_path}")
     print(f"[OK] Version control copy saved to {surveys_path}")
+
+    # Generate TypeScript export from the same survey data
+    print(f"\n[6/6] Generating TypeScript export...")
+    typescript_path = Path("dih_models") / "economist-survey.ts"
+    generate_typescript_survey(
+        survey_data=survey,
+        output_path=typescript_path
+    )
+    print(f"[OK] TypeScript export saved to {typescript_path}")
+
     print(f"\nNext steps:")
     print(f"  1. Review survey structure: {output_path}")
     print(f"  2. Export to Google Forms or Qualtrics")
