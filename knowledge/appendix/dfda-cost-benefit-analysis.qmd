@@ -120,7 +120,7 @@ These assumptions set a stage where the platform can indeed function at scale, b
 >
 > **Existing Infrastructure Value**: Companies like Medable ($521M raised), Science 37 ($100M raised), Epic, and Cerner have already invested $1B+ in infrastructure that can be integrated rather than replicated.
 
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on a **partnership-first strategy** where a decentralized framework for drug assessment (dFDA) provides open protocol infrastructure rather than competing with existing platforms.
+This section provides a **Rough Order of Magnitude (ROM)** cost estimate based on a **partnership-first strategy** where a dFDA provides open protocol infrastructure rather than competing with existing platforms.
 
 ### Upfront (Capital) Expenditure Initial Build Illustrative 30 Months
 
@@ -267,7 +267,7 @@ _(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down R
 
 \*Note on Participant Financial Contributions and NIH Cost Discounts (Alignment with "Right to Trial & FDA Upgrade Act"):
 
-This cost estimate **covers building the technology, not paying patients for trial participation.** The "Right to Trial & FDA Upgrade Act" (SEC. 303 and SEC. 304) works like this: 1. **Sponsor Sets Costs:** Sponsors list what it costs for a patient to join their trial (SEC. 304(a)). 2. **NIH Covers Part:** The NIH Trial Participation Cost Discount Fund pays part of these costs. An NIH algorithm picks the percentage to maximize QALYs and health benefits (SEC. 303(b, c)). At first, while building the algorithm and collecting data, use a simple default (like NIH pays 50%). Subsidies start flowing immediately, then get smarter over time. 3. **Patient Pays the Rest:** The patient pays what's left after the NIH discount (SEC. 304(b)). 4. **Platform Shows Everything:** The platform for a decentralized framework for drug assessment (dFDA) displays all costs, the NIH discount, and what the patient owes (SEC. 204(c)(3)). The platform manages this information but doesn't move money around, the NIH does that.
+This cost estimate **covers building the technology, not paying patients for trial participation.** The "Right to Trial & FDA Upgrade Act" (SEC. 303 and SEC. 304) works like this: 1. **Sponsor Sets Costs:** Sponsors list what it costs for a patient to join their trial (SEC. 304(a)). 2. **NIH Covers Part:** The NIH Trial Participation Cost Discount Fund pays part of these costs. An NIH algorithm picks the percentage to maximize QALYs and health benefits (SEC. 303(b, c)). At first, while building the algorithm and collecting data, use a simple default (like NIH pays 50%). Subsidies start flowing immediately, then get smarter over time. 3. **Patient Pays the Rest:** The patient pays what's left after the NIH discount (SEC. 304(b)). 4. **Platform Shows Everything:** The platform for a dFDA displays all costs, the NIH discount, and what the patient owes (SEC. 204(c)(3)). The platform manages this information but doesn't move money around, the NIH does that.
 
 Large-scale figures sometimes discussed for "participant support" or "subsidies" would primarily reflect the total budget and impact of the NIH Trial Participation Cost Discount Fund, not operational outlays by the infrastructure for such a framework for direct compensation (which is not part of this model).
 

@@ -762,7 +762,7 @@ This yields the conservative estimate of {{< var dfda_roi_rd_only >}}:1 ROI over
 
 **Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the one-time 8.2-year timeline shift in disease eradication, as this represents the primary health benefit from eliminating the regulatory delay (see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd)).
 
-For a decentralized framework for drug assessment (dFDA) infrastructure's cost per health benefit averted (8.2-year timeline shift):
+For a dFDA's cost per health benefit averted (8.2-year timeline shift):
 
 **Cost per DALY averted: {{< var treaty_dfda_cost_per_daly_timeline_shift >}}**
 
@@ -838,7 +838,7 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 3. **Alternative government priorities**: Reallocation to other public investments such as infrastructure, education, or climate mitigation. Each alternative use would require separate cost-benefit analysis to determine relative efficiency.
 
-**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a reallocation to a decentralized framework for drug assessment (dFDA)**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
+**Methodological note on baseline selection**: The economically rigorous baseline is the "next best alternative use" rather than "status quo continuation." However, identifying the single next-best alternative requires comprehensive comparison across all possible uses of public funds, which exceeds the scope of this analysis. This analysis therefore focuses on the **conditional benefits of a dFDA**: the health and economic gains achievable by redirecting {{< var treaty_annual_funding >}} from military to medical research infrastructure.
 
 **Conservative interpretation**: Even if alternative uses generate positive economic value, a decentralized framework for drug assessment infrastructure exhibits **dominant intervention** characteristics (cost-dominant: {{< var treaty_dfda_cost_per_daly_timeline_shift >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
 
@@ -885,7 +885,7 @@ These improvements compound multiplicatively to produce the {{< var trial_capaci
 
 {{< include ../figures/tornado-trial_capacity_multiplier.qmd >}}
 
-**Automating Friction, Not Judgment**: A decentralized framework for drug assessment (dFDA) system operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
+**Automating Friction, Not Judgment**: A dFDA operates as automated infrastructure analyzing time-series EHR data from electronic health records, wearables, and apps. The {{< var trial_capacity_multiplier >}}× research acceleration does **not** require {{< var trial_capacity_multiplier >}}× more Principal Investigators.
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
@@ -989,7 +989,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Adoption Rate Assumptions
 
-**Assumption:** A decentralized framework for drug assessment (dFDA) achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
+**Assumption:** A dFDA achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
 
 **Conservative case:** 50% of trials adopt dFDA methodology
 **Optimistic case:** 80% adoption rate
@@ -1209,9 +1209,9 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 
 2. **Coordination Platform** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for dFDA infrastructure
 
-**Why framework costs are low:** A decentralized framework for drug assessment (dFDA) provides coordination protocols (like HTTP for the internet), not a competing platform.
+**Why costs are low:** A dFDA provides coordination protocols (like HTTP for the internet), not a competing platform.
 
-The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. The decentralized framework for drug assessment protocol creates the coordination layer that makes them work together for clinical trials.
+The infrastructure already exists. Epic, Cerner, Medable, Science 37 have built the components. The dFDA creates the coordination layer that makes them work together for clinical trials.
 
 Data stays federated (in Epic/Cerner/Apple Health systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
@@ -1516,20 +1516,6 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 
 ## Adoption Dynamics: Game-Theoretic Analysis
 
-Beyond the moral and economic arguments, two existential drivers make this proposal impossible to ignore for sovereign leaders:
-
-### 1. The Geopolitical "Race to the Top"
-
-This is not just a treaty; it is a technology for economic dominance. The first nation or bloc to implement a decentralized framework for drug assessment (dFDA) infrastructure will:
-
-* **Attract Global Capital**: Become the world's primary hub for biotechnology investment.
-* **Own the IP**: Secure intellectual property rights for the next generation of curative therapies.
-* **Export Health**: Project soft power by becoming the "pharmacy of the world," exporting life-saving treatments to allies.
-
-**The Strategic Dilemma**: If the US rejects this but China adopts it, China gains a massive structural advantage in the bio-economy and population health. This fear creates a "Race to the Top" where nations must adopt the efficient model or be left behind in the most important industry of the 21st century.
-
-### 2. How To Not Drive Off a Fiscal Cliff
-
 Western economies are facing a solvency crisis driven by healthcare inflation and aging populations.
 
 * **Austerity** (cutting benefits) is political suicide.
@@ -1544,7 +1530,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 {{< include ../figures/five-step-strategy-flowchart.qmd >}}
 
-### Step 1: The Global Mandate (The Philanthropic Catalyst)
+### Step 1: Global Mandate (The Philanthropic Catalyst)
 
 **Goal**: Survey **3.5% of the global population** ({{< var treaty_campaign_voting_bloc_target >}} people).
 
@@ -1639,13 +1625,13 @@ This creates a financial "kill switch": if the treaty is not respected, this mas
 
 **Budgetary Reality**: The Pentagon has failed its sixth consecutive audit and cannot account for **$2.5 trillion** in assets. A {{< var treaty_reduction_pct >}} reduction is statistical noise in a system that can't locate trillions. It doesn't require firing people or closing factories; it requires accounting for rounding errors.
 
-When you show powerful stakeholders a spreadsheet where they keep {{< var defense_sector_retention_pct >}} of their current contracts PLUS get massive perpetual returns on bonds, they stop lobbying against you and start lobbying for you.
+When you show powerful people a spreadsheet where they keep {{< var defense_sector_retention_pct >}} of their current contracts PLUS get massive perpetual returns on bonds, they stop lobbying against you and start lobbying for you.
 
 You're not defeating greed. You're aligning economic incentives to direct existing profit motives toward pragmatic clinical trials.
 
 **The "Moral Hazard" of Inaction**: We quantified the *cost* of delay ($1.2Q), but the *liability* is personal. Leaders who reject this are effectively signing death warrants for their own voters, donors, and family members.
 
-If politicians fail to adopt the treaty and build a decentralized framework for drug assessment (dFDA), they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
+If politicians fail to adopt the treaty and enable this 25X increase in clinical trial capacity and shift forward in the availability of life-saving treatments, they are technically responsible for the **{{< var disease_eradication_delay_deaths_total >}} deaths** that will occur during the {{< var efficacy_lag_years >}}-year delay they chose not to eliminate. In the information age, this choice will be public, tracked, and politically weaponized. Voting "No" isn't just a budget decision; it's a career-ending legacy of preventable mass death.
 
 Historical precedent: After WW2, military spending was cut by {{< var post_ww2_military_cut_pct >}} {{< var post_ww2_military_cut_pct_cite >}}, contributing to substantial economic growth. The proposed {{< var treaty_reduction_pct >}} reduction is significantly more modest.
 
@@ -1685,31 +1671,6 @@ See [Treaty Adoption Strategy](../strategy/treaty-adoption-strategy.qmd) for det
 
 For detailed analysis, see [Regulatory Mortality Analysis](../appendix/regulatory-mortality-analysis.qmd).
 
-### The "But Patients Won't Participate" Problem
-
-**What could go wrong**: Not enough patients volunteer for decentralized trials.
-
-**Why this actually won't happen**:
-
-{{< var patient_willingness_trial_participation_pct >}} {{< var patient_willingness_trial_participation_pct_cite >}} of people say they're willing to participate in clinical trials, but currently only {{< var current_clinical_trial_participation_rate >}} {{< var current_clinical_trial_participation_rate_cite >}} actually participate.
-
-**The Gap is the Opportunity**: Nearly half of patients *want* to help, but less than 0.1% can.
-
-Current barriers:
-
-- Trials require [traveling up to hundreds of miles to university hospitals](../references.qmd#clinical-trial-geographic-barriers) (67 miles on average, 500+ miles for rural/central US patients)
-- Trials exclude {{< var antidepressant_trial_exclusion_rate >}} of [actual patients](../references.qmd#antidepressant-trial-exclusion-rates) (too old, too young, too sick, wrong kind of sick)
-- Trials pay nothing and cost weeks of your time
-
-Decentralized pragmatic trials fix all of this:
-
-- Join from your couch
-- Everyone qualifies (you don't need to be the perfect kind of sick)
-- Get subsidized to participate + access to treatments
-
-**Solving the Data Crisis**: If doctors aren't even collecting and storing quantitative data on the severity of their patient's condition, that is a fundamental failure of the current system. How are they supposed to be doing their job if they're not measuring outcomes? This system mandates and automates that data collection, turning routine care into scientific evidence.
-
-{{< var patient_willingness_trial_participation_pct >}} of patients are willing to participate in clinical trials, yet only {{< var current_patient_participation_rate >}} actually do. The bottleneck isn't human willingness, it's the requirement for dedicated trial infrastructure and restrictive eligibility criteria.
 
 ### Patient Agency and Autonomy
 
@@ -1923,7 +1884,7 @@ This analysis models economic returns conditional on treaty ratification. Politi
 
 Implementation requires substantial institutional development:
 
-- **Regulatory expertise:** A decentralized framework for drug assessment (dFDA) requires experienced personnel (FDA, EMA, other regulators)
+- **Regulatory expertise:** A dFDA requires experienced personnel (FDA, EMA, other regulators) to enable integration with existing regulatory frameworks
 - **Technical infrastructure:** Data systems, AI/ML capabilities, cybersecurity at global scale
 - **Legal frameworks:** International treaties, data privacy compliance, intellectual property harmonization
 
