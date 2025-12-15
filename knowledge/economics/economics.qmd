@@ -441,13 +441,13 @@ By successfully executing a verified, mutual reduction in military spending to f
 2.  **The Ratchet Mechanism**: Once the economic benefits of the "Peace Dividend" (wealth, health, longevity) materialize, the incentive to increase the treaty percentage grows. We move from a negative-sum arms race to a positive-sum "peace race."
 3.  **Existential Risk Reduction**: Gradually increasing the percentage creates a trajectory toward phasing out large-scale conflict entirely. Since a primary driver of existential risk is **autonomous murder-maximizing AI produced by military arms races**, de-escalating this race via the treaty is arguably the single most effective X-Risk strategy available.
 
-It steers the ship of state away from the iceberg of extinction, one degree at a time.
+This gradual approach steers nations toward a safer equilibrium, one percentage point at a time.
 
 ### Why The Ratchet Works: The IAB Scaling Engine
 
-The "ratchet mechanism" isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
+The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
 
-**The key insight**: {{< var iab_political_incentive_funding_pct >}} of treaty revenue goes to political incentives. This amount **scales with treaty size**:
+The key insight: {{< var iab_political_incentive_funding_pct >}} of treaty revenue funds political incentives. This amount scales with treaty size:
 
 | Treaty Level | Total Revenue | IAB Political Funding | Pragmatic Trial Funding |
 |:-------------|:--------------|:---------------------|:-----------------|
@@ -458,29 +458,24 @@ The "ratchet mechanism" isn't just economic gravity. It's engineered through [In
 | 50% | $1.35T | $135B/year | $1.08T/year |
 | 100% | $2.7T | $270B/year | $2.16T/year |
 
-**VICTORY Incentive Alignment Bond investors** are satisfied at 1% - they're getting {{< var victory_bond_annual_return_pct >}} returns regardless of treaty expansion.
+VICTORY Incentive Alignment Bond investors are satisfied at 1%. They receive {{< var victory_bond_annual_return_pct >}} returns regardless of treaty expansion.
 
-**Politicians**, however, see their IAB-funded rewards **grow with each expansion**. This creates perpetual pressure to increase treaty percentages. By the time you reach 50% redirection, the political incentive pool ($135B/year) exceeds all current global lobbying combined.
+Politicians, however, see their rewards grow with each expansion. This creates sustained pressure to increase treaty percentages. By the time redirection reaches 50%, the political incentive pool ($135B/year) exceeds all current global lobbying combined.
 
-The 80/10/10 allocation structure isn't just a funding mechanism - it's a **political transformation engine** designed to make humanity's transition from war to health economically inevitable.
+The 80/10/10 allocation structure functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
 
 
 ## Political Economy and Financing
 
-Ideas don't win because they're good.
-They win by **aligning incentives**.
+Ideas don't win on merit alone. They win by aligning incentives.
 
-This is the alignment engine:
+This section describes how [Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) restructure the political economy of global health funding.
 
 ### Incentive Alignment Bonds
 
-[Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) represent a mechanism design innovation for resolving principal-agent problems in political decision-making. Rather than relying on altruistic motivation, IABs restructure incentives such that political self-interest aligns with socially optimal policy choices.
+[Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) address a fundamental problem: politicians face career penalties for supporting beneficial policies that threaten incumbent industries. IABs restructure these incentives so that supporting effective policy becomes professionally advantageous.
 
-It's **public choice theory applied correctly**: Self-interest becomes a public good.
-
-Nobody has to become a better person.
-Nobody has to evolve morally.
-They just follow their calculator to accidentally save humanity.
+The mechanism applies public choice theory systematically. Rather than requiring altruism, it makes self-interest align with social welfare. Politicians pursuing their own career advancement simultaneously advance global health outcomes.
 
 #### Mechanism Architecture
 
@@ -512,7 +507,7 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 | Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |
 | Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |
 
-The mechanism transforms the payoff structure such that supporting beneficial policy becomes individually rational rather than requiring altruistic sacrifice.
+The mechanism changes the math. Supporting beneficial policy becomes professionally advantageous rather than requiring self-sacrifice.
 
 #### Stakeholder Alignment
 
@@ -520,19 +515,19 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Defense Contractors**: "Keep {{< var defense_sector_retention_pct >}} of your current budget AND get {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)."
+**Defense Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning {{< var victory_bond_annual_return_pct >}} returns on VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). The treaty creates new revenue streams without threatening core business.
 
-**Insurance Companies**: "Healthy people file fewer claims than dead people. Dead people file zero claims, which sounds ideal until you realize they also pay zero premiums, creating a revenue problem. This fixes that."
+**Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
-**Pharmaceutical Companies**: "Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} {{< var traditional_phase3_cost_per_patient_example_48k_cite >}} per trial patient, patients bring {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidies that YOU collect when they enroll. Your trial costs become revenue. We call it 'reverse expenses' or 'profit.'"
+**Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient_example_48k >}} {{< var traditional_phase3_cost_per_patient_example_48k_cite >}} per trial patient, companies collect {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
 
-**Politicians**: "{{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment."
+**Politicians**: {{< var treaty_campaign_voting_bloc_target >}} million voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
 
-**Billionaires**: "Your index fund makes {{< var average_market_return_pct >}} returns. VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) make {{< var victory_bond_annual_return_pct >}}."
+**Investors**: VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) offer {{< var victory_bond_annual_return_pct >}} annual returns, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
 
-**Regular Humans**: "Get subsidized to try experimental treatments your doctor recommends. Choose which trial to join. Your subsidy follows you. Plus: lifetime wealth gains and extra years of life from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd)."
+**Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the [economic multiplier effect](../call-to-action/your-personal-benefits.qmd).
 
-You just point everyone's greed at diseases instead of each other.
+The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
@@ -550,18 +545,18 @@ Investors provide upfront campaign capital ({{< var treaty_campaign_total_cost >
 
 #### Legal and Ethical Framework
 
-This mechanism differs fundamentally from bribery through several criteria:
+This mechanism differs from bribery in four key ways:
 
-1. **No duty violation**: IABs reward policy support that fulfills rather than violates fiduciary obligations
-2. **Universal ex-ante rules**: Transparent, publicly announced scoring criteria apply equally to all legislators
-3. **No direct payments**: Benefits accrue through reputation and electoral outcomes, not monetary transfers
-4. **Verifiable metrics**: Scoring relies exclusively on public voting records from official government sources
+1. **No duty violation**: IABs reward policy support that advances rather than undermines public welfare
+2. **Transparent rules**: Scoring criteria are public, announced in advance, and apply equally to all legislators
+3. **No direct payments**: Benefits flow through reputation, electoral support, and career opportunities, not cash transfers
+4. **Verifiable metrics**: Scores depend entirely on public voting records from official government sources
 
-The mechanism creates rather than corrupts alignment between political incentives and social welfare.
+The mechanism strengthens rather than corrupts the alignment between political success and social outcomes.
 
 #### Generalized Governance Application
 
-While designed for the 1% Treaty, the IAB architecture provides a template for any global coordination problem requiring sustained political commitment: climate change mitigation, nuclear disarmament, pandemic preparedness. The mechanism addresses the fundamental challenge of aligning short-term political incentives with long-term collective welfare.
+While designed for the 1% Treaty, the IAB architecture applies to any global coordination problem requiring sustained political commitment. Climate change mitigation, nuclear disarmament, and pandemic preparedness all face the same challenge: aligning short-term political incentives with long-term collective welfare. The IAB mechanism provides a systematic solution.
 
 ## Dominance Analysis
 
