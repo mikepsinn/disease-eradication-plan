@@ -10,7 +10,7 @@ project:
 book:
   title: "How to End War and Disease"
   author: " Mike P. Sinn"
-  description: "Make 2000 Years of Medical Progress in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
+  description: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
   favicon: favicon.ico
   site-url: https://WarOnDisease.org
@@ -188,8 +188,8 @@ metadata:
   
   # Bibliographic metadata
   title: "How to End War and Disease"
-  description: "A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
-  abstract: "A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
+  description: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
+  abstract: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
   category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
@@ -425,9 +425,9 @@ format:
     #       <meta name="twitter:card" content="summary_large_image">
     #       <meta name="twitter:image" content="https://WarOnDisease.org/assets/icons/og-image.png">
     #       <meta name="twitter:title" content="How to End War and Disease">
-    #       <meta name="twitter:description" content="A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
+    #       <meta name="twitter:description" content="A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:title" content="How to End War and Disease">
-    #       <meta property="og:description" content="A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
+    #       <meta property="og:description" content="A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:type" content="book">
     #       <meta property="og:url" content="https://WarOnDisease.org">
   pdf:
@@ -447,7 +447,7 @@ format:
       - right=1in
     variables:
       title: "How to End War and Disease"
-      description: "A Practical Guide: Make 2000 Years of Medical Progress in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
+      description: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
     include-in-header:
       text: |
         % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
