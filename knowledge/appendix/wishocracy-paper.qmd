@@ -202,7 +202,9 @@ In RepDem, a voter transmits a single scalar signal $v \in \{c_1, \dots, c_k\}$ 
 $$
 C_{Rep} \approx \frac{\log_2(k)}{T \text{ years}} \approx 0
 $$
-This extreme lossy compression effectively destroys all information about preference intensity and specific trade-offs (The "Bundle Problem").
+This extreme lossy compression effectively destroys all information about preference intensity and specific trade-offs (The "Bundle Problem"). This theoretical result aligns with empirical findings by @princeton-oligarchy-study, who analyzed 1,779 policy outcomes and found that "average citizens have little or no independent influence" on policy.
+
+![The flatline of democracy: Public support (0% to 100%) has near-zero impact on the probability of policy adoption (flat at ~30%), whereas elite support strongly correlates with adoption. Data from @princeton-oligarchy-study.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
 
 **Wishocracy (High-Bandwidth Channel):**
 RAPPA operates as a continuous channel. Each pairwise comparison extracts $\log_2(\text{resolution})$ bits of information about the relative valuation of outcome bundle subsets. With continuous sliders, the transmission rate is limited only by citizen engagement time.
