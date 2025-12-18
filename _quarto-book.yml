@@ -24,6 +24,8 @@ book:
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "IAB Paper"
         href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+      - text: "Wishocracy Paper"
+        href: knowledge/appendix/wishocracy-paper.qmd
       - text: "References"
         href: knowledge/references.qmd
       - text: "VOTE"
@@ -39,6 +41,8 @@ book:
             text: "Parameters & Calculations"
           - href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
             text: "Incentive Alignment Bonds"
+          - href: knowledge/appendix/wishocracy-paper.qmd
+            text: "Wishocracy Paper"
           - href: knowledge/references.qmd
             text: "References & Citations"
   chapters:
@@ -118,6 +122,7 @@ book:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
         - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
+        - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
 
     # Economic Analysis
     - part: "Economic Analysis"
@@ -304,9 +309,10 @@ format:
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-              <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> | 
-              <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> | 
-              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> | 
+              <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> |
+              <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
+              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
+              <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
             </p>
           </div>
@@ -322,9 +328,10 @@ format:
               <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-              <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> | 
-              <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> | 
-              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> | 
+              <a href="/knowledge/economics/economics.qmd" style="color: #8b7355;">Economics</a> |
+              <a href="/knowledge/appendix/parameters-and-calculations.qmd" style="color: #8b7355;">Calculations</a> |
+              <a href="/knowledge/appendix/incentive-alignment-bonds-paper.qmd" style="color: #8b7355;">IAB Paper</a> |
+              <a href="/knowledge/appendix/wishocracy-paper.qmd" style="color: #8b7355;">Wishocracy Paper</a> |
               <a href="/knowledge/references.qmd" style="color: #8b7355;">References</a>
             </p>
           </footer>
