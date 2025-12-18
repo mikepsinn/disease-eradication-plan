@@ -1,0 +1,46 @@
+```{python}
+#| label: fig-cognitive-load-comparison
+#| fig-cap: 'Cognitive Load Comparison: Direct Ranking vs. RAPPA. Assessing many items simultaneously exceeds human working memory ($7 \pm 2$). RAPPA decomposes this into a sequence of binary choices, keeping cognitive load low.'
+#| echo: false
+
+import graphviz
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Cognitive Load Comparison', format='png')
+dot.attr(rankdir='LR', compound='true')
+setup_graphviz_style(dot)
+
+# Budget items for traditional voting
+items = [
+    'Schools', 'Roads', 'Parks', 'Health', 'Police', 'Fire',
+    'Libraries', 'Transit', 'Sewers', 'Housing', 'Childcare',
+    'Seniors', 'Arts', 'Sports', 'Environment'
+]
+
+# -- Subgraph: Traditional Voting (Overload) --
+with dot.subgraph(name='cluster_traditional') as c:
+    c.attr(label='Traditional Budgeting: Choice Overload (n >> 7±2)', style='dashed', color='red')
+    c.node('Citizen1', 'Citizen', shape='circle', style='filled', fillcolor='lightyellow', fontsize='10')
+
+    # Create many individual item nodes
+    for i, item in enumerate(items):
+        node_id = f'item{i}'
+        c.node(node_id, item, shape='box', style='filled', fillcolor='lightgrey', fontsize='8', width='0.6', height='0.3')
+        # Connect all items to citizen with red overwhelming edges
+        c.edge('Citizen1', node_id, color='red', penwidth='0.5', arrowsize='0.5')
+
+# -- Subgraph: RAPPA (Flow) --
+with dot.subgraph(name='cluster_rappa') as c:
+    c.attr(label='Wishocracy (RAPPA): Tractable Pairwise (n = 2 < 7±2)', style='solid', color='green')
+    c.node('Citizen2', 'Citizen', shape='circle', style='filled', fillcolor='lightgreen', fontsize='10')
+
+    # Just two options
+    c.node('Park', 'Park', shape='box', style='filled,rounded', fillcolor='lightblue', fontsize='9')
+    c.node('Potholes', 'Potholes', shape='box', style='filled,rounded', fillcolor='lightblue', fontsize='9')
+
+    # Clean pairwise edges
+    c.edge('Citizen2', 'Park', color='green', penwidth='1.0')
+    c.edge('Citizen2', 'Potholes', color='green', penwidth='1.0')
+
+render_graphviz_with_watermark(dot, 'rappa-cognitive-load-diagram')
+```
