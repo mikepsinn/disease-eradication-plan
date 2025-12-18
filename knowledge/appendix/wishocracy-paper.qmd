@@ -202,9 +202,9 @@ In RepDem, a voter transmits a single scalar signal $v \in \{c_1, \dots, c_k\}$ 
 $$
 C_{Rep} \approx \frac{\log_2(k)}{T \text{ years}} \approx 0
 $$
-This extreme lossy compression effectively destroys all information about preference intensity and specific trade-offs (The "Bundle Problem"). This theoretical result aligns with empirical findings by @princeton-oligarchy-study, who analyzed 1,779 policy outcomes and found that "average citizens have little or no independent influence" on policy.
+This extreme lossy compression effectively destroys all information about preference intensity and specific trade-offs (The "Bundle Problem"). This theoretical result aligns with empirical findings by @gilens2014, who analyzed 1,779 policy outcomes and found that "average citizens have little or no independent influence" on policy.
 
-![The flatline of democracy: Public support (0% to 100%) has near-zero impact on the probability of policy adoption (flat at ~30%), whereas elite support strongly correlates with adoption. Data from @princeton-oligarchy-study.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
+![The flatline of democracy: Public support (0% to 100%) has near-zero impact on the probability of policy adoption (flat at ~30%), whereas elite support strongly correlates with adoption. Data from @gilens2014.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
 
 **Wishocracy (High-Bandwidth Channel):**
 RAPPA operates as a continuous channel. Each pairwise comparison extracts $\log_2(\text{resolution})$ bits of information about the relative valuation of outcome bundle subsets. With continuous sliders, the transmission rate is limited only by citizen engagement time.
@@ -282,6 +282,16 @@ The Democratic caucus of the Colorado House of Representatives conducted a quadr
 
 Results demonstrated that QV produces different outcomes than majority voting. The winning bill (Equal Pay for Equal Work Act) received broad but not universal support with strong preference intensity. Notably, no representative spent all tokens on a single bill, suggesting the mechanism successfully encouraged preference diversification.
 
+## **4.5 Reference Implementation: Wishocracy.org**
+
+To validate the technical feasibility of the RAPPA mechanism, a reference implementation has been deployed at [Wishocracy.org](https://wishocracy.org). This open-source platform serves as a pilot environment for:
+
+1.  **Interface Testing:** Validating the usability of slider-based pairwise comparisons on mobile and desktop devices.
+2.  **Algorithm Verification:** Testing the convergence properties of the geometric mean aggregation and eigenvector centrality algorithms under real-world traffic.
+3.  **Sybil Resistance:** Implementing and stress-testing integration with decentralized identity providers to ensure one-person-one-vote integrity.
+
+The repository is available for public audit, allowing researchers to verify that the theoretical properties described in Section 3 transform correctly into executable code.
+
 # **5\. Addressing Potential Criticisms**
 
 ## **5.1 Participation and Digital Divide**
@@ -307,6 +317,8 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 **Coordinated Attacks:** For a coordinated group of size $k$ to shift outcome $A$'s weight by $\Delta w$, they must manipulate comparisons involving $A$ across multiple pairs. With $m$ outcomes and random assignment, the number of comparisons needed is $O(m \cdot n / k)$. As $m$ and $n$ grow, the coordination cost scales super-linearly while the marginal impact diminishes. Statistical anomaly detection (e.g., comparing individual consistency ratios against population distributions) can identify coordinated patterns with high probability when $k < \sqrt{n}$.
 
 **Sybil Resistance:** The incomplete information structure provides inherent Sybil resistance even beyond identity verification. A Sybil attack creating $k$ fake identities increases the attacker's allocation power by factor $k$, but randomization spreads these fake votes across $O(m^2)$ possible pairs. The expected number of fake votes on any given pair remains $O(k/m^2)$, which is negligible when $k \ll m^2$. Combined with identity verification, this makes Sybil attacks both technically difficult and economically irrational.
+
+{{< include ../figures/rappa-sybil-dilution-diagram.qmd >}}
 
 ## **5.3 Preference Laundering and Manufactured Consent**
 

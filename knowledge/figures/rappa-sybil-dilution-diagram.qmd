@@ -1,0 +1,42 @@
+```{python}
+#| label: fig-rappa-sybil-dilution
+#| fig-cap: "The Sybil Dilution Effect. Even if a coordinated group of attackers creates fake accounts to target 'Policy A', the random assignment mechanism scatters their votes across the entire search space (Pairs X, Y, Z, etc.). The probability of any specific attacker being assigned the target pair is negligible, diluting the attack's concentrated power."
+#| echo: false
+
+import graphviz
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Sybil Dilution Diagram', format='png')
+dot.attr(rankdir='LR') 
+# Use global design guide settings
+setup_graphviz_style(dot)
+
+# -- Attackers --
+dot.node('Attackers', 'Coordinated Attackers\n(Targeting "Policy A")', shape='box', style='filled', fillcolor='black', fontcolor='white')
+
+# -- The Mechanism --
+dot.node('Randomizer', 'Random Pair Assignment\n(The "Shuffle")', shape='circle', style='filled', fillcolor='white', fontcolor='black', width='1.5')
+
+# -- The Outcome Space (Pairs) --
+with dot.subgraph(name='cluster_pairs') as c:
+    c.attr(label='Pairwise Comparison Space', color='black')
+    
+    # Irrelevant pairs
+    c.node('Pair1', 'Pair X vs Pair Y\n(Irrelevant)', shape='box')
+    c.node('Pair2', 'Pair Z vs Pair Q\n(Irrelevant)', shape='box')
+    c.node('Pair3', 'Pair M vs Pair N\n(Irrelevant)', shape='box')
+    
+    # The Target
+    c.node('Target', 'Target: Policy A\nvs Policy B', shape='box', style='bold')
+
+# -- Edges --
+dot.edge('Attackers', 'Randomizer', label='1,000 Fake Votes')
+
+# Diluted edges
+dot.edge('Randomizer', 'Pair1', style='dashed', label='~0.1%')
+dot.edge('Randomizer', 'Pair2', style='dashed', label='~0.1%')
+dot.edge('Randomizer', 'Pair3', style='dashed', label='~0.1%')
+dot.edge('Randomizer', 'Target', label='<1% Impact', penwidth='1.0')
+
+render_graphviz_with_watermark(dot, 'rappa-sybil-dilution')
+```
