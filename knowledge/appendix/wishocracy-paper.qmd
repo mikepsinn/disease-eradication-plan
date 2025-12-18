@@ -64,17 +64,7 @@ Democratic institutions face a fundamental challenge: how to aggregate citizen p
 
 Modern democracies face an increasingly acute challenge: how to translate the diverse, often conflicting preferences of millions of citizens into coherent public policy. Traditional electoral mechanisms were designed for an era of limited communication, discrete choices, and relatively homogeneous electorates. Today's policy landscape (spanning healthcare allocation, infrastructure investment, climate adaptation, research funding, and social services) demands more sophisticated preference elicitation than periodic elections can provide.
 
-The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Formally, if human cognitive capacity for simultaneous comparisons is $C = 7 \pm 2$, and modern budgets require evaluating $n$ items where $n \gg C$ (often $n > 1000$), then direct n-way ranking is cognitively intractable:
-
-$$
-\text{Cognitive Load}_{\text{direct}} = n \gg 7 \pm 2
-$$
-
-RAPPA decomposes this into pairwise comparisons, reducing the per-comparison cognitive load to:
-
-$$
-\text{Cognitive Load}_{\text{RAPPA}} = 2 < 7 \pm 2
-$$
+The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Humans struggle to make consistent judgments over large sets of options. Pairwise comparisons keep each decision local and cognitively manageable even when the full budget has thousands of items.
 
 Yet modern government budgets allocate resources across thousands of line items, each representing implicit trade-offs against all others.
 
@@ -92,7 +82,7 @@ Wishocracy offers a fourth path: a mechanism that harnesses collective intellige
 
 3. **Collective Intelligence Aggregation:** By synthesizing millions of pairwise judgments through eigenvector methods (building on collective intelligence research), the mechanism leverages diversity to cancel individual errors while aggregating true signals into welfare-approximating allocations.
 
-No existing mechanism combines all three properties. Traditional voting captures neither intensity nor tractability. Quadratic voting captures intensity but imposes cognitive complexity. The Analytic Hierarchy Process provides tractability but has not been deployed for large-scale collective decision-making. RAPPA synthesizes these insights into a unified framework.
+To our knowledge, no widely deployed mechanism combines all three properties. Traditional voting captures neither intensity nor tractability. Quadratic voting captures intensity but imposes cognitive complexity. The Analytic Hierarchy Process provides tractability but has not been deployed for large-scale collective decision-making. RAPPA synthesizes these insights into a unified framework.
 
 # **2\. Theoretical Foundations**
 
@@ -223,11 +213,11 @@ C_{RAPPA} \propto N \cdot \bar{c} \cdot H(S)
 $$
 where $N$ is voters, $\bar{c}$ is average comparisons per voter, and $H(S)$ is the entropy of the slider input.
 
-**Theorem 1 (Divergence Minimization):** Let $D_{KL}(P || Q)$ be the Kullback-Leibler divergence between true welfare preferences $P$ and enacted policy $Q$. As $N \to \infty$:
+**Proposition 1 (Information Loss in Candidate Voting):** Let $D_{KL}(P || Q)$ be the Kullback-Leibler divergence between true welfare preferences $P$ and enacted policy $Q$. As $N \to \infty$:
 $$
 E[D_{KL}(P || Q_{RAPPA})] \ll E[D_{KL}(P || Q_{Rep})]
 $$
-*Proof (Sketch):* By the Data Processing Inequality, post-processing (policymaking) cannot increase information. $Q_{Rep}$ is derived from a signal with near-zero mutual information $I(P; V_{Rep})$ due to quantization. $Q_{RAPPA}$ is derived from a sufficient statistic of the pairwise matrix $\mathbf{A}$, where $I(P; \mathbf{A})$ approaches $H(P)$ as empirical sampling density increases.
+*Argument (Sketch):* By the Data Processing Inequality, post-processing (policymaking) cannot increase information. $Q_{Rep}$ is derived from a signal with near-zero mutual information $I(P; V_{Rep})$ due to quantization. $Q_{RAPPA}$ is derived from a sufficient statistic of the pairwise matrix $\mathbf{A}$, where $I(P; \mathbf{A})$ approaches $H(P)$ as empirical sampling density increases.
 
 ### **3.5.2 Welfare Maximization: The "Median vs. Mean" Proof**
 
@@ -237,11 +227,11 @@ A fundamental result in Public Choice Theory is the **Median Voter Theorem** [@d
 *   **Median Outcome:** If 51% of voters have priority $x=0$ (healthy) and 49% have priority $x=100$ (dying), the median preference is $0$. The minority receives no aid.
 *   **Mean Outcome:** The utilitarian optimum is $\bar{x} = 0.49 \times 100 = 49$.
 
-**Theorem 2 (Utility Dominance):** For any utility distribution $U$ with skewness $\gamma > 0$ (typical of health/wealth distributions), the Social Welfare $W$ of the RAPPA allocation exceeds that of the Median Voter allocation.
+**Proposition 2 (Tail-Risk Under Median Aggregation):** For any utility distribution $U$ with skewness $\gamma > 0$ (typical of health/wealth distributions), the Social Welfare $W$ of the RAPPA allocation exceeds that of the Median Voter allocation.
 $$
 W(RAPPA) \approx W(\text{Mean}) > W(\text{Median})
 $$
-*Proof:* The RAPPA eigenvector centrality $w_j$ corresponds to $\frac{\sum v_{ij}}{\sum \sum v_{ik}}$, which approximates the population arithmetic mean. For convex loss functions (where distinct needs exist), minimizing the sum of squared errors leads to the mean, not the median. Wishocracy thus passes the "Veil of Ignorance" test [@rawls-1971] whereby a citizen typically prefers the Mean allocation to the Median allocation to hedge against being in the tail risk category.
+*Argument:* The RAPPA eigenvector centrality $w_j$ corresponds to $\frac{\sum v_{ij}}{\sum \sum v_{ik}}$, which approximates the population arithmetic mean. For convex loss functions (where distinct needs exist), minimizing the sum of squared errors leads to the mean, not the median. Wishocracy thus passes the "Veil of Ignorance" test [@rawls-1971] whereby a citizen typically prefers the Mean allocation to the Median allocation to hedge against being in the tail risk category.
 
 ### **3.5.3 Principal-Agent Cost Elimination**
 
@@ -316,7 +306,7 @@ The repository is available for public audit, allowing researchers to verify tha
 
 **Response:** Identity verification through existing government ID systems (driver's licenses, national ID cards) provides one-person-one-account guarantees. We address manipulation at three levels: individual strategic behavior, coordinated attacks, and formal incentive compatibility.
 
-**Individual Strategic Behavior:** Consider a citizen evaluating pair $(A, B)$. Under random pair assignment, the citizen does not know: (1) which other pairs they will receive, (2) which pairs other citizens will evaluate, or (3) how others will allocate. This incomplete information structure creates a Bayesian game where truthful reporting is the individually optimal strategy. Formally, let $\rho_i$ be citizen $i$'s true valuation ratio and $\hat{\rho}_i$ be their reported ratio for pair $(A,B)$. The citizen's influence on the final weight $w_A$ is:
+**Individual Strategic Behavior:** Consider a citizen evaluating pair $(A, B)$. Under random pair assignment, the citizen does not know: (1) which other pairs they will receive, (2) which pairs other citizens will evaluate, or (3) how others will allocate. This incomplete information structure creates a situation where truthful reporting is a robust heuristic: with random assignment and negligible individual impact, the incentive to game outcomes is weak for most participants. Formally, let $\rho_i$ be citizen $i$'s true valuation ratio and $\hat{\rho}_i$ be their reported ratio for pair $(A,B)$. The citizen's influence on the final weight $w_A$ is:
 
 $$
 \frac{\partial w_A}{\partial \hat{\rho}_i} = \frac{1}{|S_{AB}|} \cdot \frac{\partial w_A}{\partial a_{AB}}
@@ -352,7 +342,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 Democratic institutions evolved in an era of information scarcity, limited communication, and relatively homogeneous electorates. Today's policy challenges (global in scope, technical in character, and requiring trade-offs across incommensurable values) demand mechanisms that can aggregate nuanced citizen preferences at scale. Wishocracy, through Randomized Aggregated Pairwise Preference Allocation, offers such a mechanism.
 
-The theoretical foundations synthesize validated insights from the Analytic Hierarchy Process, quadratic voting, and collective intelligence research. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons, using randomization to ensure strategy-proofness, and aggregating them through eigenvector methods, RAPPA overcomes the cognitive limitations that plague traditional democratic institutions while preserving preference intensity information.
+The theoretical foundations synthesize validated insights from the Analytic Hierarchy Process, quadratic voting, and collective intelligence research. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons, using randomization to reduce manipulability and the expected payoff to strategic misreporting, and aggregating them through eigenvector methods, RAPPA overcomes the cognitive limitations that plague traditional democratic institutions while preserving preference intensity information.
 
 The empirical precedents from Porto Alegre's participatory budgeting, Taiwan's vTaiwan platform, and Stanford's voting research demonstrate that citizens can and will engage productively with pairwise preference-expressing mechanisms. These real-world experiments validate the core assumptions underlying Wishocracy while revealing the institutional fragility of advisory mechanisms without binding authority.
 
