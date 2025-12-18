@@ -3,7 +3,22 @@ title: 'Incentive Alignment Bonds: A Mechanism Design Approach to Political Econ
 description: 'This paper introduces Incentive Alignment Bonds (IABs), a new class of financial instruments defined by three primitive properties: (1) investor alignment with public good production, (2) politician alignment with public good production, and (3) funding from government programs with lower marginal social value than the target use.'
 aliases:
   - /iab.html
-author: Mike P. Sinn
+author:
+  - name: Decentralized Institutes of Health
+    affiliation:
+      name: Decentralized Institutes of Health
+      url: https://dih.earth
+    roles:
+      - conceptualization
+      - methodology
+  - name: Mike P. Sinn
+    affiliation:
+      name: Decentralized Institutes of Health
+    roles:
+      - conceptualization
+      - writing – original draft
+    email: mike@warondisease.org
+    corresponding: true
 keywords:
   - mechanism design
   - public choice
@@ -32,7 +47,7 @@ format:
 M. Sinn
 
 ::: {.callout-tip}
-This is a working paper. Comments and critical feedback are appreciated. Annotate via the sidebar or email [m@dih.earth](mailto:m@dih.earth).
+This is a working paper. Comments and critical feedback are appreciated. Annotate via the sidebar or email [mike@warondisease.org](mailto:mike@warondisease.org).
 :::
 
 ## Abstract
