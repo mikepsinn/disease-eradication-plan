@@ -117,6 +117,20 @@ The Wishocracy mechanism operates through the following process, which we term R
 4. **Matrix Completion:** Using the aggregated pairwise ratios, a complete preference matrix is constructed. Standard eigenvector methods (as in AHP) or iterative Bayesian updating produce global priority weights for all n items.  
 5. **Budget Allocation:** The final priority weights translate directly into budget allocation percentages. If cancer research receives a normalized weight of 8.3% and the total discretionary budget is $10 billion, cancer research receives $830 million.
 
+{{< include ../figures/rappa-mechanism-flow-diagram.qmd >}}
+
+::: {.callout-note}
+## Scenario: The Town Budget
+
+Imagine Citizen Alice opening the Wishocracy app to help set her town's budget.
+
+1.  **Comparison 1:** She is presented with a pair: **"Renovate Dealing Park" vs. "Fix Potholes on Main St"**.
+2.  **Decision:** Alice cares deeply about the park. She slides the allocator to give **80%** to the Park and **20%** to Potholes. This expresses strong intensity.
+3.  **Comparison 2:** Next, she sees **"Fix Potholes" vs. "New Library Books"**. She thinks both are somewhat important but slightly prefers roads. She allocates **55%** to Potholes and **45%** to Books.
+4.  **Aggregation:** Thousands of other citizens make similar pairwise comparisons. Alice never sees "Park vs. Library," but the system infers the relationship (Park > Potholes > Library) through the transitive network of all citizens' choices.
+5.  **Result:** The aggregate preferences form a priority list where the Park gets the largest budget share, reflecting the high intensity of support from Alice and her neighbors.
+:::
+
 ## **3.2 Formal Properties**
 
 RAPPA satisfies several desirable mechanism design properties:
@@ -137,10 +151,10 @@ We now formally define the RAPPA mechanism as a mapping from individual preferen
 
 **Inputs:** Let $N = \{1, ..., n\}$ be the set of citizens and $O = \{o_1, ..., o_m\}$ be the set of policy priorities. Each citizen $i$ provides pairwise allocation ratios $\rho_{i,A,B} \in [0,1]$ for a subset of pairs $(A,B) \in O \times O$, where $\rho_{i,A,B}$ represents the fraction of resources citizen $i$ would allocate to priority $A$ when comparing $A$ and $B$. Note that $\rho_{i,A,B} + \rho_{i,B,A} = 1$ by construction.
 
-**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison:
+**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison using the **Geometric Mean** of individual ratios. The geometric mean is necessary to satisfy the reciprocity axiom (Aczaél & Saaty, 1983) and ensure that reciprocal judgments allow for consistent aggregation:
 
 $$
-a_{jk} = \frac{1}{|S_{jk}|} \sum_{i \in S_{jk}} \rho_{i,j,k}
+a_{jk} = \left( \prod_{i \in S_{jk}} \rho_{i,j,k} \right)^{\frac{1}{|S_{jk}|}}
 $$
 
 where $S_{jk} \subseteq N$ is the set of citizens who evaluated the pair $(o_j, o_k)$. This produces an $m \times m$ aggregate comparison matrix $\mathbf{A} = [a_{jk}]$.

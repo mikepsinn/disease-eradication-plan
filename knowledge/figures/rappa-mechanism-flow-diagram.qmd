@@ -1,0 +1,71 @@
+---
+title: RAPPA Mechanism Flow Diagram
+description: Flow diagram showing the RAPPA aggregation process from individual inputs to budget allocation.
+---
+
+```{python}
+#| echo: false
+import graphviz
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+import os
+import sys
+
+# Ensure we can import from the project root
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.append(str(project_root))
+
+from dih_models.plotting.graphviz_helper import (
+    setup_graphviz_style,
+    render_graphviz_with_watermark
+)
+
+# Create diagram
+dot = graphviz.Digraph(comment='RAPPA Mechanism Flow', format='png')
+dot.attr(rankdir='TB', size='8,12')
+
+# Apply design guide styling
+setup_graphviz_style(dot)
+
+# Define Nodes
+# Usage: dot.node(name, label, **attrs)
+
+with dot.subgraph(name='cluster_inputs') as c:
+    c.attr(label='1. Individual Inputs', style='dashed', color='black')
+    c.node('Citizens', 'Citizens\n(N Participants)', shape='ellipse')
+    c.node('Pairs', 'Randomized Pairs\n(Subset of Comparisons)', shape='box')
+
+with dot.subgraph(name='cluster_process') as c:
+    c.attr(label='2. RAPPA Aggregation', style='dashed', color='black')
+    c.node('Ratios', 'Pairwise Ratios\n(Slider Allocations)', shape='box')
+    c.node('GeoMean', 'Geometric Mean\n(Aggregation)', shape='box', penwidth='2')
+    c.node('Matrix', 'Aggregate Matrix\n(A)', shape='box')
+
+with dot.subgraph(name='cluster_synthesis') as c:
+    c.attr(label='3. Synthesis', style='dashed', color='black')
+    c.node('Eigen', 'Eigenvector\nMethod', shape='box')
+    c.node('Weights', 'Global Priority\nVector (w)', shape='box', penwidth='2')
+
+with dot.subgraph(name='cluster_output') as c:
+    c.attr(label='4. Output', style='dashed', color='black')
+    c.node('Budget', 'Final Budget\nAllocation', shape='doubleoctagon')
+
+# Define Edges
+dot.edge('Citizens', 'Pairs', label=' View')
+dot.edge('Pairs', 'Ratios', label=' Allocate')
+dot.edge('Ratios', 'GeoMean', label=' Aggregate')
+dot.edge('GeoMean', 'Matrix', label=' Construct')
+dot.edge('Matrix', 'Eigen', label=' Calculate')
+dot.edge('Eigen', 'Weights', label=' Derive')
+dot.edge('Weights', 'Budget', label=' Map to $')
+
+# Render with watermark and metadata
+# This will save to knowledge/figures/rappa-mechanism-flow-diagram.png
+output_dir = project_root / 'knowledge' / 'figures'
+png_path = render_graphviz_with_watermark(dot, 'rappa-mechanism-flow-diagram', output_dir)
+
+display(IPImage(str(png_path)))
+```
