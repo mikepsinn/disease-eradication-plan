@@ -1,6 +1,7 @@
 ---
-title: 'Wishocracy: Randomized Aggregated Pairwise Preference Allocation for Democratic Resource Governance'
-description: 'This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons and using randomization to ensure strategy-proofness, the mechanism overcomes human cognitive limitations while preserving preference intensity information.'
+title: 'Wishocracy'
+subtitle: 'Randomized Pairwise Budget Allocation for Preference Aggregation'
+description: 'This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons, the mechanism reduces cognitive burden while preserving preference intensity.'
 aliases:
   - /wishocracy.html
 author:
@@ -63,13 +64,25 @@ Democratic institutions face a fundamental challenge: how to aggregate citizen p
 
 Modern democracies face an increasingly acute challenge: how to translate the diverse, often conflicting preferences of millions of citizens into coherent public policy. Traditional electoral mechanisms were designed for an era of limited communication, discrete choices, and relatively homogeneous electorates. Today's policy landscape (spanning healthcare allocation, infrastructure investment, climate adaptation, research funding, and social services) demands more sophisticated preference elicitation than periodic elections can provide.
 
-The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Yet modern government budgets allocate resources across thousands of line items, each representing implicit trade-offs against all others.
+The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Formally, if human cognitive capacity for simultaneous comparisons is $C = 7 \pm 2$, and modern budgets require evaluating $n$ items where $n \gg C$ (often $n > 1000$), then direct n-way ranking is cognitively intractable:
+
+$$
+\text{Cognitive Load}_{\text{direct}} = n \gg 7 \pm 2
+$$
+
+RAPPA decomposes this into pairwise comparisons, reducing the per-comparison cognitive load to:
+
+$$
+\text{Cognitive Load}_{\text{RAPPA}} = 2 < 7 \pm 2
+$$
+
+Yet modern government budgets allocate resources across thousands of line items, each representing implicit trade-offs against all others.
 
 Existing solutions fall into three inadequate categories. First, representative democracy delegates preference aggregation to elected officials, introducing principal-agent problems, capture by special interests, and systematic misalignment between voter preferences and policy outcomes. Second, direct democracy mechanisms like referenda and citizen initiatives reduce complex trade-offs to binary choices, losing crucial information about preference intensity and creating winner-take-all dynamics that harm minorities with strong preferences. Third, expert-driven technocracy may achieve allocative efficiency but lacks democratic legitimacy and cannot incorporate the subjective welfare considerations that only citizens themselves can evaluate.
 
 Wishocracy offers a fourth path: a mechanism that harnesses collective intelligence through structured preference elicitation while respecting cognitive constraints, incorporating preference intensity, and maintaining democratic legitimacy. By presenting citizens with simple pairwise comparisons ('Given $100 to allocate between cancer research and Alzheimer's research, how would you divide it?'), the mechanism decomposes the impossible n-dimensional comparison into tractable binary choices. Aggregated across millions of such comparisons from thousands of participants, the system converges on a preference ordering that approximates the utilitarian social welfare function.
 
-**RAPPA's Novel Contribution:** Wishocracy represents the first governance mechanism to simultaneously achieve three critical properties that existing mechanisms address in isolation:
+**RAPPA's Contribution:** Wishocracy synthesizes three critical properties into a single framework:
 
 1. **Cognitive Tractability:** By decomposing n-dimensional budget allocation into pairwise comparisons (drawing on AHP), RAPPA respects the well-documented cognitive limit of $7 \pm 2$ simultaneous comparisons, making participation feasible for all citizens regardless of education or available time.
 
@@ -137,7 +150,7 @@ RAPPA satisfies several desirable mechanism design properties:
 
 **Pareto Efficiency:** The mechanism converges to allocations where no reallocation could make some participants better off without making others worse off, as measured by their expressed preferences.
 
-**Strategy-Proofness (Approximate):** Random pair assignment prevents strategic manipulation. A participant cannot know which pairs they will receive, making it optimal to reveal true preferences. With sufficiently large participant pools, individual strategic behavior has negligible impact on outcomes.
+**Manipulation Resistance:** Random pair assignment makes strategic manipulation difficult. A participant cannot know which pairs they will receive, making truthful reporting a robust heuristic. With sufficiently large participant pools, individual strategic behavior has negligible impact on outcomes.
 
 **Cognitive Tractability:** Each individual comparison requires only binary evaluation with an intensity slider, well within human cognitive capacity. Participants need not understand the aggregation mathematics.
 
@@ -145,49 +158,50 @@ RAPPA satisfies several desirable mechanism design properties:
 
 **Preference Intensity Capture:** Unlike binary voting, the slider allocation captures cardinal preferences. Strong majorities with weak preferences can be outweighed by smaller groups with intense preferences, addressing the tyranny of the majority problem.
 
+**Comparative Mechanism Complexity:** The table below summarizes how RAPPA compares to alternative voting mechanisms across key dimensions:
+
+| Mechanism | Comparisons per participant | Cognitive load | Intensity capture | Strategy-proofness |
+|-----------|---------------------------|----------------|-------------------|-------------------|
+| Traditional voting (plurality) | O(1) | Minimal | No | No |
+| Ranked-choice (RCV) | O(n log n) | High | No | Partial |
+| Quadratic voting (QV) | O(n) | Medium-high | Yes | Partial |
+| RAPPA | O(k) where k << n | Minimal | Yes | Approximate |
+
+RAPPA achieves the cognitive tractability of traditional voting while capturing preference intensity like quadratic voting, a combination no prior mechanism provides.
+
 ## **3.3 Formal Model**
 
 We now formally define the RAPPA mechanism as a mapping from individual preferences to collective allocations.
 
-**Inputs:** Let $N = \{1, ..., n\}$ be the set of citizens and $O = \{o_1, ..., o_m\}$ be the set of policy priorities. Each citizen $i$ provides pairwise allocation ratios $\rho_{i,A,B} \in [0,1]$ for a subset of pairs $(A,B) \in O \times O$, where $\rho_{i,A,B}$ represents the fraction of resources citizen $i$ would allocate to priority $A$ when comparing $A$ and $B$. Note that $\rho_{i,A,B} + \rho_{i,B,A} = 1$ by construction.
+**Inputs:** Let $N = \{1, ..., n\}$ be the set of citizens and $O = \{o_1, ..., o_m\}$ be the set of policy priorities. Each citizen $i$ provides pairwise allocation ratios $\rho_{i,A,B} \in [0,1]$ for a subset of pairs $(A,B) \in O \times O$.
 
-**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison using the **Geometric Mean** of individual ratios. The geometric mean is necessary to satisfy the reciprocity axiom (Aczaél & Saaty, 1983) and ensure that reciprocal judgments allow for consistent aggregation:
-
+**Ratio Conversion:** The raw slider value $\rho$ (a share) is converted into a preference odds ratio $r$ (unbounded $[0, \infty)$) to satisfy AHP requirements. We apply $\epsilon$-clipping to handle edge cases (0/100):
 $$
-a_{jk} = \left( \prod_{i \in S_{jk}} \rho_{i,j,k} \right)^{\frac{1}{|S_{jk}|}}
+r_{i,A,B} = \frac{\rho_{i,A,B} + \epsilon}{1 - \rho_{i,A,B} + \epsilon}
 $$
+where $\epsilon$ is a small constant (e.g., $10^{-3}$) to prevent singularities.
 
-where $S_{jk} \subseteq N$ is the set of citizens who evaluated the pair $(o_j, o_k)$. This produces an $m \times m$ aggregate comparison matrix $\mathbf{A} = [a_{jk}]$.
-
-**Priority Synthesis:** Following the Analytic Hierarchy Process, we compute the principal eigenvector of $\mathbf{A}$ to derive the global priority vector $\mathbf{w} = (w_1, ..., w_m)^T$, where $w_j$ represents the relative priority weight for outcome $o_j$:
-
+**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison using the **Geometric Mean** of individual odds ratios:
 $$
-\mathbf{A} \mathbf{w} = \lambda_{max} \mathbf{w}
+a_{jk} = \left( \prod_{i \in S_{jk}} r_{i,j,k} \right)^{\frac{1}{|S_{jk}|}}
 $$
+where $S_{jk} \subseteq N$ is the set of citizens who evaluated the pair. This produces a sparse $m \times m$ comparison matrix $\mathbf{A}$.
 
-where $\lambda_{max}$ is the largest eigenvalue of $\mathbf{A}$. The weights are normalized such that $\sum_{j=1}^{m} w_j = 1$.
+**Priority Synthesis:** We compute priorities from the sparse matrix $\mathbf{A}$. While classical AHP uses the principal eigenvector of a dense matrix, for sparse data we employ logarithmic least squares (LLSM) or iterative methods to recover the global priority vector $\mathbf{w} = (w_1, ..., w_m)^T$ such that $a_{jk} \approx w_j / w_k$.
 
 **Output:** The final budget allocation assigns fraction $w_j$ of total resources to priority $o_j$.
 
 **Welfare Justification:** Under quasi-linear preferences where citizen $i$'s utility from allocation $\mathbf{x} = (x_1, ..., x_m)$ is $u_i(\mathbf{x}) = \sum_{j=1}^{m} v_{ij} x_j$, the pairwise allocation $\rho_{i,j,k}$ reveals the relative valuations $v_{ij}/v_{ik}$. The eigenvector aggregation produces weights $w_j$ proportional to $\sum_{i \in N} v_{ij}$, thus approximating the utilitarian welfare function $W(\mathbf{x}) = \sum_{i=1}^{n} u_i(\mathbf{x})$ under budget constraint $\sum_{j} x_j = B$.
 
-**Convergence Properties:** With random pair assignment and large $n$, the law of large numbers ensures that $a_{jk} \to E[\rho_{i,j,k}]$, the population mean preference ratio. The sample size required for $\epsilon$-accurate estimation of each $a_{jk}$ is $O(1/\epsilon^2)$ by standard concentration inequalities.
+**Convergence Properties:** With random pair assignment and large $n$, the law of large numbers ensures that $a_{jk} \to E[\rho_{i,j,k}]$, the population mean preference ratio. By Hoeffding's inequality for bounded random variables $\rho_{i,j,k} \in [0,1]$, the sample size required for $\epsilon$-accurate estimation satisfies:
 
-## **3.4 Solution Layer: GenieDAOs**
+$$
+P\left(|a_{jk} - E[\rho_{i,j,k}]| > \epsilon\right) \leq \frac{1}{4|S_{jk}|\epsilon^2}
+$$
 
-**Important:** GenieDAOs represent a *distinct, separate layer* from the core RAPPA mechanism. While RAPPA (Sections 3.1-3.3) handles democratic preference aggregation to determine *what* society should prioritize, GenieDAOs address the orthogonal question of *how* to achieve those priorities.
+Thus achieving $\epsilon$-accuracy with confidence $1-\delta$ requires $|S_{jk}| = O(1/\epsilon^2\delta)$ samples per pair, demonstrating that aggregate preference estimates converge rapidly even with sparse sampling.
 
-Once priorities are established through RAPPA, Wishocracy introduces this second layer for solution generation and evaluation. GenieDAOs (Decentralized Autonomous Organizations of problem-solvers) form around specific priorities to propose implementation strategies. These proposals are subject to pairwise comparison using different evaluation criteria: cost-effectiveness, feasibility, and probability of success.
-
-This two-layer architecture embodies a fundamental division of labor:
-
-{{< include ../figures/wishocracy-architecture-diagram.qmd >}}
-
-- **Layer 1 (RAPPA):** Democratic, values-based. "What should we do?" Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) based on their welfare valuations.
-
-- **Layer 2 (GenieDAOs):** Technocratic, evidence-based. "How should we do it?" Experts design and evaluate implementation strategies based on causal knowledge and empirical evidence.
-
-This separation addresses a key criticism of technocracy (experts shouldn't determine societal values) while respecting the limits of direct democracy (citizens cannot evaluate complex implementation trade-offs). Each layer operates where its participants have comparative advantage: citizens in welfare evaluation, experts in causal analysis.
+Wishocracy implies a separation of concerns: RAPPA determines *what* society values (the priority vector $\mathbf{w}$), while the implementation of those priorities is handled by a separate layer of competitive problem-solving organizations (see **Appendix A: The Solution Layer**). This distinction prevents the mechanism from bogging down in technical debates during the preference aggregation phase.
 
 ## **3.5 Comparative Information & Welfare Analysis**
 
@@ -221,7 +235,7 @@ $$
 
 ### **3.5.2 Welfare Maximization: The "Median vs. Mean" Proof**
 
-A fundamental result in Public Choice Theory is the **Median Voter Theorem** (Downs, 1957), which states that under majority rule, outcomes converge to the preferences of the median voter, $v_{median}$.
+A fundamental result in Public Choice Theory is the **Median Voter Theorem** [@downs-1957], which states that under majority rule, outcomes converge to the preferences of the median voter, $v_{median}$.
 
 **The Skewness Problem:** In healthcare and public risk, damage distributions are highly right-skewed (power laws). A few citizens suffer catastrophic loss (e.g., rare diseases, pandemics), while the majority experiences zero loss.
 *   **Median Outcome:** If 51% of voters have priority $x=0$ (healthy) and 49% have priority $x=100$ (dying), the median preference is $0$. The minority receives no aid.
@@ -231,7 +245,7 @@ A fundamental result in Public Choice Theory is the **Median Voter Theorem** (Do
 $$
 W(RAPPA) \approx W(\text{Mean}) > W(\text{Median})
 $$
-*Proof:* The RAPPA eigenvector centrality $w_j$ corresponds to $\frac{\sum v_{ij}}{\sum \sum v_{ik}}$, which approximates the population arithmetic mean. For convex loss functions (where distinct needs exist), minimizing the sum of squared errors leads to the mean, not the median. Wishocracy thus passes the "Veil of Ignorance" test (Rawls) whereby a citizen typically prefers the Mean allocation to the Median allocation to hedge against being in the tail risk category.
+*Proof:* The RAPPA eigenvector centrality $w_j$ corresponds to $\frac{\sum v_{ij}}{\sum \sum v_{ik}}$, which approximates the population arithmetic mean. For convex loss functions (where distinct needs exist), minimizing the sum of squared errors leads to the mean, not the median. Wishocracy thus passes the "Veil of Ignorance" test [@rawls-1971] whereby a citizen typically prefers the Mean allocation to the Median allocation to hedge against being in the tail risk category.
 
 ### **3.5.3 Principal-Agent Cost Elimination**
 
