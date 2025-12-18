@@ -1268,6 +1268,21 @@ title: 96% of cybercrimes go unpunished
   > — [CSO Online: Why Internet Crime Goes Unpunished](https://www.csoonline.com/article/2618598/why-internet-crime-goes-unpunished.html) | [Information Security Buzz: 1% Prosecuted](https://informationsecuritybuzz.com/expert-comments/only-1-of-cybercrimes-prosecuted/)
   > Note: Rules of evidence and international jurisdiction make cybercrime possibly harder to prosecute than any other area of law enforcement
 
+<a id="cabannes-2004"></a>
+
+title: Participatory budgeting: a significant contribution to participatory democracy
+type: article
+author: Yves Cabannes
+year: 2004
+journal: Environment and Urbanization
+volume: 16
+issue: 1
+pages: 27-46
+doi: 10.1177/095624780401600104
+url: https://www.iied.org/g00471
+> This paper describes participatory budgeting in Brazil and elsewhere as a significant area of innovation in democracy and local development. It draws on the experience of 25 municipalities in Latin America and Europe, selected based on the diversity of their participatory budgeting experience and their degree of innovation.
+> — Cabannes, Y. (2004). [Participatory budgeting: a significant contribution to participatory democracy](https://www.iied.org/g00471). *Environment and Urbanization*, 16(1), 27-46. | [ResearchGate](https://www.researchgate.net/publication/32893674_Participatory_Budgeting_A_Significant_Contribution_to_Participatory_Democracy)
+
 <a id="daily-death-toll-by-region"></a>
 
 title: Daily death toll statistics by geographic region
@@ -2513,6 +2528,21 @@ title: Deaths from furniture accidents compared to terrorism
   > US terrorism: Deaths so low they barely register on graphs except 9/11/2001
   > — [Washington Post: More Likely Crushed by Furniture](https://www.washingtonpost.com/news/monkey-cage/wp/2015/11/23/youre-more-likely-to-be-fatally-crushed-by-furniture-than-killed-by-a-terrorist/) | [CPSC: Tip-Over Report 2023](https://www.cpsc.gov/s3fs-public/2023_Annual_Tip_Over_Report_Posted_2024Feb_FINAL_0.pdf) | [Our World in Data: Terrorism vs Other Causes](https://ourworldindata.org/is-it-fair-to-compare-terrorism-and-disaster-with-other-causes-of-death)
   > Note: Post-9/11, furniture tip-overs have caused comparable/greater fatalities than terrorism for Americans. Highlights media attention vs actual risk disparity
+
+<a id="goel-2019"></a>
+
+title: Knapsack voting for participatory budgeting
+type: article
+author: Ashish Goel, Anilesh K. Krishnaswamy, Sukolsak Sakshuwong, and Tanja Aitamurto
+year: 2019
+journal: ACM Transactions on Economics and Computation
+volume: 7
+issue: 2
+pages: 1-27
+doi: 10.1145/3340230
+url: https://dl.acm.org/doi/10.1145/3340230
+> Addresses aggregating voter preferences in participatory budgeting contexts and introduces a novel voting scheme called "Knapsack Voting" that is strategy-proof under certain utility models. The authors discuss implementation on a digital voting platform deployed in partnership with local government bodies in many cities across the nation.
+> — Goel, A., Krishnaswamy, A. K., Sakshuwong, S., & Aitamurto, T. (2019). [Knapsack voting for participatory budgeting](https://dl.acm.org/doi/10.1145/3340230). *ACM Transactions on Economics and Computation*, 7(2), 1-27. | [arXiv](https://arxiv.org/abs/2009.06856) | [ResearchGate](https://www.researchgate.net/publication/334757468_Knapsack_Voting_for_Participatory_Budgeting)
 
 <a id="gao-healthcare-gov-costs"></a>
 
@@ -3892,6 +3922,20 @@ title: Annual deaths from kidney disease
   > Combined impact: 4.6% of total global mortality
   > CKD: 12th leading cause of death globally; one of few NCDs showing increased deaths over past 2 decades
   > — [National Kidney Foundation: Global Facts](https://www.kidney.org/global-facts-about-kidney-disease) | [PMC: Epidemiology CKD 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9073222/) | [Lancet: Global Burden CKD 2017](https://www.thelancet.com/article/S0140-6736(20)30045-3/fulltext) | [IHME: CKD Global Killer](https://www.healthdata.org/news-events/newsroom/news-releases/chronic-kidney-disease-global-killer-plain-sight)
+
+<a id="lalley-weyl-2018"></a>
+
+title: Quadratic voting: How mechanism design can radicalize democracy
+type: article
+author: Steven P. Lalley and E. Glen Weyl
+year: 2018
+journal: AEA Papers and Proceedings
+volume: 108
+pages: 33-37
+doi: 10.1257/pandp.20181002
+url: https://www.aeaweb.org/articles?id=10.1257/pandp.20181002
+> The paper proposes a design where individuals pay for as many votes as they wish using a number of "voice credits" in the votes they buy. Only quadratic cost induces marginal costs linear in votes purchased and thus welfare optimality if individuals' valuation of votes is proportional to their value of changing the outcome.
+> — Lalley, S. P., & Weyl, E. G. (2018). [Quadratic voting: How mechanism design can radicalize democracy](https://www.aeaweb.org/articles?id=10.1257/pandp.20181002). *AEA Papers and Proceedings*, 108, 33-37. | [SSRN](https://ssrn.com/abstract=2003531) | [Microsoft Research](https://www.microsoft.com/en-us/research/publication/quadratic-voting-how-mechanism-design-can-radicalize-democracy/)
 
 <a id="landmark-gene-therapies"></a>
 
@@ -6238,6 +6282,45 @@ title: Science & Tech Community
   > Global estimates vary widely; specific "100 million" figure not verified in authoritative sources
   > — [NSF: STEM Workforce 2023](https://ncses.nsf.gov/pubs/nsb20245) | [BLS: STEM Occupations](https://www.bls.gov/emp/tables/stem-employment.htm)
 
+<a id="saaty-1980"></a>
+
+title: The Analytic Hierarchy Process
+type: book
+author: Thomas L. Saaty
+year: 1980
+publisher: McGraw-Hill
+location: New York
+isbn: 0070543712
+url: https://archive.org/details/analytichierarch0000saat
+> The foundational text on the Analytic Hierarchy Process (AHP) methodology for decision-making. AHP decomposes complex decisions into hierarchies of criteria and sub-criteria, then elicits pairwise comparisons at each level. For n alternatives, this requires only n(n-1)/2 comparisons rather than the cognitively impossible simultaneous comparison of all n options. The pairwise comparison matrices are then synthesized using eigenvector methods to produce consistent priority rankings.
+> — Saaty, T. L. (1980). [The Analytic Hierarchy Process: Planning, Priority Setting, Resource Allocation](https://archive.org/details/analytichierarch0000saat). McGraw-Hill. | [Google Books](https://books.google.com/books/about/The_Analytic_Hierarchy_Process.html?id=Xxi7AAAAIAAJ) | [Springer Chapter](https://link.springer.com/chapter/10.1007/978-1-4613-2805-6_12)
+
+<a id="saaty-2008"></a>
+
+title: Decision making with the analytic hierarchy process
+type: article
+author: Thomas L. Saaty
+year: 2008
+journal: International Journal of Services Sciences
+volume: 1
+issue: 1
+pages: 83-98
+doi: 10.1504/IJSSCI.2008.017590
+url: https://www.inderscienceonline.com/doi/abs/10.1504/IJSSci.2008.01759
+> Decisions involve many intangibles that need to be traded off. To do that, they have to be measured along side tangibles whose measurements must also be evaluated as to, how well, they serve the objectives of the decision maker. The Analytic Hierarchy Process (AHP) is a theory of measurement through pairwise comparisons and relies on the judgements of experts to derive priority scales. This paper has been cited 9,181 times, with 1,042 highly influential citations.
+> — Saaty, T. L. (2008). [Decision making with the analytic hierarchy process](https://www.inderscienceonline.com/doi/abs/10.1504/IJSSci.2008.01759). *International Journal of Services Sciences*, 1(1), 83-98. | [Semantic Scholar](https://www.semanticscholar.org/paper/DECISION-MAKING-WITH-THE-ANALYTIC-HIERARCHY-PROCESS-Saaty/e3c561049eb532e328fc2b8288c490986cd9403f) | [ResearchGate](https://www.researchgate.net/publication/228628807_Decision_making_with_the_Analytic_Hierarchy_Process)
+
+<a id="surowiecki-2004"></a>
+
+title: The Wisdom of Crowds
+type: book
+author: James Surowiecki
+year: 2004
+publisher: Doubleday
+url: https://archive.org/details/wisdomofcrowds0000suro
+> Explores the aggregation of information in groups, arguing that decisions are often better than could have been made by any single member of the group. The opening anecdote relates Francis Galton's surprise that the crowd at a county fair accurately guessed the weight of an ox when the median of their individual guesses was taken. The three conditions for a group to be intelligent are diversity, independence, and decentralization.
+> — Surowiecki, J. (2004). [The Wisdom of Crowds: Why the Many Are Smarter Than the Few](https://archive.org/details/wisdomofcrowds0000suro). Doubleday. | [Wikipedia](https://en.wikipedia.org/wiki/The_Wisdom_of_Crowds) | [Amazon](https://www.amazon.com/Wisdom-Crowds-James-Surowiecki/dp/0385721706)
+
 <a id="sec-accredited-investor-definition"></a>
 
 title: SEC Definition of an Accredited Investor
@@ -7494,6 +7577,35 @@ title: Department of Government Efficiency (overview)
   > "Department created via executive action with centralized oversight teams."
   > — Wikipedia, [Department of Government Efficiency](https://en.wikipedia.org/wiki/Department_of_Government_Efficiency)
 
+<a id="wellings-2024"></a>
+
+title: Fair and inclusive participatory budgeting: Voter experience with cumulative and quadratic voting interfaces
+type: conference-paper
+author: T. Wellings, F. Banaie Heravan, A. Sharma, L. Gelauff, R.H. Fricker, and E. Pournaras
+year: 2024
+conference: Design for Equality and Justice (INTERACT 2023)
+publisher: Springer
+pages: 65-71
+series: Lecture Notes in Computer Science
+volume: 14536
+doi: 10.1007/978-3-031-61698-3_6
+url: https://link.springer.com/chapter/10.1007/978-3-031-61698-3_6
+> Cumulative and quadratic voting are two distributional voting methods that are expressive, promoting fairness and inclusion in participatory budgeting. This paper introduces an implementation and evaluation of cumulative and quadratic voting within Stanford Participatory Budgeting. While voters prefer simple methods, the more expressive (and complex) cumulative voting becomes the preferred one compared to k-ranking voting that is simpler but less expressive.
+> — Wellings, T., et al. (2024). [Fair and inclusive participatory budgeting: Voter experience with cumulative and quadratic voting interfaces](https://link.springer.com/chapter/10.1007/978-3-031-61698-3_6). In *Design for Equality and Justice* (pp. 65-71). Springer. | [arXiv](https://arxiv.org/abs/2308.04345) | [ResearchGate](https://www.researchgate.net/publication/372990037_Fair_and_Inclusive_Participatory_Budgeting_Voter_Experience_with_Cumulative_and_Quadratic_Voting_Interfaces)
+
+<a id="world-resources-institute-2019"></a>
+
+title: Porto Alegre: Participatory budgeting and the challenge of sustaining transformative change
+type: report
+author: Rebecca Abers, Igor Brandão, Robin King, and Daniely Votto
+year: 2018
+publisher: World Resources Institute
+series: World Resources Report Case Study
+location: Washington, DC
+url: https://www.wri.org/research/porto-alegre-participatory-budgeting-and-challenge-sustaining-transformative-change
+> Examines transformative urban change in Porto Alegre, Brazil, through the lens of participatory budgeting. However, political support for participatory budgeting in its birthplace has declined through the years, culminating in its suspension in Porto Alegre in 2017. The success of participatory budgeting as a tool of transformative urban change is contingent on four conditions: (1) well-structured participatory arrangements to ensure participation from a wide range of actors across society; (2) adequate financial resources; (3) political commitment and flexibility to adjust to changing political realities; and (4) government commitment to implement the proposals the process generates.
+> — Abers, R., Brandão, I., King, R., & Votto, D. (2018). [Porto Alegre: Participatory budgeting and the challenge of sustaining transformative change](https://www.wri.org/research/porto-alegre-participatory-budgeting-and-challenge-sustaining-transformative-change). World Resources Institute. | [PDF](https://www.oidp.net/docs/repo/doc415.pdf)
+
 <a id="wordpress-multi-billion-dollar-economy"></a>
 
 title: WordPress multi-billion dollar economy
@@ -7559,6 +7671,21 @@ title: WWII War Bonds
   > "From 1941 to 1945, the United States government issued War Bonds to finance military operations.
   > Over 85 million Americans purchased bonds totaling more than \$185 billion."
   > — U.S. Treasury, [WWII War Bonds](https://en.wikipedia.org/wiki/War_bond)
+
+<a id="yang-2024"></a>
+
+title: Designing digital voting systems for citizens: Achieving fairness and legitimacy in participatory budgeting
+type: article
+author: Joshua C. Yang, Carina I. Hausladen, Dominik Peters, Evangelos Pournaras, Regula Hänggli Fricker, and Dirk Helbing
+year: 2024
+journal: Digital Government: Research and Practice
+volume: 5
+issue: 3
+pages: 1-30
+doi: 10.1145/3665332
+url: https://dl.acm.org/doi/10.1145/3665332
+> Identifies approaches to designing participatory budgeting voting that minimize cognitive load and enhance the perceived fairness and legitimacy of the digital process from the citizens' perspective. Main results: participants preferred voting input formats that are more expressive (like rankings and distributing points) over simpler formats (like approval voting); participants indicated a desire for the budget to be fairly distributed across city districts and project categories; participants found the Method of Equal Shares voting rule to be fairer than the conventional Greedy voting rule.
+> — Yang, J. C., et al. (2024). [Designing digital voting systems for citizens: Achieving fairness and legitimacy in participatory budgeting](https://dl.acm.org/doi/10.1145/3665332). *Digital Government: Research and Practice*, 5(3), 1-30. | [arXiv](https://arxiv.org/abs/2310.03501) | [ResearchGate](https://www.researchgate.net/publication/380771947_Designing_Digital_Voting_Systems_for_Citizens_Achieving_Fairness_and_Legitimacy_in_Participatory_Budgeting)
 
 <a id="yamanaka-factors-cellular-reprogramming"></a>
 
