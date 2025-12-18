@@ -1,0 +1,68 @@
+---
+title: Wishocracy Architecture Diagram
+description: The two-layer architecture separating democratic value articulation from technocratic execution.
+---
+
+```{python}
+#| echo: false
+import graphviz
+from pathlib import Path
+from IPython.display import Image as IPImage, display
+import sys
+import os
+
+# Ensure we can import from the project root
+project_root = Path.cwd()
+if project_root.name != 'decentralized-institutes-of-health':
+    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
+        project_root = project_root.parent
+sys.path.append(str(project_root))
+
+from dih_models.plotting.graphviz_helper import (
+    setup_graphviz_style,
+    render_graphviz_with_watermark
+)
+
+# Create diagram
+dot = graphviz.Digraph(comment='Wishocracy Architecture', format='png')
+dot.attr(rankdir='TB', size='8,10', nodesep='0.8', ranksep='0.5')
+
+# Apply design guide styling
+setup_graphviz_style(dot)
+
+# -- LAYER 1: DEMOCRATIC VALUES --
+with dot.subgraph(name='cluster_layer1') as c1:
+    c1.attr(label='LAYER 1: DEMOCRATIC VALUES (What we want)', style='dashed', color='black')
+    c1.node('Citizens', 'Citizens\n(All Stakeholders)', shape='ellipse')
+    c1.node('RAPPA', 'RAPPA Mechanism\n(Preference Aggregation)', shape='box', penwidth='2')
+    c1.node('Priorities', 'Societal Priorities\n(Weighted Outcomes)', shape='note')
+    
+    c1.edge('Citizens', 'RAPPA', label=' Input (Pairs)')
+    c1.edge('RAPPA', 'Priorities', label=' Output (Weights)')
+
+# -- INTERFACE --
+with dot.subgraph(name='cluster_interface') as ci:
+    ci.attr(label='', penwidth='0') # Invisible container for alignment
+    ci.node('Mandate', label='<<B>FUNDED MANDATE</B><BR/><B>(Budget + Goals)</B>>', shape='doubleoctagon', style='filled', fillcolor='black', fontcolor='white')
+
+# -- LAYER 2: TECHNOCRATIC EXECUTION --
+with dot.subgraph(name='cluster_layer2') as c2:
+    c2.attr(label='LAYER 2: TECHNOCRATIC EXECUTION (How we get it)', style='dashed', color='black')
+    c2.node('GenieDAOs', 'GenieDAOs\n(Expert Teams)', shape='box')
+    c2.node('Proposals', 'Implementation Proposals\n(Strategies)', shape='box', style='dashed')
+    c2.node('Selection', 'Cost-Effectiveness\nReview', shape='diamond')
+    c2.node('Action', 'Real-World Action\n(Solutions)', shape='box', penwidth='2')
+    
+    c2.edge('GenieDAOs', 'Proposals', label=' Design')
+    c2.edge('Proposals', 'Selection', label=' Evaluate')
+    c2.edge('Selection', 'Action', label=' Fund')
+
+# -- CONNECT LAYERS --
+dot.edge('Priorities', 'Mandate', label=' Defined By')
+dot.edge('Mandate', 'GenieDAOs', label=' Bounties For')
+
+# Render
+output_dir = project_root / 'knowledge' / 'figures'
+png_path = render_graphviz_with_watermark(dot, 'wishocracy-architecture-diagram', output_dir)
+display(IPImage(str(png_path)))
+```

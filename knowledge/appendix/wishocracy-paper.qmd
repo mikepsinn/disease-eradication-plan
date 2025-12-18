@@ -57,13 +57,13 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 # **Abstract**
 
-Democratic institutions face a fundamental challenge: how to aggregate citizen preferences across complex, multidimensional policy spaces while respecting preference intensity, minimizing cognitive burden, and resisting strategic manipulation. Traditional voting mechanisms (majority rule, approval voting, and ranked-choice systems) fail to capture the nuanced trade-offs citizens make between competing priorities. This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. Building on the Analytic Hierarchy Process (Saaty, 1980), quadratic voting (Lalley & Weyl, 2018), and participatory budgeting (Cabannes, 2004), the mechanism presents each participant with randomized pairs of policy priorities, asking them to allocate hypothetical resources between the two options. By decomposing the n-dimensional preference space into cognitively tractable pairwise comparisons, using randomization to ensure strategy-proofness, and aggregating responses through eigenvector methods, RAPPA overcomes human cognitive limitations while preserving preference intensity information. We present the theoretical foundations, formal mechanism properties, and empirical precedents from participatory governance experiments worldwide. Evidence from Porto Alegre, Taiwan's vTaiwan, and Stanford's participatory budgeting research validates the core assumptions while revealing critical design considerations for real-world deployment.
+Democratic institutions face a fundamental challenge: how to aggregate citizen preferences across complex, multidimensional policy spaces while respecting preference intensity, minimizing cognitive burden, and resisting strategic manipulation. Traditional voting mechanisms (majority rule, approval voting, and ranked-choice systems) fail to capture the nuanced trade-offs citizens make between competing priorities. This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. Building on the Analytic Hierarchy Process [@saaty-1980], quadratic voting [@lalley-weyl-2018], and participatory budgeting [@cabannes-2004], the mechanism presents each participant with randomized pairs of policy priorities, asking them to allocate hypothetical resources between the two options. By decomposing the n-dimensional preference space into cognitively tractable pairwise comparisons, using randomization to ensure strategy-proofness, and aggregating responses through eigenvector methods, RAPPA overcomes human cognitive limitations while preserving preference intensity information. We present the theoretical foundations, formal mechanism properties, and empirical precedents from participatory governance experiments worldwide. Evidence from Porto Alegre, Taiwan's vTaiwan, and Stanford's participatory budgeting research validates the core assumptions while revealing critical design considerations for real-world deployment.
 
 # **1\. Introduction: The Preference Aggregation Problem**
 
 Modern democracies face an increasingly acute challenge: how to translate the diverse, often conflicting preferences of millions of citizens into coherent public policy. Traditional electoral mechanisms were designed for an era of limited communication, discrete choices, and relatively homogeneous electorates. Today's policy landscape (spanning healthcare allocation, infrastructure investment, climate adaptation, research funding, and social services) demands more sophisticated preference elicitation than periodic elections can provide.
 
-The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously (Miller, 1956). Yet modern government budgets allocate resources across thousands of line items, each representing implicit trade-offs against all others.
+The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Yet modern government budgets allocate resources across thousands of line items, each representing implicit trade-offs against all others.
 
 Existing solutions fall into three inadequate categories. First, representative democracy delegates preference aggregation to elected officials, introducing principal-agent problems, capture by special interests, and systematic misalignment between voter preferences and policy outcomes. Second, direct democracy mechanisms like referenda and citizen initiatives reduce complex trade-offs to binary choices, losing crucial information about preference intensity and creating winner-take-all dynamics that harm minorities with strong preferences. Third, expert-driven technocracy may achieve allocative efficiency but lacks democratic legitimacy and cannot incorporate the subjective welfare considerations that only citizens themselves can evaluate.
 
@@ -83,7 +83,7 @@ No existing mechanism combines all three properties. Traditional voting captures
 
 ## **2.1 The Analytic Hierarchy Process**
 
-Wishocracy's methodological core derives from the Analytic Hierarchy Process (AHP), developed by Thomas Saaty at the Wharton School in the 1970s. AHP has been extensively validated across thousands of applications in business, engineering, healthcare, and government (Saaty, 2008). The method's key insight is that humans can reliably make pairwise comparisons even when direct multi-attribute rating fails.
+Wishocracy's methodological core derives from the Analytic Hierarchy Process (AHP), developed by Thomas Saaty at the Wharton School in the 1970s. AHP has been extensively validated across thousands of applications in business, engineering, healthcare, and government [@saaty-2008]. The method's key insight is that humans can reliably make pairwise comparisons even when direct multi-attribute rating fails.
 
 AHP works by decomposing complex decisions into hierarchies of criteria and sub-criteria, then eliciting pairwise comparisons at each level. For n alternatives, this requires only n(n-1)/2 comparisons rather than the cognitively impossible simultaneous comparison of all n options. The pairwise comparison matrices are then synthesized using eigenvector methods to produce consistent priority rankings.
 
@@ -91,7 +91,7 @@ Crucially, AHP includes consistency checks through the calculation of a Consiste
 
 ## **2.2 Quadratic Voting and Preference Intensity**
 
-Wishocracy also incorporates insights from quadratic voting (QV), a mechanism design innovation developed by Lalley and Weyl (2018) and published in the American Economic Association Papers and Proceedings. QV addresses a fundamental limitation of traditional voting: the failure to account for preference intensity. Under one-person-one-vote, a citizen who mildly prefers policy A has equal influence to one for whom policy A is existentially important.
+Wishocracy also incorporates insights from quadratic voting (QV), a mechanism design innovation developed by @lalley-weyl-2018. QV addresses a fundamental limitation of traditional voting: the failure to account for preference intensity. Under one-person-one-vote, a citizen who mildly prefers policy A has equal influence to one for whom policy A is existentially important.
 
 QV allows voters to purchase additional votes at quadratic cost (1 vote \= 1 credit, 2 votes \= 4 credits, 3 votes \= 9 credits). This mechanism has several desirable properties: it is budget-balanced, individually rational, and approaches full efficiency as the number of voters grows. The Colorado House Democratic Caucus successfully used QV in 2019 to prioritize legislative priorities, with lawmakers allocating 100 virtual tokens across 107 possible bills.
 
@@ -99,7 +99,7 @@ Wishocracy's pairwise allocation slider implicitly captures preference intensity
 
 ## **2.3 Collective Intelligence and the Wisdom of Crowds**
 
-Wishocracy's aggregation mechanism relies on the well-documented phenomenon of collective intelligence. Surowiecki's 'The Wisdom of Crowds' (2004) synthesized research showing that diverse, independent groups consistently outperform individual experts under four conditions: diversity of opinion, independence of judgment, decentralization of information, and effective aggregation mechanisms.
+Wishocracy's aggregation mechanism relies on the well-documented phenomenon of collective intelligence. @surowiecki-2004 synthesized research showing that diverse, independent groups consistently outperform individual experts under four conditions: diversity of opinion, independence of judgment, decentralization of information, and effective aggregation mechanisms.
 
 Randomized pairwise presentation ensures independence by preventing any systematic ordering effects. Diversity is maximized by including all citizens rather than restricting participation to experts or stakeholders. Decentralization emerges naturally from distributed participation. Wishocracy provides the crucial aggregation mechanism that previous collective intelligence applications have lacked.
 
@@ -180,6 +180,8 @@ where $\lambda_{max}$ is the largest eigenvalue of $\mathbf{A}$. The weights are
 Once priorities are established through RAPPA, Wishocracy introduces this second layer for solution generation and evaluation. GenieDAOs (Decentralized Autonomous Organizations of problem-solvers) form around specific priorities to propose implementation strategies. These proposals are subject to pairwise comparison using different evaluation criteria: cost-effectiveness, feasibility, and probability of success.
 
 This two-layer architecture embodies a fundamental division of labor:
+
+{{< include ../figures/wishocracy-architecture-diagram.qmd >}}
 
 - **Layer 1 (RAPPA):** Democratic, values-based. "What should we do?" Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) based on their welfare valuations.
 
@@ -266,11 +268,11 @@ vTaiwan's limitations (lack of binding authority, limited scope, and eventual po
 
 ## **4.3 Stanford Participatory Budgeting Platform Research**
 
-Academic research on voting interfaces provides direct evidence for RAPPA's design choices. Wellings et al. (2024) compared cumulative voting, quadratic voting, and traditional ranking methods on Stanford's Participatory Budgeting platform. Their findings support several Wishocracy design principles.
+Academic research on voting interfaces provides direct evidence for RAPPA's design choices. @wellings-2024 compared cumulative voting, quadratic voting, and traditional ranking methods on Stanford's Participatory Budgeting platform. Their findings support several Wishocracy design principles.
 
 Voters preferred more expressive methods over simple approval voting, even though expressive methods required more cognitive effort. Participants showed 'strong intuition for outcomes that provide proportional representation and prioritize fairness.' The Method of Equal Shares voting rule was perceived as fairer than conventional Greedy allocation.
 
-Yang et al. (2024) found that voting input formats using rankings or point distribution provided a 'stronger sense of engagement in the participatory process.' These findings validate RAPPA's slider-based allocation over binary choice mechanisms.
+@yang-2024 found that voting input formats using rankings or point distribution provided a 'stronger sense of engagement in the participatory process.' These findings validate RAPPA's slider-based allocation over binary choice mechanisms.
 
 ## **4.4 Colorado Quadratic Voting Experiment**
 
@@ -337,27 +339,3 @@ The mechanism design presented here represents one point in a broader design spa
 Wishocracy addresses a fundamental challenge in democratic theory: how to aggregate citizen preferences over complex, multidimensional policy spaces in ways that are cognitively tractable, preference-revealing, and welfare-maximizing. The mechanism's key innovation lies in its three-part synthesis: combining AHP's cognitive tractability, quadratic voting's preference intensity capture, and collective intelligence aggregation into a unified framework. No previous mechanism has achieved all three properties simultaneously.
 
 The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. Whether it can achieve its theoretical promise remains an open empirical question that only real-world deployment can answer.
-
-# **References**
-
-Cabannes, Y. (2004). Participatory budgeting: a significant contribution to participatory democracy. *Environment and Urbanization*, 16(1), 27-46.
-
-Goel, A., Krishnaswamy, A. K., Sakshuwong, S., & Aitamurto, T. (2019). Knapsack voting for participatory budgeting. *ACM Transactions on Economics and Computation*, 7(2), 1-27.
-
-Lalley, S. P., & Weyl, E. G. (2018). Quadratic voting: How mechanism design can radicalize democracy. *AEA Papers and Proceedings*, 108, 33-37.
-
-Miller, G. A. (1956). The magical number seven, plus or minus two: Some limits on our capacity for processing information. *Psychological Review*, 63(2), 81-97.
-
-Page, S. E. (2007). *The Difference: How the Power of Diversity Creates Better Groups, Firms, Schools, and Societies*. Princeton University Press.
-
-Saaty, T. L. (1980). *The Analytic Hierarchy Process*. McGraw-Hill.
-
-Saaty, T. L. (2008). Decision making with the analytic hierarchy process. *International Journal of Services Sciences*, 1(1), 83-98.
-
-Surowiecki, J. (2004). *The Wisdom of Crowds*. Doubleday.
-
-Wellings, T., et al. (2024). Fair and inclusive participatory budgeting: Voter experience with cumulative and quadratic voting interfaces. In *Design for Equality and Justice* (pp. 65-71). Springer.
-
-World Resources Institute. (2019). Porto Alegre: Participatory budgeting and the challenge of sustaining transformative change. *World Resources Report*.
-
-Yang, J. C., et al. (2024). Designing digital voting systems for citizens: Achieving fairness and legitimacy in participatory budgeting. *Digital Government: Research and Practice*.

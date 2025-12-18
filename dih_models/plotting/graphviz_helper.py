@@ -152,8 +152,8 @@ def setup_graphviz_style(dot):
     - White background
     - Margins to prevent watermark overlap (3% padding on all sides)
     """
-    dot.attr("node", shape="box", style="rounded", color="#000000", fontcolor="#000000", fontname="Georgia,serif")
-    dot.attr("edge", color="#000000", fontcolor="#000000", fontname="Georgia,serif")
+    dot.attr("node", shape="box", style="rounded", color="#000000", fontcolor="#000000", fontname="Georgia,serif", fontsize="14")
+    dot.attr("edge", color="#000000", fontcolor="#000000", fontname="Georgia,serif", fontsize="12")
     dot.attr(
         "graph",
         bgcolor="#FFFFFF",
@@ -161,6 +161,8 @@ def setup_graphviz_style(dot):
         fontname="Georgia,serif",
         margin="0",  # Set margin to 0, we'll add padding via 'pad' attribute
         pad="0.5",
+        dpi="300",
+        fontsize="16",
     )  # Padding around entire diagram (0.5 inches) - this adds space around content
 
 
