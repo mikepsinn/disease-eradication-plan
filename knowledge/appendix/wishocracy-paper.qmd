@@ -1,6 +1,6 @@
 ---
-title: 'Wishocracy: Aggregated Pairwise Preference Allocation for Democratic Resource Governance'
-description: 'This paper introduces Wishocracy, a novel governance mechanism that employs Aggregated Pairwise Preference Allocation (APPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons, the mechanism overcomes human cognitive limitations while preserving preference intensity information.'
+title: 'Wishocracy: Randomized Aggregated Pairwise Preference Allocation for Democratic Resource Governance'
+description: 'This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons and using randomization to ensure strategy-proofness, the mechanism overcomes human cognitive limitations while preserving preference intensity information.'
 aliases:
   - /wishocracy.html
 author:
@@ -57,7 +57,7 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 # **Abstract**
 
-Democratic institutions face a fundamental challenge: how to aggregate citizen preferences across complex, multidimensional policy spaces while respecting preference intensity, minimizing cognitive burden, and resisting strategic manipulation. Traditional voting mechanisms (majority rule, approval voting, and ranked-choice systems) fail to capture the nuanced trade-offs citizens make between competing priorities. This paper introduces Wishocracy, a novel governance mechanism that employs Aggregated Pairwise Preference Allocation (APPA) to elicit and synthesize collective preferences for public resource allocation. Building on the Analytic Hierarchy Process (Saaty, 1980), quadratic voting (Lalley & Weyl, 2018), and participatory budgeting (Cabannes, 2004), the mechanism presents each participant with randomized pairs of policy priorities, asking them to allocate hypothetical resources between the two options. By decomposing the n-dimensional preference space into cognitively tractable pairwise comparisons and aggregating responses through eigenvector methods, APPA overcomes human cognitive limitations while preserving preference intensity information. We present the theoretical foundations, formal mechanism properties, and empirical precedents from participatory governance experiments worldwide. Evidence from Porto Alegre, Taiwan's vTaiwan, and Stanford's participatory budgeting research validates the core assumptions while revealing critical design considerations for real-world deployment.
+Democratic institutions face a fundamental challenge: how to aggregate citizen preferences across complex, multidimensional policy spaces while respecting preference intensity, minimizing cognitive burden, and resisting strategic manipulation. Traditional voting mechanisms (majority rule, approval voting, and ranked-choice systems) fail to capture the nuanced trade-offs citizens make between competing priorities. This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. Building on the Analytic Hierarchy Process (Saaty, 1980), quadratic voting (Lalley & Weyl, 2018), and participatory budgeting (Cabannes, 2004), the mechanism presents each participant with randomized pairs of policy priorities, asking them to allocate hypothetical resources between the two options. By decomposing the n-dimensional preference space into cognitively tractable pairwise comparisons, using randomization to ensure strategy-proofness, and aggregating responses through eigenvector methods, RAPPA overcomes human cognitive limitations while preserving preference intensity information. We present the theoretical foundations, formal mechanism properties, and empirical precedents from participatory governance experiments worldwide. Evidence from Porto Alegre, Taiwan's vTaiwan, and Stanford's participatory budgeting research validates the core assumptions while revealing critical design considerations for real-world deployment.
 
 # **1\. Introduction: The Preference Aggregation Problem**
 
@@ -68,6 +68,16 @@ The fundamental problem is computational and cognitive. When citizens are asked 
 Existing solutions fall into three inadequate categories. First, representative democracy delegates preference aggregation to elected officials, introducing principal-agent problems, capture by special interests, and systematic misalignment between voter preferences and policy outcomes. Second, direct democracy mechanisms like referenda and citizen initiatives reduce complex trade-offs to binary choices, losing crucial information about preference intensity and creating winner-take-all dynamics that harm minorities with strong preferences. Third, expert-driven technocracy may achieve allocative efficiency but lacks democratic legitimacy and cannot incorporate the subjective welfare considerations that only citizens themselves can evaluate.
 
 Wishocracy offers a fourth path: a mechanism that harnesses collective intelligence through structured preference elicitation while respecting cognitive constraints, incorporating preference intensity, and maintaining democratic legitimacy. By presenting citizens with simple pairwise comparisons ('Given $100 to allocate between cancer research and Alzheimer's research, how would you divide it?'), the mechanism decomposes the impossible n-dimensional comparison into tractable binary choices. Aggregated across millions of such comparisons from thousands of participants, the system converges on a preference ordering that approximates the utilitarian social welfare function.
+
+**RAPPA's Novel Contribution:** Wishocracy represents the first governance mechanism to simultaneously achieve three critical properties that existing mechanisms address in isolation:
+
+1. **Cognitive Tractability:** By decomposing n-dimensional budget allocation into pairwise comparisons (drawing on AHP), RAPPA respects the well-documented cognitive limit of $7 \pm 2$ simultaneous comparisons, making participation feasible for all citizens regardless of education or available time.
+
+2. **Cardinal Preference Intensity:** Through slider-based allocation (inspired by quadratic voting), participants reveal not just ordinal rankings but the *strength* of their preferences, allowing the mechanism to weight both the number of supporters and the intensity of their support.
+
+3. **Collective Intelligence Aggregation:** By synthesizing millions of pairwise judgments through eigenvector methods (building on collective intelligence research), the mechanism leverages diversity to cancel individual errors while aggregating true signals into welfare-maximizing allocations.
+
+No existing mechanism combines all three properties. Traditional voting captures neither intensity nor tractability. Quadratic voting captures intensity but imposes cognitive complexity. The Analytic Hierarchy Process provides tractability but has not been deployed for large-scale collective decision-making. RAPPA synthesizes these insights into a unified framework.
 
 # **2\. Theoretical Foundations**
 
@@ -95,11 +105,11 @@ Randomized pairwise presentation ensures independence by preventing any systemat
 
 Page's diversity prediction theorem formalizes this intuition: collective error equals average individual error minus diversity. A diverse crowd makes different mistakes that cancel out, while sharing enough common knowledge that true signals aggregate. Wishocracy's slider allocation (rather than binary choice) increases the information content per comparison, improving convergence rates.
 
-# **3\. Mechanism Design: Aggregated Pairwise Preference Allocation**
+# **3\. Mechanism Design: Randomized Aggregated Pairwise Preference Allocation**
 
 ## **3.1 Core Mechanism**
 
-The Wishocracy mechanism operates through the following process, which we term Aggregated Pairwise Preference Allocation (APPA):
+The Wishocracy mechanism operates through the following process, which we term Randomized Aggregated Pairwise Preference Allocation (RAPPA):
 
 1. **Problem Cataloging:** A comprehensive list of societal priorities, problems, or 'wishes' is compiled through expert input, citizen submissions, or existing government planning documents. These might include 'Reduce cancer mortality,' 'Improve public transit,' 'Increase affordable housing,' etc.  
 2. **Randomized Pair Presentation:** Each participant is shown a series of randomly selected pairs from the problem catalog. For each pair, they are asked: 'Given $100 to allocate between these two priorities, how would you divide it?' A slider interface allows allocation anywhere from 100-0 to 0-100.  
@@ -109,7 +119,7 @@ The Wishocracy mechanism operates through the following process, which we term A
 
 ## **3.2 Formal Properties**
 
-APPA satisfies several desirable mechanism design properties:
+RAPPA satisfies several desirable mechanism design properties:
 
 **Pareto Efficiency:** The mechanism converges to allocations where no reallocation could make some participants better off without making others worse off, as measured by their expressed preferences.
 
@@ -121,11 +131,47 @@ APPA satisfies several desirable mechanism design properties:
 
 **Preference Intensity Capture:** Unlike binary voting, the slider allocation captures cardinal preferences. Strong majorities with weak preferences can be outweighed by smaller groups with intense preferences, addressing the tyranny of the majority problem.
 
-## **3.3 Solution Layer: GenieDAOs**
+## **3.3 Formal Model**
 
-Once priorities are established through APPA, Wishocracy introduces a second layer for solution generation and evaluation. GenieDAOs (Decentralized Autonomous Organizations of problem-solvers) form around specific priorities to propose implementation strategies.
+We now formally define the RAPPA mechanism as a mapping from individual preferences to collective allocations.
 
-Solution proposals are themselves subject to pairwise comparison, but with different evaluation criteria: cost-effectiveness, feasibility, and probability of success. This two-layer structure separates the question of 'what should we do?' (values-based, democratic) from 'how should we do it?' (evidence-based, technocratic), addressing the complementary strengths of citizens and experts.
+**Inputs:** Let $N = \{1, ..., n\}$ be the set of citizens and $O = \{o_1, ..., o_m\}$ be the set of policy priorities. Each citizen $i$ provides pairwise allocation ratios $\rho_{i,A,B} \in [0,1]$ for a subset of pairs $(A,B) \in O \times O$, where $\rho_{i,A,B}$ represents the fraction of resources citizen $i$ would allocate to priority $A$ when comparing $A$ and $B$. Note that $\rho_{i,A,B} + \rho_{i,B,A} = 1$ by construction.
+
+**Aggregation Function:** For each pair $(o_j, o_k)$, we compute the aggregate pairwise comparison:
+
+$$
+a_{jk} = \frac{1}{|S_{jk}|} \sum_{i \in S_{jk}} \rho_{i,j,k}
+$$
+
+where $S_{jk} \subseteq N$ is the set of citizens who evaluated the pair $(o_j, o_k)$. This produces an $m \times m$ aggregate comparison matrix $\mathbf{A} = [a_{jk}]$.
+
+**Priority Synthesis:** Following the Analytic Hierarchy Process, we compute the principal eigenvector of $\mathbf{A}$ to derive the global priority vector $\mathbf{w} = (w_1, ..., w_m)^T$, where $w_j$ represents the relative priority weight for outcome $o_j$:
+
+$$
+\mathbf{A} \mathbf{w} = \lambda_{max} \mathbf{w}
+$$
+
+where $\lambda_{max}$ is the largest eigenvalue of $\mathbf{A}$. The weights are normalized such that $\sum_{j=1}^{m} w_j = 1$.
+
+**Output:** The final budget allocation assigns fraction $w_j$ of total resources to priority $o_j$.
+
+**Welfare Justification:** Under quasi-linear preferences where citizen $i$'s utility from allocation $\mathbf{x} = (x_1, ..., x_m)$ is $u_i(\mathbf{x}) = \sum_{j=1}^{m} v_{ij} x_j$, the pairwise allocation $\rho_{i,j,k}$ reveals the relative valuations $v_{ij}/v_{ik}$. The eigenvector aggregation produces weights $w_j$ proportional to $\sum_{i \in N} v_{ij}$, thus approximating the utilitarian welfare function $W(\mathbf{x}) = \sum_{i=1}^{n} u_i(\mathbf{x})$ under budget constraint $\sum_{j} x_j = B$.
+
+**Convergence Properties:** With random pair assignment and large $n$, the law of large numbers ensures that $a_{jk} \to E[\rho_{i,j,k}]$, the population mean preference ratio. The sample size required for $\epsilon$-accurate estimation of each $a_{jk}$ is $O(1/\epsilon^2)$ by standard concentration inequalities.
+
+## **3.4 Solution Layer: GenieDAOs**
+
+**Important:** GenieDAOs represent a *distinct, separate layer* from the core RAPPA mechanism. While RAPPA (Sections 3.1-3.3) handles democratic preference aggregation to determine *what* society should prioritize, GenieDAOs address the orthogonal question of *how* to achieve those priorities.
+
+Once priorities are established through RAPPA, Wishocracy introduces this second layer for solution generation and evaluation. GenieDAOs (Decentralized Autonomous Organizations of problem-solvers) form around specific priorities to propose implementation strategies. These proposals are subject to pairwise comparison using different evaluation criteria: cost-effectiveness, feasibility, and probability of success.
+
+This two-layer architecture embodies a fundamental division of labor:
+
+- **Layer 1 (RAPPA):** Democratic, values-based. "What should we do?" Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) based on their welfare valuations.
+
+- **Layer 2 (GenieDAOs):** Technocratic, evidence-based. "How should we do it?" Experts design and evaluate implementation strategies based on causal knowledge and empirical evidence.
+
+This separation addresses a key criticism of technocracy (experts shouldn't determine societal values) while respecting the limits of direct democracy (citizens cannot evaluate complex implementation trade-offs). Each layer operates where its participants have comparative advantage: citizens in welfare evaluation, experts in causal analysis.
 
 # **4\. Empirical Precedents and Evidence Base**
 
@@ -147,11 +193,11 @@ vTaiwan's limitations (lack of binding authority, limited scope, and eventual po
 
 ## **4.3 Stanford Participatory Budgeting Platform Research**
 
-Academic research on voting interfaces provides direct evidence for APPA's design choices. Wellings et al. (2024) compared cumulative voting, quadratic voting, and traditional ranking methods on Stanford's Participatory Budgeting platform. Their findings support several Wishocracy design principles.
+Academic research on voting interfaces provides direct evidence for RAPPA's design choices. Wellings et al. (2024) compared cumulative voting, quadratic voting, and traditional ranking methods on Stanford's Participatory Budgeting platform. Their findings support several Wishocracy design principles.
 
 Voters preferred more expressive methods over simple approval voting, even though expressive methods required more cognitive effort. Participants showed 'strong intuition for outcomes that provide proportional representation and prioritize fairness.' The Method of Equal Shares voting rule was perceived as fairer than conventional Greedy allocation.
 
-Yang et al. (2024) found that voting input formats using rankings or point distribution provided a 'stronger sense of engagement in the participatory process.' These findings validate APPA's slider-based allocation over binary choice mechanisms.
+Yang et al. (2024) found that voting input formats using rankings or point distribution provided a 'stronger sense of engagement in the participatory process.' These findings validate RAPPA's slider-based allocation over binary choice mechanisms.
 
 ## **4.4 Colorado Quadratic Voting Experiment**
 
@@ -171,7 +217,19 @@ Results demonstrated that QV produces different outcomes than majority voting. T
 
 **Criticism:** Bad actors could create multiple accounts or coordinate voting blocs to manipulate outcomes.
 
-**Response:** Identity verification through existing government ID systems (driver's licenses, national ID cards) provides one-person-one-account guarantees. Randomized pair assignment makes coordination extremely difficult. Conspirators cannot know which pairs other members will receive. Statistical anomaly detection can identify suspicious patterns. Crucially, the aggregation over millions of comparisons makes marginal manipulation costly and ineffective.
+**Response:** Identity verification through existing government ID systems (driver's licenses, national ID cards) provides one-person-one-account guarantees. We address manipulation at three levels: individual strategic behavior, coordinated attacks, and formal incentive compatibility.
+
+**Individual Strategic Behavior:** Consider a citizen evaluating pair $(A, B)$. Under random pair assignment, the citizen does not know: (1) which other pairs they will receive, (2) which pairs other citizens will evaluate, or (3) how others will allocate. This incomplete information structure creates a Bayesian game where truthful reporting is the individually optimal strategy. Formally, let $\rho_i$ be citizen $i$'s true valuation ratio and $\hat{\rho}_i$ be their reported ratio for pair $(A,B)$. The citizen's influence on the final weight $w_A$ is:
+
+$$
+\frac{\partial w_A}{\partial \hat{\rho}_i} = \frac{1}{|S_{AB}|} \cdot \frac{\partial w_A}{\partial a_{AB}}
+$$
+
+where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influence is negligible ($O(1/n)$), making strategic manipulation costly relative to its impact. Moreover, since the citizen cannot predict which of their comparisons will be pivotal, expected utility maximization reduces to truthful reporting across all pairs.
+
+**Coordinated Attacks:** For a coordinated group of size $k$ to shift outcome $A$'s weight by $\Delta w$, they must manipulate comparisons involving $A$ across multiple pairs. With $m$ outcomes and random assignment, the number of comparisons needed is $O(m \cdot n / k)$. As $m$ and $n$ grow, the coordination cost scales super-linearly while the marginal impact diminishes. Statistical anomaly detection (e.g., comparing individual consistency ratios against population distributions) can identify coordinated patterns with high probability when $k < \sqrt{n}$.
+
+**Sybil Resistance:** The incomplete information structure provides inherent Sybil resistance even beyond identity verification. A Sybil attack creating $k$ fake identities increases the attacker's allocation power by factor $k$, but randomization spreads these fake votes across $O(m^2)$ possible pairs. The expected number of fake votes on any given pair remains $O(k/m^2)$, which is negligible when $k \ll m^2$. Combined with identity verification, this makes Sybil attacks both technically difficult and economically irrational.
 
 ## **5.3 Preference Laundering and Manufactured Consent**
 
@@ -193,17 +251,19 @@ Results demonstrated that QV produces different outcomes than majority voting. T
 
 # **6\. Conclusion**
 
-Democratic institutions evolved in an era of information scarcity, limited communication, and relatively homogeneous electorates. Today's policy challenges (global in scope, technical in character, and requiring trade-offs across incommensurable values) demand mechanisms that can aggregate nuanced citizen preferences at scale. Wishocracy, through Aggregated Pairwise Preference Allocation, offers such a mechanism.
+Democratic institutions evolved in an era of information scarcity, limited communication, and relatively homogeneous electorates. Today's policy challenges (global in scope, technical in character, and requiring trade-offs across incommensurable values) demand mechanisms that can aggregate nuanced citizen preferences at scale. Wishocracy, through Randomized Aggregated Pairwise Preference Allocation, offers such a mechanism.
 
-The theoretical foundations synthesize validated insights from the Analytic Hierarchy Process, quadratic voting, and collective intelligence research. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons and aggregating them through eigenvector methods, APPA overcomes the cognitive limitations that plague traditional democratic institutions while preserving preference intensity information.
+The theoretical foundations synthesize validated insights from the Analytic Hierarchy Process, quadratic voting, and collective intelligence research. By decomposing n-dimensional preference spaces into cognitively tractable pairwise comparisons, using randomization to ensure strategy-proofness, and aggregating them through eigenvector methods, RAPPA overcomes the cognitive limitations that plague traditional democratic institutions while preserving preference intensity information.
 
 The empirical precedents from Porto Alegre's participatory budgeting, Taiwan's vTaiwan platform, and Stanford's voting research demonstrate that citizens can and will engage productively with pairwise preference-expressing mechanisms. These real-world experiments validate the core assumptions underlying Wishocracy while revealing the institutional fragility of advisory mechanisms without binding authority.
 
-Several critical questions require further research. First, what is the minimum sample size and comparison density needed for preference convergence across different problem domains? Second, how does preference stability vary with issue complexity and temporal distance? Third, what are the optimal methods for integrating APPA outputs with existing legislative and executive institutions? Fourth, how can the mechanism be adapted for federated systems where preference aggregation must occur across multiple jurisdictional levels?
+Several critical questions require further research. First, what is the minimum sample size and comparison density needed for preference convergence across different problem domains? Second, how does preference stability vary with issue complexity and temporal distance? Third, what are the optimal methods for integrating RAPPA outputs with existing legislative and executive institutions? Fourth, how can the mechanism be adapted for federated systems where preference aggregation must occur across multiple jurisdictional levels?
 
 The mechanism design presented here represents one point in a broader design space of democratic innovations. Alternative aggregation methods (Bradley-Terry models, Bayesian updating, deep learning approaches), different elicitation formats (rating scales, probability distributions, stochastic choice), and various institutional embeddings (legislative priority-setting, constitutional conventions, international treaty negotiations) warrant systematic exploration.
 
-Wishocracy addresses a fundamental challenge in democratic theory: how to aggregate citizen preferences over complex, multidimensional policy spaces in ways that are cognitively tractable, preference-revealing, and welfare-maximizing. The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. Whether it can achieve its theoretical promise remains an open empirical question that only real-world deployment can answer.
+Wishocracy addresses a fundamental challenge in democratic theory: how to aggregate citizen preferences over complex, multidimensional policy spaces in ways that are cognitively tractable, preference-revealing, and welfare-maximizing. The mechanism's key innovation lies in its three-part synthesis: combining AHP's cognitive tractability, quadratic voting's preference intensity capture, and collective intelligence aggregation into a unified framework. No previous mechanism has achieved all three properties simultaneously.
+
+The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. Whether it can achieve its theoretical promise remains an open empirical question that only real-world deployment can answer.
 
 # **References**
 
