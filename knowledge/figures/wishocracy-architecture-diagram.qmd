@@ -11,17 +11,15 @@ from IPython.display import Image as IPImage, display
 import sys
 import os
 
-# Ensure we can import from the project root
-project_root = Path.cwd()
-if project_root.name != 'decentralized-institutes-of-health':
-    while project_root.name != 'decentralized-institutes-of-health' and project_root.parent != project_root:
-        project_root = project_root.parent
-sys.path.append(str(project_root))
-
+# Import helper functions
 from dih_models.plotting.graphviz_helper import (
     setup_graphviz_style,
     render_graphviz_with_watermark
 )
+from dih_models.plotting.chart_style import get_project_root
+
+# Get project root using robust path detection
+project_root = get_project_root()
 
 # Create diagram
 dot = graphviz.Digraph(comment='Wishocracy Architecture', format='png')

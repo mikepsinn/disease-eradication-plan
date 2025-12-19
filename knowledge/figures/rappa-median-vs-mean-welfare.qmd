@@ -6,11 +6,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
-from dih_models.plotting.matplotlib_helper import apply_matplotlib_style, save_matplotlib_with_watermark
+from dih_models.plotting.chart_style import (
+    setup_chart_style,
+    add_watermark,
+    save_figure_with_margins,
+    get_figure_output_path
+)
 
 # Apply consistent style
+setup_chart_style()
 fig, ax = plt.subplots(figsize=(10, 6))
-apply_matplotlib_style(fig, ax)
 
 # Generate right-skewed distribution (lognormal) representing health needs
 np.random.seed(42)
@@ -62,5 +67,8 @@ ax.annotate(
 ax.grid(True, alpha=0.3, linestyle=':', linewidth=0.5)
 plt.tight_layout()
 
-save_matplotlib_with_watermark(fig, 'rappa-median-vs-mean-welfare')
+# Add watermark and save
+add_watermark(fig)
+output_path = get_figure_output_path('rappa-median-vs-mean-welfare.png')
+save_figure_with_margins(fig, output_path)
 ```

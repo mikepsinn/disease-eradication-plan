@@ -6,11 +6,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, Rectangle
-from dih_models.plotting.matplotlib_helper import apply_matplotlib_style, save_matplotlib_with_watermark
+from dih_models.plotting.chart_style import (
+    setup_chart_style,
+    add_watermark,
+    save_figure_with_margins,
+    get_figure_output_path
+)
+
+# Apply consistent styling
+setup_chart_style()
 
 # Create figure with subplots
 fig = plt.figure(figsize=(14, 6))
-apply_matplotlib_style(fig, None)
 
 # Options for visualization
 options = ['Healthcare', 'Education', 'Defense', 'Parks']
@@ -114,5 +121,8 @@ fig.text(0.69, 0.08, 'Eigenvector\nCentrality', fontsize=8, ha='center', style='
 
 plt.tight_layout(rect=[0, 0.12, 1, 1])
 
-save_matplotlib_with_watermark(fig, 'rappa-matrix-aggregation')
+# Add watermark and save
+add_watermark(fig)
+output_path = get_figure_output_path('rappa-matrix-aggregation.png')
+save_figure_with_margins(fig, output_path)
 ```
