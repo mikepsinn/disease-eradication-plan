@@ -1,0 +1,56 @@
+```{python}
+#| label: fig-information-flow-comparison
+#| fig-cap: 'Information Flow Comparison: Representative Democracy vs. RAPPA. RepDem compresses rich preference spaces into a single vote (severe information loss). RAPPA maintains high bandwidth through parallel pairwise channels, preserving preference intensity and trade-off information.'
+#| echo: false
+
+import graphviz
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment='Information Flow Comparison', format='png')
+dot.attr(rankdir='LR', compound='true', splines='ortho')
+setup_graphviz_style(dot)
+
+# -- Representative Democracy (Top): Bottleneck --
+with dot.subgraph(name='cluster_repdem') as c:
+    c.attr(label='Representative Democracy: Information Bottleneck', style='dashed', color='red')
+
+    # Wide preference space (multiple issues)
+    with c.subgraph(name='cluster_repdem_prefs') as prefs:
+        prefs.attr(rank='same')
+        for i, issue in enumerate(['Healthcare', 'Education', 'Defense', 'Infrastructure', 'Environment']):
+            prefs.node(f'repdem_pref_{i}', issue, shape='box', style='filled', fillcolor='lightblue', fontsize='8')
+
+    # Bottleneck: single vote
+    c.node('repdem_vote', 'Single Vote\n(Candidate A, B, or C)', shape='diamond', style='filled', fillcolor='#ffcccc', fontsize='9', width='2.0')
+
+    # Connect preferences to bottleneck
+    for i in range(5):
+        c.edge(f'repdem_pref_{i}', 'repdem_vote', color='red', penwidth='0.8')
+
+    # Output: policy (with information loss)
+    c.node('repdem_policy', 'Policy Outcome\n(High Information Loss)', shape='box', style='filled,rounded', fillcolor='#ffaaaa', fontsize='9')
+    c.edge('repdem_vote', 'repdem_policy', color='red', penwidth='2.0', label='C ≈ 0 bits', fontsize='7')
+
+# -- RAPPA (Bottom): Parallel Channels --
+with dot.subgraph(name='cluster_rappa') as c:
+    c.attr(label='RAPPA: High-Bandwidth Parallel Channels', style='solid', color='green')
+
+    # Wide preference space (same issues)
+    with c.subgraph(name='cluster_rappa_prefs') as prefs:
+        prefs.attr(rank='same')
+        for i, issue in enumerate(['Healthcare', 'Education', 'Defense', 'Infrastructure', 'Environment']):
+            prefs.node(f'rappa_pref_{i}', issue, shape='box', style='filled', fillcolor='lightblue', fontsize='8')
+
+    # Multiple pairwise channels (aggregation node)
+    c.node('rappa_agg', 'Pairwise\nAggregation\n(10 channels)', shape='ellipse', style='filled', fillcolor='lightgreen', fontsize='9', width='1.8')
+
+    # Connect preferences to aggregation with multiple edges
+    for i in range(5):
+        c.edge(f'rappa_pref_{i}', 'rappa_agg', color='green', penwidth='0.8')
+
+    # Output: policy (with preserved information)
+    c.node('rappa_policy', 'Policy Outcome\n(Preserved Intensity)', shape='box', style='filled,rounded', fillcolor='#aaffaa', fontsize='9')
+    c.edge('rappa_agg', 'rappa_policy', color='green', penwidth='2.0', label='C ∝ N·c̄·H(S)', fontsize='7')
+
+render_graphviz_with_watermark(dot, 'rappa-information-flow-diagram')
+```

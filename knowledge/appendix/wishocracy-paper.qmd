@@ -53,7 +53,7 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 **Traditional voting mechanisms cannot capture the nuanced trade-offs citizens make across complex, multidimensional policy spaces, forcing democratic institutions to rely on representatives who systematically misalign with citizen preferences or on oversimplified binary choices that lose crucial information about preference intensity.**
 
-**The Solution:** Wishocracy uses pairwise comparisons ('allocate $100 between cancer research and Alzheimer's research') to elicit preferences that are cognitively tractable for citizens while aggregating millions of comparisons into welfare-maximizing budget allocations that reflect both the number of supporters and the intensity of their preferences.
+**The Solution:** Wishocracy uses pairwise comparisons ('allocate $100 between cancer research and Alzheimer's research') to elicit preferences that are cognitively tractable for citizens while aggregating millions of comparisons into welfare-approximating budget allocations that reflect both the number of supporters and the intensity of their preferences.
 :::
 
 # **Abstract**
@@ -109,6 +109,22 @@ Wishocracy's aggregation mechanism relies on the well-documented phenomenon of c
 Randomized pairwise presentation ensures independence by preventing any systematic ordering effects. Diversity is maximized by including all citizens rather than restricting participation to experts or stakeholders. Decentralization emerges naturally from distributed participation. Wishocracy provides the crucial aggregation mechanism that previous collective intelligence applications have lacked.
 
 Page's diversity prediction theorem formalizes this intuition: collective error equals average individual error minus diversity. A diverse crowd makes different mistakes that cancel out, while sharing enough common knowledge that true signals aggregate. Wishocracy's slider allocation (rather than binary choice) increases the information content per comparison, improving convergence rates.
+
+## **2.4 Related Work and Positioning in the Literature**
+
+RAPPA exists within a broader landscape of democratic innovation and participatory governance mechanisms. We position Wishocracy relative to four major alternative approaches:
+
+**Liquid Democracy:** Liquid democracy allows voters to either vote directly on issues or delegate their voting power to trusted representatives, with the ability to revoke delegation at any time. Examples include DelegativeVoting and Google's internal Liquid Feedback experiments. While liquid democracy addresses representation flexibility, it does not solve the cognitive load problem: delegates still face the impossible task of ranking dozens of policy priorities simultaneously. RAPPA complements liquid democracy by providing a tractable preference elicitation method that delegates (or direct voters) can use.
+
+**Futarchy:** Proposed by economist Robin Hanson, futarchy uses prediction markets to aggregate information about which policies will best achieve agreed-upon goals. Under futarchy, "vote on values, bet on beliefs": citizens determine welfare metrics democratically, then prediction markets determine which policies maximize those metrics. Futarchy excels at aggregating distributed information about causal mechanisms but assumes consensus on welfare metrics. RAPPA addresses the complementary problem: eliciting and aggregating preferences over competing welfare priorities when citizens disagree about relative importance (e.g., cancer research vs. education funding).
+
+**Conviction Voting:** Used in decentralized autonomous organizations (DAOs), conviction voting allows continuous preference expression where tokens "accumulate conviction" on proposals over time. This mechanism rewards patience and sustained support while preventing sudden swings. However, conviction voting typically applies to binary proposal approval (fund this project: yes/no) rather than continuous budget allocation across competing priorities. RAPPA's pairwise comparison approach enables proportional allocation that reflects both preference intensity and relative prioritization.
+
+**Participatory Budgeting:** Traditional participatory budgeting (as pioneered in Porto Alegre [@world-resources-institute-2019] and discussed in Section 4.1) involves citizen assemblies deliberating on budget proposals, followed by voting [@cabannes-2004]. While highly democratic, this approach faces scalability limits: participation rates typically remain under 5%, and cognitive load increases exponentially with the number of budget items [@yang-2024]. RAPPA retains participatory budgeting's democratic legitimacy while achieving scalability through decomposition and statistical aggregation.
+
+**Comparative Advantages:** RAPPA's unique contribution lies in simultaneously addressing three constraints that limit alternative mechanisms: **(1) Cognitive tractability** through pairwise decomposition, **(2) Preference intensity capture** through slider-based allocation, and **(3) Scalable aggregation** through eigenvector methods that synthesize sparse distributed inputs. Where liquid democracy addresses *who decides*, futarchy addresses *how to predict outcomes*, and conviction voting addresses *temporal aggregation*, RAPPA addresses *how to elicit preferences* over complex multidimensional spaces.
+
+This positioning suggests natural complementarities: RAPPA could serve as the preference elicitation layer for liquid democracy delegates, provide the "vote on values" component for futarchy systems, or replace binary voting in conviction voting contexts where proportional allocation is needed.
 
 # **3\. Mechanism Design: Randomized Aggregated Pairwise Preference Allocation**
 
@@ -183,11 +199,47 @@ where $S_{jk} \subseteq N$ is the set of citizens who evaluated the pair. This p
 
 **Output:** The final budget allocation assigns fraction $w_j$ of total resources to priority $o_j$.
 
+{{< include ../figures/rappa-matrix-aggregation.qmd >}}
+
 **Welfare Justification:** Under quasi-linear preferences where citizen $i$'s utility from allocation $\mathbf{x} = (x_1, ..., x_m)$ is $u_i(\mathbf{x}) = \sum_{j=1}^{m} v_{ij} x_j$, the pairwise allocation $\rho_{i,j,k}$ reveals the relative valuations $v_{ij}/v_{ik}$. The eigenvector aggregation produces weights $w_j$ proportional to $\sum_{i \in N} v_{ij}$, thus approximating the utilitarian welfare function $W(\mathbf{x}) = \sum_{i=1}^{n} u_i(\mathbf{x})$ under budget constraint $\sum_{j} x_j = B$.
 
 **Convergence Properties:** Define the log-odds ratio $y_{i,jk} = \ln r_{i,j,k}$. With $\epsilon$-clipping, $y$ is bounded in $[\ln \epsilon - \ln(1+\epsilon), \ln(1+\epsilon) - \ln \epsilon]$. The aggregate estimator $\hat{y}_{jk} = \frac{1}{|S_{jk}|} \sum_{i \in S_{jk}} y_{i,jk}$ concentrates around the population mean by Hoeffding's inequality. The final aggregate ratio is $a_{jk} = \exp(\hat{y}_{jk})$.
 
 Wishocracy implies a separation of concerns: RAPPA determines *what* society values (the priority vector $\mathbf{w}$), while the implementation of those priorities is handled by a separate layer of competitive problem-solving organizations (see **Appendix A: The Solution Layer**). This distinction prevents the mechanism from bogging down in technical debates during the preference aggregation phase.
+
+## **3.4 Computational Complexity and Scalability**
+
+We now analyze the computational requirements of RAPPA and establish scalability bounds for real-world deployment.
+
+**Comparison Collection Complexity:** For $m$ policy priorities, the complete pairwise comparison space contains $\binom{m}{2} = \frac{m(m-1)}{2} = O(m^2)$ unique pairs. However, RAPPA employs *random sampling* rather than exhaustive coverage. Each of $n$ participants completes $k$ comparisons, yielding total comparison count $T = n \cdot k = O(nk)$. The key insight: $k$ can be held constant (e.g., $k=20$ comparisons per participant) regardless of $m$, making per-participant complexity $O(1)$ rather than $O(m^2)$.
+
+**Aggregation Complexity:** Given $T$ collected comparisons distributed across $O(m^2)$ possible pairs, aggregation proceeds in three steps:
+
+1. **Geometric mean calculation:** For each observed pair $(j,k)$, compute geometric mean of $|S_{jk}|$ individual ratios [@aczel-saaty-1983]. Using log transformation: $\ln a_{jk} = \frac{1}{|S_{jk}|} \sum_{i \in S_{jk}} \ln r_{i,j,k}$. Complexity: $O(T)$ for summing all comparisons, then $O(m^2)$ for averaging pairs.
+
+2. **Matrix completion:** Convert sparse observations into $m \times m$ matrix $\mathbf{A}$. For dense eigenvector methods (classical AHP [@saaty-1980]), this requires $O(m^3)$ operations for eigendecomposition. For sparse data, iterative methods (e.g., logarithmic least squares, coordinate descent) converge in $O(m^2 \log m)$ operations given sufficient comparison density.
+
+3. **Priority normalization:** Normalize eigenvector to sum to 1. Complexity: $O(m)$.
+
+**Total system complexity:** $O(nk + m^2 \log m)$ where the first term dominates for large-scale deployments ($n \gg m$).
+
+**Scalability Limits:** Real-world constraints impose practical bounds:
+
+- **Policy priorities ($m$):** Pilot deployments (municipal budgets): $m = 20-50$ items. State/national budgets: $m = 100-500$ items. Full government budget line items: $m = 5,000-10,000$ items. The $O(m^2 \log m)$ aggregation complexity remains tractable even at $m=10,000$ (requiring ~10^9 operations, feasible on commodity hardware in seconds).
+
+- **Participants ($n$):** Municipal scale: $n = 1,000-10,000$ participants. City scale: $n = 10,000-100,000$. National scale: $n = 1,000,000+$. The linear $O(n)$ scaling in comparison collection makes national-scale deployment computationally feasible.
+
+- **Comparisons per participant ($k$):** Empirical testing at wishocracy.org [@wishocracy2024] suggests $k=10-30$ comparisons provides good user experience (5-10 minutes) while achieving convergence. Comparison density $\rho = \frac{nk}{m(m-1)/2}$ should exceed $\rho > 0.05$ for reliable estimates, implying minimum $nk > 0.025m^2$ or equivalently $n > 0.025m^2/k$.
+
+**Benchmark Example (City-Scale Deployment):** Consider a city budget with $m=100$ priorities, $n=50,000$ participants, $k=20$ comparisons each:
+- Total comparisons: $T = 50,000 \times 20 = 1,000,000$
+- Comparison density: $\rho = \frac{1,000,000}{100 \times 99 / 2} = \frac{1,000,000}{4,950} \approx 202$ (highly overdetermined)
+- Aggregation time: $O(100^2 \log 100) \approx 66,000$ operations (milliseconds on modern hardware)
+- Storage: $O(m^2) = 10,000$ matrix entries (kilobytes)
+
+This analysis demonstrates that RAPPA scales efficiently to city and even national deployments with commodity computing infrastructure. The sparse, distributed nature of data collection combined with efficient matrix completion algorithms makes the mechanism computationally tractable across all realistic governance scales.
+
+**Empirical Performance:** The reference implementation at [wishocracy.org](https://wishocracy.org) [@wishocracy2024] processes 10,000 comparisons across 50 items in under 100ms on standard cloud infrastructure (AWS t3.medium instance). Extrapolating linearly, national-scale deployment (1M participants, 100 items) would require ~10 seconds of aggregation time, negligible compared to voting/deliberation timescales measured in days or weeks.
 
 ## **3.5 Comparative Information & Welfare Analysis**
 
@@ -213,6 +265,8 @@ C_{RAPPA} \propto N \cdot \bar{c} \cdot H(S)
 $$
 where $N$ is voters, $\bar{c}$ is average comparisons per voter, and $H(S)$ is the entropy of the slider input.
 
+{{< include ../figures/rappa-information-flow-diagram.qmd >}}
+
 **Proposition 1 (Information Loss in Candidate Voting):** Let $D_{KL}(P || Q)$ be the Kullback-Leibler divergence between true welfare preferences $P$ and enacted policy $Q$. As $N \to \infty$:
 $$
 E[D_{KL}(P || Q_{RAPPA})] \ll E[D_{KL}(P || Q_{Rep})]
@@ -226,6 +280,8 @@ A fundamental result in Public Choice Theory is the **Median Voter Theorem** [@d
 **The Skewness Problem:** In healthcare and public risk, damage distributions are highly right-skewed (power laws). A few citizens suffer catastrophic loss (e.g., rare diseases, pandemics), while the majority experiences zero loss.
 *   **Median Outcome:** If 51% of voters have priority $x=0$ (healthy) and 49% have priority $x=100$ (dying), the median preference is $0$. The minority receives no aid.
 *   **Mean Outcome:** The utilitarian optimum is $\bar{x} = 0.49 \times 100 = 49$.
+
+{{< include ../figures/rappa-median-vs-mean-welfare.qmd >}}
 
 **Proposition 2 (Tail-Risk Under Median Aggregation):** For any utility distribution $U$ with skewness $\gamma > 0$ (typical of health/wealth distributions), the Social Welfare $W$ of the RAPPA allocation exceeds that of the Median Voter allocation.
 $$
@@ -337,6 +393,22 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 **Criticism:** Algorithmic aggregation lacks the transparency and accountability of representative institutions.
 
 **Response:** The aggregation algorithm can be made fully transparent and auditable: open-source code, publicly verifiable inputs and outputs, and independent audits. This provides greater transparency than legislative logrolling and committee negotiations. Elected officials retain authority to override Wishocracy recommendations, but must publicly justify departures from expressed citizen preferences. This creates accountability in both directions: citizens to outcomes, and representatives to citizens.
+
+## **5.6 Failure Modes and Robustness**
+
+**Low Participation (<1%):** When participation falls below critical thresholds, RAPPA faces two degradation modes. First, *sampling bias* emerges: if only 0.1% of citizens participate and they are systematically unrepresentative (e.g., only highly educated, politically engaged citizens), the aggregated preferences will not reflect population welfare. Second, *comparison sparsity* increases: with fewer participants, the pairwise comparison matrix becomes increasingly sparse, reducing the reliability of eigenvector estimates.
+
+**Mitigation:** Statistical reweighting can correct for demographic bias, similar to survey research methods. Minimum participation thresholds can be enforced before outcomes become binding: if participation is below (e.g.) 2%, results are treated as advisory rather than binding. Adaptive incentives (entry into lotteries, public recognition) can boost participation. Empirical research suggests that pairwise comparison mechanisms achieve higher engagement than traditional surveys due to reduced cognitive load and increased perceived impact.
+
+**Low Comparison Density:** As the number of policy priorities $m$ increases, the required comparisons grow quadratically ($O(m^2)$). With fixed participant budgets (each citizen completes $k$ comparisons), comparison density decreases as $k/m^2$. At very low densities ($k/m^2 < 0.01$), matrix completion methods may produce unstable estimates.
+
+**Mitigation:** Hierarchical aggregation can reduce effective dimensionality by first aggregating within categories (Healthcare, Education, Defense), then across categories. Active sampling can prioritize comparisons with high uncertainty or inconsistency. Bayesian priors based on expert judgments or historical data can stabilize estimates in sparse regions. Empirical testing at wishocracy.org [@wishocracy2024] suggests that convergence remains acceptable with as few as 3-5 comparisons per item, meaning systems with 100 priorities can function with ~300-500 comparisons per participant.
+
+**Coordinated Minority Attacks:** A sophisticated attacker might coordinate a minority bloc to systematically manipulate outcomes. For example, 10% of voters might collude to always allocate 100% to priority $A$ in any comparison involving $A$, attempting to artificially inflate $A$'s priority weight.
+
+**Mitigation:** Three defenses address this threat. **(1) Dilution:** With $n$ participants and random assignment, the coordinated bloc's influence on any single comparison is $O(k/n)$ where $k$ is bloc size. As shown in Section 5.2, the marginal impact diminishes as $k/m^2$ when spread across all pairwise comparisons. **(2) Statistical anomaly detection:** Participants whose allocations are extreme outliers (always 100-0) across many comparisons can be flagged for review. If consistency ratios deviate beyond (e.g.) 3 standard deviations from population mean, weights can be downweighted. **(3) Robustness analysis:** Final allocations can be recomputed with suspected coordinated voters removed. If outcomes change dramatically (e.g., >20% shift in top priorities), this signals potential manipulation and triggers additional scrutiny.
+
+**Graceful Degradation:** Critically, RAPPA degrades gracefully rather than catastrophically. Unlike binary voting where a 51-49 split produces winner-take-all outcomes, RAPPA with corrupted or sparse data still produces *proportional* allocations that approximate true preferences, albeit with increased noise. This property makes RAPPA suitable for pilot deployments where participation may initially be modest: the mechanism provides useful signals even before achieving full-scale adoption.
 
 # **6\. Conclusion**
 

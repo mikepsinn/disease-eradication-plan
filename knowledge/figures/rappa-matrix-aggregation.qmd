@@ -1,0 +1,118 @@
+```{python}
+#| label: fig-matrix-aggregation
+#| fig-cap: 'RAPPA Matrix Aggregation Process. Individual sparse pairwise comparison matrices (each citizen evaluates only a few random pairs) are aggregated via geometric mean. The eigenvector method extracts a global priority vector from the aggregated matrix, synthesizing collective preferences from distributed judgments.'
+#| echo: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch, Rectangle
+from dih_models.plotting.matplotlib_helper import apply_matplotlib_style, save_matplotlib_with_watermark
+
+# Create figure with subplots
+fig = plt.figure(figsize=(14, 6))
+apply_matplotlib_style(fig, None)
+
+# Options for visualization
+options = ['Healthcare', 'Education', 'Defense', 'Parks']
+n_options = len(options)
+
+# --- Subplot 1: Individual Sparse Matrices ---
+ax1 = plt.subplot(1, 4, 1)
+ax1.set_title('Citizen 1\n(Sparse Matrix)', fontsize=10, fontweight='bold')
+
+# Create sparse matrix (mostly NaN, few comparisons)
+matrix1 = np.full((n_options, n_options), np.nan)
+matrix1[0, 1] = 0.7  # Healthcare vs Education: 70/30
+matrix1[1, 0] = 0.3
+matrix1[2, 3] = 0.4  # Defense vs Parks: 40/60
+matrix1[3, 2] = 0.6
+
+im1 = ax1.imshow(matrix1, cmap='RdYlGn', vmin=0, vmax=1, aspect='auto')
+ax1.set_xticks(range(n_options))
+ax1.set_yticks(range(n_options))
+ax1.set_xticklabels(options, rotation=45, ha='right', fontsize=8)
+ax1.set_yticklabels(options, fontsize=8)
+
+# Add text values
+for i in range(n_options):
+    for j in range(n_options):
+        if not np.isnan(matrix1[i, j]):
+            text = ax1.text(j, i, f'{matrix1[i, j]:.1f}',
+                           ha="center", va="center", color="black", fontsize=8)
+
+# --- Subplot 2: Another Individual Sparse Matrix ---
+ax2 = plt.subplot(1, 4, 2)
+ax2.set_title('Citizen 2\n(Sparse Matrix)', fontsize=10, fontweight='bold')
+
+matrix2 = np.full((n_options, n_options), np.nan)
+matrix2[0, 2] = 0.8  # Healthcare vs Defense: 80/20
+matrix2[2, 0] = 0.2
+matrix2[1, 3] = 0.5  # Education vs Parks: 50/50
+matrix2[3, 1] = 0.5
+
+im2 = ax2.imshow(matrix2, cmap='RdYlGn', vmin=0, vmax=1, aspect='auto')
+ax2.set_xticks(range(n_options))
+ax2.set_yticks(range(n_options))
+ax2.set_xticklabels(options, rotation=45, ha='right', fontsize=8)
+ax2.set_yticklabels(options, fontsize=8)
+
+for i in range(n_options):
+    for j in range(n_options):
+        if not np.isnan(matrix2[i, j]):
+            text = ax2.text(j, i, f'{matrix2[i, j]:.1f}',
+                           ha="center", va="center", color="black", fontsize=8)
+
+# --- Subplot 3: Aggregated Matrix (Geometric Mean) ---
+ax3 = plt.subplot(1, 4, 3)
+ax3.set_title('Aggregated Matrix\n(Geometric Mean)', fontsize=10, fontweight='bold')
+
+# Create a denser aggregated matrix (combining all citizens' inputs)
+matrix_agg = np.array([
+    [0.50, 0.65, 0.75, 0.55],
+    [0.35, 0.50, 0.60, 0.52],
+    [0.25, 0.40, 0.50, 0.45],
+    [0.45, 0.48, 0.55, 0.50]
+])
+
+im3 = ax3.imshow(matrix_agg, cmap='RdYlGn', vmin=0, vmax=1, aspect='auto')
+ax3.set_xticks(range(n_options))
+ax3.set_yticks(range(n_options))
+ax3.set_xticklabels(options, rotation=45, ha='right', fontsize=8)
+ax3.set_yticklabels(options, fontsize=8)
+
+for i in range(n_options):
+    for j in range(n_options):
+        text = ax3.text(j, i, f'{matrix_agg[i, j]:.2f}',
+                       ha="center", va="center", color="black", fontsize=7)
+
+# --- Subplot 4: Priority Vector (Eigenvector) ---
+ax4 = plt.subplot(1, 4, 4)
+ax4.set_title('Global Priority\n(Eigenvector)', fontsize=10, fontweight='bold')
+
+# Calculate priority vector (normalized weights)
+priorities = np.array([0.35, 0.28, 0.20, 0.17])  # Healthcare > Education > Defense > Parks
+
+colors = ['#66c2a5', '#fc8d62', '#8da0cb', '#e78ac3']
+bars = ax4.barh(options, priorities, color=colors, edgecolor='black', linewidth=1.5)
+ax4.set_xlabel('Budget Share', fontsize=9)
+ax4.set_xlim(0, 0.4)
+ax4.invert_yaxis()
+
+# Add percentage labels
+for i, (opt, priority) in enumerate(zip(options, priorities)):
+    ax4.text(priority + 0.01, i, f'{priority:.0%}', va='center', fontsize=8, fontweight='bold')
+
+# Add arrows between subplots to show flow
+fig.text(0.23, 0.5, '→', fontsize=24, ha='center', va='center', color='gray')
+fig.text(0.46, 0.5, '→', fontsize=24, ha='center', va='center', color='gray')
+fig.text(0.69, 0.5, '→', fontsize=24, ha='center', va='center', color='gray')
+
+# Add explanatory text
+fig.text(0.23, 0.08, 'Many Citizens\n(Sparse Inputs)', fontsize=8, ha='center', style='italic', color='gray')
+fig.text(0.46, 0.08, 'Geometric Mean\nAggregation', fontsize=8, ha='center', style='italic', color='gray')
+fig.text(0.69, 0.08, 'Eigenvector\nCentrality', fontsize=8, ha='center', style='italic', color='gray')
+
+plt.tight_layout(rect=[0, 0.12, 1, 1])
+
+save_matplotlib_with_watermark(fig, 'rappa-matrix-aggregation')
+```
