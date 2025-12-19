@@ -53,7 +53,7 @@ This is a working paper. Comments and critical feedback are appreciated. Annotat
 
 **Traditional voting mechanisms cannot capture the nuanced trade-offs citizens make across complex, multidimensional policy spaces, forcing democratic institutions to rely on representatives who systematically misalign with citizen preferences or on oversimplified binary choices that lose crucial information about preference intensity.**
 
-**The Solution:** Wishocracy uses pairwise comparisons ('allocate $100 between cancer research and Alzheimer's research') to elicit preferences that are cognitively tractable for citizens while aggregating millions of comparisons into welfare-approximating budget allocations that reflect both the number of supporters and the intensity of their preferences.
+**The Solution:** Wishocracy uses pairwise comparisons ('allocate $100 between cancer research and Alzheimer's research') to elicit preferences that are cognitively tractable for citizens while aggregating millions of comparisons into budget allocations based on collective preferences, intended to maximize societal welfare, that reflect both the number of supporters and the intensity of their preferences.
 :::
 
 # **Abstract**
@@ -80,7 +80,7 @@ Wishocracy offers a fourth path: a mechanism that harnesses collective intellige
 
 2. **Cardinal Preference Intensity:** Through slider-based allocation (inspired by quadratic voting), participants reveal not just ordinal rankings but the *strength* of their preferences, allowing the mechanism to weight both the number of supporters and the intensity of their support.
 
-3. **Collective Intelligence Aggregation:** By synthesizing millions of pairwise judgments through eigenvector methods (building on collective intelligence research), the mechanism leverages diversity to cancel individual errors while aggregating true signals into welfare-approximating allocations.
+3. **Collective Intelligence Aggregation:** By synthesizing millions of pairwise judgments through eigenvector methods (building on collective intelligence research), the mechanism leverages diversity to cancel individual errors while aggregating true signals into allocations that aim to maximize collective welfare based on aggregated citizen preferences.
 
 To our knowledge, no widely deployed mechanism combines all three properties. Traditional voting captures neither intensity nor tractability. Quadratic voting captures intensity but imposes cognitive complexity. The Analytic Hierarchy Process provides tractability but has not been deployed for large-scale collective decision-making. RAPPA synthesizes these insights into a unified framework.
 
@@ -422,7 +422,7 @@ Several critical questions require further research. First, what is the minimum 
 
 The mechanism design presented here represents one point in a broader design space of democratic innovations. Alternative aggregation methods (Bradley-Terry models, Bayesian updating, deep learning approaches), different elicitation formats (rating scales, probability distributions, stochastic choice), and various institutional embeddings (legislative priority-setting, constitutional conventions, international treaty negotiations) warrant systematic exploration.
 
-Wishocracy addresses a fundamental challenge in democratic theory: how to aggregate citizen preferences over complex, multidimensional policy spaces in ways that are cognitively tractable, preference-revealing, and welfare-approximating. The mechanism's key innovation lies in its three-part synthesis: combining AHP's cognitive tractability, quadratic voting's preference intensity capture, and collective intelligence aggregation into a unified framework.
+Wishocracy addresses a fundamental challenge in democratic theory: how to aggregate citizen preferences over complex, multidimensional policy spaces in ways that are cognitively tractable, preference-revealing, and designed to translate collective preferences into welfare-maximizing outcomes. The mechanism's key innovation lies in its three-part synthesis: combining AHP's cognitive tractability, quadratic voting's preference intensity capture, and collective intelligence aggregation into a unified framework.
 
 The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. Whether it can achieve its theoretical promise remains an open empirical question that only real-world deployment can answer.
 
