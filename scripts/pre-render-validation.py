@@ -16,6 +16,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Missing citations ([@citation-id]) not found in references.bib
 - _quarto.yml configuration (validates all chapter paths exist)
 - Figure files with YAML frontmatter (knowledge/figures/*.qmd should not have frontmatter)
+- Unclosed code blocks (missing closing ```) which cause code to leak into output
 
 Runs automatically via _quarto.yml pre-render hook
 """
@@ -1427,6 +1428,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     # Check that figure files don't have frontmatter
     check_figure_file_frontmatter(content, filepath)
+
+    # Check for unclosed code blocks
+    check_unclosed_code_blocks(content, filepath)
 
 
 def main():

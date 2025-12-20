@@ -89,3 +89,4 @@ for _, row in risk_data.iterrows():
     reduction = ((row['Traditional VC Risk Level'] - row['Decentralized Framework Mitigated Risk']) /
                  row['Traditional VC Risk Level'] * 100)
     print(f"  → Risk reduced by {reduction:.0f}%")
+```
