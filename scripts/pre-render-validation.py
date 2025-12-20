@@ -794,6 +794,44 @@ def check_figure_file_frontmatter(content: str, filepath: str):
         )
 
 
+def check_unclosed_code_blocks(content: str, filepath: str):
+    """
+    Check for unclosed code blocks (``` without matching closing ```).
+    Unclosed code blocks cause code to leak into rendered output, which can break LaTeX compilation.
+    """
+    lines = content.split("\n")
+    in_code_block = False
+    code_block_start_line = 0
+    code_block_language = ""
+
+    for line_index, line in enumerate(lines):
+        stripped = line.strip()
+
+        # Check for code block delimiter
+        if stripped.startswith("```"):
+            if not in_code_block:
+                # Opening code block
+                in_code_block = True
+                code_block_start_line = line_index + 1
+                # Extract language identifier (e.g., ```{python} or ```python)
+                code_block_language = stripped[3:].strip() if len(stripped) > 3 else ""
+            else:
+                # Closing code block
+                in_code_block = False
+                code_block_language = ""
+
+    # If we're still in a code block at the end of the file, it's unclosed
+    if in_code_block:
+        errors.append(
+            ValidationError(
+                file=filepath,
+                line=code_block_start_line,
+                message=f"Unclosed code block (missing closing ```) - code block starting with ```{code_block_language} is never closed. This causes code to leak into rendered output and breaks LaTeX compilation.",
+                context=f"```{code_block_language}",
+            )
+        )
+
+
 def check_quarto_variables_in_links(content: str, filepath: str):
     """
     Check for Quarto variables inside markdown link text.
