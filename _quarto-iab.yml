@@ -1,0 +1,175 @@
+project:
+  type: website
+  output-dir: _site/iab
+  execute-dir: project
+  render:
+    # Main paper
+    - knowledge/appendix/incentive-alignment-bonds-paper.qmd
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+website:
+  title: "Incentive Alignment Bonds"
+  description: "A Mechanism for Aligning Political Incentives with Public Welfare Through Conditional Electoral Support"
+  site-url: https://iab.dih.earth
+  favicon: assets/icons/favicon.ico
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Paper"
+        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+    right:
+      - text: "References"
+        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd#references
+      - text: "DIH"
+        href: https://dih.earth
+      - text: "War on Disease"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: false
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://iab.dih.earth"
+  author-website: "https://iab.dih.earth"
+  contact: "mike@warondisease.org"
+  title: "Incentive Alignment Bonds: A Mechanism for Aligning Political Incentives with Public Welfare"
+  description: "A mechanism design for inducing welfare-maximizing behavior in political agents through conditional electoral support, post-office opportunities, and legacy benefits tied to performance on public good provision"
+  abstract: "Politicians systematically underinvest in public goods and overprovide concentrated benefits to organized interests. We propose Incentive Alignment Bonds (IABs): a mechanism that ties electoral support, post-office career opportunities, and legacy benefits to measurable outcomes on public good provision. By making politician utility functions depend on scores derived from their voting records on prioritized programs, IABs transform rent-seeking incentives into welfare-maximizing ones."
+  language: "en-US"
+  subject: "Mechanism Design, Political Economy, Public Choice, Electoral Reform"
+  category: "Academic Paper, Public Policy, Political Science, Economics"
+  keywords:
+    - mechanism-design
+    - political-economy
+    - public-choice
+    - electoral-reform
+    - incentive-alignment
+    - public-goods
+    - political-incentives
+    - governance
+    - collective-action
+    - rent-seeking
+    - PAC
+    - campaign-finance
+  version: "0.9"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Decentralized Institutes of Health"
+  publisher-url: "https://dih.earth"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Researchers, Policy Makers, Political Scientists, Economists, Political Reform Advocates"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Political Science, Economics, Mechanism Design, Public Policy"
+  medium: "Digital"
+  twitter-site: "@thinkbynumbers"
+  twitter-creator: "@thinkbynumbers"
+  og-site-name: "Incentive Alignment Bonds"
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
+      right: "[DIH.earth](https://dih.earth)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
+              <a href="https://dih.earth" style="color: #8b7355;">DIH.earth</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
+            </p>
+          </div>
+    include-in-header:
+      - text: |
+          <!-- Icons -->
+          <link rel="icon" href="assets/icons/favicon.ico">
+          <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+          <!-- Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8PZYCKQBTY');
+          </script>
+
+          <!-- Hypothesis for inline comments -->
+          <script src="https://hypothes.is/embed.js" async></script>
+
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+          <!-- Social Media / Open Graph -->
+          <meta property="og:image" content="https://iab.dih.earth/assets/iab-og-1200x630.png">
+          <meta property="og:image:width" content="1200">
+          <meta property="og:image:height" content="630">
+          <meta property="og:image:type" content="image/png">
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:image" content="https://iab.dih.earth/assets/iab-og-1200x630.png">
+          <meta name="twitter:title" content="Incentive Alignment Bonds: Aligning Political Incentives with Public Welfare">
+          <meta name="twitter:description" content="A mechanism design for inducing welfare-maximizing behavior in political agents">
+          <meta property="og:title" content="Incentive Alignment Bonds: Aligning Political Incentives with Public Welfare">
+          <meta property="og:description" content="A mechanism design for inducing welfare-maximizing behavior in political agents">
+          <meta property="og:type" content="article">
+          <meta property="og:url" content="https://iab.dih.earth">
+  pdf:
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt

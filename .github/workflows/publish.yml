@@ -140,6 +140,58 @@ jobs:
           path: _site/economics
           retention-days: 1
 
+      - name: Render Wishocracy Paper (for Netlify deployment)
+        run: python scripts/render-wishocracy.py
+        timeout-minutes: 10
+
+      - name: Deploy Wishocracy Paper to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_site/wishocracy'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy wishocracy paper from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
+        timeout-minutes: 1
+
+      - name: Upload Wishocracy Paper artifact for Netlify
+        uses: actions/upload-artifact@v4
+        with:
+          name: wishocracy-site
+          path: _site/wishocracy
+          retention-days: 1
+
+      - name: Render IAB Paper (for Netlify deployment)
+        run: python scripts/render-iab.py
+        timeout-minutes: 10
+
+      - name: Deploy IAB Paper to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_site/iab'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy IAB paper from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
+        timeout-minutes: 1
+
+      - name: Upload IAB Paper artifact for Netlify
+        uses: actions/upload-artifact@v4
+        with:
+          name: iab-site
+          path: _site/iab
+          retention-days: 1
+
       - name: Install LaTeX (for PDF generation)
         run: quarto install tinytex
 
@@ -267,4 +319,56 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
+        timeout-minutes: 1
+
+  deploy-wishocracy:
+    name: Deploy Wishocracy Paper to Netlify
+    runs-on: ubuntu-latest
+    needs: build-html
+    steps:
+      - name: Download Wishocracy Paper artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: wishocracy-site
+          path: wishocracy-site
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: 'wishocracy-site'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy wishocracy paper from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
+        timeout-minutes: 1
+
+  deploy-iab:
+    name: Deploy IAB Paper to Netlify
+    runs-on: ubuntu-latest
+    needs: build-html
+    steps:
+      - name: Download IAB Paper artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: iab-site
+          path: iab-site
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: 'iab-site'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy IAB paper from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
         timeout-minutes: 1

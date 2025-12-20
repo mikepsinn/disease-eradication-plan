@@ -1,0 +1,176 @@
+project:
+  type: website
+  output-dir: _site/wishocracy
+  execute-dir: project
+  render:
+    # Main paper
+    - knowledge/appendix/wishocracy-paper.qmd
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+website:
+  title: "Wishocracy"
+  description: "Randomized Aggregated Pairwise Preference Allocation (RAPPA) for Democratic Resource Allocation"
+  site-url: https://paper.wishocracy.org
+  favicon: assets/icons/favicon.ico
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Paper"
+        href: knowledge/appendix/wishocracy-paper.qmd
+      - text: "App"
+        href: https://wishocracy.org
+    right:
+      - text: "References"
+        href: knowledge/appendix/wishocracy-paper.qmd#references
+      - text: "DIH"
+        href: https://dih.earth
+      - text: "War on Disease"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: false
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  primary-author: "Mike P. Sinn, Decentralized Institutes of Health"
+  byline: "Mike P. Sinn, Decentralized Institutes of Health"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://wishocracy.org"
+  author-website: "https://wishocracy.org"
+  contact: "mike@warondisease.org"
+  title: "Wishocracy: Randomized Pairwise Budget Allocation for Preference Aggregation"
+  description: "A governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation"
+  abstract: "Democratic institutions face a fundamental challenge: how to aggregate citizen preferences across complex, multidimensional policy spaces while respecting preference intensity, minimizing cognitive burden, and resisting strategic manipulation. This paper introduces Wishocracy, a novel governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation."
+  language: "en-US"
+  subject: "Mechanism Design, Collective Decision-Making, Participatory Democracy, Preference Aggregation"
+  category: "Academic Paper, Public Policy, Political Science"
+  keywords:
+    - mechanism-design
+    - collective-decision-making
+    - participatory-democracy
+    - preference-aggregation
+    - quadratic-voting
+    - analytic-hierarchy-process
+    - participatory-budgeting
+    - collective-intelligence
+    - wishocracy
+    - RAPPA
+    - democratic-innovation
+  version: "0.9"
+  edition: "Working Draft"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Decentralized Institutes of Health"
+  publisher-url: "https://dih.earth"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/wishocracy"
+  issue-url: "https://github.com/mikepsinn/wishocracy/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Researchers, Policy Makers, Democracy Innovators, Political Scientists"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Political Science, Mechanism Design, Public Policy"
+  medium: "Digital"
+  twitter-site: "@thinkbynumbers"
+  twitter-creator: "@thinkbynumbers"
+  og-site-name: "Wishocracy"
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+    page-footer:
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
+      center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
+      right: "[Wishocracy.org](https://wishocracy.org)"
+    include-in-footer:
+      - text: |
+          <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
+            <p style="margin: 0.5rem 0;">
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
+              <a href="https://wishocracy.org" style="color: #8b7355;">Wishocracy.org</a>
+            </p>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+              <a href="https://dih.earth" style="color: #8b7355;">Decentralized Institutes of Health</a>
+            </p>
+          </div>
+    include-in-header:
+      - text: |
+          <!-- Icons -->
+          <link rel="icon" href="assets/icons/favicon.ico">
+          <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+          <!-- Google Analytics -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8PZYCKQBTY');
+          </script>
+
+          <!-- Hypothesis for inline comments -->
+          <script src="https://hypothes.is/embed.js" async></script>
+
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+          <!-- Social Media / Open Graph -->
+          <meta property="og:image" content="https://wishocracy.org/assets/wishocracy-og-1200x630.png">
+          <meta property="og:image:width" content="1200">
+          <meta property="og:image:height" content="630">
+          <meta property="og:image:type" content="image/png">
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:image" content="https://wishocracy.org/assets/wishocracy-og-1200x630.png">
+          <meta name="twitter:title" content="Wishocracy: Democratic Resource Allocation via Pairwise Comparison">
+          <meta name="twitter:description" content="A governance mechanism using RAPPA to aggregate citizen preferences">
+          <meta property="og:title" content="Wishocracy: Democratic Resource Allocation via Pairwise Comparison">
+          <meta property="og:description" content="A governance mechanism using RAPPA to aggregate citizen preferences">
+          <meta property="og:type" content="article">
+          <meta property="og:url" content="https://wishocracy.org">
+  pdf:
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
