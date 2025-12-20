@@ -4,7 +4,7 @@ Validate Quarto Render Output
 
 This script checks rendered HTML files for common issues:
 1. Unrendered inline Python expressions (literal `{python}` in output)
-2. Blacklisted patterns (findfont warnings, echo: false leaks, Python errors, frontmatter leaks)
+2. Blacklisted patterns (findfont warnings, echo: false leaks, Python errors, frontmatter leaks, PosixPath objects)
 3. Links to .qmd files (should be .html in rendered output)
 4. Broken internal links (relative paths that don't exist)
 5. Other rendering failures
@@ -79,6 +79,13 @@ BLACKLISTED_PATTERNS = [
         "regex": re.compile(r"<span[^>]*>[^<]*quarto-shortcode[^<]*</span>", re.IGNORECASE),
         "error_type": "QUARTO_SHORTCODE_TEXT",
         "message": "Quarto shortcode rendered as literal span text",
+        "skip_in_comments": True,
+        "skip_in_scripts": True,
+    },
+    {
+        "regex": re.compile(r"PosixPath\("),
+        "error_type": "POSIXPATH_IN_OUTPUT",
+        "message": "PosixPath object leaked into rendered output (should be converted to string)",
         "skip_in_comments": True,
         "skip_in_scripts": True,
     },
@@ -404,6 +411,11 @@ def main():
         print("     Check that all referenced files were rendered")
         print("     Verify that relative paths are correct")
         print("     Ensure that directory links have an index.html file")
+    if "POSIXPATH_IN_OUTPUT" in errors_by_type:
+        print("   - PosixPath in output: A pathlib.PosixPath object was not converted to string")
+        print("     Find the source QMD file and convert Path objects to strings using str()")
+        print("     Example: output_path = str(get_figure_output_path('file.png'))")
+        print("     Or use f-strings: f'{path}' instead of just passing the Path object")
 
     return 1
 
