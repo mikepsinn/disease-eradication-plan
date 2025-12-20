@@ -2,6 +2,7 @@
 #| label: fig-matrix-aggregation
 #| fig-cap: 'RAPPA Matrix Aggregation Process. Individual sparse pairwise comparison matrices (each citizen evaluates only a few random pairs) are aggregated via geometric mean. The eigenvector method extracts a global priority vector from the aggregated matrix, synthesizing collective preferences from distributed judgments.'
 #| echo: false
+#| output: false
 
 import numpy as np
 import matplotlib.pyplot as plt

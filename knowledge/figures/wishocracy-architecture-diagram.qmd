@@ -1,5 +1,6 @@
 ```{python}
 #| echo: false
+#| output: false
 import graphviz
 from pathlib import Path
 from IPython.display import Image as IPImage, display
