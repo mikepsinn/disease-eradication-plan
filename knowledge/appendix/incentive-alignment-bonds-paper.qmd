@@ -339,11 +339,11 @@ Similar analysis applies to other Olsonian programs:
 
 The empirical criterion is straightforward: if a program's beneficiaries are concentrated, its costs are diffuse, and rigorous cost-benefit analysis shows $NSV_{source} < NSV_{target}$, reallocation is welfare-improving. In the clearest cases, where $NSV_{source} \leq 0$, the source program is actively harmful and reallocation is unambiguously beneficial. But even programs with modestly positive NSV are appropriate sources if the target has much higher value. The IAB mechanism does not require moral judgment about the source program, only comparative measurement.
 
-@fig-spending-bcr-scatter visualizes this systematic misallocation as a scatter plot, while @fig-olsonian-quadrants categorizes programs into four quadrants based on their NSV and funding levels. The visualizations make clear that under rational allocation, high-BCR programs receive high funding (upper-right quadrant). Instead, we observe the opposite: high-BCR programs cluster in the "UNDERINVESTED" region while low/negative-BCR programs are "OVERINVESTED."
-
 {{< include ../figures/scatter-spending-vs-bcr.qmd >}}
 
 {{< include ../figures/quadrant-olsonian-misallocation.qmd >}}
+
+@fig-spending-bcr-scatter visualizes this systematic misallocation as a scatter plot, while @fig-olsonian-quadrants categorizes programs into four quadrants based on their NSV and funding levels. These visualizations make clear that under rational allocation, high-BCR programs receive high funding (upper-right quadrant). Instead, we observe the opposite: high-BCR programs cluster in the "UNDERINVESTED" region while low/negative-BCR programs are "OVERINVESTED."
 
 ### Relation to Existing Literature
 
@@ -543,11 +543,11 @@ $$ {#eq-legacy-functional}
 
 where $S_0$ is baseline status and $\lambda > 0$ captures the marginal status gain from higher scores (measured by metrics such as Wikipedia article length, think tank fellowships, speaking invitations, historical assessments).
 
-**The transformation does not change what politicians optimize; it changes what optimizing points at.** Same selfish utility maximization, radically different equilibrium outcome. This is the core mechanism design contribution: we align private incentives with public welfare not by appealing to altruism, but by redirecting self-interest. The diagrams below illustrate this transformation (compare @fig-utility-pre-iab with @fig-utility-post-iab).
-
 {{< include ../figures/diagram-utility-function-pre-iab.qmd >}}
 
 {{< include ../figures/diagram-utility-function-post-iab.qmd >}}
+
+**The transformation does not change what politicians optimize; it changes what optimizing points at.** Same selfish utility maximization, radically different equilibrium outcome. This is the core mechanism design contribution: we align private incentives with public welfare not by appealing to altruism, but by redirecting self-interest. The diagrams above illustrate this transformation (compare @fig-utility-pre-iab with @fig-utility-post-iab).
 
 ### Numerical Calibration and Parameter Ranges
 
