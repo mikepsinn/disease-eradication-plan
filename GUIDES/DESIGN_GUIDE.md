@@ -350,13 +350,9 @@ Create diagrams as `.qmd` files with Python code blocks (same as charts):
 ```python
 #| echo: false
 import graphviz
-from pathlib import Path
 from IPython.display import Image as IPImage, display
 
-from dih_models.plotting.graphviz_helper import (
-    setup_graphviz_style,
-    render_graphviz_with_watermark
-)
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create diagram
 dot = graphviz.Digraph(comment='Your Diagram Description', format='png')
