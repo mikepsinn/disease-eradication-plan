@@ -45,6 +45,20 @@ class ValidationError:
 
 BLACKLISTED_PATTERNS = [
     {
+        "regex": re.compile(r"<pre><code>[^<]*\$[^<]*</code></pre>", re.DOTALL),
+        "error_type": "LATEX_IN_CODE_BLOCK",
+        "message": "LaTeX math ($ or $$) found in <pre><code> block - should be rendered as math, not code",
+        "skip_in_comments": True,
+        "skip_in_scripts": False,
+    },
+    {
+        "regex": re.compile(r"<pre><code>[^<]*(\\mathbf|\\text\{|\\alpha|\\beta|\\gamma|\\sum|\\int|\\frac)[^<]*</code></pre>", re.DOTALL),
+        "error_type": "LATEX_COMMANDS_IN_CODE",
+        "message": "LaTeX commands found in <pre><code> block - math should be rendered, not shown as code",
+        "skip_in_comments": True,
+        "skip_in_scripts": False,
+    },
+    {
         "regex": re.compile(r"findfont:", re.IGNORECASE),
         "error_type": "FINDFONT_WARNING",
         "message": "Matplotlib font warning in output",
