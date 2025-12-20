@@ -22,9 +22,9 @@ BILLION = 1_000_000_000
 # --- Data (annual costs in millions) ---
 
 programs = [
-    'Decentralized Drug Assessment Framework (Lean Ecosystem)',
+    'Decentralized Drug Assessment\nFramework (Lean Ecosystem)',
     'Cancer Moonshot Initiative',
-    'NIH "All of Us" Research Program',
+    'NIH "All of Us"\nResearch Program',
     'National Cancer Institute (NCI)'
 ]
 costs = [
@@ -88,7 +88,7 @@ for i, (cost, mult) in enumerate(zip(costs, multipliers)):
 # --- Styling ---
 
 ax.set_title(
-    'Decentralized Drug Assessment Framework Cost vs. Other Federal Health Programs',
+    'Decentralized Drug Assessment Framework Cost\nvs. Other Federal Health Programs',
     fontsize=34, fontweight='bold',
     color=COLOR_BLACK, pad=25
 )
