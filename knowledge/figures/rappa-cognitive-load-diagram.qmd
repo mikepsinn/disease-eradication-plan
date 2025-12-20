@@ -19,28 +19,28 @@ items = [
 
 # -- Subgraph: Traditional Voting (Overload) --
 with dot.subgraph(name='cluster_traditional') as c:
-    c.attr(label='Traditional Budgeting: Choice Overload (n >> 7±2)', style='dashed', color='red')
-    c.node('Citizen1', 'Citizen', shape='circle', style='filled', fillcolor='lightyellow', fontsize='10')
+    c.attr(label='Traditional Budgeting: Choice Overload (n >> 7±2)', style='dashed', color='black')
+    c.node('Citizen1', 'Citizen', shape='circle', style='filled', fillcolor='white', fontsize='10', color='black')
 
     # Create many individual item nodes
     for i, item in enumerate(items):
         node_id = f'item{i}'
-        c.node(node_id, item, shape='box', style='filled', fillcolor='lightgrey', fontsize='8', width='0.6', height='0.3')
-        # Connect all items to citizen with red overwhelming edges
-        c.edge('Citizen1', node_id, color='red', penwidth='0.5', arrowsize='0.5')
+        c.node(node_id, item, shape='box', style='filled', fillcolor='white', fontsize='8', width='0.6', height='0.3', color='black')
+        # Connect all items to citizen with thin dashed edges (shows overwhelm)
+        c.edge('Citizen1', node_id, color='black', style='dashed', penwidth='0.5', arrowsize='0.5')
 
 # -- Subgraph: RAPPA (Flow) --
 with dot.subgraph(name='cluster_rappa') as c:
-    c.attr(label='Wishocracy (RAPPA): Tractable Pairwise (n = 2 < 7±2)', style='solid', color='green')
-    c.node('Citizen2', 'Citizen', shape='circle', style='filled', fillcolor='lightgreen', fontsize='10')
+    c.attr(label='Wishocracy (RAPPA): Tractable Pairwise (n = 2 < 7±2)', style='solid', color='black', penwidth='2')
+    c.node('Citizen2', 'Citizen', shape='circle', style='filled', fillcolor='black', fontcolor='white', fontsize='10', color='black')
 
     # Just two options
-    c.node('Park', 'Park', shape='box', style='filled,rounded', fillcolor='lightblue', fontsize='9')
-    c.node('Potholes', 'Potholes', shape='box', style='filled,rounded', fillcolor='lightblue', fontsize='9')
+    c.node('Park', 'Park', shape='box', style='filled,rounded', fillcolor='white', fontsize='9', color='black')
+    c.node('Potholes', 'Potholes', shape='box', style='filled,rounded', fillcolor='white', fontsize='9', color='black')
 
-    # Clean pairwise edges
-    c.edge('Citizen2', 'Park', color='green', penwidth='1.0')
-    c.edge('Citizen2', 'Potholes', color='green', penwidth='1.0')
+    # Clean pairwise edges (solid, thicker to show clarity)
+    c.edge('Citizen2', 'Park', color='black', penwidth='1.5')
+    c.edge('Citizen2', 'Potholes', color='black', penwidth='1.5')
 
 render_graphviz_with_watermark(dot, 'rappa-cognitive-load-diagram')
 ```

@@ -12,45 +12,45 @@ setup_graphviz_style(dot)
 
 # -- Representative Democracy (Top): Bottleneck --
 with dot.subgraph(name='cluster_repdem') as c:
-    c.attr(label='Representative Democracy: Information Bottleneck', style='dashed', color='red')
+    c.attr(label='Representative Democracy: Information Bottleneck', style='dashed', color='black')
 
     # Wide preference space (multiple issues)
     with c.subgraph(name='cluster_repdem_prefs') as prefs:
         prefs.attr(rank='same')
         for i, issue in enumerate(['Healthcare', 'Education', 'Defense', 'Infrastructure', 'Environment']):
-            prefs.node(f'repdem_pref_{i}', issue, shape='box', style='filled', fillcolor='lightblue', fontsize='8')
+            prefs.node(f'repdem_pref_{i}', issue, shape='box', style='filled', fillcolor='white', fontsize='8', color='black')
 
-    # Bottleneck: single vote
-    c.node('repdem_vote', 'Single Vote\n(Candidate A, B, or C)', shape='diamond', style='filled', fillcolor='#ffcccc', fontsize='9', width='2.0')
+    # Bottleneck: single vote (black fill for emphasis on bottleneck)
+    c.node('repdem_vote', 'Single Vote\n(Candidate A, B, or C)', shape='diamond', style='filled', fillcolor='black', fontcolor='white', fontsize='9', width='2.0', color='black')
 
-    # Connect preferences to bottleneck
+    # Connect preferences to bottleneck (dashed to show constraint)
     for i in range(5):
-        c.edge(f'repdem_pref_{i}', 'repdem_vote', color='red', penwidth='0.8')
+        c.edge(f'repdem_pref_{i}', 'repdem_vote', color='black', style='dashed', penwidth='0.8')
 
     # Output: policy (with information loss)
-    c.node('repdem_policy', 'Policy Outcome\n(High Information Loss)', shape='box', style='filled,rounded', fillcolor='#ffaaaa', fontsize='9')
-    c.edge('repdem_vote', 'repdem_policy', color='red', penwidth='2.0', label='C ≈ 0 bits', fontsize='7')
+    c.node('repdem_policy', 'Policy Outcome\n(High Information Loss)', shape='box', style='filled,rounded,dashed', fillcolor='white', fontsize='9', color='black')
+    c.edge('repdem_vote', 'repdem_policy', color='black', penwidth='2.0', label='C ≈ 0 bits', fontsize='7')
 
 # -- RAPPA (Bottom): Parallel Channels --
 with dot.subgraph(name='cluster_rappa') as c:
-    c.attr(label='RAPPA: High-Bandwidth Parallel Channels', style='solid', color='green')
+    c.attr(label='RAPPA: High-Bandwidth Parallel Channels', style='solid', color='black', penwidth='2')
 
     # Wide preference space (same issues)
     with c.subgraph(name='cluster_rappa_prefs') as prefs:
         prefs.attr(rank='same')
         for i, issue in enumerate(['Healthcare', 'Education', 'Defense', 'Infrastructure', 'Environment']):
-            prefs.node(f'rappa_pref_{i}', issue, shape='box', style='filled', fillcolor='lightblue', fontsize='8')
+            prefs.node(f'rappa_pref_{i}', issue, shape='box', style='filled', fillcolor='white', fontsize='8', color='black')
 
     # Multiple pairwise channels (aggregation node)
-    c.node('rappa_agg', 'Pairwise\nAggregation\n(10 channels)', shape='ellipse', style='filled', fillcolor='lightgreen', fontsize='9', width='1.8')
+    c.node('rappa_agg', 'Pairwise\nAggregation\n(10 channels)', shape='ellipse', style='filled', fillcolor='white', fontsize='9', width='1.8', color='black', penwidth='2')
 
-    # Connect preferences to aggregation with multiple edges
+    # Connect preferences to aggregation with multiple edges (solid, showing flow)
     for i in range(5):
-        c.edge(f'rappa_pref_{i}', 'rappa_agg', color='green', penwidth='0.8')
+        c.edge(f'rappa_pref_{i}', 'rappa_agg', color='black', penwidth='0.8')
 
-    # Output: policy (with preserved information)
-    c.node('rappa_policy', 'Policy Outcome\n(Preserved Intensity)', shape='box', style='filled,rounded', fillcolor='#aaffaa', fontsize='9')
-    c.edge('rappa_agg', 'rappa_policy', color='green', penwidth='2.0', label='C ∝ N·c̄·H(S)', fontsize='7')
+    # Output: policy (with preserved information) - solid border for emphasis
+    c.node('rappa_policy', 'Policy Outcome\n(Preserved Intensity)', shape='box', style='filled,rounded', fillcolor='white', fontsize='9', color='black', penwidth='2')
+    c.edge('rappa_agg', 'rappa_policy', color='black', penwidth='2.0', label='C ∝ N·c̄·H(S)', fontsize='7')
 
 render_graphviz_with_watermark(dot, 'rappa-information-flow-diagram')
 ```
