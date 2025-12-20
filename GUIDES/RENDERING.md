@@ -36,49 +36,65 @@ quarto render
 ### 3. Wishocracy Paper
 **Config**: `_quarto-wishocracy.yml`
 **Output**: `_site/wishocracy/`
-**Site**: https://wishocracy.org
+**Site**: https://paper.wishocracy.org
 
-Renders the Wishocracy academic paper as a standalone document.
+Renders the Wishocracy academic paper as a standalone document with the paper as the landing page.
 
 ```bash
-# Use the dedicated script
+# Use the dedicated script (recommended)
 python scripts/render-wishocracy.py
 
-# Or manually
-cp _quarto-wishocracy.yml _quarto.yml
-quarto render
+# Manual process (for reference):
+# 1. Copy paper to root: cp knowledge/appendix/wishocracy-paper.qmd index.qmd
+# 2. Update paths in index.qmd: ../ -> knowledge/
+# 3. Copy config: cp _quarto-wishocracy.yml _quarto.yml
+# 4. Render: quarto render
 ```
 
+**How it works**:
+- The render script copies `wishocracy-paper.qmd` to `index.qmd` at root (creating the landing page)
+- Relative paths are automatically updated (e.g., `../figures/` becomes `knowledge/figures/`)
+- Renders to `index.html` (landing page) and `index.pdf` (download)
+- Paper is the first thing visitors see at https://paper.wishocracy.org
+
 **Features**:
+- Paper serves as the site landing page
 - Standalone HTML and PDF versions
-- **PDF download button** in navbar for easy access
+- **PDF download button** in navbar pointing to `/index.pdf`
 - Automatically copies output to `../wishocracy/public/paper/` for deployment
 - Includes all 7 RAPPA diagrams
 - Full bibliography with proper references
-- Direct PDF URL: https://paper.wishocracy.org/knowledge/appendix/wishocracy-paper.pdf
 
 ### 4. Incentive Alignment Bonds Paper
 **Config**: `_quarto-iab.yml`
 **Output**: `_site/iab/`
 **Site**: https://iab.dih.earth
 
-Renders the IAB academic paper as a standalone document.
+Renders the IAB academic paper as a standalone document with the paper as the landing page.
 
 ```bash
-# Use the dedicated script
+# Use the dedicated script (recommended)
 python scripts/render-iab.py
 
-# Or manually
-cp _quarto-iab.yml _quarto.yml
-quarto render
+# Manual process (for reference):
+# 1. Copy paper to root: cp knowledge/appendix/incentive-alignment-bonds-paper.qmd index.qmd
+# 2. Update paths in index.qmd: ../ -> knowledge/
+# 3. Copy config: cp _quarto-iab.yml _quarto.yml
+# 4. Render: quarto render
 ```
 
+**How it works**:
+- The render script copies `incentive-alignment-bonds-paper.qmd` to `index.qmd` at root (creating the landing page)
+- Relative paths are automatically updated (e.g., `../figures/` becomes `knowledge/figures/`)
+- Renders to `index.html` (landing page) and `index.pdf` (download)
+- Paper is the first thing visitors see at https://iab.dih.earth
+
 **Features**:
+- Paper serves as the site landing page
 - Standalone HTML and PDF versions
-- **PDF download button** in navbar for easy access
+- **PDF download button** in navbar pointing to `/index.pdf`
 - Includes all IAB diagrams (spending scatter, Olsonian quadrants, utility function diagrams, architecture)
 - Full bibliography with proper references
-- Direct PDF URL: https://iab.dih.earth/knowledge/appendix/incentive-alignment-bonds-paper.pdf
 
 ## Quick Reference
 

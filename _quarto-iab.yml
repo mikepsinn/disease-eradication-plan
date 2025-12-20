@@ -35,7 +35,7 @@ website:
 execute:
   fig-path: "knowledge/figures/"
   cache: false
-  freeze: false
+  freeze: auto  # Only re-run cells when content changes
   daemon: 300
   daemon-restart: false
   env:

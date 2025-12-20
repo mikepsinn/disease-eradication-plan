@@ -57,9 +57,6 @@ jobs:
           restore-keys: |
             quarto-freeze-
 
-      - name: Clear freeze cache
-        run: rm -rf _freeze
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
