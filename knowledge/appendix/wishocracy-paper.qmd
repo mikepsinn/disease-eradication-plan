@@ -290,16 +290,20 @@ $$
 ### **3.5.3 Principal-Agent Cost Elimination**
 
 Total Governance Loss $L_{Gov}$ can be decomposed into Aggregation Loss (failure to aggregate preferences) and Agency Loss (corruption/misalignment).
+
 $$
 L_{Gov} = L_{Agg} + L_{Agency}
 $$
+
 *   **RepDem:** suffer from high $L_{Agency}$. Politicians maximize independent utility functions (re-election, donor favoring) rather than $W$. Deviation can be arbitrarily large.
-    
-    Formally, let the voter's utility be $U_{voter}(\mathbf{x}) = f(\text{Health}, \text{Wealth}, \text{Security})$ over allocation $\mathbf{x}$. The politician's utility is:
-    $$
-    U_{pol}(\mathbf{x}) = \alpha U_{voter}(\mathbf{x}) + \beta U_{donors}(\mathbf{x}) + \gamma P(\text{ReElection} | \mathbf{x})
-    $$
-    where $\beta, \gamma \gg 0$. Since donor interests ($U_{donors}$) often conflict with public welfare ($U_{voter}$) (e.g., lower regulation vs. clean air), and re-election depends on short-term signaling rather than long-term outcomes, $\text{argmax}(U_{pol}) \neq \text{argmax}(U_{voter})$.
+
+Formally, let the voter's utility be $U_{voter}(\mathbf{x}) = f(\text{Health}, \text{Wealth}, \text{Security})$ over allocation $\mathbf{x}$. The politician's utility is:
+
+$$
+U_{pol}(\mathbf{x}) = \alpha U_{voter}(\mathbf{x}) + \beta U_{donors}(\mathbf{x}) + \gamma P(\text{ReElection} | \mathbf{x})
+$$
+
+where $\beta, \gamma \gg 0$. Since donor interests ($U_{donors}$) often conflict with public welfare ($U_{voter}$) (e.g., lower regulation vs. clean air), and re-election depends on short-term signaling rather than long-term outcomes, $\text{argmax}(U_{pol}) \neq \text{argmax}(U_{voter})$.
 
 *   **Wishocracy:** $L_{Agency} \to 0$. The mechanism is direct; there is no agent to bribe.
 *   **Constraint:** Wishocracy introduces $L_{Coordination}$ (the difficulty of designing solutions), which is why the **service provider** layer (Appendix A) re-introduces agents *only* for implementation, not for priority setting, minimizing the scope of potential agency loss to technical execution rather than value judgment.
