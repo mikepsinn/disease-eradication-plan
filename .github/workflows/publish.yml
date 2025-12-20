@@ -137,6 +137,79 @@ jobs:
           path: _site/economics
           retention-days: 1
 
+      - name: Install LaTeX (for PDF generation)
+        run: quarto install tinytex
+
+      - name: Render Book PDF (reuses HTML cache)
+        run: python scripts/render-book-pdf.py
+        timeout-minutes: 20
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: '_book/warondisease/*.pdf'
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Render Book EPUB (reuses PDF cache)
+        run: python scripts/render-book-epub.py
+        timeout-minutes: 30
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-epub
+          path: '_book/warondisease/*.epub'
+          retention-days: 30
+          if-no-files-found: error
+
+  build-papers:
+    runs-on: ubuntu-latest
+    # needs: lint
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX (for PDF generation)
+        run: quarto install tinytex
+
       - name: Render Wishocracy Paper (for Netlify deployment)
         run: python scripts/render-wishocracy.py
         timeout-minutes: 10
@@ -188,33 +261,6 @@ jobs:
           name: iab-site
           path: _site/iab
           retention-days: 1
-
-      - name: Install LaTeX (for PDF generation)
-        run: quarto install tinytex
-
-      - name: Render Book PDF (reuses HTML cache)
-        run: python scripts/render-book-pdf.py
-        timeout-minutes: 20
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: book-pdf
-          path: '_book/warondisease/*.pdf'
-          retention-days: 30
-          if-no-files-found: error
-
-      - name: Render Book EPUB (reuses PDF cache)
-        run: python scripts/render-book-epub.py
-        timeout-minutes: 30
-
-      - name: Upload EPUB artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: book-epub
-          path: '_book/warondisease/*.epub'
-          retention-days: 30
-          if-no-files-found: error
 
   # build-pdf:
   #   runs-on: ubuntu-latest
@@ -321,7 +367,7 @@ jobs:
   deploy-wishocracy:
     name: Deploy Wishocracy Paper to Netlify
     runs-on: ubuntu-latest
-    needs: build-html
+    needs: build-papers
     steps:
       - name: Download Wishocracy Paper artifact
         uses: actions/download-artifact@v4
@@ -347,7 +393,7 @@ jobs:
   deploy-iab:
     name: Deploy IAB Paper to Netlify
     runs-on: ubuntu-latest
-    needs: build-html
+    needs: build-papers
     steps:
       - name: Download IAB Paper artifact
         uses: actions/download-artifact@v4
