@@ -3,8 +3,8 @@ project:
   output-dir: _site/wishocracy
   execute-dir: project
   render:
-    # Main paper
-    - knowledge/appendix/wishocracy-paper.qmd
+    # Paper is copied to index.qmd by render script
+    - index.qmd
 
 profiles:
   default:
@@ -20,12 +20,15 @@ website:
   navbar:
     left:
       - text: "Paper"
-        href: knowledge/appendix/wishocracy-paper.qmd
+        href: /
       - text: "App"
         href: https://wishocracy.org
     right:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: /index.pdf
       - text: "References"
-        href: knowledge/appendix/wishocracy-paper.qmd#references
+        href: /#references
       - text: "DIH"
         href: https://dih.earth
       - text: "War on Disease"

@@ -236,3 +236,98 @@ def prepare_book(verbose: bool = True) -> bool:
         return False
 
     return True
+
+
+def prepare_paper_index(paper_path: str, verbose: bool = True) -> bool:
+    """
+    Copy a paper QMD file to index.qmd and update relative paths.
+
+    For papers in knowledge/appendix/, when copying to root:
+    - ../ becomes knowledge/ (one level up from appendix/ = knowledge/)
+    - ../../ becomes empty string (two levels up from appendix/ = root)
+
+    Args:
+        paper_path: Relative path to paper from project root (e.g., 'knowledge/appendix/wishocracy-paper.qmd')
+        verbose: Whether to print status messages
+
+    Returns:
+        True if successful, False otherwise
+    """
+    project_root = _find_project_root()
+
+    paper_qmd = project_root / paper_path
+    index_qmd = project_root / "index.qmd"
+
+    if not paper_qmd.exists():
+        if verbose:
+            print(f"[ERROR] Missing {paper_qmd.relative_to(project_root)}", file=sys.stderr)
+            print("        Unable to prepare paper index.", file=sys.stderr)
+        return False
+
+    if verbose:
+        print(f"[*] Copying {paper_qmd.relative_to(project_root)} -> index.qmd", flush=True)
+
+    try:
+        with open(paper_qmd, encoding="utf-8") as f:
+            content = f.read()
+
+        # Update relative paths when copying from knowledge/appendix/ to root:
+        # - ../../ becomes empty (two levels up from appendix/ = root)
+        # - ../ becomes knowledge/ (one level up from appendix/ = knowledge/)
+        # Must replace ../../ first to avoid double replacement
+
+        # Replace ../../ with empty string (goes to root)
+        content = re.sub(r"\.\./\.\./", "", content)
+        # Replace remaining ../ with knowledge/ (goes to knowledge/)
+        content = re.sub(r"\.\./", "knowledge/", content)
+
+        with open(index_qmd, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        return True
+    except Exception as e:
+        if verbose:
+            print(f"[ERROR] Failed to copy paper: {e}", file=sys.stderr)
+        return False
+
+
+def prepare_wishocracy(verbose: bool = True) -> bool:
+    """
+    Prepare everything needed for wishocracy paper rendering:
+    - Copy _quarto-wishocracy.yml to _quarto.yml
+    - Copy wishocracy-paper.qmd to index.qmd
+
+    Args:
+        verbose: Whether to print status messages
+
+    Returns:
+        True if successful, False otherwise
+    """
+    if not prepare_quarto_config("_quarto-wishocracy.yml", verbose):
+        return False
+
+    if not prepare_paper_index("knowledge/appendix/wishocracy-paper.qmd", verbose):
+        return False
+
+    return True
+
+
+def prepare_iab(verbose: bool = True) -> bool:
+    """
+    Prepare everything needed for IAB paper rendering:
+    - Copy _quarto-iab.yml to _quarto.yml
+    - Copy incentive-alignment-bonds-paper.qmd to index.qmd
+
+    Args:
+        verbose: Whether to print status messages
+
+    Returns:
+        True if successful, False otherwise
+    """
+    if not prepare_quarto_config("_quarto-iab.yml", verbose):
+        return False
+
+    if not prepare_paper_index("knowledge/appendix/incentive-alignment-bonds-paper.qmd", verbose):
+        return False
+
+    return True

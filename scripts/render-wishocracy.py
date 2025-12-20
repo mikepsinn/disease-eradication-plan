@@ -3,9 +3,10 @@
 Render the Wishocracy paper as a standalone website.
 
 This script:
-1. Copies _quarto-wishocracy.yml to _quarto.yml
-2. Renders the site using Quarto
-3. Optionally copies output to the wishocracy submodule for deployment
+1. Copies wishocracy-paper.qmd to index.qmd (creates landing page)
+2. Copies _quarto-wishocracy.yml to _quarto.yml
+3. Renders the site using Quarto
+4. Optionally copies output to the wishocracy submodule for deployment
 """
 
 import os
@@ -13,6 +14,10 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+# Add lib directory to path
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+from quarto_prep import prepare_wishocracy
 
 
 def get_project_root():
@@ -28,9 +33,10 @@ def main():
     print("WISHOCRACY PAPER RENDERER")
     print("=" * 80)
 
-    # Step 1: Copy config
-    print("[*] Copying _quarto-wishocracy.yml -> _quarto.yml")
-    shutil.copy2("_quarto-wishocracy.yml", "_quarto.yml")
+    # Step 1: Prepare paper (copy to index.qmd) and config
+    if not prepare_wishocracy():
+        print("[ERROR] Failed to prepare wishocracy paper")
+        sys.exit(1)
 
     # Step 2: Render with Quarto
     print("=" * 80)

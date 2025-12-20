@@ -3,8 +3,8 @@ project:
   output-dir: _site/iab
   execute-dir: project
   render:
-    # Main paper
-    - knowledge/appendix/incentive-alignment-bonds-paper.qmd
+    # Paper is copied to index.qmd by render script
+    - index.qmd
 
 profiles:
   default:
@@ -20,10 +20,13 @@ website:
   navbar:
     left:
       - text: "Paper"
-        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd
+        href: /
     right:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: /index.pdf
       - text: "References"
-        href: knowledge/appendix/incentive-alignment-bonds-paper.qmd#references
+        href: /#references
       - text: "DIH"
         href: https://dih.earth
       - text: "War on Disease"
