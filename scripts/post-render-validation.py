@@ -45,9 +45,16 @@ class ValidationError:
 
 BLACKLISTED_PATTERNS = [
     {
-        "regex": re.compile(r"<pre><code>[^<]*\$[^<]*</code></pre>", re.DOTALL),
+        "regex": re.compile(r"<pre><code>[^<]*\$[^<]*(\\_|\\[a-zA-Z]|\{|_\{)[^<]*</code></pre>", re.DOTALL),
         "error_type": "LATEX_IN_CODE_BLOCK",
-        "message": "LaTeX math ($ or $$) found in <pre><code> block - should be rendered as math, not code",
+        "message": "LaTeX math with commands found in <pre><code> block - should be rendered as math, not code",
+        "skip_in_comments": True,
+        "skip_in_scripts": False,
+    },
+    {
+        "regex": re.compile(r"<pre><code>[^<]*\$\$[^<]*</code></pre>", re.DOTALL),
+        "error_type": "LATEX_DISPLAY_MATH_IN_CODE",
+        "message": "LaTeX display math ($$) found in <pre><code> block - should be rendered as math, not code",
         "skip_in_comments": True,
         "skip_in_scripts": False,
     },
