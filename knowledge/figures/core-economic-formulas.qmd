@@ -358,15 +358,17 @@ formulas_df = pd.DataFrame({
 fig = go.Figure(data=[go.Table(
     header=dict(
         values=['<b>Economic Model</b>', '<b>Core Formula</b>', '<b>Annual Value</b>', '<b>ROI/Impact</b>'],
-        fill_color='darkblue',
+        fill_color='black',
         font=dict(color='white', size=14),
-        align='left'
+        align='left',
+        line=dict(color='black', width=2)
     ),
     cells=dict(
         values=[formulas_df[col] for col in formulas_df.columns],
-        fill_color='lavender',
+        fill_color='white',
         align=['left', 'left', 'right', 'right'],
-        font=dict(size=12)
+        font=dict(size=12, color='black'),
+        line=dict(color='black', width=1)
     )
 )])
 

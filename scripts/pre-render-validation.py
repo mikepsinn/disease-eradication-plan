@@ -15,6 +15,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Unknown Quarto variables ({{< var name >}}) not defined in _variables.yml
 - Missing citations ([@citation-id]) not found in references.bib
 - _quarto.yml configuration (validates all chapter paths exist)
+- Figure files with YAML frontmatter (knowledge/figures/*.qmd should not have frontmatter)
 
 Runs automatically via _quarto.yml pre-render hook
 """
@@ -768,6 +769,31 @@ def check_inline_expressions(content: str, filepath: str):
                 )
 
 
+def check_figure_file_frontmatter(content: str, filepath: str):
+    """
+    Check that figure files (in knowledge/figures/) do not have YAML frontmatter.
+    Figure files should start directly with Python code blocks, not frontmatter.
+    Frontmatter is unnecessary and adds clutter to figure-generating scripts.
+    """
+    # Only check files in knowledge/figures/ directory
+    normalized_path = os.path.normpath(filepath)
+    if not ("knowledge" + os.sep + "figures" in normalized_path or "knowledge/figures" in normalized_path):
+        return
+
+    lines = content.split("\n")
+
+    # Check if file starts with frontmatter delimiter (---)
+    if lines and lines[0].strip() == "---":
+        errors.append(
+            ValidationError(
+                file=filepath,
+                line=1,
+                message="Figure file should not have YAML frontmatter. Remove the frontmatter section (--- ... ---) and start directly with Python code block.",
+                context="---",
+            )
+        )
+
+
 def check_quarto_variables_in_links(content: str, filepath: str):
     """
     Check for Quarto variables inside markdown link text.
@@ -1360,6 +1386,9 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     # Check for inline expressions (incompatible with Jupyter Cache)
     # DISABLED: We've disabled cache: true in Quarto configs, so inline expressions are fine
     # check_inline_expressions(content, filepath)
+
+    # Check that figure files don't have frontmatter
+    check_figure_file_frontmatter(content, filepath)
 
 
 def main():

@@ -1,8 +1,3 @@
----
-title: Wishocracy Architecture Diagram
-description: The two-layer architecture separating democratic value articulation from technocratic execution.
----
-
 ```{python}
 #| echo: false
 import graphviz
