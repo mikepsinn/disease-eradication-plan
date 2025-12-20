@@ -387,10 +387,23 @@ See examples in `knowledge/figures/`
 - Rounded box nodes
 - Proper margins for watermark clearance
 
-**`render_graphviz_with_watermark(dot, filename, output_dir=None)`** - Renders diagram:
-- Generates PNG in `knowledge/figures/` (or custom directory)
+**`render_graphviz_with_watermark(dot, filename)`** - Renders diagram:
+- Generates PNG in `knowledge/figures/` directory
 - Adds watermark (WarOnDisease.org, 11pt, bottom-right)
 - Returns path to PNG file
+
+**IMPORTANT - Correct Usage:**
+
+```python
+# ✅ CORRECT - Capture and display the result
+png_path = render_graphviz_with_watermark(dot, 'diagram-name')
+display(IPImage(str(png_path)))
+
+# ❌ WRONG - Don't call without capturing/displaying (causes Path leaks)
+render_graphviz_with_watermark(dot, 'diagram-name')
+```
+
+**Why:** Always capture the return value and display it. If you call the function without capturing the return value and it's the last expression in the cell, the Path object will leak into the rendered output.
 
 ### Graphviz Styling Tips
 

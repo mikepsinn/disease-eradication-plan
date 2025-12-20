@@ -413,9 +413,6 @@ def main():
         print("     Ensure that directory links have an index.html file")
     if "POSIXPATH_IN_OUTPUT" in errors_by_type:
         print("   - PosixPath in output: A pathlib.PosixPath object was not converted to string")
-        print("     Find the source QMD file and convert Path objects to strings using str()")
-        print("     Example: output_path = str(get_figure_output_path('file.png'))")
-        print("     Or use f-strings: f'{path}' instead of just passing the Path object")
 
     return 1
 

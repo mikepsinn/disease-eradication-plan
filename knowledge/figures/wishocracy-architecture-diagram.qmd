@@ -1,21 +1,9 @@
 ```{python}
 #| echo: false
-#| output: false
 import graphviz
-from pathlib import Path
 from IPython.display import Image as IPImage, display
-import sys
-import os
 
-# Import helper functions
-from dih_models.plotting.graphviz_helper import (
-    setup_graphviz_style,
-    render_graphviz_with_watermark
-)
-from dih_models.plotting.chart_style import get_project_root
-
-# Get project root using robust path detection
-project_root = get_project_root()
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create diagram
 dot = graphviz.Digraph(comment='Wishocracy Architecture', format='png')
@@ -56,7 +44,6 @@ dot.edge('Priorities', 'Mandate', label=' Defined By')
 dot.edge('Mandate', 'GenieDAOs', label=' Bounties For')
 
 # Render
-output_dir = project_root / 'knowledge' / 'figures'
-png_path = render_graphviz_with_watermark(dot, 'wishocracy-architecture-diagram', output_dir)
+png_path = render_graphviz_with_watermark(dot, 'wishocracy-architecture-diagram')
 display(IPImage(str(png_path)))
 ```

@@ -206,24 +206,23 @@ def create_diagram(comment="", rankdir="TD", size=None, **kwargs):
     return dot
 
 
-def render_graphviz_with_watermark(dot, filename, output_dir=None):
+def render_graphviz_with_watermark(dot, filename):
     """
     Render Graphviz diagram to PNG with watermark and metadata.
 
     Args:
         dot: graphviz.Digraph object
         filename: Base filename (without extension)
-        output_dir: Optional output directory (defaults to knowledge/figures/)
 
     Returns:
         Path to generated PNG file
-    """
-    if output_dir is None:
-        project_root = get_project_root()
-        output_dir = project_root / "knowledge" / "figures"
-    else:
-        output_dir = Path(output_dir)
 
+    Note:
+        Output is always saved to knowledge/figures/ directory.
+        This prevents Path object leaks that occur when passing output_dir explicitly.
+    """
+    project_root = get_project_root()
+    output_dir = project_root / "knowledge" / "figures"
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / filename
 

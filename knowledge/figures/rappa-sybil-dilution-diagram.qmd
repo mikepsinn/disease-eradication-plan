@@ -4,6 +4,8 @@
 #| echo: false
 
 import graphviz
+from IPython.display import Image as IPImage, display
+
 from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 dot = graphviz.Digraph(comment='Sybil Dilution Diagram', format='png')
@@ -38,5 +40,6 @@ dot.edge('Randomizer', 'Pair2', style='dashed', label='~0.1%')
 dot.edge('Randomizer', 'Pair3', style='dashed', label='~0.1%')
 dot.edge('Randomizer', 'Target', label='<1% Impact', penwidth='1.0')
 
-render_graphviz_with_watermark(dot, 'rappa-sybil-dilution')
+png_path = render_graphviz_with_watermark(dot, 'rappa-sybil-dilution')
+display(IPImage(str(png_path)))
 ```

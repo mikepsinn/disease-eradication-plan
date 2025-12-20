@@ -1,20 +1,9 @@
 ```{python}
 #| echo: false
 import graphviz
-from pathlib import Path
 from IPython.display import Image as IPImage, display
-import os
-import sys
 
-# Import helper functions
-from dih_models.plotting.graphviz_helper import (
-    setup_graphviz_style,
-    render_graphviz_with_watermark
-)
-from dih_models.plotting.chart_style import get_project_root
-
-# Get project root using robust path detection
-project_root = get_project_root()
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
 
 # Create diagram
 dot = graphviz.Digraph(comment='RAPPA Mechanism Flow', format='png')
@@ -57,8 +46,6 @@ dot.edge('Weights', 'Budget', label=' Map to $')
 
 # Render with watermark and metadata
 # This will save to knowledge/figures/rappa-mechanism-flow-diagram.png
-output_dir = project_root / 'knowledge' / 'figures'
-png_path = render_graphviz_with_watermark(dot, 'rappa-mechanism-flow-diagram', output_dir)
-
+png_path = render_graphviz_with_watermark(dot, 'rappa-mechanism-flow-diagram')
 display(IPImage(str(png_path)))
 ```
