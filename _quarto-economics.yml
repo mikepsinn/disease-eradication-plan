@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: _site/economics
   execute-dir: project
+  resources:
+    - assets/
   render:
     # Economics Analysis
     - index.qmd # ✓ Style reviewed 2025-01-15 (copied from knowledge/economics/economics.qmd)

@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: _site/iab
   execute-dir: project
+  resources:
+    - assets/
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd

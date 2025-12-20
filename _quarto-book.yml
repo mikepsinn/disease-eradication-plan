@@ -2,6 +2,8 @@ project:
   type: book
   output-dir: _book/warondisease
   execute-dir: project
+  resources:
+    - assets/
   # pre-render:
   #   - python scripts/pre-render-validation.py
   # post-render:
