@@ -100,7 +100,7 @@ book:
         - knowledge/strategy/viral-marketing.qmd # ✅ PROMOTED ~5p
         - knowledge/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
         - knowledge/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
-  appendices:
+  # appendices: Commented to get rid of the Appendix prefix in the titles
     # Essential Reading
     - part: "Essential References"
       chapters:
@@ -255,6 +255,7 @@ metadata:
   # csl: "style.csl"
 
 # Remove "Appendix" prefix from appendix chapters
+# THIS DOESN'T SEEM TO WORK SO I JUST COMMENTED THE APPENDIX LINE BELOW
 language:
   crossref-apx-prefix: ""
   section-title-appendices: ""
