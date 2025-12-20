@@ -302,7 +302,7 @@ $$
     where $\beta, \gamma \gg 0$. Since donor interests ($U_{donors}$) often conflict with public welfare ($U_{voter}$) (e.g., lower regulation vs. clean air), and re-election depends on short-term signaling rather than long-term outcomes, $\text{argmax}(U_{pol}) \neq \text{argmax}(U_{voter})$.
 
 *   **Wishocracy:** $L_{Agency} \to 0$. The mechanism is direct; there is no agent to bribe.
-*   **Constraint:** Wishocracy introduces $L_{Coordination}$ (the difficulty of designing solutions), which is why the **GenieDAO** layer (Section 3.4) re-introduces agents *only* for implementation, not for priority setting, minimizing the scope of potential agency loss to technical execution rather than value judgment.
+*   **Constraint:** Wishocracy introduces $L_{Coordination}$ (the difficulty of designing solutions), which is why the **service provider** layer (Appendix A) re-introduces agents *only* for implementation, not for priority setting, minimizing the scope of potential agency loss to technical execution rather than value judgment.
 
 # **4\. Empirical Precedents and Evidence Base**
 
@@ -384,7 +384,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Criticism:** Real policy decisions involve complex interdependencies, implementation constraints, and unintended consequences that citizens cannot evaluate.
 
-**Response:** Wishocracy explicitly separates values (what we want) from implementation (how to achieve it). Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) while experts design and evaluate implementation strategies. The GenieDAO layer allows technical assessment of proposed solutions while keeping priority-setting in democratic hands. This division of labor matches citizens' comparative advantage in welfare evaluation with experts' advantage in causal analysis.
+**Response:** Wishocracy explicitly separates values (what we want) from implementation (how to achieve it). Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) while experts design and evaluate implementation strategies. The service provider layer allows technical assessment of proposed solutions while keeping priority-setting in democratic hands. This division of labor matches citizens' comparative advantage in welfare evaluation with experts' advantage in causal analysis.
 
 ## **5.5 Legitimacy and Accountability**
 
@@ -424,11 +424,11 @@ Wishocracy addresses a fundamental challenge in democratic theory: how to aggreg
 
 The mechanism is implementable with current technology, grounded in validated theory, and supported by empirical precedents. Whether it can achieve its theoretical promise remains an open empirical question that only real-world deployment can answer.
 
-# **Appendix A: The Solution Layer (GenieDAOs)**
+# **Appendix A: The Service Provider Layer**
 
-**Important:** GenieDAOs represent a *distinct, separate layer* from the core RAPPA mechanism. While RAPPA handles democratic preference aggregation to determine *what* society should prioritize, GenieDAOs address the orthogonal question of *how* to achieve those priorities.
+**Important:** Service providers represent a *distinct, separate layer* from the core RAPPA mechanism. While RAPPA handles democratic preference aggregation to determine *what* society should prioritize, service providers address the orthogonal question of *how* to achieve those priorities.
 
-Once priorities are established through RAPPA, Wishocracy introduces this second layer for solution generation and evaluation. GenieDAOs (Decentralized Autonomous Organizations of problem-solvers) form around specific priorities to propose implementation strategies. These proposals are subject to pairwise comparison using different evaluation criteria: cost-effectiveness, feasibility, and probability of success.
+Once priorities are established through RAPPA, Wishocracy introduces this second layer for solution generation and evaluation. Service providers (which may include government agencies, private contractors, NGOs, or other qualified entities) form around specific priorities to propose implementation strategies. These proposals are subject to pairwise comparison using different evaluation criteria: cost-effectiveness, feasibility, and probability of success.
 
 This two-layer architecture embodies a fundamental division of labor:
 
@@ -436,7 +436,7 @@ This two-layer architecture embodies a fundamental division of labor:
 
 - **Layer 1 (RAPPA):** Democratic, values-based. "What should we do?" Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) based on their welfare valuations.
 
-- **Layer 2 (GenieDAOs):** Technocratic, evidence-based. "How should we do it?" Experts design and evaluate implementation strategies based on causal knowledge and empirical evidence.
+- **Layer 2 (Service Providers):** Technocratic, evidence-based. "How should we do it?" Experts design and evaluate implementation strategies based on causal knowledge and empirical evidence.
 
 This separation addresses a key criticism of technocracy (experts shouldn't determine societal values) while respecting the limits of direct democracy (citizens cannot evaluate complex implementation trade-offs). Each layer operates where its participants have comparative advantage: citizens in welfare evaluation, experts in causal analysis.
 
