@@ -1,0 +1,204 @@
+---
+title: Treaty Feasibility & Cost Analysis
+description: Real-world evidence that getting a global treaty signed costs $90M, not billions
+published: true
+tags:
+  - treaty
+  - diplomacy
+  - cost-analysis
+  - feasibility
+  - history
+---
+
+"Getting 195 countries to agree costs billions and takes forever."
+
+No. Getting countries to *implement* things costs billions. Getting them to *sign papers* is surprisingly cheap. Humans love signing papers. It makes them feel important.
+
+## What Treaties Actually Cost
+
+NGO campaign budgets are rarely disclosed publicly, but we know enough about organizational structure and government funding to establish that treaty campaigns operate on remarkably modest resources:
+
+| Treaty | Timeline | Campaign Structure | Government Support | Outcome |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Ottawa Treaty](../references.qmd#icbl-ottawa-treaty) (Landmines, 1997)** | 14 months (Oct '96 - Dec '97) | [ICBL](../references.qmd#icbl-ottawa-treaty): Started with **1 staff member** (Jody Williams), grew to 1,000+ orgs in 60 countries | Canada: $100M CAD Landmine Fund over 10 years; International donors: $169M in 1997 for mine action | 122 states signed; Nobel Peace Prize 1997 |
+| **[Cluster Munitions](../references.qmd#cluster-munitions-convention-2008) (2008)** | ~2 years (Feb '07 - Dec '08) | [CMC Coalition](../references.qmd#cluster-munitions-convention-2008) of NGOs; Core Group of 7 governments | Norway: Funded UNIDIR research project 2004-2008; hosted Oslo conferences | 94 states signed; 1.4M stockpiled munitions destroyed |
+| **[Arms Trade Treaty](../references.qmd#arms-trade-treaty-2013) (2013)** | 10 years (2003-2013) | [Control Arms](../references.qmd#control-arms-coalition): 100+ organizations (Oxfam, Amnesty); published 50+ reports | UK, Australia led diplomatic process; UN conferences | Started with 3 supporting govts → 130 signatories |
+| **[Nuclear Ban](../references.qmd#ican-nuclear-ban-treaty) (TPNW, 2017)** | 10 years (2007-2017) | [ICAN](../references.qmd#ican-nuclear-ban-treaty): **5 staff** (3 full-time + 2 part-time) in Geneva coordinating 468 partner orgs | Norwegian govt grant funded Geneva office (2011); Austria hosted conferences | 122 states voted yes; Nobel Peace Prize 2017 |
+
+**Pattern**: These campaigns succeed with **tiny staff** (1-5 people) coordinating large coalitions. The NGO campaign costs are minimal - a few million dollars per year at most. Government support for conferences and delegate travel adds another $10-30M. Total "getting the treaty signed" costs: **$15-50M over the campaign period**.
+
+### Inflation-Adjusted to 2024 Dollars
+
+Using [BLS CPI data](https://www.bls.gov/data/inflation_calculator.htm):
+
+| Treaty (Year) | Original Cost Estimate | 2024 Dollars | Inflation Multiplier |
+|:--------------|:----------------------|:-------------|:---------------------|
+| Ottawa (1997) | $15-25M | **$30-50M** | ~2.0x |
+| Cluster Munitions (2008) | $15-25M | **$23-38M** | ~1.5x |
+| Arms Trade Treaty (2013) | $20-30M | **$27-41M** | ~1.35x |
+| Nuclear Ban (2017) | $10-20M | **$13-25M** | ~1.25x |
+
+**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD) for the "getting it signed" phase.
+
+That's **less than 0.2%** of the implementation cost. Banning landmines: ~$40M in campaigning and diplomacy (2024 dollars), [$5B+ to actually remove them](../references.qmd#icbl-ottawa-treaty). The signing part is the cheap part.
+
+## Cost for a 1% Health Treaty
+
+This one touches military budgets - the sacred cow of national sovereignty. Governments get nervous when you suggest moving their explosion money. So budget 3-4× what landmines cost.
+
+| Phase | Duration | Estimated Cost | Who Pays |
+| :--- | :--- | :--- | :--- |
+| **1. Pre-negotiations**<br>(Coalition building, expert drafts) | 18–24 months | **$8–12M** | Philanthropy (Gates, Open Philanthropy, etc.) + Champion Governments |
+| **2. Global Campaign**<br>(Platform, 3.5% consent, media) | 3–5 years | **$45–80M** | Philanthropy + Crowd-funding |
+| **3. Diplomatic Process**<br>(Conferences, delegate travel) | 18–30 months | **$15–25M** | Host Governments + UN Trust Fund |
+| **4. Ratification Drive**<br>(Legal reviews, parliamentary aid) | 2–4 years | **$5–8M** | Philanthropy |
+| **5. Contingency**<br>(Opposition management) | Ongoing | **$10–15M** | Strategic Comms / Lobbying |
+
+**Total: $90–140 Million**
+
+### The Math
+
+Signing the treaty: ~$90M.
+What the treaty unlocks: $27 Billion/year. Forever.
+
+The diplomatic process costs ~0.3% of a single year's funding. Three days of the future annual flow. You're buying a $27B/year annuity for $90M. That's a 300:1 return on paperwork.
+
+## How to Make Governments Sign Things
+
+Politicians move when they see (a) voters demanding it and (b) political safety. Give them both:
+
+1. **Prove public demand**: Get [3.5% of the population](../references.qmd#3-5-rule) (280M people) to say "yes" with verified identity. Harvard researcher Erica Chenoweth found that [every nonviolent campaign](../references.qmd#3-5-rule) with 3.5%+ participation succeeded. That's not activism - that's a mandate. Hard to ignore 280 million verified humans.
+2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover. Give them studies to wave around.
+
+### Timeline to "Governments Can't Ignore This"
+
+With ~$60M in seed funding, we can reach "Treaty-Ready" status in **2–3 years**:
+
+- **Platform:** 280M verified supporters (3.5% threshold)
+- **Modeling:** Country-by-country impact analysis
+- **Coalition:** 120+ supportive NGOs and 5-10 champion governments
+
+Once these assets exist, formal negotiations become inevitable.
+
+## Conclusion
+
+We aren't trying to buy the treaty. We are buying the **machinery** that makes the treaty inevitable. And that machinery costs about $90M, a rounding error compared to the $140 Trillion/year problem we are solving.
+
+## Political Success Probability: Economic Analysis {#sec-political-success-probability}
+
+For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
+
+**Key insight**: Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}}x more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY), the gold standard of global health interventions.
+
+### Historical Precedents for International Financial Commitments
+
+| Commitment | Target | Actual Compliance | Duration | Notes |
+|:-----------|:-------|:------------------|:---------|:------|
+| **0.7% ODA Target** | 0.7% of GNI to foreign aid | 5-6 of ~30 DAC countries (~20%) | 50+ years | Only Denmark, Luxembourg, Norway, Sweden, Germany consistently meet it |
+| **Kyoto Protocol** | Binding emissions targets | ~55% coverage initially | 1997-2012 | US never ratified, Canada withdrew, many missed targets |
+| **Paris Agreement NDCs** | Non-binding pledges | ~15-25% on track | 2015-present | High adoption (195 countries) but low compliance |
+| **NATO 2% GDP Defense** | 2% of GDP on defense | ~10 of 31 members (~32%) | Since 2014 | Even with security pressure, most miss target |
+| **EU Stability Pact** | 3% deficit, 60% debt | Routinely violated | Since 1997 | France, Germany themselves violated it |
+
+**Pattern**: Binding international financial commitments requiring ongoing budget reallocation achieve **<25% meaningful compliance**, even with strong institutional pressure.
+
+### Why a 1% Treaty is Harder Than Most Precedents
+
+1. **Touches military budgets**: The most politically sensitive area of national sovereignty
+2. **Requires ongoing annual allocation**: Not a one-time action like banning a weapon
+3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine
+4. **Novel mechanism**: Military→health reallocation is unprecedented
+5. **Coordination problem**: Benefits require critical mass of participants
+
+### Why a 1% Treaty Might Beat the Odds
+
+1. **Self-funding mechanism**: Creates health dividends that exceed the "cost"
+2. **Bipartisan appeal**: Health spending polls better than military across political spectrum
+3. **Referendum pathway**: Can bypass government resistance through direct democracy
+4. **Visible beneficiaries**: 150,000 daily disease deaths creates moral urgency
+5. **Network effects**: Each signing country makes the next more likely
+
+### Probability Estimates
+
+Based on this analysis, economists would find the following defensible:
+
+| Scenario | Probability | Rationale |
+|:---------|:------------|:----------|
+| **Pessimistic floor** | 0.1% | Near-impossible - complete political gridlock, competing global crises |
+| **Conservative central** | {{< var political_success_probability >}} | Assumes 99% failure rate - yet still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets |
+| **Optimistic ceiling** | 25% | Major crisis creates political window; unique self-funding advantage |
+
+**Our model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
+
+This is deliberately ultra-conservative. An economist reviewing our expected value calculations should find:
+
+- The {{< var political_success_probability >}} central estimate assumes a **99% chance of complete failure**
+- The 0.1% floor admits this could be nearly impossible
+- Even at {{< var political_success_probability >}}, expected cost/DALY ({{< var treaty_expected_cost_per_daly >}}) beats bed nets ({{< var bed_nets_cost_per_daly >}}) by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
+- The 25% ceiling reflects that partial success or crisis-driven adoption is possible
+
+### Expected Value Implications
+
+At {{< var political_success_probability >}} probability of success:
+
+- **Expected ROI**: {{< var dfda_expected_roi >}}:1 (still positive)
+- **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} (still {{< var treaty_expected_vs_bed_nets_multiplier >}}x better than bed nets)
+
+The intervention remains economically justified even assuming a 99% chance of failure because:
+1. The conditional benefits ({{< var treaty_roi_lag_elimination >}}:1 ROI if successful) are enormous
+2. Even the expected value at {{< var political_success_probability >}} success beats the best alternative by {{< var treaty_expected_vs_bed_nets_multiplier >}}x
+3. The downside is capped at campaign cost (~$1B), while upside is unbounded
+
+## Why The Treaty Won't Stop at 1%
+
+Most international commitments stagnate after initial signing. The table above shows 0.7% ODA targets unmet for 50+ years, Kyoto Protocol abandoned, Paris Agreement goals missed. Why expect different from a 1% health treaty?
+
+**Because we've built a scaling engine into the mechanism.**
+
+The [80/10/10 funding structure](../solution/incentive-alignment-bonds.qmd) allocates {{< var iab_political_incentive_funding_pct >}}% of treaty funding ($2.7B/year at 1%) to [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) - securities that pay out when treaties *expand*, not just maintain.
+
+### The Expansion Mechanism
+
+| Treaty Level | Annual IAB Pool | Political Pressure | Historical Comparison |
+|:-------------|:----------------|:-------------------|:---------------------|
+| 1% | $2.7B/year | Strong | 10× largest NGO budgets |
+| 2% | $5.4B/year | Very strong | Nation-state level |
+| 5% | $13.5B/year | Overwhelming | Major industry lobby |
+| 10% | $27B/year | Unstoppable | No precedent |
+
+### Why This Differs from Stagnant Treaties
+
+**0.7% ODA failed** because there was no financial mechanism incentivizing expansion. The NGOs pushing for compliance have small budgets and compete with each other.
+
+**The 1% health treaty creates its own expansion lobby** - bond holders who profit when the treaty expands to 2%, then 5%, then 10%. These aren't activists who can be ignored. They're investors with returns tied to treaty growth.
+
+### The Ratchet Effect
+
+Once 1% passes:
+1. **$2.7B/year** flows to IAB holders pushing for 2%
+2. When 2% passes → **$5.4B/year** pushing for 5%  
+3. When 5% passes → **$13.5B/year** pushing for 10%
+4. The political pressure for expansion *accelerates* with each success
+
+This is the opposite of typical treaties where political momentum fades after signing. The IAB mechanism ensures that the constituency for expansion *grows* rather than shrinks over time.
+
+### Long-Term Feasibility
+
+The $90M campaign gets the 1% treaty signed. But the real question isn't "Can we get 1%?" - it's "Can we eventually redirect most military spending to health?"
+
+With IABs: Yes. The 10% allocation creates a perpetual political engine that makes expansion inevitable once the initial treaty passes. Each percentage point adds more fuel to the engine.
+
+Without IABs: Probably not. We'd join the long list of international commitments that achieved initial success but stagnated because there was no mechanism to sustain political pressure for expansion.
+
+**The $90M buys more than a 1% treaty - it buys the seed of a scaling mechanism that can eventually unlock $2.7 trillion/year.**
+
+## Sources
+
+For detailed citations and source documentation, see [References](../references.qmd):
+
+- [3.5% Rule](../references.qmd#3-5-rule) - Chenoweth's research on nonviolent movement success thresholds
+- [Ottawa Treaty / ICBL](../references.qmd#icbl-ottawa-treaty) - Landmines ban campaign (1992-1997)
+- [Cluster Munitions Convention](../references.qmd#cluster-munitions-convention-2008) - Oslo Process (2007-2008)
+- [Arms Trade Treaty](../references.qmd#arms-trade-treaty-2013) - UN arms trade regulation (2003-2013)
+- [Control Arms Coalition](../references.qmd#control-arms-coalition) - NGO campaign structure and tactics
+- [ICAN / Nuclear Ban Treaty](../references.qmd#ican-nuclear-ban-treaty) - Nuclear weapons prohibition (2007-2017)

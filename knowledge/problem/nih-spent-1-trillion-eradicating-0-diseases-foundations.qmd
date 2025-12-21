@@ -1,0 +1,353 @@
+---
+title: NIH Fails to Institute Health
+description: How the NIH spent over $1 trillion to eradicate exactly zero diseases.
+published: true
+tags:
+- problem
+- nih
+- grants
+- research-funding
+- bureaucracy
+- failure
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![NIH Inefficiency](../../assets/infographics/NIH Inefficiency Infographic.png)
+
+With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted).
+
+Number of diseases the NIH has eradicated: [**Zero**](../references.qmd#nih-eradicated-zero-diseases).
+
+Success rate: 0.00% for complete disease elimination.
+
+[A medical politburo in Maryland](../references.qmd#nih-decision-makers-200-people) deciding which of [10,000 diseases](../references.qmd#number-of-known-diseases) matter. Yours doesn't.
+
+They fund what gets published, not what saves lives.
+
+Result: [55 million die annually](../references.qmd#who-daily-deaths) while papers get published.
+
+To be fair, eradicating disease is hard.
+Just ask the WHO, who [eradicated smallpox for \$300 million](../references.qmd#smallpox-eradication-roi) (smallpox was WHO, not NIH).
+Or ask Jonas Salk, who developed the polio vaccine in a university lab.
+Or ask the veterinarians, who've [eradicated multiple animal diseases](../references.qmd#animal-diseases-eradicated-by-vets) while the NIH was forming subcommittees.
+
+## The Translation Crisis: Concept Rich, Trial Poor
+
+Here is the "Stock vs Flow" problem in one sentence: **We are not short of hypotheses; we are short of trial slots.**
+
+- **FDA-approved drugs:** >20,000 known safe in humans
+- **Repurposable compounds:** [~4,700-6,800 clinically-tested candidates](../references.qmd#drug-repurposing-hub-collection) (including 3,422 marketed drugs) sitting on shelves
+- **Plausible dementia interventions:** Hundreds
+- **Clinical trials available for your grandma in St. Louis:** Zero
+
+We have a massive **stock** of safe molecules that have never been systematically evaluated for new uses.
+But the **flow** of trials is a trickle.
+
+### The $600,000 Meta-Research Masterpiece
+
+After searching clinicaltrials.gov for dementia trials your grandma could join, one finally appears.
+
+It's a study asking if people would be *interested* in dementia trials.
+
+- **Cost:** $600,000
+- **Purpose:** Survey research about hypothetical willingness to participate
+- **Patients treated:** Zero
+- **Treatments tested:** Zero
+
+Let's be clear: **This isn't the researcher's fault.** They wrote the grant NIH rewards. They're playing the game correctly.
+
+The problem is the game itself.
+
+NIH will fund $600,000 to *ask* if people want trials. But it won't fund the actual trials people want to join.
+
+**We already know the answer:** [~50-75% of patients say they're willing to participate](../references.qmd#patient-willingness-clinical-trials), but [only ~10% are ever invited](../references.qmd#patient-willingness-clinical-trials).
+
+The bottleneck isn't information about willingness. It's **capacity**.
+
+**That $600,000 could have funded:**
+- 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
+- Testing 5-10 repurposed drugs we already know are safe
+- Actual data on whether treatments work
+
+Instead, we got confirmation that people dying of dementia would like not to die of dementia.
+
+This is what happens when the system rewards *papers about trials* more than *running trials*.
+
+## The Basic Research Black Hole
+
+The NIH spend the vast majority of it on "basic research", understanding disease in mice, while a tiny fraction goes to testing treatments in actual humans.
+
+{{< include ../figures/nih-budget-allocation-pie-chart.qmd >}}
+
+### The Allocation Disaster
+
+Here's where the [FY2017-2021 budget](../references.qmd#nih-budget-allocation-breakdown) actually goes:
+
+- **Basic research (mice and molecules):** [72% ($97B)](../references.qmd#nih-budget-allocation-breakdown)
+- **"Clinical trials and related activities":** [21% ($28B)](../references.qmd#nih-budget-allocation-breakdown)
+- **Training programs:** [7% ($9B)](../references.qmd#nih-budget-allocation-breakdown)
+
+But here's the scam: that "21% for clinical trials" sounds impressive until you see [what it actually includes](../references.qmd#nih-clinical-trials-small-fraction):
+
+- **Actual drug treatment trials (Phases 1-3):** [Only 3.3% of total budget](../references.qmd#nih-clinical-trials-small-fraction) ($8.1B over 2010-2019)
+- **Phase 3 trials** (where treatments are proven effective): [NIH covers only 3.7-4.3% of costs](../references.qmd#nih-phase-3-minimal-coverage), abandoning funding at the critical stage
+- **Pragmatic trials** (30x cheaper than traditional trials): [Severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite massive cost advantage
+- **Observational studies:** Watching you get sicker ([All of Us](../references.qmd#nih-all-of-us-inefficiency) - $2.16B, zero treatments tested)
+- **Infrastructure programs:** [CTSA network](../references.qmd#nih-ctsa-program-funding) buildings and overhead, not treating patients
+- **Health services research, epidemiology, behavioral studies:** The remaining 17.7% that sounds like "clinical research"
+
+The result is a system that produces papers, not cures:
+
+- **Papers published:** [2.5 million annually](../references.qmd#nih-annual-papers-published)
+- **New treatments approved:** [~50 annually](../references.qmd#global-new-drug-approvals-50-annually)
+- **Conversion rate from paper to patient:** 0.002%
+
+### Knowledge Production: Saturated. Translation Capacity: Starved.
+
+The bottleneck isn't ideas. It's execution:
+
+- **Biomedical papers produced:** [2.5 million per year](../references.qmd#nih-annual-papers-published)
+- **Adults who've participated in trials:** [~5%](../references.qmd#clinical-trial-patient-participation-rate)
+- **Adults willing to participate if invited:** [~50-75%](../references.qmd#patient-willingness-clinical-trials)
+- **Adults actually invited:** [~9-11%](../references.qmd#patient-willingness-clinical-trials)
+
+We're drowning in hypotheses while patients are starving for trial slots.
+
+The system produces millions of papers testing ideas in mice, but offers trial participation to only 5% of humans. Even though half would say yes if asked.
+
+That's not an information failure. That's a capacity failure.
+
+We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
+
+#### What we don't have: Cures.
+
+Because understanding disease and curing disease are completely different things. The NIH chose understanding. Patients needed cures.
+
+## The Public Goods vs. Club Goods Scam
+
+The NIH defends its existence by claiming to produce "Public Goods" (open science, data, training).
+In reality, it spends taxpayers' money to produce "Club Goods" for private industry.
+
+**The Scam in Numbers:**
+
+- **Direct commercialization support:** ~3-5% of budget
+- **Indirect subsidy to profitable firms:** [~40-60% of NIH spending](../references.qmd#nih-clinical-trials-small-fraction) functions as a de facto subsidy to industry. This includes funding basic research, training scientists, and generating patents that private companies exploit
+- **NIH contribution to approved drugs:** [Funded research for 99% of new drugs](../references.qmd#nih-funded-approved-drugs) (356 drugs, 2010-2019), but covers only ~10% of clinical trial costs
+- **Who pays for translation:** [NIH covers only ~10% of what industry spends](../references.qmd#nih-clinical-trials-small-fraction) on clinical trials for approved drugs
+
+The pattern is clear: taxpayers fund 40-60% of the knowledge pipeline (~$20-30B/year), industry patents the winners, and the public pays again through high drug prices.
+
+When a discovery leads to a blockbuster drug, the IP is privatized.
+When the research leads to a dead end, the public eats the loss.
+
+**Socialized Risk, Privatized Profit.**
+
+True public goods would be **unpatentable** but high-value assets like:
+- **Open pragmatic trial platforms:** [30x cheaper than traditional trials](../references.qmd#pragmatic-trials-cost-advantage), yet receive minimal NIH funding
+- **Re-purposing generic drugs:** [4,700+ clinically-tested compounds](../references.qmd#drug-repurposing-hub-collection) where no patent exists
+- **Comparative effectiveness data:** Head-to-Head trials that would reveal which drugs actually work best
+
+Private companies *cannot* profitably fund these, so they are the **only** thing the NIH should be funding.
+Instead, the NIH explicitly avoids them to "not crowd out industry."
+Translation: We won't run the trials that would lower drug prices or fix problems without a patent attached.
+
+## The Gerontocracy: Science by Social Security Recipients
+
+- **Average age for first R01 grant:** 45 years old ([source](../references.qmd#nih-first-r01-age-45))
+- **Peak scientific creativity:** 25-35 years old (multiple studies))
+- **Years of peak creativity wasted:** 10-20
+
+By the time scientists get real funding, they're closer to retirement than to their best ideas.
+We've created a system where you need to be old enough to have discovered something 20 years ago to get funded to discover something today.
+
+Einstein published special relativity at 26.
+Under NIH rules, he'd still be a "promising young investigator" at 40.
+
+## The Committee Industrial Complex
+
+The NIH organizational chart looks like someone tried to draw the internet:
+
+- **[27 institutes and centers](../references.qmd#nih-organizational-complexity)**
+- **[220+ study sections](../references.qmd#nih-organizational-stats)** (review committees)
+- **[6,000+ employees](../references.qmd#nih-organizational-stats)**
+- **[80,000+ grant reviewers](../references.qmd#nih-organizational-stats)**
+
+Each institute has divisions.
+Each division has branches.
+Each branch has sections.
+Each section has units.
+It's bureaucratic nesting dolls all the way down.
+
+Fun fact: [There are more NIH administrators than there are researchers working on some rare diseases](../references.qmd#nih-admin-to-scientist-ratio).
+
+## Case Study: The \$1.6 Billion Long COVID Masterclass
+
+The RECOVER Initiative - a masterpiece of inefficiency:
+
+**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) ([source](../references.qmd#recover-budget-update-2-3b))
+**Timeline:** [4 years and counting](../references.qmd#nih-recover-inefficiency)
+**Patients enrolled:** [~30,000](../references.qmd#recover-initiative-patient-enrollment)
+**Trials completed:** [Zero](../references.qmd#nih-recover-inefficiency)
+**Cost per patient:** \$55,500
+
+Meanwhile, the UK RECOVERY trial:
+
+**Budget:** [\$20 million](../references.qmd#recovery-trial-82x-cost-reduction)
+**Timeline:** [6 months](../references.qmd#landray-recovery-trial-quote)
+**Patients enrolled:** [48,000](../references.qmd#recovery-trial-82x-cost-reduction)
+**Treatments found:** [Multiple, including dexamethasone](../references.qmd#recovery-trial-summary-quote)
+**Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
+
+The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
+
+## Americans Got Sicker While NIH Got Richer
+
+"But maybe the NIH improved health in other ways!" you might say, hope flickering in your eyes.
+
+Let's check the scoreboard since NIH's founding in 1887 (and massive expansion post-1970):
+
+**1970:**
+
+- Obesity rate: [13%](../references.qmd#us-health-stats-1970)
+- Diabetes rate: [3.4%](../references.qmd#us-health-stats-1970)
+- Life expectancy: [70.8 years](../references.qmd#us-health-stats-1970)
+
+**2024:**
+
+- Obesity rate: [42%](../references.qmd#obesity-epidemic-stats) (3X worse)
+- Diabetes rate: [11.6%](../references.qmd#us-health-stats-2024) (3.4X worse)
+- Life expectancy: [76.4 years](../references.qmd#us-health-stats-2024) (only +5.6 years, [mostly from fewer people smoking](../references.qmd#life-expectancy-gains-smoking-reduction))
+
+During the NIH's trillion-dollar spending spree, Americans got:
+
+- Fatter
+- Sicker
+- More diabetic
+- More depressed
+- More medicated
+
+It's like hiring a personal trainer and gaining 100 pounds.
+
+## Political Funding: The Disease Popularity Contest
+
+Which diseases get funded?
+Not the deadliest ones:
+
+- **Breast cancer funding:** [\$700M/year](../references.qmd#nih-funding-deaths-comparison)
+- **Breast cancer deaths:** [42,000/year](../references.qmd#nih-funding-deaths-comparison)
+- **Heart disease funding:** [\$500M/year](../references.qmd#nih-funding-deaths-comparison)
+- **Heart disease deaths:** [700,000/year](../references.qmd#nih-funding-deaths-comparison)
+
+Heart disease kills **16X more people** but gets less funding.
+Why?
+Pink ribbons are better at lobbying than clogged arteries.
+
+The NIH budget is set by Congress, which means diseases compete in a popularity contest.
+
+## Innovation Despite the NIH, Not Because of It
+
+Major breakthroughs while NIH was busy:
+
+- **mRNA vaccines:** [Developed by companies, not NIH](../references.qmd#mrna-vaccine-development-history)
+- **CRISPR:** [Discovered in yogurt bacteria research](../references.qmd#crispr-discovery-yogurt-bacteria)
+- **Immunotherapy:** [Pioneered despite medical establishment opposition](../references.qmd#immunotherapy-pioneers-nih-rejection)
+- **COVID vaccines:** Industry sprint while NIH planned meetings
+
+## The Efficiency Rating: Burning Life-Years
+
+Let's do the rigorous math on the opportunity cost.
+
+### Cost Per QALY (Quality-Adjusted Life Year)
+
+- **Standard NIH Portfolio:** [~$20,000 - $100,000 per QALY](../references.qmd#standard-medical-research-roi) (generous estimate)
+- **Pragmatic Platform Trials (RECOVERY model):** [~$300 per QALY](../references.qmd#recovery-trial-roi)
+- **NIH pragmatic trials funding:** [Capped at $500K planning + $1M/year implementation](../references.qmd#pragmatic-trials-cost-advantage). This is a tiny fraction of the $47B budget
+
+**The Multiplier:**
+Every $1 spent on efficient pragmatic trials buys **~50x to 100x more health** than a dollar spent on the current NIH mix.
+
+Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite the ADAPTABLE trial proving they cost [30x less than traditional RCTs](../references.qmd#pragmatic-trials-cost-advantage) ($14M vs $420M).
+
+### The "Death Equivalent" of Misallocation
+
+When you misallocate $40 billion a year into low-efficiency buckets instead of high-efficiency buckets, you aren't just wasting money. You are burning time.
+
+**Annual Opportunity Cost (Central Estimates):**
+- **QALYs Lost:** ~100 million life-years per year
+- **Deaths NOT Prevented:** ~7 million death-equivalents per year
+
+**Conservative 90% Confidence Interval:**
+- **QALYs Lost:** 10 million to 820 million per year
+- **Deaths NOT Prevented:** 0.7 million to 64 million per year
+
+Even in the **most conservative 5th-percentile scenario**, NIH misallocation costs ~10 million QALYs and prevents ~700,000 deaths' worth of health gains annually.
+
+In the 95th-percentile scenario, it's burning health equivalent to **most of the global death toll** (60M deaths/year).
+
+The NIH isn't just inefficient.
+By blocking the shift to high-efficiency trial platforms, the current budget allocation is **actively destroying** the equivalent of millions of lives annually compared to the optimal allocation.
+
+**Mathematical Conclusion:**
+$$
+\text{Efficiency Loss} = 1 - \frac{\text{Current QALYs gained}}{\text{Potential QALYs gained}} \approx 98\%
+$$
+
+We are operating at ~2% of our potential theoretical capacity to save lives.
+
+## The Patient Disconnect: Zero Correlation with Health Outcomes
+
+Here's the most damning statistic of all:
+
+**Correlation between NIH funding priorities and actual disease burden: [0.07](../references.qmd#nih-funding-vs-disease-burden-correlation)**
+
+That's essentially random. You'd get better allocation by throwing darts at a list of diseases.
+
+### What patients want
+
+- Treatments that work
+- Access to experimental therapies
+- Trials they can actually join
+- Cures for their specific disease
+
+#### What NIH funds
+
+- Understanding molecular mechanisms
+- Publishing papers in prestigious journals
+- Building research empires
+- Protecting institutional overhead
+
+The system optimizes for everything except patient outcomes.
+Because patients don't control the money.
+Committees do.
+
+## What Would Actually Work
+
+1. **Pay for results:** Cure = payment, no cure = no payment
+2. **Funded young scientists:** When their brains still work
+3. **Published everything:** Including failures (especially failures)
+4. **Eliminated gatekeepers:** Let patients vote with participation
+5. **Automated administration:** Smart contracts > committees
+
+But that would require admitting the current system doesn't work.
+And after \$1.1 trillion, that's an expensive admission.
+
+**Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)).
+You could implement efficient trials tomorrow.
+But that would upset the grant-writing industrial complex.
+
+## Conclusion
+
+The NIH has built the world's most expensive grant-writing academy.
+They've turned medical research into a creative writing competition where the prize is permission to do your actual job.
+
+For \$1.1 trillion, we got:
+
+- Millions of papers nobody reads
+- Thousands of career administrators
+- Hundreds of committees
+- Zero eradicated diseases
+
+But hey, at least the committees have subcommittees.
+And those subcommittees have working groups.
+And those working groups have task forces.

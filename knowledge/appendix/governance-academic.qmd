@@ -1,0 +1,147 @@
+---
+title: Governance
+description: How the People Who Pay Get to Vote - The governance model for the DIH is Wishocracy, a decentralized protocol for creating a global, semi-autonomous 'to-do list for humanity' governed by the people who use it.
+published: true
+tags:
+- governance
+- wishocracy
+- dao
+- decentralization
+- ai
+- collective-intelligence
+- protocol
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Your [decentralized institutes of health (DIH)](../solution/dih.qmd) is a **decentralized crowdfunding platform** that serves as the single governance layer for all health research funding.
+
+It functions like Kickstarter meets the NIH, but without corruption or bureaucracy - governed by **Wishocracy**, a pairwise allocation voting system that lets 8 billion people collectively decide how to spend {{< var treaty_annual_funding >}} annually.
+
+## DIH Architecture: Single Governance Layer
+
+{{< include ../figures/dih-architecture-diagram.qmd >}}
+
+Your decentralized institutes of health (DIH) handles ALL budgeting decisions:
+
+- Governs the allocation of the [1% Treaty Fund](../solution/1-percent-treaty.qmd) treasury
+- Accepts campaign proposals from anyone
+- Uses [Wishocracy](../solution/wishocracy.qmd) to allocate funds across competing campaigns
+- No CEO, no board, governed by transparent code
+
+## Clean Separation: Governance vs Platform
+
+{{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
+
+### Your decentralized institutes of health (Governance Layer)
+
+- Handles all budget allocation
+- Wishocracy voting on campaigns
+- Treasury governance
+- Prize distribution
+
+**Your decentralized framework for drug assessment (dFDA)**
+
+- Pure technical infrastructure
+- NO budget authority
+- Is funded by the 1% Treaty Fund (as directed by DIH governance)
+- If captured → fund an alternative platform instead
+
+This prevents the "new FDA" problem: a decentralized framework for drug assessment can't become a bureaucratic bottleneck because it has no independent funding - it's just one campaign competing with others for 1% Treaty Fund funds.
+
+## How Budget Allocation Works
+
+Your decentralized institutes of health (DIH) network uses **[Wishocracy](../solution/wishocracy.qmd)** - a pairwise voting system - to allocate funds across competing campaign proposals.
+
+**See [Wishocracy](../solution/wishocracy.qmd) for detailed explanation of how pairwise allocation works.**
+
+### What Gets Funded: Market Failures Only
+
+Since the marketplace enabled by a [decentralized framework for drug assessment (dFDA)](../solution/dfda.qmd) handles most research allocation automatically (patients choose trials → funding flows there), the 1% Treaty Fund primarily funds **market failures** - things the marketplace can't handle:
+
+#### Infrastructure (Platform Must Exist First)
+
+- Development and operations for a decentralized framework for drug assessment (~$10B/year)
+- Competing alternative implementations of a decentralized drug assessment framework
+- Data commons infrastructure (storage, processing)
+- Security audits and fraud detection systems
+
+#### True Public Goods (No Revenue Model)
+
+- Patient trial participation subsidies (~$800B/year, automatic)
+- Negative results publishing incentives (no revenue from failures)
+- Basic research with no patient application yet (can't be trials)
+- Replication studies (unglamorous but critical)
+
+**Why This is Minimal:** The marketplace created by a [decentralized framework for drug assessment](../solution/dfda.qmd) eliminates most traditional research funding needs. Companies register treatments → Patients join trials → Revenue flows → Research happens. Your decentralized institutes of health only needs to direct the 1% Treaty Fund to cover what the marketplace truly can't handle.
+
+## Dive Deeper into the Governance Model
+
+- **[Wishocracy (RAPPA) Governance Model](../solution/wishocracy.qmd):** The original whitepaper on the pairwise preference allocation system used for decentralized budget decisions.
+- **DIH On-Chain & AI Architecture:** The technical blueprint for the smart contracts, AI agents, and on-chain modules that power a decentralized institutes of health network. *(Coming Soon)*
+
+## Security & Anti-Corruption: Building Uncorruptible Institutions
+
+**The Challenge:** A {{< var treaty_annual_funding >}} treasury is a massive target for hackers, fraudsters, and corrupt actors.
+
+[Traditional DAOs with simple multisig controls have proven vulnerable to both technical exploits and social engineering attacks](../references.qmd#dao-multisig-vulnerabilities).
+
+### The Multi-Layered Defense
+
+1.  **Nobody's in Charge (And That's the Point)**
+
+    *Other organizations that manage billions of dollars this way already exist and work fine.*
+
+    *Turns out you don't need a CEO when you have math.*
+
+    - Every VICTORY Incentive Alignment Bond holder directly controls treasury through on-chain voting (MakerDAO/Uniswap model)
+    - No human signers = no kidnapping, corruption, or coercion targets
+    - Smart contracts automatically execute community decisions after 24-72h timelocks
+    - [Battle-tested approach managing billions in existing DAOs](../references.qmd#makerdao-scale)
+
+2.  **AI-Powered Fraud Detection**
+
+    - Fraud Agent: real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
+    - Safety Oracle: incident severity scoring with automatic payout holds for affected interventions
+    - Manual review queue for flagged actions with whistleblower bounty rewards
+    - Identity Oracle: verifies affiliations and conflicts, prevents unauthorized access
+
+3.  **Complete Transparency & Auditability**
+
+    - All treasury addresses published with real-time public dashboards
+    - Immutable transaction logs with standardized disbursement tags
+    - Annual smart contract audits and semiannual operational audits with published reports
+    - Hash-committed invoices and budgets for full accountability
+
+4.  **Recovery & Response Mechanisms**
+
+    - Clawbacks for data falsification or trial misconduct
+    - Emergency pause capabilities triggered by incident signals
+    - Progressive unpause policies tied to remediation completion
+    - Guardian modules for pausing non-critical functions under defined conditions
+
+### Beyond Medical Research: A Template for Uncorruptible Governance
+
+This isn't just about protecting funding for pragmatic clinical trials and other public health goods – it's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods.
+
+Using proven DAO models that already manage billions (MakerDAO, Uniswap, Aave), you demonstrate that {{< var treaty_annual_funding >}} can be managed with:
+
+- **Zero human targets** for violence, kidnapping, or corruption
+- **True community control** through direct token holder governance
+- **Complete transparency** with all decisions and executions on-chain
+- **Automated efficiency** eliminating bureaucratic waste and political favoritism
+
+#### What Else This Could Fix
+
+*Once you prove you can run a {{< var treaty_annual_funding >}} treasury without anyone stealing from it, you can do the same thing for schools, roads, or anything else the government currently screws up.*
+
+- **Education**: Pay teachers based on whether kids actually learn things
+- **Infrastructure**: Fund roads that don't immediately fall apart
+- **Environment**: Pay for actual carbon reduction, not paperwork
+- **Social Services**: Get help to people who need it without 47 forms
+
+**The End State:** Replace corrupt, inefficient bureaucracies with transparent, automated, outcome-driven institutions that actually work and can't be bribed.
+
+The 1% Treaty Fund becomes the prototype for a new era of public governance - one that eliminates human corruption points entirely while delivering measurable results.
+
+This experiment could usher in a new era of peace, prosperity, and abundance by proving that large-scale public goods can be managed through true decentralization without any centralized control points.
