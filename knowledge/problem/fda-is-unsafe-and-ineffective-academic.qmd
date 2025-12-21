@@ -3,13 +3,15 @@ title: The FDA Is Unsafe and Ineffective
 description: How the FDA makes medicine 82X more expensive while operating at the speed of continental drift. A factual comedy about bureaucratic excellence.
 published: true
 tags:
-- problem
-- fda
-- clinical-trials
-- drug-approval
-- bureaucracy
-- regulatory-capture
+  - problem
+  - fda
+  - clinical-trials
+  - drug-approval
+  - bureaucracy
+  - regulatory-capture
 ---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| echo: false
@@ -18,7 +20,7 @@ import os
 from dih_models.parameters import *
 ```
 
-Imagine you met a magical genie. You wished for it to fulfill the FDA Congressional Mandate to:
+Imagine a researcher met a magical genie. One wished for it to fulfill the FDA Congressional Mandate to:
 
 > Ensure the safety and efficacy of all drugs and medical devices
 
@@ -28,7 +30,7 @@ Imagine you met a magical genie. You wished for it to fulfill the FDA Congressio
 
 That would guarantee no one ever takes medication that may or may not be effective.
 
-In practice, they took a subtler approach: make drugs so expensive ({{< var pharma_drug_development_cost_current >}}) and slow ({{< var treatment_acceleration_years_current >}} years) that you die before the cure arrives. The regulatory barrier isn't just high - it's like setting the bar very high, then adding landmines, then putting the bar on top of Mount Everest.
+In practice, they took a subtler approach: make drugs so expensive ({{< var pharma_drug_development_cost_current >}}) and slow ({{< var treatment_acceleration_years_current >}} years) that patients die before the cure arrives. The regulatory barrier isn't just high - it's like setting the bar very high, then adding landmines, then putting the bar on top of Mount Everest.
 
 The FDA does prevent some people from taking harmful drugs. Phase 1 safety testing catches dangerous compounds before they reach patients. This is good.
 
@@ -62,7 +64,7 @@ Here's the breakdown of where the time goes:
 - **Phase I (Safety Testing):** {{< var phase_1_safety_duration_years >}} years - Tests if the drug kills people. *This part works.*
 - **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} years - Tests if the drug works better than placebo. *This is where people die waiting.*
 
-The math is simple: If you die in year 5 and the drug gets approved in year 10, the regulatory process murdered you.
+The math is simple: If a patient dies in year 5 and the drug gets approved in year 10, the regulatory process murdered them.
 
 $$
 t_{lag} = t_{total} - t_{safety} = 10.5 - 2.3 = 8.2 \text{ years}
@@ -70,7 +72,7 @@ $$
 
 That's {{< var efficacy_lag_years >}} years sitting in regulatory purgatory *after* we already know the drug won't kill you.
 
-You're two lifetimes from applying the scientific method to medicine. That's 0.0001% of human history - you invented science yesterday, cosmically speaking. The more clinical research you read, the more you realize you know nothing. Nearly every study ends with "more research is needed" (scientist-speak for "we have no idea what's happening, please give us more grant money"). This would be fine except people are dying while you figure it out.
+Science is two lifetimes from applying the scientific method to medicine. That's 0.0001% of human history - humanity invented science yesterday, cosmically speaking. The more clinical research one reads, the more it becomes clear that little is known. Nearly every study ends with "more research is needed" (scientist-speak for "we have no idea what's happening, please give us more grant money"). This would be fine except people are dying while investigators figure it out.
 
 ## Historical Evidence: Why Real-World Evidence Works Better
 
@@ -273,15 +275,15 @@ Humanity solved medical progress in 1883. Congress broke it in 1962.
 
 The current system works like this:
 
-1. Scientists discover a cure for your disease
-2. You wait 17 years
-3. You die
+1. Scientists discover a cure for a disease
+2. Patients wait 17 years
+3. Patients die
 4. The cure gets approved
-5. Pharmaceutical companies charge your widow $10,000 per pill
+5. Pharmaceutical companies charge a widow $10,000 per pill
 
 Beautiful system if you're a mortician or bankruptcy lawyer.
 
-You're at the very beginning of thousands or millions of years of systematic discovery. So this decline in lifespan growth is unlikely to result from diminishing returns - you haven't run out of things to discover.
+Modernity is at the very beginning of thousands or millions of years of systematic discovery. So this decline in lifespan growth is unlikely to result from diminishing returns - investigators haven't run out of things to discover.
 
 However, validating that large-scale real-world evidence produces better health outcomes requires further validation of this experimentation method. This is why we need a decentralized framework for drug assessment.
 
@@ -303,25 +305,25 @@ The math for the mega-corporation:
 - 0% chance of losing a billion dollars
 - 100% chance your inferior cash cow keeps printing money
 
-Which would you choose if you were a rational sociopath in a suit?
+Which would be chosen if one were a rational sociopath in a suit?
 
 The profit incentive doesn't just fail to reward better treatments. It actively punishes them.
 
 ##### Cures Are Economically Stupid
 
-Quick business question: Would you rather sell someone one pill that cures them, or sell them pills every month for the rest of their life?
+Quick business question: Would a firm rather sell a patient one pill that cures them, or sell them pills every month for the rest of their life?
 
 If you answered "cure them," congratulations on failing capitalism.
 
-A permanent cure is a one-time purchase. Lifetime treatment is a subscription model. When it costs a billion dollars to develop either option, which do you think companies choose?
+A permanent cure is a one-time purchase. Lifetime treatment is a subscription model. When it costs a billion dollars to develop either option, which do companies choose?
 
-The more expensive drug development becomes, the fewer companies can afford it. The fewer companies, the more monopolistic the industry. The more monopolistic, the more situations where curing your existing customers would be financial suicide.
+The more expensive drug development becomes, the fewer companies can afford it. The fewer companies, the more monopolistic the industry. The more monopolistic, the more situations where curing existing customers would be financial suicide.
 
-This system has financial incentive for medical progress the way casinos have incentives to help you win.
+This system has financial incentive for medical progress the way casinos have incentives to help gamblers win.
 
 ### Off-Patent Drugs: Cures Nobody Can Afford to Find
 
-Roughly [10,000 known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The 1962 law requires you predict exactly what a drug will cure before testing it. If your off-patent drug cures something unexpected? Congratulations, you just discovered something nobody can profit from.
+Roughly [10,000 known diseases](https://www.washingtonpost.com/news/fact-checker/wp/2016/11/17/are-there-really-10000-diseases-and-500-cures/) afflict humans. About 95% are rare. The 1962 law requires researchers to predict exactly what a drug will cure before testing it. If an off-patent drug cures something unexpected? In this instance, a discovery has been made that cannot be profited from.
 
 No patent = no billion-dollar investment = no trials = no approval = people die.
 
@@ -333,7 +335,7 @@ Price per patient to break even: $260,000
 
 Nobody pays that. Nobody develops the drug. 95% of diseases have zero treatments.
 
-When something costs more, you get less of it. For people dying of diseases nobody can afford to cure, this isn't philosophy. It's math.
+When something costs more, society gets less of it. For people dying of diseases nobody can afford to cure, this isn't philosophy. It's math.
 
 
 ## The \$2.6 Billion Price Tag for Aspirin
@@ -346,7 +348,7 @@ Here's what it actually costs to get FDA approval for a new drug:
 
 That's {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per person just to TEST if a pill works. Not the pill. Just to test it.
 
-For that money, you could:
+For that money, one could:
 
 - Buy a Tesla and crash it into the disease
 - Hire a shaman for a year
@@ -359,22 +361,22 @@ That's [more than the GDP of Greenland](../references.qmd#gdp-of-greenland). We 
 Fun fact: If we had today's FDA in 1897, aspirin would still be in Phase II trials.
 "We need to test if it works on headaches in left-handed people born on Tuesdays."
 
-**{{< var treatment_acceleration_years_current >}} years from discovery to patient** while you die waiting.
+**{{< var treatment_acceleration_years_current >}} years from discovery to patient** while patients die waiting.
 
 That's:
 
 - 4 presidential terms
 - 2 new iPhone models becoming obsolete
-- Your entire child growing up and moving out
-- You dying of whatever the cure was for
+- A child growing up and moving out
+- A patient dying of whatever the cure was for
 
 But at least the paperwork is thorough.
 
 [95% of diseases have ZERO approved treatments](../references.qmd#95-pct-diseases-no-treatment).
 
-Your rare disease child has better odds with lottery tickets.
+A child with a rare disease has better odds with lottery tickets.
 
-Why? Math. If your disease only affects 10,000 people, and it costs {{< var pharma_drug_development_cost_current >}} to develop a drug, each patient would need to pay $260,000 just to break even.
+Why? Math. If a disease only affects 10,000 people, and it costs {{< var pharma_drug_development_cost_current >}} to develop a drug, each patient would need to pay $260,000 just to break even.
 
 So pharmaceutical companies focus on:
 
@@ -387,15 +389,15 @@ Meanwhile, if you have Exploding Kidney Syndrome affecting 37 people worldwide, 
 
 ### The 166 Billion Treatments We're Ignoring
 
-There are **[166 billion potential drug compounds](../references.qmd#166-billion-compounds)** you could test.
+There are **[166 billion potential drug compounds](../references.qmd#166-billion-compounds)** that could be tested.
 
 Number we've actually tested thoroughly: [About 2,000](../references.qmd#number-of-drugs-tested-thoroughly).
 
-That's like having a library with 166 billion books but only reading the ones with pictures. We have more untested treatments than stars in our galaxy, but the system is too busy protecting itself to test them.
+That's like having a library with 166 billion books but only reading the ones with pictures. There are more untested treatments than stars in our galaxy, but the system is too busy protecting itself to test them.
 
 At our current rate of testing, we'll have evaluated all possible treatments by the year 3,847,293.
 
-Hope your descendants enjoy the cure for cancer.
+One hopes that descendants enjoy the cure for cancer.
 
 ### No Data on Unpatentable Molecules
 
@@ -411,7 +413,7 @@ But that was just the US. And just the visible delays.
 
 ### The Global Body Count
 
-A [comprehensive quantitative analysis](../appendix/regulatory-mortality-analysis.qmd) using WHO mortality data and Monte Carlo modeling estimates the *total* cost of the 1962 efficacy requirements:
+A [comprehensive quantitative analysis](../appendix/regulatory-mortality-analysis-academic.qmd) using WHO mortality data and Monte Carlo modeling estimates the *total* cost of the 1962 efficacy requirements:
 
 **{{< var disease_eradication_delay_deaths_total >}} preventable deaths** (1962-2024)
 
@@ -456,11 +458,11 @@ More Americans than died in Vietnam and Korea combined. From one drug delay. Her
 
 Each name on that list represents preventable deaths.
 
-Following the 1962 increase in US regulations, you can see a divergence from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
+Following the 1962 increase in US regulations, a divergence is visible from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
 
 ![A chart showing the divergence in life expectancy between the US and Switzerland after 1962.](../../assets/us-swiss-life-expectancy-5.png)
 
-Perhaps it's coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
+Perhaps it's coincidence, but an increase in drug approvals is visible in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
 
 ![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../assets/us-swiss-life-expectancy-drug-approvals.png)
 
@@ -608,7 +610,7 @@ Like testing a cure for cancer but only giving it to people who don't have cance
 
 **Result:** Test drugs on 15% of unusually healthy sick people, then act shocked when they don't work on actual patients.
 
-Clinical trials have more exclusion criteria than a country club in 1950s Alabama. You must be exactly the right kind of sick, not too sick, not too healthy, and definitely not poor or old or pregnant or on any other medications.
+Clinical trials have more exclusion criteria than highly exclusive institutions. One must be exactly the right kind of sick, not too sick, not too healthy, and definitely not poor or old or pregnant or on any other medications.
 
 Like testing umbrellas only on sunny days, then wondering why they don't work in rain.
 
@@ -620,7 +622,7 @@ For instance, even after controlling for co-morbidities, the Journal of American
 
 ## The Law Requires Psychic Powers
 
-Before you can test a drug, you must specify EXACTLY what it will cure and EXACTLY how you'll measure that cure.
+Before a drug can be tested, researchers must specify EXACTLY what it will cure and EXACTLY how one will measure that cure.
 
 "This drug will reduce depression by 37.2% as measured by the Hamilton Rating Scale on Tuesdays."
 
@@ -638,7 +640,7 @@ The regulations were unmoved by the evidence, simply because Dendreon didn't pro
 
 Due to all the additional costs imposed by the efficacy trial burden, Dendreon ultimately [filed for chapter 11 bankruptcy](https://www.targetedonc.com/view/dendreon-files-for-bankruptcy-provenge-still-available).
 
-In addition to the direct costs to companies, the extreme costs and financial risks imposed by efficacy trials have a huge chilling effect on investment in new drugs. If you're an investment adviser trying to avoid losing your client's retirement savings, you're much better off investing in a more stable company like a bomb manufacturer building products to intentionally kill people than a drug developer trying to save lives. So it's impossible to know all the treatments that never even got to an efficacy trial stage due to the effects of decreased investment due to the regulatory risks.
+In addition to the direct costs to companies, the extreme costs and financial risks imposed by efficacy trials have a huge chilling effect on investment in new drugs. If an investment adviser is trying to avoid losing a client's retirement savings, it is much better to invest in a more stable company like a bomb manufacturer building products to intentionally kill people than a drug developer trying to save lives. So it's impossible to know all the treatments that never even got to an efficacy trial stage due to the effects of decreased investment due to the regulatory risks.
 
 ## Who Tests the Drugs? The Companies Selling Them
 
@@ -650,7 +652,7 @@ Five. Times.
 
 It's like asking tobacco companies to research whether smoking causes cancer, then acting shocked when they find "no clear evidence of harm, more research needed."
 
-When a pharmaceutical company's economic survival depends on trial results, you get two problems:
+When a pharmaceutical company's economic survival depends on trial results, two problems arise:
 
 ## The Negative Results Black Hole
 
@@ -670,9 +672,9 @@ Company: "...We tested this drug!"
 
 This means humans spend billions testing the same failed drugs over and over because nobody admits they failed. It's like playing poker where everyone claims they won but nobody shows their cards.
 
-Pharmaceutical companies bury negative results deeper than Jimmy Hoffa. So other companies waste billions testing the same dead ends.
+Pharmaceutical companies bury negative results thoroughly. So other companies waste billions testing the same dead ends.
 
-Your insurance premiums fund this magnificent inefficiency.
+Insurance premiums fund this magnificent inefficiency.
 
 It's like casinos only having to report when people win.
 
@@ -742,7 +744,7 @@ The FDA does make drugs safer from immediate harms. Phase 1 safety testing preve
 But the system also makes drugs:
 
 - **Expensive:** {{< var pharma_drug_development_cost_current >}} per drug
-- **Slow:** {{< var treatment_acceleration_years_current >}} years from discovery to patient (you'll be dead)
+- **Slow:** {{< var treatment_acceleration_years_current >}} years from discovery to patient (the patient will be dead)
 - **Inaccessible:** 95% of rare diseases have zero treatments
 - **Ineffective:** Tested on populations that don't resemble actual patients
 
@@ -752,8 +754,8 @@ Net effect: Far more people die from delayed treatments than ever died from unsa
 
 Security theater for medicine. TSA for healthcare.
 
-When TSA fails, you wait in line longer.
-When the regulatory system fails, you die waiting for approval.
+When TSA fails, one waits in line longer.
+When the regulatory system fails, the patient dies waiting for approval.
 
 TSA agents get fired for failures. Under the current framework, regulators get promoted for preventing approvals.
 
@@ -779,7 +781,7 @@ What's missing is the political will to admit that the 1962 "reforms" were a cat
 ## Technical Analysis
 
 For the full quantitative analysis including methodology, sensitivity analysis, and source data, see:
-[The Human Capital Cost of Regulatory Latency](../appendix/regulatory-mortality-analysis.qmd)
+[The Human Capital Cost of Regulatory Latency](../appendix/regulatory-mortality-analysis-academic.qmd)
 :::
 
 ---
