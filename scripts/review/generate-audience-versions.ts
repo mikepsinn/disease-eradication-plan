@@ -145,6 +145,7 @@ async function main() {
     /references\.qmd$/,  // Exclude references
     /-foundations\.qmd$/,  // Exclude existing foundation versions
     /-academic\.qmd$/,     // Exclude existing academic versions
+    /knowledge[\/\\]figures[\/\\]/,  // Exclude all figure files (code, not prose)
   ];
 
   const excludedFiles = [
@@ -153,11 +154,17 @@ async function main() {
 
   // Filter to get only source files
   const sourceFiles = allBookFiles.filter(file => {
+    // Normalize path for consistent matching
+    const normalizedFile = file.replace(/\\/g, '/');
+
     // Check exact file matches
     if (excludedFiles.includes(path.basename(file))) return false;
 
+    // Exclude figures folder (check before pattern matching)
+    if (normalizedFile.includes('knowledge/figures/')) return false;
+
     // Check pattern matches
-    if (excludedPatterns.some(pattern => pattern.test(file))) return false;
+    if (excludedPatterns.some(pattern => pattern.test(normalizedFile))) return false;
 
     return true;
   });

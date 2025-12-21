@@ -1,6 +1,7 @@
-import { getBookFilesForProcessing } from './utils';
 import fs from 'fs/promises';
+import * as fsSync from 'fs';
 import path from 'path';
+import { glob } from 'glob';
 
 /**
  * Creates baseline copies of source files to -foundations and -academic versions
@@ -9,6 +10,39 @@ import path from 'path';
  * 2. Run transformation scripts
  * 3. See exact changes in git diff
  */
+
+function getProjectRoot(): string {
+  let currentPath = process.cwd();
+
+  while (currentPath !== path.parse(currentPath).root) {
+    const packageJsonPath = path.join(currentPath, 'package.json');
+    if (fsSync.existsSync(packageJsonPath)) {
+      return currentPath;
+    }
+    currentPath = path.dirname(currentPath);
+  }
+
+  if (fsSync.existsSync(path.join(process.cwd(), 'package.json'))) {
+    return process.cwd();
+  }
+
+  throw new Error('Could not find project root (no package.json found)');
+}
+
+async function getBookFilesForProcessing(): Promise<string[]> {
+  const ROOT_DIR = getProjectRoot();
+  const IGNORE_PATTERNS = ['.git', '.cursor', 'node_modules', 'scripts', 'brand', '.venv', '_book'];
+
+  const pattern = 'knowledge/**/*.qmd';
+  const files = await glob(pattern, {
+    cwd: ROOT_DIR,
+    ignore: IGNORE_PATTERNS.map(p => `**/${p}/**`),
+    nodir: true,
+    absolute: true,
+  });
+
+  return files;
+}
 
 async function main() {
   console.log('='.repeat(80));
@@ -25,6 +59,7 @@ async function main() {
     /references\.qmd$/,  // Exclude references
     /-foundations\.qmd$/,  // Exclude existing foundation versions
     /-academic\.qmd$/,     // Exclude existing academic versions
+    /knowledge[\/\\]figures[\/\\]/,  // Exclude all figure files (code, not prose)
   ];
 
   const excludedFiles = [
@@ -33,11 +68,17 @@ async function main() {
 
   // Filter to get only source files
   const sourceFiles = allBookFiles.filter(file => {
+    // Normalize path for consistent matching
+    const normalizedFile = file.replace(/\\/g, '/');
+
     // Check exact file matches
     if (excludedFiles.includes(path.basename(file))) return false;
 
+    // Exclude figures folder (check before pattern matching)
+    if (normalizedFile.includes('knowledge/figures/')) return false;
+
     // Check pattern matches
-    if (excludedPatterns.some(pattern => pattern.test(file))) return false;
+    if (excludedPatterns.some(pattern => pattern.test(normalizedFile))) return false;
 
     return true;
   });
