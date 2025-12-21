@@ -155,28 +155,41 @@ async function generateVersionForAudience(
 async function main() {
   const args = process.argv.slice(2);
 
+  // Parse arguments
+  let specificFile: string | null = null;
+  let audienceArg: string | null = null;
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i].startsWith('--file=')) {
+      specificFile = args[i].substring('--file='.length);
+    } else if (args[i] === '--file' || args[i] === '-f') {
+      specificFile = args[++i];
+    } else {
+      audienceArg = args[i];
+    }
+  }
+
   // Parse audience type
-  if (args.length === 0) {
+  if (!audienceArg) {
     console.error('ERROR: No audience type provided.');
     console.error('\nUsage:');
-    console.error('  npx tsx scripts/review/generate-audience-versions.ts <audience>');
+    console.error('  npx tsx scripts/review/generate-audience-versions.ts <audience> [--file=<path>]');
     console.error('\nAvailable audiences:');
     Object.keys(AUDIENCES).forEach(aud => console.error(`  - ${aud}`));
     console.error('\nExamples:');
     console.error('  npx tsx scripts/review/generate-audience-versions.ts foundations');
-    console.error('  npx tsx scripts/review/generate-audience-versions.ts academic');
+    console.error('  npx tsx scripts/review/generate-audience-versions.ts academic --file=knowledge/solution.qmd');
     process.exit(1);
   }
 
-  const audienceArg = args[0].toLowerCase();
-  if (!(audienceArg in AUDIENCES)) {
+  if (!(audienceArg.toLowerCase() in AUDIENCES)) {
     console.error(`ERROR: Unknown audience type "${audienceArg}"`);
     console.error('\nAvailable audiences:');
     Object.keys(AUDIENCES).forEach(aud => console.error(`  - ${aud}`));
     process.exit(1);
   }
 
-  const audience = audienceArg as AudienceType;
+  const audience = audienceArg.toLowerCase() as AudienceType;
 
   console.log('='.repeat(80));
   console.log('GENERATE AUDIENCE-SPECIFIC VERSIONS');
@@ -220,18 +233,33 @@ async function main() {
     return true;
   });
 
+  // Filter to specific file if requested
+  let filesToProcess = sourceFiles;
+  if (specificFile) {
+    const absoluteSpecificFile = path.resolve(specificFile);
+    filesToProcess = sourceFiles.filter(file => path.resolve(file) === absoluteSpecificFile);
+
+    if (filesToProcess.length === 0) {
+      console.error(`\nERROR: File not found or not a valid source file: ${specificFile}`);
+      console.error('Make sure the file path is relative to the project root and is a source .qmd file (not -academic or -foundations)');
+      process.exit(1);
+    }
+
+    console.log(`\nProcessing single file: ${specificFile}`);
+  }
+
   console.log(`Found ${allBookFiles.length} total book files`);
   console.log(`  - ${allBookFiles.length - sourceFiles.length} excluded (references, existing versions)`);
-  console.log(`  - ${sourceFiles.length} source files to process\n`);
+  console.log(`  - ${filesToProcess.length} source file(s) to process\n`);
 
-  if (sourceFiles.length === 0) {
+  if (filesToProcess.length === 0) {
     console.log('No source files to process!');
     return;
   }
 
   // Show files that will be processed
   console.log('Source files to transform:');
-  sourceFiles.forEach(file => {
+  filesToProcess.forEach(file => {
     const parsedPath = path.parse(file);
     const targetName = `${parsedPath.name}-${audience}${parsedPath.ext}`;
     console.log(`  ${path.basename(file)} → ${targetName}`);
@@ -244,10 +272,10 @@ async function main() {
   let successCount = 0;
   let errorCount = 0;
 
-  for (const sourceFile of sourceFiles) {
+  for (const sourceFile of filesToProcess) {
     processedCount++;
     try {
-      console.log(`\n[${ processedCount}/${sourceFiles.length}] Processing: ${path.basename(sourceFile)}`);
+      console.log(`\n[${ processedCount}/${filesToProcess.length}] Processing: ${path.basename(sourceFile)}`);
 
       await generateVersionForAudience(sourceFile, audience, instruction);
 
@@ -263,7 +291,7 @@ async function main() {
   console.log('\n' + '='.repeat(80));
   console.log('GENERATION COMPLETE');
   console.log('='.repeat(80));
-  console.log(`Total files: ${sourceFiles.length}`);
+  console.log(`Total files: ${filesToProcess.length}`);
   console.log(`  ✓ Success: ${successCount}`);
   console.log(`  ✗ Errors: ${errorCount}`);
   console.log('='.repeat(80));
