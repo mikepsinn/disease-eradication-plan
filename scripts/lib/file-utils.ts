@@ -464,14 +464,14 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
   const bookFiles = await glob('knowledge/**/*.qmd');
   console.log(`  → Found ${bookFiles.length} files in knowledge`);
 
-  // Also include index.qmd from root
+  // Also include index*.qmd files from root (index.qmd, index-book.qmd, etc.)
   console.log('  → Searching for .qmd files in root...');
   const rootFiles = await glob('*.qmd');
-  const indexFile = rootFiles.filter(f => f === 'index.qmd');
-  console.log(`  → Found ${indexFile.length} index file(s)`);
+  const indexFiles = rootFiles.filter(f => f.startsWith('index'));
+  console.log(`  → Found ${indexFiles.length} index file(s)`);
 
   // Combine all files
-  let allFiles = [...indexFile, ...bookFiles];
+  let allFiles = [...indexFiles, ...bookFiles];
   console.log(`  → Combined total: ${allFiles.length} files`);
 
   // Filter out references.qmd, auto-generated files, and any files in _freeze or _book directories

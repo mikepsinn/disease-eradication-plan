@@ -1,24 +1,18 @@
 # Foundation Transformation
 
 **Target**: Gates Foundation, Wellcome Trust, Open Philanthropy
-**Goal**: Keep as funny and engaging as possible while professional. Show extraordinary ROI through data.
 
-**CRITICAL**: Write like Kurt Vonnegut, Philomena Cunk, or Douglas Adams. Simple words. Short sentences. Direct observations. Don't try to sound smart or academic.
+## TRANSFORM
+- Professional but engaging tone
+- Simple words. Short sentences.
+- Keep humor (remove only personal attacks and profanity)
 
 ## FRONTMATTER
-Transform title/description to professional tone. Keep author, date, technical fields.
+Professional tone for title/description. Keep author, date, technical fields.
 
 ## TERMINOLOGY
-"Decentralized FDA" → "dFDA" or "decentralized framework for drug assessment"
+"Decentralized FDA" → "dFDA"
 "The DIH" → "decentralized institutes of health"
 
 ## PRESERVE
-- ALL numbers, statistics, calculations, formulas, citations
-- Cost-effectiveness data, compelling examples, document structure
-
-## KEEP MAXIMUM HUMOR
-**Default to keeping humor unless it's a personal attack.**
-
-Only remove: Personal attacks and profanity
-
-**When in doubt, keep the humor.** Preserve ALL data and citations.
+ALL numbers, statistics, calculations, formulas, citations, cost-effectiveness data
