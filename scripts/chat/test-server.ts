@@ -27,7 +27,8 @@ async function testEndpoint(name: string, url: string, options?: RequestInit) {
     try {
       parsed = JSON.parse(text);
       console.log(`   Response:`, JSON.stringify(parsed, null, 2));
-    } catch {
+    } catch (error) {
+      console.debug('Could not parse response as JSON:', error);
       console.log(`   Response (raw):`, text.substring(0, 500));
     }
     

@@ -241,7 +241,8 @@ async function testChatEndpoint(): Promise<void> {
           } else {
             console.log(`   Response structure:`, Object.keys(data));
           }
-        } catch {
+        } catch (error) {
+          console.debug('Could not parse response as JSON, trying streaming format:', error);
           // Might be streaming format - show first few lines
           const lines = responseText.split('\n').filter(l => l.trim());
           if (lines.length > 0) {
@@ -249,7 +250,8 @@ async function testChatEndpoint(): Promise<void> {
             try {
               const firstChunk = JSON.parse(lines[0]);
               console.log(`   `, JSON.stringify(firstChunk).substring(0, 200));
-            } catch {
+            } catch (chunkError) {
+              console.debug('Could not parse first chunk as JSON:', chunkError);
               console.log(`   `, lines[0].substring(0, 200));
             }
           } else {

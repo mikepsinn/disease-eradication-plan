@@ -396,7 +396,10 @@ async function downloadNotebookLMFiles(notebookUrl: string, useExistingBrowser: 
             // Try to close any open menus
             try {
               await page.keyboard.press('Escape');
-            } catch {}
+            } catch (error) {
+              // Ignore - menu may not be open
+              console.debug('Could not press Escape (menu may not be open):', error);
+            }
           }
           
           // Small delay between files

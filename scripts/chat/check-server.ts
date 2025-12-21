@@ -29,8 +29,8 @@ async function checkServer() {
         if (data.agents) {
           console.log(`   Agents: ${data.agents.length} registered`);
         }
-      } catch {
-        // Not JSON
+      } catch (error) {
+        console.debug('Response is not JSON:', error);
       }
     } else {
       console.log(`   ⚠️  Server returned error (but is running)`);

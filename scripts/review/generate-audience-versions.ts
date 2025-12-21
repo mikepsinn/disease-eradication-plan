@@ -1,9 +1,15 @@
 import { getBookFilesForProcessing } from './utils';
-import { readFileWithMatter, updateFileWithHash } from '../lib/file-utils';
+import { updateFileWithHash } from '../lib/file-utils';
 import { generateGeminiProContent } from '../lib/llm';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+// ES module equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 dotenv.config();
 
@@ -14,6 +20,42 @@ const AUDIENCES = {
 } as const;
 
 type AudienceType = keyof typeof AUDIENCES;
+
+/**
+ * Update QMD links to point to the same audience version
+ * Excludes: figures/, references.qmd, parameters-and-calculations.qmd
+ */
+function updateQmdLinks(content: string, audience: AudienceType): string {
+  // Match markdown links: [text](path.qmd) or [text](path.qmd#anchor)
+  return content.replace(/\[([^\]]+)\]\(([^)]+\.qmd(?:#[^)]*)?)\)/g, (match, linkText, linkPath) => {
+    // Check if this link should be excluded
+    const normalizedPath = linkPath.toLowerCase();
+
+    // Exclude references.qmd
+    if (normalizedPath.includes('references.qmd')) {
+      return match;
+    }
+
+    // Exclude parameters-and-calculations.qmd
+    if (normalizedPath.includes('parameters-and-calculations.qmd')) {
+      return match;
+    }
+
+    // Exclude anything in figures/ folder
+    if (normalizedPath.includes('/figures/')) {
+      return match;
+    }
+
+    // Exclude if already has an audience suffix
+    if (normalizedPath.includes('-foundations.qmd') || normalizedPath.includes('-academic.qmd')) {
+      return match;
+    }
+
+    // Add audience suffix before .qmd (preserve any anchor)
+    const updatedPath = linkPath.replace(/\.qmd(#.*)?$/, `-${audience}.qmd$1`);
+    return `[${linkText}](${updatedPath})`;
+  });
+}
 
 async function loadInstructionsForAudience(audience: AudienceType): Promise<string> {
   const instructionFile = path.join(__dirname, AUDIENCES[audience]);
@@ -28,49 +70,58 @@ async function loadInstructionsForAudience(audience: AudienceType): Promise<stri
 async function transformFileForAudience(
   sourceFilePath: string,
   targetFilePath: string,
-  instruction: string
+  instruction: string,
+  audience: AudienceType
 ): Promise<void> {
   console.log(`\n  Transforming for audience: ${path.basename(targetFilePath)}...`);
 
-  const { frontmatter, body } = await readFileWithMatter(sourceFilePath);
+  const matter = await import('gray-matter');
+  const fs = await import('fs/promises');
+
+  // Read the entire file content (frontmatter + body)
+  const originalContent = await fs.readFile(sourceFilePath, 'utf-8');
 
   const prompt = `${instruction}
 
 ---
 
-FILE CONTENT:
+FILE CONTENT (complete .qmd file with YAML frontmatter):
 
-${body}
+${originalContent}
 
 ---
 
 INSTRUCTIONS:
-1. Apply the audience-specific transformation rules above to the file content
-2. Return ONLY the updated file content (without frontmatter)
-3. If no changes are needed, return exactly: NO_CHANGES_NEEDED
-4. Do NOT include markdown code fences (no \`\`\`) in your response
-5. Preserve all existing formatting, spacing, structure, and ESPECIALLY all citations and references
-6. Keep ALL quantitative data, statistics, and calculations unchanged
-7. NEVER remove or modify citation links or reference tags`;
+1. Apply the audience-specific transformation rules to the ENTIRE file
+2. Transform frontmatter fields (title, description) to match the audience tone
+3. Transform body content according to the rules
+4. Keep technical frontmatter fields unchanged (author, date, etc.)
+5. Return the COMPLETE transformed file with frontmatter and body
+6. Do NOT include markdown code fences around your response
+7. Preserve all existing formatting, spacing, structure, and ESPECIALLY all citations and references
+8. Keep ALL quantitative data, statistics, and calculations unchanged
+9. NEVER remove or modify citation links or reference tags
+
+Return the complete .qmd file starting with --- and the YAML frontmatter.`;
 
   const responseText = await generateGeminiProContent(prompt);
 
-  let finalBody;
-  if (responseText.trim() === 'NO_CHANGES_NEEDED') {
-    console.log(`    ○ No transformation needed`);
-    finalBody = body;
-  } else {
-    // Strip markdown code blocks if present
-    let cleaned = responseText.trim();
-    cleaned = cleaned.replace(/^```[a-z]*\n?/i, '');
-    cleaned = cleaned.replace(/\n?```\s*$/i, '');
-    finalBody = cleaned.trim();
-    console.log(`    ✓ Transformed`);
-  }
+  // Strip markdown code blocks if the LLM wrapped the response
+  let cleanedResponse = responseText.trim();
+  cleanedResponse = cleanedResponse.replace(/^```[a-z]*\n?/i, '');
+  cleanedResponse = cleanedResponse.replace(/\n?```\s*$/i, '');
 
-  // Write to target file with original frontmatter
+  // Parse the transformed content to extract frontmatter and body
+  const { data: finalFrontmatter, content: body } = matter.default(cleanedResponse);
+
+  // Update QMD links to point to the same audience version
+  const finalBody = updateQmdLinks(body, audience);
+
+  console.log(`    ✓ Transformed complete file`);
+
+  // Write to target file with transformed frontmatter and body
   const hashField = 'lastAudienceTransformHash';
-  await updateFileWithHash(targetFilePath, finalBody, frontmatter, hashField);
+  await updateFileWithHash(targetFilePath, finalBody, finalFrontmatter, hashField);
 }
 
 async function generateVersionForAudience(
@@ -98,7 +149,7 @@ async function generateVersionForAudience(
   }
 
   // Transform the target file
-  await transformFileForAudience(sourceFile, targetFile, instruction);
+  await transformFileForAudience(sourceFile, targetFile, instruction, audience);
 }
 
 async function main() {

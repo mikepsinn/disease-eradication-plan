@@ -181,6 +181,54 @@ export function programmaticFormat(content: string): string {
   // Normalize line endings to LF for consistent processing
   processedBody = processedBody.replace(/\r\n/g, '\n');
 
+  // Ensure the first line is the setup-parameters include
+  const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
+  const lines = processedBody.split('\n');
+
+  // Check if first non-empty line is the include directive
+  let firstNonEmptyIndex = lines.findIndex(line => line.trim() !== '');
+  if (firstNonEmptyIndex === -1) {
+    // Empty body, just add the include
+    processedBody = includeDirective + '\n\n';
+  } else if (lines[firstNonEmptyIndex]?.trim() !== includeDirective) {
+    // Include directive is missing, add it at the beginning
+    lines.splice(firstNonEmptyIndex, 0, includeDirective, '');
+    processedBody = lines.join('\n');
+  }
+
+  // Remove first heading after the include directive (headings come from frontmatter)
+  const contentLines = processedBody.split('\n');
+  let foundInclude = false;
+  let firstHeadingIndex = -1;
+
+  for (let i = 0; i < contentLines.length; i++) {
+    const line = contentLines[i].trim();
+
+    // Track when we've passed the include directive
+    if (line === includeDirective) {
+      foundInclude = true;
+      continue;
+    }
+
+    // After include, find first non-empty line
+    if (foundInclude && line !== '') {
+      // Check if it's a heading (starts with #)
+      if (/^#{1,6}\s/.test(line)) {
+        firstHeadingIndex = i;
+        break;
+      } else {
+        // First non-empty line after include is not a heading, stop looking
+        break;
+      }
+    }
+  }
+
+  // Remove the first heading if found
+  if (firstHeadingIndex !== -1) {
+    contentLines.splice(firstHeadingIndex, 1);
+    processedBody = contentLines.join('\n');
+  }
+
   // 1. Replace em-dashes with comma and space (only when surrounded by letters)
   // Example: "word—word" becomes "word, word"
   // But: "word—" or "—word" or "word—\"" are left unchanged

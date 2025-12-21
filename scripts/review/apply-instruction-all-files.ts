@@ -73,6 +73,7 @@ async function main() {
       console.log('Reading instruction from prompt.md...\n');
     } catch (error) {
       console.error('ERROR: No instruction provided and prompt.md not found.');
+      console.error('Error details:', error);
       console.error('\nUsage options:');
       console.error('  1. npx tsx scripts/review/apply-instruction-all-files.ts "Your instruction here"');
       console.error('  2. Create a prompt.md file in the root directory with your instruction');
@@ -107,8 +108,6 @@ async function main() {
 
   // Filter files
   const filesToProcess = allBookFiles.filter(file => {
-    const normalizedFile = file.replace(/\\/g, '/');
-
     // Check exact file matches
     if (excludedFiles.includes(file)) return false;
 

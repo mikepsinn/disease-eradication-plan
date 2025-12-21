@@ -265,12 +265,12 @@ async function readImageMetadata(filepath: string): Promise<Partial<ImageMetadat
           source: parsed.source,
           analyzed: true
         };
-      } catch {
-        // Metadata exists but not in JSON format
+      } catch (error) {
+        console.warn(`Could not parse existing metadata for ${imagePath}:`, error);
       }
     }
-  } catch {
-    // exiftool can't read this file or other error
+  } catch (error) {
+    console.warn(`Could not read metadata from ${imagePath}:`, error);
   }
 
   return { analyzed: false };
@@ -288,8 +288,8 @@ async function getImageInfo(filepath: string): Promise<Partial<ImageMetadata>> {
   try {
     const metadata = await sharp(filepath).metadata();
     dimensions = { width: metadata.width || 0, height: metadata.height || 0 };
-  } catch {
-    // Not a format sharp can read
+  } catch (error) {
+    console.warn(`Could not read image dimensions for ${filepath}:`, error);
   }
 
   return {

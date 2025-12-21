@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Kill any existing Quarto processes
 # echo "🔪 Killing existing Quarto processes..."
 # pkill -9 quarto 2>/dev/null || true

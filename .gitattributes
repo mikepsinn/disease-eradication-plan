@@ -90,3 +90,4 @@
 .gitattributes export-ignore
 .gitignore     export-ignore
 .gitkeep       export-ignore
+.husky/* text eol=lf
