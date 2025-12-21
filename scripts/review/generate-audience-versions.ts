@@ -1,6 +1,6 @@
 import { getBookFilesForProcessing } from './utils';
 import { updateFileWithHash } from '../lib/file-utils';
-import { generateGeminiProContent } from '../lib/llm';
+import { generateGeminiFlashContent } from '../lib/llm';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
@@ -104,7 +104,7 @@ INSTRUCTIONS:
 
 Return the complete .qmd file starting with --- and the YAML frontmatter.`;
 
-  const responseText = await generateGeminiProContent(prompt);
+  const responseText = await generateGeminiFlashContent(prompt);
 
   // Strip markdown code blocks if the LLM wrapped the response
   let cleanedResponse = responseText.trim();
