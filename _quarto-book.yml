@@ -9,6 +9,9 @@ project:
   # post-render:
   #   - python scripts/post-render-validation.py
 
+website:
+  site-url: https://manual.WarOnDisease.org
+
 book:
   title: "How to End War and Disease"
   author: " Mike P. Sinn"

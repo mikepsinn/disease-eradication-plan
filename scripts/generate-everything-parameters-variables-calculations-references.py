@@ -9,7 +9,8 @@ Reads all numeric constants from dih_models/parameters.py and generates:
 2. knowledge/appendix/parameters-and-calculations.qmd - Academic reference with LaTeX
 3. knowledge/references.json - Structured JSON from references.qmd
 4. references.bib - BibTeX export for LaTeX submissions
-5. (Optional) Inject citations into economics.qmd
+5. Search indexes for all Quarto configs (warondisease, economics, iab, wishocracy)
+6. (Optional) Inject citations into economics.qmd
 
 Usage:
     python scripts/generate-everything-parameters-variables-calculations-references.py [options]
@@ -41,6 +42,10 @@ Output:
     _variables.yml in project root
     knowledge/appendix/parameters-and-calculations.qmd
     references.bib in project root
+    _book/warondisease/search-index.json
+    _site/economics/search-index.json
+    _site/iab/search-index.json
+    _site/wishocracy/search-index.json
 
 The generated files enable academic rigor with zero manual maintenance.
 """
@@ -57,6 +62,11 @@ import yaml
 _scripts_dir = Path(__file__).parent.absolute()
 if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
+
+# Add project root to path for dih_models imports
+_project_root = _scripts_dir.parent
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
 
 from generate_references_json import generate_references_json  # noqa: E402
 
@@ -90,6 +100,7 @@ from dih_models.reference_parser import (
     parse_references_qmd,
     sanitize_bibtex_key,
 )
+from dih_models.search_index_generator import generate_search_indexes
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
 from dih_models.validation import (
     validate_references,
@@ -1002,6 +1013,13 @@ def main():
         print("[*] Injecting citations into economics.qmd...")
         economics_qmd = project_root / "knowledge" / "economics" / "economics.qmd"
         inject_citations_into_qmd(parameters, economics_qmd)
+        print()
+
+    # Generate search indexes for all Quarto configs
+    try:
+        generate_search_indexes(project_root)
+    except Exception as e:
+        print(f"[WARN] Search index generation skipped: {e}")
         print()
 
     # Generate outline from updated headings

@@ -316,7 +316,7 @@ where $\beta, \gamma \gg 0$. Since donor interests ($U_{donors}$) often conflict
 
 # **Empirical Precedents and Evidence Base**
 
-## **4.1 Porto Alegre Participatory Budgeting**
+## **Porto Alegre Participatory Budgeting**
 
 The closest large-scale precedent for Wishocracy is participatory budgeting (PB), pioneered in Porto Alegre, Brazil in 1989\. Under the Workers' Party administration, citizens were invited to deliberative assemblies to determine municipal investment priorities. By 1997, PB produced remarkable results: sewer and water connections increased from 75% to 98% of households; health and education budgets grew from 13% to 40% of total spending; the number of schools quadrupled; and road construction in poor neighborhoods increased five-fold.
 
@@ -324,7 +324,7 @@ Participation grew from fewer than 1,000 citizens annually in 1990 to over 40,00
 
 However, Porto Alegre also illustrates the fragility of participatory mechanisms. When political support waned after 2004, PB was gradually defunded and eventually suspended. This underscores the importance of institutional embedding and legal protection for any participatory mechanism seeking long-term stability.
 
-## **4.2 Taiwan's Digital Democracy Experiments**
+## **Taiwan's Digital Democracy Experiments**
 
 Taiwan's vTaiwan platform, launched in 2014 by civic hacker Audrey Tang (later Taiwan's Digital Minister), demonstrates the potential of technology-mediated preference aggregation. The platform used Pol.is, a tool that maps opinions and identifies consensus clusters, to deliberate on contentious policy issues including ridesharing regulation and online alcohol sales.
 
@@ -332,7 +332,7 @@ In the alcohol sales deliberation, approximately 450 citizens participated in pa
 
 vTaiwan's limitations (lack of binding authority, limited scope, and eventual political marginalization) provide crucial lessons. Wishocracy addresses these by proposing integration with actual budget allocation rather than advisory recommendations.
 
-## **4.3 Stanford Participatory Budgeting Platform Research**
+## **Stanford Participatory Budgeting Platform Research**
 
 Academic research on voting interfaces provides direct evidence for RAPPA's design choices. @wellings-2024 compared cumulative voting, quadratic voting, and traditional ranking methods on Stanford's Participatory Budgeting platform. Their findings support several Wishocracy design principles.
 
@@ -340,13 +340,13 @@ Voters preferred more expressive methods over simple approval voting, even thoug
 
 @yang-2024 found that voting input formats using rankings or point distribution provided a 'stronger sense of engagement in the participatory process.' These findings validate RAPPA's slider-based allocation over binary choice mechanisms.
 
-## **4.4 Colorado Quadratic Voting Experiment**
+## **Colorado Quadratic Voting Experiment**
 
 The Democratic caucus of the Colorado House of Representatives conducted a quadratic voting experiment in April 2019 to prioritize legislative priorities among 107 possible bills. Each legislator received 100 virtual tokens to allocate across issues, with costs increasing quadratically.
 
 Results demonstrated that QV produces different outcomes than majority voting. The winning bill (Equal Pay for Equal Work Act) received broad but not universal support with strong preference intensity. Notably, no representative spent all tokens on a single bill, suggesting the mechanism successfully encouraged preference diversification.
 
-## **4.5 Reference Implementation: Wishocracy.org**
+## **Reference Implementation: Wishocracy.org**
 
 To validate the technical feasibility of the RAPPA mechanism, a reference implementation has been deployed at [Wishocracy.org](https://wishocracy.org). This open-source platform serves as a pilot environment for:
 
@@ -356,15 +356,15 @@ To validate the technical feasibility of the RAPPA mechanism, a reference implem
 
 The repository is available for public audit, allowing researchers to verify that the theoretical properties described in Section 3 transform correctly into executable code.
 
-# **5\. Addressing Potential Criticisms**
+# **Addressing Potential Criticisms**
 
-## **5.1 Participation and Digital Divide**
+## **Participation and Digital Divide**
 
 **Criticism:** Digital participation mechanisms exclude citizens without internet access, technological literacy, or time to participate.
 
 **Response:** Wishocracy should be deployed as a complement to, not replacement for, existing democratic institutions. Multiple access modalities (smartphone apps, web interfaces, public kiosks at libraries and government offices, and paper-based alternatives) can maximize inclusion. Statistical weighting can correct for demographic participation biases, as routinely done in survey research. The cognitive simplicity of pairwise comparisons (unlike lengthy deliberative processes) makes participation accessible to citizens with limited time or formal education.
 
-## **5.2 Manipulation and Sybil Attacks**
+## **Manipulation and Sybil Attacks**
 
 **Criticism:** Bad actors could create multiple accounts or coordinate voting blocs to manipulate outcomes.
 
@@ -384,25 +384,25 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 {{< include ../figures/rappa-sybil-dilution-diagram.qmd >}}
 
-## **5.3 Preference Laundering and Manufactured Consent**
+## **Preference Laundering and Manufactured Consent**
 
 **Criticism:** Well-funded interests could use advertising and public relations to shift public preferences before aggregation, laundering elite preferences through ostensibly democratic mechanisms.
 
 **Response:** This concern applies equally to all democratic mechanisms, including elections. Wishocracy is no more vulnerable to preference manipulation than existing systems and may be more robust due to its continuous, iterative nature. Unlike periodic elections, ongoing preference measurement allows rapid detection of sudden shifts that might indicate manipulation. Transparency requirements for political advertising can be extended to cover preference-shifting campaigns. Ultimately, if citizens' informed preferences support certain outcomes, those outcomes are legitimate regardless of how preferences formed.
 
-## **5.4 Complexity of Real Policy Trade-offs**
+## **Complexity of Real Policy Trade-offs**
 
 **Criticism:** Real policy decisions involve complex interdependencies, implementation constraints, and unintended consequences that citizens cannot evaluate.
 
 **Response:** Wishocracy explicitly separates values (what we want) from implementation (how to achieve it). Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) while experts design and evaluate implementation strategies. The service provider layer allows technical assessment of proposed solutions while keeping priority-setting in democratic hands. This division of labor matches citizens' comparative advantage in welfare evaluation with experts' advantage in causal analysis.
 
-## **5.5 Legitimacy and Accountability**
+## **Legitimacy and Accountability**
 
 **Criticism:** Algorithmic aggregation lacks the transparency and accountability of representative institutions.
 
 **Response:** The aggregation algorithm can be made fully transparent and auditable: open-source code, publicly verifiable inputs and outputs, and independent audits. This provides greater transparency than legislative logrolling and committee negotiations. Elected officials retain authority to override Wishocracy recommendations, but must publicly justify departures from expressed citizen preferences. This creates accountability in both directions: citizens to outcomes, and representatives to citizens.
 
-## **5.6 Failure Modes and Robustness**
+## **Failure Modes and Robustness**
 
 **Low Participation (<1%):** When participation falls below critical thresholds, RAPPA faces two degradation modes. First, *sampling bias* emerges: if only 0.1% of citizens participate and they are systematically unrepresentative (e.g., only highly educated, politically engaged citizens), the aggregated preferences will not reflect population welfare. Second, *comparison sparsity* increases: with fewer participants, the pairwise comparison matrix becomes increasingly sparse, reducing the reliability of eigenvector estimates.
 
@@ -418,7 +418,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Graceful Degradation:** Critically, RAPPA degrades gracefully rather than catastrophically. Unlike binary voting where a 51-49 split produces winner-take-all outcomes, RAPPA with corrupted or sparse data still produces *proportional* allocations that approximate true preferences, albeit with increased noise. This property makes RAPPA suitable for pilot deployments where participation may initially be modest: the mechanism provides useful signals even before achieving full-scale adoption.
 
-# **6\. Conclusion**
+# **Conclusion**
 
 Democratic institutions evolved in an era of information scarcity, limited communication, and relatively homogeneous electorates. Today's policy challenges (global in scope, technical in character, and requiring trade-offs across incommensurable values) demand mechanisms that can aggregate nuanced citizen preferences at scale. Wishocracy, through Randomized Aggregated Pairwise Preference Allocation, offers such a mechanism.
 
