@@ -10,7 +10,8 @@ tags:
   - medical-research
   - 1-percent-treaty
 ---
-## Global Survey on Human Values
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 
 The current medical research system is slow and expensive. New treatments take an average of **17 years** to reach patients, and **95% of rare diseases have no approved treatment**. This survey is designed to measure public support for a global initiative to upgrade this system, making it faster, cheaper, and more effective. Your anonymous responses will help demonstrate public demand for reform worldwide.
 
@@ -187,7 +188,7 @@ If you'd like to support our advocacy efforts directly, your donation will help 
 - Technical development of a decentralized framework for drug assessment (dFDA) and a network of decentralized institutes of health (DIH)
 - Research and analysis to support our policy proposals and initiatives
 
-**Your Impact:** Every $1,000 donated funds 1,000+ verified survey responses, helping us reach the {{< var global_population_activism_threshold_pct >}} tipping point needed for systemic change. Research shows that when {{< var global_population_activism_threshold_pct >}} of a population actively supports a cause, it has never failed to achieve major societal advancement.
+**Your Impact:** Every $1,000 donated funds 1,000+ verified survey responses, helping us reach the {{< var global_population_activism_threshold_pct >}} tipping point needed for systemic change. Research shows that when {{< var global_population_activism_threshold_pct >}} of a population actively supports a cause, it has historically succeeded in achieving major societal advancement.
 
 **Transparency:** All donations are tracked transparently, with real-time dashboards showing progress toward our goals. We target costs of $0.20-$0.50 per verified response through viral referral systems.
 

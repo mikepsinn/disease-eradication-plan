@@ -6,7 +6,8 @@ tags:
   - jobs
 ---
 
-## About the Mission
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 
 Help accelerate medical progress by 80X through patient rights advocacy and civic engagement technology. We're building AI-powered platforms to educate patients about clinical trial access and empower them to advocate for healthcare policy reform.
 

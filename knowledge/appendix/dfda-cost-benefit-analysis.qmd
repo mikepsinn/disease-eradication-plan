@@ -8,19 +8,9 @@ tags:
   - economics
 ---
 
-```{python}
-#| echo: false
-import os
-import numpy_financial as npf
-from pathlib import Path
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
-# Find project root dynamically (works regardless of where Quarto executes from)
 
-from dih_models.plotting.chart_style import get_project_root
-
-project_root = get_project_root()
-from dih_models.parameters import *
-```
 
 - **Saves ~{{< var dfda_rd_gross_savings_annual >}} Annually**: Reduces global clinical trial costs (~{{< var global_clinical_trials_spending_annual >}}/year market) by a baseline of **[50.0%](#gross-r-and-d-savings-from-dfda-implementation)**, with up to **[95%](#gross-r-and-d-savings-from-dfda-implementation)** savings in optimal scenarios.
 - **{{< var dfda_roi_rd_only >}} Return on Investment (R&D Only)**: A modest annual operational cost of ~{{< var dfda_upfront_build >}} generates ~{{< var dfda_rd_gross_savings_annual >}} in industry-wide savings, yielding an NPV of ~[\$249B over 10 years](#final-roi-and-net-benefit). **[Comprehensive ROI](#roi-with-regulatory-delay-avoidance)** including all core benefits (R&D savings, regulatory delay elimination, and peace dividend): **{{< var treaty_complete_roi_all_benefits >}}** (PRIMARY recommended estimate).

@@ -13,12 +13,8 @@ tags:
   - calculations
   - mathematical-framework
 ---
-```{python}
-#| echo: false
-import os
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
-from dih_models.parameters import *
-```
 
 The **Disease Eradication Model** properly accounts for {{< var trial_capacity_multiplier >}}× cumulative research acceleration and shows **$4.3M** lifetime benefit with **72 years** life extension in the realistic 20-year scenario.
 

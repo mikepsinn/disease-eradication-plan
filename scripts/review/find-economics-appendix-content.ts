@@ -6,7 +6,7 @@ import path from 'path';
 
 dotenv.config();
 
-const ECONOMICS_FILE = 'knowledge/economics.qmd';
+const ECONOMICS_FILE = 'knowledge/economics/economics.qmd';
 
 async function analyzeFile(economicsContent: string, filePath: string): Promise<string> {
   console.log(`\nAnalyzing: ${path.basename(filePath)}`);
