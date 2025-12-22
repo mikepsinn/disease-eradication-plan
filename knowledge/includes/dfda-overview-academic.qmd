@@ -1,56 +1,58 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 **Amazon for Clinical Trials + Consumer Reports for Drugs**
 
-[Your decentralized framework for drug assessment (dFDA)](/knowledge/solution/dfda.qmd) achieves **{{< var trial_cost_reduction_factor >}}x cost reduction** through decentralized pragmatic trials.
+[A decentralized framework for drug assessment (dFDA)](/knowledge/solution/dfda-academic.qmd) achieves **{{< var trial_cost_reduction_factor >}}x cost reduction** through decentralized pragmatic trials.
 Patients can search treatments ranked by real-world effectiveness and join trials with one click.
 
-#### Safer Than the FDA
+#### Safety Assessment vs Current Standards
 
 **Current FDA system:**
 
 - Adverse events require filling out a PDF form (seriously)
 - Most side effects never get reported
 - No public database of outcome frequencies
-- You find out a drug causes heart attacks 10 years later when lawyers get involved
+- Society finds out a drug causes heart attacks 10 years later when lawyers get involved
 
 **A decentralized assessment system:**
 
 - Adverse events collected automatically from every participant
 - Real-time reporting to everyone (not buried in FDA databases)
 - Outcome labels show exact frequency and severity of every effect
-- You know the risks BEFORE you take the drug, not after the class action lawsuit
+- Patients know the risks BEFORE taking the drug, not after the class action lawsuit
 
-The FDA doesn't even publish adverse event rates. They make you guess. The framework tells you "12% of patients got headaches, 3% were severe, 0.1% discontinued treatment." That's not less safe than the current system. That's actually having safety data.
+The FDA does not publish adverse event rates. They make people guess. The framework shows: "12% of patients got headaches, 3% were severe, 0.1% discontinued treatment." That's not less safe than the current system. That's actually having safety data.
 
 #### Treatment Rankings
 
-Consumer Reports for Drugs
+Comparative Effectiveness
 
-**Current system:** Your doctor picks treatments based on:
+**Current system:** Doctors pick treatments based on:
 
-- That drug rep who brought good donuts in 2003
-- Something they half-remember from medical school
+- The drug rep who brought good donuts in 2003
+- Concepts half-remembered from medical school
 - Whatever the insurance company allows
 - Vibes
 
-[A decentralized framework for drug assessment](/knowledge/solution/dfda.qmd): Type your condition, see every [treatment ranked by real-world effectiveness](/knowledge/solution/dfda.qmd):
+[A decentralized framework for drug assessment](/knowledge/solution/dfda-academic.qmd): Patients enter a condition and see every [treatment ranked by real-world effectiveness](/knowledge/solution/dfda-academic.qmd):
 
 ![Treatment Rankings Example](/assets/dfda-comparative-effectiveness-ranking-search.png)
 
-Rankings are based on frequency and magnitude of health outcome changes across all patients - or filtered to patients with similar omic profiles to yours. A treatment that works great for 25-year-old women with your genetic variants might not work for 60-year-old men with different variants. The framework shows you what works for people like you, not average effects across everyone.
+Rankings are based on frequency and magnitude of health outcome changes across all patients - or filtered to patients with similar omic profiles. A treatment that works great for 25-year-old women with specific genetic variants might not work for 60-year-old men with different variants. The framework shows what works for similar people, not average effects across everyone.
 
 ##### Outcome Labels
 
-*Nutrition Facts for Drugs*
+*Standardized Outcome Summaries*
 
 Food has nutrition labels.
 Cigarettes have warning labels.
 Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
 
-[Your decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) fixes that with **[Outcome Labels](/knowledge/solution/dfda.qmd)** - simple, data-driven summaries showing exactly what happens when real people try a treatment:
+[A decentralized framework for drug assessment](/knowledge/solution/dfda-academic.qmd) fixes that with **[Outcome Labels](/knowledge/solution/dfda-academic.qmd)** - simple, data-driven summaries showing exactly what happens when real people try a treatment:
 
 ![Outcome Labels Example](/assets/dfda-outcome-labels.png)
 
-Based on thousands of real patients, you see:
+Based on thousands of real patients, the data shows:
 
 - **Cognitive Improvements**: Memory +35%, Executive Function +22%
 - **Side Effects**: Headache +9% (mild), Fatigue +7% (moderate)
@@ -59,4 +61,4 @@ Based on thousands of real patients, you see:
 
 No more pharmaceutical fan fiction.
 No more lawyers writing medical advice during fever dreams.
-Just cold, hard data about whether this chemical makes your meat work better or worse.
+Just cold, hard data about whether this chemical makes human meat work better or worse.

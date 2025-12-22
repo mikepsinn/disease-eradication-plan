@@ -1,16 +1,18 @@
 ---
-title: "Wishocracy Implementation Guide"
-description: "A Practical Framework for Piloting Aggregated Pairwise Preference Allocation"
+title: Wishocracy Implementation Guide
+description: A Practical Framework for Piloting Aggregated Pairwise Preference Allocation
 published: false
 ---
 
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ::: {.callout-note}
-This implementation guide provides practical details for jurisdictions interested in piloting Wishocracy. For the theoretical foundations and mechanism design, see the [Wishocracy paper](wishocracy-paper.qmd).
+This implementation guide provides practical details for jurisdictions interested in piloting Wishocracy. For the theoretical foundations and mechanism design, see the [Wishocracy paper](wishocracy-paper-academic.qmd).
 :::
 
 # **1. Pilot Implementation Framework**
 
-We propose a three-phase pilot design that allows governments to test Wishocracy with minimal risk while generating rigorous evidence for expansion decisions.
+This guide proposes a three-phase pilot design that allows governments to test Wishocracy with minimal risk while generating rigorous evidence for expansion decisions.
 
 ## **1.1 Phase 1: Advisory Shadow Budget (Months 1-12)**
 
@@ -90,7 +92,7 @@ Based on comparable government technology projects and participatory budgeting p
 
 # **3. Governance and Oversight Structure**
 
-To ensure legitimacy and prevent capture, we recommend the following governance structure:
+To ensure legitimacy and prevent capture, this framework recommends the following governance structure:
 
 **Independent Oversight Board:** A five-member board with staggered terms, including representatives from academia (mechanism design expertise), civil society (democratic participation advocacy), government (public administration), technology (security and systems), and citizen representatives (selected by sortition). The board certifies the aggregation algorithm, audits results, and investigates complaints.
 

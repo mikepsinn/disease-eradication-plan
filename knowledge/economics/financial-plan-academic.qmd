@@ -1,6 +1,6 @@
 ---
 title: 'Financial Plan: Overview'
-description: High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
+description: A high-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
 published: true
 tags:
   - finance
@@ -12,11 +12,11 @@ title-id: sec-financial-plan
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Most financial plans are complicated because the people writing them are either confused or lying. This one is complicated because moving $27 billion annually from military budgets to disease eradication while generating perpetual returns for investors actually IS complicated.
+Most financial plans are complicated because the authors are either confused or disingenuous. This one is complicated because moving $27 billion annually from military budgets to disease eradication while generating perpetual returns for investors actually IS complicated.
 
 But the architecture is clean: Raise $1B. Spend it to pass the treaty. Manage $27B+ annually forever.
 
-Three financial pillars. That's it.
+Three financial pillars. These constitute the core structure.
 
 For detailed breakdowns, see the linked documents. For the overview that explains why this works, keep reading.
 
@@ -24,40 +24,40 @@ For detailed breakdowns, see the linked documents. For the overview that explain
 
 ### 1. Fundraising: How To Raise $1.0B
 
-**Instrument:** [VICTORY Incentive Alignment Bonds](victory-bonds.qmd)
+**Instrument:** [VICTORY Incentive Alignment Bonds](victory-bonds-academic.qmd)
 
 - **Target Returns:** {{< var victory_bond_annual_return_pct >}} annually, perpetually
 - **Structure:** Debt instrument, senior to all other claims
 - **Payout:** {{< var victory_bond_funding_pct >}} of all 1% Treaty Fund inflows ({{< var victory_bond_annual_payout >}}/year)
 - **Protection:** Bondholders paid before mission spending
 - **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream
-- **The Pitch:** "Invest $1B. Get {{< var victory_bond_annual_payout >}}/year. Forever."
+- **The Value Proposition:** "Invest $1B. Get {{< var victory_bond_annual_payout >}}/year. Forever."
 
-#### Why This Works
+#### Strategic Rationale
 
-- Simplest pitch in finance: {{< var victory_bond_annual_return_pct >}} annual returns, perpetual
+- A streamlined financial proposition: {{< var victory_bond_annual_return_pct >}} annual returns, perpetual
 - Clean {{< var treaty_campaign_total_cost >}} target (vs confusing $1.2-2.5B range)
-- {{< var victory_bond_funding_pct >}} payout is easy math (vs 5% complex calculations)
-- "Forever" beats any finite timeline
-- Better returns than any investment in history
+- {{< var victory_bond_funding_pct >}} payout is simple math (vs 5% complex calculations)
+- "Forever" outperforms any finite timeline
+- Returns exceed typical historical benchmarks
 
 **Timeline:** 12-24 months to raise $1.0B (simplified structure accelerates fundraising)
 
 ### 2. Campaign Budget: How To Spend $1.0B
 
-**Detailed Breakdown:** [Campaign Budget](campaign-budget.qmd)
+**Detailed Breakdown:** [Campaign Budget](campaign-budget-academic.qmd)
 
 The one-time "activation energy" to pass a 1% treaty, made affordable through AI and viral mechanics:
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **Global Referendum** | {{< var treaty_campaign_budget_referendum >}} | Viral referral system ($0.20-2.00/vote tiered), 280M votes, platform development. [Scenario analysis](campaign-budget.qmd#base-case-scenario): $140M-$406M |
-| **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion, legal/compliance. Outspends pharma + MIC |
+| **Global Referendum** | {{< var treaty_campaign_budget_referendum >}} | Viral referral system ($0.20-2.00/vote tiered), 280M votes, platform development. [Scenario analysis](campaign-budget-academic.qmd#base-case-scenario): $140M-$406M |
+| **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion, legal/compliance. Outspends pharma + military contractor lobbies |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 
 #### Key Innovations
 
-- **AI does most of the work**: 60-80% cost reduction vs traditional campaigns
+- **AI performs the majority of tasks**: 60-80% cost reduction vs traditional campaigns
 - **Viral mechanics**: $0.20/vote vs $5-15 traditional cost per voter
 - **Strategic focus**: 20 high-impact countries, not all 195
 - **Result**: {{< var treaty_campaign_total_cost >}} achieves what would cost $2-5B traditionally
@@ -66,7 +66,7 @@ The one-time "activation energy" to pass a 1% treaty, made affordable through AI
 
 ### 3. Treasury Management: How To Manage {{< var treaty_annual_funding >}}+ Annually
 
-Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from military budgets to the 1% Treaty Fund.
+Upon treaty ratification, {{< var treaty_annual_funding >}} flows annually from military budgets to the 1% Treaty Fund.
 
 #### Revenue Sources
 
@@ -97,38 +97,38 @@ The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds re
 
 - **VICTORY Incentive Alignment Bond returns:** {{< var victory_bond_annual_payout >}} annually ({{< var victory_bond_funding_pct >}} of treaty inflows)
 - **IAB political incentives:** {{< var iab_political_incentive_funding_annual >}} annually ({{< var iab_political_incentive_funding_pct >}} of treaty inflows)
-- Both are sacred and untouchable (or the system fails)
+- Both are inviolable to ensure systemic integrity
 - Automatically distributed via smart contracts
 - {{< var victory_bond_annual_return_pct >}} annual returns to bondholders
 
-##### Everything Else ({{< var dih_treasury_medical_research_pct >}}): Decided by Wishocracy
+##### Discretionary Allocation ({{< var dih_treasury_medical_research_pct >}}): Decided by Wishocracy
 
-Instead of committees, 8 billion humans vote via pairwise comparisons:
+Rather than relying on committees, 8 billion humans vote via pairwise comparisons:
 
 > "Patient subsidies for cancer trials" vs "Infrastructure for rural access"
 > *Swipe to allocate: 70% / 30%*
 
 Billions of micro-decisions aggregate into humanity's true priorities.
 
-**Probable Emergent Allocation (based on human nature):**
+**Projected Allocation Patterns (based on human behavior):**
 
 - **Patient Subsidies (65-75%):** People vote to subsidize their own treatments
-- **Infrastructure (10-20%):** Only as much as necessary to keep platform running
+- **Infrastructure (10-20%):** Only as much as necessary to keep the platform running
 - **Research Incentives (10-15%):** Prizes for first-to-cure, breakthrough bonuses
 - **Expansion Campaigns (variable):** Growing treasury through bigger treaties
 
-#### Anti-Corruption Built In
+#### Systemic Anti-Corruption Measures
 
-- Can't bribe 8 billion people
-- Can't capture a system with no center
-- Can't redirect funds without majority vote
-- Can't build $600M headquarters (looking at you, CDC)
+- Bribery of 8 billion people is impossible
+- Capture of a system with no center is impossible
+- Redirection of funds without majority vote is impossible
+- Construction of extravagant headquarters is impossible
 
 #### Dynamic Patient Subsidies
 
-**The revolutionary part:** your decentralized institutes of health don't pay researchers. They subsidize patients.
+**The core innovation:** a decentralized institutes of health does not pay researchers. It subsidizes patients.
 
-#### How It Works
+#### Mechanism
 
 ```
 Base Subsidy = Total Treasury ÷ Active Trial Participants
@@ -143,21 +143,21 @@ As more patients join:
 10M participants = $2,700 per patient
 ```
 
-#### Why This Creates Perfect Incentives
+#### Incentive Alignment
 
-- Patients organize to grow treasury (2% treaty = double subsidies)
+- Patients organize to grow the treasury (2% treaty = double subsidies)
 - Researchers compete to attract patients (better trials win)
 - Insurance companies save money (trials cheaper than chronic care)
-- Everyone wants more people in trials (network effects)
+- All parties benefit from increased trial participation (network effects)
 
-#### Compare to Grant System
+#### Comparison with Traditional Grant Systems
 
-- NIH grants: 6 months of proposal writing, committees decide, universities take 40% overhead
-- Subsidies via your decentralized institutes of health: Patient wants treatment, joins trial, funds follow automatically, zero overhead
+- NIH grants: typically require 6 months of proposal writing, committees decide, universities take 40% overhead
+- Subsidies via a decentralized institutes of health: Patient wants treatment, joins trial, funds follow automatically, zero overhead
 
 ## Risk Management
 
-For detailed risk analysis, see **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)**.
+For detailed risk analysis, see **[Investor Risk Analysis](../appendix/investor-risk-analysis-academic.qmd)**.
 
 Key protections:
 
@@ -169,19 +169,19 @@ Key protections:
 
 ## Related Documents
 
-- **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Investment thesis and bond structure
-- **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
-- **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
-- **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise $1B
-- **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](../appendix/dfda-cost-benefit-analysis.qmd)** - Complete ROI analysis
+- **[VICTORY Incentive Alignment Bonds](victory-bonds-academic.qmd)** - Investment thesis and bond structure
+- **[Campaign Budget](campaign-budget-academic.qmd)** - Detailed line-item breakdown
+- **[Investor Risk Analysis](../appendix/investor-risk-analysis-academic.qmd)** - Risk factors and mitigations
+- **[Fundraising Strategy](../appendix/fundraising-strategy-academic.qmd)** - How to raise $1B
+- **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](../appendix/dfda-cost-benefit-analysis-academic.qmd)** - Complete ROI analysis
 
 ## Summary
 
 | Component | Target | Mechanism |
 |-----------|--------|-----------|
-| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) |
+| **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper-academic.qmd) |
 | **Spend** | Campaign budget | Referendum + lobbying + platform |
 | **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation via Wishocracy |
 | **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |
 
-**The math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever.
+**The financial logic:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever.

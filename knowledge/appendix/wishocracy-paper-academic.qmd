@@ -1,7 +1,7 @@
 ---
-title: 'Wishocracy'
-subtitle: 'Randomized Pairwise Budget Allocation for Preference Aggregation'
-description: 'This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons, the mechanism reduces cognitive burden while preserving preference intensity.'
+title: Wishocracy
+subtitle: Randomized Pairwise Budget Allocation for Preference Aggregation
+description: This paper introduces Wishocracy, a governance mechanism that employs Randomized Aggregated Pairwise Preference Allocation (RAPPA) to elicit and synthesize collective preferences for public resource allocation. By decomposing n-dimensional preference spaces into tractable pairwise comparisons, the mechanism reduces cognitive burden while preserving preference intensity.
 aliases:
   - /wishocracy.html
 author:
@@ -42,12 +42,14 @@ format:
     fontsize: 11pt
 ---
 
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ::: {.callout-tip}
 Version 0.9 - Working Draft - Comments and critical feedback appreciated! Annotate via the sidebar or email <a href="mailto:mike@warondisease.org">mike@warondisease.org</a>.
 :::
 
 ::: {.callout-important icon=false}
-## The Problem in One Sentence
+## Core Problem Statement
 
 **Traditional voting mechanisms cannot capture the nuanced trade-offs citizens make across complex, multidimensional policy spaces, forcing democratic institutions to rely on representatives who systematically misalign with citizen preferences or on oversimplified binary choices that lose crucial information about preference intensity.**
 
@@ -70,7 +72,7 @@ Yet modern government budgets allocate resources across thousands of line items,
 
 Existing solutions fall into three inadequate categories. First, representative democracy delegates preference aggregation to elected officials, introducing principal-agent problems, capture by special interests, and systematic misalignment between voter preferences and policy outcomes. Second, direct democracy mechanisms like referenda and citizen initiatives reduce complex trade-offs to binary choices, losing crucial information about preference intensity and creating winner-take-all dynamics that harm minorities with strong preferences. Third, expert-driven technocracy may achieve allocative efficiency but lacks democratic legitimacy and cannot incorporate the subjective welfare considerations that only citizens themselves can evaluate.
 
-Wishocracy offers a fourth path: a mechanism that harnesses collective intelligence through structured preference elicitation while respecting cognitive constraints, incorporating preference intensity, and maintaining democratic legitimacy. By presenting citizens with simple pairwise comparisons ('Given $100 to allocate between cancer research and Alzheimer's research, how would you divide it?'), the mechanism decomposes the impossible n-dimensional comparison into tractable binary choices. Aggregated across millions of such comparisons from thousands of participants, the system converges on a preference ordering that approximates the utilitarian social welfare function under stated assumptions.
+Wishocracy offers a fourth path: a mechanism that harnesses collective intelligence through structured preference elicitation while respecting cognitive constraints, incorporating preference intensity, and maintaining democratic legitimacy. By presenting citizens with simple pairwise comparisons ('Given $100 to allocate between cancer research and Alzheimer's research, how should it be divided?'), the mechanism decomposes the impossible n-dimensional comparison into tractable binary choices. Aggregated across millions of such comparisons from thousands of participants, the system converges on a preference ordering that approximates the utilitarian social welfare function under stated assumptions.
 
 **RAPPA's Contribution:** Wishocracy synthesizes three critical properties into a single framework:
 
@@ -131,7 +133,7 @@ This positioning suggests natural complementarities: RAPPA could serve as the pr
 The Wishocracy mechanism operates through the following process, which we term Randomized Aggregated Pairwise Preference Allocation (RAPPA):
 
 1. **Problem Cataloging:** A comprehensive list of societal priorities, problems, or 'wishes' is compiled through expert input, citizen submissions, or existing government planning documents. These might include 'Reduce cancer mortality,' 'Improve public transit,' 'Increase affordable housing,' etc.  
-2. **Randomized Pair Presentation:** Each participant is shown a series of randomly selected pairs from the problem catalog. For each pair, they are asked: 'Given $100 to allocate between these two priorities, how would you divide it?' A slider interface allows allocation anywhere from 100-0 to 0-100.  
+2. **Randomized Pair Presentation:** Each participant is shown a series of randomly selected pairs from the problem catalog. For each pair, they are asked: 'Given $100 to allocate between these two priorities, how should it be divided?' A slider interface allows allocation anywhere from 100-0 to 0-100.  
 3. **Aggregation:** All pairwise allocations are aggregated across participants. For each pair (A, B), the system calculates the mean allocation ratio. If participants on average allocate 65% to A and 35% to B, this establishes the relative priority weight.  
 4. **Matrix Completion:** Using the aggregated pairwise ratios, a complete preference matrix is constructed. Standard eigenvector methods (as in AHP) or iterative Bayesian updating produce global priority weights for all n items.  
 5. **Budget Allocation:** The final priority weights translate directly into budget allocation percentages. If cancer research receives a normalized weight of 8.3% and the total discretionary budget is $10 billion, cancer research receives $830 million.
@@ -230,6 +232,7 @@ We now analyze the computational requirements of RAPPA and establish scalability
 - **Comparisons per participant ($k$):** Empirical testing at wishocracy.org [@wishocracy2024] suggests $k=10-30$ comparisons provides good user experience (5-10 minutes) while achieving convergence. Comparison density $\rho = \frac{nk}{m(m-1)/2}$ should exceed $\rho > 0.05$ for reliable estimates, implying minimum $nk > 0.025m^2$ or equivalently $n > 0.025m^2/k$.
 
 **Benchmark Example (City-Scale Deployment):** Consider a city budget with $m=100$ priorities, $n=50,000$ participants, $k=20$ comparisons each:
+
 - Total comparisons: $T = 50,000 \times 20 = 1,000,000$
 - Comparison density: $\rho = \frac{1,000,000}{100 \times 99 / 2} = \frac{1,000,000}{4,950} \approx 202$ (highly overdetermined)
 - Aggregation time: $O(100^2 \log 100) \approx 66,000$ operations (milliseconds on modern hardware)
@@ -248,6 +251,7 @@ We now formally demonstrate the superiority of RAPPA over Representative Democra
 Governance can be modeled as a source coding problem. Let $\mathcal{P}$ be the true distribution of societal preferences over $m$ issues. The mechanism must encode $\mathcal{P}$ into a signal transmitted to the allocation engine.
 
 **Representative Democracy (Low-Bandwidth Channel):**
+
 In RepDem, a voter transmits a single scalar signal $v \in \{c_1, \dots, c_k\}$ (choosing one of $k$ candidates) every $T$ years. The channel capacity $C_{Rep}$ is severely limited by quantization noise. A voter with a precise preference vector $\vec{p} \in \mathbb{R}^m$ must compress this into a single nominal vote.
 $$
 C_{Rep} \approx \frac{\log_2(k)}{T \text{ years}} \approx 0
@@ -257,6 +261,7 @@ This extreme lossy compression effectively destroys all information about prefer
 ![The flatline of democracy: Public support (0% to 100%) has near-zero impact on the probability of policy adoption (flat at ~30%), whereas elite support strongly correlates with adoption. Data from @gilens2014.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
 
 **Wishocracy (High-Bandwidth Channel):**
+
 RAPPA operates as a continuous channel. Each pairwise comparison extracts $\log_2(\text{resolution})$ bits of information about the relative valuation of outcome bundle subsets. With continuous sliders, the transmission rate is limited only by citizen engagement time.
 $$
 C_{RAPPA} \propto N \cdot \bar{c} \cdot H(S)
@@ -276,8 +281,9 @@ $$
 A fundamental result in Public Choice Theory is the **Median Voter Theorem** [@downs-1957], which states that under majority rule, outcomes converge to the preferences of the median voter, $v_{median}$.
 
 **The Skewness Problem:** In healthcare and public risk, damage distributions are highly right-skewed (power laws). A few citizens suffer catastrophic loss (e.g., rare diseases, pandemics), while the majority experiences zero loss.
-*   **Median Outcome:** If 51% of voters have priority $x=0$ (healthy) and 49% have priority $x=100$ (dying), the median preference is $0$. The minority receives no aid.
-*   **Mean Outcome:** The utilitarian optimum is $\bar{x} = 0.49 \times 100 = 49$.
+
+* **Median Outcome:** If 51% of voters have priority $x=0$ (healthy) and 49% have priority $x=100$ (dying), the median preference is $0$. The minority receives no aid.
+* **Mean Outcome:** The utilitarian optimum is $\bar{x} = 0.49 \times 100 = 49$.
 
 {{< include ../figures/rappa-median-vs-mean-welfare.qmd >}}
 
@@ -295,7 +301,7 @@ $$
 L_{Gov} = L_{Agg} + L_{Agency}
 $$
 
-*   **RepDem:** suffer from high $L_{Agency}$. Politicians maximize independent utility functions (re-election, donor favoring) rather than $W$. Deviation can be arbitrarily large.
+* **RepDem:** suffer from high $L_{Agency}$. Politicians maximize independent utility functions (re-election, donor favoring) rather than $W$. Deviation can be arbitrarily large.
 
 Formally, let the voter's utility be $U_{voter}(\mathbf{x}) = f(\text{Health}, \text{Wealth}, \text{Security})$ over allocation $\mathbf{x}$. The politician's utility is:
 
@@ -305,8 +311,8 @@ $$
 
 where $\beta, \gamma \gg 0$. Since donor interests ($U_{donors}$) often conflict with public welfare ($U_{voter}$) (e.g., lower regulation vs. clean air), and re-election depends on short-term signaling rather than long-term outcomes, $\text{argmax}(U_{pol}) \neq \text{argmax}(U_{voter})$.
 
-*   **Wishocracy:** $L_{Agency} \to 0$. The mechanism is direct; there is no agent to bribe.
-*   **Constraint:** Wishocracy introduces $L_{Coordination}$ (the difficulty of designing solutions), which is why the **service provider** layer (Appendix A) re-introduces agents *only* for implementation, not for priority setting, minimizing the scope of potential agency loss to technical execution rather than value judgment.
+* **Wishocracy:** $L_{Agency} \to 0$. The mechanism is direct; there is no agent to bribe.
+* **Constraint:** Wishocracy introduces $L_{Coordination}$ (the difficulty of designing solutions), which is why the **service provider** layer (Appendix A) re-introduces agents *only* for implementation, not for priority setting, minimizing the scope of potential agency loss to technical execution rather than value judgment.
 
 # **4\. Empirical Precedents and Evidence Base**
 
@@ -388,7 +394,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Criticism:** Real policy decisions involve complex interdependencies, implementation constraints, and unintended consequences that citizens cannot evaluate.
 
-**Response:** Wishocracy explicitly separates values (what we want) from implementation (how to achieve it). Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) while experts design and evaluate implementation strategies. The service provider layer allows technical assessment of proposed solutions while keeping priority-setting in democratic hands. This division of labor matches citizens' comparative advantage in welfare evaluation with experts' advantage in causal analysis.
+**Response:** Wishocracy explicitly separates values (what we want) from implementation (how to achieve it). Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) based on their welfare valuations. The service provider layer allows technical assessment of proposed solutions while keeping priority-setting in democratic hands. This division of labor matches citizens' comparative advantage in welfare evaluation with experts' advantage in causal analysis.
 
 ## **5.5 Legitimacy and Accountability**
 
@@ -404,7 +410,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Low Comparison Density:** As the number of policy priorities $m$ increases, the required comparisons grow quadratically ($O(m^2)$). With fixed participant budgets (each citizen completes $k$ comparisons), comparison density decreases as $k/m^2$. At very low densities ($k/m^2 < 0.01$), matrix completion methods may produce unstable estimates.
 
-**Mitigation:** Hierarchical aggregation can reduce effective dimensionality by first aggregating within categories (Healthcare, Education, Defense), then across categories. Active sampling can prioritize comparisons with high uncertainty or inconsistency. Bayesian priors based on expert judgments or historical data can stabilize estimates in sparse regions. Empirical testing at wishocracy.org [@wishocracy2024] suggests that convergence remains acceptable with as few as 3-5 comparisons per item, meaning systems with 100 priorities can function with ~300-500 comparisons per participant.
+**Mitigation:** Hierarchical aggregation can reduce effective dimensionality by first aggregating within categories (Healthcare, Education, Military), then across categories. Active sampling can prioritize comparisons with high uncertainty or inconsistency. Bayesian priors based on expert judgments or historical data can stabilize estimates in sparse regions. Empirical testing at wishocracy.org [@wishocracy2024] suggests that convergence remains acceptable with as few as 3-5 comparisons per item, meaning systems with 100 priorities can function with ~300-500 comparisons per participant.
 
 **Coordinated Minority Attacks:** A sophisticated attacker might coordinate a minority bloc to systematically manipulate outcomes. For example, 10% of voters might collude to always allocate 100% to priority $A$ in any comparison involving $A$, attempting to artificially inflate $A$'s priority weight.
 
@@ -445,4 +451,3 @@ This two-layer architecture embodies a fundamental division of labor:
 This separation addresses a key criticism of technocracy (experts shouldn't determine societal values) while respecting the limits of direct democracy (citizens cannot evaluate complex implementation trade-offs). Each layer operates where its participants have comparative advantage: citizens in welfare evaluation, experts in causal analysis.
 
 ## References {.unnumbered}
-
