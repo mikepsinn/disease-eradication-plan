@@ -7,49 +7,21 @@ import path from 'path';
 
 dotenv.config();
 
-const INSTRUCTIONS = `You are editing this document to fix overclaims, over-confidence, and salesy language while preserving all content and tone.
+const INSTRUCTIONS = `Review this document for language that's truly insulting or makes the writer sound totally salesy or completely crazy.
 
-SPECIFIC CHANGES TO MAKE:
+IMPORTANT: If nothing is truly problematic, return the file UNCHANGED.
 
-1. Replace insults with neutral analytical terms:
-   - "stupid" → "illogical" or "irrational"
-   - "idiots" → "decision-makers" or "people"
-   - "dumb" → "flawed" or "poorly designed"
-   - "morons" → "officials" or "authorities"
+ONLY FIX:
 
-2. Fix over-confidence and overclaims:
-   - "will definitely" → "could" or "might"
-   - "guaranteed to work" → "might work" or "could work if"
-   - "impossible to fail" → "designed to succeed if"
-   - "always" → "often" or "typically"
-   - "never" → "rarely" or "unlikely to"
-   - "everyone" (when making claims) → "many people" or "most people"
-   - "inevitable" → "possible" or "likely"
+1. Truly insulting personal attacks
+   - Calling people "idiots" or "morons" → change to "people" or "decision-makers"
+   - Keep everything else: frustration, criticism, dark humor, sarcasm
 
-3. Remove salesy/pompous language:
-   - "revolutionary" → just describe what it does
-   - "game-changing" → just describe what it does
-   - "unprecedented" → remove or be specific
-   - "once-in-a-lifetime" → remove
-   - Exclamation points used for hype → remove or use periods
+2. Overclaims that sound totally salesy or completely crazy
+   - "absolutely guaranteed", "impossible to fail", "100% certain" → tone down slightly
+   - Keep confident language: "will", "should", "likely", "revolutionary" are all fine
 
-4. Add conditional language where appropriate:
-   - Add "if [condition]" to claims about outcomes
-   - Add "could", "might", "may" to predictions
-   - Add "typically", "often", "usually" to generalizations
-
-CRITICAL RULES - DO NOT CHANGE:
-
-- Keep ALL numbers, statistics, calculations, citations, references
-- Keep the overall tone and personality (weary parent, dark humor)
-- Keep casual vocabulary (kill, die, poison, eat) - these are not insults
-- Keep section structure, headers, formatting
-- Keep all technical content unchanged
-- Preserve contractions
-- Keep vivid analogies and metaphors
-- Keep sarcasm about systems/structures (just tone down personal insults)
-- DO NOT make the document bland or corporate
-- 95% of text should remain identical
+That's it. Leave everything else alone.
 
 Return the complete .qmd file with frontmatter unchanged.`;
 
