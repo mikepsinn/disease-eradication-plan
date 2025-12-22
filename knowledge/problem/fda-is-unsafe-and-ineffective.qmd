@@ -3,13 +3,15 @@ title: The FDA Is Unsafe and Ineffective
 description: How the FDA makes medicine 82X more expensive while operating at the speed of continental drift. A factual comedy about bureaucratic excellence.
 published: true
 tags:
-- problem
-- fda
-- clinical-trials
-- drug-approval
-- bureaucracy
-- regulatory-capture
+  - problem
+  - fda
+  - clinical-trials
+  - drug-approval
+  - bureaucracy
+  - regulatory-capture
 ---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| echo: false

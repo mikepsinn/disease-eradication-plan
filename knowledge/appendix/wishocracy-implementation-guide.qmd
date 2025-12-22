@@ -1,8 +1,10 @@
 ---
-title: "Wishocracy Implementation Guide"
-description: "A Practical Framework for Piloting Aggregated Pairwise Preference Allocation"
+title: Wishocracy Implementation Guide
+description: A Practical Framework for Piloting Aggregated Pairwise Preference Allocation
 published: false
 ---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ::: {.callout-note}
 This implementation guide provides practical details for jurisdictions interested in piloting Wishocracy. For the theoretical foundations and mechanism design, see the [Wishocracy paper](wishocracy-paper.qmd).

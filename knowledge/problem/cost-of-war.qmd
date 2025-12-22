@@ -3,9 +3,9 @@ title: The Cost of War
 description: Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
 published: true
 tags:
-- costs-of-war
-- military-spending
-- economic-analysis
+  - costs-of-war
+  - military-spending
+  - economic-analysis
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -459,4 +459,3 @@ When you consider the secondary effects of war, the total costs explode:
 - Millions get PTSD (can't work, need therapy forever)
 - The lucky ones just die
 - The unlucky ones live with half a face
-

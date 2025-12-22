@@ -37,7 +37,7 @@ Investors fund the campaign. Politicians get career benefits for supporting it. 
 
 ## What You're Actually Building
 
-A financial instrument that makes obscene amounts of money appear from nowhere while accidentally curing death as a side effect:
+A financial instrument that generates massive returns while accidentally curing diseases as a side effect:
 
 - Collect $1.0B in papers from rich humans who like more papers
 - Use those papers to convince politicians that not dying is popular
@@ -69,7 +69,7 @@ They'll check the math. The math checks out. They give you papers.
 
 ### Phase 2: Spend the Papers Correctly
 
-Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being stupid:
+Use the $1.0B according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being short-sighted:
 
 - **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_budget_referendum >}})
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_lobbying >}})
@@ -89,7 +89,7 @@ The treaty passes because you gave the right papers to the right humans in the r
 - {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) automatically funds [political incentive mechanisms](../solution/incentive-alignment-bonds.qmd) (keeps politicians aligned with curing diseases)
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) automatically goes to curing the diseases actually killing people
 
-Nobody has to vote on this again. Nobody can change their mind. The papers just flow, forever, like a river made of money.
+Nobody has to vote on this again. The funding is automatic. The papers just flow, forever, like a river made of money.
 
 ### Phase 4: Watch Money Multiply Like Rabbits
 
@@ -142,7 +142,7 @@ $$
 
 Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth $27B total.
 
-**Translation for humans who peaked at counting on fingers:**
+**Translation for those who prefer simple math:**
 
 - You give: $1 billion in papers
 - You get: $54-90 billion equivalent in papers
@@ -293,7 +293,7 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 
 | Investment | Annual Return | Risk | Term | Catch |
 |------------|---------------|------------|------|------|
-| **VICTORY Incentive Alignment Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High** | **Forever** | **Requires politicians to not be stupid** |
+| **VICTORY Incentive Alignment Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High** | **Forever** | **Requires politicians to act rationally** |
 | Savings Account | {{< var trial_cost_reduction_pct >}} | None | Whenever | Loses to inflation |
 | S&P 500 | 10% | Moderate | Whenever | Boring, responsible |
 | Real Estate | 8% | Moderate | 30 years | Requires being a landlord |
@@ -378,7 +378,7 @@ It's venture capital but for not dying."
 #### Project Risks
 
 - **Political:** Politicians choose dead constituents over living ones (mitigated by 280M referendum votes showing this is electoral suicide)
-- **Execution:** The campaign gets run by idiots (mitigated by milestone-based releases and hiring non-idiots)
+- **Execution:** The campaign gets run by incompetent people (mitigated by milestone-based releases and hiring competent people)
 
 #### Investor Risks
 
@@ -395,7 +395,7 @@ Charity is for people who want to feel good. This is for people who want to get 
 
 You're not donating to cure diseases. You're investing in curing diseases because it's the most profitable legal thing you can do with a billion dollars.
 
-It's the Louisiana Purchase of pragmatic clinical trials - except instead of buying land from France, you're buying immortality from death, and unlike Louisiana, immortality doesn't flood."
+It's the Louisiana Purchase of pragmatic clinical trials - except instead of buying land from France, you're buying life extension from death, and unlike Louisiana, it doesn't flood."
 
 ### When they want detailed financials
 
@@ -448,4 +448,4 @@ Hand this to investors who can't read more than one page:
 7. Diseases decline, public demands more funding, returns scale up
 8. Repeat until death is optional or universe ends
 
-It's the simplest way to become generationally wealthy while making it harder for people to die from stupid preventable things.
+It's the simplest way to become generationally wealthy while making it harder for people to die from preventable things.

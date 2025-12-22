@@ -3,6 +3,8 @@ title: Building Your AI Coordination Army
 description: How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
 ---
 
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ```{python}
 #| echo: false
 # Import economic parameters (produces output to prevent timeout)

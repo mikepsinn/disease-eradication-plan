@@ -3,14 +3,14 @@ title: Problem Overview
 description: Humanity's spectacular failure at prioritizing not dying
 published: true
 tags:
-- problem
-- war
-- disease
-- death
-- military-spending
-- healthcare
-- democracy
-- regulatory-capture
+  - problem
+  - war
+  - disease
+  - death
+  - military-spending
+  - healthcare
+  - democracy
+  - regulatory-capture
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}

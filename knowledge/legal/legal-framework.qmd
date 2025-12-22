@@ -10,6 +10,8 @@ tags:
   - multi-jurisdiction
   - organizational-structure
 ---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ```{python}
 #| echo: false
 import sys

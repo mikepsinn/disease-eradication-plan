@@ -1,15 +1,15 @@
 ---
 title: 'The Proof: Overview'
-description: This Already Works - Oxford proved 82X efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} never fails. War bonds proved capitalism beats fascism. Death and suffering are optional.
+description: This Already Works - Oxford proved 82X efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.
 published: true
 tags:
-- evidence
-- proof
-- recovery-trial
-- switzerland
-- peace-dividend
-- 3-5-rule
-- war-bonds
+  - evidence
+  - proof
+  - recovery-trial
+  - switzerland
+  - peace-dividend
+  - 3-5-rule
+  - war-bonds
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -79,12 +79,12 @@ They beat the entire military-industrial complex in 5 years with fax machines.
 
 You have the internet.
 
-## The {{< var global_population_activism_threshold_pct >}} Rule: It Never Loses
+## The {{< var global_population_activism_threshold_pct >}} Rule
 
 Harvard analyzed every major movement in history.
 
 **Finding:** Once {{< var global_population_activism_threshold_pct >}} of any population actively supports something, it wins.
-### Always.
+
 
 - Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
 - Women's suffrage: Won at {{< var global_population_activism_threshold_pct >}}
@@ -136,7 +136,8 @@ Random citizens created international law with fax machines.
 
 Harvard did math on revolutions. Found the magic number: {{< var global_population_activism_threshold_pct >}}.
 
-- Once {{< var global_population_activism_threshold_pct >}} of any population actively protests something, it wins. Always.
+- Once {{< var global_population_activism_threshold_pct >}} of any population actively protests something, it wins. 
+
 - Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
 - Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
 - Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}

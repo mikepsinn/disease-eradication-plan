@@ -15,7 +15,8 @@ domains:
   - cross
 doc_type: strategy
 ---
-## Pre-Seed Strategy: The First 90 Days
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 
 <!-- TODO: Fix broken link - This document outlines the foundational "Phase 0" required to launch the War on Disease initiative. The high-level plans detailed in the [Canonical Roadmap](./roadmap.md) and [Fundraising and Budget Plan](../economic-models/fundraising-and-budget-plan.md) depend on the successful execution of this initial, targeted pre-seed phase. -->
 

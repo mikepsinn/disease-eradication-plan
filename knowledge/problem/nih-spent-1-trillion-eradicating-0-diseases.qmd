@@ -3,12 +3,12 @@ title: NIH Fails to Institute Health
 description: How the NIH spent over $1 trillion to eradicate exactly zero diseases.
 published: true
 tags:
-- problem
-- nih
-- grants
-- research-funding
-- bureaucracy
-- failure
+  - problem
+  - nih
+  - grants
+  - research-funding
+  - bureaucracy
+  - failure
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -66,6 +66,7 @@ NIH will fund $600,000 to *ask* if people want trials. But it won't fund the act
 The bottleneck isn't information about willingness. It's **capacity**.
 
 **That $600,000 could have funded:**
+
 - 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
 - Testing 5-10 repurposed drugs we already know are safe
 - Actual data on whether treatments work
@@ -144,6 +145,7 @@ When the research leads to a dead end, the public eats the loss.
 **Socialized Risk, Privatized Profit.**
 
 True public goods would be **unpatentable** but high-value assets like:
+
 - **Open pragmatic trial platforms:** [30x cheaper than traditional trials](../references.qmd#pragmatic-trials-cost-advantage), yet receive minimal NIH funding
 - **Re-purposing generic drugs:** [4,700+ clinically-tested compounds](../references.qmd#drug-repurposing-hub-collection) where no patent exists
 - **Comparative effectiveness data:** Head-to-Head trials that would reveal which drugs actually work best
@@ -265,6 +267,7 @@ Let's do the rigorous math on the opportunity cost.
 - **NIH pragmatic trials funding:** [Capped at $500K planning + $1M/year implementation](../references.qmd#pragmatic-trials-cost-advantage). This is a tiny fraction of the $47B budget
 
 **The Multiplier:**
+
 Every $1 spent on efficient pragmatic trials buys **~50x to 100x more health** than a dollar spent on the current NIH mix.
 
 Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-trials-cost-advantage) despite the ADAPTABLE trial proving they cost [30x less than traditional RCTs](../references.qmd#pragmatic-trials-cost-advantage) ($14M vs $420M).
@@ -274,10 +277,12 @@ Yet [pragmatic trials remain severely underfunded](../references.qmd#pragmatic-t
 When you misallocate $40 billion a year into low-efficiency buckets instead of high-efficiency buckets, you aren't just wasting money. You are burning time.
 
 **Annual Opportunity Cost (Central Estimates):**
+
 - **QALYs Lost:** ~100 million life-years per year
 - **Deaths NOT Prevented:** ~7 million death-equivalents per year
 
 **Conservative 90% Confidence Interval:**
+
 - **QALYs Lost:** 10 million to 820 million per year
 - **Deaths NOT Prevented:** 0.7 million to 64 million per year
 
@@ -289,6 +294,7 @@ The NIH isn't just inefficient.
 By blocking the shift to high-efficiency trial platforms, the current budget allocation is **actively destroying** the equivalent of millions of lives annually compared to the optimal allocation.
 
 **Mathematical Conclusion:**
+
 $$
 \text{Efficiency Loss} = 1 - \frac{\text{Current QALYs gained}}{\text{Potential QALYs gained}} \approx 98\%
 $$

@@ -2,7 +2,8 @@
 title: Automated Engagement Tracking Workflow
 description: CRM system using Airtable for automated lead capture, classification, nurturing, and conversion tracking.
 ---
-## Automated Engagement Tracking Workflow
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 
 **Purpose:** Never lose a lead, never miss a follow-up, never forget a conversation
 **System:** Airtable + Email + Calendar + Automation
@@ -12,7 +13,7 @@ description: CRM system using Airtable for automated lead capture, classificatio
 
 Most movements fail not because the idea is bad, but because they lose track of people. Someone emails you interest in helping. You mean to respond. Life happens. Two weeks later, they've moved on.
 
-This system makes that impossible. Every person who touches your organization gets:
+This system makes that nearly impossible. Every person who touches your organization gets:
 
 1. A permanent record
 2. Automatic follow-up reminders
@@ -491,7 +492,7 @@ Once you have 1,000+ engagements logged, you can train AI to:
 
 ### Conclusion
 
-This engagement tracking workflow ensures **zero people fall through the cracks**.
+This engagement tracking workflow helps ensure **no one falls through the cracks**.
 
 Every vote, every email, every call is captured, categorized, and converted into the next step toward victory.
 

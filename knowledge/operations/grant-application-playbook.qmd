@@ -9,6 +9,8 @@ tags:
   - strategy
 ---
 
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ```{python}
 #| echo: false
 import sys
