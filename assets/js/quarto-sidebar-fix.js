@@ -59,7 +59,11 @@
       // Also check if viewport is in problematic range (768px - 1000px)
       const inProblematicRange = viewportWidth < 1000 && viewportWidth > 768;
 
-      return hasOverlap || inProblematicRange;
+      // Check if content width is less than 1111px
+      const contentWidth = contentRect.width;
+      const isContentTooNarrow = contentWidth < 1111;
+
+      return hasOverlap || inProblematicRange || isContentTooNarrow;
     }
 
     // Function to hide sidebar by converting to menu (mimicking Quarto's behavior)
