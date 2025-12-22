@@ -1,26 +1,26 @@
 ---
 title: Solution Overview
-description: How to Build Systems That Don't Suck
+description: How to Build Systems That Work
 published: true
 tags:
-- solution
-- 1-percent-treaty
-- dih
-- dfda
-- peace-dividend
-- national-security
-- victory-bonds
+  - solution
+  - 1-percent-treaty
+  - dih
+  - dfda
+  - peace-dividend
+  - national-security
+  - victory-bonds
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 Now that you understand the problem, which is that everyone is dying while you build missiles, it's time to learn how to fix it.
 
-Your solution has three parts:
+The solution has three parts:
 
-1. A 1% treaty (stealing money from the murder budget)
-2. Your decentralized institutes of health (spending it wisely, which is harder than it sounds)
-3. Your decentralized framework for drug assessment (making medicine 82 times cheaper)
+1. A 1% treaty (redirecting money from the defense budget)
+2. A decentralized institutes of health (spending it wisely, which is harder than it sounds)
+3. A decentralized framework for drug assessment (making medicine 82 times cheaper)
 
 Take money from death, give it to life. The tricky part is convincing humans, who historically prefer the death option.
 
@@ -62,26 +62,26 @@ Of that {{< var treaty_annual_funding >}}, here's where it goes:
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
 | VICTORY Incentive Alignment Bond investors | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay the people who funded the campaign |
-| Political incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned via [IABs](solution/incentive-alignment-bonds.qmd) |
+| Policy incentives | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep stakeholders aligned via [IABs](solution/incentive-alignment-bonds-foundations.qmd) |
 | Patient Subsidies for Pragmatic Clinical Trials | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually cure diseases |
 
 They say you can't put a price on human life. But apparently the price is somewhere south of pet food, which seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
-### Your decentralized institutes of health
+### A decentralized institutes of health
 
-Once the 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **1% Treaty Fund**. Now you need a system to spend it wisely. This is where your decentralized institutes of health (DIH) come in.
+Once the 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **1% Treaty Fund**. Now you need a system to spend it wisely. This is where a decentralized institutes of health (DIH) comes in.
 
-Your decentralized institutes of health are like the NIH, except they work. Here's how:
+A decentralized institutes of health is like the NIH, except it works differently. Here's how:
 
 #### What the NIH does
 
 - 200 people in a building decide what to fund
 - They guess what might work
-- They give grants to their friends
-- Nothing gets cured
+- They fund familiar networks
+- Cures are scarce
 - Everyone gets tenure
 
-#### What your decentralized institutes of health do
+#### What a decentralized institutes of health does
 
 - Use the **1% Treaty Fund**, a treasury controlled by smart contracts
 - Let 8 billion humans vote on the Fund's budget allocation rules
@@ -94,7 +94,7 @@ The difference is like asking 200 bureaucrats what you should have for lunch ver
 
 ##### On Wishocracy
 
-Wishocracy is how you let {{< var global_population_2024 >}} billion people control a budget without everyone killing each other in meetings.
+Wishocracy is how you let {{< var global_population_2024 >}} billion people control a budget without everyone fighting in meetings.
 
 Here's how it works:
 
@@ -113,17 +113,17 @@ This is called "Aggregated Pairwise Preference Allocation," or APPA, which sound
 
 The important part is there's no committee. No gatekeepers. No humans with the power to say no. Just billions of micro-decisions that add up to what humanity actually wants, not what 200 people in suits think humanity wants.
 
-##### Your decentralized framework for drug assessment
+##### A decentralized framework for drug assessment
 
 The FDA currently makes drugs {{< var trial_cost_reduction_factor >}} times more expensive than necessary. You're going to build a better one.
 
-Your decentralized framework for drug assessment (dFDA) does three things:
+A decentralized framework for drug assessment (dFDA) does three things:
 
 1. **Lets anyone run pragmatic clinical trials** (no permission needed)
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while you die, you join a trial on this platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
+Instead of waiting {{< var treatment_acceleration_years_current >}} years for FDA approval while waiting, you join a trial on this platform. The trial costs {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} because it turns out you don't need {{< var treatment_acceleration_years_current >}} layers of paperwork to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The platform publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
@@ -143,7 +143,7 @@ Outcome labels tell you what actually happens:
 - Costs $50/month
 - Based on 50,000 real patients like you
 
-It's just facts. No marketing. No lies. No 40-page legal documents written by lawyers having seizures.
+It's just facts. No marketing. No spin. No 40-page legal documents written by lawyers creating complexity.
 
 Every food, every drug, every supplement: Outcome label. "Increases diabetes risk 12%." "Does nothing." "Actually works, surprisingly."
 
@@ -164,15 +164,15 @@ Markets decide, not committees.
 
 Sick people, guided by their doctors and data, choose what gets funded. Not bureaucrats. Not grant writers. Actual humans who need actual cures.
 
-It's democracy for funding pragmatic clinical trials, except instead of voting every four years for people who lie to you, you vote every day with your trial participation for treatments that might save your life.
+It's democracy for funding pragmatic clinical trials, except instead of waiting years for people who make promises, you vote every day with your trial participation for treatments that might save your life.
 
 ##### On Why Defense Contractors Should Care
 
 You'd think defense contractors would hate this. But here's what you tell them:
 
-"You can keep 99% of your murder budget. But also, here are some bonds that pay {{< var victory_bond_annual_return_pct >}} returns. Your pension fund would like those returns. Your shareholders would like those returns. You would personally like those returns because you also have a body that's falling apart.
+"You can keep 99% of your defense budget. But also, here are some bonds that pay {{< var victory_bond_annual_return_pct >}} returns. Your pension fund would like those returns. Your shareholders would like those returns. You would personally like those returns because you also have a body that's falling apart.
 
-Plus, killing people is getting bad PR. Curing cancer is excellent PR. Your ESG score goes up. Your stock price goes up. You still make weapons with the other 99%, you just also cure diseases with 1%.
+Plus, conflict is getting bad PR. Curing cancer is excellent PR. Your ESG score goes up. Your stock price goes up. You still make weapons with the other 99%, you just also cure diseases with 1%.
 
 It's called diversification. Ask your financial advisor."
 
@@ -180,28 +180,28 @@ Defense contractors are not evil. They're rational actors optimizing for profit 
 
 ##### On Why 1% Is Just The Beginning
 
-Here's the thing they don't tell you: The goal isn't 1%. The goal is 100%.
+Consider: The goal isn't 1%. The goal is 100%.
 
 Eventually, nearly all {{< var global_military_spending_annual_2024 >}} in global military spending should go to curing diseases. The 1% treaty is just the door, not the destination.
 
 "But won't the treaty stall at 1% like every other international agreement?" (asks the skeptic who has read about 0.7% ODA targets sitting unmet for 50 years)
 
-No. Because unlike every other treaty, this one has a [scaling engine built in](solution/incentive-alignment-bonds.qmd#sec-why-ten-pct-scaling-engine).
+No. Because unlike every other treaty, this one has a [scaling engine built in](solution/incentive-alignment-bonds-foundations.qmd#sec-why-ten-pct-scaling-engine).
 
-The 10% going to [Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) doesn't just help pass the 1% treaty - it creates a perpetual political machine that pushes for expansion. When 1% passes, $2.7B/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, $5.4B/year flows to people pushing for 5%.
+The 10% going to [Incentive Alignment Bonds](solution/incentive-alignment-bonds-foundations.qmd) doesn't just help pass the 1% treaty - it creates a perpetual policy machine that pushes for expansion. When 1% passes, $2.7B/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, $5.4B/year flows to people pushing for 5%.
 
-The political pressure for expansion *accelerates* with each success:
+The momentum for expansion *accelerates* with each success:
 
-| Treaty Level | IAB Political Funding | What It Buys |
+| Treaty Level | IAB Policy Funding | What It Buys |
 |:-------------|:---------------------|:-------------|
 | 1% | $2.7B/year | Passage pressure |
-| 5% | $13.5B/year | Overwhelming lobbying |
+| 5% | $13.5B/year | Overwhelming outreach |
 | 10% | $27B/year | Defense industry pivot |
 | 50%+ | $135B+/year | War becomes economically obsolete |
 
-This is why the [80/10/10 split](solution/incentive-alignment-bonds.qmd) exists. The 80% cures diseases. The 10% to investors pays back the people who funded the initial campaign. The 10% to political incentives ensures the campaign never stops.
+This is why the [80/10/10 split](solution/incentive-alignment-bonds-foundations.qmd) exists. The 80% cures diseases. The 10% to investors pays back the people who funded the initial campaign. The 10% to policy incentives ensures the campaign never stops.
 
-[VICTORY Incentive Alignment Bonds](economics/victory-bonds.qmd) are a specific [Incentive Alignment Bond](solution/incentive-alignment-bonds.qmd) - a single instrument that aligns investors (10% returns), politicians (10% career incentives), and patients (80% cures) with the same outcome: expand treaty funding.
+[VICTORY Incentive Alignment Bonds](economics/victory-bonds-foundations.qmd) are a specific [Incentive Alignment Bond](solution/incentive-alignment-bonds-foundations.qmd) - a single instrument that aligns investors (10% returns), policymakers (10% career incentives), and patients (80% cures) with the same outcome: expand treaty funding.
 
 Without the scaling engine, you get another nice international agreement that everyone ignores. With it, you get a ratchet that can eventually redirect $2.7 trillion/year from war to health.
 
@@ -254,12 +254,12 @@ The solution only works if everyone wins by winning. Here's who gets what:
 
 **Defense contractors:** Keep 99% of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds
 **Pharmaceutical companies:** Patients pay them instead of vice versa
-**Politicians:** Campaign donations + not losing elections
+**Policymakers:** Public support + success
 **Insurance companies:** Fewer claims = more profit
 **Billionaires:** {{< var victory_bond_annual_return_pct >}} returns + legacy + naming rights
 **Regular people:** Subsidized treatment + direct democracy + not dying
 
-Notice that everyone's selfish reason for participating happens to save humanity. Trick people into doing good by making good profitable.
+Notice that everyone's selfish reason for participating happens to save humanity. Incentivize people to do good by making good profitable.
 
 The system doesn't require anyone to stop being selfish. It just redirects selfishness toward curing diseases instead of building bombs. It's like installing a fire alarm that also makes coffee, you're going to use it even if you don't care about fire safety.
 
@@ -284,7 +284,7 @@ If you can cure diseases by redirecting 1% of military spending through market m
 - Climate change (same structure, different market)
 - Literally any public goods problem (same structure, different market)
 
-This is the template for replacing government with systems that actually work. Not anarcho-capitalism or libertarian fantasy. Just pragmatic recognition that markets coordinate better than committees when you design them right.
+This is the template for improving governance with systems that actually work. Not anarcho-capitalism or libertarian fantasy. Just pragmatic recognition that markets coordinate better than committees when you design them right.
 
 The War on Disease is proof of concept. Victory here means you can fix everything else using the same playbook.
 
@@ -295,9 +295,9 @@ They say if something seems too good to be true, it probably is. But sometimes t
 The rest of Part II explains each component in detail:
 
 - How to structure a 1% treaty so countries actually sign it
-- How to build your decentralized institutes of health so they can't be corrupted
-- How Wishocracy prevents lobbyists from stealing all the money
-- How your global trial framework achieves {{< var trial_cost_reduction_factor >}}× cost reduction
+- How to build a decentralized institutes of health so it can't be corrupted
+- How Wishocracy prevents special interests from stealing all the money
+- How a global trial framework achieves {{< var trial_cost_reduction_factor >}}× cost reduction
 - How everyone makes money
 - How to make selfishness save humanity
 
@@ -305,6 +305,6 @@ That's it. That's the plan.
 
 If that seems anticlimactic, remember: Every revolution starts with someone doing something slightly less stupid than what everyone else is doing.
 
-In this case, the slightly less stupid thing is redirecting 1% of the murder budget to the not-dying budget.
+In this case, the slightly less stupid thing is redirecting 1% of the defense budget to the not-dying budget.
 
 History will judge whether this was genius or obvious. But either way, you'll be alive to see it, which is more than you can say for the alternative.

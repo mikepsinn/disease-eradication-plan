@@ -1,6 +1,6 @@
 ---
 title: Unrepresentative Democracy
-description: The mathematical proof that your vote doesn't matter and why that's actually good news
+description: A mathematical proof that individual voting does not decide elections and why this presents opportunities for reform
 published: true
 tags:
   - democracy
@@ -15,39 +15,39 @@ tags:
 
 ![Unrepresentative Democracy](../../assets/infographics/Unrepresentative Democracy Infographic.png)
 
-Here's some fun math to ruin your day:
+The mathematics of voting presents a stark reality:
 
-Chance your vote decides an election: [1 in 60 million](../references.qmd#odds-of-decisive-vote)
-Value if your candidate wins: $10,000 (in policies you prefer)
+Chance a single vote decides an election: [1 in 60 million](../references.qmd#odds-of-decisive-vote)
+Value if the preferred candidate wins: $10,000 (in preferred policies)
 Expected value of voting: $0.00017
 Cost of voting (time, gas, finding parking): $50
 Net value: -$49.99983
 
-Voting is literally irrational. You have better odds of dying in a car crash on the way to vote than your vote mattering.
+Voting is literally irrational. An individual has better odds of dying in a car crash on the way to vote than their vote mattering.
 
-Yet people get really mad when you point this out.
+Yet people get angry when someone points this out.
 
-## Democracy: A System Designed by Geniuses, Run by Idiots, Elected by Morons
+## Democracy: A System Designed by Experts, Run by Imperfect Agents
 
-The Founding Fathers were smart. They created checks and balances, separation of powers, all that jazz.
+The Founding Fathers were smart. They created checks and balances, separation of powers, and other safeguards.
 
-They just forgot one thing: Voters are idiots.
+They overlooked one factor: voter limitations.
 
-Not you, of course. You're reading a book. But the average voter? [64% can't name or describe what the three branches of government do](../references.qmd#civic-literacy-survey-congress-function).
+The average voter faces significant knowledge gaps. [64% can't name or describe what the three branches of government do](../references.qmd#civic-literacy-survey-congress-function).
 
 ## The Rational Ignorance Problem
 
-Here's why democracy can't fix our problems:
+This explains why democracy cannot fix current problems:
 
 **Cost of being informed**: 100+ hours researching candidates and issues
-**Benefit of being informed**: Your one vote (worth $0.00017)
-**Rational decision**: Stay ignorant, watch Netflix
+**Benefit of being informed**: One vote (worth $0.00017)
+**Rational decision**: Remain uninformed
 
-This isn't stupidity. It's math.
+This is not stupidity. It's math.
 
-Why spend 100 hours researching healthcare policy when your vote won't change anything? Better to spend that time literally doing anything else.
+Why spend 100 hours researching healthcare policy when one vote won't change anything? It is better to spend that time literally doing anything else.
 
-So we get this:
+So society gets this:
 
 - [64% can't name or describe what the three branches of government do](../references.qmd#civic-literacy-survey-congress-function)
 - [37% think the Earth is less than 10,000 years old](../references.qmd#young-earth-creationism-poll)
@@ -61,15 +61,13 @@ Ask the average voter about CRISPR:
 
 These people vote on science funding.
 
-Democracy!
+## Expected vs. Actual Democratic Outcomes
 
-## What Democracy Should Look Like vs Reality
-
-Princeton University did a study. They analyzed 1,779 policy decisions over 20 years. The correlation between what you want and what happens? [**Zero. Percent.**](../references.qmd#princeton-oligarchy-study)
+Princeton University analyzed 1,779 policy decisions over 20 years. The correlation between what the public wants and what happens? [**Zero. Percent.**](../references.qmd#princeton-oligarchy-study)
 
 But when economic elites want something? They get it [78% of the time](../references.qmd#princeton-oligarchy-study).
 
-You have the same political influence as your houseplant. Actually less, at least politicians pretend to care about the environment.
+The average voter has the same political influence as a houseplant. Actually less, at least politicians pretend to care about the environment.
 
 The chart above shows what actually happens: whether 0% or 100% of voters support a bill, it has the same ~30% chance of passing.
 
@@ -83,30 +81,30 @@ Here's what democracy SHOULD look like versus the reality:
 
 [Sugar subsidies cost Americans $3.5 billion per year](../references.qmd#sugar-subsidies-cost). That's {{< var sugar_subsidy_cost_per_person_annual >}} per person.
 
-Will you spend weeks fighting to save $10? No.
+Will an individual spend weeks fighting to save $10? No.
 Will sugar companies spend millions to keep their $3.5 billion? Yes.
 
-Guess who wins?
+The outcome is predictable.
 
 This pattern repeats everywhere:
 
 - Military contractors: [$999 billion concentrated benefit](../references.qmd#us-military-budget-800b) (37% of {{< var global_military_spending_annual_2024 >}} global spending)
 - Taxpayers: $3,000 each in diffuse costs ($999B ÷ 333M Americans)
-- Winner: Guess
+- Winner: The contractors
 
 <!-- -->
 
 - Pharma companies: [$500 billion in concentrated profits](../references.qmd#pharma-profits-500b)
 - Patients: $1,500 each in diffuse suffering
-- Winner: Not you
+- Winner: Not the patients
 
 <!-- -->
 
 - Banks in 2008: [$700 billion bailout (concentrated)](../references.qmd#tarp-bailout-700b)
-- You: $2,100 in taxes (diffuse)
-- Winner: The ones with yachts
+- Taxpayers: $2,100 in taxes (diffuse)
+- Winner: The banks
 
-## How Money Buys Power
+## How Money Acquires Power
 
 [Research shows](../references.qmd#cost-of-political-influence) campaign contributions don't directly buy how politicians vote on legislation, only 1 in 4 studies support that notion.
 
@@ -118,17 +116,17 @@ The numbers are stark:
 - Average winning House campaign: [$2.79 million](../references.qmd#cost-of-political-influence)
 - Average winning Senate campaign: [$26.53 million](../references.qmd#cost-of-political-influence)
 
-If you fund the campaigns of politicians who already agree with you, you don't need to buy their votes later.
-You've already bought the election.
+If donors fund the campaigns of politicians who already agree with them, they don't need to buy votes later.
+They've already bought the election.
 
 **And for the ones already in office**, contributions buy something more subtle than votes:
 
-- **Access**: Your call gets returned, theirs goes to voicemail
-- **Agenda control**: Your issue gets a hearing, theirs gets buried
+- **Access**: The donor's call gets returned, others go to voicemail
+- **Agenda control**: The donor's issue gets a hearing, others get buried
 - **Legislative language**: The exact wording that creates loopholes
 - **Committee positions**: [$450,000 to party committees](../references.qmd#cost-of-political-influence) buys a seat where bills live or die
 
-You don't buy the vote. You buy the voter, the agenda, and the conditions that make the vote irrelevant.
+Contributions don't buy the vote. They buy the voter, the agenda, and the conditions that make the vote irrelevant.
 
 ### The Lobbying ROI: 1,810:1 Returns
 
@@ -144,7 +142,7 @@ Meanwhile:
 - Heart disease: Kills more people, worse lobbyists = less funding
 - Rare pediatric diseases: No lobbyists = no funding
 
-Democracy doesn't allocate resources by need. It allocates by who can afford the best K Street firm.
+The system doesn't allocate resources by need. It allocates by who can afford the best lobbying firm.
 
 ### Why Nothing Ever Changes: A Mathematical Proof
 
@@ -153,24 +151,24 @@ Democracy doesn't allocate resources by need. It allocates by who can afford the
 - Number of pharma executives who want high drug prices: 1,000
 - Money they contribute: $4.88 billion
 
-1,000 > 330,000,000 (when you multiply by money)
+1,000 > 330,000,000 (when multiplied by money)
 
 That's not corruption. That's math.
 
-## Why Politicians Don't Care About You (With Math!)
+## Why Politicians Respond to Corporate Interests
 
 A politician needs three things:
 
-1. Votes (from idiots)
+1. Votes
 2. Money (from corporations)
 3. Media coverage (from other corporations)
 
-You provide 1/150,000,000th of item #1.
+The average voter provides 1/150,000,000th of item #1.
 Corporations provide 100% of items #2 and #3.
 
-Who do you think they listen to?
+The incentives clearly favor corporate interests.
 
-## The Median Voter Theorem (Or: Why Everything Sucks)
+## The Median Voter Theorem
 
 Political scientists have proven that in a democracy, policies converge on what the median voter wants.
 
@@ -181,9 +179,7 @@ The median voter:
 - [Believes in astrology](../references.qmd#astrology-belief-poll)
 - [Can't find Europe on a map](../references.qmd#geographic-literacy-survey)
 
-This is who decides if we cure cancer or build more bombs.
-
-Feel good about democracy yet?
+This is who decides if society cures cancer or builds more bombs.
 
 ## The Iron Law of Oligarchy
 
@@ -202,13 +198,13 @@ This happened to:
 - Every political party
 - Every union
 - Every non-profit
-- Your homeowners association
+- Homeowners associations
 - The PTA
 - Everything
 
 Democracy doesn't prevent oligarchy. It legitimizes it.
 
-## Your Congressman: A Prostitute with a Pension
+## The Congressman: Incentivized by Fundraising
 
 Average time congressmen spend on:
 
@@ -220,11 +216,9 @@ They don't even read what they vote on. [The PATRIOT Act: 342 pages, voted on 45
 
 These people control nuclear weapons.
 
-Sleep tight.
-
 ## Congressional Committees: Available for Purchase
 
-Committees are where real power lives. They control which bills live or die, what gets funded, and who gets regulated. No committee seat = no power.
+Committees are where real power lives. They control which bills live or die, what gets funded, and who gets regulated. Lack of a committee seat results in limited power.
 
 So naturally, [both parties sell them](../references.qmd#congressional-committee-price-list):
 
@@ -239,11 +233,11 @@ So naturally, [both parties sell them](../references.qmd#congressional-committee
 
 The price correlates with power. Ways and Means writes tax code affecting trillions. Appropriations decides who gets government money. Energy and Commerce oversees healthcare (17% of GDP) and Wall Street.
 
-Don't pay? Your bills die. Your amendments get ignored. There's even a ["giant wall of shame" displaying who hasn't paid their dues](../references.qmd#congressional-committee-price-list).
+Don't pay? The bills die. Amendments get ignored. There's even a ["giant wall of shame" displaying who hasn't paid their dues](../references.qmd#congressional-committee-price-list).
 
-This is why congressmen spend 4 hours a day fundraising. They're not campaigning, they're paying rent on their committee seats. The people writing your healthcare laws literally bought their positions from the same industries.
+This is why congressmen spend 4 hours a day fundraising. They're not campaigning, they're paying rent on their committee seats. The people writing healthcare laws literally bought their positions from the same industries.
 
-## The 4-Year Attention Span: Democracy Has ADHD
+## The Short-Term Horizon
 
 - Politician promises to "cure cancer"
 - Gets elected
@@ -253,7 +247,7 @@ This is why congressmen spend 4 hours a day fundraising. They're not campaigning
 - New politician promises to "cure cancer"
 - Repeat until heat death of universe
 
-Democracy has the attention span of a goldfish on cocaine.
+The political system creates a short attention span.
 
 Real problems take decades to solve. Elections happen every 2-4 years. Politicians optimize for the next election, not the next generation.
 
@@ -265,7 +259,7 @@ Every four years, nothing changes.
 
 Why? Because the problem isn't the people. It's the incentives.
 
-You could elect 535 clones of Gandhi and within two years they'd be taking pharma money and approving bombing campaigns. The system corrupts everyone. It's designed to.
+Even electing 535 ethically perfect individuals would result in failure; within two years they'd be taking pharma money and approving bombing campaigns. The system corrupts everyone. It's designed to.
 
 ## The Voting Paradox
 
@@ -274,14 +268,14 @@ Democracy assumes voters want what's best for society.
 Reality:
 
 - Farmers vote for farm subsidies (bad for everyone else)
-- Old people vote for Social Security (paid by young people)
-- Rich people vote for tax cuts (paid by poor people)
-- Poor people vote for welfare (paid by middle class)
-- Everyone votes to steal from everyone else
+- The elderly vote for Social Security (paid by young people)
+- The wealthy vote for tax cuts (paid by the poor)
+- The poor vote for welfare (paid by the middle class)
+- Groups vote to extract resources from other groups
 
 It's not a democracy. It's a circular robbery.
 
-## Special Interest Groups: Democracy's Real Winners
+## Special Interest Groups: The Real Winners
 
 Number of voters: [240 million](../references.qmd#us-voter-population)
 Number who care about sugar subsidies: 0
@@ -292,14 +286,14 @@ Winner: Big Sugar
 This repeats for every industry:
 
 - Corn: 4,000 farmers beat 330 million consumers
-- Defense: 5 contractors beat 330 million taxpayers
+- Military: 5 contractors beat 330 million taxpayers
 - Pharma: 50 companies beat 330 million patients
 
 In democracy, the minority always beats the majority. The concentrated always beat the diffuse. The organized always beat the disorganized.
 
 That's not a bug. It's the operating system.
 
-## Why Your Political Tribe Is Also Worthless
+## The Limitations of Partisanship
 
 Republicans say they want small government.
 Republican presidents increase spending.
@@ -334,7 +328,7 @@ Example: Medical research
 
 Democracy optimizes for short-term concentrated benefits. Every time.
 
-## Public Choice Theory: The Nobel Prize for Cynicism
+## Public Choice Theory
 
 [In 1986, James Buchanan won the Nobel Prize in Economics](../references.qmd#james-buchanan-nobel-prize-1986) for proving what everyone already knew:
 
@@ -350,9 +344,9 @@ This is Public Choice Theory: bureaucrats, politicians, and regulators are **jus
 | FDA | Lives saved | Avoiding lawsuits | Deadly delays |
 | Congress | Voter welfare | Campaign donations | Corporate welfare |
 | Pharma | Health outcomes | Recurring revenue | Chronic disease preferred |
-| Defense Contractor | National security | Government contracts | Endless wars |
+| Military Contractor | National security | Government contracts | Endless wars |
 
-**Nobody in the system is incentivized to cure disease. Or end war.**
+**No actor in the system is incentivized to cure disease. Or end war.**
 
 ### The Libertarian Paradox
 
@@ -366,26 +360,26 @@ This is Public Choice Theory: bureaucrats, politicians, and regulators are **jus
 
 ## Why This Is Actually Good News
 
-Democracy can't fix these problems. But markets can.
+Political mechanisms cannot fix these problems. But markets can.
 
-Markets don't care if voters are stupid. Markets don't care if politicians are corrupt. Markets care about one thing: profit.
+Markets don't care if voters are uninformed. Markets don't care if politicians are corrupt. Markets care about one thing: profit.
 
 So make the right thing profitable.
 
-That's what a [1% treaty](../solution/1-percent-treaty.qmd) does. It doesn't try to fix democracy. It bypasses it entirely.
+That's what a [1% treaty](../solution/1-percent-treaty-academic.qmd) does. It doesn't try to fix democracy. It bypasses it entirely.
 
-Instead of convincing 240 million voters to be smart (impossible), you convince 1,000 investors to be greedy (automatic).
+Instead of convincing 240 million voters to be smart (impossible), one convinces 1,000 investors to be greedy (automatic).
 
 ### Why This Is Liberating
 
-You don't need to:
+Society doesn't need to:
 
 - Find virtuous leaders
 - Hope politicians care
 - Wait for bureaucrats to change
 - Convince anyone to be less selfish
 
-You just need to **align their selfishness with your goals**.
+One just needs to **align their selfishness with public goals**.
 
 ## Solution
 
@@ -400,12 +394,12 @@ A 1% treaty solution:
 
 - Don't need informed voters (investors do the math)
 - Create better incentives (make health profitable)
-- Concentrate benefits for reform ([VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd))
+- Concentrate benefits for reform ([VICTORY Incentive Alignment Bonds](../economics/victory-bonds-academic.qmd))
 - Diffuse costs to military budget (they won't notice 1%)
 
-You're using democracy's bugs as features.
+This approach uses systemic flaws as features.
 
-## Your Choice
+## The Strategic Choice
 
 Option A: Keep voting and hope it matters this time (it won't)
 
@@ -421,40 +415,40 @@ The Founding Fathers were geniuses, but they didn't anticipate:
 
 Democracy made sense in 1789. In 2025, it's a cargo cult.
 
-But markets? Markets turned feudal peasants into TikTok influencers. Markets put computers in our pockets more powerful than what sent men to the moon. Markets work.
+But markets? Markets turned feudal peasants into TikTok influencers. Markets put computers in pockets more powerful than what sent men to the moon. Markets work.
 
-**You're not making people better. You're making better systems for selfish people.**
+**The goal is not making people better. It's making better systems for selfish people.**
 
 And since everyone's selfish, those systems will actually work.
 
 Let's use what works.
 
-## A Brief History of Human Decision-Making (Spoiler: It's Bad)
+## A Brief History of Human Decision-Making
 
 [Democracy is the worst form of government, except for all the others](../references.qmd#churchill-democracy-quote).
 
-Churchill said that. He was drunk at the time, but still right.
+Churchill said that. He was correct.
 
 Here's how humanity currently makes decisions:
 
-1. **Ancient Times**: Biggest guy with club decides everything. Sometimes eaten by tiger. New biggest guy takes over.
+1. **Ancient Times**: The strongest individual decided everything. Sometimes eaten by a tiger. A new strong individual took over.
 
-2. **Classical Era**: Guys in togas vote. Women, slaves, and anyone interesting excluded. Socrates forced to drink poison for asking questions.
+2. **Classical Era**: Citizens in togas voted. Women, slaves, and anyone interesting excluded. Socrates forced to drink poison for asking questions.
 
-3. **Medieval Period**: God allegedly tells one inbred family what to do. Family mostly interested in cousin-marriage and cathedral construction.
+3. **Medieval Period**: God allegedly told one inbred family what to do. The family was mostly interested in cousin-marriage and cathedral construction.
 
-4. **Modern Democracy**: Millions vote for representatives who ignore them. Representatives vote based on bribes. Lobbyists write the actual laws. Everyone pretends this makes sense.
+4. **Modern Democracy**: Millions vote for representatives who ignore them. Representatives vote based on contributions. Lobbyists write the actual laws. Everyone pretends this makes sense.
 
 5. **Current System**: All of the above, plus Twitter.
 
-## Why Your Brain Can't Handle Democracy
+## Cognitive Limitations and Democracy
 
 The human brain evolved to:
 
 - Remember where the good berries are
 - Run from tigers
 - Decide who to mate with
-- Hold grudges against that guy who stole your mammoth meat
+- Hold grudges against the person who stole the mammoth meat
 
 The human brain did NOT evolve to:
 
@@ -464,9 +458,9 @@ The human brain did NOT evolve to:
 - Care about people 10,000 miles away
 - Think about consequences beyond next Tuesday
 
-Your working memory can hold about [7 things](../references.qmd#cognitive-limit-seven-items). That's it. Seven. The phone number length isn't a coincidence.
+Human working memory can hold about [7 things](../references.qmd#cognitive-limit-seven-items). That's it. Seven. The phone number length isn't a coincidence.
 
-Yet we ask people to:
+Yet the system asks people to:
 
 - Choose between thousands of political candidates
 - Understand the federal budget ($6 trillion of complexity)
@@ -480,22 +474,22 @@ No wonder democracy produces results like:
 - The U.S. tax code ([27,000 pages of pure evil](../references.qmd#us-tax-code-length))
 - Pineapple pizza (crimes against Italy)
 
-We're asking chimp brains to do quantum physics. Then we're surprised when the chimps elect other chimps who throw feces at each other on C-SPAN.
+The system asks primate brains to do quantum physics. Then society is surprised when the primates elect other primates who throw feces at each other on C-SPAN.
 
-## How Government Actually Allocates Money (A Horror Story)
+## The Reality of Budget Allocation
 
 ### The Current Budget Process: Democracy Theater
 
-Here's how your government decides to spend trillions:
+Here's how the government decides to spend trillions:
 
-#### Step 1: Lobbyists Write Checks
+#### Step 1: Lobbying Influence
 
-- Defense contractors donate $50 million
+- Military contractors donate $50 million
 - Pharmaceutical companies donate $40M
 - Teachers unions donate their lunch money
-- Poor people donate nothing (mistake)
+- Low-income populations donate nothing
 
-##### Step 2: Politicians Pretend to Think
+##### Step 2: Politicians Act Out a Role
 
 - Hold hearings nobody watches
 - Read reports nobody wrote
@@ -511,7 +505,7 @@ Like a demon from a committee meeting:
 - Education: [$80 billion](../references.qmd#us-federal-education-spending) (explaining why we can't afford education)
 - Arts: [$200 million](../references.qmd#us-federal-arts-spending) (Congress's cocaine budget is higher)
 
-###### Step 4: Everyone Gets Mad
+###### Step 4: Everyone Gets Angry
 
 - Conservatives: "Too much welfare!"
 - Liberals: "Too much warfare!"
@@ -521,25 +515,25 @@ Like a demon from a committee meeting:
 This system has produced:
 
 - [$30 trillion in national debt](../references.qmd#us-national-debt)
-- Bridges collapsing while we build new bombers
+- Bridges collapsing while the country builds new bombers
 - Schools using textbooks from 1987
 - The F-35 fighter jet (doesn't fight, barely jets)
 
 ---
 
-*P.S. - If you still believe in democracy, ask yourself: Would you let 150 million random Americans perform your heart surgery by voting on each incision? No? Then why let them vote on healthcare policy? At least with surgery, you'd die quickly.*
+*P.S. - If the reader still believes in democracy, they should ask: Would one let 150 million random Americans perform their heart surgery by voting on each incision? No? Then why let them vote on healthcare policy? At least with surgery, the patient would die quickly.*
 
 ## Regulatory Capture: How Industries Write Their Own Rules
 
 The best investment in America isn't stocks or real estate. It's buying politicians. As detailed earlier, the return on investment for lobbying is astronomical, with studies showing returns as high as **1,810:1**.
 
-### How to Buy a Democracy: A Practical Guide
+### Mechanisms of Influence
 
-1.  **Hire an Ex-Congressman:** There are [13,700 registered lobbyists in Washington](../references.qmd#lobbyist-statistics-dc), and [half of them used to work in the government](../references.qmd#lobbyist-statistics-dc) they're now bribing. The revolving door spins so fast it powers half of DC.
+1.  **Employment of Former Officials:** There are [13,700 registered lobbyists in Washington](../references.qmd#lobbyist-statistics-dc), and [half of them used to work in the government](../references.qmd#lobbyist-statistics-dc) they're now bribing. The revolving door spins so fast it powers half of DC.
 
 2.  **Speak the Universal Language (Money):** In 2023, corporations spent [$4.1 billion on lobbying](../references.qmd#corporate-lobbying-spending-2023). That's $7.7 million per congressman, who makes only [$174,000 a year](../references.qmd#congressman-salary).
 
-3.  **Write the Laws Yourself:** Pharmaceutical companies and defense contractors literally write their own regulations and budgets. The Medicare Modernization Act of 2003, [written by pharma lobbyists](../references.qmd#medicare-modernization-act-pharma-lobbying), [banned the government from negotiating drug prices](../references.qmd#medicare-modernization-act-pharma-lobbying), leading to Americans paying [$1,200 for insulin that costs $6 to make](../references.qmd#insulin-history-and-pricing).
+3.  **Write the Laws:** Pharmaceutical companies and military contractors literally write their own regulations and budgets. The Medicare Modernization Act of 2003, [written by pharma lobbyists](../references.qmd#medicare-modernization-act-pharma-lobbying), [banned the government from negotiating drug prices](../references.qmd#medicare-modernization-act-pharma-lobbying), leading to Americans paying [$1,200 for insulin that costs $6 to make](../references.qmd#insulin-history-and-pricing).
 
 ### The Money Machine: How Regulatory Capture Works
 
@@ -551,29 +545,29 @@ The best investment in America isn't stocks or real estate. It's buying politici
 
 4.  **Jobs Blackmail**: Spread operations across districts. Threaten to leave if politicians don't cooperate. "Nice employment rate you got there. Shame if something happened to it."
 
-5.  **Regulatory Capture**: Get your people appointed to agencies that regulate you. The fox doesn't guard the henhouse - the fox owns the henhouse and charges the chickens rent.
+5.  **Regulatory Capture**: Get allies appointed to agencies that regulate the industry. The regulator does not guard the industry; the industry captures the regulator.
 
-### The Military-Industrial Complex: Murder Inc.
+### The Military-Industrial Complex
 
 Lockheed Martin's business model is a masterclass in political leverage. By distributing operations across [42 states](../references.qmd#lockheed-martin-political-influence-2022), they ensure that any attempt to cut funding for a program like the [$1.7 trillion F-35 fighter jet](../references.qmd#f35-program-lifetime-cost-1-7t) is met with furious opposition from senators protecting local "jobs."
 
-#### The Defense Budget: A Comedy in Three Acts
+#### The Military Budget: A Comedy in Three Acts
 
-**Act 1**: The Pentagon requests nearly a trillion dollars for "readiness," a figure detailed in the [Cost of War chapter](cost-of-war.qmd).
+**Act 1**: The Pentagon requests nearly a trillion dollars for "readiness," a figure detailed in the [Cost of War chapter](cost-of-war-academic.qmd).
 
 **Act 2**: Congress adds [$25 billion the Pentagon didn't ask for](../references.qmd#congress-unrequested-defense-spending).
 
 **Act 3**: Money goes to contractors in key congressional districts.
 
-*Curtain falls. Audience (taxpayers) weeps.*
+*Curtain falls. Taxpayers bear the cost.*
 
 The Pentagon has [never passed an audit](../references.qmd#pentagon-unaccounted-2-5t). They literally don't know where [trillions of dollars](../references.qmd#pentagon-unaccounted-2-5t) went. But somehow they know they need more.
 
-### Big Pharma: Your Dealer Has a Lobbyist
+### Pharmaceutical Influence
 
 The pharmaceutical industry employs [3 lobbyists for every member of Congress](../references.qmd#pharma-lobbying-stats), ensuring that policies favor profit over patients. The result is a system where a drug patent sold for [$1 in 1922](../references.qmd#insulin-history-and-pricing) now costs Americans [$300 per vial](../references.qmd#insulin-history-and-pricing), and where the FDA gets [75% of its drug review budget from the companies it regulates](../references.qmd#fda-regulatory-capture-evidence).
 
-### The Incentive Structure From Hell
+### Perverse Incentive Structures
 
 The entire system is perfectly incentivized to maintain the status quo:
 
@@ -581,24 +575,24 @@ The entire system is perfectly incentivized to maintain the status quo:
 - **FDA Regulators:** Approving a bad drug ends a career; delaying a good one has no consequences.
 - **Politicians:** Funding pragmatic clinical trials is boring; creating new agencies provides photo ops.
 
-Everyone who matters wins. Everyone who's dying loses.
+Powerful actors win. Everyone who's dying loses.
 
-### The Solution They Don't Want
+### The Overlooked Solution
 
 Here's the secret: Their whole system depends on diffuse costs and concentrated benefits.
 
 Each American loses $100 to corruption. Not worth fighting over.
 Each corporation gains $100 million. Very worth fighting for.
 
-But what if you concentrated the benefits of reform? What if curing disease was more profitable than treating it? What if peace paid better than war?
+But what if one concentrated the benefits of reform? What if curing disease was more profitable than treating it? What if peace paid better than war?
 
-That's what a [1% treaty](../solution/1-percent-treaty.qmd) does. It doesn't fight the system. It hijacks it.
+That's what a [1% treaty](../solution/1-percent-treaty-academic.qmd) does. It doesn't fight the system. It hijacks it.
 
-You're going to out-bribe the bribers.
+It is possible to out-bid the current influences.
 
-The same lobbying system that created this mess is the feature you will exploit. Lockheed Martin and Pfizer don't love war and disease; they love money. By making health and peace the most profitable investments in history, you can hijack the system and buy your democracy back.
+The same lobbying system that created this mess is the feature society will exploit. Lockheed Martin and Pfizer don't love war and disease; they love money. By making health and peace the most profitable investments in history, one can leverage the system and buy democracy back.
 
-### Your Democracy: An Auction House
+### The Legislative Marketplace
 
 Every law is for sale. Every regulation negotiable. Every politician has a price.
 
@@ -606,12 +600,12 @@ That's not cynicism. That's Wednesday in Washington.
 
 The military-industrial complex figured this out in 1961. Big Pharma perfected it in the 1990s. Wall Street turned it into an art form in 2008.
 
-Now it's your turn.
+Now it's society's turn.
 
-You're not going to fix democracy. That's impossible. You're going to buy it back.
+Fixing democracy is unlikely. The goal is to buy it back.
 
-One perfectly legal bribe at a time.
+One perfectly legal contribution at a time.
 
 ---
 
-*P.S. - If this chapter depressed you, remember: The same system that lets corporations buy politicians also lets you buy them back. The corruption is the feature you're going to exploit. It's like using the Death Star's exhaust port, but with spreadsheets instead of proton torpedoes.*
+*P.S. - If this chapter was depressing, remember: The same system that lets corporations buy politicians also lets society buy them back. The corruption is the feature to exploit. It's like using the Death Star's exhaust port, but with spreadsheets instead of proton torpedoes.*

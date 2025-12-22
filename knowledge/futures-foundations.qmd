@@ -3,13 +3,13 @@ title: The Two Futures
 description: Two timelines diverge from this moment. One ends in extinction, the other in transcendence. The only difference is a 1% budget reallocation.
 published: true
 tags:
-- futures
-- dystopia
-- utopia
-- idiocracy
-- wishonia
-- three-supers
-- three-subs
+  - futures
+  - dystopia
+  - utopia
+  - idiocracy
+  - wishonia
+  - three-supers
+  - three-subs
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -33,5 +33,5 @@ The only difference: One 1% budget reallocation.
 
 ## The Two Paths
 
-- [Chapter 21: Path A - Moronia](futures/moronia.qmd) - How we become Gollum (extinction by 2050)
-- [Chapter 22: Path B - Wishonia](futures/wishonia.qmd) - How we become genies (immortality by 2045)
+- [Chapter 21: Path A - Moronia](futures/moronia-foundations.qmd) - How we become Gollum (extinction by 2050)
+- [Chapter 22: Path B - Wishonia](futures/wishonia-foundations.qmd) - How we become genies (immortality by 2045)

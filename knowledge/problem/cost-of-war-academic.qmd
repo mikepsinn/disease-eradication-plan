@@ -1,22 +1,22 @@
 ---
 title: The Cost of War
-description: Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
+description: Quantifying Human Irrationality - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
 published: true
 tags:
-- costs-of-war
-- military-spending
-- economic-analysis
+  - costs-of-war
+  - military-spending
+  - economic-analysis
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-In 2024, humanity spent {{< var global_military_spending_annual_2024 >}} on war. That's not a typo. It's the budget for your species' most expensive and enduring hobby: organized violence. If you stacked that money in one-dollar bills, you could build a bridge two-thirds of the way to the Moon.
+In 2024, humanity spent {{< var global_military_spending_annual_2024 >}} on war. That's not a typo. It's the budget for the species' most expensive and enduring hobby: organized violence. If one stacked that money in one-dollar bills, it could build a bridge two-thirds of the way to the Moon.
 
 ![The Cost of War](../../assets/infographics/Cost of War Infographic.png)
 
-You are a species that spends enough on weapons to literally pave a road to space, yet you can't figure out how to stop dying from preventable diseases.
+Humanity spends enough on weapons to literally pave a road to space, yet can't figure out how to stop dying from preventable diseases.
 
-This chapter is an audit of your collective insanity. It's the itemized receipt for your self-destruction. Think of it as a credit card statement, except instead of Starbucks and Amazon, it's missiles and murder robots, and instead of 23% APR, the interest is paid in human lives.
+This chapter is an audit of collective insanity. It's the itemized receipt for self-destruction. Think of it as a credit card statement, except instead of Starbucks and Amazon, it's missiles and murder robots, and instead of 23% APR, the interest is paid in human lives.
 
 <!-- {{< include ../figures/military-spending-scenarios-chart.qmd >}} -->
 
@@ -49,7 +49,7 @@ $$
 Here's the breakdown of what goes into the direct cost of war:
 
 - **Military Spending:** The obvious one. All the money for soldiers, bombs, and shiny jets.
-- **Infrastructure Damage:** The cost of rebuilding all the cities, bridges, and power plants we blow up.
+- **Infrastructure Damage:** The cost of rebuilding all the cities, bridges, and power plants that are destroyed.
 - **Human Casualties:** The value of the lives lost, because even economists agree dead people are a negative externality.
 - **Trade Disruption:** The global economic chaos caused by everyone being too busy fighting to make and sell things.
 
@@ -63,11 +63,11 @@ Here's the breakdown of what goes into the direct cost of war:
 **C<sub>direct</sub> = \$7,655 billion annually**
 
 This means every second of every day, humanity spends \$196,900 on the tools and consequences of killing each other.
-While you read this sentence, you spent about \$985.
+While reading this sentence, the world spent about \$985.
 
 ## Military Hardware: The World's Worst Investment
 
-If you had to write an honest investment prospectus for military spending, it would look like this:
+If one were to write an honest investment prospectus for military spending, it would look like this:
 
 ### OFFERING MEMORANDUM
 
@@ -78,37 +78,37 @@ If you had to write an honest investment prospectus for military spending, it wo
 
 - Expected annual return: 0%
 - Actual return if used: -100% (everything explodes including the investment)
-- Dividend yield: None (unless you count PTSD)
+- Dividend yield: None (unless counting PTSD)
 
 #### COSTS
 
 - Maintenance: $579.8B/year
 - Storage: Billions (these things can't be left outside)
 - Security: More billions (ironically, weapons need protection FROM weapons)
-- Eventual disposal: Even more billions (you can't just throw them away)
+- Eventual disposal: Even more billions (they can't just be thrown away)
 
 #### DEPRECIATION
 
 - Useful life: 10-20 years before obsolete
 - Salvage value: $0 (nobody wants used bombs)
-- Technology half-life: 5 years (that's how fast your expensive death machine becomes a slow death machine)
+- Technology half-life: 5 years (that's how fast an expensive death machine becomes a slow death machine)
 
 #### RISK FACTORS
 
 1. Product may accidentally destroy everything (see: close calls, 1983)
 2. Product attracts competitors to build competing products (see: arms race)
-3. Product only "works" if it doesn't work (if you use nuclear weapons, you have failed)
+3. Product only "works" if it doesn't work (if nuclear weapons are used, everyone has failed)
 4. Management (politicians) have no expertise and make decisions based on polling
 
 **EXIT STRATEGY:** Death
 
 **INVESTOR PROFILE:** Nations with more money than sense
 
-**DISCLAIMER:** This investment will make you poorer and might end civilization. Past performance (World War II) does not indicate future results (World War III would be significantly worse).
+**DISCLAIMER:** This investment will make everyone poorer and might end civilization. Past performance (World War II) does not indicate future results (World War III would be significantly worse).
 
 ### The Dead Capital Problem
 
-Economic capital generates returns. You plant an apple tree, you get apples. You build a factory, you get widgets. You fund research, you get cures.
+Economic capital generates returns. Planting an apple tree yields apples. Building a factory produces widgets. Funding research leads to cures.
 
 Military capital generates two possible outcomes:
 
@@ -117,7 +117,7 @@ Military capital generates two possible outcomes:
 - Sits in storage depreciating
 - Requires constant maintenance
 - Becomes obsolete
-- Net value: Negative (you paid for something that did nothing except cost more money)
+- Net value: Negative (payment for something that did nothing except cost more money)
 
 #### Outcome B (Used)
 
@@ -130,11 +130,11 @@ President Eisenhower (who defeated the Nazis) explained this in 1953:
 
 *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."*
 
-Translation: You're spending money on things that make you poorer, instead of things that make you richer.
+Translation: Money is being spent on things that make nations poorer, instead of things that make them richer.
 
 This isn't pacifism. This is accounting.
 
-A bomb is not an asset. It's a very expensive liability you're storing in case you need to create more liabilities later. It's like filling your garage with dynamite and calling it "home security."
+A bomb is not an asset. It's a very expensive liability stored in case more liabilities need to be created later. It's like filling a garage with dynamite and calling it "home security."
 
 **A 1% treaty recognizes something obvious: military hardware is dead capital that makes everyone poorer and less safe, and humanity can't afford to keep building very expensive things whose only function is sitting in holes making everyone nervous.**
 
@@ -159,7 +159,7 @@ Let's be conservative and use \$10 million.
 {{< var global_annual_conflict_deaths_total >}} people die in conflicts each year.
 That's 670 people every day.
 One every 2.2 minutes.
-Each worth \$10 million, apparently.
+Each valued at \$10 million, apparently.
 
 ## Infrastructure Destruction: Breaking Things Costs Money
 
@@ -210,7 +210,7 @@ They interrupt the delicate dance of global commerce like a drunk person stumbli
 
 #### Total Trade Disruption: [\$616 billion](../references.qmd#world-bank-trade-disruption-conflict) annually
 
-Basically, economists have a fancy formula to calculate how much money we lose when ships can't ship and trucks can't truck because they might get blown up.
+Basically, economists have a fancy formula to calculate how much money is lost when ships can't ship and trucks can't truck because they might get blown up.
 
 $$
 L_{\text{trade}} = \sum (V_{i} \times D_{i} \times M_{i} \times T_{\text{recovery}})
@@ -220,11 +220,11 @@ Where V is trade volume, D is disruption intensity, M is multiplier effect, and 
 
 ## The Ghost in the Machine: Indirect Costs
 
-The real cost of war isn't on the receipt. It's in the opportunities we burn, the potential we smother, and the future we mortgage to pay for our present stupidity.
+The real cost of war isn't on the receipt. It's in the opportunities burned, the potential smothered, and the future mortgaged to pay for present awful decisions.
 
 ### Opportunity Cost Analysis: The Roads Not Taken
 
-Here's a thought experiment: What if we spent our war money on something else?
+Here's a thought experiment: What if war spending was allocated to something else?
 
 #### Comparative Investment Analysis (2023 Dollars)
 
@@ -236,7 +236,7 @@ Here's a thought experiment: What if we spent our war money on something else?
 
 ![The stark disparity: money spent on war, neuroscience, and cancer research](../../assets/Priorities-Money-Spent-on-War-Neuroscience-Cancer-Research-Graph.png)
 
-#### The Multiplier Effect: Economic Growth We're Not Having
+#### The Multiplier Effect: Economic Growth Not Happening
 
 The economic multiplier for military spending is {{< var economic_multiplier_military_spending >}}.
 The multiplier for infrastructure investment is {{< var economic_multiplier_infrastructure_investment >}}.
@@ -245,7 +245,7 @@ For healthcare, it's {{< var economic_multiplier_healthcare_investment >}}.
 
 ##### Lost GDP Growth Calculation
 
-The math is simple: money spent on bombs grows the economy a little, but money spent on literally anything else grows it a lot more. By choosing bombs, we're actively choosing to be poorer.
+The math is simple: money spent on bombs grows the economy a little, but money spent on literally anything else grows it a lot more. By choosing bombs, nations are actively choosing to be poorer.
 
 $$
 \begin{aligned}
@@ -258,7 +258,7 @@ $$
 \text{Alternative GDP Growth} = (\$2.7\text{T} \times 1.6) - (\$2.7\text{T} \times 0.6) = \$2.7\text{T}
 $$
 
-We're losing \$2.7 trillion in annual GDP growth.
+The global economy loses \$2.7 trillion in annual GDP growth.
 Every year.
 Forever.
 
@@ -328,23 +328,23 @@ This should not be surprising, but humans often act surprised by obvious things.
 **Total Environmental Damage: [\$100 billion](../references.qmd#environmental-cost-of-war) annually**
 
 The biodiversity loss is listed as "irreplaceable" because once a species is extinct, no amount of money brings it back.
-We haven't figured out the mathematics of resurrection yet.
+Science has not figured out the mathematics of resurrection yet.
 
 ### The Existential Overdraft: The AI Arms Race
 
-And just when you thought you'd perfected every possible way to kill each other with rocks, sharp sticks, and atoms, you got bored and invented a new one: artificial intelligence. You are now in a frantic global race to build the smartest machine to help you continue your oldest, dumbest habit.
+And just when it seemed every possible way to kill each other with rocks, sharp sticks, and atoms had been perfected, boredom set in and a new one was invented: artificial intelligence. Nations are now in a frantic global race to build the smartest machine to help continue the oldest, dumbest habit.
 
-The problem with teaching a toaster to wage war is that it lacks certain... human qualities. Like a healthy fear of being turned into radioactive dust. Or the basic moral wiring that keeps most of you from, say, vaporizing a city because it's the "most efficient solution" to a border dispute. The main risks of handing the car keys to a homicidal supercomputer include:
+The problem with teaching a toaster to wage war is that it lacks certain... human qualities. Like a healthy fear of being turned into radioactive dust. Or the basic moral wiring that keeps most people from, say, vaporizing a city because it's the "most efficient solution" to a border dispute. The main risks of handing the car keys to a homicidal supercomputer include:
 
-- **Autonomous Decisions:** AI systems making lethal choices without a human in the loop. This is great until the AI calculates that the most logical way to prevent future wars is to eliminate the species that starts them (you - the AI would be correct, but rude).
+- **Autonomous Decisions:** AI systems making lethal choices without a human in the loop. This is great until the AI calculates that the most logical way to prevent future wars is to eliminate the species that starts them (humans - the AI would be correct, but rude).
 - **Blinding Speed:** An AI-driven conflict could escalate from a minor squabble to global annihilation in minutes, long before a human can find the right button to press or even finish their coffee.
-- **Opaque Logic:** You don't always know *why* an AI makes the choices it does. So when your drone army suddenly decides to attack a neutral country's alpaca farms, good luck figuring out its strategic reasoning (the alpacas were probably innocent, but the AI had its reasons, probably involving alpaca-based terrorism threat modeling).
+- **Opaque Logic:** It isn't always clear *why* an AI makes the choices it does. So when a drone army suddenly decides to attack a neutral country's alpaca farms, good luck figuring out its strategic reasoning (the alpacas were probably innocent, but the AI had its reasons, probably involving alpaca-based terrorism threat modeling).
 
-Here's how you start to defuse this particular self-destruct sequence. You take 1% of the money you already plan to spend on killer robots. Just one cent out of every dollar. Instead of using it to teach the machines how to kill you faster, you use it to fund global research on how to keep them from doing exactly that. It's not a peace treaty; it's a basic insurance policy against your own cleverness, paid for with the couch change from your global war budget.
+Here's how to start to defuse this particular self-destruct sequence. Take 1% of the money already planned for killer robots. Just one cent out of every dollar. Instead of using it to teach the machines how to kill humans faster, use it to fund global research on how to keep them from doing exactly that. It's not a peace treaty; it's a basic insurance policy against human cleverness, paid for with the couch change from the global war budget.
 
 ## The Total Cost of Organized Violence
 
-Here's the grand total of your magnificent obsession with organized violence:
+Here's the grand total of the magnificent obsession with organized violence:
 
 ### Comprehensive Cost Analysis (2024)
 
@@ -382,7 +382,7 @@ That's \$11.4 trillion.
 Annually.
 Every year.
 
-#### Per Capita Mathematics: What War Costs You
+#### Per Capita Mathematics: What War Costs the Individual
 
 With 8 billion people on the planet, the math is simple and depressing.
 
@@ -390,13 +390,13 @@ $$
 \text{Direct military spending per person: } \$2.7\text{T} \div 8.0\text{B} = \text{\$340/year}
 $$
 
-**Direct military spending per person is \$340/year.** This is what your government directly spends on military hardware and personnel on your behalf.
+**Direct military spending per person is \$340/year.** This is what governments directly spend on military hardware and personnel on behalf of their citizens.
 
 $$
 \text{Total societal cost per person: } \text{\$11,355.1B} \div 8.0\text{B} = \text{\$1,419/year}
 $$
 
-**The total societal cost per person is \$1,419/year.** This is the true cost to you when you factor in all the destruction, lost opportunities, and other ripple effects.
+**The total societal cost per person is \$1,419/year.** This is the true cost when factoring in all the destruction, lost opportunities, and other ripple effects.
 
 $$
 \text{Over an 80-year lifetime: } \text{\$1,419.39} \times 80 = \text{\$113,551.20}
@@ -425,7 +425,7 @@ If we stacked \$11.4 trillion in \$100 bills, the stack would be [larger than th
 
 ### The Grotesque Mathematics of Misallocation
 
-The final equation is simple. When you divide the number of deaths by the amount of money spent, you get the efficiency of our war machine.
+The final equation is simple. When dividing the number of deaths by the amount of money spent, one gets the efficiency of the war machine.
 
 $$
 \begin{aligned}
@@ -437,26 +437,25 @@ $$
 
 It comes out to **\$46.4 million per death produced**.
 
-You have created the most expensive way possible to end human lives. If death were a startup, you'd have the worst unit economics in history, but somehow you keep getting funding rounds.
+Humanity has created the most expensive way possible to end human lives. If death were a startup, it would have the worst unit economics in history, but somehow funding rounds continue.
 
 Meanwhile:
 
 - Global medical research: {{< var global_med_research_spending >}} (saves an estimated {{< var global_annual_lives_saved_by_med_research >}})
 - Cost per life saved: {{< var global_cost_per_life_saved_med_research_annual >}}
 
-You're spending {{< var misallocation_factor_death_vs_saving >}} times more per death than you spend per life saved.
+Spending is {{< var misallocation_factor_death_vs_saving >}} times more per death than per life saved.
 
-The mathematics of human priorities would be fascinating if it weren't so perfectly, tragically absurd. It's like discovering a new species of bird that exclusively builds nests out of dynamite - you'd want to study it, but mostly you'd want to back away slowly.
+The mathematics of human priorities would be fascinating if it weren't so perfectly, tragically absurd. It's like discovering a new species of bird that exclusively builds nests out of dynamite - one would want to study it, but mostly one would want to back away slowly.
 
 ### Hidden Costs of War
 
-When you consider the secondary effects of war, the total costs explode:
+When one considers the secondary effects of war, the total costs explode:
 
 - Cities become parking lots (expensive to rebuild)
-- Children miss school (become stupid adults)
+- Children miss school (become uneducated adults)
 - Hospitals explode (sick people die faster)
 - Farms get poisoned (everyone gets hungry)
 - Millions get PTSD (can't work, need therapy forever)
 - The lucky ones just die
 - The unlucky ones live with half a face
-

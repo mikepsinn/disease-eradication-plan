@@ -1,6 +1,6 @@
 ---
 title: A Decentralized Framework for Drug Assessment
-description: 80Xing medical progress by giving all patients the right to effortlessly participate in global decentralized clinical trials instead of suffering and dying
+description: Accelerating medical progress by allowing all patients to participate in global decentralized clinical trials rather than suffering and dying
 published: true
 tags:
   - overview
@@ -15,27 +15,27 @@ tags:
 
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 
-Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../appendix/clinical-trial-participants.qmd). That's **0.2%**.
+Out of 2.4 billion people with chronic disease, [only 5 million participate in trials annually](../appendix/clinical-trial-participants-academic.qmd). That's **0.2%**.
 
-[Half of humanity would volunteer](../references.qmd#patient-willingness-clinical-trials) if they could. We have **240 times more willing participants** than we're using.
+[Half of humanity would volunteer](../references.qmd#patient-willingness-clinical-trials) if they could. Society has **240 times more willing participants** than are currently being used.
 
 This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient_fda_example_41k >}} per patient, require traveling to major medical centers, and have exclusion criteria that reject [86.1% of actual patients](../references.qmd#antidepressant-trial-exclusion-rates).
 
-**We're not facing a recruitment problem. We're facing a capacity problem.**
+**We are not facing a recruitment problem. We are facing a capacity problem.**
 
-## The Solution: Amazon for Clinical Trials
+## The Solution: A Marketplace for Clinical Trials
 
-Your decentralized framework for drug assessment (dFDA) is a **two-sided marketplace** that connects companies with treatments to patients who need them. It's Amazon, but instead of buying stuff you don't need, you're getting paid to help find cures.
+A decentralized framework for drug assessment (dFDA) is a **two-sided marketplace** that connects companies with treatments to patients who need them. It operates like a major marketplace, but instead of buying unnecessary goods, participants are paid to help find cures.
 
 ### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
 
 **Any company** - pharma, supplements, food, interventions - can instantly create a trial:
 
 1. **Register treatment** on a public portal (name, ingredients, condition, price)
-2. **Set treatment price** (what you charge patients - covers manufacturing + delivery)
-3. **Get automatic liability insurance** (built into platform)
+2. **Set treatment price** (what they charge patients - covers manufacturing + delivery)
+3. **Automatic liability insurance** (built into platform)
 4. **Trial goes live immediately** - appears in search results, ranked by existing data
-5. **Patients join** based on rankings → You collect zero-cost data on whether it works
+5. **Patients join** based on rankings → Companies collect zero-cost data on whether it works
 
 #### Net cost to company: $0
 
@@ -46,7 +46,7 @@ Your decentralized framework for drug assessment (dFDA) is a **two-sided marketp
 - Platform handles analysis (eliminates analysis cost)
 - Insurance is built-in (eliminates liability cost)
 
-### The Payment Flow (Or: How Everyone Profits Except Disease)
+### The Payment Flow
 
 **Patient pays:** Treatment cost + Refundable deposit
 **Patient receives:** Subsidy (from a 1% Treaty Fund)
@@ -95,35 +95,33 @@ Research ideas → Register instantly → Patients decide by joining → $0 per 
 
 A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining marketplace that funds ALL research.**
 
-## How It Works: Just Let People Try Stuff (Carefully)
+## How It Works: Enabling Controlled Access
 
-Here's a thought that apparently never occurred to anyone in Washington:
+What if sick people could try treatments?
 
-What if sick people could just... try treatments?
+And then researchers could write down what happens?
 
-And then we could... write down what happens?
+And then other sick people could see what worked?
 
-And then other sick people could... see what worked?
+The current system leaves [95% of rare diseases](../references.qmd#95-pct-diseases-no-treatment) with zero approved treatments and ensures [85% of patients are barred](../references.qmd#fda-trial-patient-exclusion-criteria) from the trials that might save them. Society has managed to perfect a system where only the healthy and compliant are allowed to test cures for the sick and desperate. It is genius, in a suicidal sort of way.
 
-Your current system leaves [95% of rare diseases](../references.qmd#95-pct-diseases-no-treatment) with zero approved treatments and ensures [85% of patients are barred](../references.qmd#fda-trial-patient-exclusion-criteria) from the trials that might save them. We've managed to perfect a system where only the healthy and compliant are allowed to test cures for the sick and desperate. It's genius, in a suicidal sort of way.
+This is because trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, for example, a patient can't have any other pesky problems like anxiety or PTSD. They can't have a history of drug or alcohol use. They can't be on other medications. They have to be the *perfect* kind of sick. The result? One investigation found that only [14.5%](https://www.ncbi.nlm.nih.gov/pubmed/14628985) of real-world patients with depression would actually qualify. Most patients are too complex for pristine, clean data.
 
-This is because trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, for example, you can't have any other pesky problems like anxiety or PTSD. You can't have a history of drug or alcohol use. You can't be on other medications. You have to be the *perfect* kind of sick. The result? One investigation found that only [14.5%](https://www.ncbi.nlm.nih.gov/pubmed/14628985) of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
-
-On top of excluding everyone with a pulse, these "definitive" studies are run on comically small groups. They'll test a new heart drug on [275 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), a cancer drug on just [20 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), and a diabetes drug on [100 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), then prescribe the winner to millions.
+On top of excluding most actual patients, these "definitive" studies are run on comically small groups. They'll test a new heart drug on [275 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), a cancer drug on just [20 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), and a diabetes drug on [100 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), then prescribe the winner to millions.
 
 ![A chart showing a study for Wellbutrin where only 36 patients were in the final analysis, yet the drug is prescribed to millions.](../../assets/wellbutrin-effectiveness-small-sample-size.png)
 
-We're basing the survival of our species on a sample size smaller than a kindergarten class. So, instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
+Society bases the survival of the species on a sample size smaller than a kindergarten class. So, instead of studying these mythical, perfectly sick unicorns, what if data came from everyone who is *actually* sick?
 
-### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
+### The Power of Real-World Evidence
 
-Your decentralized framework for drug assessment is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
+A decentralized framework for drug assessment is built on a simple, powerful idea: researchers can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a term for "watching what happens."
 
-Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
+Skeptics might argue, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is unreliable.
 
-They're not wrong about the old way. Old observational studies were flawed because they couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
+They are not wrong about the old way. Old observational studies were flawed because they couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
 
-But here's what's changed: we now have so much data and such powerful computers that we can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. We can track someone's arthritis pain for a month, have them take Turmeric for a month, then stop, then start again. By doing this, we can see if the Turmeric is actually doing something or if it's just a coincidence.
+But here is what has changed: researchers now have so much data and such powerful computers that they can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. One can track a patient's arthritis pain for a month, have them take Turmeric for a month, then stop, then start again. By doing this, researchers can see if the Turmeric is actually doing something or if it's just a coincidence.
 
 Modern statistical methods are so good that a [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) found that the results from high-quality observational studies are generally the same as those from expensive, slow randomized controlled trials.
 
@@ -131,27 +129,27 @@ Modern statistical methods are so good that a [meta-analysis in the New England 
 
 ![A chart comparing effect sizes from observational studies and randomized trials for various outcomes.](../../assets/observational-vs-randomized-trial-effect-sizes.png)
 
-We have the tools to get reliable answers from real-world data. We just have to actually use them.
+Society has the tools to get reliable answers from real-world data. It just has to actually use them.
 
-### Introducing FDA.gov 2.0: Now With 80% Less Death
+### Introducing FDA.gov 2.0: A Modern Interface
 
-Your decentralized framework for drug assessment upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
+The decentralized framework for drug assessment upgrades FDA.gov from a digital cemetery to something useful. The cost is less than one non-functioning fighter jet.
 
 Here's the revolutionary process:
 
-### Step 1: Type in What's Killing You
+### Step 1: Enter Condition
 
 <img src="../../assets/enter-condition.png" alt="Enter condition" style="max-width: 600px; width: 100%;" />
 
-Revolutionary feature: A search box. The FDA's current website doesn't have this because they assume you've already died.
+Revolutionary feature: A search box. The FDA's current website lacks this because it assumes the user has already died.
 
-### Step 2: See What Actually Works (Based on Reality, Not Theory)
+### Step 2: View Real-World Effectiveness
 
 ::: {.content-visible when-format="html"}
 <img src="../../assets/clinipedia-inflammatory-pain-small.gif" alt="View ranked treatments" style="max-width: 600px; width: 100%;" />
 :::
 
-Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
+Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," users see:
 
 "Here's what happened to 50,000 people who tried this:
 
@@ -160,7 +158,7 @@ Instead of "This drug is approved for exactly this condition in exactly these pa
 - 20% no change
 - 10% grew a third nipple (but a useful one)"
 
-It's like Consumer Reports, but for not dying.
+It is like Consumer Reports, but for not dying.
 
 **Treatment Rankings: Every Option, Ranked by Reality**
 
@@ -169,19 +167,19 @@ It's like Consumer Reports, but for not dying.
 Search any condition and see every treatment ranked by real-world effectiveness:
 
 - **FDA Approved treatments** with effectiveness scores from actual patients
-- **Phase 3 and Phase 2 trials** you can join right now
+- **Phase 3 and Phase 2 trials** patients can join right now
 - **Experimental options** with preliminary data
 - One-click access to join available trials
 
-No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results, so we waste billions repeating the same failed ideas. This ends that particular brand of expensive stupidity.
+No more guessing which treatment a doctor half-remembers from a conference. Just clear rankings based on what actually worked for similar patients. The current system never publishes negative results, so society wastes billions repeating the same failed ideas. This ends that particular brand of expensive failure.
 
 ### Step 2.5: See the Future (With Financially-Backed Predictions)
 
-To complement the real-world data from past patients, your decentralized framework for drug assessment will integrate a powerful forecasting tool: **live prediction markets**.
+To complement the real-world data from past patients, the decentralized framework for drug assessment will integrate a powerful forecasting tool: **live prediction markets**.
 
-This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
+This isn't just polling experts; it is a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
 
-For any given trial, you'll see real-time odds on questions like:
+For any given trial, users will see real-time odds on questions like:
 
 - **Effectiveness**: "What are the chances this treatment will reduce tumor size by >50% in the next 6 months?" **Market Price: 38%**
 - **Adverse Events**: "What is the probability of patients experiencing severe nausea?" **Market Price: 22%**
@@ -190,11 +188,11 @@ For any given trial, you'll see real-time odds on questions like:
 #### Why Trust This?
 
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using the actual, aggregated, and anonymized patient data collected through your decentralized framework for drug assessment. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
+2.  **The Ultimate Fact-Checker**: A decentralized institutes of health (DIH) network automatically resolves these bets using the actual, aggregated, and anonymized patient data collected through the decentralized framework for drug assessment. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
-### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
+### Step 3: Join a Trial from Home
 
 ::: {.content-visible when-format="html"}
 <img src="../../assets/autonomous-study-search.gif" alt="Join trials" style="max-width: 600px; width: 100%;" />
@@ -202,11 +200,11 @@ This gives patients an invaluable second layer of information: not just what *ha
 
 Current system: Drive 500 miles to a university hospital, wait 6 months, get rejected for having the wrong kind of dying.
 
-New system: Click button. Get pills. Report if you die.
+New system: Click button. Get pills. Report if the patient dies.
 
 Revolutionary!
 
-### Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
+### Step 4: Get Drugs Delivered Like Pizza
 
 ::: {.content-visible when-format="html"}
 <img src="../../assets/autonomous-cvs.gif" alt="Get treatment" style="max-width: 600px; width: 100%;" />
@@ -214,7 +212,7 @@ Revolutionary!
 
 Amazon can deliver a banana costume in 2 hours but experimental medications take 6 months and require seven forms of ID?
 
-Your framework fixes that. Your pharmacy becomes a trial site. Your doctor becomes a researcher. Your dying becomes data.
+This framework fixes that. The pharmacy becomes a trial site. The doctor becomes a researcher. Dying becomes data.
 
 ### Step 5: Publish Results
 
@@ -226,8 +224,8 @@ Current system: 500-page case report forms that ask questions like "Rate your su
 
 New system:
 
-- "Are you dead?" Yes/No
-- "If no, how dead do you feel?" Slider bar
+- "Is the patient dead?" Yes/No
+- "If no, how dead does the patient feel?" Slider bar
 - "Any new body parts?" Check all that apply
 
 ### Step 6: Everyone Benefits from Everyone's Suffering
@@ -236,29 +234,29 @@ New system:
 <img src="../../assets/black-box-model-animation2.gif" alt="Improve rankings" style="max-width: 600px; width: 100%;" />
 :::
 
-Your data helps the next person. Their data helps you. It's socialism, but for not dying.
+A patient's data helps the next person. That person's data helps the first patient. It's socialism, but for not dying.
 
 Every pill becomes a tiny experiment. Every patient becomes a scientist. Every outcome gets recorded.
 
-It's what we should have been doing since we invented writing.
+It is what humanity should have been doing since it invented writing.
 
 ## The Partnership Approach: Building Rails, Not Trains
 
-Here's what we're NOT doing: building a government platform that competes with existing medical technology companies.
+This approach is NOT building a government platform that competes with existing medical technology companies.
 
-Here's what we ARE doing: establishing an open protocol that lets all the existing platforms talk to each other.
+This approach IS establishing an open protocol that lets all the existing platforms talk to each other.
 
-Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP - the protocol that lets all websites connect. Same idea.
+Think of it like the internet. Developers didn't build one website that everyone has to use. They built HTTP - the protocol that lets all websites connect. Same idea.
 
-**How your framework gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
+**How the framework gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy-academic.qmd). It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
 
 ### The Players Already in the Game
 
-Companies like [Medable](../references.qmd#dct-platform-funding-medable) ($521M raised), [Science 37](../references.qmd#dct-platform-funding-others) (~$100M raised), and others have already built decentralized clinical trial platforms. They're good at it. They have users. They have infrastructure.
+Companies like [Medable](../references.qmd#dct-platform-funding-medable) ($521M raised), [Science 37](../references.qmd#dct-platform-funding-others) (~$100M raised), and others have already built decentralized clinical trial platforms. They are good at it. They have users. They have infrastructure.
 
 Why compete with them? Partner instead.
 
-**Your decentralized framework for drug assessment provides**:
+**The decentralized framework for drug assessment provides**:
 
 - Open protocol for data exchange (like email protocols)
 - Federated data network (data stays in Epic/Cerner/Apple Health systems)
@@ -294,7 +292,7 @@ Before writing code, form partnerships with:
 
 **International Partners** (already proven it works):
 
-- NHS/UK Biobank ([RECOVERY trial](../appendix/recovery-trial.qmd) model)
+- NHS/UK Biobank ([RECOVERY trial](../appendix/recovery-trial-academic.qmd) model)
 - NIH All of Us (400k+ participants, genomic data)
 
 ### Why They'll Cooperate
@@ -329,7 +327,7 @@ Data doesn't move to a central database. It stays where it is:
 - Apple Health keeps its data
 - Cerner keeps its data
 
-Your framework's protocol just lets you run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
+The framework's protocol just lets researchers run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
 
 This solves:
 
@@ -338,9 +336,9 @@ This solves:
 - Vendor cooperation (they keep control)
 - Patient trust (data doesn't go to "the cloud")
 
-## The Money Shot: How to Save 95% on Not Killing People
+## Economic Impact: Significant Cost Reductions
 
-Look at these incredible savings! It's like Black Friday, but for survival!
+The savings are significant. It is like Black Friday, but for survival.
 
 | Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
@@ -349,7 +347,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 | Who can participate | **[13.9% of patients](../references.qmd#antidepressant-trial-exclusion-rates)** | **100% of patients** | 86.1% inclusion rate | Everyone |
 | Rare diseases with treatments | **[5%](../references.qmd#95-pct-diseases-no-treatment)** | **Eventually 100%** | Priceless | Millions |
 
-### The Itemized Receipt of Eliminated Stupidity
+### The Itemized Receipt of Eliminated Waste
 
 {{< include ../figures/dfda-cost-breakdown-itemized-table.qmd >}}
 
@@ -357,7 +355,7 @@ This eliminates $55 million per trial.
 
 ## Why This Works: The Mathematical Impossibility of Committees
 
-Here's the problem with having [~200 FDA bureaucrats](../references.qmd#fda-reviewer-count) decide what 8 billion people can try when they're dying:
+The problem with having [~200 FDA bureaucrats](../references.qmd#fda-reviewer-count) decide what 8 billion people can try when they are dying is structural:
 
 ### The Math That Proves Centralization Can't Work
 
@@ -402,12 +400,12 @@ print(f"Years for decentralized system: {market_years:.2f}")
 
 The FDA doesn't know:
 
-- What disease **you** have (they haven't met you)
-- How **your** body responds to treatments (genetics are unique)
-- What risks **you're** willing to take (some prefer death to side effects, others the reverse)
-- Whether **you'd** rather die trying or die waiting (only you can answer this)
+- What disease **a patient** has (they haven't met them)
+- How **a specific** body responds to treatments (genetics are unique)
+- What risks **a patient** is willing to take (some prefer death to side effects, others the reverse)
+- Whether **they would** rather die trying or die waiting (only the patient can answer this)
 
-But they decide for you anyway.
+But they decide for the patient anyway.
 
 ### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
 
@@ -435,15 +433,15 @@ Millions of Trials Simultaneously
     Data Saves Everyone
 ```
 
-This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
+This isn't ideology. It's information theory. One mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
 
 The only solution is to let patients and doctors make their own decisions, then pool the data so everyone benefits from everyone's experience.
 
-## Real Examples of This Working (While the FDA Wasn't Looking)
+## Real Examples of This Working
 
 ### The Oxford Recovery Trial: How the British Accidentally Saved Medicine
 
-During COVID, while America was filling out forms, Oxford University did something crazy: they just tested drugs on dying people to see if they stopped dying.
+During COVID, while the US was filling out forms, Oxford University did something crazy: they just tested drugs on dying people to see if they stopped dying.
 
 Cost per patient:
 
@@ -461,13 +459,13 @@ Results:
 
 The FDA's response: "But did they file the correct paperwork?"
 
-### Wikipedia for Whether You'll Die
+### Wikipedia for Survival
 
-The system includes **Clinipedia**: Wikipedia but instead of arguing about whether tomatoes are fruits, we argue about whether they cure cancer.
+The system includes **Clinipedia**: Wikipedia but instead of arguing about whether tomatoes are fruits, people argue about whether they cure cancer.
 
 Every treatment gets a page. Every outcome gets recorded. Every patient contributes data.
 
-Imagine looking up your disease and seeing:
+Imagine looking up a disease and seeing:
 
 **"Exploding Kidney Syndrome"**
 
@@ -483,17 +481,17 @@ Imagine looking up your disease and seeing:
 
 *This page based on data from 10,847 patients who contributed their suffering to science*
 
-### Become a Scientist from Your Couch
+### Becoming a Scientist from Home
 
-The system also lets you create your own studies. Got a theory that wearing socks inside-out cures baldness? Create a study. Get a link. Invite your balding friends to join. The system handles the rest. Your data gets published. Who knows, maybe you'll win a Nobel Prize. Or maybe you'll just prove that socks are socks. Either way, humanity learns something without spending two billion dollars.
+The system also lets people create their own studies. If someone has a theory that wearing socks inside-out cures baldness, they can create a study. Get a link. Invite balding friends to join. The system handles the rest. The data gets published. Who knows, maybe they will win a Nobel Prize. Or maybe they will just prove that socks are socks. Either way, humanity learns something without spending two billion dollars.
 
-## Your Personal Death-Prevention Assistant: The FDAi
+## Personal Death-Prevention Assistant: The FDAi
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
 
-The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
+The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling the user the weather, it tells them how not to die.
 
-**You**: "I have diabetes and my foot fell off."
+**Patient**: "I have diabetes and my foot fell off."
 **FDAi**: "Based on 50,000 similar cases, here's what worked:
 
 - 60% success: Reattachment surgery + Drug A
@@ -501,22 +499,22 @@ The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead o
 - 10% success: Hopping lessons + Prayer
 - 0% success: Essential oils (but your remaining foot will smell lavender-fresh)"
 
-It does this by connecting to all your data, from wearables, apps, and your medical records, and looking for patterns. It's automated root cause analysis for your own body, finding what's wrong while your doctor is still trying to remember your name. It's like having every doctor who ever lived in your pocket, except they actually agree on something.
+It does this by connecting to all the patient's data, from wearables, apps, and medical records, and looking for patterns. It's automated root cause analysis for the body, finding what's wrong while the doctor is still trying to remember the patient's name. It's like having every doctor who ever lived in a pocket, except they actually agree on something.
 
-## The Digital Twin Safe: Your Medical Data's Panic Room
+## A Panic Room for Medical Data
 
 <img src="../../assets/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
 
-Right now, your medical data is scattered across:
+Currently, medical data is scattered across:
 
 - 17 different doctors who don't talk
-- 5 insurance companies that hate you
-- 3 pharmacies that can't spell your name
+- 5 insurance companies that hate the patient
+- 3 pharmacies that can't spell the patient's name
 - 1 veterinarian (long story)
 
-The Digital Twin Safe puts it all in one place. It's like a Swiss bank account, but for your cholesterol levels.
+The Digital Twin Safe puts it all in one place. It's like a Swiss bank account, but for cholesterol levels.
 
-You control who sees what:
+Patients control who sees what:
 
 - Insurance companies: "He's mostly alive"
 - Doctors: Everything
@@ -546,7 +544,7 @@ Based on thousands of real patients with real outcomes:
 - Headache: +9%
 - Fatigue: +7%
 
-No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
+No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to similar patients.
 
 **Example: DEPRESSION CRUSHER 3000™**
 
@@ -568,11 +566,11 @@ Based on 50,000 humans who tried this:
 
 This solution requires a law that says: "Dying people can try things that might help them not die."
 
-The fact that we need a law for this tells you everything about our species.
+The fact that society needs a law for this tells you everything about the species.
 
-**The Right to Trial Act** (working title: "The Stop Being Stupid About Medicine Act"):
+**The Right to Trial Act** (working title: "The Stop Being Awful About Medicine Act"):
 
-**Section 1**: If you're dying, you can try experimental treatments.
+**Section 1**: If a patient is dying, they can try experimental treatments.
 **Section 2**: What happens is written down.
 **Section 3**: Other dying people can read what is written.
 **Section 4**: Repeat until nobody's dying.
@@ -592,11 +590,11 @@ Pharmaceutical companies realize they can't charge $10,000 for pills that cost $
 
 ### 2035: The Great Revelation
 
-We realize we could have done this all along. We had the internet since 1990. We had computers since 1950. We had writing since 3000 BC.
+Society realizes it could have done this all along. The internet existed since 1990. Computers existed since 1950. Writing existed since 3000 BC.
 
-We spent 5,000 years letting people die while we filled out forms.
+Humanity spent 5,000 years letting people die while it filled out forms.
 
-History books will call us "The Paperwork Age" and children will laugh at our stupidity.
+History books will call this "The Paperwork Age" and children will laugh at this era's incompetence.
 
 ### 2050: Death Becomes Opt-In
 
@@ -604,13 +602,13 @@ Diseases are mostly solved. Death becomes a choice, like smoking or voting Repub
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
 
-### How Your Framework Actually Works
+### How the Framework Actually Works
 
 ::: {.content-visible when-format="html"}
 <img src="../../assets/black-box-model-animation.gif" alt="Black box model animation showing how this framework works" style="max-width: 600px; width: 100%;" />
 :::
 
-Your decentralized framework for drug assessment achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
+The decentralized framework for drug assessment achieves **{{< var trial_cost_reduction_factor >}}× More Efficiency** through:
 
 - **Cost per patient**: {{< var recovery_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}
 - **Time to results**: 2 years vs the current 17 years
