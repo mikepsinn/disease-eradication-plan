@@ -956,7 +956,7 @@ PEACE_DIVIDEND_LOST_HUMAN_CAPITAL = Parameter(
 # Separate peace dividend into confidence levels
 PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS = Parameter(
     float(TREATY_ANNUAL_FUNDING),
-    source_ref=ReferenceID.SIPRI_2024_SPENDING,
+    source_ref=ReferenceID.SIPRI2024,
     source_type="definition",  # This is a policy-derived value (1% of military spending)
     confidence="high",
     formula="TREATY_ANNUAL_FUNDING",

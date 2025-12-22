@@ -1431,9 +1431,9 @@
 "peace_dividend_direct_costs_latex": "$$\nCost_{direct,peace} = Cost_{direct,total}\
   \ \\times Reduction_{treaty} = \\$7.66T \\times 1.0\\% = \\$76.55B\n$$"
 "peace_dividend_direct_fiscal_savings": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-peace_dividend_direct_fiscal_savings\"\
-  \ class=\"parameter-link\" data-source-ref=\"sipri-2024-spending\" data-source-type=\"\
-  definition\" data-confidence=\"high\" title=\"Direct fiscal savings from 1% military\
-  \ spending reduction (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING\
+  \ class=\"parameter-link\" data-source-ref=\"sipri2024\" data-source-type=\"definition\"\
+  \ data-confidence=\"high\" title=\"Direct fiscal savings from 1% military spending\
+  \ reduction (high confidence) | ✓ High confidence | Formula: TREATY_ANNUAL_FUNDING\
   \ | Unit: USD/year | Click to view details, calculation & sources\">$27.2B</a>"
 "peace_dividend_direct_fiscal_savings_latex": "$$\nPeaceDividend_{fiscal} = \\$27.18B\n\
   $$"

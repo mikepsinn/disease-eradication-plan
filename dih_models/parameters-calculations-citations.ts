@@ -3404,7 +3404,7 @@ export const PEACE_DIVIDEND_DIRECT_FISCAL_SAVINGS: Parameter = {
   displayName: "Direct Fiscal Savings from 1% Military Spending Reduction",
   description: "Direct fiscal savings from 1% military spending reduction (high confidence)",
   sourceType: "definition",
-  sourceRef: "sipri-2024-spending",
+  sourceRef: "sipri2024",
   confidence: "high",
   formula: "TREATY_ANNUAL_FUNDING",
   latex: "PeaceDividend_{fiscal} = \\$27.18B",
@@ -5002,6 +5002,18 @@ export const citations: Record<string, Citation> = {
         URL: "https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs",
         note: "Manhattan Institute: Slow Costly Trials | PMC: Establishing RECOVERY at Scale",
   },
+  "sipri2024": {
+        id: "sipri2024",
+        type: "report",
+        title: "Trends in World Military Expenditure, 2023",
+        author: [
+          {
+            literal: "Stockholm International Peace Research Institute"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://www.sipri.org/publications/2024/sipri-fact-sheets/trends-world-military-expenditure-2023",
+  },
   "smallpox-eradication-roi": {
         id: "smallpox-eradication-roi",
         type: "article-journal",
@@ -5308,7 +5320,7 @@ export const PARAMETER_STATS = {
   external: 133,
   calculated: 105,
   definitions: 93,
-  citations: 98,
+  citations: 99,
 } as const;
 
 // ============================================================================

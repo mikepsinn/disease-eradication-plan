@@ -1154,7 +1154,7 @@ The peace dividend math is simple: wars cost {{< var global_annual_war_total_cos
 
 | Cost Category | Annual Amount | Components |
 |:---|---:|:---|
-| **Direct Military Spending** | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} | SIPRI 2024 global military budgets [(source)](../references.qmd#sipri-2024-spending) |
+| **Direct Military Spending** | {{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} | SIPRI 2024 global military budgets [(source)](../references.qmd#sipri2024) |
 | **[Infrastructure Destruction](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_infrastructure_destruction_conflict >}} | Transportation, energy, communications, water, education, healthcare facilities |
 | **Human Life Losses** | {{< var global_annual_human_life_losses_conflict >}} | {{< var global_annual_conflict_deaths_total >}} conflict deaths × {{< var value_of_statistical_life >}} {{< var value_of_statistical_life_cite >}} value of statistical life (conservative estimate) |
 | **[Trade Disruption](../appendix/peace-dividend-calculations.qmd)** | {{< var global_annual_trade_disruption_conflict >}} | Shipping, supply chains, energy prices, currency volatility |

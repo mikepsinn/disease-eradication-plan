@@ -29,7 +29,7 @@ The immediate costs of war are like a grocery receipt from Hell. Everything is i
 | Cost Category | Amount (USD Billions) | Per Capita | Daily Cost | Mathematical Basis |
 |---------------|----------------------|------------|------------|-------------------|
 | Military Personnel Salaries | $681.5 | $87.37 | $1.87B | [Global armed forces: 28.4M × avg. salary $24,000 (adjusted for inflation)](../references.qmd#global-armed-forces-size-and-salary) |
-| Weapons Procurement | $654.3 | $83.88 | $1.79B | [SIPRI Arms Transfer Database](../references.qmd#sipri-2024-spending) aggregation |
+| Weapons Procurement | $654.3 | $83.88 | $1.79B | [SIPRI Arms Transfer Database](../references.qmd#sipri2024) aggregation |
 | Operations & Maintenance | $579.8 | $74.33 | $1.59B | [NATO standardized O&M ratios × global spending](../references.qmd#nato-om-ratios-global-spending) |
 | Military Infrastructure | $520.4 | $66.72 | $1.43B | Base construction/maintenance × [4,435 major facilities](../references.qmd#global-major-military-facilities) |
 | Intelligence Operations | $282.0 | $36.15 | $0.77B | [Estimated 10.4% of total military budgets](../references.qmd#intelligence-spending-military-budgets) |
@@ -55,7 +55,7 @@ Here's the breakdown of what goes into the direct cost of war:
 
 #### Current Annual Calculation
 
-- M<sub>spending</sub> = $2.7T (verified via [SIPRI database](../references.qmd#sipri-2024-spending))
+- M<sub>spending</sub> = $2.7T (verified via [SIPRI database](../references.qmd#sipri2024))
 - I<sub>damage</sub> = [\$1,875B](../references.qmd#reconstruction-costs-active-conflicts) (reconstruction cost estimates from 47 active conflicts)
 - H<sub>casualties</sub> = [\$2,446B](../references.qmd#acled-active-combat-deaths) (244,600 total conflict deaths × \$10M VSL per [EPA guidelines](https://www.epa.gov/environmental-economics/mortality-risk-valuation) - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = [\$616B](../references.qmd#world-bank-trade-disruption-conflict) ([World Bank trade flow analysis](https://openknowledge.worldbank.org/handle/10986/37015))
@@ -230,7 +230,7 @@ Here's a thought experiment: What if war spending was allocated to something els
 
 | Alternative Investment | Global War Spending Could Fund | Mathematical Conversion | Annual Benefit |
 |----------------------|-------------------------------|------------------------|----------------|
-| Medical Research | 40.3 years of current spending | [$2.7T](../references.qmd#sipri-2024-spending) ÷ [\$67.5B](../references.qmd#global-gov-med-research-spending) = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
+| Medical Research | 40.3 years of current spending | [$2.7T](../references.qmd#sipri2024) ÷ [\$67.5B](../references.qmd#global-gov-med-research-spending) = 40.3 | [WHO research expenditure](https://www.who.int/observatories/global-observatory-on-health-research-and-development) |
 | Global Education Access | 90.6 years of universal coverage | $2.7T ÷ [\$30B](../references.qmd#unesco-education-for-all-cost) = 90.6 | [UNESCO Education for All](https://en.unesco.org/themes/education) |
 | Poverty Eradication | 2.7 complete eliminations | $2.7T ÷ [\$1,000B](../references.qmd#world-bank-poverty-eradication-cost) = 2.7 | World Bank extreme poverty estimates |
 
