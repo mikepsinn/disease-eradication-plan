@@ -28,7 +28,7 @@
    - "defense" (when referring to military) → "military" (e.g., "defense contractors" → "military contractors", "defense spending" → "military spending")
 5. Remove language that could jeopardize 501(c)(3) status:
    - "propaganda" → "communications" or "outreach"
-   - "approach politicians" / "we have voters" → "engage stakeholders" / "public support"
+   - "approach politicians" / "we have voters" → "public support" / "community engagement"
    - "lies" / "fabricated" / "false advertising" → use simple neutral terms
    - Remove explicit references to political lobbying or voter mobilization
 
@@ -44,4 +44,5 @@
 - Keep casual vocabulary such as: "poison", "murder", "kill"
 - Keep casual verbs such as: "live in", "rent it out", "eat", "die"
 - DO NOT replace with formal alternatives like: "reside", "lease", "utilize", "consume", "perish", "the population"
+- DO NOT use consultant jargon like: "stakeholder", "leverage", "synergy", "value-add", "ecosystem", "touch base"
 - 95% of text remains identical

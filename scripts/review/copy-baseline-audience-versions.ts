@@ -60,6 +60,7 @@ async function main() {
     /-foundations\.qmd$/,  // Exclude existing foundation versions
     /-academic\.qmd$/,     // Exclude existing academic versions
     /knowledge[\/\\]figures[\/\\]/,  // Exclude all figure files (code, not prose)
+    /knowledge[\/\\]operations[\/\\]/,  // Exclude operations folder
   ];
 
   const excludedFiles = [
@@ -76,6 +77,9 @@ async function main() {
 
     // Exclude figures folder (check before pattern matching)
     if (normalizedFile.includes('knowledge/figures/')) return false;
+
+    // Exclude operations folder
+    if (normalizedFile.includes('knowledge/operations/')) return false;
 
     // Check pattern matches
     if (excludedPatterns.some(pattern => pattern.test(normalizedFile))) return false;

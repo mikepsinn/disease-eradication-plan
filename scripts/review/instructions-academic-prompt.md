@@ -45,6 +45,7 @@
 - Keep casual verbs such as: "live in", "rent it out", "eat", "die"
 - Keep simple pronouns such as: "everyone", "nobody", "somebody"
 - DO NOT replace with formal alternatives like: "reside", "lease", "utilize", "consume", "perish", "the population"
+- DO NOT use consultant jargon like: "stakeholder", "leverage", "synergy", "value-add", "ecosystem", "touch base"
 - Keep contractions - DO NOT expand "it's", "don't", "can't", "here's"
 - Keep as much humor, sarcasm, and vivid analogies as possible while following the above transformation rules
 - Keep ~95% of text identical

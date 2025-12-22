@@ -1,6 +1,7 @@
 import { getBookFilesForProcessing } from './utils';
 import { updateFileWithHash } from '../lib/file-utils';
 import { generateGeminiProContent } from '../lib/llm';
+import { validateTransformation, formatValidationResults } from './validation-rules';
 import dotenv from 'dotenv';
 import fs from 'fs/promises';
 import path from 'path';
@@ -117,11 +118,26 @@ Return the complete .qmd file starting with --- and the YAML frontmatter.`;
   // Update QMD links to point to the same audience version
   const finalBody = updateQmdLinks(body, audience);
 
-  console.log(`    ✓ Transformed complete file`);
-
-  // Write to target file with transformed frontmatter and body
+  // Write to target file FIRST (so we can inspect output if validation fails)
   const hashField = 'lastAudienceTransformHash';
   await updateFileWithHash(targetFilePath, finalBody, finalFrontmatter, hashField);
+  console.log(`    ✓ Wrote transformed file`);
+
+  // VALIDATE TRANSFORMATION after writing (so we can see the output)
+  console.log(`    Validating transformation...`);
+  const validation = validateTransformation(finalBody, originalContent, audience);
+
+  if (!validation.passed) {
+    console.error(`\n    ❌ VALIDATION FAILED for ${path.basename(targetFilePath)}`);
+    console.error(formatValidationResults(validation.results));
+    console.error(`\n    File written to: ${targetFilePath}`);
+    console.error(`    Source file: ${sourceFilePath}`);
+    console.error(`\n    The file was written so you can inspect the output.`);
+    console.error(`    Fix the prompt and re-run to overwrite with corrected version.\n`);
+    throw new Error('Transformation validation failed - see errors above');
+  }
+
+  console.log(`    ✓ Validation passed (${validation.results.length} rules checked)`);
 }
 
 async function generateVersionForAudience(
@@ -274,18 +290,12 @@ async function main() {
 
   for (const sourceFile of filesToProcess) {
     processedCount++;
-    try {
-      console.log(`\n[${ processedCount}/${filesToProcess.length}] Processing: ${path.basename(sourceFile)}`);
+    console.log(`\n[${ processedCount}/${filesToProcess.length}] Processing: ${path.basename(sourceFile)}`);
 
-      await generateVersionForAudience(sourceFile, audience, instruction);
+    await generateVersionForAudience(sourceFile, audience, instruction);
 
-      successCount++;
-      console.log(`  ✓ Successfully generated ${audience} version`);
-    } catch (error) {
-      errorCount++;
-      console.error(`\n  ❌ ERROR processing ${sourceFile}:`, error);
-      console.error('  Continuing with next file...\n');
-    }
+    successCount++;
+    console.log(`  ✓ Successfully generated ${audience} version`);
   }
 
   console.log('\n' + '='.repeat(80));
