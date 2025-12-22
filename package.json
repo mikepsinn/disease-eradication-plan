@@ -81,6 +81,7 @@
     "archive:all": "tsx scripts/review/archive-process-all.ts",
     "apply-instruction:all": "tsx scripts/review/apply-instruction-all-files.ts",
     "tone-down:all": "tsx scripts/review/tone-down-overclaims.ts",
+    "economics:find-appendix-content": "tsx scripts/review/find-economics-appendix-content.ts",
     "generate:audience:baseline": "tsx scripts/review/copy-baseline-audience-versions.ts",
     "generate:audience:foundations": "tsx scripts/review/generate-audience-versions.ts foundations",
     "generate:audience:academic": "tsx scripts/review/generate-audience-versions.ts academic",
