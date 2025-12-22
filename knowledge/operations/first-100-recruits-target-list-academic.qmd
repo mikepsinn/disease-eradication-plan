@@ -1,8 +1,9 @@
 ---
 title: The First 100 Strategic Recruit Target List
-description: Priority list of 100 high-leverage individuals to recruit in the first 90 days with outreach templates and tracking strategy.
+description: A priority list of 100 high-leverage individuals to recruit in the first 90 days with outreach templates and tracking strategy.
 ---
-## The First 100: Strategic Recruit Target List
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
 
 **Purpose:** Identify and prioritize the 100 people most likely to accelerate the War on Disease from concept to movement
 **Strategy:** Seed crystals, not mass appeal. Each recruit should bring 10+ more.
@@ -10,27 +11,27 @@ description: Priority list of 100 high-leverage individuals to recruit in the fi
 
 ### The Selection Criteria
 
-Your first 100 recruits should score high on at least 2 of these 5 axes:
+The first 100 recruits should score high on at least 2 of these 5 axes:
 
 1. **Reach** - Can influence 10,000+ people directly
 2. **Resources** - Has capital or valuable skills to contribute
-3. **Relevance** - Works in healthcare, defense, policy, or tech
+3. **Relevance** - Works in healthcare, military, policy, or tech
 4. **Personal Stake** - Lost someone to disease or cares deeply
 5. **Contrarian** - Willing to support "crazy" ideas that might work
 
-**DO NOT** recruit:
+**AVOID** recruiting:
 
 - People who just want to "feel good"
 - Passive observers with no ability to contribute
 - People who need excessive hand-holding
 
-**DO** recruit:
+**TARGET** for recruitment:
 
-- People who will tell 100 friends if they believe
+- People who tell 100 friends if they believe
 - People who can write checks >$10K
-- People who can open doors you can't
+- People who can open doors others can't
 
-### Category 1: The Billionaire Mourners (10 targets)
+### Category 1: The Bereaved Billionaires (10 targets)
 
 **Why them:** Lost family to disease. Have capital. Want legacy beyond yachts.
 
@@ -39,13 +40,13 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 1. **Bill Gates**
    - Lost: Father (Alzheimer's)
    - Current focus: Global health, but centralized
-   - Angle: "Your decentralized framework for drug assessment (dFDA) is the complement to your top-down approach"
+   - Angle: "A decentralized framework for drug assessment (dFDA) is the complement to your top-down approach"
    - Entry point: Reach through Breakthrough Energy network
 
 2. **Mark Cuban**
    - Lost: Multiple family members to disease
    - Current: Cost Plus Drugs (disrupting pharma pricing)
-   - Angle: "This is the supply-side disruption to your demand-side play"
+   - Angle: "This is the supply-side disruption to the demand-side play"
    - Entry point: Direct Twitter DM, he responds
 
 3. **Peter Thiel**
@@ -71,13 +72,13 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 6. **Wealth managers for Forbes 400 families** (research who lost kids/spouses)
    - Target 5 specific families
    - Focus on those with recent losses (<5 years)
-   - Pitch: "VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) as memorial legacy investment"
+   - Pitch: "VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper-academic.qmd) as memorial legacy investment"
 
-### Category 2: The Defense Defectors (15 targets)
+### Category 2: The Military Reformers (15 targets)
 
 **Why them:** Know where the money is. Tired of building death machines.
 
-#### Subcategory: Former Defense Executives
+#### Subcategory: Former Military Executives
 
 7. **William Lynn** (former Deputy Secretary of Defense)
    - Knows Pentagon budget intimately
@@ -85,14 +86,14 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
    - Angle: "Help us redirect the budget you once managed"
 
 8. **Ash Carter** (former Secretary of Defense)
-   - Academic now, writes about defense reform
+   - Academic now, writes about military reform
    - Angle: "Write the paper on how 1% won't hurt readiness"
 
 9. **Michele Flournoy** (former Under Secretary of Defense)
    - Still influential in policy circles
    - Angle: "Advise on treaty negotiation strategy"
 
-#### Subcategory: Defense Industry Whistleblowers
+#### Subcategory: Military Industry Whistleblowers
 
 10-12. **Anonymous targets from:**
 
@@ -101,7 +102,7 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 - Northrop Grumman
 - Who have expressed frustration with mission
 - Recruit via Signal/encrypted channels
-- Offer: "Be part of the solution without blowing up your career"
+- Offer: "Be part of the solution without destroying a career"
 
 #### Subcategory: Anti-War Veterans
 
@@ -132,7 +133,7 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 
 - Mine NIH grant rejection data (public)
 - Target those with novel approaches rejected for being "too risky"
-- Offer: "Your decentralized framework for drug assessment (dFDA) funds what NIH won't"
+- Offer: "A decentralized framework for drug assessment (dFDA) funds what NIH won't"
 
 #### Subcategory: Rare Disease Researchers
 
@@ -227,7 +228,7 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 
 65. **Ezra Klein** (also does podcast)
 
-### Category 6: The Political Insurgents (15 targets)
+### Category 6: The Political Challengers (15 targets)
 
 **Why them:** Willing to challenge orthodoxy. Have voter bases.
 
@@ -275,7 +276,7 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 - Jimmy Carter (if health permits)
 - Other ex-presidents/PMs who've gone humanitarian
 
-### Category 7: The Crypto/Tech Ideologues (10 targets)
+### Category 7: The Crypto/Tech Visionaries (10 targets)
 
 **Why them:** Believe in disrupting legacy systems. Have technical skills + capital.
 
@@ -343,10 +344,10 @@ Your first 100 recruits should score high on at least 2 of these 5 axes:
 
 ### The First 10 (Start Here)
 
-If you can only recruit 10 people in Month 1, make it:
+If resources limit recruitment to 10 people in Month 1, prioritize:
 
 1. **One billionaire** with health loss (Mark Cuban most accessible)
-2. **One defense defector** (use network to find anonymous insider)
+2. **One military defector** (use network to find anonymous insider)
 3. **One frustrated scientist** (rare disease researcher)
 4. **One EA leader** (Will MacAskill or OpenPhil)
 5. **One journalist** (Derek Thompson or Ezra Klein)
@@ -354,9 +355,9 @@ If you can only recruit 10 people in Month 1, make it:
 7. **One crypto leader** (Vitalik or Naval)
 8. **One patient advocate** (CF Foundation or ALS)
 9. **One podcast host** (Tim Ferriss or Lex Fridman)
-10. **One of your personal network** who has 1,000+ followers and gives a shit
+10. **One person from the immediate network** who has 1,000+ followers and cares deeply
 
-These 10 become your "advisory board" even if informal. Each should bring 10 more.
+These 10 become the "advisory board" even if informal. Each should bring 10 more.
 
 ### Outreach Templates
 
@@ -456,7 +457,7 @@ Let me know.
 
 ### Tracking Recruitment
 
-Add these fields to your `Personnel Roster` in Airtable:
+Add these fields to the `Personnel Roster` in Airtable:
 
 - `Recruit Priority` (Single Select: Top 10, Top 100, General)
 - `Recruit Category` (Single Select: Billionaire, Scientist, Media, etc.)
@@ -501,7 +502,7 @@ Add these fields to your `Personnel Roster` in Airtable:
 
 A recruit is "committed" when they've done at least ONE of:
 
-1. **Invested** - Committed capital to VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) (even $1K)
+1. **Invested** - Committed capital to VICTORY [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper-academic.qmd) (even $1K)
 2. **Advised** - Joined advisory board (even informally)
 3. **Amplified** - Shared referendum with their audience (tweet, article, podcast)
 4. **Connected** - Made 3+ warm intros to other high-value targets
@@ -509,24 +510,24 @@ A recruit is "committed" when they've done at least ONE of:
 
 ### The Multiplier Effect
 
-If you recruit the right first 100:
+If the right first 100 are recruited:
 
 - **Each brings 10 more** → 1,000 total
 - **Those bring 10 more** → 10,000 total
 - **Those bring 10 more** → 100,000 total (viral threshold)
 - **At {{< var global_population_activism_threshold_pct >}} of 8B** → 280,000,000 (victory condition)
 
-**But:** It only works if your first 100 are the right 100.
+**But:** It only works if the first 100 are the right 100.
 
-One billionaire = 100 randos
-One journalist = 1,000 randos
-One politician = 10,000 randos
+One billionaire = 100 random people
+One journalist = 1,000 random people
+One politician = 10,000 random people
 
 #### Choose wisely. Recruit relentlessly.
 
 ### Next Steps
 
-1. **Today:** Pick your first 10 targets
+1. **Today:** Pick the first 10 targets
 2. **This week:** Research them (find personal connections, recent interviews, current projects)
 3. **Week 2:** Craft personalized outreach (no templates, real research)
 4. **Week 3:** Send messages + follow up

@@ -1,24 +1,25 @@
 ---
 title: Automated Engagement Tracking Workflow
-description: CRM system using Airtable for automated lead capture, classification, nurturing, and conversion tracking.
+description: This document describes a CRM system using Airtable for automated lead capture, classification, nurturing, and conversion tracking.
 ---
-## Automated Engagement Tracking Workflow
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
-**Purpose:** Never lose a lead, never miss a follow-up, never forget a conversation
+
+**Purpose:** To ensure no lead is lost, no follow-up is missed, and no conversation is forgotten
 **System:** Airtable + Email + Calendar + Automation
 **Goal:** Turn every interaction into a tracked, measurable opportunity to advance the mission
 
 ### The Philosophy: CRM as a Second Brain
 
-Most movements fail not because the idea is bad, but because they lose track of people. Someone emails you interest in helping. You mean to respond. Life happens. Two weeks later, they've moved on.
+Most movements fail not because the idea is bad, but because they lose track of people. Someone emails interest in helping. Staff intend to respond. Life happens. Two weeks later, the interested party has moved on.
 
-This system makes that impossible. Every person who touches your organization gets:
+This system prevents that outcome. Every person who interacts with the organization gets:
 
 1. A permanent record
 2. Automatic follow-up reminders
 3. A clear path from "curious stranger" to "active contributor"
 
-Think of it as a conveyor belt for converting interest into impact.
+It operates as a conveyor belt for converting interest into impact.
 
 ### The Core Workflow
 
@@ -34,13 +35,13 @@ Think of it as a conveyor belt for converting interest into impact.
 
 ##### Source: Email to <info@warondisease.com>
 
-- Use Zapier/Make.com to parse incoming emails
+- Zapier or Make.com parses incoming emails
 - Auto-create `Personnel` record if new email
 - Auto-create `Engagement` record with Type = "Email" and email body as Summary
 
 ##### Source: Meeting/Call
 
-- Use Calendly webhook when meeting booked
+- Calendly webhook triggers when meeting booked
 - Auto-create `Personnel` record if new
 - Auto-create `Engagement` record with Type = "Meeting" and Follow-up Date = 7 days later
 
@@ -49,11 +50,11 @@ Think of it as a conveyor belt for converting interest into impact.
 - Harder to automate, but possible with APIs
 - Manual fallback: Daily 5-minute sweep to log DMs
 
-**The Rule:** If it's not in Airtable, it didn't happen.
+**The Rule:** If it is not in Airtable, it did not happen.
 
 #### Step 2: Classify (Automatic Tagging)
 
-When an engagement is created, automatically classify the person:
+When an engagement is created, the system automatically classifies the person:
 
 ##### Engagement Types → Personnel Status
 
@@ -76,7 +77,7 @@ Partnership Inquiry      →  Prospect (Partnership tag)
 
 #### Step 3: Route (Assign Ownership)
 
-Not all leads are equal. Route to the right person:
+Not all leads are equal. Route to the appropriate person:
 
 | Engagement Type | Routed To | SLA (Response Time) |
 |----------------|-----------|-------------------|
@@ -98,7 +99,7 @@ Not all leads are equal. Route to the right person:
 
 #### Step 4: Nurture (Automated Follow-Up Sequences)
 
-People need multiple touches before they act. Build sequences:
+People need multiple contacts before they act. Build sequences:
 
 ##### Sequence 1: Referendum Voter → Active Recruiter
 
@@ -110,15 +111,15 @@ People need multiple touches before they act. Build sequences:
   - Send thank you email with referral link
   - Log engagement: Type = "Enlistment"
 
-- **Day 3:** Check if they've referred anyone
+- **Day 3:** Check if they have referred anyone
   - If YES: Send "You're a Hero" email, upgrade to Tier 2
   - If NO: Send "Share with 3 Friends" reminder email
   - Log engagement: Type = "Email"
 
 - **Day 7:** Check again
-  - If they've referred 3+: Upgrade to Tier 2, send congrats
-  - If they've referred 1-2: Send "Almost There" email
-  - If they've referred 0: Send final reminder with new angle
+  - If they have referred 3+: Upgrade to Tier 2, send congrats
+  - If they have referred 1-2: Send "Almost There" email
+  - If they have referred 0: Send final reminder with new angle
 
 - **Day 30:** Re-engage cold voters
   - Email: "Here's what's happened since you voted..."
@@ -154,13 +155,13 @@ Action 7: Send re-engagement email
   - Assign to Finance Lead
 
 - **Hour 4:** If no response
-  - Slack alert: "URGENT: High-value lead going cold"
+  - Slack alert: "URGENT: High-value lead becoming inactive"
 
 - **Day 1:** Send pitch deck + FAQ
   - Log engagement: Type = "Email"
 
 - **Day 3:** Follow-up call invite
-  - "Would love to answer questions. Calendar link here."
+  - "Questions are welcome. Calendar link here."
 
 - **Day 7:** If no call scheduled
   - Send case studies of similar investors
@@ -169,11 +170,11 @@ Action 7: Send re-engagement email
   - Re-engage with new angle: "The ROI Math That Made [Other Investor] Say Yes"
 
 - **Day 30:** Final touch
-  - "We're moving forward. Last chance to get in at this valuation."
+  - "We are moving forward. Last chance to get in at this valuation."
 
 ##### Notes
 
-- High-touch, not automated blast
+- High-touch, rather than automated blasts
 - Each email should feel personal
 - Log EVERYTHING in Engagements table
 
@@ -206,7 +207,7 @@ Action 7: Send re-engagement email
 
 #### Step 5: Measure (Conversion Tracking)
 
-Track conversion rates at each step:
+Conversion rates are tracked at each step:
 
 ##### Funnel: Website Visitor → Active Contributor
 
@@ -243,11 +244,11 @@ IF(
 
 #### Step 6: Escalate (Alert on Anomalies)
 
-Watch for patterns that need human intervention:
+Patterns requiring human intervention are monitored:
 
 ##### Alert Triggers
 
-1. **High-Value Lead Going Cold**
+1. **High-Value Lead Becoming Inactive**
    - Condition: Investment Inquiry > $50K + No follow-up engagement in 48 hours
    - Action: Slack alert to founder
 
@@ -267,7 +268,7 @@ Watch for patterns that need human intervention:
 
 ### Advanced: Email Automation Integration
 
-For sophisticated email sequences, integrate with:
+For sophisticated email sequences, integration is recommended with:
 
 #### Option A: Airtable Native Email (Basic)
 
@@ -284,7 +285,7 @@ For sophisticated email sequences, integrate with:
 - Pros: Sophisticated triggers, behavior-based sequences, analytics
 - Cons: Expensive ($100-500/month), more complex setup
 
-**Recommended for Pre-Seed:** Start with Option A, graduate to Option B at 1,000+ contacts.
+**Recommendation for Pre-Seed:** Start with Option A, graduate to Option B at 1,000+ contacts.
 
 ### The Daily Workflow for Team
 
@@ -311,7 +312,7 @@ For sophisticated email sequences, integrate with:
    - Viral coefficient (avg referrals per voter)
 
 2. **Outreach Planning**
-   - Identify top 10 prospects who haven't engaged
+   - Identify top 10 prospects who have not engaged
    - Craft personalized re-engagement emails
    - Update follow-up dates
 
@@ -432,23 +433,23 @@ Actions:
 
 #### 1. Over-Automation
 
-**Problem:** Sending too many emails, feeling spammy
+**Problem:** Sending too many emails, appearing like spam
 **Solution:** Cap at 1 email/week per person unless they engage
 
 #### 2. Under-Tracking
 
-**Problem:** Having conversations outside Airtable, losing follow-ups
-**Solution:** "If it's not logged, it didn't happen" rule
+**Problem:** Conversations occurring outside Airtable, losing follow-ups
+**Solution:** "If it is not logged, it did not happen" rule
 
 #### 3. No Segmentation
 
-**Problem:** Sending same message to $10 donor and $100K investor
+**Problem:** Sending the same message to a $10 donor and a $100K investor
 **Solution:** Create segments based on engagement value/type
 
 #### 4. Ignoring Unsubscribes
 
-**Problem:** Legal violations, pissed-off people
-**Solution:** Honor unsubscribes immediately, it's the law
+**Problem:** Legal violations, angry people
+**Solution:** Honor unsubscribes immediately; it is the law
 
 #### 5. Manual Follow-Ups
 
@@ -457,7 +458,7 @@ Actions:
 
 ### Success Metrics
 
-Track these weekly:
+These are tracked weekly:
 
 | Metric | Target | How to Measure |
 |--------|--------|----------------|
@@ -470,7 +471,7 @@ Track these weekly:
 
 ### Next-Level: AI-Powered Engagement
 
-Once you have 1,000+ engagements logged, you can train AI to:
+Once 1,000+ engagements are logged, AI can be trained to:
 
 1. **Auto-Categorize Sentiment**
    - Use GPT API to analyze engagement summaries
@@ -478,7 +479,7 @@ Once you have 1,000+ engagements logged, you can train AI to:
    - Alert on negative
 
 2. **Suggest Next Best Action**
-   - Based on engagement history, predict what to do next
+   - Based on engagement history, predict the next step
    - "This person is similar to 15 others who became donors after..."
 
 3. **Draft Follow-Up Emails**
@@ -495,6 +496,6 @@ This engagement tracking workflow ensures **zero people fall through the cracks*
 
 Every vote, every email, every call is captured, categorized, and converted into the next step toward victory.
 
-It's the difference between a movement that fizzles and one that reaches the {{< var global_population_activism_threshold_pct >}} tipping point.
+It is the difference between a movement that fizzles and one that reaches the {{< var global_population_activism_threshold_pct >}} tipping point.
 
-**Now implement it. Your first 100 conversations will set the template for the next 100 million.**
+**Implementation is critical. The first 100 conversations will set the template for the next 100 million.**

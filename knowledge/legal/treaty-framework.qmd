@@ -1,6 +1,6 @@
 ---
 title: Treaty Framework
-description: How to use international law to lock the world's governments into a permanent, escalating commitment to funding life instead of death
+description: How to use international law and incentive structures to make funding cures more profitable than buying weapons
 format:
   html:
     toc: true
@@ -9,15 +9,15 @@ format:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-International treaties supersede national sovereignty. The Vienna Convention on the Law of Treaties (1969) makes them binding forever. 
+International treaties are pieces of paper that governments ignore whenever it's convenient. The Vienna Convention on the Law of Treaties (1969) says they're binding, which is adorable.
 
-You're about to use this international legal framework to lock governments into funding cures instead of kills. They'll sign it thinking they're clever. They won't realize they've just signed away their ability to waste money on death.
+Here's how to make a treaty actually work: combine it with [incentive structures](../appendix/incentive-alignment-bonds-paper.qmd) that make following the rules more profitable than breaking them. The treaty provides legal cover. The incentives provide actual enforcement.
 
-## The Legal Architecture of Treaties
+## Why Treaties Matter (Sort Of)
 
-### What Makes Treaties Special
+### What Treaties Actually Do
 
-Treaties aren't just agreements - they're constitutional suicide pacts. Here's why they're perfect for your purposes:
+Treaties aren't magical. They're legal frameworks that work when someone has an incentive to enforce them. Here's what they provide:
 
 #### Supremacy Clause (US Constitution, Article VI)
 
@@ -41,10 +41,10 @@ Treaties aren't just agreements - they're constitutional suicide pacts. Here's w
 
 - Easy to sign (executive + simple majority)
 - Hard to break (requires international consent)
-- Impossible to secretly violate (everyone watches)
-- Violations trigger automatic penalties
+- Hard to secretly violate (everyone watches)
+- Violations trigger penalties (if someone enforces them)
 
-Once they sign, they're trapped. Perfect.
+Treaties make it marginally harder to break promises. Whether that matters depends entirely on who's enforcing.
 
 ## A 1% treaty Structure
 
@@ -65,7 +65,7 @@ Define everything so they can't weasel out later.
 - "Percentages may only increase, never decrease"
 - "Withdrawal requires unanimous consent of all parties"
 
-Make it a one-way ratchet.
+Designed as a one-way ratchet. Works if people follow it.
 
 ###### Article 3: Enforcement
 
@@ -74,7 +74,7 @@ Make it a one-way ratchet.
 - Secondary sanctions on violators
 - Private right of action for citizens
 
-Give everyone power to enforce.
+The treaty gives everyone standing to enforce. Whether anyone bothers depends on their incentives.
 
 ###### Article 4: Expansion
 
@@ -83,7 +83,7 @@ Give everyone power to enforce.
 - Success metrics trigger percentage reviews
 - Public referendum can force increases
 
-Build in pressure for growth.
+Mechanisms that could create pressure for growth, if the incentives align.
 
 ### Key Provisions
 
@@ -94,7 +94,7 @@ Build in pressure for growth.
 - Relative power unchanged
 - Absolute spending decreased
 
-Everyone wins or nobody plays.
+This solves the coordination problem. Whether anyone actually coordinates depends on the incentives.
 
 #### The Political Cover
 
@@ -115,58 +115,11 @@ Politicians can claim victory.
 
 Looks flexible, actually rigid.
 
-## The Ratification Strategy
+## Enforcement (The Hard Part)
 
-### Bilateral First, Multilateral Later
+Treaties don't enforce themselves. Here's what actually makes countries comply:
 
-#### Start with Two Countries
-
-- US + UK (special relationship)
-- Or US + Canada (neighbors)
-- Or UK + France (European rivals)
-- Just need two to start
-
-#### Create Momentum
-
-- Two sign = proof of concept
-- Three sign = trend
-- Five sign = movement
-- Ten sign = inevitable
-- Twenty sign = new normal
-
-#### The Domino Effect
-
-- NATO members pressure each other
-- EU requires member participation
-- UN endorses as humanitarian
-- World Bank makes it loan condition
-- IMF requires for assistance
-
-International pressure builds itself.
-
-### The Fast Track Trick
-
-In the US, treaties normally need 2/3 Senate approval. But:
-
-#### Congressional-Executive Agreements
-
-- Only need simple majority in both houses
-- Legally equivalent to treaties (courts confirmed)
-- Used for NAFTA, WTO, etc.
-- Much easier to pass
-
-#### The Implementation Act Combo
-
-- Pass treaty as executive agreement
-- Bundle with implementation legislation
-- One vote approves both
-- Opponents must vote against entire package
-
-Make it procedurally simple.
-
-## International Law Enforcement
-
-### The Compliance Mechanisms
+### Traditional Mechanisms (Weak)
 
 #### Public Shaming
 
@@ -195,7 +148,7 @@ Money talks in every language.
 
 Multiple venues for enforcement.
 
-### The Smart Contract Solution
+### The Smart Contract Approach
 
 #### Blockchain Treaty Execution
 
@@ -204,16 +157,28 @@ Multiple venues for enforcement.
 - Cryptographic verification
 - Immutable violation record
 
-Code is law, literally.
+This makes violations harder to hide. Doesn't make anyone care.
 
-#### The Oracle Problem Solved
+#### The Oracle Problem
 
 - Multiple data sources confirm budgets
 - AI monitors compliance
 - Satellite imagery verifies military spending
 - Public records provide transparency
 
-The facts become inconvenient.
+Transparency is useful. Enforcement still requires someone with an incentive to act on it.
+
+### What Actually Works (Incentives)
+
+None of the above mechanisms matter unless someone has an incentive to enforce them. That's where [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) come in.
+
+The bonds make it profitable for politicians to comply with the treaty:
+
+- Vote for the treaty → get campaign funding, cushy post-office jobs
+- Vote against it → lose to opponents who took the money
+- Try to violate it → lose your bond-funded advantages
+
+Public choice theory in action. Politicians don't follow treaties because they're noble. They follow treaties when following them makes them richer and more powerful than breaking them.
 
 ## Avoiding the Pitfalls
 
@@ -249,74 +214,39 @@ The facts become inconvenient.
 
 ## The Expansion Framework
 
-### From 1% to 100%
+### From 1% to More
+
+If the 1% model works, people will want to expand it. Here's how that could happen:
 
 #### Year 1-2: Proof of Concept
 
-- 1% redirected successfully
-- First cures delivered
-- Public support builds
-- Opposition weakens
+- 1% redirected (if compliance mechanisms work)
+- First results from clinical trials
+- Public sees what's possible
+- Some politicians look for credit
 
-##### Year 3-5: The Increase
+##### Year 3-5: Possible Expansion
 
-- Success triggers review
-- Public demands more
-- 2% becomes new minimum
-- Early adopters at 5%
+- If successful, treaty review triggers
+- Public pressure might build
+- Some countries might increase to 2-5%
+- Early political advantages accrue to supporters
 
-###### Year 5-10: The Acceleration
+###### Year 5-10: If Momentum Continues
 
-- 5% standard globally
-- 10% in progressive countries
-- Military-industrial complex pivoting
-- Peace more profitable than war
+- Compliance could become standard
+- Progressive countries might reach 10%
+- Military contractors might pivot to biotech
+- Profit incentives could shift
 
-###### Year 10+: The End Game
+###### Long Term: Optimistic Scenario
 
-- Military spending seen as primitive
-- Most funds go to health
-- War becomes inconceivable
-- Death becomes optional
+- If every step works as planned
+- If incentives stay aligned
+- If public support grows
+- Military spending could become politically toxic
 
-The treaty is just the beginning.
-
-## Country-Specific Strategies
-
-### United States
-
-- Use executive agreement (easier)
-- Bundle with defense authorization
-- Frame as supporting troops
-- Emphasize China competition
-
-### European Union
-
-- Get Commission endorsement
-- Use enhanced cooperation procedure
-- Start with willing coalition
-- Pressure through Parliament
-
-### China
-
-- Frame as technological leadership
-- Emphasize economic benefits
-- Use Belt and Road as leverage
-- Make it about face, not force
-
-### Russia
-
-- Wait for regime change, or
-- Use oligarch pressure
-- Frame as restoration of greatness
-- Emphasize science tradition
-
-### Everyone Else
-
-- Follow the leaders
-- Use aid conditions
-- Apply peer pressure
-- Make it profitable
+That's the hope, anyway. Lots of "ifs."
 
 ## The Model Treaty Text
 
@@ -354,74 +284,17 @@ Have agreed as follows..."
 
 **Article 10:** Entry into force upon signature by two states
 
-Simple, clear, inescapable.
+Simple and clear. Escapable if you're willing to pay the price.
 
-## The Diplomatic Campaign
+## How This Actually Works
 
-### Building the Coalition
+A 1% treaty provides legal structure for [incentive alignment bonds](../appendix/incentive-alignment-bonds-paper.qmd) to operate. The treaty alone doesn't enforce anything. The bonds make compliance profitable for politicians.
 
-#### The Champions
+The treaty says "redirect 1% of military budgets." The bonds make politicians who vote for it rich and popular. The bonds make politicians who vote against it unemployed. That's how enforcement works in a world run by self-interested humans.
 
-- Costa Rica (no military)
-- Switzerland (neutral tradition)
-- Nordic countries (progressive)
-- Small nations (need protection)
+Public choice theory says politicians respond to incentives, not laws. The treaty provides the framework. The bonds provide the incentives. Together they might actually work.
 
-#### The Persuadables
-
-- Germany (guilt + leadership)
-- Japan (peace constitution)
-- Canada (international reputation)
-- Australia (middle power influence)
-
-#### The Holdouts
-
-- United States (requires massive pressure)
-- Russia (wait or ignore)
-- China (economic arguments)
-- Israel (existential fears)
-
-Focus on the willing first.
-
-### The Negotiation Process
-
-#### Phase 1: Draft and Socialize
-
-- Circulate draft treaty
-- Get informal feedback
-- Build supporter network
-- Address concerns preemptively
-
-##### Phase 2: Formal Negotiations
-
-- UN sponsorship ideal
-- Or G20 platform
-- Or standalone conference
-- Keep it short (momentum matters)
-
-###### Phase 3: Signature Ceremony
-
-- Major media event
-- Dying children present
-- Military veterans speaking
-- Make opposition impossible
-
-###### Phase 4: Ratification Push
-
-- Country by country
-- Full political pressure
-- Media campaign support
-- Money floods in
-
-## Conclusion: The Trap Is Set
-
-A 1% treaty is a mousetrap baited with political benefits. Once countries sign, they're locked into a system that grows stronger over time. Every success makes expansion inevitable. Every cure makes war harder to justify.
-
-It uses international law's greatest strength - its rigidity - as a weapon against the status quo. Countries can't easily back out. Politicians can't quietly kill it. The public can enforce it directly.
-
-You're not asking them to end war. You're asking for 1%. But that 1% contains the seeds of war's destruction. Once people see what that 1% can do, they'll demand 2%. Then 5%. Then 10%. Eventually, the idea of spending money on killing instead of curing will seem as primitive as human sacrifice.
-
-The treaty framework makes this progression legally inevitable. You're not fighting the system - you're creating a new system that eats the old one. And you're using international law to make it unstoppable.
+If it works at 1%, people will see results. If people see results, they'll want more. That's not legally inevitable. That's just how humans react when something actually helps them instead of killing them.
 
 ---
 
