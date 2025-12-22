@@ -1,5 +1,5 @@
 ---
-title: Recruitment & Propaganda Plan
+title: Recruitment & Outreach Plan
 description: How to build an army of people who don't want to die (surprisingly difficult)
 published: true
 tags:
@@ -7,8 +7,10 @@ tags:
   - fundraising
   - recruitment
   - strategy
-  - propaganda
+  - outreach
 ---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
 #| echo: false
@@ -19,15 +21,15 @@ from dih_models.parameters import *
 
 *Phase 0: Building Your Revolutionary Database Before You Have Anything to Revolution With*
 
-Here's how you build a list of humans willing to fight death before you have the weapons to fight with. This is Phase 0, the part where you pretend you're organized while frantically building the plane mid-flight. Think of it as a Kickstarter for not dying, except instead of a shitty smartwatch, backers get to potentially live forever.
+Note: This is how you build a list of humans willing to fight death before you have the weapons to fight with. This is Phase 0, the part where you demonstrate organization while building the plane mid-flight. Think of it as a Kickstarter for not dying, except instead of a shitty smartwatch, backers get to potentially live forever.
 
 The goal isn't to collect money yet (you don't have the legal structure for that without going to prison). The goal is to identify and catalog every human who's tired of the whole "inevitable death" thing. You're building a database of the not-yet-dead who want to stay that way.
 
-## The Current Clusterfuck
+## The Strategic Impasse
 
-*Why Your Website Is Lying to People*
+*Addressing Communication Gaps*
 
-Right now your propaganda says "Donate" and "Buy VICTORY Incentive Alignment Bonds", two things that are literally impossible because:
+Right now your outreach says "Donate" and "Buy VICTORY Incentive Alignment Bonds", two things that are not yet feasible because:
 
 1. You don't have a 501(c)(3) yet (donations would be taxable gifts)
 2. You haven't registered securities (the SEC has opinions about that)
@@ -70,7 +72,7 @@ These are the capitalists who smell {{< var victory_bond_annual_return_pct >}} r
 
 ### Division 2: Home Front Supporters (The Feels People)
 
-These are the bleeding hearts who cry at pharmaceutical commercials. They have feelings, they want to help, and they'll donate $20 they can't afford because a child has cancer somewhere.
+These are the bleeding hearts who cry at pharmaceutical commercials. They have feelings, they want to help, and they'll delete $20 they can't afford because a child has cancer somewhere.
 
 #### How to identify them
 
@@ -99,7 +101,7 @@ You create three different forms, each psychologically optimized for its target 
 ### Financial Infantry Enlistment Form
 
 ```
-Title: "Reserve Your VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) (Before We Run Out)"
+Title: "Reserve Your VICTORY [Incentive Alignment Bonds](incentive-alignment-bonds-paper-foundations.qmd) (Before We Run Out)"
 
 Fields:
 
@@ -139,13 +141,13 @@ Fields:
   □ General Support (I just want to help)
   □ Research (I pretend to understand science)
   □ Technology (I can Google things)
-  □ Propaganda (I have opinions online)
+  □ Outreach (I have opinions online)
 
 - Special Skills (things you think matter but don't)
 - [ ] I'll volunteer when you need bodies
 - How You Found Us (whose Facebook post guilted you)
 - Message (your feelings about mortality)
-- [ ] Yes, spam me with hope
+- [ ] Yes, send me updates
 ```
 
 ### Allied Command Partnership Form
@@ -165,30 +167,30 @@ Fields:
   □ For-Profit (at least you're honest)
   □ Government (the competition)
 
-- Website (your propaganda page)
+- Website (your outreach page)
 - Annual Budget (how much you waste)
 - Partnership Interest:
   □ Research (we have data you want)
-  □ Propaganda (we make you look innovative)
+  □ Outreach (we make you look innovative)
   □ Technology (we have shiny things)
   □ Community (we have humans you can exploit)
 
-- Mission Statement (your beautiful lies)
+- Mission Statement (your optimistic messaging)
 - Message (why you deserve our attention)
 - [ ] Yes, add us to your newsletter we won't read
 ```
 
 ## The Deployment Strategy
 
-*How to Replace Lies With Different Lies*
+*Optimizing Strategic Messaging*
 
-Here's how you fix your website's false advertising:
+Here's how you fix your website's misaligned messaging:
 
 ### Step 1: Delete the Impossible Buttons
 
 Remove "Donate" and "Buy VICTORY Incentive Alignment Bonds" immediately. You're not a charity and you're not selling securities. Stop pretending.
 
-### Step 2: Install the New Propaganda
+### Step 2: Install the New Outreach Strategy
 
 Replace with:
 
@@ -204,7 +206,7 @@ Add counters everywhere:
 - "Join 142,337 revolutionaries"
 - "Applications close in 47:23:16"
 
-All lies, but effective lies.
+These are optimistic projections, but effective ones.
 
 ### Step 4: A/B Test Everything
 
@@ -216,13 +218,13 @@ Because science:
 
 ## The Management Protocol
 
-*How to Pretend You're Organized*
+*Demonstrating Organizational Maturity*
 
 Once people start signing up, here's how you handle the flood:
 
 ### Weekly Reviews (Monday Morning Triage)
 
-1. **New signups:** Categorize by delusion level
+1. **New signups:** Categorize by interest level
 2. **High-value targets:** Flag the rich ones
 3. **Partnerships:** Identify who's actually useful
 4. **Nutjobs:** Flag but don't delete (they're persistent)
@@ -243,7 +245,7 @@ Create tags for:
 
 **Week 1:** "Welcome to the revolution" (hope and dreams)
 **Week 2:** "Here's what we're building" (vague promises)
-**Week 4:** "First victories" (made-up milestones)
+**Week 4:** "Projected milestones" (first victories)
 **Week 8:** "The movement grows" (cherry-picked stats)
 **Week 16:** "Ready to invest?" (the ask)
 
@@ -253,10 +255,10 @@ Create tags for:
 
 Send weekly "Battlefield Reports" containing:
 
-- Made-up statistics that sound impressive
+- Strategic projections that sound impressive
 - Quotes from famous people taken out of context
 - Progress bars that always go up
-- Testimonials from "supporters" (you wrote them)
+- Testimonials from early supporters (drafted for the movement)
 - Urgent calls to action that aren't actually urgent
 
 Example subject lines:
@@ -266,16 +268,16 @@ Example subject lines:
 - "Your spot in history is waiting"
 - "Last chance (until next week's last chance)"
 
-## The Privacy Theater
+## Data Privacy Considerations
 
-*How to Pretend You Care About Their Data*
+*Establishing Data Trust*
 
 Add checkboxes that nobody reads:
 
 - [ ] I agree to terms (War and Peace in legalese)
 - [ ] I understand risks (you don't)
 - [ ] I consent to cookies (the digital kind)
-- [ ] I want updates (spam me daddy)
+- [ ] I want updates (send me updates)
 
 Include a privacy policy that says:
 
@@ -312,7 +314,7 @@ This database becomes your proof of demand when you:
 
 - Apply for 501(c)(3) status (look, we have supporters!)
 - Register securities (look, we have buyers!)
-- Approach politicians (look, we have voters!)
+- Engage stakeholders (look, we have public support!)
 - Launch the actual platform (look, we have users!)
 
 ## Your Marching Orders
@@ -321,9 +323,9 @@ This database becomes your proof of demand when you:
 
 1. **Set up Airtable** (it takes 5 minutes, you have no excuse)
 2. **Create the three forms** (copy-paste from above)
-3. **Replace your lying website buttons** (stop the bleeding)
+3. **Update your website calls-to-action** (stop the bleeding)
 4. **Start collecting humans** (they're everywhere)
-5. **Send weekly propaganda** (keep the dream alive)
+5. **Send weekly communications** (keep the dream alive)
 
 Remember: You're not building a mailing list. You're building an army of humans who've decided that dying is stupid and they're ready to do something about it. Every email is a future soldier in the war against death. Every signup is a vote against the status quo of inevitable mortality.
 
