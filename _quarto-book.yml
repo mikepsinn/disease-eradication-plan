@@ -15,7 +15,7 @@ book:
   description: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
   favicon: favicon.ico
-  site-url: https://WarOnDisease.org
+  site-url: https://manual.WarOnDisease.org
   #repo-url: https://github.com/mikepsinn/decentralized-institutes-of-health
   #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   navbar:
@@ -219,7 +219,7 @@ metadata:
   
   # Publication information
   publisher: "WarOnDisease.org"
-  publisher-url: "https://WarOnDisease.org"
+  publisher-url: "https://manual.WarOnDisease.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "hello@dih.earth"
   
@@ -473,18 +473,18 @@ format:
     #       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     #
     #       <!-- Social Media / Open Graph -->
-    #       <meta property="og:image" content="https://WarOnDisease.org/assets/icons/og-image.png">
+    #       <meta property="og:image" content="https://manual.WarOnDisease.org/assets/icons/og-image.png">
     #       <meta property="og:image:width" content="1200">
     #       <meta property="og:image:height" content="630">
     #       <meta property="og:image:type" content="image/png">
     #       <meta name="twitter:card" content="summary_large_image">
-    #       <meta name="twitter:image" content="https://WarOnDisease.org/assets/icons/og-image.png">
+    #       <meta name="twitter:image" content="https://manual.WarOnDisease.org/assets/icons/og-image.png">
     #       <meta name="twitter:title" content="How to End War and Disease">
     #       <meta name="twitter:description" content="A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:title" content="How to End War and Disease">
     #       <meta property="og:description" content="A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:type" content="book">
-    #       <meta property="og:url" content="https://WarOnDisease.org">
+    #       <meta property="og:url" content="https://manual.WarOnDisease.org">
   pdf:
     # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
     # corruption issues with large documents (900+ pages, 81 files, complex TOC)

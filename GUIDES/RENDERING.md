@@ -7,7 +7,7 @@ This project supports multiple rendering configurations to publish different vie
 ### 1. Full Book (Default)
 **Config**: `_quarto-book.yml`
 **Output**: `_book/warondisease/`
-**Site**: https://WarOnDisease.org
+**Site**: https://manual.WarOnDisease.org
 
 Renders the complete book with all chapters, appendices, and references.
 

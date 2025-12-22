@@ -173,8 +173,8 @@ def generate_bibtex(parameters: Dict[str, Dict[str, Any]], output_path: Path, av
             # Fallback: create minimal placeholder entry
             content.append(f"@misc{{{sanitized_key},")
             content.append(f"  title = {{{citation_key}}},")
-            content.append(f"  note = {{See https://warondisease.org/knowledge/references.html\\#{citation_key}}},")
-            content.append(f"  url = {{https://warondisease.org/knowledge/references.html\\#{citation_key}}},")
+            content.append(f"  note = {{See https://manual.WarOnDisease.org/knowledge/references.html\\#{citation_key}}},")
+            content.append(f"  url = {{https://manual.WarOnDisease.org/knowledge/references.html\\#{citation_key}}},")
             content.append("}")
             content.append("")
             entries_placeholder += 1

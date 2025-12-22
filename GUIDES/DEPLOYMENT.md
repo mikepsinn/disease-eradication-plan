@@ -6,7 +6,7 @@ This repository uses GitHub Actions to automatically build and deploy multiple s
 
 | Site | URL | Netlify Secret | Output Directory |
 |------|-----|----------------|------------------|
-| **Main Book** | https://WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_book/warondisease` |
+| **Main Book** | https://manual.WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_book/warondisease` |
 | **Economics** | https://impact.dih.earth | `NETLIFY_ECONOMICS_SITE_ID` | `_site/economics` |
 | **Wishocracy Paper** | https://paper.wishocracy.org | `NETLIFY_WISHOCRACY_SITE_ID` | `_site/wishocracy` |
 | **IAB Paper** | https://iab.dih.earth | `NETLIFY_IAB_SITE_ID` | `_site/iab` |
