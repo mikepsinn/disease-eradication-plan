@@ -13,38 +13,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # lint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: Check out repository
-  #     uses: actions/checkout@v4
-  #
-  #   - name: Set up pnpm
-  #     uses: pnpm/action-setup@v3
-  #     with:
-  #       version: 10
-  #
-  #   - name: Set up Node.js
-  #     uses: actions/setup-node@v4
-  #     with:
-  #       node-version: '20'
-  #       cache: 'pnpm'
-  #
-  #   - name: Install dependencies
-  #     run: pnpm install --frozen-lockfile
-  #
-  #   - name: Lint Markdown
-  #     run: pnpm run lint:md
-  #
-  #   - name: Validate Frontmatter
-  #     run: pnpm exec tsx tools/validate-frontmatter.ts
-  #
-  #   - name: Validate Links
-  #     run: pnpm exec tsx tools/validate-links.ts
-
-  build-html:
+  # Build jobs run in parallel for maximum speed
+  build-main-html:
+    name: Build Main Book (HTML)
     runs-on: ubuntu-latest
-    # needs: lint
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -53,8 +25,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          key: quarto-freeze-main-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
           restore-keys: |
+            quarto-freeze-main-
             quarto-freeze-
 
       - name: Set up Quarto
@@ -85,11 +58,18 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Render Quarto Project (HTML) with validation and monitoring
+      - name: Render Main Book (HTML)
         run: python scripts/render-book-website.py
         timeout-minutes: 25
 
-      - name: Deploy Main Site to Netlify
+      - name: Upload Main Site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-site
+          path: _book/warondisease
+          retention-days: 1
+
+      - name: Deploy Main Site to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_book/warondisease'
@@ -104,69 +84,9 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
         timeout-minutes: 1
 
-      - name: Upload Main Site artifact for Netlify (deploy immediately)
-        uses: actions/upload-artifact@v4
-        with:
-          name: main-site
-          path: _book/warondisease
-          retention-days: 1
-
-      - name: Render Economics Website (for Netlify deployment)
-        run: python scripts/render-economics-website.py --output-dir _site/economics
-        timeout-minutes: 25
-
-      - name: Deploy Economics Site to Netlify
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_site/economics'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy economics site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
-        timeout-minutes: 1
-
-      - name: Upload Economics artifact for Netlify
-        uses: actions/upload-artifact@v4
-        with:
-          name: economics-site
-          path: _site/economics
-          retention-days: 1
-
-      - name: Install LaTeX (for PDF generation)
-        run: quarto install tinytex
-
-      - name: Render Book PDF (reuses HTML cache)
-        run: python scripts/render-book-pdf.py
-        timeout-minutes: 20
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: book-pdf
-          path: '_book/warondisease/*.pdf'
-          retention-days: 30
-          if-no-files-found: error
-
-      - name: Render Book EPUB (reuses PDF cache)
-        run: python scripts/render-book-epub.py
-        timeout-minutes: 30
-
-      - name: Upload EPUB artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: book-epub
-          path: '_book/warondisease/*.epub'
-          retention-days: 30
-          if-no-files-found: error
-
-  build-papers:
+  build-economics:
+    name: Build Economics Site
     runs-on: ubuntu-latest
-    # needs: lint
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -175,8 +95,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          key: quarto-freeze-economics-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
           restore-keys: |
+            quarto-freeze-economics-
             quarto-freeze-
 
       - name: Set up Quarto
@@ -207,14 +128,91 @@ jobs:
         run: |
           python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: Install LaTeX (for PDF generation)
+      - name: Render Economics Website
+        run: python scripts/render-economics-website.py --output-dir _site/economics
+        timeout-minutes: 25
+
+      - name: Upload Economics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: economics-site
+          path: _site/economics
+          retention-days: 1
+
+      - name: Deploy Economics Site to Netlify (immediate)
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_site/economics'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy economics site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
+        timeout-minutes: 1
+
+  build-wishocracy:
+    name: Build Wishocracy Paper
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-wishocracy-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-wishocracy-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
         run: quarto install tinytex
 
-      - name: Render Wishocracy Paper (for Netlify deployment)
+      - name: Render Wishocracy Paper
         run: python scripts/render-wishocracy.py
         timeout-minutes: 10
 
-      - name: Deploy Wishocracy Paper to Netlify
+      - name: Upload Wishocracy artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wishocracy-site
+          path: _site/wishocracy
+          retention-days: 1
+
+      - name: Deploy Wishocracy Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_site/wishocracy'
@@ -229,18 +227,65 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
         timeout-minutes: 1
 
-      - name: Upload Wishocracy Paper artifact for Netlify
-        uses: actions/upload-artifact@v4
-        with:
-          name: wishocracy-site
-          path: _site/wishocracy
-          retention-days: 1
+  build-iab:
+    name: Build IAB Paper
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Render IAB Paper (for Netlify deployment)
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-iab-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-iab-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+        run: quarto install tinytex
+
+      - name: Render IAB Paper
         run: python scripts/render-iab.py
         timeout-minutes: 10
 
-      - name: Deploy IAB Paper to Netlify
+      - name: Upload IAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iab-site
+          path: _site/iab
+          retention-days: 1
+
+      - name: Deploy IAB Paper to Netlify (immediate)
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_site/iab'
@@ -255,163 +300,122 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
         timeout-minutes: 1
 
-      - name: Upload IAB Paper artifact for Netlify
+  build-pdf:
+    name: Build Book PDF
+    runs-on: ubuntu-latest
+    needs: build-main-html  # Wait for HTML to reuse freeze cache
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Restore Quarto freeze from HTML build
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-main-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-main-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+        run: quarto install tinytex
+
+      - name: Render Book PDF
+        run: python scripts/render-book-pdf.py
+        timeout-minutes: 20
+
+      - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: iab-site
-          path: _site/iab
-          retention-days: 1
+          name: book-pdf
+          path: '_book/warondisease/*.pdf'
+          retention-days: 30
+          if-no-files-found: error
 
-  # build-pdf:
-  #   runs-on: ubuntu-latest
-  #   # needs: lint
-  #   continue-on-error: true
-  #   steps:
-  #     - name: Check out repository
-  #       uses: actions/checkout@v4
-
-  #     - name: Cache Quarto freeze
-  #       uses: actions/cache@v4
-  #       with:
-  #         path: _freeze
-  #         key: quarto-freeze-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-  #         restore-keys: |
-  #           quarto-freeze-
-
-  #     - name: Set up Quarto
-  #       uses: quarto-dev/quarto-actions/setup@v2
-
-  #     - name: Set up Python
-  #       uses: actions/setup-python@v5
-  #       with:
-  #         python-version: '3.11'
-
-  #     - name: Install uv
-  #       uses: astral-sh/setup-uv@v5
-  #       with:
-  #         enable-cache: true
-
-  #     - name: Install Python dependencies
-  #       run: uv pip install --system -r requirements.txt
-
-  #     - name: Install Jupyter kernel
-  #       run: |
-  #         python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-  #     - name: Install LaTeX
-  #       run: quarto install tinytex
-
-  #     - name: Render Quarto Project (PDF) with validation and monitoring
-  #       run: python scripts/render_pdf.py
-  #       timeout-minutes: 15
-
-  #     - name: Upload PDF artifact
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: book-pdf
-  #         path: '_book/warondisease/*.pdf'
-  #         if-no-files-found: warn
-
-  deploy-main:
-    name: Deploy Main Site to Netlify
+  build-epub:
+    name: Build Book EPUB
     runs-on: ubuntu-latest
-    needs: build-html
+    needs: build-pdf  # Wait for PDF to reuse its cache
     steps:
-      - name: Download Main Site artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: main-site
-          path: main-site
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
+      - name: Restore Quarto freeze from PDF build
+        uses: actions/cache@v4
         with:
-          publish-dir: 'main-site'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy main site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
-        timeout-minutes: 1
+          path: _freeze
+          key: quarto-freeze-main-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-main-
+            quarto-freeze-
 
-  deploy-economics:
-    name: Deploy Economics to Netlify
-    runs-on: ubuntu-latest
-    needs: build-html
-    steps:
-      - name: Download Economics artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: economics-site
-          path: economics-site
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          publish-dir: 'economics-site'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy economics site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_ECONOMICS_SITE_ID }}
-        timeout-minutes: 1
+          python-version: '3.10'
 
-  deploy-wishocracy:
-    name: Deploy Wishocracy Paper to Netlify
-    runs-on: ubuntu-latest
-    needs: build-papers
-    steps:
-      - name: Download Wishocracy Paper artifact
-        uses: actions/download-artifact@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          name: wishocracy-site
-          path: wishocracy-site
+          enable-cache: true
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: 'wishocracy-site'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy wishocracy paper from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WISHOCRACY_SITE_ID }}
-        timeout-minutes: 1
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
 
-  deploy-iab:
-    name: Deploy IAB Paper to Netlify
-    runs-on: ubuntu-latest
-    needs: build-papers
-    steps:
-      - name: Download IAB Paper artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: iab-site
-          path: iab-site
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3.0
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Install LaTeX
+        run: quarto install tinytex
+
+      - name: Render Book EPUB
+        run: python scripts/render-book-epub.py
+        timeout-minutes: 30
+
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
         with:
-          publish-dir: 'iab-site'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy IAB paper from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_IAB_SITE_ID }}
-        timeout-minutes: 1
+          name: book-epub
+          path: '_book/warondisease/*.epub'
+          retention-days: 30
+          if-no-files-found: error
