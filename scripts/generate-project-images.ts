@@ -1,10 +1,12 @@
 /**
  * Generate OG images for book chapters
+ * Uses a lock file to prevent multiple instances from running simultaneously
  */
 
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs/promises';
+import { existsSync, unlinkSync } from 'fs';
 import matter from 'gray-matter';
 import { generateAndSaveImages } from './lib/genai-image.js';
 import {
@@ -15,6 +17,119 @@ import {
 
 // Load environment variables
 dotenv.config();
+
+// Lock file configuration
+const LOCK_FILE = path.join(process.cwd(), '.generate-images.lock');
+
+/**
+ * Check if a process is running (Windows-compatible)
+ */
+async function isProcessRunning(pid: number): Promise<boolean> {
+  try {
+    // On Windows, process.kill(pid, 0) doesn't work reliably
+    // Use tasklist to check if process exists
+    if (process.platform === 'win32') {
+      const { exec } = await import('child_process');
+      return new Promise((resolve) => {
+        exec(`tasklist /FI "PID eq ${pid}" /NH`, (error, stdout) => {
+          if (error) {
+            resolve(false);
+            return;
+          }
+          resolve(stdout.toLowerCase().includes('node.exe'));
+        });
+      });
+    } else {
+      // On Unix-like systems, sending signal 0 checks if process exists
+      process.kill(pid, 0);
+      return true;
+    }
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Acquire lock file, preventing multiple instances from running
+ * Kills existing instance if it's still running
+ */
+async function acquireLock(): Promise<void> {
+  try {
+    const lockContent = await fs.readFile(LOCK_FILE, 'utf-8');
+    const existingPid = parseInt(lockContent.trim(), 10);
+
+    if (existingPid && await isProcessRunning(existingPid)) {
+      console.error(`ERROR: Another instance is already running (PID: ${existingPid})`);
+      console.error('Attempting to kill existing process...');
+
+      try {
+        process.kill(existingPid, 'SIGTERM');
+        // Wait a moment for process to die
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Check if it's still running
+        if (await isProcessRunning(existingPid)) {
+          console.error('Failed to kill existing process. Please manually stop it and try again.');
+          process.exit(1);
+        } else {
+          console.log('Successfully killed existing process.');
+        }
+      } catch (killError) {
+        console.error('Failed to kill existing process:', killError);
+        process.exit(1);
+      }
+    }
+  } catch {
+    // Lock file doesn't exist, which is fine
+  }
+
+  // Write current PID to lock file
+  await fs.writeFile(LOCK_FILE, process.pid.toString(), 'utf-8');
+  console.log(`[LOCK] Acquired lock file (PID: ${process.pid})`);
+}
+
+/**
+ * Release lock file on exit
+ */
+async function releaseLock(): Promise<void> {
+  try {
+    await fs.unlink(LOCK_FILE);
+    console.log('[LOCK] Released lock file');
+  } catch {
+    // Lock file already removed, no problem
+  }
+}
+
+// Ensure lock is released on exit
+process.on('exit', () => {
+  try {
+    // Synchronous version for exit handler
+    const lockPath = path.join(process.cwd(), '.generate-images.lock');
+    if (existsSync(lockPath)) {
+      unlinkSync(lockPath);
+    }
+  } catch {
+    // Ignore errors during cleanup
+  }
+});
+
+process.on('SIGINT', async () => {
+  console.log('\n[SIGINT] Received interrupt signal, cleaning up...');
+  await releaseLock();
+  process.exit(130);
+});
+
+process.on('SIGTERM', async () => {
+  console.log('\n[SIGTERM] Received termination signal, cleaning up...');
+  await releaseLock();
+  process.exit(143);
+});
+
+process.on('uncaughtException', async (error) => {
+  console.error('[ERROR] Uncaught exception:', error);
+  await releaseLock();
+  process.exit(1);
+});
 
 /**
  * Generate OG image, infographic, and slide for a single file
@@ -72,12 +187,12 @@ async function generateImageForFile(
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage || forceRegenerate) {
     console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Please generate an engaging, simple social media image for the following content.
-Use a fun retro futuristic style and large text.
+    const ogPrompt = `Create an engaging infographic about the following topic, designed for social media sharing.
 
----
+Content:
 ${cleanedBody}
----`;
+
+Visual Style: 1960s-inspired psychedelic aesthetic with vibrant neon colors, bold geometric shapes, halftone dot patterns, and large legible typography. Composition should be clean and minimalist with strong visual hierarchy.`;
 
     const ogFiles = await generateAndSaveImages({
       prompt: ogPrompt,
@@ -97,12 +212,12 @@ ${cleanedBody}
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Please generate a SIMPLE infographic for the following content.
-Use a fun retro futuristic style and LARGE text.
+    const infographicPrompt = `Create a detailed vertical infographic explaining the following topic.
 
----
+Content:
 ${cleanedBody}
----`;
+
+Visual Style: 1960s-70s psychedelic-inspired design with vibrant color palette (hot pink, electric blue, neon green), halftone textures, bold geometric patterns, and large clear typography. Use a clean layout with strong visual hierarchy and minimal text.`;
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
@@ -122,12 +237,12 @@ ${cleanedBody}
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasSlide || forceRegenerate) {
     console.log(`  Generating slide (PowerPoint-optimized)...`);
-    const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
-Use a fun retro futuristic style and large text.
+    const slidePrompt = `Create a presentation slide visualizing the following content.
 
----
+Content:
 ${cleanedBody}
----`;
+
+Visual Style: Modern presentation design inspired by 1960s aesthetics - vibrant color blocking, clean geometric shapes, halftone patterns, and large legible sans-serif typography. Maintain strong contrast and visual clarity suitable for projection.`;
 
     const slideFiles = await generateAndSaveImages({
       prompt: slidePrompt,
@@ -263,12 +378,16 @@ async function main() {
   console.log('🎨 Book Chapter OG Image Generator');
   console.log('='.repeat(60));
 
+  // Acquire lock file to prevent multiple instances
+  await acquireLock();
+
   // Check for API key
   if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
     console.error('ERROR: GOOGLE_GENERATIVE_AI_API_KEY environment variable is not set');
     console.error('Please set your Google Gemini API key in .env file:');
     console.error('GOOGLE_GENERATIVE_AI_API_KEY=your_api_key_here');
     console.error('Get your API key from: https://aistudio.google.com/app/apikey');
+    await releaseLock();
     process.exit(1);
   }
 
@@ -294,7 +413,13 @@ async function main() {
 }
 
 // Run the script
-main().catch(error => {
-  console.error('Fatal error:', error);
-  process.exit(1);
-});
+main()
+  .then(async () => {
+    await releaseLock();
+    process.exit(0);
+  })
+  .catch(async (error) => {
+    console.error('Fatal error:', error);
+    await releaseLock();
+    process.exit(1);
+  });
