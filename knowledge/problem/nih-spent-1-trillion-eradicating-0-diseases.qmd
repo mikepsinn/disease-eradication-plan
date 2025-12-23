@@ -13,9 +13,6 @@ tags:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![Infographic](/assets/infographics/knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases-infographic.png)
-
-
 ![NIH Inefficiency](../../assets/infographics/NIH Inefficiency Infographic.png)
 
 With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted).
@@ -43,36 +40,6 @@ Here is the "Stock vs Flow" problem in one sentence: **We are not short of hypot
 We have a massive **stock** of safe molecules that have never been systematically evaluated for new uses.
 But the **flow** of trials is a trickle.
 
-### The $600,000 Meta-Research Masterpiece
-
-After searching clinicaltrials.gov for dementia trials your grandma could join, one finally appears.
-
-It's a study asking if people would be *interested* in dementia trials.
-
-- **Cost:** $600,000
-- **Purpose:** Survey research about hypothetical willingness to participate
-- **Patients treated:** Zero
-- **Treatments tested:** Zero
-
-Let's be clear: **This isn't the researcher's fault.** They wrote the grant NIH rewards. They're playing the game correctly.
-
-The problem is the game itself.
-
-NIH will fund $600,000 to *ask* if people want trials. But it won't fund the actual trials people want to join.
-
-**We already know the answer:** [~50-75% of patients say they're willing to participate](../references.qmd#patient-willingness-clinical-trials), but [only ~10% are ever invited](../references.qmd#patient-willingness-clinical-trials).
-
-The bottleneck isn't information about willingness. It's **capacity**.
-
-**That $600,000 could have funded:**
-
-- 1,200 Alzheimer's patients in pragmatic trials (at $500/patient, UK RECOVERY model)
-- Testing 5-10 repurposed drugs we already know are safe
-- Actual data on whether treatments work
-
-Instead, we got confirmation that people dying of dementia would like not to die of dementia.
-
-This is what happens when the system rewards *papers about trials* more than *running trials*.
 
 ## The Basic Research Black Hole
 
@@ -153,22 +120,6 @@ Private companies *cannot* profitably fund these, so they are the **only** thing
 Instead, the NIH explicitly avoids them to "not crowd out industry."
 Translation: We won't run the trials that would lower drug prices or fix problems without a patent attached.
 
-## The Committee Industrial Complex
-
-The NIH organizational chart looks like someone tried to draw the internet:
-
-- **[27 institutes and centers](../references.qmd#nih-organizational-complexity)**
-- **[220+ study sections](../references.qmd#nih-organizational-stats)** (review committees)
-- **[6,000+ employees](../references.qmd#nih-organizational-stats)**
-- **[80,000+ grant reviewers](../references.qmd#nih-organizational-stats)**
-
-Each institute has divisions.
-Each division has branches.
-Each branch has sections.
-Each section has units.
-It's bureaucratic nesting dolls all the way down.
-
-Fun fact: [There are more NIH administrators than there are researchers working on some rare diseases](../references.qmd#nih-admin-to-scientist-ratio).
 
 ## Case Study: The \$1.6 Billion Long COVID Masterclass
 
@@ -190,21 +141,6 @@ Meanwhile, the UK RECOVERY trial:
 
 The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
 
-## Political Funding: The Disease Popularity Contest
-
-Which diseases get funded?
-Not the deadliest ones:
-
-- **Breast cancer funding:** [\$700M/year](../references.qmd#nih-funding-deaths-comparison)
-- **Breast cancer deaths:** [42,000/year](../references.qmd#nih-funding-deaths-comparison)
-- **Heart disease funding:** [\$500M/year](../references.qmd#nih-funding-deaths-comparison)
-- **Heart disease deaths:** [700,000/year](../references.qmd#nih-funding-deaths-comparison)
-
-Heart disease kills **16X more people** but gets less funding.
-Why?
-Pink ribbons are better at lobbying than clogged arteries.
-
-The NIH budget is set by Congress, which means diseases compete in a popularity contest.
 
 ## The Efficiency Rating: Burning Life-Years
 
@@ -284,21 +220,16 @@ Committees do.
 3. **Eliminated gatekeepers:** Let patients vote with participation
 4. **Automated administration:** Smart contracts > committees
 
-But that would require admitting the current system doesn't work.
-And after \$1.1 trillion, that's an expensive admission.
+The UK RECOVERY trial showed what's possible: {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient_fda_example_41k >}}, 100 days instead of years, and over 1 million lives saved.
 
-**Fun fact:** The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)).
+For how to scale this globally and make it permanent, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
+
+The legal framework already exists for cost recovery in trials ([21 CFR 312.8](../references.qmd#cfr-21-312-8-charging-for-investigational-drugs)).
 You could implement efficient trials tomorrow.
 But that would upset the grant-writing industrial complex.
 
 ## Conclusion
 
-The NIH has built the world's most expensive grant-writing academy.
-They've turned medical research into a creative writing competition where the prize is permission to do your actual job.
+For $1.1 trillion since 1970, the NIH built the world's most expensive grant-writing academy. Zero diseases eradicated. Millions of papers nobody reads. Thousands of administrators. Hundreds of committees.
 
-For \$1.1 trillion, we got:
-
-- Millions of papers nobody reads
-- Thousands of career administrators
-- Hundreds of committees
-- Zero eradicated diseases
+The alternative exists and has been proven to work.
