@@ -1,13 +1,10 @@
 /**
- * Quarto Sidebar Horizontal Overlap Fix
+ * Quarto Sidebar Width-Based Visibility
  *
- * This script fixes an issue where the quarto-margin-sidebar overlaps
- * the main content at medium screen widths (around 50% of screen width).
+ * This script hides the quarto-margin-sidebar when window width is less than 1111px
+ * and shows it when window width is greater than or equal to 1111px.
  *
- * The fix adds horizontal overlap detection to the sidebar visibility logic,
- * ensuring the sidebar is hidden when it would overlap the main content area.
- *
- * Version: 1.1.0 - Added infinite loop prevention and re-entry guards
+ * Version: 2.0.0 - Simplified to width-based visibility only
  */
 
 (function() {
@@ -15,6 +12,7 @@
 
   let retryCount = 0;
   const MAX_RETRIES = 50; // 10 seconds max (50 × 200ms)
+  const WIDTH_THRESHOLD = 1111; // pixels
 
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {
@@ -30,15 +28,14 @@
 
   function applyFix() {
     const marginSidebar = document.getElementById('quarto-margin-sidebar');
-    const documentContent = document.getElementById('quarto-document-content');
 
-    if (!marginSidebar || !documentContent) {
-      // Elements not found yet, retry with limit to prevent infinite loop
+    if (!marginSidebar) {
+      // Element not found yet, retry with limit to prevent infinite loop
       if (retryCount < MAX_RETRIES) {
         retryCount++;
         setTimeout(applyFix, 200);
       } else {
-        console.warn('Quarto sidebar fix: Required elements not found after maximum retries');
+        console.warn('Quarto sidebar fix: Required element not found after maximum retries');
       }
       return;
     }
@@ -46,35 +43,8 @@
     // Re-entry guard to prevent observer feedback loops
     let isUpdating = false;
 
-    // Function to check for horizontal overlap
-    function checkHorizontalOverlap() {
-      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      const contentRect = documentContent.getBoundingClientRect();
-      const sidebarRect = marginSidebar.getBoundingClientRect();
-
-      // Check if sidebar overlaps content horizontally
-      const overlapBuffer = 20; // pixels of buffer
-      const hasOverlap = sidebarRect.left < contentRect.right + overlapBuffer;
-
-      // Also check if viewport is in problematic range (768px - 1000px)
-      const inProblematicRange = viewportWidth < 1000 && viewportWidth > 768;
-
-      // Check if content width is less than 1111px
-      const contentWidth = contentRect.width;
-      const isContentTooNarrow = contentWidth < 1111;
-
-      return hasOverlap || inProblematicRange || isContentTooNarrow;
-    }
-
-    // Function to hide sidebar by converting to menu (mimicking Quarto's behavior)
+    // Function to hide sidebar
     function hideSidebar() {
-      // Only hide if not already hidden by Quarto's toggle
-      const toggleExists = document.getElementById('quarto-toc-toggle');
-      if (toggleExists) {
-        // Quarto is already managing it, don't interfere
-        return;
-      }
-
       // Check if already hidden - prevent unnecessary mutations
       if (marginSidebar.classList.contains('rollup')) {
         return;
@@ -91,14 +61,6 @@
 
     // Function to show sidebar
     function showSidebar() {
-      // Only show if we're the ones who hid it (check for our rollup class)
-      // and if Quarto's toggle doesn't exist
-      const toggleExists = document.getElementById('quarto-toc-toggle');
-      if (toggleExists) {
-        // Quarto is managing it, don't interfere
-        return;
-      }
-
       // Check if already shown - prevent unnecessary mutations
       if (!marginSidebar.classList.contains('rollup')) {
         return;
@@ -113,7 +75,7 @@
       marginSidebar.classList.remove('rollup');
     }
 
-    // Check and update sidebar visibility
+    // Check and update sidebar visibility based on window width
     function updateSidebarVisibility() {
       // Re-entry guard: prevent feedback loops
       if (isUpdating) {
@@ -123,27 +85,12 @@
       isUpdating = true;
 
       try {
-        // Only act if not in reader mode
-        const isReaderMode = window.localStorage?.getItem('quarto-reader-mode') === 'true';
-        if (isReaderMode) {
-          return;
-        }
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
-        // Check if Quarto's toggle exists - if it does, Quarto is managing visibility
-        const toggleExists = document.getElementById('quarto-toc-toggle');
-        if (toggleExists) {
-          // Quarto is managing it, don't interfere
-          return;
-        }
-
-        // Only apply our fix if Quarto hasn't already converted it to a menu
-        if (checkHorizontalOverlap()) {
+        if (windowWidth < WIDTH_THRESHOLD) {
           hideSidebar();
         } else {
-          // Only show if we hid it (has rollup class but no toggle)
-          if (marginSidebar.classList.contains('rollup')) {
-            showSidebar();
-          }
+          showSidebar();
         }
       } finally {
         // Always reset the guard, even if an error occurs
@@ -151,42 +98,14 @@
       }
     }
 
-    // Monitor for changes
+    // Monitor for window resize
     let resizeTimeout;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(updateSidebarVisibility, 50);
     });
 
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(updateSidebarVisibility, 50);
-    });
-
-    // Use MutationObserver to watch for changes to the sidebar
-    const observer = new MutationObserver(function(mutations) {
-      updateSidebarVisibility();
-    });
-
-    observer.observe(marginSidebar, {
-      attributes: true,
-      attributeFilter: ['class', 'style'],
-      childList: false,
-      subtree: false
-    });
-
     // Initial check
     updateSidebarVisibility();
-
-    // Also hook into Quarto's hideOverlappedSidebars if it exists
-    // This ensures our check runs when Quarto's own visibility logic runs
-    const originalHideOverlapped = window.hideOverlappedSidebars;
-    if (typeof originalHideOverlapped === 'function') {
-      window.hideOverlappedSidebars = function() {
-        originalHideOverlapped.apply(this, arguments);
-        updateSidebarVisibility();
-      };
-    }
   }
 })();
