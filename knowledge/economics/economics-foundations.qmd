@@ -492,7 +492,7 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 | Action | Expected Outcome |
 |:-------|:-----------------|
 | Vote Yes | Defense lobby attack ads; reduced industry support |
-| Vote No | Retained defense contractor funding; no electoral risk |
+| Vote No | Retained military contractor funding; no electoral risk |
 
 **With IABs:**
 
@@ -617,7 +617,7 @@ The methodology follows standard health economics practices. All parameters, sou
 You spend {{< var treaty_campaign_total_cost >}} convincing humans that not dying is preferable to dying. This covers:
 
 - Global referendum campaign to get {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var treaty_campaign_budget_referendum >}})
-- Professional lobbyists, previously employed by defense contractors, now employed by pharmaceutical companies ({{< var treaty_campaign_budget_lobbying >}})
+- Professional lobbyists, previously employed by military contractors, now employed by pharmaceutical companies ({{< var treaty_campaign_budget_lobbying >}})
 - Super PAC papers that make politicians care about living voters ({{< var treaty_campaign_budget_super_pacs >}})
 
 This is a one-time cost. You either achieve treaty passage or you don't.
@@ -1604,7 +1604,7 @@ This section addresses common objections and potential failure modes, along with
 
 ### The "But Politicians Won't Do It" Problem
 
-**What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because defense contractors oppose the change.
+**What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because military contractors oppose the change.
 
 **Why this actually won't happen**:
 
@@ -1864,7 +1864,7 @@ Standard willingness-to-pay thresholds ({{< var who_qaly_threshold_cost_effectiv
 This analysis models economic returns conditional on treaty ratification. Political feasibility depends on:
 
 - **Geopolitical stability:** International cooperation requirements may face challenges during periods of global tension
-- **Domestic politics:** Military budget reductions face constituency resistance in defense-dependent regions
+- **Domestic politics:** Military budget reductions face constituency resistance in military-dependent regions
 - **Lobbying influence:** Defense industry opposition may impede adoption
 
 **Risk assessment:** The {{< var treaty_reduction_pct >}} reduction is intentionally modest to minimize political resistance. Historical precedents (military-to-civilian conversions post-Cold War) demonstrate feasibility.
@@ -1960,7 +1960,7 @@ Traditional health budgets face impossible trade-offs: every dollar spent on can
 
 **Key insight**: Health ministries can achieve {{< var trial_capacity_multiplier >}}× more clinical research without reducing current health spending or raising taxes. The funding comes from military budgets, not health budgets.
 
-**Practical application**: A nation spending {{< var global_military_spending_annual_2024 >}} on military could redirect {{< var treaty_reduction_pct >}} ({{< var treaty_annual_funding >}}) to fund pragmatic trials for its entire population while maintaining 99% of its defense capacity. The resulting health gains ({{< var disease_eradication_delay_deaths_total >}} lives saved globally, proportional by population) far exceed any marginal security value of that 1%.
+**Practical application**: A nation spending {{< var global_military_spending_annual_2024 >}} on military could redirect {{< var treaty_reduction_pct >}} ({{< var treaty_annual_funding >}}) to fund pragmatic trials for its entire population while maintaining 99% of its military capacity. The resulting health gains ({{< var disease_eradication_delay_deaths_total >}} lives saved globally, proportional by population) far exceed any marginal security value of that 1%.
 
 ### International Development Priorities
 
@@ -1981,9 +1981,9 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 **Key insight**: The economic multiplier for military spending is {{< var economic_multiplier_military_spending >}} {{< var economic_multiplier_military_spending_cite >}} (you get $0.50-$1.00 back per dollar spent). The economic multiplier for healthcare investment is {{< var economic_multiplier_healthcare_investment >}} {{< var economic_multiplier_healthcare_investment_cite >}} (you get $2-$3 back per dollar spent).
 
-**Strategic perspective**: A nation's long-term security depends more on economic strength and healthy populations than on marginal weapons systems. Redirecting 1% from the {{< var global_military_spending_annual_2024 >}} global military budget doesn't compromise defense (99% remains) but generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits.
+**Strategic perspective**: A nation's long-term security depends more on economic strength and healthy populations than on marginal weapons systems. Redirecting 1% from the {{< var global_military_spending_annual_2024 >}} global military budget doesn't compromise military (99% remains) but generates {{< var combined_peace_health_dividends_annual_for_roi_calc >}} in annual economic benefits.
 
-**Precedent**: The U.S. spends more on defense than the next 10 countries combined. A 1% reduction would still leave U.S. defense spending higher than any potential adversary while funding {{< var trial_capacity_multiplier >}}× more medical research globally.
+**Precedent**: The U.S. spends more on military than the next 10 countries combined. A 1% reduction would still leave U.S. military spending higher than any potential adversary while funding {{< var trial_capacity_multiplier >}}× more medical research globally.
 
 ### Global Health Funding Mechanisms
 

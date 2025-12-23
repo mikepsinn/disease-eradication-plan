@@ -81,7 +81,7 @@ Yet government spending patterns have not shifted. The U.S. spends $16 on milita
 
 This paper argues that politicians maximize reelection probability, post-office career prospects, and status, not aggregate social welfare. **The problem is not that decision-makers don't know which programs produce value. They do know. They don't care, because caring doesn't appear in their utility function.**
 
-Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] established that groups with concentrated interests (small groups with huge per-person stakes, like defense contractors) systematically outcompete groups with diffuse interests (millions of people with small individual stakes, like citizens who'd benefit from cures) in political competition. Why? A small group facing large per-member stakes will invest more in lobbying than a large group facing small per-member stakes. This holds even when total welfare losses exceed total welfare gains. The beneficiaries of inefficient policies (defense contractors, pharmaceutical incumbents, fossil fuel producers) are concentrated. The beneficiaries of efficient policies (citizens who would benefit from cures, climate stability, reduced existential risk) are diffuse.
+Mancur Olson's seminal work *The Logic of Collective Action* [-@olson1965] established that groups with concentrated interests (small groups with huge per-person stakes, like military contractors) systematically outcompete groups with diffuse interests (millions of people with small individual stakes, like citizens who'd benefit from cures) in political competition. Why? A small group facing large per-member stakes will invest more in lobbying than a large group facing small per-member stakes. This holds even when total welfare losses exceed total welfare gains. The beneficiaries of inefficient policies (military contractors, pharmaceutical incumbents, fossil fuel producers) are concentrated. The beneficiaries of efficient policies (citizens who would benefit from cures, climate stability, reduced existential risk) are diffuse.
 
 The result is a systematic distortion of democratic governance. The U.S. Constitution's Preamble charges government to "promote the general Welfare," the welfare of all citizens, not the welfare of any particular faction. Yet Olsonian dynamics ensure that government routinely promotes *specific* welfare (of concentrated interests who can afford to lobby) at the expense of *general* welfare (of the diffuse public). This is not corruption in the legal sense; it is the predictable equilibrium (stable outcome where nobody wants to change their behavior) of rational actors operating within existing institutional rules. The problem is not bad actors but bad incentives.
 
@@ -95,7 +95,7 @@ Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyze
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
 - **{{< var victory_bond_annual_return_pct >}} expected first-year ROI** on bootstrap capital from lobbying economics (Section 2.2)
-- **{{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (defense contractors) by 90:1 (Section 2.3)
+- **{{< var global_household_wealth_usd >}} vs. {{< var concentrated_interest_sector_market_cap_usd >}} capital asymmetry** ensures diffuse beneficiaries (citizens who'd benefit from cures) can outspend concentrated opposition (military contractors) by 90:1 (Section 2.3)
 - **{{< var iab_mechanism_benefit_cost_ratio >}}:1 benefit-cost ratio** of the IAB mechanism itself, even accounting for overhead costs and failure risk (Section 7.3)
 - **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
 - **Wishocracy (Layer 2) prevents allocation capture** through random pairwise sampling that makes advertising economically infeasible (Section 6.2.3)
@@ -125,7 +125,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 **Political Economy:**
 
-- **Concentrated interests:** Small groups with huge per-person stakes (defense contractors losing billions)
+- **Concentrated interests:** Small groups with huge per-person stakes (military contractors losing billions)
 - **Diffuse beneficiaries:** Millions of people with small individual stakes (each citizen gains 5 healthy years)
 - **Olsonian dynamics:** Named after economist Mancur Olson. It is the pattern where small organized groups beat large disorganized groups in political competition
 - **Collective action problem:** Hard for large groups to coordinate even when everyone would benefit
@@ -136,7 +136,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 **Finance & ROI:**
 
 - **ROI (Return on Investment):** Profit divided by cost ({{< var victory_bond_annual_return_pct >}} ROI means you get \$3.72 back for every \$1 invested)
-- **Capital asymmetry:** Unequal distribution of wealth ({{< var global_household_wealth_usd >}} households vs. {{< var concentrated_interest_sector_market_cap_usd >}} defense contractors)
+- **Capital asymmetry:** Unequal distribution of wealth ({{< var global_household_wealth_usd >}} households vs. {{< var concentrated_interest_sector_market_cap_usd >}} military contractors)
 - **Securitization:** Turning something into tradable financial instruments (like turning mortgages into mortgage-backed securities)
 - **Expected value:** Average outcome accounting for probabilities (20% chance of $100 = $20 expected value)
 - **Market capitalization:** Total value of a company's stock
@@ -171,7 +171,7 @@ An Incentive Alignment Bond is a financial instrument with three primitive prope
 
 3. **Funding from lower-value sources:** The public good is funded by redirecting resources from government activities with lower social value than the target use. In the strongest case, these are programs that produce measurable net harm. More generally, they are programs that persist due to Olsonian concentrated-benefit/diffuse-cost dynamics rather than comparative merit. This constraint ensures IABs reallocate from less valuable to more valuable uses; they are welfare-improving in expectation under standard utilitarian social welfare assumptions.
 
-The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements. Agricultural subsidies that distort markets. Fossil fuel subsidies that accelerate climate change. These programs survive political competition not on merit but on lobbying intensity. Concentrated interests (defense contractors, incumbent industries) invest heavily in maintaining these programs, while diffuse beneficiaries face collective action problems. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
+The third property is crucial. Many government expenditures persist not because they produce social value, but because their beneficiaries are concentrated while their costs are diffuse. Military spending beyond deterrence requirements. Agricultural subsidies that distort markets. Fossil fuel subsidies that accelerate climate change. These programs survive political competition not on merit but on lobbying intensity. Concentrated interests (military contractors, incumbent industries) invest heavily in maintaining these programs, while diffuse beneficiaries face collective action problems. IABs redirect these resources to measurable public goods, making the reallocation welfare-improving even before accounting for the public good produced.
 
 The key innovation is that all three alignments reinforce each other. A fraction of redirected funding flows perpetually to (a) investor returns and (b) political incentive mechanisms, while (c) the funding source ensures no beneficial programs are displaced. This makes the instrument self-sustaining: policy success generates the resources that maintain both investor and politician alignment, creating pressure for continuation and expansion.
 
@@ -191,20 +191,20 @@ When advocates successfully lobby for increased spending on a beneficial program
 
 The result is that the beneficial program's *nominal* budget increases while its *real* share of resources remains unchanged or even decreases. The concentrated beneficiaries of harmful programs lose nothing; the diffuse beneficiaries of the new program gain less than the headline figures suggest.
 
-Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both defense and healthcare increased much in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
+Consider the empirical pattern: between 2000 and 2024, U.S. federal spending on both military and healthcare increased much in nominal terms. Neither constituency "lost" to the other. Instead, total federal spending grew from \$1.8 trillion to \$6.1 trillion, while the national debt expanded from \$5.6 trillion to \$34 trillion. The real constraint, the finite pool of engineers, scientists, manufacturers, and productive capacity, was diluted across an ever-expanding set of nominal claims. Defense contractors retained their share of real resources; healthcare advocates won nominal victories that competed with inflation and expanding claims elsewhere in the budget.
 
 This is not a failure of advocacy. It is the equilibrium outcome (stable result when everyone optimizes given current rules) of Olsonian dynamics operating under soft budget constraints (when governments can spend without immediate consequences; they just print money or charge it to the credit card of future generations). Concentrated interests protect their programs absolutely. Diffuse interests win nominal victories. The budget grows in nominal terms while each program's claim on real resources remains contested.
 
 The mechanism is straightforward: when Congress appropriates \$10 billion for pragmatic clinical trials without specifying a funding source, the Treasury either borrows or the Federal Reserve accommodates. Total nominal spending increases.
 
-But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to defense, fossil fuel subsidies, and other Olsonian programs, for the same finite resources.
+But the supply of trained researchers, laboratory equipment, and institutional capacity does not increase proportionally. The new dollars compete with existing dollars, including those flowing to military, fossil fuel subsidies, and other Olsonian programs, for the same finite resources.
 
 Inflation, both general and sector-specific, erodes the real purchasing power of the nominal increase.
 
 IABs break this dynamic by *specifying the funding source* as part of the mechanism. The policy does not say "fund pragmatic clinical trials"; it says "redirect 1% of military spending to pragmatic clinical trials." This forces a real reallocation:
 
 - Military budgets face *actual* cuts in nominal and real terms
-- Concentrated losers (defense contractors) face *real* losses, which they will resist
+- Concentrated losers (military contractors) face *real* losses, which they will resist
 - But the IAB political incentive layer ensures politicians who support the reallocation benefit more than those who resist
 - The finite pool of resources shifts from net-negative to net-positive uses
 
@@ -214,7 +214,7 @@ The third primitive property, funding from harmful sources, is therefore not mer
 
 To understand why investors would fund the initial campaign to pass an IAB treaty, we must recognize political advocacy not as charity, but as a high-yield asset class. The Return on Investment (ROI) for corporate lobbying is historically orders of magnitude higher than traditional financial markets. The following illustrative estimates, drawn from existing studies, suggest order-of-magnitude returns:
 
-- **Defense:** The top five defense contractors spent $1.1 billion on lobbying over two decades while receiving $2.02 trillion in Pentagon contracts, an implied ROI of approximately **181,000%** [@responsiblestatecraft2021].
+- **Defense:** The top five military contractors spent $1.1 billion on lobbying over two decades while receiving $2.02 trillion in Pentagon contracts, an implied ROI of approximately **181,000%** [@responsiblestatecraft2021].
 - **Fossil Fuels:** The oil and gas industry spent $151 million lobbying in 2024 to protect $17 billion in subsidies, an implied annual return of approximately **11,000%** [@opensecrets2025].
 - **Medical Research:** Academic analysis finds that for specific disease groups, each $1,000 spent on lobbying is associated with $25,000 in additional NIH funding, an implied return of approximately **2,500%** [@nature2014].
 
@@ -249,10 +249,10 @@ Here's what almost everyone misses: **the collective capital available to diffus
 
 Consider the global capital distribution:
 
-- **Concentrated interests** (defense contractors, fossil fuel companies, pharmaceutical incumbents): Combined market capitalization ~{{< var concentrated_interest_sector_market_cap_usd >}}[^capital-estimate]
+- **Concentrated interests** (military contractors, fossil fuel companies, pharmaceutical incumbents): Combined market capitalization ~{{< var concentrated_interest_sector_market_cap_usd >}}[^capital-estimate]
 - **Diffuse beneficiaries** (everyone who would benefit from cures, climate stability, pandemic prevention): Global household wealth ~{{< var global_household_wealth_usd >}} [@creditsuisse2023]
 
-[^capital-estimate]: Conservative estimate based on: Top 100 defense contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition ranges \$2T-$5T depending on domain.
+[^capital-estimate]: Conservative estimate based on: Top 100 military contractors ~\$2T market cap (Lockheed Martin \$120B, Raytheon \$100B, etc.); top fossil fuel companies ~\$2.5T (ExxonMobil \$400B, Saudi Aramco \$2T, Shell \$200B, etc.); top 20 pharmaceutical companies ~\$4T (but most align with IABs for medical research funding). Using \$5T assumes pharmaceutical opposition, which may not materialize. Actual concentrated opposition ranges \$2T-$5T depending on domain.
 
 The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem (hard for large groups to coordinate even when everyone would benefit): each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
 
@@ -289,7 +289,7 @@ $$ {#eq-comparative}
 
 That is, if the marginal social value of the source program is lower than that of the target program. In the strongest case, $NSV_{source} \leq 0$; the program produces net harm. But reallocation is justified even when both programs have positive value, as long as the target exceeds the source.
 
-This comparative criterion implies a natural ranking of government expenditures by marginal social value. IABs should draw from the *lowest-ranked* programs first, those that persist mainly due to Olsonian dynamics rather than merit. This avoids the objection that "defense isn't ALL bad"; the claim is not that military spending is worthless, but that its marginal value is lower than medical research, and that it persists at current levels due to lobbying intensity rather than comparative social value.
+This comparative criterion implies a natural ranking of government expenditures by marginal social value. IABs should draw from the *lowest-ranked* programs first, those that persist mainly due to Olsonian dynamics rather than merit. This avoids the objection that "military isn't ALL bad"; the claim is not that military spending is worthless, but that its marginal value is lower than medical research, and that it persists at current levels due to lobbying intensity rather than comparative social value.
 
 **Military spending** provides a concrete example. The economic multiplier for military spending is around 0.6, compared to 1.5–3.0 for infrastructure, education, and medical research. This means each dollar of military spending generates \$0.60 in economic activity, while each dollar of medical research investment generates \$2.00–3.00. The opportunity cost alone, before considering direct harms, makes military spending beyond minimum deterrence requirements a net social loss.
 
@@ -418,7 +418,7 @@ Empirical research on campaign finance provides the evidentiary foundation for t
 
 **Interest group scorecards influence behavior.** Organizations like the National Rifle Association (NRA), League of Conservation Voters (LCV), and Chamber of Commerce publish voting scorecards that affect politician behavior. The LCV has published its National Environmental Scorecard since 1970, and it has "become the gold standard of congressional vote scoring on environmental issues" [@lcv2024]. Research confirms that PAC contributions correlate with votes on relevant issues, though causality is debated [@stratmann2002; @fowler2020].
 
-**The revolving door affects politician incentives.** Research documents significant movement between government and private sector. A 2023 study found that 32% of HHS appointees exited to industry employment [@hhs2023]. Among four-star military officers who retired after June 2018, over 80% went to work for the defense industry as board members, advisors, executives, consultants, or lobbyists [@hartung2023]. Shepherd and You [-@shepherd2019] find evidence that "career concerns" about post-office employment influence legislative behavior.
+**The revolving door affects politician incentives.** Research documents significant movement between government and private sector. A 2023 study found that 32% of HHS appointees exited to industry employment [@hhs2023]. Among four-star military officers who retired after June 2018, over 80% went to work for the military industry as board members, advisors, executives, consultants, or lobbyists [@hartung2023]. Shepherd and You [-@shepherd2019] find evidence that "career concerns" about post-office employment influence legislative behavior.
 
 ### Credit Rating Agencies as Governance Mechanisms
 
@@ -438,7 +438,7 @@ The IAB scoring system is structurally analogous to credit ratings: an independe
 2. Better post-office job opportunities (lucrative fellowships, think tank positions)
 3. Higher public status (Wikipedia article length, media coverage)
 
-When the benefits from a higher score (campaign money + career prospects + reputation) exceed the costs (losing defense contractor donations), supporting public goods becomes the rational, self-interested choice.
+When the benefits from a higher score (campaign money + career prospects + reputation) exceed the costs (losing military contractor donations), supporting public goods becomes the rational, self-interested choice.
 
 **You can skip to Section 4** for the practical implementation details, or read Section 6 for the governance architecture. This section provides mathematical precision for economists who need to verify the mechanism works under formal assumptions.
 :::
@@ -666,7 +666,7 @@ Without IABs, the politician faces:
 
 **Costs of $a_i = 1$:**
 
-- Concentrated opposition from losers (defense contractors, pharmaceutical incumbents)
+- Concentrated opposition from losers (military contractors, pharmaceutical incumbents)
 - Attack ads: "Senator voted to WEAKEN AMERICA"
 - Loss of campaign contributions from concentrated interests
 
@@ -801,7 +801,7 @@ The self-funding nature matters. The treaty's success generates the resources th
 2. **Political incentives for continuation:** Politicians who supported the treaty benefit from ongoing electoral and career support, incentivizing them to defend it against repeal
 3. **Escalation dynamics:** Each expansion (1% → 2% → 5%) increases both investor returns and political incentive funding, strengthening the coalition for further expansion
 
-In other words, we're creating a lobbying machine for public goods that gets stronger the more successful it becomes. This is the same dynamic that made defense contractors powerful, except pointed at curing diseases instead of building bombs. Once the flywheel starts spinning, concentrated opposition faces an opponent that grows with every victory.
+In other words, we're creating a lobbying machine for public goods that gets stronger the more successful it becomes. This is the same dynamic that made military contractors powerful, except pointed at curing diseases instead of building bombs. Once the flywheel starts spinning, concentrated opposition faces an opponent that grows with every victory.
 
 Consider the decision calculus for a hypothetical Senator Smith facing a vote on treaty ratification:
 
@@ -814,7 +814,7 @@ Consider the decision calculus for a hypothetical Senator Smith facing a vote on
 
 : Senator Smith's Decision Calculus {#tbl-smith}
 
-The IAB mechanism transforms the incentive landscape. The concentrated costs (defense contractor opposition) remain, but they are now outweighed by concentrated benefits (score increases, electoral support, career advancement). Supporting the treaty becomes the utility-maximizing choice.
+The IAB mechanism transforms the incentive landscape. The concentrated costs (military contractor opposition) remain, but they are now outweighed by concentrated benefits (score increases, electoral support, career advancement). Supporting the treaty becomes the utility-maximizing choice.
 
 ### Calibration: Parameter Ranges for Incentive Compatibility
 
@@ -831,7 +831,7 @@ To assess whether IABs can achieve incentive compatibility, we calibrate the mod
 
 : Calibration Parameters for IAB Model {#tbl-calibration}
 
-**Calibration exercise.** Consider a senator facing concentrated opposition of $c_i = \$2\text{M}$ from defense contractors. Under the IAB mechanism with political incentive funding of \$2.4B annually:
+**Calibration exercise.** Consider a senator facing concentrated opposition of $c_i = \$2\text{M}$ from military contractors. Under the IAB mechanism with political incentive funding of \$2.4B annually:
 
 *Electoral layer:* If \$50M is allocated to 25 competitive races, each high-scorer receives \$2M in independent expenditure support. At 1 pp per \$1M, this implies $\Delta P_i \approx 2\text{ pp}$. With $\alpha_i = \$1\text{M}$ per pp, the electoral benefit is $\alpha_i \cdot \Delta P_i = \$2\text{M}$.
 
@@ -1033,7 +1033,7 @@ This criticism deserves a careful response, as it goes to the heart of whether I
 
 1. **Comparative welfare criterion:** IABs fund reallocation from $NSV_{source} < NSV_{target}$ programs. Corporate lobbying seeks absolute budget increases for the lobbying firm's industry, regardless of comparative value. Defense contractors lobby for *more military spending* without specifying what gets cut. IABs specify *both* the source (lower-NSV) and target (higher-NSV), creating a welfare-improving constraint.
 
-2. **Public good vs. private good alignment:** Corporate lobbying aligns politician incentives with excludable private benefits (defense contracts flow to specific firms). IAB-supported policies produce non-excludable public goods (cures, climate stability). Investors cannot capture the primary benefits. They accrue to the general public. Investors capture only a fraction of the funding flow, not the end-state benefit.
+2. **Public good vs. private good alignment:** Corporate lobbying aligns politician incentives with excludable private benefits (military contracts flow to specific firms). IAB-supported policies produce non-excludable public goods (cures, climate stability). Investors cannot capture the primary benefits. They accrue to the general public. Investors capture only a fraction of the funding flow, not the end-state benefit.
 
 3. **Transparent, universal, ex-ante rules:** Corporate lobbying operates through opaque relationships (revolving door promises, implicit quid pro quos, insider access). IABs publish scoring criteria ex-ante, apply them universally to all politicians regardless of relationship, and make scores publicly available. Any politician can improve their score through observable actions.
 
@@ -1281,7 +1281,7 @@ We briefly survey three domains where IABs are applicable; Appendix B provides d
 
 **Climate change.** Verified emissions reductions (UNFCCC reporting) provide a measurable metric. Politicians can be scored on climate legislation votes, treaty ratification, and budget allocations. The concentrated-diffuse asymmetry is stark: fossil fuel producers face concentrated losses while climate benefits are globally diffuse.
 
-**Nuclear disarmament.** Verified warhead reductions under START-type treaties provide objective metrics. The scoring function would weight votes on arms control treaties, defense authorization amendments, and non-proliferation funding. Defense contractor opposition creates concentrated costs; security benefits are diffuse.
+**Nuclear disarmament.** Verified warhead reductions under START-type treaties provide objective metrics. The scoring function would weight votes on arms control treaties, military authorization amendments, and non-proliferation funding. Defense contractor opposition creates concentrated costs; security benefits are diffuse.
 
 **Pandemic preparedness.** WHO Joint External Evaluation scores and pandemic preparedness funding levels are measurable. Health security appropriations votes provide a scoring basis. Pharmaceutical incumbent opposition and budget competition create concentrated resistance; pandemic prevention benefits the global population.
 
@@ -1369,7 +1369,7 @@ Important limitations remain. Gaming and metric corruption require ongoing insti
 
 The biggest challenge is political: **concentrated interests threatened by IABs will attempt to regulate them out of existence before they can demonstrate effectiveness.**
 
-If IABs successfully redirect even 1% of military spending (\$24B globally), defense contractors will face real losses. They will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
+If IABs successfully redirect even 1% of military spending (\$24B globally), military contractors will face real losses. They will deploy their existing lobbying infrastructure to ban, restrict, or capture the mechanism. Potential regulatory attacks include:
 
 - **Campaign finance regulation:** Classify IAB-funded independent expenditures as illegal coordination
 - **Securities regulation:** Prohibit retail investment in "political outcome bonds"
@@ -1406,10 +1406,10 @@ First-year expected ROI: 272%, with the revenue stream continuing in perpetuity.
 
 The bootstrap phase requires \$200M-$2B, which is small relative to the aggregate capital available to diffuse beneficiaries:
 
-- **Concentrated opposition** (defense contractors, fossil fuel companies): \$5 trillion market cap, spending \$100M-$1B/year on lobbying
+- **Concentrated opposition** (military contractors, fossil fuel companies): \$5 trillion market cap, spending \$100M-$1B/year on lobbying
 - **Diffuse beneficiaries** (everyone who benefits from cures, climate stability): \$454 trillion household wealth (Section 2.3)
 
-The 90:1 capital advantage means that **even if concentrated interests attempt counter-lobbying, they face a resource constraint.** If defense contractors allocate \$500M to kill IABs, diffuse beneficiaries can deploy \$5B in response, and still represent only 0.001% of available household wealth. The political change ROI (100-10,000x) that defense contractors exploit becomes accessible to millions of retail investors.
+The 90:1 capital advantage means that **even if concentrated interests attempt counter-lobbying, they face a resource constraint.** If military contractors allocate \$500M to kill IABs, diffuse beneficiaries can deploy \$5B in response, and still represent only 0.001% of available household wealth. The political change ROI (100-10,000x) that military contractors exploit becomes accessible to millions of retail investors.
 
 **Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than 272% expected ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise \$200M?" but "can we structure the offering legally?"
 
@@ -1657,7 +1657,7 @@ where:
 - Tier 2: General health policy positions
 - Tier 3: Pharmaceutical industry positions remain available but global health leadership positions closed
 
-**Calibration notes.** Pharmaceutical industry lobbying exceeds \$300M annually. However, pandemic preparedness funding faces less concentrated opposition than defense or fossil fuels, suggesting lower IAB funding thresholds may achieve incentive compatibility.
+**Calibration notes.** Pharmaceutical industry lobbying exceeds \$300M annually. However, pandemic preparedness funding faces less concentrated opposition than military or fossil fuels, suggesting lower IAB funding thresholds may achieve incentive compatibility.
 
 ### B.4 Comparative Analysis
 

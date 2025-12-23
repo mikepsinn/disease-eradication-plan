@@ -4,7 +4,7 @@
  * This script hides the quarto-margin-sidebar when window width is less than 1111px
  * and shows it when window width is greater than or equal to 1111px.
  *
- * Version: 2.0.0 - Simplified to width-based visibility only
+ * Version: 3.0.0 - Performance optimized to eliminate layout thrashing
  */
 
 (function() {
@@ -40,37 +40,24 @@
       return;
     }
 
+    // Add CSS for rollup state if not already present
+    injectStyles();
+
     // Re-entry guard to prevent observer feedback loops
     let isUpdating = false;
 
-    // Function to hide sidebar
+    // Function to hide sidebar (single DOM mutation)
     function hideSidebar() {
-      // Check if already hidden - prevent unnecessary mutations
       if (marginSidebar.classList.contains('rollup')) {
-        return;
-      }
-
-      const sidebarChildren = marginSidebar.children;
-      for (const child of sidebarChildren) {
-        child.style.opacity = '0';
-        child.style.overflow = 'hidden';
-        child.style.pointerEvents = 'none';
+        return; // Already hidden
       }
       marginSidebar.classList.add('rollup');
     }
 
-    // Function to show sidebar
+    // Function to show sidebar (single DOM mutation)
     function showSidebar() {
-      // Check if already shown - prevent unnecessary mutations
       if (!marginSidebar.classList.contains('rollup')) {
-        return;
-      }
-
-      const sidebarChildren = marginSidebar.children;
-      for (const child of sidebarChildren) {
-        child.style.opacity = '1';
-        child.style.overflow = '';
-        child.style.pointerEvents = '';
+        return; // Already shown
       }
       marginSidebar.classList.remove('rollup');
     }
@@ -84,28 +71,52 @@
 
       isUpdating = true;
 
-      try {
-        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      // Use requestAnimationFrame for visual updates to avoid forced reflow
+      requestAnimationFrame(() => {
+        try {
+          // Batch read: read layout property first
+          const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
-        if (windowWidth < WIDTH_THRESHOLD) {
-          hideSidebar();
-        } else {
-          showSidebar();
+          // Batch write: modify DOM after all reads complete
+          if (windowWidth < WIDTH_THRESHOLD) {
+            hideSidebar();
+          } else {
+            showSidebar();
+          }
+        } finally {
+          // Always reset the guard, even if an error occurs
+          isUpdating = false;
         }
-      } finally {
-        // Always reset the guard, even if an error occurs
-        isUpdating = false;
-      }
+      });
     }
 
-    // Monitor for window resize
+    // Monitor for window resize with debouncing (increased from 50ms to 150ms)
     let resizeTimeout;
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(updateSidebarVisibility, 50);
-    });
+      resizeTimeout = setTimeout(updateSidebarVisibility, 150);
+    }, { passive: true });
 
     // Initial check
     updateSidebarVisibility();
+  }
+
+  // Inject CSS styles for .rollup class
+  function injectStyles() {
+    // Check if styles already injected
+    if (document.getElementById('quarto-sidebar-fix-styles')) {
+      return;
+    }
+
+    const style = document.createElement('style');
+    style.id = 'quarto-sidebar-fix-styles';
+    style.textContent = `
+      #quarto-margin-sidebar.rollup > * {
+        opacity: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+      }
+    `;
+    document.head.appendChild(style);
   }
 })();

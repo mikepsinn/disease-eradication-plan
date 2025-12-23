@@ -132,7 +132,7 @@ The twist: you're going to do this anyway. Not because it's right (though it is)
 1. The rich humans want {{< var victory_bond_annual_return_pct >}} returns (they're very focused)
 2. The politicians want to keep their jobs (they're very ambitious)
 3. The voters want free healthcare (they're very sick)
-4. The defense contractors want money (they don't care where it comes from)
+4. The military contractors want money (they don't care where it comes from)
 
 Everyone's interest aligns perfectly to accidentally save humanity. It's like you're going to cure death by mistake while trying to get rich.
 
@@ -214,7 +214,7 @@ This costs about 50 cents per person, which is cheaper than a candy bar and achi
 
 #### Step 3: The Stakeholder Realignment
 
-You give {{< var treaty_campaign_budget_lobbying >}} in papers to the humans whose job is "convincing politicians that defense is profitable." You show them the math: {{< var victory_bond_annual_return_pct >}} vs their current 8% death-machine dividends.
+You give {{< var treaty_campaign_budget_lobbying >}} in papers to the humans whose job is "convincing politicians that military is profitable." You show them the math: {{< var victory_bond_annual_return_pct >}} vs their current 8% death-machine dividends.
 
 Suddenly they realize curing humans is just conflict in reverse, which is still a form of business, so they're comfortable with it.
 
@@ -308,7 +308,7 @@ This shopping list includes:
 
 - Nuclear bombs.
 - Bullets.
-- AI defense-bots.
+- AI military-bots.
 - Invisible jets that cost more than hospitals.
 - Satellites that can see your bald spot from space.
 - Probably some kind of earthquake machine.
@@ -366,7 +366,7 @@ Every nation redirects just **1.0%** of their current budget to fund hyper-effic
 
 {{< include knowledge/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
-There would still be {{< var global_military_spending_annual_2024 >}} left for defense and bombs and stuff.
+There would still be {{< var global_military_spending_annual_2024 >}} left for military and bombs and stuff.
 {{< var global_military_spending_post_treaty_annual_2024 >}} is enough to engage every man, woman, and child on Earth 20 times which should be more than sufficient.
 
 ### Why Decentralization Works
@@ -455,7 +455,7 @@ Here's the deal you offer investors:
 - They give you: $1,000 in papers with dead presidents
 - You give them: $2,718 yearly in papers with the same dead presidents but more of them
 
-How does money multiply like rabbits? The treaty unlocks {{< var treaty_annual_funding >}} annually from the defense budget.
+How does money multiply like rabbits? The treaty unlocks {{< var treaty_annual_funding >}} annually from the military budget.
 Investors get 10% because they had the revolutionary idea of "what if we didn't all die?"
 
 $$
@@ -525,7 +525,7 @@ Politicians are simple organisms with one evolutionary drive: public support. Yo
 The conversation goes:
 
 - Representative: "{{< var treaty_campaign_voting_bloc_target >}} million voters want to not die"
-- Politician: "But defense contractors give me papers"
+- Politician: "But military contractors give me papers"
 - You: "Here's more papers plus those {{< var treaty_campaign_voting_bloc_target >}} million votes"
 - Politician: "I've always been very passionate about helping sick people!" (they discovered this passion approximately 3 seconds ago)
 
