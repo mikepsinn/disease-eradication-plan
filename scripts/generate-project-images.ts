@@ -13,7 +13,7 @@ import { getBookFilesForProcessing, stringifyWithFrontmatter } from './lib/file-
 dotenv.config();
 
 /**
- * Generate OG image and infographic for a single file
+ * Generate OG image, infographic, and slide for a single file
  */
 async function generateImageForFile(filePath: string): Promise<void> {
   console.log(`\n[*] Processing: ${filePath}`);
@@ -24,12 +24,13 @@ async function generateImageForFile(filePath: string): Promise<void> {
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(fileContent);
 
-  // Check if already has both images
+  // Check if already has all images
   const hasOgImage = frontmatter.image && frontmatter.image.includes('-og.png');
   const hasInfographic = body.includes(`${fileName}-infographic.png`);
+  const hasSlide = body.includes(`${fileName}-slide.png`);
 
-  if (hasOgImage && hasInfographic) {
-    console.log(`[SKIP] Already has both OG image and infographic`);
+  if (hasOgImage && hasInfographic && hasSlide) {
+    console.log(`[SKIP] Already has all images (OG, infographic, slide)`);
     return;
   }
 
@@ -45,18 +46,20 @@ async function generateImageForFile(filePath: string): Promise<void> {
   const relativePath = path.relative(process.cwd(), filePath);
   const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
+  const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
   let ogImagePath: string | null = null;
   let infographicImagePath: string | null = null;
+  let slideImagePath: string | null = null;
 
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage) {
     console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Please generate a social media image for the following content.
-Use a fun retro futuristic style.
+    const ogPrompt = `Please generate an engaging social media image for the following content.
+Use a minimalist retro futuristic style.
 
 ---
-${fileContent}
+${body}
 ---`;
 
     const ogFiles = await generateAndSaveImages({
@@ -77,16 +80,16 @@ ${fileContent}
   // Generate infographic (detailed, full-size)
   if (!hasInfographic) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Please generate an infographic for the following content.
-Use a fun retro futuristic style.
+    const infographicPrompt = `Please generate a simpel infographic for the following content.
+Use a minimalist retro futuristic style.
 
 ---
-${fileContent}
+${body}
 ---`;
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
-      aspectRatio: '16:9',
+      aspectRatio: '9:16',
       outputDir: infographicOutputDir,
       filePrefix: `${fileName}-infographic`,
     });
@@ -99,8 +102,33 @@ ${fileContent}
     }
   }
 
+  // Generate slide (PowerPoint-optimized presentation)
+  if (!hasSlide) {
+    console.log(`  Generating slide (PowerPoint-optimized)...`);
+    const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
+Use a minimalist retro futuristic style.
+
+---
+${body}
+---`;
+
+    const slideFiles = await generateAndSaveImages({
+      prompt: slidePrompt,
+      aspectRatio: '16:9',
+      outputDir: slideOutputDir,
+      filePrefix: `${fileName}-slide`,
+    });
+
+    if (slideFiles && slideFiles.length > 0) {
+      slideImagePath = path.relative(process.cwd(), slideFiles[0]).replace(/\\/g, '/');
+      console.log(`  [OK] Generated slide: ${slideImagePath}`);
+    } else {
+      console.log(`  [WARN] No slide generated`);
+    }
+  }
+
   // Update file if we generated any new images
-  if (ogImagePath || infographicImagePath) {
+  if (ogImagePath || infographicImagePath || slideImagePath) {
     let updatedBody = body;
     const updatedFrontmatter = { ...frontmatter };
 
