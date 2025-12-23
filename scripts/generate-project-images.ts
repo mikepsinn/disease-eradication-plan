@@ -7,7 +7,12 @@ import path from 'path';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
 import { generateAndSaveImages } from './lib/genai-image.js';
-import { getBookFilesForProcessing, stringifyWithFrontmatter } from './lib/file-utils.js';
+import {
+  getBookFilesForProcessing,
+  stringifyWithFrontmatter,
+  loadQuartoVariables,
+  replaceQuartoVariables
+} from './lib/file-utils.js';
 
 // Load environment variables
 dotenv.config();
@@ -15,9 +20,14 @@ dotenv.config();
 /**
  * Generate OG image, infographic, and slide for a single file
  * @param filePath Path to the QMD file
+ * @param variables Map of variable names to values for replacement
  * @param forceRegenerate If true, regenerate images even if they already exist
  */
-async function generateImageForFile(filePath: string, forceRegenerate = false): Promise<void> {
+async function generateImageForFile(
+  filePath: string,
+  variables: Map<string, string>,
+  forceRegenerate = false
+): Promise<void> {
   console.log(`\n[*] Processing: ${filePath}`);
 
   const fileName = path.basename(filePath, '.qmd');
@@ -25,6 +35,9 @@ async function generateImageForFile(filePath: string, forceRegenerate = false): 
   // Read file with frontmatter
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(fileContent);
+
+  // Replace Quarto variables with actual values for LLM
+  const bodyWithReplacedVariables = replaceQuartoVariables(body, variables);
 
   // Skip if no title or description
   if (!frontmatter.title && !frontmatter.description) {
@@ -66,7 +79,7 @@ async function generateImageForFile(filePath: string, forceRegenerate = false): 
 Use a fun retro futuristic style and large text.
 
 ---
-${body}
+${bodyWithReplacedVariables}
 ---`;
 
     const ogFiles = await generateAndSaveImages({
@@ -91,7 +104,7 @@ ${body}
 Use a fun retro futuristic style and large text.
 
 ---
-${body}
+${bodyWithReplacedVariables}
 ---`;
 
     const infographicFiles = await generateAndSaveImages({
@@ -116,7 +129,7 @@ ${body}
 Use a fun retro futuristic style and large text.
 
 ---
-${body}
+${bodyWithReplacedVariables}
 ---`;
 
     const slideFiles = await generateAndSaveImages({
@@ -183,6 +196,11 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
   console.log('Generating OG images for book chapters');
   console.log('='.repeat(60) + '\n');
 
+  // Load variables for replacement
+  console.log('[*] Loading variables from _variables.yml...');
+  const variables = await loadQuartoVariables();
+  console.log(`[OK] Loaded ${variables.size} variables\n`);
+
   // Get all book files
   console.log('[*] Loading book files...');
   const allBookFiles = await getBookFilesForProcessing();
@@ -227,7 +245,7 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
   for (const filePath of bookFiles) {
     try {
       filesProcessed++;
-      await generateImageForFile(filePath, forceRegenerate);
+      await generateImageForFile(filePath, variables, forceRegenerate);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {

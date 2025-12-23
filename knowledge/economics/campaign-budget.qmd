@@ -35,7 +35,7 @@ This {{< var treaty_campaign_total_cost >}} will:
 - AI lawyers + human review: {{< var campaign_legal_ai_budget >}} (robots draft, humans fix the stupid parts)
 - AI-coded platforms: {{< var campaign_platform_development >}} (GitHub but with more begging)
 - Viral bribes: {{< var campaign_viral_content_budget >}} (humans recruit humans for pocket change)
-- Strategic lobbying: {{< var campaign_lobbying_us >}} (bribe only the humans who matter)
+- Strategic lobbying: {{< var campaign_lobbying_us >}} (legally bribe only the humans who matter)
 - **Total: {{< var treaty_campaign_total_cost >}}** (80% savings, same corruption)
 
 ### The Minimum Viable Budget
@@ -211,7 +211,7 @@ Unused funds roll into:
 Here's how professional democracy corruption works:
 
 - AI identifies which humans can be bribed to change laws
-- You bribe those specific humans (not all humans, just the useful ones)
+- You (legally) bribe those specific humans (not all humans, just the useful ones)
 - Focus: US ({{< var campaign_lobbying_us >}}), EU ({{< var campaign_lobbying_eu >}}), G20 ({{< var campaign_lobbying_g20_millions >}})
 - AI writes the laws, lawyers make them legal-sounding
 

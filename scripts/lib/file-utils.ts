@@ -710,3 +710,63 @@ export async function bulkReplaceInQmdFiles(
 
   return result;
 }
+
+// --- Quarto Variable Replacement Utilities ---
+
+/**
+ * Load and parse _variables.yml file
+ * @returns Map of variable names to plain text values (HTML stripped)
+ */
+export async function loadQuartoVariables(): Promise<Map<string, string>> {
+  const variablesPath = path.join(getProjectRoot(), '_variables.yml');
+  const variablesContent = await fs.readFile(variablesPath, 'utf-8');
+  const variables = yaml.load(variablesContent) as Record<string, string>;
+
+  const variableMap = new Map<string, string>();
+
+  // Extract plain text values from HTML-formatted variables
+  for (const [key, value] of Object.entries(variables)) {
+    // Skip citation and LaTeX variables (they end with _cite or _latex)
+    if (key.endsWith('_cite') || key.endsWith('_latex')) {
+      continue;
+    }
+
+    // Extract text between > and </a> tags (for HTML-formatted values)
+    const match = value.match(/>([^<]+)<\/a>/);
+    if (match) {
+      variableMap.set(key, match[1]);
+    } else {
+      // If no HTML tags, use the value as-is
+      variableMap.set(key, value);
+    }
+  }
+
+  return variableMap;
+}
+
+/**
+ * Replace Quarto variables in content with actual values
+ * Replaces patterns like {{< var variable_name >}} with values from _variables.yml
+ * @param content Content with Quarto variable syntax
+ * @param variables Map of variable names to values (use loadQuartoVariables() to get this)
+ * @param warnOnMissing If true, logs a warning when a variable is not found (default: false)
+ * @returns Content with variables replaced
+ */
+export function replaceQuartoVariables(
+  content: string,
+  variables: Map<string, string>,
+  warnOnMissing: boolean = false
+): string {
+  // Replace all {{< var variable_name >}} patterns
+  return content.replace(/\{\{<\s*var\s+([a-z0-9_]+)\s*>\}\}/gi, (match, varName) => {
+    const value = variables.get(varName);
+    if (value) {
+      return value;
+    }
+    // If variable not found, leave it as-is
+    if (warnOnMissing) {
+      console.warn(`  [WARN] Variable not found: ${varName}`);
+    }
+    return match;
+  });
+}
