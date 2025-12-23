@@ -151,8 +151,8 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
   // Filter to specific file if provided
   let bookFiles: string[];
   if (fileFilter) {
-    bookFiles = allBookFiles.filter(f => f.includes(fileFilter));
-    if (bookFiles.length === 0) {
+    const matchingFiles = allBookFiles.filter(f => f.includes(fileFilter));
+    if (matchingFiles.length === 0) {
       console.error(`ERROR: No files found matching "${fileFilter}"`);
       console.error('\nAvailable files:');
       allBookFiles.slice(0, 10).forEach(f => console.error(`  - ${f}`));
@@ -161,7 +161,17 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
       }
       process.exit(1);
     }
-    console.log(`[OK] Found ${bookFiles.length} file(s) matching "${fileFilter}"\n`);
+
+    // Only process the first matching file when filter is provided
+    bookFiles = [matchingFiles[0]];
+
+    if (matchingFiles.length > 1) {
+      console.log(`[INFO] Found ${matchingFiles.length} matching files, processing only the first one:`);
+      console.log(`  Selected: ${matchingFiles[0]}`);
+      console.log(`  Skipped: ${matchingFiles.slice(1).join(', ')}\n`);
+    } else {
+      console.log(`[OK] Found 1 file matching "${fileFilter}"\n`);
+    }
   } else {
     bookFiles = allBookFiles;
     console.log(`[OK] Found ${bookFiles.length} book files\n`);
