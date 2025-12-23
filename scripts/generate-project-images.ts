@@ -14,6 +14,7 @@ import {
   stringifyWithFrontmatter,
   getCleanedContentForLLM
 } from './lib/file-utils.js';
+import { ImagePrompts } from './lib/image-prompts.js';
 
 // Load environment variables
 dotenv.config();
@@ -186,17 +187,12 @@ async function generateImageForFile(
 
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage || forceRegenerate) {
-    console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Please generate an engaging, simple social media image for the following content.
-Use a fun retro futuristic style and large text.
-
----
-${cleanedBody}
----`;
+    console.log(`  Generating OG image (${ImagePrompts.og.description})...`);
+    const ogPrompt = ImagePrompts.og.buildPrompt(cleanedBody);
 
     const ogFiles = await generateAndSaveImages({
       prompt: ogPrompt,
-      aspectRatio: '16:9',
+      aspectRatio: ImagePrompts.og.aspectRatio,
       outputDir: ogOutputDir,
       filePrefix: `${fileName}-og`,
     });
@@ -211,17 +207,12 @@ ${cleanedBody}
 
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
-    console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Please generate a SIMPLE infographic for the following content.
-Use a fun retro futuristic style and LARGE text.
-
----
-${cleanedBody}
----`;
+    console.log(`  Generating infographic (${ImagePrompts.infographic.description})...`);
+    const infographicPrompt = ImagePrompts.infographic.buildPrompt(cleanedBody);
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
-      aspectRatio: '9:16',
+      aspectRatio: ImagePrompts.infographic.aspectRatio,
       outputDir: infographicOutputDir,
       filePrefix: `${fileName}-infographic`,
     });
@@ -236,17 +227,12 @@ ${cleanedBody}
 
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasSlide || forceRegenerate) {
-    console.log(`  Generating slide (PowerPoint-optimized)...`);
-    const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
-Use a fun retro futuristic style and large text.
-
----
-${cleanedBody}
----`;
+    console.log(`  Generating slide (${ImagePrompts.slide.description})...`);
+    const slidePrompt = ImagePrompts.slide.buildPrompt(cleanedBody);
 
     const slideFiles = await generateAndSaveImages({
       prompt: slidePrompt,
-      aspectRatio: '16:9',
+      aspectRatio: ImagePrompts.slide.aspectRatio,
       outputDir: slideOutputDir,
       filePrefix: `${fileName}-slide`,
     });
