@@ -29,7 +29,7 @@ except ImportError:
     pass  # dotenv not available, continue without it
 
 
-# Netlify site ID for the IAB paper site (iab.dih.earth)
+# Netlify site ID for the IAB paper site (iab.warondisease.org)
 # Can be overridden via NETLIFY_IAB_SITE_ID environment variable
 NETLIFY_SITE_ID = os.getenv("NETLIFY_IAB_SITE_ID", "")
 DEFAULT_OUTPUT_DIR = "_site/iab"

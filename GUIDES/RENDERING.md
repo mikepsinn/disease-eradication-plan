@@ -68,7 +68,7 @@ python scripts/render-wishocracy.py
 ### 4. Incentive Alignment Bonds Paper
 **Config**: `_quarto-iab.yml`
 **Output**: `_site/iab/`
-**Site**: https://iab.dih.earth
+**Site**: https://iab.warondisease.org
 
 Renders the IAB academic paper as a standalone document with the paper as the landing page.
 
@@ -87,7 +87,7 @@ python scripts/render-iab.py
 - The render script copies `incentive-alignment-bonds-paper.qmd` to `index.qmd` at root (creating the landing page)
 - Relative paths are automatically updated (e.g., `../figures/` becomes `knowledge/figures/`)
 - Renders to `index.html` (landing page) and `index.pdf` (download)
-- Paper is the first thing visitors see at https://iab.dih.earth
+- Paper is the first thing visitors see at https://iab.warondisease.org
 
 **Features**:
 - Paper serves as the site landing page
@@ -123,7 +123,7 @@ After rendering:
    - Automatically copied to `../wishocracy/public/paper/`
    - Commit and push the wishocracy submodule
    - Deploy wishocracy repo to wishocracy.org
-4. **IAB**: Deploy `_site/iab/` to iab.dih.earth
+4. **IAB**: Deploy `_site/iab/` to iab.warondisease.org
 
 ## Notes
 

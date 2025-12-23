@@ -180,13 +180,16 @@ def generate_parameters_and_calculations_qmd(
             else:
                 display_title = smart_title_case(param_name)
 
-            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
-            content.append("")
-
             # Value
             unit = getattr(value, "unit", "")
             formatted = format_parameter_value(value, unit)
-            content.append(f"**Value**: {formatted}")
+
+            # Header shows parameter name and value
+            content.append(f"### {display_title}: {formatted} {{#sec-{param_name.lower()}}}")
+            content.append("")
+
+            # Start collapsible section for all details
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Show full details\"}")
             content.append("")
 
             # Description
@@ -372,6 +375,8 @@ def generate_parameters_and_calculations_qmd(
                 content.append(f"{{{{< include ../figures/exceedance-{param_name.lower()}.qmd >}}}}")
                 content.append("")
 
+            # End collapsible section
+            content.append(":::")
             content.append("")
 
     # External parameters section
@@ -392,13 +397,16 @@ def generate_parameters_and_calculations_qmd(
             else:
                 display_title = smart_title_case(param_name)
 
-            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
-            content.append("")
-
             # Value
             unit = getattr(value, "unit", "")
             formatted = format_parameter_value(value, unit)
-            content.append(f"**Value**: {formatted}")
+
+            # Header shows parameter name and value
+            content.append(f"### {display_title}: {formatted} {{#sec-{param_name.lower()}}}")
+            content.append("")
+
+            # Start collapsible section for all details
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Show full details\"}")
             content.append("")
 
             # Description
@@ -474,6 +482,8 @@ def generate_parameters_and_calculations_qmd(
                 content.append("*" + " • ".join(metadata) + "*")
                 content.append("")
 
+            # End collapsible section
+            content.append(":::")
             content.append("")
 
     # Core definitions section
@@ -492,13 +502,16 @@ def generate_parameters_and_calculations_qmd(
             else:
                 display_title = smart_title_case(param_name)
 
-            content.append(f"### {display_title} {{#sec-{param_name.lower()}}}")
-            content.append("")
-
             # Value
             unit = getattr(value, "unit", "")
             formatted = format_parameter_value(value, unit)
-            content.append(f"**Value**: {formatted}")
+
+            # Header shows parameter name and value
+            content.append(f"### {display_title}: {formatted} {{#sec-{param_name.lower()}}}")
+            content.append("")
+
+            # Start collapsible section for all details
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Show full details\"}")
             content.append("")
 
             # Description
@@ -512,6 +525,9 @@ def generate_parameters_and_calculations_qmd(
 
             content.append("*Core definition*")
             content.append("")
+
+            # End collapsible section
+            content.append(":::")
             content.append("")
 
     # Add lazy-loading script for images (Intersection Observer with conservative threshold)

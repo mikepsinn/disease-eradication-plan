@@ -155,13 +155,13 @@ class SearchIndexGenerator:
         'economics': {
             'config_file': '_quarto-economics.yml',
             'output_dir': '_site/economics',
-            'base_url': 'https://economics.WarOnDisease.org',
+            'base_url': 'https://impact.warondisease.org',
             'chapters_key': 'book.chapters'
         },
         'iab': {
             'config_file': '_quarto-iab.yml',
             'output_dir': '_site/iab',
-            'base_url': 'https://iab.dih.earth',
+            'base_url': 'https://iab.warondisease.org',
             'chapters_key': 'book.chapters'
         },
         'wishocracy': {

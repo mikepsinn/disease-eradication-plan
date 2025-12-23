@@ -75,7 +75,7 @@ def main():
         print("=" * 80)
 
         print(f"\n[INFO] Rendered IAB paper available at _site/iab/")
-        print("[INFO] Deploy to https://iab.dih.earth")
+        print("[INFO] Deploy to https://iab.warondisease.org")
 
     except subprocess.TimeoutExpired:
         print("[ERROR] Render timed out after 600 seconds")

@@ -9,7 +9,7 @@ This repository uses GitHub Actions to automatically build and deploy multiple s
 | **Main Book** | https://manual.WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_book/warondisease` |
 | **Economics** | https://impact.dih.earth | `NETLIFY_ECONOMICS_SITE_ID` | `_site/economics` |
 | **Wishocracy Paper** | https://paper.wishocracy.org | `NETLIFY_WISHOCRACY_SITE_ID` | `_site/wishocracy` |
-| **IAB Paper** | https://iab.dih.earth | `NETLIFY_IAB_SITE_ID` | `_site/iab` |
+| **IAB Paper** | https://iab.warondisease.org | `NETLIFY_IAB_SITE_ID` | `_site/iab` |
 
 ## Required GitHub Secrets
 
@@ -45,11 +45,11 @@ The Netlify site ID for paper.wishocracy.org
 4. Add as GitHub secret: `NETLIFY_WISHOCRACY_SITE_ID`
 
 ### 5. NETLIFY_IAB_SITE_ID ⚠️ **NEW - Required**
-The Netlify site ID for iab.dih.earth
+The Netlify site ID for iab.warondisease.org
 
 **Setup steps:**
 1. Create a new site in Netlify
-2. Configure custom domain: `iab.dih.earth`
+2. Configure custom domain: `iab.warondisease.org`
 3. Copy the Site ID
 4. Add as GitHub secret: `NETLIFY_IAB_SITE_ID`
 
@@ -66,7 +66,7 @@ The GitHub Actions workflow (`.github/workflows/publish.yml`) performs these ste
 6. **Render Wishocracy paper** - Paper to `_site/wishocracy/`
 7. **Deploy Wishocracy** - Upload to Netlify (paper.wishocracy.org)
 8. **Render IAB paper** - Paper to `_site/iab/`
-9. **Deploy IAB** - Upload to Netlify (iab.dih.earth)
+9. **Deploy IAB** - Upload to Netlify (iab.warondisease.org)
 10. **Generate PDFs** - Create book PDF and EPUB versions
 
 ### Deploy Phase (Jobs: `deploy-main`, `deploy-economics`, `deploy-wishocracy`, `deploy-iab`)
