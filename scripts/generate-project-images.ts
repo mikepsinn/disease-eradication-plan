@@ -40,7 +40,9 @@ async function generateImageForFile(filePath: string): Promise<void> {
   console.log(`  Description: ${frontmatter.description || '(no description)'}`);
 
   // Generate simple prompt with file content
-  const prompt = `Please generate an infographic for the following book chapter. Use a size typical for Open Graph (OG) images for social media sharing.
+  const prompt = `Please generate an infographic for the following content.
+  Use a fun retro futuristic style with vibrant colors and bold shapes.
+   Use a size typical for Open Graph (OG) images for social media sharing.
 
 ---
 ${fileContent}

@@ -445,9 +445,10 @@ export async function parseQuartoYml(): Promise<BookStructure> {
 }
 
 /**
- * Gets all book chapter and appendix files, excluding references.qmd, includes folder, and figures folder
+ * Gets all book chapter and appendix files, excluding references.qmd, includes folder, figures folder, and variant files
  * This is the standard list of files to process for most review/edit operations
- * Excluded directories:
+ * Excluded files:
+ * - Files ending with -academic.qmd or -foundations.qmd (content variants)
  * - knowledge/includes/ (shared includes like setup-parameters.qmd)
  * - knowledge/figures/ (all figure files - code, not prose)
  * - knowledge/appendix/parameters-and-calculations.qmd (auto-generated)
@@ -471,13 +472,16 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
   let allFiles = [...indexFiles, ...bookFiles];
   console.log(`  → Combined total: ${allFiles.length} files`);
 
-  // Filter out references.qmd, auto-generated files, includes folder, figures folder, and any files in _freeze or _book directories
-  console.log('  → Filtering out references.qmd, includes/, figures/, and _freeze/_book directories...');
+  // Filter out references.qmd, auto-generated files, includes folder, figures folder, variant files, and any files in _freeze or _book directories
+  console.log('  → Filtering out references.qmd, -academic/-foundations variants, includes/, figures/, and _freeze/_book directories...');
   allFiles = allFiles.filter(file => {
     const normalizedPath = file.replace(/\\/g, '/');
 
     // Exclude references.qmd
     if (normalizedPath.includes('references.qmd')) return false;
+
+    // Exclude -academic and -foundations variants
+    if (normalizedPath.endsWith('-academic.qmd') || normalizedPath.endsWith('-foundations.qmd')) return false;
 
     // Exclude knowledge/includes folder
     if (normalizedPath.includes('knowledge/includes/')) return false;
