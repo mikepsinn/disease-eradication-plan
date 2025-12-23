@@ -187,12 +187,12 @@ async function generateImageForFile(
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage || forceRegenerate) {
     console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Create an engaging infographic about the following topic, designed for social media sharing.
+    const ogPrompt = `Create an engaging infographic about the the most important points in the following content, designed for social media sharing.
 
 Content:
 ${cleanedBody}
 
-Visual Style: 1960s-inspired psychedelic aesthetic with vibrant neon colors, bold geometric shapes, halftone dot patterns, and large legible typography. Composition should be clean and minimalist with strong visual hierarchy.`;
+Visual Style: retro-futuristic.`;
 
     const ogFiles = await generateAndSaveImages({
       prompt: ogPrompt,
@@ -212,12 +212,12 @@ Visual Style: 1960s-inspired psychedelic aesthetic with vibrant neon colors, bol
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Create a detailed vertical infographic explaining the following topic.
+    const infographicPrompt = `Create a detailed vertical infographic explaining the most important points in the following content.
 
 Content:
 ${cleanedBody}
 
-Visual Style: 1960s-70s psychedelic-inspired design with vibrant color palette (hot pink, electric blue, neon green), halftone textures, bold geometric patterns, and large clear typography. Use a clean layout with strong visual hierarchy and minimal text.`;
+Visual Style: fun retro-futuristic.`;
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
@@ -237,12 +237,12 @@ Visual Style: 1960s-70s psychedelic-inspired design with vibrant color palette (
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasSlide || forceRegenerate) {
     console.log(`  Generating slide (PowerPoint-optimized)...`);
-    const slidePrompt = `Create a presentation slide visualizing the following content.
+    const slidePrompt = `Create a presentation slide visualizing the most important points in the following content.
 
 Content:
 ${cleanedBody}
 
-Visual Style: Modern presentation design inspired by 1960s aesthetics - vibrant color blocking, clean geometric shapes, halftone patterns, and large legible sans-serif typography. Maintain strong contrast and visual clarity suitable for projection.`;
+Visual Style: fun retro-futuristic.`;
 
     const slideFiles = await generateAndSaveImages({
       prompt: slidePrompt,
