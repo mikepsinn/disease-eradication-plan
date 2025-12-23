@@ -14,8 +14,10 @@ dotenv.config();
 
 /**
  * Generate OG image, infographic, and slide for a single file
+ * @param filePath Path to the QMD file
+ * @param forceRegenerate If true, regenerate images even if they already exist
  */
-async function generateImageForFile(filePath: string): Promise<void> {
+async function generateImageForFile(filePath: string, forceRegenerate = false): Promise<void> {
   console.log(`\n[*] Processing: ${filePath}`);
 
   const fileName = path.basename(filePath, '.qmd');
@@ -24,12 +26,13 @@ async function generateImageForFile(filePath: string): Promise<void> {
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(fileContent);
 
-  // Check if already has all images
+  // Check if already has images
   const hasOgImage = frontmatter.image && frontmatter.image.includes('-og.png');
   const hasInfographic = body.includes(`${fileName}-infographic.png`);
   const hasSlide = body.includes(`${fileName}-slide.png`);
 
-  if (hasOgImage && hasInfographic && hasSlide) {
+  // Skip if already has all images (unless forceRegenerate is true)
+  if (!forceRegenerate && hasOgImage && hasInfographic && hasSlide) {
     console.log(`[SKIP] Already has all images (OG, infographic, slide)`);
     return;
   }
@@ -210,10 +213,13 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
   let filesGenerated = 0;
   let filesFailed = 0;
 
+  // Force regeneration if processing a specific file
+  const forceRegenerate = !!fileFilter;
+
   for (const filePath of bookFiles) {
     try {
       filesProcessed++;
-      await generateImageForFile(filePath);
+      await generateImageForFile(filePath, forceRegenerate);
       filesGenerated++;
     } catch (error) {
       if (error instanceof Error && error.message === 'Image generation failed') {
