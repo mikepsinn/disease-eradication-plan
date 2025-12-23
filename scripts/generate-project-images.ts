@@ -55,8 +55,8 @@ async function generateImageForFile(filePath: string): Promise<void> {
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage) {
     console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Please generate an engaging social media image for the following content.
-Use a minimalist retro futuristic style.
+    const ogPrompt = `Please generate an engaging, mobile-friendly social media image for the following content.
+Use a fun retro futuristic style.
 
 ---
 ${body}
@@ -80,8 +80,8 @@ ${body}
   // Generate infographic (detailed, full-size)
   if (!hasInfographic) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Please generate a simpel infographic for the following content.
-Use a minimalist retro futuristic style.
+    const infographicPrompt = `Please generate a mobile-friendly infographic for the following content.
+Use a fun retro futuristic style.
 
 ---
 ${body}
@@ -106,7 +106,7 @@ ${body}
   if (!hasSlide) {
     console.log(`  Generating slide (PowerPoint-optimized)...`);
     const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
-Use a minimalist retro futuristic style.
+Use a fun retro futuristic style.
 
 ---
 ${body}
@@ -206,7 +206,7 @@ async function generateBookChapterImages(fileFilter?: string): Promise<void> {
   }
 
   let filesProcessed = 0;
-  let filesSkipped = 0;
+  const filesSkipped = 0;
   let filesGenerated = 0;
   let filesFailed = 0;
 
@@ -251,9 +251,16 @@ async function main() {
   // Parse command line arguments
   const args = process.argv.slice(2);
 
-  // Look for --file parameter
+  // Support both --file <name> and just <name> as positional argument
+  let fileFilter: string | undefined;
   const fileIndex = args.indexOf('--file');
-  const fileFilter = fileIndex !== -1 && args[fileIndex + 1] ? args[fileIndex + 1] : undefined;
+  if (fileIndex !== -1 && args[fileIndex + 1]) {
+    // --file <name> syntax
+    fileFilter = args[fileIndex + 1];
+  } else if (args.length > 0 && !args[0].startsWith('--')) {
+    // Positional argument syntax
+    fileFilter = args[0];
+  }
 
   if (fileFilter) {
     console.log(`\nGenerating image for file matching: "${fileFilter}"\n`);
