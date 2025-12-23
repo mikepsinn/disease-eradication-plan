@@ -97,8 +97,8 @@ ${cleanedBody}
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Please generate a simple infographic for the following content.
-Use a fun retro futuristic style and large text.
+    const infographicPrompt = `Please generate a SIMPLE infographic for the following content.
+Use a fun retro futuristic style and LARGE text.
 
 ---
 ${cleanedBody}

@@ -445,36 +445,60 @@ export async function parseQuartoYml(): Promise<BookStructure> {
 }
 
 /**
- * Gets all book chapter and appendix files, excluding references.qmd, includes folder, figures folder, and variant files
+ * Gets all book chapter and appendix files from _quarto-book.yml, excluding variant files
  * This is the standard list of files to process for most review/edit operations
+ * Only includes files explicitly listed in the book configuration
  * Excluded files:
  * - Files ending with -academic.qmd or -foundations.qmd (content variants)
- * - knowledge/includes/ (shared includes like setup-parameters.qmd)
- * - knowledge/figures/ (all figure files - code, not prose)
+ * - references.qmd (reference material)
  * - knowledge/appendix/parameters-and-calculations.qmd (auto-generated)
  */
 export async function getBookFilesForProcessing(): Promise<string[]> {
-  console.log('  → Loading glob module...');
-  const { glob } = await import('glob');
+  console.log('  → Reading _quarto-book.yml...');
+  const quartoYmlPath = path.join(getProjectRoot(), '_quarto-book.yml');
+  const quartoYmlContent = await fs.readFile(quartoYmlPath, 'utf-8');
+  const doc: any = yaml.load(quartoYmlContent);
 
-  // Find all .qmd files in knowledge
-  console.log('  → Searching for .qmd files in knowledge/**/*.qmd...');
-  const bookFiles = await glob('knowledge/**/*.qmd');
-  console.log(`  → Found ${bookFiles.length} files in knowledge`);
+  // Helper function to recursively extract file paths from chapters/sections
+  const extractFiles = (section: any[]): string[] => {
+    let fileList: string[] = [];
+    if (!section) return fileList;
 
-  // Also include index*.qmd files from root (index.qmd, index-book.qmd, etc.)
-  console.log('  → Searching for .qmd files in root...');
-  const rootFiles = await glob('*.qmd');
-  const indexFiles = rootFiles.filter(f => f.startsWith('index'));
-  console.log(`  → Found ${indexFiles.length} index file(s)`);
+    for (const item of section) {
+      if (typeof item === 'string') {
+        // Direct file reference: "knowledge/problem.qmd"
+        fileList.push(item);
+      } else if (item && item.href) {
+        // Object with href: { href: "index.qmd" }
+        fileList.push(item.href);
+      } else if (item && item.chapters) {
+        // Nested chapters: { part: "...", chapters: [...] }
+        fileList = fileList.concat(extractFiles(item.chapters));
+      } else if (item && item.contents) {
+        // Sidebar contents
+        fileList = fileList.concat(extractFiles(item.contents));
+      }
+    }
+    return fileList;
+  };
 
-  // Combine all files
-  let allFiles = [...indexFiles, ...bookFiles];
-  console.log(`  → Combined total: ${allFiles.length} files`);
+  let allFiles: string[] = [];
 
-  // Filter out references.qmd, auto-generated files, includes folder, figures folder, variant files, and any files in _freeze or _book directories
-  console.log('  → Filtering out references.qmd, -academic/-foundations variants, includes/, figures/, and _freeze/_book directories...');
+  // Extract files from book.chapters
+  if (doc.book && doc.book.chapters) {
+    console.log('  → Extracting files from book.chapters...');
+    allFiles = allFiles.concat(extractFiles(doc.book.chapters));
+  }
+
+  // Note: appendices are now included in chapters (see line 108 comment in _quarto-book.yml)
+  // They're organized as parts within the chapters array
+
+  console.log(`  → Found ${allFiles.length} files in _quarto-book.yml`);
+
+  // Filter out variant files, references, and auto-generated files
+  console.log('  → Filtering out -academic/-foundations variants, references.qmd, and auto-generated files...');
   allFiles = allFiles.filter(file => {
+    if (!file) return false;
     const normalizedPath = file.replace(/\\/g, '/');
 
     // Exclude references.qmd
@@ -483,20 +507,12 @@ export async function getBookFilesForProcessing(): Promise<string[]> {
     // Exclude -academic and -foundations variants
     if (normalizedPath.endsWith('-academic.qmd') || normalizedPath.endsWith('-foundations.qmd')) return false;
 
-    // Exclude knowledge/includes folder
-    if (normalizedPath.includes('knowledge/includes/')) return false;
-
-    // Exclude knowledge/figures folder (all figure files)
-    if (normalizedPath.includes('knowledge/figures/')) return false;
-
-    // Exclude _freeze and _book directories
-    if (normalizedPath.includes('_freeze/') || normalizedPath.includes('_book/')) return false;
-
     // Exclude auto-generated parameters-and-calculations.qmd
     if (normalizedPath.includes('knowledge/appendix/parameters-and-calculations.qmd')) return false;
 
     return true;
   });
+
   console.log(`  → Final count after filtering: ${allFiles.length} files`);
 
   return allFiles;
@@ -773,7 +789,7 @@ export function replaceQuartoVariables(
 
 /**
  * Clean Quarto/Markdown content for LLM processing
- * Strips includes, simplifies links, removes HTML tags
+ * Strips includes, simplifies links, removes HTML tags, removes chapter references
  * @param content Raw QMD content
  * @returns Cleaned content suitable for LLM
  */
@@ -792,10 +808,14 @@ export function cleanContentForLLM(content: string): string {
   // 4. Remove citation syntax: [@citation] -> citation
   cleaned = cleaned.replace(/\[@([^\]]+)\]/g, '$1');
 
-  // 5. Remove excessive blank lines (more than 2 consecutive newlines)
+  // 5. Remove sentences mentioning "chapter" or "chapters" (case-insensitive)
+  // Matches sentences containing the word "chapter" and removes them
+  cleaned = cleaned.replace(/[^.!?]*\bchapters?\b[^.!?]*[.!?]\s*/gi, '');
+
+  // 6. Remove excessive blank lines (more than 2 consecutive newlines)
   cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
-  // 6. Trim whitespace
+  // 7. Trim whitespace
   cleaned = cleaned.trim();
 
   return cleaned;
@@ -817,7 +837,8 @@ let cachedVariables: Map<string, string> | null = null;
  * 4. Strips HTML tags
  * 5. Simplifies markdown links to plain text
  * 6. Cleans citation syntax
- * 7. Removes excessive blank lines
+ * 7. Removes sentences mentioning "chapter" or "chapters"
+ * 8. Removes excessive blank lines
  *
  * @param content Raw QMD content with Quarto syntax
  * @returns Clean plain text ready for LLM processing
@@ -850,7 +871,9 @@ export async function prepareContentForLLM(content: string): Promise<string> {
  * 2. Parses frontmatter and extracts body
  * 3. Loads and replaces Quarto variables (cached)
  * 4. Removes Quarto includes, HTML tags, markdown links
- * 5. Cleans citation syntax and excessive whitespace
+ * 5. Cleans citation syntax
+ * 6. Removes sentences mentioning "chapter" or "chapters"
+ * 7. Removes excessive whitespace
  *
  * @param filePath Absolute path to the QMD file
  * @returns Clean plain text ready for LLM processing
