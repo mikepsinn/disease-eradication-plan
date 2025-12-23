@@ -770,3 +770,99 @@ export function replaceQuartoVariables(
     return match;
   });
 }
+
+/**
+ * Clean Quarto/Markdown content for LLM processing
+ * Strips includes, simplifies links, removes HTML tags
+ * @param content Raw QMD content
+ * @returns Cleaned content suitable for LLM
+ */
+export function cleanContentForLLM(content: string): string {
+  let cleaned = content;
+
+  // 1. Remove Quarto includes (e.g., {{< include /path/to/file.qmd >}})
+  cleaned = cleaned.replace(/\{\{<\s*include\s+[^>]+>\}\}/gi, '');
+
+  // 2. Strip HTML tags (keep the text inside)
+  cleaned = cleaned.replace(/<[^>]+>/g, '');
+
+  // 3. Simplify markdown links: [text](url) -> text
+  cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+
+  // 4. Remove citation syntax: [@citation] -> citation
+  cleaned = cleaned.replace(/\[@([^\]]+)\]/g, '$1');
+
+  // 5. Remove excessive blank lines (more than 2 consecutive newlines)
+  cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
+
+  // 6. Trim whitespace
+  cleaned = cleaned.trim();
+
+  return cleaned;
+}
+
+// Cache for variables to avoid reloading on every call
+let cachedVariables: Map<string, string> | null = null;
+
+/**
+ * Prepare QMD content for LLM processing (all-in-one convenience function)
+ *
+ * This combines variable replacement and content cleaning in a single call.
+ * Use this when sending Quarto content to LLMs for processing.
+ *
+ * Processing steps:
+ * 1. Loads variables from _variables.yml (cached after first load)
+ * 2. Replaces Quarto variables ({{< var name >}}) with actual values
+ * 3. Removes Quarto includes
+ * 4. Strips HTML tags
+ * 5. Simplifies markdown links to plain text
+ * 6. Cleans citation syntax
+ * 7. Removes excessive blank lines
+ *
+ * @param content Raw QMD content with Quarto syntax
+ * @returns Clean plain text ready for LLM processing
+ *
+ * @example
+ * const cleanContent = await prepareContentForLLM(rawContent);
+ * // Send cleanContent to GPT-4, Claude, Gemini, etc.
+ */
+export async function prepareContentForLLM(content: string): Promise<string> {
+  // Load variables if not already cached
+  if (!cachedVariables) {
+    cachedVariables = await loadQuartoVariables();
+  }
+
+  // First replace variables with actual values
+  const withReplacedVars = replaceQuartoVariables(content, cachedVariables);
+
+  // Then clean the content for LLM
+  return cleanContentForLLM(withReplacedVars);
+}
+
+/**
+ * Read and prepare QMD file content for LLM processing
+ *
+ * This is the complete end-to-end function for getting LLM-ready content from a file.
+ * Reads the file, extracts body content, replaces variables, and cleans markup.
+ *
+ * Processing steps:
+ * 1. Reads file from disk
+ * 2. Parses frontmatter and extracts body
+ * 3. Loads and replaces Quarto variables (cached)
+ * 4. Removes Quarto includes, HTML tags, markdown links
+ * 5. Cleans citation syntax and excessive whitespace
+ *
+ * @param filePath Absolute path to the QMD file
+ * @returns Clean plain text ready for LLM processing
+ *
+ * @example
+ * const cleanContent = await getCleanedContentForLLM('knowledge/proof/historical-precedents.qmd');
+ * const response = await sendToLLM(cleanContent);
+ */
+export async function getCleanedContentForLLM(filePath: string): Promise<string> {
+  // Read file and parse frontmatter
+  const { body } = await readFileWithMatter(filePath);
+
+  // Prepare content for LLM (replaces variables and cleans markup)
+  return prepareContentForLLM(body);
+}
