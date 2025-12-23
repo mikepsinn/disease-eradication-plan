@@ -13,6 +13,9 @@ tags:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+![Infographic](/assets/infographics/knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases-infographic.png)
+
+
 ![NIH Inefficiency](../../assets/infographics/NIH Inefficiency Infographic.png)
 
 With an annual budget of approximately **$51 billion**, the National Institutes of Health has spent over **$1.1 trillion** since 1970 (inflation-adjusted).
@@ -21,11 +24,7 @@ Number of diseases the NIH has eradicated: [**Zero**](../references.qmd#nih-erad
 
 Success rate: 0.00% for complete disease elimination.
 
-[A medical politburo in Maryland](../references.qmd#nih-decision-makers-200-people) deciding which of [10,000 diseases](../references.qmd#number-of-known-diseases) matter. Yours doesn't.
-
-They fund what gets published, not what saves lives.
-
-Result: [55 million die annually](../references.qmd#who-daily-deaths) while papers get published.
+[55 million die annually](../references.qmd#who-daily-deaths) while papers accumulate.
 
 To be fair, eradicating disease is hard.
 Just ask the WHO, who [eradicated smallpox for \$300 million](../references.qmd#smallpox-eradication-roi) (smallpox was WHO, not NIH).
@@ -191,34 +190,6 @@ Meanwhile, the UK RECOVERY trial:
 
 The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed).
 
-## Americans Got Sicker While NIH Got Richer
-
-"But maybe the NIH improved health in other ways!" you might say, hope flickering in your eyes.
-
-Let's check the scoreboard since NIH's founding in 1887 (and massive expansion post-1970):
-
-**1970:**
-
-- Obesity rate: [13%](../references.qmd#us-health-stats-1970)
-- Diabetes rate: [3.4%](../references.qmd#us-health-stats-1970)
-- Life expectancy: [70.8 years](../references.qmd#us-health-stats-1970)
-
-**2024:**
-
-- Obesity rate: [42%](../references.qmd#obesity-epidemic-stats) (3X worse)
-- Diabetes rate: [11.6%](../references.qmd#us-health-stats-2024) (3.4X worse)
-- Life expectancy: [76.4 years](../references.qmd#us-health-stats-2024) (only +5.6 years, [mostly from fewer people smoking](../references.qmd#life-expectancy-gains-smoking-reduction))
-
-During the NIH's trillion-dollar spending spree, Americans got:
-
-- Fatter
-- Sicker
-- More diabetic
-- More depressed
-- More medicated
-
-It's like hiring a personal trainer and gaining 100 pounds.
-
 ## Political Funding: The Disease Popularity Contest
 
 Which diseases get funded?
@@ -234,15 +205,6 @@ Why?
 Pink ribbons are better at lobbying than clogged arteries.
 
 The NIH budget is set by Congress, which means diseases compete in a popularity contest.
-
-## Innovation Despite the NIH, Not Because of It
-
-Major breakthroughs while NIH was busy:
-
-- **mRNA vaccines:** [Developed by companies, not NIH](../references.qmd#mrna-vaccine-development-history)
-- **CRISPR:** [Discovered in yogurt bacteria research](../references.qmd#crispr-discovery-yogurt-bacteria)
-- **Immunotherapy:** [Pioneered despite medical establishment opposition](../references.qmd#immunotherapy-pioneers-nih-rejection)
-- **COVID vaccines:** Industry sprint while NIH planned meetings
 
 ## The Efficiency Rating: Burning Life-Years
 
@@ -340,7 +302,3 @@ For \$1.1 trillion, we got:
 - Thousands of career administrators
 - Hundreds of committees
 - Zero eradicated diseases
-
-But hey, at least the committees have subcommittees.
-And those subcommittees have working groups.
-And those working groups have task forces.
