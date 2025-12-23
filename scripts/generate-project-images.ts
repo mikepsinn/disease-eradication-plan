@@ -26,17 +26,6 @@ async function generateImageForFile(filePath: string, forceRegenerate = false): 
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(fileContent);
 
-  // Check if already has images
-  const hasOgImage = frontmatter.image && frontmatter.image.includes('-og.png');
-  const hasInfographic = body.includes(`${fileName}-infographic.png`);
-  const hasSlide = body.includes(`${fileName}-slide.png`);
-
-  // Skip if already has all images (unless forceRegenerate is true)
-  if (!forceRegenerate && hasOgImage && hasInfographic && hasSlide) {
-    console.log(`[SKIP] Already has all images (OG, infographic, slide)`);
-    return;
-  }
-
   // Skip if no title or description
   if (!frontmatter.title && !frontmatter.description) {
     console.log(`[SKIP] No title or description for prompt generation`);
@@ -51,12 +40,27 @@ async function generateImageForFile(filePath: string, forceRegenerate = false): 
   const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
   const slideOutputDir = path.join(process.cwd(), 'assets', 'slides', path.dirname(relativePath));
 
+  // Check if image files already exist on disk
+  const ogImageFile = path.join(ogOutputDir, `${fileName}-og.png`);
+  const infographicImageFile = path.join(infographicOutputDir, `${fileName}-infographic.png`);
+  const slideImageFile = path.join(slideOutputDir, `${fileName}-slide.png`);
+
+  const hasOgImage = await fs.access(ogImageFile).then(() => true).catch(() => false);
+  const hasInfographic = await fs.access(infographicImageFile).then(() => true).catch(() => false);
+  const hasSlide = await fs.access(slideImageFile).then(() => true).catch(() => false);
+
+  // Skip if already has all images (unless forceRegenerate is true)
+  if (!forceRegenerate && hasOgImage && hasInfographic && hasSlide) {
+    console.log(`[SKIP] Already has all images (OG, infographic, slide)`);
+    return;
+  }
+
   let ogImagePath: string | null = null;
   let infographicImagePath: string | null = null;
   let slideImagePath: string | null = null;
 
   // Generate OG image (optimized for social media thumbnails)
-  if (!hasOgImage) {
+  if (!hasOgImage || forceRegenerate) {
     console.log(`  Generating OG image (social media optimized)...`);
     const ogPrompt = `Please generate an engaging, simple social media image for the following content.
 Use a fun retro futuristic style and large text.
@@ -81,7 +85,7 @@ ${body}
   }
 
   // Generate infographic (detailed, full-size)
-  if (!hasInfographic) {
+  if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (detailed)...`);
     const infographicPrompt = `Please generate a simple infographic for the following content.
 Use a fun retro futuristic style and large text.
@@ -106,7 +110,7 @@ ${body}
   }
 
   // Generate slide (PowerPoint-optimized presentation)
-  if (!hasSlide) {
+  if (!hasSlide || forceRegenerate) {
     console.log(`  Generating slide (PowerPoint-optimized)...`);
     const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
 Use a fun retro futuristic style and large text.
@@ -142,18 +146,22 @@ ${body}
 
     // Insert infographic at top of content (after setup-parameters include)
     if (infographicImagePath) {
-      const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
-      const infographicMarkdown = `![Infographic](/${infographicImagePath})`;
+      // Check if infographic reference already exists in the body
+      const infographicPattern = `${fileName}-infographic.png`;
+      if (!updatedBody.includes(infographicPattern)) {
+        const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
+        const infographicMarkdown = `![Infographic](/${infographicImagePath})`;
 
-      // Find the include directive and insert infographic after it
-      if (updatedBody.includes(includeDirective)) {
-        updatedBody = updatedBody.replace(
-          includeDirective,
-          `${includeDirective}\n\n${infographicMarkdown}\n`
-        );
-      } else {
-        // If no include directive, insert at the very beginning
-        updatedBody = `${infographicMarkdown}\n\n${updatedBody}`;
+        // Find the include directive and insert infographic after it
+        if (updatedBody.includes(includeDirective)) {
+          updatedBody = updatedBody.replace(
+            includeDirective,
+            `${includeDirective}\n\n${infographicMarkdown}\n`
+          );
+        } else {
+          // If no include directive, insert at the very beginning
+          updatedBody = `${infographicMarkdown}\n\n${updatedBody}`;
+        }
       }
     }
 
