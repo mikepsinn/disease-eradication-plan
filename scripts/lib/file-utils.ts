@@ -869,11 +869,12 @@ export async function prepareContentForLLM(content: string): Promise<string> {
  * Processing steps:
  * 1. Reads file from disk
  * 2. Parses frontmatter and extracts body
- * 3. Loads and replaces Quarto variables (cached)
- * 4. Removes Quarto includes, HTML tags, markdown links
- * 5. Cleans citation syntax
- * 6. Removes sentences mentioning "chapter" or "chapters"
- * 7. Removes excessive whitespace
+ * 3. Prepends title (as H1) and description (in bold) from frontmatter
+ * 4. Loads and replaces Quarto variables (cached)
+ * 5. Removes Quarto includes, HTML tags, markdown links
+ * 6. Cleans citation syntax
+ * 7. Removes sentences mentioning "chapter" or "chapters"
+ * 8. Removes excessive whitespace
  *
  * @param filePath Absolute path to the QMD file
  * @returns Clean plain text ready for LLM processing
@@ -884,8 +885,22 @@ export async function prepareContentForLLM(content: string): Promise<string> {
  */
 export async function getCleanedContentForLLM(filePath: string): Promise<string> {
   // Read file and parse frontmatter
-  const { body } = await readFileWithMatter(filePath);
+  const { frontmatter, body } = await readFileWithMatter(filePath);
+
+  // Build header section from frontmatter
+  let headerSection = '';
+
+  if (frontmatter.title) {
+    headerSection += `# ${frontmatter.title}\n\n`;
+  }
+
+  if (frontmatter.description) {
+    headerSection += `**${frontmatter.description}**\n\n`;
+  }
+
+  // Combine header with body
+  const contentWithHeader = headerSection + body;
 
   // Prepare content for LLM (replaces variables and cleans markup)
-  return prepareContentForLLM(body);
+  return prepareContentForLLM(contentWithHeader);
 }
