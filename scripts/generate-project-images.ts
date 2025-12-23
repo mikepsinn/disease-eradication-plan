@@ -13,7 +13,7 @@ import { getBookFilesForProcessing, stringifyWithFrontmatter } from './lib/file-
 dotenv.config();
 
 /**
- * Generate OG image for a single file
+ * Generate OG image and infographic for a single file
  */
 async function generateImageForFile(filePath: string): Promise<void> {
   console.log(`\n[*] Processing: ${filePath}`);
@@ -24,9 +24,12 @@ async function generateImageForFile(filePath: string): Promise<void> {
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const { data: frontmatter, content: body } = matter(fileContent);
 
-  // Skip if already has an image
-  if (frontmatter.image) {
-    console.log(`[SKIP] Already has image: ${frontmatter.image}`);
+  // Check if already has both images
+  const hasOgImage = frontmatter.image && frontmatter.image.includes('-og.png');
+  const hasInfographic = body.includes(`${fileName}-infographic.png`);
+
+  if (hasOgImage && hasInfographic) {
+    console.log(`[SKIP] Already has both OG image and infographic`);
     return;
   }
 
@@ -39,50 +42,97 @@ async function generateImageForFile(filePath: string): Promise<void> {
   console.log(`  Title: ${frontmatter.title || '(no title)'}`);
   console.log(`  Description: ${frontmatter.description || '(no description)'}`);
 
-  // Generate simple prompt with file content
-  const prompt = `Please generate an social image for the following content.
-  Use a fun retro futuristic style with vibrant colors and bold shapes.
-   Use a size typical for Open Graph (OG) images for social media sharing.
+  const relativePath = path.relative(process.cwd(), filePath);
+  const ogOutputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
+  const infographicOutputDir = path.join(process.cwd(), 'assets', 'infographics', path.dirname(relativePath));
+
+  let ogImagePath: string | null = null;
+  let infographicImagePath: string | null = null;
+
+  // Generate OG image (optimized for social media thumbnails)
+  if (!hasOgImage) {
+    console.log(`  Generating OG image (social media optimized)...`);
+    const ogPrompt = `Please generate a social media image for the following content.
+Use a fun retro futuristic style.
 
 ---
 ${fileContent}
 ---`;
 
-  // Determine output directory and filename
-  const relativePath = path.relative(process.cwd(), filePath);
-  const outputDir = path.join(process.cwd(), 'assets', 'og-images', path.dirname(relativePath));
-  const filePrefix = fileName;
+    const ogFiles = await generateAndSaveImages({
+      prompt: ogPrompt,
+      aspectRatio: '16:9',
+      outputDir: ogOutputDir,
+      filePrefix: `${fileName}-og`,
+    });
 
-  console.log(`  Generating OG image...`);
+    if (ogFiles && ogFiles.length > 0) {
+      ogImagePath = path.relative(process.cwd(), ogFiles[0]).replace(/\\/g, '/');
+      console.log(`  [OK] Generated OG image: ${ogImagePath}`);
+    } else {
+      console.log(`  [WARN] No OG image generated`);
+    }
+  }
 
-  // Generate the image
-  const generatedFiles = await generateAndSaveImages({
-    prompt,
-    aspectRatio: '16:9',
-    outputDir,
-    filePrefix,
-  });
+  // Generate infographic (detailed, full-size)
+  if (!hasInfographic) {
+    console.log(`  Generating infographic (detailed)...`);
+    const infographicPrompt = `Please generate an infographic for the following content.
+Use a fun retro futuristic style.
 
-  if (generatedFiles && generatedFiles.length > 0) {
-    // Get the relative path for the image (relative to project root)
-    const imagePath = path.relative(process.cwd(), generatedFiles[0]).replace(/\\/g, '/');
+---
+${fileContent}
+---`;
 
-    console.log(`  [OK] Generated image: ${imagePath}`);
+    const infographicFiles = await generateAndSaveImages({
+      prompt: infographicPrompt,
+      aspectRatio: '16:9',
+      outputDir: infographicOutputDir,
+      filePrefix: `${fileName}-infographic`,
+    });
 
-    // Update frontmatter with image path
-    const updatedFrontmatter = {
-      ...frontmatter,
-      image: `/${imagePath}`
-    };
+    if (infographicFiles && infographicFiles.length > 0) {
+      infographicImagePath = path.relative(process.cwd(), infographicFiles[0]).replace(/\\/g, '/');
+      console.log(`  [OK] Generated infographic: ${infographicImagePath}`);
+    } else {
+      console.log(`  [WARN] No infographic generated`);
+    }
+  }
+
+  // Update file if we generated any new images
+  if (ogImagePath || infographicImagePath) {
+    let updatedBody = body;
+    const updatedFrontmatter = { ...frontmatter };
+
+    // Add OG image to frontmatter
+    if (ogImagePath) {
+      updatedFrontmatter.image = `/${ogImagePath}`;
+    }
+
+    // Insert infographic at top of content (after setup-parameters include)
+    if (infographicImagePath) {
+      const includeDirective = '{{< include /knowledge/includes/setup-parameters.qmd >}}';
+      const infographicMarkdown = `![Infographic](/${infographicImagePath})`;
+
+      // Find the include directive and insert infographic after it
+      if (updatedBody.includes(includeDirective)) {
+        updatedBody = updatedBody.replace(
+          includeDirective,
+          `${includeDirective}\n\n${infographicMarkdown}\n`
+        );
+      } else {
+        // If no include directive, insert at the very beginning
+        updatedBody = `${infographicMarkdown}\n\n${updatedBody}`;
+      }
+    }
 
     // Write updated file
-    const updatedContent = stringifyWithFrontmatter(body, updatedFrontmatter);
+    const updatedContent = stringifyWithFrontmatter(updatedBody, updatedFrontmatter);
     await fs.writeFile(filePath, updatedContent, 'utf-8');
 
-    console.log(`  [OK] Updated frontmatter in ${filePath}`);
+    console.log(`  [OK] Updated ${filePath}`);
   } else {
-    console.log(`  [WARN] No image files generated`);
-    throw new Error('Image generation failed');
+    console.log(`  [SKIP] No new images to add`);
   }
 }
 
