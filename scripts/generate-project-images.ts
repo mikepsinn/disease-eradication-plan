@@ -187,12 +187,12 @@ async function generateImageForFile(
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage || forceRegenerate) {
     console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Create an engaging infographic about the the most important points in the following content, designed for social media sharing.
+    const ogPrompt = `Please generate an engaging, simple social media image for the following content.
+Use a fun retro futuristic style and large text.
 
-Content:
+---
 ${cleanedBody}
-
-Visual Style: retro-futuristic.`;
+---`;
 
     const ogFiles = await generateAndSaveImages({
       prompt: ogPrompt,
@@ -212,12 +212,12 @@ Visual Style: retro-futuristic.`;
   // Generate infographic (detailed, full-size)
   if (!hasInfographic || forceRegenerate) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Create a detailed vertical infographic explaining the most important points in the following content.
+    const infographicPrompt = `Please generate a SIMPLE infographic for the following content.
+Use a fun retro futuristic style and LARGE text.
 
-Content:
+---
 ${cleanedBody}
-
-Visual Style: fun retro-futuristic.`;
+---`;
 
     const infographicFiles = await generateAndSaveImages({
       prompt: infographicPrompt,
@@ -237,12 +237,12 @@ Visual Style: fun retro-futuristic.`;
   // Generate slide (PowerPoint-optimized presentation)
   if (!hasSlide || forceRegenerate) {
     console.log(`  Generating slide (PowerPoint-optimized)...`);
-    const slidePrompt = `Create a presentation slide visualizing the most important points in the following content.
+    const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
+Use a fun retro futuristic style and large text.
 
-Content:
+---
 ${cleanedBody}
-
-Visual Style: fun retro-futuristic.`;
+---`;
 
     const slideFiles = await generateAndSaveImages({
       prompt: slidePrompt,
