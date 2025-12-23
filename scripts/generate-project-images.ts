@@ -55,8 +55,8 @@ async function generateImageForFile(filePath: string): Promise<void> {
   // Generate OG image (optimized for social media thumbnails)
   if (!hasOgImage) {
     console.log(`  Generating OG image (social media optimized)...`);
-    const ogPrompt = `Please generate an engaging, mobile-friendly social media image for the following content.
-Use a fun retro futuristic style.
+    const ogPrompt = `Please generate an engaging, simple social media image for the following content.
+Use a fun retro futuristic style and large text.
 
 ---
 ${body}
@@ -80,8 +80,8 @@ ${body}
   // Generate infographic (detailed, full-size)
   if (!hasInfographic) {
     console.log(`  Generating infographic (detailed)...`);
-    const infographicPrompt = `Please generate a mobile-friendly infographic for the following content.
-Use a fun retro futuristic style.
+    const infographicPrompt = `Please generate a simple infographic for the following content.
+Use a fun retro futuristic style and large text.
 
 ---
 ${body}
@@ -106,7 +106,7 @@ ${body}
   if (!hasSlide) {
     console.log(`  Generating slide (PowerPoint-optimized)...`);
     const slidePrompt = `Please generate a simple PowerPoint presentation slide for the following content.
-Use a fun retro futuristic style.
+Use a fun retro futuristic style and large text.
 
 ---
 ${body}
