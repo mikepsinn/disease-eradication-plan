@@ -109,7 +109,7 @@ format:
     mermaid:
       theme: neutral
     echo: false
-    number-sections: true
+    number-sections: false
     toc: true
     toc-depth: 3
     css:
@@ -170,7 +170,7 @@ format:
     echo: false
     toc: true
     toc-depth: 3
-    number-sections: true
+    number-sections: false
     colorlinks: true
     geometry:
       - top=1in

@@ -413,7 +413,7 @@ format:
     epub-chapter-level: 2
     # Display options
     echo: false
-    number-sections: true
+    number-sections: false
     # Keep figures in knowledge/figures/ to avoid Windows path issues
     keep-ipynb: false
     # Metadata inherited from project-level metadata above
@@ -496,7 +496,7 @@ format:
     echo: false
     toc: true
     toc-depth: 3
-    number-sections: true
+    number-sections: false
     colorlinks: true
     geometry:
       - top=1in

@@ -6,9 +6,7 @@ project:
     - assets/
   render:
     # Economics Analysis
-    - index.qmd # ✓ Style reviewed 2025-01-15 (copied from knowledge/economics/economics.qmd)
-    - knowledge/economics/economics.qmd # Legacy overview referenced throughout economic plan
-    - knowledge/economics/peace-dividend.qmd # ✓ Style reviewed 2025-01-15
+    - knowledge/economics/economics.qmd # Primary economic analysis (serves as index via copy)
     - knowledge/economics/health-dividend.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/financial-plan.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/economics/campaign-budget.qmd # ✓ Style reviewed 2025-01-15
@@ -43,9 +41,7 @@ project:
     - knowledge/legal/election-law.qmd
     # Call to Action
     - knowledge/call-to-action/your-personal-benefits.qmd
-    - knowledge/call-to-action/three-actions.qmd
     # Supporting Data
-    - knowledge/appendix/humanity-budget-overview.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/global-government-medical-research-spending.qmd # ✓ Style reviewed 2025-01-15
     - knowledge/appendix/military-vs-clinical-trials-funding-imbalance.qmd
     - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd # ✓ Style reviewed 2025-01-15
@@ -104,8 +100,6 @@ website:
     style: "floating"
     search: true
     contents:
-      - href: index.qmd
-        text: "Executive Summary"
       - section: "Key Resources"
         contents:
           - href: knowledge/economics/economics.qmd
@@ -146,8 +140,6 @@ website:
             text: "Incentive Alignment Mechanisms"
       - section: "Economic Models & ROI Analysis"
         contents:
-          - href: knowledge/economics/peace-dividend.qmd
-            text: "Peace Dividend Model"
           - href: knowledge/economics/health-dividend.qmd
             text: "Health Dividend Model"
           - href: knowledge/economics/central-banks.qmd
@@ -208,8 +200,6 @@ website:
             text: "Capital Raising Strategy"
       - section: "Supporting Data & Evidence"
         contents:
-          - href: knowledge/appendix/humanity-budget-overview.qmd
-            text: "Global Health Budget Overview"
           - href: knowledge/appendix/global-government-medical-research-spending.qmd
             text: "Government Medical R&D Spending"
           - href: knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
