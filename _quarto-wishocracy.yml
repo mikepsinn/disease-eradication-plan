@@ -28,7 +28,7 @@ website:
     right:
       - icon: file-pdf
         text: "Download PDF"
-        href: /index.pdf
+        href: /wishocracy-rappa-paper.pdf
       - text: "References"
         href: /#references
       - text: "DIH"
@@ -167,6 +167,7 @@ format:
           <meta property="og:type" content="article">
           <meta property="og:url" content="https://wishocracy.org">
   pdf:
+    output-file: "wishocracy-rappa-paper.pdf"
     documentclass: article
     echo: false
     toc: true

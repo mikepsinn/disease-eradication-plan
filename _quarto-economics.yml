@@ -85,6 +85,9 @@ website:
   page-navigation: true
   navbar:
     right:
+      - icon: file-pdf
+        text: "Download PDF"
+        href: /economics/dih-economic-models.pdf
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "IAB Paper"
@@ -301,7 +304,7 @@ jupyter: dih-project-kernel
 format:
   html:
     theme:
-      - lux
+      - cosmo
     mermaid:
       theme: neutral
     echo: false
@@ -398,19 +401,20 @@ format:
           <meta property="og:description" content="Economic analysis for a 1% treaty and decentralized framework for drug assessment initiative">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://impact.dih.earth">
-# PDF format disabled for website deployment - only HTML is needed
-  # pdf:
-  #   documentclass: scrreprt
-  #   echo: false
-  #   toc: true
-  #   toc-depth: 3
-  #   number-sections: true
-  #   colorlinks: true
-  #   geometry:
-  #     - top=1in
-  #     - bottom=1in
-  #     - left=1in
-  #     - right=1in
-  #   variables:
-  #     title: "DIH Economic Models"
-  #     description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"
+  pdf:
+    output-file: "dih-economic-models.pdf"
+    documentclass: article
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    variables:
+      title: "DIH Economic Models"
+      description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"

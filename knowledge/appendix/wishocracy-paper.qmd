@@ -45,17 +45,11 @@ image: /assets/og-images/knowledge/appendix/wishocracy-paper.png
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-::: {.callout-tip}
-Version 0.9 - Working Draft - Comments and critical feedback appreciated! Annotate via the sidebar or email <a href="mailto:mike@warondisease.org">mike@warondisease.org</a>.
-:::
+*Version 0.9 - Working Draft - Comments and critical feedback appreciated! Annotate via the sidebar or email <mike@warondisease.org>.*
 
-::: {.callout-important icon=false}
-## The Problem in One Sentence
-
-**Traditional voting mechanisms cannot capture the nuanced trade-offs citizens make across complex, multidimensional policy spaces, forcing democratic institutions to rely on representatives who systematically misalign with citizen preferences or on oversimplified binary choices that lose crucial information about preference intensity.**
+**The Problem in One Sentence:** Traditional voting mechanisms cannot capture the nuanced trade-offs citizens make across complex, multidimensional policy spaces, forcing democratic institutions to rely on representatives who systematically misalign with citizen preferences or on oversimplified binary choices that lose crucial information about preference intensity.
 
 **The Solution:** Wishocracy uses pairwise comparisons ('allocate $100 between cancer research and Alzheimer's research') to elicit preferences that are cognitively tractable for citizens while aggregating millions of comparisons into budget allocations based on collective preferences, intended to maximize societal welfare, that reflect both the number of supporters and the intensity of their preferences.
-:::
 
 # **Abstract**
 
@@ -141,8 +135,7 @@ The Wishocracy mechanism operates through the following process, which we term R
 
 {{< include ../figures/rappa-mechanism-flow-diagram.qmd >}}
 
-::: {.callout-note}
-## Scenario: The Town Budget
+### Scenario: The Town Budget
 
 Imagine Citizen Alice opening the Wishocracy app to help set her town's budget.
 
@@ -151,7 +144,6 @@ Imagine Citizen Alice opening the Wishocracy app to help set her town's budget.
 3.  **Comparison 2:** Next, she sees **"Fix Potholes" vs. "New Library Books"**. She thinks both are somewhat important but slightly prefers roads. She allocates **55%** to Potholes and **45%** to Books.
 4.  **Aggregation:** Thousands of other citizens make similar pairwise comparisons. Alice never sees "Park vs. Library," but the system infers the relationship (Park > Potholes > Library) through the transitive network of all citizens' choices.
 5.  **Result:** The aggregate preferences form a priority list where the Park gets the largest budget share, reflecting the high intensity of support from Alice and her neighbors.
-:::
 
 ## **Formal Properties**
 

@@ -45,9 +45,7 @@ format:
     fontsize: 11pt
 ---
 
-::: {.callout-tip}
-Version 0.9 - Working Draft - Comments and critical feedback appreciated! Annotate via the sidebar or email <a href="mailto:mike@warondisease.org">mike@warondisease.org</a>.
-:::
+*Version 0.9 - Working Draft - Comments and critical feedback appreciated! Annotate via the sidebar or email <mike@warondisease.org>.*
 
 ## Abstract
 
@@ -57,13 +55,9 @@ We prove conditions for Nash equilibrium, provide explicit functional forms and 
 
 ![The Incentive Alignment Bonds Mechanism](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
 
-::: {.callout-important icon=false}
-## The Problem in One Sentence
-
-**Politicians are currently rewarded for spending money on things that hurt society (weapons, fossil fuel subsidies) and punished for spending money on things that help society (cures, pandemic prevention), so government does the opposite of what would make our lives better.**
+**The Problem in One Sentence:** Politicians are currently rewarded for spending money on things that hurt society (weapons, fossil fuel subsidies) and punished for spending money on things that help society (cures, pandemic prevention), so government does the opposite of what would make our lives better.
 
 **The Solution:** Incentive Alignment Bonds (IABs) flip the incentives by creating a huge pool of money that rewards politicians (with campaign support and cushy post-office jobs) for supporting the stuff that actually helps people.
-:::
 
 ## Introduction
 
@@ -89,8 +83,7 @@ Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyze
 
 ![The relationship between public support and policy adoption. Whether a policy has 0% or 100% public support, its probability of adoption remains flat at around 30%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from @gilens2014 analysis of 1,779 policy decisions.](../../assets/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
-::: {.callout-note icon=false}
-## Key Results
+### Key Results
 
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
@@ -100,20 +93,16 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
 - **Wishocracy (Layer 2) prevents allocation capture** through random pairwise sampling that makes advertising economically infeasible (Section 6.2.3)
 - **Bootstrap problem is solvable**: ROI potential attracts risk-tolerant capital; capital asymmetry ensures scalability once proof-of-concept succeeds (Section 8.1)
-:::
 
-::: {.callout-tip icon=false}
-## Reader's Guide
+### Reader's Guide
 
 **For non-technical readers:** Read Sections 1-2 (problem and solution overview), 6 (governance architecture), and 7-8 (welfare analysis and implementation). The formal model (Section 3) can be skipped; the intuition is provided in Section 2 and visualized in figures.
 
 **For economists:** Focus on Section 3 (explicit functional forms and numerical calibration), Section 5 (legal architecture), Section 7 (welfare accounting), and Section 8 (bootstrap solution). The calibration in Section 3.3 shows both failure and success cases with realistic parameters.
 
 **For investors and philanthropists:** Read Section 2.2 (ROI calculation), Section 2.3 (capital asymmetry), Section 7.3 (mechanism BCR), and Section 8.1 (bootstrap problem solution). Expected returns derive from proven lobbying economics, not speculative outcomes.
-:::
 
-::: {.callout-note icon=false collapse="true"}
-## Key Terms for Non-Economists (Click to Expand)
+### Key Terms for Non-Economists
 
 **The Big Concepts:**
 
@@ -157,7 +146,6 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **VSL (Value of Statistical Life):** How much society values preventing one death (EPA uses ~$10M)
 
 For additional terms: definitions in parentheses on first use throughout the paper.
-:::
 
 This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or relying on benevolent decision-makers, IABs restructure the incentive environment so that rational self-interest points toward welfare-improving policies.
 
@@ -430,18 +418,7 @@ The IAB scoring system is structurally analogous to credit ratings: an independe
 
 ## Formal Model
 
-::: {.callout-tip icon=false}
-## For Non-Technical Readers: You Can Skip This Section
-
-**The key insight (in plain English):** We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get:
-1. Campaign support from independent political groups (money for ads)
-2. Better post-office job opportunities (lucrative fellowships, think tank positions)
-3. Higher public status (Wikipedia article length, media coverage)
-
-When the benefits from a higher score (campaign money + career prospects + reputation) exceed the costs (losing military contractor donations), supporting public goods becomes the rational, self-interested choice.
-
-**You can skip to Section 4** for the practical implementation details, or read Section 6 for the governance architecture. This section provides mathematical precision for economists who need to verify the mechanism works under formal assumptions.
-:::
+**For Non-Technical Readers:** You can skip this section. The key insight in plain English: We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get (1) campaign support from independent political groups, (2) better post-office job opportunities, and (3) higher public status. When these benefits exceed the costs (losing military contractor donations), supporting public goods becomes the rational choice. Skip to Section 4 for practical implementation or Section 6 for governance architecture.
 
 This section presents a formal model of political incentives under IABs. We state explicit assumptions, derive conditions for incentive compatibility (when doing the right thing is also the profitable thing), and characterize equilibria (stable outcomes). Appendix A provides detailed proofs.
 
