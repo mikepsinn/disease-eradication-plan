@@ -145,7 +145,7 @@ It's like how Linux is free but Red Hat makes money selling support. Except inst
 
 *When Your Meat Brain Gets Confused*
 
-Please open an issue or contact: **hello@dih.earth**
+Please open an issue or contact: **mike@warondisease.org**
 
 Wishonia and the community of humans trying not to be extinct appreciate your contribution.
 

@@ -115,8 +115,9 @@ format:
     toc-depth: 3
     css:
       - styles.css
+      - economics-overrides.css
     page-footer:
-      left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft v0.9"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
       right: "[Wishocracy.org](https://wishocracy.org)"
     include-in-footer:

@@ -78,8 +78,8 @@ profiles:
   #   - python scripts/post-render-validation.py
 
 website:
-  title: "DIH Economic Models"
-  description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"
+  title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
+  description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
   site-url: https://impact.dih.earth
   favicon: assets/icons/dih-icon-square.png
   page-navigation: true
@@ -242,12 +242,12 @@ metadata:
   primary-author: "Mike P. Sinn, Decentralized Institutes of Health"
   byline: "Mike P. Sinn, Decentralized Institutes of Health"
   human-author: "Mike P. Sinn"
-  author-email: "hello@dih.earth"
+  author-email: "mike@warondisease.org"
   author-url: "https://WarOnDisease.org"
   author-website: "https://WarOnDisease.org"
-  contact: "hello@dih.earth"
-  title: "DIH Economic Models"
-  description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA)"
+  contact: "mike@warondisease.org"
+  title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
+  description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
   abstract: "By redirecting 1% of global military spending to hyper-efficient pragmatic clinical trials, humanity can achieve 514 years of medical research in 20 years and shift the cure of every disease forward by 8.2 years, saving 416 million lives and generating $1.2 quadrillion in value."
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
@@ -283,7 +283,7 @@ metadata:
   publisher: "WarOnDisease.org"
   publisher-url: "https://WarOnDisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "hello@dih.earth"
+  publisher-email: "mike@warondisease.org"
   repo-url: "https://github.com/mikepsinn"
   issue-url: "https://github.com/mikepsinn"
   source-url: "https://github.com/mikepsinn"
@@ -315,15 +315,15 @@ format:
       - styles.css
       - economics-overrides.css
     page-footer:
-      left: "© 2025 [Mike P. Sinn](https://mikesinn.com)"
+      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) and Contributors | Working Draft"
       center: "[CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)"
       right: "[WarOnDisease.org](https://WarOnDisease.org)"
     include-in-footer:
       - text: |
           <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
             <p style="margin: 0.5rem 0;">
-              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> | 
-              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> | 
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> and Contributors | Working Draft |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
               <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
@@ -341,8 +341,8 @@ format:
       - text: |
           <footer style="text-align: center; padding: 2rem 1rem; border-top: 1px solid #d4c5b9; margin-top: 4rem; color: #8b7355; font-size: 0.9rem; background-color: #fdfdf8;">
             <p style="margin: 0.5rem 0;">
-              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> | 
-              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> | 
+              © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> and Contributors | Working Draft |
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
               <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
             </p>
             <p style="margin: 0.5rem 0; font-size: 0.85rem;">
@@ -395,10 +395,10 @@ format:
           <meta property="og:image:type" content="image/png">
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:image" content="https://impact.dih.earth/assets/icons/war-on-disease-og-1200x630.png">
-          <meta name="twitter:title" content="DIH Economic Models">
-          <meta name="twitter:description" content="Economic analysis for a 1% treaty and decentralized framework for drug assessment initiative">
-          <meta property="og:title" content="DIH Economic Models">
-          <meta property="og:description" content="Economic analysis for a 1% treaty and decentralized framework for drug assessment initiative">
+          <meta name="twitter:title" content="The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials">
+          <meta name="twitter:description" content="Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.">
+          <meta property="og:title" content="The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials">
+          <meta property="og:description" content="Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value.">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://impact.dih.earth">
   pdf:
@@ -416,5 +416,5 @@ format:
       - right=1in
     fontsize: 11pt
     variables:
-      title: "DIH Economic Models"
-      description: "Economic analysis and ROI calculations for a 1% treaty and decentralized framework for drug assessment (dFDA) initiative"
+      title: "The 1% Treaty: Health and Economic Impact of Redirecting 1% of Global Military Spending to Pragmatic Clinical Trials"
+      description: "Redirecting 1% of global military spending ($27B/yr) to pragmatic clinical trials advances cure access over 8.2 years saving ~416M lives at ≈$0.13 per DALY and generating ≈$1.19 quadrillion in long-run value."
