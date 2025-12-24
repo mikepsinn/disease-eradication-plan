@@ -9,6 +9,7 @@ tags:
   - peace-dividend
   - national-security
   - mutual-survival
+image: /assets/og-images/knowledge/solution/1-percent-treaty-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -216,7 +217,7 @@ So you don't frame this as "reducing military spending." You frame it as:
 
 ### Phase 1: The Whisper Campaign (Months 1-6)
 
-Start rumors in defense circles. "Have you heard about the 1% solution?" Make it sound like a secret military strategy. Use PowerPoints with lots of arrows.
+Start rumors in defense circles. "Have you heard about the 1% treaty?" Make it sound like a secret military strategy. Use PowerPoints with lots of arrows.
 
 ### Phase 2: The Think Tank Infection (Months 6-12)
 
@@ -280,7 +281,7 @@ Right now, [only 5 million people participate in trials annually](../appendix/cl
 
 #### With a 1% treaty + a decentralized framework for drug assessment
 
-- $110B total funding ($83B existing + {{< var treaty_annual_funding >}} from treaty)
+- $110B total funding ({{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty)
 - Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} per patient ({{< var trial_cost_reduction_factor >}}× cheaper)
 - 220M participants per year (44x acceleration)
 - Still only using 18% of available willing participants

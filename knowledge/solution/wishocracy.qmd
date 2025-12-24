@@ -10,9 +10,12 @@ tags:
   - collective-intelligence
   - resource-allocation
   - democracy-but-working
+image: /assets/og-images/knowledge/solution/wishocracy-og.png
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/solution/wishocracy-infographic.png)
+
 
 ![Wishocracy](../../assets/infographics/Wishocracy Infographic.png)
 
@@ -91,7 +94,7 @@ Your [decentralized framework for drug assessment (dFDA)](dfda.qmd) allocates re
 
 ---
 
-The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, or simply, the **Pairwise Smackdown**.
+The core of Wishocracy is a voting method so simple, even a congressman could do it. It's called Aggregated Pairwise Preference Allocation, or simply, the **Pairwise Slider Allocation**.
 
 Your brain can't rank a list of 20 priorities. It gives up around [item number seven](../references.qmd#cognitive-limit-seven-items). But it's fantastic at comparing two things.
 
@@ -101,7 +104,7 @@ Instead of asking, "Rank these 10,000 problems," the system asks:
 
 ![Wishocracy slider interface showing pairwise comparison between proposals](../../assets/wishocracy-slider.png)
 
-You make a choice. That's it. You do this a few times with different random pairs. It takes five minutes. Millions of other people do the same. An algorithm then takes these millions of simple, head-to-head "smackdowns" and builds a representative, real-time ranking of humanity's collective priorities.
+You make a choice. That's it. You do this a few times with different random pairs. It takes five minutes. Millions of other people do the same. An algorithm then takes these millions of simple, head-to-head comparisons and builds a representative, real-time ranking of humanity's collective priorities.
 
 It's the wisdom of crowds, but without the crowds having to talk to each other.
 
@@ -126,7 +129,7 @@ It's democracy without the stupidity. We still get the stupidity, but it's evenl
 
 ## From Priorities to Projects
 
-Once the Pairwise Smackdown tells you that "Curing Alzheimer's" is a top priority, Wishocracy translates that priority into action.
+Once the Pairwise Slider Allocation tells you that "Curing Alzheimer's" is a top priority, Wishocracy translates that priority into action.
 
 1.  **AI Breaks It Down:** An AI takes the impossible goal of "Cure Alzheimer's" and breaks it down into thousands of smaller, concrete, fundable tasks. "Cure Alzheimer's" becomes "Map protein structures," which becomes "Run AlphaFold on these sequences," which becomes "Rent computing time." Every impossible problem is just a series of possible steps.
 

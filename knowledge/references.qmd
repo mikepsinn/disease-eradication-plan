@@ -1458,8 +1458,8 @@ title: dFDA ROI: 4,990:1 (recommended) to 8,542:1 (full impact)
   > **Full impact**: 8,542:1 including lost innovation avoidance
   > Range: 66:1 (worst case) to 2,577:1 depending on total ecosystem costs
   > Based on: $37.5-46M upfront platform investment + operational costs vs $50.0B annual R&D savings
-  > Value proposition: 80X reduction in per-patient trial costs; $50.0B gross annual savings from pharma R&D
-  > Pharmaceutical industry spends ~$100.0B/year on R&D; 50.0% cost reduction yields enormous net savings
+  > Value proposition: 80X reduction in per-patient trial costs; {{< var dfda_rd_gross_savings_annual >}} gross annual savings from pharma R&D
+  > Pharmaceutical industry spends ~{{< var global_clinical_trials_spending_annual >}}/year on R&D; 50.0% cost reduction yields enormous net savings
   > — [dFDA: Cost Benefit Analysis](https://wiki.dfda.earth/en/economic-models/dfda-cost-benefit-analysis) | [dFDA Wiki](https://wiki.dfda.earth/)
 
 <a id="diabetes-deaths-2m-annually"></a>
