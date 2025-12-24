@@ -444,7 +444,7 @@ These technologies already verify hundreds of millions globally for banking and 
 
 **Objection**: "How do you ensure money helps patients instead of funding bureaucracy?"
 
-**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model is [80× more efficient](../references.qmd#recovery-trial-82x-cost-reduction). Pragmatic trials cost [$500 per patient](../references.qmd#recovery-cost-500) versus [$41,000 in traditional trials](../references.qmd#trial-cost-41k).
+**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves [80× lower cost per patient](../references.qmd#recovery-trial-82x-cost-reduction). Pragmatic trials cost [{{< var recovery_trial_cost_per_patient >}} per patient](../references.qmd#recovery-cost-500) versus [{{< var traditional_phase3_cost_per_patient_fda_example_41k >}} in traditional trials](../references.qmd#trial-cost-41k).
 
 The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that budget, this model could run 2,800 trials for 2.8 million patients. Evidence is strong.
 

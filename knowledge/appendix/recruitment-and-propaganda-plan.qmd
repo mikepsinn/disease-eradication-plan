@@ -8,9 +8,13 @@ tags:
   - recruitment
   - strategy
   - propaganda
+image: /assets/og-images/knowledge/appendix/recruitment-and-propaganda-plan-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/appendix/recruitment-and-propaganda-plan-infographic.png)
+
 
 ```{python}
 #| echo: false
@@ -38,20 +42,6 @@ Right now your propaganda says "Donate" and "Buy VICTORY Incentive Alignment Bon
 You're asking people to give you money through a slot that doesn't exist. It's like putting up a "Free Pizza" sign when you don't have pizza, an oven, or even flour. People show up excited, then leave confused and slightly angry.
 
 Every day this continues, you lose potential revolutionaries who clicked, got confused, and went back to scrolling cat videos. These are people who were literally ready to throw money at the "not dying" problem, and you sent them away empty-handed.
-
-## The Weapon: Airtable
-
-*How to Build a Revolution Database for Free (Because You're Broke)*
-
-You use Airtable because:
-
-- **It's free** (you have no money)
-- **It's simple** (you have no time)
-- **It scales** (from 10 to 10 million records)
-- **It has forms** (prettier than Google Forms)
-- **It's not Excel** (we're not barbarians)
-
-Think of Airtable as the gateway drug to professional database management. It's training wheels for your future command-and-control system that will coordinate 8 billion humans in the war against their own mortality.
 
 ## The Three-Division Army Structure
 
@@ -321,7 +311,7 @@ This database becomes your proof of demand when you:
 
 *The Five Steps to Start Right Now*
 
-1. **Set up Airtable** (it takes 5 minutes, you have no excuse)
+1. **Set up a database** 
 2. **Create the three forms** (copy-paste from above)
 3. **Replace your lying website buttons** (stop the bleeding)
 4. **Start collecting humans** (they're everywhere)

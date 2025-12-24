@@ -8,21 +8,30 @@ tags:
   - spending
   - global-statistics
   - pharmaceutical-industry
+image: /assets/og-images/knowledge/appendix/global-clinical-trial-spending-by-phase-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+![Infographic](/assets/infographics/knowledge/appendix/global-clinical-trial-spending-by-phase-infographic.png)
+
+
 Here's where every dollar goes in the global clinical trials industry, broken down by who's paying and which phase they're funding.
 
-## The Bottom Line: [$83 Billion Annually](../references.qmd#global-clinical-trials-market-2024) (2024)
+## The Bottom Line: [{{< var global_clinical_trials_spending_annual >}} Annually](../references.qmd#industry-clinical-trial-spending-estimate) (2024)
 
-The global clinical trials market was valued at approximately **[$83 billion in 2024](../references.qmd#global-clinical-trials-market-2024)**, with estimates ranging from [$54 billion to $84 billion](../references.qmd#clinical-trials-market-range-2024) depending on methodology.
+Global clinical trial spending totals approximately **{{< var global_clinical_trials_spending_annual >}}** (95% CI: $50-75B), using conservative pharma R&D estimates rather than inflated market reports:
+
+- **Industry**: [$45-60 billion](../references.qmd#industry-clinical-trial-spending-estimate) (15-20% of {{< var global_pharma_rd_spending_annual >}} total pharma R&D)
+- **Government**: [$3-6 billion](../references.qmd#global-government-clinical-trial-spending-estimate) (interventional trials only)
+- **Nonprofits**: [$2-5 billion](../references.qmd#nonprofit-clinical-trial-spending-estimate) (foundations, disease advocacy groups)
+
+**Note**: Earlier market reports cited {{< var global_clinical_trials_spending_annual >}}, but this conflated market size projections with actual spending and included CRO revenue double-counting.
 
 ### Growth trajectory
 
-- 2024: $83 billion
-- 2030: Projected [$83-132 billion](../references.qmd#clinical-trials-market-projection-2030)
-- 2034: Projected [$95-150 billion](../references.qmd#clinical-trials-market-projection-2034)
+- 2024: {{< var global_clinical_trials_spending_annual >}} (actual spending)
+- Market projections: [$83-132 billion by 2030](../references.qmd#clinical-trials-market-projection-2030) (includes CRO revenue)
 
 ## How Many People Participate? The Missing Data
 
@@ -46,7 +55,7 @@ The global clinical trials market was valued at approximately **[$83 billion in 
 - Phase 3: 237 participants
 - Phase 4: 90 participants
 
-**Cost per participant** (if $83B ÷ 5M participants): **~$16,600 annually**
+**Cost per participant** (if {{< var global_clinical_trials_spending_annual >}} ÷ 5M participants): **~{{< var clinical_trial_cost_per_participant_annual >}} annually**
 
 **The tragedy:** Only [0.06% of humanity participates in clinical trials](clinical-trial-participants.qmd) each year while 150,000 die daily from disease.
 
@@ -182,7 +191,9 @@ Why Phase 3 dominates:
 
 ### Government: The Seed Investor
 
-**Total Annual Spending: [$19-25 billion on clinical trials](../references.qmd#global-government-clinical-trial-spending-estimate)** (~10-12% of global total)
+**Total Annual Spending: [$3-6 billion on interventional clinical trials](../references.qmd#global-government-clinical-trial-spending-estimate)** (~5% of global total)
+
+**Important distinction**: The NIH's $18.9B "clinical research" budget includes observational studies, epidemiology, cohort studies, and health services research, NOT just interventional drug trials. Actual government spending on Phase 1-4 interventional trials globally is only $3-6B/year.
 
 #### United States (NIH)
 
@@ -364,7 +375,7 @@ Why Phase 3 dominates:
 
 #### The Bad News
 
-- [$83 billion annually, yet most diseases still have no treatment](../references.qmd#95-pct-diseases-no-treatment)
+- [{{< var global_clinical_trials_spending_annual >}} annually, yet most diseases still have no treatment](../references.qmd#95-pct-diseases-no-treatment)
 - [95% of spending goes to Phase 2-3 trials](../references.qmd#phase-2-3-spending-percentage) for molecules that can be patented
 - [Success rate: 12%](../references.qmd#phase-1-to-approval-success-rate)
 - [Average time to develop one drug: 10+ years](../references.qmd#drug-development-timeline-17-years)
@@ -372,24 +383,24 @@ Why Phase 3 dominates:
 
 #### The Context
 
-- Global clinical trial spending: **$83 billion**
+- Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}}**
 - [Global military spending: **$2.7 trillion**](../references.qmd#sipri2024)
 - [Global pharmaceutical marketing: **$180 billion**](../references.qmd#pharma-marketing-spending-60b)
-- **Humans spend 33× more on weapons and 2× more on drug ads than on testing new treatments**
+- **Humans spend {{< var military_to_clinical_trials_spending_ratio >}} more on weapons and 2× more on drug ads than on testing new treatments**
 
 ## The Efficiency Paradox
 
 ### Current system
 
-- $83 billion spent annually
+- {{< var global_clinical_trials_spending_annual >}} spent annually
 - [~50 new drugs approved per year globally](../references.qmd#global-new-drug-approvals-50-annually)
-- **Cost per approved drug: $1.66 billion** (using clinical trial spending alone)
+- **Cost per approved drug: {{< var clinical_trial_cost_per_approved_drug >}}** (using clinical trial spending alone)
 - Most are ["me-too" drugs](../references.qmd#me-too-drug-market-40b) (minor variations of existing treatments)
 
 **What the same money could buy (with a decentralized framework for drug assessment):**
 
-- At [$500/patient (RECOVERY model)](../references.qmd#recovery-trial-cost-reduction): **166 million patient-participants**
-- At $2 million per efficient trial: **41,500 trials annually**
+- At [$500/patient (RECOVERY model)](../references.qmd#recovery-trial-cost-reduction): **120 million patient-participants**
+- At $2 million per efficient trial: **30,000 trials annually**
 - Instead of 50 drugs: **Hundreds or thousands of treatments tested**
 - Instead of 10 years: **Months to years**
 
@@ -403,7 +414,7 @@ Why Phase 3 dominates:
 
 | Category | Annual Spending | % of Total |
 |----------|----------------|------------|
-| **Total Global Clinical Trials Market** | **$83 billion** | **100%** |
+| **Total Global Clinical Trials Spending** | **{{< var global_clinical_trials_spending_annual >}}** | **100%** |
 | | | |
 | **By Phase:** | | |
 | Phase 3 | $29-45 billion | 53-55% |
@@ -412,19 +423,19 @@ Why Phase 3 dominates:
 | Phase 4 | $15-20 billion | ~10-15% |
 | | | |
 | **By Funding Source:** | | |
-| Private Industry | $75-90 billion | ~90% |
-| Government | $19-25 billion | ~10% |
+| Private Industry | $75-90 billion | ~85-90% |
+| Government (interventional trials) | $3-6 billion | ~5% |
 | Nonprofits | $2-5 billion | ~2-5% |
 | | | |
 | **Major Regional Markets:** | | |
-| United States | $45 billion | ~54% |
-| Europe | $20-25 billion | ~25-30% |
-| China | $12-15 billion | ~15-18% |
-| Rest of World | $8-13 billion | ~10-15% |
+| United States | $45 billion | ~50% |
+| Europe | $20-25 billion | ~22-28% |
+| China | $12-15 billion | ~13-17% |
+| Rest of World | $8-13 billion | ~9-14% |
 
 ## The Path Forward
 
-Humans spend $83 billion annually to develop ~50 drugs over 10+ years each.
+Humans spend {{< var global_clinical_trials_spending_annual >}} annually to develop ~50 drugs over 10+ years each.
 
 [A decentralized framework for drug assessment (dFDA) model](../solution/dfda.qmd) could achieve [50-95% cost reduction](dfda-cost-benefit-analysis.qmd#gross-r-and-d-savings-from-implementing-a-decentralized-framework), enabling:
 

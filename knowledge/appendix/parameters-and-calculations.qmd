@@ -30,7 +30,7 @@ This appendix provides comprehensive documentation of all parameters and calcula
 
 Parameters derived from mathematical formulas and economic models.
 
-### Combined Peace and Health Dividends for ROI Calculation: $155B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
+### Combined Peace and Health Dividends for ROI Calculation: $144B {#sec-combined_peace_health_dividends_annual_for_roi_calc}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -39,10 +39,10 @@ Combined peace and health dividends for ROI calculation
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 
 $$
-Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
+Dividend_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$30.00B = \$143.55B
 $$
 
 **Methodology**: [../appendix/peace-dividend-calculations#peace-dividend-composition](../appendix/peace-dividend-calculations#peace-dividend-composition)
@@ -103,7 +103,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $41.5B {#sec-dfda_benefit_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $30B {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -111,11 +111,11 @@ Annual Decentralized Framework for Drug Assessment benefit from R&D savings (tri
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
 - [Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
 
 $$
-Benefit_{DFDA,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
+Benefit_{DFDA,ann} = Trials_{ann} \times Reduction = \$60.00B \times 50.0\% = \$30.00B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
@@ -173,7 +173,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $41.5B {#sec-dfda_net_savings_rd_only_annual}
+### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $30B {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -181,7 +181,7 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
@@ -216,7 +216,7 @@ Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH in
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Core Platform Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
+- [Decentralized Framework for Drug Assessment Core framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9M (95% CI: $11M - $26.5M)
 - [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1M (95% CI: $14M - $32M)
 
 $$
@@ -243,7 +243,7 @@ $$
 
 :::
 
-### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $275B {#sec-dfda_npv_benefit_rd_only}
+### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $199B {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -251,7 +251,7 @@ NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $30B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -278,7 +278,7 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only, Conservative): $275B {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only, Conservative): $199B {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -286,7 +286,7 @@ NPV net benefit using R&D savings only (most conservative financial estimate, ex
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $275B
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $199B
 
 $$
 Benefit_{NPV} = \sum_{t=1}^{10} \frac{NetSavings_{RD} \times \min(t,5)/5}{(1+r)^t} \approx \$249.3B \text{ (5-year linear adoption ramp)}
@@ -391,7 +391,7 @@ Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Core Platform Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
+- [Decentralized Framework for Drug Assessment Core framework Build Cost](#sec-dfda_npv_upfront_cost): $40M (95% CI: $25M - $65M)
 - [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230M (95% CI: $150M - $350M)
 
 $$
@@ -418,7 +418,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $41.5B {#sec-dfda_rd_gross_savings_annual}
+### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $30B {#sec-dfda_rd_gross_savings_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -426,11 +426,11 @@ Annual Decentralized Framework for Drug Assessment benefit from R&D savings (tri
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
 - [Decentralized Framework for Drug Assessment Trial Cost Reduction Percentage](#sec-trial_cost_reduction_pct): 50% (95% CI: 40% - 65%)
 
 $$
-Benefit_{gross,ann} = Trials_{ann} \times Reduction = \$83.00B \times 50.0\% = \$41.50B
+Benefit_{gross,ann} = Trials_{ann} \times Reduction = \$60.00B \times 50.0\% = \$30.00B
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#cost-reduction](../appendix/dfda-cost-benefit-analysis#cost-reduction)
@@ -453,7 +453,7 @@ $$
 
 :::
 
-### Daily R&D Savings from Trial Cost Reduction: $114M {#sec-dfda_rd_savings_daily}
+### Daily R&D Savings from Trial Cost Reduction: $82.2M {#sec-dfda_rd_savings_daily}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -461,7 +461,7 @@ Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 
 $$
 Savings_{daily} = \frac{\$41.5B}{365} = \$113.7M
@@ -487,7 +487,7 @@ $$
 
 :::
 
-### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 451 ratio {#sec-dfda_roi_rd_only}
+### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 326 ratio {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -495,7 +495,7 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
@@ -524,7 +524,7 @@ $$
 
 :::
 
-### Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment: 1.04k ratio {#sec-dfda_roi_simple}
+### Decentralized Framework for Drug Assessment Simple ROI Without NPV Adjustment: 750 ratio {#sec-dfda_roi_simple}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -532,11 +532,11 @@ Simple ROI without NPV adjustment (gross savings / annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
-ROI_{DFDA} = \frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \frac{\$41.50B}{\$40.0M} = 1{,}038
+ROI_{DFDA} = \frac{Benefit_{gross,ann}}{Cost_{DFDA,ann}} = \frac{\$30.00B}{\$40.0M} = 750
 $$
 
 **Methodology**: [../appendix/dfda-cost-benefit-analysis#roi-simple](../appendix/dfda-cost-benefit-analysis#roi-simple)
@@ -1577,7 +1577,7 @@ $$
 
 :::
 
-### Annual Global Industry Spending on Clinical Trials: $78.5B {#sec-global_industry_clinical_trials_spending_annual}
+### Annual Global Industry Spending on Clinical Trials: $55.5B {#sec-global_industry_clinical_trials_spending_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1585,11 +1585,11 @@ Annual global industry spending on clinical trials (Total - Government)
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3B - $6B)
 
 $$
-Trials_{ann} = Trials_{ann} - Trials_{ann} = \$83.00B - \$4.50B = \$78.50B
+Trials_{ann} = Trials_{ann} - Trials_{ann} = \$60.00B - \$4.50B = \$55.50B
 $$
 
 *✓ High confidence*
@@ -1787,7 +1787,7 @@ $$
 
 :::
 
-### IAB Mechanism Benefit-Cost Ratio: 207 ratio {#sec-iab_mechanism_benefit_cost_ratio}
+### IAB Mechanism Benefit-Cost Ratio: 191 ratio {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1795,11 +1795,11 @@ Benefit-Cost Ratio of the IAB mechanism itself
 
 **Inputs**:
 
-- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $155B
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $144B
 - [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750M (95% CI: $160M - $750M)
 
 $$
-Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$155.05B}{\$750.0M} = 206.73
+Cost = \frac{Benefit_{ann}}{Cost_{ann}} = \frac{\$143.55B}{\$750.0M} = 191.4
 $$
 
 **Methodology**: [../appendix/incentive-alignment-bonds-paper#welfare-analysis](../appendix/incentive-alignment-bonds-paper#welfare-analysis)
@@ -1855,7 +1855,7 @@ $$
 
 :::
 
-### Ratio of Industry to Government Clinical Trials Spending: 17.4 ratio {#sec-industry_vs_government_clinical_trials_spending_ratio}
+### Ratio of Industry to Government Clinical Trials Spending: 12.3 ratio {#sec-industry_vs_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -1863,7 +1863,7 @@ Ratio of Industry to Government spending on clinical trials (approx 90/10 split)
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $83B (95% CI: $60B - $110B)
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
 - [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3B - $6B)
 
 *Formula*: `(TOTAL - GOVT) / GOVT`
@@ -2850,7 +2850,7 @@ $$
 
 :::
 
-### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 10.3 ratio {#sec-treaty_benefit_multiplier_vs_vaccines}
+### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 9.57 ratio {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -2859,10 +2859,10 @@ Treaty system benefit multiplier vs childhood vaccination programs
 **Inputs**:
 
 - [Estimated Annual Global Economic Benefit from Childhood Vaccination Programs](#sec-childhood_vaccination_annual_benefit) 📊: $15B (SE: ±$4.50B)
-- [Combined Peace and Health Dividends for ROI Calculation](#sec-combined_peace_health_dividends_annual_for_roi_calc) 🔢: $155B
+- [Combined Peace and Health Dividends for ROI Calculation](#sec-combined_peace_health_dividends_annual_for_roi_calc) 🔢: $144B
 
 $$
-Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$155.05B}{\$15.00B} = 10.34
+Multiplier_{treaty} = \frac{Dividend_{ann}}{Benefit_{ann}} = \frac{\$143.55B}{\$15.00B} = 9.57
 $$
 
 **Methodology**: [../economics/economics#better-than-the-best-charities](../economics/economics#better-than-the-best-charities)
@@ -3165,7 +3165,7 @@ $$
 
 :::
 
-### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $155B {#sec-treaty_peace_plus_rd_annual_benefits}
+### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $144B {#sec-treaty_peace_plus_rd_annual_benefits}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3174,10 +3174,10 @@ Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessm
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_rd_gross_savings_annual) 🔢: $30B
 
 $$
-Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$41.50B = \$155.05B
+Benefit_{ann} = Cost_{soc,ann} + Benefit_{gross,ann} = \$113.55B + \$30.00B = \$143.55B
 $$
 
 **Methodology**: [../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits](../appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits)
@@ -3235,7 +3235,7 @@ $$
 
 :::
 
-### 1% treaty Recurring Annual Benefits: $155B {#sec-treaty_recurring_benefits_annual}
+### 1% treaty Recurring Annual Benefits: $144B {#sec-treaty_recurring_benefits_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3243,11 +3243,11 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
-Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
+Benefit_{ann} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.55B = \$143.55B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -3411,7 +3411,7 @@ $$
 
 :::
 
-### 1% treaty Recurring Annual Benefits: $155B {#sec-treaty_total_complete_benefits_annual}
+### 1% treaty Recurring Annual Benefits: $144B {#sec-treaty_total_complete_benefits_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
@@ -3419,11 +3419,11 @@ Truly recurring annual benefits from 1% treaty: peace dividend ($113.6B/year) + 
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $41.5B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $30B
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114B
 
 $$
-Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$41.50B + \$113.55B = \$155.05B
+Benefit_{total} = Benefit_{DFDA,ann} + Cost_{soc,ann} = \$30.00B + \$113.55B = \$143.55B
 $$
 
 **Methodology**: [../economics/economics](../economics/economics)
@@ -4729,19 +4729,19 @@ Annual veteran healthcare costs (20-year projected)
 
 :::
 
-### Annual Global Spending on Clinical Trials: $83B {#sec-global_clinical_trials_spending_annual}
+### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Annual global spending on clinical trials (Total: Government + Industry)
+Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
-**Source**: [Research and Markets (2024) - Global clinical trials market 2024](../references.qmd#global-clinical-trials-market-2024)
+**Source**: [Derived from global market size and public/private funding ratios - Private industry clinical trial spending](../references.qmd#industry-clinical-trial-spending-estimate)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$60B, $110B] • Distribution: Lognormal (SE: $12.5B)
+**Technical**: 95% CI: [$50B, $75B] • Distribution: Lognormal (SE: $10B)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $110B (±30%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $50B and $75B (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -6495,11 +6495,11 @@ Years to reach full Decentralized Framework for Drug Assessment adoption
 
 :::
 
-### Decentralized Framework for Drug Assessment Core Platform Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
+### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Decentralized Framework for Drug Assessment core platform annual opex (midpoint of $11-26.5M)
+Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
 
 #### Uncertainty Range
 
@@ -6513,11 +6513,11 @@ Decentralized Framework for Drug Assessment core platform annual opex (midpoint 
 
 :::
 
-### Decentralized Framework for Drug Assessment Core Platform Build Cost: $40M {#sec-dfda_npv_upfront_cost}
+### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Decentralized Framework for Drug Assessment core platform build cost
+Decentralized Framework for Drug Assessment Core framework build cost
 
 #### Uncertainty Range
 
@@ -6571,7 +6571,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 ::: {.callout-note collapse="true" title="📊 Show full details"}
 
-Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment platform overhead
+Percentage of treaty funding allocated to Decentralized Framework for Drug Assessment framework overhead
 
 *Core definition*
 

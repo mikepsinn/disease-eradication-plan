@@ -10,9 +10,13 @@ tags:
   - regulatory-economics
   - mortality
   - cost-benefit
+image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/appendix/regulatory-mortality-analysis-infographic.png)
+
 
 ```{python}
 #| echo: false
@@ -219,11 +223,11 @@ A critical counter-argument is that the FDA protects society from dangerous or i
 - **The Benefit of Protection (Type I):** Even assuming a "Thalidomide Event" occurs *every single year* under a deregulated model (an extreme overestimate), the total DALYs saved by the FDA is ~{{< var type_i_error_benefit_dalys >}}.
   - *Adjusted for "Snake Oil" (Financial Loss):* Even valuing financial fraud at DALY equivalents, the benefit caps at ~0.6 Billion DALYs.
 
-### The "Safety" Ratio
+### The Risk Trade-off Ratio
 
 {{< var type_ii_error_cost_ratio_latex >}} {#eq-type-i-ii-ratio}
 
-**Conclusion:** For every 1 unit of harm the FDA prevents, it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay.
+**Conclusion:** For every 1 unit of harm the FDA prevents (Type I errors: approving dangerous/ineffective drugs), it generates {{< var type_ii_error_cost_ratio >}} units of harm through delay (Type II errors: blocking effective drugs).
 
 ## 7. References & Datasets
 
@@ -395,7 +399,7 @@ The efficacy delay costs more per day than any terrorist attack in history. Ever
 ### Your Daily Receipt
 
 ::: {.callout-warning}
-## INVOICE: The Cost of "Safety"
+## INVOICE: The Cost of Efficacy Delay
 
 **Date:** Today (and every day)
 

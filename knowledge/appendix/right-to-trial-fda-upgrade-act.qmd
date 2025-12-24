@@ -12,9 +12,13 @@ tags:
   - fda-upgrade
   - right-to-trial
   - open-data
+image: /assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og.png
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
+![Infographic](/assets/infographics/knowledge/appendix/right-to-trial-fda-upgrade-act-infographic.png)
+
 
 **Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,**
 
@@ -174,7 +178,7 @@ In this Act:
 
 ### SEC. 304. PATIENT COST CONTRIBUTION FOR TRIAL PARTICIPATION
 
-(a) **Determination and Disclosure of Participation Costs.** Prior to a patient consenting to a trial, the sponsoring entity shall determine and provide to the FDA v2 Decentralized Health Protocol a comprehensive, itemized estimate of all direct costs associated with that specific patient's anticipated participation in the trial. This shall include, but not be limited to, costs of investigational product, necessary medical procedures, diagnostic tests, monitoring, and data management directly attributable to the research participant. These estimated costs, alongside the NIH-funded discount applicable under SEC. 303, and the final net cost to the patient, shall be transparently displayed to the potential participant via the **FDA.gov Public Portal** (SEC. 204(c)(3)) and detailed in the e-consent form (SEC. 302(b)). This transparent disclosure of itemized costs on a centralized platform is intended to encourage competitive and efficient pricing by sponsoring entities.
+(a) **Determination and Disclosure of Participation Costs.** Prior to a patient consenting to a trial, the sponsoring entity shall determine and provide to the FDA v2 Decentralized Health Protocol a comprehensive, itemized estimate of all direct costs associated with that specific patient's anticipated participation in the trial. This shall include, but not be limited to, costs of investigational product, necessary medical procedures, diagnostic tests, monitoring, and data management directly attributable to the research participant. These estimated costs, alongside the NIH-funded discount applicable under SEC. 303, and the final net cost to the patient, shall be transparently displayed to the potential participant via the **FDA.gov Public Portal** (SEC. 204(c)(3)) and detailed in the e-consent form (SEC. 302(b)). This transparent disclosure of itemized costs on a decentralized framework is intended to encourage competitive and efficient pricing by sponsoring entities.
 
 (b) **Patient Net Cost Contribution.** Each participant shall be responsible for contributing the net cost of their trial participation, calculated as the estimated total direct cost of participation (as determined in subsection (a) of this section) minus the NIH-funded discount (as determined and applied under SEC. 303). The **FDA.gov Public Portal** shall facilitate the management of this net cost contribution.
 (c) **Prohibition on Additional Charges.** Sponsors or investigating sites may not bill or charge a participant for any costs related to their trial participation beyond the final net cost contribution calculated and disclosed through the FDA v2 Protocol as per subsections (a) and (b) of this section. Participants shall retain the right to terminate their participation in the trial at any time, subject to standard clinical and ethical procedures; financial obligations will be prorated based on the extent of participation and disclosed costs.
@@ -199,8 +203,8 @@ In this Act:
 (a) **FDA Upgrade.** \$500 million FY 2026‑30, of which **no more than 25 percent may be obligated** until the **FDA.gov Public Portal** (1) attains FedRAMP‑Moderate ATO _and_ (2) records at least **1,000 merged pull‑requests** under § 204(g). Subsequent 25‑percent tranches unlock upon the Protocol reaching 10,000 users and 10,000 merged pull‑requests, respectively.
 (b) **Subsidy Fund.** \$2 billion FY 2026‑30, released quarterly upon NIH certification that the subsidy‑allocation algorithm achieved or exceeded its projected QALY gain in the preceding quarter.
 (c) **Regulatory‑Science Grants.** \$150 million FY 2026‑30.
-(d) **Direct‑Hire Authority.** For FY 2026‑30 the Secretary may hire up to **200 technical employees** for the Platform under 5 U.S.C. § 9803 (critical‑need direct hire).
-(e) **Agile Acquisition Pilot.** All contracts for the Platform are designated "modular IT acquisitions" under FITARA; FAR Part 15 documentation requirements are waived in favour of the **US Digital Service Playbook\[10]** incremental‑delivery model.\*\* \$150 million FY 2026‑30.
+(d) **Direct‑Hire Authority.** For FY 2026‑30 the Secretary may hire up to **200 technical employees** for the framework under 5 U.S.C. § 9803 (critical‑need direct hire).
+(e) **Agile Acquisition Pilot.** All contracts for the framework are designated "modular IT acquisitions" under FITARA; FAR Part 15 documentation requirements are waived in favour of the **US Digital Service Playbook\[10]** incremental‑delivery model.\*\* \$150 million FY 2026‑30.
 
 ### SEC. 403. IMPLEMENTATION TIMELINE
 
